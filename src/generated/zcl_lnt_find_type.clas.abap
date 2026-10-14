@@ -37,7 +37,7 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t11.
     t10 = t11.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t12) = t10.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
@@ -106,9 +106,9 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     ENDIF.
     APPEND t13 TO t12->items.
     DATA t33 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t34) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
-    DATA(t35) = CAST zlnt_runtime_dyna_a429568d5be8( t7 ).
-    DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t34) = t4.
+    DATA(t35) = t7.
+    DATA(t36) = t10.
     t33 = zcl_lnt_st_combi_module=>alt( i_first = t34 i_second = t35 i_rest = t36 ).
     t3 = t33.
     IF t3 IS BOUND.

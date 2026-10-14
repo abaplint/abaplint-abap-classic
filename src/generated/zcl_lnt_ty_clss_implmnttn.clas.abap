@@ -12,12 +12,12 @@ CLASS zcl_lnt_ty_clss_implmnttn DEFINITION PUBLIC INHERITING FROM zcl_lnt_fi_ide
 ENDCLASS.
 CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = i_filename.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_structure.
-    DATA(t6) = CAST zcl_lnt_structure_node( t1 ).
+    DATA(t6) = t1.
     t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_sr_clss_implmnttn ).
     t3 = xsdbool( t4 = abap_false ).
@@ -51,19 +51,19 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     DATA t17 TYPE REF TO zcl_lnt_expression_node.
     DATA t18 TYPE REF TO zcl_lnt_statement_node.
     DATA t19 TYPE REF TO zcl_lnt_statement_node.
-    DATA(t20) = CAST zcl_lnt_structure_node( t1 ).
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d396_f66c9403a435 ).
+    DATA(t20) = t1.
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d396_f66c9403a435.
     t19 = t20->find_first_statement( i_type_9913 = t21 ).
     t18 = t19.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687 ).
+    DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687.
     t17 = t18->find_first_expression( i_type_9913 = t22 ).
     t16 = t17.
     t15 = t16->get_first_token( ).
     t14 = t15.
-    DATA(t23) = CAST zcl_lnt_abstract_token( t14 ).
+    DATA(t23) = t14.
     DATA(t24) = t2.
     super->constructor( i_token = t23 i_filename = t24 ).
-    DATA(t25) = CAST zcl_lnt_structure_node( t1 ).
+    DATA(t25) = t1.
     me->node = t25.
   ENDMETHOD.
 

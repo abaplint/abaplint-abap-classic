@@ -11,13 +11,13 @@ CLASS zcl_lnt_shape_e77d6389 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_e77d6389 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zlnt_runtime_map__abd6fd794ffb( i_options ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_options.
     DATA t3 TYPE REF TO zcl_lnt_shape_9e00b1e6.
-    DATA(t4) = CAST zcl_lnt_shape_9e00b1e6( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->text_document = t3.
-    DATA(t5) = CAST zlnt_runtime_map__abd6fd794ffb( t2 ).
+    DATA(t5) = t2.
     me->options = t5.
   ENDMETHOD.
 

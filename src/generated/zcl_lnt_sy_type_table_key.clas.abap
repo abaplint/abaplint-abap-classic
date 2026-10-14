@@ -9,31 +9,31 @@ CLASS zcl_lnt_sy_type_table_key DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_type_9913 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_type_9913.
     DATA t3 TYPE abap_bool.
-    DATA(t4) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t4) = t2.
     t3 = xsdbool( t4 IS BOUND AND t4 IS INSTANCE OF zcl_lnt_ty_table_type ).
     IF t3 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type.
       DATA t6 TYPE REF TO zcl_lnt_abstract_type.
       DATA t7 TYPE REF TO zcl_lnt_ty_table_type.
       DATA t8 TYPE REF TO zcl_lnt_ty_table_type.
-      DATA(t9) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t9) = t2.
       t8 ?= t9.
       t7 = t8.
       DATA t10 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t11) = CAST zcl_lnt_ty_table_type( t7 ).
+      DATA(t11) = t7.
       t10 = t11->row_type.
       t6 = t10.
       t5 = t6.
       DATA t12 TYPE abap_bool.
-      DATA(t13) = CAST zcl_lnt_abstract_type( t5 ).
+      DATA(t13) = t5.
       t12 = xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_structure_type ).
       IF t12 = abap_true.
         DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t15) = CAST zcl_lnt_expression_node( t1 ).
-        DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df ).
+        DATA(t15) = t1.
+        DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
         t14 = t15->find_all_expressions( i_type_9913 = t16 ).
         DATA t17 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t17.
@@ -44,7 +44,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
           DATA t19 TYPE string.
           DATA t20 TYPE string.
           DATA t21 TYPE string.
-          DATA(t22) = CAST zcl_lnt_expression_node( t17 ).
+          DATA(t22) = t17.
           t21 = t22->concat_tokens( ).
           DATA t23 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           CLEAR t23.
@@ -84,7 +84,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             CLEAR t40.
             DATA t41 TYPE REF TO zcl_lnt_structure_type.
             DATA t42 TYPE REF TO zcl_lnt_structure_type.
-            DATA(t43) = CAST zcl_lnt_abstract_type( t5 ).
+            DATA(t43) = t5.
             t42 ?= t43.
             t41 = t42.
             DATA t44 TYPE string.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             DATA t46 TYPE REF TO zcl_lnt_abstract_type.
             CLEAR t46.
             DATA t47 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-            DATA(t48) = CAST zcl_lnt_structure_type( t41 ).
+            DATA(t48) = t41.
             t47 = t48->indexed.
             DATA t49 TYPE string.
             DATA(t50) = t44.
@@ -112,7 +112,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             CLEAR t53.
             t52 = t53.
             DATA(t54) = VALUE abap_bool( ).
-            DATA(t55) = CAST zcl_lnt_abstract_type( t39 ).
+            DATA(t55) = t39.
             IF t55 IS INITIAL.
               t54 = abap_true.
             ENDIF.

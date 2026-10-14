@@ -11,13 +11,13 @@ CLASS zcl_lnt_shape_5bd99ac8 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_5bd99ac8 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_pos ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_member ).
+    DATA(t1) = i_pos.
+    DATA(t2) = i_member.
     DATA t3 TYPE REF TO zcl_lnt_position.
-    DATA(t4) = CAST zcl_lnt_position( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->pos = t3.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->member = t5.
   ENDMETHOD.
 

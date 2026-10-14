@@ -79,10 +79,10 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Syntax|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       t18 = t23.
       t16 = t18.
     ELSE.
@@ -100,13 +100,13 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_in_ts_ch_inc.
-    DATA(t1) = CAST zcl_lnt_check_include_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_in_ts_ch_inc.
-    DATA(t1) = CAST zcl_lnt_check_include_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_include.ts:38|.
     t2->source_location = t3.
@@ -114,7 +114,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_chc_inc_ts_chc_inc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_include.ts:42|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_include.ts:48|.
     t2->source_location = t3.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_include.ts:38|.
     t2->source_location = t3.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_include.ts:42|.
     t2->source_location = t3.

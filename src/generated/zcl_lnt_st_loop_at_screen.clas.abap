@@ -43,7 +43,7 @@ CLASS zcl_lnt_st_loop_at_screen IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74 ).
+    DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.
     IF t16 IS BOUND.
       CREATE OBJECT t15.
       t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -55,9 +55,9 @@ CLASS zcl_lnt_st_loop_at_screen IMPLEMENTATION.
     CREATE OBJECT t18.
     t17 = t18.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t11 ).
-    DATA(t21) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t20) = t11.
+    DATA(t21) = t14.
+    DATA(t22) = t17.
     t19 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t21 i_rest = t22 ).
     t10 = t19.
     IF t10 IS BOUND.
@@ -81,9 +81,9 @@ CLASS zcl_lnt_st_loop_at_screen IMPLEMENTATION.
     CREATE OBJECT t26.
     t25 = t26.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t28) = t3.
+    DATA(t29) = t6.
+    DATA(t30) = t25.
     t27 = zcl_lnt_st_combi_module=>seq( i_first = t28 i_second = t29 i_rest = t30 ).
     t2 = t27.
     t1 = t2.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_st_loop_at_screen IMPLEMENTATION.
     DATA(t32) = |Cloud|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
-    DATA(t34) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t34) = t1.
     IF t34 IS BOUND.
       CREATE OBJECT t33.
       t33->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

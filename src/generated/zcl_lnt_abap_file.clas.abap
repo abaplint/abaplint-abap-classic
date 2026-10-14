@@ -21,24 +21,24 @@ CLASS zcl_lnt_abap_file DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_file 
 ENDCLASS.
 CLASS zcl_lnt_abap_file IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t4) = CAST zcl_lnt_structure_node( i_structure ).
-    DATA(t5) = CAST zif_lnt_abap_file_information( i_info ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_tokens.
+    DATA(t3) = i_statements.
+    DATA(t4) = i_structure.
+    DATA(t5) = i_info.
     DATA t6 TYPE string.
-    DATA(t7) = CAST zif_lnt_file( t1 ).
+    DATA(t7) = t1.
     t6 = t7->get_filename( ).
     super->constructor( i_filename = t6 ).
-    DATA(t8) = CAST zif_lnt_file( t1 ).
+    DATA(t8) = t1.
     me->file = t8.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t9) = t2.
     me->tokens = t9.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t10) = t3.
     me->statements = t10.
-    DATA(t11) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t11) = t4.
     me->structure = t11.
-    DATA(t12) = CAST zif_lnt_abap_file_information( t5 ).
+    DATA(t12) = t5.
     me->info = t12.
   ENDMETHOD.
 
@@ -57,21 +57,21 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_info.
-    DATA(t1) = CAST zif_lnt_abap_file_information( me->info ).
+    DATA(t1) = me->info.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_structure.
-    DATA(t1) = CAST zcl_lnt_structure_node( me->structure ).
+    DATA(t1) = me->structure.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_tokens.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_with_pragmas ).
+    DATA(t1) = i_with_pragmas.
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t3) = t1.
     IF t3 IS INITIAL.
       t2 = abap_true.
     ELSEIF t3->has = abap_false.
@@ -96,12 +96,12 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE abap_bool.
     DATA t10 TYPE abap_bool.
-    DATA(t11) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t11) = t1.
     t10 = t11->value.
     DATA(t12) = abap_true.
     t9 = xsdbool( t10 = t12 ).
     IF t9 = abap_true.
-      DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+      DATA(t13) = me->tokens.
       result = t13.
       RETURN.
     ELSE.
@@ -112,11 +112,11 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t16.
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+      DATA(t18) = me->tokens.
       t17 = t18.
       DATA t19 TYPE i.
       DATA t20 TYPE i.
-      DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+      DATA(t21) = t17.
       t20 = lines( t21->items ).
       t19 = t20.
       DATA t22 TYPE i.
@@ -133,7 +133,7 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
         DATA t27 TYPE REF TO zcl_lnt_abstract_token.
         DATA t28 TYPE REF TO zcl_lnt_abstract_token.
         DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+        DATA(t30) = t17.
         DATA(t31) = t22.
         DATA t32 TYPE REF TO object.
         t32 = t30->get( p0 = t31 ).
@@ -142,12 +142,12 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
         t27 = t28.
         DATA t33 TYPE abap_bool.
         DATA t34 TYPE abap_bool.
-        DATA(t35) = CAST zcl_lnt_abstract_token( t27 ).
+        DATA(t35) = t27.
         t34 = xsdbool( t35 IS BOUND AND t35 IS INSTANCE OF zcl_lnt_pragma ).
         t33 = xsdbool( t34 = abap_false ).
         IF t33 = abap_true.
-          DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
-          DATA(t37) = CAST zcl_lnt_abstract_token( t27 ).
+          DATA(t36) = t14.
+          DATA(t37) = t27.
           APPEND t37 TO t36->items.
         ENDIF.
         DATA t38 TYPE i.
@@ -159,14 +159,14 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t41.
       t16 = t41.
-      DATA(t42) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+      DATA(t42) = t14.
       result = t42.
 
     ENDIF.
   ENDMETHOD.
 
   METHOD get_statements.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
+    DATA(t1) = me->statements.
     result = t1.
 
   ENDMETHOD.

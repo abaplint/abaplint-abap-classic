@@ -106,19 +106,19 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |Styleguide|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       DATA(t33) = |SingleFile|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t34) = t28.
       DATA(t35) = |Quickfix|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t36) = t28.
       DATA(t37) = |Upport|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t38) = t28.
       t27 = t38.
       t25 = t27.
     ELSE.
@@ -136,13 +136,13 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_p_r_e_n_t_p_rs_ex_nw.
-    DATA(t1) = CAST zcl_lnt_prfr_rs_excptn_nw_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_p_r_e_n_t_p_rs_ex_nw.
-    DATA(t1) = CAST zcl_lnt_prfr_rs_excptn_nw_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_raise_exception_new.ts:39|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_p_r_e_n_t_p_rs_ex_nw.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_raise_exception_new.ts:43|.
     t2->source_location = t3.
@@ -158,8 +158,8 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
     DATA(t3) = i_with_exporting.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/prefer_raise_exception_new.ts:69|.

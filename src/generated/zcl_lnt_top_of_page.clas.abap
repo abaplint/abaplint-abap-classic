@@ -46,9 +46,9 @@ CLASS zcl_lnt_top_of_page IMPLEMENTATION.
     CREATE OBJECT t13.
     t12 = t13.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t16) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t15) = t3.
+    DATA(t16) = t6.
+    DATA(t17) = t12.
     t14 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t16 i_rest = t17 ).
     t2 = t14.
     t1 = t2.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_top_of_page IMPLEMENTATION.
     DATA(t19) = |Cloud|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
-    DATA(t21) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t21) = t1.
     IF t21 IS BOUND.
       CREATE OBJECT t20.
       t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

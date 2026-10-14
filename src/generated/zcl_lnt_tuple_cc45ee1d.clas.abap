@@ -14,18 +14,18 @@ CLASS zcl_lnt_tuple_cc45ee1d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_cc45ee1d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_f0 ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_f1 ).
+    DATA(t1) = i_f0.
+    DATA(t2) = i_f1.
     DATA(t3) = i_f2.
-    DATA(t4) = CAST zif_lnt_statement_runnable( i_f3 ).
+    DATA(t4) = i_f3.
     DATA(t5) = i_f4.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t6) = t1.
     me->f0 = t6.
-    DATA(t7) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t7) = t2.
     me->f1 = t7.
     DATA(t8) = t3.
     me->f2 = t8.
-    DATA(t9) = CAST zif_lnt_statement_runnable( t4 ).
+    DATA(t9) = t4.
     me->f3 = t9.
     DATA(t10) = t5.
     me->f4 = t10.

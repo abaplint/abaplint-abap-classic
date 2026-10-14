@@ -68,13 +68,13 @@ CLASS zcl_lnt_empty_statement IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Quickfix|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |SingleFile|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       t18 = t25.
       t16 = t18.
     ELSE.
@@ -92,13 +92,13 @@ CLASS zcl_lnt_empty_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_em_st_ts_em_stt.
-    DATA(t1) = CAST zcl_lnt_empty_statement_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_em_st_ts_em_stt.
-    DATA(t1) = CAST zcl_lnt_empty_statement_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_statement.ts:32|.
     t2->source_location = t3.
@@ -106,7 +106,7 @@ CLASS zcl_lnt_empty_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_em_st_ts_em_stt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_statement.ts:36|.
     t2->source_location = t3.

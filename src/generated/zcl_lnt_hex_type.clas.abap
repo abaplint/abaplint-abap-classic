@@ -17,13 +17,13 @@ ENDCLASS.
 CLASS zcl_lnt_hex_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_length.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t3.
     DATA(t4) = abap_true.
     IF t4 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t6) = t2.
       DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_7f2541396f43.

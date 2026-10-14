@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_99da29a3 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_99da29a3 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_73ba783d( i_text_document ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_edits ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_edits.
     DATA t3 TYPE REF TO zcl_lnt_shape_73ba783d.
-    DATA(t4) = CAST zcl_lnt_shape_73ba783d( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->text_document = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->edits = t5.
   ENDMETHOD.

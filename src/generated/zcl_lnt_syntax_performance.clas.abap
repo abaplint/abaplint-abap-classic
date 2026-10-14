@@ -18,7 +18,7 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_runtime.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules_runner.ts:13|.

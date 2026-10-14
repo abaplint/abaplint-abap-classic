@@ -34,7 +34,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97 ).
+    DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97.
     t11 = zcl_lnt_st_combi_module=>tok( i_t = t12 ).
     IF t11 IS BOUND.
       CREATE OBJECT t10.
@@ -48,7 +48,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t16) = t1.
     IF t16 IS BOUND.
       CREATE OBJECT t15.
       t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -62,9 +62,9 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CREATE OBJECT t19.
     t18 = t19.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t21) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
-    DATA(t22) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+    DATA(t21) = t9.
+    DATA(t22) = t14.
+    DATA(t23) = t18.
     t20 = zcl_lnt_st_combi_module=>seq( i_first = t21 i_second = t22 i_rest = t23 ).
     t8 = t20.
     t7 = t8.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CLEAR t28.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
-    DATA(t30) = CAST zif_lnt_statement_runnable( t7 ).
+    DATA(t30) = t7.
     IF t30 IS BOUND.
       CREATE OBJECT t29.
       t29->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CLEAR t32.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
-    DATA(t34) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t34) = t1.
     IF t34 IS BOUND.
       CREATE OBJECT t33.
       t33->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -107,9 +107,9 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CREATE OBJECT t37.
     t36 = t37.
     DATA t38 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t39) = CAST zlnt_runtime_dyna_a429568d5be8( t28 ).
-    DATA(t40) = CAST zlnt_runtime_dyna_a429568d5be8( t32 ).
-    DATA(t41) = CAST zlnt_runtime_arra_c22708faf2e3( t36 ).
+    DATA(t39) = t28.
+    DATA(t40) = t32.
+    DATA(t41) = t36.
     t38 = zcl_lnt_st_combi_module=>alt_prio( i_first = t39 i_second = t40 i_rest = t41 ).
     t27 = t38.
     IF t27 IS BOUND.
@@ -135,7 +135,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t49.
     DATA t50 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t51) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e ).
+    DATA(t51) = zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e.
     t50 = zcl_lnt_st_combi_module=>tok( i_t = t51 ).
     IF t50 IS BOUND.
       CREATE OBJECT t49.
@@ -171,9 +171,9 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CREATE OBJECT t62.
     t61 = t62.
     DATA t63 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t64) = CAST zlnt_runtime_dyna_a429568d5be8( t48 ).
-    DATA(t65) = CAST zlnt_runtime_dyna_a429568d5be8( t53 ).
-    DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t61 ).
+    DATA(t64) = t48.
+    DATA(t65) = t53.
+    DATA(t66) = t61.
     t63 = zcl_lnt_st_combi_module=>seq( i_first = t64 i_second = t65 i_rest = t66 ).
     t47 = t63.
     IF t47 IS BOUND.
@@ -197,9 +197,9 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     CREATE OBJECT t70.
     t69 = t70.
     DATA t71 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t72) = CAST zlnt_runtime_dyna_a429568d5be8( t25 ).
-    DATA(t73) = CAST zlnt_runtime_dyna_a429568d5be8( t43 ).
-    DATA(t74) = CAST zlnt_runtime_arra_c22708faf2e3( t69 ).
+    DATA(t72) = t25.
+    DATA(t73) = t43.
+    DATA(t74) = t69.
     t71 = zcl_lnt_st_combi_module=>seq( i_first = t72 i_second = t73 i_rest = t74 ).
     t24 = t71.
     result = t24.

@@ -46,13 +46,13 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Performance|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       DATA(t16) = |SingleFile|.
       APPEND t16 TO t15->items.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t17) = t11.
       t10 = t17.
       t8 = t10.
     ELSE.
@@ -77,13 +77,13 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_in_cm_cn_ts_in_cm_cn.
-    DATA(t1) = CAST zcl_lnt_indx_cmpltly_cntnd_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_in_cm_cn_ts_in_cm_cn.
-    DATA(t1) = CAST zcl_lnt_indx_cmpltly_cntnd_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/index_completely_contained.ts:31|.
     t2->source_location = t3.
@@ -91,7 +91,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/index_completely_contained.ts:35|.
     t2->source_location = t3.
@@ -99,7 +99,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/index_completely_contained.ts:23|.
     t2->source_location = t3.
@@ -117,7 +117,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/index_completely_contained.ts:31|.
     t2->source_location = t3.

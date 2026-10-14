@@ -15,17 +15,17 @@ CLASS zcl_lnt_iabapparser_options DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iabapparser_options IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_release( i_release_7928 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_language_version_0e1d ).
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
-    DATA(t4) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t5) = CAST zcl_lnt_abap_release( t1 ).
+    DATA(t1) = i_release_7928.
+    DATA(t2) = i_language_version_0e1d.
+    DATA(t3) = i_global_macros_5535.
+    DATA(t4) = i_reg_f149.
+    DATA(t5) = t1.
     me->release_3664 = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t6) = t2.
     me->language_version = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t7) = t3.
     me->global_macros = t7.
-    DATA(t8) = CAST zif_lnt_registry( t4 ).
+    DATA(t8) = t4.
     me->reg = t8.
   ENDMETHOD.
 

@@ -70,10 +70,10 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       t18 = t23.
       t16 = t18.
     ELSE.
@@ -99,13 +99,13 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_fl_ty_cn_ts_fl_ty_cn.
-    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_fl_ty_cn_ts_fl_ty_cn.
-    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fully_type_constants.ts:37|.
     t2->source_location = t3.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_fl_ty_cn_ts_fl_ty_cn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fully_type_constants.ts:41|.
     t2->source_location = t3.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_typed.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).
+    DATA(t1) = i_stat.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fully_type_constants.ts:70|.
     t2->source_location = t3.

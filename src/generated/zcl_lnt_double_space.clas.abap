@@ -73,16 +73,16 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Whitespace|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |Quickfix|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       DATA(t26) = |SingleFile|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t27) = t19.
       t18 = t27.
       t16 = t18.
     ELSE.
@@ -107,13 +107,13 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_db_sp_ts_db_spc.
-    DATA(t1) = CAST zcl_lnt_double_space_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_db_sp_ts_db_spc.
-    DATA(t1) = CAST zcl_lnt_double_space_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/double_space.ts:50|.
     t2->source_location = t3.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_db_sp_ts_db_spc.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/double_space.ts:57|.
     t2->source_location = t3.
@@ -129,7 +129,7 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_after_colon.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/double_space.ts:90|.
     t2->source_location = t3.
@@ -137,8 +137,8 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_paren.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/double_space.ts:129|.
     t3->source_location = t4.
@@ -146,9 +146,9 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD pragma_in_range.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_pragmas ).
-    DATA(t2) = CAST zcl_lnt_position( i_start ).
-    DATA(t3) = CAST zcl_lnt_position( i_end ).
+    DATA(t1) = i_pragmas.
+    DATA(t2) = i_start.
+    DATA(t3) = i_end.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/double_space.ts:171|.
     t4->source_location = t5.
@@ -156,8 +156,8 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_keywords.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/double_space.ts:181|.
     t3->source_location = t4.

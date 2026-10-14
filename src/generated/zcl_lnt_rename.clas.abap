@@ -14,13 +14,13 @@ CLASS zcl_lnt_rename DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rename IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD prepare_rename.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/rename.ts:36|.
     t2->source_location = t3.
@@ -28,7 +28,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rename.
-    DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/rename.ts:71|.
     t2->source_location = t3.
@@ -36,7 +36,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rename_variable.
-    DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/rename.ts:93|.
     t2->source_location = t3.
@@ -44,7 +44,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rename_method.
-    DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/rename.ts:104|.
     t2->source_location = t3.

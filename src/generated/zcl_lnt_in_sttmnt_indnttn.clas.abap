@@ -137,16 +137,16 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
       DATA t35 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t35.
       t34 = t35.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t36) = t34.
       DATA(t37) = |Whitespace|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t38) = t34.
       DATA(t39) = |Quickfix|.
       APPEND t39 TO t38->items.
-      DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t40) = t34.
       DATA(t41) = |SingleFile|.
       APPEND t41 TO t40->items.
-      DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t42) = t34.
       t33 = t42.
       t31 = t33.
     ELSE.
@@ -171,13 +171,13 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_in_st_in_ts_in_st_in.
-    DATA(t1) = CAST zcl_lnt_in_sttmnt_indnttn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_in_st_in_ts_in_st_in.
-    DATA(t1) = CAST zcl_lnt_in_sttmnt_indnttn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/in_statement_indentation.ts:56|.
     t2->source_location = t3.
@@ -185,8 +185,8 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_in_st_in_ts_in_st_in.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/in_statement_indentation.ts:60|.
     t3->source_location = t4.

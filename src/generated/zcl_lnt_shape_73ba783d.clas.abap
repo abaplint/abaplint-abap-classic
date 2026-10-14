@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_73ba783d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_73ba783d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_version ).
+    DATA(t1) = i_version.
     DATA(t2) = i_uri.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->version = t3.
     DATA(t5) = t2.

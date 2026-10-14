@@ -16,8 +16,8 @@ CLASS zcl_lnt_renamer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_renamer IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
@@ -68,7 +68,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD apply_renames.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_renames ).
+    DATA(t1) = i_renames.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/rename/renamer.ts:147|.
     t2->source_location = t3.

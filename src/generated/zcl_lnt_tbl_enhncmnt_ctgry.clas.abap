@@ -91,13 +91,13 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_tb_en_ct_ts_tb_en_ct.
-    DATA(t1) = CAST zcl_lnt_tbl_enhncmnt_ctgry_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_tb_en_ct_ts_tb_en_ct.
-    DATA(t1) = CAST zcl_lnt_tbl_enhncmnt_ctgry_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tabl_enhancement_category.ts:35|.
     t2->source_location = t3.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_tb_en_ct_ts_tb_en_ct.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tabl_enhancement_category.ts:39|.
     t2->source_location = t3.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tabl_enhancement_category.ts:43|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tabl_enhancement_category.ts:35|.
     t2->source_location = t3.
@@ -139,7 +139,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tabl_enhancement_category.ts:39|.
     t2->source_location = t3.

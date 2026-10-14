@@ -47,69 +47,69 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     DATA(t2) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t4) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t4) = t1.
     DATA t5 TYPE int8.
     DATA(t6) = CONV i( zcl_lnt_lexer_module=>ch_space ).
     t5 = t6.
     t3 = t4->add( p0 = t5 ).
     DATA t7 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t8) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t8) = t1.
     DATA t9 TYPE int8.
     DATA(t10) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
     t9 = t10.
     t7 = t8->add( p0 = t9 ).
     DATA t11 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t12) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t12) = t1.
     DATA t13 TYPE int8.
     DATA(t14) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
     t13 = t14.
     t11 = t12->add( p0 = t13 ).
     DATA t15 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t16) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t16) = t1.
     DATA t17 TYPE int8.
     DATA(t18) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
     t17 = t18.
     t15 = t16->add( p0 = t17 ).
     DATA t19 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t20) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t20) = t1.
     DATA t21 TYPE int8.
     DATA(t22) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
     t21 = t22.
     t19 = t20->add( p0 = t21 ).
     DATA t23 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t24) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t24) = t1.
     DATA(t25) = CONV int8( 43 ).
     t23 = t24->add( p0 = t25 ).
     DATA t26 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t27) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t27) = t1.
     DATA(t28) = CONV int8( 40 ).
     t26 = t27->add( p0 = t28 ).
     DATA t29 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t30) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t30) = t1.
     DATA(t31) = CONV int8( 41 ).
     t29 = t30->add( p0 = t31 ).
     DATA t32 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t33) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t33) = t1.
     DATA(t34) = CONV int8( 91 ).
     t32 = t33->add( p0 = t34 ).
     DATA t35 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t36) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t36) = t1.
     DATA(t37) = CONV int8( 93 ).
     t35 = t36->add( p0 = t37 ).
     DATA t38 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t39) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t39) = t1.
     DATA t40 TYPE int8.
     DATA(t41) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
     t40 = t41.
     t38 = t39->add( p0 = t40 ).
     DATA t42 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t43) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t43) = t1.
     DATA t44 TYPE int8.
     DATA(t45) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
     t44 = t45.
     t42 = t43->add( p0 = t44 ).
     DATA t46 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t47) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t47) = t1.
     DATA t48 TYPE int8.
     DATA(t49) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
     t48 = t49.
@@ -117,51 +117,51 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
       zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
     ENDIF.
-    DATA(t50) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
+    DATA(t50) = t1.
     zcl_lnt_lexer_module=>splits = t50.
     DATA t51 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     DATA(t52) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t51 = t52.
     DATA t53 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t54) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t54) = t51.
     DATA t55 TYPE int8.
     DATA(t56) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
     t55 = t56.
     t53 = t54->add( p0 = t55 ).
     DATA t57 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t58) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t58) = t51.
     DATA t59 TYPE int8.
     DATA(t60) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
     t59 = t60.
     t57 = t58->add( p0 = t59 ).
     DATA t61 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t62) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t62) = t51.
     DATA t63 TYPE int8.
     DATA(t64) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
     t63 = t64.
     t61 = t62->add( p0 = t63 ).
     DATA t65 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t66) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t66) = t51.
     DATA(t67) = CONV int8( 40 ).
     t65 = t66->add( p0 = t67 ).
     DATA t68 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t69) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t69) = t51.
     DATA(t70) = CONV int8( 41 ).
     t68 = t69->add( p0 = t70 ).
     DATA t71 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t72) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t72) = t51.
     DATA(t73) = CONV int8( 91 ).
     t71 = t72->add( p0 = t73 ).
     DATA t74 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t75) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t75) = t51.
     DATA(t76) = CONV int8( 93 ).
     t74 = t75->add( p0 = t76 ).
     DATA t77 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t78) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t78) = t51.
     DATA(t79) = CONV int8( 43 ).
     t77 = t78->add( p0 = t79 ).
     DATA t80 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t81) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t81) = t51.
     DATA t82 TYPE int8.
     DATA(t83) = CONV i( zcl_lnt_lexer_module=>ch_at ).
     t82 = t83.
@@ -169,79 +169,79 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
       zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
     ENDIF.
-    DATA(t84) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
+    DATA(t84) = t51.
     zcl_lnt_lexer_module=>bufs = t84.
     DATA t85 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     DATA(t86) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t85 = t86.
     DATA t87 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t88) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t88) = t85.
     DATA t89 TYPE int8.
     DATA(t90) = CONV i( zcl_lnt_lexer_module=>eof ).
     t89 = t90.
     t87 = t88->add( p0 = t89 ).
     DATA t91 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t92) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t92) = t85.
     DATA t93 TYPE int8.
     DATA(t94) = CONV i( zcl_lnt_lexer_module=>ch_space ).
     t93 = t94.
     t91 = t92->add( p0 = t93 ).
     DATA t95 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t96) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t96) = t85.
     DATA t97 TYPE int8.
     DATA(t98) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
     t97 = t98.
     t95 = t96->add( p0 = t97 ).
     DATA t99 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t100) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t100) = t85.
     DATA t101 TYPE int8.
     DATA(t102) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
     t101 = t102.
     t99 = t100->add( p0 = t101 ).
     DATA t103 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t104) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t104) = t85.
     DATA t105 TYPE int8.
     DATA(t106) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
     t105 = t106.
     t103 = t104->add( p0 = t105 ).
     DATA t107 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t108) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t108) = t85.
     DATA t109 TYPE int8.
     DATA(t110) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
     t109 = t110.
     t107 = t108->add( p0 = t109 ).
     DATA t111 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t112) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t112) = t85.
     DATA t113 TYPE int8.
     DATA(t114) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
     t113 = t114.
     t111 = t112->add( p0 = t113 ).
     DATA t115 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t116) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t116) = t85.
     DATA t117 TYPE int8.
     DATA(t118) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
     t117 = t118.
     t115 = t116->add( p0 = t117 ).
     DATA t119 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t120) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t120) = t85.
     DATA(t121) = CONV int8( 40 ).
     t119 = t120->add( p0 = t121 ).
     DATA t122 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t123) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t123) = t85.
     DATA(t124) = CONV int8( 41 ).
     t122 = t123->add( p0 = t124 ).
     DATA t125 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t126) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t126) = t85.
     DATA(t127) = CONV int8( 91 ).
     t125 = t126->add( p0 = t127 ).
     DATA t128 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t129) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t129) = t85.
     DATA(t130) = CONV int8( 93 ).
     t128 = t129->add( p0 = t130 ).
     IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
       zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
     ENDIF.
-    DATA(t131) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).
+    DATA(t131) = t85.
     zcl_lnt_lexer_module=>after_literal = t131.
   ENDMETHOD.
 

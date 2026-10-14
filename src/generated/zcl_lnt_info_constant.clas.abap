@@ -14,12 +14,12 @@ CLASS zcl_lnt_info_constant DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_info_constant IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t1) = i_identifier.
     DATA(t2) = i_name.
     DATA(t3) = i_type_name.
     DATA(t4) = i_visibility_5c1f.
     DATA(t5) = i_value.
-    DATA(t6) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t6) = t1.
     me->identifier = t6.
     DATA(t7) = t2.
     me->name = t7.

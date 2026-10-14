@@ -15,20 +15,20 @@ CLASS zcl_lnt_macros DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_macros IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
+    DATA(t1) = i_global_macros_5535.
     DATA t2 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
     DATA t3 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
     DATA(t4) = NEW zlnt_runtime_map__755fcb8e49f3( ).
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_map__755fcb8e49f3( t3 ).
+    DATA(t5) = t3.
     t2 = t5.
     me->macros = t2.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t6) = t1.
     DATA(t7) = VALUE string( ).
     LOOP AT t6->items INTO t7.
       DATA t8 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
       CLEAR t8.
-      DATA(t9) = CAST zlnt_runtime_map__755fcb8e49f3( me->macros ).
+      DATA(t9) = me->macros.
       DATA t10 TYPE string.
       DATA(t11) = t7.
       DATA(t12) = strlen( t11 ).
@@ -61,7 +61,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
 
   METHOD add_macro.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_contents ).
+    DATA(t2) = i_contents.
     DATA(t3) = i_filename.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/abap/2_statements/expand_macros.ts:34|.
@@ -89,7 +89,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zcl_lnt_shape_9d228663.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_map__755fcb8e49f3( me->macros ).
+    DATA(t4) = me->macros.
     DATA t5 TYPE string.
     DATA(t6) = t1.
     DATA(t7) = strlen( t6 ).

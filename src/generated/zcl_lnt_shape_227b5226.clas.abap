@@ -14,12 +14,12 @@ CLASS zcl_lnt_shape_227b5226 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_language.
     DATA(t2) = i_number.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_text ).
+    DATA(t3) = i_text.
     DATA(t4) = t1.
     me->language = t4.
     DATA(t5) = t2.
     me->number = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->text = t6.
   ENDMETHOD.
 

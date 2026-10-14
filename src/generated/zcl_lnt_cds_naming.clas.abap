@@ -123,13 +123,13 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t32) = t30.
       DATA(t33) = |SingleFile|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t34) = t30.
       DATA(t35) = |Naming|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t36) = t30.
       t29 = t36.
       t27 = t29.
     ELSE.
@@ -147,13 +147,13 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_cd_nm_ts_cd_nmn.
-    DATA(t1) = CAST zcl_lnt_cds_naming_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_cd_nm_ts_cd_nmn.
-    DATA(t1) = CAST zcl_lnt_cds_naming_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:61|.
     t2->source_location = t3.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_cds_nmn_ts_cds_nmn.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:65|.
     t2->source_location = t3.
@@ -169,7 +169,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_in_sr_rl_cds_nmn_ts_cds_nmn.
-    DATA(t1) = CAST zif_lnt_object( i_o ).
+    DATA(t1) = i_o.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:69|.
     t2->source_location = t3.
@@ -177,7 +177,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_allowed_prefixes.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
+    DATA(t1) = i_tree.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:105|.
     t2->source_location = t3.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:61|.
     t2->source_location = t3.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:65|.
     t2->source_location = t3.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_naming.ts:69|.
     t2->source_location = t3.

@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_inf_clss_implmnttn IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_methods ).
+    DATA(t2) = i_identifier.
+    DATA(t3) = i_methods.
     DATA(t4) = t1.
     me->name = t4.
-    DATA(t5) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t5) = t2.
     me->identifier = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t6) = t3.
     me->methods = t6.
   ENDMETHOD.
 

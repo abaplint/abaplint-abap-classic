@@ -21,7 +21,7 @@ CLASS zcl_lnt_end_enhncmnt_sctn IMPLEMENTATION.
     DATA(t5) = |Cloud|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t7) = t1.
     IF t7 IS BOUND.
       CREATE OBJECT t6.
       t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

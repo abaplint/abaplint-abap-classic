@@ -11,14 +11,14 @@ CLASS zcl_lnt_definition DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_definition IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD find_8f95.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_position_a3fd.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/definition.ts:15|.
     t3->source_location = t4.

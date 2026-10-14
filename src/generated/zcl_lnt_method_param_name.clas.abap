@@ -24,7 +24,7 @@ CLASS zcl_lnt_method_param_name IMPLEMENTATION.
     t3->source = t4.
     t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     t1 = t2.
-    DATA(t7) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t7) = t1.
     result = t7.
 
   ENDMETHOD.

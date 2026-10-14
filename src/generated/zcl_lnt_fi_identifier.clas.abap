@@ -17,9 +17,9 @@ CLASS zcl_lnt_fi_identifier DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_token.
     DATA(t2) = i_filename.
-    DATA(t3) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t3) = t1.
     me->token = t3.
     DATA(t4) = t2.
     me->filename = t4.
@@ -29,10 +29,10 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA t3 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t4) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t4) = me->token.
     t3 = t4.
     DATA t5 TYPE string.
-    DATA(t6) = CAST zcl_lnt_abstract_token( t3 ).
+    DATA(t6) = t3.
     t5 = t6->str.
     t2 = t5.
     t1 = t2.
@@ -94,30 +94,30 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD equals.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_position.
     DATA t5 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t6) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zcl_lnt_position.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
     DATA t9 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t10) = CAST zcl_lnt_fi_identifier( t5 ).
+    DATA(t10) = t5.
     t9 = t10->token.
     t8 = t9.
     DATA t11 TYPE REF TO zcl_lnt_position.
-    DATA(t12) = CAST zcl_lnt_abstract_token( t8 ).
+    DATA(t12) = t8.
     t11 = t12->start.
     t7 = t11.
     t4 = t7.
     DATA t13 TYPE REF TO zcl_lnt_position.
     DATA t14 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t15) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t15) = me->token.
     t14 = t15.
     DATA t16 TYPE REF TO zcl_lnt_position.
-    DATA(t17) = CAST zcl_lnt_abstract_token( t14 ).
+    DATA(t17) = t14.
     t16 = t17->start.
     t13 = t16.
     t3 = t4->equals( i_p = t13 ).
@@ -126,10 +126,10 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE string.
       DATA t20 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t21) = CAST zcl_lnt_fi_identifier( t1 ).
+      DATA(t21) = t1.
       t20 = t21.
       DATA t22 TYPE string.
-      DATA(t23) = CAST zcl_lnt_fi_identifier( t20 ).
+      DATA(t23) = t20.
       t22 = t23->filename.
       t19 = t22.
       DATA(t24) = CONV string( me->filename ).
@@ -141,7 +141,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_token.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t1) = me->token.
     result = t1.
 
   ENDMETHOD.
@@ -155,10 +155,10 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
   METHOD get_start.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA t2 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t3) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t3) = me->token.
     t2 = t3.
     DATA t4 TYPE REF TO zcl_lnt_position.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t5) = t2.
     t4 = t5->start.
     t1 = t4.
     result = t1.
@@ -171,35 +171,35 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     DATA t1 TYPE REF TO zcl_lnt_position.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t3) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t3) = me->token.
     t2 = t3.
     DATA t4 TYPE REF TO zcl_lnt_position.
     CLEAR t4.
     DATA t5 TYPE int8.
     DATA t6 TYPE REF TO zcl_lnt_position.
     DATA t7 TYPE REF TO zcl_lnt_position.
-    DATA(t8) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t8) = t2.
     t7 = t8->start.
     t6 = t7.
     DATA t9 TYPE int8.
-    DATA(t10) = CAST zcl_lnt_position( t6 ).
+    DATA(t10) = t6.
     t9 = t10->row.
     t5 = t9.
     DATA t11 TYPE int8.
     DATA t12 TYPE int8.
     DATA t13 TYPE REF TO zcl_lnt_position.
     DATA t14 TYPE REF TO zcl_lnt_position.
-    DATA(t15) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t15) = t2.
     t14 = t15->start.
     t13 = t14.
     DATA t16 TYPE int8.
-    DATA(t17) = CAST zcl_lnt_position( t13 ).
+    DATA(t17) = t13.
     t16 = t17->col.
     t12 = t16.
     DATA t18 TYPE int8.
     DATA t19 TYPE i.
     DATA t20 TYPE string.
-    DATA(t21) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t21) = t2.
     t20 = t21->str.
     DATA(t22) = strlen( t20 ).
     t19 = t22.

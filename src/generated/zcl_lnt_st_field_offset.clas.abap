@@ -22,7 +22,7 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t4.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e ).
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       CREATE OBJECT t4.
@@ -67,7 +67,7 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     CLEAR t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
-    DATA(t23) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18 ).
+    DATA(t23) = zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18.
     IF t23 IS BOUND.
       CREATE OBJECT t22.
       t22->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -79,9 +79,9 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     CREATE OBJECT t25.
     t24 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t27) = CAST zlnt_runtime_dyna_a429568d5be8( t13 ).
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t21 ).
-    DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
+    DATA(t27) = t13.
+    DATA(t28) = t21.
+    DATA(t29) = t24.
     t26 = zcl_lnt_st_combi_module=>alt_prio( i_first = t27 i_second = t28 i_rest = t29 ).
     t12 = t26.
     IF t12 IS BOUND.
@@ -105,13 +105,13 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     CREATE OBJECT t33.
     t32 = t33.
     DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t35) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+    DATA(t35) = t3.
+    DATA(t36) = t8.
+    DATA(t37) = t32.
     t34 = zcl_lnt_st_combi_module=>seq( i_first = t35 i_second = t36 i_rest = t37 ).
     t2 = t34.
     t1 = t2.
-    DATA(t38) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t38) = t1.
     result = t38.
 
   ENDMETHOD.

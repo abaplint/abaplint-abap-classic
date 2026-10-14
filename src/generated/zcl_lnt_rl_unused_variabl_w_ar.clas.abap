@@ -22,8 +22,8 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
-    DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_count ).
+    DATA(t1) = i_id.
+    DATA(t2) = i_count.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_variables.ts:34|.
     t3->source_location = t4.
@@ -31,7 +31,7 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD remove_if_exists.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:42|.
     t2->source_location = t3.
@@ -53,7 +53,7 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_key.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:64|.
     t2->source_location = t3.

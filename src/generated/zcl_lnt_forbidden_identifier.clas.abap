@@ -65,10 +65,10 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t17.
       t16 = t17.
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t18) = t16.
       DATA(t19) = |SingleFile|.
       APPEND t19 TO t18->items.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t20) = t16.
       t15 = t20.
       t13 = t15.
     ELSE.
@@ -86,13 +86,13 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_fr_id_ts_fr_idn.
-    DATA(t1) = CAST zcl_lnt_frbddn_idntfr_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_fr_id_ts_fr_idn.
-    DATA(t1) = CAST zcl_lnt_frbddn_idntfr_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_identifier.ts:36|.
     t2->source_location = t3.
@@ -100,7 +100,7 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_fr_id_ts_fr_idn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_identifier.ts:43|.
     t2->source_location = t3.
@@ -108,8 +108,8 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/forbidden_identifier.ts:56|.
     t3->source_location = t4.
@@ -117,8 +117,8 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_token.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/forbidden_identifier.ts:72|.
     t3->source_location = t4.

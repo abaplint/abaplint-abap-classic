@@ -16,15 +16,15 @@ CLASS zcl_lnt_sub_statement DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sub_statement IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_obj_1ed0 ).
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = t1.
     me->obj = t2.
   ENDMETHOD.
 
   METHOD first.
     DATA t1 TYPE REF TO zif_lnt_statement.
     DATA t2 TYPE REF TO zif_lnt_statement.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
+    DATA(t3) = me->obj.
     DATA t4 TYPE REF TO object.
     t4 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t3 ).
     t2 ?= t4.
@@ -32,19 +32,19 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE abap_bool.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = CAST zif_lnt_statement( t1 ).
+    DATA(t8) = t1.
     t7 = xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_macro_call ).
     t6 = t7.
     IF t7 = abap_false.
       DATA t9 TYPE abap_bool.
-      DATA(t10) = CAST zif_lnt_statement( t1 ).
+      DATA(t10) = t1.
       t9 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_macro_recursion ).
       t6 = t9.
     ENDIF.
     t5 = t6.
     IF t6 = abap_false.
       DATA t11 TYPE abap_bool.
-      DATA(t12) = CAST zif_lnt_statement( t1 ).
+      DATA(t12) = t1.
       t11 = xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_native_sql ).
       t5 = t11.
     ENDIF.
@@ -54,17 +54,17 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
       DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t15.
       t14 = t15.
-      DATA(t16) = CAST zlnt_runtime_arra_8ecd6afe19e0( t14 ).
+      DATA(t16) = t14.
       DATA(t17) = ||.
       APPEND t17 TO t16->items.
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t14 ).
+      DATA(t18) = t14.
       t13 = t18.
       result = t13.
       RETURN.
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t21) = CAST zif_lnt_statement( t1 ).
+    DATA(t21) = t1.
     t20 = t21->get_matcher( ).
     t19 = t20->first( ).
     result = t19.
@@ -87,18 +87,18 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
 
   METHOD class_name.
     DATA t1 TYPE string.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
+    DATA(t2) = me->obj.
     t1 = t2->name.
     result = t1.
 
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t2) = CAST zif_lnt_node( i_parent ).
+    DATA(t1) = i_statements.
+    DATA(t2) = i_parent.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE i.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t5) = t1.
     t4 = lines( t5->items ).
     DATA(t6) = 0.
     t3 = xsdbool( t4 = t6 ).
@@ -114,7 +114,7 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
       DATA(t12) = |Expected |.
       DATA t13 TYPE string.
       DATA t14 TYPE string.
-      DATA(t15) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
+      DATA(t15) = me->obj.
       t14 = t15->name.
       DATA(t16) = strlen( t14 ).
       t13 = t14.
@@ -133,13 +133,13 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
       DATA(t19) = VALUE abap_bool( ).
       DATA t20 TYPE REF TO zif_lnt_statement.
       DATA t21 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+      DATA(t22) = t1.
       DATA t23 TYPE REF TO object.
       CLEAR t23.
       READ TABLE t22->items INDEX 1 INTO t23.
       t21 ?= t23.
       t20 = t21->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
+      DATA(t24) = me->obj.
       DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t25.
       IF t20 IS BOUND.
@@ -153,9 +153,9 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
         ENDWHILE.
       ENDIF.
       IF t19 = abap_true.
-        DATA(t26) = CAST zif_lnt_node( t2 ).
+        DATA(t26) = t2.
         DATA t27 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t28) = t1.
         DATA t29 TYPE REF TO object.
         CLEAR t29.
         READ TABLE t28->items INDEX 1 INTO t29.
@@ -167,18 +167,18 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
         DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CREATE OBJECT t33.
         t32 = t33.
-        DATA(t34) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+        DATA(t34) = t32.
         DATA t35 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t36) = t1.
         DATA t37 TYPE REF TO object.
         CLEAR t37.
         READ TABLE t36->items INDEX 1 INTO t37.
         t35 ?= t37.
         APPEND t35 TO t34->items.
-        DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+        DATA(t38) = t32.
         t31 = t38.
         DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t40) = t1.
         DATA(t41) = 1.
         t39 = t40->splice1_view( p0 = t41 ).
         DATA(t42) = abap_false.
@@ -192,13 +192,13 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
         CLEAR t45.
         DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CREATE OBJECT t46.
-        DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t47) = t1.
         DATA(t48) = abap_true.
         DATA(t49) = VALUE string( ).
         DATA(t50) = |Expected |.
         DATA t51 TYPE string.
         DATA t52 TYPE string.
-        DATA(t53) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
+        DATA(t53) = me->obj.
         t52 = t53->name.
         DATA(t54) = strlen( t52 ).
         t51 = t52.

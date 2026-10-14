@@ -67,13 +67,13 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Quickfix|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |SingleFile|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       t18 = t25.
       t16 = t18.
     ELSE.
@@ -91,11 +91,11 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_f_p_a_p_t_f_ps_an_pr.
-    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+    DATA(t1) = me->conf.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t5) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+    DATA(t5) = me->conf.
     t4 = t5->pseudo.
     t3 = t4.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -103,13 +103,13 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     CLEAR t7.
     t6 = t7.
     DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t9) = t3.
     IF t9 IS INITIAL.
       t8 = abap_true.
     ENDIF.
     t2 = t8.
     IF t2 = abap_true.
-      DATA(t10) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+      DATA(t10) = me->conf.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t11.
       t10->pseudo = t11.
@@ -117,7 +117,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     DATA(t12) = VALUE abap_bool( ).
     DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t15) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+    DATA(t15) = me->conf.
     t14 = t15->pragmas.
     t13 = t14.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -125,24 +125,24 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     CLEAR t17.
     t16 = t17.
     DATA(t18) = VALUE abap_bool( ).
-    DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t13 ).
+    DATA(t19) = t13.
     IF t19 IS INITIAL.
       t18 = abap_true.
     ENDIF.
     t12 = t18.
     IF t12 = abap_true.
-      DATA(t20) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+      DATA(t20) = me->conf.
       DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t21.
       t20->pragmas = t21.
     ENDIF.
-    DATA(t22) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
+    DATA(t22) = me->conf.
     result = t22.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_f_p_a_p_t_f_ps_an_pr.
-    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_pseudo_and_pragma.ts:49|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_f_p_a_p_t_f_ps_an_pr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_pseudo_and_pragma.ts:55|.
     t2->source_location = t3.

@@ -17,17 +17,17 @@ CLASS zcl_lnt_imethod_length_result IMPLEMENTATION.
     DATA(t1) = i_class_name.
     DATA(t2) = i_name.
     DATA(t3) = i_count.
-    DATA(t4) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t5) = CAST zcl_lnt_position( i_pos ).
+    DATA(t4) = i_file.
+    DATA(t5) = i_pos.
     DATA(t6) = t1.
     me->class_name = t6.
     DATA(t7) = t2.
     me->name = t7.
     DATA(t8) = t3.
     me->count = t8.
-    DATA(t9) = CAST zcl_lnt_abap_file( t4 ).
+    DATA(t9) = t4.
     me->file = t9.
-    DATA(t10) = CAST zcl_lnt_position( t5 ).
+    DATA(t10) = t5.
     me->pos = t10.
   ENDMETHOD.
 

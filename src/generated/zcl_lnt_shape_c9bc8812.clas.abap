@@ -11,11 +11,11 @@ CLASS zcl_lnt_shape_c9bc8812 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_c9bc8812 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_url_8ce1 ).
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_handlers ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_url_8ce1.
+    DATA(t2) = i_handlers.
+    DATA(t3) = t1.
     me->url_01ab = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     me->handlers = t4.
   ENDMETHOD.
 

@@ -78,13 +78,13 @@ CLASS zcl_lnt_invalid_table_index IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t22.
       t21 = t22.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t23) = t21.
       DATA(t24) = |SingleFile|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t25) = t21.
       DATA(t26) = |Quickfix|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t27) = t21.
       t20 = t27.
       t18 = t20.
     ELSE.
@@ -102,13 +102,13 @@ CLASS zcl_lnt_invalid_table_index IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_in_tb_in_ts_in_tb_in.
-    DATA(t1) = CAST zcl_lnt_invld_tbl_indx_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_in_tb_in_ts_in_tb_in.
-    DATA(t1) = CAST zcl_lnt_invld_tbl_indx_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/invalid_table_index.ts:34|.
     t2->source_location = t3.
@@ -116,7 +116,7 @@ CLASS zcl_lnt_invalid_table_index IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_in_tb_in_ts_in_tb_in.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/invalid_table_index.ts:38|.
     t2->source_location = t3.

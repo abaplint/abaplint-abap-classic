@@ -14,12 +14,12 @@ CLASS zcl_lnt_recommendations IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
     DATA(t2) = i_replace_2bce.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_from ).
+    DATA(t3) = i_from.
     DATA(t4) = t1.
     me->name = t4.
     DATA(t5) = t2.
     me->replace_128a = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->from = t6.
   ENDMETHOD.
 

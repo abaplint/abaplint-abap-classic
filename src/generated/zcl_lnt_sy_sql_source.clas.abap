@@ -9,11 +9,11 @@ CLASS zcl_lnt_sy_sql_source DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zif_lnt_union_bb14dc41( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     t3 = t4->find_all_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t6.
@@ -27,14 +27,14 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       CLEAR t9.
       DATA(t10) = abap_true.
       IF t10 = abap_true.
-        DATA(t11) = CAST zcl_lnt_expression_node( t6 ).
+        DATA(t11) = t6.
         t9 = t11.
       ELSE.
         DATA t12 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t12.
         t9 = t12.
       ENDIF.
-      DATA(t13) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t13) = t2.
       DATA t14 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t14.
       DATA t15 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -48,8 +48,8 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       RETURN.
     ENDLOOP.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t19) = CAST zif_lnt_union_bb14dc41( t1 ).
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d92_9ef7e4968cfbeb ).
+    DATA(t19) = t1.
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d92_9ef7e4968cfbeb.
     t18 = t19->find_all_expressions( i_type_9913 = t20 ).
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t21.
@@ -63,14 +63,14 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       CLEAR t24.
       DATA(t25) = abap_true.
       IF t25 = abap_true.
-        DATA(t26) = CAST zcl_lnt_expression_node( t21 ).
+        DATA(t26) = t21.
         t24 = t26.
       ELSE.
         DATA t27 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t27.
         t24 = t27.
       ENDIF.
-      DATA(t28) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t28) = t2.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t29.
       DATA t30 TYPE REF TO zlnt_runtime_opti_7f2541396f43.

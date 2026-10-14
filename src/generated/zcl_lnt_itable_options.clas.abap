@@ -15,15 +15,15 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_with_header.
     DATA(t2) = i_key_type.
-    DATA(t3) = CAST zcl_lnt_itable_key( i_primary_key ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_secondary ).
+    DATA(t3) = i_primary_key.
+    DATA(t4) = i_secondary.
     DATA(t5) = t1.
     me->with_header = t5.
     DATA(t6) = t2.
     me->key_type = t6.
-    DATA(t7) = CAST zcl_lnt_itable_key( t3 ).
+    DATA(t7) = t3.
     me->primary_key = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     me->secondary = t8.
   ENDMETHOD.
 

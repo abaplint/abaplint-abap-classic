@@ -13,11 +13,11 @@ ENDCLASS.
 CLASS zcl_lnt_info_method_parameter IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t2) = i_identifier.
     DATA(t3) = i_direction.
     DATA(t4) = t1.
     me->name = t4.
-    DATA(t5) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t5) = t2.
     me->identifier = t5.
     DATA(t6) = t3.
     me->direction = t6.

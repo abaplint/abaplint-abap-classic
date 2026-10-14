@@ -322,16 +322,16 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
       DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t71.
       t70 = t71.
-      DATA(t72) = CAST zlnt_runtime_arra_8ecd6afe19e0( t70 ).
+      DATA(t72) = t70.
       DATA(t73) = |SingleFile|.
       APPEND t73 TO t72->items.
-      DATA(t74) = CAST zlnt_runtime_arra_8ecd6afe19e0( t70 ).
+      DATA(t74) = t70.
       DATA(t75) = |Styleguide|.
       APPEND t75 TO t74->items.
-      DATA(t76) = CAST zlnt_runtime_arra_8ecd6afe19e0( t70 ).
+      DATA(t76) = t70.
       DATA(t77) = |Quickfix|.
       APPEND t77 TO t76->items.
-      DATA(t78) = CAST zlnt_runtime_arra_8ecd6afe19e0( t70 ).
+      DATA(t78) = t70.
       t69 = t78.
       t67 = t69.
     ELSE.
@@ -349,13 +349,13 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ob_st_ts_ob_stt.
-    DATA(t1) = CAST zcl_lnt_obslt_sttmnt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ob_st_ts_ob_stt.
-    DATA(t1) = CAST zcl_lnt_obslt_sttmnt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/obsolete_statement.ts:153|.
     t2->source_location = t3.
@@ -363,7 +363,7 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ob_st_ts_ob_stt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/obsolete_statement.ts:157|.
     t2->source_location = t3.
@@ -371,9 +371,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_statement( i_statement ).
-    DATA(t3) = CAST zcl_lnt_statement_node( i_statement_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
+    DATA(t3) = i_statement_node.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/obsolete_statement.ts:419|.
     t4->source_location = t5.

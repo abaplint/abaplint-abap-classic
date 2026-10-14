@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_ilist_item_t IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_expression_node( i_target_5f8a ).
-    DATA(t3) = CAST zcl_lnt_abstract_type( i_target_type ).
+    DATA(t2) = i_target_5f8a.
+    DATA(t3) = i_target_type.
     DATA(t4) = t1.
     me->name = t4.
-    DATA(t5) = CAST zcl_lnt_expression_node( t2 ).
+    DATA(t5) = t2.
     me->target = t5.
-    DATA(t6) = CAST zcl_lnt_abstract_type( t3 ).
+    DATA(t6) = t3.
     me->target_type = t6.
   ENDMETHOD.
 

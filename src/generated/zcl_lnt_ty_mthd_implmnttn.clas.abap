@@ -8,12 +8,12 @@ CLASS zcl_lnt_ty_mthd_implmnttn DEFINITION PUBLIC INHERITING FROM zcl_lnt_fi_ide
 ENDCLASS.
 CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = i_filename.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_structure.
-    DATA(t6) = CAST zcl_lnt_structure_node( t1 ).
+    DATA(t6) = t1.
     t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_method ).
     t3 = xsdbool( t4 = abap_false ).
@@ -43,20 +43,20 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zcl_lnt_expression_node.
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t16) = CAST zcl_lnt_structure_node( t1 ).
-    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d86_5c0b7073356207 ).
+    DATA(t16) = t1.
+    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d86_5c0b7073356207.
     t15 = t16->find_first_expression( i_type_9913 = t17 ).
     t14 = t15.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t20) = CAST zcl_lnt_expression_node( t14 ).
+    DATA(t20) = t14.
     t19 = t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
     t21 = t22.
     DATA(t23) = VALUE abap_bool( ).
-    DATA(t24) = CAST zcl_lnt_expression_node( t19 ).
+    DATA(t24) = t19.
     IF t24 IS INITIAL.
       t23 = abap_true.
     ENDIF.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
     ENDIF.
     DATA t32 TYPE REF TO zcl_lnt_abstract_token.
     DATA t33 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t34) = CAST zcl_lnt_expression_node( t14 ).
+    DATA(t34) = t14.
     t33 = t34.
     t32 = t33->get_first_token( ).
     DATA(t35) = t2.

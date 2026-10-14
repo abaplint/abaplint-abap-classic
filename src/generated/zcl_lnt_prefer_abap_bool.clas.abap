@@ -81,16 +81,16 @@ CLASS zcl_lnt_prefer_abap_bool IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |Styleguide|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       DATA(t28) = |SingleFile|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t29) = t23.
       DATA(t30) = |Quickfix|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t31) = t23.
       t22 = t31.
       t20 = t22.
     ELSE.
@@ -108,13 +108,13 @@ CLASS zcl_lnt_prefer_abap_bool IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_pr_ab_bl_ts_pr_ab_bl.
-    DATA(t1) = CAST zcl_lnt_prefer_abap_bool_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_pr_ab_bl_ts_pr_ab_bl.
-    DATA(t1) = CAST zcl_lnt_prefer_abap_bool_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_abap_bool.ts:35|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_prefer_abap_bool IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_pr_ab_bl_ts_pr_ab_bl.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_abap_bool.ts:39|.
     t2->source_location = t3.

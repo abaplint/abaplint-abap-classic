@@ -11,11 +11,11 @@ CLASS zcl_lnt_sy_perform_parameter DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_perform_parameter IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t3) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_type_9913.
+    DATA(t3) = t1.
     me->node = t3.
-    DATA(t4) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t4) = t2.
     me->type_cba0 = t4.
   ENDMETHOD.
 

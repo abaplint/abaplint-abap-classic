@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_fix IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_description.
-    DATA(t2) = CAST zlnt_runtime_map__4fdf767b61ba( i_edit ).
+    DATA(t2) = i_edit.
     DATA(t3) = t1.
     me->description = t3.
-    DATA(t4) = CAST zlnt_runtime_map__4fdf767b61ba( t2 ).
+    DATA(t4) = t2.
     me->edit = t4.
   ENDMETHOD.
 

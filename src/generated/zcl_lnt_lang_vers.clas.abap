@@ -21,10 +21,10 @@ ENDCLASS.
 CLASS zcl_lnt_lang_vers IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_lang_version.
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_runnable ).
+    DATA(t2) = i_runnable.
     DATA(t3) = t1.
     me->lang_version = t3.
-    DATA(t4) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t4) = t2.
     me->runnable = t4.
   ENDMETHOD.
 
@@ -43,7 +43,7 @@ CLASS zcl_lnt_lang_vers IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/2_statements/combi.ts:234|.
     t2->source_location = t3.
@@ -72,17 +72,17 @@ CLASS zcl_lnt_lang_vers IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.

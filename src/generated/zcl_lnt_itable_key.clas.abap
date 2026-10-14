@@ -15,13 +15,13 @@ CLASS zcl_lnt_itable_key IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
     DATA(t2) = i_type_9913.
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_key_fields ).
+    DATA(t3) = i_key_fields.
     DATA(t4) = i_is_unique.
     DATA(t5) = t1.
     me->name = t5.
     DATA(t6) = t2.
     me->type_cba0 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t7) = t3.
     me->key_fields = t7.
     DATA(t8) = t4.
     me->is_unique = t8.

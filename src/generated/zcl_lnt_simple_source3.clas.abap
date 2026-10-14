@@ -19,7 +19,7 @@ CLASS zcl_lnt_simple_source3 IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d119_f7714013c01c ).
+    DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d119_f7714013c01c.
     IF t4 IS BOUND.
       CREATE OBJECT t3.
       t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -30,7 +30,7 @@ CLASS zcl_lnt_simple_source3 IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d153_a3333d63766c ).
+    DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d153_a3333d63766c.
     IF t7 IS BOUND.
       CREATE OBJECT t6.
       t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -41,10 +41,10 @@ CLASS zcl_lnt_simple_source3 IMPLEMENTATION.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t9.
     t8 = t9.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t10) = t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t11.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df ).
+    DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df.
     IF t12 IS BOUND.
       CREATE OBJECT t11.
       t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -52,9 +52,9 @@ CLASS zcl_lnt_simple_source3 IMPLEMENTATION.
     ENDIF.
     APPEND t11 TO t10->items.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t14) = t2.
+    DATA(t15) = t5.
+    DATA(t16) = t8.
     t13 = zcl_lnt_st_combi_module=>alt_prio( i_first = t14 i_second = t15 i_rest = t16 ).
     t1 = t13.
     result = t1.

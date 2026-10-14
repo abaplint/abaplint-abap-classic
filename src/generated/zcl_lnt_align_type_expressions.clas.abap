@@ -221,16 +221,16 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
       DATA t52 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t52.
       t51 = t52.
-      DATA(t53) = CAST zlnt_runtime_arra_8ecd6afe19e0( t51 ).
+      DATA(t53) = t51.
       DATA(t54) = |SingleFile|.
       APPEND t54 TO t53->items.
-      DATA(t55) = CAST zlnt_runtime_arra_8ecd6afe19e0( t51 ).
+      DATA(t55) = t51.
       DATA(t56) = |Whitespace|.
       APPEND t56 TO t55->items.
-      DATA(t57) = CAST zlnt_runtime_arra_8ecd6afe19e0( t51 ).
+      DATA(t57) = t51.
       DATA(t58) = |Quickfix|.
       APPEND t58 TO t57->items.
-      DATA(t59) = CAST zlnt_runtime_arra_8ecd6afe19e0( t51 ).
+      DATA(t59) = t51.
       t50 = t59.
       t48 = t50.
     ELSE.
@@ -248,13 +248,13 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_al_ty_ex_ts_al_ty_ex.
-    DATA(t1) = CAST zcl_lnt_algn_typ_exprssns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_al_ty_ex_ts_al_ty_ex.
-    DATA(t1) = CAST zcl_lnt_algn_typ_exprssns_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_type_expressions.ts:70|.
     t2->source_location = t3.
@@ -262,8 +262,8 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_al_ty_ex_ts_al_ty_ex.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/align_type_expressions.ts:74|.
     t3->source_location = t4.
@@ -271,9 +271,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
+    DATA(t1) = i_fields_62af.
     DATA(t2) = i_column.
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/align_type_expressions.ts:100|.
     t4->source_location = t5.
@@ -281,8 +281,8 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_methods.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_stru.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/align_type_expressions.ts:132|.
     t3->source_location = t4.
@@ -290,8 +290,8 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_events.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_stru.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/align_type_expressions.ts:165|.
     t3->source_location = t4.
@@ -299,8 +299,8 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_types.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_stru.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/align_type_expressions.ts:188|.
     t3->source_location = t4.

@@ -46,9 +46,9 @@ CLASS zcl_lnt_set_extended_check IMPLEMENTATION.
     CREATE OBJECT t16.
     t15 = t16.
     DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
-    DATA(t19) = CAST zlnt_runtime_dyna_a429568d5be8( t12 ).
-    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t15 ).
+    DATA(t18) = t9.
+    DATA(t19) = t12.
+    DATA(t20) = t15.
     t17 = zcl_lnt_st_combi_module=>alt( i_first = t18 i_second = t19 i_rest = t20 ).
     t8 = t17.
     IF t8 IS BOUND.
@@ -64,9 +64,9 @@ CLASS zcl_lnt_set_extended_check IMPLEMENTATION.
     CREATE OBJECT t23.
     t22 = t23.
     DATA t24 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t25) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t26) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t27) = CAST zlnt_runtime_arra_c22708faf2e3( t22 ).
+    DATA(t25) = t3.
+    DATA(t26) = t6.
+    DATA(t27) = t22.
     t24 = zcl_lnt_st_combi_module=>seq( i_first = t25 i_second = t26 i_rest = t27 ).
     t2 = t24.
     t1 = t2.
@@ -75,7 +75,7 @@ CLASS zcl_lnt_set_extended_check IMPLEMENTATION.
     DATA(t29) = |Cloud|.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t30.
-    DATA(t31) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t31) = t1.
     IF t31 IS BOUND.
       CREATE OBJECT t30.
       t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

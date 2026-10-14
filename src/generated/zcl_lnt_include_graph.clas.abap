@@ -20,11 +20,11 @@ CLASS zcl_lnt_include_graph DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_include_graph IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_severity ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_allow_unused ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = i_severity.
+    DATA(t3) = i_allow_unused.
     DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     IF t5 IS INITIAL.
       t4 = abap_true.
     ELSEIF t5->has = abap_false.
@@ -48,7 +48,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       t2 = t6.
     ENDIF.
     DATA(t11) = VALUE abap_bool( ).
-    DATA(t12) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t12) = t3.
     IF t12 IS INITIAL.
       t11 = abap_true.
     ELSEIF t12->has = abap_false.
@@ -71,7 +71,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       ENDIF.
       t3 = t13.
     ENDIF.
-    DATA(t18) = CAST zif_lnt_registry( t1 ).
+    DATA(t18) = t1.
     me->reg = t18.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t19.
@@ -79,32 +79,32 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     DATA(t20) = NEW zcl_lnt_graph( ).
     me->graph = t20.
     DATA t21 TYPE string.
-    DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t22) = t2.
     t21 = t22->value.
     me->severity = t21.
     DATA t23 TYPE abap_bool.
-    DATA(t24) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t24) = t3.
     t23 = t24->value.
     me->allow_unused = t23.
     me->build( ).
   ENDMETHOD.
 
   METHOD l_m_f_i_i_sr_ut_in_gr_ts_in_gr.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
     DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t8.
     t7 = t8.
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t10) = t5.
     IF t10 IS INITIAL.
       t9 = abap_true.
     ELSEIF t10->has = abap_false.
@@ -118,9 +118,9 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t13) = CAST zcl_lnt_graph( me->graph ).
+    DATA(t13) = me->graph.
     DATA t14 TYPE string.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t15) = t1.
     t14 = t15->value.
     t12 = t13->find_top( i_filename = t14 ).
     DATA t16 TYPE REF TO zcl_lnt_ivertex.
@@ -131,25 +131,25 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       t16 ?= t17.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE abap_bool.
-      DATA(t20) = CAST zcl_lnt_ivertex( t16 ).
+      DATA(t20) = t16.
       t19 = t20->include_3f11.
       DATA(t21) = abap_false.
       t18 = xsdbool( t19 = t21 ).
       IF t18 = abap_true.
-        DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+        DATA(t22) = t2.
         DATA t23 TYPE string.
-        DATA(t24) = CAST zcl_lnt_ivertex( t16 ).
+        DATA(t24) = t16.
         t23 = t24->filename.
         APPEND t23 TO t22->items.
       ENDIF.
     ENDLOOP.
-    DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t25) = t2.
     result = t25.
 
   ENDMETHOD.
 
   METHOD get_issues_file.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/utils/include_graph.ts:112|.
     t2->source_location = t3.
@@ -159,7 +159,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
   METHOD build.
     me->add_vertices( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zif_lnt_registry( me->reg ).
+    DATA(t2) = me->reg.
     t1 = zcl_lnt_include_graph_module=>get_abap_objects( i_reg_f149 = t2 ).
     DATA t3 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t3.
@@ -169,10 +169,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       t3 ?= t4.
       DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t6 TYPE REF TO zcl_lnt_abap_object.
-      DATA(t7) = CAST zcl_lnt_abap_object( t3 ).
+      DATA(t7) = t3.
       t6 = t7.
       DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t9) = CAST zcl_lnt_abap_object( t6 ).
+      DATA(t9) = t6.
       t8 = t9->parsed.
       t5 = t8.
       DATA t10 TYPE REF TO zcl_lnt_abap_file.
@@ -186,10 +186,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
         DATA(t14) = VALUE i( ).
         DATA t15 TYPE string.
         DATA t16 TYPE REF TO zcl_lnt_abstract_file.
-        DATA(t17) = CAST zcl_lnt_abap_file( t10 ).
+        DATA(t17) = t10.
         t16 = t17.
         DATA t18 TYPE string.
-        DATA(t19) = CAST zcl_lnt_abstract_file( t16 ).
+        DATA(t19) = t16.
         t18 = t19->filename.
         t15 = t18.
         DATA(t20) = |.prog.screen_|.
@@ -210,10 +210,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA(t24) = VALUE i( ).
           DATA t25 TYPE string.
           DATA t26 TYPE REF TO zcl_lnt_abstract_file.
-          DATA(t27) = CAST zcl_lnt_abap_file( t10 ).
+          DATA(t27) = t10.
           t26 = t27.
           DATA t28 TYPE string.
-          DATA(t29) = CAST zcl_lnt_abstract_file( t26 ).
+          DATA(t29) = t26.
           t28 = t29->filename.
           t25 = t28.
           DATA(t30) = |.fugr.screen_|.
@@ -235,10 +235,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
         ENDIF.
         DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t34 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t35) = CAST zcl_lnt_abap_file( t10 ).
+        DATA(t35) = t10.
         t34 = t35.
         DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t37) = CAST zcl_lnt_abap_file( t34 ).
+        DATA(t37) = t34.
         t36 = t37->statements.
         t33 = t36.
         DATA t38 TYPE REF TO zcl_lnt_statement_node.
@@ -249,26 +249,26 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           t38 ?= t39.
           DATA t40 TYPE abap_bool.
           DATA t41 TYPE REF TO zif_lnt_statement.
-          DATA(t42) = CAST zcl_lnt_statement_node( t38 ).
+          DATA(t42) = t38.
           t41 = t42->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t40 = xsdbool( t41 IS BOUND AND t41 IS INSTANCE OF zcl_lnt_include ).
           IF t40 = abap_true.
             DATA t43 TYPE REF TO zcl_lnt_expression_node.
             DATA t44 TYPE REF TO zcl_lnt_expression_node.
-            DATA(t45) = CAST zcl_lnt_statement_node( t38 ).
-            DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d83_c58d804fe3d16b ).
+            DATA(t45) = t38.
+            DATA(t46) = zlnt_runtime_desc_78196487750d=>zlnt_member_d83_c58d804fe3d16b.
             t44 = t45->find_first_expression( i_type_9913 = t46 ).
             t43 = t44.
             DATA(t47) = VALUE abap_bool( ).
             DATA t48 TYPE REF TO zcl_lnt_expression_node.
-            DATA(t49) = CAST zcl_lnt_expression_node( t43 ).
+            DATA(t49) = t43.
             t48 = t49.
             DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t51.
             t50 = t51.
             DATA(t52) = VALUE abap_bool( ).
-            DATA(t53) = CAST zcl_lnt_expression_node( t48 ).
+            DATA(t53) = t48.
             IF t53 IS INITIAL.
               t52 = abap_true.
             ENDIF.
@@ -303,12 +303,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t64 TYPE REF TO zcl_lnt_abstract_token.
             DATA t65 TYPE REF TO zcl_lnt_abstract_token.
             DATA t66 TYPE REF TO zcl_lnt_expression_node.
-            DATA(t67) = CAST zcl_lnt_expression_node( t43 ).
+            DATA(t67) = t43.
             t66 = t67.
             t65 = t66->get_first_token( ).
             t64 = t65.
             DATA t68 TYPE string.
-            DATA(t69) = CAST zcl_lnt_abstract_token( t64 ).
+            DATA(t69) = t64.
             t68 = t69->str.
             t63 = t68.
             DATA(t70) = strlen( t63 ).
@@ -341,7 +341,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t78 TYPE REF TO zcl_lnt_ivertex.
             CLEAR t78.
             DATA t79 TYPE REF TO zcl_lnt_graph.
-            DATA(t80) = CAST zcl_lnt_graph( me->graph ).
+            DATA(t80) = me->graph.
             t79 = t80.
             DATA t81 TYPE string.
             DATA(t82) = t61.
@@ -349,7 +349,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t83 TYPE REF TO zcl_lnt_ivertex.
             CLEAR t83.
             DATA t84 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-            DATA(t85) = CAST zcl_lnt_graph( t79 ).
+            DATA(t85) = t79.
             t84 = t85->vertices_includename_index.
             DATA t86 TYPE string.
             DATA(t87) = t81.
@@ -365,14 +365,14 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             t77 = t78.
             DATA(t89) = VALUE abap_bool( ).
             DATA t90 TYPE REF TO zcl_lnt_ivertex.
-            DATA(t91) = CAST zcl_lnt_ivertex( t77 ).
+            DATA(t91) = t77.
             t90 = t91.
             DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t93.
             t92 = t93.
             DATA(t94) = VALUE abap_bool( ).
-            DATA(t95) = CAST zcl_lnt_ivertex( t90 ).
+            DATA(t95) = t90.
             IF t95 IS INITIAL.
               t94 = abap_true.
             ENDIF.
@@ -383,7 +383,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA(t98) = VALUE i( ).
               DATA t99 TYPE string.
               DATA t100 TYPE string.
-              DATA(t101) = CAST zcl_lnt_statement_node( t38 ).
+              DATA(t101) = t38.
               t100 = t101->concat_tokens( ).
               DATA(t102) = strlen( t100 ).
               t99 = t100.
@@ -414,8 +414,8 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 CLEAR t109.
                 DATA t110 TYPE REF TO zcl_lnt_issue.
                 CLEAR t110.
-                DATA(t111) = CAST zcl_lnt_abap_file( t10 ).
-                DATA(t112) = CAST zcl_lnt_statement_node( t38 ).
+                DATA(t111) = t10.
+                DATA(t112) = t38.
                 DATA t113 TYPE string.
                 DATA t114 TYPE string.
                 DATA(t115) = |Include |.
@@ -483,10 +483,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   DATA t143 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                   CREATE OBJECT t143.
                   t142 = t143.
-                  DATA(t144) = CAST zlnt_runtime_arra_8ecd6afe19e0( t142 ).
+                  DATA(t144) = t142.
                   DATA(t145) = |Syntax|.
                   APPEND t145 TO t144->items.
-                  DATA(t146) = CAST zlnt_runtime_arra_8ecd6afe19e0( t142 ).
+                  DATA(t146) = t142.
                   t141 = t146.
                   t139 = t141.
                 ELSE.
@@ -521,15 +521,15 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 CLEAR t156.
                 t110 = zcl_lnt_issue=>at_statement( i_file = t111 i_statement = t112 i_message_26cb = t113 i_key = t120 i_severity = t150 i_fix = t155 i_alternative_fixes = t156 ).
                 t109 = t110.
-                DATA(t157) = CAST zlnt_runtime_arra_c22708faf2e3( me->issues ).
-                DATA(t158) = CAST zcl_lnt_issue( t109 ).
+                DATA(t157) = me->issues.
+                DATA(t158) = t109.
                 APPEND t158 TO t157->items.
               ENDIF.
             ELSE.
               DATA t159 TYPE abap_bool.
               DATA t160 TYPE abap_bool.
               DATA t161 TYPE REF TO zcl_lnt_ivertex.
-              DATA(t162) = CAST zcl_lnt_ivertex( t77 ).
+              DATA(t162) = t77.
               t161 = t162.
               t160 = t161->include_3f11.
               DATA(t163) = abap_false.
@@ -539,8 +539,8 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 CLEAR t164.
                 DATA t165 TYPE REF TO zcl_lnt_issue.
                 CLEAR t165.
-                DATA(t166) = CAST zcl_lnt_abap_file( t10 ).
-                DATA(t167) = CAST zcl_lnt_statement_node( t38 ).
+                DATA(t166) = t10.
+                DATA(t167) = t38.
                 DATA t168 TYPE string.
                 DATA(t169) = |Not possible to INCLUDE a main program, |.
                 DATA(t170) = t61.
@@ -604,10 +604,10 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   DATA t195 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                   CREATE OBJECT t195.
                   t194 = t195.
-                  DATA(t196) = CAST zlnt_runtime_arra_8ecd6afe19e0( t194 ).
+                  DATA(t196) = t194.
                   DATA(t197) = |Syntax|.
                   APPEND t197 TO t196->items.
-                  DATA(t198) = CAST zlnt_runtime_arra_8ecd6afe19e0( t194 ).
+                  DATA(t198) = t194.
                   t193 = t198.
                   t191 = t193.
                 ELSE.
@@ -642,20 +642,20 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 CLEAR t208.
                 t165 = zcl_lnt_issue=>at_statement( i_file = t166 i_statement = t167 i_message_26cb = t168 i_key = t172 i_severity = t202 i_fix = t207 i_alternative_fixes = t208 ).
                 t164 = t165.
-                DATA(t209) = CAST zlnt_runtime_arra_c22708faf2e3( me->issues ).
-                DATA(t210) = CAST zcl_lnt_issue( t164 ).
+                DATA(t209) = me->issues.
+                DATA(t210) = t164.
                 APPEND t210 TO t209->items.
               ELSE.
-                DATA(t211) = CAST zcl_lnt_graph( me->graph ).
+                DATA(t211) = me->graph.
                 DATA t212 TYPE REF TO zcl_lnt_ivertex.
-                DATA(t213) = CAST zcl_lnt_ivertex( t77 ).
+                DATA(t213) = t77.
                 t212 = t213.
                 DATA t214 TYPE string.
                 DATA t215 TYPE REF TO zcl_lnt_abstract_file.
-                DATA(t216) = CAST zcl_lnt_abap_file( t10 ).
+                DATA(t216) = t10.
                 t215 = t216.
                 DATA t217 TYPE string.
-                DATA(t218) = CAST zcl_lnt_abstract_file( t215 ).
+                DATA(t218) = t215.
                 t217 = t218->filename.
                 t214 = t217.
                 t211->add_edge( i_from = t212 i_to_filename = t214 ).
@@ -669,7 +669,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
 
   METHOD add_vertices.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zif_lnt_registry( me->reg ).
+    DATA(t2) = me->reg.
     t1 = zcl_lnt_include_graph_module=>get_abap_objects( i_reg_f149 = t2 ).
     DATA t3 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t3.
@@ -678,22 +678,22 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     LOOP AT t1->items INTO t4.
       t3 ?= t4.
       DATA t5 TYPE abap_bool.
-      DATA(t6) = CAST zcl_lnt_abap_object( t3 ).
+      DATA(t6) = t3.
       t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_ob_program ).
       IF t5 = abap_true.
         DATA t7 TYPE REF TO zcl_lnt_abap_file.
         DATA t8 TYPE REF TO zcl_lnt_abap_file.
         DATA t9 TYPE REF TO zcl_lnt_ob_program.
-        DATA(t10) = CAST zcl_lnt_abap_object( t3 ).
+        DATA(t10) = t3.
         t9 ?= t10.
         t8 = t9->get_main_abap_file( ).
         t7 = t8.
         DATA t11 TYPE abap_bool.
-        DATA(t12) = CAST zcl_lnt_abap_file( t7 ).
+        DATA(t12) = t7.
         t11 = xsdbool( t12 IS BOUND ).
         IF t11 = abap_true.
           DATA t13 TYPE REF TO zcl_lnt_graph.
-          DATA(t14) = CAST zcl_lnt_graph( me->graph ).
+          DATA(t14) = me->graph.
           t13 = t14.
           DATA t15 TYPE REF TO zcl_lnt_ivertex.
           CLEAR t15.
@@ -702,11 +702,11 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA t17 TYPE string.
           DATA t18 TYPE REF TO zcl_lnt_abstract_file.
           DATA t19 TYPE REF TO zcl_lnt_abap_file.
-          DATA(t20) = CAST zcl_lnt_abap_file( t7 ).
+          DATA(t20) = t7.
           t19 = t20.
           t18 = t19.
           DATA t21 TYPE string.
-          DATA(t22) = CAST zcl_lnt_abstract_file( t18 ).
+          DATA(t22) = t18.
           t21 = t22->filename.
           t17 = t21.
           DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -716,11 +716,11 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t25 TYPE string.
             DATA t26 TYPE REF TO zcl_lnt_abstract_object.
             DATA t27 TYPE REF TO zcl_lnt_ob_program.
-            DATA(t28) = CAST zcl_lnt_abap_object( t3 ).
+            DATA(t28) = t3.
             t27 ?= t28.
             t26 = t27.
             DATA t29 TYPE string.
-            DATA(t30) = CAST zcl_lnt_abstract_object( t26 ).
+            DATA(t30) = t26.
             t29 = t30->name.
             t25 = t29.
             DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -735,16 +735,16 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA t33 TYPE abap_bool.
           DATA t34 TYPE REF TO zcl_lnt_ob_program.
           DATA t35 TYPE REF TO zcl_lnt_ob_program.
-          DATA(t36) = CAST zcl_lnt_abap_object( t3 ).
+          DATA(t36) = t3.
           t35 ?= t36.
           t34 = t35.
           DATA t37 TYPE abap_bool.
-          DATA(t38) = CAST zcl_lnt_ob_program( t34 ).
+          DATA(t38) = t34.
           t38->parse_xml( ).
           DATA t39 TYPE abap_bool.
           DATA t40 TYPE REF TO zcl_lnt_shape_e86506f0.
           DATA t41 TYPE REF TO zcl_lnt_shape_e86506f0.
-          DATA(t42) = CAST zcl_lnt_ob_program( t34 ).
+          DATA(t42) = t34.
           t41 = t42->parsed_xml.
           t40 = t41.
           t39 = t40->is_include.
@@ -755,7 +755,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA(t43) = VALUE abap_bool( ).
           DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           DATA t45 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t46) = CAST zcl_lnt_ivertex( t15 ).
+          DATA(t46) = t15.
           t45 = t46->include_name.
           t44 = t45.
           DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -764,7 +764,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           t47 = t48.
           DATA(t49) = VALUE abap_bool( ).
           DATA(t50) = VALUE abap_bool( ).
-          DATA(t51) = CAST zlnt_runtime_opti_4ba3bdccd169( t44 ).
+          DATA(t51) = t44.
           IF t51 IS INITIAL.
             t50 = abap_true.
           ELSEIF t51->has = abap_false.
@@ -776,12 +776,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t52 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
             CLEAR t52.
             DATA t53 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-            DATA(t54) = CAST zcl_lnt_graph( t13 ).
+            DATA(t54) = t13.
             t53 = t54->vertices_includename_index.
             DATA t55 TYPE string.
             DATA t56 TYPE string.
             DATA t57 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            DATA(t58) = CAST zcl_lnt_ivertex( t15 ).
+            DATA(t58) = t15.
             t57 = t58->include_name.
             t56 = t57->value.
             DATA(t59) = strlen( t56 ).
@@ -791,17 +791,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             ELSE.
               t55 = zlnt_runtime_uppe_91169605024d=>full( t55 ).
             ENDIF.
-            DATA(t60) = CAST zcl_lnt_ivertex( t15 ).
+            DATA(t60) = t15.
             t52 = t53->set( p0 = t55 p1 = t60 ).
           ENDIF.
           DATA t61 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
           CLEAR t61.
           DATA t62 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-          DATA(t63) = CAST zcl_lnt_graph( t13 ).
+          DATA(t63) = t13.
           t62 = t63->vertices_filename_index.
           DATA t64 TYPE string.
           DATA t65 TYPE string.
-          DATA(t66) = CAST zcl_lnt_ivertex( t15 ).
+          DATA(t66) = t15.
           t65 = t66->filename.
           DATA(t67) = strlen( t65 ).
           t64 = t65.
@@ -810,38 +810,38 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           ELSE.
             t64 = zlnt_runtime_uppe_91169605024d=>full( t64 ).
           ENDIF.
-          DATA(t68) = CAST zcl_lnt_ivertex( t15 ).
+          DATA(t68) = t15.
           t61 = t62->set( p0 = t64 p1 = t68 ).
         ENDIF.
       ELSE.
         DATA t69 TYPE abap_bool.
-        DATA(t70) = CAST zcl_lnt_abap_object( t3 ).
+        DATA(t70) = t3.
         t69 = xsdbool( t70 IS BOUND AND t70 IS INSTANCE OF zcl_lnt_ob_type_pool ).
         IF t69 = abap_true.
           DATA t71 TYPE REF TO zcl_lnt_abap_file.
           DATA t72 TYPE REF TO zcl_lnt_abap_file.
           DATA t73 TYPE REF TO zcl_lnt_ob_type_pool.
-          DATA(t74) = CAST zcl_lnt_abap_object( t3 ).
+          DATA(t74) = t3.
           t73 ?= t74.
           t72 = t73->get_main_abap_file( ).
           t71 = t72.
           DATA t75 TYPE abap_bool.
-          DATA(t76) = CAST zcl_lnt_abap_file( t71 ).
+          DATA(t76) = t71.
           t75 = xsdbool( t76 IS BOUND ).
           IF t75 = abap_true.
             DATA t77 TYPE REF TO zcl_lnt_graph.
-            DATA(t78) = CAST zcl_lnt_graph( me->graph ).
+            DATA(t78) = me->graph.
             t77 = t78.
             DATA t79 TYPE REF TO zcl_lnt_ivertex.
             DATA t80 TYPE REF TO zcl_lnt_ivertex.
             DATA t81 TYPE string.
             DATA t82 TYPE REF TO zcl_lnt_abstract_file.
             DATA t83 TYPE REF TO zcl_lnt_abap_file.
-            DATA(t84) = CAST zcl_lnt_abap_file( t71 ).
+            DATA(t84) = t71.
             t83 = t84.
             t82 = t83.
             DATA t85 TYPE string.
-            DATA(t86) = CAST zcl_lnt_abstract_file( t82 ).
+            DATA(t86) = t82.
             t85 = t86->filename.
             t81 = t85.
             DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -852,7 +852,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA(t89) = VALUE abap_bool( ).
             DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            DATA(t92) = CAST zcl_lnt_ivertex( t79 ).
+            DATA(t92) = t79.
             t91 = t92->include_name.
             t90 = t91.
             DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -861,7 +861,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             t93 = t94.
             DATA(t95) = VALUE abap_bool( ).
             DATA(t96) = VALUE abap_bool( ).
-            DATA(t97) = CAST zlnt_runtime_opti_4ba3bdccd169( t90 ).
+            DATA(t97) = t90.
             IF t97 IS INITIAL.
               t96 = abap_true.
             ELSEIF t97->has = abap_false.
@@ -873,12 +873,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA t98 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
               CLEAR t98.
               DATA t99 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-              DATA(t100) = CAST zcl_lnt_graph( t77 ).
+              DATA(t100) = t77.
               t99 = t100->vertices_includename_index.
               DATA t101 TYPE string.
               DATA t102 TYPE string.
               DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              DATA(t104) = CAST zcl_lnt_ivertex( t79 ).
+              DATA(t104) = t79.
               t103 = t104->include_name.
               t102 = t103->value.
               DATA(t105) = strlen( t102 ).
@@ -888,17 +888,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               ELSE.
                 t101 = zlnt_runtime_uppe_91169605024d=>full( t101 ).
               ENDIF.
-              DATA(t106) = CAST zcl_lnt_ivertex( t79 ).
+              DATA(t106) = t79.
               t98 = t99->set( p0 = t101 p1 = t106 ).
             ENDIF.
             DATA t107 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
             CLEAR t107.
             DATA t108 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-            DATA(t109) = CAST zcl_lnt_graph( t77 ).
+            DATA(t109) = t77.
             t108 = t109->vertices_filename_index.
             DATA t110 TYPE string.
             DATA t111 TYPE string.
-            DATA(t112) = CAST zcl_lnt_ivertex( t79 ).
+            DATA(t112) = t79.
             t111 = t112->filename.
             DATA(t113) = strlen( t111 ).
             t110 = t111.
@@ -907,17 +907,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             ELSE.
               t110 = zlnt_runtime_uppe_91169605024d=>full( t110 ).
             ENDIF.
-            DATA(t114) = CAST zcl_lnt_ivertex( t79 ).
+            DATA(t114) = t79.
             t107 = t108->set( p0 = t110 p1 = t114 ).
           ENDIF.
         ELSE.
           DATA t115 TYPE abap_bool.
-          DATA(t116) = CAST zcl_lnt_abap_object( t3 ).
+          DATA(t116) = t3.
           t115 = xsdbool( t116 IS BOUND AND t116 IS INSTANCE OF zcl_lnt_class ).
           IF t115 = abap_true.
             DATA t117 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t118 TYPE REF TO zcl_lnt_class.
-            DATA(t119) = CAST zcl_lnt_abap_object( t3 ).
+            DATA(t119) = t3.
             t118 ?= t119.
             t117 = t118->get_sequenced_files( ).
             DATA t120 TYPE REF TO zcl_lnt_abap_file.
@@ -927,16 +927,16 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             LOOP AT t117->items INTO t121.
               t120 ?= t121.
               DATA t122 TYPE REF TO zcl_lnt_graph.
-              DATA(t123) = CAST zcl_lnt_graph( me->graph ).
+              DATA(t123) = me->graph.
               t122 = t123.
               DATA t124 TYPE REF TO zcl_lnt_ivertex.
               DATA t125 TYPE REF TO zcl_lnt_ivertex.
               DATA t126 TYPE string.
               DATA t127 TYPE REF TO zcl_lnt_abstract_file.
-              DATA(t128) = CAST zcl_lnt_abap_file( t120 ).
+              DATA(t128) = t120.
               t127 = t128.
               DATA t129 TYPE string.
-              DATA(t130) = CAST zcl_lnt_abstract_file( t127 ).
+              DATA(t130) = t127.
               t129 = t130->filename.
               t126 = t129.
               DATA t131 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -947,7 +947,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA(t133) = VALUE abap_bool( ).
               DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               DATA t135 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              DATA(t136) = CAST zcl_lnt_ivertex( t124 ).
+              DATA(t136) = t124.
               t135 = t136->include_name.
               t134 = t135.
               DATA t137 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -956,7 +956,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               t137 = t138.
               DATA(t139) = VALUE abap_bool( ).
               DATA(t140) = VALUE abap_bool( ).
-              DATA(t141) = CAST zlnt_runtime_opti_4ba3bdccd169( t134 ).
+              DATA(t141) = t134.
               IF t141 IS INITIAL.
                 t140 = abap_true.
               ELSEIF t141->has = abap_false.
@@ -968,12 +968,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t142 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
                 CLEAR t142.
                 DATA t143 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-                DATA(t144) = CAST zcl_lnt_graph( t122 ).
+                DATA(t144) = t122.
                 t143 = t144->vertices_includename_index.
                 DATA t145 TYPE string.
                 DATA t146 TYPE string.
                 DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                DATA(t148) = CAST zcl_lnt_ivertex( t124 ).
+                DATA(t148) = t124.
                 t147 = t148->include_name.
                 t146 = t147->value.
                 DATA(t149) = strlen( t146 ).
@@ -983,17 +983,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 ELSE.
                   t145 = zlnt_runtime_uppe_91169605024d=>full( t145 ).
                 ENDIF.
-                DATA(t150) = CAST zcl_lnt_ivertex( t124 ).
+                DATA(t150) = t124.
                 t142 = t143->set( p0 = t145 p1 = t150 ).
               ENDIF.
               DATA t151 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
               CLEAR t151.
               DATA t152 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-              DATA(t153) = CAST zcl_lnt_graph( t122 ).
+              DATA(t153) = t122.
               t152 = t153->vertices_filename_index.
               DATA t154 TYPE string.
               DATA t155 TYPE string.
-              DATA(t156) = CAST zcl_lnt_ivertex( t124 ).
+              DATA(t156) = t124.
               t155 = t156->filename.
               DATA(t157) = strlen( t155 ).
               t154 = t155.
@@ -1002,17 +1002,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               ELSE.
                 t154 = zlnt_runtime_uppe_91169605024d=>full( t154 ).
               ENDIF.
-              DATA(t158) = CAST zcl_lnt_ivertex( t124 ).
+              DATA(t158) = t124.
               t151 = t152->set( p0 = t154 p1 = t158 ).
             ENDLOOP.
           ELSE.
             DATA t159 TYPE abap_bool.
-            DATA(t160) = CAST zcl_lnt_abap_object( t3 ).
+            DATA(t160) = t3.
             t159 = xsdbool( t160 IS BOUND AND t160 IS INSTANCE OF zcl_lnt_function_group ).
             IF t159 = abap_true.
               DATA t161 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t162 TYPE REF TO zcl_lnt_function_group.
-              DATA(t163) = CAST zcl_lnt_abap_object( t3 ).
+              DATA(t163) = t3.
               t162 ?= t163.
               t161 = t162->get_include_files( ).
               DATA t164 TYPE REF TO zcl_lnt_shape_124357cf.
@@ -1022,7 +1022,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               LOOP AT t161->items INTO t165.
                 t164 ?= t165.
                 DATA t166 TYPE REF TO zcl_lnt_graph.
-                DATA(t167) = CAST zcl_lnt_graph( me->graph ).
+                DATA(t167) = me->graph.
                 t166 = t167.
                 DATA t168 TYPE REF TO zcl_lnt_ivertex.
                 CLEAR t168.
@@ -1031,11 +1031,11 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t170 TYPE string.
                 DATA t171 TYPE REF TO zcl_lnt_abstract_file.
                 DATA t172 TYPE REF TO zcl_lnt_abap_file.
-                DATA(t173) = CAST zcl_lnt_shape_124357cf( t164 ).
+                DATA(t173) = t164.
                 t172 = t173->file.
                 t171 = t172.
                 DATA t174 TYPE string.
-                DATA(t175) = CAST zcl_lnt_abstract_file( t171 ).
+                DATA(t175) = t171.
                 t174 = t175->filename.
                 t170 = t174.
                 DATA t176 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1043,7 +1043,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA(t177) = abap_true.
                 IF t177 = abap_true.
                   DATA t178 TYPE string.
-                  DATA(t179) = CAST zcl_lnt_shape_124357cf( t164 ).
+                  DATA(t179) = t164.
                   t178 = t179->name.
                   DATA(t180) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                   t180->has = abap_true.
@@ -1060,7 +1060,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA(t183) = VALUE abap_bool( ).
                 DATA t184 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                DATA(t186) = CAST zcl_lnt_ivertex( t168 ).
+                DATA(t186) = t168.
                 t185 = t186->include_name.
                 t184 = t185.
                 DATA t187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1069,7 +1069,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 t187 = t188.
                 DATA(t189) = VALUE abap_bool( ).
                 DATA(t190) = VALUE abap_bool( ).
-                DATA(t191) = CAST zlnt_runtime_opti_4ba3bdccd169( t184 ).
+                DATA(t191) = t184.
                 IF t191 IS INITIAL.
                   t190 = abap_true.
                 ELSEIF t191->has = abap_false.
@@ -1081,12 +1081,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   DATA t192 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
                   CLEAR t192.
                   DATA t193 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-                  DATA(t194) = CAST zcl_lnt_graph( t166 ).
+                  DATA(t194) = t166.
                   t193 = t194->vertices_includename_index.
                   DATA t195 TYPE string.
                   DATA t196 TYPE string.
                   DATA t197 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                  DATA(t198) = CAST zcl_lnt_ivertex( t168 ).
+                  DATA(t198) = t168.
                   t197 = t198->include_name.
                   t196 = t197->value.
                   DATA(t199) = strlen( t196 ).
@@ -1096,17 +1096,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   ELSE.
                     t195 = zlnt_runtime_uppe_91169605024d=>full( t195 ).
                   ENDIF.
-                  DATA(t200) = CAST zcl_lnt_ivertex( t168 ).
+                  DATA(t200) = t168.
                   t192 = t193->set( p0 = t195 p1 = t200 ).
                 ENDIF.
                 DATA t201 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
                 CLEAR t201.
                 DATA t202 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-                DATA(t203) = CAST zcl_lnt_graph( t166 ).
+                DATA(t203) = t166.
                 t202 = t203->vertices_filename_index.
                 DATA t204 TYPE string.
                 DATA t205 TYPE string.
-                DATA(t206) = CAST zcl_lnt_ivertex( t168 ).
+                DATA(t206) = t168.
                 t205 = t206->filename.
                 DATA(t207) = strlen( t205 ).
                 t204 = t205.
@@ -1115,33 +1115,33 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 ELSE.
                   t204 = zlnt_runtime_uppe_91169605024d=>full( t204 ).
                 ENDIF.
-                DATA(t208) = CAST zcl_lnt_ivertex( t168 ).
+                DATA(t208) = t168.
                 t201 = t202->set( p0 = t204 p1 = t208 ).
               ENDLOOP.
               DATA t209 TYPE REF TO zcl_lnt_abap_file.
               DATA t210 TYPE REF TO zcl_lnt_abap_file.
               DATA t211 TYPE REF TO zcl_lnt_function_group.
-              DATA(t212) = CAST zcl_lnt_abap_object( t3 ).
+              DATA(t212) = t3.
               t211 ?= t212.
               t210 = t211->get_main_abap_file( ).
               t209 = t210.
               DATA t213 TYPE abap_bool.
-              DATA(t214) = CAST zcl_lnt_abap_file( t209 ).
+              DATA(t214) = t209.
               t213 = xsdbool( t214 IS BOUND ).
               IF t213 = abap_true.
                 DATA t215 TYPE REF TO zcl_lnt_graph.
-                DATA(t216) = CAST zcl_lnt_graph( me->graph ).
+                DATA(t216) = me->graph.
                 t215 = t216.
                 DATA t217 TYPE REF TO zcl_lnt_ivertex.
                 DATA t218 TYPE REF TO zcl_lnt_ivertex.
                 DATA t219 TYPE string.
                 DATA t220 TYPE REF TO zcl_lnt_abstract_file.
                 DATA t221 TYPE REF TO zcl_lnt_abap_file.
-                DATA(t222) = CAST zcl_lnt_abap_file( t209 ).
+                DATA(t222) = t209.
                 t221 = t222.
                 t220 = t221.
                 DATA t223 TYPE string.
-                DATA(t224) = CAST zcl_lnt_abstract_file( t220 ).
+                DATA(t224) = t220.
                 t223 = t224->filename.
                 t219 = t223.
                 DATA t225 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1152,7 +1152,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA(t227) = VALUE abap_bool( ).
                 DATA t228 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 DATA t229 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                DATA(t230) = CAST zcl_lnt_ivertex( t217 ).
+                DATA(t230) = t217.
                 t229 = t230->include_name.
                 t228 = t229.
                 DATA t231 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1161,7 +1161,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 t231 = t232.
                 DATA(t233) = VALUE abap_bool( ).
                 DATA(t234) = VALUE abap_bool( ).
-                DATA(t235) = CAST zlnt_runtime_opti_4ba3bdccd169( t228 ).
+                DATA(t235) = t228.
                 IF t235 IS INITIAL.
                   t234 = abap_true.
                 ELSEIF t235->has = abap_false.
@@ -1173,12 +1173,12 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   DATA t236 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
                   CLEAR t236.
                   DATA t237 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-                  DATA(t238) = CAST zcl_lnt_graph( t215 ).
+                  DATA(t238) = t215.
                   t237 = t238->vertices_includename_index.
                   DATA t239 TYPE string.
                   DATA t240 TYPE string.
                   DATA t241 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                  DATA(t242) = CAST zcl_lnt_ivertex( t217 ).
+                  DATA(t242) = t217.
                   t241 = t242->include_name.
                   t240 = t241->value.
                   DATA(t243) = strlen( t240 ).
@@ -1188,17 +1188,17 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   ELSE.
                     t239 = zlnt_runtime_uppe_91169605024d=>full( t239 ).
                   ENDIF.
-                  DATA(t244) = CAST zcl_lnt_ivertex( t217 ).
+                  DATA(t244) = t217.
                   t236 = t237->set( p0 = t239 p1 = t244 ).
                 ENDIF.
                 DATA t245 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
                 CLEAR t245.
                 DATA t246 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-                DATA(t247) = CAST zcl_lnt_graph( t215 ).
+                DATA(t247) = t215.
                 t246 = t247->vertices_filename_index.
                 DATA t248 TYPE string.
                 DATA t249 TYPE string.
-                DATA(t250) = CAST zcl_lnt_ivertex( t217 ).
+                DATA(t250) = t217.
                 t249 = t250->filename.
                 DATA(t251) = strlen( t249 ).
                 t248 = t249.
@@ -1207,7 +1207,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 ELSE.
                   t248 = zlnt_runtime_uppe_91169605024d=>full( t248 ).
                 ENDIF.
-                DATA(t252) = CAST zcl_lnt_ivertex( t217 ).
+                DATA(t252) = t217.
                 t245 = t246->set( p0 = t248 p1 = t252 ).
               ENDIF.
             ENDIF.

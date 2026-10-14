@@ -114,13 +114,13 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       DATA(t33) = |Performance|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t34) = t28.
       t27 = t34.
       t25 = t27.
     ELSE.
@@ -138,13 +138,13 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_d_o_i_l_t_d_op_in_lp.
-    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_d_o_i_l_t_d_op_in_lp.
-    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/db_operation_in_loop.ts:41|.
     t2->source_location = t3.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_d_o_i_l_t_d_op_in_lp.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/db_operation_in_loop.ts:45|.
     t2->source_location = t3.

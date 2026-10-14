@@ -12,14 +12,14 @@ CLASS zcl_lnt_shape_e272b380 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_e272b380 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_category ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_name.
+    DATA(t2) = i_description.
+    DATA(t3) = i_category.
+    DATA(t4) = t1.
     me->name = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->description = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->category = t6.
   ENDMETHOD.
 

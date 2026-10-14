@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_secondary_index IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_fields_62af ).
+    DATA(t2) = i_fields_62af.
     DATA(t3) = t1.
     me->name = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     me->fields_464c = t4.
   ENDMETHOD.
 

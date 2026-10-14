@@ -196,10 +196,10 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
       DATA t46 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t46.
       t45 = t46.
-      DATA(t47) = CAST zlnt_runtime_arra_8ecd6afe19e0( t45 ).
+      DATA(t47) = t45.
       DATA(t48) = |SingleFile|.
       APPEND t48 TO t47->items.
-      DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t45 ).
+      DATA(t49) = t45.
       t44 = t49.
       t42 = t44.
     ELSE.
@@ -217,13 +217,13 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_wr_ab_ps_ts_wr_ab_ps.
-    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_wr_ab_ps_ts_wr_ab_ps.
-    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/wrong_abapdoc_position.ts:55|.
     t2->source_location = t3.
@@ -231,7 +231,7 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_wr_ab_ps_ts_wr_ab_ps.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/wrong_abapdoc_position.ts:59|.
     t2->source_location = t3.
@@ -239,7 +239,7 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_abapdoc.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/wrong_abapdoc_position.ts:102|.
     t2->source_location = t3.
@@ -247,8 +247,8 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_abapdoc ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_next ).
+    DATA(t1) = i_abapdoc.
+    DATA(t2) = i_next.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/wrong_abapdoc_position.ts:107|.
     t3->source_location = t4.

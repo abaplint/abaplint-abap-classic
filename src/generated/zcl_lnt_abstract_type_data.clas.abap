@@ -16,23 +16,23 @@ CLASS zcl_lnt_abstract_type_data DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_type_data IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_conversion_exit ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_derived_from_constant ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_ddic_name ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_rtti_name ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_qualified_name.
+    DATA(t2) = i_conversion_exit.
+    DATA(t3) = i_derived_from_constant.
+    DATA(t4) = i_ddic_name.
+    DATA(t5) = i_rtti_name.
+    DATA(t6) = i_description.
+    DATA(t7) = t1.
     me->qualified_name = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t8) = t2.
     me->conversion_exit = t8.
-    DATA(t9) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t9) = t3.
     me->derived_from_constant = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t10) = t4.
     me->ddic_name = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t11) = t5.
     me->rtti_name = t11.
-    DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t6 ).
+    DATA(t12) = t6.
     me->description = t12.
   ENDMETHOD.
 

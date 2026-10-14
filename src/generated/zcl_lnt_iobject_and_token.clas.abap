@@ -12,14 +12,14 @@ CLASS zcl_lnt_iobject_and_token DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iobject_and_token IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
-    DATA(t4) = CAST zif_lnt_object( t1 ).
+    DATA(t1) = i_object_19cd.
+    DATA(t2) = i_token.
+    DATA(t3) = i_filename.
+    DATA(t4) = t1.
     me->object_a393 = t4.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t5) = t2.
     me->token = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->filename = t6.
   ENDMETHOD.
 

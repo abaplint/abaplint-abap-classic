@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_450c287b DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_450c287b IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_eed5a04f( i_location ).
+    DATA(t1) = i_location.
     DATA(t2) = i_message_26cb.
     DATA t3 TYPE REF TO zcl_lnt_shape_eed5a04f.
-    DATA(t4) = CAST zcl_lnt_shape_eed5a04f( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->location = t3.
     DATA(t5) = t2.

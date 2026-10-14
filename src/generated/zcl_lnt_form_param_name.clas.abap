@@ -30,7 +30,7 @@ CLASS zcl_lnt_form_param_name IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t10) = t1.
     IF t10 IS BOUND.
       CREATE OBJECT t9.
       t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -54,7 +54,7 @@ CLASS zcl_lnt_form_param_name IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e ).
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e.
     t19 = zcl_lnt_st_combi_module=>tok( i_t = t20 ).
     IF t19 IS BOUND.
       CREATE OBJECT t18.
@@ -68,7 +68,7 @@ CLASS zcl_lnt_form_param_name IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
-    DATA(t24) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t24) = t1.
     IF t24 IS BOUND.
       CREATE OBJECT t23.
       t23->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -82,9 +82,9 @@ CLASS zcl_lnt_form_param_name IMPLEMENTATION.
     CREATE OBJECT t27.
     t26 = t27.
     DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t17 ).
-    DATA(t30) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t26 ).
+    DATA(t29) = t17.
+    DATA(t30) = t22.
+    DATA(t31) = t26.
     t28 = zcl_lnt_st_combi_module=>seq( i_first = t29 i_second = t30 i_rest = t31 ).
     t16 = t28.
     IF t16 IS BOUND.
@@ -108,9 +108,9 @@ CLASS zcl_lnt_form_param_name IMPLEMENTATION.
     CREATE OBJECT t35.
     t34 = t35.
     DATA t36 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t38) = CAST zlnt_runtime_dyna_a429568d5be8( t12 ).
-    DATA(t39) = CAST zlnt_runtime_arra_c22708faf2e3( t34 ).
+    DATA(t37) = t8.
+    DATA(t38) = t12.
+    DATA(t39) = t34.
     t36 = zcl_lnt_st_combi_module=>seq( i_first = t37 i_second = t38 i_rest = t39 ).
     t7 = t36.
     result = t7.

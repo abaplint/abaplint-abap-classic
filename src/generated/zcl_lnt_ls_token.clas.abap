@@ -18,7 +18,7 @@ CLASS zcl_lnt_ls_token IMPLEMENTATION.
     DATA(t2) = i_start_char.
     DATA(t3) = i_length.
     DATA(t4) = i_token_type.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_token_modifiers ).
+    DATA(t5) = i_token_modifiers.
     DATA(t6) = t1.
     me->line = t6.
     DATA(t7) = t2.
@@ -27,7 +27,7 @@ CLASS zcl_lnt_ls_token IMPLEMENTATION.
     me->length = t8.
     DATA(t9) = t4.
     me->token_type = t9.
-    DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t5 ).
+    DATA(t10) = t5.
     me->token_modifiers = t10.
   ENDMETHOD.
 

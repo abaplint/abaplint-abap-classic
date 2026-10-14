@@ -26,7 +26,7 @@ CLASS zcl_lnt_enhancement_point IMPLEMENTATION.
     CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t7.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
     IF t8 IS BOUND.
       CREATE OBJECT t7.
       t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -37,24 +37,24 @@ CLASS zcl_lnt_enhancement_point IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
     t9 = t10.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t11) = t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t13) = |SPOTS|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t12->sval = t13.
     APPEND t12 TO t11->items.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t14) = t9.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
+    DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t16 IS BOUND.
       CREATE OBJECT t15.
       t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t15->cval = t16.
     ENDIF.
     APPEND t15 TO t14->items.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t17) = t9.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
@@ -72,7 +72,7 @@ CLASS zcl_lnt_enhancement_point IMPLEMENTATION.
       t18->oval = t22.
     ENDIF.
     APPEND t18 TO t17->items.
-    DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t23) = t9.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t24.
     DATA t25 TYPE REF TO zif_lnt_statement_runnable.
@@ -91,9 +91,9 @@ CLASS zcl_lnt_enhancement_point IMPLEMENTATION.
     ENDIF.
     APPEND t24 TO t23->items.
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t30) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t31) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t30) = t3.
+    DATA(t31) = t6.
+    DATA(t32) = t9.
     t29 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t31 i_rest = t32 ).
     t2 = t29.
     t1 = t2.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_enhancement_point IMPLEMENTATION.
     DATA(t34) = |Cloud|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t35.
-    DATA(t36) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t36) = t1.
     IF t36 IS BOUND.
       CREATE OBJECT t35.
       t35->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

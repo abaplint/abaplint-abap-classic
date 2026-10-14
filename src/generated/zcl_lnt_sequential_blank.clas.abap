@@ -74,16 +74,16 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Whitespace|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       DATA(t20) = |Quickfix|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t21) = t15.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t23) = t15.
       t14 = t23.
       t12 = t14.
     ELSE.
@@ -108,13 +108,13 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sq_bl_ts_sq_bln.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sq_bl_ts_sq_bln.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sequential_blank.ts:42|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_sq_bl_ts_sq_bln.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sequential_blank.ts:46|.
     t2->source_location = t3.

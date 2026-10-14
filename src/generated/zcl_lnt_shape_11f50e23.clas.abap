@@ -12,19 +12,19 @@ CLASS zcl_lnt_shape_11f50e23 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_11f50e23 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_f575992e( i_header ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_join ).
+    DATA(t1) = i_header.
+    DATA(t2) = i_fields_62af.
+    DATA(t3) = i_join.
     DATA t4 TYPE REF TO zcl_lnt_shape_f575992e.
-    DATA(t5) = CAST zcl_lnt_shape_f575992e( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     me->header = t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t7) = t2.
     t6 = t7.
     me->fields_464c = t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t9) = t3.
     t8 = t9.
     me->join = t8.
   ENDMETHOD.

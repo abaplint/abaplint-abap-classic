@@ -51,9 +51,9 @@ CLASS zcl_lnt_at_pf IMPLEMENTATION.
     CREATE OBJECT t17.
     t16 = t17.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t19) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+    DATA(t19) = t5.
+    DATA(t20) = t8.
+    DATA(t21) = t16.
     t18 = zcl_lnt_st_combi_module=>seq( i_first = t19 i_second = t20 i_rest = t21 ).
     t4 = t18.
     IF t4 IS BOUND.

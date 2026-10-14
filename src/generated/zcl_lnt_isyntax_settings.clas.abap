@@ -16,20 +16,20 @@ CLASS zcl_lnt_isyntax_settings DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_isyntax_settings IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_version ).
+    DATA(t1) = i_version.
     DATA(t2) = i_error_namespace.
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_constants ).
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_ambigious_voids ).
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t3) = i_global_constants.
+    DATA(t4) = i_ambigious_voids.
+    DATA(t5) = i_global_macros_5535.
+    DATA(t6) = t1.
     me->version = t6.
     DATA(t7) = t2.
     me->error_namespace = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t8) = t3.
     me->global_constants = t8.
-    DATA(t9) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
+    DATA(t9) = t4.
     me->ambigious_voids = t9.
-    DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t5 ).
+    DATA(t10) = t5.
     me->global_macros = t10.
   ENDMETHOD.
 

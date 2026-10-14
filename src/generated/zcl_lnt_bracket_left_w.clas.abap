@@ -9,9 +9,9 @@ CLASS zcl_lnt_bracket_left_w DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_
 ENDCLASS.
 CLASS zcl_lnt_bracket_left_w IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_start ).
+    DATA(t1) = i_start.
     DATA(t2) = i_str.
-    DATA(t3) = CAST zcl_lnt_position( t1 ).
+    DATA(t3) = t1.
     DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.

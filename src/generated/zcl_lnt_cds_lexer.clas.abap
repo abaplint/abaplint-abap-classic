@@ -11,7 +11,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zcl_lnt_cd_result.
     DATA(t3) = NEW zcl_lnt_cd_result( ).
     t2 = t3.
@@ -33,7 +33,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA t17 TYPE string.
-    DATA(t18) = CAST zif_lnt_file( t1 ).
+    DATA(t18) = t1.
     t17 = t18->get_raw( ).
     DATA(t19) = ||.
     DATA t20 TYPE c LENGTH 1.
@@ -68,7 +68,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     DO.
       DATA t35 TYPE abap_bool.
       DATA t36 TYPE int8.
-      DATA(t37) = CAST zcl_lnt_stream( t12 ).
+      DATA(t37) = t12.
       t36 = t37->length( ).
       DATA(t38) = CONV int8( 0 ).
       t35 = xsdbool( t36 > t38 ).
@@ -79,12 +79,12 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       DATA(t40) = t33.
       t39 = t40.
       DATA t41 TYPE string.
-      DATA(t42) = CAST zcl_lnt_stream( t12 ).
+      DATA(t42) = t12.
       t41 = t42->take_next( ).
       t33 = t41.
       DATA t43 TYPE string.
       DATA t44 TYPE string.
-      DATA(t45) = CAST zcl_lnt_stream( t12 ).
+      DATA(t45) = t12.
       t44 = t45->peek_next( ).
       t43 = t44.
       DATA t46 TYPE int8.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA t63 TYPE string.
           DATA(t64) = t10.
           DATA t65 TYPE string.
-          DATA(t66) = CAST zcl_lnt_stream( t12 ).
+          DATA(t66) = t12.
           t65 = t66->take_next( ).
           DATA(t67) = strlen( t64 ).
           t63 = |{ t64 }{ t65 }|.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA t78 TYPE string.
             DATA(t79) = t10.
             DATA t80 TYPE string.
-            DATA(t81) = CAST zcl_lnt_stream( t12 ).
+            DATA(t81) = t12.
             t80 = t81->take_next( ).
             DATA(t82) = strlen( t79 ).
             t78 = |{ t79 }{ t80 }|.
@@ -185,7 +185,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t93 TYPE string.
               DATA(t94) = t10.
               DATA t95 TYPE string.
-              DATA(t96) = CAST zcl_lnt_stream( t12 ).
+              DATA(t96) = t12.
               t95 = t96->take_next( ).
               DATA(t97) = strlen( t94 ).
               t93 = |{ t94 }{ t95 }|.
@@ -205,7 +205,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               t101 = xsdbool( t102 = t103 ).
               IF t101 = abap_true.
                 DATA t104 TYPE string.
-                DATA(t105) = CAST zcl_lnt_cd_result( t2 ).
+                DATA(t105) = t2.
                 DATA(t106) = t10.
                 DATA(t107) = t6.
                 DATA(t108) = t8.
@@ -250,7 +250,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA t126 TYPE string.
           DATA(t127) = t10.
           DATA t128 TYPE string.
-          DATA(t129) = CAST zcl_lnt_stream( t12 ).
+          DATA(t129) = t12.
           t128 = t129->take_next( ).
           DATA(t130) = strlen( t127 ).
           t126 = |{ t127 }{ t128 }|.
@@ -281,7 +281,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA t141 TYPE string.
             DATA(t142) = t10.
             DATA t143 TYPE string.
-            DATA(t144) = CAST zcl_lnt_stream( t12 ).
+            DATA(t144) = t12.
             t143 = t144->take_next( ).
             DATA(t145) = strlen( t142 ).
             t141 = |{ t142 }{ t143 }|.
@@ -301,7 +301,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             t149 = xsdbool( t150 = t151 ).
             IF t149 = abap_true.
               DATA t152 TYPE string.
-              DATA(t153) = CAST zcl_lnt_cd_result( t2 ).
+              DATA(t153) = t2.
               DATA(t154) = t10.
               DATA(t155) = t6.
               DATA(t156) = t8.
@@ -332,7 +332,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         t163 = xsdbool( t164 = t165 ).
         IF t163 = abap_true.
           DATA t167 TYPE string.
-          DATA(t168) = CAST zcl_lnt_cd_result( t2 ).
+          DATA(t168) = t2.
           DATA(t169) = t10.
           DATA(t170) = t6.
           DATA(t171) = t8.
@@ -379,7 +379,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA(t190) = 3.
           t4 = t190.
           DATA t191 TYPE string.
-          DATA(t192) = CAST zcl_lnt_cd_result( t2 ).
+          DATA(t192) = t2.
           DATA(t193) = t10.
           DATA(t194) = t6.
           DATA(t195) = t8.
@@ -422,7 +422,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA(t213) = 3.
             t4 = t213.
             DATA t214 TYPE string.
-            DATA(t215) = CAST zcl_lnt_cd_result( t2 ).
+            DATA(t215) = t2.
             DATA(t216) = t10.
             DATA(t217) = t6.
             DATA(t218) = t8.
@@ -510,7 +510,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA(t254) = 4.
           t4 = t254.
           DATA t255 TYPE string.
-          DATA(t256) = CAST zcl_lnt_cd_result( t2 ).
+          DATA(t256) = t2.
           DATA(t257) = t10.
           DATA(t258) = t6.
           DATA(t259) = t8.
@@ -520,7 +520,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t255 = t256->add_51c1( i_text = t257 i_row = t258 i_col = t259 i_mode = t260 ).
           t10 = t255.
           DATA t262 TYPE string.
-          DATA(t263) = CAST zcl_lnt_stream( t12 ).
+          DATA(t263) = t12.
           t262 = t263->take_next( ).
           DATA t264 TYPE int8.
           DATA(t265) = t8.
@@ -539,7 +539,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       t267 = xsdbool( t268 = t269 ).
       IF t267 = abap_true.
         DATA t270 TYPE string.
-        DATA(t271) = CAST zcl_lnt_cd_result( t2 ).
+        DATA(t271) = t2.
         DATA(t272) = t10.
         DATA(t273) = t6.
         DATA(t274) = t8.
@@ -563,7 +563,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         t282 = xsdbool( t283 = t284 ).
         IF t282 = abap_true.
           DATA t285 TYPE string.
-          DATA(t286) = CAST zcl_lnt_cd_result( t2 ).
+          DATA(t286) = t2.
           DATA(t287) = t10.
           DATA(t288) = t6.
           DATA(t289) = t8.
@@ -587,7 +587,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t297 = xsdbool( t298 = t299 ).
           IF t297 = abap_true.
             DATA t300 TYPE string.
-            DATA(t301) = CAST zcl_lnt_cd_result( t2 ).
+            DATA(t301) = t2.
             DATA(t302) = t10.
             DATA(t303) = t6.
             DATA(t304) = t8.
@@ -607,7 +607,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             t307 = xsdbool( t308 = t309 ).
             IF t307 = abap_true.
               DATA t311 TYPE string.
-              DATA(t312) = CAST zcl_lnt_cd_result( t2 ).
+              DATA(t312) = t2.
               DATA(t313) = t10.
               DATA(t314) = t6.
               DATA(t315) = t8.
@@ -627,7 +627,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               t318 = xsdbool( t319 = t320 ).
               IF t318 = abap_true.
                 DATA t322 TYPE string.
-                DATA(t323) = CAST zcl_lnt_cd_result( t2 ).
+                DATA(t323) = t2.
                 DATA(t324) = t10.
                 DATA(t325) = t6.
                 DATA(t326) = t8.
@@ -653,7 +653,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 t333 = xsdbool( t334 = t335 ).
                 IF t333 = abap_true.
                   DATA t336 TYPE string.
-                  DATA(t337) = CAST zcl_lnt_cd_result( t2 ).
+                  DATA(t337) = t2.
                   DATA(t338) = t10.
                   DATA(t339) = t6.
                   DATA(t340) = t8.
@@ -663,7 +663,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   t336 = t337->add_51c1( i_text = t338 i_row = t339 i_col = t340 i_mode = t341 ).
                   t10 = t336.
                   DATA t343 TYPE string.
-                  DATA(t344) = CAST zcl_lnt_cd_result( t2 ).
+                  DATA(t344) = t2.
                   DATA(t345) = t33.
                   DATA(t346) = t6.
                   DATA(t347) = t8.
@@ -678,7 +678,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   t350 = xsdbool( t351 = t352 ).
                   IF t350 = abap_true.
                     DATA t353 TYPE string.
-                    DATA(t354) = CAST zcl_lnt_cd_result( t2 ).
+                    DATA(t354) = t2.
                     DATA(t355) = t10.
                     DATA(t356) = t6.
                     DATA(t357) = t8.
@@ -688,7 +688,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     t353 = t354->add_51c1( i_text = t355 i_row = t356 i_col = t357 i_mode = t358 ).
                     t10 = t353.
                     DATA t360 TYPE string.
-                    DATA(t361) = CAST zcl_lnt_cd_result( t2 ).
+                    DATA(t361) = t2.
                     DATA(t362) = t33.
                     DATA(t363) = t6.
                     DATA(t364) = t8.
@@ -703,7 +703,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     t367 = xsdbool( t368 = t369 ).
                     IF t367 = abap_true.
                       DATA t370 TYPE string.
-                      DATA(t371) = CAST zcl_lnt_cd_result( t2 ).
+                      DATA(t371) = t2.
                       DATA(t372) = t10.
                       DATA(t373) = t6.
                       DATA(t374) = t8.
@@ -713,7 +713,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       t370 = t371->add_51c1( i_text = t372 i_row = t373 i_col = t374 i_mode = t375 ).
                       t10 = t370.
                       DATA t377 TYPE string.
-                      DATA(t378) = CAST zcl_lnt_cd_result( t2 ).
+                      DATA(t378) = t2.
                       DATA(t379) = t33.
                       DATA(t380) = t6.
                       DATA(t381) = t8.
@@ -728,7 +728,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       t384 = xsdbool( t385 = t386 ).
                       IF t384 = abap_true.
                         DATA t387 TYPE string.
-                        DATA(t388) = CAST zcl_lnt_cd_result( t2 ).
+                        DATA(t388) = t2.
                         DATA(t389) = t10.
                         DATA(t390) = t6.
                         DATA(t391) = t8.
@@ -738,7 +738,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         t387 = t388->add_51c1( i_text = t389 i_row = t390 i_col = t391 i_mode = t392 ).
                         t10 = t387.
                         DATA t394 TYPE string.
-                        DATA(t395) = CAST zcl_lnt_cd_result( t2 ).
+                        DATA(t395) = t2.
                         DATA(t396) = t33.
                         DATA(t397) = t6.
                         DATA(t398) = t8.
@@ -753,7 +753,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         t401 = xsdbool( t402 = t403 ).
                         IF t401 = abap_true.
                           DATA t404 TYPE string.
-                          DATA(t405) = CAST zcl_lnt_cd_result( t2 ).
+                          DATA(t405) = t2.
                           DATA(t406) = t10.
                           DATA(t407) = t6.
                           DATA(t408) = t8.
@@ -763,7 +763,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           t404 = t405->add_51c1( i_text = t406 i_row = t407 i_col = t408 i_mode = t409 ).
                           t10 = t404.
                           DATA t411 TYPE string.
-                          DATA(t412) = CAST zcl_lnt_cd_result( t2 ).
+                          DATA(t412) = t2.
                           DATA(t413) = t33.
                           DATA(t414) = t6.
                           DATA(t415) = t8.
@@ -778,7 +778,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           t418 = xsdbool( t419 = t420 ).
                           IF t418 = abap_true.
                             DATA t421 TYPE string.
-                            DATA(t422) = CAST zcl_lnt_cd_result( t2 ).
+                            DATA(t422) = t2.
                             DATA(t423) = t10.
                             DATA(t424) = t6.
                             DATA(t425) = t8.
@@ -788,7 +788,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             t421 = t422->add_51c1( i_text = t423 i_row = t424 i_col = t425 i_mode = t426 ).
                             t10 = t421.
                             DATA t428 TYPE string.
-                            DATA(t429) = CAST zcl_lnt_cd_result( t2 ).
+                            DATA(t429) = t2.
                             DATA(t430) = t33.
                             DATA(t431) = t6.
                             DATA(t432) = t8.
@@ -803,7 +803,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             t435 = xsdbool( t436 = t437 ).
                             IF t435 = abap_true.
                               DATA t438 TYPE string.
-                              DATA(t439) = CAST zcl_lnt_cd_result( t2 ).
+                              DATA(t439) = t2.
                               DATA(t440) = t10.
                               DATA(t441) = t6.
                               DATA(t442) = t8.
@@ -813,7 +813,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               t438 = t439->add_51c1( i_text = t440 i_row = t441 i_col = t442 i_mode = t443 ).
                               t10 = t438.
                               DATA t445 TYPE string.
-                              DATA(t446) = CAST zcl_lnt_cd_result( t2 ).
+                              DATA(t446) = t2.
                               DATA(t447) = t33.
                               DATA(t448) = t6.
                               DATA(t449) = t8.
@@ -828,7 +828,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               t452 = xsdbool( t453 = t454 ).
                               IF t452 = abap_true.
                                 DATA t455 TYPE string.
-                                DATA(t456) = CAST zcl_lnt_cd_result( t2 ).
+                                DATA(t456) = t2.
                                 DATA(t457) = t10.
                                 DATA(t458) = t6.
                                 DATA(t459) = t8.
@@ -838,7 +838,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 t455 = t456->add_51c1( i_text = t457 i_row = t458 i_col = t459 i_mode = t460 ).
                                 t10 = t455.
                                 DATA t462 TYPE string.
-                                DATA(t463) = CAST zcl_lnt_cd_result( t2 ).
+                                DATA(t463) = t2.
                                 DATA(t464) = t33.
                                 DATA(t465) = t6.
                                 DATA(t466) = t8.
@@ -853,7 +853,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 t469 = xsdbool( t470 = t471 ).
                                 IF t469 = abap_true.
                                   DATA t472 TYPE string.
-                                  DATA(t473) = CAST zcl_lnt_cd_result( t2 ).
+                                  DATA(t473) = t2.
                                   DATA(t474) = t10.
                                   DATA(t475) = t6.
                                   DATA(t476) = t8.
@@ -863,7 +863,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   t472 = t473->add_51c1( i_text = t474 i_row = t475 i_col = t476 i_mode = t477 ).
                                   t10 = t472.
                                   DATA t479 TYPE string.
-                                  DATA(t480) = CAST zcl_lnt_cd_result( t2 ).
+                                  DATA(t480) = t2.
                                   DATA(t481) = t33.
                                   DATA(t482) = t6.
                                   DATA(t483) = t8.
@@ -878,7 +878,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   t486 = xsdbool( t487 = t488 ).
                                   IF t486 = abap_true.
                                     DATA t489 TYPE string.
-                                    DATA(t490) = CAST zcl_lnt_cd_result( t2 ).
+                                    DATA(t490) = t2.
                                     DATA(t491) = t10.
                                     DATA(t492) = t6.
                                     DATA(t493) = t8.
@@ -888,7 +888,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     t489 = t490->add_51c1( i_text = t491 i_row = t492 i_col = t493 i_mode = t494 ).
                                     t10 = t489.
                                     DATA t496 TYPE string.
-                                    DATA(t497) = CAST zcl_lnt_cd_result( t2 ).
+                                    DATA(t497) = t2.
                                     DATA(t498) = t33.
                                     DATA(t499) = t6.
                                     DATA(t500) = t8.
@@ -903,7 +903,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     t503 = xsdbool( t504 = t505 ).
                                     IF t503 = abap_true.
                                       DATA t506 TYPE string.
-                                      DATA(t507) = CAST zcl_lnt_cd_result( t2 ).
+                                      DATA(t507) = t2.
                                       DATA(t508) = t10.
                                       DATA(t509) = t6.
                                       DATA(t510) = t8.
@@ -913,7 +913,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       t506 = t507->add_51c1( i_text = t508 i_row = t509 i_col = t510 i_mode = t511 ).
                                       t10 = t506.
                                       DATA t513 TYPE string.
-                                      DATA(t514) = CAST zcl_lnt_cd_result( t2 ).
+                                      DATA(t514) = t2.
                                       DATA(t515) = t33.
                                       DATA(t516) = t6.
                                       DATA(t517) = t8.
@@ -928,7 +928,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       t520 = xsdbool( t521 = t522 ).
                                       IF t520 = abap_true.
                                         DATA t523 TYPE string.
-                                        DATA(t524) = CAST zcl_lnt_cd_result( t2 ).
+                                        DATA(t524) = t2.
                                         DATA(t525) = t10.
                                         DATA(t526) = t6.
                                         DATA(t527) = t8.
@@ -938,7 +938,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         t523 = t524->add_51c1( i_text = t525 i_row = t526 i_col = t527 i_mode = t528 ).
                                         t10 = t523.
                                         DATA t530 TYPE string.
-                                        DATA(t531) = CAST zcl_lnt_cd_result( t2 ).
+                                        DATA(t531) = t2.
                                         DATA(t532) = t33.
                                         DATA(t533) = t6.
                                         DATA(t534) = t8.
@@ -953,7 +953,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         t537 = xsdbool( t538 = t539 ).
                                         IF t537 = abap_true.
                                           DATA t540 TYPE string.
-                                          DATA(t541) = CAST zcl_lnt_cd_result( t2 ).
+                                          DATA(t541) = t2.
                                           DATA(t542) = t10.
                                           DATA(t543) = t6.
                                           DATA(t544) = t8.
@@ -963,7 +963,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           t540 = t541->add_51c1( i_text = t542 i_row = t543 i_col = t544 i_mode = t545 ).
                                           t10 = t540.
                                           DATA t547 TYPE string.
-                                          DATA(t548) = CAST zcl_lnt_cd_result( t2 ).
+                                          DATA(t548) = t2.
                                           DATA(t549) = t33.
                                           DATA(t550) = t6.
                                           DATA(t551) = t8.
@@ -978,7 +978,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           t554 = xsdbool( t555 = t556 ).
                                           IF t554 = abap_true.
                                             DATA t557 TYPE string.
-                                            DATA(t558) = CAST zcl_lnt_cd_result( t2 ).
+                                            DATA(t558) = t2.
                                             DATA(t559) = t10.
                                             DATA(t560) = t6.
                                             DATA(t561) = t8.
@@ -988,7 +988,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             t557 = t558->add_51c1( i_text = t559 i_row = t560 i_col = t561 i_mode = t562 ).
                                             t10 = t557.
                                             DATA t564 TYPE string.
-                                            DATA(t565) = CAST zcl_lnt_cd_result( t2 ).
+                                            DATA(t565) = t2.
                                             DATA(t566) = t33.
                                             DATA(t567) = t6.
                                             DATA(t568) = t8.
@@ -1003,7 +1003,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             t571 = xsdbool( t572 = t573 ).
                                             IF t571 = abap_true.
                                               DATA t574 TYPE string.
-                                              DATA(t575) = CAST zcl_lnt_cd_result( t2 ).
+                                              DATA(t575) = t2.
                                               DATA(t576) = t10.
                                               DATA(t577) = t6.
                                               DATA(t578) = t8.
@@ -1013,7 +1013,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               t574 = t575->add_51c1( i_text = t576 i_row = t577 i_col = t578 i_mode = t579 ).
                                               t10 = t574.
                                               DATA t581 TYPE string.
-                                              DATA(t582) = CAST zcl_lnt_cd_result( t2 ).
+                                              DATA(t582) = t2.
                                               DATA(t583) = t33.
                                               DATA(t584) = t6.
                                               DATA(t585) = t8.
@@ -1028,7 +1028,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               t588 = xsdbool( t589 = t590 ).
                                               IF t588 = abap_true.
                                                 DATA t591 TYPE string.
-                                                DATA(t592) = CAST zcl_lnt_cd_result( t2 ).
+                                                DATA(t592) = t2.
                                                 DATA(t593) = t10.
                                                 DATA(t594) = t6.
                                                 DATA(t595) = t8.
@@ -1038,7 +1038,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 t591 = t592->add_51c1( i_text = t593 i_row = t594 i_col = t595 i_mode = t596 ).
                                                 t10 = t591.
                                                 DATA t598 TYPE string.
-                                                DATA(t599) = CAST zcl_lnt_cd_result( t2 ).
+                                                DATA(t599) = t2.
                                                 DATA(t600) = t33.
                                                 DATA(t601) = t6.
                                                 DATA(t602) = t8.
@@ -1053,7 +1053,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 t605 = xsdbool( t606 = t607 ).
                                                 IF t605 = abap_true.
                                                   DATA t608 TYPE string.
-                                                  DATA(t609) = CAST zcl_lnt_cd_result( t2 ).
+                                                  DATA(t609) = t2.
                                                   DATA(t610) = t10.
                                                   DATA(t611) = t6.
                                                   DATA(t612) = t8.
@@ -1063,7 +1063,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   t608 = t609->add_51c1( i_text = t610 i_row = t611 i_col = t612 i_mode = t613 ).
                                                   t10 = t608.
                                                   DATA t615 TYPE string.
-                                                  DATA(t616) = CAST zcl_lnt_cd_result( t2 ).
+                                                  DATA(t616) = t2.
                                                   DATA(t617) = t33.
                                                   DATA(t618) = t6.
                                                   DATA(t619) = t8.
@@ -1078,7 +1078,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   t622 = xsdbool( t623 = t624 ).
                                                   IF t622 = abap_true.
                                                     DATA t625 TYPE string.
-                                                    DATA(t626) = CAST zcl_lnt_cd_result( t2 ).
+                                                    DATA(t626) = t2.
                                                     DATA(t627) = t10.
                                                     DATA(t628) = t6.
                                                     DATA(t629) = t8.
@@ -1088,7 +1088,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     t625 = t626->add_51c1( i_text = t627 i_row = t628 i_col = t629 i_mode = t630 ).
                                                     t10 = t625.
                                                     DATA t632 TYPE string.
-                                                    DATA(t633) = CAST zcl_lnt_cd_result( t2 ).
+                                                    DATA(t633) = t2.
                                                     DATA(t634) = t33.
                                                     DATA(t635) = t6.
                                                     DATA(t636) = t8.
@@ -1103,7 +1103,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     t639 = xsdbool( t640 = t641 ).
                                                     IF t639 = abap_true.
                                                       DATA t642 TYPE string.
-                                                      DATA(t643) = CAST zcl_lnt_cd_result( t2 ).
+                                                      DATA(t643) = t2.
                                                       DATA(t644) = t10.
                                                       DATA(t645) = t6.
                                                       DATA(t646) = t8.
@@ -1147,7 +1147,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       ENDIF.
     ENDDO.
     DATA t654 TYPE string.
-    DATA(t655) = CAST zcl_lnt_cd_result( t2 ).
+    DATA(t655) = t2.
     DATA(t656) = t10.
     DATA(t657) = t6.
     DATA(t658) = t8.
@@ -1156,7 +1156,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     t659 = t660.
     t654 = t655->add_51c1( i_text = t656 i_row = t657 i_col = t658 i_mode = t659 ).
     DATA t661 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t662) = CAST zcl_lnt_cd_result( t2 ).
+    DATA(t662) = t2.
     t661 = t662->get_db65( ).
     result = t661.
 

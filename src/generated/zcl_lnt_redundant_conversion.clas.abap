@@ -99,10 +99,10 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |Quickfix|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       t24 = t29.
       t22 = t24.
     ELSE.
@@ -120,13 +120,13 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_rd_cn_ts_rd_cnv.
-    DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_rd_cn_ts_rd_cnv.
-    DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/redundant_conversion.ts:46|.
     t2->source_location = t3.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_rdn_cnv_ts_rdn_cnv.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/redundant_conversion.ts:50|.
     t2->source_location = t3.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/redundant_conversion.ts:55|.
     t2->source_location = t3.
@@ -150,11 +150,11 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD arthmtc_uss_sm_trgt_typ.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_conversion ).
-    DATA(t2) = CAST zcl_lnt_expression_node( i_body_source ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t4) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
-    DATA(t5) = CAST zcl_lnt_abstract_type( i_conversion_type ).
+    DATA(t1) = i_conversion.
+    DATA(t2) = i_body_source.
+    DATA(t3) = i_file.
+    DATA(t4) = i_scope.
+    DATA(t5) = i_conversion_type.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/redundant_conversion.ts:138|.
     t6->source_location = t7.
@@ -162,8 +162,8 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD source_type.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_source_75cf ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
+    DATA(t1) = i_source_75cf.
+    DATA(t2) = i_scope.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/redundant_conversion.ts:166|.
     t3->source_location = t4.
@@ -171,8 +171,8 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD field_chain_type.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_field_chain ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
+    DATA(t1) = i_field_chain.
+    DATA(t2) = i_scope.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/redundant_conversion.ts:196|.
     t3->source_location = t4.
@@ -180,8 +180,8 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD infer.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_context ).
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_found ).
+    DATA(t1) = i_context.
+    DATA(t2) = i_found.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/redundant_conversion.ts:226|.
     t3->source_location = t4.
@@ -189,8 +189,8 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD same_type.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_first ).
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_second ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/redundant_conversion.ts:237|.
     t3->source_location = t4.
@@ -208,7 +208,7 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/redundant_conversion.ts:46|.
     t2->source_location = t3.
@@ -216,7 +216,7 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/redundant_conversion.ts:50|.
     t2->source_location = t3.

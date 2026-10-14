@@ -14,16 +14,16 @@ ENDCLASS.
 CLASS zcl_lnt_istructure_component IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_as_include ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_suffix ).
+    DATA(t2) = i_type_9913.
+    DATA(t3) = i_as_include.
+    DATA(t4) = i_suffix.
     DATA(t5) = t1.
     me->name = t5.
-    DATA(t6) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t6) = t2.
     me->type_cba0 = t6.
-    DATA(t7) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t7) = t3.
     me->as_include = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t8) = t4.
     me->suffix = t8.
   ENDMETHOD.
 

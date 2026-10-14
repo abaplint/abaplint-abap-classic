@@ -29,13 +29,13 @@ CLASS zcl_lnt_language_server DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_language_server IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD document_symbol.
-    DATA(t1) = CAST zcl_lnt_idcmnt_symbl_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:35|.
     t2->source_location = t3.
@@ -43,7 +43,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD hover.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:40|.
     t2->source_location = t3.
@@ -51,7 +51,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD goto_definition.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:49|.
     t2->source_location = t3.
@@ -59,7 +59,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD document_formatting.
-    DATA(t1) = CAST zcl_lnt_shape_e77d6389( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:54|.
     t2->source_location = t3.
@@ -67,7 +67,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD diagnostics.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:78|.
     t2->source_location = t3.
@@ -75,7 +75,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD prepare_rename.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:83|.
     t2->source_location = t3.
@@ -83,7 +83,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rename.
-    DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:88|.
     t2->source_location = t3.
@@ -91,7 +91,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD code_actions.
-    DATA(t1) = CAST zcl_lnt_icode_action_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:93|.
     t2->source_location = t3.
@@ -99,7 +99,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD document_highlight.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_c5c7 ).
+    DATA(t1) = i_params_c5c7.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:98|.
     t2->source_location = t3.
@@ -107,7 +107,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD implementation.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:104|.
     t2->source_location = t3.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD references.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:109|.
     t2->source_location = t3.
@@ -129,7 +129,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD semantic_tokens_range.
-    DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).
+    DATA(t1) = i_range.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:119|.
     t2->source_location = t3.
@@ -137,8 +137,8 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD code_lens.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_code_lens_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/language_server.ts:124|.
     t3->source_location = t4.
@@ -146,8 +146,8 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD inlay_hints.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_inlay_hints_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/language_server.ts:129|.
     t3->source_location = t4.
@@ -155,8 +155,8 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD help.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_position_a3fd.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/language_server.ts:143|.
     t3->source_location = t4.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_definition_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:147|.
     t2->source_location = t3.
@@ -172,7 +172,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_read_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:151|.
     t2->source_location = t3.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_write_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/language_server.ts:155|.
     t2->source_location = t3.

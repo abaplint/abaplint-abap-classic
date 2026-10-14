@@ -251,16 +251,16 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
       DATA t59 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t59.
       t58 = t59.
-      DATA(t60) = CAST zlnt_runtime_arra_8ecd6afe19e0( t58 ).
+      DATA(t60) = t58.
       DATA(t61) = |Styleguide|.
       APPEND t61 TO t60->items.
-      DATA(t62) = CAST zlnt_runtime_arra_8ecd6afe19e0( t58 ).
+      DATA(t62) = t58.
       DATA(t63) = |SingleFile|.
       APPEND t63 TO t62->items.
-      DATA(t64) = CAST zlnt_runtime_arra_8ecd6afe19e0( t58 ).
+      DATA(t64) = t58.
       DATA(t65) = |Quickfix|.
       APPEND t65 TO t64->items.
-      DATA(t66) = CAST zlnt_runtime_arra_8ecd6afe19e0( t58 ).
+      DATA(t66) = t58.
       t57 = t66.
       t55 = t57.
     ELSE.
@@ -278,13 +278,13 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_if_in_if_ts_if_in_if.
-    DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_if_in_if_ts_if_in_if.
-    DATA(t1) = CAST zcl_lnt_if_in_if_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/if_in_if.ts:69|.
     t2->source_location = t3.
@@ -292,8 +292,8 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/if_in_if.ts:73|.
     t3->source_location = t4.

@@ -21,7 +21,7 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:21|.
     t2->source_location = t3.
@@ -29,7 +29,7 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD remove_if_exists.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:30|.
     t2->source_location = t3.

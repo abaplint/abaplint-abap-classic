@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_6cfe0008 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_6cfe0008 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t1) = i_range.
     DATA(t2) = i_new_text.
     DATA t3 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t4) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->range = t3.
     DATA(t5) = t2.

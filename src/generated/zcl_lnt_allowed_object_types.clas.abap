@@ -59,10 +59,10 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |SingleFile|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       t14 = t19.
       t12 = t14.
     ELSE.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_al_ob_ty_ts_al_ob_ty.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_types.ts:29|.
     t2->source_location = t3.
@@ -96,13 +96,13 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_al_ob_ty_ts_al_ob_ty.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_al_ob_ty_ts_al_ob_ty.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_types.ts:41|.
     t2->source_location = t3.
@@ -110,7 +110,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_types.ts:45|.
     t2->source_location = t3.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_types.ts:29|.
     t2->source_location = t3.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_types.ts:41|.
     t2->source_location = t3.

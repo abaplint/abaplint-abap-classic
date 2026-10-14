@@ -100,13 +100,13 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |Naming|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t31) = t25.
       t24 = t31.
       t22 = t24.
     ELSE.
@@ -133,13 +133,13 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cl_at_nm_ts_cl_at_nm.
-    DATA(t1) = CAST zcl_lnt_clss_attrbt_nms_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cl_at_nm_ts_cl_at_nm.
-    DATA(t1) = CAST zcl_lnt_clss_attrbt_nms_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/class_attribute_names.ts:58|.
     t2->source_location = t3.
@@ -147,8 +147,8 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/class_attribute_names.ts:62|.
     t3->source_location = t4.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_attributes.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_attr ).
+    DATA(t1) = i_attr.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/class_attribute_names.ts:90|.
     t2->source_location = t3.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_name.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_attr ).
+    DATA(t1) = i_attr.
     DATA(t2) = i_expected.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/class_attribute_names.ts:114|.

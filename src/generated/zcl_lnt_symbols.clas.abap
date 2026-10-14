@@ -20,8 +20,8 @@ CLASS zcl_lnt_symbols DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_symbols IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
@@ -34,7 +34,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD selection_range.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t1) = i_identifier.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:33|.
     t2->source_location = t3.
@@ -42,7 +42,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD range.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifer ).
+    DATA(t1) = i_identifer.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:39|.
     t2->source_location = t3.
@@ -50,10 +50,10 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD new_symbol_ranged.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t1) = i_identifier.
     DATA(t2) = i_kind.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
-    DATA(t4) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t3) = i_children_9020.
+    DATA(t4) = i_range.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/lsp/symbols.ts:45|.
     t5->source_location = t6.
@@ -61,9 +61,9 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD new_symbol.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t1) = i_identifier.
     DATA(t2) = i_kind.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
+    DATA(t3) = i_children_9020.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/lsp/symbols.ts:57|.
     t4->source_location = t5.
@@ -71,7 +71,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output_forms.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:69|.
     t2->source_location = t3.
@@ -79,7 +79,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output_modules.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:78|.
     t2->source_location = t3.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output_classes.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:96|.
     t2->source_location = t3.
@@ -95,8 +95,8 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output_method_implementations.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_methods ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_methods.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/symbols.ts:116|.
     t3->source_location = t4.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output_class_attributes.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_attr ).
+    DATA(t1) = i_attr.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/symbols.ts:145|.
     t2->source_location = t3.

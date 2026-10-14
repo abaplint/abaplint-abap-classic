@@ -77,13 +77,13 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |Upport|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       t18 = t25.
       t16 = t18.
     ELSE.
@@ -101,13 +101,13 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cd_lg_vw_ts_cd_lg_vw.
-    DATA(t1) = CAST zcl_lnt_cds_legacy_view_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cd_lg_vw_ts_cd_lg_vw.
-    DATA(t1) = CAST zcl_lnt_cds_legacy_view_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_legacy_view.ts:35|.
     t2->source_location = t3.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_legacy_view.ts:39|.
     t2->source_location = t3.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_i_sr_rl_cd_lg_vw_ts_cd_lg_vw.
-    DATA(t1) = CAST zif_lnt_object( i_o ).
+    DATA(t1) = i_o.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_legacy_view.ts:44|.
     t2->source_location = t3.
@@ -141,7 +141,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_legacy_view.ts:35|.
     t2->source_location = t3.
@@ -149,7 +149,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_legacy_view.ts:44|.
     t2->source_location = t3.

@@ -14,19 +14,19 @@ CLASS zcl_lnt_rl_skip DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rl_skip IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_keyword_case_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = abap_false.
     me->skip_0892 = t2.
     DATA(t3) = abap_false.
     me->is_global_class = t3.
     DATA(t4) = abap_false.
     me->is_global_if = t4.
-    DATA(t5) = CAST zcl_lnt_keyword_case_conf( t1 ).
+    DATA(t5) = t1.
     me->conf = t5.
   ENDMETHOD.
 
   METHOD skip_statement.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keyword_case.ts:50|.
     t2->source_location = t3.

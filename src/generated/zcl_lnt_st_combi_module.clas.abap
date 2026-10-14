@@ -133,9 +133,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_rege_5a210f82384e( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zcl_lnt_regex.
-    DATA(t3) = CAST zlnt_runtime_rege_5a210f82384e( t1 ).
+    DATA(t3) = t1.
     t2 = NEW zcl_lnt_regex( i_r_f634 = t3 ).
     result = t2.
 
@@ -145,9 +145,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_t ).
+    DATA(t1) = i_t.
     DATA t2 TYPE REF TO zcl_lnt_st_token.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t3) = t1.
     t2 = NEW zcl_lnt_st_token( i_t = t3 ).
     result = t2.
 
@@ -157,10 +157,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = VALUE string( ).
     DATA(t3) = VALUE string( ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     IF t4 IS BOUND.
       t3 = t4->type_of( ).
     ELSE.
@@ -184,7 +184,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       ENDIF.
       t11 = zcl_lnt_st_combi_module=>string_singletons.
       DATA t12 TYPE string.
-      DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+      DATA(t13) = t1.
       t12 = t13->as_string( ).
       t10 = t11->get( p0 = t12 ).
       t9 = t10.
@@ -193,7 +193,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       CLEAR t15.
       t14 = t15.
       DATA(t16) = VALUE abap_bool( ).
-      DATA(t17) = CAST zif_lnt_statement_runnable( t9 ).
+      DATA(t17) = t9.
       IF t17 IS INITIAL.
         t16 = abap_true.
       ENDIF.
@@ -208,11 +208,11 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         ENDIF.
         t19 = zcl_lnt_st_combi_module=>string_singletons.
         DATA t20 TYPE string.
-        DATA(t21) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t21) = t1.
         t20 = t21->as_string( ).
         DATA t22 TYPE REF TO zif_lnt_statement_runnable.
         DATA t23 TYPE string.
-        DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t24) = t1.
         t23 = t24->as_string( ).
         t22 = zcl_lnt_st_combi_module=>str( i_s = t23 ).
         t18 = t19->set( p0 = t20 p1 = t22 ).
@@ -228,7 +228,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       ENDIF.
       t27 = zcl_lnt_st_combi_module=>string_singletons.
       DATA t28 TYPE string.
-      DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+      DATA(t29) = t1.
       t28 = t29->as_string( ).
       t26 = t27->get( p0 = t28 ).
       t25 = t26.
@@ -243,7 +243,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         DATA t33 TYPE string.
         DATA t34 TYPE string.
         DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t36) = t1.
         t35 = t36->as_classvalue( ).
         t34 = t35->name.
         t33 = t34.
@@ -266,7 +266,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         CLEAR t43.
         t42 = t43.
         DATA(t44) = VALUE abap_bool( ).
-        DATA(t45) = CAST zcl_lnt_expression( t38 ).
+        DATA(t45) = t38.
         IF t45 IS INITIAL.
           t44 = abap_true.
         ENDIF.
@@ -283,7 +283,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
           DATA(t48) = t33.
           DATA t49 TYPE REF TO zcl_lnt_expression.
           DATA t50 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-          DATA(t51) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+          DATA(t51) = t1.
           t50 = t51->as_classvalue( ).
           DATA t52 TYPE REF TO object.
           t52 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t50 ).
@@ -307,7 +307,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         RETURN.
       ELSE.
         DATA t57 TYPE REF TO zif_lnt_statement_runnable.
-        DATA(t58) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t58) = t1.
         DATA t59 TYPE REF TO object.
         t59 = t58->as_ref( ).
         t57 ?= t59.
@@ -321,26 +321,26 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_second ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_rest ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
+    DATA(t3) = i_rest.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t8) = t6.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     t9 = zcl_lnt_st_combi_module=>map_input( i_s = t10 ).
     APPEND t9 TO t8->items.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t11) = t6.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t13) = t2.
     t12 = zcl_lnt_st_combi_module=>map_input( i_s = t13 ).
     APPEND t12 TO t11->items.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t14) = t6.
     t5 = t14.
     t4 = t5.
     DATA(t15) = VALUE i( ).
@@ -350,20 +350,20 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
     t17 = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t19) = t3.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     DATA t21 TYPE REF TO object.
     CLEAR t21.
     LOOP AT t19->items INTO t21.
       t20 ?= t21.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+      DATA(t22) = t17.
       DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
+      DATA(t24) = t20.
       t23 = zcl_lnt_st_combi_module=>map_input( i_s = t24 ).
       APPEND t23 TO t22->items.
     ENDLOOP.
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t25) = t17.
     t16 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t26.
@@ -371,16 +371,16 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     CLEAR t27.
     LOOP AT t16->items INTO t27.
       t26 ?= t27.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-      DATA(t29) = CAST zif_lnt_statement_runnable( t26 ).
+      DATA(t28) = t4.
+      DATA(t29) = t26.
       APPEND t29 TO t28->items.
     ENDLOOP.
     DATA t30 TYPE i.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t31) = t4.
     t30 = lines( t31->items ).
     t15 = t30.
     DATA t32 TYPE REF TO zcl_lnt_st_sequence.
-    DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t33) = t4.
     t32 = NEW zcl_lnt_st_sequence( i_list = t33 ).
     result = t32.
 
@@ -390,26 +390,26 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_second ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_rest ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
+    DATA(t3) = i_rest.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t8) = t6.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     t9 = zcl_lnt_st_combi_module=>map_input( i_s = t10 ).
     APPEND t9 TO t8->items.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t11) = t6.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t13) = t2.
     t12 = zcl_lnt_st_combi_module=>map_input( i_s = t13 ).
     APPEND t12 TO t11->items.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t14) = t6.
     t5 = t14.
     t4 = t5.
     DATA(t15) = VALUE i( ).
@@ -419,20 +419,20 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
     t17 = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t19) = t3.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     DATA t21 TYPE REF TO object.
     CLEAR t21.
     LOOP AT t19->items INTO t21.
       t20 ?= t21.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+      DATA(t22) = t17.
       DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
+      DATA(t24) = t20.
       t23 = zcl_lnt_st_combi_module=>map_input( i_s = t24 ).
       APPEND t23 TO t22->items.
     ENDLOOP.
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t25) = t17.
     t16 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t26.
@@ -440,16 +440,16 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     CLEAR t27.
     LOOP AT t16->items INTO t27.
       t26 ?= t27.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-      DATA(t29) = CAST zif_lnt_statement_runnable( t26 ).
+      DATA(t28) = t4.
+      DATA(t29) = t26.
       APPEND t29 TO t28->items.
     ENDLOOP.
     DATA t30 TYPE i.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t31) = t4.
     t30 = lines( t31->items ).
     t15 = t30.
     DATA t32 TYPE REF TO zcl_lnt_st_alternative.
-    DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t33) = t4.
     t32 = NEW zcl_lnt_st_alternative( i_list = t33 ).
     result = t32.
 
@@ -459,26 +459,26 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_second ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_rest ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
+    DATA(t3) = i_rest.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t8) = t6.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     t9 = zcl_lnt_st_combi_module=>map_input( i_s = t10 ).
     APPEND t9 TO t8->items.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t11) = t6.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t13) = t2.
     t12 = zcl_lnt_st_combi_module=>map_input( i_s = t13 ).
     APPEND t12 TO t11->items.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t14) = t6.
     t5 = t14.
     t4 = t5.
     DATA(t15) = VALUE i( ).
@@ -488,20 +488,20 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
     t17 = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t19) = t3.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     DATA t21 TYPE REF TO object.
     CLEAR t21.
     LOOP AT t19->items INTO t21.
       t20 ?= t21.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+      DATA(t22) = t17.
       DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
+      DATA(t24) = t20.
       t23 = zcl_lnt_st_combi_module=>map_input( i_s = t24 ).
       APPEND t23 TO t22->items.
     ENDLOOP.
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t25) = t17.
     t16 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t26.
@@ -509,16 +509,16 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     CLEAR t27.
     LOOP AT t16->items INTO t27.
       t26 ?= t27.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-      DATA(t29) = CAST zif_lnt_statement_runnable( t26 ).
+      DATA(t28) = t4.
+      DATA(t29) = t26.
       APPEND t29 TO t28->items.
     ENDLOOP.
     DATA t30 TYPE i.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t31) = t4.
     t30 = lines( t31->items ).
     t15 = t30.
     DATA t32 TYPE REF TO zcl_lnt_alternative_priority.
-    DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t33) = t4.
     t32 = NEW zcl_lnt_alternative_priority( i_list = t33 ).
     result = t32.
 
@@ -528,10 +528,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_st_optional.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_optional( i_optional = t3 ).
     result = t2.
@@ -542,10 +542,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_optional_priority.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_optional_priority( i_optional = t3 ).
     result = t2.
@@ -556,26 +556,26 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_second ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_rest ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
+    DATA(t3) = i_rest.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t8) = t6.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     t9 = zcl_lnt_st_combi_module=>map_input( i_s = t10 ).
     APPEND t9 TO t8->items.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t11) = t6.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t13) = t2.
     t12 = zcl_lnt_st_combi_module=>map_input( i_s = t13 ).
     APPEND t12 TO t11->items.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t14) = t6.
     t5 = t14.
     t4 = t5.
     DATA(t15) = VALUE i( ).
@@ -585,20 +585,20 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
     t17 = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t19) = t3.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     DATA t21 TYPE REF TO object.
     CLEAR t21.
     LOOP AT t19->items INTO t21.
       t20 ?= t21.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+      DATA(t22) = t17.
       DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
+      DATA(t24) = t20.
       t23 = zcl_lnt_st_combi_module=>map_input( i_s = t24 ).
       APPEND t23 TO t22->items.
     ENDLOOP.
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t25) = t17.
     t16 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t26.
@@ -606,16 +606,16 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     CLEAR t27.
     LOOP AT t16->items INTO t27.
       t26 ?= t27.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-      DATA(t29) = CAST zif_lnt_statement_runnable( t26 ).
+      DATA(t28) = t4.
+      DATA(t29) = t26.
       APPEND t29 TO t28->items.
     ENDLOOP.
     DATA t30 TYPE i.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t31) = t4.
     t30 = lines( t31->items ).
     t15 = t30.
     DATA t32 TYPE REF TO zcl_lnt_permutation.
-    DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t33) = t4.
     t32 = NEW zcl_lnt_permutation( i_list = t33 ).
     result = t32.
 
@@ -625,10 +625,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_st_star.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_star( i_sta = t3 ).
     result = t2.
@@ -639,10 +639,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_star_priority.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_star_priority( i_sta = t3 ).
     result = t2.
@@ -653,10 +653,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_st_plus.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_plus( i_plu = t3 ).
     result = t2.
@@ -667,10 +667,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t1) = i_first.
     DATA t2 TYPE REF TO zcl_lnt_plus_priority.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_plus_priority( i_plu = t3 ).
     result = t2.
@@ -681,10 +681,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_version_or_release ).
+    DATA(t1) = i_version_or_release.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE string( ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     IF t4 IS BOUND.
       t3 = t4->type_of( ).
     ELSE.
@@ -695,14 +695,14 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF t2 = abap_true.
       DATA t6 TYPE REF TO zcl_lnt_abap_release.
       DATA t7 TYPE string.
-      DATA(t8) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+      DATA(t8) = t1.
       t7 = t8->as_string( ).
       t6 = zcl_lnt_version_module=>version_to_abap_release( i_v = t7 ).
       result = t6.
       RETURN.
     ENDIF.
     DATA t9 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     DATA t11 TYPE REF TO object.
     t11 = t10->as_ref( ).
     t9 ?= t11.
@@ -714,11 +714,11 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_version_or_release ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
-    DATA(t3) = CAST zcl_lnt_iver_options( i_opts ).
+    DATA(t1) = i_version_or_release.
+    DATA(t2) = i_first.
+    DATA(t3) = i_opts.
     DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = CAST zcl_lnt_iver_options( t3 ).
+    DATA(t5) = t3.
     IF t5 IS INITIAL.
       t4 = abap_true.
     ENDIF.
@@ -741,14 +741,14 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     ENDIF.
     DATA t11 TYPE REF TO zcl_lnt_vers.
     DATA t12 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t13) = t1.
     t12 = zcl_lnt_st_combi_module=>input_to_release( i_version_or_release = t13 ).
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t15) = t2.
     t14 = zcl_lnt_st_combi_module=>map_input( i_s = t15 ).
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t17 TYPE REF TO zcl_lnt_iver_options.
-    DATA(t18) = CAST zcl_lnt_iver_options( t3 ).
+    DATA(t18) = t3.
     t17 = t18.
     t16 = t17->also.
     t11 = NEW zcl_lnt_vers( i_release_7928 = t12 i_runnable = t14 i_also = t16 ).
@@ -761,11 +761,11 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
     DATA(t1) = i_lang_version.
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t2) = i_first.
     DATA t3 TYPE REF TO zcl_lnt_lang_vers.
     DATA(t4) = t1.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t6) = t2.
     t5 = zcl_lnt_st_combi_module=>map_input( i_s = t6 ).
     t3 = NEW zcl_lnt_lang_vers( i_lang_version = t4 i_runnable = t5 ).
     result = t3.
@@ -777,11 +777,11 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
     DATA(t1) = i_lang_version.
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_first ).
+    DATA(t2) = i_first.
     DATA t3 TYPE REF TO zcl_lnt_lang_vers_not.
     DATA(t4) = t1.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t6) = t2.
     t5 = zcl_lnt_st_combi_module=>map_input( i_s = t6 ).
     t3 = NEW zcl_lnt_lang_vers_not( i_lang_version = t4 i_runnable = t5 ).
     result = t3.
@@ -815,9 +815,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_words ).
+    DATA(t1) = i_words.
     DATA t2 TYPE REF TO zcl_lnt_stop_before1.
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t3) = t1.
     t2 = NEW zcl_lnt_stop_before1( i_words = t3 ).
     result = t2.
 
@@ -851,7 +851,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t7 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
     DATA(t8) = NEW zlnt_runtime_map__be9b74e2658e( ).
     t7 = t8.
-    DATA(t9) = CAST zlnt_runtime_map__be9b74e2658e( t7 ).
+    DATA(t9) = t7.
     t6 = t9.
     zcl_lnt_st_combi_module=>expression_singletons = t6.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -861,7 +861,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_map__e0d0c31d82d4.
     DATA(t12) = NEW zlnt_runtime_map__e0d0c31d82d4( ).
     t11 = t12.
-    DATA(t13) = CAST zlnt_runtime_map__e0d0c31d82d4( t11 ).
+    DATA(t13) = t11.
     t10 = t13.
     zcl_lnt_st_combi_module=>string_singletons = t10.
   ENDMETHOD.

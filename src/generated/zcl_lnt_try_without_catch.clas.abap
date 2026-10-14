@@ -69,10 +69,10 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
       CLEAR t18.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |SingleFile|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       t16 = t21.
       t14 = t16.
     ELSE.
@@ -97,13 +97,13 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_tr_wt_ct_ts_tr_wt_ct.
-    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_tr_wt_ct_ts_tr_wt_ct.
-    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/try_without_catch.ts:32|.
     t2->source_location = t3.
@@ -111,7 +111,7 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_tr_wt_ct_ts_tr_wt_ct.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/try_without_catch.ts:36|.
     t2->source_location = t3.

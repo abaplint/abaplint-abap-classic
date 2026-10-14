@@ -76,16 +76,16 @@ CLASS zcl_lnt_commented_code IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t21.
       t20 = t21.
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t22) = t20.
       DATA(t23) = |Styleguide|.
       APPEND t23 TO t22->items.
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t24) = t20.
       DATA(t25) = |Quickfix|.
       APPEND t25 TO t24->items.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t26) = t20.
       DATA(t27) = |SingleFile|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t28) = t20.
       t19 = t28.
       t17 = t19.
     ELSE.
@@ -110,13 +110,13 @@ CLASS zcl_lnt_commented_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_cm_cd_ts_cmm_cd.
-    DATA(t1) = CAST zcl_lnt_commented_code_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_cm_cd_ts_cmm_cd.
-    DATA(t1) = CAST zcl_lnt_commented_code_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/commented_code.ts:44|.
     t2->source_location = t3.
@@ -124,8 +124,8 @@ CLASS zcl_lnt_commented_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/commented_code.ts:48|.
     t3->source_location = t4.
@@ -134,10 +134,10 @@ CLASS zcl_lnt_commented_code IMPLEMENTATION.
 
   METHOD check_bf6e.
     DATA(t1) = i_code.
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t3) = CAST zcl_lnt_position( i_pos_start ).
-    DATA(t4) = CAST zcl_lnt_position( i_pos_end ).
-    DATA(t5) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t2) = i_file.
+    DATA(t3) = i_pos_start.
+    DATA(t4) = i_pos_end.
+    DATA(t5) = i_obj_1ed0.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/commented_code.ts:77|.
     t6->source_location = t7.

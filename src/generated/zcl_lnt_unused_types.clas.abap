@@ -64,10 +64,10 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Quickfix|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       t14 = t19.
       t12 = t14.
     ELSE.
@@ -109,13 +109,13 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_rl_un_ty_ts_un_ty_fb96.
-    DATA(t1) = CAST zcl_lnt_unused_types_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_rl_un_ty_ts_un_ty_63cc.
-    DATA(t1) = CAST zcl_lnt_unused_types_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:76|.
     t2->source_location = t3.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_uns_typ_ts_uns_typ.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:83|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:88|.
     t2->source_location = t3.
@@ -139,8 +139,8 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD suppressedby_pseudo.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_types.ts:154|.
     t3->source_location = t4.
@@ -148,8 +148,8 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = i_add_81da.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/unused_types.ts:178|.
@@ -158,8 +158,8 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_node.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = i_add_81da.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/unused_types.ts:190|.
@@ -168,8 +168,8 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_types.ts:219|.
     t3->source_location = t4.
@@ -187,7 +187,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:76|.
     t2->source_location = t3.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_types.ts:83|.
     t2->source_location = t3.

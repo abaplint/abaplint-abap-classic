@@ -31,7 +31,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
   METHOD add_file.
     DATA(t1) = i_filename.
     DATA(t2) = i_raw.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->files ).
+    DATA(t3) = me->files.
     DATA t4 TYPE REF TO zcl_lnt_memory_file.
     DATA(t5) = t1.
     DATA(t6) = t2.
@@ -42,7 +42,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
   METHOD add_dependency.
     DATA(t1) = i_filename.
     DATA(t2) = i_raw.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->dependencies ).
+    DATA(t3) = me->dependencies.
     DATA t4 TYPE REF TO zcl_lnt_memory_file.
     DATA(t5) = t1.
     DATA(t6) = t2.
@@ -81,20 +81,20 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t3 = NEW zcl_lnt_registry( i_conf = t4 ).
     t2 = t3.
     DATA t6 TYPE REF TO zif_lnt_registry.
-    DATA(t7) = CAST zcl_lnt_registry( t2 ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( me->files ).
+    DATA(t7) = t2.
+    DATA(t8) = me->files.
     t6 = t7->add_files_179c( i_files = t8 ).
     DATA t9 TYPE REF TO zif_lnt_registry.
-    DATA(t10) = CAST zcl_lnt_registry( t2 ).
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( me->dependencies ).
+    DATA(t10) = t2.
+    DATA(t11) = me->dependencies.
     t9 = t10->add_dependencies( i_files = t11 ).
     DATA t12 TYPE REF TO zif_lnt_configuration.
     DATA t13 TYPE REF TO zif_lnt_configuration.
     DATA t14 TYPE REF TO zcl_lnt_registry.
-    DATA(t15) = CAST zcl_lnt_registry( t2 ).
+    DATA(t15) = t2.
     t14 = t15.
     DATA t16 TYPE REF TO zif_lnt_configuration.
-    DATA(t17) = CAST zcl_lnt_registry( t14 ).
+    DATA(t17) = t14.
     t16 = t17->conf.
     t13 = t16.
     t12 = t13.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t25 = t26.
     t24 = t25.
     DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t29) = CAST zcl_lnt_registry( t2 ).
+    DATA(t29) = t2.
     t28 = t29->get_objects( ).
     DATA t30 TYPE REF TO zif_lnt_object.
     CLEAR t30.
@@ -130,13 +130,13 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       CLEAR t32.
       DATA t33 TYPE REF TO zcl_lnt_iparse_result.
       CLEAR t33.
-      DATA(t34) = CAST zif_lnt_object( t30 ).
+      DATA(t34) = t30.
       DATA t35 TYPE REF TO zcl_lnt_abap_release.
       CLEAR t35.
       DATA(t36) = abap_true.
       IF t36 = abap_true.
         DATA t37 TYPE REF TO zcl_lnt_abap_release.
-        DATA(t38) = CAST zif_lnt_configuration( t12 ).
+        DATA(t38) = t12.
         t37 = t38->get_release( ).
         t35 = t37.
       ELSE.
@@ -146,16 +146,16 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       ENDIF.
       DATA t40 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t41 TYPE REF TO zcl_lnt_isyntax_settings.
-      DATA(t42) = CAST zif_lnt_configuration( t12 ).
+      DATA(t42) = t12.
       t41 = t42->get_syntax_setttings( ).
       t40 = t41->global_macros.
-      DATA(t43) = CAST zcl_lnt_registry( t2 ).
+      DATA(t43) = t2.
       DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t44.
       DATA(t45) = abap_true.
       IF t45 = abap_true.
         DATA t46 TYPE string.
-        DATA(t47) = CAST zif_lnt_configuration( t12 ).
+        DATA(t47) = t12.
         t46 = t47->get_language_version( ).
         DATA(t48) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t48->has = abap_true.
@@ -171,7 +171,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA(t50) = VALUE abap_bool( ).
       DATA t51 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t52 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t53) = CAST zcl_lnt_iparse_result( t32 ).
+      DATA(t53) = t32.
       t52 = t53->runtime_extra.
       t51 = t52.
       DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t54 = t55.
       DATA(t56) = VALUE abap_bool( ).
       DATA(t57) = VALUE abap_bool( ).
-      DATA(t58) = CAST zcl_lnt_shape_8fc6df03( t51 ).
+      DATA(t58) = t51.
       IF t58 IS INITIAL.
         t57 = abap_true.
       ENDIF.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA t61 TYPE int8.
         DATA t62 TYPE REF TO zcl_lnt_shape_8fc6df03.
         DATA t63 TYPE REF TO zcl_lnt_shape_8fc6df03.
-        DATA(t64) = CAST zcl_lnt_iparse_result( t32 ).
+        DATA(t64) = t32.
         t63 = t64->runtime_extra.
         t62 = t63.
         t61 = t62->lexing.
@@ -206,7 +206,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA t67 TYPE int8.
         DATA t68 TYPE REF TO zcl_lnt_shape_8fc6df03.
         DATA t69 TYPE REF TO zcl_lnt_shape_8fc6df03.
-        DATA(t70) = CAST zcl_lnt_iparse_result( t32 ).
+        DATA(t70) = t32.
         t69 = t70->runtime_extra.
         t68 = t69.
         t67 = t68->statements.
@@ -220,7 +220,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA t73 TYPE int8.
         DATA t74 TYPE REF TO zcl_lnt_shape_8fc6df03.
         DATA t75 TYPE REF TO zcl_lnt_shape_8fc6df03.
-        DATA(t76) = CAST zcl_lnt_iparse_result( t32 ).
+        DATA(t76) = t32.
         t75 = t76->runtime_extra.
         t74 = t75.
         t73 = t74->structure.
@@ -242,7 +242,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t78 = t79.
     t77 = t78.
     DATA t81 TYPE REF TO zcl_lnt_cross_include_macros.
-    DATA(t82) = CAST zcl_lnt_registry( t2 ).
+    DATA(t82) = t2.
     t81 = NEW zcl_lnt_cross_include_macros( i_reg_f149 = t82 ).
     t81->run( ).
     DATA(t83) = VALUE int8( ).
@@ -256,7 +256,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t84 = t85.
     t83 = t84.
     DATA t87 TYPE REF TO zcl_lnt_fnd_glbl_dfntns.
-    DATA(t88) = CAST zcl_lnt_registry( t2 ).
+    DATA(t88) = t2.
     t87 = NEW zcl_lnt_fnd_glbl_dfntns( i_reg_f149 = t88 ).
     DATA t89 TYPE REF TO zif_lnt_progress.
     CLEAR t89.
@@ -351,7 +351,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA(t142) = strlen( t95 ).
     t94 = |{ t95 }{ t141 }|.
     me->stages = t94.
-    DATA(t143) = CAST zcl_lnt_registry( t2 ).
+    DATA(t143) = t2.
     result = t143.
 
   ENDMETHOD.
@@ -363,29 +363,29 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
     CONSTANTS range_int_check_hi_2gosa7pa2gv TYPE int8 VALUE '9007199254740991'.
-    DATA(t1) = CAST zcl_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_rules_runner.
     DATA t3 TYPE REF TO zcl_lnt_rules_runner.
-    DATA(t4) = CAST zcl_lnt_registry( t1 ).
+    DATA(t4) = t1.
     t3 = NEW zcl_lnt_rules_runner( i_reg_f149 = t4 ).
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zif_lnt_configuration.
     DATA t8 TYPE REF TO zcl_lnt_registry.
-    DATA(t9) = CAST zcl_lnt_registry( t1 ).
+    DATA(t9) = t1.
     t8 = t9.
     DATA t10 TYPE REF TO zif_lnt_configuration.
-    DATA(t11) = CAST zcl_lnt_registry( t8 ).
+    DATA(t11) = t8.
     t10 = t11->conf.
     t7 = t10.
     t6 = t7->get_enabled_rules( ).
     t5 = t6.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t14) = CAST zcl_lnt_rules_runner( t2 ).
+    DATA(t14) = t2.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t16) = CAST zcl_lnt_registry( t1 ).
+    DATA(t16) = t1.
     t15 = t16->get_objects( ).
     t13 = t14->objects_to_check( i_objects = t15 ).
     t12 = t13.
@@ -399,7 +399,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     ENDIF.
     t18 = t19.
     t17 = t18.
-    DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t21) = t12.
     DATA t22 TYPE REF TO zif_lnt_object.
     CLEAR t22.
     DATA t23 TYPE REF TO object.
@@ -407,14 +407,14 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     LOOP AT t21->items INTO t23.
       t22 ?= t23.
       DATA t24 TYPE abap_bool.
-      DATA(t25) = CAST zif_lnt_object( t22 ).
+      DATA(t25) = t22.
       t24 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t24 = abap_true.
         DATA t26 TYPE REF TO zcl_lnt_isyntax_result.
         DATA t27 TYPE REF TO zcl_lnt_syntax_logic.
-        DATA(t28) = CAST zcl_lnt_registry( t1 ).
+        DATA(t28) = t1.
         DATA t29 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t30) = CAST zif_lnt_object( t22 ).
+        DATA(t30) = t22.
         DATA t31 TYPE REF TO object.
         t31 = t30.
         t29 ?= t31.
@@ -436,7 +436,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA t37 TYPE REF TO zlnt_runtime_arra_f39560c658f8.
     CREATE OBJECT t37.
     t36 = t37.
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t38) = t5.
     DATA t39 TYPE REF TO zif_lnt_rule.
     CLEAR t39.
     DATA t40 TYPE REF TO object.
@@ -454,10 +454,10 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t42 = t43.
       t41 = t42.
       DATA t45 TYPE REF TO zif_lnt_rule.
-      DATA(t46) = CAST zif_lnt_rule( t39 ).
-      DATA(t47) = CAST zcl_lnt_registry( t1 ).
+      DATA(t46) = t39.
+      DATA(t47) = t1.
       t45 = t46->initialize( i_reg_f149 = t47 ).
-      DATA(t48) = CAST zlnt_runtime_arra_f39560c658f8( t36 ).
+      DATA(t48) = t36.
       DATA(t49) = VALUE int8( ).
       DATA(t50) = VALUE f( ).
       DATA t51 TYPE f.
@@ -482,7 +482,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t57.
     t56 = t57.
-    DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t58) = t12.
     DATA t59 TYPE REF TO zif_lnt_object.
     CLEAR t59.
     DATA t60 TYPE REF TO object.
@@ -496,7 +496,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA t63 TYPE abap_bool.
         DATA(t64) = t61.
         DATA t65 TYPE i.
-        DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+        DATA(t66) = t5.
         t65 = lines( t66->items ).
         t63 = xsdbool( t64 < t65 ).
         IF t63 = abap_false.
@@ -515,14 +515,14 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA(t71) = VALUE i( ).
         DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t73 TYPE REF TO zif_lnt_rule.
-        DATA(t74) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+        DATA(t74) = t5.
         DATA(t75) = t61.
         t75 = t75 + 1.
         DATA t76 TYPE REF TO object.
         CLEAR t76.
         READ TABLE t74->items INDEX t75 INTO t76.
         t73 ?= t76.
-        DATA(t77) = CAST zif_lnt_object( t59 ).
+        DATA(t77) = t59.
         t72 = t73->run( i_obj_1ed0 = t77 ).
         DATA t78 TYPE REF TO zcl_lnt_issue.
         CLEAR t78.
@@ -530,15 +530,15 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         CLEAR t79.
         LOOP AT t72->items INTO t79.
           t78 ?= t79.
-          DATA(t80) = CAST zlnt_runtime_arra_c22708faf2e3( t56 ).
-          DATA(t81) = CAST zcl_lnt_issue( t78 ).
+          DATA(t80) = t56.
+          DATA(t81) = t78.
           APPEND t81 TO t80->items.
         ENDLOOP.
         DATA t82 TYPE i.
-        DATA(t83) = CAST zlnt_runtime_arra_c22708faf2e3( t56 ).
+        DATA(t83) = t56.
         t82 = lines( t83->items ).
         t71 = t82.
-        DATA(t84) = CAST zlnt_runtime_arra_f39560c658f8( t36 ).
+        DATA(t84) = t36.
         DATA(t85) = t61.
         DATA(t86) = VALUE int8( ).
         DATA(t87) = VALUE f( ).
@@ -546,7 +546,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         DATA(t89) = VALUE f( ).
         DATA(t90) = VALUE int8( ).
         DATA(t91) = VALUE int8( ).
-        DATA(t92) = CAST zlnt_runtime_arra_f39560c658f8( t36 ).
+        DATA(t92) = t36.
         DATA(t93) = t61.
         t93 = t93 + 1.
         READ TABLE t92->items INDEX t93 INTO t91.
@@ -588,8 +588,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     ENDLOOP.
     DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t104 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t105) = CAST zcl_lnt_rules_runner( t2 ).
-    DATA(t106) = CAST zlnt_runtime_arra_c22708faf2e3( t56 ).
+    DATA(t105) = t2.
+    DATA(t106) = t56.
     t104 = t105->exclude_issues( i_issues = t106 ).
     t103 = t104.
     DATA t107 TYPE string.
@@ -602,7 +602,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t111 TYPE abap_bool.
       DATA(t112) = t109.
       DATA t113 TYPE i.
-      DATA(t114) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+      DATA(t114) = t5.
       t113 = lines( t114->items ).
       t111 = xsdbool( t112 < t113 ).
       IF t111 = abap_false.
@@ -618,7 +618,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t122 TYPE string.
       DATA t123 TYPE REF TO zcl_lnt_irule_metadata.
       DATA t124 TYPE REF TO zif_lnt_rule.
-      DATA(t125) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+      DATA(t125) = t5.
       DATA(t126) = t109.
       t126 = t126 + 1.
       DATA t127 TYPE REF TO object.
@@ -634,7 +634,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t119 = |{ t120 }{ t129 }|.
       DATA t131 TYPE string.
       DATA(t132) = VALUE int8( ).
-      DATA(t133) = CAST zlnt_runtime_arra_f39560c658f8( t36 ).
+      DATA(t133) = t36.
       DATA(t134) = t109.
       t134 = t134 + 1.
       READ TABLE t133->items INDEX t134 INTO t132.
@@ -689,7 +689,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA(t164) = ||.
     DATA t165 TYPE string.
     DATA t166 TYPE i.
-    DATA(t167) = CAST zlnt_runtime_arra_c22708faf2e3( t103 ).
+    DATA(t167) = t103.
     t166 = lines( t167->items ).
     t165 = |{ t166 }|.
     DATA(t168) = strlen( t164 ).
@@ -698,7 +698,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA(t170) = strlen( t163 ).
     t162 = |{ t163 }{ t169 }|.
     t161 = t162.
-    DATA(t171) = CAST zlnt_runtime_arra_c22708faf2e3( t103 ).
+    DATA(t171) = t103.
     DATA t172 TYPE REF TO zcl_lnt_issue.
     CLEAR t172.
     DATA t173 TYPE REF TO object.
@@ -730,11 +730,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       CONCATENATE t192 t193 INTO t192 RESPECTING BLANKS.
       DATA t194 TYPE string.
       DATA t195 TYPE REF TO zcl_lnt_issue.
-      DATA(t196) = CAST zcl_lnt_issue( t172 ).
+      DATA(t196) = t172.
       t195 = t196.
       DATA t197 TYPE string.
       DATA t198 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t199) = CAST zcl_lnt_issue( t195 ).
+      DATA(t199) = t195.
       t198 = t199->data_56cc.
       t197 = t198->key.
       t194 = t197.
@@ -745,11 +745,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t190 = |{ t191 }{ t201 }|.
       DATA t203 TYPE string.
       DATA t204 TYPE REF TO zcl_lnt_issue.
-      DATA(t205) = CAST zcl_lnt_issue( t172 ).
+      DATA(t205) = t172.
       t204 = t205.
       DATA t206 TYPE string.
       DATA t207 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t208) = CAST zcl_lnt_issue( t204 ).
+      DATA(t208) = t204.
       t207 = t208->data_56cc.
       t206 = t207->severity.
       t203 = t206.
@@ -760,11 +760,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t188 = |{ t189 }{ t210 }|.
       DATA t212 TYPE string.
       DATA t213 TYPE REF TO zcl_lnt_issue.
-      DATA(t214) = CAST zcl_lnt_issue( t172 ).
+      DATA(t214) = t172.
       t213 = t214.
       DATA t215 TYPE string.
       DATA t216 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t217) = CAST zcl_lnt_issue( t213 ).
+      DATA(t217) = t213.
       t216 = t217->data_56cc.
       t215 = t216->filename.
       t212 = t215.
@@ -778,17 +778,17 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t223 TYPE REF TO zcl_lnt_position.
       DATA t224 TYPE REF TO zcl_lnt_position.
       DATA t225 TYPE REF TO zcl_lnt_issue.
-      DATA(t226) = CAST zcl_lnt_issue( t172 ).
+      DATA(t226) = t172.
       t225 = t226.
       DATA t227 TYPE REF TO zcl_lnt_position.
       DATA t228 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t229) = CAST zcl_lnt_issue( t225 ).
+      DATA(t229) = t225.
       t228 = t229->data_56cc.
       t227 = t228->start.
       t224 = t227.
       t223 = t224.
       DATA t230 TYPE int8.
-      DATA(t231) = CAST zcl_lnt_position( t223 ).
+      DATA(t231) = t223.
       t230 = t231->row.
       t222 = t230.
       t221 = |{ t222 }|.
@@ -802,17 +802,17 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t237 TYPE REF TO zcl_lnt_position.
       DATA t238 TYPE REF TO zcl_lnt_position.
       DATA t239 TYPE REF TO zcl_lnt_issue.
-      DATA(t240) = CAST zcl_lnt_issue( t172 ).
+      DATA(t240) = t172.
       t239 = t240.
       DATA t241 TYPE REF TO zcl_lnt_position.
       DATA t242 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t243) = CAST zcl_lnt_issue( t239 ).
+      DATA(t243) = t239.
       t242 = t243->data_56cc.
       t241 = t242->start.
       t238 = t241.
       t237 = t238.
       DATA t244 TYPE int8.
-      DATA(t245) = CAST zcl_lnt_position( t237 ).
+      DATA(t245) = t237.
       t244 = t245->col.
       t236 = t244.
       t235 = |{ t236 }|.
@@ -826,17 +826,17 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t251 TYPE REF TO zcl_lnt_position.
       DATA t252 TYPE REF TO zcl_lnt_position.
       DATA t253 TYPE REF TO zcl_lnt_issue.
-      DATA(t254) = CAST zcl_lnt_issue( t172 ).
+      DATA(t254) = t172.
       t253 = t254.
       DATA t255 TYPE REF TO zcl_lnt_position.
       DATA t256 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t257) = CAST zcl_lnt_issue( t253 ).
+      DATA(t257) = t253.
       t256 = t257->data_56cc.
       t255 = t256->end.
       t252 = t255.
       t251 = t252.
       DATA t258 TYPE int8.
-      DATA(t259) = CAST zcl_lnt_position( t251 ).
+      DATA(t259) = t251.
       t258 = t259->row.
       t250 = t258.
       t249 = |{ t250 }|.
@@ -850,17 +850,17 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t265 TYPE REF TO zcl_lnt_position.
       DATA t266 TYPE REF TO zcl_lnt_position.
       DATA t267 TYPE REF TO zcl_lnt_issue.
-      DATA(t268) = CAST zcl_lnt_issue( t172 ).
+      DATA(t268) = t172.
       t267 = t268.
       DATA t269 TYPE REF TO zcl_lnt_position.
       DATA t270 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t271) = CAST zcl_lnt_issue( t267 ).
+      DATA(t271) = t267.
       t270 = t271->data_56cc.
       t269 = t270->end.
       t266 = t269.
       t265 = t266.
       DATA t272 TYPE int8.
-      DATA(t273) = CAST zcl_lnt_position( t265 ).
+      DATA(t273) = t265.
       t272 = t273->col.
       t264 = t272.
       t263 = |{ t264 }|.
@@ -871,11 +871,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t178 = |{ t179 }{ t275 }|.
       DATA t277 TYPE string.
       DATA t278 TYPE REF TO zcl_lnt_issue.
-      DATA(t279) = CAST zcl_lnt_issue( t172 ).
+      DATA(t279) = t172.
       t278 = t279.
       DATA t280 TYPE string.
       DATA t281 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t282) = CAST zcl_lnt_issue( t278 ).
+      DATA(t282) = t278.
       t281 = t282->data_56cc.
       t280 = t281->message_25cb.
       t277 = t280.

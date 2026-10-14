@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_7ddeb4ab DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_7ddeb4ab IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = i_found.
     DATA t3 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t4) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->id = t3.
     DATA(t5) = t2.

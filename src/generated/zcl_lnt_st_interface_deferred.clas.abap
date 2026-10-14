@@ -29,7 +29,7 @@ CLASS zcl_lnt_st_interface_deferred IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db ).
+    DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db.
     IF t10 IS BOUND.
       CREATE OBJECT t9.
       t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -40,14 +40,14 @@ CLASS zcl_lnt_st_interface_deferred IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t12.
     t11 = t12.
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t13) = t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t15) = |DEFERRED|.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t14->sval = t15.
     APPEND t14 TO t13->items.
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t16) = t11.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
@@ -66,9 +66,9 @@ CLASS zcl_lnt_st_interface_deferred IMPLEMENTATION.
     ENDIF.
     APPEND t17 TO t16->items.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t23) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t23) = t5.
+    DATA(t24) = t8.
+    DATA(t25) = t11.
     t22 = zcl_lnt_st_combi_module=>seq( i_first = t23 i_second = t24 i_rest = t25 ).
     t4 = t22.
     IF t4 IS BOUND.

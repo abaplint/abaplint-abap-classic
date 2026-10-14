@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_itrnsltn_txt_elmnts IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_language.
-    DATA(t2) = CAST zlnt_runtime_map__8bf596bf435b( i_text_elements ).
+    DATA(t2) = i_text_elements.
     DATA(t3) = t1.
     me->language = t3.
-    DATA(t4) = CAST zlnt_runtime_map__8bf596bf435b( t2 ).
+    DATA(t4) = t2.
     me->text_elements = t4.
   ENDMETHOD.
 

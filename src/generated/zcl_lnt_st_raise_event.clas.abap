@@ -26,7 +26,7 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t7.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d219_2dee75409f14 ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d219_2dee75409f14.
     IF t8 IS BOUND.
       CREATE OBJECT t7.
       t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -38,9 +38,9 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     CREATE OBJECT t10.
     t9 = t10.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t12) = t3.
+    DATA(t13) = t6.
+    DATA(t14) = t9.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t13 i_rest = t14 ).
     t2 = t11.
     t1 = t2.
@@ -62,7 +62,7 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d159_eda069348ac0 ).
+    DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d159_eda069348ac0.
     IF t24 IS BOUND.
       CREATE OBJECT t23.
       t23->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -73,14 +73,14 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t26.
     t25 = t26.
-    DATA(t27) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t27) = t25.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t28.
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t29.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t30.
-    DATA(t31) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t31) = t1.
     IF t31 IS BOUND.
       CREATE OBJECT t30.
       t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -98,9 +98,9 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     ENDIF.
     APPEND t28 TO t27->items.
     DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t35) = CAST zlnt_runtime_dyna_a429568d5be8( t19 ).
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t35) = t19.
+    DATA(t36) = t22.
+    DATA(t37) = t25.
     t34 = zcl_lnt_st_combi_module=>seq( i_first = t35 i_second = t36 i_rest = t37 ).
     t18 = t34.
     IF t18 IS BOUND.

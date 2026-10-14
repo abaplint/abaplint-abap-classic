@@ -91,13 +91,13 @@ CLASS zcl_lnt_line_length IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |Styleguide|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t31) = t25.
       t24 = t31.
       t22 = t24.
     ELSE.
@@ -115,13 +115,13 @@ CLASS zcl_lnt_line_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ln_ln_ts_ln_lng.
-    DATA(t1) = CAST zcl_lnt_line_length_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ln_ln_ts_ln_lng.
-    DATA(t1) = CAST zcl_lnt_line_length_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/line_length.ts:35|.
     t2->source_location = t3.
@@ -129,7 +129,7 @@ CLASS zcl_lnt_line_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ln_ln_ts_ln_lng.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/line_length.ts:39|.
     t2->source_location = t3.

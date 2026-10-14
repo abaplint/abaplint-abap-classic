@@ -76,7 +76,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD parse_type.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/data_definition.ts:52|.
     t2->source_location = t3.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_field_names.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
+    DATA(t1) = i_tree.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/data_definition.ts:153|.
     t2->source_location = t3.
@@ -162,7 +162,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_sources_and_relations.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
+    DATA(t1) = i_tree.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/data_definition.ts:209|.
     t2->source_location = t3.

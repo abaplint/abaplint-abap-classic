@@ -16,19 +16,19 @@ CLASS zcl_lnt_shape_5383185c IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_key.
     DATA(t2) = i_name.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name_in_source ).
+    DATA(t3) = i_name_in_source.
     DATA(t4) = i_prefix.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_annotations ).
+    DATA(t5) = i_annotations.
     DATA(t6) = t1.
     me->key = t6.
     DATA(t7) = t2.
     me->name = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t8) = t3.
     me->name_in_source = t8.
     DATA(t9) = t4.
     me->prefix = t9.
     DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t11) = CAST zlnt_runtime_arra_8ecd6afe19e0( t5 ).
+    DATA(t11) = t5.
     t10 = t11.
     me->annotations = t10.
   ENDMETHOD.

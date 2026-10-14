@@ -14,15 +14,15 @@ CLASS zcl_lnt_spag_helper DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_spag_helper IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_spag ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( t1 ).
+    DATA(t1) = i_spag.
+    DATA(t2) = t1.
     me->spag = t2.
   ENDMETHOD.
 
   METHOD rename_variable.
     DATA(t1) = i_old_name.
-    DATA(t2) = CAST zcl_lnt_position( i_pos ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t2) = i_pos.
+    DATA(t3) = i_low_file.
     DATA(t4) = i_new_name.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:56|.
@@ -32,7 +32,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
 
   METHOD find_references.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_position( i_pos ).
+    DATA(t2) = i_pos.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:79|.
     t3->source_location = t4.
@@ -41,7 +41,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
 
   METHOD find_recursive_duplicate.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_position( i_skip_34cc ).
+    DATA(t2) = i_skip_34cc.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:108|.
     t3->source_location = t4.
@@ -50,7 +50,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
 
   METHOD is_duplicate_name.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_position( i_pos ).
+    DATA(t2) = i_pos.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:124|.
     t3->source_location = t4.

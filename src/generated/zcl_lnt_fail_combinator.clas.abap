@@ -32,7 +32,7 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_in_sr_ab_2_st_cmb_ts_fl_cmb.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_7825 ).
+    DATA(t1) = i_r_7825.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/2_statements/combi.ts:832|.
     t2->source_location = t3.
@@ -61,7 +61,7 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/2_statements/combi.ts:832|.
     t2->source_location = t3.
@@ -69,17 +69,17 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.

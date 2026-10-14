@@ -13,17 +13,17 @@ CLASS zcl_lnt_iprepare_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t1) = i_range.
     DATA(t2) = i_placeholder.
     DATA(t3) = i_type_9913.
-    DATA(t4) = CAST zif_lnt_file( i_file ).
-    DATA(t5) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t4) = i_file.
+    DATA(t5) = t1.
     me->range = t5.
     DATA(t6) = t2.
     me->placeholder = t6.
     DATA(t7) = t3.
     me->type_cba0 = t7.
-    DATA(t8) = CAST zif_lnt_file( t4 ).
+    DATA(t8) = t4.
     me->file = t8.
   ENDMETHOD.
 

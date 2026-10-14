@@ -10,12 +10,12 @@ CLASS zcl_lnt_sy_field_symbol DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396 ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396.
     t4 = t5->find_first_expression( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE REF TO zcl_lnt_abstract_token.
@@ -23,12 +23,12 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t10) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t10) = t3.
     t9 = t10.
     DATA t11 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t11.
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zcl_lnt_expression_node( t9 ).
+    DATA(t13) = t9.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ENDIF.
@@ -39,7 +39,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     ELSE.
       DATA t15 TYPE REF TO zcl_lnt_abstract_token.
       DATA t16 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t17) = CAST zcl_lnt_expression_node( t9 ).
+      DATA(t17) = t9.
       t16 = t17.
       t15 = t16->get_first_token( ).
       t11 = t15.
@@ -49,14 +49,14 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA(t18) = VALUE abap_bool( ).
     DATA(t19) = VALUE abap_bool( ).
     DATA t20 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t21) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t21) = t3.
     t20 = t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
     t22 = t23.
     DATA(t24) = VALUE abap_bool( ).
-    DATA(t25) = CAST zcl_lnt_expression_node( t20 ).
+    DATA(t25) = t20.
     IF t25 IS INITIAL.
       t24 = abap_true.
     ENDIF.
@@ -65,14 +65,14 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     IF t19 = abap_false.
       DATA(t26) = VALUE abap_bool( ).
       DATA t27 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t28) = CAST zcl_lnt_abstract_token( t7 ).
+      DATA(t28) = t7.
       t27 = t28.
       DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t30.
       t29 = t30.
       DATA(t31) = VALUE abap_bool( ).
-      DATA(t32) = CAST zcl_lnt_abstract_token( t27 ).
+      DATA(t32) = t27.
       IF t32 IS INITIAL.
         t31 = abap_true.
       ENDIF.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA t34 TYPE i.
     DATA t35 TYPE string.
     DATA t36 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t37) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t37) = t3.
     t36 = t37.
     t35 = t36->concat_tokens( ).
     DATA(t38) = strlen( t35 ).
@@ -99,19 +99,19 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       DATA(t42) = |FIELD-SYMBOLS name too long, |.
       DATA t43 TYPE string.
       DATA t44 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t45) = CAST zcl_lnt_expression_node( t3 ).
+      DATA(t45) = t3.
       t44 = t45.
       t43 = t44->concat_tokens( ).
       DATA(t46) = strlen( t42 ).
       t41 = |{ t42 }{ t43 }|.
       t40 = t41.
       DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t48) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t48) = t2.
       t47 = t48->issues.
       DATA t49 TYPE REF TO zcl_lnt_issue.
-      DATA(t50) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t50) = t2.
       DATA t51 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t52) = CAST zcl_lnt_abstract_token( t7 ).
+      DATA(t52) = t7.
       t51 = t52.
       DATA(t53) = t40.
       DATA t54 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -124,10 +124,10 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t58 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t59 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t60) = CAST zcl_lnt_statement_node( t1 ).
+    DATA(t60) = t1.
     t59 = t60.
     DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t62) = CAST zcl_lnt_abstract_node( t59 ).
+    DATA(t62) = t59.
     t61 = t62->children.
     t58 = t61.
     t57 ?= t58.
@@ -137,7 +137,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     IF t55 = abap_true.
       DATA t64 TYPE REF TO zcl_lnt_current_scope.
       DATA t65 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t66) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t66) = t2.
       t65 = t66->scope.
       t64 = t65.
       DATA t67 TYPE REF TO zcl_lnt_typed_identifier.
@@ -149,10 +149,10 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
         DATA t70 TYPE REF TO zcl_lnt_typed_identifier.
         CLEAR t70.
         DATA t71 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t72) = CAST zcl_lnt_abstract_token( t7 ).
+        DATA(t72) = t7.
         t71 = t72.
         DATA t73 TYPE string.
-        DATA(t74) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t74) = t2.
         t73 = t74->filename.
         DATA t75 TYPE REF TO zcl_lnt_void_type.
         CLEAR t75.
@@ -187,25 +187,25 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       t67 = t68.
       DATA(t85) = VALUE abap_bool( ).
       DATA t86 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t87) = CAST zcl_lnt_typed_identifier( t67 ).
+      DATA(t87) = t67.
       t86 = t87.
       DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t89.
       t88 = t89.
       DATA(t90) = VALUE abap_bool( ).
-      DATA(t91) = CAST zcl_lnt_typed_identifier( t86 ).
+      DATA(t91) = t86.
       IF t91 IS INITIAL.
         t90 = abap_true.
       ENDIF.
       t85 = t90.
       IF t85 = abap_true.
       ELSE.
-        DATA(t92) = CAST zcl_lnt_current_scope( t64 ).
+        DATA(t92) = t64.
         DATA(t93) = VALUE string( ).
         DATA t94 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t95 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t96) = CAST zcl_lnt_typed_identifier( t67 ).
+        DATA(t96) = t67.
         t95 = t96.
         t94 = t95.
         DATA(t97) = VALUE string( ).
@@ -213,11 +213,11 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
         DATA t99 TYPE string.
         DATA t100 TYPE REF TO zcl_lnt_abstract_token.
         DATA t101 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t102) = CAST zcl_lnt_fi_identifier( t94 ).
+        DATA(t102) = t94.
         t101 = t102->token.
         t100 = t101.
         DATA t103 TYPE string.
-        DATA(t104) = CAST zcl_lnt_abstract_token( t100 ).
+        DATA(t104) = t100.
         t103 = t104->str.
         t99 = t103.
         t98 = t99.
@@ -277,7 +277,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
         t97 = t122.
         t93 = t97.
         DATA t123 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t124) = CAST zcl_lnt_typed_identifier( t67 ).
+        DATA(t124) = t67.
         t123 = t124.
         t92->add_named_identifier( i_name = t93 i_identifier = t123 ).
       ENDIF.
@@ -286,20 +286,20 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA t125 TYPE REF TO zcl_lnt_abstract_type.
     DATA t126 TYPE REF TO zcl_lnt_abstract_type.
     DATA t127 TYPE REF TO zcl_lnt_basic_types.
-    DATA(t128) = CAST zcl_lnt_syntax_input( t2 ).
+    DATA(t128) = t2.
     t127 = NEW zcl_lnt_basic_types( i_input_967e = t128 ).
-    DATA(t129) = CAST zcl_lnt_statement_node( t1 ).
+    DATA(t129) = t1.
     DATA t130 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t130.
     t126 = t127->parse_type( i_node = t129 i_qualified_name = t130 ).
     t125 = t126.
     DATA t131 TYPE abap_bool.
-    DATA(t132) = CAST zcl_lnt_abstract_type( t125 ).
+    DATA(t132) = t125.
     t131 = xsdbool( t132 IS BOUND ).
     IF t131 = abap_true.
       DATA t133 TYPE REF TO zcl_lnt_current_scope.
       DATA t134 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t135) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t135) = t2.
       t134 = t135->scope.
       t133 = t134.
       DATA t136 TYPE REF TO zcl_lnt_typed_identifier.
@@ -310,13 +310,13 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       IF t138 = abap_true.
         DATA t139 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t140 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t141) = CAST zcl_lnt_abstract_token( t7 ).
+        DATA(t141) = t7.
         t140 = t141.
         DATA t142 TYPE string.
-        DATA(t143) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t143) = t2.
         t142 = t143->filename.
         DATA t144 TYPE REF TO zcl_lnt_abstract_type.
-        DATA(t145) = CAST zcl_lnt_abstract_type( t125 ).
+        DATA(t145) = t125.
         t144 = t145.
         DATA t146 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t146.
@@ -332,25 +332,25 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       t136 = t137.
       DATA(t149) = VALUE abap_bool( ).
       DATA t150 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t151) = CAST zcl_lnt_typed_identifier( t136 ).
+      DATA(t151) = t136.
       t150 = t151.
       DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t153.
       t152 = t153.
       DATA(t154) = VALUE abap_bool( ).
-      DATA(t155) = CAST zcl_lnt_typed_identifier( t150 ).
+      DATA(t155) = t150.
       IF t155 IS INITIAL.
         t154 = abap_true.
       ENDIF.
       t149 = t154.
       IF t149 = abap_true.
       ELSE.
-        DATA(t156) = CAST zcl_lnt_current_scope( t133 ).
+        DATA(t156) = t133.
         DATA(t157) = VALUE string( ).
         DATA t158 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t159 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t160) = CAST zcl_lnt_typed_identifier( t136 ).
+        DATA(t160) = t136.
         t159 = t160.
         t158 = t159.
         DATA(t161) = VALUE string( ).
@@ -358,11 +358,11 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
         DATA t163 TYPE string.
         DATA t164 TYPE REF TO zcl_lnt_abstract_token.
         DATA t165 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t166) = CAST zcl_lnt_fi_identifier( t158 ).
+        DATA(t166) = t158.
         t165 = t166->token.
         t164 = t165.
         DATA t167 TYPE string.
-        DATA(t168) = CAST zcl_lnt_abstract_token( t164 ).
+        DATA(t168) = t164.
         t167 = t168->str.
         t163 = t167.
         t162 = t163.
@@ -422,7 +422,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
         t161 = t186.
         t157 = t161.
         DATA t187 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t188) = CAST zcl_lnt_typed_identifier( t136 ).
+        DATA(t188) = t136.
         t187 = t188.
         t156->add_named_identifier( i_name = t157 i_identifier = t187 ).
       ENDIF.
@@ -430,7 +430,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     ENDIF.
     DATA t189 TYPE REF TO zcl_lnt_current_scope.
     DATA t190 TYPE REF TO zcl_lnt_current_scope.
-    DATA(t191) = CAST zcl_lnt_syntax_input( t2 ).
+    DATA(t191) = t2.
     t190 = t191->scope.
     t189 = t190.
     DATA t192 TYPE REF TO zcl_lnt_typed_identifier.
@@ -441,10 +441,10 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     IF t194 = abap_true.
       DATA t195 TYPE REF TO zcl_lnt_typed_identifier.
       DATA t196 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t197) = CAST zcl_lnt_abstract_token( t7 ).
+      DATA(t197) = t7.
       t196 = t197.
       DATA t198 TYPE string.
-      DATA(t199) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t199) = t2.
       t198 = t199->filename.
       DATA t200 TYPE REF TO zcl_lnt_unknown_type.
       DATA(t201) = |Fieldsymbol, fallback|.
@@ -465,25 +465,25 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     t192 = t193.
     DATA(t206) = VALUE abap_bool( ).
     DATA t207 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t208) = CAST zcl_lnt_typed_identifier( t192 ).
+    DATA(t208) = t192.
     t207 = t208.
     DATA t209 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t210.
     t209 = t210.
     DATA(t211) = VALUE abap_bool( ).
-    DATA(t212) = CAST zcl_lnt_typed_identifier( t207 ).
+    DATA(t212) = t207.
     IF t212 IS INITIAL.
       t211 = abap_true.
     ENDIF.
     t206 = t211.
     IF t206 = abap_true.
     ELSE.
-      DATA(t213) = CAST zcl_lnt_current_scope( t189 ).
+      DATA(t213) = t189.
       DATA(t214) = VALUE string( ).
       DATA t215 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t216 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t217) = CAST zcl_lnt_typed_identifier( t192 ).
+      DATA(t217) = t192.
       t216 = t217.
       t215 = t216.
       DATA(t218) = VALUE string( ).
@@ -491,11 +491,11 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       DATA t220 TYPE string.
       DATA t221 TYPE REF TO zcl_lnt_abstract_token.
       DATA t222 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t223) = CAST zcl_lnt_fi_identifier( t215 ).
+      DATA(t223) = t215.
       t222 = t223->token.
       t221 = t222.
       DATA t224 TYPE string.
-      DATA(t225) = CAST zcl_lnt_abstract_token( t221 ).
+      DATA(t225) = t221.
       t224 = t225->str.
       t220 = t224.
       t219 = t220.
@@ -555,7 +555,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       t218 = t243.
       t214 = t218.
       DATA t244 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t245) = CAST zcl_lnt_typed_identifier( t192 ).
+      DATA(t245) = t192.
       t244 = t245.
       t213->add_named_identifier( i_name = t214 i_identifier = t244 ).
     ENDIF.

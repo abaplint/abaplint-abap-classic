@@ -99,13 +99,13 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       DATA(t31) = |Quickfix|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t32) = t26.
       t25 = t32.
       t23 = t25.
     ELSE.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_om_pr_nm_ts_om_pr_nm.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_parameter_name.ts:39|.
     t2->source_location = t3.
@@ -131,13 +131,13 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_om_pr_nm_ts_om_pr_nm.
-    DATA(t1) = CAST zcl_lnt_omt_prmtr_nm_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_om_pr_nm_ts_om_pr_nm.
-    DATA(t1) = CAST zcl_lnt_omt_prmtr_nm_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_parameter_name.ts:48|.
     t2->source_location = t3.
@@ -145,7 +145,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_parameter_name.ts:52|.
     t2->source_location = t3.
@@ -153,8 +153,8 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_method_reference.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
+    DATA(t1) = i_token.
+    DATA(t2) = i_spaghetti.
     DATA(t3) = i_filename.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/omit_parameter_name.ts:113|.
@@ -163,7 +163,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_parameter_name.ts:39|.
     t2->source_location = t3.
@@ -181,7 +181,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_parameter_name.ts:48|.
     t2->source_location = t3.

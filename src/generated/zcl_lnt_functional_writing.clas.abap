@@ -168,16 +168,16 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t41.
       t40 = t41.
-      DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t42) = t40.
       DATA(t43) = |Styleguide|.
       APPEND t43 TO t42->items.
-      DATA(t44) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t44) = t40.
       DATA(t45) = |Quickfix|.
       APPEND t45 TO t44->items.
-      DATA(t46) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t46) = t40.
       DATA(t47) = |SingleFile|.
       APPEND t47 TO t46->items.
-      DATA(t48) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t48) = t40.
       t39 = t48.
       t37 = t39.
     ELSE.
@@ -202,13 +202,13 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_fn_wr_ts_fn_wrt.
-    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_fn_wr_ts_fn_wrt.
-    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/functional_writing.ts:61|.
     t2->source_location = t3.
@@ -216,8 +216,8 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/functional_writing.ts:65|.
     t3->source_location = t4.
@@ -225,8 +225,8 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD crt_iss_fr_sttmnt_nd.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_stat_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_stat_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/functional_writing.ts:104|.
     t3->source_location = t4.
@@ -234,7 +234,7 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix_string.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_stat_node ).
+    DATA(t1) = i_stat_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/functional_writing.ts:110|.
     t2->source_location = t3.

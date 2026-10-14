@@ -69,16 +69,16 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Whitespace|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |Quickfix|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       DATA(t26) = |SingleFile|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t27) = t19.
       t18 = t27.
       t16 = t18.
     ELSE.
@@ -103,13 +103,13 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cl_ms_sp_ts_cl_ms_sp.
-    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cl_ms_sp_ts_cl_ms_sp.
-    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/colon_missing_space.ts:36|.
     t2->source_location = t3.
@@ -117,7 +117,7 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_cl_ms_sp_ts_cl_ms_sp.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/colon_missing_space.ts:40|.
     t2->source_location = t3.

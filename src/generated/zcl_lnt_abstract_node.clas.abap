@@ -29,9 +29,9 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_child.
-    DATA(t1) = CAST zif_lnt_node( i_n_0c97 ).
+    DATA(t1) = i_n_0c97.
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
+    DATA(t3) = me->children.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t4.
     IF zcl_lnt_abstract_node_module=>zlnt_builtin_init_9d4dd55c09e0 = abap_false.
@@ -44,21 +44,21 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
       CREATE OBJECT t5.
       me->children = t5.
     ENDIF.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
-    DATA(t7) = CAST zif_lnt_node( t1 ).
+    DATA(t6) = me->children.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
   ENDMETHOD.
 
   METHOD set_children.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
+    DATA(t1) = i_children_9020.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = t1.
     t2 = t3->slice0( ).
     me->children = t2.
   ENDMETHOD.
 
   METHOD get_children.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
+    DATA(t1) = me->children.
     result = t1.
 
   ENDMETHOD.
@@ -69,7 +69,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     DATA(t2) = abap_true.
     IF t2 = abap_true.
       DATA t3 TYPE REF TO zif_lnt_node.
-      DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
+      DATA(t4) = me->children.
       DATA t5 TYPE REF TO object.
       CLEAR t5.
       READ TABLE t4->items INDEX 1 INTO t5.
@@ -90,10 +90,10 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     DATA(t2) = abap_true.
     IF t2 = abap_true.
       DATA t3 TYPE REF TO zif_lnt_node.
-      DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
+      DATA(t4) = me->children.
       DATA t5 TYPE i.
       DATA t6 TYPE i.
-      DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
+      DATA(t7) = me->children.
       t6 = lines( t7->items ).
       DATA(t8) = 1.
       t5 = t6 - t8.

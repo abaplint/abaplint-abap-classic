@@ -14,15 +14,15 @@ CLASS zcl_lnt_pretty_printer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_configuration( i_config ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_config.
     DATA t3 TYPE string.
-    DATA(t4) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t4) = t1.
     t3 = t4->get_raw( ).
     me->result_9728 = t3.
-    DATA(t5) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t5) = t1.
     me->file = t5.
-    DATA(t6) = CAST zif_lnt_configuration( t2 ).
+    DATA(t6) = t2.
     me->config = t6.
     DATA t7 TYPE REF TO zcl_lnt_indentation_conf.
     CLEAR t7.
@@ -30,7 +30,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CAST zif_lnt_configuration( t2 ).
+    DATA(t10) = t2.
     DATA(t11) = VALUE string( ).
     DATA t12 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t12.
@@ -159,16 +159,16 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       DATA t50 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t50.
       t49 = t50.
-      DATA(t51) = CAST zlnt_runtime_arra_8ecd6afe19e0( t49 ).
+      DATA(t51) = t49.
       DATA(t52) = |Whitespace|.
       APPEND t52 TO t51->items.
-      DATA(t53) = CAST zlnt_runtime_arra_8ecd6afe19e0( t49 ).
+      DATA(t53) = t49.
       DATA(t54) = |Quickfix|.
       APPEND t54 TO t53->items.
-      DATA(t55) = CAST zlnt_runtime_arra_8ecd6afe19e0( t49 ).
+      DATA(t55) = t49.
       DATA(t56) = |SingleFile|.
       APPEND t56 TO t55->items.
-      DATA(t57) = CAST zlnt_runtime_arra_8ecd6afe19e0( t49 ).
+      DATA(t57) = t49.
       t48 = t57.
       t46 = t48.
     ELSE.
@@ -193,12 +193,12 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     DATA t63 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t63.
     DATA t64 TYPE REF TO zcl_lnt_indentation_conf.
-    DATA(t65) = CAST zcl_lnt_indentation_conf( t7 ).
+    DATA(t65) = t7.
     t64 = t65.
     DATA t66 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t66.
     DATA(t67) = VALUE abap_bool( ).
-    DATA(t68) = CAST zcl_lnt_indentation_conf( t64 ).
+    DATA(t68) = t64.
     IF t68 IS INITIAL.
       t67 = abap_true.
     ENDIF.
@@ -208,7 +208,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       t66 = t69.
     ELSE.
       DATA t70 TYPE abap_bool.
-      DATA(t71) = CAST zcl_lnt_indentation_conf( t64 ).
+      DATA(t71) = t64.
       t70 = t71->align_try_catch.
       DATA(t72) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t72->has = abap_true.
@@ -221,12 +221,12 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     DATA t74 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t74.
     DATA t75 TYPE REF TO zcl_lnt_indentation_conf.
-    DATA(t76) = CAST zcl_lnt_indentation_conf( t7 ).
+    DATA(t76) = t7.
     t75 = t76.
     DATA t77 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t77.
     DATA(t78) = VALUE abap_bool( ).
-    DATA(t79) = CAST zcl_lnt_indentation_conf( t75 ).
+    DATA(t79) = t75.
     IF t79 IS INITIAL.
       t78 = abap_true.
     ENDIF.
@@ -236,7 +236,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       t77 = t80.
     ELSE.
       DATA t81 TYPE abap_bool.
-      DATA(t82) = CAST zcl_lnt_indentation_conf( t75 ).
+      DATA(t82) = t75.
       t81 = t82->global_class_skip_first.
       DATA(t83) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t83->has = abap_true.

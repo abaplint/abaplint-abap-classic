@@ -133,13 +133,13 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
       DATA t35 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t35.
       t34 = t35.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t36) = t34.
       DATA(t37) = |SingleFile|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t38) = t34.
       DATA(t39) = |Quickfix|.
       APPEND t39 TO t38->items.
-      DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t40) = t34.
       t33 = t40.
       t31 = t33.
     ELSE.
@@ -157,13 +157,13 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_rt_ts_un_rtr.
-    DATA(t1) = CAST zcl_lnt_unncssry_rtrn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_rt_ts_un_rtr.
-    DATA(t1) = CAST zcl_lnt_unncssry_rtrn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unnecessary_return.ts:45|.
     t2->source_location = t3.
@@ -171,7 +171,7 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_un_rt_ts_un_rtr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unnecessary_return.ts:49|.
     t2->source_location = t3.

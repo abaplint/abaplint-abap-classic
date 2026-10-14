@@ -13,11 +13,11 @@ ENDCLASS.
 CLASS zcl_lnt_ivertex IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_include_name ).
+    DATA(t2) = i_include_name.
     DATA(t3) = i_include_cc4a.
     DATA(t4) = t1.
     me->filename = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->include_name = t5.
     DATA(t6) = t3.
     me->include_3f11 = t6.

@@ -110,16 +110,16 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t32) = t26.
       DATA(t33) = |Security|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t34) = t26.
       t25 = t34.
       t23 = t25.
     ELSE.
@@ -144,13 +144,13 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_c_t_a_c_t_c_tr_at_ch.
-    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_c_t_a_c_t_c_tr_at_ch.
-    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/call_transaction_authority_check.ts:40|.
     t2->source_location = t3.
@@ -158,8 +158,8 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/call_transaction_authority_check.ts:44|.
     t3->source_location = t4.

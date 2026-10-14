@@ -19,8 +19,8 @@ CLASS zcl_lnt_star_priority DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_star_priority IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_statement_runnable( i_sta ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t1) = i_sta.
+    DATA(t2) = t1.
     me->sta = t2.
   ENDMETHOD.
 
@@ -41,12 +41,12 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = t1.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t6.
@@ -56,20 +56,20 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
         EXIT.
       ENDIF.
       DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t9) = CAST zif_lnt_statement_runnable( me->sta ).
-      DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+      DATA(t9) = me->sta.
+      DATA(t10) = t4.
       t8 = t9->run( i_r_f634 = t10 ).
       t4 = t8.
       DATA t11 TYPE abap_bool.
       DATA t12 TYPE i.
-      DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+      DATA(t13) = t4.
       t12 = lines( t13->items ).
       DATA(t14) = 0.
       t11 = xsdbool( t12 = t14 ).
       IF t11 = abap_true.
         DATA(t15) = VALUE abap_bool( ).
         DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+        DATA(t17) = t6.
         t16 = t17.
         DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
         t18 = t19.
         DATA(t20) = VALUE abap_bool( ).
         DATA(t21) = VALUE abap_bool( ).
-        DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+        DATA(t22) = t16.
         IF t22 IS INITIAL.
           t21 = abap_true.
         ENDIF.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
           DATA(t24) = CONV int8( 2147483647 ).
           t23 = t24.
           DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+          DATA(t26) = t6.
           t25 = t26.
           DATA t27 TYPE REF TO zcl_lnt_st_result.
           CLEAR t27.
@@ -99,19 +99,19 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
             DATA(t29) = VALUE abap_bool( ).
             DATA(t30) = VALUE int8( ).
             DATA t31 TYPE REF TO zcl_lnt_st_result.
-            DATA(t32) = CAST zcl_lnt_st_result( t27 ).
+            DATA(t32) = t27.
             t31 = t32.
             DATA t33 TYPE int8.
             DATA t34 TYPE int8.
             DATA t35 TYPE i.
             DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA(t37) = CAST zcl_lnt_st_result( t31 ).
+            DATA(t37) = t31.
             t36 = t37->tokens.
             t35 = lines( t36->items ).
             t34 = t35.
             DATA t38 TYPE int8.
             DATA t39 TYPE i.
-            DATA(t40) = CAST zcl_lnt_st_result( t31 ).
+            DATA(t40) = t31.
             t39 = t40->token_index.
             t38 = t39.
             t33 = t34 - t38.
@@ -127,27 +127,27 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
               DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CREATE OBJECT t44.
               t43 = t44.
-              DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
-              DATA(t46) = CAST zcl_lnt_st_result( t27 ).
+              DATA(t45) = t43.
+              DATA(t46) = t27.
               APPEND t46 TO t45->items.
-              DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+              DATA(t47) = t43.
               t42 = t47.
               t2 = t42.
               DATA(t48) = VALUE int8( ).
               DATA t49 TYPE REF TO zcl_lnt_st_result.
-              DATA(t50) = CAST zcl_lnt_st_result( t27 ).
+              DATA(t50) = t27.
               t49 = t50.
               DATA t51 TYPE int8.
               DATA t52 TYPE int8.
               DATA t53 TYPE i.
               DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA(t55) = CAST zcl_lnt_st_result( t49 ).
+              DATA(t55) = t49.
               t54 = t55->tokens.
               t53 = lines( t54->items ).
               t52 = t53.
               DATA t56 TYPE int8.
               DATA t57 TYPE i.
-              DATA(t58) = CAST zcl_lnt_st_result( t49 ).
+              DATA(t58) = t49.
               t57 = t58->token_index.
               t56 = t57.
               t51 = t52 - t56.
@@ -165,7 +165,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
       CLEAR t59.
       DATA(t60) = abap_true.
       IF t60 = abap_true.
-        DATA(t61) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+        DATA(t61) = t4.
         t59 = t61.
       ELSE.
         DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -174,7 +174,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
       ENDIF.
       t6 = t59.
     ENDDO.
-    DATA(t63) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t63) = t2.
     result = t63.
 
   ENDMETHOD.
@@ -201,17 +201,17 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.

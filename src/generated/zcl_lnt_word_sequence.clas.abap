@@ -80,17 +80,17 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t12 = t13.
-    DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+    DATA(t22) = t12.
     DATA(t23) = VALUE string( ).
     LOOP AT t22->items INTO t23.
-      DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+      DATA(t24) = me->words.
       DATA t25 TYPE REF TO zcl_lnt_word.
       DATA(t26) = t23.
       t25 = NEW zcl_lnt_word( i_s = t26 ).
       APPEND t25 TO t24->items.
     ENDLOOP.
     DATA t27 TYPE REF TO zcl_lnt_st_sequence.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+    DATA(t28) = me->words.
     t27 = NEW zcl_lnt_st_sequence( i_list = t28 ).
     me->seq = t27.
   ENDMETHOD.
@@ -110,10 +110,10 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zcl_lnt_st_sequence( me->seq ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = me->seq.
+    DATA(t4) = t1.
     t2 = t3->run( i_r_f634 = t4 ).
     result = t2.
 
@@ -136,7 +136,7 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+    DATA(t3) = me->words.
     DATA t4 TYPE REF TO object.
     CLEAR t4.
     READ TABLE t3->items INDEX 1 INTO t4.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -155,15 +155,15 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t7) = t5.
+    DATA(t8) = t1.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     t4 = t9.
     t3 = t4.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = CAST zcl_lnt_st_sequence( me->seq ).
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t11) = me->seq.
+    DATA(t12) = t3.
     t10 = t11->run( i_r_f634 = t12 ).
     t2 = t10.
     result = t2.

@@ -12,7 +12,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -32,7 +32,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
     t10 = t11.
     DATA t12 TYPE abap_bool.
     DATA t13 TYPE abap_bool.
-    DATA(t14) = CAST zif_lnt_object( t1 ).
+    DATA(t14) = t1.
     t13 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
     t12 = xsdbool( t13 = abap_false ).
     IF t12 = abap_true.
@@ -44,13 +44,13 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t17 TYPE REF TO zcl_lnt_abap_object.
     DATA t18 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t19) = CAST zif_lnt_object( t1 ).
+    DATA(t19) = t1.
     DATA t20 TYPE REF TO object.
     t20 = t19.
     t18 ?= t20.
     t17 = t18.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t22) = CAST zcl_lnt_abap_object( t17 ).
+    DATA(t22) = t17.
     t21 = t22->parsed.
     t16 = t21.
     DATA t23 TYPE REF TO zcl_lnt_abap_file.
@@ -61,10 +61,10 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
       t23 ?= t24.
       DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t26 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t27) = CAST zcl_lnt_abap_file( t23 ).
+      DATA(t27) = t23.
       t26 = t27.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t29) = CAST zcl_lnt_abap_file( t26 ).
+      DATA(t29) = t26.
       t28 = t29->statements.
       t25 = t28.
       DATA t30 TYPE REF TO zcl_lnt_statement_node.
@@ -75,11 +75,11 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
         t30 ?= t31.
         DATA t32 TYPE REF TO zif_lnt_statement.
         DATA t33 TYPE REF TO zif_lnt_statement.
-        DATA(t34) = CAST zcl_lnt_statement_node( t30 ).
+        DATA(t34) = t30.
         t33 = t34->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t32 = t33.
         DATA t35 TYPE abap_bool.
-        DATA(t36) = CAST zif_lnt_statement( t32 ).
+        DATA(t36) = t32.
         t35 = xsdbool( t36 IS BOUND AND t36 IS INSTANCE OF zcl_lnt_st_function_module ).
         IF t35 = abap_true.
           DATA t37 TYPE REF TO zcl_lnt_position.
@@ -89,11 +89,11 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
             DATA t39 TYPE REF TO zcl_lnt_position.
             DATA t40 TYPE REF TO zcl_lnt_abstract_token.
             DATA t41 TYPE REF TO zcl_lnt_abstract_token.
-            DATA(t42) = CAST zcl_lnt_statement_node( t30 ).
+            DATA(t42) = t30.
             t41 = t42->get_first_token( ).
             t40 = t41.
             DATA t43 TYPE REF TO zcl_lnt_position.
-            DATA(t44) = CAST zcl_lnt_abstract_token( t40 ).
+            DATA(t44) = t40.
             t43 = t44->start.
             t39 = t43.
             t37 = t39.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
           ENDIF.
           t4 = t37.
           DATA t46 TYPE string.
-          DATA(t47) = CAST zcl_lnt_statement_node( t30 ).
+          DATA(t47) = t30.
           t46 = zcl_lnt_function_length_stats=>find_name( i_stat = t47 ).
           t6 = t46.
           DATA(t48) = abap_true.
@@ -113,21 +113,21 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
           t8 = t49.
         ELSE.
           DATA t50 TYPE abap_bool.
-          DATA(t51) = CAST zif_lnt_statement( t32 ).
+          DATA(t51) = t32.
           t50 = xsdbool( t51 IS BOUND AND t51 IS INSTANCE OF zcl_lnt_end_function ).
           IF t50 = abap_true.
             DATA t52 TYPE abap_bool.
-            DATA(t53) = CAST zcl_lnt_position( t4 ).
+            DATA(t53) = t4.
             t52 = xsdbool( t53 IS BOUND ).
             IF t52 = abap_true.
-              DATA(t54) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+              DATA(t54) = t2.
               DATA t55 TYPE REF TO zcl_lnt_imethod_length_result.
               DATA(t56) = ||.
               DATA(t57) = t6.
               DATA(t58) = t8.
-              DATA(t59) = CAST zcl_lnt_abap_file( t23 ).
+              DATA(t59) = t23.
               DATA t60 TYPE REF TO zcl_lnt_position.
-              DATA(t61) = CAST zcl_lnt_position( t4 ).
+              DATA(t61) = t4.
               t60 = t61.
               t55 = NEW zcl_lnt_imethod_length_result( i_class_name = t56 i_name = t57 i_count = t58 i_file = t59 i_pos = t60 ).
               APPEND t55 TO t54->items.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
             IF t65 = abap_true.
               DATA t68 TYPE abap_bool.
               DATA t69 TYPE abap_bool.
-              DATA(t70) = CAST zif_lnt_statement( t32 ).
+              DATA(t70) = t32.
               t69 = xsdbool( t70 IS BOUND AND t70 IS INSTANCE OF zcl_lnt_st_comment ).
               t68 = xsdbool( t69 = abap_false ).
               t64 = t68.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
             IF t64 = abap_true.
               DATA t71 TYPE abap_bool.
               DATA t72 TYPE abap_bool.
-              DATA(t73) = CAST zif_lnt_statement( t32 ).
+              DATA(t73) = t32.
               t72 = xsdbool( t73 IS BOUND AND t73 IS INSTANCE OF zcl_lnt_empty ).
               t71 = xsdbool( t72 = abap_false ).
               t63 = t71.
@@ -175,33 +175,33 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
         ENDIF.
       ENDLOOP.
     ENDLOOP.
-    DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t77) = t2.
     result = t77.
 
   ENDMETHOD.
 
   METHOD find_name.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).
+    DATA(t1) = i_stat.
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t3 = t4->find_first_expression( i_type_9913 = t5 ).
     t2 = t3.
     DATA t6 TYPE abap_bool.
-    DATA(t7) = CAST zcl_lnt_expression_node( t2 ).
+    DATA(t7) = t2.
     t6 = xsdbool( t7 IS BOUND ).
     IF t6 = abap_true.
       DATA t8 TYPE string.
       DATA t9 TYPE REF TO zcl_lnt_abstract_token.
       DATA t10 TYPE REF TO zcl_lnt_abstract_token.
       DATA t11 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t12) = CAST zcl_lnt_expression_node( t2 ).
+      DATA(t12) = t2.
       t11 = t12.
       t10 = t11->get_first_token( ).
       t9 = t10.
       DATA t13 TYPE string.
-      DATA(t14) = CAST zcl_lnt_abstract_token( t9 ).
+      DATA(t14) = t9.
       t13 = t14->str.
       t8 = t13.
       result = t8.

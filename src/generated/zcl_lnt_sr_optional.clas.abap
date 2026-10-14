@@ -15,8 +15,8 @@ CLASS zcl_lnt_sr_optional DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_optional IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_structure_runnable( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_structure_runnable( t1 ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = t1.
     me->obj = t2.
   ENDMETHOD.
 
@@ -35,19 +35,19 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t2) = CAST zif_lnt_node( i_parent ).
+    DATA(t1) = i_statements.
+    DATA(t2) = i_parent.
     DATA t3 TYPE REF TO zcl_lnt_imatch.
     DATA t4 TYPE REF TO zcl_lnt_imatch.
-    DATA(t5) = CAST zif_lnt_structure_runnable( me->obj ).
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
-    DATA(t7) = CAST zif_lnt_node( t2 ).
+    DATA(t5) = me->obj.
+    DATA(t6) = t1.
+    DATA(t7) = t2.
     t4 = t5->run( i_statements = t6 i_parent = t7 ).
     t3 = t4.
-    DATA(t8) = CAST zcl_lnt_imatch( t3 ).
+    DATA(t8) = t3.
     DATA(t9) = abap_false.
     t8->error = t9.
-    DATA(t10) = CAST zcl_lnt_imatch( t3 ).
+    DATA(t10) = t3.
     result = t10.
 
   ENDMETHOD.

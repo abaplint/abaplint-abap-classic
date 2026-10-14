@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_shape_9919b469 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_label.
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_needs_confirmation ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
+    DATA(t2) = i_needs_confirmation.
+    DATA(t3) = i_description.
     DATA(t4) = t1.
     me->label = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_7f2541396f43( t2 ).
+    DATA(t5) = t2.
     me->needs_confirmation = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->description = t6.
   ENDMETHOD.
 

@@ -68,13 +68,13 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |Naming|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       t18 = t25.
       t16 = t18.
     ELSE.
@@ -99,13 +99,13 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_sr_rl_nm_n_ds_ts_nm_n_ds.
-    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_sr_rl_nm_n_ds_ts_nm_n_ds.
-    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/names_no_dash.ts:38|.
     t2->source_location = t3.
@@ -113,8 +113,8 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/names_no_dash.ts:42|.
     t3->source_location = t4.

@@ -101,13 +101,13 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_id_ds_ts_id_dsc.
-    DATA(t1) = CAST zcl_lnt_idntcl_dscrptns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_id_ds_ts_id_dsc.
-    DATA(t1) = CAST zcl_lnt_idntcl_dscrptns_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:36|.
     t2->source_location = t3.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_idn_dsc_ts_idn_dsc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:40|.
     t2->source_location = t3.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_in_sr_rl_idn_dsc_ts_idn_dsc.
-    DATA(t1) = CAST zif_lnt_object( i_o ).
+    DATA(t1) = i_o.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:65|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_function_modules.
-    DATA(t1) = CAST zcl_lnt_function_group( i_fugr ).
+    DATA(t1) = i_fugr.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:88|.
     t2->source_location = t3.
@@ -149,7 +149,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:36|.
     t2->source_location = t3.
@@ -157,7 +157,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:40|.
     t2->source_location = t3.
@@ -165,7 +165,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_descriptions.ts:65|.
     t2->source_location = t3.

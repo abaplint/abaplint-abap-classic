@@ -13,13 +13,13 @@ CLASS zcl_lnt_rename_table DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rename_table IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD b_e_in_sr_ob_rn_rn_tb_ts_rn_tb.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -29,7 +29,7 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_edits.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).

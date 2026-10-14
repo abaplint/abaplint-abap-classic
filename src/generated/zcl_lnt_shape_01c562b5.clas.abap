@@ -23,38 +23,38 @@ CLASS zcl_lnt_shape_01c562b5 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_01c562b5 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_refkind ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_domname ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_datatype_9e1e ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_leng_b7d5 ).
-    DATA(t6) = CAST zcl_lnt_shape_66add1d1( i_texts ).
-    DATA(t7) = CAST zcl_lnt_shape_66add1d1( i_text_max_lengths ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( i_texts_translations ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( i_decimals_2eed ).
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( i_dtelmaster ).
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( i_aff_category ).
-    DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_description.
+    DATA(t2) = i_refkind.
+    DATA(t3) = i_domname.
+    DATA(t4) = i_datatype_9e1e.
+    DATA(t5) = i_leng_b7d5.
+    DATA(t6) = i_texts.
+    DATA(t7) = i_text_max_lengths.
+    DATA(t8) = i_texts_translations.
+    DATA(t9) = i_decimals_2eed.
+    DATA(t10) = i_dtelmaster.
+    DATA(t11) = i_aff_category.
+    DATA(t12) = t1.
     me->description = t12.
-    DATA(t13) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t13) = t2.
     me->refkind = t13.
-    DATA(t14) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t14) = t3.
     me->domname = t14.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t15) = t4.
     me->datatype_2b0f = t15.
-    DATA(t16) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t16) = t5.
     me->leng_e82a = t16.
-    DATA(t17) = CAST zcl_lnt_shape_66add1d1( t6 ).
+    DATA(t17) = t6.
     me->texts = t17.
-    DATA(t18) = CAST zcl_lnt_shape_66add1d1( t7 ).
+    DATA(t18) = t7.
     me->text_max_lengths = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t19) = t8.
     me->texts_translations = t19.
-    DATA(t20) = CAST zlnt_runtime_opti_4ba3bdccd169( t9 ).
+    DATA(t20) = t9.
     me->decimals_29bf = t20.
-    DATA(t21) = CAST zlnt_runtime_opti_4ba3bdccd169( t10 ).
+    DATA(t21) = t10.
     me->dtelmaster = t21.
-    DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t11 ).
+    DATA(t22) = t11.
     me->aff_category = t22.
   ENDMETHOD.
 

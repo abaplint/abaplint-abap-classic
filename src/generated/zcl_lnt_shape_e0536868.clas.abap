@@ -12,16 +12,16 @@ CLASS zcl_lnt_shape_e0536868 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_e0536868 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
-    DATA(t2) = CAST zcl_lnt_shape_6d7086ba( i_command ).
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_range.
+    DATA(t2) = i_command.
+    DATA(t3) = i_data_dc02.
     DATA t4 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t5) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     me->range = t4.
-    DATA(t6) = CAST zcl_lnt_shape_6d7086ba( t2 ).
+    DATA(t6) = t2.
     me->command = t6.
-    DATA(t7) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+    DATA(t7) = t3.
     me->data_56cc = t7.
   ENDMETHOD.
 

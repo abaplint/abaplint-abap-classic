@@ -104,13 +104,13 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       DATA(t32) = |Syntax|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t33) = t27.
       t26 = t33.
       t24 = t26.
     ELSE.
@@ -128,13 +128,13 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_n_m_i_d_o_t_n_m_i_d.
-    DATA(t1) = CAST zcl_lnt_n_mnd_in_dtbs_oprt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_n_m_i_d_o_t_n_m_i_d.
-    DATA(t1) = CAST zcl_lnt_n_mnd_in_dtbs_oprt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_mandt_in_database_operations.ts:36|.
     t2->source_location = t3.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_n_m_i_d_o_t_n_m_i_d.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_mandt_in_database_operations.ts:40|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_database_operation.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_mandt_in_database_operations.ts:67|.
     t2->source_location = t3.
@@ -158,7 +158,7 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_mandt_in_condition.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_mandt_in_database_operations.ts:81|.
     t2->source_location = t3.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_explicit_client.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_mandt_in_database_operations.ts:97|.
     t2->source_location = t3.

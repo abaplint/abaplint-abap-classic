@@ -20,11 +20,11 @@ CLASS zcl_lnt_st_token DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_token IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_t ).
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t1) = i_t.
+    DATA(t2) = t1.
     me->token_type = t2.
     DATA t3 TYPE string.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t4) = t1.
     t3 = t4->name.
     me->name = t3.
   ENDMETHOD.
@@ -46,12 +46,12 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     CLEAR t5.
     DATA t6 TYPE REF TO object.
@@ -62,19 +62,19 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA(t8) = VALUE abap_bool( ).
       DATA(t9) = VALUE int8( ).
       DATA t10 TYPE REF TO zcl_lnt_st_result.
-      DATA(t11) = CAST zcl_lnt_st_result( t5 ).
+      DATA(t11) = t5.
       t10 = t11.
       DATA t12 TYPE int8.
       DATA t13 TYPE int8.
       DATA t14 TYPE i.
       DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t16) = CAST zcl_lnt_st_result( t10 ).
+      DATA(t16) = t10.
       t15 = t16->tokens.
       t14 = lines( t15->items ).
       t13 = t14.
       DATA t17 TYPE int8.
       DATA t18 TYPE i.
-      DATA(t19) = CAST zcl_lnt_st_result( t10 ).
+      DATA(t19) = t10.
       t18 = t19->token_index.
       t17 = t18.
       t12 = t13 - t17.
@@ -90,14 +90,14 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         DATA t22 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         DATA t23 TYPE REF TO zcl_lnt_abstract_token.
         DATA t24 TYPE REF TO zcl_lnt_st_result.
-        DATA(t25) = CAST zcl_lnt_st_result( t5 ).
+        DATA(t25) = t5.
         t24 = t25.
         DATA t26 TYPE REF TO zcl_lnt_abstract_token.
         DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t28) = CAST zcl_lnt_st_result( t24 ).
+        DATA(t28) = t24.
         t27 = t28->tokens.
         DATA t29 TYPE i.
-        DATA(t30) = CAST zcl_lnt_st_result( t24 ).
+        DATA(t30) = t24.
         t29 = t30->token_index.
         t29 = t29 + 1.
         DATA t31 TYPE REF TO object.
@@ -106,29 +106,29 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         t26 ?= t31.
         t23 = t26.
         t22 = t23->zlnt_builtin_clas_3f891b097658( ).
-        DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( me->token_type ).
+        DATA(t32) = me->token_type.
         t21 = xsdbool( t22 = t32 ).
         t7 = t21.
       ENDIF.
       IF t7 = abap_true.
-        DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t33) = t2.
         DATA t34 TYPE REF TO zcl_lnt_st_result.
         CLEAR t34.
         DATA t35 TYPE REF TO zcl_lnt_st_result.
-        DATA(t36) = CAST zcl_lnt_st_result( t5 ).
+        DATA(t36) = t5.
         t35 = t36.
         DATA t37 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t38 TYPE REF TO zcl_lnt_token_node.
         DATA t39 TYPE REF TO zcl_lnt_abstract_token.
         DATA t40 TYPE REF TO zcl_lnt_st_result.
-        DATA(t41) = CAST zcl_lnt_st_result( t5 ).
+        DATA(t41) = t5.
         t40 = t41.
         DATA t42 TYPE REF TO zcl_lnt_abstract_token.
         DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t44) = CAST zcl_lnt_st_result( t40 ).
+        DATA(t44) = t40.
         t43 = t44->tokens.
         DATA t45 TYPE i.
-        DATA(t46) = CAST zcl_lnt_st_result( t40 ).
+        DATA(t46) = t40.
         t45 = t46->token_index.
         t45 = t45 + 1.
         DATA t47 TYPE REF TO object.
@@ -141,12 +141,12 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         DATA t48 TYPE REF TO zcl_lnt_st_result.
         CLEAR t48.
         DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t50) = CAST zcl_lnt_st_result( t35 ).
+        DATA(t50) = t35.
         t49 = t50->tokens.
         DATA t51 TYPE int8.
         DATA t52 TYPE int8.
         DATA t53 TYPE i.
-        DATA(t54) = CAST zcl_lnt_st_result( t35 ).
+        DATA(t54) = t35.
         t53 = t54->token_index.
         t52 = t53.
         DATA(t55) = CONV int8( 1 ).
@@ -159,9 +159,9 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         DATA(t57) = abap_true.
         IF t57 = abap_true.
           DATA t58 TYPE REF TO zcl_lnt_result_node.
-          DATA(t59) = CAST zif_lnt_union_4cf1d054( t37 ).
+          DATA(t59) = t37.
           DATA t60 TYPE REF TO zcl_lnt_result_node.
-          DATA(t61) = CAST zcl_lnt_st_result( t35 ).
+          DATA(t61) = t35.
           t60 = t61->nodes_0226.
           t58 = NEW zcl_lnt_result_node( i_node = t59 i_previous = t60 ).
           t56 = t58.
@@ -172,7 +172,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         ENDIF.
         DATA t63 TYPE int8.
         DATA t64 TYPE int8.
-        DATA(t65) = CAST zcl_lnt_st_result( t35 ).
+        DATA(t65) = t35.
         t64 = t65->node_count.
         DATA(t66) = CONV int8( 1 ).
         t63 = t64 + t66.
@@ -184,7 +184,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         APPEND t34 TO t33->items.
       ENDIF.
     ENDLOOP.
-    DATA(t67) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t67) = t2.
     result = t67.
 
   ENDMETHOD.
@@ -213,31 +213,31 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
   METHOD run_one.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zcl_lnt_st_result.
-    DATA(t5) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
     DATA(t8) = VALUE int8( ).
     DATA t9 TYPE REF TO zcl_lnt_st_result.
-    DATA(t10) = CAST zcl_lnt_st_result( t4 ).
+    DATA(t10) = t4.
     t9 = t10.
     DATA t11 TYPE int8.
     DATA t12 TYPE int8.
     DATA t13 TYPE i.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t15) = CAST zcl_lnt_st_result( t9 ).
+    DATA(t15) = t9.
     t14 = t15->tokens.
     t13 = lines( t14->items ).
     t12 = t13.
     DATA t16 TYPE int8.
     DATA t17 TYPE i.
-    DATA(t18) = CAST zcl_lnt_st_result( t9 ).
+    DATA(t18) = t9.
     t17 = t18->token_index.
     t16 = t17.
     t11 = t12 - t16.
@@ -253,14 +253,14 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       DATA t23 TYPE REF TO zcl_lnt_st_result.
-      DATA(t24) = CAST zcl_lnt_st_result( t4 ).
+      DATA(t24) = t4.
       t23 = t24.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t27) = CAST zcl_lnt_st_result( t23 ).
+      DATA(t27) = t23.
       t26 = t27->tokens.
       DATA t28 TYPE i.
-      DATA(t29) = CAST zcl_lnt_st_result( t23 ).
+      DATA(t29) = t23.
       t28 = t29->token_index.
       t28 = t28 + 1.
       DATA t30 TYPE REF TO object.
@@ -269,29 +269,29 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       t25 ?= t30.
       t22 = t25.
       t21 = t22->zlnt_builtin_clas_3f891b097658( ).
-      DATA(t31) = CAST zlnt_runtime_clas_a39833db3295( me->token_type ).
+      DATA(t31) = me->token_type.
       t20 = xsdbool( t21 = t31 ).
       t6 = t20.
     ENDIF.
     IF t6 = abap_true.
-      DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t32) = t2.
       DATA t33 TYPE REF TO zcl_lnt_st_result.
       CLEAR t33.
       DATA t34 TYPE REF TO zcl_lnt_st_result.
-      DATA(t35) = CAST zcl_lnt_st_result( t4 ).
+      DATA(t35) = t4.
       t34 = t35.
       DATA t36 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t37 TYPE REF TO zcl_lnt_token_node.
       DATA t38 TYPE REF TO zcl_lnt_abstract_token.
       DATA t39 TYPE REF TO zcl_lnt_st_result.
-      DATA(t40) = CAST zcl_lnt_st_result( t4 ).
+      DATA(t40) = t4.
       t39 = t40.
       DATA t41 TYPE REF TO zcl_lnt_abstract_token.
       DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t43) = CAST zcl_lnt_st_result( t39 ).
+      DATA(t43) = t39.
       t42 = t43->tokens.
       DATA t44 TYPE i.
-      DATA(t45) = CAST zcl_lnt_st_result( t39 ).
+      DATA(t45) = t39.
       t44 = t45->token_index.
       t44 = t44 + 1.
       DATA t46 TYPE REF TO object.
@@ -304,12 +304,12 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA t47 TYPE REF TO zcl_lnt_st_result.
       CLEAR t47.
       DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t49) = CAST zcl_lnt_st_result( t34 ).
+      DATA(t49) = t34.
       t48 = t49->tokens.
       DATA t50 TYPE int8.
       DATA t51 TYPE int8.
       DATA t52 TYPE i.
-      DATA(t53) = CAST zcl_lnt_st_result( t34 ).
+      DATA(t53) = t34.
       t52 = t53->token_index.
       t51 = t52.
       DATA(t54) = CONV int8( 1 ).
@@ -322,9 +322,9 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA(t56) = abap_true.
       IF t56 = abap_true.
         DATA t57 TYPE REF TO zcl_lnt_result_node.
-        DATA(t58) = CAST zif_lnt_union_4cf1d054( t36 ).
+        DATA(t58) = t36.
         DATA t59 TYPE REF TO zcl_lnt_result_node.
-        DATA(t60) = CAST zcl_lnt_st_result( t34 ).
+        DATA(t60) = t34.
         t59 = t60->nodes_0226.
         t57 = NEW zcl_lnt_result_node( i_node = t58 i_previous = t59 ).
         t55 = t57.
@@ -335,7 +335,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       ENDIF.
       DATA t62 TYPE int8.
       DATA t63 TYPE int8.
-      DATA(t64) = CAST zcl_lnt_st_result( t34 ).
+      DATA(t64) = t34.
       t63 = t64->node_count.
       DATA(t65) = CONV int8( 1 ).
       t62 = t63 + t65.
@@ -346,7 +346,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       t33 = t47.
       APPEND t33 TO t32->items.
     ENDIF.
-    DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t66) = t2.
     result = t66.
 
   ENDMETHOD.

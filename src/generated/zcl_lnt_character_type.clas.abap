@@ -20,8 +20,8 @@ ENDCLASS.
 CLASS zcl_lnt_character_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_length.
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( i_extra ).
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t2) = i_extra.
+    DATA(t3) = t2.
     super->constructor( i_input_967e = t3 ).
     DATA t4 TYPE abap_bool.
     DATA(t5) = t1.
@@ -56,7 +56,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD clone_type.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
+    DATA(t1) = i_input_967e.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -64,10 +64,10 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t6 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t7) = CAST zcl_lnt_character_type( me ).
+    DATA(t7) = me.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t9) = CAST zcl_lnt_abstract_type( t6 ).
+    DATA(t9) = t6.
     t8 = t9->data_56cc.
     t5 = t8.
     t4 = t5.
@@ -76,7 +76,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t11.
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t13) = t4.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ENDIF.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t16 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t17) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t17) = t4.
       t16 = t17.
       t15 = t16->qualified_name.
       t11 = t15.
@@ -95,7 +95,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t18.
     DATA(t19) = VALUE abap_bool( ).
-    DATA(t20) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t20) = t4.
     IF t20 IS INITIAL.
       t19 = abap_true.
     ENDIF.
@@ -106,7 +106,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t23 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t24) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t24) = t4.
       t23 = t24.
       t22 = t23->conversion_exit.
       t18 = t22.
@@ -114,7 +114,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t25 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t25.
     DATA(t26) = VALUE abap_bool( ).
-    DATA(t27) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t27) = t4.
     IF t27 IS INITIAL.
       t26 = abap_true.
     ENDIF.
@@ -125,7 +125,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t29 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t30 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t31) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t31) = t4.
       t30 = t31.
       t29 = t30->derived_from_constant.
       t25 = t29.
@@ -133,7 +133,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t32.
     DATA(t33) = VALUE abap_bool( ).
-    DATA(t34) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t34) = t4.
     IF t34 IS INITIAL.
       t33 = abap_true.
     ENDIF.
@@ -144,7 +144,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t37 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t38) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t38) = t4.
       t37 = t38.
       t36 = t37->ddic_name.
       t32 = t36.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t39.
     DATA(t40) = VALUE abap_bool( ).
-    DATA(t41) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t41) = t4.
     IF t41 IS INITIAL.
       t40 = abap_true.
     ENDIF.
@@ -163,7 +163,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t44 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t45) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t45) = t4.
       t44 = t45.
       t43 = t44->rtti_name.
       t39 = t43.
@@ -171,7 +171,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t46.
     DATA(t47) = VALUE abap_bool( ).
-    DATA(t48) = CAST zcl_lnt_abstract_type_data( t4 ).
+    DATA(t48) = t4.
     IF t48 IS INITIAL.
       t47 = abap_true.
     ENDIF.
@@ -182,7 +182,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ELSE.
       DATA t50 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t51 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t52) = CAST zcl_lnt_abstract_type_data( t4 ).
+      DATA(t52) = t4.
       t51 = t52.
       t50 = t51->description.
       t46 = t50.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     t2 = t3.
     DATA(t53) = VALUE abap_bool( ).
     DATA t54 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t55) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t55) = t1.
     t54 = t55->qualified_name.
     IF t54 IS BOUND.
       IF t54->has = abap_true.
@@ -200,14 +200,14 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t53 = abap_true.
-      DATA(t56) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t56) = t2.
       DATA t57 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t57.
       DATA(t58) = abap_true.
       IF t58 = abap_true.
         DATA t59 TYPE string.
         DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t61) = CAST zcl_lnt_abstract_type_data( t1 ).
+        DATA(t61) = t1.
         t60 = t61->qualified_name.
         t59 = t60->value.
         DATA(t62) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -223,7 +223,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ENDIF.
     DATA(t64) = VALUE abap_bool( ).
     DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t66) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t66) = t1.
     t65 = t66->ddic_name.
     IF t65 IS BOUND.
       IF t65->has = abap_true.
@@ -231,14 +231,14 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t64 = abap_true.
-      DATA(t67) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t67) = t2.
       DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t68.
       DATA(t69) = abap_true.
       IF t69 = abap_true.
         DATA t70 TYPE string.
         DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t72) = CAST zcl_lnt_abstract_type_data( t1 ).
+        DATA(t72) = t1.
         t71 = t72->ddic_name.
         t70 = t71->value.
         DATA(t73) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -254,7 +254,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     ENDIF.
     DATA(t75) = VALUE abap_bool( ).
     DATA t76 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    DATA(t77) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t77) = t1.
     t76 = t77->derived_from_constant.
     IF t76 IS BOUND.
       IF t76->has = abap_true.
@@ -262,14 +262,14 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t75 = abap_true.
-      DATA(t78) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t78) = t2.
       DATA t79 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t79.
       DATA(t80) = abap_true.
       IF t80 = abap_true.
         DATA t81 TYPE abap_bool.
         DATA t82 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA(t83) = CAST zcl_lnt_abstract_type_data( t1 ).
+        DATA(t83) = t1.
         t82 = t83->derived_from_constant.
         t81 = t82->value.
         DATA(t84) = NEW zlnt_runtime_opti_7f2541396f43( ).
@@ -290,7 +290,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     CLEAR t88.
     DATA(t89) = abap_true.
     IF t89 = abap_true.
-      DATA(t90) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t90) = t2.
       t88 = t90.
     ELSE.
       DATA t91 TYPE REF TO zcl_lnt_abstract_type_data.

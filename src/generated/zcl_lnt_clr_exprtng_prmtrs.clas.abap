@@ -257,10 +257,10 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
       DATA t56 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t56.
       t55 = t56.
-      DATA(t57) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t57) = t55.
       DATA(t58) = |Styleguide|.
       APPEND t58 TO t57->items.
-      DATA(t59) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t59) = t55.
       t54 = t59.
       t52 = t54.
     ELSE.
@@ -278,13 +278,13 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cl_ex_pr_ts_cl_ex_pr.
-    DATA(t1) = CAST zcl_lnt_clr_exprtng_prmtrs_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cl_ex_pr_ts_cl_ex_pr.
-    DATA(t1) = CAST zcl_lnt_clr_exprtng_prmtrs_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:78|.
     t2->source_location = t3.
@@ -292,7 +292,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_cl_ex_pr_ts_cl_ex_pr.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:85|.
     t2->source_location = t3.
@@ -300,7 +300,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:90|.
     t2->source_location = t3.
@@ -308,9 +308,9 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
+    DATA(t3) = i_issues.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/clear_exporting_parameters.ts:113|.
     t4->source_location = t5.
@@ -318,9 +318,9 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_procedure.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
+    DATA(t3) = i_issues.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/clear_exporting_parameters.ts:123|.
     t4->source_location = t5.
@@ -328,8 +328,8 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_exporting_by_reference.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_references ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_references.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/clear_exporting_parameters.ts:138|.
     t3->source_location = t4.
@@ -337,7 +337,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD collect_references.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:166|.
     t2->source_location = t3.
@@ -345,9 +345,9 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_parameter.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_parameter_5406 ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_references ).
-    DATA(t3) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_parameter_5406.
+    DATA(t2) = i_references.
+    DATA(t3) = i_obj_1ed0.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/clear_exporting_parameters.ts:175|.
     t4->source_location = t5.
@@ -355,8 +355,8 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_reference_or_assign.
-    DATA(t1) = CAST zcl_lnt_ireference( i_reference ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_reference.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/clear_exporting_parameters.ts:222|.
     t3->source_location = t4.
@@ -364,8 +364,8 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_supplied_or_requested.
-    DATA(t1) = CAST zcl_lnt_ireference( i_reference ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_reference.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/clear_exporting_parameters.ts:237|.
     t3->source_location = t4.
@@ -373,8 +373,8 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD statement_start.
-    DATA(t1) = CAST zcl_lnt_ireference( i_reference ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_reference.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/clear_exporting_parameters.ts:264|.
     t3->source_location = t4.
@@ -392,7 +392,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:78|.
     t2->source_location = t3.
@@ -400,7 +400,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/clear_exporting_parameters.ts:85|.
     t2->source_location = t3.

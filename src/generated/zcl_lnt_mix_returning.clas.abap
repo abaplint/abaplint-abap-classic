@@ -112,16 +112,16 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |Styleguide|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t33) = t27.
       DATA(t34) = |Syntax|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t35) = t27.
       t26 = t35.
       t24 = t26.
     ELSE.
@@ -146,13 +146,13 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_mx_rt_ts_mx_rtr.
-    DATA(t1) = CAST zcl_lnt_mix_returning_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_mx_rt_ts_mx_rtr.
-    DATA(t1) = CAST zcl_lnt_mix_returning_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/mix_returning.ts:44|.
     t2->source_location = t3.
@@ -160,7 +160,7 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_mx_rt_ts_mx_rtr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/mix_returning.ts:48|.
     t2->source_location = t3.

@@ -11,11 +11,11 @@ CLASS zcl_lnt_irun_input DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irun_input IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_progress( i_progress ).
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_output_performance ).
-    DATA(t3) = CAST zif_lnt_progress( t1 ).
+    DATA(t1) = i_progress.
+    DATA(t2) = i_output_performance.
+    DATA(t3) = t1.
     me->progress = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( t2 ).
+    DATA(t4) = t2.
     me->output_performance = t4.
   ENDMETHOD.
 

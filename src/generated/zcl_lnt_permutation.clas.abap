@@ -19,10 +19,10 @@ CLASS zcl_lnt_permutation DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_permutation IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_list ).
+    DATA(t1) = i_list.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE i.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     t3 = lines( t4->items ).
     DATA(t5) = 2.
     t2 = xsdbool( t3 < t5 ).
@@ -39,7 +39,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
         DATA(t11) = |Permutation, length error, got |.
         DATA t12 TYPE string.
         DATA t13 TYPE i.
-        DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t14) = t1.
         t13 = lines( t14->items ).
         t12 = |{ t13 }|.
         DATA(t15) = strlen( t11 ).
@@ -58,7 +58,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       t6->payload = t7.
       RAISE EXCEPTION t6.
     ENDIF.
-    DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t18) = t1.
     me->list = t18.
   ENDMETHOD.
 
@@ -77,14 +77,14 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+    DATA(t6) = me->list.
     t5 = t6->slice0( ).
     t4 = t5.
     DATA t7 TYPE i.
@@ -94,7 +94,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       DATA t9 TYPE abap_bool.
       DATA(t10) = t7.
       DATA t11 TYPE i.
-      DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+      DATA(t12) = me->list.
       t11 = lines( t12->items ).
       t9 = xsdbool( t10 < t11 ).
       IF t9 = abap_false.
@@ -103,50 +103,50 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+      DATA(t16) = me->list.
       DATA(t17) = t7.
       t17 = t17 + 1.
       DATA t18 TYPE REF TO object.
       CLEAR t18.
       READ TABLE t16->items INDEX t17 INTO t18.
       t15 ?= t18.
-      DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+      DATA(t19) = t1.
       t14 = t15->run( i_r_f634 = t19 ).
       t13 = t14.
       DATA t20 TYPE abap_bool.
       DATA t21 TYPE i.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t13 ).
+      DATA(t22) = t13.
       t21 = lines( t22->items ).
       DATA(t23) = 0.
       t20 = xsdbool( t21 <> t23 ).
       IF t20 = abap_true.
         DATA(t24) = VALUE i( ).
-        DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t13 ).
+        DATA(t25) = t13.
         DATA t26 TYPE REF TO zcl_lnt_st_result.
         CLEAR t26.
         DATA t27 TYPE REF TO object.
         CLEAR t27.
         LOOP AT t25->items INTO t27.
           t26 ?= t27.
-          DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-          DATA(t29) = CAST zcl_lnt_st_result( t26 ).
+          DATA(t28) = t2.
+          DATA(t29) = t26.
           APPEND t29 TO t28->items.
         ENDLOOP.
         DATA t30 TYPE i.
-        DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t31) = t2.
         t30 = lines( t31->items ).
         t24 = t30.
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+        DATA(t33) = t4.
         t32 = t33.
         DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t35) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+        DATA(t35) = t32.
         DATA(t36) = t7.
         DATA(t37) = 1.
         t34 = t35->splice2( p0 = t36 p1 = t37 ).
         DATA t38 TYPE abap_bool.
         DATA t39 TYPE i.
-        DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+        DATA(t40) = t32.
         t39 = lines( t40->items ).
         DATA(t41) = 1.
         t38 = xsdbool( t39 = t41 ).
@@ -154,12 +154,12 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
           DATA(t42) = VALUE i( ).
           DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t44 TYPE REF TO zif_lnt_statement_runnable.
-          DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+          DATA(t45) = t32.
           DATA t46 TYPE REF TO object.
           CLEAR t46.
           READ TABLE t45->items INDEX 1 INTO t46.
           t44 ?= t46.
-          DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t13 ).
+          DATA(t47) = t13.
           t43 = t44->run( i_r_f634 = t47 ).
           DATA t48 TYPE REF TO zcl_lnt_st_result.
           CLEAR t48.
@@ -167,21 +167,21 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
           CLEAR t49.
           LOOP AT t43->items INTO t49.
             t48 ?= t49.
-            DATA(t50) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-            DATA(t51) = CAST zcl_lnt_st_result( t48 ).
+            DATA(t50) = t2.
+            DATA(t51) = t48.
             APPEND t51 TO t50->items.
           ENDLOOP.
           DATA t52 TYPE i.
-          DATA(t53) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+          DATA(t53) = t2.
           t52 = lines( t53->items ).
           t42 = t52.
         ELSE.
           DATA(t54) = VALUE i( ).
           DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t56 TYPE REF TO zcl_lnt_permutation.
-          DATA(t57) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+          DATA(t57) = t32.
           t56 = NEW zcl_lnt_permutation( i_list = t57 ).
-          DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t13 ).
+          DATA(t58) = t13.
           t55 = t56->run( i_r_f634 = t58 ).
           DATA t59 TYPE REF TO zcl_lnt_st_result.
           CLEAR t59.
@@ -189,12 +189,12 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
           CLEAR t60.
           LOOP AT t55->items INTO t60.
             t59 ?= t60.
-            DATA(t61) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-            DATA(t62) = CAST zcl_lnt_st_result( t59 ).
+            DATA(t61) = t2.
+            DATA(t62) = t59.
             APPEND t62 TO t61->items.
           ENDLOOP.
           DATA t63 TYPE i.
-          DATA(t64) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+          DATA(t64) = t2.
           t63 = lines( t64->items ).
           t54 = t63.
         ENDIF.
@@ -205,7 +205,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       t65 = t66 + t67.
       t7 = t65.
     ENDDO.
-    DATA(t68) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t68) = t2.
     result = t68.
 
   ENDMETHOD.
@@ -232,17 +232,17 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.

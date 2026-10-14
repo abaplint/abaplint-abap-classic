@@ -12,23 +12,23 @@ CLASS zcl_lnt_virtual_position DEFINITION PUBLIC INHERITING FROM zcl_lnt_positio
 ENDCLASS.
 CLASS zcl_lnt_virtual_position IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_virtual ).
+    DATA(t1) = i_virtual.
     DATA(t2) = i_row.
     DATA(t3) = i_col.
     DATA t4 TYPE int8.
     DATA t5 TYPE REF TO zcl_lnt_position.
-    DATA(t6) = CAST zcl_lnt_position( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE int8.
-    DATA(t8) = CAST zcl_lnt_position( t5 ).
+    DATA(t8) = t5.
     t7 = t8->row.
     t4 = t7.
     DATA t9 TYPE int8.
     DATA t10 TYPE REF TO zcl_lnt_position.
-    DATA(t11) = CAST zcl_lnt_position( t1 ).
+    DATA(t11) = t1.
     t10 = t11.
     DATA t12 TYPE int8.
-    DATA(t13) = CAST zcl_lnt_position( t10 ).
+    DATA(t13) = t10.
     t12 = t13->col.
     t9 = t12.
     super->constructor( i_row = t4 i_col = t9 ).
@@ -39,7 +39,7 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD equals.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/virtual_position.ts:15|.
     t2->source_location = t3.
@@ -47,7 +47,7 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_after.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/virtual_position.ts:23|.
     t2->source_location = t3.

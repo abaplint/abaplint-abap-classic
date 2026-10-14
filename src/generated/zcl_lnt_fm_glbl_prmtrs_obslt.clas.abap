@@ -71,7 +71,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_s_r_f_g_p_o_ts_fm_gl_pr_ob.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fm_global_parameters_obsolete.ts:25|.
     t2->source_location = t3.
@@ -79,13 +79,13 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_f_g_p_o_t_f_gl_pr_ob.
-    DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_f_g_p_o_t_f_gl_pr_ob.
-    DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fm_global_parameters_obsolete.ts:33|.
     t2->source_location = t3.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fm_global_parameters_obsolete.ts:37|.
     t2->source_location = t3.
@@ -101,7 +101,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fm_global_parameters_obsolete.ts:25|.
     t2->source_location = t3.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/fm_global_parameters_obsolete.ts:33|.
     t2->source_location = t3.

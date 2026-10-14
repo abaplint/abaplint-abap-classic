@@ -10,8 +10,8 @@ CLASS zcl_lnt_parsed_proxy DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_parsed_proxy IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_proxy_data ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_proxy_data.
+    DATA(t2) = t1.
     me->proxy_data = t2.
   ENDMETHOD.
 

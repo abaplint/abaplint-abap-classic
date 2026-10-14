@@ -15,15 +15,15 @@ CLASS zcl_lnt_shape_610d43d5 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_kind.
     DATA(t2) = i_uri.
-    DATA(t3) = CAST zcl_lnt_shape_f7fb0253( i_options ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_annotation_id ).
+    DATA(t3) = i_options.
+    DATA(t4) = i_annotation_id.
     DATA(t5) = t1.
     me->kind = t5.
     DATA(t6) = t2.
     me->uri = t6.
-    DATA(t7) = CAST zcl_lnt_shape_f7fb0253( t3 ).
+    DATA(t7) = t3.
     me->options = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t8) = t4.
     me->annotation_id = t8.
   ENDMETHOD.
 

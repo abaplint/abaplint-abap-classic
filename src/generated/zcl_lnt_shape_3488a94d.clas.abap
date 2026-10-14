@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_3488a94d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_3488a94d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = i_count.
     DATA t3 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t4) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->id = t3.
     DATA(t5) = t2.

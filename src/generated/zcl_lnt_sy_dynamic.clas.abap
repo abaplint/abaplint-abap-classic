@@ -9,24 +9,24 @@ CLASS zcl_lnt_sy_dynamic DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_dynamic IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df.
     t4 = t5->find_direct_expression( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t8) = t3.
     t7 = xsdbool( t8 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t9.
       DATA t10 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t11) = CAST zcl_lnt_expression_node( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
-      DATA(t12) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t12) = t2.
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t13.
       DATA(t14) = abap_true.

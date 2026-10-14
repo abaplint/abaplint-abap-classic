@@ -45,10 +45,10 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Syntax|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -66,13 +66,13 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_id_fr_nm_ts_id_fr_nm.
-    DATA(t1) = CAST zcl_lnt_idntcl_frm_nms_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_id_fr_nm_ts_id_fr_nm.
-    DATA(t1) = CAST zcl_lnt_idntcl_frm_nms_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_form_names.ts:30|.
     t2->source_location = t3.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_id_fr_nm_ts_id_fr_nm.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_form_names.ts:34|.
     t2->source_location = t3.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_form_names.ts:38|.
     t2->source_location = t3.
@@ -106,7 +106,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_form_names.ts:30|.
     t2->source_location = t3.
@@ -114,7 +114,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_form_names.ts:34|.
     t2->source_location = t3.

@@ -49,7 +49,7 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     CLEAR t16.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
-    DATA(t18) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t18) = t1.
     IF t18 IS BOUND.
       CREATE OBJECT t17.
       t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -82,9 +82,9 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     CREATE OBJECT t28.
     t27 = t28.
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t30) = CAST zlnt_runtime_dyna_a429568d5be8( t16 ).
-    DATA(t31) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
-    DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t27 ).
+    DATA(t30) = t16.
+    DATA(t31) = t20.
+    DATA(t32) = t27.
     t29 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t31 i_rest = t32 ).
     t15 = t29.
     result = t15.

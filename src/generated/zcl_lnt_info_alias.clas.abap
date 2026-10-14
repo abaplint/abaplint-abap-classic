@@ -14,12 +14,12 @@ ENDCLASS.
 CLASS zcl_lnt_info_alias IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t2) = i_identifier.
     DATA(t3) = i_visibility_5c1f.
     DATA(t4) = i_component.
     DATA(t5) = t1.
     me->name = t5.
-    DATA(t6) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t6) = t2.
     me->identifier = t6.
     DATA(t7) = t3.
     me->visibility = t7.

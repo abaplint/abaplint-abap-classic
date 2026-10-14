@@ -18,19 +18,19 @@ CLASS zcl_lnt_ifnctn_mdl_prmtr IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
     DATA(t2) = i_direction.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_type_9913 ).
+    DATA(t3) = i_type_9913.
     DATA(t4) = i_optional.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_default_value ).
+    DATA(t5) = i_default_value.
     DATA(t6) = i_pass_by_value.
     DATA(t7) = t1.
     me->name = t7.
     DATA(t8) = t2.
     me->direction = t8.
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t9) = t3.
     me->type_cba0 = t9.
     DATA(t10) = t4.
     me->optional = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t11) = t5.
     me->default_value = t11.
     DATA(t12) = t6.
     me->pass_by_value = t12.

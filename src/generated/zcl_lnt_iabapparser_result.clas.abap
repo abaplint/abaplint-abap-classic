@@ -13,17 +13,17 @@ CLASS zcl_lnt_iabapparser_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_output ).
+    DATA(t1) = i_issues.
+    DATA(t2) = i_output.
     DATA(t3) = i_runtime.
-    DATA(t4) = CAST zcl_lnt_shape_8fc6df03( i_runtime_extra ).
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = i_runtime_extra.
+    DATA(t5) = t1.
     me->issues = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t6) = t2.
     me->output = t6.
     DATA(t7) = t3.
     me->runtime = t7.
-    DATA(t8) = CAST zcl_lnt_shape_8fc6df03( t4 ).
+    DATA(t8) = t4.
     me->runtime_extra = t8.
   ENDMETHOD.
 

@@ -84,16 +84,16 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t21.
       t20 = t21.
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t22) = t20.
       DATA(t23) = |Syntax|.
       APPEND t23 TO t22->items.
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t24) = t20.
       DATA(t25) = |Whitespace|.
       APPEND t25 TO t24->items.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t26) = t20.
       DATA(t27) = |SingleFile|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t28) = t20.
       t19 = t28.
       t17 = t19.
     ELSE.
@@ -111,13 +111,13 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_pr_ms_sp_ts_pr_ms_sp.
-    DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_pr_ms_sp_ts_pr_ms_sp.
-    DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:34|.
     t2->source_location = t3.
@@ -125,7 +125,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_pr_ms_sp_ts_pr_ms_sp.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:38|.
     t2->source_location = t3.
@@ -133,7 +133,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD missing_space.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:55|.
     t2->source_location = t3.
@@ -141,7 +141,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_sql_cond.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:107|.
     t2->source_location = t3.
@@ -149,7 +149,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_new_object.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:131|.
     t2->source_location = t3.
@@ -157,7 +157,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_cond_sub.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:146|.
     t2->source_location = t3.
@@ -165,7 +165,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_component_cond_sub.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:171|.
     t2->source_location = t3.
@@ -173,7 +173,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_component_cond.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:196|.
     t2->source_location = t3.
@@ -181,7 +181,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_value_body_line.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_vb ).
+    DATA(t1) = i_vb.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:212|.
     t2->source_location = t3.
@@ -189,7 +189,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_cond.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:240|.
     t2->source_location = t3.
@@ -197,7 +197,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_source.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:272|.
     t2->source_location = t3.
@@ -205,7 +205,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_method_call_param.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_call_bc15 ).
+    DATA(t1) = i_call_bc15.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_missing_space.ts:305|.
     t2->source_location = t3.

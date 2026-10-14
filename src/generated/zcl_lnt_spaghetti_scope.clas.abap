@@ -22,8 +22,8 @@ CLASS zcl_lnt_spaghetti_scope DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( i_top ).
-    DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( t1 ).
+    DATA(t1) = i_top.
+    DATA(t2) = t1.
     me->node = t2.
   ENDMETHOD.
 
@@ -52,8 +52,8 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD l_p_i_s_ab_5_sy_sp_sc_ts_sp_sc.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t1) = i_p.
+    DATA(t2) = i_filename.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/abap/5_syntax/spaghetti_scope.ts:321|.
     t3->source_location = t4.
@@ -62,14 +62,14 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
 
   METHOD g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-    DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->node ).
+    DATA(t2) = me->node.
     t1 = t2->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD g_t_i_s_ab_5_sy_sp_sc_ts_sp_sc.
-    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->node ).
+    DATA(t1) = me->node.
     result = t1.
 
   ENDMETHOD.
@@ -82,9 +82,9 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD lookup_position_traverse.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA(t2) = i_filename.
-    DATA(t3) = CAST zcl_lnt_spaghetti_scope_node( i_node ).
+    DATA(t3) = i_node.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/abap/5_syntax/spaghetti_scope.ts:351|.
     t4->source_location = t5.
@@ -92,8 +92,8 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD lookup_position.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t1) = i_p.
+    DATA(t2) = i_filename.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/abap/5_syntax/spaghetti_scope.ts:321|.
     t3->source_location = t4.

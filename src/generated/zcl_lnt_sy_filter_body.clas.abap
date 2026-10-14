@@ -9,25 +9,25 @@ CLASS zcl_lnt_sy_filter_body DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
-    DATA(t3) = CAST zcl_lnt_abstract_type( i_target_type ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
+    DATA(t3) = i_target_type.
     DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t6) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t8.
     t7 = t8.
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = CAST zcl_lnt_expression_node( t5 ).
+    DATA(t10) = t5.
     IF t10 IS INITIAL.
       t9 = abap_true.
     ENDIF.
     t4 = t9.
     IF t4 = abap_true.
-      DATA(t11) = CAST zcl_lnt_abstract_type( t3 ).
+      DATA(t11) = t3.
       result = t11.
       RETURN.
     ENDIF.
@@ -37,9 +37,9 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     t12 = t13.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t16) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t16) = t1.
     t15 = t16.
-    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     t14 = t15->find_direct_expressions( i_type_9913 = t17 ).
     DATA t18 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t18.
@@ -47,21 +47,21 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     CLEAR t19.
     LOOP AT t14->items INTO t19.
       t18 ?= t19.
-      DATA(t20) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+      DATA(t20) = t12.
       DATA t21 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t21.
       DATA t22 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t22.
       DATA(t23) = abap_true.
       IF t23 = abap_true.
-        DATA(t24) = CAST zcl_lnt_expression_node( t18 ).
+        DATA(t24) = t18.
         t22 = t24.
       ELSE.
         DATA t25 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t25.
         t22 = t25.
       ENDIF.
-      DATA(t26) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t26) = t2.
       DATA t27 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t27.
       DATA t28 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     DATA t33 TYPE abap_bool.
     DATA t34 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t34.
-    DATA(t35) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+    DATA(t35) = t12.
     READ TABLE t35->items INDEX 1 INTO t34.
     t33 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_ty_table_type ).
     IF t33 = abap_true.
@@ -93,12 +93,12 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
         DATA t40 TYPE REF TO zcl_lnt_ty_table_type.
         DATA t41 TYPE REF TO zcl_lnt_abstract_type.
         CLEAR t41.
-        DATA(t42) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+        DATA(t42) = t12.
         READ TABLE t42->items INDEX 1 INTO t41.
         t40 ?= t41.
         t39 = t40.
         DATA t43 TYPE REF TO zcl_lnt_abstract_type.
-        DATA(t44) = CAST zcl_lnt_ty_table_type( t39 ).
+        DATA(t44) = t39.
         t43 = t44->row_type.
         t38 = t43.
         t36 = t38.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     DATA t49 TYPE abap_bool.
     DATA t50 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t50.
-    DATA(t51) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+    DATA(t51) = t12.
     READ TABLE t51->items INDEX 2 INTO t50.
     t49 = xsdbool( t50 IS BOUND AND t50 IS INSTANCE OF zcl_lnt_ty_table_type ).
     IF t49 = abap_true.
@@ -134,12 +134,12 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
         DATA t56 TYPE REF TO zcl_lnt_ty_table_type.
         DATA t57 TYPE REF TO zcl_lnt_abstract_type.
         CLEAR t57.
-        DATA(t58) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+        DATA(t58) = t12.
         READ TABLE t58->items INDEX 2 INTO t57.
         t56 ?= t57.
         t55 = t56.
         DATA t59 TYPE REF TO zcl_lnt_abstract_type.
-        DATA(t60) = CAST zcl_lnt_ty_table_type( t55 ).
+        DATA(t60) = t55.
         t59 = t60->row_type.
         t54 = t59.
         t52 = t54.
@@ -158,21 +158,21 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     DATA t63 TYPE REF TO zcl_lnt_expression_node.
     DATA t64 TYPE REF TO zcl_lnt_expression_node.
     DATA t65 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t66) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t66) = t1.
     t65 = t66.
-    DATA(t67) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d131_942bad51dc56 ).
+    DATA(t67) = zlnt_runtime_desc_78196487750d=>zlnt_member_d131_942bad51dc56.
     t64 = t65->find_direct_expression( i_type_9913 = t67 ).
     t63 = t64.
-    DATA(t68) = CAST zcl_lnt_syntax_input( t2 ).
-    DATA(t69) = CAST zcl_lnt_abstract_type( t31 ).
-    DATA(t70) = CAST zcl_lnt_abstract_type( t47 ).
+    DATA(t68) = t2.
+    DATA(t69) = t31.
+    DATA(t70) = t47.
     zcl_lnt_sy_component_cond=>run_syntax( i_node = t63 i_input_967e = t68 i_left_type = t69 i_right_type = t70 ).
     DATA t71 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t71.
     DATA t72 TYPE abap_bool.
     DATA t73 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t73.
-    DATA(t74) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+    DATA(t74) = t12.
     READ TABLE t74->items INDEX 1 INTO t73.
     t72 = xsdbool( t73 IS BOUND ).
     IF t72 = abap_true.
@@ -183,7 +183,7 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
         DATA t77 TYPE REF TO zcl_lnt_abstract_type.
         DATA t78 TYPE REF TO zcl_lnt_abstract_type.
         CLEAR t78.
-        DATA(t79) = CAST zlnt_runtime_arra_8d6bb411953d( t12 ).
+        DATA(t79) = t12.
         READ TABLE t79->items INDEX 1 INTO t78.
         t77 = t78.
         t75 = t77.
@@ -194,7 +194,7 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
       ENDIF.
       t71 = t75.
     ELSE.
-      DATA(t81) = CAST zcl_lnt_abstract_type( t3 ).
+      DATA(t81) = t3.
       t71 = t81.
     ENDIF.
     result = t71.

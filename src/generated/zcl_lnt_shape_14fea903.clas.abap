@@ -14,13 +14,13 @@ CLASS zcl_lnt_shape_14fea903 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_code.
     DATA(t2) = i_as.
-    DATA(t3) = CAST zcl_lnt_expression_node( i_expression ).
+    DATA(t3) = i_expression.
     DATA(t4) = t1.
     me->code = t4.
     DATA(t5) = t2.
     me->as = t5.
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t7) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t7) = t3.
     t6 = t7.
     me->expression = t6.
   ENDMETHOD.

@@ -10,9 +10,9 @@ CLASS zcl_lnt_sql_path_segment DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_sql_path_segment IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_nws ).
+    DATA(t1) = i_nws.
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t3) = t1.
     IF t3 IS INITIAL.
       t2 = abap_true.
     ELSEIF t3->has = abap_false.
@@ -37,7 +37,7 @@ CLASS zcl_lnt_sql_path_segment IMPLEMENTATION.
     ENDIF.
     super->constructor( ).
     DATA t9 TYPE abap_bool.
-    DATA(t10) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t10) = t1.
     t9 = t10->value.
     me->nws = t9.
   ENDMETHOD.

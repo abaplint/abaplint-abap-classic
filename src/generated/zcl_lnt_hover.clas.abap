@@ -11,13 +11,13 @@ CLASS zcl_lnt_hover DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_hover IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD find_8f95.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_pos ).
+    DATA(t1) = i_pos.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/hover.ts:18|.
     t2->source_location = t3.

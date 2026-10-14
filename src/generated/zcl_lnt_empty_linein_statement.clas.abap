@@ -99,19 +99,19 @@ CLASS zcl_lnt_empty_linein_statement IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |Quickfix|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       DATA(t32) = |Whitespace|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t33) = t27.
       DATA(t34) = |SingleFile|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t35) = t27.
       DATA(t36) = |Styleguide|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t37) = t27.
       t26 = t37.
       t24 = t26.
     ELSE.
@@ -136,13 +136,13 @@ CLASS zcl_lnt_empty_linein_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_e_l_i_st_ts_em_ln_st.
-    DATA(t1) = CAST zcl_lnt_empty_lnn_sttmnt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_e_l_i_st_ts_em_ln_st.
-    DATA(t1) = CAST zcl_lnt_empty_lnn_sttmnt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_line_in_statement.ts:42|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_empty_linein_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_e_l_i_st_ts_em_ln_st.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_line_in_statement.ts:46|.
     t2->source_location = t3.

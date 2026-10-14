@@ -10,22 +10,22 @@ CLASS zcl_lnt_sy_select_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_select_loop IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3 ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3.
     t4 = t5->find_direct_expression( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t8) = t3.
     t7 = xsdbool( t8 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t10) = CAST zcl_lnt_expression_node( t3 ).
+      DATA(t10) = t3.
       t9 = t10.
-      DATA(t11) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t11) = t2.
       DATA t12 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t12.
       DATA(t13) = abap_true.

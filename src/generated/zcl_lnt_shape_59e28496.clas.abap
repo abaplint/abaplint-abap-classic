@@ -12,14 +12,14 @@ CLASS zcl_lnt_shape_59e28496 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_59e28496 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_oo_type ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_rtti_name ).
-    DATA(t4) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t1) = i_id.
+    DATA(t2) = i_oo_type.
+    DATA(t3) = i_rtti_name.
+    DATA(t4) = t1.
     me->id = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->oo_type = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->rtti_name = t6.
   ENDMETHOD.
 

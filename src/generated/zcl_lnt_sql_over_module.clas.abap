@@ -20,7 +20,7 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
       zcl_lnt_sql_over_module=>zlnt_builtin_init_8db5e9302d91( ).
     ENDIF.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4 ).
+    DATA(t2) = zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4.
     t1 = zcl_lnt_st_combi_module=>tok( i_t = t2 ).
     zcl_lnt_sql_over_module=>lparen = t1.
     IF zcl_lnt_sql_over_module=>zlnt_builtin_init_7e5747627b9e = abap_false.
@@ -33,7 +33,7 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t7) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d54_e55193f1dae9de ).
+    DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d54_e55193f1dae9de.
     t6 = zcl_lnt_st_combi_module=>tok( i_t = t7 ).
     IF t6 IS BOUND.
       CREATE OBJECT t5.
@@ -48,7 +48,7 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d53_2a2dc81ca7ec77 ).
+    DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d53_2a2dc81ca7ec77.
     t11 = zcl_lnt_st_combi_module=>tok( i_t = t12 ).
     IF t11 IS BOUND.
       CREATE OBJECT t10.
@@ -63,9 +63,9 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     CREATE OBJECT t15.
     t14 = t15.
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t17) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t17) = t4.
+    DATA(t18) = t9.
+    DATA(t19) = t14.
     t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t17 i_second = t18 i_rest = t19 ).
     t3 = t16.
     zcl_lnt_sql_over_module=>rparen = t3.

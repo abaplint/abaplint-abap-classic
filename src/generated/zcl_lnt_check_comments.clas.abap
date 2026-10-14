@@ -106,13 +106,13 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |Styleguide|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       DATA(t33) = |SingleFile|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t34) = t28.
       t27 = t34.
       t25 = t27.
     ELSE.
@@ -138,13 +138,13 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_cm_ts_ch_cmm.
-    DATA(t1) = CAST zcl_lnt_check_comments_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_cm_ts_ch_cmm.
-    DATA(t1) = CAST zcl_lnt_check_comments_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_comments.ts:47|.
     t2->source_location = t3.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ch_cm_ts_ch_cmm.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_comments.ts:51|.
     t2->source_location = t3.

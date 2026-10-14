@@ -65,10 +65,10 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t17.
       t16 = t17.
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t18) = t16.
       DATA(t19) = |Syntax|.
       APPEND t19 TO t18->items.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t20) = t16.
       t15 = t20.
       t13 = t15.
     ELSE.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_dyn_chc_ts_dyn_chc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:27|.
     t2->source_location = t3.
@@ -94,13 +94,13 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_dy_ch_ts_dy_chc.
-    DATA(t1) = CAST zcl_lnt_dynpro_checks_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_dy_ch_ts_dy_chc.
-    DATA(t1) = CAST zcl_lnt_dynpro_checks_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:35|.
     t2->source_location = t3.
@@ -108,7 +108,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:39|.
     t2->source_location = t3.
@@ -116,8 +116,8 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_overlapping_fields.
-    DATA(t1) = CAST zcl_lnt_dynpro_header( i_dynpro ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_dynpro.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/dynpro_checks.ts:65|.
     t3->source_location = t4.
@@ -125,7 +125,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD hs_cntnr_rltv_crdnts.
-    DATA(t1) = CAST zcl_lnt_dynpro_field( i_field_d104 ).
+    DATA(t1) = i_field_d104.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:89|.
     t2->source_location = t3.
@@ -133,8 +133,8 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD overlaps.
-    DATA(t1) = CAST zcl_lnt_dynpro_field( i_first ).
-    DATA(t2) = CAST zcl_lnt_dynpro_field( i_second ).
+    DATA(t1) = i_first.
+    DATA(t2) = i_second.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/dynpro_checks.ts:93|.
     t3->source_location = t4.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:27|.
     t2->source_location = t3.
@@ -160,7 +160,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dynpro_checks.ts:35|.
     t2->source_location = t3.

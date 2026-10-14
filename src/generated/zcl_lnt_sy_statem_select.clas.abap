@@ -10,12 +10,12 @@ CLASS zcl_lnt_sy_statem_select DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_statem_select IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3 ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3.
     t4 = t5->find_direct_expressions( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE i.
@@ -25,7 +25,7 @@ CLASS zcl_lnt_sy_statem_select IMPLEMENTATION.
       DATA t9 TYPE abap_bool.
       DATA(t10) = t7.
       DATA t11 TYPE i.
-      DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t12) = t3.
       t11 = lines( t12->items ).
       t9 = xsdbool( t10 < t11 ).
       IF t9 = abap_false.
@@ -36,7 +36,7 @@ CLASS zcl_lnt_sy_statem_select IMPLEMENTATION.
       DATA(t15) = t7.
       DATA t16 TYPE i.
       DATA t17 TYPE i.
-      DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t18) = t3.
       t17 = lines( t18->items ).
       DATA(t19) = 1.
       t16 = t17 - t19.
@@ -44,7 +44,7 @@ CLASS zcl_lnt_sy_statem_select IMPLEMENTATION.
       t13 = t14.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       DATA t21 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t22) = t3.
       DATA(t23) = t7.
       t23 = t23 + 1.
       DATA t24 TYPE REF TO object.
@@ -52,8 +52,8 @@ CLASS zcl_lnt_sy_statem_select IMPLEMENTATION.
       READ TABLE t22->items INDEX t23 INTO t24.
       t21 ?= t24.
       t20 = t21.
-      DATA(t25) = CAST zcl_lnt_expression_node( t20 ).
-      DATA(t26) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t25) = t20.
+      DATA(t26) = t2.
       DATA t27 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t27.
       DATA(t28) = abap_true.

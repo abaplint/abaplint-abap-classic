@@ -67,13 +67,13 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       DATA(t24) = |Quickfix|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t25) = t19.
       t18 = t25.
       t16 = t18.
     ELSE.
@@ -91,13 +91,13 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_om_pr_zr_ts_om_pr_zr.
-    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_om_pr_zr_ts_om_pr_zr.
-    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_preceding_zeros.ts:32|.
     t2->source_location = t3.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_om_pr_zr_ts_om_pr_zr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_preceding_zeros.ts:36|.
     t2->source_location = t3.

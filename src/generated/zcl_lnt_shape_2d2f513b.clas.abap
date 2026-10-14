@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_2d2f513b DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_2d2f513b IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_token_types ).
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_token_modifiers ).
+    DATA(t1) = i_token_types.
+    DATA(t2) = i_token_modifiers.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->token_types = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->token_modifiers = t5.
   ENDMETHOD.

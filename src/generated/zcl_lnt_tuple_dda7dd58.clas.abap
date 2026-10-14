@@ -14,12 +14,12 @@ CLASS zcl_lnt_tuple_dda7dd58 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_f0.
     DATA(t2) = i_f1.
-    DATA(t3) = CAST zcl_lnt_abap_release( i_f2 ).
+    DATA(t3) = i_f2.
     DATA(t4) = t1.
     me->f0 = t4.
     DATA(t5) = t2.
     me->f1 = t5.
-    DATA(t6) = CAST zcl_lnt_abap_release( t3 ).
+    DATA(t6) = t3.
     me->f2 = t6.
   ENDMETHOD.
 

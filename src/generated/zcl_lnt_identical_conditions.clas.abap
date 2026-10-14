@@ -129,10 +129,10 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       DATA t32 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t32.
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t33) = t31.
       DATA(t34) = |SingleFile|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t35) = t31.
       t30 = t35.
       t28 = t30.
     ELSE.
@@ -150,13 +150,13 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_id_cn_ts_id_cnd.
-    DATA(t1) = CAST zcl_lnt_idntcl_cndtns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_id_cn_ts_id_cnd.
-    DATA(t1) = CAST zcl_lnt_idntcl_cndtns_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_conditions.ts:61|.
     t2->source_location = t3.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_id_cn_ts_id_cnd.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_conditions.ts:65|.
     t2->source_location = t3.
@@ -172,8 +172,8 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_cond.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_expression_node( i_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/identical_conditions.ts:88|.
     t3->source_location = t4.
@@ -181,8 +181,8 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_if.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/identical_conditions.ts:112|.
     t3->source_location = t4.
@@ -190,8 +190,8 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_when.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/identical_conditions.ts:141|.
     t3->source_location = t4.

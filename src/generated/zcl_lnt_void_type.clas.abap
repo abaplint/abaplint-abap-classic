@@ -31,14 +31,14 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_voided ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_voided.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t3.
     DATA(t4) = abap_true.
     IF t4 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t6) = t2.
       DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
       t3 = t12.
     ENDIF.
     super->constructor( i_input_967e = t3 ).
-    DATA(t13) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t13) = t1.
     me->voided = t13.
   ENDMETHOD.
 
@@ -65,22 +65,22 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_voided ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_voided.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_void_type.
     CLEAR t3.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t4) = t1.
+    DATA(t5) = t2.
     t3 = NEW zcl_lnt_void_type( i_voided = t4 i_qualified_name = t5 ).
     result = t3.
 
   ENDMETHOD.
 
   METHOD get_voided.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( me->voided ).
+    DATA(t1) = me->voided.
     result = t1.
 
   ENDMETHOD.

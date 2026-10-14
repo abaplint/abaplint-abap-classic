@@ -11,9 +11,9 @@ CLASS zcl_lnt_shape_ca978742 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_ca978742 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = i_oo_type.
-    DATA(t3) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t3) = t1.
     me->id = t3.
     DATA(t4) = t2.
     me->oo_type = t4.

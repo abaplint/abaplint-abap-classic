@@ -11,11 +11,11 @@ CLASS zcl_lnt_irange DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irange IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_start ).
-    DATA(t2) = CAST zcl_lnt_position( i_end ).
-    DATA(t3) = CAST zcl_lnt_position( t1 ).
+    DATA(t1) = i_start.
+    DATA(t2) = i_end.
+    DATA(t3) = t1.
     me->start = t3.
-    DATA(t4) = CAST zcl_lnt_position( t2 ).
+    DATA(t4) = t2.
     me->end = t4.
   ENDMETHOD.
 

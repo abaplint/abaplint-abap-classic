@@ -11,9 +11,9 @@ CLASS zcl_lnt_type_definitions_entry DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_type_definitions_entry IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
+    DATA(t1) = i_type_9913.
     DATA(t2) = i_visibility_5c1f.
-    DATA(t3) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t3) = t1.
     me->type_cba0 = t3.
     DATA(t4) = t2.
     me->visibility = t4.

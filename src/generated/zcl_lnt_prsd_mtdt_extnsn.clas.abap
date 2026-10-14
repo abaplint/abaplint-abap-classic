@@ -10,8 +10,8 @@ CLASS zcl_lnt_prsd_mtdt_extnsn DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_prsd_mtdt_extnsn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t1) = i_tree.
+    DATA(t2) = t1.
     me->tree = t2.
   ENDMETHOD.
 

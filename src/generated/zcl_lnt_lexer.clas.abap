@@ -17,9 +17,9 @@ CLASS zcl_lnt_lexer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_lexer IMPLEMENTATION.
   METHOD run.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_position( i_virtual ).
-    DATA(t3) = CAST zcl_lnt_position( t2 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_virtual.
+    DATA(t3) = t2.
     me->virtual = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t4.
@@ -29,12 +29,12 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     t5 = t6.
     me->m = t5.
     DATA t7 TYPE string.
-    DATA(t8) = CAST zif_lnt_file( t1 ).
+    DATA(t8) = t1.
     t7 = t8->get_raw( ).
     me->process( i_raw = t7 ).
     DATA t9 TYPE REF TO zcl_lnt_iabaplexer_result.
-    DATA(t10) = CAST zif_lnt_file( t1 ).
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+    DATA(t10) = t1.
+    DATA(t11) = me->tokens.
     t9 = NEW zcl_lnt_iabaplexer_result( i_file = t10 i_tokens = t11 ).
     result = t9.
 
@@ -49,17 +49,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     DATA(t2) = VALUE string( ).
     DATA(t3) = VALUE string( ).
     DATA t4 TYPE REF TO zcl_lnt_lexer_buffer.
-    DATA(t5) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+    DATA(t5) = me->buffer.
     t4 = t5.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE string.
-    DATA(t8) = CAST zcl_lnt_lexer_buffer( t4 ).
+    DATA(t8) = t4.
     t7 = t8->raw.
     DATA t9 TYPE i.
-    DATA(t10) = CAST zcl_lnt_lexer_buffer( t4 ).
+    DATA(t10) = t4.
     t9 = t10->start.
     DATA t11 TYPE i.
-    DATA(t12) = CAST zcl_lnt_lexer_buffer( t4 ).
+    DATA(t12) = t4.
     t11 = t12->end.
     DATA(t13) = strlen( t7 ).
     t9 = COND i( WHEN t9 < 0 THEN 0 WHEN t9 > t13 THEN t13 ELSE t9 ).
@@ -161,20 +161,20 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA t38 TYPE int8.
       DATA t39 TYPE int8.
       DATA t40 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t41) = CAST zcl_lnt_lexer_stream( me->stream ).
+      DATA(t41) = me->stream.
       t40 = t41.
       DATA t42 TYPE int8.
-      DATA(t43) = CAST zcl_lnt_lexer_stream( t40 ).
+      DATA(t43) = t40.
       t42 = t43->col.
       t39 = t42.
       t38 = t39.
       DATA t44 TYPE int8.
       DATA t45 TYPE int8.
       DATA t46 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t47) = CAST zcl_lnt_lexer_stream( me->stream ).
+      DATA(t47) = me->stream.
       t46 = t47.
       DATA t48 TYPE int8.
-      DATA(t49) = CAST zcl_lnt_lexer_stream( t46 ).
+      DATA(t49) = t46.
       t48 = t49->row.
       t45 = t48.
       t44 = t45.
@@ -186,11 +186,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA t54 TYPE i.
       DATA t55 TYPE int8.
       DATA t56 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t57) = CAST zcl_lnt_lexer_stream( me->stream ).
+      DATA(t57) = me->stream.
       t56 = t57.
       DATA t58 TYPE int8.
       DATA t59 TYPE i.
-      DATA(t60) = CAST zcl_lnt_lexer_stream( t56 ).
+      DATA(t60) = t56.
       t59 = t60->offset.
       t58 = t59.
       t55 = t58.
@@ -210,7 +210,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t68) = VALUE i( ).
         DATA(t69) = VALUE int8( ).
         DATA t70 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t71) = CAST zcl_lnt_lexer_stream( me->stream ).
+        DATA(t71) = me->stream.
         t70 = t71.
         DATA t72 TYPE int8.
         DATA t73 TYPE int8.
@@ -230,7 +230,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA t82 TYPE int8.
           DATA t83 TYPE i.
           DATA t84 TYPE string.
-          DATA(t85) = CAST zcl_lnt_lexer_stream( t70 ).
+          DATA(t85) = t70.
           t84 = t85->raw.
           DATA(t86) = strlen( t84 ).
           t83 = t86.
@@ -247,7 +247,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA(t89) = VALUE int8( ).
           DATA(t90) = VALUE i( ).
           DATA t91 TYPE string.
-          DATA(t92) = CAST zcl_lnt_lexer_stream( t70 ).
+          DATA(t92) = t70.
           t91 = t92->raw.
           DATA(t93) = VALUE i( ).
           DATA(t94) = t72.
@@ -330,14 +330,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t121) = VALUE i( ).
       DATA(t122) = VALUE int8( ).
       DATA t123 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t124) = CAST zcl_lnt_lexer_stream( me->stream ).
+      DATA(t124) = me->stream.
       t123 = t124.
       DATA(t125) = VALUE int8( ).
       DATA(t126) = VALUE int8( ).
       DATA t127 TYPE int8.
       DATA t128 TYPE int8.
       DATA t129 TYPE i.
-      DATA(t130) = CAST zcl_lnt_lexer_stream( t123 ).
+      DATA(t130) = t123.
       t129 = t130->offset.
       t128 = t129.
       DATA(t131) = CONV int8( 1 ).
@@ -352,7 +352,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA t135 TYPE int8.
       DATA t136 TYPE i.
       DATA t137 TYPE string.
-      DATA(t138) = CAST zcl_lnt_lexer_stream( t123 ).
+      DATA(t138) = t123.
       t137 = t138->raw.
       DATA(t139) = strlen( t137 ).
       t136 = t139.
@@ -367,7 +367,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t142) = VALUE int8( ).
         DATA(t143) = VALUE i( ).
         DATA t144 TYPE string.
-        DATA(t145) = CAST zcl_lnt_lexer_stream( t123 ).
+        DATA(t145) = t123.
         t144 = t145->raw.
         DATA t146 TYPE i.
         DATA(t147) = t126.
@@ -496,27 +496,27 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t188 = NEW zcl_lnt_position( i_row = t189 i_col = t190 ).
       t187 = t188.
       DATA t196 TYPE abap_bool.
-      DATA(t197) = CAST zcl_lnt_position( me->virtual ).
+      DATA(t197) = me->virtual.
       t196 = xsdbool( t197 IS BOUND ).
       IF t196 = abap_true.
         DATA t198 TYPE REF TO zcl_lnt_virtual_position.
         DATA t199 TYPE REF TO zcl_lnt_position.
-        DATA(t200) = CAST zcl_lnt_position( me->virtual ).
+        DATA(t200) = me->virtual.
         t199 = t200.
         DATA t201 TYPE int8.
         DATA t202 TYPE REF TO zcl_lnt_position.
-        DATA(t203) = CAST zcl_lnt_position( t187 ).
+        DATA(t203) = t187.
         t202 = t203.
         DATA t204 TYPE int8.
-        DATA(t205) = CAST zcl_lnt_position( t202 ).
+        DATA(t205) = t202.
         t204 = t205->row.
         t201 = t204.
         DATA t206 TYPE int8.
         DATA t207 TYPE REF TO zcl_lnt_position.
-        DATA(t208) = CAST zcl_lnt_position( t187 ).
+        DATA(t208) = t187.
         t207 = t208.
         DATA t209 TYPE int8.
-        DATA(t210) = CAST zcl_lnt_position( t207 ).
+        DATA(t210) = t207.
         t209 = t210->col.
         t206 = t209.
         t198 = NEW zcl_lnt_virtual_position( i_virtual = t199 i_row = t201 i_col = t206 ).
@@ -534,7 +534,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t213 = xsdbool( t214 = t215 ).
       IF t213 = abap_true.
         DATA t217 TYPE REF TO zcl_lnt_lx_comment.
-        DATA(t218) = CAST zcl_lnt_position( t187 ).
+        DATA(t218) = t187.
         DATA(t219) = t1.
         t217 = NEW zcl_lnt_lx_comment( i_start = t218 i_str = t219 ).
         t211 = t217.
@@ -558,7 +558,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         ENDIF.
         IF t220 = abap_true.
           DATA t229 TYPE REF TO zcl_lnt_string_token.
-          DATA(t230) = CAST zcl_lnt_position( t187 ).
+          DATA(t230) = t187.
           DATA(t231) = t1.
           t229 = NEW zcl_lnt_string_token( i_start = t230 i_str = t231 ).
           t211 = t229.
@@ -613,7 +613,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
             ENDIF.
             IF t250 = abap_true.
               DATA t257 TYPE REF TO zcl_lnt_lx_string_template.
-              DATA(t258) = CAST zcl_lnt_position( t187 ).
+              DATA(t258) = t187.
               DATA(t259) = t1.
               t257 = NEW zcl_lnt_lx_string_template( i_start = t258 i_str = t259 ).
               t211 = t257.
@@ -642,7 +642,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
               ENDIF.
               IF t260 = abap_true.
                 DATA t271 TYPE REF TO zcl_lnt_string_template_begin.
-                DATA(t272) = CAST zcl_lnt_position( t187 ).
+                DATA(t272) = t187.
                 DATA(t273) = t1.
                 t271 = NEW zcl_lnt_string_template_begin( i_start = t272 i_str = t273 ).
                 t211 = t271.
@@ -671,7 +671,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 ENDIF.
                 IF t274 = abap_true.
                   DATA t285 TYPE REF TO zcl_lnt_string_template_end.
-                  DATA(t286) = CAST zcl_lnt_position( t187 ).
+                  DATA(t286) = t187.
                   DATA(t287) = t1.
                   t285 = NEW zcl_lnt_string_template_end( i_start = t286 i_str = t287 ).
                   t211 = t285.
@@ -709,13 +709,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   ENDIF.
                   IF t288 = abap_true.
                     DATA t303 TYPE REF TO zcl_lnt_string_template_middle.
-                    DATA(t304) = CAST zcl_lnt_position( t187 ).
+                    DATA(t304) = t187.
                     DATA(t305) = t1.
                     t303 = NEW zcl_lnt_string_template_middle( i_start = t304 i_str = t305 ).
                     t211 = t303.
                   ELSE.
                     DATA t306 TYPE REF TO zcl_lnt_lx_identifier.
-                    DATA(t307) = CAST zcl_lnt_position( t187 ).
+                    DATA(t307) = t187.
                     DATA(t308) = t1.
                     t306 = NEW zcl_lnt_lx_identifier( i_start = t307 i_str = t308 ).
                     t211 = t306.
@@ -760,7 +760,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
             ENDIF.
             IF t309 = abap_true.
               DATA t322 TYPE REF TO zcl_lnt_pragma.
-              DATA(t323) = CAST zcl_lnt_position( t187 ).
+              DATA(t323) = t187.
               DATA(t324) = t1.
               t322 = NEW zcl_lnt_pragma( i_start = t323 i_str = t324 ).
               t211 = t322.
@@ -788,7 +788,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 ENDIF.
                 IF t330 = abap_true.
                   DATA t337 TYPE REF TO zcl_lnt_punctuation.
-                  DATA(t338) = CAST zcl_lnt_position( t187 ).
+                  DATA(t338) = t187.
                   DATA(t339) = t1.
                   t337 = NEW zcl_lnt_punctuation( i_start = t338 i_str = t339 ).
                   t211 = t337.
@@ -813,7 +813,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                     ENDIF.
                     IF t343 = abap_true.
                       DATA t350 TYPE REF TO zcl_lnt_w_bracket_left_w.
-                      DATA(t351) = CAST zcl_lnt_position( t187 ).
+                      DATA(t351) = t187.
                       DATA(t352) = t1.
                       t350 = NEW zcl_lnt_w_bracket_left_w( i_start = t351 i_str = t352 ).
                       t211 = t350.
@@ -824,7 +824,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       t353 = xsdbool( t354 = t355 ).
                       IF t353 = abap_true.
                         DATA t356 TYPE REF TO zcl_lnt_w_bracket_left.
-                        DATA(t357) = CAST zcl_lnt_position( t187 ).
+                        DATA(t357) = t187.
                         DATA(t358) = t1.
                         t356 = NEW zcl_lnt_w_bracket_left( i_start = t357 i_str = t358 ).
                         t211 = t356.
@@ -835,13 +835,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         t359 = xsdbool( t360 = t361 ).
                         IF t359 = abap_true.
                           DATA t362 TYPE REF TO zcl_lnt_bracket_left_w.
-                          DATA(t363) = CAST zcl_lnt_position( t187 ).
+                          DATA(t363) = t187.
                           DATA(t364) = t1.
                           t362 = NEW zcl_lnt_bracket_left_w( i_start = t363 i_str = t364 ).
                           t211 = t362.
                         ELSE.
                           DATA t365 TYPE REF TO zcl_lnt_bracket_left.
-                          DATA(t366) = CAST zcl_lnt_position( t187 ).
+                          DATA(t366) = t187.
                           DATA(t367) = t1.
                           t365 = NEW zcl_lnt_bracket_left( i_start = t366 i_str = t367 ).
                           t211 = t365.
@@ -869,7 +869,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       ENDIF.
                       IF t371 = abap_true.
                         DATA t378 TYPE REF TO zcl_lnt_w_paren_left_w.
-                        DATA(t379) = CAST zcl_lnt_position( t187 ).
+                        DATA(t379) = t187.
                         DATA(t380) = t1.
                         t378 = NEW zcl_lnt_w_paren_left_w( i_start = t379 i_str = t380 ).
                         t211 = t378.
@@ -880,7 +880,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         t381 = xsdbool( t382 = t383 ).
                         IF t381 = abap_true.
                           DATA t384 TYPE REF TO zcl_lnt_w_paren_left.
-                          DATA(t385) = CAST zcl_lnt_position( t187 ).
+                          DATA(t385) = t187.
                           DATA(t386) = t1.
                           t384 = NEW zcl_lnt_w_paren_left( i_start = t385 i_str = t386 ).
                           t211 = t384.
@@ -891,13 +891,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           t387 = xsdbool( t388 = t389 ).
                           IF t387 = abap_true.
                             DATA t390 TYPE REF TO zcl_lnt_paren_left_w.
-                            DATA(t391) = CAST zcl_lnt_position( t187 ).
+                            DATA(t391) = t187.
                             DATA(t392) = t1.
                             t390 = NEW zcl_lnt_paren_left_w( i_start = t391 i_str = t392 ).
                             t211 = t390.
                           ELSE.
                             DATA t393 TYPE REF TO zcl_lnt_paren_left.
-                            DATA(t394) = CAST zcl_lnt_position( t187 ).
+                            DATA(t394) = t187.
                             DATA(t395) = t1.
                             t393 = NEW zcl_lnt_paren_left( i_start = t394 i_str = t395 ).
                             t211 = t393.
@@ -925,7 +925,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         ENDIF.
                         IF t399 = abap_true.
                           DATA t406 TYPE REF TO zcl_lnt_w_bracket_right_w.
-                          DATA(t407) = CAST zcl_lnt_position( t187 ).
+                          DATA(t407) = t187.
                           DATA(t408) = t1.
                           t406 = NEW zcl_lnt_w_bracket_right_w( i_start = t407 i_str = t408 ).
                           t211 = t406.
@@ -936,7 +936,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           t409 = xsdbool( t410 = t411 ).
                           IF t409 = abap_true.
                             DATA t412 TYPE REF TO zcl_lnt_w_bracket_right.
-                            DATA(t413) = CAST zcl_lnt_position( t187 ).
+                            DATA(t413) = t187.
                             DATA(t414) = t1.
                             t412 = NEW zcl_lnt_w_bracket_right( i_start = t413 i_str = t414 ).
                             t211 = t412.
@@ -947,13 +947,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             t415 = xsdbool( t416 = t417 ).
                             IF t415 = abap_true.
                               DATA t418 TYPE REF TO zcl_lnt_bracket_right_w.
-                              DATA(t419) = CAST zcl_lnt_position( t187 ).
+                              DATA(t419) = t187.
                               DATA(t420) = t1.
                               t418 = NEW zcl_lnt_bracket_right_w( i_start = t419 i_str = t420 ).
                               t211 = t418.
                             ELSE.
                               DATA t421 TYPE REF TO zcl_lnt_bracket_right.
-                              DATA(t422) = CAST zcl_lnt_position( t187 ).
+                              DATA(t422) = t187.
                               DATA(t423) = t1.
                               t421 = NEW zcl_lnt_bracket_right( i_start = t422 i_str = t423 ).
                               t211 = t421.
@@ -981,7 +981,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           ENDIF.
                           IF t427 = abap_true.
                             DATA t434 TYPE REF TO zcl_lnt_w_paren_right_w.
-                            DATA(t435) = CAST zcl_lnt_position( t187 ).
+                            DATA(t435) = t187.
                             DATA(t436) = t1.
                             t434 = NEW zcl_lnt_w_paren_right_w( i_start = t435 i_str = t436 ).
                             t211 = t434.
@@ -992,7 +992,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             t437 = xsdbool( t438 = t439 ).
                             IF t437 = abap_true.
                               DATA t440 TYPE REF TO zcl_lnt_w_paren_right.
-                              DATA(t441) = CAST zcl_lnt_position( t187 ).
+                              DATA(t441) = t187.
                               DATA(t442) = t1.
                               t440 = NEW zcl_lnt_w_paren_right( i_start = t441 i_str = t442 ).
                               t211 = t440.
@@ -1003,13 +1003,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                               t443 = xsdbool( t444 = t445 ).
                               IF t443 = abap_true.
                                 DATA t446 TYPE REF TO zcl_lnt_paren_right_w.
-                                DATA(t447) = CAST zcl_lnt_position( t187 ).
+                                DATA(t447) = t187.
                                 DATA(t448) = t1.
                                 t446 = NEW zcl_lnt_paren_right_w( i_start = t447 i_str = t448 ).
                                 t211 = t446.
                               ELSE.
                                 DATA t449 TYPE REF TO zcl_lnt_paren_right.
-                                DATA(t450) = CAST zcl_lnt_position( t187 ).
+                                DATA(t450) = t187.
                                 DATA(t451) = t1.
                                 t449 = NEW zcl_lnt_paren_right( i_start = t450 i_str = t451 ).
                                 t211 = t449.
@@ -1037,7 +1037,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             ENDIF.
                             IF t455 = abap_true.
                               DATA t462 TYPE REF TO zcl_lnt_w_dash_w.
-                              DATA(t463) = CAST zcl_lnt_position( t187 ).
+                              DATA(t463) = t187.
                               DATA(t464) = t1.
                               t462 = NEW zcl_lnt_w_dash_w( i_start = t463 i_str = t464 ).
                               t211 = t462.
@@ -1048,7 +1048,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                               t465 = xsdbool( t466 = t467 ).
                               IF t465 = abap_true.
                                 DATA t468 TYPE REF TO zcl_lnt_w_dash.
-                                DATA(t469) = CAST zcl_lnt_position( t187 ).
+                                DATA(t469) = t187.
                                 DATA(t470) = t1.
                                 t468 = NEW zcl_lnt_w_dash( i_start = t469 i_str = t470 ).
                                 t211 = t468.
@@ -1059,13 +1059,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                 t471 = xsdbool( t472 = t473 ).
                                 IF t471 = abap_true.
                                   DATA t474 TYPE REF TO zcl_lnt_dash_w.
-                                  DATA(t475) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t475) = t187.
                                   DATA(t476) = t1.
                                   t474 = NEW zcl_lnt_dash_w( i_start = t475 i_str = t476 ).
                                   t211 = t474.
                                 ELSE.
                                   DATA t477 TYPE REF TO zcl_lnt_dash.
-                                  DATA(t478) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t478) = t187.
                                   DATA(t479) = t1.
                                   t477 = NEW zcl_lnt_dash( i_start = t478 i_str = t479 ).
                                   t211 = t477.
@@ -1093,7 +1093,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                               ENDIF.
                               IF t483 = abap_true.
                                 DATA t490 TYPE REF TO zcl_lnt_w_plus_w.
-                                DATA(t491) = CAST zcl_lnt_position( t187 ).
+                                DATA(t491) = t187.
                                 DATA(t492) = t1.
                                 t490 = NEW zcl_lnt_w_plus_w( i_start = t491 i_str = t492 ).
                                 t211 = t490.
@@ -1104,7 +1104,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                 t493 = xsdbool( t494 = t495 ).
                                 IF t493 = abap_true.
                                   DATA t496 TYPE REF TO zcl_lnt_w_plus.
-                                  DATA(t497) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t497) = t187.
                                   DATA(t498) = t1.
                                   t496 = NEW zcl_lnt_w_plus( i_start = t497 i_str = t498 ).
                                   t211 = t496.
@@ -1115,13 +1115,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                   t499 = xsdbool( t500 = t501 ).
                                   IF t499 = abap_true.
                                     DATA t502 TYPE REF TO zcl_lnt_plus_w.
-                                    DATA(t503) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t503) = t187.
                                     DATA(t504) = t1.
                                     t502 = NEW zcl_lnt_plus_w( i_start = t503 i_str = t504 ).
                                     t211 = t502.
                                   ELSE.
                                     DATA t505 TYPE REF TO zcl_lnt_lx_plus.
-                                    DATA(t506) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t506) = t187.
                                     DATA(t507) = t1.
                                     t505 = NEW zcl_lnt_lx_plus( i_start = t506 i_str = t507 ).
                                     t211 = t505.
@@ -1149,7 +1149,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                 ENDIF.
                                 IF t511 = abap_true.
                                   DATA t518 TYPE REF TO zcl_lnt_w_at_w.
-                                  DATA(t519) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t519) = t187.
                                   DATA(t520) = t1.
                                   t518 = NEW zcl_lnt_w_at_w( i_start = t519 i_str = t520 ).
                                   t211 = t518.
@@ -1160,7 +1160,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                   t521 = xsdbool( t522 = t523 ).
                                   IF t521 = abap_true.
                                     DATA t524 TYPE REF TO zcl_lnt_w_at.
-                                    DATA(t525) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t525) = t187.
                                     DATA(t526) = t1.
                                     t524 = NEW zcl_lnt_w_at( i_start = t525 i_str = t526 ).
                                     t211 = t524.
@@ -1171,13 +1171,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                                     t527 = xsdbool( t528 = t529 ).
                                     IF t527 = abap_true.
                                       DATA t530 TYPE REF TO zcl_lnt_at_w.
-                                      DATA(t531) = CAST zcl_lnt_position( t187 ).
+                                      DATA(t531) = t187.
                                       DATA(t532) = t1.
                                       t530 = NEW zcl_lnt_at_w( i_start = t531 i_str = t532 ).
                                       t211 = t530.
                                     ELSE.
                                       DATA t533 TYPE REF TO zcl_lnt_lx_at.
-                                      DATA(t534) = CAST zcl_lnt_position( t187 ).
+                                      DATA(t534) = t187.
                                       DATA(t535) = t1.
                                       t533 = NEW zcl_lnt_lx_at( i_start = t534 i_str = t535 ).
                                       t211 = t533.
@@ -1221,7 +1221,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                     ENDIF.
                     IF t544 = abap_true.
                       DATA t551 TYPE REF TO zcl_lnt_w_instance_arrow_w.
-                      DATA(t552) = CAST zcl_lnt_position( t187 ).
+                      DATA(t552) = t187.
                       DATA(t553) = t1.
                       t551 = NEW zcl_lnt_w_instance_arrow_w( i_start = t552 i_str = t553 ).
                       t211 = t551.
@@ -1232,7 +1232,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       t554 = xsdbool( t555 = t556 ).
                       IF t554 = abap_true.
                         DATA t557 TYPE REF TO zcl_lnt_w_instance_arrow.
-                        DATA(t558) = CAST zcl_lnt_position( t187 ).
+                        DATA(t558) = t187.
                         DATA(t559) = t1.
                         t557 = NEW zcl_lnt_w_instance_arrow( i_start = t558 i_str = t559 ).
                         t211 = t557.
@@ -1243,13 +1243,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         t560 = xsdbool( t561 = t562 ).
                         IF t560 = abap_true.
                           DATA t563 TYPE REF TO zcl_lnt_instance_arrow_w.
-                          DATA(t564) = CAST zcl_lnt_position( t187 ).
+                          DATA(t564) = t187.
                           DATA(t565) = t1.
                           t563 = NEW zcl_lnt_instance_arrow_w( i_start = t564 i_str = t565 ).
                           t211 = t563.
                         ELSE.
                           DATA t566 TYPE REF TO zcl_lnt_instance_arrow.
-                          DATA(t567) = CAST zcl_lnt_position( t187 ).
+                          DATA(t567) = t187.
                           DATA(t568) = t1.
                           t566 = NEW zcl_lnt_instance_arrow( i_start = t567 i_str = t568 ).
                           t211 = t566.
@@ -1277,7 +1277,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       ENDIF.
                       IF t572 = abap_true.
                         DATA t579 TYPE REF TO zcl_lnt_w_static_arrow_w.
-                        DATA(t580) = CAST zcl_lnt_position( t187 ).
+                        DATA(t580) = t187.
                         DATA(t581) = t1.
                         t579 = NEW zcl_lnt_w_static_arrow_w( i_start = t580 i_str = t581 ).
                         t211 = t579.
@@ -1288,7 +1288,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         t582 = xsdbool( t583 = t584 ).
                         IF t582 = abap_true.
                           DATA t585 TYPE REF TO zcl_lnt_w_static_arrow.
-                          DATA(t586) = CAST zcl_lnt_position( t187 ).
+                          DATA(t586) = t187.
                           DATA(t587) = t1.
                           t585 = NEW zcl_lnt_w_static_arrow( i_start = t586 i_str = t587 ).
                           t211 = t585.
@@ -1299,13 +1299,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           t588 = xsdbool( t589 = t590 ).
                           IF t588 = abap_true.
                             DATA t591 TYPE REF TO zcl_lnt_static_arrow_w.
-                            DATA(t592) = CAST zcl_lnt_position( t187 ).
+                            DATA(t592) = t187.
                             DATA(t593) = t1.
                             t591 = NEW zcl_lnt_static_arrow_w( i_start = t592 i_str = t593 ).
                             t211 = t591.
                           ELSE.
                             DATA t594 TYPE REF TO zcl_lnt_static_arrow.
-                            DATA(t595) = CAST zcl_lnt_position( t187 ).
+                            DATA(t595) = t187.
                             DATA(t596) = t1.
                             t594 = NEW zcl_lnt_static_arrow( i_start = t595 i_str = t596 ).
                             t211 = t594.
@@ -1324,14 +1324,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t598) = VALUE abap_bool( ).
       DATA(t599) = VALUE abap_bool( ).
       DATA t600 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t601) = CAST zcl_lnt_abstract_token( t211 ).
+      DATA(t601) = t211.
       t600 = t601.
       DATA t602 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t603 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t603.
       t602 = t603.
       DATA(t604) = VALUE abap_bool( ).
-      DATA(t605) = CAST zcl_lnt_abstract_token( t600 ).
+      DATA(t605) = t600.
       IF t605 IS INITIAL.
         t604 = abap_true.
       ENDIF.
@@ -1369,14 +1369,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t619) = VALUE i( ).
         DATA(t620) = VALUE int8( ).
         DATA t621 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t622) = CAST zcl_lnt_lexer_stream( me->stream ).
+        DATA(t622) = me->stream.
         t621 = t622.
         DATA(t623) = VALUE int8( ).
         DATA(t624) = VALUE int8( ).
         DATA t625 TYPE int8.
         DATA t626 TYPE int8.
         DATA t627 TYPE i.
-        DATA(t628) = CAST zcl_lnt_lexer_stream( t621 ).
+        DATA(t628) = t621.
         t627 = t628->offset.
         t626 = t627.
         DATA(t629) = CONV int8( 1 ).
@@ -1391,7 +1391,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA t633 TYPE int8.
         DATA t634 TYPE i.
         DATA t635 TYPE string.
-        DATA(t636) = CAST zcl_lnt_lexer_stream( t621 ).
+        DATA(t636) = t621.
         t635 = t636->raw.
         DATA(t637) = strlen( t635 ).
         t634 = t637.
@@ -1406,7 +1406,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA(t640) = VALUE int8( ).
           DATA(t641) = VALUE i( ).
           DATA t642 TYPE string.
-          DATA(t643) = CAST zcl_lnt_lexer_stream( t621 ).
+          DATA(t643) = t621.
           t642 = t643->raw.
           DATA t644 TYPE i.
           DATA(t645) = t624.
@@ -1460,11 +1460,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA t660 TYPE i.
         DATA t661 TYPE int8.
         DATA t662 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t663) = CAST zcl_lnt_lexer_stream( me->stream ).
+        DATA(t663) = me->stream.
         t662 = t663.
         DATA t664 TYPE int8.
         DATA t665 TYPE i.
-        DATA(t666) = CAST zcl_lnt_lexer_stream( t662 ).
+        DATA(t666) = t662.
         t665 = t666->offset.
         t664 = t665.
         t661 = t664.
@@ -1487,7 +1487,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t673) = VALUE i( ).
         DATA(t674) = VALUE int8( ).
         DATA t675 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t676) = CAST zcl_lnt_lexer_stream( me->stream ).
+        DATA(t676) = me->stream.
         t675 = t676.
         DATA t677 TYPE int8.
         DATA(t678) = t656.
@@ -1505,7 +1505,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA t686 TYPE int8.
           DATA t687 TYPE i.
           DATA t688 TYPE string.
-          DATA(t689) = CAST zcl_lnt_lexer_stream( t675 ).
+          DATA(t689) = t675.
           t688 = t689->raw.
           DATA(t690) = strlen( t688 ).
           t687 = t690.
@@ -1522,7 +1522,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA(t693) = VALUE int8( ).
           DATA(t694) = VALUE i( ).
           DATA t695 TYPE string.
-          DATA(t696) = CAST zcl_lnt_lexer_stream( t675 ).
+          DATA(t696) = t675.
           t695 = t696->raw.
           DATA(t697) = VALUE i( ).
           DATA(t698) = t677.
@@ -1600,7 +1600,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         t722 = xsdbool( t723 = abap_false ).
         IF t722 = abap_true.
           DATA t724 TYPE REF TO zcl_lnt_association_name.
-          DATA(t725) = CAST zcl_lnt_position( t187 ).
+          DATA(t725) = t187.
           DATA(t726) = t1.
           t724 = NEW zcl_lnt_association_name( i_start = t725 i_str = t726 ).
           t211 = t724.
@@ -1608,41 +1608,41 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       ENDIF.
       DATA(t727) = VALUE abap_bool( ).
       DATA t728 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t729) = CAST zcl_lnt_abstract_token( t211 ).
+      DATA(t729) = t211.
       t728 = t729.
       DATA t730 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t731 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t731.
       t730 = t731.
       DATA(t732) = VALUE abap_bool( ).
-      DATA(t733) = CAST zcl_lnt_abstract_token( t728 ).
+      DATA(t733) = t728.
       IF t733 IS INITIAL.
         t732 = abap_true.
       ENDIF.
       t727 = t732.
       IF t727 = abap_true.
         DATA t734 TYPE REF TO zcl_lnt_lx_identifier.
-        DATA(t735) = CAST zcl_lnt_position( t187 ).
+        DATA(t735) = t187.
         DATA(t736) = t1.
         t734 = NEW zcl_lnt_lx_identifier( i_start = t735 i_str = t736 ).
         t211 = t734.
       ENDIF.
-      DATA(t737) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+      DATA(t737) = me->tokens.
       DATA t738 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t739) = CAST zcl_lnt_abstract_token( t211 ).
+      DATA(t739) = t211.
       t738 = t739.
       APPEND t738 TO t737->items.
     ENDIF.
     DATA t740 TYPE REF TO zcl_lnt_lexer_buffer.
-    DATA(t741) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+    DATA(t741) = me->buffer.
     t740 = t741.
-    DATA(t742) = CAST zcl_lnt_lexer_buffer( t740 ).
+    DATA(t742) = t740.
     DATA(t743) = 0.
     t742->start = t743.
-    DATA(t744) = CAST zcl_lnt_lexer_buffer( t740 ).
+    DATA(t744) = t740.
     DATA(t745) = 0.
     t744->end = t745.
-    DATA(t746) = CAST zcl_lnt_lexer_buffer( t740 ).
+    DATA(t746) = t740.
     DATA(t747) = abap_true.
     t746->empty_a4a6 = t747.
   ENDMETHOD.
@@ -1668,15 +1668,15 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     REPLACE ALL OCCURRENCES OF t6 IN t4 WITH t8.
     t3 = NEW zcl_lnt_lexer_stream( i_raw = t4 ).
     t2 = t3.
-    DATA(t10) = CAST zcl_lnt_lexer_stream( t2 ).
+    DATA(t10) = t2.
     me->stream = t10.
     DATA t11 TYPE REF TO zcl_lnt_lexer_buffer.
     DATA t12 TYPE string.
     DATA t13 TYPE REF TO zcl_lnt_lexer_stream.
-    DATA(t14) = CAST zcl_lnt_lexer_stream( t2 ).
+    DATA(t14) = t2.
     t13 = t14.
     DATA t15 TYPE string.
-    DATA(t16) = CAST zcl_lnt_lexer_stream( t13 ).
+    DATA(t16) = t13.
     t15 = t16->raw.
     t12 = t15.
     t11 = NEW zcl_lnt_lexer_buffer( i_raw = t12 ).
@@ -1690,12 +1690,12 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t19) = VALUE i( ).
       DATA(t20) = VALUE int8( ).
       DATA t21 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t22) = CAST zcl_lnt_lexer_stream( t2 ).
+      DATA(t22) = t2.
       t21 = t22.
       DATA(t23) = VALUE int8( ).
       DATA t24 TYPE abap_bool.
       DATA t25 TYPE i.
-      DATA(t26) = CAST zcl_lnt_lexer_stream( t21 ).
+      DATA(t26) = t21.
       t25 = t26->offset.
       DATA(t27) = 0.
       t24 = xsdbool( t25 < t27 ).
@@ -1708,11 +1708,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t30) = VALUE int8( ).
         DATA t31 TYPE abap_bool.
         DATA t32 TYPE i.
-        DATA(t33) = CAST zcl_lnt_lexer_stream( t21 ).
+        DATA(t33) = t21.
         t32 = t33->offset.
         DATA t34 TYPE i.
         DATA t35 TYPE string.
-        DATA(t36) = CAST zcl_lnt_lexer_stream( t21 ).
+        DATA(t36) = t21.
         t35 = t36->raw.
         DATA(t37) = strlen( t35 ).
         t34 = t37.
@@ -1726,10 +1726,10 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA(t40) = VALUE int8( ).
           DATA(t41) = VALUE i( ).
           DATA t42 TYPE string.
-          DATA(t43) = CAST zcl_lnt_lexer_stream( t21 ).
+          DATA(t43) = t21.
           t42 = t43->raw.
           DATA t44 TYPE i.
-          DATA(t45) = CAST zcl_lnt_lexer_stream( t21 ).
+          DATA(t45) = t21.
           t44 = t45->offset.
           DATA(t46) = strlen( t42 ).
           IF t44 < 0 OR t44 >= t46.
@@ -1766,18 +1766,18 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t19 = t20.
       t18 = t19.
       DATA t53 TYPE REF TO zcl_lnt_lexer_buffer.
-      DATA(t54) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+      DATA(t54) = me->buffer.
       t53 = t54.
       DATA t55 TYPE int8.
       DATA t56 TYPE int8.
       DATA t57 TYPE i.
       DATA t58 TYPE int8.
       DATA t59 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t60) = CAST zcl_lnt_lexer_stream( t2 ).
+      DATA(t60) = t2.
       t59 = t60.
       DATA t61 TYPE int8.
       DATA t62 TYPE i.
-      DATA(t63) = CAST zcl_lnt_lexer_stream( t59 ).
+      DATA(t63) = t59.
       t62 = t63->offset.
       t61 = t62.
       t58 = t61.
@@ -1794,12 +1794,12 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t64 = t65.
       DATA t67 TYPE abap_bool.
       DATA t68 TYPE abap_bool.
-      DATA(t69) = CAST zcl_lnt_lexer_buffer( t53 ).
+      DATA(t69) = t53.
       t68 = t69->empty_a4a6.
       DATA(t70) = abap_true.
       t67 = xsdbool( t68 = t70 ).
       IF t67 = abap_true.
-        DATA(t71) = CAST zcl_lnt_lexer_buffer( t53 ).
+        DATA(t71) = t53.
         DATA(t72) = VALUE i( ).
         DATA t73 TYPE abap_bool.
         DATA(t74) = t64.
@@ -1813,11 +1813,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           t72 = t77.
         ENDIF.
         t71->start = t72.
-        DATA(t78) = CAST zcl_lnt_lexer_buffer( t53 ).
+        DATA(t78) = t53.
         DATA(t79) = abap_false.
         t78->empty_a4a6 = t79.
       ENDIF.
-      DATA(t80) = CAST zcl_lnt_lexer_buffer( t53 ).
+      DATA(t80) = t53.
       DATA t81 TYPE i.
       DATA(t82) = t64.
       DATA(t83) = 1.
@@ -1827,14 +1827,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t85) = VALUE i( ).
       DATA(t86) = VALUE int8( ).
       DATA t87 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t88) = CAST zcl_lnt_lexer_stream( t2 ).
+      DATA(t88) = t2.
       t87 = t88.
       DATA(t89) = VALUE int8( ).
       DATA(t90) = VALUE int8( ).
       DATA t91 TYPE int8.
       DATA t92 TYPE int8.
       DATA t93 TYPE i.
-      DATA(t94) = CAST zcl_lnt_lexer_stream( t87 ).
+      DATA(t94) = t87.
       t93 = t94->offset.
       t92 = t93.
       DATA(t95) = CONV int8( 1 ).
@@ -1849,7 +1849,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA t99 TYPE int8.
       DATA t100 TYPE i.
       DATA t101 TYPE string.
-      DATA(t102) = CAST zcl_lnt_lexer_stream( t87 ).
+      DATA(t102) = t87.
       t101 = t102->raw.
       DATA(t103) = strlen( t101 ).
       t100 = t103.
@@ -1864,7 +1864,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t106) = VALUE int8( ).
         DATA(t107) = VALUE i( ).
         DATA t108 TYPE string.
-        DATA(t109) = CAST zcl_lnt_lexer_stream( t87 ).
+        DATA(t109) = t87.
         t108 = t109->raw.
         DATA t110 TYPE i.
         DATA(t111) = t90.
@@ -1906,14 +1906,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t120) = VALUE i( ).
       DATA(t121) = VALUE int8( ).
       DATA t122 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t123) = CAST zcl_lnt_lexer_stream( t2 ).
+      DATA(t123) = t2.
       t122 = t123.
       DATA(t124) = VALUE int8( ).
       DATA(t125) = VALUE int8( ).
       DATA t126 TYPE int8.
       DATA t127 TYPE int8.
       DATA t128 TYPE i.
-      DATA(t129) = CAST zcl_lnt_lexer_stream( t122 ).
+      DATA(t129) = t122.
       t128 = t129->offset.
       t127 = t128.
       DATA(t130) = CONV int8( 2 ).
@@ -1928,7 +1928,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA t134 TYPE int8.
       DATA t135 TYPE i.
       DATA t136 TYPE string.
-      DATA(t137) = CAST zcl_lnt_lexer_stream( t122 ).
+      DATA(t137) = t122.
       t136 = t137->raw.
       DATA(t138) = strlen( t136 ).
       t135 = t138.
@@ -1943,7 +1943,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t141) = VALUE int8( ).
         DATA(t142) = VALUE i( ).
         DATA t143 TYPE string.
-        DATA(t144) = CAST zcl_lnt_lexer_stream( t122 ).
+        DATA(t144) = t122.
         t143 = t144->raw.
         DATA t145 TYPE i.
         DATA(t146) = t125.
@@ -2114,17 +2114,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       DATA(t209) = VALUE string( ).
                       DATA(t210) = VALUE string( ).
                       DATA t211 TYPE REF TO zcl_lnt_lexer_buffer.
-                      DATA(t212) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                      DATA(t212) = me->buffer.
                       t211 = t212.
                       DATA(t213) = VALUE string( ).
                       DATA t214 TYPE string.
-                      DATA(t215) = CAST zcl_lnt_lexer_buffer( t211 ).
+                      DATA(t215) = t211.
                       t214 = t215->raw.
                       DATA t216 TYPE i.
-                      DATA(t217) = CAST zcl_lnt_lexer_buffer( t211 ).
+                      DATA(t217) = t211.
                       t216 = t217->start.
                       DATA t218 TYPE i.
-                      DATA(t219) = CAST zcl_lnt_lexer_buffer( t211 ).
+                      DATA(t219) = t211.
                       t218 = t219->end.
                       DATA(t220) = strlen( t214 ).
                       t216 = COND i( WHEN t216 < 0 THEN 0 WHEN t216 > t220 THEN t220 ELSE t216 ).
@@ -2269,13 +2269,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           DATA(t263) = VALUE i( ).
                           DATA(t264) = VALUE int8( ).
                           DATA t265 TYPE REF TO zcl_lnt_lexer_stream.
-                          DATA(t266) = CAST zcl_lnt_lexer_stream( t2 ).
+                          DATA(t266) = t2.
                           t265 = t266.
                           DATA(t267) = VALUE int8( ).
                           DATA t268 TYPE i.
                           DATA t269 TYPE i.
                           DATA t270 TYPE i.
-                          DATA(t271) = CAST zcl_lnt_lexer_stream( t265 ).
+                          DATA(t271) = t265.
                           t270 = t271->offset.
                           DATA(t272) = 1.
                           t269 = t270 - t272.
@@ -2294,7 +2294,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             DATA(t279) = VALUE int8( ).
                             DATA(t280) = VALUE i( ).
                             DATA t281 TYPE string.
-                            DATA(t282) = CAST zcl_lnt_lexer_stream( t265 ).
+                            DATA(t282) = t265.
                             t281 = t282->raw.
                             DATA(t283) = t268.
                             DATA(t284) = strlen( t281 ).
@@ -2337,13 +2337,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             DATA(t293) = VALUE i( ).
                             DATA(t294) = VALUE int8( ).
                             DATA t295 TYPE REF TO zcl_lnt_lexer_stream.
-                            DATA(t296) = CAST zcl_lnt_lexer_stream( t2 ).
+                            DATA(t296) = t2.
                             t295 = t296.
                             DATA(t297) = VALUE int8( ).
                             DATA t298 TYPE i.
                             DATA t299 TYPE i.
                             DATA t300 TYPE i.
-                            DATA(t301) = CAST zcl_lnt_lexer_stream( t295 ).
+                            DATA(t301) = t295.
                             t300 = t301->offset.
                             DATA(t302) = 1.
                             t299 = t300 - t302.
@@ -2362,7 +2362,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                               DATA(t309) = VALUE int8( ).
                               DATA(t310) = VALUE i( ).
                               DATA t311 TYPE string.
-                              DATA(t312) = CAST zcl_lnt_lexer_stream( t295 ).
+                              DATA(t312) = t295.
                               t311 = t312->raw.
                               DATA(t313) = t298.
                               DATA(t314) = strlen( t311 ).
@@ -2410,17 +2410,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           DATA(t323) = VALUE abap_bool( ).
                           DATA(t324) = VALUE int8( ).
                           DATA t325 TYPE REF TO zcl_lnt_lexer_buffer.
-                          DATA(t326) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                          DATA(t326) = me->buffer.
                           t325 = t326.
                           DATA t327 TYPE int8.
                           DATA t328 TYPE int8.
                           DATA t329 TYPE i.
-                          DATA(t330) = CAST zcl_lnt_lexer_buffer( t325 ).
+                          DATA(t330) = t325.
                           t329 = t330->end.
                           t328 = t329.
                           DATA t331 TYPE int8.
                           DATA t332 TYPE i.
-                          DATA(t333) = CAST zcl_lnt_lexer_buffer( t325 ).
+                          DATA(t333) = t325.
                           t332 = t333->start.
                           t331 = t332.
                           t327 = t328 - t331.
@@ -2555,17 +2555,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
             DATA(t382) = VALUE abap_bool( ).
             DATA(t383) = VALUE int8( ).
             DATA t384 TYPE REF TO zcl_lnt_lexer_buffer.
-            DATA(t385) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+            DATA(t385) = me->buffer.
             t384 = t385.
             DATA t386 TYPE int8.
             DATA t387 TYPE int8.
             DATA t388 TYPE i.
-            DATA(t389) = CAST zcl_lnt_lexer_buffer( t384 ).
+            DATA(t389) = t384.
             t388 = t389->end.
             t387 = t388.
             DATA t390 TYPE int8.
             DATA t391 TYPE i.
-            DATA(t392) = CAST zcl_lnt_lexer_buffer( t384 ).
+            DATA(t392) = t384.
             t391 = t392->start.
             t390 = t391.
             t386 = t387 - t390.
@@ -2615,7 +2615,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           t373 = t374.
           IF t374 = abap_true.
             DATA t408 TYPE abap_bool.
-            DATA(t409) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+            DATA(t409) = me->buffer.
             DATA t410 TYPE int8.
             DATA(t411) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
             t410 = t411.
@@ -2675,17 +2675,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
               DATA(t430) = VALUE abap_bool( ).
               DATA(t431) = VALUE int8( ).
               DATA t432 TYPE REF TO zcl_lnt_lexer_buffer.
-              DATA(t433) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+              DATA(t433) = me->buffer.
               t432 = t433.
               DATA t434 TYPE int8.
               DATA t435 TYPE int8.
               DATA t436 TYPE i.
-              DATA(t437) = CAST zcl_lnt_lexer_buffer( t432 ).
+              DATA(t437) = t432.
               t436 = t437->end.
               t435 = t436.
               DATA t438 TYPE int8.
               DATA t439 TYPE i.
-              DATA(t440) = CAST zcl_lnt_lexer_buffer( t432 ).
+              DATA(t440) = t432.
               t439 = t440->start.
               t438 = t439.
               t434 = t435 - t438.
@@ -2721,13 +2721,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
               DATA(t451) = VALUE i( ).
               DATA(t452) = VALUE int8( ).
               DATA t453 TYPE REF TO zcl_lnt_lexer_stream.
-              DATA(t454) = CAST zcl_lnt_lexer_stream( t2 ).
+              DATA(t454) = t2.
               t453 = t454.
               DATA(t455) = VALUE int8( ).
               DATA t456 TYPE i.
               DATA t457 TYPE i.
               DATA t458 TYPE i.
-              DATA(t459) = CAST zcl_lnt_lexer_stream( t453 ).
+              DATA(t459) = t453.
               t458 = t459->offset.
               DATA(t460) = 1.
               t457 = t458 - t460.
@@ -2746,7 +2746,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 DATA(t467) = VALUE int8( ).
                 DATA(t468) = VALUE i( ).
                 DATA t469 TYPE string.
-                DATA(t470) = CAST zcl_lnt_lexer_stream( t453 ).
+                DATA(t470) = t453.
                 t469 = t470->raw.
                 DATA(t471) = t456.
                 DATA(t472) = strlen( t469 ).
@@ -2790,13 +2790,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 DATA(t482) = VALUE i( ).
                 DATA(t483) = VALUE int8( ).
                 DATA t484 TYPE REF TO zcl_lnt_lexer_stream.
-                DATA(t485) = CAST zcl_lnt_lexer_stream( t2 ).
+                DATA(t485) = t2.
                 t484 = t485.
                 DATA(t486) = VALUE int8( ).
                 DATA t487 TYPE i.
                 DATA t488 TYPE i.
                 DATA t489 TYPE i.
-                DATA(t490) = CAST zcl_lnt_lexer_stream( t484 ).
+                DATA(t490) = t484.
                 t489 = t490->offset.
                 DATA(t491) = 2.
                 t488 = t489 - t491.
@@ -2815,7 +2815,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   DATA(t498) = VALUE int8( ).
                   DATA(t499) = VALUE i( ).
                   DATA t500 TYPE string.
-                  DATA(t501) = CAST zcl_lnt_lexer_stream( t484 ).
+                  DATA(t501) = t484.
                   t500 = t501->raw.
                   DATA(t502) = t487.
                   DATA(t503) = strlen( t500 ).
@@ -2858,13 +2858,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   DATA(t512) = VALUE i( ).
                   DATA(t513) = VALUE int8( ).
                   DATA t514 TYPE REF TO zcl_lnt_lexer_stream.
-                  DATA(t515) = CAST zcl_lnt_lexer_stream( t2 ).
+                  DATA(t515) = t2.
                   t514 = t515.
                   DATA(t516) = VALUE int8( ).
                   DATA t517 TYPE i.
                   DATA t518 TYPE i.
                   DATA t519 TYPE i.
-                  DATA(t520) = CAST zcl_lnt_lexer_stream( t514 ).
+                  DATA(t520) = t514.
                   t519 = t520->offset.
                   DATA(t521) = 1.
                   t518 = t519 - t521.
@@ -2883,7 +2883,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                     DATA(t528) = VALUE int8( ).
                     DATA(t529) = VALUE i( ).
                     DATA t530 TYPE string.
-                    DATA(t531) = CAST zcl_lnt_lexer_stream( t514 ).
+                    DATA(t531) = t514.
                     t530 = t531->raw.
                     DATA(t532) = t517.
                     DATA(t533) = strlen( t530 ).
@@ -3014,17 +3014,17 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   DATA(t575) = VALUE abap_bool( ).
                   DATA(t576) = VALUE int8( ).
                   DATA t577 TYPE REF TO zcl_lnt_lexer_buffer.
-                  DATA(t578) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                  DATA(t578) = me->buffer.
                   t577 = t578.
                   DATA t579 TYPE int8.
                   DATA t580 TYPE int8.
                   DATA t581 TYPE i.
-                  DATA(t582) = CAST zcl_lnt_lexer_buffer( t577 ).
+                  DATA(t582) = t577.
                   t581 = t582->end.
                   t580 = t581.
                   DATA t583 TYPE int8.
                   DATA t584 TYPE i.
-                  DATA(t585) = CAST zcl_lnt_lexer_buffer( t577 ).
+                  DATA(t585) = t577.
                   t584 = t585->start.
                   t583 = t584.
                   t579 = t580 - t583.
@@ -3066,7 +3066,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 t563 = t564.
                 IF t564 = abap_true.
                   DATA t598 TYPE abap_bool.
-                  DATA(t599) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                  DATA(t599) = me->buffer.
                   DATA t600 TYPE int8.
                   DATA(t601) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
                   t600 = t601.
@@ -3162,7 +3162,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t631) = VALUE abap_bool( ).
       DATA(t632) = VALUE abap_bool( ).
       DATA t633 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t634) = CAST zcl_lnt_lexer_stream( t2 ).
+      DATA(t634) = t2.
       t633 = t634.
       DATA(t635) = VALUE abap_bool( ).
       DATA(t636) = VALUE abap_bool( ).
@@ -3170,7 +3170,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t638) = VALUE int8( ).
       DATA t639 TYPE abap_bool.
       DATA t640 TYPE i.
-      DATA(t641) = CAST zcl_lnt_lexer_stream( t633 ).
+      DATA(t641) = t633.
       t640 = t641->offset.
       DATA(t642) = 0.
       t639 = xsdbool( t640 < t642 ).
@@ -3183,11 +3183,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t645) = VALUE int8( ).
         DATA t646 TYPE abap_bool.
         DATA t647 TYPE i.
-        DATA(t648) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t648) = t633.
         t647 = t648->offset.
         DATA t649 TYPE i.
         DATA t650 TYPE string.
-        DATA(t651) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t651) = t633.
         t650 = t651->raw.
         DATA(t652) = strlen( t650 ).
         t649 = t652.
@@ -3201,10 +3201,10 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           DATA(t655) = VALUE int8( ).
           DATA(t656) = VALUE i( ).
           DATA t657 TYPE string.
-          DATA(t658) = CAST zcl_lnt_lexer_stream( t633 ).
+          DATA(t658) = t633.
           t657 = t658->raw.
           DATA t659 TYPE i.
-          DATA(t660) = CAST zcl_lnt_lexer_stream( t633 ).
+          DATA(t660) = t633.
           t659 = t660->offset.
           DATA(t661) = strlen( t657 ).
           IF t659 < 0 OR t659 >= t661.
@@ -3241,13 +3241,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t668) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
       t636 = xsdbool( t637 = t668 ).
       IF t636 = abap_true.
-        DATA(t669) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t669) = t633.
         DATA(t670) = CONV int8( 1 ).
         t669->col = t670.
-        DATA(t671) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t671) = t633.
         DATA t672 TYPE int8.
         DATA t673 TYPE int8.
-        DATA(t674) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t674) = t633.
         t673 = t674->row.
         DATA(t675) = CONV int8( 1 ).
         t672 = t673 + t675.
@@ -3259,21 +3259,21 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t676) = VALUE abap_bool( ).
       DATA t677 TYPE abap_bool.
       DATA t678 TYPE i.
-      DATA(t679) = CAST zcl_lnt_lexer_stream( t633 ).
+      DATA(t679) = t633.
       t678 = t679->offset.
       DATA t680 TYPE i.
       DATA t681 TYPE string.
-      DATA(t682) = CAST zcl_lnt_lexer_stream( t633 ).
+      DATA(t682) = t633.
       t681 = t682->raw.
       DATA(t683) = strlen( t681 ).
       t680 = t683.
       t677 = xsdbool( t678 = t680 ).
       IF t677 = abap_true.
         DATA(t684) = VALUE abap_bool( ).
-        DATA(t685) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t685) = t633.
         DATA t686 TYPE int8.
         DATA t687 TYPE int8.
-        DATA(t688) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t688) = t633.
         t687 = t688->col.
         DATA(t689) = CONV int8( 1 ).
         t686 = t687 - t689.
@@ -3286,10 +3286,10 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         t676 = t684.
       ELSE.
         DATA(t691) = VALUE abap_bool( ).
-        DATA(t692) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t692) = t633.
         DATA t693 TYPE int8.
         DATA t694 TYPE int8.
-        DATA(t695) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t695) = t633.
         t694 = t695->col.
         DATA(t696) = CONV int8( 1 ).
         t693 = t694 + t696.
@@ -3297,10 +3297,10 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
         ENDIF.
         t692->col = t693.
-        DATA(t697) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t697) = t633.
         DATA t698 TYPE i.
         DATA t699 TYPE i.
-        DATA(t700) = CAST zcl_lnt_lexer_stream( t633 ).
+        DATA(t700) = t633.
         t699 = t700->offset.
         DATA(t701) = 1.
         t698 = t699 + t701.

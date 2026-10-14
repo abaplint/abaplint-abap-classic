@@ -13,15 +13,15 @@ CLASS zcl_lnt_sr_loop IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d531_50646cf0bf6b ).
+    DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d531_50646cf0bf6b.
     t2 = zcl_lnt_sr_combi_module=>sta( i_s = t3 ).
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
     DATA t5 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d687_99e32c3ed690 ).
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d687_99e32c3ed690.
     t5 = zcl_lnt_sr_combi_module=>sub( i_s = t6 ).
     t4 = zcl_lnt_sr_combi_module=>star( i_s = t5 ).
     DATA t7 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d459_7220354f40cb ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d459_7220354f40cb.
     t7 = zcl_lnt_sr_combi_module=>sta( i_s = t8 ).
     t1 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = t7 ).
     result = t1.

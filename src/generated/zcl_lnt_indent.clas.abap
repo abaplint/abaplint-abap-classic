@@ -14,22 +14,22 @@ CLASS zcl_lnt_indent DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_indent IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_iindentation_options( i_options ).
+    DATA(t1) = i_options.
     DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
     me->global_classes = t2.
     DATA t3 TYPE REF TO zcl_lnt_iindentation_options.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_iindentation_options.
-    DATA(t5) = CAST zcl_lnt_iindentation_options( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zcl_lnt_iindentation_options.
     CLEAR t6.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = CAST zcl_lnt_iindentation_options( t4 ).
+    DATA(t8) = t4.
     t7 = xsdbool( t8 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_iindentation_options.
-      DATA(t10) = CAST zcl_lnt_iindentation_options( t4 ).
+      DATA(t10) = t4.
       t9 = t10.
       t6 = t9.
     ELSE.
@@ -48,7 +48,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD execute.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_original ).
+    DATA(t1) = i_original.
     DATA(t2) = i_modified.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/pretty_printer/indent.ts:19|.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_expected_indents.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/pretty_printer/indent.ts:44|.
     t2->source_location = t3.
@@ -65,7 +65,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD skip_indent_for_global_class.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/pretty_printer/indent.ts:202|.
     t2->source_location = t3.

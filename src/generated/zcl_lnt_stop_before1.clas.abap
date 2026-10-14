@@ -19,17 +19,17 @@ CLASS zcl_lnt_stop_before1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_words ).
+    DATA(t1) = i_words.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t4.
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t5) = t1.
     DATA(t6) = VALUE string( ).
     LOOP AT t5->items INTO t6.
-      DATA(t7) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+      DATA(t7) = t3.
       DATA t8 TYPE string.
       DATA(t9) = t6.
       DATA(t10) = strlen( t9 ).
@@ -41,7 +41,7 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       ENDIF.
       APPEND t8 TO t7->items.
     ENDLOOP.
-    DATA(t11) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t11) = t3.
     t2 = t11.
     me->words = t2.
   ENDMETHOD.
@@ -61,12 +61,12 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     CLEAR t5.
     DATA t6 TYPE REF TO object.
@@ -80,14 +80,14 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       DATA t9 TYPE REF TO zcl_lnt_abstract_token.
       DATA t10 TYPE REF TO zcl_lnt_abstract_token.
       DATA t11 TYPE REF TO zcl_lnt_st_result.
-      DATA(t12) = CAST zcl_lnt_st_result( t5 ).
+      DATA(t12) = t5.
       t11 = t12.
       DATA t13 TYPE REF TO zcl_lnt_abstract_token.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t15) = CAST zcl_lnt_st_result( t11 ).
+      DATA(t15) = t11.
       t14 = t15->tokens.
       DATA t16 TYPE i.
-      DATA(t17) = CAST zcl_lnt_st_result( t11 ).
+      DATA(t17) = t11.
       t16 = t17->token_index.
       t16 = t16 + 1.
       DATA t18 TYPE REF TO object.
@@ -99,7 +99,7 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t19.
       DATA(t20) = VALUE abap_bool( ).
-      DATA(t21) = CAST zcl_lnt_abstract_token( t9 ).
+      DATA(t21) = t9.
       IF t21 IS INITIAL.
         t20 = abap_true.
       ENDIF.
@@ -110,10 +110,10 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       ELSE.
         DATA t23 TYPE string.
         DATA t24 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t25) = CAST zcl_lnt_abstract_token( t9 ).
+        DATA(t25) = t9.
         t24 = t25.
         DATA t26 TYPE string.
-        DATA(t27) = CAST zcl_lnt_abstract_token( t24 ).
+        DATA(t27) = t24.
         t26 = t27->str_upper.
         t23 = t26.
         DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -126,7 +126,7 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       DATA(t29) = VALUE abap_bool( ).
       DATA(t30) = VALUE abap_bool( ).
       DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t32) = CAST zlnt_runtime_opti_4ba3bdccd169( t7 ).
+      DATA(t32) = t7.
       t31 = t32.
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       t33 = t34.
       DATA(t35) = VALUE abap_bool( ).
       DATA(t36) = VALUE abap_bool( ).
-      DATA(t37) = CAST zlnt_runtime_opti_4ba3bdccd169( t31 ).
+      DATA(t37) = t31.
       IF t37 IS INITIAL.
         t36 = abap_true.
       ELSEIF t37->has = abap_false.
@@ -145,9 +145,9 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       t29 = t30.
       IF t30 = abap_true.
         DATA t38 TYPE abap_bool.
-        DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->words ).
+        DATA(t39) = me->words.
         DATA t40 TYPE string.
-        DATA(t41) = CAST zlnt_runtime_opti_4ba3bdccd169( t7 ).
+        DATA(t41) = t7.
         t40 = t41->value.
         t38 = t39->includes( p0 = t40 ).
         t29 = t38.
@@ -155,11 +155,11 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       IF t29 = abap_true.
         CONTINUE.
       ENDIF.
-      DATA(t42) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t43) = CAST zcl_lnt_st_result( t5 ).
+      DATA(t42) = t2.
+      DATA(t43) = t5.
       APPEND t43 TO t42->items.
     ENDLOOP.
-    DATA(t44) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t44) = t2.
     result = t44.
 
   ENDMETHOD.
@@ -186,17 +186,17 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.

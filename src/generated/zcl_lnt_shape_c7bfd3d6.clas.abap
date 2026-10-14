@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_c7bfd3d6 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_c7bfd3d6 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_pragmas ).
+    DATA(t1) = i_tokens.
+    DATA(t2) = i_pragmas.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->tokens = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->pragmas = t5.
   ENDMETHOD.

@@ -76,13 +76,13 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_fr_vd_ty_ts_fr_vd_ty.
-    DATA(t1) = CAST zcl_lnt_frbddn_vd_typ_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_fr_vd_ty_ts_fr_vd_ty.
-    DATA(t1) = CAST zcl_lnt_frbddn_vd_typ_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:41|.
     t2->source_location = t3.
@@ -90,7 +90,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_fr_vd_ty_ts_fr_vd_ty.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:48|.
     t2->source_location = t3.
@@ -98,7 +98,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:53|.
     t2->source_location = t3.
@@ -106,7 +106,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:63|.
     t2->source_location = t3.
@@ -114,7 +114,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_forbidden_type.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
+    DATA(t1) = i_type_9913.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:89|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_forbidden_name.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
+    DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:100|.
     t2->source_location = t3.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:41|.
     t2->source_location = t3.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/forbidden_void_type.ts:48|.
     t2->source_location = t3.

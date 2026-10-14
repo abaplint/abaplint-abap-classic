@@ -62,13 +62,13 @@ CLASS zcl_lnt_nesting IMPLEMENTATION.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t17.
       t16 = t17.
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t18) = t16.
       DATA(t19) = |Styleguide|.
       APPEND t19 TO t18->items.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t20) = t16.
       DATA(t21) = |SingleFile|.
       APPEND t21 TO t20->items.
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t16 ).
+      DATA(t22) = t16.
       t15 = t22.
       t13 = t15.
     ELSE.
@@ -94,13 +94,13 @@ CLASS zcl_lnt_nesting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cnf_ins_src_rls_nst_ts_nstn.
-    DATA(t1) = CAST zcl_lnt_nesting_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cnf_ins_src_rls_nst_ts_nstn.
-    DATA(t1) = CAST zcl_lnt_nesting_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nesting.ts:36|.
     t2->source_location = t3.
@@ -108,7 +108,7 @@ CLASS zcl_lnt_nesting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_prs_ins_src_rls_nst_ts_nstn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nesting.ts:40|.
     t2->source_location = t3.

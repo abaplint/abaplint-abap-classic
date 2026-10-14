@@ -101,13 +101,13 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sql_value_conversion.ts:38|.
     t2->source_location = t3.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sql_value_conversion.ts:42|.
     t2->source_location = t3.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sql_value_conversion.ts:47|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sql_value_conversion.ts:60|.
     t2->source_location = t3.
@@ -149,7 +149,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sql_value_conversion.ts:38|.
     t2->source_location = t3.

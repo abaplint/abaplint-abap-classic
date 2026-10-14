@@ -15,13 +15,13 @@ CLASS zcl_lnt_highlight DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_highlight IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD list_definition_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/highlight.ts:15|.
     t2->source_location = t3.
@@ -29,7 +29,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_read_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/highlight.ts:29|.
     t2->source_location = t3.
@@ -37,7 +37,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_write_positions.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/highlight.ts:43|.
     t2->source_location = t3.
@@ -45,7 +45,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/highlight.ts:59|.
     t2->source_location = t3.
@@ -53,7 +53,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_object.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/highlight.ts:67|.
     t2->source_location = t3.

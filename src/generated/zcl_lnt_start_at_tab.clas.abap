@@ -86,16 +86,16 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |Whitespace|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t30) = t24.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t32) = t24.
       t23 = t32.
       t21 = t23.
     ELSE.
@@ -120,13 +120,13 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_st_at_tb_ts_st_at_tb.
-    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_st_at_tb_ts_st_at_tb.
-    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/start_at_tab.ts:38|.
     t2->source_location = t3.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_st_at_tb_ts_st_at_tb.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/start_at_tab.ts:42|.
     t2->source_location = t3.

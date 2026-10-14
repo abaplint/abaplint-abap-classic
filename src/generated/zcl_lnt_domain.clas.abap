@@ -76,9 +76,9 @@ CLASS zcl_lnt_domain IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD parse_type.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_data_element ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = i_data_element.
+    DATA(t3) = i_description.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/objects/domain.ts:78|.
     t4->source_location = t5.

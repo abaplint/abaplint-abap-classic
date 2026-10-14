@@ -14,12 +14,12 @@ CLASS zcl_lnt_iparse_result IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_updated.
     DATA(t2) = i_runtime.
-    DATA(t3) = CAST zcl_lnt_shape_8fc6df03( i_runtime_extra ).
+    DATA(t3) = i_runtime_extra.
     DATA(t4) = t1.
     me->updated = t4.
     DATA(t5) = t2.
     me->runtime = t5.
-    DATA(t6) = CAST zcl_lnt_shape_8fc6df03( t3 ).
+    DATA(t6) = t3.
     me->runtime_extra = t6.
   ENDMETHOD.
 

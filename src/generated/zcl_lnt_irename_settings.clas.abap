@@ -13,14 +13,14 @@ CLASS zcl_lnt_irename_settings DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irename_settings IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_output ).
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_skip_34cc ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_patterns ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_output.
+    DATA(t2) = i_skip_34cc.
+    DATA(t3) = i_patterns.
+    DATA(t4) = t1.
     me->output = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t5) = t2.
     me->skip_0892 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t6) = t3.
     me->patterns = t6.
   ENDMETHOD.
 

@@ -82,10 +82,10 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |Security|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       t22 = t27.
       t20 = t22.
     ELSE.
@@ -103,13 +103,13 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_m_o_o_d_t_t_m_o_o_d.
-    DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_m_o_o_d_t_t_m_o_o_d.
-    DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/modify_only_own_db_tables.ts:38|.
     t2->source_location = t3.
@@ -117,7 +117,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_s_r_m_o_o_d_t_t_m_o_o_d_tb.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/modify_only_own_db_tables.ts:42|.
     t2->source_location = t3.
@@ -125,7 +125,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/modify_only_own_db_tables.ts:47|.
     t2->source_location = t3.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/modify_only_own_db_tables.ts:38|.
     t2->source_location = t3.
@@ -151,7 +151,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/modify_only_own_db_tables.ts:42|.
     t2->source_location = t3.

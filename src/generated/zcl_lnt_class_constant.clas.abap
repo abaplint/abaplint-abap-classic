@@ -11,31 +11,31 @@ CLASS zcl_lnt_class_constant DEFINITION PUBLIC INHERITING FROM zcl_lnt_typed_ide
 ENDCLASS.
 CLASS zcl_lnt_class_constant IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = i_visibility_5c1f.
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( i_value ).
+    DATA(t3) = i_value.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
     DATA t5 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t6) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t8) = CAST zcl_lnt_fi_identifier( t5 ).
+    DATA(t8) = t5.
     t7 = t8->token.
     t4 = t7.
     DATA t9 TYPE string.
     DATA t10 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t11) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t11) = t1.
     t10 = t11.
     DATA t12 TYPE string.
-    DATA(t13) = CAST zcl_lnt_fi_identifier( t10 ).
+    DATA(t13) = t10.
     t12 = t13->filename.
     t9 = t12.
     DATA t14 TYPE REF TO zcl_lnt_abstract_type.
     DATA t15 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t16) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t16) = t1.
     t15 = t16.
     DATA t17 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t18) = CAST zcl_lnt_typed_identifier( t15 ).
+    DATA(t18) = t15.
     t17 = t18->type_cba0.
     t14 = t17.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -47,13 +47,13 @@ CLASS zcl_lnt_class_constant IMPLEMENTATION.
       DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t23.
       t22 = t23.
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t22 ).
+      DATA(t24) = t22.
       DATA(t25) = |read_only|.
       APPEND t25 TO t24->items.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t22 ).
+      DATA(t26) = t22.
       DATA(t27) = |static|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t22 ).
+      DATA(t28) = t22.
       t21 = t28.
       t19 = t21.
     ELSE.
@@ -65,7 +65,7 @@ CLASS zcl_lnt_class_constant IMPLEMENTATION.
     CLEAR t30.
     DATA(t31) = abap_true.
     IF t31 = abap_true.
-      DATA(t32) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+      DATA(t32) = t3.
       t30 = t32.
     ELSE.
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

@@ -116,13 +116,13 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |Quickfix|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       t28 = t35.
       t26 = t28.
     ELSE.
@@ -147,13 +147,13 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_df_tp_ts_dfn_tp.
-    DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_df_tp_ts_dfn_tp.
-    DATA(t1) = CAST zcl_lnt_definitions_top_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/definitions_top.ts:56|.
     t2->source_location = t3.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_df_tp_ts_dfn_tp.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/definitions_top.ts:60|.
     t2->source_location = t3.
@@ -169,8 +169,8 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD walk.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_r_f634 ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_r_f634.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/definitions_top.ts:92|.
     t3->source_location = t4.
@@ -178,9 +178,9 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t3) = CAST zcl_lnt_position( i_at_e8a7 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
+    DATA(t3) = i_at_e8a7.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/definitions_top.ts:178|.
     t4->source_location = t5.

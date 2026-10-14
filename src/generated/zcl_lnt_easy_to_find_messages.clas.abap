@@ -87,10 +87,10 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t22.
       t21 = t22.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t23) = t21.
       DATA(t24) = |Styleguide|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t25) = t21.
       t20 = t25.
       t18 = t20.
     ELSE.
@@ -108,13 +108,13 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_e_t_f_m_t_es_t_fn_ms.
-    DATA(t1) = CAST zcl_lnt_esy_t_fnd_mssgs_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_e_t_f_m_t_es_t_fn_ms.
-    DATA(t1) = CAST zcl_lnt_esy_t_fnd_mssgs_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/easy_to_find_messages.ts:39|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/easy_to_find_messages.ts:43|.
     t2->source_location = t3.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_i_s_r_e_t_f_ms_ts_es_t_fn_ms.
-    DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
+    DATA(t1) = i_object_19cd.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/easy_to_find_messages.ts:56|.
     t2->source_location = t3.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/easy_to_find_messages.ts:39|.
     t2->source_location = t3.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/easy_to_find_messages.ts:56|.
     t2->source_location = t3.

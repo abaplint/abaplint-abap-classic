@@ -17,20 +17,20 @@ ENDCLASS.
 CLASS zcl_lnt_fix_case IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_file_contents.
-    DATA(t2) = CAST zif_lnt_configuration( i_config ).
+    DATA(t2) = i_config.
     DATA(t3) = NEW zcl_lnt_keyword_case( ).
     me->keyword_case = t3.
-    DATA(t4) = CAST zcl_lnt_keyword_case( me->keyword_case ).
+    DATA(t4) = me->keyword_case.
     DATA t5 TYPE REF TO zcl_lnt_keyword_case_conf.
     CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = CAST zif_lnt_configuration( t2 ).
+    DATA(t7) = t2.
     DATA(t8) = VALUE string( ).
     DATA t9 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t9.
     DATA t10 TYPE REF TO zcl_lnt_keyword_case.
-    DATA(t11) = CAST zcl_lnt_keyword_case( me->keyword_case ).
+    DATA(t11) = me->keyword_case.
     t10 = t11.
     DATA t12 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t12.
@@ -90,16 +90,16 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
       DATA t35 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t35.
       t34 = t35.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t36) = t34.
       DATA(t37) = |Styleguide|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t38) = t34.
       DATA(t39) = |SingleFile|.
       APPEND t39 TO t38->items.
-      DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t40) = t34.
       DATA(t41) = |Quickfix|.
       APPEND t41 TO t40->items.
-      DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t42) = t34.
       t33 = t42.
       t31 = t33.
     ELSE.
@@ -121,12 +121,12 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
     t4->st_cn_in_sr_rl_ky_cs_ts_kyw_cs( i_conf = t5 ).
     DATA(t47) = t1.
     me->file_contents = t47.
-    DATA(t48) = CAST zif_lnt_configuration( t2 ).
+    DATA(t48) = t2.
     me->config = t48.
   ENDMETHOD.
 
   METHOD execute.
-    DATA(t1) = CAST zif_lnt_union_bb14dc41( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/pretty_printer/fix_keyword_case.ts:20|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_string.
-    DATA(t1) = CAST zcl_lnt_position( i_pos ).
+    DATA(t1) = i_pos.
     DATA(t2) = i_str.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/pretty_printer/fix_keyword_case.ts:56|.

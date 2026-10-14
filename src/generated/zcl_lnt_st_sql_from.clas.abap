@@ -40,9 +40,9 @@ CLASS zcl_lnt_st_sql_from IMPLEMENTATION.
     CREATE OBJECT t10.
     t9 = t10.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t12) = t2.
+    DATA(t13) = t5.
+    DATA(t14) = t9.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t13 i_rest = t14 ).
     t1 = t11.
     result = t1.

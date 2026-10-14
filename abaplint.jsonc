@@ -26,6 +26,7 @@
     "xml_bom": true,
     "final_newline": true,
     "7bit_ascii": false, // todo
+    "redundant_cast": true,
     "modify_only_own_db_tables": true,
     "form_tables_obsolete": true,
     "fm_global_parameters_obsolete": true,

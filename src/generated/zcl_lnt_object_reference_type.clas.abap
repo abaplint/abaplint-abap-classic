@@ -19,29 +19,29 @@ CLASS zcl_lnt_object_reference_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_ab
 ENDCLASS.
 CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( i_extra ).
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t1) = i_id.
+    DATA(t2) = i_extra.
+    DATA(t3) = t2.
     super->constructor( i_input_967e = t3 ).
-    DATA(t4) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t4) = t1.
     me->identifier = t4.
   ENDMETHOD.
 
   METHOD get_identifier_name.
     DATA(t1) = VALUE string( ).
     DATA t2 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t3) = CAST zcl_lnt_fi_identifier( me->identifier ).
+    DATA(t3) = me->identifier.
     t2 = t3.
     DATA(t4) = VALUE string( ).
     DATA t5 TYPE string.
     DATA t6 TYPE string.
     DATA t7 TYPE REF TO zcl_lnt_abstract_token.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t9) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t9) = t2.
     t8 = t9->token.
     t7 = t8.
     DATA t10 TYPE string.
-    DATA(t11) = CAST zcl_lnt_abstract_token( t7 ).
+    DATA(t11) = t7.
     t10 = t11->str.
     t6 = t10.
     t5 = t6.
@@ -132,7 +132,7 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_identifier.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( me->identifier ).
+    DATA(t1) = me->identifier.
     result = t1.
 
   ENDMETHOD.

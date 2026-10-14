@@ -20,9 +20,9 @@ CLASS zcl_lnt_abstract_token DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_start ).
+    DATA(t1) = i_start.
     DATA(t2) = i_str.
-    DATA(t3) = CAST zcl_lnt_position( t1 ).
+    DATA(t3) = t1.
     me->start = t3.
     DATA(t4) = t2.
     me->str = t4.
@@ -61,10 +61,10 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   METHOD get_row.
     DATA t1 TYPE int8.
     DATA t2 TYPE REF TO zcl_lnt_position.
-    DATA(t3) = CAST zcl_lnt_position( me->start ).
+    DATA(t3) = me->start.
     t2 = t3.
     DATA t4 TYPE int8.
-    DATA(t5) = CAST zcl_lnt_position( t2 ).
+    DATA(t5) = t2.
     t4 = t5->row.
     t1 = t4.
     result = t1.
@@ -74,10 +74,10 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   METHOD get_col.
     DATA t1 TYPE int8.
     DATA t2 TYPE REF TO zcl_lnt_position.
-    DATA(t3) = CAST zcl_lnt_position( me->start ).
+    DATA(t3) = me->start.
     t2 = t3.
     DATA t4 TYPE int8.
-    DATA(t5) = CAST zcl_lnt_position( t2 ).
+    DATA(t5) = t2.
     t4 = t5->col.
     t1 = t4.
     result = t1.
@@ -85,7 +85,7 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_start.
-    DATA(t1) = CAST zcl_lnt_position( me->start ).
+    DATA(t1) = me->start.
     result = t1.
 
   ENDMETHOD.
@@ -97,19 +97,19 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     CLEAR t1.
     DATA t2 TYPE int8.
     DATA t3 TYPE REF TO zcl_lnt_position.
-    DATA(t4) = CAST zcl_lnt_position( me->start ).
+    DATA(t4) = me->start.
     t3 = t4.
     DATA t5 TYPE int8.
-    DATA(t6) = CAST zcl_lnt_position( t3 ).
+    DATA(t6) = t3.
     t5 = t6->row.
     t2 = t5.
     DATA t7 TYPE int8.
     DATA t8 TYPE int8.
     DATA t9 TYPE REF TO zcl_lnt_position.
-    DATA(t10) = CAST zcl_lnt_position( me->start ).
+    DATA(t10) = me->start.
     t9 = t10.
     DATA t11 TYPE int8.
-    DATA(t12) = CAST zcl_lnt_position( t9 ).
+    DATA(t12) = t9.
     t11 = t12->col.
     t8 = t11.
     DATA t13 TYPE int8.

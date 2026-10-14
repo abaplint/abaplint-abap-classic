@@ -65,13 +65,13 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sm_cn_ts_sm_cns.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sm_cn_ts_sm_cns.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/smim_consistency.ts:29|.
     t2->source_location = t3.
@@ -79,7 +79,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_smm_cns_ts_smm_cns.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/smim_consistency.ts:33|.
     t2->source_location = t3.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/smim_consistency.ts:38|.
     t2->source_location = t3.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/smim_consistency.ts:29|.
     t2->source_location = t3.
@@ -129,7 +129,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/smim_consistency.ts:33|.
     t2->source_location = t3.

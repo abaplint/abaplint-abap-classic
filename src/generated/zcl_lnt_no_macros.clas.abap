@@ -100,10 +100,10 @@ CLASS zcl_lnt_no_macros IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       t26 = t31.
       t24 = t26.
     ELSE.
@@ -121,13 +121,13 @@ CLASS zcl_lnt_no_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_n_mcr_ts_n_mcr.
-    DATA(t1) = CAST zcl_lnt_no_macros_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_n_mcr_ts_n_mcr.
-    DATA(t1) = CAST zcl_lnt_no_macros_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_macros.ts:35|.
     t2->source_location = t3.
@@ -135,7 +135,7 @@ CLASS zcl_lnt_no_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rls_n_mcr_ts_n_mcr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_macros.ts:39|.
     t2->source_location = t3.

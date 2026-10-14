@@ -11,9 +11,9 @@ CLASS zcl_lnt_itext_edit DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_itext_edit IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_irange( i_range ).
+    DATA(t1) = i_range.
     DATA(t2) = i_new_text.
-    DATA(t3) = CAST zcl_lnt_irange( t1 ).
+    DATA(t3) = t1.
     me->range = t3.
     DATA(t4) = t2.
     me->new_text = t4.

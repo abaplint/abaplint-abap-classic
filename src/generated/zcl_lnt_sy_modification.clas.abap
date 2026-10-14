@@ -97,10 +97,10 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |SingleFile|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       t24 = t29.
       t22 = t24.
     ELSE.
@@ -118,13 +118,13 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sy_md_ts_sy_mdf.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sy_md_ts_sy_mdf.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sy_modification.ts:37|.
     t2->source_location = t3.
@@ -132,8 +132,8 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/sy_modification.ts:41|.
     t3->source_location = t4.

@@ -14,16 +14,16 @@ ENDCLASS.
 CLASS zcl_lnt_shape_099057c5 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_value.
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_tooltip ).
-    DATA(t3) = CAST zcl_lnt_shape_eed5a04f( i_location ).
-    DATA(t4) = CAST zcl_lnt_shape_6d7086ba( i_command ).
+    DATA(t2) = i_tooltip.
+    DATA(t3) = i_location.
+    DATA(t4) = i_command.
     DATA(t5) = t1.
     me->value = t5.
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t6) = t2.
     me->tooltip = t6.
-    DATA(t7) = CAST zcl_lnt_shape_eed5a04f( t3 ).
+    DATA(t7) = t3.
     me->location = t7.
-    DATA(t8) = CAST zcl_lnt_shape_6d7086ba( t4 ).
+    DATA(t8) = t4.
     me->command = t8.
   ENDMETHOD.
 

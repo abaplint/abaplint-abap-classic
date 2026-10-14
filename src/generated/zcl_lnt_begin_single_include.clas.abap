@@ -131,10 +131,10 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
       DATA t33 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t33.
       t32 = t33.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t34) = t32.
       DATA(t35) = |SingleFile|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t36) = t32.
       t31 = t36.
       t29 = t31.
     ELSE.
@@ -152,13 +152,13 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_bg_sn_in_ts_bg_sn_in.
-    DATA(t1) = CAST zcl_lnt_bgn_sngl_incld_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_bg_sn_in_ts_bg_sn_in.
-    DATA(t1) = CAST zcl_lnt_bgn_sngl_incld_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/begin_single_include.ts:44|.
     t2->source_location = t3.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_bg_sn_in_ts_bg_sn_in.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/begin_single_include.ts:48|.
     t2->source_location = t3.

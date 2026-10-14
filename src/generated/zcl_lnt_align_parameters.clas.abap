@@ -281,19 +281,19 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
       DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t64.
       t63 = t64.
-      DATA(t65) = CAST zlnt_runtime_arra_8ecd6afe19e0( t63 ).
+      DATA(t65) = t63.
       DATA(t66) = |SingleFile|.
       APPEND t66 TO t65->items.
-      DATA(t67) = CAST zlnt_runtime_arra_8ecd6afe19e0( t63 ).
+      DATA(t67) = t63.
       DATA(t68) = |Whitespace|.
       APPEND t68 TO t67->items.
-      DATA(t69) = CAST zlnt_runtime_arra_8ecd6afe19e0( t63 ).
+      DATA(t69) = t63.
       DATA(t70) = |Styleguide|.
       APPEND t70 TO t69->items.
-      DATA(t71) = CAST zlnt_runtime_arra_8ecd6afe19e0( t63 ).
+      DATA(t71) = t63.
       DATA(t72) = |Quickfix|.
       APPEND t72 TO t71->items.
-      DATA(t73) = CAST zlnt_runtime_arra_8ecd6afe19e0( t63 ).
+      DATA(t73) = t63.
       t62 = t73.
       t60 = t62.
     ELSE.
@@ -311,13 +311,13 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_al_pr_ts_al_prm.
-    DATA(t1) = CAST zcl_lnt_align_parameters_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_al_pr_ts_al_prm.
-    DATA(t1) = CAST zcl_lnt_align_parameters_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:86|.
     t2->source_location = t3.
@@ -325,7 +325,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_al_pr_ts_al_prm.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:90|.
     t2->source_location = t3.
@@ -333,8 +333,8 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_candidate.
-    DATA(t1) = CAST zcl_lnt_icandidate( i_candidate ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_candidate.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/align_parameters.ts:115|.
     t3->source_location = t4.
@@ -342,7 +342,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD new_candidates.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
+    DATA(t1) = i_stru.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:149|.
     t2->source_location = t3.
@@ -350,7 +350,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD value_body_candidates.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
+    DATA(t1) = i_stru.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:196|.
     t2->source_location = t3.
@@ -358,7 +358,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD raise_and_create_candidates.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
+    DATA(t1) = i_stru.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:246|.
     t2->source_location = t3.
@@ -366,7 +366,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD method_call_param_candidates.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
+    DATA(t1) = i_stru.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:288|.
     t2->source_location = t3.
@@ -374,7 +374,7 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD function_parameter_candidates.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_stru ).
+    DATA(t1) = i_stru.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/align_parameters.ts:369|.
     t2->source_location = t3.

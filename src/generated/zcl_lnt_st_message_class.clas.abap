@@ -45,7 +45,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t15) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e ).
+    DATA(t15) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
     t14 = zcl_lnt_st_combi_module=>tok( i_t = t15 ).
     IF t14 IS BOUND.
       CREATE OBJECT t13.
@@ -67,7 +67,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t19.
     t18 = t19.
-    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+    DATA(t20) = t18.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t21.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
@@ -75,7 +75,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
     DATA t24 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t25) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d31_5d276172db4584 ).
+    DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d31_5d276172db4584.
     t24 = zcl_lnt_st_combi_module=>tok( i_t = t25 ).
     IF t24 IS BOUND.
       CREATE OBJECT t23.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
       t21->oval = t27.
     ENDIF.
     APPEND t21 TO t20->items.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+    DATA(t28) = t18.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
     DATA t30 TYPE REF TO zif_lnt_statement_runnable.
@@ -107,7 +107,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t34.
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e ).
+    DATA(t36) = zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e.
     t35 = zcl_lnt_st_combi_module=>tok( i_t = t36 ).
     IF t35 IS BOUND.
       CREATE OBJECT t34.
@@ -155,9 +155,9 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     CREATE OBJECT t50.
     t49 = t50.
     DATA t51 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t52) = CAST zlnt_runtime_dyna_a429568d5be8( t33 ).
-    DATA(t53) = CAST zlnt_runtime_dyna_a429568d5be8( t38 ).
-    DATA(t54) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
+    DATA(t52) = t33.
+    DATA(t53) = t38.
+    DATA(t54) = t49.
     t51 = zcl_lnt_st_combi_module=>seq( i_first = t52 i_second = t53 i_rest = t54 ).
     t32 = t51.
     IF t32 IS BOUND.
@@ -176,7 +176,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
       t29->oval = t56.
     ENDIF.
     APPEND t29 TO t28->items.
-    DATA(t57) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+    DATA(t57) = t18.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t58.
     DATA t59 TYPE REF TO zif_lnt_statement_runnable.
@@ -184,7 +184,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t60.
     DATA t61 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t62) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817 ).
+    DATA(t62) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
     t61 = zcl_lnt_st_combi_module=>tok( i_t = t62 ).
     IF t61 IS BOUND.
       CREATE OBJECT t60.
@@ -203,9 +203,9 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     ENDIF.
     APPEND t58 TO t57->items.
     DATA t65 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t66) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t67) = CAST zlnt_runtime_dyna_a429568d5be8( t10 ).
-    DATA(t68) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+    DATA(t66) = t2.
+    DATA(t67) = t10.
+    DATA(t68) = t18.
     t65 = zcl_lnt_st_combi_module=>seq( i_first = t66 i_second = t67 i_rest = t68 ).
     t1 = t65.
     result = t1.

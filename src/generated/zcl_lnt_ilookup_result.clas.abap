@@ -11,11 +11,11 @@ CLASS zcl_lnt_ilookup_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_ilookup_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t2) = CAST zif_lnt_object( i_object_19cd ).
-    DATA(t3) = CAST zcl_lnt_abstract_type( t1 ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_object_19cd.
+    DATA(t3) = t1.
     me->type_cba0 = t3.
-    DATA(t4) = CAST zif_lnt_object( t2 ).
+    DATA(t4) = t2.
     me->object_a393 = t4.
   ENDMETHOD.
 

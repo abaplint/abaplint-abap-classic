@@ -125,10 +125,10 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |Quickfix|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       t26 = t31.
       t24 = t26.
     ELSE.
@@ -170,13 +170,13 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_mt_ts_un_mth.
-    DATA(t1) = CAST zcl_lnt_unused_methods_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_mt_ts_un_mth.
-    DATA(t1) = CAST zcl_lnt_unused_methods_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:100|.
     t2->source_location = t3.
@@ -184,7 +184,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_uns_mth_ts_uns_mth.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:104|.
     t2->source_location = t3.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:109|.
     t2->source_location = t3.
@@ -200,7 +200,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD has_sub_class.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:200|.
     t2->source_location = t3.
@@ -208,8 +208,8 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_method_implementation.
-    DATA(t1) = CAST zcl_lnt_info_method_definition( i_method ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_method.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_methods.ts:219|.
     t3->source_location = t4.
@@ -217,8 +217,8 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD suppressedby_pseudo.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_methods.ts:235|.
     t3->source_location = t4.
@@ -226,7 +226,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD search_global_subclasses.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:257|.
     t2->source_location = t3.
@@ -234,7 +234,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:281|.
     t2->source_location = t3.
@@ -242,7 +242,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_node.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:291|.
     t2->source_location = t3.
@@ -260,7 +260,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:100|.
     t2->source_location = t3.
@@ -268,7 +268,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_methods.ts:104|.
     t2->source_location = t3.

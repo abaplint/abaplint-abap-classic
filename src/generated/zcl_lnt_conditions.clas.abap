@@ -21,7 +21,7 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_e ).
+    DATA(t1) = i_e.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_conditions.ts:18|.
     t2->source_location = t3.

@@ -13,12 +13,12 @@ ENDCLASS.
 CLASS zcl_lnt_shape_559f3e5d IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_annotation_id.
-    DATA(t2) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t2) = i_range.
     DATA(t3) = i_new_text.
     DATA(t4) = t1.
     me->annotation_id = t4.
     DATA t5 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t6) = CAST zcl_lnt_shape_9ead17bd( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->range = t5.
     DATA(t7) = t3.

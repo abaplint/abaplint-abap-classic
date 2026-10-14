@@ -34,14 +34,14 @@ CLASS zcl_lnt_built_in_method DEFINITION PUBLIC INHERITING FROM zcl_lnt_fi_ident
 ENDCLASS.
 CLASS zcl_lnt_built_in_method IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_token.
     DATA(t2) = i_filename.
-    DATA(t3) = CAST zcl_lnt_ibuiltin_method( i_method ).
+    DATA(t3) = i_method.
     DATA(t4) = i_row.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t5) = t1.
     DATA(t6) = t2.
     super->constructor( i_token = t5 i_filename = t6 ).
-    DATA(t7) = CAST zcl_lnt_ibuiltin_method( t3 ).
+    DATA(t7) = t3.
     me->method = t7.
     DATA(t8) = t4.
     me->row = t8.
@@ -54,12 +54,12 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
     DATA t4 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-    DATA(t5) = CAST zcl_lnt_ibuiltin_method( me->method ).
+    DATA(t5) = me->method.
     t4 = t5->mandatory.
     t3 = t4.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -67,7 +67,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     IF t6 = abap_true.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t11) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
       t9 = t10->keys( ).
       DATA(t12) = VALUE string( ).
@@ -81,15 +81,15 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
         DATA(t18) = t12.
         t14 = NEW zcl_lnt_lx_identifier( i_start = t15 i_str = t18 ).
         t13 = t14.
-        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t19) = t1.
         DATA t20 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t21) = CAST zcl_lnt_lx_identifier( t13 ).
+        DATA(t21) = t13.
         DATA(t22) = CONV string( zcl_lnt_built_in=>filename ).
         DATA t23 TYPE REF TO zcl_lnt_abstract_type.
         DATA t24 TYPE REF TO zcl_lnt_abstract_type.
         DATA t25 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
         DATA t26 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-        DATA(t27) = CAST zcl_lnt_ibuiltin_method( me->method ).
+        DATA(t27) = me->method.
         t26 = t27->mandatory.
         t25 = t26.
         DATA(t28) = t12.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
         APPEND t20 TO t19->items.
       ENDLOOP.
     ENDIF.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t31) = t1.
     result = t31.
 
   ENDMETHOD.
@@ -143,12 +143,12 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
     DATA t4 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-    DATA(t5) = CAST zcl_lnt_ibuiltin_method( me->method ).
+    DATA(t5) = me->method.
     t4 = t5->mandatory.
     t3 = t4.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     IF t6 = abap_true.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t11) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
       t9 = t10->keys( ).
       DATA(t12) = VALUE string( ).
@@ -170,15 +170,15 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
         DATA(t18) = t12.
         t14 = NEW zcl_lnt_lx_identifier( i_start = t15 i_str = t18 ).
         t13 = t14.
-        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t19) = t1.
         DATA t20 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t21) = CAST zcl_lnt_lx_identifier( t13 ).
+        DATA(t21) = t13.
         DATA(t22) = CONV string( zcl_lnt_built_in=>filename ).
         DATA t23 TYPE REF TO zcl_lnt_abstract_type.
         DATA t24 TYPE REF TO zcl_lnt_abstract_type.
         DATA t25 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
         DATA t26 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-        DATA(t27) = CAST zcl_lnt_ibuiltin_method( me->method ).
+        DATA(t27) = me->method.
         t26 = t27->mandatory.
         t25 = t26.
         DATA(t28) = t12.
@@ -194,12 +194,12 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
     DATA t32 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-    DATA(t33) = CAST zcl_lnt_ibuiltin_method( me->method ).
+    DATA(t33) = me->method.
     t32 = t33->optional.
     t31 = t32.
     DATA(t34) = VALUE abap_bool( ).
     DATA(t35) = VALUE abap_bool( ).
-    DATA(t36) = CAST zlnt_runtime_map__41b3bb94df3d( t31 ).
+    DATA(t36) = t31.
     IF t36 IS INITIAL.
       t35 = abap_true.
     ENDIF.
@@ -207,7 +207,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     IF t34 = abap_true.
       DATA t37 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t38 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t39) = CAST zlnt_runtime_map__41b3bb94df3d( t31 ).
+      DATA(t39) = t31.
       t38 = t39.
       t37 = t38->keys( ).
       DATA(t40) = VALUE string( ).
@@ -221,15 +221,15 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
         DATA(t46) = t40.
         t42 = NEW zcl_lnt_lx_identifier( i_start = t43 i_str = t46 ).
         t41 = t42.
-        DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t47) = t1.
         DATA t48 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t49) = CAST zcl_lnt_lx_identifier( t41 ).
+        DATA(t49) = t41.
         DATA(t50) = CONV string( zcl_lnt_built_in=>filename ).
         DATA t51 TYPE REF TO zcl_lnt_abstract_type.
         DATA t52 TYPE REF TO zcl_lnt_abstract_type.
         DATA t53 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
         DATA t54 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-        DATA(t55) = CAST zcl_lnt_ibuiltin_method( me->method ).
+        DATA(t55) = me->method.
         t54 = t55->optional.
         t53 = t54.
         DATA(t56) = t40.
@@ -243,7 +243,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
         APPEND t48 TO t47->items.
       ENDLOOP.
     ENDIF.
-    DATA(t59) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t59) = t1.
     result = t59.
 
   ENDMETHOD.
@@ -252,7 +252,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
     DATA t3 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-    DATA(t4) = CAST zcl_lnt_ibuiltin_method( me->method ).
+    DATA(t4) = me->method.
     t3 = t4->mandatory.
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -260,7 +260,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_map__41b3bb94df3d( t2 ).
+    DATA(t8) = t2.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -275,14 +275,14 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
     DATA t13 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-    DATA(t14) = CAST zcl_lnt_ibuiltin_method( me->method ).
+    DATA(t14) = me->method.
     t13 = t14->mandatory.
     t12 = t13.
     t11 = t12->keys( ).
     t10 = t11.
     DATA t15 TYPE abap_bool.
     DATA t16 TYPE i.
-    DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t10 ).
+    DATA(t17) = t10.
     t16 = lines( t17->items ).
     DATA(t18) = 1.
     t15 = xsdbool( t16 = t18 ).
@@ -293,7 +293,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
       IF t20 = abap_true.
         DATA t21 TYPE string.
         DATA(t22) = VALUE string( ).
-        DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t10 ).
+        DATA(t23) = t10.
         READ TABLE t23->items INDEX 1 INTO t22.
         DATA(t24) = strlen( t22 ).
         t21 = t22.
@@ -356,10 +356,10 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA(t8) = abap_true.
     IF t8 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t10) = CAST zcl_lnt_lx_identifier( t1 ).
+      DATA(t10) = t1.
       DATA(t11) = CONV string( zcl_lnt_built_in=>filename ).
       DATA t12 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t13) = CAST zcl_lnt_ibuiltin_method( me->method ).
+      DATA(t13) = me->method.
       t12 = t13->return_5392.
       DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t14.
@@ -419,7 +419,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_parameters.
-    DATA(t1) = CAST zcl_lnt_built_in_method( me ).
+    DATA(t1) = me.
     result = t1.
 
   ENDMETHOD.

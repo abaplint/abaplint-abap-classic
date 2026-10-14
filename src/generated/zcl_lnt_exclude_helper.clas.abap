@@ -10,8 +10,8 @@ ENDCLASS.
 CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
   METHOD is_excluded.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_exclude_patterns ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t2) = i_exclude_patterns.
+    DATA(t3) = t2.
     DATA t4 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t4.
     DATA t5 TYPE REF TO object.
@@ -19,7 +19,7 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
     LOOP AT t3->items INTO t5.
       t4 ?= t5.
       DATA t6 TYPE abap_bool.
-      DATA(t7) = CAST zlnt_runtime_rege_5a210f82384e( t4 ).
+      DATA(t7) = t4.
       DATA(t8) = t1.
       t6 = t7->test( p0 = t8 ).
       IF t6 = abap_true.

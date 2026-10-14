@@ -23,41 +23,41 @@ CLASS zcl_lnt_shape_50070dd1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_50070dd1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_rowtype ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_rowkind ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_datatype_9e1e ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_leng_b7d5 ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_decimals_2eed ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( i_accessmode ).
-    DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( i_keykind ).
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( i_ddtext_5aef ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( i_keydef ).
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( i_dd42v ).
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( i_dd43v ).
-    DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_rowtype.
+    DATA(t2) = i_rowkind.
+    DATA(t3) = i_datatype_9e1e.
+    DATA(t4) = i_leng_b7d5.
+    DATA(t5) = i_decimals_2eed.
+    DATA(t6) = i_accessmode.
+    DATA(t7) = i_keykind.
+    DATA(t8) = i_ddtext_5aef.
+    DATA(t9) = i_keydef.
+    DATA(t10) = i_dd42v.
+    DATA(t11) = i_dd43v.
+    DATA(t12) = t1.
     me->rowtype = t12.
-    DATA(t13) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t13) = t2.
     me->rowkind = t13.
-    DATA(t14) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t14) = t3.
     me->datatype_2b0f = t14.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t15) = t4.
     me->leng_e82a = t15.
-    DATA(t16) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t16) = t5.
     me->decimals_29bf = t16.
-    DATA(t17) = CAST zlnt_runtime_opti_4ba3bdccd169( t6 ).
+    DATA(t17) = t6.
     me->accessmode = t17.
-    DATA(t18) = CAST zlnt_runtime_opti_4ba3bdccd169( t7 ).
+    DATA(t18) = t7.
     me->keykind = t18.
-    DATA(t19) = CAST zlnt_runtime_opti_4ba3bdccd169( t8 ).
+    DATA(t19) = t8.
     me->ddtext_d4ae = t19.
-    DATA(t20) = CAST zlnt_runtime_opti_4ba3bdccd169( t9 ).
+    DATA(t20) = t9.
     me->keydef = t20.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t22) = t10.
     t21 = t22.
     me->dd42v = t21.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t24) = t11.
     t23 = t24.
     me->dd43v = t23.
   ENDMETHOD.

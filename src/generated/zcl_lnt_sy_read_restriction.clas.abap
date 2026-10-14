@@ -106,10 +106,10 @@ CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
       DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t36.
       t35 = t36.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
+      DATA(t37) = t35.
       DATA(t38) = |SingleFile|.
       APPEND t38 TO t37->items.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
+      DATA(t39) = t35.
       t34 = t39.
       t32 = t34.
     ELSE.
@@ -127,13 +127,13 @@ CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_sy_rd_rs_ts_sy_rd_rs.
-    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_sy_rd_rs_ts_sy_rd_rs.
-    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/sy_read_restriction.ts:69|.
     t2->source_location = t3.
@@ -141,8 +141,8 @@ CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_sy_rd_rs_ts_sy_rd_rs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_ac26 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_ac26.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/sy_read_restriction.ts:73|.
     t3->source_location = t4.

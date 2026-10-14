@@ -10,11 +10,11 @@ CLASS zcl_lnt_sy_export DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_export IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     t3 = t4->find_all_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t6.
@@ -28,14 +28,14 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
       CLEAR t9.
       DATA(t10) = abap_true.
       IF t10 = abap_true.
-        DATA(t11) = CAST zcl_lnt_expression_node( t6 ).
+        DATA(t11) = t6.
         t9 = t11.
       ELSE.
         DATA t12 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t12.
         t9 = t12.
       ENDIF.
-      DATA(t13) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t13) = t2.
       DATA t14 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t14.
       DATA t15 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -47,8 +47,8 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
       t8 = zcl_lnt_sy_source=>run_syntax( i_node = t9 i_input_967e = t13 i_target_type = t14 i_write_reference = t15 i_allow_generic_deference = t16 i_read_reference = t17 ).
     ENDLOOP.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t19) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74 ).
+    DATA(t19) = t1.
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.
     t18 = t19->find_direct_expressions( i_type_9913 = t20 ).
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t21.
@@ -57,18 +57,18 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
     LOOP AT t18->items INTO t22.
       t21 ?= t22.
       DATA t23 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t24) = CAST zcl_lnt_expression_node( t21 ).
-      DATA(t25) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t24) = t21.
+      DATA(t25) = t2.
       t23 = zcl_lnt_sy_target=>run_syntax( i_node = t24 i_input_967e = t25 ).
     ENDLOOP.
     DATA t26 TYPE REF TO zcl_lnt_expression_node.
     DATA t27 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t28) = CAST zcl_lnt_statement_node( t1 ).
+    DATA(t28) = t1.
     DATA(t29) = |DATABASE|.
     t27 = t28->find_expression_after_token( i_text = t29 ).
     t26 = t27.
     DATA t30 TYPE abap_bool.
-    DATA(t31) = CAST zcl_lnt_expression_node( t26 ).
+    DATA(t31) = t26.
     t30 = xsdbool( t31 IS BOUND ).
     IF t30 = abap_true.
       DATA t32 TYPE REF TO zcl_lnt_ilookup_result.
@@ -79,12 +79,12 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
       DATA t35 TYPE REF TO zcl_lnt_ddic.
       DATA t36 TYPE REF TO zcl_lnt_current_scope.
       DATA t37 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t38) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t38) = t2.
       t37 = t38->scope.
       t36 = t37.
       DATA t39 TYPE REF TO zcl_lnt_ddic.
       DATA t40 TYPE REF TO zif_lnt_registry.
-      DATA(t41) = CAST zcl_lnt_current_scope( t36 ).
+      DATA(t41) = t36.
       t40 = t41->reg.
       t39 = NEW zcl_lnt_ddic( i_reg_f149 = t40 ).
       t35 = t39.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
       DATA t42 TYPE REF TO zcl_lnt_ilookup_result.
       CLEAR t42.
       DATA(t43) = VALUE abap_bool( ).
-      DATA(t44) = CAST zcl_lnt_ddic( t34 ).
+      DATA(t44) = t34.
       IF t44 IS INITIAL.
         t43 = abap_true.
       ENDIF.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
         DATA t46 TYPE REF TO zcl_lnt_ilookup_result.
         CLEAR t46.
         DATA t47 TYPE REF TO zcl_lnt_ddic.
-        DATA(t48) = CAST zcl_lnt_ddic( t34 ).
+        DATA(t48) = t34.
         t47 = t48.
         DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t49.
@@ -114,7 +114,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
         IF t51 = abap_true.
           DATA t52 TYPE string.
           DATA t53 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t54) = CAST zcl_lnt_expression_node( t26 ).
+          DATA(t54) = t26.
           t53 = t54.
           t52 = t53->concat_tokens( ).
           DATA(t55) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -131,14 +131,14 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
         CLEAR t57.
         DATA(t58) = VALUE abap_bool( ).
         DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t60) = CAST zlnt_runtime_opti_4ba3bdccd169( t49 ).
+        DATA(t60) = t49.
         t59 = t60.
         DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t62.
         t61 = t62.
         DATA(t63) = VALUE abap_bool( ).
-        DATA(t64) = CAST zlnt_runtime_opti_4ba3bdccd169( t59 ).
+        DATA(t64) = t59.
         IF t64 IS INITIAL.
           t63 = abap_true.
         ELSEIF t64->has = abap_false.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
           DATA t73 TYPE REF TO zif_lnt_object.
           CLEAR t73.
           DATA t74 TYPE REF TO zif_lnt_registry.
-          DATA(t75) = CAST zcl_lnt_ddic( t47 ).
+          DATA(t75) = t47.
           t74 = t75->reg.
           DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t76.
@@ -187,7 +187,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
           DATA(t82) = abap_true.
           IF t82 = abap_true.
             DATA t83 TYPE string.
-            DATA(t84) = CAST zlnt_runtime_opti_4ba3bdccd169( t49 ).
+            DATA(t84) = t49.
             t83 = t84->value.
             DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t85->has = abap_true.
@@ -206,20 +206,20 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
           DATA t88 TYPE REF TO zcl_lnt_ilookup_result.
           CLEAR t88.
           DATA t89 TYPE abap_bool.
-          DATA(t90) = CAST zcl_lnt_table( t71 ).
+          DATA(t90) = t71.
           t89 = xsdbool( t90 IS BOUND ).
           IF t89 = abap_true.
             DATA t91 TYPE REF TO zcl_lnt_ilookup_result.
             DATA t92 TYPE REF TO zcl_lnt_abstract_type.
             DATA t93 TYPE REF TO zcl_lnt_table.
-            DATA(t94) = CAST zcl_lnt_table( t71 ).
+            DATA(t94) = t71.
             t93 = t94.
             DATA t95 TYPE REF TO zif_lnt_registry.
-            DATA(t96) = CAST zcl_lnt_ddic( t47 ).
+            DATA(t96) = t47.
             t95 = t96->reg.
             t92 = t93->parse_type( i_reg_f149 = t95 ).
             DATA t97 TYPE REF TO zcl_lnt_table.
-            DATA(t98) = CAST zcl_lnt_table( t71 ).
+            DATA(t98) = t71.
             t97 = t98.
             t91 = NEW zcl_lnt_ilookup_result( i_type_9913 = t92 i_object_19cd = t97 ).
             t88 = t91.
@@ -230,13 +230,13 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
             CLEAR t100.
             DATA t101 TYPE REF TO zcl_lnt_ilookup_result.
             CLEAR t101.
-            DATA(t102) = CAST zcl_lnt_ddic( t47 ).
+            DATA(t102) = t47.
             DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t103.
             DATA(t104) = abap_true.
             IF t104 = abap_true.
               DATA t105 TYPE string.
-              DATA(t106) = CAST zlnt_runtime_opti_4ba3bdccd169( t49 ).
+              DATA(t106) = t49.
               t105 = t106->value.
               DATA(t107) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t107->has = abap_true.
@@ -252,11 +252,11 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
             DATA t109 TYPE REF TO zcl_lnt_ilookup_result.
             CLEAR t109.
             DATA t110 TYPE abap_bool.
-            DATA(t111) = CAST zcl_lnt_ilookup_result( t100 ).
+            DATA(t111) = t100.
             t110 = xsdbool( t111 IS BOUND ).
             IF t110 = abap_true.
               DATA t112 TYPE REF TO zcl_lnt_ilookup_result.
-              DATA(t113) = CAST zcl_lnt_ilookup_result( t100 ).
+              DATA(t113) = t100.
               t112 = t113.
               t109 = t112.
             ELSE.
@@ -269,7 +269,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
               DATA(t117) = abap_true.
               IF t117 = abap_true.
                 DATA t118 TYPE string.
-                DATA(t119) = CAST zlnt_runtime_opti_4ba3bdccd169( t49 ).
+                DATA(t119) = t49.
                 t118 = t119->value.
                 DATA(t120) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t120->has = abap_true.
@@ -285,14 +285,14 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
               CLEAR t122.
               DATA(t123) = VALUE abap_bool( ).
               DATA t124 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              DATA(t125) = CAST zlnt_runtime_opti_4ba3bdccd169( t115 ).
+              DATA(t125) = t115.
               t124 = t125.
               DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t127.
               t126 = t127.
               DATA(t128) = VALUE abap_bool( ).
-              DATA(t129) = CAST zlnt_runtime_opti_4ba3bdccd169( t124 ).
+              DATA(t129) = t124.
               IF t129 IS INITIAL.
                 t128 = abap_true.
               ELSEIF t129->has = abap_false.
@@ -320,7 +320,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                 DATA t138 TYPE REF TO zif_lnt_object.
                 CLEAR t138.
                 DATA t139 TYPE REF TO zif_lnt_registry.
-                DATA(t140) = CAST zcl_lnt_ddic( t47 ).
+                DATA(t140) = t47.
                 t139 = t140->reg.
                 DATA t141 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 CLEAR t141.
@@ -341,7 +341,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                 DATA(t147) = abap_true.
                 IF t147 = abap_true.
                   DATA t148 TYPE string.
-                  DATA(t149) = CAST zlnt_runtime_opti_4ba3bdccd169( t115 ).
+                  DATA(t149) = t115.
                   t148 = t149->value.
                   DATA(t150) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                   t150->has = abap_true.
@@ -360,20 +360,20 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                 DATA t153 TYPE REF TO zcl_lnt_ilookup_result.
                 CLEAR t153.
                 DATA t154 TYPE abap_bool.
-                DATA(t155) = CAST zcl_lnt_table( t136 ).
+                DATA(t155) = t136.
                 t154 = xsdbool( t155 IS BOUND ).
                 IF t154 = abap_true.
                   DATA t156 TYPE REF TO zcl_lnt_ilookup_result.
                   DATA t157 TYPE REF TO zcl_lnt_abstract_type.
                   DATA t158 TYPE REF TO zcl_lnt_table.
-                  DATA(t159) = CAST zcl_lnt_table( t136 ).
+                  DATA(t159) = t136.
                   t158 = t159.
                   DATA t160 TYPE REF TO zif_lnt_registry.
-                  DATA(t161) = CAST zcl_lnt_ddic( t47 ).
+                  DATA(t161) = t47.
                   t160 = t161->reg.
                   t157 = t158->parse_type( i_reg_f149 = t160 ).
                   DATA t162 TYPE REF TO zcl_lnt_table.
-                  DATA(t163) = CAST zcl_lnt_table( t136 ).
+                  DATA(t163) = t136.
                   t162 = t163.
                   t156 = NEW zcl_lnt_ilookup_result( i_type_9913 = t157 i_object_19cd = t162 ).
                   t153 = t156.
@@ -382,10 +382,10 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                   CLEAR t164.
                   DATA t165 TYPE abap_bool.
                   DATA t166 TYPE REF TO zif_lnt_registry.
-                  DATA(t167) = CAST zcl_lnt_ddic( t47 ).
+                  DATA(t167) = t47.
                   t166 = t167->reg.
                   DATA t168 TYPE string.
-                  DATA(t169) = CAST zlnt_runtime_opti_4ba3bdccd169( t115 ).
+                  DATA(t169) = t115.
                   t168 = t169->value.
                   t165 = t166->in_error_namespace( i_name = t168 ).
                   IF t165 = abap_true.
@@ -393,7 +393,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                     DATA t171 TYPE REF TO zcl_lnt_unknown_type.
                     DATA t172 TYPE string.
                     DATA t173 TYPE string.
-                    DATA(t174) = CAST zlnt_runtime_opti_4ba3bdccd169( t115 ).
+                    DATA(t174) = t115.
                     t173 = t174->value.
                     DATA(t175) = | not found, lookupView|.
                     DATA(t176) = strlen( t173 ).
@@ -415,7 +415,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
                     DATA(t182) = abap_true.
                     IF t182 = abap_true.
                       DATA t183 TYPE string.
-                      DATA(t184) = CAST zlnt_runtime_opti_4ba3bdccd169( t115 ).
+                      DATA(t184) = t115.
                       t183 = t184->value.
                       DATA(t185) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                       t185->has = abap_true.
@@ -455,30 +455,30 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
       t32 = t33.
       DATA t189 TYPE abap_bool.
       DATA t190 TYPE REF TO zcl_lnt_ilookup_result.
-      DATA(t191) = CAST zcl_lnt_ilookup_result( t32 ).
+      DATA(t191) = t32.
       t190 = t191.
       t189 = xsdbool( t190 IS BOUND ).
       IF t189 = abap_true.
         DATA t192 TYPE REF TO zif_lnt_ddic_references.
         DATA t193 TYPE REF TO zcl_lnt_current_scope.
         DATA t194 TYPE REF TO zcl_lnt_current_scope.
-        DATA(t195) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t195) = t2.
         t194 = t195->scope.
         t193 = t194.
         DATA t196 TYPE REF TO zif_lnt_ddic_references.
         DATA t197 TYPE REF TO zif_lnt_registry.
-        DATA(t198) = CAST zcl_lnt_current_scope( t193 ).
+        DATA(t198) = t193.
         t197 = t198->reg.
         t196 = t197->get_ddic_references( ).
         t192 = t196.
         DATA t199 TYPE REF TO zif_lnt_object.
         DATA t200 TYPE REF TO zcl_lnt_current_scope.
         DATA t201 TYPE REF TO zcl_lnt_current_scope.
-        DATA(t202) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t202) = t2.
         t201 = t202->scope.
         t200 = t201.
         DATA t203 TYPE REF TO zif_lnt_object.
-        DATA(t204) = CAST zcl_lnt_current_scope( t200 ).
+        DATA(t204) = t200.
         t203 = t204->parent_obj.
         t199 = t203.
         DATA t205 TYPE REF TO zcl_lnt_iobject_and_token.
@@ -488,7 +488,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
           DATA t207 TYPE REF TO zcl_lnt_iobject_and_token.
           DATA t208 TYPE REF TO zif_lnt_object.
           DATA t209 TYPE REF TO zcl_lnt_ilookup_result.
-          DATA(t210) = CAST zcl_lnt_ilookup_result( t32 ).
+          DATA(t210) = t32.
           t209 = t210.
           t208 = t209->object_a393.
           DATA t211 TYPE REF TO zcl_lnt_abstract_token.

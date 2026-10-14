@@ -66,10 +66,10 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |SingleFile|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       t16 = t21.
       t14 = t16.
     ELSE.
@@ -96,13 +96,13 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_ab_ts_ch_abs.
-    DATA(t1) = CAST zcl_lnt_check_abstract_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_ab_ts_ch_abs.
-    DATA(t1) = CAST zcl_lnt_check_abstract_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_abstract.ts:47|.
     t2->source_location = t3.
@@ -110,7 +110,7 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ch_ab_ts_ch_abs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_abstract.ts:51|.
     t2->source_location = t3.

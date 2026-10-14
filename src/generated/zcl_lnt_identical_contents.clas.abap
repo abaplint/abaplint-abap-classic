@@ -151,10 +151,10 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       DATA t38 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t38.
       t37 = t38.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t37 ).
+      DATA(t39) = t37.
       DATA(t40) = |SingleFile|.
       APPEND t40 TO t39->items.
-      DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t37 ).
+      DATA(t41) = t37.
       t36 = t41.
       t34 = t36.
     ELSE.
@@ -172,13 +172,13 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_id_cn_ts_id_cnt.
-    DATA(t1) = CAST zcl_lnt_idntcl_cntnts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_id_cn_ts_id_cnt.
-    DATA(t1) = CAST zcl_lnt_idntcl_cntnts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_contents.ts:46|.
     t2->source_location = t3.
@@ -186,7 +186,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_id_cn_ts_id_cnt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_contents.ts:50|.
     t2->source_location = t3.
@@ -194,8 +194,8 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_if.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/identical_contents.ts:73|.
     t3->source_location = t4.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_chained.
-    DATA(t1) = CAST zif_lnt_union_8249fcb1( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_contents.ts:148|.
     t2->source_location = t3.

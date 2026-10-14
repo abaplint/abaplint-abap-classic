@@ -23,8 +23,8 @@ CLASS zcl_lnt_integer_type IMPLEMENTATION.
     IF zcl_lnt_integer_type=>zlnt_builtin_init_d90069ea6de7 = abap_false.
       zcl_lnt_integer_type=>zlnt_builtin_init_8fe31d707ee7( ).
     ENDIF.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t1) = i_input_967e.
+    DATA(t2) = t1.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
@@ -32,13 +32,13 @@ CLASS zcl_lnt_integer_type IMPLEMENTATION.
     IF zcl_lnt_integer_type=>zlnt_builtin_init_d90069ea6de7 = abap_false.
       zcl_lnt_integer_type=>zlnt_builtin_init_8fe31d707ee7( ).
     ENDIF.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
+    DATA(t1) = i_input_967e.
     DATA t2 TYPE REF TO zcl_lnt_integer_type.
     CLEAR t2.
     IF zcl_lnt_integer_type=>zlnt_builtin_init_d90069ea6de7 = abap_false.
       zcl_lnt_integer_type=>zlnt_builtin_init_8fe31d707ee7( ).
     ENDIF.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t3) = t1.
     t2 = NEW zcl_lnt_integer_type( i_input_967e = t3 ).
     result = t2.
 

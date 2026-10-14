@@ -81,13 +81,13 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_rm_ds_ts_rm_dsc.
-    DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_rm_ds_ts_rm_dsc.
-    DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:43|.
     t2->source_location = t3.
@@ -95,7 +95,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_rmv_dsc_ts_rmv_dsc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:47|.
     t2->source_location = t3.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:52|.
     t2->source_location = t3.
@@ -111,7 +111,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_interface.
-    DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:79|.
     t2->source_location = t3.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_class.
-    DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:91|.
     t2->source_location = t3.
@@ -128,7 +128,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
 
   METHOD check_xml.
     DATA(t1) = i_xml.
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/remove_descriptions.ts:103|.
     t3->source_location = t4.
@@ -146,7 +146,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:43|.
     t2->source_location = t3.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/remove_descriptions.ts:47|.
     t2->source_location = t3.

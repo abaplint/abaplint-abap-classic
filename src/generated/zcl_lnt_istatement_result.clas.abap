@@ -12,14 +12,14 @@ CLASS zcl_lnt_istatement_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_istatement_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t4) = CAST zif_lnt_file( t1 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_tokens.
+    DATA(t3) = i_statements.
+    DATA(t4) = t1.
     me->file = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t5) = t2.
     me->tokens = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t6) = t3.
     me->statements = t6.
   ENDMETHOD.
 

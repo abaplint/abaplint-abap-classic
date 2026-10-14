@@ -101,13 +101,13 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |SingleFile|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       DATA(t28) = |Quickfix|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t29) = t23.
       t22 = t29.
       t20 = t22.
     ELSE.
@@ -149,13 +149,13 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_sb_ts_ch_sbr.
-    DATA(t1) = CAST zcl_lnt_check_subrc_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_sb_ts_ch_sbr.
-    DATA(t1) = CAST zcl_lnt_check_subrc_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_subrc.ts:53|.
     t2->source_location = t3.
@@ -163,8 +163,8 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/check_subrc.ts:57|.
     t3->source_location = t4.
@@ -172,7 +172,7 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ch_sb_ts_ch_sbr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_subrc.ts:64|.
     t2->source_location = t3.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_simple_assign.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_subrc.ts:158|.
     t2->source_location = t3.
@@ -188,7 +188,7 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_exempted_find.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_subrc.ts:169|.
     t2->source_location = t3.
@@ -197,7 +197,7 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
 
   METHOD checks_dbcnt.
     DATA(t1) = i_index.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
+    DATA(t2) = i_statements.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/check_subrc.ts:174|.
     t3->source_location = t4.
@@ -206,7 +206,7 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
 
   METHOD is_checked.
     DATA(t1) = i_index.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
+    DATA(t2) = i_statements.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/check_subrc.ts:190|.
     t3->source_location = t4.

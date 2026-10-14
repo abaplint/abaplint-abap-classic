@@ -102,13 +102,13 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t22.
       t21 = t22.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t23) = t21.
       DATA(t24) = |Naming|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t25) = t21.
       DATA(t26) = |Syntax|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t27) = t21.
       t20 = t27.
       t18 = t20.
     ELSE.
@@ -126,13 +126,13 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_xm_cn_ts_xm_cns.
-    DATA(t1) = CAST zcl_lnt_xml_consistency_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_xm_cn_ts_xm_cns.
-    DATA(t1) = CAST zcl_lnt_xml_consistency_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_consistency.ts:43|.
     t2->source_location = t3.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_xml_cns_ts_xml_cns.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_consistency.ts:47|.
     t2->source_location = t3.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_consistency.ts:51|.
     t2->source_location = t3.
@@ -156,8 +156,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_class.
-    DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:100|.
     t3->source_location = t4.
@@ -165,8 +165,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_text_pool.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:115|.
     t3->source_location = t4.
@@ -174,8 +174,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_interface.
-    DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:129|.
     t3->source_location = t4.
@@ -183,11 +183,11 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_text_length.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = i_field_name.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_text ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( i_max_length ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_lang ).
+    DATA(t3) = i_text.
+    DATA(t4) = i_max_length.
+    DATA(t5) = i_lang.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/xml_consistency.ts:144|.
     t6->source_location = t7.
@@ -195,8 +195,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_data_element.
-    DATA(t1) = CAST zcl_lnt_data_element( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:159|.
     t3->source_location = t4.
@@ -204,9 +204,9 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_required_field.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = i_field_name.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_value ).
+    DATA(t3) = i_value.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/xml_consistency.ts:215|.
     t4->source_location = t5.
@@ -214,8 +214,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_domain.
-    DATA(t1) = CAST zcl_lnt_domain( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:223|.
     t3->source_location = t4.
@@ -223,8 +223,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_transaction.
-    DATA(t1) = CAST zcl_lnt_transaction( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:241|.
     t3->source_location = t4.
@@ -232,8 +232,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_message_class.
-    DATA(t1) = CAST zcl_lnt_ob_message_class( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:256|.
     t3->source_location = t4.
@@ -241,8 +241,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_lock_object.
-    DATA(t1) = CAST zcl_lnt_lock_object( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:273|.
     t3->source_location = t4.
@@ -250,8 +250,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_table.
-    DATA(t1) = CAST zcl_lnt_table( i_obj_1ed0 ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/xml_consistency.ts:286|.
     t3->source_location = t4.
@@ -269,7 +269,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_consistency.ts:43|.
     t2->source_location = t3.
@@ -277,7 +277,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_consistency.ts:47|.
     t2->source_location = t3.

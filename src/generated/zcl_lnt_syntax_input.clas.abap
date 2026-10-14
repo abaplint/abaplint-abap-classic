@@ -13,17 +13,17 @@ CLASS zcl_lnt_syntax_input DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_syntax_input IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_current_scope( i_scope ).
+    DATA(t1) = i_scope.
     DATA(t2) = i_filename.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_deferred ).
-    DATA(t5) = CAST zcl_lnt_current_scope( t1 ).
+    DATA(t3) = i_issues.
+    DATA(t4) = i_deferred.
+    DATA(t5) = t1.
     me->scope = t5.
     DATA(t6) = t2.
     me->filename = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t7) = t3.
     me->issues = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     me->deferred = t8.
   ENDMETHOD.
 

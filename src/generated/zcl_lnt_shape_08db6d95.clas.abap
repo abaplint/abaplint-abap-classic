@@ -12,11 +12,11 @@ CLASS zcl_lnt_shape_08db6d95 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_08db6d95 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_token.
     DATA(t2) = i_message_class.
     DATA(t3) = i_number.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     me->token = t4.
     DATA(t6) = t2.

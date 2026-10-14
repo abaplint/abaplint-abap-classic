@@ -14,12 +14,12 @@ CLASS zcl_lnt_sql_named_param IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
     DATA(t2) = i_value.
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_optional ).
+    DATA(t3) = i_optional.
     DATA(t4) = t1.
     me->name = t4.
     DATA(t5) = t2.
     me->value = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t6) = t3.
     me->optional = t6.
   ENDMETHOD.
 

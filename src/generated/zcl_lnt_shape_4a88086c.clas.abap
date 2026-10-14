@@ -19,29 +19,29 @@ CLASS zcl_lnt_shape_4a88086c DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_4a88086c IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_text ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_length ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_decimals_2eed ).
+    DATA(t1) = i_text.
+    DATA(t2) = i_length.
+    DATA(t3) = i_decimals_2eed.
     DATA(t4) = i_info_text.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( i_conversion_exit ).
-    DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( i_ddic_name ).
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t5) = i_qualified_name.
+    DATA(t6) = i_conversion_exit.
+    DATA(t7) = i_ddic_name.
+    DATA(t8) = i_description.
+    DATA(t9) = t1.
     me->text = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t10) = t2.
     me->length = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t11) = t3.
     me->decimals_29bf = t11.
     DATA(t12) = t4.
     me->info_text = t12.
-    DATA(t13) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t13) = t5.
     me->qualified_name = t13.
-    DATA(t14) = CAST zlnt_runtime_opti_4ba3bdccd169( t6 ).
+    DATA(t14) = t6.
     me->conversion_exit = t14.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t7 ).
+    DATA(t15) = t7.
     me->ddic_name = t15.
-    DATA(t16) = CAST zlnt_runtime_opti_4ba3bdccd169( t8 ).
+    DATA(t16) = t8.
     me->description = t16.
   ENDMETHOD.
 

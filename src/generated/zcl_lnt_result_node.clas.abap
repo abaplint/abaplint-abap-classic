@@ -11,11 +11,11 @@ CLASS zcl_lnt_result_node DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_result_node IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_union_4cf1d054( i_node ).
-    DATA(t2) = CAST zcl_lnt_result_node( i_previous ).
-    DATA(t3) = CAST zif_lnt_union_4cf1d054( t1 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_previous.
+    DATA(t3) = t1.
     me->node = t3.
-    DATA(t4) = CAST zcl_lnt_result_node( t2 ).
+    DATA(t4) = t2.
     me->previous = t4.
   ENDMETHOD.
 

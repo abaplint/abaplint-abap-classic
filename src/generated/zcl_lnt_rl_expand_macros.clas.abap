@@ -105,16 +105,16 @@ CLASS zcl_lnt_rl_expand_macros IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |Styleguide|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       DATA(t33) = |Quickfix|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t34) = t28.
       DATA(t35) = |Upport|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t36) = t28.
       t27 = t36.
       t25 = t27.
     ELSE.
@@ -132,13 +132,13 @@ CLASS zcl_lnt_rl_expand_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ex_mc_ts_ex_mcr.
-    DATA(t1) = CAST zcl_lnt_expand_macros_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ex_mc_ts_ex_mcr.
-    DATA(t1) = CAST zcl_lnt_expand_macros_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/expand_macros.ts:39|.
     t2->source_location = t3.
@@ -146,7 +146,7 @@ CLASS zcl_lnt_rl_expand_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ex_mc_ts_ex_mcr.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/expand_macros.ts:43|.
     t2->source_location = t3.

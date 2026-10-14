@@ -16,14 +16,14 @@ CLASS zcl_lnt_data_reference DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_
 ENDCLASS.
 CLASS zcl_lnt_data_reference IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t3.
     DATA(t4) = abap_true.
     IF t4 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t6) = t2.
       DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -42,7 +42,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
       t3 = t12.
     ENDIF.
     super->constructor( i_input_967e = t3 ).
-    DATA(t13) = CAST zcl_lnt_abstract_type( t1 ).
+    DATA(t13) = t1.
     me->type_cba0 = t13.
   ENDMETHOD.
 
@@ -55,7 +55,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_type.
-    DATA(t1) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
+    DATA(t1) = me->type_cba0.
     result = t1.
 
   ENDMETHOD.
@@ -69,7 +69,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
 
   METHOD is_generic.
     DATA t1 TYPE abap_bool.
-    DATA(t2) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
+    DATA(t2) = me->type_cba0.
     t1 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_any_type ).
     IF t1 = abap_true.
       DATA(t3) = abap_true.

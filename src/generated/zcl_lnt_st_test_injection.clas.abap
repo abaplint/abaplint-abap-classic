@@ -29,7 +29,7 @@ CLASS zcl_lnt_st_test_injection IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384 ).
+    DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384.
     IF t10 IS BOUND.
       CREATE OBJECT t9.
       t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -41,9 +41,9 @@ CLASS zcl_lnt_st_test_injection IMPLEMENTATION.
     CREATE OBJECT t12.
     t11 = t12.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t14) = t5.
+    DATA(t15) = t8.
+    DATA(t16) = t11.
     t13 = zcl_lnt_st_combi_module=>seq( i_first = t14 i_second = t15 i_rest = t16 ).
     t4 = t13.
     IF t4 IS BOUND.

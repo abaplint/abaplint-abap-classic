@@ -15,7 +15,7 @@ CLASS zcl_lnt_edit_draft DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_edit_draft IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zcl_lnt_position.
     CLEAR t2.
     me->start = t2.
@@ -23,15 +23,15 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     CLEAR t3.
     me->end = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t5) = CAST zif_lnt_file( t1 ).
+    DATA(t5) = t1.
     t4 = t5->get_raw_rows( ).
     me->rows = t4.
-    DATA(t6) = CAST zif_lnt_file( t1 ).
+    DATA(t6) = t1.
     me->file = t6.
   ENDMETHOD.
 
   METHOD replace_128a.
-    DATA(t1) = CAST zcl_lnt_position( i_pos ).
+    DATA(t1) = i_pos.
     DATA(t2) = i_value.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/edit_helper.ts:35|.

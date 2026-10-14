@@ -11,39 +11,39 @@ CLASS zcl_lnt_class_attribute DEFINITION PUBLIC INHERITING FROM zcl_lnt_typed_id
 ENDCLASS.
 CLASS zcl_lnt_class_attribute IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA(t2) = i_visibility_5c1f.
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_meta ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( i_value ).
+    DATA(t3) = i_meta.
+    DATA(t4) = i_value.
     DATA t5 TYPE REF TO zcl_lnt_abstract_token.
     DATA t6 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t7) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t9) = CAST zcl_lnt_fi_identifier( t6 ).
+    DATA(t9) = t6.
     t8 = t9->token.
     t5 = t8.
     DATA t10 TYPE string.
     DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t12) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t12) = t1.
     t11 = t12.
     DATA t13 TYPE string.
-    DATA(t14) = CAST zcl_lnt_fi_identifier( t11 ).
+    DATA(t14) = t11.
     t13 = t14->filename.
     t10 = t13.
     DATA t15 TYPE REF TO zcl_lnt_abstract_type.
     DATA t16 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t17) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t17) = t1.
     t16 = t17.
     DATA t18 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t19) = CAST zcl_lnt_typed_identifier( t16 ).
+    DATA(t19) = t16.
     t18 = t19->type_cba0.
     t15 = t18.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t20.
     DATA(t21) = abap_true.
     IF t21 = abap_true.
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+      DATA(t22) = t3.
       t20 = t22.
     ELSE.
       DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -55,7 +55,7 @@ CLASS zcl_lnt_class_attribute IMPLEMENTATION.
     DATA(t25) = abap_true.
     IF t25 = abap_true.
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t27) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
+      DATA(t27) = t4.
       t26 = t27.
       t24 = t26.
     ELSE.

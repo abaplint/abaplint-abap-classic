@@ -19,29 +19,29 @@ CLASS zcl_lnt_parsed_data_definition DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_parsed_data_definition IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_sql_view_name ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_definition_name ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( i_sources ).
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( i_associations ).
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( i_relations ).
-    DATA(t8) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_sql_view_name.
+    DATA(t2) = i_definition_name.
+    DATA(t3) = i_description.
+    DATA(t4) = i_fields_62af.
+    DATA(t5) = i_sources.
+    DATA(t6) = i_associations.
+    DATA(t7) = i_relations.
+    DATA(t8) = i_tree.
+    DATA(t9) = t1.
     me->sql_view_name = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t10) = t2.
     me->definition_name = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t11) = t3.
     me->description = t11.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t12) = t4.
     me->fields_464c = t12.
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t13) = t5.
     me->sources = t13.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t14) = t6.
     me->associations = t14.
-    DATA(t15) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t15) = t7.
     me->relations = t15.
-    DATA(t16) = CAST zcl_lnt_expression_node( t8 ).
+    DATA(t16) = t8.
     me->tree = t16.
   ENDMETHOD.
 

@@ -340,13 +340,13 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA t49 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t49.
       t48 = t49.
-      DATA(t50) = CAST zlnt_runtime_arra_8ecd6afe19e0( t48 ).
+      DATA(t50) = t48.
       DATA(t51) = |Downport|.
       APPEND t51 TO t50->items.
-      DATA(t52) = CAST zlnt_runtime_arra_8ecd6afe19e0( t48 ).
+      DATA(t52) = t48.
       DATA(t53) = |Quickfix|.
       APPEND t53 TO t52->items.
-      DATA(t54) = CAST zlnt_runtime_arra_8ecd6afe19e0( t48 ).
+      DATA(t54) = t48.
       t47 = t54.
       t45 = t47.
     ELSE.
@@ -364,13 +364,13 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cnf_ins_src_rls_dwn_ts_dwnp.
-    DATA(t1) = CAST zcl_lnt_downport_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cnf_ins_src_rls_dwn_ts_dwnp.
-    DATA(t1) = CAST zcl_lnt_downport_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:193|.
     t2->source_location = t3.
@@ -378,7 +378,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD intl_inst_src_rls_dwnp_ts_dwnp.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:197|.
     t2->source_location = t3.
@@ -386,7 +386,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_main_for_include.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t1) = i_filename.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:206|.
     t2->source_location = t3.
@@ -394,7 +394,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_error.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_high_obj ).
+    DATA(t1) = i_high_obj.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:217|.
     t2->source_location = t3.
@@ -402,7 +402,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_inst_src_rls_dwnpr_ts_dwnpr.
-    DATA(t1) = CAST zif_lnt_object( i_low_obj ).
+    DATA(t1) = i_low_obj.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:232|.
     t2->source_location = t3.
@@ -417,11 +417,11 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_statement.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t5) = CAST zcl_lnt_abap_file( i_high_file ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
+    DATA(t5) = i_high_file.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/downport.ts:387|.
     t6->source_location = t7.
@@ -429,10 +429,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_sql_move_into.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_4c7a ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_4c7a.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:668|.
     t5->source_location = t6.
@@ -440,10 +440,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_sql_extras.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:713|.
     t5->source_location = t6.
@@ -451,10 +451,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_select_existence.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:793|.
     t5->source_location = t6.
@@ -462,10 +462,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_select_inline.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:824|.
     t5->source_location = t6.
@@ -473,10 +473,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_select_fields.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_4c7a ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_4c7a.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:846|.
     t5->source_location = t6.
@@ -484,10 +484,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_select_single_inline.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_4c7a ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_4c7a.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:870|.
     t5->source_location = t6.
@@ -495,10 +495,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_select_table_inline.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:939|.
     t5->source_location = t6.
@@ -506,9 +506,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD anonymous_table_type.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1017|.
     t4->source_location = t5.
@@ -516,9 +516,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_message.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1036|.
     t4->source_location = t5.
@@ -526,9 +526,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_append_expression.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1067|.
     t4->source_location = t5.
@@ -536,9 +536,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_read_table.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1094|.
     t4->source_location = t5.
@@ -546,9 +546,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_message_source.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1113|.
     t4->source_location = t5.
@@ -556,9 +556,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_insert_expression.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1133|.
     t4->source_location = t5.
@@ -566,10 +566,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_table_expression.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:1160|.
     t5->source_location = t6.
@@ -577,7 +577,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD table_condition.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_table_expression ).
+    DATA(t1) = i_table_expression.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:1224|.
     t2->source_location = t3.
@@ -585,10 +585,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD otln_tbl_exprssn_ky_bltn.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:1261|.
     t5->source_location = t6.
@@ -596,9 +596,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD builtin_return_type.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_source_75cf ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_source_75cf.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1304|.
     t4->source_location = t5.
@@ -606,8 +606,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_catch_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:1322|.
     t3->source_location = t4.
@@ -615,8 +615,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_get_reference_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:1355|.
     t3->source_location = t4.
@@ -624,9 +624,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_data_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1381|.
     t4->source_location = t5.
@@ -634,8 +634,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD partially_implemented.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:1440|.
     t3->source_location = t4.
@@ -643,9 +643,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD raise_exception.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1461|.
     t4->source_location = t5.
@@ -653,9 +653,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD empty_key.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_node.
+    DATA(t3) = i_low_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1558|.
     t4->source_location = t5.
@@ -663,9 +663,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD call_function_parameter_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1585|.
     t4->source_location = t5.
@@ -673,8 +673,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_corresponding_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:1617|.
     t3->source_location = t4.
@@ -682,9 +682,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_ref_simple.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1653|.
     t4->source_location = t5.
@@ -692,10 +692,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_loop_group.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zcl_lnt_abap_file( i_high_file ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_high_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:1704|.
     t5->source_location = t6.
@@ -703,10 +703,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_ref.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:1829|.
     t5->source_location = t6.
@@ -714,9 +714,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD assign_with_table.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1856|.
     t4->source_location = t5.
@@ -724,10 +724,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD assign_component.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:1905|.
     t5->source_location = t6.
@@ -735,9 +735,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD move_with_simple_value.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:1934|.
     t4->source_location = t5.
@@ -745,11 +745,11 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD downport_enum.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_51a5 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_4c7a ).
-    DATA(t5) = CAST zcl_lnt_abap_file( i_high_file ).
+    DATA(t1) = i_low_51a5.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_4c7a.
+    DATA(t5) = i_high_file.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/downport.ts:1987|.
     t6->source_location = t7.
@@ -757,10 +757,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD move_with_table_target.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2025|.
     t5->source_location = t6.
@@ -768,9 +768,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD move_with_operator.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:2075|.
     t4->source_location = t5.
@@ -778,10 +778,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD string_template_alpha.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2124|.
     t5->source_location = t6.
@@ -789,10 +789,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_loop_input.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2168|.
     t5->source_location = t6.
@@ -800,9 +800,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_loop_target.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:2194|.
     t4->source_location = t5.
@@ -810,10 +810,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_for.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_for_loop ).
+    DATA(t1) = i_for_loop.
     DATA(t2) = i_indentation.
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2258|.
     t5->source_location = t6.
@@ -821,10 +821,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_filter.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2390|.
     t5->source_location = t6.
@@ -832,10 +832,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_switch.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2438|.
     t5->source_location = t6.
@@ -843,10 +843,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_reduce.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2514|.
     t5->source_location = t6.
@@ -854,10 +854,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_corresponding.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2611|.
     t5->source_location = t6.
@@ -865,10 +865,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_value.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2658|.
     t5->source_location = t6.
@@ -876,10 +876,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_let.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = i_indentation.
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_low_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2808|.
     t5->source_location = t6.
@@ -887,11 +887,11 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rename_variable.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_spag ).
+    DATA(t1) = i_spag.
     DATA(t2) = i_name.
-    DATA(t3) = CAST zcl_lnt_position( i_pos ).
-    DATA(t4) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t5) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t3) = i_pos.
+    DATA(t4) = i_low_file.
+    DATA(t5) = i_high_syntax_2023.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/downport.ts:2846|.
     t6->source_location = t7.
@@ -899,10 +899,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_type.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_i ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( i_ref ).
+    DATA(t1) = i_i.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_ref.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2853|.
     t5->source_location = t6.
@@ -910,10 +910,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_fs.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2892|.
     t5->source_location = t6.
@@ -921,9 +921,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_data.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:2935|.
     t4->source_location = t5.
@@ -931,10 +931,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_cond.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:2985|.
     t5->source_location = t6.
@@ -942,11 +942,11 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_cond_body.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_body ).
+    DATA(t1) = i_body.
     DATA(t2) = i_unique_name.
     DATA(t3) = i_indent.
-    DATA(t4) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t5) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t4) = i_low_file.
+    DATA(t5) = i_high_syntax_2023.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/downport.ts:3030|.
     t6->source_location = t7.
@@ -954,10 +954,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_conv.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3080|.
     t5->source_location = t6.
@@ -965,8 +965,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_row_type_of.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_expression_node( i_source_75cf ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_source_75cf.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3123|.
     t3->source_location = t4.
@@ -974,10 +974,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD outline_cast.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3134|.
     t5->source_location = t6.
@@ -985,10 +985,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD unique_name.
-    DATA(t1) = CAST zcl_lnt_position( i_position_a3fd ).
+    DATA(t1) = i_position_a3fd.
     DATA(t2) = i_filename.
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( i_field_symbol_275d ).
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_field_symbol_275d.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3161|.
     t5->source_location = t6.
@@ -996,7 +996,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD exists_recursive.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_spag ).
+    DATA(t1) = i_spag.
     DATA(t2) = i_name.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3189|.
@@ -1005,8 +1005,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD strp_cll_trnsctn_athrty_chck.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t1) = i_high.
+    DATA(t2) = i_low_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3206|.
     t3->source_location = t4.
@@ -1014,9 +1014,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_xsd_bool.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:3231|.
     t4->source_location = t5.
@@ -1024,8 +1024,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_method_call_expression.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_token.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3265|.
     t3->source_location = t4.
@@ -1033,10 +1033,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_method_conditional.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3274|.
     t5->source_location = t6.
@@ -1044,9 +1044,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_reference_1fe8.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_4c7a ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_4c7a.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:3314|.
     t4->source_location = t5.
@@ -1054,9 +1054,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_contains.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/downport.ts:3337|.
     t4->source_location = t5.
@@ -1064,10 +1064,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD replace_line_functions.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zcl_lnt_abap_file( i_high_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_low_file.
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_high_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3382|.
     t5->source_location = t6.
@@ -1075,8 +1075,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_start_of_if.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_high_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_high_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3446|.
     t3->source_location = t4.
@@ -1084,10 +1084,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD new_to_create_object.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_low_a740 ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_high ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_low_file ).
-    DATA(t4) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
+    DATA(t1) = i_low_a740.
+    DATA(t2) = i_high.
+    DATA(t3) = i_low_file.
+    DATA(t4) = i_high_syntax_2023.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3460|.
     t5->source_location = t6.
@@ -1095,10 +1095,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD new_parameters.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_found ).
+    DATA(t1) = i_found.
     DATA(t2) = i_name.
-    DATA(t3) = CAST zcl_lnt_isyntax_result( i_high_syntax_2023 ).
-    DATA(t4) = CAST zcl_lnt_abap_file( i_low_file ).
+    DATA(t3) = i_high_syntax_2023.
+    DATA(t4) = i_low_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/downport.ts:3520|.
     t5->source_location = t6.
@@ -1106,8 +1106,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_constructor.
-    DATA(t1) = CAST zif_lnt_class_definition( i_cdef ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_spag ).
+    DATA(t1) = i_cdef.
+    DATA(t2) = i_spag.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/downport.ts:3574|.
     t3->source_location = t4.
@@ -1125,7 +1125,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:193|.
     t2->source_location = t3.
@@ -1133,7 +1133,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:197|.
     t2->source_location = t3.
@@ -1141,7 +1141,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/downport.ts:232|.
     t2->source_location = t3.

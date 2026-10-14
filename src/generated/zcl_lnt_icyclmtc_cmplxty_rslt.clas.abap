@@ -13,13 +13,13 @@ CLASS zcl_lnt_icyclmtc_cmplxty_rslt DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_icyclmtc_cmplxty_rslt IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_position( i_pos ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_pos.
     DATA(t3) = i_name.
     DATA(t4) = i_count.
-    DATA(t5) = CAST zif_lnt_file( t1 ).
+    DATA(t5) = t1.
     me->file = t5.
-    DATA(t6) = CAST zcl_lnt_position( t2 ).
+    DATA(t6) = t2.
     me->pos = t6.
     DATA(t7) = t3.
     me->name = t7.

@@ -48,9 +48,9 @@ CLASS zcl_lnt_exit IMPLEMENTATION.
     CREATE OBJECT t17.
     t16 = t17.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t19) = CAST zlnt_runtime_dyna_a429568d5be8( t10 ).
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t13 ).
-    DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+    DATA(t19) = t10.
+    DATA(t20) = t13.
+    DATA(t21) = t16.
     t18 = zcl_lnt_st_combi_module=>alt( i_first = t19 i_second = t20 i_rest = t21 ).
     t9 = t18.
     IF t9 IS BOUND.
@@ -74,9 +74,9 @@ CLASS zcl_lnt_exit IMPLEMENTATION.
     CREATE OBJECT t25.
     t24 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t27) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
+    DATA(t27) = t2.
+    DATA(t28) = t5.
+    DATA(t29) = t24.
     t26 = zcl_lnt_st_combi_module=>seq( i_first = t27 i_second = t28 i_rest = t29 ).
     t1 = t26.
     result = t1.

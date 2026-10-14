@@ -19,30 +19,30 @@ CLASS zcl_lnt_shape_2cd2650e DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_2cd2650e IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_table_category ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_data_class ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_delivery_class ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_size_category ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_enhancement_category ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( i_secondary_indexes ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_table_category.
+    DATA(t2) = i_data_class.
+    DATA(t3) = i_delivery_class.
+    DATA(t4) = i_size_category.
+    DATA(t5) = i_enhancement_category.
+    DATA(t6) = i_description.
+    DATA(t7) = i_secondary_indexes.
+    DATA(t8) = i_fields_62af.
+    DATA(t9) = t1.
     me->table_category = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t10) = t2.
     me->data_class = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t11) = t3.
     me->delivery_class = t11.
-    DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t12) = t4.
     me->size_category = t12.
-    DATA(t13) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t13) = t5.
     me->enhancement_category = t13.
-    DATA(t14) = CAST zlnt_runtime_opti_4ba3bdccd169( t6 ).
+    DATA(t14) = t6.
     me->description = t14.
-    DATA(t15) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t15) = t7.
     me->secondary_indexes = t15.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t17) = t8.
     t16 = t17.
     me->fields_464c = t16.
   ENDMETHOD.

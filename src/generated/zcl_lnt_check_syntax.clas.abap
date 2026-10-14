@@ -46,10 +46,10 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Syntax|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -67,22 +67,22 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_sy_ts_ch_syn.
-    DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD in_in_sr_rl_chc_syn_ts_chc_syn.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
-    DATA(t3) = CAST zcl_lnt_check_syntax( me ).
+    DATA(t3) = me.
     result = t3.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_sy_ts_ch_syn.
-    DATA(t1) = CAST zcl_lnt_check_syntax_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_syntax.ts:36|.
     t2->source_location = t3.
@@ -90,10 +90,10 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
-    DATA(t4) = CAST zif_lnt_object( t1 ).
+    DATA(t4) = t1.
     t3 = xsdbool( t4 IS BOUND AND t4 IS INSTANCE OF zcl_lnt_abap_object ).
     t2 = xsdbool( t3 = abap_false ).
     IF t2 = abap_true.
@@ -106,9 +106,9 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_isyntax_result.
     DATA t9 TYPE REF TO zcl_lnt_syntax_logic.
-    DATA(t10) = CAST zif_lnt_registry( me->reg ).
+    DATA(t10) = me->reg.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t12) = CAST zif_lnt_object( t1 ).
+    DATA(t12) = t1.
     DATA t13 TYPE REF TO object.
     t13 = t12.
     t11 ?= t13.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     DATA(t14) = VALUE abap_bool( ).
     DATA(t15) = VALUE abap_bool( ).
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t17) = CAST zcl_lnt_check_syntax_conf( me->conf ).
+    DATA(t17) = me->conf.
     t16 = t17->severity.
     IF t16 IS BOUND.
       IF t16->has = abap_true.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE string.
       DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t21) = CAST zcl_lnt_check_syntax_conf( me->conf ).
+      DATA(t21) = me->conf.
       t20 = t21->severity.
       t19 = t20->value.
       DATA(t22) = |Error|.
@@ -142,11 +142,11 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+      DATA(t25) = t6.
       t24 = t25.
       DATA t26 TYPE i.
       DATA t27 TYPE i.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
+      DATA(t28) = t24.
       t27 = lines( t28->items ).
       t26 = t27.
       DATA t29 TYPE i.
@@ -163,7 +163,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
         DATA t34 TYPE REF TO zcl_lnt_issue.
         DATA t35 TYPE REF TO zcl_lnt_issue.
         DATA t36 TYPE REF TO zcl_lnt_issue.
-        DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
+        DATA(t37) = t24.
         DATA(t38) = t29.
         DATA t39 TYPE REF TO object.
         t39 = t37->get( p0 = t38 ).
@@ -175,20 +175,20 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
         t40 = t41.
         DATA t42 TYPE REF TO zcl_lnt_iissue_data.
         DATA t43 TYPE REF TO zcl_lnt_iissue_data.
-        DATA(t44) = CAST zcl_lnt_issue( t34 ).
+        DATA(t44) = t34.
         t43 = t44->get_data( ).
         t42 = t43.
-        DATA(t45) = CAST zcl_lnt_iissue_data( t42 ).
+        DATA(t45) = t42.
         DATA t46 TYPE string.
         DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t48) = CAST zcl_lnt_check_syntax_conf( me->conf ).
+        DATA(t48) = me->conf.
         t47 = t48->severity.
         t46 = t47->value.
         t45->severity = t46.
-        DATA(t49) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+        DATA(t49) = t6.
         DATA(t50) = t40.
         DATA t51 TYPE REF TO zcl_lnt_issue.
-        DATA(t52) = CAST zcl_lnt_iissue_data( t42 ).
+        DATA(t52) = t42.
         t51 = NEW zcl_lnt_issue( i_data_dc02 = t52 ).
         t50 = t50 + 1.
         DATA t53 TYPE REF TO object.
@@ -208,7 +208,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
       CLEAR t57.
       t23 = t57.
     ENDIF.
-    DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t58) = t6.
     result = t58.
 
   ENDMETHOD.
@@ -224,16 +224,16 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_check_syntax.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->in_in_sr_rl_chc_syn_ts_chc_syn( i_reg_f149 = t3 ).
     result = t2.
 
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_syntax.ts:36|.
     t2->source_location = t3.

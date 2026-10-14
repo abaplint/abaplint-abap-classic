@@ -72,10 +72,10 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t21.
       t20 = t21.
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t22) = t20.
       DATA(t23) = |SingleFile|.
       APPEND t23 TO t22->items.
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t20 ).
+      DATA(t24) = t20.
       t19 = t24.
       t17 = t19.
     ELSE.
@@ -93,13 +93,13 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_rd_st_tm_ts_rd_st_tm.
-    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_rd_st_tm_ts_rd_st_tm.
-    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/reduce_string_templates.ts:31|.
     t2->source_location = t3.
@@ -107,8 +107,8 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_rd_st_tm_ts_rd_st_tm.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_ac26 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_ac26.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/reduce_string_templates.ts:35|.
     t3->source_location = t4.

@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_iscope_variable IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_typed_identifier( i_identifier ).
+    DATA(t2) = i_identifier.
     DATA(t3) = t1.
     me->name = t3.
-    DATA(t4) = CAST zcl_lnt_typed_identifier( t2 ).
+    DATA(t4) = t2.
     me->identifier = t4.
   ENDMETHOD.
 

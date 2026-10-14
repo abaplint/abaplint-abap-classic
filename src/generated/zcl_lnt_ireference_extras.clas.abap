@@ -12,14 +12,14 @@ CLASS zcl_lnt_ireference_extras DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_ireference_extras IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_oo_name ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_oo_type ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_found_qualified ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_oo_name.
+    DATA(t2) = i_oo_type.
+    DATA(t3) = i_found_qualified.
+    DATA(t4) = t1.
     me->oo_name = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->oo_type = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t6) = t3.
     me->found_qualified = t6.
   ENDMETHOD.
 

@@ -145,13 +145,13 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
       DATA t37 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t37.
       t36 = t37.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t36 ).
+      DATA(t38) = t36.
       DATA(t39) = |Styleguide|.
       APPEND t39 TO t38->items.
-      DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t36 ).
+      DATA(t40) = t36.
       DATA(t41) = |SingleFile|.
       APPEND t41 TO t40->items.
-      DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t36 ).
+      DATA(t42) = t36.
       t35 = t42.
       t33 = t35.
     ELSE.
@@ -169,13 +169,13 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_om_rc_ts_om_rcv.
-    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_om_rc_ts_om_rcv.
-    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_receiving.ts:43|.
     t2->source_location = t3.
@@ -183,7 +183,7 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_om_rc_ts_om_rcv.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/omit_receiving.ts:47|.
     t2->source_location = t3.

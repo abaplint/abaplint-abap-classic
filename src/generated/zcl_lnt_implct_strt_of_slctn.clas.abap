@@ -98,10 +98,10 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       t26 = t31.
       t24 = t26.
     ELSE.
@@ -119,13 +119,13 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_i_s_o_s_t_i_st_of_sl.
-    DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_i_s_o_s_t_i_st_of_sl.
-    DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/implicit_start_of_selection.ts:39|.
     t2->source_location = t3.
@@ -133,8 +133,8 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/implicit_start_of_selection.ts:43|.
     t3->source_location = t4.

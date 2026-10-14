@@ -51,9 +51,9 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD pr_in_sr_ob_prx_obj_ts_prx_obj.
-    DATA(t1) = CAST zcl_lnt_abap_release( i_release_2099 ).
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_14ec ).
-    DATA(t3) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_release_2099.
+    DATA(t2) = i_global_macros_14ec.
+    DATA(t3) = i_reg_f149.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/objects/proxy_object.ts:53|.
     t4->source_location = t5.

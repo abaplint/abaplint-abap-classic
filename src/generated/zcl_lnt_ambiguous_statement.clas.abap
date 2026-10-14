@@ -105,10 +105,10 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |SingleFile|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       t25 = t30.
       t23 = t25.
     ELSE.
@@ -133,13 +133,13 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_am_st_ts_am_stt.
-    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_am_st_ts_am_stt.
-    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/ambiguous_statement.ts:45|.
     t2->source_location = t3.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_am_st_ts_am_stt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/ambiguous_statement.ts:49|.
     t2->source_location = t3.
@@ -155,7 +155,7 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_bare_statement.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_st ).
+    DATA(t1) = i_st.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/ambiguous_statement.ts:83|.
     t2->source_location = t3.
@@ -163,9 +163,9 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD try_match.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_st ).
-    DATA(t2) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( i_type1 ).
+    DATA(t1) = i_st.
+    DATA(t2) = i_reg_f149.
+    DATA(t3) = i_type1.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/ambiguous_statement.ts:89|.
     t4->source_location = t5.

@@ -13,16 +13,16 @@ CLASS zcl_lnt_syntax_input_module DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_syntax_input_module IMPLEMENTATION.
   METHOD syntax_issue.
-    DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_input_967e.
+    DATA(t2) = i_token.
     DATA(t3) = i_message_26cb.
-    DATA(t4) = CAST zlnt_runtime_map__4fdf767b61ba( i_fix ).
+    DATA(t4) = i_fix.
     DATA t5 TYPE REF TO zcl_lnt_issue.
     CLEAR t5.
     DATA t6 TYPE string.
-    DATA(t7) = CAST zcl_lnt_syntax_input( t1 ).
+    DATA(t7) = t1.
     t6 = t7->filename.
-    DATA(t8) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t8) = t2.
     DATA(t9) = t3.
     DATA(t10) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
     DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -39,7 +39,7 @@ CLASS zcl_lnt_syntax_input_module IMPLEMENTATION.
       CLEAR t15.
       t11 = t15.
     ENDIF.
-    DATA(t16) = CAST zlnt_runtime_map__4fdf767b61ba( t4 ).
+    DATA(t16) = t4.
     t5 = zcl_lnt_issue=>at_token_filename( i_filename = t6 i_token = t8 i_message_26cb = t9 i_key = t10 i_severity = t11 i_fix = t16 ).
     result = t5.
 

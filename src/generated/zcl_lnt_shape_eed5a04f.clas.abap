@@ -12,11 +12,11 @@ ENDCLASS.
 CLASS zcl_lnt_shape_eed5a04f IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_uri.
-    DATA(t2) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t2) = i_range.
     DATA(t3) = t1.
     me->uri = t3.
     DATA t4 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t5) = CAST zcl_lnt_shape_9ead17bd( t2 ).
+    DATA(t5) = t2.
     t4 = t5.
     me->range = t4.
   ENDMETHOD.

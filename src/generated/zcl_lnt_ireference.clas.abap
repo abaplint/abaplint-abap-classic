@@ -13,17 +13,17 @@ CLASS zcl_lnt_ireference DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_ireference IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_position_a3fd ).
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_resolved ).
+    DATA(t1) = i_position_a3fd.
+    DATA(t2) = i_resolved.
     DATA(t3) = i_reference_type.
-    DATA(t4) = CAST zcl_lnt_ireference_extras( i_extra ).
-    DATA(t5) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t4) = i_extra.
+    DATA(t5) = t1.
     me->position_7b94 = t5.
-    DATA(t6) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t6) = t2.
     me->resolved = t6.
     DATA(t7) = t3.
     me->reference_type = t7.
-    DATA(t8) = CAST zcl_lnt_ireference_extras( t4 ).
+    DATA(t8) = t4.
     me->extra = t8.
   ENDMETHOD.
 

@@ -26,7 +26,7 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t7.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     IF t8 IS BOUND.
       CREATE OBJECT t7.
       t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -38,9 +38,9 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     CREATE OBJECT t10.
     t9 = t10.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t12) = t3.
+    DATA(t13) = t6.
+    DATA(t14) = t9.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t13 i_rest = t14 ).
     t2 = t11.
     t1 = t2.
@@ -59,7 +59,7 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     CLEAR t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t21.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     IF t22 IS BOUND.
       CREATE OBJECT t21.
       t21->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -70,24 +70,24 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t24.
     t23 = t24.
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t23 ).
+    DATA(t25) = t23.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t26.
-    DATA(t27) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t27) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     IF t27 IS BOUND.
       CREATE OBJECT t26.
       t26->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t26->cval = t27.
     ENDIF.
     APPEND t26 TO t25->items.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t23 ).
+    DATA(t28) = t23.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
     DATA t30 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t30.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t31.
-    DATA(t32) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t32) = t1.
     IF t32 IS BOUND.
       CREATE OBJECT t31.
       t31->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -105,9 +105,9 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     ENDIF.
     APPEND t29 TO t28->items.
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t17 ).
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t20 ).
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t23 ).
+    DATA(t36) = t17.
+    DATA(t37) = t20.
+    DATA(t38) = t23.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t16 = t35.
     t15 = t16.
@@ -116,7 +116,7 @@ CLASS zcl_lnt_verification_message IMPLEMENTATION.
     DATA(t40) = |Cloud|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t41.
-    DATA(t42) = CAST zif_lnt_statement_runnable( t15 ).
+    DATA(t42) = t15.
     IF t42 IS BOUND.
       CREATE OBJECT t41.
       t41->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

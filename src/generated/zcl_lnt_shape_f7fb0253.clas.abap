@@ -11,11 +11,11 @@ CLASS zcl_lnt_shape_f7fb0253 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_f7fb0253 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_overwrite ).
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_ignore_if_exists ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t1) = i_overwrite.
+    DATA(t2) = i_ignore_if_exists.
+    DATA(t3) = t1.
     me->overwrite = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( t2 ).
+    DATA(t4) = t2.
     me->ignore_if_exists = t4.
   ENDMETHOD.
 

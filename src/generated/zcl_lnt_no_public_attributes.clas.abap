@@ -121,13 +121,13 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t32) = t30.
       DATA(t33) = |Styleguide|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t34) = t30.
       DATA(t35) = |SingleFile|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t36) = t30.
       t29 = t36.
       t27 = t29.
     ELSE.
@@ -153,13 +153,13 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_sr_rl_n_pb_at_ts_n_pb_at.
-    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_sr_rl_n_pb_at_ts_n_pb_at.
-    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_public_attributes.ts:51|.
     t2->source_location = t3.
@@ -167,8 +167,8 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/no_public_attributes.ts:55|.
     t3->source_location = t4.
@@ -176,7 +176,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_all_public_attributes.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_public_attributes.ts:61|.
     t2->source_location = t3.
@@ -184,7 +184,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_all_pblc_clss_attrbts.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_public_attributes.ts:68|.
     t2->source_location = t3.
@@ -199,7 +199,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_all_issues.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_attributes ).
+    DATA(t1) = i_attributes.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_public_attributes.ts:88|.
     t2->source_location = t3.

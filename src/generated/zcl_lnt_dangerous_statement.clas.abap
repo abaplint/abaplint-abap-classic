@@ -86,13 +86,13 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |SingleFile|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       DATA(t29) = |Security|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t30) = t24.
       t23 = t30.
       t21 = t23.
     ELSE.
@@ -118,13 +118,13 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_dn_st_ts_dn_stt.
-    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_dn_st_ts_dn_stt.
-    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dangerous_statement.ts:59|.
     t2->source_location = t3.
@@ -132,7 +132,7 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_dn_st_ts_dn_stt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dangerous_statement.ts:63|.
     t2->source_location = t3.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_dynamic_sql.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement_node ).
+    DATA(t1) = i_statement_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/dangerous_statement.ts:123|.
     t2->source_location = t3.

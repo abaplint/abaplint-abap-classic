@@ -99,10 +99,10 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |Quickfix|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       t24 = t29.
       t22 = t24.
     ELSE.
@@ -120,13 +120,13 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_mc_ts_un_mcr.
-    DATA(t1) = CAST zcl_lnt_unused_macros_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_mc_ts_un_mcr.
-    DATA(t1) = CAST zcl_lnt_unused_macros_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_macros.ts:41|.
     t2->source_location = t3.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_uns_mcr_ts_uns_mcr.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_macros.ts:48|.
     t2->source_location = t3.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_macros.ts:53|.
     t2->source_location = t3.
@@ -160,7 +160,7 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_macros.ts:41|.
     t2->source_location = t3.
@@ -168,7 +168,7 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_macros.ts:48|.
     t2->source_location = t3.

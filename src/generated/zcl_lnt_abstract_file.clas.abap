@@ -342,14 +342,14 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t14) = t1.
     DATA(t15) = 1.
     t13 = t14->get( p0 = t15 ).
     t12 = t13.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t16.
     DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
+    DATA(t18) = t12.
     IF t18 IS INITIAL.
       t17 = abap_true.
     ELSEIF t18->has = abap_false.
@@ -362,7 +362,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ELSE.
       DATA t20 TYPE string.
       DATA t21 TYPE string.
-      DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
+      DATA(t22) = t12.
       t21 = t22->value.
       DATA(t23) = strlen( t21 ).
       t20 = t21.
@@ -423,10 +423,10 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t1 = t2.
-    DATA(t11) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t11) = t1.
     DATA t12 TYPE string.
     DATA(t13) = VALUE string( ).
-    DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t14) = t1.
     READ TABLE t14->items INDEX 1 INTO t13.
     DATA t15 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t15.
@@ -442,10 +442,10 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       APPEND t20 TO t11->items.
     ENDWHILE.
     MODIFY t11->items FROM t12 INDEX 1.
-    DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t21) = t1.
     DATA t22 TYPE string.
     DATA(t23) = VALUE string( ).
-    DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t24) = t1.
     READ TABLE t24->items INDEX 1 INTO t23.
     DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t25.
@@ -461,10 +461,10 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       APPEND t30 TO t21->items.
     ENDWHILE.
     MODIFY t21->items FROM t22 INDEX 1.
-    DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t31) = t1.
     DATA t32 TYPE string.
     DATA(t33) = VALUE string( ).
-    DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t34) = t1.
     READ TABLE t34->items INDEX 1 INTO t33.
     DATA t35 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t35.
@@ -480,11 +480,11 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       APPEND t40 TO t31->items.
     ENDWHILE.
     MODIFY t31->items FROM t32 INDEX 1.
-    DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t41) = t1.
     DATA(t42) = VALUE string( ).
     DATA t43 TYPE string.
     DATA(t44) = VALUE string( ).
-    DATA(t45) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t45) = t1.
     READ TABLE t45->items INDEX 1 INTO t44.
     DATA(t46) = strlen( t44 ).
     t43 = t44.
@@ -507,10 +507,10 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       APPEND t52 TO t41->items.
     ENDWHILE.
     MODIFY t41->items FROM t42 INDEX 1.
-    DATA(t53) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t53) = t1.
     DATA t54 TYPE string.
     DATA(t55) = VALUE string( ).
-    DATA(t56) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t56) = t1.
     READ TABLE t56->items INDEX 1 INTO t55.
     DATA(t57) = |(|.
     DATA(t58) = |/|.
@@ -523,10 +523,10 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       APPEND t60 TO t53->items.
     ENDWHILE.
     MODIFY t53->items FROM t54 INDEX 1.
-    DATA(t61) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t61) = t1.
     DATA t62 TYPE string.
     DATA(t63) = VALUE string( ).
-    DATA(t64) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t64) = t1.
     READ TABLE t64->items INDEX 1 INTO t63.
     DATA(t65) = |)|.
     DATA(t66) = |/|.
@@ -540,7 +540,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ENDWHILE.
     MODIFY t61->items FROM t62 INDEX 1.
     DATA(t69) = VALUE string( ).
-    DATA(t70) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t70) = t1.
     READ TABLE t70->items INDEX 1 INTO t69.
     result = t69.
 

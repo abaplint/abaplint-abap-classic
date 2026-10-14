@@ -12,14 +12,14 @@ CLASS zcl_lnt_iparameter_data DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iparameter_data IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_node( i_left ).
-    DATA(t2) = CAST zcl_lnt_position( i_eq ).
-    DATA(t3) = CAST zif_lnt_node( i_right ).
-    DATA(t4) = CAST zif_lnt_node( t1 ).
+    DATA(t1) = i_left.
+    DATA(t2) = i_eq.
+    DATA(t3) = i_right.
+    DATA(t4) = t1.
     me->left = t4.
-    DATA(t5) = CAST zcl_lnt_position( t2 ).
+    DATA(t5) = t2.
     me->eq = t5.
-    DATA(t6) = CAST zif_lnt_node( t3 ).
+    DATA(t6) = t3.
     me->right = t6.
   ENDMETHOD.
 

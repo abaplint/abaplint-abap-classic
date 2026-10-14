@@ -80,10 +80,10 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t22.
       t21 = t22.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t23) = t21.
       DATA(t24) = |SingleFile|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t25) = t21.
       t20 = t25.
       t18 = t20.
     ELSE.
@@ -108,13 +108,13 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_cd_ts_unr_cd.
-    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_cd_ts_unr_cd.
-    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unreachable_code.ts:36|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_un_cd_ts_unr_cd.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unreachable_code.ts:40|.
     t2->source_location = t3.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_exit.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_n_0c97 ).
+    DATA(t1) = i_n_0c97.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unreachable_code.ts:67|.
     t2->source_location = t3.
@@ -138,7 +138,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_structure.
-    DATA(t1) = CAST zif_lnt_statement( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unreachable_code.ts:87|.
     t2->source_location = t3.

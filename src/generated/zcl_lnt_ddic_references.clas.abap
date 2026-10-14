@@ -22,21 +22,21 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_map__1966acad182d.
     DATA(t3) = NEW zlnt_runtime_map__1966acad182d( ).
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_map__1966acad182d( t2 ).
+    DATA(t4) = t2.
     t1 = t4.
     me->name_type_index = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__1966acad182d.
     DATA t6 TYPE REF TO zlnt_runtime_map__1966acad182d.
     DATA(t7) = NEW zlnt_runtime_map__1966acad182d( ).
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_map__1966acad182d( t6 ).
+    DATA(t8) = t6.
     t5 = t8.
     me->filename_index = t5.
   ENDMETHOD.
 
   METHOD set_using.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_using ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_using.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/ddic_references.ts:8|.
     t3->source_location = t4.
@@ -44,18 +44,18 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_using.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
-    DATA(t2) = CAST zcl_lnt_iobject_and_token( i_using ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_using.
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zcl_lnt_iobject_and_token.
-    DATA(t5) = CAST zcl_lnt_iobject_and_token( t2 ).
+    DATA(t5) = t2.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t7.
     t6 = t7.
     DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = CAST zcl_lnt_iobject_and_token( t4 ).
+    DATA(t9) = t4.
     IF t9 IS INITIAL.
       t8 = abap_true.
     ENDIF.
@@ -66,7 +66,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA(t10) = VALUE string( ).
     DATA t11 TYPE string.
     DATA t12 TYPE string.
-    DATA(t13) = CAST zif_lnt_object( t1 ).
+    DATA(t13) = t1.
     t12 = t13->get_name( ).
     DATA(t14) = strlen( t12 ).
     t11 = t12.
@@ -78,13 +78,13 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t10 = t11.
     DATA t15 TYPE string.
     DATA t16 TYPE string.
-    DATA(t17) = CAST zif_lnt_object( t1 ).
+    DATA(t17) = t1.
     t16 = t17->get_type( ).
     t15 = t16.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t20 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t21) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t21) = me->name_type_index.
     DATA(t22) = t10.
     t20 = t21->get( p0 = t22 ).
     t19 = t20.
@@ -93,20 +93,20 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t24.
     t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = CAST zlnt_runtime_map__8a73eae8287f( t19 ).
+    DATA(t26) = t19.
     IF t26 IS INITIAL.
       t25 = abap_true.
     ENDIF.
     t18 = t25.
     IF t18 = abap_true.
       DATA t27 TYPE REF TO zlnt_runtime_map__1966acad182d.
-      DATA(t28) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+      DATA(t28) = me->name_type_index.
       DATA(t29) = t10.
       DATA t30 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t31 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA(t32) = NEW zlnt_runtime_map__8a73eae8287f( ).
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_map__8a73eae8287f( t31 ).
+      DATA(t33) = t31.
       t30 = t33.
       t27 = t28->set( p0 = t29 p1 = t30 ).
     ENDIF.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t37 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t38 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t39) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t39) = me->name_type_index.
     DATA(t40) = t10.
     t38 = t39->get( p0 = t40 ).
     t37 = t38.
@@ -127,7 +127,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t43.
     t42 = t43.
     DATA(t44) = VALUE abap_bool( ).
-    DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t35 ).
+    DATA(t45) = t35.
     IF t45 IS INITIAL.
       t44 = abap_true.
     ENDIF.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t46 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t47 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t48 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t49) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+      DATA(t49) = me->name_type_index.
       DATA(t50) = t10.
       t48 = t49->get( p0 = t50 ).
       t47 = t48.
@@ -149,7 +149,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t55 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t56 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t57) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t57) = me->name_type_index.
     DATA(t58) = t10.
     t56 = t57->get( p0 = t58 ).
     t55 = t56.
@@ -157,14 +157,14 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t54 = t55->get( p0 = t59 ).
     t53 = t54.
     DATA t60 TYPE REF TO zcl_lnt_iobject_and_token.
-    DATA(t61) = CAST zcl_lnt_iobject_and_token( t2 ).
+    DATA(t61) = t2.
     t60 = t61.
     APPEND t60 TO t53->items.
     DATA(t62) = VALUE abap_bool( ).
     DATA(t63) = VALUE abap_bool( ).
     DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t65 TYPE REF TO zcl_lnt_iobject_and_token.
-    DATA(t66) = CAST zcl_lnt_iobject_and_token( t2 ).
+    DATA(t66) = t2.
     t65 = t66.
     t64 = t65->filename.
     IF t64 IS BOUND.
@@ -177,7 +177,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t67 TYPE abap_bool.
       DATA t68 TYPE REF TO zcl_lnt_abstract_token.
       DATA t69 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t70) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t70) = t2.
       t69 = t70.
       t68 = t69->token.
       t67 = xsdbool( t68 IS BOUND ).
@@ -187,11 +187,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA(t71) = VALUE abap_bool( ).
       DATA t72 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t73 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t74) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+      DATA(t74) = me->filename_index.
       DATA t75 TYPE string.
       DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t77 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t78) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t78) = t2.
       t77 = t78.
       t76 = t77->filename.
       t75 = t76->value.
@@ -202,18 +202,18 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       CLEAR t80.
       t79 = t80.
       DATA(t81) = VALUE abap_bool( ).
-      DATA(t82) = CAST zlnt_runtime_map__8a73eae8287f( t72 ).
+      DATA(t82) = t72.
       IF t82 IS INITIAL.
         t81 = abap_true.
       ENDIF.
       t71 = t81.
       IF t71 = abap_true.
         DATA t83 TYPE REF TO zlnt_runtime_map__1966acad182d.
-        DATA(t84) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+        DATA(t84) = me->filename_index.
         DATA t85 TYPE string.
         DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t87 TYPE REF TO zcl_lnt_iobject_and_token.
-        DATA(t88) = CAST zcl_lnt_iobject_and_token( t2 ).
+        DATA(t88) = t2.
         t87 = t88.
         t86 = t87->filename.
         t85 = t86->value.
@@ -221,7 +221,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         DATA t90 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
         DATA(t91) = NEW zlnt_runtime_map__8a73eae8287f( ).
         t90 = t91.
-        DATA(t92) = CAST zlnt_runtime_map__8a73eae8287f( t90 ).
+        DATA(t92) = t90.
         t89 = t92.
         t83 = t84->set( p0 = t85 p1 = t89 ).
       ENDIF.
@@ -230,11 +230,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t95 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t96 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t97 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t98) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+      DATA(t98) = me->filename_index.
       DATA t99 TYPE string.
       DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t101 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t102) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t102) = t2.
       t101 = t102.
       t100 = t101->filename.
       t99 = t100->value.
@@ -246,7 +246,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t106 TYPE REF TO zcl_lnt_abstract_token.
       DATA t107 TYPE REF TO zcl_lnt_abstract_token.
       DATA t108 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t109) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t109) = t2.
       t108 = t109.
       t107 = t108->token.
       t106 = t107.
@@ -254,11 +254,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t110 TYPE int8.
       DATA t111 TYPE REF TO zcl_lnt_position.
       DATA t112 TYPE REF TO zcl_lnt_position.
-      DATA(t113) = CAST zcl_lnt_abstract_token( t105 ).
+      DATA(t113) = t105.
       t112 = t113->start.
       t111 = t112.
       DATA t114 TYPE int8.
-      DATA(t115) = CAST zcl_lnt_position( t111 ).
+      DATA(t115) = t111.
       t114 = t115->row.
       t110 = t114.
       t104 = t110.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       CLEAR t117.
       t116 = t117.
       DATA(t118) = VALUE abap_bool( ).
-      DATA(t119) = CAST zlnt_runtime_arra_c22708faf2e3( t94 ).
+      DATA(t119) = t94.
       IF t119 IS INITIAL.
         t118 = abap_true.
       ENDIF.
@@ -279,11 +279,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         DATA t120 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
         DATA t121 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
         DATA t122 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-        DATA(t123) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+        DATA(t123) = me->filename_index.
         DATA t124 TYPE string.
         DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t126 TYPE REF TO zcl_lnt_iobject_and_token.
-        DATA(t127) = CAST zcl_lnt_iobject_and_token( t2 ).
+        DATA(t127) = t2.
         t126 = t127.
         t125 = t126->filename.
         t124 = t125->value.
@@ -295,7 +295,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         DATA t131 TYPE REF TO zcl_lnt_abstract_token.
         DATA t132 TYPE REF TO zcl_lnt_abstract_token.
         DATA t133 TYPE REF TO zcl_lnt_iobject_and_token.
-        DATA(t134) = CAST zcl_lnt_iobject_and_token( t2 ).
+        DATA(t134) = t2.
         t133 = t134.
         t132 = t133->token.
         t131 = t132.
@@ -303,11 +303,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         DATA t135 TYPE int8.
         DATA t136 TYPE REF TO zcl_lnt_position.
         DATA t137 TYPE REF TO zcl_lnt_position.
-        DATA(t138) = CAST zcl_lnt_abstract_token( t130 ).
+        DATA(t138) = t130.
         t137 = t138->start.
         t136 = t137.
         DATA t139 TYPE int8.
-        DATA(t140) = CAST zcl_lnt_position( t136 ).
+        DATA(t140) = t136.
         t139 = t140->row.
         t135 = t139.
         t129 = t135.
@@ -320,11 +320,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t143 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t144 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t145 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t146) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+      DATA(t146) = me->filename_index.
       DATA t147 TYPE string.
       DATA t148 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t149 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t150) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t150) = t2.
       t149 = t150.
       t148 = t149->filename.
       t147 = t148->value.
@@ -336,7 +336,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t154 TYPE REF TO zcl_lnt_abstract_token.
       DATA t155 TYPE REF TO zcl_lnt_abstract_token.
       DATA t156 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t157) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t157) = t2.
       t156 = t157.
       t155 = t156->token.
       t154 = t155.
@@ -344,11 +344,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t158 TYPE int8.
       DATA t159 TYPE REF TO zcl_lnt_position.
       DATA t160 TYPE REF TO zcl_lnt_position.
-      DATA(t161) = CAST zcl_lnt_abstract_token( t153 ).
+      DATA(t161) = t153.
       t160 = t161->start.
       t159 = t160.
       DATA t162 TYPE int8.
-      DATA(t163) = CAST zcl_lnt_position( t159 ).
+      DATA(t163) = t159.
       t162 = t163->row.
       t158 = t162.
       t152 = t158.
@@ -356,25 +356,25 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       t143 = t144->get( p0 = t151 ).
       t142 = t143.
       DATA t164 TYPE REF TO zcl_lnt_iobject_and_token.
-      DATA(t165) = CAST zcl_lnt_iobject_and_token( t2 ).
+      DATA(t165) = t2.
       t164 = t165.
       APPEND t164 TO t142->items.
     ENDIF.
   ENDMETHOD.
 
   METHOD clear_feba.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_object.
-    DATA(t4) = CAST zif_lnt_object( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t5.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE string.
     DATA t8 TYPE string.
-    DATA(t9) = CAST zif_lnt_object( t3 ).
+    DATA(t9) = t3.
     t8 = t9->get_name( ).
     DATA(t10) = strlen( t8 ).
     t7 = t8.
@@ -386,7 +386,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t6 = t7.
     DATA t11 TYPE string.
     DATA t12 TYPE string.
-    DATA(t13) = CAST zif_lnt_object( t3 ).
+    DATA(t13) = t3.
     t12 = t13->get_type( ).
     t11 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -395,14 +395,14 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t15.
     DATA t16 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t17 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t18) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t18) = me->name_type_index.
     DATA(t19) = t6.
     t17 = t18->get( p0 = t19 ).
     t16 = t17.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t20.
     DATA(t21) = VALUE abap_bool( ).
-    DATA(t22) = CAST zlnt_runtime_map__8a73eae8287f( t16 ).
+    DATA(t22) = t16.
     IF t22 IS INITIAL.
       t21 = abap_true.
     ENDIF.
@@ -413,7 +413,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     ELSE.
       DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t25 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t26) = CAST zlnt_runtime_map__8a73eae8287f( t16 ).
+      DATA(t26) = t16.
       t25 = t26.
       DATA(t27) = t11.
       t24 = t25->get( p0 = t27 ).
@@ -425,7 +425,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t28.
     DATA(t29) = VALUE abap_bool( ).
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t31) = t14.
     t30 = t31.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -433,7 +433,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t32 = t33.
     DATA(t34) = VALUE abap_bool( ).
     DATA(t35) = VALUE abap_bool( ).
-    DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t30 ).
+    DATA(t36) = t30.
     IF t36 IS INITIAL.
       t35 = abap_true.
     ENDIF.
@@ -441,7 +441,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t29 = t34.
     IF t29 = abap_true.
       DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+      DATA(t38) = t14.
       t37 = t38.
       t28 = t37.
     ELSE.
@@ -460,7 +460,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA(t42) = VALUE abap_bool( ).
       DATA(t43) = VALUE abap_bool( ).
       DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t45) = CAST zcl_lnt_iobject_and_token( t40 ).
+      DATA(t45) = t40.
       t44 = t45->filename.
       IF t44 IS BOUND.
         IF t44->has = abap_true.
@@ -471,7 +471,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       IF t43 = abap_true.
         DATA t46 TYPE abap_bool.
         DATA t47 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t48) = CAST zcl_lnt_iobject_and_token( t40 ).
+        DATA(t48) = t40.
         t47 = t48->token.
         t46 = xsdbool( t47 IS BOUND ).
         t42 = t46.
@@ -483,10 +483,10 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         CLEAR t50.
         DATA t51 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
         DATA t52 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-        DATA(t53) = CAST zlnt_runtime_map__1966acad182d( me->filename_index ).
+        DATA(t53) = me->filename_index.
         DATA t54 TYPE string.
         DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t56) = CAST zcl_lnt_iobject_and_token( t40 ).
+        DATA(t56) = t40.
         t55 = t56->filename.
         t54 = t55->value.
         t52 = t53->get( p0 = t54 ).
@@ -494,7 +494,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t57.
         DATA(t58) = VALUE abap_bool( ).
-        DATA(t59) = CAST zlnt_runtime_map__8a73eae8287f( t51 ).
+        DATA(t59) = t51.
         IF t59 IS INITIAL.
           t58 = abap_true.
         ENDIF.
@@ -505,25 +505,25 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         ELSE.
           DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t62 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-          DATA(t63) = CAST zlnt_runtime_map__8a73eae8287f( t51 ).
+          DATA(t63) = t51.
           t62 = t63.
           DATA t64 TYPE string.
           DATA t65 TYPE int8.
           DATA t66 TYPE REF TO zcl_lnt_abstract_token.
           DATA t67 TYPE REF TO zcl_lnt_abstract_token.
           DATA t68 TYPE REF TO zcl_lnt_abstract_token.
-          DATA(t69) = CAST zcl_lnt_iobject_and_token( t40 ).
+          DATA(t69) = t40.
           t68 = t69->token.
           t67 = t68.
           t66 = t67.
           DATA t70 TYPE int8.
           DATA t71 TYPE REF TO zcl_lnt_position.
           DATA t72 TYPE REF TO zcl_lnt_position.
-          DATA(t73) = CAST zcl_lnt_abstract_token( t66 ).
+          DATA(t73) = t66.
           t72 = t73->start.
           t71 = t72.
           DATA t74 TYPE int8.
-          DATA(t75) = CAST zcl_lnt_position( t71 ).
+          DATA(t75) = t71.
           t74 = t75->row.
           t70 = t74.
           t65 = t70.
@@ -535,13 +535,13 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         t49 = t50.
         DATA t76 TYPE abap_bool.
         DATA t77 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t78) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
+        DATA(t78) = t49.
         t77 = t78.
         t76 = xsdbool( t77 IS BOUND ).
         IF t76 = abap_true.
           DATA t79 TYPE REF TO zcl_lnt_iobject_and_token.
           DATA t80 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA(t81) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
+          DATA(t81) = t49.
           t80 = t81.
           DATA t82 TYPE REF TO object.
           t82 = t80->pop( ).
@@ -552,7 +552,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA(t83) = VALUE string( ).
     DATA t84 TYPE string.
     DATA t85 TYPE string.
-    DATA(t86) = CAST zif_lnt_object( t1 ).
+    DATA(t86) = t1.
     t85 = t86->get_name( ).
     DATA(t87) = strlen( t85 ).
     t84 = t85.
@@ -564,7 +564,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t83 = t84.
     DATA t88 TYPE string.
     DATA t89 TYPE string.
-    DATA(t90) = CAST zif_lnt_object( t1 ).
+    DATA(t90) = t1.
     t89 = t90->get_type( ).
     t88 = t89.
     DATA(t91) = VALUE abap_bool( ).
@@ -572,14 +572,14 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t92.
     DATA t93 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t94 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t95) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t95) = me->name_type_index.
     DATA(t96) = t83.
     t94 = t95->get( p0 = t96 ).
     t93 = t94.
     DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t97.
     DATA(t98) = VALUE abap_bool( ).
-    DATA(t99) = CAST zlnt_runtime_map__8a73eae8287f( t93 ).
+    DATA(t99) = t93.
     IF t99 IS INITIAL.
       t98 = abap_true.
     ENDIF.
@@ -590,7 +590,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     ELSE.
       DATA t101 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t102 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t103) = CAST zlnt_runtime_map__8a73eae8287f( t93 ).
+      DATA(t103) = t93.
       t102 = t103.
       DATA(t104) = t88.
       t101 = t102->get( p0 = t104 ).
@@ -602,7 +602,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t105 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t106 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t107 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t108) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+      DATA(t108) = me->name_type_index.
       DATA(t109) = t83.
       t107 = t108->get( p0 = t109 ).
       t106 = t107.
@@ -623,11 +623,11 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_using.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = VALUE string( ).
     DATA t3 TYPE string.
     DATA t4 TYPE string.
-    DATA(t5) = CAST zif_lnt_object( t1 ).
+    DATA(t5) = t1.
     t4 = t5->get_name( ).
     DATA(t6) = strlen( t4 ).
     t3 = t4.
@@ -639,7 +639,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t2 = t3.
     DATA t7 TYPE string.
     DATA t8 TYPE string.
-    DATA(t9) = CAST zif_lnt_object( t1 ).
+    DATA(t9) = t1.
     t8 = t9->get_type( ).
     t7 = t8.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -648,14 +648,14 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
     DATA t13 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-    DATA(t14) = CAST zlnt_runtime_map__1966acad182d( me->name_type_index ).
+    DATA(t14) = me->name_type_index.
     DATA(t15) = t2.
     t13 = t14->get( p0 = t15 ).
     t12 = t13.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t16.
     DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = CAST zlnt_runtime_map__8a73eae8287f( t12 ).
+    DATA(t18) = t12.
     IF t18 IS INITIAL.
       t17 = abap_true.
     ENDIF.
@@ -666,7 +666,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     ELSE.
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t21 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t22) = CAST zlnt_runtime_map__8a73eae8287f( t12 ).
+      DATA(t22) = t12.
       t21 = t22.
       DATA(t23) = t7.
       t20 = t21->get( p0 = t23 ).
@@ -676,7 +676,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t10 = t11.
     DATA(t24) = VALUE abap_bool( ).
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t26) = t10.
     t25 = t26.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -684,7 +684,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t27 = t28.
     DATA(t29) = VALUE abap_bool( ).
     DATA(t30) = VALUE abap_bool( ).
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t31) = t25.
     IF t31 IS INITIAL.
       t30 = abap_true.
     ENDIF.
@@ -692,7 +692,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t24 = t29.
     IF t24 = abap_true.
       DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t33) = t10.
       t32 = t33.
       result = t32.
       RETURN.
@@ -705,7 +705,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_where_used.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/ddic_references.ts:78|.
     t2->source_location = t3.

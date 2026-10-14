@@ -10,8 +10,8 @@ CLASS zcl_lnt_prsd_bhvr_dfntn DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_entities ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_entities.
+    DATA(t2) = t1.
     me->entities = t2.
   ENDMETHOD.
 

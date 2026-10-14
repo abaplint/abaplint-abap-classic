@@ -56,13 +56,13 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t14.
       t13 = t14.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t13 ).
+      DATA(t15) = t13.
       DATA(t16) = |Syntax|.
       APPEND t16 TO t15->items.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t13 ).
+      DATA(t17) = t13.
       DATA(t18) = |SingleFile|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t13 ).
+      DATA(t19) = t13.
       t12 = t19.
       t10 = t12.
     ELSE.
@@ -80,13 +80,13 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_in_sr_rl_pr_70_ch_ts_pr_ch.
-    DATA(t1) = CAST zcl_lnt_prsr702_chnng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_in_sr_rl_pr_70_ch_ts_pr_ch.
-    DATA(t1) = CAST zcl_lnt_prsr702_chnng_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_702_chaining.ts:33|.
     t2->source_location = t3.
@@ -94,7 +94,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_in_sr_rl_pr_70_ch_ts_pr_ch.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/parser_702_chaining.ts:37|.
     t2->source_location = t3.
@@ -102,9 +102,9 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD ensr_src_hs_n_prcdrl_kywrds.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_source_75cf ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
+    DATA(t1) = i_source_75cf.
+    DATA(t2) = i_file.
+    DATA(t3) = i_issues.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/parser_702_chaining.ts:99|.
     t4->source_location = t5.
@@ -113,9 +113,9 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
 
   METHOD push_issue.
     DATA(t1) = i_message_26cb.
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t3) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
+    DATA(t2) = i_file.
+    DATA(t3) = i_node.
+    DATA(t4) = i_issues.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/parser_702_chaining.ts:111|.
     t5->source_location = t6.

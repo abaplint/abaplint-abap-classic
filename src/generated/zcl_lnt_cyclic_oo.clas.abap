@@ -29,7 +29,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
     DATA(t4) = NEW zlnt_runtime_map__9f51cbbe9de8( ).
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_map__9f51cbbe9de8( t3 ).
+    DATA(t5) = t3.
     t2 = t5.
     me->edges = t2.
   ENDMETHOD.
@@ -89,13 +89,13 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_cyc_o_ts_cyc_o.
-    DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_cyc_o_ts_cyc_o.
-    DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cyclic_oo.ts:46|.
     t2->source_location = t3.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cyclic_oo.ts:53|.
     t2->source_location = t3.
@@ -111,7 +111,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cyclic_oo.ts:94|.
     t2->source_location = t3.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   METHOD find_cycle.
     DATA(t1) = i_source_75cf.
     DATA(t2) = i_current.
-    DATA(t3) = CAST zlnt_runtime_map__45a2315f90b8( i_previous ).
+    DATA(t3) = i_previous.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/cyclic_oo.ts:117|.
     t4->source_location = t5.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
 
   METHOD build_edges.
     DATA(t1) = i_from.
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/cyclic_oo.ts:138|.
     t3->source_location = t4.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cyclic_oo.ts:46|.
     t2->source_location = t3.

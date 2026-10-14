@@ -90,10 +90,10 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |SingleFile|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       t24 = t29.
       t22 = t24.
     ELSE.
@@ -118,13 +118,13 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_fr_tb_ob_ts_fr_tb_ob.
-    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_fr_tb_ob_ts_fr_tb_ob.
-    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/form_tables_obsolete.ts:39|.
     t2->source_location = t3.
@@ -132,8 +132,8 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/form_tables_obsolete.ts:43|.
     t3->source_location = t4.

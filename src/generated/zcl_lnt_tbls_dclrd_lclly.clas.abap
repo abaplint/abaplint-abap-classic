@@ -90,10 +90,10 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
       DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t26.
       t25 = t26.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t27) = t25.
       DATA(t28) = |SingleFile|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t25 ).
+      DATA(t29) = t25.
       t24 = t29.
       t22 = t24.
     ELSE.
@@ -111,13 +111,13 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_tb_dc_lc_ts_tb_dc_lc.
-    DATA(t1) = CAST zcl_lnt_tbls_dclrd_lclly_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_tb_dc_lc_ts_tb_dc_lc.
-    DATA(t1) = CAST zcl_lnt_tbls_dclrd_lclly_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tables_declared_locally.ts:33|.
     t2->source_location = t3.
@@ -125,7 +125,7 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_tb_dc_lc_ts_tb_dc_lc.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/tables_declared_locally.ts:37|.
     t2->source_location = t3.

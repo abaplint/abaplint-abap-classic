@@ -21,14 +21,14 @@ CLASS zcl_lnt_vers DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_vers IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_release( i_release_7928 ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_runnable ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_also ).
-    DATA(t4) = CAST zcl_lnt_abap_release( t1 ).
+    DATA(t1) = i_release_7928.
+    DATA(t2) = i_runnable.
+    DATA(t3) = i_also.
+    DATA(t4) = t1.
     me->release_3664 = t4.
-    DATA(t5) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t5) = t2.
     me->runnable = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->also = t6.
   ENDMETHOD.
 
@@ -40,14 +40,14 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE abap_bool.
     DATA(t3) = CONV abap_bool( zcl_lnt_combi=>is_open_abap( ) ).
     DATA(t4) = abap_true.
     t2 = xsdbool( t3 = t4 ).
     IF t2 = abap_true.
       DATA(t5) = VALUE abap_bool( ).
-      DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( me->also ).
+      DATA(t6) = me->also.
       DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t7.
       DATA(t8) = abap_true.
@@ -79,8 +79,8 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       ENDIF.
       IF t5 = abap_true.
         DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t15) = CAST zif_lnt_statement_runnable( me->runnable ).
-        DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t15) = me->runnable.
+        DATA(t16) = t1.
         t14 = t15->run( i_r_f634 = t16 ).
         result = t14.
         RETURN.
@@ -101,12 +101,12 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       DATA(t22) = |v702|.
       t20 = t21->get( p0 = t22 ).
       t19 = t20.
-      DATA(t23) = CAST zcl_lnt_abap_release( me->release_3664 ).
+      DATA(t23) = me->release_3664.
       t18 = zcl_lnt_version_module=>release_at_least( i_running = t19 i_required = t23 ).
       IF t18 = abap_true.
         DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t25) = CAST zif_lnt_statement_runnable( me->runnable ).
-        DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t25) = me->runnable.
+        DATA(t26) = t1.
         t24 = t25->run( i_r_f634 = t26 ).
         t17 = t24.
       ELSE.
@@ -121,12 +121,12 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     CLEAR t28.
     DATA t29 TYPE abap_bool.
     DATA(t30) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
-    DATA(t31) = CAST zcl_lnt_abap_release( me->release_3664 ).
+    DATA(t31) = me->release_3664.
     t29 = zcl_lnt_version_module=>release_at_least( i_running = t30 i_required = t31 ).
     IF t29 = abap_true.
       DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t33) = CAST zif_lnt_statement_runnable( me->runnable ).
-      DATA(t34) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+      DATA(t33) = me->runnable.
+      DATA(t34) = t1.
       t32 = t33->run( i_r_f634 = t34 ).
       t28 = t32.
     ELSE.
@@ -161,14 +161,14 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
 
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = CAST zif_lnt_statement_runnable( me->runnable ).
+    DATA(t2) = me->runnable.
     t1 = t2->first( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -177,10 +177,10 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t7) = t5.
+    DATA(t8) = t1.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     t4 = t9.
     t3 = t4.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -193,7 +193,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t14.
       DATA(t15) = VALUE abap_bool( ).
-      DATA(t16) = CAST zlnt_runtime_opti_4ba3bdccd169( me->also ).
+      DATA(t16) = me->also.
       DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t17.
       DATA(t18) = abap_true.
@@ -225,8 +225,8 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       ENDIF.
       IF t15 = abap_true.
         DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t25) = CAST zif_lnt_statement_runnable( me->runnable ).
-        DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+        DATA(t25) = me->runnable.
+        DATA(t26) = t3.
         t24 = t25->run( i_r_f634 = t26 ).
         t14 = t24.
       ELSE.
@@ -246,12 +246,12 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
         DATA(t32) = |v702|.
         t30 = t31->get( p0 = t32 ).
         t29 = t30.
-        DATA(t33) = CAST zcl_lnt_abap_release( me->release_3664 ).
+        DATA(t33) = me->release_3664.
         t28 = zcl_lnt_version_module=>release_at_least( i_running = t29 i_required = t33 ).
         IF t28 = abap_true.
           DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA(t35) = CAST zif_lnt_statement_runnable( me->runnable ).
-          DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+          DATA(t35) = me->runnable.
+          DATA(t36) = t3.
           t34 = t35->run( i_r_f634 = t36 ).
           t27 = t34.
         ELSE.
@@ -267,12 +267,12 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       CLEAR t38.
       DATA t39 TYPE abap_bool.
       DATA(t40) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
-      DATA(t41) = CAST zcl_lnt_abap_release( me->release_3664 ).
+      DATA(t41) = me->release_3664.
       t39 = zcl_lnt_version_module=>release_at_least( i_running = t40 i_required = t41 ).
       IF t39 = abap_true.
         DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t43) = CAST zif_lnt_statement_runnable( me->runnable ).
-        DATA(t44) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+        DATA(t43) = me->runnable.
+        DATA(t44) = t3.
         t42 = t43->run( i_r_f634 = t44 ).
         t38 = t42.
       ELSE.

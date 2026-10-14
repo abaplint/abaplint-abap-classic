@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_f2185cd1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_f2185cd1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t2) = CAST zcl_lnt_ob_data_definition( i_object_19cd ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_object_19cd.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t4) = CAST zcl_lnt_abstract_type( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->type_cba0 = t3.
     DATA t5 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA(t6) = CAST zcl_lnt_ob_data_definition( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->object_a393 = t5.
   ENDMETHOD.

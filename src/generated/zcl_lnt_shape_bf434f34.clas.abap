@@ -11,11 +11,11 @@ CLASS zcl_lnt_shape_bf434f34 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_bf434f34 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_recursive ).
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_ignore_if_not_exists ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t1) = i_recursive.
+    DATA(t2) = i_ignore_if_not_exists.
+    DATA(t3) = t1.
     me->recursive = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( t2 ).
+    DATA(t4) = t2.
     me->ignore_if_not_exists = t4.
   ENDMETHOD.
 

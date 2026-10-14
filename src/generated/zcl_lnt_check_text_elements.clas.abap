@@ -49,13 +49,13 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_ch_tx_el_ts_ch_tx_el.
-    DATA(t1) = CAST zcl_lnt_chck_txt_elmnts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_ch_tx_el_ts_ch_tx_el.
-    DATA(t1) = CAST zcl_lnt_chck_txt_elmnts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_text_elements.ts:30|.
     t2->source_location = t3.
@@ -63,7 +63,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_ch_tx_el_ts_ch_tx_el.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_text_elements.ts:34|.
     t2->source_location = t3.
@@ -71,7 +71,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_text_elements.ts:40|.
     t2->source_location = t3.
@@ -89,7 +89,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_text_elements.ts:30|.
     t2->source_location = t3.
@@ -97,7 +97,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_text_elements.ts:34|.
     t2->source_location = t3.

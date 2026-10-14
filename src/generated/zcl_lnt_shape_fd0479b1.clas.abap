@@ -12,14 +12,14 @@ CLASS zcl_lnt_shape_fd0479b1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_fd0479b1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_map__d22a98cdf7f9( i_changes ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_document_changes ).
-    DATA(t3) = CAST zlnt_runtime_map__617ff131b0f3( i_change_annotations ).
-    DATA(t4) = CAST zlnt_runtime_map__d22a98cdf7f9( t1 ).
+    DATA(t1) = i_changes.
+    DATA(t2) = i_document_changes.
+    DATA(t3) = i_change_annotations.
+    DATA(t4) = t1.
     me->changes = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t5) = t2.
     me->document_changes = t5.
-    DATA(t6) = CAST zlnt_runtime_map__617ff131b0f3( t3 ).
+    DATA(t6) = t3.
     me->change_annotations = t6.
   ENDMETHOD.
 

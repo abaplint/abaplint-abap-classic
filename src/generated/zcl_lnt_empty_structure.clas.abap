@@ -110,13 +110,13 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |Styleguide|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |SingleFile|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       t28 = t35.
       t26 = t28.
     ELSE.
@@ -142,13 +142,13 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_em_st_ts_em_str.
-    DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_em_st_ts_em_str.
-    DATA(t1) = CAST zcl_lnt_empty_structure_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_structure.ts:64|.
     t2->source_location = t3.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_em_st_ts_em_str.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_structure.ts:68|.
     t2->source_location = t3.

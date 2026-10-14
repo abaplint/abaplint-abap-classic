@@ -11,11 +11,11 @@ CLASS zcl_lnt_shape_55554241 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_55554241 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_class_name ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_class_name.
+    DATA(t2) = i_description.
+    DATA(t3) = t1.
     me->class_name = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t4) = t2.
     me->description = t4.
   ENDMETHOD.
 

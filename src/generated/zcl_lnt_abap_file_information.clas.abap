@@ -18,14 +18,14 @@ CLASS zcl_lnt_abap_file_information DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_prsd_fl_infrmtn( i_parsed ).
-    DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( t1 ).
+    DATA(t1) = i_parsed.
+    DATA(t2) = t1.
     me->parsed = t2.
   ENDMETHOD.
 
   METHOD list_class_implementations.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t2) = me->parsed.
     t1 = t2->implementations.
     result = t1.
 
@@ -33,7 +33,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
 
   METHOD list_interface_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t2) = me->parsed.
     t1 = t2->interfaces.
     result = t1.
 
@@ -53,7 +53,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t7) = me->parsed.
     t6 = t7->interfaces.
     DATA t8 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     CLEAR t8.
@@ -66,7 +66,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t12) = VALUE string( ).
       DATA t13 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t14 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t15) = CAST zcl_lnt_inf_intrfc_dfntn( t8 ).
+      DATA(t15) = t8.
       t14 = t15->identifier.
       t13 = t14.
       DATA(t16) = VALUE string( ).
@@ -74,11 +74,11 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA t18 TYPE string.
       DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t21) = CAST zcl_lnt_fi_identifier( t13 ).
+      DATA(t21) = t13.
       t20 = t21->token.
       t19 = t20.
       DATA t22 TYPE string.
-      DATA(t23) = CAST zcl_lnt_abstract_token( t19 ).
+      DATA(t23) = t19.
       t22 = t23->str.
       t18 = t22.
       t17 = t18.
@@ -151,7 +151,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         CLEAR t44.
         DATA(t45) = abap_true.
         IF t45 = abap_true.
-          DATA(t46) = CAST zcl_lnt_inf_intrfc_dfntn( t8 ).
+          DATA(t46) = t8.
           t44 = t46.
         ELSE.
           DATA t47 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
@@ -170,7 +170,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
 
   METHOD list_class_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t2) = me->parsed.
     t1 = t2->classes.
     result = t1.
 
@@ -190,7 +190,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t7) = me->parsed.
     t6 = t7->classes.
     DATA t8 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t8.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t12) = VALUE string( ).
       DATA t13 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t14 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t15) = CAST zcl_lnt_info_class_definition( t8 ).
+      DATA(t15) = t8.
       t14 = t15->identifier.
       t13 = t14.
       DATA(t16) = VALUE string( ).
@@ -211,11 +211,11 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA t18 TYPE string.
       DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t21) = CAST zcl_lnt_fi_identifier( t13 ).
+      DATA(t21) = t13.
       t20 = t21->token.
       t19 = t20.
       DATA t22 TYPE string.
-      DATA(t23) = CAST zcl_lnt_abstract_token( t19 ).
+      DATA(t23) = t19.
       t22 = t23->str.
       t18 = t22.
       t17 = t18.
@@ -288,7 +288,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         CLEAR t44.
         DATA(t45) = abap_true.
         IF t45 = abap_true.
-          DATA(t46) = CAST zcl_lnt_info_class_definition( t8 ).
+          DATA(t46) = t8.
           t44 = t46.
         ELSE.
           DATA t47 TYPE REF TO zcl_lnt_info_class_definition.
@@ -319,7 +319,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
+    DATA(t7) = me->parsed.
     t6 = t7->implementations.
     DATA t8 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
     CLEAR t8.
@@ -332,7 +332,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t12) = VALUE string( ).
       DATA t13 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t14 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t15) = CAST zcl_lnt_inf_clss_implmnttn( t8 ).
+      DATA(t15) = t8.
       t14 = t15->identifier.
       t13 = t14.
       DATA(t16) = VALUE string( ).
@@ -340,11 +340,11 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA t18 TYPE string.
       DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t21) = CAST zcl_lnt_fi_identifier( t13 ).
+      DATA(t21) = t13.
       t20 = t21->token.
       t19 = t20.
       DATA t22 TYPE string.
-      DATA(t23) = CAST zcl_lnt_abstract_token( t19 ).
+      DATA(t23) = t19.
       t22 = t23->str.
       t18 = t22.
       t17 = t18.
@@ -417,7 +417,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         CLEAR t44.
         DATA(t45) = abap_true.
         IF t45 = abap_true.
-          DATA(t46) = CAST zcl_lnt_inf_clss_implmnttn( t8 ).
+          DATA(t46) = t8.
           t44 = t46.
         ELSE.
           DATA t47 TYPE REF TO zcl_lnt_inf_clss_implmnttn.

@@ -19,8 +19,8 @@ CLASS zcl_lnt_skip_logic DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DATA t3 TYPE REF TO zcl_lnt_include_graph.
     CLEAR t3.
@@ -31,11 +31,11 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD skip_0892.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zcl_lnt_iglobal_config.
     DATA t3 TYPE REF TO zcl_lnt_iglobal_config.
     DATA t4 TYPE REF TO zif_lnt_configuration.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = t5->get_config( ).
     t3 = t4->get_global( ).
     t2 = t3.
@@ -43,7 +43,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA(t7) = VALUE abap_bool( ).
     DATA(t8) = VALUE abap_bool( ).
     DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    DATA(t10) = CAST zcl_lnt_iglobal_config( t2 ).
+    DATA(t10) = t2.
     t9 = t10->skip_generated_gateway_classes.
     DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t11.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t7 = t8.
     IF t8 = abap_true.
       DATA t18 TYPE abap_bool.
-      DATA(t19) = CAST zif_lnt_object( t1 ).
+      DATA(t19) = t1.
       t18 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_class ).
       t7 = t18.
     ENDIF.
@@ -85,7 +85,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     IF t7 = abap_true.
       DATA t20 TYPE abap_bool.
       DATA t21 TYPE REF TO zcl_lnt_class.
-      DATA(t22) = CAST zif_lnt_object( t1 ).
+      DATA(t22) = t1.
       DATA t23 TYPE REF TO object.
       t23 = t22.
       t21 ?= t23.
@@ -101,7 +101,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA(t26) = VALUE abap_bool( ).
       DATA(t27) = VALUE abap_bool( ).
       DATA t28 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      DATA(t29) = CAST zcl_lnt_iglobal_config( t2 ).
+      DATA(t29) = t2.
       t28 = t29->skip_includes_without_main.
       DATA t30 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t30.
@@ -135,7 +135,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       t26 = t27.
       IF t27 = abap_true.
         DATA t37 TYPE abap_bool.
-        DATA(t38) = CAST zif_lnt_object( t1 ).
+        DATA(t38) = t1.
         t37 = xsdbool( t38 IS BOUND AND t38 IS INSTANCE OF zcl_lnt_ob_program ).
         t26 = t37.
       ENDIF.
@@ -145,18 +145,18 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA t40 TYPE abap_bool.
         DATA t41 TYPE REF TO zcl_lnt_ob_program.
         DATA t42 TYPE REF TO zcl_lnt_ob_program.
-        DATA(t43) = CAST zif_lnt_object( t1 ).
+        DATA(t43) = t1.
         DATA t44 TYPE REF TO object.
         t44 = t43.
         t42 ?= t44.
         t41 = t42.
         DATA t45 TYPE abap_bool.
-        DATA(t46) = CAST zcl_lnt_ob_program( t41 ).
+        DATA(t46) = t41.
         t46->parse_xml( ).
         DATA t47 TYPE abap_bool.
         DATA t48 TYPE REF TO zcl_lnt_shape_e86506f0.
         DATA t49 TYPE REF TO zcl_lnt_shape_e86506f0.
-        DATA(t50) = CAST zcl_lnt_ob_program( t41 ).
+        DATA(t50) = t41.
         t49 = t50->parsed_xml.
         t48 = t49.
         t47 = t48->is_include.
@@ -168,7 +168,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       ENDIF.
       IF t25 = abap_true.
         DATA(t52) = VALUE abap_bool( ).
-        DATA(t53) = CAST zcl_lnt_include_graph( me->include_graph ).
+        DATA(t53) = me->include_graph.
         IF t53 IS INITIAL.
           t52 = abap_true.
         ENDIF.
@@ -178,7 +178,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA(t55) = abap_true.
           IF t55 = abap_true.
             DATA t56 TYPE REF TO zcl_lnt_include_graph.
-            DATA(t57) = CAST zif_lnt_registry( me->reg ).
+            DATA(t57) = me->reg.
             DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t58.
             DATA t59 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA t61 TYPE REF TO zcl_lnt_abap_file.
         DATA t62 TYPE REF TO zcl_lnt_abap_file.
         DATA t63 TYPE REF TO zcl_lnt_ob_program.
-        DATA(t64) = CAST zif_lnt_object( t1 ).
+        DATA(t64) = t1.
         DATA t65 TYPE REF TO object.
         t65 = t64.
         t63 ?= t65.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         t61 = t62.
         DATA t66 TYPE abap_bool.
         DATA t67 TYPE abap_bool.
-        DATA(t68) = CAST zcl_lnt_abap_file( t61 ).
+        DATA(t68) = t61.
         t67 = xsdbool( t68 IS BOUND ).
         t66 = t67.
         IF t67 = abap_true.
@@ -212,7 +212,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t71.
           DATA t72 TYPE REF TO zcl_lnt_include_graph.
-          DATA(t73) = CAST zcl_lnt_include_graph( me->include_graph ).
+          DATA(t73) = me->include_graph.
           t72 = t73.
           DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t74.
@@ -221,11 +221,11 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             DATA t76 TYPE string.
             DATA t77 TYPE REF TO zcl_lnt_abstract_file.
             DATA t78 TYPE REF TO zcl_lnt_abap_file.
-            DATA(t79) = CAST zcl_lnt_abap_file( t61 ).
+            DATA(t79) = t61.
             t78 = t79.
             t77 = t78.
             DATA t80 TYPE string.
-            DATA(t81) = CAST zcl_lnt_abstract_file( t77 ).
+            DATA(t81) = t77.
             t80 = t81->filename.
             t76 = t80.
             DATA(t82) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -253,7 +253,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA(t87) = VALUE abap_bool( ).
         DATA(t88) = VALUE abap_bool( ).
         DATA t89 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA(t90) = CAST zcl_lnt_iglobal_config( t2 ).
+        DATA(t90) = t2.
         t89 = t90->skp_gnrtd_prsstnt_clsss.
         DATA t91 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t91.
@@ -287,7 +287,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         t87 = t88.
         IF t88 = abap_true.
           DATA t98 TYPE abap_bool.
-          DATA(t99) = CAST zif_lnt_object( t1 ).
+          DATA(t99) = t1.
           t98 = xsdbool( t99 IS BOUND AND t99 IS INSTANCE OF zcl_lnt_class ).
           t87 = t98.
         ENDIF.
@@ -295,7 +295,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         IF t87 = abap_true.
           DATA t100 TYPE abap_bool.
           DATA t101 TYPE REF TO zcl_lnt_class.
-          DATA(t102) = CAST zif_lnt_object( t1 ).
+          DATA(t102) = t1.
           DATA t103 TYPE REF TO object.
           t103 = t102.
           t101 ?= t103.
@@ -311,7 +311,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA(t106) = VALUE abap_bool( ).
           DATA(t107) = VALUE abap_bool( ).
           DATA t108 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          DATA(t109) = CAST zcl_lnt_iglobal_config( t2 ).
+          DATA(t109) = t2.
           t108 = t109->skip_generated_function_groups.
           DATA t110 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           CLEAR t110.
@@ -345,7 +345,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           t106 = t107.
           IF t107 = abap_true.
             DATA t117 TYPE abap_bool.
-            DATA(t118) = CAST zif_lnt_object( t1 ).
+            DATA(t118) = t1.
             t117 = xsdbool( t118 IS BOUND AND t118 IS INSTANCE OF zcl_lnt_function_group ).
             t106 = t117.
           ENDIF.
@@ -353,7 +353,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           IF t106 = abap_true.
             DATA t119 TYPE abap_bool.
             DATA t120 TYPE REF TO zcl_lnt_function_group.
-            DATA(t121) = CAST zif_lnt_object( t1 ).
+            DATA(t121) = t1.
             DATA t122 TYPE REF TO object.
             t122 = t121.
             t120 ?= t122.
@@ -369,7 +369,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             DATA(t125) = VALUE abap_bool( ).
             DATA(t126) = VALUE abap_bool( ).
             DATA t127 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            DATA(t128) = CAST zcl_lnt_iglobal_config( t2 ).
+            DATA(t128) = t2.
             t127 = t128->skip_generated_proxy_classes.
             DATA t129 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
             CLEAR t129.
@@ -403,7 +403,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             t125 = t126.
             IF t126 = abap_true.
               DATA t136 TYPE abap_bool.
-              DATA(t137) = CAST zif_lnt_object( t1 ).
+              DATA(t137) = t1.
               t136 = xsdbool( t137 IS BOUND AND t137 IS INSTANCE OF zcl_lnt_class ).
               t125 = t136.
             ENDIF.
@@ -411,7 +411,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             IF t125 = abap_true.
               DATA t138 TYPE abap_bool.
               DATA t139 TYPE REF TO zcl_lnt_class.
-              DATA(t140) = CAST zif_lnt_object( t1 ).
+              DATA(t140) = t1.
               DATA t141 TYPE REF TO object.
               t141 = t140.
               t139 ?= t141.
@@ -427,7 +427,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
               DATA(t144) = VALUE abap_bool( ).
               DATA(t145) = VALUE abap_bool( ).
               DATA t146 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-              DATA(t147) = CAST zcl_lnt_iglobal_config( t2 ).
+              DATA(t147) = t2.
               t146 = t147->skp_gnrtd_prxy_intrfcs.
               DATA t148 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
               CLEAR t148.
@@ -461,7 +461,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
               t144 = t145.
               IF t145 = abap_true.
                 DATA t155 TYPE abap_bool.
-                DATA(t156) = CAST zif_lnt_object( t1 ).
+                DATA(t156) = t1.
                 t155 = xsdbool( t156 IS BOUND AND t156 IS INSTANCE OF zcl_lnt_ob_interface ).
                 t144 = t155.
               ENDIF.
@@ -469,7 +469,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
               IF t144 = abap_true.
                 DATA t157 TYPE abap_bool.
                 DATA t158 TYPE REF TO zcl_lnt_ob_interface.
-                DATA(t159) = CAST zif_lnt_object( t1 ).
+                DATA(t159) = t1.
                 DATA t160 TYPE REF TO object.
                 t160 = t159.
                 t158 ?= t160.
@@ -485,7 +485,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
                 DATA(t163) = VALUE abap_bool( ).
                 DATA(t164) = VALUE abap_bool( ).
                 DATA t165 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                DATA(t166) = CAST zcl_lnt_iglobal_config( t2 ).
+                DATA(t166) = t2.
                 t165 = t166->skip_generated_bopf_interfaces.
                 DATA t167 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
                 CLEAR t167.
@@ -519,7 +519,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
                 t163 = t164.
                 IF t164 = abap_true.
                   DATA t174 TYPE abap_bool.
-                  DATA(t175) = CAST zif_lnt_object( t1 ).
+                  DATA(t175) = t1.
                   t174 = xsdbool( t175 IS BOUND AND t175 IS INSTANCE OF zcl_lnt_ob_interface ).
                   t163 = t174.
                 ENDIF.
@@ -527,7 +527,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
                 IF t163 = abap_true.
                   DATA t176 TYPE abap_bool.
                   DATA t177 TYPE REF TO zcl_lnt_ob_interface.
-                  DATA(t178) = CAST zif_lnt_object( t1 ).
+                  DATA(t178) = t1.
                   DATA t179 TYPE REF TO object.
                   t179 = t178.
                   t177 ?= t179.
@@ -551,7 +551,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_bopf_interface.
-    DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/skip_logic.ts:60|.
     t2->source_location = t3.
@@ -559,7 +559,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_proxy_interface.
-    DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/skip_logic.ts:73|.
     t2->source_location = t3.
@@ -567,7 +567,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_proxy_class.
-    DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/skip_logic.ts:86|.
     t2->source_location = t3.
@@ -575,7 +575,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_function_group.
-    DATA(t1) = CAST zcl_lnt_function_group( i_group ).
+    DATA(t1) = i_group.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/skip_logic.ts:99|.
     t2->source_location = t3.
@@ -583,7 +583,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_gateway_class.
-    DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
@@ -593,7 +593,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t5 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t5.
     DATA t6 TYPE REF TO zcl_lnt_class.
-    DATA(t7) = CAST zcl_lnt_class( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t8.
@@ -603,13 +603,13 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     CLEAR t10.
     DATA t11 TYPE REF TO zcl_lnt_abap_file.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t13) = CAST zcl_lnt_class( t6 ).
+    DATA(t13) = t6.
     t12 = t13->get_main_abap_file( ).
     t11 = t12.
     DATA t14 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t14.
     DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = CAST zcl_lnt_abap_file( t11 ).
+    DATA(t16) = t11.
     IF t16 IS INITIAL.
       t15 = abap_true.
     ENDIF.
@@ -621,11 +621,11 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA t18 TYPE REF TO zif_lnt_abap_file_information.
       DATA t19 TYPE REF TO zcl_lnt_abap_file.
       DATA t20 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t21) = CAST zcl_lnt_abap_file( t11 ).
+      DATA(t21) = t11.
       t20 = t21.
       t19 = t20.
       DATA t22 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t23) = CAST zcl_lnt_abap_file( t19 ).
+      DATA(t23) = t19.
       t22 = t23->info.
       t18 = t22.
       t14 = t18.
@@ -635,7 +635,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t24 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = CAST zif_lnt_abap_file_information( t9 ).
+    DATA(t26) = t9.
     IF t26 IS INITIAL.
       t25 = abap_true.
     ENDIF.
@@ -646,14 +646,14 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ELSE.
       DATA t28 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t29 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t30) = CAST zif_lnt_abap_file_information( t9 ).
+      DATA(t30) = t9.
       t29 = t30.
       DATA t31 TYPE string.
       DATA t32 TYPE REF TO zcl_lnt_abstract_object.
-      DATA(t33) = CAST zcl_lnt_class( t6 ).
+      DATA(t33) = t6.
       t32 = t33.
       DATA t34 TYPE string.
-      DATA(t35) = CAST zcl_lnt_abstract_object( t32 ).
+      DATA(t35) = t32.
       t34 = t35->name.
       t31 = t34.
       t28 = t29->get_class_definition_by_name( i_name = t31 ).
@@ -663,7 +663,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t5 = t8.
     t4 = t5.
     DATA t36 TYPE abap_bool.
-    DATA(t37) = CAST zcl_lnt_info_class_definition( t4 ).
+    DATA(t37) = t4.
     t36 = xsdbool( t37 IS BOUND ).
     IF t36 = abap_true.
       DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -677,14 +677,14 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t44 TYPE REF TO zcl_lnt_info_class_definition.
-        DATA(t45) = CAST zcl_lnt_info_class_definition( t4 ).
+        DATA(t45) = t4.
         t44 = t45.
         t43 = t44->super_class_name.
         t42 = t43.
         DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t46.
         DATA(t47) = VALUE abap_bool( ).
-        DATA(t48) = CAST zlnt_runtime_opti_4ba3bdccd169( t42 ).
+        DATA(t48) = t42.
         IF t48 IS INITIAL.
           t47 = abap_true.
         ELSEIF t48->has = abap_false.
@@ -697,7 +697,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         ELSE.
           DATA t50 TYPE string.
           DATA t51 TYPE string.
-          DATA(t52) = CAST zlnt_runtime_opti_4ba3bdccd169( t42 ).
+          DATA(t52) = t42.
           t51 = t52->value.
           DATA(t53) = strlen( t51 ).
           t50 = t51.
@@ -730,10 +730,10 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t58 TYPE string.
     DATA t59 TYPE string.
     DATA t60 TYPE REF TO zcl_lnt_abstract_object.
-    DATA(t61) = CAST zcl_lnt_class( t1 ).
+    DATA(t61) = t1.
     t60 = t61.
     DATA t62 TYPE string.
-    DATA(t63) = CAST zcl_lnt_abstract_object( t60 ).
+    DATA(t63) = t60.
     t62 = t63->name.
     t59 = t62.
     t58 = t59.
@@ -751,7 +751,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA(t69) = VALUE abap_bool( ).
       DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t70.
-      DATA(t71) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+      DATA(t71) = t2.
       IF t71 IS BOUND.
         t70 = t71.
       ENDIF.
@@ -777,10 +777,10 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA t77 TYPE string.
       DATA t78 TYPE string.
       DATA t79 TYPE REF TO zcl_lnt_abstract_object.
-      DATA(t80) = CAST zcl_lnt_class( t1 ).
+      DATA(t80) = t1.
       t79 = t80.
       DATA t81 TYPE string.
-      DATA(t82) = CAST zcl_lnt_abstract_object( t79 ).
+      DATA(t82) = t79.
       t81 = t82->name.
       t78 = t81.
       t77 = t78.
@@ -798,7 +798,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA(t88) = VALUE abap_bool( ).
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
-        DATA(t90) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+        DATA(t90) = t2.
         IF t90 IS BOUND.
           t89 = t90.
         ENDIF.
@@ -822,7 +822,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA(t94) = VALUE abap_bool( ).
         DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t95.
-        DATA(t96) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+        DATA(t96) = t2.
         IF t96 IS BOUND.
           t95 = t96.
         ENDIF.
@@ -849,28 +849,28 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generated_persistent_class.
-    DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_class.
-    DATA(t5) = CAST zcl_lnt_class( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t6.
-    DATA(t7) = CAST zcl_lnt_class( t4 ).
+    DATA(t7) = t4.
     t7->parse_xml( ).
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
     DATA t10 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t11) = CAST zcl_lnt_class( t4 ).
+    DATA(t11) = t4.
     t10 = t11->parsed_xml.
     t9 = t10.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t12.
     DATA(t13) = VALUE abap_bool( ).
-    DATA(t14) = CAST zcl_lnt_shape_e272b380( t9 ).
+    DATA(t14) = t9.
     IF t14 IS INITIAL.
       t13 = abap_true.
     ENDIF.
@@ -881,7 +881,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ELSE.
       DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t17 TYPE REF TO zcl_lnt_shape_e272b380.
-      DATA(t18) = CAST zcl_lnt_shape_e272b380( t9 ).
+      DATA(t18) = t9.
       t17 = t18.
       t16 = t17->category.
       t12 = t16.
@@ -927,23 +927,23 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t28.
       DATA t29 TYPE REF TO zcl_lnt_class.
-      DATA(t30) = CAST zcl_lnt_class( t1 ).
+      DATA(t30) = t1.
       t29 = t30.
       DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t31.
-      DATA(t32) = CAST zcl_lnt_class( t29 ).
+      DATA(t32) = t29.
       t32->parse_xml( ).
       DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t33.
       DATA t34 TYPE REF TO zcl_lnt_shape_e272b380.
       DATA t35 TYPE REF TO zcl_lnt_shape_e272b380.
-      DATA(t36) = CAST zcl_lnt_class( t29 ).
+      DATA(t36) = t29.
       t35 = t36->parsed_xml.
       t34 = t35.
       DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t37.
       DATA(t38) = VALUE abap_bool( ).
-      DATA(t39) = CAST zcl_lnt_shape_e272b380( t34 ).
+      DATA(t39) = t34.
       IF t39 IS INITIAL.
         t38 = abap_true.
       ENDIF.
@@ -954,7 +954,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       ELSE.
         DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t42 TYPE REF TO zcl_lnt_shape_e272b380.
-        DATA(t43) = CAST zcl_lnt_shape_e272b380( t34 ).
+        DATA(t43) = t34.
         t42 = t43.
         t41 = t42->category.
         t37 = t41.
@@ -1002,7 +1002,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t53 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t53.
     DATA t54 TYPE REF TO zcl_lnt_class.
-    DATA(t55) = CAST zcl_lnt_class( t1 ).
+    DATA(t55) = t1.
     t54 = t55.
     DATA t56 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t56.
@@ -1012,13 +1012,13 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     CLEAR t58.
     DATA t59 TYPE REF TO zcl_lnt_abap_file.
     DATA t60 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t61) = CAST zcl_lnt_class( t54 ).
+    DATA(t61) = t54.
     t60 = t61->get_main_abap_file( ).
     t59 = t60.
     DATA t62 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t62.
     DATA(t63) = VALUE abap_bool( ).
-    DATA(t64) = CAST zcl_lnt_abap_file( t59 ).
+    DATA(t64) = t59.
     IF t64 IS INITIAL.
       t63 = abap_true.
     ENDIF.
@@ -1030,11 +1030,11 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA t66 TYPE REF TO zif_lnt_abap_file_information.
       DATA t67 TYPE REF TO zcl_lnt_abap_file.
       DATA t68 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t69) = CAST zcl_lnt_abap_file( t59 ).
+      DATA(t69) = t59.
       t68 = t69.
       t67 = t68.
       DATA t70 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t71) = CAST zcl_lnt_abap_file( t67 ).
+      DATA(t71) = t67.
       t70 = t71->info.
       t66 = t70.
       t62 = t66.
@@ -1044,7 +1044,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t72 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t72.
     DATA(t73) = VALUE abap_bool( ).
-    DATA(t74) = CAST zif_lnt_abap_file_information( t57 ).
+    DATA(t74) = t57.
     IF t74 IS INITIAL.
       t73 = abap_true.
     ENDIF.
@@ -1055,14 +1055,14 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ELSE.
       DATA t76 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t77 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t78) = CAST zif_lnt_abap_file_information( t57 ).
+      DATA(t78) = t57.
       t77 = t78.
       DATA t79 TYPE string.
       DATA t80 TYPE REF TO zcl_lnt_abstract_object.
-      DATA(t81) = CAST zcl_lnt_class( t54 ).
+      DATA(t81) = t54.
       t80 = t81.
       DATA t82 TYPE string.
-      DATA(t83) = CAST zcl_lnt_abstract_object( t80 ).
+      DATA(t83) = t80.
       t82 = t83->name.
       t79 = t82.
       t76 = t77->get_class_definition_by_name( i_name = t79 ).
@@ -1072,18 +1072,18 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t53 = t56.
     t52 = t53.
     DATA t84 TYPE abap_bool.
-    DATA(t85) = CAST zcl_lnt_info_class_definition( t52 ).
+    DATA(t85) = t52.
     t84 = xsdbool( t85 IS BOUND ).
     IF t84 = abap_true.
       DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t88 TYPE REF TO zcl_lnt_info_class_definition.
-      DATA(t89) = CAST zcl_lnt_info_class_definition( t52 ).
+      DATA(t89) = t52.
       t88 = t89.
       t87 = t88->super_class_name.
       t86 = t87.
       DATA(t90) = VALUE abap_bool( ).
-      DATA(t91) = CAST zlnt_runtime_opti_4ba3bdccd169( t86 ).
+      DATA(t91) = t86.
       IF t91 IS BOUND.
         IF t91->has = abap_true.
           t90 = xsdbool( strlen( t91->value ) > 0 ).
@@ -1094,7 +1094,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         CLEAR t92.
         DATA t93 TYPE REF TO zif_lnt_object.
         CLEAR t93.
-        DATA(t94) = CAST zif_lnt_registry( me->reg ).
+        DATA(t94) = me->reg.
         DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t95.
         DATA(t96) = abap_true.
@@ -1115,7 +1115,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         IF t101 = abap_true.
           DATA t102 TYPE string.
           DATA t103 TYPE string.
-          DATA(t104) = CAST zlnt_runtime_opti_4ba3bdccd169( t86 ).
+          DATA(t104) = t86.
           t103 = t104->value.
           DATA(t105) = strlen( t103 ).
           t102 = t103.
@@ -1137,7 +1137,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         t92 = t93.
         DATA t108 TYPE abap_bool.
         DATA t109 TYPE abap_bool.
-        DATA(t110) = CAST zif_lnt_object( t92 ).
+        DATA(t110) = t92.
         t109 = xsdbool( t110 IS BOUND ).
         t108 = t109.
         IF t109 = abap_true.
@@ -1147,25 +1147,25 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA t113 TYPE REF TO zcl_lnt_class.
           DATA t114 TYPE REF TO zcl_lnt_class.
           DATA t115 TYPE REF TO zif_lnt_object.
-          DATA(t116) = CAST zif_lnt_object( t92 ).
+          DATA(t116) = t92.
           t115 = t116.
           t114 ?= t115.
           t113 = t114.
           DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t117.
-          DATA(t118) = CAST zcl_lnt_class( t113 ).
+          DATA(t118) = t113.
           t118->parse_xml( ).
           DATA t119 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t119.
           DATA t120 TYPE REF TO zcl_lnt_shape_e272b380.
           DATA t121 TYPE REF TO zcl_lnt_shape_e272b380.
-          DATA(t122) = CAST zcl_lnt_class( t113 ).
+          DATA(t122) = t113.
           t121 = t122->parsed_xml.
           t120 = t121.
           DATA t123 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t123.
           DATA(t124) = VALUE abap_bool( ).
-          DATA(t125) = CAST zcl_lnt_shape_e272b380( t120 ).
+          DATA(t125) = t120.
           IF t125 IS INITIAL.
             t124 = abap_true.
           ENDIF.
@@ -1176,7 +1176,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           ELSE.
             DATA t127 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t128 TYPE REF TO zcl_lnt_shape_e272b380.
-            DATA(t129) = CAST zcl_lnt_shape_e272b380( t120 ).
+            DATA(t129) = t120.
             t128 = t129.
             t127 = t128->category.
             t123 = t127.

@@ -47,13 +47,13 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Naming|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       DATA(t16) = |SingleFile|.
       APPEND t16 TO t15->items.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t17) = t11.
       t10 = t17.
       t8 = t10.
     ELSE.
@@ -80,13 +80,13 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_sl_sc_nm_ts_sl_sc_nm.
-    DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_sl_sc_nm_ts_sl_sc_nm.
-    DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_naming.ts:44|.
     t2->source_location = t3.
@@ -94,7 +94,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_sl_sc_nm_ts_sl_sc_nm.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_naming.ts:48|.
     t2->source_location = t3.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_pattern_for_statement.
-    DATA(t1) = CAST zif_lnt_statement( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_naming.ts:85|.
     t2->source_location = t3.
@@ -110,7 +110,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_field_for_statement_node.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_stat_node ).
+    DATA(t1) = i_stat_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_naming.ts:97|.
     t2->source_location = t3.

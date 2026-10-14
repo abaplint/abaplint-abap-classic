@@ -86,16 +86,16 @@ CLASS zcl_lnt_exporting IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |Styleguide|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       DATA(t29) = |Quickfix|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t30) = t24.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t32) = t24.
       t23 = t32.
       t21 = t23.
     ELSE.
@@ -120,8 +120,8 @@ CLASS zcl_lnt_exporting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/exporting.ts:36|.
     t3->source_location = t4.
@@ -129,13 +129,13 @@ CLASS zcl_lnt_exporting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cnf_ins_src_rls_exp_ts_expr.
-    DATA(t1) = CAST zcl_lnt_exporting_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cnf_ins_src_rls_exp_ts_expr.
-    DATA(t1) = CAST zcl_lnt_exporting_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/exporting.ts:65|.
     t2->source_location = t3.
@@ -143,8 +143,8 @@ CLASS zcl_lnt_exporting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/exporting.ts:69|.
     t3->source_location = t4.

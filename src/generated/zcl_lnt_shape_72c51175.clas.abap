@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_shape_72c51175 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_language.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
+    DATA(t2) = i_description.
     DATA(t3) = t1.
     me->language = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t4) = t2.
     me->description = t4.
   ENDMETHOD.
 

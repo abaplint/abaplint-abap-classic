@@ -13,13 +13,13 @@ CLASS zcl_lnt_code_actions DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_code_actions IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD find_8f95.
-    DATA(t1) = CAST zcl_lnt_icode_action_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/code_actions.ts:17|.
     t2->source_location = t3.
@@ -28,7 +28,7 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
 
   METHOD fix_alls.
     DATA(t1) = i_key.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
+    DATA(t2) = i_issues.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/code_actions.ts:71|.
     t3->source_location = t4.
@@ -36,8 +36,8 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_range.
-    DATA(t1) = CAST zcl_lnt_issue( i_i ).
-    DATA(t2) = CAST zcl_lnt_shape_9ead17bd( i_range ).
+    DATA(t1) = i_i.
+    DATA(t2) = i_range.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/code_actions.ts:98|.
     t3->source_location = t4.

@@ -21,10 +21,10 @@ ENDCLASS.
 CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_lang_version.
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_runnable ).
+    DATA(t2) = i_runnable.
     DATA(t3) = t1.
     me->lang_version = t3.
-    DATA(t4) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t4) = t2.
     me->runnable = t4.
   ENDMETHOD.
 
@@ -43,7 +43,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE i.
     DATA(t4) = CONV string( zcl_lnt_combi=>get_language_version( ) ).
@@ -54,8 +54,8 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     t2 = xsdbool( t3 > t5 ).
     IF t2 = abap_true.
       DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t8) = CAST zif_lnt_statement_runnable( me->runnable ).
-      DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+      DATA(t8) = me->runnable.
+      DATA(t9) = t1.
       t7 = t8->run( i_r_f634 = t9 ).
       result = t7.
       RETURN.
@@ -83,14 +83,14 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
 
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = CAST zif_lnt_statement_runnable( me->runnable ).
+    DATA(t2) = me->runnable.
     t1 = t2->first( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -99,10 +99,10 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t7) = t5.
+    DATA(t8) = t1.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     t4 = t9.
     t3 = t4.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -117,8 +117,8 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     t11 = xsdbool( t12 > t14 ).
     IF t11 = abap_true.
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t17) = CAST zif_lnt_statement_runnable( me->runnable ).
-      DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t17) = me->runnable.
+      DATA(t18) = t3.
       t16 = t17->run( i_r_f634 = t18 ).
       t10 = t16.
     ELSE.

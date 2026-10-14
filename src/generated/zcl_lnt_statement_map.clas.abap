@@ -15,7 +15,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_map__7946c121f0e1.
     DATA(t3) = NEW zlnt_runtime_map__7946c121f0e1( ).
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_map__7946c121f0e1( t2 ).
+    DATA(t4) = t2.
     t1 = t4.
     me->map = t1.
     DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_abap=>get_statements( ) ).
@@ -28,13 +28,13 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zif_lnt_statement_runnable.
-      DATA(t11) = CAST zif_lnt_statement( t6 ).
+      DATA(t11) = t6.
       t10 = t11->get_matcher( ).
       t9 = t10->first( ).
       t8 = t9.
       DATA t12 TYPE abap_bool.
       DATA t13 TYPE i.
-      DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t8 ).
+      DATA(t14) = t8.
       t13 = lines( t14->items ).
       DATA(t15) = 0.
       t12 = xsdbool( t13 = t15 ).
@@ -62,19 +62,19 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
         t16->payload = t17.
         RAISE EXCEPTION t16.
       ENDIF.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t8 ).
+      DATA(t23) = t8.
       DATA(t24) = VALUE string( ).
       LOOP AT t23->items INTO t24.
         DATA t25 TYPE abap_bool.
         DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t27) = CAST zlnt_runtime_map__7946c121f0e1( me->map ).
+        DATA(t27) = me->map.
         DATA(t28) = t24.
         t26 = t27->get( p0 = t28 ).
         t25 = xsdbool( t26 IS BOUND ).
         IF t25 = abap_true.
           DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA(t31) = CAST zlnt_runtime_map__7946c121f0e1( me->map ).
+          DATA(t31) = me->map.
           DATA(t32) = t24.
           t30 = t31->get( p0 = t32 ).
           t29 = t30.
@@ -84,7 +84,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
           CLEAR t34.
           DATA(t35) = abap_true.
           IF t35 = abap_true.
-            DATA(t36) = CAST zif_lnt_statement( t6 ).
+            DATA(t36) = t6.
             t34 = t36.
           ELSE.
             DATA t37 TYPE REF TO zif_lnt_statement.
@@ -98,7 +98,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
         ELSE.
           DATA t39 TYPE REF TO zlnt_runtime_map__7946c121f0e1.
           CLEAR t39.
-          DATA(t40) = CAST zlnt_runtime_map__7946c121f0e1( me->map ).
+          DATA(t40) = me->map.
           DATA(t41) = t24.
           DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t42.
@@ -106,14 +106,14 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
           DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CREATE OBJECT t44.
           t43 = t44.
-          DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+          DATA(t45) = t43.
           DATA t46 TYPE REF TO zcl_lnt_shape_1adc9d0c.
           CLEAR t46.
           DATA t47 TYPE REF TO zif_lnt_statement.
           CLEAR t47.
           DATA(t48) = abap_true.
           IF t48 = abap_true.
-            DATA(t49) = CAST zif_lnt_statement( t6 ).
+            DATA(t49) = t6.
             t47 = t49.
           ELSE.
             DATA t50 TYPE REF TO zif_lnt_statement.
@@ -124,7 +124,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
           CLEAR t51.
           t46 = NEW zcl_lnt_shape_1adc9d0c( i_statement = t47 i_matcher = t51 ).
           APPEND t46 TO t45->items.
-          DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+          DATA(t52) = t43.
           t42 = t52.
           t39 = t40->set( p0 = t41 p1 = t42 ).
         ENDIF.
@@ -138,7 +138,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_map__7946c121f0e1( me->map ).
+    DATA(t4) = me->map.
     DATA t5 TYPE string.
     DATA(t6) = t1.
     DATA(t7) = strlen( t6 ).
@@ -152,14 +152,14 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     t2 = t3.
     DATA(t8) = VALUE abap_bool( ).
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t10) = t2.
     t9 = t10.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
     t11 = t12.
     DATA(t13) = VALUE abap_bool( ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t14) = t9.
     IF t14 IS INITIAL.
       t13 = abap_true.
     ENDIF.
@@ -175,7 +175,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
     DATA t19 TYPE REF TO zcl_lnt_shape_1adc9d0c.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t21) = t2.
     t20 = t21.
     DATA t22 TYPE REF TO object.
     CLEAR t22.
@@ -188,14 +188,14 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     CLEAR t24.
     t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = CAST zif_lnt_statement_runnable( t17 ).
+    DATA(t26) = t17.
     IF t26 IS INITIAL.
       t25 = abap_true.
     ENDIF.
     t16 = t25.
     IF t16 = abap_true.
       DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t28) = t2.
       t27 = t28.
       DATA t29 TYPE REF TO zcl_lnt_shape_1adc9d0c.
       CLEAR t29.
@@ -203,14 +203,14 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       CLEAR t30.
       LOOP AT t27->items INTO t30.
         t29 ?= t30.
-        DATA(t31) = CAST zcl_lnt_shape_1adc9d0c( t29 ).
+        DATA(t31) = t29.
         DATA t32 TYPE REF TO zif_lnt_statement_runnable.
         CLEAR t32.
         DATA(t33) = abap_true.
         IF t33 = abap_true.
           DATA t34 TYPE REF TO zif_lnt_statement_runnable.
           DATA t35 TYPE REF TO zif_lnt_statement.
-          DATA(t36) = CAST zcl_lnt_shape_1adc9d0c( t29 ).
+          DATA(t36) = t29.
           t35 = t36->statement.
           t34 = t35->get_matcher( ).
           t32 = t34.
@@ -223,7 +223,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       ENDLOOP.
     ENDIF.
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t39) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t39) = t2.
     t38 = t39.
     result = t38.
 

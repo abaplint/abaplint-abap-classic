@@ -59,13 +59,13 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Syntax|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       DATA(t20) = |Quickfix|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t21) = t15.
       t14 = t21.
       t12 = t14.
     ELSE.
@@ -83,13 +83,13 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_src_rls_xml_bm_ts_xml.
-    DATA(t1) = CAST zcl_lnt_xmlbom_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_src_rls_xml_bm_ts_xml.
-    DATA(t1) = CAST zcl_lnt_xmlbom_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:31|.
     t2->source_location = t3.
@@ -97,7 +97,7 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD int_ins_src_rls_xml_bm_ts_xmlb.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:35|.
     t2->source_location = t3.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:39|.
     t2->source_location = t3.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD create_issue.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:48|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:31|.
     t2->source_location = t3.
@@ -139,7 +139,7 @@ CLASS zcl_lnt_xmlbom IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/xml_bom.ts:35|.
     t2->source_location = t3.

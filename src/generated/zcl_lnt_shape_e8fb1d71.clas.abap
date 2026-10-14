@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_e8fb1d71 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_e8fb1d71 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_info_class_definition( i_def ).
-    DATA(t2) = CAST zcl_lnt_inf_clss_implmnttn( i_impl ).
+    DATA(t1) = i_def.
+    DATA(t2) = i_impl.
     DATA t3 TYPE REF TO zcl_lnt_info_class_definition.
-    DATA(t4) = CAST zcl_lnt_info_class_definition( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->def = t3.
     DATA t5 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-    DATA(t6) = CAST zcl_lnt_inf_clss_implmnttn( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->impl = t5.
   ENDMETHOD.

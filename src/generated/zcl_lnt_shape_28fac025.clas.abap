@@ -11,12 +11,12 @@ CLASS zcl_lnt_shape_28fac025 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_28fac025 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
-    DATA(t2) = CAST zlnt_runtime_map__abd6fd794ffb( i_values ).
-    DATA(t3) = CAST zcl_lnt_typed_identifier( t1 ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_values.
+    DATA(t3) = t1.
     me->type_cba0 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    DATA(t5) = CAST zlnt_runtime_map__abd6fd794ffb( t2 ).
+    DATA(t5) = t2.
     t4 = t5.
     me->values = t4.
   ENDMETHOD.

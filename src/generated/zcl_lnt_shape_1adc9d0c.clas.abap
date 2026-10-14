@@ -11,13 +11,13 @@ CLASS zcl_lnt_shape_1adc9d0c DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_1adc9d0c IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_statement( i_statement ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_matcher ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_matcher.
     DATA t3 TYPE REF TO zif_lnt_statement.
-    DATA(t4) = CAST zif_lnt_statement( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->statement = t3.
-    DATA(t5) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t5) = t2.
     me->matcher = t5.
   ENDMETHOD.
 

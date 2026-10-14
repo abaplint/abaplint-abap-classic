@@ -19,7 +19,7 @@ CLASS zcl_lnt_list IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_51c1.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_keywords ).
+    DATA(t1) = i_keywords.
     DATA(t2) = i_source_75cf.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/abap/artifacts.ts:20|.

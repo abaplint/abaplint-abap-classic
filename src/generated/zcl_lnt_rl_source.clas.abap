@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_rl_source IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_entity.
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_names ).
-    DATA(t3) = CAST zif_lnt_union_48da8d64( i_type_9913 ).
+    DATA(t2) = i_names.
+    DATA(t3) = i_type_9913.
     DATA(t4) = t1.
     me->entity = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t5) = t2.
     me->names = t5.
-    DATA(t6) = CAST zif_lnt_union_48da8d64( t3 ).
+    DATA(t6) = t3.
     me->type_cba0 = t6.
   ENDMETHOD.
 

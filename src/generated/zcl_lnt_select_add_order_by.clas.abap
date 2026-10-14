@@ -107,10 +107,10 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       t27 = t32.
       t25 = t27.
     ELSE.
@@ -128,13 +128,13 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_s_a_o_b_t_s_ad_or_by.
-    DATA(t1) = CAST zcl_lnt_slct_add_ordr_by_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD i_i_s_r_s_a_o_b_ts_sl_ad_or_by.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_add_order_by.ts:45|.
     t2->source_location = t3.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD s_c_i_s_r_s_a_o_b_t_s_ad_or_by.
-    DATA(t1) = CAST zcl_lnt_slct_add_ordr_by_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_add_order_by.ts:50|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_add_order_by.ts:54|.
     t2->source_location = t3.
@@ -158,9 +158,9 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_target_sorted_or_hashed.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_spaghetti.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/select_add_order_by.ts:100|.
     t4->source_location = t5.
@@ -178,7 +178,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_add_order_by.ts:45|.
     t2->source_location = t3.
@@ -186,7 +186,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_add_order_by.ts:50|.
     t2->source_location = t3.

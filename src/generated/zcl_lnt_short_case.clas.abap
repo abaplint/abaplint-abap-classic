@@ -96,10 +96,10 @@ CLASS zcl_lnt_short_case IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |SingleFile|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       t25 = t30.
       t23 = t25.
     ELSE.
@@ -124,13 +124,13 @@ CLASS zcl_lnt_short_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sh_cs_ts_shr_cs.
-    DATA(t1) = CAST zcl_lnt_short_case_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sh_cs_ts_shr_cs.
-    DATA(t1) = CAST zcl_lnt_short_case_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/short_case.ts:44|.
     t2->source_location = t3.
@@ -138,7 +138,7 @@ CLASS zcl_lnt_short_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_sh_cs_ts_shr_cs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/short_case.ts:48|.
     t2->source_location = t3.

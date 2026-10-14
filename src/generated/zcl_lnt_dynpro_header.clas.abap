@@ -18,7 +18,7 @@ CLASS zcl_lnt_dynpro_header IMPLEMENTATION.
     DATA(t2) = i_description.
     DATA(t3) = i_next_screen.
     DATA(t4) = i_type_9913.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
+    DATA(t5) = i_fields_62af.
     DATA(t6) = t1.
     me->number = t6.
     DATA(t7) = t2.
@@ -27,7 +27,7 @@ CLASS zcl_lnt_dynpro_header IMPLEMENTATION.
     me->next_screen = t8.
     DATA(t9) = t4.
     me->type_cba0 = t9.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t10) = t5.
     me->fields_464c = t10.
   ENDMETHOD.
 

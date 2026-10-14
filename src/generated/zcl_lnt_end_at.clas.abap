@@ -16,7 +16,7 @@ CLASS zcl_lnt_end_at IMPLEMENTATION.
     DATA(t3) = |ENDAT|.
     t2 = zcl_lnt_st_combi_module=>str( i_s = t3 ).
     t1 = t2.
-    DATA(t4) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t4) = t1.
     result = t4.
 
   ENDMETHOD.

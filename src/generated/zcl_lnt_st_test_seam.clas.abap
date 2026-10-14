@@ -55,7 +55,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     CLEAR t16.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384 ).
+    DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384.
     IF t18 IS BOUND.
       CREATE OBJECT t17.
       t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
@@ -67,9 +67,9 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     CREATE OBJECT t20.
     t19 = t20.
     DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t22) = CAST zlnt_runtime_dyna_a429568d5be8( t13 ).
-    DATA(t23) = CAST zlnt_runtime_dyna_a429568d5be8( t16 ).
-    DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t19 ).
+    DATA(t22) = t13.
+    DATA(t23) = t16.
+    DATA(t24) = t19.
     t21 = zcl_lnt_st_combi_module=>seq( i_first = t22 i_second = t23 i_rest = t24 ).
     t12 = t21.
     IF t12 IS BOUND.

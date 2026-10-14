@@ -11,11 +11,11 @@ CLASS zcl_lnt_ivariable_reference DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_ivariable_reference IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_position_a3fd ).
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_resolved ).
-    DATA(t3) = CAST zcl_lnt_fi_identifier( t1 ).
+    DATA(t1) = i_position_a3fd.
+    DATA(t2) = i_resolved.
+    DATA(t3) = t1.
     me->position_7b94 = t3.
-    DATA(t4) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t4) = t2.
     me->resolved = t4.
   ENDMETHOD.
 

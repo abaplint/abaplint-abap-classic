@@ -13,14 +13,14 @@ CLASS zcl_lnt_code_lens DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_code_lens IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD list.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_code_lens_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/code_lens.ts:24|.
     t3->source_location = t4.
@@ -29,7 +29,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
 
   METHOD is_dynamic_exception.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_top ).
+    DATA(t2) = i_top.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/code_lens.ts:82|.
     t3->source_location = t4.
@@ -37,8 +37,8 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_method_references.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/code_lens.ts:94|.
     t3->source_location = t4.

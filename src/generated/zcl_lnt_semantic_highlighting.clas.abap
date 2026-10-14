@@ -21,7 +21,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     IF zcl_lnt_semantic_highlighting=>zlnt_builtin_init_ceda21d7331d = abap_false.
       zcl_lnt_semantic_highlighting=>zlnt_builtin_init_1c3f77c0f160( ).
     ENDIF.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/semantic.ts:27|.
     t2->source_location = t3.
@@ -49,7 +49,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD semantic_tokens_range.
-    DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).
+    DATA(t1) = i_range.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/semantic.ts:58|.
     t2->source_location = t3.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD encode_tokens.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
+    DATA(t1) = i_tokens.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/semantic.ts:120|.
     t2->source_location = t3.

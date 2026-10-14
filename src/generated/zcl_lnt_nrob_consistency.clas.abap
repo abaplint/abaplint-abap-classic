@@ -68,10 +68,10 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |SingleFile|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       t16 = t21.
       t14 = t16.
     ELSE.
@@ -89,13 +89,13 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_nr_cn_ts_nr_cns.
-    DATA(t1) = CAST zcl_lnt_nrob_consistency_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_nr_cn_ts_nr_cns.
-    DATA(t1) = CAST zcl_lnt_nrob_consistency_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nrob_consistency.ts:31|.
     t2->source_location = t3.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_nrb_cns_ts_nrb_cns.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nrob_consistency.ts:35|.
     t2->source_location = t3.
@@ -111,7 +111,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nrob_consistency.ts:40|.
     t2->source_location = t3.
@@ -129,7 +129,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nrob_consistency.ts:31|.
     t2->source_location = t3.
@@ -137,7 +137,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/nrob_consistency.ts:35|.
     t2->source_location = t3.

@@ -18,10 +18,10 @@ CLASS zcl_lnt_frbdd_psd_and_prgm_cnf IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     DATA(t5) = |"#EC *|.
     APPEND t5 TO t4->items.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     t1 = t6.
     me->pseudo = t1.
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

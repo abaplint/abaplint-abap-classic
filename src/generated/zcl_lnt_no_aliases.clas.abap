@@ -93,10 +93,10 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |SingleFile|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       t23 = t28.
       t21 = t23.
     ELSE.
@@ -114,13 +114,13 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_n_als_ts_n_als.
-    DATA(t1) = CAST zcl_lnt_no_aliases_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_n_als_ts_n_als.
-    DATA(t1) = CAST zcl_lnt_no_aliases_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_aliases.ts:37|.
     t2->source_location = t3.
@@ -128,7 +128,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rls_n_als_ts_n_als.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_aliases.ts:41|.
     t2->source_location = t3.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD skip_alias.
-    DATA(t1) = CAST zcl_lnt_info_alias( i_alias ).
+    DATA(t1) = i_alias.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_aliases.ts:63|.
     t2->source_location = t3.

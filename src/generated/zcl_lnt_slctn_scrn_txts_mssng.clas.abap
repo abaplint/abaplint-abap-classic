@@ -74,13 +74,13 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_s_s_t_m_t_s_sc_tx_ms.
-    DATA(t1) = CAST zcl_lnt_slc_scrn_txts_mssn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_s_s_t_m_t_s_sc_tx_ms.
-    DATA(t1) = CAST zcl_lnt_slc_scrn_txts_mssn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_texts_missing.ts:35|.
     t2->source_location = t3.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_s_r_s_s_t_m_ts_sl_sc_tx_ms.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_texts_missing.ts:39|.
     t2->source_location = t3.
@@ -96,7 +96,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_texts_missing.ts:44|.
     t2->source_location = t3.
@@ -104,11 +104,11 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_file.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zlnt_runtime_map__8bf596bf435b( i_sel_texts ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_output ).
-    DATA(t4) = CAST zlnt_runtime_set__1827558fd4c7( i_checked ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_main_prog_name ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_sel_texts.
+    DATA(t3) = i_output.
+    DATA(t4) = i_checked.
+    DATA(t5) = i_main_prog_name.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/selection_screen_texts_missing.ts:62|.
     t6->source_location = t7.
@@ -126,7 +126,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_texts_missing.ts:35|.
     t2->source_location = t3.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/selection_screen_texts_missing.ts:39|.
     t2->source_location = t3.

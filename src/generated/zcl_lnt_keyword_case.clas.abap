@@ -84,16 +84,16 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |Styleguide|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       DATA(t28) = |SingleFile|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t29) = t23.
       DATA(t30) = |Quickfix|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t31) = t23.
       t22 = t31.
       t20 = t22.
     ELSE.
@@ -111,13 +111,13 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ky_cs_ts_kyw_cs.
-    DATA(t1) = CAST zcl_lnt_keyword_case_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ky_cs_ts_kyw_cs.
-    DATA(t1) = CAST zcl_lnt_keyword_case_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keyword_case.ts:129|.
     t2->source_location = t3.
@@ -125,8 +125,8 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_ky_cs_ts_kyw_cs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/keyword_case.ts:142|.
     t3->source_location = t4.
@@ -134,8 +134,8 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tokens.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/keyword_case.ts:193|.
     t3->source_location = t4.
@@ -143,8 +143,8 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_union_bb14dc41( i_s ).
-    DATA(t2) = CAST zif_lnt_statement( i_parent ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_parent.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/keyword_case.ts:233|.
     t3->source_location = t4.

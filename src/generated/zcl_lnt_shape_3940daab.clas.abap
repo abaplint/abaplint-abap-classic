@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_3940daab DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_3940daab IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_name_end ).
-    DATA(t2) = CAST zcl_lnt_position( i_after ).
+    DATA(t1) = i_name_end.
+    DATA(t2) = i_after.
     DATA t3 TYPE REF TO zcl_lnt_position.
-    DATA(t4) = CAST zcl_lnt_position( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->name_end = t3.
     DATA t5 TYPE REF TO zcl_lnt_position.
-    DATA(t6) = CAST zcl_lnt_position( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->after_2484 = t5.
   ENDMETHOD.

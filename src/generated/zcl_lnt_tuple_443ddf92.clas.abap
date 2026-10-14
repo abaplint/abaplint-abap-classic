@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_tuple_443ddf92 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_f0.
-    DATA(t2) = CAST zcl_lnt_abap_release( i_f1 ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_f2 ).
+    DATA(t2) = i_f1.
+    DATA(t3) = i_f2.
     DATA(t4) = t1.
     me->f0 = t4.
-    DATA(t5) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t5) = t2.
     me->f1 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t6) = t3.
     me->f2 = t6.
   ENDMETHOD.
 

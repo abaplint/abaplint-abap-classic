@@ -9,11 +9,11 @@ CLASS zcl_lnt_sy_expres_constant DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
+    DATA(t1) = i_node.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t4) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154.
     t3 = t4->find_direct_expression( i_type_9913 = t5 ).
     t2 = xsdbool( t3 IS BOUND ).
     IF t2 = abap_true.
@@ -64,11 +64,11 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
     DATA t22 TYPE string.
     DATA t23 TYPE REF TO zcl_lnt_abstract_token.
     DATA t24 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t25) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t25) = t1.
     t24 = t25->get_first_token( ).
     t23 = t24.
     DATA t26 TYPE string.
-    DATA(t27) = CAST zcl_lnt_abstract_token( t23 ).
+    DATA(t27) = t23.
     t26 = t27->str.
     t22 = t26.
     t21 = t22.

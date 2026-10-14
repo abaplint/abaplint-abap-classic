@@ -17,21 +17,21 @@ CLASS zcl_lnt_shape_e86506f0 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_is_include.
     DATA(t2) = i_is_module_pool.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_dynpros ).
-    DATA(t5) = CAST zlnt_runtime_map__8bf596bf435b( i_selection_texts ).
+    DATA(t3) = i_description.
+    DATA(t4) = i_dynpros.
+    DATA(t5) = i_selection_texts.
     DATA(t6) = t1.
     me->is_include = t6.
     DATA(t7) = t2.
     me->is_module_pool = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t8) = t3.
     me->description = t8.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t10) = t4.
     t9 = t10.
     me->dynpros = t9.
     DATA t11 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
-    DATA(t12) = CAST zlnt_runtime_map__8bf596bf435b( t5 ).
+    DATA(t12) = t5.
     t11 = t12.
     me->selection_texts = t11.
   ENDMETHOD.

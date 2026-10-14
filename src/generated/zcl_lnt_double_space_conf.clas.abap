@@ -21,16 +21,16 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t4.
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t5) = t3.
     DATA(t6) = |CHANGING|.
     APPEND t6 TO t5->items.
-    DATA(t7) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t7) = t3.
     DATA(t8) = |EXPORTING|.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t9) = t3.
     DATA(t10) = |OTHERS|.
     APPEND t10 TO t9->items.
-    DATA(t11) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
+    DATA(t11) = t3.
     t2 = t11.
     me->skip_keywords = t2.
     DATA(t12) = abap_true.

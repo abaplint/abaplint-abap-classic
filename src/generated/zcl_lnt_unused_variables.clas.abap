@@ -148,10 +148,10 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
       DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t36.
       t35 = t36.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
+      DATA(t37) = t35.
       DATA(t38) = |Quickfix|.
       APPEND t38 TO t37->items.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
+      DATA(t39) = t35.
       t34 = t39.
       t32 = t34.
     ELSE.
@@ -193,13 +193,13 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_vr_ts_un_vrb.
-    DATA(t1) = CAST zcl_lnt_unused_variables_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_vr_ts_un_vrb.
-    DATA(t1) = CAST zcl_lnt_unused_variables_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:105|.
     t2->source_location = t3.
@@ -207,7 +207,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_uns_vrb_ts_uns_vrb.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:112|.
     t2->source_location = t3.
@@ -215,7 +215,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:117|.
     t2->source_location = t3.
@@ -223,8 +223,8 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_uses.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_variables.ts:165|.
     t3->source_location = t4.
@@ -232,8 +232,8 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_workarea.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unused_variables.ts:180|.
     t3->source_location = t4.
@@ -241,7 +241,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_issues.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:214|.
     t2->source_location = t3.
@@ -249,10 +249,10 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD suppressedby_pseudo.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = i_statement_index.
-    DATA(t3) = CAST zcl_lnt_typed_identifier( i_v ).
-    DATA(t4) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t3) = i_v.
+    DATA(t4) = i_obj_1ed0.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/unused_variables.ts:265|.
     t5->source_location = t6.
@@ -268,9 +268,9 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_typed_identifier( i_v ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
-    DATA(t3) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_v.
+    DATA(t2) = i_obj_1ed0.
+    DATA(t3) = i_statement.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/unused_variables.ts:291|.
     t4->source_location = t5.
@@ -288,7 +288,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:105|.
     t2->source_location = t3.
@@ -296,7 +296,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unused_variables.ts:112|.
     t2->source_location = t3.

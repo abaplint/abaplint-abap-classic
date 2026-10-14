@@ -11,13 +11,13 @@ CLASS zcl_lnt_shape_63d7d0d8 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_63d7d0d8 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
-    DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_kind ).
+    DATA(t1) = i_range.
+    DATA(t2) = i_kind.
     DATA t3 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t4) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->range = t3.
-    DATA(t5) = CAST zlnt_runtime_opti_4a236cd5714d( t2 ).
+    DATA(t5) = t2.
     me->kind = t5.
   ENDMETHOD.
 

@@ -9,27 +9,27 @@ CLASS zcl_lnt_sy_dereference DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zif_lnt_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t3) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_type_9913.
+    DATA(t3) = i_input_967e.
     DATA(t4) = VALUE abap_bool( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE abap_bool( ).
     DATA t7 TYPE abap_bool.
     DATA t8 TYPE abap_bool.
-    DATA(t9) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t9) = t2.
     t8 = xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_void_type ).
     t7 = t8.
     IF t8 = abap_false.
       DATA t10 TYPE abap_bool.
-      DATA(t11) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t11) = t2.
       t10 = xsdbool( t11 IS BOUND AND t11 IS INSTANCE OF zcl_lnt_any_type ).
       t7 = t10.
     ENDIF.
     t6 = t7.
     IF t7 = abap_false.
       DATA t12 TYPE abap_bool.
-      DATA(t13) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t13) = t2.
       t12 = xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_data_type ).
       t6 = t12.
     ENDIF.
@@ -37,14 +37,14 @@ CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
     IF t6 = abap_false.
       DATA(t14) = VALUE abap_bool( ).
       DATA t15 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t16) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t16) = t2.
       t15 = t16.
       DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t18.
       t17 = t18.
       DATA(t19) = VALUE abap_bool( ).
-      DATA(t20) = CAST zcl_lnt_abstract_type( t15 ).
+      DATA(t20) = t15.
       IF t20 IS INITIAL.
         t19 = abap_true.
       ENDIF.
@@ -54,18 +54,18 @@ CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
     t4 = t5.
     IF t5 = abap_false.
       DATA t21 TYPE abap_bool.
-      DATA(t22) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t22) = t2.
       t21 = xsdbool( t22 IS BOUND AND t22 IS INSTANCE OF zcl_lnt_unknown_type ).
       t4 = t21.
     ENDIF.
     IF t4 = abap_true.
-      DATA(t23) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t23) = t2.
       result = t23.
       RETURN.
     ENDIF.
     DATA t24 TYPE abap_bool.
     DATA t25 TYPE abap_bool.
-    DATA(t26) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t26) = t2.
     t25 = xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_data_reference ).
     t24 = xsdbool( t25 = abap_false ).
     IF t24 = abap_true.
@@ -73,12 +73,12 @@ CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
       DATA(t28) = |Not a data reference, cannot be dereferenced|.
       t27 = t28.
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t30) = CAST zcl_lnt_syntax_input( t3 ).
+      DATA(t30) = t3.
       t29 = t30->issues.
       DATA t31 TYPE REF TO zcl_lnt_issue.
-      DATA(t32) = CAST zcl_lnt_syntax_input( t3 ).
+      DATA(t32) = t3.
       DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t34) = CAST zif_lnt_node( t1 ).
+      DATA(t34) = t1.
       t33 = t34->get_first_token( ).
       DATA(t35) = t27.
       DATA t36 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -114,11 +114,11 @@ CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
       DATA t46 TYPE REF TO zcl_lnt_abstract_type.
       DATA t47 TYPE REF TO zcl_lnt_data_reference.
       DATA t48 TYPE REF TO zcl_lnt_data_reference.
-      DATA(t49) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t49) = t2.
       t48 ?= t49.
       t47 = t48.
       DATA t50 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t51) = CAST zcl_lnt_data_reference( t47 ).
+      DATA(t51) = t47.
       t50 = t51->type_cba0.
       t46 = t50.
       t44 = t46.

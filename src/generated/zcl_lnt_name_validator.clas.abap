@@ -10,12 +10,12 @@ ENDCLASS.
 CLASS zcl_lnt_name_validator IMPLEMENTATION.
   METHOD violates_rule.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_pattern ).
-    DATA(t3) = CAST zcl_lnt_naming_rule_config( i_params_4c59 ).
+    DATA(t2) = i_pattern.
+    DATA(t3) = i_params_4c59.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t7) = CAST zcl_lnt_naming_rule_config( t3 ).
+    DATA(t7) = t3.
     t6 = t7->ignore_names.
     t5 = xsdbool( t6 IS BOUND ).
     t4 = t5.
@@ -24,7 +24,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       DATA(t9) = VALUE i( ).
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t12) = CAST zcl_lnt_naming_rule_config( t3 ).
+      DATA(t12) = t3.
       t11 = t12->ignore_names.
       t10 = t11.
       DATA t13 TYPE string.
@@ -50,17 +50,17 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t21) = CAST zcl_lnt_naming_rule_config( t3 ).
+    DATA(t21) = t3.
     t20 = t21->ignore_patterns.
     t19 = t20.
     DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t22.
     DATA t23 TYPE abap_bool.
-    DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+    DATA(t24) = t19.
     t23 = xsdbool( t24 IS BOUND ).
     IF t23 = abap_true.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t26) = t19.
       t25 = t26.
       t22 = t25.
     ELSE.
@@ -90,7 +90,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     DATA(t37) = VALUE abap_bool( ).
     DATA(t38) = VALUE abap_bool( ).
     DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t40) = CAST zcl_lnt_naming_rule_config( t3 ).
+    DATA(t40) = t3.
     t39 = t40->pattern_kind.
     IF t39 IS BOUND.
       IF t39->has = abap_true.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       DATA t41 TYPE abap_bool.
       DATA t42 TYPE string.
       DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t44) = CAST zcl_lnt_naming_rule_config( t3 ).
+      DATA(t44) = t3.
       t43 = t44->pattern_kind.
       t42 = t43->value.
       DATA(t45) = |required|.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     IF t36 = abap_true.
       DATA t46 TYPE abap_bool.
       DATA t47 TYPE abap_bool.
-      DATA(t48) = CAST zlnt_runtime_rege_5a210f82384e( t2 ).
+      DATA(t48) = t2.
       DATA(t49) = t1.
       t47 = t48->test( p0 = t49 ).
       DATA(t50) = abap_false.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     ELSE.
       DATA t51 TYPE abap_bool.
       DATA t52 TYPE abap_bool.
-      DATA(t53) = CAST zlnt_runtime_rege_5a210f82384e( t2 ).
+      DATA(t53) = t2.
       DATA(t54) = t1.
       t52 = t53->test( p0 = t54 ).
       DATA(t55) = abap_true.

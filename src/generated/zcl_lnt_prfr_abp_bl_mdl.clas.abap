@@ -19,25 +19,25 @@ CLASS zcl_lnt_prfr_abp_bl_mdl IMPLEMENTATION.
     DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t4) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
+    DATA(t4) = t1.
     DATA(t5) = |XFELD|.
     t3 = t4->add( p0 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t7) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
+    DATA(t7) = t1.
     DATA(t8) = |SAP_BOOL|.
     t6 = t7->add( p0 = t8 ).
     DATA t9 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t10) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
+    DATA(t10) = t1.
     DATA(t11) = |BOOLE_D|.
     t9 = t10->add( p0 = t11 ).
     DATA t12 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t13) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
+    DATA(t13) = t1.
     DATA(t14) = |FLAG|.
     t12 = t13->add( p0 = t14 ).
     IF zcl_lnt_prfr_abp_bl_mdl=>zlnt_builtin_init_c96b25bbd049 = abap_false.
       zcl_lnt_prfr_abp_bl_mdl=>zlnt_builtin_init_3838d3e910b3( ).
     ENDIF.
-    DATA(t15) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
+    DATA(t15) = t1.
     zcl_lnt_prfr_abp_bl_mdl=>forbidden_types = t15.
   ENDMETHOD.
 

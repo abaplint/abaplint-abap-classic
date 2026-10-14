@@ -79,7 +79,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_data_type.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/data_element.ts:88|.
     t2->source_location = t3.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD parse_type.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/objects/data_element.ts:122|.
     t2->source_location = t3.

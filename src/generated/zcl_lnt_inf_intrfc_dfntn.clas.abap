@@ -21,31 +21,31 @@ ENDCLASS.
 CLASS zcl_lnt_inf_intrfc_dfntn IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t2) = i_identifier.
     DATA(t3) = i_is_local.
     DATA(t4) = i_is_global.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( i_interfaces ).
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( i_methods ).
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( i_aliases_acc1 ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( i_constants ).
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( i_attributes ).
+    DATA(t5) = i_interfaces.
+    DATA(t6) = i_methods.
+    DATA(t7) = i_aliases_acc1.
+    DATA(t8) = i_constants.
+    DATA(t9) = i_attributes.
     DATA(t10) = t1.
     me->name = t10.
-    DATA(t11) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t11) = t2.
     me->identifier = t11.
     DATA(t12) = t3.
     me->is_local = t12.
     DATA(t13) = t4.
     me->is_global = t13.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t14) = t5.
     me->interfaces = t14.
-    DATA(t15) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t15) = t6.
     me->methods = t15.
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t16) = t7.
     me->aliases_62bb = t16.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t17) = t8.
     me->constants = t17.
-    DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t18) = t9.
     me->attributes = t18.
   ENDMETHOD.
 

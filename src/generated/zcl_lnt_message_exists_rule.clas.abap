@@ -51,10 +51,10 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Syntax|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -72,13 +72,13 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_in_sr_rl_ms_ex_ts_ms_ex_rl.
-    DATA(t1) = CAST zcl_lnt_message_exists_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_in_sr_rl_ms_ex_ts_ms_ex_rl.
-    DATA(t1) = CAST zcl_lnt_message_exists_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:39|.
     t2->source_location = t3.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:43|.
     t2->source_location = t3.
@@ -94,7 +94,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:57|.
     t2->source_location = t3.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_report_statement.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:75|.
     t2->source_location = t3.
@@ -110,8 +110,8 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_class.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/message_exists.ts:94|.
     t3->source_location = t4.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_source.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:105|.
     t2->source_location = t3.
@@ -127,7 +127,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD count_with.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:146|.
     t2->source_location = t3.
@@ -145,7 +145,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/message_exists.ts:39|.
     t2->source_location = t3.

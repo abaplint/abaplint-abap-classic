@@ -10,8 +10,8 @@ CLASS zcl_lnt_idcmnt_symbl_prms DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_shape_9e00b1e6( t1 ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = t1.
     me->text_document = t2.
   ENDMETHOD.
 

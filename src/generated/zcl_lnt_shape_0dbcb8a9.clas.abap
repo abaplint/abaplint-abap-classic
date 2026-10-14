@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_0dbcb8a9 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_0dbcb8a9 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_object_oriented( i_oooc ).
-    DATA(t2) = CAST zcl_lnt_procedural( i_proc ).
+    DATA(t1) = i_oooc.
+    DATA(t2) = i_proc.
     DATA t3 TYPE REF TO zcl_lnt_object_oriented.
-    DATA(t4) = CAST zcl_lnt_object_oriented( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->oooc = t3.
     DATA t5 TYPE REF TO zcl_lnt_procedural.
-    DATA(t6) = CAST zcl_lnt_procedural( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->proc = t5.
   ENDMETHOD.

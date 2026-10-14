@@ -21,54 +21,54 @@ CLASS zcl_lnt_shape_4d146093 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_4d146093 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_release( i_v750 ).
-    DATA(t2) = CAST zcl_lnt_abap_release( i_v751 ).
-    DATA(t3) = CAST zcl_lnt_abap_release( i_v752 ).
-    DATA(t4) = CAST zcl_lnt_abap_release( i_v753 ).
-    DATA(t5) = CAST zcl_lnt_abap_release( i_v754 ).
-    DATA(t6) = CAST zcl_lnt_abap_release( i_v755 ).
-    DATA(t7) = CAST zcl_lnt_abap_release( i_v756 ).
-    DATA(t8) = CAST zcl_lnt_abap_release( i_v757 ).
-    DATA(t9) = CAST zcl_lnt_abap_release( i_v758 ).
-    DATA(t10) = CAST zcl_lnt_abap_release( i_v816 ).
+    DATA(t1) = i_v750.
+    DATA(t2) = i_v751.
+    DATA(t3) = i_v752.
+    DATA(t4) = i_v753.
+    DATA(t5) = i_v754.
+    DATA(t6) = i_v755.
+    DATA(t7) = i_v756.
+    DATA(t8) = i_v757.
+    DATA(t9) = i_v758.
+    DATA(t10) = i_v816.
     DATA t11 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t12) = CAST zcl_lnt_abap_release( t1 ).
+    DATA(t12) = t1.
     t11 = t12.
     me->v750 = t11.
     DATA t13 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t14) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t14) = t2.
     t13 = t14.
     me->v751 = t13.
     DATA t15 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t16) = CAST zcl_lnt_abap_release( t3 ).
+    DATA(t16) = t3.
     t15 = t16.
     me->v752 = t15.
     DATA t17 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t18) = CAST zcl_lnt_abap_release( t4 ).
+    DATA(t18) = t4.
     t17 = t18.
     me->v753 = t17.
     DATA t19 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t20) = CAST zcl_lnt_abap_release( t5 ).
+    DATA(t20) = t5.
     t19 = t20.
     me->v754 = t19.
     DATA t21 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t22) = CAST zcl_lnt_abap_release( t6 ).
+    DATA(t22) = t6.
     t21 = t22.
     me->v755 = t21.
     DATA t23 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t24) = CAST zcl_lnt_abap_release( t7 ).
+    DATA(t24) = t7.
     t23 = t24.
     me->v756 = t23.
     DATA t25 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t26) = CAST zcl_lnt_abap_release( t8 ).
+    DATA(t26) = t8.
     t25 = t26.
     me->v757 = t25.
     DATA t27 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t28) = CAST zcl_lnt_abap_release( t9 ).
+    DATA(t28) = t9.
     t27 = t28.
     me->v758 = t27.
     DATA t29 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t30) = CAST zcl_lnt_abap_release( t10 ).
+    DATA(t30) = t10.
     t29 = t30.
     me->v816 = t29.
   ENDMETHOD.

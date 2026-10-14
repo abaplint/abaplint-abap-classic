@@ -19,33 +19,33 @@ CLASS zcl_lnt_shape_16a9d8b6 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_16a9d8b6 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_label ).
-    DATA(t3) = CAST zlnt_runtime_opti_4a236cd5714d( i_kind ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_text_edits ).
-    DATA(t5) = CAST zlnt_runtime_dyna_a429568d5be8( i_tooltip ).
-    DATA(t6) = CAST zlnt_runtime_opti_7f2541396f43( i_padding_left ).
-    DATA(t7) = CAST zlnt_runtime_opti_7f2541396f43( i_padding_right ).
-    DATA(t8) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_position_a3fd.
+    DATA(t2) = i_label.
+    DATA(t3) = i_kind.
+    DATA(t4) = i_text_edits.
+    DATA(t5) = i_tooltip.
+    DATA(t6) = i_padding_left.
+    DATA(t7) = i_padding_right.
+    DATA(t8) = i_data_dc02.
     DATA t9 TYPE REF TO zcl_lnt_shape_38f98ddf.
-    DATA(t10) = CAST zcl_lnt_shape_38f98ddf( t1 ).
+    DATA(t10) = t1.
     t9 = t10.
     me->position_7b94 = t9.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t12) = t2.
     t11 = t12.
     me->label = t11.
-    DATA(t13) = CAST zlnt_runtime_opti_4a236cd5714d( t3 ).
+    DATA(t13) = t3.
     me->kind = t13.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t14) = t4.
     me->text_edits = t14.
-    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
+    DATA(t15) = t5.
     me->tooltip = t15.
-    DATA(t16) = CAST zlnt_runtime_opti_7f2541396f43( t6 ).
+    DATA(t16) = t6.
     me->padding_left = t16.
-    DATA(t17) = CAST zlnt_runtime_opti_7f2541396f43( t7 ).
+    DATA(t17) = t7.
     me->padding_right = t17.
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
+    DATA(t18) = t8.
     me->data_56cc = t18.
   ENDMETHOD.
 

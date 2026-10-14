@@ -17,7 +17,7 @@ CLASS zcl_lnt_prmtr_lst_excptns IMPLEMENTATION.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca ).
+    DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca.
     IF t3 IS BOUND.
       CREATE OBJECT t2.
       t2->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.

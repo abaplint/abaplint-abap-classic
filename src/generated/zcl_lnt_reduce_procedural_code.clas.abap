@@ -164,13 +164,13 @@ CLASS zcl_lnt_reduce_procedural_code IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t41.
       t40 = t41.
-      DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t42) = t40.
       DATA(t43) = |SingleFile|.
       APPEND t43 TO t42->items.
-      DATA(t44) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t44) = t40.
       DATA(t45) = |Styleguide|.
       APPEND t45 TO t44->items.
-      DATA(t46) = CAST zlnt_runtime_arra_8ecd6afe19e0( t40 ).
+      DATA(t46) = t40.
       t39 = t46.
       t37 = t39.
     ELSE.
@@ -188,13 +188,13 @@ CLASS zcl_lnt_reduce_procedural_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_rd_pr_cd_ts_rd_pr_cd.
-    DATA(t1) = CAST zcl_lnt_rdc_prcdrl_cd_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_rd_pr_cd_ts_rd_pr_cd.
-    DATA(t1) = CAST zcl_lnt_rdc_prcdrl_cd_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/reduce_procedural_code.ts:50|.
     t2->source_location = t3.
@@ -202,7 +202,7 @@ CLASS zcl_lnt_reduce_procedural_code IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_rd_pr_cd_ts_rd_pr_cd.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/reduce_procedural_code.ts:54|.
     t2->source_location = t3.

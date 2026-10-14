@@ -11,13 +11,13 @@ CLASS zcl_lnt_shape_9d228663 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_9d228663 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t1) = i_statements.
+    DATA(t2) = i_filename.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->statements = t3.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->filename = t5.
   ENDMETHOD.
 

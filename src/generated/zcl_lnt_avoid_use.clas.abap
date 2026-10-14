@@ -129,13 +129,13 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
       DATA t34 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t34.
       t33 = t34.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t35) = t33.
       DATA(t36) = |Styleguide|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t37) = t33.
       DATA(t38) = |SingleFile|.
       APPEND t38 TO t37->items.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t39) = t33.
       t32 = t39.
       t30 = t32.
     ELSE.
@@ -161,13 +161,13 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_av_us_ts_avd_us.
-    DATA(t1) = CAST zcl_lnt_avoid_use_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_av_us_ts_avd_us.
-    DATA(t1) = CAST zcl_lnt_avoid_use_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/avoid_use.ts:68|.
     t2->source_location = t3.
@@ -175,7 +175,7 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_av_us_ts_avd_us.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/avoid_use.ts:72|.
     t2->source_location = t3.
@@ -183,8 +183,8 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_describe_lines_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/avoid_use.ts:137|.
     t3->source_location = t4.

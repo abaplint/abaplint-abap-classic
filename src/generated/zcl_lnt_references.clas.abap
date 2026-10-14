@@ -15,13 +15,13 @@ CLASS zcl_lnt_references DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_references IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD references.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_pos ).
+    DATA(t1) = i_pos.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/references.ts:19|.
     t2->source_location = t3.
@@ -29,10 +29,10 @@ CLASS zcl_lnt_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD search_d139.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_exit_after_found ).
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( i_remove_duplicates ).
+    DATA(t1) = i_identifier.
+    DATA(t2) = i_node.
+    DATA(t3) = i_exit_after_found.
+    DATA(t4) = i_remove_duplicates.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/lsp/references.ts:46|.
     t5->source_location = t6.
@@ -40,7 +40,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD remove_duplicates.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_arr ).
+    DATA(t1) = i_arr.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/references.ts:75|.
     t2->source_location = t3.
@@ -48,8 +48,8 @@ CLASS zcl_lnt_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_references.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_identifier.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/references.ts:85|.
     t3->source_location = t4.

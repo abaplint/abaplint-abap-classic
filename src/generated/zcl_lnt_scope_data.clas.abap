@@ -16,37 +16,37 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA(t4) = NEW zlnt_runtime_map__126b79e3f8a9( ).
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_map__126b79e3f8a9( t3 ).
+    DATA(t5) = t3.
     t2 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA t7 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA(t8) = NEW zlnt_runtime_map__126b79e3f8a9( ).
     t7 = t8.
-    DATA(t9) = CAST zlnt_runtime_map__126b79e3f8a9( t7 ).
+    DATA(t9) = t7.
     t6 = t9.
     DATA t10 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA t11 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA(t12) = NEW zlnt_runtime_map__126b79e3f8a9( ).
     t11 = t12.
-    DATA(t13) = CAST zlnt_runtime_map__126b79e3f8a9( t11 ).
+    DATA(t13) = t11.
     t10 = t13.
     DATA t14 TYPE REF TO zlnt_runtime_map__f9d623f88b73.
     DATA t15 TYPE REF TO zlnt_runtime_map__f9d623f88b73.
     DATA(t16) = NEW zlnt_runtime_map__f9d623f88b73( ).
     t15 = t16.
-    DATA(t17) = CAST zlnt_runtime_map__f9d623f88b73( t15 ).
+    DATA(t17) = t15.
     t14 = t17.
     DATA t18 TYPE REF TO zlnt_runtime_map__3d720b31a8f8.
     DATA t19 TYPE REF TO zlnt_runtime_map__3d720b31a8f8.
     DATA(t20) = NEW zlnt_runtime_map__3d720b31a8f8( ).
     t19 = t20.
-    DATA(t21) = CAST zlnt_runtime_map__3d720b31a8f8( t19 ).
+    DATA(t21) = t19.
     t18 = t21.
     DATA t22 TYPE REF TO zlnt_runtime_map__0fbcc10173b8.
     DATA t23 TYPE REF TO zlnt_runtime_map__0fbcc10173b8.
     DATA(t24) = NEW zlnt_runtime_map__0fbcc10173b8( ).
     t23 = t24.
-    DATA(t25) = CAST zlnt_runtime_map__0fbcc10173b8( t23 ).
+    DATA(t25) = t23.
     t22 = t25.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t26.
@@ -59,7 +59,7 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_data.
-    DATA(t1) = CAST zcl_lnt_iscope_data( me->data_56cc ).
+    DATA(t1) = me->data_56cc.
     result = t1.
 
   ENDMETHOD.

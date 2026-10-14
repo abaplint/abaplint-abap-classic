@@ -110,13 +110,13 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t29.
       t28 = t29.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t30) = t28.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t32) = t28.
       DATA(t33) = |Performance|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t28 ).
+      DATA(t34) = t28.
       t27 = t34.
       t25 = t27.
     ELSE.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_slc_prf_ts_slc_prf.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_performance.ts:51|.
     t2->source_location = t3.
@@ -144,20 +144,20 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_sl_pr_ts_sl_prf.
     DATA t1 TYPE int8.
     DATA t2 TYPE int8.
-    DATA(t3) = CAST zcl_lnt_slct_prfrmnc_cnf( me->conf ).
+    DATA(t3) = me->conf.
     t2 = t3->star_okay_if_few_columns.
     t1 = t2.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     t4 = t5.
-    DATA(t6) = CAST zcl_lnt_slct_prfrmnc_cnf( me->conf ).
+    DATA(t6) = me->conf.
     result = t6.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sl_pr_ts_sl_prf.
-    DATA(t1) = CAST zcl_lnt_slct_prfrmnc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_performance.ts:63|.
     t2->source_location = t3.
@@ -165,7 +165,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_performance.ts:67|.
     t2->source_location = t3.
@@ -173,9 +173,9 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_number_of_columns.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
-    DATA(t2) = CAST zif_lnt_file( i_file ).
-    DATA(t3) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_file.
+    DATA(t3) = i_spaghetti.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/select_performance.ts:121|.
     t4->source_location = t5.
@@ -183,7 +183,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_performance.ts:51|.
     t2->source_location = t3.
@@ -201,7 +201,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_performance.ts:63|.
     t2->source_location = t3.

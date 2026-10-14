@@ -12,14 +12,14 @@ CLASS zcl_lnt_shape_c0acc5f0 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_c0acc5f0 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_url_de75 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_class_e01a ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_folder_0010 ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_url_de75.
+    DATA(t2) = i_class_e01a.
+    DATA(t3) = i_folder_0010.
+    DATA(t4) = t1.
     me->url_a050 = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->class_be97 = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->folder_6de9 = t6.
   ENDMETHOD.
 

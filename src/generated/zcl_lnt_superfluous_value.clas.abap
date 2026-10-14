@@ -81,10 +81,10 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |SingleFile|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       t22 = t27.
       t20 = t22.
     ELSE.
@@ -102,13 +102,13 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sp_vl_ts_spr_vl.
-    DATA(t1) = CAST zcl_lnt_superfluous_value_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sp_vl_ts_spr_vl.
-    DATA(t1) = CAST zcl_lnt_superfluous_value_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/superfluous_value.ts:32|.
     t2->source_location = t3.
@@ -116,7 +116,7 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_sp_vl_ts_spr_vl.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/superfluous_value.ts:36|.
     t2->source_location = t3.

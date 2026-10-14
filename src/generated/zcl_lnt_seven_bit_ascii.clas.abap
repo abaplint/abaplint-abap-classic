@@ -100,10 +100,10 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       t26 = t31.
       t24 = t26.
     ELSE.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_7b_as_ts_sv_bt_asc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/7bit_ascii.ts:30|.
     t2->source_location = t3.
@@ -129,13 +129,13 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_in_sr_rl_7b_as_ts_sv_bt_as.
-    DATA(t1) = CAST zcl_lnt_seven_bit_ascii_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_in_sr_rl_7b_as_ts_sv_bt_as.
-    DATA(t1) = CAST zcl_lnt_seven_bit_ascii_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/7bit_ascii.ts:38|.
     t2->source_location = t3.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/7bit_ascii.ts:42|.
     t2->source_location = t3.
@@ -151,7 +151,7 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/7bit_ascii.ts:30|.
     t2->source_location = t3.
@@ -169,7 +169,7 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/7bit_ascii.ts:38|.
     t2->source_location = t3.

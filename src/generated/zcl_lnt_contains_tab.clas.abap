@@ -97,19 +97,19 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |Whitespace|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       DATA(t31) = |Quickfix|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t32) = t26.
       DATA(t33) = |Styleguide|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t34) = t26.
       DATA(t35) = |SingleFile|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t36) = t26.
       t25 = t36.
       t23 = t25.
     ELSE.
@@ -136,20 +136,20 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_cn_tb_ts_cnt_tb.
     DATA t1 TYPE int8.
     DATA t2 TYPE int8.
-    DATA(t3) = CAST zcl_lnt_contains_tab_conf( me->conf ).
+    DATA(t3) = me->conf.
     t2 = t3->spaces.
     t1 = t2.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     t4 = t5.
-    DATA(t6) = CAST zcl_lnt_contains_tab_conf( me->conf ).
+    DATA(t6) = me->conf.
     result = t6.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_cn_tb_ts_cnt_tb.
-    DATA(t1) = CAST zcl_lnt_contains_tab_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/contains_tab.ts:43|.
     t2->source_location = t3.
@@ -157,7 +157,7 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_cn_tb_ts_cnt_tb.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/contains_tab.ts:47|.
     t2->source_location = t3.
@@ -168,7 +168,7 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
     DATA(t1) = i_line.
     DATA(t2) = i_tab_col.
     DATA(t3) = i_tab_amount.
-    DATA(t4) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/contains_tab.ts:64|.
     t5->source_location = t6.

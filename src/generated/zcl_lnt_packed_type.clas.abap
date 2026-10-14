@@ -20,8 +20,8 @@ CLASS zcl_lnt_packed_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_length.
     DATA(t2) = i_decimals_2eed.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( i_extra ).
-    DATA(t4) = CAST zcl_lnt_abstract_type_data( t3 ).
+    DATA(t3) = i_extra.
+    DATA(t4) = t3.
     super->constructor( i_input_967e = t4 ).
     DATA t5 TYPE abap_bool.
     DATA(t6) = t1.

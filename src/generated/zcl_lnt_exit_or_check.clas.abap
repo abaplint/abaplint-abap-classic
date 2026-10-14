@@ -117,16 +117,16 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t32) = t30.
       DATA(t33) = |Styleguide|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t34) = t30.
       DATA(t35) = |SingleFile|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t36) = t30.
       DATA(t37) = |Quickfix|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t38) = t30.
       t29 = t38.
       t27 = t29.
     ELSE.
@@ -144,13 +144,13 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_ex_or_ch_ts_ex_or_ch.
-    DATA(t1) = CAST zcl_lnt_exit_or_check_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_ex_or_ch_ts_ex_or_ch.
-    DATA(t1) = CAST zcl_lnt_exit_or_check_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/exit_or_check.ts:42|.
     t2->source_location = t3.
@@ -158,7 +158,7 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_ex_or_ch_ts_ex_or_ch.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/exit_or_check.ts:46|.
     t2->source_location = t3.

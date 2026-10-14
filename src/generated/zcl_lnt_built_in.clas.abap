@@ -38,17 +38,17 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
     ENDIF.
-    DATA(t1) = CAST zcl_lnt_ibuiltin_method( i_method ).
+    DATA(t1) = i_method.
     DATA(t2) = i_name.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_built_in_method.
-    DATA(t5) = CAST zcl_lnt_ibuiltin_method( t1 ).
+    DATA(t5) = t1.
     t4 = t5->cache.
     t3 = xsdbool( t4 IS BOUND ).
     IF t3 = abap_true.
       DATA t6 TYPE REF TO zcl_lnt_built_in_method.
       DATA t7 TYPE REF TO zcl_lnt_built_in_method.
-      DATA(t8) = CAST zcl_lnt_ibuiltin_method( t1 ).
+      DATA(t8) = t1.
       t7 = t8->cache.
       t6 = t7.
       result = t6.
@@ -65,20 +65,20 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t9 = t10.
     DATA t15 TYPE REF TO zcl_lnt_built_in_method.
     DATA t16 TYPE REF TO zcl_lnt_built_in_method.
-    DATA(t17) = CAST zcl_lnt_lx_identifier( t9 ).
+    DATA(t17) = t9.
     DATA(t18) = CONV string( zcl_lnt_built_in=>filename ).
-    DATA(t19) = CAST zcl_lnt_ibuiltin_method( t1 ).
+    DATA(t19) = t1.
     DATA t20 TYPE int8.
-    DATA(t21) = CAST zcl_lnt_ibuiltin_method( t1 ).
+    DATA(t21) = t1.
     t20 = t21->counter.
     t16 = NEW zcl_lnt_built_in_method( i_token = t17 i_filename = t18 i_method = t19 i_row = t20 ).
     t15 = t16.
-    DATA(t22) = CAST zcl_lnt_ibuiltin_method( t1 ).
+    DATA(t22) = t1.
     DATA t23 TYPE REF TO zcl_lnt_built_in_method.
     CLEAR t23.
     DATA(t24) = abap_true.
     IF t24 = abap_true.
-      DATA(t25) = CAST zcl_lnt_built_in_method( t15 ).
+      DATA(t25) = t15.
       t23 = t25.
     ELSE.
       DATA t26 TYPE REF TO zcl_lnt_built_in_method.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t23 = t26.
     ENDIF.
     t22->cache = t23.
-    DATA(t27) = CAST zcl_lnt_built_in_method( t15 ).
+    DATA(t27) = t15.
     result = t27.
 
   ENDMETHOD.
@@ -95,17 +95,17 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
+    DATA(t1) = i_name.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ELSEIF t8->has = abap_false.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t12 = zcl_lnt_built_in=>methods.
     DATA t13 TYPE string.
     DATA t14 TYPE string.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t15) = t1.
     t14 = t15->value.
     DATA(t16) = strlen( t14 ).
     t13 = t14.
@@ -143,14 +143,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t10 = t11.
     DATA(t17) = VALUE abap_bool( ).
     DATA t18 TYPE REF TO zcl_lnt_ibuiltin_method.
-    DATA(t19) = CAST zcl_lnt_ibuiltin_method( t10 ).
+    DATA(t19) = t10.
     t18 = t19.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t21.
     t20 = t21.
     DATA(t22) = VALUE abap_bool( ).
-    DATA(t23) = CAST zcl_lnt_ibuiltin_method( t18 ).
+    DATA(t23) = t18.
     IF t23 IS INITIAL.
       t22 = abap_true.
     ENDIF.
@@ -167,10 +167,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     IF t26 = abap_true.
       DATA t27 TYPE REF TO zif_lnt_method_definition.
       DATA t28 TYPE REF TO zcl_lnt_ibuiltin_method.
-      DATA(t29) = CAST zcl_lnt_ibuiltin_method( t10 ).
+      DATA(t29) = t10.
       t28 = t29.
       DATA t30 TYPE string.
-      DATA(t31) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+      DATA(t31) = t1.
       t30 = t31->value.
       t27 = zcl_lnt_built_in=>build_definition( i_method = t28 i_name = t30 ).
       t25 = t27.
@@ -187,17 +187,17 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
+    DATA(t1) = i_name.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ELSEIF t8->has = abap_false.
@@ -222,7 +222,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t12 = zcl_lnt_built_in=>methods.
     DATA t13 TYPE string.
     DATA t14 TYPE string.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t15) = t1.
     t14 = t15->value.
     DATA(t16) = strlen( t14 ).
     t13 = t14.
@@ -235,14 +235,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t10 = t11.
     DATA(t17) = VALUE abap_bool( ).
     DATA t18 TYPE REF TO zcl_lnt_ibuiltin_method.
-    DATA(t19) = CAST zcl_lnt_ibuiltin_method( t10 ).
+    DATA(t19) = t10.
     t18 = t19.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t21.
     t20 = t21.
     DATA(t22) = VALUE abap_bool( ).
-    DATA(t23) = CAST zcl_lnt_ibuiltin_method( t18 ).
+    DATA(t23) = t18.
     IF t23 IS INITIAL.
       t22 = abap_true.
     ENDIF.
@@ -255,7 +255,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA t26 TYPE REF TO zcl_lnt_ibuiltin_method.
-    DATA(t27) = CAST zcl_lnt_ibuiltin_method( t10 ).
+    DATA(t27) = t10.
     t26 = t27.
     t25 = t26->predicate.
     result = t25.
@@ -278,7 +278,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t5.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t7) = t2.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
@@ -296,10 +296,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t15) = |abap_bool|.
       t11 = NEW zcl_lnt_lx_identifier( i_start = t12 i_str = t15 ).
       t10 = t11.
-      DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+      DATA(t16) = t8.
       DATA t17 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t17.
-      DATA(t18) = CAST zcl_lnt_lx_identifier( t10 ).
+      DATA(t18) = t10.
       DATA(t19) = CONV string( zcl_lnt_built_in=>filename ).
       DATA t20 TYPE REF TO zcl_lnt_character_type.
       CLEAR t20.
@@ -369,10 +369,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t47) = |cursor|.
       t43 = NEW zcl_lnt_lx_identifier( i_start = t44 i_str = t47 ).
       t42 = t43.
-      DATA(t48) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+      DATA(t48) = t8.
       DATA t49 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t49.
-      DATA(t50) = CAST zcl_lnt_lx_identifier( t42 ).
+      DATA(t50) = t42.
       DATA(t51) = CONV string( zcl_lnt_built_in=>filename ).
       DATA t52 TYPE REF TO zcl_lnt_integer_type.
       CLEAR t52.
@@ -439,7 +439,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       CLEAR t73.
       DATA(t74) = abap_true.
       IF t74 = abap_true.
-        DATA(t75) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+        DATA(t75) = t8.
         t73 = t75.
       ELSE.
         DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -464,7 +464,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
   METHOD get_db65.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_extras ).
+    DATA(t1) = i_extras.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -495,7 +495,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
           zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
         ENDIF.
         t12 = zcl_lnt_built_in=>get_cache.
-        DATA(t13) = CAST zcl_lnt_typed_identifier( t10 ).
+        DATA(t13) = t10.
         APPEND t13 TO t12->items.
       ENDLOOP.
       DATA(t14) = VALUE i( ).
@@ -523,14 +523,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       CLEAR t20.
       DATA(t21) = VALUE int8( ).
       DATA t22 TYPE REF TO zcl_lnt_built_in.
-      DATA(t23) = CAST zcl_lnt_built_in( me ).
+      DATA(t23) = me.
       t22 = t23.
       DATA t24 TYPE int8.
       DATA t25 TYPE int8.
-      DATA(t26) = CAST zcl_lnt_built_in( t22 ).
+      DATA(t26) = t22.
       t25 = t26->row.
       t24 = t25.
-      DATA(t27) = CAST zcl_lnt_built_in( t22 ).
+      DATA(t27) = t22.
       DATA t28 TYPE int8.
       DATA(t29) = t24.
       DATA(t30) = CONV int8( 1 ).
@@ -548,7 +548,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t18 = t19.
       DATA t34 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t34.
-      DATA(t35) = CAST zcl_lnt_lx_identifier( t18 ).
+      DATA(t35) = t18.
       DATA(t36) = CONV string( zcl_lnt_built_in=>filename ).
       DATA t37 TYPE REF TO zcl_lnt_void_type.
       CLEAR t37.
@@ -578,10 +578,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
         DATA t48 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CREATE OBJECT t48.
         t47 = t48.
-        DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t47 ).
+        DATA(t49) = t47.
         DATA(t50) = |built-in|.
         APPEND t50 TO t49->items.
-        DATA(t51) = CAST zlnt_runtime_arra_8ecd6afe19e0( t47 ).
+        DATA(t51) = t47.
         t46 = t51.
         t44 = t46.
       ELSE.
@@ -1600,17 +1600,17 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t408.
     LOOP AT t406->items INTO t408.
       t407 ?= t408.
-      DATA(t409) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t410) = CAST zcl_lnt_typed_identifier( t407 ).
+      DATA(t409) = t2.
+      DATA(t410) = t407.
       APPEND t410 TO t409->items.
     ENDLOOP.
     DATA t411 TYPE i.
-    DATA(t412) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t412) = t2.
     t411 = lines( t412->items ).
     t405 = t411.
     DATA t413 TYPE string.
     DATA t414 TYPE string.
-    DATA(t415) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t415) = t1.
     DATA(t416) = |\||.
     DATA(t417) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t417->has = abap_true.
@@ -1683,7 +1683,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t432 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t432.
       zcl_lnt_built_in=>extras_cache = t432.
-      DATA(t433) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+      DATA(t433) = t1.
       DATA(t434) = VALUE string( ).
       LOOP AT t433->items INTO t434.
         DATA t435 TYPE REF TO zcl_lnt_lx_identifier.
@@ -1694,14 +1694,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
         CLEAR t437.
         DATA(t438) = VALUE int8( ).
         DATA t439 TYPE REF TO zcl_lnt_built_in.
-        DATA(t440) = CAST zcl_lnt_built_in( me ).
+        DATA(t440) = me.
         t439 = t440.
         DATA t441 TYPE int8.
         DATA t442 TYPE int8.
-        DATA(t443) = CAST zcl_lnt_built_in( t439 ).
+        DATA(t443) = t439.
         t442 = t443->row.
         t441 = t442.
-        DATA(t444) = CAST zcl_lnt_built_in( t439 ).
+        DATA(t444) = t439.
         DATA t445 TYPE int8.
         DATA(t446) = t441.
         DATA(t447) = CONV int8( 1 ).
@@ -1725,7 +1725,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
         t451 = zcl_lnt_built_in=>extras_cache.
         DATA t452 TYPE REF TO zcl_lnt_typed_identifier.
         CLEAR t452.
-        DATA(t453) = CAST zcl_lnt_lx_identifier( t435 ).
+        DATA(t453) = t435.
         DATA(t454) = CONV string( zcl_lnt_built_in=>filename ).
         DATA t455 TYPE REF TO zcl_lnt_void_type.
         CLEAR t455.
@@ -1755,13 +1755,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
           DATA t466 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t466.
           t465 = t466.
-          DATA(t467) = CAST zlnt_runtime_arra_8ecd6afe19e0( t465 ).
+          DATA(t467) = t465.
           DATA(t468) = |read_only|.
           APPEND t468 TO t467->items.
-          DATA(t469) = CAST zlnt_runtime_arra_8ecd6afe19e0( t465 ).
+          DATA(t469) = t465.
           DATA(t470) = |built-in|.
           APPEND t470 TO t469->items.
-          DATA(t471) = CAST zlnt_runtime_arra_8ecd6afe19e0( t465 ).
+          DATA(t471) = t465.
           t464 = t471.
           t462 = t464.
         ELSE.
@@ -1801,15 +1801,15 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t481.
     LOOP AT t479->items INTO t481.
       t480 ?= t481.
-      DATA(t482) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t483) = CAST zcl_lnt_typed_identifier( t480 ).
+      DATA(t482) = t2.
+      DATA(t483) = t480.
       APPEND t483 TO t482->items.
     ENDLOOP.
     DATA t484 TYPE i.
-    DATA(t485) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t485) = t2.
     t484 = lines( t485->items ).
     t478 = t484.
-    DATA(t486) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t486) = t2.
     result = t486.
 
   ENDMETHOD.
@@ -1826,14 +1826,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t4.
     DATA(t5) = VALUE int8( ).
     DATA t6 TYPE REF TO zcl_lnt_built_in.
-    DATA(t7) = CAST zcl_lnt_built_in( me ).
+    DATA(t7) = me.
     t6 = t7.
     DATA t8 TYPE int8.
     DATA t9 TYPE int8.
-    DATA(t10) = CAST zcl_lnt_built_in( t6 ).
+    DATA(t10) = t6.
     t9 = t10->row.
     t8 = t9.
-    DATA(t11) = CAST zcl_lnt_built_in( t6 ).
+    DATA(t11) = t6.
     DATA t12 TYPE int8.
     DATA(t13) = t8.
     DATA(t14) = CONV int8( 1 ).
@@ -1851,7 +1851,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2 = t3.
     DATA t18 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t18.
-    DATA(t19) = CAST zcl_lnt_lx_identifier( t2 ).
+    DATA(t19) = t2.
     DATA(t20) = CONV string( zcl_lnt_built_in=>filename ).
     DATA t21 TYPE REF TO zcl_lnt_void_type.
     CLEAR t21.
@@ -1881,10 +1881,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t32 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t32.
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t33) = t31.
       DATA(t34) = |built-in|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t35) = t31.
       t30 = t35.
       t28 = t30.
     ELSE.
@@ -1906,7 +1906,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     t1 = t2.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = t1.
     DATA t4 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t5) = |index|.
     DATA t6 TYPE REF TO zcl_lnt_integer_type.
@@ -1919,7 +1919,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t9.
     t4 = NEW zcl_lnt_istructure_component( i_name = t5 i_type_9913 = t6 i_as_include = t8 i_suffix = t9 ).
     APPEND t4 TO t3->items.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t10) = t1.
     DATA t11 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t12) = |pagno|.
     DATA t13 TYPE REF TO zcl_lnt_integer_type.
@@ -1932,7 +1932,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t16.
     t11 = NEW zcl_lnt_istructure_component( i_name = t12 i_type_9913 = t13 i_as_include = t15 i_suffix = t16 ).
     APPEND t11 TO t10->items.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t17) = t1.
     DATA t18 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t19) = |tabix|.
     DATA t20 TYPE REF TO zcl_lnt_integer_type.
@@ -1945,7 +1945,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t23.
     t18 = NEW zcl_lnt_istructure_component( i_name = t19 i_type_9913 = t20 i_as_include = t22 i_suffix = t23 ).
     APPEND t18 TO t17->items.
-    DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t24) = t1.
     DATA t25 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t26) = |tfill|.
     DATA t27 TYPE REF TO zcl_lnt_integer_type.
@@ -1958,7 +1958,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t30.
     t25 = NEW zcl_lnt_istructure_component( i_name = t26 i_type_9913 = t27 i_as_include = t29 i_suffix = t30 ).
     APPEND t25 TO t24->items.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t31) = t1.
     DATA t32 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t33) = |tlopc|.
     DATA t34 TYPE REF TO zcl_lnt_integer_type.
@@ -1971,7 +1971,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t37.
     t32 = NEW zcl_lnt_istructure_component( i_name = t33 i_type_9913 = t34 i_as_include = t36 i_suffix = t37 ).
     APPEND t32 TO t31->items.
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t38) = t1.
     DATA t39 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t40) = |tmaxl|.
     DATA t41 TYPE REF TO zcl_lnt_integer_type.
@@ -1984,7 +1984,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t44.
     t39 = NEW zcl_lnt_istructure_component( i_name = t40 i_type_9913 = t41 i_as_include = t43 i_suffix = t44 ).
     APPEND t39 TO t38->items.
-    DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t45) = t1.
     DATA t46 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t47) = |toccu|.
     DATA t48 TYPE REF TO zcl_lnt_integer_type.
@@ -1997,7 +1997,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t51.
     t46 = NEW zcl_lnt_istructure_component( i_name = t47 i_type_9913 = t48 i_as_include = t50 i_suffix = t51 ).
     APPEND t46 TO t45->items.
-    DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t52) = t1.
     DATA t53 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t54) = |ttabc|.
     DATA t55 TYPE REF TO zcl_lnt_integer_type.
@@ -2010,7 +2010,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t58.
     t53 = NEW zcl_lnt_istructure_component( i_name = t54 i_type_9913 = t55 i_as_include = t57 i_suffix = t58 ).
     APPEND t53 TO t52->items.
-    DATA(t59) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t59) = t1.
     DATA t60 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t61) = |tstis|.
     DATA t62 TYPE REF TO zcl_lnt_integer_type.
@@ -2023,7 +2023,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t65.
     t60 = NEW zcl_lnt_istructure_component( i_name = t61 i_type_9913 = t62 i_as_include = t64 i_suffix = t65 ).
     APPEND t60 TO t59->items.
-    DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t66) = t1.
     DATA t67 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t68) = |ttabi|.
     DATA t69 TYPE REF TO zcl_lnt_integer_type.
@@ -2036,7 +2036,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t72.
     t67 = NEW zcl_lnt_istructure_component( i_name = t68 i_type_9913 = t69 i_as_include = t71 i_suffix = t72 ).
     APPEND t67 TO t66->items.
-    DATA(t73) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t73) = t1.
     DATA t74 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t75) = |dbcnt|.
     DATA t76 TYPE REF TO zcl_lnt_integer_type.
@@ -2049,7 +2049,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t79.
     t74 = NEW zcl_lnt_istructure_component( i_name = t75 i_type_9913 = t76 i_as_include = t78 i_suffix = t79 ).
     APPEND t74 TO t73->items.
-    DATA(t80) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t80) = t1.
     DATA t81 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t82) = |fdpos|.
     DATA t83 TYPE REF TO zcl_lnt_integer_type.
@@ -2062,7 +2062,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t86.
     t81 = NEW zcl_lnt_istructure_component( i_name = t82 i_type_9913 = t83 i_as_include = t85 i_suffix = t86 ).
     APPEND t81 TO t80->items.
-    DATA(t87) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t87) = t1.
     DATA t88 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t89) = |colno|.
     DATA t90 TYPE REF TO zcl_lnt_integer_type.
@@ -2075,7 +2075,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t93.
     t88 = NEW zcl_lnt_istructure_component( i_name = t89 i_type_9913 = t90 i_as_include = t92 i_suffix = t93 ).
     APPEND t88 TO t87->items.
-    DATA(t94) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t94) = t1.
     DATA t95 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t96) = |linct|.
     DATA t97 TYPE REF TO zcl_lnt_integer_type.
@@ -2088,7 +2088,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t100.
     t95 = NEW zcl_lnt_istructure_component( i_name = t96 i_type_9913 = t97 i_as_include = t99 i_suffix = t100 ).
     APPEND t95 TO t94->items.
-    DATA(t101) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t101) = t1.
     DATA t102 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t103) = |linno|.
     DATA t104 TYPE REF TO zcl_lnt_integer_type.
@@ -2101,7 +2101,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t107.
     t102 = NEW zcl_lnt_istructure_component( i_name = t103 i_type_9913 = t104 i_as_include = t106 i_suffix = t107 ).
     APPEND t102 TO t101->items.
-    DATA(t108) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t108) = t1.
     DATA t109 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t110) = |linsz|.
     DATA t111 TYPE REF TO zcl_lnt_integer_type.
@@ -2114,7 +2114,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t114.
     t109 = NEW zcl_lnt_istructure_component( i_name = t110 i_type_9913 = t111 i_as_include = t113 i_suffix = t114 ).
     APPEND t109 TO t108->items.
-    DATA(t115) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t115) = t1.
     DATA t116 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t117) = |pagct|.
     DATA t118 TYPE REF TO zcl_lnt_integer_type.
@@ -2127,7 +2127,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t121.
     t116 = NEW zcl_lnt_istructure_component( i_name = t117 i_type_9913 = t118 i_as_include = t120 i_suffix = t121 ).
     APPEND t116 TO t115->items.
-    DATA(t122) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t122) = t1.
     DATA t123 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t124) = |macol|.
     DATA t125 TYPE REF TO zcl_lnt_integer_type.
@@ -2140,7 +2140,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t128.
     t123 = NEW zcl_lnt_istructure_component( i_name = t124 i_type_9913 = t125 i_as_include = t127 i_suffix = t128 ).
     APPEND t123 TO t122->items.
-    DATA(t129) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t129) = t1.
     DATA t130 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t131) = |marow|.
     DATA t132 TYPE REF TO zcl_lnt_integer_type.
@@ -2153,7 +2153,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t135.
     t130 = NEW zcl_lnt_istructure_component( i_name = t131 i_type_9913 = t132 i_as_include = t134 i_suffix = t135 ).
     APPEND t130 TO t129->items.
-    DATA(t136) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t136) = t1.
     DATA t137 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t138) = |tleng|.
     DATA t139 TYPE REF TO zcl_lnt_integer_type.
@@ -2166,7 +2166,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t142.
     t137 = NEW zcl_lnt_istructure_component( i_name = t138 i_type_9913 = t139 i_as_include = t141 i_suffix = t142 ).
     APPEND t137 TO t136->items.
-    DATA(t143) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t143) = t1.
     DATA t144 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t145) = |sfoff|.
     DATA t146 TYPE REF TO zcl_lnt_integer_type.
@@ -2179,7 +2179,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t149.
     t144 = NEW zcl_lnt_istructure_component( i_name = t145 i_type_9913 = t146 i_as_include = t148 i_suffix = t149 ).
     APPEND t144 TO t143->items.
-    DATA(t150) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t150) = t1.
     DATA t151 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t152) = |willi|.
     DATA t153 TYPE REF TO zcl_lnt_integer_type.
@@ -2192,7 +2192,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t156.
     t151 = NEW zcl_lnt_istructure_component( i_name = t152 i_type_9913 = t153 i_as_include = t155 i_suffix = t156 ).
     APPEND t151 TO t150->items.
-    DATA(t157) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t157) = t1.
     DATA t158 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t159) = |lilli|.
     DATA t160 TYPE REF TO zcl_lnt_integer_type.
@@ -2205,7 +2205,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t163.
     t158 = NEW zcl_lnt_istructure_component( i_name = t159 i_type_9913 = t160 i_as_include = t162 i_suffix = t163 ).
     APPEND t158 TO t157->items.
-    DATA(t164) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t164) = t1.
     DATA t165 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t166) = |subrc|.
     DATA t167 TYPE REF TO zcl_lnt_integer_type.
@@ -2218,7 +2218,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t170.
     t165 = NEW zcl_lnt_istructure_component( i_name = t166 i_type_9913 = t167 i_as_include = t169 i_suffix = t170 ).
     APPEND t165 TO t164->items.
-    DATA(t171) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t171) = t1.
     DATA t172 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t173) = |fleng|.
     DATA t174 TYPE REF TO zcl_lnt_integer_type.
@@ -2231,7 +2231,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t177.
     t172 = NEW zcl_lnt_istructure_component( i_name = t173 i_type_9913 = t174 i_as_include = t176 i_suffix = t177 ).
     APPEND t172 TO t171->items.
-    DATA(t178) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t178) = t1.
     DATA t179 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t180) = |cucol|.
     DATA t181 TYPE REF TO zcl_lnt_integer_type.
@@ -2244,7 +2244,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t184.
     t179 = NEW zcl_lnt_istructure_component( i_name = t180 i_type_9913 = t181 i_as_include = t183 i_suffix = t184 ).
     APPEND t179 TO t178->items.
-    DATA(t185) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t185) = t1.
     DATA t186 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t187) = |curow|.
     DATA t188 TYPE REF TO zcl_lnt_integer_type.
@@ -2257,7 +2257,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t191.
     t186 = NEW zcl_lnt_istructure_component( i_name = t187 i_type_9913 = t188 i_as_include = t190 i_suffix = t191 ).
     APPEND t186 TO t185->items.
-    DATA(t192) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t192) = t1.
     DATA t193 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t194) = |lsind|.
     DATA t195 TYPE REF TO zcl_lnt_integer_type.
@@ -2270,7 +2270,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t198.
     t193 = NEW zcl_lnt_istructure_component( i_name = t194 i_type_9913 = t195 i_as_include = t197 i_suffix = t198 ).
     APPEND t193 TO t192->items.
-    DATA(t199) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t199) = t1.
     DATA t200 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t201) = |listi|.
     DATA t202 TYPE REF TO zcl_lnt_integer_type.
@@ -2283,7 +2283,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t205.
     t200 = NEW zcl_lnt_istructure_component( i_name = t201 i_type_9913 = t202 i_as_include = t204 i_suffix = t205 ).
     APPEND t200 TO t199->items.
-    DATA(t206) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t206) = t1.
     DATA t207 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t208) = |stepl|.
     DATA t209 TYPE REF TO zcl_lnt_integer_type.
@@ -2296,7 +2296,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t212.
     t207 = NEW zcl_lnt_istructure_component( i_name = t208 i_type_9913 = t209 i_as_include = t211 i_suffix = t212 ).
     APPEND t207 TO t206->items.
-    DATA(t213) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t213) = t1.
     DATA t214 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t215) = |tpagi|.
     DATA t216 TYPE REF TO zcl_lnt_integer_type.
@@ -2309,7 +2309,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t219.
     t214 = NEW zcl_lnt_istructure_component( i_name = t215 i_type_9913 = t216 i_as_include = t218 i_suffix = t219 ).
     APPEND t214 TO t213->items.
-    DATA(t220) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t220) = t1.
     DATA t221 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t222) = |winx1|.
     DATA t223 TYPE REF TO zcl_lnt_integer_type.
@@ -2322,7 +2322,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t226.
     t221 = NEW zcl_lnt_istructure_component( i_name = t222 i_type_9913 = t223 i_as_include = t225 i_suffix = t226 ).
     APPEND t221 TO t220->items.
-    DATA(t227) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t227) = t1.
     DATA t228 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t229) = |winy1|.
     DATA t230 TYPE REF TO zcl_lnt_integer_type.
@@ -2335,7 +2335,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t233.
     t228 = NEW zcl_lnt_istructure_component( i_name = t229 i_type_9913 = t230 i_as_include = t232 i_suffix = t233 ).
     APPEND t228 TO t227->items.
-    DATA(t234) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t234) = t1.
     DATA t235 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t236) = |winx2|.
     DATA t237 TYPE REF TO zcl_lnt_integer_type.
@@ -2348,7 +2348,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t240.
     t235 = NEW zcl_lnt_istructure_component( i_name = t236 i_type_9913 = t237 i_as_include = t239 i_suffix = t240 ).
     APPEND t235 TO t234->items.
-    DATA(t241) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t241) = t1.
     DATA t242 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t243) = |winy2|.
     DATA t244 TYPE REF TO zcl_lnt_integer_type.
@@ -2361,7 +2361,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t247.
     t242 = NEW zcl_lnt_istructure_component( i_name = t243 i_type_9913 = t244 i_as_include = t246 i_suffix = t247 ).
     APPEND t242 TO t241->items.
-    DATA(t248) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t248) = t1.
     DATA t249 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t250) = |winco|.
     DATA t251 TYPE REF TO zcl_lnt_integer_type.
@@ -2374,7 +2374,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t254.
     t249 = NEW zcl_lnt_istructure_component( i_name = t250 i_type_9913 = t251 i_as_include = t253 i_suffix = t254 ).
     APPEND t249 TO t248->items.
-    DATA(t255) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t255) = t1.
     DATA t256 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t257) = |winro|.
     DATA t258 TYPE REF TO zcl_lnt_integer_type.
@@ -2387,7 +2387,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t261.
     t256 = NEW zcl_lnt_istructure_component( i_name = t257 i_type_9913 = t258 i_as_include = t260 i_suffix = t261 ).
     APPEND t256 TO t255->items.
-    DATA(t262) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t262) = t1.
     DATA t263 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t264) = |windi|.
     DATA t265 TYPE REF TO zcl_lnt_integer_type.
@@ -2400,7 +2400,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t268.
     t263 = NEW zcl_lnt_istructure_component( i_name = t264 i_type_9913 = t265 i_as_include = t267 i_suffix = t268 ).
     APPEND t263 TO t262->items.
-    DATA(t269) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t269) = t1.
     DATA t270 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t271) = |srows|.
     DATA t272 TYPE REF TO zcl_lnt_integer_type.
@@ -2413,7 +2413,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t275.
     t270 = NEW zcl_lnt_istructure_component( i_name = t271 i_type_9913 = t272 i_as_include = t274 i_suffix = t275 ).
     APPEND t270 TO t269->items.
-    DATA(t276) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t276) = t1.
     DATA t277 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t278) = |scols|.
     DATA t279 TYPE REF TO zcl_lnt_integer_type.
@@ -2426,7 +2426,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t282.
     t277 = NEW zcl_lnt_istructure_component( i_name = t278 i_type_9913 = t279 i_as_include = t281 i_suffix = t282 ).
     APPEND t277 TO t276->items.
-    DATA(t283) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t283) = t1.
     DATA t284 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t285) = |loopc|.
     DATA t286 TYPE REF TO zcl_lnt_integer_type.
@@ -2439,7 +2439,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t289.
     t284 = NEW zcl_lnt_istructure_component( i_name = t285 i_type_9913 = t286 i_as_include = t288 i_suffix = t289 ).
     APPEND t284 TO t283->items.
-    DATA(t290) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t290) = t1.
     DATA t291 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t292) = |folen|.
     DATA t293 TYPE REF TO zcl_lnt_integer_type.
@@ -2452,7 +2452,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t296.
     t291 = NEW zcl_lnt_istructure_component( i_name = t292 i_type_9913 = t293 i_as_include = t295 i_suffix = t296 ).
     APPEND t291 TO t290->items.
-    DATA(t297) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t297) = t1.
     DATA t298 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t299) = |fodec|.
     DATA t300 TYPE REF TO zcl_lnt_integer_type.
@@ -2465,7 +2465,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t303.
     t298 = NEW zcl_lnt_istructure_component( i_name = t299 i_type_9913 = t300 i_as_include = t302 i_suffix = t303 ).
     APPEND t298 TO t297->items.
-    DATA(t304) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t304) = t1.
     DATA t305 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t306) = |tzone|.
     DATA t307 TYPE REF TO zcl_lnt_integer_type.
@@ -2478,7 +2478,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t310.
     t305 = NEW zcl_lnt_istructure_component( i_name = t306 i_type_9913 = t307 i_as_include = t309 i_suffix = t310 ).
     APPEND t305 TO t304->items.
-    DATA(t311) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t311) = t1.
     DATA t312 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t313) = |dayst|.
     DATA t314 TYPE REF TO zcl_lnt_character_type.
@@ -2492,7 +2492,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t318.
     t312 = NEW zcl_lnt_istructure_component( i_name = t313 i_type_9913 = t314 i_as_include = t317 i_suffix = t318 ).
     APPEND t312 TO t311->items.
-    DATA(t319) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t319) = t1.
     DATA t320 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t321) = |ftype|.
     DATA t322 TYPE REF TO zcl_lnt_character_type.
@@ -2506,7 +2506,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t326.
     t320 = NEW zcl_lnt_istructure_component( i_name = t321 i_type_9913 = t322 i_as_include = t325 i_suffix = t326 ).
     APPEND t320 TO t319->items.
-    DATA(t327) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t327) = t1.
     DATA t328 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t329) = |appli|.
     DATA t330 TYPE REF TO zcl_lnt_hex_type.
@@ -2520,7 +2520,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t334.
     t328 = NEW zcl_lnt_istructure_component( i_name = t329 i_type_9913 = t330 i_as_include = t333 i_suffix = t334 ).
     APPEND t328 TO t327->items.
-    DATA(t335) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t335) = t1.
     DATA t336 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t337) = |fdayw|.
     DATA t338 TYPE REF TO zcl_lnt_any_type.
@@ -2533,7 +2533,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t341.
     t336 = NEW zcl_lnt_istructure_component( i_name = t337 i_type_9913 = t338 i_as_include = t340 i_suffix = t341 ).
     APPEND t336 TO t335->items.
-    DATA(t342) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t342) = t1.
     DATA t343 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t344) = |ccurs|.
     DATA t345 TYPE REF TO zcl_lnt_packed_type.
@@ -2548,7 +2548,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t350.
     t343 = NEW zcl_lnt_istructure_component( i_name = t344 i_type_9913 = t345 i_as_include = t349 i_suffix = t350 ).
     APPEND t343 TO t342->items.
-    DATA(t351) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t351) = t1.
     DATA t352 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t353) = |ccurt|.
     DATA t354 TYPE REF TO zcl_lnt_packed_type.
@@ -2563,7 +2563,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t359.
     t352 = NEW zcl_lnt_istructure_component( i_name = t353 i_type_9913 = t354 i_as_include = t358 i_suffix = t359 ).
     APPEND t352 TO t351->items.
-    DATA(t360) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t360) = t1.
     DATA t361 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t362) = |debug|.
     DATA t363 TYPE REF TO zcl_lnt_character_type.
@@ -2577,7 +2577,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t367.
     t361 = NEW zcl_lnt_istructure_component( i_name = t362 i_type_9913 = t363 i_as_include = t366 i_suffix = t367 ).
     APPEND t361 TO t360->items.
-    DATA(t368) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t368) = t1.
     DATA t369 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t370) = |ctype|.
     DATA t371 TYPE REF TO zcl_lnt_character_type.
@@ -2591,7 +2591,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t375.
     t369 = NEW zcl_lnt_istructure_component( i_name = t370 i_type_9913 = t371 i_as_include = t374 i_suffix = t375 ).
     APPEND t369 TO t368->items.
-    DATA(t376) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t376) = t1.
     DATA t377 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t377.
     DATA(t378) = |input|.
@@ -2642,7 +2642,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t396.
     t377 = NEW zcl_lnt_istructure_component( i_name = t378 i_type_9913 = t379 i_as_include = t395 i_suffix = t396 ).
     APPEND t377 TO t376->items.
-    DATA(t397) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t397) = t1.
     DATA t398 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t398.
     DATA(t399) = |langu|.
@@ -2705,7 +2705,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t421.
     t398 = NEW zcl_lnt_istructure_component( i_name = t399 i_type_9913 = t400 i_as_include = t420 i_suffix = t421 ).
     APPEND t398 TO t397->items.
-    DATA(t422) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t422) = t1.
     DATA t423 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t424) = |modno|.
     DATA t425 TYPE REF TO zcl_lnt_integer_type.
@@ -2718,7 +2718,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t428.
     t423 = NEW zcl_lnt_istructure_component( i_name = t424 i_type_9913 = t425 i_as_include = t427 i_suffix = t428 ).
     APPEND t423 TO t422->items.
-    DATA(t429) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t429) = t1.
     DATA t430 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t430.
     DATA(t431) = |batch|.
@@ -2769,7 +2769,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t449.
     t430 = NEW zcl_lnt_istructure_component( i_name = t431 i_type_9913 = t432 i_as_include = t448 i_suffix = t449 ).
     APPEND t430 TO t429->items.
-    DATA(t450) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t450) = t1.
     DATA t451 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t451.
     DATA(t452) = |binpt|.
@@ -2820,7 +2820,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t470.
     t451 = NEW zcl_lnt_istructure_component( i_name = t452 i_type_9913 = t453 i_as_include = t469 i_suffix = t470 ).
     APPEND t451 TO t450->items.
-    DATA(t471) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t471) = t1.
     DATA t472 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t472.
     DATA(t473) = |calld|.
@@ -2871,7 +2871,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t491.
     t472 = NEW zcl_lnt_istructure_component( i_name = t473 i_type_9913 = t474 i_as_include = t490 i_suffix = t491 ).
     APPEND t472 TO t471->items.
-    DATA(t492) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t492) = t1.
     DATA t493 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t493.
     DATA(t494) = |dynnr|.
@@ -2922,7 +2922,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t512.
     t493 = NEW zcl_lnt_istructure_component( i_name = t494 i_type_9913 = t495 i_as_include = t511 i_suffix = t512 ).
     APPEND t493 TO t492->items.
-    DATA(t513) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t513) = t1.
     DATA t514 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t514.
     DATA(t515) = |dyngr|.
@@ -2973,7 +2973,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t533.
     t514 = NEW zcl_lnt_istructure_component( i_name = t515 i_type_9913 = t516 i_as_include = t532 i_suffix = t533 ).
     APPEND t514 TO t513->items.
-    DATA(t534) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t534) = t1.
     DATA t535 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t536) = |newpa|.
     DATA t537 TYPE REF TO zcl_lnt_character_type.
@@ -2987,7 +2987,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t541.
     t535 = NEW zcl_lnt_istructure_component( i_name = t536 i_type_9913 = t537 i_as_include = t540 i_suffix = t541 ).
     APPEND t535 TO t534->items.
-    DATA(t542) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t542) = t1.
     DATA t543 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t544) = |pri40|.
     DATA t545 TYPE REF TO zcl_lnt_character_type.
@@ -3001,7 +3001,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t549.
     t543 = NEW zcl_lnt_istructure_component( i_name = t544 i_type_9913 = t545 i_as_include = t548 i_suffix = t549 ).
     APPEND t543 TO t542->items.
-    DATA(t550) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t550) = t1.
     DATA t551 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t552) = |rstrt|.
     DATA t553 TYPE REF TO zcl_lnt_character_type.
@@ -3015,7 +3015,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t557.
     t551 = NEW zcl_lnt_istructure_component( i_name = t552 i_type_9913 = t553 i_as_include = t556 i_suffix = t557 ).
     APPEND t551 TO t550->items.
-    DATA(t558) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t558) = t1.
     DATA t559 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t559.
     DATA(t560) = |wtitl|.
@@ -3066,7 +3066,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t578.
     t559 = NEW zcl_lnt_istructure_component( i_name = t560 i_type_9913 = t561 i_as_include = t577 i_suffix = t578 ).
     APPEND t559 TO t558->items.
-    DATA(t579) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t579) = t1.
     DATA t580 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t581) = |cpage|.
     DATA t582 TYPE REF TO zcl_lnt_integer_type.
@@ -3079,7 +3079,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t585.
     t580 = NEW zcl_lnt_istructure_component( i_name = t581 i_type_9913 = t582 i_as_include = t584 i_suffix = t585 ).
     APPEND t580 TO t579->items.
-    DATA(t586) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t586) = t1.
     DATA t587 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t587.
     DATA(t588) = |dbnam|.
@@ -3130,7 +3130,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t606.
     t587 = NEW zcl_lnt_istructure_component( i_name = t588 i_type_9913 = t589 i_as_include = t605 i_suffix = t606 ).
     APPEND t587 TO t586->items.
-    DATA(t607) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t607) = t1.
     DATA t608 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t608.
     DATA(t609) = |mandt|.
@@ -3181,7 +3181,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t627.
     t608 = NEW zcl_lnt_istructure_component( i_name = t609 i_type_9913 = t610 i_as_include = t626 i_suffix = t627 ).
     APPEND t608 TO t607->items.
-    DATA(t628) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t628) = t1.
     DATA t629 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t630) = |prefx|.
     DATA t631 TYPE REF TO zcl_lnt_character_type.
@@ -3195,7 +3195,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t635.
     t629 = NEW zcl_lnt_istructure_component( i_name = t630 i_type_9913 = t631 i_as_include = t634 i_suffix = t635 ).
     APPEND t629 TO t628->items.
-    DATA(t636) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t636) = t1.
     DATA t637 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t638) = |fmkey|.
     DATA t639 TYPE REF TO zcl_lnt_character_type.
@@ -3209,7 +3209,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t643.
     t637 = NEW zcl_lnt_istructure_component( i_name = t638 i_type_9913 = t639 i_as_include = t642 i_suffix = t643 ).
     APPEND t637 TO t636->items.
-    DATA(t644) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t644) = t1.
     DATA t645 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t646) = |pexpi|.
     DATA t647 TYPE REF TO zcl_lnt_numeric_type.
@@ -3223,7 +3223,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t651.
     t645 = NEW zcl_lnt_istructure_component( i_name = t646 i_type_9913 = t647 i_as_include = t650 i_suffix = t651 ).
     APPEND t645 TO t644->items.
-    DATA(t652) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t652) = t1.
     DATA t653 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t654) = |prini|.
     DATA t655 TYPE REF TO zcl_lnt_numeric_type.
@@ -3237,7 +3237,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t659.
     t653 = NEW zcl_lnt_istructure_component( i_name = t654 i_type_9913 = t655 i_as_include = t658 i_suffix = t659 ).
     APPEND t653 TO t652->items.
-    DATA(t660) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t660) = t1.
     DATA t661 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t662) = |primm|.
     DATA t663 TYPE REF TO zcl_lnt_character_type.
@@ -3251,7 +3251,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t667.
     t661 = NEW zcl_lnt_istructure_component( i_name = t662 i_type_9913 = t663 i_as_include = t666 i_suffix = t667 ).
     APPEND t661 TO t660->items.
-    DATA(t668) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t668) = t1.
     DATA t669 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t670) = |prrel|.
     DATA t671 TYPE REF TO zcl_lnt_character_type.
@@ -3265,7 +3265,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t675.
     t669 = NEW zcl_lnt_istructure_component( i_name = t670 i_type_9913 = t671 i_as_include = t674 i_suffix = t675 ).
     APPEND t669 TO t668->items.
-    DATA(t676) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t676) = t1.
     DATA t677 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t678) = |playo|.
     DATA t679 TYPE REF TO zcl_lnt_character_type.
@@ -3279,7 +3279,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t683.
     t677 = NEW zcl_lnt_istructure_component( i_name = t678 i_type_9913 = t679 i_as_include = t682 i_suffix = t683 ).
     APPEND t677 TO t676->items.
-    DATA(t684) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t684) = t1.
     DATA t685 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t686) = |prbig|.
     DATA t687 TYPE REF TO zcl_lnt_character_type.
@@ -3293,7 +3293,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t691.
     t685 = NEW zcl_lnt_istructure_component( i_name = t686 i_type_9913 = t687 i_as_include = t690 i_suffix = t691 ).
     APPEND t685 TO t684->items.
-    DATA(t692) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t692) = t1.
     DATA t693 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t694) = |playp|.
     DATA t695 TYPE REF TO zcl_lnt_character_type.
@@ -3307,7 +3307,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t699.
     t693 = NEW zcl_lnt_istructure_component( i_name = t694 i_type_9913 = t695 i_as_include = t698 i_suffix = t699 ).
     APPEND t693 TO t692->items.
-    DATA(t700) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t700) = t1.
     DATA t701 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t702) = |prnew|.
     DATA t703 TYPE REF TO zcl_lnt_character_type.
@@ -3321,7 +3321,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t707.
     t701 = NEW zcl_lnt_istructure_component( i_name = t702 i_type_9913 = t703 i_as_include = t706 i_suffix = t707 ).
     APPEND t701 TO t700->items.
-    DATA(t708) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t708) = t1.
     DATA t709 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t710) = |prlog|.
     DATA t711 TYPE REF TO zcl_lnt_character_type.
@@ -3335,7 +3335,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t715.
     t709 = NEW zcl_lnt_istructure_component( i_name = t710 i_type_9913 = t711 i_as_include = t714 i_suffix = t715 ).
     APPEND t709 TO t708->items.
-    DATA(t716) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t716) = t1.
     DATA t717 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t717.
     DATA(t718) = |pdest|.
@@ -3386,7 +3386,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t736.
     t717 = NEW zcl_lnt_istructure_component( i_name = t718 i_type_9913 = t719 i_as_include = t735 i_suffix = t736 ).
     APPEND t717 TO t716->items.
-    DATA(t737) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t737) = t1.
     DATA t738 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t739) = |plist|.
     DATA t740 TYPE REF TO zcl_lnt_character_type.
@@ -3400,7 +3400,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t744.
     t738 = NEW zcl_lnt_istructure_component( i_name = t739 i_type_9913 = t740 i_as_include = t743 i_suffix = t744 ).
     APPEND t738 TO t737->items.
-    DATA(t745) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t745) = t1.
     DATA t746 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t747) = |pauth|.
     DATA t748 TYPE REF TO zcl_lnt_numeric_type.
@@ -3414,7 +3414,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t752.
     t746 = NEW zcl_lnt_istructure_component( i_name = t747 i_type_9913 = t748 i_as_include = t751 i_suffix = t752 ).
     APPEND t746 TO t745->items.
-    DATA(t753) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t753) = t1.
     DATA t754 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t755) = |prdsn|.
     DATA t756 TYPE REF TO zcl_lnt_character_type.
@@ -3428,7 +3428,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t760.
     t754 = NEW zcl_lnt_istructure_component( i_name = t755 i_type_9913 = t756 i_as_include = t759 i_suffix = t760 ).
     APPEND t754 TO t753->items.
-    DATA(t761) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t761) = t1.
     DATA t762 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t763) = |pnwpa|.
     DATA t764 TYPE REF TO zcl_lnt_character_type.
@@ -3442,7 +3442,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t768.
     t762 = NEW zcl_lnt_istructure_component( i_name = t763 i_type_9913 = t764 i_as_include = t767 i_suffix = t768 ).
     APPEND t762 TO t761->items.
-    DATA(t769) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t769) = t1.
     DATA t770 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t770.
     DATA(t771) = |callr|.
@@ -3493,7 +3493,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t789.
     t770 = NEW zcl_lnt_istructure_component( i_name = t771 i_type_9913 = t772 i_as_include = t788 i_suffix = t789 ).
     APPEND t770 TO t769->items.
-    DATA(t790) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t790) = t1.
     DATA t791 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t792) = |repi2|.
     DATA t793 TYPE REF TO zcl_lnt_character_type.
@@ -3507,7 +3507,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t797.
     t791 = NEW zcl_lnt_istructure_component( i_name = t792 i_type_9913 = t793 i_as_include = t796 i_suffix = t797 ).
     APPEND t791 TO t790->items.
-    DATA(t798) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t798) = t1.
     DATA t799 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t800) = |rtitl|.
     DATA t801 TYPE REF TO zcl_lnt_character_type.
@@ -3521,7 +3521,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t805.
     t799 = NEW zcl_lnt_istructure_component( i_name = t800 i_type_9913 = t801 i_as_include = t804 i_suffix = t805 ).
     APPEND t799 TO t798->items.
-    DATA(t806) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t806) = t1.
     DATA t807 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t808) = |prrec|.
     DATA t809 TYPE REF TO zcl_lnt_character_type.
@@ -3535,7 +3535,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t813.
     t807 = NEW zcl_lnt_istructure_component( i_name = t808 i_type_9913 = t809 i_as_include = t812 i_suffix = t813 ).
     APPEND t807 TO t806->items.
-    DATA(t814) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t814) = t1.
     DATA t815 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t816) = |prtxt|.
     DATA t817 TYPE REF TO zcl_lnt_character_type.
@@ -3549,7 +3549,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t821.
     t815 = NEW zcl_lnt_istructure_component( i_name = t816 i_type_9913 = t817 i_as_include = t820 i_suffix = t821 ).
     APPEND t815 TO t814->items.
-    DATA(t822) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t822) = t1.
     DATA t823 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t824) = |prabt|.
     DATA t825 TYPE REF TO zcl_lnt_character_type.
@@ -3563,7 +3563,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t829.
     t823 = NEW zcl_lnt_istructure_component( i_name = t824 i_type_9913 = t825 i_as_include = t828 i_suffix = t829 ).
     APPEND t823 TO t822->items.
-    DATA(t830) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t830) = t1.
     DATA t831 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t832) = |lpass|.
     DATA t833 TYPE REF TO zcl_lnt_character_type.
@@ -3577,7 +3577,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t837.
     t831 = NEW zcl_lnt_istructure_component( i_name = t832 i_type_9913 = t833 i_as_include = t836 i_suffix = t837 ).
     APPEND t831 TO t830->items.
-    DATA(t838) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t838) = t1.
     DATA t839 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t840) = |nrpag|.
     DATA t841 TYPE REF TO zcl_lnt_character_type.
@@ -3591,7 +3591,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t845.
     t839 = NEW zcl_lnt_istructure_component( i_name = t840 i_type_9913 = t841 i_as_include = t844 i_suffix = t845 ).
     APPEND t839 TO t838->items.
-    DATA(t846) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t846) = t1.
     DATA t847 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t848) = |paart|.
     DATA t849 TYPE REF TO zcl_lnt_character_type.
@@ -3605,7 +3605,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t853.
     t847 = NEW zcl_lnt_istructure_component( i_name = t848 i_type_9913 = t849 i_as_include = t852 i_suffix = t853 ).
     APPEND t847 TO t846->items.
-    DATA(t854) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t854) = t1.
     DATA t855 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t856) = |prcop|.
     DATA t857 TYPE REF TO zcl_lnt_numeric_type.
@@ -3619,7 +3619,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t861.
     t855 = NEW zcl_lnt_istructure_component( i_name = t856 i_type_9913 = t857 i_as_include = t860 i_suffix = t861 ).
     APPEND t855 TO t854->items.
-    DATA(t862) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t862) = t1.
     DATA t863 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t864) = |batzs|.
     DATA t865 TYPE REF TO zcl_lnt_character_type.
@@ -3633,7 +3633,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t869.
     t863 = NEW zcl_lnt_istructure_component( i_name = t864 i_type_9913 = t865 i_as_include = t868 i_suffix = t869 ).
     APPEND t863 TO t862->items.
-    DATA(t870) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t870) = t1.
     DATA t871 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t872) = |bspld|.
     DATA t873 TYPE REF TO zcl_lnt_character_type.
@@ -3647,7 +3647,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t877.
     t871 = NEW zcl_lnt_istructure_component( i_name = t872 i_type_9913 = t873 i_as_include = t876 i_suffix = t877 ).
     APPEND t871 TO t870->items.
-    DATA(t878) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t878) = t1.
     DATA t879 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t880) = |brep4|.
     DATA t881 TYPE REF TO zcl_lnt_character_type.
@@ -3661,7 +3661,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t885.
     t879 = NEW zcl_lnt_istructure_component( i_name = t880 i_type_9913 = t881 i_as_include = t884 i_suffix = t885 ).
     APPEND t879 TO t878->items.
-    DATA(t886) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t886) = t1.
     DATA t887 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t888) = |batzo|.
     DATA t889 TYPE REF TO zcl_lnt_character_type.
@@ -3675,7 +3675,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t893.
     t887 = NEW zcl_lnt_istructure_component( i_name = t888 i_type_9913 = t889 i_as_include = t892 i_suffix = t893 ).
     APPEND t887 TO t886->items.
-    DATA(t894) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t894) = t1.
     DATA t895 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t896) = |batzd|.
     DATA t897 TYPE REF TO zcl_lnt_character_type.
@@ -3689,7 +3689,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t901.
     t895 = NEW zcl_lnt_istructure_component( i_name = t896 i_type_9913 = t897 i_as_include = t900 i_suffix = t901 ).
     APPEND t895 TO t894->items.
-    DATA(t902) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t902) = t1.
     DATA t903 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t904) = |batzw|.
     DATA t905 TYPE REF TO zcl_lnt_character_type.
@@ -3703,7 +3703,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t909.
     t903 = NEW zcl_lnt_istructure_component( i_name = t904 i_type_9913 = t905 i_as_include = t908 i_suffix = t909 ).
     APPEND t903 TO t902->items.
-    DATA(t910) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t910) = t1.
     DATA t911 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t912) = |batzm|.
     DATA t913 TYPE REF TO zcl_lnt_character_type.
@@ -3717,7 +3717,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t917.
     t911 = NEW zcl_lnt_istructure_component( i_name = t912 i_type_9913 = t913 i_as_include = t916 i_suffix = t917 ).
     APPEND t911 TO t910->items.
-    DATA(t918) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t918) = t1.
     DATA t919 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t920) = |ctabl|.
     DATA t921 TYPE REF TO zcl_lnt_character_type.
@@ -3731,7 +3731,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t925.
     t919 = NEW zcl_lnt_istructure_component( i_name = t920 i_type_9913 = t921 i_as_include = t924 i_suffix = t925 ).
     APPEND t919 TO t918->items.
-    DATA(t926) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t926) = t1.
     DATA t927 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t927.
     DATA(t928) = |dbsys|.
@@ -3782,7 +3782,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t946.
     t927 = NEW zcl_lnt_istructure_component( i_name = t928 i_type_9913 = t929 i_as_include = t945 i_suffix = t946 ).
     APPEND t927 TO t926->items.
-    DATA(t947) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t947) = t1.
     DATA t948 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t949) = |dcsys|.
     DATA t950 TYPE REF TO zcl_lnt_character_type.
@@ -3796,7 +3796,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t954.
     t948 = NEW zcl_lnt_istructure_component( i_name = t949 i_type_9913 = t950 i_as_include = t953 i_suffix = t954 ).
     APPEND t948 TO t947->items.
-    DATA(t955) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t955) = t1.
     DATA t956 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t957) = |macdb|.
     DATA t958 TYPE REF TO zcl_lnt_character_type.
@@ -3810,7 +3810,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t962.
     t956 = NEW zcl_lnt_istructure_component( i_name = t957 i_type_9913 = t958 i_as_include = t961 i_suffix = t962 ).
     APPEND t956 TO t955->items.
-    DATA(t963) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t963) = t1.
     DATA t964 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t964.
     DATA(t965) = |sysid|.
@@ -3861,7 +3861,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t983.
     t964 = NEW zcl_lnt_istructure_component( i_name = t965 i_type_9913 = t966 i_as_include = t982 i_suffix = t983 ).
     APPEND t964 TO t963->items.
-    DATA(t984) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t984) = t1.
     DATA t985 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t985.
     DATA(t986) = |opsys|.
@@ -3912,7 +3912,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1004.
     t985 = NEW zcl_lnt_istructure_component( i_name = t986 i_type_9913 = t987 i_as_include = t1003 i_suffix = t1004 ).
     APPEND t985 TO t984->items.
-    DATA(t1005) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1005) = t1.
     DATA t1006 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1006.
     DATA(t1007) = |pfkey|.
@@ -3963,7 +3963,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1025.
     t1006 = NEW zcl_lnt_istructure_component( i_name = t1007 i_type_9913 = t1008 i_as_include = t1024 i_suffix = t1025 ).
     APPEND t1006 TO t1005->items.
-    DATA(t1026) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1026) = t1.
     DATA t1027 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1027.
     DATA(t1028) = |saprl|.
@@ -4014,7 +4014,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1046.
     t1027 = NEW zcl_lnt_istructure_component( i_name = t1028 i_type_9913 = t1029 i_as_include = t1045 i_suffix = t1046 ).
     APPEND t1027 TO t1026->items.
-    DATA(t1047) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1047) = t1.
     DATA t1048 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1048.
     DATA(t1049) = |tcode|.
@@ -4065,7 +4065,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1067.
     t1048 = NEW zcl_lnt_istructure_component( i_name = t1049 i_type_9913 = t1050 i_as_include = t1066 i_suffix = t1067 ).
     APPEND t1048 TO t1047->items.
-    DATA(t1068) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1068) = t1.
     DATA t1069 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1069.
     DATA(t1070) = |ucomm|.
@@ -4116,7 +4116,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1088.
     t1069 = NEW zcl_lnt_istructure_component( i_name = t1070 i_type_9913 = t1071 i_as_include = t1087 i_suffix = t1088 ).
     APPEND t1069 TO t1068->items.
-    DATA(t1089) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1089) = t1.
     DATA t1090 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1091) = |cfwae|.
     DATA t1092 TYPE REF TO zcl_lnt_character_type.
@@ -4130,7 +4130,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1096.
     t1090 = NEW zcl_lnt_istructure_component( i_name = t1091 i_type_9913 = t1092 i_as_include = t1095 i_suffix = t1096 ).
     APPEND t1090 TO t1089->items.
-    DATA(t1097) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1097) = t1.
     DATA t1098 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1099) = |chwae|.
     DATA t1100 TYPE REF TO zcl_lnt_character_type.
@@ -4144,7 +4144,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1104.
     t1098 = NEW zcl_lnt_istructure_component( i_name = t1099 i_type_9913 = t1100 i_as_include = t1103 i_suffix = t1104 ).
     APPEND t1098 TO t1097->items.
-    DATA(t1105) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1105) = t1.
     DATA t1106 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1106.
     DATA(t1107) = |spono|.
@@ -4195,7 +4195,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1125.
     t1106 = NEW zcl_lnt_istructure_component( i_name = t1107 i_type_9913 = t1108 i_as_include = t1124 i_suffix = t1125 ).
     APPEND t1106 TO t1105->items.
-    DATA(t1126) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1126) = t1.
     DATA t1127 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1128) = |sponr|.
     DATA t1129 TYPE REF TO zcl_lnt_numeric_type.
@@ -4209,7 +4209,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1133.
     t1127 = NEW zcl_lnt_istructure_component( i_name = t1128 i_type_9913 = t1129 i_as_include = t1132 i_suffix = t1133 ).
     APPEND t1127 TO t1126->items.
-    DATA(t1134) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1134) = t1.
     DATA t1135 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1136) = |waers|.
     DATA t1137 TYPE REF TO zcl_lnt_character_type.
@@ -4223,7 +4223,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1141.
     t1135 = NEW zcl_lnt_istructure_component( i_name = t1136 i_type_9913 = t1137 i_as_include = t1140 i_suffix = t1141 ).
     APPEND t1135 TO t1134->items.
-    DATA(t1142) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1142) = t1.
     DATA t1143 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1144) = |cdate|.
     DATA t1145 TYPE REF TO zcl_lnt_date_type.
@@ -4236,7 +4236,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1148.
     t1143 = NEW zcl_lnt_istructure_component( i_name = t1144 i_type_9913 = t1145 i_as_include = t1147 i_suffix = t1148 ).
     APPEND t1143 TO t1142->items.
-    DATA(t1149) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1149) = t1.
     DATA t1150 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1151) = |datum|.
     DATA t1152 TYPE REF TO zcl_lnt_date_type.
@@ -4249,7 +4249,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1155.
     t1150 = NEW zcl_lnt_istructure_component( i_name = t1151 i_type_9913 = t1152 i_as_include = t1154 i_suffix = t1155 ).
     APPEND t1150 TO t1149->items.
-    DATA(t1156) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1156) = t1.
     DATA t1157 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1157.
     DATA(t1158) = |slset|.
@@ -4300,7 +4300,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1176.
     t1157 = NEW zcl_lnt_istructure_component( i_name = t1158 i_type_9913 = t1159 i_as_include = t1175 i_suffix = t1176 ).
     APPEND t1157 TO t1156->items.
-    DATA(t1177) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1177) = t1.
     DATA t1178 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1179) = |subty|.
     DATA t1180 TYPE REF TO zcl_lnt_hex_type.
@@ -4314,7 +4314,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1184.
     t1178 = NEW zcl_lnt_istructure_component( i_name = t1179 i_type_9913 = t1180 i_as_include = t1183 i_suffix = t1184 ).
     APPEND t1178 TO t1177->items.
-    DATA(t1185) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1185) = t1.
     DATA t1186 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1187) = |subcs|.
     DATA t1188 TYPE REF TO zcl_lnt_character_type.
@@ -4328,7 +4328,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1192.
     t1186 = NEW zcl_lnt_istructure_component( i_name = t1187 i_type_9913 = t1188 i_as_include = t1191 i_suffix = t1192 ).
     APPEND t1186 TO t1185->items.
-    DATA(t1193) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1193) = t1.
     DATA t1194 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1195) = |group|.
     DATA t1196 TYPE REF TO zcl_lnt_character_type.
@@ -4342,7 +4342,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1200.
     t1194 = NEW zcl_lnt_istructure_component( i_name = t1195 i_type_9913 = t1196 i_as_include = t1199 i_suffix = t1200 ).
     APPEND t1194 TO t1193->items.
-    DATA(t1201) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1201) = t1.
     DATA t1202 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1203) = |ffile|.
     DATA t1204 TYPE REF TO zcl_lnt_character_type.
@@ -4356,7 +4356,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1208.
     t1202 = NEW zcl_lnt_istructure_component( i_name = t1203 i_type_9913 = t1204 i_as_include = t1207 i_suffix = t1208 ).
     APPEND t1202 TO t1201->items.
-    DATA(t1209) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1209) = t1.
     DATA t1210 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1211) = |uzeit|.
     DATA t1212 TYPE REF TO zcl_lnt_time_type.
@@ -4369,7 +4369,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1215.
     t1210 = NEW zcl_lnt_istructure_component( i_name = t1211 i_type_9913 = t1212 i_as_include = t1214 i_suffix = t1215 ).
     APPEND t1210 TO t1209->items.
-    DATA(t1216) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1216) = t1.
     DATA t1217 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1218) = |dsnam|.
     DATA t1219 TYPE REF TO zcl_lnt_character_type.
@@ -4383,7 +4383,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1223.
     t1217 = NEW zcl_lnt_istructure_component( i_name = t1218 i_type_9913 = t1219 i_as_include = t1222 i_suffix = t1223 ).
     APPEND t1217 TO t1216->items.
-    DATA(t1224) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1224) = t1.
     DATA t1225 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1226) = |tabid|.
     DATA t1227 TYPE REF TO zcl_lnt_character_type.
@@ -4397,7 +4397,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1231.
     t1225 = NEW zcl_lnt_istructure_component( i_name = t1226 i_type_9913 = t1227 i_as_include = t1230 i_suffix = t1231 ).
     APPEND t1225 TO t1224->items.
-    DATA(t1232) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1232) = t1.
     DATA t1233 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1234) = |tfdsn|.
     DATA t1235 TYPE REF TO zcl_lnt_character_type.
@@ -4411,7 +4411,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1239.
     t1233 = NEW zcl_lnt_istructure_component( i_name = t1234 i_type_9913 = t1235 i_as_include = t1238 i_suffix = t1239 ).
     APPEND t1233 TO t1232->items.
-    DATA(t1240) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1240) = t1.
     DATA t1241 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1241.
     DATA(t1242) = |uname|.
@@ -4462,7 +4462,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1260.
     t1241 = NEW zcl_lnt_istructure_component( i_name = t1242 i_type_9913 = t1243 i_as_include = t1259 i_suffix = t1260 ).
     APPEND t1241 TO t1240->items.
-    DATA(t1261) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1261) = t1.
     DATA t1262 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1263) = |lstat|.
     DATA t1264 TYPE REF TO zcl_lnt_character_type.
@@ -4476,7 +4476,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1268.
     t1262 = NEW zcl_lnt_istructure_component( i_name = t1263 i_type_9913 = t1264 i_as_include = t1267 i_suffix = t1268 ).
     APPEND t1262 TO t1261->items.
-    DATA(t1269) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1269) = t1.
     DATA t1270 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1270.
     DATA(t1271) = |abcde|.
@@ -4527,7 +4527,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1289.
     t1270 = NEW zcl_lnt_istructure_component( i_name = t1271 i_type_9913 = t1272 i_as_include = t1288 i_suffix = t1289 ).
     APPEND t1270 TO t1269->items.
-    DATA(t1290) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1290) = t1.
     DATA t1291 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1292) = |marky|.
     DATA t1293 TYPE REF TO zcl_lnt_character_type.
@@ -4541,7 +4541,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1297.
     t1291 = NEW zcl_lnt_istructure_component( i_name = t1292 i_type_9913 = t1293 i_as_include = t1296 i_suffix = t1297 ).
     APPEND t1291 TO t1290->items.
-    DATA(t1298) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1298) = t1.
     DATA t1299 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1300) = |sfnam|.
     DATA t1301 TYPE REF TO zcl_lnt_character_type.
@@ -4555,7 +4555,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1305.
     t1299 = NEW zcl_lnt_istructure_component( i_name = t1300 i_type_9913 = t1301 i_as_include = t1304 i_suffix = t1305 ).
     APPEND t1299 TO t1298->items.
-    DATA(t1306) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1306) = t1.
     DATA t1307 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1308) = |tname|.
     DATA t1309 TYPE REF TO zcl_lnt_character_type.
@@ -4569,7 +4569,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1313.
     t1307 = NEW zcl_lnt_istructure_component( i_name = t1308 i_type_9913 = t1309 i_as_include = t1312 i_suffix = t1313 ).
     APPEND t1307 TO t1306->items.
-    DATA(t1314) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1314) = t1.
     DATA t1315 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1315.
     DATA(t1316) = |msgli|.
@@ -4620,7 +4620,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1334.
     t1315 = NEW zcl_lnt_istructure_component( i_name = t1316 i_type_9913 = t1317 i_as_include = t1333 i_suffix = t1334 ).
     APPEND t1315 TO t1314->items.
-    DATA(t1335) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1335) = t1.
     DATA t1336 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1336.
     DATA(t1337) = |title|.
@@ -4671,7 +4671,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1355.
     t1336 = NEW zcl_lnt_istructure_component( i_name = t1337 i_type_9913 = t1338 i_as_include = t1354 i_suffix = t1355 ).
     APPEND t1336 TO t1335->items.
-    DATA(t1356) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1356) = t1.
     DATA t1357 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1358) = |entry|.
     DATA t1359 TYPE REF TO zcl_lnt_character_type.
@@ -4685,7 +4685,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1363.
     t1357 = NEW zcl_lnt_istructure_component( i_name = t1358 i_type_9913 = t1359 i_as_include = t1362 i_suffix = t1363 ).
     APPEND t1357 TO t1356->items.
-    DATA(t1364) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1364) = t1.
     DATA t1365 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1365.
     DATA(t1366) = |lisel|.
@@ -4736,7 +4736,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1384.
     t1365 = NEW zcl_lnt_istructure_component( i_name = t1366 i_type_9913 = t1367 i_as_include = t1383 i_suffix = t1384 ).
     APPEND t1365 TO t1364->items.
-    DATA(t1385) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1385) = t1.
     DATA t1386 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1386.
     DATA(t1387) = |uline|.
@@ -4787,7 +4787,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1405.
     t1386 = NEW zcl_lnt_istructure_component( i_name = t1387 i_type_9913 = t1388 i_as_include = t1404 i_suffix = t1405 ).
     APPEND t1386 TO t1385->items.
-    DATA(t1406) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1406) = t1.
     DATA t1407 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1408) = |xcode|.
     DATA t1409 TYPE REF TO zcl_lnt_character_type.
@@ -4801,7 +4801,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1413.
     t1407 = NEW zcl_lnt_istructure_component( i_name = t1408 i_type_9913 = t1409 i_as_include = t1412 i_suffix = t1413 ).
     APPEND t1407 TO t1406->items.
-    DATA(t1414) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1414) = t1.
     DATA t1415 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1415.
     DATA(t1416) = |cprog|.
@@ -4852,7 +4852,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1434.
     t1415 = NEW zcl_lnt_istructure_component( i_name = t1416 i_type_9913 = t1417 i_as_include = t1433 i_suffix = t1434 ).
     APPEND t1415 TO t1414->items.
-    DATA(t1435) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1435) = t1.
     DATA t1436 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1437) = |xprog|.
     DATA t1438 TYPE REF TO zcl_lnt_character_type.
@@ -4866,7 +4866,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1442.
     t1436 = NEW zcl_lnt_istructure_component( i_name = t1437 i_type_9913 = t1438 i_as_include = t1441 i_suffix = t1442 ).
     APPEND t1436 TO t1435->items.
-    DATA(t1443) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1443) = t1.
     DATA t1444 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1445) = |xform|.
     DATA t1446 TYPE REF TO zcl_lnt_character_type.
@@ -4880,7 +4880,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1450.
     t1444 = NEW zcl_lnt_istructure_component( i_name = t1445 i_type_9913 = t1446 i_as_include = t1449 i_suffix = t1450 ).
     APPEND t1444 TO t1443->items.
-    DATA(t1451) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1451) = t1.
     DATA t1452 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1452.
     DATA(t1453) = |ldbpg|.
@@ -4931,7 +4931,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1471.
     t1452 = NEW zcl_lnt_istructure_component( i_name = t1453 i_type_9913 = t1454 i_as_include = t1470 i_suffix = t1471 ).
     APPEND t1452 TO t1451->items.
-    DATA(t1472) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1472) = t1.
     DATA t1473 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1473.
     DATA(t1474) = |tvar0|.
@@ -4982,7 +4982,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1492.
     t1473 = NEW zcl_lnt_istructure_component( i_name = t1474 i_type_9913 = t1475 i_as_include = t1491 i_suffix = t1492 ).
     APPEND t1473 TO t1472->items.
-    DATA(t1493) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1493) = t1.
     DATA t1494 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1494.
     DATA(t1495) = |tvar1|.
@@ -5033,7 +5033,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1513.
     t1494 = NEW zcl_lnt_istructure_component( i_name = t1495 i_type_9913 = t1496 i_as_include = t1512 i_suffix = t1513 ).
     APPEND t1494 TO t1493->items.
-    DATA(t1514) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1514) = t1.
     DATA t1515 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1515.
     DATA(t1516) = |tvar2|.
@@ -5084,7 +5084,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1534.
     t1515 = NEW zcl_lnt_istructure_component( i_name = t1516 i_type_9913 = t1517 i_as_include = t1533 i_suffix = t1534 ).
     APPEND t1515 TO t1514->items.
-    DATA(t1535) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1535) = t1.
     DATA t1536 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1536.
     DATA(t1537) = |tvar3|.
@@ -5135,7 +5135,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1555.
     t1536 = NEW zcl_lnt_istructure_component( i_name = t1537 i_type_9913 = t1538 i_as_include = t1554 i_suffix = t1555 ).
     APPEND t1536 TO t1535->items.
-    DATA(t1556) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1556) = t1.
     DATA t1557 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1557.
     DATA(t1558) = |tvar4|.
@@ -5186,7 +5186,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1576.
     t1557 = NEW zcl_lnt_istructure_component( i_name = t1558 i_type_9913 = t1559 i_as_include = t1575 i_suffix = t1576 ).
     APPEND t1557 TO t1556->items.
-    DATA(t1577) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1577) = t1.
     DATA t1578 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1578.
     DATA(t1579) = |tvar5|.
@@ -5237,7 +5237,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1597.
     t1578 = NEW zcl_lnt_istructure_component( i_name = t1579 i_type_9913 = t1580 i_as_include = t1596 i_suffix = t1597 ).
     APPEND t1578 TO t1577->items.
-    DATA(t1598) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1598) = t1.
     DATA t1599 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1599.
     DATA(t1600) = |tvar6|.
@@ -5288,7 +5288,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1618.
     t1599 = NEW zcl_lnt_istructure_component( i_name = t1600 i_type_9913 = t1601 i_as_include = t1617 i_suffix = t1618 ).
     APPEND t1599 TO t1598->items.
-    DATA(t1619) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1619) = t1.
     DATA t1620 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1620.
     DATA(t1621) = |tvar7|.
@@ -5339,7 +5339,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1639.
     t1620 = NEW zcl_lnt_istructure_component( i_name = t1621 i_type_9913 = t1622 i_as_include = t1638 i_suffix = t1639 ).
     APPEND t1620 TO t1619->items.
-    DATA(t1640) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1640) = t1.
     DATA t1641 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1641.
     DATA(t1642) = |tvar8|.
@@ -5390,7 +5390,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1660.
     t1641 = NEW zcl_lnt_istructure_component( i_name = t1642 i_type_9913 = t1643 i_as_include = t1659 i_suffix = t1660 ).
     APPEND t1641 TO t1640->items.
-    DATA(t1661) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1661) = t1.
     DATA t1662 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1662.
     DATA(t1663) = |tvar9|.
@@ -5441,7 +5441,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1681.
     t1662 = NEW zcl_lnt_istructure_component( i_name = t1663 i_type_9913 = t1664 i_as_include = t1680 i_suffix = t1681 ).
     APPEND t1662 TO t1661->items.
-    DATA(t1682) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1682) = t1.
     DATA t1683 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1683.
     DATA(t1684) = |msgid|.
@@ -5492,7 +5492,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1702.
     t1683 = NEW zcl_lnt_istructure_component( i_name = t1684 i_type_9913 = t1685 i_as_include = t1701 i_suffix = t1702 ).
     APPEND t1683 TO t1682->items.
-    DATA(t1703) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1703) = t1.
     DATA t1704 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1704.
     DATA(t1705) = |msgty|.
@@ -5543,7 +5543,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1723.
     t1704 = NEW zcl_lnt_istructure_component( i_name = t1705 i_type_9913 = t1706 i_as_include = t1722 i_suffix = t1723 ).
     APPEND t1704 TO t1703->items.
-    DATA(t1724) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1724) = t1.
     DATA t1725 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1725.
     DATA(t1726) = |msgno|.
@@ -5571,7 +5571,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1735.
     t1725 = NEW zcl_lnt_istructure_component( i_name = t1726 i_type_9913 = t1727 i_as_include = t1734 i_suffix = t1735 ).
     APPEND t1725 TO t1724->items.
-    DATA(t1736) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1736) = t1.
     DATA t1737 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1737.
     DATA(t1738) = |msgv1|.
@@ -5622,7 +5622,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1756.
     t1737 = NEW zcl_lnt_istructure_component( i_name = t1738 i_type_9913 = t1739 i_as_include = t1755 i_suffix = t1756 ).
     APPEND t1737 TO t1736->items.
-    DATA(t1757) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1757) = t1.
     DATA t1758 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1758.
     DATA(t1759) = |msgv2|.
@@ -5673,7 +5673,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1777.
     t1758 = NEW zcl_lnt_istructure_component( i_name = t1759 i_type_9913 = t1760 i_as_include = t1776 i_suffix = t1777 ).
     APPEND t1758 TO t1757->items.
-    DATA(t1778) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1778) = t1.
     DATA t1779 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1779.
     DATA(t1780) = |msgv3|.
@@ -5724,7 +5724,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1798.
     t1779 = NEW zcl_lnt_istructure_component( i_name = t1780 i_type_9913 = t1781 i_as_include = t1797 i_suffix = t1798 ).
     APPEND t1779 TO t1778->items.
-    DATA(t1799) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1799) = t1.
     DATA t1800 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1800.
     DATA(t1801) = |msgv4|.
@@ -5775,7 +5775,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1819.
     t1800 = NEW zcl_lnt_istructure_component( i_name = t1801 i_type_9913 = t1802 i_as_include = t1818 i_suffix = t1819 ).
     APPEND t1800 TO t1799->items.
-    DATA(t1820) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1820) = t1.
     DATA t1821 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1822) = |oncom|.
     DATA t1823 TYPE REF TO zcl_lnt_character_type.
@@ -5789,7 +5789,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1827.
     t1821 = NEW zcl_lnt_istructure_component( i_name = t1822 i_type_9913 = t1823 i_as_include = t1826 i_suffix = t1827 ).
     APPEND t1821 TO t1820->items.
-    DATA(t1828) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1828) = t1.
     DATA t1829 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1829.
     DATA(t1830) = |vline|.
@@ -5840,7 +5840,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1848.
     t1829 = NEW zcl_lnt_istructure_component( i_name = t1830 i_type_9913 = t1831 i_as_include = t1847 i_suffix = t1848 ).
     APPEND t1829 TO t1828->items.
-    DATA(t1849) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1849) = t1.
     DATA t1850 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1851) = |winsl|.
     DATA t1852 TYPE REF TO zcl_lnt_character_type.
@@ -5854,7 +5854,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1856.
     t1850 = NEW zcl_lnt_istructure_component( i_name = t1851 i_type_9913 = t1852 i_as_include = t1855 i_suffix = t1856 ).
     APPEND t1850 TO t1849->items.
-    DATA(t1857) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1857) = t1.
     DATA t1858 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1859) = |staco|.
     DATA t1860 TYPE REF TO zcl_lnt_integer_type.
@@ -5867,7 +5867,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1863.
     t1858 = NEW zcl_lnt_istructure_component( i_name = t1859 i_type_9913 = t1860 i_as_include = t1862 i_suffix = t1863 ).
     APPEND t1858 TO t1857->items.
-    DATA(t1864) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1864) = t1.
     DATA t1865 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1866) = |staro|.
     DATA t1867 TYPE REF TO zcl_lnt_integer_type.
@@ -5880,7 +5880,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1870.
     t1865 = NEW zcl_lnt_istructure_component( i_name = t1866 i_type_9913 = t1867 i_as_include = t1869 i_suffix = t1870 ).
     APPEND t1865 TO t1864->items.
-    DATA(t1871) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1871) = t1.
     DATA t1872 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1872.
     DATA(t1873) = |datar|.
@@ -5931,7 +5931,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1891.
     t1872 = NEW zcl_lnt_istructure_component( i_name = t1873 i_type_9913 = t1874 i_as_include = t1890 i_suffix = t1891 ).
     APPEND t1872 TO t1871->items.
-    DATA(t1892) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1892) = t1.
     DATA t1893 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1893.
     DATA(t1894) = |host|.
@@ -5982,7 +5982,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1912.
     t1893 = NEW zcl_lnt_istructure_component( i_name = t1894 i_type_9913 = t1895 i_as_include = t1911 i_suffix = t1912 ).
     APPEND t1893 TO t1892->items.
-    DATA(t1913) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1913) = t1.
     DATA t1914 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1915) = |locdb|.
     DATA t1916 TYPE REF TO zcl_lnt_character_type.
@@ -5996,7 +5996,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1920.
     t1914 = NEW zcl_lnt_istructure_component( i_name = t1915 i_type_9913 = t1916 i_as_include = t1919 i_suffix = t1920 ).
     APPEND t1914 TO t1913->items.
-    DATA(t1921) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1921) = t1.
     DATA t1922 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1923) = |locop|.
     DATA t1924 TYPE REF TO zcl_lnt_character_type.
@@ -6010,7 +6010,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1928.
     t1922 = NEW zcl_lnt_istructure_component( i_name = t1923 i_type_9913 = t1924 i_as_include = t1927 i_suffix = t1928 ).
     APPEND t1922 TO t1921->items.
-    DATA(t1929) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1929) = t1.
     DATA t1930 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1931) = |datlo|.
     DATA t1932 TYPE REF TO zcl_lnt_date_type.
@@ -6023,7 +6023,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1935.
     t1930 = NEW zcl_lnt_istructure_component( i_name = t1931 i_type_9913 = t1932 i_as_include = t1934 i_suffix = t1935 ).
     APPEND t1930 TO t1929->items.
-    DATA(t1936) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1936) = t1.
     DATA t1937 TYPE REF TO zcl_lnt_istructure_component.
     DATA(t1938) = |timlo|.
     DATA t1939 TYPE REF TO zcl_lnt_time_type.
@@ -6036,7 +6036,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1942.
     t1937 = NEW zcl_lnt_istructure_component( i_name = t1938 i_type_9913 = t1939 i_as_include = t1941 i_suffix = t1942 ).
     APPEND t1937 TO t1936->items.
-    DATA(t1943) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1943) = t1.
     DATA t1944 TYPE REF TO zcl_lnt_istructure_component.
     CLEAR t1944.
     DATA(t1945) = |zonlo|.
@@ -6089,7 +6089,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     APPEND t1944 TO t1943->items.
     DATA t1964 TYPE REF TO zcl_lnt_structure_type.
     DATA t1965 TYPE REF TO zcl_lnt_structure_type.
-    DATA(t1966) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1966) = t1.
     DATA t1967 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1967.
     DATA t1968 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -6106,14 +6106,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1972.
     DATA(t1973) = VALUE int8( ).
     DATA t1974 TYPE REF TO zcl_lnt_built_in.
-    DATA(t1975) = CAST zcl_lnt_built_in( me ).
+    DATA(t1975) = me.
     t1974 = t1975.
     DATA t1976 TYPE int8.
     DATA t1977 TYPE int8.
-    DATA(t1978) = CAST zcl_lnt_built_in( t1974 ).
+    DATA(t1978) = t1974.
     t1977 = t1978->row.
     t1976 = t1977.
-    DATA(t1979) = CAST zcl_lnt_built_in( t1974 ).
+    DATA(t1979) = t1974.
     DATA t1980 TYPE int8.
     DATA(t1981) = t1976.
     DATA(t1982) = CONV int8( 1 ).
@@ -6133,9 +6133,9 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t1986.
     DATA t1987 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t1987.
-    DATA(t1988) = CAST zcl_lnt_lx_identifier( t1970 ).
+    DATA(t1988) = t1970.
     DATA(t1989) = CONV string( zcl_lnt_built_in=>filename ).
-    DATA(t1990) = CAST zcl_lnt_structure_type( t1964 ).
+    DATA(t1990) = t1964.
     DATA t1991 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1991.
     DATA(t1992) = abap_true.
@@ -6145,13 +6145,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t1995 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t1995.
       t1994 = t1995.
-      DATA(t1996) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1994 ).
+      DATA(t1996) = t1994.
       DATA(t1997) = |read_only|.
       APPEND t1997 TO t1996->items.
-      DATA(t1998) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1994 ).
+      DATA(t1998) = t1994.
       DATA(t1999) = |built-in|.
       APPEND t1999 TO t1998->items.
-      DATA(t2000) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1994 ).
+      DATA(t2000) = t1994.
       t1993 = t2000.
       t1991 = t1993.
     ELSE.
@@ -6171,14 +6171,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2005.
     DATA(t2006) = VALUE int8( ).
     DATA t2007 TYPE REF TO zcl_lnt_built_in.
-    DATA(t2008) = CAST zcl_lnt_built_in( me ).
+    DATA(t2008) = me.
     t2007 = t2008.
     DATA t2009 TYPE int8.
     DATA t2010 TYPE int8.
-    DATA(t2011) = CAST zcl_lnt_built_in( t2007 ).
+    DATA(t2011) = t2007.
     t2010 = t2011->row.
     t2009 = t2010.
-    DATA(t2012) = CAST zcl_lnt_built_in( t2007 ).
+    DATA(t2012) = t2007.
     DATA t2013 TYPE int8.
     DATA(t2014) = t2009.
     DATA(t2015) = CONV int8( 1 ).
@@ -6198,9 +6198,9 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2019.
     DATA t2020 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t2020.
-    DATA(t2021) = CAST zcl_lnt_lx_identifier( t2003 ).
+    DATA(t2021) = t2003.
     DATA(t2022) = CONV string( zcl_lnt_built_in=>filename ).
-    DATA(t2023) = CAST zcl_lnt_structure_type( t1964 ).
+    DATA(t2023) = t1964.
     DATA t2024 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t2024.
     DATA(t2025) = abap_true.
@@ -6210,13 +6210,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t2028 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t2028.
       t2027 = t2028.
-      DATA(t2029) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2027 ).
+      DATA(t2029) = t2027.
       DATA(t2030) = |read_only|.
       APPEND t2030 TO t2029->items.
-      DATA(t2031) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2027 ).
+      DATA(t2031) = t2027.
       DATA(t2032) = |built-in|.
       APPEND t2032 TO t2031->items.
-      DATA(t2033) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2027 ).
+      DATA(t2033) = t2027.
       t2026 = t2033.
       t2024 = t2026.
     ELSE.
@@ -6236,14 +6236,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2038.
     DATA(t2039) = VALUE int8( ).
     DATA t2040 TYPE REF TO zcl_lnt_built_in.
-    DATA(t2041) = CAST zcl_lnt_built_in( me ).
+    DATA(t2041) = me.
     t2040 = t2041.
     DATA t2042 TYPE int8.
     DATA t2043 TYPE int8.
-    DATA(t2044) = CAST zcl_lnt_built_in( t2040 ).
+    DATA(t2044) = t2040.
     t2043 = t2044->row.
     t2042 = t2043.
-    DATA(t2045) = CAST zcl_lnt_built_in( t2040 ).
+    DATA(t2045) = t2040.
     DATA t2046 TYPE int8.
     DATA(t2047) = t2042.
     DATA(t2048) = CONV int8( 1 ).
@@ -6263,7 +6263,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2052.
     DATA t2053 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t2053.
-    DATA(t2054) = CAST zcl_lnt_lx_identifier( t2036 ).
+    DATA(t2054) = t2036.
     DATA(t2055) = CONV string( zcl_lnt_built_in=>filename ).
     DATA t2056 TYPE REF TO zcl_lnt_character_type.
     CLEAR t2056.
@@ -6315,13 +6315,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t2076 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t2076.
       t2075 = t2076.
-      DATA(t2077) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2075 ).
+      DATA(t2077) = t2075.
       DATA(t2078) = |read_only|.
       APPEND t2078 TO t2077->items.
-      DATA(t2079) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2075 ).
+      DATA(t2079) = t2075.
       DATA(t2080) = |built-in|.
       APPEND t2080 TO t2079->items.
-      DATA(t2081) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2075 ).
+      DATA(t2081) = t2075.
       t2074 = t2081.
       t2072 = t2074.
     ELSE.
@@ -6341,14 +6341,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2086.
     DATA(t2087) = VALUE int8( ).
     DATA t2088 TYPE REF TO zcl_lnt_built_in.
-    DATA(t2089) = CAST zcl_lnt_built_in( me ).
+    DATA(t2089) = me.
     t2088 = t2089.
     DATA t2090 TYPE int8.
     DATA t2091 TYPE int8.
-    DATA(t2092) = CAST zcl_lnt_built_in( t2088 ).
+    DATA(t2092) = t2088.
     t2091 = t2092->row.
     t2090 = t2091.
-    DATA(t2093) = CAST zcl_lnt_built_in( t2088 ).
+    DATA(t2093) = t2088.
     DATA t2094 TYPE int8.
     DATA(t2095) = t2090.
     DATA(t2096) = CONV int8( 1 ).
@@ -6368,7 +6368,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t2100.
     DATA t2101 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t2101.
-    DATA(t2102) = CAST zcl_lnt_lx_identifier( t2084 ).
+    DATA(t2102) = t2084.
     DATA(t2103) = CONV string( zcl_lnt_built_in=>filename ).
     DATA t2104 TYPE REF TO zcl_lnt_character_type.
     CLEAR t2104.
@@ -6420,13 +6420,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t2124 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t2124.
       t2123 = t2124.
-      DATA(t2125) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2123 ).
+      DATA(t2125) = t2123.
       DATA(t2126) = |read_only|.
       APPEND t2126 TO t2125->items.
-      DATA(t2127) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2123 ).
+      DATA(t2127) = t2123.
       DATA(t2128) = |built-in|.
       APPEND t2128 TO t2127->items.
-      DATA(t2129) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2123 ).
+      DATA(t2129) = t2123.
       t2122 = t2129.
       t2120 = t2122.
     ELSE.
@@ -6443,19 +6443,19 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     DATA t2134 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2134.
     t2133 = t2134.
-    DATA(t2135) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
-    DATA(t2136) = CAST zcl_lnt_typed_identifier( t1986 ).
+    DATA(t2135) = t2133.
+    DATA(t2136) = t1986.
     APPEND t2136 TO t2135->items.
-    DATA(t2137) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
-    DATA(t2138) = CAST zcl_lnt_typed_identifier( t2019 ).
+    DATA(t2137) = t2133.
+    DATA(t2138) = t2019.
     APPEND t2138 TO t2137->items.
-    DATA(t2139) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
-    DATA(t2140) = CAST zcl_lnt_typed_identifier( t2052 ).
+    DATA(t2139) = t2133.
+    DATA(t2140) = t2052.
     APPEND t2140 TO t2139->items.
-    DATA(t2141) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
-    DATA(t2142) = CAST zcl_lnt_typed_identifier( t2100 ).
+    DATA(t2141) = t2133.
+    DATA(t2142) = t2100.
     APPEND t2142 TO t2141->items.
-    DATA(t2143) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
+    DATA(t2143) = t2133.
     t2132 = t2143.
     result = t2132.
 
@@ -6465,8 +6465,8 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_abstract_type( i_type_9913 ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_value ).
+    DATA(t2) = i_type_9913.
+    DATA(t3) = i_value.
     DATA t4 TYPE REF TO zcl_lnt_lx_identifier.
     CLEAR t4.
     DATA t5 TYPE REF TO zcl_lnt_lx_identifier.
@@ -6475,14 +6475,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t6.
     DATA(t7) = VALUE int8( ).
     DATA t8 TYPE REF TO zcl_lnt_built_in.
-    DATA(t9) = CAST zcl_lnt_built_in( me ).
+    DATA(t9) = me.
     t8 = t9.
     DATA t10 TYPE int8.
     DATA t11 TYPE int8.
-    DATA(t12) = CAST zcl_lnt_built_in( t8 ).
+    DATA(t12) = t8.
     t11 = t12->row.
     t10 = t11.
-    DATA(t13) = CAST zcl_lnt_built_in( t8 ).
+    DATA(t13) = t8.
     DATA t14 TYPE int8.
     DATA(t15) = t10.
     DATA(t16) = CONV int8( 1 ).
@@ -6500,14 +6500,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t4 = t5.
     DATA(t20) = VALUE abap_bool( ).
     DATA t21 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t22) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t22) = t2.
     t21 = t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t24.
     t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = CAST zcl_lnt_abstract_type( t21 ).
+    DATA(t26) = t21.
     IF t26 IS INITIAL.
       t25 = abap_true.
     ENDIF.
@@ -6536,14 +6536,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     ENDIF.
     DATA(t34) = VALUE abap_bool( ).
     DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t36) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t36) = t3.
     t35 = t36.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t38.
     t37 = t38.
     DATA(t39) = VALUE abap_bool( ).
-    DATA(t40) = CAST zlnt_runtime_opti_4ba3bdccd169( t35 ).
+    DATA(t40) = t35.
     IF t40 IS INITIAL.
       t39 = abap_true.
     ELSEIF t40->has = abap_false.
@@ -6569,10 +6569,10 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     ENDIF.
     DATA t46 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t46.
-    DATA(t47) = CAST zcl_lnt_lx_identifier( t4 ).
+    DATA(t47) = t4.
     DATA(t48) = CONV string( zcl_lnt_built_in=>filename ).
     DATA t49 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t50) = CAST zcl_lnt_abstract_type( t2 ).
+    DATA(t50) = t2.
     t49 = t50.
     DATA t51 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t51.
@@ -6583,13 +6583,13 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA t55 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t55.
       t54 = t55.
-      DATA(t56) = CAST zlnt_runtime_arra_8ecd6afe19e0( t54 ).
+      DATA(t56) = t54.
       DATA(t57) = |read_only|.
       APPEND t57 TO t56->items.
-      DATA(t58) = CAST zlnt_runtime_arra_8ecd6afe19e0( t54 ).
+      DATA(t58) = t54.
       DATA(t59) = |built-in|.
       APPEND t59 TO t58->items.
-      DATA(t60) = CAST zlnt_runtime_arra_8ecd6afe19e0( t54 ).
+      DATA(t60) = t54.
       t53 = t60.
       t51 = t53.
     ELSE.
@@ -6603,7 +6603,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     IF t63 = abap_true.
       DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t65 TYPE string.
-      DATA(t66) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+      DATA(t66) = t3.
       t65 = t66->value.
       CREATE OBJECT t64.
       t64->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -6665,7 +6665,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t7 = t8.
     DATA t9 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t9.
-    DATA(t10) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t10) = t7.
     DATA(t11) = |ABS|.
     DATA t12 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t12.
@@ -6699,14 +6699,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t24) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t23 = t24.
       DATA t25 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t26) = CAST zlnt_runtime_map__41b3bb94df3d( t23 ).
+      DATA(t26) = t23.
       DATA(t27) = |val|.
       DATA t28 TYPE REF TO zcl_lnt_float_type.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t29.
       t28 = NEW zcl_lnt_float_type( i_input_967e = t29 ).
       t25 = t26->set( p0 = t27 p1 = t28 ).
-      DATA(t30) = CAST zlnt_runtime_map__41b3bb94df3d( t23 ).
+      DATA(t30) = t23.
       t22 = t30.
       t20 = t22.
     ELSE.
@@ -6730,7 +6730,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t9 = t10->set( p0 = t11 p1 = t12 ).
     DATA t38 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t38.
-    DATA(t39) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t39) = t7.
     DATA(t40) = |ACOS|.
     DATA t41 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t41.
@@ -6764,14 +6764,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t53) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t52 = t53.
       DATA t54 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t55) = CAST zlnt_runtime_map__41b3bb94df3d( t52 ).
+      DATA(t55) = t52.
       DATA(t56) = |val|.
       DATA t57 TYPE REF TO zcl_lnt_float_type.
       DATA t58 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t58.
       t57 = NEW zcl_lnt_float_type( i_input_967e = t58 ).
       t54 = t55->set( p0 = t56 p1 = t57 ).
-      DATA(t59) = CAST zlnt_runtime_map__41b3bb94df3d( t52 ).
+      DATA(t59) = t52.
       t51 = t59.
       t49 = t51.
     ELSE.
@@ -6795,7 +6795,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t38 = t39->set( p0 = t40 p1 = t41 ).
     DATA t67 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t67.
-    DATA(t68) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t68) = t7.
     DATA(t69) = |ASIN|.
     DATA t70 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t70.
@@ -6829,14 +6829,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t82) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t81 = t82.
       DATA t83 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t84) = CAST zlnt_runtime_map__41b3bb94df3d( t81 ).
+      DATA(t84) = t81.
       DATA(t85) = |val|.
       DATA t86 TYPE REF TO zcl_lnt_float_type.
       DATA t87 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t87.
       t86 = NEW zcl_lnt_float_type( i_input_967e = t87 ).
       t83 = t84->set( p0 = t85 p1 = t86 ).
-      DATA(t88) = CAST zlnt_runtime_map__41b3bb94df3d( t81 ).
+      DATA(t88) = t81.
       t80 = t88.
       t78 = t80.
     ELSE.
@@ -6860,7 +6860,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t67 = t68->set( p0 = t69 p1 = t70 ).
     DATA t96 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t96.
-    DATA(t97) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t97) = t7.
     DATA(t98) = |ATAN|.
     DATA t99 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t99.
@@ -6894,14 +6894,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t111) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t110 = t111.
       DATA t112 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t113) = CAST zlnt_runtime_map__41b3bb94df3d( t110 ).
+      DATA(t113) = t110.
       DATA(t114) = |val|.
       DATA t115 TYPE REF TO zcl_lnt_float_type.
       DATA t116 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t116.
       t115 = NEW zcl_lnt_float_type( i_input_967e = t116 ).
       t112 = t113->set( p0 = t114 p1 = t115 ).
-      DATA(t117) = CAST zlnt_runtime_map__41b3bb94df3d( t110 ).
+      DATA(t117) = t110.
       t109 = t117.
       t107 = t109.
     ELSE.
@@ -6925,7 +6925,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t96 = t97->set( p0 = t98 p1 = t99 ).
     DATA t125 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t125.
-    DATA(t126) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t126) = t7.
     DATA(t127) = |BIT-SET|.
     DATA t128 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t128.
@@ -6959,14 +6959,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t140) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t139 = t140.
       DATA t141 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t142) = CAST zlnt_runtime_map__41b3bb94df3d( t139 ).
+      DATA(t142) = t139.
       DATA(t143) = |val|.
       DATA t144 TYPE REF TO zcl_lnt_integer_type.
       DATA t145 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t145.
       t144 = zcl_lnt_integer_type=>get_db65( i_input_967e = t145 ).
       t141 = t142->set( p0 = t143 p1 = t144 ).
-      DATA(t146) = CAST zlnt_runtime_map__41b3bb94df3d( t139 ).
+      DATA(t146) = t139.
       t138 = t146.
       t136 = t138.
     ELSE.
@@ -7011,7 +7011,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t125 = t126->set( p0 = t127 p1 = t128 ).
     DATA t160 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t160.
-    DATA(t161) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t161) = t7.
     DATA(t162) = |BOOLC|.
     DATA t163 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t163.
@@ -7045,11 +7045,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t175) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t174 = t175.
       DATA t176 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t177) = CAST zlnt_runtime_map__41b3bb94df3d( t174 ).
+      DATA(t177) = t174.
       DATA(t178) = |val|.
       DATA(t179) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t176 = t177->set( p0 = t178 p1 = t179 ).
-      DATA(t180) = CAST zlnt_runtime_map__41b3bb94df3d( t174 ).
+      DATA(t180) = t174.
       t173 = t180.
       t171 = t173.
     ELSE.
@@ -7094,7 +7094,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t160 = t161->set( p0 = t162 p1 = t163 ).
     DATA t194 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t194.
-    DATA(t195) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t195) = t7.
     DATA(t196) = |BOOLX|.
     DATA t197 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t197.
@@ -7128,11 +7128,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t209) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t208 = t209.
       DATA t210 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t211) = CAST zlnt_runtime_map__41b3bb94df3d( t208 ).
+      DATA(t211) = t208.
       DATA(t212) = |bool|.
       DATA(t213) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t210 = t211->set( p0 = t212 p1 = t213 ).
-      DATA(t214) = CAST zlnt_runtime_map__41b3bb94df3d( t208 ).
+      DATA(t214) = t208.
       t207 = t214.
       t205 = t207.
     ELSE.
@@ -7149,14 +7149,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t220) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t219 = t220.
       DATA t221 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t222) = CAST zlnt_runtime_map__41b3bb94df3d( t219 ).
+      DATA(t222) = t219.
       DATA(t223) = |bit|.
       DATA t224 TYPE REF TO zcl_lnt_integer_type.
       DATA t225 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t225.
       t224 = zcl_lnt_integer_type=>get_db65( i_input_967e = t225 ).
       t221 = t222->set( p0 = t223 p1 = t224 ).
-      DATA(t226) = CAST zlnt_runtime_map__41b3bb94df3d( t219 ).
+      DATA(t226) = t219.
       t218 = t226.
       t216 = t218.
     ELSE.
@@ -7199,7 +7199,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t194 = t195->set( p0 = t196 p1 = t197 ).
     DATA t239 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t239.
-    DATA(t240) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t240) = t7.
     DATA(t241) = |CEIL|.
     DATA t242 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t242.
@@ -7233,14 +7233,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t254) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t253 = t254.
       DATA t255 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t256) = CAST zlnt_runtime_map__41b3bb94df3d( t253 ).
+      DATA(t256) = t253.
       DATA(t257) = |val|.
       DATA t258 TYPE REF TO zcl_lnt_float_type.
       DATA t259 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t259.
       t258 = NEW zcl_lnt_float_type( i_input_967e = t259 ).
       t255 = t256->set( p0 = t257 p1 = t258 ).
-      DATA(t260) = CAST zlnt_runtime_map__41b3bb94df3d( t253 ).
+      DATA(t260) = t253.
       t252 = t260.
       t250 = t252.
     ELSE.
@@ -7264,7 +7264,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t239 = t240->set( p0 = t241 p1 = t242 ).
     DATA t268 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t268.
-    DATA(t269) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t269) = t7.
     DATA(t270) = |CHAR_OFF|.
     DATA t271 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t271.
@@ -7298,19 +7298,19 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t283) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t282 = t283.
       DATA t284 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t285) = CAST zlnt_runtime_map__41b3bb94df3d( t282 ).
+      DATA(t285) = t282.
       DATA(t286) = |val|.
       DATA(t287) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t284 = t285->set( p0 = t286 p1 = t287 ).
       DATA t288 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t289) = CAST zlnt_runtime_map__41b3bb94df3d( t282 ).
+      DATA(t289) = t282.
       DATA(t290) = |add|.
       DATA t291 TYPE REF TO zcl_lnt_integer_type.
       DATA t292 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t292.
       t291 = zcl_lnt_integer_type=>get_db65( i_input_967e = t292 ).
       t288 = t289->set( p0 = t290 p1 = t291 ).
-      DATA(t293) = CAST zlnt_runtime_map__41b3bb94df3d( t282 ).
+      DATA(t293) = t282.
       t281 = t293.
       t279 = t281.
     ELSE.
@@ -7327,14 +7327,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t299) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t298 = t299.
       DATA t300 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t301) = CAST zlnt_runtime_map__41b3bb94df3d( t298 ).
+      DATA(t301) = t298.
       DATA(t302) = |off|.
       DATA t303 TYPE REF TO zcl_lnt_integer_type.
       DATA t304 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t304.
       t303 = zcl_lnt_integer_type=>get_db65( i_input_967e = t304 ).
       t300 = t301->set( p0 = t302 p1 = t303 ).
-      DATA(t305) = CAST zlnt_runtime_map__41b3bb94df3d( t298 ).
+      DATA(t305) = t298.
       t297 = t305.
       t295 = t297.
     ELSE.
@@ -7377,7 +7377,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t268 = t269->set( p0 = t270 p1 = t271 ).
     DATA t318 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t318.
-    DATA(t319) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t319) = t7.
     DATA(t320) = |CHARLEN|.
     DATA t321 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t321.
@@ -7411,11 +7411,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t333) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t332 = t333.
       DATA t334 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t335) = CAST zlnt_runtime_map__41b3bb94df3d( t332 ).
+      DATA(t335) = t332.
       DATA(t336) = |val|.
       DATA(t337) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t334 = t335->set( p0 = t336 p1 = t337 ).
-      DATA(t338) = CAST zlnt_runtime_map__41b3bb94df3d( t332 ).
+      DATA(t338) = t332.
       t331 = t338.
       t329 = t331.
     ELSE.
@@ -7439,7 +7439,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t318 = t319->set( p0 = t320 p1 = t321 ).
     DATA t346 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t346.
-    DATA(t347) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t347) = t7.
     DATA(t348) = |CMAX|.
     DATA t349 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t349.
@@ -7473,16 +7473,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t361) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t360 = t361.
       DATA t362 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t363) = CAST zlnt_runtime_map__41b3bb94df3d( t360 ).
+      DATA(t363) = t360.
       DATA(t364) = |val1|.
       DATA(t365) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t362 = t363->set( p0 = t364 p1 = t365 ).
       DATA t366 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t367) = CAST zlnt_runtime_map__41b3bb94df3d( t360 ).
+      DATA(t367) = t360.
       DATA(t368) = |val2|.
       DATA(t369) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t366 = t367->set( p0 = t368 p1 = t369 ).
-      DATA(t370) = CAST zlnt_runtime_map__41b3bb94df3d( t360 ).
+      DATA(t370) = t360.
       t359 = t370.
       t357 = t359.
     ELSE.
@@ -7499,36 +7499,36 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t376) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t375 = t376.
       DATA t377 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t378) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t378) = t375.
       DATA(t379) = |val3|.
       DATA(t380) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t377 = t378->set( p0 = t379 p1 = t380 ).
       DATA t381 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t382) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t382) = t375.
       DATA(t383) = |val4|.
       DATA(t384) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t381 = t382->set( p0 = t383 p1 = t384 ).
       DATA t385 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t386) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t386) = t375.
       DATA(t387) = |val5|.
       DATA(t388) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t385 = t386->set( p0 = t387 p1 = t388 ).
       DATA t389 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t390) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t390) = t375.
       DATA(t391) = |val6|.
       DATA(t392) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t389 = t390->set( p0 = t391 p1 = t392 ).
       DATA t393 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t394) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t394) = t375.
       DATA(t395) = |val7|.
       DATA(t396) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t393 = t394->set( p0 = t395 p1 = t396 ).
       DATA t397 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t398) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t398) = t375.
       DATA(t399) = |val9|.
       DATA(t400) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t397 = t398->set( p0 = t399 p1 = t400 ).
-      DATA(t401) = CAST zlnt_runtime_map__41b3bb94df3d( t375 ).
+      DATA(t401) = t375.
       t374 = t401.
       t372 = t374.
     ELSE.
@@ -7571,7 +7571,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t346 = t347->set( p0 = t348 p1 = t349 ).
     DATA t414 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t414.
-    DATA(t415) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t415) = t7.
     DATA(t416) = |CMIN|.
     DATA t417 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t417.
@@ -7605,16 +7605,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t429) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t428 = t429.
       DATA t430 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t431) = CAST zlnt_runtime_map__41b3bb94df3d( t428 ).
+      DATA(t431) = t428.
       DATA(t432) = |val1|.
       DATA(t433) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t430 = t431->set( p0 = t432 p1 = t433 ).
       DATA t434 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t435) = CAST zlnt_runtime_map__41b3bb94df3d( t428 ).
+      DATA(t435) = t428.
       DATA(t436) = |val2|.
       DATA(t437) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t434 = t435->set( p0 = t436 p1 = t437 ).
-      DATA(t438) = CAST zlnt_runtime_map__41b3bb94df3d( t428 ).
+      DATA(t438) = t428.
       t427 = t438.
       t425 = t427.
     ELSE.
@@ -7631,36 +7631,36 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t444) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t443 = t444.
       DATA t445 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t446) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t446) = t443.
       DATA(t447) = |val3|.
       DATA(t448) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t445 = t446->set( p0 = t447 p1 = t448 ).
       DATA t449 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t450) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t450) = t443.
       DATA(t451) = |val4|.
       DATA(t452) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t449 = t450->set( p0 = t451 p1 = t452 ).
       DATA t453 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t454) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t454) = t443.
       DATA(t455) = |val5|.
       DATA(t456) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t453 = t454->set( p0 = t455 p1 = t456 ).
       DATA t457 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t458) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t458) = t443.
       DATA(t459) = |val6|.
       DATA(t460) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t457 = t458->set( p0 = t459 p1 = t460 ).
       DATA t461 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t462) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t462) = t443.
       DATA(t463) = |val7|.
       DATA(t464) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t461 = t462->set( p0 = t463 p1 = t464 ).
       DATA t465 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t466) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t466) = t443.
       DATA(t467) = |val9|.
       DATA(t468) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t465 = t466->set( p0 = t467 p1 = t468 ).
-      DATA(t469) = CAST zlnt_runtime_map__41b3bb94df3d( t443 ).
+      DATA(t469) = t443.
       t442 = t469.
       t440 = t442.
     ELSE.
@@ -7703,7 +7703,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t414 = t415->set( p0 = t416 p1 = t417 ).
     DATA t482 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t482.
-    DATA(t483) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t483) = t7.
     DATA(t484) = |CONCAT_LINES_OF|.
     DATA t485 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t485.
@@ -7737,7 +7737,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t497) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t496 = t497.
       DATA t498 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t499) = CAST zlnt_runtime_map__41b3bb94df3d( t496 ).
+      DATA(t499) = t496.
       DATA(t500) = |table|.
       DATA t501 TYPE REF TO zcl_lnt_ty_table_type.
       DATA t502 TYPE REF TO zcl_lnt_any_type.
@@ -7758,7 +7758,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       CLEAR t510.
       t501 = NEW zcl_lnt_ty_table_type( i_row_type = t502 i_options = t504 i_qualified_name = t509 i_description = t510 ).
       t498 = t499->set( p0 = t500 p1 = t501 ).
-      DATA(t511) = CAST zlnt_runtime_map__41b3bb94df3d( t496 ).
+      DATA(t511) = t496.
       t495 = t511.
       t493 = t495.
     ELSE.
@@ -7775,11 +7775,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t517) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t516 = t517.
       DATA t518 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t519) = CAST zlnt_runtime_map__41b3bb94df3d( t516 ).
+      DATA(t519) = t516.
       DATA(t520) = |sep|.
       DATA(t521) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t518 = t519->set( p0 = t520 p1 = t521 ).
-      DATA(t522) = CAST zlnt_runtime_map__41b3bb94df3d( t516 ).
+      DATA(t522) = t516.
       t515 = t522.
       t513 = t515.
     ELSE.
@@ -7822,7 +7822,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t482 = t483->set( p0 = t484 p1 = t485 ).
     DATA t535 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t535.
-    DATA(t536) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t536) = t7.
     DATA(t537) = |CONDENSE|.
     DATA t538 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t538.
@@ -7856,11 +7856,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t550) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t549 = t550.
       DATA t551 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t552) = CAST zlnt_runtime_map__41b3bb94df3d( t549 ).
+      DATA(t552) = t549.
       DATA(t553) = |val|.
       DATA(t554) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t551 = t552->set( p0 = t553 p1 = t554 ).
-      DATA(t555) = CAST zlnt_runtime_map__41b3bb94df3d( t549 ).
+      DATA(t555) = t549.
       t548 = t555.
       t546 = t548.
     ELSE.
@@ -7877,21 +7877,21 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t561) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t560 = t561.
       DATA t562 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t563) = CAST zlnt_runtime_map__41b3bb94df3d( t560 ).
+      DATA(t563) = t560.
       DATA(t564) = |del|.
       DATA(t565) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t562 = t563->set( p0 = t564 p1 = t565 ).
       DATA t566 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t567) = CAST zlnt_runtime_map__41b3bb94df3d( t560 ).
+      DATA(t567) = t560.
       DATA(t568) = |from|.
       DATA(t569) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t566 = t567->set( p0 = t568 p1 = t569 ).
       DATA t570 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t571) = CAST zlnt_runtime_map__41b3bb94df3d( t560 ).
+      DATA(t571) = t560.
       DATA(t572) = |to|.
       DATA(t573) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t570 = t571->set( p0 = t572 p1 = t573 ).
-      DATA(t574) = CAST zlnt_runtime_map__41b3bb94df3d( t560 ).
+      DATA(t574) = t560.
       t559 = t574.
       t557 = t559.
     ELSE.
@@ -7934,7 +7934,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t535 = t536->set( p0 = t537 p1 = t538 ).
     DATA t587 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t587.
-    DATA(t588) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t588) = t7.
     DATA(t589) = |CONTAINS|.
     DATA t590 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t590.
@@ -7968,11 +7968,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t602) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t601 = t602.
       DATA t603 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t604) = CAST zlnt_runtime_map__41b3bb94df3d( t601 ).
+      DATA(t604) = t601.
       DATA(t605) = |val|.
       DATA(t606) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t603 = t604->set( p0 = t605 p1 = t606 ).
-      DATA(t607) = CAST zlnt_runtime_map__41b3bb94df3d( t601 ).
+      DATA(t607) = t601.
       t600 = t607.
       t598 = t600.
     ELSE.
@@ -7989,32 +7989,32 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t613) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t612 = t613.
       DATA t614 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t615) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t615) = t612.
       DATA(t616) = |sub|.
       DATA(t617) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t614 = t615->set( p0 = t616 p1 = t617 ).
       DATA t618 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t619) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t619) = t612.
       DATA(t620) = |start|.
       DATA(t621) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t618 = t619->set( p0 = t620 p1 = t621 ).
       DATA t622 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t623) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t623) = t612.
       DATA(t624) = |end|.
       DATA(t625) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t622 = t623->set( p0 = t624 p1 = t625 ).
       DATA t626 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t627) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t627) = t612.
       DATA(t628) = |regex|.
       DATA(t629) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t626 = t627->set( p0 = t628 p1 = t629 ).
       DATA t630 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t631) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t631) = t612.
       DATA(t632) = |pcre|.
       DATA(t633) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t630 = t631->set( p0 = t632 p1 = t633 ).
       DATA t634 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t635) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t635) = t612.
       DATA(t636) = |case|.
       DATA t637 TYPE REF TO zcl_lnt_character_type.
       DATA(t638) = CONV int8( 1 ).
@@ -8023,7 +8023,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t637 = NEW zcl_lnt_character_type( i_length = t638 i_extra = t639 ).
       t634 = t635->set( p0 = t636 p1 = t637 ).
       DATA t640 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t641) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t641) = t612.
       DATA(t642) = |off|.
       DATA t643 TYPE REF TO zcl_lnt_integer_type.
       DATA t644 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8031,7 +8031,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t643 = zcl_lnt_integer_type=>get_db65( i_input_967e = t644 ).
       t640 = t641->set( p0 = t642 p1 = t643 ).
       DATA t645 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t646) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t646) = t612.
       DATA(t647) = |len|.
       DATA t648 TYPE REF TO zcl_lnt_integer_type.
       DATA t649 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8039,14 +8039,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t648 = zcl_lnt_integer_type=>get_db65( i_input_967e = t649 ).
       t645 = t646->set( p0 = t647 p1 = t648 ).
       DATA t650 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t651) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t651) = t612.
       DATA(t652) = |occ|.
       DATA t653 TYPE REF TO zcl_lnt_integer_type.
       DATA t654 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t654.
       t653 = zcl_lnt_integer_type=>get_db65( i_input_967e = t654 ).
       t650 = t651->set( p0 = t652 p1 = t653 ).
-      DATA(t655) = CAST zlnt_runtime_map__41b3bb94df3d( t612 ).
+      DATA(t655) = t612.
       t611 = t655.
       t609 = t611.
     ELSE.
@@ -8102,7 +8102,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t587 = t588->set( p0 = t589 p1 = t590 ).
     DATA t673 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t673.
-    DATA(t674) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t674) = t7.
     DATA(t675) = |CONTAINS_ANY_NOT_OF|.
     DATA t676 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t676.
@@ -8136,11 +8136,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t688) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t687 = t688.
       DATA t689 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t690) = CAST zlnt_runtime_map__41b3bb94df3d( t687 ).
+      DATA(t690) = t687.
       DATA(t691) = |val|.
       DATA(t692) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t689 = t690->set( p0 = t691 p1 = t692 ).
-      DATA(t693) = CAST zlnt_runtime_map__41b3bb94df3d( t687 ).
+      DATA(t693) = t687.
       t686 = t693.
       t684 = t686.
     ELSE.
@@ -8157,22 +8157,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t699) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t698 = t699.
       DATA t700 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t701) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t701) = t698.
       DATA(t702) = |sub|.
       DATA(t703) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t700 = t701->set( p0 = t702 p1 = t703 ).
       DATA t704 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t705) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t705) = t698.
       DATA(t706) = |start|.
       DATA(t707) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t704 = t705->set( p0 = t706 p1 = t707 ).
       DATA t708 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t709) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t709) = t698.
       DATA(t710) = |end|.
       DATA(t711) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t708 = t709->set( p0 = t710 p1 = t711 ).
       DATA t712 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t713) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t713) = t698.
       DATA(t714) = |off|.
       DATA t715 TYPE REF TO zcl_lnt_integer_type.
       DATA t716 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8180,7 +8180,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t715 = zcl_lnt_integer_type=>get_db65( i_input_967e = t716 ).
       t712 = t713->set( p0 = t714 p1 = t715 ).
       DATA t717 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t718) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t718) = t698.
       DATA(t719) = |len|.
       DATA t720 TYPE REF TO zcl_lnt_integer_type.
       DATA t721 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8188,14 +8188,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t720 = zcl_lnt_integer_type=>get_db65( i_input_967e = t721 ).
       t717 = t718->set( p0 = t719 p1 = t720 ).
       DATA t722 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t723) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t723) = t698.
       DATA(t724) = |occ|.
       DATA t725 TYPE REF TO zcl_lnt_integer_type.
       DATA t726 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t726.
       t725 = zcl_lnt_integer_type=>get_db65( i_input_967e = t726 ).
       t722 = t723->set( p0 = t724 p1 = t725 ).
-      DATA(t727) = CAST zlnt_runtime_map__41b3bb94df3d( t698 ).
+      DATA(t727) = t698.
       t697 = t727.
       t695 = t697.
     ELSE.
@@ -8251,7 +8251,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t673 = t674->set( p0 = t675 p1 = t676 ).
     DATA t745 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t745.
-    DATA(t746) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t746) = t7.
     DATA(t747) = |CONTAINS_ANY_OF|.
     DATA t748 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t748.
@@ -8285,11 +8285,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t760) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t759 = t760.
       DATA t761 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t762) = CAST zlnt_runtime_map__41b3bb94df3d( t759 ).
+      DATA(t762) = t759.
       DATA(t763) = |val|.
       DATA(t764) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t761 = t762->set( p0 = t763 p1 = t764 ).
-      DATA(t765) = CAST zlnt_runtime_map__41b3bb94df3d( t759 ).
+      DATA(t765) = t759.
       t758 = t765.
       t756 = t758.
     ELSE.
@@ -8306,22 +8306,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t771) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t770 = t771.
       DATA t772 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t773) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t773) = t770.
       DATA(t774) = |sub|.
       DATA(t775) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t772 = t773->set( p0 = t774 p1 = t775 ).
       DATA t776 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t777) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t777) = t770.
       DATA(t778) = |start|.
       DATA(t779) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t776 = t777->set( p0 = t778 p1 = t779 ).
       DATA t780 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t781) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t781) = t770.
       DATA(t782) = |end|.
       DATA(t783) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t780 = t781->set( p0 = t782 p1 = t783 ).
       DATA t784 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t785) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t785) = t770.
       DATA(t786) = |off|.
       DATA t787 TYPE REF TO zcl_lnt_integer_type.
       DATA t788 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8329,7 +8329,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t787 = zcl_lnt_integer_type=>get_db65( i_input_967e = t788 ).
       t784 = t785->set( p0 = t786 p1 = t787 ).
       DATA t789 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t790) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t790) = t770.
       DATA(t791) = |len|.
       DATA t792 TYPE REF TO zcl_lnt_integer_type.
       DATA t793 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8337,14 +8337,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t792 = zcl_lnt_integer_type=>get_db65( i_input_967e = t793 ).
       t789 = t790->set( p0 = t791 p1 = t792 ).
       DATA t794 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t795) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t795) = t770.
       DATA(t796) = |occ|.
       DATA t797 TYPE REF TO zcl_lnt_integer_type.
       DATA t798 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t798.
       t797 = zcl_lnt_integer_type=>get_db65( i_input_967e = t798 ).
       t794 = t795->set( p0 = t796 p1 = t797 ).
-      DATA(t799) = CAST zlnt_runtime_map__41b3bb94df3d( t770 ).
+      DATA(t799) = t770.
       t769 = t799.
       t767 = t769.
     ELSE.
@@ -8400,7 +8400,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t745 = t746->set( p0 = t747 p1 = t748 ).
     DATA t817 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t817.
-    DATA(t818) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t818) = t7.
     DATA(t819) = |COS|.
     DATA t820 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t820.
@@ -8434,14 +8434,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t832) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t831 = t832.
       DATA t833 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t834) = CAST zlnt_runtime_map__41b3bb94df3d( t831 ).
+      DATA(t834) = t831.
       DATA(t835) = |val|.
       DATA t836 TYPE REF TO zcl_lnt_float_type.
       DATA t837 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t837.
       t836 = NEW zcl_lnt_float_type( i_input_967e = t837 ).
       t833 = t834->set( p0 = t835 p1 = t836 ).
-      DATA(t838) = CAST zlnt_runtime_map__41b3bb94df3d( t831 ).
+      DATA(t838) = t831.
       t830 = t838.
       t828 = t830.
     ELSE.
@@ -8465,7 +8465,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t817 = t818->set( p0 = t819 p1 = t820 ).
     DATA t846 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t846.
-    DATA(t847) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t847) = t7.
     DATA(t848) = |COSH|.
     DATA t849 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t849.
@@ -8499,14 +8499,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t861) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t860 = t861.
       DATA t862 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t863) = CAST zlnt_runtime_map__41b3bb94df3d( t860 ).
+      DATA(t863) = t860.
       DATA(t864) = |val|.
       DATA t865 TYPE REF TO zcl_lnt_float_type.
       DATA t866 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t866.
       t865 = NEW zcl_lnt_float_type( i_input_967e = t866 ).
       t862 = t863->set( p0 = t864 p1 = t865 ).
-      DATA(t867) = CAST zlnt_runtime_map__41b3bb94df3d( t860 ).
+      DATA(t867) = t860.
       t859 = t867.
       t857 = t859.
     ELSE.
@@ -8530,7 +8530,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t846 = t847->set( p0 = t848 p1 = t849 ).
     DATA t875 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t875.
-    DATA(t876) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t876) = t7.
     DATA(t877) = |COUNT|.
     DATA t878 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t878.
@@ -8564,11 +8564,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t890) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t889 = t890.
       DATA t891 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t892) = CAST zlnt_runtime_map__41b3bb94df3d( t889 ).
+      DATA(t892) = t889.
       DATA(t893) = |val|.
       DATA(t894) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t891 = t892->set( p0 = t893 p1 = t894 ).
-      DATA(t895) = CAST zlnt_runtime_map__41b3bb94df3d( t889 ).
+      DATA(t895) = t889.
       t888 = t895.
       t886 = t888.
     ELSE.
@@ -8585,22 +8585,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t901) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t900 = t901.
       DATA t902 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t903) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t903) = t900.
       DATA(t904) = |sub|.
       DATA(t905) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t902 = t903->set( p0 = t904 p1 = t905 ).
       DATA t906 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t907) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t907) = t900.
       DATA(t908) = |regex|.
       DATA(t909) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t906 = t907->set( p0 = t908 p1 = t909 ).
       DATA t910 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t911) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t911) = t900.
       DATA(t912) = |pcre|.
       DATA(t913) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t910 = t911->set( p0 = t912 p1 = t913 ).
       DATA t914 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t915) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t915) = t900.
       DATA(t916) = |case|.
       DATA t917 TYPE REF TO zcl_lnt_character_type.
       DATA(t918) = CONV int8( 1 ).
@@ -8609,7 +8609,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t917 = NEW zcl_lnt_character_type( i_length = t918 i_extra = t919 ).
       t914 = t915->set( p0 = t916 p1 = t917 ).
       DATA t920 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t921) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t921) = t900.
       DATA(t922) = |off|.
       DATA t923 TYPE REF TO zcl_lnt_integer_type.
       DATA t924 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8617,14 +8617,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t923 = zcl_lnt_integer_type=>get_db65( i_input_967e = t924 ).
       t920 = t921->set( p0 = t922 p1 = t923 ).
       DATA t925 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t926) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t926) = t900.
       DATA(t927) = |len|.
       DATA t928 TYPE REF TO zcl_lnt_integer_type.
       DATA t929 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t929.
       t928 = zcl_lnt_integer_type=>get_db65( i_input_967e = t929 ).
       t925 = t926->set( p0 = t927 p1 = t928 ).
-      DATA(t930) = CAST zlnt_runtime_map__41b3bb94df3d( t900 ).
+      DATA(t930) = t900.
       t899 = t930.
       t897 = t899.
     ELSE.
@@ -8667,7 +8667,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t875 = t876->set( p0 = t877 p1 = t878 ).
     DATA t943 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t943.
-    DATA(t944) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t944) = t7.
     DATA(t945) = |COUNT_ANY_NOT_OF|.
     DATA t946 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t946.
@@ -8701,11 +8701,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t958) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t957 = t958.
       DATA t959 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t960) = CAST zlnt_runtime_map__41b3bb94df3d( t957 ).
+      DATA(t960) = t957.
       DATA(t961) = |val|.
       DATA(t962) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t959 = t960->set( p0 = t961 p1 = t962 ).
-      DATA(t963) = CAST zlnt_runtime_map__41b3bb94df3d( t957 ).
+      DATA(t963) = t957.
       t956 = t963.
       t954 = t956.
     ELSE.
@@ -8722,22 +8722,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t969) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t968 = t969.
       DATA t970 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t971) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t971) = t968.
       DATA(t972) = |sub|.
       DATA(t973) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t970 = t971->set( p0 = t972 p1 = t973 ).
       DATA t974 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t975) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t975) = t968.
       DATA(t976) = |regex|.
       DATA(t977) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t974 = t975->set( p0 = t976 p1 = t977 ).
       DATA t978 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t979) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t979) = t968.
       DATA(t980) = |pcre|.
       DATA(t981) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t978 = t979->set( p0 = t980 p1 = t981 ).
       DATA t982 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t983) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t983) = t968.
       DATA(t984) = |case|.
       DATA t985 TYPE REF TO zcl_lnt_character_type.
       DATA(t986) = CONV int8( 1 ).
@@ -8746,7 +8746,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t985 = NEW zcl_lnt_character_type( i_length = t986 i_extra = t987 ).
       t982 = t983->set( p0 = t984 p1 = t985 ).
       DATA t988 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t989) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t989) = t968.
       DATA(t990) = |off|.
       DATA t991 TYPE REF TO zcl_lnt_integer_type.
       DATA t992 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8754,14 +8754,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t991 = zcl_lnt_integer_type=>get_db65( i_input_967e = t992 ).
       t988 = t989->set( p0 = t990 p1 = t991 ).
       DATA t993 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t994) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t994) = t968.
       DATA(t995) = |len|.
       DATA t996 TYPE REF TO zcl_lnt_integer_type.
       DATA t997 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t997.
       t996 = zcl_lnt_integer_type=>get_db65( i_input_967e = t997 ).
       t993 = t994->set( p0 = t995 p1 = t996 ).
-      DATA(t998) = CAST zlnt_runtime_map__41b3bb94df3d( t968 ).
+      DATA(t998) = t968.
       t967 = t998.
       t965 = t967.
     ELSE.
@@ -8804,7 +8804,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t943 = t944->set( p0 = t945 p1 = t946 ).
     DATA t1011 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1011.
-    DATA(t1012) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1012) = t7.
     DATA(t1013) = |COUNT_ANY_OF|.
     DATA t1014 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1014.
@@ -8838,11 +8838,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1026) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1025 = t1026.
       DATA t1027 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1028) = CAST zlnt_runtime_map__41b3bb94df3d( t1025 ).
+      DATA(t1028) = t1025.
       DATA(t1029) = |val|.
       DATA(t1030) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1027 = t1028->set( p0 = t1029 p1 = t1030 ).
-      DATA(t1031) = CAST zlnt_runtime_map__41b3bb94df3d( t1025 ).
+      DATA(t1031) = t1025.
       t1024 = t1031.
       t1022 = t1024.
     ELSE.
@@ -8859,22 +8859,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1037) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1036 = t1037.
       DATA t1038 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1039) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1039) = t1036.
       DATA(t1040) = |sub|.
       DATA(t1041) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1038 = t1039->set( p0 = t1040 p1 = t1041 ).
       DATA t1042 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1043) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1043) = t1036.
       DATA(t1044) = |regex|.
       DATA(t1045) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1042 = t1043->set( p0 = t1044 p1 = t1045 ).
       DATA t1046 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1047) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1047) = t1036.
       DATA(t1048) = |pcre|.
       DATA(t1049) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1046 = t1047->set( p0 = t1048 p1 = t1049 ).
       DATA t1050 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1051) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1051) = t1036.
       DATA(t1052) = |case|.
       DATA t1053 TYPE REF TO zcl_lnt_character_type.
       DATA(t1054) = CONV int8( 1 ).
@@ -8883,7 +8883,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1053 = NEW zcl_lnt_character_type( i_length = t1054 i_extra = t1055 ).
       t1050 = t1051->set( p0 = t1052 p1 = t1053 ).
       DATA t1056 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1057) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1057) = t1036.
       DATA(t1058) = |off|.
       DATA t1059 TYPE REF TO zcl_lnt_integer_type.
       DATA t1060 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -8891,14 +8891,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1059 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1060 ).
       t1056 = t1057->set( p0 = t1058 p1 = t1059 ).
       DATA t1061 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1062) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1062) = t1036.
       DATA(t1063) = |len|.
       DATA t1064 TYPE REF TO zcl_lnt_integer_type.
       DATA t1065 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1065.
       t1064 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1065 ).
       t1061 = t1062->set( p0 = t1063 p1 = t1064 ).
-      DATA(t1066) = CAST zlnt_runtime_map__41b3bb94df3d( t1036 ).
+      DATA(t1066) = t1036.
       t1035 = t1066.
       t1033 = t1035.
     ELSE.
@@ -8941,7 +8941,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1011 = t1012->set( p0 = t1013 p1 = t1014 ).
     DATA t1079 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1079.
-    DATA(t1080) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1080) = t7.
     DATA(t1081) = |DBMAXLEN|.
     DATA t1082 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1082.
@@ -8975,11 +8975,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1094) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1093 = t1094.
       DATA t1095 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1096) = CAST zlnt_runtime_map__41b3bb94df3d( t1093 ).
+      DATA(t1096) = t1093.
       DATA(t1097) = |val|.
       DATA(t1098) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1095 = t1096->set( p0 = t1097 p1 = t1098 ).
-      DATA(t1099) = CAST zlnt_runtime_map__41b3bb94df3d( t1093 ).
+      DATA(t1099) = t1093.
       t1092 = t1099.
       t1090 = t1092.
     ELSE.
@@ -9003,7 +9003,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1079 = t1080->set( p0 = t1081 p1 = t1082 ).
     DATA t1107 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1107.
-    DATA(t1108) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1108) = t7.
     DATA(t1109) = |DISTANCE|.
     DATA t1110 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1110.
@@ -9037,16 +9037,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1122) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1121 = t1122.
       DATA t1123 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1124) = CAST zlnt_runtime_map__41b3bb94df3d( t1121 ).
+      DATA(t1124) = t1121.
       DATA(t1125) = |val1|.
       DATA(t1126) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1123 = t1124->set( p0 = t1125 p1 = t1126 ).
       DATA t1127 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1128) = CAST zlnt_runtime_map__41b3bb94df3d( t1121 ).
+      DATA(t1128) = t1121.
       DATA(t1129) = |val2|.
       DATA(t1130) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1127 = t1128->set( p0 = t1129 p1 = t1130 ).
-      DATA(t1131) = CAST zlnt_runtime_map__41b3bb94df3d( t1121 ).
+      DATA(t1131) = t1121.
       t1120 = t1131.
       t1118 = t1120.
     ELSE.
@@ -9091,7 +9091,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1107 = t1108->set( p0 = t1109 p1 = t1110 ).
     DATA t1145 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1145.
-    DATA(t1146) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1146) = t7.
     DATA(t1147) = |ESCAPE|.
     DATA t1148 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1148.
@@ -9125,16 +9125,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1160) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1159 = t1160.
       DATA t1161 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1162) = CAST zlnt_runtime_map__41b3bb94df3d( t1159 ).
+      DATA(t1162) = t1159.
       DATA(t1163) = |val|.
       DATA(t1164) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1161 = t1162->set( p0 = t1163 p1 = t1164 ).
       DATA t1165 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1166) = CAST zlnt_runtime_map__41b3bb94df3d( t1159 ).
+      DATA(t1166) = t1159.
       DATA(t1167) = |format|.
       DATA(t1168) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t1165 = t1166->set( p0 = t1167 p1 = t1168 ).
-      DATA(t1169) = CAST zlnt_runtime_map__41b3bb94df3d( t1159 ).
+      DATA(t1169) = t1159.
       t1158 = t1169.
       t1156 = t1158.
     ELSE.
@@ -9179,7 +9179,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1145 = t1146->set( p0 = t1147 p1 = t1148 ).
     DATA t1183 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1183.
-    DATA(t1184) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1184) = t7.
     DATA(t1185) = |EXP|.
     DATA t1186 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1186.
@@ -9213,14 +9213,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1198) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1197 = t1198.
       DATA t1199 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1200) = CAST zlnt_runtime_map__41b3bb94df3d( t1197 ).
+      DATA(t1200) = t1197.
       DATA(t1201) = |val|.
       DATA t1202 TYPE REF TO zcl_lnt_float_type.
       DATA t1203 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1203.
       t1202 = NEW zcl_lnt_float_type( i_input_967e = t1203 ).
       t1199 = t1200->set( p0 = t1201 p1 = t1202 ).
-      DATA(t1204) = CAST zlnt_runtime_map__41b3bb94df3d( t1197 ).
+      DATA(t1204) = t1197.
       t1196 = t1204.
       t1194 = t1196.
     ELSE.
@@ -9244,7 +9244,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1183 = t1184->set( p0 = t1185 p1 = t1186 ).
     DATA t1212 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1212.
-    DATA(t1213) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1213) = t7.
     DATA(t1214) = |FIND|.
     DATA t1215 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1215.
@@ -9278,11 +9278,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1227) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1226 = t1227.
       DATA t1228 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1229) = CAST zlnt_runtime_map__41b3bb94df3d( t1226 ).
+      DATA(t1229) = t1226.
       DATA(t1230) = |val|.
       DATA(t1231) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1228 = t1229->set( p0 = t1230 p1 = t1231 ).
-      DATA(t1232) = CAST zlnt_runtime_map__41b3bb94df3d( t1226 ).
+      DATA(t1232) = t1226.
       t1225 = t1232.
       t1223 = t1225.
     ELSE.
@@ -9299,22 +9299,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1238) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1237 = t1238.
       DATA t1239 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1240) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1240) = t1237.
       DATA(t1241) = |sub|.
       DATA(t1242) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1239 = t1240->set( p0 = t1241 p1 = t1242 ).
       DATA t1243 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1244) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1244) = t1237.
       DATA(t1245) = |regex|.
       DATA(t1246) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1243 = t1244->set( p0 = t1245 p1 = t1246 ).
       DATA t1247 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1248) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1248) = t1237.
       DATA(t1249) = |pcre|.
       DATA(t1250) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1247 = t1248->set( p0 = t1249 p1 = t1250 ).
       DATA t1251 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1252) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1252) = t1237.
       DATA(t1253) = |case|.
       DATA t1254 TYPE REF TO zcl_lnt_character_type.
       DATA(t1255) = CONV int8( 1 ).
@@ -9323,7 +9323,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1254 = NEW zcl_lnt_character_type( i_length = t1255 i_extra = t1256 ).
       t1251 = t1252->set( p0 = t1253 p1 = t1254 ).
       DATA t1257 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1258) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1258) = t1237.
       DATA(t1259) = |off|.
       DATA t1260 TYPE REF TO zcl_lnt_integer_type.
       DATA t1261 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9331,7 +9331,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1260 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1261 ).
       t1257 = t1258->set( p0 = t1259 p1 = t1260 ).
       DATA t1262 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1263) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1263) = t1237.
       DATA(t1264) = |len|.
       DATA t1265 TYPE REF TO zcl_lnt_integer_type.
       DATA t1266 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9339,14 +9339,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1265 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1266 ).
       t1262 = t1263->set( p0 = t1264 p1 = t1265 ).
       DATA t1267 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1268) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1268) = t1237.
       DATA(t1269) = |occ|.
       DATA t1270 TYPE REF TO zcl_lnt_integer_type.
       DATA t1271 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1271.
       t1270 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1271 ).
       t1267 = t1268->set( p0 = t1269 p1 = t1270 ).
-      DATA(t1272) = CAST zlnt_runtime_map__41b3bb94df3d( t1237 ).
+      DATA(t1272) = t1237.
       t1236 = t1272.
       t1234 = t1236.
     ELSE.
@@ -9389,7 +9389,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1212 = t1213->set( p0 = t1214 p1 = t1215 ).
     DATA t1285 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1285.
-    DATA(t1286) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1286) = t7.
     DATA(t1287) = |FIND_ANY_NOT_OF|.
     DATA t1288 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1288.
@@ -9423,11 +9423,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1300) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1299 = t1300.
       DATA t1301 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1302) = CAST zlnt_runtime_map__41b3bb94df3d( t1299 ).
+      DATA(t1302) = t1299.
       DATA(t1303) = |val|.
       DATA(t1304) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1301 = t1302->set( p0 = t1303 p1 = t1304 ).
-      DATA(t1305) = CAST zlnt_runtime_map__41b3bb94df3d( t1299 ).
+      DATA(t1305) = t1299.
       t1298 = t1305.
       t1296 = t1298.
     ELSE.
@@ -9444,12 +9444,12 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1311) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1310 = t1311.
       DATA t1312 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1313) = CAST zlnt_runtime_map__41b3bb94df3d( t1310 ).
+      DATA(t1313) = t1310.
       DATA(t1314) = |sub|.
       DATA(t1315) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1312 = t1313->set( p0 = t1314 p1 = t1315 ).
       DATA t1316 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1317) = CAST zlnt_runtime_map__41b3bb94df3d( t1310 ).
+      DATA(t1317) = t1310.
       DATA(t1318) = |off|.
       DATA t1319 TYPE REF TO zcl_lnt_integer_type.
       DATA t1320 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9457,7 +9457,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1319 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1320 ).
       t1316 = t1317->set( p0 = t1318 p1 = t1319 ).
       DATA t1321 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1322) = CAST zlnt_runtime_map__41b3bb94df3d( t1310 ).
+      DATA(t1322) = t1310.
       DATA(t1323) = |len|.
       DATA t1324 TYPE REF TO zcl_lnt_integer_type.
       DATA t1325 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9465,14 +9465,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1324 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1325 ).
       t1321 = t1322->set( p0 = t1323 p1 = t1324 ).
       DATA t1326 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1327) = CAST zlnt_runtime_map__41b3bb94df3d( t1310 ).
+      DATA(t1327) = t1310.
       DATA(t1328) = |occ|.
       DATA t1329 TYPE REF TO zcl_lnt_integer_type.
       DATA t1330 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1330.
       t1329 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1330 ).
       t1326 = t1327->set( p0 = t1328 p1 = t1329 ).
-      DATA(t1331) = CAST zlnt_runtime_map__41b3bb94df3d( t1310 ).
+      DATA(t1331) = t1310.
       t1309 = t1331.
       t1307 = t1309.
     ELSE.
@@ -9515,7 +9515,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1285 = t1286->set( p0 = t1287 p1 = t1288 ).
     DATA t1344 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1344.
-    DATA(t1345) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1345) = t7.
     DATA(t1346) = |FIND_ANY_OF|.
     DATA t1347 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1347.
@@ -9549,11 +9549,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1359) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1358 = t1359.
       DATA t1360 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1361) = CAST zlnt_runtime_map__41b3bb94df3d( t1358 ).
+      DATA(t1361) = t1358.
       DATA(t1362) = |val|.
       DATA(t1363) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1360 = t1361->set( p0 = t1362 p1 = t1363 ).
-      DATA(t1364) = CAST zlnt_runtime_map__41b3bb94df3d( t1358 ).
+      DATA(t1364) = t1358.
       t1357 = t1364.
       t1355 = t1357.
     ELSE.
@@ -9570,12 +9570,12 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1370) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1369 = t1370.
       DATA t1371 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1372) = CAST zlnt_runtime_map__41b3bb94df3d( t1369 ).
+      DATA(t1372) = t1369.
       DATA(t1373) = |sub|.
       DATA(t1374) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1371 = t1372->set( p0 = t1373 p1 = t1374 ).
       DATA t1375 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1376) = CAST zlnt_runtime_map__41b3bb94df3d( t1369 ).
+      DATA(t1376) = t1369.
       DATA(t1377) = |off|.
       DATA t1378 TYPE REF TO zcl_lnt_integer_type.
       DATA t1379 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9583,7 +9583,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1378 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1379 ).
       t1375 = t1376->set( p0 = t1377 p1 = t1378 ).
       DATA t1380 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1381) = CAST zlnt_runtime_map__41b3bb94df3d( t1369 ).
+      DATA(t1381) = t1369.
       DATA(t1382) = |len|.
       DATA t1383 TYPE REF TO zcl_lnt_integer_type.
       DATA t1384 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9591,14 +9591,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1383 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1384 ).
       t1380 = t1381->set( p0 = t1382 p1 = t1383 ).
       DATA t1385 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1386) = CAST zlnt_runtime_map__41b3bb94df3d( t1369 ).
+      DATA(t1386) = t1369.
       DATA(t1387) = |occ|.
       DATA t1388 TYPE REF TO zcl_lnt_integer_type.
       DATA t1389 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1389.
       t1388 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1389 ).
       t1385 = t1386->set( p0 = t1387 p1 = t1388 ).
-      DATA(t1390) = CAST zlnt_runtime_map__41b3bb94df3d( t1369 ).
+      DATA(t1390) = t1369.
       t1368 = t1390.
       t1366 = t1368.
     ELSE.
@@ -9641,7 +9641,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1344 = t1345->set( p0 = t1346 p1 = t1347 ).
     DATA t1403 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1403.
-    DATA(t1404) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1404) = t7.
     DATA(t1405) = |FIND_END|.
     DATA t1406 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1406.
@@ -9675,11 +9675,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1418) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1417 = t1418.
       DATA t1419 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1420) = CAST zlnt_runtime_map__41b3bb94df3d( t1417 ).
+      DATA(t1420) = t1417.
       DATA(t1421) = |val|.
       DATA(t1422) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1419 = t1420->set( p0 = t1421 p1 = t1422 ).
-      DATA(t1423) = CAST zlnt_runtime_map__41b3bb94df3d( t1417 ).
+      DATA(t1423) = t1417.
       t1416 = t1423.
       t1414 = t1416.
     ELSE.
@@ -9696,22 +9696,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1429) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1428 = t1429.
       DATA t1430 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1431) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1431) = t1428.
       DATA(t1432) = |sub|.
       DATA(t1433) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1430 = t1431->set( p0 = t1432 p1 = t1433 ).
       DATA t1434 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1435) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1435) = t1428.
       DATA(t1436) = |regex|.
       DATA(t1437) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1434 = t1435->set( p0 = t1436 p1 = t1437 ).
       DATA t1438 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1439) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1439) = t1428.
       DATA(t1440) = |pcre|.
       DATA(t1441) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1438 = t1439->set( p0 = t1440 p1 = t1441 ).
       DATA t1442 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1443) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1443) = t1428.
       DATA(t1444) = |case|.
       DATA t1445 TYPE REF TO zcl_lnt_character_type.
       DATA(t1446) = CONV int8( 1 ).
@@ -9720,7 +9720,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1445 = NEW zcl_lnt_character_type( i_length = t1446 i_extra = t1447 ).
       t1442 = t1443->set( p0 = t1444 p1 = t1445 ).
       DATA t1448 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1449) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1449) = t1428.
       DATA(t1450) = |off|.
       DATA t1451 TYPE REF TO zcl_lnt_integer_type.
       DATA t1452 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9728,7 +9728,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1451 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1452 ).
       t1448 = t1449->set( p0 = t1450 p1 = t1451 ).
       DATA t1453 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1454) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1454) = t1428.
       DATA(t1455) = |len|.
       DATA t1456 TYPE REF TO zcl_lnt_integer_type.
       DATA t1457 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9736,14 +9736,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1456 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1457 ).
       t1453 = t1454->set( p0 = t1455 p1 = t1456 ).
       DATA t1458 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1459) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1459) = t1428.
       DATA(t1460) = |occ|.
       DATA t1461 TYPE REF TO zcl_lnt_integer_type.
       DATA t1462 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1462.
       t1461 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1462 ).
       t1458 = t1459->set( p0 = t1460 p1 = t1461 ).
-      DATA(t1463) = CAST zlnt_runtime_map__41b3bb94df3d( t1428 ).
+      DATA(t1463) = t1428.
       t1427 = t1463.
       t1425 = t1427.
     ELSE.
@@ -9786,7 +9786,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1403 = t1404->set( p0 = t1405 p1 = t1406 ).
     DATA t1476 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1476.
-    DATA(t1477) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1477) = t7.
     DATA(t1478) = |FLOOR|.
     DATA t1479 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1479.
@@ -9820,14 +9820,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1491) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1490 = t1491.
       DATA t1492 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1493) = CAST zlnt_runtime_map__41b3bb94df3d( t1490 ).
+      DATA(t1493) = t1490.
       DATA(t1494) = |val|.
       DATA t1495 TYPE REF TO zcl_lnt_float_type.
       DATA t1496 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1496.
       t1495 = NEW zcl_lnt_float_type( i_input_967e = t1496 ).
       t1492 = t1493->set( p0 = t1494 p1 = t1495 ).
-      DATA(t1497) = CAST zlnt_runtime_map__41b3bb94df3d( t1490 ).
+      DATA(t1497) = t1490.
       t1489 = t1497.
       t1487 = t1489.
     ELSE.
@@ -9851,7 +9851,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1476 = t1477->set( p0 = t1478 p1 = t1479 ).
     DATA t1505 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1505.
-    DATA(t1506) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1506) = t7.
     DATA(t1507) = |FRAC|.
     DATA t1508 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1508.
@@ -9885,14 +9885,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1520) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1519 = t1520.
       DATA t1521 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1522) = CAST zlnt_runtime_map__41b3bb94df3d( t1519 ).
+      DATA(t1522) = t1519.
       DATA(t1523) = |val|.
       DATA t1524 TYPE REF TO zcl_lnt_float_type.
       DATA t1525 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1525.
       t1524 = NEW zcl_lnt_float_type( i_input_967e = t1525 ).
       t1521 = t1522->set( p0 = t1523 p1 = t1524 ).
-      DATA(t1526) = CAST zlnt_runtime_map__41b3bb94df3d( t1519 ).
+      DATA(t1526) = t1519.
       t1518 = t1526.
       t1516 = t1518.
     ELSE.
@@ -9916,7 +9916,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1505 = t1506->set( p0 = t1507 p1 = t1508 ).
     DATA t1534 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1534.
-    DATA(t1535) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1535) = t7.
     DATA(t1536) = |FROM_MIXED|.
     DATA t1537 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1537.
@@ -9950,11 +9950,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1549) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1548 = t1549.
       DATA t1550 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1551) = CAST zlnt_runtime_map__41b3bb94df3d( t1548 ).
+      DATA(t1551) = t1548.
       DATA(t1552) = |val|.
       DATA(t1553) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1550 = t1551->set( p0 = t1552 p1 = t1553 ).
-      DATA(t1554) = CAST zlnt_runtime_map__41b3bb94df3d( t1548 ).
+      DATA(t1554) = t1548.
       t1547 = t1554.
       t1545 = t1547.
     ELSE.
@@ -9971,7 +9971,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1560) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1559 = t1560.
       DATA t1561 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1562) = CAST zlnt_runtime_map__41b3bb94df3d( t1559 ).
+      DATA(t1562) = t1559.
       DATA(t1563) = |case|.
       DATA t1564 TYPE REF TO zcl_lnt_character_type.
       DATA(t1565) = CONV int8( 1 ).
@@ -9980,7 +9980,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1564 = NEW zcl_lnt_character_type( i_length = t1565 i_extra = t1566 ).
       t1561 = t1562->set( p0 = t1563 p1 = t1564 ).
       DATA t1567 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1568) = CAST zlnt_runtime_map__41b3bb94df3d( t1559 ).
+      DATA(t1568) = t1559.
       DATA(t1569) = |sep|.
       DATA t1570 TYPE REF TO zcl_lnt_integer_type.
       DATA t1571 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -9988,14 +9988,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1570 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1571 ).
       t1567 = t1568->set( p0 = t1569 p1 = t1570 ).
       DATA t1572 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1573) = CAST zlnt_runtime_map__41b3bb94df3d( t1559 ).
+      DATA(t1573) = t1559.
       DATA(t1574) = |min|.
       DATA t1575 TYPE REF TO zcl_lnt_integer_type.
       DATA t1576 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1576.
       t1575 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1576 ).
       t1572 = t1573->set( p0 = t1574 p1 = t1575 ).
-      DATA(t1577) = CAST zlnt_runtime_map__41b3bb94df3d( t1559 ).
+      DATA(t1577) = t1559.
       t1558 = t1577.
       t1556 = t1558.
     ELSE.
@@ -10038,7 +10038,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1534 = t1535->set( p0 = t1536 p1 = t1537 ).
     DATA t1590 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1590.
-    DATA(t1591) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1591) = t7.
     DATA(t1592) = |INSERT|.
     DATA t1593 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1593.
@@ -10072,16 +10072,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1605) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1604 = t1605.
       DATA t1606 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1607) = CAST zlnt_runtime_map__41b3bb94df3d( t1604 ).
+      DATA(t1607) = t1604.
       DATA(t1608) = |val|.
       DATA(t1609) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1606 = t1607->set( p0 = t1608 p1 = t1609 ).
       DATA t1610 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1611) = CAST zlnt_runtime_map__41b3bb94df3d( t1604 ).
+      DATA(t1611) = t1604.
       DATA(t1612) = |sub|.
       DATA(t1613) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1610 = t1611->set( p0 = t1612 p1 = t1613 ).
-      DATA(t1614) = CAST zlnt_runtime_map__41b3bb94df3d( t1604 ).
+      DATA(t1614) = t1604.
       t1603 = t1614.
       t1601 = t1603.
     ELSE.
@@ -10098,14 +10098,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1620) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1619 = t1620.
       DATA t1621 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1622) = CAST zlnt_runtime_map__41b3bb94df3d( t1619 ).
+      DATA(t1622) = t1619.
       DATA(t1623) = |off|.
       DATA t1624 TYPE REF TO zcl_lnt_integer_type.
       DATA t1625 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1625.
       t1624 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1625 ).
       t1621 = t1622->set( p0 = t1623 p1 = t1624 ).
-      DATA(t1626) = CAST zlnt_runtime_map__41b3bb94df3d( t1619 ).
+      DATA(t1626) = t1619.
       t1618 = t1626.
       t1616 = t1618.
     ELSE.
@@ -10148,7 +10148,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1590 = t1591->set( p0 = t1592 p1 = t1593 ).
     DATA t1639 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1639.
-    DATA(t1640) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1640) = t7.
     DATA(t1641) = |IPOW|.
     DATA t1642 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1642.
@@ -10182,7 +10182,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1654) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1653 = t1654.
       DATA t1655 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1656) = CAST zlnt_runtime_map__41b3bb94df3d( t1653 ).
+      DATA(t1656) = t1653.
       DATA(t1657) = |base|.
       DATA t1658 TYPE REF TO zcl_lnt_float_type.
       DATA t1659 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -10190,14 +10190,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1658 = NEW zcl_lnt_float_type( i_input_967e = t1659 ).
       t1655 = t1656->set( p0 = t1657 p1 = t1658 ).
       DATA t1660 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1661) = CAST zlnt_runtime_map__41b3bb94df3d( t1653 ).
+      DATA(t1661) = t1653.
       DATA(t1662) = |exp|.
       DATA t1663 TYPE REF TO zcl_lnt_float_type.
       DATA t1664 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1664.
       t1663 = NEW zcl_lnt_float_type( i_input_967e = t1664 ).
       t1660 = t1661->set( p0 = t1662 p1 = t1663 ).
-      DATA(t1665) = CAST zlnt_runtime_map__41b3bb94df3d( t1653 ).
+      DATA(t1665) = t1653.
       t1652 = t1665.
       t1650 = t1652.
     ELSE.
@@ -10242,7 +10242,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1639 = t1640->set( p0 = t1641 p1 = t1642 ).
     DATA t1679 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1679.
-    DATA(t1680) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1680) = t7.
     DATA(t1681) = |LINE_EXISTS|.
     DATA t1682 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1682.
@@ -10276,14 +10276,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1694) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1693 = t1694.
       DATA t1695 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1696) = CAST zlnt_runtime_map__41b3bb94df3d( t1693 ).
+      DATA(t1696) = t1693.
       DATA(t1697) = |val|.
       DATA t1698 TYPE REF TO zcl_lnt_any_type.
       DATA t1699 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1699.
       t1698 = zcl_lnt_any_type=>get_db65( i_input_967e = t1699 ).
       t1695 = t1696->set( p0 = t1697 p1 = t1698 ).
-      DATA(t1700) = CAST zlnt_runtime_map__41b3bb94df3d( t1693 ).
+      DATA(t1700) = t1693.
       t1692 = t1700.
       t1690 = t1692.
     ELSE.
@@ -10341,7 +10341,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1679 = t1680->set( p0 = t1681 p1 = t1682 ).
     DATA t1719 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1719.
-    DATA(t1720) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1720) = t7.
     DATA(t1721) = |LINE_INDEX|.
     DATA t1722 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1722.
@@ -10375,14 +10375,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1734) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1733 = t1734.
       DATA t1735 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1736) = CAST zlnt_runtime_map__41b3bb94df3d( t1733 ).
+      DATA(t1736) = t1733.
       DATA(t1737) = |val|.
       DATA t1738 TYPE REF TO zcl_lnt_any_type.
       DATA t1739 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1739.
       t1738 = zcl_lnt_any_type=>get_db65( i_input_967e = t1739 ).
       t1735 = t1736->set( p0 = t1737 p1 = t1738 ).
-      DATA(t1740) = CAST zlnt_runtime_map__41b3bb94df3d( t1733 ).
+      DATA(t1740) = t1733.
       t1732 = t1740.
       t1730 = t1732.
     ELSE.
@@ -10427,7 +10427,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1719 = t1720->set( p0 = t1721 p1 = t1722 ).
     DATA t1754 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1754.
-    DATA(t1755) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1755) = t7.
     DATA(t1756) = |LINES|.
     DATA t1757 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1757.
@@ -10461,7 +10461,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1769) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1768 = t1769.
       DATA t1770 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1771) = CAST zlnt_runtime_map__41b3bb94df3d( t1768 ).
+      DATA(t1771) = t1768.
       DATA(t1772) = |val|.
       DATA t1773 TYPE REF TO zcl_lnt_ty_table_type.
       DATA t1774 TYPE REF TO zcl_lnt_any_type.
@@ -10482,7 +10482,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       CLEAR t1782.
       t1773 = NEW zcl_lnt_ty_table_type( i_row_type = t1774 i_options = t1776 i_qualified_name = t1781 i_description = t1782 ).
       t1770 = t1771->set( p0 = t1772 p1 = t1773 ).
-      DATA(t1783) = CAST zlnt_runtime_map__41b3bb94df3d( t1768 ).
+      DATA(t1783) = t1768.
       t1767 = t1783.
       t1765 = t1767.
     ELSE.
@@ -10506,7 +10506,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1754 = t1755->set( p0 = t1756 p1 = t1757 ).
     DATA t1791 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1791.
-    DATA(t1792) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1792) = t7.
     DATA(t1793) = |LOG|.
     DATA t1794 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1794.
@@ -10540,14 +10540,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1806) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1805 = t1806.
       DATA t1807 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1808) = CAST zlnt_runtime_map__41b3bb94df3d( t1805 ).
+      DATA(t1808) = t1805.
       DATA(t1809) = |val|.
       DATA t1810 TYPE REF TO zcl_lnt_float_type.
       DATA t1811 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1811.
       t1810 = NEW zcl_lnt_float_type( i_input_967e = t1811 ).
       t1807 = t1808->set( p0 = t1809 p1 = t1810 ).
-      DATA(t1812) = CAST zlnt_runtime_map__41b3bb94df3d( t1805 ).
+      DATA(t1812) = t1805.
       t1804 = t1812.
       t1802 = t1804.
     ELSE.
@@ -10571,7 +10571,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1791 = t1792->set( p0 = t1793 p1 = t1794 ).
     DATA t1820 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1820.
-    DATA(t1821) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1821) = t7.
     DATA(t1822) = |LOG10|.
     DATA t1823 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1823.
@@ -10605,14 +10605,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1835) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1834 = t1835.
       DATA t1836 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1837) = CAST zlnt_runtime_map__41b3bb94df3d( t1834 ).
+      DATA(t1837) = t1834.
       DATA(t1838) = |val|.
       DATA t1839 TYPE REF TO zcl_lnt_float_type.
       DATA t1840 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1840.
       t1839 = NEW zcl_lnt_float_type( i_input_967e = t1840 ).
       t1836 = t1837->set( p0 = t1838 p1 = t1839 ).
-      DATA(t1841) = CAST zlnt_runtime_map__41b3bb94df3d( t1834 ).
+      DATA(t1841) = t1834.
       t1833 = t1841.
       t1831 = t1833.
     ELSE.
@@ -10636,7 +10636,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1820 = t1821->set( p0 = t1822 p1 = t1823 ).
     DATA t1849 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1849.
-    DATA(t1850) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1850) = t7.
     DATA(t1851) = |MATCH|.
     DATA t1852 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1852.
@@ -10670,11 +10670,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1864) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1863 = t1864.
       DATA t1865 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1866) = CAST zlnt_runtime_map__41b3bb94df3d( t1863 ).
+      DATA(t1866) = t1863.
       DATA(t1867) = |val|.
       DATA(t1868) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1865 = t1866->set( p0 = t1867 p1 = t1868 ).
-      DATA(t1869) = CAST zlnt_runtime_map__41b3bb94df3d( t1863 ).
+      DATA(t1869) = t1863.
       t1862 = t1869.
       t1860 = t1862.
     ELSE.
@@ -10691,7 +10691,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1875) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1874 = t1875.
       DATA t1876 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1877) = CAST zlnt_runtime_map__41b3bb94df3d( t1874 ).
+      DATA(t1877) = t1874.
       DATA(t1878) = |case|.
       DATA t1879 TYPE REF TO zcl_lnt_character_type.
       DATA(t1880) = CONV int8( 1 ).
@@ -10700,24 +10700,24 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1879 = NEW zcl_lnt_character_type( i_length = t1880 i_extra = t1881 ).
       t1876 = t1877->set( p0 = t1878 p1 = t1879 ).
       DATA t1882 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1883) = CAST zlnt_runtime_map__41b3bb94df3d( t1874 ).
+      DATA(t1883) = t1874.
       DATA(t1884) = |regex|.
       DATA(t1885) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1882 = t1883->set( p0 = t1884 p1 = t1885 ).
       DATA t1886 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1887) = CAST zlnt_runtime_map__41b3bb94df3d( t1874 ).
+      DATA(t1887) = t1874.
       DATA(t1888) = |pcre|.
       DATA(t1889) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1886 = t1887->set( p0 = t1888 p1 = t1889 ).
       DATA t1890 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1891) = CAST zlnt_runtime_map__41b3bb94df3d( t1874 ).
+      DATA(t1891) = t1874.
       DATA(t1892) = |occ|.
       DATA t1893 TYPE REF TO zcl_lnt_integer_type.
       DATA t1894 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1894.
       t1893 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1894 ).
       t1890 = t1891->set( p0 = t1892 p1 = t1893 ).
-      DATA(t1895) = CAST zlnt_runtime_map__41b3bb94df3d( t1874 ).
+      DATA(t1895) = t1874.
       t1873 = t1895.
       t1871 = t1873.
     ELSE.
@@ -10760,7 +10760,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1849 = t1850->set( p0 = t1851 p1 = t1852 ).
     DATA t1908 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1908.
-    DATA(t1909) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1909) = t7.
     DATA(t1910) = |MATCHES|.
     DATA t1911 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1911.
@@ -10794,11 +10794,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1923) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1922 = t1923.
       DATA t1924 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1925) = CAST zlnt_runtime_map__41b3bb94df3d( t1922 ).
+      DATA(t1925) = t1922.
       DATA(t1926) = |val|.
       DATA(t1927) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1924 = t1925->set( p0 = t1926 p1 = t1927 ).
-      DATA(t1928) = CAST zlnt_runtime_map__41b3bb94df3d( t1922 ).
+      DATA(t1928) = t1922.
       t1921 = t1928.
       t1919 = t1921.
     ELSE.
@@ -10815,7 +10815,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1934) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1933 = t1934.
       DATA t1935 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1936) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1936) = t1933.
       DATA(t1937) = |case|.
       DATA t1938 TYPE REF TO zcl_lnt_character_type.
       DATA(t1939) = CONV int8( 1 ).
@@ -10824,17 +10824,17 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1938 = NEW zcl_lnt_character_type( i_length = t1939 i_extra = t1940 ).
       t1935 = t1936->set( p0 = t1937 p1 = t1938 ).
       DATA t1941 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1942) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1942) = t1933.
       DATA(t1943) = |regex|.
       DATA(t1944) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1941 = t1942->set( p0 = t1943 p1 = t1944 ).
       DATA t1945 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1946) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1946) = t1933.
       DATA(t1947) = |pcre|.
       DATA(t1948) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t1945 = t1946->set( p0 = t1947 p1 = t1948 ).
       DATA t1949 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1950) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1950) = t1933.
       DATA(t1951) = |off|.
       DATA t1952 TYPE REF TO zcl_lnt_integer_type.
       DATA t1953 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -10842,14 +10842,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t1952 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1953 ).
       t1949 = t1950->set( p0 = t1951 p1 = t1952 ).
       DATA t1954 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1955) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1955) = t1933.
       DATA(t1956) = |len|.
       DATA t1957 TYPE REF TO zcl_lnt_integer_type.
       DATA t1958 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t1958.
       t1957 = zcl_lnt_integer_type=>get_db65( i_input_967e = t1958 ).
       t1954 = t1955->set( p0 = t1956 p1 = t1957 ).
-      DATA(t1959) = CAST zlnt_runtime_map__41b3bb94df3d( t1933 ).
+      DATA(t1959) = t1933.
       t1932 = t1959.
       t1930 = t1932.
     ELSE.
@@ -10905,7 +10905,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1908 = t1909->set( p0 = t1910 p1 = t1911 ).
     DATA t1977 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t1977.
-    DATA(t1978) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t1978) = t7.
     DATA(t1979) = |NMAX|.
     DATA t1980 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t1980.
@@ -10939,16 +10939,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t1992) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t1991 = t1992.
       DATA t1993 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1994) = CAST zlnt_runtime_map__41b3bb94df3d( t1991 ).
+      DATA(t1994) = t1991.
       DATA(t1995) = |val1|.
       DATA(t1996) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t1993 = t1994->set( p0 = t1995 p1 = t1996 ).
       DATA t1997 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t1998) = CAST zlnt_runtime_map__41b3bb94df3d( t1991 ).
+      DATA(t1998) = t1991.
       DATA(t1999) = |val2|.
       DATA(t2000) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t1997 = t1998->set( p0 = t1999 p1 = t2000 ).
-      DATA(t2001) = CAST zlnt_runtime_map__41b3bb94df3d( t1991 ).
+      DATA(t2001) = t1991.
       t1990 = t2001.
       t1988 = t1990.
     ELSE.
@@ -10965,41 +10965,41 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2007) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2006 = t2007.
       DATA t2008 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2009) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2009) = t2006.
       DATA(t2010) = |val3|.
       DATA(t2011) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2008 = t2009->set( p0 = t2010 p1 = t2011 ).
       DATA t2012 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2013) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2013) = t2006.
       DATA(t2014) = |val4|.
       DATA(t2015) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2012 = t2013->set( p0 = t2014 p1 = t2015 ).
       DATA t2016 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2017) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2017) = t2006.
       DATA(t2018) = |val5|.
       DATA(t2019) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2016 = t2017->set( p0 = t2018 p1 = t2019 ).
       DATA t2020 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2021) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2021) = t2006.
       DATA(t2022) = |val6|.
       DATA(t2023) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2020 = t2021->set( p0 = t2022 p1 = t2023 ).
       DATA t2024 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2025) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2025) = t2006.
       DATA(t2026) = |val7|.
       DATA(t2027) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2024 = t2025->set( p0 = t2026 p1 = t2027 ).
       DATA t2028 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2029) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2029) = t2006.
       DATA(t2030) = |val8|.
       DATA(t2031) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2028 = t2029->set( p0 = t2030 p1 = t2031 ).
       DATA t2032 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2033) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2033) = t2006.
       DATA(t2034) = |val9|.
       DATA(t2035) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2032 = t2033->set( p0 = t2034 p1 = t2035 ).
-      DATA(t2036) = CAST zlnt_runtime_map__41b3bb94df3d( t2006 ).
+      DATA(t2036) = t2006.
       t2005 = t2036.
       t2003 = t2005.
     ELSE.
@@ -11042,7 +11042,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t1977 = t1978->set( p0 = t1979 p1 = t1980 ).
     DATA t2049 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2049.
-    DATA(t2050) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2050) = t7.
     DATA(t2051) = |NMIN|.
     DATA t2052 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2052.
@@ -11076,16 +11076,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2064) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2063 = t2064.
       DATA t2065 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2066) = CAST zlnt_runtime_map__41b3bb94df3d( t2063 ).
+      DATA(t2066) = t2063.
       DATA(t2067) = |val1|.
       DATA(t2068) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2065 = t2066->set( p0 = t2067 p1 = t2068 ).
       DATA t2069 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2070) = CAST zlnt_runtime_map__41b3bb94df3d( t2063 ).
+      DATA(t2070) = t2063.
       DATA(t2071) = |val2|.
       DATA(t2072) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2069 = t2070->set( p0 = t2071 p1 = t2072 ).
-      DATA(t2073) = CAST zlnt_runtime_map__41b3bb94df3d( t2063 ).
+      DATA(t2073) = t2063.
       t2062 = t2073.
       t2060 = t2062.
     ELSE.
@@ -11102,41 +11102,41 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2079) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2078 = t2079.
       DATA t2080 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2081) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2081) = t2078.
       DATA(t2082) = |val3|.
       DATA(t2083) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2080 = t2081->set( p0 = t2082 p1 = t2083 ).
       DATA t2084 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2085) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2085) = t2078.
       DATA(t2086) = |val4|.
       DATA(t2087) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2084 = t2085->set( p0 = t2086 p1 = t2087 ).
       DATA t2088 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2089) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2089) = t2078.
       DATA(t2090) = |val5|.
       DATA(t2091) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2088 = t2089->set( p0 = t2090 p1 = t2091 ).
       DATA t2092 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2093) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2093) = t2078.
       DATA(t2094) = |val6|.
       DATA(t2095) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2092 = t2093->set( p0 = t2094 p1 = t2095 ).
       DATA t2096 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2097) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2097) = t2078.
       DATA(t2098) = |val7|.
       DATA(t2099) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2096 = t2097->set( p0 = t2098 p1 = t2099 ).
       DATA t2100 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2101) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2101) = t2078.
       DATA(t2102) = |val8|.
       DATA(t2103) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2100 = t2101->set( p0 = t2102 p1 = t2103 ).
       DATA t2104 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2105) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2105) = t2078.
       DATA(t2106) = |val9|.
       DATA(t2107) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2104 = t2105->set( p0 = t2106 p1 = t2107 ).
-      DATA(t2108) = CAST zlnt_runtime_map__41b3bb94df3d( t2078 ).
+      DATA(t2108) = t2078.
       t2077 = t2108.
       t2075 = t2077.
     ELSE.
@@ -11179,7 +11179,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2049 = t2050->set( p0 = t2051 p1 = t2052 ).
     DATA t2121 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2121.
-    DATA(t2122) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2122) = t7.
     DATA(t2123) = |NUMOFCHAR|.
     DATA t2124 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2124.
@@ -11213,11 +11213,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2136) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2135 = t2136.
       DATA t2137 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2138) = CAST zlnt_runtime_map__41b3bb94df3d( t2135 ).
+      DATA(t2138) = t2135.
       DATA(t2139) = |val|.
       DATA(t2140) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2137 = t2138->set( p0 = t2139 p1 = t2140 ).
-      DATA(t2141) = CAST zlnt_runtime_map__41b3bb94df3d( t2135 ).
+      DATA(t2141) = t2135.
       t2134 = t2141.
       t2132 = t2134.
     ELSE.
@@ -11241,7 +11241,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2121 = t2122->set( p0 = t2123 p1 = t2124 ).
     DATA t2149 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2149.
-    DATA(t2150) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2150) = t7.
     DATA(t2151) = |REPEAT|.
     DATA t2152 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2152.
@@ -11275,16 +11275,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2164) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2163 = t2164.
       DATA t2165 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2166) = CAST zlnt_runtime_map__41b3bb94df3d( t2163 ).
+      DATA(t2166) = t2163.
       DATA(t2167) = |val|.
       DATA(t2168) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2165 = t2166->set( p0 = t2167 p1 = t2168 ).
       DATA t2169 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2170) = CAST zlnt_runtime_map__41b3bb94df3d( t2163 ).
+      DATA(t2170) = t2163.
       DATA(t2171) = |occ|.
       DATA(t2172) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
       t2169 = t2170->set( p0 = t2171 p1 = t2172 ).
-      DATA(t2173) = CAST zlnt_runtime_map__41b3bb94df3d( t2163 ).
+      DATA(t2173) = t2163.
       t2162 = t2173.
       t2160 = t2162.
     ELSE.
@@ -11329,7 +11329,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2149 = t2150->set( p0 = t2151 p1 = t2152 ).
     DATA t2187 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2187.
-    DATA(t2188) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2188) = t7.
     DATA(t2189) = |REPLACE|.
     DATA t2190 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2190.
@@ -11363,16 +11363,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2202) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2201 = t2202.
       DATA t2203 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2204) = CAST zlnt_runtime_map__41b3bb94df3d( t2201 ).
+      DATA(t2204) = t2201.
       DATA(t2205) = |val|.
       DATA(t2206) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2203 = t2204->set( p0 = t2205 p1 = t2206 ).
       DATA t2207 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2208) = CAST zlnt_runtime_map__41b3bb94df3d( t2201 ).
+      DATA(t2208) = t2201.
       DATA(t2209) = |with|.
       DATA(t2210) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2207 = t2208->set( p0 = t2209 p1 = t2210 ).
-      DATA(t2211) = CAST zlnt_runtime_map__41b3bb94df3d( t2201 ).
+      DATA(t2211) = t2201.
       t2200 = t2211.
       t2198 = t2200.
     ELSE.
@@ -11389,22 +11389,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2217) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2216 = t2217.
       DATA t2218 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2219) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2219) = t2216.
       DATA(t2220) = |sub|.
       DATA(t2221) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2218 = t2219->set( p0 = t2220 p1 = t2221 ).
       DATA t2222 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2223) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2223) = t2216.
       DATA(t2224) = |regex|.
       DATA(t2225) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2222 = t2223->set( p0 = t2224 p1 = t2225 ).
       DATA t2226 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2227) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2227) = t2216.
       DATA(t2228) = |pcre|.
       DATA(t2229) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2226 = t2227->set( p0 = t2228 p1 = t2229 ).
       DATA t2230 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2231) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2231) = t2216.
       DATA(t2232) = |case|.
       DATA t2233 TYPE REF TO zcl_lnt_character_type.
       DATA(t2234) = CONV int8( 1 ).
@@ -11413,7 +11413,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2233 = NEW zcl_lnt_character_type( i_length = t2234 i_extra = t2235 ).
       t2230 = t2231->set( p0 = t2232 p1 = t2233 ).
       DATA t2236 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2237) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2237) = t2216.
       DATA(t2238) = |off|.
       DATA t2239 TYPE REF TO zcl_lnt_integer_type.
       DATA t2240 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11421,7 +11421,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2239 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2240 ).
       t2236 = t2237->set( p0 = t2238 p1 = t2239 ).
       DATA t2241 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2242) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2242) = t2216.
       DATA(t2243) = |len|.
       DATA t2244 TYPE REF TO zcl_lnt_integer_type.
       DATA t2245 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11429,14 +11429,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2244 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2245 ).
       t2241 = t2242->set( p0 = t2243 p1 = t2244 ).
       DATA t2246 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2247) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2247) = t2216.
       DATA(t2248) = |occ|.
       DATA t2249 TYPE REF TO zcl_lnt_integer_type.
       DATA t2250 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2250.
       t2249 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2250 ).
       t2246 = t2247->set( p0 = t2248 p1 = t2249 ).
-      DATA(t2251) = CAST zlnt_runtime_map__41b3bb94df3d( t2216 ).
+      DATA(t2251) = t2216.
       t2215 = t2251.
       t2213 = t2215.
     ELSE.
@@ -11479,7 +11479,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2187 = t2188->set( p0 = t2189 p1 = t2190 ).
     DATA t2264 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2264.
-    DATA(t2265) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2265) = t7.
     DATA(t2266) = |RESCALE|.
     DATA t2267 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2267.
@@ -11513,14 +11513,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2279) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2278 = t2279.
       DATA t2280 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2281) = CAST zlnt_runtime_map__41b3bb94df3d( t2278 ).
+      DATA(t2281) = t2278.
       DATA(t2282) = |val|.
       DATA t2283 TYPE REF TO zcl_lnt_float_type.
       DATA t2284 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2284.
       t2283 = NEW zcl_lnt_float_type( i_input_967e = t2284 ).
       t2280 = t2281->set( p0 = t2282 p1 = t2283 ).
-      DATA(t2285) = CAST zlnt_runtime_map__41b3bb94df3d( t2278 ).
+      DATA(t2285) = t2278.
       t2277 = t2285.
       t2275 = t2277.
     ELSE.
@@ -11537,7 +11537,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2291) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2290 = t2291.
       DATA t2292 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2293) = CAST zlnt_runtime_map__41b3bb94df3d( t2290 ).
+      DATA(t2293) = t2290.
       DATA(t2294) = |dec|.
       DATA t2295 TYPE REF TO zcl_lnt_integer_type.
       DATA t2296 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11545,7 +11545,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2295 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2296 ).
       t2292 = t2293->set( p0 = t2294 p1 = t2295 ).
       DATA t2297 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2298) = CAST zlnt_runtime_map__41b3bb94df3d( t2290 ).
+      DATA(t2298) = t2290.
       DATA(t2299) = |prec|.
       DATA t2300 TYPE REF TO zcl_lnt_integer_type.
       DATA t2301 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11553,14 +11553,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2300 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2301 ).
       t2297 = t2298->set( p0 = t2299 p1 = t2300 ).
       DATA t2302 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2303) = CAST zlnt_runtime_map__41b3bb94df3d( t2290 ).
+      DATA(t2303) = t2290.
       DATA(t2304) = |mode|.
       DATA t2305 TYPE REF TO zcl_lnt_integer_type.
       DATA t2306 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2306.
       t2305 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2306 ).
       t2302 = t2303->set( p0 = t2304 p1 = t2305 ).
-      DATA(t2307) = CAST zlnt_runtime_map__41b3bb94df3d( t2290 ).
+      DATA(t2307) = t2290.
       t2289 = t2307.
       t2287 = t2289.
     ELSE.
@@ -11603,7 +11603,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2264 = t2265->set( p0 = t2266 p1 = t2267 ).
     DATA t2320 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2320.
-    DATA(t2321) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2321) = t7.
     DATA(t2322) = |REVERSE|.
     DATA t2323 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2323.
@@ -11637,11 +11637,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2335) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2334 = t2335.
       DATA t2336 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2337) = CAST zlnt_runtime_map__41b3bb94df3d( t2334 ).
+      DATA(t2337) = t2334.
       DATA(t2338) = |val|.
       DATA(t2339) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2336 = t2337->set( p0 = t2338 p1 = t2339 ).
-      DATA(t2340) = CAST zlnt_runtime_map__41b3bb94df3d( t2334 ).
+      DATA(t2340) = t2334.
       t2333 = t2340.
       t2331 = t2333.
     ELSE.
@@ -11686,7 +11686,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2320 = t2321->set( p0 = t2322 p1 = t2323 ).
     DATA t2354 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2354.
-    DATA(t2355) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2355) = t7.
     DATA(t2356) = |ROUND|.
     DATA t2357 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2357.
@@ -11720,14 +11720,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2369) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2368 = t2369.
       DATA t2370 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2371) = CAST zlnt_runtime_map__41b3bb94df3d( t2368 ).
+      DATA(t2371) = t2368.
       DATA(t2372) = |val|.
       DATA t2373 TYPE REF TO zcl_lnt_float_type.
       DATA t2374 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2374.
       t2373 = NEW zcl_lnt_float_type( i_input_967e = t2374 ).
       t2370 = t2371->set( p0 = t2372 p1 = t2373 ).
-      DATA(t2375) = CAST zlnt_runtime_map__41b3bb94df3d( t2368 ).
+      DATA(t2375) = t2368.
       t2367 = t2375.
       t2365 = t2367.
     ELSE.
@@ -11744,7 +11744,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2381) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2380 = t2381.
       DATA t2382 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2383) = CAST zlnt_runtime_map__41b3bb94df3d( t2380 ).
+      DATA(t2383) = t2380.
       DATA(t2384) = |dec|.
       DATA t2385 TYPE REF TO zcl_lnt_integer_type.
       DATA t2386 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11752,7 +11752,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2385 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2386 ).
       t2382 = t2383->set( p0 = t2384 p1 = t2385 ).
       DATA t2387 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2388) = CAST zlnt_runtime_map__41b3bb94df3d( t2380 ).
+      DATA(t2388) = t2380.
       DATA(t2389) = |prec|.
       DATA t2390 TYPE REF TO zcl_lnt_integer_type.
       DATA t2391 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11760,14 +11760,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2390 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2391 ).
       t2387 = t2388->set( p0 = t2389 p1 = t2390 ).
       DATA t2392 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2393) = CAST zlnt_runtime_map__41b3bb94df3d( t2380 ).
+      DATA(t2393) = t2380.
       DATA(t2394) = |mode|.
       DATA t2395 TYPE REF TO zcl_lnt_integer_type.
       DATA t2396 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2396.
       t2395 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2396 ).
       t2392 = t2393->set( p0 = t2394 p1 = t2395 ).
-      DATA(t2397) = CAST zlnt_runtime_map__41b3bb94df3d( t2380 ).
+      DATA(t2397) = t2380.
       t2379 = t2397.
       t2377 = t2379.
     ELSE.
@@ -11810,7 +11810,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2354 = t2355->set( p0 = t2356 p1 = t2357 ).
     DATA t2410 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2410.
-    DATA(t2411) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2411) = t7.
     DATA(t2412) = |SEGMENT|.
     DATA t2413 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2413.
@@ -11844,19 +11844,19 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2425) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2424 = t2425.
       DATA t2426 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2427) = CAST zlnt_runtime_map__41b3bb94df3d( t2424 ).
+      DATA(t2427) = t2424.
       DATA(t2428) = |val|.
       DATA(t2429) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2426 = t2427->set( p0 = t2428 p1 = t2429 ).
       DATA t2430 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2431) = CAST zlnt_runtime_map__41b3bb94df3d( t2424 ).
+      DATA(t2431) = t2424.
       DATA(t2432) = |index|.
       DATA t2433 TYPE REF TO zcl_lnt_integer_type.
       DATA t2434 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2434.
       t2433 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2434 ).
       t2430 = t2431->set( p0 = t2432 p1 = t2433 ).
-      DATA(t2435) = CAST zlnt_runtime_map__41b3bb94df3d( t2424 ).
+      DATA(t2435) = t2424.
       t2423 = t2435.
       t2421 = t2423.
     ELSE.
@@ -11873,16 +11873,16 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2441) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2440 = t2441.
       DATA t2442 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2443) = CAST zlnt_runtime_map__41b3bb94df3d( t2440 ).
+      DATA(t2443) = t2440.
       DATA(t2444) = |sep|.
       DATA(t2445) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2442 = t2443->set( p0 = t2444 p1 = t2445 ).
       DATA t2446 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2447) = CAST zlnt_runtime_map__41b3bb94df3d( t2440 ).
+      DATA(t2447) = t2440.
       DATA(t2448) = |space|.
       DATA(t2449) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2446 = t2447->set( p0 = t2448 p1 = t2449 ).
-      DATA(t2450) = CAST zlnt_runtime_map__41b3bb94df3d( t2440 ).
+      DATA(t2450) = t2440.
       t2439 = t2450.
       t2437 = t2439.
     ELSE.
@@ -11925,7 +11925,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2410 = t2411->set( p0 = t2412 p1 = t2413 ).
     DATA t2463 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2463.
-    DATA(t2464) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2464) = t7.
     DATA(t2465) = |SHIFT_LEFT|.
     DATA t2466 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2466.
@@ -11959,11 +11959,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2478) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2477 = t2478.
       DATA t2479 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2480) = CAST zlnt_runtime_map__41b3bb94df3d( t2477 ).
+      DATA(t2480) = t2477.
       DATA(t2481) = |val|.
       DATA(t2482) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2479 = t2480->set( p0 = t2481 p1 = t2482 ).
-      DATA(t2483) = CAST zlnt_runtime_map__41b3bb94df3d( t2477 ).
+      DATA(t2483) = t2477.
       t2476 = t2483.
       t2474 = t2476.
     ELSE.
@@ -11980,12 +11980,12 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2489) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2488 = t2489.
       DATA t2490 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2491) = CAST zlnt_runtime_map__41b3bb94df3d( t2488 ).
+      DATA(t2491) = t2488.
       DATA(t2492) = |sub|.
       DATA(t2493) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2490 = t2491->set( p0 = t2492 p1 = t2493 ).
       DATA t2494 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2495) = CAST zlnt_runtime_map__41b3bb94df3d( t2488 ).
+      DATA(t2495) = t2488.
       DATA(t2496) = |places|.
       DATA t2497 TYPE REF TO zcl_lnt_integer_type.
       DATA t2498 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -11993,14 +11993,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2497 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2498 ).
       t2494 = t2495->set( p0 = t2496 p1 = t2497 ).
       DATA t2499 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2500) = CAST zlnt_runtime_map__41b3bb94df3d( t2488 ).
+      DATA(t2500) = t2488.
       DATA(t2501) = |circular|.
       DATA t2502 TYPE REF TO zcl_lnt_integer_type.
       DATA t2503 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2503.
       t2502 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2503 ).
       t2499 = t2500->set( p0 = t2501 p1 = t2502 ).
-      DATA(t2504) = CAST zlnt_runtime_map__41b3bb94df3d( t2488 ).
+      DATA(t2504) = t2488.
       t2487 = t2504.
       t2485 = t2487.
     ELSE.
@@ -12043,7 +12043,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2463 = t2464->set( p0 = t2465 p1 = t2466 ).
     DATA t2517 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2517.
-    DATA(t2518) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2518) = t7.
     DATA(t2519) = |SHIFT_RIGHT|.
     DATA t2520 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2520.
@@ -12077,11 +12077,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2532) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2531 = t2532.
       DATA t2533 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2534) = CAST zlnt_runtime_map__41b3bb94df3d( t2531 ).
+      DATA(t2534) = t2531.
       DATA(t2535) = |val|.
       DATA(t2536) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2533 = t2534->set( p0 = t2535 p1 = t2536 ).
-      DATA(t2537) = CAST zlnt_runtime_map__41b3bb94df3d( t2531 ).
+      DATA(t2537) = t2531.
       t2530 = t2537.
       t2528 = t2530.
     ELSE.
@@ -12098,12 +12098,12 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2543) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2542 = t2543.
       DATA t2544 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2545) = CAST zlnt_runtime_map__41b3bb94df3d( t2542 ).
+      DATA(t2545) = t2542.
       DATA(t2546) = |sub|.
       DATA(t2547) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2544 = t2545->set( p0 = t2546 p1 = t2547 ).
       DATA t2548 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2549) = CAST zlnt_runtime_map__41b3bb94df3d( t2542 ).
+      DATA(t2549) = t2542.
       DATA(t2550) = |places|.
       DATA t2551 TYPE REF TO zcl_lnt_integer_type.
       DATA t2552 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -12111,14 +12111,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2551 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2552 ).
       t2548 = t2549->set( p0 = t2550 p1 = t2551 ).
       DATA t2553 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2554) = CAST zlnt_runtime_map__41b3bb94df3d( t2542 ).
+      DATA(t2554) = t2542.
       DATA(t2555) = |circular|.
       DATA t2556 TYPE REF TO zcl_lnt_integer_type.
       DATA t2557 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2557.
       t2556 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2557 ).
       t2553 = t2554->set( p0 = t2555 p1 = t2556 ).
-      DATA(t2558) = CAST zlnt_runtime_map__41b3bb94df3d( t2542 ).
+      DATA(t2558) = t2542.
       t2541 = t2558.
       t2539 = t2541.
     ELSE.
@@ -12161,7 +12161,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2517 = t2518->set( p0 = t2519 p1 = t2520 ).
     DATA t2571 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2571.
-    DATA(t2572) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2572) = t7.
     DATA(t2573) = |SIGN|.
     DATA t2574 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2574.
@@ -12195,14 +12195,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2586) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2585 = t2586.
       DATA t2587 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2588) = CAST zlnt_runtime_map__41b3bb94df3d( t2585 ).
+      DATA(t2588) = t2585.
       DATA(t2589) = |val|.
       DATA t2590 TYPE REF TO zcl_lnt_float_type.
       DATA t2591 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2591.
       t2590 = NEW zcl_lnt_float_type( i_input_967e = t2591 ).
       t2587 = t2588->set( p0 = t2589 p1 = t2590 ).
-      DATA(t2592) = CAST zlnt_runtime_map__41b3bb94df3d( t2585 ).
+      DATA(t2592) = t2585.
       t2584 = t2592.
       t2582 = t2584.
     ELSE.
@@ -12226,7 +12226,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2571 = t2572->set( p0 = t2573 p1 = t2574 ).
     DATA t2600 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2600.
-    DATA(t2601) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2601) = t7.
     DATA(t2602) = |SIN|.
     DATA t2603 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2603.
@@ -12260,14 +12260,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2615) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2614 = t2615.
       DATA t2616 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2617) = CAST zlnt_runtime_map__41b3bb94df3d( t2614 ).
+      DATA(t2617) = t2614.
       DATA(t2618) = |val|.
       DATA t2619 TYPE REF TO zcl_lnt_float_type.
       DATA t2620 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2620.
       t2619 = NEW zcl_lnt_float_type( i_input_967e = t2620 ).
       t2616 = t2617->set( p0 = t2618 p1 = t2619 ).
-      DATA(t2621) = CAST zlnt_runtime_map__41b3bb94df3d( t2614 ).
+      DATA(t2621) = t2614.
       t2613 = t2621.
       t2611 = t2613.
     ELSE.
@@ -12291,7 +12291,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2600 = t2601->set( p0 = t2602 p1 = t2603 ).
     DATA t2629 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2629.
-    DATA(t2630) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2630) = t7.
     DATA(t2631) = |SINH|.
     DATA t2632 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2632.
@@ -12325,14 +12325,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2644) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2643 = t2644.
       DATA t2645 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2646) = CAST zlnt_runtime_map__41b3bb94df3d( t2643 ).
+      DATA(t2646) = t2643.
       DATA(t2647) = |val|.
       DATA t2648 TYPE REF TO zcl_lnt_float_type.
       DATA t2649 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2649.
       t2648 = NEW zcl_lnt_float_type( i_input_967e = t2649 ).
       t2645 = t2646->set( p0 = t2647 p1 = t2648 ).
-      DATA(t2650) = CAST zlnt_runtime_map__41b3bb94df3d( t2643 ).
+      DATA(t2650) = t2643.
       t2642 = t2650.
       t2640 = t2642.
     ELSE.
@@ -12356,7 +12356,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2629 = t2630->set( p0 = t2631 p1 = t2632 ).
     DATA t2658 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2658.
-    DATA(t2659) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2659) = t7.
     DATA(t2660) = |SQRT|.
     DATA t2661 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2661.
@@ -12390,14 +12390,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2673) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2672 = t2673.
       DATA t2674 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2675) = CAST zlnt_runtime_map__41b3bb94df3d( t2672 ).
+      DATA(t2675) = t2672.
       DATA(t2676) = |val|.
       DATA t2677 TYPE REF TO zcl_lnt_float_type.
       DATA t2678 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2678.
       t2677 = NEW zcl_lnt_float_type( i_input_967e = t2678 ).
       t2674 = t2675->set( p0 = t2676 p1 = t2677 ).
-      DATA(t2679) = CAST zlnt_runtime_map__41b3bb94df3d( t2672 ).
+      DATA(t2679) = t2672.
       t2671 = t2679.
       t2669 = t2671.
     ELSE.
@@ -12421,7 +12421,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2658 = t2659->set( p0 = t2660 p1 = t2661 ).
     DATA t2687 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2687.
-    DATA(t2688) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2688) = t7.
     DATA(t2689) = |STRLEN|.
     DATA t2690 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2690.
@@ -12455,11 +12455,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2702) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2701 = t2702.
       DATA t2703 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2704) = CAST zlnt_runtime_map__41b3bb94df3d( t2701 ).
+      DATA(t2704) = t2701.
       DATA(t2705) = |val|.
       DATA(t2706) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2703 = t2704->set( p0 = t2705 p1 = t2706 ).
-      DATA(t2707) = CAST zlnt_runtime_map__41b3bb94df3d( t2701 ).
+      DATA(t2707) = t2701.
       t2700 = t2707.
       t2698 = t2700.
     ELSE.
@@ -12483,7 +12483,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2687 = t2688->set( p0 = t2689 p1 = t2690 ).
     DATA t2715 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2715.
-    DATA(t2716) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2716) = t7.
     DATA(t2717) = |SUBSTRING|.
     DATA t2718 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2718.
@@ -12517,11 +12517,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2730) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2729 = t2730.
       DATA t2731 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2732) = CAST zlnt_runtime_map__41b3bb94df3d( t2729 ).
+      DATA(t2732) = t2729.
       DATA(t2733) = |val|.
       DATA(t2734) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2731 = t2732->set( p0 = t2733 p1 = t2734 ).
-      DATA(t2735) = CAST zlnt_runtime_map__41b3bb94df3d( t2729 ).
+      DATA(t2735) = t2729.
       t2728 = t2735.
       t2726 = t2728.
     ELSE.
@@ -12538,7 +12538,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2741) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2740 = t2741.
       DATA t2742 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2743) = CAST zlnt_runtime_map__41b3bb94df3d( t2740 ).
+      DATA(t2743) = t2740.
       DATA(t2744) = |off|.
       DATA t2745 TYPE REF TO zcl_lnt_integer_type.
       DATA t2746 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -12546,14 +12546,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2745 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2746 ).
       t2742 = t2743->set( p0 = t2744 p1 = t2745 ).
       DATA t2747 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2748) = CAST zlnt_runtime_map__41b3bb94df3d( t2740 ).
+      DATA(t2748) = t2740.
       DATA(t2749) = |len|.
       DATA t2750 TYPE REF TO zcl_lnt_integer_type.
       DATA t2751 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2751.
       t2750 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2751 ).
       t2747 = t2748->set( p0 = t2749 p1 = t2750 ).
-      DATA(t2752) = CAST zlnt_runtime_map__41b3bb94df3d( t2740 ).
+      DATA(t2752) = t2740.
       t2739 = t2752.
       t2737 = t2739.
     ELSE.
@@ -12596,7 +12596,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2715 = t2716->set( p0 = t2717 p1 = t2718 ).
     DATA t2765 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2765.
-    DATA(t2766) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2766) = t7.
     DATA(t2767) = |SUBSTRING_AFTER|.
     DATA t2768 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2768.
@@ -12630,11 +12630,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2780) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2779 = t2780.
       DATA t2781 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2782) = CAST zlnt_runtime_map__41b3bb94df3d( t2779 ).
+      DATA(t2782) = t2779.
       DATA(t2783) = |val|.
       DATA(t2784) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2781 = t2782->set( p0 = t2783 p1 = t2784 ).
-      DATA(t2785) = CAST zlnt_runtime_map__41b3bb94df3d( t2779 ).
+      DATA(t2785) = t2779.
       t2778 = t2785.
       t2776 = t2778.
     ELSE.
@@ -12651,22 +12651,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2791) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2790 = t2791.
       DATA t2792 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2793) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2793) = t2790.
       DATA(t2794) = |sub|.
       DATA(t2795) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2792 = t2793->set( p0 = t2794 p1 = t2795 ).
       DATA t2796 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2797) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2797) = t2790.
       DATA(t2798) = |regex|.
       DATA(t2799) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2796 = t2797->set( p0 = t2798 p1 = t2799 ).
       DATA t2800 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2801) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2801) = t2790.
       DATA(t2802) = |pcre|.
       DATA(t2803) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2800 = t2801->set( p0 = t2802 p1 = t2803 ).
       DATA t2804 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2805) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2805) = t2790.
       DATA(t2806) = |case|.
       DATA t2807 TYPE REF TO zcl_lnt_character_type.
       DATA(t2808) = CONV int8( 1 ).
@@ -12675,7 +12675,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2807 = NEW zcl_lnt_character_type( i_length = t2808 i_extra = t2809 ).
       t2804 = t2805->set( p0 = t2806 p1 = t2807 ).
       DATA t2810 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2811) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2811) = t2790.
       DATA(t2812) = |len|.
       DATA t2813 TYPE REF TO zcl_lnt_integer_type.
       DATA t2814 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -12683,14 +12683,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2813 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2814 ).
       t2810 = t2811->set( p0 = t2812 p1 = t2813 ).
       DATA t2815 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2816) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2816) = t2790.
       DATA(t2817) = |occ|.
       DATA t2818 TYPE REF TO zcl_lnt_integer_type.
       DATA t2819 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2819.
       t2818 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2819 ).
       t2815 = t2816->set( p0 = t2817 p1 = t2818 ).
-      DATA(t2820) = CAST zlnt_runtime_map__41b3bb94df3d( t2790 ).
+      DATA(t2820) = t2790.
       t2789 = t2820.
       t2787 = t2789.
     ELSE.
@@ -12733,7 +12733,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2765 = t2766->set( p0 = t2767 p1 = t2768 ).
     DATA t2833 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2833.
-    DATA(t2834) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2834) = t7.
     DATA(t2835) = |SUBSTRING_BEFORE|.
     DATA t2836 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2836.
@@ -12767,11 +12767,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2848) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2847 = t2848.
       DATA t2849 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2850) = CAST zlnt_runtime_map__41b3bb94df3d( t2847 ).
+      DATA(t2850) = t2847.
       DATA(t2851) = |val|.
       DATA(t2852) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2849 = t2850->set( p0 = t2851 p1 = t2852 ).
-      DATA(t2853) = CAST zlnt_runtime_map__41b3bb94df3d( t2847 ).
+      DATA(t2853) = t2847.
       t2846 = t2853.
       t2844 = t2846.
     ELSE.
@@ -12788,22 +12788,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2859) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2858 = t2859.
       DATA t2860 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2861) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2861) = t2858.
       DATA(t2862) = |sub|.
       DATA(t2863) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2860 = t2861->set( p0 = t2862 p1 = t2863 ).
       DATA t2864 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2865) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2865) = t2858.
       DATA(t2866) = |regex|.
       DATA(t2867) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2864 = t2865->set( p0 = t2866 p1 = t2867 ).
       DATA t2868 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2869) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2869) = t2858.
       DATA(t2870) = |pcre|.
       DATA(t2871) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2868 = t2869->set( p0 = t2870 p1 = t2871 ).
       DATA t2872 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2873) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2873) = t2858.
       DATA(t2874) = |case|.
       DATA t2875 TYPE REF TO zcl_lnt_character_type.
       DATA(t2876) = CONV int8( 1 ).
@@ -12812,7 +12812,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2875 = NEW zcl_lnt_character_type( i_length = t2876 i_extra = t2877 ).
       t2872 = t2873->set( p0 = t2874 p1 = t2875 ).
       DATA t2878 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2879) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2879) = t2858.
       DATA(t2880) = |len|.
       DATA t2881 TYPE REF TO zcl_lnt_integer_type.
       DATA t2882 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -12820,14 +12820,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2881 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2882 ).
       t2878 = t2879->set( p0 = t2880 p1 = t2881 ).
       DATA t2883 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2884) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2884) = t2858.
       DATA(t2885) = |occ|.
       DATA t2886 TYPE REF TO zcl_lnt_integer_type.
       DATA t2887 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2887.
       t2886 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2887 ).
       t2883 = t2884->set( p0 = t2885 p1 = t2886 ).
-      DATA(t2888) = CAST zlnt_runtime_map__41b3bb94df3d( t2858 ).
+      DATA(t2888) = t2858.
       t2857 = t2888.
       t2855 = t2857.
     ELSE.
@@ -12870,7 +12870,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2833 = t2834->set( p0 = t2835 p1 = t2836 ).
     DATA t2901 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2901.
-    DATA(t2902) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2902) = t7.
     DATA(t2903) = |SUBSTRING_FROM|.
     DATA t2904 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2904.
@@ -12904,11 +12904,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2916) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2915 = t2916.
       DATA t2917 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2918) = CAST zlnt_runtime_map__41b3bb94df3d( t2915 ).
+      DATA(t2918) = t2915.
       DATA(t2919) = |val|.
       DATA(t2920) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2917 = t2918->set( p0 = t2919 p1 = t2920 ).
-      DATA(t2921) = CAST zlnt_runtime_map__41b3bb94df3d( t2915 ).
+      DATA(t2921) = t2915.
       t2914 = t2921.
       t2912 = t2914.
     ELSE.
@@ -12925,22 +12925,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2927) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2926 = t2927.
       DATA t2928 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2929) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2929) = t2926.
       DATA(t2930) = |sub|.
       DATA(t2931) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2928 = t2929->set( p0 = t2930 p1 = t2931 ).
       DATA t2932 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2933) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2933) = t2926.
       DATA(t2934) = |regex|.
       DATA(t2935) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2932 = t2933->set( p0 = t2934 p1 = t2935 ).
       DATA t2936 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2937) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2937) = t2926.
       DATA(t2938) = |pcre|.
       DATA(t2939) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2936 = t2937->set( p0 = t2938 p1 = t2939 ).
       DATA t2940 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2941) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2941) = t2926.
       DATA(t2942) = |case|.
       DATA t2943 TYPE REF TO zcl_lnt_character_type.
       DATA(t2944) = CONV int8( 1 ).
@@ -12949,7 +12949,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2943 = NEW zcl_lnt_character_type( i_length = t2944 i_extra = t2945 ).
       t2940 = t2941->set( p0 = t2942 p1 = t2943 ).
       DATA t2946 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2947) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2947) = t2926.
       DATA(t2948) = |len|.
       DATA t2949 TYPE REF TO zcl_lnt_integer_type.
       DATA t2950 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -12957,14 +12957,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t2949 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2950 ).
       t2946 = t2947->set( p0 = t2948 p1 = t2949 ).
       DATA t2951 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2952) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2952) = t2926.
       DATA(t2953) = |occ|.
       DATA t2954 TYPE REF TO zcl_lnt_integer_type.
       DATA t2955 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t2955.
       t2954 = zcl_lnt_integer_type=>get_db65( i_input_967e = t2955 ).
       t2951 = t2952->set( p0 = t2953 p1 = t2954 ).
-      DATA(t2956) = CAST zlnt_runtime_map__41b3bb94df3d( t2926 ).
+      DATA(t2956) = t2926.
       t2925 = t2956.
       t2923 = t2925.
     ELSE.
@@ -13007,7 +13007,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2901 = t2902->set( p0 = t2903 p1 = t2904 ).
     DATA t2969 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t2969.
-    DATA(t2970) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t2970) = t7.
     DATA(t2971) = |SUBSTRING_TO|.
     DATA t2972 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t2972.
@@ -13041,11 +13041,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2984) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2983 = t2984.
       DATA t2985 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2986) = CAST zlnt_runtime_map__41b3bb94df3d( t2983 ).
+      DATA(t2986) = t2983.
       DATA(t2987) = |val|.
       DATA(t2988) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2985 = t2986->set( p0 = t2987 p1 = t2988 ).
-      DATA(t2989) = CAST zlnt_runtime_map__41b3bb94df3d( t2983 ).
+      DATA(t2989) = t2983.
       t2982 = t2989.
       t2980 = t2982.
     ELSE.
@@ -13062,22 +13062,22 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t2995) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t2994 = t2995.
       DATA t2996 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t2997) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t2997) = t2994.
       DATA(t2998) = |sub|.
       DATA(t2999) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t2996 = t2997->set( p0 = t2998 p1 = t2999 ).
       DATA t3000 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3001) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3001) = t2994.
       DATA(t3002) = |regex|.
       DATA(t3003) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3000 = t3001->set( p0 = t3002 p1 = t3003 ).
       DATA t3004 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3005) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3005) = t2994.
       DATA(t3006) = |pcre|.
       DATA(t3007) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3004 = t3005->set( p0 = t3006 p1 = t3007 ).
       DATA t3008 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3009) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3009) = t2994.
       DATA(t3010) = |case|.
       DATA t3011 TYPE REF TO zcl_lnt_character_type.
       DATA(t3012) = CONV int8( 1 ).
@@ -13086,7 +13086,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3011 = NEW zcl_lnt_character_type( i_length = t3012 i_extra = t3013 ).
       t3008 = t3009->set( p0 = t3010 p1 = t3011 ).
       DATA t3014 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3015) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3015) = t2994.
       DATA(t3016) = |len|.
       DATA t3017 TYPE REF TO zcl_lnt_integer_type.
       DATA t3018 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -13094,14 +13094,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3017 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3018 ).
       t3014 = t3015->set( p0 = t3016 p1 = t3017 ).
       DATA t3019 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3020) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3020) = t2994.
       DATA(t3021) = |occ|.
       DATA t3022 TYPE REF TO zcl_lnt_integer_type.
       DATA t3023 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3023.
       t3022 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3023 ).
       t3019 = t3020->set( p0 = t3021 p1 = t3022 ).
-      DATA(t3024) = CAST zlnt_runtime_map__41b3bb94df3d( t2994 ).
+      DATA(t3024) = t2994.
       t2993 = t3024.
       t2991 = t2993.
     ELSE.
@@ -13144,7 +13144,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t2969 = t2970->set( p0 = t2971 p1 = t2972 ).
     DATA t3037 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3037.
-    DATA(t3038) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3038) = t7.
     DATA(t3039) = |TAN|.
     DATA t3040 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3040.
@@ -13178,14 +13178,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3052) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3051 = t3052.
       DATA t3053 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3054) = CAST zlnt_runtime_map__41b3bb94df3d( t3051 ).
+      DATA(t3054) = t3051.
       DATA(t3055) = |val|.
       DATA t3056 TYPE REF TO zcl_lnt_float_type.
       DATA t3057 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3057.
       t3056 = NEW zcl_lnt_float_type( i_input_967e = t3057 ).
       t3053 = t3054->set( p0 = t3055 p1 = t3056 ).
-      DATA(t3058) = CAST zlnt_runtime_map__41b3bb94df3d( t3051 ).
+      DATA(t3058) = t3051.
       t3050 = t3058.
       t3048 = t3050.
     ELSE.
@@ -13209,7 +13209,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3037 = t3038->set( p0 = t3039 p1 = t3040 ).
     DATA t3066 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3066.
-    DATA(t3067) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3067) = t7.
     DATA(t3068) = |TANH|.
     DATA t3069 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3069.
@@ -13243,14 +13243,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3081) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3080 = t3081.
       DATA t3082 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3083) = CAST zlnt_runtime_map__41b3bb94df3d( t3080 ).
+      DATA(t3083) = t3080.
       DATA(t3084) = |val|.
       DATA t3085 TYPE REF TO zcl_lnt_float_type.
       DATA t3086 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3086.
       t3085 = NEW zcl_lnt_float_type( i_input_967e = t3086 ).
       t3082 = t3083->set( p0 = t3084 p1 = t3085 ).
-      DATA(t3087) = CAST zlnt_runtime_map__41b3bb94df3d( t3080 ).
+      DATA(t3087) = t3080.
       t3079 = t3087.
       t3077 = t3079.
     ELSE.
@@ -13274,7 +13274,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3066 = t3067->set( p0 = t3068 p1 = t3069 ).
     DATA t3095 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3095.
-    DATA(t3096) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3096) = t7.
     DATA(t3097) = |TO_LOWER|.
     DATA t3098 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3098.
@@ -13308,11 +13308,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3110) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3109 = t3110.
       DATA t3111 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3112) = CAST zlnt_runtime_map__41b3bb94df3d( t3109 ).
+      DATA(t3112) = t3109.
       DATA(t3113) = |val|.
       DATA(t3114) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3111 = t3112->set( p0 = t3113 p1 = t3114 ).
-      DATA(t3115) = CAST zlnt_runtime_map__41b3bb94df3d( t3109 ).
+      DATA(t3115) = t3109.
       t3108 = t3115.
       t3106 = t3108.
     ELSE.
@@ -13357,7 +13357,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3095 = t3096->set( p0 = t3097 p1 = t3098 ).
     DATA t3129 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3129.
-    DATA(t3130) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3130) = t7.
     DATA(t3131) = |TO_MIXED|.
     DATA t3132 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3132.
@@ -13391,11 +13391,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3144) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3143 = t3144.
       DATA t3145 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3146) = CAST zlnt_runtime_map__41b3bb94df3d( t3143 ).
+      DATA(t3146) = t3143.
       DATA(t3147) = |val|.
       DATA(t3148) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3145 = t3146->set( p0 = t3147 p1 = t3148 ).
-      DATA(t3149) = CAST zlnt_runtime_map__41b3bb94df3d( t3143 ).
+      DATA(t3149) = t3143.
       t3142 = t3149.
       t3140 = t3142.
     ELSE.
@@ -13412,7 +13412,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3155) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3154 = t3155.
       DATA t3156 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3157) = CAST zlnt_runtime_map__41b3bb94df3d( t3154 ).
+      DATA(t3157) = t3154.
       DATA(t3158) = |case|.
       DATA t3159 TYPE REF TO zcl_lnt_character_type.
       DATA(t3160) = CONV int8( 1 ).
@@ -13421,19 +13421,19 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3159 = NEW zcl_lnt_character_type( i_length = t3160 i_extra = t3161 ).
       t3156 = t3157->set( p0 = t3158 p1 = t3159 ).
       DATA t3162 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3163) = CAST zlnt_runtime_map__41b3bb94df3d( t3154 ).
+      DATA(t3163) = t3154.
       DATA(t3164) = |sep|.
       DATA(t3165) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3162 = t3163->set( p0 = t3164 p1 = t3165 ).
       DATA t3166 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3167) = CAST zlnt_runtime_map__41b3bb94df3d( t3154 ).
+      DATA(t3167) = t3154.
       DATA(t3168) = |min|.
       DATA t3169 TYPE REF TO zcl_lnt_integer_type.
       DATA t3170 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3170.
       t3169 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3170 ).
       t3166 = t3167->set( p0 = t3168 p1 = t3169 ).
-      DATA(t3171) = CAST zlnt_runtime_map__41b3bb94df3d( t3154 ).
+      DATA(t3171) = t3154.
       t3153 = t3171.
       t3151 = t3153.
     ELSE.
@@ -13476,7 +13476,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3129 = t3130->set( p0 = t3131 p1 = t3132 ).
     DATA t3184 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3184.
-    DATA(t3185) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3185) = t7.
     DATA(t3186) = |TO_UPPER|.
     DATA t3187 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3187.
@@ -13510,11 +13510,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3199) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3198 = t3199.
       DATA t3200 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3201) = CAST zlnt_runtime_map__41b3bb94df3d( t3198 ).
+      DATA(t3201) = t3198.
       DATA(t3202) = |val|.
       DATA(t3203) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3200 = t3201->set( p0 = t3202 p1 = t3203 ).
-      DATA(t3204) = CAST zlnt_runtime_map__41b3bb94df3d( t3198 ).
+      DATA(t3204) = t3198.
       t3197 = t3204.
       t3195 = t3197.
     ELSE.
@@ -13559,7 +13559,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3184 = t3185->set( p0 = t3186 p1 = t3187 ).
     DATA t3218 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3218.
-    DATA(t3219) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3219) = t7.
     DATA(t3220) = |TRANSLATE|.
     DATA t3221 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3221.
@@ -13593,21 +13593,21 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3233) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3232 = t3233.
       DATA t3234 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3235) = CAST zlnt_runtime_map__41b3bb94df3d( t3232 ).
+      DATA(t3235) = t3232.
       DATA(t3236) = |val|.
       DATA(t3237) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3234 = t3235->set( p0 = t3236 p1 = t3237 ).
       DATA t3238 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3239) = CAST zlnt_runtime_map__41b3bb94df3d( t3232 ).
+      DATA(t3239) = t3232.
       DATA(t3240) = |from|.
       DATA(t3241) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3238 = t3239->set( p0 = t3240 p1 = t3241 ).
       DATA t3242 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3243) = CAST zlnt_runtime_map__41b3bb94df3d( t3232 ).
+      DATA(t3243) = t3232.
       DATA(t3244) = |to|.
       DATA(t3245) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3242 = t3243->set( p0 = t3244 p1 = t3245 ).
-      DATA(t3246) = CAST zlnt_runtime_map__41b3bb94df3d( t3232 ).
+      DATA(t3246) = t3232.
       t3231 = t3246.
       t3229 = t3231.
     ELSE.
@@ -13652,7 +13652,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3218 = t3219->set( p0 = t3220 p1 = t3221 ).
     DATA t3260 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3260.
-    DATA(t3261) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3261) = t7.
     DATA(t3262) = |TRUNC|.
     DATA t3263 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3263.
@@ -13686,14 +13686,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3275) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3274 = t3275.
       DATA t3276 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3277) = CAST zlnt_runtime_map__41b3bb94df3d( t3274 ).
+      DATA(t3277) = t3274.
       DATA(t3278) = |val|.
       DATA t3279 TYPE REF TO zcl_lnt_float_type.
       DATA t3280 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3280.
       t3279 = NEW zcl_lnt_float_type( i_input_967e = t3280 ).
       t3276 = t3277->set( p0 = t3278 p1 = t3279 ).
-      DATA(t3281) = CAST zlnt_runtime_map__41b3bb94df3d( t3274 ).
+      DATA(t3281) = t3274.
       t3273 = t3281.
       t3271 = t3273.
     ELSE.
@@ -13717,7 +13717,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3260 = t3261->set( p0 = t3262 p1 = t3263 ).
     DATA t3289 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3289.
-    DATA(t3290) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3290) = t7.
     DATA(t3291) = |UTCLONG_ADD|.
     DATA t3292 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3292.
@@ -13751,14 +13751,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3304) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3303 = t3304.
       DATA t3305 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3306) = CAST zlnt_runtime_map__41b3bb94df3d( t3303 ).
+      DATA(t3306) = t3303.
       DATA(t3307) = |val|.
       DATA t3308 TYPE REF TO zcl_lnt_utc_long_type.
       DATA t3309 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3309.
       t3308 = NEW zcl_lnt_utc_long_type( i_input_967e = t3309 ).
       t3305 = t3306->set( p0 = t3307 p1 = t3308 ).
-      DATA(t3310) = CAST zlnt_runtime_map__41b3bb94df3d( t3303 ).
+      DATA(t3310) = t3303.
       t3302 = t3310.
       t3300 = t3302.
     ELSE.
@@ -13775,7 +13775,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3316) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3315 = t3316.
       DATA t3317 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3318) = CAST zlnt_runtime_map__41b3bb94df3d( t3315 ).
+      DATA(t3318) = t3315.
       DATA(t3319) = |days|.
       DATA t3320 TYPE REF TO zcl_lnt_integer_type.
       DATA t3321 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -13783,7 +13783,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3320 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3321 ).
       t3317 = t3318->set( p0 = t3319 p1 = t3320 ).
       DATA t3322 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3323) = CAST zlnt_runtime_map__41b3bb94df3d( t3315 ).
+      DATA(t3323) = t3315.
       DATA(t3324) = |hour|.
       DATA t3325 TYPE REF TO zcl_lnt_integer_type.
       DATA t3326 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -13791,7 +13791,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3325 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3326 ).
       t3322 = t3323->set( p0 = t3324 p1 = t3325 ).
       DATA t3327 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3328) = CAST zlnt_runtime_map__41b3bb94df3d( t3315 ).
+      DATA(t3328) = t3315.
       DATA(t3329) = |minutes|.
       DATA t3330 TYPE REF TO zcl_lnt_integer_type.
       DATA t3331 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -13799,14 +13799,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3330 = zcl_lnt_integer_type=>get_db65( i_input_967e = t3331 ).
       t3327 = t3328->set( p0 = t3329 p1 = t3330 ).
       DATA t3332 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3333) = CAST zlnt_runtime_map__41b3bb94df3d( t3315 ).
+      DATA(t3333) = t3315.
       DATA(t3334) = |seconds|.
       DATA t3335 TYPE REF TO zcl_lnt_float_type.
       DATA t3336 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3336.
       t3335 = NEW zcl_lnt_float_type( i_input_967e = t3336 ).
       t3332 = t3333->set( p0 = t3334 p1 = t3335 ).
-      DATA(t3337) = CAST zlnt_runtime_map__41b3bb94df3d( t3315 ).
+      DATA(t3337) = t3315.
       t3314 = t3337.
       t3312 = t3314.
     ELSE.
@@ -13849,7 +13849,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3289 = t3290->set( p0 = t3291 p1 = t3292 ).
     DATA t3350 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3350.
-    DATA(t3351) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3351) = t7.
     DATA(t3352) = |UTCLONG_CURRENT|.
     DATA t3353 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3353.
@@ -13913,7 +13913,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3350 = t3351->set( p0 = t3352 p1 = t3353 ).
     DATA t3374 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3374.
-    DATA(t3375) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3375) = t7.
     DATA(t3376) = |UTCLONG_DIFF|.
     DATA t3377 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3377.
@@ -13947,7 +13947,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3389) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3388 = t3389.
       DATA t3390 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3391) = CAST zlnt_runtime_map__41b3bb94df3d( t3388 ).
+      DATA(t3391) = t3388.
       DATA(t3392) = |high|.
       DATA t3393 TYPE REF TO zcl_lnt_utc_long_type.
       DATA t3394 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -13955,14 +13955,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t3393 = NEW zcl_lnt_utc_long_type( i_input_967e = t3394 ).
       t3390 = t3391->set( p0 = t3392 p1 = t3393 ).
       DATA t3395 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3396) = CAST zlnt_runtime_map__41b3bb94df3d( t3388 ).
+      DATA(t3396) = t3388.
       DATA(t3397) = |low|.
       DATA t3398 TYPE REF TO zcl_lnt_utc_long_type.
       DATA t3399 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3399.
       t3398 = NEW zcl_lnt_utc_long_type( i_input_967e = t3399 ).
       t3395 = t3396->set( p0 = t3397 p1 = t3398 ).
-      DATA(t3400) = CAST zlnt_runtime_map__41b3bb94df3d( t3388 ).
+      DATA(t3400) = t3388.
       t3387 = t3400.
       t3385 = t3387.
     ELSE.
@@ -14007,7 +14007,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3374 = t3375->set( p0 = t3376 p1 = t3377 ).
     DATA t3414 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3414.
-    DATA(t3415) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3415) = t7.
     DATA(t3416) = |XSDBOOL|.
     DATA t3417 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3417.
@@ -14041,11 +14041,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3429) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3428 = t3429.
       DATA t3430 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3431) = CAST zlnt_runtime_map__41b3bb94df3d( t3428 ).
+      DATA(t3431) = t3428.
       DATA(t3432) = |val|.
       DATA(t3433) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
       t3430 = t3431->set( p0 = t3432 p1 = t3433 ).
-      DATA(t3434) = CAST zlnt_runtime_map__41b3bb94df3d( t3428 ).
+      DATA(t3434) = t3428.
       t3427 = t3434.
       t3425 = t3427.
     ELSE.
@@ -14091,7 +14091,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t3414 = t3415->set( p0 = t3416 p1 = t3417 ).
     DATA t3449 TYPE REF TO zlnt_runtime_map__c27ad0d4c484.
     CLEAR t3449.
-    DATA(t3450) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3450) = t7.
     DATA(t3451) = |XSTRLEN|.
     DATA t3452 TYPE REF TO zcl_lnt_ibuiltin_method.
     CLEAR t3452.
@@ -14125,14 +14125,14 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       DATA(t3464) = NEW zlnt_runtime_map__41b3bb94df3d( ).
       t3463 = t3464.
       DATA t3465 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      DATA(t3466) = CAST zlnt_runtime_map__41b3bb94df3d( t3463 ).
+      DATA(t3466) = t3463.
       DATA(t3467) = |val|.
       DATA t3468 TYPE REF TO zcl_lnt_x_sequence_type.
       DATA t3469 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t3469.
       t3468 = NEW zcl_lnt_x_sequence_type( i_input_967e = t3469 ).
       t3465 = t3466->set( p0 = t3467 p1 = t3468 ).
-      DATA(t3470) = CAST zlnt_runtime_map__41b3bb94df3d( t3463 ).
+      DATA(t3470) = t3463.
       t3462 = t3470.
       t3460 = t3462.
     ELSE.
@@ -14154,7 +14154,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t3477.
     t3452 = NEW zcl_lnt_ibuiltin_method( i_counter = t3453 i_mandatory = t3460 i_optional = t3472 i_release_7928 = t3473 i_predicate = t3474 i_return_fa63 = t3475 i_cache = t3477 ).
     t3449 = t3450->set( p0 = t3451 p1 = t3452 ).
-    DATA(t3478) = CAST zlnt_runtime_map__c27ad0d4c484( t7 ).
+    DATA(t3478) = t7.
     t6 = t3478.
     zcl_lnt_built_in=>methods = t6.
   ENDMETHOD.

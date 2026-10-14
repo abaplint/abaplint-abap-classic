@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_124357cf DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_124357cf IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = i_name.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t4) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->file = t3.
     DATA(t5) = t2.

@@ -101,13 +101,13 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       DATA(t32) = |Quickfix|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t33) = t27.
       t26 = t33.
       t24 = t26.
     ELSE.
@@ -125,13 +125,13 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_ch_mn_dc_ts_ch_mn_dc.
-    DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_ch_mn_dc_ts_ch_mn_dc.
-    DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/chain_mainly_declarations.ts:61|.
     t2->source_location = t3.
@@ -139,7 +139,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_ch_mn_dc_ts_ch_mn_dc.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/chain_mainly_declarations.ts:65|.
     t2->source_location = t3.
@@ -147,10 +147,10 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_statement( i_statement ).
-    DATA(t3) = CAST zcl_lnt_statement_node( i_statement_node ).
-    DATA(t4) = CAST zlnt_runtime_map__4fdf767b61ba( i_prev_fix ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
+    DATA(t3) = i_statement_node.
+    DATA(t4) = i_prev_fix.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/chain_mainly_declarations.ts:153|.
     t5->source_location = t6.

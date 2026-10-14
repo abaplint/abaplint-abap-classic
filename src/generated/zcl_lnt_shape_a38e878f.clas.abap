@@ -11,14 +11,14 @@ CLASS zcl_lnt_shape_a38e878f DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_a38e878f IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_method_definition( i_method ).
-    DATA(t2) = CAST zif_lnt_interface_definition( i_def ).
+    DATA(t1) = i_method.
+    DATA(t2) = i_def.
     DATA t3 TYPE REF TO zif_lnt_method_definition.
-    DATA(t4) = CAST zif_lnt_method_definition( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->method = t3.
     DATA t5 TYPE REF TO zif_lnt_interface_definition.
-    DATA(t6) = CAST zif_lnt_interface_definition( t2 ).
+    DATA(t6) = t2.
     t5 = t6.
     me->def = t5.
   ENDMETHOD.

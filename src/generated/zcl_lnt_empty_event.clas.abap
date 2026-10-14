@@ -108,10 +108,10 @@ CLASS zcl_lnt_empty_event IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       t28 = t33.
       t26 = t28.
     ELSE.
@@ -129,13 +129,13 @@ CLASS zcl_lnt_empty_event IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_em_ev_ts_em_evn.
-    DATA(t1) = CAST zcl_lnt_empty_event_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_em_ev_ts_em_evn.
-    DATA(t1) = CAST zcl_lnt_empty_event_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/empty_event.ts:41|.
     t2->source_location = t3.
@@ -143,8 +143,8 @@ CLASS zcl_lnt_empty_event IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/empty_event.ts:45|.
     t3->source_location = t4.

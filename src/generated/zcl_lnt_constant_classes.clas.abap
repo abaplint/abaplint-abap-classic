@@ -61,10 +61,10 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Styleguide|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       t14 = t19.
       t12 = t14.
     ELSE.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_cns_cls_ts_cns_cls.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constant_classes.ts:44|.
     t2->source_location = t3.
@@ -90,13 +90,13 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_cn_cl_ts_cn_cls.
-    DATA(t1) = CAST zcl_lnt_constant_classes_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_cn_cl_ts_cn_cls.
-    DATA(t1) = CAST zcl_lnt_constant_classes_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constant_classes.ts:53|.
     t2->source_location = t3.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constant_classes.ts:57|.
     t2->source_location = t3.
@@ -112,7 +112,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD issue_at_constant.
-    DATA(t1) = CAST zcl_lnt_info_constant( i_constant_6eda ).
+    DATA(t1) = i_constant_6eda.
     DATA(t2) = i_message_26cb.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/constant_classes.ts:171|.
@@ -121,7 +121,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constant_classes.ts:44|.
     t2->source_location = t3.
@@ -139,7 +139,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constant_classes.ts:53|.
     t2->source_location = t3.

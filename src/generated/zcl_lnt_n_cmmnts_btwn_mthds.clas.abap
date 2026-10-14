@@ -127,13 +127,13 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
       DATA t32 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t32.
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t33) = t31.
       DATA(t34) = |SingleFile|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t35) = t31.
       DATA(t36) = |Syntax|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t37) = t31.
       t30 = t37.
       t28 = t30.
     ELSE.
@@ -151,13 +151,13 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_n_c_b_m_t_n_cm_bt_mt.
-    DATA(t1) = CAST zcl_lnt_n_cmmnt_btwn_mthds_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_n_c_b_m_t_n_cm_bt_mt.
-    DATA(t1) = CAST zcl_lnt_n_cmmnt_btwn_mthds_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_comments_between_methods.ts:45|.
     t2->source_location = t3.
@@ -165,8 +165,8 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_n_c_b_m_t_n_cm_bt_mt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/no_comments_between_methods.ts:49|.
     t3->source_location = t4.

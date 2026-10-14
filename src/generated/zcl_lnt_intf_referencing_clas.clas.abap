@@ -79,7 +79,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t4) = CAST zcl_lnt_intf_rfrncng_cls_cnf( me->conf ).
+    DATA(t4) = me->conf.
     t3 = t4->allow.
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -87,24 +87,24 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t8) = t2.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
     t1 = t7.
     IF t1 = abap_true.
-      DATA(t9) = CAST zcl_lnt_intf_rfrncng_cls_cnf( me->conf ).
+      DATA(t9) = me->conf.
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t10.
       t9->allow = t10.
     ENDIF.
-    DATA(t11) = CAST zcl_lnt_intf_rfrncng_cls_cnf( me->conf ).
+    DATA(t11) = me->conf.
     result = t11.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_in_rf_cl_ts_in_rf_cl.
-    DATA(t1) = CAST zcl_lnt_intf_rfrncng_cls_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/intf_referencing_clas.ts:42|.
     t2->source_location = t3.
@@ -112,7 +112,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/intf_referencing_clas.ts:46|.
     t2->source_location = t3.
@@ -120,7 +120,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/intf_referencing_clas.ts:51|.
     t2->source_location = t3.
@@ -128,7 +128,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/intf_referencing_clas.ts:61|.
     t2->source_location = t3.
@@ -146,7 +146,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/intf_referencing_clas.ts:42|.
     t2->source_location = t3.

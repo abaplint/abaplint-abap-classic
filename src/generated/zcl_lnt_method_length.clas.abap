@@ -70,13 +70,13 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |Styleguide|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       DATA(t22) = |SingleFile|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t23) = t17.
       t16 = t23.
       t14 = t16.
     ELSE.
@@ -104,13 +104,13 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_mt_ln_ts_mt_lng.
-    DATA(t1) = CAST zcl_lnt_method_length_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_mt_ln_ts_mt_lng.
-    DATA(t1) = CAST zcl_lnt_method_length_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:63|.
     t2->source_location = t3.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_mth_lng_ts_mth_lng.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:67|.
     t2->source_location = t3.
@@ -126,7 +126,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:71|.
     t2->source_location = t3.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_stats ).
+    DATA(t1) = i_stats.
     DATA(t2) = i_type_9913.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/method_length.ts:99|.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_abstract.
-    DATA(t1) = CAST zcl_lnt_imethod_length_result( i_result ).
+    DATA(t1) = i_result.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:126|.
     t2->source_location = t3.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:63|.
     t2->source_location = t3.
@@ -169,7 +169,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_length.ts:67|.
     t2->source_location = t3.

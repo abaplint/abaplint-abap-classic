@@ -122,13 +122,13 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
       DATA t32 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t32.
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t33) = t31.
       DATA(t34) = |SingleFile|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t35) = t31.
       DATA(t36) = |Styleguide|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t37) = t31.
       t30 = t37.
       t28 = t30.
     ELSE.
@@ -146,13 +146,13 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_c_i_t_c_t_ch_if_t_cs.
-    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_c_i_t_c_t_ch_if_t_cs.
-    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/change_if_to_case.ts:46|.
     t2->source_location = t3.
@@ -160,7 +160,7 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_c_i_t_c_t_ch_if_t_cs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/change_if_to_case.ts:50|.
     t2->source_location = t3.
@@ -168,7 +168,7 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze.
-    DATA(t1) = CAST zlnt_runtime_arra_3615468a4bf8( i_conds ).
+    DATA(t1) = i_conds.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/change_if_to_case.ts:88|.
     t2->source_location = t3.

@@ -165,19 +165,19 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
       DATA t40 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t40.
       t39 = t40.
-      DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t41) = t39.
       DATA(t42) = |Styleguide|.
       APPEND t42 TO t41->items.
-      DATA(t43) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t43) = t39.
       DATA(t44) = |Upport|.
       APPEND t44 TO t43->items.
-      DATA(t45) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t45) = t39.
       DATA(t46) = |Experimental|.
       APPEND t46 TO t45->items.
-      DATA(t47) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t47) = t39.
       DATA(t48) = |Quickfix|.
       APPEND t48 TO t47->items.
-      DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t49) = t39.
       t38 = t49.
       t36 = t38.
     ELSE.
@@ -195,13 +195,13 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_pr_in_ts_pr_inl.
-    DATA(t1) = CAST zcl_lnt_prefer_inline_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD in_in_sr_rl_prf_inl_ts_prf_inl.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:64|.
     t2->source_location = t3.
@@ -209,7 +209,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_pr_in_ts_pr_inl.
-    DATA(t1) = CAST zcl_lnt_prefer_inline_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:69|.
     t2->source_location = t3.
@@ -217,7 +217,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:73|.
     t2->source_location = t3.
@@ -225,8 +225,8 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_scope.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_inline.ts:102|.
     t3->source_location = t4.
@@ -234,8 +234,8 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_next_token.
-    DATA(t1) = CAST zcl_lnt_ivariable_reference( i_ref ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_ref.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_inline.ts:174|.
     t3->source_location = t4.
@@ -243,8 +243,8 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD first_use_is_write.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_typed_identifier( i_identifier ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_identifier.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_inline.ts:190|.
     t3->source_location = t4.
@@ -252,8 +252,8 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD statement_has_generic_read.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_statement.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_inline.ts:238|.
     t3->source_location = t4.
@@ -261,8 +261,8 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_local_definition.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_typed_identifier( i_identifier ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_identifier.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_inline.ts:254|.
     t3->source_location = t4.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_scope_candidates.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:264|.
     t2->source_location = t3.
@@ -288,7 +288,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:64|.
     t2->source_location = t3.
@@ -296,7 +296,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_inline.ts:69|.
     t2->source_location = t3.

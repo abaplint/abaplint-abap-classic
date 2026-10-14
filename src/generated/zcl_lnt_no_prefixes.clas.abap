@@ -117,13 +117,13 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |Styleguide|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       t28 = t35.
       t26 = t28.
     ELSE.
@@ -141,13 +141,13 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_n_prf_ts_n_prf.
-    DATA(t1) = CAST zcl_lnt_no_prefixes_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_n_prf_ts_n_prf.
-    DATA(t1) = CAST zcl_lnt_no_prefixes_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_prefixes.ts:62|.
     t2->source_location = t3.
@@ -155,7 +155,7 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rls_n_prf_ts_n_prf.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_prefixes.ts:66|.
     t2->source_location = t3.
@@ -163,9 +163,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_data.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:124|.
     t4->source_location = t5.
@@ -173,9 +173,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_statics.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:154|.
     t4->source_location = t5.
@@ -183,9 +183,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_field_symbols.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:171|.
     t4->source_location = t5.
@@ -193,9 +193,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_constants.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:195|.
     t4->source_location = t5.
@@ -203,9 +203,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_types.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:212|.
     t4->source_location = t5.
@@ -213,9 +213,9 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_method_parameters.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_top_node ).
-    DATA(t2) = CAST zlnt_runtime_rege_5a210f82384e( i_regex ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_top_node.
+    DATA(t2) = i_regex.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/no_prefixes.ts:233|.
     t4->source_location = t5.

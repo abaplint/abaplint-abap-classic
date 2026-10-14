@@ -115,13 +115,13 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |Naming|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       t28 = t35.
       t26 = t28.
     ELSE.
@@ -139,13 +139,13 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cd_as_nm_ts_cd_as_nm.
-    DATA(t1) = CAST zcl_lnt_cds_assctn_nm_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cd_as_nm_ts_cd_as_nm.
-    DATA(t1) = CAST zcl_lnt_cds_assctn_nm_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:37|.
     t2->source_location = t3.
@@ -153,7 +153,7 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_cd_as_nm_ts_cd_as_nm.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:41|.
     t2->source_location = t3.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_i_sr_rl_cd_as_nm_ts_cd_as_nm.
-    DATA(t1) = CAST zif_lnt_object( i_o ).
+    DATA(t1) = i_o.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:45|.
     t2->source_location = t3.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:37|.
     t2->source_location = t3.
@@ -187,7 +187,7 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:41|.
     t2->source_location = t3.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_association_name.ts:45|.
     t2->source_location = t3.

@@ -12,10 +12,10 @@ CLASS zcl_lnt_database_source_info DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_database_source_info IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_union_c74a232f( i_source_75cf ).
+    DATA(t1) = i_source_75cf.
     DATA(t2) = i_name.
     DATA(t3) = i_alias.
-    DATA(t4) = CAST zif_lnt_union_c74a232f( t1 ).
+    DATA(t4) = t1.
     me->source = t4.
     DATA(t5) = t2.
     me->name = t5.

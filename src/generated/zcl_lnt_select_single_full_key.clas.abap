@@ -70,10 +70,10 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |Quickfix|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       t16 = t21.
       t14 = t16.
     ELSE.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_s_r_s_s_f_k_ts_sl_sn_fl_ky.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_single_full_key.ts:39|.
     t2->source_location = t3.
@@ -113,14 +113,14 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   METHOD g_c_i_s_r_s_s_f_k_t_s_sn_fl_ky.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_slct_sngl_fll_ky_cnf.
-    DATA(t3) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->conf ).
+    DATA(t3) = me->conf.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( t2 ).
+    DATA(t7) = t2.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
@@ -131,20 +131,20 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE abap_bool.
     DATA t10 TYPE abap_bool.
-    DATA(t11) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->conf ).
+    DATA(t11) = me->conf.
     t10 = t11->allow_pseudo.
     t9 = t10.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     t12 = t13.
-    DATA(t14) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->conf ).
+    DATA(t14) = me->conf.
     result = t14.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_s_s_f_k_t_s_sn_fl_ky.
-    DATA(t1) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_single_full_key.ts:56|.
     t2->source_location = t3.
@@ -152,8 +152,8 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/select_single_full_key.ts:60|.
     t3->source_location = t4.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_single_full_key.ts:67|.
     t2->source_location = t3.
@@ -169,9 +169,9 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_reference.
-    DATA(t1) = CAST zcl_lnt_position( i_position_a3fd ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_position_a3fd.
+    DATA(t2) = i_spaghetti.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/select_single_full_key.ts:139|.
     t4->source_location = t5.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_single_full_key.ts:39|.
     t2->source_location = t3.
@@ -197,7 +197,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/select_single_full_key.ts:56|.
     t2->source_location = t3.

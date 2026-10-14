@@ -19,23 +19,23 @@ ENDCLASS.
 CLASS zcl_lnt_abap_release IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( i_abap ).
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( i_kernel ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( i_op ).
-    DATA(t5) = CAST zlnt_runtime_dyna_a429568d5be8( i_cloud_47cd ).
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( i_ce ).
+    DATA(t2) = i_abap.
+    DATA(t3) = i_kernel.
+    DATA(t4) = i_op.
+    DATA(t5) = i_cloud_47cd.
+    DATA(t6) = i_ce.
     DATA(t7) = i_ordinal.
     DATA(t8) = t1.
     me->name = t8.
-    DATA(t9) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t9) = t2.
     me->abap = t9.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+    DATA(t10) = t3.
     me->kernel = t10.
-    DATA(t11) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
+    DATA(t11) = t4.
     me->op = t11.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
+    DATA(t12) = t5.
     me->cloud_669f = t12.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
+    DATA(t13) = t6.
     me->ce = t13.
     DATA(t14) = t7.
     me->ordinal = t14.

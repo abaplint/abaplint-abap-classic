@@ -44,10 +44,10 @@ CLASS zcl_lnt_chck_trnsfrmtn_exsts IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Syntax|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -73,13 +73,13 @@ CLASS zcl_lnt_chck_trnsfrmtn_exsts IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_ch_tr_ex_ts_ch_tr_ex.
-    DATA(t1) = CAST zcl_lnt_chck_trnsfrm_exsts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_ch_tr_ex_ts_ch_tr_ex.
-    DATA(t1) = CAST zcl_lnt_chck_trnsfrm_exsts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_transformation_exists.ts:32|.
     t2->source_location = t3.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_chck_trnsfrmtn_exsts IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_ch_tr_ex_ts_ch_tr_ex.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_transformation_exists.ts:36|.
     t2->source_location = t3.

@@ -23,19 +23,19 @@ CLASS zcl_lnt_sql_in_module IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     DATA(t5) = |SIGN|.
     APPEND t5 TO t4->items.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     DATA(t7) = |OPTION|.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t8) = t2.
     DATA(t9) = |LOW|.
     APPEND t9 TO t8->items.
-    DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t10) = t2.
     DATA(t11) = |HIGH|.
     APPEND t11 TO t10->items.
-    DATA(t12) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t12) = t2.
     t1 = t12.
     zcl_lnt_sql_in_module=>range_components = t1.
   ENDMETHOD.

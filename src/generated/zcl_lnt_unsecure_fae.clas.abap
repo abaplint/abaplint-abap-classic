@@ -59,13 +59,13 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Experimental|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       DATA(t20) = |Performance|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t21) = t15.
       t14 = t21.
       t12 = t14.
     ELSE.
@@ -83,13 +83,13 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_uns_f_ts_uns_f.
-    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD int_ins_src_rls_uns_f_ts_uns_f.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unsecure_fae.ts:31|.
     t2->source_location = t3.
@@ -97,7 +97,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_uns_f_ts_uns_f.
-    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unsecure_fae.ts:36|.
     t2->source_location = t3.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unsecure_fae.ts:40|.
     t2->source_location = t3.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unsecure_fae.ts:31|.
     t2->source_location = t3.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unsecure_fae.ts:36|.
     t2->source_location = t3.

@@ -55,7 +55,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
       DATA(t8) = VALUE abap_bool( ).
       DATA(t9) = VALUE abap_bool( ).
       DATA t10 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      DATA(t11) = CAST zlnt_runtime_map__a5ffc3d163a5( t3 ).
+      DATA(t11) = t3.
       DATA(t12) = t7.
       t10 = t11->get( p0 = t12 ).
       IF t10 IS INITIAL.
@@ -63,11 +63,11 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
       ENDIF.
       t8 = xsdbool( t9 = abap_false ).
       IF t8 = abap_true.
-        DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t13) = t1.
         DATA t14 TYPE REF TO zif_lnt_statement.
         DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         DATA t16 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        DATA(t17) = CAST zlnt_runtime_map__a5ffc3d163a5( t3 ).
+        DATA(t17) = t3.
         DATA(t18) = t7.
         t16 = t17->get( p0 = t18 ).
         t15 = t16.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
         APPEND t14 TO t13->items.
       ENDIF.
     ENDLOOP.
-    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t20) = t1.
     result = t20.
 
   ENDMETHOD.

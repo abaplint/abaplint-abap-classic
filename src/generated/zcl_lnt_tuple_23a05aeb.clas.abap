@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_tuple_23a05aeb IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_f0.
-    DATA(t2) = CAST zcl_lnt_abap_release( i_f1 ).
+    DATA(t2) = i_f1.
     DATA(t3) = t1.
     me->f0 = t3.
-    DATA(t4) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t4) = t2.
     me->f1 = t4.
   ENDMETHOD.
 

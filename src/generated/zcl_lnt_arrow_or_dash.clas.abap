@@ -20,7 +20,7 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d24_f4a493f20ed30d ).
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d24_f4a493f20ed30d.
     t4 = zcl_lnt_st_combi_module=>tok( i_t = t5 ).
     IF t4 IS BOUND.
       CREATE OBJECT t3.
@@ -35,7 +35,7 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t8.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d34_abe50883ec07f8 ).
+    DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d34_abe50883ec07f8.
     t9 = zcl_lnt_st_combi_module=>tok( i_t = t10 ).
     IF t9 IS BOUND.
       CREATE OBJECT t8.
@@ -49,11 +49,11 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t13.
     t12 = t13.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t14) = t12.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e ).
+    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d21_8a5d933c5dc37e.
     t16 = zcl_lnt_st_combi_module=>tok( i_t = t17 ).
     IF t16 IS BOUND.
       CREATE OBJECT t15.
@@ -64,9 +64,9 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     ENDIF.
     APPEND t15 TO t14->items.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t21) = CAST zlnt_runtime_dyna_a429568d5be8( t7 ).
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t20) = t2.
+    DATA(t21) = t7.
+    DATA(t22) = t12.
     t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t20 i_second = t21 i_rest = t22 ).
     t1 = t19.
     result = t1.

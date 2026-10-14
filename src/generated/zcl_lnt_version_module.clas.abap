@@ -23,14 +23,14 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    DATA(t1) = CAST zcl_lnt_abap_release( i_running ).
-    DATA(t2) = CAST zcl_lnt_abap_release( i_required ).
+    DATA(t1) = i_running.
+    DATA(t2) = i_required.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE int8.
-    DATA(t5) = CAST zcl_lnt_abap_release( t1 ).
+    DATA(t5) = t1.
     t4 = t5->ordinal.
     DATA t6 TYPE int8.
-    DATA(t7) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t7) = t2.
     t6 = t7->ordinal.
     t3 = xsdbool( t4 >= t6 ).
     result = t3.
@@ -57,14 +57,14 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2 = t3.
     DATA(t6) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t8) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t8) = t2.
     t7 = t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
     t9 = t10.
     DATA(t11) = VALUE abap_bool( ).
-    DATA(t12) = CAST zcl_lnt_abap_release( t7 ).
+    DATA(t12) = t7.
     IF t12 IS INITIAL.
       t11 = abap_true.
     ENDIF.
@@ -98,7 +98,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       RAISE EXCEPTION t13.
     ENDIF.
     DATA t23 TYPE REF TO zcl_lnt_abap_release.
-    DATA(t24) = CAST zcl_lnt_abap_release( t2 ).
+    DATA(t24) = t2.
     t23 = t24.
     result = t23.
 
@@ -352,7 +352,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t85.
     t84 = t85.
-    DATA(t86) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t86) = t84.
     DATA t87 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t87.
     DATA(t88) = |v700|.
@@ -434,7 +434,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t89 = NEW zcl_lnt_shape_27cfcabc( i_abap = t90 i_kernel = t95 i_op = t100 i_cloud_47cd = t105 i_ce = t110 ).
     t87 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t88 i_f1 = t89 ).
     APPEND t87 TO t86->items.
-    DATA(t115) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t115) = t84.
     DATA t116 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t116.
     DATA(t117) = |v701|.
@@ -516,7 +516,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t118 = NEW zcl_lnt_shape_27cfcabc( i_abap = t119 i_kernel = t124 i_op = t129 i_cloud_47cd = t134 i_ce = t139 ).
     t116 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t117 i_f1 = t118 ).
     APPEND t116 TO t115->items.
-    DATA(t144) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t144) = t84.
     DATA t145 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t145.
     DATA(t146) = |v702|.
@@ -598,7 +598,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t147 = NEW zcl_lnt_shape_27cfcabc( i_abap = t148 i_kernel = t153 i_op = t158 i_cloud_47cd = t163 i_ce = t168 ).
     t145 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t146 i_f1 = t147 ).
     APPEND t145 TO t144->items.
-    DATA(t173) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t173) = t84.
     DATA t174 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t174.
     DATA(t175) = |open-abap|.
@@ -678,7 +678,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t176 = NEW zcl_lnt_shape_27cfcabc( i_abap = t177 i_kernel = t182 i_op = t187 i_cloud_47cd = t192 i_ce = t197 ).
     t174 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t175 i_f1 = t176 ).
     APPEND t174 TO t173->items.
-    DATA(t202) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t202) = t84.
     DATA t203 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t203.
     DATA(t204) = |v710|.
@@ -760,7 +760,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t205 = NEW zcl_lnt_shape_27cfcabc( i_abap = t206 i_kernel = t211 i_op = t216 i_cloud_47cd = t221 i_ce = t226 ).
     t203 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t204 i_f1 = t205 ).
     APPEND t203 TO t202->items.
-    DATA(t231) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t231) = t84.
     DATA t232 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t232.
     DATA(t233) = |v711|.
@@ -842,7 +842,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t234 = NEW zcl_lnt_shape_27cfcabc( i_abap = t235 i_kernel = t240 i_op = t245 i_cloud_47cd = t250 i_ce = t255 ).
     t232 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t233 i_f1 = t234 ).
     APPEND t232 TO t231->items.
-    DATA(t260) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t260) = t84.
     DATA t261 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t261.
     DATA(t262) = |v720|.
@@ -924,7 +924,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t263 = NEW zcl_lnt_shape_27cfcabc( i_abap = t264 i_kernel = t269 i_op = t274 i_cloud_47cd = t279 i_ce = t284 ).
     t261 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t262 i_f1 = t263 ).
     APPEND t261 TO t260->items.
-    DATA(t289) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t289) = t84.
     DATA t290 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t290.
     DATA(t291) = |v722|.
@@ -1006,7 +1006,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t292 = NEW zcl_lnt_shape_27cfcabc( i_abap = t293 i_kernel = t298 i_op = t303 i_cloud_47cd = t308 i_ce = t313 ).
     t290 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t291 i_f1 = t292 ).
     APPEND t290 TO t289->items.
-    DATA(t318) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t318) = t84.
     DATA t319 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t319.
     DATA(t320) = |v730|.
@@ -1088,7 +1088,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t321 = NEW zcl_lnt_shape_27cfcabc( i_abap = t322 i_kernel = t327 i_op = t332 i_cloud_47cd = t337 i_ce = t342 ).
     t319 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t320 i_f1 = t321 ).
     APPEND t319 TO t318->items.
-    DATA(t347) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t347) = t84.
     DATA t348 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t348.
     DATA(t349) = |v731|.
@@ -1170,7 +1170,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t350 = NEW zcl_lnt_shape_27cfcabc( i_abap = t351 i_kernel = t356 i_op = t361 i_cloud_47cd = t366 i_ce = t371 ).
     t348 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t349 i_f1 = t350 ).
     APPEND t348 TO t347->items.
-    DATA(t376) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t376) = t84.
     DATA t377 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t377.
     DATA(t378) = |v740sp02|.
@@ -1252,7 +1252,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t379 = NEW zcl_lnt_shape_27cfcabc( i_abap = t380 i_kernel = t385 i_op = t390 i_cloud_47cd = t395 i_ce = t400 ).
     t377 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t378 i_f1 = t379 ).
     APPEND t377 TO t376->items.
-    DATA(t405) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t405) = t84.
     DATA t406 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t406.
     DATA(t407) = |v740sp05|.
@@ -1334,7 +1334,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t408 = NEW zcl_lnt_shape_27cfcabc( i_abap = t409 i_kernel = t414 i_op = t419 i_cloud_47cd = t424 i_ce = t429 ).
     t406 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t407 i_f1 = t408 ).
     APPEND t406 TO t405->items.
-    DATA(t434) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t434) = t84.
     DATA t435 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t435.
     DATA(t436) = |v740sp08|.
@@ -1416,7 +1416,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t437 = NEW zcl_lnt_shape_27cfcabc( i_abap = t438 i_kernel = t443 i_op = t448 i_cloud_47cd = t453 i_ce = t458 ).
     t435 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t436 i_f1 = t437 ).
     APPEND t435 TO t434->items.
-    DATA(t463) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t463) = t84.
     DATA t464 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t464.
     DATA(t465) = |v760|.
@@ -1499,7 +1499,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t466 = NEW zcl_lnt_shape_27cfcabc( i_abap = t467 i_kernel = t472 i_op = t477 i_cloud_47cd = t482 i_ce = t487 ).
     t464 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t465 i_f1 = t466 ).
     APPEND t464 TO t463->items.
-    DATA(t492) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t492) = t84.
     DATA t493 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t493.
     DATA(t494) = |v761|.
@@ -1582,7 +1582,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t495 = NEW zcl_lnt_shape_27cfcabc( i_abap = t496 i_kernel = t501 i_op = t506 i_cloud_47cd = t511 i_ce = t516 ).
     t493 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t494 i_f1 = t495 ).
     APPEND t493 TO t492->items.
-    DATA(t521) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t521) = t84.
     DATA t522 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t522.
     DATA(t523) = |v762|.
@@ -1665,7 +1665,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t524 = NEW zcl_lnt_shape_27cfcabc( i_abap = t525 i_kernel = t530 i_op = t535 i_cloud_47cd = t540 i_ce = t545 ).
     t522 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t523 i_f1 = t524 ).
     APPEND t522 TO t521->items.
-    DATA(t550) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t550) = t84.
     DATA t551 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t551.
     DATA(t552) = |v763|.
@@ -1748,7 +1748,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t553 = NEW zcl_lnt_shape_27cfcabc( i_abap = t554 i_kernel = t559 i_op = t564 i_cloud_47cd = t569 i_ce = t574 ).
     t551 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t552 i_f1 = t553 ).
     APPEND t551 TO t550->items.
-    DATA(t579) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t579) = t84.
     DATA t580 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t580.
     DATA(t581) = |v764|.
@@ -1831,7 +1831,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t582 = NEW zcl_lnt_shape_27cfcabc( i_abap = t583 i_kernel = t588 i_op = t593 i_cloud_47cd = t598 i_ce = t603 ).
     t580 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t581 i_f1 = t582 ).
     APPEND t580 TO t579->items.
-    DATA(t608) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t608) = t84.
     DATA t609 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t609.
     DATA(t610) = |v765|.
@@ -1914,7 +1914,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t611 = NEW zcl_lnt_shape_27cfcabc( i_abap = t612 i_kernel = t617 i_op = t622 i_cloud_47cd = t627 i_ce = t632 ).
     t609 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t610 i_f1 = t611 ).
     APPEND t609 TO t608->items.
-    DATA(t637) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t637) = t84.
     DATA t638 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t638.
     DATA(t639) = |v766|.
@@ -1997,7 +1997,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t640 = NEW zcl_lnt_shape_27cfcabc( i_abap = t641 i_kernel = t646 i_op = t651 i_cloud_47cd = t656 i_ce = t661 ).
     t638 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t639 i_f1 = t640 ).
     APPEND t638 TO t637->items.
-    DATA(t666) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t666) = t84.
     DATA t667 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t667.
     DATA(t668) = |v767|.
@@ -2081,7 +2081,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t669 = NEW zcl_lnt_shape_27cfcabc( i_abap = t670 i_kernel = t675 i_op = t680 i_cloud_47cd = t685 i_ce = t690 ).
     t667 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t668 i_f1 = t669 ).
     APPEND t667 TO t666->items.
-    DATA(t695) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t695) = t84.
     DATA t696 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t696.
     DATA(t697) = |v768|.
@@ -2165,7 +2165,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t698 = NEW zcl_lnt_shape_27cfcabc( i_abap = t699 i_kernel = t704 i_op = t709 i_cloud_47cd = t714 i_ce = t719 ).
     t696 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t697 i_f1 = t698 ).
     APPEND t696 TO t695->items.
-    DATA(t724) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t724) = t84.
     DATA t725 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t725.
     DATA(t726) = |v769|.
@@ -2249,7 +2249,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t727 = NEW zcl_lnt_shape_27cfcabc( i_abap = t728 i_kernel = t733 i_op = t738 i_cloud_47cd = t743 i_ce = t748 ).
     t725 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t726 i_f1 = t727 ).
     APPEND t725 TO t724->items.
-    DATA(t753) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t753) = t84.
     DATA t754 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t754.
     DATA(t755) = |v770|.
@@ -2333,7 +2333,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t756 = NEW zcl_lnt_shape_27cfcabc( i_abap = t757 i_kernel = t762 i_op = t767 i_cloud_47cd = t772 i_ce = t777 ).
     t754 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t755 i_f1 = t756 ).
     APPEND t754 TO t753->items.
-    DATA(t782) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t782) = t84.
     DATA t783 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t783.
     DATA(t784) = |v771|.
@@ -2417,7 +2417,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t785 = NEW zcl_lnt_shape_27cfcabc( i_abap = t786 i_kernel = t791 i_op = t796 i_cloud_47cd = t801 i_ce = t806 ).
     t783 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t784 i_f1 = t785 ).
     APPEND t783 TO t782->items.
-    DATA(t811) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t811) = t84.
     DATA t812 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t812.
     DATA(t813) = |v772|.
@@ -2501,7 +2501,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t814 = NEW zcl_lnt_shape_27cfcabc( i_abap = t815 i_kernel = t820 i_op = t825 i_cloud_47cd = t830 i_ce = t835 ).
     t812 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t813 i_f1 = t814 ).
     APPEND t812 TO t811->items.
-    DATA(t840) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t840) = t84.
     DATA t841 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t841.
     DATA(t842) = |v773|.
@@ -2585,7 +2585,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t843 = NEW zcl_lnt_shape_27cfcabc( i_abap = t844 i_kernel = t849 i_op = t854 i_cloud_47cd = t859 i_ce = t864 ).
     t841 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t842 i_f1 = t843 ).
     APPEND t841 TO t840->items.
-    DATA(t869) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t869) = t84.
     DATA t870 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t870.
     DATA(t871) = |v774|.
@@ -2669,7 +2669,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t872 = NEW zcl_lnt_shape_27cfcabc( i_abap = t873 i_kernel = t878 i_op = t883 i_cloud_47cd = t888 i_ce = t893 ).
     t870 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t871 i_f1 = t872 ).
     APPEND t870 TO t869->items.
-    DATA(t898) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t898) = t84.
     DATA t899 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t899.
     DATA(t900) = |v775|.
@@ -2753,7 +2753,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t901 = NEW zcl_lnt_shape_27cfcabc( i_abap = t902 i_kernel = t907 i_op = t912 i_cloud_47cd = t917 i_ce = t922 ).
     t899 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t900 i_f1 = t901 ).
     APPEND t899 TO t898->items.
-    DATA(t927) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t927) = t84.
     DATA t928 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t928.
     DATA(t929) = |v776|.
@@ -2837,7 +2837,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t930 = NEW zcl_lnt_shape_27cfcabc( i_abap = t931 i_kernel = t936 i_op = t941 i_cloud_47cd = t946 i_ce = t951 ).
     t928 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t929 i_f1 = t930 ).
     APPEND t928 TO t927->items.
-    DATA(t956) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t956) = t84.
     DATA t957 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t957.
     DATA(t958) = |v777|.
@@ -2921,7 +2921,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t959 = NEW zcl_lnt_shape_27cfcabc( i_abap = t960 i_kernel = t965 i_op = t970 i_cloud_47cd = t975 i_ce = t980 ).
     t957 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t958 i_f1 = t959 ).
     APPEND t957 TO t956->items.
-    DATA(t985) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t985) = t84.
     DATA t986 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t986.
     DATA(t987) = |v778|.
@@ -3005,7 +3005,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t988 = NEW zcl_lnt_shape_27cfcabc( i_abap = t989 i_kernel = t994 i_op = t999 i_cloud_47cd = t1004 i_ce = t1009 ).
     t986 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t987 i_f1 = t988 ).
     APPEND t986 TO t985->items.
-    DATA(t1014) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1014) = t84.
     DATA t1015 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1015.
     DATA(t1016) = |v779|.
@@ -3089,7 +3089,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1017 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1018 i_kernel = t1023 i_op = t1028 i_cloud_47cd = t1033 i_ce = t1038 ).
     t1015 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1016 i_f1 = t1017 ).
     APPEND t1015 TO t1014->items.
-    DATA(t1043) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1043) = t84.
     DATA t1044 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1044.
     DATA(t1045) = |v780|.
@@ -3173,7 +3173,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1046 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1047 i_kernel = t1052 i_op = t1057 i_cloud_47cd = t1062 i_ce = t1067 ).
     t1044 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1045 i_f1 = t1046 ).
     APPEND t1044 TO t1043->items.
-    DATA(t1072) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1072) = t84.
     DATA t1073 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1073.
     DATA(t1074) = |v781|.
@@ -3257,7 +3257,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1075 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1076 i_kernel = t1081 i_op = t1086 i_cloud_47cd = t1091 i_ce = t1096 ).
     t1073 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1074 i_f1 = t1075 ).
     APPEND t1073 TO t1072->items.
-    DATA(t1101) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1101) = t84.
     DATA t1102 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1102.
     DATA(t1103) = |v782|.
@@ -3341,7 +3341,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1104 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1105 i_kernel = t1110 i_op = t1115 i_cloud_47cd = t1120 i_ce = t1125 ).
     t1102 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1103 i_f1 = t1104 ).
     APPEND t1102 TO t1101->items.
-    DATA(t1130) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1130) = t84.
     DATA t1131 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1131.
     DATA(t1132) = |v783|.
@@ -3425,7 +3425,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1133 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1134 i_kernel = t1139 i_op = t1144 i_cloud_47cd = t1149 i_ce = t1154 ).
     t1131 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1132 i_f1 = t1133 ).
     APPEND t1131 TO t1130->items.
-    DATA(t1159) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1159) = t84.
     DATA t1160 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1160.
     DATA(t1161) = |v784|.
@@ -3509,7 +3509,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1162 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1163 i_kernel = t1168 i_op = t1173 i_cloud_47cd = t1178 i_ce = t1183 ).
     t1160 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1161 i_f1 = t1162 ).
     APPEND t1160 TO t1159->items.
-    DATA(t1188) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1188) = t84.
     DATA t1189 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1189.
     DATA(t1190) = |v785|.
@@ -3593,7 +3593,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1191 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1192 i_kernel = t1197 i_op = t1202 i_cloud_47cd = t1207 i_ce = t1212 ).
     t1189 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1190 i_f1 = t1191 ).
     APPEND t1189 TO t1188->items.
-    DATA(t1217) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1217) = t84.
     DATA t1218 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1218.
     DATA(t1219) = |v786|.
@@ -3677,7 +3677,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1220 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1221 i_kernel = t1226 i_op = t1231 i_cloud_47cd = t1236 i_ce = t1241 ).
     t1218 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1219 i_f1 = t1220 ).
     APPEND t1218 TO t1217->items.
-    DATA(t1246) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1246) = t84.
     DATA t1247 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1247.
     DATA(t1248) = |v787|.
@@ -3761,7 +3761,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1249 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1250 i_kernel = t1255 i_op = t1260 i_cloud_47cd = t1265 i_ce = t1270 ).
     t1247 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1248 i_f1 = t1249 ).
     APPEND t1247 TO t1246->items.
-    DATA(t1275) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1275) = t84.
     DATA t1276 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1276.
     DATA(t1277) = |v788|.
@@ -3845,7 +3845,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1278 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1279 i_kernel = t1284 i_op = t1289 i_cloud_47cd = t1294 i_ce = t1299 ).
     t1276 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1277 i_f1 = t1278 ).
     APPEND t1276 TO t1275->items.
-    DATA(t1304) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1304) = t84.
     DATA t1305 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1305.
     DATA(t1306) = |v789|.
@@ -3929,7 +3929,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1307 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1308 i_kernel = t1313 i_op = t1318 i_cloud_47cd = t1323 i_ce = t1328 ).
     t1305 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1306 i_f1 = t1307 ).
     APPEND t1305 TO t1304->items.
-    DATA(t1333) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1333) = t84.
     DATA t1334 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1334.
     DATA(t1335) = |v790|.
@@ -4013,7 +4013,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1336 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1337 i_kernel = t1342 i_op = t1347 i_cloud_47cd = t1352 i_ce = t1357 ).
     t1334 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1335 i_f1 = t1336 ).
     APPEND t1334 TO t1333->items.
-    DATA(t1362) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1362) = t84.
     DATA t1363 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1363.
     DATA(t1364) = |v791|.
@@ -4097,7 +4097,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1365 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1366 i_kernel = t1371 i_op = t1376 i_cloud_47cd = t1381 i_ce = t1386 ).
     t1363 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1364 i_f1 = t1365 ).
     APPEND t1363 TO t1362->items.
-    DATA(t1391) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1391) = t84.
     DATA t1392 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1392.
     DATA(t1393) = |v792|.
@@ -4181,7 +4181,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1394 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1395 i_kernel = t1400 i_op = t1405 i_cloud_47cd = t1410 i_ce = t1415 ).
     t1392 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1393 i_f1 = t1394 ).
     APPEND t1392 TO t1391->items.
-    DATA(t1420) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1420) = t84.
     DATA t1421 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1421.
     DATA(t1422) = |v793|.
@@ -4265,7 +4265,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1423 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1424 i_kernel = t1429 i_op = t1434 i_cloud_47cd = t1439 i_ce = t1444 ).
     t1421 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1422 i_f1 = t1423 ).
     APPEND t1421 TO t1420->items.
-    DATA(t1449) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1449) = t84.
     DATA t1450 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1450.
     DATA(t1451) = |v794|.
@@ -4349,7 +4349,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1452 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1453 i_kernel = t1458 i_op = t1463 i_cloud_47cd = t1468 i_ce = t1473 ).
     t1450 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1451 i_f1 = t1452 ).
     APPEND t1450 TO t1449->items.
-    DATA(t1478) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1478) = t84.
     DATA t1479 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1479.
     DATA(t1480) = |v795|.
@@ -4433,7 +4433,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1481 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1482 i_kernel = t1487 i_op = t1492 i_cloud_47cd = t1497 i_ce = t1502 ).
     t1479 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1480 i_f1 = t1481 ).
     APPEND t1479 TO t1478->items.
-    DATA(t1507) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1507) = t84.
     DATA t1508 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1508.
     DATA(t1509) = |v796|.
@@ -4517,7 +4517,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1510 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1511 i_kernel = t1516 i_op = t1521 i_cloud_47cd = t1526 i_ce = t1531 ).
     t1508 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1509 i_f1 = t1510 ).
     APPEND t1508 TO t1507->items.
-    DATA(t1536) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1536) = t84.
     DATA t1537 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1537.
     DATA(t1538) = |v912|.
@@ -4601,7 +4601,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1539 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1540 i_kernel = t1545 i_op = t1550 i_cloud_47cd = t1555 i_ce = t1560 ).
     t1537 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1538 i_f1 = t1539 ).
     APPEND t1537 TO t1536->items.
-    DATA(t1565) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1565) = t84.
     DATA t1566 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1566.
     DATA(t1567) = |v913|.
@@ -4685,7 +4685,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1568 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1569 i_kernel = t1574 i_op = t1579 i_cloud_47cd = t1584 i_ce = t1589 ).
     t1566 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1567 i_f1 = t1568 ).
     APPEND t1566 TO t1565->items.
-    DATA(t1594) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1594) = t84.
     DATA t1595 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1595.
     DATA(t1596) = |v914|.
@@ -4769,7 +4769,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1597 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1598 i_kernel = t1603 i_op = t1608 i_cloud_47cd = t1613 i_ce = t1618 ).
     t1595 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1596 i_f1 = t1597 ).
     APPEND t1595 TO t1594->items.
-    DATA(t1623) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1623) = t84.
     DATA t1624 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1624.
     DATA(t1625) = |v915|.
@@ -4853,7 +4853,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1626 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1627 i_kernel = t1632 i_op = t1637 i_cloud_47cd = t1642 i_ce = t1647 ).
     t1624 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1625 i_f1 = t1626 ).
     APPEND t1624 TO t1623->items.
-    DATA(t1652) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1652) = t84.
     DATA t1653 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1653.
     DATA(t1654) = |v916|.
@@ -4937,7 +4937,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1655 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1656 i_kernel = t1661 i_op = t1666 i_cloud_47cd = t1671 i_ce = t1676 ).
     t1653 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1654 i_f1 = t1655 ).
     APPEND t1653 TO t1652->items.
-    DATA(t1681) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1681) = t84.
     DATA t1682 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1682.
     DATA(t1683) = |v917|.
@@ -5020,7 +5020,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1684 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1685 i_kernel = t1690 i_op = t1695 i_cloud_47cd = t1700 i_ce = t1705 ).
     t1682 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1683 i_f1 = t1684 ).
     APPEND t1682 TO t1681->items.
-    DATA(t1710) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1710) = t84.
     DATA t1711 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1711.
     DATA(t1712) = |v918|.
@@ -5103,7 +5103,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1713 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1714 i_kernel = t1719 i_op = t1724 i_cloud_47cd = t1729 i_ce = t1734 ).
     t1711 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1712 i_f1 = t1713 ).
     APPEND t1711 TO t1710->items.
-    DATA(t1739) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1739) = t84.
     DATA t1740 TYPE REF TO zcl_lnt_tuple_53b925ee.
     CLEAR t1740.
     DATA(t1741) = |Newest|.
@@ -5182,7 +5182,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1742 = NEW zcl_lnt_shape_27cfcabc( i_abap = t1743 i_kernel = t1748 i_op = t1753 i_cloud_47cd = t1758 i_ce = t1763 ).
     t1740 = NEW zcl_lnt_tuple_53b925ee( i_f0 = t1741 i_f1 = t1742 ).
     APPEND t1740 TO t1739->items.
-    DATA(t1768) = CAST zlnt_runtime_arra_c22708faf2e3( t84 ).
+    DATA(t1768) = t84.
     t83 = t1768.
     zcl_lnt_version_module=>release_defs_raw = t83.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
@@ -5217,38 +5217,38 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
       ENDIF.
       t1770 = t1777.
-      DATA(t1780) = CAST zlnt_runtime_arra_c22708faf2e3( t1772 ).
+      DATA(t1780) = t1772.
       DATA t1781 TYPE REF TO zcl_lnt_abap_release.
       DATA t1782 TYPE string.
       DATA t1783 TYPE string.
-      DATA(t1784) = CAST zcl_lnt_tuple_53b925ee( t1775 ).
+      DATA(t1784) = t1775.
       t1783 = t1784->f0.
       t1782 = t1783.
       DATA t1785 TYPE REF TO zcl_lnt_shape_27cfcabc.
       DATA t1786 TYPE REF TO zcl_lnt_shape_27cfcabc.
-      DATA(t1787) = CAST zcl_lnt_tuple_53b925ee( t1775 ).
+      DATA(t1787) = t1775.
       t1786 = t1787->f1.
       t1785 = t1786.
       DATA t1788 TYPE REF TO zcl_lnt_abap_release.
       DATA t1789 TYPE REF TO zcl_lnt_shape_27cfcabc.
-      DATA(t1790) = CAST zcl_lnt_shape_27cfcabc( t1785 ).
+      DATA(t1790) = t1785.
       t1789 = t1790.
       DATA t1791 TYPE REF TO zcl_lnt_abap_release.
       DATA(t1792) = t1782.
       DATA t1793 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t1794) = CAST zcl_lnt_shape_27cfcabc( t1789 ).
+      DATA(t1794) = t1789.
       t1793 = t1794->abap.
       DATA t1795 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t1796) = CAST zcl_lnt_shape_27cfcabc( t1789 ).
+      DATA(t1796) = t1789.
       t1795 = t1796->kernel.
       DATA t1797 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t1798) = CAST zcl_lnt_shape_27cfcabc( t1789 ).
+      DATA(t1798) = t1789.
       t1797 = t1798->op.
       DATA t1799 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t1800) = CAST zcl_lnt_shape_27cfcabc( t1789 ).
+      DATA(t1800) = t1789.
       t1799 = t1800->cloud_669f.
       DATA t1801 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t1802) = CAST zcl_lnt_shape_27cfcabc( t1789 ).
+      DATA(t1802) = t1789.
       t1801 = t1802->ce.
       DATA(t1803) = t1770.
       t1791 = NEW zcl_lnt_abap_release( i_name = t1792 i_abap = t1793 i_kernel = t1795 i_op = t1797 i_cloud_47cd = t1799 i_ce = t1801 i_ordinal = t1803 ).
@@ -5256,7 +5256,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       t1781 = t1788.
       APPEND t1781 TO t1780->items.
     ENDLOOP.
-    DATA(t1804) = CAST zlnt_runtime_arra_c22708faf2e3( t1772 ).
+    DATA(t1804) = t1772.
     t1769 = t1804.
     zcl_lnt_version_module=>release_list = t1769.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
@@ -5296,12 +5296,12 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
       ENDIF.
       t1809 = t1816.
-      DATA(t1819) = CAST zlnt_runtime_arra_c22708faf2e3( t1811 ).
+      DATA(t1819) = t1811.
       DATA t1820 TYPE REF TO zcl_lnt_tuple_23a05aeb.
       CLEAR t1820.
       DATA t1821 TYPE string.
       DATA t1822 TYPE string.
-      DATA(t1823) = CAST zcl_lnt_tuple_53b925ee( t1814 ).
+      DATA(t1823) = t1814.
       t1822 = t1823->f0.
       t1821 = t1822.
       DATA t1824 TYPE REF TO zcl_lnt_tuple_23a05aeb.
@@ -5330,7 +5330,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       t1820 = t1824.
       APPEND t1820 TO t1819->items.
     ENDLOOP.
-    DATA(t1831) = CAST zlnt_runtime_arra_c22708faf2e3( t1811 ).
+    DATA(t1831) = t1811.
     t1808 = t1831.
     DATA t1832 TYPE REF TO zcl_lnt_tuple_23a05aeb.
     CLEAR t1832.
@@ -5339,16 +5339,16 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     LOOP AT t1808->items INTO t1833.
       t1832 ?= t1833.
       DATA t1834 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      DATA(t1835) = CAST zlnt_runtime_map__201f3699a39e( t1806 ).
+      DATA(t1835) = t1806.
       DATA t1836 TYPE string.
-      DATA(t1837) = CAST zcl_lnt_tuple_23a05aeb( t1832 ).
+      DATA(t1837) = t1832.
       t1836 = t1837->f0.
       DATA t1838 TYPE REF TO zcl_lnt_abap_release.
-      DATA(t1839) = CAST zcl_lnt_tuple_23a05aeb( t1832 ).
+      DATA(t1839) = t1832.
       t1838 = t1839->f1.
       t1834 = t1835->set( p0 = t1836 p1 = t1838 ).
     ENDLOOP.
-    DATA(t1840) = CAST zlnt_runtime_map__201f3699a39e( t1806 ).
+    DATA(t1840) = t1806.
     t1805 = t1840.
     zcl_lnt_version_module=>by_name = t1805.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
@@ -5369,16 +5369,16 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1845 = zcl_lnt_version_module=>by_name.
     t1844 = t1845.
     DATA t1846 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t1847) = CAST zlnt_runtime_map__201f3699a39e( t1844 ).
+    DATA(t1847) = t1844.
     t1846 = t1847->keys( ).
     DATA(t1848) = VALUE string( ).
     LOOP AT t1846->items INTO t1848.
       DATA t1849 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      DATA(t1850) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+      DATA(t1850) = t1842.
       DATA(t1851) = t1848.
       DATA t1852 TYPE REF TO zcl_lnt_abap_release.
       DATA t1853 TYPE REF TO zcl_lnt_abap_release.
-      DATA(t1854) = CAST zlnt_runtime_map__201f3699a39e( t1844 ).
+      DATA(t1854) = t1844.
       DATA(t1855) = t1848.
       t1853 = t1854->get( p0 = t1855 ).
       t1852 = t1853.
@@ -5386,7 +5386,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     ENDLOOP.
     DATA t1856 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1856.
-    DATA(t1857) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1857) = t1842.
     DATA(t1858) = |v750|.
     DATA t1859 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1859.
@@ -5404,7 +5404,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1856 = t1857->set( p0 = t1858 p1 = t1859 ).
     DATA t1863 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1863.
-    DATA(t1864) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1864) = t1842.
     DATA(t1865) = |v751|.
     DATA t1866 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1866.
@@ -5422,7 +5422,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1863 = t1864->set( p0 = t1865 p1 = t1866 ).
     DATA t1870 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1870.
-    DATA(t1871) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1871) = t1842.
     DATA(t1872) = |v752|.
     DATA t1873 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1873.
@@ -5440,7 +5440,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1870 = t1871->set( p0 = t1872 p1 = t1873 ).
     DATA t1877 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1877.
-    DATA(t1878) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1878) = t1842.
     DATA(t1879) = |v753|.
     DATA t1880 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1880.
@@ -5458,7 +5458,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1877 = t1878->set( p0 = t1879 p1 = t1880 ).
     DATA t1884 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1884.
-    DATA(t1885) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1885) = t1842.
     DATA(t1886) = |v754|.
     DATA t1887 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1887.
@@ -5476,7 +5476,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1884 = t1885->set( p0 = t1886 p1 = t1887 ).
     DATA t1891 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1891.
-    DATA(t1892) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1892) = t1842.
     DATA(t1893) = |v755|.
     DATA t1894 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1894.
@@ -5494,7 +5494,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1891 = t1892->set( p0 = t1893 p1 = t1894 ).
     DATA t1898 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1898.
-    DATA(t1899) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1899) = t1842.
     DATA(t1900) = |v756|.
     DATA t1901 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1901.
@@ -5512,7 +5512,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1898 = t1899->set( p0 = t1900 p1 = t1901 ).
     DATA t1905 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1905.
-    DATA(t1906) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1906) = t1842.
     DATA(t1907) = |v757|.
     DATA t1908 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1908.
@@ -5530,7 +5530,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1905 = t1906->set( p0 = t1907 p1 = t1908 ).
     DATA t1912 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1912.
-    DATA(t1913) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1913) = t1842.
     DATA(t1914) = |v758|.
     DATA t1915 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1915.
@@ -5548,7 +5548,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1912 = t1913->set( p0 = t1914 p1 = t1915 ).
     DATA t1919 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1919.
-    DATA(t1920) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1920) = t1842.
     DATA(t1921) = |v816|.
     DATA t1922 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1922.
@@ -5564,7 +5564,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1923 = t1924->get( p0 = t1925 ).
     t1922 = t1923.
     t1919 = t1920->set( p0 = t1921 p1 = t1922 ).
-    DATA(t1926) = CAST zlnt_runtime_map__201f3699a39e( t1842 ).
+    DATA(t1926) = t1842.
     t1841 = t1926.
     zcl_lnt_version_module=>release_b8cd = t1841.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
@@ -5577,7 +5577,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1928 = t1929.
     DATA t1930 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1930.
-    DATA(t1931) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1931) = t1928.
     DATA(t1932) = |v700|.
     DATA t1933 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1933.
@@ -5595,7 +5595,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1930 = t1931->set( p0 = t1932 p1 = t1933 ).
     DATA t1937 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1937.
-    DATA(t1938) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1938) = t1928.
     DATA(t1939) = |v702|.
     DATA t1940 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1940.
@@ -5613,7 +5613,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1937 = t1938->set( p0 = t1939 p1 = t1940 ).
     DATA t1944 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1944.
-    DATA(t1945) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1945) = t1928.
     DATA(t1946) = |v740sp02|.
     DATA t1947 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1947.
@@ -5631,7 +5631,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1944 = t1945->set( p0 = t1946 p1 = t1947 ).
     DATA t1951 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1951.
-    DATA(t1952) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1952) = t1928.
     DATA(t1953) = |v740sp05|.
     DATA t1954 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1954.
@@ -5649,7 +5649,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1951 = t1952->set( p0 = t1953 p1 = t1954 ).
     DATA t1958 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1958.
-    DATA(t1959) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1959) = t1928.
     DATA(t1960) = |v740sp08|.
     DATA t1961 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1961.
@@ -5667,7 +5667,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1958 = t1959->set( p0 = t1960 p1 = t1961 ).
     DATA t1965 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1965.
-    DATA(t1966) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1966) = t1928.
     DATA(t1967) = |v750|.
     DATA t1968 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1968.
@@ -5685,7 +5685,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1965 = t1966->set( p0 = t1967 p1 = t1968 ).
     DATA t1972 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1972.
-    DATA(t1973) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1973) = t1928.
     DATA(t1974) = |v751|.
     DATA t1975 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1975.
@@ -5703,7 +5703,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1972 = t1973->set( p0 = t1974 p1 = t1975 ).
     DATA t1979 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1979.
-    DATA(t1980) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1980) = t1928.
     DATA(t1981) = |v752|.
     DATA t1982 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1982.
@@ -5721,7 +5721,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1979 = t1980->set( p0 = t1981 p1 = t1982 ).
     DATA t1986 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1986.
-    DATA(t1987) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1987) = t1928.
     DATA(t1988) = |v753|.
     DATA t1989 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1989.
@@ -5739,7 +5739,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1986 = t1987->set( p0 = t1988 p1 = t1989 ).
     DATA t1993 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1993.
-    DATA(t1994) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t1994) = t1928.
     DATA(t1995) = |v754|.
     DATA t1996 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1996.
@@ -5757,7 +5757,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1993 = t1994->set( p0 = t1995 p1 = t1996 ).
     DATA t2000 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2000.
-    DATA(t2001) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2001) = t1928.
     DATA(t2002) = |v755|.
     DATA t2003 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2003.
@@ -5775,7 +5775,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2000 = t2001->set( p0 = t2002 p1 = t2003 ).
     DATA t2007 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2007.
-    DATA(t2008) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2008) = t1928.
     DATA(t2009) = |v756|.
     DATA t2010 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2010.
@@ -5793,7 +5793,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2007 = t2008->set( p0 = t2009 p1 = t2010 ).
     DATA t2014 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2014.
-    DATA(t2015) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2015) = t1928.
     DATA(t2016) = |v757|.
     DATA t2017 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2017.
@@ -5811,7 +5811,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2014 = t2015->set( p0 = t2016 p1 = t2017 ).
     DATA t2021 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2021.
-    DATA(t2022) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2022) = t1928.
     DATA(t2023) = |v758|.
     DATA t2024 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2024.
@@ -5829,7 +5829,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2021 = t2022->set( p0 = t2023 p1 = t2024 ).
     DATA t2028 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2028.
-    DATA(t2029) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2029) = t1928.
     DATA(t2030) = |v816|.
     DATA t2031 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2031.
@@ -5847,7 +5847,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2028 = t2029->set( p0 = t2030 p1 = t2031 ).
     DATA t2035 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2035.
-    DATA(t2036) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2036) = t1928.
     DATA(t2037) = |Cloud|.
     DATA t2038 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2038.
@@ -5865,7 +5865,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2035 = t2036->set( p0 = t2037 p1 = t2038 ).
     DATA t2042 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2042.
-    DATA(t2043) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2043) = t1928.
     DATA(t2044) = |open-abap|.
     DATA t2045 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2045.
@@ -5881,7 +5881,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2046 = t2047->get( p0 = t2048 ).
     t2045 = t2046.
     t2042 = t2043->set( p0 = t2044 p1 = t2045 ).
-    DATA(t2049) = CAST zlnt_runtime_map__201f3699a39e( t1928 ).
+    DATA(t2049) = t1928.
     t1927 = t2049.
     zcl_lnt_version_module=>by_deprecated = t1927.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.

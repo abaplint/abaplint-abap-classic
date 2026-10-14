@@ -10,11 +10,11 @@ CLASS zcl_lnt_sy_shift DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_shift IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     t3 = t4->find_direct_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t6.
@@ -28,14 +28,14 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       CLEAR t9.
       DATA(t10) = abap_true.
       IF t10 = abap_true.
-        DATA(t11) = CAST zcl_lnt_expression_node( t6 ).
+        DATA(t11) = t6.
         t9 = t11.
       ELSE.
         DATA t12 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t12.
         t9 = t12.
       ENDIF.
-      DATA(t13) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t13) = t2.
       DATA t14 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t14.
       DATA t15 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -48,20 +48,20 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
     ENDLOOP.
     DATA t18 TYPE REF TO zcl_lnt_expression_node.
     DATA t19 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t20) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74 ).
+    DATA(t20) = t1.
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.
     t19 = t20->find_direct_expression( i_type_9913 = t21 ).
     t18 = t19.
     DATA(t22) = VALUE abap_bool( ).
     DATA t23 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t24) = CAST zcl_lnt_expression_node( t18 ).
+    DATA(t24) = t18.
     t23 = t24.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t26.
     t25 = t26.
     DATA(t27) = VALUE abap_bool( ).
-    DATA(t28) = CAST zcl_lnt_expression_node( t23 ).
+    DATA(t28) = t23.
     IF t28 IS INITIAL.
       t27 = abap_true.
     ENDIF.
@@ -71,12 +71,12 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       DATA(t30) = |Shift, Target not found|.
       t29 = t30.
       DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t32) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t32) = t2.
       t31 = t32->issues.
       DATA t33 TYPE REF TO zcl_lnt_issue.
-      DATA(t34) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t34) = t2.
       DATA t35 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t36) = CAST zcl_lnt_statement_node( t1 ).
+      DATA(t36) = t1.
       t35 = t36->get_first_token( ).
       DATA(t37) = t29.
       DATA t38 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -88,16 +88,16 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
     DATA t39 TYPE REF TO zcl_lnt_abstract_type.
     DATA t40 TYPE REF TO zcl_lnt_abstract_type.
     DATA t41 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t42) = CAST zcl_lnt_expression_node( t18 ).
+    DATA(t42) = t18.
     t41 = t42.
-    DATA(t43) = CAST zcl_lnt_syntax_input( t2 ).
+    DATA(t43) = t2.
     t40 = zcl_lnt_sy_target=>run_syntax( i_node = t41 i_input_967e = t43 ).
     t39 = t40.
     DATA(t44) = VALUE abap_bool( ).
     DATA(t45) = VALUE i( ).
     DATA t46 TYPE string.
     DATA t47 TYPE string.
-    DATA(t48) = CAST zcl_lnt_statement_node( t1 ).
+    DATA(t48) = t1.
     t47 = t48->concat_tokens( ).
     DATA(t49) = strlen( t47 ).
     t46 = t47.
@@ -123,10 +123,10 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       DATA t54 TYPE abap_bool.
       DATA t55 TYPE REF TO zcl_lnt_type_utils.
       DATA t56 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t57) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t57) = t2.
       t56 = t57->scope.
       t55 = NEW zcl_lnt_type_utils( i_scope = t56 ).
-      DATA(t58) = CAST zcl_lnt_abstract_type( t39 ).
+      DATA(t58) = t39.
       t54 = t55->is_hex_like( i_type_9913 = t58 ).
       DATA(t59) = abap_false.
       t53 = xsdbool( t54 = t59 ).
@@ -135,12 +135,12 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
         DATA(t61) = |Shift, Target not hex like|.
         t60 = t61.
         DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t63) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t63) = t2.
         t62 = t63->issues.
         DATA t64 TYPE REF TO zcl_lnt_issue.
-        DATA(t65) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t65) = t2.
         DATA t66 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t67) = CAST zcl_lnt_statement_node( t1 ).
+        DATA(t67) = t1.
         t66 = t67->get_first_token( ).
         DATA(t68) = t60.
         DATA t69 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -154,10 +154,10 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       DATA t71 TYPE abap_bool.
       DATA t72 TYPE REF TO zcl_lnt_type_utils.
       DATA t73 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t74) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t74) = t2.
       t73 = t74->scope.
       t72 = NEW zcl_lnt_type_utils( i_scope = t73 ).
-      DATA(t75) = CAST zcl_lnt_abstract_type( t39 ).
+      DATA(t75) = t39.
       t71 = t72->is_char_like( i_type_9913 = t75 ).
       DATA(t76) = abap_false.
       t70 = xsdbool( t71 = t76 ).
@@ -166,12 +166,12 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
         DATA(t78) = |Shift, Target not char like|.
         t77 = t78.
         DATA t79 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t80) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t80) = t2.
         t79 = t80->issues.
         DATA t81 TYPE REF TO zcl_lnt_issue.
-        DATA(t82) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t82) = t2.
         DATA t83 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t84) = CAST zcl_lnt_statement_node( t1 ).
+        DATA(t84) = t1.
         t83 = t84->get_first_token( ).
         DATA(t85) = t77.
         DATA t86 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.

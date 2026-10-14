@@ -11,12 +11,12 @@ CLASS zcl_lnt_shape_d48da73b DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_d48da73b IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_result_id ).
-    DATA(t2) = CAST zlnt_runtime_arra_f39560c658f8( i_data_dc02 ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_result_id.
+    DATA(t2) = i_data_dc02.
+    DATA(t3) = t1.
     me->result_id = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_f39560c658f8.
-    DATA(t5) = CAST zlnt_runtime_arra_f39560c658f8( t2 ).
+    DATA(t5) = t2.
     t4 = t5.
     me->data_56cc = t4.
   ENDMETHOD.

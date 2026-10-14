@@ -12,16 +12,16 @@ CLASS zcl_lnt_shape_be772522 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_be772522 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_diagnostics ).
-    DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_only ).
-    DATA(t3) = CAST zlnt_runtime_opti_4a236cd5714d( i_trigger_kind ).
+    DATA(t1) = i_diagnostics.
+    DATA(t2) = i_only.
+    DATA(t3) = i_trigger_kind.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     me->diagnostics = t4.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     me->only = t6.
-    DATA(t7) = CAST zlnt_runtime_opti_4a236cd5714d( t3 ).
+    DATA(t7) = t3.
     me->trigger_kind = t7.
   ENDMETHOD.
 

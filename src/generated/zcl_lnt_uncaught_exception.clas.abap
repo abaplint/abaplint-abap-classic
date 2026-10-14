@@ -74,10 +74,10 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t16.
       t15 = t16.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t17) = t15.
       DATA(t18) = |Syntax|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
+      DATA(t19) = t15.
       t14 = t19.
       t12 = t14.
     ELSE.
@@ -95,13 +95,13 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_ex_ts_un_exc.
-    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD in_in_sr_rl_unc_exc_ts_unc_exc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/uncaught_exception.ts:49|.
     t2->source_location = t3.
@@ -109,7 +109,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_ex_ts_un_exc.
-    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/uncaught_exception.ts:55|.
     t2->source_location = t3.
@@ -117,8 +117,8 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/uncaught_exception.ts:59|.
     t3->source_location = t4.
@@ -126,8 +126,8 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_union_8249fcb1( i_n_0c97 ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_n_0c97.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/uncaught_exception.ts:87|.
     t3->source_location = t4.
@@ -135,9 +135,9 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_n_0c97 ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_name.
+    DATA(t2) = i_n_0c97.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/uncaught_exception.ts:153|.
     t4->source_location = t5.
@@ -145,8 +145,8 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_for_method_calls.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_n_0c97 ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_n_0c97.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/uncaught_exception.ts:160|.
     t3->source_location = t4.
@@ -154,8 +154,8 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_constructor.
-    DATA(t1) = CAST zif_lnt_class_definition( i_def ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
+    DATA(t1) = i_def.
+    DATA(t2) = i_scope.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/uncaught_exception.ts:186|.
     t3->source_location = t4.
@@ -163,7 +163,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_from_try_structure.
-    DATA(t1) = CAST zcl_lnt_structure_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/uncaught_exception.ts:201|.
     t2->source_location = t3.
@@ -171,8 +171,8 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_sinked_from_method.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_s.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/uncaught_exception.ts:216|.
     t3->source_location = t4.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_sinked.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
+    DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/uncaught_exception.ts:237|.
     t2->source_location = t3.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_local_exceptions.
-    DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/uncaught_exception.ts:279|.
     t2->source_location = t3.

@@ -17,8 +17,8 @@ CLASS zcl_lnt_sub_structure DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sub_structure IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_structure( i_s ).
-    DATA(t2) = CAST zif_lnt_structure( t1 ).
+    DATA(t1) = i_s.
+    DATA(t2) = t1.
     me->s = t2.
   ENDMETHOD.
 
@@ -39,26 +39,26 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
   METHOD first.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t3) = CAST zif_lnt_structure_runnable( me->matcher ).
+    DATA(t3) = me->matcher.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zif_lnt_structure_runnable( t2 ).
+    DATA(t7) = t2.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
     t1 = t6.
     IF t1 = abap_true.
       DATA t8 TYPE REF TO zif_lnt_structure_runnable.
-      DATA(t9) = CAST zif_lnt_structure( me->s ).
+      DATA(t9) = me->s.
       t8 = t9->get_matcher( ).
       me->matcher = t8.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t11) = CAST zif_lnt_structure_runnable( me->matcher ).
+    DATA(t11) = me->matcher.
     t10 = t11->first( ).
     result = t10.
 
@@ -67,79 +67,79 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
   METHOD setup_matcher.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t3) = CAST zif_lnt_structure_runnable( me->matcher ).
+    DATA(t3) = me->matcher.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zif_lnt_structure_runnable( t2 ).
+    DATA(t7) = t2.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
     t1 = t6.
     IF t1 = abap_true.
       DATA t8 TYPE REF TO zif_lnt_structure_runnable.
-      DATA(t9) = CAST zif_lnt_structure( me->s ).
+      DATA(t9) = me->s.
       t8 = t9->get_matcher( ).
       me->matcher = t8.
     ENDIF.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
-    DATA(t2) = CAST zif_lnt_node( i_parent ).
+    DATA(t1) = i_statements.
+    DATA(t2) = i_parent.
     DATA t3 TYPE REF TO zcl_lnt_structure_node.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t5) = CAST zif_lnt_structure( me->s ).
+    DATA(t5) = me->s.
     t4 = NEW zcl_lnt_structure_node( i_structure = t5 ).
     t3 = t4.
     DATA(t6) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t8) = CAST zif_lnt_structure_runnable( me->matcher ).
+    DATA(t8) = me->matcher.
     t7 = t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
     t9 = t10.
     DATA(t11) = VALUE abap_bool( ).
-    DATA(t12) = CAST zif_lnt_structure_runnable( t7 ).
+    DATA(t12) = t7.
     IF t12 IS INITIAL.
       t11 = abap_true.
     ENDIF.
     t6 = t11.
     IF t6 = abap_true.
       DATA t13 TYPE REF TO zif_lnt_structure_runnable.
-      DATA(t14) = CAST zif_lnt_structure( me->s ).
+      DATA(t14) = me->s.
       t13 = t14->get_matcher( ).
       me->matcher = t13.
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_imatch.
     DATA t16 TYPE REF TO zcl_lnt_imatch.
-    DATA(t17) = CAST zif_lnt_structure_runnable( me->matcher ).
-    DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
-    DATA(t19) = CAST zcl_lnt_structure_node( t3 ).
+    DATA(t17) = me->matcher.
+    DATA(t18) = t1.
+    DATA(t19) = t3.
     t16 = t17->run( i_statements = t18 i_parent = t19 ).
     t15 = t16.
     DATA t20 TYPE abap_bool.
     DATA t21 TYPE i.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t23) = CAST zcl_lnt_imatch( t15 ).
+    DATA(t23) = t15.
     t22 = t23->matched.
     t21 = lines( t22->items ).
     DATA(t24) = 0.
     t20 = xsdbool( t21 = t24 ).
     IF t20 = abap_true.
-      DATA(t25) = CAST zcl_lnt_imatch( t15 ).
+      DATA(t25) = t15.
       DATA(t26) = abap_true.
       t25->error = t26.
     ELSE.
-      DATA(t27) = CAST zif_lnt_node( t2 ).
-      DATA(t28) = CAST zcl_lnt_structure_node( t3 ).
+      DATA(t27) = t2.
+      DATA(t28) = t3.
       t27->add_child( i_n_0c97 = t28 ).
     ENDIF.
-    DATA(t29) = CAST zcl_lnt_imatch( t15 ).
+    DATA(t29) = t15.
     result = t29.
 
   ENDMETHOD.

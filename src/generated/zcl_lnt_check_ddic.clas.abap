@@ -49,10 +49,10 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Syntax|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -70,7 +70,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_chc_ddc_ts_chc_ddc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_ddic.ts:30|.
     t2->source_location = t3.
@@ -78,13 +78,13 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_dd_ts_ch_ddc.
-    DATA(t1) = CAST zcl_lnt_check_ddic_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ch_dd_ts_ch_ddc.
-    DATA(t1) = CAST zcl_lnt_check_ddic_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_ddic.ts:39|.
     t2->source_location = t3.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_ddic.ts:43|.
     t2->source_location = t3.
@@ -100,8 +100,8 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_found ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_found.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/check_ddic.ts:61|.
     t3->source_location = t4.
@@ -109,7 +109,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_ddic.ts:30|.
     t2->source_location = t3.
@@ -127,7 +127,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/check_ddic.ts:39|.
     t2->source_location = t3.

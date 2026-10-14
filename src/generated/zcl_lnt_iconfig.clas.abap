@@ -18,26 +18,26 @@ CLASS zcl_lnt_iconfig DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_iglobal_config( i_global ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_dependencies ).
-    DATA(t3) = CAST zcl_lnt_isyntax_settings( i_syntax ).
-    DATA(t4) = CAST zcl_lnt_irename_settings( i_rename ).
-    DATA(t5) = CAST zcl_lnt_iabaplint_app_settings( i_app ).
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( i_rules ).
-    DATA(t7) = CAST zlnt_runtime_dyna_a429568d5be8( i_target_rules ).
-    DATA(t8) = CAST zcl_lnt_iglobal_config( t1 ).
+    DATA(t1) = i_global.
+    DATA(t2) = i_dependencies.
+    DATA(t3) = i_syntax.
+    DATA(t4) = i_rename.
+    DATA(t5) = i_app.
+    DATA(t6) = i_rules.
+    DATA(t7) = i_target_rules.
+    DATA(t8) = t1.
     me->global = t8.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t9) = t2.
     me->dependencies = t9.
-    DATA(t10) = CAST zcl_lnt_isyntax_settings( t3 ).
+    DATA(t10) = t3.
     me->syntax = t10.
-    DATA(t11) = CAST zcl_lnt_irename_settings( t4 ).
+    DATA(t11) = t4.
     me->rename = t11.
-    DATA(t12) = CAST zcl_lnt_iabaplint_app_settings( t5 ).
+    DATA(t12) = t5.
     me->app = t12.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
+    DATA(t13) = t6.
     me->rules = t13.
-    DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t7 ).
+    DATA(t14) = t7.
     me->target_rules = t14.
   ENDMETHOD.
 

@@ -23,100 +23,100 @@ CLASS zcl_lnt_sql_typd_ltrl_mdl IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     DATA(t5) = |CHAR|.
     APPEND t5 TO t4->items.
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     DATA(t7) = |CLNT|.
     APPEND t7 TO t6->items.
-    DATA(t8) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t8) = t2.
     DATA(t9) = |CUKY|.
     APPEND t9 TO t8->items.
-    DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t10) = t2.
     DATA(t11) = |CURR|.
     APPEND t11 TO t10->items.
-    DATA(t12) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t12) = t2.
     DATA(t13) = |DATN|.
     APPEND t13 TO t12->items.
-    DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t14) = t2.
     DATA(t15) = |DATS|.
     APPEND t15 TO t14->items.
-    DATA(t16) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t16) = t2.
     DATA(t17) = |DEC|.
     APPEND t17 TO t16->items.
-    DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t18) = t2.
     DATA(t19) = |DECFLOAT16|.
     APPEND t19 TO t18->items.
-    DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t20) = t2.
     DATA(t21) = |DECFLOAT34|.
     APPEND t21 TO t20->items.
-    DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t22) = t2.
     DATA(t23) = |D16N|.
     APPEND t23 TO t22->items.
-    DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t24) = t2.
     DATA(t25) = |D34N|.
     APPEND t25 TO t24->items.
-    DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t26) = t2.
     DATA(t27) = |D16D|.
     APPEND t27 TO t26->items.
-    DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t28) = t2.
     DATA(t29) = |D34D|.
     APPEND t29 TO t28->items.
-    DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t30) = t2.
     DATA(t31) = |D16R|.
     APPEND t31 TO t30->items.
-    DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t32) = t2.
     DATA(t33) = |D34R|.
     APPEND t33 TO t32->items.
-    DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t34) = t2.
     DATA(t35) = |FLTP|.
     APPEND t35 TO t34->items.
-    DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t36) = t2.
     DATA(t37) = |INT1|.
     APPEND t37 TO t36->items.
-    DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t38) = t2.
     DATA(t39) = |INT2|.
     APPEND t39 TO t38->items.
-    DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t40) = t2.
     DATA(t41) = |INT4|.
     APPEND t41 TO t40->items.
-    DATA(t42) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t42) = t2.
     DATA(t43) = |INT8|.
     APPEND t43 TO t42->items.
-    DATA(t44) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t44) = t2.
     DATA(t45) = |LANG|.
     APPEND t45 TO t44->items.
-    DATA(t46) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t46) = t2.
     DATA(t47) = |NUMC|.
     APPEND t47 TO t46->items.
-    DATA(t48) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t48) = t2.
     DATA(t49) = |QUAN|.
     APPEND t49 TO t48->items.
-    DATA(t50) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t50) = t2.
     DATA(t51) = |RAW|.
     APPEND t51 TO t50->items.
-    DATA(t52) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t52) = t2.
     DATA(t53) = |RAWSTRING|.
     APPEND t53 TO t52->items.
-    DATA(t54) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t54) = t2.
     DATA(t55) = |SSTRING|.
     APPEND t55 TO t54->items.
-    DATA(t56) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t56) = t2.
     DATA(t57) = |STRING|.
     APPEND t57 TO t56->items.
-    DATA(t58) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t58) = t2.
     DATA(t59) = |TIMN|.
     APPEND t59 TO t58->items.
-    DATA(t60) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t60) = t2.
     DATA(t61) = |TIMS|.
     APPEND t61 TO t60->items.
-    DATA(t62) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t62) = t2.
     DATA(t63) = |UNIT|.
     APPEND t63 TO t62->items.
-    DATA(t64) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t64) = t2.
     DATA(t65) = |UTCLONG|.
     APPEND t65 TO t64->items.
-    DATA(t66) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t66) = t2.
     t1 = t66.
     zcl_lnt_sql_typd_ltrl_mdl=>typed_literal_types = t1.
   ENDMETHOD.

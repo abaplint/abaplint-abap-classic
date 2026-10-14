@@ -100,19 +100,19 @@ CLASS zcl_lnt_use_new IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |Upport|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       DATA(t32) = |Styleguide|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t33) = t27.
       DATA(t34) = |Quickfix|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t35) = t27.
       DATA(t36) = |SingleFile|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t37) = t27.
       t26 = t37.
       t24 = t26.
     ELSE.
@@ -137,13 +137,13 @@ CLASS zcl_lnt_use_new IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rls_us_nw_ts_us_nw.
-    DATA(t1) = CAST zcl_lnt_use_new_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rls_us_nw_ts_us_nw.
-    DATA(t1) = CAST zcl_lnt_use_new_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/use_new.ts:44|.
     t2->source_location = t3.
@@ -151,8 +151,8 @@ CLASS zcl_lnt_use_new IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/use_new.ts:48|.
     t3->source_location = t4.
@@ -160,8 +160,8 @@ CLASS zcl_lnt_use_new IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_statement.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/use_new.ts:83|.
     t3->source_location = t4.

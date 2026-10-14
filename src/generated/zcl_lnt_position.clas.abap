@@ -38,12 +38,12 @@ CLASS zcl_lnt_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_after.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV int8( me->row ).
     DATA t5 TYPE int8.
-    DATA(t6) = CAST zcl_lnt_position( t1 ).
+    DATA(t6) = t1.
     t5 = t6->row.
     t3 = xsdbool( t4 > t5 ).
     t2 = t3.
@@ -52,7 +52,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       DATA t8 TYPE abap_bool.
       DATA(t9) = CONV int8( me->row ).
       DATA t10 TYPE int8.
-      DATA(t11) = CAST zcl_lnt_position( t1 ).
+      DATA(t11) = t1.
       t10 = t11->row.
       t8 = xsdbool( t9 = t10 ).
       t7 = t8.
@@ -60,7 +60,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
         DATA t12 TYPE abap_bool.
         DATA(t13) = CONV int8( me->col ).
         DATA t14 TYPE int8.
-        DATA(t15) = CAST zcl_lnt_position( t1 ).
+        DATA(t15) = t1.
         t14 = t15->col.
         t12 = xsdbool( t13 >= t14 ).
         t7 = t12.
@@ -72,16 +72,16 @@ CLASS zcl_lnt_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD equals.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV int8( me->row ).
     DATA t5 TYPE int8.
     DATA t6 TYPE REF TO zcl_lnt_position.
-    DATA(t7) = CAST zcl_lnt_position( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE int8.
-    DATA(t9) = CAST zcl_lnt_position( t6 ).
+    DATA(t9) = t6.
     t8 = t9->row.
     t5 = t8.
     t3 = xsdbool( t4 = t5 ).
@@ -91,10 +91,10 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       DATA(t11) = CONV int8( me->col ).
       DATA t12 TYPE int8.
       DATA t13 TYPE REF TO zcl_lnt_position.
-      DATA(t14) = CAST zcl_lnt_position( t1 ).
+      DATA(t14) = t1.
       t13 = t14.
       DATA t15 TYPE int8.
-      DATA(t16) = CAST zcl_lnt_position( t13 ).
+      DATA(t16) = t13.
       t15 = t16->col.
       t12 = t15.
       t10 = xsdbool( t11 = t12 ).
@@ -105,12 +105,12 @@ CLASS zcl_lnt_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_before.
-    DATA(t1) = CAST zcl_lnt_position( i_p ).
+    DATA(t1) = i_p.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV int8( me->row ).
     DATA t5 TYPE int8.
-    DATA(t6) = CAST zcl_lnt_position( t1 ).
+    DATA(t6) = t1.
     t5 = t6->row.
     t3 = xsdbool( t4 < t5 ).
     t2 = t3.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       DATA t8 TYPE abap_bool.
       DATA(t9) = CONV int8( me->row ).
       DATA t10 TYPE int8.
-      DATA(t11) = CAST zcl_lnt_position( t1 ).
+      DATA(t11) = t1.
       t10 = t11->row.
       t8 = xsdbool( t9 = t10 ).
       t7 = t8.
@@ -127,7 +127,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
         DATA t12 TYPE abap_bool.
         DATA(t13) = CONV int8( me->col ).
         DATA t14 TYPE int8.
-        DATA(t15) = CAST zcl_lnt_position( t1 ).
+        DATA(t15) = t1.
         t14 = t15->col.
         t12 = xsdbool( t13 < t14 ).
         t7 = t12.
@@ -139,8 +139,8 @@ CLASS zcl_lnt_position IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_between.
-    DATA(t1) = CAST zcl_lnt_position( i_p1 ).
-    DATA(t2) = CAST zcl_lnt_position( i_p2 ).
+    DATA(t1) = i_p1.
+    DATA(t2) = i_p2.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/position.ts:31|.
     t3->source_location = t4.

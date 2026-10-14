@@ -28,7 +28,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t4) = t2.
     DATA t5 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t5.
     DATA(t6) = |abs|.
@@ -48,7 +48,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t8 = t9.
     t5 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t6 i_f1 = t7 i_f2 = t8 ).
     APPEND t5 TO t4->items.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t12) = t2.
     DATA t13 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t13.
     DATA(t14) = |ceil|.
@@ -68,7 +68,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t16 = t17.
     t13 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t14 i_f1 = t15 i_f2 = t16 ).
     APPEND t13 TO t12->items.
-    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t20) = t2.
     DATA t21 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t21.
     DATA(t22) = |floor|.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t24 = t25.
     t21 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t22 i_f1 = t23 i_f2 = t24 ).
     APPEND t21 TO t20->items.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t28) = t2.
     DATA t29 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t29.
     DATA(t30) = |div|.
@@ -108,7 +108,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t32 = t33.
     t29 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t30 i_f1 = t31 i_f2 = t32 ).
     APPEND t29 TO t28->items.
-    DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t36) = t2.
     DATA t37 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t37.
     DATA(t38) = |mod|.
@@ -128,7 +128,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t40 = t41.
     t37 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t38 i_f1 = t39 i_f2 = t40 ).
     APPEND t37 TO t36->items.
-    DATA(t44) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t44) = t2.
     DATA t45 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t45.
     DATA(t46) = |coalesce|.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t49 = t50.
     t45 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t46 i_f1 = t47 i_f2 = t49 ).
     APPEND t45 TO t44->items.
-    DATA(t53) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t53) = t2.
     DATA t54 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t54.
     DATA(t55) = |concat|.
@@ -170,7 +170,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t57 = t58.
     t54 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t55 i_f1 = t56 i_f2 = t57 ).
     APPEND t54 TO t53->items.
-    DATA(t61) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t61) = t2.
     DATA t62 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t62.
     DATA(t63) = |length|.
@@ -190,7 +190,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t65 = t66.
     t62 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t63 i_f1 = t64 i_f2 = t65 ).
     APPEND t62 TO t61->items.
-    DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t69) = t2.
     DATA t70 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t70.
     DATA(t71) = |ltrim|.
@@ -210,7 +210,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t73 = t74.
     t70 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t71 i_f1 = t72 i_f2 = t73 ).
     APPEND t70 TO t69->items.
-    DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t77) = t2.
     DATA t78 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t78.
     DATA(t79) = |rtrim|.
@@ -230,7 +230,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t81 = t82.
     t78 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t79 i_f1 = t80 i_f2 = t81 ).
     APPEND t78 TO t77->items.
-    DATA(t85) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t85) = t2.
     DATA t86 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t86.
     DATA(t87) = |right|.
@@ -250,7 +250,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t89 = t90.
     t86 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t87 i_f1 = t88 i_f2 = t89 ).
     APPEND t86 TO t85->items.
-    DATA(t93) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t93) = t2.
     DATA t94 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t94.
     DATA(t95) = |replace|.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t97 = t98.
     t94 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t95 i_f1 = t96 i_f2 = t97 ).
     APPEND t94 TO t93->items.
-    DATA(t101) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t101) = t2.
     DATA t102 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t102.
     DATA(t103) = |round|.
@@ -290,7 +290,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t105 = t106.
     t102 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t103 i_f1 = t104 i_f2 = t105 ).
     APPEND t102 TO t101->items.
-    DATA(t109) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t109) = t2.
     DATA t110 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t110.
     DATA(t111) = |substring|.
@@ -310,7 +310,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t113 = t114.
     t110 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t111 i_f1 = t112 i_f2 = t113 ).
     APPEND t110 TO t109->items.
-    DATA(t117) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t117) = t2.
     DATA t118 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t118.
     DATA(t119) = |lpad|.
@@ -330,7 +330,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t121 = t122.
     t118 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t119 i_f1 = t120 i_f2 = t121 ).
     APPEND t118 TO t117->items.
-    DATA(t125) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t125) = t2.
     DATA t126 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t126.
     DATA(t127) = |instr|.
@@ -350,7 +350,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t129 = t130.
     t126 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t127 i_f1 = t128 i_f2 = t129 ).
     APPEND t126 TO t125->items.
-    DATA(t133) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t133) = t2.
     DATA t134 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t134.
     DATA(t135) = |concat_with_space|.
@@ -370,7 +370,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t137 = t138.
     t134 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t135 i_f1 = t136 i_f2 = t137 ).
     APPEND t134 TO t133->items.
-    DATA(t141) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t141) = t2.
     DATA t142 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t142.
     DATA(t143) = |rpad|.
@@ -390,7 +390,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t145 = t146.
     t142 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t143 i_f1 = t144 i_f2 = t145 ).
     APPEND t142 TO t141->items.
-    DATA(t149) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t149) = t2.
     DATA t150 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t150.
     DATA(t151) = |left|.
@@ -410,7 +410,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t153 = t154.
     t150 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t151 i_f1 = t152 i_f2 = t153 ).
     APPEND t150 TO t149->items.
-    DATA(t157) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t157) = t2.
     DATA t158 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t158.
     DATA(t159) = |lower|.
@@ -430,7 +430,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t161 = t162.
     t158 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t159 i_f1 = t160 i_f2 = t161 ).
     APPEND t158 TO t157->items.
-    DATA(t165) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t165) = t2.
     DATA t166 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t166.
     DATA(t167) = |upper|.
@@ -450,7 +450,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t169 = t170.
     t166 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t167 i_f1 = t168 i_f2 = t169 ).
     APPEND t166 TO t165->items.
-    DATA(t173) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t173) = t2.
     DATA t174 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t174.
     DATA(t175) = |division|.
@@ -470,7 +470,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t177 = t178.
     t174 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t175 i_f1 = t176 i_f2 = t177 ).
     APPEND t174 TO t173->items.
-    DATA(t181) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t181) = t2.
     DATA t182 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t182.
     DATA(t183) = |bintohex|.
@@ -490,7 +490,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t185 = t186.
     t182 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t183 i_f1 = t184 i_f2 = t185 ).
     APPEND t182 TO t181->items.
-    DATA(t189) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t189) = t2.
     DATA t190 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t190.
     DATA(t191) = |hextobin|.
@@ -510,7 +510,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t193 = t194.
     t190 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t191 i_f1 = t192 i_f2 = t193 ).
     APPEND t190 TO t189->items.
-    DATA(t197) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t197) = t2.
     DATA t198 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t198.
     DATA(t199) = |dats_is_valid|.
@@ -530,7 +530,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t201 = t202.
     t198 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t199 i_f1 = t200 i_f2 = t201 ).
     APPEND t198 TO t197->items.
-    DATA(t205) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t205) = t2.
     DATA t206 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t206.
     DATA(t207) = |dats_days_between|.
@@ -550,7 +550,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t209 = t210.
     t206 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t207 i_f1 = t208 i_f2 = t209 ).
     APPEND t206 TO t205->items.
-    DATA(t213) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t213) = t2.
     DATA t214 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t214.
     DATA(t215) = |dats_add_days|.
@@ -570,7 +570,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t217 = t218.
     t214 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t215 i_f1 = t216 i_f2 = t217 ).
     APPEND t214 TO t213->items.
-    DATA(t221) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t221) = t2.
     DATA t222 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t222.
     DATA(t223) = |dats_add_months|.
@@ -590,7 +590,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t225 = t226.
     t222 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t223 i_f1 = t224 i_f2 = t225 ).
     APPEND t222 TO t221->items.
-    DATA(t229) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t229) = t2.
     DATA t230 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t230.
     DATA(t231) = |uuid|.
@@ -610,7 +610,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t233 = t234.
     t230 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t231 i_f1 = t232 i_f2 = t233 ).
     APPEND t230 TO t229->items.
-    DATA(t237) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t237) = t2.
     DATA t238 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t238.
     DATA(t239) = |utcl_current|.
@@ -630,7 +630,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t241 = t242.
     t238 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t239 i_f1 = t240 i_f2 = t241 ).
     APPEND t238 TO t237->items.
-    DATA(t245) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t245) = t2.
     DATA t246 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t246.
     DATA(t247) = |tstmp_current_utctimestamp|.
@@ -650,7 +650,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t249 = t250.
     t246 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t247 i_f1 = t248 i_f2 = t249 ).
     APPEND t246 TO t245->items.
-    DATA(t253) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t253) = t2.
     DATA t254 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t254.
     DATA(t255) = |tstmp_is_valid|.
@@ -670,7 +670,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t257 = t258.
     t254 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t255 i_f1 = t256 i_f2 = t257 ).
     APPEND t254 TO t253->items.
-    DATA(t261) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t261) = t2.
     DATA t262 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t262.
     DATA(t263) = |tims_is_valid|.
@@ -690,7 +690,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t265 = t266.
     t262 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t263 i_f1 = t264 i_f2 = t265 ).
     APPEND t262 TO t261->items.
-    DATA(t269) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t269) = t2.
     DATA t270 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t270.
     DATA(t271) = |utcl_add_seconds|.
@@ -710,7 +710,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t273 = t274.
     t270 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t271 i_f1 = t272 i_f2 = t273 ).
     APPEND t270 TO t269->items.
-    DATA(t277) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t277) = t2.
     DATA t278 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t278.
     DATA(t279) = |utcl_seconds_between|.
@@ -730,7 +730,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t281 = t282.
     t278 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t279 i_f1 = t280 i_f2 = t281 ).
     APPEND t278 TO t277->items.
-    DATA(t285) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t285) = t2.
     DATA t286 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t286.
     DATA(t287) = |datn_days_between|.
@@ -750,7 +750,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t289 = t290.
     t286 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t287 i_f1 = t288 i_f2 = t289 ).
     APPEND t286 TO t285->items.
-    DATA(t293) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t293) = t2.
     DATA t294 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t294.
     DATA(t295) = |datn_add_days|.
@@ -770,7 +770,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t297 = t298.
     t294 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t295 i_f1 = t296 i_f2 = t297 ).
     APPEND t294 TO t293->items.
-    DATA(t301) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t301) = t2.
     DATA t302 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t302.
     DATA(t303) = |datn_add_months|.
@@ -790,7 +790,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t305 = t306.
     t302 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t303 i_f1 = t304 i_f2 = t305 ).
     APPEND t302 TO t301->items.
-    DATA(t309) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t309) = t2.
     DATA t310 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t310.
     DATA(t311) = |as_geo_json|.
@@ -810,7 +810,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t313 = t314.
     t310 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t311 i_f1 = t312 i_f2 = t313 ).
     APPEND t310 TO t309->items.
-    DATA(t317) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t317) = t2.
     DATA t318 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t318.
     DATA(t319) = |allow_precision_loss|.
@@ -830,7 +830,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t321 = t322.
     t318 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t319 i_f1 = t320 i_f2 = t321 ).
     APPEND t318 TO t317->items.
-    DATA(t325) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t325) = t2.
     DATA t326 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t326.
     DATA(t327) = |to_clob|.
@@ -850,7 +850,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t329 = t330.
     t326 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t327 i_f1 = t328 i_f2 = t329 ).
     APPEND t326 TO t325->items.
-    DATA(t333) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t333) = t2.
     DATA t334 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t334.
     DATA(t335) = |to_blob|.
@@ -870,7 +870,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t337 = t338.
     t334 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t335 i_f1 = t336 i_f2 = t337 ).
     APPEND t334 TO t333->items.
-    DATA(t341) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t341) = t2.
     DATA t342 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t342.
     DATA(t343) = |grouping|.
@@ -890,7 +890,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t345 = t346.
     t342 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t343 i_f1 = t344 i_f2 = t345 ).
     APPEND t342 TO t341->items.
-    DATA(t349) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t349) = t2.
     DATA t350 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t350.
     DATA(t351) = |extract_year|.
@@ -910,7 +910,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t353 = t354.
     t350 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t351 i_f1 = t352 i_f2 = t353 ).
     APPEND t350 TO t349->items.
-    DATA(t357) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t357) = t2.
     DATA t358 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t358.
     DATA(t359) = |extract_month|.
@@ -930,7 +930,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t361 = t362.
     t358 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t359 i_f1 = t360 i_f2 = t361 ).
     APPEND t358 TO t357->items.
-    DATA(t365) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t365) = t2.
     DATA t366 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t366.
     DATA(t367) = |extract_day|.
@@ -950,7 +950,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t369 = t370.
     t366 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t367 i_f1 = t368 i_f2 = t369 ).
     APPEND t366 TO t365->items.
-    DATA(t373) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t373) = t2.
     DATA t374 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t374.
     DATA(t375) = |extract_hour|.
@@ -970,7 +970,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t377 = t378.
     t374 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t375 i_f1 = t376 i_f2 = t377 ).
     APPEND t374 TO t373->items.
-    DATA(t381) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t381) = t2.
     DATA t382 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t382.
     DATA(t383) = |extract_minute|.
@@ -990,7 +990,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t385 = t386.
     t382 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t383 i_f1 = t384 i_f2 = t385 ).
     APPEND t382 TO t381->items.
-    DATA(t389) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t389) = t2.
     DATA t390 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t390.
     DATA(t391) = |extract_second|.
@@ -1010,7 +1010,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t393 = t394.
     t390 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t391 i_f1 = t392 i_f2 = t393 ).
     APPEND t390 TO t389->items.
-    DATA(t397) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t397) = t2.
     DATA t398 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t398.
     DATA(t399) = |days_between|.
@@ -1030,7 +1030,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t401 = t402.
     t398 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t399 i_f1 = t400 i_f2 = t401 ).
     APPEND t398 TO t397->items.
-    DATA(t405) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t405) = t2.
     DATA t406 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t406.
     DATA(t407) = |add_days|.
@@ -1050,7 +1050,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t409 = t410.
     t406 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t407 i_f1 = t408 i_f2 = t409 ).
     APPEND t406 TO t405->items.
-    DATA(t413) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t413) = t2.
     DATA t414 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t414.
     DATA(t415) = |add_months|.
@@ -1070,7 +1070,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t417 = t418.
     t414 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t415 i_f1 = t416 i_f2 = t417 ).
     APPEND t414 TO t413->items.
-    DATA(t421) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t421) = t2.
     DATA t422 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t422.
     DATA(t423) = |monthname|.
@@ -1090,7 +1090,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t425 = t426.
     t422 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t423 i_f1 = t424 i_f2 = t425 ).
     APPEND t422 TO t421->items.
-    DATA(t429) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t429) = t2.
     DATA t430 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t430.
     DATA(t431) = |dayname|.
@@ -1110,7 +1110,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t433 = t434.
     t430 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t431 i_f1 = t432 i_f2 = t433 ).
     APPEND t430 TO t429->items.
-    DATA(t437) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t437) = t2.
     DATA t438 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t438.
     DATA(t439) = |initcap|.
@@ -1130,7 +1130,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t441 = t442.
     t438 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t439 i_f1 = t440 i_f2 = t441 ).
     APPEND t438 TO t437->items.
-    DATA(t445) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t445) = t2.
     DATA t446 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t446.
     DATA(t447) = |is_valid|.
@@ -1150,7 +1150,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t449 = t450.
     t446 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t447 i_f1 = t448 i_f2 = t449 ).
     APPEND t446 TO t445->items.
-    DATA(t453) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t453) = t2.
     DATA t454 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t454.
     DATA(t455) = |weekday|.
@@ -1170,7 +1170,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t457 = t458.
     t454 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t455 i_f1 = t456 i_f2 = t457 ).
     APPEND t454 TO t453->items.
-    DATA(t461) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t461) = t2.
     DATA t462 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t462.
     DATA(t463) = |locate|.
@@ -1192,7 +1192,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t466 = t467.
     t462 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t463 i_f1 = t464 i_f2 = t466 ).
     APPEND t462 TO t461->items.
-    DATA(t470) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t470) = t2.
     DATA t471 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t471.
     DATA(t472) = |greatest|.
@@ -1214,7 +1214,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t475 = t476.
     t471 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t472 i_f1 = t473 i_f2 = t475 ).
     APPEND t471 TO t470->items.
-    DATA(t479) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t479) = t2.
     DATA t480 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t480.
     DATA(t481) = |least|.
@@ -1236,7 +1236,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t484 = t485.
     t480 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t481 i_f1 = t482 i_f2 = t484 ).
     APPEND t480 TO t479->items.
-    DATA(t488) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t488) = t2.
     DATA t489 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t489.
     DATA(t490) = |hierarchy_composite_id|.
@@ -1258,7 +1258,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t493 = t494.
     t489 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t490 i_f1 = t491 i_f2 = t493 ).
     APPEND t489 TO t488->items.
-    DATA(t497) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t497) = t2.
     DATA t498 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t498.
     DATA(t499) = |sin|.
@@ -1278,7 +1278,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t501 = t502.
     t498 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t499 i_f1 = t500 i_f2 = t501 ).
     APPEND t498 TO t497->items.
-    DATA(t505) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t505) = t2.
     DATA t506 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t506.
     DATA(t507) = |cos|.
@@ -1298,7 +1298,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t509 = t510.
     t506 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t507 i_f1 = t508 i_f2 = t509 ).
     APPEND t506 TO t505->items.
-    DATA(t513) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t513) = t2.
     DATA t514 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t514.
     DATA(t515) = |tan|.
@@ -1318,7 +1318,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t517 = t518.
     t514 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t515 i_f1 = t516 i_f2 = t517 ).
     APPEND t514 TO t513->items.
-    DATA(t521) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t521) = t2.
     DATA t522 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t522.
     DATA(t523) = |asin|.
@@ -1338,7 +1338,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t525 = t526.
     t522 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t523 i_f1 = t524 i_f2 = t525 ).
     APPEND t522 TO t521->items.
-    DATA(t529) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t529) = t2.
     DATA t530 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t530.
     DATA(t531) = |acos|.
@@ -1358,7 +1358,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t533 = t534.
     t530 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t531 i_f1 = t532 i_f2 = t533 ).
     APPEND t530 TO t529->items.
-    DATA(t537) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t537) = t2.
     DATA t538 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t538.
     DATA(t539) = |atan|.
@@ -1378,7 +1378,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t541 = t542.
     t538 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t539 i_f1 = t540 i_f2 = t541 ).
     APPEND t538 TO t537->items.
-    DATA(t545) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t545) = t2.
     DATA t546 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t546.
     DATA(t547) = |sinh|.
@@ -1398,7 +1398,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t549 = t550.
     t546 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t547 i_f1 = t548 i_f2 = t549 ).
     APPEND t546 TO t545->items.
-    DATA(t553) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t553) = t2.
     DATA t554 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t554.
     DATA(t555) = |cosh|.
@@ -1418,7 +1418,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t557 = t558.
     t554 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t555 i_f1 = t556 i_f2 = t557 ).
     APPEND t554 TO t553->items.
-    DATA(t561) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t561) = t2.
     DATA t562 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t562.
     DATA(t563) = |tanh|.
@@ -1438,7 +1438,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t565 = t566.
     t562 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t563 i_f1 = t564 i_f2 = t565 ).
     APPEND t562 TO t561->items.
-    DATA(t569) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t569) = t2.
     DATA t570 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t570.
     DATA(t571) = |sqrt|.
@@ -1458,7 +1458,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t573 = t574.
     t570 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t571 i_f1 = t572 i_f2 = t573 ).
     APPEND t570 TO t569->items.
-    DATA(t577) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t577) = t2.
     DATA t578 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t578.
     DATA(t579) = |power|.
@@ -1478,7 +1478,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t581 = t582.
     t578 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t579 i_f1 = t580 i_f2 = t581 ).
     APPEND t578 TO t577->items.
-    DATA(t585) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t585) = t2.
     DATA t586 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t586.
     DATA(t587) = |exp|.
@@ -1498,7 +1498,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t589 = t590.
     t586 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t587 i_f1 = t588 i_f2 = t589 ).
     APPEND t586 TO t585->items.
-    DATA(t593) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t593) = t2.
     DATA t594 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t594.
     DATA(t595) = |ln|.
@@ -1518,7 +1518,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t597 = t598.
     t594 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t595 i_f1 = t596 i_f2 = t597 ).
     APPEND t594 TO t593->items.
-    DATA(t601) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t601) = t2.
     DATA t602 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t602.
     DATA(t603) = |log10|.
@@ -1538,7 +1538,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t605 = t606.
     t602 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t603 i_f1 = t604 i_f2 = t605 ).
     APPEND t602 TO t601->items.
-    DATA(t609) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t609) = t2.
     DATA t610 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t610.
     DATA(t611) = |log|.
@@ -1558,7 +1558,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t613 = t614.
     t610 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t611 i_f1 = t612 i_f2 = t613 ).
     APPEND t610 TO t609->items.
-    DATA(t617) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t617) = t2.
     DATA t618 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t618.
     DATA(t619) = |utctolocal|.
@@ -1578,7 +1578,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t621 = t622.
     t618 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t619 i_f1 = t620 i_f2 = t621 ).
     APPEND t618 TO t617->items.
-    DATA(t625) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t625) = t2.
     DATA t626 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t626.
     DATA(t627) = |localtoutc|.
@@ -1598,7 +1598,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t629 = t630.
     t626 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t627 i_f1 = t628 i_f2 = t629 ).
     APPEND t626 TO t625->items.
-    DATA(t633) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t633) = t2.
     DATA t634 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t634.
     DATA(t635) = |is_masked|.
@@ -1618,7 +1618,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t637 = t638.
     t634 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t635 i_f1 = t636 i_f2 = t637 ).
     APPEND t634 TO t633->items.
-    DATA(t641) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t641) = t2.
     t1 = t641.
     zcl_lnt_sql_function_module=>sql_function_defs = t1.
     IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
@@ -1630,7 +1630,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t644 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t644.
     t643 = t644.
-    DATA(t645) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t645) = t643.
     DATA t646 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t646.
     DATA(t647) = |abap_user_timezone|.
@@ -1653,7 +1653,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t654 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t654.
     t653 = t654.
-    DATA(t655) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA(t655) = t653.
     DATA t656 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t656.
     DATA(t657) = |user|.
@@ -1674,7 +1674,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t656 = NEW zcl_lnt_sql_named_param( i_name = t657 i_value = t658 i_optional = t659 ).
     APPEND t656 TO t655->items.
-    DATA(t664) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA(t664) = t653.
     DATA t665 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t665.
     DATA(t666) = |client|.
@@ -1695,7 +1695,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t665 = NEW zcl_lnt_sql_named_param( i_name = t666 i_value = t667 i_optional = t668 ).
     APPEND t665 TO t664->items.
-    DATA(t673) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA(t673) = t653.
     DATA t674 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t674.
     DATA(t675) = |on_error|.
@@ -1716,11 +1716,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t674 = NEW zcl_lnt_sql_named_param( i_name = t675 i_value = t676 i_optional = t677 ).
     APPEND t674 TO t673->items.
-    DATA(t682) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA(t682) = t653.
     t652 = t682.
     t646 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t647 i_f1 = t648 i_f2 = t652 ).
     APPEND t646 TO t645->items.
-    DATA(t683) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t683) = t643.
     DATA t684 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t684.
     DATA(t685) = |abap_system_timezone|.
@@ -1743,7 +1743,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t692 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t692.
     t691 = t692.
-    DATA(t693) = CAST zlnt_runtime_arra_c22708faf2e3( t691 ).
+    DATA(t693) = t691.
     DATA t694 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t694.
     DATA(t695) = |client|.
@@ -1764,7 +1764,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t694 = NEW zcl_lnt_sql_named_param( i_name = t695 i_value = t696 i_optional = t697 ).
     APPEND t694 TO t693->items.
-    DATA(t702) = CAST zlnt_runtime_arra_c22708faf2e3( t691 ).
+    DATA(t702) = t691.
     DATA t703 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t703.
     DATA(t704) = |on_error|.
@@ -1785,11 +1785,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t703 = NEW zcl_lnt_sql_named_param( i_name = t704 i_value = t705 i_optional = t706 ).
     APPEND t703 TO t702->items.
-    DATA(t711) = CAST zlnt_runtime_arra_c22708faf2e3( t691 ).
+    DATA(t711) = t691.
     t690 = t711.
     t684 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t685 i_f1 = t686 i_f2 = t690 ).
     APPEND t684 TO t683->items.
-    DATA(t712) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t712) = t643.
     DATA t713 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t713.
     DATA(t714) = |dats_tims_to_tstmp|.
@@ -1812,7 +1812,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t721 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t721.
     t720 = t721.
-    DATA(t722) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t722) = t720.
     DATA t723 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t724) = |date|.
     DATA(t725) = |any|.
@@ -1820,7 +1820,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t726.
     t723 = NEW zcl_lnt_sql_named_param( i_name = t724 i_value = t725 i_optional = t726 ).
     APPEND t723 TO t722->items.
-    DATA(t727) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t727) = t720.
     DATA t728 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t729) = |time|.
     DATA(t730) = |any|.
@@ -1828,7 +1828,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t731.
     t728 = NEW zcl_lnt_sql_named_param( i_name = t729 i_value = t730 i_optional = t731 ).
     APPEND t728 TO t727->items.
-    DATA(t732) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t732) = t720.
     DATA t733 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t734) = |tzone|.
     DATA(t735) = |any|.
@@ -1836,7 +1836,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t736.
     t733 = NEW zcl_lnt_sql_named_param( i_name = t734 i_value = t735 i_optional = t736 ).
     APPEND t733 TO t732->items.
-    DATA(t737) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t737) = t720.
     DATA t738 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t738.
     DATA(t739) = |client|.
@@ -1857,7 +1857,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t738 = NEW zcl_lnt_sql_named_param( i_name = t739 i_value = t740 i_optional = t741 ).
     APPEND t738 TO t737->items.
-    DATA(t746) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t746) = t720.
     DATA t747 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t747.
     DATA(t748) = |on_error|.
@@ -1878,11 +1878,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t747 = NEW zcl_lnt_sql_named_param( i_name = t748 i_value = t749 i_optional = t750 ).
     APPEND t747 TO t746->items.
-    DATA(t755) = CAST zlnt_runtime_arra_c22708faf2e3( t720 ).
+    DATA(t755) = t720.
     t719 = t755.
     t713 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t714 i_f1 = t715 i_f2 = t719 ).
     APPEND t713 TO t712->items.
-    DATA(t756) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t756) = t643.
     DATA t757 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t757.
     DATA(t758) = |tstmp_add_seconds|.
@@ -1905,7 +1905,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t765 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t765.
     t764 = t765.
-    DATA(t766) = CAST zlnt_runtime_arra_c22708faf2e3( t764 ).
+    DATA(t766) = t764.
     DATA t767 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t768) = |tstmp|.
     DATA(t769) = |any|.
@@ -1913,7 +1913,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t770.
     t767 = NEW zcl_lnt_sql_named_param( i_name = t768 i_value = t769 i_optional = t770 ).
     APPEND t767 TO t766->items.
-    DATA(t771) = CAST zlnt_runtime_arra_c22708faf2e3( t764 ).
+    DATA(t771) = t764.
     DATA t772 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t773) = |seconds|.
     DATA(t774) = |any|.
@@ -1921,7 +1921,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t775.
     t772 = NEW zcl_lnt_sql_named_param( i_name = t773 i_value = t774 i_optional = t775 ).
     APPEND t772 TO t771->items.
-    DATA(t776) = CAST zlnt_runtime_arra_c22708faf2e3( t764 ).
+    DATA(t776) = t764.
     DATA t777 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t777.
     DATA(t778) = |on_error|.
@@ -1942,11 +1942,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t777 = NEW zcl_lnt_sql_named_param( i_name = t778 i_value = t779 i_optional = t780 ).
     APPEND t777 TO t776->items.
-    DATA(t785) = CAST zlnt_runtime_arra_c22708faf2e3( t764 ).
+    DATA(t785) = t764.
     t763 = t785.
     t757 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t758 i_f1 = t759 i_f2 = t763 ).
     APPEND t757 TO t756->items.
-    DATA(t786) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t786) = t643.
     DATA t787 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t787.
     DATA(t788) = |tstmp_seconds_between|.
@@ -1969,7 +1969,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t795 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t795.
     t794 = t795.
-    DATA(t796) = CAST zlnt_runtime_arra_c22708faf2e3( t794 ).
+    DATA(t796) = t794.
     DATA t797 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t798) = |tstmp1|.
     DATA(t799) = |any|.
@@ -1977,7 +1977,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t800.
     t797 = NEW zcl_lnt_sql_named_param( i_name = t798 i_value = t799 i_optional = t800 ).
     APPEND t797 TO t796->items.
-    DATA(t801) = CAST zlnt_runtime_arra_c22708faf2e3( t794 ).
+    DATA(t801) = t794.
     DATA t802 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t803) = |tstmp2|.
     DATA(t804) = |any|.
@@ -1985,7 +1985,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t805.
     t802 = NEW zcl_lnt_sql_named_param( i_name = t803 i_value = t804 i_optional = t805 ).
     APPEND t802 TO t801->items.
-    DATA(t806) = CAST zlnt_runtime_arra_c22708faf2e3( t794 ).
+    DATA(t806) = t794.
     DATA t807 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t807.
     DATA(t808) = |on_error|.
@@ -2006,11 +2006,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t807 = NEW zcl_lnt_sql_named_param( i_name = t808 i_value = t809 i_optional = t810 ).
     APPEND t807 TO t806->items.
-    DATA(t815) = CAST zlnt_runtime_arra_c22708faf2e3( t794 ).
+    DATA(t815) = t794.
     t793 = t815.
     t787 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t788 i_f1 = t789 i_f2 = t793 ).
     APPEND t787 TO t786->items.
-    DATA(t816) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t816) = t643.
     DATA t817 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t817.
     DATA(t818) = |tstmp_to_dats|.
@@ -2033,7 +2033,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t825 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t825.
     t824 = t825.
-    DATA(t826) = CAST zlnt_runtime_arra_c22708faf2e3( t824 ).
+    DATA(t826) = t824.
     DATA t827 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t828) = |tstmp|.
     DATA(t829) = |any|.
@@ -2041,7 +2041,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t830.
     t827 = NEW zcl_lnt_sql_named_param( i_name = t828 i_value = t829 i_optional = t830 ).
     APPEND t827 TO t826->items.
-    DATA(t831) = CAST zlnt_runtime_arra_c22708faf2e3( t824 ).
+    DATA(t831) = t824.
     DATA t832 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t832.
     DATA(t833) = |tzone|.
@@ -2062,7 +2062,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t832 = NEW zcl_lnt_sql_named_param( i_name = t833 i_value = t834 i_optional = t835 ).
     APPEND t832 TO t831->items.
-    DATA(t840) = CAST zlnt_runtime_arra_c22708faf2e3( t824 ).
+    DATA(t840) = t824.
     DATA t841 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t841.
     DATA(t842) = |client|.
@@ -2083,7 +2083,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t841 = NEW zcl_lnt_sql_named_param( i_name = t842 i_value = t843 i_optional = t844 ).
     APPEND t841 TO t840->items.
-    DATA(t849) = CAST zlnt_runtime_arra_c22708faf2e3( t824 ).
+    DATA(t849) = t824.
     DATA t850 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t850.
     DATA(t851) = |on_error|.
@@ -2104,11 +2104,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t850 = NEW zcl_lnt_sql_named_param( i_name = t851 i_value = t852 i_optional = t853 ).
     APPEND t850 TO t849->items.
-    DATA(t858) = CAST zlnt_runtime_arra_c22708faf2e3( t824 ).
+    DATA(t858) = t824.
     t823 = t858.
     t817 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t818 i_f1 = t819 i_f2 = t823 ).
     APPEND t817 TO t816->items.
-    DATA(t859) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t859) = t643.
     DATA t860 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t860.
     DATA(t861) = |tstmp_to_tims|.
@@ -2131,7 +2131,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t868 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t868.
     t867 = t868.
-    DATA(t869) = CAST zlnt_runtime_arra_c22708faf2e3( t867 ).
+    DATA(t869) = t867.
     DATA t870 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t871) = |tstmp|.
     DATA(t872) = |any|.
@@ -2139,7 +2139,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t873.
     t870 = NEW zcl_lnt_sql_named_param( i_name = t871 i_value = t872 i_optional = t873 ).
     APPEND t870 TO t869->items.
-    DATA(t874) = CAST zlnt_runtime_arra_c22708faf2e3( t867 ).
+    DATA(t874) = t867.
     DATA t875 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t875.
     DATA(t876) = |tzone|.
@@ -2160,7 +2160,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t875 = NEW zcl_lnt_sql_named_param( i_name = t876 i_value = t877 i_optional = t878 ).
     APPEND t875 TO t874->items.
-    DATA(t883) = CAST zlnt_runtime_arra_c22708faf2e3( t867 ).
+    DATA(t883) = t867.
     DATA t884 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t884.
     DATA(t885) = |client|.
@@ -2181,7 +2181,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t884 = NEW zcl_lnt_sql_named_param( i_name = t885 i_value = t886 i_optional = t887 ).
     APPEND t884 TO t883->items.
-    DATA(t892) = CAST zlnt_runtime_arra_c22708faf2e3( t867 ).
+    DATA(t892) = t867.
     DATA t893 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t893.
     DATA(t894) = |on_error|.
@@ -2202,11 +2202,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t893 = NEW zcl_lnt_sql_named_param( i_name = t894 i_value = t895 i_optional = t896 ).
     APPEND t893 TO t892->items.
-    DATA(t901) = CAST zlnt_runtime_arra_c22708faf2e3( t867 ).
+    DATA(t901) = t867.
     t866 = t901.
     t860 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t861 i_f1 = t862 i_f2 = t866 ).
     APPEND t860 TO t859->items.
-    DATA(t902) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t902) = t643.
     DATA t903 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t903.
     DATA(t904) = |tstmp_to_dst|.
@@ -2229,7 +2229,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t911 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t911.
     t910 = t911.
-    DATA(t912) = CAST zlnt_runtime_arra_c22708faf2e3( t910 ).
+    DATA(t912) = t910.
     DATA t913 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t914) = |tstmp|.
     DATA(t915) = |any|.
@@ -2237,7 +2237,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t916.
     t913 = NEW zcl_lnt_sql_named_param( i_name = t914 i_value = t915 i_optional = t916 ).
     APPEND t913 TO t912->items.
-    DATA(t917) = CAST zlnt_runtime_arra_c22708faf2e3( t910 ).
+    DATA(t917) = t910.
     DATA t918 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t918.
     DATA(t919) = |tzone|.
@@ -2258,7 +2258,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t918 = NEW zcl_lnt_sql_named_param( i_name = t919 i_value = t920 i_optional = t921 ).
     APPEND t918 TO t917->items.
-    DATA(t926) = CAST zlnt_runtime_arra_c22708faf2e3( t910 ).
+    DATA(t926) = t910.
     DATA t927 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t927.
     DATA(t928) = |client|.
@@ -2279,7 +2279,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t927 = NEW zcl_lnt_sql_named_param( i_name = t928 i_value = t929 i_optional = t930 ).
     APPEND t927 TO t926->items.
-    DATA(t935) = CAST zlnt_runtime_arra_c22708faf2e3( t910 ).
+    DATA(t935) = t910.
     DATA t936 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t936.
     DATA(t937) = |on_error|.
@@ -2300,11 +2300,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t936 = NEW zcl_lnt_sql_named_param( i_name = t937 i_value = t938 i_optional = t939 ).
     APPEND t936 TO t935->items.
-    DATA(t944) = CAST zlnt_runtime_arra_c22708faf2e3( t910 ).
+    DATA(t944) = t910.
     t909 = t944.
     t903 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t904 i_f1 = t905 i_f2 = t909 ).
     APPEND t903 TO t902->items.
-    DATA(t945) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t945) = t643.
     DATA t946 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t946.
     DATA(t947) = |tstmpl_to_utcl|.
@@ -2327,7 +2327,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t954 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t954.
     t953 = t954.
-    DATA(t955) = CAST zlnt_runtime_arra_c22708faf2e3( t953 ).
+    DATA(t955) = t953.
     DATA t956 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t957) = |tstmpl|.
     DATA(t958) = |any|.
@@ -2335,7 +2335,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t959.
     t956 = NEW zcl_lnt_sql_named_param( i_name = t957 i_value = t958 i_optional = t959 ).
     APPEND t956 TO t955->items.
-    DATA(t960) = CAST zlnt_runtime_arra_c22708faf2e3( t953 ).
+    DATA(t960) = t953.
     DATA t961 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t961.
     DATA(t962) = |on_error|.
@@ -2356,7 +2356,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t961 = NEW zcl_lnt_sql_named_param( i_name = t962 i_value = t963 i_optional = t964 ).
     APPEND t961 TO t960->items.
-    DATA(t969) = CAST zlnt_runtime_arra_c22708faf2e3( t953 ).
+    DATA(t969) = t953.
     DATA t970 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t970.
     DATA(t971) = |on_initial|.
@@ -2377,11 +2377,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t970 = NEW zcl_lnt_sql_named_param( i_name = t971 i_value = t972 i_optional = t973 ).
     APPEND t970 TO t969->items.
-    DATA(t978) = CAST zlnt_runtime_arra_c22708faf2e3( t953 ).
+    DATA(t978) = t953.
     t952 = t978.
     t946 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t947 i_f1 = t948 i_f2 = t952 ).
     APPEND t946 TO t945->items.
-    DATA(t979) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t979) = t643.
     DATA t980 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t980.
     DATA(t981) = |tstmpl_from_utcl|.
@@ -2404,7 +2404,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t988 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t988.
     t987 = t988.
-    DATA(t989) = CAST zlnt_runtime_arra_c22708faf2e3( t987 ).
+    DATA(t989) = t987.
     DATA t990 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t991) = |utcl|.
     DATA(t992) = |any|.
@@ -2412,7 +2412,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t993.
     t990 = NEW zcl_lnt_sql_named_param( i_name = t991 i_value = t992 i_optional = t993 ).
     APPEND t990 TO t989->items.
-    DATA(t994) = CAST zlnt_runtime_arra_c22708faf2e3( t987 ).
+    DATA(t994) = t987.
     DATA t995 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t995.
     DATA(t996) = |on_null|.
@@ -2433,11 +2433,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t995 = NEW zcl_lnt_sql_named_param( i_name = t996 i_value = t997 i_optional = t998 ).
     APPEND t995 TO t994->items.
-    DATA(t1003) = CAST zlnt_runtime_arra_c22708faf2e3( t987 ).
+    DATA(t1003) = t987.
     t986 = t1003.
     t980 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t981 i_f1 = t982 i_f2 = t986 ).
     APPEND t980 TO t979->items.
-    DATA(t1004) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1004) = t643.
     DATA t1005 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1005.
     DATA(t1006) = |dats_to_datn|.
@@ -2460,7 +2460,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1013 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1013.
     t1012 = t1013.
-    DATA(t1014) = CAST zlnt_runtime_arra_c22708faf2e3( t1012 ).
+    DATA(t1014) = t1012.
     DATA t1015 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1016) = |dats|.
     DATA(t1017) = |any|.
@@ -2468,7 +2468,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1018.
     t1015 = NEW zcl_lnt_sql_named_param( i_name = t1016 i_value = t1017 i_optional = t1018 ).
     APPEND t1015 TO t1014->items.
-    DATA(t1019) = CAST zlnt_runtime_arra_c22708faf2e3( t1012 ).
+    DATA(t1019) = t1012.
     DATA t1020 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1020.
     DATA(t1021) = |on_error|.
@@ -2489,7 +2489,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1020 = NEW zcl_lnt_sql_named_param( i_name = t1021 i_value = t1022 i_optional = t1023 ).
     APPEND t1020 TO t1019->items.
-    DATA(t1028) = CAST zlnt_runtime_arra_c22708faf2e3( t1012 ).
+    DATA(t1028) = t1012.
     DATA t1029 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1029.
     DATA(t1030) = |on_initial|.
@@ -2510,11 +2510,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1029 = NEW zcl_lnt_sql_named_param( i_name = t1030 i_value = t1031 i_optional = t1032 ).
     APPEND t1029 TO t1028->items.
-    DATA(t1037) = CAST zlnt_runtime_arra_c22708faf2e3( t1012 ).
+    DATA(t1037) = t1012.
     t1011 = t1037.
     t1005 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1006 i_f1 = t1007 i_f2 = t1011 ).
     APPEND t1005 TO t1004->items.
-    DATA(t1038) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1038) = t643.
     DATA t1039 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1039.
     DATA(t1040) = |dats_from_datn|.
@@ -2537,7 +2537,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1047 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1047.
     t1046 = t1047.
-    DATA(t1048) = CAST zlnt_runtime_arra_c22708faf2e3( t1046 ).
+    DATA(t1048) = t1046.
     DATA t1049 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1050) = |datn|.
     DATA(t1051) = |any|.
@@ -2545,7 +2545,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1052.
     t1049 = NEW zcl_lnt_sql_named_param( i_name = t1050 i_value = t1051 i_optional = t1052 ).
     APPEND t1049 TO t1048->items.
-    DATA(t1053) = CAST zlnt_runtime_arra_c22708faf2e3( t1046 ).
+    DATA(t1053) = t1046.
     DATA t1054 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1054.
     DATA(t1055) = |on_null|.
@@ -2566,11 +2566,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1054 = NEW zcl_lnt_sql_named_param( i_name = t1055 i_value = t1056 i_optional = t1057 ).
     APPEND t1054 TO t1053->items.
-    DATA(t1062) = CAST zlnt_runtime_arra_c22708faf2e3( t1046 ).
+    DATA(t1062) = t1046.
     t1045 = t1062.
     t1039 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1040 i_f1 = t1041 i_f2 = t1045 ).
     APPEND t1039 TO t1038->items.
-    DATA(t1063) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1063) = t643.
     DATA t1064 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1064.
     DATA(t1065) = |tims_to_timn|.
@@ -2593,7 +2593,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1072 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1072.
     t1071 = t1072.
-    DATA(t1073) = CAST zlnt_runtime_arra_c22708faf2e3( t1071 ).
+    DATA(t1073) = t1071.
     DATA t1074 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1075) = |tims|.
     DATA(t1076) = |any|.
@@ -2601,7 +2601,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1077.
     t1074 = NEW zcl_lnt_sql_named_param( i_name = t1075 i_value = t1076 i_optional = t1077 ).
     APPEND t1074 TO t1073->items.
-    DATA(t1078) = CAST zlnt_runtime_arra_c22708faf2e3( t1071 ).
+    DATA(t1078) = t1071.
     DATA t1079 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1079.
     DATA(t1080) = |on_error|.
@@ -2622,11 +2622,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1079 = NEW zcl_lnt_sql_named_param( i_name = t1080 i_value = t1081 i_optional = t1082 ).
     APPEND t1079 TO t1078->items.
-    DATA(t1087) = CAST zlnt_runtime_arra_c22708faf2e3( t1071 ).
+    DATA(t1087) = t1071.
     t1070 = t1087.
     t1064 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1065 i_f1 = t1066 i_f2 = t1070 ).
     APPEND t1064 TO t1063->items.
-    DATA(t1088) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1088) = t643.
     DATA t1089 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1089.
     DATA(t1090) = |tims_from_timn|.
@@ -2649,7 +2649,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1097 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1097.
     t1096 = t1097.
-    DATA(t1098) = CAST zlnt_runtime_arra_c22708faf2e3( t1096 ).
+    DATA(t1098) = t1096.
     DATA t1099 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1100) = |timn|.
     DATA(t1101) = |any|.
@@ -2657,7 +2657,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1102.
     t1099 = NEW zcl_lnt_sql_named_param( i_name = t1100 i_value = t1101 i_optional = t1102 ).
     APPEND t1099 TO t1098->items.
-    DATA(t1103) = CAST zlnt_runtime_arra_c22708faf2e3( t1096 ).
+    DATA(t1103) = t1096.
     DATA t1104 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1104.
     DATA(t1105) = |on_null|.
@@ -2678,11 +2678,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1104 = NEW zcl_lnt_sql_named_param( i_name = t1105 i_value = t1106 i_optional = t1107 ).
     APPEND t1104 TO t1103->items.
-    DATA(t1112) = CAST zlnt_runtime_arra_c22708faf2e3( t1096 ).
+    DATA(t1112) = t1096.
     t1095 = t1112.
     t1089 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1090 i_f1 = t1091 i_f2 = t1095 ).
     APPEND t1089 TO t1088->items.
-    DATA(t1113) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1113) = t643.
     DATA t1114 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1114.
     DATA(t1115) = |currency_conversion|.
@@ -2705,7 +2705,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1122 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1122.
     t1121 = t1122.
-    DATA(t1123) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1123) = t1121.
     DATA t1124 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1125) = |amount|.
     DATA(t1126) = |any|.
@@ -2713,7 +2713,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1127.
     t1124 = NEW zcl_lnt_sql_named_param( i_name = t1125 i_value = t1126 i_optional = t1127 ).
     APPEND t1124 TO t1123->items.
-    DATA(t1128) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1128) = t1121.
     DATA t1129 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1130) = |source_currency|.
     DATA(t1131) = |any|.
@@ -2721,7 +2721,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1132.
     t1129 = NEW zcl_lnt_sql_named_param( i_name = t1130 i_value = t1131 i_optional = t1132 ).
     APPEND t1129 TO t1128->items.
-    DATA(t1133) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1133) = t1121.
     DATA t1134 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1135) = |target_currency|.
     DATA(t1136) = |any|.
@@ -2729,7 +2729,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1137.
     t1134 = NEW zcl_lnt_sql_named_param( i_name = t1135 i_value = t1136 i_optional = t1137 ).
     APPEND t1134 TO t1133->items.
-    DATA(t1138) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1138) = t1121.
     DATA t1139 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1140) = |exchange_rate_date|.
     DATA(t1141) = |any|.
@@ -2737,7 +2737,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1142.
     t1139 = NEW zcl_lnt_sql_named_param( i_name = t1140 i_value = t1141 i_optional = t1142 ).
     APPEND t1139 TO t1138->items.
-    DATA(t1143) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1143) = t1121.
     DATA t1144 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1144.
     DATA(t1145) = |exchange_rate_type|.
@@ -2758,7 +2758,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1144 = NEW zcl_lnt_sql_named_param( i_name = t1145 i_value = t1146 i_optional = t1147 ).
     APPEND t1144 TO t1143->items.
-    DATA(t1152) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1152) = t1121.
     DATA t1153 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1153.
     DATA(t1154) = |client|.
@@ -2779,7 +2779,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1153 = NEW zcl_lnt_sql_named_param( i_name = t1154 i_value = t1155 i_optional = t1156 ).
     APPEND t1153 TO t1152->items.
-    DATA(t1161) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1161) = t1121.
     DATA t1162 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1162.
     DATA(t1163) = |round|.
@@ -2800,7 +2800,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1162 = NEW zcl_lnt_sql_named_param( i_name = t1163 i_value = t1164 i_optional = t1165 ).
     APPEND t1162 TO t1161->items.
-    DATA(t1170) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1170) = t1121.
     DATA t1171 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1171.
     DATA(t1172) = |decimal_shift|.
@@ -2821,7 +2821,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1171 = NEW zcl_lnt_sql_named_param( i_name = t1172 i_value = t1173 i_optional = t1174 ).
     APPEND t1171 TO t1170->items.
-    DATA(t1179) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1179) = t1121.
     DATA t1180 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1180.
     DATA(t1181) = |decimal_shift_back|.
@@ -2842,7 +2842,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1180 = NEW zcl_lnt_sql_named_param( i_name = t1181 i_value = t1182 i_optional = t1183 ).
     APPEND t1180 TO t1179->items.
-    DATA(t1188) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1188) = t1121.
     DATA t1189 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1189.
     DATA(t1190) = |on_error|.
@@ -2863,11 +2863,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1189 = NEW zcl_lnt_sql_named_param( i_name = t1190 i_value = t1191 i_optional = t1192 ).
     APPEND t1189 TO t1188->items.
-    DATA(t1197) = CAST zlnt_runtime_arra_c22708faf2e3( t1121 ).
+    DATA(t1197) = t1121.
     t1120 = t1197.
     t1114 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1115 i_f1 = t1116 i_f2 = t1120 ).
     APPEND t1114 TO t1113->items.
-    DATA(t1198) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1198) = t643.
     DATA t1199 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1199.
     DATA(t1200) = |unit_conversion|.
@@ -2890,7 +2890,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1207 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1207.
     t1206 = t1207.
-    DATA(t1208) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1208) = t1206.
     DATA t1209 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1210) = |quantity|.
     DATA(t1211) = |any|.
@@ -2898,7 +2898,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1212.
     t1209 = NEW zcl_lnt_sql_named_param( i_name = t1210 i_value = t1211 i_optional = t1212 ).
     APPEND t1209 TO t1208->items.
-    DATA(t1213) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1213) = t1206.
     DATA t1214 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1215) = |source_unit|.
     DATA(t1216) = |any|.
@@ -2906,7 +2906,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1217.
     t1214 = NEW zcl_lnt_sql_named_param( i_name = t1215 i_value = t1216 i_optional = t1217 ).
     APPEND t1214 TO t1213->items.
-    DATA(t1218) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1218) = t1206.
     DATA t1219 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1220) = |target_unit|.
     DATA(t1221) = |any|.
@@ -2914,7 +2914,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1222.
     t1219 = NEW zcl_lnt_sql_named_param( i_name = t1220 i_value = t1221 i_optional = t1222 ).
     APPEND t1219 TO t1218->items.
-    DATA(t1223) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1223) = t1206.
     DATA t1224 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1224.
     DATA(t1225) = |client|.
@@ -2935,7 +2935,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1224 = NEW zcl_lnt_sql_named_param( i_name = t1225 i_value = t1226 i_optional = t1227 ).
     APPEND t1224 TO t1223->items.
-    DATA(t1232) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1232) = t1206.
     DATA t1233 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1233.
     DATA(t1234) = |on_error|.
@@ -2956,11 +2956,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     ENDIF.
     t1233 = NEW zcl_lnt_sql_named_param( i_name = t1234 i_value = t1235 i_optional = t1236 ).
     APPEND t1233 TO t1232->items.
-    DATA(t1241) = CAST zlnt_runtime_arra_c22708faf2e3( t1206 ).
+    DATA(t1241) = t1206.
     t1205 = t1241.
     t1199 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1200 i_f1 = t1201 i_f2 = t1205 ).
     APPEND t1199 TO t1198->items.
-    DATA(t1242) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1242) = t643.
     DATA t1243 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1243.
     DATA(t1244) = |curr_to_decfloat_amount|.
@@ -2982,7 +2982,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1251 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1251.
     t1250 = t1251.
-    DATA(t1252) = CAST zlnt_runtime_arra_c22708faf2e3( t1250 ).
+    DATA(t1252) = t1250.
     DATA t1253 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1254) = |curr|.
     DATA(t1255) = |any|.
@@ -2990,7 +2990,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1256.
     t1253 = NEW zcl_lnt_sql_named_param( i_name = t1254 i_value = t1255 i_optional = t1256 ).
     APPEND t1253 TO t1252->items.
-    DATA(t1257) = CAST zlnt_runtime_arra_c22708faf2e3( t1250 ).
+    DATA(t1257) = t1250.
     DATA t1258 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1259) = |cuky|.
     DATA(t1260) = |any|.
@@ -2998,11 +2998,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1261.
     t1258 = NEW zcl_lnt_sql_named_param( i_name = t1259 i_value = t1260 i_optional = t1261 ).
     APPEND t1258 TO t1257->items.
-    DATA(t1262) = CAST zlnt_runtime_arra_c22708faf2e3( t1250 ).
+    DATA(t1262) = t1250.
     t1249 = t1262.
     t1243 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1244 i_f1 = t1245 i_f2 = t1249 ).
     APPEND t1243 TO t1242->items.
-    DATA(t1263) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1263) = t643.
     DATA t1264 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1264.
     DATA(t1265) = |lang_to_char|.
@@ -3024,7 +3024,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1272 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1272.
     t1271 = t1272.
-    DATA(t1273) = CAST zlnt_runtime_arra_c22708faf2e3( t1271 ).
+    DATA(t1273) = t1271.
     DATA t1274 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1275) = |lang|.
     DATA(t1276) = |any|.
@@ -3032,11 +3032,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1277.
     t1274 = NEW zcl_lnt_sql_named_param( i_name = t1275 i_value = t1276 i_optional = t1277 ).
     APPEND t1274 TO t1273->items.
-    DATA(t1278) = CAST zlnt_runtime_arra_c22708faf2e3( t1271 ).
+    DATA(t1278) = t1271.
     t1270 = t1278.
     t1264 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1265 i_f1 = t1266 i_f2 = t1270 ).
     APPEND t1264 TO t1263->items.
-    DATA(t1279) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1279) = t643.
     DATA t1280 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1280.
     DATA(t1281) = |ipow|.
@@ -3058,7 +3058,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1288 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1288.
     t1287 = t1288.
-    DATA(t1289) = CAST zlnt_runtime_arra_c22708faf2e3( t1287 ).
+    DATA(t1289) = t1287.
     DATA t1290 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1291) = |base|.
     DATA(t1292) = |any|.
@@ -3066,7 +3066,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1293.
     t1290 = NEW zcl_lnt_sql_named_param( i_name = t1291 i_value = t1292 i_optional = t1293 ).
     APPEND t1290 TO t1289->items.
-    DATA(t1294) = CAST zlnt_runtime_arra_c22708faf2e3( t1287 ).
+    DATA(t1294) = t1287.
     DATA t1295 TYPE REF TO zcl_lnt_sql_named_param.
     DATA(t1296) = |exp|.
     DATA(t1297) = |any|.
@@ -3074,11 +3074,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     CLEAR t1298.
     t1295 = NEW zcl_lnt_sql_named_param( i_name = t1296 i_value = t1297 i_optional = t1298 ).
     APPEND t1295 TO t1294->items.
-    DATA(t1299) = CAST zlnt_runtime_arra_c22708faf2e3( t1287 ).
+    DATA(t1299) = t1287.
     t1286 = t1299.
     t1280 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1281 i_f1 = t1282 i_f2 = t1286 ).
     APPEND t1280 TO t1279->items.
-    DATA(t1300) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA(t1300) = t643.
     t642 = t1300.
     zcl_lnt_sql_function_module=>sql_named_function_defs = t642.
     IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
@@ -3090,7 +3090,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t1303 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1303.
     t1302 = t1303.
-    DATA(t1304) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1304) = t1302.
     DATA t1305 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1305.
     DATA(t1306) = |st_new_point|.
@@ -3112,7 +3112,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1309 = t1310.
     t1305 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1306 i_f1 = t1307 i_f2 = t1309 ).
     APPEND t1305 TO t1304->items.
-    DATA(t1313) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1313) = t1302.
     DATA t1314 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1314.
     DATA(t1315) = |st_new_pointz|.
@@ -3134,7 +3134,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1318 = t1319.
     t1314 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1315 i_f1 = t1316 i_f2 = t1318 ).
     APPEND t1314 TO t1313->items.
-    DATA(t1322) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1322) = t1302.
     DATA t1323 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1323.
     DATA(t1324) = |st_new_pointm|.
@@ -3156,7 +3156,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1327 = t1328.
     t1323 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1324 i_f1 = t1325 i_f2 = t1327 ).
     APPEND t1323 TO t1322->items.
-    DATA(t1331) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1331) = t1302.
     DATA t1332 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1332.
     DATA(t1333) = |st_new_pointzm|.
@@ -3178,7 +3178,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1336 = t1337.
     t1332 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1333 i_f1 = t1334 i_f2 = t1336 ).
     APPEND t1332 TO t1331->items.
-    DATA(t1340) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1340) = t1302.
     DATA t1341 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1341.
     DATA(t1342) = |st_new_linestring|.
@@ -3200,7 +3200,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1345 = t1346.
     t1341 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1342 i_f1 = t1343 i_f2 = t1345 ).
     APPEND t1341 TO t1340->items.
-    DATA(t1349) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1349) = t1302.
     DATA t1350 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1350.
     DATA(t1351) = |st_new_multilinestring|.
@@ -3222,7 +3222,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1354 = t1355.
     t1350 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1351 i_f1 = t1352 i_f2 = t1354 ).
     APPEND t1350 TO t1349->items.
-    DATA(t1358) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1358) = t1302.
     DATA t1359 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1359.
     DATA(t1360) = |st_new_polygon|.
@@ -3244,7 +3244,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1363 = t1364.
     t1359 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1360 i_f1 = t1361 i_f2 = t1363 ).
     APPEND t1359 TO t1358->items.
-    DATA(t1367) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1367) = t1302.
     DATA t1368 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1368.
     DATA(t1369) = |st_new_multipolygon|.
@@ -3266,7 +3266,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1372 = t1373.
     t1368 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1369 i_f1 = t1370 i_f2 = t1372 ).
     APPEND t1368 TO t1367->items.
-    DATA(t1376) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1376) = t1302.
     DATA t1377 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1377.
     DATA(t1378) = |st_new_multipoint|.
@@ -3288,7 +3288,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1381 = t1382.
     t1377 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1378 i_f1 = t1379 i_f2 = t1381 ).
     APPEND t1377 TO t1376->items.
-    DATA(t1385) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1385) = t1302.
     DATA t1386 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1386.
     DATA(t1387) = |st_new_circularstring|.
@@ -3310,7 +3310,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1390 = t1391.
     t1386 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1387 i_f1 = t1388 i_f2 = t1390 ).
     APPEND t1386 TO t1385->items.
-    DATA(t1394) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1394) = t1302.
     DATA t1395 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1395.
     DATA(t1396) = |st_new_geometrycollection|.
@@ -3332,7 +3332,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1399 = t1400.
     t1395 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1396 i_f1 = t1397 i_f2 = t1399 ).
     APPEND t1395 TO t1394->items.
-    DATA(t1403) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1403) = t1302.
     DATA t1404 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1404.
     DATA(t1405) = |st_srid|.
@@ -3354,7 +3354,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1408 = t1409.
     t1404 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1405 i_f1 = t1406 i_f2 = t1408 ).
     APPEND t1404 TO t1403->items.
-    DATA(t1412) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1412) = t1302.
     DATA t1413 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1413.
     DATA(t1414) = |st_relate|.
@@ -3376,7 +3376,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1417 = t1418.
     t1413 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1414 i_f1 = t1415 i_f2 = t1417 ).
     APPEND t1413 TO t1412->items.
-    DATA(t1421) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1421) = t1302.
     DATA t1422 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1422.
     DATA(t1423) = |st_geomfromtext|.
@@ -3398,7 +3398,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1426 = t1427.
     t1422 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1423 i_f1 = t1424 i_f2 = t1426 ).
     APPEND t1422 TO t1421->items.
-    DATA(t1430) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1430) = t1302.
     DATA t1431 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1431.
     DATA(t1432) = |st_geomfromwkt|.
@@ -3420,7 +3420,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1435 = t1436.
     t1431 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1432 i_f1 = t1433 i_f2 = t1435 ).
     APPEND t1431 TO t1430->items.
-    DATA(t1439) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1439) = t1302.
     DATA t1440 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1440.
     DATA(t1441) = |st_geomfromewkt|.
@@ -3442,7 +3442,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1444 = t1445.
     t1440 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1441 i_f1 = t1442 i_f2 = t1444 ).
     APPEND t1440 TO t1439->items.
-    DATA(t1448) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1448) = t1302.
     DATA t1449 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1449.
     DATA(t1450) = |st_geomfromwkb|.
@@ -3464,7 +3464,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1453 = t1454.
     t1449 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1450 i_f1 = t1451 i_f2 = t1453 ).
     APPEND t1449 TO t1448->items.
-    DATA(t1457) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1457) = t1302.
     DATA t1458 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1458.
     DATA(t1459) = |st_geomfromewkb|.
@@ -3486,7 +3486,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1462 = t1463.
     t1458 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1459 i_f1 = t1460 i_f2 = t1462 ).
     APPEND t1458 TO t1457->items.
-    DATA(t1466) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1466) = t1302.
     DATA t1467 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1467.
     DATA(t1468) = |st_geomfromgeojson|.
@@ -3508,7 +3508,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1471 = t1472.
     t1467 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1468 i_f1 = t1469 i_f2 = t1471 ).
     APPEND t1467 TO t1466->items.
-    DATA(t1475) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1475) = t1302.
     DATA t1476 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1476.
     DATA(t1477) = |st_geomfromesrijson|.
@@ -3530,7 +3530,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1480 = t1481.
     t1476 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1477 i_f1 = t1478 i_f2 = t1480 ).
     APPEND t1476 TO t1475->items.
-    DATA(t1484) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1484) = t1302.
     DATA t1485 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1485.
     DATA(t1486) = |st_geomfromgeohash|.
@@ -3552,7 +3552,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1489 = t1490.
     t1485 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1486 i_f1 = t1487 i_f2 = t1489 ).
     APPEND t1485 TO t1484->items.
-    DATA(t1493) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1493) = t1302.
     DATA t1494 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1494.
     DATA(t1495) = |st_pointfromtext|.
@@ -3574,7 +3574,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1498 = t1499.
     t1494 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1495 i_f1 = t1496 i_f2 = t1498 ).
     APPEND t1494 TO t1493->items.
-    DATA(t1502) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1502) = t1302.
     DATA t1503 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1503.
     DATA(t1504) = |st_pointfromgeohash|.
@@ -3596,7 +3596,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1507 = t1508.
     t1503 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1504 i_f1 = t1505 i_f2 = t1507 ).
     APPEND t1503 TO t1502->items.
-    DATA(t1511) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1511) = t1302.
     DATA t1512 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1512.
     DATA(t1513) = |st_makeline|.
@@ -3618,7 +3618,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1516 = t1517.
     t1512 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1513 i_f1 = t1514 i_f2 = t1516 ).
     APPEND t1512 TO t1511->items.
-    DATA(t1520) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1520) = t1302.
     DATA t1521 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1521.
     DATA(t1522) = |st_makepolygon|.
@@ -3640,7 +3640,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1525 = t1526.
     t1521 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1522 i_f1 = t1523 i_f2 = t1525 ).
     APPEND t1521 TO t1520->items.
-    DATA(t1529) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1529) = t1302.
     DATA t1530 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1530.
     DATA(t1531) = |st_x|.
@@ -3662,7 +3662,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1534 = t1535.
     t1530 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1531 i_f1 = t1532 i_f2 = t1534 ).
     APPEND t1530 TO t1529->items.
-    DATA(t1538) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1538) = t1302.
     DATA t1539 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1539.
     DATA(t1540) = |st_y|.
@@ -3684,7 +3684,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1543 = t1544.
     t1539 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1540 i_f1 = t1541 i_f2 = t1543 ).
     APPEND t1539 TO t1538->items.
-    DATA(t1547) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1547) = t1302.
     DATA t1548 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1548.
     DATA(t1549) = |st_z|.
@@ -3706,7 +3706,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1552 = t1553.
     t1548 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1549 i_f1 = t1550 i_f2 = t1552 ).
     APPEND t1548 TO t1547->items.
-    DATA(t1556) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1556) = t1302.
     DATA t1557 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1557.
     DATA(t1558) = |st_m|.
@@ -3728,7 +3728,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1561 = t1562.
     t1557 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1558 i_f1 = t1559 i_f2 = t1561 ).
     APPEND t1557 TO t1556->items.
-    DATA(t1565) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1565) = t1302.
     DATA t1566 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1566.
     DATA(t1567) = |st_xmax|.
@@ -3750,7 +3750,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1570 = t1571.
     t1566 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1567 i_f1 = t1568 i_f2 = t1570 ).
     APPEND t1566 TO t1565->items.
-    DATA(t1574) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1574) = t1302.
     DATA t1575 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1575.
     DATA(t1576) = |st_xmin|.
@@ -3772,7 +3772,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1579 = t1580.
     t1575 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1576 i_f1 = t1577 i_f2 = t1579 ).
     APPEND t1575 TO t1574->items.
-    DATA(t1583) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1583) = t1302.
     DATA t1584 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1584.
     DATA(t1585) = |st_ymax|.
@@ -3794,7 +3794,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1588 = t1589.
     t1584 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1585 i_f1 = t1586 i_f2 = t1588 ).
     APPEND t1584 TO t1583->items.
-    DATA(t1592) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1592) = t1302.
     DATA t1593 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1593.
     DATA(t1594) = |st_ymin|.
@@ -3816,7 +3816,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1597 = t1598.
     t1593 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1594 i_f1 = t1595 i_f2 = t1597 ).
     APPEND t1593 TO t1592->items.
-    DATA(t1601) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1601) = t1302.
     DATA t1602 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1602.
     DATA(t1603) = |st_zmax|.
@@ -3838,7 +3838,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1606 = t1607.
     t1602 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1603 i_f1 = t1604 i_f2 = t1606 ).
     APPEND t1602 TO t1601->items.
-    DATA(t1610) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1610) = t1302.
     DATA t1611 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1611.
     DATA(t1612) = |st_zmin|.
@@ -3860,7 +3860,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1615 = t1616.
     t1611 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1612 i_f1 = t1613 i_f2 = t1615 ).
     APPEND t1611 TO t1610->items.
-    DATA(t1619) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1619) = t1302.
     DATA t1620 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1620.
     DATA(t1621) = |st_mmax|.
@@ -3882,7 +3882,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1624 = t1625.
     t1620 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1621 i_f1 = t1622 i_f2 = t1624 ).
     APPEND t1620 TO t1619->items.
-    DATA(t1628) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1628) = t1302.
     DATA t1629 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1629.
     DATA(t1630) = |st_mmin|.
@@ -3904,7 +3904,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1633 = t1634.
     t1629 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1630 i_f1 = t1631 i_f2 = t1633 ).
     APPEND t1629 TO t1628->items.
-    DATA(t1637) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1637) = t1302.
     DATA t1638 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1638.
     DATA(t1639) = |st_area|.
@@ -3926,7 +3926,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1642 = t1643.
     t1638 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1639 i_f1 = t1640 i_f2 = t1642 ).
     APPEND t1638 TO t1637->items.
-    DATA(t1646) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1646) = t1302.
     DATA t1647 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1647.
     DATA(t1648) = |st_length|.
@@ -3948,7 +3948,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1651 = t1652.
     t1647 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1648 i_f1 = t1649 i_f2 = t1651 ).
     APPEND t1647 TO t1646->items.
-    DATA(t1655) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1655) = t1302.
     DATA t1656 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1656.
     DATA(t1657) = |st_perimeter|.
@@ -3970,7 +3970,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1660 = t1661.
     t1656 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1657 i_f1 = t1658 i_f2 = t1660 ).
     APPEND t1656 TO t1655->items.
-    DATA(t1664) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1664) = t1302.
     DATA t1665 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1665.
     DATA(t1666) = |st_dimension|.
@@ -3992,7 +3992,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1669 = t1670.
     t1665 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1666 i_f1 = t1667 i_f2 = t1669 ).
     APPEND t1665 TO t1664->items.
-    DATA(t1673) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1673) = t1302.
     DATA t1674 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1674.
     DATA(t1675) = |st_coorddim|.
@@ -4014,7 +4014,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1678 = t1679.
     t1674 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1675 i_f1 = t1676 i_f2 = t1678 ).
     APPEND t1674 TO t1673->items.
-    DATA(t1682) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1682) = t1302.
     DATA t1683 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1683.
     DATA(t1684) = |st_geometrytype|.
@@ -4036,7 +4036,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1687 = t1688.
     t1683 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1684 i_f1 = t1685 i_f2 = t1687 ).
     APPEND t1683 TO t1682->items.
-    DATA(t1691) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1691) = t1302.
     DATA t1692 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1692.
     DATA(t1693) = |st_isempty|.
@@ -4058,7 +4058,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1696 = t1697.
     t1692 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1693 i_f1 = t1694 i_f2 = t1696 ).
     APPEND t1692 TO t1691->items.
-    DATA(t1700) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1700) = t1302.
     DATA t1701 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1701.
     DATA(t1702) = |st_issimple|.
@@ -4080,7 +4080,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1705 = t1706.
     t1701 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1702 i_f1 = t1703 i_f2 = t1705 ).
     APPEND t1701 TO t1700->items.
-    DATA(t1709) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1709) = t1302.
     DATA t1710 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1710.
     DATA(t1711) = |st_isclosed|.
@@ -4102,7 +4102,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1714 = t1715.
     t1710 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1711 i_f1 = t1712 i_f2 = t1714 ).
     APPEND t1710 TO t1709->items.
-    DATA(t1718) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1718) = t1302.
     DATA t1719 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1719.
     DATA(t1720) = |st_isring|.
@@ -4124,7 +4124,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1723 = t1724.
     t1719 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1720 i_f1 = t1721 i_f2 = t1723 ).
     APPEND t1719 TO t1718->items.
-    DATA(t1727) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1727) = t1302.
     DATA t1728 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1728.
     DATA(t1729) = |st_isvalid|.
@@ -4146,7 +4146,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1732 = t1733.
     t1728 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1729 i_f1 = t1730 i_f2 = t1732 ).
     APPEND t1728 TO t1727->items.
-    DATA(t1736) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1736) = t1302.
     DATA t1737 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1737.
     DATA(t1738) = |st_isvalidtrajectory|.
@@ -4168,7 +4168,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1741 = t1742.
     t1737 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1738 i_f1 = t1739 i_f2 = t1741 ).
     APPEND t1737 TO t1736->items.
-    DATA(t1745) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1745) = t1302.
     DATA t1746 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1746.
     DATA(t1747) = |st_is3d|.
@@ -4190,7 +4190,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1750 = t1751.
     t1746 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1747 i_f1 = t1748 i_f2 = t1750 ).
     APPEND t1746 TO t1745->items.
-    DATA(t1754) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1754) = t1302.
     DATA t1755 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1755.
     DATA(t1756) = |st_ismeasured|.
@@ -4212,7 +4212,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1759 = t1760.
     t1755 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1756 i_f1 = t1757 i_f2 = t1759 ).
     APPEND t1755 TO t1754->items.
-    DATA(t1763) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1763) = t1302.
     DATA t1764 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1764.
     DATA(t1765) = |st_invalidreason|.
@@ -4234,7 +4234,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1768 = t1769.
     t1764 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1765 i_f1 = t1766 i_f2 = t1768 ).
     APPEND t1764 TO t1763->items.
-    DATA(t1772) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1772) = t1302.
     DATA t1773 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1773.
     DATA(t1774) = |st_numpoints|.
@@ -4256,7 +4256,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1777 = t1778.
     t1773 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1774 i_f1 = t1775 i_f2 = t1777 ).
     APPEND t1773 TO t1772->items.
-    DATA(t1781) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1781) = t1302.
     DATA t1782 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1782.
     DATA(t1783) = |st_numgeometries|.
@@ -4278,7 +4278,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1786 = t1787.
     t1782 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1783 i_f1 = t1784 i_f2 = t1786 ).
     APPEND t1782 TO t1781->items.
-    DATA(t1790) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1790) = t1302.
     DATA t1791 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1791.
     DATA(t1792) = |st_numinteriorring|.
@@ -4300,7 +4300,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1795 = t1796.
     t1791 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1792 i_f1 = t1793 i_f2 = t1795 ).
     APPEND t1791 TO t1790->items.
-    DATA(t1799) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1799) = t1302.
     DATA t1800 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1800.
     DATA(t1801) = |st_numinteriorrings|.
@@ -4322,7 +4322,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1804 = t1805.
     t1800 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1801 i_f1 = t1802 i_f2 = t1804 ).
     APPEND t1800 TO t1799->items.
-    DATA(t1808) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1808) = t1302.
     DATA t1809 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1809.
     DATA(t1810) = |st_envelope|.
@@ -4344,7 +4344,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1813 = t1814.
     t1809 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1810 i_f1 = t1811 i_f2 = t1813 ).
     APPEND t1809 TO t1808->items.
-    DATA(t1817) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1817) = t1302.
     DATA t1818 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1818.
     DATA(t1819) = |st_boundary|.
@@ -4366,7 +4366,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1822 = t1823.
     t1818 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1819 i_f1 = t1820 i_f2 = t1822 ).
     APPEND t1818 TO t1817->items.
-    DATA(t1826) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1826) = t1302.
     DATA t1827 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1827.
     DATA(t1828) = |st_exteriorring|.
@@ -4388,7 +4388,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1831 = t1832.
     t1827 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1828 i_f1 = t1829 i_f2 = t1831 ).
     APPEND t1827 TO t1826->items.
-    DATA(t1835) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1835) = t1302.
     DATA t1836 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1836.
     DATA(t1837) = |st_startpoint|.
@@ -4410,7 +4410,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1840 = t1841.
     t1836 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1837 i_f1 = t1838 i_f2 = t1840 ).
     APPEND t1836 TO t1835->items.
-    DATA(t1844) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1844) = t1302.
     DATA t1845 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1845.
     DATA(t1846) = |st_endpoint|.
@@ -4432,7 +4432,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1849 = t1850.
     t1845 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1846 i_f1 = t1847 i_f2 = t1849 ).
     APPEND t1845 TO t1844->items.
-    DATA(t1853) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1853) = t1302.
     DATA t1854 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1854.
     DATA(t1855) = |st_centroid|.
@@ -4454,7 +4454,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1858 = t1859.
     t1854 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1855 i_f1 = t1856 i_f2 = t1858 ).
     APPEND t1854 TO t1853->items.
-    DATA(t1862) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1862) = t1302.
     DATA t1863 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1863.
     DATA(t1864) = |st_pointonsurface|.
@@ -4476,7 +4476,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1867 = t1868.
     t1863 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1864 i_f1 = t1865 i_f2 = t1867 ).
     APPEND t1863 TO t1862->items.
-    DATA(t1871) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1871) = t1302.
     DATA t1872 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1872.
     DATA(t1873) = |st_convexhull|.
@@ -4498,7 +4498,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1876 = t1877.
     t1872 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1873 i_f1 = t1874 i_f2 = t1876 ).
     APPEND t1872 TO t1871->items.
-    DATA(t1880) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1880) = t1302.
     DATA t1881 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1881.
     DATA(t1882) = |st_concavehull|.
@@ -4520,7 +4520,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1885 = t1886.
     t1881 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1882 i_f1 = t1883 i_f2 = t1885 ).
     APPEND t1881 TO t1880->items.
-    DATA(t1889) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1889) = t1302.
     DATA t1890 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1890.
     DATA(t1891) = |st_reverse|.
@@ -4542,7 +4542,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1894 = t1895.
     t1890 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1891 i_f1 = t1892 i_f2 = t1894 ).
     APPEND t1890 TO t1889->items.
-    DATA(t1898) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1898) = t1302.
     DATA t1899 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1899.
     DATA(t1900) = |st_force2d|.
@@ -4564,7 +4564,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1903 = t1904.
     t1899 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1900 i_f1 = t1901 i_f2 = t1903 ).
     APPEND t1899 TO t1898->items.
-    DATA(t1907) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1907) = t1302.
     DATA t1908 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1908.
     DATA(t1909) = |st_force3dz|.
@@ -4586,7 +4586,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1912 = t1913.
     t1908 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1909 i_f1 = t1910 i_f2 = t1912 ).
     APPEND t1908 TO t1907->items.
-    DATA(t1916) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1916) = t1302.
     DATA t1917 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1917.
     DATA(t1918) = |st_force3dm|.
@@ -4608,7 +4608,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1921 = t1922.
     t1917 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1918 i_f1 = t1919 i_f2 = t1921 ).
     APPEND t1917 TO t1916->items.
-    DATA(t1925) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1925) = t1302.
     DATA t1926 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1926.
     DATA(t1927) = |st_force4d|.
@@ -4630,7 +4630,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1930 = t1931.
     t1926 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1927 i_f1 = t1928 i_f2 = t1930 ).
     APPEND t1926 TO t1925->items.
-    DATA(t1934) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1934) = t1302.
     DATA t1935 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1935.
     DATA(t1936) = |st_makevalid|.
@@ -4652,7 +4652,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1939 = t1940.
     t1935 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1936 i_f1 = t1937 i_f2 = t1939 ).
     APPEND t1935 TO t1934->items.
-    DATA(t1943) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1943) = t1302.
     DATA t1944 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1944.
     DATA(t1945) = |st_geohash|.
@@ -4674,7 +4674,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1948 = t1949.
     t1944 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1945 i_f1 = t1946 i_f2 = t1948 ).
     APPEND t1944 TO t1943->items.
-    DATA(t1952) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1952) = t1302.
     DATA t1953 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1953.
     DATA(t1954) = |st_aswkt|.
@@ -4696,7 +4696,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1957 = t1958.
     t1953 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1954 i_f1 = t1955 i_f2 = t1957 ).
     APPEND t1953 TO t1952->items.
-    DATA(t1961) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1961) = t1302.
     DATA t1962 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1962.
     DATA(t1963) = |st_aswkb|.
@@ -4718,7 +4718,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1966 = t1967.
     t1962 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1963 i_f1 = t1964 i_f2 = t1966 ).
     APPEND t1962 TO t1961->items.
-    DATA(t1970) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1970) = t1302.
     DATA t1971 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1971.
     DATA(t1972) = |st_asewkt|.
@@ -4740,7 +4740,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1975 = t1976.
     t1971 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1972 i_f1 = t1973 i_f2 = t1975 ).
     APPEND t1971 TO t1970->items.
-    DATA(t1979) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1979) = t1302.
     DATA t1980 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1980.
     DATA(t1981) = |st_asewkb|.
@@ -4762,7 +4762,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1984 = t1985.
     t1980 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1981 i_f1 = t1982 i_f2 = t1984 ).
     APPEND t1980 TO t1979->items.
-    DATA(t1988) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1988) = t1302.
     DATA t1989 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1989.
     DATA(t1990) = |st_asbinary|.
@@ -4784,7 +4784,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t1993 = t1994.
     t1989 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1990 i_f1 = t1991 i_f2 = t1993 ).
     APPEND t1989 TO t1988->items.
-    DATA(t1997) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t1997) = t1302.
     DATA t1998 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t1998.
     DATA(t1999) = |st_astext|.
@@ -4806,7 +4806,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2002 = t2003.
     t1998 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1999 i_f1 = t2000 i_f2 = t2002 ).
     APPEND t1998 TO t1997->items.
-    DATA(t2006) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2006) = t1302.
     DATA t2007 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2007.
     DATA(t2008) = |st_asgeojson|.
@@ -4828,7 +4828,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2011 = t2012.
     t2007 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2008 i_f1 = t2009 i_f2 = t2011 ).
     APPEND t2007 TO t2006->items.
-    DATA(t2015) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2015) = t1302.
     DATA t2016 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2016.
     DATA(t2017) = |st_asesrijson|.
@@ -4850,7 +4850,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2020 = t2021.
     t2016 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2017 i_f1 = t2018 i_f2 = t2020 ).
     APPEND t2016 TO t2015->items.
-    DATA(t2024) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2024) = t1302.
     DATA t2025 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2025.
     DATA(t2026) = |st_assvg|.
@@ -4872,7 +4872,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2029 = t2030.
     t2025 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2026 i_f1 = t2027 i_f2 = t2029 ).
     APPEND t2025 TO t2024->items.
-    DATA(t2033) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2033) = t1302.
     DATA t2034 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2034.
     DATA(t2035) = |st_distance|.
@@ -4894,7 +4894,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2038 = t2039.
     t2034 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2035 i_f1 = t2036 i_f2 = t2038 ).
     APPEND t2034 TO t2033->items.
-    DATA(t2042) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2042) = t1302.
     DATA t2043 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2043.
     DATA(t2044) = |st_withindistance|.
@@ -4916,7 +4916,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2047 = t2048.
     t2043 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2044 i_f1 = t2045 i_f2 = t2047 ).
     APPEND t2043 TO t2042->items.
-    DATA(t2051) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2051) = t1302.
     DATA t2052 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2052.
     DATA(t2053) = |st_contains|.
@@ -4938,7 +4938,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2056 = t2057.
     t2052 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2053 i_f1 = t2054 i_f2 = t2056 ).
     APPEND t2052 TO t2051->items.
-    DATA(t2060) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2060) = t1302.
     DATA t2061 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2061.
     DATA(t2062) = |st_covers|.
@@ -4960,7 +4960,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2065 = t2066.
     t2061 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2062 i_f1 = t2063 i_f2 = t2065 ).
     APPEND t2061 TO t2060->items.
-    DATA(t2069) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2069) = t1302.
     DATA t2070 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2070.
     DATA(t2071) = |st_coveredby|.
@@ -4982,7 +4982,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2074 = t2075.
     t2070 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2071 i_f1 = t2072 i_f2 = t2074 ).
     APPEND t2070 TO t2069->items.
-    DATA(t2078) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2078) = t1302.
     DATA t2079 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2079.
     DATA(t2080) = |st_crosses|.
@@ -5004,7 +5004,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2083 = t2084.
     t2079 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2080 i_f1 = t2081 i_f2 = t2083 ).
     APPEND t2079 TO t2078->items.
-    DATA(t2087) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2087) = t1302.
     DATA t2088 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2088.
     DATA(t2089) = |st_disjoint|.
@@ -5026,7 +5026,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2092 = t2093.
     t2088 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2089 i_f1 = t2090 i_f2 = t2092 ).
     APPEND t2088 TO t2087->items.
-    DATA(t2096) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2096) = t1302.
     DATA t2097 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2097.
     DATA(t2098) = |st_equals|.
@@ -5048,7 +5048,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2101 = t2102.
     t2097 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2098 i_f1 = t2099 i_f2 = t2101 ).
     APPEND t2097 TO t2096->items.
-    DATA(t2105) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2105) = t1302.
     DATA t2106 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2106.
     DATA(t2107) = |st_orderingequals|.
@@ -5070,7 +5070,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2110 = t2111.
     t2106 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2107 i_f1 = t2108 i_f2 = t2110 ).
     APPEND t2106 TO t2105->items.
-    DATA(t2114) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2114) = t1302.
     DATA t2115 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2115.
     DATA(t2116) = |st_intersects|.
@@ -5092,7 +5092,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2119 = t2120.
     t2115 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2116 i_f1 = t2117 i_f2 = t2119 ).
     APPEND t2115 TO t2114->items.
-    DATA(t2123) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2123) = t1302.
     DATA t2124 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2124.
     DATA(t2125) = |st_intersectsfilter|.
@@ -5114,7 +5114,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2128 = t2129.
     t2124 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2125 i_f1 = t2126 i_f2 = t2128 ).
     APPEND t2124 TO t2123->items.
-    DATA(t2132) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2132) = t1302.
     DATA t2133 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2133.
     DATA(t2134) = |st_intersectsrect|.
@@ -5136,7 +5136,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2137 = t2138.
     t2133 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2134 i_f1 = t2135 i_f2 = t2137 ).
     APPEND t2133 TO t2132->items.
-    DATA(t2141) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2141) = t1302.
     DATA t2142 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2142.
     DATA(t2143) = |st_intersectsrectplanar|.
@@ -5158,7 +5158,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2146 = t2147.
     t2142 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2143 i_f1 = t2144 i_f2 = t2146 ).
     APPEND t2142 TO t2141->items.
-    DATA(t2150) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2150) = t1302.
     DATA t2151 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2151.
     DATA(t2152) = |st_overlaps|.
@@ -5180,7 +5180,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2155 = t2156.
     t2151 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2152 i_f1 = t2153 i_f2 = t2155 ).
     APPEND t2151 TO t2150->items.
-    DATA(t2159) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2159) = t1302.
     DATA t2160 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2160.
     DATA(t2161) = |st_touches|.
@@ -5202,7 +5202,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2164 = t2165.
     t2160 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2161 i_f1 = t2162 i_f2 = t2164 ).
     APPEND t2160 TO t2159->items.
-    DATA(t2168) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2168) = t1302.
     DATA t2169 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2169.
     DATA(t2170) = |st_within|.
@@ -5224,7 +5224,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2173 = t2174.
     t2169 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2170 i_f1 = t2171 i_f2 = t2173 ).
     APPEND t2169 TO t2168->items.
-    DATA(t2177) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2177) = t1302.
     DATA t2178 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2178.
     DATA(t2179) = |st_intersection|.
@@ -5246,7 +5246,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2182 = t2183.
     t2178 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2179 i_f1 = t2180 i_f2 = t2182 ).
     APPEND t2178 TO t2177->items.
-    DATA(t2186) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2186) = t1302.
     DATA t2187 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2187.
     DATA(t2188) = |st_union|.
@@ -5268,7 +5268,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2191 = t2192.
     t2187 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2188 i_f1 = t2189 i_f2 = t2191 ).
     APPEND t2187 TO t2186->items.
-    DATA(t2195) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2195) = t1302.
     DATA t2196 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2196.
     DATA(t2197) = |st_difference|.
@@ -5290,7 +5290,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2200 = t2201.
     t2196 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2197 i_f1 = t2198 i_f2 = t2200 ).
     APPEND t2196 TO t2195->items.
-    DATA(t2204) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2204) = t1302.
     DATA t2205 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2205.
     DATA(t2206) = |st_symdifference|.
@@ -5312,7 +5312,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2209 = t2210.
     t2205 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2206 i_f1 = t2207 i_f2 = t2209 ).
     APPEND t2205 TO t2204->items.
-    DATA(t2213) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2213) = t1302.
     DATA t2214 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2214.
     DATA(t2215) = |st_collect|.
@@ -5334,7 +5334,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2218 = t2219.
     t2214 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2215 i_f1 = t2216 i_f2 = t2218 ).
     APPEND t2214 TO t2213->items.
-    DATA(t2222) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2222) = t1302.
     DATA t2223 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2223.
     DATA(t2224) = |st_buffer|.
@@ -5356,7 +5356,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2227 = t2228.
     t2223 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2224 i_f1 = t2225 i_f2 = t2227 ).
     APPEND t2223 TO t2222->items.
-    DATA(t2231) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2231) = t1302.
     DATA t2232 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2232.
     DATA(t2233) = |st_transform|.
@@ -5378,7 +5378,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2236 = t2237.
     t2232 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2233 i_f1 = t2234 i_f2 = t2236 ).
     APPEND t2232 TO t2231->items.
-    DATA(t2240) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2240) = t1302.
     DATA t2241 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2241.
     DATA(t2242) = |st_rotate|.
@@ -5400,7 +5400,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2245 = t2246.
     t2241 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2242 i_f1 = t2243 i_f2 = t2245 ).
     APPEND t2241 TO t2240->items.
-    DATA(t2249) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2249) = t1302.
     DATA t2250 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2250.
     DATA(t2251) = |st_scale|.
@@ -5422,7 +5422,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2254 = t2255.
     t2250 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2251 i_f1 = t2252 i_f2 = t2254 ).
     APPEND t2250 TO t2249->items.
-    DATA(t2258) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2258) = t1302.
     DATA t2259 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2259.
     DATA(t2260) = |st_translate|.
@@ -5444,7 +5444,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2263 = t2264.
     t2259 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2260 i_f1 = t2261 i_f2 = t2263 ).
     APPEND t2259 TO t2258->items.
-    DATA(t2267) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2267) = t1302.
     DATA t2268 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2268.
     DATA(t2269) = |st_translate3d|.
@@ -5466,7 +5466,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2272 = t2273.
     t2268 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2269 i_f1 = t2270 i_f2 = t2272 ).
     APPEND t2268 TO t2267->items.
-    DATA(t2276) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2276) = t1302.
     DATA t2277 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2277.
     DATA(t2278) = |st_simplify|.
@@ -5488,7 +5488,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2281 = t2282.
     t2277 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2278 i_f1 = t2279 i_f2 = t2281 ).
     APPEND t2277 TO t2276->items.
-    DATA(t2285) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2285) = t1302.
     DATA t2286 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2286.
     DATA(t2287) = |st_snaptogrid|.
@@ -5510,7 +5510,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2290 = t2291.
     t2286 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2287 i_f1 = t2288 i_f2 = t2290 ).
     APPEND t2286 TO t2285->items.
-    DATA(t2294) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2294) = t1302.
     DATA t2295 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2295.
     DATA(t2296) = |st_addmeasure|.
@@ -5532,7 +5532,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2299 = t2300.
     t2295 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2296 i_f1 = t2297 i_f2 = t2299 ).
     APPEND t2295 TO t2294->items.
-    DATA(t2303) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2303) = t1302.
     DATA t2304 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2304.
     DATA(t2305) = |st_addpoint|.
@@ -5554,7 +5554,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2308 = t2309.
     t2304 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2305 i_f1 = t2306 i_f2 = t2308 ).
     APPEND t2304 TO t2303->items.
-    DATA(t2312) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2312) = t1302.
     DATA t2313 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2313.
     DATA(t2314) = |st_removepoint|.
@@ -5576,7 +5576,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2317 = t2318.
     t2313 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2314 i_f1 = t2315 i_f2 = t2317 ).
     APPEND t2313 TO t2312->items.
-    DATA(t2321) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2321) = t1302.
     DATA t2322 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2322.
     DATA(t2323) = |st_pointn|.
@@ -5598,7 +5598,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2326 = t2327.
     t2322 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2323 i_f1 = t2324 i_f2 = t2326 ).
     APPEND t2322 TO t2321->items.
-    DATA(t2330) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2330) = t1302.
     DATA t2331 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2331.
     DATA(t2332) = |st_geometryn|.
@@ -5620,7 +5620,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2335 = t2336.
     t2331 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2332 i_f1 = t2333 i_f2 = t2335 ).
     APPEND t2331 TO t2330->items.
-    DATA(t2339) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2339) = t1302.
     DATA t2340 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2340.
     DATA(t2341) = |st_interiorringn|.
@@ -5642,7 +5642,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2344 = t2345.
     t2340 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2341 i_f1 = t2342 i_f2 = t2344 ).
     APPEND t2340 TO t2339->items.
-    DATA(t2348) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2348) = t1302.
     DATA t2349 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2349.
     DATA(t2350) = |st_lineinterpolatepoint|.
@@ -5664,7 +5664,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2353 = t2354.
     t2349 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2350 i_f1 = t2351 i_f2 = t2353 ).
     APPEND t2349 TO t2348->items.
-    DATA(t2357) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2357) = t1302.
     DATA t2358 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2358.
     DATA(t2359) = |st_linelocatepoint|.
@@ -5686,7 +5686,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2362 = t2363.
     t2358 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2359 i_f1 = t2360 i_f2 = t2362 ).
     APPEND t2358 TO t2357->items.
-    DATA(t2366) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2366) = t1302.
     DATA t2367 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2367.
     DATA(t2368) = |st_linesubstring|.
@@ -5708,7 +5708,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2371 = t2372.
     t2367 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2368 i_f1 = t2369 i_f2 = t2371 ).
     APPEND t2367 TO t2366->items.
-    DATA(t2375) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2375) = t1302.
     DATA t2376 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2376.
     DATA(t2377) = |st_locatealong|.
@@ -5730,7 +5730,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2380 = t2381.
     t2376 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2377 i_f1 = t2378 i_f2 = t2380 ).
     APPEND t2376 TO t2375->items.
-    DATA(t2384) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2384) = t1302.
     DATA t2385 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2385.
     DATA(t2386) = |st_locatebetween|.
@@ -5752,7 +5752,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2389 = t2390.
     t2385 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2386 i_f1 = t2387 i_f2 = t2389 ).
     APPEND t2385 TO t2384->items.
-    DATA(t2393) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2393) = t1302.
     DATA t2394 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2394.
     DATA(t2395) = |st_alphashape|.
@@ -5774,7 +5774,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2398 = t2399.
     t2394 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2395 i_f1 = t2396 i_f2 = t2398 ).
     APPEND t2394 TO t2393->items.
-    DATA(t2402) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2402) = t1302.
     DATA t2403 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2403.
     DATA(t2404) = |st_alphashapearea|.
@@ -5796,7 +5796,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2407 = t2408.
     t2403 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2404 i_f1 = t2405 i_f2 = t2407 ).
     APPEND t2403 TO t2402->items.
-    DATA(t2411) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2411) = t1302.
     DATA t2412 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2412.
     DATA(t2413) = |st_alphashapeedge|.
@@ -5818,7 +5818,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2416 = t2417.
     t2412 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2413 i_f1 = t2414 i_f2 = t2416 ).
     APPEND t2412 TO t2411->items.
-    DATA(t2420) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2420) = t1302.
     DATA t2421 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2421.
     DATA(t2422) = |st_closestpointofapproach|.
@@ -5840,7 +5840,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2425 = t2426.
     t2421 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2422 i_f1 = t2423 i_f2 = t2425 ).
     APPEND t2421 TO t2420->items.
-    DATA(t2429) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2429) = t1302.
     DATA t2430 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2430.
     DATA(t2431) = |st_frechetdistance|.
@@ -5862,7 +5862,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2434 = t2435.
     t2430 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2431 i_f1 = t2432 i_f2 = t2434 ).
     APPEND t2430 TO t2429->items.
-    DATA(t2438) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2438) = t1302.
     DATA t2439 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2439.
     DATA(t2440) = |st_hausdorffdistance|.
@@ -5884,7 +5884,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2443 = t2444.
     t2439 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2440 i_f1 = t2441 i_f2 = t2443 ).
     APPEND t2439 TO t2438->items.
-    DATA(t2447) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2447) = t1302.
     DATA t2448 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2448.
     DATA(t2449) = |st_3dlength|.
@@ -5906,7 +5906,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2452 = t2453.
     t2448 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2449 i_f1 = t2450 i_f2 = t2452 ).
     APPEND t2448 TO t2447->items.
-    DATA(t2456) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2456) = t1302.
     DATA t2457 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2457.
     DATA(t2458) = |st_asmvtgeom|.
@@ -5928,7 +5928,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2461 = t2462.
     t2457 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2458 i_f1 = t2459 i_f2 = t2461 ).
     APPEND t2457 TO t2456->items.
-    DATA(t2465) = CAST zlnt_runtime_arra_c22708faf2e3( t1302 ).
+    DATA(t2465) = t1302.
     t1301 = t2465.
     zcl_lnt_sql_function_module=>sql_spatial_function_defs = t1301.
     IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
@@ -5940,7 +5940,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t2468 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2468.
     t2467 = t2468.
-    DATA(t2469) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2469) = t2467.
     DATA t2470 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2470.
     DATA(t2471) = |st_assvgaggr|.
@@ -5962,7 +5962,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2474 = t2475.
     t2470 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2471 i_f1 = t2472 i_f2 = t2474 ).
     APPEND t2470 TO t2469->items.
-    DATA(t2478) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2478) = t2467.
     DATA t2479 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2479.
     DATA(t2480) = |st_collectaggr|.
@@ -5984,7 +5984,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2483 = t2484.
     t2479 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2480 i_f1 = t2481 i_f2 = t2483 ).
     APPEND t2479 TO t2478->items.
-    DATA(t2487) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2487) = t2467.
     DATA t2488 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2488.
     DATA(t2489) = |st_concavehullaggr|.
@@ -6006,7 +6006,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2492 = t2493.
     t2488 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2489 i_f1 = t2490 i_f2 = t2492 ).
     APPEND t2488 TO t2487->items.
-    DATA(t2496) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2496) = t2467.
     DATA t2497 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2497.
     DATA(t2498) = |st_convexhullaggr|.
@@ -6028,7 +6028,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2501 = t2502.
     t2497 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2498 i_f1 = t2499 i_f2 = t2501 ).
     APPEND t2497 TO t2496->items.
-    DATA(t2505) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2505) = t2467.
     DATA t2506 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2506.
     DATA(t2507) = |st_envelopeaggr|.
@@ -6050,7 +6050,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2510 = t2511.
     t2506 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2507 i_f1 = t2508 i_f2 = t2510 ).
     APPEND t2506 TO t2505->items.
-    DATA(t2514) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2514) = t2467.
     DATA t2515 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2515.
     DATA(t2516) = |st_intersectionaggr|.
@@ -6072,7 +6072,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2519 = t2520.
     t2515 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2516 i_f1 = t2517 i_f2 = t2519 ).
     APPEND t2515 TO t2514->items.
-    DATA(t2523) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2523) = t2467.
     DATA t2524 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2524.
     DATA(t2525) = |st_unionaggr|.
@@ -6094,7 +6094,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2528 = t2529.
     t2524 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2525 i_f1 = t2526 i_f2 = t2528 ).
     APPEND t2524 TO t2523->items.
-    DATA(t2532) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2532) = t2467.
     DATA t2533 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2533.
     DATA(t2534) = |st_alphashapeaggr|.
@@ -6116,7 +6116,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2537 = t2538.
     t2533 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2534 i_f1 = t2535 i_f2 = t2537 ).
     APPEND t2533 TO t2532->items.
-    DATA(t2541) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2541) = t2467.
     DATA t2542 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2542.
     DATA(t2543) = |st_alphashapeareaaggr|.
@@ -6138,7 +6138,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2546 = t2547.
     t2542 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2543 i_f1 = t2544 i_f2 = t2546 ).
     APPEND t2542 TO t2541->items.
-    DATA(t2550) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2550) = t2467.
     DATA t2551 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t2551.
     DATA(t2552) = |st_alphashapeedgeaggr|.
@@ -6160,7 +6160,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     t2555 = t2556.
     t2551 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2552 i_f1 = t2553 i_f2 = t2555 ).
     APPEND t2551 TO t2550->items.
-    DATA(t2559) = CAST zlnt_runtime_arra_c22708faf2e3( t2467 ).
+    DATA(t2559) = t2467.
     t2466 = t2559.
     zcl_lnt_sql_function_module=>sql_spatial_aggregate_defs = t2466.
   ENDMETHOD.

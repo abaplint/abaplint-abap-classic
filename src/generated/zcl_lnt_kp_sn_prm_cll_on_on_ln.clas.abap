@@ -93,19 +93,19 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |Whitespace|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t30) = t24.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t32) = t24.
       DATA(t33) = |Quickfix|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t34) = t24.
       t23 = t34.
       t21 = t23.
     ELSE.
@@ -123,13 +123,13 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_k_s_p_o_o_l_t_k_s_p.
-    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_k_s_p_o_o_l_t_k_s_p.
-    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:35|.
     t2->source_location = t3.
@@ -137,8 +137,8 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/keep_single_parameter_on_one_line.ts:39|.
     t3->source_location = t4.
@@ -146,7 +146,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_field_assigments.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:70|.
     t2->source_location = t3.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD cntns_nw_ln_tbl_exprssn.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:75|.
     t2->source_location = t3.
@@ -162,7 +162,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_new_line_value.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:84|.
     t2->source_location = t3.
@@ -170,7 +170,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_new_line_template.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
+    DATA(t1) = i_s.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:94|.
     t2->source_location = t3.
@@ -178,8 +178,8 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_bf6e.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_c.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/keep_single_parameter_on_one_line.ts:105|.
     t3->source_location = t4.
@@ -187,7 +187,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD calc_statement_length.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_c ).
+    DATA(t1) = i_c.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:123|.
     t2->source_location = t3.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_multi_line.
-    DATA(t1) = CAST zif_lnt_union_bb14dc41( i_c ).
+    DATA(t1) = i_c.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:134|.
     t2->source_location = t3.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_without_parameters.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
+    DATA(t1) = i_c.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:141|.
     t2->source_location = t3.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_single_parameter.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
+    DATA(t1) = i_c.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/keep_single_parameter_on_one_line.ts:145|.
     t2->source_location = t3.

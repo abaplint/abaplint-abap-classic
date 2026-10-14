@@ -11,10 +11,10 @@ CLASS zcl_lnt_shape_df3d0820 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_df3d0820 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
+    DATA(t1) = i_statements.
     DATA(t2) = i_contains_unknown.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     me->statements = t3.
     DATA(t5) = t2.

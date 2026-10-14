@@ -20,36 +20,36 @@ CLASS zcl_lnt_shape_c44ae6d7 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_c44ae6d7 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
-    DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_severity ).
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( i_code ).
-    DATA(t4) = CAST zcl_lnt_shape_88ee2c6c( i_code_description ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_source_75cf ).
-    DATA(t6) = CAST zlnt_runtime_dyna_a429568d5be8( i_message_26cb ).
-    DATA(t7) = CAST zlnt_runtime_arra_f39560c658f8( i_tags ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( i_related_information ).
-    DATA(t9) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_range.
+    DATA(t2) = i_severity.
+    DATA(t3) = i_code.
+    DATA(t4) = i_code_description.
+    DATA(t5) = i_source_75cf.
+    DATA(t6) = i_message_26cb.
+    DATA(t7) = i_tags.
+    DATA(t8) = i_related_information.
+    DATA(t9) = i_data_dc02.
     DATA t10 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t11) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t11) = t1.
     t10 = t11.
     me->range = t10.
-    DATA(t12) = CAST zlnt_runtime_opti_4a236cd5714d( t2 ).
+    DATA(t12) = t2.
     me->severity = t12.
-    DATA(t13) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+    DATA(t13) = t3.
     me->code = t13.
-    DATA(t14) = CAST zcl_lnt_shape_88ee2c6c( t4 ).
+    DATA(t14) = t4.
     me->code_description = t14.
-    DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t15) = t5.
     me->source = t15.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t17) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
+    DATA(t17) = t6.
     t16 = t17.
     me->message_25cb = t16.
-    DATA(t18) = CAST zlnt_runtime_arra_f39560c658f8( t7 ).
+    DATA(t18) = t7.
     me->tags = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t19) = t8.
     me->related_information = t19.
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
+    DATA(t20) = t9.
     me->data_56cc = t20.
   ENDMETHOD.
 

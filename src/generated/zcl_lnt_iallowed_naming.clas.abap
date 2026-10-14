@@ -14,12 +14,12 @@ CLASS zcl_lnt_iallowed_naming IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_max_length.
     DATA(t2) = i_allow_namespace.
-    DATA(t3) = CAST zlnt_runtime_rege_5a210f82384e( i_custom_regex ).
+    DATA(t3) = i_custom_regex.
     DATA(t4) = t1.
     me->max_length = t4.
     DATA(t5) = t2.
     me->allow_namespace = t5.
-    DATA(t6) = CAST zlnt_runtime_rege_5a210f82384e( t3 ).
+    DATA(t6) = t3.
     me->custom_regex = t6.
   ENDMETHOD.
 

@@ -167,10 +167,10 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t40 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t40.
       t39 = t40.
-      DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t41) = t39.
       DATA(t42) = |SingleFile|.
       APPEND t42 TO t41->items.
-      DATA(t43) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
+      DATA(t43) = t39.
       t38 = t43.
       t36 = t38.
     ELSE.
@@ -188,13 +188,13 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/add_test_attributes.ts:51|.
     t2->source_location = t3.
@@ -202,7 +202,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/add_test_attributes.ts:55|.
     t2->source_location = t3.

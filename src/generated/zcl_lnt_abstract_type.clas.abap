@@ -23,13 +23,13 @@ CLASS zcl_lnt_abstract_type DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t1) = i_input_967e.
+    DATA(t2) = t1.
     me->data_56cc = t2.
   ENDMETHOD.
 
   METHOD get_abstract_type_data.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t1) = me->data_56cc.
     result = t1.
 
   ENDMETHOD.
@@ -38,12 +38,12 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -54,7 +54,7 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->qualified_name.
       t4 = t8.

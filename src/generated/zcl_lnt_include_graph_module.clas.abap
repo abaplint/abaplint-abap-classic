@@ -15,13 +15,13 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     IF zcl_lnt_include_graph_module=>zlnt_builtin_init_672ad5f3b5e9 = abap_false.
       zcl_lnt_include_graph_module=>zlnt_builtin_init_eae383aaa208( ).
     ENDIF.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zif_lnt_registry( t1 ).
+    DATA(t5) = t1.
     t4 = t5->get_objects( ).
     DATA t6 TYPE REF TO zif_lnt_object.
     CLEAR t6.
@@ -30,19 +30,19 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     LOOP AT t4->items INTO t7.
       t6 ?= t7.
       DATA t8 TYPE abap_bool.
-      DATA(t9) = CAST zif_lnt_object( t6 ).
+      DATA(t9) = t6.
       t8 = xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t8 = abap_true.
-        DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t10) = t2.
         DATA t11 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t12) = CAST zif_lnt_object( t6 ).
+        DATA(t12) = t6.
         DATA t13 TYPE REF TO object.
         t13 = t12.
         t11 ?= t13.
         APPEND t11 TO t10->items.
       ENDIF.
     ENDLOOP.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t14) = t2.
     result = t14.
 
   ENDMETHOD.

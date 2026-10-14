@@ -77,10 +77,10 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t20.
       t19 = t20.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t21) = t19.
       DATA(t22) = |Syntax|.
       APPEND t22 TO t21->items.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t19 ).
+      DATA(t23) = t19.
       t18 = t23.
       t16 = t18.
     ELSE.
@@ -106,13 +106,13 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_mn_fl_cn_ts_mn_fl_cn.
-    DATA(t1) = CAST zcl_lnt_mn_fl_cntnts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_mn_fl_cn_ts_mn_fl_cn.
-    DATA(t1) = CAST zcl_lnt_mn_fl_cntnts_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/main_file_contents.ts:43|.
     t2->source_location = t3.
@@ -120,7 +120,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_mn_fl_cn_ts_mn_fl_cn.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/main_file_contents.ts:47|.
     t2->source_location = t3.
@@ -128,7 +128,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/main_file_contents.ts:52|.
     t2->source_location = t3.
@@ -146,7 +146,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/main_file_contents.ts:43|.
     t2->source_location = t3.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/main_file_contents.ts:47|.
     t2->source_location = t3.

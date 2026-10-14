@@ -125,16 +125,16 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
       DATA t33 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t33.
       t32 = t33.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t34) = t32.
       DATA(t35) = |Styleguide|.
       APPEND t35 TO t34->items.
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t36) = t32.
       DATA(t37) = |Quickfix|.
       APPEND t37 TO t36->items.
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t38) = t32.
       DATA(t39) = |SingleFile|.
       APPEND t39 TO t38->items.
-      DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t32 ).
+      DATA(t40) = t32.
       t31 = t40.
       t29 = t31.
     ELSE.
@@ -152,13 +152,13 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_pr_is_nt_ts_pr_is_nt.
-    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_pr_is_nt_ts_pr_is_nt.
-    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_is_not.ts:43|.
     t2->source_location = t3.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_pr_is_nt_ts_pr_is_nt.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/prefer_is_not.ts:47|.
     t2->source_location = t3.
@@ -174,8 +174,8 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_expression_node( i_c ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_c.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/prefer_is_not.ts:68|.
     t3->source_location = t4.

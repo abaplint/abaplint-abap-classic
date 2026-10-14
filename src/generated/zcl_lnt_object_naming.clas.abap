@@ -47,10 +47,10 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Naming|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       t10 = t15.
       t8 = t10.
     ELSE.
@@ -77,14 +77,14 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ob_nm_ts_ob_nmn.
-    DATA(t1) = CAST zcl_lnt_object_naming_conf( me->conf ).
-    DATA(t2) = CAST zcl_lnt_object_naming_conf( me->conf ).
+    DATA(t1) = me->conf.
+    DATA(t2) = me->conf.
     result = t2.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_ob_nm_ts_ob_nmn.
-    DATA(t1) = CAST zcl_lnt_object_naming_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/object_naming.ts:101|.
     t2->source_location = t3.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_obj_nmn_ts_obj_nmn.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/object_naming.ts:105|.
     t2->source_location = t3.
@@ -100,7 +100,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/object_naming.ts:109|.
     t2->source_location = t3.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/object_naming.ts:101|.
     t2->source_location = t3.
@@ -126,7 +126,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/object_naming.ts:105|.
     t2->source_location = t3.

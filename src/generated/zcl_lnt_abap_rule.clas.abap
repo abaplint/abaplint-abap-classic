@@ -18,19 +18,19 @@ CLASS zcl_lnt_abap_rule DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abap_rule IMPLEMENTATION.
   METHOD in_in_src_rls_abp_rl_ts_abp_rl.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
-    DATA(t3) = CAST zcl_lnt_abap_rule( me ).
+    DATA(t3) = me.
     result = t3.
 
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
-    DATA(t4) = CAST zif_lnt_object( t1 ).
+    DATA(t4) = t1.
     t3 = xsdbool( t4 IS BOUND AND t4 IS INSTANCE OF zcl_lnt_abap_object ).
     t2 = xsdbool( t3 = abap_false ).
     IF t2 = abap_true.
@@ -41,7 +41,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     ENDIF.
     DATA t6 TYPE REF TO zcl_lnt_abap_object.
     DATA t7 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t8) = CAST zif_lnt_object( t1 ).
+    DATA(t8) = t1.
     DATA t9 TYPE REF TO object.
     t9 = t8.
     t7 ?= t9.
@@ -52,10 +52,10 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     t10 = t11.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t14) = CAST zcl_lnt_abap_object( t6 ).
+    DATA(t14) = t6.
     t13 = t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t16) = CAST zcl_lnt_abap_object( t13 ).
+    DATA(t16) = t13.
     t15 = t16->parsed.
     t12 = t15.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
@@ -66,9 +66,9 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
       t17 ?= t18.
       DATA(t19) = VALUE i( ).
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t21) = CAST zcl_lnt_abap_file( t17 ).
+      DATA(t21) = t17.
       DATA t22 TYPE REF TO zcl_lnt_abap_object.
-      DATA(t23) = CAST zif_lnt_object( t1 ).
+      DATA(t23) = t1.
       DATA t24 TYPE REF TO object.
       t24 = t23.
       t22 ?= t24.
@@ -79,24 +79,24 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
       CLEAR t26.
       LOOP AT t20->items INTO t26.
         t25 ?= t26.
-        DATA(t27) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
-        DATA(t28) = CAST zcl_lnt_issue( t25 ).
+        DATA(t27) = t10.
+        DATA(t28) = t25.
         APPEND t28 TO t27->items.
       ENDLOOP.
       DATA t29 TYPE i.
-      DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t30) = t10.
       t29 = lines( t30->items ).
       t19 = t29.
     ENDLOOP.
-    DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t31) = t10.
     result = t31.
 
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_abap_rule.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
     result = t2.
 

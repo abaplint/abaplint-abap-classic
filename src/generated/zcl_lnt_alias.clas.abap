@@ -12,11 +12,11 @@ CLASS zcl_lnt_alias DEFINITION PUBLIC INHERITING FROM zcl_lnt_fi_identifier CREA
 ENDCLASS.
 CLASS zcl_lnt_alias IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_token.
     DATA(t2) = i_visibility_5c1f.
     DATA(t3) = i_component.
     DATA(t4) = i_filename.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t5) = t1.
     DATA(t6) = t4.
     super->constructor( i_token = t5 i_filename = t6 ).
     DATA(t7) = t3.

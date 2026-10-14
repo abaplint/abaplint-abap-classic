@@ -12,14 +12,14 @@ CLASS zcl_lnt_itext_document_range DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_itext_document_range IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_start ).
-    DATA(t3) = CAST zcl_lnt_shape_38f98ddf( i_end ).
-    DATA(t4) = CAST zcl_lnt_shape_9e00b1e6( t1 ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_start.
+    DATA(t3) = i_end.
+    DATA(t4) = t1.
     me->text_document = t4.
-    DATA(t5) = CAST zcl_lnt_shape_38f98ddf( t2 ).
+    DATA(t5) = t2.
     me->start = t5.
-    DATA(t6) = CAST zcl_lnt_shape_38f98ddf( t3 ).
+    DATA(t6) = t3.
     me->end = t6.
   ENDMETHOD.
 

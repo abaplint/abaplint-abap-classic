@@ -102,13 +102,13 @@ CLASS zcl_lnt_mx_on_mthd_prmtr_pr_ln IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |SingleFile|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       DATA(t31) = |Whitespace|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t32) = t26.
       t25 = t32.
       t23 = t25.
     ELSE.
@@ -126,13 +126,13 @@ CLASS zcl_lnt_mx_on_mthd_prmtr_pr_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_m_o_m_p_p_l_t_m_o_m.
-    DATA(t1) = CAST zcl_lnt_mx_on_mt_prm_pr_ln_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_m_o_m_p_p_l_t_m_o_m.
-    DATA(t1) = CAST zcl_lnt_mx_on_mt_prm_pr_ln_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/max_one_method_parameter_per_line.ts:38|.
     t2->source_location = t3.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_mx_on_mthd_prmtr_pr_ln IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_m_o_m_p_p_l_t_m_o_m.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/max_one_method_parameter_per_line.ts:42|.
     t2->source_location = t3.

@@ -19,8 +19,8 @@ CLASS zcl_lnt_st_optional DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_optional IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_statement_runnable( i_optional ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t1) = i_optional.
+    DATA(t2) = t1.
     me->optional = t2.
   ENDMETHOD.
 
@@ -39,37 +39,37 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t4) = t1.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     CLEAR t5.
     DATA t6 TYPE REF TO object.
     CLEAR t6.
     LOOP AT t4->items INTO t6.
       t5 ?= t6.
-      DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t8) = CAST zcl_lnt_st_result( t5 ).
+      DATA(t7) = t2.
+      DATA(t8) = t5.
       APPEND t8 TO t7->items.
       DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t11) = CAST zif_lnt_statement_runnable( me->optional ).
-      DATA(t12) = CAST zcl_lnt_st_result( t5 ).
+      DATA(t11) = me->optional.
+      DATA(t12) = t5.
       t10 = t11->run_one( i_x = t12 ).
       t9 = t10.
       DATA t13 TYPE abap_bool.
       DATA t14 TYPE i.
-      DATA(t15) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+      DATA(t15) = t9.
       t14 = lines( t15->items ).
       DATA(t16) = 1.
       t13 = xsdbool( t14 = t16 ).
       IF t13 = abap_true.
-        DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t17) = t2.
         DATA t18 TYPE REF TO zcl_lnt_st_result.
-        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+        DATA(t19) = t9.
         DATA t20 TYPE REF TO object.
         CLEAR t20.
         READ TABLE t19->items INDEX 1 INTO t20.
@@ -77,24 +77,24 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
         APPEND t18 TO t17->items.
       ELSE.
         DATA(t21) = VALUE i( ).
-        DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+        DATA(t22) = t9.
         DATA t23 TYPE REF TO zcl_lnt_st_result.
         CLEAR t23.
         DATA t24 TYPE REF TO object.
         CLEAR t24.
         LOOP AT t22->items INTO t24.
           t23 ?= t24.
-          DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-          DATA(t26) = CAST zcl_lnt_st_result( t23 ).
+          DATA(t25) = t2.
+          DATA(t26) = t23.
           APPEND t26 TO t25->items.
         ENDLOOP.
         DATA t27 TYPE i.
-        DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t28) = t2.
         t27 = lines( t28->items ).
         t21 = t27.
       ENDIF.
     ENDLOOP.
-    DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t29) = t2.
     result = t29.
 
   ENDMETHOD.
@@ -121,33 +121,33 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zcl_lnt_st_result.
-    DATA(t5) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t4 ).
+    DATA(t6) = t2.
+    DATA(t7) = t4.
     APPEND t7 TO t6->items.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t10) = CAST zif_lnt_statement_runnable( me->optional ).
-    DATA(t11) = CAST zcl_lnt_st_result( t4 ).
+    DATA(t10) = me->optional.
+    DATA(t11) = t4.
     t9 = t10->run_one( i_x = t11 ).
     t8 = t9.
     DATA t12 TYPE abap_bool.
     DATA t13 TYPE i.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t14) = t8.
     t13 = lines( t14->items ).
     DATA(t15) = 1.
     t12 = xsdbool( t13 = t15 ).
     IF t12 = abap_true.
-      DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t16) = t2.
       DATA t17 TYPE REF TO zcl_lnt_st_result.
-      DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+      DATA(t18) = t8.
       DATA t19 TYPE REF TO object.
       CLEAR t19.
       READ TABLE t18->items INDEX 1 INTO t19.
@@ -155,23 +155,23 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
       APPEND t17 TO t16->items.
     ELSE.
       DATA(t20) = VALUE i( ).
-      DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+      DATA(t21) = t8.
       DATA t22 TYPE REF TO zcl_lnt_st_result.
       CLEAR t22.
       DATA t23 TYPE REF TO object.
       CLEAR t23.
       LOOP AT t21->items INTO t23.
         t22 ?= t23.
-        DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t25) = CAST zcl_lnt_st_result( t22 ).
+        DATA(t24) = t2.
+        DATA(t25) = t22.
         APPEND t25 TO t24->items.
       ENDLOOP.
       DATA t26 TYPE i.
-      DATA(t27) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t27) = t2.
       t26 = lines( t27->items ).
       t20 = t26.
     ENDIF.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t28) = t2.
     result = t28.
 
   ENDMETHOD.

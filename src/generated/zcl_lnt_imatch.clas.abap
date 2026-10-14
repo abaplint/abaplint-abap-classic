@@ -14,14 +14,14 @@ CLASS zcl_lnt_imatch DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_imatch IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_matched ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_unmatched ).
+    DATA(t1) = i_matched.
+    DATA(t2) = i_unmatched.
     DATA(t3) = i_error.
     DATA(t4) = i_error_description.
     DATA(t5) = i_error_matched.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t6) = t1.
     me->matched = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t7) = t2.
     me->unmatched = t7.
     DATA(t8) = t3.
     me->error = t8.

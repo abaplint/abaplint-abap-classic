@@ -15,15 +15,15 @@ CLASS zcl_lnt_shape_7c1b39e6 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_type_9913.
     DATA(t2) = i_name.
-    DATA(t3) = CAST zcl_lnt_abstract_token( i_token ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
+    DATA(t3) = i_token.
+    DATA(t4) = i_filename.
     DATA(t5) = t1.
     me->type_cba0 = t5.
     DATA(t6) = t2.
     me->name = t6.
-    DATA(t7) = CAST zcl_lnt_abstract_token( t3 ).
+    DATA(t7) = t3.
     me->token = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t8) = t4.
     me->filename = t8.
   ENDMETHOD.
 

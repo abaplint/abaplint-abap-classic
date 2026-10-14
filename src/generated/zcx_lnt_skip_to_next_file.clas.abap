@@ -9,11 +9,11 @@ CLASS zcx_lnt_skip_to_next_file DEFINITION PUBLIC INHERITING FROM zcl_lnt_builti
 ENDCLASS.
 CLASS zcx_lnt_skip_to_next_file IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_issue( i_issue ).
+    DATA(t1) = i_issue.
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t2.
     super->constructor( i_message_26cb = t2 ).
-    DATA(t3) = CAST zcl_lnt_issue( t1 ).
+    DATA(t3) = t1.
     me->issue = t3.
   ENDMETHOD.
 

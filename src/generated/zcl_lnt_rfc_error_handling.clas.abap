@@ -117,10 +117,10 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t32) = t30.
       DATA(t33) = |SingleFile|.
       APPEND t33 TO t32->items.
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t34) = t30.
       t29 = t34.
       t27 = t29.
     ELSE.
@@ -145,13 +145,13 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/rfc_error_handling.ts:42|.
     t2->source_location = t3.
@@ -159,7 +159,7 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/rfc_error_handling.ts:46|.
     t2->source_location = t3.

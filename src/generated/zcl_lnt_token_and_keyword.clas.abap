@@ -11,9 +11,9 @@ CLASS zcl_lnt_token_and_keyword DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_token_and_keyword IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_token.
     DATA(t2) = i_keyword.
-    DATA(t3) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t3) = t1.
     me->token = t3.
     DATA(t4) = t2.
     me->keyword = t4.

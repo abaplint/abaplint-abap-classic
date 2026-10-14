@@ -14,13 +14,13 @@ CLASS zcl_lnt_shape_9a575e77 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_field_name.
     DATA(t2) = i_message_26cb.
-    DATA(t3) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t3) = i_token.
     DATA(t4) = t1.
     me->field_name = t4.
     DATA(t5) = t2.
     me->message_25cb = t5.
     DATA t6 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t7) = CAST zcl_lnt_abstract_token( t3 ).
+    DATA(t7) = t3.
     t6 = t7.
     me->token = t6.
   ENDMETHOD.

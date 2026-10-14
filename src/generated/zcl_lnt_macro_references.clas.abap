@@ -23,22 +23,22 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
     DATA(t3) = NEW zlnt_runtime_map__a8db3647ad44( ).
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_map__a8db3647ad44( t2 ).
+    DATA(t4) = t2.
     t1 = t4.
     me->definitions = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     DATA t6 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     DATA(t7) = NEW zlnt_runtime_map__68aa8717233d( ).
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_map__68aa8717233d( t6 ).
+    DATA(t8) = t6.
     t5 = t8.
     me->references = t5.
   ENDMETHOD.
 
   METHOD add_definition.
-    DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
-    DATA(t2) = CAST zcl_lnt_position( i_start ).
-    DATA(t3) = CAST zcl_lnt_position( i_end ).
+    DATA(t1) = i_ref.
+    DATA(t2) = i_start.
+    DATA(t3) = i_end.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/macro_references.ts:14|.
     t4->source_location = t5.
@@ -47,7 +47,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
 
   METHOD get_definition_range.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t2) = i_token.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/macro_references.ts:23|.
     t3->source_location = t4.
@@ -55,7 +55,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_reference.
-    DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
+    DATA(t1) = i_ref.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/macro_references.ts:32|.
     t2->source_location = t3.
@@ -72,7 +72,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
 
   METHOD list_usagesby_macro.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t2) = i_token.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/macro_references.ts:47|.
     t3->source_location = t4.
@@ -82,12 +82,12 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
   METHOD clear_feba.
     DATA(t1) = i_filename.
     DATA t2 TYPE abap_bool.
-    DATA(t3) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+    DATA(t3) = me->definitions.
     DATA(t4) = t1.
     DELETE t3->entries WHERE k = t4.
     t2 = abap_true.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
+    DATA(t6) = me->references.
     DATA(t7) = t1.
     DELETE t6->entries WHERE k = t7.
     t5 = abap_true.
@@ -95,7 +95,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
 
   METHOD find_definition_by_usage.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t2) = i_token.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/macro_references.ts:64|.
     t3->source_location = t4.

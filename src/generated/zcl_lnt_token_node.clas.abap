@@ -24,13 +24,13 @@ CLASS zcl_lnt_token_node DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_token_node IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( t1 ).
+    DATA(t1) = i_token.
+    DATA(t2) = t1.
     me->token = t2.
   ENDMETHOD.
 
   METHOD a_c_in_sr_ab_nd_tk_nd_ts_tk_nd.
-    DATA(t1) = CAST zif_lnt_node( i_n_2941 ).
+    DATA(t1) = i_n_2941.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/nodes/token_node.ts:13|.
     t2->source_location = t3.
@@ -38,7 +38,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD s_c_in_sr_ab_nd_tk_nd_ts_tk_nd.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_ea49 ).
+    DATA(t1) = i_children_ea49.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/nodes/token_node.ts:17|.
     t2->source_location = t3.
@@ -55,10 +55,10 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   METHOD concat_tokens.
     DATA t1 TYPE string.
     DATA t2 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t3) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t3) = me->token.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t5) = t2.
     t4 = t5->str.
     t1 = t4.
     result = t1.
@@ -66,7 +66,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_in_sr_ab_nd_tk_nd_ts_tkn_nd.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t1) = me->token.
     result = t1.
 
   ENDMETHOD.
@@ -78,19 +78,19 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_first_token.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t1) = me->token.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_last_token.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
+    DATA(t1) = me->token.
     result = t1.
 
   ENDMETHOD.
 
   METHOD add_child.
-    DATA(t1) = CAST zif_lnt_node( i_n_0c97 ).
+    DATA(t1) = i_n_0c97.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/nodes/token_node.ts:13|.
     t2->source_location = t3.
@@ -98,7 +98,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_children.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
+    DATA(t1) = i_children_9020.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/nodes/token_node.ts:17|.
     t2->source_location = t3.

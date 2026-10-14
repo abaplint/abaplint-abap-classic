@@ -126,16 +126,16 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
       DATA t32 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t32.
       t31 = t32.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t33) = t31.
       DATA(t34) = |Naming|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t35) = t31.
       DATA(t36) = |SingleFile|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t37) = t31.
       DATA(t38) = |Styleguide|.
       APPEND t38 TO t37->items.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t31 ).
+      DATA(t39) = t31.
       t30 = t39.
       t28 = t30.
     ELSE.
@@ -153,13 +153,13 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_m_o_b_ts_mt_ov_bl_in.
-    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_m_o_b_ts_mt_ov_bl_in.
-    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_overwrites_builtin.ts:43|.
     t2->source_location = t3.
@@ -167,7 +167,7 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_m_o_b_ts_mt_ov_bl_in.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/method_overwrites_builtin.ts:47|.
     t2->source_location = t3.

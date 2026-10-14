@@ -11,13 +11,13 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
   METHOD check_database_fields.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_fields_62af ).
-    DATA(t2) = CAST zlnt_runtime_arra_b72089862d0f( i_db_sources ).
-    DATA(t3) = CAST zcl_lnt_syntax_input( i_input_967e ).
-    DATA(t4) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_fields_62af.
+    DATA(t2) = i_db_sources.
+    DATA(t3) = i_input_967e.
+    DATA(t4) = i_token.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE i.
-    DATA(t7) = CAST zlnt_runtime_arra_b72089862d0f( t2 ).
+    DATA(t7) = t2.
     t6 = lines( t7->items ).
     DATA(t8) = 1.
     t5 = xsdbool( t6 > t8 ).
@@ -27,19 +27,19 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
     DATA t9 TYPE REF TO zif_lnt_union_c74a232f.
     DATA t10 TYPE REF TO zif_lnt_union_c74a232f.
     CLEAR t10.
-    DATA(t11) = CAST zlnt_runtime_arra_b72089862d0f( t2 ).
+    DATA(t11) = t2.
     READ TABLE t11->items INDEX 1 INTO t10.
     t9 = t10.
     DATA(t12) = VALUE abap_bool( ).
     DATA t13 TYPE REF TO zif_lnt_union_c74a232f.
-    DATA(t14) = CAST zif_lnt_union_c74a232f( t9 ).
+    DATA(t14) = t9.
     t13 = t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t16.
     t15 = t16.
     DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = CAST zif_lnt_union_c74a232f( t13 ).
+    DATA(t18) = t13.
     IF t18 IS INITIAL.
       t17 = abap_true.
     ENDIF.
@@ -50,28 +50,28 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
     DATA t19 TYPE REF TO zcl_lnt_abstract_type.
     DATA t20 TYPE REF TO zcl_lnt_abstract_type.
     DATA t21 TYPE REF TO zif_lnt_union_c74a232f.
-    DATA(t22) = CAST zif_lnt_union_c74a232f( t9 ).
+    DATA(t22) = t9.
     t21 = t22.
     DATA t23 TYPE REF TO zif_lnt_registry.
     DATA t24 TYPE REF TO zcl_lnt_current_scope.
     DATA t25 TYPE REF TO zcl_lnt_current_scope.
-    DATA(t26) = CAST zcl_lnt_syntax_input( t3 ).
+    DATA(t26) = t3.
     t25 = t26->scope.
     t24 = t25.
     DATA t27 TYPE REF TO zif_lnt_registry.
-    DATA(t28) = CAST zcl_lnt_current_scope( t24 ).
+    DATA(t28) = t24.
     t27 = t28->reg.
     t23 = t27.
     t20 = t21->parse_type( i_reg_f149 = t23 ).
     t19 = t20.
     DATA t29 TYPE abap_bool.
     DATA t30 TYPE abap_bool.
-    DATA(t31) = CAST zcl_lnt_abstract_type( t19 ).
+    DATA(t31) = t19.
     t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_void_type ).
     t29 = t30.
     IF t30 = abap_false.
       DATA t32 TYPE abap_bool.
-      DATA(t33) = CAST zcl_lnt_abstract_type( t19 ).
+      DATA(t33) = t19.
       t32 = xsdbool( t33 IS BOUND AND t33 IS INSTANCE OF zcl_lnt_unknown_type ).
       t29 = t32.
     ENDIF.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
     ENDIF.
     DATA t34 TYPE abap_bool.
     DATA t35 TYPE abap_bool.
-    DATA(t36) = CAST zcl_lnt_abstract_type( t19 ).
+    DATA(t36) = t19.
     t35 = xsdbool( t36 IS BOUND AND t36 IS INSTANCE OF zcl_lnt_structure_type ).
     t34 = xsdbool( t35 = abap_false ).
     IF t34 = abap_true.
@@ -89,18 +89,18 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
       DATA(t39) = |checkFields, expected structure, |.
       DATA t40 TYPE string.
       DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      DATA(t42) = CAST zcl_lnt_abstract_type( t19 ).
+      DATA(t42) = t19.
       t41 = t42->zlnt_builtin_clas_3f891b097658( ).
       t40 = t41->name.
       DATA(t43) = strlen( t39 ).
       t38 = |{ t39 }{ t40 }|.
       t37 = t38.
       DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t45) = CAST zcl_lnt_syntax_input( t3 ).
+      DATA(t45) = t3.
       t44 = t45->issues.
       DATA t46 TYPE REF TO zcl_lnt_issue.
-      DATA(t47) = CAST zcl_lnt_syntax_input( t3 ).
-      DATA(t48) = CAST zcl_lnt_abstract_token( t4 ).
+      DATA(t47) = t3.
+      DATA(t48) = t4.
       DATA(t49) = t37.
       DATA t50 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t50.
@@ -108,7 +108,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
       APPEND t46 TO t44->items.
       RETURN.
     ENDIF.
-    DATA(t51) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t51) = t1.
     DATA(t52) = VALUE string( ).
     LOOP AT t51->items INTO t52.
       DATA t53 TYPE abap_bool.
@@ -138,7 +138,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         CLEAR t65.
         DATA t66 TYPE REF TO zcl_lnt_structure_type.
         DATA t67 TYPE REF TO zcl_lnt_structure_type.
-        DATA(t68) = CAST zcl_lnt_abstract_type( t19 ).
+        DATA(t68) = t19.
         t67 ?= t68.
         t66 = t67.
         DATA t69 TYPE string.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         DATA t71 TYPE REF TO zcl_lnt_abstract_type.
         CLEAR t71.
         DATA t72 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-        DATA(t73) = CAST zcl_lnt_structure_type( t66 ).
+        DATA(t73) = t66.
         t72 = t73->indexed.
         DATA t74 TYPE string.
         DATA(t75) = t69.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         CLEAR t78.
         t77 = t78.
         DATA(t79) = VALUE abap_bool( ).
-        DATA(t80) = CAST zcl_lnt_abstract_type( t64 ).
+        DATA(t80) = t64.
         IF t80 IS INITIAL.
           t79 = abap_true.
         ENDIF.
@@ -186,11 +186,11 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         t82 = |{ t83 }{ t87 }|.
         t81 = t82.
         DATA t89 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t90) = CAST zcl_lnt_syntax_input( t3 ).
+        DATA(t90) = t3.
         t89 = t90->issues.
         DATA t91 TYPE REF TO zcl_lnt_issue.
-        DATA(t92) = CAST zcl_lnt_syntax_input( t3 ).
-        DATA(t93) = CAST zcl_lnt_abstract_token( t4 ).
+        DATA(t92) = t3.
+        DATA(t93) = t4.
         DATA(t94) = t81.
         DATA t95 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t95.

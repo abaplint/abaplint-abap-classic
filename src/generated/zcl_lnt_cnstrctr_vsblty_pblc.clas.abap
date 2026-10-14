@@ -135,13 +135,13 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
       DATA t34 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t34.
       t33 = t34.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t35) = t33.
       DATA(t36) = |Styleguide|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t37) = t33.
       DATA(t38) = |SingleFile|.
       APPEND t38 TO t37->items.
-      DATA(t39) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t39) = t33.
       t32 = t39.
       t30 = t32.
     ELSE.
@@ -166,13 +166,13 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb.
-    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD i_i_sr_rl_cn_vs_pb_ts_cn_vs_pb.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constructor_visibility_public.ts:46|.
     t2->source_location = t3.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cn_vs_pb_ts_cn_vs_pb.
-    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constructor_visibility_public.ts:50|.
     t2->source_location = t3.
@@ -188,7 +188,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constructor_visibility_public.ts:54|.
     t2->source_location = t3.
@@ -206,7 +206,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constructor_visibility_public.ts:46|.
     t2->source_location = t3.
@@ -214,7 +214,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/constructor_visibility_public.ts:50|.
     t2->source_location = t3.

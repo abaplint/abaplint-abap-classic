@@ -16,37 +16,37 @@ CLASS zcl_lnt_sr_clss_implmnttn IMPLEMENTATION.
     DATA t3 TYPE REF TO zif_lnt_structure_runnable.
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
     DATA t5 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d703_a50af928c17c ).
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d703_a50af928c17c.
     t5 = zcl_lnt_sr_combi_module=>sub( i_s = t6 ).
     t4 = t5.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t8.
     t7 = t8.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t9) = t7.
     DATA t10 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t11) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d512_11174d785e8e ).
+    DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d512_11174d785e8e.
     t10 = zcl_lnt_sr_combi_module=>sta( i_s = t11 ).
     APPEND t10 TO t9->items.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t12) = t7.
     DATA t13 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424 ).
+    DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
     t13 = zcl_lnt_sr_combi_module=>sub( i_s = t14 ).
     APPEND t13 TO t12->items.
     DATA t15 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t16) = CAST zif_lnt_structure_runnable( t4 ).
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
+    DATA(t16) = t4.
+    DATA(t17) = t7.
     t15 = zcl_lnt_sr_combi_module=>alt( i_first = t16 i_rest = t17 ).
     t3 = t15.
     t2 = zcl_lnt_sr_combi_module=>star( i_s = t3 ).
     t1 = t2.
     DATA t18 TYPE REF TO zif_lnt_structure_runnable.
     DATA t19 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d396_f66c9403a435 ).
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d396_f66c9403a435.
     t19 = zcl_lnt_sr_combi_module=>sta( i_s = t20 ).
-    DATA(t21) = CAST zif_lnt_structure_runnable( t1 ).
+    DATA(t21) = t1.
     DATA t22 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t23) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d451_3d24988c9cf2 ).
+    DATA(t23) = zlnt_runtime_desc_78196487750d=>zlnt_member_d451_3d24988c9cf2.
     t22 = zcl_lnt_sr_combi_module=>sta( i_s = t23 ).
     t18 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t19 i_body = t21 i_end = t22 ).
     result = t18.

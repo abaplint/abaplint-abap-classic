@@ -72,7 +72,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         ENDTRY.
       ENDIF.
       IF t15 = abap_true.
-        DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t18) = t1.
         DATA t19 TYPE REF TO zif_lnt_rule.
         CLEAR t19.
         DATA t20 TYPE REF TO object.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         APPEND t19 TO t18->items.
       ENDIF.
     ENDLOOP.
-    DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t21) = t1.
     result = t21.
 
   ENDMETHOD.

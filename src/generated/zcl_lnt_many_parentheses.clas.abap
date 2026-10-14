@@ -120,13 +120,13 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |SingleFile|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |Quickfix|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       t28 = t35.
       t26 = t28.
     ELSE.
@@ -144,13 +144,13 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_mn_pr_ts_mn_prn.
-    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_mn_pr_ts_mn_prn.
-    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/many_parentheses.ts:43|.
     t2->source_location = t3.
@@ -158,7 +158,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_mn_pr_ts_mn_prn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/many_parentheses.ts:47|.
     t2->source_location = t3.
@@ -166,8 +166,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_into.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_m ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_m.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/many_parentheses.ts:99|.
     t3->source_location = t4.
@@ -175,8 +175,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_move.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_m ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_m.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/many_parentheses.ts:119|.
     t3->source_location = t4.
@@ -184,8 +184,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD analyze_condition.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_cond.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/many_parentheses.ts:137|.
     t3->source_location = t4.
@@ -193,7 +193,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_comparator.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
+    DATA(t1) = i_cond.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/many_parentheses.ts:190|.
     t2->source_location = t3.

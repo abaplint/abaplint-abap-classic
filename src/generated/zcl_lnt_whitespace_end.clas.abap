@@ -82,16 +82,16 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t24.
       t23 = t24.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t25) = t23.
       DATA(t26) = |Whitespace|.
       APPEND t26 TO t25->items.
-      DATA(t27) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t27) = t23.
       DATA(t28) = |Quickfix|.
       APPEND t28 TO t27->items.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t29) = t23.
       DATA(t30) = |SingleFile|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t31) = t23.
       t22 = t31.
       t20 = t22.
     ELSE.
@@ -116,13 +116,13 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_wh_en_ts_wh_end.
-    DATA(t1) = CAST zcl_lnt_whitespace_end_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_wh_en_ts_wh_end.
-    DATA(t1) = CAST zcl_lnt_whitespace_end_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/whitespace_end.ts:37|.
     t2->source_location = t3.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD in_in_sr_rl_wht_end_ts_wht_end.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
+    DATA(t1) = i_reg_d009.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/whitespace_end.ts:41|.
     t2->source_location = t3.
@@ -138,7 +138,7 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/whitespace_end.ts:45|.
     t2->source_location = t3.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/whitespace_end.ts:37|.
     t2->source_location = t3.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/whitespace_end.ts:41|.
     t2->source_location = t3.

@@ -12,12 +12,12 @@ CLASS zcl_lnt_irename_params DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irename_params IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_position_a3fd.
     DATA(t3) = i_new_name.
-    DATA(t4) = CAST zcl_lnt_shape_9e00b1e6( t1 ).
+    DATA(t4) = t1.
     me->text_document = t4.
-    DATA(t5) = CAST zcl_lnt_shape_38f98ddf( t2 ).
+    DATA(t5) = t2.
     me->position_7b94 = t5.
     DATA(t6) = t3.
     me->new_name = t6.

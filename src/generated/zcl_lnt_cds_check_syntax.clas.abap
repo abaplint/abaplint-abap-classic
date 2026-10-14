@@ -87,10 +87,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t18.
       t17 = t18.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t19) = t17.
       DATA(t20) = |Syntax|.
       APPEND t20 TO t19->items.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t17 ).
+      DATA(t21) = t17.
       t16 = t21.
       t14 = t16.
     ELSE.
@@ -108,13 +108,13 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cd_ch_sy_ts_cd_ch_sy.
-    DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cd_ch_sy_ts_cd_ch_sy.
-    DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:56|.
     t2->source_location = t3.
@@ -122,7 +122,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:60|.
     t2->source_location = t3.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_i_sr_rl_cd_ch_sy_ts_cd_ch_sy.
-    DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
+    DATA(t1) = i_object_19cd.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:65|.
     t2->source_location = t3.
@@ -138,10 +138,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_sources.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_ddic.
+    DATA(t3) = i_issues.
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/cds_check_syntax.ts:93|.
     t5->source_location = t6.
@@ -149,10 +149,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_relations.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_ddic.
+    DATA(t3) = i_issues.
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/cds_check_syntax.ts:126|.
     t5->source_location = t6.
@@ -160,10 +160,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_types.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_ddic.
+    DATA(t3) = i_issues.
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/cds_check_syntax.ts:141|.
     t5->source_location = t6.
@@ -171,10 +171,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_root_projection.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_ddic.
+    DATA(t3) = i_issues.
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/cds_check_syntax.ts:156|.
     t5->source_location = t6.
@@ -182,10 +182,10 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_field_annotations.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t4) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_ddic.
+    DATA(t3) = i_issues.
+    DATA(t4) = i_file.
     DATA(t5) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t6) = |src/rules/cds_check_syntax.ts:178|.
     t5->source_location = t6.
@@ -193,8 +193,8 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD determine_semantic_type.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_type_node ).
-    DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
+    DATA(t1) = i_type_node.
+    DATA(t2) = i_ddic.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/cds_check_syntax.ts:258|.
     t3->source_location = t4.
@@ -202,7 +202,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_semantic_reference.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_annotations ).
+    DATA(t1) = i_annotations.
     DATA(t2) = i_type_9913.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/cds_check_syntax.ts:277|.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD has_companion_annotation.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_annotations ).
+    DATA(t1) = i_annotations.
     DATA(t2) = i_type_9913.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/cds_check_syntax.ts:290|.
@@ -220,9 +220,9 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_labels.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_issues.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/cds_check_syntax.ts:300|.
     t4->source_location = t5.
@@ -230,9 +230,9 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_view_entity_annotations.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_issues.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/cds_check_syntax.ts:321|.
     t4->source_location = t5.
@@ -240,9 +240,9 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_searchable.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_issues.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/cds_check_syntax.ts:342|.
     t4->source_location = t5.
@@ -259,9 +259,9 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_reserved_names.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t3) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_issues.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/cds_check_syntax.ts:369|.
     t4->source_location = t5.
@@ -269,11 +269,11 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_fields.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_sources ).
-    DATA(t3) = CAST zcl_lnt_ob_data_definition( i_object_19cd ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t5) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_tree.
+    DATA(t2) = i_sources.
+    DATA(t3) = i_object_19cd.
+    DATA(t4) = i_issues.
+    DATA(t5) = i_file.
     DATA(t6) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t7) = |src/rules/cds_check_syntax.ts:392|.
     t6->source_location = t7.
@@ -281,7 +281,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD name.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:453|.
     t2->source_location = t3.
@@ -299,7 +299,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:56|.
     t2->source_location = t3.
@@ -307,7 +307,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/cds_check_syntax.ts:65|.
     t2->source_location = t3.

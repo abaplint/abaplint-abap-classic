@@ -17,17 +17,17 @@ CLASS zcl_lnt_iscope_identifier IMPLEMENTATION.
     DATA(t1) = i_stype.
     DATA(t2) = i_sname.
     DATA(t3) = i_filename.
-    DATA(t4) = CAST zcl_lnt_position( i_start ).
-    DATA(t5) = CAST zcl_lnt_position( i_end ).
+    DATA(t4) = i_start.
+    DATA(t5) = i_end.
     DATA(t6) = t1.
     me->stype = t6.
     DATA(t7) = t2.
     me->sname = t7.
     DATA(t8) = t3.
     me->filename = t8.
-    DATA(t9) = CAST zcl_lnt_position( t4 ).
+    DATA(t9) = t4.
     me->start = t9.
-    DATA(t10) = CAST zcl_lnt_position( t5 ).
+    DATA(t10) = t5.
     me->end = t10.
   ENDMETHOD.
 

@@ -13,14 +13,14 @@ CLASS zcl_lnt_iindentation_options DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iindentation_options IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_align_try_catch ).
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_slctn_scrn_blck_indnttn ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_global_class_skip_first ).
-    DATA(t4) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t1) = i_align_try_catch.
+    DATA(t2) = i_slctn_scrn_blck_indnttn.
+    DATA(t3) = i_global_class_skip_first.
+    DATA(t4) = t1.
     me->align_try_catch = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_7f2541396f43( t2 ).
+    DATA(t5) = t2.
     me->slctn_scrn_blck_indnttn = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t6) = t3.
     me->global_class_skip_first = t6.
   ENDMETHOD.
 

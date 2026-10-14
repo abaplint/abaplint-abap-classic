@@ -17,22 +17,22 @@ ENDCLASS.
 CLASS zcl_lnt_shape_dcd2e1ea IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_language.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_short ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_medium ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_long ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( i_heading ).
+    DATA(t2) = i_description.
+    DATA(t3) = i_short.
+    DATA(t4) = i_medium.
+    DATA(t5) = i_long.
+    DATA(t6) = i_heading.
     DATA(t7) = t1.
     me->language = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t8) = t2.
     me->description = t8.
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t9) = t3.
     me->short = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t10) = t4.
     me->medium = t10.
-    DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t11) = t5.
     me->long = t11.
-    DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t6 ).
+    DATA(t12) = t6.
     me->heading = t12.
   ENDMETHOD.
 

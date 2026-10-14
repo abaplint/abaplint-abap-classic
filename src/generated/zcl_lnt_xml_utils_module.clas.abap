@@ -12,11 +12,11 @@ CLASS zcl_lnt_xml_utils_module DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
   METHOD xml_to_array.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_data_dc02.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
@@ -24,7 +24,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -37,7 +37,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       RETURN.
     ELSE.
       DATA(t10) = VALUE abap_bool( ).
-      DATA(t11) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+      DATA(t11) = t1.
       t10 = abap_false.
       IF t11 IS BOUND.
         IF t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
@@ -55,7 +55,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       IF t10 = abap_true.
         DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t13.
-        DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t14) = t1.
         DATA t15 TYPE REF TO object.
         CLEAR t15.
         t15 = t14->as_ref( ).
@@ -71,10 +71,10 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
         CLEAR t18.
         CREATE OBJECT t18.
         t17 = t18.
-        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
-        DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t19) = t17.
+        DATA(t20) = t1.
         APPEND t20 TO t19->items.
-        DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+        DATA(t21) = t17.
         t16 = t21.
         result = t16.
         RETURN.
@@ -83,11 +83,11 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD unescape.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_str ).
+    DATA(t1) = i_str.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE abap_bool( ).
     DATA(t4) = VALUE string( ).
-    DATA(t5) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t5) = t1.
     IF t5 IS BOUND.
       t4 = t5->type_of( ).
     ELSE.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA t8 TYPE string.
     DATA t9 TYPE string.
     DATA t10 TYPE string.
-    DATA(t11) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t11) = t1.
     t10 = t11->as_string( ).
     DATA t12 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t12.

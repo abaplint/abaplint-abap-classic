@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_ifilename_and_token IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t2) = i_token.
     DATA(t3) = t1.
     me->filename = t3.
-    DATA(t4) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t4) = t2.
     me->token = t4.
   ENDMETHOD.
 

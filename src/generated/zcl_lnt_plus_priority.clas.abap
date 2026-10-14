@@ -20,8 +20,8 @@ CLASS zcl_lnt_plus_priority DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_plus_priority IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_statement_runnable( i_plu ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t1) = i_plu.
+    DATA(t2) = t1.
     me->plu = t2.
     DATA t3 TYPE REF TO zcl_lnt_st_sequence.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -29,15 +29,15 @@ CLASS zcl_lnt_plus_priority IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zif_lnt_statement_runnable( me->plu ).
+    DATA(t7) = t5.
+    DATA(t8) = me->plu.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     DATA t10 TYPE REF TO zcl_lnt_star_priority.
-    DATA(t11) = CAST zif_lnt_statement_runnable( me->plu ).
+    DATA(t11) = me->plu.
     t10 = NEW zcl_lnt_star_priority( i_sta = t11 ).
     APPEND t10 TO t9->items.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t12) = t5.
     t4 = t12.
     t3 = NEW zcl_lnt_st_sequence( i_list = t4 ).
     me->sub = t3.
@@ -58,10 +58,10 @@ CLASS zcl_lnt_plus_priority IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zcl_lnt_st_sequence( me->sub ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = me->sub.
+    DATA(t4) = t1.
     t2 = t3->run( i_r_f634 = t4 ).
     result = t2.
 
@@ -89,7 +89,7 @@ CLASS zcl_lnt_plus_priority IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -97,15 +97,15 @@ CLASS zcl_lnt_plus_priority IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t7) = t5.
+    DATA(t8) = t1.
     APPEND t8 TO t7->items.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     t4 = t9.
     t3 = t4.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = CAST zcl_lnt_st_sequence( me->sub ).
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t11) = me->sub.
+    DATA(t12) = t3.
     t10 = t11->run( i_r_f634 = t12 ).
     t2 = t10.
     result = t2.

@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_shape_9428b3e9 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_alias ).
+    DATA(t2) = i_alias.
     DATA(t3) = t1.
     me->name = t3.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t4) = t2.
     me->alias = t4.
   ENDMETHOD.
 

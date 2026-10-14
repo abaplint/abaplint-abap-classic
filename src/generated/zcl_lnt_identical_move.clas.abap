@@ -78,10 +78,10 @@ CLASS zcl_lnt_identical_move IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t22.
       t21 = t22.
-      DATA(t23) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t23) = t21.
       DATA(t24) = |SingleFile|.
       APPEND t24 TO t23->items.
-      DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t21 ).
+      DATA(t25) = t21.
       t20 = t25.
       t18 = t20.
     ELSE.
@@ -99,13 +99,13 @@ CLASS zcl_lnt_identical_move IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_id_mv_ts_idn_mv.
-    DATA(t1) = CAST zcl_lnt_identical_move_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_id_mv_ts_idn_mv.
-    DATA(t1) = CAST zcl_lnt_identical_move_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/identical_move.ts:34|.
     t2->source_location = t3.
@@ -113,8 +113,8 @@ CLASS zcl_lnt_identical_move IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_id_mv_ts_idn_mv.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_ac26 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_ac26.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/identical_move.ts:38|.
     t3->source_location = t4.

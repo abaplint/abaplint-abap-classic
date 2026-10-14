@@ -10,24 +10,24 @@ CLASS zcl_lnt_sy_field_offset DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18 ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18.
     t4 = t5->find_direct_expression( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = CAST zcl_lnt_expression_node( t3 ).
+    DATA(t8) = t3.
     t7 = xsdbool( t8 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t9.
       DATA t10 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t11) = CAST zcl_lnt_expression_node( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
-      DATA(t12) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t12) = t2.
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t13.
       DATA(t14) = abap_true.
@@ -63,11 +63,11 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
         DATA t25 TYPE string.
         DATA t26 TYPE REF TO zcl_lnt_abstract_token.
         DATA t27 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t28) = CAST zcl_lnt_expression_node( t1 ).
+        DATA(t28) = t1.
         t27 = t28->get_last_token( ).
         t26 = t27.
         DATA t29 TYPE string.
-        DATA(t30) = CAST zcl_lnt_abstract_token( t26 ).
+        DATA(t30) = t26.
         t29 = t30->str.
         t25 = t29.
         DATA(t31) = strlen( t25 ).
@@ -143,7 +143,7 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
         ENDIF.
         t23 = t24.
         DATA(t46) = VALUE abap_bool( ).
-        DATA(t47) = CAST zlnt_runtime_opti_4a236cd5714d( t23 ).
+        DATA(t47) = t23.
         IF t47 IS INITIAL.
           t46 = abap_true.
         ELSEIF t47->has = abap_false.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
           RAISE EXCEPTION t48.
         ENDIF.
         DATA t50 TYPE int8.
-        DATA(t51) = CAST zlnt_runtime_opti_4a236cd5714d( t23 ).
+        DATA(t51) = t23.
         t50 = t51->value.
         t22 = t50.
         DATA(t52) = NEW zlnt_runtime_opti_4a236cd5714d( ).

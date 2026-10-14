@@ -46,16 +46,16 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
       t11 = t12.
-      DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t13) = t11.
       DATA(t14) = |Naming|.
       APPEND t14 TO t13->items.
-      DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t15) = t11.
       DATA(t16) = |SingleFile|.
       APPEND t16 TO t15->items.
-      DATA(t17) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t17) = t11.
       DATA(t18) = |Syntax|.
       APPEND t18 TO t17->items.
-      DATA(t19) = CAST zlnt_runtime_arra_8ecd6afe19e0( t11 ).
+      DATA(t19) = t11.
       t10 = t19.
       t8 = t10.
     ELSE.
@@ -73,20 +73,20 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD i_i_sr_rl_al_ob_nm_ts_al_ob_nm.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
-    DATA(t2) = CAST zcl_lnt_allowed_object_naming( me ).
+    DATA(t1) = i_reg_d009.
+    DATA(t2) = me.
     result = t2.
 
   ENDMETHOD.
 
   METHOD g_c_i_s_r_al_ob_nm_ts_al_ob_nm.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_al_ob_nm_ts_al_ob_nm.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_naming.ts:32|.
     t2->source_location = t3.
@@ -94,15 +94,15 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zcl_lnt_iallowed_naming.
     DATA t3 TYPE REF TO zcl_lnt_iallowed_naming.
-    DATA(t4) = CAST zif_lnt_object( t1 ).
+    DATA(t4) = t1.
     t3 = t4->get_allowed_naming( ).
     t2 = t3.
     DATA t5 TYPE string.
     DATA t6 TYPE string.
-    DATA(t7) = CAST zif_lnt_object( t1 ).
+    DATA(t7) = t1.
     t6 = t7->get_name( ).
     t5 = t6.
     DATA t8 TYPE string.
@@ -116,7 +116,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     t12 = t14.
     t11 = t12.
     DATA t15 TYPE int8.
-    DATA(t16) = CAST zcl_lnt_iallowed_naming( t2 ).
+    DATA(t16) = t2.
     t15 = t16->max_length.
     t10 = xsdbool( t11 > t15 ).
     IF t10 = abap_true.
@@ -124,7 +124,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       DATA(t18) = |Name exceeds max length, allowed is |.
       DATA t19 TYPE string.
       DATA t20 TYPE int8.
-      DATA(t21) = CAST zcl_lnt_iallowed_naming( t2 ).
+      DATA(t21) = t2.
       t20 = t21->max_length.
       t19 = |{ t20 }|.
       DATA(t22) = strlen( t18 ).
@@ -134,7 +134,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       DATA t23 TYPE abap_bool.
       DATA t24 TYPE abap_bool.
       DATA t25 TYPE abap_bool.
-      DATA(t26) = CAST zcl_lnt_iallowed_naming( t2 ).
+      DATA(t26) = t2.
       t25 = t26->allow_namespace.
       DATA(t27) = abap_false.
       t24 = xsdbool( t25 = t27 ).
@@ -164,7 +164,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
         DATA(t35) = VALUE abap_bool( ).
         DATA t36 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         DATA t37 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        DATA(t38) = CAST zcl_lnt_iallowed_naming( t2 ).
+        DATA(t38) = t2.
         t37 = t38->custom_regex.
         t36 = t37.
         DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -173,7 +173,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
         t39 = t40.
         DATA(t41) = VALUE abap_bool( ).
         DATA(t42) = VALUE abap_bool( ).
-        DATA(t43) = CAST zlnt_runtime_rege_5a210f82384e( t36 ).
+        DATA(t43) = t36.
         IF t43 IS INITIAL.
           t42 = abap_true.
         ENDIF.
@@ -188,7 +188,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
           DATA t48 TYPE abap_bool.
           DATA t49 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           DATA t50 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          DATA(t51) = CAST zcl_lnt_iallowed_naming( t2 ).
+          DATA(t51) = t2.
           t50 = t51->custom_regex.
           t49 = t50.
           DATA(t52) = t45.
@@ -201,7 +201,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
             DATA t55 TYPE string.
             DATA t56 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
             DATA t57 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            DATA(t58) = CAST zcl_lnt_iallowed_naming( t2 ).
+            DATA(t58) = t2.
             t57 = t58->custom_regex.
             t56 = t57.
             t55 = |/{ t56->source }/|.
@@ -253,12 +253,12 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t75.
       t74 = t75.
-      DATA(t76) = CAST zlnt_runtime_arra_c22708faf2e3( t74 ).
+      DATA(t76) = t74.
       DATA t77 TYPE REF TO zcl_lnt_issue.
       CLEAR t77.
       DATA t78 TYPE REF TO zif_lnt_file.
       DATA t79 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t80) = CAST zif_lnt_object( t1 ).
+      DATA(t80) = t1.
       t79 = t80->get_files( ).
       DATA t81 TYPE REF TO object.
       CLEAR t81.
@@ -288,16 +288,16 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
         DATA t96 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CREATE OBJECT t96.
         t95 = t96.
-        DATA(t97) = CAST zlnt_runtime_arra_8ecd6afe19e0( t95 ).
+        DATA(t97) = t95.
         DATA(t98) = |Naming|.
         APPEND t98 TO t97->items.
-        DATA(t99) = CAST zlnt_runtime_arra_8ecd6afe19e0( t95 ).
+        DATA(t99) = t95.
         DATA(t100) = |SingleFile|.
         APPEND t100 TO t99->items.
-        DATA(t101) = CAST zlnt_runtime_arra_8ecd6afe19e0( t95 ).
+        DATA(t101) = t95.
         DATA(t102) = |Syntax|.
         APPEND t102 TO t101->items.
-        DATA(t103) = CAST zlnt_runtime_arra_8ecd6afe19e0( t95 ).
+        DATA(t103) = t95.
         t94 = t103.
         t92 = t94.
       ELSE.
@@ -312,11 +312,11 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       t85 = NEW zcl_lnt_irule_metadata( i_key = t86 i_title = t87 i_short_description = t88 i_bad_example = t89 i_good_example = t90 i_extended_information = t91 i_tags = t92 i_pragma = t105 i_pseudo_comment = t106 ).
       t84 = t85->key.
       DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t108) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->conf ).
+      DATA(t108) = me->conf.
       t107 = t108->severity.
       t77 = zcl_lnt_issue=>at_row( i_file = t78 i_row = t82 i_message_26cb = t83 i_key = t84 i_severity = t107 ).
       APPEND t77 TO t76->items.
-      DATA(t109) = CAST zlnt_runtime_arra_c22708faf2e3( t74 ).
+      DATA(t109) = t74.
       t73 = t109.
       result = t73.
       RETURN.
@@ -328,9 +328,9 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_allowed_object_naming.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->i_i_sr_rl_al_ob_nm_ts_al_ob_nm( i_reg_d009 = t3 ).
     result = t2.
 
@@ -347,7 +347,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/allowed_object_naming.ts:32|.
     t2->source_location = t3.

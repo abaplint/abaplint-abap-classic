@@ -13,13 +13,13 @@ ENDCLASS.
 CLASS zcl_lnt_shape_1726940b IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_viewfield.
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_tabname ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_fieldname ).
+    DATA(t2) = i_tabname.
+    DATA(t3) = i_fieldname.
     DATA(t4) = t1.
     me->viewfield = t4.
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t5) = t2.
     me->tabname = t5.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t6) = t3.
     me->fieldname = t6.
   ENDMETHOD.
 

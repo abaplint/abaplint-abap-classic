@@ -23,7 +23,7 @@ ENDCLASS.
 CLASS zcl_lnt_info_method_definition IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_name.
-    DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
+    DATA(t2) = i_identifier.
     DATA(t3) = i_is_redefinition.
     DATA(t4) = i_is_event_handler.
     DATA(t5) = i_is_for_testing.
@@ -32,11 +32,11 @@ CLASS zcl_lnt_info_method_definition IMPLEMENTATION.
     DATA(t8) = i_is_default_ignore.
     DATA(t9) = i_is_default_fail.
     DATA(t10) = i_visibility_5c1f.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( i_parameters ).
-    DATA(t12) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_exceptions ).
+    DATA(t11) = i_parameters.
+    DATA(t12) = i_exceptions.
     DATA(t13) = t1.
     me->name = t13.
-    DATA(t14) = CAST zcl_lnt_fi_identifier( t2 ).
+    DATA(t14) = t2.
     me->identifier = t14.
     DATA(t15) = t3.
     me->is_redefinition = t15.
@@ -54,9 +54,9 @@ CLASS zcl_lnt_info_method_definition IMPLEMENTATION.
     me->is_default_fail = t21.
     DATA(t22) = t10.
     me->visibility = t22.
-    DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t23) = t11.
     me->parameters = t23.
-    DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+    DATA(t24) = t12.
     me->exceptions = t24.
   ENDMETHOD.
 

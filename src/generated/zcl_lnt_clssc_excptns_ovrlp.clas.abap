@@ -130,10 +130,10 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
       DATA t34 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t34.
       t33 = t34.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t35) = t33.
       DATA(t36) = |SingleFile|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t33 ).
+      DATA(t37) = t33.
       t32 = t37.
       t30 = t32.
     ELSE.
@@ -151,13 +151,13 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov.
-    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_cl_ex_ov_ts_cl_ex_ov.
-    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/classic_exceptions_overlap.ts:40|.
     t2->source_location = t3.
@@ -165,7 +165,7 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_cl_ex_ov_ts_cl_ex_ov.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/classic_exceptions_overlap.ts:44|.
     t2->source_location = t3.

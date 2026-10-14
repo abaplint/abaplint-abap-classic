@@ -11,11 +11,11 @@ CLASS zcl_lnt_isyntax_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_issues.
+    DATA(t2) = i_spaghetti.
+    DATA(t3) = t1.
     me->issues = t3.
-    DATA(t4) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t4) = t2.
     me->spaghetti = t4.
   ENDMETHOD.
 

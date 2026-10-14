@@ -15,7 +15,7 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     IF zcl_lnt_syntax_module=>zlnt_builtin_init_de1d1a6daf32 = abap_false.
       zcl_lnt_syntax_module=>zlnt_builtin_init_ccbaa3f8c306( ).
     ENDIF.
-    DATA(t1) = CAST zif_lnt_statement_syntax( i_handler ).
+    DATA(t1) = i_handler.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zif_lnt_statement_syntax.
     CLEAR t3.
@@ -29,7 +29,7 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     t5 = zcl_lnt_syntax_module=>map.
     DATA t6 TYPE string.
     DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zif_lnt_statement_syntax( t1 ).
+    DATA(t8) = t1.
     t7 = t8->zlnt_builtin_clas_3f891b097658( ).
     t6 = t7->name.
     t4 = t5->get( p0 = t6 ).
@@ -40,7 +40,7 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     t9 = t10.
     DATA(t11) = VALUE abap_bool( ).
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zif_lnt_statement_syntax( t3 ).
+    DATA(t13) = t3.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ENDIF.
@@ -80,10 +80,10 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     t22 = zcl_lnt_syntax_module=>map.
     DATA t23 TYPE string.
     DATA t24 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t25) = CAST zif_lnt_statement_syntax( t1 ).
+    DATA(t25) = t1.
     t24 = t25->zlnt_builtin_clas_3f891b097658( ).
     t23 = t24->name.
-    DATA(t26) = CAST zif_lnt_statement_syntax( t1 ).
+    DATA(t26) = t1.
     t21 = t22->set( p0 = t23 p1 = t26 ).
   ENDMETHOD.
 
@@ -99,7 +99,7 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_map__1746889b1684.
     DATA(t3) = NEW zlnt_runtime_map__1746889b1684( ).
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_map__1746889b1684( t2 ).
+    DATA(t4) = t2.
     t1 = t4.
     zcl_lnt_syntax_module=>map = t1.
     DATA(t5) = VALUE abap_bool( ).

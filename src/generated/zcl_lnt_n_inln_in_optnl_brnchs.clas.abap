@@ -112,13 +112,13 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
       CLEAR t27.
       CREATE OBJECT t27.
       t26 = t27.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t28) = t26.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t30) = t26.
       DATA(t31) = |SingleFile|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+      DATA(t32) = t26.
       t25 = t32.
       t23 = t25.
     ELSE.
@@ -136,13 +136,13 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_n_i_i_o_b_t_n_i_i_o.
-    DATA(t1) = CAST zcl_lnt_n_inl_in_optn_brnc_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_n_i_i_o_b_t_n_i_i_o.
-    DATA(t1) = CAST zcl_lnt_n_inl_in_optn_brnc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_inline_in_optional_branches.ts:41|.
     t2->source_location = t3.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_n_i_i_o_b_t_n_i_i_o.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_inline_in_optional_branches.ts:45|.
     t2->source_location = t3.

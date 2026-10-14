@@ -12,14 +12,14 @@ CLASS zcl_lnt_inlay_hints DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD list.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_inlay_hints_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/lsp/inlay_hints.ts:22|.
     t3->source_location = t4.
@@ -27,7 +27,7 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD find_implicit_references.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/inlay_hints.ts:65|.
     t2->source_location = t3.

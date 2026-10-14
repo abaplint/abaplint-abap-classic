@@ -12,18 +12,18 @@ CLASS zcl_lnt_shape_4358cb83 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_4358cb83 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_shape_9ead17bd( i_range ).
-    DATA(t2) = CAST zcl_lnt_shape_d0b60cb0( i_snippet ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_annotation_id ).
+    DATA(t1) = i_range.
+    DATA(t2) = i_snippet.
+    DATA(t3) = i_annotation_id.
     DATA t4 TYPE REF TO zcl_lnt_shape_9ead17bd.
-    DATA(t5) = CAST zcl_lnt_shape_9ead17bd( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     me->range = t4.
     DATA t6 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-    DATA(t7) = CAST zcl_lnt_shape_d0b60cb0( t2 ).
+    DATA(t7) = t2.
     t6 = t7.
     me->snippet = t6.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t8) = t3.
     me->annotation_id = t8.
   ENDMETHOD.
 

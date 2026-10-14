@@ -14,13 +14,13 @@ CLASS zcl_lnt_diagnostics DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_diagnostics IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
   ENDMETHOD.
 
   METHOD find_issues.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/diagnostics.ts:13|.
     t2->source_location = t3.
@@ -30,7 +30,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
   METHOD map_diagnostic.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = CAST zcl_lnt_issue( i_issue ).
+    DATA(t1) = i_issue.
     DATA t2 TYPE REF TO zcl_lnt_shape_c44ae6d7.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_shape_c44ae6d7.
@@ -52,17 +52,17 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
         DATA t12 TYPE REF TO zcl_lnt_position.
         DATA t13 TYPE REF TO zcl_lnt_position.
         DATA t14 TYPE REF TO zcl_lnt_issue.
-        DATA(t15) = CAST zcl_lnt_issue( t1 ).
+        DATA(t15) = t1.
         t14 = t15.
         DATA t16 TYPE REF TO zcl_lnt_position.
         DATA t17 TYPE REF TO zcl_lnt_iissue_data.
-        DATA(t18) = CAST zcl_lnt_issue( t14 ).
+        DATA(t18) = t14.
         t17 = t18->data_56cc.
         t16 = t17->start.
         t13 = t16.
         t12 = t13.
         DATA t19 TYPE int8.
-        DATA(t20) = CAST zcl_lnt_position( t12 ).
+        DATA(t20) = t12.
         t19 = t20->row.
         t11 = t19.
         DATA(t21) = CONV int8( 1 ).
@@ -75,17 +75,17 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
         DATA t24 TYPE REF TO zcl_lnt_position.
         DATA t25 TYPE REF TO zcl_lnt_position.
         DATA t26 TYPE REF TO zcl_lnt_issue.
-        DATA(t27) = CAST zcl_lnt_issue( t1 ).
+        DATA(t27) = t1.
         t26 = t27.
         DATA t28 TYPE REF TO zcl_lnt_position.
         DATA t29 TYPE REF TO zcl_lnt_iissue_data.
-        DATA(t30) = CAST zcl_lnt_issue( t26 ).
+        DATA(t30) = t26.
         t29 = t30->data_56cc.
         t28 = t29->start.
         t25 = t28.
         t24 = t25.
         DATA t31 TYPE int8.
-        DATA(t32) = CAST zcl_lnt_position( t24 ).
+        DATA(t32) = t24.
         t31 = t32->col.
         t23 = t31.
         DATA(t33) = CONV int8( 1 ).
@@ -111,17 +111,17 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
         DATA t40 TYPE REF TO zcl_lnt_position.
         DATA t41 TYPE REF TO zcl_lnt_position.
         DATA t42 TYPE REF TO zcl_lnt_issue.
-        DATA(t43) = CAST zcl_lnt_issue( t1 ).
+        DATA(t43) = t1.
         t42 = t43.
         DATA t44 TYPE REF TO zcl_lnt_position.
         DATA t45 TYPE REF TO zcl_lnt_iissue_data.
-        DATA(t46) = CAST zcl_lnt_issue( t42 ).
+        DATA(t46) = t42.
         t45 = t46->data_56cc.
         t44 = t45->end.
         t41 = t44.
         t40 = t41.
         DATA t47 TYPE int8.
-        DATA(t48) = CAST zcl_lnt_position( t40 ).
+        DATA(t48) = t40.
         t47 = t48->row.
         t39 = t47.
         DATA(t49) = CONV int8( 1 ).
@@ -134,17 +134,17 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
         DATA t52 TYPE REF TO zcl_lnt_position.
         DATA t53 TYPE REF TO zcl_lnt_position.
         DATA t54 TYPE REF TO zcl_lnt_issue.
-        DATA(t55) = CAST zcl_lnt_issue( t1 ).
+        DATA(t55) = t1.
         t54 = t55.
         DATA t56 TYPE REF TO zcl_lnt_position.
         DATA t57 TYPE REF TO zcl_lnt_iissue_data.
-        DATA(t58) = CAST zcl_lnt_issue( t54 ).
+        DATA(t58) = t54.
         t57 = t58->data_56cc.
         t56 = t57->end.
         t53 = t56.
         t52 = t53.
         DATA t59 TYPE int8.
-        DATA(t60) = CAST zcl_lnt_position( t52 ).
+        DATA(t60) = t52.
         t59 = t60->col.
         t51 = t59.
         DATA(t61) = CONV int8( 1 ).
@@ -174,11 +174,11 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
       DATA t67 TYPE i.
       DATA t68 TYPE string.
       DATA t69 TYPE REF TO zcl_lnt_issue.
-      DATA(t70) = CAST zcl_lnt_issue( t1 ).
+      DATA(t70) = t1.
       t69 = t70.
       DATA t71 TYPE string.
       DATA t72 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t73) = CAST zcl_lnt_issue( t69 ).
+      DATA(t73) = t69.
       t72 = t73->data_56cc.
       t71 = t72->severity.
       t68 = t71.
@@ -200,11 +200,11 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
       DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t79 TYPE string.
       DATA t80 TYPE REF TO zcl_lnt_issue.
-      DATA(t81) = CAST zcl_lnt_issue( t1 ).
+      DATA(t81) = t1.
       t80 = t81.
       DATA t82 TYPE string.
       DATA t83 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t84) = CAST zcl_lnt_issue( t80 ).
+      DATA(t84) = t80.
       t83 = t84->data_56cc.
       t82 = t83->key.
       t79 = t82.
@@ -227,11 +227,11 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
       DATA(t91) = |https://rules.abaplint.org/|.
       DATA t92 TYPE string.
       DATA t93 TYPE REF TO zcl_lnt_issue.
-      DATA(t94) = CAST zcl_lnt_issue( t1 ).
+      DATA(t94) = t1.
       t93 = t94.
       DATA t95 TYPE string.
       DATA t96 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t97) = CAST zcl_lnt_issue( t93 ).
+      DATA(t97) = t93.
       t96 = t97->data_56cc.
       t95 = t96->key.
       t92 = t95.
@@ -268,11 +268,11 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
       DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t110 TYPE string.
       DATA t111 TYPE REF TO zcl_lnt_issue.
-      DATA(t112) = CAST zcl_lnt_issue( t1 ).
+      DATA(t112) = t1.
       t111 = t112.
       DATA t113 TYPE string.
       DATA t114 TYPE REF TO zcl_lnt_iissue_data.
-      DATA(t115) = CAST zcl_lnt_issue( t111 ).
+      DATA(t115) = t111.
       t114 = t115->data_56cc.
       t113 = t114->message_25cb.
       t110 = t113.
@@ -293,13 +293,13 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     CLEAR t119.
     t3 = NEW zcl_lnt_shape_c44ae6d7( i_range = t4 i_severity = t64 i_code = t76 i_code_description = t86 i_source_75cf = t102 i_message_26cb = t107 i_tags = t117 i_related_information = t118 i_data_dc02 = t119 ).
     t2 = t3.
-    DATA(t120) = CAST zcl_lnt_shape_c44ae6d7( t2 ).
+    DATA(t120) = t2.
     result = t120.
 
   ENDMETHOD.
 
   METHOD find_8f95.
-    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/lsp/diagnostics.ts:46|.
     t2->source_location = t3.

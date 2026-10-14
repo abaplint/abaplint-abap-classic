@@ -20,8 +20,8 @@ CLASS zcl_lnt_fnctn_mdl_dfntn DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t1) = i_data_dc02.
+    DATA(t2) = t1.
     me->parse( i_data_dc02 = t2 ).
   ENDMETHOD.
 
@@ -61,7 +61,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD parse.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_data_dc02.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/abap/types/function_module_definition.ts:58|.
     t2->source_location = t3.

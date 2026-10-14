@@ -224,10 +224,10 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
       DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t53.
       t52 = t53.
-      DATA(t54) = CAST zlnt_runtime_arra_8ecd6afe19e0( t52 ).
+      DATA(t54) = t52.
       DATA(t55) = |SingleFile|.
       APPEND t55 TO t54->items.
-      DATA(t56) = CAST zlnt_runtime_arra_8ecd6afe19e0( t52 ).
+      DATA(t56) = t52.
       t51 = t56.
       t49 = t51.
     ELSE.
@@ -245,13 +245,13 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_un_pr_ts_un_prg.
-    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_un_pr_ts_un_prg.
-    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unnecessary_pragma.ts:67|.
     t2->source_location = t3.
@@ -259,7 +259,7 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rn_pr_in_sr_rl_un_pr_ts_un_prg.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/unnecessary_pragma.ts:71|.
     t2->source_location = t3.
@@ -267,8 +267,8 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_text.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unnecessary_pragma.ts:130|.
     t3->source_location = t4.
@@ -276,9 +276,9 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_subrc.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_next ).
-    DATA(t3) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_next.
+    DATA(t3) = i_file.
     DATA(t4) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t5) = |src/rules/unnecessary_pragma.ts:146|.
     t4->source_location = t5.
@@ -286,8 +286,8 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD check_needed.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_file.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unnecessary_pragma.ts:162|.
     t3->source_location = t4.
@@ -295,8 +295,8 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_no_handler.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_next ).
+    DATA(t1) = i_statement.
+    DATA(t2) = i_next.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/unnecessary_pragma.ts:193|.
     t3->source_location = t4.

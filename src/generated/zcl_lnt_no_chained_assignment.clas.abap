@@ -86,16 +86,16 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t26) = t24.
       DATA(t27) = |SingleFile|.
       APPEND t27 TO t26->items.
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       DATA(t29) = |Styleguide|.
       APPEND t29 TO t28->items.
-      DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t30) = t24.
       DATA(t31) = |Quickfix|.
       APPEND t31 TO t30->items.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t32) = t24.
       t23 = t32.
       t21 = t23.
     ELSE.
@@ -113,13 +113,13 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_sr_rl_n_ch_as_ts_n_ch_as.
-    DATA(t1) = CAST zcl_lnt_n_chnd_assgnmnt_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_sr_rl_n_ch_as_ts_n_ch_as.
-    DATA(t1) = CAST zcl_lnt_n_chnd_assgnmnt_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_chained_assignment.ts:35|.
     t2->source_location = t3.
@@ -127,7 +127,7 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_sr_rl_n_ch_as_ts_n_ch_as.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/no_chained_assignment.ts:39|.
     t2->source_location = t3.
@@ -135,8 +135,8 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD build_fix.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_statement_node( i_node ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/no_chained_assignment.ts:58|.
     t3->source_location = t4.

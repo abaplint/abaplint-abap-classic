@@ -14,17 +14,17 @@ CLASS zcl_lnt_type_definitions DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_type_definitions IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_list ).
+    DATA(t1) = i_list.
     DATA t2 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
     DATA t3 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
     DATA(t4) = NEW zlnt_runtime_map__d1f17afcc3e9( ).
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_map__d1f17afcc3e9( t3 ).
+    DATA(t5) = t3.
     t2 = t5.
     me->map = t2.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t6) = t1.
     me->list = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t7) = t1.
     DATA t8 TYPE REF TO zcl_lnt_type_definitions_entry.
     CLEAR t8.
     DATA t9 TYPE REF TO object.
@@ -33,12 +33,12 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       t8 ?= t9.
       DATA t10 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
       CLEAR t10.
-      DATA(t11) = CAST zlnt_runtime_map__d1f17afcc3e9( me->map ).
+      DATA(t11) = me->map.
       DATA(t12) = VALUE string( ).
       DATA(t13) = VALUE string( ).
       DATA t14 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t15 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t16) = CAST zcl_lnt_type_definitions_entry( t8 ).
+      DATA(t16) = t8.
       t15 = t16->type_cba0.
       t14 = t15.
       DATA(t17) = VALUE string( ).
@@ -46,11 +46,11 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       DATA t19 TYPE string.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
       DATA t21 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t22) = CAST zcl_lnt_fi_identifier( t14 ).
+      DATA(t22) = t14.
       t21 = t22->token.
       t20 = t21.
       DATA t23 TYPE string.
-      DATA(t24) = CAST zcl_lnt_abstract_token( t20 ).
+      DATA(t24) = t20.
       t23 = t24->str.
       t19 = t23.
       t18 = t19.
@@ -116,13 +116,13 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       ELSE.
         t12 = zlnt_runtime_uppe_91169605024d=>full( t12 ).
       ENDIF.
-      DATA(t44) = CAST zcl_lnt_type_definitions_entry( t8 ).
+      DATA(t44) = t8.
       t10 = t11->set( p0 = t12 p1 = t44 ).
     ENDLOOP.
   ENDMETHOD.
 
   METHOD get_all.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+    DATA(t1) = me->list.
     result = t1.
 
   ENDMETHOD.
@@ -135,7 +135,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_type_definitions_entry.
     CLEAR t4.
-    DATA(t5) = CAST zlnt_runtime_map__d1f17afcc3e9( me->map ).
+    DATA(t5) = me->map.
     DATA t6 TYPE string.
     DATA(t7) = t1.
     DATA(t8) = strlen( t7 ).
@@ -150,7 +150,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     DATA t9 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t9.
     DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = CAST zcl_lnt_type_definitions_entry( t3 ).
+    DATA(t11) = t3.
     IF t11 IS INITIAL.
       t10 = abap_true.
     ENDIF.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     ELSE.
       DATA t13 TYPE REF TO zcl_lnt_typed_identifier.
       DATA t14 TYPE REF TO zcl_lnt_type_definitions_entry.
-      DATA(t15) = CAST zcl_lnt_type_definitions_entry( t3 ).
+      DATA(t15) = t3.
       t14 = t15.
       t13 = t14->type_cba0.
       t9 = t13.

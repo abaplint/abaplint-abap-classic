@@ -29,7 +29,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     ENDIF.
     t3 = zcl_lnt_nd_index_module=>ns.
     DATA(t4) = |ExpressionNode|.
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d985_a5bb0f4f58f1 ).
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d985_a5bb0f4f58f1.
     t2 = t3->set( p0 = t4 p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t6.
@@ -40,7 +40,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     ENDIF.
     t7 = zcl_lnt_nd_index_module=>ns.
     DATA(t8) = |StatementNode|.
-    DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d986_12580b2d3c10 ).
+    DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d986_12580b2d3c10.
     t6 = t7->set( p0 = t8 p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t10.
@@ -51,7 +51,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     ENDIF.
     t11 = zcl_lnt_nd_index_module=>ns.
     DATA(t12) = |StructureNode|.
-    DATA(t13) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d987_99d549b80c61 ).
+    DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d987_99d549b80c61.
     t10 = t11->set( p0 = t12 p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t14.
@@ -62,7 +62,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     ENDIF.
     t15 = zcl_lnt_nd_index_module=>ns.
     DATA(t16) = |TokenNode|.
-    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d988_4de15e29dca8 ).
+    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d988_4de15e29dca8.
     t14 = t15->set( p0 = t16 p1 = t17 ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t18.
@@ -73,7 +73,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     ENDIF.
     t19 = zcl_lnt_nd_index_module=>ns.
     DATA(t20) = |TokenNodeRegex|.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d989_baefa774021f ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d989_baefa774021f.
     t18 = t19->set( p0 = t20 p1 = t21 ).
   ENDMETHOD.
 

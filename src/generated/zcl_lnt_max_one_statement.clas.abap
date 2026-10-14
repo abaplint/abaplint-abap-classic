@@ -110,16 +110,16 @@ CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t30.
       t29 = t30.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t31) = t29.
       DATA(t32) = |Styleguide|.
       APPEND t32 TO t31->items.
-      DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t33) = t29.
       DATA(t34) = |Quickfix|.
       APPEND t34 TO t33->items.
-      DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t35) = t29.
       DATA(t36) = |SingleFile|.
       APPEND t36 TO t35->items.
-      DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t37) = t29.
       t28 = t37.
       t26 = t28.
     ELSE.
@@ -144,13 +144,13 @@ CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_mx_on_st_ts_mx_on_st.
-    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_mx_on_st_ts_mx_on_st.
-    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/max_one_statement.ts:43|.
     t2->source_location = t3.
@@ -158,7 +158,7 @@ CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD r_p_i_s_r_mx_on_st_ts_mx_on_st.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/max_one_statement.ts:47|.
     t2->source_location = t3.

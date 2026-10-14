@@ -12,10 +12,10 @@ ENDCLASS.
 CLASS zcl_lnt_imethod IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_object_name.
-    DATA(t2) = CAST zcl_lnt_info_method_definition( i_method ).
+    DATA(t2) = i_method.
     DATA(t3) = t1.
     me->object_name = t3.
-    DATA(t4) = CAST zcl_lnt_info_method_definition( t2 ).
+    DATA(t4) = t2.
     me->method = t4.
   ENDMETHOD.
 

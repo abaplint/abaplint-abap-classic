@@ -100,10 +100,10 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
       t27 = t28.
-      DATA(t29) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t29) = t27.
       DATA(t30) = |Styleguide|.
       APPEND t30 TO t29->items.
-      DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t27 ).
+      DATA(t31) = t27.
       t26 = t31.
       t24 = t26.
     ELSE.
@@ -121,13 +121,13 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD g_c_i_s_r_s_c_v_i_t_st_cl_v_in.
-    DATA(t1) = CAST zcl_lnt_sttc_cll_v_instnc_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
 
   ENDMETHOD.
 
   METHOD s_c_i_s_r_s_c_v_i_t_st_cl_v_in.
-    DATA(t1) = CAST zcl_lnt_sttc_cll_v_instnc_cnf( i_conf ).
+    DATA(t1) = i_conf.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t3) = |src/rules/static_call_via_instance.ts:43|.
     t2->source_location = t3.
@@ -135,8 +135,8 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run_parsed.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/static_call_via_instance.ts:47|.
     t3->source_location = t4.
@@ -145,7 +145,7 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
 
   METHOD list_method_calls.
     DATA(t1) = i_filename.
-    DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t2) = i_node.
     DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t4) = |src/rules/static_call_via_instance.ts:76|.
     t3->source_location = t4.

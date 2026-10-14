@@ -11,11 +11,11 @@ CLASS zcl_lnt_iabaplexer_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t3) = CAST zif_lnt_file( t1 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_tokens.
+    DATA(t3) = t1.
     me->file = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t4) = t2.
     me->tokens = t4.
   ENDMETHOD.
 

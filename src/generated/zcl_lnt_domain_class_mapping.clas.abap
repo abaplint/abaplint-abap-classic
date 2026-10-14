@@ -15,15 +15,15 @@ CLASS zcl_lnt_domain_class_mapping IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_domain.
     DATA(t2) = i_class_631c.
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( i_use_exact_type ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_constant_for_domain_name ).
+    DATA(t3) = i_use_exact_type.
+    DATA(t4) = i_constant_for_domain_name.
     DATA(t5) = t1.
     me->domain = t5.
     DATA(t6) = t2.
     me->class_fa7d = t6.
-    DATA(t7) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
+    DATA(t7) = t3.
     me->use_exact_type = t7.
-    DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+    DATA(t8) = t4.
     me->constant_for_domain_name = t8.
   ENDMETHOD.
 

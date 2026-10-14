@@ -17,17 +17,17 @@ CLASS zcl_lnt_shape_736a242f IMPLEMENTATION.
     DATA(t1) = i_kind.
     DATA(t2) = i_old_uri.
     DATA(t3) = i_new_uri.
-    DATA(t4) = CAST zcl_lnt_shape_f7fb0253( i_options ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( i_annotation_id ).
+    DATA(t4) = i_options.
+    DATA(t5) = i_annotation_id.
     DATA(t6) = t1.
     me->kind = t6.
     DATA(t7) = t2.
     me->old_uri = t7.
     DATA(t8) = t3.
     me->new_uri = t8.
-    DATA(t9) = CAST zcl_lnt_shape_f7fb0253( t4 ).
+    DATA(t9) = t4.
     me->options = t9.
-    DATA(t10) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t10) = t5.
     me->annotation_id = t10.
   ENDMETHOD.
 

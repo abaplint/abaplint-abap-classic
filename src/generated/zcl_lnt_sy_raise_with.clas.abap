@@ -9,22 +9,22 @@ CLASS zcl_lnt_sy_raise_with DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_raise_with IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_expression_node( t1 ).
+    DATA(t4) = t1.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
-    DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d258_47daac7ded2f ).
+    DATA(t8) = t6.
+    DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d258_47daac7ded2f.
     APPEND t9 TO t8->items.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
-    DATA(t11) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
+    DATA(t10) = t6.
+    DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
     APPEND t11 TO t10->items.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t12) = t6.
     t5 = t12.
     DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t13.
@@ -41,14 +41,14 @@ CLASS zcl_lnt_sy_raise_with IMPLEMENTATION.
       CLEAR t17.
       DATA(t18) = abap_true.
       IF t18 = abap_true.
-        DATA(t19) = CAST zcl_lnt_expression_node( t14 ).
+        DATA(t19) = t14.
         t17 = t19.
       ELSE.
         DATA t20 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t20.
         t17 = t20.
       ENDIF.
-      DATA(t21) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t21) = t2.
       DATA t22 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t22.
       DATA t23 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
