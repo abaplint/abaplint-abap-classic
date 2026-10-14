@@ -74,6 +74,8 @@
     "constant_classes": true,
     "double_space": true,
     "downport": false,
+    "newline_between_methods": false, // todo
+    "exporting": true,
     "identical_conditions": true,
     "constructor_visibility_public": true,
     "cyclic_oo": false,
