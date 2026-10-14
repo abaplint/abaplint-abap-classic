@@ -390,6 +390,7 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
     t174 = NEW zcl_lnt_closure_77054774( i_changing = t175 i_found = t176 i_input_967e = t177 i_name = t178 i_node = t179 i_tables_8d5a = t180 i_using = t181 i_outer = t182 ).
     APPEND t174 TO t172->items.
   ENDMETHOD.
+
   METHOD check_parameters.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_actual ).
@@ -755,15 +756,19 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
     result = t180.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d919_dbc6715173c8.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

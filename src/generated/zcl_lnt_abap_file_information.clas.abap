@@ -22,6 +22,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( t1 ).
     me->parsed = t2.
   ENDMETHOD.
+
   METHOD list_class_implementations.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
@@ -29,6 +30,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD list_interface_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
@@ -36,6 +38,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD gt_intrfc_dfntn_by_nm.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
@@ -164,6 +167,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD list_class_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
@@ -171,6 +175,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_class_definition_by_name.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
@@ -299,6 +304,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD gt_clss_implmnttn_by_nm.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
@@ -427,39 +433,50 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD list_form_definitions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/4_file_information/abap_file_information.ts:53|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d744_dbdc6f78b1c3.
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~list_interface_definitions.
     result = me->list_interface_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~gt_intrfc_dfntn_by_nm.
     result = me->gt_intrfc_dfntn_by_nm( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~list_class_definitions.
     result = me->list_class_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~get_class_definition_by_name.
     result = me->get_class_definition_by_name( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~list_form_definitions.
     result = me->list_form_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~list_class_implementations.
     result = me->list_class_implementations( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file_information~gt_clss_implmnttn_by_nm.
     result = me->gt_clss_implmnttn_by_nm( i_name = i_name ).
   ENDMETHOD.

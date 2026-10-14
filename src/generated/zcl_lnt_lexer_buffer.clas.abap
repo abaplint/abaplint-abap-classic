@@ -29,6 +29,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     DATA(t5) = abap_true.
     me->empty_a4a6 = t5.
   ENDMETHOD.
+
   METHOD add_51c1.
     CONSTANTS range_int_check_hi_zik0zi TYPE int8 VALUE '2147483646'.
     CONSTANTS range_int_check_lo_nzik0zk TYPE int8 VALUE '-2147483648'.
@@ -68,6 +69,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     t15 = t16 + t17.
     me->end = t15.
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = VALUE string( ).
     DATA(t2) = CONV string( me->raw ).
@@ -86,6 +88,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD length.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -103,6 +106,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD clear_feba.
     DATA(t1) = 0.
     me->start = t1.
@@ -111,6 +115,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     DATA(t3) = abap_true.
     me->empty_a4a6 = t3.
   ENDMETHOD.
+
   METHOD count_is_even.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -191,9 +196,11 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     result = t28.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d10_bae92c470a3031.
   ENDMETHOD.

@@ -1858,9 +1858,11 @@ CLASS zcl_lnt_ob_index_module IMPLEMENTATION.
     DATA(t669) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1272_91dba7279b1b ).
     t666 = t667->set( p0 = t668 p1 = t669 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1706_24cac642d7b5.
   ENDMETHOD.

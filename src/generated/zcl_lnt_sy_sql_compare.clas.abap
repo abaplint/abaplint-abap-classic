@@ -497,6 +497,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD find_type.
     DATA(t1) = i_field_name.
     DATA(t2) = CAST zlnt_runtime_arra_b72089862d0f( i_tables_8d5a ).
@@ -580,9 +581,11 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
     result = t36.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d813_25344fc234da.
   ENDMETHOD.

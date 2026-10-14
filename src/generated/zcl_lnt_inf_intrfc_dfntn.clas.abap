@@ -48,12 +48,15 @@ CLASS zcl_lnt_inf_intrfc_dfntn IMPLEMENTATION.
     DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
     me->attributes = t18.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d736_e6fd20179c23.
   ENDMETHOD.
+
   METHOD zif_lnt_union_eff0d09a~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

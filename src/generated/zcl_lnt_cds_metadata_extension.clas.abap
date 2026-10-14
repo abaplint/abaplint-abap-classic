@@ -27,46 +27,54 @@ CLASS zcl_lnt_cds_metadata_extension IMPLEMENTATION.
     CLEAR t4.
     me->parsed_data = t4.
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |DDLX|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/cds_metadata_extension.ts:19|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD has_parser_error.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/cds_metadata_extension.ts:26|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD p_i_sr_ob_cd_mt_ex_ts_cd_mt_ex.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/cds_metadata_extension.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/cds_metadata_extension.ts:50|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_source_file.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/cds_metadata_extension.ts:55|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_sr_ob_cd_mt_ex_ts_cd_mt_ex( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1121_899e29e083be.
   ENDMETHOD.

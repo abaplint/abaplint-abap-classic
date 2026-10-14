@@ -18,6 +18,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     t1->payload = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_expressions.
     DATA t1 TYPE REF TO zlnt_exception_st_fa837731be5a.
     DATA(t2) = |excluded abaplint introspection: getExpressions|.
@@ -25,6 +26,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     t1->payload = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_statements.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -79,6 +81,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     result = t20.
 
   ENDMETHOD.
+
   METHOD get_keywords.
     DATA t1 TYPE REF TO zlnt_exception_st_fa837731be5a.
     DATA(t2) = |excluded abaplint introspection: getKeywords|.
@@ -86,9 +89,11 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     t1->payload = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d982_9745d7d8d429.
   ENDMETHOD.

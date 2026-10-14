@@ -55,6 +55,7 @@ CLASS zcl_lnt_dngrs_sttmnt_cnf IMPLEMENTATION.
     DATA(t15) = abap_true.
     me->ignore_rap_query_provider = t15.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1373_0b8abd610250.
   ENDMETHOD.

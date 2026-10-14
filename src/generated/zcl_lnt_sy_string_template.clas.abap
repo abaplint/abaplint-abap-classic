@@ -653,6 +653,7 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
     result = t280.
 
   ENDMETHOD.
+
   METHOD validate_escape_sequences.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -858,9 +859,11 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
     result = t92.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d820_8ca0c693815f.
   ENDMETHOD.

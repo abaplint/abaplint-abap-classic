@@ -1642,9 +1642,11 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
     result = t694.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d761_e449133b5a7d.
   ENDMETHOD.

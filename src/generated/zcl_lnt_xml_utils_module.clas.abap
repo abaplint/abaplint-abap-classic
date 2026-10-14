@@ -81,6 +81,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD unescape.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_str ).
     DATA(t2) = VALUE abap_bool( ).
@@ -162,15 +163,18 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     result = t45.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_92a4db672ef8.
     IF zlnt_builtin_init_e23a8274c2ff = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_e23a8274c2ff = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1841_b888deee9f72.
   ENDMETHOD.

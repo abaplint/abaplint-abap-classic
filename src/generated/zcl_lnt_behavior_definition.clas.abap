@@ -24,41 +24,48 @@ CLASS zcl_lnt_behavior_definition IMPLEMENTATION.
     CLEAR t3.
     me->parsed_data = t3.
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |BDEF|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:15|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:22|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:27|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_source_file.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:32|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD list_entities.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:36|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_entity_name_by_alias.
     DATA(t1) = i_alias.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -66,12 +73,14 @@ CLASS zcl_lnt_behavior_definition IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD parse_source.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/behavior_definition.ts:53|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1108_9ad6b30e9664.
   ENDMETHOD.

@@ -88,6 +88,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     me->allow_unused = t23.
     me->build( ).
   ENDMETHOD.
+
   METHOD l_m_f_i_i_sr_ut_in_gr_ts_in_gr.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -146,6 +147,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     result = t25.
 
   ENDMETHOD.
+
   METHOD get_issues_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -153,6 +155,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD build.
     me->add_vertices( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -663,6 +666,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       ENDLOOP.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD add_vertices.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zif_lnt_registry( me->reg ).
@@ -1212,6 +1216,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD list_main_for_include.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -1234,18 +1239,23 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1693_8e4c463ba2a3.
   ENDMETHOD.
+
   METHOD zif_lnt_include_graph~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_include_graph~list_main_for_include.
     result = me->list_main_for_include( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_include_graph~get_issues_file.
     result = me->get_issues_file( i_file = i_file ).
   ENDMETHOD.

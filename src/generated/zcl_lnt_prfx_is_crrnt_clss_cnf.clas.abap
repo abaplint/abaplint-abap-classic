@@ -13,6 +13,7 @@ CLASS zcl_lnt_prfx_is_crrnt_clss_cnf IMPLEMENTATION.
     DATA(t1) = abap_true.
     me->omit_me_instance_calls = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1572_f709e8cf746c.
   ENDMETHOD.

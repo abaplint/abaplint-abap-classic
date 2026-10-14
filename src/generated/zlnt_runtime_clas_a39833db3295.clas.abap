@@ -16,6 +16,7 @@ CLASS zlnt_runtime_clas_a39833db3295 IMPLEMENTATION.
     me->parent = parent.
     me->static_names = static_names.
   ENDMETHOD.
+
   METHOD has.
     DATA s TYPE string.
     IF static_names IS NOT BOUND.

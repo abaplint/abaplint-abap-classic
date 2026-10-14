@@ -2486,6 +2486,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
     result = t1015.
 
   ENDMETHOD.
+
   METHOD parameters.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_object_reference_type( i_obj_1ed0 ).
@@ -3444,6 +3445,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD default_importing_type.
     DATA(t1) = CAST zif_lnt_method_definition( i_method ).
     DATA t2 TYPE REF TO zcl_lnt_abstract_type.
@@ -3628,9 +3630,11 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
     result = t70.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d805_d3390e023ff8.
   ENDMETHOD.

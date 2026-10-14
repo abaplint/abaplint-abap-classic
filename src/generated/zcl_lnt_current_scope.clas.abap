@@ -82,6 +82,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     DATA(t6) = CAST zif_lnt_registry( t1 ).
     me->reg = t6.
   ENDMETHOD.
+
   METHOD build_default.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
@@ -327,6 +328,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t123.
 
   ENDMETHOD.
+
   METHOD add_built_in.
     DATA(t1) = CAST zcl_lnt_current_scope( i_s ).
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_extras ).
@@ -684,6 +686,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD get_release.
     DATA t1 TYPE REF TO zcl_lnt_abap_release.
     DATA t2 TYPE REF TO zif_lnt_configuration.
@@ -693,12 +696,14 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_version.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_current_scope.ts:72|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_language_version.
     DATA t1 TYPE string.
     DATA t2 TYPE REF TO zif_lnt_configuration.
@@ -708,6 +713,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_open_abap.
     DATA t1 TYPE abap_bool.
     DATA t2 TYPE REF TO zif_lnt_configuration.
@@ -717,11 +723,13 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_registry.
     DATA(t1) = CAST zif_lnt_registry( me->reg ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD add_type.
     DATA(t1) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -830,6 +838,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     ENDIF.
     me->add_type_named( i_name = t9 i_type_9913 = t39 ).
   ENDMETHOD.
+
   METHOD add_type_named.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
@@ -1028,6 +1037,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t90 = t91.
     t81 = t82->set( p0 = t89 p1 = t90 ).
   ENDMETHOD.
+
   METHOD add_extra_like_type.
     DATA(t1) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1136,6 +1146,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     ENDIF.
     me->add_extra_like_type_named( i_name = t9 i_type_9913 = t39 ).
   ENDMETHOD.
+
   METHOD add_extra_like_type_named.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_typed_identifier( i_type_9913 ).
@@ -1265,6 +1276,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t59 = t60.
     t50 = t51->set( p0 = t58 p1 = t59 ).
   ENDMETHOD.
+
   METHOD add_class_definition.
     DATA(t1) = CAST zif_lnt_class_definition( i_c ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1376,6 +1388,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     DATA(t52) = CAST zif_lnt_class_definition( t1 ).
     t43 = t44->set( p0 = t51 p1 = t52 ).
   ENDMETHOD.
+
   METHOD add_form_definitions.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_f ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1434,6 +1447,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t21 = lines( t22->items ).
     t9 = t21.
   ENDMETHOD.
+
   METHOD update_form_definition.
     DATA(t1) = CAST zif_lnt_form_definition( i_f ).
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -1527,6 +1541,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       t2 = t40.
     ENDDO.
   ENDMETHOD.
+
   METHOD add_interface_definition.
     DATA(t1) = CAST zif_lnt_interface_definition( i_i ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1638,6 +1653,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     DATA(t52) = CAST zif_lnt_interface_definition( t1 ).
     t43 = t44->set( p0 = t51 p1 = t52 ).
   ENDMETHOD.
+
   METHOD add_named_identifier.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_typed_identifier( i_identifier ).
@@ -1817,6 +1833,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     DATA(t83) = CAST zcl_lnt_typed_identifier( t2 ).
     t74 = t75->set( p0 = t82 p1 = t83 ).
   ENDMETHOD.
+
   METHOD add_named_identifier_to_parent.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_typed_identifier( i_identifier ).
@@ -1825,6 +1842,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD add_identifier.
     DATA(t1) = CAST zcl_lnt_typed_identifier( i_identifier ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1923,6 +1941,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t39 = t40.
     me->add_named_identifier( i_name = t9 i_identifier = t39 ).
   ENDMETHOD.
+
   METHOD add_deferred.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
     DATA(t2) = i_type_9913.
@@ -1983,6 +2002,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t26 = NEW zcl_lnt_deferred_information( i_token = t27 i_oo_type = t29 ).
     t10 = t11->set( p0 = t18 p1 = t26 ).
   ENDMETHOD.
+
   METHOD add_list_prefix.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_identifiers ).
     DATA(t2) = i_prefix.
@@ -2073,6 +2093,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       me->add_named_identifier( i_name = t6 i_identifier = t38 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD add_list.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_identifiers ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -2193,6 +2214,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD add_reference.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_usage ).
     DATA(t2) = CAST zcl_lnt_fi_identifier( i_referencing ).
@@ -2451,6 +2473,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       t72 = t96.
     ENDIF.
   ENDMETHOD.
+
   METHOD add_sql_conversion.
     DATA(t1) = i_field_name.
     DATA(t2) = i_message_26cb.
@@ -2460,6 +2483,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD find_function_module.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -2467,6 +2491,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_object_definition.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2871,12 +2896,14 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t153.
 
   ENDMETHOD.
+
   METHOD find_behavior_definition.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_current_scope.ts:292|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_badi_def.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -2884,6 +2911,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD exists_object.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -3523,6 +3551,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t269.
 
   ENDMETHOD.
+
   METHOD find_class_definition.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -3657,6 +3686,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t51.
 
   ENDMETHOD.
+
   METHOD find_type_pool_constant.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -3948,6 +3978,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t111.
 
   ENDMETHOD.
+
   METHOD find_type_pool_type.
     DATA(t1) = i_name.
     DATA(t2) = VALUE abap_bool( ).
@@ -4239,6 +4270,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t112.
 
   ENDMETHOD.
+
   METHOD find_interface_definition.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -4378,6 +4410,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t54.
 
   ENDMETHOD.
+
   METHOD find_form_definition.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zif_lnt_form_definition.
@@ -4409,6 +4442,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD find_type.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -4464,6 +4498,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD find_extra_like_type.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -4471,6 +4506,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_variable.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -4568,12 +4604,14 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD find_returning_parameter.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_current_scope.ts:500|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_ddic.
     DATA t1 TYPE REF TO zcl_lnt_ddic.
     DATA(t2) = CAST zif_lnt_registry( me->reg ).
@@ -4581,6 +4619,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_ddic_references.
     DATA t1 TYPE REF TO zif_lnt_ddic_references.
     DATA(t2) = CAST zif_lnt_registry( me->reg ).
@@ -4588,6 +4627,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_msag_references.
     DATA t1 TYPE REF TO zif_lnt_msag_references.
     DATA(t2) = CAST zif_lnt_registry( me->reg ).
@@ -4595,11 +4635,13 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_parent_obj.
     DATA(t1) = CAST zif_lnt_object( me->parent_obj ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_name.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -4654,6 +4696,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t15.
 
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -4708,6 +4751,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t15.
 
   ENDMETHOD.
+
   METHOD push.
     DATA(t1) = i_stype.
     DATA(t2) = i_sname.
@@ -4793,6 +4837,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       t37->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t38 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD is_oo.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->current ).
@@ -4860,6 +4905,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD is_any_oo.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->current ).
@@ -4936,6 +4982,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t34.
 
   ENDMETHOD.
+
   METHOD is_in_static_method.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->current ).
@@ -5004,6 +5051,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD add_local_friend.
     DATA(t1) = i_class_name.
     DATA(t2) = i_friend_name.
@@ -5012,6 +5060,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_local_friend.
     DATA(t1) = i_class_name.
     DATA(t2) = i_friend_name.
@@ -5098,6 +5147,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD get_enclosing_class_name.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->current ).
@@ -5178,12 +5228,14 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t34.
 
   ENDMETHOD.
+
   METHOD is_global_oo.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_current_scope.ts:622|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_type_pool.
     DATA(t1) = VALUE abap_bool( ).
     DATA(t2) = VALUE abap_bool( ).
@@ -5327,6 +5379,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_allow_header_use.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -5345,6 +5398,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     ENDIF.
     me->allow_header_use = t2.
   ENDMETHOD.
+
   METHOD is_allow_header_use.
     DATA(t1) = i_name.
     DATA(t2) = VALUE abap_bool( ).
@@ -5424,6 +5478,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD pop.
     DATA(t1) = CAST zcl_lnt_position( i_end ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -5507,6 +5562,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     result = t34.
 
   ENDMETHOD.
+
   METHOD add_form_definitions_one.
     DATA(t1) = CAST zif_lnt_form_definition( i_x ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -5521,9 +5577,11 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t2 = t7.
     me->add_form_definitions( i_f = t2 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d750_2d45c5b37c94.
   ENDMETHOD.

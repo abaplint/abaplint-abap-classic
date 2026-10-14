@@ -564,6 +564,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t1 = t344.
     me->recommendations = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1418_596507c5c11d.
   ENDMETHOD.

@@ -46,6 +46,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA(t8) = t4.
     me->row = t8.
   ENDMETHOD.
+
   METHOD get_required_parameters.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -106,30 +107,35 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD get_optional.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:42|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_all.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:46|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_event_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:50|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_event_class.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:54|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_importing.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -241,6 +247,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     result = t59.
 
   ENDMETHOD.
+
   METHOD get_default_importing.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
@@ -312,24 +319,28 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     result = t27.
 
   ENDMETHOD.
+
   METHOD get_exporting.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:82|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_raising.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:86|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_changing.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:90|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_returning.
     DATA t1 TYPE REF TO zcl_lnt_lx_identifier.
     DATA t2 TYPE REF TO zcl_lnt_lx_identifier.
@@ -364,47 +375,55 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     result = t7.
 
   ENDMETHOD.
+
   METHOD get_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:99|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_visibility.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:103|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_redefinition.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:107|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_abstract.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:111|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_static_4685.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:115|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_event_handler.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/_builtin.ts:119|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_parameters.
     DATA(t1) = CAST zcl_lnt_built_in_method( me ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_p_d_i_s_a_5_s_bl_ts_bl_in_mt.
     DATA(t1) = i_parameter_d485.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -412,6 +431,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_parameter_default.
     DATA(t1) = i_parameter_5406.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -419,99 +439,131 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d748_9cf6b71481f2.
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_visibility.
     result = me->get_visibility( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_redefinition.
     result = me->is_redefinition( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_abstract.
     result = me->is_abstract( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_static_4685.
     result = me->is_static_4685( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_event_handler.
     result = me->is_event_handler( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_event_name.
     result = me->get_event_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_event_class.
     result = me->get_event_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_parameters.
     result = me->get_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_raising.
     result = me->get_raising( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_exceptions.
     result = me->get_exceptions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_all.
     result = me->get_all( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_importing.
     result = me->get_importing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_required_parameters.
     result = me->get_required_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_exporting.
     result = me->get_exporting( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_changing.
     result = me->get_changing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_optional.
     result = me->get_optional( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_returning.
     result = me->get_returning( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_exceptions.
     result = me->get_exceptions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_default_importing.
     result = me->get_default_importing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_parameter_default.
     result = me->get_parameter_default( i_parameter_5406 = i_parameter_5406 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_8cd68e5e~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_b6d4892d~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

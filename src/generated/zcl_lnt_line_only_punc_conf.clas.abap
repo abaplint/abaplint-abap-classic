@@ -13,6 +13,7 @@ CLASS zcl_lnt_line_only_punc_conf IMPLEMENTATION.
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1465_1d098da1d2a1.
   ENDMETHOD.

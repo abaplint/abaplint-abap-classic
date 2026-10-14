@@ -22,9 +22,11 @@ CLASS zcl_lnt_info_method_parameter IMPLEMENTATION.
     DATA(t6) = t3.
     me->direction = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d734_f05b24426da6.
   ENDMETHOD.

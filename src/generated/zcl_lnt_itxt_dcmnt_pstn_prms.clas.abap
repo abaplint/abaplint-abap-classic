@@ -18,9 +18,11 @@ CLASS zcl_lnt_itxt_dcmnt_pstn_prms IMPLEMENTATION.
     DATA(t4) = CAST zcl_lnt_shape_38f98ddf( t2 ).
     me->position_7b94 = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1062_1146100580cf.
   ENDMETHOD.

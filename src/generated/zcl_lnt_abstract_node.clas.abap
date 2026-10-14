@@ -27,6 +27,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     t1 = zcl_lnt_abstract_node_module=>empty_57e4.
     me->children = t1.
   ENDMETHOD.
+
   METHOD add_child.
     DATA(t1) = CAST zif_lnt_node( i_n_0c97 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -47,6 +48,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     DATA(t7) = CAST zif_lnt_node( t1 ).
     APPEND t7 TO t6->items.
   ENDMETHOD.
+
   METHOD set_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -54,11 +56,13 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     t2 = t3->slice0( ).
     me->children = t2.
   ENDMETHOD.
+
   METHOD get_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_first_child.
     DATA t1 TYPE REF TO zif_lnt_node.
     CLEAR t1.
@@ -79,6 +83,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_last_child.
     DATA t1 TYPE REF TO zif_lnt_node.
     CLEAR t1.
@@ -106,30 +111,39 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d984_dbc6af9e17b0.
   ENDMETHOD.
+
   METHOD zif_lnt_node~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~add_child.
     me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~set_children.
     me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~get_children.
     result = me->get_children( ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~get_db65.
     result = me->get_db65( ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~get_first_token.
     result = me->get_first_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_node~get_last_token.
     result = me->get_last_token( ).
   ENDMETHOD.

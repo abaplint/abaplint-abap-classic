@@ -123,9 +123,11 @@ CLASS zcl_lnt_stuff_module IMPLEMENTATION.
     t27 = t64.
     zcl_lnt_stuff_module=>declaration_stuff = t27.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1865_dffbbe49ed72.
   ENDMETHOD.

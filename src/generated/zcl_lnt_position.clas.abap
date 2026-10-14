@@ -24,16 +24,19 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     DATA(t4) = t2.
     me->col = t4.
   ENDMETHOD.
+
   METHOD get_col.
     DATA(t1) = CONV int8( me->col ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_row.
     DATA(t1) = CONV int8( me->row ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_after.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
     DATA t2 TYPE abap_bool.
@@ -67,6 +70,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD equals.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
     DATA t2 TYPE abap_bool.
@@ -99,6 +103,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_before.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
     DATA t2 TYPE abap_bool.
@@ -132,6 +137,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_between.
     DATA(t1) = CAST zcl_lnt_position( i_p1 ).
     DATA(t2) = CAST zcl_lnt_position( i_p2 ).
@@ -140,9 +146,11 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1273_9a1e1d42ce7e.
   ENDMETHOD.

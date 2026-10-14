@@ -46,6 +46,7 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_eae383aaa208.
     IF zlnt_builtin_init_672ad5f3b5e9 = abap_true.
       RETURN.
@@ -63,9 +64,11 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     t1->source = t2.
     zcl_lnt_include_graph_module=>fmxxinclude = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1839_1541f31d5d31.
   ENDMETHOD.

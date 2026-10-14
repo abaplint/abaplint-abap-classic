@@ -18,6 +18,7 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD parse_dynpros.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_parsed ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -565,15 +566,18 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
     result = t226.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_5f3d60166229.
     IF zlnt_builtin_init_9a567949f3db = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_9a567949f3db = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1838_44f269c101ba.
   ENDMETHOD.

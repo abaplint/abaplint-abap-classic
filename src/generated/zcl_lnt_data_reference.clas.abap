@@ -45,6 +45,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     DATA(t13) = CAST zcl_lnt_abstract_type( t1 ).
     me->type_cba0 = t13.
   ENDMETHOD.
+
   METHOD to_text.
     DATA(t1) = i_level.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -52,17 +53,20 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/data_reference_type.ts:20|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_generic.
     DATA t1 TYPE abap_bool.
     DATA(t2) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
@@ -76,54 +80,69 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     result = t4.
 
   ENDMETHOD.
+
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/data_reference_type.ts:35|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_cds.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/data_reference_type.ts:39|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d999_fa6103dd7bc5.
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~contains_void.
     result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_abstract_type_data.
     result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_conversion_exit.
     result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_ddic_name.
     result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_description.
     result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_qualified_name.
     result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~get_rtti_name.
     result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~is_generic.
     result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~to_abap.
     result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~to_cds.
     result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_168ba5e4~to_text.
     result = me->to_text( i_level = i_level ).
   ENDMETHOD.

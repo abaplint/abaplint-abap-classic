@@ -27,9 +27,11 @@ CLASS zcl_lnt_select_module IMPLEMENTATION.
     t1->source = t2.
     zcl_lnt_select_module=>is_simple = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1850_b55fc9567908.
   ENDMETHOD.

@@ -17,9 +17,11 @@ CLASS zcl_lnt_lexer_stream_module IMPLEMENTATION.
     ENDIF.
     zlnt_builtin_init_45d6c763d51f = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1843_9723a9e87922.
   ENDMETHOD.

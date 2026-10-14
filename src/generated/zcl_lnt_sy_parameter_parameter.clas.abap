@@ -719,6 +719,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       t310->add_named_identifier( i_name = t311 i_identifier = t341 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD has_user_command.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -843,6 +844,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     result = t57.
 
   ENDMETHOD.
+
   METHOD has_length.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -850,15 +852,19 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d918_2412a1956230.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

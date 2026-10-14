@@ -305,9 +305,11 @@ CLASS zcl_lnt_sy_fs_target IMPLEMENTATION.
       t120->add_reference( i_usage = t122 i_referencing = t126 i_type_9913 = t128 i_filename = t130 i_extra = t132 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d787_542025a81743.
   ENDMETHOD.

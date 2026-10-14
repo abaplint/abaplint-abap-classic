@@ -35,6 +35,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t5) = CONV int8( 0 ).
     me->col = t5.
   ENDMETHOD.
+
   METHOD advance.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -152,16 +153,19 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD get_col.
     DATA(t1) = CONV int8( me->col ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_row.
     DATA(t1) = CONV int8( me->row ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD prev_char.
     DATA t1 TYPE i.
     DATA t2 TYPE i.
@@ -214,6 +218,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD prev_prev_char.
     DATA t1 TYPE i.
     DATA t2 TYPE i.
@@ -266,6 +271,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD current_char.
     DATA t1 TYPE abap_bool.
     DATA(t2) = CONV i( me->offset ).
@@ -327,6 +333,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t13.
 
   ENDMETHOD.
+
   METHOD next_char.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -393,6 +400,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD next_next_char.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -459,6 +467,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD char_code_at.
     CONSTANTS range_int_check_hi_zik0zj TYPE int8 VALUE '2147483647'.
     CONSTANTS range_int_check_lo_nzik0zk TYPE int8 VALUE '-2147483648'.
@@ -527,11 +536,13 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD get_raw.
     DATA(t1) = CONV string( me->raw ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_offset.
     DATA t1 TYPE int8.
     DATA(t2) = CONV i( me->offset ).
@@ -539,9 +550,11 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d11_b829914c6cc66c.
   ENDMETHOD.

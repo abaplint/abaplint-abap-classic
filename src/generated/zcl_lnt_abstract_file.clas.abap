@@ -21,11 +21,13 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA(t2) = t1.
     me->filename = t2.
   ENDMETHOD.
+
   METHOD get_filename.
     DATA(t1) = CONV string( me->filename ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD base_name.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -293,6 +295,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     result = t107.
 
   ENDMETHOD.
+
   METHOD get_object_type.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
@@ -377,6 +380,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD get_object_name.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
@@ -541,27 +545,35 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     result = t69.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1058_ae1f86304fc2.
   ENDMETHOD.
+
   METHOD zif_lnt_file~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_file~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_file~get_object_type.
     result = me->get_object_type( ).
   ENDMETHOD.
+
   METHOD zif_lnt_file~get_object_name.
     result = me->get_object_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_file~get_raw.
     result = me->get_raw( ).
   ENDMETHOD.
+
   METHOD zif_lnt_file~get_raw_rows.
     result = me->get_raw_rows( ).
   ENDMETHOD.

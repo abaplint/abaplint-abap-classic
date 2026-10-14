@@ -242,6 +242,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
     result = t102.
 
   ENDMETHOD.
+
   METHOD find_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).
     DATA t2 TYPE string.
@@ -298,9 +299,11 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
     result = t24.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1695_a2c3621ecead.
   ENDMETHOD.

@@ -28,6 +28,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_unknown_types_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -69,6 +70,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD in_in_sr_rl_unk_typ_ts_unk_typ.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = CAST zif_lnt_registry( t1 ).
@@ -77,11 +79,13 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_rl_un_ty_ts_un_ty_73fa.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_rl_un_ty_ts_un_ty_da3d.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -89,6 +93,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE abap_bool.
@@ -129,6 +134,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t18.
 
   ENDMETHOD.
+
   METHOD remove_duplicates.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_list ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -195,6 +201,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -895,6 +902,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t358.
 
   ENDMETHOD.
+
   METHOD check_parameters.
     DATA(t1) = CAST zif_lnt_interface_definition( i_idef ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1083,6 +1091,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t74.
 
   ENDMETHOD.
+
   METHOD contains_unknown.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA t2 TYPE abap_bool.
@@ -1202,6 +1211,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA t2 TYPE REF TO zcl_lnt_unknown_types.
@@ -1210,14 +1220,17 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa( ) ).
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1225,30 +1238,39 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1641_3230ed7ae965.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

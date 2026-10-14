@@ -22,6 +22,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_empty_structure_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -131,6 +132,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -138,11 +140,13 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_em_st_ts_em_str.
     DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_em_st_ts_em_str.
     DATA(t1) = CAST zcl_lnt_empty_structure_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -150,6 +154,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD rn_pr_in_sr_rl_em_st_ts_em_str.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -157,16 +162,19 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_empty_structure_conf.
     CLEAR t1.
@@ -177,11 +185,13 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     me->st_cn_in_sr_rl_em_st_ts_em_str( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_em_st_ts_em_str( i_file = i_file ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1397_8ecb50cb46e5.
   ENDMETHOD.

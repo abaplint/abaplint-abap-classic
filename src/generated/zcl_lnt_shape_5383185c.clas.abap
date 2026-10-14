@@ -32,9 +32,11 @@ CLASS zcl_lnt_shape_5383185c IMPLEMENTATION.
     t10 = t11.
     me->annotations = t10.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1780_31ffcbf67e4f.
   ENDMETHOD.

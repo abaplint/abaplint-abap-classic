@@ -41,6 +41,7 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     t9 = t10->value.
     me->no_dynamic = t9.
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA(t1) = CONV abap_bool( me->no_dynamic ).
     IF t1 = abap_true.
@@ -151,6 +152,7 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     result = t24.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57.
   ENDMETHOD.

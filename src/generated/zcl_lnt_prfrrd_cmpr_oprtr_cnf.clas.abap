@@ -40,6 +40,7 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
     t1 = t18.
     me->bad_operators = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1570_24466c71269f.
   ENDMETHOD.

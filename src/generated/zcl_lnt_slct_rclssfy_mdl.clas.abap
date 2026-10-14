@@ -121,6 +121,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     result = t45.
 
   ENDMETHOD.
+
   METHOD is_count_all_pattern.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -178,6 +179,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     result = t22.
 
   ENDMETHOD.
+
   METHOD scan_for_expr_types.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA(t2) = CAST zlnt_runtime_set__7758c436a0c7( i_found ).
@@ -272,6 +274,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       zcl_lnt_slct_rclssfy_mdl=>scan_for_expr_types( i_children_9020 = t32 i_found = t40 i_targets = t41 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD is_select_loop.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
@@ -488,6 +491,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     result = t102.
 
   ENDMETHOD.
+
   METHOD is_with_loop.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -495,6 +499,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD reclassify_select.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zif_lnt_statement( i_stmt ).
@@ -730,6 +735,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     result = t104.
 
   ENDMETHOD.
+
   METHOD fn_has.
     DATA(t1) = CAST zlnt_runtime_set__7758c436a0c7( i_found ).
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( i_t ).
@@ -740,15 +746,18 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_6e4d264b60b9.
     IF zlnt_builtin_init_0dc66ed7883a = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_0dc66ed7883a = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1827_944b1577c42e.
   ENDMETHOD.

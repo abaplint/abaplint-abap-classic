@@ -70,9 +70,11 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     t3 = t16.
     zcl_lnt_sql_over_module=>rparen = t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1847_3c59e24d05f9.
   ENDMETHOD.

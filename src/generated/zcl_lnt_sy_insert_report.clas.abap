@@ -47,15 +47,19 @@ CLASS zcl_lnt_sy_insert_report IMPLEMENTATION.
       t8 = zcl_lnt_sy_source=>run_syntax( i_node = t9 i_input_967e = t13 i_target_type = t14 i_write_reference = t15 i_allow_generic_deference = t16 i_read_reference = t17 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d900_7047e86f643a.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

@@ -24,6 +24,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     DATA(t4) = CAST zif_lnt_registry( t1 ).
     me->reg = t4.
   ENDMETHOD.
+
   METHOD add_all_form_definitions.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -156,6 +157,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD find_include.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -381,6 +383,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     result = t97.
 
   ENDMETHOD.
+
   METHOD find_function_group_scope.
     DATA(t1) = CAST zcl_lnt_function_group( i_fg ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -388,6 +391,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_function_scope.
     DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
     DATA(t2) = CAST zcl_lnt_statement_node( i_node ).
@@ -397,6 +401,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD add_function_scope.
     DATA(t1) = CAST zcl_lnt_fnctn_mdl_dfntn( i_definition ).
     DATA(t2) = CAST zcl_lnt_abstract_token( i_name_token ).
@@ -407,6 +412,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD function_module_parameter_meta.
     DATA(t1) = CAST zcl_lnt_ifnctn_mdl_prmtr( i_param ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -414,9 +420,11 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d752_e072d0e4db32.
   ENDMETHOD.

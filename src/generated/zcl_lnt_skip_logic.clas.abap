@@ -29,6 +29,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     CLEAR t4.
     me->tobj = t4.
   ENDMETHOD.
+
   METHOD skip_0892.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zcl_lnt_iglobal_config.
@@ -548,6 +549,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     result = t181.
 
   ENDMETHOD.
+
   METHOD is_generated_bopf_interface.
     DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -555,6 +557,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_generated_proxy_interface.
     DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -562,6 +565,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_generated_proxy_class.
     DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -569,6 +573,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_generated_function_group.
     DATA(t1) = CAST zcl_lnt_function_group( i_group ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -576,6 +581,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_generated_gateway_class.
     DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -841,6 +847,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     result = t100.
 
   ENDMETHOD.
+
   METHOD is_generated_persistent_class.
     DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1219,9 +1226,11 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     result = t138.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1685_3f02695e5fb0.
   ENDMETHOD.

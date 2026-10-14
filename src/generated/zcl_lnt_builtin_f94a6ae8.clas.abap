@@ -9,6 +9,7 @@ CLASS zcl_lnt_builtin_f94a6ae8 IMPLEMENTATION.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
   ENDMETHOD.

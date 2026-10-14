@@ -17,6 +17,7 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD find_8f95.
     DATA(t1) = CAST zcl_lnt_icode_action_params( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -24,6 +25,7 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD fix_alls.
     DATA(t1) = i_key.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -32,6 +34,7 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD in_range.
     DATA(t1) = CAST zcl_lnt_issue( i_i ).
     DATA(t2) = CAST zcl_lnt_shape_9ead17bd( i_range ).
@@ -40,9 +43,11 @@ CLASS zcl_lnt_code_actions IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1067_bb04b04c7dec.
   ENDMETHOD.

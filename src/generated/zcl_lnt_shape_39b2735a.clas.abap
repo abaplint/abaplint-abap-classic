@@ -26,9 +26,11 @@ CLASS zcl_lnt_shape_39b2735a IMPLEMENTATION.
     DATA(t8) = t4.
     me->keyflag = t8.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1811_4a7a4e163f26.
   ENDMETHOD.

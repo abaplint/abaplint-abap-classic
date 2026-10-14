@@ -856,6 +856,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     result = t370.
 
   ENDMETHOD.
+
   METHOD is_name_too_long.
     DATA(t1) = i_name.
     DATA t2 TYPE abap_bool.
@@ -868,6 +869,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_only_digits.
     DATA(t1) = i_name.
     DATA t2 TYPE abap_bool.
@@ -881,6 +883,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD allow_only_digits_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -889,9 +892,11 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d864_56076cdd075d.
   ENDMETHOD.

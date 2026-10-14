@@ -73,6 +73,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD str.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -127,6 +128,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD regex.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -138,6 +140,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD tok.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -149,6 +152,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD map_input.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -312,6 +316,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD seq.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -380,6 +385,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD alt.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -448,6 +454,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD alt_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -516,6 +523,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD opt.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -529,6 +537,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD opt_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -542,6 +551,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD per.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -610,6 +620,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD star.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -623,6 +634,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD star_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -636,6 +648,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD plus.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -649,6 +662,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD plus_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -662,6 +676,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD input_to_release.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -694,6 +709,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t9.
 
   ENDMETHOD.
+
   METHOD ver.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -739,6 +755,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD ver_lang.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -754,6 +771,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD ver_not_lang.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -769,6 +787,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD fail_combinator.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -777,6 +796,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD stop_before.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -790,6 +810,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD stop_before1.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
@@ -801,6 +822,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_7149bffa9f66.
     IF zlnt_builtin_init_212d0955f1c7 = abap_true.
       RETURN.
@@ -843,9 +865,11 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t10 = t13.
     zcl_lnt_st_combi_module=>string_singletons = t10.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1828_71dc50980f14.
   ENDMETHOD.

@@ -16,12 +16,14 @@ CLASS zlnt_runtime_map__117a2401283c IMPLEMENTATION.
   METHOD size.
     result = lines( entries ).
   ENDMETHOD.
+
   METHOD has.
     READ TABLE entries WITH KEY k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD set.
     READ TABLE entries WITH KEY k = p0 ASSIGNING FIELD-SYMBOL(<row>).
     IF sy-subrc = 0.
@@ -31,6 +33,7 @@ CLASS zlnt_runtime_map__117a2401283c IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
+
   METHOD get.
     READ TABLE entries WITH KEY k = p0 INTO DATA(row).
     IF sy-subrc = 0.
@@ -39,12 +42,14 @@ CLASS zlnt_runtime_map__117a2401283c IMPLEMENTATION.
       result->value = row-v.
     ENDIF.
   ENDMETHOD.
+
   METHOD values.
     result = NEW #( ).
     LOOP AT entries INTO DATA(vrow).
       APPEND vrow-v TO result->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD keys.
     result = NEW #( ).
     LOOP AT entries INTO DATA(row).

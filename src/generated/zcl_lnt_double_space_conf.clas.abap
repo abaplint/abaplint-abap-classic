@@ -40,6 +40,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
     DATA(t14) = abap_true.
     me->after_colon = t14.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1381_f38c7a4d0777.
   ENDMETHOD.

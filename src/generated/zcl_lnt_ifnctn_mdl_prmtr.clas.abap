@@ -35,9 +35,11 @@ CLASS zcl_lnt_ifnctn_mdl_prmtr IMPLEMENTATION.
     DATA(t12) = t6.
     me->pass_by_value = t12.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1036_17caa775f2d6.
   ENDMETHOD.

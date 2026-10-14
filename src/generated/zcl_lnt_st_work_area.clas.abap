@@ -25,6 +25,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     CREATE OBJECT t5.
     me->statements = t5.
   ENDMETHOD.
+
   METHOD add_unknown.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_pre ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_post ).
@@ -48,6 +49,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     DATA(t15) = CAST zcl_lnt_statement_node( t4 ).
     APPEND t15 TO t14->items.
   ENDMETHOD.
+
   METHOD to_result.
     DATA t1 TYPE REF TO zcl_lnt_istatement_result.
     DATA(t2) = CAST zif_lnt_file( me->file ).
@@ -57,6 +59,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens1 ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens2 ).
@@ -94,9 +97,11 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     result = t17.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d343_356b2fce6a0b.
   ENDMETHOD.

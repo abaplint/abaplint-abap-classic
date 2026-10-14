@@ -15,23 +15,27 @@ CLASS zcl_lnt_iamapp IMPLEMENTATION.
     DATA(t2) = t1.
     super->constructor( i_name = t2 ).
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |SIA6|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/iam_app.ts:9|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/iam_app.ts:16|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1177_d34f1679c31f.
   ENDMETHOD.

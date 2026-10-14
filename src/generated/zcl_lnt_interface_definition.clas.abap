@@ -290,53 +290,63 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA(t128) = CAST zcl_lnt_syntax_input( t2 ).
     me->check_method_name_length( i_input_967e = t128 ).
   ENDMETHOD.
+
   METHOD get_super_class.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_implementing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->implementing ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_events.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->events_f95a ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_attributes.
     DATA(t1) = CAST zif_lnt_attributes( me->attributes ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_type_definitions.
     DATA(t1) = CAST zif_lnt_type_definitions( me->type_definitions ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_local.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/interface_definition.ts:76|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_global.
     DATA(t1) = CONV abap_bool( me->global_value ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_method_definitions.
     DATA(t1) = CAST zif_lnt_method_definitions( me->method_definitions ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD check_method_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -387,6 +397,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_interfaces_exists.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
@@ -873,6 +884,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
@@ -1236,96 +1248,127 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
       APPEND t153 TO t151->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1038_cab5fff85ba2.
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_attributes.
     result = me->get_attributes( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_type_definitions.
     result = me->get_type_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_method_definitions.
     result = me->get_method_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_events.
     result = me->get_events( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~is_global.
     result = me->is_global( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_super_class.
     result = me->get_super_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_implementing.
     result = me->get_implementing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_attributes.
     result = me->get_attributes( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_events.
     result = me->get_events( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_implementing.
     result = me->get_implementing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_method_definitions.
     result = me->get_method_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_super_class.
     result = me->get_super_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_type_definitions.
     result = me->get_type_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~is_global.
     result = me->is_global( ).
   ENDMETHOD.

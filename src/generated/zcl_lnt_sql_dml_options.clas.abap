@@ -11,6 +11,7 @@ CLASS zcl_lnt_sql_dml_options IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -243,6 +244,7 @@ CLASS zcl_lnt_sql_dml_options IMPLEMENTATION.
     result = t62.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d287_e5df01c1631a.
   ENDMETHOD.

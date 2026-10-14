@@ -13,6 +13,7 @@ CLASS zcl_lnt_commented_code_conf IMPLEMENTATION.
     DATA(t1) = abap_true.
     me->allow_include_in_fugr = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1360_b7ed2e5cd906.
   ENDMETHOD.

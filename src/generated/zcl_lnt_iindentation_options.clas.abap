@@ -23,9 +23,11 @@ CLASS zcl_lnt_iindentation_options IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
     me->global_class_skip_first = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1276_7ddf35ef50dd.
   ENDMETHOD.

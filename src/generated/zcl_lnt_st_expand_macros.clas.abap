@@ -66,12 +66,14 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     DATA(t18) = CAST zif_lnt_registry( t3 ).
     me->reg = t18.
   ENDMETHOD.
+
   METHOD list_macro_names.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/expand_macros.ts:81|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_8f95.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -591,6 +593,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       t42 = t229.
     ENDDO.
   ENDMETHOD.
+
   METHOD handle_macros.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
     DATA(t2) = CAST zif_lnt_file( i_file ).
@@ -945,6 +948,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     result = t155.
 
   ENDMETHOD.
+
   METHOD expand_contents.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
@@ -953,6 +957,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD build_input.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -960,6 +965,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_name.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1243,6 +1249,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     result = t113.
 
   ENDMETHOD.
+
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1250,6 +1257,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD tokens_to_nodes_one.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_x ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1267,9 +1275,11 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d84_6c3754131a0578.
   ENDMETHOD.

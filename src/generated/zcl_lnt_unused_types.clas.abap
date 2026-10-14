@@ -29,6 +29,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_unused_types_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -106,11 +107,13 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_rl_un_ty_ts_un_ty_fb96.
     DATA(t1) = CAST zcl_lnt_unused_types_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_rl_un_ty_ts_un_ty_63cc.
     DATA(t1) = CAST zcl_lnt_unused_types_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -118,6 +121,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD in_in_sr_rl_uns_typ_ts_uns_typ.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -125,6 +129,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -132,6 +137,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD suppressedby_pseudo.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -140,6 +146,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -149,6 +156,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD check_node.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -158,6 +166,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD build_fix.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_statement_node( i_statement ).
@@ -166,14 +175,17 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_unused_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_fb96( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_unused_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_fb96( ) ).
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -181,6 +193,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -188,30 +201,39 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1661_83910276aee0.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

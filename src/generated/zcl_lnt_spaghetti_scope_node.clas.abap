@@ -48,28 +48,33 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     CREATE OBJECT t5.
     me->children = t5.
   ENDMETHOD.
+
   METHOD debug_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/spaghetti_scope.ts:37|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD g_p_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->parent ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
     DATA(t3) = CAST zcl_lnt_spaghetti_scope_node( t1 ).
     APPEND t3 TO t2->items.
   ENDMETHOD.
+
   METHOD g_c_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     CLEAR t1.
@@ -90,17 +95,20 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_identifier.
     DATA(t1) = CAST zcl_lnt_iscope_identifier( me->identifier ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD calc_coverage.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/spaghetti_scope.ts:68|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD set_end.
     DATA(t1) = CAST zcl_lnt_position( i_end ).
     DATA(t2) = CAST zcl_lnt_iscope_identifier( me->identifier ).
@@ -117,6 +125,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     ENDIF.
     t2->end = t3.
   ENDMETHOD.
+
   METHOD find_deferred.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -243,6 +252,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t51.
 
   ENDMETHOD.
+
   METHOD find_class_definition.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -352,18 +362,21 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t45.
 
   ENDMETHOD.
+
   METHOD list_class_definitions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/spaghetti_scope.ts:111|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD list_interface_definitions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/5_syntax/spaghetti_scope.ts:123|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_form_definition.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -471,6 +484,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t41.
 
   ENDMETHOD.
+
   METHOD find_interface_definition.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -569,6 +583,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t40.
 
   ENDMETHOD.
+
   METHOD find_type.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -667,6 +682,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t40.
 
   ENDMETHOD.
+
   METHOD find_extra_like_type.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -674,6 +690,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_variable.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -763,6 +780,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     result = t38.
 
   ENDMETHOD.
+
   METHOD find_write_reference.
     DATA(t1) = CAST zcl_lnt_position( i_pos ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -770,6 +788,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_table_reference.
     DATA(t1) = CAST zcl_lnt_position( i_pos ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -777,6 +796,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_table_void_reference.
     DATA(t1) = CAST zcl_lnt_position( i_pos ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -784,6 +804,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_scope_for_variable.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -791,11 +812,13 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_parent.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_p_i_s_a_5_s_s_sc_ts_sp_sc_nd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD add_child.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -805,73 +828,95 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     t2 ?= t4.
     me->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t2 ).
   ENDMETHOD.
+
   METHOD get_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->g_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_first_child.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d829_3c9ea8646df0.
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~get_parent.
     result = me->get_parent( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~add_child.
     me->add_child( i_node = i_node ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~get_children.
     result = me->get_children( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~get_first_child.
     result = me->get_first_child( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~get_identifier.
     result = me->get_identifier( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~get_data.
     result = me->get_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~calc_coverage.
     result = me->calc_coverage( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_class_definition.
     result = me->find_class_definition( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~list_class_definitions.
     result = me->list_class_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~list_interface_definitions.
     result = me->list_interface_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_form_definition.
     result = me->find_form_definition( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_interface_definition.
     result = me->find_interface_definition( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_type.
     result = me->find_type( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_variable.
     result = me->find_variable( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_scope_for_variable.
     result = me->find_scope_for_variable( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_write_reference.
     result = me->find_write_reference( i_pos = i_pos ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_table_reference.
     result = me->find_table_reference( i_pos = i_pos ).
   ENDMETHOD.
+
   METHOD zif_lnt_spaghetti_scope_node~find_table_void_reference.
     result = me->find_table_void_reference( i_pos = i_pos ).
   ENDMETHOD.

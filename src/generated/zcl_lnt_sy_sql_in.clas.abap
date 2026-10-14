@@ -221,6 +221,7 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
       t111 = zcl_lnt_sy_sql_source=>run_syntax( i_node = t112 i_input_967e = t113 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD is_range_row.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_row_type ).
     DATA(t2) = VALUE abap_bool( ).
@@ -355,9 +356,11 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
     result = t15.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d816_929e61be1dd2.
   ENDMETHOD.

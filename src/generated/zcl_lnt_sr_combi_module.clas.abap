@@ -41,6 +41,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD alt.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -65,6 +66,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD begin_end.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -93,6 +95,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t4.
 
   ENDMETHOD.
+
   METHOD opt.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -104,6 +107,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD star.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -115,6 +119,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD sta.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -126,6 +131,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD sub.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -196,6 +202,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     result = t20.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_92502b133500.
     IF zlnt_builtin_init_925c84de8315 = abap_true.
       RETURN.
@@ -212,9 +219,11 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t1 = t4.
     zcl_lnt_sr_combi_module=>singletons = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1833_8416fc592e25.
   ENDMETHOD.

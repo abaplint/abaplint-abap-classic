@@ -86,6 +86,7 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     DATA(t26) = CAST zif_lnt_statement_syntax( t1 ).
     t21 = t22->set( p0 = t23 p1 = t26 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_ccbaa3f8c306.
     IF zlnt_builtin_init_de1d1a6daf32 = abap_true.
       RETURN.
@@ -380,9 +381,11 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
       zcl_lnt_syntax_module=>add_to_map( i_handler = t140 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1837_92af8c04030f.
   ENDMETHOD.

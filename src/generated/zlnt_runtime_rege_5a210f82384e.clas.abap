@@ -107,6 +107,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       i = i + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD test.
     IF excluded IS NOT INITIAL.
       IF ignore_case = abap_true.
@@ -127,6 +128,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD match_test.
     IF excluded IS NOT INITIAL.
       IF ignore_case = abap_true.
@@ -147,6 +149,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD replace.
     result = p0.
     IF excluded IS NOT INITIAL.

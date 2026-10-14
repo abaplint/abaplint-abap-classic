@@ -11,6 +11,7 @@ CLASS zcl_lnt_st_sql_in IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zcl_lnt_st_sql_source.
     DATA(t2) = NEW zcl_lnt_st_sql_source( ).
@@ -711,6 +712,7 @@ CLASS zcl_lnt_st_sql_in IMPLEMENTATION.
     result = t258.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d279_5e96219eaf2c.
   ENDMETHOD.

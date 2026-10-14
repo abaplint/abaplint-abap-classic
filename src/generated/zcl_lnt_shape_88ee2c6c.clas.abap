@@ -14,9 +14,11 @@ CLASS zcl_lnt_shape_88ee2c6c IMPLEMENTATION.
     DATA(t2) = t1.
     me->href = t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1718_b05ac790f903.
   ENDMETHOD.

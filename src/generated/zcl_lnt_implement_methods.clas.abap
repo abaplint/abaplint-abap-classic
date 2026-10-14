@@ -33,6 +33,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_implement_methods_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -90,11 +91,13 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_im_mt_ts_im_mth.
     DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_im_mt_ts_im_mth.
     DATA(t1) = CAST zcl_lnt_implement_methods_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -102,6 +105,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -219,6 +223,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t57.
 
   ENDMETHOD.
+
   METHOD lkp_implmnttn_in_objct.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -288,6 +293,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD lookup_definition_in_object.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -356,6 +362,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD check_class.
     DATA(t1) = CAST zcl_lnt_info_class_definition( i_def ).
     DATA(t2) = CAST zcl_lnt_inf_clss_implmnttn( i_impl ).
@@ -993,6 +1000,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t296.
 
   ENDMETHOD.
+
   METHOD build_fix.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1405,6 +1413,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t164.
 
   ENDMETHOD.
+
   METHOD find_interface.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
     DATA(t2) = i_name.
@@ -1517,6 +1526,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t54.
 
   ENDMETHOD.
+
   METHOD find_interface_by_name.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
@@ -1720,6 +1730,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t82.
 
   ENDMETHOD.
+
   METHOD find_interface_methods.
     DATA(t1) = CAST zcl_lnt_inf_intrfc_dfntn( i_idef ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1863,6 +1874,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t70.
 
   ENDMETHOD.
+
   METHOD find_class.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_info_class_definition.
@@ -2115,6 +2127,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t100.
 
   ENDMETHOD.
+
   METHOD check_interfaces.
     DATA(t1) = CAST zcl_lnt_info_class_definition( i_def ).
     DATA(t2) = CAST zcl_lnt_inf_clss_implmnttn( i_impl ).
@@ -2469,6 +2482,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t175.
 
   ENDMETHOD.
+
   METHOD is_abstract.
     DATA(t1) = CAST zcl_lnt_imethod( i_m ).
     DATA(t2) = CAST zcl_lnt_info_implementing( i_interface_info ).
@@ -2709,6 +2723,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD is_implemented.
     DATA(t1) = CAST zcl_lnt_imethod( i_m ).
     DATA(t2) = CAST zcl_lnt_info_class_definition( i_def ).
@@ -3311,6 +3326,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     result = t250.
 
   ENDMETHOD.
+
   METHOD via_alias_in_interface.
     DATA(t1) = CAST zcl_lnt_imethod( i_m ).
     DATA(t2) = CAST zcl_lnt_inf_intrfc_dfntn( i_intf ).
@@ -3320,16 +3336,19 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_implement_methods_conf.
     CLEAR t1.
@@ -3340,6 +3359,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     me->st_cn_in_sr_rl_im_mt_ts_im_mth( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1439_aabb187fbbab.
   ENDMETHOD.

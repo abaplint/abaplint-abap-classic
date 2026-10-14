@@ -13,6 +13,7 @@ CLASS zcl_lnt_k_sn_pr_cl_on_on_ln_cn IMPLEMENTATION.
     DATA(t1) = CONV int8( 120 ).
     me->length = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1454_9924309c0542.
   ENDMETHOD.

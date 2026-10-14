@@ -15,11 +15,13 @@ CLASS zcl_lnt_w_bracket_left_w IMPLEMENTATION.
     DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
+
   METHOD railroad.
     DATA(t1) = | [ |.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d44_2edec38c134e79.
   ENDMETHOD.

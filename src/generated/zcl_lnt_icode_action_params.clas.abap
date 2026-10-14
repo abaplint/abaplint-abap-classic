@@ -22,9 +22,11 @@ CLASS zcl_lnt_icode_action_params IMPLEMENTATION.
     DATA(t6) = CAST zcl_lnt_shape_be772522( t3 ).
     me->context = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1064_6bad8e66fdb3.
   ENDMETHOD.

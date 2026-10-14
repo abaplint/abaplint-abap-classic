@@ -86,6 +86,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD list_keywords.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -143,6 +144,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t26.
 
   ENDMETHOD.
+
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -315,6 +317,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t61.
 
   ENDMETHOD.
+
   METHOD get_release.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
@@ -328,6 +331,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_language_version.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
@@ -340,6 +344,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_open_abap.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
@@ -375,6 +380,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_6f0e2d68980a.
     IF zlnt_builtin_init_eaa3c6c35789 = abap_true.
       RETURN.
@@ -403,9 +409,11 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     DATA(t5) = |Normal|.
     zcl_lnt_combi=>lang_ver = t5.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d79_3c3f7183c10f7c.
   ENDMETHOD.

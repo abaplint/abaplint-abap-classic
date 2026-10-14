@@ -22,6 +22,7 @@ CLASS zcl_lnt_xml_consistency_conf IMPLEMENTATION.
     t4->value = t3.
     me->data_element_severity = t4.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1681_62f38e982094.
   ENDMETHOD.

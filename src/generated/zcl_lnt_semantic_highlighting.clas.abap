@@ -27,6 +27,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD semantic_tokens_legend.
     IF zcl_lnt_semantic_highlighting=>zlnt_builtin_init_ceda21d7331d = abap_false.
       zcl_lnt_semantic_highlighting=>zlnt_builtin_init_1c3f77c0f160( ).
@@ -36,6 +37,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD init_legend.
     IF zcl_lnt_semantic_highlighting=>zlnt_builtin_init_ceda21d7331d = abap_false.
       zcl_lnt_semantic_highlighting=>zlnt_builtin_init_1c3f77c0f160( ).
@@ -45,6 +47,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD semantic_tokens_range.
     DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -52,6 +55,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD encode_tokens.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -59,6 +63,7 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_1c3f77c0f160.
     IF zlnt_builtin_init_ceda21d7331d = abap_true.
       RETURN.
@@ -71,9 +76,11 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
     CREATE OBJECT t1.
     zcl_lnt_semantic_highlighting=>token_types = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1080_113106bb53d8.
   ENDMETHOD.

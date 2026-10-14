@@ -32,6 +32,7 @@ CLASS zcl_lnt_frbdd_psd_and_prgm_cnf IMPLEMENTATION.
     DATA(t9) = abap_false.
     me->ignore_global_interface = t9.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1408_b50f88496162.
   ENDMETHOD.

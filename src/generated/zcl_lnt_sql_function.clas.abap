@@ -15,6 +15,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -1099,6 +1100,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
     result = t285.
 
   ENDMETHOD.
+
   METHOD fn_fn.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1546,6 +1548,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD fn_value_for.
     DATA(t1) = CAST zif_lnt_statement_runnable( i_abap_only ).
     DATA(t2) = CAST zcl_lnt_sql_named_param( i_p ).
@@ -1583,6 +1586,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD fn_named_fn.
     DATA(t1) = CAST zif_lnt_statement_runnable( i_abap_only ).
     DATA(t2) = i_name.
@@ -2023,6 +2027,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
     result = t137.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d270_547c551ca3da.
   ENDMETHOD.

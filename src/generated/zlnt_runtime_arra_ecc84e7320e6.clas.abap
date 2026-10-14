@@ -42,26 +42,32 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       j = j - 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD push.
     APPEND p0 TO items.
     result = lines( items ).
   ENDMETHOD.
+
   METHOD unshift.
     INSERT p0 INTO items INDEX 1.
     result = lines( items ).
   ENDMETHOD.
+
   METHOD length.
     result = lines( items ).
   ENDMETHOD.
+
   METHOD concat.
     CREATE OBJECT result.
     APPEND LINES OF items TO result->items.
     APPEND LINES OF p0->items TO result->items.
   ENDMETHOD.
+
   METHOD slice0.
     CREATE OBJECT result.
     APPEND LINES OF items TO result->items.
   ENDMETHOD.
+
   METHOD slice1.
     DATA from TYPE i.
     from = p0.
@@ -76,6 +82,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       APPEND LINES OF items FROM from + 1 TO result->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD slice2.
     DATA from TYPE i.
     DATA upto TYPE i.
@@ -98,6 +105,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       APPEND LINES OF items FROM from + 1 TO upto TO result->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD splice1.
     DATA from TYPE i.
     DATA head TYPE items_type.
@@ -128,9 +136,11 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
     ENDIF.
     items = head.
   ENDMETHOD.
+
   METHOD splice1_view.
     result = splice1( p0 ).
   ENDMETHOD.
+
   METHOD splice2.
     DATA from TYPE i.
     DATA cnt TYPE i.
@@ -163,6 +173,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       DELETE items FROM from TO last.
     ENDIF.
   ENDMETHOD.
+
   METHOD splice3.
     DATA from TYPE i.
     DATA cnt TYPE i.
@@ -194,6 +205,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
     ENDIF.
     INSERT p2 INTO items INDEX from.
   ENDMETHOD.
+
   METHOD pop.
     DATA v TYPE abap_bool.
     IF lines( items ) > 0.
@@ -204,6 +216,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       DELETE items INDEX lines( items ).
     ENDIF.
   ENDMETHOD.
+
   METHOD shift.
     DATA v TYPE abap_bool.
     IF lines( items ) > 0.
@@ -214,6 +227,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       DELETE items INDEX 1.
     ENDIF.
   ENDMETHOD.
+
   METHOD indexof.
     DATA row TYPE abap_bool.
     result = -1.
@@ -224,12 +238,14 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD includes.
     READ TABLE items WITH KEY table_line = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD join.
     DATA row TYPE abap_bool.
     DATA part TYPE string.
@@ -244,6 +260,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD get.
     IF p0 < 0.
       RETURN.

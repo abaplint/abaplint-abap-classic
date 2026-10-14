@@ -16,6 +16,7 @@ CLASS zcl_lnt_uncght_excptn_cnf IMPLEMENTATION.
     DATA(t2) = abap_false.
     me->report_no_check = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1638_ec322577d7cf.
   ENDMETHOD.

@@ -19,6 +19,7 @@ CLASS zcl_lnt_line_length_conf IMPLEMENTATION.
     t3->value = t2.
     me->max_issues_per_file = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1463_e24a690c2e30.
   ENDMETHOD.

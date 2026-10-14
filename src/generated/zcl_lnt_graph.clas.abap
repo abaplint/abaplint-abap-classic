@@ -39,6 +39,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     t9 = t12.
     me->edges = t9.
   ENDMETHOD.
+
   METHOD add_vertex.
     DATA(t1) = CAST zcl_lnt_ivertex( i_vertex ).
     DATA(t2) = VALUE abap_bool( ).
@@ -98,6 +99,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     DATA(t25) = CAST zcl_lnt_ivertex( t1 ).
     t19 = t20->set( p0 = t21 p1 = t25 ).
   ENDMETHOD.
+
   METHOD find_vertex_via_includename.
     DATA(t1) = i_include_name.
     DATA t2 TYPE REF TO zcl_lnt_ivertex.
@@ -116,6 +118,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD find_vertex_by_filename.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zcl_lnt_ivertex.
@@ -134,6 +137,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD add_edge.
     DATA(t1) = CAST zcl_lnt_ivertex( i_from ).
     DATA(t2) = i_to_filename.
@@ -142,6 +146,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_top.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -250,9 +255,11 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     result = t49.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1692_29dfda0dd844.
   ENDMETHOD.

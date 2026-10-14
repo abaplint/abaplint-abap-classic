@@ -1344,130 +1344,162 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
     t519 = NEW zcl_lnt_ty_method_parameters( i_node = t520 i_input_967e = t521 i_abstract_method = t522 ).
     me->parameters = t519.
   ENDMETHOD.
+
   METHOD get_visibility.
     DATA(t1) = CONV int8( me->visibility ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_class_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:101|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_redefinition.
     DATA(t1) = CONV abap_bool( me->redefinition ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_abstract.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:109|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_static_4685.
     DATA(t1) = CONV abap_bool( me->static_9977 ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_event_handler.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:117|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_event_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:121|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_event_class.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:125|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD g_p_in_sr_ab_ty_mt_df_ts_mt_df.
     DATA(t1) = CAST zcl_lnt_ty_method_parameters( me->parameters ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_raising.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:133|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_definition.ts:137|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_parameters.
     DATA(t1) = CAST zcl_lnt_ty_method_parameters( me->g_p_in_sr_ab_ty_mt_df_ts_mt_df( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1040_e224823bc9c2.
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_visibility.
     result = me->get_visibility( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_redefinition.
     result = me->is_redefinition( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_abstract.
     result = me->is_abstract( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_static_4685.
     result = me->is_static_4685( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~is_event_handler.
     result = me->is_event_handler( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_event_name.
     result = me->get_event_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_event_class.
     result = me->get_event_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_parameters.
     result = me->get_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_raising.
     result = me->get_raising( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_exceptions.
     result = me->get_exceptions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_8cd68e5e~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_b6d4892d~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -11,6 +11,7 @@ CLASS zcl_lnt_simple_name IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -24,6 +25,7 @@ CLASS zcl_lnt_simple_name IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d256_4aab5e345b39.
   ENDMETHOD.

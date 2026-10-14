@@ -917,6 +917,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD run_common_part_syntax.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -1925,9 +1926,11 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d970_076c50701cc1.
   ENDMETHOD.

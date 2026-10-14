@@ -10,6 +10,7 @@ CLASS zcl_lnt_fully_type_i_tabs_conf IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1416_a6ea51b9635c.
   ENDMETHOD.

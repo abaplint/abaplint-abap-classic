@@ -24,6 +24,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD find_8f95.
     DATA(t1) = i_uri.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -31,6 +32,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD selection_range.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -38,6 +40,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD range.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifer ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -45,6 +48,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD new_symbol_ranged.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
     DATA(t2) = i_kind.
@@ -55,6 +59,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD new_symbol.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
     DATA(t2) = i_kind.
@@ -64,6 +69,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD output_forms.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -71,6 +77,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD output_modules.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -78,6 +85,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD output_classes.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -85,6 +93,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD output_method_implementations.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_methods ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -93,6 +102,7 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD output_class_attributes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_attr ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -100,9 +110,11 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1081_610575257010.
   ENDMETHOD.

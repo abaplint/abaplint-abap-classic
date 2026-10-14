@@ -16,6 +16,7 @@ CLASS zcl_lnt_unncssry_prgm_cnf IMPLEMENTATION.
     t2->value = t1.
     me->allow_no_text_global = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1644_fb2d3bb70f39.
   ENDMETHOD.

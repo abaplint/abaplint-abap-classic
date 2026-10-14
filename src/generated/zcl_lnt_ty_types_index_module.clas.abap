@@ -164,9 +164,11 @@ CLASS zcl_lnt_ty_types_index_module IMPLEMENTATION.
     DATA(t53) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1044_85fc144000cd ).
     t50 = t51->set( p0 = t52 p1 = t53 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1900_448c7d370ea4.
   ENDMETHOD.

@@ -1219,6 +1219,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD find_common_superclass.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_class_names ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -1227,15 +1228,19 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d846_1c13f6855d17.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

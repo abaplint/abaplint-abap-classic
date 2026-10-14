@@ -20,6 +20,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD rename.
     DATA(t1) = i_type_9913.
     DATA(t2) = i_old_name.
@@ -29,6 +30,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD build_edits.
     DATA(t1) = i_type_9913.
     DATA(t2) = i_old_name.
@@ -38,6 +40,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD factory.
     DATA(t1) = i_type_9913.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -45,6 +48,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD apply.
     DATA t1 TYPE REF TO object.
     t1 = i_edits.
@@ -53,6 +57,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD apply_edit.
     DATA t1 TYPE REF TO object.
     t1 = i_dc.
@@ -61,6 +66,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD apply_renames.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_renames ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -68,9 +74,11 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1240_a62b67eb4190.
   ENDMETHOD.

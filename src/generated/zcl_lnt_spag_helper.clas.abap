@@ -18,6 +18,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_spaghetti_scope_node( t1 ).
     me->spag = t2.
   ENDMETHOD.
+
   METHOD rename_variable.
     DATA(t1) = i_old_name.
     DATA(t2) = CAST zcl_lnt_position( i_pos ).
@@ -28,6 +29,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD find_references.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_position( i_pos ).
@@ -36,6 +38,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_recursive_duplicate.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_position( i_skip_34cc ).
@@ -44,6 +47,7 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_duplicate_name.
     DATA(t1) = i_name.
     DATA(t2) = CAST zcl_lnt_position( i_pos ).
@@ -52,9 +56,11 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1384_636375e1f14c.
   ENDMETHOD.

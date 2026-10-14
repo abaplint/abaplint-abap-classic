@@ -58,6 +58,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
       t8 = t9->set( p0 = t10 p1 = t13 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD add_macro.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_contents ).
@@ -67,6 +68,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD get_contents.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -74,12 +76,14 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_macro_names.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/expand_macros.ts:48|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_macro.
     DATA(t1) = i_name.
     DATA(t2) = VALUE abap_bool( ).
@@ -106,6 +110,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     result = t9.
 
   ENDMETHOD.
+
   METHOD get_macro_filename.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -113,9 +118,11 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d82_3e282ab4800467.
   ENDMETHOD.

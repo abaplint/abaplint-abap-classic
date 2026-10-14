@@ -413,17 +413,20 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     t129 = t132.
     t126 = t127->pop( i_end = t129 ).
   ENDMETHOD.
+
   METHOD get_filename.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_parameters.ts:60|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_optional.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->optional ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_all.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -494,6 +497,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     result = t34.
 
   ENDMETHOD.
+
   METHOD get_default_importing.
     DATA t1 TYPE abap_bool.
     DATA t2 TYPE i.
@@ -801,11 +805,13 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     result = t118.
 
   ENDMETHOD.
+
   METHOD get_importing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->importing ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_required_parameters.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1210,27 +1216,32 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     result = t151.
 
   ENDMETHOD.
+
   METHOD get_exporting.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->exporting ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_changing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->changing ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_returning.
     DATA(t1) = CAST zcl_lnt_typed_identifier( me->returning ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/method_parameters.ts:135|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD g_p_d_i_s_ab_ty_mt_pr_ts_mt_pr.
     DATA(t1) = i_parameter_5406.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1238,6 +1249,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2649,6 +2661,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     DATA(t616) = t3.
     me->workaround_rap( i_node = t614 i_input_967e = t615 i_parent_name = t616 ).
   ENDMETHOD.
+
   METHOD check_duplicate_names.
     DATA t1 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
@@ -2784,6 +2797,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       t54 = t55->add( p0 = t56 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_name_lengths.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_all( ) ).
@@ -2893,6 +2907,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD workaround_rap.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4008,6 +4023,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       t475 = t481.
     ENDIF.
   ENDMETHOD.
+
   METHOD add_51c1.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_target_5f8a ).
     DATA(t2) = CAST zcl_lnt_expression_node( i_source_75cf ).
@@ -4859,6 +4875,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       APPEND t358 TO t357->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD is_pass_by_value.
     DATA(t1) = CAST zcl_lnt_expression_node( i_param ).
     DATA(t2) = VALUE abap_bool( ).
@@ -4992,6 +5009,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD get_parameter_default.
     DATA(t1) = i_parameter_5406.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -4999,45 +5017,59 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1043_18fb8ae33dc3.
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_all.
     result = me->get_all( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_importing.
     result = me->get_importing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_required_parameters.
     result = me->get_required_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_exporting.
     result = me->get_exporting( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_changing.
     result = me->get_changing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_optional.
     result = me->get_optional( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_returning.
     result = me->get_returning( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_exceptions.
     result = me->get_exceptions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_default_importing.
     result = me->get_default_importing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_parameters~get_parameter_default.
     result = me->get_parameter_default( i_parameter_5406 = i_parameter_5406 ).
   ENDMETHOD.

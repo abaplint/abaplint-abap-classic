@@ -19,6 +19,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
     DATA(t3) = |^LTCL_.+$|.
     me->test = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1467_2a8be49bf9a6.
   ENDMETHOD.

@@ -20,9 +20,11 @@ CLASS zcl_lnt_shape_63d7d0d8 IMPLEMENTATION.
     DATA(t5) = CAST zlnt_runtime_opti_4a236cd5714d( t2 ).
     me->kind = t5.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1771_d361ddc4cc26.
   ENDMETHOD.

@@ -200,15 +200,18 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_1b997ceffb15.
     IF zlnt_builtin_init_776300767909 = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_776300767909 = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1835_cdbf48a9e9f1.
   ENDMETHOD.

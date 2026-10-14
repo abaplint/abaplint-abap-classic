@@ -66,12 +66,14 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     DATA(t25) = CAST zcl_lnt_structure_node( t1 ).
     me->node = t25.
   ENDMETHOD.
+
   METHOD get_method_implementations.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/class_implementation.ts:22|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_method_implementation.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -79,33 +81,43 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1033_4175388fb722.
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_method_implementations.
     result = me->get_method_implementations( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_method_implementation.
     result = me->get_method_implementation( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_implementation~get_token.
     result = me->get_token( ).
   ENDMETHOD.

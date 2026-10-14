@@ -14,6 +14,7 @@ CLASS zcl_lnt_unused_macros_conf IMPLEMENTATION.
     CREATE OBJECT t1.
     me->skip_names = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1654_6e2fa25308a7.
   ENDMETHOD.

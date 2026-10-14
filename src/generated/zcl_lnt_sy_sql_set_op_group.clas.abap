@@ -67,9 +67,11 @@ CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
       zcl_lnt_sy_sql_set_op_group=>run_syntax( i_node = t27 i_input_967e = t28 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d818_822e44b2803d.
   ENDMETHOD.

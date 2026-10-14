@@ -19,6 +19,7 @@ CLASS zcl_lnt_slctn_scrn_nmng_cnf IMPLEMENTATION.
     DATA(t3) = |^SC_.+$|.
     me->screen_element = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1592_ac74a3d9e37a.
   ENDMETHOD.

@@ -22,9 +22,11 @@ CLASS zcl_lnt_tuple_dda7dd58 IMPLEMENTATION.
     DATA(t6) = CAST zcl_lnt_abap_release( t3 ).
     me->f2 = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d0_5ecc9e9989d6ba.
   ENDMETHOD.

@@ -1302,6 +1302,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
     result = t572.
 
   ENDMETHOD.
+
   METHOD inserts_using_table_key.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_target_type ).
     DATA t2 TYPE abap_bool.
@@ -1427,6 +1428,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
     result = t24.
 
   ENDMETHOD.
+
   METHOD character_or_hex_length.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA t2 TYPE abap_bool.
@@ -1495,9 +1497,11 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
     result = t28.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d826_069eb7b1cef6.
   ENDMETHOD.

@@ -18,11 +18,13 @@ CLASS zcl_lnt_memory_file IMPLEMENTATION.
     DATA(t4) = t2.
     me->raw = t4.
   ENDMETHOD.
+
   METHOD get_raw.
     DATA(t1) = CONV string( me->raw ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_raw_rows.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CONV string( me->raw ).
@@ -69,6 +71,7 @@ CLASS zcl_lnt_memory_file IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1059_bee82e1d812f.
   ENDMETHOD.

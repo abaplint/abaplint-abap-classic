@@ -13,6 +13,7 @@ CLASS zcl_lnt_n_yd_cndtns_cnf IMPLEMENTATION.
     DATA(t1) = abap_false.
     me->only_constants = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1527_a5b0dd9a3e57.
   ENDMETHOD.

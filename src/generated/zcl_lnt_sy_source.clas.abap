@@ -2343,6 +2343,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     result = t1033.
 
   ENDMETHOD.
+
   METHOD traverse_remaining_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2402,6 +2403,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
       t17 = zcl_lnt_sy_source=>run_syntax( i_node = t18 i_input_967e = t23 i_target_type = t24 i_write_reference = t25 i_allow_generic_deference = t26 i_read_reference = t27 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD infer.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_context ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_found ).
@@ -2591,6 +2593,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD calculation_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_left ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_right ).
@@ -2858,6 +2861,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     result = t91.
 
   ENDMETHOD.
+
   METHOD numeric_rank.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA t2 TYPE abap_bool.
@@ -2996,6 +3000,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     result = t44.
 
   ENDMETHOD.
+
   METHOD add_if_inferred.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -3831,6 +3836,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD determine_type.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4320,9 +4326,11 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     result = t203.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d810_9015d4e965d5.
   ENDMETHOD.

@@ -17,6 +17,7 @@ CLASS zcl_lnt_short_case_conf IMPLEMENTATION.
     CREATE OBJECT t2.
     me->allow = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1598_a5f324eb4617.
   ENDMETHOD.

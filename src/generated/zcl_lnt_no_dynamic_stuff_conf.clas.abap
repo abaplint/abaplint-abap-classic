@@ -49,6 +49,7 @@ CLASS zcl_lnt_no_dynamic_stuff_conf IMPLEMENTATION.
     DATA(t13) = abap_true.
     me->export_import = t13.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1511_56f69c58ade6.
   ENDMETHOD.

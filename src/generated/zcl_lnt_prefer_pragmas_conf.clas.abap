@@ -43,6 +43,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     t1 = t20.
     me->check_bf6e = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1562_60e44ec698d9.
   ENDMETHOD.

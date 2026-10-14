@@ -18,9 +18,11 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
     DATA(t4) = CAST zif_lnt_spaghetti_scope( t2 ).
     me->spaghetti = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d758_f1cb57e59f66.
   ENDMETHOD.

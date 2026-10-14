@@ -18,6 +18,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD run.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->find_candidates( ) ).
@@ -267,6 +268,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD find_candidates.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -382,6 +384,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     result = t52.
 
   ENDMETHOD.
+
   METHOD find_mains.
     DATA(t1) = CAST zcl_lnt_include_graph( i_graph ).
     DATA(t2) = CAST zcl_lnt_ob_program( i_prog ).
@@ -390,6 +393,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD matches_unknown.
     DATA(t1) = CAST zcl_lnt_ob_program( i_prog ).
     DATA(t2) = CAST zlnt_runtime_set__1827558fd4c7( i_macro_names ).
@@ -398,9 +402,11 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d983_81db8b7bc7a4.
   ENDMETHOD.

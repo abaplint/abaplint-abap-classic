@@ -17,6 +17,7 @@ CLASS zcl_lnt_unused_variables_conf IMPLEMENTATION.
     DATA(t2) = abap_false.
     me->skip_abstract = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1662_4d2a34a9534f.
   ENDMETHOD.

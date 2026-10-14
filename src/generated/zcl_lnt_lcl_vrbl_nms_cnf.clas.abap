@@ -19,6 +19,7 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
     DATA(t3) = |^<L._.+>$|.
     me->expected_fs = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1471_4779fd9146e1.
   ENDMETHOD.

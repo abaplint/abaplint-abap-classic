@@ -17,18 +17,23 @@ CLASS zcl_lnt_end_case IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d449_e575e1a13299.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
     result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -19,18 +19,21 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_structure_runnable( t1 ).
     me->obj = t2.
   ENDMETHOD.
+
   METHOD to_railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/3_structures/structures/_combi.ts:199|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_using.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/3_structures/structures/_combi.ts:203|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
     DATA(t2) = CAST zif_lnt_node( i_parent ).
@@ -151,6 +154,7 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
       t3 = t63.
     ENDDO.
   ENDMETHOD.
+
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -165,24 +169,31 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d675_f86cc5df5551.
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~to_railroad.
     result = me->to_railroad( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~get_using.
     result = me->get_using( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~run.
     result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~first.
     result = me->first( ).
   ENDMETHOD.

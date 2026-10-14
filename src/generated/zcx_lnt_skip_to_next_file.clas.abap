@@ -16,6 +16,7 @@ CLASS zcx_lnt_skip_to_next_file IMPLEMENTATION.
     DATA(t3) = CAST zcl_lnt_issue( t1 ).
     me->issue = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_b425d82119de=>zlnt_member_d3_93b114c6beac5f.
   ENDMETHOD.

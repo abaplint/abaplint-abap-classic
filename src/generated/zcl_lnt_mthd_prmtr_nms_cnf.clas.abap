@@ -25,6 +25,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
     DATA(t5) = |^E._.+$|.
     me->exporting = t5.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1491_766925514eaf.
   ENDMETHOD.

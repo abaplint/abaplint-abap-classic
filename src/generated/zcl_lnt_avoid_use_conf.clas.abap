@@ -40,6 +40,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
     DATA(t10) = abap_true.
     me->export_to_database = t10.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1306_a66cfa4b6ec2.
   ENDMETHOD.

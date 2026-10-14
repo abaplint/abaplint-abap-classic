@@ -10,6 +10,7 @@ CLASS zcl_lnt_strict_sql_conf IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1618_58fd77de50cd.
   ENDMETHOD.

@@ -16,6 +16,7 @@ CLASS zcl_lnt_sttc_cll_v_instnc_cnf IMPLEMENTATION.
     t2->value = t1.
     me->allow_in_testclass_includes = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1616_6272c32f971d.
   ENDMETHOD.

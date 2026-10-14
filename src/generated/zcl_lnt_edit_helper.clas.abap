@@ -88,6 +88,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t38.
 
   ENDMETHOD.
+
   METHOD merge.
     DATA(t1) = CAST zlnt_runtime_map__4fdf767b61ba( i_fix1 ).
     DATA(t2) = CAST zlnt_runtime_map__4fdf767b61ba( i_fix2 ).
@@ -201,6 +202,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t64.
 
   ENDMETHOD.
+
   METHOD find_statement.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -265,6 +267,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t26.
 
   ENDMETHOD.
+
   METHOD delete_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -900,6 +903,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD first_after_colon.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA t2 TYPE REF TO zcl_lnt_position.
@@ -977,6 +981,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t29->payload = t30.
     RAISE EXCEPTION t29.
   ENDMETHOD.
+
   METHOD delete_token.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1069,6 +1074,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t35.
 
   ENDMETHOD.
+
   METHOD delete_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = CAST zcl_lnt_position( i_start ).
@@ -1110,6 +1116,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD insert_at.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = CAST zcl_lnt_position( i_pos ).
@@ -1151,6 +1158,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD replace_token.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1215,6 +1223,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t4.
 
   ENDMETHOD.
+
   METHOD replace_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = CAST zcl_lnt_position( i_start ).
@@ -1257,9 +1266,11 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     result = t12.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1057_6c3f2e767f11.
   ENDMETHOD.

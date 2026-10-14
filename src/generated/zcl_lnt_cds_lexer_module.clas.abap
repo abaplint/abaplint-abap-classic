@@ -171,9 +171,11 @@ CLASS zcl_lnt_cds_lexer_module IMPLEMENTATION.
     t50->nval = t51.
     t47 = t48->set( p0 = t49 p1 = t50 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1873_a44e4750b8de.
   ENDMETHOD.

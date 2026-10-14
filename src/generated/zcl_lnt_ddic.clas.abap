@@ -30,6 +30,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD is_exception.
     DATA(t1) = CAST zcl_lnt_info_class_definition( i_def ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_ac26 ).
@@ -38,6 +39,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD lookup_builtin_type.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_length ).
@@ -1186,6 +1188,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t446.
 
   ENDMETHOD.
+
   METHOD in_error_namespace.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1218,6 +1221,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD lookup_object.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1225,6 +1229,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD lookup_no_void.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_table.
@@ -1544,6 +1549,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t124.
 
   ENDMETHOD.
+
   METHOD lookup_ddls.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1729,6 +1735,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t63.
 
   ENDMETHOD.
+
   METHOD lookup.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_ilookup_result.
@@ -1795,6 +1802,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD lookup_domain.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_data_element ).
@@ -1804,6 +1812,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD lookup_data_element.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1811,6 +1820,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD lookup_table_or_view.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2111,6 +2121,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t51.
 
   ENDMETHOD.
+
   METHOD lookup_table_or_view2.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2282,6 +2293,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     result = t65.
 
   ENDMETHOD.
+
   METHOD lookup_table.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2411,6 +2423,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD lookup_view.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2558,6 +2571,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD lookup_table_type.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -2565,6 +2579,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD text_to_type.
     DATA(t1) = CAST zcl_lnt_shape_4a88086c( i_input_967e ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -2572,9 +2587,11 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1052_c7af40439c34.
   ENDMETHOD.

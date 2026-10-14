@@ -25,6 +25,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE abap_bool.
@@ -91,6 +92,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA t2 TYPE REF TO zcl_lnt_abap_rule.
@@ -99,30 +101,39 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1282_348684cb2f84.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

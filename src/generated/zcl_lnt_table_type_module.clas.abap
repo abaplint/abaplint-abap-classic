@@ -115,9 +115,11 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t34) = |EMPTY|.
     t31 = t32->set( p0 = t33 p1 = t34 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1871_896e72097139.
   ENDMETHOD.

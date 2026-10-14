@@ -131,6 +131,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       ENDLOOP.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD lookup.
     DATA(t1) = i_str.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -227,9 +228,11 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     result = t38.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d342_e6333b069746.
   ENDMETHOD.

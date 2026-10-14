@@ -13,6 +13,7 @@ CLASS zcl_lnt_message_exists_conf IMPLEMENTATION.
     DATA(t1) = abap_true.
     me->check_placeholders = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1483_0128e7fb14a2.
   ENDMETHOD.

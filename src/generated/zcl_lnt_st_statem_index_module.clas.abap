@@ -3508,9 +3508,11 @@ CLASS zcl_lnt_st_statem_index_module IMPLEMENTATION.
     DATA(t1269) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d660_474f9b0b19c3 ).
     t1266 = t1267->set( p0 = t1268 p1 = t1269 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1701_253ddbe960b9.
   ENDMETHOD.

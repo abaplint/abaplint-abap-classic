@@ -13,6 +13,7 @@ CLASS zcl_lnt_nesting_conf IMPLEMENTATION.
     DATA(t1) = CONV int8( 5 ).
     me->depth = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1501_99bc58f44709.
   ENDMETHOD.

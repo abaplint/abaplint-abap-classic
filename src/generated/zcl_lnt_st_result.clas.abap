@@ -66,6 +66,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
       me->set_nodes( i_n_0c97 = t18 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD from_chain.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA(t2) = i_token_index.
@@ -89,6 +90,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD peek.
     DATA t1 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
@@ -101,6 +103,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD peek_at.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -142,6 +145,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD shift_f196.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -183,6 +187,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD wrap_consumed.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -292,12 +297,14 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t48.
 
   ENDMETHOD.
+
   METHOD pop_node.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/result.ts:67|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_nodes.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -397,6 +404,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t35.
 
   ENDMETHOD.
+
   METHOD set_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_n_0c97 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -404,18 +412,21 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_tokens.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/result.ts:101|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_token_index.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/result.ts:105|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD remaining_length.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -435,9 +446,11 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d341_321f607af2eb.
   ENDMETHOD.

@@ -18,9 +18,11 @@ CLASS zcl_lnt_tuple_e60aa2b5 IMPLEMENTATION.
     DATA(t4) = CAST zcl_lnt_shape_df104ab4( t2 ).
     me->f1 = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d7_82881b26b0f5bb.
   ENDMETHOD.

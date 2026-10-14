@@ -11,6 +11,7 @@ CLASS zcl_lnt_st_string_template IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -207,6 +208,7 @@ CLASS zcl_lnt_st_string_template IMPLEMENTATION.
     result = t43.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d257_509c7b1190c0.
   ENDMETHOD.

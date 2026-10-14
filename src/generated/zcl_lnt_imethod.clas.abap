@@ -18,9 +18,11 @@ CLASS zcl_lnt_imethod IMPLEMENTATION.
     DATA(t4) = CAST zcl_lnt_info_method_definition( t2 ).
     me->method = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1438_8954b07693d5.
   ENDMETHOD.

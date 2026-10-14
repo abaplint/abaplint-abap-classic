@@ -25,6 +25,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_slw_prmtr_pssng_cnf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -185,11 +186,13 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_sl_pr_ps_ts_sl_pr_ps.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -197,6 +200,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -204,6 +208,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -211,6 +216,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_write_positions.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_typed_identifier( i_id ).
@@ -219,6 +225,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD list_method_nodes.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -226,14 +233,17 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps( ) ).
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -241,30 +251,39 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1603_fa2e7b04802b.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

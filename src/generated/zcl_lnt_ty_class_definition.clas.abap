@@ -1493,78 +1493,93 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     DATA(t629) = CAST zcl_lnt_syntax_input( t2 ).
     me->check_class_constructor( i_input_967e = t629 ).
   ENDMETHOD.
+
   METHOD get_friends.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->friends ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_events.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->events_f95a ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_method_definitions.
     DATA(t1) = CAST zcl_lnt_method_definitions( me->method_defs ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_t_d_i_s_ab_ty_cl_df_ts_cl_df.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->types ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_super_class.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( me->super_class ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_a_in_sr_ab_ty_cl_df_ts_cl_df.
     DATA(t1) = CAST zcl_lnt_attributes( me->attributes ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_global.
     DATA(t1) = CONV abap_bool( me->global_value ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_final.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/class_definition.ts:133|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_implementing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->implementing ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_for_testing.
     DATA(t1) = CONV abap_bool( me->testing ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_abstract.
     DATA(t1) = CONV abap_bool( me->abstract ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_shared_memory.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/class_definition.ts:153|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_create_visibility.
     DATA(t1) = CONV int8( me->create_visibility_value ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD check_class_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1748,6 +1763,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       APPEND t73 TO t71->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD find_super.
     DATA(t1) = CAST zcl_lnt_statement_node( i_def ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2249,6 +2265,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     result = t203.
 
   ENDMETHOD.
+
   METHOD check_method_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -2324,6 +2341,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_class_constructor.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -2397,6 +2415,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_interface_visibility.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zcl_lnt_structure_node( i_node ).
@@ -2494,6 +2513,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDLOOP.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD chck_mthds_frm_spr_clsss.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zcl_lnt_current_scope.
@@ -3182,6 +3202,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_method_name_conflicts.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -3334,6 +3355,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_event_name_conflicts.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->events_f95a ).
@@ -3579,6 +3601,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD find_friends.
     DATA(t1) = CAST zcl_lnt_statement_node( i_def ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4123,6 +4146,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     result = t223.
 
   ENDMETHOD.
+
   METHOD add_reference.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4525,6 +4549,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA(t2) = CAST zcl_lnt_structure_node( i_input_node ).
@@ -5160,190 +5185,251 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD get_type_definitions.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->g_t_d_i_s_ab_ty_cl_df_ts_cl_df( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_attributes.
     DATA(t1) = CAST zcl_lnt_attributes( me->g_a_in_sr_ab_ty_cl_df_ts_cl_df( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1032_f78e39381f78.
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~is_final.
     result = me->is_final( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~is_for_testing.
     result = me->is_for_testing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~is_abstract.
     result = me->is_abstract( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~is_shared_memory.
     result = me->is_shared_memory( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_friends.
     result = me->get_friends( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_create_visibility.
     result = me->get_create_visibility( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_attributes.
     result = me->get_attributes( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_type_definitions.
     result = me->get_type_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_method_definitions.
     result = me->get_method_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_events.
     result = me->get_events( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~is_global.
     result = me->is_global( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_super_class.
     result = me->get_super_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_implementing.
     result = me->get_implementing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_class_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_attributes.
     result = me->get_attributes( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_type_definitions.
     result = me->get_type_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_method_definitions.
     result = me->get_method_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_events.
     result = me->get_events( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~is_global.
     result = me->is_global( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_super_class.
     result = me->get_super_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_implementing.
     result = me->get_implementing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_interface_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_attributes.
     result = me->get_attributes( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_events.
     result = me->get_events( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_implementing.
     result = me->get_implementing( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_method_definitions.
     result = me->get_method_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_super_class.
     result = me->get_super_class( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_token.
     result = me->get_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~get_type_definitions.
     result = me->get_type_definitions( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_865ccdda~is_global.
     result = me->is_global( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_token.
     result = me->get_token( ).
   ENDMETHOD.

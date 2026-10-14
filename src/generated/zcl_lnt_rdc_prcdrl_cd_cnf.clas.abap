@@ -13,6 +13,7 @@ CLASS zcl_lnt_rdc_prcdrl_cd_cnf IMPLEMENTATION.
     DATA(t1) = CONV int8( 10 ).
     me->max_statements = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1574_c0fe10a34ebb.
   ENDMETHOD.

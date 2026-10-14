@@ -70,12 +70,14 @@ CLASS zcl_lnt_typed_identifier IMPLEMENTATION.
       me->meta = t25.
     ENDIF.
   ENDMETHOD.
+
   METHOD debug_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/_typed_identifier.ts:35|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD from.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
     DATA(t2) = CAST zif_lnt_union_ea265422( i_type_9913 ).
@@ -105,51 +107,64 @@ CLASS zcl_lnt_typed_identifier IMPLEMENTATION.
     result = t4.
 
   ENDMETHOD.
+
   METHOD to_text.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/_typed_identifier.ts:59|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_meta.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->meta ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_value.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->value ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d991_2c1bbfdb8e80.
   ENDMETHOD.
+
   METHOD zif_lnt_union_ea265422~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f405367a~get_token.
     result = me->get_token( ).
   ENDMETHOD.

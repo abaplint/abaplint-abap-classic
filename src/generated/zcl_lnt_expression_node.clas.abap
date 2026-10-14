@@ -46,6 +46,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_statement_runnable( t1 ).
     me->expression = t3.
   ENDMETHOD.
+
   METHOD a_c_in_sr_ab_nd_ex_nd_ts_ex_nd.
     DATA(t1) = CAST zif_lnt_union_4cf1d054( i_n_2941 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -53,11 +54,13 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD gt_in_sr_ab_nd_ex_nd_ts_exp_nd.
     DATA(t1) = CAST zif_lnt_statement_runnable( me->expression ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_in_sr_ab_nd_ex_nd_ts_ex_nd.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -66,11 +69,13 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result ?= t3.
 
   ENDMETHOD.
+
   METHOD count_tokens.
     DATA(t1) = CONV int8( me->token_count ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_first_token.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -117,12 +122,14 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     t11->payload = t12.
     RAISE EXCEPTION t11.
   ENDMETHOD.
+
   METHOD concat_tokens_with_linebreaks.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/nodes/expression_node.ts:46|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD concat_tokens.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -311,12 +318,14 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t94.
 
   ENDMETHOD.
+
   METHOD cnct_tkns_wtht_strng_and_cmmnt.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/nodes/expression_node.ts:90|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_tokens.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -363,6 +372,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t21.
 
   ENDMETHOD.
+
   METHOD to_tokens.
     DATA(t1) = CAST zif_lnt_node( i_b ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -433,6 +443,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD get_last_token.
     DATA t1 TYPE REF TO zif_lnt_union_4cf1d054.
     CLEAR t1.
@@ -508,6 +519,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     t23->payload = t24.
     RAISE EXCEPTION t23.
   ENDMETHOD.
+
   METHOD get_all_tokens.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -571,12 +583,14 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t29.
 
   ENDMETHOD.
+
   METHOD get_direct_tokens.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/nodes/expression_node.ts:169|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_direct_expression.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -649,6 +663,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t26.
 
   ENDMETHOD.
+
   METHOD find_expression_after_token.
     DATA(t1) = i_text.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -781,6 +796,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t58.
 
   ENDMETHOD.
+
   METHOD find_direct_expressions.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -846,6 +862,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t26.
 
   ENDMETHOD.
+
   METHOD find_direct_expressions_multi.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_type_9913 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -917,6 +934,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t28.
 
   ENDMETHOD.
+
   METHOD find_direct_token_by_text.
     DATA(t1) = i_text.
     DATA(t2) = VALUE string( ).
@@ -1006,6 +1024,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t36.
 
   ENDMETHOD.
+
   METHOD find_all_expressions_recursive.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1093,6 +1112,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t37.
 
   ENDMETHOD.
+
   METHOD find_all_expressions.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1181,6 +1201,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t37.
 
   ENDMETHOD.
+
   METHOD find_all_expressions_multi.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_type_9913 ).
     DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_recursive ).
@@ -1189,6 +1210,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_first_expression.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1321,6 +1343,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t46.
 
   ENDMETHOD.
+
   METHOD add_child.
     DATA t1 TYPE REF TO zif_lnt_union_4cf1d054.
     CLEAR t1.
@@ -1328,11 +1351,13 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     me->a_c_in_sr_ab_nd_ex_nd_ts_ex_nd( i_n_2941 = t1 ).
 
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = CAST zif_lnt_statement_runnable( me->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_children_value.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
@@ -1343,6 +1368,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD set_children.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1380,123 +1406,163 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     result = t15.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d985_a5bb0f4f58f1.
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~add_child.
     me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~concat_tokens.
     result = me->concat_tokens( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~cnct_tkns_wtht_strng_and_cmmnt.
     result = me->cnct_tkns_wtht_strng_and_cmmnt( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_all_expressions.
     result = me->find_all_expressions( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_all_expressions_multi.
     result = me->find_all_expressions_multi( i_type_9913 = i_type_9913 i_recursive = i_recursive ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_all_expressions_recursive.
     result = me->find_all_expressions_recursive( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_direct_expression.
     result = me->find_direct_expression( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_direct_expressions.
     result = me->find_direct_expressions( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_direct_expressions_multi.
     result = me->find_direct_expressions_multi( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_direct_token_by_text.
     result = me->find_direct_token_by_text( i_text = i_text ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_expression_after_token.
     result = me->find_expression_after_token( i_text = i_text ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~find_first_expression.
     result = me->find_first_expression( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_db65.
     result = me->get_db65( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_children.
     result = me->get_children( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_first_child.
     result = me->get_first_child( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_first_token.
     result = me->get_first_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_last_child.
     result = me->get_last_child( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_last_token.
     result = me->get_last_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~get_tokens.
     result = me->get_tokens( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~set_children.
     me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_bb14dc41~set_children_value.
     result = me->set_children_value( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~add_child.
     me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~concat_tokens.
     result = me->concat_tokens( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~count_tokens.
     result = me->count_tokens( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~get_db65.
     result = me->get_db65( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~get_children.
     result = me->get_children( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~get_first_token.
     result = me->get_first_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~get_last_token.
     result = me->get_last_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_4cf1d054~set_children.
     me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~add_child.
     me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~concat_tokens.
     result = me->concat_tokens( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~get_db65.
     result = me->get_db65( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~get_children.
     result = me->get_children( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~get_first_token.
     result = me->get_first_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~get_last_token.
     result = me->get_last_token( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_1e9858bf~set_children.
     me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.

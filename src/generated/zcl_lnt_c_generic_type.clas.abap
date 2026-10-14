@@ -25,6 +25,7 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     CLEAR t1.
     super->constructor( i_input_967e = t1 ).
   ENDMETHOD.
+
   METHOD get_db65.
     IF zcl_lnt_c_generic_type=>zlnt_builtin_init_b3858169ee77 = abap_false.
       zcl_lnt_c_generic_type=>zlnt_builtin_init_21b229b5f4f7( ).
@@ -38,41 +39,48 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD t_t_i_s_a_t_b_cg_ty_ts_c_gn_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/cgeneric_type.ts:14|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_generic.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/cgeneric_type.ts:18|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/cgeneric_type.ts:22|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/cgeneric_type.ts:26|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_cds.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/cgeneric_type.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cg_ty_ts_c_gn_ty( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_21b229b5f4f7.
     IF zlnt_builtin_init_b3858169ee77 = abap_true.
       RETURN.
@@ -89,6 +97,7 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     t1 = NEW zcl_lnt_c_generic_type( ).
     zcl_lnt_c_generic_type=>singleton = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d995_2c3b22cc1366.
   ENDMETHOD.

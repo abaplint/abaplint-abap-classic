@@ -36,6 +36,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_current_scope( t1 ).
     me->scope = t2.
   ENDMETHOD.
+
   METHOD from_interface_by_name.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_ignore ).
@@ -509,6 +510,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t204.
 
   ENDMETHOD.
+
   METHOD add_aliased_attributes.
     DATA(t1) = CAST zif_lnt_class_definition( i_class_definition_ad05 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1118,6 +1120,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD add_aliased_types.
     DATA(t1) = CAST zif_lnt_class_definition( i_class_definition_ad05 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1773,6 +1776,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD find_method_in_interface.
     DATA(t1) = i_interface_name.
     DATA(t2) = i_method_name.
@@ -2044,6 +2048,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t105.
 
   ENDMETHOD.
+
   METHOD find_method_via_alias.
     DATA(t1) = i_method_name.
     DATA(t2) = CAST zif_lnt_interface_definition( i_def ).
@@ -2570,6 +2575,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t193.
 
   ENDMETHOD.
+
   METHOD method_reference_extras.
     DATA(t1) = CAST zif_lnt_interface_definition( i_found_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_oo_name ).
@@ -2658,6 +2664,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t14.
 
   ENDMETHOD.
+
   METHOD find_class_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2760,6 +2767,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t35.
 
   ENDMETHOD.
+
   METHOD find_interfaces.
     DATA(t1) = CAST zif_lnt_interface_definition( i_cd ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -3093,6 +3101,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t125.
 
   ENDMETHOD.
+
   METHOD has_friendship.
     DATA(t1) = CAST zif_lnt_class_definition( i_cd ).
     DATA(t2) = i_friend_name.
@@ -3852,6 +3861,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t295.
 
   ENDMETHOD.
+
   METHOD search_event.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -5019,6 +5029,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t437.
 
   ENDMETHOD.
+
   METHOD search_attribute_name.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -6240,6 +6251,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t449.
 
   ENDMETHOD.
+
   METHOD search_type_name.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -7391,6 +7403,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t421.
 
   ENDMETHOD.
+
   METHOD search_constant_name.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -8615,6 +8628,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t449.
 
   ENDMETHOD.
+
   METHOD search_method_name.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -9356,6 +9370,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t277.
 
   ENDMETHOD.
+
   METHOD find_method.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
     DATA(t2) = i_method_name.
@@ -9454,6 +9469,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t36.
 
   ENDMETHOD.
+
   METHOD find_method_in_super.
     DATA(t1) = CAST zif_lnt_interface_definition( i_child ).
     DATA(t2) = i_method_name.
@@ -9529,6 +9545,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD find_super_definition.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zif_lnt_class_definition.
@@ -9757,6 +9774,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t89.
 
   ENDMETHOD.
+
   METHOD frm_spr_clsss_and_intrfcs.
     DATA(t1) = CAST zif_lnt_class_definition( i_child ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -9782,6 +9800,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     ENDIF.
     t5 = me->from_interfaces( i_definition = t6 i_skip_34cc = t8 ).
   ENDMETHOD.
+
   METHOD from_super_classes.
     DATA(t1) = CAST zif_lnt_class_definition( i_child ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -10258,6 +10277,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t206.
 
   ENDMETHOD.
+
   METHOD list_interfaces_recursive.
     DATA(t1) = CAST zif_lnt_interface_definition( i_definition ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -10511,6 +10531,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t96.
 
   ENDMETHOD.
+
   METHOD from_interfaces.
     DATA(t1) = CAST zif_lnt_interface_definition( i_definition ).
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_skip_34cc ).
@@ -10574,6 +10595,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t29.
 
   ENDMETHOD.
+
   METHOD fn_is_friend.
     DATA(t1) = CAST zif_lnt_class_definition( i_cd ).
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_friends ).
@@ -10693,9 +10715,11 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     result = t4.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d751_4d9c6e99dfab.
   ENDMETHOD.

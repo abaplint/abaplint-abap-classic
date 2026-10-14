@@ -16,6 +16,7 @@ CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf IMPLEMENTATION.
     DATA(t2) = |^[yz]|.
     me->own_tables = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1495_a0a214691925.
   ENDMETHOD.

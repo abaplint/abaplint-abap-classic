@@ -2236,6 +2236,7 @@ CLASS zcl_lnt_sy_method_call_chain IMPLEMENTATION.
     result = t915.
 
   ENDMETHOD.
+
   METHOD check_visibility.
     DATA(t1) = CAST zif_lnt_method_definition( i_method ).
     DATA(t2) = CAST zif_lnt_interface_definition( i_def ).
@@ -3252,6 +3253,7 @@ CLASS zcl_lnt_sy_method_call_chain IMPLEMENTATION.
     result = t392.
 
   ENDMETHOD.
+
   METHOD find_top.
     DATA(t1) = CAST zif_lnt_node( i_first ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4342,9 +4344,11 @@ CLASS zcl_lnt_sy_method_call_chain IMPLEMENTATION.
     result = t438.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d797_7c876f6e1490.
   ENDMETHOD.

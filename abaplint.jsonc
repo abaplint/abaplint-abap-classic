@@ -34,7 +34,7 @@
     "functional_writing": true,
     "ambiguous_statement": true,
     "keep_single_parameter_on_one_line": true,
-    "many_parentheses": true, // todo
+    "many_parentheses": true,
     "catch_and_raise": true,
     "begin_single_include": true,
     "check_abstract": true,
@@ -82,7 +82,7 @@
     "constant_classes": true,
     "double_space": true,
     "downport": false,
-    "newline_between_methods": false, // todo
+    "newline_between_methods": true,
     "exporting": true,
     "identical_conditions": true,
     "constructor_visibility_public": true,

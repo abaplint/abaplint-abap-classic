@@ -77,18 +77,23 @@ CLASS zcl_lnt_sr_class_definition IMPLEMENTATION.
     result = t32.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d684_dd4b0670faf6.
   ENDMETHOD.
+
   METHOD zif_lnt_structure~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure~get_matcher.
     result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -259,9 +259,11 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
     CLEAR t125.
     t115 = zcl_lnt_sy_source=>run_syntax( i_node = t116 i_input_967e = t121 i_target_type = t122 i_write_reference = t123 i_allow_generic_deference = t124 i_read_reference = t125 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d780_7184b6fdb7fe.
   ENDMETHOD.

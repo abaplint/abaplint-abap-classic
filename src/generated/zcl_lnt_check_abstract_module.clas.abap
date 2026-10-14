@@ -81,9 +81,11 @@ CLASS zcl_lnt_check_abstract_module IMPLEMENTATION.
     t20->nval = t21.
     t17 = t18->set( p0 = t19 p1 = t20 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1879_e50c54e9b4e7.
   ENDMETHOD.

@@ -20,46 +20,54 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     DATA(t2) = t1.
     super->constructor( i_name = t2 ).
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |ENHO|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/enhancement_implementation.ts:13|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/enhancement_implementation.ts:18|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_class_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/enhancement_implementation.ts:25|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/enhancement_implementation.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD pr_in_sr_ob_enh_imp_ts_enh_imp.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/enhancement_implementation.ts:35|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_enh_imp_ts_enh_imp( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1150_0e2ee585e933.
   ENDMETHOD.

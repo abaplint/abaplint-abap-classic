@@ -16,6 +16,7 @@ CLASS zcl_lnt_cd_result IMPLEMENTATION.
     CREATE OBJECT t1.
     me->result_9728 = t1.
   ENDMETHOD.
+
   METHOD add_51c1.
     DATA(t1) = i_text.
     DATA(t2) = i_row.
@@ -26,15 +27,18 @@ CLASS zcl_lnt_cd_result IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/cds/cds_lexer.ts:55|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1048_5249e94bd340.
   ENDMETHOD.

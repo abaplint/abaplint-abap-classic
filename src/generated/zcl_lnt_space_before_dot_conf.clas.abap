@@ -16,6 +16,7 @@ CLASS zcl_lnt_space_before_dot_conf IMPLEMENTATION.
     DATA(t2) = abap_true.
     me->ignore_exceptions = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1608_c09f47b4abb2.
   ENDMETHOD.

@@ -13,6 +13,7 @@ CLASS zcl_lnt_algn_typ_exprssns_cnf IMPLEMENTATION.
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1298_672635193b91.
   ENDMETHOD.

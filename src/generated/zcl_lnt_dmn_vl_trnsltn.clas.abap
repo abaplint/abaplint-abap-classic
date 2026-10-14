@@ -18,9 +18,11 @@ CLASS zcl_lnt_dmn_vl_trnsltn IMPLEMENTATION.
     DATA(t4) = t2.
     me->description = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1144_853552e5f654.
   ENDMETHOD.

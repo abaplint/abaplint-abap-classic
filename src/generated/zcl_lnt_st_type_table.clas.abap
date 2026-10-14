@@ -11,6 +11,7 @@ CLASS zcl_lnt_st_type_table IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE string.
     DATA(t2) = |WITH HEADER LINE|.
@@ -2039,6 +2040,7 @@ CLASS zcl_lnt_st_type_table IMPLEMENTATION.
     result = t754.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d147_5c941cfb7396.
   ENDMETHOD.

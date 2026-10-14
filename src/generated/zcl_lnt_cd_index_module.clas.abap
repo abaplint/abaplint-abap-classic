@@ -21,9 +21,11 @@ CLASS zcl_lnt_cd_index_module IMPLEMENTATION.
     DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
     zcl_lnt_cd_index_module=>ns = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1901_db36792a769a.
   ENDMETHOD.

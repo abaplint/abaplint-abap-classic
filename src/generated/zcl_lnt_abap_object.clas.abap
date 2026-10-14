@@ -42,12 +42,14 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     CLEAR t5.
     me->raw_xml_cache = t5.
   ENDMETHOD.
+
   METHOD debug_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/_abap_object.ts:20|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_x ).
     DATA(t2) = VALUE abap_bool( ).
@@ -74,6 +76,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD pr_in_sr_ob_abp_obj_ts_abp_obj.
     DATA(t1) = CAST zcl_lnt_abap_release( i_release_7928 ).
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
@@ -254,6 +257,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     result = t69.
 
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA t1 TYPE REF TO zcl_lnt_isyntax_result.
     CLEAR t1.
@@ -272,17 +276,20 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     me->parsed = t5.
     super->set_dirty( ).
   ENDMETHOD.
+
   METHOD get_parsed_xml.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/_abap_object.ts:62|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_abap_files.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->parsed ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_abap_file_by_name.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->parsed ).
@@ -324,6 +331,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     result = t16.
 
   ENDMETHOD.
+
   METHOD get_main_abap_file.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
@@ -533,24 +541,28 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     result = t92.
 
   ENDMETHOD.
+
   METHOD get_text_symbols.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/_abap_object.ts:101|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_text_elements.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/_abap_object.ts:108|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_text_elements_translations.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/_abap_object.ts:119|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_texts.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_parsed ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -558,6 +570,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_texts_translations.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_parsed ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -565,11 +578,13 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_abp_obj_ts_abp_obj( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1085_7cdb0f50a2e1.
   ENDMETHOD.

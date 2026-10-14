@@ -34,6 +34,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
     t8->value = t7.
     me->max_issues_per_file = t8.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1444_78bad5ea1590.
   ENDMETHOD.

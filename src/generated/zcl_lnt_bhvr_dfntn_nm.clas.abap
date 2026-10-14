@@ -11,6 +11,7 @@ CLASS zcl_lnt_bhvr_dfntn_nm IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/expressions/behavior_definition_name.t|.
@@ -18,6 +19,7 @@ CLASS zcl_lnt_bhvr_dfntn_nm IMPLEMENTATION.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d104_b395e4e66ee3.
   ENDMETHOD.

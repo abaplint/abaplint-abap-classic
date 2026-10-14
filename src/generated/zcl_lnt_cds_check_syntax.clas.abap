@@ -41,6 +41,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_cds_check_syntax_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -105,11 +106,13 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_r_cd_ch_sy_ts_cd_ch_sy.
     DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_cd_ch_sy_ts_cd_ch_sy.
     DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -117,6 +120,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -124,6 +128,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD r_i_sr_rl_cd_ch_sy_ts_cd_ch_sy.
     DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -131,6 +136,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_sources.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -141,6 +147,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD check_relations.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -151,6 +158,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD check_types.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -161,6 +169,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD check_root_projection.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -171,6 +180,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD check_field_annotations.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -181,6 +191,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD determine_semantic_type.
     DATA(t1) = CAST zcl_lnt_expression_node( i_type_node ).
     DATA(t2) = CAST zcl_lnt_ddic( i_ddic ).
@@ -189,6 +200,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_semantic_reference.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_annotations ).
     DATA(t2) = i_type_9913.
@@ -197,6 +209,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD has_companion_annotation.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_annotations ).
     DATA(t2) = i_type_9913.
@@ -205,6 +218,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD check_labels.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -214,6 +228,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD check_view_entity_annotations.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -223,6 +238,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD check_searchable.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -232,6 +248,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD has_search_annotation.
     DATA(t1) = i_normalized.
     DATA(t2) = i_name.
@@ -240,6 +257,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD check_reserved_names.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -249,6 +267,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD check_fields.
     DATA(t1) = CAST zcl_lnt_expression_node( i_tree ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_sources ).
@@ -260,6 +279,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t6->source_location = t7.
     RAISE EXCEPTION t6.
   ENDMETHOD.
+
   METHOD name.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -267,14 +287,17 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( me->g_c_i_s_r_cd_ch_sy_ts_cd_ch_sy( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cds_check_syntax_conf( me->g_c_i_s_r_cd_ch_sy_ts_cd_ch_sy( ) ).
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -282,6 +305,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -289,30 +313,39 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1319_f10c5c1c5bd2.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

@@ -43,6 +43,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
     DATA(t11) = abap_true.
     me->sort_0232 = t11.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1330_07ce41b049c9.
   ENDMETHOD.

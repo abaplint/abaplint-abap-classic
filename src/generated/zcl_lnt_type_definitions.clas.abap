@@ -120,11 +120,13 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       t10 = t11->set( p0 = t12 p1 = t44 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD get_all.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_by_name.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zcl_lnt_typed_identifier.
@@ -168,18 +170,23 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1044_85fc144000cd.
   ENDMETHOD.
+
   METHOD zif_lnt_type_definitions~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_type_definitions~get_all.
     result = me->get_all( ).
   ENDMETHOD.
+
   METHOD zif_lnt_type_definitions~get_by_name.
     result = me->get_by_name( i_name = i_name ).
   ENDMETHOD.

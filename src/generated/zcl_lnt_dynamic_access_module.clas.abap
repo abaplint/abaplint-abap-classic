@@ -157,6 +157,7 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD dyn_attr.
     IF zcl_lnt_dynamic_access_module=>zlnt_builtin_init_58df737b37ab = abap_false.
       zcl_lnt_dynamic_access_module=>zlnt_builtin_init_f10ed84afca7( ).
@@ -279,6 +280,7 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_f10ed84afca7.
     IF zlnt_builtin_init_58df737b37ab = abap_true.
       RETURN.
@@ -378,9 +380,11 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t20 = t30.
     zcl_lnt_dynamic_access_module=>dyn_inside = t20.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1830_84c068dcd9f2.
   ENDMETHOD.

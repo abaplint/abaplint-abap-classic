@@ -121,9 +121,11 @@ CLASS zcl_lnt_sy_rd_rstrctn_mdl IMPLEMENTATION.
     DATA(t72) = CAST zlnt_runtime_set__1827558fd4c7( t55 ).
     zcl_lnt_sy_rd_rstrctn_mdl=>keyuser_allowed = t72.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1864_8f95fe7139ac.
   ENDMETHOD.

@@ -26,9 +26,11 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
     DATA(t8) = CAST zif_lnt_file( t4 ).
     me->file = t8.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1077_456f8cd1ea7c.
   ENDMETHOD.

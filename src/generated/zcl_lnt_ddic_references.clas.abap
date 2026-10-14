@@ -33,6 +33,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t5 = t8.
     me->filename_index = t5.
   ENDMETHOD.
+
   METHOD set_using.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_using ).
@@ -41,6 +42,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD add_using.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = CAST zcl_lnt_iobject_and_token( i_using ).
@@ -359,6 +361,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       APPEND t164 TO t142->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD clear_feba.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -609,6 +612,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       t105 = t106->set( p0 = t110 p1 = t111 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD list_by_filename.
     DATA(t1) = i_filename.
     DATA(t2) = i_line.
@@ -617,6 +621,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD list_using.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = VALUE string( ).
@@ -698,6 +703,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD list_where_used.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -705,30 +711,39 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1053_933feba7ea8b.
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~set_using.
     me->set_using( i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~add_using.
     me->add_using( i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~clear_feba.
     me->clear_feba( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~list_using.
     result = me->list_using( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~list_by_filename.
     result = me->list_by_filename( i_filename = i_filename i_line = i_line ).
   ENDMETHOD.
+
   METHOD zif_lnt_ddic_references~list_where_used.
     result = me->list_where_used( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.

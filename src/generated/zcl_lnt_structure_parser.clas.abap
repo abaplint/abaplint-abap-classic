@@ -81,6 +81,7 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     result = t26.
 
   ENDMETHOD.
+
   METHOD find_structure_for_file.
     IF zcl_lnt_structure_parser=>zlnt_builtin_init_4f5bb8fa61e1 = abap_false.
       zcl_lnt_structure_parser=>zlnt_builtin_init_869df39a38f2( ).
@@ -154,6 +155,7 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD run_file.
     IF zcl_lnt_structure_parser=>zlnt_builtin_init_4f5bb8fa61e1 = abap_false.
       zcl_lnt_structure_parser=>zlnt_builtin_init_869df39a38f2( ).
@@ -406,6 +408,7 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     result = t108.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_869df39a38f2.
     IF zlnt_builtin_init_4f5bb8fa61e1 = abap_true.
       RETURN.
@@ -422,9 +425,11 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     t1 = t4.
     zcl_lnt_structure_parser=>singletons = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d670_091261a0c907.
   ENDMETHOD.

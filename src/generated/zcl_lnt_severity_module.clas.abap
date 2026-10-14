@@ -54,9 +54,11 @@ CLASS zcl_lnt_severity_module IMPLEMENTATION.
     DATA(t13) = |Info|.
     t10 = t11->set( p0 = t12 p1 = t13 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1884_6a9d8d5f4cc3.
   ENDMETHOD.

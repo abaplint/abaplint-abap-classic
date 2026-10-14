@@ -11,6 +11,7 @@ CLASS zcl_lnt_abstract IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t2) = |ABSTRACT|.
@@ -18,6 +19,7 @@ CLASS zcl_lnt_abstract IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
   ENDMETHOD.

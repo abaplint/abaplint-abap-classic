@@ -76,26 +76,31 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     t17 = NEW zcl_lnt_type_definitions( i_list = t18 ).
     me->types = t17.
   ENDMETHOD.
+
   METHOD gt_ty_in_sr_ab_ty_cl_at_ts_att.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->types ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_static.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->static_9977 ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_all.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->all ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_statics_by_visibility.
     DATA(t1) = i_visibility_5c1f.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -103,11 +108,13 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_instance.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->instance ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_instances_by_visibility.
     DATA(t1) = i_visibility_5c1f.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -115,11 +122,13 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_constants.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->constants ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_constants_by_visibility.
     DATA(t1) = i_visibility_5c1f.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -127,6 +136,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_by_name.
     DATA(t1) = i_name.
     DATA t2 TYPE REF TO zif_lnt_union_a346537f.
@@ -145,6 +155,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD build_by_name.
     DATA t1 TYPE REF TO zlnt_runtime_map__89ba5e9f6101.
     DATA t2 TYPE REF TO zlnt_runtime_map__89ba5e9f6101.
@@ -479,6 +490,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     result = t139.
 
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -764,6 +776,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     t117->payload = t118.
     RAISE EXCEPTION t117.
   ENDMETHOD.
+
   METHOD parse_section.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA(t2) = i_visibility_5c1f.
@@ -2228,6 +2241,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD parse_alias.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = i_visibility_5c1f.
@@ -3030,6 +3044,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD exists_in_interface.
     DATA(t1) = CAST zif_lnt_interface_definition( i_idef ).
     DATA(t2) = i_component.
@@ -3543,6 +3558,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     result = t210.
 
   ENDMETHOD.
+
   METHOD parse_attribute.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = i_visibility_5c1f.
@@ -3807,47 +3823,61 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     result = t97.
 
   ENDMETHOD.
+
   METHOD get_types.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->gt_ty_in_sr_ab_ty_cl_at_ts_att( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1030_6600c335ee28.
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_static.
     result = me->get_static( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_statics_by_visibility.
     result = me->get_statics_by_visibility( i_visibility_5c1f = i_visibility_5c1f ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_instance.
     result = me->get_instance( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_instances_by_visibility.
     result = me->get_instances_by_visibility( i_visibility_5c1f = i_visibility_5c1f ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_constants_by_visibility.
     result = me->get_constants_by_visibility( i_visibility_5c1f = i_visibility_5c1f ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~find_by_name.
     result = me->find_by_name( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_constants.
     result = me->get_constants( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_all.
     result = me->get_all( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_aliases.
     result = me->get_aliases( ).
   ENDMETHOD.
+
   METHOD zif_lnt_attributes~get_types.
     result = me->get_types( ).
   ENDMETHOD.

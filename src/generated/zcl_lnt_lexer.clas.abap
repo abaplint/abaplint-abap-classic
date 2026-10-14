@@ -39,6 +39,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     result = t9.
 
   ENDMETHOD.
+
   METHOD add_51c1.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1645,6 +1646,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     DATA(t747) = abap_true.
     t746->empty_a4a6 = t747.
   ENDMETHOD.
+
   METHOD process.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -3316,9 +3318,11 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     ENDDO.
     me->add_51c1( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d9_e4f0b8f112f46b.
   ENDMETHOD.

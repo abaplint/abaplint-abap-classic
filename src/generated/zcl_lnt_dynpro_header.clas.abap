@@ -30,9 +30,11 @@ CLASS zcl_lnt_dynpro_header IMPLEMENTATION.
     DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
     me->fields_464c = t10.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1790_4868dd08bafe.
   ENDMETHOD.

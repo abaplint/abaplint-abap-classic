@@ -46,9 +46,11 @@ CLASS zcl_lnt_shape_2cd2650e IMPLEMENTATION.
     t16 = t17.
     me->fields_464c = t16.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1804_91626cd8ed82.
   ENDMETHOD.

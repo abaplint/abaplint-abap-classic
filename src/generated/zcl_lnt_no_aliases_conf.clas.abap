@@ -13,6 +13,7 @@ CLASS zcl_lnt_no_aliases_conf IMPLEMENTATION.
     DATA(t1) = abap_false.
     me->ignore_private = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1505_d69527909c4c.
   ENDMETHOD.

@@ -53,18 +53,21 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     me->list = t13.
   ENDMETHOD.
+
   METHOD list_keywords.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/combi.ts:958|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_using.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/combi.ts:966|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -131,18 +134,21 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/combi.ts:990|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_str.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/combi.ts:995|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD first.
     DATA t1 TYPE abap_bool.
     DATA t2 TYPE i.
@@ -279,6 +285,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     result = t64.
 
   ENDMETHOD.
+
   METHOD run_one.
     DATA(t1) = CAST zcl_lnt_st_result( i_x ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -296,36 +303,47 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d78_b753e51a71819e.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run.
     result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~railroad.
     result = me->railroad( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~to_str.
     result = me->to_str( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~get_using.
     result = me->get_using( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~list_keywords.
     result = me->list_keywords( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~first.
     result = me->first( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run_one.
     result = me->run_one( i_x = i_x ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

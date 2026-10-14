@@ -18,9 +18,11 @@ CLASS zcl_lnt_istructure_result IMPLEMENTATION.
     DATA(t4) = CAST zcl_lnt_structure_node( t2 ).
     me->node = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d671_886b1b61ddf9.
   ENDMETHOD.

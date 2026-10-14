@@ -28,6 +28,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
     DATA(t6) = ||.
     me->constants = t6.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1350_e594999a8252.
   ENDMETHOD.

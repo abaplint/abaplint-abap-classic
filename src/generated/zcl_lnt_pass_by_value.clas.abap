@@ -11,6 +11,7 @@ CLASS zcl_lnt_pass_by_value IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -77,6 +78,7 @@ CLASS zcl_lnt_pass_by_value IMPLEMENTATION.
     result = t25.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d176_70730c0e7184.
   ENDMETHOD.

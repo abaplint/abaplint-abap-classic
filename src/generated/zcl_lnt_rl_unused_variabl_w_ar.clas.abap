@@ -20,6 +20,7 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD push.
     DATA(t1) = CAST zcl_lnt_typed_identifier( i_id ).
     DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_count ).
@@ -28,6 +29,7 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD remove_if_exists.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -35,18 +37,21 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/unused_variables.ts:56|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD count.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/unused_variables.ts:60|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD build_key.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -54,9 +59,11 @@ CLASS zcl_lnt_rl_unused_variabl_w_ar IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1663_7a2d29020180.
   ENDMETHOD.

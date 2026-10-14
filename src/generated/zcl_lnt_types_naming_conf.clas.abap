@@ -13,6 +13,7 @@ CLASS zcl_lnt_types_naming_conf IMPLEMENTATION.
     DATA(t1) = |^TY_.+$|.
     me->pattern = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1636_0f6d58da4000.
   ENDMETHOD.

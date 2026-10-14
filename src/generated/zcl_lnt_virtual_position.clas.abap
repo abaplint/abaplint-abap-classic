@@ -37,6 +37,7 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
     DATA(t15) = t3.
     me->vcol = t15.
   ENDMETHOD.
+
   METHOD equals.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -44,6 +45,7 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_after.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -51,6 +53,7 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1698_432cfd4f8410.
   ENDMETHOD.

@@ -27,9 +27,11 @@ CLASS zcl_lnt_allwd_objct_nmng_mdl IMPLEMENTATION.
     t1->source = t2.
     zcl_lnt_allwd_objct_nmng_mdl=>name_regex = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1858_0a54ed1e1ca8.
   ENDMETHOD.

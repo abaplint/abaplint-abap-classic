@@ -44,9 +44,11 @@ CLASS zcl_lnt_parsed_data_definition IMPLEMENTATION.
     DATA(t16) = CAST zcl_lnt_expression_node( t8 ).
     me->tree = t16.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1782_0ce5ba7cdd91.
   ENDMETHOD.

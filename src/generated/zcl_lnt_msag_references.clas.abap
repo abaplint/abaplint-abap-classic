@@ -31,6 +31,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     t5 = t8.
     me->filename_index = t5.
   ENDMETHOD.
+
   METHOD add_using.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
@@ -175,6 +176,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     t76 = NEW zcl_lnt_ifilename_and_token( i_filename = t77 i_token = t78 ).
     APPEND t76 TO t69->items.
   ENDMETHOD.
+
   METHOD clear_feba.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -284,6 +286,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
       t51 = abap_true.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD list_by_filename.
     DATA(t1) = i_filename.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -291,6 +294,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_by_message.
     DATA(t1) = i_message_class.
     DATA(t2) = i_number.
@@ -299,24 +303,31 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c.
   ENDMETHOD.
+
   METHOD zif_lnt_msag_references~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_msag_references~clear_feba.
     me->clear_feba( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_msag_references~add_using.
     me->add_using( i_filename = i_filename i_token = i_token i_message_class = i_message_class i_number = i_number ).
   ENDMETHOD.
+
   METHOD zif_lnt_msag_references~list_by_filename.
     result = me->list_by_filename( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_msag_references~list_by_message.
     result = me->list_by_message( i_message_class = i_message_class i_number = i_number ).
   ENDMETHOD.

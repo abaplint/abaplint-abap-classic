@@ -22,9 +22,11 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
     DATA(t6) = t3.
     me->new_name = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1063_f4e3a2ea6cf6.
   ENDMETHOD.

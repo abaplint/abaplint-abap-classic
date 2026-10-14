@@ -44,15 +44,18 @@ CLASS zcl_lnt_syntax_input_module IMPLEMENTATION.
     result = t5.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_4ca00818a657.
     IF zlnt_builtin_init_c7868871a36e = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_c7868871a36e = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1834_0bba4e968f9a.
   ENDMETHOD.

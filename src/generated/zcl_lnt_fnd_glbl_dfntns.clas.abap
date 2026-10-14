@@ -18,6 +18,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -392,6 +393,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       t103 = t177.
     ENDDO.
   ENDMETHOD.
+
   METHOD count_untyped.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -622,6 +624,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     result = t101.
 
   ENDMETHOD.
+
   METHOD count.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -733,6 +736,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     result = t47.
 
   ENDMETHOD.
+
   METHOD update.
     DATA(t1) = CAST zif_lnt_union_291f04b3( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zcl_lnt_abap_file.
@@ -1007,9 +1011,11 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d827_4ef46d4fa79b.
   ENDMETHOD.

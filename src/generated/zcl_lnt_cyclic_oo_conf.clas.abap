@@ -20,6 +20,7 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
     DATA(t3) = abap_true.
     me->skip_testclasses = t3.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1369_63e1fa9eb9e5.
   ENDMETHOD.

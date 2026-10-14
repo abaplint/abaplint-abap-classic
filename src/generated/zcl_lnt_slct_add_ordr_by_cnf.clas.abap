@@ -13,6 +13,7 @@ CLASS zcl_lnt_slct_add_ordr_by_cnf IMPLEMENTATION.
     DATA(t1) = abap_false.
     me->skip_for_all_entries = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1586_6069082c4e27.
   ENDMETHOD.

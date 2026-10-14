@@ -175,15 +175,18 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
     result = t79.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_396bfe70717a.
     IF zlnt_builtin_init_edf7fe70abaa = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_edf7fe70abaa = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1836_06e663fe917f.
   ENDMETHOD.

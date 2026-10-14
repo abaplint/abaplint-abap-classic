@@ -27,6 +27,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA(t3) = ||.
     me->stages = t3.
   ENDMETHOD.
+
   METHOD add_file.
     DATA(t1) = i_filename.
     DATA(t2) = i_raw.
@@ -37,6 +38,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t4 = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t6 ).
     APPEND t4 TO t3->items.
   ENDMETHOD.
+
   METHOD add_dependency.
     DATA(t1) = i_filename.
     DATA(t2) = i_raw.
@@ -47,6 +49,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t4 = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t6 ).
     APPEND t4 TO t3->items.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = i_config.
     DATA t2 TYPE string.
@@ -57,11 +60,13 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD timings.
     DATA(t1) = CONV string( me->stages ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD parse.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
     CONSTANTS range_check_lo_n2gosa7pa2gv TYPE f VALUE '-9007199254740991'.
@@ -350,6 +355,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     result = t143.
 
   ENDMETHOD.
+
   METHOD report_0493.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
     CONSTANTS range_check_lo_n2gosa7pa2gv TYPE f VALUE '-9007199254740991'.
@@ -886,9 +892,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     result = t287.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_1d9717abe6a4=>zlnt_member_d0_5ecc9e9989d6ba.
   ENDMETHOD.

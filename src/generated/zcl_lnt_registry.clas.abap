@@ -129,6 +129,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t37) = NEW zcl_lnt_macro_references( ).
     me->macro_references = t37.
   ENDMETHOD.
+
   METHOD clear_feba.
     DATA t1 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t2 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
@@ -158,26 +159,31 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t15) = NEW zcl_lnt_macro_references( ).
     me->macro_references = t15.
   ENDMETHOD.
+
   METHOD abaplint_version.
     DATA(t1) = |\{\{ VERSION \}\}|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_ddic_references.
     DATA(t1) = CAST zif_lnt_ddic_references( me->ddic_references ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_msag_references.
     DATA(t1) = CAST zif_lnt_msag_references( me->msag_references ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_macro_references.
     DATA(t1) = CAST zif_lnt_macro_references( me->macro_references ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_objects.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -215,6 +221,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t19.
 
   ENDMETHOD.
+
   METHOD get_objects_by_type.
     DATA(t1) = i_type_9913.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -259,12 +266,14 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t21.
 
   ENDMETHOD.
+
   METHOD get_files.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/registry.ts:136|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_first_object.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CAST zlnt_runtime_map__6ec5bb307efb( me->objects ).
@@ -311,6 +320,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t21.
 
   ENDMETHOD.
+
   METHOD get_object_count.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -437,6 +447,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t50.
 
   ENDMETHOD.
+
   METHOD get_file_by_name.
     DATA(t1) = i_filename.
     DATA(t2) = VALUE string( ).
@@ -502,6 +513,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t23.
 
   ENDMETHOD.
+
   METHOD get_object.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_type_9913 ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -587,11 +599,13 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t35.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zif_lnt_configuration( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zif_lnt_configuration( i_conf ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
@@ -620,6 +634,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t12.
 
   ENDMETHOD.
+
   METHOD in_error_namespace.
     DATA(t1) = i_name.
     DATA t2 TYPE abap_bool.
@@ -629,6 +644,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD add_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA t2 TYPE REF TO zif_lnt_registry.
@@ -651,6 +667,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD update_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -658,6 +675,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD remove_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -665,6 +683,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD add_files_ccee.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_files ).
     DATA(t2) = i_dependency.
@@ -988,6 +1007,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t129.
 
   ENDMETHOD.
+
   METHOD check_duplicate_filename.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_files ).
@@ -1058,6 +1078,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD filename_basename.
     DATA(t1) = i_filename.
     DATA t2 TYPE string.
@@ -1149,6 +1170,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t21.
 
   ENDMETHOD.
+
   METHOD add_files_179c.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_files ).
     DATA t2 TYPE REF TO zif_lnt_registry.
@@ -1159,6 +1181,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t5.
 
   ENDMETHOD.
+
   METHOD add_dependencies.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_files ).
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -1176,6 +1199,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t7.
 
   ENDMETHOD.
+
   METHOD add_dependency.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1315,6 +1339,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t63.
 
   ENDMETHOD.
+
   METHOD remove_dependency.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1361,6 +1386,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     ENDIF.
     me->remove_object( i_remove = t17 ).
   ENDMETHOD.
+
   METHOD is_dependency.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1429,6 +1455,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_file_dependency.
     DATA(t1) = i_filename.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1436,6 +1463,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_object_for_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1443,6 +1471,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_issues.
     DATA(t1) = CAST zcl_lnt_irun_input( i_input_967e ).
     DATA t2 TYPE abap_bool.
@@ -1462,6 +1491,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t6.
 
   ENDMETHOD.
+
   METHOD find_issues_object.
     DATA(t1) = CAST zif_lnt_object( i_iobj ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1469,6 +1499,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD prs_instn_src_rgstry_ts_rgstry.
     DATA t1 TYPE abap_bool.
     DATA(t2) = CONV abap_bool( me->is_dirty( ) ).
@@ -1553,6 +1584,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t37.
 
   ENDMETHOD.
+
   METHOD parse_async.
     DATA(t1) = CAST zcl_lnt_irun_input( i_input_967e ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1560,6 +1592,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD parse_private.
     DATA(t1) = CAST zif_lnt_object( i_input_967e ).
     DATA t2 TYPE REF TO zif_lnt_configuration.
@@ -1611,6 +1644,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t23) = CAST zcl_lnt_iparse_result( t4 ).
     zcl_lnt_parsing_performance=>push( i_obj_1ed0 = t22 i_result = t23 ).
   ENDMETHOD.
+
   METHOD is_dirty.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t2 TYPE REF TO zif_lnt_object.
@@ -1638,6 +1672,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD find_or_create.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_type_9913 ).
@@ -1792,6 +1827,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         RETURN.
     ENDTRY.
   ENDMETHOD.
+
   METHOD remove_object.
     DATA(t1) = CAST zif_lnt_object( i_remove ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1994,6 +2030,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t79 = t86.
     ENDIF.
   ENDMETHOD.
+
   METHOD find_8f95.
     DATA(t1) = i_name.
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_type_9913 ).
@@ -2133,11 +2170,13 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t39->payload = t40.
     RAISE EXCEPTION t39.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_registry( me->prs_instn_src_rgstry_ts_rgstry( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD add_files_one.
     DATA(t1) = CAST zif_lnt_file( i_x ).
     DATA t2 TYPE REF TO zif_lnt_registry.
@@ -2155,99 +2194,131 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1279_924aec42bf4a.
   ENDMETHOD.
+
   METHOD zif_lnt_registry~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~parse.
     result = me->parse( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~parse_async.
     result = me->parse_async( i_input_967e = i_input_967e ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~clear_feba.
     me->clear_feba( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~add_dependencies.
     result = me->add_dependencies( i_files = i_files ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~add_dependency.
     result = me->add_dependency( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~remove_dependency.
     me->remove_dependency( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~is_dependency.
     result = me->is_dependency( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~is_file_dependency.
     result = me->is_file_dependency( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~find_issues.
     result = me->find_issues( i_input_967e = i_input_967e ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~find_issues_object.
     result = me->find_issues_object( i_iobj = i_iobj ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~in_error_namespace.
     result = me->in_error_namespace( i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_ddic_references.
     result = me->get_ddic_references( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_msag_references.
     result = me->get_msag_references( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_macro_references.
     result = me->get_macro_references( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_config.
     result = me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~set_config.
     result = me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_objects.
     result = me->get_objects( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_objects_by_type.
     result = me->get_objects_by_type( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_object_count.
     result = me->get_object_count( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_first_object.
     result = me->get_first_object( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_object.
     result = me->get_object( i_type_9913 = i_type_9913 i_name = i_name ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~find_object_for_file.
     result = me->find_object_for_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~add_file.
     result = me->add_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~update_file.
     result = me->update_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~remove_file.
     result = me->remove_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~add_files_179c.
     result = me->add_files_179c( i_files = i_files ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_file_by_name.
     result = me->get_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~get_files.
     result = me->get_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_registry~add_files_one.
     result = me->add_files_one( i_x = i_x ).
   ENDMETHOD.

@@ -24,6 +24,7 @@ CLASS zcl_lnt_naming_rule_config IMPLEMENTATION.
     CREATE OBJECT t4.
     me->ignore_patterns = t4.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1285_cc77f2cfa3e2.
   ENDMETHOD.

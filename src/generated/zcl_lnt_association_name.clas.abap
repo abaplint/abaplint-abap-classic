@@ -14,6 +14,7 @@ CLASS zcl_lnt_association_name IMPLEMENTATION.
     DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d13_724b547adff3ae.
   ENDMETHOD.

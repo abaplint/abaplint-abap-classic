@@ -36,6 +36,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD version_to_abap_release.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
@@ -102,6 +103,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     result = t23.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_839fc4c13920.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -5900,9 +5902,11 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t2050 = t2051.
     zcl_lnt_version_module=>default_release = t2050.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1840_c5a031a722fc.
   ENDMETHOD.

@@ -17,12 +17,14 @@ CLASS zlnt_runtime_set__1827558fd4c7 IMPLEMENTATION.
   METHOD size.
     result = lines( entries ).
   ENDMETHOD.
+
   METHOD has.
     READ TABLE entries WITH KEY k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD add.
     READ TABLE entries WITH KEY k = p0 ASSIGNING FIELD-SYMBOL(<row>).
     IF sy-subrc = 0.
@@ -32,6 +34,7 @@ CLASS zlnt_runtime_set__1827558fd4c7 IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
+
   METHOD fromarray.
     DATA row TYPE string.
     DATA ignored TYPE REF TO zlnt_runtime_set__1827558fd4c7.
@@ -40,10 +43,12 @@ CLASS zlnt_runtime_set__1827558fd4c7 IMPLEMENTATION.
     ENDLOOP.
     result = me.
   ENDMETHOD.
+
   METHOD copy.
     CREATE OBJECT result.
     APPEND LINES OF p0->entries TO result->entries.
   ENDMETHOD.
+
   METHOD delete.
     READ TABLE entries WITH KEY k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
@@ -51,6 +56,7 @@ CLASS zlnt_runtime_set__1827558fd4c7 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD values.
     result = NEW #( ).
     LOOP AT entries INTO DATA(row).

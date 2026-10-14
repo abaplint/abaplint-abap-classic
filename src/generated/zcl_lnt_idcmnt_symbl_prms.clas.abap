@@ -14,9 +14,11 @@ CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_shape_9e00b1e6( t1 ).
     me->text_document = t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1065_c808f34fb6c6.
   ENDMETHOD.

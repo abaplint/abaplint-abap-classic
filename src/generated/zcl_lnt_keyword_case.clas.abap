@@ -24,6 +24,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_keyword_case_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -108,11 +109,13 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_ky_cs_ts_kyw_cs.
     DATA(t1) = CAST zcl_lnt_keyword_case_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_ky_cs_ts_kyw_cs.
     DATA(t1) = CAST zcl_lnt_keyword_case_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -120,6 +123,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD rn_pr_in_sr_rl_ky_cs_ts_kyw_cs.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
@@ -128,6 +132,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD build.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA(t2) = CAST zif_lnt_file( i_file ).
@@ -136,6 +141,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_s ).
     DATA(t2) = CAST zif_lnt_statement( i_parent ).
@@ -144,6 +150,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD violates_rule.
     DATA(t1) = i_keyword.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -151,16 +158,19 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_keyword_case_conf( me->gt_cn_in_sr_rl_ky_cs_ts_kyw_cs( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_keyword_case_conf( me->gt_cn_in_sr_rl_ky_cs_ts_kyw_cs( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_keyword_case_conf.
     CLEAR t1.
@@ -171,11 +181,13 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
     me->st_cn_in_sr_rl_ky_cs_ts_kyw_cs( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_ky_cs_ts_kyw_cs( i_file = i_file i_obj_1ed0 = i_obj_1ed0 ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1458_239f1ac51b63.
   ENDMETHOD.

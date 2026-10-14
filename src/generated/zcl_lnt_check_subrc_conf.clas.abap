@@ -43,6 +43,7 @@ CLASS zcl_lnt_check_subrc_conf IMPLEMENTATION.
     DATA(t11) = abap_true.
     me->find_8f95 = t11.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1342_0dfa84a8b679.
   ENDMETHOD.

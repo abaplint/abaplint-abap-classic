@@ -15,30 +15,39 @@ CLASS zcl_lnt_lx_string_template IMPLEMENTATION.
     DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d37_5abd7e1c3cabc9.
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~debug_description.
     result = me->debug_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_col.
     result = me->get_col( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_row.
     result = me->get_row( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_str.
     result = me->get_str( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_a14e6efb~get_upper_str.
     result = me->get_upper_str( ).
   ENDMETHOD.

@@ -24,6 +24,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_unreachable_code_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -98,17 +99,20 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/unreachable_code.ts:28|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_un_cd_ts_unr_cd.
     DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_un_cd_ts_unr_cd.
     DATA(t1) = CAST zcl_lnt_unreachable_code_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -116,6 +120,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD rn_pr_in_sr_rl_un_cd_ts_unr_cd.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -123,6 +128,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_exit.
     DATA(t1) = CAST zcl_lnt_statement_node( i_n_0c97 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -130,6 +136,7 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_structure.
     DATA(t1) = CAST zif_lnt_statement( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -137,16 +144,19 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_unreachable_code_conf.
     CLEAR t1.
@@ -157,11 +167,13 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     me->st_cn_in_sr_rl_un_cd_ts_unr_cd( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_un_cd_ts_unr_cd( i_file = i_file ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1649_806fe62f03fa.
   ENDMETHOD.

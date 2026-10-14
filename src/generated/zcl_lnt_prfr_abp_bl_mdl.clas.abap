@@ -40,9 +40,11 @@ CLASS zcl_lnt_prfr_abp_bl_mdl IMPLEMENTATION.
     DATA(t15) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
     zcl_lnt_prfr_abp_bl_mdl=>forbidden_types = t15.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1862_a9e996d8ce46.
   ENDMETHOD.

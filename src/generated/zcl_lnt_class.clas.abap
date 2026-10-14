@@ -36,11 +36,13 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     CLEAR t4.
     me->parsed_xml = t4.
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |CLAS|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1.
@@ -411,22 +413,26 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_definition.
     DATA(t1) = CAST zif_lnt_class_definition( i_def ).
     DATA(t2) = CAST zif_lnt_class_definition( t1 ).
     me->def = t2.
   ENDMETHOD.
+
   METHOD gt_dfn_ins_src_obj_cls_ts_clss.
     DATA(t1) = CAST zif_lnt_class_definition( me->def ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/class.ts:41|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA t1 TYPE REF TO zif_lnt_class_definition.
     CLEAR t1.
@@ -436,6 +442,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     me->parsed_xml = t2.
     super->set_dirty( ).
   ENDMETHOD.
+
   METHOD get_class_definition.
     DATA t1 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t1.
@@ -503,6 +510,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_identifier.
     DATA t1 TYPE REF TO zcl_lnt_fi_identifier.
     CLEAR t1.
@@ -595,6 +603,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_description.
     me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -625,12 +634,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_name_from_xml.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/class.ts:69|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_category.
     me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -661,18 +672,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_locals_imp_file.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/class.ts:80|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_testclass_file.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/class.ts:89|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD parse_xml.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_shape_e272b380.
@@ -1113,6 +1127,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     t143 = t149.
     t141->name = t143.
   ENDMETHOD.
+
   METHOD get_definition.
     DATA(t1) = CAST zif_lnt_class_definition( me->gt_dfn_ins_src_obj_cls_ts_clss( ) ).
     DATA t2 TYPE REF TO object.
@@ -1122,90 +1137,119 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1126_5825bd45ea27.
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~add_file.
     me->add_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~contains_file.
     result = me->contains_file( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~debug_description.
     result = me->debug_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_abap_file_by_name.
     result = me->get_abap_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_abap_files.
     result = me->get_abap_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_allowed_naming.
     result = me->get_allowed_naming( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_definition.
     result = me->get_definition( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_description.
     result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_files.
     result = me->get_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_identifier.
     result = me->get_identifier( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_main_abap_file.
     result = me->get_main_abap_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_name_from_xml.
     result = me->get_name_from_xml( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_parsing_issues.
     result = me->get_parsing_issues( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_sequenced_files.
     result = me->get_sequenced_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_elements.
     result = me->get_text_elements( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_elements_translations.
     result = me->get_text_elements_translations( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_symbols.
     result = me->get_text_symbols( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_type.
     result = me->get_type( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_xml.
     result = me->get_xml( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_xml_file.
     result = me->get_xml_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~is_dirty.
     result = me->is_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~parse.
     result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~remove_file.
     me->remove_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~set_definition.
     me->set_definition( i_def = i_def ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~set_dirty.
     me->set_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~update_file.
     me->update_file( i_file = i_file ).
   ENDMETHOD.

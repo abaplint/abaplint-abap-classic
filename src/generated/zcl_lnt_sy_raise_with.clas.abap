@@ -60,9 +60,11 @@ CLASS zcl_lnt_sy_raise_with IMPLEMENTATION.
       t16 = zcl_lnt_sy_source=>run_syntax( i_node = t17 i_input_967e = t21 i_target_type = t22 i_write_reference = t23 i_allow_generic_deference = t24 i_read_reference = t25 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d806_031c0d786620.
   ENDMETHOD.

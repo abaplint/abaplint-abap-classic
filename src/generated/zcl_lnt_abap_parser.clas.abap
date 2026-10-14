@@ -207,6 +207,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       me->reg = t73.
     ENDIF.
   ENDMETHOD.
+
   METHOD is_release.
     DATA(t1) = CAST zif_lnt_union_0eeefcfe( i_o ).
     DATA t2 TYPE abap_bool.
@@ -215,6 +216,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD parse.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
     CONSTANTS range_check_lo_n2gosa7pa2gv TYPE f VALUE '-9007199254740991'.
@@ -591,9 +593,11 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     result = t170.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d979_1a91b28d9760.
   ENDMETHOD.

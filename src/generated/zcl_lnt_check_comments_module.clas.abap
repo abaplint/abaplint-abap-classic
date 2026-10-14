@@ -51,9 +51,11 @@ CLASS zcl_lnt_check_comments_module IMPLEMENTATION.
     t10->nval = t11.
     t7 = t8->set( p0 = t9 p1 = t10 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1880_9fa43a2872c1.
   ENDMETHOD.

@@ -25,6 +25,7 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
     DATA(t4) = CONV int8( 0 ).
     zcl_lnt_parsing_performance=>structure = t4.
   ENDMETHOD.
+
   METHOD push.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -194,6 +195,7 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
     t74 = NEW zcl_lnt_shape_c89a2931( i_runtime = t75 i_name = t77 i_extra = t86 ).
     APPEND t74 TO t73->items.
   ENDMETHOD.
+
   METHOD output.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -390,9 +392,11 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
     t89->source_location = t90.
     RAISE EXCEPTION t89.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1278_c726b07de0d1.
   ENDMETHOD.

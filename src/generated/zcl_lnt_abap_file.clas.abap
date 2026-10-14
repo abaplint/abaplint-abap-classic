@@ -41,28 +41,33 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
     DATA(t12) = CAST zif_lnt_abap_file_information( t5 ).
     me->info = t12.
   ENDMETHOD.
+
   METHOD get_raw.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/abap_file.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_raw_rows.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/abap_file.ts:34|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_info.
     DATA(t1) = CAST zif_lnt_abap_file_information( me->info ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_structure.
     DATA(t1) = CAST zcl_lnt_structure_node( me->structure ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_tokens.
     DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_with_pragmas ).
     DATA(t2) = VALUE abap_bool( ).
@@ -159,26 +164,33 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD get_statements.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d976_a184b6551780.
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file~get_info.
     result = me->get_info( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file~get_structure.
     result = me->get_structure( ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file~get_tokens.
     result = me->get_tokens( i_with_pragmas = i_with_pragmas ).
   ENDMETHOD.
+
   METHOD zif_lnt_abap_file~get_statements.
     result = me->get_statements( ).
   ENDMETHOD.

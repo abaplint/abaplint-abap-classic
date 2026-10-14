@@ -10,6 +10,7 @@ CLASS zcl_lnt_if_in_if_conf IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1435_3688d963333c.
   ENDMETHOD.

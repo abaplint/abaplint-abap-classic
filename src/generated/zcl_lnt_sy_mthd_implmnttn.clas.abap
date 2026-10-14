@@ -1189,15 +1189,19 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       t497->add_reference( i_usage = t499 i_referencing = t503 i_type_9913 = t509 i_filename = t511 i_extra = t513 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d907_4d9e0f7de691.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

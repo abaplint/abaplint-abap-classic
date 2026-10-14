@@ -83,15 +83,18 @@ CLASS zcl_lnt_artifacts_objects IMPLEMENTATION.
     t33->source_location = t34.
     RAISE EXCEPTION t33.
   ENDMETHOD.
+
   METHOD build_object_map.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/artifacts_objects.ts:20|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1045_53bb9238e4eb.
   ENDMETHOD.

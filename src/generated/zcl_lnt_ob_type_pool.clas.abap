@@ -16,11 +16,13 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
     DATA(t2) = t1.
     super->constructor( i_name = t2 ).
   ENDMETHOD.
+
   METHOD get_type.
     DATA(t1) = |TYPE|.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
     DATA(t2) = CAST zcl_lnt_abap_file( me->get_main_abap_file( ) ).
@@ -60,12 +62,14 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/objects/type_pool.ts:18|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
@@ -274,6 +278,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1263_41918f34a737.
   ENDMETHOD.

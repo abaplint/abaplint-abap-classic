@@ -24,6 +24,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     DATA(t4) = t2.
     me->filename = t4.
   ENDMETHOD.
+
   METHOD get_name.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
@@ -91,6 +92,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     result = t24.
 
   ENDMETHOD.
+
   METHOD equals.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
     DATA t2 TYPE abap_bool.
@@ -137,16 +139,19 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD get_token.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_filename.
     DATA(t1) = CONV string( me->filename ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_start.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA t2 TYPE REF TO zcl_lnt_abstract_token.
@@ -159,6 +164,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_end.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -207,9 +213,11 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d743_6e9adab31a90.
   ENDMETHOD.

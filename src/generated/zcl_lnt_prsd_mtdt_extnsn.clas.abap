@@ -14,9 +14,11 @@ CLASS zcl_lnt_prsd_mtdt_extnsn IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_expression_node( t1 ).
     me->tree = t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1778_b2d3aee25f3a.
   ENDMETHOD.

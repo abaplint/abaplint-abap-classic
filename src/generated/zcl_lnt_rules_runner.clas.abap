@@ -20,6 +20,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA(t3) = NEW zcl_lnt_syntax_performance( ).
     me->syntax_performance = t3.
   ENDMETHOD.
+
   METHOD objects_to_check.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_objects ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -62,6 +63,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     result = t19.
 
   ENDMETHOD.
+
   METHOD run_rules.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
     CONSTANTS range_check_lo_n2gosa7pa2gv TYPE f VALUE '-9007199254740991'.
@@ -1117,6 +1119,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     result = t440.
 
   ENDMETHOD.
+
   METHOD exclude_issues.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1410,9 +1413,11 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     result = t141.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1684_77b131f7340c.
   ENDMETHOD.

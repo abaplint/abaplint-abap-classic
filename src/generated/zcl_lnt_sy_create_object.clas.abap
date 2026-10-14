@@ -2525,6 +2525,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
     DATA(t1064) = CAST zcl_lnt_syntax_input( t2 ).
     me->validate_parameters( i_cdef = t1062 i_node = t1063 i_input_967e = t1064 ).
   ENDMETHOD.
+
   METHOD check_instantiation_allowed.
     DATA(t1) = CAST zif_lnt_class_definition( i_cdef ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -3153,6 +3154,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
     result = t232.
 
   ENDMETHOD.
+
   METHOD validate_parameters.
     DATA(t1) = CAST zif_lnt_class_definition( i_cdef ).
     DATA(t2) = CAST zcl_lnt_statement_node( i_node ).
@@ -4016,15 +4018,19 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
       RETURN.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d863_b79207361101.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
     me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.

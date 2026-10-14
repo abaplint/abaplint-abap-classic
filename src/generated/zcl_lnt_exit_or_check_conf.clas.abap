@@ -16,6 +16,7 @@ CLASS zcl_lnt_exit_or_check_conf IMPLEMENTATION.
     DATA(t2) = abap_false.
     me->allow_check = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1398_278430c85320.
   ENDMETHOD.

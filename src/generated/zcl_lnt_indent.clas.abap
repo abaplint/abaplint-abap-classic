@@ -46,6 +46,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     t3 = t6.
     me->options = t3.
   ENDMETHOD.
+
   METHOD execute.
     DATA(t1) = CAST zcl_lnt_abap_file( i_original ).
     DATA(t2) = i_modified.
@@ -54,6 +55,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD get_expected_indents.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -61,6 +63,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD skip_indent_for_global_class.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -68,9 +71,11 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1275_494180b4d1bd.
   ENDMETHOD.

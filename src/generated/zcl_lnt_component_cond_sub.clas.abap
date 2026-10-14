@@ -11,6 +11,7 @@ CLASS zcl_lnt_component_cond_sub IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -128,6 +129,7 @@ CLASS zcl_lnt_component_cond_sub IMPLEMENTATION.
     result = t43.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d130_b1d921bbb09b.
   ENDMETHOD.

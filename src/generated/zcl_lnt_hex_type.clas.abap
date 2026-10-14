@@ -73,45 +73,53 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     DATA(t23) = t1.
     me->length = t23.
   ENDMETHOD.
+
   METHOD get_length.
     DATA(t1) = CONV int8( me->length ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/hex_type.ts:18|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/hex_type.ts:22|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_generic.
     DATA(t1) = abap_false.
     result = t1.
 
   ENDMETHOD.
+
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/hex_type.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_cds.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/hex_type.ts:34|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1009_5c49db3a1727.
   ENDMETHOD.

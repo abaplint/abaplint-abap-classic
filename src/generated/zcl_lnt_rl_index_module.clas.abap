@@ -4311,9 +4311,11 @@ CLASS zcl_lnt_rl_index_module IMPLEMENTATION.
     DATA(t1561) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1514_3527bfefa2fa ).
     t1558 = t1559->set( p0 = t1560 p1 = t1561 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1707_412c5ce4c68d.
   ENDMETHOD.

@@ -48,9 +48,11 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
     DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
     me->sql_conversion = t18.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d757_84a97e15978e.
   ENDMETHOD.

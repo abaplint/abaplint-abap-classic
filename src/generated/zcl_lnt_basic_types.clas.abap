@@ -37,6 +37,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_syntax_input( t1 ).
     me->input_2fd0 = t2.
   ENDMETHOD.
+
   METHOD lookup_qualified_name.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -44,6 +45,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD resolve_like_name.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_header_logic ).
@@ -1701,6 +1703,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t710.
 
   ENDMETHOD.
+
   METHOD clone_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
@@ -2037,6 +2040,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t127.
 
   ENDMETHOD.
+
   METHOD resolve_type_name.
     DATA(t1) = CAST zcl_lnt_expression_node( i_type_name ).
     DATA(t2) = CAST zlnt_runtime_opti_4a236cd5714d( i_length ).
@@ -3940,6 +3944,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t753.
 
   ENDMETHOD.
+
   METHOD simple_type.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name_prefix ).
@@ -4407,6 +4412,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t196.
 
   ENDMETHOD.
+
   METHOD parse_table.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -6383,6 +6389,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t790.
 
   ENDMETHOD.
+
   METHOD rap_table_for.
     DATA(t1) = i_entity_name.
     DATA(t2) = CAST zcl_lnt_itable_options( i_options ).
@@ -6391,6 +6398,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD parse_type.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
@@ -9087,6 +9095,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t1094.
 
   ENDMETHOD.
+
   METHOD is_occurs.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA t2 TYPE abap_bool.
@@ -9141,6 +9150,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t22.
 
   ENDMETHOD.
+
   METHOD get_rap_base_entity_name.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -9148,6 +9158,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD resolve_rap_alias.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -9155,6 +9166,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_rap_derived_entity_name.
     DATA(t1) = i_name.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -9162,6 +9174,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_rap_table_for.
     DATA(t1) = i_text.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -9169,6 +9182,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_rap_type_structure.
     DATA(t1) = i_text.
     DATA(t2) = VALUE abap_bool( ).
@@ -9235,6 +9249,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD resolve_type_chain.
     DATA(t1) = CAST zcl_lnt_expression_node( i_expr ).
     DATA(t2) = VALUE string( ).
@@ -13250,6 +13265,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t1622.
 
   ENDMETHOD.
+
   METHOD resolve_constant_value.
     DATA(t1) = CAST zcl_lnt_expression_node( i_expr ).
     DATA(t2) = VALUE abap_bool( ).
@@ -15272,6 +15288,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD resolve_type_ref.
     DATA(t1) = CAST zcl_lnt_expression_node( i_chain_8ed6 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -15814,6 +15831,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t213.
 
   ENDMETHOD.
+
   METHOD find_value.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
@@ -16156,6 +16174,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t149->payload = t150.
     RAISE EXCEPTION t149.
   ENDMETHOD.
+
   METHOD find_decimals.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -16344,6 +16363,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t58.
 
   ENDMETHOD.
+
   METHOD find_length.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
@@ -16599,6 +16619,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     t103->payload = t104.
     RAISE EXCEPTION t103.
   ENDMETHOD.
+
   METHOD parse_int.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_text ).
     DATA(t2) = VALUE abap_bool( ).
@@ -16891,9 +16912,11 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     result = t56.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d760_1bcc540229eb.
   ENDMETHOD.

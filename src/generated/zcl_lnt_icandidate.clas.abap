@@ -14,9 +14,11 @@ CLASS zcl_lnt_icandidate IMPLEMENTATION.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     me->parameters = t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1294_b452fd8f8d48.
   ENDMETHOD.

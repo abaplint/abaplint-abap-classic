@@ -29,6 +29,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_k_sn_pr_cl_on_on_ln_cn( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -120,11 +121,13 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_r_k_s_p_o_o_l_t_k_s_p.
     DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_k_s_p_o_o_l_t_k_s_p.
     DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -132,6 +135,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -140,6 +144,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD contains_field_assigments.
     DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -147,6 +152,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD cntns_nw_ln_tbl_exprssn.
     DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -154,6 +160,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD contains_new_line_value.
     DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -161,6 +168,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD contains_new_line_template.
     DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -168,6 +176,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_bf6e.
     DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -176,6 +185,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD calc_statement_length.
     DATA(t1) = CAST zcl_lnt_statement_node( i_c ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -183,6 +193,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_multi_line.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_c ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -190,6 +201,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_without_parameters.
     DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -197,6 +209,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_single_parameter.
     DATA(t1) = CAST zcl_lnt_expression_node( i_c ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -204,16 +217,19 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_k_sn_pr_cl_on_on_ln_cn.
     CLEAR t1.
@@ -224,6 +240,7 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     me->s_c_i_s_r_k_s_p_o_o_l_t_k_s_p( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1455_987f0c761507.
   ENDMETHOD.

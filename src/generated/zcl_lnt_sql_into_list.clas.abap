@@ -11,6 +11,7 @@ CLASS zcl_lnt_sql_into_list IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -248,6 +249,7 @@ CLASS zcl_lnt_sql_into_list IMPLEMENTATION.
     result = t72.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d251_f36ca3dcb3e0.
   ENDMETHOD.

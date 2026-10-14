@@ -20,9 +20,11 @@ CLASS zcl_lnt_shape_c1d59dc9 IMPLEMENTATION.
     t4 = t5.
     me->params = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1814_b65c88acda4d.
   ENDMETHOD.

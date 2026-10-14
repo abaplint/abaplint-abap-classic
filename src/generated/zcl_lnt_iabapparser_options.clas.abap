@@ -28,12 +28,15 @@ CLASS zcl_lnt_iabapparser_options IMPLEMENTATION.
     DATA(t8) = CAST zif_lnt_registry( t4 ).
     me->reg = t8.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d978_d81202f950dd.
   ENDMETHOD.
+
   METHOD zif_lnt_union_0eeefcfe~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

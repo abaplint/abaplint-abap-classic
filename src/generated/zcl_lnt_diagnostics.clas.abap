@@ -18,6 +18,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD find_issues.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -25,6 +26,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD map_diagnostic.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -295,6 +297,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     result = t120.
 
   ENDMETHOD.
+
   METHOD find_8f95.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -302,6 +305,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD map_severity.
     DATA(t1) = i_severity.
     DATA t2 TYPE abap_bool.
@@ -338,9 +342,11 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1070_7e4a353d0401.
   ENDMETHOD.

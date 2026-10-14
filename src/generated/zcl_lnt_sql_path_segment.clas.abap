@@ -41,12 +41,14 @@ CLASS zcl_lnt_sql_path_segment IMPLEMENTATION.
     t9 = t10->value.
     me->nws = t9.
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/2_statements/expressions/sql_path_segment.ts:18|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d326_f861243d7542.
   ENDMETHOD.

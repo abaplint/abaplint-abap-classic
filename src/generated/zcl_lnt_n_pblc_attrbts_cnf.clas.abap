@@ -16,6 +16,7 @@ CLASS zcl_lnt_n_pblc_attrbts_cnf IMPLEMENTATION.
     DATA(t2) = abap_false.
     me->ignore_test_classes = t2.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1525_7fef5c971c7c.
   ENDMETHOD.

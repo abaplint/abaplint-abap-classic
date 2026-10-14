@@ -125,6 +125,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD at_row.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -234,6 +235,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t38.
 
   ENDMETHOD.
+
   METHOD at_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -327,6 +329,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t8.
 
   ENDMETHOD.
+
   METHOD at_position.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -440,6 +443,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t41.
 
   ENDMETHOD.
+
   METHOD at_row_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = i_row.
@@ -517,6 +521,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t30.
 
   ENDMETHOD.
+
   METHOD at_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA(t2) = CAST zcl_lnt_position( i_start ).
@@ -581,6 +586,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t22.
 
   ENDMETHOD.
+
   METHOD at_token.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -696,6 +702,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t20.
 
   ENDMETHOD.
+
   METHOD at_token_filename.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -809,6 +816,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t20.
 
   ENDMETHOD.
+
   METHOD at_identifier.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -943,12 +951,14 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t19.
 
   ENDMETHOD.
+
   METHOD get_data.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/issue.ts:154|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_message.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -956,6 +966,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_key.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -963,6 +974,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_start.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -970,6 +982,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_end.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -977,6 +990,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_filename.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -984,18 +998,21 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_default_fix.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/issue.ts:178|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_alternative_fixes.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/issue.ts:182|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_severity.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
@@ -1003,12 +1020,15 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1061_f55ce9cf1de0.
   ENDMETHOD.
+
   METHOD zif_lnt_union_eff0d09a~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -368,6 +368,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     ENDIF.
     me->check_version( ).
   ENDMETHOD.
+
   METHOD get_default.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_ver ).
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_lang_ver ).
@@ -1021,6 +1022,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     t262->source_location = t263.
     RAISE EXCEPTION t262.
   ENDMETHOD.
+
   METHOD get_enabled_rules.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1180,11 +1182,13 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t59.
 
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = CAST zcl_lnt_iconfig( me->config ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD read_by_key.
     DATA(t1) = i_rule.
     DATA(t2) = i_key.
@@ -1243,6 +1247,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD read_by_rule.
     DATA(t1) = i_rule.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1250,6 +1255,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_global.
     DATA t1 TYPE REF TO zcl_lnt_iglobal_config.
     DATA(t2) = CAST zcl_lnt_iconfig( me->config ).
@@ -1257,6 +1263,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_syntax_setttings.
     DATA t1 TYPE REF TO zcl_lnt_isyntax_settings.
     DATA(t2) = CAST zcl_lnt_iconfig( me->config ).
@@ -1264,6 +1271,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_release.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -1400,6 +1408,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t49.
 
   ENDMETHOD.
+
   METHOD is_open_abap.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_abap_release.
@@ -1567,12 +1576,14 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_version.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/config.ts:169|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_language_version.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -1646,6 +1657,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = t29.
 
   ENDMETHOD.
+
   METHOD check_version.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -1841,42 +1853,55 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       t53->version = t55.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1050_37307363eb17.
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_enabled_rules.
     result = me->get_enabled_rules( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_db65.
     result = me->get_db65( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_global.
     result = me->get_global( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_version.
     result = me->get_version( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_release.
     result = me->get_release( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_language_version.
     result = me->get_language_version( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~is_open_abap.
     result = me->is_open_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~get_syntax_setttings.
     result = me->get_syntax_setttings( ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~read_by_rule.
     result = me->read_by_rule( i_rule = i_rule ).
   ENDMETHOD.
+
   METHOD zif_lnt_configuration~read_by_key.
     result = me->read_by_key( i_rule = i_rule i_key = i_key ).
   ENDMETHOD.

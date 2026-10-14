@@ -22,6 +22,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
     CLEAR t1.
     me->required_parameters = t1.
   ENDMETHOD.
+
   METHOD run_syntax.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -681,6 +682,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
     DATA(t246) = CAST zcl_lnt_syntax_input( t2 ).
     me->report_errors( i_node = t245 i_input_967e = t246 ).
   ENDMETHOD.
+
   METHOD check_receiving.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -941,6 +943,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD check_importing.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -1343,6 +1346,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_changing.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -1748,6 +1752,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       t174 = t177.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD check_exporting.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2235,6 +2240,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       me->report_errors( i_node = t215 i_input_967e = t216 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD report_errors.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2312,6 +2318,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       APPEND t32 TO t30->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD parameter_list_s.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2964,6 +2971,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
     result = t279.
 
   ENDMETHOD.
+
   METHOD parameter_list_t.
     DATA(t1) = CAST zif_lnt_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -3360,9 +3368,11 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
     result = t168.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d803_3fbd8bf96170.
   ENDMETHOD.

@@ -18,9 +18,11 @@ CLASS zcl_lnt_mrkd_strng_wth_lngg IMPLEMENTATION.
     DATA(t4) = t2.
     me->value = t4.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_a63becc74831=>zlnt_member_d0_5ecc9e9989d6ba.
   ENDMETHOD.

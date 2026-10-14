@@ -1229,6 +1229,7 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
     result = t380.
 
   ENDMETHOD.
+
   METHOD build_select_core.
     DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_allow_into ).
     DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( i_allow_order_by ).
@@ -3824,15 +3825,18 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
     result = t836.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_6677a9ff777e.
     IF zlnt_builtin_init_f39435c81d86 = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_f39435c81d86 = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1832_83146e1936f9.
   ENDMETHOD.

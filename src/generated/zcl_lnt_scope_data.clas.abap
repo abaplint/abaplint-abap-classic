@@ -57,14 +57,17 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
     t1 = NEW zcl_lnt_iscope_data( i_vars = t2 i_types = t6 i_extra_like_types = t10 i_deferred = t14 i_cdefs = t18 i_idefs = t22 i_forms = t26 i_references = t27 i_sql_conversion = t28 ).
     me->data_56cc = t1.
   ENDMETHOD.
+
   METHOD get_data.
     DATA(t1) = CAST zcl_lnt_iscope_data( me->data_56cc ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d828_62bdea10e279.
   ENDMETHOD.

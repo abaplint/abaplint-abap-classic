@@ -36,6 +36,7 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     t2 = t3.
     me->minimum_version = t2.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -134,17 +135,20 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/call_transaction_authority_check.ts:32|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD g_c_i_s_r_c_t_a_c_t_c_tr_at_ch.
     DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_c_t_a_c_t_c_tr_at_ch.
     DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -152,6 +156,7 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -160,16 +165,19 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_cll_trns_athr_chck_cnf.
     CLEAR t1.
@@ -180,6 +188,7 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     me->s_c_i_s_r_c_t_a_c_t_c_tr_at_ch( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1313_e0941813f606.
   ENDMETHOD.

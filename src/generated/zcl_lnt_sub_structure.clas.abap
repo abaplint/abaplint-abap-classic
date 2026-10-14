@@ -21,18 +21,21 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_structure( t1 ).
     me->s = t2.
   ENDMETHOD.
+
   METHOD to_railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/3_structures/structures/_combi.ts:268|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_using.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/3_structures/structures/_combi.ts:272|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD first.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
@@ -60,6 +63,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD setup_matcher.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
@@ -82,6 +86,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
       me->matcher = t8.
     ENDIF.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
     DATA(t2) = CAST zif_lnt_node( i_parent ).
@@ -138,24 +143,31 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     result = t29.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d676_4264b2ce5dbc.
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~to_railroad.
     result = me->to_railroad( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~get_using.
     result = me->get_using( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~run.
     result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure_runnable~first.
     result = me->first( ).
   ENDMETHOD.

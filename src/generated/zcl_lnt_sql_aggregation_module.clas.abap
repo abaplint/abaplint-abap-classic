@@ -123,9 +123,11 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t18 = t36.
     zcl_lnt_sql_aggregation_module=>rparen = t18.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1844_9da0f68deac8.
   ENDMETHOD.

@@ -34,6 +34,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t5 = t8.
     me->references = t5.
   ENDMETHOD.
+
   METHOD add_definition.
     DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
     DATA(t2) = CAST zcl_lnt_position( i_start ).
@@ -43,6 +44,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD get_definition_range.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
@@ -51,6 +53,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD add_reference.
     DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -58,6 +61,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_definitions_by_file.
     DATA(t1) = i_filename.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -65,6 +69,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_usagesby_macro.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
@@ -73,6 +78,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD clear_feba.
     DATA(t1) = i_filename.
     DATA t2 TYPE abap_bool.
@@ -86,6 +92,7 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     DELETE t6->entries WHERE k = t7.
     t5 = abap_true.
   ENDMETHOD.
+
   METHOD find_definition_by_usage.
     DATA(t1) = i_filename.
     DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
@@ -94,33 +101,43 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1082_85bdbd2fee48.
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~add_definition.
     me->add_definition( i_ref = i_ref i_start = i_start i_end = i_end ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~add_reference.
     me->add_reference( i_ref = i_ref ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~list_definitions_by_file.
     result = me->list_definitions_by_file( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~list_usagesby_macro.
     result = me->list_usagesby_macro( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~get_definition_range.
     result = me->get_definition_range( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~find_definition_by_usage.
     result = me->find_definition_by_usage( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~clear_feba.
     me->clear_feba( i_filename = i_filename ).
   ENDMETHOD.

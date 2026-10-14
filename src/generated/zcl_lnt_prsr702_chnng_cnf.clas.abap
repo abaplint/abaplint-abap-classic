@@ -10,6 +10,7 @@ CLASS zcl_lnt_prsr702_chnng_cnf IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1541_a279bad7264d.
   ENDMETHOD.

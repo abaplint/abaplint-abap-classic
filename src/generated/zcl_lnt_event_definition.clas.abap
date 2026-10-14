@@ -130,17 +130,20 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     t41 = xsdbool( t42 = t50 ).
     me->is_static_b389 = t41.
   ENDMETHOD.
+
   METHOD get_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->parameters ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD is_static_4685.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/event_definition.ts:36|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -164,18 +167,23 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       APPEND t9 TO t8->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1034_d68bf50add4f.
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~get_parameters.
     result = me->get_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~is_static_4685.
     result = me->is_static_4685( ).
   ENDMETHOD.

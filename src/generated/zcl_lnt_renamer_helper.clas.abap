@@ -27,6 +27,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD rename_references.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
     DATA(t2) = i_old_name.
@@ -36,6 +37,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_ddic_code_references.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -45,6 +47,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_ddictabl_references.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -54,6 +57,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_ddicdtel_references.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -63,6 +67,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_ddicttyp_references.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -72,6 +77,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_ddicauth_references.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -81,6 +87,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD build_xml_file_edits.
     DATA(t1) = CAST zcl_lnt_abstract_object( i_object_19cd ).
     DATA(t2) = i_xml_tag.
@@ -92,6 +99,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t6->source_location = t7.
     RAISE EXCEPTION t6.
   ENDMETHOD.
+
   METHOD build_url_file_edits.
     DATA(t1) = CAST zcl_lnt_abstract_object( i_object_19cd ).
     DATA(t2) = i_old_name.
@@ -101,6 +109,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD rename_files.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = i_old_name.
@@ -110,6 +119,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD replace_refs.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_refs ).
     DATA(t2) = i_old_name.
@@ -119,6 +129,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD find_references.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
@@ -127,6 +138,7 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD rnm_icf_srvc_hndlr_rfrncs.
     DATA(t1) = i_old_name.
     DATA(t2) = i_new_name.
@@ -135,9 +147,11 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1241_37a39c8eff0c.
   ENDMETHOD.

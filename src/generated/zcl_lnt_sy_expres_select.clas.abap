@@ -1601,6 +1601,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       t731 = t732->pop( i_end = t734 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD up_to_uses_host_variable.
     DATA(t1) = CAST zcl_lnt_expression_node( i_up ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1697,6 +1698,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD build_up_to_rows_fix.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -2013,6 +2015,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t85.
 
   ENDMETHOD.
+
   METHOD is_strict_mode.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2186,6 +2189,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t86.
 
   ENDMETHOD.
+
   METHOD strict_mode_checks.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2470,6 +2474,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       APPEND t107 TO t105->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD handle_into.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2954,6 +2959,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t228.
 
   ENDMETHOD.
+
   METHOD count_result_type.
     DATA(t1) = CAST zcl_lnt_current_scope( i_scope ).
     DATA(t2) = VALUE abap_bool( ).
@@ -3036,6 +3042,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
 
     ENDIF.
   ENDMETHOD.
+
   METHOD build_structure_type.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
     DATA(t2) = CAST zlnt_runtime_arra_b72089862d0f( i_db_sources ).
@@ -3961,6 +3968,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD build_table_type.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_fields_62af ).
     DATA(t2) = CAST zlnt_runtime_arra_b72089862d0f( i_db_sources ).
@@ -4673,6 +4681,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t307.
 
   ENDMETHOD.
+
   METHOD build_database_source_infos.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -5031,6 +5040,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t7.
 
   ENDMETHOD.
+
   METHOD find_field_type.
     DATA(t1) = i_code.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_source_infos ).
@@ -5349,6 +5359,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t125.
 
   ENDMETHOD.
+
   METHOD find_fields.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -5710,9 +5721,11 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     result = t151.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d809_d949ed5547d5.
   ENDMETHOD.

@@ -36,6 +36,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_current_scope( t1 ).
     me->scope = t2.
   ENDMETHOD.
+
   METHOD is_char_like_strict.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -270,6 +271,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t92.
 
   ENDMETHOD.
+
   METHOD is_char_like_field.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA t2 TYPE abap_bool.
@@ -393,6 +395,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t23.
 
   ENDMETHOD.
+
   METHOD is_char_like_for_compare.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -579,6 +582,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_char_like.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -893,6 +897,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t122.
 
   ENDMETHOD.
+
   METHOD is_hex_like.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
@@ -1071,6 +1076,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t71.
 
   ENDMETHOD.
+
   METHOD is_oo_assignable.
     DATA(t1) = CAST zcl_lnt_object_reference_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_object_reference_type( i_target_5f8a ).
@@ -2563,6 +2569,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t594.
 
   ENDMETHOD.
+
   METHOD list_all_interfaces.
     DATA(t1) = CAST zif_lnt_union_865ccdda( i_cdef ).
     DATA t2 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
@@ -3209,6 +3216,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t270.
 
   ENDMETHOD.
+
   METHOD list_all_supers.
     DATA(t1) = CAST zcl_lnt_ty_class_definition( i_cdef ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -3500,6 +3508,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t110.
 
   ENDMETHOD.
+
   METHOD is_convable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -3508,6 +3517,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_castable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_3828 ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_d687 ).
@@ -3515,6 +3525,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t3.
 
   ENDMETHOD.
+
   METHOD is_compareable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source1 ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_source2 ).
@@ -3658,6 +3669,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t57.
 
   ENDMETHOD.
+
   METHOD structure_contains_string.
     DATA(t1) = CAST zcl_lnt_structure_type( i_structure ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -3689,6 +3701,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t13.
 
   ENDMETHOD.
+
   METHOD structure_contains_void.
     DATA(t1) = CAST zcl_lnt_structure_type( i_structure ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -3696,6 +3709,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_calculated.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = VALUE abap_bool( ).
@@ -4000,6 +4014,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t125.
 
   ENDMETHOD.
+
   METHOD is_hex_constant.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -4007,6 +4022,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_assignable_new.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -4084,6 +4100,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t31.
 
   ENDMETHOD.
+
   METHOD is_assignable_strict.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -6196,6 +6213,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t814.
 
   ENDMETHOD.
+
   METHOD is_assignable_structure_typing.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -6205,6 +6223,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD is_assignable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -7222,6 +7241,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     result = t417.
 
   ENDMETHOD.
+
   METHOD is_utc_long_assignable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_5f8a ).
@@ -7230,6 +7250,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_generic_or_void.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -7237,6 +7258,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD is_text_like.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -7244,9 +7266,11 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d759_921e617ed2bc.
   ENDMETHOD.

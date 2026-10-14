@@ -21,6 +21,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
     ENDIF.
   ENDMETHOD.
+
   METHOD whitespace.
     DATA ch TYPE c LENGTH 1.
     DATA cr TYPE c LENGTH 1.
@@ -33,6 +34,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD hex.
     DATA ch TYPE c LENGTH 1.
     DATA digit TYPE i.
@@ -50,6 +52,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDDO.
   ENDMETHOD.
+
   METHOD text.
     DATA ch TYPE string.
     DATA code TYPE i.
@@ -123,6 +126,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     ENDWHILE.
     RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
   ENDMETHOD.
+
   METHOD value.
     DATA ch TYPE string.
     DATA key TYPE string.

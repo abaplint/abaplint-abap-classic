@@ -19,6 +19,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD references.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_pos ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -26,6 +27,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD search_d139.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_identifier ).
     DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_node ).
@@ -36,6 +38,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t5->source_location = t6.
     RAISE EXCEPTION t5.
   ENDMETHOD.
+
   METHOD remove_duplicates.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_arr ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -43,6 +46,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_references.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_fi_identifier( i_identifier ).
@@ -51,9 +55,11 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1076_c34e8bcbaedc.
   ENDMETHOD.

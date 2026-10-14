@@ -25,6 +25,7 @@ CLASS zcl_lnt_method_length_conf IMPLEMENTATION.
     DATA(t5) = abap_true.
     me->check_function_modules = t5.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1487_7f09b587582f.
   ENDMETHOD.

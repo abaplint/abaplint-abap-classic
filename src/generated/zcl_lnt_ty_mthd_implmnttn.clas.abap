@@ -94,6 +94,7 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
     DATA(t35) = t2.
     super->constructor( i_token = t32 i_filename = t35 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1042_57ec2010231a.
   ENDMETHOD.

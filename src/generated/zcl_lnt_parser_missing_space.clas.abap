@@ -31,6 +31,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_prsr_mssng_spc_cnf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -108,11 +109,13 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_r_pr_ms_sp_ts_pr_ms_sp.
     DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_pr_ms_sp_ts_pr_ms_sp.
     DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -120,6 +123,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_pr_ms_sp_ts_pr_ms_sp.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -127,6 +131,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD missing_space.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -134,6 +139,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_sql_cond.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -141,6 +147,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_new_object.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -148,6 +155,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_cond_sub.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -155,6 +163,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_component_cond_sub.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -162,6 +171,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_component_cond.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -169,6 +179,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_value_body_line.
     DATA(t1) = CAST zcl_lnt_expression_node( i_vb ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -176,6 +187,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_cond.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -183,6 +195,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_source.
     DATA(t1) = CAST zcl_lnt_expression_node( i_cond ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -190,6 +203,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD check_method_call_param.
     DATA(t1) = CAST zcl_lnt_expression_node( i_call_bc15 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -197,16 +211,19 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( me->g_c_i_s_r_pr_ms_sp_ts_pr_ms_sp( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_prsr_mssng_spc_cnf( me->g_c_i_s_r_pr_ms_sp_ts_pr_ms_sp( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_prsr_mssng_spc_cnf.
     CLEAR t1.
@@ -217,11 +234,13 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     me->s_c_i_s_r_pr_ms_sp_ts_pr_ms_sp( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_pr_ms_sp_ts_pr_ms_sp( i_file = i_file ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1548_39412f673ae2.
   ENDMETHOD.

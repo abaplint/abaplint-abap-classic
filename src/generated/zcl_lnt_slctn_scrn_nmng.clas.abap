@@ -24,6 +24,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_slctn_scrn_nmng_cnf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -68,6 +69,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = i_expected.
     DATA(t2) = i_actual.
@@ -76,11 +78,13 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD g_c_i_s_r_sl_sc_nm_ts_sl_sc_nm.
     DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_sl_sc_nm_ts_sl_sc_nm.
     DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -88,6 +92,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_sl_sc_nm_ts_sl_sc_nm.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -95,6 +100,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_pattern_for_statement.
     DATA(t1) = CAST zif_lnt_statement( i_statement ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -102,6 +108,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_field_for_statement_node.
     DATA(t1) = CAST zcl_lnt_statement_node( i_stat_node ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -109,16 +116,19 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( me->g_c_i_s_r_sl_sc_nm_ts_sl_sc_nm( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slctn_scrn_nmng_cnf( me->g_c_i_s_r_sl_sc_nm_ts_sl_sc_nm( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_slctn_scrn_nmng_cnf.
     CLEAR t1.
@@ -129,11 +139,13 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     me->s_c_i_s_r_sl_sc_nm_ts_sl_sc_nm( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_sl_sc_nm_ts_sl_sc_nm( i_file = i_file ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1593_50ae645b6f52.
   ENDMETHOD.

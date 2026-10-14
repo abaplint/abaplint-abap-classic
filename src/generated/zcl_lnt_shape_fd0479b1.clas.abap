@@ -22,9 +22,11 @@ CLASS zcl_lnt_shape_fd0479b1 IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_map__617ff131b0f3( t3 ).
     me->change_annotations = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1741_511c41f5be73.
   ENDMETHOD.

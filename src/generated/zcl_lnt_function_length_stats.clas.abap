@@ -179,6 +179,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
     result = t77.
 
   ENDMETHOD.
+
   METHOD find_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).
     DATA t2 TYPE REF TO zcl_lnt_expression_node.
@@ -230,9 +231,11 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
       RAISE EXCEPTION t15.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1690_199bc9d874b2.
   ENDMETHOD.

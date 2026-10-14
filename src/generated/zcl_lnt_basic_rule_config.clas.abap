@@ -20,9 +20,11 @@ CLASS zcl_lnt_basic_rule_config IMPLEMENTATION.
     t3->value = t2.
     me->severity = t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1283_e7f038964532.
   ENDMETHOD.

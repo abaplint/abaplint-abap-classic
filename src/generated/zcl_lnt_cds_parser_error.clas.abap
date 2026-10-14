@@ -24,6 +24,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     DATA(t1) = NEW zcl_lnt_cds_parser_error_conf( ).
     me->conf = t1.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -79,11 +80,13 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD g_c_i_s_r_cd_pr_er_ts_cd_pr_er.
     DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD s_c_i_s_r_cd_pr_er_ts_cd_pr_er.
     DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -91,6 +94,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD i_i_sr_rl_cd_pr_er_ts_cd_pr_er.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -98,6 +102,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD r_i_sr_rl_cd_pr_er_ts_cd_pr_er.
     DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -105,14 +110,17 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er( ) ).
   ENDMETHOD.
+
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -120,6 +128,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -127,6 +136,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -134,30 +144,39 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1329_aa9055745549.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
     result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
     me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
     me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
     result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
     result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
     result = me->get_config_value( ).
   ENDMETHOD.

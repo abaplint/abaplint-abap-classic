@@ -39,6 +39,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     DATA(t6) = CAST zcl_lnt_abap_object( t2 ).
     me->object_a393 = t6.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_isyntax_result.
@@ -237,6 +238,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       ENDIF.
     ENDDO.
   ENDMETHOD.
+
   METHOD traverse_object.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -642,6 +644,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     result = t196.
 
   ENDMETHOD.
+
   METHOD new_issue.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
     DATA(t2) = i_message_26cb.
@@ -650,6 +653,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_union_8249fcb1( i_node ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -862,6 +866,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD update_scope_structure.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA t2 TYPE string.
@@ -1607,6 +1612,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     result = t329.
 
   ENDMETHOD.
+
   METHOD update_scope_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -2521,6 +2527,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD update_selection_event_scope.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
     DATA t2 TYPE REF TO zif_lnt_statement.
@@ -2687,6 +2694,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD opens_selection_event_scope.
     DATA(t1) = CAST zif_lnt_statement( i_statement ).
     DATA t2 TYPE abap_bool.
@@ -2695,6 +2703,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_selection_event_boundary.
     DATA(t1) = CAST zif_lnt_statement( i_statement ).
     DATA(t2) = VALUE abap_bool( ).
@@ -2763,6 +2772,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD is_slctn_evnt_bndry_strctr.
     DATA(t1) = CAST zif_lnt_structure( i_structure ).
     DATA t2 TYPE abap_bool.
@@ -2779,9 +2789,11 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     result = t2.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d975_b3b62c0f7275.
   ENDMETHOD.

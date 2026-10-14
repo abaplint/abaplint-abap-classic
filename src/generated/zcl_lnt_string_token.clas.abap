@@ -14,6 +14,7 @@ CLASS zcl_lnt_string_token IMPLEMENTATION.
     DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d36_3b0a4eceab9587.
   ENDMETHOD.

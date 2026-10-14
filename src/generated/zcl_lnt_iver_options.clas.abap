@@ -14,9 +14,11 @@ CLASS zcl_lnt_iver_options IMPLEMENTATION.
     DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
     me->also = t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d62_7621bdf0536f01.
   ENDMETHOD.

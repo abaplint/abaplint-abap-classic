@@ -22,6 +22,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
     DATA(t4) = abap_true.
     me->ignore_test_classes = t4.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1286_cc1208d19ab7.
   ENDMETHOD.

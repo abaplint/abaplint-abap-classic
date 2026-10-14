@@ -70,6 +70,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     DATA(t18) = CAST zif_lnt_registry( t2 ).
     me->reg = t18.
   ENDMETHOD.
+
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_input_967e ).
     DATA(t2) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
@@ -222,6 +223,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t58.
 
   ENDMETHOD.
+
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -245,6 +247,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD lazy_unknown.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -520,6 +523,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     DATA(t120) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     t119->statements = t120.
   ENDMETHOD.
+
   METHOD build_splits.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -689,6 +693,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t84.
 
   ENDMETHOD.
+
   METHOD native_sql.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
     DATA t2 TYPE abap_bool.
@@ -920,6 +925,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
       t4 = t110.
     ENDDO.
   ENDMETHOD.
+
   METHOD categorize.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -945,6 +951,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     t11->statements = t12.
   ENDMETHOD.
+
   METHOD categorize_statement.
     DATA(t1) = CAST zcl_lnt_statement_node( i_input_967e ).
     DATA t2 TYPE REF TO zcl_lnt_statement_node.
@@ -1103,6 +1110,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t77.
 
   ENDMETHOD.
+
   METHOD remove_pragma.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
     DATA t2 TYPE abap_bool.
@@ -1274,6 +1282,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t66.
 
   ENDMETHOD.
+
   METHOD match.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1568,6 +1577,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t139.
 
   ENDMETHOD.
+
   METHOD process.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1902,6 +1912,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
       APPEND t179 TO t177->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD native_after.
     DATA(t1) = i_native.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
@@ -2089,6 +2100,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t85.
 
   ENDMETHOD.
+
   METHOD tokens_to_nodes_one.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_x ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -2107,9 +2119,11 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     result = t9.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d344_e2f9d6730e5a.
   ENDMETHOD.

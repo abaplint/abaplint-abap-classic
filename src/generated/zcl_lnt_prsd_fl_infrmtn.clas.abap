@@ -26,9 +26,11 @@ CLASS zcl_lnt_prsd_fl_infrmtn IMPLEMENTATION.
     DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
     me->implementations = t8.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d746_a08f21095411.
   ENDMETHOD.

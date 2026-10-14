@@ -54,6 +54,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA(t14) = t1.
     me->length = t14.
   ENDMETHOD.
+
   METHOD clone_type.
     DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -300,87 +301,108 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     result = t86.
 
   ENDMETHOD.
+
   METHOD get_length.
     DATA(t1) = CONV int8( me->length ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD t_t_i_s_a_ty_bs_ch_ty_ts_ch_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/character_type.ts:32|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/character_type.ts:36|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD is_generic.
     DATA(t1) = abap_false.
     result = t1.
 
   ENDMETHOD.
+
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/character_type.ts:44|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_identifier.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/character_type.ts:48|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_cds.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/character_type.ts:52|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_ch_ty_ts_ch_ty( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d996_4db7887f8eb3.
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~contains_void.
     result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_abstract_type_data.
     result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_conversion_exit.
     result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_ddic_name.
     result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_description.
     result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_qualified_name.
     result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~get_rtti_name.
     result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~is_generic.
     result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~to_abap.
     result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~to_cds.
     result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_f16d2839~to_text.
     result = me->to_text( i_level = i_level ).
   ENDMETHOD.

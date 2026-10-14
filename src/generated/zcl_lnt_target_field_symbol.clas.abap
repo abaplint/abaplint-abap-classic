@@ -11,6 +11,7 @@ CLASS zcl_lnt_target_field_symbol IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -61,6 +62,7 @@ CLASS zcl_lnt_target_field_symbol IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d184_78321de353a4.
   ENDMETHOD.

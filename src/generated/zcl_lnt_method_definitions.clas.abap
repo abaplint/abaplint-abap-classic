@@ -36,6 +36,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     DATA(t12) = CAST zcl_lnt_syntax_input( t2 ).
     me->parse( i_node = t11 i_input_967e = t12 ).
   ENDMETHOD.
+
   METHOD get_all.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -59,6 +60,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     result = t11.
 
   ENDMETHOD.
+
   METHOD get_by_name.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = VALUE abap_bool( ).
@@ -101,6 +103,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     result = t10.
 
   ENDMETHOD.
+
   METHOD parse_interface.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -123,6 +126,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       me->add_51c1( i_def = t10 i_visibility_5c1f = t11 i_input_967e = t12 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -372,6 +376,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       me->add_51c1( i_def = t107 i_visibility_5c1f = t108 i_input_967e = t109 ).
     ENDLOOP.
   ENDMETHOD.
+
   METHOD add_51c1.
     DATA(t1) = CAST zcl_lnt_statement_node( i_def ).
     DATA(t2) = i_visibility_5c1f.
@@ -500,18 +505,23 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
         APPEND t48 TO t46->items.
     ENDTRY.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1041_e7fb389676c4.
   ENDMETHOD.
+
   METHOD zif_lnt_method_definitions~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definitions~get_all.
     result = me->get_all( ).
   ENDMETHOD.
+
   METHOD zif_lnt_method_definitions~get_by_name.
     result = me->get_by_name( i_name = i_name ).
   ENDMETHOD.

@@ -27,11 +27,13 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_abstract_type_data( t1 ).
     me->data_56cc = t2.
   ENDMETHOD.
+
   METHOD get_abstract_type_data.
     DATA(t1) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_qualified_name.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
@@ -61,39 +63,47 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_rtti_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/_abstract_type.ts:26|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/_abstract_type.ts:30|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_conversion_exit.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/_abstract_type.ts:34|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_ddic_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/types/basic/_abstract_type.ts:38|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d993_9fc769739916.
   ENDMETHOD.
+
   METHOD zif_lnt_union_ea265422~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_b6d4892d~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

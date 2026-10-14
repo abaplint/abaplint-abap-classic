@@ -45,6 +45,7 @@ CLASS zcl_lnt_closure_77054774 IMPLEMENTATION.
     DATA(t16) = CAST zcl_lnt_sy_perform( t8 ).
     me->outer = t16.
   ENDMETHOD.
+
   METHOD call_7bd1.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->changing ).
@@ -171,15 +172,19 @@ CLASS zcl_lnt_closure_77054774 IMPLEMENTATION.
     DATA(t67) = CAST zcl_lnt_syntax_input( t5 ).
     t59 = t60->check_parameters( i_node = t61 i_actual = t62 i_formal = t65 i_kind = t66 i_input_967e = t67 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_61ac7bd03e15=>zlnt_member_d0_5ecc9e9989d6ba.
   ENDMETHOD.
+
   METHOD zif_lnt_closure_d810f2d3~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_closure_d810f2d3~call_7bd1.
     me->call_7bd1( ).
   ENDMETHOD.

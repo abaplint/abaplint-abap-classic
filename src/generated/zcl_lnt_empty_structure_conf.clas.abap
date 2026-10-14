@@ -40,6 +40,7 @@ CLASS zcl_lnt_empty_structure_conf IMPLEMENTATION.
     DATA(t10) = abap_true.
     me->when_07a5 = t10.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1396_4e2c6377e586.
   ENDMETHOD.

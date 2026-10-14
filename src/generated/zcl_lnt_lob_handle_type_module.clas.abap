@@ -322,6 +322,7 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD lob_kind.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -395,6 +396,7 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD lob_handle_type.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -508,15 +510,18 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_db1fb6927434.
     IF zlnt_builtin_init_ab4c41240bc6 = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_ab4c41240bc6 = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1831_a405da41653b.
   ENDMETHOD.

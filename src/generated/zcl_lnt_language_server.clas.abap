@@ -33,6 +33,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD document_symbol.
     DATA(t1) = CAST zcl_lnt_idcmnt_symbl_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -40,6 +41,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD hover.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -47,6 +49,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD goto_definition.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -54,6 +57,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD document_formatting.
     DATA(t1) = CAST zcl_lnt_shape_e77d6389( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -61,6 +65,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD diagnostics.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -68,6 +73,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD prepare_rename.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -75,6 +81,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD rename.
     DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -82,6 +89,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD code_actions.
     DATA(t1) = CAST zcl_lnt_icode_action_params( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -89,6 +97,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD document_highlight.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_c5c7 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -96,6 +105,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD implementation.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -103,6 +113,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD references.
     DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -110,11 +121,13 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD semantic_tokens_legend.
     DATA(t1) = CAST zcl_lnt_shape_2d2f513b( zcl_lnt_semantic_highlighting=>semantic_tokens_legend( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD semantic_tokens_range.
     DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -122,6 +135,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD code_lens.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = CAST zcl_lnt_code_lens_settings( i_settings ).
@@ -130,6 +144,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD inlay_hints.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = CAST zcl_lnt_inlay_hints_settings( i_settings ).
@@ -138,6 +153,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD help.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
@@ -146,6 +162,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD list_definition_positions.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -153,6 +170,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_read_positions.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -160,6 +178,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD list_write_positions.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -167,9 +186,11 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1075_bb8c443f99f5.
   ENDMETHOD.

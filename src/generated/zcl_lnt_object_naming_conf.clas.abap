@@ -202,6 +202,7 @@ CLASS zcl_lnt_object_naming_conf IMPLEMENTATION.
     t64->value = t63.
     me->wdyn = t64.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1531_286a3b445269.
   ENDMETHOD.

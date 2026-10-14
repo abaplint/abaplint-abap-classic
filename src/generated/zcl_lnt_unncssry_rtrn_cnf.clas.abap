@@ -13,6 +13,7 @@ CLASS zcl_lnt_unncssry_rtrn_cnf IMPLEMENTATION.
     DATA(t1) = abap_false.
     me->allow_empty = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1646_041378f21841.
   ENDMETHOD.

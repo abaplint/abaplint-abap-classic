@@ -30,9 +30,11 @@ CLASS zcl_lnt_tuple_cc45ee1d IMPLEMENTATION.
     DATA(t10) = t5.
     me->f4 = t10.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d11_b829914c6cc66c.
   ENDMETHOD.

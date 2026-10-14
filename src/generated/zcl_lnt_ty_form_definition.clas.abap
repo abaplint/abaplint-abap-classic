@@ -190,21 +190,25 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     t65 = t70.
     me->changing_parameters = t65.
   ENDMETHOD.
+
   METHOD get_tables_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->table_parameters ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_using_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->using_parameters ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_changing_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->changing_parameters ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD find_tables.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -471,6 +475,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     result = t130.
 
   ENDMETHOD.
+
   METHOD find_type.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -509,6 +514,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     result = t15.
 
   ENDMETHOD.
+
   METHOD find_params.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -540,36 +546,47 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     result = t16.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1035_3d4f282d9a47.
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_tables_parameters.
     result = me->get_tables_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_using_parameters.
     result = me->get_using_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_changing_parameters.
     result = me->get_changing_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~equals.
     result = me->equals( i_id = i_id ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_end.
     result = me->get_end( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_filename.
     result = me->get_filename( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_name.
     result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_start.
     result = me->get_start( ).
   ENDMETHOD.
+
   METHOD zif_lnt_form_definition~get_token.
     result = me->get_token( ).
   ENDMETHOD.

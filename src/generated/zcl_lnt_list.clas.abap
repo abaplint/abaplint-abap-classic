@@ -17,6 +17,7 @@ CLASS zcl_lnt_list IMPLEMENTATION.
     CREATE OBJECT t1.
     me->words = t1.
   ENDMETHOD.
+
   METHOD add_51c1.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_keywords ).
     DATA(t2) = i_source_75cf.
@@ -25,12 +26,14 @@ CLASS zcl_lnt_list IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD get_db65.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/abap/artifacts.ts:31|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_8f95.
     DATA(t1) = i_keyword.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -38,9 +41,11 @@ CLASS zcl_lnt_list IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d981_b3c34f191785.
   ENDMETHOD.

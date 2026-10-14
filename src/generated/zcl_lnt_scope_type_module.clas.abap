@@ -219,9 +219,11 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
     DATA(t73) = |open_sql|.
     t70 = t71->set( p0 = t72 p1 = t73 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1869_370681003ad0.
   ENDMETHOD.

@@ -14,6 +14,7 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
     CREATE OBJECT t1.
     me->mapping = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1363_2bc590c796d1.
   ENDMETHOD.

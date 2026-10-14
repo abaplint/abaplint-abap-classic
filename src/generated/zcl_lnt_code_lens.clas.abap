@@ -17,6 +17,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
   ENDMETHOD.
+
   METHOD list.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
     DATA(t2) = CAST zcl_lnt_code_lens_settings( i_settings ).
@@ -25,6 +26,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_dynamic_exception.
     DATA(t1) = i_name.
     DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_top ).
@@ -33,6 +35,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_method_references.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -41,9 +44,11 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1068_c1f83dd7e96f.
   ENDMETHOD.

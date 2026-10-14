@@ -111,9 +111,11 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
     t30->nval = t31.
     t27 = t28->set( p0 = t29 p1 = t30 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1867_85539ba94aee.
   ENDMETHOD.

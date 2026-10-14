@@ -37,6 +37,7 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     ENDIF.
     me->str_upper = t5.
   ENDMETHOD.
+
   METHOD debug_description.
     DATA t1 TYPE REF TO zlnt_exception_st_fa837731be5a.
     DATA(t2) = |excluded abaplint introspection: debugDescription|.
@@ -44,16 +45,19 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     t1->payload = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD get_str.
     DATA(t1) = CONV string( me->str ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_upper_str.
     DATA(t1) = CONV string( me->str_upper ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_row.
     DATA t1 TYPE int8.
     DATA t2 TYPE REF TO zcl_lnt_position.
@@ -66,6 +70,7 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_col.
     DATA t1 TYPE int8.
     DATA t2 TYPE REF TO zcl_lnt_position.
@@ -78,11 +83,13 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_start.
     DATA(t1) = CAST zcl_lnt_position( me->start ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_end.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -119,12 +126,15 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d12_bad132cea1e854.
   ENDMETHOD.
+
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

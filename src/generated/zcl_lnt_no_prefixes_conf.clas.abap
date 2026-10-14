@@ -37,6 +37,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
     t9->value = t8.
     me->max_issues_per_file = t9.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1523_69b421e5aaca.
   ENDMETHOD.

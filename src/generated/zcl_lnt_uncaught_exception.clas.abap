@@ -39,6 +39,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     CREATE OBJECT t2.
     me->issues = t2.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
@@ -92,11 +93,13 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     result = t1.
 
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_un_ex_ts_un_exc.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->conf ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD in_in_sr_rl_unc_exc_ts_unc_exc.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -104,6 +107,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_un_ex_ts_un_exc.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( i_conf ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -111,6 +115,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
     DATA(t2) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
@@ -119,6 +124,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_union_8249fcb1( i_n_0c97 ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -127,6 +133,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD check_bf6e.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = CAST zcl_lnt_statement_node( i_n_0c97 ).
@@ -136,6 +143,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t4->source_location = t5.
     RAISE EXCEPTION t4.
   ENDMETHOD.
+
   METHOD check_for_method_calls.
     DATA(t1) = CAST zcl_lnt_statement_node( i_n_0c97 ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -144,6 +152,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD find_constructor.
     DATA(t1) = CAST zif_lnt_class_definition( i_def ).
     DATA(t2) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
@@ -152,6 +161,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD add_from_try_structure.
     DATA(t1) = CAST zcl_lnt_structure_node( i_s ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -159,6 +169,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD set_sinked_from_method.
     DATA(t1) = CAST zcl_lnt_statement_node( i_s ).
     DATA(t2) = CAST zcl_lnt_abap_file( i_file ).
@@ -167,6 +178,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3->source_location = t4.
     RAISE EXCEPTION t3.
   ENDMETHOD.
+
   METHOD is_sinked.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -174,12 +186,14 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_global_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/uncaught_exception.ts:263|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD find_local_exceptions.
     DATA(t1) = CAST zcl_lnt_abap_object( i_obj_1ed0 ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -187,21 +201,25 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc( ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD initialize.
     DATA(t1) = CAST zcl_lnt_uncaught_exception( me->in_in_sr_rl_unc_exc_ts_unc_exc( i_reg_f149 = i_reg_f149 ) ).
     result = t1.
 
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_uncght_excptn_cnf.
     CLEAR t1.
@@ -212,6 +230,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     me->st_cn_in_sr_rl_un_ex_ts_un_exc( i_conf = t1 ).
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1639_4abe594ee35d.
   ENDMETHOD.

@@ -11,6 +11,7 @@ CLASS zcl_lnt_write_offset_length IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -471,6 +472,7 @@ CLASS zcl_lnt_write_offset_length IMPLEMENTATION.
     result = t177.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d340_8d8d1acca482.
   ENDMETHOD.

@@ -33,6 +33,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     DATA(t1) = CONV int8( 1 ).
     me->row = t1.
   ENDMETHOD.
+
   METHOD build_definition.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
@@ -89,6 +90,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t27.
 
   ENDMETHOD.
+
   METHOD search_builtin.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
@@ -180,6 +182,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t25.
 
   ENDMETHOD.
+
   METHOD is_predicate.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
       zcl_lnt_built_in=>zlnt_builtin_init_97ac0787fc72( ).
@@ -258,6 +261,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t25.
 
   ENDMETHOD.
+
   METHOD get_types.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -456,6 +460,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t77.
 
   ENDMETHOD.
+
   METHOD get_db65.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1808,6 +1813,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t486.
 
   ENDMETHOD.
+
   METHOD build_variable.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -1892,6 +1898,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t18.
 
   ENDMETHOD.
+
   METHOD build_sy.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -6453,6 +6460,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t2132.
 
   ENDMETHOD.
+
   METHOD build_constant.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -6610,6 +6618,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     result = t46.
 
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_97ac0787fc72.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
@@ -14149,9 +14158,11 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t6 = t3478.
     zcl_lnt_built_in=>methods = t6.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d749_d6fc7bfd346d.
   ENDMETHOD.

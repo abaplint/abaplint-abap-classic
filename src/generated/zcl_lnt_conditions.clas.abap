@@ -19,6 +19,7 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
     CREATE OBJECT t2.
     me->arr = t2.
   ENDMETHOD.
+
   METHOD push.
     DATA(t1) = CAST zcl_lnt_expression_node( i_e ).
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -26,15 +27,18 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD find_first_duplicate.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
     DATA(t2) = |src/rules/identical_conditions.ts:22|.
     t1->source_location = t2.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1424_61d043fed81a.
   ENDMETHOD.
