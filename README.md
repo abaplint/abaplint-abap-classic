@@ -1,0 +1,2 @@
+# abaplint-abap-classic
+classic
