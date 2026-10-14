@@ -222,7 +222,7 @@ CLASS zcl_lnc_abapdoc IMPLEMENTATION.
       inform( p_sub_obj_type = 'PROG'
               p_sub_obj_name = ls_finding-include
               p_line         = ls_finding-line
-              p_column       = |{ ls_finding-column }|
+              p_column       = ls_finding-column
               p_kind         = ls_finding-kind
               p_test         = myname
               p_code         = ls_finding-code
