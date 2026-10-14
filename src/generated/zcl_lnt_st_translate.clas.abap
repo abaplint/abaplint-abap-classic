@@ -190,7 +190,7 @@ CLASS zcl_lnt_st_translate IMPLEMENTATION.
     t72 = zcl_lnt_st_combi_module=>seq( i_first = t73 i_second = t74 i_rest = t75 ).
     t45 = t72.
     result = t45.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -157,7 +157,7 @@ CLASS zcl_lnt_fnctn_exprtng_prmtr IMPLEMENTATION.
     t33 = t34.
     DATA(t51) = CAST zif_lnt_statement_runnable( t33 ).
     result = t51.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d186_713e1678710c.

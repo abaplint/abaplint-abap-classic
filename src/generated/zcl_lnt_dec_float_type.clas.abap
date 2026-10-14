@@ -51,7 +51,7 @@ CLASS zcl_lnt_dec_float_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_t_b_d_t_t_d_f_t_1b15(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1004_2628f135d6ca.

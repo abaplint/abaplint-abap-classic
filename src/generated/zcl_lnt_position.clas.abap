@@ -27,12 +27,12 @@ CLASS zcl_lnt_position IMPLEMENTATION.
   METHOD get_col.
     DATA(t1) = CONV int8( me->col ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_row.
     DATA(t1) = CONV int8( me->row ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_after.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
@@ -65,7 +65,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       t2 = t7.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD equals.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
@@ -97,7 +97,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       t2 = t10.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_before.
     DATA(t1) = CAST zcl_lnt_position( i_p ).
@@ -130,7 +130,7 @@ CLASS zcl_lnt_position IMPLEMENTATION.
       t2 = t7.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_between.
     DATA(t1) = CAST zcl_lnt_position( i_p1 ).

@@ -55,12 +55,12 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t3 = me->parse( i_config = t4 ).
     t2 = me->report_0493( i_reg_f149 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD timings.
     DATA(t1) = CONV string( me->stages ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD parse.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
@@ -348,7 +348,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     me->stages = t94.
     DATA(t143) = CAST zcl_lnt_registry( t2 ).
     result = t143.
-    
+
   ENDMETHOD.
   METHOD report_0493.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
@@ -884,7 +884,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     ENDLOOP.
     DATA(t287) = t161.
     result = t287.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -193,17 +193,17 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
   METHOD get_tables_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->table_parameters ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_using_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->using_parameters ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_changing_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->changing_parameters ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD find_tables.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -469,7 +469,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     ENDLOOP.
     DATA(t130) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t130.
-    
+
   ENDMETHOD.
   METHOD find_type.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -507,7 +507,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     DATA(t18) = CAST zcl_lnt_syntax_input( t2 ).
     t15 = me->find_params( i_node = t16 i_input_967e = t18 ).
     result = t15.
-    
+
   ENDMETHOD.
   METHOD find_params.
     DATA(t1) = CAST zif_lnt_union_bb14dc41( i_node ).
@@ -538,7 +538,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     ENDLOOP.
     DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
     result = t16.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1035_3d4f282d9a47.

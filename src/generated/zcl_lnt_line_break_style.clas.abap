@@ -85,7 +85,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
     CLEAR t26.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t7 i_good_example = t8 i_extended_information = t9 i_tags = t14 i_pragma = t25 i_pseudo_comment = t26 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_sr_rl_ln_br_st_ts_ln_br_st.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
@@ -97,7 +97,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
   METHOD g_c_i_s_r_ln_br_st_ts_ln_br_st.
     DATA(t1) = CAST zcl_lnt_line_break_style_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_ln_br_st_ts_ln_br_st.
     DATA(t1) = CAST zcl_lnt_line_break_style_conf( i_conf ).
@@ -123,7 +123,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_line_break_style_conf( me->g_c_i_s_r_ln_br_st_ts_ln_br_st(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_line_break_style_conf( me->g_c_i_s_r_ln_br_st_ts_ln_br_st(  ) ).

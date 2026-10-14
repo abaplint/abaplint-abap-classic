@@ -639,7 +639,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
     ENDIF.
     t266 = NEW zcl_lnt_shape_28fac025( i_type_9913 = t267 i_values = t271 ).
     result = t266.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

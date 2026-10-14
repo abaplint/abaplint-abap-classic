@@ -173,7 +173,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
     ENDDO.
     DATA(t63) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t63.
-    
+
   ENDMETHOD.
   METHOD railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -208,7 +208,7 @@ CLASS zcl_lnt_star_priority IMPLEMENTATION.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

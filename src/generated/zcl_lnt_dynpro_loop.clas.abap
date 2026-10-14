@@ -364,7 +364,7 @@ CLASS zcl_lnt_dynpro_loop IMPLEMENTATION.
     t139 = zcl_lnt_st_combi_module=>seq( i_first = t140 i_second = t141 i_rest = t142 ).
     t115 = t139.
     result = t115.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

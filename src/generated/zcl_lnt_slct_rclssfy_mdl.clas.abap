@@ -119,7 +119,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     ENDLOOP.
     DATA(t45) = abap_false.
     result = t45.
-    
+
   ENDMETHOD.
   METHOD is_count_all_pattern.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
@@ -176,7 +176,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     t22 = zcl_lnt_slct_rclssfy_mdl=>contains_aggregation( i_children_9020 = t23 ).
     result = t22.
-    
+
   ENDMETHOD.
   METHOD scan_for_expr_types.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
@@ -486,7 +486,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     ENDIF.
     DATA(t102) = abap_true.
     result = t102.
-    
+
   ENDMETHOD.
   METHOD is_with_loop.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
@@ -728,7 +728,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     ENDIF.
     DATA(t104) = CAST zcl_lnt_statement_node( t1 ).
     result = t104.
-    
+
   ENDMETHOD.
   METHOD fn_has.
     DATA(t1) = CAST zlnt_runtime_set__7758c436a0c7( i_found ).
@@ -738,7 +738,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( t2 ).
     t3 = t4->has( p0 = t5 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_6e4d264b60b9.
     IF zlnt_builtin_init_0dc66ed7883a = abap_true.

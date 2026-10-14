@@ -98,12 +98,12 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
     CLEAR t30.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t20 i_pragma = t29 i_pseudo_comment = t30 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_m_o_o_d_t_t_m_o_o_d.
     DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_m_o_o_d_t_t_m_o_o_d.
     DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( i_conf ).
@@ -129,7 +129,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->g_c_i_s_r_m_o_o_d_t_t_m_o_o_d(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->g_c_i_s_r_m_o_o_d_t_t_m_o_o_d(  ) ).

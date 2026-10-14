@@ -142,7 +142,7 @@ CLASS zcl_lnt_st_inline_fs IMPLEMENTATION.
     ENDIF.
     t29 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t30 i_first = t36 i_opts = t39 ).
     result = t29.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d183_78b4c050195c.

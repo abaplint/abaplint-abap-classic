@@ -695,7 +695,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t34.
       result = t34.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD list_where_used.

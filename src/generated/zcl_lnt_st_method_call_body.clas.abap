@@ -178,7 +178,7 @@ CLASS zcl_lnt_st_method_call_body IMPLEMENTATION.
     t61 = zcl_lnt_st_combi_module=>alt( i_first = t62 i_second = t63 i_rest = t64 ).
     t48 = t61.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d217_b89e20eef6cb.

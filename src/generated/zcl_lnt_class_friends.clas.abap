@@ -73,7 +73,7 @@ CLASS zcl_lnt_class_friends IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t21 i_rest = t22 ).
     t1 = t19.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d115_e681bc20f5c0.

@@ -157,7 +157,7 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
     t25 = t26.
     DATA(t56) = CAST zif_lnt_statement_runnable( t25 ).
     result = t56.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844.

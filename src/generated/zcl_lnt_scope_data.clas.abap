@@ -60,7 +60,7 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
   METHOD get_data.
     DATA(t1) = CAST zcl_lnt_iscope_data( me->data_56cc ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -841,7 +841,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     ENDDO.
     DATA(t57) = abap_false.
     result = t57.
-    
+
   ENDMETHOD.
   METHOD has_length.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).

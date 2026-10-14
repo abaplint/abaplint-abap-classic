@@ -268,7 +268,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t92) = abap_false.
     result = t92.
-    
+
   ENDMETHOD.
   METHOD is_char_like_field.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -391,7 +391,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       t23 = t47.
     ENDIF.
     result = t23.
-    
+
   ENDMETHOD.
   METHOD is_char_like_for_compare.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -577,7 +577,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       t2 = t19.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_char_like.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -891,7 +891,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t122) = abap_false.
     result = t122.
-    
+
   ENDMETHOD.
   METHOD is_hex_like.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -1069,7 +1069,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t71) = abap_false.
     result = t71.
-    
+
   ENDMETHOD.
   METHOD is_oo_assignable.
     DATA(t1) = CAST zcl_lnt_object_reference_type( i_source_75cf ).
@@ -2561,7 +2561,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t594) = abap_false.
     result = t594.
-    
+
   ENDMETHOD.
   METHOD list_all_interfaces.
     DATA(t1) = CAST zif_lnt_union_865ccdda( i_cdef ).
@@ -3207,7 +3207,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t271 = t272->values(  ).
     t270 = t271->slice0(  ).
     result = t270.
-    
+
   ENDMETHOD.
   METHOD list_all_supers.
     DATA(t1) = CAST zcl_lnt_ty_class_definition( i_cdef ).
@@ -3498,7 +3498,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDDO.
     DATA(t110) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     result = t110.
-    
+
   ENDMETHOD.
   METHOD is_convable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
@@ -3513,7 +3513,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_abstract_type( i_target_d687 ).
     DATA(t3) = abap_true.
     result = t3.
-    
+
   ENDMETHOD.
   METHOD is_compareable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source1 ).
@@ -3656,7 +3656,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t57) = abap_true.
     result = t57.
-    
+
   ENDMETHOD.
   METHOD structure_contains_string.
     DATA(t1) = CAST zcl_lnt_structure_type( i_structure ).
@@ -3687,7 +3687,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDLOOP.
     DATA(t13) = abap_false.
     result = t13.
-    
+
   ENDMETHOD.
   METHOD structure_contains_void.
     DATA(t1) = CAST zcl_lnt_structure_type( i_structure ).
@@ -3998,7 +3998,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     t92 = t93.
     DATA(t125) = t92.
     result = t125.
-    
+
   ENDMETHOD.
   METHOD is_hex_constant.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -4082,7 +4082,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     DATA(t33) = CAST zcl_lnt_abstract_type( t2 ).
     t31 = me->is_assignable( i_source_75cf = t32 i_target_5f8a = t33 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD is_assignable_strict.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
@@ -6194,7 +6194,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     DATA(t816) = CAST zcl_lnt_abstract_type( t2 ).
     t814 = me->is_assignable( i_source_75cf = t815 i_target_5f8a = t816 ).
     result = t814.
-    
+
   ENDMETHOD.
   METHOD is_assignable_structure_typing.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).
@@ -7220,7 +7220,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     ENDIF.
     DATA(t417) = abap_true.
     result = t417.
-    
+
   ENDMETHOD.
   METHOD is_utc_long_assignable.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_source_75cf ).

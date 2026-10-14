@@ -44,7 +44,7 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     ENDLOOP.
     DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t14.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_eae383aaa208.
     IF zlnt_builtin_init_672ad5f3b5e9 = abap_true.

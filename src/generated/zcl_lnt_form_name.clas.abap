@@ -156,7 +156,7 @@ CLASS zcl_lnt_form_name IMPLEMENTATION.
     t49 = zcl_lnt_st_combi_module=>seq( i_first = t50 i_second = t51 i_rest = t52 ).
     t1 = t49.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d175_344bc5837b82.

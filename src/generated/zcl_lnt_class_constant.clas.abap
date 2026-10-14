@@ -79,7 +79,7 @@ CLASS zcl_lnt_class_constant IMPLEMENTATION.
   METHOD get_visibility.
     DATA(t1) = CONV int8( me->visibility ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1031_e503345f4c84.

@@ -60,12 +60,12 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     CLEAR t14.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t13 i_pseudo_comment = t14 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_sm_cn_ts_sm_cns.
     DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_sm_cn_ts_sm_cns.
     DATA(t1) = CAST zcl_lnt_smim_consistency_conf( i_conf ).
@@ -105,7 +105,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns(  ) ).

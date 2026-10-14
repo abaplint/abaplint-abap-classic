@@ -24,7 +24,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
   METHOD get_filename.
     DATA(t1) = CONV string( me->filename ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD base_name.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -291,7 +291,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     t110 = t111+t112(t117).
     t107 = t110.
     result = t107.
-    
+
   ENDMETHOD.
   METHOD get_object_type.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -375,7 +375,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ENDIF.
     t11 = t16.
     result = t11.
-    
+
   ENDMETHOD.
   METHOD get_object_name.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -539,7 +539,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA(t70) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
     READ TABLE t70->items INDEX 1 INTO t69.
     result = t69.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

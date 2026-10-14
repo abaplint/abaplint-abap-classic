@@ -1227,7 +1227,7 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
     t409 = zcl_lnt_st_combi_module=>seq( i_first = t410 i_second = t411 i_rest = t412 ).
     t380 = t409.
     result = t380.
-    
+
   ENDMETHOD.
   METHOD build_select_core.
     DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_allow_into ).
@@ -3822,7 +3822,7 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
     t865 = zcl_lnt_st_combi_module=>alt_prio( i_first = t866 i_second = t867 i_rest = t868 ).
     t836 = t865.
     result = t836.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_6677a9ff777e.
     IF zlnt_builtin_init_f39435c81d86 = abap_true.

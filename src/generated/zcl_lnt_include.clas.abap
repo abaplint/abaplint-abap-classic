@@ -64,7 +64,7 @@ CLASS zcl_lnt_include IMPLEMENTATION.
     t1 = t2.
     DATA(t21) = CAST zif_lnt_statement_runnable( t1 ).
     result = t21.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

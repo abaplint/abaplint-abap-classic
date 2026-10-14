@@ -130,7 +130,7 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     t45 = zcl_lnt_st_combi_module=>alt_prio( i_first = t46 i_second = t47 i_rest = t48 ).
     t30 = t45.
     result = t30.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396.

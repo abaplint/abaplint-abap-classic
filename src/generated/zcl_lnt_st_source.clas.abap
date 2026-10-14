@@ -2603,7 +2603,7 @@ CLASS zcl_lnt_st_source IMPLEMENTATION.
     t833 = t834.
     DATA(t898) = CAST zif_lnt_statement_runnable( t833 ).
     result = t898.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.

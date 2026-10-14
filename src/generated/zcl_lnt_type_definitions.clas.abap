@@ -123,7 +123,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
   METHOD get_all.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_by_name.
     DATA(t1) = i_name.
@@ -166,7 +166,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     ENDIF.
     t2 = t9.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -36,7 +36,7 @@ CLASS zcl_lnt_ob_interface IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |INTF|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_dfn_ins_src_obj_int_ts_intr.
     DATA(t1) = CAST zif_lnt_interface_definition( i_def ).
@@ -52,7 +52,7 @@ CLASS zcl_lnt_ob_interface IMPLEMENTATION.
   METHOD get_definition.
     DATA(t1) = CAST zif_lnt_interface_definition( me->def ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_interface.
     DATA t1 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
@@ -119,7 +119,7 @@ CLASS zcl_lnt_ob_interface IMPLEMENTATION.
     ENDIF.
     t1 = t16.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_identifier.
     DATA t1 TYPE REF TO zcl_lnt_fi_identifier.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_ob_interface IMPLEMENTATION.
     ENDIF.
     t1 = t30.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -262,7 +262,7 @@ CLASS zcl_lnt_ob_interface IMPLEMENTATION.
     ENDIF.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD parse_xml.
     DATA(t1) = VALUE abap_bool( ).

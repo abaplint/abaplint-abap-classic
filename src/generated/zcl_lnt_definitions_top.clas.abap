@@ -135,7 +135,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
     CLEAR t38.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t13 i_extended_information = t21 i_tags = t26 i_pragma = t37 i_pseudo_comment = t38 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -146,7 +146,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_df_tp_ts_dfn_tp.
     DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_df_tp_ts_dfn_tp.
     DATA(t1) = CAST zcl_lnt_definitions_top_conf( i_conf ).
@@ -182,12 +182,12 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_definitions_top_conf.
@@ -197,12 +197,12 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->st_cn_in_sr_rl_df_tp_ts_dfn_tp( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_df_tp_ts_dfn_tp( i_file = i_file ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1378_86e487194f1c.

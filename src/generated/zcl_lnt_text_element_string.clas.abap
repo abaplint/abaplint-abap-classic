@@ -116,7 +116,7 @@ CLASS zcl_lnt_text_element_string IMPLEMENTATION.
     t22 = t23.
     DATA(t41) = CAST zif_lnt_statement_runnable( t22 ).
     result = t41.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.

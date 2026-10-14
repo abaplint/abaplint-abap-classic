@@ -1797,7 +1797,7 @@ CLASS zcl_lnt_sy_field_chain IMPLEMENTATION.
     ENDDO.
     DATA(t752) = CAST zcl_lnt_abstract_type( t210 ).
     result = t752.
-    
+
   ENDMETHOD.
   METHOD find_top.
     DATA(t1) = CAST zif_lnt_node( i_node ).
@@ -2306,7 +2306,7 @@ CLASS zcl_lnt_sy_field_chain IMPLEMENTATION.
     DATA t212 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t212.
     result = t212.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

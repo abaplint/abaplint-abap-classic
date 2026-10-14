@@ -1178,12 +1178,12 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     ENDLOOP.
     DATA(t59) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t59.
-    
+
   ENDMETHOD.
   METHOD get_db65.
     DATA(t1) = CAST zcl_lnt_iconfig( me->config ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD read_by_key.
     DATA(t1) = i_rule.
@@ -1240,7 +1240,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         t20 = t21.
       ENDIF.
       result = t20.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD read_by_rule.
@@ -1255,14 +1255,14 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_iconfig( me->config ).
     t1 = t2->global.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_syntax_setttings.
     DATA t1 TYPE REF TO zcl_lnt_isyntax_settings.
     DATA(t2) = CAST zcl_lnt_iconfig( me->config ).
     t1 = t2->syntax.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_release.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1398,7 +1398,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     t50 = t51->as_string( ).
     t49 = zcl_lnt_version_module=>version_to_abap_release( i_v = t50 ).
     result = t49.
-    
+
   ENDMETHOD.
   METHOD is_open_abap.
     DATA(t1) = VALUE abap_bool( ).
@@ -1565,7 +1565,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     t60 = t61->get( p0 = t62 ).
     t1 = xsdbool( t2 = t60 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_version.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1644,7 +1644,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     ENDIF.
     DATA(t29) = |Normal|.
     result = t29.
-    
+
   ENDMETHOD.
   METHOD check_version.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

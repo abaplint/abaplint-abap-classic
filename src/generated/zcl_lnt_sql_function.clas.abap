@@ -1097,7 +1097,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
     t420 = zcl_lnt_st_combi_module=>alt_prio( i_first = t421 i_second = t422 i_rest = t423 ).
     t285 = t420.
     result = t285.
-    
+
   ENDMETHOD.
   METHOD fn_fn.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1581,7 +1581,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
       t3 = t11.
     ENDIF.
     result = t3.
-    
+
   ENDMETHOD.
   METHOD fn_named_fn.
     DATA(t1) = CAST zif_lnt_statement_runnable( i_abap_only ).
@@ -2021,7 +2021,7 @@ CLASS zcl_lnt_sql_function IMPLEMENTATION.
     ENDIF.
     t137 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t138 i_first = t141 i_opts = t168 ).
     result = t137.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d270_547c551ca3da.

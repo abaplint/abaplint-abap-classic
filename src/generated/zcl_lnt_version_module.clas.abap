@@ -34,7 +34,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t6 = t7->ordinal.
     t3 = xsdbool( t4 >= t6 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD version_to_abap_release.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
@@ -100,7 +100,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     DATA(t24) = CAST zcl_lnt_abap_release( t2 ).
     t23 = t24.
     result = t23.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_839fc4c13920.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.

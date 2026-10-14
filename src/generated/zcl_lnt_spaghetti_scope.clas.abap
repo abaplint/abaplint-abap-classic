@@ -60,12 +60,12 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->node ).
     t1 = t2->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd(  ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_t_i_s_ab_5_sy_sp_sc_ts_sp_sc.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->node ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD all_nodes.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -93,12 +93,12 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD get_first_child.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_top.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_t_i_s_ab_5_sy_sp_sc_ts_sp_sc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

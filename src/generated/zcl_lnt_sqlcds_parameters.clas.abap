@@ -317,7 +317,7 @@ CLASS zcl_lnt_sqlcds_parameters IMPLEMENTATION.
     t113 = zcl_lnt_st_combi_module=>seq( i_first = t114 i_second = t115 i_rest = t116 ).
     t46 = t113.
     result = t46.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d274_5d558843257f.

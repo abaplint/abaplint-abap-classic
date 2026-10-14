@@ -57,7 +57,7 @@ CLASS zcl_lnt_simple_source3 IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>alt_prio( i_first = t14 i_second = t15 i_rest = t16 ).
     t1 = t13.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d92_9ef7e4968cfbeb.

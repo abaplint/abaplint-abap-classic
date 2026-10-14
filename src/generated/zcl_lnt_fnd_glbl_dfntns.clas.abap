@@ -620,7 +620,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     ENDLOOP.
     DATA(t101) = t13.
     result = t101.
-    
+
   ENDMETHOD.
   METHOD count.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -731,7 +731,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     ENDIF.
     DATA(t47) = CONV int8( 0 ).
     result = t47.
-    
+
   ENDMETHOD.
   METHOD update.
     DATA(t1) = CAST zif_lnt_union_291f04b3( i_obj_1ed0 ).

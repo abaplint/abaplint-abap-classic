@@ -1300,7 +1300,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
       t572 = t580.
     ENDIF.
     result = t572.
-    
+
   ENDMETHOD.
   METHOD inserts_using_table_key.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_target_type ).
@@ -1425,7 +1425,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
       t24 = t34.
     ENDIF.
     result = t24.
-    
+
   ENDMETHOD.
   METHOD character_or_hex_length.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -1493,7 +1493,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
     DATA t28 TYPE REF TO zcl_lnt_shape_164098b6.
     CLEAR t28.
     result = t28.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

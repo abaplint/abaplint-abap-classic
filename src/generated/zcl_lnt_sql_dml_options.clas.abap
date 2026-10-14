@@ -241,7 +241,7 @@ CLASS zcl_lnt_sql_dml_options IMPLEMENTATION.
     CLEAR t85.
     t62 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t63 i_first = t69 i_opts = t85 ).
     result = t62.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d287_e5df01c1631a.

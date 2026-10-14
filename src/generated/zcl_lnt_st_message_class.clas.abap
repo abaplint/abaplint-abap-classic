@@ -208,7 +208,7 @@ CLASS zcl_lnt_st_message_class IMPLEMENTATION.
     t65 = zcl_lnt_st_combi_module=>seq( i_first = t66 i_second = t67 i_rest = t68 ).
     t1 = t65.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d209_c21e0d8a3b4e.

@@ -133,7 +133,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
   METHOD get_parameters.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->parameters ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_static_4685.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

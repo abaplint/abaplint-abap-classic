@@ -104,7 +104,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     ENDIF.
     DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD get_optional.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -239,7 +239,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     ENDIF.
     DATA(t59) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t59.
-    
+
   ENDMETHOD.
   METHOD get_default_importing.
     DATA(t1) = VALUE abap_bool( ).
@@ -310,7 +310,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t27.
     result = t27.
-    
+
   ENDMETHOD.
   METHOD get_exporting.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -362,7 +362,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
       t7 = t16.
     ENDIF.
     result = t7.
-    
+
   ENDMETHOD.
   METHOD get_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -403,7 +403,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
   METHOD get_parameters.
     DATA(t1) = CAST zcl_lnt_built_in_method( me ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_p_d_i_s_a_5_s_bl_ts_bl_in_mt.
     DATA(t1) = i_parameter_d485.

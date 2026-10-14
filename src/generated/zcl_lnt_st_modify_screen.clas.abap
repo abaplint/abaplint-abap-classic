@@ -102,7 +102,7 @@ CLASS zcl_lnt_st_modify_screen IMPLEMENTATION.
     ENDIF.
     t31 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t32 i_first = t33 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

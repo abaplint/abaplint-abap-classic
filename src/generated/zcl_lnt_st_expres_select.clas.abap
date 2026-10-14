@@ -458,7 +458,7 @@ CLASS zcl_lnt_st_expres_select IMPLEMENTATION.
     t153 = zcl_lnt_st_combi_module=>seq( i_first = t154 i_second = t155 i_rest = t156 ).
     t129 = t153.
     result = t129.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3.

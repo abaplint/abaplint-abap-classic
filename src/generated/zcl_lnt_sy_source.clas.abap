@@ -2341,7 +2341,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     ENDIF.
     DATA(t1033) = CAST zcl_lnt_abstract_type( t749 ).
     result = t1033.
-    
+
   ENDMETHOD.
   METHOD traverse_remaining_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
@@ -2856,7 +2856,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
       t91 = t103.
     ENDIF.
     result = t91.
-    
+
   ENDMETHOD.
   METHOD numeric_rank.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -2994,7 +2994,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     DATA t44 TYPE REF TO zlnt_runtime_opti_4a236cd5714d.
     CLEAR t44.
     result = t44.
-    
+
   ENDMETHOD.
   METHOD add_if_inferred.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -4318,7 +4318,7 @@ CLASS zcl_lnt_sy_source IMPLEMENTATION.
     ENDIF.
     DATA(t203) = CAST zcl_lnt_abstract_type( t3 ).
     result = t203.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

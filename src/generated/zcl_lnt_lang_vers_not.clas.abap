@@ -60,7 +60,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t10.
       result = t10.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD railroad.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_statement_runnable( me->runnable ).
     t1 = t2->first(  ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD run_one.
     DATA(t1) = CAST zcl_lnt_st_result( i_x ).
@@ -121,7 +121,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     ENDIF.
     t2 = t10.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

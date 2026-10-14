@@ -469,7 +469,7 @@ CLASS zcl_lnt_write_offset_length IMPLEMENTATION.
     t159 = t160.
     DATA(t177) = CAST zif_lnt_statement_runnable( t159 ).
     result = t177.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d340_8d8d1acca482.

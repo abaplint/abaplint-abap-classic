@@ -107,12 +107,12 @@ CLASS zcl_lnt_macro_naming IMPLEMENTATION.
     CLEAR t34.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t11 i_extended_information = t17 i_tags = t22 i_pragma = t33 i_pseudo_comment = t34 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_mc_nm_ts_mc_nmn.
     DATA(t1) = CAST zcl_lnt_macro_naming_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_mc_nm_ts_mc_nmn.
     DATA(t1) = CAST zcl_lnt_macro_naming_conf( i_conf ).
@@ -132,12 +132,12 @@ CLASS zcl_lnt_macro_naming IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_macro_naming_conf( me->gt_cn_in_sr_rl_mc_nm_ts_mc_nmn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_macro_naming_conf( me->gt_cn_in_sr_rl_mc_nm_ts_mc_nmn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_macro_naming_conf.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_macro_naming IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->st_cn_in_sr_rl_mc_nm_ts_mc_nmn( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1474_bd6ba12a1e2f.

@@ -39,7 +39,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t4 = t5->concat( p0 = t11 ).
     t3 = NEW zcl_lnt_sr_sequence( i_list = t4 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD alt.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -63,7 +63,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t4 = t5->concat( p0 = t11 ).
     t3 = NEW zcl_lnt_sr_alternative( i_list = t4 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD begin_end.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -91,7 +91,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t5 = t14.
     t4 = NEW zcl_lnt_sr_sequence( i_list = t5 ).
     result = t4.
-    
+
   ENDMETHOD.
   METHOD opt.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_structure_runnable( t1 ).
     t2 = NEW zcl_lnt_sr_optional( i_obj_1ed0 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD star.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_structure_runnable( t1 ).
     t2 = NEW zcl_lnt_sr_star( i_obj_1ed0 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD sta.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -124,7 +124,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
     t2 = NEW zcl_lnt_sub_statement( i_obj_1ed0 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD sub.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -194,7 +194,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t21 = t22->get( p0 = t23 ).
     t20 = t21.
     result = t20.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_92502b133500.
     IF zlnt_builtin_init_925c84de8315 = abap_true.

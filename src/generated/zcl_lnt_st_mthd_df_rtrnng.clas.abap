@@ -116,7 +116,7 @@ CLASS zcl_lnt_st_mthd_df_rtrnng IMPLEMENTATION.
     t38 = zcl_lnt_st_combi_module=>seq( i_first = t39 i_second = t40 i_rest = t41 ).
     t25 = t38.
     result = t25.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d229_3a5c1215c384.

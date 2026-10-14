@@ -67,7 +67,7 @@ CLASS zcl_lnt_simple_source4 IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>alt( i_first = t17 i_second = t18 i_rest = t19 ).
     t1 = t16.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d127_3599949d7390.

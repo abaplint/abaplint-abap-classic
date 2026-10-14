@@ -57,7 +57,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
   METHOD g_p_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->parent ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( i_node ).
@@ -68,7 +68,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
   METHOD g_c_i_s_a_5_s_s_sc_ts_sp_sc_nd.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -88,12 +88,12 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
       t1 = t6.
     ENDIF.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_identifier.
     DATA(t1) = CAST zcl_lnt_iscope_identifier( me->identifier ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD calc_coverage.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -241,7 +241,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t51 TYPE REF TO zcl_lnt_shape_ca978742.
     CLEAR t51.
     result = t51.
-    
+
   ENDMETHOD.
   METHOD find_class_definition.
     DATA(t1) = i_name.
@@ -350,7 +350,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t45 TYPE REF TO zif_lnt_class_definition.
     CLEAR t45.
     result = t45.
-    
+
   ENDMETHOD.
   METHOD list_class_definitions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -469,7 +469,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t41 TYPE REF TO zif_lnt_form_definition.
     CLEAR t41.
     result = t41.
-    
+
   ENDMETHOD.
   METHOD find_interface_definition.
     DATA(t1) = i_name.
@@ -567,7 +567,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t40 TYPE REF TO zif_lnt_interface_definition.
     CLEAR t40.
     result = t40.
-    
+
   ENDMETHOD.
   METHOD find_type.
     DATA(t1) = i_name.
@@ -665,7 +665,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t40 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t40.
     result = t40.
-    
+
   ENDMETHOD.
   METHOD find_extra_like_type.
     DATA(t1) = i_name.
@@ -761,7 +761,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
     DATA t38 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t38.
     result = t38.
-    
+
   ENDMETHOD.
   METHOD find_write_reference.
     DATA(t1) = CAST zcl_lnt_position( i_pos ).
@@ -794,7 +794,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
   METHOD get_parent.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_p_i_s_a_5_s_s_sc_ts_sp_sc_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD add_child.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
@@ -808,12 +808,12 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
   METHOD get_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->g_c_i_s_a_5_s_s_sc_ts_sp_sc_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_first_child.
     DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d829_3c9ea8646df0.

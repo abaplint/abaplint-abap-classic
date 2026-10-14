@@ -293,7 +293,7 @@ CLASS zcl_lnt_receive_parameters IMPLEMENTATION.
     t66 = t67.
     DATA(t102) = CAST zif_lnt_statement_runnable( t66 ).
     result = t102.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d244_ecc6d4776dc2.

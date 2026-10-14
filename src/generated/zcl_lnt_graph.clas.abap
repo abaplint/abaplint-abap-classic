@@ -114,7 +114,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     ENDIF.
     t2 = t3->get( p0 = t4 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD find_vertex_by_filename.
     DATA(t1) = i_filename.
@@ -132,7 +132,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     ENDIF.
     t2 = t3->get( p0 = t4 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD add_edge.
     DATA(t1) = CAST zcl_lnt_ivertex( i_from ).
@@ -248,7 +248,7 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     ENDIF.
     DATA(t49) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t49.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

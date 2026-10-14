@@ -112,7 +112,7 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     t1 = t2.
     DATA(t38) = CAST zif_lnt_statement_runnable( t1 ).
     result = t38.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d101_98dd83adae1d.

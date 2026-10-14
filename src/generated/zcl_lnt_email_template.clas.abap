@@ -18,7 +18,7 @@ CLASS zcl_lnt_email_template IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |SMTG|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

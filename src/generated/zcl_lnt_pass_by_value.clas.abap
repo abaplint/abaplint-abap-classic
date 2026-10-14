@@ -75,7 +75,7 @@ CLASS zcl_lnt_pass_by_value IMPLEMENTATION.
     t1 = t2.
     DATA(t25) = CAST zif_lnt_statement_runnable( t1 ).
     result = t25.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d176_70730c0e7184.

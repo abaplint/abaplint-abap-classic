@@ -51,7 +51,7 @@ CLASS zcl_lnt_c_sequence_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d998_c657229a4dca.

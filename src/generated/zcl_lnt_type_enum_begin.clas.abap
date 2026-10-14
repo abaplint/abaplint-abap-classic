@@ -262,7 +262,7 @@ CLASS zcl_lnt_type_enum_begin IMPLEMENTATION.
     t57 = t58.
     DATA(t93) = CAST zif_lnt_statement_runnable( t57 ).
     result = t93.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

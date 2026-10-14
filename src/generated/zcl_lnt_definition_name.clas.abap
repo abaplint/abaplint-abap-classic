@@ -152,7 +152,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>seq( i_first = t48 i_second = t49 i_rest = t50 ).
     t7 = t47.
     result = t7.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97.

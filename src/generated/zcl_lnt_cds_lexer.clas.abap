@@ -1159,7 +1159,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     DATA(t662) = CAST zcl_lnt_cd_result( t2 ).
     t661 = t662->get_db65(  ).
     result = t661.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

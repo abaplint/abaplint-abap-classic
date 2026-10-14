@@ -38,7 +38,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     DATA(t3) = CAST zcl_lnt_abstract_type_data( t1 ).
     t2 = NEW zcl_lnt_x_string_type( i_input_967e = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD t_t_i_s_a_t_b_xs_ty_ts_x_st_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -49,7 +49,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
   METHOD is_generic.
     DATA(t1) = abap_false.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -72,7 +72,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_t_b_xs_ty_ts_x_st_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_74ee6279b0b4.
     IF zlnt_builtin_init_5b41ede9197f = abap_true.

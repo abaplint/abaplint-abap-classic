@@ -28,7 +28,7 @@ CLASS zcl_lnt_float_type IMPLEMENTATION.
   METHOD is_generic.
     DATA(t1) = abap_false.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -51,7 +51,7 @@ CLASS zcl_lnt_float_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_fl_ty_ts_fl_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1006_009cee8662f4.

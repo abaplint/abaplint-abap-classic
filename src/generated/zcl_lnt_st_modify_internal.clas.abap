@@ -893,7 +893,7 @@ CLASS zcl_lnt_st_modify_internal IMPLEMENTATION.
     t332 = zcl_lnt_st_combi_module=>alt( i_first = t333 i_second = t334 i_rest = t335 ).
     t321 = t332.
     result = t321.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

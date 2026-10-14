@@ -225,7 +225,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
     DATA(t39) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     t38 = t39.
     result = t38.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

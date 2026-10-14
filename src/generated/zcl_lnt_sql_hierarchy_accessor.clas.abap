@@ -392,7 +392,7 @@ CLASS zcl_lnt_sql_hierarchy_accessor IMPLEMENTATION.
     CLEAR t146.
     t112 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t113 i_first = t119 i_opts = t146 ).
     result = t112.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d310_a5d6a619b3d6.

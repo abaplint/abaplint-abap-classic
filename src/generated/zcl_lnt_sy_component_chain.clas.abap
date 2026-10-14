@@ -1619,7 +1619,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
       t671 = t675.
     ENDIF.
     result = t671.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

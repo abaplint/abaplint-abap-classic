@@ -1848,7 +1848,7 @@ CLASS zcl_lnt_st_modify_entities IMPLEMENTATION.
     ENDIF.
     t641 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t642 i_first = t648 i_opts = t686 ).
     result = t641.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

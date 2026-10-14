@@ -72,7 +72,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       t2 = t7.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD pr_in_sr_ob_abp_obj_ts_abp_obj.
     DATA(t1) = CAST zcl_lnt_abap_release( i_release_7928 ).
@@ -252,7 +252,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     ENDIF.
     t69 = NEW zcl_lnt_iparse_result( i_updated = t70 i_runtime = t71 i_runtime_extra = t73 ).
     result = t69.
-    
+
   ENDMETHOD.
   METHOD set_dirty.
     DATA t1 TYPE REF TO zcl_lnt_isyntax_result.
@@ -281,7 +281,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
   METHOD get_abap_files.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->parsed ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_abap_file_by_name.
     DATA(t1) = i_filename.
@@ -322,7 +322,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t16.
     result = t16.
-    
+
   ENDMETHOD.
   METHOD get_main_abap_file.
     DATA t1 TYPE string.
@@ -531,7 +531,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     DATA t92 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t92.
     result = t92.
-    
+
   ENDMETHOD.
   METHOD get_text_symbols.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -568,7 +568,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_abp_obj_ts_abp_obj( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1085_7cdb0f50a2e1.

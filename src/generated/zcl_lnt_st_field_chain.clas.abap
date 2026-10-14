@@ -529,7 +529,7 @@ CLASS zcl_lnt_st_field_chain IMPLEMENTATION.
     t164 = t165.
     DATA(t184) = CAST zif_lnt_statement_runnable( t164 ).
     result = t184.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df.

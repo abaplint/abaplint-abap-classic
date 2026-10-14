@@ -133,7 +133,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     t1 = t6.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -359,7 +359,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
       DATA(t106) = t3.
       t101 = NEW zcl_lnt_imatch( i_matched = t102 i_unmatched = t103 i_error = t104 i_error_description = t105 i_error_matched = t106 ).
       result = t101.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

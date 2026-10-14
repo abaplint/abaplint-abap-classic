@@ -141,7 +141,7 @@ CLASS zcl_lnt_st_form_definition IMPLEMENTATION.
     t1 = t2.
     DATA(t42) = CAST zif_lnt_statement_runnable( t1 ).
     result = t42.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

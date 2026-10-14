@@ -1269,7 +1269,7 @@ CLASS zcl_lnt_st_import IMPLEMENTATION.
     t459 = t460.
     DATA(t488) = CAST zif_lnt_statement_runnable( t459 ).
     result = t488.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

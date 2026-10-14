@@ -392,7 +392,7 @@ CLASS zcl_lnt_st_type_mesh IMPLEMENTATION.
     t87 = t88.
     DATA(t137) = CAST zif_lnt_statement_runnable( t87 ).
     result = t137.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

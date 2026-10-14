@@ -599,7 +599,7 @@ CLASS zcl_lnt_sy_inln_fld_dfntn IMPLEMENTATION.
       t254 = t258.
     ENDIF.
     result = t254.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

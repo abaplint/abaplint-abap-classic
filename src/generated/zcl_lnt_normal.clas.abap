@@ -1172,7 +1172,7 @@ CLASS zcl_lnt_normal IMPLEMENTATION.
     t694 = zcl_lnt_sr_combi_module=>alt( i_first = t695 i_rest = t696 ).
     t1 = t694.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

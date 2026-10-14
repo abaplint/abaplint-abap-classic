@@ -2037,7 +2037,7 @@ CLASS zcl_lnt_st_type_table IMPLEMENTATION.
     t644 = t645.
     DATA(t754) = CAST zif_lnt_statement_runnable( t644 ).
     result = t754.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d147_5c941cfb7396.

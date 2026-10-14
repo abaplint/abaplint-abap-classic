@@ -18,7 +18,7 @@ CLASS zcl_lnt_change_document IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |CHDO|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

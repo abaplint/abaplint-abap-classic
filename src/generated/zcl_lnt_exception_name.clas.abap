@@ -98,7 +98,7 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>seq( i_first = t29 i_second = t30 i_rest = t31 ).
     t1 = t28.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d162_57231f39acd0.

@@ -51,7 +51,7 @@ CLASS zcl_lnt_numeric_generic_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_t_b_n_g_t_t_nm_gn_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1012_fec377d782bf.

@@ -87,7 +87,7 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     t29 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t31 i_rest = t32 ).
     t15 = t29.
     result = t15.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d290_f492e89b83f5.

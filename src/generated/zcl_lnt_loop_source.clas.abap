@@ -108,7 +108,7 @@ CLASS zcl_lnt_loop_source IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>alt( i_first = t29 i_second = t30 i_rest = t31 ).
     t1 = t28.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d205_211e28be3777.

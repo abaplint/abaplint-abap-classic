@@ -1104,7 +1104,7 @@ CLASS zcl_lnt_st_export IMPLEMENTATION.
     t423 = zcl_lnt_st_combi_module=>seq( i_first = t424 i_second = t425 i_rest = t426 ).
     t392 = t423.
     result = t392.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

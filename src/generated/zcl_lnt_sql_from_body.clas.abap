@@ -247,7 +247,7 @@ CLASS zcl_lnt_sql_from_body IMPLEMENTATION.
     t81 = zcl_lnt_st_combi_module=>alt_prio( i_first = t82 i_second = t83 i_rest = t84 ).
     t70 = t81.
     result = t70.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d300_344d539249f5.

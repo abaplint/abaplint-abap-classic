@@ -205,7 +205,7 @@ CLASS zcl_lnt_st_string_template IMPLEMENTATION.
     CLEAR t68.
     t43 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t44 i_first = t50 i_opts = t68 ).
     result = t43.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d257_509c7b1190c0.

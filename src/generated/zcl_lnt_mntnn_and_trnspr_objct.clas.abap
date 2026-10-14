@@ -32,7 +32,7 @@ CLASS zcl_lnt_mntnn_and_trnspr_objct IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |TOBJ|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -80,7 +80,7 @@ CLASS zcl_lnt_mntnn_and_trnspr_objct IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_s_o_m_a_t_o_ts_mn_an_tr_ob(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1187_382e47463b0b.

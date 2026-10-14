@@ -515,7 +515,7 @@ CLASS zcl_lnt_st_target IMPLEMENTATION.
     t179 = zcl_lnt_st_combi_module=>alt_prio( i_first = t180 i_second = t181 i_rest = t182 ).
     t148 = t179.
     result = t148.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.

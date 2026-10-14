@@ -25,7 +25,7 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |SPRX|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -69,7 +69,7 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_prx_obj_ts_prx_obj( i_release_2099 = i_release_7928 i_global_macros_14ec = i_global_macros_5535 i_reg_f149 = i_reg_f149 ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1227_e18846beac5b.

@@ -320,7 +320,7 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     t124 = zcl_lnt_st_combi_module=>alt_prio( i_first = t125 i_second = t126 i_rest = t127 ).
     t1 = t124.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD lob_kind.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -393,7 +393,7 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     t29 = zcl_lnt_st_combi_module=>alt_prio( i_first = t30 i_second = t31 i_rest = t32 ).
     t1 = t29.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD lob_handle_type.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -506,7 +506,7 @@ CLASS zcl_lnt_lob_handle_type_module IMPLEMENTATION.
     t37 = zcl_lnt_st_combi_module=>seq( i_first = t38 i_second = t39 i_rest = t40 ).
     t1 = t37.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_db1fb6927434.
     IF zlnt_builtin_init_ab4c41240bc6 = abap_true.

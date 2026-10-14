@@ -512,7 +512,7 @@ CLASS zcl_lnt_simple_target IMPLEMENTATION.
     t179 = zcl_lnt_st_combi_module=>seq( i_first = t180 i_second = t181 i_rest = t182 ).
     t164 = t179.
     result = t164.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d259_29e6bae3a66c.

@@ -120,7 +120,7 @@ CLASS zcl_lnt_overlay IMPLEMENTATION.
     t15 = t16.
     DATA(t42) = CAST zif_lnt_statement_runnable( t15 ).
     result = t42.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

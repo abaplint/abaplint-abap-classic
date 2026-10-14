@@ -424,7 +424,7 @@ CLASS zcl_lnt_sql_indicators IMPLEMENTATION.
     CLEAR t161.
     t124 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t125 i_first = t131 i_opts = t161 ).
     result = t124.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d314_757c7fdfaec1.

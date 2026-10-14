@@ -867,7 +867,7 @@ CLASS zcl_lnt_st_replace IMPLEMENTATION.
     t337 = zcl_lnt_st_combi_module=>seq( i_first = t338 i_second = t339 i_rest = t340 ).
     t222 = t337.
     result = t222.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

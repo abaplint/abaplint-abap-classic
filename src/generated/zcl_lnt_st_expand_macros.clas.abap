@@ -943,7 +943,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     DATA(t160) = t12.
     t155 = NEW zcl_lnt_shape_df3d0820( i_statements = t156 i_contains_unknown = t160 ).
     result = t155.
-    
+
   ENDMETHOD.
   METHOD expand_contents.
     DATA(t1) = i_name.
@@ -1241,7 +1241,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     ENDLOOP.
     DATA(t113) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
     result = t113.
-    
+
   ENDMETHOD.
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
@@ -1265,7 +1265,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
     t3 = t8.
     t2 = me->tokens_to_nodes( i_tokens = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -18,7 +18,7 @@ CLASS zcl_lnt_transformation IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |XSLT|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -30,7 +30,7 @@ CLASS zcl_lnt_transformation IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1262_18a7d61c9853.

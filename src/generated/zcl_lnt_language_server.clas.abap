@@ -113,7 +113,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
   METHOD semantic_tokens_legend.
     DATA(t1) = CAST zcl_lnt_shape_2d2f513b( zcl_lnt_semantic_highlighting=>semantic_tokens_legend(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD semantic_tokens_range.
     DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).

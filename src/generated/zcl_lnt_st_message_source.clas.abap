@@ -259,7 +259,7 @@ CLASS zcl_lnt_st_message_source IMPLEMENTATION.
     t90 = zcl_lnt_st_combi_module=>alt_prio( i_first = t91 i_second = t92 i_rest = t93 ).
     t79 = t90.
     result = t79.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d212_ad2d7a05fa43.

@@ -67,7 +67,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     CLEAR t18.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t17 i_pseudo_comment = t18 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_unk_typ_ts_unk_typ.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -75,12 +75,12 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     me->reg = t2.
     DATA(t3) = CAST zcl_lnt_unknown_types( me ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_rl_un_ty_ts_un_ty_73fa.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_rl_un_ty_ts_un_ty_da3d.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( i_conf ).
@@ -127,7 +127,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
     t18 = me->remove_duplicates( i_list = t19 ).
     result = t18.
-    
+
   ENDMETHOD.
   METHOD remove_duplicates.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_list ).
@@ -193,7 +193,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     ENDLOOP.
     DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD traverse.
     DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
@@ -893,7 +893,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     ENDLOOP.
     DATA(t358) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t358.
-    
+
   ENDMETHOD.
   METHOD check_parameters.
     DATA(t1) = CAST zif_lnt_interface_definition( i_idef ).
@@ -1081,7 +1081,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t74 TYPE REF TO zcl_lnt_shape_7ddeb4ab.
     CLEAR t74.
     result = t74.
-    
+
   ENDMETHOD.
   METHOD contains_unknown.
     DATA(t1) = CAST zcl_lnt_abstract_type( i_type_9913 ).
@@ -1200,7 +1200,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t48.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -1208,12 +1208,12 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_registry( t1 ).
     t2 = me->in_in_sr_rl_unk_typ_ts_unk_typ( i_reg_f149 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa(  ) ).

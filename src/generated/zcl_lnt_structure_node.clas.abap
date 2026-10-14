@@ -42,7 +42,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
   METHOD gt_in_sr_ab_nd_st_nd_ts_str_nd.
     DATA(t1) = CAST zif_lnt_structure( me->structure ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD find_parent.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
@@ -127,7 +127,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t26.
-    
+
   ENDMETHOD.
   METHOD find_direct_structures.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -192,7 +192,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t26.
-    
+
   ENDMETHOD.
   METHOD find_first_statement.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -290,7 +290,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t36 TYPE REF TO zcl_lnt_statement_node.
     CLEAR t36.
     result = t36.
-    
+
   ENDMETHOD.
   METHOD find_first_expression.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -340,7 +340,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t21.
     result = t21.
-    
+
   ENDMETHOD.
   METHOD get_first_statement.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -620,7 +620,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t37.
-    
+
   ENDMETHOD.
   METHOD find_all_statement_nodes.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -757,7 +757,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t47.
-    
+
   ENDMETHOD.
   METHOD find_direct_structure.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -847,7 +847,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t29 TYPE REF TO zcl_lnt_structure_node.
     CLEAR t29.
     result = t29.
-    
+
   ENDMETHOD.
   METHOD find_first_structure.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -979,12 +979,12 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t46 TYPE REF TO zcl_lnt_structure_node.
     CLEAR t46.
     result = t46.
-    
+
   ENDMETHOD.
   METHOD get_db65.
     DATA(t1) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD find_all_expressions_multi.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_type_9913 ).

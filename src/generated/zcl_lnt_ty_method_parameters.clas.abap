@@ -422,7 +422,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
   METHOD get_optional.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->optional ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_all.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -492,7 +492,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     t26 = t32.
     DATA(t34) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t34.
-    
+
   ENDMETHOD.
   METHOD get_default_importing.
     DATA t1 TYPE abap_bool.
@@ -799,12 +799,12 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     DATA t118 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t118.
     result = t118.
-    
+
   ENDMETHOD.
   METHOD get_importing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->importing ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_required_parameters.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1208,22 +1208,22 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
     ENDLOOP.
     DATA(t151) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t151.
-    
+
   ENDMETHOD.
   METHOD get_exporting.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->exporting ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_changing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->changing ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_returning.
     DATA(t1) = CAST zcl_lnt_typed_identifier( me->returning ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_exceptions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -4990,7 +4990,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       t2 = t13.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_parameter_default.
     DATA(t1) = i_parameter_5406.

@@ -466,7 +466,7 @@ CLASS zcl_lnt_st_method_call_chain IMPLEMENTATION.
     t107 = t108.
     DATA(t169) = CAST zif_lnt_statement_runnable( t107 ).
     result = t169.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.

@@ -259,7 +259,7 @@ CLASS zcl_lnt_method_def_importing IMPLEMENTATION.
     t89 = zcl_lnt_st_combi_module=>seq( i_first = t90 i_second = t91 i_rest = t92 ).
     t43 = t89.
     result = t43.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d226_08d3e6bb8e97.

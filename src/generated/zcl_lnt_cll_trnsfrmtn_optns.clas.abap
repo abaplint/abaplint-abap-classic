@@ -104,7 +104,7 @@ CLASS zcl_lnt_cll_trnsfrmtn_optns IMPLEMENTATION.
     ENDIF.
     t31 = zcl_lnt_st_combi_module=>plus( i_first = t32 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.

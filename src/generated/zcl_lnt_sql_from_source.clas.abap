@@ -639,7 +639,7 @@ CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
     t207 = zcl_lnt_st_combi_module=>seq( i_first = t208 i_second = t209 i_rest = t210 ).
     t110 = t207.
     result = t110.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d299_0ba2c1ef340d.

@@ -232,7 +232,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t39 = NEW zcl_lnt_iissue_data( i_filename = t40 i_message_26cb = t42 i_key = t43 i_start = t44 i_end = t45 i_severity = t46 i_default_fix = t48 i_alternative_fixes = t49 ).
     t38 = NEW zcl_lnt_issue( i_data_dc02 = t39 ).
     result = t38.
-    
+
   ENDMETHOD.
   METHOD at_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -325,7 +325,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
     t8 = zcl_lnt_issue=>at_range( i_file = t9 i_start = t10 i_end = t19 i_message_26cb = t48 i_key = t49 i_severity = t50 i_fix = t51 i_alternative_fixes = t52 ).
     result = t8.
-    
+
   ENDMETHOD.
   METHOD at_position.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -438,7 +438,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t42 = NEW zcl_lnt_iissue_data( i_filename = t43 i_message_26cb = t45 i_key = t46 i_start = t47 i_end = t48 i_severity = t49 i_default_fix = t51 i_alternative_fixes = t52 ).
     t41 = NEW zcl_lnt_issue( i_data_dc02 = t42 ).
     result = t41.
-    
+
   ENDMETHOD.
   METHOD at_row_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -515,7 +515,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t31 = NEW zcl_lnt_iissue_data( i_filename = t32 i_message_26cb = t34 i_key = t35 i_start = t36 i_end = t37 i_severity = t38 i_default_fix = t40 i_alternative_fixes = t41 ).
     t30 = NEW zcl_lnt_issue( i_data_dc02 = t31 ).
     result = t30.
-    
+
   ENDMETHOD.
   METHOD at_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -579,7 +579,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t23 = NEW zcl_lnt_iissue_data( i_filename = t24 i_message_26cb = t26 i_key = t27 i_start = t28 i_end = t29 i_severity = t30 i_default_fix = t32 i_alternative_fixes = t33 ).
     t22 = NEW zcl_lnt_issue( i_data_dc02 = t23 ).
     result = t22.
-    
+
   ENDMETHOD.
   METHOD at_token.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -694,7 +694,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t21 = NEW zcl_lnt_iissue_data( i_filename = t22 i_message_26cb = t24 i_key = t25 i_start = t26 i_end = t31 i_severity = t53 i_default_fix = t55 i_alternative_fixes = t56 ).
     t20 = NEW zcl_lnt_issue( i_data_dc02 = t21 ).
     result = t20.
-    
+
   ENDMETHOD.
   METHOD at_token_filename.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -807,7 +807,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t21 = NEW zcl_lnt_iissue_data( i_filename = t22 i_message_26cb = t23 i_key = t24 i_start = t25 i_end = t30 i_severity = t52 i_default_fix = t54 i_alternative_fixes = t55 ).
     t20 = NEW zcl_lnt_issue( i_data_dc02 = t21 ).
     result = t20.
-    
+
   ENDMETHOD.
   METHOD at_identifier.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -941,7 +941,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     t20 = NEW zcl_lnt_iissue_data( i_filename = t21 i_message_26cb = t26 i_key = t27 i_start = t28 i_end = t37 i_severity = t63 i_default_fix = t65 i_alternative_fixes = t66 ).
     t19 = NEW zcl_lnt_issue( i_data_dc02 = t20 ).
     result = t19.
-    
+
   ENDMETHOD.
   METHOD get_data.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -954,35 +954,35 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->message_25cb.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_key.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->key.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_start.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->start.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_end.
     DATA t1 TYPE REF TO zcl_lnt_position.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->end.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_filename.
     DATA t1 TYPE string.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->filename.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_default_fix.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1001,7 +1001,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_iissue_data( me->data_56cc ).
     t1 = t2->severity.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

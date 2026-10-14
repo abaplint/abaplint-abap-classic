@@ -1432,7 +1432,7 @@ CLASS zcl_lnt_sy_target IMPLEMENTATION.
     ENDIF.
     DATA(t629) = CAST zcl_lnt_abstract_type( t111 ).
     result = t629.
-    
+
   ENDMETHOD.
   METHOD find_top.
     DATA(t1) = CAST zif_lnt_node( i_node ).
@@ -2756,7 +2756,7 @@ CLASS zcl_lnt_sy_target IMPLEMENTATION.
     CLEAR t525.
     t523 = NEW zcl_lnt_unknown_type( i_error = t524 i_qualified_name = t525 ).
     result = t523.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

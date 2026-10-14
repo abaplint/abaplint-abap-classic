@@ -47,7 +47,7 @@ CLASS zcl_lnt_st_fs_target IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t11 i_second = t12 i_rest = t13 ).
     t1 = t10.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c.

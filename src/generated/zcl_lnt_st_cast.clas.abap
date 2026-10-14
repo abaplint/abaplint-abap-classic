@@ -233,7 +233,7 @@ CLASS zcl_lnt_st_cast IMPLEMENTATION.
     ENDIF.
     t57 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t58 i_first = t64 i_opts = t67 ).
     result = t57.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d112_70ce077ce8e3.

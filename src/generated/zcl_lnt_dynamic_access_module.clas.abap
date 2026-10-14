@@ -155,7 +155,7 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     CLEAR t42.
     t2 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t3 i_first = t9 i_opts = t42 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD dyn_attr.
     IF zcl_lnt_dynamic_access_module=>zlnt_builtin_init_58df737b37ab = abap_false.
@@ -277,7 +277,7 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     CLEAR t34.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t8 i_opts = t34 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_f10ed84afca7.
     IF zlnt_builtin_init_58df737b37ab = abap_true.

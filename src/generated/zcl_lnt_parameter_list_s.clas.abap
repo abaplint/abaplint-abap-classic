@@ -24,7 +24,7 @@ CLASS zcl_lnt_parameter_list_s IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>plus_prio( i_first = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d219_2dee75409f14.

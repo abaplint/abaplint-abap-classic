@@ -124,7 +124,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       DATA(t18) = t1.
       t17 = NEW zcl_lnt_word( i_s = t18 ).
       result = t17.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD regex.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zlnt_runtime_rege_5a210f82384e( t1 ).
     t2 = NEW zcl_lnt_regex( i_r_f634 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD tok.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -147,7 +147,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
     t2 = NEW zcl_lnt_st_token( i_t = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD map_input.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -378,7 +378,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
     t32 = NEW zcl_lnt_st_sequence( i_list = t33 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD alt.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -446,7 +446,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
     t32 = NEW zcl_lnt_st_alternative( i_list = t33 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD alt_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -514,7 +514,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
     t32 = NEW zcl_lnt_alternative_priority( i_list = t33 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD opt.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -527,7 +527,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_optional( i_optional = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD opt_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -540,7 +540,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_optional_priority( i_optional = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD per.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -608,7 +608,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
     t32 = NEW zcl_lnt_permutation( i_list = t33 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD star.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -621,7 +621,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_star( i_sta = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD star_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -634,7 +634,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_star_priority( i_sta = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD plus.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -647,7 +647,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_st_plus( i_plu = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD plus_prio.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -660,7 +660,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>map_input( i_s = t4 ).
     t2 = NEW zcl_lnt_plus_priority( i_plu = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD input_to_release.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -692,7 +692,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t11 = t10->as_ref( ).
     t9 ?= t11.
     result = t9.
-    
+
   ENDMETHOD.
   METHOD ver.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -737,7 +737,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t16 = t17->also.
     t11 = NEW zcl_lnt_vers( i_release_7928 = t12 i_runnable = t14 i_also = t16 ).
     result = t11.
-    
+
   ENDMETHOD.
   METHOD ver_lang.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -752,7 +752,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>map_input( i_s = t6 ).
     t3 = NEW zcl_lnt_lang_vers( i_lang_version = t4 i_runnable = t5 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD ver_not_lang.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -767,7 +767,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>map_input( i_s = t6 ).
     t3 = NEW zcl_lnt_lang_vers_not( i_lang_version = t4 i_runnable = t5 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD fail_combinator.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -775,7 +775,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     ENDIF.
     DATA(t1) = NEW zcl_lnt_fail_combinator(  ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD stop_before.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -788,7 +788,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t5) = t2.
     t3 = NEW zcl_lnt_stop_before2( i_t1 = t4 i_t2 = t5 ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD stop_before1.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
@@ -799,7 +799,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
     t2 = NEW zcl_lnt_stop_before1( i_words = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_7149bffa9f66.
     IF zlnt_builtin_init_212d0955f1c7 = abap_true.

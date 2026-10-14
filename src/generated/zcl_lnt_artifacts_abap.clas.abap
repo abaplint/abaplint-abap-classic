@@ -77,7 +77,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     ENDLOOP.
     DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t20.
-    
+
   ENDMETHOD.
   METHOD get_keywords.
     DATA t1 TYPE REF TO zlnt_exception_st_fa837731be5a.

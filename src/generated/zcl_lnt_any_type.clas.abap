@@ -40,7 +40,7 @@ CLASS zcl_lnt_any_type IMPLEMENTATION.
     DATA(t3) = CAST zcl_lnt_abstract_type_data( t1 ).
     t2 = NEW zcl_lnt_any_type( i_input_967e = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD t_t_i_s_a_ty_bs_an_ty_ts_an_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -75,7 +75,7 @@ CLASS zcl_lnt_any_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_an_ty_ts_an_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_f9b071448284.
     IF zlnt_builtin_init_fc118198c777 = abap_true.

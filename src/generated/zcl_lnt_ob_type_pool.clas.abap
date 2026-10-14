@@ -19,7 +19,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |TYPE|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
@@ -58,7 +58,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
     DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
     t11 = t17.
     result = t11.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -272,7 +272,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
     ENDIF.
     t3 = t53.
     result = t3.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1263_41918f34a737.

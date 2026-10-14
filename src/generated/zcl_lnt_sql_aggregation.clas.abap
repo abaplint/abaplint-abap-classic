@@ -2347,7 +2347,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t807 = zcl_lnt_st_combi_module=>alt_prio( i_first = t808 i_second = t809 i_rest = t810 ).
     t756 = t807.
     result = t756.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d265_12d4325923b8.

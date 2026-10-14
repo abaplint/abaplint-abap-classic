@@ -89,7 +89,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     ENDIF.
     DATA(t24) = t1.
     result = t24.
-    
+
   ENDMETHOD.
   METHOD equals.
     DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
@@ -135,17 +135,17 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
       t2 = t18.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_token.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_filename.
     DATA(t1) = CONV string( me->filename ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_start.
     DATA t1 TYPE REF TO zcl_lnt_position.
@@ -157,7 +157,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     t4 = t5->start.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_end.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -205,7 +205,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     t4 = NEW zcl_lnt_position( i_row = t5 i_col = t11 ).
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

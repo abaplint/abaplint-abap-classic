@@ -26,7 +26,7 @@ CLASS zcl_lnt_mime_object IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |SMIM|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_url.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -79,7 +79,7 @@ CLASS zcl_lnt_mime_object IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_mm_obj_ts_mm_obj(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1190_7f30face2069.

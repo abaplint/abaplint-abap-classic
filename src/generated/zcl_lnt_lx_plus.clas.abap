@@ -18,7 +18,7 @@ CLASS zcl_lnt_lx_plus IMPLEMENTATION.
   METHOD railroad.
     DATA(t1) = |+|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.

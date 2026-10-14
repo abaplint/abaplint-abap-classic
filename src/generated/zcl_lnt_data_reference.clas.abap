@@ -55,7 +55,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -74,7 +74,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     ENDIF.
     DATA(t4) = abap_false.
     result = t4.
-    
+
   ENDMETHOD.
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

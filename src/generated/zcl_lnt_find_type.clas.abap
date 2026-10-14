@@ -119,7 +119,7 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>opt( i_first = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d171_8a7e3c79c08f.

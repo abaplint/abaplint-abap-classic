@@ -168,7 +168,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
     DATA t73 TYPE REF TO zcl_lnt_unknown_type.
     CLEAR t73.
     result = t73.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

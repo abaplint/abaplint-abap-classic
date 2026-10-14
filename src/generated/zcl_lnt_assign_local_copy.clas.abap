@@ -306,7 +306,7 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     ENDIF.
     t111 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t112 i_first = t113 ).
     result = t111.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

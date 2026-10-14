@@ -56,7 +56,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
   METHOD gt_in_sr_ab_nd_ex_nd_ts_exp_nd.
     DATA(t1) = CAST zif_lnt_statement_runnable( me->expression ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_in_sr_ab_nd_ex_nd_ts_ex_nd.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
@@ -64,12 +64,12 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA t3 TYPE REF TO object.
     t3 = me->set_children( i_children_9020 = t2 ).
     result ?= t3.
-    
+
   ENDMETHOD.
   METHOD count_tokens.
     DATA(t1) = CONV int8( me->token_count ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_first_token.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -309,7 +309,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t94) = t1.
     result = t94.
-    
+
   ENDMETHOD.
   METHOD cnct_tkns_wtht_strng_and_cmmnt.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -361,7 +361,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t21.
-    
+
   ENDMETHOD.
   METHOD to_tokens.
     DATA(t1) = CAST zif_lnt_node( i_b ).
@@ -431,7 +431,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD get_last_token.
     DATA t1 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -569,7 +569,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t29.
-    
+
   ENDMETHOD.
   METHOD get_direct_tokens.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -647,7 +647,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA t26 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t26.
     result = t26.
-    
+
   ENDMETHOD.
   METHOD find_expression_after_token.
     DATA(t1) = i_text.
@@ -779,7 +779,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA t58 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t58.
     result = t58.
-    
+
   ENDMETHOD.
   METHOD find_direct_expressions.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -844,7 +844,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t26.
-    
+
   ENDMETHOD.
   METHOD find_direct_expressions_multi.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_type_9913 ).
@@ -915,7 +915,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t28.
-    
+
   ENDMETHOD.
   METHOD find_direct_token_by_text.
     DATA(t1) = i_text.
@@ -1004,7 +1004,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA t36 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t36.
     result = t36.
-    
+
   ENDMETHOD.
   METHOD find_all_expressions_recursive.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -1091,7 +1091,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t37.
-    
+
   ENDMETHOD.
   METHOD find_all_expressions.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
@@ -1179,7 +1179,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t37.
-    
+
   ENDMETHOD.
   METHOD find_all_expressions_multi.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_type_9913 ).
@@ -1319,19 +1319,19 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     DATA t46 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t46.
     result = t46.
-    
+
   ENDMETHOD.
   METHOD add_child.
     DATA t1 TYPE REF TO zif_lnt_union_4cf1d054.
     CLEAR t1.
     t1 ?= i_n_0c97.
     me->a_c_in_sr_ab_nd_ex_nd_ts_ex_nd( i_n_2941 = t1 ).
-    
+
   ENDMETHOD.
   METHOD get_db65.
     DATA(t1) = CAST zif_lnt_statement_runnable( me->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_children_value.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
@@ -1341,7 +1341,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     t3 ?= t4.
     t2 = me->s_c_in_sr_ab_nd_ex_nd_ts_ex_nd( i_children_9020 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD set_children.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1378,7 +1378,7 @@ CLASS zcl_lnt_expression_node IMPLEMENTATION.
     ENDLOOP.
     DATA(t15) = CAST zcl_lnt_expression_node( me ).
     result = t15.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d985_a5bb0f4f58f1.

@@ -547,7 +547,7 @@ CLASS zcl_lnt_sql_client IMPLEMENTATION.
     t54 = t55.
     DATA(t191) = CAST zif_lnt_statement_runnable( t54 ).
     result = t191.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d.

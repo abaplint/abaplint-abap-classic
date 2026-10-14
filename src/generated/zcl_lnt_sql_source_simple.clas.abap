@@ -243,7 +243,7 @@ CLASS zcl_lnt_sql_source_simple IMPLEMENTATION.
     t80 = zcl_lnt_st_combi_module=>alt( i_first = t81 i_second = t82 i_rest = t83 ).
     t70 = t80.
     result = t70.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d275_b37eb4f86fc3.

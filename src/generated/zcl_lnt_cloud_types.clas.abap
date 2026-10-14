@@ -68,7 +68,7 @@ CLASS zcl_lnt_cloud_types IMPLEMENTATION.
     CLEAR t20.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t19 i_pseudo_comment = t20 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     DATA(t1) = i_object_type.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_cloud_types IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_cl_ty_ts_cl_typ.
     DATA(t1) = CAST zcl_lnt_cloud_types_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_cl_ty_ts_cl_typ.
     DATA(t1) = CAST zcl_lnt_cloud_types_conf( i_conf ).
@@ -486,7 +486,7 @@ CLASS zcl_lnt_cloud_types IMPLEMENTATION.
       t2 = t146.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
@@ -498,7 +498,7 @@ CLASS zcl_lnt_cloud_types IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cloud_types_conf( me->gt_cn_in_sr_rl_cl_ty_ts_cl_typ(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cloud_types_conf( me->gt_cn_in_sr_rl_cl_ty_ts_cl_typ(  ) ).

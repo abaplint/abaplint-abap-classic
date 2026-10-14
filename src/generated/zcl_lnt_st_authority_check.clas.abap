@@ -245,7 +245,7 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     ENDIF.
     t86 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t87 i_first = t88 ).
     result = t86.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

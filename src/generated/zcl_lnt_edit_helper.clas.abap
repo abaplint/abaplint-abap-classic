@@ -86,7 +86,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     ENDLOOP.
     DATA(t38) = CAST zlnt_runtime_map__4fdf767b61ba( t2 ).
     result = t38.
-    
+
   ENDMETHOD.
   METHOD merge.
     DATA(t1) = CAST zlnt_runtime_map__4fdf767b61ba( i_fix1 ).
@@ -199,7 +199,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     ENDLOOP.
     DATA(t64) = CAST zlnt_runtime_map__4fdf767b61ba( t3 ).
     result = t64.
-    
+
   ENDMETHOD.
   METHOD find_statement.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
@@ -263,7 +263,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t26 TYPE REF TO zcl_lnt_statement_node.
     CLEAR t26.
     result = t26.
-    
+
   ENDMETHOD.
   METHOD delete_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1067,7 +1067,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA(t49) = CAST zlnt_runtime_map__4fdf767b61ba( t36 ).
     t35 = t49.
     result = t35.
-    
+
   ENDMETHOD.
   METHOD delete_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -1108,7 +1108,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA(t25) = CAST zlnt_runtime_map__4fdf767b61ba( t12 ).
     t11 = t25.
     result = t11.
-    
+
   ENDMETHOD.
   METHOD insert_at.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -1149,7 +1149,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA(t25) = CAST zlnt_runtime_map__4fdf767b61ba( t12 ).
     t11 = t25.
     result = t11.
-    
+
   ENDMETHOD.
   METHOD replace_token.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1213,7 +1213,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA(t33) = t3.
     t4 = zcl_lnt_edit_helper=>replace_range( i_file = t5 i_start = t6 i_end = t11 i_text = t33 ).
     result = t4.
-    
+
   ENDMETHOD.
   METHOD replace_range.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -1255,7 +1255,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA(t26) = CAST zlnt_runtime_map__4fdf767b61ba( t13 ).
     t12 = t26.
     result = t12.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

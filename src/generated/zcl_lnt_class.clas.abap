@@ -39,7 +39,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |CLAS|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -409,7 +409,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t159) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     t1 = t159.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_definition.
     DATA(t1) = CAST zif_lnt_class_definition( i_def ).
@@ -419,7 +419,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
   METHOD gt_dfn_ins_src_obj_cls_ts_clss.
     DATA(t1) = CAST zif_lnt_class_definition( me->def ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -501,7 +501,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     t1 = t16.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_identifier.
     DATA t1 TYPE REF TO zcl_lnt_fi_identifier.
@@ -593,7 +593,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     t1 = t30.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     me->parse_xml(  ).
@@ -623,7 +623,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_name_from_xml.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -659,7 +659,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_locals_imp_file.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1120,7 +1120,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t3 TYPE REF TO zif_lnt_interface_definition.
     t3 ?= t2.
     result = t3.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1126_5825bd45ea27.

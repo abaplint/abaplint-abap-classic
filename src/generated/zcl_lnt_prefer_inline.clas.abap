@@ -190,12 +190,12 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
     CLEAR t52.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t13 i_extended_information = t19 i_tags = t36 i_pragma = t51 i_pseudo_comment = t52 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_pr_in_ts_pr_inl.
     DATA(t1) = CAST zcl_lnt_prefer_inline_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_prf_inl_ts_prf_inl.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -268,7 +268,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_prefer_inline_conf( me->gt_cn_in_sr_rl_pr_in_ts_pr_inl(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_prefer_inline_conf( me->gt_cn_in_sr_rl_pr_in_ts_pr_inl(  ) ).

@@ -76,7 +76,7 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

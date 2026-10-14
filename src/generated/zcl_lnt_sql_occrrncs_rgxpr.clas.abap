@@ -129,7 +129,7 @@ CLASS zcl_lnt_sql_occrrncs_rgxpr IMPLEMENTATION.
     CLEAR t39.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t8 i_opts = t39 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d304_37e1cb13dad0.

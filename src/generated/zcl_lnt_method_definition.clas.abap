@@ -1347,7 +1347,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
   METHOD get_visibility.
     DATA(t1) = CONV int8( me->visibility ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_class_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1358,7 +1358,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
   METHOD is_redefinition.
     DATA(t1) = CONV abap_bool( me->redefinition ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_abstract.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1369,7 +1369,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
   METHOD is_static_4685.
     DATA(t1) = CONV abap_bool( me->static_9977 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_event_handler.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1392,7 +1392,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
   METHOD g_p_in_sr_ab_ty_mt_df_ts_mt_df.
     DATA(t1) = CAST zcl_lnt_ty_method_parameters( me->parameters ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_raising.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1409,7 +1409,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
   METHOD get_parameters.
     DATA(t1) = CAST zcl_lnt_ty_method_parameters( me->g_p_in_sr_ab_ty_mt_df_ts_mt_df(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1040_e224823bc9c2.

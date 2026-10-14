@@ -546,7 +546,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ENDIF.
     DATA(t181) = abap_false.
     result = t181.
-    
+
   ENDMETHOD.
   METHOD is_generated_bopf_interface.
     DATA(t1) = CAST zcl_lnt_ob_interface( i_obj_1ed0 ).
@@ -839,7 +839,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ENDIF.
     DATA(t100) = abap_false.
     result = t100.
-    
+
   ENDMETHOD.
   METHOD is_generated_persistent_class.
     DATA(t1) = CAST zcl_lnt_class( i_obj_1ed0 ).
@@ -1217,7 +1217,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     ENDIF.
     DATA(t138) = abap_false.
     result = t138.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

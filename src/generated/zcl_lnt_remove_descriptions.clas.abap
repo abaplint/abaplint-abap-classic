@@ -76,12 +76,12 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
     CLEAR t17.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t9 i_good_example = t10 i_extended_information = t11 i_tags = t12 i_pragma = t16 i_pseudo_comment = t17 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_rm_ds_ts_rm_dsc.
     DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_rm_ds_ts_rm_dsc.
     DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( i_conf ).
@@ -129,7 +129,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( me->gt_cn_in_sr_rl_rm_ds_ts_rm_dsc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_rmv_dscrptns_cnf( me->gt_cn_in_sr_rl_rm_ds_ts_rm_dsc(  ) ).

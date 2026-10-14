@@ -34,7 +34,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     DATA(t6) = t1.
     t2 = t3->test( p0 = t6 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
@@ -95,7 +95,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     CLEAR t26.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t25 i_pseudo_comment = t26 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -106,7 +106,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_sq_bl_ts_sq_bln.
     DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_sq_bl_ts_sq_bln.
     DATA(t1) = CAST zcl_lnt_sequential_blank_conf( i_conf ).
@@ -125,12 +125,12 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_sequential_blank_conf.
@@ -140,12 +140,12 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->st_cn_in_sr_rl_sq_bl_ts_sq_bln( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_sq_bl_ts_sq_bln( i_file = i_file ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1597_bfd1b9595eb0.

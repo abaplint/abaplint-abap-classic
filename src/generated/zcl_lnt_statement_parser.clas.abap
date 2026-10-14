@@ -220,7 +220,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     DATA(t75) = CAST zlnt_runtime_arra_c22708faf2e3( t59 ).
     t58 = t75.
     result = t58.
-    
+
   ENDMETHOD.
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
@@ -243,7 +243,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDLOOP.
     DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t10.
-    
+
   ENDMETHOD.
   METHOD lazy_unknown.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
@@ -687,7 +687,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDDO.
     DATA(t84) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t84.
-    
+
   ENDMETHOD.
   METHOD native_sql.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
@@ -1101,7 +1101,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDIF.
     DATA(t77) = CAST zcl_lnt_statement_node( t2 ).
     result = t77.
-    
+
   ENDMETHOD.
   METHOD remove_pragma.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
@@ -1272,7 +1272,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDIF.
     t66 = NEW zcl_lnt_shape_c7bfd3d6( i_tokens = t67 i_pragmas = t71 ).
     result = t66.
-    
+
   ENDMETHOD.
   METHOD match.
     DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
@@ -1566,7 +1566,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDLOOP.
     DATA(t139) = CAST zcl_lnt_statement_node( t1 ).
     result = t139.
-    
+
   ENDMETHOD.
   METHOD process.
     DATA(t1) = CAST zcl_lnt_st_work_area( i_wa ).
@@ -2087,7 +2087,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     ENDIF.
     DATA(t85) = t1.
     result = t85.
-    
+
   ENDMETHOD.
   METHOD tokens_to_nodes_one.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_x ).
@@ -2105,7 +2105,7 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     APPEND t7 TO t6->items.
     DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t9.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

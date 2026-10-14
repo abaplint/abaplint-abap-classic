@@ -378,7 +378,7 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     CLEAR t131.
     t80 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t81 i_first = t87 i_opts = t131 ).
     result = t80.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d303_41f42c023891.

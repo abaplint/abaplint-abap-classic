@@ -37,7 +37,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
     t9 = NEW zcl_lnt_iabaplexer_result( i_file = t10 i_tokens = t11 ).
     result = t9.
-    
+
   ENDMETHOD.
   METHOD add_51c1.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.

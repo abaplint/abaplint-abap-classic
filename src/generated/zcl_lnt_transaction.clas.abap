@@ -25,7 +25,7 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |TRAN|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_dirty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -72,7 +72,7 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_inst_src_objc_trns_ts_trns(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1260_f25762297266.

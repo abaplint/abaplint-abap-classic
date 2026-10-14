@@ -84,7 +84,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     t5 = t4 - t3.
     t1 = t2+t3(t5).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD length.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -101,7 +101,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
     ENDIF.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD clear_feba.
     DATA(t1) = 0.
@@ -189,7 +189,7 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     DATA(t31) = CONV int8( 0 ).
     t28 = xsdbool( t29 = t31 ).
     result = t28.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -518,7 +518,7 @@ CLASS zcl_lnt_sy_statem_class_data IMPLEMENTATION.
     DATA t215 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t215.
     result = t215.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

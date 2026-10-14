@@ -71,7 +71,7 @@ CLASS zcl_lnt_extract IMPLEMENTATION.
     ENDIF.
     t18 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t19 i_first = t20 ).
     result = t18.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

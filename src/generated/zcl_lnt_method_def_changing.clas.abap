@@ -193,7 +193,7 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     t63 = zcl_lnt_st_combi_module=>seq( i_first = t64 i_second = t65 i_rest = t66 ).
     t37 = t63.
     result = t37.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d221_0c54ed92df99.

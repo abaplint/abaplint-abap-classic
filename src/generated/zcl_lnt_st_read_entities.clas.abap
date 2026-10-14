@@ -1217,7 +1217,7 @@ CLASS zcl_lnt_st_read_entities IMPLEMENTATION.
     ENDIF.
     t402 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t403 i_first = t409 i_opts = t439 ).
     result = t402.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

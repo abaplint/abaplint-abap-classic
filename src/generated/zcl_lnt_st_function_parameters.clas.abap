@@ -316,7 +316,7 @@ CLASS zcl_lnt_st_function_parameters IMPLEMENTATION.
     t71 = t72.
     DATA(t114) = CAST zif_lnt_statement_runnable( t71 ).
     result = t114.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d192_2948974be5fb.

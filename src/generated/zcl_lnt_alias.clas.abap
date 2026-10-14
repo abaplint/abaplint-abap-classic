@@ -27,7 +27,7 @@ CLASS zcl_lnt_alias IMPLEMENTATION.
   METHOD get_component.
     DATA(t1) = CONV string( me->component ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_visibility.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

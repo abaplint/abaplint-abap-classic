@@ -1695,7 +1695,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       ENDIF.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD build_up_to_rows_fix.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -2011,7 +2011,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     DATA(t154) = CAST zlnt_runtime_map__4fdf767b61ba( t86 ).
     t85 = t154.
     result = t85.
-    
+
   ENDMETHOD.
   METHOD is_strict_mode.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -2184,7 +2184,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     ENDIF.
     DATA(t86) = abap_false.
     result = t86.
-    
+
   ENDMETHOD.
   METHOD strict_mode_checks.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -2952,7 +2952,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     DATA t228 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t228.
     result = t228.
-    
+
   ENDMETHOD.
   METHOD count_result_type.
     DATA(t1) = CAST zcl_lnt_current_scope( i_scope ).
@@ -3033,7 +3033,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       CLEAR t35.
       t34 = zcl_lnt_integer_type=>get_db65( i_input_967e = t35 ).
       result = t34.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD build_structure_type.
@@ -4671,7 +4671,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     CLEAR t313.
     t307 = zcl_lnt_void_type=>get_db65( i_voided = t308 i_qualified_name = t313 ).
     result = t307.
-    
+
   ENDMETHOD.
   METHOD build_database_source_infos.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -5029,7 +5029,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     DATA(t136) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
     t7 = t136.
     result = t7.
-    
+
   ENDMETHOD.
   METHOD find_field_type.
     DATA(t1) = i_code.
@@ -5347,7 +5347,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     DATA t125 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t125.
     result = t125.
-    
+
   ENDMETHOD.
   METHOD find_fields.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -5708,7 +5708,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     ENDIF.
     DATA(t151) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
     result = t151.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

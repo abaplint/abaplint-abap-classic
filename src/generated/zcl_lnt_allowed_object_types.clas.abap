@@ -75,7 +75,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
     CLEAR t22.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t21 i_pseudo_comment = t22 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_sr_rl_al_ob_ty_ts_al_ob_ty.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
@@ -94,7 +94,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   METHOD g_c_i_s_r_al_ob_ty_ts_al_ob_ty.
     DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_al_ob_ty_ts_al_ob_ty.
     DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( i_conf ).
@@ -120,7 +120,7 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( me->g_c_i_s_r_al_ob_ty_ts_al_ob_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_allwd_objct_typs_cnf( me->g_c_i_s_r_al_ob_ty_ts_al_ob_ty(  ) ).

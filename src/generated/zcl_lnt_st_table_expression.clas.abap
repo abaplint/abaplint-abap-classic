@@ -513,7 +513,7 @@ CLASS zcl_lnt_st_table_expression IMPLEMENTATION.
     ENDIF.
     t166 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t167 i_first = t173 i_opts = t176 ).
     result = t166.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d99_35801e5718dec9.

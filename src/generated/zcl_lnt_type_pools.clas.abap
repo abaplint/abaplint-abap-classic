@@ -72,7 +72,7 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
     ENDIF.
     t22 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t23 i_first = t24 ).
     result = t22.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

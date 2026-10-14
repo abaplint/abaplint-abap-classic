@@ -1502,7 +1502,7 @@ CLASS zcl_lnt_strng_tmplt_frmttng IMPLEMENTATION.
     t408 = t409.
     DATA(t597) = CAST zif_lnt_statement_runnable( t408 ).
     result = t597.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d330_a5190e54e774.

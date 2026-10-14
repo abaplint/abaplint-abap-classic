@@ -213,7 +213,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_union_0eeefcfe( t1 ).
     t2 = xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_abap_release ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD parse.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
@@ -589,7 +589,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     t176 = NEW zcl_lnt_shape_8fc6df03( i_lexing = t177 i_statements = t178 i_structure = t179 ).
     t170 = NEW zcl_lnt_iabapparser_result( i_issues = t171 i_output = t172 i_runtime = t173 i_runtime_extra = t176 ).
     result = t170.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -74,7 +74,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     CLEAR t22.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t7 i_good_example = t8 i_extended_information = t9 i_tags = t10 i_pragma = t21 i_pseudo_comment = t22 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_prs_err_ts_prs_err.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -82,12 +82,12 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     me->reg = t2.
     DATA(t3) = CAST zcl_lnt_parser_error( me ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_pr_er_ts_pr_err.
     DATA(t1) = CAST zcl_lnt_parser_error_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_pr_er_ts_pr_err.
     DATA(t1) = CAST zcl_lnt_parser_error_conf( i_conf ).
@@ -564,7 +564,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     ENDIF.
     DATA(t232) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t232.
-    
+
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -572,12 +572,12 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_registry( t1 ).
     t2 = me->in_in_sr_rl_prs_err_ts_prs_err( i_reg_f149 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err(  ) ).

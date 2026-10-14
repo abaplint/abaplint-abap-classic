@@ -259,7 +259,7 @@ CLASS zcl_lnt_sql_path_for_column IMPLEMENTATION.
     CLEAR t87.
     t63 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t64 i_first = t70 i_opts = t87 ).
     result = t63.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079.

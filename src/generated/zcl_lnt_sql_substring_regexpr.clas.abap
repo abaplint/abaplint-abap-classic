@@ -206,7 +206,7 @@ CLASS zcl_lnt_sql_substring_regexpr IMPLEMENTATION.
     CLEAR t66.
     t15 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t16 i_first = t22 i_opts = t66 ).
     result = t15.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d305_1d893c9cc0cb.

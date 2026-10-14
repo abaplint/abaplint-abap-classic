@@ -1668,7 +1668,7 @@ CLASS zcl_lnt_sql_field IMPLEMENTATION.
     t611 = zcl_lnt_st_combi_module=>seq( i_first = t612 i_second = t613 i_rest = t614 ).
     t566 = t611.
     result = t566.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d291_77feaa8efd76.

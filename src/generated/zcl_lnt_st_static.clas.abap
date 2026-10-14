@@ -341,7 +341,7 @@ CLASS zcl_lnt_st_static IMPLEMENTATION.
     t117 = zcl_lnt_st_combi_module=>alt_prio( i_first = t118 i_second = t119 i_rest = t120 ).
     t76 = t117.
     result = t76.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -36,7 +36,7 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_simple_type=>singleton.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -71,7 +71,7 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
   METHOD to_text.
     DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_5860290dc37a.
     IF zlnt_builtin_init_6880937654df = abap_true.

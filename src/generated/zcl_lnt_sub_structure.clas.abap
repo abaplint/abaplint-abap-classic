@@ -58,7 +58,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     DATA(t11) = CAST zif_lnt_structure_runnable( me->matcher ).
     t10 = t11->first(  ).
     result = t10.
-    
+
   ENDMETHOD.
   METHOD setup_matcher.
     DATA(t1) = VALUE abap_bool( ).
@@ -136,7 +136,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     ENDIF.
     DATA(t29) = CAST zcl_lnt_imatch( t15 ).
     result = t29.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

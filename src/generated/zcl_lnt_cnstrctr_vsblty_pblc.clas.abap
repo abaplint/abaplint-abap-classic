@@ -154,7 +154,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
     CLEAR t42.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t13 i_extended_information = t21 i_tags = t30 i_pragma = t41 i_pseudo_comment = t42 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -165,7 +165,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   METHOD g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb.
     DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_sr_rl_cn_vs_pb_ts_cn_vs_pb.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
@@ -191,7 +191,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb(  ) ).

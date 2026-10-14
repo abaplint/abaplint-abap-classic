@@ -67,7 +67,7 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
     t20 = t21->get_matcher(  ).
     t19 = t20->first(  ).
     result = t19.
-    
+
   ENDMETHOD.
   METHOD to_railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -86,7 +86,7 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
     t1 = t2->name.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).

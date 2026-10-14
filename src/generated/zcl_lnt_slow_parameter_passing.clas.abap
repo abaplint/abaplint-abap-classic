@@ -183,12 +183,12 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     CLEAR t48.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t18 i_extended_information = t31 i_tags = t36 i_pragma = t47 i_pseudo_comment = t48 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_sl_pr_ps_ts_sl_pr_ps.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( i_conf ).
@@ -229,7 +229,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slw_prmtr_pssng_cnf( me->g_c_i_s_r_sl_pr_ps_ts_sl_pr_ps(  ) ).

@@ -43,7 +43,7 @@ CLASS zcl_lnt_sql_having IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t12 i_rest = t13 ).
     t1 = t10.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d309_e095d3fe668e.

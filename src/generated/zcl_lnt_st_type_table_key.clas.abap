@@ -605,7 +605,7 @@ CLASS zcl_lnt_st_type_table_key IMPLEMENTATION.
     t111 = t112.
     DATA(t232) = CAST zif_lnt_statement_runnable( t111 ).
     result = t232.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d336_e416d8dcf33c.

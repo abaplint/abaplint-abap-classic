@@ -104,7 +104,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     ENDIF.
     DATA(t9) = abap_false.
     result = t9.
-    
+
   ENDMETHOD.
   METHOD get_macro_filename.
     DATA(t1) = i_name.

@@ -50,7 +50,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
   METHOD get_parsing_issues.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->old ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD pr_in_sr_ob_abs_obj_ts_abs_obj.
     DATA(t1) = CAST zcl_lnt_abap_release( i_release_2099 ).
@@ -64,12 +64,12 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     CLEAR t8.
     t5 = NEW zcl_lnt_iparse_result( i_updated = t6 i_runtime = t7 i_runtime_extra = t8 ).
     result = t5.
-    
+
   ENDMETHOD.
   METHOD get_name.
     DATA(t1) = CONV string( me->name ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_dirty.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
   METHOD get_files.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->files ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD contains_file.
     DATA(t1) = i_filename.
@@ -155,7 +155,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
   METHOD is_dirty.
     DATA(t1) = CONV abap_bool( me->dirty ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_identifier.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -342,7 +342,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA t82 TYPE REF TO zif_lnt_file.
     CLEAR t82.
     result = t82.
-    
+
   ENDMETHOD.
   METHOD get_xml.
     DATA t1 TYPE REF TO zif_lnt_file.
@@ -376,7 +376,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t12.
     result = t12.
-    
+
   ENDMETHOD.
   METHOD update_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -444,7 +444,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     t20 = t21->value.
     t19 = zlnt_runtime_xmls_24774b34c41e=>parse( t20 ).
     result = t19.
-    
+
   ENDMETHOD.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_abap_release( i_release_7928 ).
@@ -458,7 +458,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
     t5 = me->pr_in_sr_ob_abs_obj_ts_abs_obj( i_release_2099 = t6 i_global_macros_14ec = t7 i_reg_d009 = t8 i_language_version_83c7 = t9 ).
     result = t5.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

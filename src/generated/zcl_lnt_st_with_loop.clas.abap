@@ -15,7 +15,7 @@ CLASS zcl_lnt_st_with_loop IMPLEMENTATION.
     DATA(t2) = NEW zcl_lnt_st_with(  ).
     t1 = t2->get_matcher(  ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

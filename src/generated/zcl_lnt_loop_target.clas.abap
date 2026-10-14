@@ -213,7 +213,7 @@ CLASS zcl_lnt_loop_target IMPLEMENTATION.
     t35 = t36.
     DATA(t80) = CAST zif_lnt_statement_runnable( t35 ).
     result = t80.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d207_e6b5df1debdc.

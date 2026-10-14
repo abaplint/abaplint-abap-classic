@@ -563,7 +563,7 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
     ENDIF.
     DATA(t226) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t226.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_5f3d60166229.
     IF zlnt_builtin_init_9a567949f3db = abap_true.

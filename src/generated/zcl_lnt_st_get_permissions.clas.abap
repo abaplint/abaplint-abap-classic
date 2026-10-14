@@ -278,7 +278,7 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     ENDIF.
     t81 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t82 i_first = t88 i_opts = t91 ).
     result = t81.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

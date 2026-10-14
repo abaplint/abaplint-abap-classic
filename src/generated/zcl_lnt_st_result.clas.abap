@@ -87,7 +87,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     t12->node_count = t13.
     DATA(t14) = CAST zcl_lnt_st_result( t5 ).
     result = t14.
-    
+
   ENDMETHOD.
   METHOD peek.
     DATA t1 TYPE REF TO zcl_lnt_abstract_token.
@@ -99,7 +99,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     READ TABLE t2->items INDEX t3 INTO t4.
     t1 ?= t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD peek_at.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -140,7 +140,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
       t2 = t12.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD shift_f196.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -181,7 +181,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     ENDIF.
     t2 = zcl_lnt_st_result=>from_chain( i_tokens = t3 i_token_index = t4 i_nodes_5198 = t8 i_node_count = t14 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD wrap_consumed.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -290,7 +290,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     me->node_count = t45.
     DATA(t48) = CAST zcl_lnt_st_result( me ).
     result = t48.
-    
+
   ENDMETHOD.
   METHOD pop_node.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -395,7 +395,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     ENDDO.
     DATA(t35) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t35.
-    
+
   ENDMETHOD.
   METHOD set_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_n_0c97 ).
@@ -433,7 +433,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
     ENDIF.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

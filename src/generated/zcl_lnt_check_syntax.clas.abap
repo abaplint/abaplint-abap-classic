@@ -62,12 +62,12 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     CLEAR t18.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t17 i_pseudo_comment = t18 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_ch_sy_ts_ch_syn.
     DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_chc_syn_ts_chc_syn.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -75,7 +75,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     me->reg = t2.
     DATA(t3) = CAST zcl_lnt_check_syntax( me ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_ch_sy_ts_ch_syn.
     DATA(t1) = CAST zcl_lnt_check_syntax_conf( i_conf ).
@@ -205,12 +205,12 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     ENDIF.
     DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
     result = t58.
-    
+
   ENDMETHOD.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn(  ) ).
@@ -221,7 +221,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_registry( t1 ).
     t2 = me->in_in_sr_rl_chc_syn_ts_chc_syn( i_reg_f149 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).

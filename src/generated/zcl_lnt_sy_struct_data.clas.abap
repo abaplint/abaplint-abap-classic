@@ -914,7 +914,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
         t387 = t405.
       ENDIF.
       result = t387.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD run_common_part_syntax.

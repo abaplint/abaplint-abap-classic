@@ -854,7 +854,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     DATA t370 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t370.
     result = t370.
-    
+
   ENDMETHOD.
   METHOD is_name_too_long.
     DATA(t1) = i_name.
@@ -866,7 +866,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     DATA(t6) = 30.
     t2 = xsdbool( t3 > t6 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_only_digits.
     DATA(t1) = i_name.
@@ -879,7 +879,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
     DATA(t6) = t1.
     t2 = t3->test( p0 = t6 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD allow_only_digits_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).

@@ -24,7 +24,7 @@ CLASS zcl_lnt_prmtr_lst_excptns IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>plus( i_first = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d191_203ebd87c4e5.

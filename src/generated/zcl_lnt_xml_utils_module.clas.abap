@@ -160,7 +160,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     t8 = t38.
     DATA(t45) = t8.
     result = t45.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_92a4db672ef8.
     IF zlnt_builtin_init_e23a8274c2ff = abap_true.

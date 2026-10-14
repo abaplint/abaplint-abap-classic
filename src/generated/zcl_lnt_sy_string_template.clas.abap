@@ -651,7 +651,7 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
     ENDLOOP.
     DATA(t280) = CAST zcl_lnt_string_type( t7 ).
     result = t280.
-    
+
   ENDMETHOD.
   METHOD validate_escape_sequences.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -856,7 +856,7 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
     DATA t92 TYPE REF TO zcl_lnt_issue.
     CLEAR t92.
     result = t92.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

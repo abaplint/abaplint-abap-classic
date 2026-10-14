@@ -640,7 +640,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     ENDLOOP.
     DATA(t196) = CAST zcl_lnt_current_scope( me->scope ).
     result = t196.
-    
+
   ENDMETHOD.
   METHOD new_issue.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
@@ -1605,7 +1605,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     ENDIF.
     DATA(t329) = abap_false.
     result = t329.
-    
+
   ENDMETHOD.
   METHOD update_scope_statement.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -2693,7 +2693,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_statement( t1 ).
     t2 = xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_st_at_selection_screen ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_selection_event_boundary.
     DATA(t1) = CAST zif_lnt_statement( i_statement ).
@@ -2761,7 +2761,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       t2 = t21.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD is_slctn_evnt_bndry_strctr.
     DATA(t1) = CAST zif_lnt_structure( i_structure ).
@@ -2777,7 +2777,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       t2 = t5.
     ENDIF.
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

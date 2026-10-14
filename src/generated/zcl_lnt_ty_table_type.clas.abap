@@ -159,14 +159,14 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
   METHOD get_options.
     DATA(t1) = CAST zcl_lnt_itable_options( me->options ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_with_header.
     DATA t1 TYPE abap_bool.
     DATA(t2) = CAST zcl_lnt_itable_options( me->options ).
     t1 = t2->with_header.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_access_type.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -200,12 +200,12 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t1 = t5.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_row_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( me->row_type ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -398,7 +398,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     DATA(t59) = CAST zcl_lnt_abstract_type( me->row_type ).
     t58 = t59->is_generic(  ).
     result = t58.
-    
+
   ENDMETHOD.
   METHOD contains_void.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

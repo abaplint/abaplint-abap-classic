@@ -144,7 +144,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     ENDLOOP.
     DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     result = t25.
-    
+
   ENDMETHOD.
   METHOD get_issues_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
@@ -1232,7 +1232,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     ENDIF.
     t2 = me->l_m_f_i_i_sr_ut_in_gr_ts_in_gr( i_filename = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

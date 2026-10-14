@@ -15,7 +15,7 @@ CLASS zcl_lnt_st_try IMPLEMENTATION.
     DATA(t2) = |TRY|.
     t1 = zcl_lnt_st_combi_module=>str( i_s = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

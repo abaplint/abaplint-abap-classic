@@ -1881,7 +1881,7 @@ CLASS zcl_lnt_type_structure IMPLEMENTATION.
     t686 = zcl_lnt_st_combi_module=>seq( i_first = t687 i_second = t688 i_rest = t689 ).
     t652 = t686.
     result = t652.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d149_69f1f4358f03.

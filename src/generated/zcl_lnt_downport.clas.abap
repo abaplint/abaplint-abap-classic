@@ -359,12 +359,12 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     CLEAR t57.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t45 i_pragma = t56 i_pseudo_comment = t57 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cnf_ins_src_rls_dwn_ts_dwnp.
     DATA(t1) = CAST zcl_lnt_downport_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cnf_ins_src_rls_dwn_ts_dwnp.
     DATA(t1) = CAST zcl_lnt_downport_conf( i_conf ).
@@ -1041,7 +1041,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_downport_conf( me->gt_cnf_ins_src_rls_dwn_ts_dwnp(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_downport_conf( me->gt_cnf_ins_src_rls_dwn_ts_dwnp(  ) ).

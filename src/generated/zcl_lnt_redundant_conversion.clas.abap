@@ -115,12 +115,12 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
     CLEAR t32.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t11 i_extended_information = t17 i_tags = t22 i_pragma = t31 i_pseudo_comment = t32 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_rd_cn_ts_rd_cnv.
     DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_rd_cn_ts_rd_cnv.
     DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( i_conf ).
@@ -189,7 +189,7 @@ CLASS zcl_lnt_redundant_conversion IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( me->gt_cn_in_sr_rl_rd_cn_ts_rd_cnv(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_rdndnt_cnvrsn_cnf( me->gt_cn_in_sr_rl_rd_cn_ts_rd_cnv(  ) ).

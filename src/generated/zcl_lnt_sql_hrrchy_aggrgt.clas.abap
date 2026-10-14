@@ -696,7 +696,7 @@ CLASS zcl_lnt_sql_hrrchy_aggrgt IMPLEMENTATION.
     CLEAR t264.
     t230 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t231 i_first = t237 i_opts = t264 ).
     result = t230.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d311_e91cc88fe129.

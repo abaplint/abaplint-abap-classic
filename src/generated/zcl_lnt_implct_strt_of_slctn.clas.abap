@@ -114,12 +114,12 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
     CLEAR t34.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t11 i_extended_information = t17 i_tags = t24 i_pragma = t33 i_pseudo_comment = t34 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_i_s_o_s_t_i_st_of_sl.
     DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_i_s_o_s_t_i_st_of_sl.
     DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( i_conf ).
@@ -139,12 +139,12 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( me->g_c_i_s_r_i_s_o_s_t_i_st_of_sl(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_impl_strt_of_slctn_cnf( me->g_c_i_s_r_i_s_o_s_t_i_st_of_sl(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_impl_strt_of_slctn_cnf.
@@ -154,7 +154,7 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->s_c_i_s_r_i_s_o_s_t_i_st_of_sl( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1441_3a751bceb7f6.

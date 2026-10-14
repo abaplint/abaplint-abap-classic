@@ -243,7 +243,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t88 = zcl_lnt_st_combi_module=>alt_prio( i_first = t89 i_second = t90 i_rest = t91 ).
     t77 = t88.
     result = t77.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d132_568147cc297b.

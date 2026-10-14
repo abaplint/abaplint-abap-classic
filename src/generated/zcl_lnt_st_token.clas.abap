@@ -183,7 +183,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
     ENDLOOP.
     DATA(t67) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t67.
-    
+
   ENDMETHOD.
   METHOD railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -341,7 +341,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
     ENDIF.
     DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t66.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -77,7 +77,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
     CLEAR t22.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t21 i_pseudo_comment = t22 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_cns_cls_ts_cns_cls.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -89,7 +89,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_cn_cl_ts_cn_cls.
     DATA(t1) = CAST zcl_lnt_constant_classes_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_cn_cl_ts_cn_cls.
     DATA(t1) = CAST zcl_lnt_constant_classes_conf( i_conf ).
@@ -123,7 +123,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_constant_classes_conf( me->gt_cn_in_sr_rl_cn_cl_ts_cn_cls(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_constant_classes_conf( me->gt_cn_in_sr_rl_cn_cl_ts_cn_cls(  ) ).

@@ -129,7 +129,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
     CLEAR t37.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t12 i_extended_information = t18 i_tags = t25 i_pragma = t36 i_pseudo_comment = t37 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_slc_prf_ts_slc_prf.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -150,7 +150,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
     t4 = t5.
     DATA(t6) = CAST zcl_lnt_slct_prfrmnc_cnf( me->conf ).
     result = t6.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_sl_pr_ts_sl_prf.
     DATA(t1) = CAST zcl_lnt_slct_prfrmnc_cnf( i_conf ).
@@ -185,7 +185,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slct_prfrmnc_cnf( me->gt_cn_in_sr_rl_sl_pr_ts_sl_prf(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slct_prfrmnc_cnf( me->gt_cn_in_sr_rl_sl_pr_ts_sl_prf(  ) ).

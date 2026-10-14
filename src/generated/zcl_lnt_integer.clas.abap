@@ -130,7 +130,7 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t42 = zcl_lnt_st_combi_module=>seq( i_first = t43 i_second = t44 i_rest = t45 ).
     t27 = t42.
     result = t27.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154.

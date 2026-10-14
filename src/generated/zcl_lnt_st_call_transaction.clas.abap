@@ -475,7 +475,7 @@ CLASS zcl_lnt_st_call_transaction IMPLEMENTATION.
     ENDIF.
     t172 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t173 i_first = t174 ).
     result = t172.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

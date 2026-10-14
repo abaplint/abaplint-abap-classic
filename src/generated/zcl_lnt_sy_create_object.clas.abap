@@ -3151,7 +3151,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
       t232 = t248.
     ENDIF.
     result = t232.
-    
+
   ENDMETHOD.
   METHOD validate_parameters.
     DATA(t1) = CAST zif_lnt_class_definition( i_cdef ).

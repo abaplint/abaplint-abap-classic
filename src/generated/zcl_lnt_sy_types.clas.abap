@@ -818,7 +818,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       t353 = t370.
     ENDIF.
     result = t353.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

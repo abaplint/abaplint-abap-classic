@@ -1184,7 +1184,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     DATA t446 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t446.
     result = t446.
-    
+
   ENDMETHOD.
   METHOD in_error_namespace.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -1216,7 +1216,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     t12 = t13->value.
     t10 = t11->in_error_namespace( i_name = t12 ).
     result = t10.
-    
+
   ENDMETHOD.
   METHOD lookup_object.
     DATA(t1) = i_name.
@@ -1542,7 +1542,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     DATA t124 TYPE REF TO zcl_lnt_ilookup_result.
     CLEAR t124.
     result = t124.
-    
+
   ENDMETHOD.
   METHOD lookup_ddls.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -1727,7 +1727,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     DATA t63 TYPE REF TO zcl_lnt_ilookup_result.
     CLEAR t63.
     result = t63.
-    
+
   ENDMETHOD.
   METHOD lookup.
     DATA(t1) = i_name.
@@ -1792,7 +1792,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       CLEAR t28.
       t20 = NEW zcl_lnt_ilookup_result( i_type_9913 = t21 i_object_19cd = t28 ).
       result = t20.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD lookup_domain.
@@ -2109,7 +2109,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     ENDIF.
     t51 = t59.
     result = t51.
-    
+
   ENDMETHOD.
   METHOD lookup_table_or_view2.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -2280,7 +2280,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
     DATA t65 TYPE REF TO zif_lnt_union_c74a232f.
     CLEAR t65.
     result = t65.
-    
+
   ENDMETHOD.
   METHOD lookup_table.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).

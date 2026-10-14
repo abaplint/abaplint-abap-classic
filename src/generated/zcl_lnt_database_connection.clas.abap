@@ -101,7 +101,7 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
     t33 = zcl_lnt_st_combi_module=>seq( i_first = t34 i_second = t35 i_rest = t36 ).
     t7 = t33.
     result = t7.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d151_c07675a56057.

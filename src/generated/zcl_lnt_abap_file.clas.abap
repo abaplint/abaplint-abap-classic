@@ -56,12 +56,12 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
   METHOD get_info.
     DATA(t1) = CAST zif_lnt_abap_file_information( me->info ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_structure.
     DATA(t1) = CAST zcl_lnt_structure_node( me->structure ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_tokens.
     DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_with_pragmas ).
@@ -156,13 +156,13 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
       t16 = t41.
       DATA(t42) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
       result = t42.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD get_statements.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d976_a184b6551780.

@@ -202,7 +202,7 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t71 = zcl_lnt_st_combi_module=>seq( i_first = t72 i_second = t73 i_rest = t74 ).
     t24 = t71.
     result = t24.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d266_3b538ddd2a60.

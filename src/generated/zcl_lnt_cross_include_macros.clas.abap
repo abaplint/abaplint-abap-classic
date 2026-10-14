@@ -380,7 +380,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     ENDLOOP.
     DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t52.
-    
+
   ENDMETHOD.
   METHOD find_mains.
     DATA(t1) = CAST zcl_lnt_include_graph( i_graph ).

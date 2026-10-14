@@ -177,7 +177,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
     ENDLOOP.
     DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t77.
-    
+
   ENDMETHOD.
   METHOD find_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).

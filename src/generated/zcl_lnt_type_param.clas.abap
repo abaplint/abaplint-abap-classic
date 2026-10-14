@@ -930,7 +930,7 @@ CLASS zcl_lnt_type_param IMPLEMENTATION.
     t337 = zcl_lnt_st_combi_module=>alt_prio( i_first = t338 i_second = t339 i_rest = t340 ).
     t292 = t337.
     result = t292.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.

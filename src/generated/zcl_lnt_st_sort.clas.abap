@@ -359,7 +359,7 @@ CLASS zcl_lnt_st_sort IMPLEMENTATION.
     t131 = zcl_lnt_st_combi_module=>seq( i_first = t132 i_second = t133 i_rest = t134 ).
     t121 = t131.
     result = t121.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

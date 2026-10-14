@@ -94,7 +94,7 @@ CLASS zcl_lnt_compute IMPLEMENTATION.
     ENDIF.
     t27 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t28 i_first = t29 ).
     result = t27.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

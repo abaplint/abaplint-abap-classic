@@ -920,7 +920,7 @@ CLASS zcl_lnt_sql_case IMPLEMENTATION.
     ENDIF.
     t266 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t267 i_first = t273 i_opts = t322 ).
     result = t266.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d269_df623ced1aed.

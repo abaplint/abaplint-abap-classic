@@ -79,22 +79,22 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
   METHOD gt_ty_in_sr_ab_ty_cl_at_ts_att.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->types ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_static.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->static_9977 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_all.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->all ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_statics_by_visibility.
     DATA(t1) = i_visibility_5c1f.
@@ -106,7 +106,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
   METHOD get_instance.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->instance ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_instances_by_visibility.
     DATA(t1) = i_visibility_5c1f.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
   METHOD get_constants.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->constants ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_constants_by_visibility.
     DATA(t1) = i_visibility_5c1f.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     ENDIF.
     t2 = t3->get( p0 = t4 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD build_by_name.
     DATA t1 TYPE REF TO zlnt_runtime_map__89ba5e9f6101.
@@ -477,7 +477,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     ENDLOOP.
     DATA(t139) = CAST zlnt_runtime_map__89ba5e9f6101( t1 ).
     result = t139.
-    
+
   ENDMETHOD.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
@@ -3541,7 +3541,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     ENDLOOP.
     DATA(t210) = abap_false.
     result = t210.
-    
+
   ENDMETHOD.
   METHOD parse_attribute.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
@@ -3805,12 +3805,12 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
     ENDIF.
     t97 = NEW zcl_lnt_class_attribute( i_id = t98 i_visibility_5c1f = t100 i_meta = t102 i_value = t108 ).
     result = t97.
-    
+
   ENDMETHOD.
   METHOD get_types.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->gt_ty_in_sr_ab_ty_cl_at_ts_att(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -69,7 +69,7 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t20 i_second = t21 i_rest = t22 ).
     t1 = t19.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d91_10c609bb0b604f.

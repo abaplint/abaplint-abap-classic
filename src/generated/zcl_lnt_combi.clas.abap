@@ -84,7 +84,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     t17 = t18.
     DATA(t30) = t17.
     result = t30.
-    
+
   ENDMETHOD.
   METHOD list_keywords.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -141,7 +141,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     t2 = t5.
     DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     result = t26.
-    
+
   ENDMETHOD.
   METHOD run.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -313,7 +313,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t61.
     result = t61.
-    
+
   ENDMETHOD.
   METHOD get_release.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
@@ -326,7 +326,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_combi=>release_3664.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_language_version.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
@@ -338,7 +338,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_combi=>lang_ver.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_open_abap.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
@@ -373,7 +373,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     t6 = t7->get( p0 = t8 ).
     t1 = xsdbool( t2 = t6 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_6f0e2d68980a.
     IF zlnt_builtin_init_eaa3c6c35789 = abap_true.

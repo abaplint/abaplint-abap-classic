@@ -561,7 +561,7 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
       CLEAR t260.
       t258 = NEW zcl_lnt_unknown_type( i_error = t259 i_qualified_name = t260 ).
       result = t258.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

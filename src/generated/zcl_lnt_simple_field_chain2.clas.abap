@@ -290,7 +290,7 @@ CLASS zcl_lnt_simple_field_chain2 IMPLEMENTATION.
     t89 = t90.
     DATA(t105) = CAST zif_lnt_statement_runnable( t89 ).
     result = t105.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18.

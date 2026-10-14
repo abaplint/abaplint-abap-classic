@@ -301,7 +301,7 @@ CLASS zcl_lnt_st_split IMPLEMENTATION.
     t85 = t86.
     DATA(t112) = CAST zif_lnt_statement_runnable( t85 ).
     result = t112.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

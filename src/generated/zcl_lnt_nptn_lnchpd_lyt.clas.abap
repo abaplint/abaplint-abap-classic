@@ -18,7 +18,7 @@ CLASS zcl_lnt_nptn_lnchpd_lyt IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |ZN07|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

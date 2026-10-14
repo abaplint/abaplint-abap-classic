@@ -2983,7 +2983,7 @@ CLASS zcl_lnt_derived_types_module IMPLEMENTATION.
     DATA(t1050) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
     t15 = t1050.
     result = t15.
-    
+
   ENDMETHOD.
   METHOD derived_types_alt.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_extra ).
@@ -3092,7 +3092,7 @@ CLASS zcl_lnt_derived_types_module IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>alt_prio( i_first = t48 i_second = t49 i_rest = t50 ).
     t29 = t47.
     result = t29.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_7b8174c20e26.
     IF zlnt_builtin_init_97883fd3a7a5 = abap_true.

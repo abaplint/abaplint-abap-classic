@@ -97,12 +97,12 @@ CLASS zcl_lnt_unnecessary_chaining IMPLEMENTATION.
     CLEAR t32.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t20 i_pragma = t31 i_pseudo_comment = t32 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_un_ch_ts_un_chn.
     DATA(t1) = CAST zcl_lnt_unncssry_chnng_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_un_ch_ts_un_chn.
     DATA(t1) = CAST zcl_lnt_unncssry_chnng_cnf( i_conf ).
@@ -122,12 +122,12 @@ CLASS zcl_lnt_unnecessary_chaining IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_unncssry_chnng_cnf( me->gt_cn_in_sr_rl_un_ch_ts_un_chn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_unncssry_chnng_cnf( me->gt_cn_in_sr_rl_un_ch_ts_un_chn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_unncssry_chnng_cnf.
@@ -137,7 +137,7 @@ CLASS zcl_lnt_unnecessary_chaining IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->st_cn_in_sr_rl_un_ch_ts_un_chn( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1643_fb61e317a4d3.

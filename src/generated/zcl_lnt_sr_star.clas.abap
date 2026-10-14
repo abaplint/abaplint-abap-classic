@@ -163,7 +163,7 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     t1 = t6.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

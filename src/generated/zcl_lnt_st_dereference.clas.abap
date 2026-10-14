@@ -47,7 +47,7 @@ CLASS zcl_lnt_st_dereference IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t14 i_rest = t15 ).
     t1 = t12.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d111_4d9698a8e1bf.

@@ -63,7 +63,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
     CLEAR t18.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t17 i_pseudo_comment = t18 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     DATA(t1) = i_expected.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
     DATA(t1) = CAST zcl_lnt_object_naming_conf( me->conf ).
     DATA(t2) = CAST zcl_lnt_object_naming_conf( me->conf ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_ob_nm_ts_ob_nmn.
     DATA(t1) = CAST zcl_lnt_object_naming_conf( i_conf ).
@@ -103,7 +103,7 @@ CLASS zcl_lnt_object_naming IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_object_naming_conf( me->gt_cn_in_sr_rl_ob_nm_ts_ob_nmn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_object_naming_conf( me->gt_cn_in_sr_rl_ob_nm_ts_ob_nmn(  ) ).

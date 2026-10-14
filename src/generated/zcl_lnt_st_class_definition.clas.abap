@@ -629,7 +629,7 @@ CLASS zcl_lnt_st_class_definition IMPLEMENTATION.
     t240 = zcl_lnt_st_combi_module=>seq( i_first = t241 i_second = t242 i_rest = t243 ).
     t227 = t240.
     result = t227.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

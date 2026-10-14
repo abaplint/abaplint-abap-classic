@@ -1061,7 +1061,7 @@ CLASS zcl_lnt_st_read_table IMPLEMENTATION.
     t401 = zcl_lnt_st_combi_module=>seq( i_first = t402 i_second = t403 i_rest = t404 ).
     t354 = t401.
     result = t354.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

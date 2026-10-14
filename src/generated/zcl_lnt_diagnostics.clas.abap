@@ -293,7 +293,7 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     t2 = t3.
     DATA(t120) = CAST zcl_lnt_shape_c44ae6d7( t2 ).
     result = t120.
-    
+
   ENDMETHOD.
   METHOD find_8f95.
     DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).

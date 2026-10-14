@@ -170,7 +170,7 @@ CLASS zcl_lnt_class_data_begin IMPLEMENTATION.
     t58 = zcl_lnt_st_combi_module=>seq( i_first = t59 i_second = t60 i_rest = t61 ).
     t48 = t58.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

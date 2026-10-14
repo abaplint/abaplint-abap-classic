@@ -204,7 +204,7 @@ CLASS zcl_lnt_st_cmpnnt_cmpr_smpl IMPLEMENTATION.
     ENDIF.
     t64 = zcl_lnt_st_combi_module=>plus( i_first = t65 ).
     result = t64.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d128_b497db583ff7.

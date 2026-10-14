@@ -1496,37 +1496,37 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
   METHOD get_friends.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->friends ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_events.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->events_f95a ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_method_definitions.
     DATA(t1) = CAST zcl_lnt_method_definitions( me->method_defs ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_t_d_i_s_ab_ty_cl_df_ts_cl_df.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->types ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_super_class.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( me->super_class ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_a_in_sr_ab_ty_cl_df_ts_cl_df.
     DATA(t1) = CAST zcl_lnt_attributes( me->attributes ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_global.
     DATA(t1) = CONV abap_bool( me->global_value ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_final.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1537,22 +1537,22 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
   METHOD get_implementing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->implementing ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_for_testing.
     DATA(t1) = CONV abap_bool( me->testing ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_abstract.
     DATA(t1) = CONV abap_bool( me->abstract ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_shared_memory.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -1563,7 +1563,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
   METHOD get_create_visibility.
     DATA(t1) = CONV int8( me->create_visibility_value ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD check_class_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -2247,7 +2247,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t188 = t189.
     DATA(t203) = CAST zlnt_runtime_opti_4ba3bdccd169( t188 ).
     result = t203.
-    
+
   ENDMETHOD.
   METHOD check_method_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
@@ -4121,7 +4121,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     ENDLOOP.
     DATA(t223) = CAST zlnt_runtime_arra_8ecd6afe19e0( t3 ).
     result = t223.
-    
+
   ENDMETHOD.
   METHOD add_reference.
     DATA(t1) = CAST zcl_lnt_abstract_token( i_token ).
@@ -5163,12 +5163,12 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
   METHOD get_type_definitions.
     DATA(t1) = CAST zcl_lnt_type_definitions( me->g_t_d_i_s_ab_ty_cl_df_ts_cl_df(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_attributes.
     DATA(t1) = CAST zcl_lnt_attributes( me->g_a_in_sr_ab_ty_cl_df_ts_cl_df(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1032_f78e39381f78.

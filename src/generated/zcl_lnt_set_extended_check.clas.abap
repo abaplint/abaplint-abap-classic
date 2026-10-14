@@ -85,7 +85,7 @@ CLASS zcl_lnt_set_extended_check IMPLEMENTATION.
     ENDIF.
     t28 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t29 i_first = t30 ).
     result = t28.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

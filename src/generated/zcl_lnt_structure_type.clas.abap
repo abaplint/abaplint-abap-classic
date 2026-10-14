@@ -193,7 +193,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
   METHOD get_components.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->components ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_component_by_name.
     DATA(t1) = i_name.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     ENDIF.
     t2 = t3->get( p0 = t4 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD to_text.
     DATA(t1) = i_level.
@@ -223,7 +223,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
   METHOD is_generic.
     DATA(t1) = abap_false.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_abap.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -257,7 +257,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     DATA(t11) = t2.
     t1 = t11.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD to_cds.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

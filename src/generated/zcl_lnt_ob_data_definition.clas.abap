@@ -43,7 +43,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |DDLS|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -153,7 +153,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_dt_dfn_ts_dt_dfn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1138_b779c8c77336.

@@ -103,7 +103,7 @@ CLASS zcl_lnt_typed_identifier IMPLEMENTATION.
     CLEAR t17.
     t4 = NEW zcl_lnt_typed_identifier( i_token = t5 i_filename = t10 i_type_9913 = t15 i_meta = t16 i_value = t17 ).
     result = t4.
-    
+
   ENDMETHOD.
   METHOD to_text.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -114,17 +114,17 @@ CLASS zcl_lnt_typed_identifier IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = CAST zcl_lnt_abstract_type( me->type_cba0 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_meta.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->meta ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_value.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->value ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d991_2c1bbfdb8e80.

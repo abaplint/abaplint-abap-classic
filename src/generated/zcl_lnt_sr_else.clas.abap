@@ -40,7 +40,7 @@ CLASS zcl_lnt_sr_else IMPLEMENTATION.
     t5 = t6.
     DATA(t17) = CAST zif_lnt_structure_runnable( t5 ).
     result = t17.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -71,7 +71,7 @@ CLASS zcl_lnt_sr_sequence IMPLEMENTATION.
     t2 ?= t4.
     t1 = t2->first(  ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
@@ -167,7 +167,7 @@ CLASS zcl_lnt_sr_sequence IMPLEMENTATION.
     DATA(t51) = CONV int8( 0 ).
     t46 = NEW zcl_lnt_imatch( i_matched = t47 i_unmatched = t48 i_error = t49 i_error_description = t50 i_error_matched = t51 ).
     result = t46.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

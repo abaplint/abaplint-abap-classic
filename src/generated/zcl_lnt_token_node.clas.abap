@@ -58,27 +58,27 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
     t4 = t5->str.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_in_sr_ab_nd_tk_nd_ts_tkn_nd.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD count_tokens.
     DATA(t1) = CONV int8( 1 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_first_token.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_last_token.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->token ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD add_child.
     DATA(t1) = CAST zif_lnt_node( i_n_0c97 ).
@@ -97,7 +97,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   METHOD get_db65.
     DATA(t1) = CAST zcl_lnt_abstract_token( me->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

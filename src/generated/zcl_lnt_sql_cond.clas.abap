@@ -307,7 +307,7 @@ CLASS zcl_lnt_sql_cond IMPLEMENTATION.
     t82 = t83.
     DATA(t115) = CAST zif_lnt_statement_runnable( t82 ).
     result = t115.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d273_c3e7a9098543.

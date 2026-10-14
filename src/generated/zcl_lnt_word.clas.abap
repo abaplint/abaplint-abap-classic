@@ -191,7 +191,7 @@ CLASS zcl_lnt_word IMPLEMENTATION.
     ENDLOOP.
     DATA(t70) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t70.
-    
+
   ENDMETHOD.
   METHOD railroad.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -217,7 +217,7 @@ CLASS zcl_lnt_word IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     t1 = t6.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD run_one.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -362,7 +362,7 @@ CLASS zcl_lnt_word IMPLEMENTATION.
     ENDIF.
     DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t69.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

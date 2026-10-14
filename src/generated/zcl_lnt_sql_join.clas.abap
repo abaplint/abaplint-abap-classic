@@ -379,7 +379,7 @@ CLASS zcl_lnt_sql_join IMPLEMENTATION.
     t132 = zcl_lnt_st_combi_module=>alt_prio( i_first = t133 i_second = t134 i_rest = t135 ).
     t121 = t132.
     result = t121.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d298_782c2da798c9.

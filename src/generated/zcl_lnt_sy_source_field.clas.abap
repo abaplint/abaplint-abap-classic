@@ -592,7 +592,7 @@ CLASS zcl_lnt_sy_source_field IMPLEMENTATION.
       t227 = t235.
     ENDIF.
     result = t227.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -419,7 +419,7 @@ CLASS zcl_lnt_color IMPLEMENTATION.
     t169 = zcl_lnt_st_combi_module=>seq( i_first = t170 i_second = t171 i_rest = t172 ).
     t139 = t169.
     result = t139.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d117_490f9bcc19a9.

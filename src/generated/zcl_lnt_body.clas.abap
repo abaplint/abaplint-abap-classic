@@ -17,7 +17,7 @@ CLASS zcl_lnt_body IMPLEMENTATION.
     t2 = zcl_lnt_sr_combi_module=>sub( i_s = t3 ).
     t1 = zcl_lnt_sr_combi_module=>star( i_s = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

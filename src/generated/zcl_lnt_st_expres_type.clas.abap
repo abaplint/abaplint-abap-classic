@@ -680,7 +680,7 @@ CLASS zcl_lnt_st_expres_type IMPLEMENTATION.
     t181 = t182.
     DATA(t250) = CAST zif_lnt_statement_runnable( t181 ).
     result = t250.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d143_3ba838dd8924.

@@ -89,7 +89,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     t28->forms = t29.
     DATA(t32) = CAST zcl_lnt_prsd_fl_infrmtn( t2 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD parse_class_implementations.
     DATA(t1) = CAST zcl_lnt_structure_node( i_structure ).
@@ -201,7 +201,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t56) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t56.
-    
+
   ENDMETHOD.
   METHOD parse_forms.
     DATA(t1) = CAST zcl_lnt_structure_node( i_structure ).
@@ -271,7 +271,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t39) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t39.
-    
+
   ENDMETHOD.
   METHOD parse_interfaces.
     DATA(t1) = CAST zcl_lnt_structure_node( i_structure ).
@@ -482,7 +482,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t98) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t98.
-    
+
   ENDMETHOD.
   METHOD parse_classes.
     DATA(t1) = CAST zcl_lnt_structure_node( i_structure ).
@@ -1246,7 +1246,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t347) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t347.
-    
+
   ENDMETHOD.
   METHOD find_behavior_definition_name.
     DATA(t1) = CAST zcl_lnt_statement_node( i_cdef ).
@@ -1408,7 +1408,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t67.
     result = t67.
-    
+
   ENDMETHOD.
   METHOD get_implementing.
     DATA(t1) = CAST zcl_lnt_structure_node( i_input_967e ).
@@ -1592,7 +1592,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t85) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t85.
-    
+
   ENDMETHOD.
   METHOD parse_aliases.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
@@ -1683,7 +1683,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t48) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
     result = t48.
-    
+
   ENDMETHOD.
   METHOD parse_constants.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
@@ -1931,7 +1931,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t110) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
     result = t110.
-    
+
   ENDMETHOD.
   METHOD parse_attributes.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
@@ -2172,7 +2172,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t120) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
     result = t120.
-    
+
   ENDMETHOD.
   METHOD parse_method_definition.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).
@@ -2427,7 +2427,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDLOOP.
     DATA(t117) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
     result = t117.
-    
+
   ENDMETHOD.
   METHOD parse_method_parameters.
     DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
@@ -2774,7 +2774,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     ENDIF.
     DATA(t175) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t175.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

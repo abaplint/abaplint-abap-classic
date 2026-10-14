@@ -84,7 +84,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
     ENDLOOP.
     DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t21.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

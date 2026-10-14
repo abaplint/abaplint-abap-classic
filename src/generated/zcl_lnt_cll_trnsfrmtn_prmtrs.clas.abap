@@ -139,7 +139,7 @@ CLASS zcl_lnt_cll_trnsfrmtn_prmtrs IMPLEMENTATION.
     t44 = zcl_lnt_st_combi_module=>alt( i_first = t45 i_second = t46 i_rest = t47 ).
     t31 = t44.
     result = t31.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81.

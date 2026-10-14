@@ -1564,7 +1564,7 @@ CLASS zcl_lnt_st_sql_compare IMPLEMENTATION.
     t564 = zcl_lnt_st_combi_module=>alt_prio( i_first = t565 i_second = t566 i_rest = t567 ).
     t550 = t564.
     result = t550.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.

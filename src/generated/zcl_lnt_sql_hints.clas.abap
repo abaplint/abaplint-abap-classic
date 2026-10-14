@@ -172,7 +172,7 @@ CLASS zcl_lnt_sql_hints IMPLEMENTATION.
     t36 = t37.
     DATA(t67) = CAST zif_lnt_statement_runnable( t36 ).
     result = t67.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d313_63087fa9e019.

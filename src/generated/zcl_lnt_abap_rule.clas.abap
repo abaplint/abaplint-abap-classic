@@ -23,7 +23,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     me->reg = t2.
     DATA(t3) = CAST zcl_lnt_abap_rule( me ).
     result = t3.
-    
+
   ENDMETHOD.
   METHOD run.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
@@ -89,7 +89,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     ENDLOOP.
     DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -97,7 +97,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_registry( t1 ).
     t2 = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -993,7 +993,7 @@ CLASS zcl_lnt_st_convert IMPLEMENTATION.
     t378 = zcl_lnt_st_combi_module=>seq( i_first = t379 i_second = t380 i_rest = t381 ).
     t346 = t378.
     result = t346.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

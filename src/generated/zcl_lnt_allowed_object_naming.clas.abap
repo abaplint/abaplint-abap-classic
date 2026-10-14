@@ -68,18 +68,18 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     CLEAR t22.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t21 i_pseudo_comment = t22 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_sr_rl_al_ob_nm_ts_al_ob_nm.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
     DATA(t2) = CAST zcl_lnt_allowed_object_naming( me ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_al_ob_nm_ts_al_ob_nm.
     DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_al_ob_nm_ts_al_ob_nm.
     DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( i_conf ).
@@ -319,7 +319,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     DATA t110 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t110.
     result = t110.
-    
+
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -327,12 +327,12 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_registry( t1 ).
     t2 = me->i_i_sr_rl_al_ob_nm_ts_al_ob_nm( i_reg_d009 = t3 ).
     result = t2.
-    
+
   ENDMETHOD.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm(  ) ).

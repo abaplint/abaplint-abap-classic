@@ -246,7 +246,7 @@ CLASS zcl_lnt_sql_into_list IMPLEMENTATION.
     t82 = zcl_lnt_st_combi_module=>seq( i_first = t83 i_second = t84 i_rest = t85 ).
     t72 = t82.
     result = t72.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d251_f36ca3dcb3e0.

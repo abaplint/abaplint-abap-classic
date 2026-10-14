@@ -149,7 +149,7 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     t38 = zcl_lnt_st_combi_module=>alt_prio( i_first = t39 i_second = t40 i_rest = t41 ).
     t24 = t38.
     result = t24.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57.

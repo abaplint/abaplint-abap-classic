@@ -57,7 +57,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     ENDLOOP.
     DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
     result = t11.
-    
+
   ENDMETHOD.
   METHOD get_by_name.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_name ).
@@ -99,7 +99,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     ENDIF.
     t10 = t11->get( p0 = t12 ).
     result = t10.
-    
+
   ENDMETHOD.
   METHOD parse_interface.
     DATA(t1) = CAST zcl_lnt_structure_node( i_node ).

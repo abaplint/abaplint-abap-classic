@@ -77,7 +77,7 @@ CLASS zcl_lnt_sy_sql_from IMPLEMENTATION.
     ENDLOOP.
     DATA(t36) = CAST zlnt_runtime_arra_b72089862d0f( t3 ).
     result = t36.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

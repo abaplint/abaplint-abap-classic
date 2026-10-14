@@ -294,32 +294,32 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_implementing.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->implementing ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_aliases.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->aliases_62bb ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_events.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->events_f95a ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_attributes.
     DATA(t1) = CAST zif_lnt_attributes( me->attributes ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_type_definitions.
     DATA(t1) = CAST zif_lnt_type_definitions( me->type_definitions ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_local.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -330,12 +330,12 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
   METHOD is_global.
     DATA(t1) = CONV abap_bool( me->global_value ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_method_definitions.
     DATA(t1) = CAST zif_lnt_method_definitions( me->method_definitions ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD check_method_name_length.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).

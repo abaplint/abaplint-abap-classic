@@ -96,12 +96,12 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     CLEAR t23.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t18 i_pragma = t22 i_pseudo_comment = t23 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
     DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
     DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( i_conf ).
@@ -134,7 +134,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn(  ) ).

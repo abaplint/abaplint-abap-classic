@@ -27,14 +27,14 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
     t1 = t2->implementations.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD list_interface_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
     t1 = t2->interfaces.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_intrfc_dfntn_by_nm.
     DATA(t1) = i_name.
@@ -162,14 +162,14 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA t48 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     CLEAR t48.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD list_class_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zcl_lnt_prsd_fl_infrmtn( me->parsed ).
     t1 = t2->classes.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_class_definition_by_name.
     DATA(t1) = i_name.
@@ -297,7 +297,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA t48 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t48.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD gt_clss_implmnttn_by_nm.
     DATA(t1) = i_name.
@@ -425,7 +425,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA t48 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
     CLEAR t48.
     result = t48.
-    
+
   ENDMETHOD.
   METHOD list_form_definitions.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

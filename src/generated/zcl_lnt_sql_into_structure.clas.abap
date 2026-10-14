@@ -152,7 +152,7 @@ CLASS zcl_lnt_sql_into_structure IMPLEMENTATION.
     t46 = zcl_lnt_st_combi_module=>seq( i_first = t47 i_second = t48 i_rest = t49 ).
     t32 = t46.
     result = t32.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d250_08c3abeac258.

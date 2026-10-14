@@ -707,7 +707,7 @@ CLASS zcl_lnt_st_loop IMPLEMENTATION.
     t250 = zcl_lnt_st_combi_module=>seq( i_first = t251 i_second = t252 i_rest = t253 ).
     t240 = t250.
     result = t240.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

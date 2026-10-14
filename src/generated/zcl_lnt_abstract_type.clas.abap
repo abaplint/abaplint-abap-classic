@@ -30,7 +30,7 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
   METHOD get_abstract_type_data.
     DATA(t1) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_qualified_name.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -59,7 +59,7 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ENDIF.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_rtti_name.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

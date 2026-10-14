@@ -57,7 +57,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
   METHOD get_children.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->children ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_first_child.
     DATA t1 TYPE REF TO zif_lnt_node.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
       t1 = t6.
     ENDIF.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_last_child.
     DATA t1 TYPE REF TO zif_lnt_node.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
       t1 = t10.
     ENDIF.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

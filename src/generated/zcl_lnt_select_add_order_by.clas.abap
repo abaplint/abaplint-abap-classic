@@ -123,12 +123,12 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
     CLEAR t35.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t25 i_pragma = t34 i_pseudo_comment = t35 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_s_a_o_b_t_s_ad_or_by.
     DATA(t1) = CAST zcl_lnt_slct_add_ordr_by_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_s_r_s_a_o_b_ts_sl_ad_or_by.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -163,7 +163,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slct_add_ordr_by_cnf( me->g_c_i_s_r_s_a_o_b_t_s_ad_or_by(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slct_add_ordr_by_cnf( me->g_c_i_s_r_s_a_o_b_t_s_ad_or_by(  ) ).

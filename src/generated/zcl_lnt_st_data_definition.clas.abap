@@ -370,7 +370,7 @@ CLASS zcl_lnt_st_data_definition IMPLEMENTATION.
     t119 = zcl_lnt_st_combi_module=>seq( i_first = t120 i_second = t121 i_rest = t122 ).
     t55 = t119.
     result = t55.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d150_582536089a5b.

@@ -45,7 +45,7 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
     CLEAR t10.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t8 i_opts = t10 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d321_17502cdda795.

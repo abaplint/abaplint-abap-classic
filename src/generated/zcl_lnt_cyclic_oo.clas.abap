@@ -84,12 +84,12 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
     CLEAR t18.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t16 i_pragma = t17 i_pseudo_comment = t18 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rls_cyc_o_ts_cyc_o.
     DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rls_cyc_o_ts_cyc_o.
     DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( i_conf ).
@@ -132,7 +132,7 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( me->gt_cn_in_sr_rls_cyc_o_ts_cyc_o(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cyclic_oo_conf( me->gt_cn_in_sr_rls_cyc_o_ts_cyc_o(  ) ).

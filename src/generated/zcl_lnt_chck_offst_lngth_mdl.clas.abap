@@ -173,7 +173,7 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
     ENDIF.
     DATA(t79) = abap_false.
     result = t79.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_396bfe70717a.
     IF zlnt_builtin_init_edf7fe70abaa = abap_true.

@@ -28,7 +28,7 @@ CLASS zcl_lnt_sql_field_name IMPLEMENTATION.
     t2->source = t3.
     t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d263_a6b95897eaba.

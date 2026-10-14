@@ -134,12 +134,12 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
     CLEAR t40.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t12 i_extended_information = t18 i_tags = t26 i_pragma = t39 i_pseudo_comment = t40 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_us_ln_ex_ts_us_ln_ex.
     DATA(t1) = CAST zcl_lnt_use_line_exists_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_us_ln_ex_ts_us_ln_ex.
     DATA(t1) = CAST zcl_lnt_use_line_exists_conf( i_conf ).
@@ -175,12 +175,12 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_use_line_exists_conf( me->g_c_i_s_r_us_ln_ex_ts_us_ln_ex(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_use_line_exists_conf( me->g_c_i_s_r_us_ln_ex_ts_us_ln_ex(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_use_line_exists_conf.
@@ -190,7 +190,7 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->s_c_i_s_r_us_ln_ex_ts_us_ln_ex( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1670_490191ba2a52.

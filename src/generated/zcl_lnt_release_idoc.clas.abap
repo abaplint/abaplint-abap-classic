@@ -43,7 +43,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     CLEAR t10.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t9 i_pseudo_comment = t10 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_message.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -54,7 +54,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_rl_id_ts_rl_idc.
     DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_rl_id_ts_rl_idc.
     DATA(t1) = CAST zcl_lnt_release_idoc_conf( i_conf ).
@@ -80,7 +80,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc(  ) ).

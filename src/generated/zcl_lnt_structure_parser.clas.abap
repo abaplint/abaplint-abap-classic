@@ -79,7 +79,7 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
     t26 = zcl_lnt_structure_parser=>run_file( i_structure = t27 i_file = t28 i_statements = t30 ).
     result = t26.
-    
+
   ENDMETHOD.
   METHOD find_structure_for_file.
     IF zcl_lnt_structure_parser=>zlnt_builtin_init_4f5bb8fa61e1 = abap_false.
@@ -404,7 +404,7 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     ENDIF.
     t108 = NEW zcl_lnt_istructure_result( i_issues = t109 i_node = t110 ).
     result = t108.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_869df39a38f2.
     IF zlnt_builtin_init_4f5bb8fa61e1 = abap_true.

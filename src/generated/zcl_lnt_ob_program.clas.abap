@@ -28,7 +28,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |PROG|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
@@ -67,7 +67,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
     t11 = t17.
     result = t11.
-    
+
   ENDMETHOD.
   METHOD get_description.
     me->parse_xml(  ).
@@ -97,7 +97,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     ENDIF.
     t1 = t4.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
@@ -107,7 +107,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     CLEAR t4.
     t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t3 i_custom_regex = t4 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_dirty.
     DATA t1 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     t2 = t3.
     t1 = t2->is_include.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD is_module_pool.
     me->parse_xml(  ).
@@ -133,7 +133,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     t2 = t3.
     t1 = t2->is_module_pool.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_dynpros.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

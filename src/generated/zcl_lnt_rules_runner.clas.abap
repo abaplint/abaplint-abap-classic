@@ -60,7 +60,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     ENDLOOP.
     DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t19.
-    
+
   ENDMETHOD.
   METHOD run_rules.
     CONSTANTS range_check_hi_2gosa7pa2gv TYPE f VALUE '9007199254740991'.
@@ -1115,7 +1115,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA(t441) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
     t440 = me->exclude_issues( i_issues = t441 ).
     result = t440.
-    
+
   ENDMETHOD.
   METHOD exclude_issues.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
@@ -1408,7 +1408,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     ENDLOOP.
     DATA(t141) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t141.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

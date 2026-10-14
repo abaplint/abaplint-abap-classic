@@ -75,7 +75,7 @@ CLASS zcl_lnt_sr_class_definition IMPLEMENTATION.
     t36 = zcl_lnt_sr_combi_module=>sta( i_s = t37 ).
     t32 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t33 i_body = t35 i_end = t36 ).
     result = t32.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

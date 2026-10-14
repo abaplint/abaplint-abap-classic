@@ -652,7 +652,7 @@ CLASS zcl_lnt_sql_group_by IMPLEMENTATION.
     t226 = zcl_lnt_st_combi_module=>alt_prio( i_first = t227 i_second = t228 i_rest = t229 ).
     t211 = t226.
     result = t211.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d308_c2d6db3f5bbf.

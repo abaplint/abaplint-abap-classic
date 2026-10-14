@@ -452,7 +452,7 @@ CLASS zcl_lnt_sy_component_name IMPLEMENTATION.
     CLEAR t198.
     t192 = zcl_lnt_void_type=>get_db65( i_voided = t193 i_qualified_name = t198 ).
     result = t192.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

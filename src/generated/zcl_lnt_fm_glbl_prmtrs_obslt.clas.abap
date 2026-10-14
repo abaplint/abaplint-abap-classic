@@ -66,7 +66,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
     CLEAR t17.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t16 i_pseudo_comment = t17 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_s_r_f_g_p_o_ts_fm_gl_pr_ob.
     DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
@@ -78,7 +78,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   METHOD g_c_i_s_r_f_g_p_o_t_f_gl_pr_ob.
     DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_f_g_p_o_t_f_gl_pr_ob.
     DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( i_conf ).
@@ -104,7 +104,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( me->g_c_i_s_r_f_g_p_o_t_f_gl_pr_ob(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_fm_glbl_prmt_obslt_cnf( me->g_c_i_s_r_f_g_p_o_t_f_gl_pr_ob(  ) ).

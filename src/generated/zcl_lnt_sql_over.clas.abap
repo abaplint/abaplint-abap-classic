@@ -572,7 +572,7 @@ CLASS zcl_lnt_sql_over IMPLEMENTATION.
     CLEAR t212.
     t165 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t166 i_first = t172 i_opts = t212 ).
     result = t165.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d264_f2af8adb6bb2.

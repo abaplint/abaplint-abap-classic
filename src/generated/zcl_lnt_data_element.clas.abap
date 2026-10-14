@@ -39,7 +39,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |DTEL|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -124,7 +124,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_dt_elm_ts_dt_elm(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1139_8cc561f83e38.

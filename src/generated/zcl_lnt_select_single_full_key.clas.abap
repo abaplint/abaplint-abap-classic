@@ -98,7 +98,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
     ENDIF.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t14 i_pragma = t23 i_pseudo_comment = t24 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD i_i_s_r_s_s_f_k_ts_sl_sn_fl_ky.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -137,7 +137,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
     t12 = t13.
     DATA(t14) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->conf ).
     result = t14.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_s_s_f_k_t_s_sn_fl_ky.
     DATA(t1) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( i_conf ).
@@ -180,7 +180,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->g_c_i_s_r_s_s_f_k_t_s_sn_fl_ky(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->g_c_i_s_r_s_s_f_k_t_s_sn_fl_ky(  ) ).

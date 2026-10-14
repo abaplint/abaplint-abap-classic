@@ -578,7 +578,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
     DATA t36 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t36.
     result = t36.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

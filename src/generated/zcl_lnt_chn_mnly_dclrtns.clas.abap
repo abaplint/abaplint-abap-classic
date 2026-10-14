@@ -120,12 +120,12 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
     CLEAR t36.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t24 i_pragma = t35 i_pseudo_comment = t36 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_ch_mn_dc_ts_ch_mn_dc.
     DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_ch_mn_dc_ts_ch_mn_dc.
     DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( i_conf ).
@@ -154,12 +154,12 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( me->g_c_i_s_r_ch_mn_dc_ts_ch_mn_dc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_chn_mnly_dclrtns_cnf( me->g_c_i_s_r_ch_mn_dc_ts_ch_mn_dc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_chn_mnly_dclrtns_cnf.
@@ -169,12 +169,12 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->s_c_i_s_r_ch_mn_dc_ts_ch_mn_dc( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_ch_mn_dc_ts_ch_mn_dc( i_file = i_file ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1331_9a390291c259.

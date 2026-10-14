@@ -223,7 +223,7 @@ CLASS zcl_lnt_sql_field_and_value IMPLEMENTATION.
     t50 = t51.
     DATA(t81) = CAST zif_lnt_statement_runnable( t50 ).
     result = t81.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d292_48e50b6486bc.

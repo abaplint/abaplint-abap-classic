@@ -122,7 +122,7 @@ CLASS zcl_lnt_src_fld_symbl_chn IMPLEMENTATION.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t16 = t35.
     result = t16.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d122_32972f7bb68e.

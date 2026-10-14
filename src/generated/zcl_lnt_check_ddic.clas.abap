@@ -65,7 +65,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
     CLEAR t18.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t8 i_pragma = t17 i_pseudo_comment = t18 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_chc_ddc_ts_chc_ddc.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -77,7 +77,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   METHOD gt_cn_in_sr_rl_ch_dd_ts_ch_ddc.
     DATA(t1) = CAST zcl_lnt_check_ddic_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_ch_dd_ts_ch_ddc.
     DATA(t1) = CAST zcl_lnt_check_ddic_conf( i_conf ).
@@ -111,7 +111,7 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_check_ddic_conf( me->gt_cn_in_sr_rl_ch_dd_ts_ch_ddc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_check_ddic_conf( me->gt_cn_in_sr_rl_ch_dd_ts_ch_ddc(  ) ).

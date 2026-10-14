@@ -54,7 +54,7 @@ CLASS zcl_lnt_sr_if IMPLEMENTATION.
     t24 = zcl_lnt_sr_combi_module=>sta( i_s = t25 ).
     t20 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t21 i_body = t23 i_end = t24 ).
     result = t20.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

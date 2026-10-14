@@ -90,12 +90,12 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     CLEAR t22.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t6 i_extended_information = t7 i_tags = t12 i_pragma = t21 i_pseudo_comment = t22 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_un_ex_ts_un_exc.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD in_in_sr_rl_unc_exc_ts_unc_exc.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -190,17 +190,17 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zcl_lnt_uncaught_exception( me->in_in_sr_rl_unc_exc_ts_unc_exc( i_reg_f149 = i_reg_f149 ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_uncght_excptn_cnf.
@@ -210,7 +210,7 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->st_cn_in_sr_rl_un_ex_ts_un_exc( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1639_4abe594ee35d.

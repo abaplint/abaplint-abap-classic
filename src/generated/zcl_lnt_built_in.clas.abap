@@ -87,7 +87,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t22->cache = t23.
     DATA(t27) = CAST zcl_lnt_built_in_method( t15 ).
     result = t27.
-    
+
   ENDMETHOD.
   METHOD search_builtin.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
@@ -178,7 +178,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
       t25 = t32.
     ENDIF.
     result = t25.
-    
+
   ENDMETHOD.
   METHOD is_predicate.
     IF zcl_lnt_built_in=>zlnt_builtin_init_d2c53bdf259f = abap_false.
@@ -256,7 +256,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t26 = t27.
     t25 = t26->predicate.
     result = t25.
-    
+
   ENDMETHOD.
   METHOD get_types.
     DATA(t1) = VALUE abap_bool( ).
@@ -454,7 +454,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t78 = zcl_lnt_built_in=>types_cache.
     t77 = t78.
     result = t77.
-    
+
   ENDMETHOD.
   METHOD get_db65.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1806,7 +1806,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     t478 = t484.
     DATA(t486) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     result = t486.
-    
+
   ENDMETHOD.
   METHOD build_variable.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -1890,7 +1890,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     CLEAR t37.
     t18 = NEW zcl_lnt_typed_identifier( i_token = t19 i_filename = t20 i_type_9913 = t21 i_meta = t28 i_value = t37 ).
     result = t18.
-    
+
   ENDMETHOD.
   METHOD build_sy.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -6451,7 +6451,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     DATA(t2143) = CAST zlnt_runtime_arra_c22708faf2e3( t2133 ).
     t2132 = t2143.
     result = t2132.
-    
+
   ENDMETHOD.
   METHOD build_constant.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
@@ -6608,7 +6608,7 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
     ENDIF.
     t46 = NEW zcl_lnt_typed_identifier( i_token = t47 i_filename = t48 i_type_9913 = t49 i_meta = t51 i_value = t62 ).
     result = t46.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_97ac0787fc72.
     CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.

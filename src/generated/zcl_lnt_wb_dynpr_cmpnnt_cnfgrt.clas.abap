@@ -18,7 +18,7 @@ CLASS zcl_lnt_wb_dynpr_cmpnnt_cnfgrt IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |WDCC|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

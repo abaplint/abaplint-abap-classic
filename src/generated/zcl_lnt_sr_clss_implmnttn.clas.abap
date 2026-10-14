@@ -50,7 +50,7 @@ CLASS zcl_lnt_sr_clss_implmnttn IMPLEMENTATION.
     t22 = zcl_lnt_sr_combi_module=>sta( i_s = t23 ).
     t18 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t19 i_body = t21 i_end = t22 ).
     result = t18.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

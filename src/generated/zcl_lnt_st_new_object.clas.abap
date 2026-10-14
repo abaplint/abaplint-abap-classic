@@ -356,7 +356,7 @@ CLASS zcl_lnt_st_new_object IMPLEMENTATION.
     ENDIF.
     t101 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t102 i_first = t108 i_opts = t111 ).
     result = t101.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d218_79f2a1395386.

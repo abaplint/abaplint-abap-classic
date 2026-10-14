@@ -1182,7 +1182,7 @@ CLASS zcl_lnt_sy_cast IMPLEMENTATION.
     DATA(t493) = CAST zcl_lnt_abstract_type( t44 ).
     t492 = t493.
     result = t492.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

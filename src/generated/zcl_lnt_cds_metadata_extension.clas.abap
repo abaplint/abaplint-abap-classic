@@ -30,7 +30,7 @@ CLASS zcl_lnt_cds_metadata_extension IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |DDLX|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -65,7 +65,7 @@ CLASS zcl_lnt_cds_metadata_extension IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_sr_ob_cd_mt_ex_ts_cd_mt_ex(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1121_899e29e083be.

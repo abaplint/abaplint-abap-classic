@@ -86,7 +86,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     CLEAR t28.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t16 i_pragma = t27 i_pseudo_comment = t28 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_f_p_a_p_t_f_ps_an_pr.
     DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
@@ -136,7 +136,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     ENDIF.
     DATA(t22) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->conf ).
     result = t22.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_f_p_a_p_t_f_ps_an_pr.
     DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( i_conf ).
@@ -155,12 +155,12 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_frbdd_psd_and_prgm_cnf.
@@ -170,12 +170,12 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->s_c_i_s_r_f_p_a_p_t_f_ps_an_pr( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_f_p_a_p_t_f_ps_an_pr( i_file = i_file ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1409_114e531cd976.

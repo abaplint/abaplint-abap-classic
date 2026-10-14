@@ -158,7 +158,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     CLEAR t49.
     t18 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t19 i_first = t25 i_opts = t49 ).
     result = t18.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d325_95314ae809d0.

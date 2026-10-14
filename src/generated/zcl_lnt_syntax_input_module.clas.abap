@@ -42,7 +42,7 @@ CLASS zcl_lnt_syntax_input_module IMPLEMENTATION.
     DATA(t16) = CAST zlnt_runtime_map__4fdf767b61ba( t4 ).
     t5 = zcl_lnt_issue=>at_token_filename( i_filename = t6 i_token = t8 i_message_26cb = t9 i_key = t10 i_severity = t11 i_fix = t16 ).
     result = t5.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_init_4ca00818a657.
     IF zlnt_builtin_init_c7868871a36e = abap_true.

@@ -46,7 +46,7 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
     t8->error = t9.
     DATA(t10) = CAST zcl_lnt_imatch( t3 ).
     result = t10.
-    
+
   ENDMETHOD.
   METHOD first.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

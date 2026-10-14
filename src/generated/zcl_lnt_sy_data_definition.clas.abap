@@ -277,7 +277,7 @@ CLASS zcl_lnt_sy_data_definition IMPLEMENTATION.
     DATA t120 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t120.
     result = t120.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

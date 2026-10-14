@@ -189,7 +189,7 @@ CLASS zcl_lnt_st_when_type IMPLEMENTATION.
     ENDIF.
     t33 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t34 i_first = t40 i_opts = t56 ).
     result = t33.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

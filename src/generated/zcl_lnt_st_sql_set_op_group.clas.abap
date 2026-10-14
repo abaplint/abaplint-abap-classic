@@ -384,7 +384,7 @@ CLASS zcl_lnt_st_sql_set_op_group IMPLEMENTATION.
     ENDIF.
     t94 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t95 i_first = t101 i_opts = t120 ).
     result = t94.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d277_c16b515a2f49.

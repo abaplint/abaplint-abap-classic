@@ -55,7 +55,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
     t1 = NEW zcl_lnt_istatement_result( i_file = t2 i_tokens = t3 i_statements = t4 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD tokens_to_nodes.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens1 ).
@@ -92,7 +92,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     ENDLOOP.
     DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
     result = t17.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

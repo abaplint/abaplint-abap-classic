@@ -379,7 +379,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     DATA t97 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t97.
     result = t97.
-    
+
   ENDMETHOD.
   METHOD find_function_group_scope.
     DATA(t1) = CAST zcl_lnt_function_group( i_fg ).

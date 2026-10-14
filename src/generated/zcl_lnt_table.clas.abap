@@ -36,7 +36,7 @@ CLASS zcl_lnt_table IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |TABL|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_description.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

@@ -25,7 +25,7 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |W3MI|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -73,7 +73,7 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_ins_src_obj_wb_mm_ts_wb_mm(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1271_57d52cf07c2e.

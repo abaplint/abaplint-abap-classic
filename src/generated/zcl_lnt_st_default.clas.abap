@@ -92,7 +92,7 @@ CLASS zcl_lnt_st_default IMPLEMENTATION.
     t1 = t2.
     DATA(t31) = CAST zif_lnt_statement_runnable( t1 ).
     result = t31.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d155_5eb73ae6c401.

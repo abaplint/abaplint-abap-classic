@@ -18,7 +18,7 @@ CLASS zcl_lnt_gateway_service IMPLEMENTATION.
   METHOD get_type.
     DATA(t1) = |IWSV|.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_allowed_naming.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

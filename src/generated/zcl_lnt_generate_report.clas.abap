@@ -556,7 +556,7 @@ CLASS zcl_lnt_generate_report IMPLEMENTATION.
     ENDIF.
     t213 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t214 i_first = t215 ).
     result = t213.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

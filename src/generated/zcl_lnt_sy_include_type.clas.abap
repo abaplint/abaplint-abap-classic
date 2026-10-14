@@ -977,7 +977,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
       t405->oval = t407.
     ENDIF.
     result = t405.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

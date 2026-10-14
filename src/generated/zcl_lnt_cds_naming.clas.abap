@@ -142,12 +142,12 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
     CLEAR t39.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t10 i_extended_information = t15 i_tags = t27 i_pragma = t38 i_pseudo_comment = t39 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD gt_cn_in_sr_rl_cd_nm_ts_cd_nmn.
     DATA(t1) = CAST zcl_lnt_cds_naming_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD st_cn_in_sr_rl_cd_nm_ts_cd_nmn.
     DATA(t1) = CAST zcl_lnt_cds_naming_conf( i_conf ).
@@ -180,7 +180,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_cds_naming_conf( me->gt_cn_in_sr_rl_cd_nm_ts_cd_nmn(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_cds_naming_conf( me->gt_cn_in_sr_rl_cd_nm_ts_cd_nmn(  ) ).

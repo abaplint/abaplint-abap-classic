@@ -2476,7 +2476,7 @@ CLASS zcl_lnt_sy_method_source IMPLEMENTATION.
       t1007 = t1011.
     ENDIF.
     result = t1007.
-    
+
   ENDMETHOD.
   METHOD find_top.
     DATA(t1) = CAST zif_lnt_node( i_first ).
@@ -3400,7 +3400,7 @@ CLASS zcl_lnt_sy_method_source IMPLEMENTATION.
     DATA t374 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t374.
     result = t374.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

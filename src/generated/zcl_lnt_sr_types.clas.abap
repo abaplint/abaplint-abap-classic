@@ -57,7 +57,7 @@ CLASS zcl_lnt_sr_types IMPLEMENTATION.
     t26 = zcl_lnt_sr_combi_module=>sta( i_s = t27 ).
     t1 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = t26 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

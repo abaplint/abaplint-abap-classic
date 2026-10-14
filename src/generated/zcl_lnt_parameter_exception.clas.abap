@@ -272,7 +272,7 @@ CLASS zcl_lnt_parameter_exception IMPLEMENTATION.
     t94 = zcl_lnt_st_combi_module=>seq( i_first = t95 i_second = t96 i_rest = t97 ).
     t36 = t94.
     result = t36.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca.

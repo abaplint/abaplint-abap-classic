@@ -472,7 +472,7 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       CLEAR t190.
       t177 = NEW zcl_lnt_typed_identifier( i_token = t178 i_filename = t181 i_type_9913 = t183 i_meta = t186 i_value = t190 ).
       result = t177.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

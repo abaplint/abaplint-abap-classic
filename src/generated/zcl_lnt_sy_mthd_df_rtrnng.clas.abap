@@ -294,7 +294,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       CLEAR t122.
       t109 = NEW zcl_lnt_typed_identifier( i_token = t110 i_filename = t113 i_type_9913 = t115 i_meta = t118 i_value = t122 ).
       result = t109.
-      
+
     ENDIF.
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -273,12 +273,12 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
     CLEAR t69.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t3 i_short_description = t4 i_bad_example = t5 i_good_example = t22 i_extended_information = t44 i_tags = t55 i_pragma = t68 i_pseudo_comment = t69 ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD g_c_i_s_r_if_in_if_ts_if_in_if.
     DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->conf ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD s_c_i_s_r_if_in_if_ts_if_in_if.
     DATA(t1) = CAST zcl_lnt_if_in_if_conf( i_conf ).
@@ -298,12 +298,12 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
   METHOD get_config_value.
     DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD get_config.
     DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if(  ) ).
     result = t1.
-    
+
   ENDMETHOD.
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_if_in_if_conf.
@@ -313,7 +313,7 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
     t2 = i_conf->as_ref( ).
     t1 ?= t2.
     me->s_c_i_s_r_if_in_if_ts_if_in_if( i_conf = t1 ).
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1436_a954f677b322.

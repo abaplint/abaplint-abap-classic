@@ -475,7 +475,7 @@ CLASS zcl_lnt_sql_field_list IMPLEMENTATION.
     t167 = zcl_lnt_st_combi_module=>alt_prio( i_first = t168 i_second = t169 i_rest = t170 ).
     t127 = t167.
     result = t127.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d293_8f762dd42d06.

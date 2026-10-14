@@ -2484,7 +2484,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
     DATA(t1016) = CAST zcl_lnt_abstract_type( t4 ).
     t1015 = t1016.
     result = t1015.
-    
+
   ENDMETHOD.
   METHOD parameters.
     DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
@@ -3626,7 +3626,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
     ENDLOOP.
     DATA(t70) = CAST zcl_lnt_abstract_type( t2 ).
     result = t70.
-    
+
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

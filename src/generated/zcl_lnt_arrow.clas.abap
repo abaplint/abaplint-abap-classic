@@ -55,7 +55,7 @@ CLASS zcl_lnt_arrow IMPLEMENTATION.
     t14 = zcl_lnt_st_combi_module=>alt_prio( i_first = t15 i_second = t16 i_rest = t17 ).
     t1 = t14.
     result = t1.
-    
+
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d90_ea4359cbebf3c6.
