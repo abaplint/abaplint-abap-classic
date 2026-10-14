@@ -404,16 +404,47 @@ CLASS ltcl_run_rule IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 
+* OBJECT_TYPE and OBJECT_NAME are READ-ONLY, subclasses can set them
+CLASS ltd_parser_error DEFINITION FINAL FOR TESTING INHERITING FROM zcl_lnc_parser_error.
+  PUBLIC SECTION.
+    METHODS set_object
+      IMPORTING
+        iv_type TYPE csequence
+        iv_name TYPE csequence.
+ENDCLASS.
+
+CLASS ltd_parser_error IMPLEMENTATION.
+  METHOD set_object.
+    object_type = iv_type.
+    object_name = iv_name.
+  ENDMETHOD.
+ENDCLASS.
+
+CLASS ltd_double_space DEFINITION FINAL FOR TESTING INHERITING FROM zcl_lnc_double_space.
+  PUBLIC SECTION.
+    METHODS set_object
+      IMPORTING
+        iv_type TYPE csequence
+        iv_name TYPE csequence.
+ENDCLASS.
+
+CLASS ltd_double_space IMPLEMENTATION.
+  METHOD set_object.
+    object_type = iv_type.
+    object_name = iv_name.
+  ENDMETHOD.
+ENDCLASS.
+
 * end to end through generated checks, INFORM is a stub in open-abap-ci so only check nothing is raised
 CLASS ltcl_checks DEFINITION FINAL FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
   PRIVATE SECTION.
-    METHODS run_checks FOR TESTING RAISING cx_static_check.
+    METHODS setup.
+    METHODS parser_error FOR TESTING RAISING cx_static_check.
+    METHODS unsupported FOR TESTING RAISING cx_static_check.
 ENDCLASS.
 
 CLASS ltcl_checks IMPLEMENTATION.
-  METHOD run_checks.
-    DATA lt_checks TYPE STANDARD TABLE OF REF TO cl_ci_test_root WITH EMPTY KEY.
-
+  METHOD setup.
     DATA(lo_reader) = NEW ltd_reader( ).
     lo_reader->set_prog(
       iv_name   = 'ZTEST'
@@ -421,18 +452,22 @@ CLASS ltcl_checks IMPLEMENTATION.
         ( `REPORT ztest.` )
         ( `  foo bar moo.` ) ) ).
     zcl_lnt_utils=>set_source_reader( lo_reader ).
+  ENDMETHOD.
 
-    lt_checks = VALUE #(
-      ( NEW zcl_lnc_parser_error( ) )
-      ( NEW zcl_lnc_double_space( ) )
-      ( NEW zcl_lnc_allowed_object_naming( ) ) ).
-    LOOP AT lt_checks INTO DATA(lo_check).
-      cl_abap_unit_assert=>assert_equals(
-        act = lines( lo_check->scimessages )
-        exp = 2 ).
-      lo_check->object_type = 'PROG'.
-      lo_check->object_name = 'ZTEST'.
-      lo_check->run( ).
-    ENDLOOP.
+  METHOD parser_error.
+    DATA(lo_check) = NEW ltd_parser_error( ).
+    cl_abap_unit_assert=>assert_equals(
+      act = lines( lo_check->scimessages )
+      exp = 2 ).
+
+    lo_check->set_object( iv_type = 'PROG' iv_name = 'ZTEST' ).
+    lo_check->run( ).
+  ENDMETHOD.
+
+  METHOD unsupported.
+    DATA(lo_check) = NEW ltd_double_space( ).
+
+    lo_check->set_object( iv_type = 'PROG' iv_name = 'ZTEST' ).
+    lo_check->run( ).
   ENDMETHOD.
 ENDCLASS.
