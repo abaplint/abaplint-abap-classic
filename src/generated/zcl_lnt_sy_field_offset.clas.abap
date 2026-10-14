@@ -127,7 +127,7 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
         WHILE t32 < t33.
           t45 = t25+t32(1).
           IF t45 CA '0123456789' AND t45 <> ` `.
-            t43 = t43 * 10 + ( t45 ).
+            t43 = t43 * 10 + t45.
             t44 = t44 + 1.
             t32 = t32 + 1.
           ELSE.

@@ -1322,7 +1322,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
               WHILE t541 < t542.
                 t554 = t528+t541(1).
                 IF t554 CA '0123456789' AND t554 <> ` `.
-                  t552 = t552 * 10 + ( t554 ).
+                  t552 = t552 * 10 + t554.
                   t553 = t553 + 1.
                   t541 = t541 + 1.
                 ELSE.
@@ -8695,7 +8695,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                           WHILE t931 < t932.
                             t944 = t927+t931(1).
                             IF t944 CA '0123456789' AND t944 <> ` `.
-                              t942 = t942 * 10 + ( t944 ).
+                              t942 = t942 * 10 + t944.
                               t943 = t943 + 1.
                               t931 = t931 + 1.
                             ELSE.
@@ -16295,7 +16295,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         WHILE t36 < t37.
           t49 = t33+t36(1).
           IF t49 CA '0123456789' AND t49 <> ` `.
-            t47 = t47 * 10 + ( t49 ).
+            t47 = t47 * 10 + t49.
             t48 = t48 + 1.
             t36 = t36 + 1.
           ELSE.
@@ -16847,7 +16847,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       WHILE t64 < t65.
         t77 = t61+t64(1).
         IF t77 CA '0123456789' AND t77 <> ` `.
-          t75 = t75 * 10 + ( t77 ).
+          t75 = t75 * 10 + t77.
           t76 = t76 + 1.
           t64 = t64 + 1.
         ELSE.

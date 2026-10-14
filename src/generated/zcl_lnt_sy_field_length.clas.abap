@@ -173,7 +173,7 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
         WHILE t56 < t57.
           t69 = t49+t56(1).
           IF t69 CA '0123456789' AND t69 <> ` `.
-            t67 = t67 * 10 + ( t69 ).
+            t67 = t67 * 10 + t69.
             t68 = t68 + 1.
             t56 = t56 + 1.
           ELSE.

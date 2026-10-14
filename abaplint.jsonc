@@ -34,7 +34,7 @@
     "functional_writing": true,
     "ambiguous_statement": true,
     "keep_single_parameter_on_one_line": true,
-    "many_parentheses": false, // todo
+    "many_parentheses": true, // todo
     "catch_and_raise": true,
     "begin_single_include": true,
     "check_abstract": true,

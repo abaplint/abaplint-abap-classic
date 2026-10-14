@@ -665,7 +665,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
           WHILE t177 < t178.
             t190 = t172+t177(1).
             IF t190 CA '0123456789' AND t190 <> ` `.
-              t188 = t188 * 10 + ( t190 ).
+              t188 = t188 * 10 + t190.
               t189 = t189 + 1.
               t177 = t177 + 1.
             ELSE.
