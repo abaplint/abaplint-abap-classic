@@ -1,10 +1,14 @@
 {
   "global": {
-    "files": "/output/classes/*.*"
+    "files": "/src/**/*.*"
   },
   "dependencies": [
     {
       "url": "https://github.com/open-abap/open-abap-core",
+      "files": "/src/**/*.*"
+    },
+    {
+      "url": "https://github.com/open-abap/open-abap-ci",
       "files": "/src/**/*.*"
     }
   ],

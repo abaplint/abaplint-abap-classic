@@ -4,7 +4,7 @@ import {fileURLToPath} from "node:url";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputRoot = path.join(packageRoot, "output");
-const classesFolder = path.join(outputRoot, "classes");
+const classesFolder = path.join(packageRoot, "src", "generated");
 const manifestPath = path.join(outputRoot, "abaplint-release-manifest.json");
 
 function escapeXml(text) {
