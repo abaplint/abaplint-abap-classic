@@ -11,6 +11,6 @@
     "test": "npm run abapiti && abaplint"
   },
   "dependencies": {
-    "@abaplint/cli": "^2.120.77"
+    "@abaplint/cli": "^2.120.78"
   }
 }
