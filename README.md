@@ -16,6 +16,8 @@ npm run transpile
 
 Before `abaplint --fix`, `scripts/abapgit-xml.mjs` writes an abapGit `.clas.xml` or `.intf.xml` next to each object in `src/generated`, so abaplint checks and fixes the objects with their metadata. Descriptions come from the `* TS:` header of each object, and classes that inherit from a `CX_` class get exception category 40.
 
+`scripts/checks.mjs` then replaces everything in `src/checks` except `package.devc.xml` with one Code Inspector check per rule tagged `SingleFile`. Each check inherits from `CL_CI_TEST_ROOT`, is named after its rule class with the prefix `ZCL_LNC_` instead of `ZCL_LNT_`, and for now only has a constructor that sets `MYNAME` and the rule title as `DESCRIPTION`.
+
 The release bundle is self-contained; the generated output does not use the local `packages/core/src` tree. Each run checks the latest release tag before reusing its cached binary, so a newly published release is picked up automatically.
 
 ## Scope and limits
