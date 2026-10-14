@@ -5,7 +5,7 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
       BEGIN OF ty_finding,
         include TYPE progname,
         line    TYPE i,
-        column  TYPE i,
+        column  TYPE int2,
         kind    TYPE c LENGTH 1,
         code    TYPE sci_errc,
         text    TYPE string,
