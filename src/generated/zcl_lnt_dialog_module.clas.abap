@@ -1,0 +1,38 @@
+* TS: src/objects/dialog_module.ts:3:1 DialogModule
+CLASS zcl_lnt_dialog_module DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_object CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS constructor IMPORTING i_name TYPE string.
+    METHODS get_type REDEFINITION.
+    METHODS get_allowed_naming REDEFINITION.
+    METHODS get_description REDEFINITION.
+    METHODS zlnt_builtin_clas_3f891b097658 REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zcl_lnt_dialog_module IMPLEMENTATION.
+  METHOD constructor.
+    DATA(t1) = i_name.
+    DATA(t2) = t1.
+    super->constructor( i_name = t2 ).
+  ENDMETHOD.
+  METHOD get_type.
+    DATA(t1) = |DIAL|.
+    result = t1.
+    
+  ENDMETHOD.
+  METHOD get_allowed_naming.
+    DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t2) = |src/objects/dialog_module.ts:9|.
+    t1->source_location = t2.
+    RAISE EXCEPTION t1.
+  ENDMETHOD.
+  METHOD get_description.
+    DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t2) = |src/objects/dialog_module.ts:16|.
+    t1->source_location = t2.
+    RAISE EXCEPTION t1.
+  ENDMETHOD.
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1141_65d0e12620dc.
+  ENDMETHOD.
+ENDCLASS.

@@ -1,0 +1,49 @@
+* TS: src/lsp/implementation.ts:15:1 Implementation
+CLASS zcl_lnt_implementation DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    DATA reg TYPE REF TO zif_lnt_registry.
+    METHODS constructor IMPORTING i_reg_f149 TYPE REF TO zif_lnt_registry.
+    METHODS find_8f95 IMPORTING i_text_document TYPE REF TO zcl_lnt_shape_9e00b1e6 i_position_a3fd TYPE REF TO zcl_lnt_shape_38f98ddf RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    METHODS find_method_implementations IMPORTING i_def TYPE REF TO zcl_lnt_method_definition RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    METHODS search_references IMPORTING i_scope TYPE REF TO zif_lnt_spaghetti_scope_node i_id TYPE REF TO zcl_lnt_fi_identifier RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    INTERFACES zlnt_runtime_desc_e5fe811e0f42.
+    METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zcl_lnt_implementation IMPLEMENTATION.
+  METHOD constructor.
+    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    me->reg = t2.
+  ENDMETHOD.
+  METHOD find_8f95.
+    DATA(t1) = CAST zcl_lnt_shape_9e00b1e6( i_text_document ).
+    DATA(t2) = CAST zcl_lnt_shape_38f98ddf( i_position_a3fd ).
+    DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t4) = |src/lsp/implementation.ts:22|.
+    t3->source_location = t4.
+    RAISE EXCEPTION t3.
+  ENDMETHOD.
+  METHOD find_method_implementations.
+    DATA(t1) = CAST zcl_lnt_method_definition( i_def ).
+    DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t3) = |src/lsp/implementation.ts:51|.
+    t2->source_location = t3.
+    RAISE EXCEPTION t2.
+  ENDMETHOD.
+  METHOD search_references.
+    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_scope ).
+    DATA(t2) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t3) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t4) = |src/lsp/implementation.ts:66|.
+    t3->source_location = t4.
+    RAISE EXCEPTION t3.
+  ENDMETHOD.
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1073_c7888841318b.
+  ENDMETHOD.
+ENDCLASS.

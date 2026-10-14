@@ -1,0 +1,40 @@
+* TS: src/abap/2_statements/statements/at_line_selection.ts:6:1 AtLineSelection
+CLASS zcl_lnt_at_line_selection DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES zif_lnt_statement.
+    INTERFACES zif_lnt_union_dc0fb493.
+    METHODS get_matcher RETURNING VALUE(result) TYPE REF TO zif_lnt_statement_runnable.
+    INTERFACES zlnt_runtime_desc_e5fe811e0f42.
+    METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zcl_lnt_at_line_selection IMPLEMENTATION.
+  METHOD get_matcher.
+    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
+    DATA(t2) = |Cloud|.
+    DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    DATA(t4) = |AT LINE-SELECTION|.
+    CREATE OBJECT t3.
+    t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
+    t3->sval = t4.
+    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
+    result = t1.
+    
+  ENDMETHOD.
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d363_3312ec1723b0.
+  ENDMETHOD.
+  METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+  ENDMETHOD.
+  METHOD zif_lnt_statement~get_matcher.
+    result = me->get_matcher(  ).
+  ENDMETHOD.
+  METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+  ENDMETHOD.
+ENDCLASS.

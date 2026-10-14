@@ -1,0 +1,2 @@
+INTERFACE zlnt_runtime_arra_6c31174d6e02 PUBLIC.
+ENDINTERFACE.

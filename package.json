@@ -1,0 +1,16 @@
+{
+  "name": "@abaplint/morph2",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ABAPiti transpilation experiments for @abaplint/core",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "transpile": "node scripts/transpile-abaplint-release.mjs && node scripts/abapgit-xml.mjs && abaplint --fix && node scripts/package-abapgit.mjs",
+    "test": "npm run transpile && abaplint"
+  },
+  "dependencies": {
+    "@abaplint/cli": "^2.120.77"
+  }
+}

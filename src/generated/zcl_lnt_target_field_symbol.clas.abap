@@ -1,0 +1,67 @@
+* TS: src/abap/2_statements/expressions/target_field_symbol.ts:5:1 TargetFieldSymbol
+CLASS zcl_lnt_target_field_symbol DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS constructor.
+    METHODS get_runnable REDEFINITION.
+    METHODS zlnt_builtin_clas_3f891b097658 REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zcl_lnt_target_field_symbol IMPLEMENTATION.
+  METHOD constructor.
+    super->constructor(  ).
+  ENDMETHOD.
+  METHOD get_runnable.
+    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
+    CLEAR t1.
+    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t2.
+    DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t3.
+    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396 ).
+    IF t4 IS BOUND.
+      CREATE OBJECT t3.
+      t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
+      t3->cval = t4.
+    ENDIF.
+    t2 = t3.
+    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t5.
+    DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t6.
+    DATA t7 TYPE REF TO zif_lnt_statement_runnable.
+    CLEAR t7.
+    DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t8.
+    DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d100_553f73368b64 ).
+    IF t9 IS BOUND.
+      CREATE OBJECT t8.
+      t8->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
+      t8->cval = t9.
+    ENDIF.
+    t7 = zcl_lnt_st_combi_module=>opt_prio( i_first = t8 ).
+    IF t7 IS BOUND.
+      CREATE OBJECT t6.
+      t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+      DATA t10 TYPE REF TO object.
+      t10 = t7.
+      t6->oval = t10.
+    ENDIF.
+    t5 = t6.
+    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t12.
+    t11 = t12.
+    DATA t13 TYPE REF TO zif_lnt_statement_runnable.
+    DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
+    DATA(t15) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
+    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    t13 = zcl_lnt_st_combi_module=>seq( i_first = t14 i_second = t15 i_rest = t16 ).
+    t1 = t13.
+    result = t1.
+    
+  ENDMETHOD.
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d184_78321de353a4.
+  ENDMETHOD.
+ENDCLASS.
