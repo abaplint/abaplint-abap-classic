@@ -27,6 +27,11 @@
     "final_newline": true,
     "7bit_ascii": false, // todo
     "modify_only_own_db_tables": true,
+    "form_tables_obsolete": true,
+    "fm_global_parameters_obsolete": true,
+    "msag_consistency": true,
+    "max_one_method_parameter_per_line": false, // todo
+    "max_one_statement": true,
     "abapdoc": false,
     "add_test_attributes": true,
     "aff_and_xml": true,

@@ -380,14 +380,7 @@ CLASS ltcl_run_rule IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD scimessages.
-    TYPES:
-      BEGIN OF ty_message,
-        test TYPE string,
-        code TYPE string,
-        kind TYPE string,
-        text TYPE string,
-      END OF ty_message.
-    DATA lt_messages TYPE STANDARD TABLE OF ty_message WITH EMPTY KEY.
+    DATA lt_messages TYPE scimessages.
 
     zcl_lnt_utils=>add_scimessages(
       EXPORTING
@@ -400,7 +393,7 @@ CLASS ltcl_run_rule IMPLEMENTATION.
       exp = 2 ).
     cl_abap_unit_assert=>assert_equals(
       act = lt_messages[ 1 ]
-      exp = VALUE ty_message(
+      exp = VALUE scimessage(
         test = 'ZCL_LNC_FOO'
         code = 'ISSUE'
         kind = cl_ci_test_root=>c_warning

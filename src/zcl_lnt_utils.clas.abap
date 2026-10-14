@@ -34,7 +34,7 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
       IMPORTING
         iv_test        TYPE csequence
       CHANGING
-        ct_scimessages TYPE STANDARD TABLE.
+        ct_scimessages TYPE scimessages.
 
     CLASS-METHODS set_source_reader
       IMPORTING
@@ -94,13 +94,6 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
       EXPORTING
         ev_include     TYPE progname
         ev_line        TYPE i.
-
-    CLASS-METHODS set_component
-      IMPORTING
-        iv_name  TYPE string
-        iv_value TYPE csequence
-      CHANGING
-        cs_data  TYPE any.
 ENDCLASS.
 
 CLASS zcl_lnt_utils IMPLEMENTATION.
@@ -119,28 +112,16 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD add_scimessages.
-    FIELD-SYMBOLS <ls_message> TYPE any.
-
-    APPEND INITIAL LINE TO ct_scimessages ASSIGNING <ls_message>.
-    set_component( EXPORTING iv_name = 'TEST' iv_value = iv_test CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'CODE' iv_value = c_code-issue CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'KIND' iv_value = cl_ci_test_root=>c_warning CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'TEXT' iv_value = '&1' CHANGING cs_data = <ls_message> ).
-
-    APPEND INITIAL LINE TO ct_scimessages ASSIGNING <ls_message>.
-    set_component( EXPORTING iv_name = 'TEST' iv_value = iv_test CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'CODE' iv_value = c_code-dump CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'KIND' iv_value = cl_ci_test_root=>c_error CHANGING cs_data = <ls_message> ).
-    set_component( EXPORTING iv_name = 'TEXT' iv_value = 'abaplint failed: &1' CHANGING cs_data = <ls_message> ).
-  ENDMETHOD.
-
-  METHOD set_component.
-    FIELD-SYMBOLS <lv_field> TYPE any.
-
-    ASSIGN COMPONENT iv_name OF STRUCTURE cs_data TO <lv_field>.
-    IF sy-subrc = 0.
-      <lv_field> = iv_value.
-    ENDIF.
+    INSERT VALUE #(
+      test = iv_test
+      code = c_code-issue
+      kind = cl_ci_test_root=>c_warning
+      text = '&1' ) INTO TABLE ct_scimessages.
+    INSERT VALUE #(
+      test = iv_test
+      code = c_code-dump
+      kind = cl_ci_test_root=>c_error
+      text = 'abaplint failed: &1' ) INTO TABLE ct_scimessages.
   ENDMETHOD.
 
   METHOD run_rule.
