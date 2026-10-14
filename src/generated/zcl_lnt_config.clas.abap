@@ -197,7 +197,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         t84 = t85->syntax.
         t83 = t84->global_constants.
         t82 = t83.
-        t80 = t81->fromArray( p0 = t82 ).
+        t80 = t81->fromarray( p0 = t82 ).
         t79 = t80->values( ).
         t77 = t78->concat( p0 = t79 ).
         t76 = t77.
@@ -272,7 +272,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         t118 = t119->syntax.
         t117 = t118->ambigious_voids.
         t116 = t117.
-        t114 = t115->fromArray( p0 = t116 ).
+        t114 = t115->fromarray( p0 = t116 ).
         t113 = t114->values( ).
         t111 = t112->concat( p0 = t113 ).
         t110 = t111.

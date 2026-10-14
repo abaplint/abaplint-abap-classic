@@ -192,7 +192,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
         ENDLOOP.
         DATA(t70) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
         t29 = t70.
-        t27 = t28->fromArray( p0 = t29 ).
+        t27 = t28->fromarray( p0 = t29 ).
         t25 = t27.
       ELSE.
         DATA t71 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
@@ -1937,7 +1937,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
         ENDLOOP.
         DATA(t79) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
         t38 = t79.
-        t36 = t37->fromArray( p0 = t38 ).
+        t36 = t37->fromarray( p0 = t38 ).
         t34 = t36.
       ELSE.
         DATA t80 TYPE REF TO zlnt_runtime_set__1827558fd4c7.

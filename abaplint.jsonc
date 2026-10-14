@@ -68,6 +68,7 @@
     "invalid_table_index": true,
     "no_aliases": true,
     "names_no_dash": true,
+    "keyword_case": true,
     "no_exclamation_escape": true,
     "select_add_order_by": true,
     "check_subrc": false,

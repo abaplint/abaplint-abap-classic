@@ -6,7 +6,7 @@ CLASS zlnt_runtime_set__6ef4c9be248b DEFINITION PUBLIC CREATE PUBLIC.
     METHODS size RETURNING VALUE(result) TYPE i.
     METHODS has IMPORTING p0 TYPE int8 RETURNING VALUE(result) TYPE abap_bool.
     METHODS add IMPORTING p0 TYPE int8 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    METHODS fromArray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_f39560c658f8 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
+    METHODS fromarray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_f39560c658f8 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     METHODS copy IMPORTING p0 TYPE REF TO zlnt_runtime_set__6ef4c9be248b RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     METHODS delete IMPORTING p0 TYPE int8 RETURNING VALUE(result) TYPE abap_bool.
     METHODS values RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_f39560c658f8.
@@ -32,7 +32,7 @@ CLASS zlnt_runtime_set__6ef4c9be248b IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
-  METHOD fromArray.
+  METHOD fromarray.
     DATA row TYPE int8.
     DATA ignored TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     LOOP AT p0->items INTO row.

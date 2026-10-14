@@ -2397,7 +2397,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       DATA t519 TYPE i.
       DATA(t520) = CAST zlnt_runtime_arra_8ecd6afe19e0( t514 ).
       DATA(t521) = t15.
-      t519 = t520->indexOf( p0 = t521 ).
+      t519 = t520->indexof( p0 = t521 ).
       DATA(t522) = 0.
       t518 = xsdbool( t519 >= t522 ).
       IF t518 = abap_true.
@@ -2468,7 +2468,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
         DATA t552 TYPE i.
         DATA(t553) = CAST zlnt_runtime_arra_8ecd6afe19e0( t547 ).
         DATA(t554) = t15.
-        t552 = t553->indexOf( p0 = t554 ).
+        t552 = t553->indexof( p0 = t554 ).
         DATA(t555) = 0.
         t551 = xsdbool( t552 >= t555 ).
         IF t551 = abap_true.
@@ -2548,7 +2548,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
           DATA t589 TYPE i.
           DATA(t590) = CAST zlnt_runtime_arra_8ecd6afe19e0( t584 ).
           DATA(t591) = t15.
-          t589 = t590->indexOf( p0 = t591 ).
+          t589 = t590->indexof( p0 = t591 ).
           DATA(t592) = 0.
           t588 = xsdbool( t589 >= t592 ).
           IF t588 = abap_true.

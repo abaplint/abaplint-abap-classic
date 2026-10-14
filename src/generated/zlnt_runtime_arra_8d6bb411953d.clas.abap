@@ -17,7 +17,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d DEFINITION PUBLIC CREATE PUBLIC.
     METHODS splice3 IMPORTING p0 TYPE i p1 TYPE i p2 TYPE REF TO zcl_lnt_abstract_type RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_8d6bb411953d.
     METHODS pop RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_type.
     METHODS shift RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_type.
-    METHODS indexOf IMPORTING p0 TYPE REF TO zcl_lnt_abstract_type RETURNING VALUE(result) TYPE i.
+    METHODS indexof IMPORTING p0 TYPE REF TO zcl_lnt_abstract_type RETURNING VALUE(result) TYPE i.
     METHODS includes IMPORTING p0 TYPE REF TO zcl_lnt_abstract_type RETURNING VALUE(result) TYPE abap_bool.
     METHODS get IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_type.
   PROTECTED SECTION.
@@ -205,7 +205,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
       DELETE items INDEX 1.
     ENDIF.
   ENDMETHOD.
-  METHOD indexOf.
+  METHOD indexof.
     DATA row TYPE REF TO zcl_lnt_abstract_type.
     result = -1.
     LOOP AT items INTO row.

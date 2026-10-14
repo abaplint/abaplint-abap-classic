@@ -36,7 +36,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       ELSE.
         t13 = zlnt_runtime_uppe_91169605024d=>full( t13 ).
       ENDIF.
-      t9 = t10->indexOf( p0 = t13 ).
+      t9 = t10->indexof( p0 = t13 ).
       DATA(t16) = 0.
       t8 = xsdbool( t9 >= t16 ).
       t4 = t8.

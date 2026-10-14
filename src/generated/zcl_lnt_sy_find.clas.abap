@@ -756,7 +756,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
           DATA t355 TYPE i.
           DATA(t356) = CAST zlnt_runtime_arra_c22708faf2e3( t180 ).
           DATA(t357) = CAST zcl_lnt_expression_node( t325 ).
-          t355 = t356->indexOf( p0 = t357 ).
+          t355 = t356->indexof( p0 = t357 ).
           DATA(t358) = 0.
           t354 = xsdbool( t355 >= t358 ).
           IF t354 = abap_true.

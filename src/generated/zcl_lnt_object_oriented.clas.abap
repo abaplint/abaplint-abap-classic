@@ -10502,7 +10502,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t103 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     DATA(t104) = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA(t105) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    t103 = t104->fromArray( p0 = t105 ).
+    t103 = t104->fromarray( p0 = t105 ).
     t102 = t103->values( ).
     t100 = t101->concat( p0 = t102 ).
     t99 = t100.

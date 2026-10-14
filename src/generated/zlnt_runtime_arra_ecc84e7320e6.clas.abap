@@ -17,7 +17,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 DEFINITION PUBLIC CREATE PUBLIC.
     METHODS splice3 IMPORTING p0 TYPE i p1 TYPE i p2 TYPE abap_bool RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_ecc84e7320e6.
     METHODS pop RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     METHODS shift RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    METHODS indexOf IMPORTING p0 TYPE abap_bool RETURNING VALUE(result) TYPE i.
+    METHODS indexof IMPORTING p0 TYPE abap_bool RETURNING VALUE(result) TYPE i.
     METHODS includes IMPORTING p0 TYPE abap_bool RETURNING VALUE(result) TYPE abap_bool.
     METHODS join IMPORTING p0 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE string.
     METHODS get IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -214,7 +214,7 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
       DELETE items INDEX 1.
     ENDIF.
   ENDMETHOD.
-  METHOD indexOf.
+  METHOD indexof.
     DATA row TYPE abap_bool.
     result = -1.
     LOOP AT items INTO row.

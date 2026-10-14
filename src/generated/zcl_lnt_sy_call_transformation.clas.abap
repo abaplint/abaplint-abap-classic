@@ -70,7 +70,7 @@ CLASS zcl_lnt_sy_call_transformation IMPLEMENTATION.
       t23 = t28.
     ENDIF.
     t10 = t23.
-    t8 = t9->fromArray( p0 = t10 ).
+    t8 = t9->fromarray( p0 = t10 ).
     t7 = t8.
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t30) = CAST zcl_lnt_statement_node( t1 ).

@@ -126,7 +126,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
       DATA t19 TYPE i.
       DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t8 ).
       DATA(t21) = t13.
-      t19 = t20->indexOf( p0 = t21 ).
+      t19 = t20->indexof( p0 = t21 ).
       t18 = t19.
       DATA(t22) = t6.
       t17 = xsdbool( t18 = t22 ).

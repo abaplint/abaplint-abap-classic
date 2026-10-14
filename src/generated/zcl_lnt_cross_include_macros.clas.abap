@@ -204,7 +204,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       DATA t88 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       DATA(t89) = NEW zlnt_runtime_set__1827558fd4c7( ).
       DATA(t90) = CAST zlnt_runtime_arra_8ecd6afe19e0( t83 ).
-      t88 = t89->fromArray( p0 = t90 ).
+      t88 = t89->fromarray( p0 = t90 ).
       t86 = me->matches_unknown( i_prog = t87 i_macro_names = t88 ).
       IF t86 = abap_true.
         DATA(t91) = CAST zcl_lnt_ob_program( t28 ).

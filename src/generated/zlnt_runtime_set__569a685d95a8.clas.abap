@@ -6,7 +6,7 @@ CLASS zlnt_runtime_set__569a685d95a8 DEFINITION PUBLIC CREATE PUBLIC.
     METHODS size RETURNING VALUE(result) TYPE i.
     METHODS has IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE abap_bool.
     METHODS add IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
-    METHODS fromArray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_c22708faf2e3 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
+    METHODS fromarray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_c22708faf2e3 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
     METHODS copy IMPORTING p0 TYPE REF TO zlnt_runtime_set__569a685d95a8 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
     METHODS delete IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE abap_bool.
     METHODS values RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -32,7 +32,7 @@ CLASS zlnt_runtime_set__569a685d95a8 IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
-  METHOD fromArray.
+  METHOD fromarray.
     DATA row TYPE REF TO zcl_lnt_abap_object.
     DATA ignored TYPE REF TO zlnt_runtime_set__569a685d95a8.
     DATA native TYPE REF TO object.

@@ -17,7 +17,7 @@ CLASS zlnt_runtime_arra_a3200b8dc4ad DEFINITION PUBLIC CREATE PUBLIC.
     METHODS splice3 IMPORTING p0 TYPE i p1 TYPE i p2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
     METHODS pop RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     METHODS shift RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    METHODS indexOf IMPORTING p0 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE i.
+    METHODS indexof IMPORTING p0 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE i.
     METHODS includes IMPORTING p0 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE abap_bool.
     METHODS get IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
   PROTECTED SECTION.
@@ -205,7 +205,7 @@ CLASS zlnt_runtime_arra_a3200b8dc4ad IMPLEMENTATION.
       DELETE items INDEX 1.
     ENDIF.
   ENDMETHOD.
-  METHOD indexOf.
+  METHOD indexof.
     DATA row TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     result = -1.
     LOOP AT items INTO row.

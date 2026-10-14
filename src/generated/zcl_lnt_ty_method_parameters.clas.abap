@@ -758,7 +758,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       DATA t101 TYPE i.
       DATA(t102) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->optional ).
       DATA(t103) = t99.
-      t101 = t102->indexOf( p0 = t103 ).
+      t101 = t102->indexof( p0 = t103 ).
       DATA(t104) = 0.
       t100 = xsdbool( t101 < t104 ).
       IF t100 = abap_true.

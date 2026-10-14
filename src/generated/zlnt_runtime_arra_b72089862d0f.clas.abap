@@ -17,7 +17,7 @@ CLASS zlnt_runtime_arra_b72089862d0f DEFINITION PUBLIC CREATE PUBLIC.
     METHODS splice3 IMPORTING p0 TYPE i p1 TYPE i p2 TYPE REF TO zif_lnt_union_c74a232f RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_b72089862d0f.
     METHODS pop RETURNING VALUE(result) TYPE REF TO zif_lnt_union_c74a232f.
     METHODS shift RETURNING VALUE(result) TYPE REF TO zif_lnt_union_c74a232f.
-    METHODS indexOf IMPORTING p0 TYPE REF TO zif_lnt_union_c74a232f RETURNING VALUE(result) TYPE i.
+    METHODS indexof IMPORTING p0 TYPE REF TO zif_lnt_union_c74a232f RETURNING VALUE(result) TYPE i.
     METHODS includes IMPORTING p0 TYPE REF TO zif_lnt_union_c74a232f RETURNING VALUE(result) TYPE abap_bool.
     METHODS get IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE REF TO zif_lnt_union_c74a232f.
   PROTECTED SECTION.
@@ -205,7 +205,7 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
       DELETE items INDEX 1.
     ENDIF.
   ENDMETHOD.
-  METHOD indexOf.
+  METHOD indexof.
     DATA row TYPE REF TO zif_lnt_union_c74a232f.
     result = -1.
     LOOP AT items INTO row.
