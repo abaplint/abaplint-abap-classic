@@ -26,6 +26,7 @@
     "xml_bom": true,
     "final_newline": true,
     "7bit_ascii": false, // todo
+    "modify_only_own_db_tables": true,
     "abapdoc": false,
     "add_test_attributes": true,
     "aff_and_xml": true,

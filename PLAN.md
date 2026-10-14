@@ -6,6 +6,22 @@ Each of the 140 `ZCL_LNC_*` checks in `src/checks` should run its abaplint rule 
 
 The checks stay thin. Everything they share (reading source, building the registry, running the rule, filtering issues, mapping issues back to includes) goes in `ZCL_LNT_UTILS`.
 
+## Status
+
+Steps 1 to 9 are implemented. `npm run unit` runs 31 tests and `abaplint` is clean. Changes from the design below:
+
+- **Registry config:** `NEW zcl_lnt_registry( )` without a config fails, because `zcl_lnt_config=>get_default` is unsupported (`src/config.ts:69`). `get_registry` passes `NEW zcl_lnt_config( <json> )` with complete `global` and `syntax` sections (version `v758`), so the default is never built. `zcl_lnt_config->get_version` is unsupported too, but parsing does not call it.
+- **Cache:** the sources are read on every call, and the parsed registry is reused when the files are equal to the cached ones. This catches source changes under the same name. Running rules on a cached registry does not change later results (test `rules_share_registry`).
+- **`scimessages`:** open-abap-ci types `scimessages` with string fields, and there is no DDIC table type for it. A returning table could not be assigned on both systems, so `zcl_lnt_utils=>add_scimessages( )` fills the table through a generic `CHANGING` parameter. The `DUMP` text is `abaplint failed: &1`.
+- **Include type:** `ty_finding-include` and `ty_line_map-include` are `progname`. `program` does not exist in open-abap.
+- **Method includes:** method implementations are not mapped to their CMxxx includes, so findings in methods are reported on CU row 1. `CL_OO_CLASSNAME_SERVICE` is not called. See Later.
+- **FUGR:** instead of `RS_GET_ALL_INCLUDES`, the reader follows the `INCLUDE` statements from `SAPL<name>`, keeping includes that start with `L<name>` (or `/NS/L<name>`) and exist.
+- **Object types:** `run_rule` returns no findings right away for types not in `object_types( )`.
+- **Unmapped rows:** any row without a line map entry, not just a file without one, is reported on the first line map entry's include, row 1. For CLAS that is the CU include.
+- **Reader tests:** no test writes to `REPOSRC`. `map_clif_source`, `find_includes`, `to_filename`, `class_include`, `reduce` and `calculate_skip_testclass` are tested directly, through local friends.
+- **Step 5:** pseudo comments and pragmas are filtered in `zcl_lnt_abap_rule->run`, not in `exclude_issues`. Neither rule that runs (`parser_error`, `allowed_object_naming`) has a pseudo comment or pragma, so suppression is untested.
+- **Step 8:** `inform` is a stub, so the smoke test (`ltcl_checks`) only checks that `run( )` does not raise.
+
 ## Current state
 
 - `scripts/checks.mjs` generates the checks. Each one only has a constructor that sets `myname`, `description`, `category`, `c_rule` and the object types from `zcl_lnt_utils=>object_types( )`.
@@ -123,7 +139,7 @@ The reader is a port of these methods into `ZCL_LNT_SOURCE_READER`, not a call i
 
 - each `METHOD <m>.` … `ENDMETHOD.` block maps to that method's CMxxx include (`cl_oo_classname_service=>get_method_include( )`), with row 1 of the block = row 1 of the include;
 - definition rows map by section: from `CLASS ... DEFINITION` to `PROTECTED SECTION.` to CU, from there to `PRIVATE SECTION.` to CO, and from there to the `ENDCLASS.` of the definition to CI. Rows are counted from the start of each section, so they are approximate if the clif source reformats the definition;
-- any other row (for example `CLASS ... IMPLEMENTATION.` and the final `ENDCLASS.`) maps to CU row 1.
+- any other row, including the method implementations, maps to CU row 1.
 
 The other four files map 1:1 to their includes (CCDEF, CCIMP, CCMAC, CCAU).
 
@@ -136,7 +152,7 @@ This repo is syntax checked and unit tested against open-abap-core and open-abap
 | `CL_OO_FACTORY`, `IF_OO_CLIF_SOURCE` | yes, in open-abap-core (`src/oo`); it reads table `REPOSRC` | use as is |
 | `READ REPORT` | yes, in the transpiler runtime; it reads `REPOSRC` | use as is |
 | `SEO_CLIF_GET` | no | not needed, see testclasses above |
-| `CL_OO_CLASSNAME_SERVICE=>get_method_include` | no | add to open-abap-core; on open-abap it can read `TMDIR`, or build `CMxxx` names |
+| `CL_OO_CLASSNAME_SERVICE=>get_method_include` | no | not used, method rows are not mapped (see Later) |
 | `RS_GET_ALL_INCLUDES` (FUGR) | no | add to open-abap-core, or have the reader read `TFDIR` and the `L<name>TOP`/`UXX` naming itself |
 
 Under the transpiler, both `CL_OO_FACTORY` and `READ REPORT` read `REPOSRC`. That means the real `ZCL_LNT_SOURCE_READER` can be unit tested by inserting `REPOSRC` rows in the test setup, and does not need to be faked.
@@ -234,6 +250,7 @@ ENDCLASS.
 
 ## Later
 
+- **Method includes:** map each `METHOD <m>.` … `ENDMETHOD.` block of the clif source to its CMxxx include, so findings in methods navigate to the right line. Options: call `CL_OO_CLASSNAME_SERVICE=>get_method_include` (dynamically, or statically once it is in open-abap-core), or read `TMDIR`.
 - **Configuration:** expose the rule's conf fields as Code Inspector attributes (`get_attributes`/`put_attributes`, `if_ci_test~query_attributes`) and push them into the rule. `read_by_rule` is unsupported, so the conf object has to be set directly, either through `set_config` once `zlnt_runtime_dyna_*` can be built, or by writing fields of the `zcl_lnt_<rule>_conf` instance.
 - **ABAP version:** pass the system release to `zcl_lnt_config=>get_default( )` so version-dependent rules behave correctly. Check whether the unsupported branch in `get_default` is reachable.
 - **XML metadata:** some rules may need `.prog.xml` (program vs include) or `.fugr.xml` (function module list). Generate minimal XML in the reader if the survey in step 9 shows they are needed.
@@ -244,3 +261,152 @@ ENDCLASS.
 - **One shared message code:** `ISSUE` with text `&1`, carrying the abaplint message. No per-rule-key codes.
 - **Unsupported paths are dropped:** a rule that raises `zlnt_exception_un_5f2d02892fe8` produces no findings and no note.
 - **Test classes are checked:** the `.clas.testclasses.abap` include (CCAU) is always passed to abaplint, matching abaplint's own behaviour.
+
+## Survey (step 9)
+
+Every rule run directly on a small PROG and a small CLAS, with ABAPiti output as of 2026-10-14:
+
+- `zcl_lnt_parser_error`: runs on both.
+- `zcl_lnt_allowed_object_naming`: runs on PROG, unsupported on CLAS at `src/objects/class.ts:41`.
+- The other 138 rules raise the unsupported exception on both objects, at the same location. Each location is inside the rule itself, mostly `runParsed`, so their Code Inspector checks report nothing for now:
+
+| Rule class | First unsupported location |
+|------------|----------------------------|
+| `zcl_lnt_abapdoc` | `src/rules/abapdoc.ts:45` |
+| `zcl_lnt_add_test_attributes` | `src/rules/add_test_attributes.ts:55` |
+| `zcl_lnt_align_parameters` | `src/rules/align_parameters.ts:90` |
+| `zcl_lnt_align_pseudo_comments` | `src/rules/align_pseudo_comments.ts:35` |
+| `zcl_lnt_align_type_expressions` | `src/rules/align_type_expressions.ts:74` |
+| `zcl_lnt_allowed_object_types` | `src/rules/allowed_object_types.ts:29` |
+| `zcl_lnt_ambiguous_statement` | `src/rules/ambiguous_statement.ts:49` |
+| `zcl_lnt_avoid_use` | `src/rules/avoid_use.ts:72` |
+| `zcl_lnt_begin_end_names` | `src/rules/begin_end_names.ts:43` |
+| `zcl_lnt_begin_single_include` | `src/rules/begin_single_include.ts:48` |
+| `zcl_lnt_catch_and_raise` | `src/rules/catch_and_raise.ts:35` |
+| `zcl_lnt_cds_association_name` | `src/rules/cds_association_name.ts:41` |
+| `zcl_lnt_cds_comment_style` | `src/rules/cds_comment_style.ts:40` |
+| `zcl_lnt_cds_field_order` | `src/rules/cds_field_order.ts:47` |
+| `zcl_lnt_cds_legacy_view` | `src/rules/cds_legacy_view.ts:39` |
+| `zcl_lnt_cds_naming` | `src/rules/cds_naming.ts:65` |
+| `zcl_lnt_cds_parser_error` | `src/rules/cds_parser_error.ts:32` |
+| `zcl_lnt_change_if_to_case` | `src/rules/change_if_to_case.ts:50` |
+| `zcl_lnt_check_abstract` | `src/rules/check_abstract.ts:51` |
+| `zcl_lnt_check_comments` | `src/rules/check_comments.ts:51` |
+| `zcl_lnt_check_subrc` | `src/rules/check_subrc.ts:64` |
+| `zcl_lnt_chn_mnly_dclrtns` | `src/rules/chain_mainly_declarations.ts:65` |
+| `zcl_lnt_class_attribute_names` | `src/rules/class_attribute_names.ts:62` |
+| `zcl_lnt_cll_trnsct_athrty_chck` | `src/rules/call_transaction_authority_check.ts:44` |
+| `zcl_lnt_cloud_types` | `src/rules/cloud_types.ts:38` |
+| `zcl_lnt_clssc_excptns_ovrlp` | `src/rules/classic_exceptions_overlap.ts:44` |
+| `zcl_lnt_cnstrctr_vsblty_pblc` | `src/rules/constructor_visibility_public.ts:46` |
+| `zcl_lnt_colon_missing_space` | `src/rules/colon_missing_space.ts:40` |
+| `zcl_lnt_commented_code` | `src/rules/commented_code.ts:48` |
+| `zcl_lnt_contains_tab` | `src/rules/contains_tab.ts:47` |
+| `zcl_lnt_cyclomatic_complexity` | `src/rules/cyclomatic_complexity.ts:36` |
+| `zcl_lnt_dangerous_statement` | `src/rules/dangerous_statement.ts:63` |
+| `zcl_lnt_db_operation_in_loop` | `src/rules/db_operation_in_loop.ts:45` |
+| `zcl_lnt_definitions_top` | `src/rules/definitions_top.ts:60` |
+| `zcl_lnt_double_space` | `src/rules/double_space.ts:57` |
+| `zcl_lnt_empty_event` | `src/rules/empty_event.ts:45` |
+| `zcl_lnt_empty_linein_statement` | `src/rules/empty_line_in_statement.ts:46` |
+| `zcl_lnt_empty_statement` | `src/rules/empty_statement.ts:36` |
+| `zcl_lnt_empty_structure` | `src/rules/empty_structure.ts:68` |
+| `zcl_lnt_exit_or_check` | `src/rules/exit_or_check.ts:46` |
+| `zcl_lnt_exporting` | `src/rules/exporting.ts:36` |
+| `zcl_lnt_fnctn_mdl_rcmmndtns` | `src/rules/function_module_recommendations.ts:125` |
+| `zcl_lnt_forbidden_identifier` | `src/rules/forbidden_identifier.ts:43` |
+| `zcl_lnt_form_tables_obsolete` | `src/rules/form_tables_obsolete.ts:43` |
+| `zcl_lnt_frbddn_psd_and_prgm` | `src/rules/forbidden_pseudo_and_pragma.ts:55` |
+| `zcl_lnt_fully_type_constants` | `src/rules/fully_type_constants.ts:41` |
+| `zcl_lnt_fully_type_i_tabs` | `src/rules/fully_type_itabs.ts:37` |
+| `zcl_lnt_functional_writing` | `src/rules/functional_writing.ts:65` |
+| `zcl_lnt_identical_conditions` | `src/rules/identical_conditions.ts:65` |
+| `zcl_lnt_identical_contents` | `src/rules/identical_contents.ts:50` |
+| `zcl_lnt_identical_move` | `src/rules/identical_move.ts:38` |
+| `zcl_lnt_if_in_if` | `src/rules/if_in_if.ts:73` |
+| `zcl_lnt_implct_strt_of_slctn` | `src/rules/implicit_start_of_selection.ts:43` |
+| `zcl_lnt_in_sttmnt_indnttn` | `src/rules/in_statement_indentation.ts:60` |
+| `zcl_lnt_indentation` | `src/rules/indentation.ts:70` |
+| `zcl_lnt_indx_cmpltly_cntnd` | `src/rules/index_completely_contained.ts:23` |
+| `zcl_lnt_inln_dt_old_vrsns` | `src/rules/inline_data_old_versions.ts:32` |
+| `zcl_lnt_invalid_table_index` | `src/rules/invalid_table_index.ts:38` |
+| `zcl_lnt_keyword_case` | `src/rules/keyword_case.ts:142` |
+| `zcl_lnt_kp_sn_prm_cll_on_on_ln` | `src/rules/keep_single_parameter_on_one_line.ts:39` |
+| `zcl_lnt_line_break_style` | `src/rules/line_break_style.ts:26` |
+| `zcl_lnt_line_length` | `src/rules/line_length.ts:39` |
+| `zcl_lnt_line_only_punc` | `src/rules/line_only_punc.ts:46` |
+| `zcl_lnt_ln_brk_mltpl_prmtrs` | `src/rules/line_break_multiple_parameters.ts:40` |
+| `zcl_lnt_local_class_naming` | `src/rules/local_class_naming.ts:50` |
+| `zcl_lnt_local_variable_names` | `src/rules/local_variable_names.ts:57` |
+| `zcl_lnt_macro_naming` | `src/rules/macro_naming.ts:42` |
+| `zcl_lnt_many_parentheses` | `src/rules/many_parentheses.ts:47` |
+| `zcl_lnt_max_one_statement` | `src/rules/max_one_statement.ts:47` |
+| `zcl_lnt_method_length` | `src/rules/method_length.ts:67` |
+| `zcl_lnt_method_parameter_names` | `src/rules/method_parameter_names.ts:58` |
+| `zcl_lnt_mix_returning` | `src/rules/mix_returning.ts:48` |
+| `zcl_lnt_mthd_implmntd_twc` | `src/rules/method_implemented_twice.ts:31` |
+| `zcl_lnt_mthd_ovrwrts_blt_in` | `src/rules/method_overwrites_builtin.ts:47` |
+| `zcl_lnt_mx_on_mthd_prmtr_pr_ln` | `src/rules/max_one_method_parameter_per_line.ts:42` |
+| `zcl_lnt_n_cmmnts_btwn_mthds` | `src/rules/no_comments_between_methods.ts:49` |
+| `zcl_lnt_n_inln_in_optnl_brnchs` | `src/rules/no_inline_in_optional_branches.ts:45` |
+| `zcl_lnt_n_mndt_in_dtbs_oprtns` | `src/rules/no_mandt_in_database_operations.ts:40` |
+| `zcl_lnt_names_no_dash` | `src/rules/names_no_dash.ts:42` |
+| `zcl_lnt_nesting` | `src/rules/nesting.ts:40` |
+| `zcl_lnt_no_aliases` | `src/rules/no_aliases.ts:41` |
+| `zcl_lnt_no_chained_assignment` | `src/rules/no_chained_assignment.ts:39` |
+| `zcl_lnt_no_dynamic_stuff` | `src/rules/no_dynamic_stuff.ts:79` |
+| `zcl_lnt_no_exclamation_escape` | `src/rules/no_exclamation_escape.ts:36` |
+| `zcl_lnt_no_external_form_calls` | `src/rules/no_external_form_calls.ts:36` |
+| `zcl_lnt_no_macros` | `src/rules/no_macros.ts:39` |
+| `zcl_lnt_no_prefixes` | `src/rules/no_prefixes.ts:66` |
+| `zcl_lnt_no_public_attributes` | `src/rules/no_public_attributes.ts:55` |
+| `zcl_lnt_no_yoda_conditions` | `src/rules/no_yoda_conditions.ts:42` |
+| `zcl_lnt_nrob_consistency` | `src/rules/nrob_consistency.ts:35` |
+| `zcl_lnt_nwln_btwn_mthds` | `src/rules/newline_between_methods.ts:53` |
+| `zcl_lnt_obsolete_statement` | `src/rules/obsolete_statement.ts:157` |
+| `zcl_lnt_omit_preceding_zeros` | `src/rules/omit_preceding_zeros.ts:36` |
+| `zcl_lnt_omit_receiving` | `src/rules/omit_receiving.ts:47` |
+| `zcl_lnt_parser702_chaining` | `src/rules/parser_702_chaining.ts:37` |
+| `zcl_lnt_parser_bad_exceptions` | `src/rules/parser_bad_exceptions.ts:35` |
+| `zcl_lnt_parser_missing_space` | `src/rules/parser_missing_space.ts:38` |
+| `zcl_lnt_pragma_style` | `src/rules/pragma_style.ts:38` |
+| `zcl_lnt_prefer_abap_bool` | `src/rules/prefer_abap_bool.ts:39` |
+| `zcl_lnt_prefer_corresponding` | `src/rules/prefer_corresponding.ts:36` |
+| `zcl_lnt_prefer_is_not` | `src/rules/prefer_is_not.ts:47` |
+| `zcl_lnt_prefer_pragmas` | `src/rules/prefer_pragmas.ts:52` |
+| `zcl_lnt_prefer_xsdbool` | `src/rules/prefer_xsdbool.ts:39` |
+| `zcl_lnt_prfr_insrt_int_tbl` | `src/rules/prefer_insert_into_table.ts:31` |
+| `zcl_lnt_prfr_rs_excptn_nw` | `src/rules/prefer_raise_exception_new.ts:43` |
+| `zcl_lnt_prfr_rtrnng_t_exprtng` | `src/rules/prefer_returning_to_exporting.ts:39` |
+| `zcl_lnt_prfrrd_cmpr_oprtr` | `src/rules/preferred_compare_operator.ts:46` |
+| `zcl_lnt_prfx_is_crrnt_clss` | `src/rules/prefix_is_current_class.ts:51` |
+| `zcl_lnt_rdc_strng_tmplts` | `src/rules/reduce_string_templates.ts:35` |
+| `zcl_lnt_reduce_procedural_code` | `src/rules/reduce_procedural_code.ts:54` |
+| `zcl_lnt_rfc_error_handling` | `src/rules/rfc_error_handling.ts:46` |
+| `zcl_lnt_select_add_order_by` | `src/rules/select_add_order_by.ts:45` |
+| `zcl_lnt_select_performance` | `src/rules/select_performance.ts:51` |
+| `zcl_lnt_sequential_blank` | `src/rules/sequential_blank.ts:46` |
+| `zcl_lnt_seven_bit_ascii` | `src/rules/7bit_ascii.ts:30` |
+| `zcl_lnt_short_case` | `src/rules/short_case.ts:48` |
+| `zcl_lnt_slctn_scrn_nmng` | `src/rules/selection_screen_naming.ts:48` |
+| `zcl_lnt_space_before_colon` | `src/rules/space_before_colon.ts:42` |
+| `zcl_lnt_space_before_dot` | `src/rules/space_before_dot.ts:50` |
+| `zcl_lnt_start_at_tab` | `src/rules/start_at_tab.ts:42` |
+| `zcl_lnt_superfluous_value` | `src/rules/superfluous_value.ts:36` |
+| `zcl_lnt_sy_modification` | `src/rules/sy_modification.ts:41` |
+| `zcl_lnt_sy_read_restriction` | `src/rules/sy_read_restriction.ts:73` |
+| `zcl_lnt_tbls_dclrd_lclly` | `src/rules/tables_declared_locally.ts:37` |
+| `zcl_lnt_try_without_catch` | `src/rules/try_without_catch.ts:36` |
+| `zcl_lnt_type_form_parameters` | `src/rules/type_form_parameters.ts:42` |
+| `zcl_lnt_types_naming` | `src/rules/types_naming.ts:41` |
+| `zcl_lnt_unnecessary_chaining` | `src/rules/unnecessary_chaining.ts:43` |
+| `zcl_lnt_unnecessary_pragma` | `src/rules/unnecessary_pragma.ts:71` |
+| `zcl_lnt_unnecessary_return` | `src/rules/unnecessary_return.ts:49` |
+| `zcl_lnt_unreachable_code` | `src/rules/unreachable_code.ts:40` |
+| `zcl_lnt_us_clss_bsd_excptns` | `src/rules/use_class_based_exceptions.ts:47` |
+| `zcl_lnt_use_bool_expression` | `src/rules/use_bool_expression.ts:50` |
+| `zcl_lnt_use_line_exists` | `src/rules/use_line_exists.ts:45` |
+| `zcl_lnt_use_new` | `src/rules/use_new.ts:48` |
+| `zcl_lnt_when_others_last` | `src/rules/when_others_last.ts:37` |
+| `zcl_lnt_whitespace_end` | `src/rules/whitespace_end.ts:41` |
+| `zcl_lnt_wrong_abapdoc_position` | `src/rules/wrong_abapdoc_position.ts:59` |

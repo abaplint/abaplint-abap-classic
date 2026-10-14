@@ -3,6 +3,7 @@ CLASS zcl_lnc_line_only_punc DEFINITION PUBLIC INHERITING FROM cl_ci_test_root C
   PUBLIC SECTION.
     CONSTANTS c_rule TYPE string VALUE `line_only_punc`.
     METHODS constructor.
+    METHODS run REDEFINITION.
 ENDCLASS.
 
 CLASS zcl_lnc_line_only_punc IMPLEMENTATION.
@@ -13,6 +14,27 @@ CLASS zcl_lnc_line_only_punc IMPLEMENTATION.
     category = 'ZCL_LNT_CATEGORY'.
     LOOP AT zcl_lnt_utils=>object_types( ) INTO DATA(lv_type).
       add_obj_type( lv_type ).
+    ENDLOOP.
+    zcl_lnt_utils=>add_scimessages(
+      EXPORTING
+        iv_test        = myname
+      CHANGING
+        ct_scimessages = scimessages ).
+  ENDMETHOD.
+
+  METHOD run.
+    LOOP AT zcl_lnt_utils=>run_rule(
+        io_rule        = NEW zcl_lnt_line_only_punc( )
+        iv_object_type = object_type
+        iv_object_name = object_name ) INTO DATA(ls_finding).
+      inform( p_sub_obj_type = c_type_include
+              p_sub_obj_name = ls_finding-include
+              p_line         = ls_finding-line
+              p_column       = |{ ls_finding-column }|
+              p_kind         = ls_finding-kind
+              p_test         = myname
+              p_code         = ls_finding-code
+              p_param_1      = ls_finding-text ).
     ENDLOOP.
   ENDMETHOD.
 ENDCLASS.
