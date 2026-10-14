@@ -5,7 +5,7 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_LNC_PREFER_PRAGMAS</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>prefer_pragmas: prefer pragmas over pseudo comments </DESCRIPT>
+    <DESCRIPT>prefer_pragmas: prefer pragmas over pseudo comments</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
