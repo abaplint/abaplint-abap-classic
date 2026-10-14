@@ -17,7 +17,7 @@ CLASS zcl_lnt_sy_rd_rstrctn_mdl IMPLEMENTATION.
     ENDIF.
     zlnt_builtin_init_56bea28f17d9 = abap_true.
     DATA t1 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     DATA(t4) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
@@ -93,7 +93,7 @@ CLASS zcl_lnt_sy_rd_rstrctn_mdl IMPLEMENTATION.
     DATA(t54) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).
     zcl_lnt_sy_rd_rstrctn_mdl=>cloud_allowed = t54.
     DATA t55 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t56) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t56) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t55 = t56.
     DATA t57 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     DATA(t58) = CAST zlnt_runtime_set__1827558fd4c7( t55 ).

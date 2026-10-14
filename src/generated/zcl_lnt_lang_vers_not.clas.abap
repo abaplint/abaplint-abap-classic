@@ -43,7 +43,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE i.
-    DATA(t4) = CONV string( zcl_lnt_combi=>get_language_version(  ) ).
+    DATA(t4) = CONV string( zcl_lnt_combi=>get_language_version( ) ).
     t3 = zcl_lnt_st_combi_module=>lang_version_ordinal( i_v = t4 ).
     DATA t5 TYPE i.
     DATA(t6) = CONV string( me->lang_version ).
@@ -78,7 +78,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CAST zif_lnt_statement_runnable( me->runnable ).
-    t1 = t2->first(  ).
+    t1 = t2->first( ).
     result = t1.
 
   ENDMETHOD.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     CLEAR t10.
     DATA t11 TYPE abap_bool.
     DATA t12 TYPE i.
-    DATA(t13) = CONV string( zcl_lnt_combi=>get_language_version(  ) ).
+    DATA(t13) = CONV string( zcl_lnt_combi=>get_language_version( ) ).
     t12 = zcl_lnt_st_combi_module=>lang_version_ordinal( i_v = t13 ).
     DATA t14 TYPE i.
     DATA(t15) = CONV string( me->lang_version ).
@@ -133,25 +133,25 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run.
-    result = me->run(  i_r_f634 = i_r_f634 ).
+    result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~railroad.
-    result = me->railroad(  ).
+    result = me->railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~to_str.
-    result = me->to_str(  ).
+    result = me->to_str( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~list_keywords.
-    result = me->list_keywords(  ).
+    result = me->list_keywords( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run_one.
-    result = me->run_one(  i_x = i_x ).
+    result = me->run_one( i_x = i_x ).
   ENDMETHOD.
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

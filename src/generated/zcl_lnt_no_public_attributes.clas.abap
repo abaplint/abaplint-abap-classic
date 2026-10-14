@@ -23,7 +23,7 @@ ENDCLASS.
 CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_n_pblc_attrbts_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_n_pblc_attrbts_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -197,12 +197,12 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( me->g_c_i_sr_rl_n_pb_at_ts_n_pb_at(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( me->g_c_i_sr_rl_n_pb_at_ts_n_pb_at( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( me->g_c_i_sr_rl_n_pb_at_ts_n_pb_at(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_pblc_attrbts_cnf( me->g_c_i_sr_rl_n_pb_at_ts_n_pb_at( ) ).
     result = t1.
 
   ENDMETHOD.

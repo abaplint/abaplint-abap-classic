@@ -10,7 +10,7 @@ CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_b
 ENDCLASS.
 CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->report_dynamic = t1.
     DATA(t2) = |^[yz]|.

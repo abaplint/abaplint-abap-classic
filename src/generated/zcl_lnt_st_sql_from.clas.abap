@@ -9,7 +9,7 @@ CLASS zcl_lnt_st_sql_from DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression C
 ENDCLASS.
 CLASS zcl_lnt_st_sql_from IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -25,7 +25,7 @@ CLASS zcl_lnt_st_sql_from IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = NEW zcl_lnt_sql_from_body(  ).
+    DATA(t7) = NEW zcl_lnt_sql_from_body( ).
     IF t7 IS BOUND.
       CREATE OBJECT t6.
       t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

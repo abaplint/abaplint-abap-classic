@@ -45,6 +45,6 @@ CLASS zcl_lnt_rename_table_type IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_object_renamer~build_edits.
-    result = me->build_edits(  i_obj_1ed0 = i_obj_1ed0 i_old_name = i_old_name i_new_name = i_new_name ).
+    result = me->build_edits( i_obj_1ed0 = i_obj_1ed0 i_old_name = i_old_name i_new_name = i_new_name ).
   ENDMETHOD.
 ENDCLASS.

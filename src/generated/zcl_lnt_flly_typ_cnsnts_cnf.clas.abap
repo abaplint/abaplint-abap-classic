@@ -9,7 +9,7 @@ CLASS zcl_lnt_flly_typ_cnsnts_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_flly_typ_cnsnts_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->check_data = t1.
   ENDMETHOD.

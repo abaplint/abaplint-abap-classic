@@ -9,7 +9,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_cyclmtc_cmplxty_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 20 ).
     me->max = t1.
   ENDMETHOD.

@@ -49,7 +49,7 @@ CLASS zcl_lnt_integer8_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_i_t_t_in_ty_6ff7(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_i_t_t_in_ty_6ff7( ) ).
     result = t1.
 
   ENDMETHOD.

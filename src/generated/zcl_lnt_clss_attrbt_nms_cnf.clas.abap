@@ -14,7 +14,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_nami
 ENDCLASS.
 CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
     DATA(t2) = abap_true.

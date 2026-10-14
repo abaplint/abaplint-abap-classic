@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_prefer_pragmas IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prefer_pragmas_conf(  ).
+    DATA(t1) = NEW zcl_lnt_prefer_pragmas_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -121,12 +121,12 @@ CLASS zcl_lnt_prefer_pragmas IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prefer_pragmas_conf( me->gt_cn_in_sr_rl_pr_pr_ts_pr_prg(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_pragmas_conf( me->gt_cn_in_sr_rl_pr_pr_ts_pr_prg( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prefer_pragmas_conf( me->gt_cn_in_sr_rl_pr_pr_ts_pr_prg(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_pragmas_conf( me->gt_cn_in_sr_rl_pr_pr_ts_pr_prg( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -218,7 +218,7 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
           DATA t102 TYPE REF TO zcl_lnt_expression_node.
           DATA(t103) = CAST zcl_lnt_expression_node( t93 ).
           t102 = t103.
-          t101 = t102->concat_tokens(  ).
+          t101 = t102->concat_tokens( ).
           DATA(t104) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t104->has = abap_true.
           t104->value = t101.
@@ -330,7 +330,7 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
           DATA t144 TYPE string.
           DATA t145 TYPE string.
           DATA(t146) = CAST zcl_lnt_expression_node( t141 ).
-          t145 = t146->concat_tokens(  ).
+          t145 = t146->concat_tokens( ).
           DATA(t147) = strlen( t145 ).
           t144 = t145.
           IF t144 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -367,7 +367,7 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
       DATA(t161) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t162 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t163) = CAST zcl_lnt_statement_node( t1 ).
-      t162 = t163->get_first_token(  ).
+      t162 = t163->get_first_token( ).
       zcl_lnt_chck_dtbs_flds_mdl=>check_database_fields( i_fields_62af = t154 i_db_sources = t155 i_input_967e = t161 i_token = t162 ).
     ENDIF.
   ENDMETHOD.
@@ -381,6 +381,6 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

@@ -9,7 +9,7 @@ CLASS zcl_lnt_k_sn_pr_cl_on_on_ln_cn DEFINITION PUBLIC INHERITING FROM zcl_lnt_b
 ENDCLASS.
 CLASS zcl_lnt_k_sn_pr_cl_on_on_ln_cn IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 120 ).
     me->length = t1.
   ENDMETHOD.

@@ -38,7 +38,7 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
       DATA t15 TYPE REF TO zcl_lnt_expression_node.
       DATA(t16) = CAST zcl_lnt_expression_node( t6 ).
       t15 = t16.
-      t14 = t15->get_first_token(  ).
+      t14 = t15->get_first_token( ).
       t10 = t14.
     ENDIF.
     t5 = t10.
@@ -61,7 +61,7 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA(t28) = CAST zcl_lnt_expression_node( t17 ).
       t27 = t28.
-      t26 = t27->concat_tokens(  ).
+      t26 = t27->concat_tokens( ).
       DATA(t29) = strlen( t26 ).
       t25 = t29.
       DATA(t30) = 30.
@@ -76,7 +76,7 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
       DATA t35 TYPE REF TO zcl_lnt_expression_node.
       DATA(t36) = CAST zcl_lnt_expression_node( t17 ).
       t35 = t36.
-      t34 = t35->concat_tokens(  ).
+      t34 = t35->concat_tokens( ).
       DATA(t37) = strlen( t33 ).
       t32 = |{ t33 }{ t34 }|.
       t31 = t32.
@@ -89,7 +89,7 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
       DATA t43 TYPE REF TO zcl_lnt_expression_node.
       DATA(t44) = CAST zcl_lnt_expression_node( t17 ).
       t43 = t44.
-      t42 = t43->get_first_token(  ).
+      t42 = t43->get_first_token( ).
       DATA(t45) = t31.
       DATA t46 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t46.

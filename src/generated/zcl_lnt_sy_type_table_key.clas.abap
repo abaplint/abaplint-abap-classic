@@ -45,7 +45,7 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
           DATA t20 TYPE string.
           DATA t21 TYPE string.
           DATA(t22) = CAST zcl_lnt_expression_node( t17 ).
-          t21 = t22->concat_tokens(  ).
+          t21 = t22->concat_tokens( ).
           DATA t23 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           CLEAR t23.
           DATA(t24) = |^!|.

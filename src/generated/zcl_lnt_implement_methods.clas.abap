@@ -30,7 +30,7 @@ ENDCLASS.
 CLASS zcl_lnt_implement_methods IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_implement_methods_conf(  ).
+    DATA(t1) = NEW zcl_lnt_implement_methods_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -151,7 +151,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         t22 = t23.
         DATA t25 TYPE abap_bool.
         DATA(t26) = CAST zcl_lnt_ob_program( t22 ).
-        t26->parse_xml(  ).
+        t26->parse_xml( ).
         DATA t27 TYPE abap_bool.
         DATA t28 TYPE REF TO zcl_lnt_shape_e86506f0.
         DATA t29 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -183,7 +183,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     DATA(t39) = CAST zcl_lnt_abap_file( t36 ).
     t38 = t39->info.
     t35 = t38.
-    t34 = t35->list_class_definitions(  ).
+    t34 = t35->list_class_definitions( ).
     DATA t40 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t40.
     DATA t41 TYPE REF TO object.
@@ -1129,7 +1129,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         DATA t61 TYPE REF TO zcl_lnt_expression_node.
         DATA(t62) = CAST zcl_lnt_expression_node( t52 ).
         t61 = t62.
-        t60 = t61->get_first_token(  ).
+        t60 = t61->get_first_token( ).
         t56 = t60.
       ENDIF.
       t51 = t56.
@@ -1322,7 +1322,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
           DATA t129 TYPE REF TO zcl_lnt_abstract_token.
           DATA t130 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t131) = CAST zcl_lnt_statement_node( t44 ).
-          t130 = t131->get_last_token(  ).
+          t130 = t131->get_last_token( ).
           t129 = t130.
           DATA t132 TYPE REF TO zcl_lnt_position.
           CLEAR t132.
@@ -1642,7 +1642,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
       DATA t55 TYPE REF TO zcl_lnt_ob_interface.
       DATA(t56) = CAST zcl_lnt_ob_interface( t4 ).
       t55 = t56.
-      t54 = t55->get_main_abap_file(  ).
+      t54 = t55->get_main_abap_file( ).
       t53 = t54.
       DATA t57 TYPE REF TO zif_lnt_abap_file_information.
       CLEAR t57.
@@ -1686,7 +1686,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         DATA t72 TYPE REF TO zif_lnt_abap_file_information.
         DATA(t73) = CAST zif_lnt_abap_file_information( t51 ).
         t72 = t73.
-        t71 = t72->list_interface_definitions(  ).
+        t71 = t72->list_interface_definitions( ).
         t67 = t71.
       ENDIF.
       t50 = t67.
@@ -1990,7 +1990,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
       DATA t52 TYPE REF TO zcl_lnt_abap_file.
       DATA t53 TYPE REF TO zcl_lnt_abap_file.
       DATA(t54) = CAST zcl_lnt_class( t46 ).
-      t53 = t54->get_main_abap_file(  ).
+      t53 = t54->get_main_abap_file( ).
       t52 = t53.
       DATA t55 TYPE REF TO zif_lnt_abap_file_information.
       CLEAR t55.
@@ -3321,12 +3321,12 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     RAISE EXCEPTION t4.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth(  ) ).
+    DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth(  ) ).
+    DATA(t1) = CAST zcl_lnt_implement_methods_conf( me->gt_cn_in_sr_rl_im_mt_ts_im_mth( ) ).
     result = t1.
 
   ENDMETHOD.

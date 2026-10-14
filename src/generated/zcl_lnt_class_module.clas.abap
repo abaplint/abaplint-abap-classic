@@ -18,7 +18,7 @@ CLASS zcl_lnt_class_module IMPLEMENTATION.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_class_module=>class_category_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

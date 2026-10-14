@@ -9,7 +9,7 @@ CLASS zcl_lnt_simple_field_chain2 DEFINITION PUBLIC INHERITING FROM zcl_lnt_expr
 ENDCLASS.
 CLASS zcl_lnt_simple_field_chain2 IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.

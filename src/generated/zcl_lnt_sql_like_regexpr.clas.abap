@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_like_regexpr DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_sql_like_regexpr IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

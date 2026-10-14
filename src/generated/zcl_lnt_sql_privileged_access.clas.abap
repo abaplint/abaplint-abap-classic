@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_privileged_access DEFINITION PUBLIC INHERITING FROM zcl_lnt_ex
 ENDCLASS.
 CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

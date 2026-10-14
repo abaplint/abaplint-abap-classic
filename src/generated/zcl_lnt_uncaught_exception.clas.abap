@@ -33,7 +33,7 @@ ENDCLASS.
 CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_uncght_excptn_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_uncght_excptn_cnf( ).
     me->conf = t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
@@ -188,12 +188,12 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc(  ) ).
+    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc(  ) ).
+    DATA(t1) = CAST zcl_lnt_uncght_excptn_cnf( me->gt_cn_in_sr_rl_un_ex_ts_un_exc( ) ).
     result = t1.
 
   ENDMETHOD.

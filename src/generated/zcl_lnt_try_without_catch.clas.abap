@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_try_without_catch_conf(  ).
+    DATA(t1) = NEW zcl_lnt_try_without_catch_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -113,12 +113,12 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( me->g_c_i_s_r_tr_wt_ct_ts_tr_wt_ct(  ) ).
+    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( me->g_c_i_s_r_tr_wt_ct_ts_tr_wt_ct( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( me->g_c_i_s_r_tr_wt_ct_ts_tr_wt_ct(  ) ).
+    DATA(t1) = CAST zcl_lnt_try_without_catch_conf( me->g_c_i_s_r_tr_wt_ct_ts_tr_wt_ct( ) ).
     result = t1.
 
   ENDMETHOD.

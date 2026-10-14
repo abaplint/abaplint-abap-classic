@@ -32,7 +32,7 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
     DATA t12 TYPE abap_bool.
     DATA t13 TYPE REF TO object.
     DATA(t14) = CAST zif_lnt_union_4cf1d054( t3 ).
-    t13 = t14->get_db65(  ).
+    t13 = t14->get_db65( ).
     t12 = xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_write_offset_length ).
     IF t12 = abap_true.
       DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -137,7 +137,7 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
         DATA(t64) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t65 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t66) = CAST zcl_lnt_expression_node( t26 ).
-        t65 = t66->get_first_token(  ).
+        t65 = t66->get_first_token( ).
         DATA(t67) = t59.
         DATA t68 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t68.
@@ -404,7 +404,7 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
         DATA t184 TYPE REF TO zcl_lnt_expression_node.
         DATA(t185) = CAST zcl_lnt_expression_node( t108 ).
         t184 = t185.
-        t183 = t184->concat_tokens(  ).
+        t183 = t184->concat_tokens( ).
         DATA(t186) = strlen( t182 ).
         t181 = |{ t182 }{ t183 }|.
         DATA(t187) = |" must be a character-like field (data type C, N, D, or T, g|.
@@ -501,7 +501,7 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
         DATA t225 TYPE REF TO zcl_lnt_expression_node.
         DATA(t226) = CAST zcl_lnt_expression_node( t108 ).
         t225 = t226.
-        t224 = t225->get_first_token(  ).
+        t224 = t225->get_first_token( ).
         DATA(t227) = t177.
         DATA t228 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t228.
@@ -520,6 +520,6 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

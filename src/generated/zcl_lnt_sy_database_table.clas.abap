@@ -14,7 +14,7 @@ CLASS zcl_lnt_sy_database_table IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_abstract_token.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    t4 = t5->get_first_token(  ).
+    t4 = t5->get_first_token( ).
     t3 = t4.
     DATA t6 TYPE string.
     DATA t7 TYPE string.
@@ -224,7 +224,7 @@ CLASS zcl_lnt_sy_database_table IMPLEMENTATION.
       DATA(t102) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t103 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t104) = CAST zcl_lnt_expression_node( t1 ).
-      t103 = t104->get_first_token(  ).
+      t103 = t104->get_first_token( ).
       DATA(t105) = t91.
       DATA t106 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t106.
@@ -292,7 +292,7 @@ CLASS zcl_lnt_sy_database_table IMPLEMENTATION.
         DATA t133 TYPE REF TO zif_lnt_union_c74a232f.
         DATA(t134) = CAST zif_lnt_union_c74a232f( t38 ).
         t133 = t134.
-        t132 = t133->get_identifier(  ).
+        t132 = t133->get_identifier( ).
         DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         DATA(t136) = |Table|.
         CREATE OBJECT t135.
@@ -314,7 +314,7 @@ CLASS zcl_lnt_sy_database_table IMPLEMENTATION.
         DATA t145 TYPE REF TO zif_lnt_registry.
         DATA(t146) = CAST zcl_lnt_current_scope( t141 ).
         t145 = t146->reg.
-        t144 = t145->get_ddic_references(  ).
+        t144 = t145->get_ddic_references( ).
         t140 = t144.
         DATA t147 TYPE REF TO zif_lnt_object.
         DATA t148 TYPE REF TO zcl_lnt_current_scope.

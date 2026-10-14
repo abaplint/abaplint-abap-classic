@@ -9,7 +9,7 @@ CLASS zcl_lnt_message_exists_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_message_exists_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->check_placeholders = t1.
   ENDMETHOD.

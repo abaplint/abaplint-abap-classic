@@ -32,7 +32,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
   ENDMETHOD.
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t2) = CAST zcl_lnt_abap_file( me->get_main_abap_file(  ) ).
+    DATA(t2) = CAST zcl_lnt_abap_file( me->get_main_abap_file( ) ).
     t1 = t2.
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zcl_lnt_abap_file.
@@ -70,7 +70,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_description.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -113,10 +113,10 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     DATA t1 TYPE REF TO zcl_lnt_shape_e86506f0.
     CLEAR t1.
     me->parsed_xml = t1.
-    super->set_dirty(  ).
+    super->set_dirty( ).
   ENDMETHOD.
   METHOD is_include.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE abap_bool.
     DATA t2 TYPE REF TO zcl_lnt_shape_e86506f0.
     DATA(t3) = CAST zcl_lnt_shape_e86506f0( me->parsed_xml ).
@@ -126,7 +126,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD is_module_pool.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE abap_bool.
     DATA t2 TYPE REF TO zcl_lnt_shape_e86506f0.
     DATA(t3) = CAST zcl_lnt_shape_e86506f0( me->parsed_xml ).
@@ -168,10 +168,10 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t9 TYPE REF TO zif_lnt_file.
-    DATA(t10) = CAST zif_lnt_file( me->get_xml_file(  ) ).
+    DATA(t10) = CAST zif_lnt_file( me->get_xml_file( ) ).
     t9 = t10.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2(  ) ).
+    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     t11 = t12.
     DATA(t13) = VALUE abap_bool( ).
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -216,7 +216,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         IF t31 = abap_true.
           DATA t32 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
           DATA t33 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
-          DATA(t34) = NEW zlnt_runtime_map__8bf596bf435b(  ).
+          DATA(t34) = NEW zlnt_runtime_map__8bf596bf435b( ).
           t33 = t34.
           DATA(t35) = CAST zlnt_runtime_map__8bf596bf435b( t33 ).
           t32 = t35.
@@ -242,7 +242,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     DATA t40 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
     DATA t41 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
     DATA t42 TYPE REF TO zlnt_runtime_map__8bf596bf435b.
-    DATA(t43) = NEW zlnt_runtime_map__8bf596bf435b(  ).
+    DATA(t43) = NEW zlnt_runtime_map__8bf596bf435b( ).
     t42 = t43.
     DATA(t44) = CAST zlnt_runtime_map__8bf596bf435b( t42 ).
     t41 = t44.
@@ -731,7 +731,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         DATA t210 TYPE REF TO zif_lnt_file.
         DATA(t211) = CAST zif_lnt_file( t9 ).
         t210 = t211.
-        t209 = t210->get_raw(  ).
+        t209 = t210->get_raw( ).
         DATA(t212) = |<SUBC>I</SUBC>|.
         DATA(t213) = strlen( t209 ).
         IF t212 IS INITIAL.
@@ -760,7 +760,7 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         DATA t222 TYPE REF TO zif_lnt_file.
         DATA(t223) = CAST zif_lnt_file( t9 ).
         t222 = t223.
-        t221 = t222->get_raw(  ).
+        t221 = t222->get_raw( ).
         DATA(t224) = |<SUBC>M</SUBC>|.
         DATA(t225) = strlen( t221 ).
         IF t224 IS INITIAL.
@@ -830,78 +830,78 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~add_file.
-    me->add_file(  i_file = i_file ).
+    me->add_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~contains_file.
-    result = me->contains_file(  i_filename = i_filename ).
+    result = me->contains_file( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~debug_description.
-    result = me->debug_description(  ).
+    result = me->debug_description( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_abap_file_by_name.
-    result = me->get_abap_file_by_name(  i_filename = i_filename ).
+    result = me->get_abap_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_abap_files.
-    result = me->get_abap_files(  ).
+    result = me->get_abap_files( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_dynpros.
-    result = me->get_dynpros(  ).
+    result = me->get_dynpros( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_identifier.
-    result = me->get_identifier(  ).
+    result = me->get_identifier( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_main_abap_file.
-    result = me->get_main_abap_file(  ).
+    result = me->get_main_abap_file( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_parsing_issues.
-    result = me->get_parsing_issues(  ).
+    result = me->get_parsing_issues( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_sequenced_files.
-    result = me->get_sequenced_files(  ).
+    result = me->get_sequenced_files( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_text_elements.
-    result = me->get_text_elements(  ).
+    result = me->get_text_elements( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_text_elements_translations.
-    result = me->get_text_elements_translations(  ).
+    result = me->get_text_elements_translations( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_text_symbols.
-    result = me->get_text_symbols(  ).
+    result = me->get_text_symbols( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_xml.
-    result = me->get_xml(  ).
+    result = me->get_xml( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~get_xml_file.
-    result = me->get_xml_file(  ).
+    result = me->get_xml_file( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~is_dirty.
-    result = me->is_dirty(  ).
+    result = me->is_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~parse.
-    result = me->parse(  i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
+    result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~remove_file.
-    me->remove_file(  i_file = i_file ).
+    me->remove_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~set_dirty.
-    me->set_dirty(  ).
+    me->set_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_union_d439e5f2~update_file.
-    me->update_file(  i_file = i_file ).
+    me->update_file( i_file = i_file ).
   ENDMETHOD.
 ENDCLASS.

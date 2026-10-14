@@ -269,7 +269,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       DATA(t21) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
       DATA t22 TYPE REF TO zcl_lnt_iabaplexer_result.
       DATA t23 TYPE REF TO zcl_lnt_lexer.
-      DATA(t24) = NEW zcl_lnt_lexer(  ).
+      DATA(t24) = NEW zcl_lnt_lexer( ).
       t23 = t24.
       DATA t25 TYPE REF TO zif_lnt_file.
       DATA(t26) = CAST zif_lnt_file( t19 ).
@@ -291,7 +291,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       DATA(t35) = CAST zcl_lnt_lexer( t23 ).
       DATA t36 TYPE string.
       DATA(t37) = CAST zif_lnt_file( t25 ).
-      t36 = t37->get_raw(  ).
+      t36 = t37->get_raw( ).
       t35->process( i_raw = t36 ).
       DATA t38 TYPE REF TO zcl_lnt_iabaplexer_result.
       DATA(t39) = CAST zif_lnt_file( t25 ).
@@ -411,7 +411,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       DATA t88 TYPE REF TO zif_lnt_file.
       DATA(t89) = CAST zcl_lnt_istatement_result( t80 ).
       t88 = t89->file.
-      t87 = t88->get_filename(  ).
+      t87 = t88->get_filename( ).
       t86 = NEW zcl_lnt_abp_fl_infrmtn_prsr( i_filename = t87 ).
       t85 = t86.
       DATA t90 TYPE REF TO zcl_lnt_prsd_fl_infrmtn.

@@ -18,7 +18,7 @@ CLASS zcl_lnt_typd_idntfr_mdl IMPLEMENTATION.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

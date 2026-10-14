@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_contains_tab IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_contains_tab_conf(  ).
+    DATA(t1) = NEW zcl_lnt_contains_tab_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -169,12 +169,12 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
     RAISE EXCEPTION t5.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_contains_tab_conf( me->gt_cn_in_sr_rl_cn_tb_ts_cnt_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_contains_tab_conf( me->gt_cn_in_sr_rl_cn_tb_ts_cnt_tb( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_contains_tab_conf( me->gt_cn_in_sr_rl_cn_tb_ts_cnt_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_contains_tab_conf( me->gt_cn_in_sr_rl_cn_tb_ts_cnt_tb( ) ).
     result = t1.
 
   ENDMETHOD.

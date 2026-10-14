@@ -21,7 +21,7 @@ ENDCLASS.
 CLASS zcl_lnt_commented_code IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_commented_code_conf(  ).
+    DATA(t1) = NEW zcl_lnt_commented_code_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -145,12 +145,12 @@ CLASS zcl_lnt_commented_code IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_commented_code_conf( me->gt_cn_in_sr_rl_cm_cd_ts_cmm_cd(  ) ).
+    DATA(t1) = CAST zcl_lnt_commented_code_conf( me->gt_cn_in_sr_rl_cm_cd_ts_cmm_cd( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_commented_code_conf( me->gt_cn_in_sr_rl_cm_cd_ts_cmm_cd(  ) ).
+    DATA(t1) = CAST zcl_lnt_commented_code_conf( me->gt_cn_in_sr_rl_cm_cd_ts_cmm_cd( ) ).
     result = t1.
 
   ENDMETHOD.

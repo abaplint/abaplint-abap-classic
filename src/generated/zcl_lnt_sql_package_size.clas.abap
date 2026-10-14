@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_package_size DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_sql_package_size IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.

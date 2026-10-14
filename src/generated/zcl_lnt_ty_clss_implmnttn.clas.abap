@@ -18,7 +18,7 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_structure.
     DATA(t6) = CAST zcl_lnt_structure_node( t1 ).
-    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_sr_clss_implmnttn ).
     t3 = xsdbool( t4 = abap_false ).
     IF t3 = abap_true.
@@ -58,7 +58,7 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687 ).
     t17 = t18->find_first_expression( i_type_9913 = t22 ).
     t16 = t17.
-    t15 = t16->get_first_token(  ).
+    t15 = t16->get_first_token( ).
     t14 = t15.
     DATA(t23) = CAST zcl_lnt_abstract_token( t14 ).
     DATA(t24) = t2.
@@ -86,27 +86,27 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_method_implementations.
-    result = me->get_method_implementations(  ).
+    result = me->get_method_implementations( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_method_implementation.
-    result = me->get_method_implementation(  i_name = i_name ).
+    result = me->get_method_implementation( i_name = i_name ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_class_implementation~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
 ENDCLASS.

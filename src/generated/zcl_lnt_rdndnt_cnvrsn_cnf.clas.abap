@@ -8,7 +8,7 @@ CLASS zcl_lnt_rdndnt_cnvrsn_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_rdndnt_cnvrsn_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1578_763c49068636.

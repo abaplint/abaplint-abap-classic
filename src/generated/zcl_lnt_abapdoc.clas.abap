@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_abapdoc IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_abapdoc_conf(  ).
+    DATA(t1) = NEW zcl_lnt_abapdoc_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -125,12 +125,12 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_abapdoc_conf( me->gt_cnf_ins_src_rls_abp_ts_abpd(  ) ).
+    DATA(t1) = CAST zcl_lnt_abapdoc_conf( me->gt_cnf_ins_src_rls_abp_ts_abpd( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_abapdoc_conf( me->gt_cnf_ins_src_rls_abp_ts_abpd(  ) ).
+    DATA(t1) = CAST zcl_lnt_abapdoc_conf( me->gt_cnf_ins_src_rls_abp_ts_abpd( ) ).
     result = t1.
 
   ENDMETHOD.

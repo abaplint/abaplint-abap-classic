@@ -80,7 +80,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
   ENDMETHOD.
   METHOD add_file.
     DATA(t1) = CAST zif_lnt_file( i_file ).
-    me->set_dirty(  ).
+    me->set_dirty( ).
     DATA t2 TYPE i.
     DATA(t3) = 0.
     t2 = t3.
@@ -104,10 +104,10 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       CLEAR t13.
       READ TABLE t11->items INDEX t12 INTO t13.
       t10 ?= t13.
-      t9 = t10->get_filename(  ).
+      t9 = t10->get_filename( ).
       DATA t14 TYPE string.
       DATA(t15) = CAST zif_lnt_file( t1 ).
-      t14 = t15->get_filename(  ).
+      t14 = t15->get_filename( ).
       t8 = xsdbool( t9 = t14 ).
       IF t8 = abap_true.
         DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( me->files ).
@@ -186,7 +186,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA(t15) = strlen( t5 ).
     t4 = |{ t5 }{ t14 }|.
     DATA t16 TYPE string.
-    DATA(t17) = CONV string( me->get_type(  ) ).
+    DATA(t17) = CONV string( me->get_type( ) ).
     DATA(t18) = strlen( t17 ).
     t16 = t17.
     TRANSLATE t16 TO LOWER CASE.
@@ -218,7 +218,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA(t36) = strlen( t26 ).
     t25 = |{ t26 }{ t35 }|.
     DATA t37 TYPE string.
-    DATA(t38) = CONV string( me->get_type(  ) ).
+    DATA(t38) = CONV string( me->get_type( ) ).
     DATA(t39) = strlen( t38 ).
     t37 = t38.
     TRANSLATE t37 TO LOWER CASE.
@@ -239,7 +239,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       DATA(t47) = VALUE abap_bool( ).
       DATA t48 TYPE string.
       DATA(t49) = CAST zif_lnt_file( t44 ).
-      t48 = t49->get_filename(  ).
+      t48 = t49->get_filename( ).
       DATA(t50) = t1.
       DATA(t51) = strlen( t48 ).
       DATA t52 TYPE i.
@@ -261,7 +261,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
         DATA(t55) = VALUE abap_bool( ).
         DATA t56 TYPE string.
         DATA(t57) = CAST zif_lnt_file( t44 ).
-        t56 = t57->get_filename(  ).
+        t56 = t57->get_filename( ).
         DATA(t58) = t22.
         DATA(t59) = strlen( t56 ).
         DATA t60 TYPE i.
@@ -306,7 +306,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       DATA(t70) = VALUE abap_bool( ).
       DATA t71 TYPE string.
       DATA(t72) = CAST zif_lnt_file( t68 ).
-      t71 = t72->get_filename(  ).
+      t71 = t72->get_filename( ).
       DATA(t73) = |.xml|.
       DATA(t74) = strlen( t71 ).
       DATA t75 TYPE i.
@@ -346,7 +346,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
   ENDMETHOD.
   METHOD get_xml.
     DATA t1 TYPE REF TO zif_lnt_file.
-    DATA(t2) = CAST zif_lnt_file( me->get_xml_file(  ) ).
+    DATA(t2) = CAST zif_lnt_file( me->get_xml_file( ) ).
     t1 = t2.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CAST zif_lnt_file( t1 ).
@@ -360,7 +360,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
         DATA t8 TYPE REF TO zif_lnt_file.
         DATA(t9) = CAST zif_lnt_file( t1 ).
         t8 = t9.
-        t7 = t8->get_raw(  ).
+        t7 = t8->get_raw( ).
         DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t10->has = abap_true.
         t10->value = t7.
@@ -391,7 +391,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_file.
-    DATA(t4) = CAST zif_lnt_file( me->get_xml_file(  ) ).
+    DATA(t4) = CAST zif_lnt_file( me->get_xml_file( ) ).
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t5.
@@ -407,7 +407,7 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
         DATA t11 TYPE REF TO zif_lnt_file.
         DATA(t12) = CAST zif_lnt_file( t3 ).
         t11 = t12.
-        t10 = t11->get_raw(  ).
+        t10 = t11->get_raw( ).
         DATA(t13) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t13->has = abap_true.
         t13->value = t10.
@@ -470,57 +470,57 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_identifier.
-    result = me->get_identifier(  ).
+    result = me->get_identifier( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
   METHOD zif_lnt_object~set_dirty.
-    me->set_dirty(  ).
+    me->set_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_object~is_dirty.
-    result = me->is_dirty(  ).
+    result = me->is_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_object~parse.
-    result = me->parse(  i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
+    result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_parsing_issues.
-    result = me->get_parsing_issues(  ).
+    result = me->get_parsing_issues( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
   METHOD zif_lnt_object~add_file.
-    me->add_file(  i_file = i_file ).
+    me->add_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_object~update_file.
-    me->update_file(  i_file = i_file ).
+    me->update_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_object~remove_file.
-    me->remove_file(  i_file = i_file ).
+    me->remove_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_xml_file.
-    result = me->get_xml_file(  ).
+    result = me->get_xml_file( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_xml.
-    result = me->get_xml(  ).
+    result = me->get_xml( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
   METHOD zif_lnt_object~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
   METHOD zif_lnt_artifact~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_artifact~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
   METHOD zif_lnt_artifact~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
 ENDCLASS.

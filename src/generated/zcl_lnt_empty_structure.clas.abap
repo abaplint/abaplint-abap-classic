@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_empty_structure IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_empty_structure_conf(  ).
+    DATA(t1) = NEW zcl_lnt_empty_structure_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -158,12 +158,12 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str(  ) ).
+    DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str(  ) ).
+    DATA(t1) = CAST zcl_lnt_empty_structure_conf( me->gt_cn_in_sr_rl_em_st_ts_em_str( ) ).
     result = t1.
 
   ENDMETHOD.

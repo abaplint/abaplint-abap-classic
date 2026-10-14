@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_space_before_dot IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_space_before_dot_conf(  ).
+    DATA(t1) = NEW zcl_lnt_space_before_dot_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -147,12 +147,12 @@ CLASS zcl_lnt_space_before_dot IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_space_before_dot_conf( me->g_c_i_s_r_sp_bf_dt_ts_sp_bf_dt(  ) ).
+    DATA(t1) = CAST zcl_lnt_space_before_dot_conf( me->g_c_i_s_r_sp_bf_dt_ts_sp_bf_dt( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_space_before_dot_conf( me->g_c_i_s_r_sp_bf_dt_ts_sp_bf_dt(  ) ).
+    DATA(t1) = CAST zcl_lnt_space_before_dot_conf( me->g_c_i_s_r_sp_bf_dt_ts_sp_bf_dt( ) ).
     result = t1.
 
   ENDMETHOD.

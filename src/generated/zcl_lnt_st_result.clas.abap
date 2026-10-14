@@ -238,7 +238,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
       DATA(t28) = CAST zcl_lnt_result_node( t3 ).
       t27 = t28.
       t26 = t27->node.
-      t25 = t26->count_tokens(  ).
+      t25 = t26->count_tokens( ).
       t23 = t24 - t25.
       IF t23 < range_int8_bound_min OR t23 > range_int8_bound_max.
         RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
@@ -263,7 +263,7 @@ CLASS zcl_lnt_st_result IMPLEMENTATION.
     DATA(t36) = CAST zcl_lnt_expression_node( t2 ).
     DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t7 ).
-    t37 = t38->reverse(  ).
+    t37 = t38->reverse( ).
     t35 = t36->s_c_in_sr_ab_nd_ex_nd_ts_ex_nd( i_children_9020 = t37 ).
     DATA t39 TYPE REF TO zcl_lnt_result_node.
     CLEAR t39.

@@ -18,7 +18,7 @@ CLASS zcl_lnt_severity_module IMPLEMENTATION.
     IF zcl_lnt_severity_module=>zlnt_builtin_init_20227f255c22 = abap_false.
       zcl_lnt_severity_module=>zlnt_builtin_init_4dbbf2fa0f24( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_severity_module=>severity_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

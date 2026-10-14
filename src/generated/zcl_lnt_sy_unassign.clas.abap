@@ -48,7 +48,7 @@ CLASS zcl_lnt_sy_unassign IMPLEMENTATION.
       DATA t18 TYPE REF TO zcl_lnt_expression_node.
       DATA(t19) = CAST zcl_lnt_expression_node( t3 ).
       t18 = t19.
-      t17 = t18->get_first_token(  ).
+      t17 = t18->get_first_token( ).
       t16 = t17.
       DATA t20 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t20.
@@ -229,7 +229,7 @@ CLASS zcl_lnt_sy_unassign IMPLEMENTATION.
         DATA(t97) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t98 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t99) = CAST zcl_lnt_statement_node( t1 ).
-        t98 = t99->get_first_token(  ).
+        t98 = t99->get_first_token( ).
         DATA(t100) = t82.
         DATA t101 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t101.
@@ -277,6 +277,6 @@ CLASS zcl_lnt_sy_unassign IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

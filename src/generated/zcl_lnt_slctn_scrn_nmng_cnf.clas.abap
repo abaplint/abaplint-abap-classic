@@ -11,7 +11,7 @@ CLASS zcl_lnt_slctn_scrn_nmng_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_nami
 ENDCLASS.
 CLASS zcl_lnt_slctn_scrn_nmng_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |^P_.+$|.
     me->parameter_6dfd = t1.
     DATA(t2) = |^S_.+$|.

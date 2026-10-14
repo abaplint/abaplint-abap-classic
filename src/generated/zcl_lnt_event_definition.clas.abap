@@ -21,7 +21,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE REF TO zif_lnt_statement.
     DATA(t7) = CAST zcl_lnt_statement_node( t1 ).
-    t6 = t7->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+    t6 = t7->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_events ).
     t4 = xsdbool( t5 = abap_false ).
     IF t4 = abap_true.
@@ -96,7 +96,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     DATA t34 TYPE REF TO zcl_lnt_expression_node.
     DATA(t35) = CAST zcl_lnt_expression_node( t15 ).
     t34 = t35.
-    t33 = t34->get_first_token(  ).
+    t33 = t34->get_first_token( ).
     DATA t36 TYPE string.
     DATA(t37) = CAST zcl_lnt_syntax_input( t3 ).
     t36 = t37->filename.
@@ -113,7 +113,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     DATA t44 TYPE REF TO zcl_lnt_abstract_token.
     DATA t45 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t46) = CAST zcl_lnt_statement_node( t1 ).
-    t45 = t46->get_first_token(  ).
+    t45 = t46->get_first_token( ).
     t44 = t45.
     DATA t47 TYPE string.
     DATA(t48) = CAST zcl_lnt_abstract_token( t44 ).
@@ -171,12 +171,12 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_event_definition~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_event_definition~get_parameters.
-    result = me->get_parameters(  ).
+    result = me->get_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_event_definition~is_static_4685.
-    result = me->is_static_4685(  ).
+    result = me->is_static_4685( ).
   ENDMETHOD.
 ENDCLASS.

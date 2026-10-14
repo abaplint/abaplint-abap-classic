@@ -297,7 +297,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t3) = CONV string( me->base_name(  ) ).
+    DATA(t3) = CONV string( me->base_name( ) ).
     DATA(t4) = |.|.
     DATA(t5) = strlen( t3 ).
     DATA t6 TYPE i.
@@ -381,7 +381,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t3) = CONV string( me->base_name(  ) ).
+    DATA(t3) = CONV string( me->base_name( ) ).
     DATA(t4) = |.|.
     DATA(t5) = strlen( t3 ).
     DATA t6 TYPE i.
@@ -551,18 +551,18 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_file~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_file~get_object_type.
-    result = me->get_object_type(  ).
+    result = me->get_object_type( ).
   ENDMETHOD.
   METHOD zif_lnt_file~get_object_name.
-    result = me->get_object_name(  ).
+    result = me->get_object_name( ).
   ENDMETHOD.
   METHOD zif_lnt_file~get_raw.
-    result = me->get_raw(  ).
+    result = me->get_raw( ).
   ENDMETHOD.
   METHOD zif_lnt_file~get_raw_rows.
-    result = me->get_raw_rows(  ).
+    result = me->get_raw_rows( ).
   ENDMETHOD.
 ENDCLASS.

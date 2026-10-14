@@ -9,7 +9,7 @@ CLASS zcl_lnt_msag_consistency_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_msag_consistency_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->numeric_parameters = t1.
   ENDMETHOD.

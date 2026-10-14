@@ -49,7 +49,7 @@ CLASS zcl_lnt_c_sequence_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty( ) ).
     result = t1.
 
   ENDMETHOD.

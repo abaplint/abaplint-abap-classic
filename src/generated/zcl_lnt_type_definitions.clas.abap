@@ -17,7 +17,7 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_list ).
     DATA t2 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
     DATA t3 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
-    DATA(t4) = NEW zlnt_runtime_map__d1f17afcc3e9(  ).
+    DATA(t4) = NEW zlnt_runtime_map__d1f17afcc3e9( ).
     t3 = t4.
     DATA(t5) = CAST zlnt_runtime_map__d1f17afcc3e9( t3 ).
     t2 = t5.
@@ -178,9 +178,9 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_type_definitions~get_all.
-    result = me->get_all(  ).
+    result = me->get_all( ).
   ENDMETHOD.
   METHOD zif_lnt_type_definitions~get_by_name.
-    result = me->get_by_name(  i_name = i_name ).
+    result = me->get_by_name( i_name = i_name ).
   ENDMETHOD.
 ENDCLASS.

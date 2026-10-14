@@ -11,7 +11,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_naming
 ENDCLASS.
 CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |^LCL_.+$|.
     me->local_2d1d = t1.
     DATA(t2) = |^LCX_.+$|.

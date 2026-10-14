@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_n_exclmtn_escp_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_n_exclmtn_escp_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -124,12 +124,12 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_n_exclmtn_escp_cnf( me->g_c_i_sr_rl_n_ex_es_ts_n_ex_es(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_exclmtn_escp_cnf( me->g_c_i_sr_rl_n_ex_es_ts_n_ex_es( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_n_exclmtn_escp_cnf( me->g_c_i_sr_rl_n_ex_es_ts_n_ex_es(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_exclmtn_escp_cnf( me->g_c_i_sr_rl_n_ex_es_ts_n_ex_es( ) ).
     result = t1.
 
   ENDMETHOD.

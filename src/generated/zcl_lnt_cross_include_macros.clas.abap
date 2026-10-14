@@ -20,7 +20,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
   ENDMETHOD.
   METHOD run.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->find_candidates(  ) ).
+    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->find_candidates( ) ).
     t1 = t2.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE i.
@@ -43,7 +43,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     DATA t12 TYPE REF TO zif_lnt_configuration.
     DATA t13 TYPE REF TO zif_lnt_configuration.
     DATA(t14) = CAST zif_lnt_registry( me->reg ).
-    t13 = t14->get_config(  ).
+    t13 = t14->get_config( ).
     t12 = t13.
     DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t15.
@@ -53,7 +53,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t19 TYPE REF TO zcl_lnt_isyntax_settings.
     DATA(t20) = CAST zif_lnt_configuration( t12 ).
-    t19 = t20->get_syntax_setttings(  ).
+    t19 = t20->get_syntax_setttings( ).
     t18 = t19->global_macros.
     t17 = t18.
     DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -89,7 +89,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       DATA t34 TYPE abap_bool.
       DATA t35 TYPE i.
       DATA(t36) = CAST zlnt_runtime_set__569a685d95a8( t30 ).
-      t35 = t36->size(  ).
+      t35 = t36->size( ).
       DATA(t37) = 0.
       t34 = xsdbool( t35 = t37 ).
       IF t34 = abap_true.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       DATA(t40) = CAST zlnt_runtime_arra_8ecd6afe19e0( t15 ).
       DATA t41 TYPE REF TO zcl_lnt_abap_release.
       DATA(t42) = CAST zif_lnt_configuration( t12 ).
-      t41 = t42->get_release(  ).
+      t41 = t42->get_release( ).
       DATA t43 TYPE REF TO zif_lnt_registry.
       CLEAR t43.
       DATA(t44) = abap_true.
@@ -120,7 +120,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       IF t48 = abap_true.
         DATA t49 TYPE string.
         DATA(t50) = CAST zif_lnt_configuration( t12 ).
-        t49 = t50->get_language_version(  ).
+        t49 = t50->get_language_version( ).
         DATA(t51) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t51->has = abap_true.
         t51->value = t49.
@@ -134,7 +134,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       t38 = t39.
       DATA t53 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t54) = CAST zlnt_runtime_set__569a685d95a8( t30 ).
-      t53 = t54->values(  ).
+      t53 = t54->values( ).
       DATA t55 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t55.
       DATA t56 TYPE REF TO object.
@@ -197,18 +197,18 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       DATA t83 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t84 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t85) = CAST zcl_lnt_st_expand_macros( t38 ).
-      t84 = t85->list_macro_names(  ).
+      t84 = t85->list_macro_names( ).
       t83 = t84.
       DATA t86 TYPE abap_bool.
       DATA(t87) = CAST zcl_lnt_ob_program( t28 ).
       DATA t88 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-      DATA(t89) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+      DATA(t89) = NEW zlnt_runtime_set__1827558fd4c7( ).
       DATA(t90) = CAST zlnt_runtime_arra_8ecd6afe19e0( t83 ).
       t88 = t89->fromArray( p0 = t90 ).
       t86 = me->matches_unknown( i_prog = t87 i_macro_names = t88 ).
       IF t86 = abap_true.
         DATA(t91) = CAST zcl_lnt_ob_program( t28 ).
-        t91->set_dirty(  ).
+        t91->set_dirty( ).
         DATA t92 TYPE REF TO zcl_lnt_iparse_result.
         CLEAR t92.
         DATA(t93) = CAST zcl_lnt_ob_program( t28 ).
@@ -218,7 +218,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
         IF t95 = abap_true.
           DATA t96 TYPE REF TO zcl_lnt_abap_release.
           DATA(t97) = CAST zif_lnt_configuration( t12 ).
-          t96 = t97->get_release(  ).
+          t96 = t97->get_release( ).
           t94 = t96.
         ELSE.
           DATA t98 TYPE REF TO zcl_lnt_abap_release.
@@ -253,7 +253,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
         IF t108 = abap_true.
           DATA t109 TYPE string.
           DATA(t110) = CAST zif_lnt_configuration( t12 ).
-          t109 = t110->get_language_version(  ).
+          t109 = t110->get_language_version( ).
           DATA(t111) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t111->has = abap_true.
           t111->value = t109.
@@ -274,7 +274,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t4) = CAST zif_lnt_registry( me->reg ).
-    t3 = t4->get_objects(  ).
+    t3 = t4->get_objects( ).
     DATA t5 TYPE REF TO zif_lnt_object.
     CLEAR t5.
     DATA t6 TYPE REF TO object.
@@ -300,7 +300,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
         t13 = t14.
         DATA t17 TYPE abap_bool.
         DATA(t18) = CAST zcl_lnt_ob_program( t13 ).
-        t18->parse_xml(  ).
+        t18->parse_xml( ).
         DATA t19 TYPE abap_bool.
         DATA t20 TYPE REF TO zcl_lnt_shape_e86506f0.
         DATA t21 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -356,7 +356,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
           DATA t43 TYPE abap_bool.
           DATA t44 TYPE REF TO zif_lnt_statement.
           DATA(t45) = CAST zcl_lnt_statement_node( t41 ).
-          t44 = t45->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+          t44 = t45->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t43 = xsdbool( t44 IS BOUND AND t44 IS INSTANCE OF zcl_lnt_unknown ).
           IF t43 = abap_true.
             DATA(t46) = abap_true.

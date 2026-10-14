@@ -181,13 +181,13 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
     DATA t78 TYPE string.
     DATA t79 TYPE string.
     DATA(t80) = CAST zif_lnt_object( t1 ).
-    t79 = t80->get_type(  ).
+    t79 = t80->get_type( ).
     DATA(t81) = | |.
     DATA(t82) = strlen( t79 ).
     t78 = |{ t79 }{ t81 }|.
     DATA t83 TYPE string.
     DATA(t84) = CAST zif_lnt_object( t1 ).
-    t83 = t84->get_name(  ).
+    t83 = t84->get_name( ).
     DATA(t85) = strlen( t78 ).
     t77 = |{ t78 }{ t83 }|.
     DATA(t86) = t36.

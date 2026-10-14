@@ -63,7 +63,7 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
       DATA t26 TYPE string.
       DATA t27 TYPE string.
       DATA(t28) = CAST zcl_lnt_statement_node( t1 ).
-      t27 = t28->concat_tokens(  ).
+      t27 = t28->concat_tokens( ).
       DATA(t29) = strlen( t27 ).
       t26 = t27.
       IF t26 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
       ELSE.
         DATA t38 TYPE REF TO zif_lnt_statement_runnable.
         DATA(t39) = CAST zcl_lnt_expression_node( t32 ).
-        t38 = t39->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+        t38 = t39->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         t34 = t38.
       ENDIF.
       t31 = t34.
@@ -145,7 +145,7 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
           DATA t63 TYPE REF TO zcl_lnt_expression_node.
           DATA(t64) = CAST zcl_lnt_expression_node( t40 ).
           t63 = t64.
-          t62 = t63->concat_tokens(  ).
+          t62 = t63->concat_tokens( ).
           DATA(t65) = strlen( t62 ).
           t61 = t62.
           IF t61 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -226,7 +226,7 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
       DATA t95 TYPE REF TO zcl_lnt_expression_node.
       DATA(t96) = CAST zcl_lnt_expression_node( t88 ).
       t95 = t96.
-      t94 = t95->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t94 = t95->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t90 = t94.
     ENDIF.
     t87 = t90.
@@ -311,7 +311,7 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
       DATA t133 TYPE REF TO zcl_lnt_expression_node.
       DATA(t134) = CAST zcl_lnt_expression_node( t126 ).
       t133 = t134.
-      t132 = t133->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t132 = t133->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t128 = t132.
     ENDIF.
     t125 = t128.
@@ -381,6 +381,6 @@ CLASS zcl_lnt_sy_convert IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

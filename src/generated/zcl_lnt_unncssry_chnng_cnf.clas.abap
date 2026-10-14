@@ -10,7 +10,7 @@ CLASS zcl_lnt_unncssry_chnng_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic
 ENDCLASS.
 CLASS zcl_lnt_unncssry_chnng_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 10 ).
     DATA(t2) = NEW zlnt_runtime_opti_4a236cd5714d( ).
     t2->has = abap_true.

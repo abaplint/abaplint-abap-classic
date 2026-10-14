@@ -60,21 +60,21 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t1) = CAST zif_lnt_configuration( i_conf ).
     DATA t2 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t3 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t4) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t4) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t3 = t4.
     DATA(t5) = CAST zlnt_runtime_map__6ec5bb307efb( t3 ).
     t2 = t5.
     me->objects = t2.
     DATA t6 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t7 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t8) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t8) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t7 = t8.
     DATA(t9) = CAST zlnt_runtime_map__6ec5bb307efb( t7 ).
     t6 = t9.
     me->objects_by_type = t6.
     DATA t10 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
     DATA t11 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
-    DATA(t12) = NEW zlnt_runtime_map__e02fab5a9752(  ).
+    DATA(t12) = NEW zlnt_runtime_map__e02fab5a9752( ).
     t11 = t12.
     DATA(t13) = CAST zlnt_runtime_map__e02fab5a9752( t11 ).
     t10 = t13.
@@ -103,59 +103,59 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t14 = me->set_config( i_conf = t15 ).
     DATA t23 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t24 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t25) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t25) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t24 = t25.
     DATA(t26) = CAST zlnt_runtime_map__6ec5bb307efb( t24 ).
     t23 = t26.
     me->objects = t23.
     DATA t27 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t28 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t29) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t29) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t28 = t29.
     DATA(t30) = CAST zlnt_runtime_map__6ec5bb307efb( t28 ).
     t27 = t30.
     me->objects_by_type = t27.
     DATA t31 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
     DATA t32 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
-    DATA(t33) = NEW zlnt_runtime_map__e02fab5a9752(  ).
+    DATA(t33) = NEW zlnt_runtime_map__e02fab5a9752( ).
     t32 = t33.
     DATA(t34) = CAST zlnt_runtime_map__e02fab5a9752( t32 ).
     t31 = t34.
     me->dependencies = t31.
-    DATA(t35) = NEW zcl_lnt_ddic_references(  ).
+    DATA(t35) = NEW zcl_lnt_ddic_references( ).
     me->ddic_references = t35.
-    DATA(t36) = NEW zcl_lnt_msag_references(  ).
+    DATA(t36) = NEW zcl_lnt_msag_references( ).
     me->msag_references = t36.
-    DATA(t37) = NEW zcl_lnt_macro_references(  ).
+    DATA(t37) = NEW zcl_lnt_macro_references( ).
     me->macro_references = t37.
   ENDMETHOD.
   METHOD clear_feba.
     DATA t1 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t2 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t3) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t3) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__6ec5bb307efb( t2 ).
     t1 = t4.
     me->objects = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
     DATA t6 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-    DATA(t7) = NEW zlnt_runtime_map__6ec5bb307efb(  ).
+    DATA(t7) = NEW zlnt_runtime_map__6ec5bb307efb( ).
     t6 = t7.
     DATA(t8) = CAST zlnt_runtime_map__6ec5bb307efb( t6 ).
     t5 = t8.
     me->objects_by_type = t5.
     DATA t9 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
     DATA t10 TYPE REF TO zlnt_runtime_map__e02fab5a9752.
-    DATA(t11) = NEW zlnt_runtime_map__e02fab5a9752(  ).
+    DATA(t11) = NEW zlnt_runtime_map__e02fab5a9752( ).
     t10 = t11.
     DATA(t12) = CAST zlnt_runtime_map__e02fab5a9752( t10 ).
     t9 = t12.
     me->dependencies = t9.
-    DATA(t13) = NEW zcl_lnt_ddic_references(  ).
+    DATA(t13) = NEW zcl_lnt_ddic_references( ).
     me->ddic_references = t13.
-    DATA(t14) = NEW zcl_lnt_msag_references(  ).
+    DATA(t14) = NEW zcl_lnt_msag_references( ).
     me->msag_references = t14.
-    DATA(t15) = NEW zcl_lnt_macro_references(  ).
+    DATA(t15) = NEW zcl_lnt_macro_references( ).
     me->macro_references = t15.
   ENDMETHOD.
   METHOD abaplint_version.
@@ -185,7 +185,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t4) = CAST zlnt_runtime_map__6ec5bb307efb( me->objects ).
-    t3 = t4->keys(  ).
+    t3 = t4->keys( ).
     DATA(t5) = VALUE string( ).
     LOOP AT t3->items INTO t5.
       DATA t6 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
@@ -198,7 +198,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t6 = t7.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t12) = CAST zlnt_runtime_map__b4fe03e97505( t6 ).
-      t11 = t12->keys(  ).
+      t11 = t12->keys( ).
       DATA(t13) = VALUE string( ).
       LOOP AT t11->items INTO t13.
         DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -241,7 +241,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
     DATA(t13) = CAST zlnt_runtime_map__b4fe03e97505( t4 ).
     t12 = t13.
-    t11 = t12->keys(  ).
+    t11 = t12->keys( ).
     DATA(t14) = VALUE string( ).
     LOOP AT t11->items INTO t14.
       DATA(t15) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
@@ -268,7 +268,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
   METHOD get_first_object.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CAST zlnt_runtime_map__6ec5bb307efb( me->objects ).
-    t1 = t2->keys(  ).
+    t1 = t2->keys( ).
     DATA(t3) = VALUE string( ).
     LOOP AT t1->items INTO t3.
       DATA t4 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
@@ -289,7 +289,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t12 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
         DATA(t13) = CAST zlnt_runtime_map__b4fe03e97505( t4 ).
         t12 = t13.
-        t11 = t12->keys(  ).
+        t11 = t12->keys( ).
         DATA(t14) = VALUE string( ).
         LOOP AT t11->items INTO t14.
           DATA t15 TYPE REF TO zif_lnt_object.
@@ -321,7 +321,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t5) = CONV int8( 0 ).
     t2 = NEW zcl_lnt_shape_ca985c56( i_total = t3 i_normal = t4 i_dependencies = t5 ).
     t1 = t2.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t7 TYPE REF TO zif_lnt_object.
     CLEAR t7.
     DATA t8 TYPE REF TO object.
@@ -351,7 +351,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA(t21) = CAST zlnt_runtime_map__e02fab5a9752( me->dependencies ).
       DATA t22 TYPE string.
       DATA(t23) = CAST zif_lnt_object( t15 ).
-      t22 = t23->get_type(  ).
+      t22 = t23->get_type( ).
       t20 = t21->get( p0 = t22 ).
       t19 = t20.
       DATA t24 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -372,7 +372,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         t29 = t30.
         DATA t31 TYPE string.
         DATA(t32) = CAST zif_lnt_object( t15 ).
-        t31 = t32->get_name(  ).
+        t31 = t32->get_name( ).
         t28 = t29->get( p0 = t31 ).
         t24 = t28.
       ENDIF.
@@ -450,7 +450,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t3 = zlnt_runtime_uppe_91169605024d=>full( t3 ).
     ENDIF.
     t2 = t3.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t7 TYPE REF TO zif_lnt_object.
     CLEAR t7.
     DATA t8 TYPE REF TO object.
@@ -459,7 +459,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t7 ?= t8.
       DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t10) = CAST zif_lnt_object( t7 ).
-      t9 = t10->get_files(  ).
+      t9 = t10->get_files( ).
       DATA t11 TYPE REF TO zif_lnt_file.
       CLEAR t11.
       DATA t12 TYPE REF TO object.
@@ -470,7 +470,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t14 TYPE string.
         DATA t15 TYPE string.
         DATA(t16) = CAST zif_lnt_file( t11 ).
-        t15 = t16->get_filename(  ).
+        t15 = t16->get_filename( ).
         DATA(t17) = strlen( t15 ).
         t14 = t15.
         IF t14 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -594,7 +594,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
   ENDMETHOD.
   METHOD set_config.
     DATA(t1) = CAST zif_lnt_configuration( i_conf ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t3 TYPE REF TO zif_lnt_object.
     CLEAR t3.
     DATA t4 TYPE REF TO object.
@@ -602,7 +602,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     LOOP AT t2->items INTO t4.
       t3 ?= t4.
       DATA(t5) = CAST zif_lnt_object( t3 ).
-      t5->set_dirty(  ).
+      t5->set_dirty( ).
     ENDLOOP.
     DATA(t6) = CAST zif_lnt_configuration( t1 ).
     me->conf = t6.
@@ -611,7 +611,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t8 TYPE string.
     DATA t9 TYPE REF TO zcl_lnt_isyntax_settings.
     DATA(t10) = CAST zif_lnt_configuration( me->conf ).
-    t9 = t10->get_syntax_setttings(  ).
+    t9 = t10->get_syntax_setttings( ).
     t8 = t9->error_namespace.
     DATA(t11) = |i|.
     CREATE OBJECT t7 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t8 flags = t11.
@@ -682,7 +682,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t10 TYPE REF TO zcl_lnt_iglobal_config.
     DATA(t11) = CAST zif_lnt_configuration( me->conf ).
-    t10 = t11->get_global(  ).
+    t10 = t11->get_global( ).
     t9 = t10->exclude.
     t8 = t9.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -726,7 +726,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t27 TYPE string.
       DATA t28 TYPE string.
       DATA(t29) = CAST zif_lnt_file( t25 ).
-      t28 = t29->get_filename(  ).
+      t28 = t29->get_filename( ).
       t27 = t28.
       DATA(t30) = VALUE abap_bool( ).
       DATA(t31) = VALUE abap_bool( ).
@@ -790,17 +790,17 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t49 TYPE REF TO zif_lnt_object.
       DATA t50 TYPE string.
       DATA(t51) = CAST zif_lnt_file( t25 ).
-      t50 = t51->get_object_name(  ).
+      t50 = t51->get_object_name( ).
       DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t53) = CAST zif_lnt_file( t25 ).
-      t52 = t53->get_object_type(  ).
+      t52 = t53->get_object_type( ).
       t49 = me->find_or_create( i_name = t50 i_type_9913 = t52 ).
       t48 = t49.
       DATA(t54) = VALUE abap_bool( ).
       DATA t55 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t56 TYPE REF TO zcl_lnt_iglobal_config.
       DATA(t57) = CAST zif_lnt_configuration( me->conf ).
-      t56 = t57->get_global(  ).
+      t56 = t57->get_global( ).
       t55 = t56->error_on_duplicate_filenames.
       DATA t58 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t58.
@@ -835,7 +835,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA(t65) = t27.
         DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t67) = CAST zif_lnt_object( t48 ).
-        t66 = t67->get_files(  ).
+        t66 = t67->get_files( ).
         me->check_duplicate_filename( i_filename = t65 i_files = t66 ).
       ENDIF.
       DATA(t68) = VALUE abap_bool( ).
@@ -865,7 +865,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA(t82) = CAST zlnt_runtime_map__e02fab5a9752( me->dependencies ).
         DATA t83 TYPE string.
         DATA(t84) = CAST zif_lnt_object( t76 ).
-        t83 = t84->get_type(  ).
+        t83 = t84->get_type( ).
         t81 = t82->get( p0 = t83 ).
         t80 = t81.
         DATA t85 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -886,7 +886,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
           t90 = t91.
           DATA t92 TYPE string.
           DATA(t93) = CAST zif_lnt_object( t76 ).
-          t92 = t93->get_name(  ).
+          t92 = t93->get_name( ).
           t89 = t90->get( p0 = t92 ).
           t85 = t89.
         ENDIF.
@@ -933,7 +933,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA(t106) = CAST zlnt_runtime_map__e02fab5a9752( me->dependencies ).
         DATA t107 TYPE string.
         DATA(t108) = CAST zif_lnt_object( t101 ).
-        t107 = t108->get_type(  ).
+        t107 = t108->get_type( ).
         t105 = t106->get( p0 = t107 ).
         t104 = t105.
         DATA(t109) = VALUE abap_bool( ).
@@ -952,7 +952,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
           t114 = t115.
           DATA t116 TYPE string.
           DATA(t117) = CAST zif_lnt_object( t101 ).
-          t116 = t117->get_name(  ).
+          t116 = t117->get_name( ).
           DELETE t114->entries WHERE k = t116.
           t113 = abap_true.
           t109 = t113.
@@ -973,10 +973,10 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t122 TYPE REF TO zif_lnt_object.
         DATA t123 TYPE string.
         DATA(t124) = CAST zif_lnt_file( t25 ).
-        t123 = t124->get_object_name(  ).
+        t123 = t124->get_object_name( ).
         DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA(t126) = CAST zif_lnt_file( t25 ).
-        t125 = t126->get_object_type(  ).
+        t125 = t126->get_object_type( ).
         t122 = me->find_or_create( i_name = t123 i_type_9913 = t125 ).
         t48 = t122.
       ENDIF.
@@ -1014,7 +1014,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t13 TYPE string.
       DATA t14 TYPE string.
       DATA(t15) = CAST zif_lnt_file( t10 ).
-      t14 = t15->get_filename(  ).
+      t14 = t15->get_filename( ).
       t13 = zcl_lnt_registry=>filename_basename( i_filename = t14 ).
       DATA(t16) = t3.
       t12 = xsdbool( t13 = t16 ).
@@ -1039,7 +1039,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
           t22 = |{ t23 }{ t27 }|.
           DATA t29 TYPE string.
           DATA(t30) = CAST zif_lnt_file( t10 ).
-          t29 = t30->get_filename(  ).
+          t29 = t30->get_filename( ).
           DATA(t31) = strlen( t22 ).
           t21 = |{ t22 }{ t29 }|.
           DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1114,7 +1114,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         t16 = t17 + t19.
       ENDWHILE.
     ENDIF.
-    t11 = t12->pop(  ).
+    t11 = t12->pop( ).
     t10 = t11.
     DATA(t21) = VALUE string( ).
     DATA(t22) = VALUE string( ).
@@ -1185,7 +1185,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t6) = CAST zif_lnt_file( t1 ).
-    t5 = t6->get_object_type(  ).
+    t5 = t6->get_object_type( ).
     t4 = t5.
     DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t7.
@@ -1244,7 +1244,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t25 TYPE string.
     DATA t26 TYPE string.
     DATA(t27) = CAST zif_lnt_file( t1 ).
-    t26 = t27->get_object_name(  ).
+    t26 = t27->get_object_name( ).
     DATA(t28) = strlen( t26 ).
     t25 = t26.
     IF t25 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1280,7 +1280,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t41 = t42->value.
       DATA t43 TYPE REF TO zlnt_runtime_map__45a2315f90b8.
       DATA t44 TYPE REF TO zlnt_runtime_map__45a2315f90b8.
-      DATA(t45) = NEW zlnt_runtime_map__45a2315f90b8(  ).
+      DATA(t45) = NEW zlnt_runtime_map__45a2315f90b8( ).
       t44 = t45.
       DATA(t46) = CAST zlnt_runtime_map__45a2315f90b8( t44 ).
       t43 = t46.
@@ -1323,7 +1323,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t5) = CAST zlnt_runtime_map__e02fab5a9752( me->dependencies ).
     DATA t6 TYPE string.
     DATA(t7) = CAST zif_lnt_object( t1 ).
-    t6 = t7->get_type(  ).
+    t6 = t7->get_type( ).
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     DATA(t8) = VALUE abap_bool( ).
@@ -1342,7 +1342,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t13 = t14.
       DATA t15 TYPE string.
       DATA(t16) = CAST zif_lnt_object( t1 ).
-      t15 = t16->get_name(  ).
+      t15 = t16->get_name( ).
       DELETE t13->entries WHERE k = t15.
       t12 = abap_true.
       t8 = t12.
@@ -1371,7 +1371,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA(t6) = CAST zlnt_runtime_map__e02fab5a9752( me->dependencies ).
     DATA t7 TYPE string.
     DATA(t8) = CAST zif_lnt_object( t1 ).
-    t7 = t8->get_type(  ).
+    t7 = t8->get_type( ).
     t5 = t6->get( p0 = t7 ).
     t4 = t5.
     DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -1392,7 +1392,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       t14 = t15.
       DATA t16 TYPE string.
       DATA(t17) = CAST zif_lnt_object( t1 ).
-      t16 = t17->get_name(  ).
+      t16 = t17->get_name( ).
       t13 = t14->get( p0 = t16 ).
       t9 = t13.
     ENDIF.
@@ -1446,17 +1446,17 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
   METHOD find_issues.
     DATA(t1) = CAST zcl_lnt_irun_input( i_input_967e ).
     DATA t2 TYPE abap_bool.
-    DATA(t3) = CONV abap_bool( me->is_dirty(  ) ).
+    DATA(t3) = CONV abap_bool( me->is_dirty( ) ).
     DATA(t4) = abap_true.
     t2 = xsdbool( t3 = t4 ).
     IF t2 = abap_true.
-      DATA(t5) = CAST zcl_lnt_registry( me->prs_instn_src_rgstry_ts_rgstry(  ) ).
+      DATA(t5) = CAST zcl_lnt_registry( me->prs_instn_src_rgstry_ts_rgstry( ) ).
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_rules_runner.
     DATA(t8) = CAST zcl_lnt_registry( me ).
     t7 = NEW zcl_lnt_rules_runner( i_reg_f149 = t8 ).
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA(t10) = CAST zcl_lnt_irun_input( t1 ).
     t6 = t7->run_rules( i_objects = t9 i_input_967e = t10 ).
     result = t6.
@@ -1471,7 +1471,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
   ENDMETHOD.
   METHOD prs_instn_src_rgstry_ts_rgstry.
     DATA t1 TYPE abap_bool.
-    DATA(t2) = CONV abap_bool( me->is_dirty(  ) ).
+    DATA(t2) = CONV abap_bool( me->is_dirty( ) ).
     DATA(t3) = abap_false.
     t1 = xsdbool( t2 = t3 ).
     IF t1 = abap_true.
@@ -1479,8 +1479,8 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       result = t4.
       RETURN.
     ENDIF.
-    zcl_lnt_parsing_performance=>clear_feba(  ).
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    zcl_lnt_parsing_performance=>clear_feba( ).
+    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t6 TYPE REF TO zif_lnt_object.
     CLEAR t6.
     DATA t7 TYPE REF TO object.
@@ -1504,7 +1504,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       IF t16 = abap_true.
         DATA t17 TYPE REF TO zcl_lnt_abap_release.
         DATA(t18) = CAST zif_lnt_configuration( t10 ).
-        t17 = t18->get_release(  ).
+        t17 = t18->get_release( ).
         t15 = t17.
       ELSE.
         DATA t19 TYPE REF TO zcl_lnt_abap_release.
@@ -1514,7 +1514,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t21 TYPE REF TO zcl_lnt_isyntax_settings.
       DATA(t22) = CAST zif_lnt_configuration( t10 ).
-      t21 = t22->get_syntax_setttings(  ).
+      t21 = t22->get_syntax_setttings( ).
       t20 = t21->global_macros.
       DATA(t23) = CAST zcl_lnt_registry( me ).
       DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1523,7 +1523,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       IF t25 = abap_true.
         DATA t26 TYPE string.
         DATA(t27) = CAST zif_lnt_configuration( t10 ).
-        t26 = t27->get_language_version(  ).
+        t26 = t27->get_language_version( ).
         DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t28->has = abap_true.
         t28->value = t26.
@@ -1542,7 +1542,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t32 TYPE REF TO zcl_lnt_cross_include_macros.
     DATA(t33) = CAST zcl_lnt_registry( me ).
     t32 = NEW zcl_lnt_cross_include_macros( i_reg_f149 = t33 ).
-    t32->run(  ).
+    t32->run( ).
     DATA t34 TYPE REF TO zcl_lnt_fnd_glbl_dfntns.
     DATA(t35) = CAST zcl_lnt_registry( me ).
     t34 = NEW zcl_lnt_fnd_glbl_dfntns( i_reg_f149 = t35 ).
@@ -1576,7 +1576,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     IF t8 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abap_release.
       DATA(t10) = CAST zif_lnt_configuration( t2 ).
-      t9 = t10->get_release(  ).
+      t9 = t10->get_release( ).
       t7 = t9.
     ELSE.
       DATA t11 TYPE REF TO zcl_lnt_abap_release.
@@ -1586,7 +1586,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t13 TYPE REF TO zcl_lnt_isyntax_settings.
     DATA(t14) = CAST zif_lnt_configuration( t2 ).
-    t13 = t14->get_syntax_setttings(  ).
+    t13 = t14->get_syntax_setttings( ).
     t12 = t13->global_macros.
     DATA(t15) = CAST zcl_lnt_registry( me ).
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1595,7 +1595,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     IF t17 = abap_true.
       DATA t18 TYPE string.
       DATA(t19) = CAST zif_lnt_configuration( t2 ).
-      t18 = t19->get_language_version(  ).
+      t18 = t19->get_language_version( ).
       DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t20->has = abap_true.
       t20->value = t18.
@@ -1612,7 +1612,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     zcl_lnt_parsing_performance=>push( i_obj_1ed0 = t22 i_result = t23 ).
   ENDMETHOD.
   METHOD is_dirty.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects(  ) ).
+    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->get_objects( ) ).
     DATA t2 TYPE REF TO zif_lnt_object.
     CLEAR t2.
     DATA t3 TYPE REF TO object.
@@ -1622,7 +1622,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t4 TYPE abap_bool.
       DATA t5 TYPE abap_bool.
       DATA(t6) = CAST zif_lnt_object( t2 ).
-      t5 = t6->is_dirty(  ).
+      t5 = t6->is_dirty( ).
       t4 = t5.
       DATA t7 TYPE abap_bool.
       DATA(t8) = t4.
@@ -1720,7 +1720,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
           CLEAR t35.
           DATA t36 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
           CLEAR t36.
-          DATA(t37) = NEW zlnt_runtime_map__b4fe03e97505(  ).
+          DATA(t37) = NEW zlnt_runtime_map__b4fe03e97505( ).
           t36 = t37.
           DATA(t38) = CAST zlnt_runtime_map__b4fe03e97505( t36 ).
           t35 = t38.
@@ -1768,7 +1768,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
           CLEAR t58.
           DATA t59 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
           CLEAR t59.
-          DATA(t60) = NEW zlnt_runtime_map__b4fe03e97505(  ).
+          DATA(t60) = NEW zlnt_runtime_map__b4fe03e97505( ).
           t59 = t60.
           DATA(t61) = CAST zlnt_runtime_map__b4fe03e97505( t59 ).
           t58 = t61.
@@ -1821,14 +1821,14 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t16 TYPE REF TO zif_lnt_object.
     DATA(t17) = CAST zif_lnt_object( t1 ).
     t16 = t17.
-    t15 = t16->get_name(  ).
+    t15 = t16->get_name( ).
     t13 = t14->get( p0 = t15 ).
     t12 = t13.
     DATA t18 TYPE string.
     DATA t19 TYPE REF TO zif_lnt_object.
     DATA(t20) = CAST zif_lnt_object( t1 ).
     t19 = t20.
-    t18 = t19->get_type(  ).
+    t18 = t19->get_type( ).
     t11 = t12->get( p0 = t18 ).
     t10 = t11.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1875,10 +1875,10 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t39 TYPE REF TO zif_lnt_object.
     DATA(t40) = CAST zif_lnt_object( t1 ).
     t39 = t40.
-    t38 = t39->get_name(  ).
+    t38 = t39->get_name( ).
     t36 = t37->get( p0 = t38 ).
     t35 = t36.
-    t34 = t35->keys(  ).
+    t34 = t35->keys( ).
     t33 = lines( t34->items ).
     DATA(t41) = 1.
     t32 = xsdbool( t33 = t41 ).
@@ -1889,7 +1889,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t45 TYPE REF TO zif_lnt_object.
       DATA(t46) = CAST zif_lnt_object( t1 ).
       t45 = t46.
-      t44 = t45->get_name(  ).
+      t44 = t45->get_name( ).
       DELETE t43->entries WHERE k = t44.
       t42 = abap_true.
     ELSE.
@@ -1901,7 +1901,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t52 TYPE REF TO zif_lnt_object.
       DATA(t53) = CAST zif_lnt_object( t1 ).
       t52 = t53.
-      t51 = t52->get_name(  ).
+      t51 = t52->get_name( ).
       t49 = t50->get( p0 = t51 ).
       t48 = t49.
       DATA(t54) = VALUE abap_bool( ).
@@ -1922,7 +1922,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t62 TYPE REF TO zif_lnt_object.
         DATA(t63) = CAST zif_lnt_object( t1 ).
         t62 = t63.
-        t61 = t62->get_type(  ).
+        t61 = t62->get_type( ).
         DELETE t59->entries WHERE k = t61.
         t58 = abap_true.
         t54 = t58.
@@ -1939,10 +1939,10 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     DATA t71 TYPE REF TO zif_lnt_object.
     DATA(t72) = CAST zif_lnt_object( t1 ).
     t71 = t72.
-    t70 = t71->get_type(  ).
+    t70 = t71->get_type( ).
     t68 = t69->get( p0 = t70 ).
     t67 = t68.
-    t66 = t67->keys(  ).
+    t66 = t67->keys( ).
     t65 = lines( t66->items ).
     DATA(t73) = 1.
     t64 = xsdbool( t65 = t73 ).
@@ -1953,7 +1953,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t77 TYPE REF TO zif_lnt_object.
       DATA(t78) = CAST zif_lnt_object( t1 ).
       t77 = t78.
-      t76 = t77->get_type(  ).
+      t76 = t77->get_type( ).
       DELETE t75->entries WHERE k = t76.
       t74 = abap_true.
     ELSE.
@@ -1965,7 +1965,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t84 TYPE REF TO zif_lnt_object.
       DATA(t85) = CAST zif_lnt_object( t1 ).
       t84 = t85.
-      t83 = t84->get_type(  ).
+      t83 = t84->get_type( ).
       t81 = t82->get( p0 = t83 ).
       t80 = t81.
       DATA(t86) = VALUE abap_bool( ).
@@ -1986,7 +1986,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t94 TYPE REF TO zif_lnt_object.
         DATA(t95) = CAST zif_lnt_object( t1 ).
         t94 = t95.
-        t93 = t94->get_name(  ).
+        t93 = t94->get_name( ).
         DELETE t91->entries WHERE k = t93.
         t90 = abap_true.
         t86 = t90.
@@ -2134,7 +2134,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     RAISE EXCEPTION t39.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_registry( me->prs_instn_src_rgstry_ts_rgstry(  ) ).
+    DATA(t1) = CAST zcl_lnt_registry( me->prs_instn_src_rgstry_ts_rgstry( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -2165,90 +2165,90 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~parse.
-    result = me->parse(  ).
+    result = me->parse( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~parse_async.
-    result = me->parse_async(  i_input_967e = i_input_967e ).
+    result = me->parse_async( i_input_967e = i_input_967e ).
   ENDMETHOD.
   METHOD zif_lnt_registry~clear_feba.
-    me->clear_feba(  ).
+    me->clear_feba( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~add_dependencies.
-    result = me->add_dependencies(  i_files = i_files ).
+    result = me->add_dependencies( i_files = i_files ).
   ENDMETHOD.
   METHOD zif_lnt_registry~add_dependency.
-    result = me->add_dependency(  i_file = i_file ).
+    result = me->add_dependency( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_registry~remove_dependency.
-    me->remove_dependency(  i_obj_1ed0 = i_obj_1ed0 ).
+    me->remove_dependency( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_registry~is_dependency.
-    result = me->is_dependency(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->is_dependency( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_registry~is_file_dependency.
-    result = me->is_file_dependency(  i_filename = i_filename ).
+    result = me->is_file_dependency( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_registry~find_issues.
-    result = me->find_issues(  i_input_967e = i_input_967e ).
+    result = me->find_issues( i_input_967e = i_input_967e ).
   ENDMETHOD.
   METHOD zif_lnt_registry~find_issues_object.
-    result = me->find_issues_object(  i_iobj = i_iobj ).
+    result = me->find_issues_object( i_iobj = i_iobj ).
   ENDMETHOD.
   METHOD zif_lnt_registry~in_error_namespace.
-    result = me->in_error_namespace(  i_name = i_name ).
+    result = me->in_error_namespace( i_name = i_name ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_ddic_references.
-    result = me->get_ddic_references(  ).
+    result = me->get_ddic_references( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_msag_references.
-    result = me->get_msag_references(  ).
+    result = me->get_msag_references( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_macro_references.
-    result = me->get_macro_references(  ).
+    result = me->get_macro_references( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_config.
-    result = me->get_config(  ).
+    result = me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~set_config.
-    result = me->set_config(  i_conf = i_conf ).
+    result = me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_objects.
-    result = me->get_objects(  ).
+    result = me->get_objects( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_objects_by_type.
-    result = me->get_objects_by_type(  i_type_9913 = i_type_9913 ).
+    result = me->get_objects_by_type( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_object_count.
-    result = me->get_object_count(  ).
+    result = me->get_object_count( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_first_object.
-    result = me->get_first_object(  ).
+    result = me->get_first_object( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_object.
-    result = me->get_object(  i_type_9913 = i_type_9913 i_name = i_name ).
+    result = me->get_object( i_type_9913 = i_type_9913 i_name = i_name ).
   ENDMETHOD.
   METHOD zif_lnt_registry~find_object_for_file.
-    result = me->find_object_for_file(  i_file = i_file ).
+    result = me->find_object_for_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_registry~add_file.
-    result = me->add_file(  i_file = i_file ).
+    result = me->add_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_registry~update_file.
-    result = me->update_file(  i_file = i_file ).
+    result = me->update_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_registry~remove_file.
-    result = me->remove_file(  i_file = i_file ).
+    result = me->remove_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_registry~add_files_179c.
-    result = me->add_files_179c(  i_files = i_files ).
+    result = me->add_files_179c( i_files = i_files ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_file_by_name.
-    result = me->get_file_by_name(  i_filename = i_filename ).
+    result = me->get_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_registry~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
   METHOD zif_lnt_registry~add_files_one.
-    result = me->add_files_one(  i_x = i_x ).
+    result = me->add_files_one( i_x = i_x ).
   ENDMETHOD.
 ENDCLASS.

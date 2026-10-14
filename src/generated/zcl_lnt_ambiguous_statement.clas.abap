@@ -21,7 +21,7 @@ ENDCLASS.
 CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_ambgs_sttmnt_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_ambgs_sttmnt_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -165,12 +165,12 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
     RAISE EXCEPTION t4.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( me->gt_cn_in_sr_rl_am_st_ts_am_stt(  ) ).
+    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( me->gt_cn_in_sr_rl_am_st_ts_am_stt( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( me->gt_cn_in_sr_rl_am_st_ts_am_stt(  ) ).
+    DATA(t1) = CAST zcl_lnt_ambgs_sttmnt_cnf( me->gt_cn_in_sr_rl_am_st_ts_am_stt( ) ).
     result = t1.
 
   ENDMETHOD.

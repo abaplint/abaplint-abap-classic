@@ -13,7 +13,7 @@ CLASS zcl_lnt_double_space_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->keywords_835e = t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

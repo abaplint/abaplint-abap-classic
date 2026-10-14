@@ -9,7 +9,7 @@ CLASS zcl_lnt_mssg_typ_and_nmbr DEFINITION PUBLIC INHERITING FROM zcl_lnt_expres
 ENDCLASS.
 CLASS zcl_lnt_mssg_typ_and_nmbr IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.

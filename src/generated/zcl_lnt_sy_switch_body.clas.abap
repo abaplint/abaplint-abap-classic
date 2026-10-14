@@ -63,7 +63,7 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA(t28) = CAST zcl_lnt_expression_node( t20 ).
       t27 = t28.
-      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t22 = t26.
     ENDIF.
     t19 = t22.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       DATA t36 TYPE REF TO zcl_lnt_expression_node.
       DATA(t37) = CAST zcl_lnt_expression_node( t1 ).
       t36 = t37.
-      t35 = t36->get_first_token(  ).
+      t35 = t36->get_first_token( ).
       DATA(t38) = t29.
       DATA t39 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t39.

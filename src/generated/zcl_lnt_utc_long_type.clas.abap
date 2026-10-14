@@ -49,7 +49,7 @@ CLASS zcl_lnt_utc_long_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_u_l_t_t_ut_ln_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_u_l_t_t_ut_ln_ty( ) ).
     result = t1.
 
   ENDMETHOD.

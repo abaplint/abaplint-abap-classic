@@ -16,7 +16,7 @@ CLASS zcl_lnt_no_prefixes_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |^[LGM].?_|.
     me->data_56cc = t1.
     DATA(t2) = |^S.?_|.

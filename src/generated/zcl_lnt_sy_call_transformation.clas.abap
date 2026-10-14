@@ -22,7 +22,7 @@ CLASS zcl_lnt_sy_call_transformation IMPLEMENTATION.
     CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_set__a5effc789cff.
     CLEAR t8.
-    DATA(t9) = NEW zlnt_runtime_set__a5effc789cff(  ).
+    DATA(t9) = NEW zlnt_runtime_set__a5effc789cff( ).
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -233,6 +233,6 @@ CLASS zcl_lnt_sy_call_transformation IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

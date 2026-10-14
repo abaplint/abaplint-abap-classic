@@ -43,7 +43,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
         DATA t20 TYPE REF TO object.
         t20 = t19.
         t18 ?= t20.
-        t17 = t18->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+        t17 = t18->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         t16 = xsdbool( t17 IS BOUND AND t17 IS INSTANCE OF zcl_lnt_component_chain_simple ).
         IF t16 = abap_true.
           DATA t21 TYPE REF TO zcl_lnt_abstract_type.
@@ -75,7 +75,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
           DATA t34 TYPE REF TO object.
           t34 = t33.
           t32 ?= t34.
-          t31 = t32->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+          t31 = t32->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_dynamic ).
           IF t30 = abap_true.
             DATA t35 TYPE REF TO zcl_lnt_abstract_type.
@@ -91,7 +91,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
             DATA t42 TYPE REF TO object.
             t42 = t41.
             t40 ?= t42.
-            t39 = t40->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+            t39 = t40->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t38 = xsdbool( t39 IS BOUND AND t39 IS INSTANCE OF zcl_lnt_st_source ).
             t37 = t38.
             IF t38 = abap_false.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               DATA t47 TYPE REF TO object.
               t47 = t46.
               t45 ?= t47.
-              t44 = t45->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+              t44 = t45->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t43 = xsdbool( t44 IS BOUND AND t44 IS INSTANCE OF zcl_lnt_simple_source4 ).
               t37 = t43.
             ENDIF.
@@ -115,7 +115,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               DATA t52 TYPE REF TO object.
               t52 = t51.
               t50 ?= t52.
-              t49 = t50->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+              t49 = t50->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t48 = xsdbool( t49 IS BOUND AND t49 IS INSTANCE OF zcl_lnt_simple_source2 ).
               t36 = t48.
             ENDIF.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
                 DATA(t86) = CAST zcl_lnt_syntax_input( t2 ).
                 DATA t87 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t88) = CAST zcl_lnt_expression_node( t1 ).
-                t87 = t88->get_first_token(  ).
+                t87 = t88->get_first_token( ).
                 DATA(t89) = t81.
                 DATA t90 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                 CLEAR t90.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               DATA(t96) = CAST zcl_lnt_syntax_input( t2 ).
               DATA t97 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t98) = CAST zcl_lnt_expression_node( t1 ).
-              t97 = t98->get_first_token(  ).
+              t97 = t98->get_first_token( ).
               DATA(t99) = t91.
               DATA t100 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
               CLEAR t100.

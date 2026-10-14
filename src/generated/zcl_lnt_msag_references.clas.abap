@@ -18,14 +18,14 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__e91283f90792.
     DATA t2 TYPE REF TO zlnt_runtime_map__e91283f90792.
-    DATA(t3) = NEW zlnt_runtime_map__e91283f90792(  ).
+    DATA(t3) = NEW zlnt_runtime_map__e91283f90792( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__e91283f90792( t2 ).
     t1 = t4.
     me->name_number_index = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__ca02e874f6d5.
     DATA t6 TYPE REF TO zlnt_runtime_map__ca02e874f6d5.
-    DATA(t7) = NEW zlnt_runtime_map__ca02e874f6d5(  ).
+    DATA(t7) = NEW zlnt_runtime_map__ca02e874f6d5( ).
     t6 = t7.
     DATA(t8) = CAST zlnt_runtime_map__ca02e874f6d5( t6 ).
     t5 = t8.
@@ -117,7 +117,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
       DATA(t45) = t3.
       DATA t46 TYPE REF TO zlnt_runtime_map__68aa8717233d.
       DATA t47 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      DATA(t48) = NEW zlnt_runtime_map__68aa8717233d(  ).
+      DATA(t48) = NEW zlnt_runtime_map__68aa8717233d( ).
       t47 = t48.
       DATA(t49) = CAST zlnt_runtime_map__68aa8717233d( t47 ).
       t46 = t49.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t3) = CAST zif_lnt_object( t1 ).
-    t2 = t3->get_files(  ).
+    t2 = t3->get_files( ).
     DATA t4 TYPE REF TO zif_lnt_file.
     CLEAR t4.
     DATA t5 TYPE REF TO object.
@@ -189,7 +189,7 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
       DATA t6 TYPE string.
       DATA t7 TYPE string.
       DATA(t8) = CAST zif_lnt_file( t4 ).
-      t7 = t8->get_filename(  ).
+      t7 = t8->get_filename( ).
       t6 = t7.
       DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t9.
@@ -309,15 +309,15 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_msag_references~clear_feba.
-    me->clear_feba(  i_obj_1ed0 = i_obj_1ed0 ).
+    me->clear_feba( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_msag_references~add_using.
-    me->add_using(  i_filename = i_filename i_token = i_token i_message_class = i_message_class i_number = i_number ).
+    me->add_using( i_filename = i_filename i_token = i_token i_message_class = i_message_class i_number = i_number ).
   ENDMETHOD.
   METHOD zif_lnt_msag_references~list_by_filename.
-    result = me->list_by_filename(  i_filename = i_filename ).
+    result = me->list_by_filename( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_msag_references~list_by_message.
-    result = me->list_by_message(  i_message_class = i_message_class i_number = i_number ).
+    result = me->list_by_message( i_message_class = i_message_class i_number = i_number ).
   ENDMETHOD.
 ENDCLASS.

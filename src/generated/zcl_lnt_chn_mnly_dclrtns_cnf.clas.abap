@@ -19,7 +19,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_bas
 ENDCLASS.
 CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->definitions = t1.
     DATA(t2) = abap_true.

@@ -11,7 +11,7 @@ CLASS zcl_lnt_naming_rule_config DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic
 ENDCLASS.
 CLASS zcl_lnt_naming_rule_config IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |required|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.

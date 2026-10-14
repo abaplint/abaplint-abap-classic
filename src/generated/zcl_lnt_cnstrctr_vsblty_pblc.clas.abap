@@ -21,7 +21,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_cnstrc_vsblty_pblc_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_cnstrc_vsblty_pblc_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -189,12 +189,12 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb(  ) ).
+    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb(  ) ).
+    DATA(t1) = CAST zcl_lnt_cnstrc_vsblty_pblc_cnf( me->g_c_i_s_r_cn_vs_pb_ts_cn_vs_pb( ) ).
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -220,21 +220,21 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

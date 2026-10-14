@@ -9,7 +9,7 @@ CLASS zcl_lnt_slct_sngl_fll_ky_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_bas
 ENDCLASS.
 CLASS zcl_lnt_slct_sngl_fll_ky_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->allow_pseudo = t1.
   ENDMETHOD.

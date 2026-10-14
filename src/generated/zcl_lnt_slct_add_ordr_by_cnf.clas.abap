@@ -9,7 +9,7 @@ CLASS zcl_lnt_slct_add_ordr_by_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_bas
 ENDCLASS.
 CLASS zcl_lnt_slct_add_ordr_by_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->skip_for_all_entries = t1.
   ENDMETHOD.

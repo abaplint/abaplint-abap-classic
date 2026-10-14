@@ -192,7 +192,7 @@ CLASS zcl_lnt_sy_function_parameters IMPLEMENTATION.
             DATA t90 TYPE REF TO zcl_lnt_expression_node.
             DATA(t91) = CAST zcl_lnt_expression_node( t56 ).
             t90 = t91.
-            t89 = t90->concat_tokens(  ).
+            t89 = t90->concat_tokens( ).
             DATA(t92) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t92->has = abap_true.
             t92->value = t89.
@@ -339,7 +339,7 @@ CLASS zcl_lnt_sy_function_parameters IMPLEMENTATION.
             DATA t150 TYPE REF TO zcl_lnt_expression_node.
             DATA(t151) = CAST zcl_lnt_expression_node( t56 ).
             t150 = t151.
-            t149 = t150->concat_tokens(  ).
+            t149 = t150->concat_tokens( ).
             DATA(t152) = strlen( t148 ).
             t147 = |{ t148 }{ t149 }|.
             DATA(t153) = |" cannot be modified, it is readonly|.
@@ -355,7 +355,7 @@ CLASS zcl_lnt_sy_function_parameters IMPLEMENTATION.
             DATA t160 TYPE REF TO zcl_lnt_expression_node.
             DATA(t161) = CAST zcl_lnt_expression_node( t56 ).
             t160 = t161.
-            t159 = t160->get_first_token(  ).
+            t159 = t160->get_first_token( ).
             DATA(t162) = t145.
             DATA t163 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t163.

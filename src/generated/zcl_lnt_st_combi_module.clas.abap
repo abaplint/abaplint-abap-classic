@@ -773,7 +773,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = NEW zcl_lnt_fail_combinator(  ).
+    DATA(t1) = NEW zcl_lnt_fail_combinator( ).
     result = t1.
 
   ENDMETHOD.
@@ -809,7 +809,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
       zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_st_combi_module=>also_in_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
@@ -827,7 +827,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
     DATA t7 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
-    DATA(t8) = NEW zlnt_runtime_map__be9b74e2658e(  ).
+    DATA(t8) = NEW zlnt_runtime_map__be9b74e2658e( ).
     t7 = t8.
     DATA(t9) = CAST zlnt_runtime_map__be9b74e2658e( t7 ).
     t6 = t9.
@@ -837,7 +837,7 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_map__e0d0c31d82d4.
     DATA t11 TYPE REF TO zlnt_runtime_map__e0d0c31d82d4.
-    DATA(t12) = NEW zlnt_runtime_map__e0d0c31d82d4(  ).
+    DATA(t12) = NEW zlnt_runtime_map__e0d0c31d82d4( ).
     t11 = t12.
     DATA(t13) = CAST zlnt_runtime_map__e0d0c31d82d4( t11 ).
     t10 = t13.

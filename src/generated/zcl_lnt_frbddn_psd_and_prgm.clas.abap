@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_frbdd_psd_and_prgm_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_frbdd_psd_and_prgm_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -153,12 +153,12 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr(  ) ).
+    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr(  ) ).
+    DATA(t1) = CAST zcl_lnt_frbdd_psd_and_prgm_cnf( me->g_c_i_s_r_f_p_a_p_t_f_ps_an_pr( ) ).
     result = t1.
 
   ENDMETHOD.

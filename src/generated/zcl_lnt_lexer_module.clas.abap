@@ -44,7 +44,7 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     ENDIF.
     zlnt_builtin_init_109a3f357d7e = abap_true.
     DATA t1 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t2) = NEW zlnt_runtime_set__6ef4c9be248b(  ).
+    DATA(t2) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     DATA(t4) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
@@ -120,7 +120,7 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     DATA(t50) = CAST zlnt_runtime_set__6ef4c9be248b( t1 ).
     zcl_lnt_lexer_module=>splits = t50.
     DATA t51 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t52) = NEW zlnt_runtime_set__6ef4c9be248b(  ).
+    DATA(t52) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t51 = t52.
     DATA t53 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     DATA(t54) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
@@ -172,7 +172,7 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     DATA(t84) = CAST zlnt_runtime_set__6ef4c9be248b( t51 ).
     zcl_lnt_lexer_module=>bufs = t84.
     DATA t85 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
-    DATA(t86) = NEW zlnt_runtime_set__6ef4c9be248b(  ).
+    DATA(t86) = NEW zlnt_runtime_set__6ef4c9be248b( ).
     t85 = t86.
     DATA t87 TYPE REF TO zlnt_runtime_set__6ef4c9be248b.
     DATA(t88) = CAST zlnt_runtime_set__6ef4c9be248b( t85 ).

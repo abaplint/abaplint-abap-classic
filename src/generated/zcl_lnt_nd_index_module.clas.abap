@@ -18,7 +18,7 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
     zcl_lnt_nd_index_module=>ns = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t2.

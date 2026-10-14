@@ -12,8 +12,8 @@ ENDCLASS.
 CLASS zcl_lnt_st_with_loop IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = NEW zcl_lnt_st_with(  ).
-    t1 = t2->get_matcher(  ).
+    DATA(t2) = NEW zcl_lnt_st_with( ).
+    t1 = t2->get_matcher( ).
     result = t1.
 
   ENDMETHOD.
@@ -27,7 +27,7 @@ CLASS zcl_lnt_st_with_loop IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -127,7 +127,7 @@ CLASS zcl_lnt_packed_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_pc_ty_ts_pc_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_pc_ty_ts_pc_ty( ) ).
     result = t1.
 
   ENDMETHOD.

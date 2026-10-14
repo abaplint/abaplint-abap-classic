@@ -85,7 +85,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
     DATA t36 TYPE REF TO zcl_lnt_abstract_token.
     DATA t37 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t38) = CAST zcl_lnt_expression_node( t1 ).
-    t37 = t38->get_first_token(  ).
+    t37 = t38->get_first_token( ).
     t36 = t37.
     DATA t39 TYPE string.
     DATA(t40) = CAST zcl_lnt_abstract_token( t36 ).
@@ -127,7 +127,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t54 TYPE REF TO zcl_lnt_expression_node.
         DATA(t55) = CAST zcl_lnt_expression_node( t45 ).
         t54 = t55.
-        t53 = t54->concat_tokens(  ).
+        t53 = t54->concat_tokens( ).
         DATA(t56) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t56->has = abap_true.
         t56->value = t53.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t68 TYPE REF TO zcl_lnt_expression_node.
         DATA(t69) = CAST zcl_lnt_expression_node( t59 ).
         t68 = t69.
-        t67 = t68->concat_tokens(  ).
+        t67 = t68->concat_tokens( ).
         DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t70->has = abap_true.
         t70->value = t67.
@@ -212,7 +212,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
           DATA t89 TYPE REF TO zcl_lnt_expression_node.
           DATA(t90) = CAST zcl_lnt_expression_node( t80 ).
           t89 = t90.
-          t88 = t89->concat_tokens(  ).
+          t88 = t89->concat_tokens( ).
           DATA(t91) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t91->has = abap_true.
           t91->value = t88.
@@ -426,14 +426,14 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t165 TYPE REF TO zif_lnt_registry.
         DATA(t166) = CAST zcl_lnt_current_scope( t161 ).
         t165 = t166->reg.
-        t164 = t165->get_msag_references(  ).
+        t164 = t165->get_msag_references( ).
         t160 = t164.
         DATA t167 TYPE string.
         DATA(t168) = CAST zcl_lnt_syntax_input( t2 ).
         t167 = t168->filename.
         DATA t169 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t170) = CAST zcl_lnt_expression_node( t1 ).
-        t169 = t170->get_first_token(  ).
+        t169 = t170->get_first_token( ).
         DATA(t171) = t146.
         DATA t172 TYPE string.
         DATA(t173) = CAST zlnt_runtime_opti_4ba3bdccd169( t57 ).
@@ -467,7 +467,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t185 TYPE REF TO zcl_lnt_expression_node.
         DATA(t186) = CAST zcl_lnt_expression_node( t176 ).
         t185 = t186.
-        t184 = t185->concat_tokens(  ).
+        t184 = t185->concat_tokens( ).
         DATA(t187) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t187->has = abap_true.
         t187->value = t184.
@@ -557,7 +557,7 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t221 TYPE REF TO zcl_lnt_expression_node.
         DATA(t222) = CAST zcl_lnt_expression_node( t212 ).
         t221 = t222.
-        t220 = t221->concat_tokens(  ).
+        t220 = t221->concat_tokens( ).
         DATA(t223) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t223->has = abap_true.
         t223->value = t220.
@@ -627,14 +627,14 @@ CLASS zcl_lnt_sy_message_source IMPLEMENTATION.
         DATA t243 TYPE REF TO zif_lnt_registry.
         DATA(t244) = CAST zcl_lnt_current_scope( t239 ).
         t243 = t244->reg.
-        t242 = t243->get_msag_references(  ).
+        t242 = t243->get_msag_references( ).
         t238 = t242.
         DATA t245 TYPE string.
         DATA(t246) = CAST zcl_lnt_syntax_input( t2 ).
         t245 = t246->filename.
         DATA t247 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t248) = CAST zcl_lnt_expression_node( t1 ).
-        t247 = t248->get_first_token(  ).
+        t247 = t248->get_first_token( ).
         DATA t249 TYPE string.
         DATA(t250) = CAST zlnt_runtime_opti_4ba3bdccd169( t208 ).
         t249 = t250->value.

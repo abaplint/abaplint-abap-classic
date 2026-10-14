@@ -15,7 +15,7 @@ ENDCLASS.
 CLASS zcl_lnt_indent IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = CAST zcl_lnt_iindentation_options( i_options ).
-    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
     me->global_classes = t2.
     DATA t3 TYPE REF TO zcl_lnt_iindentation_options.
     CLEAR t3.

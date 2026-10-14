@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_global_class IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_global_class_conf(  ).
+    DATA(t1) = NEW zcl_lnt_global_class_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -139,12 +139,12 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_global_class_conf( me->gt_cn_in_sr_rl_gl_cl_ts_gl_cls(  ) ).
+    DATA(t1) = CAST zcl_lnt_global_class_conf( me->gt_cn_in_sr_rl_gl_cl_ts_gl_cls( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_global_class_conf( me->gt_cn_in_sr_rl_gl_cl_ts_gl_cls(  ) ).
+    DATA(t1) = CAST zcl_lnt_global_class_conf( me->gt_cn_in_sr_rl_gl_cl_ts_gl_cls( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -39,7 +39,7 @@ CLASS zcl_lnt_sy_inline_data IMPLEMENTATION.
       DATA t15 TYPE REF TO zcl_lnt_expression_node.
       DATA(t16) = CAST zcl_lnt_expression_node( t6 ).
       t15 = t16.
-      t14 = t15->get_first_token(  ).
+      t14 = t15->get_first_token( ).
       t10 = t14.
     ENDIF.
     t5 = t10.
@@ -153,7 +153,7 @@ CLASS zcl_lnt_sy_inline_data IMPLEMENTATION.
             DATA(t71) = CAST zcl_lnt_syntax_input( t2 ).
             DATA t72 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t73) = CAST zcl_lnt_expression_node( t1 ).
-            t72 = t73->get_first_token(  ).
+            t72 = t73->get_first_token( ).
             DATA(t74) = t66.
             DATA t75 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t75.
@@ -167,7 +167,7 @@ CLASS zcl_lnt_sy_inline_data IMPLEMENTATION.
       DATA t77 TYPE REF TO zcl_lnt_abstract_type.
       DATA(t78) = CAST zcl_lnt_abstract_type( t3 ).
       t77 = t78.
-      t76 = t77->is_generic(  ).
+      t76 = t77->is_generic( ).
       IF t76 = abap_true.
         DATA t79 TYPE string.
         DATA t80 TYPE string.
@@ -189,7 +189,7 @@ CLASS zcl_lnt_sy_inline_data IMPLEMENTATION.
         DATA(t90) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t91 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t92) = CAST zcl_lnt_expression_node( t1 ).
-        t91 = t92->get_first_token(  ).
+        t91 = t92->get_first_token( ).
         DATA(t93) = t79.
         DATA t94 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t94.

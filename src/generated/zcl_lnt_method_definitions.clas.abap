@@ -20,14 +20,14 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t3 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
     DATA t4 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
-    DATA(t5) = NEW zlnt_runtime_map__df7ea9ca9d2a(  ).
+    DATA(t5) = NEW zlnt_runtime_map__df7ea9ca9d2a( ).
     t4 = t5.
     DATA(t6) = CAST zlnt_runtime_map__df7ea9ca9d2a( t4 ).
     t3 = t6.
     me->all = t3.
     DATA t7 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
     DATA t8 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
-    DATA(t9) = NEW zlnt_runtime_map__df7ea9ca9d2a(  ).
+    DATA(t9) = NEW zlnt_runtime_map__df7ea9ca9d2a( ).
     t8 = t9.
     DATA(t10) = CAST zlnt_runtime_map__df7ea9ca9d2a( t8 ).
     t7 = t10.
@@ -43,7 +43,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t4) = CAST zlnt_runtime_map__df7ea9ca9d2a( me->all ).
-    t3 = t4->keys(  ).
+    t3 = t4->keys( ).
     DATA(t5) = VALUE string( ).
     LOOP AT t3->items INTO t5.
       DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
@@ -490,7 +490,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
         DATA t50 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t50.
         DATA(t51) = CAST zcl_lnt_statement_node( t1 ).
-        t50 = t51->get_first_token(  ).
+        t50 = t51->get_first_token( ).
         DATA(t52) = VALUE string( ).
         DATA(t53) = CAST zcl_lnt_builtin_e8b3bd7e( t45 ).
         t52 = t53->message_25cb.
@@ -510,9 +510,9 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definitions~get_all.
-    result = me->get_all(  ).
+    result = me->get_all( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definitions~get_by_name.
-    result = me->get_by_name(  i_name = i_name ).
+    result = me->get_by_name( i_name = i_name ).
   ENDMETHOD.
 ENDCLASS.

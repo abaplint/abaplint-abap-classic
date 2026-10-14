@@ -48,7 +48,7 @@ CLASS zcl_lnt_gnrc_objct_rfrnc_typ IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_g_o_r_t_t_g_o_r(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_g_o_r_t_t_g_o_r( ) ).
     result = t1.
 
   ENDMETHOD.

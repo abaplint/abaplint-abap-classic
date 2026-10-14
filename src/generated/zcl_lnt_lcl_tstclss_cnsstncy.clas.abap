@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_lcl_tstcls_cnsstnc_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_lcl_tstcls_cnsstnc_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -83,12 +83,12 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_lcl_tstcls_cnsstnc_cnf( me->g_c_i_s_r_lc_ts_cn_ts_lc_ts_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_lcl_tstcls_cnsstnc_cnf( me->g_c_i_s_r_lc_ts_cn_ts_lc_ts_cn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_lcl_tstcls_cnsstnc_cnf( me->g_c_i_s_r_lc_ts_cn_ts_lc_ts_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_lcl_tstcls_cnsstnc_cnf( me->g_c_i_s_r_lc_ts_cn_ts_lc_ts_cn( ) ).
     result = t1.
 
   ENDMETHOD.

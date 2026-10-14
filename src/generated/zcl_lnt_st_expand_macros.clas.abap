@@ -137,7 +137,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       DATA t26 TYPE REF TO zif_lnt_registry.
       DATA(t27) = CAST zif_lnt_registry( t19 ).
       t26 = t27.
-      t25 = t26->get_macro_references(  ).
+      t25 = t26->get_macro_references( ).
       t21 = t25.
     ENDIF.
     t18 = t21.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         t37 = t38.
         DATA t39 TYPE string.
         DATA(t40) = CAST zif_lnt_file( t2 ).
-        t39 = t40->get_filename(  ).
+        t39 = t40->get_filename( ).
         t37->clear_feba( i_filename = t39 ).
       ENDIF.
       DATA(t41) = abap_false.
@@ -197,7 +197,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       DATA t53 TYPE REF TO zif_lnt_statement.
       DATA t54 TYPE REF TO zif_lnt_statement.
       DATA(t55) = CAST zcl_lnt_statement_node( t48 ).
-      t54 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      t54 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t53 = t54.
       DATA t56 TYPE abap_bool.
       DATA(t57) = CAST zif_lnt_statement( t53 ).
@@ -210,7 +210,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           DATA t60 TYPE REF TO zcl_lnt_abstract_token.
           DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA(t62) = CAST zcl_lnt_statement_node( t48 ).
-          t61 = t62->get_tokens(  ).
+          t61 = t62->get_tokens( ).
           DATA t63 TYPE REF TO object.
           CLEAR t63.
           READ TABLE t61->items INDEX 2 INTO t63.
@@ -230,7 +230,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           DATA t68 TYPE REF TO zcl_lnt_abstract_token.
           DATA t69 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t70) = CAST zcl_lnt_statement_node( t48 ).
-          t69 = t70->get_first_token(  ).
+          t69 = t70->get_first_token( ).
           t68 = t69.
           DATA t71 TYPE REF TO zcl_lnt_position.
           DATA(t72) = CAST zcl_lnt_abstract_token( t68 ).
@@ -277,7 +277,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             DATA t88 TYPE REF TO zcl_lnt_expression_node.
             DATA(t89) = CAST zcl_lnt_expression_node( t79 ).
             t88 = t89.
-            t87 = t88->concat_tokens(  ).
+            t87 = t88->concat_tokens( ).
             DATA(t90) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t90->has = abap_true.
             t90->value = t87.
@@ -386,7 +386,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             DATA t131 TYPE REF TO zcl_lnt_ob_program.
             DATA(t132) = CAST zcl_lnt_ob_program( t91 ).
             t131 = t132.
-            t130 = t131->get_main_abap_file(  ).
+            t130 = t131->get_main_abap_file( ).
             t129 = t130.
             DATA t133 TYPE abap_bool.
             DATA(t134) = CAST zcl_lnt_abap_file( t129 ).
@@ -457,7 +457,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
               DATA(t166) = CAST zlnt_runtime_arra_c22708faf2e3( t15 ).
               DATA t167 TYPE string.
               DATA(t168) = CAST zif_lnt_file( t2 ).
-              t167 = t168->get_filename(  ).
+              t167 = t168->get_filename( ).
               t159->add_macro( i_name = t160 i_contents = t166 i_filename = t167 ).
               DATA(t169) = VALUE abap_bool( ).
               DATA t170 TYPE REF TO zif_lnt_macro_references.
@@ -478,7 +478,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 DATA t178 TYPE REF TO zcl_lnt_ifilename_and_token.
                 DATA t179 TYPE string.
                 DATA(t180) = CAST zif_lnt_file( t2 ).
-                t179 = t180->get_filename(  ).
+                t179 = t180->get_filename( ).
                 DATA t181 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t182) = CAST zcl_lnt_abstract_token( t11 ).
                 t181 = t182.
@@ -491,7 +491,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 DATA t186 TYPE REF TO zcl_lnt_abstract_token.
                 DATA t187 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t188) = CAST zcl_lnt_statement_node( t48 ).
-                t187 = t188->get_last_token(  ).
+                t187 = t188->get_last_token( ).
                 t186 = t187.
                 DATA t189 TYPE REF TO zcl_lnt_position.
                 CLEAR t189.
@@ -549,7 +549,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 DATA(t214) = t42.
                 DATA t215 TYPE REF TO zcl_lnt_statement_node.
                 DATA t216 TYPE REF TO zcl_lnt_statement_node.
-                DATA(t217) = NEW zcl_lnt_macro_content(  ).
+                DATA(t217) = NEW zcl_lnt_macro_content( ).
                 DATA t218 TYPE REF TO zcl_lnt_abstract_token.
                 CLEAR t218.
                 DATA t219 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -558,7 +558,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 DATA t220 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t221 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA(t222) = CAST zcl_lnt_statement_node( t48 ).
-                t221 = t222->get_tokens(  ).
+                t221 = t222->get_tokens( ).
                 t220 = me->tokens_to_nodes( i_tokens = t221 ).
                 t215 = t216->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = t220 ).
                 t214 = t214 + 1.
@@ -605,7 +605,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       CLEAR t6.
       DATA(t7) = abap_true.
       IF t7 = abap_true.
-        DATA(t8) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+        DATA(t8) = NEW zlnt_runtime_set__1827558fd4c7( ).
         t6 = t8.
       ELSE.
         DATA t9 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
@@ -644,7 +644,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       DATA t23 TYPE REF TO zif_lnt_registry.
       DATA(t24) = CAST zif_lnt_registry( t16 ).
       t23 = t24.
-      t22 = t23->get_macro_references(  ).
+      t22 = t23->get_macro_references( ).
       t18 = t22.
     ENDIF.
     t15 = t18.
@@ -659,7 +659,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       DATA t28 TYPE REF TO zif_lnt_statement.
       DATA t29 TYPE REF TO zif_lnt_statement.
       DATA(t30) = CAST zcl_lnt_statement_node( t26 ).
-      t29 = t30->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      t29 = t30->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t28 = t29.
       DATA t31 TYPE abap_bool.
       DATA t32 TYPE abap_bool.
@@ -677,7 +677,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t39) = CAST zcl_lnt_statement_node( t26 ).
-        t38 = t39->get_tokens(  ).
+        t38 = t39->get_tokens( ).
         t37 = zcl_lnt_st_expand_macros=>find_name( i_tokens = t38 ).
         t36 = t37.
         DATA(t40) = VALUE abap_bool( ).
@@ -766,7 +766,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
               t76 = t77->value.
               DATA t78 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t79) = CAST zcl_lnt_statement_node( t26 ).
-              t78 = t79->get_first_token(  ).
+              t78 = t79->get_first_token( ).
               t75 = NEW zcl_lnt_ifilename_and_token( i_filename = t76 i_token = t78 ).
               t73->add_reference( i_ref = t75 ).
             ENDIF.
@@ -777,7 +777,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           DATA(t81) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
           DATA t82 TYPE REF TO zcl_lnt_statement_node.
           DATA t83 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t84) = NEW zcl_lnt_macro_call(  ).
+          DATA(t84) = NEW zcl_lnt_macro_call( ).
           DATA t85 TYPE REF TO zcl_lnt_abstract_token.
           DATA t86 TYPE REF TO zcl_lnt_statement_node.
           DATA(t87) = CAST zcl_lnt_statement_node( t26 ).
@@ -792,7 +792,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           DATA t91 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA(t93) = CAST zcl_lnt_statement_node( t26 ).
-          t92 = t93->get_tokens(  ).
+          t92 = t93->get_tokens( ).
           t91 = me->tokens_to_nodes( i_tokens = t92 ).
           t82 = t83->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = t91 ).
           APPEND t82 TO t81->items.
@@ -893,7 +893,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           ELSE.
             DATA t137 TYPE REF TO zcl_lnt_statement_node.
             DATA t138 TYPE REF TO zcl_lnt_statement_node.
-            DATA(t139) = NEW zcl_lnt_macro_recursion(  ).
+            DATA(t139) = NEW zcl_lnt_macro_recursion( ).
             DATA t140 TYPE REF TO zcl_lnt_abstract_token.
             DATA t141 TYPE REF TO zcl_lnt_statement_node.
             DATA(t142) = CAST zcl_lnt_statement_node( t26 ).
@@ -912,7 +912,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             DATA t149 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t150 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA(t151) = CAST zcl_lnt_statement_node( t26 ).
-            t150 = t151->get_tokens(  ).
+            t150 = t151->get_tokens( ).
             t149 = me->tokens_to_nodes( i_tokens = t150 ).
             t147 = t148->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = t149 ).
             APPEND t147 TO t146->items.

@@ -20,14 +20,14 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__1966acad182d.
     DATA t2 TYPE REF TO zlnt_runtime_map__1966acad182d.
-    DATA(t3) = NEW zlnt_runtime_map__1966acad182d(  ).
+    DATA(t3) = NEW zlnt_runtime_map__1966acad182d( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__1966acad182d( t2 ).
     t1 = t4.
     me->name_type_index = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__1966acad182d.
     DATA t6 TYPE REF TO zlnt_runtime_map__1966acad182d.
-    DATA(t7) = NEW zlnt_runtime_map__1966acad182d(  ).
+    DATA(t7) = NEW zlnt_runtime_map__1966acad182d( ).
     t6 = t7.
     DATA(t8) = CAST zlnt_runtime_map__1966acad182d( t6 ).
     t5 = t8.
@@ -65,7 +65,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t11 TYPE string.
     DATA t12 TYPE string.
     DATA(t13) = CAST zif_lnt_object( t1 ).
-    t12 = t13->get_name(  ).
+    t12 = t13->get_name( ).
     DATA(t14) = strlen( t12 ).
     t11 = t12.
     IF t11 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA(t17) = CAST zif_lnt_object( t1 ).
-    t16 = t17->get_type(  ).
+    t16 = t17->get_type( ).
     t15 = t16.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
       DATA(t29) = t10.
       DATA t30 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
       DATA t31 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-      DATA(t32) = NEW zlnt_runtime_map__8a73eae8287f(  ).
+      DATA(t32) = NEW zlnt_runtime_map__8a73eae8287f( ).
       t31 = t32.
       DATA(t33) = CAST zlnt_runtime_map__8a73eae8287f( t31 ).
       t30 = t33.
@@ -217,7 +217,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
         t85 = t86->value.
         DATA t89 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
         DATA t90 TYPE REF TO zlnt_runtime_map__8a73eae8287f.
-        DATA(t91) = NEW zlnt_runtime_map__8a73eae8287f(  ).
+        DATA(t91) = NEW zlnt_runtime_map__8a73eae8287f( ).
         t90 = t91.
         DATA(t92) = CAST zlnt_runtime_map__8a73eae8287f( t90 ).
         t89 = t92.
@@ -372,7 +372,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t7 TYPE string.
     DATA t8 TYPE string.
     DATA(t9) = CAST zif_lnt_object( t3 ).
-    t8 = t9->get_name(  ).
+    t8 = t9->get_name( ).
     DATA(t10) = strlen( t8 ).
     t7 = t8.
     IF t7 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -384,7 +384,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t11 TYPE string.
     DATA t12 TYPE string.
     DATA(t13) = CAST zif_lnt_object( t3 ).
-    t12 = t13->get_type(  ).
+    t12 = t13->get_type( ).
     t11 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t14.
@@ -541,7 +541,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
           DATA(t81) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
           t80 = t81.
           DATA t82 TYPE REF TO object.
-          t82 = t80->pop(  ).
+          t82 = t80->pop( ).
           t79 ?= t82.
         ENDIF.
       ENDIF.
@@ -550,7 +550,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t84 TYPE string.
     DATA t85 TYPE string.
     DATA(t86) = CAST zif_lnt_object( t1 ).
-    t85 = t86->get_name(  ).
+    t85 = t86->get_name( ).
     DATA(t87) = strlen( t85 ).
     t84 = t85.
     IF t84 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -562,7 +562,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t88 TYPE string.
     DATA t89 TYPE string.
     DATA(t90) = CAST zif_lnt_object( t1 ).
-    t89 = t90->get_type(  ).
+    t89 = t90->get_type( ).
     t88 = t89.
     DATA(t91) = VALUE abap_bool( ).
     DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -623,7 +623,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t3 TYPE string.
     DATA t4 TYPE string.
     DATA(t5) = CAST zif_lnt_object( t1 ).
-    t4 = t5->get_name(  ).
+    t4 = t5->get_name( ).
     DATA(t6) = strlen( t4 ).
     t3 = t4.
     IF t3 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -635,7 +635,7 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     DATA t7 TYPE string.
     DATA t8 TYPE string.
     DATA(t9) = CAST zif_lnt_object( t1 ).
-    t8 = t9->get_type(  ).
+    t8 = t9->get_type( ).
     t7 = t8.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t10.
@@ -715,21 +715,21 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~set_using.
-    me->set_using(  i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
+    me->set_using( i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~add_using.
-    me->add_using(  i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
+    me->add_using( i_obj_1ed0 = i_obj_1ed0 i_using = i_using ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~clear_feba.
-    me->clear_feba(  i_obj_1ed0 = i_obj_1ed0 ).
+    me->clear_feba( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~list_using.
-    result = me->list_using(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->list_using( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~list_by_filename.
-    result = me->list_by_filename(  i_filename = i_filename i_line = i_line ).
+    result = me->list_by_filename( i_filename = i_filename i_line = i_line ).
   ENDMETHOD.
   METHOD zif_lnt_ddic_references~list_where_used.
-    result = me->list_where_used(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->list_where_used( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
 ENDCLASS.

@@ -503,7 +503,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
       DATA t225 TYPE REF TO zcl_lnt_expression_node.
       DATA(t226) = CAST zcl_lnt_expression_node( t215 ).
       t225 = t226.
-      t224 = t225->concat_tokens(  ).
+      t224 = t225->concat_tokens( ).
       t223 = t224.
       DATA t227 TYPE abap_bool.
       DATA t228 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -538,7 +538,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
         DATA t244 TYPE REF TO zcl_lnt_expression_node.
         DATA(t245) = CAST zcl_lnt_expression_node( t215 ).
         t244 = t245.
-        t243 = t244->get_first_token(  ).
+        t243 = t244->get_first_token( ).
         DATA(t246) = t237.
         DATA t247 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t247.
@@ -551,7 +551,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
       DATA t251 TYPE REF TO zcl_lnt_expression_node.
       DATA(t252) = CAST zcl_lnt_expression_node( t215 ).
       t251 = t252.
-      t250 = t251->concat_tokens(  ).
+      t250 = t251->concat_tokens( ).
       t249 = t250.
       DATA t253 TYPE abap_bool.
       DATA t254 TYPE i.
@@ -569,7 +569,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
         DATA t262 TYPE REF TO zcl_lnt_expression_node.
         DATA(t263) = CAST zcl_lnt_expression_node( t215 ).
         t262 = t263.
-        t261 = t262->concat_tokens(  ).
+        t261 = t262->concat_tokens( ).
         DATA(t264) = strlen( t260 ).
         t259 = |{ t260 }{ t261 }|.
         t258 = t259.
@@ -582,7 +582,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
         DATA t270 TYPE REF TO zcl_lnt_expression_node.
         DATA(t271) = CAST zcl_lnt_expression_node( t215 ).
         t270 = t271.
-        t269 = t270->get_first_token(  ).
+        t269 = t270->get_first_token( ).
         DATA(t272) = t258.
         DATA t273 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t273.
@@ -594,7 +594,7 @@ CLASS zcl_lnt_sy_statem_constant IMPLEMENTATION.
       DATA t276 TYPE REF TO zcl_lnt_expression_node.
       DATA(t277) = CAST zcl_lnt_expression_node( t215 ).
       t276 = t277.
-      t275 = t276->get_first_token(  ).
+      t275 = t276->get_first_token( ).
       DATA t278 TYPE string.
       DATA(t279) = CAST zcl_lnt_syntax_input( t2 ).
       t278 = t279->filename.

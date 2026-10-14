@@ -150,7 +150,7 @@ CLASS zcl_lnt_sy_split IMPLEMENTATION.
             DATA(t70) = CAST zcl_lnt_syntax_input( t2 ).
             DATA t71 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t72) = CAST zcl_lnt_expression_node( t33 ).
-            t71 = t72->get_first_token(  ).
+            t71 = t72->get_first_token( ).
             DATA(t73) = t65.
             DATA t74 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t74.
@@ -207,7 +207,7 @@ CLASS zcl_lnt_sy_split IMPLEMENTATION.
           DATA(t98) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t99 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t100) = CAST zcl_lnt_statement_node( t1 ).
-          t99 = t100->get_first_token(  ).
+          t99 = t100->get_first_token( ).
           DATA(t101) = t93.
           DATA t102 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t102.
@@ -262,6 +262,6 @@ CLASS zcl_lnt_sy_split IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

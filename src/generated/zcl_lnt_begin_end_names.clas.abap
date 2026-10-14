@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_begin_end_names IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_begin_end_names_conf(  ).
+    DATA(t1) = NEW zcl_lnt_begin_end_names_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -145,12 +145,12 @@ CLASS zcl_lnt_begin_end_names IMPLEMENTATION.
     RAISE EXCEPTION t6.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_begin_end_names_conf( me->g_c_i_s_r_bg_en_nm_ts_bg_en_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_begin_end_names_conf( me->g_c_i_s_r_bg_en_nm_ts_bg_en_nm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_begin_end_names_conf( me->g_c_i_s_r_bg_en_nm_ts_bg_en_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_begin_end_names_conf( me->g_c_i_s_r_bg_en_nm_ts_bg_en_nm( ) ).
     result = t1.
 
   ENDMETHOD.

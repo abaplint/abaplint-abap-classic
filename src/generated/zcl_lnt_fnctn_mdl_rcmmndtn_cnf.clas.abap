@@ -9,7 +9,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_b
 ENDCLASS.
 CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

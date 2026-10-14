@@ -161,7 +161,7 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
       DATA(t73) = CAST zcl_lnt_syntax_input( t4 ).
       DATA t74 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t75) = CAST zcl_lnt_expression_node( t1 ).
-      t74 = t75->get_first_token(  ).
+      t74 = t75->get_first_token( ).
       DATA(t76) = t68.
       DATA t77 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t77.

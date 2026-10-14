@@ -282,8 +282,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t98 TYPE REF TO zif_lnt_interface_definition.
     DATA(t99) = CAST zif_lnt_interface_definition( t3 ).
     t98 = t99.
-    t97 = t98->get_type_definitions(  ).
-    t96 = t97->get_all(  ).
+    t97 = t98->get_type_definitions( ).
+    t96 = t97->get_all( ).
     DATA t100 TYPE REF TO zcl_lnt_type_definitions_entry.
     CLEAR t100.
     DATA t101 TYPE REF TO object.
@@ -397,8 +397,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t149 TYPE REF TO zif_lnt_interface_definition.
     DATA(t150) = CAST zif_lnt_interface_definition( t3 ).
     t149 = t150.
-    t148 = t149->get_attributes(  ).
-    t147 = t148->get_constants(  ).
+    t148 = t149->get_attributes( ).
+    t147 = t148->get_constants( ).
     DATA t151 TYPE string.
     DATA(t152) = t1.
     DATA(t153) = |~|.
@@ -411,8 +411,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t158 TYPE REF TO zif_lnt_interface_definition.
     DATA(t159) = CAST zif_lnt_interface_definition( t3 ).
     t158 = t159.
-    t157 = t158->get_attributes(  ).
-    t156 = t157->get_static(  ).
+    t157 = t158->get_attributes( ).
+    t156 = t157->get_static( ).
     DATA t160 TYPE string.
     DATA(t161) = t1.
     DATA(t162) = |~|.
@@ -425,8 +425,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t167 TYPE REF TO zif_lnt_interface_definition.
     DATA(t168) = CAST zif_lnt_interface_definition( t3 ).
     t167 = t168.
-    t166 = t167->get_attributes(  ).
-    t165 = t166->get_instance(  ).
+    t166 = t167->get_attributes( ).
+    t165 = t166->get_instance( ).
     DATA t169 TYPE string.
     DATA(t170) = t1.
     DATA(t171) = |~|.
@@ -437,7 +437,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t174 TYPE REF TO zif_lnt_interface_definition.
     DATA(t175) = CAST zif_lnt_interface_definition( t3 ).
     t174 = t175.
-    t173 = t174->get_implementing(  ).
+    t173 = t174->get_implementing( ).
     DATA t176 TYPE REF TO zcl_lnt_iimplementing.
     CLEAR t176.
     DATA t177 TYPE REF TO object.
@@ -516,7 +516,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t5) = CAST zif_lnt_class_definition( t1 ).
-    t4 = t5->get_aliases(  ).
+    t4 = t5->get_aliases( ).
     t3 = t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t6.
@@ -778,7 +778,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         DATA t103 TYPE REF TO zif_lnt_interface_definition.
         DATA(t104) = CAST zif_lnt_interface_definition( t19 ).
         t103 = t104.
-        t102 = t103->get_attributes(  ).
+        t102 = t103->get_attributes( ).
         DATA(t105) = VALUE string( ).
         DATA t106 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA(t107) = t13.
@@ -910,7 +910,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t150 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t151 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t152) = CAST zif_lnt_class_definition( t1 ).
-    t151 = t152->get_super_class(  ).
+    t151 = t152->get_super_class( ).
     t150 = t151.
     DATA(t153) = VALUE abap_bool( ).
     DATA t154 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1092,7 +1092,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
             DATA t226 TYPE REF TO zcl_lnt_class.
             DATA(t227) = CAST zcl_lnt_class( t205 ).
             t226 = t227.
-            t225 = t226->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+            t225 = t226->gt_dfn_ins_src_obj_cls_ts_clss( ).
             t222 = t225.
           ELSE.
             DATA t228 TYPE REF TO zif_lnt_class_definition.
@@ -1125,7 +1125,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t5) = CAST zif_lnt_class_definition( t1 ).
-    t4 = t5->get_aliases(  ).
+    t4 = t5->get_aliases( ).
     t3 = t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t6.
@@ -1387,7 +1387,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         DATA t103 TYPE REF TO zif_lnt_interface_definition.
         DATA(t104) = CAST zif_lnt_interface_definition( t19 ).
         t103 = t104.
-        t102 = t103->get_type_definitions(  ).
+        t102 = t103->get_type_definitions( ).
         DATA(t105) = VALUE string( ).
         DATA t106 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA(t107) = t13.
@@ -1565,7 +1565,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t168 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t169 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t170) = CAST zif_lnt_class_definition( t1 ).
-    t169 = t170->get_super_class(  ).
+    t169 = t170->get_super_class( ).
     t168 = t169.
     DATA(t171) = VALUE abap_bool( ).
     DATA t172 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1747,7 +1747,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
             DATA t244 TYPE REF TO zcl_lnt_class.
             DATA(t245) = CAST zcl_lnt_class( t223 ).
             t244 = t245.
-            t243 = t244->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+            t243 = t244->gt_dfn_ins_src_obj_cls_ts_clss( ).
             t240 = t243.
           ELSE.
             DATA t246 TYPE REF TO zif_lnt_class_definition.
@@ -1967,7 +1967,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t78 TYPE REF TO zif_lnt_interface_definition.
       DATA(t79) = CAST zif_lnt_interface_definition( t3 ).
       t78 = t79.
-      t77 = t78->get_method_definitions(  ).
+      t77 = t78->get_method_definitions( ).
       DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t80.
       DATA(t81) = abap_true.
@@ -2052,7 +2052,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t6) = CAST zif_lnt_interface_definition( t2 ).
-    t5 = t6->get_aliases(  ).
+    t5 = t6->get_aliases( ).
     t4 = t5.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t7.
@@ -2461,7 +2461,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           DATA t157 TYPE REF TO zif_lnt_interface_definition.
           DATA(t158) = CAST zif_lnt_interface_definition( t80 ).
           t157 = t158.
-          t156 = t157->get_method_definitions(  ).
+          t156 = t157->get_method_definitions( ).
           DATA t159 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t159.
           DATA(t160) = abap_true.
@@ -2621,7 +2621,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     ELSE.
       DATA t23 TYPE string.
       DATA(t24) = CAST zif_lnt_interface_definition( t16 ).
-      t23 = t24->get_name(  ).
+      t23 = t24->get_name( ).
       DATA(t25) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t25->has = abap_true.
       t25->value = t23.
@@ -2665,14 +2665,14 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_statement.
     DATA(t6) = CAST zcl_lnt_statement_node( t1 ).
-    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
     t3 = t4.
     IF t4 = abap_false.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE REF TO zif_lnt_statement.
       DATA(t9) = CAST zcl_lnt_statement_node( t1 ).
-      t8 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      t8 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t7 = xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_class_definition ).
       t3 = t7.
     ENDIF.
@@ -2751,7 +2751,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t38 TYPE REF TO zcl_lnt_expression_node.
     DATA(t39) = CAST zcl_lnt_expression_node( t17 ).
     t38 = t39.
-    t37 = t38->get_first_token(  ).
+    t37 = t38->get_first_token( ).
     t36 = t37.
     DATA t40 TYPE string.
     DATA(t41) = CAST zcl_lnt_abstract_token( t36 ).
@@ -2780,7 +2780,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t9.
     DATA(t10) = CAST zif_lnt_interface_definition( t1 ).
-    t9 = t10->get_implementing(  ).
+    t9 = t10->get_implementing( ).
     t7 = t8->concat( p0 = t9 ).
     t6 = t7.
     DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
@@ -3010,7 +3010,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         CLEAR t93.
         DATA(t94) = CAST zif_lnt_interface_definition( t17 ).
         t93 = t94.
-        t92 = t93->get_implementing(  ).
+        t92 = t93->get_implementing( ).
         t88 = t92.
       ENDIF.
       t16 = t88.
@@ -3045,7 +3045,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t107.
     DATA(t108) = CAST zif_lnt_interface_definition( t1 ).
-    t107 = t108->get_super_class(  ).
+    t107 = t108->get_super_class( ).
     t106 = t107.
     DATA(t109) = VALUE abap_bool( ).
     DATA(t110) = CAST zlnt_runtime_opti_4ba3bdccd169( t106 ).
@@ -3106,7 +3106,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t8) = CAST zif_lnt_class_definition( t1 ).
-    t7 = t8->get_friends(  ).
+    t7 = t8->get_friends( ).
     DATA(t9) = VALUE string( ).
     LOOP AT t7->items INTO t9.
       DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t5 ).
@@ -3156,7 +3156,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t31 TYPE string.
       DATA t32 TYPE string.
       DATA(t33) = CAST zif_lnt_class_definition( t16 ).
-      t32 = t33->get_name(  ).
+      t32 = t33->get_name( ).
       t31 = t32.
       DATA t34 TYPE string.
       DATA(t35) = t20.
@@ -3411,7 +3411,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           DATA t128 TYPE REF TO zcl_lnt_class.
           DATA(t129) = CAST zcl_lnt_class( t107 ).
           t128 = t129.
-          t127 = t128->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+          t127 = t128->gt_dfn_ins_src_obj_cls_ts_clss( ).
           t124 = t127.
         ELSE.
           DATA t130 TYPE REF TO zif_lnt_class_definition.
@@ -3494,7 +3494,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t159 TYPE REF TO zif_lnt_class_definition.
     DATA(t160) = CAST zif_lnt_class_definition( t64 ).
     t159 = t160.
-    t158 = t159->get_super_class(  ).
+    t158 = t159->get_super_class( ).
     t157 = t158.
     DO.
       DATA(t161) = VALUE abap_bool( ).
@@ -3552,7 +3552,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         DATA t186 TYPE string.
         DATA t187 TYPE string.
         DATA(t188) = CAST zif_lnt_class_definition( t170 ).
-        t187 = t188->get_name(  ).
+        t187 = t188->get_name( ).
         t186 = t187.
         DATA t189 TYPE string.
         DATA(t190) = t174.
@@ -3811,7 +3811,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
             DATA t285 TYPE REF TO zcl_lnt_class.
             DATA(t286) = CAST zcl_lnt_class( t264 ).
             t285 = t286.
-            t284 = t285->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+            t284 = t285->gt_dfn_ins_src_obj_cls_ts_clss( ).
             t281 = t284.
           ELSE.
             DATA t287 TYPE REF TO zif_lnt_class_definition.
@@ -3842,7 +3842,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         DATA t293 TYPE REF TO zif_lnt_class_definition.
         DATA(t294) = CAST zif_lnt_class_definition( t220 ).
         t293 = t294.
-        t292 = t293->get_super_class(  ).
+        t292 = t293->get_super_class( ).
         t288 = t292.
       ENDIF.
       t219 = t288.
@@ -3905,7 +3905,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t23 TYPE REF TO zif_lnt_interface_definition.
     DATA(t24) = CAST zif_lnt_interface_definition( t1 ).
     t23 = t24.
-    t22 = t23->get_events(  ).
+    t22 = t23->get_events( ).
     t21 = t22.
     DATA t25 TYPE i.
     DATA t26 TYPE i.
@@ -3941,7 +3941,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t42 TYPE string.
       DATA t43 TYPE string.
       DATA(t44) = CAST zif_lnt_event_definition( t35 ).
-      t43 = t44->get_name(  ).
+      t43 = t44->get_name( ).
       DATA(t45) = strlen( t43 ).
       t42 = t43.
       IF t42 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -4279,7 +4279,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t167 TYPE REF TO zif_lnt_interface_definition.
     DATA(t168) = CAST zif_lnt_interface_definition( t1 ).
     t167 = t168.
-    t166 = t167->get_aliases(  ).
+    t166 = t167->get_aliases( ).
     t165 = t166.
     DATA t169 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t169.
@@ -4653,7 +4653,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
                 DATA t311 TYPE REF TO zcl_lnt_class.
                 DATA(t312) = CAST zcl_lnt_class( t290 ).
                 t311 = t312.
-                t310 = t311->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t310 = t311->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t307 = t310.
               ELSE.
                 DATA t313 TYPE REF TO zif_lnt_class_definition.
@@ -4975,7 +4975,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t422 TYPE REF TO zif_lnt_interface_definition.
     DATA(t423) = CAST zif_lnt_interface_definition( t1 ).
     t422 = t423.
-    t421 = t422->get_super_class(  ).
+    t421 = t422->get_super_class( ).
     t420 = t421.
     DATA(t424) = VALUE abap_bool( ).
     DATA(t425) = CAST zlnt_runtime_opti_4ba3bdccd169( t420 ).
@@ -5081,7 +5081,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t26 TYPE REF TO zif_lnt_interface_definition.
     DATA(t27) = CAST zif_lnt_interface_definition( t1 ).
     t26 = t27.
-    t25 = t26->get_attributes(  ).
+    t25 = t26->get_attributes( ).
     t24 = t25.
     DATA t28 TYPE abap_bool.
     DATA(t29) = CAST zif_lnt_attributes( t24 ).
@@ -5089,7 +5089,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     IF t28 = abap_true.
       DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t31) = CAST zif_lnt_attributes( t24 ).
-      t30 = t31->get_all(  ).
+      t30 = t31->get_all( ).
       DATA t32 TYPE REF TO zcl_lnt_class_attribute.
       CLEAR t32.
       DATA t33 TYPE REF TO object.
@@ -5203,7 +5203,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t74 TYPE REF TO zif_lnt_interface_definition.
     DATA(t75) = CAST zif_lnt_interface_definition( t1 ).
     t74 = t75.
-    t73 = t74->get_aliases(  ).
+    t73 = t74->get_aliases( ).
     t72 = t73.
     DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t76.
@@ -5567,7 +5567,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
                 DATA t215 TYPE REF TO zcl_lnt_class.
                 DATA(t216) = CAST zcl_lnt_class( t194 ).
                 t215 = t216.
-                t214 = t215->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t214 = t215->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t211 = t214.
               ELSE.
                 DATA t217 TYPE REF TO zif_lnt_class_definition.
@@ -6196,7 +6196,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t434 TYPE REF TO zif_lnt_interface_definition.
     DATA(t435) = CAST zif_lnt_interface_definition( t1 ).
     t434 = t435.
-    t433 = t434->get_super_class(  ).
+    t433 = t434->get_super_class( ).
     t432 = t433.
     DATA(t436) = VALUE abap_bool( ).
     DATA(t437) = CAST zlnt_runtime_opti_4ba3bdccd169( t432 ).
@@ -6290,7 +6290,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t22 TYPE REF TO zif_lnt_interface_definition.
     DATA(t23) = CAST zif_lnt_interface_definition( t1 ).
     t22 = t23.
-    t21 = t22->get_type_definitions(  ).
+    t21 = t22->get_type_definitions( ).
     DATA t24 TYPE string.
     DATA(t25) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
     t24 = t25->value.
@@ -6320,7 +6320,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t34 TYPE REF TO zif_lnt_interface_definition.
     DATA(t35) = CAST zif_lnt_interface_definition( t1 ).
     t34 = t35.
-    t33 = t34->get_aliases(  ).
+    t33 = t34->get_aliases( ).
     DATA t36 TYPE REF TO zcl_lnt_alias.
     CLEAR t36.
     DATA t37 TYPE REF TO object.
@@ -6679,7 +6679,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
                 DATA t173 TYPE REF TO zcl_lnt_class.
                 DATA(t174) = CAST zcl_lnt_class( t152 ).
                 t173 = t174.
-                t172 = t173->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t172 = t173->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t169 = t172.
               ELSE.
                 DATA t175 TYPE REF TO zif_lnt_class_definition.
@@ -7066,7 +7066,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t305 TYPE REF TO zif_lnt_interface_definition.
       DATA(t306) = CAST zif_lnt_interface_definition( t1 ).
       t305 = t306.
-      t304 = t305->get_implementing(  ).
+      t304 = t305->get_implementing( ).
       DATA t307 TYPE REF TO zcl_lnt_iimplementing.
       CLEAR t307.
       DATA t308 TYPE REF TO object.
@@ -7347,7 +7347,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t406 TYPE REF TO zif_lnt_interface_definition.
     DATA(t407) = CAST zif_lnt_interface_definition( t1 ).
     t406 = t407.
-    t405 = t406->get_super_class(  ).
+    t405 = t406->get_super_class( ).
     t404 = t405.
     DATA(t408) = VALUE abap_bool( ).
     DATA(t409) = CAST zlnt_runtime_opti_4ba3bdccd169( t404 ).
@@ -7453,8 +7453,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t26 TYPE REF TO zif_lnt_interface_definition.
     DATA(t27) = CAST zif_lnt_interface_definition( t1 ).
     t26 = t27.
-    t25 = t26->get_attributes(  ).
-    t24 = t25->get_constants(  ).
+    t25 = t26->get_attributes( ).
+    t24 = t25->get_constants( ).
     DATA t28 TYPE REF TO zcl_lnt_class_constant.
     CLEAR t28.
     DATA t29 TYPE REF TO object.
@@ -7564,7 +7564,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t68 TYPE REF TO zif_lnt_interface_definition.
     DATA(t69) = CAST zif_lnt_interface_definition( t1 ).
     t68 = t69.
-    t67 = t68->get_aliases(  ).
+    t67 = t68->get_aliases( ).
     DATA t70 TYPE REF TO zcl_lnt_alias.
     CLEAR t70.
     DATA t71 TYPE REF TO object.
@@ -7913,7 +7913,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
                 DATA t204 TYPE REF TO zcl_lnt_class.
                 DATA(t205) = CAST zcl_lnt_class( t183 ).
                 t204 = t205.
-                t203 = t204->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t203 = t204->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t200 = t203.
               ELSE.
                 DATA t206 TYPE REF TO zif_lnt_class_definition.
@@ -8298,7 +8298,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t335 TYPE REF TO zif_lnt_interface_definition.
       DATA(t336) = CAST zif_lnt_interface_definition( t1 ).
       t335 = t336.
-      t334 = t335->get_implementing(  ).
+      t334 = t335->get_implementing( ).
       DATA t337 TYPE REF TO zcl_lnt_iimplementing.
       CLEAR t337.
       DATA t338 TYPE REF TO object.
@@ -8571,7 +8571,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t434 TYPE REF TO zif_lnt_interface_definition.
     DATA(t435) = CAST zif_lnt_interface_definition( t1 ).
     t434 = t435.
-    t433 = t434->get_super_class(  ).
+    t433 = t434->get_super_class( ).
     t432 = t433.
     DATA(t436) = VALUE abap_bool( ).
     DATA(t437) = CAST zlnt_runtime_opti_4ba3bdccd169( t432 ).
@@ -9154,7 +9154,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
         DATA t202 TYPE REF TO zif_lnt_interface_definition.
         DATA(t203) = CAST zif_lnt_interface_definition( t125 ).
         t202 = t203.
-        t201 = t202->get_method_definitions(  ).
+        t201 = t202->get_method_definitions( ).
         DATA t204 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t204.
         DATA(t205) = abap_true.
@@ -9289,7 +9289,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t254 TYPE REF TO zif_lnt_interface_definition.
     DATA(t255) = CAST zif_lnt_interface_definition( t1 ).
     t254 = t255.
-    t253 = t254->get_super_class(  ).
+    t253 = t254->get_super_class( ).
     t252 = t253.
     DATA(t256) = VALUE abap_bool( ).
     DATA(t257) = VALUE abap_bool( ).
@@ -9362,7 +9362,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t3 TYPE REF TO zif_lnt_method_definitions.
     DATA t4 TYPE REF TO zif_lnt_method_definitions.
     DATA(t5) = CAST zif_lnt_interface_definition( t1 ).
-    t4 = t5->get_method_definitions(  ).
+    t4 = t5->get_method_definitions( ).
     t3 = t4.
     DATA(t6) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zif_lnt_method_definitions.
@@ -9429,7 +9429,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t31 TYPE REF TO zif_lnt_method_definition.
     DATA(t32) = CAST zif_lnt_method_definition( t14 ).
     t31 = t32.
-    t30 = t31->is_redefinition(  ).
+    t30 = t31->is_redefinition( ).
     IF t30 = abap_true.
       DATA t33 TYPE REF TO zif_lnt_method_definition.
       DATA(t34) = CAST zif_lnt_interface_definition( t1 ).
@@ -9460,7 +9460,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t5) = CAST zif_lnt_interface_definition( t1 ).
-    t4 = t5->get_super_class(  ).
+    t4 = t5->get_super_class( ).
     t3 = t4.
     DO.
       DATA(t6) = VALUE abap_bool( ).
@@ -9521,7 +9521,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       ENDIF.
       DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t31) = CAST zif_lnt_class_definition( t14 ).
-      t30 = t31->get_super_class(  ).
+      t30 = t31->get_super_class( ).
       t3 = t30.
     ENDDO.
     DATA t32 TYPE REF TO zif_lnt_method_definition.
@@ -9690,7 +9690,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           DATA t66 TYPE REF TO zcl_lnt_class.
           DATA(t67) = CAST zcl_lnt_class( t45 ).
           t66 = t67.
-          t65 = t66->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+          t65 = t66->gt_dfn_ins_src_obj_cls_ts_clss( ).
           t62 = t65.
         ELSE.
           DATA t68 TYPE REF TO zif_lnt_class_definition.
@@ -9787,7 +9787,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t4) = CAST zif_lnt_class_definition( t1 ).
-    t3 = t4->get_super_class(  ).
+    t3 = t4->get_super_class( ).
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -9825,8 +9825,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t20 TYPE REF TO zif_lnt_attributes.
       DATA(t21) = CAST zif_lnt_class_definition( t15 ).
-      t20 = t21->get_attributes(  ).
-      t19 = t20->get_all(  ).
+      t20 = t21->get_attributes( ).
+      t19 = t20->get_all( ).
       DATA t22 TYPE REF TO zcl_lnt_class_attribute.
       CLEAR t22.
       DATA t23 TYPE REF TO object.
@@ -9952,8 +9952,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t76 TYPE REF TO zif_lnt_attributes.
       DATA(t77) = CAST zif_lnt_class_definition( t15 ).
-      t76 = t77->get_attributes(  ).
-      t75 = t76->get_constants(  ).
+      t76 = t77->get_attributes( ).
+      t75 = t76->get_constants( ).
       DATA t78 TYPE REF TO zcl_lnt_class_constant.
       CLEAR t78.
       DATA t79 TYPE REF TO object.
@@ -10079,8 +10079,8 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t131 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t132 TYPE REF TO zif_lnt_type_definitions.
       DATA(t133) = CAST zif_lnt_class_definition( t15 ).
-      t132 = t133->get_type_definitions(  ).
-      t131 = t132->get_all(  ).
+      t132 = t133->get_type_definitions( ).
+      t131 = t132->get_all( ).
       DATA t134 TYPE REF TO zcl_lnt_type_definitions_entry.
       CLEAR t134.
       DATA t135 TYPE REF TO object.
@@ -10251,7 +10251,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       t191 = t202.
       DATA t204 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t205) = CAST zif_lnt_class_definition( t15 ).
-      t204 = t205->get_super_class(  ).
+      t204 = t205->get_super_class( ).
       t2 = t204.
     ENDDO.
     DATA(t206) = CAST zlnt_runtime_arra_8ecd6afe19e0( t5 ).
@@ -10266,7 +10266,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t5) = CAST zif_lnt_interface_definition( t1 ).
-    t4 = t5->get_implementing(  ).
+    t4 = t5->get_implementing( ).
     DATA t6 TYPE REF TO zcl_lnt_iimplementing.
     CLEAR t6.
     DATA t7 TYPE REF TO object.
@@ -10500,10 +10500,10 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     DATA(t101) = CAST zlnt_runtime_arra_8ecd6afe19e0( t97 ).
     DATA t102 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t103 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t104) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t104) = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA(t105) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
     t103 = t104->fromArray( p0 = t105 ).
-    t102 = t103->values(  ).
+    t102 = t103->values( ).
     t100 = t101->concat( p0 = t102 ).
     t99 = t100.
     DATA(t106) = CAST zlnt_runtime_arra_8ecd6afe19e0( t99 ).
@@ -10520,7 +10520,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t6) = CAST zif_lnt_interface_definition( t1 ).
-    t5 = t6->get_implementing(  ).
+    t5 = t6->get_implementing( ).
     DATA t7 TYPE REF TO zcl_lnt_iimplementing.
     CLEAR t7.
     DATA t8 TYPE REF TO object.
@@ -10600,7 +10600,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
       DATA t13 TYPE string.
       DATA t14 TYPE string.
       DATA(t15) = CAST zif_lnt_class_definition( t1 ).
-      t14 = t15->get_name(  ).
+      t14 = t15->get_name( ).
       t13 = t14.
       DATA t16 TYPE string.
       DATA(t17) = t3.

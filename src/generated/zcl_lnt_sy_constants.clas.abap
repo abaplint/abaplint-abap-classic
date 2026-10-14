@@ -37,7 +37,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
       DATA(t15) = CAST zcl_lnt_expression_node( t5 ).
       t14 = t15.
-      t13 = t14->get_first_token(  ).
+      t13 = t14->get_first_token( ).
       t9 = t13.
     ENDIF.
     t4 = t9.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
     DATA t32 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t33 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t34 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    DATA(t35) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t35) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     t34 = t35.
     DATA(t36) = CAST zlnt_runtime_map__abd6fd794ffb( t34 ).
     t33 = t36.
@@ -112,7 +112,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
       DATA t46 TYPE REF TO zif_lnt_union_dc0fb493.
       DATA t47 TYPE REF TO object.
       DATA(t48) = CAST zif_lnt_union_8249fcb1( t43 ).
-      t47 = t48->get_db65(  ).
+      t47 = t48->get_db65( ).
       DATA t49 TYPE REF TO object.
       t49 = t47.
       t46 ?= t49.
@@ -131,7 +131,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
       IF t50 = abap_true.
         DATA t55 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t56 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t57) = NEW zcl_lnt_sy_statem_constant(  ).
+        DATA(t57) = NEW zcl_lnt_sy_statem_constant( ).
         DATA t58 TYPE REF TO zcl_lnt_statement_node.
         DATA(t59) = CAST zif_lnt_union_8249fcb1( t43 ).
         DATA t60 TYPE REF TO object.
@@ -333,7 +333,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
         IF t138 = abap_true.
           DATA t143 TYPE REF TO zcl_lnt_shape_28fac025.
           DATA t144 TYPE REF TO zcl_lnt_shape_28fac025.
-          DATA(t145) = NEW zcl_lnt_sy_constants(  ).
+          DATA(t145) = NEW zcl_lnt_sy_constants( ).
           DATA t146 TYPE REF TO zcl_lnt_structure_node.
           DATA(t147) = CAST zif_lnt_union_8249fcb1( t43 ).
           DATA t148 TYPE REF TO object.

@@ -64,8 +64,8 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t21) = CAST zif_lnt_statement( t1 ).
-    t20 = t21->get_matcher(  ).
-    t19 = t20->first(  ).
+    t20 = t21->get_matcher( ).
+    t19 = t20->first( ).
     result = t19.
 
   ENDMETHOD.
@@ -133,7 +133,7 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
       CLEAR t23.
       READ TABLE t22->items INDEX 1 INTO t23.
       t21 ?= t23.
-      t20 = t21->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      t20 = t21->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( me->obj ).
       DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t25.
@@ -221,15 +221,15 @@ CLASS zcl_lnt_sub_statement IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~to_railroad.
-    result = me->to_railroad(  ).
+    result = me->to_railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~run.
-    result = me->run(  i_statements = i_statements i_parent = i_parent ).
+    result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
 ENDCLASS.

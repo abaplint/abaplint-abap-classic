@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_max_one_statement_conf(  ).
+    DATA(t1) = NEW zcl_lnt_max_one_statement_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -160,12 +160,12 @@ CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( me->g_c_i_s_r_mx_on_st_ts_mx_on_st(  ) ).
+    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( me->g_c_i_s_r_mx_on_st_ts_mx_on_st( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( me->g_c_i_s_r_mx_on_st_ts_mx_on_st(  ) ).
+    DATA(t1) = CAST zcl_lnt_max_one_statement_conf( me->g_c_i_s_r_mx_on_st_ts_mx_on_st( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -144,7 +144,7 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
           CLEAR t55.
           DATA(t56) = CAST zcl_lnt_expression_node( t4 ).
           t55 = t56.
-          t54 = t55->get_first_token(  ).
+          t54 = t55->get_first_token( ).
           DATA(t57) = VALUE string( ).
           DATA(t58) = CAST zcl_lnt_syntax_input( t2 ).
           t57 = t58->filename.
@@ -204,7 +204,7 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
     CLEAR t83.
     DATA(t84) = CAST zcl_lnt_expression_node( t22 ).
     t83 = t84.
-    t82 = t83->concat_tokens(  ).
+    t82 = t83->concat_tokens( ).
     DATA(t85) = strlen( t82 ).
     t81 = t82.
     IF t81 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -248,11 +248,11 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       CLEAR t99.
       DATA(t100) = CAST zcl_lnt_expression_node( t4 ).
       t99 = t100.
-      t98 = t99->get_first_token(  ).
+      t98 = t99->get_first_token( ).
       DATA(t101) = VALUE string( ).
       DATA(t102) = CAST zcl_lnt_syntax_input( t2 ).
       t101 = t102->filename.
-      DATA(t103) = CAST zcl_lnt_c_generic_type( zcl_lnt_c_generic_type=>get_db65(  ) ).
+      DATA(t103) = CAST zcl_lnt_c_generic_type( zcl_lnt_c_generic_type=>get_db65( ) ).
       DATA t104 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t104.
       DATA(t105) = abap_true.
@@ -305,11 +305,11 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
         CLEAR t122.
         DATA(t123) = CAST zcl_lnt_expression_node( t4 ).
         t122 = t123.
-        t121 = t122->get_first_token(  ).
+        t121 = t122->get_first_token( ).
         DATA(t124) = VALUE string( ).
         DATA(t125) = CAST zcl_lnt_syntax_input( t2 ).
         t124 = t125->filename.
-        DATA(t126) = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65(  ) ).
+        DATA(t126) = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65( ) ).
         DATA t127 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t127.
         DATA(t128) = abap_true.
@@ -362,11 +362,11 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
           CLEAR t145.
           DATA(t146) = CAST zcl_lnt_expression_node( t4 ).
           t145 = t146.
-          t144 = t145->get_first_token(  ).
+          t144 = t145->get_first_token( ).
           DATA(t147) = VALUE string( ).
           DATA(t148) = CAST zcl_lnt_syntax_input( t2 ).
           t147 = t148->filename.
-          DATA(t149) = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65(  ) ).
+          DATA(t149) = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65( ) ).
           DATA t150 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t150.
           DATA(t151) = abap_true.
@@ -414,7 +414,7 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       CLEAR t166.
       DATA(t167) = CAST zcl_lnt_expression_node( t4 ).
       t166 = t167.
-      t165 = t166->get_first_token(  ).
+      t165 = t166->get_first_token( ).
       DATA(t168) = VALUE string( ).
       DATA(t169) = CAST zcl_lnt_syntax_input( t2 ).
       t168 = t169->filename.
@@ -447,7 +447,7 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       CLEAR t179.
       DATA(t180) = CAST zcl_lnt_expression_node( t4 ).
       t179 = t180.
-      t178 = t179->get_first_token(  ).
+      t178 = t179->get_first_token( ).
       DATA(t181) = VALUE string( ).
       DATA(t182) = CAST zcl_lnt_syntax_input( t2 ).
       t181 = t182->filename.

@@ -78,7 +78,7 @@ CLASS zcl_lnt_mntnn_and_trnspr_objct IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_s_o_m_a_t_o_ts_mn_an_tr_ob(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_s_o_m_a_t_o_ts_mn_an_tr_ob( ) ).
     result = t1.
 
   ENDMETHOD.

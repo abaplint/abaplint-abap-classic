@@ -18,7 +18,7 @@ CLASS zcl_lnt_check_abstract_module IMPLEMENTATION.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_check_abstract_module=>issue_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.

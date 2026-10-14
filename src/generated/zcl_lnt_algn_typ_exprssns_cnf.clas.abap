@@ -9,7 +9,7 @@ CLASS zcl_lnt_algn_typ_exprssns_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_algn_typ_exprssns_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
   ENDMETHOD.

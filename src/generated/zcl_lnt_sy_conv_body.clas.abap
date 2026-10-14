@@ -77,7 +77,7 @@ CLASS zcl_lnt_sy_conv_body IMPLEMENTATION.
       DATA(t35) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t36 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t37) = CAST zcl_lnt_expression_node( t1 ).
-      t36 = t37->get_first_token(  ).
+      t36 = t37->get_first_token( ).
       DATA(t38) = t30.
       DATA t39 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t39.
@@ -148,7 +148,7 @@ CLASS zcl_lnt_sy_conv_body IMPLEMENTATION.
       DATA t66 TYPE REF TO zcl_lnt_abstract_token.
       DATA t67 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t68) = CAST zcl_lnt_expression_node( t1 ).
-      t67 = t68->get_last_token(  ).
+      t67 = t68->get_last_token( ).
       t66 = t67.
       DATA t69 TYPE REF TO zcl_lnt_position.
       CLEAR t69.

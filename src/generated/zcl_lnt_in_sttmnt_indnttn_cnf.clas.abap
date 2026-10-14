@@ -10,7 +10,7 @@ CLASS zcl_lnt_in_sttmnt_indnttn_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_in_sttmnt_indnttn_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 2 ).
     me->block_statements = t1.
     DATA(t2) = abap_true.

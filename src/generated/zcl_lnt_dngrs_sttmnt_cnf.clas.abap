@@ -23,7 +23,7 @@ CLASS zcl_lnt_dngrs_sttmnt_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_dngrs_sttmnt_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->exec_sql_e377 = t1.
     DATA(t2) = abap_true.

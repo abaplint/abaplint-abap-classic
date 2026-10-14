@@ -48,7 +48,7 @@ CLASS zcl_lnt_time_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_tm_ty_ts_tm_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_tm_ty_ts_tm_ty( ) ).
     result = t1.
 
   ENDMETHOD.

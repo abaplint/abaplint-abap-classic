@@ -13,7 +13,7 @@ CLASS zcl_lnt_method_length_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic
 ENDCLASS.
 CLASS zcl_lnt_method_length_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 100 ).
     me->statements = t1.
     DATA(t2) = abap_true.

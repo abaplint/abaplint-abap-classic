@@ -19,7 +19,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
@@ -68,7 +68,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    DATA(t18) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t18) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace = t18.
     DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t19.

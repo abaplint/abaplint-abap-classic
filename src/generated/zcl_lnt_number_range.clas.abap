@@ -63,7 +63,7 @@ CLASS zcl_lnt_number_range IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_nmb_rng_ts_nmb_rng(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_nmb_rng_ts_nmb_rng( ) ).
     result = t1.
 
   ENDMETHOD.

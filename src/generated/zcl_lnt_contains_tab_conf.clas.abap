@@ -9,7 +9,7 @@ CLASS zcl_lnt_contains_tab_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_contains_tab_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 1 ).
     me->spaces = t1.
   ENDMETHOD.

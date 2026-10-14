@@ -79,7 +79,7 @@ CLASS zcl_lnt_sy_dereference IMPLEMENTATION.
       DATA(t32) = CAST zcl_lnt_syntax_input( t3 ).
       DATA t33 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t34) = CAST zif_lnt_node( t1 ).
-      t33 = t34->get_first_token(  ).
+      t33 = t34->get_first_token( ).
       DATA(t35) = t27.
       DATA t36 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t36.

@@ -52,7 +52,7 @@ CLASS zcl_lnt_sy_for IMPLEMENTATION.
       DATA t24 TYPE REF TO zcl_lnt_expression_node.
       DATA(t25) = CAST zcl_lnt_expression_node( t15 ).
       t24 = t25.
-      t23 = t24->get_first_token(  ).
+      t23 = t24->get_first_token( ).
       t19 = t23.
     ENDIF.
     t14 = t19.
@@ -136,7 +136,7 @@ CLASS zcl_lnt_sy_for IMPLEMENTATION.
       DATA t64 TYPE REF TO zcl_lnt_abstract_token.
       DATA t65 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t66) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t65 = t66->get_first_token(  ).
+      t65 = t66->get_first_token( ).
       t64 = t65.
       DATA t67 TYPE REF TO zcl_lnt_position.
       DATA(t68) = CAST zcl_lnt_abstract_token( t64 ).

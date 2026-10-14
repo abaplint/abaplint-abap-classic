@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_cll_trns_athr_chck_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_cll_trns_athr_chck_cnf( ).
     me->conf = t1.
     DATA t2 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2.
@@ -161,12 +161,12 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch(  ) ).
+    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch(  ) ).
+    DATA(t1) = CAST zcl_lnt_cll_trns_athr_chck_cnf( me->g_c_i_s_r_c_t_a_c_t_c_tr_at_ch( ) ).
     result = t1.
 
   ENDMETHOD.

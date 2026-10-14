@@ -123,7 +123,7 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
       DATA t57 TYPE REF TO zcl_lnt_expression_node.
       DATA(t58) = CAST zcl_lnt_expression_node( t48 ).
       t57 = t58.
-      t56 = t57->concat_tokens(  ).
+      t56 = t57->concat_tokens( ).
       DATA(t59) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t59->has = abap_true.
       t59->value = t56.
@@ -431,7 +431,7 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
       DATA(t176) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t177 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t178) = CAST zcl_lnt_expression_node( t1 ).
-      t177 = t178->get_first_token(  ).
+      t177 = t178->get_first_token( ).
       DATA(t179) = t171.
       DATA t180 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t180.
@@ -573,7 +573,7 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
         DATA(t240) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t241 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t242) = CAST zcl_lnt_expression_node( t1 ).
-        t241 = t242->get_first_token(  ).
+        t241 = t242->get_first_token( ).
         DATA(t243) = t205.
         DATA t244 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t244.

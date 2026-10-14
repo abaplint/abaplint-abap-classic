@@ -24,7 +24,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
     DATA t9 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t10 TYPE REF TO zif_lnt_node.
     DATA(t11) = CAST zif_lnt_union_bb14dc41( t1 ).
-    t10 = t11->get_first_child(  ).
+    t10 = t11->get_first_child( ).
     t9 ?= t10.
     t8 = t9.
     DATA t12 TYPE REF TO zif_lnt_union_daf022d4.
@@ -44,7 +44,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
       DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA(t19) = CAST zif_lnt_union_4cf1d054( t8 ).
       t18 = t19.
-      t17 = t18->get_db65(  ).
+      t17 = t18->get_db65( ).
       DATA t20 TYPE REF TO object.
       t20 = t17.
       t16 ?= t20.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
       DATA t22 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t23 TYPE REF TO zif_lnt_node.
       DATA(t24) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t23 = t24->get_first_child(  ).
+      t23 = t24->get_first_child( ).
       t22 ?= t23.
       t21 ?= t22.
       DATA(t25) = CAST zcl_lnt_syntax_input( t2 ).
@@ -138,7 +138,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
             DATA t61 TYPE REF TO object.
             t61 = t60.
             t59 ?= t61.
-            t58 = t59->get_first_token(  ).
+            t58 = t59->get_first_token( ).
             t56 = t58.
           ELSE.
             DATA t62 TYPE REF TO zcl_lnt_abstract_token.
@@ -201,7 +201,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
       DATA t88 TYPE REF TO zcl_lnt_expression_node.
       DATA(t89) = CAST zcl_lnt_expression_node( t79 ).
       t88 = t89.
-      t87 = t88->concat_tokens(  ).
+      t87 = t88->concat_tokens( ).
       DATA(t90) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t90->has = abap_true.
       t90->value = t87.
@@ -450,12 +450,12 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
                   DATA t204 TYPE REF TO zcl_lnt_numeric_type.
                   DATA(t205) = CAST zcl_lnt_abstract_type( t4 ).
                   t204 ?= t205.
-                  t203 = t204->get_length(  ).
+                  t203 = t204->get_length( ).
                   DATA t206 TYPE int8.
                   DATA t207 TYPE REF TO zcl_lnt_numeric_type.
                   DATA(t208) = CAST zcl_lnt_abstract_type( t108 ).
                   t207 ?= t208.
-                  t206 = t207->get_length(  ).
+                  t206 = t207->get_length( ).
                   t202 = xsdbool( t203 > t206 ).
                   t196 = t202.
                 ENDIF.

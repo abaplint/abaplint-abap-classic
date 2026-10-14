@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_check_comments IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_check_comments_conf(  ).
+    DATA(t1) = NEW zcl_lnt_check_comments_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -154,12 +154,12 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm( ) ).
     result = t1.
 
   ENDMETHOD.

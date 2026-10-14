@@ -14,7 +14,7 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_structure.
     DATA(t6) = CAST zcl_lnt_structure_node( t1 ).
-    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_method ).
     t3 = xsdbool( t4 = abap_false ).
     IF t3 = abap_true.
@@ -90,7 +90,7 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
     DATA t33 TYPE REF TO zcl_lnt_expression_node.
     DATA(t34) = CAST zcl_lnt_expression_node( t14 ).
     t33 = t34.
-    t32 = t33->get_first_token(  ).
+    t32 = t33->get_first_token( ).
     DATA(t35) = t2.
     super->constructor( i_token = t32 i_filename = t35 ).
   ENDMETHOD.

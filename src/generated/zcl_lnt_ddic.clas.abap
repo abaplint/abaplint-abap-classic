@@ -358,7 +358,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
               DATA(t125) = |CLIKE|.
               t123 = xsdbool( t124 = t125 ).
               IF t123 = abap_true.
-                DATA(t126) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65(  ) ).
+                DATA(t126) = CAST zcl_lnt_c_like_type( zcl_lnt_c_like_type=>get_db65( ) ).
                 result = t126.
                 RETURN.
               ELSE.
@@ -435,7 +435,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
                     DATA(t157) = |SIMPLE|.
                     t155 = xsdbool( t156 = t157 ).
                     IF t155 = abap_true.
-                      DATA(t158) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65(  ) ).
+                      DATA(t158) = CAST zcl_lnt_simple_type( zcl_lnt_simple_type=>get_db65( ) ).
                       result = t158.
                       RETURN.
                     ELSE.
@@ -1600,7 +1600,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       DATA(t24) = VALUE abap_bool( ).
       DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t26) = CAST zcl_lnt_ob_data_definition( t20 ).
-      t25 = t26->get_sql_view_name(  ).
+      t25 = t26->get_sql_view_name( ).
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t27.
       DATA(t28) = abap_true.
@@ -1638,7 +1638,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
         DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA(t38) = CAST zcl_lnt_ob_data_definition( t20 ).
-        t37 = t38->get_definition_name(  ).
+        t37 = t38->get_definition_name( ).
         t36 = t37.
         DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t39.

@@ -18,7 +18,7 @@ CLASS zcl_lnt_empty_structure_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_bas
 ENDCLASS.
 CLASS zcl_lnt_empty_structure_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->loop_7736 = t1.
     DATA(t2) = abap_true.

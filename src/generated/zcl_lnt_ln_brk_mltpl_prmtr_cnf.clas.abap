@@ -9,7 +9,7 @@ CLASS zcl_lnt_ln_brk_mltpl_prmtr_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_b
 ENDCLASS.
 CLASS zcl_lnt_ln_brk_mltpl_prmtr_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 1 ).
     me->count = t1.
   ENDMETHOD.

@@ -94,7 +94,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       DATA t36 TYPE REF TO zcl_lnt_expression_node.
       DATA(t37) = CAST zcl_lnt_expression_node( t9 ).
       t36 = t37.
-      t35 = t36->get_first_token(  ).
+      t35 = t36->get_first_token( ).
       t31 = t35.
     ENDIF.
     t8 = t31.
@@ -139,7 +139,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       APPEND t53 TO t51->items.
     ENDIF.
     DATA t59 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t60) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t60) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t59 = t60.
     DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t62) = CAST zcl_lnt_statement_node( t1 ).
@@ -154,7 +154,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       DATA t66 TYPE REF TO zcl_lnt_abstract_token.
       DATA t67 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t68) = CAST zcl_lnt_expression_node( t64 ).
-      t67 = t68->get_first_token(  ).
+      t67 = t68->get_first_token( ).
       t66 = t67.
       DATA(t69) = VALUE string( ).
       DATA t70 TYPE string.
@@ -448,7 +448,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA(t197) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t198 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t199) = CAST zcl_lnt_statement_node( t1 ).
-        t198 = t199->get_first_token(  ).
+        t198 = t199->get_first_token( ).
         DATA(t200) = t189.
         DATA t201 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t201.
@@ -518,7 +518,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA t229 TYPE REF TO zcl_lnt_expression_node.
         DATA(t230) = CAST zcl_lnt_expression_node( t219 ).
         t229 = t230.
-        t228 = t229->get_first_token(  ).
+        t228 = t229->get_first_token( ).
         t224 = t228.
       ENDIF.
       t218 = t224.
@@ -530,7 +530,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA t233 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t234 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA(t235) = CAST zlnt_runtime_set__1827558fd4c7( t59 ).
-        t234 = t235->values(  ).
+        t234 = t235->values( ).
         t233 = t234.
         DATA t236 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t236.
@@ -729,7 +729,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
                 DATA t321 TYPE REF TO zcl_lnt_class.
                 DATA(t322) = CAST zcl_lnt_class( t300 ).
                 t321 = t322.
-                t320 = t321->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t320 = t321->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t317 = t320.
               ELSE.
                 DATA t323 TYPE REF TO zif_lnt_class_definition.
@@ -1092,7 +1092,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             DATA t470 TYPE REF TO zcl_lnt_abstract_token.
             DATA t471 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t472) = CAST zcl_lnt_expression_node( t468 ).
-            t471 = t472->get_first_token(  ).
+            t471 = t472->get_first_token( ).
             t470 = t471.
             DATA(t473) = VALUE string( ).
             DATA t474 TYPE string.
@@ -1237,6 +1237,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

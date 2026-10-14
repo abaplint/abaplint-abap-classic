@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_check_abstract IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_check_abstract_conf(  ).
+    DATA(t1) = NEW zcl_lnt_check_abstract_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -112,12 +112,12 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_check_abstract_conf( me->gt_cn_in_sr_rl_ch_ab_ts_ch_abs(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_abstract_conf( me->gt_cn_in_sr_rl_ch_ab_ts_ch_abs( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_check_abstract_conf( me->gt_cn_in_sr_rl_ch_ab_ts_ch_abs(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_abstract_conf( me->gt_cn_in_sr_rl_ch_ab_ts_ch_abs( ) ).
     result = t1.
 
   ENDMETHOD.

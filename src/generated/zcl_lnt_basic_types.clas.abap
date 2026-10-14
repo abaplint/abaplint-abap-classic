@@ -234,7 +234,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t83 TYPE REF TO zcl_lnt_expression_node.
     DATA(t84) = CAST zcl_lnt_expression_node( t18 ).
     t83 = t84.
-    t82 = t83->concat_tokens(  ).
+    t82 = t83->concat_tokens( ).
     t81 = t82.
     DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -311,7 +311,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       CLEAR t127.
       READ TABLE t126->items INDEX 2 INTO t127.
       t125 ?= t127.
-      t124 = t125->get_first_token(  ).
+      t124 = t125->get_first_token( ).
       t123 = t124.
       DATA t128 TYPE string.
       DATA(t129) = CAST zcl_lnt_abstract_token( t123 ).
@@ -331,7 +331,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         CLEAR t137.
         READ TABLE t136->items INDEX 2 INTO t137.
         t135 ?= t137.
-        t134 = t135->get_first_token(  ).
+        t134 = t135->get_first_token( ).
         t133 = t134.
         DATA t138 TYPE string.
         DATA(t139) = CAST zcl_lnt_abstract_token( t133 ).
@@ -378,10 +378,10 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t156 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA(t157) = CAST zlnt_runtime_arra_c22708faf2e3( t85 ).
       DATA t158 TYPE REF TO object.
-      t158 = t157->shift(  ).
+      t158 = t157->shift( ).
       t156 ?= t158.
       t155 = t156.
-      t154 = t155->get_first_token(  ).
+      t154 = t155->get_first_token( ).
       t153 = t154.
       DATA t159 TYPE string.
       DATA(t160) = CAST zcl_lnt_abstract_token( t153 ).
@@ -801,7 +801,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         ELSE.
           DATA t324 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t325) = CAST zcl_lnt_expression_node( t317 ).
-          t324 = t325->get_first_token(  ).
+          t324 = t325->get_first_token( ).
           t320 = t324.
         ENDIF.
         t316 = t320.
@@ -886,7 +886,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t366 TYPE REF TO zcl_lnt_expression_node.
             DATA(t367) = CAST zcl_lnt_expression_node( t18 ).
             t366 = t367.
-            t365 = t366->get_first_token(  ).
+            t365 = t366->get_first_token( ).
             t363 = t365.
           ELSE.
             DATA t368 TYPE REF TO zcl_lnt_abstract_token.
@@ -921,7 +921,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t380 TYPE REF TO zif_lnt_registry.
           DATA(t381) = CAST zcl_lnt_current_scope( t376 ).
           t380 = t381->reg.
-          t379 = t380->get_ddic_references(  ).
+          t379 = t380->get_ddic_references( ).
           t375 = t379.
           DATA t382 TYPE REF TO zif_lnt_object.
           DATA t383 TYPE REF TO zcl_lnt_current_scope.
@@ -996,7 +996,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t413 TYPE REF TO zcl_lnt_current_scope.
         DATA(t414) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t413 = t414->scope.
-        t412 = t413->is_any_oo(  ).
+        t412 = t413->is_any_oo( ).
         DATA(t415) = abap_false.
         t411 = xsdbool( t412 = t415 ).
         t403 = t411.
@@ -1098,7 +1098,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           CLEAR t460.
           READ TABLE t453->items INDEX 1 INTO t460.
           t452 ?= t460.
-          t451 = t452->get_first_token(  ).
+          t451 = t452->get_first_token( ).
           t449 = t451.
         ELSE.
           DATA t461 TYPE REF TO zcl_lnt_abstract_token.
@@ -1155,7 +1155,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t481 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA(t482) = CAST zlnt_runtime_arra_c22708faf2e3( t85 ).
         DATA t483 TYPE REF TO object.
-        t483 = t482->shift(  ).
+        t483 = t482->shift( ).
         t481 ?= t483.
         t480 = t481.
         t479 = t480.
@@ -1164,7 +1164,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t486 TYPE REF TO zcl_lnt_abstract_token.
         DATA t487 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t488) = CAST zif_lnt_union_4cf1d054( t479 ).
-        t487 = t488->get_first_token(  ).
+        t487 = t488->get_first_token( ).
         t486 = t487.
         DATA t489 TYPE string.
         DATA(t490) = CAST zcl_lnt_abstract_token( t486 ).
@@ -1187,7 +1187,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t496 TYPE abap_bool.
           DATA t497 TYPE string.
           DATA(t498) = CAST zif_lnt_union_4cf1d054( t479 ).
-          t497 = t498->concat_tokens(  ).
+          t497 = t498->concat_tokens( ).
           DATA(t499) = |[]|.
           t496 = xsdbool( t497 = t499 ).
           IF t496 = abap_true.
@@ -1235,7 +1235,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
               DATA t523 TYPE REF TO object.
               t523 = t522.
               t521 ?= t523.
-              t520 = t521->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+              t520 = t521->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t519 = xsdbool( t520 IS BOUND AND t520 IS INSTANCE OF zcl_lnt_st_field_length ).
               t516 = t519.
             ENDIF.
@@ -1254,7 +1254,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
               DATA t533 TYPE REF TO object.
               t533 = t532.
               t531 ?= t533.
-              t530 = t531->concat_tokens(  ).
+              t530 = t531->concat_tokens( ).
               DATA(t534) = |(|.
               DATA(t535) = ||.
               DATA(t536) = strlen( t530 ).
@@ -1457,7 +1457,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                 DATA t608 TYPE REF TO zcl_lnt_abstract_token.
                 DATA t609 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t610) = CAST zif_lnt_union_4cf1d054( t479 ).
-                t609 = t610->get_first_token(  ).
+                t609 = t610->get_first_token( ).
                 t608 = t609.
                 DATA t611 TYPE string.
                 DATA(t612) = CAST zcl_lnt_abstract_token( t608 ).
@@ -2436,7 +2436,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t157 TYPE REF TO zcl_lnt_expression_node.
     DATA(t158) = CAST zcl_lnt_expression_node( t1 ).
     t157 = t158.
-    t156 = t157->concat_tokens(  ).
+    t156 = t157->concat_tokens( ).
     DATA(t159) = strlen( t156 ).
     t155 = t156.
     IF t155 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -2590,7 +2590,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t223 TYPE REF TO zcl_lnt_expression_node.
       DATA(t224) = CAST zcl_lnt_expression_node( t1 ).
       t223 = t224.
-      t222 = t223->get_first_token(  ).
+      t222 = t223->get_first_token( ).
       t221 = t222.
       DATA(t225) = VALUE abap_bool( ).
       DATA(t226) = VALUE i( ).
@@ -3477,7 +3477,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t573 TYPE REF TO zif_lnt_registry.
       DATA(t574) = CAST zcl_lnt_current_scope( t569 ).
       t573 = t574->reg.
-      t572 = t573->get_ddic_references(  ).
+      t572 = t573->get_ddic_references( ).
       t568 = t572.
       DATA t575 TYPE REF TO zif_lnt_object.
       DATA t576 TYPE REF TO zcl_lnt_current_scope.
@@ -3506,7 +3506,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t589 TYPE REF TO zcl_lnt_expression_node.
           DATA(t590) = CAST zcl_lnt_expression_node( t1 ).
           t589 = t590.
-          t588 = t589->get_first_token(  ).
+          t588 = t589->get_first_token( ).
           t586 = t588.
         ELSE.
           DATA t591 TYPE REF TO zcl_lnt_abstract_token.
@@ -3557,7 +3557,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t609 TYPE REF TO zcl_lnt_expression_node.
           DATA(t610) = CAST zcl_lnt_expression_node( t1 ).
           t609 = t610.
-          t608 = t609->get_first_token(  ).
+          t608 = t609->get_first_token( ).
           t606 = t608.
         ELSE.
           DATA t611 TYPE REF TO zcl_lnt_abstract_token.
@@ -3995,7 +3995,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t27 TYPE REF TO zcl_lnt_expression_node.
     DATA(t28) = CAST zcl_lnt_expression_node( t3 ).
     t27 = t28.
-    t26 = t27->get_first_token(  ).
+    t26 = t27->get_first_token( ).
     t25 = t26.
     DATA t29 TYPE abap_bool.
     DATA t30 TYPE int8.
@@ -4024,7 +4024,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t44 TYPE REF TO zcl_lnt_expression_node.
       DATA(t45) = CAST zcl_lnt_expression_node( t3 ).
       t44 = t45.
-      t43 = t44->concat_tokens(  ).
+      t43 = t44->concat_tokens( ).
       t37 = NEW zcl_lnt_lx_identifier( i_start = t38 i_str = t43 ).
       t25 = t37.
     ENDIF.
@@ -4035,7 +4035,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t48 TYPE abap_bool.
     DATA t49 TYPE REF TO object.
     DATA(t50) = CAST zif_lnt_union_bb14dc41( t1 ).
-    t49 = t50->get_db65(  ).
+    t49 = t50->get_db65( ).
     t48 = xsdbool( t49 IS BOUND AND t49 IS INSTANCE OF zcl_lnt_st_statem_type ).
     IF t48 = abap_true.
       DATA(t51) = VALUE abap_bool( ).
@@ -4266,7 +4266,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t138 TYPE REF TO zcl_lnt_current_scope.
         DATA(t139) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t138 = t139->scope.
-        t137 = t138->get_type(  ).
+        t137 = t138->get_type( ).
         DATA(t140) = |class_definition|.
         t136 = xsdbool( t137 = t140 ).
         t135 = t136.
@@ -4276,7 +4276,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t143 TYPE REF TO zcl_lnt_current_scope.
           DATA(t144) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
           t143 = t144->scope.
-          t142 = t143->get_type(  ).
+          t142 = t143->get_type( ).
           DATA(t145) = |interface|.
           t141 = xsdbool( t142 = t145 ).
           t135 = t141.
@@ -4292,7 +4292,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t151 TYPE REF TO zcl_lnt_current_scope.
             DATA(t152) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
             t151 = t152->scope.
-            t150 = t151->get_name(  ).
+            t150 = t151->get_name( ).
             DATA(t153) = |=>|.
             DATA(t154) = strlen( t150 ).
             t149 = |{ t150 }{ t153 }|.
@@ -4467,7 +4467,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t29 TYPE REF TO zcl_lnt_expression_node.
       DATA(t30) = CAST zcl_lnt_expression_node( t20 ).
       t29 = t30.
-      t28 = t29->concat_tokens(  ).
+      t28 = t29->concat_tokens( ).
       DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t31->has = abap_true.
       t31->value = t28.
@@ -4871,7 +4871,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t182 TYPE REF TO zcl_lnt_expression_node.
         DATA(t183) = CAST zcl_lnt_expression_node( t166 ).
         t182 = t183.
-        t181 = t182->concat_tokens(  ).
+        t181 = t182->concat_tokens( ).
         DATA(t184) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t184->has = abap_true.
         t184->value = t181.
@@ -5010,7 +5010,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       ELSE.
         DATA t229 TYPE string.
         DATA(t230) = CAST zcl_lnt_expression_node( t223 ).
-        t229 = t230->concat_tokens(  ).
+        t229 = t230->concat_tokens( ).
         DATA(t231) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t231->has = abap_true.
         t231->value = t229.
@@ -5185,7 +5185,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t287 TYPE string.
         DATA t288 TYPE string.
         DATA(t289) = CAST zcl_lnt_expression_node( t283 ).
-        t288 = t289->concat_tokens(  ).
+        t288 = t289->concat_tokens( ).
         DATA(t290) = strlen( t288 ).
         t287 = t288.
         IF t287 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -5252,7 +5252,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t316 TYPE REF TO zcl_lnt_expression_node.
         DATA(t317) = CAST zcl_lnt_expression_node( t307 ).
         t316 = t317.
-        t315 = t316->concat_tokens(  ).
+        t315 = t316->concat_tokens( ).
         DATA(t318) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t318->has = abap_true.
         t318->value = t315.
@@ -5335,7 +5335,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       ELSE.
         DATA t353 TYPE string.
         DATA(t354) = CAST zcl_lnt_expression_node( t347 ).
-        t353 = t354->concat_tokens(  ).
+        t353 = t354->concat_tokens( ).
         DATA(t355) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t355->has = abap_true.
         t355->value = t353.
@@ -5500,7 +5500,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t406 TYPE string.
         DATA t407 TYPE string.
         DATA(t408) = CAST zcl_lnt_expression_node( t402 ).
-        t407 = t408->concat_tokens(  ).
+        t407 = t408->concat_tokens( ).
         DATA(t409) = strlen( t407 ).
         t406 = t407.
         IF t406 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -6348,7 +6348,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                     DATA t783 TYPE REF TO zcl_lnt_expression_node.
                     DATA(t784) = CAST zcl_lnt_expression_node( t3 ).
                     t783 = t784.
-                    t782 = t783->concat_tokens(  ).
+                    t782 = t783->concat_tokens( ).
                     DATA t785 TYPE REF TO zcl_lnt_itable_options.
                     CLEAR t785.
                     DATA(t786) = abap_true.
@@ -6430,7 +6430,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       DATA(t21) = CAST zcl_lnt_expression_node( t11 ).
       t20 = t21.
-      t19 = t20->concat_tokens(  ).
+      t19 = t20->concat_tokens( ).
       DATA(t22) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t22->has = abap_true.
       t22->value = t19.
@@ -6515,7 +6515,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t51 TYPE REF TO zcl_lnt_expression_node.
         DATA(t52) = CAST zcl_lnt_expression_node( t42 ).
         t51 = t52.
-        t50 = t51->concat_tokens(  ).
+        t50 = t51->concat_tokens( ).
         DATA(t53) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t53->has = abap_true.
         t53->value = t50.
@@ -6601,7 +6601,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t82 TYPE REF TO zcl_lnt_expression_node.
         DATA(t83) = CAST zcl_lnt_expression_node( t73 ).
         t82 = t83.
-        t81 = t82->concat_tokens(  ).
+        t81 = t82->concat_tokens( ).
         DATA(t84) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t84->has = abap_true.
         t84->value = t81.
@@ -6805,7 +6805,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t153 TYPE REF TO zcl_lnt_expression_node.
         DATA(t154) = CAST zcl_lnt_expression_node( t144 ).
         t153 = t154.
-        t152 = t153->concat_tokens(  ).
+        t152 = t153->concat_tokens( ).
         DATA(t155) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t155->has = abap_true.
         t155->value = t152.
@@ -6891,7 +6891,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t184 TYPE REF TO zcl_lnt_expression_node.
         DATA(t185) = CAST zcl_lnt_expression_node( t175 ).
         t184 = t185.
-        t183 = t184->concat_tokens(  ).
+        t183 = t184->concat_tokens( ).
         DATA(t186) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t186->has = abap_true.
         t186->value = t183.
@@ -6955,7 +6955,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t205 TYPE abap_bool.
       DATA t206 TYPE REF TO object.
       DATA(t207) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t206 = t207->get_db65(  ).
+      t206 = t207->get_db65( ).
       t205 = xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_parameter ).
       t197 = t205.
     ENDIF.
@@ -7000,7 +7000,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t226 TYPE REF TO zcl_lnt_expression_node.
           DATA(t227) = CAST zcl_lnt_expression_node( t219 ).
           t226 = t227.
-          t225 = t226->concat_tokens(  ).
+          t225 = t226->concat_tokens( ).
           DATA(t228) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t228->has = abap_true.
           t228->value = t225.
@@ -7171,7 +7171,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t290 TYPE REF TO zcl_lnt_expression_node.
         DATA(t291) = CAST zcl_lnt_expression_node( t281 ).
         t290 = t291.
-        t289 = t290->concat_tokens(  ).
+        t289 = t290->concat_tokens( ).
         DATA(t292) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t292->has = abap_true.
         t292->value = t289.
@@ -7230,7 +7230,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t313 TYPE REF TO zcl_lnt_expression_node.
           DATA(t314) = CAST zcl_lnt_expression_node( t304 ).
           t313 = t314.
-          t312 = t313->concat_tokens(  ).
+          t312 = t313->concat_tokens( ).
           DATA(t315) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t315->has = abap_true.
           t315->value = t312.
@@ -7324,7 +7324,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t356 TYPE REF TO zcl_lnt_expression_node.
             DATA(t357) = CAST zcl_lnt_expression_node( t349 ).
             t356 = t357.
-            t355 = t356->concat_tokens(  ).
+            t355 = t356->concat_tokens( ).
             DATA(t358) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t358->has = abap_true.
             t358->value = t355.
@@ -7639,7 +7639,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t488 TYPE REF TO zcl_lnt_expression_node.
             DATA(t489) = CAST zcl_lnt_expression_node( t479 ).
             t488 = t489.
-            t487 = t488->concat_tokens(  ).
+            t487 = t488->concat_tokens( ).
             DATA(t490) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t490->has = abap_true.
             t490->value = t487.
@@ -7797,7 +7797,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t559 TYPE string.
             DATA t560 TYPE string.
             DATA(t561) = CAST zif_lnt_union_bb14dc41( t1 ).
-            t560 = t561->concat_tokens(  ).
+            t560 = t561->concat_tokens( ).
             DATA(t562) = strlen( t560 ).
             t559 = t560.
             IF t559 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -8354,7 +8354,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                     DATA t801 TYPE string.
                     DATA t802 TYPE string.
                     DATA(t803) = CAST zif_lnt_union_bb14dc41( t1 ).
-                    t802 = t803->concat_tokens(  ).
+                    t802 = t803->concat_tokens( ).
                     DATA(t804) = strlen( t802 ).
                     t801 = t802.
                     IF t801 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -8636,7 +8636,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                           DATA t928 TYPE REF TO zcl_lnt_expression_node.
                           DATA(t929) = CAST zcl_lnt_expression_node( t917 ).
                           t928 = t929.
-                          t927 = t928->concat_tokens(  ).
+                          t927 = t928->concat_tokens( ).
                           DATA(t930) = strlen( t927 ).
                           DATA t931 TYPE i.
                           DATA t932 TYPE i.
@@ -8933,7 +8933,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t1034 TYPE REF TO zcl_lnt_expression_node.
         DATA(t1035) = CAST zcl_lnt_expression_node( t1015 ).
         t1034 = t1035.
-        t1033 = t1034->concat_tokens(  ).
+        t1033 = t1034->concat_tokens( ).
         DATA(t1036) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t1036->has = abap_true.
         t1036->value = t1033.
@@ -9241,7 +9241,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t3 TYPE string.
     DATA t4 TYPE string.
     DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    t4 = t5->concat_tokens(  ).
+    t4 = t5->concat_tokens( ).
     DATA(t6) = strlen( t4 ).
     t3 = t4.
     IF t3 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -9362,7 +9362,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         IF t51 = abap_true.
           DATA t52 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t53) = CAST zcl_lnt_expression_node( t1 ).
-          t52 = t53->get_first_token(  ).
+          t52 = t53->get_first_token( ).
           t50 = t52.
         ELSE.
           DATA t54 TYPE REF TO zcl_lnt_abstract_token.
@@ -9745,7 +9745,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t178 TYPE REF TO zcl_lnt_current_scope.
       DATA(t179) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
       t178 = t179->scope.
-      t177 = t178->get_type(  ).
+      t177 = t178->get_type( ).
       DATA(t180) = |interface|.
       t176 = xsdbool( t177 = t180 ).
       t175 = t176.
@@ -9755,7 +9755,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t183 TYPE REF TO zcl_lnt_current_scope.
         DATA(t184) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t183 = t184->scope.
-        t182 = t183->get_type(  ).
+        t182 = t183->get_type( ).
         DATA(t185) = |class_definition|.
         t181 = xsdbool( t182 = t185 ).
         t175 = t181.
@@ -9768,7 +9768,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t189 TYPE REF TO zcl_lnt_current_scope.
         DATA(t190) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t189 = t190->scope.
-        t188 = t189->get_name(  ).
+        t188 = t189->get_name( ).
         DATA(t191) = strlen( t188 ).
         t187 = t188.
         IF t187 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -9969,7 +9969,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t272 TYPE REF TO zif_lnt_union_4cf1d054.
           DATA(t273) = CAST zif_lnt_union_4cf1d054( t257 ).
           t272 = t273.
-          t271 = t272->get_first_token(  ).
+          t271 = t272->get_first_token( ).
           t267 = t271.
         ENDIF.
         t256 = t267.
@@ -10219,7 +10219,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                 DATA t374 TYPE REF TO zcl_lnt_class.
                 DATA(t375) = CAST zcl_lnt_class( t353 ).
                 t374 = t375.
-                t373 = t374->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t373 = t374->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t370 = t373.
               ELSE.
                 DATA t376 TYPE REF TO zif_lnt_class_definition.
@@ -10556,7 +10556,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           IF t504 = abap_true.
             DATA t505 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t506) = CAST zcl_lnt_expression_node( t1 ).
-            t505 = t506->get_first_token(  ).
+            t505 = t506->get_first_token( ).
             t503 = t505.
           ELSE.
             DATA t507 TYPE REF TO zcl_lnt_abstract_token.
@@ -10689,7 +10689,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         IF t558 = abap_true.
           DATA t559 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t560) = CAST zcl_lnt_expression_node( t1 ).
-          t559 = t560->get_first_token(  ).
+          t559 = t560->get_first_token( ).
           t557 = t559.
         ELSE.
           DATA t561 TYPE REF TO zcl_lnt_abstract_token.
@@ -10919,7 +10919,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t655 TYPE REF TO zif_lnt_union_4cf1d054.
           DATA(t656) = CAST zif_lnt_union_4cf1d054( t640 ).
           t655 = t656.
-          t654 = t655->get_first_token(  ).
+          t654 = t655->get_first_token( ).
           t650 = t654.
         ENDIF.
         t639 = t650.
@@ -11482,7 +11482,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                     DATA t884 TYPE REF TO zcl_lnt_class.
                     DATA(t885) = CAST zcl_lnt_class( t863 ).
                     t884 = t885.
-                    t883 = t884->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                    t883 = t884->gt_dfn_ins_src_obj_cls_ts_clss( ).
                     t880 = t883.
                   ELSE.
                     DATA t886 TYPE REF TO zif_lnt_class_definition.
@@ -11862,7 +11862,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             IF t1030 = abap_true.
               DATA t1031 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t1032) = CAST zcl_lnt_expression_node( t1 ).
-              t1031 = t1032->get_first_token(  ).
+              t1031 = t1032->get_first_token( ).
               t1029 = t1031.
             ELSE.
               DATA t1033 TYPE REF TO zcl_lnt_abstract_token.
@@ -11906,7 +11906,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                 DATA t1050 TYPE REF TO zif_lnt_union_865ccdda.
                 DATA(t1051) = CAST zcl_lnt_fi_identifier( t754 ).
                 t1050 ?= t1051.
-                t1049 = t1050->get_name(  ).
+                t1049 = t1050->get_name( ).
                 DATA(t1052) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t1052->has = abap_true.
                 t1052->value = t1049.
@@ -12084,7 +12084,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
               DATA t1125 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA(t1126) = CAST zif_lnt_union_4cf1d054( t1110 ).
               t1125 = t1126.
-              t1124 = t1125->get_first_token(  ).
+              t1124 = t1125->get_first_token( ).
               t1120 = t1124.
             ENDIF.
             t1109 = t1120.
@@ -12788,7 +12788,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             DATA t1429 TYPE REF TO zif_lnt_registry.
             DATA(t1430) = CAST zcl_lnt_current_scope( t1425 ).
             t1429 = t1430->reg.
-            t1428 = t1429->get_ddic_references(  ).
+            t1428 = t1429->get_ddic_references( ).
             t1424 = t1428.
             DATA t1431 TYPE REF TO zif_lnt_object.
             DATA t1432 TYPE REF TO zcl_lnt_current_scope.
@@ -12815,7 +12815,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
               IF t1443 = abap_true.
                 DATA t1444 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t1445) = CAST zcl_lnt_expression_node( t1 ).
-                t1444 = t1445->get_first_token(  ).
+                t1444 = t1445->get_first_token( ).
                 t1442 = t1444.
               ELSE.
                 DATA t1446 TYPE REF TO zcl_lnt_abstract_token.
@@ -12874,7 +12874,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           IF t1464 = abap_true.
             DATA t1465 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t1466) = CAST zcl_lnt_expression_node( t1 ).
-            t1465 = t1466->get_first_token(  ).
+            t1465 = t1466->get_first_token( ).
             t1463 = t1465.
           ELSE.
             DATA t1467 TYPE REF TO zcl_lnt_abstract_token.
@@ -12992,7 +12992,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           IF t1517 = abap_true.
             DATA t1518 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t1519) = CAST zcl_lnt_expression_node( t1 ).
-            t1518 = t1519->get_first_token(  ).
+            t1518 = t1519->get_first_token( ).
             t1516 = t1518.
           ELSE.
             DATA t1520 TYPE REF TO zcl_lnt_abstract_token.
@@ -13049,7 +13049,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             IF t1540 = abap_true.
               DATA t1541 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t1542) = CAST zcl_lnt_expression_node( t1 ).
-              t1541 = t1542->get_first_token(  ).
+              t1541 = t1542->get_first_token( ).
               t1539 = t1541.
             ELSE.
               DATA t1543 TYPE REF TO zcl_lnt_abstract_token.
@@ -13110,7 +13110,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     ENDIF.
     DATA t1566 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t1567) = CAST zlnt_runtime_arra_8ecd6afe19e0( t140 ).
-    t1566 = t1567->shift(  ).
+    t1566 = t1567->shift( ).
     DO.
       DATA t1568 TYPE abap_bool.
       DATA t1569 TYPE i.
@@ -13232,7 +13232,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       ENDIF.
       DATA t1620 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t1621) = CAST zlnt_runtime_arra_8ecd6afe19e0( t140 ).
-      t1620 = t1621->shift(  ).
+      t1620 = t1621->shift( ).
     ENDDO.
     DATA t1622 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t1622.
@@ -13257,7 +13257,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t4.
     DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    t4 = t5->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+    t4 = t5->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
     t3 = xsdbool( t4 IS BOUND AND t4 IS INSTANCE OF zcl_lnt_simple_field_chain ).
     t2 = xsdbool( t3 = abap_false ).
     IF t2 = abap_true.
@@ -13325,7 +13325,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t27 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t27.
     DATA(t28) = CAST zif_lnt_union_4cf1d054( t13 ).
-    t27 = t28->get_first_token(  ).
+    t27 = t28->get_first_token( ).
     t26 = t27.
     DATA(t29) = VALUE string( ).
     DATA(t30) = VALUE string( ).
@@ -13342,7 +13342,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t36 TYPE REF TO object.
     CLEAR t36.
     DATA(t37) = CAST zif_lnt_union_4cf1d054( t13 ).
-    t36 = t37->get_db65(  ).
+    t36 = t37->get_db65( ).
     t35 = xsdbool( t36 IS BOUND AND t36 IS INSTANCE OF zcl_lnt_st_expres_field ).
     IF t35 = abap_true.
       DATA t38 TYPE REF TO zcl_lnt_typed_identifier.
@@ -13670,7 +13670,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t158 TYPE REF TO object.
       CLEAR t158.
       DATA(t159) = CAST zif_lnt_union_4cf1d054( t13 ).
-      t158 = t159->get_db65(  ).
+      t158 = t159->get_db65( ).
       t157 = xsdbool( t158 IS BOUND AND t158 IS INSTANCE OF zcl_lnt_class_name ).
       t156 = t157.
       IF t157 = abap_true.
@@ -13686,7 +13686,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         CLEAR t166.
         DATA(t167) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t166 = t167->scope.
-        t165 = t166->get_name(  ).
+        t165 = t166->get_name( ).
         DATA(t168) = strlen( t165 ).
         t164 = t165.
         TRANSLATE t164 TO LOWER CASE.
@@ -13702,7 +13702,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         CLEAR t172.
         DATA(t173) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
         t172 = t173->scope.
-        t171 = t172->get_type(  ).
+        t171 = t172->get_type( ).
         DATA(t174) = |interface|.
         t170 = xsdbool( t171 = t174 ).
         t169 = t170.
@@ -13713,7 +13713,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           CLEAR t177.
           DATA(t178) = CAST zcl_lnt_syntax_input( me->input_2fd0 ).
           t177 = t178->scope.
-          t176 = t177->get_type(  ).
+          t176 = t177->get_type( ).
           DATA(t179) = |class_definition|.
           t175 = xsdbool( t176 = t179 ).
           t169 = t175.
@@ -13771,7 +13771,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           CLEAR t199.
           DATA(t200) = CAST zif_lnt_union_4cf1d054( t189 ).
           t199 = t200.
-          t198 = t199->get_first_token(  ).
+          t198 = t199->get_first_token( ).
           t194 = t198.
         ENDIF.
         t188 = t194.
@@ -14039,7 +14039,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t297 TYPE REF TO object.
         CLEAR t297.
         DATA(t298) = CAST zif_lnt_union_4cf1d054( t13 ).
-        t297 = t298->get_db65(  ).
+        t297 = t298->get_db65( ).
         t296 = xsdbool( t297 IS BOUND AND t297 IS INSTANCE OF zcl_lnt_class_name ).
         IF t296 = abap_true.
           DATA t299 TYPE REF TO zif_lnt_interface_definition.
@@ -14266,7 +14266,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                   CLEAR t383.
                   DATA(t384) = CAST zcl_lnt_class( t362 ).
                   t383 = t384.
-                  t382 = t383->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                  t382 = t383->gt_dfn_ins_src_obj_cls_ts_clss( ).
                   t379 = t382.
                 ELSE.
                   DATA t385 TYPE REF TO zif_lnt_class_definition.
@@ -14699,7 +14699,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                   DATA t539 TYPE REF TO zcl_lnt_abstract_token.
                   CLEAR t539.
                   DATA(t540) = CAST zif_lnt_union_4cf1d054( t13 ).
-                  t539 = t540->get_first_token(  ).
+                  t539 = t540->get_first_token( ).
                   t537 = t539.
                 ELSE.
                   DATA t541 TYPE REF TO zcl_lnt_abstract_token.
@@ -14814,7 +14814,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
             CLEAR t580.
             DATA(t581) = CAST zif_lnt_union_4cf1d054( t570 ).
             t580 = t581.
-            t579 = t580->get_first_token(  ).
+            t579 = t580->get_first_token( ).
             t575 = t579.
           ENDIF.
           t569 = t575.
@@ -14934,7 +14934,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                 CLEAR t628.
                 DATA(t629) = CAST zif_lnt_interface_definition( t299 ).
                 t628 = t629.
-                t627 = t628->get_name(  ).
+                t627 = t628->get_name( ).
                 DATA(t630) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t630->has = abap_true.
                 t630->value = t627.
@@ -15112,7 +15112,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
                 CLEAR t694.
                 READ TABLE t693->items INDEX 5 INTO t694.
                 t692 ?= t694.
-                t691 = t692->get_first_token(  ).
+                t691 = t692->get_first_token( ).
                 t690 = t691.
                 DATA(t695) = VALUE string( ).
                 DATA(t696) = CAST zcl_lnt_abstract_token( t690 ).
@@ -15301,7 +15301,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t14 TYPE REF TO zcl_lnt_expression_node.
     DATA(t15) = CAST zcl_lnt_expression_node( t1 ).
     t14 = t15.
-    t13 = t14->get_first_token(  ).
+    t13 = t14->get_first_token( ).
     t12 = t13.
     DATA t16 TYPE string.
     DATA(t17) = CAST zcl_lnt_abstract_token( t12 ).
@@ -15408,7 +15408,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t60 TYPE REF TO zcl_lnt_expression_node.
           DATA(t61) = CAST zcl_lnt_expression_node( t1 ).
           t60 = t61.
-          t59 = t60->get_first_token(  ).
+          t59 = t60->get_first_token( ).
           t57 = t59.
         ELSE.
           DATA t62 TYPE REF TO zcl_lnt_abstract_token.
@@ -15606,7 +15606,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t140 TYPE REF TO zcl_lnt_expression_node.
         DATA(t141) = CAST zcl_lnt_expression_node( t1 ).
         t140 = t141.
-        t139 = t140->concat_tokens(  ).
+        t139 = t140->concat_tokens( ).
         DATA(t142) = strlen( t139 ).
         t138 = t139.
         IF t138 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -15866,7 +15866,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_expression_node.
     DATA(t24) = CAST zcl_lnt_expression_node( t2 ).
     t23 = t24.
-    t22 = t23->concat_tokens(  ).
+    t22 = t23->concat_tokens( ).
     DATA(t25) = strlen( t22 ).
     t21 = t22.
     IF t21 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -15914,7 +15914,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t47 TYPE REF TO zcl_lnt_expression_node.
         DATA(t48) = CAST zcl_lnt_expression_node( t35 ).
         t47 = t48.
-        t46 = t47->get_first_token(  ).
+        t46 = t47->get_first_token( ).
         t45 = t46.
         DATA t49 TYPE string.
         DATA(t50) = CAST zcl_lnt_abstract_token( t45 ).
@@ -15940,7 +15940,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t57 TYPE REF TO zcl_lnt_expression_node.
         DATA(t58) = CAST zcl_lnt_expression_node( t35 ).
         t57 = t58.
-        t56 = t57->get_all_tokens(  ).
+        t56 = t57->get_all_tokens( ).
         DATA t59 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t59.
         DATA t60 TYPE REF TO object.
@@ -16035,7 +16035,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t102 TYPE REF TO zcl_lnt_expression_node.
           DATA(t103) = CAST zcl_lnt_expression_node( t28 ).
           t102 = t103.
-          t101 = t102->concat_tokens(  ).
+          t101 = t102->concat_tokens( ).
           DATA(t104) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t104->has = abap_true.
           t104->value = t101.
@@ -16067,7 +16067,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t116 TYPE REF TO zcl_lnt_expression_node.
       DATA(t117) = CAST zcl_lnt_expression_node( t106 ).
       t116 = t117.
-      t115 = t116->concat_tokens(  ).
+      t115 = t116->concat_tokens( ).
       DATA(t118) = strlen( t115 ).
       t114 = t115.
       IF t114 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -16114,7 +16114,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t141 TYPE REF TO zcl_lnt_expression_node.
         DATA(t142) = CAST zcl_lnt_expression_node( t106 ).
         t141 = t142.
-        t140 = t141->get_first_token(  ).
+        t140 = t141->get_first_token( ).
         DATA(t143) = t126.
         DATA t144 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t144.
@@ -16210,7 +16210,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
       DATA t23 TYPE REF TO zcl_lnt_expression_node.
       DATA(t24) = CAST zcl_lnt_expression_node( t4 ).
       t23 = t24.
-      t22 = t23->concat_tokens(  ).
+      t22 = t23->concat_tokens( ).
       DATA(t25) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t25->has = abap_true.
       t25->value = t22.
@@ -16419,7 +16419,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
           DATA t35 TYPE REF TO zcl_lnt_expression_node.
           DATA(t36) = CAST zcl_lnt_expression_node( t24 ).
           t35 = t36.
-          t34 = t35->concat_tokens(  ).
+          t34 = t35->concat_tokens( ).
           DATA(t37) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t37->has = abap_true.
           t37->value = t34.
@@ -16501,7 +16501,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t71 TYPE REF TO zcl_lnt_expression_node.
         DATA(t72) = CAST zcl_lnt_expression_node( t60 ).
         t71 = t72.
-        t70 = t71->concat_tokens(  ).
+        t70 = t71->concat_tokens( ).
         DATA(t73) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t73->has = abap_true.
         t73->value = t70.
@@ -16537,7 +16537,7 @@ CLASS zcl_lnt_basic_types IMPLEMENTATION.
         DATA t86 TYPE REF TO zcl_lnt_expression_node.
         DATA(t87) = CAST zcl_lnt_expression_node( t75 ).
         t86 = t87.
-        t85 = t86->concat_tokens(  ).
+        t85 = t86->concat_tokens( ).
         DATA(t88) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t88->has = abap_true.
         t88->value = t85.

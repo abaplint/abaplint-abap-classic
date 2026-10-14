@@ -35,8 +35,8 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_iglobal_config.
     DATA t4 TYPE REF TO zif_lnt_configuration.
     DATA(t5) = CAST zif_lnt_registry( me->reg ).
-    t4 = t5->get_config(  ).
-    t3 = t4->get_global(  ).
+    t4 = t5->get_config( ).
+    t3 = t4->get_global( ).
     t2 = t3.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
@@ -151,7 +151,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         t41 = t42.
         DATA t45 TYPE abap_bool.
         DATA(t46) = CAST zcl_lnt_ob_program( t41 ).
-        t46->parse_xml(  ).
+        t46->parse_xml( ).
         DATA t47 TYPE abap_bool.
         DATA t48 TYPE REF TO zcl_lnt_shape_e86506f0.
         DATA t49 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -198,7 +198,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         DATA t65 TYPE REF TO object.
         t65 = t64.
         t63 ?= t65.
-        t62 = t63->get_main_abap_file(  ).
+        t62 = t63->get_main_abap_file( ).
         t61 = t62.
         DATA t66 TYPE abap_bool.
         DATA t67 TYPE abap_bool.
@@ -598,7 +598,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t11 TYPE REF TO zcl_lnt_abap_file.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
     DATA(t13) = CAST zcl_lnt_class( t6 ).
-    t12 = t13->get_main_abap_file(  ).
+    t12 = t13->get_main_abap_file( ).
     t11 = t12.
     DATA t14 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t14.
@@ -852,7 +852,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t6.
     DATA(t7) = CAST zcl_lnt_class( t4 ).
-    t7->parse_xml(  ).
+    t7->parse_xml( ).
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
@@ -925,7 +925,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t31.
       DATA(t32) = CAST zcl_lnt_class( t29 ).
-      t32->parse_xml(  ).
+      t32->parse_xml( ).
       DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t33.
       DATA t34 TYPE REF TO zcl_lnt_shape_e272b380.
@@ -1006,7 +1006,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     DATA t59 TYPE REF TO zcl_lnt_abap_file.
     DATA t60 TYPE REF TO zcl_lnt_abap_file.
     DATA(t61) = CAST zcl_lnt_class( t54 ).
-    t60 = t61->get_main_abap_file(  ).
+    t60 = t61->get_main_abap_file( ).
     t59 = t60.
     DATA t62 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t62.
@@ -1147,7 +1147,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t117.
           DATA(t118) = CAST zcl_lnt_class( t113 ).
-          t118->parse_xml(  ).
+          t118->parse_xml( ).
           DATA t119 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t119.
           DATA t120 TYPE REF TO zcl_lnt_shape_e272b380.

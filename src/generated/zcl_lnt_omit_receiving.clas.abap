@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_omit_receiving_conf(  ).
+    DATA(t1) = NEW zcl_lnt_omit_receiving_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -186,12 +186,12 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv(  ) ).
+    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv(  ) ).
+    DATA(t1) = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv( ) ).
     result = t1.
 
   ENDMETHOD.

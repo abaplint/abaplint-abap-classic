@@ -27,7 +27,7 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
       DATA t11 TYPE REF TO zcl_lnt_current_scope.
       DATA(t12) = CAST zcl_lnt_syntax_input( t2 ).
       t11 = t12->scope.
-      t10 = t11->find_returning_parameter(  ).
+      t10 = t11->find_returning_parameter( ).
       t9 = t10.
       DATA(t13) = VALUE abap_bool( ).
       DATA t14 TYPE REF TO zcl_lnt_typed_identifier.
@@ -56,7 +56,7 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
         DATA t27 TYPE REF TO zcl_lnt_expression_node.
         DATA(t28) = CAST zcl_lnt_expression_node( t3 ).
         t27 = t28.
-        t26 = t27->get_first_token(  ).
+        t26 = t27->get_first_token( ).
         DATA(t29) = t20.
         DATA t30 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t30.
@@ -75,7 +75,7 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
         DATA t36 TYPE REF TO zcl_lnt_expression_node.
         DATA(t37) = CAST zcl_lnt_expression_node( t3 ).
         t36 = t37.
-        t35 = t36->get_first_token(  ).
+        t35 = t36->get_first_token( ).
         t33 = t35.
       ELSE.
         DATA t38 TYPE REF TO zcl_lnt_abstract_token.
@@ -151,6 +151,6 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

@@ -110,7 +110,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_stts IMPLEMENTATION.
         t42 = t43.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t45) = CAST zcl_lnt_structure_node( t40 ).
-        t44 = t45->find_all_statement_nodes(  ).
+        t44 = t45->find_all_statement_nodes( ).
         DATA t46 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t46.
         DATA t47 TYPE REF TO object.
@@ -120,7 +120,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_stts IMPLEMENTATION.
           DATA t48 TYPE REF TO zif_lnt_statement.
           DATA t49 TYPE REF TO zif_lnt_statement.
           DATA(t50) = CAST zcl_lnt_statement_node( t46 ).
-          t49 = t50->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+          t49 = t50->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t48 = t49.
           DATA(t51) = VALUE abap_bool( ).
           DATA(t52) = VALUE abap_bool( ).
@@ -272,7 +272,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_stts IMPLEMENTATION.
           DATA t109 TYPE REF TO zcl_lnt_expression_node.
           DATA(t110) = CAST zcl_lnt_expression_node( t90 ).
           t109 = t110.
-          t108 = t109->get_first_token(  ).
+          t108 = t109->get_first_token( ).
           t104 = t108.
         ENDIF.
         t89 = t104.
@@ -314,7 +314,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_stts IMPLEMENTATION.
         DATA t126 TYPE REF TO zcl_lnt_abstract_token.
         DATA t127 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t128) = CAST zcl_lnt_structure_node( t40 ).
-        t127 = t128->get_first_token(  ).
+        t127 = t128->get_first_token( ).
         t126 = t127.
         DATA t129 TYPE REF TO zcl_lnt_position.
         DATA(t130) = CAST zcl_lnt_abstract_token( t126 ).

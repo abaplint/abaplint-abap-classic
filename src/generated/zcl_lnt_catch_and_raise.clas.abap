@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_catch_and_raise_conf(  ).
+    DATA(t1) = NEW zcl_lnt_catch_and_raise_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -153,12 +153,12 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs( ) ).
     result = t1.
 
   ENDMETHOD.

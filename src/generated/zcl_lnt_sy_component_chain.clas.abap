@@ -110,7 +110,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
         DATA t47 TYPE string.
         DATA t48 TYPE string.
         DATA(t49) = CAST zif_lnt_union_4cf1d054( t37 ).
-        t48 = t49->concat_tokens(  ).
+        t48 = t49->concat_tokens( ).
         DATA(t50) = strlen( t48 ).
         t47 = t48.
         IF t47 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -133,7 +133,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
         DATA t55 TYPE abap_bool.
         DATA t56 TYPE REF TO object.
         DATA(t57) = CAST zif_lnt_union_4cf1d054( t37 ).
-        t56 = t57->get_db65(  ).
+        t56 = t57->get_db65( ).
         t55 = xsdbool( t56 IS BOUND AND t56 IS INSTANCE OF zcl_lnt_st_dereference ).
         IF t55 = abap_true.
           DATA t58 TYPE abap_bool.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
             DATA(t66) = CAST zcl_lnt_syntax_input( t3 ).
             DATA t67 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t68) = CAST zif_lnt_union_4cf1d054( t37 ).
-            t67 = t68->get_first_token(  ).
+            t67 = t68->get_first_token( ).
             DATA(t69) = t61.
             DATA t70 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t70.
@@ -211,13 +211,13 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
           DATA t90 TYPE abap_bool.
           DATA t91 TYPE REF TO object.
           DATA(t92) = CAST zif_lnt_union_4cf1d054( t37 ).
-          t91 = t92->get_db65(  ).
+          t91 = t92->get_db65( ).
           t90 = xsdbool( t91 IS BOUND AND t91 IS INSTANCE OF zcl_lnt_arrow_or_dash ).
           IF t90 = abap_true.
             DATA t93 TYPE string.
             DATA t94 TYPE string.
             DATA(t95) = CAST zif_lnt_union_4cf1d054( t37 ).
-            t94 = t95->concat_tokens(  ).
+            t94 = t95->concat_tokens( ).
             t93 = t94.
             DATA t96 TYPE abap_bool.
             DATA(t97) = t93.
@@ -240,7 +240,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                 DATA(t107) = CAST zcl_lnt_syntax_input( t3 ).
                 DATA t108 TYPE REF TO zcl_lnt_abstract_token.
                 DATA(t109) = CAST zif_lnt_union_4cf1d054( t37 ).
-                t108 = t109->get_first_token(  ).
+                t108 = t109->get_first_token( ).
                 DATA(t110) = t102.
                 DATA t111 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                 CLEAR t111.
@@ -290,7 +290,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                   DATA(t130) = CAST zcl_lnt_syntax_input( t3 ).
                   DATA t131 TYPE REF TO zcl_lnt_abstract_token.
                   DATA(t132) = CAST zif_lnt_union_4cf1d054( t37 ).
-                  t131 = t132->get_first_token(  ).
+                  t131 = t132->get_first_token( ).
                   DATA(t133) = t125.
                   DATA t134 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                   CLEAR t134.
@@ -350,7 +350,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                     DATA(t157) = CAST zcl_lnt_syntax_input( t3 ).
                     DATA t158 TYPE REF TO zcl_lnt_abstract_token.
                     DATA(t159) = CAST zif_lnt_union_4cf1d054( t37 ).
-                    t158 = t159->get_first_token(  ).
+                    t158 = t159->get_first_token( ).
                     DATA(t160) = t152.
                     DATA t161 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                     CLEAR t161.
@@ -385,13 +385,13 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
             DATA t169 TYPE abap_bool.
             DATA t170 TYPE REF TO object.
             DATA(t171) = CAST zif_lnt_union_4cf1d054( t37 ).
-            t170 = t171->get_db65(  ).
+            t170 = t171->get_db65( ).
             t169 = xsdbool( t170 IS BOUND AND t170 IS INSTANCE OF zcl_lnt_st_component_name ).
             IF t169 = abap_true.
               DATA t172 TYPE string.
               DATA t173 TYPE string.
               DATA(t174) = CAST zif_lnt_union_4cf1d054( t37 ).
-              t173 = t174->concat_tokens(  ).
+              t173 = t174->concat_tokens( ).
               t172 = t173.
               DATA t175 TYPE abap_bool.
               DATA(t176) = CAST zcl_lnt_abstract_type( t1 ).
@@ -495,7 +495,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                   DATA(t224) = CAST zcl_lnt_syntax_input( t3 ).
                   DATA t225 TYPE REF TO zcl_lnt_abstract_token.
                   DATA(t226) = CAST zif_lnt_union_4cf1d054( t37 ).
-                  t225 = t226->get_first_token(  ).
+                  t225 = t226->get_first_token( ).
                   DATA(t227) = t213.
                   DATA t228 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                   CLEAR t228.
@@ -820,7 +820,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                           DATA t357 TYPE REF TO zcl_lnt_class.
                           DATA(t358) = CAST zcl_lnt_class( t336 ).
                           t357 = t358.
-                          t356 = t357->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                          t356 = t357->gt_dfn_ins_src_obj_cls_ts_clss( ).
                           t353 = t356.
                         ELSE.
                           DATA t359 TYPE REF TO zif_lnt_class_definition.
@@ -1161,7 +1161,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                     DATA(t488) = CAST zcl_lnt_syntax_input( t3 ).
                     DATA t489 TYPE REF TO zcl_lnt_abstract_token.
                     DATA(t490) = CAST zif_lnt_union_4cf1d054( t37 ).
-                    t489 = t490->get_first_token(  ).
+                    t489 = t490->get_first_token( ).
                     DATA(t491) = t452.
                     DATA t492 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                     CLEAR t492.
@@ -1294,7 +1294,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                     DATA(t548) = CAST zcl_lnt_syntax_input( t3 ).
                     DATA t549 TYPE REF TO zcl_lnt_abstract_token.
                     DATA(t550) = CAST zif_lnt_union_4cf1d054( t37 ).
-                    t549 = t550->get_first_token(  ).
+                    t549 = t550->get_first_token( ).
                     DATA(t551) = t537.
                     DATA t552 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                     CLEAR t552.
@@ -1448,7 +1448,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                     IF t608 = abap_true.
                       DATA t609 TYPE REF TO zcl_lnt_abstract_token.
                       DATA(t610) = CAST zif_lnt_union_4cf1d054( t37 ).
-                      t609 = t610->get_first_token(  ).
+                      t609 = t610->get_first_token( ).
                       t607 = t609.
                     ELSE.
                       DATA t611 TYPE REF TO zcl_lnt_abstract_token.
@@ -1566,7 +1566,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                   DATA(t656) = CAST zcl_lnt_syntax_input( t3 ).
                   DATA t657 TYPE REF TO zcl_lnt_abstract_token.
                   DATA(t658) = CAST zif_lnt_union_4cf1d054( t37 ).
-                  t657 = t658->get_first_token(  ).
+                  t657 = t658->get_first_token( ).
                   DATA(t659) = t621.
                   DATA t660 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                   CLEAR t660.

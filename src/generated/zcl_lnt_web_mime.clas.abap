@@ -71,7 +71,7 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_ins_src_obj_wb_mm_ts_wb_mm(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_ins_src_obj_wb_mm_ts_wb_mm( ) ).
     result = t1.
 
   ENDMETHOD.

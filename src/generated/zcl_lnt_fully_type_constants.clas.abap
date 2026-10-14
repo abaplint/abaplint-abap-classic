@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_flly_typ_cnsnts_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_flly_typ_cnsnts_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -122,12 +122,12 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( me->g_c_i_s_r_fl_ty_cn_ts_fl_ty_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( me->g_c_i_s_r_fl_ty_cn_ts_fl_ty_cn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( me->g_c_i_s_r_fl_ty_cn_ts_fl_ty_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_flly_typ_cnsnts_cnf( me->g_c_i_s_r_fl_ty_cn_ts_fl_ty_cn( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -9,7 +9,7 @@ CLASS zcl_lnt_frbddn_idntfr_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_frbddn_idntfr_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     me->check_bf6e = t1.

@@ -9,7 +9,7 @@ CLASS zcl_lnt_pragma_style_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_pragma_style_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |upper|.
     me->style = t1.
   ENDMETHOD.

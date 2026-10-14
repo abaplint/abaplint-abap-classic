@@ -10,7 +10,7 @@ CLASS zcl_lnt_uncght_excptn_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_uncght_excptn_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->report_dynamic = t1.
     DATA(t2) = abap_false.

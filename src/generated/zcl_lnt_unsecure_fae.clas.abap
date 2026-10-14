@@ -21,7 +21,7 @@ CLASS zcl_lnt_unsecure_fae DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_unsecure_fae_conf(  ).
+    DATA(t1) = NEW zcl_lnt_unsecure_fae_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -107,12 +107,12 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( me->gt_cn_in_sr_rls_uns_f_ts_uns_f(  ) ).
+    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( me->gt_cn_in_sr_rls_uns_f_ts_uns_f( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( me->gt_cn_in_sr_rls_uns_f_ts_uns_f(  ) ).
+    DATA(t1) = CAST zcl_lnt_unsecure_fae_conf( me->gt_cn_in_sr_rls_uns_f_ts_uns_f( ) ).
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -138,21 +138,21 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

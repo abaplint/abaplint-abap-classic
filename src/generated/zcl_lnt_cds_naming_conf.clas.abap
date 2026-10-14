@@ -19,7 +19,7 @@ CLASS zcl_lnt_cds_naming_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_ru
 ENDCLASS.
 CLASS zcl_lnt_cds_naming_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |ZI_|.
     me->basic_interface_view = t1.
     DATA(t2) = |ZI_|.

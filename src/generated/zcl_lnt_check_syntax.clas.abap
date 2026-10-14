@@ -21,7 +21,7 @@ CLASS zcl_lnt_check_syntax DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_check_syntax IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_check_syntax_conf(  ).
+    DATA(t1) = NEW zcl_lnt_check_syntax_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -108,7 +108,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     t13 = t12.
     t11 ?= t13.
     t9 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 ).
-    t8 = t9->run(  ).
+    t8 = t9->run( ).
     t7 = t8->issues.
     t6 = t7.
     DATA(t14) = VALUE abap_bool( ).
@@ -171,7 +171,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
         DATA t42 TYPE REF TO zcl_lnt_iissue_data.
         DATA t43 TYPE REF TO zcl_lnt_iissue_data.
         DATA(t44) = CAST zcl_lnt_issue( t34 ).
-        t43 = t44->get_data(  ).
+        t43 = t44->get_data( ).
         t42 = t43.
         DATA(t45) = CAST zcl_lnt_iissue_data( t42 ).
         DATA t46 TYPE string.
@@ -208,12 +208,12 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn(  ) ).
+    DATA(t1) = CAST zcl_lnt_check_syntax_conf( me->gt_cn_in_sr_rl_ch_sy_ts_ch_syn( ) ).
   ENDMETHOD.
   METHOD initialize.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
@@ -240,21 +240,21 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

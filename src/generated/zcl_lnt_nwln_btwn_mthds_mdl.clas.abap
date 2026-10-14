@@ -18,7 +18,7 @@ CLASS zcl_lnt_nwln_btwn_mthds_mdl IMPLEMENTATION.
     IF zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_6bb15190b359 = abap_false.
       zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_a4694f196248( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

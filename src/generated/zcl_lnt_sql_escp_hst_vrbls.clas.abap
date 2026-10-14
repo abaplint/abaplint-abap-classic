@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS zcl_lnt_sql_escp_hst_vrbls IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sql_escp_hst_vrbls_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_sql_escp_hst_vrbls_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -127,12 +127,12 @@ CLASS zcl_lnt_sql_escp_hst_vrbls IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sql_escp_hst_vrbls_cnf( me->g_c_i_s_r_s_e_h_v_t_s_es_hs_vr(  ) ).
+    DATA(t1) = CAST zcl_lnt_sql_escp_hst_vrbls_cnf( me->g_c_i_s_r_s_e_h_v_t_s_es_hs_vr( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sql_escp_hst_vrbls_cnf( me->g_c_i_s_r_s_e_h_v_t_s_es_hs_vr(  ) ).
+    DATA(t1) = CAST zcl_lnt_sql_escp_hst_vrbls_cnf( me->g_c_i_s_r_s_e_h_v_t_s_es_hs_vr( ) ).
     result = t1.
 
   ENDMETHOD.

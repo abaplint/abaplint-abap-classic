@@ -40,7 +40,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
     DATA t2 TYPE abap_bool.
-    DATA(t3) = CONV abap_bool( zcl_lnt_combi=>is_open_abap(  ) ).
+    DATA(t3) = CONV abap_bool( zcl_lnt_combi=>is_open_abap( ) ).
     DATA(t4) = abap_true.
     t2 = xsdbool( t3 = t4 ).
     IF t2 = abap_true.
@@ -118,7 +118,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t28.
     DATA t29 TYPE abap_bool.
-    DATA(t30) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release(  ) ).
+    DATA(t30) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
     DATA(t31) = CAST zcl_lnt_abap_release( me->release_3664 ).
     t29 = zcl_lnt_version_module=>release_at_least( i_running = t30 i_required = t31 ).
     IF t29 = abap_true.
@@ -156,7 +156,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CAST zif_lnt_statement_runnable( me->runnable ).
-    t1 = t2->first(  ).
+    t1 = t2->first( ).
     result = t1.
 
   ENDMETHOD.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t10.
     DATA t11 TYPE abap_bool.
-    DATA(t12) = CONV abap_bool( zcl_lnt_combi=>is_open_abap(  ) ).
+    DATA(t12) = CONV abap_bool( zcl_lnt_combi=>is_open_abap( ) ).
     DATA(t13) = abap_true.
     t11 = xsdbool( t12 = t13 ).
     IF t11 = abap_true.
@@ -259,7 +259,7 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t38.
       DATA t39 TYPE abap_bool.
-      DATA(t40) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release(  ) ).
+      DATA(t40) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
       DATA(t41) = CAST zcl_lnt_abap_release( me->release_3664 ).
       t39 = zcl_lnt_version_module=>release_at_least( i_running = t40 i_required = t41 ).
       IF t39 = abap_true.
@@ -289,25 +289,25 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run.
-    result = me->run(  i_r_f634 = i_r_f634 ).
+    result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~railroad.
-    result = me->railroad(  ).
+    result = me->railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~to_str.
-    result = me->to_str(  ).
+    result = me->to_str( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~list_keywords.
-    result = me->list_keywords(  ).
+    result = me->list_keywords( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run_one.
-    result = me->run_one(  i_x = i_x ).
+    result = me->run_one( i_x = i_x ).
   ENDMETHOD.
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

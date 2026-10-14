@@ -22,7 +22,7 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t5) = CAST zif_lnt_registry( t1 ).
-    t4 = t5->get_objects(  ).
+    t4 = t5->get_objects( ).
     DATA t6 TYPE REF TO zif_lnt_object.
     CLEAR t6.
     DATA t7 TYPE REF TO object.

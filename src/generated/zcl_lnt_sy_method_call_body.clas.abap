@@ -22,7 +22,7 @@ CLASS zcl_lnt_sy_method_call_body IMPLEMENTATION.
     DATA(t9) = CAST zcl_lnt_expression_node( t4 ).
     t8 = xsdbool( t9 IS BOUND ).
     IF t8 = abap_true.
-      DATA(t10) = NEW zcl_lnt_sy_method_parameters(  ).
+      DATA(t10) = NEW zcl_lnt_sy_method_parameters( ).
       DATA t11 TYPE REF TO zcl_lnt_expression_node.
       DATA(t12) = CAST zcl_lnt_expression_node( t4 ).
       t11 = t12.

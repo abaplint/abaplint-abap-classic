@@ -28,7 +28,7 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
     DATA(t5) = CAST zif_lnt_abap_file_information( i_info ).
     DATA t6 TYPE string.
     DATA(t7) = CAST zif_lnt_file( t1 ).
-    t6 = t7->get_filename(  ).
+    t6 = t7->get_filename( ).
     super->constructor( i_filename = t6 ).
     DATA(t8) = CAST zif_lnt_file( t1 ).
     me->file = t8.
@@ -171,15 +171,15 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file~get_info.
-    result = me->get_info(  ).
+    result = me->get_info( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file~get_structure.
-    result = me->get_structure(  ).
+    result = me->get_structure( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file~get_tokens.
-    result = me->get_tokens(  i_with_pragmas = i_with_pragmas ).
+    result = me->get_tokens( i_with_pragmas = i_with_pragmas ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file~get_statements.
-    result = me->get_statements(  ).
+    result = me->get_statements( ).
   ENDMETHOD.
 ENDCLASS.

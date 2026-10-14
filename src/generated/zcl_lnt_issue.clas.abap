@@ -152,7 +152,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA(t16) = VALUE string( ).
     DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t18) = CAST zif_lnt_file( t1 ).
-    t17 = t18->get_raw_rows(  ).
+    t17 = t18->get_raw_rows( ).
     DATA(t19) = VALUE i( ).
     DATA t20 TYPE int8.
     DATA(t21) = t2.
@@ -217,7 +217,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t39 TYPE REF TO zcl_lnt_iissue_data.
     DATA t40 TYPE string.
     DATA(t41) = CAST zif_lnt_file( t1 ).
-    t40 = t41->get_filename(  ).
+    t40 = t41->get_filename( ).
     DATA(t42) = t3.
     DATA(t43) = t4.
     DATA(t44) = CAST zcl_lnt_position( t6 ).
@@ -255,7 +255,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t14 TYPE REF TO zcl_lnt_abstract_token.
     DATA t15 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t16) = CAST zcl_lnt_statement_node( t11 ).
-    t15 = t16->get_first_token(  ).
+    t15 = t16->get_first_token( ).
     t14 = t15.
     DATA t17 TYPE REF TO zcl_lnt_position.
     DATA(t18) = CAST zcl_lnt_abstract_token( t14 ).
@@ -272,7 +272,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_abstract_token.
     DATA t24 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t25) = CAST zcl_lnt_statement_node( t20 ).
-    t24 = t25->get_last_token(  ).
+    t24 = t25->get_last_token( ).
     t23 = t24.
     DATA t26 TYPE REF TO zcl_lnt_position.
     CLEAR t26.
@@ -359,7 +359,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA(t19) = VALUE string( ).
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t21) = CAST zif_lnt_file( t1 ).
-    t20 = t21->get_raw_rows(  ).
+    t20 = t21->get_raw_rows( ).
     DATA(t22) = VALUE i( ).
     DATA t23 TYPE int8.
     DATA(t24) = t7.
@@ -424,7 +424,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t42 TYPE REF TO zcl_lnt_iissue_data.
     DATA t43 TYPE string.
     DATA(t44) = CAST zif_lnt_file( t1 ).
-    t43 = t44->get_filename(  ).
+    t43 = t44->get_filename( ).
     DATA(t45) = t3.
     DATA(t46) = t4.
     DATA(t47) = CAST zcl_lnt_position( t2 ).
@@ -501,7 +501,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t31 TYPE REF TO zcl_lnt_iissue_data.
     DATA t32 TYPE string.
     DATA(t33) = CAST zif_lnt_file( t1 ).
-    t32 = t33->get_filename(  ).
+    t32 = t33->get_filename( ).
     DATA(t34) = t5.
     DATA(t35) = t6.
     DATA(t36) = CAST zcl_lnt_position( t9 ).
@@ -566,7 +566,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_iissue_data.
     DATA t24 TYPE string.
     DATA(t25) = CAST zif_lnt_file( t1 ).
-    t24 = t25->get_filename(  ).
+    t24 = t25->get_filename( ).
     DATA(t26) = t4.
     DATA(t27) = t5.
     DATA(t28) = CAST zcl_lnt_position( t2 ).
@@ -632,7 +632,7 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
     CLEAR t21.
     DATA t22 TYPE string.
     DATA(t23) = CAST zif_lnt_file( t1 ).
-    t22 = t23->get_filename(  ).
+    t22 = t23->get_filename( ).
     DATA(t24) = t3.
     DATA(t25) = t4.
     DATA t26 TYPE REF TO zcl_lnt_position.

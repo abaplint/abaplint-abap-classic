@@ -64,7 +64,7 @@ CLASS zcl_lnt_sy_type_table IMPLEMENTATION.
     DATA t28 TYPE REF TO zcl_lnt_expression_node.
     DATA(t29) = CAST zcl_lnt_expression_node( t4 ).
     t28 = t29.
-    t27 = t28->get_first_token(  ).
+    t27 = t28->get_first_token( ).
     t26 = t27.
     DATA(t30) = VALUE string( ).
     DATA(t31) = VALUE string( ).
@@ -96,7 +96,7 @@ CLASS zcl_lnt_sy_type_table IMPLEMENTATION.
     DATA t43 TYPE REF TO zcl_lnt_abstract_token.
     DATA t44 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t45) = CAST zif_lnt_union_bb14dc41( t1 ).
-    t44 = t45->get_first_token(  ).
+    t44 = t45->get_first_token( ).
     t43 = t44.
     DATA t46 TYPE string.
     DATA(t47) = CAST zcl_lnt_abstract_token( t43 ).
@@ -131,7 +131,7 @@ CLASS zcl_lnt_sy_type_table IMPLEMENTATION.
       DATA t61 TYPE REF TO zcl_lnt_current_scope.
       DATA(t62) = CAST zcl_lnt_syntax_input( t2 ).
       t61 = t62->scope.
-      t60 = t61->get_type(  ).
+      t60 = t61->get_type( ).
       DATA(t63) = |class_definition|.
       t59 = xsdbool( t60 = t63 ).
       t58 = t59.
@@ -141,7 +141,7 @@ CLASS zcl_lnt_sy_type_table IMPLEMENTATION.
         DATA t66 TYPE REF TO zcl_lnt_current_scope.
         DATA(t67) = CAST zcl_lnt_syntax_input( t2 ).
         t66 = t67->scope.
-        t65 = t66->get_type(  ).
+        t65 = t66->get_type( ).
         DATA(t68) = |interface|.
         t64 = xsdbool( t65 = t68 ).
         t58 = t64.
@@ -153,7 +153,7 @@ CLASS zcl_lnt_sy_type_table IMPLEMENTATION.
         DATA t72 TYPE REF TO zcl_lnt_current_scope.
         DATA(t73) = CAST zcl_lnt_syntax_input( t2 ).
         t72 = t73->scope.
-        t71 = t72->get_name(  ).
+        t71 = t72->get_name( ).
         DATA(t74) = |=>|.
         DATA(t75) = strlen( t71 ).
         t70 = |{ t71 }{ t74 }|.

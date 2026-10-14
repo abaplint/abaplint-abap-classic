@@ -42,7 +42,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     DATA t16 TYPE REF TO zcl_lnt_expression_node.
     DATA(t17) = CAST zcl_lnt_expression_node( t3 ).
     t16 = t17.
-    t15 = t16->get_first_token(  ).
+    t15 = t16->get_first_token( ).
     t14 = t15.
     DATA t18 TYPE abap_bool.
     DATA t19 TYPE i.
@@ -69,7 +69,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA t32 TYPE REF TO zcl_lnt_expression_node.
       DATA(t33) = CAST zcl_lnt_expression_node( t3 ).
       t32 = t33.
-      t31 = t32->concat_tokens(  ).
+      t31 = t32->concat_tokens( ).
       DATA t34 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t34.
       DATA(t35) = `\(.+$`.
@@ -144,7 +144,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA(t75) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t76 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t77) = CAST zcl_lnt_statement_node( t1 ).
-      t76 = t77->get_first_token(  ).
+      t76 = t77->get_first_token( ).
       DATA(t78) = t63.
       DATA t79 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t79.
@@ -180,7 +180,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA(t94) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t95 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t96) = CAST zcl_lnt_statement_node( t1 ).
-      t95 = t96->get_first_token(  ).
+      t95 = t96->get_first_token( ).
       DATA(t97) = t89.
       DATA t98 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t98.
@@ -206,7 +206,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA t109 TYPE REF TO zcl_lnt_expression_node.
       DATA(t110) = CAST zcl_lnt_expression_node( t99 ).
       t109 = t110.
-      t108 = t109->concat_tokens(  ).
+      t108 = t109->concat_tokens( ).
       DATA(t111) = strlen( t108 ).
       t107 = t111.
       DATA(t112) = 4.
@@ -221,7 +221,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA t117 TYPE REF TO zcl_lnt_expression_node.
       DATA(t118) = CAST zcl_lnt_expression_node( t99 ).
       t117 = t118.
-      t116 = t117->concat_tokens(  ).
+      t116 = t117->concat_tokens( ).
       DATA(t119) = strlen( t115 ).
       t114 = |{ t115 }{ t116 }|.
       t113 = t114.
@@ -234,7 +234,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA t125 TYPE REF TO zcl_lnt_expression_node.
       DATA(t126) = CAST zcl_lnt_expression_node( t99 ).
       t125 = t126.
-      t124 = t125->get_first_token(  ).
+      t124 = t125->get_first_token( ).
       DATA(t127) = t113.
       DATA t128 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t128.
@@ -263,7 +263,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
       DATA(t139) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t140 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t141) = CAST zcl_lnt_statement_node( t1 ).
-      t140 = t141->get_first_token(  ).
+      t140 = t141->get_first_token( ).
       DATA(t142) = t134.
       DATA t143 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t143.
@@ -724,7 +724,7 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    t3 = t4->get_tokens(  ).
+    t3 = t4->get_tokens( ).
     t2 = t3.
     DATA t5 TYPE i.
     DATA(t6) = 0.
@@ -860,6 +860,6 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

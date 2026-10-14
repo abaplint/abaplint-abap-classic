@@ -172,7 +172,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     CLEAR t15.
     READ TABLE t14->items INDEX 1 INTO t15.
     t13 ?= t15.
-    t12 = t13->first(  ).
+    t12 = t13->first( ).
     t11 = t12.
     DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -182,7 +182,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     CLEAR t20.
     READ TABLE t19->items INDEX 2 INTO t20.
     t18 ?= t20.
-    t17 = t18->first(  ).
+    t17 = t18->first( ).
     t16 = t17.
     DATA t21 TYPE abap_bool.
     DATA t22 TYPE abap_bool.
@@ -306,25 +306,25 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run.
-    result = me->run(  i_r_f634 = i_r_f634 ).
+    result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~railroad.
-    result = me->railroad(  ).
+    result = me->railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~to_str.
-    result = me->to_str(  ).
+    result = me->to_str( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~list_keywords.
-    result = me->list_keywords(  ).
+    result = me->list_keywords( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_runnable~run_one.
-    result = me->run_one(  i_x = i_x ).
+    result = me->run_one( i_x = i_x ).
   ENDMETHOD.
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

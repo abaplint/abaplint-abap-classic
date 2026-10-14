@@ -77,7 +77,7 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       DATA(t34) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t35 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t36) = CAST zcl_lnt_statement_node( t1 ).
-      t35 = t36->get_first_token(  ).
+      t35 = t36->get_first_token( ).
       DATA(t37) = t29.
       DATA t38 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t38.
@@ -98,7 +98,7 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
     DATA t46 TYPE string.
     DATA t47 TYPE string.
     DATA(t48) = CAST zcl_lnt_statement_node( t1 ).
-    t47 = t48->concat_tokens(  ).
+    t47 = t48->concat_tokens( ).
     DATA(t49) = strlen( t47 ).
     t46 = t47.
     IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -141,7 +141,7 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
         DATA(t65) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t66 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t67) = CAST zcl_lnt_statement_node( t1 ).
-        t66 = t67->get_first_token(  ).
+        t66 = t67->get_first_token( ).
         DATA(t68) = t60.
         DATA t69 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t69.
@@ -172,7 +172,7 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
         DATA(t82) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t83 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t84) = CAST zcl_lnt_statement_node( t1 ).
-        t83 = t84->get_first_token(  ).
+        t83 = t84->get_first_token( ).
         DATA(t85) = t77.
         DATA t86 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t86.
@@ -192,6 +192,6 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

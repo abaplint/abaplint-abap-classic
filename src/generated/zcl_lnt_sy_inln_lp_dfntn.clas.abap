@@ -175,7 +175,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
             DATA t82 TYPE REF TO zcl_lnt_expression_node.
             DATA(t83) = CAST zcl_lnt_expression_node( t1 ).
             t82 = t83.
-            t81 = t82->get_first_token(  ).
+            t81 = t82->get_first_token( ).
             DATA(t84) = t67.
             DATA t85 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t85.
@@ -210,7 +210,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
         DATA t99 TYPE REF TO zcl_lnt_expression_node.
         DATA(t100) = CAST zcl_lnt_expression_node( t1 ).
         t99 = t100.
-        t98 = t99->concat_tokens(  ).
+        t98 = t99->concat_tokens( ).
         DATA(t101) = strlen( t98 ).
         t97 = t98.
         IF t97 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -295,7 +295,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
           DATA t132 TYPE REF TO zcl_lnt_expression_node.
           DATA(t133) = CAST zcl_lnt_expression_node( t1 ).
           t132 = t133.
-          t131 = t132->get_first_token(  ).
+          t131 = t132->get_first_token( ).
           DATA(t134) = t125.
           DATA t135 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t135.
@@ -312,7 +312,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
       DATA t139 TYPE REF TO zcl_lnt_expression_node.
       DATA(t140) = CAST zcl_lnt_expression_node( t10 ).
       t139 = t140.
-      t138 = t139->get_first_token(  ).
+      t138 = t139->get_first_token( ).
       DATA t141 TYPE string.
       DATA(t142) = CAST zcl_lnt_syntax_input( t2 ).
       t141 = t142->filename.
@@ -354,7 +354,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
         DATA t160 TYPE REF TO zcl_lnt_expression_node.
         DATA(t161) = CAST zcl_lnt_expression_node( t10 ).
         t160 = t161.
-        t159 = t160->get_first_token(  ).
+        t159 = t160->get_first_token( ).
         t157 = t159.
       ELSE.
         DATA t162 TYPE REF TO zcl_lnt_abstract_token.
@@ -384,7 +384,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
         DATA t174 TYPE REF TO zcl_lnt_expression_node.
         DATA(t175) = CAST zcl_lnt_expression_node( t10 ).
         t174 = t175.
-        t173 = t174->get_first_token(  ).
+        t173 = t174->get_first_token( ).
         t171 = t173.
       ELSE.
         DATA t176 TYPE REF TO zcl_lnt_abstract_token.
@@ -538,7 +538,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
       DATA t241 TYPE REF TO zcl_lnt_expression_node.
       DATA(t242) = CAST zcl_lnt_expression_node( t231 ).
       t241 = t242.
-      t240 = t241->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t240 = t241->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t239 = xsdbool( t240 IS BOUND AND t240 IS INSTANCE OF zcl_lnt_target_field ).
       t236 = t239.
     ENDIF.
@@ -551,7 +551,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
       DATA t246 TYPE REF TO zcl_lnt_expression_node.
       DATA(t247) = CAST zcl_lnt_expression_node( t231 ).
       t246 = t247.
-      t245 = t246->get_first_token(  ).
+      t245 = t246->get_first_token( ).
       DATA t248 TYPE string.
       DATA(t249) = CAST zcl_lnt_syntax_input( t2 ).
       t248 = t249->filename.
@@ -594,7 +594,7 @@ CLASS zcl_lnt_sy_inln_lp_dfntn IMPLEMENTATION.
         DATA t267 TYPE REF TO zcl_lnt_expression_node.
         DATA(t268) = CAST zcl_lnt_expression_node( t231 ).
         t267 = t268.
-        t266 = t267->get_first_token(  ).
+        t266 = t267->get_first_token( ).
         t264 = t266.
       ELSE.
         DATA t269 TYPE REF TO zcl_lnt_abstract_token.

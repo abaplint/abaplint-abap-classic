@@ -65,7 +65,7 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
       DATA t28 TYPE REF TO zcl_lnt_expression_node.
       DATA(t29) = CAST zcl_lnt_expression_node( t20 ).
       t28 = t29.
-      t27 = t28->concat_tokens(  ).
+      t27 = t28->concat_tokens( ).
       t26 = t27.
       DATA t30 TYPE REF TO zcl_lnt_ilookup_result.
       DATA t31 TYPE REF TO zcl_lnt_ilookup_result.
@@ -258,7 +258,7 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
         CLEAR t111.
         READ TABLE t105->items INDEX 3 INTO t111.
         t104 ?= t111.
-        t103 = t104->concat_tokens(  ).
+        t103 = t104->concat_tokens( ).
         DATA(t112) = strlen( t103 ).
         t102 = t103.
         IF t102 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -715,7 +715,7 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
           DATA t296 TYPE REF TO zif_lnt_registry.
           DATA(t297) = CAST zcl_lnt_current_scope( t292 ).
           t296 = t297->reg.
-          t295 = t296->get_ddic_references(  ).
+          t295 = t296->get_ddic_references( ).
           t291 = t295.
           DATA t298 TYPE REF TO zif_lnt_object.
           DATA t299 TYPE REF TO zcl_lnt_current_scope.
@@ -784,8 +784,8 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
         DATA(t331) = CAST zcl_lnt_current_scope( t327 ).
         t330 = t331->reg.
         t326 = t330.
-        t325 = t326->get_config(  ).
-        t324 = t325->get_syntax_setttings(  ).
+        t325 = t326->get_config( ).
+        t324 = t325->get_syntax_setttings( ).
         t323 = t324->ambigious_voids.
         t322 = t323.
         DATA t332 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -1026,7 +1026,7 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
           DATA(t426) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t427 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t428) = CAST zcl_lnt_statement_node( t1 ).
-          t427 = t428->get_first_token(  ).
+          t427 = t428->get_first_token( ).
           DATA(t429) = t421.
           DATA t430 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t430.
@@ -1107,6 +1107,6 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

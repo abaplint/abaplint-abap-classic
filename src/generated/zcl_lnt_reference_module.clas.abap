@@ -18,7 +18,7 @@ CLASS zcl_lnt_reference_module IMPLEMENTATION.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_reference_module=>reference_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

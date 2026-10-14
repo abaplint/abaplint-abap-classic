@@ -13,12 +13,12 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__7946c121f0e1.
     DATA t2 TYPE REF TO zlnt_runtime_map__7946c121f0e1.
-    DATA(t3) = NEW zlnt_runtime_map__7946c121f0e1(  ).
+    DATA(t3) = NEW zlnt_runtime_map__7946c121f0e1( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__7946c121f0e1( t2 ).
     t1 = t4.
     me->map = t1.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_abap=>get_statements(  ) ).
+    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_abap=>get_statements( ) ).
     DATA t6 TYPE REF TO zif_lnt_statement.
     CLEAR t6.
     DATA t7 TYPE REF TO object.
@@ -29,8 +29,8 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zif_lnt_statement_runnable.
       DATA(t11) = CAST zif_lnt_statement( t6 ).
-      t10 = t11->get_matcher(  ).
-      t9 = t10->first(  ).
+      t10 = t11->get_matcher( ).
+      t9 = t10->first( ).
       t8 = t9.
       DATA t12 TYPE abap_bool.
       DATA t13 TYPE i.
@@ -211,7 +211,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
           DATA t35 TYPE REF TO zif_lnt_statement.
           DATA(t36) = CAST zcl_lnt_shape_1adc9d0c( t29 ).
           t35 = t36->statement.
-          t34 = t35->get_matcher(  ).
+          t34 = t35->get_matcher( ).
           t32 = t34.
         ELSE.
           DATA t37 TYPE REF TO zif_lnt_statement_runnable.

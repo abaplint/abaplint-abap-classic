@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prsr_bd_excptns_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_prsr_bd_excptns_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -101,12 +101,12 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex(  ) ).
+    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex(  ) ).
+    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex( ) ).
     result = t1.
 
   ENDMETHOD.

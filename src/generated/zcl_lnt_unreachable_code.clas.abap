@@ -21,7 +21,7 @@ ENDCLASS.
 CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_unreachable_code_conf(  ).
+    DATA(t1) = NEW zcl_lnt_unreachable_code_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -138,12 +138,12 @@ CLASS zcl_lnt_unreachable_code IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd(  ) ).
+    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd(  ) ).
+    DATA(t1) = CAST zcl_lnt_unreachable_code_conf( me->gt_cn_in_sr_rl_un_cd_ts_unr_cd( ) ).
     result = t1.
 
   ENDMETHOD.

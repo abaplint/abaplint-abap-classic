@@ -22,24 +22,24 @@ CLASS zcl_lnt_string_template_end IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~debug_description.
-    result = me->debug_description(  ).
+    result = me->debug_description( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_col.
-    result = me->get_col(  ).
+    result = me->get_col( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_row.
-    result = me->get_row(  ).
+    result = me->get_row( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_str.
-    result = me->get_str(  ).
+    result = me->get_str( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a14e6efb~get_upper_str.
-    result = me->get_upper_str(  ).
+    result = me->get_upper_str( ).
   ENDMETHOD.
 ENDCLASS.

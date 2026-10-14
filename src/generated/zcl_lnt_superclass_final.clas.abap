@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_superclass_final IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_superclass_final_conf(  ).
+    DATA(t1) = NEW zcl_lnt_superclass_final_conf( ).
     me->conf = t1.
     DATA t2 TYPE REF TO zcl_lnt_include_graph.
     CLEAR t2.
@@ -100,7 +100,7 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
     DATA(t10) = CAST zcl_lnt_abap_file( t7 ).
     t9 = t10->info.
     t6 = t9.
-    t5 = t6->list_class_definitions(  ).
+    t5 = t6->list_class_definitions( ).
     DATA t11 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t11.
     DATA t12 TYPE REF TO object.
@@ -325,7 +325,7 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
           DATA t111 TYPE REF TO zcl_lnt_abap_file.
           DATA t112 TYPE REF TO zcl_lnt_abap_file.
           DATA(t113) = CAST zcl_lnt_class( t106 ).
-          t112 = t113->get_main_abap_file(  ).
+          t112 = t113->get_main_abap_file( ).
           t111 = t112.
           DATA t114 TYPE REF TO zif_lnt_abap_file_information.
           CLEAR t114.
@@ -648,7 +648,7 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
       DATA t47 TYPE REF TO object.
       t47 = t46.
       t45 ?= t47.
-      t44 = t45->get_main_abap_file(  ).
+      t44 = t45->get_main_abap_file( ).
       t43 = t44.
       DATA(t48) = VALUE abap_bool( ).
       DATA t49 TYPE REF TO zcl_lnt_abap_file.
@@ -779,12 +779,12 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_superclass_final_conf( me->gt_cn_in_sr_rl_sp_fn_ts_sp_fnl(  ) ).
+    DATA(t1) = CAST zcl_lnt_superclass_final_conf( me->gt_cn_in_sr_rl_sp_fn_ts_sp_fnl( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_superclass_final_conf( me->gt_cn_in_sr_rl_sp_fn_ts_sp_fnl(  ) ).
+    DATA(t1) = CAST zcl_lnt_superclass_final_conf( me->gt_cn_in_sr_rl_sp_fn_ts_sp_fnl( ) ).
     result = t1.
 
   ENDMETHOD.

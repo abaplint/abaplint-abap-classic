@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_db_oprtn_in_lp_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_db_oprtn_in_lp_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -155,12 +155,12 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( me->g_c_i_s_r_d_o_i_l_t_d_op_in_lp(  ) ).
+    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( me->g_c_i_s_r_d_o_i_l_t_d_op_in_lp( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( me->g_c_i_s_r_d_o_i_l_t_d_op_in_lp(  ) ).
+    DATA(t1) = CAST zcl_lnt_db_oprtn_in_lp_cnf( me->g_c_i_s_r_d_o_i_l_t_d_op_in_lp( ) ).
     result = t1.
 
   ENDMETHOD.

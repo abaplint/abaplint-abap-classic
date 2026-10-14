@@ -10,7 +10,7 @@ CLASS zcl_lnt_check_comments_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->allow_end_of_line = t1.
     DATA(t2) = CONV int8( 10 ).

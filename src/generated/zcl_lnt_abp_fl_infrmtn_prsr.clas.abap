@@ -147,7 +147,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t27 TYPE REF TO zcl_lnt_expression_node.
           DATA(t28) = CAST zcl_lnt_expression_node( t18 ).
           t27 = t28.
-          t26 = t27->get_first_token(  ).
+          t26 = t27->get_first_token( ).
           t22 = t26.
         ENDIF.
         t17 = t22.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687 ).
       t39 = t40->find_first_expression( i_type_9913 = t44 ).
       t38 = t39.
-      t37 = t38->get_first_token(  ).
+      t37 = t38->get_first_token( ).
       t36 = t37.
       DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
       DATA t46 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
@@ -229,7 +229,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d175_344bc5837b82 ).
       t14 = t15->find_first_expression( i_type_9913 = t16 ).
       t13 = t14.
-      t12 = t13->get_first_token(  ).
+      t12 = t13->get_first_token( ).
       t11 = t12.
       DATA t17 TYPE REF TO zcl_lnt_position.
       DATA(t18) = CAST zcl_lnt_abstract_token( t11 ).
@@ -244,7 +244,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d175_344bc5837b82 ).
       t22 = t23->find_first_expression( i_type_9913 = t24 ).
       t21 = t22.
-      t20 = t21->concat_tokens(  ).
+      t20 = t21->concat_tokens( ).
       t19 = t20.
       DATA t25 TYPE REF TO zcl_lnt_lx_identifier.
       DATA t26 TYPE REF TO zcl_lnt_lx_identifier.
@@ -343,7 +343,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t33) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db ).
       t30 = t31->find_direct_expression( i_type_9913 = t33 ).
       t29 = t30.
-      t28 = t29->get_first_token(  ).
+      t28 = t29->get_first_token( ).
       t27 = t28.
       DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t34.
@@ -513,7 +513,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687 ).
       t12 = t13->find_first_expression( i_type_9913 = t17 ).
       t11 = t12.
-      t10 = t11->get_first_token(  ).
+      t10 = t11->get_first_token( ).
       t9 = t10.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -757,7 +757,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t151 TYPE REF TO zcl_lnt_expression_node.
         DATA(t152) = CAST zcl_lnt_expression_node( t142 ).
         t151 = t152.
-        t150 = t151->get_first_token(  ).
+        t150 = t151->get_first_token( ).
         t146 = t150.
       ENDIF.
       t141 = t146.
@@ -832,7 +832,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t185 TYPE REF TO zcl_lnt_statement_node.
         DATA(t186) = CAST zcl_lnt_statement_node( t178 ).
         t185 = t186.
-        t184 = t185->concat_tokens(  ).
+        t184 = t185->concat_tokens( ).
         DATA(t187) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t187->has = abap_true.
         t187->value = t184.
@@ -1343,7 +1343,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t44 TYPE REF TO object.
         t44 = t43.
         t42 ?= t44.
-        t41 = t42->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+        t41 = t42->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         t40 = xsdbool( t41 IS BOUND AND t41 IS INSTANCE OF zcl_lnt_bhvr_dfntn_nm ).
         t37 = t40.
       ENDIF.
@@ -1363,7 +1363,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         CLEAR t53.
         READ TABLE t49->items INDEX t50 INTO t53.
         t48 ?= t53.
-        t47 = t48->concat_tokens(  ).
+        t47 = t48->concat_tokens( ).
         DATA(t54) = strlen( t47 ).
         t46 = t47.
         IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1386,7 +1386,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t61 TYPE REF TO object.
           t61 = t60.
           t59 ?= t61.
-          t58 = t59->concat_tokens(  ).
+          t58 = t59->concat_tokens( ).
           DATA(t62) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t62->has = abap_true.
           t62->value = t58.
@@ -1456,7 +1456,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t24 TYPE string.
           DATA t25 TYPE string.
           DATA(t26) = CAST zcl_lnt_expression_node( t21 ).
-          t25 = t26->concat_tokens(  ).
+          t25 = t26->concat_tokens( ).
           DATA(t27) = strlen( t25 ).
           t24 = t25.
           IF t24 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1497,7 +1497,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t43 TYPE string.
           DATA t44 TYPE string.
           DATA(t45) = CAST zcl_lnt_expression_node( t40 ).
-          t44 = t45->concat_tokens(  ).
+          t44 = t45->concat_tokens( ).
           DATA(t46) = strlen( t44 ).
           t43 = t44.
           IF t43 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1512,7 +1512,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA t48 TYPE string.
       DATA t49 TYPE string.
       DATA(t50) = CAST zcl_lnt_statement_node( t7 ).
-      t49 = t50->concat_tokens(  ).
+      t49 = t50->concat_tokens( ).
       DATA(t51) = strlen( t49 ).
       t48 = t49.
       IF t48 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1566,7 +1566,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t74) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db ).
       t72 = t73->find_first_expression( i_type_9913 = t74 ).
       t71 = t72.
-      t70 = t71->get_first_token(  ).
+      t70 = t71->get_first_token( ).
       t69 = t70.
       DATA t75 TYPE string.
       DATA(t76) = CAST zcl_lnt_abstract_token( t69 ).
@@ -1641,7 +1641,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d256_4aab5e345b39 ).
       t22 = t23->find_first_expression( i_type_9913 = t24 ).
       t21 = t22.
-      t20 = t21->get_first_token(  ).
+      t20 = t21->get_first_token( ).
       t19 = t20.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zcl_lnt_abstract_token.
@@ -1651,7 +1651,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
       t28 = t29->find_first_expression( i_type_9913 = t30 ).
       t27 = t28.
-      t26 = t27->get_first_token(  ).
+      t26 = t27->get_first_token( ).
       t25 = t26.
       DATA(t31) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
       DATA t32 TYPE REF TO zcl_lnt_info_alias.
@@ -1732,7 +1732,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97 ).
       t22 = t23->find_first_expression( i_type_9913 = t24 ).
       t21 = t22.
-      t20 = t21->get_first_token(  ).
+      t20 = t21->get_first_token( ).
       t19 = t20.
       DATA t25 TYPE REF TO zcl_lnt_expression_node.
       DATA t26 TYPE REF TO zcl_lnt_expression_node.
@@ -1776,7 +1776,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t46 TYPE REF TO zcl_lnt_expression_node.
         DATA(t47) = CAST zcl_lnt_expression_node( t37 ).
         t46 = t47.
-        t45 = t46->get_tokens(  ).
+        t45 = t46->get_tokens( ).
         t41 = t45.
       ENDIF.
       t36 = t41.
@@ -1911,7 +1911,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t102 TYPE REF TO zcl_lnt_expression_node.
         DATA(t103) = CAST zcl_lnt_expression_node( t25 ).
         t102 = t103.
-        t101 = t102->get_first_token(  ).
+        t101 = t102->get_first_token( ).
         t100 = t101.
         DATA t104 TYPE string.
         DATA(t105) = CAST zcl_lnt_abstract_token( t100 ).
@@ -2008,7 +2008,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t37) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97 ).
       t35 = t36->find_first_expression( i_type_9913 = t37 ).
       t34 = t35.
-      t33 = t34->get_first_token(  ).
+      t33 = t34->get_first_token( ).
       t32 = t33.
       DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
       DATA t39 TYPE REF TO zcl_lnt_info_attribute.
@@ -2031,7 +2031,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA t51 TYPE string.
       DATA t52 TYPE string.
       DATA(t53) = CAST zcl_lnt_statement_node( t30 ).
-      t52 = t53->concat_tokens(  ).
+      t52 = t53->concat_tokens( ).
       DATA(t54) = strlen( t52 ).
       t51 = t52.
       IF t51 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -2077,7 +2077,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t71) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97 ).
       t69 = t70->find_first_expression( i_type_9913 = t71 ).
       t68 = t69.
-      t67 = t68->get_first_token(  ).
+      t67 = t68->get_first_token( ).
       t66 = t67.
       DATA(t72) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
       DATA t73 TYPE REF TO zcl_lnt_info_attribute.
@@ -2100,7 +2100,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA t85 TYPE string.
       DATA t86 TYPE string.
       DATA(t87) = CAST zcl_lnt_statement_node( t64 ).
-      t86 = t87->concat_tokens(  ).
+      t86 = t87->concat_tokens( ).
       DATA(t88) = strlen( t86 ).
       t85 = t86.
       IF t85 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -2146,7 +2146,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA(t105) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97 ).
       t103 = t104->find_first_expression( i_type_9913 = t105 ).
       t102 = t103.
-      t101 = t102->get_first_token(  ).
+      t101 = t102->get_first_token( ).
       t100 = t101.
       DATA(t106) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
       DATA t107 TYPE REF TO zcl_lnt_info_attribute.
@@ -2239,7 +2239,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t30 TYPE REF TO zcl_lnt_expression_node.
         DATA(t31) = CAST zcl_lnt_expression_node( t21 ).
         t30 = t31.
-        t29 = t30->get_first_token(  ).
+        t29 = t30->get_first_token( ).
         t25 = t29.
       ENDIF.
       t20 = t25.
@@ -2270,7 +2270,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA t43 TYPE string.
       DATA t44 TYPE string.
       DATA(t45) = CAST zcl_lnt_statement_node( t17 ).
-      t44 = t45->concat_tokens(  ).
+      t44 = t45->concat_tokens( ).
       DATA(t46) = strlen( t44 ).
       t43 = t44.
       IF t43 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -2483,7 +2483,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t27 TYPE REF TO zcl_lnt_expression_node.
           DATA(t28) = CAST zcl_lnt_expression_node( t18 ).
           t27 = t28.
-          t26 = t27->get_first_token(  ).
+          t26 = t27->get_first_token( ).
           t22 = t26.
         ENDIF.
         t17 = t22.
@@ -2570,7 +2570,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t71 TYPE REF TO zcl_lnt_expression_node.
           DATA(t72) = CAST zcl_lnt_expression_node( t62 ).
           t71 = t72.
-          t70 = t71->get_first_token(  ).
+          t70 = t71->get_first_token( ).
           t66 = t70.
         ENDIF.
         t61 = t66.
@@ -2657,7 +2657,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
           DATA t115 TYPE REF TO zcl_lnt_expression_node.
           DATA(t116) = CAST zcl_lnt_expression_node( t106 ).
           t115 = t116.
-          t114 = t115->get_first_token(  ).
+          t114 = t115->get_first_token( ).
           t110 = t114.
         ENDIF.
         t105 = t110.
@@ -2734,7 +2734,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t154 TYPE REF TO zcl_lnt_expression_node.
         DATA(t155) = CAST zcl_lnt_expression_node( t144 ).
         t154 = t155.
-        t153 = t154->get_first_token(  ).
+        t153 = t154->get_first_token( ).
         t149 = t153.
       ENDIF.
       t143 = t149.

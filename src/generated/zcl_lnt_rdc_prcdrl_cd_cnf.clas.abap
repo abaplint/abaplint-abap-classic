@@ -9,7 +9,7 @@ CLASS zcl_lnt_rdc_prcdrl_cd_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_rdc_prcdrl_cd_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 10 ).
     me->max_statements = t1.
   ENDMETHOD.

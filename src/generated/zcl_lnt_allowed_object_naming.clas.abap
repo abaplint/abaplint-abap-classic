@@ -20,7 +20,7 @@ CLASS zcl_lnt_allowed_object_naming DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_allwd_objct_nmng_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_allwd_objct_nmng_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -93,12 +93,12 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_iallowed_naming.
     DATA t3 TYPE REF TO zcl_lnt_iallowed_naming.
     DATA(t4) = CAST zif_lnt_object( t1 ).
-    t3 = t4->get_allowed_naming(  ).
+    t3 = t4->get_allowed_naming( ).
     t2 = t3.
     DATA t5 TYPE string.
     DATA t6 TYPE string.
     DATA(t7) = CAST zif_lnt_object( t1 ).
-    t6 = t7->get_name(  ).
+    t6 = t7->get_name( ).
     t5 = t6.
     DATA t8 TYPE string.
     DATA(t9) = ||.
@@ -254,7 +254,7 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
       DATA t78 TYPE REF TO zif_lnt_file.
       DATA t79 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t80) = CAST zif_lnt_object( t1 ).
-      t79 = t80->get_files(  ).
+      t79 = t80->get_files( ).
       DATA t81 TYPE REF TO object.
       CLEAR t81.
       READ TABLE t79->items INDEX 1 INTO t81.
@@ -330,12 +330,12 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_allwd_objct_nmng_cnf( me->g_c_i_s_r_al_ob_nm_ts_al_ob_nm( ) ).
   ENDMETHOD.
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
@@ -354,21 +354,21 @@ CLASS zcl_lnt_allowed_object_naming IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

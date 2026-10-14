@@ -49,7 +49,7 @@ CLASS zcl_lnt_sy_at_selection_screen IMPLEMENTATION.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
       DATA t24 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t25) = CAST zcl_lnt_expression_node( t21 ).
-      t24 = t25->get_first_token(  ).
+      t24 = t25->get_first_token( ).
       t23 = t24.
       DATA(t26) = VALUE abap_bool( ).
       DATA t27 TYPE REF TO zcl_lnt_typed_identifier.
@@ -251,6 +251,6 @@ CLASS zcl_lnt_sy_at_selection_screen IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

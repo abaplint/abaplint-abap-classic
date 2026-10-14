@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_mix_returning IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_mix_returning_conf(  ).
+    DATA(t1) = NEW zcl_lnt_mix_returning_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -162,12 +162,12 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_mix_returning_conf( me->gt_cn_in_sr_rl_mx_rt_ts_mx_rtr(  ) ).
+    DATA(t1) = CAST zcl_lnt_mix_returning_conf( me->gt_cn_in_sr_rl_mx_rt_ts_mx_rtr( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_mix_returning_conf( me->gt_cn_in_sr_rl_mx_rt_ts_mx_rtr(  ) ).
+    DATA(t1) = CAST zcl_lnt_mix_returning_conf( me->gt_cn_in_sr_rl_mx_rt_ts_mx_rtr( ) ).
     result = t1.
 
   ENDMETHOD.

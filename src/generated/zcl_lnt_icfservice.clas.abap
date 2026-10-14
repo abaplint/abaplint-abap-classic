@@ -63,7 +63,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv( ) ).
     result = t1.
 
   ENDMETHOD.

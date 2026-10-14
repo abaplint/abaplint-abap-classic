@@ -64,15 +64,15 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~to_railroad.
-    result = me->to_railroad(  ).
+    result = me->to_railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~run.
-    result = me->run(  i_statements = i_statements i_parent = i_parent ).
+    result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
 ENDCLASS.

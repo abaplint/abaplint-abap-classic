@@ -10,7 +10,7 @@ CLASS zcl_lnt_short_case_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_ru
 ENDCLASS.
 CLASS zcl_lnt_short_case_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 1 ).
     me->length = t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

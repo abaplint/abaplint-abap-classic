@@ -8,7 +8,7 @@ CLASS zcl_lnt_ambgs_sttmnt_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_ambgs_sttmnt_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1304_643b4ae6dd55.

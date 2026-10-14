@@ -9,7 +9,7 @@ CLASS zcl_lnt_macro_naming_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_macro_naming_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |^_.+$|.
     me->pattern = t1.
   ENDMETHOD.

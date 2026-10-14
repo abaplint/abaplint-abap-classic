@@ -9,7 +9,7 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

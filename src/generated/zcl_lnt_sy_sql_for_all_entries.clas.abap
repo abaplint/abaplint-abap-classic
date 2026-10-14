@@ -178,7 +178,7 @@ CLASS zcl_lnt_sy_sql_for_all_entries IMPLEMENTATION.
         DATA(t74) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t75 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t76) = CAST zcl_lnt_expression_node( t1 ).
-        t75 = t76->get_first_token(  ).
+        t75 = t76->get_first_token( ).
         DATA(t77) = t39.
         DATA t78 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t78.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_sy_sql_for_all_entries IMPLEMENTATION.
       DATA t82 TYPE REF TO zcl_lnt_expression_node.
       DATA(t83) = CAST zcl_lnt_expression_node( t3 ).
       t82 = t83.
-      t81 = t82->concat_tokens(  ).
+      t81 = t82->concat_tokens( ).
       DATA(t84) = |[]|.
       DATA(t85) = ||.
       DATA(t86) = strlen( t81 ).

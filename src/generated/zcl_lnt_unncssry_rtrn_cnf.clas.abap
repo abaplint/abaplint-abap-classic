@@ -9,7 +9,7 @@ CLASS zcl_lnt_unncssry_rtrn_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_unncssry_rtrn_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->allow_empty = t1.
   ENDMETHOD.

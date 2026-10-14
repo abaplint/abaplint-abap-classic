@@ -64,7 +64,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA(t28) = CAST zcl_lnt_expression_node( t18 ).
       t27 = t28.
-      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t25 = xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_st_target ).
       t22 = t25.
     ENDIF.
@@ -248,7 +248,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t113 TYPE string.
       DATA t114 TYPE string.
       DATA(t115) = CAST zcl_lnt_statement_node( t1 ).
-      t114 = t115->concat_tokens(  ).
+      t114 = t115->concat_tokens( ).
       DATA(t116) = strlen( t114 ).
       t113 = t114.
       IF t113 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -405,7 +405,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t187 TYPE abap_bool.
       DATA t188 TYPE REF TO zif_lnt_statement_runnable.
       DATA(t189) = CAST zcl_lnt_expression_node( t185 ).
-      t188 = t189->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t188 = t189->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t187 = xsdbool( t188 IS BOUND AND t188 IS INSTANCE OF zcl_lnt_st_target ).
       IF t187 = abap_true.
         DATA t190 TYPE REF TO zcl_lnt_expression_node.
@@ -471,7 +471,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t222 TYPE REF TO zcl_lnt_expression_node.
       DATA(t223) = CAST zcl_lnt_expression_node( t213 ).
       t222 = t223.
-      t221 = t222->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t221 = t222->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t220 = xsdbool( t221 IS BOUND AND t221 IS INSTANCE OF zcl_lnt_st_target ).
       t217 = t220.
     ENDIF.
@@ -540,7 +540,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t257 TYPE REF TO zcl_lnt_expression_node.
       DATA(t258) = CAST zcl_lnt_expression_node( t248 ).
       t257 = t258.
-      t256 = t257->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t256 = t257->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t255 = xsdbool( t256 IS BOUND AND t256 IS INSTANCE OF zcl_lnt_st_target ).
       t252 = t255.
     ENDIF.
@@ -609,7 +609,7 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       DATA t292 TYPE REF TO zcl_lnt_expression_node.
       DATA(t293) = CAST zcl_lnt_expression_node( t283 ).
       t292 = t293.
-      t291 = t292->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t291 = t292->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t290 = xsdbool( t291 IS BOUND AND t291 IS INSTANCE OF zcl_lnt_st_target ).
       t287 = t290.
     ENDIF.
@@ -859,6 +859,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

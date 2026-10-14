@@ -13,7 +13,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
     DATA(t1) = CAST zif_lnt_file( i_file ).
     DATA t2 TYPE REF TO zcl_lnt_cd_result.
-    DATA(t3) = NEW zcl_lnt_cd_result(  ).
+    DATA(t3) = NEW zcl_lnt_cd_result( ).
     t2 = t3.
     DATA t4 TYPE i.
     DATA(t5) = 0.
@@ -34,7 +34,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     DATA t16 TYPE string.
     DATA t17 TYPE string.
     DATA(t18) = CAST zif_lnt_file( t1 ).
-    t17 = t18->get_raw(  ).
+    t17 = t18->get_raw( ).
     DATA(t19) = ||.
     DATA t20 TYPE c LENGTH 1.
     CLEAR t20.
@@ -69,7 +69,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       DATA t35 TYPE abap_bool.
       DATA t36 TYPE int8.
       DATA(t37) = CAST zcl_lnt_stream( t12 ).
-      t36 = t37->length(  ).
+      t36 = t37->length( ).
       DATA(t38) = CONV int8( 0 ).
       t35 = xsdbool( t36 > t38 ).
       IF t35 = abap_false.
@@ -80,12 +80,12 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       t39 = t40.
       DATA t41 TYPE string.
       DATA(t42) = CAST zcl_lnt_stream( t12 ).
-      t41 = t42->take_next(  ).
+      t41 = t42->take_next( ).
       t33 = t41.
       DATA t43 TYPE string.
       DATA t44 TYPE string.
       DATA(t45) = CAST zcl_lnt_stream( t12 ).
-      t44 = t45->peek_next(  ).
+      t44 = t45->peek_next( ).
       t43 = t44.
       DATA t46 TYPE int8.
       DATA(t47) = t8.
@@ -124,7 +124,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA(t64) = t10.
           DATA t65 TYPE string.
           DATA(t66) = CAST zcl_lnt_stream( t12 ).
-          t65 = t66->take_next(  ).
+          t65 = t66->take_next( ).
           DATA(t67) = strlen( t64 ).
           t63 = |{ t64 }{ t65 }|.
           t10 = t63.
@@ -155,7 +155,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA(t79) = t10.
             DATA t80 TYPE string.
             DATA(t81) = CAST zcl_lnt_stream( t12 ).
-            t80 = t81->take_next(  ).
+            t80 = t81->take_next( ).
             DATA(t82) = strlen( t79 ).
             t78 = |{ t79 }{ t80 }|.
             t10 = t78.
@@ -186,7 +186,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA(t94) = t10.
               DATA t95 TYPE string.
               DATA(t96) = CAST zcl_lnt_stream( t12 ).
-              t95 = t96->take_next(  ).
+              t95 = t96->take_next( ).
               DATA(t97) = strlen( t94 ).
               t93 = |{ t94 }{ t95 }|.
               t10 = t93.
@@ -251,7 +251,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           DATA(t127) = t10.
           DATA t128 TYPE string.
           DATA(t129) = CAST zcl_lnt_stream( t12 ).
-          t128 = t129->take_next(  ).
+          t128 = t129->take_next( ).
           DATA(t130) = strlen( t127 ).
           t126 = |{ t127 }{ t128 }|.
           t10 = t126.
@@ -282,7 +282,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA(t142) = t10.
             DATA t143 TYPE string.
             DATA(t144) = CAST zcl_lnt_stream( t12 ).
-            t143 = t144->take_next(  ).
+            t143 = t144->take_next( ).
             DATA(t145) = strlen( t142 ).
             t141 = |{ t142 }{ t143 }|.
             t10 = t141.
@@ -521,7 +521,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t10 = t255.
           DATA t262 TYPE string.
           DATA(t263) = CAST zcl_lnt_stream( t12 ).
-          t262 = t263->take_next(  ).
+          t262 = t263->take_next( ).
           DATA t264 TYPE int8.
           DATA(t265) = t8.
           DATA(t266) = CONV int8( 1 ).
@@ -1157,7 +1157,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     t654 = t655->add_51c1( i_text = t656 i_row = t657 i_col = t658 i_mode = t659 ).
     DATA t661 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t662) = CAST zcl_lnt_cd_result( t2 ).
-    t661 = t662->get_db65(  ).
+    t661 = t662->get_db65( ).
     result = t661.
 
   ENDMETHOD.

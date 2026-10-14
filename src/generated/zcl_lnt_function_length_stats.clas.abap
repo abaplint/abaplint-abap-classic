@@ -76,7 +76,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
         DATA t32 TYPE REF TO zif_lnt_statement.
         DATA t33 TYPE REF TO zif_lnt_statement.
         DATA(t34) = CAST zcl_lnt_statement_node( t30 ).
-        t33 = t34->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        t33 = t34->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t32 = t33.
         DATA t35 TYPE abap_bool.
         DATA(t36) = CAST zif_lnt_statement( t32 ).
@@ -90,7 +90,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
             DATA t40 TYPE REF TO zcl_lnt_abstract_token.
             DATA t41 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t42) = CAST zcl_lnt_statement_node( t30 ).
-            t41 = t42->get_first_token(  ).
+            t41 = t42->get_first_token( ).
             t40 = t41.
             DATA t43 TYPE REF TO zcl_lnt_position.
             DATA(t44) = CAST zcl_lnt_abstract_token( t40 ).
@@ -197,7 +197,7 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
       DATA t11 TYPE REF TO zcl_lnt_expression_node.
       DATA(t12) = CAST zcl_lnt_expression_node( t2 ).
       t11 = t12.
-      t10 = t11->get_first_token(  ).
+      t10 = t11->get_first_token( ).
       t9 = t10.
       DATA t13 TYPE string.
       DATA(t14) = CAST zcl_lnt_abstract_token( t9 ).

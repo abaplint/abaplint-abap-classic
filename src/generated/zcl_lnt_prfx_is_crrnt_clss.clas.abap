@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prfx_is_crrnt_clss_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_prfx_is_crrnt_clss_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -191,12 +191,12 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
     RAISE EXCEPTION t4.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prfx_is_crrnt_clss_cnf( me->g_c_i_s_r_p_i_c_c_t_p_is_cr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_prfx_is_crrnt_clss_cnf( me->g_c_i_s_r_p_i_c_c_t_p_is_cr_cl( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prfx_is_crrnt_clss_cnf( me->g_c_i_s_r_p_i_c_c_t_p_is_cr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_prfx_is_crrnt_clss_cnf( me->g_c_i_s_r_p_i_c_c_t_p_is_cr_cl( ) ).
     result = t1.
 
   ENDMETHOD.

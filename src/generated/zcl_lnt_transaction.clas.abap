@@ -70,7 +70,7 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_inst_src_objc_trns_ts_trns(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->prs_inst_src_objc_trns_ts_trns( ) ).
     result = t1.
 
   ENDMETHOD.

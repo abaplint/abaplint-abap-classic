@@ -161,7 +161,7 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
             DATA t81 TYPE REF TO object.
             t81 = t80.
             t79 ?= t81.
-            t78 = t79->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+            t78 = t79->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t77 = xsdbool( t78 IS BOUND AND t78 IS INSTANCE OF zcl_lnt_component_chain_simple ).
             t74 = t77.
           ENDIF.
@@ -190,7 +190,7 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
               DATA t95 TYPE REF TO object.
               t95 = t94.
               t93 ?= t95.
-              t92 = t93->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+              t92 = t93->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t91 = xsdbool( t92 IS BOUND AND t92 IS INSTANCE OF zcl_lnt_st_source ).
               t88 = t91.
             ENDIF.

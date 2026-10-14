@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_dngrs_sttmnt_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_dngrs_sttmnt_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -141,12 +141,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( me->gt_cn_in_sr_rl_dn_st_ts_dn_stt(  ) ).
+    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( me->gt_cn_in_sr_rl_dn_st_ts_dn_stt( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( me->gt_cn_in_sr_rl_dn_st_ts_dn_stt(  ) ).
+    DATA(t1) = CAST zcl_lnt_dngrs_sttmnt_cnf( me->gt_cn_in_sr_rl_dn_st_ts_dn_stt( ) ).
     result = t1.
 
   ENDMETHOD.

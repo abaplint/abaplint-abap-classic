@@ -9,10 +9,10 @@ CLASS zcl_lnt_super_class_name DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_super_class_name IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
-    DATA(t1) = NEW zcl_lnt_class_name(  ).
+    DATA(t1) = NEW zcl_lnt_class_name( ).
     result = t1.
 
   ENDMETHOD.

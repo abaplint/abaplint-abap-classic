@@ -140,7 +140,7 @@ CLASS zcl_lnt_closure_77054774 IMPLEMENTATION.
     DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
     DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t49) = CAST zif_lnt_form_definition( t15 ).
-    t48 = t49->get_tables_parameters(  ).
+    t48 = t49->get_tables_parameters( ).
     DATA(t50) = |TABLES|.
     DATA(t51) = CAST zcl_lnt_syntax_input( t5 ).
     t44 = t45->check_parameters( i_node = t46 i_actual = t47 i_formal = t48 i_kind = t50 i_input_967e = t51 ).
@@ -153,10 +153,10 @@ CLASS zcl_lnt_closure_77054774 IMPLEMENTATION.
     DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t56) = CAST zif_lnt_form_definition( t15 ).
-    t55 = t56->get_using_parameters(  ).
+    t55 = t56->get_using_parameters( ).
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t58) = CAST zif_lnt_form_definition( t15 ).
-    t57 = t58->get_changing_parameters(  ).
+    t57 = t58->get_changing_parameters( ).
     t54 = t55->concat( p0 = t57 ).
     t53 = t54.
     DATA t59 TYPE abap_bool.
@@ -181,6 +181,6 @@ CLASS zcl_lnt_closure_77054774 IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_closure_d810f2d3~call_7bd1.
-    me->call_7bd1(  ).
+    me->call_7bd1( ).
   ENDMETHOD.
 ENDCLASS.

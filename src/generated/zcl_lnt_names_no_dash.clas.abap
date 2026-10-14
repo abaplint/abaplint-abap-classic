@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_names_no_dash_conf(  ).
+    DATA(t1) = NEW zcl_lnt_names_no_dash_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -116,12 +116,12 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( me->g_c_i_sr_rl_nm_n_ds_ts_nm_n_ds(  ) ).
+    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( me->g_c_i_sr_rl_nm_n_ds_ts_nm_n_ds( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( me->g_c_i_sr_rl_nm_n_ds_ts_nm_n_ds(  ) ).
+    DATA(t1) = CAST zcl_lnt_names_no_dash_conf( me->g_c_i_sr_rl_nm_n_ds_ts_nm_n_ds( ) ).
     result = t1.
 
   ENDMETHOD.

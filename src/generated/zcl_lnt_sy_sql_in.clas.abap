@@ -34,7 +34,7 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t16) = CAST zif_lnt_union_bb14dc41( t1 ).
-    t15 = t16->get_children(  ).
+    t15 = t16->get_children( ).
     t14 ?= t15.
     t13 = lines( t14->items ).
     DATA(t17) = 2.
@@ -104,7 +104,7 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
           DATA(t49) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t50 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t51) = CAST zif_lnt_union_bb14dc41( t1 ).
-          t50 = t51->get_first_token(  ).
+          t50 = t51->get_first_token( ).
           DATA(t52) = t44.
           DATA t53 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t53.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
           DATA t70 TYPE REF TO zcl_lnt_expression_node.
           DATA(t71) = CAST zcl_lnt_expression_node( t18 ).
           t70 = t71.
-          t69 = t70->concat_tokens(  ).
+          t69 = t70->concat_tokens( ).
           DATA t72 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           CLEAR t72.
           DATA(t73) = |^@|.
@@ -179,7 +179,7 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
           DATA(t93) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t94 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t95) = CAST zif_lnt_union_bb14dc41( t1 ).
-          t94 = t95->get_first_token(  ).
+          t94 = t95->get_first_token( ).
           DATA(t96) = t82.
           DATA t97 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t97.

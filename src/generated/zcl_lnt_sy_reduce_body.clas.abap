@@ -102,7 +102,7 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
         DATA t47 TYPE REF TO zcl_lnt_expression_node.
         DATA(t48) = CAST zcl_lnt_expression_node( t1 ).
         t47 = t48.
-        t46 = t47->get_first_token(  ).
+        t46 = t47->get_first_token( ).
         t45 = t46.
         DATA t49 TYPE REF TO zcl_lnt_position.
         DATA(t50) = CAST zcl_lnt_abstract_token( t45 ).
@@ -422,7 +422,7 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
       DATA t195 TYPE REF TO zcl_lnt_expression_node.
       DATA(t196) = CAST zcl_lnt_expression_node( t1 ).
       t195 = t196.
-      t194 = t195->get_last_token(  ).
+      t194 = t195->get_last_token( ).
       t193 = t194.
       DATA t197 TYPE REF TO zcl_lnt_position.
       CLEAR t197.
@@ -486,7 +486,7 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
       DATA t227 TYPE REF TO zcl_lnt_expression_node.
       DATA(t228) = CAST zcl_lnt_expression_node( t1 ).
       t227 = t228.
-      t226 = t227->get_last_token(  ).
+      t226 = t227->get_last_token( ).
       t225 = t226.
       DATA t229 TYPE REF TO zcl_lnt_position.
       CLEAR t229.

@@ -35,7 +35,7 @@ CLASS zcl_lnt_sql_path_segment IMPLEMENTATION.
       ENDIF.
       t1 = t4.
     ENDIF.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t9 TYPE abap_bool.
     DATA(t10) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
     t9 = t10->value.

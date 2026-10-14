@@ -10,7 +10,7 @@ CLASS zcl_lnt_rmv_dscrptns_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_rmv_dscrptns_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->ignore_exceptions = t1.
     DATA(t2) = abap_true.

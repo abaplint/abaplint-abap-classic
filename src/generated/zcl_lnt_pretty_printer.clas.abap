@@ -18,7 +18,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     DATA(t2) = CAST zif_lnt_configuration( i_config ).
     DATA t3 TYPE string.
     DATA(t4) = CAST zcl_lnt_abap_file( t1 ).
-    t3 = t4->get_raw(  ).
+    t3 = t4->get_raw( ).
     me->result_9728 = t3.
     DATA(t5) = CAST zcl_lnt_abap_file( t1 ).
     me->file = t5.
@@ -35,7 +35,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     DATA t12 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t12.
     DATA t13 TYPE REF TO zcl_lnt_indentation.
-    DATA(t14) = NEW zcl_lnt_indentation(  ).
+    DATA(t14) = NEW zcl_lnt_indentation( ).
     t13 = t14.
     DATA t15 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t15.

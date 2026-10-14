@@ -47,7 +47,7 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
       zcl_lnt_st_statem_index_module=>zlnt_builtin_init_b3124ba2f205( ).
     ENDIF.
     t6 = zcl_lnt_st_statem_index_module=>ns.
-    t5 = t6->keys(  ).
+    t5 = t6->keys( ).
     DATA(t7) = VALUE string( ).
     LOOP AT t5->items INTO t7.
       DATA(t8) = VALUE abap_bool( ).

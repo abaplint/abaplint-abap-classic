@@ -8,7 +8,7 @@ CLASS zcl_lnt_cloud_types_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_cloud_types_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1356_094f96f262ee.

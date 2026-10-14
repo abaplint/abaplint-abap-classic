@@ -63,7 +63,7 @@ CLASS zcl_lnt_cds_metadata_extension IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_sr_ob_cd_mt_ex_ts_cd_mt_ex(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->p_i_sr_ob_cd_mt_ex_ts_cd_mt_ex( ) ).
     result = t1.
 
   ENDMETHOD.

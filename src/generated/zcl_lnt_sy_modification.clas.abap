@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS zcl_lnt_sy_modification IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sy_modification_conf(  ).
+    DATA(t1) = NEW zcl_lnt_sy_modification_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -136,12 +136,12 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf(  ) ).
+    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf(  ) ).
+    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
     result = t1.
 
   ENDMETHOD.

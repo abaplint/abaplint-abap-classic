@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_omt_prcdng_zrs_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_omt_prcdng_zrs_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -108,12 +108,12 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( me->g_c_i_s_r_om_pr_zr_ts_om_pr_zr(  ) ).
+    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( me->g_c_i_s_r_om_pr_zr_ts_om_pr_zr( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( me->g_c_i_s_r_om_pr_zr_ts_om_pr_zr(  ) ).
+    DATA(t1) = CAST zcl_lnt_omt_prcdng_zrs_cnf( me->g_c_i_s_r_om_pr_zr_ts_om_pr_zr( ) ).
     result = t1.
 
   ENDMETHOD.

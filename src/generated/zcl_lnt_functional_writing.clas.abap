@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_functional_writing IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_fnctnl_wrtng_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_fnctnl_wrtng_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -234,12 +234,12 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( me->gt_cn_in_sr_rl_fn_wr_ts_fn_wrt(  ) ).
+    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( me->gt_cn_in_sr_rl_fn_wr_ts_fn_wrt( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( me->gt_cn_in_sr_rl_fn_wr_ts_fn_wrt(  ) ).
+    DATA(t1) = CAST zcl_lnt_fnctnl_wrtng_cnf( me->gt_cn_in_sr_rl_fn_wr_ts_fn_wrt( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -86,7 +86,7 @@ CLASS zcl_lnt_sy_data_definition IMPLEMENTATION.
         DATA t42 TYPE REF TO zcl_lnt_expression_node.
         DATA(t43) = CAST zcl_lnt_expression_node( t25 ).
         t42 = t43.
-        t41 = t42->get_first_token(  ).
+        t41 = t42->get_first_token( ).
         DATA t44 TYPE string.
         DATA(t45) = CAST zcl_lnt_syntax_input( t2 ).
         t44 = t45->filename.
@@ -251,7 +251,7 @@ CLASS zcl_lnt_sy_data_definition IMPLEMENTATION.
         DATA t110 TYPE REF TO zcl_lnt_expression_node.
         DATA(t111) = CAST zcl_lnt_expression_node( t25 ).
         t110 = t111.
-        t109 = t110->get_first_token(  ).
+        t109 = t110->get_first_token( ).
         DATA t112 TYPE string.
         DATA(t113) = CAST zcl_lnt_syntax_input( t2 ).
         t112 = t113->filename.

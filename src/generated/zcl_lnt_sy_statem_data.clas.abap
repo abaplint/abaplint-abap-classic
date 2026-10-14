@@ -468,7 +468,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA t207 TYPE REF TO zcl_lnt_abstract_type.
         DATA(t208) = CAST zcl_lnt_abstract_type( t188 ).
         t207 = t208.
-        t206 = t207->is_generic(  ).
+        t206 = t207->is_generic( ).
         DATA(t209) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t209->has = abap_true.
         t209->value = t206.
@@ -558,7 +558,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
           DATA t238 TYPE REF TO zcl_lnt_abstract_type.
           DATA(t239) = CAST zcl_lnt_abstract_type( t219 ).
           t238 = t239.
-          t237 = t238->contains_void(  ).
+          t237 = t238->contains_void( ).
           DATA(t240) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t240->has = abap_true.
           t240->value = t237.
@@ -624,7 +624,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
           DATA t261 TYPE REF TO zcl_lnt_expression_node.
           DATA(t262) = CAST zcl_lnt_expression_node( t254 ).
           t261 = t262.
-          t260 = t261->concat_tokens(  ).
+          t260 = t261->concat_tokens( ).
           DATA(t263) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t263->has = abap_true.
           t263->value = t260.
@@ -660,7 +660,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA(t274) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t275 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t276) = CAST zcl_lnt_statement_node( t1 ).
-        t275 = t276->get_first_token(  ).
+        t275 = t276->get_first_token( ).
         DATA(t277) = t248.
         DATA t278 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t278.
@@ -733,7 +733,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
       DATA t307 TYPE REF TO zcl_lnt_expression_node.
       DATA(t308) = CAST zcl_lnt_expression_node( t3 ).
       t307 = t308.
-      t306 = t307->concat_tokens(  ).
+      t306 = t307->concat_tokens( ).
       t305 = t306.
       DATA t309 TYPE abap_bool.
       DATA t310 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -768,7 +768,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA t326 TYPE REF TO zcl_lnt_expression_node.
         DATA(t327) = CAST zcl_lnt_expression_node( t3 ).
         t326 = t327.
-        t325 = t326->get_first_token(  ).
+        t325 = t326->get_first_token( ).
         DATA(t328) = t319.
         DATA t329 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t329.
@@ -781,7 +781,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
       DATA t333 TYPE REF TO zcl_lnt_expression_node.
       DATA(t334) = CAST zcl_lnt_expression_node( t3 ).
       t333 = t334.
-      t332 = t333->concat_tokens(  ).
+      t332 = t333->concat_tokens( ).
       t331 = t332.
       DATA t335 TYPE abap_bool.
       DATA t336 TYPE i.
@@ -799,7 +799,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA t344 TYPE REF TO zcl_lnt_expression_node.
         DATA(t345) = CAST zcl_lnt_expression_node( t3 ).
         t344 = t345.
-        t343 = t344->concat_tokens(  ).
+        t343 = t344->concat_tokens( ).
         DATA(t346) = strlen( t342 ).
         t341 = |{ t342 }{ t343 }|.
         t340 = t341.
@@ -812,7 +812,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA t352 TYPE REF TO zcl_lnt_expression_node.
         DATA(t353) = CAST zcl_lnt_expression_node( t3 ).
         t352 = t353.
-        t351 = t352->get_first_token(  ).
+        t351 = t352->get_first_token( ).
         DATA(t354) = t340.
         DATA t355 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t355.
@@ -828,7 +828,7 @@ CLASS zcl_lnt_sy_statem_data IMPLEMENTATION.
         DATA t360 TYPE REF TO zcl_lnt_expression_node.
         DATA(t361) = CAST zcl_lnt_expression_node( t3 ).
         t360 = t361.
-        t359 = t360->get_first_token(  ).
+        t359 = t360->get_first_token( ).
         DATA t362 TYPE string.
         DATA(t363) = CAST zcl_lnt_syntax_input( t2 ).
         t362 = t363->filename.

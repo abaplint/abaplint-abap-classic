@@ -21,7 +21,7 @@ CLASS zcl_lnt_no_dynamic_stuff_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_no_dynamic_stuff_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->call_method = t1.
     DATA(t2) = abap_true.

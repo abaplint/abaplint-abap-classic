@@ -43,7 +43,7 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
       DATA(t20) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t21 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t22) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t21 = t22->get_first_token(  ).
+      t21 = t22->get_first_token( ).
       DATA(t23) = t15.
       DATA t24 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t24.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
       DATA(t41) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t42 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t43) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t42 = t43->get_first_token(  ).
+      t42 = t43->get_first_token( ).
       DATA(t44) = t36.
       DATA t45 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t45.
@@ -124,7 +124,7 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
         DATA t62 TYPE string.
         DATA t63 TYPE string.
         DATA(t64) = CAST zif_lnt_union_4cf1d054( t60 ).
-        t63 = t64->concat_tokens(  ).
+        t63 = t64->concat_tokens( ).
         t62 = t63.
         DATA t65 TYPE abap_bool.
         DATA t66 TYPE abap_bool.
@@ -199,7 +199,7 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
             DATA(t101) = CAST zcl_lnt_syntax_input( t2 ).
             DATA t102 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t103) = CAST zif_lnt_union_bb14dc41( t1 ).
-            t102 = t103->get_first_token(  ).
+            t102 = t103->get_first_token( ).
             DATA(t104) = t90.
             DATA t105 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t105.

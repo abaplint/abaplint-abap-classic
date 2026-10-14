@@ -36,7 +36,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t9) = CAST zif_lnt_registry( me->reg ).
-    t8 = t9->get_objects(  ).
+    t8 = t9->get_objects( ).
     DATA t10 TYPE REF TO zif_lnt_object.
     CLEAR t10.
     DATA t11 TYPE REF TO object.
@@ -63,7 +63,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         DATA t21 TYPE REF TO zif_lnt_union_291f04b3.
         DATA(t22) = CAST zif_lnt_object( t10 ).
         t21 ?= t22.
-        t20 = t21->get_definition(  ).
+        t20 = t21->get_definition( ).
         t19 = t20.
         DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -196,10 +196,10 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         DATA t82 TYPE i.
         DATA t83 TYPE string.
         DATA(t84) = CAST zif_lnt_union_291f04b3( t73 ).
-        t83 = t84->get_name(  ).
+        t83 = t84->get_name( ).
         DATA t85 TYPE string.
         DATA(t86) = CAST zif_lnt_union_291f04b3( t62 ).
-        t85 = t86->get_name(  ).
+        t85 = t86->get_name( ).
         t82 = zlnt_runtime_orde_654b9c3be2c1=>object_name( p0 = t83 p1 = t85 ).
         DATA(t87) = 0.
         t81 = xsdbool( t82 <= t87 ).
@@ -399,7 +399,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t2 TYPE REF TO zif_lnt_interface_definition.
     DATA t3 TYPE REF TO zif_lnt_interface_definition.
     DATA(t4) = CAST zif_lnt_union_291f04b3( t1 ).
-    t3 = t4->get_definition(  ).
+    t3 = t4->get_definition( ).
     t2 = t3.
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zif_lnt_interface_definition.
@@ -428,8 +428,8 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t17 TYPE REF TO zif_lnt_interface_definition.
     DATA(t18) = CAST zif_lnt_interface_definition( t2 ).
     t17 = t18.
-    t16 = t17->get_type_definitions(  ).
-    t15 = t16->get_all(  ).
+    t16 = t17->get_type_definitions( ).
+    t15 = t16->get_all( ).
     DATA t19 TYPE REF TO zcl_lnt_type_definitions_entry.
     CLEAR t19.
     DATA t20 TYPE REF TO object.
@@ -461,8 +461,8 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t32 TYPE REF TO zif_lnt_interface_definition.
     DATA(t33) = CAST zif_lnt_interface_definition( t2 ).
     t32 = t33.
-    t31 = t32->get_attributes(  ).
-    t30 = t31->get_all(  ).
+    t31 = t32->get_attributes( ).
+    t30 = t31->get_all( ).
     DATA t34 TYPE REF TO zcl_lnt_class_attribute.
     CLEAR t34.
     DATA t35 TYPE REF TO object.
@@ -492,8 +492,8 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t46 TYPE REF TO zif_lnt_interface_definition.
     DATA(t47) = CAST zif_lnt_interface_definition( t2 ).
     t46 = t47.
-    t45 = t46->get_attributes(  ).
-    t44 = t45->get_constants(  ).
+    t45 = t46->get_attributes( ).
+    t44 = t45->get_constants( ).
     DATA t48 TYPE REF TO zcl_lnt_class_constant.
     CLEAR t48.
     DATA t49 TYPE REF TO object.
@@ -523,8 +523,8 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t60 TYPE REF TO zif_lnt_interface_definition.
     DATA(t61) = CAST zif_lnt_interface_definition( t2 ).
     t60 = t61.
-    t59 = t60->get_method_definitions(  ).
-    t58 = t59->get_all(  ).
+    t59 = t60->get_method_definitions( ).
+    t58 = t59->get_all( ).
     DATA t62 TYPE REF TO zif_lnt_method_definition.
     CLEAR t62.
     DATA t63 TYPE REF TO object.
@@ -534,8 +534,8 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t65 TYPE REF TO zif_lnt_method_parameters.
       DATA(t66) = CAST zif_lnt_method_definition( t62 ).
-      t65 = t66->get_parameters(  ).
-      t64 = t65->get_all(  ).
+      t65 = t66->get_parameters( ).
+      t64 = t65->get_all( ).
       DATA t67 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t67.
       DATA t68 TYPE REF TO object.
@@ -568,7 +568,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t80 TYPE REF TO zif_lnt_interface_definition.
     DATA(t81) = CAST zif_lnt_interface_definition( t2 ).
     t80 = t81.
-    t79 = t80->get_events(  ).
+    t79 = t80->get_events( ).
     t78 = t79.
     DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t82.
@@ -592,7 +592,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       t87 ?= t88.
       DATA t89 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t90) = CAST zif_lnt_event_definition( t87 ).
-      t89 = t90->get_parameters(  ).
+      t89 = t90->get_parameters( ).
       DATA t91 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t91.
       DATA t92 TYPE REF TO object.
@@ -740,7 +740,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t3.
     DATA(t4) = CAST zif_lnt_union_291f04b3( t1 ).
-    t3 = t4->get_main_abap_file(  ).
+    t3 = t4->get_main_abap_file( ).
     t2 = t3.
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zcl_lnt_abap_file.

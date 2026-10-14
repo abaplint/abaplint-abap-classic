@@ -41,7 +41,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->refresh_83dc = t1.
     DATA(t2) = abap_true.

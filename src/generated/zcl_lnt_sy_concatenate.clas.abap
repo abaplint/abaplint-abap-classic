@@ -84,7 +84,7 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
       DATA(t40) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t41 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t42) = CAST zcl_lnt_statement_node( t1 ).
-      t41 = t42->get_first_token(  ).
+      t41 = t42->get_first_token( ).
       DATA(t43) = t35.
       DATA t44 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t44.
@@ -206,7 +206,7 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
           DATA(t102) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t103 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t104) = CAST zcl_lnt_statement_node( t1 ).
-          t103 = t104->get_first_token(  ).
+          t103 = t104->get_first_token( ).
           DATA(t105) = t97.
           DATA t106 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t106.
@@ -290,7 +290,7 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
           DATA(t140) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t141 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t142) = CAST zcl_lnt_statement_node( t1 ).
-          t141 = t142->get_first_token(  ).
+          t141 = t142->get_first_token( ).
           DATA(t143) = t135.
           DATA t144 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t144.
@@ -347,7 +347,7 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
           DATA(t168) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t169 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t170) = CAST zcl_lnt_statement_node( t1 ).
-          t169 = t170->get_first_token(  ).
+          t169 = t170->get_first_token( ).
           DATA(t171) = t163.
           DATA t172 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t172.
@@ -433,7 +433,7 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
         DATA(t210) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t211 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t212) = CAST zcl_lnt_statement_node( t1 ).
-        t211 = t212->get_first_token(  ).
+        t211 = t212->get_first_token( ).
         DATA(t213) = t205.
         DATA t214 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t214.
@@ -453,6 +453,6 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

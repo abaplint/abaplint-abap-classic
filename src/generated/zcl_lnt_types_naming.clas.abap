@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS zcl_lnt_types_naming IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_types_naming_conf(  ).
+    DATA(t1) = NEW zcl_lnt_types_naming_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -120,12 +120,12 @@ CLASS zcl_lnt_types_naming IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_types_naming_conf( me->gt_cn_in_sr_rl_ty_nm_ts_ty_nmn(  ) ).
+    DATA(t1) = CAST zcl_lnt_types_naming_conf( me->gt_cn_in_sr_rl_ty_nm_ts_ty_nmn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_types_naming_conf( me->gt_cn_in_sr_rl_ty_nm_ts_ty_nmn(  ) ).
+    DATA(t1) = CAST zcl_lnt_types_naming_conf( me->gt_cn_in_sr_rl_ty_nm_ts_ty_nmn( ) ).
     result = t1.
 
   ENDMETHOD.

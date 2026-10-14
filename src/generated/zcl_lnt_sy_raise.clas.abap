@@ -47,7 +47,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
       DATA t19 TYPE REF TO zcl_lnt_expression_node.
       DATA(t20) = CAST zcl_lnt_expression_node( t10 ).
       t19 = t20.
-      t18 = t19->get_first_token(  ).
+      t18 = t19->get_first_token( ).
       t14 = t18.
     ENDIF.
     t9 = t14.
@@ -412,7 +412,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
                 DATA t166 TYPE REF TO zcl_lnt_class.
                 DATA(t167) = CAST zcl_lnt_class( t145 ).
                 t166 = t167.
-                t165 = t166->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                t165 = t166->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 t162 = t165.
               ELSE.
                 DATA t168 TYPE REF TO zif_lnt_class_definition.
@@ -951,7 +951,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
       DATA t380 TYPE REF TO zcl_lnt_expression_node.
       DATA(t381) = CAST zcl_lnt_expression_node( t370 ).
       t380 = t381.
-      t379 = t380->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t379 = t380->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t378 = xsdbool( t379 IS BOUND AND t379 IS INSTANCE OF zcl_lnt_simple_source2 ).
       t377 = t378.
       IF t378 = abap_false.
@@ -960,7 +960,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
         DATA t384 TYPE REF TO zcl_lnt_expression_node.
         DATA(t385) = CAST zcl_lnt_expression_node( t370 ).
         t384 = t385.
-        t383 = t384->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+        t383 = t384->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         t382 = xsdbool( t383 IS BOUND AND t383 IS INSTANCE OF zcl_lnt_st_source ).
         t377 = t382.
       ENDIF.
@@ -1297,7 +1297,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
                   DATA t521 TYPE REF TO zcl_lnt_class.
                   DATA(t522) = CAST zcl_lnt_class( t500 ).
                   t521 = t522.
-                  t520 = t521->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+                  t520 = t521->gt_dfn_ins_src_obj_cls_ts_clss( ).
                   t517 = t520.
                 ELSE.
                   DATA t523 TYPE REF TO zif_lnt_class_definition.
@@ -1624,7 +1624,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
             DATA t647 TYPE REF TO zcl_lnt_expression_node.
             DATA(t648) = CAST zcl_lnt_expression_node( t370 ).
             t647 = t648.
-            t646 = t647->get_first_token(  ).
+            t646 = t647->get_first_token( ).
             DATA(t649) = t634.
             DATA t650 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t650.
@@ -1681,7 +1681,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
     DATA(t670) = CAST zcl_lnt_expression_node( t665 ).
     t669 = xsdbool( t670 IS BOUND ).
     IF t669 = abap_true.
-      DATA(t671) = NEW zcl_lnt_sy_method_parameters(  ).
+      DATA(t671) = NEW zcl_lnt_sy_method_parameters( ).
       DATA t672 TYPE REF TO zcl_lnt_expression_node.
       DATA(t673) = CAST zcl_lnt_expression_node( t665 ).
       t672 = t673.
@@ -1827,7 +1827,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
       DATA t737 TYPE REF TO zcl_lnt_expression_node.
       DATA(t738) = CAST zcl_lnt_expression_node( t728 ).
       t737 = t738.
-      t736 = t737->concat_tokens(  ).
+      t736 = t737->concat_tokens( ).
       DATA(t739) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t739->has = abap_true.
       t739->value = t736.
@@ -1861,7 +1861,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
       DATA t751 TYPE REF TO zcl_lnt_expression_node.
       DATA(t752) = CAST zcl_lnt_expression_node( t742 ).
       t751 = t752.
-      t750 = t751->concat_tokens(  ).
+      t750 = t751->concat_tokens( ).
       DATA(t753) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t753->has = abap_true.
       t753->value = t750.
@@ -1912,7 +1912,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
         DATA t772 TYPE REF TO zcl_lnt_expression_node.
         DATA(t773) = CAST zcl_lnt_expression_node( t763 ).
         t772 = t773.
-        t771 = t772->concat_tokens(  ).
+        t771 = t772->concat_tokens( ).
         DATA(t774) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t774->has = abap_true.
         t774->value = t771.
@@ -2126,14 +2126,14 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
       DATA t848 TYPE REF TO zif_lnt_registry.
       DATA(t849) = CAST zcl_lnt_current_scope( t844 ).
       t848 = t849->reg.
-      t847 = t848->get_msag_references(  ).
+      t847 = t848->get_msag_references( ).
       t843 = t847.
       DATA t850 TYPE string.
       DATA(t851) = CAST zcl_lnt_syntax_input( t2 ).
       t850 = t851->filename.
       DATA t852 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t853) = CAST zcl_lnt_statement_node( t1 ).
-      t852 = t853->get_first_token(  ).
+      t852 = t853->get_first_token( ).
       DATA(t854) = t829.
       DATA t855 TYPE string.
       DATA(t856) = CAST zlnt_runtime_opti_4ba3bdccd169( t740 ).
@@ -2151,6 +2151,6 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

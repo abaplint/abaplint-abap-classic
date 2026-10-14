@@ -151,7 +151,7 @@ CLASS zcl_lnt_sy_sort IMPLEMENTATION.
           DATA t62 TYPE REF TO zcl_lnt_expression_node.
           DATA(t63) = CAST zcl_lnt_expression_node( t10 ).
           t62 = t63.
-          t61 = t62->get_first_token(  ).
+          t61 = t62->get_first_token( ).
           DATA(t64) = t55.
           DATA t65 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t65.
@@ -287,7 +287,7 @@ CLASS zcl_lnt_sy_sort IMPLEMENTATION.
           DATA t124 TYPE REF TO zcl_lnt_expression_node.
           DATA(t125) = CAST zcl_lnt_expression_node( t10 ).
           t124 = t125.
-          t123 = t124->get_first_token(  ).
+          t123 = t124->get_first_token( ).
           DATA(t126) = t117.
           DATA t127 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t127.
@@ -308,6 +308,6 @@ CLASS zcl_lnt_sy_sort IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

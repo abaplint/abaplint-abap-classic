@@ -18,7 +18,7 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_visibility_module=>visibility_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.

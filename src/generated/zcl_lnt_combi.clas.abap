@@ -75,7 +75,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     t20 = |{ t21 }{ t23 }|.
     DATA t25 TYPE string.
     DATA(t26) = CAST zif_lnt_statement_runnable( t1 ).
-    t25 = t26->railroad(  ).
+    t25 = t26->railroad( ).
     DATA(t27) = strlen( t20 ).
     t19 = |{ t20 }{ t25 }|.
     DATA(t28) = |).toString();|.
@@ -96,7 +96,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t4) = CAST zif_lnt_statement_runnable( t1 ).
-    t3 = t4->list_keywords(  ).
+    t3 = t4->list_keywords( ).
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t5.
@@ -281,7 +281,7 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
               DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CLEAR t52.
               DATA(t53) = CAST zcl_lnt_st_result( t35 ).
-              t52 = t53->get_nodes(  ).
+              t52 = t53->get_nodes( ).
               t50 = t52.
             ELSE.
               DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

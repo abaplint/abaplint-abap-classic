@@ -21,7 +21,7 @@ CLASS zcl_lnt_parser_error DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_parser_error IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_parser_error_conf(  ).
+    DATA(t1) = NEW zcl_lnt_parser_error_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     DATA(t4) = VALUE i( ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t6) = CAST zif_lnt_object( t1 ).
-    t5 = t6->get_parsing_issues(  ).
+    t5 = t6->get_parsing_issues( ).
     DATA t7 TYPE REF TO zcl_lnt_issue.
     CLEAR t7.
     DATA t8 TYPE REF TO object.
@@ -159,14 +159,14 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
           DATA t31 TYPE abap_bool.
           DATA t32 TYPE REF TO zif_lnt_statement.
           DATA(t33) = CAST zcl_lnt_statement_node( t29 ).
-          t32 = t33->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+          t32 = t33->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t31 = xsdbool( t32 IS BOUND AND t32 IS INSTANCE OF zcl_lnt_unknown ).
           IF t31 = abap_true.
             DATA t34 TYPE abap_bool.
             DATA t35 TYPE i.
             DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA(t37) = CAST zcl_lnt_statement_node( t29 ).
-            t36 = t37->get_tokens(  ).
+            t36 = t37->get_tokens( ).
             t35 = lines( t36->items ).
             DATA(t38) = CONV i( zcl_lnt_sttmnt_prsr_mdl=>statement_max_tokens ).
             t34 = xsdbool( t35 > t38 ).
@@ -182,7 +182,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t44 TYPE REF TO zcl_lnt_abstract_token.
               DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA(t46) = CAST zcl_lnt_statement_node( t29 ).
-              t45 = t46->get_tokens(  ).
+              t45 = t46->get_tokens( ).
               DATA t47 TYPE REF TO object.
               CLEAR t47.
               READ TABLE t45->items INDEX 1 INTO t47.
@@ -252,7 +252,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t77 TYPE REF TO zcl_lnt_abstract_token.
               DATA t78 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t79) = CAST zcl_lnt_statement_node( t29 ).
-              t78 = t79->get_first_token(  ).
+              t78 = t79->get_first_token( ).
               t77 = t78.
               DATA t80 TYPE string.
               DATA t81 TYPE string.
@@ -347,13 +347,13 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
             DATA t126 TYPE abap_bool.
             DATA t127 TYPE REF TO zif_lnt_statement.
             DATA(t128) = CAST zcl_lnt_statement_node( t29 ).
-            t127 = t128->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+            t127 = t128->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
             t126 = xsdbool( t127 IS BOUND AND t127 IS INSTANCE OF zcl_lnt_macro_recursion ).
             IF t126 = abap_true.
               DATA t129 TYPE REF TO zcl_lnt_abstract_token.
               DATA t130 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t131) = CAST zcl_lnt_statement_node( t29 ).
-              t130 = t131->get_first_token(  ).
+              t130 = t131->get_first_token( ).
               t129 = t130.
               DATA t132 TYPE string.
               DATA t133 TYPE string.
@@ -445,8 +445,8 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
         DATA t177 TYPE REF TO zcl_lnt_abap_release.
         DATA t178 TYPE REF TO zif_lnt_configuration.
         DATA(t179) = CAST zif_lnt_registry( me->reg ).
-        t178 = t179->get_config(  ).
-        t177 = t178->get_release(  ).
+        t178 = t179->get_config( ).
+        t177 = t178->get_release( ).
         DATA t180 TYPE REF TO zcl_lnt_abap_release.
         CLEAR t180.
         DATA t181 TYPE REF TO zcl_lnt_abap_release.
@@ -480,7 +480,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
             DATA t192 TYPE i.
             DATA t193 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA(t194) = CAST zcl_lnt_statement_node( t189 ).
-            t193 = t194->get_pragmas(  ).
+            t193 = t194->get_pragmas( ).
             t192 = lines( t193->items ).
             DATA(t195) = 0.
             t191 = xsdbool( t192 > t195 ).
@@ -575,12 +575,12 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err(  ) ).
+    DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err(  ) ).
+    DATA(t1) = CAST zcl_lnt_parser_error_conf( me->gt_cn_in_sr_rl_pr_er_ts_pr_err( ) ).
   ENDMETHOD.
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
@@ -599,21 +599,21 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

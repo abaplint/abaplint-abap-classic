@@ -69,7 +69,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
     IF t1 = abap_true.
       DATA t8 TYPE REF TO zlnt_runtime_map__9af21ec489fc.
       DATA t9 TYPE REF TO zlnt_runtime_map__9af21ec489fc.
-      DATA(t10) = NEW zlnt_runtime_map__9af21ec489fc(  ).
+      DATA(t10) = NEW zlnt_runtime_map__9af21ec489fc( ).
       t9 = t10.
       DATA(t11) = CAST zlnt_runtime_map__9af21ec489fc( t9 ).
       t8 = t11.
@@ -83,7 +83,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
         t13 ?= t14.
         DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA(t16) = CAST zif_lnt_structure_runnable( t13 ).
-        t15 = t16->first(  ).
+        t15 = t16->first( ).
         DATA(t17) = VALUE string( ).
         LOOP AT t15->items INTO t17.
           DATA t18 TYPE abap_bool.
@@ -150,7 +150,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
   METHOD run.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_statements ).
     DATA(t2) = CAST zif_lnt_node( i_parent ).
-    me->setup_map(  ).
+    me->setup_map( ).
     DATA t3 TYPE int8.
     DATA(t4) = CONV int8( 0 ).
     t3 = t4.
@@ -190,7 +190,7 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
     CLEAR t26.
     READ TABLE t25->items INDEX 1 INTO t26.
     t24 ?= t26.
-    t23 = t24->get_first_token(  ).
+    t23 = t24->get_first_token( ).
     t22 = t23.
     DATA t27 TYPE string.
     DATA(t28) = CAST zcl_lnt_abstract_token( t22 ).
@@ -372,15 +372,15 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~to_railroad.
-    result = me->to_railroad(  ).
+    result = me->to_railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~run.
-    result = me->run(  i_statements = i_statements i_parent = i_parent ).
+    result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
 ENDCLASS.

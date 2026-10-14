@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_frm_tbls_obslt_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_frm_tbls_obslt_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -135,12 +135,12 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( me->g_c_i_s_r_fr_tb_ob_ts_fr_tb_ob(  ) ).
+    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( me->g_c_i_s_r_fr_tb_ob_ts_fr_tb_ob( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( me->g_c_i_s_r_fr_tb_ob_ts_fr_tb_ob(  ) ).
+    DATA(t1) = CAST zcl_lnt_frm_tbls_obslt_cnf( me->g_c_i_s_r_fr_tb_ob_ts_fr_tb_ob( ) ).
     result = t1.
 
   ENDMETHOD.

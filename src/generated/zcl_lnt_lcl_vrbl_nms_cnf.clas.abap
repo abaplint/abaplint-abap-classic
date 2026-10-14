@@ -11,7 +11,7 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_naming_
 ENDCLASS.
 CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |^L._.+$|.
     me->expected_data = t1.
     DATA(t2) = |^LC_.+$|.

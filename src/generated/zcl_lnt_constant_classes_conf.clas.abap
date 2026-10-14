@@ -9,7 +9,7 @@ CLASS zcl_lnt_constant_classes_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1.
     me->mapping = t1.

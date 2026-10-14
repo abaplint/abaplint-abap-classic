@@ -69,7 +69,7 @@ CLASS zcl_lnt_c_like_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cl_ty_ts_c_lk_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cl_ty_ts_c_lk_ty( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_c_like_type IMPLEMENTATION.
     IF zcl_lnt_c_like_type=>zlnt_builtin_init_6c060cbec4ed = abap_false.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
-    t1 = NEW zcl_lnt_c_like_type(  ).
+    t1 = NEW zcl_lnt_c_like_type( ).
     zcl_lnt_c_like_type=>singleton = t1.
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.

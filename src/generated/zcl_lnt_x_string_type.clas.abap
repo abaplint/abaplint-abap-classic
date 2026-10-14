@@ -70,7 +70,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_xs_ty_ts_x_st_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_xs_ty_ts_x_st_ty( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     IF zcl_lnt_x_string_type=>zlnt_builtin_init_5b41ede9197f = abap_false.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__0a96e2468aae(  ).
+    DATA(t1) = NEW zlnt_runtime_map__0a96e2468aae( ).
     zcl_lnt_x_string_type=>singletons = t1.
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.

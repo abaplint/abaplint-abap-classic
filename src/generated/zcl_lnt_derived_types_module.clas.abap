@@ -3002,7 +3002,7 @@ CLASS zcl_lnt_derived_types_module IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_derived_types_module=>common_derived_types(  ) ).
+    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_derived_types_module=>common_derived_types( ) ).
     t11 = t12->concat( p0 = t13 ).
     t10 = t11.
     DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).

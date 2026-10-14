@@ -9,7 +9,7 @@ CLASS zcl_lnt_n_yd_cndtns_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_ru
 ENDCLASS.
 CLASS zcl_lnt_n_yd_cndtns_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->only_constants = t1.
   ENDMETHOD.

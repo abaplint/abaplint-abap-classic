@@ -192,7 +192,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
     DATA t19 TYPE REF TO zcl_lnt_expression_node.
     DATA(t20) = CAST zcl_lnt_expression_node( t3 ).
     t19 = t20.
-    t18 = t19->get_first_token(  ).
+    t18 = t19->get_first_token( ).
     t17 = t18.
     DATA t21 TYPE string.
     DATA(t22) = CAST zcl_lnt_abstract_token( t17 ).

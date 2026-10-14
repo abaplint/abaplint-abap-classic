@@ -8,7 +8,7 @@ CLASS zcl_lnt_no_macros_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_rul
 ENDCLASS.
 CLASS zcl_lnt_no_macros_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1519_cfa2c6631487.

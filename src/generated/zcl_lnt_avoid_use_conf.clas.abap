@@ -17,7 +17,7 @@ CLASS zcl_lnt_avoid_use_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_rul
 ENDCLASS.
 CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     DATA(t2) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t2->has = abap_true.

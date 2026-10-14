@@ -10,7 +10,7 @@ CLASS zcl_lnt_exit_or_check_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic
 ENDCLASS.
 CLASS zcl_lnt_exit_or_check_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->allow_exit = t1.
     DATA(t2) = abap_false.

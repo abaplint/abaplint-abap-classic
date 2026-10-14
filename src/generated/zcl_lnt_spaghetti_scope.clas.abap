@@ -58,7 +58,7 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc.
     DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t2) = CAST zcl_lnt_spaghetti_scope_node( me->node ).
-    t1 = t2->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd(  ).
+    t1 = t2->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd( ).
     result = t1.
 
   ENDMETHOD.
@@ -91,12 +91,12 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_first_child.
-    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc(  ) ).
+    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_top.
-    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_t_i_s_ab_5_sy_sp_sc_ts_sp_sc(  ) ).
+    DATA(t1) = CAST zcl_lnt_spaghetti_scope_node( me->g_t_i_s_ab_5_sy_sp_sc_ts_sp_sc( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -110,21 +110,21 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~list_definitions.
-    result = me->list_definitions(  i_filename = i_filename ).
+    result = me->list_definitions( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~list_read_positions.
-    result = me->list_read_positions(  i_filename = i_filename ).
+    result = me->list_read_positions( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~list_write_positions.
-    result = me->list_write_positions(  i_filename = i_filename ).
+    result = me->list_write_positions( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~lookup_position.
-    result = me->lookup_position(  i_p = i_p i_filename = i_filename ).
+    result = me->lookup_position( i_p = i_p i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~get_top.
-    result = me->get_top(  ).
+    result = me->get_top( ).
   ENDMETHOD.
   METHOD zif_lnt_spaghetti_scope~get_first_child.
-    result = me->get_first_child(  ).
+    result = me->get_first_child( ).
   ENDMETHOD.
 ENDCLASS.

@@ -83,7 +83,7 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
       DATA t37 TYPE REF TO zcl_lnt_abstract_token.
       DATA t38 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t39) = CAST zif_lnt_union_4cf1d054( t27 ).
-      t38 = t39->get_last_token(  ).
+      t38 = t39->get_last_token( ).
       t37 = t38.
       DATA t40 TYPE string.
       DATA(t41) = CAST zcl_lnt_abstract_token( t37 ).
@@ -110,7 +110,7 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
         DATA t50 TYPE REF TO zcl_lnt_abstract_token.
         DATA t51 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t52) = CAST zif_lnt_union_4cf1d054( t27 ).
-        t51 = t52->get_last_token(  ).
+        t51 = t52->get_last_token( ).
         t50 = t51.
         DATA t53 TYPE string.
         DATA(t54) = CAST zcl_lnt_abstract_token( t50 ).

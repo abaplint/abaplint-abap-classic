@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_join DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CREA
 ENDCLASS.
 CLASS zcl_lnt_sql_join IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -199,7 +199,7 @@ CLASS zcl_lnt_sql_join IMPLEMENTATION.
     DATA(t70) = CAST zlnt_runtime_arra_c22708faf2e3( t68 ).
     DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t71.
-    DATA(t72) = NEW zcl_lnt_sql_join_source(  ).
+    DATA(t72) = NEW zcl_lnt_sql_join_source( ).
     IF t72 IS BOUND.
       CREATE OBJECT t71.
       t71->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -289,7 +289,7 @@ CLASS zcl_lnt_sql_join IMPLEMENTATION.
     DATA(t103) = CAST zlnt_runtime_arra_c22708faf2e3( t101 ).
     DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t104.
-    DATA(t105) = NEW zcl_lnt_sql_join_source(  ).
+    DATA(t105) = NEW zcl_lnt_sql_join_source( ).
     IF t105 IS BOUND.
       CREATE OBJECT t104.
       t104->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

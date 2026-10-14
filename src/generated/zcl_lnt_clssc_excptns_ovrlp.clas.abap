@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_clssc_excptn_ovrlp_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_clssc_excptn_ovrlp_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -168,12 +168,12 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov(  ) ).
+    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov(  ) ).
+    DATA(t1) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov( ) ).
     result = t1.
 
   ENDMETHOD.

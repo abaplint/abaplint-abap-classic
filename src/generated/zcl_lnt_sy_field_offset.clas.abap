@@ -64,7 +64,7 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
         DATA t26 TYPE REF TO zcl_lnt_abstract_token.
         DATA t27 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t28) = CAST zcl_lnt_expression_node( t1 ).
-        t27 = t28->get_last_token(  ).
+        t27 = t28->get_last_token( ).
         t26 = t27.
         DATA t29 TYPE string.
         DATA(t30) = CAST zcl_lnt_abstract_token( t26 ).

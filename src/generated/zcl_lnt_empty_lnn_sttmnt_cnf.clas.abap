@@ -9,7 +9,7 @@ CLASS zcl_lnt_empty_lnn_sttmnt_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_bas
 ENDCLASS.
 CLASS zcl_lnt_empty_lnn_sttmnt_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->allow_chained = t1.
   ENDMETHOD.

@@ -14,7 +14,7 @@ CLASS zcl_lnt_sy_source_field_symbol IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_abstract_token.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    t4 = t5->get_first_token(  ).
+    t4 = t5->get_first_token( ).
     t3 = t4.
     DATA t6 TYPE REF TO zcl_lnt_typed_identifier.
     CLEAR t6.
@@ -178,7 +178,7 @@ CLASS zcl_lnt_sy_source_field_symbol IMPLEMENTATION.
       DATA t73 TYPE REF TO zcl_lnt_abstract_token.
       DATA t74 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t75) = CAST zcl_lnt_expression_node( t1 ).
-      t74 = t75->get_first_token(  ).
+      t74 = t75->get_first_token( ).
       t73 = t74.
       DATA t76 TYPE string.
       DATA(t77) = CAST zcl_lnt_abstract_token( t73 ).
@@ -197,7 +197,7 @@ CLASS zcl_lnt_sy_source_field_symbol IMPLEMENTATION.
       DATA(t84) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t85 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t86) = CAST zcl_lnt_expression_node( t1 ).
-      t85 = t86->get_first_token(  ).
+      t85 = t86->get_first_token( ).
       DATA(t87) = t68.
       DATA t88 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t88.

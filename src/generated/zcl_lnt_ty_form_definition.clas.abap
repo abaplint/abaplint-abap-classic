@@ -62,7 +62,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     DATA t24 TYPE REF TO zcl_lnt_expression_node.
     DATA(t25) = CAST zcl_lnt_expression_node( t16 ).
     t24 = t25.
-    t23 = t24->get_first_token(  ).
+    t23 = t24->get_first_token( ).
     t22 = t23.
     DATA t26 TYPE REF TO zcl_lnt_position.
     DATA(t27) = CAST zcl_lnt_abstract_token( t22 ).
@@ -74,7 +74,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     DATA t30 TYPE REF TO zcl_lnt_expression_node.
     DATA(t31) = CAST zcl_lnt_expression_node( t16 ).
     t30 = t31.
-    t29 = t30->concat_tokens(  ).
+    t29 = t30->concat_tokens( ).
     t28 = t29.
     DATA t32 TYPE REF TO zcl_lnt_lx_identifier.
     DATA t33 TYPE REF TO zcl_lnt_lx_identifier.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
         CLEAR t32.
         DATA t33 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t34) = CAST zcl_lnt_expression_node( t20 ).
-        t33 = t34->get_first_token(  ).
+        t33 = t34->get_first_token( ).
         DATA t35 TYPE string.
         DATA(t36) = CAST zcl_lnt_syntax_input( t1 ).
         t35 = t36->filename.
@@ -547,30 +547,30 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_tables_parameters.
-    result = me->get_tables_parameters(  ).
+    result = me->get_tables_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_using_parameters.
-    result = me->get_using_parameters(  ).
+    result = me->get_using_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_changing_parameters.
-    result = me->get_changing_parameters(  ).
+    result = me->get_changing_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_form_definition~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
 ENDCLASS.

@@ -65,7 +65,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_abstract_token.
     DATA t24 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t25) = CAST zcl_lnt_expression_node( t1 ).
-    t24 = t25->get_first_token(  ).
+    t24 = t25->get_first_token( ).
     t23 = t24.
     DATA t26 TYPE string.
     DATA(t27) = CAST zcl_lnt_abstract_token( t23 ).

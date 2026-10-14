@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_from_source DEFINITION PUBLIC INHERITING FROM zcl_lnt_expressi
 ENDCLASS.
 CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -327,7 +327,7 @@ CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
     DATA(t105) = |KeyUser|.
     DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t106.
-    DATA(t107) = NEW zcl_lnt_sql_path_for_entity(  ).
+    DATA(t107) = NEW zcl_lnt_sql_path_for_entity( ).
     IF t107 IS BOUND.
       CREATE OBJECT t106.
       t106->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -357,7 +357,7 @@ CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
     CLEAR t114.
     DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t115.
-    DATA(t116) = NEW zcl_lnt_sql_hrrchy_aggrgt(  ).
+    DATA(t116) = NEW zcl_lnt_sql_hrrchy_aggrgt( ).
     IF t116 IS BOUND.
       CREATE OBJECT t115.
       t115->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -370,7 +370,7 @@ CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
     CLEAR t118.
     DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t119.
-    DATA(t120) = NEW zcl_lnt_sql_hierarchy_accessor(  ).
+    DATA(t120) = NEW zcl_lnt_sql_hierarchy_accessor( ).
     IF t120 IS BOUND.
       CREATE OBJECT t119.
       t119->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -386,7 +386,7 @@ CLASS zcl_lnt_sql_from_source IMPLEMENTATION.
     DATA(t124) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
     DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t125.
-    DATA(t126) = NEW zcl_lnt_sql_hierarchy_source(  ).
+    DATA(t126) = NEW zcl_lnt_sql_hierarchy_source( ).
     IF t126 IS BOUND.
       CREATE OBJECT t125.
       t125->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

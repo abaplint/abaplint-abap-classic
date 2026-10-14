@@ -18,7 +18,7 @@ CLASS zcl_lnt_rename_module IMPLEMENTATION.
     IF zcl_lnt_rename_module=>zlnt_builtin_init_ddf8139b1567 = abap_false.
       zcl_lnt_rename_module=>zlnt_builtin_init_a971b5677c96( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_rename_module=>rename_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.

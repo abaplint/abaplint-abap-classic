@@ -86,7 +86,7 @@ CLASS zcl_lnt_sy_fs_target IMPLEMENTATION.
       DATA t36 TYPE REF TO zcl_lnt_expression_node.
       DATA(t37) = CAST zcl_lnt_expression_node( t21 ).
       t36 = t37.
-      t35 = t36->get_first_token(  ).
+      t35 = t36->get_first_token( ).
       t34 = t35.
       DATA t38 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t38.
@@ -267,7 +267,7 @@ CLASS zcl_lnt_sy_fs_target IMPLEMENTATION.
         DATA(t115) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t116 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t117) = CAST zcl_lnt_expression_node( t1 ).
-        t116 = t117->get_first_token(  ).
+        t116 = t117->get_first_token( ).
         DATA(t118) = t100.
         DATA t119 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t119.

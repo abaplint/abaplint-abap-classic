@@ -12,7 +12,7 @@ CLASS zcl_lnt_abapdoc_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_rule_
 ENDCLASS.
 CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->check_local = t1.
     DATA(t2) = abap_false.

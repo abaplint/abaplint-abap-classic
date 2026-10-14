@@ -51,7 +51,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_children_9020 ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
-    t2 = t3->slice0(  ).
+    t2 = t3->slice0( ).
     me->children = t2.
   ENDMETHOD.
   METHOD get_children.
@@ -116,21 +116,21 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_node~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_node~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
 ENDCLASS.

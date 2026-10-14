@@ -108,7 +108,7 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty( ) ).
     result = t1.
 
   ENDMETHOD.

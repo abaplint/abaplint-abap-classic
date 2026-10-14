@@ -41,7 +41,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t16 TYPE REF TO zcl_lnt_expression_node.
       DATA(t17) = CAST zcl_lnt_expression_node( t9 ).
       t16 = t17.
-      t15 = t16->get_first_token(  ).
+      t15 = t16->get_first_token( ).
       t11 = t15.
     ENDIF.
     t8 = t11.
@@ -69,7 +69,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA(t28) = CAST zcl_lnt_expression_node( t20 ).
       t27 = t28.
-      t26 = t27->concat_tokens(  ).
+      t26 = t27->concat_tokens( ).
       DATA(t29) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t29->has = abap_true.
       t29->value = t26.
@@ -81,7 +81,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
     DATA t31 TYPE string.
     DATA t32 TYPE string.
     DATA(t33) = CAST zcl_lnt_statement_node( t1 ).
-    t32 = t33->concat_tokens(  ).
+    t32 = t33->concat_tokens( ).
     DATA(t34) = strlen( t32 ).
     t31 = t32.
     IF t31 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA(t69) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t70 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t71) = CAST zcl_lnt_statement_node( t1 ).
-      t70 = t71->get_first_token(  ).
+      t70 = t71->get_first_token( ).
       DATA(t72) = t60.
       DATA t73 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t73.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t90 TYPE REF TO zcl_lnt_expression_node.
       DATA(t91) = CAST zcl_lnt_expression_node( t74 ).
       t90 = t91.
-      t89 = t90->concat_tokens(  ).
+      t89 = t90->concat_tokens( ).
       DATA(t92) = strlen( t89 ).
       t88 = t92.
       DATA(t93) = 8.
@@ -218,7 +218,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t98 TYPE REF TO zcl_lnt_expression_node.
       DATA(t99) = CAST zcl_lnt_expression_node( t74 ).
       t98 = t99.
-      t97 = t98->concat_tokens(  ).
+      t97 = t98->concat_tokens( ).
       DATA(t100) = strlen( t96 ).
       t95 = |{ t96 }{ t97 }|.
       t94 = t95.
@@ -231,7 +231,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t106 TYPE REF TO zcl_lnt_expression_node.
       DATA(t107) = CAST zcl_lnt_expression_node( t74 ).
       t106 = t107.
-      t105 = t106->get_first_token(  ).
+      t105 = t106->get_first_token( ).
       DATA(t108) = t94.
       DATA t109 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t109.
@@ -262,7 +262,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
       DATA t119 TYPE REF TO zcl_lnt_expression_node.
       DATA(t120) = CAST zcl_lnt_expression_node( t112 ).
       t119 = t120.
-      t118 = t119->get_first_token(  ).
+      t118 = t119->get_first_token( ).
       t114 = t118.
     ENDIF.
     t111 = t114.
@@ -569,7 +569,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
         DATA t258 TYPE REF TO zcl_lnt_expression_node.
         DATA(t259) = CAST zcl_lnt_expression_node( t74 ).
         t258 = t259.
-        t257 = t258->concat_tokens(  ).
+        t257 = t258->concat_tokens( ).
         DATA(t260) = CAST zcl_lnt_typed_identifier( t236 ).
         t255->add_named_identifier( i_name = t257 i_identifier = t260 ).
       ELSE.
@@ -603,7 +603,7 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
           DATA t277 TYPE REF TO zcl_lnt_expression_node.
           DATA(t278) = CAST zcl_lnt_expression_node( t74 ).
           t277 = t278.
-          t276 = t277->concat_tokens(  ).
+          t276 = t277->concat_tokens( ).
           DATA(t279) = CAST zcl_lnt_typed_identifier( t263 ).
           t274->add_named_identifier( i_name = t276 i_identifier = t279 ).
         ENDIF.
@@ -620,6 +620,6 @@ CLASS zcl_lnt_sy_selection_screen IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

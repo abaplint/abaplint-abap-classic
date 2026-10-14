@@ -20,7 +20,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
     DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470 ).
     t7 = t8->find_first_expression( i_type_9913 = t9 ).
     t6 = t7.
-    t5 = t6->get_first_token(  ).
+    t5 = t6->get_first_token( ).
     t4 = t5.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -83,7 +83,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       DATA t35 TYPE REF TO zif_lnt_union_dc0fb493.
       DATA t36 TYPE REF TO object.
       DATA(t37) = CAST zif_lnt_union_8249fcb1( t32 ).
-      t36 = t37->get_db65(  ).
+      t36 = t37->get_db65( ).
       DATA t38 TYPE REF TO object.
       t38 = t36.
       t35 ?= t38.
@@ -100,7 +100,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
           CLEAR t43.
           DATA t44 TYPE REF TO zcl_lnt_typed_identifier.
           CLEAR t44.
-          DATA(t45) = NEW zcl_lnt_sy_type(  ).
+          DATA(t45) = NEW zcl_lnt_sy_type( ).
           DATA t46 TYPE REF TO zcl_lnt_statement_node.
           DATA(t47) = CAST zif_lnt_union_8249fcb1( t32 ).
           DATA t48 TYPE REF TO object.
@@ -347,7 +347,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
           IF t154 = abap_true.
             DATA t156 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             DATA t157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            DATA(t158) = NEW zcl_lnt_sy_include_type(  ).
+            DATA(t158) = NEW zcl_lnt_sy_include_type( ).
             DATA t159 TYPE REF TO zcl_lnt_statement_node.
             DATA(t160) = CAST zif_lnt_union_8249fcb1( t32 ).
             DATA t161 TYPE REF TO object.
@@ -433,7 +433,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
           CLEAR t193.
           DATA t194 TYPE REF TO zcl_lnt_typed_identifier.
           CLEAR t194.
-          DATA(t195) = NEW zcl_lnt_sy_types(  ).
+          DATA(t195) = NEW zcl_lnt_sy_types( ).
           DATA t196 TYPE REF TO zcl_lnt_structure_node.
           DATA(t197) = CAST zif_lnt_union_8249fcb1( t32 ).
           DATA t198 TYPE REF TO object.
@@ -743,7 +743,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
     DATA t336 TYPE REF TO zcl_lnt_current_scope.
     DATA(t337) = CAST zcl_lnt_syntax_input( t2 ).
     t336 = t337->scope.
-    t335 = t336->get_type(  ).
+    t335 = t336->get_type( ).
     DATA(t338) = |class_definition|.
     t334 = xsdbool( t335 = t338 ).
     t333 = t334.
@@ -753,7 +753,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       DATA t341 TYPE REF TO zcl_lnt_current_scope.
       DATA(t342) = CAST zcl_lnt_syntax_input( t2 ).
       t341 = t342->scope.
-      t340 = t341->get_type(  ).
+      t340 = t341->get_type( ).
       DATA(t343) = |interface|.
       t339 = xsdbool( t340 = t343 ).
       t333 = t339.
@@ -765,7 +765,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       DATA t347 TYPE REF TO zcl_lnt_current_scope.
       DATA(t348) = CAST zcl_lnt_syntax_input( t2 ).
       t347 = t348->scope.
-      t346 = t347->get_name(  ).
+      t346 = t347->get_name( ).
       DATA(t349) = |=>|.
       DATA(t350) = strlen( t346 ).
       t345 = |{ t346 }{ t349 }|.

@@ -22,12 +22,12 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
     zcl_lnt_abp_fl_infrmtn_mdl=>ns = t1.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t2) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t2) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_abp_fl_infrmtn_mdl=>attribute_level_namespace = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t3.
@@ -65,7 +65,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t15) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t15) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_abp_fl_infrmtn_mdl=>duration_namespace = t15.
     DATA t16 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t16.
@@ -103,7 +103,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t28) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t28) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc = t28.
     DATA t29 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t29.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t45) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t45) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_abp_fl_infrmtn_mdl=>risk_level_namespace = t45.
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t46.

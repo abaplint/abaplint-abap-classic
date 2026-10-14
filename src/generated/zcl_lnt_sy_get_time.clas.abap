@@ -178,7 +178,7 @@ CLASS zcl_lnt_sy_get_time IMPLEMENTATION.
             DATA t81 TYPE REF TO zcl_lnt_abstract_type.
             DATA(t82) = CAST zcl_lnt_abstract_type( t52 ).
             t81 = t82.
-            t80 = t81->is_generic(  ).
+            t80 = t81->is_generic( ).
             t54 = t80.
           ENDIF.
           t51 = t54.
@@ -197,7 +197,7 @@ CLASS zcl_lnt_sy_get_time IMPLEMENTATION.
           DATA(t89) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t90 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t91) = CAST zcl_lnt_statement_node( t1 ).
-          t90 = t91->get_first_token(  ).
+          t90 = t91->get_first_token( ).
           DATA(t92) = t84.
           DATA t93 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t93.
@@ -279,7 +279,7 @@ CLASS zcl_lnt_sy_get_time IMPLEMENTATION.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type.
       DATA(t30) = CAST zcl_lnt_abstract_type( t1 ).
       t29 = t30.
-      t28 = t29->is_generic(  ).
+      t28 = t29->is_generic( ).
       t2 = t28.
     ENDIF.
     result = t2.
@@ -295,6 +295,6 @@ CLASS zcl_lnt_sy_get_time IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

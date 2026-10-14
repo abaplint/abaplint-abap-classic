@@ -16,7 +16,7 @@ CLASS zcl_lnt_prfr_abp_bl_mdl IMPLEMENTATION.
     ENDIF.
     zlnt_builtin_init_c96b25bbd049 = abap_true.
     DATA t1 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t2) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     DATA(t4) = CAST zlnt_runtime_set__1827558fd4c7( t1 ).

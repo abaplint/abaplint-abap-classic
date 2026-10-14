@@ -68,7 +68,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
       DATA t10 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
       DATA(t11) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
       t10 = t11.
-      t9 = t10->keys(  ).
+      t9 = t10->keys( ).
       DATA(t12) = VALUE string( ).
       LOOP AT t9->items INTO t12.
         DATA t13 TYPE REF TO zcl_lnt_lx_identifier.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
       DATA t10 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
       DATA(t11) = CAST zlnt_runtime_map__41b3bb94df3d( t3 ).
       t10 = t11.
-      t9 = t10->keys(  ).
+      t9 = t10->keys( ).
       DATA(t12) = VALUE string( ).
       LOOP AT t9->items INTO t12.
         DATA t13 TYPE REF TO zcl_lnt_lx_identifier.
@@ -203,7 +203,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
       DATA t38 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
       DATA(t39) = CAST zlnt_runtime_map__41b3bb94df3d( t31 ).
       t38 = t39.
-      t37 = t38->keys(  ).
+      t37 = t38->keys( ).
       DATA(t40) = VALUE string( ).
       LOOP AT t37->items INTO t40.
         DATA t41 TYPE REF TO zcl_lnt_lx_identifier.
@@ -271,7 +271,7 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     DATA(t14) = CAST zcl_lnt_ibuiltin_method( me->method ).
     t13 = t14->mandatory.
     t12 = t13.
-    t11 = t12->keys(  ).
+    t11 = t12->keys( ).
     t10 = t11.
     DATA t15 TYPE abap_bool.
     DATA t16 TYPE i.
@@ -426,88 +426,88 @@ CLASS zcl_lnt_built_in_method IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_visibility.
-    result = me->get_visibility(  ).
+    result = me->get_visibility( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~is_redefinition.
-    result = me->is_redefinition(  ).
+    result = me->is_redefinition( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~is_abstract.
-    result = me->is_abstract(  ).
+    result = me->is_abstract( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~is_static_4685.
-    result = me->is_static_4685(  ).
+    result = me->is_static_4685( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~is_event_handler.
-    result = me->is_event_handler(  ).
+    result = me->is_event_handler( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_event_name.
-    result = me->get_event_name(  ).
+    result = me->get_event_name( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_event_class.
-    result = me->get_event_class(  ).
+    result = me->get_event_class( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_parameters.
-    result = me->get_parameters(  ).
+    result = me->get_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_raising.
-    result = me->get_raising(  ).
+    result = me->get_raising( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_exceptions.
-    result = me->get_exceptions(  ).
+    result = me->get_exceptions( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_method_definition~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_all.
-    result = me->get_all(  ).
+    result = me->get_all( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_importing.
-    result = me->get_importing(  ).
+    result = me->get_importing( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_required_parameters.
-    result = me->get_required_parameters(  ).
+    result = me->get_required_parameters( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_exporting.
-    result = me->get_exporting(  ).
+    result = me->get_exporting( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_changing.
-    result = me->get_changing(  ).
+    result = me->get_changing( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_optional.
-    result = me->get_optional(  ).
+    result = me->get_optional( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_returning.
-    result = me->get_returning(  ).
+    result = me->get_returning( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_exceptions.
-    result = me->get_exceptions(  ).
+    result = me->get_exceptions( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_default_importing.
-    result = me->get_default_importing(  ).
+    result = me->get_default_importing( ).
   ENDMETHOD.
   METHOD zif_lnt_method_parameters~get_parameter_default.
-    result = me->get_parameter_default(  i_parameter_5406 = i_parameter_5406 ).
+    result = me->get_parameter_default( i_parameter_5406 = i_parameter_5406 ).
   ENDMETHOD.
   METHOD zif_lnt_union_8cd68e5e~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

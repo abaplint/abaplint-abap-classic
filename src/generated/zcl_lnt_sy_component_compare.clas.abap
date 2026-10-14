@@ -44,7 +44,7 @@ CLASS zcl_lnt_sy_component_compare IMPLEMENTATION.
       DATA(t21) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t23) = CAST zcl_lnt_expression_node( t1 ).
-      t22 = t23->get_first_token(  ).
+      t22 = t23->get_first_token( ).
       DATA(t24) = t16.
       DATA t25 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t25.
@@ -171,7 +171,7 @@ CLASS zcl_lnt_sy_component_compare IMPLEMENTATION.
         DATA t78 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA(t79) = CAST zif_lnt_union_4cf1d054( t41 ).
         t78 = t79.
-        t77 = t78->concat_tokens(  ).
+        t77 = t78->concat_tokens( ).
         DATA(t80) = strlen( t77 ).
         t76 = t77.
         IF t76 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.

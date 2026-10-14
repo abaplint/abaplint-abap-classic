@@ -51,7 +51,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       DATA t24 TYPE REF TO zcl_lnt_expression_node.
       DATA(t25) = CAST zcl_lnt_expression_node( t15 ).
       t24 = t25.
-      t23 = t24->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t23 = t24->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t22 = xsdbool( t23 IS BOUND AND t23 IS INSTANCE OF zcl_lnt_st_fs_target ).
       t19 = t22.
     ENDIF.
@@ -170,7 +170,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
         DATA(t72) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t73 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t74) = CAST zcl_lnt_statement_node( t1 ).
-        t73 = t74->get_first_token(  ).
+        t73 = t74->get_first_token( ).
         DATA(t75) = t37.
         DATA t76 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t76.
@@ -242,7 +242,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       DATA t107 TYPE string.
       DATA t108 TYPE string.
       DATA(t109) = CAST zcl_lnt_statement_node( t1 ).
-      t108 = t109->concat_tokens(  ).
+      t108 = t109->concat_tokens( ).
       DATA(t110) = strlen( t108 ).
       t107 = t108.
       IF t107 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -379,7 +379,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
         DATA(t160) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t161 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t162) = CAST zcl_lnt_statement_node( t1 ).
-        t161 = t162->get_first_token(  ).
+        t161 = t162->get_first_token( ).
         DATA(t163) = t125.
         DATA t164 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t164.
@@ -541,7 +541,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
         DATA(t240) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t241 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t242) = CAST zcl_lnt_statement_node( t1 ).
-        t241 = t242->get_first_token(  ).
+        t241 = t242->get_first_token( ).
         DATA(t243) = t226.
         DATA t244 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t244.
@@ -675,7 +675,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
             DATA(t301) = CAST zcl_lnt_syntax_input( t2 ).
             DATA t302 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t303) = CAST zcl_lnt_statement_node( t1 ).
-            t302 = t303->get_first_token(  ).
+            t302 = t303->get_first_token( ).
             DATA(t304) = t296.
             DATA t305 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t305.
@@ -745,7 +745,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
           DATA(t334) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t335 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t336) = CAST zcl_lnt_statement_node( t1 ).
-          t335 = t336->get_first_token(  ).
+          t335 = t336->get_first_token( ).
           DATA(t337) = t329.
           DATA t338 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t338.
@@ -777,7 +777,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
           DATA(t352) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t353 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t354) = CAST zcl_lnt_statement_node( t1 ).
-          t353 = t354->get_first_token(  ).
+          t353 = t354->get_first_token( ).
           DATA(t355) = t347.
           DATA t356 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t356.
@@ -804,7 +804,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       DATA t366 TYPE REF TO zcl_lnt_expression_node.
       DATA(t367) = CAST zcl_lnt_expression_node( t357 ).
       t366 = t367.
-      t365 = t366->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t365 = t366->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t364 = xsdbool( t365 IS BOUND AND t365 IS INSTANCE OF zcl_lnt_st_source ).
       t361 = t364.
     ENDIF.
@@ -852,7 +852,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       DATA t388 TYPE REF TO zcl_lnt_expression_node.
       DATA(t389) = CAST zcl_lnt_expression_node( t379 ).
       t388 = t389.
-      t387 = t388->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t387 = t388->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t386 = xsdbool( t387 IS BOUND AND t387 IS INSTANCE OF zcl_lnt_st_source ).
       t383 = t386.
     ENDIF.
@@ -894,6 +894,6 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

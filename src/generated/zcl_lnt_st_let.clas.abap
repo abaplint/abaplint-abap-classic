@@ -9,7 +9,7 @@ CLASS zcl_lnt_st_let DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CREATE
 ENDCLASS.
 CLASS zcl_lnt_st_let IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).

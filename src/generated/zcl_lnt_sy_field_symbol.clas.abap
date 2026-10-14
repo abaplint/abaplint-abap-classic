@@ -41,7 +41,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       DATA t16 TYPE REF TO zcl_lnt_expression_node.
       DATA(t17) = CAST zcl_lnt_expression_node( t9 ).
       t16 = t17.
-      t15 = t16->get_first_token(  ).
+      t15 = t16->get_first_token( ).
       t11 = t15.
     ENDIF.
     t8 = t11.
@@ -88,7 +88,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     DATA t36 TYPE REF TO zcl_lnt_expression_node.
     DATA(t37) = CAST zcl_lnt_expression_node( t3 ).
     t36 = t37.
-    t35 = t36->concat_tokens(  ).
+    t35 = t36->concat_tokens( ).
     DATA(t38) = strlen( t35 ).
     t34 = t38.
     DATA(t39) = 30.
@@ -101,7 +101,7 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       DATA t44 TYPE REF TO zcl_lnt_expression_node.
       DATA(t45) = CAST zcl_lnt_expression_node( t3 ).
       t44 = t45.
-      t43 = t44->concat_tokens(  ).
+      t43 = t44->concat_tokens( ).
       DATA(t46) = strlen( t42 ).
       t41 = |{ t42 }{ t43 }|.
       t40 = t41.
@@ -570,6 +570,6 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

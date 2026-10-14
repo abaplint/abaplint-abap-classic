@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prefer_is_not_conf(  ).
+    DATA(t1) = NEW zcl_lnt_prefer_is_not_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -177,12 +177,12 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( me->g_c_i_s_r_pr_is_nt_ts_pr_is_nt(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( me->g_c_i_s_r_pr_is_nt_ts_pr_is_nt( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( me->g_c_i_s_r_pr_is_nt_ts_pr_is_nt(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_is_not_conf( me->g_c_i_s_r_pr_is_nt_ts_pr_is_nt( ) ).
     result = t1.
 
   ENDMETHOD.

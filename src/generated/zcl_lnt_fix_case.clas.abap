@@ -18,7 +18,7 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_file_contents.
     DATA(t2) = CAST zif_lnt_configuration( i_config ).
-    DATA(t3) = NEW zcl_lnt_keyword_case(  ).
+    DATA(t3) = NEW zcl_lnt_keyword_case( ).
     me->keyword_case = t3.
     DATA(t4) = CAST zcl_lnt_keyword_case( me->keyword_case ).
     DATA t5 TYPE REF TO zcl_lnt_keyword_case_conf.

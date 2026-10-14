@@ -23,7 +23,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
   ENDMETHOD.
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t2) = CAST zcl_lnt_abap_file( me->get_main_abap_file(  ) ).
+    DATA(t2) = CAST zcl_lnt_abap_file( me->get_main_abap_file( ) ).
     t1 = t2.
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zcl_lnt_abap_file.
@@ -68,7 +68,7 @@ CLASS zcl_lnt_ob_type_pool IMPLEMENTATION.
   ENDMETHOD.
   METHOD get_description.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2(  ) ).
+    DATA(t2) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t3.

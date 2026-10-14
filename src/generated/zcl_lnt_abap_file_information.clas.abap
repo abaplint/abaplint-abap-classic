@@ -443,24 +443,24 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~list_interface_definitions.
-    result = me->list_interface_definitions(  ).
+    result = me->list_interface_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~gt_intrfc_dfntn_by_nm.
-    result = me->gt_intrfc_dfntn_by_nm(  i_name = i_name ).
+    result = me->gt_intrfc_dfntn_by_nm( i_name = i_name ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~list_class_definitions.
-    result = me->list_class_definitions(  ).
+    result = me->list_class_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~get_class_definition_by_name.
-    result = me->get_class_definition_by_name(  i_name = i_name ).
+    result = me->get_class_definition_by_name( i_name = i_name ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~list_form_definitions.
-    result = me->list_form_definitions(  ).
+    result = me->list_form_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~list_class_implementations.
-    result = me->list_class_implementations(  ).
+    result = me->list_class_implementations( ).
   ENDMETHOD.
   METHOD zif_lnt_abap_file_information~gt_clss_implmnttn_by_nm.
-    result = me->gt_clss_implmnttn_by_nm(  i_name = i_name ).
+    result = me->gt_clss_implmnttn_by_nm( i_name = i_name ).
   ENDMETHOD.
 ENDCLASS.

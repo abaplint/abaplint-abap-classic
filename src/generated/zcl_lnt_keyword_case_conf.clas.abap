@@ -17,7 +17,7 @@ CLASS zcl_lnt_keyword_case_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_
 ENDCLASS.
 CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = |upper|.
     me->style = t1.
     DATA(t2) = abap_true.

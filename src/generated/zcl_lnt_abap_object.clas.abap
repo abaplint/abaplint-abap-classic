@@ -149,7 +149,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA(t34) = VALUE abap_bool( ).
       DATA t35 TYPE string.
       DATA(t36) = CAST zif_lnt_file( t32 ).
-      t35 = t36->get_filename(  ).
+      t35 = t36->get_filename( ).
       DATA(t37) = |.abap|.
       DATA(t38) = strlen( t35 ).
       DATA t39 TYPE i.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     me->parsed = t5.
-    super->set_dirty(  ).
+    super->set_dirty( ).
   ENDMETHOD.
   METHOD get_parsed_xml.
     DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
@@ -354,7 +354,7 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
     DATA(t19) = strlen( t5 ).
     t4 = |{ t5 }{ t18 }|.
     DATA t20 TYPE string.
-    DATA(t21) = CONV string( me->get_type(  ) ).
+    DATA(t21) = CONV string( me->get_type( ) ).
     DATA(t22) = strlen( t21 ).
     t20 = t21.
     TRANSLATE t20 TO LOWER CASE.

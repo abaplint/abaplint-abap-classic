@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sy_rd_rstrctn_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_sy_rd_rstrctn_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -145,12 +145,12 @@ CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( me->g_c_i_s_r_sy_rd_rs_ts_sy_rd_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( me->g_c_i_s_r_sy_rd_rs_ts_sy_rd_rs( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( me->g_c_i_s_r_sy_rd_rs_ts_sy_rd_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_sy_rd_rstrctn_cnf( me->g_c_i_s_r_sy_rd_rs_ts_sy_rd_rs( ) ).
     result = t1.
 
   ENDMETHOD.

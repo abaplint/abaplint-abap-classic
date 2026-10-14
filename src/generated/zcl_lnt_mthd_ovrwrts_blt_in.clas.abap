@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_mthd_ovrwrt_blt_in_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_mthd_ovrwrt_blt_in_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -170,12 +170,12 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( me->g_c_i_s_r_m_o_b_ts_mt_ov_bl_in(  ) ).
+    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( me->g_c_i_s_r_m_o_b_ts_mt_ov_bl_in( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( me->g_c_i_s_r_m_o_b_ts_mt_ov_bl_in(  ) ).
+    DATA(t1) = CAST zcl_lnt_mthd_ovrwrt_blt_in_cnf( me->g_c_i_s_r_m_o_b_ts_mt_ov_bl_in( ) ).
     result = t1.
 
   ENDMETHOD.

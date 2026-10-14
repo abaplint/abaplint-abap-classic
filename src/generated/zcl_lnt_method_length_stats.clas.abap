@@ -79,7 +79,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
         DATA t34 TYPE REF TO zif_lnt_statement.
         DATA t35 TYPE REF TO zif_lnt_statement.
         DATA(t36) = CAST zcl_lnt_statement_node( t32 ).
-        t35 = t36->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        t35 = t36->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t34 = t35.
         DATA t37 TYPE abap_bool.
         DATA(t38) = CAST zif_lnt_statement( t34 ).
@@ -93,7 +93,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
             DATA t42 TYPE REF TO zcl_lnt_abstract_token.
             DATA t43 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t44) = CAST zcl_lnt_statement_node( t32 ).
-            t43 = t44->get_first_token(  ).
+            t43 = t44->get_first_token( ).
             t42 = t43.
             DATA t45 TYPE REF TO zcl_lnt_position.
             DATA(t46) = CAST zcl_lnt_abstract_token( t42 ).
@@ -146,7 +146,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
               DATA t66 TYPE REF TO zcl_lnt_expression_node.
               DATA(t67) = CAST zcl_lnt_expression_node( t57 ).
               t66 = t67.
-              t65 = t66->concat_tokens(  ).
+              t65 = t66->concat_tokens( ).
               DATA(t68) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t68->has = abap_true.
               t68->value = t65.
@@ -263,7 +263,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
       DATA(t14) = CAST zcl_lnt_expression_node( t4 ).
       t13 = t14.
-      t12 = t13->get_first_token(  ).
+      t12 = t13->get_first_token( ).
       t11 = t12.
       DATA t15 TYPE string.
       DATA(t16) = CAST zcl_lnt_abstract_token( t11 ).

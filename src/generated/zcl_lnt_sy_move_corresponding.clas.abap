@@ -68,7 +68,7 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
       DATA(t31) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t32 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t33) = CAST zcl_lnt_statement_node( t1 ).
-      t32 = t33->get_first_token(  ).
+      t32 = t33->get_first_token( ).
       DATA(t34) = t26.
       DATA t35 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t35.
@@ -127,8 +127,8 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
     DATA t63 TYPE REF TO zif_lnt_registry.
     DATA(t64) = CAST zcl_lnt_current_scope( t58 ).
     t63 = t64->reg.
-    t62 = t63->get_config(  ).
-    t61 = t62->get_release(  ).
+    t62 = t63->get_config( ).
+    t61 = t62->get_release( ).
     t57 = t61.
     DATA t65 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t65.
@@ -159,8 +159,8 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
       DATA t76 TYPE REF TO zif_lnt_registry.
       DATA(t77) = CAST zcl_lnt_current_scope( t71 ).
       t76 = t77->reg.
-      t75 = t76->get_config(  ).
-      t74 = t75->get_language_version(  ).
+      t75 = t76->get_config( ).
+      t74 = t75->get_language_version( ).
       t70 = t74.
       DATA(t78) = |Cloud|.
       t69 = xsdbool( t70 <> t78 ).
@@ -180,8 +180,8 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
       DATA t86 TYPE REF TO zif_lnt_registry.
       DATA(t87) = CAST zcl_lnt_current_scope( t81 ).
       t86 = t87->reg.
-      t85 = t86->get_config(  ).
-      t84 = t85->is_open_abap(  ).
+      t85 = t86->get_config( ).
+      t84 = t85->is_open_abap( ).
       t80 = t84.
       t79 = xsdbool( t80 = abap_false ).
       t53 = t79.
@@ -221,7 +221,7 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
         DATA(t105) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t106 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t107) = CAST zcl_lnt_statement_node( t1 ).
-        t106 = t107->get_first_token(  ).
+        t106 = t107->get_first_token( ).
         DATA(t108) = t100.
         DATA t109 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t109.
@@ -263,7 +263,7 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
           DATA(t127) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t128 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t129) = CAST zcl_lnt_statement_node( t1 ).
-          t128 = t129->get_first_token(  ).
+          t128 = t129->get_first_token( ).
           DATA(t130) = t122.
           DATA t131 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t131.
@@ -284,6 +284,6 @@ CLASS zcl_lnt_sy_move_corresponding IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

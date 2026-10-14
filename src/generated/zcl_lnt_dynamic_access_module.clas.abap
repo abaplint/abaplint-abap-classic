@@ -346,7 +346,7 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     CLEAR t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
-    DATA(t23) = NEW zcl_lnt_st_field_chain(  ).
+    DATA(t23) = NEW zcl_lnt_st_field_chain( ).
     IF t23 IS BOUND.
       CREATE OBJECT t22.
       t22->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

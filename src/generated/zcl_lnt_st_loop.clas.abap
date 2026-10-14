@@ -513,7 +513,7 @@ CLASS zcl_lnt_st_loop IMPLEMENTATION.
     CLEAR t188.
     DATA t189 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t189.
-    DATA(t190) = CAST zif_lnt_statement_runnable( zcl_lnt_st_combi_module=>fail_combinator(  ) ).
+    DATA(t190) = CAST zif_lnt_statement_runnable( zcl_lnt_st_combi_module=>fail_combinator( ) ).
     IF t190 IS BOUND.
       CREATE OBJECT t189.
       t189->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -719,7 +719,7 @@ CLASS zcl_lnt_st_loop IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

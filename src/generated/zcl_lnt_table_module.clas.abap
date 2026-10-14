@@ -19,7 +19,7 @@ CLASS zcl_lnt_table_module IMPLEMENTATION.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_table_module=>enhancement_category_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
@@ -79,7 +79,7 @@ CLASS zcl_lnt_table_module IMPLEMENTATION.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    DATA(t22) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t22) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_table_module=>table_category_namespace = t22.
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t23.

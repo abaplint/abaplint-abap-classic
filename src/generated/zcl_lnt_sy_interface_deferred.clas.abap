@@ -38,7 +38,7 @@ CLASS zcl_lnt_sy_interface_deferred IMPLEMENTATION.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
       DATA(t15) = CAST zcl_lnt_expression_node( t5 ).
       t14 = t15.
-      t13 = t14->get_first_token(  ).
+      t13 = t14->get_first_token( ).
       t9 = t13.
     ENDIF.
     t4 = t9.
@@ -120,6 +120,6 @@ CLASS zcl_lnt_sy_interface_deferred IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

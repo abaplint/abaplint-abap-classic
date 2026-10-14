@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_start_at_tab_conf(  ).
+    DATA(t1) = NEW zcl_lnt_start_at_tab_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -136,12 +136,12 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( me->g_c_i_s_r_st_at_tb_ts_st_at_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( me->g_c_i_s_r_st_at_tb_ts_st_at_tb( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( me->g_c_i_s_r_st_at_tb_ts_st_at_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_start_at_tab_conf( me->g_c_i_s_r_st_at_tb_ts_st_at_tb( ) ).
     result = t1.
 
   ENDMETHOD.

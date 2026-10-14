@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_prefer_xsdbool IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prefer_xsdbool_conf(  ).
+    DATA(t1) = NEW zcl_lnt_prefer_xsdbool_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -136,12 +136,12 @@ CLASS zcl_lnt_prefer_xsdbool IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prefer_xsdbool_conf( me->gt_cn_in_sr_rl_pr_xs_ts_pr_xsd(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_xsdbool_conf( me->gt_cn_in_sr_rl_pr_xs_ts_pr_xsd( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prefer_xsdbool_conf( me->gt_cn_in_sr_rl_pr_xs_ts_pr_xsd(  ) ).
+    DATA(t1) = CAST zcl_lnt_prefer_xsdbool_conf( me->gt_cn_in_sr_rl_pr_xs_ts_pr_xsd( ) ).
     result = t1.
 
   ENDMETHOD.

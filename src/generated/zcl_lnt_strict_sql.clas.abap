@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS zcl_lnt_strict_sql IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_strict_sql_conf(  ).
+    DATA(t1) = NEW zcl_lnt_strict_sql_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -151,12 +151,12 @@ CLASS zcl_lnt_strict_sql IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_strict_sql_conf( me->gt_cn_in_sr_rl_st_sq_ts_st_sql(  ) ).
+    DATA(t1) = CAST zcl_lnt_strict_sql_conf( me->gt_cn_in_sr_rl_st_sq_ts_st_sql( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_strict_sql_conf( me->gt_cn_in_sr_rl_st_sq_ts_st_sql(  ) ).
+    DATA(t1) = CAST zcl_lnt_strict_sql_conf( me->gt_cn_in_sr_rl_st_sq_ts_st_sql( ) ).
     result = t1.
 
   ENDMETHOD.

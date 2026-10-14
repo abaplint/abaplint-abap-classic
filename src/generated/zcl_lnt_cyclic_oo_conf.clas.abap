@@ -11,7 +11,7 @@ CLASS zcl_lnt_cyclic_oo_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_rul
 ENDCLASS.
 CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     me->skip_0892 = t1.

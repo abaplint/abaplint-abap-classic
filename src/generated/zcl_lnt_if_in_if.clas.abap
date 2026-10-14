@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS zcl_lnt_if_in_if IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_if_in_if_conf(  ).
+    DATA(t1) = NEW zcl_lnt_if_in_if_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -296,12 +296,12 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if(  ) ).
+    DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if(  ) ).
+    DATA(t1) = CAST zcl_lnt_if_in_if_conf( me->g_c_i_s_r_if_in_if_ts_if_in_if( ) ).
     result = t1.
 
   ENDMETHOD.

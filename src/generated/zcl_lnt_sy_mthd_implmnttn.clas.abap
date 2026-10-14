@@ -24,7 +24,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     DATA t9 TYPE REF TO zcl_lnt_current_scope.
     DATA(t10) = CAST zcl_lnt_syntax_input( t2 ).
     t9 = t10->scope.
-    t8 = t9->get_name(  ).
+    t8 = t9->get_name( ).
     t7 = t8.
     DATA t11 TYPE REF TO zcl_lnt_abstract_token.
     DATA t12 TYPE REF TO zcl_lnt_abstract_token.
@@ -34,7 +34,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d86_5c0b7073356207 ).
     t14 = t15->find_first_expression( i_type_9913 = t16 ).
     t13 = t14.
-    t12 = t13->get_first_token(  ).
+    t12 = t13->get_first_token( ).
     t11 = t12.
     DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t17.
@@ -231,7 +231,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
           DATA t96 TYPE REF TO zcl_lnt_class.
           DATA(t97) = CAST zcl_lnt_class( t75 ).
           t96 = t97.
-          t95 = t96->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+          t95 = t96->gt_dfn_ins_src_obj_cls_ts_clss( ).
           t92 = t95.
         ELSE.
           DATA t98 TYPE REF TO zif_lnt_class_definition.
@@ -279,7 +279,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA(t117) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t118 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t119) = CAST zcl_lnt_statement_node( t1 ).
-      t118 = t119->get_first_token(  ).
+      t118 = t119->get_first_token( ).
       DATA(t120) = t106.
       DATA t121 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t121.
@@ -309,7 +309,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     DATA t135 TYPE REF TO zif_lnt_class_definition.
     DATA(t136) = CAST zif_lnt_class_definition( t31 ).
     t135 = t136.
-    t134 = t135->is_for_testing(  ).
+    t134 = t135->is_for_testing( ).
     t133 = t134.
     IF t134 = abap_true.
       DATA(t137) = VALUE abap_bool( ).
@@ -334,7 +334,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
         DATA t146 TYPE REF TO zif_lnt_method_definition.
         DATA(t147) = CAST zif_lnt_method_definition( t139 ).
         t146 = t147.
-        t145 = t146->get_visibility(  ).
+        t145 = t146->get_visibility( ).
         DATA(t148) = NEW zlnt_runtime_opti_4a236cd5714d( ).
         t148->has = abap_true.
         t148->value = t145.
@@ -453,7 +453,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA(t192) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t193 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t194) = CAST zcl_lnt_statement_node( t1 ).
-      t193 = t194->get_first_token(  ).
+      t193 = t194->get_first_token( ).
       DATA(t195) = t173.
       DATA t196 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t196.
@@ -466,7 +466,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     DATA t199 TYPE REF TO zcl_lnt_abstract_token.
     DATA t200 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t201) = CAST zcl_lnt_statement_node( t1 ).
-    t200 = t201->get_first_token(  ).
+    t200 = t201->get_first_token( ).
     t199 = t200.
     DATA t202 TYPE REF TO zcl_lnt_position.
     DATA(t203) = CAST zcl_lnt_abstract_token( t199 ).
@@ -496,7 +496,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA t214 TYPE REF TO zif_lnt_method_definition.
       DATA(t215) = CAST zif_lnt_method_definition( t207 ).
       t214 = t215.
-      t213 = t214->is_static_4685(  ).
+      t213 = t214->is_static_4685( ).
       DATA(t216) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t216->has = abap_true.
       t216->value = t213.
@@ -664,8 +664,8 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA t286 TYPE REF TO zif_lnt_class_definition.
       DATA(t287) = CAST zif_lnt_class_definition( t31 ).
       t286 = t287.
-      t285 = t286->get_attributes(  ).
-      t284 = t285->get_instance(  ).
+      t285 = t286->get_attributes( ).
+      t284 = t285->get_instance( ).
       t282->add_list( i_identifiers = t284 ).
     ENDIF.
     DATA t288 TYPE REF TO zcl_lnt_current_scope.
@@ -827,7 +827,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA(t365) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t366 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t367) = CAST zcl_lnt_statement_node( t1 ).
-      t366 = t367->get_first_token(  ).
+      t366 = t367->get_first_token( ).
       DATA(t368) = t346.
       DATA t369 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t369.
@@ -883,8 +883,8 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     DATA t391 TYPE REF TO zif_lnt_method_definition.
     DATA(t392) = CAST zif_lnt_method_definition( t129 ).
     t391 = t392.
-    t390 = t391->get_parameters(  ).
-    t389 = t390->get_all(  ).
+    t390 = t391->get_parameters( ).
+    t389 = t390->get_all( ).
     t387->add_list( i_identifiers = t389 ).
     DATA t393 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t394) = CAST zcl_lnt_object_oriented( t3 ).
@@ -1199,6 +1199,6 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

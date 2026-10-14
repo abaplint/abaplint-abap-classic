@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_inln_dt_old_vrsns_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_inln_dt_old_vrsns_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -85,12 +85,12 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_inln_dt_old_vrsns_cnf( me->g_c_i_s_r_i_d_o_v_t_i_dt_ol_vr(  ) ).
+    DATA(t1) = CAST zcl_lnt_inln_dt_old_vrsns_cnf( me->g_c_i_s_r_i_d_o_v_t_i_dt_ol_vr( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_inln_dt_old_vrsns_cnf( me->g_c_i_s_r_i_d_o_v_t_i_dt_ol_vr(  ) ).
+    DATA(t1) = CAST zcl_lnt_inln_dt_old_vrsns_cnf( me->g_c_i_s_r_i_d_o_v_t_i_dt_ol_vr( ) ).
     result = t1.
 
   ENDMETHOD.

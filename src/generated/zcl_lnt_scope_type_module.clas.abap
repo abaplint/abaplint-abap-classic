@@ -18,7 +18,7 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
     IF zcl_lnt_scope_type_module=>zlnt_builtin_init_dfd373a603fc = abap_false.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_scope_type_module=>scope_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

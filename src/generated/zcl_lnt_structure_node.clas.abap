@@ -35,7 +35,7 @@ ENDCLASS.
 CLASS zcl_lnt_structure_node IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = CAST zif_lnt_structure( i_structure ).
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t2) = CAST zif_lnt_structure( t1 ).
     me->structure = t2.
   ENDMETHOD.
@@ -99,7 +99,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t19 TYPE REF TO object.
         t19 = t18.
         t17 ?= t19.
-        t16 = t17->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        t16 = t17->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
         DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t21.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t19 TYPE REF TO object.
         t19 = t18.
         t17 ?= t19.
-        t16 = t17->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+        t16 = t17->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
         DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t21.
@@ -215,7 +215,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       DATA(t10) = VALUE abap_bool( ).
       DATA t11 TYPE REF TO object.
       DATA(t12) = CAST zif_lnt_union_8249fcb1( t8 ).
-      t11 = t12->get_db65(  ).
+      t11 = t12->get_db65( ).
       DATA(t13) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
       DATA t14 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t14.
@@ -400,7 +400,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       DATA t22 TYPE REF TO zif_lnt_union_8249fcb1.
       DATA(t23) = CAST zif_lnt_union_8249fcb1( t1 ).
       t22 = t23.
-      t21 = t22->get_first_token(  ).
+      t21 = t22->get_first_token( ).
       result = t21.
       RETURN.
     ENDIF.
@@ -488,7 +488,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       DATA t27 TYPE REF TO zif_lnt_union_8249fcb1.
       DATA(t28) = CAST zif_lnt_union_8249fcb1( t1 ).
       t27 = t28.
-      t26 = t27->get_last_token(  ).
+      t26 = t27->get_last_token( ).
       result = t26.
       RETURN.
     ENDIF.
@@ -593,7 +593,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t30 TYPE REF TO object.
         t30 = t29.
         t28 ?= t30.
-        t27 = t28->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        t27 = t28->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA(t31) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
         DATA t32 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t32.
@@ -649,7 +649,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     CREATE OBJECT t3.
     t2 = t3.
     DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ) ).
+    DATA(t5) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
     DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLEAR t7.
@@ -706,7 +706,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t28 TYPE REF TO object.
         t28 = t27.
         t26 ?= t28.
-        t25 = t26->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+        t25 = t26->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t29) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
         DATA t30 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t30.
@@ -762,7 +762,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
   METHOD find_direct_structure.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ) ).
+    DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
     DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLEAR t5.
@@ -810,7 +810,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       DATA(t18) = VALUE abap_bool( ).
       DATA t19 TYPE REF TO object.
       DATA(t20) = CAST zif_lnt_union_8249fcb1( t16 ).
-      t19 = t20->get_db65(  ).
+      t19 = t20->get_db65( ).
       DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
       DATA t22 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t22.
@@ -852,7 +852,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
   METHOD find_first_structure.
     DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_type_9913 ).
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ) ).
+    DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
     DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLEAR t5.
@@ -910,7 +910,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t24 TYPE REF TO object.
         t24 = t23.
         t22 ?= t24.
-        t21 = t22->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+        t21 = t22->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t25) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
         DATA t26 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t26.
@@ -982,7 +982,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_db65.
-    DATA(t1) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ) ).
+    DATA(t1) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -1001,66 +1001,66 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~concat_tokens.
-    result = me->concat_tokens(  ).
+    result = me->concat_tokens( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~find_all_expressions.
-    result = me->find_all_expressions(  i_type_9913 = i_type_9913 ).
+    result = me->find_all_expressions( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~find_all_expressions_multi.
-    result = me->find_all_expressions_multi(  i_type_9913 = i_type_9913 i_recursive = i_recursive ).
+    result = me->find_all_expressions_multi( i_type_9913 = i_type_9913 i_recursive = i_recursive ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~find_all_expressions_recursive.
-    result = me->find_all_expressions_recursive(  i_type_9913 = i_type_9913 ).
+    result = me->find_all_expressions_recursive( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~find_first_expression.
-    result = me->find_first_expression(  i_type_9913 = i_type_9913 ).
+    result = me->find_first_expression( i_type_9913 = i_type_9913 ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_first_child.
-    result = me->get_first_child(  ).
+    result = me->get_first_child( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_last_child.
-    result = me->get_last_child(  ).
+    result = me->get_last_child( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_8249fcb1~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~concat_tokens.
-    result = me->concat_tokens(  ).
+    result = me->concat_tokens( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
 ENDCLASS.

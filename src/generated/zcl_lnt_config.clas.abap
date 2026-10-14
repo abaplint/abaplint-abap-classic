@@ -189,7 +189,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         DATA(t78) = CAST zlnt_runtime_arra_8ecd6afe19e0( t74 ).
         DATA t79 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t80 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-        DATA(t81) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+        DATA(t81) = NEW zlnt_runtime_set__1827558fd4c7( ).
         DATA t82 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t83 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t84 TYPE REF TO zcl_lnt_isyntax_settings.
@@ -198,7 +198,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         t83 = t84->global_constants.
         t82 = t83.
         t80 = t81->fromArray( p0 = t82 ).
-        t79 = t80->values(  ).
+        t79 = t80->values( ).
         t77 = t78->concat( p0 = t79 ).
         t76 = t77.
         DATA(t86) = CAST zlnt_runtime_arra_8ecd6afe19e0( t76 ).
@@ -264,7 +264,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         DATA(t112) = CAST zlnt_runtime_arra_8ecd6afe19e0( t108 ).
         DATA t113 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t114 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-        DATA(t115) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+        DATA(t115) = NEW zlnt_runtime_set__1827558fd4c7( ).
         DATA t116 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t117 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t118 TYPE REF TO zcl_lnt_isyntax_settings.
@@ -273,7 +273,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         t117 = t118->ambigious_voids.
         t116 = t117.
         t114 = t115->fromArray( p0 = t116 ).
-        t113 = t114->values(  ).
+        t113 = t114->values( ).
         t111 = t112->concat( p0 = t113 ).
         t110 = t111.
         DATA(t120) = CAST zlnt_runtime_arra_8ecd6afe19e0( t110 ).
@@ -366,7 +366,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       ENDIF.
       t147->error_on_duplicate_filenames = t149.
     ENDIF.
-    me->check_version(  ).
+    me->check_version( ).
   ENDMETHOD.
   METHOD get_default.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_ver ).
@@ -374,7 +374,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t4 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t5 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    DATA(t6) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t6) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     t5 = t6.
     DATA(t7) = CAST zlnt_runtime_map__abd6fd794ffb( t5 ).
     t4 = t7.
@@ -384,7 +384,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t9.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules(  ) ).
+    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules( ) ).
     t10 = t11.
     DATA t12 TYPE i.
     DATA t13 TYPE i.
@@ -441,12 +441,12 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         DATA t41 TYPE string.
         DATA t42 TYPE REF TO zcl_lnt_irule_metadata.
         DATA(t43) = CAST zif_lnt_rule( t31 ).
-        t42 = t43->get_metadata(  ).
+        t42 = t43->get_metadata( ).
         t41 = t42->key.
         DATA t44 TYPE string.
         DATA t45 TYPE REF TO zcl_lnt_irule_metadata.
         DATA(t46) = CAST zif_lnt_rule( t20 ).
-        t45 = t46->get_metadata(  ).
+        t45 = t46->get_metadata( ).
         t44 = t45->key.
         t40 = zlnt_runtime_orde_654b9c3be2c1=>rule_key( p0 = t41 p1 = t44 ).
         DATA(t47) = 0.
@@ -504,13 +504,13 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       DATA t68 TYPE string.
       DATA t69 TYPE REF TO zcl_lnt_irule_metadata.
       DATA(t70) = CAST zif_lnt_rule( t64 ).
-      t69 = t70->get_metadata(  ).
+      t69 = t70->get_metadata( ).
       t68 = t69->key.
       DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t71.
       DATA t72 TYPE REF TO object.
       DATA(t73) = CAST zif_lnt_rule( t64 ).
-      t72 = t73->get_config_value(  ).
+      t72 = t73->get_config_value( ).
       IF t72 IS BOUND.
         CREATE OBJECT t71.
         t71->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -1026,7 +1026,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     t1 = t2.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules(  ) ).
+    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules( ) ).
     DATA t4 TYPE REF TO zif_lnt_rule.
     CLEAR t4.
     DATA t5 TYPE REF TO object.
@@ -1061,7 +1061,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         DATA t17 TYPE string.
         DATA t18 TYPE REF TO zcl_lnt_irule_metadata.
         DATA(t19) = CAST zif_lnt_rule( t4 ).
-        t18 = t19->get_metadata(  ).
+        t18 = t19->get_metadata( ).
         t17 = t18->key.
         t15 = t16->get( p0 = t17 ).
         t11 = t15.
@@ -1735,7 +1735,7 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t31 = zcl_lnt_version_module=>version_namespace.
-    t30 = t31->keys(  ).
+    t30 = t31->keys( ).
     DATA(t32) = VALUE string( ).
     LOOP AT t30->items INTO t32.
       DATA(t33) = VALUE abap_bool( ).
@@ -1851,33 +1851,33 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_enabled_rules.
-    result = me->get_enabled_rules(  ).
+    result = me->get_enabled_rules( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_global.
-    result = me->get_global(  ).
+    result = me->get_global( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_version.
-    result = me->get_version(  ).
+    result = me->get_version( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_release.
-    result = me->get_release(  ).
+    result = me->get_release( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_language_version.
-    result = me->get_language_version(  ).
+    result = me->get_language_version( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~is_open_abap.
-    result = me->is_open_abap(  ).
+    result = me->is_open_abap( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~get_syntax_setttings.
-    result = me->get_syntax_setttings(  ).
+    result = me->get_syntax_setttings( ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~read_by_rule.
-    result = me->read_by_rule(  i_rule = i_rule ).
+    result = me->read_by_rule( i_rule = i_rule ).
   ENDMETHOD.
   METHOD zif_lnt_configuration~read_by_key.
-    result = me->read_by_key(  i_rule = i_rule i_key = i_key ).
+    result = me->read_by_key( i_rule = i_rule i_key = i_key ).
   ENDMETHOD.
 ENDCLASS.

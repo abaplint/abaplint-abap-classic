@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_rdc_strng_tmplts_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_rdc_strng_tmplts_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -111,12 +111,12 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( me->g_c_i_s_r_rd_st_tm_ts_rd_st_tm(  ) ).
+    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( me->g_c_i_s_r_rd_st_tm_ts_rd_st_tm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( me->g_c_i_s_r_rd_st_tm_ts_rd_st_tm(  ) ).
+    DATA(t1) = CAST zcl_lnt_rdc_strng_tmplts_cnf( me->g_c_i_s_r_rd_st_tm_ts_rd_st_tm( ) ).
     result = t1.
 
   ENDMETHOD.

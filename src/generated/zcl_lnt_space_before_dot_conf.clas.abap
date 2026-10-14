@@ -10,7 +10,7 @@ CLASS zcl_lnt_space_before_dot_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_space_before_dot_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->ignore_global_definition = t1.
     DATA(t2) = abap_true.

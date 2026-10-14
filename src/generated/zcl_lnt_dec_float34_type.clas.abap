@@ -48,7 +48,7 @@ CLASS zcl_lnt_dec_float34_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_d_t_t_d_f_t_aa42(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_d_t_t_d_f_t_aa42( ) ).
     result = t1.
 
   ENDMETHOD.

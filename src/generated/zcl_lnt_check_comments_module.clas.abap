@@ -18,7 +18,7 @@ CLASS zcl_lnt_check_comments_module IMPLEMENTATION.
     IF zcl_lnt_check_comments_module=>zlnt_builtin_init_62c84a7d8f16 = abap_false.
       zcl_lnt_check_comments_module=>zlnt_builtin_init_f2b87bb9dc67( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_check_comments_module=>issue_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.

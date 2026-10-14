@@ -15,7 +15,7 @@ CLASS zcl_lnt_indentation_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_r
 ENDCLASS.
 CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
     DATA(t2) = abap_false.

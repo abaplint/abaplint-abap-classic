@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_align_pseudo_comments IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_algn_psd_cmmnts_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_algn_psd_cmmnts_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -112,12 +112,12 @@ CLASS zcl_lnt_align_pseudo_comments IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_algn_psd_cmmnts_cnf( me->g_c_i_s_r_al_ps_cm_ts_al_ps_cm(  ) ).
+    DATA(t1) = CAST zcl_lnt_algn_psd_cmmnts_cnf( me->g_c_i_s_r_al_ps_cm_ts_al_ps_cm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_algn_psd_cmmnts_cnf( me->g_c_i_s_r_al_ps_cm_ts_al_ps_cm(  ) ).
+    DATA(t1) = CAST zcl_lnt_algn_psd_cmmnts_cnf( me->g_c_i_s_r_al_ps_cm_ts_al_ps_cm( ) ).
     result = t1.
 
   ENDMETHOD.

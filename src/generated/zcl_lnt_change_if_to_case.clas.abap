@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_change_if_to_case_conf(  ).
+    DATA(t1) = NEW zcl_lnt_change_if_to_case_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -170,12 +170,12 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( me->g_c_i_s_r_c_i_t_c_t_ch_if_t_cs(  ) ).
+    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( me->g_c_i_s_r_c_i_t_c_t_ch_if_t_cs( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( me->g_c_i_s_r_c_i_t_c_t_ch_if_t_cs(  ) ).
+    DATA(t1) = CAST zcl_lnt_change_if_to_case_conf( me->g_c_i_s_r_c_i_t_c_t_ch_if_t_cs( ) ).
     result = t1.
 
   ENDMETHOD.

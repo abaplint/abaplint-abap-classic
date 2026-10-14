@@ -95,7 +95,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_db65.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd(  ) ).
+    DATA(t1) = CAST zcl_lnt_abstract_token( me->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -109,72 +109,72 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_node~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_node~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_node~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~concat_tokens.
-    result = me->concat_tokens(  ).
+    result = me->concat_tokens( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~count_tokens.
-    result = me->count_tokens(  ).
+    result = me->count_tokens( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_4cf1d054~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~add_child.
-    me->add_child(  i_n_0c97 = i_n_0c97 ).
+    me->add_child( i_n_0c97 = i_n_0c97 ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~concat_tokens.
-    result = me->concat_tokens(  ).
+    result = me->concat_tokens( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_db65.
-    result = me->get_db65(  ).
+    result = me->get_db65( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_children.
-    result = me->get_children(  ).
+    result = me->get_children( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_first_token.
-    result = me->get_first_token(  ).
+    result = me->get_first_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~get_last_token.
-    result = me->get_last_token(  ).
+    result = me->get_last_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_1e9858bf~set_children.
-    me->set_children(  i_children_9020 = i_children_9020 ).
+    me->set_children( i_children_9020 = i_children_9020 ).
   ENDMETHOD.
 ENDCLASS.

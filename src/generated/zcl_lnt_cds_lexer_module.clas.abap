@@ -18,7 +18,7 @@ CLASS zcl_lnt_cds_lexer_module IMPLEMENTATION.
     IF zcl_lnt_cds_lexer_module=>zlnt_builtin_init_9280f2eb7dfd = abap_false.
       zcl_lnt_cds_lexer_module=>zlnt_builtin_init_3a53c2a223b0( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_cds_lexer_module=>mode_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.

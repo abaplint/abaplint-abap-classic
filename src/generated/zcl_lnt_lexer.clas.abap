@@ -30,7 +30,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     me->m = t5.
     DATA t7 TYPE string.
     DATA(t8) = CAST zif_lnt_file( t1 ).
-    t7 = t8->get_raw(  ).
+    t7 = t8->get_raw( ).
     me->process( i_raw = t7 ).
     DATA t9 TYPE REF TO zcl_lnt_iabaplexer_result.
     DATA(t10) = CAST zif_lnt_file( t1 ).
@@ -2007,14 +2007,14 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         OR t159 = 10
         ).
         IF t158 = abap_true.
-          me->add_51c1(  ).
+          me->add_51c1( ).
         ELSE.
           DATA t162 TYPE abap_bool.
           DATA(t163) = t84.
           DATA(t164) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
           t162 = xsdbool( t163 = t164 ).
           IF t162 = abap_true.
-            me->add_51c1(  ).
+            me->add_51c1( ).
             DATA t165 TYPE int8.
             DATA(t166) = CONV i( zcl_lnt_lexer_module=>mode_str ).
             t165 = t166.
@@ -2034,7 +2034,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
               t167 = t171.
             ENDIF.
             IF t167 = abap_true.
-              me->add_51c1(  ).
+              me->add_51c1( ).
               DATA t174 TYPE int8.
               DATA(t175) = CONV i( zcl_lnt_lexer_module=>mode_template ).
               t174 = t175.
@@ -2045,7 +2045,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
               DATA(t178) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
               t176 = xsdbool( t177 = t178 ).
               IF t176 = abap_true.
-                me->add_51c1(  ).
+                me->add_51c1( ).
                 DATA t179 TYPE int8.
                 DATA(t180) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
                 t179 = t180.
@@ -2065,7 +2065,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   t181 = t185.
                 ENDIF.
                 IF t181 = abap_true.
-                  me->add_51c1(  ).
+                  me->add_51c1( ).
                   DATA t188 TYPE int8.
                   DATA(t189) = CONV i( zcl_lnt_lexer_module=>mode_pragma ).
                   t188 = t189.
@@ -2094,7 +2094,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                     t190 = t194.
                   ENDIF.
                   IF t190 = abap_true.
-                    me->add_51c1(  ).
+                    me->add_51c1( ).
                     DATA t201 TYPE int8.
                     DATA(t202) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
                     t201 = t202.
@@ -2219,7 +2219,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       t203 = t207.
                     ENDIF.
                     IF t203 = abap_true.
-                      me->add_51c1(  ).
+                      me->add_51c1( ).
                     ELSE.
                       DATA(t242) = VALUE abap_bool( ).
                       DATA t243 TYPE abap_bool.
@@ -2244,7 +2244,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                         t242 = t250.
                       ENDIF.
                       IF t242 = abap_true.
-                        me->add_51c1(  ).
+                        me->add_51c1( ).
                       ELSE.
                         DATA(t253) = VALUE abap_bool( ).
                         DATA t254 TYPE abap_bool.
@@ -2402,7 +2402,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                           t253 = t261.
                         ENDIF.
                         IF t253 = abap_true.
-                          me->add_51c1(  ).
+                          me->add_51c1( ).
                         ELSE.
                           DATA(t322) = VALUE abap_bool( ).
                           DATA(t323) = VALUE abap_bool( ).
@@ -2467,7 +2467,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                             t322 = t335.
                           ENDIF.
                           IF t322 = abap_true.
-                            me->add_51c1(  ).
+                            me->add_51c1( ).
                           ENDIF.
                         ENDIF.
                       ENDIF.
@@ -2531,7 +2531,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           t347 = t352.
         ENDIF.
         IF t347 = abap_true.
-          me->add_51c1(  ).
+          me->add_51c1( ).
           DATA t371 TYPE int8.
           DATA(t372) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
           t371 = t372.
@@ -2641,7 +2641,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
             OR t413 = 93
             ).
             IF t412 = abap_true.
-              me->add_51c1(  ).
+              me->add_51c1( ).
             ENDIF.
             DATA t416 TYPE abap_bool.
             DATA(t417) = t84.
@@ -2954,7 +2954,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 t541 = t545.
               ENDIF.
               IF t541 = abap_true.
-                me->add_51c1(  ).
+                me->add_51c1( ).
               ENDIF.
               DATA t549 TYPE int8.
               DATA(t550) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
@@ -2986,7 +2986,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                 t551 = t560.
               ENDIF.
               IF t551 = abap_true.
-                me->add_51c1(  ).
+                me->add_51c1( ).
               ELSE.
                 DATA(t563) = VALUE abap_bool( ).
                 DATA(t564) = VALUE abap_bool( ).
@@ -3092,7 +3092,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   OR t603 = 93
                   ).
                   IF t602 = abap_true.
-                    me->add_51c1(  ).
+                    me->add_51c1( ).
                   ENDIF.
                   DATA t606 TYPE abap_bool.
                   DATA(t607) = t84.
@@ -3126,7 +3126,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                     t613 = t617.
                   ENDIF.
                   IF t613 = abap_true.
-                    me->add_51c1(  ).
+                    me->add_51c1( ).
                     DATA t621 TYPE int8.
                     DATA(t622) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
                     t621 = t622.
@@ -3148,7 +3148,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                       t623 = t628.
                     ENDIF.
                     IF t623 = abap_true.
-                      me->add_51c1(  ).
+                      me->add_51c1( ).
                     ENDIF.
                   ENDIF.
                 ENDIF.
@@ -3314,7 +3314,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         EXIT.
       ENDIF.
     ENDDO.
-    me->add_51c1(  ).
+    me->add_51c1( ).
   ENDMETHOD.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).

@@ -9,7 +9,7 @@ CLASS zcl_lnt_nesting_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic_rule_
 ENDCLASS.
 CLASS zcl_lnt_nesting_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 5 ).
     me->depth = t1.
   ENDMETHOD.

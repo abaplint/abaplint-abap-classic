@@ -18,7 +18,7 @@ CLASS zcl_lnt_irule_module IMPLEMENTATION.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_irule_module=>rule_tag_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.

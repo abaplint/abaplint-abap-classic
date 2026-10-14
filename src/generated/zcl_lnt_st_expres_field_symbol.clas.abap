@@ -9,7 +9,7 @@ CLASS zcl_lnt_st_expres_field_symbol DEFINITION PUBLIC INHERITING FROM zcl_lnt_e
 ENDCLASS.
 CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.

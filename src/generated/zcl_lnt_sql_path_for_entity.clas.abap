@@ -9,7 +9,7 @@ CLASS zcl_lnt_sql_path_for_entity DEFINITION PUBLIC INHERITING FROM zcl_lnt_expr
 ENDCLASS.
 CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -20,7 +20,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t4.
-    DATA(t5) = NEW zcl_lnt_sqlcte_path_prefix(  ).
+    DATA(t5) = NEW zcl_lnt_sqlcte_path_prefix( ).
     IF t5 IS BOUND.
       CREATE OBJECT t4.
       t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

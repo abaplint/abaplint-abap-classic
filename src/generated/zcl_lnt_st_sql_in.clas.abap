@@ -9,14 +9,14 @@ CLASS zcl_lnt_st_sql_in DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CRE
 ENDCLASS.
 CLASS zcl_lnt_st_sql_in IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zcl_lnt_st_sql_source.
-    DATA(t2) = NEW zcl_lnt_st_sql_source(  ).
+    DATA(t2) = NEW zcl_lnt_st_sql_source( ).
     t1 = t2.
     DATA t3 TYPE REF TO zcl_lnt_sql_source_no_space.
-    DATA(t4) = NEW zcl_lnt_sql_source_no_space(  ).
+    DATA(t4) = NEW zcl_lnt_sql_source_no_space( ).
     t3 = t4.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t5.

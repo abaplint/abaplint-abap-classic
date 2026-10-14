@@ -24,7 +24,7 @@ ENDCLASS.
 CLASS zcl_lnt_no_dynamic_stuff IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_no_dynamic_stuff_conf(  ).
+    DATA(t1) = NEW zcl_lnt_no_dynamic_stuff_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -250,12 +250,12 @@ CLASS zcl_lnt_no_dynamic_stuff IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_no_dynamic_stuff_conf( me->g_c_i_sr_rl_n_dy_st_ts_n_dy_st(  ) ).
+    DATA(t1) = CAST zcl_lnt_no_dynamic_stuff_conf( me->g_c_i_sr_rl_n_dy_st_ts_n_dy_st( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_no_dynamic_stuff_conf( me->g_c_i_sr_rl_n_dy_st_ts_n_dy_st(  ) ).
+    DATA(t1) = CAST zcl_lnt_no_dynamic_stuff_conf( me->g_c_i_sr_rl_n_dy_st_ts_n_dy_st( ) ).
     result = t1.
 
   ENDMETHOD.

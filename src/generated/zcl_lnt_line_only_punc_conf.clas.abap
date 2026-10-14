@@ -9,7 +9,7 @@ CLASS zcl_lnt_line_only_punc_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_line_only_punc_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->ignore_exceptions = t1.
   ENDMETHOD.

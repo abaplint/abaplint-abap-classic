@@ -122,7 +122,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
     DATA t52 TYPE REF TO zcl_lnt_expression_node.
     DATA(t53) = CAST zcl_lnt_expression_node( t22 ).
     t52 = t53.
-    t51 = t52->concat_tokens(  ).
+    t51 = t52->concat_tokens( ).
     DATA(t54) = strlen( t51 ).
     t50 = t51.
     IF t50 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -155,7 +155,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       DATA t66 TYPE REF TO zcl_lnt_abstract_type.
       DATA(t67) = CAST zcl_lnt_abstract_type( t59 ).
       t66 = t67.
-      t65 = t66->is_generic(  ).
+      t65 = t66->is_generic( ).
       DATA(t68) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t68->has = abap_true.
       t68->value = t65.
@@ -217,7 +217,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       DATA t87 TYPE REF TO zcl_lnt_expression_node.
       DATA(t88) = CAST zcl_lnt_expression_node( t22 ).
       t87 = t88.
-      t86 = t87->get_first_token(  ).
+      t86 = t87->get_first_token( ).
       DATA(t89) = t47.
       DATA t90 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t90.
@@ -240,7 +240,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       DATA t98 TYPE REF TO zcl_lnt_expression_node.
       DATA(t99) = CAST zcl_lnt_expression_node( t4 ).
       t98 = t99.
-      t97 = t98->get_first_token(  ).
+      t97 = t98->get_first_token( ).
       DATA t100 TYPE string.
       DATA(t101) = CAST zcl_lnt_syntax_input( t2 ).
       t100 = t101->filename.
@@ -270,7 +270,7 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       DATA t111 TYPE REF TO zcl_lnt_expression_node.
       DATA(t112) = CAST zcl_lnt_expression_node( t4 ).
       t111 = t112.
-      t110 = t111->get_first_token(  ).
+      t110 = t111->get_first_token( ).
       DATA t113 TYPE string.
       DATA(t114) = CAST zcl_lnt_syntax_input( t2 ).
       t113 = t114->filename.

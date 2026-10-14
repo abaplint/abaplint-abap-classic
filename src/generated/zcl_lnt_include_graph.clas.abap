@@ -76,7 +76,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t19.
     me->issues = t19.
-    DATA(t20) = NEW zcl_lnt_graph(  ).
+    DATA(t20) = NEW zcl_lnt_graph( ).
     me->graph = t20.
     DATA t21 TYPE string.
     DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
@@ -86,7 +86,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     DATA(t24) = CAST zlnt_runtime_opti_7f2541396f43( t3 ).
     t23 = t24->value.
     me->allow_unused = t23.
-    me->build(  ).
+    me->build( ).
   ENDMETHOD.
   METHOD l_m_f_i_i_sr_ut_in_gr_ts_in_gr.
     DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
@@ -154,7 +154,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD build.
-    me->add_vertices(  ).
+    me->add_vertices( ).
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t2) = CAST zif_lnt_registry( me->reg ).
     t1 = zcl_lnt_include_graph_module=>get_abap_objects( i_reg_f149 = t2 ).
@@ -247,7 +247,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA t40 TYPE abap_bool.
           DATA t41 TYPE REF TO zif_lnt_statement.
           DATA(t42) = CAST zcl_lnt_statement_node( t38 ).
-          t41 = t42->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+          t41 = t42->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t40 = xsdbool( t41 IS BOUND AND t41 IS INSTANCE OF zcl_lnt_include ).
           IF t40 = abap_true.
             DATA t43 TYPE REF TO zcl_lnt_expression_node.
@@ -302,7 +302,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t66 TYPE REF TO zcl_lnt_expression_node.
             DATA(t67) = CAST zcl_lnt_expression_node( t43 ).
             t66 = t67.
-            t65 = t66->get_first_token(  ).
+            t65 = t66->get_first_token( ).
             t64 = t65.
             DATA t68 TYPE string.
             DATA(t69) = CAST zcl_lnt_abstract_token( t64 ).
@@ -381,7 +381,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA t99 TYPE string.
               DATA t100 TYPE string.
               DATA(t101) = CAST zcl_lnt_statement_node( t38 ).
-              t100 = t101->concat_tokens(  ).
+              t100 = t101->concat_tokens( ).
               DATA(t102) = strlen( t100 ).
               t99 = t100.
               IF t99 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -426,7 +426,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t121 TYPE REF TO zcl_lnt_irule_metadata.
                 CLEAR t121.
                 DATA t122 TYPE REF TO zcl_lnt_check_include.
-                DATA(t123) = NEW zcl_lnt_check_include(  ).
+                DATA(t123) = NEW zcl_lnt_check_include( ).
                 t122 = t123.
                 DATA t124 TYPE REF TO zcl_lnt_irule_metadata.
                 CLEAR t124.
@@ -547,7 +547,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t173 TYPE REF TO zcl_lnt_irule_metadata.
                 CLEAR t173.
                 DATA t174 TYPE REF TO zcl_lnt_check_include.
-                DATA(t175) = NEW zcl_lnt_check_include(  ).
+                DATA(t175) = NEW zcl_lnt_check_include( ).
                 t174 = t175.
                 DATA t176 TYPE REF TO zcl_lnt_irule_metadata.
                 CLEAR t176.
@@ -682,7 +682,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
         DATA t9 TYPE REF TO zcl_lnt_ob_program.
         DATA(t10) = CAST zcl_lnt_abap_object( t3 ).
         t9 ?= t10.
-        t8 = t9->get_main_abap_file(  ).
+        t8 = t9->get_main_abap_file( ).
         t7 = t8.
         DATA t11 TYPE abap_bool.
         DATA(t12) = CAST zcl_lnt_abap_file( t7 ).
@@ -736,7 +736,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           t34 = t35.
           DATA t37 TYPE abap_bool.
           DATA(t38) = CAST zcl_lnt_ob_program( t34 ).
-          t38->parse_xml(  ).
+          t38->parse_xml( ).
           DATA t39 TYPE abap_bool.
           DATA t40 TYPE REF TO zcl_lnt_shape_e86506f0.
           DATA t41 TYPE REF TO zcl_lnt_shape_e86506f0.
@@ -819,7 +819,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA t73 TYPE REF TO zcl_lnt_ob_type_pool.
           DATA(t74) = CAST zcl_lnt_abap_object( t3 ).
           t73 ?= t74.
-          t72 = t73->get_main_abap_file(  ).
+          t72 = t73->get_main_abap_file( ).
           t71 = t72.
           DATA t75 TYPE abap_bool.
           DATA(t76) = CAST zcl_lnt_abap_file( t71 ).
@@ -915,7 +915,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA t118 TYPE REF TO zcl_lnt_class.
             DATA(t119) = CAST zcl_lnt_abap_object( t3 ).
             t118 ?= t119.
-            t117 = t118->get_sequenced_files(  ).
+            t117 = t118->get_sequenced_files( ).
             DATA t120 TYPE REF TO zcl_lnt_abap_file.
             CLEAR t120.
             DATA t121 TYPE REF TO object.
@@ -1010,7 +1010,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA t162 TYPE REF TO zcl_lnt_function_group.
               DATA(t163) = CAST zcl_lnt_abap_object( t3 ).
               t162 ?= t163.
-              t161 = t162->get_include_files(  ).
+              t161 = t162->get_include_files( ).
               DATA t164 TYPE REF TO zcl_lnt_shape_124357cf.
               CLEAR t164.
               DATA t165 TYPE REF TO object.
@@ -1119,7 +1119,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA t211 TYPE REF TO zcl_lnt_function_group.
               DATA(t212) = CAST zcl_lnt_abap_object( t3 ).
               t211 ?= t212.
-              t210 = t211->get_main_abap_file(  ).
+              t210 = t211->get_main_abap_file( ).
               t209 = t210.
               DATA t213 TYPE abap_bool.
               DATA(t214) = CAST zcl_lnt_abap_file( t209 ).
@@ -1244,9 +1244,9 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_include_graph~list_main_for_include.
-    result = me->list_main_for_include(  i_filename = i_filename ).
+    result = me->list_main_for_include( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_include_graph~get_issues_file.
-    result = me->get_issues_file(  i_file = i_file ).
+    result = me->get_issues_file( i_file = i_file ).
   ENDMETHOD.
 ENDCLASS.

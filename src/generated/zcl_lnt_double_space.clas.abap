@@ -23,7 +23,7 @@ ENDCLASS.
 CLASS zcl_lnt_double_space IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_double_space_conf(  ).
+    DATA(t1) = NEW zcl_lnt_double_space_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -155,12 +155,12 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_double_space_conf( me->gt_cn_in_sr_rl_db_sp_ts_db_spc(  ) ).
+    DATA(t1) = CAST zcl_lnt_double_space_conf( me->gt_cn_in_sr_rl_db_sp_ts_db_spc( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_double_space_conf( me->gt_cn_in_sr_rl_db_sp_ts_db_spc(  ) ).
+    DATA(t1) = CAST zcl_lnt_double_space_conf( me->gt_cn_in_sr_rl_db_sp_ts_db_spc( ) ).
     result = t1.
 
   ENDMETHOD.

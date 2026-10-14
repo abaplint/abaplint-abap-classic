@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_n_extrnl_frm_clls_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_n_extrnl_frm_clls_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -102,12 +102,12 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -10,7 +10,7 @@ CLASS zcl_lnt_n_pblc_attrbts_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basic
 ENDCLASS.
 CLASS zcl_lnt_n_pblc_attrbts_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_false.
     me->allow_read_only = t1.
     DATA(t2) = abap_false.

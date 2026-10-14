@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_short_case IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_short_case_conf(  ).
+    DATA(t1) = NEW zcl_lnt_short_case_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -140,12 +140,12 @@ CLASS zcl_lnt_short_case IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_short_case_conf( me->gt_cn_in_sr_rl_sh_cs_ts_shr_cs(  ) ).
+    DATA(t1) = CAST zcl_lnt_short_case_conf( me->gt_cn_in_sr_rl_sh_cs_ts_shr_cs( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_short_case_conf( me->gt_cn_in_sr_rl_sh_cs_ts_shr_cs(  ) ).
+    DATA(t1) = CAST zcl_lnt_short_case_conf( me->gt_cn_in_sr_rl_sh_cs_ts_shr_cs( ) ).
     result = t1.
 
   ENDMETHOD.

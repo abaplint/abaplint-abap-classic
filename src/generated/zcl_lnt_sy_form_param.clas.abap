@@ -60,7 +60,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_expression_node.
     DATA(t24) = CAST zcl_lnt_expression_node( t3 ).
     t23 = t24.
-    t22 = t23->get_first_token(  ).
+    t22 = t23->get_first_token( ).
     t21 = t22.
     DATA t25 TYPE abap_bool.
     DATA t26 TYPE i.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
       DATA t42 TYPE REF TO zcl_lnt_expression_node.
       DATA(t43) = CAST zcl_lnt_expression_node( t3 ).
       t42 = t43.
-      t41 = t42->concat_tokens(  ).
+      t41 = t42->concat_tokens( ).
       t35 = NEW zcl_lnt_lx_identifier( i_start = t36 i_str = t41 ).
       t21 = t35.
     ENDIF.
@@ -142,7 +142,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
         DATA t64 TYPE REF TO zcl_lnt_expression_node.
         DATA(t65) = CAST zcl_lnt_expression_node( t55 ).
         t64 = t65.
-        t63 = t64->get_first_token(  ).
+        t63 = t64->get_first_token( ).
         t59 = t63.
       ENDIF.
       t54 = t59.
@@ -826,7 +826,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
       DATA t351 TYPE REF TO zcl_lnt_expression_node.
       DATA(t352) = CAST zcl_lnt_expression_node( t342 ).
       t351 = t352.
-      t350 = t351->concat_tokens(  ).
+      t350 = t351->concat_tokens( ).
       DATA(t353) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t353->has = abap_true.
       t353->value = t350.
@@ -956,7 +956,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
         t388 = t398.
       ENDIF.
       IF t388 = abap_true.
-        DATA(t400) = CAST zcl_lnt_c_generic_type( zcl_lnt_c_generic_type=>get_db65(  ) ).
+        DATA(t400) = CAST zcl_lnt_c_generic_type( zcl_lnt_c_generic_type=>get_db65( ) ).
         t332 = t400.
       ELSE.
         DATA(t401) = VALUE abap_bool( ).
@@ -999,7 +999,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
           t401 = t411.
         ENDIF.
         IF t401 = abap_true.
-          DATA(t413) = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65(  ) ).
+          DATA(t413) = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65( ) ).
           t332 = t413.
         ELSE.
           DATA(t414) = VALUE abap_bool( ).
@@ -1042,7 +1042,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
             t414 = t424.
           ENDIF.
           IF t414 = abap_true.
-            DATA(t426) = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65(  ) ).
+            DATA(t426) = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65( ) ).
             t332 = t426.
           ENDIF.
         ENDIF.

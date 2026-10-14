@@ -206,7 +206,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
     DATA t2 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
-    DATA(t3) = NEW zlnt_runtime_map__7f28925f9deb(  ).
+    DATA(t3) = NEW zlnt_runtime_map__7f28925f9deb( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__7f28925f9deb( t2 ).
     t1 = t4.

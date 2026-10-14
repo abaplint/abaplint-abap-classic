@@ -63,7 +63,7 @@ CLASS zcl_lnt_sy_inln_fld_dfntn IMPLEMENTATION.
       DATA t26 TYPE REF TO zcl_lnt_expression_node.
       DATA(t27) = CAST zcl_lnt_expression_node( t8 ).
       t26 = t27.
-      t25 = t26->get_first_token(  ).
+      t25 = t26->get_first_token( ).
       t21 = t25.
     ENDIF.
     t7 = t21.
@@ -377,7 +377,7 @@ CLASS zcl_lnt_sy_inln_fld_dfntn IMPLEMENTATION.
       DATA(t163) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t164 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t165) = CAST zif_lnt_union_bb14dc41( t1 ).
-      t164 = t165->get_first_token(  ).
+      t164 = t165->get_first_token( ).
       DATA(t166) = t152.
       DATA t167 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t167.

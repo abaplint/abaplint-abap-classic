@@ -39,7 +39,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
         DATA(t15) = CAST zcl_lnt_syntax_input( t3 ).
         DATA t16 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t17) = CAST zif_lnt_node( t2 ).
-        t16 = t17->get_first_token(  ).
+        t16 = t17->get_first_token( ).
         DATA(t18) = |Not an object reference(AttributeChain)|.
         DATA t19 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t19.
@@ -72,7 +72,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
     DATA t28 TYPE REF TO zif_lnt_node.
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t30) = CAST zif_lnt_node( t2 ).
-    t29 = t30->get_children(  ).
+    t29 = t30->get_children( ).
     DATA t31 TYPE REF TO object.
     CLEAR t31.
     READ TABLE t29->items INDEX 1 INTO t31.
@@ -82,7 +82,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
     DATA t33 TYPE abap_bool.
     DATA t34 TYPE REF TO object.
     DATA(t35) = CAST zif_lnt_node( t27 ).
-    t34 = t35->get_db65(  ).
+    t34 = t35->get_db65( ).
     t33 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_attribute_name ).
     t32 = xsdbool( t33 = abap_false ).
     IF t32 = abap_true.
@@ -93,7 +93,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
       DATA(t39) = CAST zcl_lnt_syntax_input( t3 ).
       DATA t40 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t41) = CAST zif_lnt_node( t2 ).
-      t40 = t41->get_first_token(  ).
+      t40 = t41->get_first_token( ).
       DATA(t42) = |AttributeChain, unexpected first child|.
       DATA t43 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t43.
@@ -410,7 +410,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
             DATA t168 TYPE REF TO zcl_lnt_class.
             DATA(t169) = CAST zcl_lnt_class( t147 ).
             t168 = t169.
-            t167 = t168->gt_dfn_ins_src_obj_cls_ts_clss(  ).
+            t167 = t168->gt_dfn_ins_src_obj_cls_ts_clss( ).
             t164 = t167.
           ELSE.
             DATA t170 TYPE REF TO zif_lnt_class_definition.
@@ -764,7 +764,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
       DATA(t307) = CAST zcl_lnt_syntax_input( t3 ).
       DATA t308 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t309) = CAST zif_lnt_node( t2 ).
-      t308 = t309->get_first_token(  ).
+      t308 = t309->get_first_token( ).
       DATA(t310) = t263.
       DATA t311 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t311.
@@ -795,7 +795,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
     DATA t319 TYPE REF TO zcl_lnt_abstract_token.
     DATA t320 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t321) = CAST zif_lnt_node( t27 ).
-    t320 = t321->get_first_token(  ).
+    t320 = t321->get_first_token( ).
     t319 = t320.
     DATA t322 TYPE string.
     DATA t323 TYPE string.
@@ -927,7 +927,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
       DATA t382 TYPE REF TO zif_lnt_interface_definition.
       DATA(t383) = CAST zif_lnt_interface_definition( t51 ).
       t382 = t383.
-      t381 = t382->get_name(  ).
+      t381 = t382->get_name( ).
       DATA(t384) = strlen( t374 ).
       t373 = |{ t374 }{ t381 }|.
       DATA(t385) = |"|.
@@ -1025,7 +1025,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
     DATA t426 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t427 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t428) = CAST zif_lnt_node( t2 ).
-    t427 = t428->get_children(  ).
+    t427 = t428->get_children( ).
     t426 = t427.
     DATA t429 TYPE i.
     DATA(t430) = 1.
@@ -1085,7 +1085,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
         DATA t452 TYPE abap_bool.
         DATA t453 TYPE REF TO object.
         DATA(t454) = CAST zif_lnt_node( t435 ).
-        t453 = t454->get_db65(  ).
+        t453 = t454->get_db65( ).
         t452 = xsdbool( t453 IS BOUND AND t453 IS INSTANCE OF zcl_lnt_arrow_or_dash ).
         IF t452 = abap_true.
           DATA t455 TYPE string.
@@ -1093,7 +1093,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
           DATA t457 TYPE REF TO zcl_lnt_abstract_token.
           DATA t458 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t459) = CAST zif_lnt_node( t435 ).
-          t458 = t459->get_first_token(  ).
+          t458 = t459->get_first_token( ).
           t457 = t458.
           DATA t460 TYPE string.
           DATA(t461) = CAST zcl_lnt_abstract_token( t457 ).
@@ -1122,7 +1122,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
             DATA(t472) = CAST zcl_lnt_syntax_input( t3 ).
             DATA t473 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t474) = CAST zif_lnt_node( t435 ).
-            t473 = t474->get_first_token(  ).
+            t473 = t474->get_first_token( ).
             DATA(t475) = |AttributeChain, not a structure|.
             DATA t476 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t476.
@@ -1191,7 +1191,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
               DATA(t502) = CAST zcl_lnt_syntax_input( t3 ).
               DATA t503 TYPE REF TO zcl_lnt_abstract_token.
               DATA(t504) = CAST zif_lnt_node( t435 ).
-              t503 = t504->get_first_token(  ).
+              t503 = t504->get_first_token( ).
               DATA(t505) = |AttributeChain, not a reference|.
               DATA t506 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
               CLEAR t506.
@@ -1224,7 +1224,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
           DATA t514 TYPE abap_bool.
           DATA t515 TYPE REF TO object.
           DATA(t516) = CAST zif_lnt_node( t435 ).
-          t515 = t516->get_db65(  ).
+          t515 = t516->get_db65( ).
           t514 = xsdbool( t515 IS BOUND AND t515 IS INSTANCE OF zcl_lnt_st_component_name ).
           IF t514 = abap_true.
             DATA t517 TYPE abap_bool.
@@ -1299,7 +1299,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
             DATA t546 TYPE REF TO zcl_lnt_abstract_token.
             DATA t547 TYPE REF TO zcl_lnt_abstract_token.
             DATA(t548) = CAST zif_lnt_node( t435 ).
-            t547 = t548->get_first_token(  ).
+            t547 = t548->get_first_token( ).
             t546 = t547.
             DATA t549 TYPE string.
             DATA(t550) = CAST zcl_lnt_abstract_token( t546 ).
@@ -1350,7 +1350,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                 DATA t570 TYPE REF TO object.
                 t570 = t569.
                 t568 ?= t570.
-                t567 = t568->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+                t567 = t568->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                 t566 = xsdbool( t567 IS BOUND AND t567 IS INSTANCE OF zcl_lnt_st_table_expression ).
                 t563 = t566.
               ENDIF.
@@ -1372,7 +1372,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                   DATA t581 TYPE REF TO object.
                   t581 = t580.
                   t579 ?= t581.
-                  t578 = t579->get_first_token(  ).
+                  t578 = t579->get_first_token( ).
                   DATA(t582) = |Table expression, expected table|.
                   DATA t583 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                   CLEAR t583.
@@ -1455,7 +1455,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                   DATA t616 TYPE REF TO object.
                   t616 = t615.
                   t614 ?= t616.
-                  t613 = t614->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+                  t613 = t614->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                   t612 = xsdbool( t613 IS BOUND AND t613 IS INSTANCE OF zcl_lnt_st_field_offset ).
                   t609 = t612.
                 ENDIF.
@@ -1563,7 +1563,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                     DATA t664 TYPE REF TO object.
                     t664 = t663.
                     t662 ?= t664.
-                    t661 = t662->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+                    t661 = t662->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                     t660 = xsdbool( t661 IS BOUND AND t661 IS INSTANCE OF zcl_lnt_st_field_length ).
                     t657 = t660.
                   ENDIF.

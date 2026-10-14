@@ -21,14 +21,14 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
     DATA t2 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
-    DATA(t3) = NEW zlnt_runtime_map__a8db3647ad44(  ).
+    DATA(t3) = NEW zlnt_runtime_map__a8db3647ad44( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__a8db3647ad44( t2 ).
     t1 = t4.
     me->definitions = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     DATA t6 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    DATA(t7) = NEW zlnt_runtime_map__68aa8717233d(  ).
+    DATA(t7) = NEW zlnt_runtime_map__68aa8717233d( ).
     t6 = t7.
     DATA(t8) = CAST zlnt_runtime_map__68aa8717233d( t6 ).
     t5 = t8.
@@ -104,24 +104,24 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~add_definition.
-    me->add_definition(  i_ref = i_ref i_start = i_start i_end = i_end ).
+    me->add_definition( i_ref = i_ref i_start = i_start i_end = i_end ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~add_reference.
-    me->add_reference(  i_ref = i_ref ).
+    me->add_reference( i_ref = i_ref ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~list_definitions_by_file.
-    result = me->list_definitions_by_file(  i_filename = i_filename ).
+    result = me->list_definitions_by_file( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~list_usagesby_macro.
-    result = me->list_usagesby_macro(  i_filename = i_filename i_token = i_token ).
+    result = me->list_usagesby_macro( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~get_definition_range.
-    result = me->get_definition_range(  i_filename = i_filename i_token = i_token ).
+    result = me->get_definition_range( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~find_definition_by_usage.
-    result = me->find_definition_by_usage(  i_filename = i_filename i_token = i_token ).
+    result = me->find_definition_by_usage( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
   METHOD zif_lnt_macro_references~clear_feba.
-    me->clear_feba(  i_filename = i_filename ).
+    me->clear_feba( i_filename = i_filename ).
   ENDMETHOD.
 ENDCLASS.

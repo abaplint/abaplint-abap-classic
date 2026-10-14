@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_many_parentheses_conf(  ).
+    DATA(t1) = NEW zcl_lnt_many_parentheses_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -192,12 +192,12 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( me->gt_cn_in_sr_rl_mn_pr_ts_mn_prn(  ) ).
+    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( me->gt_cn_in_sr_rl_mn_pr_ts_mn_prn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( me->gt_cn_in_sr_rl_mn_pr_ts_mn_prn(  ) ).
+    DATA(t1) = CAST zcl_lnt_many_parentheses_conf( me->gt_cn_in_sr_rl_mn_pr_ts_mn_prn( ) ).
     result = t1.
 
   ENDMETHOD.

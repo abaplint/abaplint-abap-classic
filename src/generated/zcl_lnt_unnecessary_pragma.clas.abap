@@ -22,7 +22,7 @@ ENDCLASS.
 CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_unncssry_prgm_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_unncssry_prgm_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -295,12 +295,12 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( me->gt_cn_in_sr_rl_un_pr_ts_un_prg(  ) ).
+    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( me->gt_cn_in_sr_rl_un_pr_ts_un_prg( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( me->gt_cn_in_sr_rl_un_pr_ts_un_prg(  ) ).
+    DATA(t1) = CAST zcl_lnt_unncssry_prgm_cnf( me->gt_cn_in_sr_rl_un_pr_ts_un_prg( ) ).
     result = t1.
 
   ENDMETHOD.

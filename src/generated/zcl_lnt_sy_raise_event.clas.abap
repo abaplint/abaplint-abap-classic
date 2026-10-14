@@ -44,7 +44,7 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
       DATA t18 TYPE REF TO zcl_lnt_expression_node.
       DATA(t19) = CAST zcl_lnt_expression_node( t11 ).
       t18 = t19.
-      t17 = t18->concat_tokens(  ).
+      t17 = t18->concat_tokens( ).
       DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t20->has = abap_true.
       t20->value = t17.
@@ -102,7 +102,7 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
       DATA t37 TYPE REF TO zcl_lnt_expression_node.
       DATA(t38) = CAST zcl_lnt_expression_node( t3 ).
       t37 = t38.
-      t36 = t37->concat_tokens(  ).
+      t36 = t37->concat_tokens( ).
       DATA(t39) = |~|.
       DATA(t40) = strlen( t36 ).
       DATA t41 TYPE i.
@@ -337,7 +337,7 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
           DATA t124 TYPE REF TO zcl_lnt_expression_node.
           DATA(t125) = CAST zcl_lnt_expression_node( t3 ).
           t124 = t125.
-          t123 = t124->get_first_token(  ).
+          t123 = t124->get_first_token( ).
           t121 = t123.
         ELSE.
           DATA t126 TYPE REF TO zcl_lnt_abstract_token.
@@ -417,6 +417,6 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

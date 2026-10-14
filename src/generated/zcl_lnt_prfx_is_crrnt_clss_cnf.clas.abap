@@ -9,7 +9,7 @@ CLASS zcl_lnt_prfx_is_crrnt_clss_cnf DEFINITION PUBLIC INHERITING FROM zcl_lnt_b
 ENDCLASS.
 CLASS zcl_lnt_prfx_is_crrnt_clss_cnf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->omit_me_instance_calls = t1.
   ENDMETHOD.

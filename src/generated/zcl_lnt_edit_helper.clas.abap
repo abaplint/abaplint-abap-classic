@@ -22,7 +22,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t3 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t4 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t5) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t5) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t4 = t5.
     DATA(t6) = CAST zlnt_runtime_map__4fdf767b61ba( t4 ).
     t3 = t6.
@@ -36,7 +36,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       t8 ?= t9.
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t11) = CAST zlnt_runtime_map__4fdf767b61ba( t8 ).
-      t10 = t11->keys(  ).
+      t10 = t11->keys( ).
       DATA(t12) = VALUE string( ).
       LOOP AT t10->items INTO t12.
         DATA(t13) = VALUE abap_bool( ).
@@ -94,14 +94,14 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t4 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t5 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t6) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t6) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t5 = t6.
     DATA(t7) = CAST zlnt_runtime_map__4fdf767b61ba( t5 ).
     t4 = t7.
     t3 = t4.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t9) = CAST zlnt_runtime_map__4fdf767b61ba( t1 ).
-    t8 = t9->keys(  ).
+    t8 = t9->keys( ).
     DATA(t10) = VALUE string( ).
     LOOP AT t8->items INTO t10.
       DATA(t11) = VALUE abap_bool( ).
@@ -150,7 +150,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     ENDLOOP.
     DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t37) = CAST zlnt_runtime_map__4fdf767b61ba( t2 ).
-    t36 = t37->keys(  ).
+    t36 = t37->keys( ).
     DATA(t38) = VALUE string( ).
     LOOP AT t36->items INTO t38.
       DATA(t39) = VALUE abap_bool( ).
@@ -302,7 +302,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t21) = CAST zcl_lnt_statement_node( t2 ).
-      t20 = t21->get_first_token(  ).
+      t20 = t21->get_first_token( ).
       t19 = t20.
       DATA t22 TYPE REF TO zcl_lnt_position.
       DATA(t23) = CAST zcl_lnt_abstract_token( t19 ).
@@ -313,7 +313,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t27) = CAST zcl_lnt_statement_node( t2 ).
-      t26 = t27->get_last_token(  ).
+      t26 = t27->get_last_token( ).
       t25 = t26.
       DATA t28 TYPE REF TO zcl_lnt_position.
       CLEAR t28.
@@ -552,7 +552,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t138 TYPE REF TO zcl_lnt_abstract_token.
       DATA t139 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t140) = CAST zcl_lnt_statement_node( t2 ).
-      t139 = t140->get_first_token(  ).
+      t139 = t140->get_first_token( ).
       t138 = t139.
       DATA t141 TYPE REF TO zcl_lnt_position.
       DATA(t142) = CAST zcl_lnt_abstract_token( t138 ).
@@ -563,7 +563,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t144 TYPE REF TO zcl_lnt_abstract_token.
       DATA t145 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t146) = CAST zcl_lnt_statement_node( t2 ).
-      t145 = t146->get_last_token(  ).
+      t145 = t146->get_last_token( ).
       t144 = t145.
       DATA t147 TYPE REF TO zcl_lnt_position.
       CLEAR t147.
@@ -611,7 +611,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t168 TYPE REF TO zcl_lnt_abstract_token.
     DATA t169 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t170) = CAST zcl_lnt_statement_node( t2 ).
-    t169 = t170->get_first_token(  ).
+    t169 = t170->get_first_token( ).
     t168 = t169.
     DATA t171 TYPE REF TO zcl_lnt_position.
     DATA(t172) = CAST zcl_lnt_abstract_token( t168 ).
@@ -620,7 +620,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t166 = t167.
     DATA t173 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t174) = CAST zcl_lnt_statement_node( t2 ).
-    t173 = t174->get_tokens(  ).
+    t173 = t174->get_tokens( ).
     DATA t175 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t175.
     DATA t176 TYPE REF TO object.
@@ -710,7 +710,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t220 TYPE REF TO zcl_lnt_abstract_token.
     DATA t221 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t222) = CAST zcl_lnt_statement_node( t2 ).
-    t221 = t222->get_last_token(  ).
+    t221 = t222->get_last_token( ).
     t220 = t221.
     DATA t223 TYPE string.
     DATA(t224) = CAST zcl_lnt_abstract_token( t220 ).
@@ -733,7 +733,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t232 TYPE REF TO zcl_lnt_statement_node.
       DATA(t233) = CAST zcl_lnt_statement_node( t51 ).
       t232 = t233.
-      t231 = t232->get_last_token(  ).
+      t231 = t232->get_last_token( ).
       DATA(t234) = |.|.
       t229 = zcl_lnt_edit_helper=>replace_token( i_file = t230 i_token = t231 i_text = t234 ).
       t228 = t229.
@@ -749,7 +749,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t241 TYPE REF TO zcl_lnt_statement_node.
       DATA(t242) = CAST zcl_lnt_statement_node( t51 ).
       t241 = t242.
-      t240 = t241->get_last_token(  ).
+      t240 = t241->get_last_token( ).
       t239 = t240.
       DATA t243 TYPE REF TO zcl_lnt_position.
       CLEAR t243.
@@ -793,7 +793,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       DATA t263 TYPE REF TO zcl_lnt_abstract_token.
       DATA t264 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t265) = CAST zcl_lnt_statement_node( t2 ).
-      t264 = t265->get_last_token(  ).
+      t264 = t265->get_last_token( ).
       t263 = t264.
       DATA t266 TYPE REF TO zcl_lnt_position.
       CLEAR t266.
@@ -923,7 +923,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t2 = t3.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t14) = CAST zcl_lnt_statement_node( t1 ).
-    t13 = t14->get_tokens(  ).
+    t13 = t14->get_tokens( ).
     DATA t15 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t15.
     DATA t16 TYPE REF TO object.
@@ -985,7 +985,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t3 TYPE string.
     DATA t4 TYPE string.
     DATA(t5) = CAST zif_lnt_file( t1 ).
-    t4 = t5->get_filename(  ).
+    t4 = t5->get_filename( ).
     t3 = t4.
     DATA t6 TYPE REF TO zcl_lnt_irange.
     CLEAR t6.
@@ -1045,7 +1045,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t6 = t7.
     DATA t35 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t36 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t37) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t37) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t36 = t37.
     DATA t38 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA(t39) = CAST zlnt_runtime_map__4fdf767b61ba( t36 ).
@@ -1076,7 +1076,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t4 TYPE string.
     DATA t5 TYPE string.
     DATA(t6) = CAST zif_lnt_file( t1 ).
-    t5 = t6->get_filename(  ).
+    t5 = t6->get_filename( ).
     t4 = t5.
     DATA t7 TYPE REF TO zcl_lnt_irange.
     DATA t8 TYPE REF TO zcl_lnt_irange.
@@ -1086,7 +1086,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t7 = t8.
     DATA t11 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t12 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t13) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t13) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t12 = t13.
     DATA t14 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA(t15) = CAST zlnt_runtime_map__4fdf767b61ba( t12 ).
@@ -1117,7 +1117,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t4 TYPE string.
     DATA t5 TYPE string.
     DATA(t6) = CAST zif_lnt_file( t1 ).
-    t5 = t6->get_filename(  ).
+    t5 = t6->get_filename( ).
     t4 = t5.
     DATA t7 TYPE REF TO zcl_lnt_irange.
     DATA t8 TYPE REF TO zcl_lnt_irange.
@@ -1127,7 +1127,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t7 = t8.
     DATA t11 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t12 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t13) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t13) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t12 = t13.
     DATA t14 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA(t15) = CAST zlnt_runtime_map__4fdf767b61ba( t12 ).
@@ -1223,7 +1223,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     DATA t5 TYPE string.
     DATA t6 TYPE string.
     DATA(t7) = CAST zif_lnt_file( t1 ).
-    t6 = t7->get_filename(  ).
+    t6 = t7->get_filename( ).
     t5 = t6.
     DATA t8 TYPE REF TO zcl_lnt_irange.
     DATA t9 TYPE REF TO zcl_lnt_irange.
@@ -1233,7 +1233,7 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
     t8 = t9.
     DATA t12 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t13 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    DATA(t14) = NEW zlnt_runtime_map__4fdf767b61ba(  ).
+    DATA(t14) = NEW zlnt_runtime_map__4fdf767b61ba( ).
     t13 = t14.
     DATA t15 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA(t16) = CAST zlnt_runtime_map__4fdf767b61ba( t13 ).

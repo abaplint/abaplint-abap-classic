@@ -31,7 +31,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     DATA(t3) = CAST zcl_lnt_abstract_token( i_colon ).
     DATA t4 TYPE REF TO zcl_lnt_statement_node.
     DATA t5 TYPE REF TO zcl_lnt_statement_node.
-    DATA(t6) = NEW zcl_lnt_unknown(  ).
+    DATA(t6) = NEW zcl_lnt_unknown( ).
     DATA(t7) = CAST zcl_lnt_abstract_token( t3 ).
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t8.

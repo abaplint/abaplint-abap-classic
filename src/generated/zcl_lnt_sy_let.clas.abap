@@ -74,7 +74,7 @@ CLASS zcl_lnt_sy_let IMPLEMENTATION.
       DATA t30 TYPE REF TO zcl_lnt_expression_node.
       DATA(t31) = CAST zcl_lnt_expression_node( t1 ).
       t30 = t31.
-      t29 = t30->get_first_token(  ).
+      t29 = t30->get_first_token( ).
       t28 = t29.
       DATA t32 TYPE REF TO zcl_lnt_position.
       DATA(t33) = CAST zcl_lnt_abstract_token( t28 ).

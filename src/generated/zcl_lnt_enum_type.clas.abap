@@ -49,7 +49,7 @@ CLASS zcl_lnt_enum_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_en_ty_ts_en_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_en_ty_ts_en_ty( ) ).
     result = t1.
 
   ENDMETHOD.

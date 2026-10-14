@@ -24,7 +24,7 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     me->end = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t5) = CAST zif_lnt_file( t1 ).
-    t4 = t5->get_raw_rows(  ).
+    t4 = t5->get_raw_rows( ).
     me->rows = t4.
     DATA(t6) = CAST zif_lnt_file( t1 ).
     me->file = t6.

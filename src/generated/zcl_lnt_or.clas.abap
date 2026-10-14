@@ -9,7 +9,7 @@ CLASS zcl_lnt_or DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CREATE PUB
 ENDCLASS.
 CLASS zcl_lnt_or IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.

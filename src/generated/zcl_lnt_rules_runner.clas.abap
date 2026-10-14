@@ -17,7 +17,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
     DATA(t2) = CAST zif_lnt_registry( t1 ).
     me->reg = t2.
-    DATA(t3) = NEW zcl_lnt_syntax_performance(  ).
+    DATA(t3) = NEW zcl_lnt_syntax_performance( ).
     me->syntax_performance = t3.
   ENDMETHOD.
   METHOD objects_to_check.
@@ -74,7 +74,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_map__117a2401283c.
     DATA t4 TYPE REF TO zlnt_runtime_map__117a2401283c.
     DATA t5 TYPE REF TO zlnt_runtime_map__117a2401283c.
-    DATA(t6) = NEW zlnt_runtime_map__117a2401283c(  ).
+    DATA(t6) = NEW zlnt_runtime_map__117a2401283c( ).
     t5 = t6.
     DATA(t7) = CAST zlnt_runtime_map__117a2401283c( t5 ).
     t4 = t7.
@@ -87,8 +87,8 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zif_lnt_configuration.
     DATA(t13) = CAST zif_lnt_registry( me->reg ).
-    t12 = t13->get_config(  ).
-    t11 = t12->get_enabled_rules(  ).
+    t12 = t13->get_config( ).
+    t11 = t12->get_enabled_rules( ).
     t10 = t11.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -204,7 +204,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA(t63) = |Run Syntax - |.
         DATA t64 TYPE string.
         DATA(t65) = CAST zif_lnt_object( t41 ).
-        t64 = t65->get_name(  ).
+        t64 = t65->get_name( ).
         DATA(t66) = strlen( t63 ).
         t62 = |{ t63 }{ t64 }|.
         t59 = t60->tick( i_text = t62 ).
@@ -234,7 +234,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         t78 = t77.
         t76 ?= t78.
         t74 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t75 i_object_19cd = t76 ).
-        t73 = t74->run(  ).
+        t73 = t74->run( ).
         DATA(t79) = VALUE abap_bool( ).
         DATA t80 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t80.
@@ -380,7 +380,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       t126->source_location = t127.
       RAISE EXCEPTION t126.
       DATA(t128) = CAST zcl_lnt_syntax_performance( me->syntax_performance ).
-      t128->output(  ).
+      t128->output( ).
     ENDIF.
     DATA(t129) = VALUE abap_bool( ).
     DATA t130 TYPE REF TO zif_lnt_progress.
@@ -563,7 +563,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
           DATA t200 TYPE string.
           DATA t201 TYPE REF TO zcl_lnt_irule_metadata.
           DATA(t202) = CAST zif_lnt_rule( t153 ).
-          t201 = t202->get_metadata(  ).
+          t201 = t202->get_metadata( ).
           t200 = t201->key.
           DATA(t203) = strlen( t199 ).
           t198 = |{ t199 }{ t200 }|.
@@ -643,7 +643,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       DATA t230 TYPE string.
       DATA t231 TYPE REF TO zcl_lnt_irule_metadata.
       DATA(t232) = CAST zif_lnt_rule( t153 ).
-      t231 = t232->get_metadata(  ).
+      t231 = t232->get_metadata( ).
       t230 = t231->key.
       DATA(t233) = CONV int8( 0 ).
       t228 = t229->set( p0 = t230 p1 = t233 ).
@@ -759,7 +759,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA(t282) = |Finding Issues - |.
         DATA t283 TYPE string.
         DATA(t284) = CAST zif_lnt_object( t258 ).
-        t283 = t284->get_type(  ).
+        t283 = t284->get_type( ).
         DATA(t285) = strlen( t282 ).
         t281 = |{ t282 }{ t283 }|.
         DATA(t286) = | |.
@@ -767,7 +767,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         t280 = |{ t281 }{ t286 }|.
         DATA t288 TYPE string.
         DATA(t289) = CAST zif_lnt_object( t258 ).
-        t288 = t289->get_name(  ).
+        t288 = t289->get_name( ).
         DATA(t290) = strlen( t280 ).
         t279 = |{ t280 }{ t288 }|.
         t276 = t277->tick( i_text = t279 ).
@@ -836,7 +836,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA t318 TYPE string.
         DATA t319 TYPE REF TO zcl_lnt_irule_metadata.
         DATA(t320) = CAST zif_lnt_rule( t292 ).
-        t319 = t320->get_metadata(  ).
+        t319 = t320->get_metadata( ).
         t318 = t319->key.
         DATA t321 TYPE int8.
         DATA t322 TYPE int8.
@@ -845,7 +845,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA t325 TYPE string.
         DATA t326 TYPE REF TO zcl_lnt_irule_metadata.
         DATA(t327) = CAST zif_lnt_rule( t292 ).
-        t326 = t327->get_metadata(  ).
+        t326 = t327->get_metadata( ).
         t325 = t326->key.
         t323 = t324->get( p0 = t325 ).
         t322 = t323->value.
@@ -919,7 +919,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       t347 = t348.
       DATA t349 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t350) = CAST zlnt_runtime_map__117a2401283c( t3 ).
-      t349 = t350->keys(  ).
+      t349 = t350->keys( ).
       DATA(t351) = VALUE string( ).
       LOOP AT t349->items INTO t351.
         DATA(t352) = VALUE abap_bool( ).
@@ -1131,8 +1131,8 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_iglobal_config.
     DATA t9 TYPE REF TO zif_lnt_configuration.
     DATA(t10) = CAST zif_lnt_registry( me->reg ).
-    t9 = t10->get_config(  ).
-    t8 = t9->get_global(  ).
+    t9 = t10->get_config( ).
+    t8 = t9->get_global( ).
     t7 = t8->no_issues.
     t6 = t7.
     DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -1234,7 +1234,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         t32 = t57.
       ENDDO.
     ENDIF.
-    DATA(t60) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules(  ) ).
+    DATA(t60) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_artifacts_rules=>get_rules( ) ).
     DATA t61 TYPE REF TO zif_lnt_rule.
     CLEAR t61.
     DATA t62 TYPE REF TO object.
@@ -1245,7 +1245,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       DATA t64 TYPE string.
       DATA t65 TYPE REF TO zcl_lnt_irule_metadata.
       DATA(t66) = CAST zif_lnt_rule( t61 ).
-      t65 = t66->get_metadata(  ).
+      t65 = t66->get_metadata( ).
       t64 = t65->key.
       t63 = t64.
       DATA t67 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -1258,7 +1258,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t72 TYPE REF TO zif_lnt_configuration.
       DATA(t73) = CAST zif_lnt_registry( me->reg ).
-      t72 = t73->get_config(  ).
+      t72 = t73->get_config( ).
       DATA(t74) = t63.
       DATA(t75) = |exclude|.
       t71 = t72->read_by_key( i_rule = t74 i_key = t75 ).

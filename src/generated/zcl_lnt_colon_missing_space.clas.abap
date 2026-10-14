@@ -19,7 +19,7 @@ ENDCLASS.
 CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_cln_mssng_spc_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_cln_mssng_spc_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -119,12 +119,12 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( me->g_c_i_s_r_cl_ms_sp_ts_cl_ms_sp(  ) ).
+    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( me->g_c_i_s_r_cl_ms_sp_ts_cl_ms_sp( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( me->g_c_i_s_r_cl_ms_sp_ts_cl_ms_sp(  ) ).
+    DATA(t1) = CAST zcl_lnt_cln_mssng_spc_cnf( me->g_c_i_s_r_cl_ms_sp_ts_cl_ms_sp( ) ).
     result = t1.
 
   ENDMETHOD.

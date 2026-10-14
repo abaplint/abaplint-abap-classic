@@ -49,7 +49,7 @@ CLASS zcl_lnt_numeric_generic_type IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_n_g_t_t_nm_gn_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_n_g_t_t_nm_gn_ty( ) ).
     result = t1.
 
   ENDMETHOD.

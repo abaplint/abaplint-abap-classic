@@ -38,7 +38,7 @@ CLASS zcl_lnt_sy_tables IMPLEMENTATION.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
       DATA(t15) = CAST zcl_lnt_expression_node( t5 ).
       t14 = t15.
-      t13 = t14->get_first_token(  ).
+      t13 = t14->get_first_token( ).
       t9 = t13.
     ENDIF.
     t4 = t9.
@@ -508,7 +508,7 @@ CLASS zcl_lnt_sy_tables IMPLEMENTATION.
       DATA t210 TYPE REF TO zif_lnt_registry.
       DATA(t211) = CAST zcl_lnt_current_scope( t206 ).
       t210 = t211->reg.
-      t209 = t210->get_ddic_references(  ).
+      t209 = t210->get_ddic_references( ).
       t205 = t209.
       DATA t212 TYPE REF TO zif_lnt_object.
       DATA t213 TYPE REF TO zcl_lnt_current_scope.
@@ -574,7 +574,7 @@ CLASS zcl_lnt_sy_tables IMPLEMENTATION.
       DATA t239 TYPE REF TO zcl_lnt_current_scope.
       DATA(t240) = CAST zcl_lnt_syntax_input( t2 ).
       t239 = t240->scope.
-      t238 = t239->get_type(  ).
+      t238 = t239->get_type( ).
       DATA(t241) = |form|.
       t237 = xsdbool( t238 = t241 ).
       t236 = t237.
@@ -584,7 +584,7 @@ CLASS zcl_lnt_sy_tables IMPLEMENTATION.
         DATA t244 TYPE REF TO zcl_lnt_current_scope.
         DATA(t245) = CAST zcl_lnt_syntax_input( t2 ).
         t244 = t245->scope.
-        t243 = t244->get_type(  ).
+        t243 = t244->get_type( ).
         DATA(t246) = |function|.
         t242 = xsdbool( t243 = t246 ).
         t236 = t242.
@@ -936,6 +936,6 @@ CLASS zcl_lnt_sy_tables IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

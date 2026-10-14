@@ -89,8 +89,8 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
       DATA t39 TYPE REF TO zif_lnt_registry.
       DATA(t40) = CAST zcl_lnt_current_scope( t34 ).
       t39 = t40->reg.
-      t38 = t39->get_config(  ).
-      t37 = t38->get_language_version(  ).
+      t38 = t39->get_config( ).
+      t37 = t38->get_language_version( ).
       t33 = t37.
       DATA(t41) = |Cloud|.
       t32 = xsdbool( t33 = t41 ).
@@ -143,7 +143,7 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
           DATA t62 TYPE REF TO zcl_lnt_expression_node.
           DATA(t63) = CAST zcl_lnt_expression_node( t55 ).
           t62 = t63.
-          t61 = t62->concat_tokens(  ).
+          t61 = t62->concat_tokens( ).
           DATA(t64) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t64->has = abap_true.
           t64->value = t61.
@@ -243,7 +243,7 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
           DATA(t107) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t108 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t109) = CAST zcl_lnt_statement_node( t1 ).
-          t108 = t109->get_first_token(  ).
+          t108 = t109->get_first_token( ).
           DATA(t110) = t88.
           DATA t111 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t111.
@@ -395,6 +395,6 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

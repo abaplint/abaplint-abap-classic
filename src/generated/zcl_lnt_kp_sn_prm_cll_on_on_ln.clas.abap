@@ -26,7 +26,7 @@ ENDCLASS.
 CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_k_sn_pr_cl_on_on_ln_cn(  ).
+    DATA(t1) = NEW zcl_lnt_k_sn_pr_cl_on_on_ln_cn( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -205,12 +205,12 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p(  ) ).
+    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p(  ) ).
+    DATA(t1) = CAST zcl_lnt_k_sn_pr_cl_on_on_ln_cn( me->g_c_i_s_r_k_s_p_o_o_l_t_k_s_p( ) ).
     result = t1.
 
   ENDMETHOD.

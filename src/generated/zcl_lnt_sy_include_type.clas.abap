@@ -64,7 +64,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
     DATA t25 TYPE REF TO zcl_lnt_expression_node.
     DATA(t26) = CAST zcl_lnt_expression_node( t5 ).
     t25 = t26.
-    t24 = t25->get_first_token(  ).
+    t24 = t25->get_first_token( ).
     t23 = t24.
     DATA t27 TYPE string.
     DATA t28 TYPE string.
@@ -340,7 +340,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
       DATA t144 TYPE REF TO zcl_lnt_expression_node.
       DATA(t145) = CAST zcl_lnt_expression_node( t135 ).
       t144 = t145.
-      t143 = t144->concat_tokens(  ).
+      t143 = t144->concat_tokens( ).
       DATA(t146) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t146->has = abap_true.
       t146->value = t143.
@@ -517,7 +517,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
       DATA t217 TYPE REF TO zcl_lnt_expression_node.
       DATA(t218) = CAST zcl_lnt_expression_node( t5 ).
       t217 = t218.
-      t216 = t217->get_first_token(  ).
+      t216 = t217->get_first_token( ).
       DATA(t219) = t207.
       DATA t220 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t220.
@@ -580,7 +580,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
       DATA t241 TYPE REF TO zcl_lnt_expression_node.
       DATA(t242) = CAST zcl_lnt_expression_node( t232 ).
       t241 = t242.
-      t240 = t241->concat_tokens(  ).
+      t240 = t241->concat_tokens( ).
       DATA(t243) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t243->has = abap_true.
       t243->value = t240.
@@ -913,7 +913,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
           DATA t383 TYPE REF TO zcl_lnt_expression_node.
           DATA(t384) = CAST zcl_lnt_expression_node( t5 ).
           t383 = t384.
-          t382 = t383->concat_tokens(  ).
+          t382 = t383->concat_tokens( ).
           DATA(t385) = strlen( t381 ).
           t380 = |{ t381 }{ t382 }|.
           DATA(t386) = |"|.
@@ -927,7 +927,7 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
           DATA(t391) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t392 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t393) = CAST zcl_lnt_statement_node( t1 ).
-          t392 = t393->get_first_token(  ).
+          t392 = t393->get_first_token( ).
           DATA(t394) = t378.
           DATA t395 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t395.

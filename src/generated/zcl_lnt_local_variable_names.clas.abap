@@ -21,7 +21,7 @@ ENDCLASS.
 CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_lcl_vrbl_nms_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_lcl_vrbl_nms_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -167,12 +167,12 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
     RAISE EXCEPTION t4.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_lcl_vrbl_nms_cnf( me->g_c_i_s_r_lc_vr_nm_ts_lc_vr_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_lcl_vrbl_nms_cnf( me->g_c_i_s_r_lc_vr_nm_ts_lc_vr_nm( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_lcl_vrbl_nms_cnf( me->g_c_i_s_r_lc_vr_nm_ts_lc_vr_nm(  ) ).
+    DATA(t1) = CAST zcl_lnt_lcl_vrbl_nms_cnf( me->g_c_i_s_r_lc_vr_nm_ts_lc_vr_nm( ) ).
     result = t1.
 
   ENDMETHOD.

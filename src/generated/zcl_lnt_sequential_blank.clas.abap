@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sequential_blank_conf(  ).
+    DATA(t1) = NEW zcl_lnt_sequential_blank_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD is_blank_or_whitespace.
@@ -123,12 +123,12 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     RAISE EXCEPTION t2.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
+    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
+    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln( ) ).
     result = t1.
 
   ENDMETHOD.

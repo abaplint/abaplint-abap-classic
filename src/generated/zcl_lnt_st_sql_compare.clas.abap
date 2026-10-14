@@ -9,7 +9,7 @@ CLASS zcl_lnt_st_sql_compare DEFINITION PUBLIC INHERITING FROM zcl_lnt_expressio
 ENDCLASS.
 CLASS zcl_lnt_st_sql_compare IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
@@ -579,7 +579,7 @@ CLASS zcl_lnt_st_sql_compare IMPLEMENTATION.
     t164 = t207.
     t163 = t164.
     DATA t211 TYPE REF TO zcl_lnt_st_sql_source.
-    DATA(t212) = NEW zcl_lnt_st_sql_source(  ).
+    DATA(t212) = NEW zcl_lnt_st_sql_source( ).
     t211 = t212.
     DATA t213 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t213.

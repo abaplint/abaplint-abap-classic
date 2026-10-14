@@ -9,10 +9,10 @@ CLASS zcl_lnt_target_field DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression 
 ENDCLASS.
 CLASS zcl_lnt_target_field IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
   METHOD get_runnable.
-    DATA(t1) = NEW zcl_lnt_st_expres_field(  ).
+    DATA(t1) = NEW zcl_lnt_st_expres_field( ).
     result = t1.
 
   ENDMETHOD.

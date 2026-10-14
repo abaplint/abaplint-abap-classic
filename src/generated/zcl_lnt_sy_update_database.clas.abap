@@ -96,7 +96,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         DATA t43 TYPE string.
         DATA t44 TYPE string.
         DATA(t45) = CAST zcl_lnt_expression_node( t40 ).
-        t44 = t45->concat_tokens(  ).
+        t44 = t45->concat_tokens( ).
         DATA(t46) = strlen( t44 ).
         t43 = t44.
         IF t43 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           DATA t73 TYPE REF TO zcl_lnt_expression_node.
           DATA(t74) = CAST zcl_lnt_expression_node( t64 ).
           t73 = t74.
-          t72 = t73->concat_tokens(  ).
+          t72 = t73->concat_tokens( ).
           DATA(t75) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t75->has = abap_true.
           t75->value = t72.
@@ -265,7 +265,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       DATA(t112) = CAST zcl_lnt_syntax_input( t2 ).
       DATA t113 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t114) = CAST zcl_lnt_statement_node( t1 ).
-      t113 = t114->get_first_token(  ).
+      t113 = t114->get_first_token( ).
       zcl_lnt_chck_dtbs_flds_mdl=>check_database_fields( i_fields_62af = t105 i_db_sources = t106 i_input_967e = t112 i_token = t113 ).
     ENDIF.
     DATA t115 TYPE REF TO zcl_lnt_expression_node.
@@ -297,7 +297,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       DATA t128 TYPE REF TO zcl_lnt_expression_node.
       DATA(t129) = CAST zcl_lnt_expression_node( t121 ).
       t128 = t129.
-      t127 = t128->get_first_token(  ).
+      t127 = t128->get_first_token( ).
       t123 = t127.
     ENDIF.
     t120 = t123.
@@ -490,7 +490,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           DATA t220 TYPE REF TO zcl_lnt_abstract_token.
           DATA t221 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t222) = CAST zcl_lnt_statement_node( t1 ).
-          t221 = t222->get_first_token(  ).
+          t221 = t222->get_first_token( ).
           t220 = t221.
           DATA t223 TYPE REF TO zcl_lnt_position.
           DATA(t224) = CAST zcl_lnt_abstract_token( t220 ).
@@ -721,7 +721,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
     DATA t323 TYPE REF TO zcl_lnt_current_scope.
     DATA(t324) = CAST zcl_lnt_syntax_input( t2 ).
     t323 = t324->scope.
-    t322 = t323->get_type(  ).
+    t322 = t323->get_type( ).
     DATA(t325) = |open_sql|.
     t321 = xsdbool( t322 = t325 ).
     IF t321 = abap_true.
@@ -735,7 +735,7 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       DATA t330 TYPE REF TO zcl_lnt_abstract_token.
       DATA t331 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t332) = CAST zcl_lnt_statement_node( t1 ).
-      t331 = t332->get_last_token(  ).
+      t331 = t332->get_last_token( ).
       t330 = t331.
       DATA t333 TYPE REF TO zcl_lnt_position.
       CLEAR t333.
@@ -787,6 +787,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

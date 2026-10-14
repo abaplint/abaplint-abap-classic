@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_wrng_abpdc_pstn_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_wrng_abpdc_pstn_cnf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -249,12 +249,12 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( me->g_c_i_s_r_wr_ab_ps_ts_wr_ab_ps(  ) ).
+    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( me->g_c_i_s_r_wr_ab_ps_ts_wr_ab_ps( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( me->g_c_i_s_r_wr_ab_ps_ts_wr_ab_ps(  ) ).
+    DATA(t1) = CAST zcl_lnt_wrng_abpdc_pstn_cnf( me->g_c_i_s_r_wr_ab_ps_ts_wr_ab_ps( ) ).
     result = t1.
 
   ENDMETHOD.

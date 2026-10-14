@@ -96,7 +96,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
         DATA t44 TYPE REF TO zcl_lnt_abstract_type.
         DATA(t45) = CAST zcl_lnt_abstract_type( t25 ).
         t44 = t45.
-        t43 = t44->is_generic(  ).
+        t43 = t44->is_generic( ).
         DATA(t46) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t46->has = abap_true.
         t46->value = t43.
@@ -186,7 +186,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
           DATA t75 TYPE REF TO zcl_lnt_abstract_type.
           DATA(t76) = CAST zcl_lnt_abstract_type( t56 ).
           t75 = t76.
-          t74 = t75->contains_void(  ).
+          t74 = t75->contains_void( ).
           DATA(t77) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t77->has = abap_true.
           t77->value = t74.
@@ -312,7 +312,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
         DATA(t122) = CAST zcl_lnt_syntax_input( t2 ).
         DATA t123 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t124) = CAST zcl_lnt_statement_node( t1 ).
-        t123 = t124->get_first_token(  ).
+        t123 = t124->get_first_token( ).
         DATA(t125) = t85.
         DATA t126 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t126.
@@ -375,7 +375,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
       DATA t150 TYPE REF TO zcl_lnt_current_scope.
       DATA(t151) = CAST zcl_lnt_syntax_input( t2 ).
       t150 = t151->scope.
-      t149 = t150->is_any_oo(  ).
+      t149 = t150->is_any_oo( ).
       t148 = t149.
       IF t149 = abap_true.
         DATA t152 TYPE abap_bool.
@@ -397,7 +397,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
         DATA t160 TYPE string.
         DATA t161 TYPE string.
         DATA(t162) = CAST zcl_lnt_statement_node( t1 ).
-        t161 = t162->concat_tokens(  ).
+        t161 = t162->concat_tokens( ).
         DATA(t163) = strlen( t161 ).
         t160 = t161.
         IF t160 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -475,7 +475,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
           DATA(t191) = CAST zcl_lnt_syntax_input( t2 ).
           DATA t192 TYPE REF TO zcl_lnt_abstract_token.
           DATA(t193) = CAST zcl_lnt_statement_node( t1 ).
-          t192 = t193->get_first_token(  ).
+          t192 = t193->get_first_token( ).
           DATA(t194) = t186.
           DATA t195 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t195.
@@ -569,7 +569,7 @@ CLASS zcl_lnt_sy_type IMPLEMENTATION.
         DATA t232 TYPE REF TO zcl_lnt_expression_node.
         DATA(t233) = CAST zcl_lnt_expression_node( t222 ).
         t232 = t233.
-        t231 = t232->get_first_token(  ).
+        t231 = t232->get_first_token( ).
         DATA t234 TYPE string.
         DATA(t235) = CAST zcl_lnt_syntax_input( t2 ).
         t234 = t235->filename.

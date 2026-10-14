@@ -116,7 +116,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
           DATA t53 TYPE REF TO zcl_lnt_expression_node.
           DATA(t54) = CAST zcl_lnt_expression_node( t26 ).
           t53 = t54.
-          t52 = t53->concat_tokens(  ).
+          t52 = t53->concat_tokens( ).
           DATA(t55) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t55->has = abap_true.
           t55->value = t52.
@@ -469,7 +469,7 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
         DATA t197 TYPE REF TO zif_lnt_registry.
         DATA(t198) = CAST zcl_lnt_current_scope( t193 ).
         t197 = t198->reg.
-        t196 = t197->get_ddic_references(  ).
+        t196 = t197->get_ddic_references( ).
         t192 = t196.
         DATA t199 TYPE REF TO zif_lnt_object.
         DATA t200 TYPE REF TO zcl_lnt_current_scope.
@@ -516,6 +516,6 @@ CLASS zcl_lnt_sy_export IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

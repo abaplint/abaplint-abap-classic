@@ -122,7 +122,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_dt_elm_ts_dt_elm(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_dt_elm_ts_dt_elm( ) ).
     result = t1.
 
   ENDMETHOD.
@@ -133,54 +133,54 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~add_file.
-    me->add_file(  i_file = i_file ).
+    me->add_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~contains_file.
-    result = me->contains_file(  i_filename = i_filename ).
+    result = me->contains_file( i_filename = i_filename ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_identifier.
-    result = me->get_identifier(  ).
+    result = me->get_identifier( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_parsing_issues.
-    result = me->get_parsing_issues(  ).
+    result = me->get_parsing_issues( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_xml.
-    result = me->get_xml(  ).
+    result = me->get_xml( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~get_xml_file.
-    result = me->get_xml_file(  ).
+    result = me->get_xml_file( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~is_dirty.
-    result = me->is_dirty(  ).
+    result = me->is_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~parse.
-    result = me->parse(  i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
+    result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~parse_type.
-    result = me->parse_type(  i_reg_f149 = i_reg_f149 ).
+    result = me->parse_type( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~remove_file.
-    me->remove_file(  i_file = i_file ).
+    me->remove_file( i_file = i_file ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~set_dirty.
-    me->set_dirty(  ).
+    me->set_dirty( ).
   ENDMETHOD.
   METHOD zif_lnt_union_e3559bc5~update_file.
-    me->update_file(  i_file = i_file ).
+    me->update_file( i_file = i_file ).
   ENDMETHOD.
 ENDCLASS.

@@ -9,7 +9,7 @@ CLASS zcl_lnt_sequential_blank_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_ba
 ENDCLASS.
 CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = CONV int8( 4 ).
     me->lines = t1.
   ENDMETHOD.

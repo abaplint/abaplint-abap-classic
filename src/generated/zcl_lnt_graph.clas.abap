@@ -19,21 +19,21 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
     DATA t2 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-    DATA(t3) = NEW zlnt_runtime_map__1a1c43cd0638(  ).
+    DATA(t3) = NEW zlnt_runtime_map__1a1c43cd0638( ).
     t2 = t3.
     DATA(t4) = CAST zlnt_runtime_map__1a1c43cd0638( t2 ).
     t1 = t4.
     me->vertices_includename_index = t1.
     DATA t5 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
     DATA t6 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-    DATA(t7) = NEW zlnt_runtime_map__1a1c43cd0638(  ).
+    DATA(t7) = NEW zlnt_runtime_map__1a1c43cd0638( ).
     t6 = t7.
     DATA(t8) = CAST zlnt_runtime_map__1a1c43cd0638( t6 ).
     t5 = t8.
     me->vertices_filename_index = t5.
     DATA t9 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
     DATA t10 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
-    DATA(t11) = NEW zlnt_runtime_map__9f51cbbe9de8(  ).
+    DATA(t11) = NEW zlnt_runtime_map__9f51cbbe9de8( ).
     t10 = t11.
     DATA(t12) = CAST zlnt_runtime_map__9f51cbbe9de8( t10 ).
     t9 = t12.

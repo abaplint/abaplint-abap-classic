@@ -84,7 +84,7 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
           DATA t40 TYPE REF TO zcl_lnt_expression_node.
           DATA(t41) = CAST zcl_lnt_expression_node( t10 ).
           t40 = t41.
-          t39 = t40->concat_tokens(  ).
+          t39 = t40->concat_tokens( ).
           DATA(t42) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t42->has = abap_true.
           t42->value = t39.
@@ -216,7 +216,7 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
             DATA t91 TYPE REF TO zcl_lnt_expression_node.
             DATA(t92) = CAST zcl_lnt_expression_node( t10 ).
             t91 = t92.
-            t90 = t91->get_first_token(  ).
+            t90 = t91->get_first_token( ).
             t88 = t90.
           ELSE.
             DATA t93 TYPE REF TO zcl_lnt_abstract_token.
@@ -333,6 +333,6 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

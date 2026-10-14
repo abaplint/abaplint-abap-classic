@@ -22,9 +22,9 @@ ENDCLASS.
 CLASS zcl_lnt_prfrrd_cmpr_oprtr IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prfrrd_cmpr_oprtr_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_prfrrd_cmpr_oprtr_cnf( ).
     me->conf = t1.
-    DATA(t2) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t2) = NEW zlnt_runtime_map__a1006b231250( ).
     me->operator_mapping = t2.
   ENDMETHOD.
   METHOD get_metadata.
@@ -145,12 +145,12 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prfrrd_cmpr_oprtr_cnf( me->g_c_i_s_r_pr_cm_op_ts_pr_cm_op(  ) ).
+    DATA(t1) = CAST zcl_lnt_prfrrd_cmpr_oprtr_cnf( me->g_c_i_s_r_pr_cm_op_ts_pr_cm_op( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prfrrd_cmpr_oprtr_cnf( me->g_c_i_s_r_pr_cm_op_ts_pr_cm_op(  ) ).
+    DATA(t1) = CAST zcl_lnt_prfrrd_cmpr_oprtr_cnf( me->g_c_i_s_r_pr_cm_op_ts_pr_cm_op( ) ).
     result = t1.
 
   ENDMETHOD.

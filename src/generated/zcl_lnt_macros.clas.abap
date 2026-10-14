@@ -18,7 +18,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_global_macros_5535 ).
     DATA t2 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
     DATA t3 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
-    DATA(t4) = NEW zlnt_runtime_map__755fcb8e49f3(  ).
+    DATA(t4) = NEW zlnt_runtime_map__755fcb8e49f3( ).
     t3 = t4.
     DATA(t5) = CAST zlnt_runtime_map__755fcb8e49f3( t3 ).
     t2 = t5.

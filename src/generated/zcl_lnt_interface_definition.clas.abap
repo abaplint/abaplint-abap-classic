@@ -37,7 +37,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE REF TO zif_lnt_structure.
     DATA(t6) = CAST zcl_lnt_structure_node( t1 ).
-    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd(  ).
+    t5 = t6->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_sr_interface ).
     t3 = xsdbool( t4 = abap_false ).
     IF t3 = abap_true.
@@ -77,7 +77,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db ).
     t17 = t18->find_first_expression( i_type_9913 = t22 ).
     t16 = t17.
-    t15 = t16->get_first_token(  ).
+    t15 = t16->get_first_token( ).
     t14 = t15.
     DATA(t23) = CAST zcl_lnt_abstract_token( t14 ).
     DATA t24 TYPE string.
@@ -135,7 +135,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA t52 TYPE REF TO zcl_lnt_abstract_token.
     DATA t53 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t54) = CAST zcl_lnt_structure_node( t1 ).
-    t53 = t54->get_first_token(  ).
+    t53 = t54->get_first_token( ).
     t52 = t53.
     DATA t55 TYPE REF TO zcl_lnt_position.
     DATA(t56) = CAST zcl_lnt_abstract_token( t52 ).
@@ -247,7 +247,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA t106 TYPE REF TO zcl_lnt_abstract_token.
     DATA t107 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t108) = CAST zcl_lnt_structure_node( t1 ).
-    t107 = t108->get_last_token(  ).
+    t107 = t108->get_last_token( ).
     t106 = t107.
     DATA t109 TYPE REF TO zcl_lnt_position.
     CLEAR t109.
@@ -341,7 +341,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     DATA(t1) = CAST zcl_lnt_syntax_input( i_input_967e ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t3) = CAST zif_lnt_method_definitions( me->method_definitions ).
-    t2 = t3->get_all(  ).
+    t2 = t3->get_all( ).
     DATA t4 TYPE REF TO zif_lnt_method_definition.
     CLEAR t4.
     DATA t5 TYPE REF TO object.
@@ -352,7 +352,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
       DATA t7 TYPE i.
       DATA t8 TYPE string.
       DATA(t9) = CAST zif_lnt_method_definition( t4 ).
-      t8 = t9->get_name(  ).
+      t8 = t9->get_name( ).
       DATA(t10) = strlen( t8 ).
       t7 = t10.
       DATA(t11) = 30.
@@ -364,7 +364,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
         DATA(t15) = |Method name "|.
         DATA t16 TYPE string.
         DATA(t17) = CAST zif_lnt_method_definition( t4 ).
-        t16 = t17->get_name(  ).
+        t16 = t17->get_name( ).
         DATA(t18) = strlen( t15 ).
         t14 = |{ t15 }{ t16 }|.
         DATA(t19) = |" is too long, maximum length is 30 characters|.
@@ -378,7 +378,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
         DATA(t24) = CAST zcl_lnt_syntax_input( t1 ).
         DATA t25 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t26) = CAST zif_lnt_method_definition( t4 ).
-        t25 = t26->get_token(  ).
+        t25 = t26->get_token( ).
         DATA(t27) = t12.
         DATA t28 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t28.
@@ -426,7 +426,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
         DATA t19 TYPE REF TO zcl_lnt_expression_node.
         DATA(t20) = CAST zcl_lnt_expression_node( t10 ).
         t19 = t20.
-        t18 = t19->get_first_token(  ).
+        t18 = t19->get_first_token( ).
         t14 = t18.
       ENDIF.
       t9 = t14.
@@ -899,11 +899,11 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     me->attributes = t13.
     DATA t16 TYPE REF TO zif_lnt_type_definitions.
     DATA(t17) = CAST zif_lnt_attributes( me->attributes ).
-    t16 = t17->get_types(  ).
+    t16 = t17->get_types( ).
     me->type_definitions = t16.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t19) = CAST zif_lnt_attributes( me->attributes ).
-    t18 = t19->get_aliases(  ).
+    t18 = t19->get_aliases( ).
     me->aliases_62bb = t18.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -948,7 +948,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
         DATA t40 TYPE REF TO zcl_lnt_expression_node.
         DATA(t41) = CAST zcl_lnt_expression_node( t31 ).
         t40 = t41.
-        t39 = t40->concat_tokens(  ).
+        t39 = t40->concat_tokens( ).
         DATA(t42) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t42->has = abap_true.
         t42->value = t39.
@@ -1034,7 +1034,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
           DATA t76 TYPE string.
           DATA t77 TYPE string.
           DATA(t78) = CAST zif_lnt_event_definition( t67 ).
-          t77 = t78->get_name(  ).
+          t77 = t78->get_name( ).
           DATA(t79) = strlen( t77 ).
           t76 = t77.
           IF t76 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1112,7 +1112,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
         DATA(t101) = CAST zcl_lnt_syntax_input( t1 ).
         DATA t102 TYPE REF TO zcl_lnt_abstract_token.
         DATA(t103) = CAST zcl_lnt_statement_node( t25 ).
-        t102 = t103->get_first_token(  ).
+        t102 = t103->get_first_token( ).
         DATA(t104) = VALUE string( ).
         DATA(t105) = VALUE string( ).
         DATA(t106) = |Event |.
@@ -1228,7 +1228,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
       DATA(t154) = CAST zcl_lnt_syntax_input( t1 ).
       DATA t155 TYPE REF TO zcl_lnt_abstract_token.
       DATA(t156) = CAST zif_lnt_method_definition( t142 ).
-      t155 = t156->get_token(  ).
+      t155 = t156->get_token( ).
       DATA(t157) = |Interfaces cannot have constructor methods|.
       DATA t158 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t158.
@@ -1243,90 +1243,90 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_attributes.
-    result = me->get_attributes(  ).
+    result = me->get_attributes( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_type_definitions.
-    result = me->get_type_definitions(  ).
+    result = me->get_type_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_method_definitions.
-    result = me->get_method_definitions(  ).
+    result = me->get_method_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_events.
-    result = me->get_events(  ).
+    result = me->get_events( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~is_global.
-    result = me->is_global(  ).
+    result = me->is_global( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_super_class.
-    result = me->get_super_class(  ).
+    result = me->get_super_class( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_aliases.
-    result = me->get_aliases(  ).
+    result = me->get_aliases( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_implementing.
-    result = me->get_implementing(  ).
+    result = me->get_implementing( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_interface_definition~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_aliases.
-    result = me->get_aliases(  ).
+    result = me->get_aliases( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_attributes.
-    result = me->get_attributes(  ).
+    result = me->get_attributes( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_events.
-    result = me->get_events(  ).
+    result = me->get_events( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_implementing.
-    result = me->get_implementing(  ).
+    result = me->get_implementing( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_method_definitions.
-    result = me->get_method_definitions(  ).
+    result = me->get_method_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_super_class.
-    result = me->get_super_class(  ).
+    result = me->get_super_class( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~get_type_definitions.
-    result = me->get_type_definitions(  ).
+    result = me->get_type_definitions( ).
   ENDMETHOD.
   METHOD zif_lnt_union_865ccdda~is_global.
-    result = me->is_global(  ).
+    result = me->is_global( ).
   ENDMETHOD.
 ENDCLASS.

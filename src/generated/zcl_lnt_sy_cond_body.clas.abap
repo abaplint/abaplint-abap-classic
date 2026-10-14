@@ -214,7 +214,7 @@ CLASS zcl_lnt_sy_cond_body IMPLEMENTATION.
       DATA t93 TYPE REF TO zcl_lnt_expression_node.
       DATA(t94) = CAST zcl_lnt_expression_node( t1 ).
       t93 = t94.
-      t92 = t93->get_last_token(  ).
+      t92 = t93->get_last_token( ).
       t91 = t92.
       DATA t95 TYPE REF TO zcl_lnt_position.
       CLEAR t95.

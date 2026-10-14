@@ -25,7 +25,7 @@ CLASS zcl_lnt_sy_component_name IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
     DATA t9 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t10) = CAST zif_lnt_node( t2 ).
-    t9 = t10->get_first_token(  ).
+    t9 = t10->get_first_token( ).
     t8 = t9.
     DATA t11 TYPE string.
     DATA t12 TYPE string.

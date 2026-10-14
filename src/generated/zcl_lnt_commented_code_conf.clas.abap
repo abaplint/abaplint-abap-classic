@@ -9,7 +9,7 @@ CLASS zcl_lnt_commented_code_conf DEFINITION PUBLIC INHERITING FROM zcl_lnt_basi
 ENDCLASS.
 CLASS zcl_lnt_commented_code_conf IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
     DATA(t1) = abap_true.
     me->allow_include_in_fugr = t1.
   ENDMETHOD.

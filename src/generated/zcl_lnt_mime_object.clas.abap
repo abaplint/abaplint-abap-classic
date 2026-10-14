@@ -77,7 +77,7 @@ CLASS zcl_lnt_mime_object IMPLEMENTATION.
     RAISE EXCEPTION t1.
   ENDMETHOD.
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_mm_obj_ts_mm_obj(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_src_obj_mm_obj_ts_mm_obj( ) ).
     result = t1.
 
   ENDMETHOD.

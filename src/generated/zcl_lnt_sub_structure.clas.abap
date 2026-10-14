@@ -51,12 +51,12 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     IF t1 = abap_true.
       DATA t8 TYPE REF TO zif_lnt_structure_runnable.
       DATA(t9) = CAST zif_lnt_structure( me->s ).
-      t8 = t9->get_matcher(  ).
+      t8 = t9->get_matcher( ).
       me->matcher = t8.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t11) = CAST zif_lnt_structure_runnable( me->matcher ).
-    t10 = t11->first(  ).
+    t10 = t11->first( ).
     result = t10.
 
   ENDMETHOD.
@@ -78,7 +78,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     IF t1 = abap_true.
       DATA t8 TYPE REF TO zif_lnt_structure_runnable.
       DATA(t9) = CAST zif_lnt_structure( me->s ).
-      t8 = t9->get_matcher(  ).
+      t8 = t9->get_matcher( ).
       me->matcher = t8.
     ENDIF.
   ENDMETHOD.
@@ -107,7 +107,7 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     IF t6 = abap_true.
       DATA t13 TYPE REF TO zif_lnt_structure_runnable.
       DATA(t14) = CAST zif_lnt_structure( me->s ).
-      t13 = t14->get_matcher(  ).
+      t13 = t14->get_matcher( ).
       me->matcher = t13.
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_imatch.
@@ -148,15 +148,15 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~to_railroad.
-    result = me->to_railroad(  ).
+    result = me->to_railroad( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~run.
-    result = me->run(  i_statements = i_statements i_parent = i_parent ).
+    result = me->run( i_statements = i_statements i_parent = i_parent ).
   ENDMETHOD.
   METHOD zif_lnt_structure_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
 ENDCLASS.

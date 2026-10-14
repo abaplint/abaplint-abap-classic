@@ -18,7 +18,7 @@ ENDCLASS.
 CLASS zcl_lnt_indentation IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_indentation_conf(  ).
+    DATA(t1) = NEW zcl_lnt_indentation_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -190,12 +190,12 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn(  ) ).
+    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn(  ) ).
+    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn( ) ).
     result = t1.
 
   ENDMETHOD.

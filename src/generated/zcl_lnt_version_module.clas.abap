@@ -114,7 +114,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_version_module=>language_version_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
@@ -152,7 +152,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    DATA(t14) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t14) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_version_module=>version_namespace = t14.
     DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t15.
@@ -5263,7 +5263,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     DATA t1805 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1805.
     DATA t1806 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    DATA(t1807) = NEW zlnt_runtime_map__201f3699a39e(  ).
+    DATA(t1807) = NEW zlnt_runtime_map__201f3699a39e( ).
     t1806 = t1807.
     DATA t1808 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1808.
@@ -5355,7 +5355,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     DATA t1841 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1841.
     DATA t1842 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    DATA(t1843) = NEW zlnt_runtime_map__201f3699a39e(  ).
+    DATA(t1843) = NEW zlnt_runtime_map__201f3699a39e( ).
     t1842 = t1843.
     DATA t1844 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1844.
@@ -5368,7 +5368,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     t1844 = t1845.
     DATA t1846 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t1847) = CAST zlnt_runtime_map__201f3699a39e( t1844 ).
-    t1846 = t1847->keys(  ).
+    t1846 = t1847->keys( ).
     DATA(t1848) = VALUE string( ).
     LOOP AT t1846->items INTO t1848.
       DATA t1849 TYPE REF TO zlnt_runtime_map__201f3699a39e.
@@ -5571,7 +5571,7 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
     DATA t1927 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1927.
     DATA t1928 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    DATA(t1929) = NEW zlnt_runtime_map__201f3699a39e(  ).
+    DATA(t1929) = NEW zlnt_runtime_map__201f3699a39e( ).
     t1928 = t1929.
     DATA t1930 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1930.

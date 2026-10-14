@@ -88,39 +88,39 @@ CLASS zcl_lnt_class_constant IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~debug_description.
-    result = me->debug_description(  ).
+    result = me->debug_description( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~equals.
-    result = me->equals(  i_id = i_id ).
+    result = me->equals( i_id = i_id ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_end.
-    result = me->get_end(  ).
+    result = me->get_end( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_filename.
-    result = me->get_filename(  ).
+    result = me->get_filename( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_meta.
-    result = me->get_meta(  ).
+    result = me->get_meta( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_start.
-    result = me->get_start(  ).
+    result = me->get_start( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_token.
-    result = me->get_token(  ).
+    result = me->get_token( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_value.
-    result = me->get_value(  ).
+    result = me->get_value( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~get_visibility.
-    result = me->get_visibility(  ).
+    result = me->get_visibility( ).
   ENDMETHOD.
   METHOD zif_lnt_union_a346537f~to_text.
-    result = me->to_text(  ).
+    result = me->to_text( ).
   ENDMETHOD.
 ENDCLASS.

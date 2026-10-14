@@ -25,7 +25,7 @@ CLASS zcl_lnt_unknown_types DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_unknown_types IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_unknown_types_conf(  ).
+    DATA(t1) = NEW zcl_lnt_unknown_types_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -113,14 +113,14 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     t13 = t12.
     t11 ?= t13.
     t9 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 ).
-    t8 = t9->run(  ).
+    t8 = t9->run( ).
     t7 = t8->spaghetti.
     t6 = t7.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t16 TYPE REF TO zif_lnt_spaghetti_scope_node.
     DATA(t17) = CAST zif_lnt_spaghetti_scope( t6 ).
-    t16 = t17->get_top(  ).
+    t16 = t17->get_top( ).
     t15 = me->traverse( i_node = t16 ).
     t14 = t15.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -204,7 +204,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_iscope_data.
     DATA t5 TYPE REF TO zcl_lnt_iscope_data.
     DATA(t6) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-    t5 = t6->get_data(  ).
+    t5 = t6->get_data( ).
     t4 = t5.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t8) = CAST zcl_lnt_iscope_data( t4 ).
@@ -447,7 +447,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t122 TYPE string.
     DATA t123 TYPE REF TO zcl_lnt_iscope_identifier.
     DATA(t124) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-    t123 = t124->get_identifier(  ).
+    t123 = t124->get_identifier( ).
     t122 = t123->stype.
     DATA(t125) = |class_implementation|.
     t121 = xsdbool( t122 <> t125 ).
@@ -459,7 +459,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       t126 = t127.
       DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t130) = CAST zlnt_runtime_map__126b79e3f8a9( t126 ).
-      t129 = t130->keys(  ).
+      t129 = t130->keys( ).
       DATA(t131) = VALUE string( ).
       LOOP AT t129->items INTO t131.
         DATA t132 TYPE REF TO zcl_lnt_typed_identifier.
@@ -569,7 +569,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       t185 = t186.
       DATA t188 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t189) = CAST zlnt_runtime_map__126b79e3f8a9( t185 ).
-      t188 = t189->keys(  ).
+      t188 = t189->keys( ).
       DATA(t190) = VALUE string( ).
       LOOP AT t188->items INTO t190.
         DATA t191 TYPE REF TO zcl_lnt_typed_identifier.
@@ -677,7 +677,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t245 TYPE REF TO zlnt_runtime_map__0fbcc10173b8.
     DATA(t246) = CAST zcl_lnt_iscope_data( t4 ).
     t245 = t246->idefs.
-    t244 = t245->keys(  ).
+    t244 = t245->keys( ).
     DATA(t247) = VALUE string( ).
     LOOP AT t244->items INTO t247.
       DATA t248 TYPE REF TO zif_lnt_interface_definition.
@@ -771,7 +771,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t295 TYPE REF TO zlnt_runtime_map__3d720b31a8f8.
     DATA(t296) = CAST zcl_lnt_iscope_data( t4 ).
     t295 = t296->cdefs.
-    t294 = t295->keys(  ).
+    t294 = t295->keys( ).
     DATA(t297) = VALUE string( ).
     LOOP AT t294->items INTO t297.
       DATA t298 TYPE REF TO zif_lnt_class_definition.
@@ -865,7 +865,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     ENDLOOP.
     DATA t345 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t346) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-    t345 = t346->get_children(  ).
+    t345 = t346->get_children( ).
     DATA t347 TYPE REF TO zif_lnt_spaghetti_scope_node.
     CLEAR t347.
     DATA t348 TYPE REF TO object.
@@ -906,7 +906,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t5 TYPE REF TO zif_lnt_method_definitions.
     DATA t6 TYPE REF TO zif_lnt_method_definitions.
     DATA(t7) = CAST zif_lnt_interface_definition( t1 ).
-    t6 = t7->get_method_definitions(  ).
+    t6 = t7->get_method_definitions( ).
     t5 = t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t8.
@@ -922,7 +922,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     ELSE.
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t13) = CAST zif_lnt_method_definitions( t5 ).
-      t12 = t13->get_all(  ).
+      t12 = t13->get_all( ).
       t8 = t12.
     ENDIF.
     t4 = t8.
@@ -952,8 +952,8 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t23 TYPE REF TO zif_lnt_method_parameters.
       DATA(t24) = CAST zif_lnt_method_definition( t20 ).
-      t23 = t24->get_parameters(  ).
-      t22 = t23->get_all(  ).
+      t23 = t24->get_parameters( ).
+      t22 = t23->get_all( ).
       DATA t25 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t25.
       DATA t26 TYPE REF TO object.
@@ -1006,7 +1006,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t46) = CAST zif_lnt_interface_definition( t1 ).
-    t45 = t46->get_events(  ).
+    t45 = t46->get_events( ).
     t44 = t45.
     DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t47.
@@ -1030,7 +1030,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       t52 ?= t53.
       DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t55) = CAST zif_lnt_event_definition( t52 ).
-      t54 = t55->get_parameters(  ).
+      t54 = t55->get_parameters( ).
       DATA t56 TYPE REF TO zcl_lnt_typed_identifier.
       CLEAR t56.
       DATA t57 TYPE REF TO object.
@@ -1211,12 +1211,12 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa(  ) ).
+    DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa(  ) ).
+    DATA(t1) = CAST zcl_lnt_unknown_types_conf( me->g_c_i_s_rl_un_ty_ts_un_ty_73fa( ) ).
   ENDMETHOD.
   METHOD set_config.
     DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
@@ -1235,21 +1235,21 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

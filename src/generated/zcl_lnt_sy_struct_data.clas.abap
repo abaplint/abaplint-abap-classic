@@ -66,7 +66,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       DATA t24 TYPE REF TO zif_lnt_union_8249fcb1.
       DATA(t25) = CAST zif_lnt_union_8249fcb1( t7 ).
       t24 = t25.
-      t23 = t24->get_children(  ).
+      t23 = t24->get_children( ).
       t19 = t23.
     ENDIF.
     t6 = t19.
@@ -158,7 +158,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
     DATA t63 TYPE REF TO zcl_lnt_abstract_token.
     DATA t64 TYPE REF TO zcl_lnt_abstract_token.
     DATA(t65) = CAST zcl_lnt_expression_node( t58 ).
-    t64 = t65->get_first_token(  ).
+    t64 = t65->get_first_token( ).
     t63 = t64.
     DATA t66 TYPE abap_bool.
     DATA t67 TYPE int8.
@@ -183,7 +183,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       t74 = t77.
       DATA t79 TYPE string.
       DATA(t80) = CAST zcl_lnt_expression_node( t58 ).
-      t79 = t80->concat_tokens(  ).
+      t79 = t80->concat_tokens( ).
       t73 = NEW zcl_lnt_lx_identifier( i_start = t74 i_str = t79 ).
       t63 = t73.
     ENDIF.
@@ -193,7 +193,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
     DATA t83 TYPE REF TO zlnt_runtime_map__a1006b231250.
     DATA t84 TYPE REF TO zlnt_runtime_map__a1006b231250.
     DATA t85 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA(t86) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t86) = NEW zlnt_runtime_map__a1006b231250( ).
     t85 = t86.
     DATA(t87) = CAST zlnt_runtime_map__a1006b231250( t85 ).
     t84 = t87.
@@ -222,7 +222,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       DATA t99 TYPE REF TO zif_lnt_union_dc0fb493.
       DATA t100 TYPE REF TO object.
       DATA(t101) = CAST zif_lnt_union_8249fcb1( t96 ).
-      t100 = t101->get_db65(  ).
+      t100 = t101->get_db65( ).
       DATA t102 TYPE REF TO object.
       t102 = t100.
       t99 ?= t102.
@@ -241,7 +241,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       IF t103 = abap_true.
         DATA t108 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t109 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t110) = NEW zcl_lnt_sy_statem_data(  ).
+        DATA(t110) = NEW zcl_lnt_sy_statem_data( ).
         DATA t111 TYPE REF TO zcl_lnt_statement_node.
         DATA(t112) = CAST zif_lnt_union_8249fcb1( t96 ).
         DATA t113 TYPE REF TO object.
@@ -628,7 +628,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
             IF t274 = abap_true.
               DATA t279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               DATA t280 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              DATA(t281) = NEW zcl_lnt_sy_include_type(  ).
+              DATA(t281) = NEW zcl_lnt_sy_include_type( ).
               DATA t282 TYPE REF TO zcl_lnt_statement_node.
               DATA(t283) = CAST zif_lnt_union_8249fcb1( t96 ).
               DATA t284 TYPE REF TO object.
@@ -840,7 +840,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       DATA t378 TYPE i.
       DATA t379 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA(t380) = CAST zlnt_runtime_map__a1006b231250( t83 ).
-      t379 = t380->keys(  ).
+      t379 = t380->keys( ).
       t378 = lines( t379->items ).
       DATA(t381) = 0.
       t377 = xsdbool( t378 > t381 ).
@@ -940,7 +940,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       DATA t12 TYPE REF TO zif_lnt_union_dc0fb493.
       DATA t13 TYPE REF TO object.
       DATA(t14) = CAST zif_lnt_union_8249fcb1( t9 ).
-      t13 = t14->get_db65(  ).
+      t13 = t14->get_db65( ).
       DATA t15 TYPE REF TO object.
       t15 = t13.
       t12 ?= t15.
@@ -959,7 +959,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
       IF t16 = abap_true.
         DATA t21 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t22 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA(t23) = NEW zcl_lnt_sy_statem_data(  ).
+        DATA(t23) = NEW zcl_lnt_sy_statem_data( ).
         DATA t24 TYPE REF TO zcl_lnt_statement_node.
         DATA(t25) = CAST zif_lnt_union_8249fcb1( t9 ).
         DATA t26 TYPE REF TO object.
@@ -1250,7 +1250,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
           IF t141 = abap_true.
             DATA t146 TYPE REF TO zcl_lnt_typed_identifier.
             DATA t147 TYPE REF TO zcl_lnt_typed_identifier.
-            DATA(t148) = NEW zcl_lnt_sy_type(  ).
+            DATA(t148) = NEW zcl_lnt_sy_type( ).
             DATA t149 TYPE REF TO zcl_lnt_statement_node.
             DATA(t150) = CAST zif_lnt_union_8249fcb1( t9 ).
             DATA t151 TYPE REF TO object.
@@ -1408,7 +1408,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
             IF t208 = abap_true.
               DATA t213 TYPE REF TO zcl_lnt_typed_identifier.
               DATA t214 TYPE REF TO zcl_lnt_typed_identifier.
-              DATA(t215) = NEW zcl_lnt_sy_types(  ).
+              DATA(t215) = NEW zcl_lnt_sy_types( ).
               DATA t216 TYPE REF TO zcl_lnt_structure_node.
               DATA(t217) = CAST zif_lnt_union_8249fcb1( t9 ).
               DATA t218 TYPE REF TO object.
@@ -1566,7 +1566,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
               IF t275 = abap_true.
                 DATA t280 TYPE REF TO zcl_lnt_typed_identifier.
                 DATA t281 TYPE REF TO zcl_lnt_typed_identifier.
-                DATA(t282) = NEW zcl_lnt_sy_statem_constant(  ).
+                DATA(t282) = NEW zcl_lnt_sy_statem_constant( ).
                 DATA t283 TYPE REF TO zcl_lnt_statement_node.
                 DATA(t284) = CAST zif_lnt_union_8249fcb1( t9 ).
                 DATA t285 TYPE REF TO object.
@@ -1708,7 +1708,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
                   t337 = t340.
                 ENDIF.
                 IF t337 = abap_true.
-                  DATA(t342) = NEW zcl_lnt_sy_ranges(  ).
+                  DATA(t342) = NEW zcl_lnt_sy_ranges( ).
                   DATA t343 TYPE REF TO zcl_lnt_statement_node.
                   DATA(t344) = CAST zif_lnt_union_8249fcb1( t9 ).
                   DATA t345 TYPE REF TO object.
@@ -1729,7 +1729,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
                     t347 = t350.
                   ENDIF.
                   IF t347 = abap_true.
-                    DATA(t352) = NEW zcl_lnt_sy_select_option(  ).
+                    DATA(t352) = NEW zcl_lnt_sy_select_option( ).
                     DATA t353 TYPE REF TO zcl_lnt_statement_node.
                     DATA(t354) = CAST zif_lnt_union_8249fcb1( t9 ).
                     DATA t355 TYPE REF TO object.
@@ -1750,7 +1750,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
                       t357 = t360.
                     ENDIF.
                     IF t357 = abap_true.
-                      DATA(t362) = NEW zcl_lnt_sy_parameter_parameter(  ).
+                      DATA(t362) = NEW zcl_lnt_sy_parameter_parameter( ).
                       DATA t363 TYPE REF TO zcl_lnt_statement_node.
                       DATA(t364) = CAST zif_lnt_union_8249fcb1( t9 ).
                       DATA t365 TYPE REF TO object.
@@ -1773,7 +1773,7 @@ CLASS zcl_lnt_sy_struct_data IMPLEMENTATION.
                       IF t367 = abap_true.
                         DATA t372 TYPE REF TO zcl_lnt_shape_28fac025.
                         DATA t373 TYPE REF TO zcl_lnt_shape_28fac025.
-                        DATA(t374) = NEW zcl_lnt_sy_constants(  ).
+                        DATA(t374) = NEW zcl_lnt_sy_constants( ).
                         DATA t375 TYPE REF TO zcl_lnt_structure_node.
                         DATA(t376) = CAST zif_lnt_union_8249fcb1( t9 ).
                         DATA t377 TYPE REF TO object.

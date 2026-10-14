@@ -20,7 +20,7 @@ ENDCLASS.
 CLASS zcl_lnt_avoid_use IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_avoid_use_conf(  ).
+    DATA(t1) = NEW zcl_lnt_avoid_use_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -185,12 +185,12 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
     RAISE EXCEPTION t3.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_avoid_use_conf( me->gt_cn_in_sr_rl_av_us_ts_avd_us(  ) ).
+    DATA(t1) = CAST zcl_lnt_avoid_use_conf( me->gt_cn_in_sr_rl_av_us_ts_avd_us( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_avoid_use_conf( me->gt_cn_in_sr_rl_av_us_ts_avd_us(  ) ).
+    DATA(t1) = CAST zcl_lnt_avoid_use_conf( me->gt_cn_in_sr_rl_av_us_ts_avd_us( ) ).
     result = t1.
 
   ENDMETHOD.

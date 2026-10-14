@@ -32,7 +32,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
       zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
     ENDIF.
     t6 = zcl_lnt_rl_index_module=>ns.
-    t5 = t6->keys(  ).
+    t5 = t6->keys( ).
     DATA(t7) = VALUE string( ).
     LOOP AT t5->items INTO t7.
       DATA t8 TYPE REF TO object.

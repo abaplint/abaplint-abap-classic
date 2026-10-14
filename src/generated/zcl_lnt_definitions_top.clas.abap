@@ -24,7 +24,7 @@ ENDCLASS.
 CLASS zcl_lnt_definitions_top IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_definitions_top_conf(  ).
+    DATA(t1) = NEW zcl_lnt_definitions_top_conf( ).
     me->conf = t1.
   ENDMETHOD.
   METHOD get_metadata.
@@ -180,12 +180,12 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
     RAISE EXCEPTION t4.
   ENDMETHOD.
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp(  ) ).
+    DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp( ) ).
     result = t1.
 
   ENDMETHOD.
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp(  ) ).
+    DATA(t1) = CAST zcl_lnt_definitions_top_conf( me->gt_cn_in_sr_rl_df_tp_ts_dfn_tp( ) ).
     result = t1.
 
   ENDMETHOD.

@@ -40,7 +40,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t12 TYPE REF TO object.
       t12 = t11.
       t10 ?= t12.
-      t9 = t10->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t9 = t10->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t8 = xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_sql_aggregation ).
       IF t8 = abap_true.
         DATA(t13) = VALUE abap_bool( ).
@@ -78,7 +78,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t29 TYPE REF TO object.
       t29 = t28.
       t27 ?= t29.
-      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t25 = xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_st_sql_set_op_group ).
       IF t25 = abap_true.
         CONTINUE.
@@ -90,7 +90,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t34 TYPE REF TO object.
       t34 = t33.
       t32 ?= t34.
-      t31 = t32->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t31 = t32->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_sql_from ).
       IF t30 = abap_true.
         CONTINUE.
@@ -145,7 +145,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t12 TYPE REF TO object.
       t12 = t11.
       t10 ?= t12.
-      t9 = t10->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t9 = t10->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t8 = t9.
       DATA(t13) = VALUE abap_bool( ).
       DATA t14 TYPE abap_bool.
@@ -192,7 +192,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE i.
       DATA(t9) = CAST zlnt_runtime_set__7758c436a0c7( t2 ).
-      t8 = t9->size(  ).
+      t8 = t9->size( ).
       DATA t10 TYPE i.
       DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
       t10 = lines( t11->items ).
@@ -215,7 +215,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       DATA t19 TYPE REF TO object.
       t19 = t18.
       t17 ?= t19.
-      t16 = t17->gt_in_sr_ab_nd_ex_nd_ts_exp_nd(  ).
+      t16 = t17->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       t15 = t16.
       DATA t20 TYPE abap_bool.
       DATA(t21) = CAST zif_lnt_statement_runnable( t15 ).
@@ -334,7 +334,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
         DATA t34 TYPE REF TO object.
         t34 = t33.
         t32 ?= t34.
-        t31 = t32->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd(  ).
+        t31 = t32->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
         t30 = t31.
         DATA t35 TYPE string.
         DATA(t36) = CAST zcl_lnt_abstract_token( t30 ).
@@ -392,7 +392,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     t43 = t58.
     t42 = t43.
     DATA t59 TYPE REF TO zlnt_runtime_set__7758c436a0c7.
-    DATA(t60) = NEW zlnt_runtime_set__7758c436a0c7(  ).
+    DATA(t60) = NEW zlnt_runtime_set__7758c436a0c7( ).
     t59 = t60.
     DATA(t61) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
     DATA(t62) = CAST zlnt_runtime_set__7758c436a0c7( t59 ).
@@ -554,7 +554,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
         CLEAR t30.
         DATA t31 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t31.
-        DATA(t32) = NEW zcl_lnt_st_select_loop(  ).
+        DATA(t32) = NEW zcl_lnt_st_select_loop( ).
         DATA t33 TYPE REF TO zcl_lnt_abstract_token.
         DATA t34 TYPE REF TO zcl_lnt_statement_node.
         DATA(t35) = CAST zcl_lnt_statement_node( t1 ).
@@ -596,7 +596,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
           CLEAR t48.
           DATA t49 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t49.
-          DATA(t50) = NEW zcl_lnt_st_statem_select(  ).
+          DATA(t50) = NEW zcl_lnt_st_statem_select( ).
           DATA t51 TYPE REF TO zcl_lnt_abstract_token.
           DATA t52 TYPE REF TO zcl_lnt_statement_node.
           DATA(t53) = CAST zcl_lnt_statement_node( t1 ).
@@ -655,7 +655,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
           CLEAR t73.
           DATA t74 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t74.
-          DATA(t75) = NEW zcl_lnt_st_with_loop(  ).
+          DATA(t75) = NEW zcl_lnt_st_with_loop( ).
           DATA t76 TYPE REF TO zcl_lnt_abstract_token.
           DATA t77 TYPE REF TO zcl_lnt_statement_node.
           DATA(t78) = CAST zcl_lnt_statement_node( t1 ).
@@ -697,7 +697,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
             CLEAR t91.
             DATA t92 TYPE REF TO zcl_lnt_statement_node.
             CLEAR t92.
-            DATA(t93) = NEW zcl_lnt_st_with(  ).
+            DATA(t93) = NEW zcl_lnt_st_with( ).
             DATA t94 TYPE REF TO zcl_lnt_abstract_token.
             DATA t95 TYPE REF TO zcl_lnt_statement_node.
             DATA(t96) = CAST zcl_lnt_statement_node( t1 ).

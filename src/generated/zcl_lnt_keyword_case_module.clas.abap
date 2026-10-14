@@ -18,7 +18,7 @@ CLASS zcl_lnt_keyword_case_module IMPLEMENTATION.
     IF zcl_lnt_keyword_case_module=>zlnt_builtin_init_e61a6712c1c7 = abap_false.
       zcl_lnt_keyword_case_module=>zlnt_builtin_init_eb4308e0f790( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_keyword_case_module=>keyword_case_style_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
