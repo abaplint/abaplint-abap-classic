@@ -2,7 +2,7 @@
 INTERFACE zif_lnt_union_4cf1d054 PUBLIC.
   METHODS add_child IMPORTING i_n_0c97 TYPE REF TO zif_lnt_node.
   METHODS concat_tokens RETURNING VALUE(result) TYPE string.
-  METHODS count_tokens RETURNING VALUE(result) TYPE int8.
+  METHODS count_tokens RETURNING VALUE(result) TYPE f.
   METHODS get_db65 RETURNING VALUE(result) TYPE REF TO object.
   METHODS get_children RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
   METHODS get_first_token RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_token.

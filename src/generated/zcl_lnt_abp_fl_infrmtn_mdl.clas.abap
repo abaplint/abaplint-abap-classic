@@ -1,6 +1,7 @@
 * TS: src/abap/4_file_information/_abap_file_information.ts.module module
 CLASS zcl_lnt_abp_fl_infrmtn_mdl DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     CLASS-DATA ns TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLASS-DATA attribute_level_namespace TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLASS-DATA duration_namespace TYPE REF TO zlnt_runtime_map__a1006b231250.
@@ -10,6 +11,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-METHODS zlnt_builtin_init_e1c2fd2be04f.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -22,12 +24,12 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
+    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5(  ).
     zcl_lnt_abp_fl_infrmtn_mdl=>ns = t1.
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t2) = NEW zlnt_runtime_map__a1006b231250( ).
+    DATA(t2) = NEW zlnt_runtime_map__a1006b231250(  ).
     zcl_lnt_abp_fl_infrmtn_mdl=>attribute_level_namespace = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t3.
@@ -37,8 +39,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t4 = zcl_lnt_abp_fl_infrmtn_mdl=>attribute_level_namespace.
-    DATA(t5) = |Instance|.
-    DATA(t6) = |instance|.
+    DATA(t5) = CONV string( |Instance| ).
+    DATA(t6) = CONV string( |instance| ).
     t3 = t4->set( p0 = t5 p1 = t6 ).
     DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t7.
@@ -48,8 +50,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t8 = zcl_lnt_abp_fl_infrmtn_mdl=>attribute_level_namespace.
-    DATA(t9) = |Static|.
-    DATA(t10) = |static|.
+    DATA(t9) = CONV string( |Static| ).
+    DATA(t10) = CONV string( |static| ).
     t7 = t8->set( p0 = t9 p1 = t10 ).
     DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t11.
@@ -59,13 +61,13 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t12 = zcl_lnt_abp_fl_infrmtn_mdl=>attribute_level_namespace.
-    DATA(t13) = |Constant|.
-    DATA(t14) = |constant|.
+    DATA(t13) = CONV string( |Constant| ).
+    DATA(t14) = CONV string( |constant| ).
     t11 = t12->set( p0 = t13 p1 = t14 ).
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t15) = NEW zlnt_runtime_map__a1006b231250( ).
+    DATA(t15) = NEW zlnt_runtime_map__a1006b231250(  ).
     zcl_lnt_abp_fl_infrmtn_mdl=>duration_namespace = t15.
     DATA t16 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t16.
@@ -75,8 +77,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t17 = zcl_lnt_abp_fl_infrmtn_mdl=>duration_namespace.
-    DATA(t18) = |short|.
-    DATA(t19) = |SHORT|.
+    DATA(t18) = CONV string( |short| ).
+    DATA(t19) = CONV string( |SHORT| ).
     t16 = t17->set( p0 = t18 p1 = t19 ).
     DATA t20 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t20.
@@ -86,8 +88,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t21 = zcl_lnt_abp_fl_infrmtn_mdl=>duration_namespace.
-    DATA(t22) = |medium|.
-    DATA(t23) = |MEDIUM|.
+    DATA(t22) = CONV string( |medium| ).
+    DATA(t23) = CONV string( |MEDIUM| ).
     t20 = t21->set( p0 = t22 p1 = t23 ).
     DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t24.
@@ -97,13 +99,13 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t25 = zcl_lnt_abp_fl_infrmtn_mdl=>duration_namespace.
-    DATA(t26) = |long|.
-    DATA(t27) = |LONG|.
+    DATA(t26) = CONV string( |long| ).
+    DATA(t27) = CONV string( |LONG| ).
     t24 = t25->set( p0 = t26 p1 = t27 ).
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t28) = NEW zlnt_runtime_map__a1006b231250( ).
+    DATA(t28) = NEW zlnt_runtime_map__a1006b231250(  ).
     zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc = t28.
     DATA t29 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t29.
@@ -113,8 +115,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t30 = zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc.
-    DATA(t31) = |Importing|.
-    DATA(t32) = |importing|.
+    DATA(t31) = CONV string( |Importing| ).
+    DATA(t32) = CONV string( |importing| ).
     t29 = t30->set( p0 = t31 p1 = t32 ).
     DATA t33 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t33.
@@ -124,8 +126,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t34 = zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc.
-    DATA(t35) = |Exporting|.
-    DATA(t36) = |exporting|.
+    DATA(t35) = CONV string( |Exporting| ).
+    DATA(t36) = CONV string( |exporting| ).
     t33 = t34->set( p0 = t35 p1 = t36 ).
     DATA t37 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t37.
@@ -135,8 +137,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t38 = zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc.
-    DATA(t39) = |Changing|.
-    DATA(t40) = |changing|.
+    DATA(t39) = CONV string( |Changing| ).
+    DATA(t40) = CONV string( |changing| ).
     t37 = t38->set( p0 = t39 p1 = t40 ).
     DATA t41 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t41.
@@ -146,13 +148,13 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t42 = zcl_lnt_abp_fl_infrmtn_mdl=>mthd_prmtr_drctn_nmspc.
-    DATA(t43) = |Returning|.
-    DATA(t44) = |returning|.
+    DATA(t43) = CONV string( |Returning| ).
+    DATA(t44) = CONV string( |returning| ).
     t41 = t42->set( p0 = t43 p1 = t44 ).
     IF zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_037d679ae8c5 = abap_false.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
-    DATA(t45) = NEW zlnt_runtime_map__a1006b231250( ).
+    DATA(t45) = NEW zlnt_runtime_map__a1006b231250(  ).
     zcl_lnt_abp_fl_infrmtn_mdl=>risk_level_namespace = t45.
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t46.
@@ -162,8 +164,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t47 = zcl_lnt_abp_fl_infrmtn_mdl=>risk_level_namespace.
-    DATA(t48) = |harmless|.
-    DATA(t49) = |HARMLESS|.
+    DATA(t48) = CONV string( |harmless| ).
+    DATA(t49) = CONV string( |HARMLESS| ).
     t46 = t47->set( p0 = t48 p1 = t49 ).
     DATA t50 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t50.
@@ -173,8 +175,8 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t51 = zcl_lnt_abp_fl_infrmtn_mdl=>risk_level_namespace.
-    DATA(t52) = |critical|.
-    DATA(t53) = |CRITICAL|.
+    DATA(t52) = CONV string( |critical| ).
+    DATA(t53) = CONV string( |CRITICAL| ).
     t50 = t51->set( p0 = t52 p1 = t53 ).
     DATA t54 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t54.
@@ -184,16 +186,23 @@ CLASS zcl_lnt_abp_fl_infrmtn_mdl IMPLEMENTATION.
       zcl_lnt_abp_fl_infrmtn_mdl=>zlnt_builtin_init_e1c2fd2be04f( ).
     ENDIF.
     t55 = zcl_lnt_abp_fl_infrmtn_mdl=>risk_level_namespace.
-    DATA(t56) = |dangerous|.
-    DATA(t57) = |DANGEROUS|.
+    DATA(t56) = CONV string( |dangerous| ).
+    DATA(t57) = CONV string( |DANGEROUS| ).
     t54 = t55->set( p0 = t56 p1 = t57 ).
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1703_f6b959eec638.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1802_8d8da8d16689.
   ENDMETHOD.
 ENDCLASS.

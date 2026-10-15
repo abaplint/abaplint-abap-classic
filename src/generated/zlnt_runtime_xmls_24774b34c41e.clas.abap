@@ -20,7 +20,6 @@ CLASS zlnt_runtime_xmls_24774b34c41e IMPLEMENTATION.
     REPLACE ALL OCCURRENCES OF cr IN parser->input WITH cl_abap_char_utilities=>newline.
     result = parser->read_node( '' ).
   ENDMETHOD.
-
   METHOD header.
     DATA quote TYPE c LENGTH 1.
     DATA ch TYPE c LENGTH 1.
@@ -48,7 +47,6 @@ CLASS zlnt_runtime_xmls_24774b34c41e IMPLEMENTATION.
     ENDWHILE.
     RAISE EXCEPTION TYPE zlnt_exception_re_bb8cb5bb6246.
   ENDMETHOD.
-
   METHOD decode.
     DATA i TYPE i.
     DATA j TYPE i.
@@ -89,7 +87,6 @@ CLASS zlnt_runtime_xmls_24774b34c41e IMPLEMENTATION.
       i = j + 1.
     ENDWHILE.
   ENDMETHOD.
-
   METHOD read_node.
     DATA text TYPE string.
     DATA part TYPE string.

@@ -1,15 +1,17 @@
 * TS: src/registry.ts:20:1 ParsingPerformance
 CLASS zcl_lnt_parsing_performance DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     CLASS-DATA results TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLASS-DATA lexing TYPE int8.
-    CLASS-DATA statements TYPE int8.
-    CLASS-DATA structure TYPE int8.
+    CLASS-DATA lexing TYPE f.
+    CLASS-DATA statements TYPE f.
+    CLASS-DATA structure TYPE f.
     CLASS-METHODS clear_feba.
     CLASS-METHODS push IMPORTING i_obj_1ed0 TYPE REF TO zif_lnt_object i_result TYPE REF TO zcl_lnt_iparse_result.
     CLASS-METHODS output.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -18,87 +20,76 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1.
     zcl_lnt_parsing_performance=>results = t1.
-    DATA(t2) = CONV int8( 0 ).
+    DATA(t2) = CONV f( 0 ).
     zcl_lnt_parsing_performance=>lexing = t2.
-    DATA(t3) = CONV int8( 0 ).
+    DATA(t3) = CONV f( 0 ).
     zcl_lnt_parsing_performance=>statements = t3.
-    DATA(t4) = CONV int8( 0 ).
+    DATA(t4) = CONV f( 0 ).
     zcl_lnt_parsing_performance=>structure = t4.
   ENDMETHOD.
-
   METHOD push.
-    CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
-    CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    DATA(t1) = i_obj_1ed0.
-    DATA(t2) = i_result.
+    CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
+    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t2) = CAST zcl_lnt_iparse_result( i_result ).
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_shape_8fc6df03.
-    DATA(t5) = t2.
+    DATA(t5) = CAST zcl_lnt_iparse_result( t2 ).
     t4 = t5->runtime_extra.
     t3 = xsdbool( t4 IS BOUND ).
     IF t3 = abap_true.
-      DATA t6 TYPE int8.
-      DATA(t7) = CONV int8( zcl_lnt_parsing_performance=>lexing ).
-      DATA t8 TYPE int8.
+      DATA t6 TYPE f.
+      DATA(t7) = CONV f( zcl_lnt_parsing_performance=>lexing ).
+      DATA t8 TYPE f.
       DATA t9 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t10 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t11) = t2.
+      DATA(t11) = CAST zcl_lnt_iparse_result( t2 ).
       t10 = t11->runtime_extra.
       t9 = t10.
       t8 = t9->lexing.
       t6 = t7 + t8.
-      IF t6 < range_int8_bound_min OR t6 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
       zcl_lnt_parsing_performance=>lexing = t6.
-      DATA t12 TYPE int8.
-      DATA(t13) = CONV int8( zcl_lnt_parsing_performance=>statements ).
-      DATA t14 TYPE int8.
+      DATA t12 TYPE f.
+      DATA(t13) = CONV f( zcl_lnt_parsing_performance=>statements ).
+      DATA t14 TYPE f.
       DATA t15 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t16 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t17) = t2.
+      DATA(t17) = CAST zcl_lnt_iparse_result( t2 ).
       t16 = t17->runtime_extra.
       t15 = t16.
       t14 = t15->statements.
       t12 = t13 + t14.
-      IF t12 < range_int8_bound_min OR t12 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
       zcl_lnt_parsing_performance=>statements = t12.
-      DATA t18 TYPE int8.
-      DATA(t19) = CONV int8( zcl_lnt_parsing_performance=>structure ).
-      DATA t20 TYPE int8.
+      DATA t18 TYPE f.
+      DATA(t19) = CONV f( zcl_lnt_parsing_performance=>structure ).
+      DATA t20 TYPE f.
       DATA t21 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t22 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t23) = t2.
+      DATA(t23) = CAST zcl_lnt_iparse_result( t2 ).
       t22 = t23->runtime_extra.
       t21 = t22.
       t20 = t21->structure.
       t18 = t19 + t20.
-      IF t18 < range_int8_bound_min OR t18 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
       zcl_lnt_parsing_performance=>structure = t18.
     ENDIF.
     DATA t24 TYPE abap_bool.
-    DATA t25 TYPE int8.
-    DATA(t26) = t2.
+    DATA t25 TYPE f.
+    DATA(t26) = CAST zcl_lnt_iparse_result( t2 ).
     t25 = t26->runtime.
-    DATA(t27) = CONV int8( 100 ).
+    DATA(t27) = CONV f( 100 ).
     t24 = xsdbool( t25 < t27 ).
     IF t24 = abap_true.
       RETURN.
     ENDIF.
     DATA(t28) = VALUE abap_bool( ).
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t30) = zcl_lnt_parsing_performance=>results.
+    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_parsing_performance=>results ).
     t29 = t30.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t32.
     t31 = t32.
     DATA(t33) = VALUE abap_bool( ).
-    DATA(t34) = t29.
+    DATA(t34) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
     IF t34 IS INITIAL.
       t33 = abap_true.
     ENDIF.
@@ -109,295 +100,404 @@ CLASS zcl_lnt_parsing_performance IMPLEMENTATION.
       zcl_lnt_parsing_performance=>results = t35.
     ENDIF.
     DATA t36 TYPE string.
-    DATA(t37) = ||.
+    DATA(t37) = CONV string( || ).
     t36 = t37.
     DATA t38 TYPE abap_bool.
     DATA t39 TYPE REF TO zcl_lnt_shape_8fc6df03.
-    DATA(t40) = t2.
+    DATA(t40) = CAST zcl_lnt_iparse_result( t2 ).
     t39 = t40->runtime_extra.
     t38 = xsdbool( t39 IS BOUND ).
     IF t38 = abap_true.
-      DATA t41 TYPE string.
-      DATA t42 TYPE string.
-      DATA t43 TYPE string.
-      DATA t44 TYPE string.
-      DATA t45 TYPE string.
-      DATA t46 TYPE string.
-      DATA(t47) = ||.
-      DATA t48 TYPE c LENGTH 1.
-      CLEAR t48.
-      t48 = cl_abap_conv_in_ce=>uccpi( 9 ).
-      CONCATENATE t47 t48 INTO t47 RESPECTING BLANKS.
-      t47 = t47 && |(lexing: |.
-      DATA t49 TYPE string.
-      DATA t50 TYPE int8.
+      DATA(t41) = VALUE string( ).
+      DATA(t42) = VALUE string( ).
+      DATA(t43) = VALUE string( ).
+      DATA(t44) = VALUE string( ).
+      DATA(t45) = VALUE string( ).
+      DATA(t46) = VALUE string( ).
+      DATA(t47) = CONV string( |\t(lexing: | ).
+      DATA(t48) = VALUE string( ).
+      DATA t49 TYPE f.
+      DATA t50 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t51 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA t52 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t53) = t2.
-      t52 = t53->runtime_extra.
-      t51 = t52.
-      t50 = t51->lexing.
-      t49 = |{ t50 }|.
-      DATA(t54) = strlen( t47 ).
-      t46 = |{ t47 }{ t49 }|.
-      DATA(t55) = |ms, statements: |.
-      DATA(t56) = strlen( t46 ).
+      DATA(t52) = CAST zcl_lnt_iparse_result( t2 ).
+      t51 = t52->runtime_extra.
+      t50 = t51.
+      t49 = t50->lexing.
+      IF t49 <> trunc( t49 ) OR t49 > range_safe_integer OR t49 < 0 - range_safe_integer.
+        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      ENDIF.
+      DATA(t53) = CONV int8( t49 ).
+      t48 = |{ t53 }|.
+      DATA(t54) = CONV i( strlen( t47 ) ).
+      t46 = |{ t47 }{ t48 }|.
+      DATA(t55) = CONV string( |ms, statements: | ).
+      DATA(t56) = CONV i( strlen( t46 ) ).
       t45 = |{ t46 }{ t55 }|.
-      DATA t57 TYPE string.
-      DATA t58 TYPE int8.
+      DATA(t57) = VALUE string( ).
+      DATA t58 TYPE f.
       DATA t59 TYPE REF TO zcl_lnt_shape_8fc6df03.
       DATA t60 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t61) = t2.
+      DATA(t61) = CAST zcl_lnt_iparse_result( t2 ).
       t60 = t61->runtime_extra.
       t59 = t60.
       t58 = t59->statements.
-      t57 = |{ t58 }|.
-      DATA(t62) = strlen( t45 ).
+      IF t58 <> trunc( t58 ) OR t58 > range_safe_integer OR t58 < 0 - range_safe_integer.
+        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      ENDIF.
+      DATA(t62) = CONV int8( t58 ).
+      t57 = |{ t62 }|.
+      DATA(t63) = CONV i( strlen( t45 ) ).
       t44 = |{ t45 }{ t57 }|.
-      DATA(t63) = |ms, structure: |.
-      DATA(t64) = strlen( t44 ).
-      t43 = |{ t44 }{ t63 }|.
-      DATA t65 TYPE string.
-      DATA t66 TYPE int8.
-      DATA t67 TYPE REF TO zcl_lnt_shape_8fc6df03.
+      DATA(t64) = CONV string( |ms, structure: | ).
+      DATA(t65) = CONV i( strlen( t44 ) ).
+      t43 = |{ t44 }{ t64 }|.
+      DATA(t66) = VALUE string( ).
+      DATA t67 TYPE f.
       DATA t68 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      DATA(t69) = t2.
-      t68 = t69->runtime_extra.
-      t67 = t68.
-      t66 = t67->structure.
-      t65 = |{ t66 }|.
-      DATA(t70) = strlen( t43 ).
-      t42 = |{ t43 }{ t65 }|.
-      DATA(t71) = |ms)|.
-      DATA(t72) = strlen( t42 ).
-      t41 = |{ t42 }{ t71 }|.
+      DATA t69 TYPE REF TO zcl_lnt_shape_8fc6df03.
+      DATA(t70) = CAST zcl_lnt_iparse_result( t2 ).
+      t69 = t70->runtime_extra.
+      t68 = t69.
+      t67 = t68->structure.
+      IF t67 <> trunc( t67 ) OR t67 > range_safe_integer OR t67 < 0 - range_safe_integer.
+        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      ENDIF.
+      DATA(t71) = CONV int8( t67 ).
+      t66 = |{ t71 }|.
+      DATA(t72) = CONV i( strlen( t43 ) ).
+      t42 = |{ t43 }{ t66 }|.
+      DATA(t73) = CONV string( |ms)| ).
+      DATA(t74) = CONV i( strlen( t42 ) ).
+      t41 = |{ t42 }{ t73 }|.
       t36 = t41.
     ENDIF.
-    DATA(t73) = zcl_lnt_parsing_performance=>results.
-    DATA t74 TYPE REF TO zcl_lnt_shape_c89a2931.
-    DATA t75 TYPE int8.
-    DATA(t76) = t2.
-    t75 = t76->runtime.
-    DATA t77 TYPE string.
-    DATA t78 TYPE string.
-    DATA t79 TYPE string.
-    DATA(t80) = t1.
-    t79 = t80->get_type( ).
-    DATA(t81) = | |.
-    DATA(t82) = strlen( t79 ).
-    t78 = |{ t79 }{ t81 }|.
+    DATA(t75) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_parsing_performance=>results ).
+    DATA t76 TYPE REF TO zcl_lnt_shape_c89a2931.
+    DATA t77 TYPE f.
+    DATA t78 TYPE f.
+    DATA(t79) = CAST zcl_lnt_iparse_result( t2 ).
+    t78 = t79->runtime.
+    t77 = t78.
+    DATA t80 TYPE string.
+    DATA(t81) = CONV string( t36 ).
+    t80 = t81.
+    DATA t82 TYPE string.
     DATA t83 TYPE string.
-    DATA(t84) = t1.
-    t83 = t84->get_name( ).
-    DATA(t85) = strlen( t78 ).
-    t77 = |{ t78 }{ t83 }|.
-    DATA(t86) = t36.
-    t74 = NEW zcl_lnt_shape_c89a2931( i_runtime = t75 i_name = t77 i_extra = t86 ).
-    APPEND t74 TO t73->items.
+    DATA t84 TYPE string.
+    DATA t85 TYPE string.
+    DATA(t86) = CAST zif_lnt_object( t1 ).
+    t85 = t86->get_type(  ).
+    DATA(t87) = CONV string( | | ).
+    DATA(t88) = CONV i( strlen( t85 ) ).
+    t84 = |{ t85 }{ t87 }|.
+    DATA t89 TYPE string.
+    DATA(t90) = CAST zif_lnt_object( t1 ).
+    t89 = t90->get_name(  ).
+    DATA(t91) = CONV i( strlen( t84 ) ).
+    t83 = |{ t84 }{ t89 }|.
+    t82 = t83.
+    t76 = NEW zcl_lnt_shape_c89a2931( i_runtime = t77 i_name = t82 i_extra = t80 ).
+    CREATE OBJECT t76->zlnt_view_ownkeys_b0e8086400eb.
+    t76->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t92.
+    IF t76->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t76->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `runtime` p1 = t92 ).
+    ENDIF.
+    DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t93.
+    IF t76->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t76->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `extra` p1 = t93 ).
+    ENDIF.
+    DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t94.
+    IF t76->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t76->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t94 ).
+    ENDIF.
+    CREATE OBJECT t76->zlnt_json_ownkeys_70e5fd461788.
+    t76->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t95) = CONV string( |runtime| ).
+    DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t96.
+    IF t76->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t76->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
+    ENDIF.
+    DATA(t97) = CONV string( |extra| ).
+    DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t98.
+    IF t76->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t76->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
+    ENDIF.
+    DATA(t99) = CONV string( |name| ).
+    DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t100.
+    IF t76->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t76->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
+    ENDIF.
+    t75->load( ).
+    APPEND t76 TO t75->items.
+    t75->save( ).
   ENDMETHOD.
-
   METHOD output.
-    CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
-    CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
     DATA t1 TYPE i.
-    DATA(t2) = 10.
+    DATA(t2) = CONV i( 10 ).
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = zcl_lnt_parsing_performance=>results.
+    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_parsing_performance=>results ).
     t4 = t5.
     DATA t6 TYPE i.
-    DATA(t7) = 1.
+    DATA(t7) = CONV i( 1 ).
     t6 = t7.
     DO.
       DATA t8 TYPE abap_bool.
-      DATA(t9) = t6.
+      DATA(t9) = CONV i( t6 ).
       DATA t10 TYPE i.
-      DATA(t11) = t4.
+      DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+      t11->load( ).
       t10 = lines( t11->items ).
       t8 = xsdbool( t9 < t10 ).
       IF t8 = abap_false.
         EXIT.
       ENDIF.
       DATA t12 TYPE i.
-      DATA(t13) = t6.
+      DATA(t13) = CONV i( t6 ).
       t12 = t13.
       DO.
         DATA t14 TYPE abap_bool.
-        DATA(t15) = t12.
-        DATA(t16) = 0.
+        DATA(t15) = CONV i( t12 ).
+        DATA(t16) = CONV i( 0 ).
         t14 = xsdbool( t15 > t16 ).
         IF t14 = abap_false.
           EXIT.
         ENDIF.
         DATA t17 TYPE REF TO zcl_lnt_shape_c89a2931.
+        CLEAR t17.
         DATA t18 TYPE REF TO zcl_lnt_shape_c89a2931.
-        DATA(t19) = t4.
+        CLEAR t18.
+        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
         DATA t20 TYPE i.
-        DATA(t21) = t12.
-        DATA(t22) = 1.
+        DATA(t21) = CONV i( t12 ).
+        DATA(t22) = CONV i( 1 ).
         t20 = t21 - t22.
         t20 = t20 + 1.
         DATA t23 TYPE REF TO object.
         CLEAR t23.
+        t19->load( ).
+        CLEAR t23.
         READ TABLE t19->items INDEX t20 INTO t23.
-        t18 ?= t23.
-        t17 = t18.
-        DATA t24 TYPE REF TO zcl_lnt_shape_c89a2931.
-        DATA t25 TYPE REF TO zcl_lnt_shape_c89a2931.
-        DATA(t26) = t4.
-        DATA(t27) = t12.
-        t27 = t27 + 1.
-        DATA t28 TYPE REF TO object.
-        CLEAR t28.
-        READ TABLE t26->items INDEX t27 INTO t28.
-        t25 ?= t28.
-        t24 = t25.
-        DATA(t29) = VALUE abap_bool( ).
-        DATA t30 TYPE int8.
-        DATA t31 TYPE int8.
-        DATA(t32) = t24.
-        t31 = t32->runtime.
-        DATA t33 TYPE int8.
-        DATA(t34) = t17.
-        t33 = t34->runtime.
-        t30 = t31 - t33.
-        IF t30 < range_int8_bound_min OR t30 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
+        DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t24.
+        CLEAR t18.
+        IF t23 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+          t24 ?= t23.
+          DATA t25 TYPE REF TO object.
+          t25 = t24->as_ref( ).
+          t18 ?= t25.
+        ELSE.
+          t18 ?= t23.
         ENDIF.
-        DATA(t35) = CONV int8( 0 ).
-        t29 = xsdbool( t30 > t35 ).
-        IF t29 = abap_true.
-          DATA t36 TYPE REF TO zcl_lnt_shape_c89a2931.
-          DATA t37 TYPE REF TO zcl_lnt_shape_c89a2931.
-          DATA(t38) = t4.
-          DATA t39 TYPE i.
-          DATA(t40) = t12.
-          DATA(t41) = 1.
-          t39 = t40 - t41.
-          t39 = t39 + 1.
-          DATA t42 TYPE REF TO object.
-          CLEAR t42.
-          READ TABLE t38->items INDEX t39 INTO t42.
-          t37 ?= t42.
-          t36 = t37.
-          DATA(t43) = t4.
-          DATA t44 TYPE i.
-          DATA(t45) = t12.
-          DATA(t46) = 1.
-          t44 = t45 - t46.
-          DATA t47 TYPE REF TO zcl_lnt_shape_c89a2931.
-          DATA(t48) = t4.
-          DATA(t49) = t12.
-          t49 = t49 + 1.
-          DATA t50 TYPE REF TO object.
-          CLEAR t50.
-          READ TABLE t48->items INDEX t49 INTO t50.
-          t47 ?= t50.
-          t44 = t44 + 1.
-          DATA t51 TYPE REF TO object.
-          CLEAR t51.
-          CLEAR t51.
-          WHILE lines( t43->items ) < t44.
-            APPEND t51 TO t43->items.
-          ENDWHILE.
-          MODIFY t43->items FROM t47 INDEX t44.
-          DATA(t52) = t4.
-          DATA(t53) = t12.
-          DATA(t54) = t36.
-          t53 = t53 + 1.
-          DATA t55 TYPE REF TO object.
-          CLEAR t55.
-          CLEAR t55.
-          WHILE lines( t52->items ) < t53.
-            APPEND t55 TO t52->items.
-          ENDWHILE.
-          MODIFY t52->items FROM t54 INDEX t53.
-          DATA t56 TYPE i.
-          DATA(t57) = t12.
-          DATA(t58) = 1.
-          t56 = t57 - t58.
-          t12 = t56.
+        t17 = t18.
+        DATA t26 TYPE REF TO zcl_lnt_shape_c89a2931.
+        CLEAR t26.
+        DATA t27 TYPE REF TO zcl_lnt_shape_c89a2931.
+        CLEAR t27.
+        DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+        DATA(t29) = CONV i( t12 ).
+        t29 = t29 + 1.
+        DATA t30 TYPE REF TO object.
+        CLEAR t30.
+        t28->load( ).
+        CLEAR t30.
+        READ TABLE t28->items INDEX t29 INTO t30.
+        DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t31.
+        CLEAR t27.
+        IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+          t31 ?= t30.
+          DATA t32 TYPE REF TO object.
+          t32 = t31->as_ref( ).
+          t27 ?= t32.
+        ELSE.
+          t27 ?= t30.
+        ENDIF.
+        t26 = t27.
+        DATA t33 TYPE abap_bool.
+        DATA t34 TYPE f.
+        DATA t35 TYPE f.
+        DATA(t36) = CAST zcl_lnt_shape_c89a2931( t26 ).
+        t35 = t36->runtime.
+        DATA t37 TYPE f.
+        DATA(t38) = CAST zcl_lnt_shape_c89a2931( t17 ).
+        t37 = t38->runtime.
+        t34 = t35 - t37.
+        DATA(t39) = CONV f( 0 ).
+        t33 = xsdbool( t34 > t39 ).
+        IF t33 = abap_true.
+          DATA t40 TYPE REF TO zcl_lnt_shape_c89a2931.
+          CLEAR t40.
+          DATA t41 TYPE REF TO zcl_lnt_shape_c89a2931.
+          CLEAR t41.
+          DATA(t42) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+          DATA t43 TYPE i.
+          DATA(t44) = CONV i( t12 ).
+          DATA(t45) = CONV i( 1 ).
+          t43 = t44 - t45.
+          t43 = t43 + 1.
+          DATA t46 TYPE REF TO object.
+          CLEAR t46.
+          t42->load( ).
+          CLEAR t46.
+          READ TABLE t42->items INDEX t43 INTO t46.
+          DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+          CLEAR t47.
+          CLEAR t41.
+          IF t46 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+            t47 ?= t46.
+            DATA t48 TYPE REF TO object.
+            t48 = t47->as_ref( ).
+            t41 ?= t48.
+          ELSE.
+            t41 ?= t46.
+          ENDIF.
+          t40 = t41.
+          DATA(t49) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+          DATA t50 TYPE i.
+          DATA(t51) = CONV i( t12 ).
+          DATA(t52) = CONV i( 1 ).
+          t50 = t51 - t52.
+          DATA t53 TYPE REF TO zcl_lnt_shape_c89a2931.
+          CLEAR t53.
+          DATA(t54) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+          DATA(t55) = CONV i( t12 ).
+          t55 = t55 + 1.
+          DATA t56 TYPE REF TO object.
+          CLEAR t56.
+          t54->load( ).
+          CLEAR t56.
+          READ TABLE t54->items INDEX t55 INTO t56.
+          DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+          CLEAR t57.
+          CLEAR t53.
+          IF t56 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+            t57 ?= t56.
+            DATA t58 TYPE REF TO object.
+            t58 = t57->as_ref( ).
+            t53 ?= t58.
+          ELSE.
+            t53 ?= t56.
+          ENDIF.
+          t49->put( p0 = t50 p1 = t53 ).
+          DATA(t59) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+          DATA(t60) = CONV i( t12 ).
+          DATA(t61) = CAST zcl_lnt_shape_c89a2931( t40 ).
+          t59->put( p0 = t60 p1 = t61 ).
+          DATA t62 TYPE i.
+          DATA(t63) = CONV i( t12 ).
+          DATA(t64) = CONV i( 1 ).
+          t62 = t63 - t64.
+          t12 = t62.
         ELSE.
           EXIT.
         ENDIF.
       ENDDO.
-      DATA t59 TYPE i.
-      DATA(t60) = t6.
-      DATA(t61) = 1.
-      t59 = t60 + t61.
-      t6 = t59.
+      DATA t65 TYPE i.
+      DATA(t66) = CONV i( t6 ).
+      DATA(t67) = CONV i( 1 ).
+      t65 = t66 + t67.
+      t6 = t65.
     ENDDO.
-    DATA(t62) = t4.
-    t3 = t62.
-    DATA t63 TYPE i.
-    DATA(t64) = 0.
-    t63 = t64.
+    DATA(t68) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    t3 = t68.
+    DATA t69 TYPE i.
+    DATA(t70) = CONV i( 0 ).
+    t69 = t70.
     DO.
-      DATA t65 TYPE abap_bool.
-      DATA(t66) = t63.
-      DATA(t67) = t1.
-      t65 = xsdbool( t66 < t67 ).
-      IF t65 = abap_false.
+      DATA t71 TYPE abap_bool.
+      DATA(t72) = CONV i( t69 ).
+      DATA(t73) = CONV i( t1 ).
+      t71 = xsdbool( t72 < t73 ).
+      IF t71 = abap_false.
         EXIT.
       ENDIF.
-      DATA t68 TYPE REF TO zcl_lnt_shape_c89a2931.
-      DATA t69 TYPE REF TO zcl_lnt_shape_c89a2931.
-      DATA(t70) = zcl_lnt_parsing_performance=>results.
-      DATA(t71) = t63.
-      t71 = t71 + 1.
-      DATA t72 TYPE REF TO object.
-      CLEAR t72.
-      READ TABLE t70->items INDEX t71 INTO t72.
-      t69 ?= t72.
-      t68 = t69.
-      DATA(t73) = VALUE abap_bool( ).
       DATA t74 TYPE REF TO zcl_lnt_shape_c89a2931.
-      DATA(t75) = t68.
-      t74 = t75.
-      DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t77 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t77.
-      t76 = t77.
-      DATA(t78) = VALUE abap_bool( ).
-      DATA(t79) = t74.
-      IF t79 IS INITIAL.
-        t78 = abap_true.
+      CLEAR t74.
+      DATA t75 TYPE REF TO zcl_lnt_shape_c89a2931.
+      CLEAR t75.
+      DATA(t76) = CAST zlnt_runtime_arra_c22708faf2e3( zcl_lnt_parsing_performance=>results ).
+      DATA(t77) = CONV i( t69 ).
+      t77 = t77 + 1.
+      DATA t78 TYPE REF TO object.
+      CLEAR t78.
+      t76->load( ).
+      CLEAR t78.
+      READ TABLE t76->items INDEX t77 INTO t78.
+      DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t79.
+      CLEAR t75.
+      IF t78 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t79 ?= t78.
+        DATA t80 TYPE REF TO object.
+        t80 = t79->as_ref( ).
+        t75 ?= t80.
+      ELSE.
+        t75 ?= t78.
       ENDIF.
-      t73 = t78.
-      IF t73 = abap_true.
+      t74 = t75.
+      DATA(t81) = VALUE abap_bool( ).
+      DATA t82 TYPE REF TO zcl_lnt_shape_c89a2931.
+      DATA(t83) = CAST zcl_lnt_shape_c89a2931( t74 ).
+      t82 = t83.
+      DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t85.
+      t84 = t85.
+      DATA(t86) = VALUE abap_bool( ).
+      DATA(t87) = CAST zcl_lnt_shape_c89a2931( t82 ).
+      IF t87 IS INITIAL.
+        t86 = abap_true.
+      ENDIF.
+      t81 = t86.
+      IF t81 = abap_true.
         EXIT.
       ENDIF.
-      DATA(t80) = NEW zlnt_exception_un_5f2d02892fe8( ).
-      DATA(t81) = |src/registry.ts:70:7|.
-      t80->source_location = t81.
-      RAISE EXCEPTION t80.
-      DATA t82 TYPE i.
-      DATA(t83) = t63.
-      DATA(t84) = 1.
-      t82 = t83 + t84.
-      t63 = t82.
+      DATA(t88) = NEW zlnt_exception_un_5f2d02892fe8( ).
+      DATA(t89) = CONV string( |src/registry.ts:70:7| ).
+      t88->source_location = t89.
+      RAISE EXCEPTION t88.
+      DATA t90 TYPE i.
+      DATA(t91) = CONV i( t69 ).
+      DATA(t92) = CONV i( 1 ).
+      t90 = t91 + t92.
+      t69 = t90.
     ENDDO.
-    DATA(t85) = NEW zlnt_exception_un_5f2d02892fe8( ).
-    DATA(t86) = |src/registry.ts:72:5|.
-    t85->source_location = t86.
-    RAISE EXCEPTION t85.
-    DATA(t87) = NEW zlnt_exception_un_5f2d02892fe8( ).
-    DATA(t88) = |src/registry.ts:73:5|.
-    t87->source_location = t88.
-    RAISE EXCEPTION t87.
-    DATA(t89) = NEW zlnt_exception_un_5f2d02892fe8( ).
-    DATA(t90) = |src/registry.ts:74:5|.
-    t89->source_location = t90.
-    RAISE EXCEPTION t89.
+    DATA(t93) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t94) = CONV string( |src/registry.ts:72:5| ).
+    t93->source_location = t94.
+    RAISE EXCEPTION t93.
+    DATA(t95) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t96) = CONV string( |src/registry.ts:73:5| ).
+    t95->source_location = t96.
+    RAISE EXCEPTION t95.
+    DATA(t97) = NEW zlnt_exception_un_5f2d02892fe8( ).
+    DATA(t98) = CONV string( |src/registry.ts:74:5| ).
+    t97->source_location = t98.
+    RAISE EXCEPTION t97.
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1278_c726b07de0d1.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1377_bb9e07f7930b.
   ENDMETHOD.
 ENDCLASS.

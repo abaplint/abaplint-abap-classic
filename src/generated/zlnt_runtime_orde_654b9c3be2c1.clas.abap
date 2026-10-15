@@ -10,11 +10,9 @@ CLASS zlnt_runtime_orde_654b9c3be2c1 IMPLEMENTATION.
   METHOD rule_key.
     result = compare( p0 = p0 p1 = p1 alphabet = `_0123456789abcdefghijklmnopqrstuvwxyz` pattern = `[^a-z0-9_]` ).
   ENDMETHOD.
-
   METHOD object_name.
     result = compare( p0 = p0 p1 = p1 alphabet = `_/0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ` pattern = `[^A-Z0-9_/]` ).
   ENDMETHOD.
-
   METHOD compare.
     DATA index TYPE i.
     DATA left_rank TYPE i.

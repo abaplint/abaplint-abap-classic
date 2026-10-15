@@ -1,11 +1,13 @@
 * TS: src/abap/2_statements/expressions/index.ts.module module
 CLASS zcl_lnt_st_expres_index_module DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     CLASS-DATA ns TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLASS-DATA zlnt_builtin_init_548b32263c45 TYPE abap_bool.
     CLASS-METHODS zlnt_builtin_init_cd4720708f2e.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -18,7 +20,7 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
     IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
+    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5(  ).
     zcl_lnt_st_expres_index_module=>ns = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t2.
@@ -28,8 +30,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t3 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t4) = |AbstractMethods|.
-    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d87_b6ca272efa9462.
+    DATA(t4) = CONV string( |AbstractMethods| ).
+    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d89_8ce847e06100c3 ).
     t2 = t3->set( p0 = t4 p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t6.
@@ -39,8 +41,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t7 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t8) = |Abstract|.
-    DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
+    DATA(t8) = CONV string( |Abstract| ).
+    DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d87_b6ca272efa9462 ).
     t6 = t7->set( p0 = t8 p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t10.
@@ -50,8 +52,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t11 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t12) = |AndReturn|.
-    DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d88_73c97f542216fb.
+    DATA(t12) = CONV string( |AndReturn| ).
+    DATA(t13) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d90_ea4359cbebf3c6 ).
     t10 = t11->set( p0 = t12 p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t14.
@@ -61,8 +63,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t15 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t16) = |ArithOperator|.
-    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d89_8ce847e06100c3.
+    DATA(t16) = CONV string( |ArithOperator| ).
+    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d91_10c609bb0b604f ).
     t14 = t15->set( p0 = t16 p1 = t17 ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t18.
@@ -72,8 +74,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t19 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t20) = |ArrowOrDash|.
-    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d91_10c609bb0b604f.
+    DATA(t20) = CONV string( |ArrowOrDash| ).
+    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74 ).
     t18 = t19->set( p0 = t20 p1 = t21 ).
     DATA t22 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t22.
@@ -83,8 +85,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t23 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t24) = |Arrow|.
-    DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d90_ea4359cbebf3c6.
+    DATA(t24) = CONV string( |Arrow| ).
+    DATA(t25) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d92_9ef7e4968cfbeb ).
     t22 = t23->set( p0 = t24 p1 = t25 ).
     DATA t26 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t26.
@@ -94,8 +96,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t27 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t28) = |AssignSource|.
-    DATA(t29) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
+    DATA(t28) = CONV string( |AssignSource| ).
+    DATA(t29) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d98_aa488fc184edca ).
     t26 = t27->set( p0 = t28 p1 = t29 ).
     DATA t30 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t30.
@@ -105,8 +107,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t31 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t32) = |EMLEntityPath|.
-    DATA(t33) = zlnt_runtime_desc_78196487750d=>zlnt_member_d157_1c35602cbab5.
+    DATA(t32) = CONV string( |EMLEntityPath| ).
+    DATA(t33) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d161_a1a721da0257 ).
     t30 = t31->set( p0 = t32 p1 = t33 ).
     DATA t34 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t34.
@@ -116,8 +118,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t35 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t36) = |AttributeChain|.
-    DATA(t37) = zlnt_runtime_desc_78196487750d=>zlnt_member_d103_04a0f92dd4f1.
+    DATA(t36) = CONV string( |AttributeChain| ).
+    DATA(t37) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d105_86aa91718a3c ).
     t34 = t35->set( p0 = t36 p1 = t37 ).
     DATA t38 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t38.
@@ -127,8 +129,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t39 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t40) = |AttributeName|.
-    DATA(t41) = zlnt_runtime_desc_78196487750d=>zlnt_member_d97_d1013c30597947.
+    DATA(t40) = CONV string( |AttributeName| ).
+    DATA(t41) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d99_35801e5718dec9 ).
     t38 = t39->set( p0 = t40 p1 = t41 ).
     DATA t42 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t42.
@@ -138,8 +140,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t43 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t44) = |BehaviorDefinitionName|.
-    DATA(t45) = zlnt_runtime_desc_78196487750d=>zlnt_member_d104_b395e4e66ee3.
+    DATA(t44) = CONV string( |BehaviorDefinitionName| ).
+    DATA(t45) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154 ).
     t42 = t43->set( p0 = t44 p1 = t45 ).
     DATA t46 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t46.
@@ -149,8 +151,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t47 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t48) = |BlockName|.
-    DATA(t49) = zlnt_runtime_desc_78196487750d=>zlnt_member_d105_86aa91718a3c.
+    DATA(t48) = CONV string( |BlockName| ).
+    DATA(t49) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a ).
     t46 = t47->set( p0 = t48 p1 = t49 ).
     DATA t50 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t50.
@@ -160,8 +162,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t51 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t52) = |CallTransformationOptions|.
-    DATA(t53) = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.
+    DATA(t52) = CONV string( |CallTransformationOptions| ).
+    DATA(t53) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d109_38db171d00c8 ).
     t50 = t51->set( p0 = t52 p1 = t53 ).
     DATA t54 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t54.
@@ -171,8 +173,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t55 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t56) = |CallTransformationParameters|.
-    DATA(t57) = zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81.
+    DATA(t56) = CONV string( |CallTransformationParameters| ).
+    DATA(t57) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d110_fe91213debb9 ).
     t54 = t55->set( p0 = t56 p1 = t57 ).
     DATA t58 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t58.
@@ -182,8 +184,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t59 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t60) = |Cast|.
-    DATA(t61) = zlnt_runtime_desc_78196487750d=>zlnt_member_d112_70ce077ce8e3.
+    DATA(t60) = CONV string( |Cast| ).
+    DATA(t61) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687 ).
     t58 = t59->set( p0 = t60 p1 = t61 ).
     DATA t62 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t62.
@@ -193,8 +195,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t63 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t64) = |ClassFinal|.
-    DATA(t65) = zlnt_runtime_desc_78196487750d=>zlnt_member_d113_956a697889b2.
+    DATA(t64) = CONV string( |ClassFinal| ).
+    DATA(t65) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d115_e681bc20f5c0 ).
     t62 = t63->set( p0 = t64 p1 = t65 ).
     DATA t66 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t66.
@@ -204,8 +206,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t67 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t68) = |ClassFriends|.
-    DATA(t69) = zlnt_runtime_desc_78196487750d=>zlnt_member_d115_e681bc20f5c0.
+    DATA(t68) = CONV string( |ClassFriends| ).
+    DATA(t69) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d117_490f9bcc19a9 ).
     t66 = t67->set( p0 = t68 p1 = t69 ).
     DATA t70 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t70.
@@ -215,8 +217,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t71 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t72) = |ClassGlobal|.
-    DATA(t73) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
+    DATA(t72) = CONV string( |ClassGlobal| ).
+    DATA(t73) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df ).
     t70 = t71->set( p0 = t72 p1 = t73 ).
     DATA t74 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t74.
@@ -226,8 +228,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t75 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t76) = |ClassName|.
-    DATA(t77) = zlnt_runtime_desc_78196487750d=>zlnt_member_d114_8c1c765e2687.
+    DATA(t76) = CONV string( |ClassName| ).
+    DATA(t77) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c ).
     t74 = t75->set( p0 = t76 p1 = t77 ).
     DATA t78 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t78.
@@ -237,8 +239,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t79 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t80) = |Color|.
-    DATA(t81) = zlnt_runtime_desc_78196487750d=>zlnt_member_d117_490f9bcc19a9.
+    DATA(t80) = CONV string( |Color| ).
+    DATA(t81) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d119_f7714013c01c ).
     t78 = t79->set( p0 = t80 p1 = t81 ).
     DATA t82 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t82.
@@ -248,8 +250,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t83 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t84) = |CompareOperator|.
-    DATA(t85) = zlnt_runtime_desc_78196487750d=>zlnt_member_d121_2f7db81dd46d.
+    DATA(t84) = CONV string( |CompareOperator| ).
+    DATA(t85) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d123_b66c920b623e ).
     t82 = t83->set( p0 = t84 p1 = t85 ).
     DATA t86 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t86.
@@ -259,8 +261,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t87 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t88) = |Compare|.
-    DATA(t89) = zlnt_runtime_desc_78196487750d=>zlnt_member_d123_b66c920b623e.
+    DATA(t88) = CONV string( |Compare| ).
+    DATA(t89) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d125_e2c9d8de971e ).
     t86 = t87->set( p0 = t88 p1 = t89 ).
     DATA t90 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t90.
@@ -270,8 +272,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t91 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t92) = |ComponentChainSimple|.
-    DATA(t93) = zlnt_runtime_desc_78196487750d=>zlnt_member_d125_e2c9d8de971e.
+    DATA(t92) = CONV string( |ComponentChainSimple| ).
+    DATA(t93) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d127_3599949d7390 ).
     t90 = t91->set( p0 = t92 p1 = t93 ).
     DATA t94 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t94.
@@ -281,8 +283,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t95 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t96) = |ComponentChain|.
-    DATA(t97) = zlnt_runtime_desc_78196487750d=>zlnt_member_d124_1ce9c8f13c80.
+    DATA(t96) = CONV string( |ComponentChain| ).
+    DATA(t97) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d126_c330c74d8713 ).
     t94 = t95->set( p0 = t96 p1 = t97 ).
     DATA t98 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t98.
@@ -292,8 +294,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t99 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t100) = |ComponentCompareSimple|.
-    DATA(t101) = zlnt_runtime_desc_78196487750d=>zlnt_member_d128_b497db583ff7.
+    DATA(t100) = CONV string( |ComponentCompareSimple| ).
+    DATA(t101) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d130_b1d921bbb09b ).
     t98 = t99->set( p0 = t100 p1 = t101 ).
     DATA t102 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t102.
@@ -303,8 +305,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t103 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t104) = |ComponentCompareSingle|.
-    DATA(t105) = zlnt_runtime_desc_78196487750d=>zlnt_member_d129_b622fad61480.
+    DATA(t104) = CONV string( |ComponentCompareSingle| ).
+    DATA(t105) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d131_942bad51dc56 ).
     t102 = t103->set( p0 = t104 p1 = t105 ).
     DATA t106 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t106.
@@ -314,8 +316,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t107 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t108) = |ComponentCompare|.
-    DATA(t109) = zlnt_runtime_desc_78196487750d=>zlnt_member_d126_c330c74d8713.
+    DATA(t108) = CONV string( |ComponentCompare| ).
+    DATA(t109) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d128_b497db583ff7 ).
     t106 = t107->set( p0 = t108 p1 = t109 ).
     DATA t110 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t110.
@@ -325,8 +327,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t111 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t112) = |ComponentCondSub|.
-    DATA(t113) = zlnt_runtime_desc_78196487750d=>zlnt_member_d130_b1d921bbb09b.
+    DATA(t112) = CONV string( |ComponentCondSub| ).
+    DATA(t113) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d132_568147cc297b ).
     t110 = t111->set( p0 = t112 p1 = t113 ).
     DATA t114 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t114.
@@ -336,8 +338,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t115 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t116) = |ComponentCond|.
-    DATA(t117) = zlnt_runtime_desc_78196487750d=>zlnt_member_d131_942bad51dc56.
+    DATA(t116) = CONV string( |ComponentCond| ).
+    DATA(t117) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a ).
     t114 = t115->set( p0 = t116 p1 = t117 ).
     DATA t118 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t118.
@@ -347,8 +349,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t119 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t120) = |ComponentName|.
-    DATA(t121) = zlnt_runtime_desc_78196487750d=>zlnt_member_d98_aa488fc184edca.
+    DATA(t120) = CONV string( |ComponentName| ).
+    DATA(t121) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d100_553f73368b64 ).
     t118 = t119->set( p0 = t120 p1 = t121 ).
     DATA t122 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t122.
@@ -358,8 +360,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t123 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t124) = |ConcatenatedConstant|.
-    DATA(t125) = zlnt_runtime_desc_78196487750d=>zlnt_member_d132_568147cc297b.
+    DATA(t124) = CONV string( |ConcatenatedConstant| ).
+    DATA(t125) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d134_34bac62ef421 ).
     t122 = t123->set( p0 = t124 p1 = t125 ).
     DATA t126 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t126.
@@ -369,8 +371,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t127 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t128) = |CondBody|.
-    DATA(t129) = zlnt_runtime_desc_78196487750d=>zlnt_member_d135_0d084eddc054.
+    DATA(t128) = CONV string( |CondBody| ).
+    DATA(t129) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d138_55fd16dd4da4 ).
     t126 = t127->set( p0 = t128 p1 = t129 ).
     DATA t130 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t130.
@@ -380,8 +382,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t131 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t132) = |CondSub|.
-    DATA(t133) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
+    DATA(t132) = CONV string( |CondSub| ).
+    DATA(t133) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d135_0d084eddc054 ).
     t130 = t131->set( p0 = t132 p1 = t133 ).
     DATA t134 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t134.
@@ -391,8 +393,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t135 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t136) = |Cond|.
-    DATA(t137) = zlnt_runtime_desc_78196487750d=>zlnt_member_d134_34bac62ef421.
+    DATA(t136) = CONV string( |Cond| ).
+    DATA(t137) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837 ).
     t134 = t135->set( p0 = t136 p1 = t137 ).
     DATA t138 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t138.
@@ -402,8 +404,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t139 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t140) = |ConstantFieldLength|.
-    DATA(t141) = zlnt_runtime_desc_78196487750d=>zlnt_member_d139_249fe3e5ef12.
+    DATA(t140) = CONV string( |ConstantFieldLength| ).
+    DATA(t141) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d142_ab91f6798a5a ).
     t138 = t139->set( p0 = t140 p1 = t141 ).
     DATA t142 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t142.
@@ -413,8 +415,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t143 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t144) = |ConstantString|.
-    DATA(t145) = zlnt_runtime_desc_78196487750d=>zlnt_member_d137_6fd956b9c58a.
+    DATA(t144) = CONV string( |ConstantString| ).
+    DATA(t145) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d140_ecb7e995244f ).
     t142 = t143->set( p0 = t144 p1 = t145 ).
     DATA t146 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t146.
@@ -424,8 +426,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t147 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t148) = |Constant|.
-    DATA(t149) = zlnt_runtime_desc_78196487750d=>zlnt_member_d119_f7714013c01c.
+    DATA(t148) = CONV string( |Constant| ).
+    DATA(t149) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d121_2f7db81dd46d ).
     t146 = t147->set( p0 = t148 p1 = t149 ).
     DATA t150 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t150.
@@ -435,8 +437,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t151 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t152) = |ConvBody|.
-    DATA(t153) = zlnt_runtime_desc_78196487750d=>zlnt_member_d140_ecb7e995244f.
+    DATA(t152) = CONV string( |ConvBody| ).
+    DATA(t153) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d143_3ba838dd8924 ).
     t150 = t151->set( p0 = t152 p1 = t153 ).
     DATA t154 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t154.
@@ -446,8 +448,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t155 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t156) = |CorrespondingBodyBase|.
-    DATA(t157) = zlnt_runtime_desc_78196487750d=>zlnt_member_d142_ab91f6798a5a.
+    DATA(t156) = CONV string( |CorrespondingBodyBase| ).
+    DATA(t157) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d144_e73838d999aa ).
     t154 = t155->set( p0 = t156 p1 = t157 ).
     DATA t158 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t158.
@@ -457,8 +459,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t159 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t160) = |CorrespondingBody|.
-    DATA(t161) = zlnt_runtime_desc_78196487750d=>zlnt_member_d141_e96a425f6743.
+    DATA(t160) = CONV string( |CorrespondingBodyMapping| ).
+    DATA(t161) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d145_fbc450f30e9d ).
     t158 = t159->set( p0 = t160 p1 = t161 ).
     DATA t162 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t162.
@@ -468,8 +470,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t163 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t164) = |DataDefinition|.
-    DATA(t165) = zlnt_runtime_desc_78196487750d=>zlnt_member_d150_582536089a5b.
+    DATA(t164) = CONV string( |CorrespondingBody| ).
+    DATA(t165) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d146_4e7b86c7b080 ).
     t162 = t163->set( p0 = t164 p1 = t165 ).
     DATA t166 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t166.
@@ -479,8 +481,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t167 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t168) = |DatabaseConnection|.
-    DATA(t169) = zlnt_runtime_desc_78196487750d=>zlnt_member_d151_c07675a56057.
+    DATA(t168) = CONV string( |DataDefinition| ).
+    DATA(t169) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df ).
     t166 = t167->set( p0 = t168 p1 = t169 ).
     DATA t170 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t170.
@@ -490,8 +492,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t171 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t172) = |DatabaseTable|.
-    DATA(t173) = zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57.
+    DATA(t172) = CONV string( |DatabaseConnection| ).
+    DATA(t173) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d155_5eb73ae6c401 ).
     t170 = t171->set( p0 = t172 p1 = t173 ).
     DATA t174 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t174.
@@ -501,8 +503,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t175 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t176) = |Decimals|.
-    DATA(t177) = zlnt_runtime_desc_78196487750d=>zlnt_member_d145_fbc450f30e9d.
+    DATA(t176) = CONV string( |DatabaseTable| ).
+    DATA(t177) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff ).
     t174 = t175->set( p0 = t176 p1 = t177 ).
     DATA t178 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t178.
@@ -512,8 +514,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t179 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t180) = |Default|.
-    DATA(t181) = zlnt_runtime_desc_78196487750d=>zlnt_member_d155_5eb73ae6c401.
+    DATA(t180) = CONV string( |Decimals| ).
+    DATA(t181) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d149_69f1f4358f03 ).
     t178 = t179->set( p0 = t180 p1 = t181 ).
     DATA t182 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t182.
@@ -523,8 +525,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t183 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t184) = |DefinitionName|.
-    DATA(t185) = zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97.
+    DATA(t184) = CONV string( |Default| ).
+    DATA(t185) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d159_eda069348ac0 ).
     t182 = t183->set( p0 = t184 p1 = t185 ).
     DATA t186 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t186.
@@ -534,8 +536,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t187 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t188) = |Dereference|.
-    DATA(t189) = zlnt_runtime_desc_78196487750d=>zlnt_member_d111_4d9698a8e1bf.
+    DATA(t188) = CONV string( |DefinitionName| ).
+    DATA(t189) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57 ).
     t186 = t187->set( p0 = t188 p1 = t189 ).
     DATA t190 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t190.
@@ -545,8 +547,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t191 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t192) = |Destination|.
-    DATA(t193) = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
+    DATA(t192) = CONV string( |Dereference| ).
+    DATA(t193) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d113_956a697889b2 ).
     t190 = t191->set( p0 = t192 p1 = t193 ).
     DATA t194 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t194.
@@ -556,8 +558,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t195 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t196) = |Dynamic|.
-    DATA(t197) = zlnt_runtime_desc_78196487750d=>zlnt_member_d94_8a2bfacd888428.
+    DATA(t196) = CONV string( |Destination| ).
+    DATA(t197) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d160_b1cea157d835 ).
     t194 = t195->set( p0 = t196 p1 = t197 ).
     DATA t198 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t198.
@@ -567,8 +569,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t199 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t200) = |EntityAssociation|.
-    DATA(t201) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
+    DATA(t200) = CONV string( |Dynamic| ).
+    DATA(t201) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633 ).
     t198 = t199->set( p0 = t200 p1 = t201 ).
     DATA t202 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t202.
@@ -578,8 +580,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t203 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t204) = |EntityAssociation|.
-    DATA(t205) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
+    DATA(t204) = CONV string( |EntityAssociation| ).
+    DATA(t205) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d162_57231f39acd0 ).
     t202 = t203->set( p0 = t204 p1 = t205 ).
     DATA t206 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t206.
@@ -589,8 +591,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t207 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t208) = |EventHandler|.
-    DATA(t209) = zlnt_runtime_desc_78196487750d=>zlnt_member_d161_a1a721da0257.
+    DATA(t208) = CONV string( |EntityAssociation| ).
+    DATA(t209) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d162_57231f39acd0 ).
     t206 = t207->set( p0 = t208 p1 = t209 ).
     DATA t210 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t210.
@@ -600,8 +602,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t211 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t212) = |EventName|.
-    DATA(t213) = zlnt_runtime_desc_78196487750d=>zlnt_member_d159_eda069348ac0.
+    DATA(t212) = CONV string( |EventHandler| ).
+    DATA(t213) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d165_590ae906b133 ).
     t210 = t211->set( p0 = t212 p1 = t213 ).
     DATA t214 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t214.
@@ -611,8 +613,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t215 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t216) = |ExceptionName|.
-    DATA(t217) = zlnt_runtime_desc_78196487750d=>zlnt_member_d162_57231f39acd0.
+    DATA(t216) = CONV string( |EventName| ).
+    DATA(t217) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd ).
     t214 = t215->set( p0 = t216 p1 = t217 ).
     DATA t218 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t218.
@@ -622,8 +624,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t219 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t220) = |FieldAll|.
-    DATA(t221) = zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd.
+    DATA(t220) = CONV string( |ExceptionName| ).
+    DATA(t221) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d166_95d94e882be8 ).
     t218 = t219->set( p0 = t220 p1 = t221 ).
     DATA t222 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t222.
@@ -633,8 +635,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t223 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t224) = |FieldAssignment|.
-    DATA(t225) = zlnt_runtime_desc_78196487750d=>zlnt_member_d164_a1523c275ce1.
+    DATA(t224) = CONV string( |FieldAll| ).
+    DATA(t225) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18 ).
     t222 = t223->set( p0 = t224 p1 = t225 ).
     DATA t226 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t226.
@@ -644,8 +646,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t227 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t228) = |FieldChain|.
-    DATA(t229) = zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df.
+    DATA(t228) = CONV string( |FieldAssignment| ).
+    DATA(t229) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396 ).
     t226 = t227->set( p0 = t228 p1 = t229 ).
     DATA t230 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t230.
@@ -655,8 +657,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t231 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t232) = |FieldLength|.
-    DATA(t233) = zlnt_runtime_desc_78196487750d=>zlnt_member_d102_cb65ad2c1bba.
+    DATA(t232) = CONV string( |FieldChain| ).
+    DATA(t233) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f ).
     t230 = t231->set( p0 = t232 p1 = t233 ).
     DATA t234 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t234.
@@ -666,8 +668,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t235 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t236) = |FieldOffset|.
-    DATA(t237) = zlnt_runtime_desc_78196487750d=>zlnt_member_d101_98dd83adae1d.
+    DATA(t236) = CONV string( |FieldLength| ).
+    DATA(t237) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d104_b395e4e66ee3 ).
     t234 = t235->set( p0 = t236 p1 = t237 ).
     DATA t238 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t238.
@@ -677,8 +679,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t239 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t240) = |FieldSub|.
-    DATA(t241) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
+    DATA(t240) = CONV string( |FieldOffset| ).
+    DATA(t241) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d103_04a0f92dd4f1 ).
     t238 = t239->set( p0 = t240 p1 = t241 ).
     DATA t242 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t242.
@@ -688,8 +690,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t243 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t244) = |FieldSymbol|.
-    DATA(t245) = zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396.
+    DATA(t244) = CONV string( |FieldSub| ).
+    DATA(t245) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3 ).
     t242 = t243->set( p0 = t244 p1 = t245 ).
     DATA t246 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t246.
@@ -699,8 +701,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t247 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t248) = |Field|.
-    DATA(t249) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
+    DATA(t248) = CONV string( |FieldSymbol| ).
+    DATA(t249) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d172_090204a1a05d ).
     t246 = t247->set( p0 = t248 p1 = t249 ).
     DATA t250 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t250.
@@ -710,8 +712,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t251 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t252) = |FilterBody|.
-    DATA(t253) = zlnt_runtime_desc_78196487750d=>zlnt_member_d169_f7493de77386.
+    DATA(t252) = CONV string( |Field| ).
+    DATA(t253) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d97_d1013c30597947 ).
     t250 = t251->set( p0 = t252 p1 = t253 ).
     DATA t254 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t254.
@@ -721,8 +723,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t255 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t256) = |FinalMethods|.
-    DATA(t257) = zlnt_runtime_desc_78196487750d=>zlnt_member_d170_d4b536f00e50.
+    DATA(t256) = CONV string( |FilterBody| ).
+    DATA(t257) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d174_c8ac82068417 ).
     t254 = t255->set( p0 = t256 p1 = t257 ).
     DATA t258 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t258.
@@ -732,8 +734,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t259 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t260) = |FindType|.
-    DATA(t261) = zlnt_runtime_desc_78196487750d=>zlnt_member_d171_8a7e3c79c08f.
+    DATA(t260) = CONV string( |FinalMethods| ).
+    DATA(t261) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d175_344bc5837b82 ).
     t258 = t259->set( p0 = t260 p1 = t261 ).
     DATA t262 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t262.
@@ -743,8 +745,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t263 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t264) = |For|.
-    DATA(t265) = zlnt_runtime_desc_78196487750d=>zlnt_member_d172_090204a1a05d.
+    DATA(t264) = CONV string( |FindType| ).
+    DATA(t265) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d176_70730c0e7184 ).
     t262 = t263->set( p0 = t264 p1 = t265 ).
     DATA t266 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t266.
@@ -754,8 +756,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t267 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t268) = |FormChanging|.
-    DATA(t269) = zlnt_runtime_desc_78196487750d=>zlnt_member_d174_c8ac82068417.
+    DATA(t268) = CONV string( |For| ).
+    DATA(t269) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d182_555fcb96e22f ).
     t266 = t267->set( p0 = t268 p1 = t269 ).
     DATA t270 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t270.
@@ -765,8 +767,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t271 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t272) = |FormName|.
-    DATA(t273) = zlnt_runtime_desc_78196487750d=>zlnt_member_d175_344bc5837b82.
+    DATA(t272) = CONV string( |FormChanging| ).
+    DATA(t273) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d184_78321de353a4 ).
     t270 = t271->set( p0 = t272 p1 = t273 ).
     DATA t274 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t274.
@@ -776,8 +778,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t275 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t276) = |FormParamName|.
-    DATA(t277) = zlnt_runtime_desc_78196487750d=>zlnt_member_d177_c99f21007fa4.
+    DATA(t276) = CONV string( |FormName| ).
+    DATA(t277) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c ).
     t274 = t275->set( p0 = t276 p1 = t277 ).
     DATA t278 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t278.
@@ -787,8 +789,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t279 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t280) = |FormParamType|.
-    DATA(t281) = zlnt_runtime_desc_78196487750d=>zlnt_member_d178_47418e3f231b.
+    DATA(t280) = CONV string( |FormParamName| ).
+    DATA(t281) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d187_ac8768b55725 ).
     t278 = t279->set( p0 = t280 p1 = t281 ).
     DATA t282 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t282.
@@ -798,8 +800,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t283 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t284) = |FormParam|.
-    DATA(t285) = zlnt_runtime_desc_78196487750d=>zlnt_member_d173_fd387289a527.
+    DATA(t284) = CONV string( |FormParamType| ).
+    DATA(t285) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d188_0b071dbb03a9 ).
     t282 = t283->set( p0 = t284 p1 = t285 ).
     DATA t286 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t286.
@@ -809,8 +811,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t287 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t288) = |FormRaising|.
-    DATA(t289) = zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844.
+    DATA(t288) = CONV string( |FormParam| ).
+    DATA(t289) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d183_78b4c050195c ).
     t286 = t287->set( p0 = t288 p1 = t289 ).
     DATA t290 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t290.
@@ -820,8 +822,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t291 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t292) = |FormTables|.
-    DATA(t293) = zlnt_runtime_desc_78196487750d=>zlnt_member_d181_df35d03977d7.
+    DATA(t292) = CONV string( |FormRaising| ).
+    DATA(t293) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d190_8da19a9c3edb ).
     t290 = t291->set( p0 = t292 p1 = t293 ).
     DATA t294 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t294.
@@ -831,8 +833,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t295 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t296) = |FormUsing|.
-    DATA(t297) = zlnt_runtime_desc_78196487750d=>zlnt_member_d182_555fcb96e22f.
+    DATA(t296) = CONV string( |FormTables| ).
+    DATA(t297) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d191_203ebd87c4e5 ).
     t294 = t295->set( p0 = t296 p1 = t297 ).
     DATA t298 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t298.
@@ -842,8 +844,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t299 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t300) = |FSTarget|.
-    DATA(t301) = zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c.
+    DATA(t300) = CONV string( |FormUsing| ).
+    DATA(t301) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d192_2948974be5fb ).
     t298 = t299->set( p0 = t300 p1 = t301 ).
     DATA t302 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t302.
@@ -853,8 +855,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t303 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t304) = |FunctionExportingParameter|.
-    DATA(t305) = zlnt_runtime_desc_78196487750d=>zlnt_member_d186_713e1678710c.
+    DATA(t304) = CONV string( |FSTarget| ).
+    DATA(t305) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d194_b8c1a7611ef6 ).
     t302 = t303->set( p0 = t304 p1 = t305 ).
     DATA t306 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t306.
@@ -864,8 +866,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t307 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t308) = |FunctionExporting|.
-    DATA(t309) = zlnt_runtime_desc_78196487750d=>zlnt_member_d187_ac8768b55725.
+    DATA(t308) = CONV string( |FunctionExportingParameter| ).
+    DATA(t309) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d195_e320b2253f20 ).
     t306 = t307->set( p0 = t308 p1 = t309 ).
     DATA t310 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t310.
@@ -875,8 +877,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t311 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t312) = |FunctionName|.
-    DATA(t313) = zlnt_runtime_desc_78196487750d=>zlnt_member_d189_7457e1b1f519.
+    DATA(t312) = CONV string( |FunctionExporting| ).
+    DATA(t313) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d196_75035ca40b78 ).
     t310 = t311->set( p0 = t312 p1 = t313 ).
     DATA t314 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t314.
@@ -886,8 +888,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t315 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t316) = |FunctionParameters|.
-    DATA(t317) = zlnt_runtime_desc_78196487750d=>zlnt_member_d192_2948974be5fb.
+    DATA(t316) = CONV string( |FunctionName| ).
+    DATA(t317) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db ).
     t314 = t315->set( p0 = t316 p1 = t317 ).
     DATA t318 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t318.
@@ -897,8 +899,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t319 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t320) = |IncludeName|.
-    DATA(t321) = zlnt_runtime_desc_78196487750d=>zlnt_member_d83_c58d804fe3d16b.
+    DATA(t320) = CONV string( |FunctionParameters| ).
+    DATA(t321) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d201_586873752c2d ).
     t318 = t319->set( p0 = t320 p1 = t321 ).
     DATA t322 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t322.
@@ -908,8 +910,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t323 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t324) = |InlineFieldDefinition|.
-    DATA(t325) = zlnt_runtime_desc_78196487750d=>zlnt_member_d194_b8c1a7611ef6.
+    DATA(t324) = CONV string( |IncludeName| ).
+    DATA(t325) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106 ).
     t322 = t323->set( p0 = t324 p1 = t325 ).
     DATA t326 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t326.
@@ -919,8 +921,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t327 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t328) = |InlineField|.
-    DATA(t329) = zlnt_runtime_desc_78196487750d=>zlnt_member_d193_7f7e5054ef0a.
+    DATA(t328) = CONV string( |InlineFieldDefinition| ).
+    DATA(t329) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d178_47418e3f231b ).
     t326 = t327->set( p0 = t328 p1 = t329 ).
     DATA t330 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t330.
@@ -930,8 +932,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t331 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t332) = |InlineLoopDefinition|.
-    DATA(t333) = zlnt_runtime_desc_78196487750d=>zlnt_member_d195_e320b2253f20.
+    DATA(t332) = CONV string( |InlineField| ).
+    DATA(t333) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604 ).
     t330 = t331->set( p0 = t332 p1 = t333 ).
     DATA t334 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t334.
@@ -941,8 +943,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t335 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t336) = |InlineData|.
-    DATA(t337) = zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a.
+    DATA(t336) = CONV string( |InlineLoopDefinition| ).
+    DATA(t337) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d177_c99f21007fa4 ).
     t334 = t335->set( p0 = t336 p1 = t337 ).
     DATA t338 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t338.
@@ -952,8 +954,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t339 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t340) = |InlineFS|.
-    DATA(t341) = zlnt_runtime_desc_78196487750d=>zlnt_member_d183_78b4c050195c.
+    DATA(t340) = CONV string( |InlineData| ).
+    DATA(t341) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27 ).
     t338 = t339->set( p0 = t340 p1 = t341 ).
     DATA t342 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t342.
@@ -963,8 +965,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t343 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t344) = |Integer|.
-    DATA(t345) = zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154.
+    DATA(t344) = CONV string( |InlineFS| ).
+    DATA(t345) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d193_7f7e5054ef0a ).
     t342 = t343->set( p0 = t344 p1 = t345 ).
     DATA t346 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t346.
@@ -974,8 +976,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t347 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t348) = |InterfaceName|.
-    DATA(t349) = zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db.
+    DATA(t348) = CONV string( |Integer| ).
+    DATA(t349) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81 ).
     t346 = t347->set( p0 = t348 p1 = t349 ).
     DATA t350 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t350.
@@ -985,8 +987,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t351 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t352) = |KernelId|.
-    DATA(t353) = zlnt_runtime_desc_78196487750d=>zlnt_member_d199_07bab553574b.
+    DATA(t352) = CONV string( |InterfaceName| ).
+    DATA(t353) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d204_9c49dd4bb1b2 ).
     t350 = t351->set( p0 = t352 p1 = t353 ).
     DATA t354 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t354.
@@ -996,8 +998,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t355 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t356) = |Language|.
-    DATA(t357) = zlnt_runtime_desc_78196487750d=>zlnt_member_d200_9c08cf3762d0.
+    DATA(t356) = CONV string( |KernelId| ).
+    DATA(t357) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d205_211e28be3777 ).
     t354 = t355->set( p0 = t356 p1 = t357 ).
     DATA t358 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t358.
@@ -1007,8 +1009,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t359 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t360) = |Length|.
-    DATA(t361) = zlnt_runtime_desc_78196487750d=>zlnt_member_d144_e73838d999aa.
+    DATA(t360) = CONV string( |Language| ).
+    DATA(t361) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74 ).
     t358 = t359->set( p0 = t360 p1 = t361 ).
     DATA t362 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t362.
@@ -1018,8 +1020,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t363 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t364) = |Let|.
-    DATA(t365) = zlnt_runtime_desc_78196487750d=>zlnt_member_d110_fe91213debb9.
+    DATA(t364) = CONV string( |Length| ).
+    DATA(t365) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d148_212592b80f97 ).
     t362 = t363->set( p0 = t364 p1 = t365 ).
     DATA t366 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t366.
@@ -1029,8 +1031,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t367 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t368) = |LOBHandle|.
-    DATA(t369) = zlnt_runtime_desc_78196487750d=>zlnt_member_d201_586873752c2d.
+    DATA(t368) = CONV string( |Let| ).
+    DATA(t369) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d112_70ce077ce8e3 ).
     t366 = t367->set( p0 = t368 p1 = t369 ).
     DATA t370 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t370.
@@ -1040,8 +1042,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t371 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t372) = |LoopGroupByComponent|.
-    DATA(t373) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
+    DATA(t372) = CONV string( |LOBHandle| ).
+    DATA(t373) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d207_e6b5df1debdc ).
     t370 = t371->set( p0 = t372 p1 = t373 ).
     DATA t374 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t374.
@@ -1051,8 +1053,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t375 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t376) = |LoopGroupBy|.
-    DATA(t377) = zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604.
+    DATA(t376) = CONV string( |LoopGroupByComponent| ).
+    DATA(t377) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d179_7cc7b9e87931 ).
     t374 = t375->set( p0 = t376 p1 = t377 ).
     DATA t378 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t378.
@@ -1062,8 +1064,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t379 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t380) = |LoopSource|.
-    DATA(t381) = zlnt_runtime_desc_78196487750d=>zlnt_member_d205_211e28be3777.
+    DATA(t380) = CONV string( |LoopGroupByTarget| ).
+    DATA(t381) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d208_929ff50f586d ).
     t378 = t379->set( p0 = t380 p1 = t381 ).
     DATA t382 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t382.
@@ -1073,8 +1075,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t383 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t384) = |LoopTarget|.
-    DATA(t385) = zlnt_runtime_desc_78196487750d=>zlnt_member_d207_e6b5df1debdc.
+    DATA(t384) = CONV string( |LoopGroupBy| ).
+    DATA(t385) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d209_c21e0d8a3b4e ).
     t382 = t383->set( p0 = t384 p1 = t385 ).
     DATA t386 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t386.
@@ -1084,8 +1086,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t387 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t388) = |MacroName|.
-    DATA(t389) = zlnt_runtime_desc_78196487750d=>zlnt_member_d208_929ff50f586d.
+    DATA(t388) = CONV string( |LoopSource| ).
+    DATA(t389) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d212_ad2d7a05fa43 ).
     t386 = t387->set( p0 = t388 p1 = t389 ).
     DATA t390 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t390.
@@ -1095,8 +1097,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t391 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t392) = |MessageClass|.
-    DATA(t393) = zlnt_runtime_desc_78196487750d=>zlnt_member_d209_c21e0d8a3b4e.
+    DATA(t392) = CONV string( |LoopTarget| ).
+    DATA(t393) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d213_62076b901fdc ).
     t390 = t391->set( p0 = t392 p1 = t393 ).
     DATA t394 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t394.
@@ -1106,8 +1108,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t395 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t396) = |MessageNumber|.
-    DATA(t397) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
+    DATA(t396) = CONV string( |MacroName| ).
+    DATA(t397) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d214_4a4b8612d221 ).
     t394 = t395->set( p0 = t396 p1 = t397 ).
     DATA t398 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t398.
@@ -1117,8 +1119,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t399 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t400) = |MessageSourceSource|.
-    DATA(t401) = zlnt_runtime_desc_78196487750d=>zlnt_member_d213_62076b901fdc.
+    DATA(t400) = CONV string( |MessageClass| ).
+    DATA(t401) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d215_80780944ec3f ).
     t398 = t399->set( p0 = t400 p1 = t401 ).
     DATA t402 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t402.
@@ -1128,8 +1130,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t403 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t404) = |MessageSource|.
-    DATA(t405) = zlnt_runtime_desc_78196487750d=>zlnt_member_d212_ad2d7a05fa43.
+    DATA(t404) = CONV string( |MessageNumber| ).
+    DATA(t405) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d216_5867c1ce5807 ).
     t402 = t403->set( p0 = t404 p1 = t405 ).
     DATA t406 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t406.
@@ -1139,8 +1141,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t407 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t408) = |MessageTypeAndNumber|.
-    DATA(t409) = zlnt_runtime_desc_78196487750d=>zlnt_member_d211_bc99aed7bb7c.
+    DATA(t408) = CONV string( |MessageSourceSource| ).
+    DATA(t409) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d219_2dee75409f14 ).
     t406 = t407->set( p0 = t408 p1 = t409 ).
     DATA t410 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t410.
@@ -1150,8 +1152,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t411 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t412) = |MethodCallBody|.
-    DATA(t413) = zlnt_runtime_desc_78196487750d=>zlnt_member_d217_b89e20eef6cb.
+    DATA(t412) = CONV string( |MessageSource| ).
+    DATA(t413) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d218_79f2a1395386 ).
     t410 = t411->set( p0 = t412 p1 = t413 ).
     DATA t414 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t414.
@@ -1161,8 +1163,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t415 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t416) = |MethodCallChain|.
-    DATA(t417) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
+    DATA(t416) = CONV string( |MessageTypeAndNumber| ).
+    DATA(t417) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d217_b89e20eef6cb ).
     t414 = t415->set( p0 = t416 p1 = t417 ).
     DATA t418 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t418.
@@ -1172,8 +1174,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t419 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t420) = |MethodCallParam|.
-    DATA(t421) = zlnt_runtime_desc_78196487750d=>zlnt_member_d214_4a4b8612d221.
+    DATA(t420) = CONV string( |MethodCallBody| ).
+    DATA(t421) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d223_6da5f452a761 ).
     t418 = t419->set( p0 = t420 p1 = t421 ).
     DATA t422 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t422.
@@ -1183,8 +1185,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t423 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t424) = |MethodCall|.
-    DATA(t425) = zlnt_runtime_desc_78196487750d=>zlnt_member_d215_80780944ec3f.
+    DATA(t424) = CONV string( |MethodCallChain| ).
+    DATA(t425) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d122_32972f7bb68e ).
     t422 = t423->set( p0 = t424 p1 = t425 ).
     DATA t426 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t426.
@@ -1194,8 +1196,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t427 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t428) = |MethodDefChanging|.
-    DATA(t429) = zlnt_runtime_desc_78196487750d=>zlnt_member_d221_0c54ed92df99.
+    DATA(t428) = CONV string( |MethodCallParam| ).
+    DATA(t429) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb ).
     t426 = t427->set( p0 = t428 p1 = t429 ).
     DATA t430 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t430.
@@ -1205,8 +1207,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t431 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t432) = |MethodDefExceptions|.
-    DATA(t433) = zlnt_runtime_desc_78196487750d=>zlnt_member_d223_6da5f452a761.
+    DATA(t432) = CONV string( |MethodCall| ).
+    DATA(t433) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d221_0c54ed92df99 ).
     t430 = t431->set( p0 = t432 p1 = t433 ).
     DATA t434 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t434.
@@ -1216,8 +1218,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t435 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t436) = |MethodDefExporting|.
-    DATA(t437) = zlnt_runtime_desc_78196487750d=>zlnt_member_d225_0eec1dcc9b8a.
+    DATA(t436) = CONV string( |MethodDefChanging| ).
+    DATA(t437) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d227_3477e061b4c4 ).
     t434 = t435->set( p0 = t436 p1 = t437 ).
     DATA t438 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t438.
@@ -1227,8 +1229,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t439 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t440) = |MethodDefImporting|.
-    DATA(t441) = zlnt_runtime_desc_78196487750d=>zlnt_member_d226_08d3e6bb8e97.
+    DATA(t440) = CONV string( |MethodDefExceptions| ).
+    DATA(t441) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d229_3a5c1215c384 ).
     t438 = t439->set( p0 = t440 p1 = t441 ).
     DATA t442 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t442.
@@ -1238,8 +1240,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t443 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t444) = |MethodDefRaising|.
-    DATA(t445) = zlnt_runtime_desc_78196487750d=>zlnt_member_d227_3477e061b4c4.
+    DATA(t444) = CONV string( |MethodDefExporting| ).
+    DATA(t445) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d231_5616e0c1afc0 ).
     t442 = t443->set( p0 = t444 p1 = t445 ).
     DATA t446 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t446.
@@ -1249,8 +1251,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t447 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t448) = |MethodDefReturning|.
-    DATA(t449) = zlnt_runtime_desc_78196487750d=>zlnt_member_d229_3a5c1215c384.
+    DATA(t448) = CONV string( |MethodDefImporting| ).
+    DATA(t449) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d232_18850346ba57 ).
     t446 = t447->set( p0 = t448 p1 = t449 ).
     DATA t450 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t450.
@@ -1260,8 +1262,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t451 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t452) = |MethodName|.
-    DATA(t453) = zlnt_runtime_desc_78196487750d=>zlnt_member_d86_5c0b7073356207.
+    DATA(t452) = CONV string( |MethodDefRaising| ).
+    DATA(t453) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d233_66b4b8df8ddb ).
     t450 = t451->set( p0 = t452 p1 = t453 ).
     DATA t454 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t454.
@@ -1271,8 +1273,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t455 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t456) = |MethodParamName|.
-    DATA(t457) = zlnt_runtime_desc_78196487750d=>zlnt_member_d160_b1cea157d835.
+    DATA(t456) = CONV string( |MethodDefReturning| ).
+    DATA(t457) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca ).
     t454 = t455->set( p0 = t456 p1 = t457 ).
     DATA t458 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t458.
@@ -1282,8 +1284,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t459 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t460) = |MethodParamOptional|.
-    DATA(t461) = zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb.
+    DATA(t460) = CONV string( |MethodName| ).
+    DATA(t461) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d88_73c97f542216fb ).
     t458 = t459->set( p0 = t460 p1 = t461 ).
     DATA t462 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t462.
@@ -1293,8 +1295,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t463 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t464) = |MethodParam|.
-    DATA(t465) = zlnt_runtime_desc_78196487750d=>zlnt_member_d224_4e54f441ad62.
+    DATA(t464) = CONV string( |MethodParamName| ).
+    DATA(t465) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d164_a1523c275ce1 ).
     t462 = t463->set( p0 = t464 p1 = t465 ).
     DATA t466 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t466.
@@ -1304,8 +1306,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t467 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t468) = |MethodParameters|.
-    DATA(t469) = zlnt_runtime_desc_78196487750d=>zlnt_member_d216_5867c1ce5807.
+    DATA(t468) = CONV string( |MethodParamOptional| ).
+    DATA(t469) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d226_08d3e6bb8e97 ).
     t466 = t467->set( p0 = t468 p1 = t469 ).
     DATA t470 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t470.
@@ -1315,8 +1317,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t471 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t472) = |MethodSource|.
-    DATA(t473) = zlnt_runtime_desc_78196487750d=>zlnt_member_d231_5616e0c1afc0.
+    DATA(t472) = CONV string( |MethodParam| ).
+    DATA(t473) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d230_9e8d73de9f81 ).
     t470 = t471->set( p0 = t472 p1 = t473 ).
     DATA t474 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t474.
@@ -1326,8 +1328,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t475 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t476) = |Modif|.
-    DATA(t477) = zlnt_runtime_desc_78196487750d=>zlnt_member_d232_18850346ba57.
+    DATA(t476) = CONV string( |MethodParameters| ).
+    DATA(t477) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470 ).
     t474 = t475->set( p0 = t476 p1 = t477 ).
     DATA t478 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t478.
@@ -1337,8 +1339,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t479 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t480) = |NamespaceSimpleName|.
-    DATA(t481) = zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470.
+    DATA(t480) = CONV string( |MethodSource| ).
+    DATA(t481) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d237_6d1df3154820 ).
     t478 = t479->set( p0 = t480 p1 = t481 ).
     DATA t482 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t482.
@@ -1348,8 +1350,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t483 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t484) = |NewObject|.
-    DATA(t485) = zlnt_runtime_desc_78196487750d=>zlnt_member_d218_79f2a1395386.
+    DATA(t484) = CONV string( |Modif| ).
+    DATA(t485) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d238_a05d3ab5e106 ).
     t482 = t483->set( p0 = t484 p1 = t485 ).
     DATA t486 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t486.
@@ -1359,8 +1361,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t487 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t488) = |OLEExporting|.
-    DATA(t489) = zlnt_runtime_desc_78196487750d=>zlnt_member_d233_66b4b8df8ddb.
+    DATA(t488) = CONV string( |NamespaceSimpleName| ).
+    DATA(t489) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429 ).
     t486 = t487->set( p0 = t488 p1 = t489 ).
     DATA t490 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t490.
@@ -1370,8 +1372,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t491 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t492) = |Or|.
-    DATA(t493) = zlnt_runtime_desc_78196487750d=>zlnt_member_d234_68ba21bb5634.
+    DATA(t492) = CONV string( |NewObject| ).
+    DATA(t493) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d224_4e54f441ad62 ).
     t490 = t491->set( p0 = t492 p1 = t493 ).
     DATA t494 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t494.
@@ -1381,8 +1383,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t495 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t496) = |ParameterException|.
-    DATA(t497) = zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca.
+    DATA(t496) = CONV string( |OLEExporting| ).
+    DATA(t497) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d239_2b0cd25fcf16 ).
     t494 = t495->set( p0 = t496 p1 = t497 ).
     DATA t498 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t498.
@@ -1392,8 +1394,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t499 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t500) = |ParameterListExceptions|.
-    DATA(t501) = zlnt_runtime_desc_78196487750d=>zlnt_member_d191_203ebd87c4e5.
+    DATA(t500) = CONV string( |Or| ).
+    DATA(t501) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d240_19cb4e87e8c0 ).
     t498 = t499->set( p0 = t500 p1 = t501 ).
     DATA t502 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t502.
@@ -1403,8 +1405,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t503 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t504) = |ParameterListS|.
-    DATA(t505) = zlnt_runtime_desc_78196487750d=>zlnt_member_d219_2dee75409f14.
+    DATA(t504) = CONV string( |ParameterException| ).
+    DATA(t505) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95 ).
     t502 = t503->set( p0 = t504 p1 = t505 ).
     DATA t506 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t506.
@@ -1414,8 +1416,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t507 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t508) = |ParameterListT|.
-    DATA(t509) = zlnt_runtime_desc_78196487750d=>zlnt_member_d190_8da19a9c3edb.
+    DATA(t508) = CONV string( |ParameterListExceptions| ).
+    DATA(t509) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d200_9c08cf3762d0 ).
     t506 = t507->set( p0 = t508 p1 = t509 ).
     DATA t510 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t510.
@@ -1425,8 +1427,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t511 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t512) = |ParameterName|.
-    DATA(t513) = zlnt_runtime_desc_78196487750d=>zlnt_member_d188_0b071dbb03a9.
+    DATA(t512) = CONV string( |ParameterListS| ).
+    DATA(t513) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d225_0eec1dcc9b8a ).
     t510 = t511->set( p0 = t512 p1 = t513 ).
     DATA t514 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t514.
@@ -1436,8 +1438,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t515 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t516) = |ParameterS|.
-    DATA(t517) = zlnt_runtime_desc_78196487750d=>zlnt_member_d236_e9f6471ae6bb.
+    DATA(t516) = CONV string( |ParameterListT| ).
+    DATA(t517) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d199_07bab553574b ).
     t514 = t515->set( p0 = t516 p1 = t517 ).
     DATA t518 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t518.
@@ -1447,8 +1449,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t519 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t520) = |ParameterT|.
-    DATA(t521) = zlnt_runtime_desc_78196487750d=>zlnt_member_d230_9e8d73de9f81.
+    DATA(t520) = CONV string( |ParameterName| ).
+    DATA(t521) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a ).
     t518 = t519->set( p0 = t520 p1 = t521 ).
     DATA t522 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t522.
@@ -1458,8 +1460,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t523 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t524) = |PassByValue|.
-    DATA(t525) = zlnt_runtime_desc_78196487750d=>zlnt_member_d176_70730c0e7184.
+    DATA(t524) = CONV string( |ParameterS| ).
+    DATA(t525) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d242_5c40a9da79b4 ).
     t522 = t523->set( p0 = t524 p1 = t525 ).
     DATA t526 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t526.
@@ -1469,8 +1471,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t527 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t528) = |PerformChanging|.
-    DATA(t529) = zlnt_runtime_desc_78196487750d=>zlnt_member_d237_6d1df3154820.
+    DATA(t528) = CONV string( |ParameterT| ).
+    DATA(t529) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d236_e9f6471ae6bb ).
     t526 = t527->set( p0 = t528 p1 = t529 ).
     DATA t530 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t530.
@@ -1480,8 +1482,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t531 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t532) = |PerformTables|.
-    DATA(t533) = zlnt_runtime_desc_78196487750d=>zlnt_member_d238_a05d3ab5e106.
+    DATA(t532) = CONV string( |PassByValue| ).
+    DATA(t533) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d186_713e1678710c ).
     t530 = t531->set( p0 = t532 p1 = t533 ).
     DATA t534 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t534.
@@ -1491,8 +1493,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t535 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t536) = |PerformUsing|.
-    DATA(t537) = zlnt_runtime_desc_78196487750d=>zlnt_member_d239_2b0cd25fcf16.
+    DATA(t536) = CONV string( |PerformChanging| ).
+    DATA(t537) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d243_4c26f150237d ).
     t534 = t535->set( p0 = t536 p1 = t537 ).
     DATA t538 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t538.
@@ -1502,8 +1504,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t539 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t540) = |ProvideFieldName|.
-    DATA(t541) = zlnt_runtime_desc_78196487750d=>zlnt_member_d240_19cb4e87e8c0.
+    DATA(t540) = CONV string( |PerformTables| ).
+    DATA(t541) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d244_ecc6d4776dc2 ).
     t538 = t539->set( p0 = t540 p1 = t541 ).
     DATA t542 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t542.
@@ -1513,8 +1515,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t543 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t544) = |RadioGroupName|.
-    DATA(t545) = zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95.
+    DATA(t544) = CONV string( |PerformUsing| ).
+    DATA(t545) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d245_8da77b7903ad ).
     t542 = t543->set( p0 = t544 p1 = t545 ).
     DATA t546 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t546.
@@ -1524,8 +1526,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t547 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t548) = |RaiseWith|.
-    DATA(t549) = zlnt_runtime_desc_78196487750d=>zlnt_member_d242_5c40a9da79b4.
+    DATA(t548) = CONV string( |ProvideFieldName| ).
+    DATA(t549) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d246_f8272c765b13 ).
     t546 = t547->set( p0 = t548 p1 = t549 ).
     DATA t550 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t550.
@@ -1535,8 +1537,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t551 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t552) = |ReadTableTarget|.
-    DATA(t553) = zlnt_runtime_desc_78196487750d=>zlnt_member_d243_4c26f150237d.
+    DATA(t552) = CONV string( |RadioGroupName| ).
+    DATA(t553) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d247_a74410852a3d ).
     t550 = t551->set( p0 = t552 p1 = t553 ).
     DATA t554 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t554.
@@ -1546,8 +1548,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t555 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t556) = |ReceiveParameters|.
-    DATA(t557) = zlnt_runtime_desc_78196487750d=>zlnt_member_d244_ecc6d4776dc2.
+    DATA(t556) = CONV string( |RaiseWith| ).
+    DATA(t557) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d249_9dc4af95df9d ).
     t554 = t555->set( p0 = t556 p1 = t557 ).
     DATA t558 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t558.
@@ -1557,8 +1559,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t559 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t560) = |Redefinition|.
-    DATA(t561) = zlnt_runtime_desc_78196487750d=>zlnt_member_d245_8da77b7903ad.
+    DATA(t560) = CONV string( |ReadTableTarget| ).
+    DATA(t561) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d250_08c3abeac258 ).
     t558 = t559->set( p0 = t560 p1 = t561 ).
     DATA t562 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t562.
@@ -1568,8 +1570,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t563 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t564) = |ReduceBody|.
-    DATA(t565) = zlnt_runtime_desc_78196487750d=>zlnt_member_d246_f8272c765b13.
+    DATA(t564) = CONV string( |ReceiveParameters| ).
+    DATA(t565) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d251_f36ca3dcb3e0 ).
     t562 = t563->set( p0 = t564 p1 = t565 ).
     DATA t566 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t566.
@@ -1579,8 +1581,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t567 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t568) = |ReduceNext|.
-    DATA(t569) = zlnt_runtime_desc_78196487750d=>zlnt_member_d247_a74410852a3d.
+    DATA(t568) = CONV string( |Redefinition| ).
+    DATA(t569) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d252_17c445ac4167 ).
     t566 = t567->set( p0 = t568 p1 = t569 ).
     DATA t570 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t570.
@@ -1590,8 +1592,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t571 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t572) = |ReportName|.
-    DATA(t573) = zlnt_runtime_desc_78196487750d=>zlnt_member_d248_d62fd91017f7.
+    DATA(t572) = CONV string( |ReduceBody| ).
+    DATA(t573) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3 ).
     t570 = t571->set( p0 = t572 p1 = t573 ).
     DATA t574 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t574.
@@ -1601,8 +1603,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t575 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t576) = |SelectCTE|.
-    DATA(t577) = zlnt_runtime_desc_78196487750d=>zlnt_member_d255_88331b4186a0.
+    DATA(t576) = CONV string( |ReduceNext| ).
+    DATA(t577) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d253_daaebfcb0814 ).
     t574 = t575->set( p0 = t576 p1 = t577 ).
     DATA t578 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t578.
@@ -1612,8 +1614,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t579 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t580) = |SQLCTEAssociations|.
-    DATA(t581) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
+    DATA(t580) = CONV string( |ReportName| ).
+    DATA(t581) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d256_4aab5e345b39 ).
     t578 = t579->set( p0 = t580 p1 = t581 ).
     DATA t582 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t582.
@@ -1623,8 +1625,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t583 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t584) = |SQLCTEHierarchy|.
-    DATA(t585) = zlnt_runtime_desc_78196487750d=>zlnt_member_d284_6229eec94af2.
+    DATA(t584) = CONV string( |SelectCTE| ).
+    DATA(t585) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d277_c16b515a2f49 ).
     t582 = t583->set( p0 = t584 p1 = t585 ).
     DATA t586 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t586.
@@ -1634,8 +1636,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t587 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t588) = |SQLHierarchySource|.
-    DATA(t589) = zlnt_runtime_desc_78196487750d=>zlnt_member_d312_76c7dcb129d0.
+    DATA(t588) = CONV string( |SQLCTEAssociations| ).
+    DATA(t589) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c ).
     t586 = t587->set( p0 = t588 p1 = t589 ).
     DATA t590 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t590.
@@ -1645,8 +1647,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t591 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t592) = |SQLHierarchyAccessor|.
-    DATA(t593) = zlnt_runtime_desc_78196487750d=>zlnt_member_d310_a5d6a619b3d6.
+    DATA(t592) = CONV string( |SQLCTEHierarchy| ).
+    DATA(t593) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d307_fbcde215a988 ).
     t590 = t591->set( p0 = t592 p1 = t593 ).
     DATA t594 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t594.
@@ -1656,8 +1658,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t595 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t596) = |SQLHierarchyAggregate|.
-    DATA(t597) = zlnt_runtime_desc_78196487750d=>zlnt_member_d311_e91cc88fe129.
+    DATA(t596) = CONV string( |SQLHierarchySource| ).
+    DATA(t597) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d331_0a1ba381b33b ).
     t594 = t595->set( p0 = t596 p1 = t597 ).
     DATA t598 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t598.
@@ -1667,8 +1669,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t599 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t600) = |Select|.
-    DATA(t601) = zlnt_runtime_desc_78196487750d=>zlnt_member_d254_c290c4a7bfe3.
+    DATA(t600) = CONV string( |SQLHierarchyAccessor| ).
+    DATA(t601) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d329_7e278fad49db ).
     t598 = t599->set( p0 = t600 p1 = t601 ).
     DATA t602 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t602.
@@ -1678,8 +1680,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t603 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t604) = |SimpleFieldChain|.
-    DATA(t605) = zlnt_runtime_desc_78196487750d=>zlnt_member_d138_55fd16dd4da4.
+    DATA(t604) = CONV string( |SQLHierarchyAggregate| ).
+    DATA(t605) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d330_a5190e54e774 ).
     t602 = t603->set( p0 = t604 p1 = t605 ).
     DATA t606 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t606.
@@ -1689,8 +1691,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t607 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t608) = |SimpleFieldChain2|.
-    DATA(t609) = zlnt_runtime_desc_78196487750d=>zlnt_member_d167_3c4543cf3a18.
+    DATA(t608) = CONV string( |Select| ).
+    DATA(t609) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0 ).
     t606 = t607->set( p0 = t608 p1 = t609 ).
     DATA t610 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t610.
@@ -1700,8 +1702,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t611 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t612) = |SimpleName|.
-    DATA(t613) = zlnt_runtime_desc_78196487750d=>zlnt_member_d256_4aab5e345b39.
+    DATA(t612) = CONV string( |SimpleFieldChain| ).
+    DATA(t613) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d141_e96a425f6743 ).
     t610 = t611->set( p0 = t612 p1 = t613 ).
     DATA t614 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t614.
@@ -1711,8 +1713,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t615 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t616) = |SimpleSource1|.
-    DATA(t617) = zlnt_runtime_desc_78196487750d=>zlnt_member_d258_47daac7ded2f.
+    DATA(t616) = CONV string( |SimpleFieldChain2| ).
+    DATA(t617) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d171_8a7e3c79c08f ).
     t614 = t615->set( p0 = t616 p1 = t617 ).
     DATA t618 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t618.
@@ -1722,8 +1724,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t619 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t620) = |SimpleSource2|.
-    DATA(t621) = zlnt_runtime_desc_78196487750d=>zlnt_member_d204_9c49dd4bb1b2.
+    DATA(t620) = CONV string( |SimpleName| ).
+    DATA(t621) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d173_fd387289a527 ).
     t618 = t619->set( p0 = t620 p1 = t621 ).
     DATA t622 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t622.
@@ -1733,8 +1735,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t623 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t624) = |SimpleSource3|.
-    DATA(t625) = zlnt_runtime_desc_78196487750d=>zlnt_member_d92_9ef7e4968cfbeb.
+    DATA(t624) = CONV string( |SimpleSource1| ).
+    DATA(t625) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d248_d62fd91017f7 ).
     t622 = t623->set( p0 = t624 p1 = t625 ).
     DATA t626 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t626.
@@ -1744,8 +1746,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t627 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t628) = |SimpleSource4|.
-    DATA(t629) = zlnt_runtime_desc_78196487750d=>zlnt_member_d127_3599949d7390.
+    DATA(t628) = CONV string( |SimpleSource2| ).
+    DATA(t629) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d211_bc99aed7bb7c ).
     t626 = t627->set( p0 = t628 p1 = t629 ).
     DATA t630 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t630.
@@ -1755,8 +1757,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t631 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t632) = |SimpleTarget|.
-    DATA(t633) = zlnt_runtime_desc_78196487750d=>zlnt_member_d259_29e6bae3a66c.
+    DATA(t632) = CONV string( |SimpleSource3| ).
+    DATA(t633) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d94_8a2bfacd888428 ).
     t630 = t631->set( p0 = t632 p1 = t633 ).
     DATA t634 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t634.
@@ -1766,8 +1768,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t635 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t636) = |SourceFieldSymbolChain|.
-    DATA(t637) = zlnt_runtime_desc_78196487750d=>zlnt_member_d122_32972f7bb68e.
+    DATA(t636) = CONV string( |SimpleSource4| ).
+    DATA(t637) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d129_b622fad61480 ).
     t634 = t635->set( p0 = t636 p1 = t637 ).
     DATA t638 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t638.
@@ -1777,8 +1779,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t639 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t640) = |SourceFieldSymbol|.
-    DATA(t641) = zlnt_runtime_desc_78196487750d=>zlnt_member_d166_95d94e882be8.
+    DATA(t640) = CONV string( |SimpleTarget| ).
+    DATA(t641) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d255_88331b4186a0 ).
     t638 = t639->set( p0 = t640 p1 = t641 ).
     DATA t642 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t642.
@@ -1788,8 +1790,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t643 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t644) = |SourceField|.
-    DATA(t645) = zlnt_runtime_desc_78196487750d=>zlnt_member_d165_590ae906b133.
+    DATA(t644) = CONV string( |SourceFieldSymbolChain| ).
+    DATA(t645) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d124_1ce9c8f13c80 ).
     t642 = t643->set( p0 = t644 p1 = t645 ).
     DATA t646 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t646.
@@ -1799,8 +1801,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t647 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t648) = |Source|.
-    DATA(t649) = zlnt_runtime_desc_78196487750d=>zlnt_member_d93_8213d1edad7f74.
+    DATA(t648) = CONV string( |SourceFieldSymbol| ).
+    DATA(t649) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d170_d4b536f00e50 ).
     t646 = t647->set( p0 = t648 p1 = t649 ).
     DATA t650 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t650.
@@ -1810,8 +1812,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t651 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t652) = |SQLAggregation|.
-    DATA(t653) = zlnt_runtime_desc_78196487750d=>zlnt_member_d265_12d4325923b8.
+    DATA(t652) = CONV string( |SourceField| ).
+    DATA(t653) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d169_f7493de77386 ).
     t650 = t651->set( p0 = t652 p1 = t653 ).
     DATA t654 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t654.
@@ -1821,8 +1823,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t655 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t656) = |SQLPathSegment|.
-    DATA(t657) = zlnt_runtime_desc_78196487750d=>zlnt_member_d326_f861243d7542.
+    DATA(t656) = CONV string( |Source| ).
+    DATA(t657) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
     t654 = t655->set( p0 = t656 p1 = t657 ).
     DATA t658 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t658.
@@ -1832,8 +1834,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t659 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t660) = |SQLAliasField|.
-    DATA(t661) = zlnt_runtime_desc_78196487750d=>zlnt_member_d266_3b538ddd2a60.
+    DATA(t660) = CONV string( |SQLAggregation| ).
+    DATA(t661) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d284_6229eec94af2 ).
     t658 = t659->set( p0 = t660 p1 = t661 ).
     DATA t662 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t662.
@@ -1843,8 +1845,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t663 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t664) = |SQLAsName|.
-    DATA(t665) = zlnt_runtime_desc_78196487750d=>zlnt_member_d267_42ee2e3380a0.
+    DATA(t664) = CONV string( |SQLAssociationEntry| ).
+    DATA(t665) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d291_77feaa8efd76 ).
     t662 = t663->set( p0 = t664 p1 = t665 ).
     DATA t666 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t666.
@@ -1854,8 +1856,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t667 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t668) = |SQLCase|.
-    DATA(t669) = zlnt_runtime_desc_78196487750d=>zlnt_member_d269_df623ced1aed.
+    DATA(t668) = CONV string( |SQLAssociationsList| ).
+    DATA(t669) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d292_48e50b6486bc ).
     t666 = t667->set( p0 = t668 p1 = t669 ).
     DATA t670 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t670.
@@ -1865,8 +1867,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t671 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t672) = |SQLBypassingBuffer|.
-    DATA(t673) = zlnt_runtime_desc_78196487750d=>zlnt_member_d268_bc2d6eaf7263.
+    DATA(t672) = CONV string( |SQLPathSegment| ).
+    DATA(t673) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d344_e2f9d6730e5a ).
     t670 = t671->set( p0 = t672 p1 = t673 ).
     DATA t674 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t674.
@@ -1876,8 +1878,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t675 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t676) = |SQLCDSParameters|.
-    DATA(t677) = zlnt_runtime_desc_78196487750d=>zlnt_member_d274_5d558843257f.
+    DATA(t676) = CONV string( |SQLAliasField| ).
+    DATA(t677) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d285_443a2a1b82f8 ).
     t674 = t675->set( p0 = t676 p1 = t677 ).
     DATA t678 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t678.
@@ -1887,8 +1889,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t679 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t680) = |SQLClient|.
-    DATA(t681) = zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d.
+    DATA(t680) = CONV string( |SQLArithmeticOperator| ).
+    DATA(t681) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d286_cf5169b94e53 ).
     t678 = t679->set( p0 = t680 p1 = t681 ).
     DATA t682 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t682.
@@ -1898,8 +1900,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t683 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t684) = |SQLCompareOperator|.
-    DATA(t685) = zlnt_runtime_desc_78196487750d=>zlnt_member_d278_cacef970a917.
+    DATA(t684) = CONV string( |SQLArithmetics| ).
+    DATA(t685) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d288_09589b7663ff ).
     t682 = t683->set( p0 = t684 p1 = t685 ).
     DATA t686 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t686.
@@ -1909,8 +1911,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t687 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t688) = |SQLCompare|.
-    DATA(t689) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
+    DATA(t688) = CONV string( |SQLAsName| ).
+    DATA(t689) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d289_f424b1178837 ).
     t686 = t687->set( p0 = t688 p1 = t689 ).
     DATA t690 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t690.
@@ -1920,8 +1922,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t691 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t692) = |SQLCond|.
-    DATA(t693) = zlnt_runtime_desc_78196487750d=>zlnt_member_d273_c3e7a9098543.
+    DATA(t692) = CONV string( |SQLCase| ).
+    DATA(t693) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d294_92c50184534c ).
     t690 = t691->set( p0 = t692 p1 = t693 ).
     DATA t694 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t694.
@@ -1931,8 +1933,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t695 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t696) = |SQLFieldAndValue|.
-    DATA(t697) = zlnt_runtime_desc_78196487750d=>zlnt_member_d292_48e50b6486bc.
+    DATA(t696) = CONV string( |SQLBypassingBuffer| ).
+    DATA(t697) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d293_8f762dd42d06 ).
     t694 = t695->set( p0 = t696 p1 = t697 ).
     DATA t698 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t698.
@@ -1942,8 +1944,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t699 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t700) = |SQLFieldListLoop|.
-    DATA(t701) = zlnt_runtime_desc_78196487750d=>zlnt_member_d294_92c50184534c.
+    DATA(t700) = CONV string( |SQLCDSParameters| ).
+    DATA(t701) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d296_6b49712a4964 ).
     t698 = t699->set( p0 = t700 p1 = t701 ).
     DATA t702 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t702.
@@ -1953,8 +1955,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t703 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t704) = |SQLFieldList|.
-    DATA(t705) = zlnt_runtime_desc_78196487750d=>zlnt_member_d293_8f762dd42d06.
+    DATA(t704) = CONV string( |SQLClient| ).
+    DATA(t705) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d272_6a64f0eb4e20 ).
     t702 = t703->set( p0 = t704 p1 = t705 ).
     DATA t706 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t706.
@@ -1964,8 +1966,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t707 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t708) = |SQLFieldName|.
-    DATA(t709) = zlnt_runtime_desc_78196487750d=>zlnt_member_d263_a6b95897eaba.
+    DATA(t708) = CONV string( |SQLCompareOperator| ).
+    DATA(t709) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d298_782c2da798c9 ).
     t706 = t707->set( p0 = t708 p1 = t709 ).
     DATA t710 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t710.
@@ -1975,8 +1977,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t711 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t712) = |SQLField|.
-    DATA(t713) = zlnt_runtime_desc_78196487750d=>zlnt_member_d291_77feaa8efd76.
+    DATA(t712) = CONV string( |SQLCompare| ).
+    DATA(t713) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d301_61c04e5b3781 ).
     t710 = t711->set( p0 = t712 p1 = t713 ).
     DATA t714 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t714.
@@ -1986,8 +1988,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t715 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t716) = |SQLFields|.
-    DATA(t717) = zlnt_runtime_desc_78196487750d=>zlnt_member_d295_c8c13651616a.
+    DATA(t716) = CONV string( |SQLCond| ).
+    DATA(t717) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d263_a6b95897eaba ).
     t714 = t715->set( p0 = t716 p1 = t717 ).
     DATA t718 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t718.
@@ -1997,8 +1999,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t719 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t720) = |SQLForAllEntries|.
-    DATA(t721) = zlnt_runtime_desc_78196487750d=>zlnt_member_d296_6b49712a4964.
+    DATA(t720) = CONV string( |SQLFieldAndValue| ).
+    DATA(t721) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d316_43ef1bb28f89 ).
     t718 = t719->set( p0 = t720 p1 = t721 ).
     DATA t722 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t722.
@@ -2008,8 +2010,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t723 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t724) = |SQLExtendedResult|.
-    DATA(t725) = zlnt_runtime_desc_78196487750d=>zlnt_member_d289_f424b1178837.
+    DATA(t724) = CONV string( |SQLFieldListLoop| ).
+    DATA(t725) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d318_e4aedf15dc12 ).
     t722 = t723->set( p0 = t724 p1 = t725 ).
     DATA t726 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t726.
@@ -2019,8 +2021,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t727 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t728) = |SQLCreating|.
-    DATA(t729) = zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26.
+    DATA(t728) = CONV string( |SQLFieldList| ).
+    DATA(t729) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d317_252b4f448498 ).
     t726 = t727->set( p0 = t728 p1 = t729 ).
     DATA t730 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t730.
@@ -2030,8 +2032,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t731 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t732) = |SQLProvidedBy|.
-    DATA(t733) = zlnt_runtime_desc_78196487750d=>zlnt_member_d301_61c04e5b3781.
+    DATA(t732) = CONV string( |SQLFieldName| ).
+    DATA(t733) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26 ).
     t730 = t731->set( p0 = t732 p1 = t733 ).
     DATA t734 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t734.
@@ -2041,8 +2043,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t735 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t736) = |SQLExposeClientAs|.
-    DATA(t737) = zlnt_runtime_desc_78196487750d=>zlnt_member_d288_09589b7663ff.
+    DATA(t736) = CONV string( |SQLField| ).
+    DATA(t737) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d315_136d5faf95cc ).
     t734 = t735->set( p0 = t736 p1 = t737 ).
     DATA t738 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t738.
@@ -2052,8 +2054,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t739 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t740) = |SQLCTEPathPrefix|.
-    DATA(t741) = zlnt_runtime_desc_78196487750d=>zlnt_member_d285_443a2a1b82f8.
+    DATA(t740) = CONV string( |SQLFieldsLoop| ).
+    DATA(t741) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d273_c3e7a9098543 ).
     t738 = t739->set( p0 = t740 p1 = t741 ).
     DATA t742 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t742.
@@ -2063,8 +2065,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t743 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t744) = |SQLTypedLiteral|.
-    DATA(t745) = zlnt_runtime_desc_78196487750d=>zlnt_member_d290_f492e89b83f5.
+    DATA(t744) = CONV string( |SQLFields| ).
+    DATA(t745) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d319_3b9487add007 ).
     t742 = t743->set( p0 = t744 p1 = t745 ).
     DATA t746 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t746.
@@ -2074,8 +2076,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t747 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t748) = |SQLFromSource|.
-    DATA(t749) = zlnt_runtime_desc_78196487750d=>zlnt_member_d299_0ba2c1ef340d.
+    DATA(t748) = CONV string( |SQLForAllEntries| ).
+    DATA(t749) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d274_5d558843257f ).
     t746 = t747->set( p0 = t748 p1 = t749 ).
     DATA t750 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t750.
@@ -2085,8 +2087,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t751 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t752) = |SQLFromBody|.
-    DATA(t753) = zlnt_runtime_desc_78196487750d=>zlnt_member_d300_344d539249f5.
+    DATA(t752) = CONV string( |SQLExtendedResult| ).
+    DATA(t753) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d313_63087fa9e019 ).
     t750 = t751->set( p0 = t752 p1 = t753 ).
     DATA t754 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t754.
@@ -2096,8 +2098,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t755 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t756) = |SQLFrom|.
-    DATA(t757) = zlnt_runtime_desc_78196487750d=>zlnt_member_d297_8dd76b8d3d10.
+    DATA(t756) = CONV string( |SQLCreating| ).
+    DATA(t757) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d303_41f42c023891 ).
     t754 = t755->set( p0 = t756 p1 = t757 ).
     DATA t758 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t758.
@@ -2107,8 +2109,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t759 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t760) = |SQLFunctionInput|.
-    DATA(t761) = zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0.
+    DATA(t760) = CONV string( |SQLCreatingTypeSpec| ).
+    DATA(t761) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d302_ef2b4b46983a ).
     t758 = t759->set( p0 = t760 p1 = t761 ).
     DATA t762 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t762.
@@ -2118,8 +2120,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t763 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t764) = |SQLFunction|.
-    DATA(t765) = zlnt_runtime_desc_78196487750d=>zlnt_member_d270_547c551ca3da.
+    DATA(t764) = CONV string( |SQLCreatingForScope| ).
+    DATA(t765) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d305_1d893c9cc0cb ).
     t762 = t763->set( p0 = t764 p1 = t765 ).
     DATA t766 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t766.
@@ -2129,8 +2131,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t767 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t768) = |SQLRegexprPattern|.
-    DATA(t769) = zlnt_runtime_desc_78196487750d=>zlnt_member_d317_252b4f448498.
+    DATA(t768) = CONV string( |SQLCreatingColumns| ).
+    DATA(t769) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d304_37e1cb13dad0 ).
     t766 = t767->set( p0 = t768 p1 = t769 ).
     DATA t770 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t770.
@@ -2140,8 +2142,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t771 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t772) = |SQLRegexprFrom|.
-    DATA(t773) = zlnt_runtime_desc_78196487750d=>zlnt_member_d318_e4aedf15dc12.
+    DATA(t772) = CONV string( |SQLProvidedBy| ).
+    DATA(t773) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d323_2cd6e0020229 ).
     t770 = t771->set( p0 = t772 p1 = t773 ).
     DATA t774 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t774.
@@ -2151,8 +2153,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t775 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t776) = |SQLRegexprOccurrence|.
-    DATA(t777) = zlnt_runtime_desc_78196487750d=>zlnt_member_d319_3b9487add007.
+    DATA(t776) = CONV string( |SQLExposeClientAs| ).
+    DATA(t777) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d312_76c7dcb129d0 ).
     t774 = t775->set( p0 = t776 p1 = t777 ).
     DATA t778 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t778.
@@ -2162,8 +2164,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t779 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t780) = |SQLRegexprGroup|.
-    DATA(t781) = zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf.
+    DATA(t780) = CONV string( |SQLDefiningNewAssociation| ).
+    DATA(t781) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d310_a5d6a619b3d6 ).
     t778 = t779->set( p0 = t780 p1 = t781 ).
     DATA t782 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t782.
@@ -2173,8 +2175,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t783 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t784) = |SQLReplaceRegexpr|.
-    DATA(t785) = zlnt_runtime_desc_78196487750d=>zlnt_member_d303_41f42c023891.
+    DATA(t784) = CONV string( |SQLCTEPathPrefix| ).
+    DATA(t785) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d308_c2d6db3f5bbf ).
     t782 = t783->set( p0 = t784 p1 = t785 ).
     DATA t786 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t786.
@@ -2184,8 +2186,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t787 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t788) = |SQLOccurrencesRegexpr|.
-    DATA(t789) = zlnt_runtime_desc_78196487750d=>zlnt_member_d304_37e1cb13dad0.
+    DATA(t788) = CONV string( |SQLTypedLiteral| ).
+    DATA(t789) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d314_757c7fdfaec1 ).
     t786 = t787->set( p0 = t788 p1 = t789 ).
     DATA t790 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t790.
@@ -2195,8 +2197,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t791 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t792) = |SQLSubstringRegexpr|.
-    DATA(t793) = zlnt_runtime_desc_78196487750d=>zlnt_member_d305_1d893c9cc0cb.
+    DATA(t792) = CONV string( |SQLFromSource| ).
+    DATA(t793) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d321_17502cdda795 ).
     t790 = t791->set( p0 = t792 p1 = t793 ).
     DATA t794 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t794.
@@ -2206,8 +2208,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t795 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t796) = |SQLLocateRegexpr|.
-    DATA(t797) = zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c.
+    DATA(t796) = CONV string( |SQLFromBody| ).
+    DATA(t797) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d322_c628df08c7dc ).
     t794 = t795->set( p0 = t796 p1 = t797 ).
     DATA t798 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t798.
@@ -2217,8 +2219,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t799 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t800) = |SQLLikeRegexpr|.
-    DATA(t801) = zlnt_runtime_desc_78196487750d=>zlnt_member_d280_c851733508cf.
+    DATA(t800) = CONV string( |SQLFrom| ).
+    DATA(t801) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079 ).
     t798 = t799->set( p0 = t800 p1 = t801 ).
     DATA t802 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t802.
@@ -2228,8 +2230,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t803 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t804) = |SQLGroupBy|.
-    DATA(t805) = zlnt_runtime_desc_78196487750d=>zlnt_member_d308_c2d6db3f5bbf.
+    DATA(t804) = CONV string( |SQLFunctionInput| ).
+    DATA(t805) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
     t802 = t803->set( p0 = t804 p1 = t805 ).
     DATA t806 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t806.
@@ -2239,8 +2241,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t807 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t808) = |SQLGroupingSets|.
-    DATA(t809) = zlnt_runtime_desc_78196487750d=>zlnt_member_d307_fbcde215a988.
+    DATA(t808) = CONV string( |SQLFunction| ).
+    DATA(t809) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d287_e5df01c1631a ).
     t806 = t807->set( p0 = t808 p1 = t809 ).
     DATA t810 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t810.
@@ -2250,8 +2252,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t811 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t812) = |SQLIndicators|.
-    DATA(t813) = zlnt_runtime_desc_78196487750d=>zlnt_member_d314_757c7fdfaec1.
+    DATA(t812) = CONV string( |SQLRegexprPattern| ).
+    DATA(t813) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d335_fce3d394071e ).
     t810 = t811->set( p0 = t812 p1 = t813 ).
     DATA t814 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t814.
@@ -2261,8 +2263,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t815 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t816) = |SQLHaving|.
-    DATA(t817) = zlnt_runtime_desc_78196487750d=>zlnt_member_d309_e095d3fe668e.
+    DATA(t816) = CONV string( |SQLRegexprFrom| ).
+    DATA(t817) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d336_e416d8dcf33c ).
     t814 = t815->set( p0 = t816 p1 = t817 ).
     DATA t818 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t818.
@@ -2272,8 +2274,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t819 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t820) = |SQLHints|.
-    DATA(t821) = zlnt_runtime_desc_78196487750d=>zlnt_member_d313_63087fa9e019.
+    DATA(t820) = CONV string( |SQLRegexprOccurrence| ).
+    DATA(t821) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d337_a8481289bbef ).
     t818 = t819->set( p0 = t820 p1 = t821 ).
     DATA t822 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t822.
@@ -2283,8 +2285,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t823 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t824) = |SQLIn|.
-    DATA(t825) = zlnt_runtime_desc_78196487750d=>zlnt_member_d279_5e96219eaf2c.
+    DATA(t824) = CONV string( |SQLRegexprGroup| ).
+    DATA(t825) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d338_8158a9a51d17 ).
     t822 = t823->set( p0 = t824 p1 = t825 ).
     DATA t826 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t826.
@@ -2294,8 +2296,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t827 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t828) = |SQLIntoList|.
-    DATA(t829) = zlnt_runtime_desc_78196487750d=>zlnt_member_d251_f36ca3dcb3e0.
+    DATA(t828) = CONV string( |SQLReplaceRegexpr| ).
+    DATA(t829) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d324_e103ee74a0b4 ).
     t826 = t827->set( p0 = t828 p1 = t829 ).
     DATA t830 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t830.
@@ -2305,8 +2307,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t831 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t832) = |SQLIntoStructure|.
-    DATA(t833) = zlnt_runtime_desc_78196487750d=>zlnt_member_d250_08c3abeac258.
+    DATA(t832) = CONV string( |SQLOccurrencesRegexpr| ).
+    DATA(t833) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d325_95314ae809d0 ).
     t830 = t831->set( p0 = t832 p1 = t833 ).
     DATA t834 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t834.
@@ -2316,8 +2318,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t835 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t836) = |SQLIntoTable|.
-    DATA(t837) = zlnt_runtime_desc_78196487750d=>zlnt_member_d249_9dc4af95df9d.
+    DATA(t836) = CONV string( |SQLSubstringRegexpr| ).
+    DATA(t837) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d326_f861243d7542 ).
     t834 = t835->set( p0 = t836 p1 = t837 ).
     DATA t838 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t838.
@@ -2327,8 +2329,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t839 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t840) = |SQLJoin|.
-    DATA(t841) = zlnt_runtime_desc_78196487750d=>zlnt_member_d298_782c2da798c9.
+    DATA(t840) = CONV string( |SQLLocateRegexpr| ).
+    DATA(t841) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d327_7453d95ca5a2 ).
     t838 = t839->set( p0 = t840 p1 = t841 ).
     DATA t842 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t842.
@@ -2338,8 +2340,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t843 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t844) = |SQLJoinSource|.
-    DATA(t845) = zlnt_runtime_desc_78196487750d=>zlnt_member_d316_43ef1bb28f89.
+    DATA(t844) = CONV string( |SQLLikeRegexpr| ).
+    DATA(t845) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d300_344d539249f5 ).
     t842 = t843->set( p0 = t844 p1 = t845 ).
     DATA t846 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t846.
@@ -2349,8 +2351,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t847 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t848) = |SQLOffset|.
-    DATA(t849) = zlnt_runtime_desc_78196487750d=>zlnt_member_d322_c628df08c7dc.
+    DATA(t848) = CONV string( |SQLGroupBy| ).
+    DATA(t849) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d266_3b538ddd2a60 ).
     t846 = t847->set( p0 = t848 p1 = t849 ).
     DATA t850 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t850.
@@ -2360,8 +2362,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t851 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t852) = |SQLOptions|.
-    DATA(t853) = zlnt_runtime_desc_78196487750d=>zlnt_member_d323_2cd6e0020229.
+    DATA(t852) = CONV string( |SQLGroupingSets| ).
+    DATA(t853) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d328_b04944ab696d ).
     t850 = t851->set( p0 = t852 p1 = t853 ).
     DATA t854 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t854.
@@ -2371,8 +2373,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t855 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t856) = |SQLDmlOptions|.
-    DATA(t857) = zlnt_runtime_desc_78196487750d=>zlnt_member_d287_e5df01c1631a.
+    DATA(t856) = CONV string( |SQLIndicators| ).
+    DATA(t857) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384 ).
     t854 = t855->set( p0 = t856 p1 = t857 ).
     DATA t858 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t858.
@@ -2382,8 +2384,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t859 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t860) = |SQLMappingFromEntity|.
-    DATA(t861) = zlnt_runtime_desc_78196487750d=>zlnt_member_d321_17502cdda795.
+    DATA(t860) = CONV string( |SQLHaving| ).
+    DATA(t861) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d267_42ee2e3380a0 ).
     t858 = t859->set( p0 = t860 p1 = t861 ).
     DATA t862 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t862.
@@ -2393,8 +2395,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t863 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t864) = |SQLPackageSize|.
-    DATA(t865) = zlnt_runtime_desc_78196487750d=>zlnt_member_d324_e103ee74a0b4.
+    DATA(t864) = CONV string( |SQLHints| ).
+    DATA(t865) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d269_df623ced1aed ).
     t862 = t863->set( p0 = t864 p1 = t865 ).
     DATA t866 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t866.
@@ -2404,8 +2406,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t867 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t868) = |SQLOrderBy|.
-    DATA(t869) = zlnt_runtime_desc_78196487750d=>zlnt_member_d253_daaebfcb0814.
+    DATA(t868) = CONV string( |SQLIn| ).
+    DATA(t869) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d299_0ba2c1ef340d ).
     t866 = t867->set( p0 = t868 p1 = t869 ).
     DATA t870 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t870.
@@ -2415,8 +2417,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t871 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t872) = |SQLOver|.
-    DATA(t873) = zlnt_runtime_desc_78196487750d=>zlnt_member_d264_f2af8adb6bb2.
+    DATA(t872) = CONV string( |SQLIntoList| ).
+    DATA(t873) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d259_29e6bae3a66c ).
     t870 = t871->set( p0 = t872 p1 = t873 ).
     DATA t874 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t874.
@@ -2426,8 +2428,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t875 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t876) = |SQLOver|.
-    DATA(t877) = zlnt_runtime_desc_78196487750d=>zlnt_member_d264_f2af8adb6bb2.
+    DATA(t876) = CONV string( |SQLIntoStructure| ).
+    DATA(t877) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d258_47daac7ded2f ).
     t874 = t875->set( p0 = t876 p1 = t877 ).
     DATA t878 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t878.
@@ -2437,8 +2439,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t879 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t880) = |SQLPathForColumn|.
-    DATA(t881) = zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079.
+    DATA(t880) = CONV string( |SQLFieldListLoopGreedy| ).
+    DATA(t881) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d275_b37eb4f86fc3 ).
     t878 = t879->set( p0 = t880 p1 = t881 ).
     DATA t882 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t882.
@@ -2448,8 +2450,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t883 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t884) = |SQLPathForEntity|.
-    DATA(t885) = zlnt_runtime_desc_78196487750d=>zlnt_member_d325_95314ae809d0.
+    DATA(t884) = CONV string( |SQLIntoTable| ).
+    DATA(t885) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d257_509c7b1190c0 ).
     t882 = t883->set( p0 = t884 p1 = t885 ).
     DATA t886 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t886.
@@ -2459,8 +2461,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t887 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t888) = |SQLPrivilegedAccess|.
-    DATA(t889) = zlnt_runtime_desc_78196487750d=>zlnt_member_d286_cf5169b94e53.
+    DATA(t888) = CONV string( |SQLJoin| ).
+    DATA(t889) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf ).
     t886 = t887->set( p0 = t888 p1 = t889 ).
     DATA t890 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t890.
@@ -2470,8 +2472,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t891 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t892) = |SQLSetOp|.
-    DATA(t893) = zlnt_runtime_desc_78196487750d=>zlnt_member_d252_17c445ac4167.
+    DATA(t892) = CONV string( |SQLJoinSource| ).
+    DATA(t893) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d334_bd47c7b95e69 ).
     t890 = t891->set( p0 = t892 p1 = t893 ).
     DATA t894 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t894.
@@ -2481,8 +2483,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t895 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t896) = |SQLSetOpGroup|.
-    DATA(t897) = zlnt_runtime_desc_78196487750d=>zlnt_member_d277_c16b515a2f49.
+    DATA(t896) = CONV string( |SQLOffset| ).
+    DATA(t897) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d340_8d8d1acca482 ).
     t894 = t895->set( p0 = t896 p1 = t897 ).
     DATA t898 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t898.
@@ -2492,8 +2494,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t899 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t900) = |SQLSourceNoSpace|.
-    DATA(t901) = zlnt_runtime_desc_78196487750d=>zlnt_member_d327_7453d95ca5a2.
+    DATA(t900) = CONV string( |SQLOptions| ).
+    DATA(t901) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d270_547c551ca3da ).
     t898 = t899->set( p0 = t900 p1 = t901 ).
     DATA t902 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t902.
@@ -2503,8 +2505,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t903 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t904) = |SQLSourceSimple|.
-    DATA(t905) = zlnt_runtime_desc_78196487750d=>zlnt_member_d275_b37eb4f86fc3.
+    DATA(t904) = CONV string( |SQLDmlOptions| ).
+    DATA(t905) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d311_e91cc88fe129 ).
     t902 = t903->set( p0 = t904 p1 = t905 ).
     DATA t906 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t906.
@@ -2514,8 +2516,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t907 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t908) = |SQLSource|.
-    DATA(t909) = zlnt_runtime_desc_78196487750d=>zlnt_member_d272_6a64f0eb4e20.
+    DATA(t908) = CONV string( |SQLMappingFromEntity| ).
+    DATA(t909) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d339_ea6d392265d6 ).
     t906 = t907->set( p0 = t908 p1 = t909 ).
     DATA t910 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t910.
@@ -2525,8 +2527,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t911 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t912) = |SQLTarget|.
-    DATA(t913) = zlnt_runtime_desc_78196487750d=>zlnt_member_d315_136d5faf95cc.
+    DATA(t912) = CONV string( |SQLPackageSize| ).
+    DATA(t913) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d341_321f607af2eb ).
     t910 = t911->set( p0 = t912 p1 = t913 ).
     DATA t914 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t914.
@@ -2536,8 +2538,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t915 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t916) = |SQLUpTo|.
-    DATA(t917) = zlnt_runtime_desc_78196487750d=>zlnt_member_d328_b04944ab696d.
+    DATA(t916) = CONV string( |SQLOrderBy| ).
+    DATA(t917) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d261_e2dcf59482ac ).
     t914 = t915->set( p0 = t916 p1 = t917 ).
     DATA t918 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t918.
@@ -2547,8 +2549,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t919 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t920) = |StringTemplateFormatting|.
-    DATA(t921) = zlnt_runtime_desc_78196487750d=>zlnt_member_d330_a5190e54e774.
+    DATA(t920) = CONV string( |SQLOver| ).
+    DATA(t921) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
     t918 = t919->set( p0 = t920 p1 = t921 ).
     DATA t922 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t922.
@@ -2558,8 +2560,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t923 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t924) = |StringTemplateSource|.
-    DATA(t925) = zlnt_runtime_desc_78196487750d=>zlnt_member_d329_7e278fad49db.
+    DATA(t924) = CONV string( |SQLOver| ).
+    DATA(t925) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
     t922 = t923->set( p0 = t924 p1 = t925 ).
     DATA t926 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t926.
@@ -2569,8 +2571,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t927 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t928) = |StringTemplate|.
-    DATA(t929) = zlnt_runtime_desc_78196487750d=>zlnt_member_d257_509c7b1190c0.
+    DATA(t928) = CONV string( |SQLPathCardinality| ).
+    DATA(t929) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d342_e6333b069746 ).
     t926 = t927->set( p0 = t928 p1 = t929 ).
     DATA t930 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t930.
@@ -2580,8 +2582,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t931 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t932) = |SuperClassName|.
-    DATA(t933) = zlnt_runtime_desc_78196487750d=>zlnt_member_d331_0a1ba381b33b.
+    DATA(t932) = CONV string( |SQLPathForColumn| ).
+    DATA(t933) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d295_c8c13651616a ).
     t930 = t931->set( p0 = t932 p1 = t933 ).
     DATA t934 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t934.
@@ -2591,8 +2593,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t935 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t936) = |SwitchBody|.
-    DATA(t937) = zlnt_runtime_desc_78196487750d=>zlnt_member_d260_1308f310bc0a.
+    DATA(t936) = CONV string( |SQLPathForEntity| ).
+    DATA(t937) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d343_356b2fce6a0b ).
     t934 = t935->set( p0 = t936 p1 = t937 ).
     DATA t938 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t938.
@@ -2602,8 +2604,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t939 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t940) = |TableBody|.
-    DATA(t941) = zlnt_runtime_desc_78196487750d=>zlnt_member_d100_553f73368b64.
+    DATA(t940) = CONV string( |SQLPathJoinType| ).
+    DATA(t941) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d309_e095d3fe668e ).
     t938 = t939->set( p0 = t940 p1 = t941 ).
     DATA t942 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t942.
@@ -2613,8 +2615,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t943 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t944) = |TableExpression|.
-    DATA(t945) = zlnt_runtime_desc_78196487750d=>zlnt_member_d99_35801e5718dec9.
+    DATA(t944) = CONV string( |SQLPrivilegedAccess| ).
+    DATA(t945) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d264_f2af8adb6bb2 ).
     t942 = t943->set( p0 = t944 p1 = t945 ).
     DATA t946 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t946.
@@ -2624,8 +2626,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t947 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t948) = |TargetFieldSymbol|.
-    DATA(t949) = zlnt_runtime_desc_78196487750d=>zlnt_member_d184_78321de353a4.
+    DATA(t948) = CONV string( |SQLSetOp| ).
+    DATA(t949) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d260_1308f310bc0a ).
     t946 = t947->set( p0 = t948 p1 = t949 ).
     DATA t950 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t950.
@@ -2635,8 +2637,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t951 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t952) = |TargetField|.
-    DATA(t953) = zlnt_runtime_desc_78196487750d=>zlnt_member_d196_75035ca40b78.
+    DATA(t952) = CONV string( |SQLSetOpGroup| ).
+    DATA(t953) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d ).
     t950 = t951->set( p0 = t952 p1 = t953 ).
     DATA t954 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t954.
@@ -2646,8 +2648,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t955 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t956) = |Target|.
-    DATA(t957) = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.
+    DATA(t956) = CONV string( |SQLSourceNoSpace| ).
+    DATA(t957) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d345_67103989a771 ).
     t954 = t955->set( p0 = t956 p1 = t957 ).
     DATA t958 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t958.
@@ -2657,8 +2659,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t959 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t960) = |TestSeamName|.
-    DATA(t961) = zlnt_runtime_desc_78196487750d=>zlnt_member_d332_d01031496384.
+    DATA(t960) = CONV string( |SQLSourceSimple| ).
+    DATA(t961) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d297_8dd76b8d3d10 ).
     t958 = t959->set( p0 = t960 p1 = t961 ).
     DATA t962 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t962.
@@ -2668,8 +2670,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t963 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t964) = |TextElementKey|.
-    DATA(t965) = zlnt_runtime_desc_78196487750d=>zlnt_member_d333_b60636864266.
+    DATA(t964) = CONV string( |SQLSource| ).
+    DATA(t965) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d265_12d4325923b8 ).
     t962 = t963->set( p0 = t964 p1 = t965 ).
     DATA t966 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t966.
@@ -2679,8 +2681,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t967 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t968) = |TextElementString|.
-    DATA(t969) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
+    DATA(t968) = CONV string( |SQLTarget| ).
+    DATA(t969) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d333_b60636864266 ).
     t966 = t967->set( p0 = t968 p1 = t969 ).
     DATA t970 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t970.
@@ -2690,8 +2692,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t971 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t972) = |TextElement|.
-    DATA(t973) = zlnt_runtime_desc_78196487750d=>zlnt_member_d153_a3333d63766c.
+    DATA(t972) = CONV string( |SQLUpTo| ).
+    DATA(t973) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d268_bc2d6eaf7263 ).
     t970 = t971->set( p0 = t972 p1 = t973 ).
     DATA t974 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t974.
@@ -2701,8 +2703,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t975 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t976) = |TransportingFields|.
-    DATA(t977) = zlnt_runtime_desc_78196487750d=>zlnt_member_d334_bd47c7b95e69.
+    DATA(t976) = CONV string( |StringTemplateFormatting| ).
+    DATA(t977) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d347_94341124f92e ).
     t974 = t975->set( p0 = t976 p1 = t977 ).
     DATA t978 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t978.
@@ -2712,8 +2714,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t979 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t980) = |TypeNameOrInfer|.
-    DATA(t981) = zlnt_runtime_desc_78196487750d=>zlnt_member_d109_38db171d00c8.
+    DATA(t980) = CONV string( |StringTemplateSource| ).
+    DATA(t981) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d346_869087cbf76f ).
     t978 = t979->set( p0 = t980 p1 = t981 ).
     DATA t982 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t982.
@@ -2723,8 +2725,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t983 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t984) = |TypeName|.
-    DATA(t985) = zlnt_runtime_desc_78196487750d=>zlnt_member_d179_7cc7b9e87931.
+    DATA(t984) = CONV string( |StringTemplate| ).
+    DATA(t985) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d278_cacef970a917 ).
     t982 = t983->set( p0 = t984 p1 = t985 ).
     DATA t986 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t986.
@@ -2734,8 +2736,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t987 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t988) = |TypeParam|.
-    DATA(t989) = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.
+    DATA(t988) = CONV string( |SuperClassName| ).
+    DATA(t989) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d348_ba08da875831 ).
     t986 = t987->set( p0 = t988 p1 = t989 ).
     DATA t990 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t990.
@@ -2745,8 +2747,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t991 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t992) = |TypeStructure|.
-    DATA(t993) = zlnt_runtime_desc_78196487750d=>zlnt_member_d149_69f1f4358f03.
+    DATA(t992) = CONV string( |SwitchBody| ).
+    DATA(t993) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d279_5e96219eaf2c ).
     t990 = t991->set( p0 = t992 p1 = t993 ).
     DATA t994 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t994.
@@ -2756,8 +2758,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t995 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t996) = |TypeTableKey|.
-    DATA(t997) = zlnt_runtime_desc_78196487750d=>zlnt_member_d336_e416d8dcf33c.
+    DATA(t996) = CONV string( |TableBody| ).
+    DATA(t997) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d102_cb65ad2c1bba ).
     t994 = t995->set( p0 = t996 p1 = t997 ).
     DATA t998 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t998.
@@ -2767,8 +2769,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t999 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1000) = |TypeTable|.
-    DATA(t1001) = zlnt_runtime_desc_78196487750d=>zlnt_member_d147_5c941cfb7396.
+    DATA(t1000) = CONV string( |TableExpression| ).
+    DATA(t1001) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d101_98dd83adae1d ).
     t998 = t999->set( p0 = t1000 p1 = t1001 ).
     DATA t1002 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1002.
@@ -2778,8 +2780,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1003 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1004) = |TypeSimpleRef|.
-    DATA(t1005) = zlnt_runtime_desc_78196487750d=>zlnt_member_d335_fce3d394071e.
+    DATA(t1004) = CONV string( |TargetFieldSymbol| ).
+    DATA(t1005) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d181_df35d03977d7 ).
     t1002 = t1003->set( p0 = t1004 p1 = t1005 ).
     DATA t1006 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1006.
@@ -2789,8 +2791,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1007 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1008) = |Type|.
-    DATA(t1009) = zlnt_runtime_desc_78196487750d=>zlnt_member_d143_3ba838dd8924.
+    DATA(t1008) = CONV string( |TargetField| ).
+    DATA(t1009) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844 ).
     t1006 = t1007->set( p0 = t1008 p1 = t1009 ).
     DATA t1010 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1010.
@@ -2800,8 +2802,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1011 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1012) = |ValueBase|.
-    DATA(t1013) = zlnt_runtime_desc_78196487750d=>zlnt_member_d337_a8481289bbef.
+    DATA(t1012) = CONV string( |Target| ).
+    DATA(t1013) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494 ).
     t1010 = t1011->set( p0 = t1012 p1 = t1013 ).
     DATA t1014 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1014.
@@ -2811,8 +2813,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1015 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1016) = |ValueBodyLine|.
-    DATA(t1017) = zlnt_runtime_desc_78196487750d=>zlnt_member_d338_8158a9a51d17.
+    DATA(t1016) = CONV string( |TestSeamName| ).
+    DATA(t1017) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d349_cecd27d97080 ).
     t1014 = t1015->set( p0 = t1016 p1 = t1017 ).
     DATA t1018 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1018.
@@ -2822,8 +2824,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1019 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1020) = |ValueBodyLines|.
-    DATA(t1021) = zlnt_runtime_desc_78196487750d=>zlnt_member_d339_ea6d392265d6.
+    DATA(t1020) = CONV string( |TextElementKey| ).
+    DATA(t1021) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d350_60b8c1b06659 ).
     t1018 = t1019->set( p0 = t1020 p1 = t1021 ).
     DATA t1022 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1022.
@@ -2833,8 +2835,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1023 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1024) = |ValueBody|.
-    DATA(t1025) = zlnt_runtime_desc_78196487750d=>zlnt_member_d261_e2dcf59482ac.
+    DATA(t1024) = CONV string( |TextElementString| ).
+    DATA(t1025) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d139_249fe3e5ef12 ).
     t1022 = t1023->set( p0 = t1024 p1 = t1025 ).
     DATA t1026 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1026.
@@ -2844,8 +2846,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1027 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1028) = |Value|.
-    DATA(t1029) = zlnt_runtime_desc_78196487750d=>zlnt_member_d146_4e7b86c7b080.
+    DATA(t1028) = CONV string( |TextElement| ).
+    DATA(t1029) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d157_1c35602cbab5 ).
     t1026 = t1027->set( p0 = t1028 p1 = t1029 ).
     DATA t1030 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1030.
@@ -2855,8 +2857,8 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1031 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1032) = |WithName|.
-    DATA(t1033) = zlnt_runtime_desc_78196487750d=>zlnt_member_d302_ef2b4b46983a.
+    DATA(t1032) = CONV string( |Throw| ).
+    DATA(t1033) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d137_6fd956b9c58a ).
     t1030 = t1031->set( p0 = t1032 p1 = t1033 ).
     DATA t1034 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     CLEAR t1034.
@@ -2866,16 +2868,188 @@ CLASS zcl_lnt_st_expres_index_module IMPLEMENTATION.
       zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
     ENDIF.
     t1035 = zcl_lnt_st_expres_index_module=>ns.
-    DATA(t1036) = |WriteOffsetLength|.
-    DATA(t1037) = zlnt_runtime_desc_78196487750d=>zlnt_member_d340_8d8d1acca482.
+    DATA(t1036) = CONV string( |TransportingFields| ).
+    DATA(t1037) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d351_5341159ff4cc ).
     t1034 = t1035->set( p0 = t1036 p1 = t1037 ).
+    DATA t1038 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1038.
+    DATA t1039 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1039.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1039 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1040) = CONV string( |TypeNameOrInfer| ).
+    DATA(t1041) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d111_4d9698a8e1bf ).
+    t1038 = t1039->set( p0 = t1040 p1 = t1041 ).
+    DATA t1042 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1042.
+    DATA t1043 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1043.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1043 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1044) = CONV string( |TypeName| ).
+    DATA(t1045) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d189_7457e1b1f519 ).
+    t1042 = t1043->set( p0 = t1044 p1 = t1045 ).
+    DATA t1046 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1046.
+    DATA t1047 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1047.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1047 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1048) = CONV string( |TypeParam| ).
+    DATA(t1049) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d234_68ba21bb5634 ).
+    t1046 = t1047->set( p0 = t1048 p1 = t1049 ).
+    DATA t1050 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1050.
+    DATA t1051 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1051.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1051 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1052) = CONV string( |TypeStructure| ).
+    DATA(t1053) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d153_a3333d63766c ).
+    t1050 = t1051->set( p0 = t1052 p1 = t1053 ).
+    DATA t1054 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1054.
+    DATA t1055 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1055.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1055 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1056) = CONV string( |TypeTableKey| ).
+    DATA(t1057) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d353_58ca0f41496e ).
+    t1054 = t1055->set( p0 = t1056 p1 = t1057 ).
+    DATA t1058 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1058.
+    DATA t1059 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1059.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1059 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1060) = CONV string( |TypeTable| ).
+    DATA(t1061) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d151_c07675a56057 ).
+    t1058 = t1059->set( p0 = t1060 p1 = t1061 ).
+    DATA t1062 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1062.
+    DATA t1063 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1063.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1063 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1064) = CONV string( |TypeSimpleRef| ).
+    DATA(t1065) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d352_960e530693ff ).
+    t1062 = t1063->set( p0 = t1064 p1 = t1065 ).
+    DATA t1066 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1066.
+    DATA t1067 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1067.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1067 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1068) = CONV string( |Type| ).
+    DATA(t1069) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d147_5c941cfb7396 ).
+    t1066 = t1067->set( p0 = t1068 p1 = t1069 ).
+    DATA t1070 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1070.
+    DATA t1071 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1071.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1071 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1072) = CONV string( |ValueBase| ).
+    DATA(t1073) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d354_a6deeff18cfd ).
+    t1070 = t1071->set( p0 = t1072 p1 = t1073 ).
+    DATA t1074 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1074.
+    DATA t1075 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1075.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1075 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1076) = CONV string( |ValueBodyLine| ).
+    DATA(t1077) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d355_f5f8042a98ef ).
+    t1074 = t1075->set( p0 = t1076 p1 = t1077 ).
+    DATA t1078 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1078.
+    DATA t1079 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1079.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1079 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1080) = CONV string( |ValueBodyLines| ).
+    DATA(t1081) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d356_3218bf7cfc33 ).
+    t1078 = t1079->set( p0 = t1080 p1 = t1081 ).
+    DATA t1082 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1082.
+    DATA t1083 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1083.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1083 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1084) = CONV string( |ValueBody| ).
+    DATA(t1085) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d280_c851733508cf ).
+    t1082 = t1083->set( p0 = t1084 p1 = t1085 ).
+    DATA t1086 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1086.
+    DATA t1087 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1087.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1087 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1088) = CONV string( |Value| ).
+    DATA(t1089) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d150_582536089a5b ).
+    t1086 = t1087->set( p0 = t1088 p1 = t1089 ).
+    DATA t1090 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1090.
+    DATA t1091 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1091.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1091 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1092) = CONV string( |WithName| ).
+    DATA(t1093) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d290_f492e89b83f5 ).
+    t1090 = t1091->set( p0 = t1092 p1 = t1093 ).
+    DATA t1094 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1094.
+    DATA t1095 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
+    CLEAR t1095.
+    IF zcl_lnt_st_expres_index_module=>zlnt_builtin_init_548b32263c45 = abap_false.
+      zcl_lnt_st_expres_index_module=>zlnt_builtin_init_cd4720708f2e( ).
+    ENDIF.
+    t1095 = zcl_lnt_st_expres_index_module=>ns.
+    DATA(t1096) = CONV string( |WriteOffsetLength| ).
+    DATA(t1097) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d357_2e2dc8c80a68 ).
+    t1094 = t1095->set( p0 = t1096 p1 = t1097 ).
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1700_f5fd4de9e272.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1799_ee0244e96652.
   ENDMETHOD.
 ENDCLASS.

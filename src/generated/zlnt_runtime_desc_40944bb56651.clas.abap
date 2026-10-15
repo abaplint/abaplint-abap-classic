@@ -12,6 +12,7 @@ CLASS zlnt_runtime_desc_40944bb56651 DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-DATA zlnt_member_d9_e4f0b8f112f46b TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLASS-DATA zlnt_member_d10_bae92c470a3031 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLASS-DATA zlnt_member_d11_b829914c6cc66c TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    CLASS-DATA zlnt_member_d12_bad132cea1e854 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CLASS-METHODS class_constructor.
   PROTECTED SECTION.
   PRIVATE SECTION.
@@ -44,5 +45,7 @@ CLASS zlnt_runtime_desc_40944bb56651 IMPLEMENTATION.
     CREATE OBJECT zlnt_member_d10_bae92c470a3031 EXPORTING name = `8f9108e347ad289a33aa5df99962abce4e6d371906c6508e3a0fcfd0983f8809` emitted = `zcl_lnt_tuple_23a05aeb` parent = init_parent10 static_names = t_empty.
     DATA init_parent11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CREATE OBJECT zlnt_member_d11_b829914c6cc66c EXPORTING name = `473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8` emitted = `zcl_lnt_tuple_cc45ee1d` parent = init_parent11 static_names = t_empty.
+    DATA init_parent12 TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    CREATE OBJECT zlnt_member_d12_bad132cea1e854 EXPORTING name = `2b6d87c142a292fa78d3d84561c25744941e088a1955e9de0639d2e9b2752b25` emitted = `zcl_lnt_tuple_a5e994d8` parent = init_parent12 static_names = t_empty.
   ENDMETHOD.
 ENDCLASS.

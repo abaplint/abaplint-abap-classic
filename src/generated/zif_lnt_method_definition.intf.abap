@@ -1,6 +1,6 @@
 * TS: src/abap/types/_method_definition.ts:5:1 IMethodDefinition
 INTERFACE zif_lnt_method_definition PUBLIC.
-  METHODS get_visibility RETURNING VALUE(result) TYPE int8.
+  METHODS get_visibility RETURNING VALUE(result) TYPE f.
   METHODS is_redefinition RETURNING VALUE(result) TYPE abap_bool.
   METHODS is_abstract RETURNING VALUE(result) TYPE abap_bool.
   METHODS is_static_4685 RETURNING VALUE(result) TYPE abap_bool.

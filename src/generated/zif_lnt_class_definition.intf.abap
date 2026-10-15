@@ -5,7 +5,7 @@ INTERFACE zif_lnt_class_definition PUBLIC.
   METHODS is_abstract RETURNING VALUE(result) TYPE abap_bool.
   METHODS is_shared_memory RETURNING VALUE(result) TYPE abap_bool.
   METHODS get_friends RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-  METHODS get_create_visibility RETURNING VALUE(result) TYPE int8.
+  METHODS get_create_visibility RETURNING VALUE(result) TYPE f.
   METHODS get_attributes RETURNING VALUE(result) TYPE REF TO zif_lnt_attributes.
   METHODS get_type_definitions RETURNING VALUE(result) TYPE REF TO zif_lnt_type_definitions.
   METHODS get_method_definitions RETURNING VALUE(result) TYPE REF TO zif_lnt_method_definitions.

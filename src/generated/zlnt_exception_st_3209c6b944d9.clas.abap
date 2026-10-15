@@ -1,0 +1,11 @@
+CLASS zlnt_exception_st_3209c6b944d9 DEFINITION PUBLIC INHERITING FROM cx_no_check CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS get_text REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zlnt_exception_st_3209c6b944d9 IMPLEMENTATION.
+  METHOD get_text.
+    result = `string operation outside the checked ABAP domain`.
+  ENDMETHOD.
+ENDCLASS.

@@ -10,6 +10,6 @@ INTERFACE zif_lnt_union_72e2c467 PUBLIC.
   METHODS is_generic RETURNING VALUE(result) TYPE abap_bool.
   METHODS to_abap RETURNING VALUE(result) TYPE string.
   METHODS to_cds RETURNING VALUE(result) TYPE string.
-  METHODS to_text IMPORTING i_level TYPE int8 RETURNING VALUE(result) TYPE string.
+  METHODS to_text IMPORTING i_level TYPE f RETURNING VALUE(result) TYPE string.
   METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
 ENDINTERFACE.

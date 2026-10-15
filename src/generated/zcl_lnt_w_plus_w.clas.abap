@@ -4,25 +4,30 @@ CLASS zcl_lnt_w_plus_w DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_token 
     METHODS constructor IMPORTING i_start TYPE REF TO zcl_lnt_position i_str TYPE string.
     CLASS-METHODS railroad RETURNING VALUE(result) TYPE string.
     METHODS zlnt_builtin_clas_3f891b097658 REDEFINITION.
+    METHODS zlnt_builtin_nati_72359f490bf2 REDEFINITION.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 CLASS zcl_lnt_w_plus_w IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_start.
-    DATA(t2) = i_str.
-    DATA(t3) = t1.
-    DATA(t4) = t2.
+    DATA(t1) = CAST zcl_lnt_position( i_start ).
+    DATA(t2) = CONV string( i_str ).
+    DATA(t3) = CAST zcl_lnt_position( t1 ).
+    DATA(t4) = CONV string( t2 ).
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
-
   METHOD railroad.
-    DATA(t1) = | + |.
+    DATA(t1) = CONV string( | + | ).
     result = t1.
-
+    RETURN.
   ENDMETHOD.
-
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d56_5d4839b794b2ac.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d57_8cc8b328e2c425.
   ENDMETHOD.
 ENDCLASS.

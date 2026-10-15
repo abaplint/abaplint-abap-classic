@@ -10,10 +10,10 @@
     "abapiti": "node scripts/call-abapiti.mjs && node scripts/abapgit-xml.mjs && node scripts/checks.mjs && abaplint --fix",
     "transpile": "abap_transpile",
     "unit": "abap_transpile && node transpiled/index.mjs",
-    "test": "npm run abapiti && abaplint"
+    "test": "npm run abapiti && abaplint && npm run unit"
   },
   "devDependencies": {
-    "@abaplint/cli": "^2.120.78",
+    "@abaplint/cli": "^2.120.79",
     "@abaplint/runtime": "^2.14.6",
     "@abaplint/transpiler-cli": "^2.14.6"
   }

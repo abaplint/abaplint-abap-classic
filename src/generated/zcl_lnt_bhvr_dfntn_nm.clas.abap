@@ -4,23 +4,35 @@ CLASS zcl_lnt_bhvr_dfntn_nm DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression
     METHODS constructor.
     METHODS get_runnable REDEFINITION.
     METHODS zlnt_builtin_clas_3f891b097658 REDEFINITION.
+    METHODS zlnt_builtin_nati_72359f490bf2 REDEFINITION.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 CLASS zcl_lnt_bhvr_dfntn_nm IMPLEMENTATION.
   METHOD constructor.
-    super->constructor( ).
+    super->constructor(  ).
   ENDMETHOD.
-
   METHOD get_runnable.
-    DATA(t1) = NEW zlnt_exception_un_5f2d02892fe8( ).
-    DATA(t2) = |src/abap/2_statements/expressions/behavior_definition_name.t|.
-    t2 = t2 && |s:5|.
-    t1->source_location = t2.
-    RAISE EXCEPTION t1.
+    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
+    DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t2.
+    DATA(t3) = CONV string( `^((\w*\/\w+\/)|(\w*\/\w+\/)?[\w\*$%]+)$` ).
+    DATA(t4) = CONV string( `^(([A-Za-z0-9_]*\/[A-Za-z0-9_]+\/)|([A-Za-z0-9_]*\/[A-Za-z0-` ).
+    t4 = t4 && `9_]+\/)?[A-Za-z0-9_\*$%]+)$`.
+    DATA(t5) = CONV string( || ).
+    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = t5.
+    t2->source = t3.
+    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
+    result = t1.
+    RETURN.
   ENDMETHOD.
-
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d104_b395e4e66ee3.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d106_a338c80a5154.
   ENDMETHOD.
 ENDCLASS.

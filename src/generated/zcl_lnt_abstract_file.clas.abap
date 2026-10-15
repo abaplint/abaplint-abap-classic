@@ -1,6 +1,7 @@
 * TS: src/files/_abstract_file.ts:3:1 AbstractFile
 CLASS zcl_lnt_abstract_file DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     INTERFACES zif_lnt_file.
     DATA filename TYPE string.
     METHODS constructor IMPORTING i_filename TYPE string.
@@ -12,297 +13,302 @@ CLASS zcl_lnt_abstract_file DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
     METHODS get_raw_rows ABSTRACT RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 CLASS zcl_lnt_abstract_file IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_filename.
-    DATA(t2) = t1.
+    DATA(t1) = CONV string( i_filename ).
+    DATA(t2) = CONV string( t1 ).
     me->filename = t2.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `filename`.
   ENDMETHOD.
-
   METHOD get_filename.
     DATA(t1) = CONV string( me->filename ).
     result = t1.
-
+    RETURN.
   ENDMETHOD.
-
   METHOD base_name.
-    CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
-    CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    CONSTANTS range_int_check_hi_zik0zj TYPE int8 VALUE '2147483647'.
-    CONSTANTS range_int_check_lo_nzik0zk TYPE int8 VALUE '-2147483648'.
+    CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
+    CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA t1 TYPE string.
     DATA(t2) = CONV string( me->filename ).
     t1 = t2.
     DATA(t3) = VALUE int8( ).
     DATA(t4) = VALUE int8( ).
     DATA t5 TYPE string.
-    DATA(t6) = t1.
+    DATA(t6) = CONV string( t1 ).
     t5 = t6.
     DATA t7 TYPE string.
-    DATA(t8) = `\`.
+    DATA(t8) = CONV string( `\` ).
     t7 = t8.
     DATA t9 TYPE i.
     DATA t10 TYPE i.
-    DATA(t11) = t7.
-    DATA(t12) = strlen( t11 ).
+    DATA(t11) = CONV string( t7 ).
+    DATA(t12) = CONV i( strlen( t11 ) ).
     t10 = t12.
     t9 = t10.
     DATA t13 TYPE i.
     DATA t14 TYPE i.
     DATA t15 TYPE i.
-    DATA(t16) = t5.
-    DATA(t17) = strlen( t16 ).
+    DATA(t16) = CONV string( t5 ).
+    DATA(t17) = CONV i( strlen( t16 ) ).
     t15 = t17.
-    DATA(t18) = t9.
+    DATA(t18) = CONV i( t9 ).
     t14 = t15 - t18.
     t13 = t14.
     DATA t19 TYPE i.
-    DATA(t20) = -1.
+    DATA(t20) = CONV i( -1 ).
     t19 = t20.
     DO.
       DATA t21 TYPE abap_bool.
-      DATA(t22) = t13.
-      DATA(t23) = 0.
+      DATA(t22) = CONV i( t13 ).
+      DATA(t23) = CONV i( 0 ).
       t21 = xsdbool( t22 >= t23 ).
       IF t21 = abap_false.
         EXIT.
       ENDIF.
       DATA(t24) = VALUE abap_bool( ).
       DATA(t25) = VALUE string( ).
-      DATA(t26) = t5.
-      DATA(t27) = t13.
+      DATA(t26) = CONV string( t5 ).
+      DATA(t27) = CONV i( t13 ).
       DATA(t28) = VALUE i( ).
-      DATA t29 TYPE int8.
+      DATA t29 TYPE f.
       DATA t30 TYPE int8.
-      DATA(t31) = t13.
-      t30 = t31.
-      DATA t32 TYPE int8.
-      DATA(t33) = t9.
-      t32 = t33.
-      t29 = t30 + t32.
-      IF t29 < range_int8_bound_min OR t29 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
+      DATA t31 TYPE int8.
+      DATA(t32) = CONV i( t13 ).
+      t31 = t32.
+      DATA t33 TYPE int8.
+      DATA(t34) = CONV i( t9 ).
+      t33 = t34.
+      t30 = t31 + t33.
+      t29 = t30.
+      IF t29 > range_i32_upper.
+        t28 = range_i32_upper.
+      ELSEIF t29 < range_i32_lower.
+        t28 = range_i32_lower.
+      ELSE.
+        t28 = trunc( t29 ).
       ENDIF.
-      IF t29 < range_int_check_lo_nzik0zk OR t29 > range_int_check_hi_zik0zj.
-        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-      ENDIF.
-      t28 = t29.
-      DATA(t34) = strlen( t26 ).
-      t27 = COND i( WHEN t27 < 0 THEN 0 WHEN t27 > t34 THEN t34 ELSE t27 ).
-      t28 = COND i( WHEN t28 < 0 THEN 0 WHEN t28 > t34 THEN t34 ELSE t28 ).
+      DATA(t35) = CONV i( strlen( t26 ) ).
+      t27 = COND i( WHEN t27 < 0 THEN 0 WHEN t27 > t35 THEN t35 ELSE t27 ).
+      t28 = COND i( WHEN t28 < 0 THEN 0 WHEN t28 > t35 THEN t35 ELSE t28 ).
       IF t27 > t28.
-        t34 = t27.
+        t35 = t27.
         t27 = t28.
-        t28 = t34.
+        t28 = t35.
       ENDIF.
-      t34 = t28 - t27.
-      t25 = t26+t27(t34).
-      DATA(t35) = t7.
-      t24 = xsdbool( t25 = t35 ).
+      t35 = t28 - t27.
+      t25 = t26+t27(t35).
+      DATA(t36) = CONV string( t7 ).
+      t24 = xsdbool( t25 = t36 ).
       IF t24 = abap_true.
-        DATA(t36) = t13.
-        t19 = t36.
+        DATA(t37) = CONV i( t13 ).
+        t19 = t37.
         EXIT.
       ENDIF.
-      DATA t37 TYPE i.
-      DATA(t38) = t13.
-      DATA(t39) = 1.
-      t37 = t38 - t39.
-      t13 = t37.
+      DATA t38 TYPE i.
+      DATA(t39) = CONV i( t13 ).
+      DATA(t40) = CONV i( 1 ).
+      t38 = t39 - t40.
+      t13 = t38.
     ENDDO.
-    DATA t40 TYPE int8.
-    DATA(t41) = t19.
-    t40 = t41.
-    t4 = t40.
+    DATA t41 TYPE int8.
+    DATA(t42) = CONV i( t19 ).
+    t41 = t42.
+    t4 = t41.
     t3 = t4.
-    DATA t42 TYPE abap_bool.
-    DATA t43 TYPE i.
-    DATA(t44) = t3.
-    t43 = t44.
-    t42 = xsdbool( t43 IS NOT INITIAL ).
-    IF t42 = abap_true.
-      DATA t45 TYPE int8.
+    DATA t43 TYPE abap_bool.
+    DATA t44 TYPE i.
+    DATA(t45) = CONV int8( t3 ).
+    t44 = t45.
+    t43 = xsdbool( t44 IS NOT INITIAL ).
+    IF t43 = abap_true.
       DATA t46 TYPE int8.
-      DATA t47 TYPE i.
-      DATA(t48) = t3.
+      DATA t47 TYPE int8.
+      DATA t48 TYPE i.
+      DATA(t49) = CONV int8( t3 ).
+      t48 = t49.
       t47 = t48.
-      t46 = t47.
-      DATA(t49) = CONV int8( 1 ).
-      t45 = t46 + t49.
-      IF t45 < range_int8_bound_min OR t45 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
-      t3 = t45.
+      DATA(t50) = CONV int8( 1 ).
+      t46 = t47 + t50.
+      t3 = t46.
     ENDIF.
-    DATA(t50) = VALUE string( ).
-    DATA t51 TYPE string.
-    DATA(t52) = t1.
-    t51 = t52.
-    DATA(t53) = VALUE string( ).
-    DATA(t54) = t51.
-    DATA(t55) = VALUE i( ).
-    DATA(t56) = t3.
-    IF t56 < range_int_check_lo_nzik0zk OR t56 > range_int_check_hi_zik0zj.
-      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    DATA(t51) = VALUE string( ).
+    DATA t52 TYPE string.
+    DATA(t53) = CONV string( t1 ).
+    t52 = t53.
+    DATA(t54) = VALUE string( ).
+    DATA(t55) = CONV string( t52 ).
+    DATA(t56) = VALUE i( ).
+    DATA t57 TYPE f.
+    DATA(t58) = CONV int8( t3 ).
+    t57 = t58.
+    IF t57 > range_i32_upper.
+      t56 = range_i32_upper.
+    ELSEIF t57 < range_i32_lower.
+      t56 = range_i32_lower.
+    ELSE.
+      t56 = trunc( t57 ).
     ENDIF.
-    t55 = t56.
-    DATA t57 TYPE i.
-    DATA(t58) = t51.
-    DATA(t59) = strlen( t58 ).
-    t57 = t59.
-    DATA(t60) = strlen( t54 ).
-    t55 = COND i( WHEN t55 < 0 THEN 0 WHEN t55 > t60 THEN t60 ELSE t55 ).
-    t57 = COND i( WHEN t57 < 0 THEN 0 WHEN t57 > t60 THEN t60 ELSE t57 ).
-    IF t55 > t57.
-      t60 = t55.
-      t55 = t57.
-      t57 = t60.
+    DATA t59 TYPE i.
+    DATA(t60) = CONV string( t52 ).
+    DATA(t61) = CONV i( strlen( t60 ) ).
+    t59 = t61.
+    DATA(t62) = CONV i( strlen( t55 ) ).
+    t56 = COND i( WHEN t56 < 0 THEN 0 WHEN t56 > t62 THEN t62 ELSE t56 ).
+    t59 = COND i( WHEN t59 < 0 THEN 0 WHEN t59 > t62 THEN t62 ELSE t59 ).
+    IF t56 > t59.
+      t62 = t56.
+      t56 = t59.
+      t59 = t62.
     ENDIF.
-    t60 = t57 - t55.
-    t53 = t54+t55(t60).
-    t50 = t53.
-    t1 = t50.
-    DATA(t61) = VALUE int8( ).
-    DATA t62 TYPE string.
-    DATA(t63) = t1.
-    t62 = t63.
+    t62 = t59 - t56.
+    t54 = t55+t56(t62).
+    t51 = t54.
+    t1 = t51.
+    DATA(t63) = VALUE int8( ).
     DATA t64 TYPE string.
-    DATA(t65) = |/|.
+    DATA(t65) = CONV string( t1 ).
     t64 = t65.
-    DATA t66 TYPE i.
-    DATA t67 TYPE i.
-    DATA(t68) = t64.
-    DATA(t69) = strlen( t68 ).
-    t67 = t69.
+    DATA t66 TYPE string.
+    DATA(t67) = CONV string( |/| ).
     t66 = t67.
-    DATA t70 TYPE i.
-    DATA t71 TYPE i.
+    DATA t68 TYPE i.
+    DATA t69 TYPE i.
+    DATA(t70) = CONV string( t66 ).
+    DATA(t71) = CONV i( strlen( t70 ) ).
+    t69 = t71.
+    t68 = t69.
     DATA t72 TYPE i.
-    DATA(t73) = t62.
-    DATA(t74) = strlen( t73 ).
-    t72 = t74.
-    DATA(t75) = t66.
-    t71 = t72 - t75.
-    t70 = t71.
-    DATA t76 TYPE i.
-    DATA(t77) = -1.
-    t76 = t77.
+    DATA t73 TYPE i.
+    DATA t74 TYPE i.
+    DATA(t75) = CONV string( t64 ).
+    DATA(t76) = CONV i( strlen( t75 ) ).
+    t74 = t76.
+    DATA(t77) = CONV i( t68 ).
+    t73 = t74 - t77.
+    t72 = t73.
+    DATA t78 TYPE i.
+    DATA(t79) = CONV i( -1 ).
+    t78 = t79.
     DO.
-      DATA t78 TYPE abap_bool.
-      DATA(t79) = t70.
-      DATA(t80) = 0.
-      t78 = xsdbool( t79 >= t80 ).
-      IF t78 = abap_false.
+      DATA t80 TYPE abap_bool.
+      DATA(t81) = CONV i( t72 ).
+      DATA(t82) = CONV i( 0 ).
+      t80 = xsdbool( t81 >= t82 ).
+      IF t80 = abap_false.
         EXIT.
       ENDIF.
-      DATA(t81) = VALUE abap_bool( ).
-      DATA(t82) = VALUE string( ).
-      DATA(t83) = t62.
-      DATA(t84) = t70.
-      DATA(t85) = VALUE i( ).
-      DATA t86 TYPE int8.
-      DATA t87 TYPE int8.
-      DATA(t88) = t70.
-      t87 = t88.
+      DATA(t83) = VALUE abap_bool( ).
+      DATA(t84) = VALUE string( ).
+      DATA(t85) = CONV string( t64 ).
+      DATA(t86) = CONV i( t72 ).
+      DATA(t87) = VALUE i( ).
+      DATA t88 TYPE f.
       DATA t89 TYPE int8.
-      DATA(t90) = t66.
-      t89 = t90.
-      t86 = t87 + t89.
-      IF t86 < range_int8_bound_min OR t86 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
+      DATA t90 TYPE int8.
+      DATA(t91) = CONV i( t72 ).
+      t90 = t91.
+      DATA t92 TYPE int8.
+      DATA(t93) = CONV i( t68 ).
+      t92 = t93.
+      t89 = t90 + t92.
+      t88 = t89.
+      IF t88 > range_i32_upper.
+        t87 = range_i32_upper.
+      ELSEIF t88 < range_i32_lower.
+        t87 = range_i32_lower.
+      ELSE.
+        t87 = trunc( t88 ).
       ENDIF.
-      IF t86 < range_int_check_lo_nzik0zk OR t86 > range_int_check_hi_zik0zj.
-        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      DATA(t94) = CONV i( strlen( t85 ) ).
+      t86 = COND i( WHEN t86 < 0 THEN 0 WHEN t86 > t94 THEN t94 ELSE t86 ).
+      t87 = COND i( WHEN t87 < 0 THEN 0 WHEN t87 > t94 THEN t94 ELSE t87 ).
+      IF t86 > t87.
+        t94 = t86.
+        t86 = t87.
+        t87 = t94.
       ENDIF.
-      t85 = t86.
-      DATA(t91) = strlen( t83 ).
-      t84 = COND i( WHEN t84 < 0 THEN 0 WHEN t84 > t91 THEN t91 ELSE t84 ).
-      t85 = COND i( WHEN t85 < 0 THEN 0 WHEN t85 > t91 THEN t91 ELSE t85 ).
-      IF t84 > t85.
-        t91 = t84.
-        t84 = t85.
-        t85 = t91.
-      ENDIF.
-      t91 = t85 - t84.
-      t82 = t83+t84(t91).
-      DATA(t92) = t64.
-      t81 = xsdbool( t82 = t92 ).
-      IF t81 = abap_true.
-        DATA(t93) = t70.
-        t76 = t93.
+      t94 = t87 - t86.
+      t84 = t85+t86(t94).
+      DATA(t95) = CONV string( t66 ).
+      t83 = xsdbool( t84 = t95 ).
+      IF t83 = abap_true.
+        DATA(t96) = CONV i( t72 ).
+        t78 = t96.
         EXIT.
       ENDIF.
-      DATA t94 TYPE i.
-      DATA(t95) = t70.
-      DATA(t96) = 1.
-      t94 = t95 - t96.
-      t70 = t94.
+      DATA t97 TYPE i.
+      DATA(t98) = CONV i( t72 ).
+      DATA(t99) = CONV i( 1 ).
+      t97 = t98 - t99.
+      t72 = t97.
     ENDDO.
-    DATA t97 TYPE int8.
-    DATA(t98) = t76.
-    t97 = t98.
-    t61 = t97.
-    t3 = t61.
-    DATA t99 TYPE abap_bool.
-    DATA t100 TYPE i.
-    DATA(t101) = t3.
+    DATA t100 TYPE int8.
+    DATA(t101) = CONV i( t78 ).
     t100 = t101.
-    t99 = xsdbool( t100 IS NOT INITIAL ).
-    IF t99 = abap_true.
-      DATA t102 TYPE int8.
-      DATA t103 TYPE int8.
-      DATA t104 TYPE i.
-      DATA(t105) = t3.
-      t104 = t105.
-      t103 = t104.
-      DATA(t106) = CONV int8( 1 ).
-      t102 = t103 + t106.
-      IF t102 < range_int8_bound_min OR t102 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
-      t3 = t102.
+    t63 = t100.
+    t3 = t63.
+    DATA t102 TYPE abap_bool.
+    DATA t103 TYPE i.
+    DATA(t104) = CONV int8( t3 ).
+    t103 = t104.
+    t102 = xsdbool( t103 IS NOT INITIAL ).
+    IF t102 = abap_true.
+      DATA t105 TYPE int8.
+      DATA t106 TYPE int8.
+      DATA t107 TYPE i.
+      DATA(t108) = CONV int8( t3 ).
+      t107 = t108.
+      t106 = t107.
+      DATA(t109) = CONV int8( 1 ).
+      t105 = t106 + t109.
+      t3 = t105.
     ENDIF.
-    DATA(t107) = VALUE string( ).
-    DATA t108 TYPE string.
-    DATA(t109) = t1.
-    t108 = t109.
     DATA(t110) = VALUE string( ).
-    DATA(t111) = t108.
-    DATA(t112) = VALUE i( ).
-    DATA(t113) = t3.
-    IF t113 < range_int_check_lo_nzik0zk OR t113 > range_int_check_hi_zik0zj.
-      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    DATA t111 TYPE string.
+    DATA(t112) = CONV string( t1 ).
+    t111 = t112.
+    DATA(t113) = VALUE string( ).
+    DATA(t114) = CONV string( t111 ).
+    DATA(t115) = VALUE i( ).
+    DATA t116 TYPE f.
+    DATA(t117) = CONV int8( t3 ).
+    t116 = t117.
+    IF t116 > range_i32_upper.
+      t115 = range_i32_upper.
+    ELSEIF t116 < range_i32_lower.
+      t115 = range_i32_lower.
+    ELSE.
+      t115 = trunc( t116 ).
     ENDIF.
-    t112 = t113.
-    DATA t114 TYPE i.
-    DATA(t115) = t108.
-    DATA(t116) = strlen( t115 ).
-    t114 = t116.
-    DATA(t117) = strlen( t111 ).
-    t112 = COND i( WHEN t112 < 0 THEN 0 WHEN t112 > t117 THEN t117 ELSE t112 ).
-    t114 = COND i( WHEN t114 < 0 THEN 0 WHEN t114 > t117 THEN t117 ELSE t114 ).
-    IF t112 > t114.
-      t117 = t112.
-      t112 = t114.
-      t114 = t117.
+    DATA t118 TYPE i.
+    DATA(t119) = CONV string( t111 ).
+    DATA(t120) = CONV i( strlen( t119 ) ).
+    t118 = t120.
+    DATA(t121) = CONV i( strlen( t114 ) ).
+    t115 = COND i( WHEN t115 < 0 THEN 0 WHEN t115 > t121 THEN t121 ELSE t115 ).
+    t118 = COND i( WHEN t118 < 0 THEN 0 WHEN t118 > t121 THEN t121 ELSE t118 ).
+    IF t115 > t118.
+      t121 = t115.
+      t115 = t118.
+      t118 = t121.
     ENDIF.
-    t117 = t114 - t112.
-    t110 = t111+t112(t117).
-    t107 = t110.
-    result = t107.
-
+    t121 = t118 - t115.
+    t113 = t114+t115(t121).
+    t110 = t113.
+    result = t110.
+    RETURN.
   ENDMETHOD.
-
   METHOD get_object_type.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t3) = CONV string( me->base_name( ) ).
-    DATA(t4) = |.|.
-    DATA(t5) = strlen( t3 ).
+    DATA(t3) = CONV string( me->base_name(  ) ).
+    DATA(t4) = CONV string( |.| ).
+    DATA(t5) = CONV i( strlen( t3 ) ).
     DATA t6 TYPE i.
     DATA(t7) = VALUE i( ).
     DATA(t8) = VALUE i( ).
@@ -342,14 +348,14 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t14) = t1.
-    DATA(t15) = 1.
+    DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t15) = CONV i( 1 ).
     t13 = t14->get( p0 = t15 ).
     t12 = t13.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t16.
     DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = t12.
+    DATA(t18) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
     IF t18 IS INITIAL.
       t17 = abap_true.
     ELSEIF t18->has = abap_false.
@@ -362,9 +368,9 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ELSE.
       DATA t20 TYPE string.
       DATA t21 TYPE string.
-      DATA(t22) = t12.
+      DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
       t21 = t22->value.
-      DATA(t23) = strlen( t21 ).
+      DATA(t23) = CONV i( strlen( t21 ) ).
       t20 = t21.
       IF t20 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t20 TO UPPER CASE.
@@ -378,16 +384,15 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ENDIF.
     t11 = t16.
     result = t11.
-
+    RETURN.
   ENDMETHOD.
-
   METHOD get_object_name.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t3) = CONV string( me->base_name( ) ).
-    DATA(t4) = |.|.
-    DATA(t5) = strlen( t3 ).
+    DATA(t3) = CONV string( me->base_name(  ) ).
+    DATA(t4) = CONV string( |.| ).
+    DATA(t5) = CONV i( strlen( t3 ) ).
     DATA t6 TYPE i.
     DATA(t7) = VALUE i( ).
     DATA(t8) = VALUE i( ).
@@ -423,158 +428,170 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t1 = t2.
-    DATA(t11) = t1.
-    DATA t12 TYPE string.
+    DATA(t11) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t12) = CONV i( 0 ).
     DATA(t13) = VALUE string( ).
-    DATA(t14) = t1.
-    READ TABLE t14->items INDEX 1 INTO t13.
-    DATA t15 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t15.
-    DATA(t16) = |%23|.
-    DATA(t17) = |g|.
-    CREATE OBJECT t15 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t16 flags = t17.
-    DATA(t18) = |#|.
-    DATA(t19) = strlen( t13 ).
-    t12 = t15->replace( p0 = t13 p1 = t18 ).
-    DATA(t20) = VALUE string( ).
-    CLEAR t20.
-    WHILE lines( t11->items ) < 1.
-      APPEND t20 TO t11->items.
-    ENDWHILE.
-    MODIFY t11->items FROM t12 INDEX 1.
-    DATA(t21) = t1.
-    DATA t22 TYPE string.
-    DATA(t23) = VALUE string( ).
-    DATA(t24) = t1.
-    READ TABLE t24->items INDEX 1 INTO t23.
-    DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t25.
-    DATA(t26) = |%3e|.
-    DATA(t27) = |g|.
-    CREATE OBJECT t25 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t26 flags = t27.
-    DATA(t28) = |>|.
-    DATA(t29) = strlen( t23 ).
-    t22 = t25->replace( p0 = t23 p1 = t28 ).
-    DATA(t30) = VALUE string( ).
-    CLEAR t30.
-    WHILE lines( t21->items ) < 1.
-      APPEND t30 TO t21->items.
-    ENDWHILE.
-    MODIFY t21->items FROM t22 INDEX 1.
-    DATA(t31) = t1.
-    DATA t32 TYPE string.
-    DATA(t33) = VALUE string( ).
-    DATA(t34) = t1.
-    READ TABLE t34->items INDEX 1 INTO t33.
-    DATA t35 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t35.
-    DATA(t36) = |%3c|.
-    DATA(t37) = |g|.
-    CREATE OBJECT t35 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t36 flags = t37.
-    DATA(t38) = |<|.
-    DATA(t39) = strlen( t33 ).
-    t32 = t35->replace( p0 = t33 p1 = t38 ).
-    DATA(t40) = VALUE string( ).
-    CLEAR t40.
-    WHILE lines( t31->items ) < 1.
-      APPEND t40 TO t31->items.
-    ENDWHILE.
-    MODIFY t31->items FROM t32 INDEX 1.
-    DATA(t41) = t1.
-    DATA(t42) = VALUE string( ).
-    DATA t43 TYPE string.
-    DATA(t44) = VALUE string( ).
-    DATA(t45) = t1.
-    READ TABLE t45->items INDEX 1 INTO t44.
-    DATA(t46) = strlen( t44 ).
-    t43 = t44.
-    IF t43 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-      TRANSLATE t43 TO UPPER CASE.
-    ELSE.
-      t43 = zlnt_runtime_uppe_91169605024d=>full( t43 ).
+    DATA(t14) = VALUE string( ).
+    DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t15->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
-    DATA t47 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t47.
-    DATA(t48) = |#|.
-    DATA(t49) = |g|.
-    CREATE OBJECT t47 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t48 flags = t49.
-    DATA(t50) = |/|.
-    DATA(t51) = strlen( t43 ).
-    t42 = t47->replace( p0 = t43 p1 = t50 ).
-    DATA(t52) = VALUE string( ).
-    CLEAR t52.
-    WHILE lines( t41->items ) < 1.
-      APPEND t52 TO t41->items.
-    ENDWHILE.
-    MODIFY t41->items FROM t42 INDEX 1.
-    DATA(t53) = t1.
-    DATA t54 TYPE string.
+    t15->load( ).
+    CLEAR t14.
+    READ TABLE t15->items INDEX 1 INTO t14.
+    DATA t16 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t16.
+    DATA(t17) = CONV string( |%23| ).
+    DATA(t18) = CONV string( |g| ).
+    CREATE OBJECT t16 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t17 flags = t18 checked = abap_true.
+    DATA(t19) = CONV string( |#| ).
+    DATA(t20) = CONV i( strlen( t14 ) ).
+    t13 = t16->replace( p0 = t14 p1 = t19 ).
+    t11->put( p0 = t12 p1 = t13 ).
+    DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t22) = CONV i( 0 ).
+    DATA(t23) = VALUE string( ).
+    DATA(t24) = VALUE string( ).
+    DATA(t25) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t25->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t25->load( ).
+    CLEAR t24.
+    READ TABLE t25->items INDEX 1 INTO t24.
+    DATA t26 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t26.
+    DATA(t27) = CONV string( |%3e| ).
+    DATA(t28) = CONV string( |g| ).
+    CREATE OBJECT t26 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t27 flags = t28 checked = abap_true.
+    DATA(t29) = CONV string( |>| ).
+    DATA(t30) = CONV i( strlen( t24 ) ).
+    t23 = t26->replace( p0 = t24 p1 = t29 ).
+    t21->put( p0 = t22 p1 = t23 ).
+    DATA(t31) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t32) = CONV i( 0 ).
+    DATA(t33) = VALUE string( ).
+    DATA(t34) = VALUE string( ).
+    DATA(t35) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t35->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t35->load( ).
+    CLEAR t34.
+    READ TABLE t35->items INDEX 1 INTO t34.
+    DATA t36 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t36.
+    DATA(t37) = CONV string( |%3c| ).
+    DATA(t38) = CONV string( |g| ).
+    CREATE OBJECT t36 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t37 flags = t38 checked = abap_true.
+    DATA(t39) = CONV string( |<| ).
+    DATA(t40) = CONV i( strlen( t34 ) ).
+    t33 = t36->replace( p0 = t34 p1 = t39 ).
+    t31->put( p0 = t32 p1 = t33 ).
+    DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t42) = CONV i( 0 ).
+    DATA(t43) = VALUE string( ).
+    DATA(t44) = VALUE string( ).
+    DATA(t45) = VALUE string( ).
+    DATA(t46) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t46->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t46->load( ).
+    CLEAR t45.
+    READ TABLE t46->items INDEX 1 INTO t45.
+    DATA(t47) = CONV i( strlen( t45 ) ).
+    t44 = t45.
+    IF t44 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+      TRANSLATE t44 TO UPPER CASE.
+    ELSE.
+      t44 = zlnt_runtime_uppe_91169605024d=>full( t44 ).
+    ENDIF.
+    DATA t48 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t48.
+    DATA(t49) = CONV string( |#| ).
+    DATA(t50) = CONV string( |g| ).
+    CREATE OBJECT t48 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t49 flags = t50 checked = abap_true.
+    DATA(t51) = CONV string( |/| ).
+    DATA(t52) = CONV i( strlen( t44 ) ).
+    t43 = t48->replace( p0 = t44 p1 = t51 ).
+    t41->put( p0 = t42 p1 = t43 ).
+    DATA(t53) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t54) = CONV i( 0 ).
     DATA(t55) = VALUE string( ).
-    DATA(t56) = t1.
-    READ TABLE t56->items INDEX 1 INTO t55.
-    DATA(t57) = |(|.
-    DATA(t58) = |/|.
-    DATA(t59) = strlen( t55 ).
-    t54 = t55.
-    REPLACE ALL OCCURRENCES OF t57 IN t54 WITH t58.
-    DATA(t60) = VALUE string( ).
-    CLEAR t60.
-    WHILE lines( t53->items ) < 1.
-      APPEND t60 TO t53->items.
-    ENDWHILE.
-    MODIFY t53->items FROM t54 INDEX 1.
-    DATA(t61) = t1.
-    DATA t62 TYPE string.
+    DATA(t56) = VALUE string( ).
+    DATA(t57) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t57->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t57->load( ).
+    CLEAR t56.
+    READ TABLE t57->items INDEX 1 INTO t56.
+    DATA(t58) = CONV string( |(| ).
+    DATA(t59) = CONV string( |/| ).
+    DATA(t60) = CONV i( strlen( t56 ) ).
+    t55 = t56.
+    REPLACE ALL OCCURRENCES OF t58 IN t55 WITH t59.
+    t53->put( p0 = t54 p1 = t55 ).
+    DATA(t61) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t62) = CONV i( 0 ).
     DATA(t63) = VALUE string( ).
-    DATA(t64) = t1.
-    READ TABLE t64->items INDEX 1 INTO t63.
-    DATA(t65) = |)|.
-    DATA(t66) = |/|.
-    DATA(t67) = strlen( t63 ).
-    t62 = t63.
-    REPLACE ALL OCCURRENCES OF t65 IN t62 WITH t66.
-    DATA(t68) = VALUE string( ).
-    CLEAR t68.
-    WHILE lines( t61->items ) < 1.
-      APPEND t68 TO t61->items.
-    ENDWHILE.
-    MODIFY t61->items FROM t62 INDEX 1.
+    DATA(t64) = VALUE string( ).
+    DATA(t65) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t65->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t65->load( ).
+    CLEAR t64.
+    READ TABLE t65->items INDEX 1 INTO t64.
+    DATA(t66) = CONV string( |)| ).
+    DATA(t67) = CONV string( |/| ).
+    DATA(t68) = CONV i( strlen( t64 ) ).
+    t63 = t64.
+    REPLACE ALL OCCURRENCES OF t66 IN t63 WITH t67.
+    t61->put( p0 = t62 p1 = t63 ).
     DATA(t69) = VALUE string( ).
-    DATA(t70) = t1.
+    DATA(t70) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    IF t70->has( 1 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t70->load( ).
+    CLEAR t69.
     READ TABLE t70->items INDEX 1 INTO t69.
     result = t69.
-
+    RETURN.
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
-  METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1058_ae1f86304fc2.
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
-
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1149_f506d94661e6.
+  ENDMETHOD.
   METHOD zif_lnt_file~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
   METHOD zif_lnt_file~get_filename.
-    result = me->get_filename( ).
+    result = me->get_filename(  ).
   ENDMETHOD.
-
   METHOD zif_lnt_file~get_object_type.
-    result = me->get_object_type( ).
+    result = me->get_object_type(  ).
   ENDMETHOD.
-
   METHOD zif_lnt_file~get_object_name.
-    result = me->get_object_name( ).
+    result = me->get_object_name(  ).
   ENDMETHOD.
-
   METHOD zif_lnt_file~get_raw.
-    result = me->get_raw( ).
+    result = me->get_raw(  ).
   ENDMETHOD.
-
   METHOD zif_lnt_file~get_raw_rows.
-    result = me->get_raw_rows( ).
+    result = me->get_raw_rows(  ).
   ENDMETHOD.
 ENDCLASS.

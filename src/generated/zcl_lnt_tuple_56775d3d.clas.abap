@@ -1,6 +1,7 @@
 * TS: src/version.ts:66:7 tuple.b9186eb6a5a9c2807a69ae227136a989fe3c4994c28164490ee76ba0fa171b0b.b9186eb6a5a9c2807a69ae227136a989fe3c4994c28164490ee76ba0fa171b0b.b9186eb6a5a9c2807a69ae227136a989fe3c49
 CLASS zcl_lnt_tuple_56775d3d DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     DATA f0 TYPE REF TO zcl_lnt_tuple_8eedfa28.
     DATA f1 TYPE REF TO zcl_lnt_tuple_8eedfa28.
     DATA f2 TYPE REF TO zcl_lnt_tuple_8eedfa28.
@@ -61,6 +62,7 @@ CLASS zcl_lnt_tuple_56775d3d DEFINITION PUBLIC CREATE PUBLIC.
     DATA f57 TYPE REF TO zcl_lnt_tuple_db7d0a56.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -68,7 +70,15 @@ CLASS zcl_lnt_tuple_56775d3d IMPLEMENTATION.
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d9_e4f0b8f112f46b.
   ENDMETHOD.

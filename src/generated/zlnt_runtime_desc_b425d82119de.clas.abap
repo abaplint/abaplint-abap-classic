@@ -23,12 +23,13 @@ CLASS zlnt_runtime_desc_b425d82119de IMPLEMENTATION.
     DATA init_parent3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     CREATE OBJECT zlnt_member_d3_93b114c6beac5f EXPORTING name = `SkipToNextFile` emitted = `zcx_lnt_skip_to_next_file` parent = init_parent3 static_names = t_empty.
     DATA init_parent4 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CREATE OBJECT zlnt_member_d4_13543b5ca4726d EXPORTING name = `OpaquePromise` emitted = `zcl_lnt_builtin_f94a6ae8` parent = init_parent4 static_names = t_empty.
+    CREATE OBJECT zlnt_member_d4_13543b5ca4726d EXPORTING name = `Error` emitted = `zcl_lnt_builtin_e8b3bd7e` parent = init_parent4 static_names = t_empty.
     DATA init_parent5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CREATE OBJECT zlnt_member_d5_fe178efb571dcf EXPORTING name = `Error` emitted = `zcl_lnt_builtin_e8b3bd7e` parent = init_parent5 static_names = t_empty.
-    zlnt_member_d0_5ecc9e9989d6ba->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d5_fe178efb571dcf.
-    zlnt_member_d1_2d6b79a5b052ba->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d5_fe178efb571dcf.
-    zlnt_member_d2_33f63f78ed485d->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d5_fe178efb571dcf.
-    zlnt_member_d3_93b114c6beac5f->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d5_fe178efb571dcf.
+    CREATE OBJECT zlnt_member_d5_fe178efb571dcf EXPORTING name = `SyntaxError` emitted = `zcx_lnt_builtin_4c6a1223` parent = init_parent5 static_names = t_empty.
+    zlnt_member_d0_5ecc9e9989d6ba->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
+    zlnt_member_d1_2d6b79a5b052ba->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
+    zlnt_member_d2_33f63f78ed485d->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
+    zlnt_member_d3_93b114c6beac5f->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
+    zlnt_member_d5_fe178efb571dcf->parent = zlnt_runtime_desc_b425d82119de=>zlnt_member_d4_13543b5ca4726d.
   ENDMETHOD.
 ENDCLASS.

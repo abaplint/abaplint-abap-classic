@@ -1,6 +1,7 @@
 * TS: src/abap/2_statements/expressions/sql_function.ts.module module
 CLASS zcl_lnt_sql_function_module DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     CONSTANTS variadic TYPE i VALUE -1.
     CLASS-DATA sql_function_defs TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLASS-DATA sql_named_function_defs TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -10,6 +11,7 @@ CLASS zcl_lnt_sql_function_module DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-METHODS zlnt_builtin_init_916c47d62a99.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -28,11 +30,11 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
+    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t5 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t5.
-    DATA(t6) = |abs|.
-    DATA(t7) = CONV int8( 1 ).
+    DATA(t6) = CONV string( |abs| ).
+    DATA(t7) = CONV f( 1 ).
     DATA t8 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_abap_release.
@@ -43,16 +45,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t10 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t11) = |v740sp05|.
+    DATA(t11) = CONV string( |v740sp05| ).
     t9 = t10->get( p0 = t11 ).
     t8 = t9.
     t5 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t6 i_f1 = t7 i_f2 = t8 ).
+    t4->load( ).
     APPEND t5 TO t4->items.
-    DATA(t12) = t2.
+    t4->save( ).
+    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t13 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t13.
-    DATA(t14) = |ceil|.
-    DATA(t15) = CONV int8( 1 ).
+    DATA(t14) = CONV string( |ceil| ).
+    DATA(t15) = CONV f( 1 ).
     DATA t16 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t16.
     DATA t17 TYPE REF TO zcl_lnt_abap_release.
@@ -63,16 +67,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t18 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t19) = |v740sp05|.
+    DATA(t19) = CONV string( |v740sp05| ).
     t17 = t18->get( p0 = t19 ).
     t16 = t17.
     t13 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t14 i_f1 = t15 i_f2 = t16 ).
+    t12->load( ).
     APPEND t13 TO t12->items.
-    DATA(t20) = t2.
+    t12->save( ).
+    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t21 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t21.
-    DATA(t22) = |floor|.
-    DATA(t23) = CONV int8( 1 ).
+    DATA(t22) = CONV string( |floor| ).
+    DATA(t23) = CONV f( 1 ).
     DATA t24 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t24.
     DATA t25 TYPE REF TO zcl_lnt_abap_release.
@@ -83,16 +89,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t26 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t27) = |v740sp05|.
+    DATA(t27) = CONV string( |v740sp05| ).
     t25 = t26->get( p0 = t27 ).
     t24 = t25.
     t21 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t22 i_f1 = t23 i_f2 = t24 ).
+    t20->load( ).
     APPEND t21 TO t20->items.
-    DATA(t28) = t2.
+    t20->save( ).
+    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t29 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t29.
-    DATA(t30) = |div|.
-    DATA(t31) = CONV int8( 2 ).
+    DATA(t30) = CONV string( |div| ).
+    DATA(t31) = CONV f( 2 ).
     DATA t32 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t32.
     DATA t33 TYPE REF TO zcl_lnt_abap_release.
@@ -103,16 +111,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t34 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t35) = |v740sp05|.
+    DATA(t35) = CONV string( |v740sp05| ).
     t33 = t34->get( p0 = t35 ).
     t32 = t33.
     t29 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t30 i_f1 = t31 i_f2 = t32 ).
+    t28->load( ).
     APPEND t29 TO t28->items.
-    DATA(t36) = t2.
+    t28->save( ).
+    DATA(t36) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t37 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t37.
-    DATA(t38) = |mod|.
-    DATA(t39) = CONV int8( 2 ).
+    DATA(t38) = CONV string( |mod| ).
+    DATA(t39) = CONV f( 2 ).
     DATA t40 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t40.
     DATA t41 TYPE REF TO zcl_lnt_abap_release.
@@ -123,16 +133,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t42 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t43) = |v740sp05|.
+    DATA(t43) = CONV string( |v740sp05| ).
     t41 = t42->get( p0 = t43 ).
     t40 = t41.
     t37 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t38 i_f1 = t39 i_f2 = t40 ).
+    t36->load( ).
     APPEND t37 TO t36->items.
-    DATA(t44) = t2.
+    t36->save( ).
+    DATA(t44) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t45 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t45.
-    DATA(t46) = |coalesce|.
-    DATA t47 TYPE int8.
+    DATA(t46) = CONV string( |coalesce| ).
+    DATA t47 TYPE f.
     DATA(t48) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t47 = t48.
     DATA t49 TYPE REF TO zcl_lnt_abap_release.
@@ -145,16 +157,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t51 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t52) = |v740sp05|.
+    DATA(t52) = CONV string( |v740sp05| ).
     t50 = t51->get( p0 = t52 ).
     t49 = t50.
     t45 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t46 i_f1 = t47 i_f2 = t49 ).
+    t44->load( ).
     APPEND t45 TO t44->items.
-    DATA(t53) = t2.
+    t44->save( ).
+    DATA(t53) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t54 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t54.
-    DATA(t55) = |concat|.
-    DATA(t56) = CONV int8( 2 ).
+    DATA(t55) = CONV string( |concat| ).
+    DATA(t56) = CONV f( 2 ).
     DATA t57 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t57.
     DATA t58 TYPE REF TO zcl_lnt_abap_release.
@@ -165,16 +179,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t59 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t60) = |v750|.
+    DATA(t60) = CONV string( |v750| ).
     t58 = t59->get( p0 = t60 ).
     t57 = t58.
     t54 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t55 i_f1 = t56 i_f2 = t57 ).
+    t53->load( ).
     APPEND t54 TO t53->items.
-    DATA(t61) = t2.
+    t53->save( ).
+    DATA(t61) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t62 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t62.
-    DATA(t63) = |length|.
-    DATA(t64) = CONV int8( 1 ).
+    DATA(t63) = CONV string( |length| ).
+    DATA(t64) = CONV f( 1 ).
     DATA t65 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t65.
     DATA t66 TYPE REF TO zcl_lnt_abap_release.
@@ -185,16 +201,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t67 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t68) = |v750|.
+    DATA(t68) = CONV string( |v750| ).
     t66 = t67->get( p0 = t68 ).
     t65 = t66.
     t62 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t63 i_f1 = t64 i_f2 = t65 ).
+    t61->load( ).
     APPEND t62 TO t61->items.
-    DATA(t69) = t2.
+    t61->save( ).
+    DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t70 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t70.
-    DATA(t71) = |ltrim|.
-    DATA(t72) = CONV int8( 2 ).
+    DATA(t71) = CONV string( |ltrim| ).
+    DATA(t72) = CONV f( 2 ).
     DATA t73 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t73.
     DATA t74 TYPE REF TO zcl_lnt_abap_release.
@@ -205,16 +223,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t75 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t76) = |v750|.
+    DATA(t76) = CONV string( |v750| ).
     t74 = t75->get( p0 = t76 ).
     t73 = t74.
     t70 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t71 i_f1 = t72 i_f2 = t73 ).
+    t69->load( ).
     APPEND t70 TO t69->items.
-    DATA(t77) = t2.
+    t69->save( ).
+    DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t78 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t78.
-    DATA(t79) = |rtrim|.
-    DATA(t80) = CONV int8( 2 ).
+    DATA(t79) = CONV string( |rtrim| ).
+    DATA(t80) = CONV f( 2 ).
     DATA t81 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t81.
     DATA t82 TYPE REF TO zcl_lnt_abap_release.
@@ -225,16 +245,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t83 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t84) = |v750|.
+    DATA(t84) = CONV string( |v750| ).
     t82 = t83->get( p0 = t84 ).
     t81 = t82.
     t78 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t79 i_f1 = t80 i_f2 = t81 ).
+    t77->load( ).
     APPEND t78 TO t77->items.
-    DATA(t85) = t2.
+    t77->save( ).
+    DATA(t85) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t86 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t86.
-    DATA(t87) = |right|.
-    DATA(t88) = CONV int8( 2 ).
+    DATA(t87) = CONV string( |right| ).
+    DATA(t88) = CONV f( 2 ).
     DATA t89 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t89.
     DATA t90 TYPE REF TO zcl_lnt_abap_release.
@@ -245,16 +267,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t91 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t92) = |v750|.
+    DATA(t92) = CONV string( |v750| ).
     t90 = t91->get( p0 = t92 ).
     t89 = t90.
     t86 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t87 i_f1 = t88 i_f2 = t89 ).
+    t85->load( ).
     APPEND t86 TO t85->items.
-    DATA(t93) = t2.
+    t85->save( ).
+    DATA(t93) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t94 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t94.
-    DATA(t95) = |replace|.
-    DATA(t96) = CONV int8( 3 ).
+    DATA(t95) = CONV string( |replace| ).
+    DATA(t96) = CONV f( 3 ).
     DATA t97 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t97.
     DATA t98 TYPE REF TO zcl_lnt_abap_release.
@@ -265,16 +289,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t99 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t100) = |v750|.
+    DATA(t100) = CONV string( |v750| ).
     t98 = t99->get( p0 = t100 ).
     t97 = t98.
     t94 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t95 i_f1 = t96 i_f2 = t97 ).
+    t93->load( ).
     APPEND t94 TO t93->items.
-    DATA(t101) = t2.
+    t93->save( ).
+    DATA(t101) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t102 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t102.
-    DATA(t103) = |round|.
-    DATA(t104) = CONV int8( 2 ).
+    DATA(t103) = CONV string( |round| ).
+    DATA(t104) = CONV f( 2 ).
     DATA t105 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t105.
     DATA t106 TYPE REF TO zcl_lnt_abap_release.
@@ -285,16 +311,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t107 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t108) = |v750|.
+    DATA(t108) = CONV string( |v750| ).
     t106 = t107->get( p0 = t108 ).
     t105 = t106.
     t102 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t103 i_f1 = t104 i_f2 = t105 ).
+    t101->load( ).
     APPEND t102 TO t101->items.
-    DATA(t109) = t2.
+    t101->save( ).
+    DATA(t109) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t110 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t110.
-    DATA(t111) = |substring|.
-    DATA(t112) = CONV int8( 3 ).
+    DATA(t111) = CONV string( |substring| ).
+    DATA(t112) = CONV f( 3 ).
     DATA t113 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t113.
     DATA t114 TYPE REF TO zcl_lnt_abap_release.
@@ -305,16 +333,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t115 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t116) = |v750|.
+    DATA(t116) = CONV string( |v750| ).
     t114 = t115->get( p0 = t116 ).
     t113 = t114.
     t110 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t111 i_f1 = t112 i_f2 = t113 ).
+    t109->load( ).
     APPEND t110 TO t109->items.
-    DATA(t117) = t2.
+    t109->save( ).
+    DATA(t117) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t118 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t118.
-    DATA(t119) = |lpad|.
-    DATA(t120) = CONV int8( 3 ).
+    DATA(t119) = CONV string( |lpad| ).
+    DATA(t120) = CONV f( 3 ).
     DATA t121 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t121.
     DATA t122 TYPE REF TO zcl_lnt_abap_release.
@@ -325,16 +355,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t123 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t124) = |v750|.
+    DATA(t124) = CONV string( |v750| ).
     t122 = t123->get( p0 = t124 ).
     t121 = t122.
     t118 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t119 i_f1 = t120 i_f2 = t121 ).
+    t117->load( ).
     APPEND t118 TO t117->items.
-    DATA(t125) = t2.
+    t117->save( ).
+    DATA(t125) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t126 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t126.
-    DATA(t127) = |instr|.
-    DATA(t128) = CONV int8( 2 ).
+    DATA(t127) = CONV string( |instr| ).
+    DATA(t128) = CONV f( 2 ).
     DATA t129 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t129.
     DATA t130 TYPE REF TO zcl_lnt_abap_release.
@@ -345,16 +377,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t131 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t132) = |v750|.
+    DATA(t132) = CONV string( |v750| ).
     t130 = t131->get( p0 = t132 ).
     t129 = t130.
     t126 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t127 i_f1 = t128 i_f2 = t129 ).
+    t125->load( ).
     APPEND t126 TO t125->items.
-    DATA(t133) = t2.
+    t125->save( ).
+    DATA(t133) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t134 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t134.
-    DATA(t135) = |concat_with_space|.
-    DATA(t136) = CONV int8( 3 ).
+    DATA(t135) = CONV string( |concat_with_space| ).
+    DATA(t136) = CONV f( 3 ).
     DATA t137 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t137.
     DATA t138 TYPE REF TO zcl_lnt_abap_release.
@@ -365,16 +399,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t139 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t140) = |v751|.
+    DATA(t140) = CONV string( |v751| ).
     t138 = t139->get( p0 = t140 ).
     t137 = t138.
     t134 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t135 i_f1 = t136 i_f2 = t137 ).
+    t133->load( ).
     APPEND t134 TO t133->items.
-    DATA(t141) = t2.
+    t133->save( ).
+    DATA(t141) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t142 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t142.
-    DATA(t143) = |rpad|.
-    DATA(t144) = CONV int8( 3 ).
+    DATA(t143) = CONV string( |rpad| ).
+    DATA(t144) = CONV f( 3 ).
     DATA t145 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t145.
     DATA t146 TYPE REF TO zcl_lnt_abap_release.
@@ -385,16 +421,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t147 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t148) = |v751|.
+    DATA(t148) = CONV string( |v751| ).
     t146 = t147->get( p0 = t148 ).
     t145 = t146.
     t142 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t143 i_f1 = t144 i_f2 = t145 ).
+    t141->load( ).
     APPEND t142 TO t141->items.
-    DATA(t149) = t2.
+    t141->save( ).
+    DATA(t149) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t150 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t150.
-    DATA(t151) = |left|.
-    DATA(t152) = CONV int8( 2 ).
+    DATA(t151) = CONV string( |left| ).
+    DATA(t152) = CONV f( 2 ).
     DATA t153 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t153.
     DATA t154 TYPE REF TO zcl_lnt_abap_release.
@@ -405,16 +443,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t155 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t156) = |v751|.
+    DATA(t156) = CONV string( |v751| ).
     t154 = t155->get( p0 = t156 ).
     t153 = t154.
     t150 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t151 i_f1 = t152 i_f2 = t153 ).
+    t149->load( ).
     APPEND t150 TO t149->items.
-    DATA(t157) = t2.
+    t149->save( ).
+    DATA(t157) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t158 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t158.
-    DATA(t159) = |lower|.
-    DATA(t160) = CONV int8( 1 ).
+    DATA(t159) = CONV string( |lower| ).
+    DATA(t160) = CONV f( 1 ).
     DATA t161 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t161.
     DATA t162 TYPE REF TO zcl_lnt_abap_release.
@@ -425,16 +465,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t163 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t164) = |v751|.
+    DATA(t164) = CONV string( |v751| ).
     t162 = t163->get( p0 = t164 ).
     t161 = t162.
     t158 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t159 i_f1 = t160 i_f2 = t161 ).
+    t157->load( ).
     APPEND t158 TO t157->items.
-    DATA(t165) = t2.
+    t157->save( ).
+    DATA(t165) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t166 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t166.
-    DATA(t167) = |upper|.
-    DATA(t168) = CONV int8( 1 ).
+    DATA(t167) = CONV string( |upper| ).
+    DATA(t168) = CONV f( 1 ).
     DATA t169 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t169.
     DATA t170 TYPE REF TO zcl_lnt_abap_release.
@@ -445,16 +487,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t171 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t172) = |v751|.
+    DATA(t172) = CONV string( |v751| ).
     t170 = t171->get( p0 = t172 ).
     t169 = t170.
     t166 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t167 i_f1 = t168 i_f2 = t169 ).
+    t165->load( ).
     APPEND t166 TO t165->items.
-    DATA(t173) = t2.
+    t165->save( ).
+    DATA(t173) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t174 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t174.
-    DATA(t175) = |division|.
-    DATA(t176) = CONV int8( 3 ).
+    DATA(t175) = CONV string( |division| ).
+    DATA(t176) = CONV f( 3 ).
     DATA t177 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t177.
     DATA t178 TYPE REF TO zcl_lnt_abap_release.
@@ -465,16 +509,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t179 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t180) = |v751|.
+    DATA(t180) = CONV string( |v751| ).
     t178 = t179->get( p0 = t180 ).
     t177 = t178.
     t174 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t175 i_f1 = t176 i_f2 = t177 ).
+    t173->load( ).
     APPEND t174 TO t173->items.
-    DATA(t181) = t2.
+    t173->save( ).
+    DATA(t181) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t182 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t182.
-    DATA(t183) = |bintohex|.
-    DATA(t184) = CONV int8( 1 ).
+    DATA(t183) = CONV string( |bintohex| ).
+    DATA(t184) = CONV f( 1 ).
     DATA t185 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t185.
     DATA t186 TYPE REF TO zcl_lnt_abap_release.
@@ -485,16 +531,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t187 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t188) = |v752|.
+    DATA(t188) = CONV string( |v752| ).
     t186 = t187->get( p0 = t188 ).
     t185 = t186.
     t182 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t183 i_f1 = t184 i_f2 = t185 ).
+    t181->load( ).
     APPEND t182 TO t181->items.
-    DATA(t189) = t2.
+    t181->save( ).
+    DATA(t189) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t190 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t190.
-    DATA(t191) = |hextobin|.
-    DATA(t192) = CONV int8( 1 ).
+    DATA(t191) = CONV string( |hextobin| ).
+    DATA(t192) = CONV f( 1 ).
     DATA t193 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t193.
     DATA t194 TYPE REF TO zcl_lnt_abap_release.
@@ -505,16 +553,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t195 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t196) = |v752|.
+    DATA(t196) = CONV string( |v752| ).
     t194 = t195->get( p0 = t196 ).
     t193 = t194.
     t190 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t191 i_f1 = t192 i_f2 = t193 ).
+    t189->load( ).
     APPEND t190 TO t189->items.
-    DATA(t197) = t2.
+    t189->save( ).
+    DATA(t197) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t198 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t198.
-    DATA(t199) = |dats_is_valid|.
-    DATA(t200) = CONV int8( 1 ).
+    DATA(t199) = CONV string( |dats_is_valid| ).
+    DATA(t200) = CONV f( 1 ).
     DATA t201 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t201.
     DATA t202 TYPE REF TO zcl_lnt_abap_release.
@@ -525,16 +575,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t203 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t204) = |v754|.
+    DATA(t204) = CONV string( |v754| ).
     t202 = t203->get( p0 = t204 ).
     t201 = t202.
     t198 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t199 i_f1 = t200 i_f2 = t201 ).
+    t197->load( ).
     APPEND t198 TO t197->items.
-    DATA(t205) = t2.
+    t197->save( ).
+    DATA(t205) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t206 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t206.
-    DATA(t207) = |dats_days_between|.
-    DATA(t208) = CONV int8( 2 ).
+    DATA(t207) = CONV string( |dats_days_between| ).
+    DATA(t208) = CONV f( 2 ).
     DATA t209 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t209.
     DATA t210 TYPE REF TO zcl_lnt_abap_release.
@@ -545,16 +597,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t211 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t212) = |v754|.
+    DATA(t212) = CONV string( |v754| ).
     t210 = t211->get( p0 = t212 ).
     t209 = t210.
     t206 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t207 i_f1 = t208 i_f2 = t209 ).
+    t205->load( ).
     APPEND t206 TO t205->items.
-    DATA(t213) = t2.
+    t205->save( ).
+    DATA(t213) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t214 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t214.
-    DATA(t215) = |dats_add_days|.
-    DATA(t216) = CONV int8( 2 ).
+    DATA(t215) = CONV string( |dats_add_days| ).
+    DATA(t216) = CONV f( 2 ).
     DATA t217 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t217.
     DATA t218 TYPE REF TO zcl_lnt_abap_release.
@@ -565,16 +619,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t219 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t220) = |v754|.
+    DATA(t220) = CONV string( |v754| ).
     t218 = t219->get( p0 = t220 ).
     t217 = t218.
     t214 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t215 i_f1 = t216 i_f2 = t217 ).
+    t213->load( ).
     APPEND t214 TO t213->items.
-    DATA(t221) = t2.
+    t213->save( ).
+    DATA(t221) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t222 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t222.
-    DATA(t223) = |dats_add_months|.
-    DATA(t224) = CONV int8( 2 ).
+    DATA(t223) = CONV string( |dats_add_months| ).
+    DATA(t224) = CONV f( 2 ).
     DATA t225 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t225.
     DATA t226 TYPE REF TO zcl_lnt_abap_release.
@@ -585,16 +641,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t227 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t228) = |v754|.
+    DATA(t228) = CONV string( |v754| ).
     t226 = t227->get( p0 = t228 ).
     t225 = t226.
     t222 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t223 i_f1 = t224 i_f2 = t225 ).
+    t221->load( ).
     APPEND t222 TO t221->items.
-    DATA(t229) = t2.
+    t221->save( ).
+    DATA(t229) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t230 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t230.
-    DATA(t231) = |uuid|.
-    DATA(t232) = CONV int8( 0 ).
+    DATA(t231) = CONV string( |uuid| ).
+    DATA(t232) = CONV f( 0 ).
     DATA t233 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t233.
     DATA t234 TYPE REF TO zcl_lnt_abap_release.
@@ -605,16 +663,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t235 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t236) = |v754|.
+    DATA(t236) = CONV string( |v754| ).
     t234 = t235->get( p0 = t236 ).
     t233 = t234.
     t230 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t231 i_f1 = t232 i_f2 = t233 ).
+    t229->load( ).
     APPEND t230 TO t229->items.
-    DATA(t237) = t2.
+    t229->save( ).
+    DATA(t237) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t238 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t238.
-    DATA(t239) = |utcl_current|.
-    DATA(t240) = CONV int8( 0 ).
+    DATA(t239) = CONV string( |utcl_current| ).
+    DATA(t240) = CONV f( 0 ).
     DATA t241 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t241.
     DATA t242 TYPE REF TO zcl_lnt_abap_release.
@@ -625,16 +685,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t243 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t244) = |v754|.
+    DATA(t244) = CONV string( |v754| ).
     t242 = t243->get( p0 = t244 ).
     t241 = t242.
     t238 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t239 i_f1 = t240 i_f2 = t241 ).
+    t237->load( ).
     APPEND t238 TO t237->items.
-    DATA(t245) = t2.
+    t237->save( ).
+    DATA(t245) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t246 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t246.
-    DATA(t247) = |tstmp_current_utctimestamp|.
-    DATA(t248) = CONV int8( 0 ).
+    DATA(t247) = CONV string( |tstmp_current_utctimestamp| ).
+    DATA(t248) = CONV f( 0 ).
     DATA t249 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t249.
     DATA t250 TYPE REF TO zcl_lnt_abap_release.
@@ -645,16 +707,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t251 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t252) = |v757|.
+    DATA(t252) = CONV string( |v757| ).
     t250 = t251->get( p0 = t252 ).
     t249 = t250.
     t246 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t247 i_f1 = t248 i_f2 = t249 ).
+    t245->load( ).
     APPEND t246 TO t245->items.
-    DATA(t253) = t2.
+    t245->save( ).
+    DATA(t253) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t254 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t254.
-    DATA(t255) = |tstmp_is_valid|.
-    DATA(t256) = CONV int8( 1 ).
+    DATA(t255) = CONV string( |tstmp_is_valid| ).
+    DATA(t256) = CONV f( 1 ).
     DATA t257 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t257.
     DATA t258 TYPE REF TO zcl_lnt_abap_release.
@@ -665,16 +729,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t259 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t260) = |v757|.
+    DATA(t260) = CONV string( |v757| ).
     t258 = t259->get( p0 = t260 ).
     t257 = t258.
     t254 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t255 i_f1 = t256 i_f2 = t257 ).
+    t253->load( ).
     APPEND t254 TO t253->items.
-    DATA(t261) = t2.
+    t253->save( ).
+    DATA(t261) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t262 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t262.
-    DATA(t263) = |tims_is_valid|.
-    DATA(t264) = CONV int8( 1 ).
+    DATA(t263) = CONV string( |tims_is_valid| ).
+    DATA(t264) = CONV f( 1 ).
     DATA t265 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t265.
     DATA t266 TYPE REF TO zcl_lnt_abap_release.
@@ -685,16 +751,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t267 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t268) = |v757|.
+    DATA(t268) = CONV string( |v757| ).
     t266 = t267->get( p0 = t268 ).
     t265 = t266.
     t262 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t263 i_f1 = t264 i_f2 = t265 ).
+    t261->load( ).
     APPEND t262 TO t261->items.
-    DATA(t269) = t2.
+    t261->save( ).
+    DATA(t269) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t270 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t270.
-    DATA(t271) = |utcl_add_seconds|.
-    DATA(t272) = CONV int8( 2 ).
+    DATA(t271) = CONV string( |utcl_add_seconds| ).
+    DATA(t272) = CONV f( 2 ).
     DATA t273 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t273.
     DATA t274 TYPE REF TO zcl_lnt_abap_release.
@@ -705,16 +773,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t275 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t276) = |v757|.
+    DATA(t276) = CONV string( |v757| ).
     t274 = t275->get( p0 = t276 ).
     t273 = t274.
     t270 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t271 i_f1 = t272 i_f2 = t273 ).
+    t269->load( ).
     APPEND t270 TO t269->items.
-    DATA(t277) = t2.
+    t269->save( ).
+    DATA(t277) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t278 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t278.
-    DATA(t279) = |utcl_seconds_between|.
-    DATA(t280) = CONV int8( 2 ).
+    DATA(t279) = CONV string( |utcl_seconds_between| ).
+    DATA(t280) = CONV f( 2 ).
     DATA t281 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t281.
     DATA t282 TYPE REF TO zcl_lnt_abap_release.
@@ -725,16 +795,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t283 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t284) = |v757|.
+    DATA(t284) = CONV string( |v757| ).
     t282 = t283->get( p0 = t284 ).
     t281 = t282.
     t278 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t279 i_f1 = t280 i_f2 = t281 ).
+    t277->load( ).
     APPEND t278 TO t277->items.
-    DATA(t285) = t2.
+    t277->save( ).
+    DATA(t285) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t286 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t286.
-    DATA(t287) = |datn_days_between|.
-    DATA(t288) = CONV int8( 2 ).
+    DATA(t287) = CONV string( |datn_days_between| ).
+    DATA(t288) = CONV f( 2 ).
     DATA t289 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t289.
     DATA t290 TYPE REF TO zcl_lnt_abap_release.
@@ -745,16 +817,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t291 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t292) = |v757|.
+    DATA(t292) = CONV string( |v757| ).
     t290 = t291->get( p0 = t292 ).
     t289 = t290.
     t286 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t287 i_f1 = t288 i_f2 = t289 ).
+    t285->load( ).
     APPEND t286 TO t285->items.
-    DATA(t293) = t2.
+    t285->save( ).
+    DATA(t293) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t294 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t294.
-    DATA(t295) = |datn_add_days|.
-    DATA(t296) = CONV int8( 2 ).
+    DATA(t295) = CONV string( |datn_add_days| ).
+    DATA(t296) = CONV f( 2 ).
     DATA t297 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t297.
     DATA t298 TYPE REF TO zcl_lnt_abap_release.
@@ -765,16 +839,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t299 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t300) = |v757|.
+    DATA(t300) = CONV string( |v757| ).
     t298 = t299->get( p0 = t300 ).
     t297 = t298.
     t294 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t295 i_f1 = t296 i_f2 = t297 ).
+    t293->load( ).
     APPEND t294 TO t293->items.
-    DATA(t301) = t2.
+    t293->save( ).
+    DATA(t301) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t302 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t302.
-    DATA(t303) = |datn_add_months|.
-    DATA(t304) = CONV int8( 2 ).
+    DATA(t303) = CONV string( |datn_add_months| ).
+    DATA(t304) = CONV f( 2 ).
     DATA t305 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t305.
     DATA t306 TYPE REF TO zcl_lnt_abap_release.
@@ -785,16 +861,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t307 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t308) = |v757|.
+    DATA(t308) = CONV string( |v757| ).
     t306 = t307->get( p0 = t308 ).
     t305 = t306.
     t302 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t303 i_f1 = t304 i_f2 = t305 ).
+    t301->load( ).
     APPEND t302 TO t301->items.
-    DATA(t309) = t2.
+    t301->save( ).
+    DATA(t309) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t310 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t310.
-    DATA(t311) = |as_geo_json|.
-    DATA(t312) = CONV int8( 1 ).
+    DATA(t311) = CONV string( |as_geo_json| ).
+    DATA(t312) = CONV f( 1 ).
     DATA t313 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t313.
     DATA t314 TYPE REF TO zcl_lnt_abap_release.
@@ -805,16 +883,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t315 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t316) = |v757|.
+    DATA(t316) = CONV string( |v757| ).
     t314 = t315->get( p0 = t316 ).
     t313 = t314.
     t310 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t311 i_f1 = t312 i_f2 = t313 ).
+    t309->load( ).
     APPEND t310 TO t309->items.
-    DATA(t317) = t2.
+    t309->save( ).
+    DATA(t317) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t318 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t318.
-    DATA(t319) = |allow_precision_loss|.
-    DATA(t320) = CONV int8( 1 ).
+    DATA(t319) = CONV string( |allow_precision_loss| ).
+    DATA(t320) = CONV f( 1 ).
     DATA t321 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t321.
     DATA t322 TYPE REF TO zcl_lnt_abap_release.
@@ -825,16 +905,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t323 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t324) = |v757|.
+    DATA(t324) = CONV string( |v757| ).
     t322 = t323->get( p0 = t324 ).
     t321 = t322.
     t318 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t319 i_f1 = t320 i_f2 = t321 ).
+    t317->load( ).
     APPEND t318 TO t317->items.
-    DATA(t325) = t2.
+    t317->save( ).
+    DATA(t325) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t326 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t326.
-    DATA(t327) = |to_clob|.
-    DATA(t328) = CONV int8( 1 ).
+    DATA(t327) = CONV string( |to_clob| ).
+    DATA(t328) = CONV f( 1 ).
     DATA t329 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t329.
     DATA t330 TYPE REF TO zcl_lnt_abap_release.
@@ -845,16 +927,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t331 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t332) = |v757|.
+    DATA(t332) = CONV string( |v757| ).
     t330 = t331->get( p0 = t332 ).
     t329 = t330.
     t326 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t327 i_f1 = t328 i_f2 = t329 ).
+    t325->load( ).
     APPEND t326 TO t325->items.
-    DATA(t333) = t2.
+    t325->save( ).
+    DATA(t333) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t334 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t334.
-    DATA(t335) = |to_blob|.
-    DATA(t336) = CONV int8( 1 ).
+    DATA(t335) = CONV string( |to_blob| ).
+    DATA(t336) = CONV f( 1 ).
     DATA t337 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t337.
     DATA t338 TYPE REF TO zcl_lnt_abap_release.
@@ -865,16 +949,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t339 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t340) = |v757|.
+    DATA(t340) = CONV string( |v757| ).
     t338 = t339->get( p0 = t340 ).
     t337 = t338.
     t334 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t335 i_f1 = t336 i_f2 = t337 ).
+    t333->load( ).
     APPEND t334 TO t333->items.
-    DATA(t341) = t2.
+    t333->save( ).
+    DATA(t341) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t342 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t342.
-    DATA(t343) = |grouping|.
-    DATA(t344) = CONV int8( 1 ).
+    DATA(t343) = CONV string( |grouping| ).
+    DATA(t344) = CONV f( 1 ).
     DATA t345 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t345.
     DATA t346 TYPE REF TO zcl_lnt_abap_release.
@@ -885,16 +971,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t347 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t348) = |v757|.
+    DATA(t348) = CONV string( |v757| ).
     t346 = t347->get( p0 = t348 ).
     t345 = t346.
     t342 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t343 i_f1 = t344 i_f2 = t345 ).
+    t341->load( ).
     APPEND t342 TO t341->items.
-    DATA(t349) = t2.
+    t341->save( ).
+    DATA(t349) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t350 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t350.
-    DATA(t351) = |extract_year|.
-    DATA(t352) = CONV int8( 1 ).
+    DATA(t351) = CONV string( |extract_year| ).
+    DATA(t352) = CONV f( 1 ).
     DATA t353 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t353.
     DATA t354 TYPE REF TO zcl_lnt_abap_release.
@@ -905,16 +993,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t355 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t356) = |v758|.
+    DATA(t356) = CONV string( |v758| ).
     t354 = t355->get( p0 = t356 ).
     t353 = t354.
     t350 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t351 i_f1 = t352 i_f2 = t353 ).
+    t349->load( ).
     APPEND t350 TO t349->items.
-    DATA(t357) = t2.
+    t349->save( ).
+    DATA(t357) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t358 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t358.
-    DATA(t359) = |extract_month|.
-    DATA(t360) = CONV int8( 1 ).
+    DATA(t359) = CONV string( |extract_month| ).
+    DATA(t360) = CONV f( 1 ).
     DATA t361 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t361.
     DATA t362 TYPE REF TO zcl_lnt_abap_release.
@@ -925,16 +1015,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t363 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t364) = |v758|.
+    DATA(t364) = CONV string( |v758| ).
     t362 = t363->get( p0 = t364 ).
     t361 = t362.
     t358 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t359 i_f1 = t360 i_f2 = t361 ).
+    t357->load( ).
     APPEND t358 TO t357->items.
-    DATA(t365) = t2.
+    t357->save( ).
+    DATA(t365) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t366 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t366.
-    DATA(t367) = |extract_day|.
-    DATA(t368) = CONV int8( 1 ).
+    DATA(t367) = CONV string( |extract_day| ).
+    DATA(t368) = CONV f( 1 ).
     DATA t369 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t369.
     DATA t370 TYPE REF TO zcl_lnt_abap_release.
@@ -945,16 +1037,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t371 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t372) = |v758|.
+    DATA(t372) = CONV string( |v758| ).
     t370 = t371->get( p0 = t372 ).
     t369 = t370.
     t366 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t367 i_f1 = t368 i_f2 = t369 ).
+    t365->load( ).
     APPEND t366 TO t365->items.
-    DATA(t373) = t2.
+    t365->save( ).
+    DATA(t373) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t374 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t374.
-    DATA(t375) = |extract_hour|.
-    DATA(t376) = CONV int8( 1 ).
+    DATA(t375) = CONV string( |extract_hour| ).
+    DATA(t376) = CONV f( 1 ).
     DATA t377 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t377.
     DATA t378 TYPE REF TO zcl_lnt_abap_release.
@@ -965,16 +1059,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t379 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t380) = |v758|.
+    DATA(t380) = CONV string( |v758| ).
     t378 = t379->get( p0 = t380 ).
     t377 = t378.
     t374 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t375 i_f1 = t376 i_f2 = t377 ).
+    t373->load( ).
     APPEND t374 TO t373->items.
-    DATA(t381) = t2.
+    t373->save( ).
+    DATA(t381) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t382 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t382.
-    DATA(t383) = |extract_minute|.
-    DATA(t384) = CONV int8( 1 ).
+    DATA(t383) = CONV string( |extract_minute| ).
+    DATA(t384) = CONV f( 1 ).
     DATA t385 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t385.
     DATA t386 TYPE REF TO zcl_lnt_abap_release.
@@ -985,16 +1081,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t387 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t388) = |v758|.
+    DATA(t388) = CONV string( |v758| ).
     t386 = t387->get( p0 = t388 ).
     t385 = t386.
     t382 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t383 i_f1 = t384 i_f2 = t385 ).
+    t381->load( ).
     APPEND t382 TO t381->items.
-    DATA(t389) = t2.
+    t381->save( ).
+    DATA(t389) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t390 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t390.
-    DATA(t391) = |extract_second|.
-    DATA(t392) = CONV int8( 1 ).
+    DATA(t391) = CONV string( |extract_second| ).
+    DATA(t392) = CONV f( 1 ).
     DATA t393 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t393.
     DATA t394 TYPE REF TO zcl_lnt_abap_release.
@@ -1005,16 +1103,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t395 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t396) = |v758|.
+    DATA(t396) = CONV string( |v758| ).
     t394 = t395->get( p0 = t396 ).
     t393 = t394.
     t390 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t391 i_f1 = t392 i_f2 = t393 ).
+    t389->load( ).
     APPEND t390 TO t389->items.
-    DATA(t397) = t2.
+    t389->save( ).
+    DATA(t397) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t398 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t398.
-    DATA(t399) = |days_between|.
-    DATA(t400) = CONV int8( 2 ).
+    DATA(t399) = CONV string( |days_between| ).
+    DATA(t400) = CONV f( 2 ).
     DATA t401 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t401.
     DATA t402 TYPE REF TO zcl_lnt_abap_release.
@@ -1025,16 +1125,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t403 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t404) = |v758|.
+    DATA(t404) = CONV string( |v758| ).
     t402 = t403->get( p0 = t404 ).
     t401 = t402.
     t398 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t399 i_f1 = t400 i_f2 = t401 ).
+    t397->load( ).
     APPEND t398 TO t397->items.
-    DATA(t405) = t2.
+    t397->save( ).
+    DATA(t405) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t406 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t406.
-    DATA(t407) = |add_days|.
-    DATA(t408) = CONV int8( 2 ).
+    DATA(t407) = CONV string( |add_days| ).
+    DATA(t408) = CONV f( 2 ).
     DATA t409 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t409.
     DATA t410 TYPE REF TO zcl_lnt_abap_release.
@@ -1045,16 +1147,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t411 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t412) = |v758|.
+    DATA(t412) = CONV string( |v758| ).
     t410 = t411->get( p0 = t412 ).
     t409 = t410.
     t406 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t407 i_f1 = t408 i_f2 = t409 ).
+    t405->load( ).
     APPEND t406 TO t405->items.
-    DATA(t413) = t2.
+    t405->save( ).
+    DATA(t413) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t414 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t414.
-    DATA(t415) = |add_months|.
-    DATA(t416) = CONV int8( 2 ).
+    DATA(t415) = CONV string( |add_months| ).
+    DATA(t416) = CONV f( 2 ).
     DATA t417 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t417.
     DATA t418 TYPE REF TO zcl_lnt_abap_release.
@@ -1065,16 +1169,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t419 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t420) = |v758|.
+    DATA(t420) = CONV string( |v758| ).
     t418 = t419->get( p0 = t420 ).
     t417 = t418.
     t414 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t415 i_f1 = t416 i_f2 = t417 ).
+    t413->load( ).
     APPEND t414 TO t413->items.
-    DATA(t421) = t2.
+    t413->save( ).
+    DATA(t421) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t422 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t422.
-    DATA(t423) = |monthname|.
-    DATA(t424) = CONV int8( 1 ).
+    DATA(t423) = CONV string( |monthname| ).
+    DATA(t424) = CONV f( 1 ).
     DATA t425 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t425.
     DATA t426 TYPE REF TO zcl_lnt_abap_release.
@@ -1085,16 +1191,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t427 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t428) = |v758|.
+    DATA(t428) = CONV string( |v758| ).
     t426 = t427->get( p0 = t428 ).
     t425 = t426.
     t422 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t423 i_f1 = t424 i_f2 = t425 ).
+    t421->load( ).
     APPEND t422 TO t421->items.
-    DATA(t429) = t2.
+    t421->save( ).
+    DATA(t429) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t430 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t430.
-    DATA(t431) = |dayname|.
-    DATA(t432) = CONV int8( 1 ).
+    DATA(t431) = CONV string( |dayname| ).
+    DATA(t432) = CONV f( 1 ).
     DATA t433 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t433.
     DATA t434 TYPE REF TO zcl_lnt_abap_release.
@@ -1105,16 +1213,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t435 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t436) = |v758|.
+    DATA(t436) = CONV string( |v758| ).
     t434 = t435->get( p0 = t436 ).
     t433 = t434.
     t430 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t431 i_f1 = t432 i_f2 = t433 ).
+    t429->load( ).
     APPEND t430 TO t429->items.
-    DATA(t437) = t2.
+    t429->save( ).
+    DATA(t437) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t438 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t438.
-    DATA(t439) = |initcap|.
-    DATA(t440) = CONV int8( 1 ).
+    DATA(t439) = CONV string( |initcap| ).
+    DATA(t440) = CONV f( 1 ).
     DATA t441 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t441.
     DATA t442 TYPE REF TO zcl_lnt_abap_release.
@@ -1125,16 +1235,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t443 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t444) = |v758|.
+    DATA(t444) = CONV string( |v758| ).
     t442 = t443->get( p0 = t444 ).
     t441 = t442.
     t438 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t439 i_f1 = t440 i_f2 = t441 ).
+    t437->load( ).
     APPEND t438 TO t437->items.
-    DATA(t445) = t2.
+    t437->save( ).
+    DATA(t445) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t446 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t446.
-    DATA(t447) = |is_valid|.
-    DATA(t448) = CONV int8( 1 ).
+    DATA(t447) = CONV string( |is_valid| ).
+    DATA(t448) = CONV f( 1 ).
     DATA t449 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t449.
     DATA t450 TYPE REF TO zcl_lnt_abap_release.
@@ -1145,16 +1257,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t451 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t452) = |v758|.
+    DATA(t452) = CONV string( |v758| ).
     t450 = t451->get( p0 = t452 ).
     t449 = t450.
     t446 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t447 i_f1 = t448 i_f2 = t449 ).
+    t445->load( ).
     APPEND t446 TO t445->items.
-    DATA(t453) = t2.
+    t445->save( ).
+    DATA(t453) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t454 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t454.
-    DATA(t455) = |weekday|.
-    DATA(t456) = CONV int8( 1 ).
+    DATA(t455) = CONV string( |weekday| ).
+    DATA(t456) = CONV f( 1 ).
     DATA t457 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t457.
     DATA t458 TYPE REF TO zcl_lnt_abap_release.
@@ -1165,16 +1279,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t459 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t460) = |v758|.
+    DATA(t460) = CONV string( |v758| ).
     t458 = t459->get( p0 = t460 ).
     t457 = t458.
     t454 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t455 i_f1 = t456 i_f2 = t457 ).
+    t453->load( ).
     APPEND t454 TO t453->items.
-    DATA(t461) = t2.
+    t453->save( ).
+    DATA(t461) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t462 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t462.
-    DATA(t463) = |locate|.
-    DATA t464 TYPE int8.
+    DATA(t463) = CONV string( |locate| ).
+    DATA t464 TYPE f.
     DATA(t465) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t464 = t465.
     DATA t466 TYPE REF TO zcl_lnt_abap_release.
@@ -1187,16 +1303,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t468 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t469) = |v758|.
+    DATA(t469) = CONV string( |v758| ).
     t467 = t468->get( p0 = t469 ).
     t466 = t467.
     t462 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t463 i_f1 = t464 i_f2 = t466 ).
+    t461->load( ).
     APPEND t462 TO t461->items.
-    DATA(t470) = t2.
+    t461->save( ).
+    DATA(t470) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t471 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t471.
-    DATA(t472) = |greatest|.
-    DATA t473 TYPE int8.
+    DATA(t472) = CONV string( |greatest| ).
+    DATA t473 TYPE f.
     DATA(t474) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t473 = t474.
     DATA t475 TYPE REF TO zcl_lnt_abap_release.
@@ -1209,16 +1327,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t477 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t478) = |v758|.
+    DATA(t478) = CONV string( |v758| ).
     t476 = t477->get( p0 = t478 ).
     t475 = t476.
     t471 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t472 i_f1 = t473 i_f2 = t475 ).
+    t470->load( ).
     APPEND t471 TO t470->items.
-    DATA(t479) = t2.
+    t470->save( ).
+    DATA(t479) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t480 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t480.
-    DATA(t481) = |least|.
-    DATA t482 TYPE int8.
+    DATA(t481) = CONV string( |least| ).
+    DATA t482 TYPE f.
     DATA(t483) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t482 = t483.
     DATA t484 TYPE REF TO zcl_lnt_abap_release.
@@ -1231,16 +1351,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t486 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t487) = |v758|.
+    DATA(t487) = CONV string( |v758| ).
     t485 = t486->get( p0 = t487 ).
     t484 = t485.
     t480 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t481 i_f1 = t482 i_f2 = t484 ).
+    t479->load( ).
     APPEND t480 TO t479->items.
-    DATA(t488) = t2.
+    t479->save( ).
+    DATA(t488) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t489 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t489.
-    DATA(t490) = |hierarchy_composite_id|.
-    DATA t491 TYPE int8.
+    DATA(t490) = CONV string( |hierarchy_composite_id| ).
+    DATA t491 TYPE f.
     DATA(t492) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t491 = t492.
     DATA t493 TYPE REF TO zcl_lnt_abap_release.
@@ -1253,16 +1375,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t495 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t496) = |v758|.
+    DATA(t496) = CONV string( |v758| ).
     t494 = t495->get( p0 = t496 ).
     t493 = t494.
     t489 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t490 i_f1 = t491 i_f2 = t493 ).
+    t488->load( ).
     APPEND t489 TO t488->items.
-    DATA(t497) = t2.
+    t488->save( ).
+    DATA(t497) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t498 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t498.
-    DATA(t499) = |sin|.
-    DATA(t500) = CONV int8( 1 ).
+    DATA(t499) = CONV string( |sin| ).
+    DATA(t500) = CONV f( 1 ).
     DATA t501 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t501.
     DATA t502 TYPE REF TO zcl_lnt_abap_release.
@@ -1273,16 +1397,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t503 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t504) = |v758|.
+    DATA(t504) = CONV string( |v758| ).
     t502 = t503->get( p0 = t504 ).
     t501 = t502.
     t498 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t499 i_f1 = t500 i_f2 = t501 ).
+    t497->load( ).
     APPEND t498 TO t497->items.
-    DATA(t505) = t2.
+    t497->save( ).
+    DATA(t505) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t506 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t506.
-    DATA(t507) = |cos|.
-    DATA(t508) = CONV int8( 1 ).
+    DATA(t507) = CONV string( |cos| ).
+    DATA(t508) = CONV f( 1 ).
     DATA t509 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t509.
     DATA t510 TYPE REF TO zcl_lnt_abap_release.
@@ -1293,16 +1419,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t511 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t512) = |v758|.
+    DATA(t512) = CONV string( |v758| ).
     t510 = t511->get( p0 = t512 ).
     t509 = t510.
     t506 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t507 i_f1 = t508 i_f2 = t509 ).
+    t505->load( ).
     APPEND t506 TO t505->items.
-    DATA(t513) = t2.
+    t505->save( ).
+    DATA(t513) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t514 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t514.
-    DATA(t515) = |tan|.
-    DATA(t516) = CONV int8( 1 ).
+    DATA(t515) = CONV string( |tan| ).
+    DATA(t516) = CONV f( 1 ).
     DATA t517 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t517.
     DATA t518 TYPE REF TO zcl_lnt_abap_release.
@@ -1313,16 +1441,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t519 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t520) = |v758|.
+    DATA(t520) = CONV string( |v758| ).
     t518 = t519->get( p0 = t520 ).
     t517 = t518.
     t514 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t515 i_f1 = t516 i_f2 = t517 ).
+    t513->load( ).
     APPEND t514 TO t513->items.
-    DATA(t521) = t2.
+    t513->save( ).
+    DATA(t521) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t522 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t522.
-    DATA(t523) = |asin|.
-    DATA(t524) = CONV int8( 1 ).
+    DATA(t523) = CONV string( |asin| ).
+    DATA(t524) = CONV f( 1 ).
     DATA t525 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t525.
     DATA t526 TYPE REF TO zcl_lnt_abap_release.
@@ -1333,16 +1463,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t527 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t528) = |v758|.
+    DATA(t528) = CONV string( |v758| ).
     t526 = t527->get( p0 = t528 ).
     t525 = t526.
     t522 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t523 i_f1 = t524 i_f2 = t525 ).
+    t521->load( ).
     APPEND t522 TO t521->items.
-    DATA(t529) = t2.
+    t521->save( ).
+    DATA(t529) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t530 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t530.
-    DATA(t531) = |acos|.
-    DATA(t532) = CONV int8( 1 ).
+    DATA(t531) = CONV string( |acos| ).
+    DATA(t532) = CONV f( 1 ).
     DATA t533 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t533.
     DATA t534 TYPE REF TO zcl_lnt_abap_release.
@@ -1353,16 +1485,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t535 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t536) = |v758|.
+    DATA(t536) = CONV string( |v758| ).
     t534 = t535->get( p0 = t536 ).
     t533 = t534.
     t530 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t531 i_f1 = t532 i_f2 = t533 ).
+    t529->load( ).
     APPEND t530 TO t529->items.
-    DATA(t537) = t2.
+    t529->save( ).
+    DATA(t537) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t538 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t538.
-    DATA(t539) = |atan|.
-    DATA(t540) = CONV int8( 1 ).
+    DATA(t539) = CONV string( |atan| ).
+    DATA(t540) = CONV f( 1 ).
     DATA t541 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t541.
     DATA t542 TYPE REF TO zcl_lnt_abap_release.
@@ -1373,16 +1507,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t543 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t544) = |v758|.
+    DATA(t544) = CONV string( |v758| ).
     t542 = t543->get( p0 = t544 ).
     t541 = t542.
     t538 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t539 i_f1 = t540 i_f2 = t541 ).
+    t537->load( ).
     APPEND t538 TO t537->items.
-    DATA(t545) = t2.
+    t537->save( ).
+    DATA(t545) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t546 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t546.
-    DATA(t547) = |sinh|.
-    DATA(t548) = CONV int8( 1 ).
+    DATA(t547) = CONV string( |sinh| ).
+    DATA(t548) = CONV f( 1 ).
     DATA t549 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t549.
     DATA t550 TYPE REF TO zcl_lnt_abap_release.
@@ -1393,16 +1529,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t551 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t552) = |v758|.
+    DATA(t552) = CONV string( |v758| ).
     t550 = t551->get( p0 = t552 ).
     t549 = t550.
     t546 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t547 i_f1 = t548 i_f2 = t549 ).
+    t545->load( ).
     APPEND t546 TO t545->items.
-    DATA(t553) = t2.
+    t545->save( ).
+    DATA(t553) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t554 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t554.
-    DATA(t555) = |cosh|.
-    DATA(t556) = CONV int8( 1 ).
+    DATA(t555) = CONV string( |cosh| ).
+    DATA(t556) = CONV f( 1 ).
     DATA t557 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t557.
     DATA t558 TYPE REF TO zcl_lnt_abap_release.
@@ -1413,16 +1551,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t559 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t560) = |v758|.
+    DATA(t560) = CONV string( |v758| ).
     t558 = t559->get( p0 = t560 ).
     t557 = t558.
     t554 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t555 i_f1 = t556 i_f2 = t557 ).
+    t553->load( ).
     APPEND t554 TO t553->items.
-    DATA(t561) = t2.
+    t553->save( ).
+    DATA(t561) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t562 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t562.
-    DATA(t563) = |tanh|.
-    DATA(t564) = CONV int8( 1 ).
+    DATA(t563) = CONV string( |tanh| ).
+    DATA(t564) = CONV f( 1 ).
     DATA t565 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t565.
     DATA t566 TYPE REF TO zcl_lnt_abap_release.
@@ -1433,16 +1573,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t567 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t568) = |v758|.
+    DATA(t568) = CONV string( |v758| ).
     t566 = t567->get( p0 = t568 ).
     t565 = t566.
     t562 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t563 i_f1 = t564 i_f2 = t565 ).
+    t561->load( ).
     APPEND t562 TO t561->items.
-    DATA(t569) = t2.
+    t561->save( ).
+    DATA(t569) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t570 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t570.
-    DATA(t571) = |sqrt|.
-    DATA(t572) = CONV int8( 1 ).
+    DATA(t571) = CONV string( |sqrt| ).
+    DATA(t572) = CONV f( 1 ).
     DATA t573 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t573.
     DATA t574 TYPE REF TO zcl_lnt_abap_release.
@@ -1453,16 +1595,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t575 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t576) = |v758|.
+    DATA(t576) = CONV string( |v758| ).
     t574 = t575->get( p0 = t576 ).
     t573 = t574.
     t570 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t571 i_f1 = t572 i_f2 = t573 ).
+    t569->load( ).
     APPEND t570 TO t569->items.
-    DATA(t577) = t2.
+    t569->save( ).
+    DATA(t577) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t578 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t578.
-    DATA(t579) = |power|.
-    DATA(t580) = CONV int8( 2 ).
+    DATA(t579) = CONV string( |power| ).
+    DATA(t580) = CONV f( 2 ).
     DATA t581 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t581.
     DATA t582 TYPE REF TO zcl_lnt_abap_release.
@@ -1473,16 +1617,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t583 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t584) = |v758|.
+    DATA(t584) = CONV string( |v758| ).
     t582 = t583->get( p0 = t584 ).
     t581 = t582.
     t578 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t579 i_f1 = t580 i_f2 = t581 ).
+    t577->load( ).
     APPEND t578 TO t577->items.
-    DATA(t585) = t2.
+    t577->save( ).
+    DATA(t585) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t586 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t586.
-    DATA(t587) = |exp|.
-    DATA(t588) = CONV int8( 1 ).
+    DATA(t587) = CONV string( |exp| ).
+    DATA(t588) = CONV f( 1 ).
     DATA t589 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t589.
     DATA t590 TYPE REF TO zcl_lnt_abap_release.
@@ -1493,16 +1639,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t591 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t592) = |v758|.
+    DATA(t592) = CONV string( |v758| ).
     t590 = t591->get( p0 = t592 ).
     t589 = t590.
     t586 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t587 i_f1 = t588 i_f2 = t589 ).
+    t585->load( ).
     APPEND t586 TO t585->items.
-    DATA(t593) = t2.
+    t585->save( ).
+    DATA(t593) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t594 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t594.
-    DATA(t595) = |ln|.
-    DATA(t596) = CONV int8( 1 ).
+    DATA(t595) = CONV string( |ln| ).
+    DATA(t596) = CONV f( 1 ).
     DATA t597 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t597.
     DATA t598 TYPE REF TO zcl_lnt_abap_release.
@@ -1513,16 +1661,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t599 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t600) = |v758|.
+    DATA(t600) = CONV string( |v758| ).
     t598 = t599->get( p0 = t600 ).
     t597 = t598.
     t594 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t595 i_f1 = t596 i_f2 = t597 ).
+    t593->load( ).
     APPEND t594 TO t593->items.
-    DATA(t601) = t2.
+    t593->save( ).
+    DATA(t601) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t602 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t602.
-    DATA(t603) = |log10|.
-    DATA(t604) = CONV int8( 1 ).
+    DATA(t603) = CONV string( |log10| ).
+    DATA(t604) = CONV f( 1 ).
     DATA t605 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t605.
     DATA t606 TYPE REF TO zcl_lnt_abap_release.
@@ -1533,16 +1683,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t607 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t608) = |v758|.
+    DATA(t608) = CONV string( |v758| ).
     t606 = t607->get( p0 = t608 ).
     t605 = t606.
     t602 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t603 i_f1 = t604 i_f2 = t605 ).
+    t601->load( ).
     APPEND t602 TO t601->items.
-    DATA(t609) = t2.
+    t601->save( ).
+    DATA(t609) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t610 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t610.
-    DATA(t611) = |log|.
-    DATA(t612) = CONV int8( 2 ).
+    DATA(t611) = CONV string( |log| ).
+    DATA(t612) = CONV f( 2 ).
     DATA t613 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t613.
     DATA t614 TYPE REF TO zcl_lnt_abap_release.
@@ -1553,16 +1705,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t615 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t616) = |v758|.
+    DATA(t616) = CONV string( |v758| ).
     t614 = t615->get( p0 = t616 ).
     t613 = t614.
     t610 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t611 i_f1 = t612 i_f2 = t613 ).
+    t609->load( ).
     APPEND t610 TO t609->items.
-    DATA(t617) = t2.
+    t609->save( ).
+    DATA(t617) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t618 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t618.
-    DATA(t619) = |utctolocal|.
-    DATA(t620) = CONV int8( 2 ).
+    DATA(t619) = CONV string( |utctolocal| ).
+    DATA(t620) = CONV f( 2 ).
     DATA t621 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t621.
     DATA t622 TYPE REF TO zcl_lnt_abap_release.
@@ -1573,16 +1727,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t623 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t624) = |v758|.
+    DATA(t624) = CONV string( |v758| ).
     t622 = t623->get( p0 = t624 ).
     t621 = t622.
     t618 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t619 i_f1 = t620 i_f2 = t621 ).
+    t617->load( ).
     APPEND t618 TO t617->items.
-    DATA(t625) = t2.
+    t617->save( ).
+    DATA(t625) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t626 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t626.
-    DATA(t627) = |localtoutc|.
-    DATA(t628) = CONV int8( 2 ).
+    DATA(t627) = CONV string( |localtoutc| ).
+    DATA(t628) = CONV f( 2 ).
     DATA t629 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t629.
     DATA t630 TYPE REF TO zcl_lnt_abap_release.
@@ -1593,16 +1749,18 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t631 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t632) = |v758|.
+    DATA(t632) = CONV string( |v758| ).
     t630 = t631->get( p0 = t632 ).
     t629 = t630.
     t626 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t627 i_f1 = t628 i_f2 = t629 ).
+    t625->load( ).
     APPEND t626 TO t625->items.
-    DATA(t633) = t2.
+    t625->save( ).
+    DATA(t633) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     DATA t634 TYPE REF TO zcl_lnt_tuple_dda7dd58.
     CLEAR t634.
-    DATA(t635) = |is_masked|.
-    DATA(t636) = CONV int8( 1 ).
+    DATA(t635) = CONV string( |is_masked| ).
+    DATA(t636) = CONV f( 1 ).
     DATA t637 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t637.
     DATA t638 TYPE REF TO zcl_lnt_abap_release.
@@ -1613,12 +1771,14 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t639 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t640) = |v758|.
+    DATA(t640) = CONV string( |v758| ).
     t638 = t639->get( p0 = t640 ).
     t637 = t638.
     t634 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t635 i_f1 = t636 i_f2 = t637 ).
+    t633->load( ).
     APPEND t634 TO t633->items.
-    DATA(t641) = t2.
+    t633->save( ).
+    DATA(t641) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
     t1 = t641.
     zcl_lnt_sql_function_module=>sql_function_defs = t1.
     IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
@@ -1630,10 +1790,10 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t644 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t644.
     t643 = t644.
-    DATA(t645) = t643.
+    DATA(t645) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
     DATA t646 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t646.
-    DATA(t647) = |abap_user_timezone|.
+    DATA(t647) = CONV string( |abap_user_timezone| ).
     DATA t648 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t648.
     DATA t649 TYPE REF TO zcl_lnt_abap_release.
@@ -1644,7 +1804,7 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t650 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t651) = |v757|.
+    DATA(t651) = CONV string( |v757| ).
     t649 = t650->get( p0 = t651 ).
     t648 = t649.
     DATA t652 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1653,1298 +1813,1784 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
     DATA t654 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t654.
     t653 = t654.
-    DATA(t655) = t653.
+    DATA(t655) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
     DATA t656 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t656.
-    DATA(t657) = |user|.
-    DATA(t658) = |any|.
-    DATA t659 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t659.
-    DATA(t660) = abap_true.
-    IF t660 = abap_true.
-      DATA(t661) = abap_true.
-      DATA(t662) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t662->has = abap_true.
-      t662->value = t661.
-      t659 = t662.
+    DATA t657 TYPE string.
+    DATA(t658) = CONV string( |user| ).
+    t657 = t658.
+    DATA t659 TYPE string.
+    DATA(t660) = CONV string( |any| ).
+    t659 = t660.
+    DATA t661 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t661.
+    DATA t662 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t662.
+    DATA(t663) = CONV abap_bool( abap_true ).
+    IF t663 = abap_true.
+      DATA(t664) = CONV abap_bool( abap_true ).
+      DATA(t665) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t665->has = abap_true.
+      t665->value = t664.
+      t662 = t665.
     ELSE.
-      DATA t663 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t663.
-      t659 = t663.
+      DATA t666 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t666.
+      t662 = t666.
     ENDIF.
-    t656 = NEW zcl_lnt_sql_named_param( i_name = t657 i_value = t658 i_optional = t659 ).
-    APPEND t656 TO t655->items.
-    DATA(t664) = t653.
-    DATA t665 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t665.
-    DATA(t666) = |client|.
-    DATA(t667) = |any|.
-    DATA t668 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    t661 = t662.
+    t656 = NEW zcl_lnt_sql_named_param( i_name = t657 i_value = t659 i_optional = t661 ).
+    CREATE OBJECT t656->zlnt_view_ownkeys_b0e8086400eb.
+    t656->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t667 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t667.
+    IF t656->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t656->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t667 ).
+    ENDIF.
+    DATA t668 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t668.
-    DATA(t669) = abap_true.
-    IF t669 = abap_true.
-      DATA(t670) = abap_true.
-      DATA(t671) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t671->has = abap_true.
-      t671->value = t670.
-      t668 = t671.
-    ELSE.
-      DATA t672 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t672.
-      t668 = t672.
+    IF t656->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t656->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t668 ).
     ENDIF.
-    t665 = NEW zcl_lnt_sql_named_param( i_name = t666 i_value = t667 i_optional = t668 ).
-    APPEND t665 TO t664->items.
-    DATA(t673) = t653.
-    DATA t674 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t674.
-    DATA(t675) = |on_error|.
-    DATA(t676) = |abap_only|.
-    DATA t677 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t669 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t669.
+    IF t656->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t656->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t669 ).
+    ENDIF.
+    CREATE OBJECT t656->zlnt_json_ownkeys_70e5fd461788.
+    t656->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t670) = CONV string( |name| ).
+    DATA t671 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t671.
+    IF t656->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t656->zlnt_json_ownkeys_70e5fd461788->put( p0 = t670 p1 = t671 ).
+    ENDIF.
+    DATA(t672) = CONV string( |value| ).
+    DATA t673 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t673.
+    IF t656->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t656->zlnt_json_ownkeys_70e5fd461788->put( p0 = t672 p1 = t673 ).
+    ENDIF.
+    DATA(t674) = CONV string( |optional| ).
+    DATA t675 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t675.
+    IF t656->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t656->zlnt_json_ownkeys_70e5fd461788->put( p0 = t674 p1 = t675 ).
+    ENDIF.
+    t655->load( ).
+    APPEND t656 TO t655->items.
+    t655->save( ).
+    DATA(t676) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA t677 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t677.
-    DATA(t678) = abap_true.
-    IF t678 = abap_true.
-      DATA(t679) = abap_true.
-      DATA(t680) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t680->has = abap_true.
-      t680->value = t679.
-      t677 = t680.
+    DATA t678 TYPE string.
+    DATA(t679) = CONV string( |client| ).
+    t678 = t679.
+    DATA t680 TYPE string.
+    DATA(t681) = CONV string( |any| ).
+    t680 = t681.
+    DATA t682 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t682.
+    DATA t683 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t683.
+    DATA(t684) = CONV abap_bool( abap_true ).
+    IF t684 = abap_true.
+      DATA(t685) = CONV abap_bool( abap_true ).
+      DATA(t686) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t686->has = abap_true.
+      t686->value = t685.
+      t683 = t686.
     ELSE.
-      DATA t681 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t681.
-      t677 = t681.
+      DATA t687 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t687.
+      t683 = t687.
     ENDIF.
-    t674 = NEW zcl_lnt_sql_named_param( i_name = t675 i_value = t676 i_optional = t677 ).
-    APPEND t674 TO t673->items.
-    DATA(t682) = t653.
-    t652 = t682.
-    t646 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t647 i_f1 = t648 i_f2 = t652 ).
-    APPEND t646 TO t645->items.
-    DATA(t683) = t643.
-    DATA t684 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t684.
-    DATA(t685) = |abap_system_timezone|.
-    DATA t686 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t686.
-    DATA t687 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t687.
-    DATA t688 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    t682 = t683.
+    t677 = NEW zcl_lnt_sql_named_param( i_name = t678 i_value = t680 i_optional = t682 ).
+    CREATE OBJECT t677->zlnt_view_ownkeys_b0e8086400eb.
+    t677->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t688 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t688.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t677->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t677->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t688 ).
     ENDIF.
-    t688 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t689) = |v757|.
-    t687 = t688->get( p0 = t689 ).
-    t686 = t687.
-    DATA t690 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t689 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t689.
+    IF t677->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t677->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t689 ).
+    ENDIF.
+    DATA t690 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t690.
-    DATA t691 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t692 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t692.
-    t691 = t692.
-    DATA(t693) = t691.
-    DATA t694 TYPE REF TO zcl_lnt_sql_named_param.
+    IF t677->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t677->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t690 ).
+    ENDIF.
+    CREATE OBJECT t677->zlnt_json_ownkeys_70e5fd461788.
+    t677->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t691) = CONV string( |name| ).
+    DATA t692 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t692.
+    IF t677->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t677->zlnt_json_ownkeys_70e5fd461788->put( p0 = t691 p1 = t692 ).
+    ENDIF.
+    DATA(t693) = CONV string( |value| ).
+    DATA t694 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t694.
-    DATA(t695) = |client|.
-    DATA(t696) = |any|.
-    DATA t697 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t697.
-    DATA(t698) = abap_true.
-    IF t698 = abap_true.
-      DATA(t699) = abap_true.
-      DATA(t700) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t700->has = abap_true.
-      t700->value = t699.
-      t697 = t700.
-    ELSE.
-      DATA t701 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t701.
-      t697 = t701.
+    IF t677->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t677->zlnt_json_ownkeys_70e5fd461788->put( p0 = t693 p1 = t694 ).
     ENDIF.
-    t694 = NEW zcl_lnt_sql_named_param( i_name = t695 i_value = t696 i_optional = t697 ).
-    APPEND t694 TO t693->items.
-    DATA(t702) = t691.
-    DATA t703 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA(t695) = CONV string( |optional| ).
+    DATA t696 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t696.
+    IF t677->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t677->zlnt_json_ownkeys_70e5fd461788->put( p0 = t695 p1 = t696 ).
+    ENDIF.
+    t676->load( ).
+    APPEND t677 TO t676->items.
+    t676->save( ).
+    DATA(t697) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    DATA t698 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t698.
+    DATA t699 TYPE string.
+    DATA(t700) = CONV string( |on_error| ).
+    t699 = t700.
+    DATA t701 TYPE string.
+    DATA(t702) = CONV string( |abap_only| ).
+    t701 = t702.
+    DATA t703 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t703.
-    DATA(t704) = |on_error|.
-    DATA(t705) = |abap_only|.
-    DATA t706 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t706.
-    DATA(t707) = abap_true.
-    IF t707 = abap_true.
-      DATA(t708) = abap_true.
-      DATA(t709) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t709->has = abap_true.
-      t709->value = t708.
-      t706 = t709.
+    DATA t704 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t704.
+    DATA(t705) = CONV abap_bool( abap_true ).
+    IF t705 = abap_true.
+      DATA(t706) = CONV abap_bool( abap_true ).
+      DATA(t707) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t707->has = abap_true.
+      t707->value = t706.
+      t704 = t707.
     ELSE.
-      DATA t710 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t710.
-      t706 = t710.
+      DATA t708 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t708.
+      t704 = t708.
     ENDIF.
-    t703 = NEW zcl_lnt_sql_named_param( i_name = t704 i_value = t705 i_optional = t706 ).
-    APPEND t703 TO t702->items.
-    DATA(t711) = t691.
-    t690 = t711.
-    t684 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t685 i_f1 = t686 i_f2 = t690 ).
-    APPEND t684 TO t683->items.
-    DATA(t712) = t643.
-    DATA t713 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    t703 = t704.
+    t698 = NEW zcl_lnt_sql_named_param( i_name = t699 i_value = t701 i_optional = t703 ).
+    CREATE OBJECT t698->zlnt_view_ownkeys_b0e8086400eb.
+    t698->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t709 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t709.
+    IF t698->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t698->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t709 ).
+    ENDIF.
+    DATA t710 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t710.
+    IF t698->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t698->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t710 ).
+    ENDIF.
+    DATA t711 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t711.
+    IF t698->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t698->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t711 ).
+    ENDIF.
+    CREATE OBJECT t698->zlnt_json_ownkeys_70e5fd461788.
+    t698->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t712) = CONV string( |name| ).
+    DATA t713 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t713.
-    DATA(t714) = |dats_tims_to_tstmp|.
-    DATA t715 TYPE REF TO zcl_lnt_abap_release.
+    IF t698->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t698->zlnt_json_ownkeys_70e5fd461788->put( p0 = t712 p1 = t713 ).
+    ENDIF.
+    DATA(t714) = CONV string( |value| ).
+    DATA t715 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t715.
-    DATA t716 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t716.
-    DATA t717 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t698->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t698->zlnt_json_ownkeys_70e5fd461788->put( p0 = t714 p1 = t715 ).
+    ENDIF.
+    DATA(t716) = CONV string( |optional| ).
+    DATA t717 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t717.
+    IF t698->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t698->zlnt_json_ownkeys_70e5fd461788->put( p0 = t716 p1 = t717 ).
+    ENDIF.
+    t697->load( ).
+    APPEND t698 TO t697->items.
+    t697->save( ).
+    DATA(t718) = CAST zlnt_runtime_arra_c22708faf2e3( t653 ).
+    t652 = t718.
+    t646 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t647 i_f1 = t648 i_f2 = t652 ).
+    t645->load( ).
+    APPEND t646 TO t645->items.
+    t645->save( ).
+    DATA(t719) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t720 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t720.
+    DATA(t721) = CONV string( |abap_system_timezone| ).
+    DATA t722 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t722.
+    DATA t723 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t723.
+    DATA t724 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t724.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t717 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t718) = |v757|.
-    t716 = t717->get( p0 = t718 ).
-    t715 = t716.
-    DATA t719 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t719.
-    DATA t720 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t721 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t721.
-    t720 = t721.
-    DATA(t722) = t720.
-    DATA t723 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t724) = |date|.
-    DATA(t725) = |any|.
-    DATA t726 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    t724 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t725) = CONV string( |v757| ).
+    t723 = t724->get( p0 = t725 ).
+    t722 = t723.
+    DATA t726 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t726.
-    t723 = NEW zcl_lnt_sql_named_param( i_name = t724 i_value = t725 i_optional = t726 ).
-    APPEND t723 TO t722->items.
-    DATA(t727) = t720.
-    DATA t728 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t729) = |time|.
-    DATA(t730) = |any|.
-    DATA t731 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t731.
-    t728 = NEW zcl_lnt_sql_named_param( i_name = t729 i_value = t730 i_optional = t731 ).
-    APPEND t728 TO t727->items.
-    DATA(t732) = t720.
-    DATA t733 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t734) = |tzone|.
-    DATA(t735) = |any|.
+    DATA t727 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t728 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t728.
+    t727 = t728.
+    DATA(t729) = CAST zlnt_runtime_arra_c22708faf2e3( t727 ).
+    DATA t730 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t730.
+    DATA t731 TYPE string.
+    DATA(t732) = CONV string( |client| ).
+    t731 = t732.
+    DATA t733 TYPE string.
+    DATA(t734) = CONV string( |any| ).
+    t733 = t734.
+    DATA t735 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t735.
     DATA t736 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t736.
-    t733 = NEW zcl_lnt_sql_named_param( i_name = t734 i_value = t735 i_optional = t736 ).
-    APPEND t733 TO t732->items.
-    DATA(t737) = t720.
-    DATA t738 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t738.
-    DATA(t739) = |client|.
-    DATA(t740) = |any|.
-    DATA t741 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA(t737) = CONV abap_bool( abap_true ).
+    IF t737 = abap_true.
+      DATA(t738) = CONV abap_bool( abap_true ).
+      DATA(t739) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t739->has = abap_true.
+      t739->value = t738.
+      t736 = t739.
+    ELSE.
+      DATA t740 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t740.
+      t736 = t740.
+    ENDIF.
+    t735 = t736.
+    t730 = NEW zcl_lnt_sql_named_param( i_name = t731 i_value = t733 i_optional = t735 ).
+    CREATE OBJECT t730->zlnt_view_ownkeys_b0e8086400eb.
+    t730->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t741 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t741.
-    DATA(t742) = abap_true.
-    IF t742 = abap_true.
-      DATA(t743) = abap_true.
-      DATA(t744) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t744->has = abap_true.
-      t744->value = t743.
-      t741 = t744.
-    ELSE.
-      DATA t745 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t745.
-      t741 = t745.
+    IF t730->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t730->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t741 ).
     ENDIF.
-    t738 = NEW zcl_lnt_sql_named_param( i_name = t739 i_value = t740 i_optional = t741 ).
-    APPEND t738 TO t737->items.
-    DATA(t746) = t720.
-    DATA t747 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t742 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t742.
+    IF t730->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t730->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t742 ).
+    ENDIF.
+    DATA t743 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t743.
+    IF t730->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t730->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t743 ).
+    ENDIF.
+    CREATE OBJECT t730->zlnt_json_ownkeys_70e5fd461788.
+    t730->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t744) = CONV string( |name| ).
+    DATA t745 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t745.
+    IF t730->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t730->zlnt_json_ownkeys_70e5fd461788->put( p0 = t744 p1 = t745 ).
+    ENDIF.
+    DATA(t746) = CONV string( |value| ).
+    DATA t747 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t747.
-    DATA(t748) = |on_error|.
-    DATA(t749) = |abap_only|.
-    DATA t750 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t750.
-    DATA(t751) = abap_true.
-    IF t751 = abap_true.
-      DATA(t752) = abap_true.
-      DATA(t753) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t753->has = abap_true.
-      t753->value = t752.
-      t750 = t753.
-    ELSE.
-      DATA t754 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t754.
-      t750 = t754.
+    IF t730->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t730->zlnt_json_ownkeys_70e5fd461788->put( p0 = t746 p1 = t747 ).
     ENDIF.
-    t747 = NEW zcl_lnt_sql_named_param( i_name = t748 i_value = t749 i_optional = t750 ).
-    APPEND t747 TO t746->items.
-    DATA(t755) = t720.
-    t719 = t755.
-    t713 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t714 i_f1 = t715 i_f2 = t719 ).
-    APPEND t713 TO t712->items.
-    DATA(t756) = t643.
-    DATA t757 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    DATA(t748) = CONV string( |optional| ).
+    DATA t749 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t749.
+    IF t730->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t730->zlnt_json_ownkeys_70e5fd461788->put( p0 = t748 p1 = t749 ).
+    ENDIF.
+    t729->load( ).
+    APPEND t730 TO t729->items.
+    t729->save( ).
+    DATA(t750) = CAST zlnt_runtime_arra_c22708faf2e3( t727 ).
+    DATA t751 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t751.
+    DATA t752 TYPE string.
+    DATA(t753) = CONV string( |on_error| ).
+    t752 = t753.
+    DATA t754 TYPE string.
+    DATA(t755) = CONV string( |abap_only| ).
+    t754 = t755.
+    DATA t756 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t756.
+    DATA t757 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t757.
-    DATA(t758) = |tstmp_add_seconds|.
-    DATA t759 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t759.
-    DATA t760 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t760.
-    DATA t761 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t761.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t758) = CONV abap_bool( abap_true ).
+    IF t758 = abap_true.
+      DATA(t759) = CONV abap_bool( abap_true ).
+      DATA(t760) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t760->has = abap_true.
+      t760->value = t759.
+      t757 = t760.
+    ELSE.
+      DATA t761 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t761.
+      t757 = t761.
     ENDIF.
-    t761 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t762) = |v757|.
-    t760 = t761->get( p0 = t762 ).
-    t759 = t760.
-    DATA t763 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t756 = t757.
+    t751 = NEW zcl_lnt_sql_named_param( i_name = t752 i_value = t754 i_optional = t756 ).
+    CREATE OBJECT t751->zlnt_view_ownkeys_b0e8086400eb.
+    t751->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t762 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t762.
+    IF t751->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t751->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t762 ).
+    ENDIF.
+    DATA t763 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t763.
-    DATA t764 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t765 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t765.
-    t764 = t765.
-    DATA(t766) = t764.
-    DATA t767 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t768) = |tstmp|.
-    DATA(t769) = |any|.
-    DATA t770 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t751->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t751->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t763 ).
+    ENDIF.
+    DATA t764 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t764.
+    IF t751->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t751->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t764 ).
+    ENDIF.
+    CREATE OBJECT t751->zlnt_json_ownkeys_70e5fd461788.
+    t751->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t765) = CONV string( |name| ).
+    DATA t766 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t766.
+    IF t751->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t751->zlnt_json_ownkeys_70e5fd461788->put( p0 = t765 p1 = t766 ).
+    ENDIF.
+    DATA(t767) = CONV string( |value| ).
+    DATA t768 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t768.
+    IF t751->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t751->zlnt_json_ownkeys_70e5fd461788->put( p0 = t767 p1 = t768 ).
+    ENDIF.
+    DATA(t769) = CONV string( |optional| ).
+    DATA t770 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t770.
-    t767 = NEW zcl_lnt_sql_named_param( i_name = t768 i_value = t769 i_optional = t770 ).
-    APPEND t767 TO t766->items.
-    DATA(t771) = t764.
-    DATA t772 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t773) = |seconds|.
-    DATA(t774) = |any|.
-    DATA t775 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t751->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t751->zlnt_json_ownkeys_70e5fd461788->put( p0 = t769 p1 = t770 ).
+    ENDIF.
+    t750->load( ).
+    APPEND t751 TO t750->items.
+    t750->save( ).
+    DATA(t771) = CAST zlnt_runtime_arra_c22708faf2e3( t727 ).
+    t726 = t771.
+    t720 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t721 i_f1 = t722 i_f2 = t726 ).
+    t719->load( ).
+    APPEND t720 TO t719->items.
+    t719->save( ).
+    DATA(t772) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t773 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t773.
+    DATA(t774) = CONV string( |dats_tims_to_tstmp| ).
+    DATA t775 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t775.
-    t772 = NEW zcl_lnt_sql_named_param( i_name = t773 i_value = t774 i_optional = t775 ).
-    APPEND t772 TO t771->items.
-    DATA(t776) = t764.
-    DATA t777 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t776 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t776.
+    DATA t777 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t777.
-    DATA(t778) = |on_error|.
-    DATA(t779) = |abap_only|.
-    DATA t780 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t780.
-    DATA(t781) = abap_true.
-    IF t781 = abap_true.
-      DATA(t782) = abap_true.
-      DATA(t783) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t783->has = abap_true.
-      t783->value = t782.
-      t780 = t783.
-    ELSE.
-      DATA t784 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t784.
-      t780 = t784.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t777 = NEW zcl_lnt_sql_named_param( i_name = t778 i_value = t779 i_optional = t780 ).
-    APPEND t777 TO t776->items.
-    DATA(t785) = t764.
-    t763 = t785.
-    t757 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t758 i_f1 = t759 i_f2 = t763 ).
-    APPEND t757 TO t756->items.
-    DATA(t786) = t643.
-    DATA t787 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t787.
-    DATA(t788) = |tstmp_seconds_between|.
-    DATA t789 TYPE REF TO zcl_lnt_abap_release.
+    t777 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t778) = CONV string( |v757| ).
+    t776 = t777->get( p0 = t778 ).
+    t775 = t776.
+    DATA t779 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t779.
+    DATA t780 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t781 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t781.
+    t780 = t781.
+    DATA(t782) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
+    DATA t783 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t784 TYPE string.
+    DATA(t785) = CONV string( |date| ).
+    t784 = t785.
+    DATA t786 TYPE string.
+    DATA(t787) = CONV string( |any| ).
+    t786 = t787.
+    DATA t788 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t789 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t789.
-    DATA t790 TYPE REF TO zcl_lnt_abap_release.
+    t788 = t789.
+    t783 = NEW zcl_lnt_sql_named_param( i_name = t784 i_value = t786 i_optional = t788 ).
+    CREATE OBJECT t783->zlnt_view_ownkeys_b0e8086400eb.
+    t783->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t790 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t790.
-    DATA t791 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t783->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t783->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t790 ).
+    ENDIF.
+    DATA t791 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t791.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t783->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t783->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t791 ).
     ENDIF.
-    t791 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t792) = |v757|.
-    t790 = t791->get( p0 = t792 ).
-    t789 = t790.
-    DATA t793 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t783->zlnt_json_ownkeys_70e5fd461788.
+    t783->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t792) = CONV string( |name| ).
+    DATA t793 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t793.
-    DATA t794 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t795 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t795.
-    t794 = t795.
-    DATA(t796) = t794.
+    IF t783->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t783->zlnt_json_ownkeys_70e5fd461788->put( p0 = t792 p1 = t793 ).
+    ENDIF.
+    DATA(t794) = CONV string( |value| ).
+    DATA t795 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t795.
+    IF t783->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t783->zlnt_json_ownkeys_70e5fd461788->put( p0 = t794 p1 = t795 ).
+    ENDIF.
+    t782->load( ).
+    APPEND t783 TO t782->items.
+    t782->save( ).
+    DATA(t796) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
     DATA t797 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t798) = |tstmp1|.
-    DATA(t799) = |any|.
-    DATA t800 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t800.
-    t797 = NEW zcl_lnt_sql_named_param( i_name = t798 i_value = t799 i_optional = t800 ).
-    APPEND t797 TO t796->items.
-    DATA(t801) = t794.
-    DATA t802 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t803) = |tstmp2|.
-    DATA(t804) = |any|.
-    DATA t805 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t798 TYPE string.
+    DATA(t799) = CONV string( |time| ).
+    t798 = t799.
+    DATA t800 TYPE string.
+    DATA(t801) = CONV string( |any| ).
+    t800 = t801.
+    DATA t802 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t803 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t803.
+    t802 = t803.
+    t797 = NEW zcl_lnt_sql_named_param( i_name = t798 i_value = t800 i_optional = t802 ).
+    CREATE OBJECT t797->zlnt_view_ownkeys_b0e8086400eb.
+    t797->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t804 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t804.
+    IF t797->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t797->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t804 ).
+    ENDIF.
+    DATA t805 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t805.
-    t802 = NEW zcl_lnt_sql_named_param( i_name = t803 i_value = t804 i_optional = t805 ).
-    APPEND t802 TO t801->items.
-    DATA(t806) = t794.
-    DATA t807 TYPE REF TO zcl_lnt_sql_named_param.
+    IF t797->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t797->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t805 ).
+    ENDIF.
+    CREATE OBJECT t797->zlnt_json_ownkeys_70e5fd461788.
+    t797->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t806) = CONV string( |name| ).
+    DATA t807 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t807.
-    DATA(t808) = |on_error|.
-    DATA(t809) = |abap_only|.
-    DATA t810 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t810.
-    DATA(t811) = abap_true.
-    IF t811 = abap_true.
-      DATA(t812) = abap_true.
-      DATA(t813) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t813->has = abap_true.
-      t813->value = t812.
-      t810 = t813.
-    ELSE.
-      DATA t814 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t814.
-      t810 = t814.
+    IF t797->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t797->zlnt_json_ownkeys_70e5fd461788->put( p0 = t806 p1 = t807 ).
     ENDIF.
-    t807 = NEW zcl_lnt_sql_named_param( i_name = t808 i_value = t809 i_optional = t810 ).
-    APPEND t807 TO t806->items.
-    DATA(t815) = t794.
-    t793 = t815.
-    t787 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t788 i_f1 = t789 i_f2 = t793 ).
-    APPEND t787 TO t786->items.
-    DATA(t816) = t643.
-    DATA t817 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    DATA(t808) = CONV string( |value| ).
+    DATA t809 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t809.
+    IF t797->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t797->zlnt_json_ownkeys_70e5fd461788->put( p0 = t808 p1 = t809 ).
+    ENDIF.
+    t796->load( ).
+    APPEND t797 TO t796->items.
+    t796->save( ).
+    DATA(t810) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
+    DATA t811 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t812 TYPE string.
+    DATA(t813) = CONV string( |tzone| ).
+    t812 = t813.
+    DATA t814 TYPE string.
+    DATA(t815) = CONV string( |any| ).
+    t814 = t815.
+    DATA t816 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t817 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t817.
-    DATA(t818) = |tstmp_to_dats|.
-    DATA t819 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t819.
-    DATA t820 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t820.
-    DATA t821 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t821.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t816 = t817.
+    t811 = NEW zcl_lnt_sql_named_param( i_name = t812 i_value = t814 i_optional = t816 ).
+    CREATE OBJECT t811->zlnt_view_ownkeys_b0e8086400eb.
+    t811->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t818 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t818.
+    IF t811->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t811->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t818 ).
     ENDIF.
-    t821 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t822) = |v757|.
-    t820 = t821->get( p0 = t822 ).
-    t819 = t820.
-    DATA t823 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t819 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t819.
+    IF t811->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t811->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t819 ).
+    ENDIF.
+    CREATE OBJECT t811->zlnt_json_ownkeys_70e5fd461788.
+    t811->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t820) = CONV string( |name| ).
+    DATA t821 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t821.
+    IF t811->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t811->zlnt_json_ownkeys_70e5fd461788->put( p0 = t820 p1 = t821 ).
+    ENDIF.
+    DATA(t822) = CONV string( |value| ).
+    DATA t823 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t823.
-    DATA t824 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t825 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t825.
-    t824 = t825.
-    DATA(t826) = t824.
-    DATA t827 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t828) = |tstmp|.
-    DATA(t829) = |any|.
+    IF t811->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t811->zlnt_json_ownkeys_70e5fd461788->put( p0 = t822 p1 = t823 ).
+    ENDIF.
+    t810->load( ).
+    APPEND t811 TO t810->items.
+    t810->save( ).
+    DATA(t824) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
+    DATA t825 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t825.
+    DATA t826 TYPE string.
+    DATA(t827) = CONV string( |client| ).
+    t826 = t827.
+    DATA t828 TYPE string.
+    DATA(t829) = CONV string( |any| ).
+    t828 = t829.
     DATA t830 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t830.
-    t827 = NEW zcl_lnt_sql_named_param( i_name = t828 i_value = t829 i_optional = t830 ).
-    APPEND t827 TO t826->items.
-    DATA(t831) = t824.
-    DATA t832 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t832.
-    DATA(t833) = |tzone|.
-    DATA(t834) = |any|.
-    DATA t835 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t835.
-    DATA(t836) = abap_true.
-    IF t836 = abap_true.
-      DATA(t837) = abap_true.
-      DATA(t838) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t838->has = abap_true.
-      t838->value = t837.
-      t835 = t838.
+    DATA t831 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t831.
+    DATA(t832) = CONV abap_bool( abap_true ).
+    IF t832 = abap_true.
+      DATA(t833) = CONV abap_bool( abap_true ).
+      DATA(t834) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t834->has = abap_true.
+      t834->value = t833.
+      t831 = t834.
     ELSE.
-      DATA t839 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t839.
-      t835 = t839.
+      DATA t835 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t835.
+      t831 = t835.
     ENDIF.
-    t832 = NEW zcl_lnt_sql_named_param( i_name = t833 i_value = t834 i_optional = t835 ).
-    APPEND t832 TO t831->items.
-    DATA(t840) = t824.
-    DATA t841 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t841.
-    DATA(t842) = |client|.
-    DATA(t843) = |any|.
-    DATA t844 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    t830 = t831.
+    t825 = NEW zcl_lnt_sql_named_param( i_name = t826 i_value = t828 i_optional = t830 ).
+    CREATE OBJECT t825->zlnt_view_ownkeys_b0e8086400eb.
+    t825->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t836 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t836.
+    IF t825->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t825->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t836 ).
+    ENDIF.
+    DATA t837 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t837.
+    IF t825->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t825->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t837 ).
+    ENDIF.
+    DATA t838 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t838.
+    IF t825->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t825->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t838 ).
+    ENDIF.
+    CREATE OBJECT t825->zlnt_json_ownkeys_70e5fd461788.
+    t825->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t839) = CONV string( |name| ).
+    DATA t840 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t840.
+    IF t825->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t825->zlnt_json_ownkeys_70e5fd461788->put( p0 = t839 p1 = t840 ).
+    ENDIF.
+    DATA(t841) = CONV string( |value| ).
+    DATA t842 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t842.
+    IF t825->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t825->zlnt_json_ownkeys_70e5fd461788->put( p0 = t841 p1 = t842 ).
+    ENDIF.
+    DATA(t843) = CONV string( |optional| ).
+    DATA t844 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t844.
-    DATA(t845) = abap_true.
-    IF t845 = abap_true.
-      DATA(t846) = abap_true.
-      DATA(t847) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t847->has = abap_true.
-      t847->value = t846.
-      t844 = t847.
-    ELSE.
-      DATA t848 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t848.
-      t844 = t848.
+    IF t825->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t825->zlnt_json_ownkeys_70e5fd461788->put( p0 = t843 p1 = t844 ).
     ENDIF.
-    t841 = NEW zcl_lnt_sql_named_param( i_name = t842 i_value = t843 i_optional = t844 ).
-    APPEND t841 TO t840->items.
-    DATA(t849) = t824.
-    DATA t850 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t850.
-    DATA(t851) = |on_error|.
-    DATA(t852) = |abap_only|.
-    DATA t853 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t853.
-    DATA(t854) = abap_true.
-    IF t854 = abap_true.
-      DATA(t855) = abap_true.
-      DATA(t856) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t856->has = abap_true.
-      t856->value = t855.
-      t853 = t856.
+    t824->load( ).
+    APPEND t825 TO t824->items.
+    t824->save( ).
+    DATA(t845) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
+    DATA t846 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t846.
+    DATA t847 TYPE string.
+    DATA(t848) = CONV string( |on_error| ).
+    t847 = t848.
+    DATA t849 TYPE string.
+    DATA(t850) = CONV string( |abap_only| ).
+    t849 = t850.
+    DATA t851 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t851.
+    DATA t852 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t852.
+    DATA(t853) = CONV abap_bool( abap_true ).
+    IF t853 = abap_true.
+      DATA(t854) = CONV abap_bool( abap_true ).
+      DATA(t855) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t855->has = abap_true.
+      t855->value = t854.
+      t852 = t855.
     ELSE.
-      DATA t857 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t857.
-      t853 = t857.
+      DATA t856 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t856.
+      t852 = t856.
     ENDIF.
-    t850 = NEW zcl_lnt_sql_named_param( i_name = t851 i_value = t852 i_optional = t853 ).
-    APPEND t850 TO t849->items.
-    DATA(t858) = t824.
-    t823 = t858.
-    t817 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t818 i_f1 = t819 i_f2 = t823 ).
-    APPEND t817 TO t816->items.
-    DATA(t859) = t643.
-    DATA t860 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t860.
-    DATA(t861) = |tstmp_to_tims|.
-    DATA t862 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t862.
-    DATA t863 TYPE REF TO zcl_lnt_abap_release.
+    t851 = t852.
+    t846 = NEW zcl_lnt_sql_named_param( i_name = t847 i_value = t849 i_optional = t851 ).
+    CREATE OBJECT t846->zlnt_view_ownkeys_b0e8086400eb.
+    t846->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t857 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t857.
+    IF t846->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t846->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t857 ).
+    ENDIF.
+    DATA t858 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t858.
+    IF t846->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t846->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t858 ).
+    ENDIF.
+    DATA t859 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t859.
+    IF t846->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t846->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t859 ).
+    ENDIF.
+    CREATE OBJECT t846->zlnt_json_ownkeys_70e5fd461788.
+    t846->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t860) = CONV string( |name| ).
+    DATA t861 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t861.
+    IF t846->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t846->zlnt_json_ownkeys_70e5fd461788->put( p0 = t860 p1 = t861 ).
+    ENDIF.
+    DATA(t862) = CONV string( |value| ).
+    DATA t863 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t863.
-    DATA t864 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t864.
+    IF t846->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t846->zlnt_json_ownkeys_70e5fd461788->put( p0 = t862 p1 = t863 ).
+    ENDIF.
+    DATA(t864) = CONV string( |optional| ).
+    DATA t865 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t865.
+    IF t846->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t846->zlnt_json_ownkeys_70e5fd461788->put( p0 = t864 p1 = t865 ).
+    ENDIF.
+    t845->load( ).
+    APPEND t846 TO t845->items.
+    t845->save( ).
+    DATA(t866) = CAST zlnt_runtime_arra_c22708faf2e3( t780 ).
+    t779 = t866.
+    t773 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t774 i_f1 = t775 i_f2 = t779 ).
+    t772->load( ).
+    APPEND t773 TO t772->items.
+    t772->save( ).
+    DATA(t867) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t868 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t868.
+    DATA(t869) = CONV string( |tstmp_add_seconds| ).
+    DATA t870 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t870.
+    DATA t871 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t871.
+    DATA t872 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t872.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t864 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t865) = |v757|.
-    t863 = t864->get( p0 = t865 ).
-    t862 = t863.
-    DATA t866 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t866.
-    DATA t867 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t868 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t868.
-    t867 = t868.
-    DATA(t869) = t867.
-    DATA t870 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t871) = |tstmp|.
-    DATA(t872) = |any|.
-    DATA t873 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t873.
-    t870 = NEW zcl_lnt_sql_named_param( i_name = t871 i_value = t872 i_optional = t873 ).
-    APPEND t870 TO t869->items.
-    DATA(t874) = t867.
-    DATA t875 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t875.
-    DATA(t876) = |tzone|.
-    DATA(t877) = |any|.
-    DATA t878 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t878.
-    DATA(t879) = abap_true.
-    IF t879 = abap_true.
-      DATA(t880) = abap_true.
-      DATA(t881) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t881->has = abap_true.
-      t881->value = t880.
-      t878 = t881.
-    ELSE.
-      DATA t882 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t882.
-      t878 = t882.
-    ENDIF.
-    t875 = NEW zcl_lnt_sql_named_param( i_name = t876 i_value = t877 i_optional = t878 ).
-    APPEND t875 TO t874->items.
-    DATA(t883) = t867.
-    DATA t884 TYPE REF TO zcl_lnt_sql_named_param.
+    t872 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t873) = CONV string( |v757| ).
+    t871 = t872->get( p0 = t873 ).
+    t870 = t871.
+    DATA t874 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t874.
+    DATA t875 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t876 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t876.
+    t875 = t876.
+    DATA(t877) = CAST zlnt_runtime_arra_c22708faf2e3( t875 ).
+    DATA t878 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t879 TYPE string.
+    DATA(t880) = CONV string( |tstmp| ).
+    t879 = t880.
+    DATA t881 TYPE string.
+    DATA(t882) = CONV string( |any| ).
+    t881 = t882.
+    DATA t883 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t884 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t884.
-    DATA(t885) = |client|.
-    DATA(t886) = |any|.
-    DATA t887 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t887.
-    DATA(t888) = abap_true.
-    IF t888 = abap_true.
-      DATA(t889) = abap_true.
-      DATA(t890) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t890->has = abap_true.
-      t890->value = t889.
-      t887 = t890.
-    ELSE.
-      DATA t891 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t891.
-      t887 = t891.
+    t883 = t884.
+    t878 = NEW zcl_lnt_sql_named_param( i_name = t879 i_value = t881 i_optional = t883 ).
+    CREATE OBJECT t878->zlnt_view_ownkeys_b0e8086400eb.
+    t878->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t885 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t885.
+    IF t878->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t878->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t885 ).
     ENDIF.
-    t884 = NEW zcl_lnt_sql_named_param( i_name = t885 i_value = t886 i_optional = t887 ).
-    APPEND t884 TO t883->items.
-    DATA(t892) = t867.
-    DATA t893 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t893.
-    DATA(t894) = |on_error|.
-    DATA(t895) = |abap_only|.
-    DATA t896 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t896.
-    DATA(t897) = abap_true.
-    IF t897 = abap_true.
-      DATA(t898) = abap_true.
-      DATA(t899) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t899->has = abap_true.
-      t899->value = t898.
-      t896 = t899.
-    ELSE.
-      DATA t900 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t900.
-      t896 = t900.
+    DATA t886 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t886.
+    IF t878->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t878->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t886 ).
     ENDIF.
-    t893 = NEW zcl_lnt_sql_named_param( i_name = t894 i_value = t895 i_optional = t896 ).
-    APPEND t893 TO t892->items.
-    DATA(t901) = t867.
-    t866 = t901.
-    t860 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t861 i_f1 = t862 i_f2 = t866 ).
-    APPEND t860 TO t859->items.
-    DATA(t902) = t643.
-    DATA t903 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t903.
-    DATA(t904) = |tstmp_to_dst|.
-    DATA t905 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t905.
-    DATA t906 TYPE REF TO zcl_lnt_abap_release.
+    CREATE OBJECT t878->zlnt_json_ownkeys_70e5fd461788.
+    t878->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t887) = CONV string( |name| ).
+    DATA t888 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t888.
+    IF t878->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t878->zlnt_json_ownkeys_70e5fd461788->put( p0 = t887 p1 = t888 ).
+    ENDIF.
+    DATA(t889) = CONV string( |value| ).
+    DATA t890 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t890.
+    IF t878->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t878->zlnt_json_ownkeys_70e5fd461788->put( p0 = t889 p1 = t890 ).
+    ENDIF.
+    t877->load( ).
+    APPEND t878 TO t877->items.
+    t877->save( ).
+    DATA(t891) = CAST zlnt_runtime_arra_c22708faf2e3( t875 ).
+    DATA t892 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t893 TYPE string.
+    DATA(t894) = CONV string( |seconds| ).
+    t893 = t894.
+    DATA t895 TYPE string.
+    DATA(t896) = CONV string( |any| ).
+    t895 = t896.
+    DATA t897 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t898 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t898.
+    t897 = t898.
+    t892 = NEW zcl_lnt_sql_named_param( i_name = t893 i_value = t895 i_optional = t897 ).
+    CREATE OBJECT t892->zlnt_view_ownkeys_b0e8086400eb.
+    t892->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t899 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t899.
+    IF t892->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t892->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t899 ).
+    ENDIF.
+    DATA t900 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t900.
+    IF t892->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t892->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t900 ).
+    ENDIF.
+    CREATE OBJECT t892->zlnt_json_ownkeys_70e5fd461788.
+    t892->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t901) = CONV string( |name| ).
+    DATA t902 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t902.
+    IF t892->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t892->zlnt_json_ownkeys_70e5fd461788->put( p0 = t901 p1 = t902 ).
+    ENDIF.
+    DATA(t903) = CONV string( |value| ).
+    DATA t904 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t904.
+    IF t892->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t892->zlnt_json_ownkeys_70e5fd461788->put( p0 = t903 p1 = t904 ).
+    ENDIF.
+    t891->load( ).
+    APPEND t892 TO t891->items.
+    t891->save( ).
+    DATA(t905) = CAST zlnt_runtime_arra_c22708faf2e3( t875 ).
+    DATA t906 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t906.
-    DATA t907 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t907.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA t907 TYPE string.
+    DATA(t908) = CONV string( |on_error| ).
+    t907 = t908.
+    DATA t909 TYPE string.
+    DATA(t910) = CONV string( |abap_only| ).
+    t909 = t910.
+    DATA t911 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t911.
+    DATA t912 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t912.
+    DATA(t913) = CONV abap_bool( abap_true ).
+    IF t913 = abap_true.
+      DATA(t914) = CONV abap_bool( abap_true ).
+      DATA(t915) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t915->has = abap_true.
+      t915->value = t914.
+      t912 = t915.
+    ELSE.
+      DATA t916 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t916.
+      t912 = t916.
     ENDIF.
-    t907 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t908) = |v757|.
-    t906 = t907->get( p0 = t908 ).
-    t905 = t906.
-    DATA t909 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t909.
-    DATA t910 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t911 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t911.
-    t910 = t911.
-    DATA(t912) = t910.
-    DATA t913 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t914) = |tstmp|.
-    DATA(t915) = |any|.
-    DATA t916 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t916.
-    t913 = NEW zcl_lnt_sql_named_param( i_name = t914 i_value = t915 i_optional = t916 ).
-    APPEND t913 TO t912->items.
-    DATA(t917) = t910.
-    DATA t918 TYPE REF TO zcl_lnt_sql_named_param.
+    t911 = t912.
+    t906 = NEW zcl_lnt_sql_named_param( i_name = t907 i_value = t909 i_optional = t911 ).
+    CREATE OBJECT t906->zlnt_view_ownkeys_b0e8086400eb.
+    t906->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t917 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t917.
+    IF t906->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t906->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t917 ).
+    ENDIF.
+    DATA t918 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t918.
-    DATA(t919) = |tzone|.
-    DATA(t920) = |any|.
-    DATA t921 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t906->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t906->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t918 ).
+    ENDIF.
+    DATA t919 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t919.
+    IF t906->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t906->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t919 ).
+    ENDIF.
+    CREATE OBJECT t906->zlnt_json_ownkeys_70e5fd461788.
+    t906->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t920) = CONV string( |name| ).
+    DATA t921 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t921.
-    DATA(t922) = abap_true.
-    IF t922 = abap_true.
-      DATA(t923) = abap_true.
-      DATA(t924) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t924->has = abap_true.
-      t924->value = t923.
-      t921 = t924.
-    ELSE.
-      DATA t925 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t925.
-      t921 = t925.
+    IF t906->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t906->zlnt_json_ownkeys_70e5fd461788->put( p0 = t920 p1 = t921 ).
     ENDIF.
-    t918 = NEW zcl_lnt_sql_named_param( i_name = t919 i_value = t920 i_optional = t921 ).
-    APPEND t918 TO t917->items.
-    DATA(t926) = t910.
-    DATA t927 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t927.
-    DATA(t928) = |client|.
-    DATA(t929) = |any|.
-    DATA t930 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA(t922) = CONV string( |value| ).
+    DATA t923 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t923.
+    IF t906->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t906->zlnt_json_ownkeys_70e5fd461788->put( p0 = t922 p1 = t923 ).
+    ENDIF.
+    DATA(t924) = CONV string( |optional| ).
+    DATA t925 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t925.
+    IF t906->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t906->zlnt_json_ownkeys_70e5fd461788->put( p0 = t924 p1 = t925 ).
+    ENDIF.
+    t905->load( ).
+    APPEND t906 TO t905->items.
+    t905->save( ).
+    DATA(t926) = CAST zlnt_runtime_arra_c22708faf2e3( t875 ).
+    t874 = t926.
+    t868 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t869 i_f1 = t870 i_f2 = t874 ).
+    t867->load( ).
+    APPEND t868 TO t867->items.
+    t867->save( ).
+    DATA(t927) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t928 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t928.
+    DATA(t929) = CONV string( |tstmp_seconds_between| ).
+    DATA t930 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t930.
-    DATA(t931) = abap_true.
-    IF t931 = abap_true.
-      DATA(t932) = abap_true.
-      DATA(t933) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t933->has = abap_true.
-      t933->value = t932.
-      t930 = t933.
-    ELSE.
-      DATA t934 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t934.
-      t930 = t934.
+    DATA t931 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t931.
+    DATA t932 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t932.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t927 = NEW zcl_lnt_sql_named_param( i_name = t928 i_value = t929 i_optional = t930 ).
-    APPEND t927 TO t926->items.
-    DATA(t935) = t910.
-    DATA t936 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t936.
-    DATA(t937) = |on_error|.
-    DATA(t938) = |abap_only|.
-    DATA t939 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t939.
-    DATA(t940) = abap_true.
-    IF t940 = abap_true.
-      DATA(t941) = abap_true.
-      DATA(t942) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t942->has = abap_true.
-      t942->value = t941.
-      t939 = t942.
-    ELSE.
-      DATA t943 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t943.
-      t939 = t943.
+    t932 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t933) = CONV string( |v757| ).
+    t931 = t932->get( p0 = t933 ).
+    t930 = t931.
+    DATA t934 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t934.
+    DATA t935 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t936 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t936.
+    t935 = t936.
+    DATA(t937) = CAST zlnt_runtime_arra_c22708faf2e3( t935 ).
+    DATA t938 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t939 TYPE string.
+    DATA(t940) = CONV string( |tstmp1| ).
+    t939 = t940.
+    DATA t941 TYPE string.
+    DATA(t942) = CONV string( |any| ).
+    t941 = t942.
+    DATA t943 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t944 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t944.
+    t943 = t944.
+    t938 = NEW zcl_lnt_sql_named_param( i_name = t939 i_value = t941 i_optional = t943 ).
+    CREATE OBJECT t938->zlnt_view_ownkeys_b0e8086400eb.
+    t938->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t945 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t945.
+    IF t938->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t938->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t945 ).
     ENDIF.
-    t936 = NEW zcl_lnt_sql_named_param( i_name = t937 i_value = t938 i_optional = t939 ).
-    APPEND t936 TO t935->items.
-    DATA(t944) = t910.
-    t909 = t944.
-    t903 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t904 i_f1 = t905 i_f2 = t909 ).
-    APPEND t903 TO t902->items.
-    DATA(t945) = t643.
-    DATA t946 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    DATA t946 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t946.
-    DATA(t947) = |tstmpl_to_utcl|.
-    DATA t948 TYPE REF TO zcl_lnt_abap_release.
+    IF t938->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t938->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t946 ).
+    ENDIF.
+    CREATE OBJECT t938->zlnt_json_ownkeys_70e5fd461788.
+    t938->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t947) = CONV string( |name| ).
+    DATA t948 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t948.
-    DATA t949 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t949.
-    DATA t950 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t938->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t938->zlnt_json_ownkeys_70e5fd461788->put( p0 = t947 p1 = t948 ).
+    ENDIF.
+    DATA(t949) = CONV string( |value| ).
+    DATA t950 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t950.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t938->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t938->zlnt_json_ownkeys_70e5fd461788->put( p0 = t949 p1 = t950 ).
     ENDIF.
-    t950 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t951) = |v757|.
-    t949 = t950->get( p0 = t951 ).
-    t948 = t949.
-    DATA t952 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t952.
-    DATA t953 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t954 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t954.
+    t937->load( ).
+    APPEND t938 TO t937->items.
+    t937->save( ).
+    DATA(t951) = CAST zlnt_runtime_arra_c22708faf2e3( t935 ).
+    DATA t952 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t953 TYPE string.
+    DATA(t954) = CONV string( |tstmp2| ).
     t953 = t954.
-    DATA(t955) = t953.
-    DATA t956 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t957) = |tstmpl|.
-    DATA(t958) = |any|.
-    DATA t959 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t955 TYPE string.
+    DATA(t956) = CONV string( |any| ).
+    t955 = t956.
+    DATA t957 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t958 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t958.
+    t957 = t958.
+    t952 = NEW zcl_lnt_sql_named_param( i_name = t953 i_value = t955 i_optional = t957 ).
+    CREATE OBJECT t952->zlnt_view_ownkeys_b0e8086400eb.
+    t952->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t959 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t959.
-    t956 = NEW zcl_lnt_sql_named_param( i_name = t957 i_value = t958 i_optional = t959 ).
-    APPEND t956 TO t955->items.
-    DATA(t960) = t953.
-    DATA t961 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t961.
-    DATA(t962) = |on_error|.
-    DATA(t963) = |abap_only|.
-    DATA t964 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t952->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t952->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t959 ).
+    ENDIF.
+    DATA t960 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t960.
+    IF t952->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t952->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t960 ).
+    ENDIF.
+    CREATE OBJECT t952->zlnt_json_ownkeys_70e5fd461788.
+    t952->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t961) = CONV string( |name| ).
+    DATA t962 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t962.
+    IF t952->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t952->zlnt_json_ownkeys_70e5fd461788->put( p0 = t961 p1 = t962 ).
+    ENDIF.
+    DATA(t963) = CONV string( |value| ).
+    DATA t964 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t964.
-    DATA(t965) = abap_true.
-    IF t965 = abap_true.
-      DATA(t966) = abap_true.
-      DATA(t967) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t967->has = abap_true.
-      t967->value = t966.
-      t964 = t967.
-    ELSE.
-      DATA t968 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t968.
-      t964 = t968.
+    IF t952->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t952->zlnt_json_ownkeys_70e5fd461788->put( p0 = t963 p1 = t964 ).
     ENDIF.
-    t961 = NEW zcl_lnt_sql_named_param( i_name = t962 i_value = t963 i_optional = t964 ).
-    APPEND t961 TO t960->items.
-    DATA(t969) = t953.
-    DATA t970 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t970.
-    DATA(t971) = |on_initial|.
-    DATA(t972) = |abap_only|.
-    DATA t973 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t973.
-    DATA(t974) = abap_true.
-    IF t974 = abap_true.
-      DATA(t975) = abap_true.
-      DATA(t976) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t976->has = abap_true.
-      t976->value = t975.
-      t973 = t976.
+    t951->load( ).
+    APPEND t952 TO t951->items.
+    t951->save( ).
+    DATA(t965) = CAST zlnt_runtime_arra_c22708faf2e3( t935 ).
+    DATA t966 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t966.
+    DATA t967 TYPE string.
+    DATA(t968) = CONV string( |on_error| ).
+    t967 = t968.
+    DATA t969 TYPE string.
+    DATA(t970) = CONV string( |abap_only| ).
+    t969 = t970.
+    DATA t971 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t971.
+    DATA t972 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t972.
+    DATA(t973) = CONV abap_bool( abap_true ).
+    IF t973 = abap_true.
+      DATA(t974) = CONV abap_bool( abap_true ).
+      DATA(t975) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t975->has = abap_true.
+      t975->value = t974.
+      t972 = t975.
     ELSE.
-      DATA t977 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t977.
-      t973 = t977.
+      DATA t976 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t976.
+      t972 = t976.
     ENDIF.
-    t970 = NEW zcl_lnt_sql_named_param( i_name = t971 i_value = t972 i_optional = t973 ).
-    APPEND t970 TO t969->items.
-    DATA(t978) = t953.
-    t952 = t978.
-    t946 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t947 i_f1 = t948 i_f2 = t952 ).
-    APPEND t946 TO t945->items.
-    DATA(t979) = t643.
-    DATA t980 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t980.
-    DATA(t981) = |tstmpl_from_utcl|.
-    DATA t982 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t982.
-    DATA t983 TYPE REF TO zcl_lnt_abap_release.
+    t971 = t972.
+    t966 = NEW zcl_lnt_sql_named_param( i_name = t967 i_value = t969 i_optional = t971 ).
+    CREATE OBJECT t966->zlnt_view_ownkeys_b0e8086400eb.
+    t966->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t977 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t977.
+    IF t966->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t966->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t977 ).
+    ENDIF.
+    DATA t978 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t978.
+    IF t966->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t966->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t978 ).
+    ENDIF.
+    DATA t979 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t979.
+    IF t966->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t966->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t979 ).
+    ENDIF.
+    CREATE OBJECT t966->zlnt_json_ownkeys_70e5fd461788.
+    t966->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t980) = CONV string( |name| ).
+    DATA t981 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t981.
+    IF t966->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t966->zlnt_json_ownkeys_70e5fd461788->put( p0 = t980 p1 = t981 ).
+    ENDIF.
+    DATA(t982) = CONV string( |value| ).
+    DATA t983 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t983.
-    DATA t984 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t984.
+    IF t966->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t966->zlnt_json_ownkeys_70e5fd461788->put( p0 = t982 p1 = t983 ).
+    ENDIF.
+    DATA(t984) = CONV string( |optional| ).
+    DATA t985 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t985.
+    IF t966->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t966->zlnt_json_ownkeys_70e5fd461788->put( p0 = t984 p1 = t985 ).
+    ENDIF.
+    t965->load( ).
+    APPEND t966 TO t965->items.
+    t965->save( ).
+    DATA(t986) = CAST zlnt_runtime_arra_c22708faf2e3( t935 ).
+    t934 = t986.
+    t928 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t929 i_f1 = t930 i_f2 = t934 ).
+    t927->load( ).
+    APPEND t928 TO t927->items.
+    t927->save( ).
+    DATA(t987) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t988 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t988.
+    DATA(t989) = CONV string( |tstmp_to_dats| ).
+    DATA t990 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t990.
+    DATA t991 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t991.
+    DATA t992 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t992.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t984 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t985) = |v757|.
-    t983 = t984->get( p0 = t985 ).
-    t982 = t983.
-    DATA t986 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t986.
-    DATA t987 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t988 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t988.
-    t987 = t988.
-    DATA(t989) = t987.
-    DATA t990 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t991) = |utcl|.
-    DATA(t992) = |any|.
-    DATA t993 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t993.
-    t990 = NEW zcl_lnt_sql_named_param( i_name = t991 i_value = t992 i_optional = t993 ).
-    APPEND t990 TO t989->items.
-    DATA(t994) = t987.
-    DATA t995 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t995.
-    DATA(t996) = |on_null|.
-    DATA(t997) = |abap_only|.
-    DATA t998 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t998.
-    DATA(t999) = abap_true.
-    IF t999 = abap_true.
-      DATA(t1000) = abap_true.
-      DATA(t1001) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1001->has = abap_true.
-      t1001->value = t1000.
-      t998 = t1001.
-    ELSE.
-      DATA t1002 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1002.
-      t998 = t1002.
-    ENDIF.
-    t995 = NEW zcl_lnt_sql_named_param( i_name = t996 i_value = t997 i_optional = t998 ).
-    APPEND t995 TO t994->items.
-    DATA(t1003) = t987.
-    t986 = t1003.
-    t980 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t981 i_f1 = t982 i_f2 = t986 ).
-    APPEND t980 TO t979->items.
-    DATA(t1004) = t643.
-    DATA t1005 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    t992 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t993) = CONV string( |v757| ).
+    t991 = t992->get( p0 = t993 ).
+    t990 = t991.
+    DATA t994 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t994.
+    DATA t995 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t996 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t996.
+    t995 = t996.
+    DATA(t997) = CAST zlnt_runtime_arra_c22708faf2e3( t995 ).
+    DATA t998 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t999 TYPE string.
+    DATA(t1000) = CONV string( |tstmp| ).
+    t999 = t1000.
+    DATA t1001 TYPE string.
+    DATA(t1002) = CONV string( |any| ).
+    t1001 = t1002.
+    DATA t1003 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1004 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1004.
+    t1003 = t1004.
+    t998 = NEW zcl_lnt_sql_named_param( i_name = t999 i_value = t1001 i_optional = t1003 ).
+    CREATE OBJECT t998->zlnt_view_ownkeys_b0e8086400eb.
+    t998->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1005 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1005.
-    DATA(t1006) = |dats_to_datn|.
-    DATA t1007 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1007.
-    DATA t1008 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1008.
-    DATA t1009 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1009.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t998->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t998->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1005 ).
     ENDIF.
-    t1009 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1010) = |v757|.
-    t1008 = t1009->get( p0 = t1010 ).
-    t1007 = t1008.
-    DATA t1011 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1011.
-    DATA t1012 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1013 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1013.
-    t1012 = t1013.
-    DATA(t1014) = t1012.
-    DATA t1015 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1016) = |dats|.
-    DATA(t1017) = |any|.
+    DATA t1006 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1006.
+    IF t998->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t998->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1006 ).
+    ENDIF.
+    CREATE OBJECT t998->zlnt_json_ownkeys_70e5fd461788.
+    t998->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1007) = CONV string( |name| ).
+    DATA t1008 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1008.
+    IF t998->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t998->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1007 p1 = t1008 ).
+    ENDIF.
+    DATA(t1009) = CONV string( |value| ).
+    DATA t1010 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1010.
+    IF t998->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t998->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1009 p1 = t1010 ).
+    ENDIF.
+    t997->load( ).
+    APPEND t998 TO t997->items.
+    t997->save( ).
+    DATA(t1011) = CAST zlnt_runtime_arra_c22708faf2e3( t995 ).
+    DATA t1012 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1012.
+    DATA t1013 TYPE string.
+    DATA(t1014) = CONV string( |tzone| ).
+    t1013 = t1014.
+    DATA t1015 TYPE string.
+    DATA(t1016) = CONV string( |any| ).
+    t1015 = t1016.
+    DATA t1017 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1017.
     DATA t1018 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1018.
-    t1015 = NEW zcl_lnt_sql_named_param( i_name = t1016 i_value = t1017 i_optional = t1018 ).
-    APPEND t1015 TO t1014->items.
-    DATA(t1019) = t1012.
-    DATA t1020 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1020.
-    DATA(t1021) = |on_error|.
-    DATA(t1022) = |abap_only|.
-    DATA t1023 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA(t1019) = CONV abap_bool( abap_true ).
+    IF t1019 = abap_true.
+      DATA(t1020) = CONV abap_bool( abap_true ).
+      DATA(t1021) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1021->has = abap_true.
+      t1021->value = t1020.
+      t1018 = t1021.
+    ELSE.
+      DATA t1022 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1022.
+      t1018 = t1022.
+    ENDIF.
+    t1017 = t1018.
+    t1012 = NEW zcl_lnt_sql_named_param( i_name = t1013 i_value = t1015 i_optional = t1017 ).
+    CREATE OBJECT t1012->zlnt_view_ownkeys_b0e8086400eb.
+    t1012->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1023 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1023.
-    DATA(t1024) = abap_true.
-    IF t1024 = abap_true.
-      DATA(t1025) = abap_true.
-      DATA(t1026) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1026->has = abap_true.
-      t1026->value = t1025.
-      t1023 = t1026.
-    ELSE.
-      DATA t1027 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1027.
-      t1023 = t1027.
+    IF t1012->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1012->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1023 ).
     ENDIF.
-    t1020 = NEW zcl_lnt_sql_named_param( i_name = t1021 i_value = t1022 i_optional = t1023 ).
-    APPEND t1020 TO t1019->items.
-    DATA(t1028) = t1012.
-    DATA t1029 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1024 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1024.
+    IF t1012->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1012->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1024 ).
+    ENDIF.
+    DATA t1025 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1025.
+    IF t1012->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1012->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1025 ).
+    ENDIF.
+    CREATE OBJECT t1012->zlnt_json_ownkeys_70e5fd461788.
+    t1012->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1026) = CONV string( |name| ).
+    DATA t1027 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1027.
+    IF t1012->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1012->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1026 p1 = t1027 ).
+    ENDIF.
+    DATA(t1028) = CONV string( |value| ).
+    DATA t1029 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1029.
-    DATA(t1030) = |on_initial|.
-    DATA(t1031) = |abap_only|.
-    DATA t1032 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1032.
-    DATA(t1033) = abap_true.
-    IF t1033 = abap_true.
-      DATA(t1034) = abap_true.
-      DATA(t1035) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1035->has = abap_true.
-      t1035->value = t1034.
-      t1032 = t1035.
-    ELSE.
-      DATA t1036 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1036.
-      t1032 = t1036.
+    IF t1012->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1012->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1028 p1 = t1029 ).
     ENDIF.
-    t1029 = NEW zcl_lnt_sql_named_param( i_name = t1030 i_value = t1031 i_optional = t1032 ).
-    APPEND t1029 TO t1028->items.
-    DATA(t1037) = t1012.
-    t1011 = t1037.
-    t1005 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1006 i_f1 = t1007 i_f2 = t1011 ).
-    APPEND t1005 TO t1004->items.
-    DATA(t1038) = t643.
-    DATA t1039 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    DATA(t1030) = CONV string( |optional| ).
+    DATA t1031 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1031.
+    IF t1012->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1012->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1030 p1 = t1031 ).
+    ENDIF.
+    t1011->load( ).
+    APPEND t1012 TO t1011->items.
+    t1011->save( ).
+    DATA(t1032) = CAST zlnt_runtime_arra_c22708faf2e3( t995 ).
+    DATA t1033 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1033.
+    DATA t1034 TYPE string.
+    DATA(t1035) = CONV string( |client| ).
+    t1034 = t1035.
+    DATA t1036 TYPE string.
+    DATA(t1037) = CONV string( |any| ).
+    t1036 = t1037.
+    DATA t1038 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1038.
+    DATA t1039 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1039.
-    DATA(t1040) = |dats_from_datn|.
-    DATA t1041 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1041.
-    DATA t1042 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1042.
-    DATA t1043 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1043.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1040) = CONV abap_bool( abap_true ).
+    IF t1040 = abap_true.
+      DATA(t1041) = CONV abap_bool( abap_true ).
+      DATA(t1042) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1042->has = abap_true.
+      t1042->value = t1041.
+      t1039 = t1042.
+    ELSE.
+      DATA t1043 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1043.
+      t1039 = t1043.
     ENDIF.
-    t1043 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1044) = |v757|.
-    t1042 = t1043->get( p0 = t1044 ).
-    t1041 = t1042.
-    DATA t1045 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t1038 = t1039.
+    t1033 = NEW zcl_lnt_sql_named_param( i_name = t1034 i_value = t1036 i_optional = t1038 ).
+    CREATE OBJECT t1033->zlnt_view_ownkeys_b0e8086400eb.
+    t1033->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1044 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1044.
+    IF t1033->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1033->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1044 ).
+    ENDIF.
+    DATA t1045 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1045.
-    DATA t1046 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1047 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1047.
-    t1046 = t1047.
-    DATA(t1048) = t1046.
-    DATA t1049 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1050) = |datn|.
-    DATA(t1051) = |any|.
-    DATA t1052 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t1033->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1033->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1045 ).
+    ENDIF.
+    DATA t1046 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1046.
+    IF t1033->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1033->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1046 ).
+    ENDIF.
+    CREATE OBJECT t1033->zlnt_json_ownkeys_70e5fd461788.
+    t1033->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1047) = CONV string( |name| ).
+    DATA t1048 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1048.
+    IF t1033->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1033->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1047 p1 = t1048 ).
+    ENDIF.
+    DATA(t1049) = CONV string( |value| ).
+    DATA t1050 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1050.
+    IF t1033->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1033->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1049 p1 = t1050 ).
+    ENDIF.
+    DATA(t1051) = CONV string( |optional| ).
+    DATA t1052 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1052.
-    t1049 = NEW zcl_lnt_sql_named_param( i_name = t1050 i_value = t1051 i_optional = t1052 ).
-    APPEND t1049 TO t1048->items.
-    DATA(t1053) = t1046.
+    IF t1033->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1033->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1051 p1 = t1052 ).
+    ENDIF.
+    t1032->load( ).
+    APPEND t1033 TO t1032->items.
+    t1032->save( ).
+    DATA(t1053) = CAST zlnt_runtime_arra_c22708faf2e3( t995 ).
     DATA t1054 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1054.
-    DATA(t1055) = |on_null|.
-    DATA(t1056) = |abap_only|.
-    DATA t1057 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1057.
-    DATA(t1058) = abap_true.
-    IF t1058 = abap_true.
-      DATA(t1059) = abap_true.
-      DATA(t1060) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1060->has = abap_true.
-      t1060->value = t1059.
-      t1057 = t1060.
+    DATA t1055 TYPE string.
+    DATA(t1056) = CONV string( |on_error| ).
+    t1055 = t1056.
+    DATA t1057 TYPE string.
+    DATA(t1058) = CONV string( |abap_only| ).
+    t1057 = t1058.
+    DATA t1059 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1059.
+    DATA t1060 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1060.
+    DATA(t1061) = CONV abap_bool( abap_true ).
+    IF t1061 = abap_true.
+      DATA(t1062) = CONV abap_bool( abap_true ).
+      DATA(t1063) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1063->has = abap_true.
+      t1063->value = t1062.
+      t1060 = t1063.
     ELSE.
-      DATA t1061 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1061.
-      t1057 = t1061.
+      DATA t1064 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1064.
+      t1060 = t1064.
     ENDIF.
-    t1054 = NEW zcl_lnt_sql_named_param( i_name = t1055 i_value = t1056 i_optional = t1057 ).
-    APPEND t1054 TO t1053->items.
-    DATA(t1062) = t1046.
-    t1045 = t1062.
-    t1039 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1040 i_f1 = t1041 i_f2 = t1045 ).
-    APPEND t1039 TO t1038->items.
-    DATA(t1063) = t643.
-    DATA t1064 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1064.
-    DATA(t1065) = |tims_to_timn|.
-    DATA t1066 TYPE REF TO zcl_lnt_abap_release.
+    t1059 = t1060.
+    t1054 = NEW zcl_lnt_sql_named_param( i_name = t1055 i_value = t1057 i_optional = t1059 ).
+    CREATE OBJECT t1054->zlnt_view_ownkeys_b0e8086400eb.
+    t1054->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1065 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1065.
+    IF t1054->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1054->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1065 ).
+    ENDIF.
+    DATA t1066 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1066.
-    DATA t1067 TYPE REF TO zcl_lnt_abap_release.
+    IF t1054->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1054->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1066 ).
+    ENDIF.
+    DATA t1067 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1067.
-    DATA t1068 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1068.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1054->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1054->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1067 ).
     ENDIF.
-    t1068 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1069) = |v757|.
-    t1067 = t1068->get( p0 = t1069 ).
-    t1066 = t1067.
-    DATA t1070 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1070.
-    DATA t1071 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1072 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1072.
-    t1071 = t1072.
-    DATA(t1073) = t1071.
-    DATA t1074 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1075) = |tims|.
-    DATA(t1076) = |any|.
-    DATA t1077 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1077.
-    t1074 = NEW zcl_lnt_sql_named_param( i_name = t1075 i_value = t1076 i_optional = t1077 ).
-    APPEND t1074 TO t1073->items.
-    DATA(t1078) = t1071.
-    DATA t1079 TYPE REF TO zcl_lnt_sql_named_param.
+    CREATE OBJECT t1054->zlnt_json_ownkeys_70e5fd461788.
+    t1054->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1068) = CONV string( |name| ).
+    DATA t1069 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1069.
+    IF t1054->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1054->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1068 p1 = t1069 ).
+    ENDIF.
+    DATA(t1070) = CONV string( |value| ).
+    DATA t1071 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1071.
+    IF t1054->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1054->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1070 p1 = t1071 ).
+    ENDIF.
+    DATA(t1072) = CONV string( |optional| ).
+    DATA t1073 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1073.
+    IF t1054->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1054->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1072 p1 = t1073 ).
+    ENDIF.
+    t1053->load( ).
+    APPEND t1054 TO t1053->items.
+    t1053->save( ).
+    DATA(t1074) = CAST zlnt_runtime_arra_c22708faf2e3( t995 ).
+    t994 = t1074.
+    t988 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t989 i_f1 = t990 i_f2 = t994 ).
+    t987->load( ).
+    APPEND t988 TO t987->items.
+    t987->save( ).
+    DATA(t1075) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1076 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1076.
+    DATA(t1077) = CONV string( |tstmp_to_tims| ).
+    DATA t1078 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1078.
+    DATA t1079 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1079.
-    DATA(t1080) = |on_error|.
-    DATA(t1081) = |abap_only|.
-    DATA t1082 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1080 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1080.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1080 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1081) = CONV string( |v757| ).
+    t1079 = t1080->get( p0 = t1081 ).
+    t1078 = t1079.
+    DATA t1082 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1082.
-    DATA(t1083) = abap_true.
-    IF t1083 = abap_true.
-      DATA(t1084) = abap_true.
-      DATA(t1085) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1085->has = abap_true.
-      t1085->value = t1084.
-      t1082 = t1085.
-    ELSE.
-      DATA t1086 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1086.
-      t1082 = t1086.
-    ENDIF.
-    t1079 = NEW zcl_lnt_sql_named_param( i_name = t1080 i_value = t1081 i_optional = t1082 ).
-    APPEND t1079 TO t1078->items.
-    DATA(t1087) = t1071.
-    t1070 = t1087.
-    t1064 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1065 i_f1 = t1066 i_f2 = t1070 ).
-    APPEND t1064 TO t1063->items.
-    DATA(t1088) = t643.
-    DATA t1089 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1089.
-    DATA(t1090) = |tims_from_timn|.
-    DATA t1091 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1091.
-    DATA t1092 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1083 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1084 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1084.
+    t1083 = t1084.
+    DATA(t1085) = CAST zlnt_runtime_arra_c22708faf2e3( t1083 ).
+    DATA t1086 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1087 TYPE string.
+    DATA(t1088) = CONV string( |tstmp| ).
+    t1087 = t1088.
+    DATA t1089 TYPE string.
+    DATA(t1090) = CONV string( |any| ).
+    t1089 = t1090.
+    DATA t1091 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1092 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1092.
-    DATA t1093 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1093.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1093 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1094) = |v757|.
-    t1092 = t1093->get( p0 = t1094 ).
     t1091 = t1092.
-    DATA t1095 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1095.
-    DATA t1096 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1097 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1097.
-    t1096 = t1097.
-    DATA(t1098) = t1096.
-    DATA t1099 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1100) = |timn|.
-    DATA(t1101) = |any|.
-    DATA t1102 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1102.
-    t1099 = NEW zcl_lnt_sql_named_param( i_name = t1100 i_value = t1101 i_optional = t1102 ).
-    APPEND t1099 TO t1098->items.
-    DATA(t1103) = t1096.
-    DATA t1104 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1104.
-    DATA(t1105) = |on_null|.
-    DATA(t1106) = |abap_only|.
-    DATA t1107 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1107.
-    DATA(t1108) = abap_true.
-    IF t1108 = abap_true.
-      DATA(t1109) = abap_true.
-      DATA(t1110) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1110->has = abap_true.
-      t1110->value = t1109.
-      t1107 = t1110.
+    t1086 = NEW zcl_lnt_sql_named_param( i_name = t1087 i_value = t1089 i_optional = t1091 ).
+    CREATE OBJECT t1086->zlnt_view_ownkeys_b0e8086400eb.
+    t1086->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1093 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1093.
+    IF t1086->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1086->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1093 ).
+    ENDIF.
+    DATA t1094 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1094.
+    IF t1086->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1086->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1094 ).
+    ENDIF.
+    CREATE OBJECT t1086->zlnt_json_ownkeys_70e5fd461788.
+    t1086->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1095) = CONV string( |name| ).
+    DATA t1096 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1096.
+    IF t1086->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1086->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1095 p1 = t1096 ).
+    ENDIF.
+    DATA(t1097) = CONV string( |value| ).
+    DATA t1098 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1098.
+    IF t1086->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1086->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1097 p1 = t1098 ).
+    ENDIF.
+    t1085->load( ).
+    APPEND t1086 TO t1085->items.
+    t1085->save( ).
+    DATA(t1099) = CAST zlnt_runtime_arra_c22708faf2e3( t1083 ).
+    DATA t1100 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1100.
+    DATA t1101 TYPE string.
+    DATA(t1102) = CONV string( |tzone| ).
+    t1101 = t1102.
+    DATA t1103 TYPE string.
+    DATA(t1104) = CONV string( |any| ).
+    t1103 = t1104.
+    DATA t1105 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1105.
+    DATA t1106 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1106.
+    DATA(t1107) = CONV abap_bool( abap_true ).
+    IF t1107 = abap_true.
+      DATA(t1108) = CONV abap_bool( abap_true ).
+      DATA(t1109) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1109->has = abap_true.
+      t1109->value = t1108.
+      t1106 = t1109.
     ELSE.
-      DATA t1111 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1111.
-      t1107 = t1111.
+      DATA t1110 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1110.
+      t1106 = t1110.
     ENDIF.
-    t1104 = NEW zcl_lnt_sql_named_param( i_name = t1105 i_value = t1106 i_optional = t1107 ).
-    APPEND t1104 TO t1103->items.
-    DATA(t1112) = t1096.
-    t1095 = t1112.
-    t1089 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1090 i_f1 = t1091 i_f2 = t1095 ).
-    APPEND t1089 TO t1088->items.
-    DATA(t1113) = t643.
-    DATA t1114 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1114.
-    DATA(t1115) = |currency_conversion|.
-    DATA t1116 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1116.
-    DATA t1117 TYPE REF TO zcl_lnt_abap_release.
+    t1105 = t1106.
+    t1100 = NEW zcl_lnt_sql_named_param( i_name = t1101 i_value = t1103 i_optional = t1105 ).
+    CREATE OBJECT t1100->zlnt_view_ownkeys_b0e8086400eb.
+    t1100->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1111.
+    IF t1100->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1100->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1111 ).
+    ENDIF.
+    DATA t1112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1112.
+    IF t1100->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1100->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1112 ).
+    ENDIF.
+    DATA t1113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1113.
+    IF t1100->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1100->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1113 ).
+    ENDIF.
+    CREATE OBJECT t1100->zlnt_json_ownkeys_70e5fd461788.
+    t1100->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1114) = CONV string( |name| ).
+    DATA t1115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1115.
+    IF t1100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1100->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1114 p1 = t1115 ).
+    ENDIF.
+    DATA(t1116) = CONV string( |value| ).
+    DATA t1117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1117.
-    DATA t1118 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1118.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1100->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1116 p1 = t1117 ).
     ENDIF.
-    t1118 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1119) = |v757|.
-    t1117 = t1118->get( p0 = t1119 ).
-    t1116 = t1117.
-    DATA t1120 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1120.
-    DATA t1121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1122 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1122.
-    t1121 = t1122.
-    DATA(t1123) = t1121.
-    DATA t1124 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1125) = |amount|.
-    DATA(t1126) = |any|.
+    DATA(t1118) = CONV string( |optional| ).
+    DATA t1119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1119.
+    IF t1100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1100->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1118 p1 = t1119 ).
+    ENDIF.
+    t1099->load( ).
+    APPEND t1100 TO t1099->items.
+    t1099->save( ).
+    DATA(t1120) = CAST zlnt_runtime_arra_c22708faf2e3( t1083 ).
+    DATA t1121 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1121.
+    DATA t1122 TYPE string.
+    DATA(t1123) = CONV string( |client| ).
+    t1122 = t1123.
+    DATA t1124 TYPE string.
+    DATA(t1125) = CONV string( |any| ).
+    t1124 = t1125.
+    DATA t1126 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1126.
     DATA t1127 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1127.
-    t1124 = NEW zcl_lnt_sql_named_param( i_name = t1125 i_value = t1126 i_optional = t1127 ).
-    APPEND t1124 TO t1123->items.
-    DATA(t1128) = t1121.
-    DATA t1129 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1130) = |source_currency|.
-    DATA(t1131) = |any|.
-    DATA t1132 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA(t1128) = CONV abap_bool( abap_true ).
+    IF t1128 = abap_true.
+      DATA(t1129) = CONV abap_bool( abap_true ).
+      DATA(t1130) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1130->has = abap_true.
+      t1130->value = t1129.
+      t1127 = t1130.
+    ELSE.
+      DATA t1131 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1131.
+      t1127 = t1131.
+    ENDIF.
+    t1126 = t1127.
+    t1121 = NEW zcl_lnt_sql_named_param( i_name = t1122 i_value = t1124 i_optional = t1126 ).
+    CREATE OBJECT t1121->zlnt_view_ownkeys_b0e8086400eb.
+    t1121->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1132 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1132.
-    t1129 = NEW zcl_lnt_sql_named_param( i_name = t1130 i_value = t1131 i_optional = t1132 ).
-    APPEND t1129 TO t1128->items.
-    DATA(t1133) = t1121.
-    DATA t1134 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1135) = |target_currency|.
-    DATA(t1136) = |any|.
-    DATA t1137 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1137.
-    t1134 = NEW zcl_lnt_sql_named_param( i_name = t1135 i_value = t1136 i_optional = t1137 ).
-    APPEND t1134 TO t1133->items.
-    DATA(t1138) = t1121.
-    DATA t1139 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1140) = |exchange_rate_date|.
-    DATA(t1141) = |any|.
-    DATA t1142 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF t1121->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1121->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1132 ).
+    ENDIF.
+    DATA t1133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1133.
+    IF t1121->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1121->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1133 ).
+    ENDIF.
+    DATA t1134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1134.
+    IF t1121->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1121->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1134 ).
+    ENDIF.
+    CREATE OBJECT t1121->zlnt_json_ownkeys_70e5fd461788.
+    t1121->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1135) = CONV string( |name| ).
+    DATA t1136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1136.
+    IF t1121->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1121->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1135 p1 = t1136 ).
+    ENDIF.
+    DATA(t1137) = CONV string( |value| ).
+    DATA t1138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1138.
+    IF t1121->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1121->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1137 p1 = t1138 ).
+    ENDIF.
+    DATA(t1139) = CONV string( |optional| ).
+    DATA t1140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1140.
+    IF t1121->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1121->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1139 p1 = t1140 ).
+    ENDIF.
+    t1120->load( ).
+    APPEND t1121 TO t1120->items.
+    t1120->save( ).
+    DATA(t1141) = CAST zlnt_runtime_arra_c22708faf2e3( t1083 ).
+    DATA t1142 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1142.
-    t1139 = NEW zcl_lnt_sql_named_param( i_name = t1140 i_value = t1141 i_optional = t1142 ).
-    APPEND t1139 TO t1138->items.
-    DATA(t1143) = t1121.
-    DATA t1144 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1144.
-    DATA(t1145) = |exchange_rate_type|.
-    DATA(t1146) = |any|.
+    DATA t1143 TYPE string.
+    DATA(t1144) = CONV string( |on_error| ).
+    t1143 = t1144.
+    DATA t1145 TYPE string.
+    DATA(t1146) = CONV string( |abap_only| ).
+    t1145 = t1146.
     DATA t1147 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1147.
-    DATA(t1148) = abap_true.
-    IF t1148 = abap_true.
-      DATA(t1149) = abap_true.
-      DATA(t1150) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1150->has = abap_true.
-      t1150->value = t1149.
-      t1147 = t1150.
+    DATA t1148 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1148.
+    DATA(t1149) = CONV abap_bool( abap_true ).
+    IF t1149 = abap_true.
+      DATA(t1150) = CONV abap_bool( abap_true ).
+      DATA(t1151) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1151->has = abap_true.
+      t1151->value = t1150.
+      t1148 = t1151.
     ELSE.
-      DATA t1151 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1151.
-      t1147 = t1151.
+      DATA t1152 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1152.
+      t1148 = t1152.
     ENDIF.
-    t1144 = NEW zcl_lnt_sql_named_param( i_name = t1145 i_value = t1146 i_optional = t1147 ).
-    APPEND t1144 TO t1143->items.
-    DATA(t1152) = t1121.
-    DATA t1153 TYPE REF TO zcl_lnt_sql_named_param.
+    t1147 = t1148.
+    t1142 = NEW zcl_lnt_sql_named_param( i_name = t1143 i_value = t1145 i_optional = t1147 ).
+    CREATE OBJECT t1142->zlnt_view_ownkeys_b0e8086400eb.
+    t1142->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1153.
-    DATA(t1154) = |client|.
-    DATA(t1155) = |any|.
-    DATA t1156 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1156.
-    DATA(t1157) = abap_true.
-    IF t1157 = abap_true.
-      DATA(t1158) = abap_true.
-      DATA(t1159) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1159->has = abap_true.
-      t1159->value = t1158.
-      t1156 = t1159.
-    ELSE.
-      DATA t1160 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1160.
-      t1156 = t1160.
+    IF t1142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1153 ).
     ENDIF.
-    t1153 = NEW zcl_lnt_sql_named_param( i_name = t1154 i_value = t1155 i_optional = t1156 ).
-    APPEND t1153 TO t1152->items.
-    DATA(t1161) = t1121.
-    DATA t1162 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1162.
-    DATA(t1163) = |round|.
-    DATA(t1164) = |abap_only|.
-    DATA t1165 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1165.
-    DATA(t1166) = abap_true.
-    IF t1166 = abap_true.
-      DATA(t1167) = abap_true.
-      DATA(t1168) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1168->has = abap_true.
-      t1168->value = t1167.
-      t1165 = t1168.
-    ELSE.
-      DATA t1169 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1169.
-      t1165 = t1169.
+    DATA t1154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1154.
+    IF t1142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1154 ).
     ENDIF.
-    t1162 = NEW zcl_lnt_sql_named_param( i_name = t1163 i_value = t1164 i_optional = t1165 ).
-    APPEND t1162 TO t1161->items.
-    DATA(t1170) = t1121.
-    DATA t1171 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1171.
-    DATA(t1172) = |decimal_shift|.
-    DATA(t1173) = |abap_only|.
-    DATA t1174 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1174.
-    DATA(t1175) = abap_true.
-    IF t1175 = abap_true.
-      DATA(t1176) = abap_true.
-      DATA(t1177) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1177->has = abap_true.
-      t1177->value = t1176.
-      t1174 = t1177.
-    ELSE.
-      DATA t1178 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1178.
-      t1174 = t1178.
+    DATA t1155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1155.
+    IF t1142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1155 ).
     ENDIF.
-    t1171 = NEW zcl_lnt_sql_named_param( i_name = t1172 i_value = t1173 i_optional = t1174 ).
-    APPEND t1171 TO t1170->items.
-    DATA(t1179) = t1121.
-    DATA t1180 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1180.
-    DATA(t1181) = |decimal_shift_back|.
-    DATA(t1182) = |abap_only|.
-    DATA t1183 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1183.
-    DATA(t1184) = abap_true.
-    IF t1184 = abap_true.
-      DATA(t1185) = abap_true.
-      DATA(t1186) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1186->has = abap_true.
-      t1186->value = t1185.
-      t1183 = t1186.
-    ELSE.
-      DATA t1187 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1187.
-      t1183 = t1187.
+    CREATE OBJECT t1142->zlnt_json_ownkeys_70e5fd461788.
+    t1142->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1156) = CONV string( |name| ).
+    DATA t1157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1157.
+    IF t1142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1142->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1156 p1 = t1157 ).
     ENDIF.
-    t1180 = NEW zcl_lnt_sql_named_param( i_name = t1181 i_value = t1182 i_optional = t1183 ).
-    APPEND t1180 TO t1179->items.
-    DATA(t1188) = t1121.
-    DATA t1189 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1189.
-    DATA(t1190) = |on_error|.
-    DATA(t1191) = |abap_only|.
-    DATA t1192 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1192.
-    DATA(t1193) = abap_true.
-    IF t1193 = abap_true.
-      DATA(t1194) = abap_true.
-      DATA(t1195) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1195->has = abap_true.
-      t1195->value = t1194.
-      t1192 = t1195.
-    ELSE.
-      DATA t1196 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1196.
-      t1192 = t1196.
+    DATA(t1158) = CONV string( |value| ).
+    DATA t1159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1159.
+    IF t1142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1142->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1158 p1 = t1159 ).
     ENDIF.
-    t1189 = NEW zcl_lnt_sql_named_param( i_name = t1190 i_value = t1191 i_optional = t1192 ).
-    APPEND t1189 TO t1188->items.
-    DATA(t1197) = t1121.
-    t1120 = t1197.
-    t1114 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1115 i_f1 = t1116 i_f2 = t1120 ).
-    APPEND t1114 TO t1113->items.
-    DATA(t1198) = t643.
-    DATA t1199 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1199.
-    DATA(t1200) = |unit_conversion|.
-    DATA t1201 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1201.
-    DATA t1202 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1202.
-    DATA t1203 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1203.
+    DATA(t1160) = CONV string( |optional| ).
+    DATA t1161 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1161.
+    IF t1142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1142->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1160 p1 = t1161 ).
+    ENDIF.
+    t1141->load( ).
+    APPEND t1142 TO t1141->items.
+    t1141->save( ).
+    DATA(t1162) = CAST zlnt_runtime_arra_c22708faf2e3( t1083 ).
+    t1082 = t1162.
+    t1076 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1077 i_f1 = t1078 i_f2 = t1082 ).
+    t1075->load( ).
+    APPEND t1076 TO t1075->items.
+    t1075->save( ).
+    DATA(t1163) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1164 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1164.
+    DATA(t1165) = CONV string( |tstmp_to_dst| ).
+    DATA t1166 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1166.
+    DATA t1167 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1167.
+    DATA t1168 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1168.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1203 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1204) = |v758|.
-    t1202 = t1203->get( p0 = t1204 ).
-    t1201 = t1202.
-    DATA t1205 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1205.
-    DATA t1206 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1207 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1207.
-    t1206 = t1207.
-    DATA(t1208) = t1206.
-    DATA t1209 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1210) = |quantity|.
-    DATA(t1211) = |any|.
-    DATA t1212 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1212.
-    t1209 = NEW zcl_lnt_sql_named_param( i_name = t1210 i_value = t1211 i_optional = t1212 ).
-    APPEND t1209 TO t1208->items.
-    DATA(t1213) = t1206.
-    DATA t1214 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1215) = |source_unit|.
-    DATA(t1216) = |any|.
-    DATA t1217 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1217.
-    t1214 = NEW zcl_lnt_sql_named_param( i_name = t1215 i_value = t1216 i_optional = t1217 ).
-    APPEND t1214 TO t1213->items.
-    DATA(t1218) = t1206.
-    DATA t1219 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1220) = |target_unit|.
-    DATA(t1221) = |any|.
-    DATA t1222 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1222.
-    t1219 = NEW zcl_lnt_sql_named_param( i_name = t1220 i_value = t1221 i_optional = t1222 ).
-    APPEND t1219 TO t1218->items.
-    DATA(t1223) = t1206.
-    DATA t1224 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1224.
-    DATA(t1225) = |client|.
-    DATA(t1226) = |any|.
-    DATA t1227 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1227.
-    DATA(t1228) = abap_true.
-    IF t1228 = abap_true.
-      DATA(t1229) = abap_true.
-      DATA(t1230) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t1230->has = abap_true.
-      t1230->value = t1229.
-      t1227 = t1230.
-    ELSE.
-      DATA t1231 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t1231.
-      t1227 = t1231.
+    t1168 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1169) = CONV string( |v757| ).
+    t1167 = t1168->get( p0 = t1169 ).
+    t1166 = t1167.
+    DATA t1170 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1170.
+    DATA t1171 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1172 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1172.
+    t1171 = t1172.
+    DATA(t1173) = CAST zlnt_runtime_arra_c22708faf2e3( t1171 ).
+    DATA t1174 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1175 TYPE string.
+    DATA(t1176) = CONV string( |tstmp| ).
+    t1175 = t1176.
+    DATA t1177 TYPE string.
+    DATA(t1178) = CONV string( |any| ).
+    t1177 = t1178.
+    DATA t1179 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1180 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1180.
+    t1179 = t1180.
+    t1174 = NEW zcl_lnt_sql_named_param( i_name = t1175 i_value = t1177 i_optional = t1179 ).
+    CREATE OBJECT t1174->zlnt_view_ownkeys_b0e8086400eb.
+    t1174->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1181.
+    IF t1174->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1174->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1181 ).
     ENDIF.
-    t1224 = NEW zcl_lnt_sql_named_param( i_name = t1225 i_value = t1226 i_optional = t1227 ).
-    APPEND t1224 TO t1223->items.
-    DATA(t1232) = t1206.
-    DATA t1233 TYPE REF TO zcl_lnt_sql_named_param.
-    CLEAR t1233.
-    DATA(t1234) = |on_error|.
-    DATA(t1235) = |abap_only|.
+    DATA t1182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1182.
+    IF t1174->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1174->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1182 ).
+    ENDIF.
+    CREATE OBJECT t1174->zlnt_json_ownkeys_70e5fd461788.
+    t1174->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1183) = CONV string( |name| ).
+    DATA t1184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1184.
+    IF t1174->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1174->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1183 p1 = t1184 ).
+    ENDIF.
+    DATA(t1185) = CONV string( |value| ).
+    DATA t1186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1186.
+    IF t1174->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1174->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1185 p1 = t1186 ).
+    ENDIF.
+    t1173->load( ).
+    APPEND t1174 TO t1173->items.
+    t1173->save( ).
+    DATA(t1187) = CAST zlnt_runtime_arra_c22708faf2e3( t1171 ).
+    DATA t1188 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1188.
+    DATA t1189 TYPE string.
+    DATA(t1190) = CONV string( |tzone| ).
+    t1189 = t1190.
+    DATA t1191 TYPE string.
+    DATA(t1192) = CONV string( |any| ).
+    t1191 = t1192.
+    DATA t1193 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1193.
+    DATA t1194 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1194.
+    DATA(t1195) = CONV abap_bool( abap_true ).
+    IF t1195 = abap_true.
+      DATA(t1196) = CONV abap_bool( abap_true ).
+      DATA(t1197) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1197->has = abap_true.
+      t1197->value = t1196.
+      t1194 = t1197.
+    ELSE.
+      DATA t1198 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1198.
+      t1194 = t1198.
+    ENDIF.
+    t1193 = t1194.
+    t1188 = NEW zcl_lnt_sql_named_param( i_name = t1189 i_value = t1191 i_optional = t1193 ).
+    CREATE OBJECT t1188->zlnt_view_ownkeys_b0e8086400eb.
+    t1188->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1199 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1199.
+    IF t1188->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1188->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1199 ).
+    ENDIF.
+    DATA t1200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1200.
+    IF t1188->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1188->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1200 ).
+    ENDIF.
+    DATA t1201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1201.
+    IF t1188->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1188->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1201 ).
+    ENDIF.
+    CREATE OBJECT t1188->zlnt_json_ownkeys_70e5fd461788.
+    t1188->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1202) = CONV string( |name| ).
+    DATA t1203 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1203.
+    IF t1188->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1188->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1202 p1 = t1203 ).
+    ENDIF.
+    DATA(t1204) = CONV string( |value| ).
+    DATA t1205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1205.
+    IF t1188->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1188->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1204 p1 = t1205 ).
+    ENDIF.
+    DATA(t1206) = CONV string( |optional| ).
+    DATA t1207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1207.
+    IF t1188->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1188->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1206 p1 = t1207 ).
+    ENDIF.
+    t1187->load( ).
+    APPEND t1188 TO t1187->items.
+    t1187->save( ).
+    DATA(t1208) = CAST zlnt_runtime_arra_c22708faf2e3( t1171 ).
+    DATA t1209 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1209.
+    DATA t1210 TYPE string.
+    DATA(t1211) = CONV string( |client| ).
+    t1210 = t1211.
+    DATA t1212 TYPE string.
+    DATA(t1213) = CONV string( |any| ).
+    t1212 = t1213.
+    DATA t1214 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1214.
+    DATA t1215 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1215.
+    DATA(t1216) = CONV abap_bool( abap_true ).
+    IF t1216 = abap_true.
+      DATA(t1217) = CONV abap_bool( abap_true ).
+      DATA(t1218) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1218->has = abap_true.
+      t1218->value = t1217.
+      t1215 = t1218.
+    ELSE.
+      DATA t1219 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1219.
+      t1215 = t1219.
+    ENDIF.
+    t1214 = t1215.
+    t1209 = NEW zcl_lnt_sql_named_param( i_name = t1210 i_value = t1212 i_optional = t1214 ).
+    CREATE OBJECT t1209->zlnt_view_ownkeys_b0e8086400eb.
+    t1209->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1220 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1220.
+    IF t1209->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1209->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1220 ).
+    ENDIF.
+    DATA t1221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1221.
+    IF t1209->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1209->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1221 ).
+    ENDIF.
+    DATA t1222 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1222.
+    IF t1209->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1209->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1222 ).
+    ENDIF.
+    CREATE OBJECT t1209->zlnt_json_ownkeys_70e5fd461788.
+    t1209->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1223) = CONV string( |name| ).
+    DATA t1224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1224.
+    IF t1209->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1209->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1223 p1 = t1224 ).
+    ENDIF.
+    DATA(t1225) = CONV string( |value| ).
+    DATA t1226 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1226.
+    IF t1209->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1209->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1225 p1 = t1226 ).
+    ENDIF.
+    DATA(t1227) = CONV string( |optional| ).
+    DATA t1228 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1228.
+    IF t1209->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1209->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1227 p1 = t1228 ).
+    ENDIF.
+    t1208->load( ).
+    APPEND t1209 TO t1208->items.
+    t1208->save( ).
+    DATA(t1229) = CAST zlnt_runtime_arra_c22708faf2e3( t1171 ).
+    DATA t1230 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1230.
+    DATA t1231 TYPE string.
+    DATA(t1232) = CONV string( |on_error| ).
+    t1231 = t1232.
+    DATA t1233 TYPE string.
+    DATA(t1234) = CONV string( |abap_only| ).
+    t1233 = t1234.
+    DATA t1235 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1235.
     DATA t1236 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1236.
-    DATA(t1237) = abap_true.
+    DATA(t1237) = CONV abap_bool( abap_true ).
     IF t1237 = abap_true.
-      DATA(t1238) = abap_true.
+      DATA(t1238) = CONV abap_bool( abap_true ).
       DATA(t1239) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t1239->has = abap_true.
       t1239->value = t1238.
@@ -2954,567 +3600,744 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       CLEAR t1240.
       t1236 = t1240.
     ENDIF.
-    t1233 = NEW zcl_lnt_sql_named_param( i_name = t1234 i_value = t1235 i_optional = t1236 ).
-    APPEND t1233 TO t1232->items.
-    DATA(t1241) = t1206.
-    t1205 = t1241.
-    t1199 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1200 i_f1 = t1201 i_f2 = t1205 ).
-    APPEND t1199 TO t1198->items.
-    DATA(t1242) = t643.
-    DATA t1243 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    t1235 = t1236.
+    t1230 = NEW zcl_lnt_sql_named_param( i_name = t1231 i_value = t1233 i_optional = t1235 ).
+    CREATE OBJECT t1230->zlnt_view_ownkeys_b0e8086400eb.
+    t1230->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1241 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1241.
+    IF t1230->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1230->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1241 ).
+    ENDIF.
+    DATA t1242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1242.
+    IF t1230->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1230->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1242 ).
+    ENDIF.
+    DATA t1243 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1243.
-    DATA(t1244) = |curr_to_decfloat_amount|.
-    DATA t1245 TYPE REF TO zcl_lnt_abap_release.
+    IF t1230->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1230->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1243 ).
+    ENDIF.
+    CREATE OBJECT t1230->zlnt_json_ownkeys_70e5fd461788.
+    t1230->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1244) = CONV string( |name| ).
+    DATA t1245 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1245.
-    DATA t1246 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1246.
-    DATA t1247 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1230->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1230->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1244 p1 = t1245 ).
+    ENDIF.
+    DATA(t1246) = CONV string( |value| ).
+    DATA t1247 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1247.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1230->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1230->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1246 p1 = t1247 ).
     ENDIF.
-    t1247 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1248) = |v758|.
-    t1246 = t1247->get( p0 = t1248 ).
-    t1245 = t1246.
-    DATA t1249 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1250 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1251 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1251.
-    t1250 = t1251.
-    DATA(t1252) = t1250.
-    DATA t1253 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1254) = |curr|.
-    DATA(t1255) = |any|.
-    DATA t1256 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA(t1248) = CONV string( |optional| ).
+    DATA t1249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1249.
+    IF t1230->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1230->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1248 p1 = t1249 ).
+    ENDIF.
+    t1229->load( ).
+    APPEND t1230 TO t1229->items.
+    t1229->save( ).
+    DATA(t1250) = CAST zlnt_runtime_arra_c22708faf2e3( t1171 ).
+    t1170 = t1250.
+    t1164 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1165 i_f1 = t1166 i_f2 = t1170 ).
+    t1163->load( ).
+    APPEND t1164 TO t1163->items.
+    t1163->save( ).
+    DATA(t1251) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1252 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1252.
+    DATA(t1253) = CONV string( |tstmpl_to_utcl| ).
+    DATA t1254 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1254.
+    DATA t1255 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1255.
+    DATA t1256 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1256.
-    t1253 = NEW zcl_lnt_sql_named_param( i_name = t1254 i_value = t1255 i_optional = t1256 ).
-    APPEND t1253 TO t1252->items.
-    DATA(t1257) = t1250.
-    DATA t1258 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1259) = |cuky|.
-    DATA(t1260) = |any|.
-    DATA t1261 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1261.
-    t1258 = NEW zcl_lnt_sql_named_param( i_name = t1259 i_value = t1260 i_optional = t1261 ).
-    APPEND t1258 TO t1257->items.
-    DATA(t1262) = t1250.
-    t1249 = t1262.
-    t1243 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1244 i_f1 = t1245 i_f2 = t1249 ).
-    APPEND t1243 TO t1242->items.
-    DATA(t1263) = t643.
-    DATA t1264 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1264.
-    DATA(t1265) = |lang_to_char|.
-    DATA t1266 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1266.
-    DATA t1267 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1267.
-    DATA t1268 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1256 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1257) = CONV string( |v757| ).
+    t1255 = t1256->get( p0 = t1257 ).
+    t1254 = t1255.
+    DATA t1258 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1258.
+    DATA t1259 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1260 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1260.
+    t1259 = t1260.
+    DATA(t1261) = CAST zlnt_runtime_arra_c22708faf2e3( t1259 ).
+    DATA t1262 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1263 TYPE string.
+    DATA(t1264) = CONV string( |tstmpl| ).
+    t1263 = t1264.
+    DATA t1265 TYPE string.
+    DATA(t1266) = CONV string( |any| ).
+    t1265 = t1266.
+    DATA t1267 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1268 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1268.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1267 = t1268.
+    t1262 = NEW zcl_lnt_sql_named_param( i_name = t1263 i_value = t1265 i_optional = t1267 ).
+    CREATE OBJECT t1262->zlnt_view_ownkeys_b0e8086400eb.
+    t1262->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1269 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1269.
+    IF t1262->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1262->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1269 ).
     ENDIF.
-    t1268 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1269) = |v758|.
-    t1267 = t1268->get( p0 = t1269 ).
-    t1266 = t1267.
-    DATA t1270 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1271 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1272 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1272.
-    t1271 = t1272.
-    DATA(t1273) = t1271.
-    DATA t1274 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1275) = |lang|.
-    DATA(t1276) = |any|.
-    DATA t1277 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1277.
-    t1274 = NEW zcl_lnt_sql_named_param( i_name = t1275 i_value = t1276 i_optional = t1277 ).
-    APPEND t1274 TO t1273->items.
-    DATA(t1278) = t1271.
-    t1270 = t1278.
-    t1264 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1265 i_f1 = t1266 i_f2 = t1270 ).
-    APPEND t1264 TO t1263->items.
-    DATA(t1279) = t643.
-    DATA t1280 TYPE REF TO zcl_lnt_tuple_443ddf92.
-    CLEAR t1280.
-    DATA(t1281) = |ipow|.
-    DATA t1282 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1270 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1270.
+    IF t1262->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1262->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1270 ).
+    ENDIF.
+    CREATE OBJECT t1262->zlnt_json_ownkeys_70e5fd461788.
+    t1262->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1271) = CONV string( |name| ).
+    DATA t1272 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1272.
+    IF t1262->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1262->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1271 p1 = t1272 ).
+    ENDIF.
+    DATA(t1273) = CONV string( |value| ).
+    DATA t1274 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1274.
+    IF t1262->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1262->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1273 p1 = t1274 ).
+    ENDIF.
+    t1261->load( ).
+    APPEND t1262 TO t1261->items.
+    t1261->save( ).
+    DATA(t1275) = CAST zlnt_runtime_arra_c22708faf2e3( t1259 ).
+    DATA t1276 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1276.
+    DATA t1277 TYPE string.
+    DATA(t1278) = CONV string( |on_error| ).
+    t1277 = t1278.
+    DATA t1279 TYPE string.
+    DATA(t1280) = CONV string( |abap_only| ).
+    t1279 = t1280.
+    DATA t1281 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1281.
+    DATA t1282 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1282.
-    DATA t1283 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1283.
-    DATA t1284 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1284.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1283) = CONV abap_bool( abap_true ).
+    IF t1283 = abap_true.
+      DATA(t1284) = CONV abap_bool( abap_true ).
+      DATA(t1285) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1285->has = abap_true.
+      t1285->value = t1284.
+      t1282 = t1285.
+    ELSE.
+      DATA t1286 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1286.
+      t1282 = t1286.
     ENDIF.
-    t1284 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1285) = |v758|.
-    t1283 = t1284->get( p0 = t1285 ).
-    t1282 = t1283.
-    DATA t1286 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1287 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1288 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1288.
-    t1287 = t1288.
-    DATA(t1289) = t1287.
-    DATA t1290 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1291) = |base|.
-    DATA(t1292) = |any|.
-    DATA t1293 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    t1281 = t1282.
+    t1276 = NEW zcl_lnt_sql_named_param( i_name = t1277 i_value = t1279 i_optional = t1281 ).
+    CREATE OBJECT t1276->zlnt_view_ownkeys_b0e8086400eb.
+    t1276->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1287.
+    IF t1276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1287 ).
+    ENDIF.
+    DATA t1288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1288.
+    IF t1276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1288 ).
+    ENDIF.
+    DATA t1289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1289.
+    IF t1276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1289 ).
+    ENDIF.
+    CREATE OBJECT t1276->zlnt_json_ownkeys_70e5fd461788.
+    t1276->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1290) = CONV string( |name| ).
+    DATA t1291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1291.
+    IF t1276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1290 p1 = t1291 ).
+    ENDIF.
+    DATA(t1292) = CONV string( |value| ).
+    DATA t1293 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1293.
-    t1290 = NEW zcl_lnt_sql_named_param( i_name = t1291 i_value = t1292 i_optional = t1293 ).
-    APPEND t1290 TO t1289->items.
-    DATA(t1294) = t1287.
-    DATA t1295 TYPE REF TO zcl_lnt_sql_named_param.
-    DATA(t1296) = |exp|.
-    DATA(t1297) = |any|.
-    DATA t1298 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t1298.
-    t1295 = NEW zcl_lnt_sql_named_param( i_name = t1296 i_value = t1297 i_optional = t1298 ).
-    APPEND t1295 TO t1294->items.
-    DATA(t1299) = t1287.
-    t1286 = t1299.
-    t1280 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1281 i_f1 = t1282 i_f2 = t1286 ).
-    APPEND t1280 TO t1279->items.
-    DATA(t1300) = t643.
-    t642 = t1300.
-    zcl_lnt_sql_function_module=>sql_named_function_defs = t642.
-    IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
-      zcl_lnt_sql_function_module=>zlnt_builtin_init_916c47d62a99( ).
+    IF t1276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1292 p1 = t1293 ).
     ENDIF.
-    DATA t1301 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1301.
-    DATA t1302 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t1303 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t1303.
+    DATA(t1294) = CONV string( |optional| ).
+    DATA t1295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1295.
+    IF t1276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1294 p1 = t1295 ).
+    ENDIF.
+    t1275->load( ).
+    APPEND t1276 TO t1275->items.
+    t1275->save( ).
+    DATA(t1296) = CAST zlnt_runtime_arra_c22708faf2e3( t1259 ).
+    DATA t1297 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1297.
+    DATA t1298 TYPE string.
+    DATA(t1299) = CONV string( |on_initial| ).
+    t1298 = t1299.
+    DATA t1300 TYPE string.
+    DATA(t1301) = CONV string( |abap_only| ).
+    t1300 = t1301.
+    DATA t1302 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1302.
+    DATA t1303 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1303.
+    DATA(t1304) = CONV abap_bool( abap_true ).
+    IF t1304 = abap_true.
+      DATA(t1305) = CONV abap_bool( abap_true ).
+      DATA(t1306) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1306->has = abap_true.
+      t1306->value = t1305.
+      t1303 = t1306.
+    ELSE.
+      DATA t1307 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1307.
+      t1303 = t1307.
+    ENDIF.
     t1302 = t1303.
-    DATA(t1304) = t1302.
-    DATA t1305 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1305.
-    DATA(t1306) = |st_new_point|.
-    DATA t1307 TYPE int8.
-    DATA(t1308) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1307 = t1308.
-    DATA t1309 TYPE REF TO zcl_lnt_abap_release.
+    t1297 = NEW zcl_lnt_sql_named_param( i_name = t1298 i_value = t1300 i_optional = t1302 ).
+    CREATE OBJECT t1297->zlnt_view_ownkeys_b0e8086400eb.
+    t1297->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1308 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1308.
+    IF t1297->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1297->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1308 ).
+    ENDIF.
+    DATA t1309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1309.
-    DATA t1310 TYPE REF TO zcl_lnt_abap_release.
+    IF t1297->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1297->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1309 ).
+    ENDIF.
+    DATA t1310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1310.
-    DATA t1311 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1311.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1297->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1297->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1310 ).
     ENDIF.
-    t1311 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1312) = |v915|.
-    t1310 = t1311->get( p0 = t1312 ).
-    t1309 = t1310.
-    t1305 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1306 i_f1 = t1307 i_f2 = t1309 ).
-    APPEND t1305 TO t1304->items.
-    DATA(t1313) = t1302.
-    DATA t1314 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1297->zlnt_json_ownkeys_70e5fd461788.
+    t1297->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1311) = CONV string( |name| ).
+    DATA t1312 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1312.
+    IF t1297->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1297->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1311 p1 = t1312 ).
+    ENDIF.
+    DATA(t1313) = CONV string( |value| ).
+    DATA t1314 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1314.
-    DATA(t1315) = |st_new_pointz|.
-    DATA t1316 TYPE int8.
-    DATA(t1317) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1316 = t1317.
-    DATA t1318 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1318.
-    DATA t1319 TYPE REF TO zcl_lnt_abap_release.
+    IF t1297->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1297->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1313 p1 = t1314 ).
+    ENDIF.
+    DATA(t1315) = CONV string( |optional| ).
+    DATA t1316 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1316.
+    IF t1297->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1297->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1315 p1 = t1316 ).
+    ENDIF.
+    t1296->load( ).
+    APPEND t1297 TO t1296->items.
+    t1296->save( ).
+    DATA(t1317) = CAST zlnt_runtime_arra_c22708faf2e3( t1259 ).
+    t1258 = t1317.
+    t1252 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1253 i_f1 = t1254 i_f2 = t1258 ).
+    t1251->load( ).
+    APPEND t1252 TO t1251->items.
+    t1251->save( ).
+    DATA(t1318) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1319 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1319.
-    DATA t1320 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1320.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1320 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1321) = |v915|.
-    t1319 = t1320->get( p0 = t1321 ).
-    t1318 = t1319.
-    t1314 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1315 i_f1 = t1316 i_f2 = t1318 ).
-    APPEND t1314 TO t1313->items.
-    DATA(t1322) = t1302.
-    DATA t1323 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA(t1320) = CONV string( |tstmpl_from_utcl| ).
+    DATA t1321 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1321.
+    DATA t1322 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1322.
+    DATA t1323 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1323.
-    DATA(t1324) = |st_new_pointm|.
-    DATA t1325 TYPE int8.
-    DATA(t1326) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1325 = t1326.
-    DATA t1327 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1327.
-    DATA t1328 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1328.
-    DATA t1329 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1329.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1329 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1330) = |v915|.
-    t1328 = t1329->get( p0 = t1330 ).
-    t1327 = t1328.
-    t1323 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1324 i_f1 = t1325 i_f2 = t1327 ).
-    APPEND t1323 TO t1322->items.
-    DATA(t1331) = t1302.
-    DATA t1332 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1332.
-    DATA(t1333) = |st_new_pointzm|.
-    DATA t1334 TYPE int8.
-    DATA(t1335) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1323 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1324) = CONV string( |v757| ).
+    t1322 = t1323->get( p0 = t1324 ).
+    t1321 = t1322.
+    DATA t1325 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1325.
+    DATA t1326 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1327 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1327.
+    t1326 = t1327.
+    DATA(t1328) = CAST zlnt_runtime_arra_c22708faf2e3( t1326 ).
+    DATA t1329 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1330 TYPE string.
+    DATA(t1331) = CONV string( |utcl| ).
+    t1330 = t1331.
+    DATA t1332 TYPE string.
+    DATA(t1333) = CONV string( |any| ).
+    t1332 = t1333.
+    DATA t1334 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1335 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1335.
     t1334 = t1335.
-    DATA t1336 TYPE REF TO zcl_lnt_abap_release.
+    t1329 = NEW zcl_lnt_sql_named_param( i_name = t1330 i_value = t1332 i_optional = t1334 ).
+    CREATE OBJECT t1329->zlnt_view_ownkeys_b0e8086400eb.
+    t1329->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1336 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1336.
-    DATA t1337 TYPE REF TO zcl_lnt_abap_release.
+    IF t1329->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1329->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1336 ).
+    ENDIF.
+    DATA t1337 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1337.
-    DATA t1338 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1338.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1329->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1329->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1337 ).
     ENDIF.
-    t1338 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1339) = |v915|.
-    t1337 = t1338->get( p0 = t1339 ).
-    t1336 = t1337.
-    t1332 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1333 i_f1 = t1334 i_f2 = t1336 ).
-    APPEND t1332 TO t1331->items.
-    DATA(t1340) = t1302.
-    DATA t1341 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1329->zlnt_json_ownkeys_70e5fd461788.
+    t1329->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1338) = CONV string( |name| ).
+    DATA t1339 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1339.
+    IF t1329->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1329->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1338 p1 = t1339 ).
+    ENDIF.
+    DATA(t1340) = CONV string( |value| ).
+    DATA t1341 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1341.
-    DATA(t1342) = |st_new_linestring|.
-    DATA t1343 TYPE int8.
-    DATA(t1344) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1343 = t1344.
-    DATA t1345 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1345.
-    DATA t1346 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1346.
-    DATA t1347 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1347.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1329->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1329->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1340 p1 = t1341 ).
     ENDIF.
-    t1347 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1348) = |v915|.
-    t1346 = t1347->get( p0 = t1348 ).
-    t1345 = t1346.
-    t1341 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1342 i_f1 = t1343 i_f2 = t1345 ).
-    APPEND t1341 TO t1340->items.
-    DATA(t1349) = t1302.
-    DATA t1350 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1350.
-    DATA(t1351) = |st_new_multilinestring|.
-    DATA t1352 TYPE int8.
-    DATA(t1353) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1352 = t1353.
-    DATA t1354 TYPE REF TO zcl_lnt_abap_release.
+    t1328->load( ).
+    APPEND t1329 TO t1328->items.
+    t1328->save( ).
+    DATA(t1342) = CAST zlnt_runtime_arra_c22708faf2e3( t1326 ).
+    DATA t1343 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1343.
+    DATA t1344 TYPE string.
+    DATA(t1345) = CONV string( |on_null| ).
+    t1344 = t1345.
+    DATA t1346 TYPE string.
+    DATA(t1347) = CONV string( |abap_only| ).
+    t1346 = t1347.
+    DATA t1348 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1348.
+    DATA t1349 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1349.
+    DATA(t1350) = CONV abap_bool( abap_true ).
+    IF t1350 = abap_true.
+      DATA(t1351) = CONV abap_bool( abap_true ).
+      DATA(t1352) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1352->has = abap_true.
+      t1352->value = t1351.
+      t1349 = t1352.
+    ELSE.
+      DATA t1353 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1353.
+      t1349 = t1353.
+    ENDIF.
+    t1348 = t1349.
+    t1343 = NEW zcl_lnt_sql_named_param( i_name = t1344 i_value = t1346 i_optional = t1348 ).
+    CREATE OBJECT t1343->zlnt_view_ownkeys_b0e8086400eb.
+    t1343->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1354 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1354.
-    DATA t1355 TYPE REF TO zcl_lnt_abap_release.
+    IF t1343->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1343->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1354 ).
+    ENDIF.
+    DATA t1355 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1355.
-    DATA t1356 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1343->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1343->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1355 ).
+    ENDIF.
+    DATA t1356 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1356.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1343->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1343->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1356 ).
     ENDIF.
-    t1356 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1357) = |v915|.
-    t1355 = t1356->get( p0 = t1357 ).
-    t1354 = t1355.
-    t1350 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1351 i_f1 = t1352 i_f2 = t1354 ).
-    APPEND t1350 TO t1349->items.
-    DATA(t1358) = t1302.
-    DATA t1359 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1359.
-    DATA(t1360) = |st_new_polygon|.
-    DATA t1361 TYPE int8.
-    DATA(t1362) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1361 = t1362.
-    DATA t1363 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1363.
-    DATA t1364 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1364.
-    DATA t1365 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CREATE OBJECT t1343->zlnt_json_ownkeys_70e5fd461788.
+    t1343->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1357) = CONV string( |name| ).
+    DATA t1358 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1358.
+    IF t1343->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1343->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1357 p1 = t1358 ).
+    ENDIF.
+    DATA(t1359) = CONV string( |value| ).
+    DATA t1360 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1360.
+    IF t1343->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1343->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1359 p1 = t1360 ).
+    ENDIF.
+    DATA(t1361) = CONV string( |optional| ).
+    DATA t1362 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1362.
+    IF t1343->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1343->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1361 p1 = t1362 ).
+    ENDIF.
+    t1342->load( ).
+    APPEND t1343 TO t1342->items.
+    t1342->save( ).
+    DATA(t1363) = CAST zlnt_runtime_arra_c22708faf2e3( t1326 ).
+    t1325 = t1363.
+    t1319 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1320 i_f1 = t1321 i_f2 = t1325 ).
+    t1318->load( ).
+    APPEND t1319 TO t1318->items.
+    t1318->save( ).
+    DATA(t1364) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1365 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1365.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1365 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1366) = |v915|.
-    t1364 = t1365->get( p0 = t1366 ).
-    t1363 = t1364.
-    t1359 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1360 i_f1 = t1361 i_f2 = t1363 ).
-    APPEND t1359 TO t1358->items.
-    DATA(t1367) = t1302.
-    DATA t1368 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA(t1366) = CONV string( |dats_to_datn| ).
+    DATA t1367 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1367.
+    DATA t1368 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1368.
-    DATA(t1369) = |st_new_multipolygon|.
-    DATA t1370 TYPE int8.
-    DATA(t1371) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1370 = t1371.
-    DATA t1372 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1372.
-    DATA t1373 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1373.
-    DATA t1374 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1374.
+    DATA t1369 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1369.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1374 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1375) = |v915|.
-    t1373 = t1374->get( p0 = t1375 ).
+    t1369 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1370) = CONV string( |v757| ).
+    t1368 = t1369->get( p0 = t1370 ).
+    t1367 = t1368.
+    DATA t1371 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1371.
+    DATA t1372 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1373 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1373.
     t1372 = t1373.
-    t1368 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1369 i_f1 = t1370 i_f2 = t1372 ).
-    APPEND t1368 TO t1367->items.
-    DATA(t1376) = t1302.
-    DATA t1377 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1377.
-    DATA(t1378) = |st_new_multipoint|.
-    DATA t1379 TYPE int8.
-    DATA(t1380) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1379 = t1380.
-    DATA t1381 TYPE REF TO zcl_lnt_abap_release.
+    DATA(t1374) = CAST zlnt_runtime_arra_c22708faf2e3( t1372 ).
+    DATA t1375 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1376 TYPE string.
+    DATA(t1377) = CONV string( |dats| ).
+    t1376 = t1377.
+    DATA t1378 TYPE string.
+    DATA(t1379) = CONV string( |any| ).
+    t1378 = t1379.
+    DATA t1380 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1381 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1381.
-    DATA t1382 TYPE REF TO zcl_lnt_abap_release.
+    t1380 = t1381.
+    t1375 = NEW zcl_lnt_sql_named_param( i_name = t1376 i_value = t1378 i_optional = t1380 ).
+    CREATE OBJECT t1375->zlnt_view_ownkeys_b0e8086400eb.
+    t1375->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1382 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1382.
-    DATA t1383 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1375->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1375->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1382 ).
+    ENDIF.
+    DATA t1383 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1383.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1375->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1375->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1383 ).
     ENDIF.
-    t1383 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1384) = |v915|.
-    t1382 = t1383->get( p0 = t1384 ).
-    t1381 = t1382.
-    t1377 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1378 i_f1 = t1379 i_f2 = t1381 ).
-    APPEND t1377 TO t1376->items.
-    DATA(t1385) = t1302.
-    DATA t1386 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1386.
-    DATA(t1387) = |st_new_circularstring|.
-    DATA t1388 TYPE int8.
-    DATA(t1389) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1388 = t1389.
-    DATA t1390 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1390.
-    DATA t1391 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1391.
-    DATA t1392 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1392.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    CREATE OBJECT t1375->zlnt_json_ownkeys_70e5fd461788.
+    t1375->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1384) = CONV string( |name| ).
+    DATA t1385 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1385.
+    IF t1375->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1375->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1384 p1 = t1385 ).
     ENDIF.
-    t1392 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1393) = |v915|.
-    t1391 = t1392->get( p0 = t1393 ).
+    DATA(t1386) = CONV string( |value| ).
+    DATA t1387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1387.
+    IF t1375->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1375->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1386 p1 = t1387 ).
+    ENDIF.
+    t1374->load( ).
+    APPEND t1375 TO t1374->items.
+    t1374->save( ).
+    DATA(t1388) = CAST zlnt_runtime_arra_c22708faf2e3( t1372 ).
+    DATA t1389 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1389.
+    DATA t1390 TYPE string.
+    DATA(t1391) = CONV string( |on_error| ).
     t1390 = t1391.
-    t1386 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1387 i_f1 = t1388 i_f2 = t1390 ).
-    APPEND t1386 TO t1385->items.
-    DATA(t1394) = t1302.
-    DATA t1395 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1392 TYPE string.
+    DATA(t1393) = CONV string( |abap_only| ).
+    t1392 = t1393.
+    DATA t1394 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1394.
+    DATA t1395 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1395.
-    DATA(t1396) = |st_new_geometrycollection|.
-    DATA t1397 TYPE int8.
-    DATA(t1398) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1397 = t1398.
-    DATA t1399 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1399.
-    DATA t1400 TYPE REF TO zcl_lnt_abap_release.
+    DATA(t1396) = CONV abap_bool( abap_true ).
+    IF t1396 = abap_true.
+      DATA(t1397) = CONV abap_bool( abap_true ).
+      DATA(t1398) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1398->has = abap_true.
+      t1398->value = t1397.
+      t1395 = t1398.
+    ELSE.
+      DATA t1399 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1399.
+      t1395 = t1399.
+    ENDIF.
+    t1394 = t1395.
+    t1389 = NEW zcl_lnt_sql_named_param( i_name = t1390 i_value = t1392 i_optional = t1394 ).
+    CREATE OBJECT t1389->zlnt_view_ownkeys_b0e8086400eb.
+    t1389->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1400 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1400.
-    DATA t1401 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1389->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1389->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1400 ).
+    ENDIF.
+    DATA t1401 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1401.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1389->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1389->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1401 ).
     ENDIF.
-    t1401 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1402) = |v915|.
-    t1400 = t1401->get( p0 = t1402 ).
-    t1399 = t1400.
-    t1395 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1396 i_f1 = t1397 i_f2 = t1399 ).
-    APPEND t1395 TO t1394->items.
-    DATA(t1403) = t1302.
-    DATA t1404 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1402 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1402.
+    IF t1389->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1389->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1402 ).
+    ENDIF.
+    CREATE OBJECT t1389->zlnt_json_ownkeys_70e5fd461788.
+    t1389->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1403) = CONV string( |name| ).
+    DATA t1404 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1404.
-    DATA(t1405) = |st_srid|.
-    DATA t1406 TYPE int8.
-    DATA(t1407) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1406 = t1407.
-    DATA t1408 TYPE REF TO zcl_lnt_abap_release.
+    IF t1389->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1389->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1403 p1 = t1404 ).
+    ENDIF.
+    DATA(t1405) = CONV string( |value| ).
+    DATA t1406 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1406.
+    IF t1389->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1389->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1405 p1 = t1406 ).
+    ENDIF.
+    DATA(t1407) = CONV string( |optional| ).
+    DATA t1408 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1408.
-    DATA t1409 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1409.
-    DATA t1410 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1389->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1389->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1407 p1 = t1408 ).
+    ENDIF.
+    t1388->load( ).
+    APPEND t1389 TO t1388->items.
+    t1388->save( ).
+    DATA(t1409) = CAST zlnt_runtime_arra_c22708faf2e3( t1372 ).
+    DATA t1410 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1410.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA t1411 TYPE string.
+    DATA(t1412) = CONV string( |on_initial| ).
+    t1411 = t1412.
+    DATA t1413 TYPE string.
+    DATA(t1414) = CONV string( |abap_only| ).
+    t1413 = t1414.
+    DATA t1415 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1415.
+    DATA t1416 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1416.
+    DATA(t1417) = CONV abap_bool( abap_true ).
+    IF t1417 = abap_true.
+      DATA(t1418) = CONV abap_bool( abap_true ).
+      DATA(t1419) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1419->has = abap_true.
+      t1419->value = t1418.
+      t1416 = t1419.
+    ELSE.
+      DATA t1420 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1420.
+      t1416 = t1420.
     ENDIF.
-    t1410 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1411) = |v915|.
-    t1409 = t1410->get( p0 = t1411 ).
-    t1408 = t1409.
-    t1404 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1405 i_f1 = t1406 i_f2 = t1408 ).
-    APPEND t1404 TO t1403->items.
-    DATA(t1412) = t1302.
-    DATA t1413 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1413.
-    DATA(t1414) = |st_relate|.
-    DATA t1415 TYPE int8.
-    DATA(t1416) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t1415 = t1416.
-    DATA t1417 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1417.
-    DATA t1418 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1418.
-    DATA t1419 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1419.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1410 = NEW zcl_lnt_sql_named_param( i_name = t1411 i_value = t1413 i_optional = t1415 ).
+    CREATE OBJECT t1410->zlnt_view_ownkeys_b0e8086400eb.
+    t1410->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1421 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1421.
+    IF t1410->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1410->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1421 ).
     ENDIF.
-    t1419 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1420) = |v915|.
-    t1418 = t1419->get( p0 = t1420 ).
-    t1417 = t1418.
-    t1413 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1414 i_f1 = t1415 i_f2 = t1417 ).
-    APPEND t1413 TO t1412->items.
-    DATA(t1421) = t1302.
-    DATA t1422 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1422 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1422.
-    DATA(t1423) = |st_geomfromtext|.
-    DATA t1424 TYPE int8.
-    DATA(t1425) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1424 = t1425.
-    DATA t1426 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1426.
-    DATA t1427 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1427.
-    DATA t1428 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1428.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1410->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1410->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1422 ).
     ENDIF.
-    t1428 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1429) = |v915|.
-    t1427 = t1428->get( p0 = t1429 ).
-    t1426 = t1427.
-    t1422 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1423 i_f1 = t1424 i_f2 = t1426 ).
-    APPEND t1422 TO t1421->items.
-    DATA(t1430) = t1302.
-    DATA t1431 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1431.
-    DATA(t1432) = |st_geomfromwkt|.
-    DATA t1433 TYPE int8.
-    DATA(t1434) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1433 = t1434.
+    DATA t1423 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1423.
+    IF t1410->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1410->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1423 ).
+    ENDIF.
+    CREATE OBJECT t1410->zlnt_json_ownkeys_70e5fd461788.
+    t1410->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1424) = CONV string( |name| ).
+    DATA t1425 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1425.
+    IF t1410->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1410->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1424 p1 = t1425 ).
+    ENDIF.
+    DATA(t1426) = CONV string( |value| ).
+    DATA t1427 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1427.
+    IF t1410->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1410->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1426 p1 = t1427 ).
+    ENDIF.
+    DATA(t1428) = CONV string( |optional| ).
+    DATA t1429 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1429.
+    IF t1410->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1410->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1428 p1 = t1429 ).
+    ENDIF.
+    t1409->load( ).
+    APPEND t1410 TO t1409->items.
+    t1409->save( ).
+    DATA(t1430) = CAST zlnt_runtime_arra_c22708faf2e3( t1372 ).
+    t1371 = t1430.
+    t1365 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1366 i_f1 = t1367 i_f2 = t1371 ).
+    t1364->load( ).
+    APPEND t1365 TO t1364->items.
+    t1364->save( ).
+    DATA(t1431) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1432 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1432.
+    DATA(t1433) = CONV string( |dats_from_datn| ).
+    DATA t1434 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1434.
     DATA t1435 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1435.
-    DATA t1436 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1436 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1436.
-    DATA t1437 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1437.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1437 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1438) = |v915|.
-    t1436 = t1437->get( p0 = t1438 ).
-    t1435 = t1436.
-    t1431 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1432 i_f1 = t1433 i_f2 = t1435 ).
-    APPEND t1431 TO t1430->items.
-    DATA(t1439) = t1302.
-    DATA t1440 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1440.
-    DATA(t1441) = |st_geomfromewkt|.
-    DATA t1442 TYPE int8.
-    DATA(t1443) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1442 = t1443.
-    DATA t1444 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1444.
-    DATA t1445 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1445.
-    DATA t1446 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1446.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1446 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1447) = |v915|.
-    t1445 = t1446->get( p0 = t1447 ).
-    t1444 = t1445.
-    t1440 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1441 i_f1 = t1442 i_f2 = t1444 ).
-    APPEND t1440 TO t1439->items.
-    DATA(t1448) = t1302.
-    DATA t1449 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1436 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1437) = CONV string( |v757| ).
+    t1435 = t1436->get( p0 = t1437 ).
+    t1434 = t1435.
+    DATA t1438 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1438.
+    DATA t1439 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1440 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1440.
+    t1439 = t1440.
+    DATA(t1441) = CAST zlnt_runtime_arra_c22708faf2e3( t1439 ).
+    DATA t1442 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1443 TYPE string.
+    DATA(t1444) = CONV string( |datn| ).
+    t1443 = t1444.
+    DATA t1445 TYPE string.
+    DATA(t1446) = CONV string( |any| ).
+    t1445 = t1446.
+    DATA t1447 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1448 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1448.
+    t1447 = t1448.
+    t1442 = NEW zcl_lnt_sql_named_param( i_name = t1443 i_value = t1445 i_optional = t1447 ).
+    CREATE OBJECT t1442->zlnt_view_ownkeys_b0e8086400eb.
+    t1442->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1449 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1449.
-    DATA(t1450) = |st_geomfromwkb|.
-    DATA t1451 TYPE int8.
-    DATA(t1452) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1451 = t1452.
-    DATA t1453 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1453.
-    DATA t1454 TYPE REF TO zcl_lnt_abap_release.
+    IF t1442->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1442->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1449 ).
+    ENDIF.
+    DATA t1450 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1450.
+    IF t1442->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1442->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1450 ).
+    ENDIF.
+    CREATE OBJECT t1442->zlnt_json_ownkeys_70e5fd461788.
+    t1442->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1451) = CONV string( |name| ).
+    DATA t1452 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1452.
+    IF t1442->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1442->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1451 p1 = t1452 ).
+    ENDIF.
+    DATA(t1453) = CONV string( |value| ).
+    DATA t1454 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1454.
-    DATA t1455 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1455.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1442->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1442->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1453 p1 = t1454 ).
     ENDIF.
-    t1455 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1456) = |v915|.
-    t1454 = t1455->get( p0 = t1456 ).
-    t1453 = t1454.
-    t1449 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1450 i_f1 = t1451 i_f2 = t1453 ).
-    APPEND t1449 TO t1448->items.
-    DATA(t1457) = t1302.
-    DATA t1458 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1458.
-    DATA(t1459) = |st_geomfromewkb|.
-    DATA t1460 TYPE int8.
-    DATA(t1461) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1460 = t1461.
-    DATA t1462 TYPE REF TO zcl_lnt_abap_release.
+    t1441->load( ).
+    APPEND t1442 TO t1441->items.
+    t1441->save( ).
+    DATA(t1455) = CAST zlnt_runtime_arra_c22708faf2e3( t1439 ).
+    DATA t1456 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1456.
+    DATA t1457 TYPE string.
+    DATA(t1458) = CONV string( |on_null| ).
+    t1457 = t1458.
+    DATA t1459 TYPE string.
+    DATA(t1460) = CONV string( |abap_only| ).
+    t1459 = t1460.
+    DATA t1461 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1461.
+    DATA t1462 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1462.
-    DATA t1463 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1463.
-    DATA t1464 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1464.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1463) = CONV abap_bool( abap_true ).
+    IF t1463 = abap_true.
+      DATA(t1464) = CONV abap_bool( abap_true ).
+      DATA(t1465) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1465->has = abap_true.
+      t1465->value = t1464.
+      t1462 = t1465.
+    ELSE.
+      DATA t1466 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1466.
+      t1462 = t1466.
     ENDIF.
-    t1464 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1465) = |v915|.
-    t1463 = t1464->get( p0 = t1465 ).
-    t1462 = t1463.
-    t1458 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1459 i_f1 = t1460 i_f2 = t1462 ).
-    APPEND t1458 TO t1457->items.
-    DATA(t1466) = t1302.
-    DATA t1467 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1461 = t1462.
+    t1456 = NEW zcl_lnt_sql_named_param( i_name = t1457 i_value = t1459 i_optional = t1461 ).
+    CREATE OBJECT t1456->zlnt_view_ownkeys_b0e8086400eb.
+    t1456->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1467 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1467.
-    DATA(t1468) = |st_geomfromgeojson|.
-    DATA t1469 TYPE int8.
-    DATA(t1470) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1469 = t1470.
-    DATA t1471 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1471.
-    DATA t1472 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1472.
-    DATA t1473 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1473.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1456->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1456->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1467 ).
     ENDIF.
-    t1473 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1474) = |v915|.
-    t1472 = t1473->get( p0 = t1474 ).
-    t1471 = t1472.
-    t1467 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1468 i_f1 = t1469 i_f2 = t1471 ).
-    APPEND t1467 TO t1466->items.
-    DATA(t1475) = t1302.
-    DATA t1476 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1476.
-    DATA(t1477) = |st_geomfromesrijson|.
-    DATA t1478 TYPE int8.
-    DATA(t1479) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1478 = t1479.
+    DATA t1468 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1468.
+    IF t1456->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1456->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1468 ).
+    ENDIF.
+    DATA t1469 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1469.
+    IF t1456->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1456->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1469 ).
+    ENDIF.
+    CREATE OBJECT t1456->zlnt_json_ownkeys_70e5fd461788.
+    t1456->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1470) = CONV string( |name| ).
+    DATA t1471 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1471.
+    IF t1456->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1456->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1470 p1 = t1471 ).
+    ENDIF.
+    DATA(t1472) = CONV string( |value| ).
+    DATA t1473 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1473.
+    IF t1456->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1456->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1472 p1 = t1473 ).
+    ENDIF.
+    DATA(t1474) = CONV string( |optional| ).
+    DATA t1475 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1475.
+    IF t1456->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1456->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1474 p1 = t1475 ).
+    ENDIF.
+    t1455->load( ).
+    APPEND t1456 TO t1455->items.
+    t1455->save( ).
+    DATA(t1476) = CAST zlnt_runtime_arra_c22708faf2e3( t1439 ).
+    t1438 = t1476.
+    t1432 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1433 i_f1 = t1434 i_f2 = t1438 ).
+    t1431->load( ).
+    APPEND t1432 TO t1431->items.
+    t1431->save( ).
+    DATA(t1477) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1478 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1478.
+    DATA(t1479) = CONV string( |tims_to_timn| ).
     DATA t1480 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1480.
     DATA t1481 TYPE REF TO zcl_lnt_abap_release.
@@ -3525,2651 +4348,4830 @@ CLASS zcl_lnt_sql_function_module IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t1482 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1483) = |v915|.
+    DATA(t1483) = CONV string( |v757| ).
     t1481 = t1482->get( p0 = t1483 ).
     t1480 = t1481.
-    t1476 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1477 i_f1 = t1478 i_f2 = t1480 ).
-    APPEND t1476 TO t1475->items.
-    DATA(t1484) = t1302.
-    DATA t1485 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1485.
-    DATA(t1486) = |st_geomfromgeohash|.
-    DATA t1487 TYPE int8.
-    DATA(t1488) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1487 = t1488.
-    DATA t1489 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1489.
-    DATA t1490 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1490.
-    DATA t1491 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1491.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1491 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1492) = |v915|.
-    t1490 = t1491->get( p0 = t1492 ).
+    DATA t1484 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1484.
+    DATA t1485 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1486 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1486.
+    t1485 = t1486.
+    DATA(t1487) = CAST zlnt_runtime_arra_c22708faf2e3( t1485 ).
+    DATA t1488 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1489 TYPE string.
+    DATA(t1490) = CONV string( |tims| ).
     t1489 = t1490.
-    t1485 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1486 i_f1 = t1487 i_f2 = t1489 ).
-    APPEND t1485 TO t1484->items.
-    DATA(t1493) = t1302.
-    DATA t1494 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1491 TYPE string.
+    DATA(t1492) = CONV string( |any| ).
+    t1491 = t1492.
+    DATA t1493 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1494 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1494.
-    DATA(t1495) = |st_pointfromtext|.
-    DATA t1496 TYPE int8.
-    DATA(t1497) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1496 = t1497.
-    DATA t1498 TYPE REF TO zcl_lnt_abap_release.
+    t1493 = t1494.
+    t1488 = NEW zcl_lnt_sql_named_param( i_name = t1489 i_value = t1491 i_optional = t1493 ).
+    CREATE OBJECT t1488->zlnt_view_ownkeys_b0e8086400eb.
+    t1488->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1495 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1495.
+    IF t1488->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1488->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1495 ).
+    ENDIF.
+    DATA t1496 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1496.
+    IF t1488->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1488->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1496 ).
+    ENDIF.
+    CREATE OBJECT t1488->zlnt_json_ownkeys_70e5fd461788.
+    t1488->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1497) = CONV string( |name| ).
+    DATA t1498 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1498.
-    DATA t1499 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1499.
-    DATA t1500 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1488->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1488->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1497 p1 = t1498 ).
+    ENDIF.
+    DATA(t1499) = CONV string( |value| ).
+    DATA t1500 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1500.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1488->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1488->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1499 p1 = t1500 ).
     ENDIF.
-    t1500 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1501) = |v915|.
-    t1499 = t1500->get( p0 = t1501 ).
-    t1498 = t1499.
-    t1494 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1495 i_f1 = t1496 i_f2 = t1498 ).
-    APPEND t1494 TO t1493->items.
-    DATA(t1502) = t1302.
-    DATA t1503 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1503.
-    DATA(t1504) = |st_pointfromgeohash|.
-    DATA t1505 TYPE int8.
-    DATA(t1506) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1487->load( ).
+    APPEND t1488 TO t1487->items.
+    t1487->save( ).
+    DATA(t1501) = CAST zlnt_runtime_arra_c22708faf2e3( t1485 ).
+    DATA t1502 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1502.
+    DATA t1503 TYPE string.
+    DATA(t1504) = CONV string( |on_error| ).
+    t1503 = t1504.
+    DATA t1505 TYPE string.
+    DATA(t1506) = CONV string( |abap_only| ).
     t1505 = t1506.
-    DATA t1507 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1507 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1507.
-    DATA t1508 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1508 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1508.
-    DATA t1509 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1509.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1509) = CONV abap_bool( abap_true ).
+    IF t1509 = abap_true.
+      DATA(t1510) = CONV abap_bool( abap_true ).
+      DATA(t1511) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1511->has = abap_true.
+      t1511->value = t1510.
+      t1508 = t1511.
+    ELSE.
+      DATA t1512 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1512.
+      t1508 = t1512.
     ENDIF.
-    t1509 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1510) = |v915|.
-    t1508 = t1509->get( p0 = t1510 ).
     t1507 = t1508.
-    t1503 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1504 i_f1 = t1505 i_f2 = t1507 ).
-    APPEND t1503 TO t1502->items.
-    DATA(t1511) = t1302.
-    DATA t1512 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1512.
-    DATA(t1513) = |st_makeline|.
-    DATA t1514 TYPE int8.
-    DATA(t1515) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1514 = t1515.
-    DATA t1516 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1516.
-    DATA t1517 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1517.
-    DATA t1518 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1518.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1502 = NEW zcl_lnt_sql_named_param( i_name = t1503 i_value = t1505 i_optional = t1507 ).
+    CREATE OBJECT t1502->zlnt_view_ownkeys_b0e8086400eb.
+    t1502->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1513 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1513.
+    IF t1502->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1502->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1513 ).
     ENDIF.
-    t1518 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1519) = |v915|.
-    t1517 = t1518->get( p0 = t1519 ).
-    t1516 = t1517.
-    t1512 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1513 i_f1 = t1514 i_f2 = t1516 ).
-    APPEND t1512 TO t1511->items.
-    DATA(t1520) = t1302.
-    DATA t1521 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1514 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1514.
+    IF t1502->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1502->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1514 ).
+    ENDIF.
+    DATA t1515 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1515.
+    IF t1502->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1502->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1515 ).
+    ENDIF.
+    CREATE OBJECT t1502->zlnt_json_ownkeys_70e5fd461788.
+    t1502->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1516) = CONV string( |name| ).
+    DATA t1517 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1517.
+    IF t1502->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1502->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1516 p1 = t1517 ).
+    ENDIF.
+    DATA(t1518) = CONV string( |value| ).
+    DATA t1519 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1519.
+    IF t1502->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1502->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1518 p1 = t1519 ).
+    ENDIF.
+    DATA(t1520) = CONV string( |optional| ).
+    DATA t1521 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1521.
-    DATA(t1522) = |st_makepolygon|.
-    DATA t1523 TYPE int8.
-    DATA(t1524) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1523 = t1524.
-    DATA t1525 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1525.
+    IF t1502->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1502->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1520 p1 = t1521 ).
+    ENDIF.
+    t1501->load( ).
+    APPEND t1502 TO t1501->items.
+    t1501->save( ).
+    DATA(t1522) = CAST zlnt_runtime_arra_c22708faf2e3( t1485 ).
+    t1484 = t1522.
+    t1478 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1479 i_f1 = t1480 i_f2 = t1484 ).
+    t1477->load( ).
+    APPEND t1478 TO t1477->items.
+    t1477->save( ).
+    DATA(t1523) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1524 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1524.
+    DATA(t1525) = CONV string( |tims_from_timn| ).
     DATA t1526 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1526.
-    DATA t1527 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1527 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1527.
+    DATA t1528 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1528.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1527 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1528) = |v915|.
-    t1526 = t1527->get( p0 = t1528 ).
-    t1525 = t1526.
-    t1521 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1522 i_f1 = t1523 i_f2 = t1525 ).
-    APPEND t1521 TO t1520->items.
-    DATA(t1529) = t1302.
-    DATA t1530 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1528 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1529) = CONV string( |v757| ).
+    t1527 = t1528->get( p0 = t1529 ).
+    t1526 = t1527.
+    DATA t1530 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1530.
-    DATA(t1531) = |st_x|.
-    DATA t1532 TYPE int8.
-    DATA(t1533) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1532 = t1533.
-    DATA t1534 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1534.
-    DATA t1535 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1535.
-    DATA t1536 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1536.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA t1531 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1532 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1532.
+    t1531 = t1532.
+    DATA(t1533) = CAST zlnt_runtime_arra_c22708faf2e3( t1531 ).
+    DATA t1534 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1535 TYPE string.
+    DATA(t1536) = CONV string( |timn| ).
+    t1535 = t1536.
+    DATA t1537 TYPE string.
+    DATA(t1538) = CONV string( |any| ).
+    t1537 = t1538.
+    DATA t1539 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1540 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1540.
+    t1539 = t1540.
+    t1534 = NEW zcl_lnt_sql_named_param( i_name = t1535 i_value = t1537 i_optional = t1539 ).
+    CREATE OBJECT t1534->zlnt_view_ownkeys_b0e8086400eb.
+    t1534->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1541 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1541.
+    IF t1534->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1534->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1541 ).
     ENDIF.
-    t1536 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1537) = |v915|.
-    t1535 = t1536->get( p0 = t1537 ).
-    t1534 = t1535.
-    t1530 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1531 i_f1 = t1532 i_f2 = t1534 ).
-    APPEND t1530 TO t1529->items.
-    DATA(t1538) = t1302.
-    DATA t1539 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1539.
-    DATA(t1540) = |st_y|.
-    DATA t1541 TYPE int8.
-    DATA(t1542) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1541 = t1542.
-    DATA t1543 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1543.
-    DATA t1544 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1542 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1542.
+    IF t1534->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1534->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1542 ).
+    ENDIF.
+    CREATE OBJECT t1534->zlnt_json_ownkeys_70e5fd461788.
+    t1534->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1543) = CONV string( |name| ).
+    DATA t1544 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1544.
-    DATA t1545 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1545.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1534->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1534->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1543 p1 = t1544 ).
     ENDIF.
-    t1545 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1546) = |v915|.
-    t1544 = t1545->get( p0 = t1546 ).
-    t1543 = t1544.
-    t1539 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1540 i_f1 = t1541 i_f2 = t1543 ).
-    APPEND t1539 TO t1538->items.
-    DATA(t1547) = t1302.
-    DATA t1548 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA(t1545) = CONV string( |value| ).
+    DATA t1546 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1546.
+    IF t1534->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1534->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1545 p1 = t1546 ).
+    ENDIF.
+    t1533->load( ).
+    APPEND t1534 TO t1533->items.
+    t1533->save( ).
+    DATA(t1547) = CAST zlnt_runtime_arra_c22708faf2e3( t1531 ).
+    DATA t1548 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1548.
-    DATA(t1549) = |st_z|.
-    DATA t1550 TYPE int8.
-    DATA(t1551) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1550 = t1551.
-    DATA t1552 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1552.
-    DATA t1553 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1549 TYPE string.
+    DATA(t1550) = CONV string( |on_null| ).
+    t1549 = t1550.
+    DATA t1551 TYPE string.
+    DATA(t1552) = CONV string( |abap_only| ).
+    t1551 = t1552.
+    DATA t1553 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1553.
-    DATA t1554 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1554 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1554.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1555) = CONV abap_bool( abap_true ).
+    IF t1555 = abap_true.
+      DATA(t1556) = CONV abap_bool( abap_true ).
+      DATA(t1557) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1557->has = abap_true.
+      t1557->value = t1556.
+      t1554 = t1557.
+    ELSE.
+      DATA t1558 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1558.
+      t1554 = t1558.
     ENDIF.
-    t1554 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1555) = |v915|.
-    t1553 = t1554->get( p0 = t1555 ).
-    t1552 = t1553.
-    t1548 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1549 i_f1 = t1550 i_f2 = t1552 ).
-    APPEND t1548 TO t1547->items.
-    DATA(t1556) = t1302.
-    DATA t1557 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1557.
-    DATA(t1558) = |st_m|.
-    DATA t1559 TYPE int8.
-    DATA(t1560) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1559 = t1560.
-    DATA t1561 TYPE REF TO zcl_lnt_abap_release.
+    t1553 = t1554.
+    t1548 = NEW zcl_lnt_sql_named_param( i_name = t1549 i_value = t1551 i_optional = t1553 ).
+    CREATE OBJECT t1548->zlnt_view_ownkeys_b0e8086400eb.
+    t1548->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1559 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1559.
+    IF t1548->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1548->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1559 ).
+    ENDIF.
+    DATA t1560 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1560.
+    IF t1548->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1548->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1560 ).
+    ENDIF.
+    DATA t1561 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1561.
-    DATA t1562 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1562.
-    DATA t1563 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1548->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1548->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1561 ).
+    ENDIF.
+    CREATE OBJECT t1548->zlnt_json_ownkeys_70e5fd461788.
+    t1548->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1562) = CONV string( |name| ).
+    DATA t1563 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1563.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1548->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1548->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1562 p1 = t1563 ).
     ENDIF.
-    t1563 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1564) = |v915|.
-    t1562 = t1563->get( p0 = t1564 ).
-    t1561 = t1562.
-    t1557 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1558 i_f1 = t1559 i_f2 = t1561 ).
-    APPEND t1557 TO t1556->items.
-    DATA(t1565) = t1302.
-    DATA t1566 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1566.
-    DATA(t1567) = |st_xmax|.
-    DATA t1568 TYPE int8.
-    DATA(t1569) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1568 = t1569.
-    DATA t1570 TYPE REF TO zcl_lnt_abap_release.
+    DATA(t1564) = CONV string( |value| ).
+    DATA t1565 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1565.
+    IF t1548->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1548->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1564 p1 = t1565 ).
+    ENDIF.
+    DATA(t1566) = CONV string( |optional| ).
+    DATA t1567 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1567.
+    IF t1548->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1548->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1566 p1 = t1567 ).
+    ENDIF.
+    t1547->load( ).
+    APPEND t1548 TO t1547->items.
+    t1547->save( ).
+    DATA(t1568) = CAST zlnt_runtime_arra_c22708faf2e3( t1531 ).
+    t1530 = t1568.
+    t1524 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1525 i_f1 = t1526 i_f2 = t1530 ).
+    t1523->load( ).
+    APPEND t1524 TO t1523->items.
+    t1523->save( ).
+    DATA(t1569) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1570 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1570.
-    DATA t1571 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1571.
-    DATA t1572 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA(t1571) = CONV string( |currency_conversion| ).
+    DATA t1572 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1572.
+    DATA t1573 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1573.
+    DATA t1574 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1574.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1572 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1573) = |v915|.
-    t1571 = t1572->get( p0 = t1573 ).
-    t1570 = t1571.
-    t1566 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1567 i_f1 = t1568 i_f2 = t1570 ).
-    APPEND t1566 TO t1565->items.
-    DATA(t1574) = t1302.
-    DATA t1575 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1575.
-    DATA(t1576) = |st_xmin|.
-    DATA t1577 TYPE int8.
-    DATA(t1578) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1574 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1575) = CONV string( |v757| ).
+    t1573 = t1574->get( p0 = t1575 ).
+    t1572 = t1573.
+    DATA t1576 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1576.
+    DATA t1577 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1578 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1578.
     t1577 = t1578.
-    DATA t1579 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1579.
-    DATA t1580 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1580.
-    DATA t1581 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1581.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1579) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1580 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1581 TYPE string.
+    DATA(t1582) = CONV string( |amount| ).
+    t1581 = t1582.
+    DATA t1583 TYPE string.
+    DATA(t1584) = CONV string( |any| ).
+    t1583 = t1584.
+    DATA t1585 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1586 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1586.
+    t1585 = t1586.
+    t1580 = NEW zcl_lnt_sql_named_param( i_name = t1581 i_value = t1583 i_optional = t1585 ).
+    CREATE OBJECT t1580->zlnt_view_ownkeys_b0e8086400eb.
+    t1580->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1587 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1587.
+    IF t1580->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1580->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1587 ).
     ENDIF.
-    t1581 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1582) = |v915|.
-    t1580 = t1581->get( p0 = t1582 ).
-    t1579 = t1580.
-    t1575 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1576 i_f1 = t1577 i_f2 = t1579 ).
-    APPEND t1575 TO t1574->items.
-    DATA(t1583) = t1302.
-    DATA t1584 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1584.
-    DATA(t1585) = |st_ymax|.
-    DATA t1586 TYPE int8.
-    DATA(t1587) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1586 = t1587.
-    DATA t1588 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1588 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1588.
-    DATA t1589 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1589.
-    DATA t1590 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1580->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1580->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1588 ).
+    ENDIF.
+    CREATE OBJECT t1580->zlnt_json_ownkeys_70e5fd461788.
+    t1580->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1589) = CONV string( |name| ).
+    DATA t1590 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1590.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1580->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1580->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1589 p1 = t1590 ).
     ENDIF.
-    t1590 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1591) = |v915|.
-    t1589 = t1590->get( p0 = t1591 ).
-    t1588 = t1589.
-    t1584 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1585 i_f1 = t1586 i_f2 = t1588 ).
-    APPEND t1584 TO t1583->items.
-    DATA(t1592) = t1302.
-    DATA t1593 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1593.
-    DATA(t1594) = |st_ymin|.
-    DATA t1595 TYPE int8.
-    DATA(t1596) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA(t1591) = CONV string( |value| ).
+    DATA t1592 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1592.
+    IF t1580->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1580->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1591 p1 = t1592 ).
+    ENDIF.
+    t1579->load( ).
+    APPEND t1580 TO t1579->items.
+    t1579->save( ).
+    DATA(t1593) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1594 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1595 TYPE string.
+    DATA(t1596) = CONV string( |source_currency| ).
     t1595 = t1596.
-    DATA t1597 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1597.
-    DATA t1598 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1598.
-    DATA t1599 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1599.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1599 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1600) = |v915|.
-    t1598 = t1599->get( p0 = t1600 ).
+    DATA t1597 TYPE string.
+    DATA(t1598) = CONV string( |any| ).
     t1597 = t1598.
-    t1593 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1594 i_f1 = t1595 i_f2 = t1597 ).
-    APPEND t1593 TO t1592->items.
-    DATA(t1601) = t1302.
-    DATA t1602 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1599 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1600 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1600.
+    t1599 = t1600.
+    t1594 = NEW zcl_lnt_sql_named_param( i_name = t1595 i_value = t1597 i_optional = t1599 ).
+    CREATE OBJECT t1594->zlnt_view_ownkeys_b0e8086400eb.
+    t1594->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1601 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1601.
+    IF t1594->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1594->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1601 ).
+    ENDIF.
+    DATA t1602 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1602.
-    DATA(t1603) = |st_zmax|.
-    DATA t1604 TYPE int8.
-    DATA(t1605) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1604 = t1605.
-    DATA t1606 TYPE REF TO zcl_lnt_abap_release.
+    IF t1594->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1594->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1602 ).
+    ENDIF.
+    CREATE OBJECT t1594->zlnt_json_ownkeys_70e5fd461788.
+    t1594->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1603) = CONV string( |name| ).
+    DATA t1604 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1604.
+    IF t1594->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1594->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1603 p1 = t1604 ).
+    ENDIF.
+    DATA(t1605) = CONV string( |value| ).
+    DATA t1606 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1606.
-    DATA t1607 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1607.
-    DATA t1608 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1608.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1594->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1594->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1605 p1 = t1606 ).
     ENDIF.
-    t1608 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1609) = |v915|.
-    t1607 = t1608->get( p0 = t1609 ).
-    t1606 = t1607.
-    t1602 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1603 i_f1 = t1604 i_f2 = t1606 ).
-    APPEND t1602 TO t1601->items.
-    DATA(t1610) = t1302.
-    DATA t1611 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1611.
-    DATA(t1612) = |st_zmin|.
-    DATA t1613 TYPE int8.
-    DATA(t1614) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1593->load( ).
+    APPEND t1594 TO t1593->items.
+    t1593->save( ).
+    DATA(t1607) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1608 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1609 TYPE string.
+    DATA(t1610) = CONV string( |target_currency| ).
+    t1609 = t1610.
+    DATA t1611 TYPE string.
+    DATA(t1612) = CONV string( |any| ).
+    t1611 = t1612.
+    DATA t1613 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1614 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1614.
     t1613 = t1614.
-    DATA t1615 TYPE REF TO zcl_lnt_abap_release.
+    t1608 = NEW zcl_lnt_sql_named_param( i_name = t1609 i_value = t1611 i_optional = t1613 ).
+    CREATE OBJECT t1608->zlnt_view_ownkeys_b0e8086400eb.
+    t1608->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1615 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1615.
-    DATA t1616 TYPE REF TO zcl_lnt_abap_release.
+    IF t1608->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1608->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1615 ).
+    ENDIF.
+    DATA t1616 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1616.
-    DATA t1617 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1617.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1608->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1608->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1616 ).
     ENDIF.
-    t1617 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1618) = |v915|.
-    t1616 = t1617->get( p0 = t1618 ).
-    t1615 = t1616.
-    t1611 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1612 i_f1 = t1613 i_f2 = t1615 ).
-    APPEND t1611 TO t1610->items.
-    DATA(t1619) = t1302.
-    DATA t1620 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1608->zlnt_json_ownkeys_70e5fd461788.
+    t1608->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1617) = CONV string( |name| ).
+    DATA t1618 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1618.
+    IF t1608->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1608->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1617 p1 = t1618 ).
+    ENDIF.
+    DATA(t1619) = CONV string( |value| ).
+    DATA t1620 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1620.
-    DATA(t1621) = |st_mmax|.
-    DATA t1622 TYPE int8.
-    DATA(t1623) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1622 = t1623.
-    DATA t1624 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1624.
-    DATA t1625 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1625.
-    DATA t1626 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1626.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1608->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1608->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1619 p1 = t1620 ).
     ENDIF.
-    t1626 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1627) = |v915|.
-    t1625 = t1626->get( p0 = t1627 ).
-    t1624 = t1625.
-    t1620 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1621 i_f1 = t1622 i_f2 = t1624 ).
-    APPEND t1620 TO t1619->items.
-    DATA(t1628) = t1302.
-    DATA t1629 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1607->load( ).
+    APPEND t1608 TO t1607->items.
+    t1607->save( ).
+    DATA(t1621) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1622 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1623 TYPE string.
+    DATA(t1624) = CONV string( |exchange_rate_date| ).
+    t1623 = t1624.
+    DATA t1625 TYPE string.
+    DATA(t1626) = CONV string( |any| ).
+    t1625 = t1626.
+    DATA t1627 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1628 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1628.
+    t1627 = t1628.
+    t1622 = NEW zcl_lnt_sql_named_param( i_name = t1623 i_value = t1625 i_optional = t1627 ).
+    CREATE OBJECT t1622->zlnt_view_ownkeys_b0e8086400eb.
+    t1622->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1629 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1629.
-    DATA(t1630) = |st_mmin|.
-    DATA t1631 TYPE int8.
-    DATA(t1632) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1631 = t1632.
-    DATA t1633 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1633.
-    DATA t1634 TYPE REF TO zcl_lnt_abap_release.
+    IF t1622->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1622->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1629 ).
+    ENDIF.
+    DATA t1630 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1630.
+    IF t1622->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1622->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1630 ).
+    ENDIF.
+    CREATE OBJECT t1622->zlnt_json_ownkeys_70e5fd461788.
+    t1622->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1631) = CONV string( |name| ).
+    DATA t1632 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1632.
+    IF t1622->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1622->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1631 p1 = t1632 ).
+    ENDIF.
+    DATA(t1633) = CONV string( |value| ).
+    DATA t1634 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1634.
-    DATA t1635 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1635.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1622->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1622->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1633 p1 = t1634 ).
     ENDIF.
-    t1635 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1636) = |v915|.
-    t1634 = t1635->get( p0 = t1636 ).
-    t1633 = t1634.
-    t1629 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1630 i_f1 = t1631 i_f2 = t1633 ).
-    APPEND t1629 TO t1628->items.
-    DATA(t1637) = t1302.
-    DATA t1638 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1638.
-    DATA(t1639) = |st_area|.
-    DATA t1640 TYPE int8.
-    DATA(t1641) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1640 = t1641.
-    DATA t1642 TYPE REF TO zcl_lnt_abap_release.
+    t1621->load( ).
+    APPEND t1622 TO t1621->items.
+    t1621->save( ).
+    DATA(t1635) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1636 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1636.
+    DATA t1637 TYPE string.
+    DATA(t1638) = CONV string( |exchange_rate_type| ).
+    t1637 = t1638.
+    DATA t1639 TYPE string.
+    DATA(t1640) = CONV string( |any| ).
+    t1639 = t1640.
+    DATA t1641 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1641.
+    DATA t1642 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1642.
-    DATA t1643 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1643.
-    DATA t1644 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1644.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1643) = CONV abap_bool( abap_true ).
+    IF t1643 = abap_true.
+      DATA(t1644) = CONV abap_bool( abap_true ).
+      DATA(t1645) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1645->has = abap_true.
+      t1645->value = t1644.
+      t1642 = t1645.
+    ELSE.
+      DATA t1646 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1646.
+      t1642 = t1646.
     ENDIF.
-    t1644 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1645) = |v915|.
-    t1643 = t1644->get( p0 = t1645 ).
-    t1642 = t1643.
-    t1638 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1639 i_f1 = t1640 i_f2 = t1642 ).
-    APPEND t1638 TO t1637->items.
-    DATA(t1646) = t1302.
-    DATA t1647 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1641 = t1642.
+    t1636 = NEW zcl_lnt_sql_named_param( i_name = t1637 i_value = t1639 i_optional = t1641 ).
+    CREATE OBJECT t1636->zlnt_view_ownkeys_b0e8086400eb.
+    t1636->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1647 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1647.
-    DATA(t1648) = |st_length|.
-    DATA t1649 TYPE int8.
-    DATA(t1650) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1649 = t1650.
-    DATA t1651 TYPE REF TO zcl_lnt_abap_release.
+    IF t1636->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1636->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1647 ).
+    ENDIF.
+    DATA t1648 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1648.
+    IF t1636->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1636->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1648 ).
+    ENDIF.
+    DATA t1649 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1649.
+    IF t1636->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1636->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1649 ).
+    ENDIF.
+    CREATE OBJECT t1636->zlnt_json_ownkeys_70e5fd461788.
+    t1636->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1650) = CONV string( |name| ).
+    DATA t1651 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1651.
-    DATA t1652 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1652.
-    DATA t1653 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1636->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1636->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1650 p1 = t1651 ).
+    ENDIF.
+    DATA(t1652) = CONV string( |value| ).
+    DATA t1653 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1653.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1636->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1636->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1652 p1 = t1653 ).
     ENDIF.
-    t1653 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1654) = |v915|.
-    t1652 = t1653->get( p0 = t1654 ).
-    t1651 = t1652.
-    t1647 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1648 i_f1 = t1649 i_f2 = t1651 ).
-    APPEND t1647 TO t1646->items.
-    DATA(t1655) = t1302.
-    DATA t1656 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1656.
-    DATA(t1657) = |st_perimeter|.
-    DATA t1658 TYPE int8.
-    DATA(t1659) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA(t1654) = CONV string( |optional| ).
+    DATA t1655 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1655.
+    IF t1636->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1636->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1654 p1 = t1655 ).
+    ENDIF.
+    t1635->load( ).
+    APPEND t1636 TO t1635->items.
+    t1635->save( ).
+    DATA(t1656) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1657 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1657.
+    DATA t1658 TYPE string.
+    DATA(t1659) = CONV string( |client| ).
     t1658 = t1659.
-    DATA t1660 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1660.
-    DATA t1661 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1661.
-    DATA t1662 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1662.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1662 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1663) = |v915|.
-    t1661 = t1662->get( p0 = t1663 ).
+    DATA t1660 TYPE string.
+    DATA(t1661) = CONV string( |any| ).
     t1660 = t1661.
-    t1656 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1657 i_f1 = t1658 i_f2 = t1660 ).
-    APPEND t1656 TO t1655->items.
-    DATA(t1664) = t1302.
-    DATA t1665 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1665.
-    DATA(t1666) = |st_dimension|.
-    DATA t1667 TYPE int8.
-    DATA(t1668) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1667 = t1668.
-    DATA t1669 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1662 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1662.
+    DATA t1663 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1663.
+    DATA(t1664) = CONV abap_bool( abap_true ).
+    IF t1664 = abap_true.
+      DATA(t1665) = CONV abap_bool( abap_true ).
+      DATA(t1666) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1666->has = abap_true.
+      t1666->value = t1665.
+      t1663 = t1666.
+    ELSE.
+      DATA t1667 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1667.
+      t1663 = t1667.
+    ENDIF.
+    t1662 = t1663.
+    t1657 = NEW zcl_lnt_sql_named_param( i_name = t1658 i_value = t1660 i_optional = t1662 ).
+    CREATE OBJECT t1657->zlnt_view_ownkeys_b0e8086400eb.
+    t1657->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1668 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1668.
+    IF t1657->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1657->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1668 ).
+    ENDIF.
+    DATA t1669 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1669.
-    DATA t1670 TYPE REF TO zcl_lnt_abap_release.
+    IF t1657->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1657->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1669 ).
+    ENDIF.
+    DATA t1670 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1670.
-    DATA t1671 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1671.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1657->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1657->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1670 ).
     ENDIF.
-    t1671 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1672) = |v915|.
-    t1670 = t1671->get( p0 = t1672 ).
-    t1669 = t1670.
-    t1665 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1666 i_f1 = t1667 i_f2 = t1669 ).
-    APPEND t1665 TO t1664->items.
-    DATA(t1673) = t1302.
-    DATA t1674 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1657->zlnt_json_ownkeys_70e5fd461788.
+    t1657->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1671) = CONV string( |name| ).
+    DATA t1672 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1672.
+    IF t1657->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1657->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1671 p1 = t1672 ).
+    ENDIF.
+    DATA(t1673) = CONV string( |value| ).
+    DATA t1674 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1674.
-    DATA(t1675) = |st_coorddim|.
-    DATA t1676 TYPE int8.
-    DATA(t1677) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1676 = t1677.
-    DATA t1678 TYPE REF TO zcl_lnt_abap_release.
+    IF t1657->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1657->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1673 p1 = t1674 ).
+    ENDIF.
+    DATA(t1675) = CONV string( |optional| ).
+    DATA t1676 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1676.
+    IF t1657->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1657->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1675 p1 = t1676 ).
+    ENDIF.
+    t1656->load( ).
+    APPEND t1657 TO t1656->items.
+    t1656->save( ).
+    DATA(t1677) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1678 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1678.
-    DATA t1679 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1679.
-    DATA t1680 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1680.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1680 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1681) = |v915|.
-    t1679 = t1680->get( p0 = t1681 ).
-    t1678 = t1679.
-    t1674 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1675 i_f1 = t1676 i_f2 = t1678 ).
-    APPEND t1674 TO t1673->items.
-    DATA(t1682) = t1302.
-    DATA t1683 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1679 TYPE string.
+    DATA(t1680) = CONV string( |round| ).
+    t1679 = t1680.
+    DATA t1681 TYPE string.
+    DATA(t1682) = CONV string( |abap_only| ).
+    t1681 = t1682.
+    DATA t1683 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1683.
-    DATA(t1684) = |st_geometrytype|.
-    DATA t1685 TYPE int8.
-    DATA(t1686) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1685 = t1686.
-    DATA t1687 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1687.
-    DATA t1688 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1688.
-    DATA t1689 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1684 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1684.
+    DATA(t1685) = CONV abap_bool( abap_true ).
+    IF t1685 = abap_true.
+      DATA(t1686) = CONV abap_bool( abap_true ).
+      DATA(t1687) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1687->has = abap_true.
+      t1687->value = t1686.
+      t1684 = t1687.
+    ELSE.
+      DATA t1688 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1688.
+      t1684 = t1688.
+    ENDIF.
+    t1683 = t1684.
+    t1678 = NEW zcl_lnt_sql_named_param( i_name = t1679 i_value = t1681 i_optional = t1683 ).
+    CREATE OBJECT t1678->zlnt_view_ownkeys_b0e8086400eb.
+    t1678->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1689 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1689.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1678->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1678->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1689 ).
     ENDIF.
-    t1689 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1690) = |v915|.
-    t1688 = t1689->get( p0 = t1690 ).
-    t1687 = t1688.
-    t1683 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1684 i_f1 = t1685 i_f2 = t1687 ).
-    APPEND t1683 TO t1682->items.
-    DATA(t1691) = t1302.
-    DATA t1692 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1692.
-    DATA(t1693) = |st_isempty|.
-    DATA t1694 TYPE int8.
-    DATA(t1695) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1694 = t1695.
-    DATA t1696 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1696.
-    DATA t1697 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1690 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1690.
+    IF t1678->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1678->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1690 ).
+    ENDIF.
+    DATA t1691 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1691.
+    IF t1678->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1678->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1691 ).
+    ENDIF.
+    CREATE OBJECT t1678->zlnt_json_ownkeys_70e5fd461788.
+    t1678->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1692) = CONV string( |name| ).
+    DATA t1693 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1693.
+    IF t1678->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1678->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1692 p1 = t1693 ).
+    ENDIF.
+    DATA(t1694) = CONV string( |value| ).
+    DATA t1695 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1695.
+    IF t1678->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1678->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1694 p1 = t1695 ).
+    ENDIF.
+    DATA(t1696) = CONV string( |optional| ).
+    DATA t1697 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1697.
-    DATA t1698 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1698.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1678->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1678->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1696 p1 = t1697 ).
     ENDIF.
-    t1698 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1699) = |v915|.
-    t1697 = t1698->get( p0 = t1699 ).
-    t1696 = t1697.
-    t1692 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1693 i_f1 = t1694 i_f2 = t1696 ).
-    APPEND t1692 TO t1691->items.
-    DATA(t1700) = t1302.
-    DATA t1701 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1701.
-    DATA(t1702) = |st_issimple|.
-    DATA t1703 TYPE int8.
-    DATA(t1704) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1703 = t1704.
-    DATA t1705 TYPE REF TO zcl_lnt_abap_release.
+    t1677->load( ).
+    APPEND t1678 TO t1677->items.
+    t1677->save( ).
+    DATA(t1698) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1699 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1699.
+    DATA t1700 TYPE string.
+    DATA(t1701) = CONV string( |decimal_shift| ).
+    t1700 = t1701.
+    DATA t1702 TYPE string.
+    DATA(t1703) = CONV string( |abap_only| ).
+    t1702 = t1703.
+    DATA t1704 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1704.
+    DATA t1705 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1705.
-    DATA t1706 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1706.
-    DATA t1707 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1707.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1706) = CONV abap_bool( abap_true ).
+    IF t1706 = abap_true.
+      DATA(t1707) = CONV abap_bool( abap_true ).
+      DATA(t1708) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1708->has = abap_true.
+      t1708->value = t1707.
+      t1705 = t1708.
+    ELSE.
+      DATA t1709 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1709.
+      t1705 = t1709.
     ENDIF.
-    t1707 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1708) = |v915|.
-    t1706 = t1707->get( p0 = t1708 ).
-    t1705 = t1706.
-    t1701 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1702 i_f1 = t1703 i_f2 = t1705 ).
-    APPEND t1701 TO t1700->items.
-    DATA(t1709) = t1302.
-    DATA t1710 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1704 = t1705.
+    t1699 = NEW zcl_lnt_sql_named_param( i_name = t1700 i_value = t1702 i_optional = t1704 ).
+    CREATE OBJECT t1699->zlnt_view_ownkeys_b0e8086400eb.
+    t1699->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1710 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1710.
-    DATA(t1711) = |st_isclosed|.
-    DATA t1712 TYPE int8.
-    DATA(t1713) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1712 = t1713.
-    DATA t1714 TYPE REF TO zcl_lnt_abap_release.
+    IF t1699->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1699->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1710 ).
+    ENDIF.
+    DATA t1711 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1711.
+    IF t1699->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1699->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1711 ).
+    ENDIF.
+    DATA t1712 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1712.
+    IF t1699->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1699->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1712 ).
+    ENDIF.
+    CREATE OBJECT t1699->zlnt_json_ownkeys_70e5fd461788.
+    t1699->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1713) = CONV string( |name| ).
+    DATA t1714 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1714.
-    DATA t1715 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1715.
-    DATA t1716 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1699->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1699->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1713 p1 = t1714 ).
+    ENDIF.
+    DATA(t1715) = CONV string( |value| ).
+    DATA t1716 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1716.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1699->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1699->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1715 p1 = t1716 ).
     ENDIF.
-    t1716 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1717) = |v915|.
-    t1715 = t1716->get( p0 = t1717 ).
-    t1714 = t1715.
-    t1710 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1711 i_f1 = t1712 i_f2 = t1714 ).
-    APPEND t1710 TO t1709->items.
-    DATA(t1718) = t1302.
-    DATA t1719 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1719.
-    DATA(t1720) = |st_isring|.
-    DATA t1721 TYPE int8.
-    DATA(t1722) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA(t1717) = CONV string( |optional| ).
+    DATA t1718 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1718.
+    IF t1699->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1699->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1717 p1 = t1718 ).
+    ENDIF.
+    t1698->load( ).
+    APPEND t1699 TO t1698->items.
+    t1698->save( ).
+    DATA(t1719) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1720 TYPE REF TO zcl_lnt_sql_named_param.
+    CLEAR t1720.
+    DATA t1721 TYPE string.
+    DATA(t1722) = CONV string( |decimal_shift_back| ).
     t1721 = t1722.
-    DATA t1723 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1723.
-    DATA t1724 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1724.
-    DATA t1725 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1725.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1725 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1726) = |v915|.
-    t1724 = t1725->get( p0 = t1726 ).
+    DATA t1723 TYPE string.
+    DATA(t1724) = CONV string( |abap_only| ).
     t1723 = t1724.
-    t1719 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1720 i_f1 = t1721 i_f2 = t1723 ).
-    APPEND t1719 TO t1718->items.
-    DATA(t1727) = t1302.
-    DATA t1728 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1728.
-    DATA(t1729) = |st_isvalid|.
-    DATA t1730 TYPE int8.
-    DATA(t1731) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1730 = t1731.
-    DATA t1732 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1725 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1725.
+    DATA t1726 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1726.
+    DATA(t1727) = CONV abap_bool( abap_true ).
+    IF t1727 = abap_true.
+      DATA(t1728) = CONV abap_bool( abap_true ).
+      DATA(t1729) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1729->has = abap_true.
+      t1729->value = t1728.
+      t1726 = t1729.
+    ELSE.
+      DATA t1730 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1730.
+      t1726 = t1730.
+    ENDIF.
+    t1725 = t1726.
+    t1720 = NEW zcl_lnt_sql_named_param( i_name = t1721 i_value = t1723 i_optional = t1725 ).
+    CREATE OBJECT t1720->zlnt_view_ownkeys_b0e8086400eb.
+    t1720->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1731 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1731.
+    IF t1720->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1720->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1731 ).
+    ENDIF.
+    DATA t1732 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1732.
-    DATA t1733 TYPE REF TO zcl_lnt_abap_release.
+    IF t1720->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1720->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1732 ).
+    ENDIF.
+    DATA t1733 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1733.
-    DATA t1734 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1734.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1720->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1720->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1733 ).
     ENDIF.
-    t1734 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1735) = |v915|.
-    t1733 = t1734->get( p0 = t1735 ).
-    t1732 = t1733.
-    t1728 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1729 i_f1 = t1730 i_f2 = t1732 ).
-    APPEND t1728 TO t1727->items.
-    DATA(t1736) = t1302.
-    DATA t1737 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1720->zlnt_json_ownkeys_70e5fd461788.
+    t1720->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1734) = CONV string( |name| ).
+    DATA t1735 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1735.
+    IF t1720->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1720->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1734 p1 = t1735 ).
+    ENDIF.
+    DATA(t1736) = CONV string( |value| ).
+    DATA t1737 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1737.
-    DATA(t1738) = |st_isvalidtrajectory|.
-    DATA t1739 TYPE int8.
-    DATA(t1740) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1739 = t1740.
-    DATA t1741 TYPE REF TO zcl_lnt_abap_release.
+    IF t1720->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1720->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1736 p1 = t1737 ).
+    ENDIF.
+    DATA(t1738) = CONV string( |optional| ).
+    DATA t1739 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1739.
+    IF t1720->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1720->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1738 p1 = t1739 ).
+    ENDIF.
+    t1719->load( ).
+    APPEND t1720 TO t1719->items.
+    t1719->save( ).
+    DATA(t1740) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    DATA t1741 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1741.
-    DATA t1742 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1742.
-    DATA t1743 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1743.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1743 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1744) = |v915|.
-    t1742 = t1743->get( p0 = t1744 ).
-    t1741 = t1742.
-    t1737 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1738 i_f1 = t1739 i_f2 = t1741 ).
-    APPEND t1737 TO t1736->items.
-    DATA(t1745) = t1302.
-    DATA t1746 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1742 TYPE string.
+    DATA(t1743) = CONV string( |on_error| ).
+    t1742 = t1743.
+    DATA t1744 TYPE string.
+    DATA(t1745) = CONV string( |abap_only| ).
+    t1744 = t1745.
+    DATA t1746 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1746.
-    DATA(t1747) = |st_is3d|.
-    DATA t1748 TYPE int8.
-    DATA(t1749) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1748 = t1749.
-    DATA t1750 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1750.
-    DATA t1751 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1751.
-    DATA t1752 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1747 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1747.
+    DATA(t1748) = CONV abap_bool( abap_true ).
+    IF t1748 = abap_true.
+      DATA(t1749) = CONV abap_bool( abap_true ).
+      DATA(t1750) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1750->has = abap_true.
+      t1750->value = t1749.
+      t1747 = t1750.
+    ELSE.
+      DATA t1751 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1751.
+      t1747 = t1751.
+    ENDIF.
+    t1746 = t1747.
+    t1741 = NEW zcl_lnt_sql_named_param( i_name = t1742 i_value = t1744 i_optional = t1746 ).
+    CREATE OBJECT t1741->zlnt_view_ownkeys_b0e8086400eb.
+    t1741->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1752 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1752.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1741->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1741->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1752 ).
     ENDIF.
-    t1752 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1753) = |v915|.
-    t1751 = t1752->get( p0 = t1753 ).
-    t1750 = t1751.
-    t1746 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1747 i_f1 = t1748 i_f2 = t1750 ).
-    APPEND t1746 TO t1745->items.
-    DATA(t1754) = t1302.
-    DATA t1755 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1755.
-    DATA(t1756) = |st_ismeasured|.
-    DATA t1757 TYPE int8.
-    DATA(t1758) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1757 = t1758.
-    DATA t1759 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1759.
-    DATA t1760 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1753 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1753.
+    IF t1741->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1741->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1753 ).
+    ENDIF.
+    DATA t1754 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1754.
+    IF t1741->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1741->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1754 ).
+    ENDIF.
+    CREATE OBJECT t1741->zlnt_json_ownkeys_70e5fd461788.
+    t1741->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1755) = CONV string( |name| ).
+    DATA t1756 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1756.
+    IF t1741->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1741->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1755 p1 = t1756 ).
+    ENDIF.
+    DATA(t1757) = CONV string( |value| ).
+    DATA t1758 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1758.
+    IF t1741->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1741->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1757 p1 = t1758 ).
+    ENDIF.
+    DATA(t1759) = CONV string( |optional| ).
+    DATA t1760 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1760.
-    DATA t1761 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1761.
+    IF t1741->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1741->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1759 p1 = t1760 ).
+    ENDIF.
+    t1740->load( ).
+    APPEND t1741 TO t1740->items.
+    t1740->save( ).
+    DATA(t1761) = CAST zlnt_runtime_arra_c22708faf2e3( t1577 ).
+    t1576 = t1761.
+    t1570 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1571 i_f1 = t1572 i_f2 = t1576 ).
+    t1569->load( ).
+    APPEND t1570 TO t1569->items.
+    t1569->save( ).
+    DATA(t1762) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1763 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1763.
+    DATA(t1764) = CONV string( |unit_conversion| ).
+    DATA t1765 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1765.
+    DATA t1766 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1766.
+    DATA t1767 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1767.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1761 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1762) = |v915|.
-    t1760 = t1761->get( p0 = t1762 ).
-    t1759 = t1760.
-    t1755 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1756 i_f1 = t1757 i_f2 = t1759 ).
-    APPEND t1755 TO t1754->items.
-    DATA(t1763) = t1302.
-    DATA t1764 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1764.
-    DATA(t1765) = |st_invalidreason|.
-    DATA t1766 TYPE int8.
-    DATA(t1767) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1766 = t1767.
-    DATA t1768 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1768.
-    DATA t1769 TYPE REF TO zcl_lnt_abap_release.
+    t1767 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1768) = CONV string( |v758| ).
+    t1766 = t1767->get( p0 = t1768 ).
+    t1765 = t1766.
+    DATA t1769 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1769.
-    DATA t1770 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1770.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1770 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1771) = |v915|.
-    t1769 = t1770->get( p0 = t1771 ).
-    t1768 = t1769.
-    t1764 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1765 i_f1 = t1766 i_f2 = t1768 ).
-    APPEND t1764 TO t1763->items.
-    DATA(t1772) = t1302.
-    DATA t1773 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1773.
-    DATA(t1774) = |st_numpoints|.
-    DATA t1775 TYPE int8.
-    DATA(t1776) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1775 = t1776.
-    DATA t1777 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1777.
-    DATA t1778 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1778.
-    DATA t1779 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1770 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1771 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1771.
+    t1770 = t1771.
+    DATA(t1772) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    DATA t1773 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1774 TYPE string.
+    DATA(t1775) = CONV string( |quantity| ).
+    t1774 = t1775.
+    DATA t1776 TYPE string.
+    DATA(t1777) = CONV string( |any| ).
+    t1776 = t1777.
+    DATA t1778 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1779 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1779.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1778 = t1779.
+    t1773 = NEW zcl_lnt_sql_named_param( i_name = t1774 i_value = t1776 i_optional = t1778 ).
+    CREATE OBJECT t1773->zlnt_view_ownkeys_b0e8086400eb.
+    t1773->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1780 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1780.
+    IF t1773->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1773->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1780 ).
     ENDIF.
-    t1779 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1780) = |v915|.
-    t1778 = t1779->get( p0 = t1780 ).
-    t1777 = t1778.
-    t1773 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1774 i_f1 = t1775 i_f2 = t1777 ).
+    DATA t1781 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1781.
+    IF t1773->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1773->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1781 ).
+    ENDIF.
+    CREATE OBJECT t1773->zlnt_json_ownkeys_70e5fd461788.
+    t1773->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1782) = CONV string( |name| ).
+    DATA t1783 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1783.
+    IF t1773->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1773->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1782 p1 = t1783 ).
+    ENDIF.
+    DATA(t1784) = CONV string( |value| ).
+    DATA t1785 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1785.
+    IF t1773->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1773->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1784 p1 = t1785 ).
+    ENDIF.
+    t1772->load( ).
     APPEND t1773 TO t1772->items.
-    DATA(t1781) = t1302.
-    DATA t1782 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1782.
-    DATA(t1783) = |st_numgeometries|.
-    DATA t1784 TYPE int8.
-    DATA(t1785) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1784 = t1785.
-    DATA t1786 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1786.
-    DATA t1787 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1787.
-    DATA t1788 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1788.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1772->save( ).
+    DATA(t1786) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    DATA t1787 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1788 TYPE string.
+    DATA(t1789) = CONV string( |source_unit| ).
+    t1788 = t1789.
+    DATA t1790 TYPE string.
+    DATA(t1791) = CONV string( |any| ).
+    t1790 = t1791.
+    DATA t1792 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1793 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1793.
+    t1792 = t1793.
+    t1787 = NEW zcl_lnt_sql_named_param( i_name = t1788 i_value = t1790 i_optional = t1792 ).
+    CREATE OBJECT t1787->zlnt_view_ownkeys_b0e8086400eb.
+    t1787->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1794 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1794.
+    IF t1787->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1787->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1794 ).
     ENDIF.
-    t1788 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1789) = |v915|.
-    t1787 = t1788->get( p0 = t1789 ).
-    t1786 = t1787.
-    t1782 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1783 i_f1 = t1784 i_f2 = t1786 ).
-    APPEND t1782 TO t1781->items.
-    DATA(t1790) = t1302.
-    DATA t1791 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1791.
-    DATA(t1792) = |st_numinteriorring|.
-    DATA t1793 TYPE int8.
-    DATA(t1794) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1793 = t1794.
-    DATA t1795 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1795 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1795.
-    DATA t1796 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1796.
-    DATA t1797 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1787->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1787->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1795 ).
+    ENDIF.
+    CREATE OBJECT t1787->zlnt_json_ownkeys_70e5fd461788.
+    t1787->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1796) = CONV string( |name| ).
+    DATA t1797 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1797.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1787->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1787->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1796 p1 = t1797 ).
     ENDIF.
-    t1797 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1798) = |v915|.
-    t1796 = t1797->get( p0 = t1798 ).
-    t1795 = t1796.
-    t1791 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1792 i_f1 = t1793 i_f2 = t1795 ).
-    APPEND t1791 TO t1790->items.
-    DATA(t1799) = t1302.
-    DATA t1800 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1800.
-    DATA(t1801) = |st_numinteriorrings|.
-    DATA t1802 TYPE int8.
-    DATA(t1803) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA(t1798) = CONV string( |value| ).
+    DATA t1799 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1799.
+    IF t1787->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1787->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1798 p1 = t1799 ).
+    ENDIF.
+    t1786->load( ).
+    APPEND t1787 TO t1786->items.
+    t1786->save( ).
+    DATA(t1800) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    DATA t1801 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1802 TYPE string.
+    DATA(t1803) = CONV string( |target_unit| ).
     t1802 = t1803.
-    DATA t1804 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1804.
-    DATA t1805 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1805.
-    DATA t1806 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1806.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1806 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1807) = |v915|.
-    t1805 = t1806->get( p0 = t1807 ).
+    DATA t1804 TYPE string.
+    DATA(t1805) = CONV string( |any| ).
     t1804 = t1805.
-    t1800 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1801 i_f1 = t1802 i_f2 = t1804 ).
-    APPEND t1800 TO t1799->items.
-    DATA(t1808) = t1302.
-    DATA t1809 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1806 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1807 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1807.
+    t1806 = t1807.
+    t1801 = NEW zcl_lnt_sql_named_param( i_name = t1802 i_value = t1804 i_optional = t1806 ).
+    CREATE OBJECT t1801->zlnt_view_ownkeys_b0e8086400eb.
+    t1801->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1808 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1808.
+    IF t1801->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1801->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1808 ).
+    ENDIF.
+    DATA t1809 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1809.
-    DATA(t1810) = |st_envelope|.
-    DATA t1811 TYPE int8.
-    DATA(t1812) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1811 = t1812.
-    DATA t1813 TYPE REF TO zcl_lnt_abap_release.
+    IF t1801->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1801->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1809 ).
+    ENDIF.
+    CREATE OBJECT t1801->zlnt_json_ownkeys_70e5fd461788.
+    t1801->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1810) = CONV string( |name| ).
+    DATA t1811 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1811.
+    IF t1801->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1801->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1810 p1 = t1811 ).
+    ENDIF.
+    DATA(t1812) = CONV string( |value| ).
+    DATA t1813 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1813.
-    DATA t1814 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1814.
-    DATA t1815 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1801->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1801->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1812 p1 = t1813 ).
+    ENDIF.
+    t1800->load( ).
+    APPEND t1801 TO t1800->items.
+    t1800->save( ).
+    DATA(t1814) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    DATA t1815 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1815.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA t1816 TYPE string.
+    DATA(t1817) = CONV string( |client| ).
+    t1816 = t1817.
+    DATA t1818 TYPE string.
+    DATA(t1819) = CONV string( |any| ).
+    t1818 = t1819.
+    DATA t1820 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1820.
+    DATA t1821 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1821.
+    DATA(t1822) = CONV abap_bool( abap_true ).
+    IF t1822 = abap_true.
+      DATA(t1823) = CONV abap_bool( abap_true ).
+      DATA(t1824) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1824->has = abap_true.
+      t1824->value = t1823.
+      t1821 = t1824.
+    ELSE.
+      DATA t1825 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1825.
+      t1821 = t1825.
     ENDIF.
-    t1815 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1816) = |v915|.
-    t1814 = t1815->get( p0 = t1816 ).
-    t1813 = t1814.
-    t1809 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1810 i_f1 = t1811 i_f2 = t1813 ).
-    APPEND t1809 TO t1808->items.
-    DATA(t1817) = t1302.
-    DATA t1818 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1818.
-    DATA(t1819) = |st_boundary|.
-    DATA t1820 TYPE int8.
-    DATA(t1821) = CONV i( zcl_lnt_sql_function_module=>variadic ).
     t1820 = t1821.
-    DATA t1822 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1822.
-    DATA t1823 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1823.
-    DATA t1824 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1824.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    t1815 = NEW zcl_lnt_sql_named_param( i_name = t1816 i_value = t1818 i_optional = t1820 ).
+    CREATE OBJECT t1815->zlnt_view_ownkeys_b0e8086400eb.
+    t1815->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1826 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1826.
+    IF t1815->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1815->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1826 ).
     ENDIF.
-    t1824 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1825) = |v915|.
-    t1823 = t1824->get( p0 = t1825 ).
-    t1822 = t1823.
-    t1818 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1819 i_f1 = t1820 i_f2 = t1822 ).
-    APPEND t1818 TO t1817->items.
-    DATA(t1826) = t1302.
-    DATA t1827 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1827 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1827.
-    DATA(t1828) = |st_exteriorring|.
-    DATA t1829 TYPE int8.
-    DATA(t1830) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1829 = t1830.
-    DATA t1831 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1831.
-    DATA t1832 TYPE REF TO zcl_lnt_abap_release.
+    IF t1815->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1815->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1827 ).
+    ENDIF.
+    DATA t1828 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1828.
+    IF t1815->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1815->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1828 ).
+    ENDIF.
+    CREATE OBJECT t1815->zlnt_json_ownkeys_70e5fd461788.
+    t1815->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1829) = CONV string( |name| ).
+    DATA t1830 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1830.
+    IF t1815->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1815->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1829 p1 = t1830 ).
+    ENDIF.
+    DATA(t1831) = CONV string( |value| ).
+    DATA t1832 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1832.
-    DATA t1833 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1833.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1815->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1815->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1831 p1 = t1832 ).
     ENDIF.
-    t1833 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1834) = |v915|.
-    t1832 = t1833->get( p0 = t1834 ).
-    t1831 = t1832.
-    t1827 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1828 i_f1 = t1829 i_f2 = t1831 ).
-    APPEND t1827 TO t1826->items.
-    DATA(t1835) = t1302.
-    DATA t1836 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA(t1833) = CONV string( |optional| ).
+    DATA t1834 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1834.
+    IF t1815->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1815->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1833 p1 = t1834 ).
+    ENDIF.
+    t1814->load( ).
+    APPEND t1815 TO t1814->items.
+    t1814->save( ).
+    DATA(t1835) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    DATA t1836 TYPE REF TO zcl_lnt_sql_named_param.
     CLEAR t1836.
-    DATA(t1837) = |st_startpoint|.
-    DATA t1838 TYPE int8.
-    DATA(t1839) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1838 = t1839.
-    DATA t1840 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1840.
-    DATA t1841 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1837 TYPE string.
+    DATA(t1838) = CONV string( |on_error| ).
+    t1837 = t1838.
+    DATA t1839 TYPE string.
+    DATA(t1840) = CONV string( |abap_only| ).
+    t1839 = t1840.
+    DATA t1841 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1841.
-    DATA t1842 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA t1842 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1842.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1843) = CONV abap_bool( abap_true ).
+    IF t1843 = abap_true.
+      DATA(t1844) = CONV abap_bool( abap_true ).
+      DATA(t1845) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t1845->has = abap_true.
+      t1845->value = t1844.
+      t1842 = t1845.
+    ELSE.
+      DATA t1846 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t1846.
+      t1842 = t1846.
     ENDIF.
-    t1842 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1843) = |v915|.
-    t1841 = t1842->get( p0 = t1843 ).
-    t1840 = t1841.
-    t1836 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1837 i_f1 = t1838 i_f2 = t1840 ).
-    APPEND t1836 TO t1835->items.
-    DATA(t1844) = t1302.
-    DATA t1845 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1845.
-    DATA(t1846) = |st_endpoint|.
-    DATA t1847 TYPE int8.
-    DATA(t1848) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1847 = t1848.
-    DATA t1849 TYPE REF TO zcl_lnt_abap_release.
+    t1841 = t1842.
+    t1836 = NEW zcl_lnt_sql_named_param( i_name = t1837 i_value = t1839 i_optional = t1841 ).
+    CREATE OBJECT t1836->zlnt_view_ownkeys_b0e8086400eb.
+    t1836->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1847 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1847.
+    IF t1836->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1836->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1847 ).
+    ENDIF.
+    DATA t1848 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1848.
+    IF t1836->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1836->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1848 ).
+    ENDIF.
+    DATA t1849 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1849.
-    DATA t1850 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1850.
-    DATA t1851 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1836->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1836->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t1849 ).
+    ENDIF.
+    CREATE OBJECT t1836->zlnt_json_ownkeys_70e5fd461788.
+    t1836->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1850) = CONV string( |name| ).
+    DATA t1851 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1851.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1836->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1836->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1850 p1 = t1851 ).
     ENDIF.
-    t1851 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1852) = |v915|.
-    t1850 = t1851->get( p0 = t1852 ).
-    t1849 = t1850.
-    t1845 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1846 i_f1 = t1847 i_f2 = t1849 ).
-    APPEND t1845 TO t1844->items.
-    DATA(t1853) = t1302.
-    DATA t1854 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1854.
-    DATA(t1855) = |st_centroid|.
-    DATA t1856 TYPE int8.
-    DATA(t1857) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1856 = t1857.
-    DATA t1858 TYPE REF TO zcl_lnt_abap_release.
+    DATA(t1852) = CONV string( |value| ).
+    DATA t1853 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1853.
+    IF t1836->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1836->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1852 p1 = t1853 ).
+    ENDIF.
+    DATA(t1854) = CONV string( |optional| ).
+    DATA t1855 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1855.
+    IF t1836->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1836->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1854 p1 = t1855 ).
+    ENDIF.
+    t1835->load( ).
+    APPEND t1836 TO t1835->items.
+    t1835->save( ).
+    DATA(t1856) = CAST zlnt_runtime_arra_c22708faf2e3( t1770 ).
+    t1769 = t1856.
+    t1763 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1764 i_f1 = t1765 i_f2 = t1769 ).
+    t1762->load( ).
+    APPEND t1763 TO t1762->items.
+    t1762->save( ).
+    DATA(t1857) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1858 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1858.
-    DATA t1859 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1859.
-    DATA t1860 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    DATA(t1859) = CONV string( |curr_to_decfloat_amount| ).
+    DATA t1860 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1860.
+    DATA t1861 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1861.
+    DATA t1862 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1862.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1860 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1861) = |v915|.
-    t1859 = t1860->get( p0 = t1861 ).
-    t1858 = t1859.
-    t1854 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1855 i_f1 = t1856 i_f2 = t1858 ).
-    APPEND t1854 TO t1853->items.
-    DATA(t1862) = t1302.
-    DATA t1863 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1863.
-    DATA(t1864) = |st_pointonsurface|.
-    DATA t1865 TYPE int8.
-    DATA(t1866) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1862 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1863) = CONV string( |v758| ).
+    t1861 = t1862->get( p0 = t1863 ).
+    t1860 = t1861.
+    DATA t1864 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1864.
+    DATA t1865 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1866 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1866.
     t1865 = t1866.
-    DATA t1867 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1867.
-    DATA t1868 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1868.
-    DATA t1869 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1869.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    DATA(t1867) = CAST zlnt_runtime_arra_c22708faf2e3( t1865 ).
+    DATA t1868 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1869 TYPE string.
+    DATA(t1870) = CONV string( |curr| ).
+    t1869 = t1870.
+    DATA t1871 TYPE string.
+    DATA(t1872) = CONV string( |any| ).
+    t1871 = t1872.
+    DATA t1873 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1874 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1874.
+    t1873 = t1874.
+    t1868 = NEW zcl_lnt_sql_named_param( i_name = t1869 i_value = t1871 i_optional = t1873 ).
+    CREATE OBJECT t1868->zlnt_view_ownkeys_b0e8086400eb.
+    t1868->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1875 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1875.
+    IF t1868->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1868->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1875 ).
     ENDIF.
-    t1869 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1870) = |v915|.
-    t1868 = t1869->get( p0 = t1870 ).
-    t1867 = t1868.
-    t1863 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1864 i_f1 = t1865 i_f2 = t1867 ).
-    APPEND t1863 TO t1862->items.
-    DATA(t1871) = t1302.
-    DATA t1872 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1872.
-    DATA(t1873) = |st_convexhull|.
-    DATA t1874 TYPE int8.
-    DATA(t1875) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1874 = t1875.
-    DATA t1876 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1876 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1876.
-    DATA t1877 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1877.
-    DATA t1878 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF t1868->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1868->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1876 ).
+    ENDIF.
+    CREATE OBJECT t1868->zlnt_json_ownkeys_70e5fd461788.
+    t1868->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1877) = CONV string( |name| ).
+    DATA t1878 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1878.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1868->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1868->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1877 p1 = t1878 ).
     ENDIF.
-    t1878 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1879) = |v915|.
-    t1877 = t1878->get( p0 = t1879 ).
-    t1876 = t1877.
-    t1872 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1873 i_f1 = t1874 i_f2 = t1876 ).
-    APPEND t1872 TO t1871->items.
-    DATA(t1880) = t1302.
-    DATA t1881 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1881.
-    DATA(t1882) = |st_concavehull|.
-    DATA t1883 TYPE int8.
-    DATA(t1884) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA(t1879) = CONV string( |value| ).
+    DATA t1880 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1880.
+    IF t1868->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1868->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1879 p1 = t1880 ).
+    ENDIF.
+    t1867->load( ).
+    APPEND t1868 TO t1867->items.
+    t1867->save( ).
+    DATA(t1881) = CAST zlnt_runtime_arra_c22708faf2e3( t1865 ).
+    DATA t1882 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1883 TYPE string.
+    DATA(t1884) = CONV string( |cuky| ).
     t1883 = t1884.
-    DATA t1885 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1885.
-    DATA t1886 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1886.
-    DATA t1887 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1887.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1887 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1888) = |v915|.
-    t1886 = t1887->get( p0 = t1888 ).
+    DATA t1885 TYPE string.
+    DATA(t1886) = CONV string( |any| ).
     t1885 = t1886.
-    t1881 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1882 i_f1 = t1883 i_f2 = t1885 ).
-    APPEND t1881 TO t1880->items.
-    DATA(t1889) = t1302.
-    DATA t1890 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA t1887 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1888 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1888.
+    t1887 = t1888.
+    t1882 = NEW zcl_lnt_sql_named_param( i_name = t1883 i_value = t1885 i_optional = t1887 ).
+    CREATE OBJECT t1882->zlnt_view_ownkeys_b0e8086400eb.
+    t1882->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1889 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1889.
+    IF t1882->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1882->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1889 ).
+    ENDIF.
+    DATA t1890 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1890.
-    DATA(t1891) = |st_reverse|.
-    DATA t1892 TYPE int8.
-    DATA(t1893) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1892 = t1893.
-    DATA t1894 TYPE REF TO zcl_lnt_abap_release.
+    IF t1882->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1882->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1890 ).
+    ENDIF.
+    CREATE OBJECT t1882->zlnt_json_ownkeys_70e5fd461788.
+    t1882->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1891) = CONV string( |name| ).
+    DATA t1892 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1892.
+    IF t1882->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1882->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1891 p1 = t1892 ).
+    ENDIF.
+    DATA(t1893) = CONV string( |value| ).
+    DATA t1894 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1894.
-    DATA t1895 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1895.
-    DATA t1896 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1896.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1882->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1882->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1893 p1 = t1894 ).
     ENDIF.
-    t1896 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1897) = |v915|.
-    t1895 = t1896->get( p0 = t1897 ).
-    t1894 = t1895.
-    t1890 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1891 i_f1 = t1892 i_f2 = t1894 ).
-    APPEND t1890 TO t1889->items.
-    DATA(t1898) = t1302.
-    DATA t1899 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1881->load( ).
+    APPEND t1882 TO t1881->items.
+    t1881->save( ).
+    DATA(t1895) = CAST zlnt_runtime_arra_c22708faf2e3( t1865 ).
+    t1864 = t1895.
+    t1858 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1859 i_f1 = t1860 i_f2 = t1864 ).
+    t1857->load( ).
+    APPEND t1858 TO t1857->items.
+    t1857->save( ).
+    DATA(t1896) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1897 TYPE REF TO zcl_lnt_tuple_443ddf92.
+    CLEAR t1897.
+    DATA(t1898) = CONV string( |lang_to_char| ).
+    DATA t1899 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t1899.
-    DATA(t1900) = |st_force2d|.
-    DATA t1901 TYPE int8.
-    DATA(t1902) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1901 = t1902.
-    DATA t1903 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1900 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1900.
+    DATA t1901 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1901.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1901 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1902) = CONV string( |v758| ).
+    t1900 = t1901->get( p0 = t1902 ).
+    t1899 = t1900.
+    DATA t1903 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1903.
-    DATA t1904 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1904.
-    DATA t1905 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1905.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1905 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1906) = |v915|.
-    t1904 = t1905->get( p0 = t1906 ).
-    t1903 = t1904.
-    t1899 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1900 i_f1 = t1901 i_f2 = t1903 ).
-    APPEND t1899 TO t1898->items.
-    DATA(t1907) = t1302.
-    DATA t1908 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1908.
-    DATA(t1909) = |st_force3dz|.
-    DATA t1910 TYPE int8.
-    DATA(t1911) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    DATA t1904 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1905 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1905.
+    t1904 = t1905.
+    DATA(t1906) = CAST zlnt_runtime_arra_c22708faf2e3( t1904 ).
+    DATA t1907 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1908 TYPE string.
+    DATA(t1909) = CONV string( |lang| ).
+    t1908 = t1909.
+    DATA t1910 TYPE string.
+    DATA(t1911) = CONV string( |any| ).
     t1910 = t1911.
-    DATA t1912 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1912.
-    DATA t1913 TYPE REF TO zcl_lnt_abap_release.
+    DATA t1912 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1913 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t1913.
-    DATA t1914 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1914.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1914 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1915) = |v915|.
-    t1913 = t1914->get( p0 = t1915 ).
     t1912 = t1913.
-    t1908 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1909 i_f1 = t1910 i_f2 = t1912 ).
-    APPEND t1908 TO t1907->items.
-    DATA(t1916) = t1302.
-    DATA t1917 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1907 = NEW zcl_lnt_sql_named_param( i_name = t1908 i_value = t1910 i_optional = t1912 ).
+    CREATE OBJECT t1907->zlnt_view_ownkeys_b0e8086400eb.
+    t1907->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1914 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1914.
+    IF t1907->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1907->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1914 ).
+    ENDIF.
+    DATA t1915 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1915.
+    IF t1907->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1907->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1915 ).
+    ENDIF.
+    CREATE OBJECT t1907->zlnt_json_ownkeys_70e5fd461788.
+    t1907->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1916) = CONV string( |name| ).
+    DATA t1917 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1917.
-    DATA(t1918) = |st_force3dm|.
-    DATA t1919 TYPE int8.
-    DATA(t1920) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1919 = t1920.
-    DATA t1921 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1921.
-    DATA t1922 TYPE REF TO zcl_lnt_abap_release.
+    IF t1907->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1907->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1916 p1 = t1917 ).
+    ENDIF.
+    DATA(t1918) = CONV string( |value| ).
+    DATA t1919 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1919.
+    IF t1907->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1907->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1918 p1 = t1919 ).
+    ENDIF.
+    t1906->load( ).
+    APPEND t1907 TO t1906->items.
+    t1906->save( ).
+    DATA(t1920) = CAST zlnt_runtime_arra_c22708faf2e3( t1904 ).
+    t1903 = t1920.
+    t1897 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1898 i_f1 = t1899 i_f2 = t1903 ).
+    t1896->load( ).
+    APPEND t1897 TO t1896->items.
+    t1896->save( ).
+    DATA(t1921) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    DATA t1922 TYPE REF TO zcl_lnt_tuple_443ddf92.
     CLEAR t1922.
-    DATA t1923 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1923.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1923 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1924) = |v915|.
-    t1922 = t1923->get( p0 = t1924 ).
-    t1921 = t1922.
-    t1917 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1918 i_f1 = t1919 i_f2 = t1921 ).
-    APPEND t1917 TO t1916->items.
-    DATA(t1925) = t1302.
-    DATA t1926 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    DATA(t1923) = CONV string( |ipow| ).
+    DATA t1924 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1924.
+    DATA t1925 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1925.
+    DATA t1926 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t1926.
-    DATA(t1927) = |st_force4d|.
-    DATA t1928 TYPE int8.
-    DATA(t1929) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1928 = t1929.
-    DATA t1930 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1930.
-    DATA t1931 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1931.
-    DATA t1932 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1932.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t1932 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1933) = |v915|.
-    t1931 = t1932->get( p0 = t1933 ).
-    t1930 = t1931.
-    t1926 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1927 i_f1 = t1928 i_f2 = t1930 ).
-    APPEND t1926 TO t1925->items.
-    DATA(t1934) = t1302.
-    DATA t1935 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1935.
-    DATA(t1936) = |st_makevalid|.
-    DATA t1937 TYPE int8.
-    DATA(t1938) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1926 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1927) = CONV string( |v758| ).
+    t1925 = t1926->get( p0 = t1927 ).
+    t1924 = t1925.
+    DATA t1928 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1928.
+    DATA t1929 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1930 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1930.
+    t1929 = t1930.
+    DATA(t1931) = CAST zlnt_runtime_arra_c22708faf2e3( t1929 ).
+    DATA t1932 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1933 TYPE string.
+    DATA(t1934) = CONV string( |base| ).
+    t1933 = t1934.
+    DATA t1935 TYPE string.
+    DATA(t1936) = CONV string( |any| ).
+    t1935 = t1936.
+    DATA t1937 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1938 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1938.
     t1937 = t1938.
-    DATA t1939 TYPE REF TO zcl_lnt_abap_release.
+    t1932 = NEW zcl_lnt_sql_named_param( i_name = t1933 i_value = t1935 i_optional = t1937 ).
+    CREATE OBJECT t1932->zlnt_view_ownkeys_b0e8086400eb.
+    t1932->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1939 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1939.
-    DATA t1940 TYPE REF TO zcl_lnt_abap_release.
+    IF t1932->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1932->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1939 ).
+    ENDIF.
+    DATA t1940 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1940.
-    DATA t1941 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1941.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1932->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1932->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1940 ).
     ENDIF.
-    t1941 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1942) = |v915|.
-    t1940 = t1941->get( p0 = t1942 ).
-    t1939 = t1940.
-    t1935 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1936 i_f1 = t1937 i_f2 = t1939 ).
-    APPEND t1935 TO t1934->items.
-    DATA(t1943) = t1302.
-    DATA t1944 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CREATE OBJECT t1932->zlnt_json_ownkeys_70e5fd461788.
+    t1932->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1941) = CONV string( |name| ).
+    DATA t1942 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1942.
+    IF t1932->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1932->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1941 p1 = t1942 ).
+    ENDIF.
+    DATA(t1943) = CONV string( |value| ).
+    DATA t1944 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1944.
-    DATA(t1945) = |st_geohash|.
-    DATA t1946 TYPE int8.
-    DATA(t1947) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1946 = t1947.
-    DATA t1948 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1948.
-    DATA t1949 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1949.
-    DATA t1950 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1950.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1932->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1932->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1943 p1 = t1944 ).
     ENDIF.
-    t1950 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1951) = |v915|.
-    t1949 = t1950->get( p0 = t1951 ).
-    t1948 = t1949.
-    t1944 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1945 i_f1 = t1946 i_f2 = t1948 ).
-    APPEND t1944 TO t1943->items.
-    DATA(t1952) = t1302.
-    DATA t1953 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    t1931->load( ).
+    APPEND t1932 TO t1931->items.
+    t1931->save( ).
+    DATA(t1945) = CAST zlnt_runtime_arra_c22708faf2e3( t1929 ).
+    DATA t1946 TYPE REF TO zcl_lnt_sql_named_param.
+    DATA t1947 TYPE string.
+    DATA(t1948) = CONV string( |exp| ).
+    t1947 = t1948.
+    DATA t1949 TYPE string.
+    DATA(t1950) = CONV string( |any| ).
+    t1949 = t1950.
+    DATA t1951 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t1952 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    CLEAR t1952.
+    t1951 = t1952.
+    t1946 = NEW zcl_lnt_sql_named_param( i_name = t1947 i_value = t1949 i_optional = t1951 ).
+    CREATE OBJECT t1946->zlnt_view_ownkeys_b0e8086400eb.
+    t1946->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t1953 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1953.
-    DATA(t1954) = |st_aswkt|.
-    DATA t1955 TYPE int8.
-    DATA(t1956) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1955 = t1956.
-    DATA t1957 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1957.
-    DATA t1958 TYPE REF TO zcl_lnt_abap_release.
+    IF t1946->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1946->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t1953 ).
+    ENDIF.
+    DATA t1954 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1954.
+    IF t1946->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1946->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t1954 ).
+    ENDIF.
+    CREATE OBJECT t1946->zlnt_json_ownkeys_70e5fd461788.
+    t1946->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t1955) = CONV string( |name| ).
+    DATA t1956 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t1956.
+    IF t1946->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1946->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1955 p1 = t1956 ).
+    ENDIF.
+    DATA(t1957) = CONV string( |value| ).
+    DATA t1958 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1958.
-    DATA t1959 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1959.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    IF t1946->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1946->zlnt_json_ownkeys_70e5fd461788->put( p0 = t1957 p1 = t1958 ).
     ENDIF.
-    t1959 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1960) = |v915|.
-    t1958 = t1959->get( p0 = t1960 ).
-    t1957 = t1958.
-    t1953 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1954 i_f1 = t1955 i_f2 = t1957 ).
-    APPEND t1953 TO t1952->items.
-    DATA(t1961) = t1302.
-    DATA t1962 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1962.
-    DATA(t1963) = |st_aswkb|.
-    DATA t1964 TYPE int8.
-    DATA(t1965) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1964 = t1965.
-    DATA t1966 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1966.
-    DATA t1967 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1967.
-    DATA t1968 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1968.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1968 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1969) = |v915|.
-    t1967 = t1968->get( p0 = t1969 ).
-    t1966 = t1967.
-    t1962 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1963 i_f1 = t1964 i_f2 = t1966 ).
-    APPEND t1962 TO t1961->items.
-    DATA(t1970) = t1302.
-    DATA t1971 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1971.
-    DATA(t1972) = |st_asewkt|.
-    DATA t1973 TYPE int8.
-    DATA(t1974) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1973 = t1974.
-    DATA t1975 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1975.
-    DATA t1976 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1976.
-    DATA t1977 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1977.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1977 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1978) = |v915|.
-    t1976 = t1977->get( p0 = t1978 ).
-    t1975 = t1976.
-    t1971 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1972 i_f1 = t1973 i_f2 = t1975 ).
-    APPEND t1971 TO t1970->items.
-    DATA(t1979) = t1302.
-    DATA t1980 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1980.
-    DATA(t1981) = |st_asewkb|.
-    DATA t1982 TYPE int8.
-    DATA(t1983) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1982 = t1983.
-    DATA t1984 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1984.
-    DATA t1985 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1985.
-    DATA t1986 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1986.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1986 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1987) = |v915|.
-    t1985 = t1986->get( p0 = t1987 ).
-    t1984 = t1985.
-    t1980 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1981 i_f1 = t1982 i_f2 = t1984 ).
-    APPEND t1980 TO t1979->items.
-    DATA(t1988) = t1302.
-    DATA t1989 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1989.
-    DATA(t1990) = |st_asbinary|.
-    DATA t1991 TYPE int8.
-    DATA(t1992) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t1991 = t1992.
-    DATA t1993 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1993.
-    DATA t1994 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t1994.
-    DATA t1995 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t1995.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t1995 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t1996) = |v915|.
-    t1994 = t1995->get( p0 = t1996 ).
-    t1993 = t1994.
-    t1989 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1990 i_f1 = t1991 i_f2 = t1993 ).
-    APPEND t1989 TO t1988->items.
-    DATA(t1997) = t1302.
-    DATA t1998 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t1998.
-    DATA(t1999) = |st_astext|.
-    DATA t2000 TYPE int8.
-    DATA(t2001) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2000 = t2001.
-    DATA t2002 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2002.
-    DATA t2003 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2003.
-    DATA t2004 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2004.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2004 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2005) = |v915|.
-    t2003 = t2004->get( p0 = t2005 ).
-    t2002 = t2003.
-    t1998 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1999 i_f1 = t2000 i_f2 = t2002 ).
-    APPEND t1998 TO t1997->items.
-    DATA(t2006) = t1302.
-    DATA t2007 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2007.
-    DATA(t2008) = |st_asgeojson|.
-    DATA t2009 TYPE int8.
-    DATA(t2010) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2009 = t2010.
-    DATA t2011 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2011.
-    DATA t2012 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2012.
-    DATA t2013 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2013.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2013 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2014) = |v915|.
-    t2012 = t2013->get( p0 = t2014 ).
-    t2011 = t2012.
-    t2007 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2008 i_f1 = t2009 i_f2 = t2011 ).
-    APPEND t2007 TO t2006->items.
-    DATA(t2015) = t1302.
-    DATA t2016 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2016.
-    DATA(t2017) = |st_asesrijson|.
-    DATA t2018 TYPE int8.
-    DATA(t2019) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2018 = t2019.
-    DATA t2020 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2020.
-    DATA t2021 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2021.
-    DATA t2022 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2022.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2022 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2023) = |v915|.
-    t2021 = t2022->get( p0 = t2023 ).
-    t2020 = t2021.
-    t2016 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2017 i_f1 = t2018 i_f2 = t2020 ).
-    APPEND t2016 TO t2015->items.
-    DATA(t2024) = t1302.
-    DATA t2025 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2025.
-    DATA(t2026) = |st_assvg|.
-    DATA t2027 TYPE int8.
-    DATA(t2028) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2027 = t2028.
-    DATA t2029 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2029.
-    DATA t2030 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2030.
-    DATA t2031 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2031.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2031 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2032) = |v915|.
-    t2030 = t2031->get( p0 = t2032 ).
-    t2029 = t2030.
-    t2025 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2026 i_f1 = t2027 i_f2 = t2029 ).
-    APPEND t2025 TO t2024->items.
-    DATA(t2033) = t1302.
-    DATA t2034 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2034.
-    DATA(t2035) = |st_distance|.
-    DATA t2036 TYPE int8.
-    DATA(t2037) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2036 = t2037.
-    DATA t2038 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2038.
-    DATA t2039 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2039.
-    DATA t2040 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2040.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2040 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2041) = |v915|.
-    t2039 = t2040->get( p0 = t2041 ).
-    t2038 = t2039.
-    t2034 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2035 i_f1 = t2036 i_f2 = t2038 ).
-    APPEND t2034 TO t2033->items.
-    DATA(t2042) = t1302.
-    DATA t2043 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2043.
-    DATA(t2044) = |st_withindistance|.
-    DATA t2045 TYPE int8.
-    DATA(t2046) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2045 = t2046.
-    DATA t2047 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2047.
-    DATA t2048 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2048.
-    DATA t2049 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2049.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2049 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2050) = |v915|.
-    t2048 = t2049->get( p0 = t2050 ).
-    t2047 = t2048.
-    t2043 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2044 i_f1 = t2045 i_f2 = t2047 ).
-    APPEND t2043 TO t2042->items.
-    DATA(t2051) = t1302.
-    DATA t2052 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2052.
-    DATA(t2053) = |st_contains|.
-    DATA t2054 TYPE int8.
-    DATA(t2055) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2054 = t2055.
-    DATA t2056 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2056.
-    DATA t2057 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2057.
-    DATA t2058 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2058.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2058 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2059) = |v915|.
-    t2057 = t2058->get( p0 = t2059 ).
-    t2056 = t2057.
-    t2052 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2053 i_f1 = t2054 i_f2 = t2056 ).
-    APPEND t2052 TO t2051->items.
-    DATA(t2060) = t1302.
-    DATA t2061 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2061.
-    DATA(t2062) = |st_covers|.
-    DATA t2063 TYPE int8.
-    DATA(t2064) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2063 = t2064.
-    DATA t2065 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2065.
-    DATA t2066 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2066.
-    DATA t2067 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2067.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2067 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2068) = |v915|.
-    t2066 = t2067->get( p0 = t2068 ).
-    t2065 = t2066.
-    t2061 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2062 i_f1 = t2063 i_f2 = t2065 ).
-    APPEND t2061 TO t2060->items.
-    DATA(t2069) = t1302.
-    DATA t2070 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2070.
-    DATA(t2071) = |st_coveredby|.
-    DATA t2072 TYPE int8.
-    DATA(t2073) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2072 = t2073.
-    DATA t2074 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2074.
-    DATA t2075 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2075.
-    DATA t2076 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2076.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2076 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2077) = |v915|.
-    t2075 = t2076->get( p0 = t2077 ).
-    t2074 = t2075.
-    t2070 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2071 i_f1 = t2072 i_f2 = t2074 ).
-    APPEND t2070 TO t2069->items.
-    DATA(t2078) = t1302.
-    DATA t2079 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2079.
-    DATA(t2080) = |st_crosses|.
-    DATA t2081 TYPE int8.
-    DATA(t2082) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2081 = t2082.
-    DATA t2083 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2083.
-    DATA t2084 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2084.
-    DATA t2085 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2085.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2085 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2086) = |v915|.
-    t2084 = t2085->get( p0 = t2086 ).
-    t2083 = t2084.
-    t2079 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2080 i_f1 = t2081 i_f2 = t2083 ).
-    APPEND t2079 TO t2078->items.
-    DATA(t2087) = t1302.
-    DATA t2088 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2088.
-    DATA(t2089) = |st_disjoint|.
-    DATA t2090 TYPE int8.
-    DATA(t2091) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2090 = t2091.
-    DATA t2092 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2092.
-    DATA t2093 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2093.
-    DATA t2094 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2094.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2094 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2095) = |v915|.
-    t2093 = t2094->get( p0 = t2095 ).
-    t2092 = t2093.
-    t2088 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2089 i_f1 = t2090 i_f2 = t2092 ).
-    APPEND t2088 TO t2087->items.
-    DATA(t2096) = t1302.
-    DATA t2097 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2097.
-    DATA(t2098) = |st_equals|.
-    DATA t2099 TYPE int8.
-    DATA(t2100) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2099 = t2100.
-    DATA t2101 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2101.
-    DATA t2102 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2102.
-    DATA t2103 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2103.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2103 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2104) = |v915|.
-    t2102 = t2103->get( p0 = t2104 ).
-    t2101 = t2102.
-    t2097 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2098 i_f1 = t2099 i_f2 = t2101 ).
-    APPEND t2097 TO t2096->items.
-    DATA(t2105) = t1302.
-    DATA t2106 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2106.
-    DATA(t2107) = |st_orderingequals|.
-    DATA t2108 TYPE int8.
-    DATA(t2109) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2108 = t2109.
-    DATA t2110 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2110.
-    DATA t2111 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2111.
-    DATA t2112 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2112.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2112 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2113) = |v915|.
-    t2111 = t2112->get( p0 = t2113 ).
-    t2110 = t2111.
-    t2106 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2107 i_f1 = t2108 i_f2 = t2110 ).
-    APPEND t2106 TO t2105->items.
-    DATA(t2114) = t1302.
-    DATA t2115 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2115.
-    DATA(t2116) = |st_intersects|.
-    DATA t2117 TYPE int8.
-    DATA(t2118) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2117 = t2118.
-    DATA t2119 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2119.
-    DATA t2120 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2120.
-    DATA t2121 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2121.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2121 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2122) = |v915|.
-    t2120 = t2121->get( p0 = t2122 ).
-    t2119 = t2120.
-    t2115 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2116 i_f1 = t2117 i_f2 = t2119 ).
-    APPEND t2115 TO t2114->items.
-    DATA(t2123) = t1302.
-    DATA t2124 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2124.
-    DATA(t2125) = |st_intersectsfilter|.
-    DATA t2126 TYPE int8.
-    DATA(t2127) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2126 = t2127.
-    DATA t2128 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2128.
-    DATA t2129 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2129.
-    DATA t2130 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2130.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2130 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2131) = |v915|.
-    t2129 = t2130->get( p0 = t2131 ).
-    t2128 = t2129.
-    t2124 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2125 i_f1 = t2126 i_f2 = t2128 ).
-    APPEND t2124 TO t2123->items.
-    DATA(t2132) = t1302.
-    DATA t2133 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2133.
-    DATA(t2134) = |st_intersectsrect|.
-    DATA t2135 TYPE int8.
-    DATA(t2136) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2135 = t2136.
-    DATA t2137 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2137.
-    DATA t2138 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2138.
-    DATA t2139 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2139.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2139 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2140) = |v915|.
-    t2138 = t2139->get( p0 = t2140 ).
-    t2137 = t2138.
-    t2133 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2134 i_f1 = t2135 i_f2 = t2137 ).
-    APPEND t2133 TO t2132->items.
-    DATA(t2141) = t1302.
-    DATA t2142 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2142.
-    DATA(t2143) = |st_intersectsrectplanar|.
-    DATA t2144 TYPE int8.
-    DATA(t2145) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2144 = t2145.
-    DATA t2146 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2146.
-    DATA t2147 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2147.
-    DATA t2148 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2148.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2148 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2149) = |v915|.
-    t2147 = t2148->get( p0 = t2149 ).
-    t2146 = t2147.
-    t2142 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2143 i_f1 = t2144 i_f2 = t2146 ).
-    APPEND t2142 TO t2141->items.
-    DATA(t2150) = t1302.
-    DATA t2151 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2151.
-    DATA(t2152) = |st_overlaps|.
-    DATA t2153 TYPE int8.
-    DATA(t2154) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2153 = t2154.
-    DATA t2155 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2155.
-    DATA t2156 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2156.
-    DATA t2157 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2157.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2157 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2158) = |v915|.
-    t2156 = t2157->get( p0 = t2158 ).
-    t2155 = t2156.
-    t2151 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2152 i_f1 = t2153 i_f2 = t2155 ).
-    APPEND t2151 TO t2150->items.
-    DATA(t2159) = t1302.
-    DATA t2160 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2160.
-    DATA(t2161) = |st_touches|.
-    DATA t2162 TYPE int8.
-    DATA(t2163) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2162 = t2163.
-    DATA t2164 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2164.
-    DATA t2165 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2165.
-    DATA t2166 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2166.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2166 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2167) = |v915|.
-    t2165 = t2166->get( p0 = t2167 ).
-    t2164 = t2165.
-    t2160 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2161 i_f1 = t2162 i_f2 = t2164 ).
-    APPEND t2160 TO t2159->items.
-    DATA(t2168) = t1302.
-    DATA t2169 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2169.
-    DATA(t2170) = |st_within|.
-    DATA t2171 TYPE int8.
-    DATA(t2172) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2171 = t2172.
-    DATA t2173 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2173.
-    DATA t2174 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2174.
-    DATA t2175 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2175.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2175 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2176) = |v915|.
-    t2174 = t2175->get( p0 = t2176 ).
-    t2173 = t2174.
-    t2169 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2170 i_f1 = t2171 i_f2 = t2173 ).
-    APPEND t2169 TO t2168->items.
-    DATA(t2177) = t1302.
-    DATA t2178 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2178.
-    DATA(t2179) = |st_intersection|.
-    DATA t2180 TYPE int8.
-    DATA(t2181) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2180 = t2181.
-    DATA t2182 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2182.
-    DATA t2183 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2183.
-    DATA t2184 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2184.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2184 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2185) = |v915|.
-    t2183 = t2184->get( p0 = t2185 ).
-    t2182 = t2183.
-    t2178 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2179 i_f1 = t2180 i_f2 = t2182 ).
-    APPEND t2178 TO t2177->items.
-    DATA(t2186) = t1302.
-    DATA t2187 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2187.
-    DATA(t2188) = |st_union|.
-    DATA t2189 TYPE int8.
-    DATA(t2190) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2189 = t2190.
-    DATA t2191 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2191.
-    DATA t2192 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2192.
-    DATA t2193 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2193.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2193 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2194) = |v915|.
-    t2192 = t2193->get( p0 = t2194 ).
-    t2191 = t2192.
-    t2187 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2188 i_f1 = t2189 i_f2 = t2191 ).
-    APPEND t2187 TO t2186->items.
-    DATA(t2195) = t1302.
-    DATA t2196 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2196.
-    DATA(t2197) = |st_difference|.
-    DATA t2198 TYPE int8.
-    DATA(t2199) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2198 = t2199.
-    DATA t2200 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2200.
-    DATA t2201 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2201.
-    DATA t2202 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2202.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2202 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2203) = |v915|.
-    t2201 = t2202->get( p0 = t2203 ).
-    t2200 = t2201.
-    t2196 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2197 i_f1 = t2198 i_f2 = t2200 ).
-    APPEND t2196 TO t2195->items.
-    DATA(t2204) = t1302.
-    DATA t2205 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2205.
-    DATA(t2206) = |st_symdifference|.
-    DATA t2207 TYPE int8.
-    DATA(t2208) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2207 = t2208.
-    DATA t2209 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2209.
-    DATA t2210 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2210.
-    DATA t2211 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2211.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2211 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2212) = |v915|.
-    t2210 = t2211->get( p0 = t2212 ).
-    t2209 = t2210.
-    t2205 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2206 i_f1 = t2207 i_f2 = t2209 ).
-    APPEND t2205 TO t2204->items.
-    DATA(t2213) = t1302.
-    DATA t2214 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2214.
-    DATA(t2215) = |st_collect|.
-    DATA t2216 TYPE int8.
-    DATA(t2217) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2216 = t2217.
-    DATA t2218 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2218.
-    DATA t2219 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2219.
-    DATA t2220 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2220.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2220 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2221) = |v915|.
-    t2219 = t2220->get( p0 = t2221 ).
-    t2218 = t2219.
-    t2214 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2215 i_f1 = t2216 i_f2 = t2218 ).
-    APPEND t2214 TO t2213->items.
-    DATA(t2222) = t1302.
-    DATA t2223 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2223.
-    DATA(t2224) = |st_buffer|.
-    DATA t2225 TYPE int8.
-    DATA(t2226) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2225 = t2226.
-    DATA t2227 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2227.
-    DATA t2228 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2228.
-    DATA t2229 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2229.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2229 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2230) = |v915|.
-    t2228 = t2229->get( p0 = t2230 ).
-    t2227 = t2228.
-    t2223 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2224 i_f1 = t2225 i_f2 = t2227 ).
-    APPEND t2223 TO t2222->items.
-    DATA(t2231) = t1302.
-    DATA t2232 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2232.
-    DATA(t2233) = |st_transform|.
-    DATA t2234 TYPE int8.
-    DATA(t2235) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2234 = t2235.
-    DATA t2236 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2236.
-    DATA t2237 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2237.
-    DATA t2238 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2238.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2238 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2239) = |v915|.
-    t2237 = t2238->get( p0 = t2239 ).
-    t2236 = t2237.
-    t2232 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2233 i_f1 = t2234 i_f2 = t2236 ).
-    APPEND t2232 TO t2231->items.
-    DATA(t2240) = t1302.
-    DATA t2241 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2241.
-    DATA(t2242) = |st_rotate|.
-    DATA t2243 TYPE int8.
-    DATA(t2244) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2243 = t2244.
-    DATA t2245 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2245.
-    DATA t2246 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2246.
-    DATA t2247 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2247.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2247 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2248) = |v915|.
-    t2246 = t2247->get( p0 = t2248 ).
-    t2245 = t2246.
-    t2241 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2242 i_f1 = t2243 i_f2 = t2245 ).
-    APPEND t2241 TO t2240->items.
-    DATA(t2249) = t1302.
-    DATA t2250 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2250.
-    DATA(t2251) = |st_scale|.
-    DATA t2252 TYPE int8.
-    DATA(t2253) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2252 = t2253.
-    DATA t2254 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2254.
-    DATA t2255 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2255.
-    DATA t2256 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2256.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2256 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2257) = |v915|.
-    t2255 = t2256->get( p0 = t2257 ).
-    t2254 = t2255.
-    t2250 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2251 i_f1 = t2252 i_f2 = t2254 ).
-    APPEND t2250 TO t2249->items.
-    DATA(t2258) = t1302.
-    DATA t2259 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2259.
-    DATA(t2260) = |st_translate|.
-    DATA t2261 TYPE int8.
-    DATA(t2262) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2261 = t2262.
-    DATA t2263 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2263.
-    DATA t2264 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2264.
-    DATA t2265 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2265.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2265 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2266) = |v915|.
-    t2264 = t2265->get( p0 = t2266 ).
-    t2263 = t2264.
-    t2259 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2260 i_f1 = t2261 i_f2 = t2263 ).
-    APPEND t2259 TO t2258->items.
-    DATA(t2267) = t1302.
-    DATA t2268 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2268.
-    DATA(t2269) = |st_translate3d|.
-    DATA t2270 TYPE int8.
-    DATA(t2271) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2270 = t2271.
-    DATA t2272 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2272.
-    DATA t2273 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2273.
-    DATA t2274 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2274.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2274 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2275) = |v915|.
-    t2273 = t2274->get( p0 = t2275 ).
-    t2272 = t2273.
-    t2268 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2269 i_f1 = t2270 i_f2 = t2272 ).
-    APPEND t2268 TO t2267->items.
-    DATA(t2276) = t1302.
-    DATA t2277 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2277.
-    DATA(t2278) = |st_simplify|.
-    DATA t2279 TYPE int8.
-    DATA(t2280) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2279 = t2280.
-    DATA t2281 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2281.
-    DATA t2282 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2282.
-    DATA t2283 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2283.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2283 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2284) = |v915|.
-    t2282 = t2283->get( p0 = t2284 ).
-    t2281 = t2282.
-    t2277 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2278 i_f1 = t2279 i_f2 = t2281 ).
-    APPEND t2277 TO t2276->items.
-    DATA(t2285) = t1302.
-    DATA t2286 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2286.
-    DATA(t2287) = |st_snaptogrid|.
-    DATA t2288 TYPE int8.
-    DATA(t2289) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2288 = t2289.
-    DATA t2290 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2290.
-    DATA t2291 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2291.
-    DATA t2292 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2292.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2292 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2293) = |v915|.
-    t2291 = t2292->get( p0 = t2293 ).
-    t2290 = t2291.
-    t2286 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2287 i_f1 = t2288 i_f2 = t2290 ).
-    APPEND t2286 TO t2285->items.
-    DATA(t2294) = t1302.
-    DATA t2295 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2295.
-    DATA(t2296) = |st_addmeasure|.
-    DATA t2297 TYPE int8.
-    DATA(t2298) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2297 = t2298.
-    DATA t2299 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2299.
-    DATA t2300 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2300.
-    DATA t2301 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2301.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2301 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2302) = |v915|.
-    t2300 = t2301->get( p0 = t2302 ).
-    t2299 = t2300.
-    t2295 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2296 i_f1 = t2297 i_f2 = t2299 ).
-    APPEND t2295 TO t2294->items.
-    DATA(t2303) = t1302.
-    DATA t2304 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2304.
-    DATA(t2305) = |st_addpoint|.
-    DATA t2306 TYPE int8.
-    DATA(t2307) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2306 = t2307.
-    DATA t2308 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2308.
-    DATA t2309 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2309.
-    DATA t2310 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2310.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2310 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2311) = |v915|.
-    t2309 = t2310->get( p0 = t2311 ).
-    t2308 = t2309.
-    t2304 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2305 i_f1 = t2306 i_f2 = t2308 ).
-    APPEND t2304 TO t2303->items.
-    DATA(t2312) = t1302.
-    DATA t2313 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2313.
-    DATA(t2314) = |st_removepoint|.
-    DATA t2315 TYPE int8.
-    DATA(t2316) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2315 = t2316.
-    DATA t2317 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2317.
-    DATA t2318 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2318.
-    DATA t2319 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2319.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2319 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2320) = |v915|.
-    t2318 = t2319->get( p0 = t2320 ).
-    t2317 = t2318.
-    t2313 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2314 i_f1 = t2315 i_f2 = t2317 ).
-    APPEND t2313 TO t2312->items.
-    DATA(t2321) = t1302.
-    DATA t2322 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2322.
-    DATA(t2323) = |st_pointn|.
-    DATA t2324 TYPE int8.
-    DATA(t2325) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2324 = t2325.
-    DATA t2326 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2326.
-    DATA t2327 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2327.
-    DATA t2328 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2328.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2328 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2329) = |v915|.
-    t2327 = t2328->get( p0 = t2329 ).
-    t2326 = t2327.
-    t2322 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2323 i_f1 = t2324 i_f2 = t2326 ).
-    APPEND t2322 TO t2321->items.
-    DATA(t2330) = t1302.
-    DATA t2331 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2331.
-    DATA(t2332) = |st_geometryn|.
-    DATA t2333 TYPE int8.
-    DATA(t2334) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2333 = t2334.
-    DATA t2335 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2335.
-    DATA t2336 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2336.
-    DATA t2337 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2337.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2337 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2338) = |v915|.
-    t2336 = t2337->get( p0 = t2338 ).
-    t2335 = t2336.
-    t2331 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2332 i_f1 = t2333 i_f2 = t2335 ).
-    APPEND t2331 TO t2330->items.
-    DATA(t2339) = t1302.
-    DATA t2340 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2340.
-    DATA(t2341) = |st_interiorringn|.
-    DATA t2342 TYPE int8.
-    DATA(t2343) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2342 = t2343.
-    DATA t2344 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2344.
-    DATA t2345 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2345.
-    DATA t2346 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2346.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2346 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2347) = |v915|.
-    t2345 = t2346->get( p0 = t2347 ).
-    t2344 = t2345.
-    t2340 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2341 i_f1 = t2342 i_f2 = t2344 ).
-    APPEND t2340 TO t2339->items.
-    DATA(t2348) = t1302.
-    DATA t2349 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2349.
-    DATA(t2350) = |st_lineinterpolatepoint|.
-    DATA t2351 TYPE int8.
-    DATA(t2352) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2351 = t2352.
-    DATA t2353 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2353.
-    DATA t2354 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2354.
-    DATA t2355 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2355.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2355 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2356) = |v915|.
-    t2354 = t2355->get( p0 = t2356 ).
-    t2353 = t2354.
-    t2349 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2350 i_f1 = t2351 i_f2 = t2353 ).
-    APPEND t2349 TO t2348->items.
-    DATA(t2357) = t1302.
-    DATA t2358 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2358.
-    DATA(t2359) = |st_linelocatepoint|.
-    DATA t2360 TYPE int8.
-    DATA(t2361) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2360 = t2361.
-    DATA t2362 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2362.
-    DATA t2363 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2363.
-    DATA t2364 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2364.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2364 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2365) = |v915|.
-    t2363 = t2364->get( p0 = t2365 ).
-    t2362 = t2363.
-    t2358 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2359 i_f1 = t2360 i_f2 = t2362 ).
-    APPEND t2358 TO t2357->items.
-    DATA(t2366) = t1302.
-    DATA t2367 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2367.
-    DATA(t2368) = |st_linesubstring|.
-    DATA t2369 TYPE int8.
-    DATA(t2370) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2369 = t2370.
-    DATA t2371 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2371.
-    DATA t2372 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2372.
-    DATA t2373 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2373.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2373 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2374) = |v915|.
-    t2372 = t2373->get( p0 = t2374 ).
-    t2371 = t2372.
-    t2367 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2368 i_f1 = t2369 i_f2 = t2371 ).
-    APPEND t2367 TO t2366->items.
-    DATA(t2375) = t1302.
-    DATA t2376 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2376.
-    DATA(t2377) = |st_locatealong|.
-    DATA t2378 TYPE int8.
-    DATA(t2379) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2378 = t2379.
-    DATA t2380 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2380.
-    DATA t2381 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2381.
-    DATA t2382 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2382.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2382 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2383) = |v915|.
-    t2381 = t2382->get( p0 = t2383 ).
-    t2380 = t2381.
-    t2376 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2377 i_f1 = t2378 i_f2 = t2380 ).
-    APPEND t2376 TO t2375->items.
-    DATA(t2384) = t1302.
-    DATA t2385 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2385.
-    DATA(t2386) = |st_locatebetween|.
-    DATA t2387 TYPE int8.
-    DATA(t2388) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2387 = t2388.
-    DATA t2389 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2389.
-    DATA t2390 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2390.
-    DATA t2391 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2391.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2391 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2392) = |v915|.
-    t2390 = t2391->get( p0 = t2392 ).
-    t2389 = t2390.
-    t2385 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2386 i_f1 = t2387 i_f2 = t2389 ).
-    APPEND t2385 TO t2384->items.
-    DATA(t2393) = t1302.
-    DATA t2394 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2394.
-    DATA(t2395) = |st_alphashape|.
-    DATA t2396 TYPE int8.
-    DATA(t2397) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2396 = t2397.
-    DATA t2398 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2398.
-    DATA t2399 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2399.
-    DATA t2400 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2400.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2400 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2401) = |v915|.
-    t2399 = t2400->get( p0 = t2401 ).
-    t2398 = t2399.
-    t2394 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2395 i_f1 = t2396 i_f2 = t2398 ).
-    APPEND t2394 TO t2393->items.
-    DATA(t2402) = t1302.
-    DATA t2403 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2403.
-    DATA(t2404) = |st_alphashapearea|.
-    DATA t2405 TYPE int8.
-    DATA(t2406) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2405 = t2406.
-    DATA t2407 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2407.
-    DATA t2408 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2408.
-    DATA t2409 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2409.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2409 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2410) = |v915|.
-    t2408 = t2409->get( p0 = t2410 ).
-    t2407 = t2408.
-    t2403 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2404 i_f1 = t2405 i_f2 = t2407 ).
-    APPEND t2403 TO t2402->items.
-    DATA(t2411) = t1302.
-    DATA t2412 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2412.
-    DATA(t2413) = |st_alphashapeedge|.
-    DATA t2414 TYPE int8.
-    DATA(t2415) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2414 = t2415.
-    DATA t2416 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2416.
-    DATA t2417 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2417.
-    DATA t2418 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2418.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2418 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2419) = |v915|.
-    t2417 = t2418->get( p0 = t2419 ).
-    t2416 = t2417.
-    t2412 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2413 i_f1 = t2414 i_f2 = t2416 ).
-    APPEND t2412 TO t2411->items.
-    DATA(t2420) = t1302.
-    DATA t2421 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2421.
-    DATA(t2422) = |st_closestpointofapproach|.
-    DATA t2423 TYPE int8.
-    DATA(t2424) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2423 = t2424.
-    DATA t2425 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2425.
-    DATA t2426 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2426.
-    DATA t2427 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2427.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2427 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2428) = |v915|.
-    t2426 = t2427->get( p0 = t2428 ).
-    t2425 = t2426.
-    t2421 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2422 i_f1 = t2423 i_f2 = t2425 ).
-    APPEND t2421 TO t2420->items.
-    DATA(t2429) = t1302.
-    DATA t2430 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2430.
-    DATA(t2431) = |st_frechetdistance|.
-    DATA t2432 TYPE int8.
-    DATA(t2433) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2432 = t2433.
-    DATA t2434 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2434.
-    DATA t2435 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2435.
-    DATA t2436 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2436.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2436 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2437) = |v915|.
-    t2435 = t2436->get( p0 = t2437 ).
-    t2434 = t2435.
-    t2430 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2431 i_f1 = t2432 i_f2 = t2434 ).
-    APPEND t2430 TO t2429->items.
-    DATA(t2438) = t1302.
-    DATA t2439 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2439.
-    DATA(t2440) = |st_hausdorffdistance|.
-    DATA t2441 TYPE int8.
-    DATA(t2442) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2441 = t2442.
-    DATA t2443 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2443.
-    DATA t2444 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2444.
-    DATA t2445 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2445.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2445 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2446) = |v915|.
-    t2444 = t2445->get( p0 = t2446 ).
-    t2443 = t2444.
-    t2439 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2440 i_f1 = t2441 i_f2 = t2443 ).
-    APPEND t2439 TO t2438->items.
-    DATA(t2447) = t1302.
-    DATA t2448 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2448.
-    DATA(t2449) = |st_3dlength|.
-    DATA t2450 TYPE int8.
-    DATA(t2451) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2450 = t2451.
-    DATA t2452 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2452.
-    DATA t2453 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2453.
-    DATA t2454 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2454.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2454 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2455) = |v915|.
-    t2453 = t2454->get( p0 = t2455 ).
-    t2452 = t2453.
-    t2448 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2449 i_f1 = t2450 i_f2 = t2452 ).
-    APPEND t2448 TO t2447->items.
-    DATA(t2456) = t1302.
-    DATA t2457 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2457.
-    DATA(t2458) = |st_asmvtgeom|.
-    DATA t2459 TYPE int8.
-    DATA(t2460) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2459 = t2460.
-    DATA t2461 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2461.
-    DATA t2462 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t2462.
-    DATA t2463 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2463.
-    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-    ENDIF.
-    t2463 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2464) = |v915|.
-    t2462 = t2463->get( p0 = t2464 ).
-    t2461 = t2462.
-    t2457 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2458 i_f1 = t2459 i_f2 = t2461 ).
-    APPEND t2457 TO t2456->items.
-    DATA(t2465) = t1302.
-    t1301 = t2465.
-    zcl_lnt_sql_function_module=>sql_spatial_function_defs = t1301.
+    t1945->load( ).
+    APPEND t1946 TO t1945->items.
+    t1945->save( ).
+    DATA(t1959) = CAST zlnt_runtime_arra_c22708faf2e3( t1929 ).
+    t1928 = t1959.
+    t1922 = NEW zcl_lnt_tuple_443ddf92( i_f0 = t1923 i_f1 = t1924 i_f2 = t1928 ).
+    t1921->load( ).
+    APPEND t1922 TO t1921->items.
+    t1921->save( ).
+    DATA(t1960) = CAST zlnt_runtime_arra_c22708faf2e3( t643 ).
+    t642 = t1960.
+    zcl_lnt_sql_function_module=>sql_named_function_defs = t642.
     IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
       zcl_lnt_sql_function_module=>zlnt_builtin_init_916c47d62a99( ).
     ENDIF.
-    DATA t2466 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1961 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t1961.
+    DATA t1962 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t1963 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t1963.
+    t1962 = t1963.
+    DATA(t1964) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t1965 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t1965.
+    DATA(t1966) = CONV string( |st_new_point| ).
+    DATA t1967 TYPE f.
+    DATA(t1968) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1967 = t1968.
+    DATA t1969 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1969.
+    DATA t1970 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1970.
+    DATA t1971 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1971.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1971 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1972) = CONV string( |v915| ).
+    t1970 = t1971->get( p0 = t1972 ).
+    t1969 = t1970.
+    t1965 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1966 i_f1 = t1967 i_f2 = t1969 ).
+    t1964->load( ).
+    APPEND t1965 TO t1964->items.
+    t1964->save( ).
+    DATA(t1973) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t1974 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t1974.
+    DATA(t1975) = CONV string( |st_new_pointz| ).
+    DATA t1976 TYPE f.
+    DATA(t1977) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1976 = t1977.
+    DATA t1978 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1978.
+    DATA t1979 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1979.
+    DATA t1980 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1980.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1980 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1981) = CONV string( |v915| ).
+    t1979 = t1980->get( p0 = t1981 ).
+    t1978 = t1979.
+    t1974 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1975 i_f1 = t1976 i_f2 = t1978 ).
+    t1973->load( ).
+    APPEND t1974 TO t1973->items.
+    t1973->save( ).
+    DATA(t1982) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t1983 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t1983.
+    DATA(t1984) = CONV string( |st_new_pointm| ).
+    DATA t1985 TYPE f.
+    DATA(t1986) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1985 = t1986.
+    DATA t1987 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1987.
+    DATA t1988 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1988.
+    DATA t1989 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1989.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1989 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1990) = CONV string( |v915| ).
+    t1988 = t1989->get( p0 = t1990 ).
+    t1987 = t1988.
+    t1983 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1984 i_f1 = t1985 i_f2 = t1987 ).
+    t1982->load( ).
+    APPEND t1983 TO t1982->items.
+    t1982->save( ).
+    DATA(t1991) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t1992 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t1992.
+    DATA(t1993) = CONV string( |st_new_pointzm| ).
+    DATA t1994 TYPE f.
+    DATA(t1995) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t1994 = t1995.
+    DATA t1996 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1996.
+    DATA t1997 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t1997.
+    DATA t1998 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t1998.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t1998 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t1999) = CONV string( |v915| ).
+    t1997 = t1998->get( p0 = t1999 ).
+    t1996 = t1997.
+    t1992 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t1993 i_f1 = t1994 i_f2 = t1996 ).
+    t1991->load( ).
+    APPEND t1992 TO t1991->items.
+    t1991->save( ).
+    DATA(t2000) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2001 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2001.
+    DATA(t2002) = CONV string( |st_new_linestring| ).
+    DATA t2003 TYPE f.
+    DATA(t2004) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2003 = t2004.
+    DATA t2005 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2005.
+    DATA t2006 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2006.
+    DATA t2007 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2007.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2007 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2008) = CONV string( |v915| ).
+    t2006 = t2007->get( p0 = t2008 ).
+    t2005 = t2006.
+    t2001 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2002 i_f1 = t2003 i_f2 = t2005 ).
+    t2000->load( ).
+    APPEND t2001 TO t2000->items.
+    t2000->save( ).
+    DATA(t2009) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2010 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2010.
+    DATA(t2011) = CONV string( |st_new_multilinestring| ).
+    DATA t2012 TYPE f.
+    DATA(t2013) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2012 = t2013.
+    DATA t2014 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2014.
+    DATA t2015 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2015.
+    DATA t2016 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2016.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2016 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2017) = CONV string( |v915| ).
+    t2015 = t2016->get( p0 = t2017 ).
+    t2014 = t2015.
+    t2010 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2011 i_f1 = t2012 i_f2 = t2014 ).
+    t2009->load( ).
+    APPEND t2010 TO t2009->items.
+    t2009->save( ).
+    DATA(t2018) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2019 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2019.
+    DATA(t2020) = CONV string( |st_new_polygon| ).
+    DATA t2021 TYPE f.
+    DATA(t2022) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2021 = t2022.
+    DATA t2023 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2023.
+    DATA t2024 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2024.
+    DATA t2025 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2025.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2025 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2026) = CONV string( |v915| ).
+    t2024 = t2025->get( p0 = t2026 ).
+    t2023 = t2024.
+    t2019 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2020 i_f1 = t2021 i_f2 = t2023 ).
+    t2018->load( ).
+    APPEND t2019 TO t2018->items.
+    t2018->save( ).
+    DATA(t2027) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2028 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2028.
+    DATA(t2029) = CONV string( |st_new_multipolygon| ).
+    DATA t2030 TYPE f.
+    DATA(t2031) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2030 = t2031.
+    DATA t2032 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2032.
+    DATA t2033 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2033.
+    DATA t2034 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2034.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2034 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2035) = CONV string( |v915| ).
+    t2033 = t2034->get( p0 = t2035 ).
+    t2032 = t2033.
+    t2028 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2029 i_f1 = t2030 i_f2 = t2032 ).
+    t2027->load( ).
+    APPEND t2028 TO t2027->items.
+    t2027->save( ).
+    DATA(t2036) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2037 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2037.
+    DATA(t2038) = CONV string( |st_new_multipoint| ).
+    DATA t2039 TYPE f.
+    DATA(t2040) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2039 = t2040.
+    DATA t2041 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2041.
+    DATA t2042 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2042.
+    DATA t2043 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2043.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2043 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2044) = CONV string( |v915| ).
+    t2042 = t2043->get( p0 = t2044 ).
+    t2041 = t2042.
+    t2037 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2038 i_f1 = t2039 i_f2 = t2041 ).
+    t2036->load( ).
+    APPEND t2037 TO t2036->items.
+    t2036->save( ).
+    DATA(t2045) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2046 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2046.
+    DATA(t2047) = CONV string( |st_new_circularstring| ).
+    DATA t2048 TYPE f.
+    DATA(t2049) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2048 = t2049.
+    DATA t2050 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2050.
+    DATA t2051 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2051.
+    DATA t2052 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2052.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2052 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2053) = CONV string( |v915| ).
+    t2051 = t2052->get( p0 = t2053 ).
+    t2050 = t2051.
+    t2046 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2047 i_f1 = t2048 i_f2 = t2050 ).
+    t2045->load( ).
+    APPEND t2046 TO t2045->items.
+    t2045->save( ).
+    DATA(t2054) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2055 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2055.
+    DATA(t2056) = CONV string( |st_new_geometrycollection| ).
+    DATA t2057 TYPE f.
+    DATA(t2058) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2057 = t2058.
+    DATA t2059 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2059.
+    DATA t2060 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2060.
+    DATA t2061 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2061.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2061 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2062) = CONV string( |v915| ).
+    t2060 = t2061->get( p0 = t2062 ).
+    t2059 = t2060.
+    t2055 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2056 i_f1 = t2057 i_f2 = t2059 ).
+    t2054->load( ).
+    APPEND t2055 TO t2054->items.
+    t2054->save( ).
+    DATA(t2063) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2064 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2064.
+    DATA(t2065) = CONV string( |st_srid| ).
+    DATA t2066 TYPE f.
+    DATA(t2067) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2066 = t2067.
+    DATA t2068 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2068.
+    DATA t2069 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2069.
+    DATA t2070 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2070.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2070 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2071) = CONV string( |v915| ).
+    t2069 = t2070->get( p0 = t2071 ).
+    t2068 = t2069.
+    t2064 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2065 i_f1 = t2066 i_f2 = t2068 ).
+    t2063->load( ).
+    APPEND t2064 TO t2063->items.
+    t2063->save( ).
+    DATA(t2072) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2073 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2073.
+    DATA(t2074) = CONV string( |st_relate| ).
+    DATA t2075 TYPE f.
+    DATA(t2076) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2075 = t2076.
+    DATA t2077 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2077.
+    DATA t2078 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2078.
+    DATA t2079 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2079.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2079 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2080) = CONV string( |v915| ).
+    t2078 = t2079->get( p0 = t2080 ).
+    t2077 = t2078.
+    t2073 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2074 i_f1 = t2075 i_f2 = t2077 ).
+    t2072->load( ).
+    APPEND t2073 TO t2072->items.
+    t2072->save( ).
+    DATA(t2081) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2082 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2082.
+    DATA(t2083) = CONV string( |st_geomfromtext| ).
+    DATA t2084 TYPE f.
+    DATA(t2085) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2084 = t2085.
+    DATA t2086 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2086.
+    DATA t2087 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2087.
+    DATA t2088 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2088.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2088 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2089) = CONV string( |v915| ).
+    t2087 = t2088->get( p0 = t2089 ).
+    t2086 = t2087.
+    t2082 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2083 i_f1 = t2084 i_f2 = t2086 ).
+    t2081->load( ).
+    APPEND t2082 TO t2081->items.
+    t2081->save( ).
+    DATA(t2090) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2091 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2091.
+    DATA(t2092) = CONV string( |st_geomfromwkt| ).
+    DATA t2093 TYPE f.
+    DATA(t2094) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2093 = t2094.
+    DATA t2095 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2095.
+    DATA t2096 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2096.
+    DATA t2097 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2097.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2097 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2098) = CONV string( |v915| ).
+    t2096 = t2097->get( p0 = t2098 ).
+    t2095 = t2096.
+    t2091 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2092 i_f1 = t2093 i_f2 = t2095 ).
+    t2090->load( ).
+    APPEND t2091 TO t2090->items.
+    t2090->save( ).
+    DATA(t2099) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2100 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2100.
+    DATA(t2101) = CONV string( |st_geomfromewkt| ).
+    DATA t2102 TYPE f.
+    DATA(t2103) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2102 = t2103.
+    DATA t2104 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2104.
+    DATA t2105 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2105.
+    DATA t2106 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2106.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2106 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2107) = CONV string( |v915| ).
+    t2105 = t2106->get( p0 = t2107 ).
+    t2104 = t2105.
+    t2100 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2101 i_f1 = t2102 i_f2 = t2104 ).
+    t2099->load( ).
+    APPEND t2100 TO t2099->items.
+    t2099->save( ).
+    DATA(t2108) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2109 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2109.
+    DATA(t2110) = CONV string( |st_geomfromwkb| ).
+    DATA t2111 TYPE f.
+    DATA(t2112) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2111 = t2112.
+    DATA t2113 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2113.
+    DATA t2114 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2114.
+    DATA t2115 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2115.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2115 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2116) = CONV string( |v915| ).
+    t2114 = t2115->get( p0 = t2116 ).
+    t2113 = t2114.
+    t2109 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2110 i_f1 = t2111 i_f2 = t2113 ).
+    t2108->load( ).
+    APPEND t2109 TO t2108->items.
+    t2108->save( ).
+    DATA(t2117) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2118 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2118.
+    DATA(t2119) = CONV string( |st_geomfromewkb| ).
+    DATA t2120 TYPE f.
+    DATA(t2121) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2120 = t2121.
+    DATA t2122 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2122.
+    DATA t2123 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2123.
+    DATA t2124 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2124.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2124 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2125) = CONV string( |v915| ).
+    t2123 = t2124->get( p0 = t2125 ).
+    t2122 = t2123.
+    t2118 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2119 i_f1 = t2120 i_f2 = t2122 ).
+    t2117->load( ).
+    APPEND t2118 TO t2117->items.
+    t2117->save( ).
+    DATA(t2126) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2127 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2127.
+    DATA(t2128) = CONV string( |st_geomfromgeojson| ).
+    DATA t2129 TYPE f.
+    DATA(t2130) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2129 = t2130.
+    DATA t2131 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2131.
+    DATA t2132 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2132.
+    DATA t2133 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2133.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2133 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2134) = CONV string( |v915| ).
+    t2132 = t2133->get( p0 = t2134 ).
+    t2131 = t2132.
+    t2127 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2128 i_f1 = t2129 i_f2 = t2131 ).
+    t2126->load( ).
+    APPEND t2127 TO t2126->items.
+    t2126->save( ).
+    DATA(t2135) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2136 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2136.
+    DATA(t2137) = CONV string( |st_geomfromesrijson| ).
+    DATA t2138 TYPE f.
+    DATA(t2139) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2138 = t2139.
+    DATA t2140 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2140.
+    DATA t2141 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2141.
+    DATA t2142 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2142.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2142 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2143) = CONV string( |v915| ).
+    t2141 = t2142->get( p0 = t2143 ).
+    t2140 = t2141.
+    t2136 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2137 i_f1 = t2138 i_f2 = t2140 ).
+    t2135->load( ).
+    APPEND t2136 TO t2135->items.
+    t2135->save( ).
+    DATA(t2144) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2145 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2145.
+    DATA(t2146) = CONV string( |st_geomfromgeohash| ).
+    DATA t2147 TYPE f.
+    DATA(t2148) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2147 = t2148.
+    DATA t2149 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2149.
+    DATA t2150 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2150.
+    DATA t2151 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2151.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2151 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2152) = CONV string( |v915| ).
+    t2150 = t2151->get( p0 = t2152 ).
+    t2149 = t2150.
+    t2145 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2146 i_f1 = t2147 i_f2 = t2149 ).
+    t2144->load( ).
+    APPEND t2145 TO t2144->items.
+    t2144->save( ).
+    DATA(t2153) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2154 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2154.
+    DATA(t2155) = CONV string( |st_pointfromtext| ).
+    DATA t2156 TYPE f.
+    DATA(t2157) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2156 = t2157.
+    DATA t2158 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2158.
+    DATA t2159 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2159.
+    DATA t2160 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2160.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2160 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2161) = CONV string( |v915| ).
+    t2159 = t2160->get( p0 = t2161 ).
+    t2158 = t2159.
+    t2154 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2155 i_f1 = t2156 i_f2 = t2158 ).
+    t2153->load( ).
+    APPEND t2154 TO t2153->items.
+    t2153->save( ).
+    DATA(t2162) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2163 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2163.
+    DATA(t2164) = CONV string( |st_pointfromgeohash| ).
+    DATA t2165 TYPE f.
+    DATA(t2166) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2165 = t2166.
+    DATA t2167 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2167.
+    DATA t2168 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2168.
+    DATA t2169 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2169.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2169 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2170) = CONV string( |v915| ).
+    t2168 = t2169->get( p0 = t2170 ).
+    t2167 = t2168.
+    t2163 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2164 i_f1 = t2165 i_f2 = t2167 ).
+    t2162->load( ).
+    APPEND t2163 TO t2162->items.
+    t2162->save( ).
+    DATA(t2171) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2172 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2172.
+    DATA(t2173) = CONV string( |st_makeline| ).
+    DATA t2174 TYPE f.
+    DATA(t2175) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2174 = t2175.
+    DATA t2176 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2176.
+    DATA t2177 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2177.
+    DATA t2178 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2178.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2178 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2179) = CONV string( |v915| ).
+    t2177 = t2178->get( p0 = t2179 ).
+    t2176 = t2177.
+    t2172 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2173 i_f1 = t2174 i_f2 = t2176 ).
+    t2171->load( ).
+    APPEND t2172 TO t2171->items.
+    t2171->save( ).
+    DATA(t2180) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2181 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2181.
+    DATA(t2182) = CONV string( |st_makepolygon| ).
+    DATA t2183 TYPE f.
+    DATA(t2184) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2183 = t2184.
+    DATA t2185 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2185.
+    DATA t2186 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2186.
+    DATA t2187 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2187.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2187 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2188) = CONV string( |v915| ).
+    t2186 = t2187->get( p0 = t2188 ).
+    t2185 = t2186.
+    t2181 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2182 i_f1 = t2183 i_f2 = t2185 ).
+    t2180->load( ).
+    APPEND t2181 TO t2180->items.
+    t2180->save( ).
+    DATA(t2189) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2190 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2190.
+    DATA(t2191) = CONV string( |st_x| ).
+    DATA t2192 TYPE f.
+    DATA(t2193) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2192 = t2193.
+    DATA t2194 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2194.
+    DATA t2195 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2195.
+    DATA t2196 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2196.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2196 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2197) = CONV string( |v915| ).
+    t2195 = t2196->get( p0 = t2197 ).
+    t2194 = t2195.
+    t2190 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2191 i_f1 = t2192 i_f2 = t2194 ).
+    t2189->load( ).
+    APPEND t2190 TO t2189->items.
+    t2189->save( ).
+    DATA(t2198) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2199 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2199.
+    DATA(t2200) = CONV string( |st_y| ).
+    DATA t2201 TYPE f.
+    DATA(t2202) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2201 = t2202.
+    DATA t2203 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2203.
+    DATA t2204 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2204.
+    DATA t2205 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2205.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2205 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2206) = CONV string( |v915| ).
+    t2204 = t2205->get( p0 = t2206 ).
+    t2203 = t2204.
+    t2199 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2200 i_f1 = t2201 i_f2 = t2203 ).
+    t2198->load( ).
+    APPEND t2199 TO t2198->items.
+    t2198->save( ).
+    DATA(t2207) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2208 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2208.
+    DATA(t2209) = CONV string( |st_z| ).
+    DATA t2210 TYPE f.
+    DATA(t2211) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2210 = t2211.
+    DATA t2212 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2212.
+    DATA t2213 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2213.
+    DATA t2214 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2214.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2214 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2215) = CONV string( |v915| ).
+    t2213 = t2214->get( p0 = t2215 ).
+    t2212 = t2213.
+    t2208 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2209 i_f1 = t2210 i_f2 = t2212 ).
+    t2207->load( ).
+    APPEND t2208 TO t2207->items.
+    t2207->save( ).
+    DATA(t2216) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2217 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2217.
+    DATA(t2218) = CONV string( |st_m| ).
+    DATA t2219 TYPE f.
+    DATA(t2220) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2219 = t2220.
+    DATA t2221 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2221.
+    DATA t2222 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2222.
+    DATA t2223 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2223.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2223 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2224) = CONV string( |v915| ).
+    t2222 = t2223->get( p0 = t2224 ).
+    t2221 = t2222.
+    t2217 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2218 i_f1 = t2219 i_f2 = t2221 ).
+    t2216->load( ).
+    APPEND t2217 TO t2216->items.
+    t2216->save( ).
+    DATA(t2225) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2226 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2226.
+    DATA(t2227) = CONV string( |st_xmax| ).
+    DATA t2228 TYPE f.
+    DATA(t2229) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2228 = t2229.
+    DATA t2230 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2230.
+    DATA t2231 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2231.
+    DATA t2232 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2232.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2232 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2233) = CONV string( |v915| ).
+    t2231 = t2232->get( p0 = t2233 ).
+    t2230 = t2231.
+    t2226 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2227 i_f1 = t2228 i_f2 = t2230 ).
+    t2225->load( ).
+    APPEND t2226 TO t2225->items.
+    t2225->save( ).
+    DATA(t2234) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2235 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2235.
+    DATA(t2236) = CONV string( |st_xmin| ).
+    DATA t2237 TYPE f.
+    DATA(t2238) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2237 = t2238.
+    DATA t2239 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2239.
+    DATA t2240 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2240.
+    DATA t2241 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2241.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2241 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2242) = CONV string( |v915| ).
+    t2240 = t2241->get( p0 = t2242 ).
+    t2239 = t2240.
+    t2235 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2236 i_f1 = t2237 i_f2 = t2239 ).
+    t2234->load( ).
+    APPEND t2235 TO t2234->items.
+    t2234->save( ).
+    DATA(t2243) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2244 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2244.
+    DATA(t2245) = CONV string( |st_ymax| ).
+    DATA t2246 TYPE f.
+    DATA(t2247) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2246 = t2247.
+    DATA t2248 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2248.
+    DATA t2249 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2249.
+    DATA t2250 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2250.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2250 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2251) = CONV string( |v915| ).
+    t2249 = t2250->get( p0 = t2251 ).
+    t2248 = t2249.
+    t2244 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2245 i_f1 = t2246 i_f2 = t2248 ).
+    t2243->load( ).
+    APPEND t2244 TO t2243->items.
+    t2243->save( ).
+    DATA(t2252) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2253 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2253.
+    DATA(t2254) = CONV string( |st_ymin| ).
+    DATA t2255 TYPE f.
+    DATA(t2256) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2255 = t2256.
+    DATA t2257 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2257.
+    DATA t2258 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2258.
+    DATA t2259 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2259.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2259 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2260) = CONV string( |v915| ).
+    t2258 = t2259->get( p0 = t2260 ).
+    t2257 = t2258.
+    t2253 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2254 i_f1 = t2255 i_f2 = t2257 ).
+    t2252->load( ).
+    APPEND t2253 TO t2252->items.
+    t2252->save( ).
+    DATA(t2261) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2262 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2262.
+    DATA(t2263) = CONV string( |st_zmax| ).
+    DATA t2264 TYPE f.
+    DATA(t2265) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2264 = t2265.
+    DATA t2266 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2266.
+    DATA t2267 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2267.
+    DATA t2268 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2268.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2268 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2269) = CONV string( |v915| ).
+    t2267 = t2268->get( p0 = t2269 ).
+    t2266 = t2267.
+    t2262 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2263 i_f1 = t2264 i_f2 = t2266 ).
+    t2261->load( ).
+    APPEND t2262 TO t2261->items.
+    t2261->save( ).
+    DATA(t2270) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2271 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2271.
+    DATA(t2272) = CONV string( |st_zmin| ).
+    DATA t2273 TYPE f.
+    DATA(t2274) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2273 = t2274.
+    DATA t2275 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2275.
+    DATA t2276 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2276.
+    DATA t2277 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2277.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2277 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2278) = CONV string( |v915| ).
+    t2276 = t2277->get( p0 = t2278 ).
+    t2275 = t2276.
+    t2271 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2272 i_f1 = t2273 i_f2 = t2275 ).
+    t2270->load( ).
+    APPEND t2271 TO t2270->items.
+    t2270->save( ).
+    DATA(t2279) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2280 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2280.
+    DATA(t2281) = CONV string( |st_mmax| ).
+    DATA t2282 TYPE f.
+    DATA(t2283) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2282 = t2283.
+    DATA t2284 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2284.
+    DATA t2285 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2285.
+    DATA t2286 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2286.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2286 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2287) = CONV string( |v915| ).
+    t2285 = t2286->get( p0 = t2287 ).
+    t2284 = t2285.
+    t2280 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2281 i_f1 = t2282 i_f2 = t2284 ).
+    t2279->load( ).
+    APPEND t2280 TO t2279->items.
+    t2279->save( ).
+    DATA(t2288) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2289 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2289.
+    DATA(t2290) = CONV string( |st_mmin| ).
+    DATA t2291 TYPE f.
+    DATA(t2292) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2291 = t2292.
+    DATA t2293 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2293.
+    DATA t2294 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2294.
+    DATA t2295 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2295.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2295 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2296) = CONV string( |v915| ).
+    t2294 = t2295->get( p0 = t2296 ).
+    t2293 = t2294.
+    t2289 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2290 i_f1 = t2291 i_f2 = t2293 ).
+    t2288->load( ).
+    APPEND t2289 TO t2288->items.
+    t2288->save( ).
+    DATA(t2297) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2298 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2298.
+    DATA(t2299) = CONV string( |st_area| ).
+    DATA t2300 TYPE f.
+    DATA(t2301) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2300 = t2301.
+    DATA t2302 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2302.
+    DATA t2303 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2303.
+    DATA t2304 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2304.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2304 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2305) = CONV string( |v915| ).
+    t2303 = t2304->get( p0 = t2305 ).
+    t2302 = t2303.
+    t2298 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2299 i_f1 = t2300 i_f2 = t2302 ).
+    t2297->load( ).
+    APPEND t2298 TO t2297->items.
+    t2297->save( ).
+    DATA(t2306) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2307 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2307.
+    DATA(t2308) = CONV string( |st_length| ).
+    DATA t2309 TYPE f.
+    DATA(t2310) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2309 = t2310.
+    DATA t2311 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2311.
+    DATA t2312 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2312.
+    DATA t2313 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2313.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2313 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2314) = CONV string( |v915| ).
+    t2312 = t2313->get( p0 = t2314 ).
+    t2311 = t2312.
+    t2307 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2308 i_f1 = t2309 i_f2 = t2311 ).
+    t2306->load( ).
+    APPEND t2307 TO t2306->items.
+    t2306->save( ).
+    DATA(t2315) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2316 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2316.
+    DATA(t2317) = CONV string( |st_perimeter| ).
+    DATA t2318 TYPE f.
+    DATA(t2319) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2318 = t2319.
+    DATA t2320 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2320.
+    DATA t2321 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2321.
+    DATA t2322 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2322.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2322 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2323) = CONV string( |v915| ).
+    t2321 = t2322->get( p0 = t2323 ).
+    t2320 = t2321.
+    t2316 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2317 i_f1 = t2318 i_f2 = t2320 ).
+    t2315->load( ).
+    APPEND t2316 TO t2315->items.
+    t2315->save( ).
+    DATA(t2324) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2325 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2325.
+    DATA(t2326) = CONV string( |st_dimension| ).
+    DATA t2327 TYPE f.
+    DATA(t2328) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2327 = t2328.
+    DATA t2329 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2329.
+    DATA t2330 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2330.
+    DATA t2331 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2331.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2331 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2332) = CONV string( |v915| ).
+    t2330 = t2331->get( p0 = t2332 ).
+    t2329 = t2330.
+    t2325 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2326 i_f1 = t2327 i_f2 = t2329 ).
+    t2324->load( ).
+    APPEND t2325 TO t2324->items.
+    t2324->save( ).
+    DATA(t2333) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2334 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2334.
+    DATA(t2335) = CONV string( |st_coorddim| ).
+    DATA t2336 TYPE f.
+    DATA(t2337) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2336 = t2337.
+    DATA t2338 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2338.
+    DATA t2339 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2339.
+    DATA t2340 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2340.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2340 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2341) = CONV string( |v915| ).
+    t2339 = t2340->get( p0 = t2341 ).
+    t2338 = t2339.
+    t2334 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2335 i_f1 = t2336 i_f2 = t2338 ).
+    t2333->load( ).
+    APPEND t2334 TO t2333->items.
+    t2333->save( ).
+    DATA(t2342) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2343 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2343.
+    DATA(t2344) = CONV string( |st_geometrytype| ).
+    DATA t2345 TYPE f.
+    DATA(t2346) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2345 = t2346.
+    DATA t2347 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2347.
+    DATA t2348 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2348.
+    DATA t2349 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2349.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2349 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2350) = CONV string( |v915| ).
+    t2348 = t2349->get( p0 = t2350 ).
+    t2347 = t2348.
+    t2343 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2344 i_f1 = t2345 i_f2 = t2347 ).
+    t2342->load( ).
+    APPEND t2343 TO t2342->items.
+    t2342->save( ).
+    DATA(t2351) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2352 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2352.
+    DATA(t2353) = CONV string( |st_isempty| ).
+    DATA t2354 TYPE f.
+    DATA(t2355) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2354 = t2355.
+    DATA t2356 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2356.
+    DATA t2357 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2357.
+    DATA t2358 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2358.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2358 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2359) = CONV string( |v915| ).
+    t2357 = t2358->get( p0 = t2359 ).
+    t2356 = t2357.
+    t2352 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2353 i_f1 = t2354 i_f2 = t2356 ).
+    t2351->load( ).
+    APPEND t2352 TO t2351->items.
+    t2351->save( ).
+    DATA(t2360) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2361 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2361.
+    DATA(t2362) = CONV string( |st_issimple| ).
+    DATA t2363 TYPE f.
+    DATA(t2364) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2363 = t2364.
+    DATA t2365 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2365.
+    DATA t2366 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2366.
+    DATA t2367 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2367.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2367 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2368) = CONV string( |v915| ).
+    t2366 = t2367->get( p0 = t2368 ).
+    t2365 = t2366.
+    t2361 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2362 i_f1 = t2363 i_f2 = t2365 ).
+    t2360->load( ).
+    APPEND t2361 TO t2360->items.
+    t2360->save( ).
+    DATA(t2369) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2370 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2370.
+    DATA(t2371) = CONV string( |st_isclosed| ).
+    DATA t2372 TYPE f.
+    DATA(t2373) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2372 = t2373.
+    DATA t2374 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2374.
+    DATA t2375 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2375.
+    DATA t2376 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2376.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2376 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2377) = CONV string( |v915| ).
+    t2375 = t2376->get( p0 = t2377 ).
+    t2374 = t2375.
+    t2370 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2371 i_f1 = t2372 i_f2 = t2374 ).
+    t2369->load( ).
+    APPEND t2370 TO t2369->items.
+    t2369->save( ).
+    DATA(t2378) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2379 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2379.
+    DATA(t2380) = CONV string( |st_isring| ).
+    DATA t2381 TYPE f.
+    DATA(t2382) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2381 = t2382.
+    DATA t2383 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2383.
+    DATA t2384 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2384.
+    DATA t2385 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2385.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2385 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2386) = CONV string( |v915| ).
+    t2384 = t2385->get( p0 = t2386 ).
+    t2383 = t2384.
+    t2379 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2380 i_f1 = t2381 i_f2 = t2383 ).
+    t2378->load( ).
+    APPEND t2379 TO t2378->items.
+    t2378->save( ).
+    DATA(t2387) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2388 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2388.
+    DATA(t2389) = CONV string( |st_isvalid| ).
+    DATA t2390 TYPE f.
+    DATA(t2391) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2390 = t2391.
+    DATA t2392 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2392.
+    DATA t2393 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2393.
+    DATA t2394 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2394.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2394 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2395) = CONV string( |v915| ).
+    t2393 = t2394->get( p0 = t2395 ).
+    t2392 = t2393.
+    t2388 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2389 i_f1 = t2390 i_f2 = t2392 ).
+    t2387->load( ).
+    APPEND t2388 TO t2387->items.
+    t2387->save( ).
+    DATA(t2396) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2397 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2397.
+    DATA(t2398) = CONV string( |st_isvalidtrajectory| ).
+    DATA t2399 TYPE f.
+    DATA(t2400) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2399 = t2400.
+    DATA t2401 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2401.
+    DATA t2402 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2402.
+    DATA t2403 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2403.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2403 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2404) = CONV string( |v915| ).
+    t2402 = t2403->get( p0 = t2404 ).
+    t2401 = t2402.
+    t2397 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2398 i_f1 = t2399 i_f2 = t2401 ).
+    t2396->load( ).
+    APPEND t2397 TO t2396->items.
+    t2396->save( ).
+    DATA(t2405) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2406 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2406.
+    DATA(t2407) = CONV string( |st_is3d| ).
+    DATA t2408 TYPE f.
+    DATA(t2409) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2408 = t2409.
+    DATA t2410 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2410.
+    DATA t2411 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2411.
+    DATA t2412 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2412.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2412 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2413) = CONV string( |v915| ).
+    t2411 = t2412->get( p0 = t2413 ).
+    t2410 = t2411.
+    t2406 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2407 i_f1 = t2408 i_f2 = t2410 ).
+    t2405->load( ).
+    APPEND t2406 TO t2405->items.
+    t2405->save( ).
+    DATA(t2414) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2415 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2415.
+    DATA(t2416) = CONV string( |st_ismeasured| ).
+    DATA t2417 TYPE f.
+    DATA(t2418) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2417 = t2418.
+    DATA t2419 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2419.
+    DATA t2420 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2420.
+    DATA t2421 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2421.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2421 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2422) = CONV string( |v915| ).
+    t2420 = t2421->get( p0 = t2422 ).
+    t2419 = t2420.
+    t2415 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2416 i_f1 = t2417 i_f2 = t2419 ).
+    t2414->load( ).
+    APPEND t2415 TO t2414->items.
+    t2414->save( ).
+    DATA(t2423) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2424 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2424.
+    DATA(t2425) = CONV string( |st_invalidreason| ).
+    DATA t2426 TYPE f.
+    DATA(t2427) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2426 = t2427.
+    DATA t2428 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2428.
+    DATA t2429 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2429.
+    DATA t2430 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2430.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2430 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2431) = CONV string( |v915| ).
+    t2429 = t2430->get( p0 = t2431 ).
+    t2428 = t2429.
+    t2424 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2425 i_f1 = t2426 i_f2 = t2428 ).
+    t2423->load( ).
+    APPEND t2424 TO t2423->items.
+    t2423->save( ).
+    DATA(t2432) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2433 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2433.
+    DATA(t2434) = CONV string( |st_numpoints| ).
+    DATA t2435 TYPE f.
+    DATA(t2436) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2435 = t2436.
+    DATA t2437 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2437.
+    DATA t2438 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2438.
+    DATA t2439 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2439.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2439 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2440) = CONV string( |v915| ).
+    t2438 = t2439->get( p0 = t2440 ).
+    t2437 = t2438.
+    t2433 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2434 i_f1 = t2435 i_f2 = t2437 ).
+    t2432->load( ).
+    APPEND t2433 TO t2432->items.
+    t2432->save( ).
+    DATA(t2441) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2442 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2442.
+    DATA(t2443) = CONV string( |st_numgeometries| ).
+    DATA t2444 TYPE f.
+    DATA(t2445) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2444 = t2445.
+    DATA t2446 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2446.
+    DATA t2447 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2447.
+    DATA t2448 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2448.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2448 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2449) = CONV string( |v915| ).
+    t2447 = t2448->get( p0 = t2449 ).
+    t2446 = t2447.
+    t2442 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2443 i_f1 = t2444 i_f2 = t2446 ).
+    t2441->load( ).
+    APPEND t2442 TO t2441->items.
+    t2441->save( ).
+    DATA(t2450) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2451 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2451.
+    DATA(t2452) = CONV string( |st_numinteriorring| ).
+    DATA t2453 TYPE f.
+    DATA(t2454) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2453 = t2454.
+    DATA t2455 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2455.
+    DATA t2456 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2456.
+    DATA t2457 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2457.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2457 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2458) = CONV string( |v915| ).
+    t2456 = t2457->get( p0 = t2458 ).
+    t2455 = t2456.
+    t2451 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2452 i_f1 = t2453 i_f2 = t2455 ).
+    t2450->load( ).
+    APPEND t2451 TO t2450->items.
+    t2450->save( ).
+    DATA(t2459) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2460 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2460.
+    DATA(t2461) = CONV string( |st_numinteriorrings| ).
+    DATA t2462 TYPE f.
+    DATA(t2463) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2462 = t2463.
+    DATA t2464 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2464.
+    DATA t2465 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2465.
+    DATA t2466 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2466.
-    DATA t2467 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2468 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t2468.
-    t2467 = t2468.
-    DATA(t2469) = t2467.
-    DATA t2470 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2470.
-    DATA(t2471) = |st_assvgaggr|.
-    DATA t2472 TYPE int8.
-    DATA(t2473) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2472 = t2473.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2466 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2467) = CONV string( |v915| ).
+    t2465 = t2466->get( p0 = t2467 ).
+    t2464 = t2465.
+    t2460 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2461 i_f1 = t2462 i_f2 = t2464 ).
+    t2459->load( ).
+    APPEND t2460 TO t2459->items.
+    t2459->save( ).
+    DATA(t2468) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2469 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2469.
+    DATA(t2470) = CONV string( |st_envelope| ).
+    DATA t2471 TYPE f.
+    DATA(t2472) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2471 = t2472.
+    DATA t2473 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2473.
     DATA t2474 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2474.
-    DATA t2475 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2475 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2475.
-    DATA t2476 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2476.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2476 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2477) = |v915|.
-    t2475 = t2476->get( p0 = t2477 ).
-    t2474 = t2475.
-    t2470 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2471 i_f1 = t2472 i_f2 = t2474 ).
-    APPEND t2470 TO t2469->items.
-    DATA(t2478) = t2467.
-    DATA t2479 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2479.
-    DATA(t2480) = |st_collectaggr|.
-    DATA t2481 TYPE int8.
-    DATA(t2482) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2481 = t2482.
+    t2475 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2476) = CONV string( |v915| ).
+    t2474 = t2475->get( p0 = t2476 ).
+    t2473 = t2474.
+    t2469 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2470 i_f1 = t2471 i_f2 = t2473 ).
+    t2468->load( ).
+    APPEND t2469 TO t2468->items.
+    t2468->save( ).
+    DATA(t2477) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2478 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2478.
+    DATA(t2479) = CONV string( |st_boundary| ).
+    DATA t2480 TYPE f.
+    DATA(t2481) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2480 = t2481.
+    DATA t2482 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2482.
     DATA t2483 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2483.
-    DATA t2484 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2484 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2484.
-    DATA t2485 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2485.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2485 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2486) = |v915|.
-    t2484 = t2485->get( p0 = t2486 ).
-    t2483 = t2484.
-    t2479 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2480 i_f1 = t2481 i_f2 = t2483 ).
-    APPEND t2479 TO t2478->items.
-    DATA(t2487) = t2467.
-    DATA t2488 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2488.
-    DATA(t2489) = |st_concavehullaggr|.
-    DATA t2490 TYPE int8.
-    DATA(t2491) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2490 = t2491.
+    t2484 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2485) = CONV string( |v915| ).
+    t2483 = t2484->get( p0 = t2485 ).
+    t2482 = t2483.
+    t2478 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2479 i_f1 = t2480 i_f2 = t2482 ).
+    t2477->load( ).
+    APPEND t2478 TO t2477->items.
+    t2477->save( ).
+    DATA(t2486) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2487 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2487.
+    DATA(t2488) = CONV string( |st_exteriorring| ).
+    DATA t2489 TYPE f.
+    DATA(t2490) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2489 = t2490.
+    DATA t2491 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2491.
     DATA t2492 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2492.
-    DATA t2493 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2493 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2493.
-    DATA t2494 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2494.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2494 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2495) = |v915|.
-    t2493 = t2494->get( p0 = t2495 ).
-    t2492 = t2493.
-    t2488 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2489 i_f1 = t2490 i_f2 = t2492 ).
-    APPEND t2488 TO t2487->items.
-    DATA(t2496) = t2467.
-    DATA t2497 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2497.
-    DATA(t2498) = |st_convexhullaggr|.
-    DATA t2499 TYPE int8.
-    DATA(t2500) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2499 = t2500.
+    t2493 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2494) = CONV string( |v915| ).
+    t2492 = t2493->get( p0 = t2494 ).
+    t2491 = t2492.
+    t2487 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2488 i_f1 = t2489 i_f2 = t2491 ).
+    t2486->load( ).
+    APPEND t2487 TO t2486->items.
+    t2486->save( ).
+    DATA(t2495) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2496 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2496.
+    DATA(t2497) = CONV string( |st_startpoint| ).
+    DATA t2498 TYPE f.
+    DATA(t2499) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2498 = t2499.
+    DATA t2500 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2500.
     DATA t2501 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2501.
-    DATA t2502 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2502 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2502.
-    DATA t2503 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2503.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2503 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2504) = |v915|.
-    t2502 = t2503->get( p0 = t2504 ).
-    t2501 = t2502.
-    t2497 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2498 i_f1 = t2499 i_f2 = t2501 ).
-    APPEND t2497 TO t2496->items.
-    DATA(t2505) = t2467.
-    DATA t2506 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2506.
-    DATA(t2507) = |st_envelopeaggr|.
-    DATA t2508 TYPE int8.
-    DATA(t2509) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2508 = t2509.
+    t2502 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2503) = CONV string( |v915| ).
+    t2501 = t2502->get( p0 = t2503 ).
+    t2500 = t2501.
+    t2496 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2497 i_f1 = t2498 i_f2 = t2500 ).
+    t2495->load( ).
+    APPEND t2496 TO t2495->items.
+    t2495->save( ).
+    DATA(t2504) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2505 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2505.
+    DATA(t2506) = CONV string( |st_endpoint| ).
+    DATA t2507 TYPE f.
+    DATA(t2508) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2507 = t2508.
+    DATA t2509 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2509.
     DATA t2510 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2510.
-    DATA t2511 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2511 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2511.
-    DATA t2512 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2512.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2512 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2513) = |v915|.
-    t2511 = t2512->get( p0 = t2513 ).
-    t2510 = t2511.
-    t2506 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2507 i_f1 = t2508 i_f2 = t2510 ).
-    APPEND t2506 TO t2505->items.
-    DATA(t2514) = t2467.
-    DATA t2515 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2515.
-    DATA(t2516) = |st_intersectionaggr|.
-    DATA t2517 TYPE int8.
-    DATA(t2518) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2517 = t2518.
+    t2511 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2512) = CONV string( |v915| ).
+    t2510 = t2511->get( p0 = t2512 ).
+    t2509 = t2510.
+    t2505 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2506 i_f1 = t2507 i_f2 = t2509 ).
+    t2504->load( ).
+    APPEND t2505 TO t2504->items.
+    t2504->save( ).
+    DATA(t2513) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2514 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2514.
+    DATA(t2515) = CONV string( |st_centroid| ).
+    DATA t2516 TYPE f.
+    DATA(t2517) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2516 = t2517.
+    DATA t2518 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2518.
     DATA t2519 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2519.
-    DATA t2520 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2520 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2520.
-    DATA t2521 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2521.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2521 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2522) = |v915|.
-    t2520 = t2521->get( p0 = t2522 ).
-    t2519 = t2520.
-    t2515 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2516 i_f1 = t2517 i_f2 = t2519 ).
-    APPEND t2515 TO t2514->items.
-    DATA(t2523) = t2467.
-    DATA t2524 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2524.
-    DATA(t2525) = |st_unionaggr|.
-    DATA t2526 TYPE int8.
-    DATA(t2527) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2526 = t2527.
+    t2520 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2521) = CONV string( |v915| ).
+    t2519 = t2520->get( p0 = t2521 ).
+    t2518 = t2519.
+    t2514 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2515 i_f1 = t2516 i_f2 = t2518 ).
+    t2513->load( ).
+    APPEND t2514 TO t2513->items.
+    t2513->save( ).
+    DATA(t2522) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2523 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2523.
+    DATA(t2524) = CONV string( |st_pointonsurface| ).
+    DATA t2525 TYPE f.
+    DATA(t2526) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2525 = t2526.
+    DATA t2527 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2527.
     DATA t2528 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2528.
-    DATA t2529 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2529 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2529.
-    DATA t2530 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2530.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2530 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2531) = |v915|.
-    t2529 = t2530->get( p0 = t2531 ).
-    t2528 = t2529.
-    t2524 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2525 i_f1 = t2526 i_f2 = t2528 ).
-    APPEND t2524 TO t2523->items.
-    DATA(t2532) = t2467.
-    DATA t2533 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2533.
-    DATA(t2534) = |st_alphashapeaggr|.
-    DATA t2535 TYPE int8.
-    DATA(t2536) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2535 = t2536.
+    t2529 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2530) = CONV string( |v915| ).
+    t2528 = t2529->get( p0 = t2530 ).
+    t2527 = t2528.
+    t2523 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2524 i_f1 = t2525 i_f2 = t2527 ).
+    t2522->load( ).
+    APPEND t2523 TO t2522->items.
+    t2522->save( ).
+    DATA(t2531) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2532 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2532.
+    DATA(t2533) = CONV string( |st_convexhull| ).
+    DATA t2534 TYPE f.
+    DATA(t2535) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2534 = t2535.
+    DATA t2536 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2536.
     DATA t2537 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2537.
-    DATA t2538 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2538 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2538.
-    DATA t2539 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2539.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2539 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2540) = |v915|.
-    t2538 = t2539->get( p0 = t2540 ).
-    t2537 = t2538.
-    t2533 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2534 i_f1 = t2535 i_f2 = t2537 ).
-    APPEND t2533 TO t2532->items.
-    DATA(t2541) = t2467.
-    DATA t2542 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2542.
-    DATA(t2543) = |st_alphashapeareaaggr|.
-    DATA t2544 TYPE int8.
-    DATA(t2545) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2544 = t2545.
+    t2538 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2539) = CONV string( |v915| ).
+    t2537 = t2538->get( p0 = t2539 ).
+    t2536 = t2537.
+    t2532 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2533 i_f1 = t2534 i_f2 = t2536 ).
+    t2531->load( ).
+    APPEND t2532 TO t2531->items.
+    t2531->save( ).
+    DATA(t2540) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2541 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2541.
+    DATA(t2542) = CONV string( |st_concavehull| ).
+    DATA t2543 TYPE f.
+    DATA(t2544) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2543 = t2544.
+    DATA t2545 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2545.
     DATA t2546 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2546.
-    DATA t2547 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2547 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2547.
-    DATA t2548 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2548.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2548 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2549) = |v915|.
-    t2547 = t2548->get( p0 = t2549 ).
-    t2546 = t2547.
-    t2542 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2543 i_f1 = t2544 i_f2 = t2546 ).
-    APPEND t2542 TO t2541->items.
-    DATA(t2550) = t2467.
-    DATA t2551 TYPE REF TO zcl_lnt_tuple_dda7dd58.
-    CLEAR t2551.
-    DATA(t2552) = |st_alphashapeedgeaggr|.
-    DATA t2553 TYPE int8.
-    DATA(t2554) = CONV i( zcl_lnt_sql_function_module=>variadic ).
-    t2553 = t2554.
+    t2547 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2548) = CONV string( |v915| ).
+    t2546 = t2547->get( p0 = t2548 ).
+    t2545 = t2546.
+    t2541 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2542 i_f1 = t2543 i_f2 = t2545 ).
+    t2540->load( ).
+    APPEND t2541 TO t2540->items.
+    t2540->save( ).
+    DATA(t2549) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2550 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2550.
+    DATA(t2551) = CONV string( |st_reverse| ).
+    DATA t2552 TYPE f.
+    DATA(t2553) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2552 = t2553.
+    DATA t2554 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2554.
     DATA t2555 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t2555.
-    DATA t2556 TYPE REF TO zcl_lnt_abap_release.
+    DATA t2556 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     CLEAR t2556.
-    DATA t2557 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t2557.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t2557 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t2558) = |v915|.
-    t2556 = t2557->get( p0 = t2558 ).
-    t2555 = t2556.
-    t2551 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2552 i_f1 = t2553 i_f2 = t2555 ).
-    APPEND t2551 TO t2550->items.
-    DATA(t2559) = t2467.
-    t2466 = t2559.
-    zcl_lnt_sql_function_module=>sql_spatial_aggregate_defs = t2466.
+    t2556 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2557) = CONV string( |v915| ).
+    t2555 = t2556->get( p0 = t2557 ).
+    t2554 = t2555.
+    t2550 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2551 i_f1 = t2552 i_f2 = t2554 ).
+    t2549->load( ).
+    APPEND t2550 TO t2549->items.
+    t2549->save( ).
+    DATA(t2558) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2559 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2559.
+    DATA(t2560) = CONV string( |st_force2d| ).
+    DATA t2561 TYPE f.
+    DATA(t2562) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2561 = t2562.
+    DATA t2563 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2563.
+    DATA t2564 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2564.
+    DATA t2565 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2565.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2565 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2566) = CONV string( |v915| ).
+    t2564 = t2565->get( p0 = t2566 ).
+    t2563 = t2564.
+    t2559 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2560 i_f1 = t2561 i_f2 = t2563 ).
+    t2558->load( ).
+    APPEND t2559 TO t2558->items.
+    t2558->save( ).
+    DATA(t2567) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2568 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2568.
+    DATA(t2569) = CONV string( |st_force3dz| ).
+    DATA t2570 TYPE f.
+    DATA(t2571) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2570 = t2571.
+    DATA t2572 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2572.
+    DATA t2573 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2573.
+    DATA t2574 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2574.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2574 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2575) = CONV string( |v915| ).
+    t2573 = t2574->get( p0 = t2575 ).
+    t2572 = t2573.
+    t2568 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2569 i_f1 = t2570 i_f2 = t2572 ).
+    t2567->load( ).
+    APPEND t2568 TO t2567->items.
+    t2567->save( ).
+    DATA(t2576) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2577 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2577.
+    DATA(t2578) = CONV string( |st_force3dm| ).
+    DATA t2579 TYPE f.
+    DATA(t2580) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2579 = t2580.
+    DATA t2581 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2581.
+    DATA t2582 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2582.
+    DATA t2583 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2583.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2583 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2584) = CONV string( |v915| ).
+    t2582 = t2583->get( p0 = t2584 ).
+    t2581 = t2582.
+    t2577 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2578 i_f1 = t2579 i_f2 = t2581 ).
+    t2576->load( ).
+    APPEND t2577 TO t2576->items.
+    t2576->save( ).
+    DATA(t2585) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2586 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2586.
+    DATA(t2587) = CONV string( |st_force4d| ).
+    DATA t2588 TYPE f.
+    DATA(t2589) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2588 = t2589.
+    DATA t2590 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2590.
+    DATA t2591 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2591.
+    DATA t2592 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2592.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2592 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2593) = CONV string( |v915| ).
+    t2591 = t2592->get( p0 = t2593 ).
+    t2590 = t2591.
+    t2586 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2587 i_f1 = t2588 i_f2 = t2590 ).
+    t2585->load( ).
+    APPEND t2586 TO t2585->items.
+    t2585->save( ).
+    DATA(t2594) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2595 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2595.
+    DATA(t2596) = CONV string( |st_makevalid| ).
+    DATA t2597 TYPE f.
+    DATA(t2598) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2597 = t2598.
+    DATA t2599 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2599.
+    DATA t2600 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2600.
+    DATA t2601 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2601.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2601 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2602) = CONV string( |v915| ).
+    t2600 = t2601->get( p0 = t2602 ).
+    t2599 = t2600.
+    t2595 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2596 i_f1 = t2597 i_f2 = t2599 ).
+    t2594->load( ).
+    APPEND t2595 TO t2594->items.
+    t2594->save( ).
+    DATA(t2603) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2604 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2604.
+    DATA(t2605) = CONV string( |st_geohash| ).
+    DATA t2606 TYPE f.
+    DATA(t2607) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2606 = t2607.
+    DATA t2608 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2608.
+    DATA t2609 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2609.
+    DATA t2610 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2610.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2610 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2611) = CONV string( |v915| ).
+    t2609 = t2610->get( p0 = t2611 ).
+    t2608 = t2609.
+    t2604 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2605 i_f1 = t2606 i_f2 = t2608 ).
+    t2603->load( ).
+    APPEND t2604 TO t2603->items.
+    t2603->save( ).
+    DATA(t2612) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2613 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2613.
+    DATA(t2614) = CONV string( |st_aswkt| ).
+    DATA t2615 TYPE f.
+    DATA(t2616) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2615 = t2616.
+    DATA t2617 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2617.
+    DATA t2618 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2618.
+    DATA t2619 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2619.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2619 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2620) = CONV string( |v915| ).
+    t2618 = t2619->get( p0 = t2620 ).
+    t2617 = t2618.
+    t2613 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2614 i_f1 = t2615 i_f2 = t2617 ).
+    t2612->load( ).
+    APPEND t2613 TO t2612->items.
+    t2612->save( ).
+    DATA(t2621) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2622 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2622.
+    DATA(t2623) = CONV string( |st_aswkb| ).
+    DATA t2624 TYPE f.
+    DATA(t2625) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2624 = t2625.
+    DATA t2626 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2626.
+    DATA t2627 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2627.
+    DATA t2628 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2628.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2628 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2629) = CONV string( |v915| ).
+    t2627 = t2628->get( p0 = t2629 ).
+    t2626 = t2627.
+    t2622 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2623 i_f1 = t2624 i_f2 = t2626 ).
+    t2621->load( ).
+    APPEND t2622 TO t2621->items.
+    t2621->save( ).
+    DATA(t2630) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2631 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2631.
+    DATA(t2632) = CONV string( |st_asewkt| ).
+    DATA t2633 TYPE f.
+    DATA(t2634) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2633 = t2634.
+    DATA t2635 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2635.
+    DATA t2636 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2636.
+    DATA t2637 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2637.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2637 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2638) = CONV string( |v915| ).
+    t2636 = t2637->get( p0 = t2638 ).
+    t2635 = t2636.
+    t2631 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2632 i_f1 = t2633 i_f2 = t2635 ).
+    t2630->load( ).
+    APPEND t2631 TO t2630->items.
+    t2630->save( ).
+    DATA(t2639) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2640 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2640.
+    DATA(t2641) = CONV string( |st_asewkb| ).
+    DATA t2642 TYPE f.
+    DATA(t2643) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2642 = t2643.
+    DATA t2644 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2644.
+    DATA t2645 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2645.
+    DATA t2646 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2646.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2646 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2647) = CONV string( |v915| ).
+    t2645 = t2646->get( p0 = t2647 ).
+    t2644 = t2645.
+    t2640 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2641 i_f1 = t2642 i_f2 = t2644 ).
+    t2639->load( ).
+    APPEND t2640 TO t2639->items.
+    t2639->save( ).
+    DATA(t2648) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2649 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2649.
+    DATA(t2650) = CONV string( |st_asbinary| ).
+    DATA t2651 TYPE f.
+    DATA(t2652) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2651 = t2652.
+    DATA t2653 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2653.
+    DATA t2654 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2654.
+    DATA t2655 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2655.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2655 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2656) = CONV string( |v915| ).
+    t2654 = t2655->get( p0 = t2656 ).
+    t2653 = t2654.
+    t2649 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2650 i_f1 = t2651 i_f2 = t2653 ).
+    t2648->load( ).
+    APPEND t2649 TO t2648->items.
+    t2648->save( ).
+    DATA(t2657) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2658 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2658.
+    DATA(t2659) = CONV string( |st_astext| ).
+    DATA t2660 TYPE f.
+    DATA(t2661) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2660 = t2661.
+    DATA t2662 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2662.
+    DATA t2663 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2663.
+    DATA t2664 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2664.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2664 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2665) = CONV string( |v915| ).
+    t2663 = t2664->get( p0 = t2665 ).
+    t2662 = t2663.
+    t2658 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2659 i_f1 = t2660 i_f2 = t2662 ).
+    t2657->load( ).
+    APPEND t2658 TO t2657->items.
+    t2657->save( ).
+    DATA(t2666) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2667 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2667.
+    DATA(t2668) = CONV string( |st_asgeojson| ).
+    DATA t2669 TYPE f.
+    DATA(t2670) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2669 = t2670.
+    DATA t2671 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2671.
+    DATA t2672 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2672.
+    DATA t2673 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2673.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2673 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2674) = CONV string( |v915| ).
+    t2672 = t2673->get( p0 = t2674 ).
+    t2671 = t2672.
+    t2667 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2668 i_f1 = t2669 i_f2 = t2671 ).
+    t2666->load( ).
+    APPEND t2667 TO t2666->items.
+    t2666->save( ).
+    DATA(t2675) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2676 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2676.
+    DATA(t2677) = CONV string( |st_asesrijson| ).
+    DATA t2678 TYPE f.
+    DATA(t2679) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2678 = t2679.
+    DATA t2680 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2680.
+    DATA t2681 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2681.
+    DATA t2682 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2682.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2682 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2683) = CONV string( |v915| ).
+    t2681 = t2682->get( p0 = t2683 ).
+    t2680 = t2681.
+    t2676 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2677 i_f1 = t2678 i_f2 = t2680 ).
+    t2675->load( ).
+    APPEND t2676 TO t2675->items.
+    t2675->save( ).
+    DATA(t2684) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2685 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2685.
+    DATA(t2686) = CONV string( |st_assvg| ).
+    DATA t2687 TYPE f.
+    DATA(t2688) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2687 = t2688.
+    DATA t2689 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2689.
+    DATA t2690 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2690.
+    DATA t2691 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2691.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2691 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2692) = CONV string( |v915| ).
+    t2690 = t2691->get( p0 = t2692 ).
+    t2689 = t2690.
+    t2685 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2686 i_f1 = t2687 i_f2 = t2689 ).
+    t2684->load( ).
+    APPEND t2685 TO t2684->items.
+    t2684->save( ).
+    DATA(t2693) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2694 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2694.
+    DATA(t2695) = CONV string( |st_distance| ).
+    DATA t2696 TYPE f.
+    DATA(t2697) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2696 = t2697.
+    DATA t2698 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2698.
+    DATA t2699 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2699.
+    DATA t2700 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2700.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2700 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2701) = CONV string( |v915| ).
+    t2699 = t2700->get( p0 = t2701 ).
+    t2698 = t2699.
+    t2694 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2695 i_f1 = t2696 i_f2 = t2698 ).
+    t2693->load( ).
+    APPEND t2694 TO t2693->items.
+    t2693->save( ).
+    DATA(t2702) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2703 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2703.
+    DATA(t2704) = CONV string( |st_withindistance| ).
+    DATA t2705 TYPE f.
+    DATA(t2706) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2705 = t2706.
+    DATA t2707 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2707.
+    DATA t2708 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2708.
+    DATA t2709 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2709.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2709 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2710) = CONV string( |v915| ).
+    t2708 = t2709->get( p0 = t2710 ).
+    t2707 = t2708.
+    t2703 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2704 i_f1 = t2705 i_f2 = t2707 ).
+    t2702->load( ).
+    APPEND t2703 TO t2702->items.
+    t2702->save( ).
+    DATA(t2711) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2712 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2712.
+    DATA(t2713) = CONV string( |st_contains| ).
+    DATA t2714 TYPE f.
+    DATA(t2715) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2714 = t2715.
+    DATA t2716 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2716.
+    DATA t2717 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2717.
+    DATA t2718 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2718.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2718 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2719) = CONV string( |v915| ).
+    t2717 = t2718->get( p0 = t2719 ).
+    t2716 = t2717.
+    t2712 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2713 i_f1 = t2714 i_f2 = t2716 ).
+    t2711->load( ).
+    APPEND t2712 TO t2711->items.
+    t2711->save( ).
+    DATA(t2720) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2721 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2721.
+    DATA(t2722) = CONV string( |st_covers| ).
+    DATA t2723 TYPE f.
+    DATA(t2724) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2723 = t2724.
+    DATA t2725 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2725.
+    DATA t2726 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2726.
+    DATA t2727 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2727.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2727 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2728) = CONV string( |v915| ).
+    t2726 = t2727->get( p0 = t2728 ).
+    t2725 = t2726.
+    t2721 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2722 i_f1 = t2723 i_f2 = t2725 ).
+    t2720->load( ).
+    APPEND t2721 TO t2720->items.
+    t2720->save( ).
+    DATA(t2729) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2730 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2730.
+    DATA(t2731) = CONV string( |st_coveredby| ).
+    DATA t2732 TYPE f.
+    DATA(t2733) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2732 = t2733.
+    DATA t2734 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2734.
+    DATA t2735 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2735.
+    DATA t2736 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2736.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2736 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2737) = CONV string( |v915| ).
+    t2735 = t2736->get( p0 = t2737 ).
+    t2734 = t2735.
+    t2730 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2731 i_f1 = t2732 i_f2 = t2734 ).
+    t2729->load( ).
+    APPEND t2730 TO t2729->items.
+    t2729->save( ).
+    DATA(t2738) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2739 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2739.
+    DATA(t2740) = CONV string( |st_crosses| ).
+    DATA t2741 TYPE f.
+    DATA(t2742) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2741 = t2742.
+    DATA t2743 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2743.
+    DATA t2744 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2744.
+    DATA t2745 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2745.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2745 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2746) = CONV string( |v915| ).
+    t2744 = t2745->get( p0 = t2746 ).
+    t2743 = t2744.
+    t2739 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2740 i_f1 = t2741 i_f2 = t2743 ).
+    t2738->load( ).
+    APPEND t2739 TO t2738->items.
+    t2738->save( ).
+    DATA(t2747) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2748 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2748.
+    DATA(t2749) = CONV string( |st_disjoint| ).
+    DATA t2750 TYPE f.
+    DATA(t2751) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2750 = t2751.
+    DATA t2752 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2752.
+    DATA t2753 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2753.
+    DATA t2754 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2754.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2754 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2755) = CONV string( |v915| ).
+    t2753 = t2754->get( p0 = t2755 ).
+    t2752 = t2753.
+    t2748 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2749 i_f1 = t2750 i_f2 = t2752 ).
+    t2747->load( ).
+    APPEND t2748 TO t2747->items.
+    t2747->save( ).
+    DATA(t2756) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2757 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2757.
+    DATA(t2758) = CONV string( |st_equals| ).
+    DATA t2759 TYPE f.
+    DATA(t2760) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2759 = t2760.
+    DATA t2761 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2761.
+    DATA t2762 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2762.
+    DATA t2763 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2763.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2763 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2764) = CONV string( |v915| ).
+    t2762 = t2763->get( p0 = t2764 ).
+    t2761 = t2762.
+    t2757 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2758 i_f1 = t2759 i_f2 = t2761 ).
+    t2756->load( ).
+    APPEND t2757 TO t2756->items.
+    t2756->save( ).
+    DATA(t2765) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2766 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2766.
+    DATA(t2767) = CONV string( |st_orderingequals| ).
+    DATA t2768 TYPE f.
+    DATA(t2769) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2768 = t2769.
+    DATA t2770 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2770.
+    DATA t2771 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2771.
+    DATA t2772 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2772.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2772 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2773) = CONV string( |v915| ).
+    t2771 = t2772->get( p0 = t2773 ).
+    t2770 = t2771.
+    t2766 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2767 i_f1 = t2768 i_f2 = t2770 ).
+    t2765->load( ).
+    APPEND t2766 TO t2765->items.
+    t2765->save( ).
+    DATA(t2774) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2775 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2775.
+    DATA(t2776) = CONV string( |st_intersects| ).
+    DATA t2777 TYPE f.
+    DATA(t2778) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2777 = t2778.
+    DATA t2779 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2779.
+    DATA t2780 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2780.
+    DATA t2781 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2781.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2781 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2782) = CONV string( |v915| ).
+    t2780 = t2781->get( p0 = t2782 ).
+    t2779 = t2780.
+    t2775 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2776 i_f1 = t2777 i_f2 = t2779 ).
+    t2774->load( ).
+    APPEND t2775 TO t2774->items.
+    t2774->save( ).
+    DATA(t2783) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2784 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2784.
+    DATA(t2785) = CONV string( |st_intersectsfilter| ).
+    DATA t2786 TYPE f.
+    DATA(t2787) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2786 = t2787.
+    DATA t2788 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2788.
+    DATA t2789 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2789.
+    DATA t2790 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2790.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2790 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2791) = CONV string( |v915| ).
+    t2789 = t2790->get( p0 = t2791 ).
+    t2788 = t2789.
+    t2784 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2785 i_f1 = t2786 i_f2 = t2788 ).
+    t2783->load( ).
+    APPEND t2784 TO t2783->items.
+    t2783->save( ).
+    DATA(t2792) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2793 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2793.
+    DATA(t2794) = CONV string( |st_intersectsrect| ).
+    DATA t2795 TYPE f.
+    DATA(t2796) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2795 = t2796.
+    DATA t2797 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2797.
+    DATA t2798 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2798.
+    DATA t2799 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2799.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2799 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2800) = CONV string( |v915| ).
+    t2798 = t2799->get( p0 = t2800 ).
+    t2797 = t2798.
+    t2793 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2794 i_f1 = t2795 i_f2 = t2797 ).
+    t2792->load( ).
+    APPEND t2793 TO t2792->items.
+    t2792->save( ).
+    DATA(t2801) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2802 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2802.
+    DATA(t2803) = CONV string( |st_intersectsrectplanar| ).
+    DATA t2804 TYPE f.
+    DATA(t2805) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2804 = t2805.
+    DATA t2806 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2806.
+    DATA t2807 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2807.
+    DATA t2808 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2808.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2808 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2809) = CONV string( |v915| ).
+    t2807 = t2808->get( p0 = t2809 ).
+    t2806 = t2807.
+    t2802 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2803 i_f1 = t2804 i_f2 = t2806 ).
+    t2801->load( ).
+    APPEND t2802 TO t2801->items.
+    t2801->save( ).
+    DATA(t2810) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2811 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2811.
+    DATA(t2812) = CONV string( |st_overlaps| ).
+    DATA t2813 TYPE f.
+    DATA(t2814) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2813 = t2814.
+    DATA t2815 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2815.
+    DATA t2816 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2816.
+    DATA t2817 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2817.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2817 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2818) = CONV string( |v915| ).
+    t2816 = t2817->get( p0 = t2818 ).
+    t2815 = t2816.
+    t2811 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2812 i_f1 = t2813 i_f2 = t2815 ).
+    t2810->load( ).
+    APPEND t2811 TO t2810->items.
+    t2810->save( ).
+    DATA(t2819) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2820 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2820.
+    DATA(t2821) = CONV string( |st_touches| ).
+    DATA t2822 TYPE f.
+    DATA(t2823) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2822 = t2823.
+    DATA t2824 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2824.
+    DATA t2825 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2825.
+    DATA t2826 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2826.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2826 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2827) = CONV string( |v915| ).
+    t2825 = t2826->get( p0 = t2827 ).
+    t2824 = t2825.
+    t2820 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2821 i_f1 = t2822 i_f2 = t2824 ).
+    t2819->load( ).
+    APPEND t2820 TO t2819->items.
+    t2819->save( ).
+    DATA(t2828) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2829 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2829.
+    DATA(t2830) = CONV string( |st_within| ).
+    DATA t2831 TYPE f.
+    DATA(t2832) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2831 = t2832.
+    DATA t2833 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2833.
+    DATA t2834 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2834.
+    DATA t2835 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2835.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2835 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2836) = CONV string( |v915| ).
+    t2834 = t2835->get( p0 = t2836 ).
+    t2833 = t2834.
+    t2829 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2830 i_f1 = t2831 i_f2 = t2833 ).
+    t2828->load( ).
+    APPEND t2829 TO t2828->items.
+    t2828->save( ).
+    DATA(t2837) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2838 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2838.
+    DATA(t2839) = CONV string( |st_intersection| ).
+    DATA t2840 TYPE f.
+    DATA(t2841) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2840 = t2841.
+    DATA t2842 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2842.
+    DATA t2843 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2843.
+    DATA t2844 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2844.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2844 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2845) = CONV string( |v915| ).
+    t2843 = t2844->get( p0 = t2845 ).
+    t2842 = t2843.
+    t2838 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2839 i_f1 = t2840 i_f2 = t2842 ).
+    t2837->load( ).
+    APPEND t2838 TO t2837->items.
+    t2837->save( ).
+    DATA(t2846) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2847 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2847.
+    DATA(t2848) = CONV string( |st_union| ).
+    DATA t2849 TYPE f.
+    DATA(t2850) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2849 = t2850.
+    DATA t2851 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2851.
+    DATA t2852 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2852.
+    DATA t2853 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2853.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2853 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2854) = CONV string( |v915| ).
+    t2852 = t2853->get( p0 = t2854 ).
+    t2851 = t2852.
+    t2847 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2848 i_f1 = t2849 i_f2 = t2851 ).
+    t2846->load( ).
+    APPEND t2847 TO t2846->items.
+    t2846->save( ).
+    DATA(t2855) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2856 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2856.
+    DATA(t2857) = CONV string( |st_difference| ).
+    DATA t2858 TYPE f.
+    DATA(t2859) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2858 = t2859.
+    DATA t2860 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2860.
+    DATA t2861 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2861.
+    DATA t2862 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2862.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2862 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2863) = CONV string( |v915| ).
+    t2861 = t2862->get( p0 = t2863 ).
+    t2860 = t2861.
+    t2856 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2857 i_f1 = t2858 i_f2 = t2860 ).
+    t2855->load( ).
+    APPEND t2856 TO t2855->items.
+    t2855->save( ).
+    DATA(t2864) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2865 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2865.
+    DATA(t2866) = CONV string( |st_symdifference| ).
+    DATA t2867 TYPE f.
+    DATA(t2868) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2867 = t2868.
+    DATA t2869 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2869.
+    DATA t2870 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2870.
+    DATA t2871 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2871.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2871 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2872) = CONV string( |v915| ).
+    t2870 = t2871->get( p0 = t2872 ).
+    t2869 = t2870.
+    t2865 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2866 i_f1 = t2867 i_f2 = t2869 ).
+    t2864->load( ).
+    APPEND t2865 TO t2864->items.
+    t2864->save( ).
+    DATA(t2873) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2874 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2874.
+    DATA(t2875) = CONV string( |st_collect| ).
+    DATA t2876 TYPE f.
+    DATA(t2877) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2876 = t2877.
+    DATA t2878 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2878.
+    DATA t2879 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2879.
+    DATA t2880 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2880.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2880 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2881) = CONV string( |v915| ).
+    t2879 = t2880->get( p0 = t2881 ).
+    t2878 = t2879.
+    t2874 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2875 i_f1 = t2876 i_f2 = t2878 ).
+    t2873->load( ).
+    APPEND t2874 TO t2873->items.
+    t2873->save( ).
+    DATA(t2882) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2883 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2883.
+    DATA(t2884) = CONV string( |st_buffer| ).
+    DATA t2885 TYPE f.
+    DATA(t2886) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2885 = t2886.
+    DATA t2887 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2887.
+    DATA t2888 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2888.
+    DATA t2889 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2889.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2889 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2890) = CONV string( |v915| ).
+    t2888 = t2889->get( p0 = t2890 ).
+    t2887 = t2888.
+    t2883 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2884 i_f1 = t2885 i_f2 = t2887 ).
+    t2882->load( ).
+    APPEND t2883 TO t2882->items.
+    t2882->save( ).
+    DATA(t2891) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2892 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2892.
+    DATA(t2893) = CONV string( |st_transform| ).
+    DATA t2894 TYPE f.
+    DATA(t2895) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2894 = t2895.
+    DATA t2896 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2896.
+    DATA t2897 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2897.
+    DATA t2898 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2898.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2898 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2899) = CONV string( |v915| ).
+    t2897 = t2898->get( p0 = t2899 ).
+    t2896 = t2897.
+    t2892 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2893 i_f1 = t2894 i_f2 = t2896 ).
+    t2891->load( ).
+    APPEND t2892 TO t2891->items.
+    t2891->save( ).
+    DATA(t2900) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2901 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2901.
+    DATA(t2902) = CONV string( |st_rotate| ).
+    DATA t2903 TYPE f.
+    DATA(t2904) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2903 = t2904.
+    DATA t2905 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2905.
+    DATA t2906 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2906.
+    DATA t2907 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2907.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2907 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2908) = CONV string( |v915| ).
+    t2906 = t2907->get( p0 = t2908 ).
+    t2905 = t2906.
+    t2901 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2902 i_f1 = t2903 i_f2 = t2905 ).
+    t2900->load( ).
+    APPEND t2901 TO t2900->items.
+    t2900->save( ).
+    DATA(t2909) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2910 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2910.
+    DATA(t2911) = CONV string( |st_scale| ).
+    DATA t2912 TYPE f.
+    DATA(t2913) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2912 = t2913.
+    DATA t2914 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2914.
+    DATA t2915 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2915.
+    DATA t2916 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2916.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2916 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2917) = CONV string( |v915| ).
+    t2915 = t2916->get( p0 = t2917 ).
+    t2914 = t2915.
+    t2910 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2911 i_f1 = t2912 i_f2 = t2914 ).
+    t2909->load( ).
+    APPEND t2910 TO t2909->items.
+    t2909->save( ).
+    DATA(t2918) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2919 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2919.
+    DATA(t2920) = CONV string( |st_translate| ).
+    DATA t2921 TYPE f.
+    DATA(t2922) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2921 = t2922.
+    DATA t2923 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2923.
+    DATA t2924 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2924.
+    DATA t2925 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2925.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2925 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2926) = CONV string( |v915| ).
+    t2924 = t2925->get( p0 = t2926 ).
+    t2923 = t2924.
+    t2919 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2920 i_f1 = t2921 i_f2 = t2923 ).
+    t2918->load( ).
+    APPEND t2919 TO t2918->items.
+    t2918->save( ).
+    DATA(t2927) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2928 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2928.
+    DATA(t2929) = CONV string( |st_translate3d| ).
+    DATA t2930 TYPE f.
+    DATA(t2931) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2930 = t2931.
+    DATA t2932 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2932.
+    DATA t2933 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2933.
+    DATA t2934 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2934.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2934 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2935) = CONV string( |v915| ).
+    t2933 = t2934->get( p0 = t2935 ).
+    t2932 = t2933.
+    t2928 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2929 i_f1 = t2930 i_f2 = t2932 ).
+    t2927->load( ).
+    APPEND t2928 TO t2927->items.
+    t2927->save( ).
+    DATA(t2936) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2937 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2937.
+    DATA(t2938) = CONV string( |st_simplify| ).
+    DATA t2939 TYPE f.
+    DATA(t2940) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2939 = t2940.
+    DATA t2941 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2941.
+    DATA t2942 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2942.
+    DATA t2943 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2943.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2943 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2944) = CONV string( |v915| ).
+    t2942 = t2943->get( p0 = t2944 ).
+    t2941 = t2942.
+    t2937 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2938 i_f1 = t2939 i_f2 = t2941 ).
+    t2936->load( ).
+    APPEND t2937 TO t2936->items.
+    t2936->save( ).
+    DATA(t2945) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2946 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2946.
+    DATA(t2947) = CONV string( |st_snaptogrid| ).
+    DATA t2948 TYPE f.
+    DATA(t2949) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2948 = t2949.
+    DATA t2950 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2950.
+    DATA t2951 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2951.
+    DATA t2952 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2952.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2952 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2953) = CONV string( |v915| ).
+    t2951 = t2952->get( p0 = t2953 ).
+    t2950 = t2951.
+    t2946 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2947 i_f1 = t2948 i_f2 = t2950 ).
+    t2945->load( ).
+    APPEND t2946 TO t2945->items.
+    t2945->save( ).
+    DATA(t2954) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2955 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2955.
+    DATA(t2956) = CONV string( |st_addmeasure| ).
+    DATA t2957 TYPE f.
+    DATA(t2958) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2957 = t2958.
+    DATA t2959 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2959.
+    DATA t2960 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2960.
+    DATA t2961 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2961.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2961 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2962) = CONV string( |v915| ).
+    t2960 = t2961->get( p0 = t2962 ).
+    t2959 = t2960.
+    t2955 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2956 i_f1 = t2957 i_f2 = t2959 ).
+    t2954->load( ).
+    APPEND t2955 TO t2954->items.
+    t2954->save( ).
+    DATA(t2963) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2964 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2964.
+    DATA(t2965) = CONV string( |st_addpoint| ).
+    DATA t2966 TYPE f.
+    DATA(t2967) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2966 = t2967.
+    DATA t2968 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2968.
+    DATA t2969 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2969.
+    DATA t2970 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2970.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2970 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2971) = CONV string( |v915| ).
+    t2969 = t2970->get( p0 = t2971 ).
+    t2968 = t2969.
+    t2964 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2965 i_f1 = t2966 i_f2 = t2968 ).
+    t2963->load( ).
+    APPEND t2964 TO t2963->items.
+    t2963->save( ).
+    DATA(t2972) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2973 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2973.
+    DATA(t2974) = CONV string( |st_removepoint| ).
+    DATA t2975 TYPE f.
+    DATA(t2976) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2975 = t2976.
+    DATA t2977 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2977.
+    DATA t2978 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2978.
+    DATA t2979 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2979.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2979 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2980) = CONV string( |v915| ).
+    t2978 = t2979->get( p0 = t2980 ).
+    t2977 = t2978.
+    t2973 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2974 i_f1 = t2975 i_f2 = t2977 ).
+    t2972->load( ).
+    APPEND t2973 TO t2972->items.
+    t2972->save( ).
+    DATA(t2981) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2982 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2982.
+    DATA(t2983) = CONV string( |st_pointn| ).
+    DATA t2984 TYPE f.
+    DATA(t2985) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2984 = t2985.
+    DATA t2986 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2986.
+    DATA t2987 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2987.
+    DATA t2988 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2988.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2988 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2989) = CONV string( |v915| ).
+    t2987 = t2988->get( p0 = t2989 ).
+    t2986 = t2987.
+    t2982 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2983 i_f1 = t2984 i_f2 = t2986 ).
+    t2981->load( ).
+    APPEND t2982 TO t2981->items.
+    t2981->save( ).
+    DATA(t2990) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t2991 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t2991.
+    DATA(t2992) = CONV string( |st_geometryn| ).
+    DATA t2993 TYPE f.
+    DATA(t2994) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t2993 = t2994.
+    DATA t2995 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2995.
+    DATA t2996 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t2996.
+    DATA t2997 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t2997.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t2997 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t2998) = CONV string( |v915| ).
+    t2996 = t2997->get( p0 = t2998 ).
+    t2995 = t2996.
+    t2991 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t2992 i_f1 = t2993 i_f2 = t2995 ).
+    t2990->load( ).
+    APPEND t2991 TO t2990->items.
+    t2990->save( ).
+    DATA(t2999) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3000 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3000.
+    DATA(t3001) = CONV string( |st_interiorringn| ).
+    DATA t3002 TYPE f.
+    DATA(t3003) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3002 = t3003.
+    DATA t3004 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3004.
+    DATA t3005 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3005.
+    DATA t3006 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3006.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3006 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3007) = CONV string( |v915| ).
+    t3005 = t3006->get( p0 = t3007 ).
+    t3004 = t3005.
+    t3000 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3001 i_f1 = t3002 i_f2 = t3004 ).
+    t2999->load( ).
+    APPEND t3000 TO t2999->items.
+    t2999->save( ).
+    DATA(t3008) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3009 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3009.
+    DATA(t3010) = CONV string( |st_lineinterpolatepoint| ).
+    DATA t3011 TYPE f.
+    DATA(t3012) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3011 = t3012.
+    DATA t3013 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3013.
+    DATA t3014 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3014.
+    DATA t3015 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3015.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3015 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3016) = CONV string( |v915| ).
+    t3014 = t3015->get( p0 = t3016 ).
+    t3013 = t3014.
+    t3009 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3010 i_f1 = t3011 i_f2 = t3013 ).
+    t3008->load( ).
+    APPEND t3009 TO t3008->items.
+    t3008->save( ).
+    DATA(t3017) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3018 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3018.
+    DATA(t3019) = CONV string( |st_linelocatepoint| ).
+    DATA t3020 TYPE f.
+    DATA(t3021) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3020 = t3021.
+    DATA t3022 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3022.
+    DATA t3023 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3023.
+    DATA t3024 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3024.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3024 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3025) = CONV string( |v915| ).
+    t3023 = t3024->get( p0 = t3025 ).
+    t3022 = t3023.
+    t3018 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3019 i_f1 = t3020 i_f2 = t3022 ).
+    t3017->load( ).
+    APPEND t3018 TO t3017->items.
+    t3017->save( ).
+    DATA(t3026) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3027 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3027.
+    DATA(t3028) = CONV string( |st_linesubstring| ).
+    DATA t3029 TYPE f.
+    DATA(t3030) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3029 = t3030.
+    DATA t3031 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3031.
+    DATA t3032 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3032.
+    DATA t3033 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3033.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3033 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3034) = CONV string( |v915| ).
+    t3032 = t3033->get( p0 = t3034 ).
+    t3031 = t3032.
+    t3027 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3028 i_f1 = t3029 i_f2 = t3031 ).
+    t3026->load( ).
+    APPEND t3027 TO t3026->items.
+    t3026->save( ).
+    DATA(t3035) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3036 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3036.
+    DATA(t3037) = CONV string( |st_locatealong| ).
+    DATA t3038 TYPE f.
+    DATA(t3039) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3038 = t3039.
+    DATA t3040 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3040.
+    DATA t3041 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3041.
+    DATA t3042 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3042.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3042 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3043) = CONV string( |v915| ).
+    t3041 = t3042->get( p0 = t3043 ).
+    t3040 = t3041.
+    t3036 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3037 i_f1 = t3038 i_f2 = t3040 ).
+    t3035->load( ).
+    APPEND t3036 TO t3035->items.
+    t3035->save( ).
+    DATA(t3044) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3045 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3045.
+    DATA(t3046) = CONV string( |st_locatebetween| ).
+    DATA t3047 TYPE f.
+    DATA(t3048) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3047 = t3048.
+    DATA t3049 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3049.
+    DATA t3050 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3050.
+    DATA t3051 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3051.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3051 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3052) = CONV string( |v915| ).
+    t3050 = t3051->get( p0 = t3052 ).
+    t3049 = t3050.
+    t3045 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3046 i_f1 = t3047 i_f2 = t3049 ).
+    t3044->load( ).
+    APPEND t3045 TO t3044->items.
+    t3044->save( ).
+    DATA(t3053) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3054 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3054.
+    DATA(t3055) = CONV string( |st_alphashape| ).
+    DATA t3056 TYPE f.
+    DATA(t3057) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3056 = t3057.
+    DATA t3058 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3058.
+    DATA t3059 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3059.
+    DATA t3060 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3060.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3060 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3061) = CONV string( |v915| ).
+    t3059 = t3060->get( p0 = t3061 ).
+    t3058 = t3059.
+    t3054 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3055 i_f1 = t3056 i_f2 = t3058 ).
+    t3053->load( ).
+    APPEND t3054 TO t3053->items.
+    t3053->save( ).
+    DATA(t3062) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3063 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3063.
+    DATA(t3064) = CONV string( |st_alphashapearea| ).
+    DATA t3065 TYPE f.
+    DATA(t3066) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3065 = t3066.
+    DATA t3067 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3067.
+    DATA t3068 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3068.
+    DATA t3069 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3069.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3069 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3070) = CONV string( |v915| ).
+    t3068 = t3069->get( p0 = t3070 ).
+    t3067 = t3068.
+    t3063 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3064 i_f1 = t3065 i_f2 = t3067 ).
+    t3062->load( ).
+    APPEND t3063 TO t3062->items.
+    t3062->save( ).
+    DATA(t3071) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3072 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3072.
+    DATA(t3073) = CONV string( |st_alphashapeedge| ).
+    DATA t3074 TYPE f.
+    DATA(t3075) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3074 = t3075.
+    DATA t3076 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3076.
+    DATA t3077 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3077.
+    DATA t3078 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3078.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3078 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3079) = CONV string( |v915| ).
+    t3077 = t3078->get( p0 = t3079 ).
+    t3076 = t3077.
+    t3072 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3073 i_f1 = t3074 i_f2 = t3076 ).
+    t3071->load( ).
+    APPEND t3072 TO t3071->items.
+    t3071->save( ).
+    DATA(t3080) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3081 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3081.
+    DATA(t3082) = CONV string( |st_closestpointofapproach| ).
+    DATA t3083 TYPE f.
+    DATA(t3084) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3083 = t3084.
+    DATA t3085 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3085.
+    DATA t3086 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3086.
+    DATA t3087 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3087.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3087 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3088) = CONV string( |v915| ).
+    t3086 = t3087->get( p0 = t3088 ).
+    t3085 = t3086.
+    t3081 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3082 i_f1 = t3083 i_f2 = t3085 ).
+    t3080->load( ).
+    APPEND t3081 TO t3080->items.
+    t3080->save( ).
+    DATA(t3089) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3090 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3090.
+    DATA(t3091) = CONV string( |st_frechetdistance| ).
+    DATA t3092 TYPE f.
+    DATA(t3093) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3092 = t3093.
+    DATA t3094 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3094.
+    DATA t3095 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3095.
+    DATA t3096 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3096.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3096 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3097) = CONV string( |v915| ).
+    t3095 = t3096->get( p0 = t3097 ).
+    t3094 = t3095.
+    t3090 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3091 i_f1 = t3092 i_f2 = t3094 ).
+    t3089->load( ).
+    APPEND t3090 TO t3089->items.
+    t3089->save( ).
+    DATA(t3098) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3099 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3099.
+    DATA(t3100) = CONV string( |st_hausdorffdistance| ).
+    DATA t3101 TYPE f.
+    DATA(t3102) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3101 = t3102.
+    DATA t3103 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3103.
+    DATA t3104 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3104.
+    DATA t3105 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3105.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3105 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3106) = CONV string( |v915| ).
+    t3104 = t3105->get( p0 = t3106 ).
+    t3103 = t3104.
+    t3099 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3100 i_f1 = t3101 i_f2 = t3103 ).
+    t3098->load( ).
+    APPEND t3099 TO t3098->items.
+    t3098->save( ).
+    DATA(t3107) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3108 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3108.
+    DATA(t3109) = CONV string( |st_3dlength| ).
+    DATA t3110 TYPE f.
+    DATA(t3111) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3110 = t3111.
+    DATA t3112 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3112.
+    DATA t3113 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3113.
+    DATA t3114 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3114.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3114 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3115) = CONV string( |v915| ).
+    t3113 = t3114->get( p0 = t3115 ).
+    t3112 = t3113.
+    t3108 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3109 i_f1 = t3110 i_f2 = t3112 ).
+    t3107->load( ).
+    APPEND t3108 TO t3107->items.
+    t3107->save( ).
+    DATA(t3116) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    DATA t3117 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3117.
+    DATA(t3118) = CONV string( |st_asmvtgeom| ).
+    DATA t3119 TYPE f.
+    DATA(t3120) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3119 = t3120.
+    DATA t3121 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3121.
+    DATA t3122 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3122.
+    DATA t3123 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3123.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3123 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3124) = CONV string( |v915| ).
+    t3122 = t3123->get( p0 = t3124 ).
+    t3121 = t3122.
+    t3117 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3118 i_f1 = t3119 i_f2 = t3121 ).
+    t3116->load( ).
+    APPEND t3117 TO t3116->items.
+    t3116->save( ).
+    DATA(t3125) = CAST zlnt_runtime_arra_c22708faf2e3( t1962 ).
+    t1961 = t3125.
+    zcl_lnt_sql_function_module=>sql_spatial_function_defs = t1961.
+    IF zcl_lnt_sql_function_module=>zlnt_builtin_init_070f1fc1b1a8 = abap_false.
+      zcl_lnt_sql_function_module=>zlnt_builtin_init_916c47d62a99( ).
+    ENDIF.
+    DATA t3126 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CLEAR t3126.
+    DATA t3127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t3128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t3128.
+    t3127 = t3128.
+    DATA(t3129) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3130 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3130.
+    DATA(t3131) = CONV string( |st_assvgaggr| ).
+    DATA t3132 TYPE f.
+    DATA(t3133) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3132 = t3133.
+    DATA t3134 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3134.
+    DATA t3135 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3135.
+    DATA t3136 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3136.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3136 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3137) = CONV string( |v915| ).
+    t3135 = t3136->get( p0 = t3137 ).
+    t3134 = t3135.
+    t3130 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3131 i_f1 = t3132 i_f2 = t3134 ).
+    t3129->load( ).
+    APPEND t3130 TO t3129->items.
+    t3129->save( ).
+    DATA(t3138) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3139 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3139.
+    DATA(t3140) = CONV string( |st_collectaggr| ).
+    DATA t3141 TYPE f.
+    DATA(t3142) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3141 = t3142.
+    DATA t3143 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3143.
+    DATA t3144 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3144.
+    DATA t3145 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3145.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3145 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3146) = CONV string( |v915| ).
+    t3144 = t3145->get( p0 = t3146 ).
+    t3143 = t3144.
+    t3139 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3140 i_f1 = t3141 i_f2 = t3143 ).
+    t3138->load( ).
+    APPEND t3139 TO t3138->items.
+    t3138->save( ).
+    DATA(t3147) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3148 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3148.
+    DATA(t3149) = CONV string( |st_concavehullaggr| ).
+    DATA t3150 TYPE f.
+    DATA(t3151) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3150 = t3151.
+    DATA t3152 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3152.
+    DATA t3153 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3153.
+    DATA t3154 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3154.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3154 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3155) = CONV string( |v915| ).
+    t3153 = t3154->get( p0 = t3155 ).
+    t3152 = t3153.
+    t3148 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3149 i_f1 = t3150 i_f2 = t3152 ).
+    t3147->load( ).
+    APPEND t3148 TO t3147->items.
+    t3147->save( ).
+    DATA(t3156) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3157 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3157.
+    DATA(t3158) = CONV string( |st_convexhullaggr| ).
+    DATA t3159 TYPE f.
+    DATA(t3160) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3159 = t3160.
+    DATA t3161 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3161.
+    DATA t3162 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3162.
+    DATA t3163 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3163.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3163 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3164) = CONV string( |v915| ).
+    t3162 = t3163->get( p0 = t3164 ).
+    t3161 = t3162.
+    t3157 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3158 i_f1 = t3159 i_f2 = t3161 ).
+    t3156->load( ).
+    APPEND t3157 TO t3156->items.
+    t3156->save( ).
+    DATA(t3165) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3166 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3166.
+    DATA(t3167) = CONV string( |st_envelopeaggr| ).
+    DATA t3168 TYPE f.
+    DATA(t3169) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3168 = t3169.
+    DATA t3170 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3170.
+    DATA t3171 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3171.
+    DATA t3172 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3172.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3172 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3173) = CONV string( |v915| ).
+    t3171 = t3172->get( p0 = t3173 ).
+    t3170 = t3171.
+    t3166 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3167 i_f1 = t3168 i_f2 = t3170 ).
+    t3165->load( ).
+    APPEND t3166 TO t3165->items.
+    t3165->save( ).
+    DATA(t3174) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3175 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3175.
+    DATA(t3176) = CONV string( |st_intersectionaggr| ).
+    DATA t3177 TYPE f.
+    DATA(t3178) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3177 = t3178.
+    DATA t3179 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3179.
+    DATA t3180 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3180.
+    DATA t3181 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3181.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3181 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3182) = CONV string( |v915| ).
+    t3180 = t3181->get( p0 = t3182 ).
+    t3179 = t3180.
+    t3175 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3176 i_f1 = t3177 i_f2 = t3179 ).
+    t3174->load( ).
+    APPEND t3175 TO t3174->items.
+    t3174->save( ).
+    DATA(t3183) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3184 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3184.
+    DATA(t3185) = CONV string( |st_unionaggr| ).
+    DATA t3186 TYPE f.
+    DATA(t3187) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3186 = t3187.
+    DATA t3188 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3188.
+    DATA t3189 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3189.
+    DATA t3190 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3190.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3190 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3191) = CONV string( |v915| ).
+    t3189 = t3190->get( p0 = t3191 ).
+    t3188 = t3189.
+    t3184 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3185 i_f1 = t3186 i_f2 = t3188 ).
+    t3183->load( ).
+    APPEND t3184 TO t3183->items.
+    t3183->save( ).
+    DATA(t3192) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3193 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3193.
+    DATA(t3194) = CONV string( |st_alphashapeaggr| ).
+    DATA t3195 TYPE f.
+    DATA(t3196) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3195 = t3196.
+    DATA t3197 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3197.
+    DATA t3198 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3198.
+    DATA t3199 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3199.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3199 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3200) = CONV string( |v915| ).
+    t3198 = t3199->get( p0 = t3200 ).
+    t3197 = t3198.
+    t3193 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3194 i_f1 = t3195 i_f2 = t3197 ).
+    t3192->load( ).
+    APPEND t3193 TO t3192->items.
+    t3192->save( ).
+    DATA(t3201) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3202 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3202.
+    DATA(t3203) = CONV string( |st_alphashapeareaaggr| ).
+    DATA t3204 TYPE f.
+    DATA(t3205) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3204 = t3205.
+    DATA t3206 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3206.
+    DATA t3207 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3207.
+    DATA t3208 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3208.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3208 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3209) = CONV string( |v915| ).
+    t3207 = t3208->get( p0 = t3209 ).
+    t3206 = t3207.
+    t3202 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3203 i_f1 = t3204 i_f2 = t3206 ).
+    t3201->load( ).
+    APPEND t3202 TO t3201->items.
+    t3201->save( ).
+    DATA(t3210) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    DATA t3211 TYPE REF TO zcl_lnt_tuple_dda7dd58.
+    CLEAR t3211.
+    DATA(t3212) = CONV string( |st_alphashapeedgeaggr| ).
+    DATA t3213 TYPE f.
+    DATA(t3214) = CONV i( zcl_lnt_sql_function_module=>variadic ).
+    t3213 = t3214.
+    DATA t3215 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3215.
+    DATA t3216 TYPE REF TO zcl_lnt_abap_release.
+    CLEAR t3216.
+    DATA t3217 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    CLEAR t3217.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t3217 = zcl_lnt_version_module=>release_b8cd.
+    DATA(t3218) = CONV string( |v915| ).
+    t3216 = t3217->get( p0 = t3218 ).
+    t3215 = t3216.
+    t3211 = NEW zcl_lnt_tuple_dda7dd58( i_f0 = t3212 i_f1 = t3213 i_f2 = t3215 ).
+    t3210->load( ).
+    APPEND t3211 TO t3210->items.
+    t3210->save( ).
+    DATA(t3219) = CAST zlnt_runtime_arra_c22708faf2e3( t3127 ).
+    t3126 = t3219.
+    zcl_lnt_sql_function_module=>sql_spatial_aggregate_defs = t3126.
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
-    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1845_f4109fc9ef62.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1940_1729a77eaee5.
   ENDMETHOD.
 ENDCLASS.

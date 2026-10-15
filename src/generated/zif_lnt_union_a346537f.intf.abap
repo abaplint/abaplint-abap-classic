@@ -10,7 +10,7 @@ INTERFACE zif_lnt_union_a346537f PUBLIC.
   METHODS get_token RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_token.
   METHODS get_type RETURNING VALUE(result) TYPE REF TO zcl_lnt_abstract_type.
   METHODS get_value RETURNING VALUE(result) TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-  METHODS get_visibility RETURNING VALUE(result) TYPE int8.
+  METHODS get_visibility RETURNING VALUE(result) TYPE f.
   METHODS to_text RETURNING VALUE(result) TYPE string.
   METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
 ENDINTERFACE.

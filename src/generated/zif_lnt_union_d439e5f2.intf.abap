@@ -14,9 +14,9 @@ INTERFACE zif_lnt_union_d439e5f2 PUBLIC.
   METHODS get_name RETURNING VALUE(result) TYPE string.
   METHODS get_parsing_issues RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
   METHODS get_sequenced_files RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-  METHODS get_text_elements RETURNING VALUE(result) TYPE REF TO zlnt_runtime_map__8bf596bf435b.
+  METHODS get_text_elements RETURNING VALUE(result) TYPE REF TO zlnt_runtime_map__5a3c0ec03a13.
   METHODS get_text_elements_translations RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-  METHODS get_text_symbols RETURNING VALUE(result) TYPE REF TO zlnt_runtime_map__8bf596bf435b.
+  METHODS get_text_symbols RETURNING VALUE(result) TYPE REF TO zlnt_runtime_map__5a3c0ec03a13.
   METHODS get_type RETURNING VALUE(result) TYPE string.
   METHODS get_xml RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
   METHODS get_xml_file RETURNING VALUE(result) TYPE REF TO zif_lnt_file.

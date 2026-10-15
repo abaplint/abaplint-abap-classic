@@ -9,6 +9,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 DEFINITION PUBLIC CREATE PRIVATE.
     METHODS value RETURNING VALUE(result) TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     METHODS text RETURNING VALUE(result) TYPE string.
     METHODS hex RETURNING VALUE(result) TYPE i.
+    METHODS unicode_unit IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE string.
 ENDCLASS.
 CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
   METHOD parse.
@@ -18,10 +19,9 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     result = parser->value( ).
     parser->whitespace( ).
     IF parser->cursor <> strlen( p0 ).
-      RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+      RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
     ENDIF.
   ENDMETHOD.
-
   METHOD whitespace.
     DATA ch TYPE c LENGTH 1.
     DATA cr TYPE c LENGTH 1.
@@ -34,25 +34,23 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDWHILE.
   ENDMETHOD.
-
   METHOD hex.
     DATA ch TYPE c LENGTH 1.
     DATA digit TYPE i.
     DATA alphabet TYPE string VALUE '0123456789abcdef'.
     DO 4 TIMES.
       IF cursor >= strlen( input ).
-        RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+        RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
       ENDIF.
       ch = to_lower( input+cursor(1) ).
       FIND ch IN alphabet MATCH OFFSET digit.
       IF sy-subrc <> 0.
-        RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+        RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
       ENDIF.
       result = result * 16 + digit.
       cursor = cursor + 1.
     ENDDO.
   ENDMETHOD.
-
   METHOD text.
     DATA ch TYPE string.
     DATA code TYPE i.
@@ -70,7 +68,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       ENDIF.
       IF ch = '\'.
         IF cursor >= strlen( input ).
-          RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+          RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
         ENDIF.
         ch = input+cursor(1).
         cursor = cursor + 1.
@@ -101,32 +99,32 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
                   converter = cl_abap_conv_in_ce=>create( encoding = '4103' ).
                   converter->convert( EXPORTING input = bytes IMPORTING data = ch ).
                 ELSE.
-                  RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+                  cursor = cursor - 6.
+                  ch = unicode_unit( code ).
                 ENDIF.
               ELSE.
                 unit = code.
-                ch = cl_abap_conv_in_ce=>uccp( unit ).
+                ch = unicode_unit( code ).
               ENDIF.
             ELSEIF code >= 55296 AND code <= 57343.
               unit = code.
-              ch = cl_abap_conv_in_ce=>uccp( unit ).
+              ch = unicode_unit( code ).
             ELSE.
               ch = cl_abap_conv_in_ce=>uccpi( code ).
             ENDIF.
           WHEN OTHERS.
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
         ENDCASE.
       ELSE.
         code = cl_abap_conv_out_ce=>uccpi( ch ).
         IF code < 32.
-          RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+          RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
         ENDIF.
       ENDIF.
       CONCATENATE result ch INTO result RESPECTING BLANKS.
     ENDWHILE.
-    RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+    RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
   ENDMETHOD.
-
   METHOD value.
     DATA ch TYPE string.
     DATA key TYPE string.
@@ -136,7 +134,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     DATA token TYPE string.
     whitespace( ).
     IF cursor >= strlen( input ).
-      RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+      RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
     ENDIF.
     ch = input+cursor(1).
     CREATE OBJECT result.
@@ -154,30 +152,30 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
         ENDIF.
         WHILE cursor < strlen( input ).
           IF input+cursor(1) <> '"'.
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           key = text( ).
           whitespace( ).
           IF cursor >= strlen( input ) OR input+cursor(1) <> ':'.
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           cursor = cursor + 1.
           child = value( ).
           result->put( p0 = key p1 = child ).
           whitespace( ).
           IF cursor >= strlen( input ).
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           ch = input+cursor(1).
           cursor = cursor + 1.
           IF ch = '}'.
             RETURN.
           ELSEIF ch <> ','.
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           whitespace( ).
         ENDWHILE.
-        RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+        RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
       WHEN '['.
         result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
         cursor = cursor + 1.
@@ -191,23 +189,23 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
           result->append( child ).
           whitespace( ).
           IF cursor >= strlen( input ).
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           ch = input+cursor(1).
           cursor = cursor + 1.
           IF ch = ']'.
             RETURN.
           ELSEIF ch <> ','.
-            RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+            RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
           ENDIF.
           whitespace( ).
         ENDWHILE.
-        RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+        RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
       WHEN OTHERS.
         start = cursor.
         WHILE cursor < strlen( input ).
           ch = input+cursor(1).
-          IF ch = ',' OR ch = '}' OR ch = ']' OR ch = space OR ch = cl_abap_char_utilities=>newline OR ch = cl_abap_char_utilities=>horizontal_tab OR ch = cl_abap_conv_in_ce=>uccpi( 13 ).
+          IF ch = ',' OR ch = '}' OR ch = ']' OR ch = ` ` OR ch = cl_abap_char_utilities=>newline OR ch = cl_abap_char_utilities=>horizontal_tab OR ch = cl_abap_conv_in_ce=>uccpi( 13 ).
             EXIT.
           ENDIF.
           cursor = cursor + 1.
@@ -219,11 +217,15 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
             result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_null.
           WHEN 'true' OR 'false'.
             result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
-            result->bval = xsdbool( token = 'true' ).
+            IF token = 'true'.
+              result->bval = abap_true.
+            ELSE.
+              result->bval = abap_false.
+            ENDIF.
           WHEN OTHERS.
             FIND REGEX '^-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?$' IN token.
             IF sy-subrc <> 0.
-              RAISE EXCEPTION TYPE zlnt_exception_re_478ac52845e5.
+              RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
             ENDIF.
             result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
             TRY.
@@ -233,5 +235,31 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
             ENDTRY.
         ENDCASE.
     ENDCASE.
+  ENDMETHOD.
+  METHOD unicode_unit.
+    DATA unit TYPE x LENGTH 2.
+    DATA padding TYPE x LENGTH 2.
+    DATA bytes TYPE xstring.
+    DATA converter TYPE REF TO cl_abap_conv_in_ce.
+    IF p0 < 55296 OR p0 > 57343.
+      result = cl_abap_conv_in_ce=>uccpi( p0 ).
+      RETURN.
+    ENDIF.
+    unit = p0.
+    CONCATENATE unit+1(1) unit+0(1) INTO bytes IN BYTE MODE.
+    IF p0 < 56320.
+      padding = '00DC'.
+      CONCATENATE bytes padding INTO bytes IN BYTE MODE.
+    ELSE.
+      padding = '00D8'.
+      CONCATENATE padding bytes INTO bytes IN BYTE MODE.
+    ENDIF.
+    converter = cl_abap_conv_in_ce=>create( encoding = '4103' ).
+    converter->convert( EXPORTING input = bytes IMPORTING data = result ).
+    IF p0 < 56320.
+      result = result+0(1).
+    ELSE.
+      result = result+1(1).
+    ENDIF.
   ENDMETHOD.
 ENDCLASS.

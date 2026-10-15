@@ -1,9 +1,10 @@
 * TS: src/abap/1_lexer/lexer.ts:56:1 Lexer
 CLASS zcl_lnt_lexer DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    DATA zlnt_record_delet_0597644d88b4 TYPE HASHED TABLE OF string WITH UNIQUE KEY table_line.
     DATA virtual TYPE REF TO zcl_lnt_position.
     DATA tokens TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA m TYPE int8.
+    DATA m TYPE f.
     DATA stream TYPE REF TO zcl_lnt_lexer_stream.
     DATA buffer TYPE REF TO zcl_lnt_lexer_buffer.
     METHODS run IMPORTING i_file TYPE REF TO zif_lnt_file i_virtual TYPE REF TO zcl_lnt_position RETURNING VALUE(result) TYPE REF TO zcl_lnt_iabaplexer_result.
@@ -11,57 +12,88 @@ CLASS zcl_lnt_lexer DEFINITION PUBLIC CREATE PUBLIC.
     METHODS process IMPORTING i_raw TYPE string.
     INTERFACES zlnt_runtime_desc_e5fe811e0f42.
     METHODS zlnt_builtin_clas_3f891b097658 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
+    METHODS zlnt_builtin_nati_72359f490bf2 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_clas_a39833db3295.
   PROTECTED SECTION.
   PRIVATE SECTION.
     CLASS-DATA zlnt_builtin_code_3bfe63ca77b3 TYPE REF TO cl_abap_conv_out_ce.
 ENDCLASS.
 CLASS zcl_lnt_lexer IMPLEMENTATION.
   METHOD run.
-    DATA(t1) = i_file.
-    DATA(t2) = i_virtual.
-    DATA(t3) = t2.
+    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t2) = CAST zcl_lnt_position( i_virtual ).
+    DATA(t3) = CAST zcl_lnt_position( t2 ).
     me->virtual = t3.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `virtual`.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t4.
     me->tokens = t4.
-    DATA t5 TYPE int8.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tokens`.
+    DATA t5 TYPE f.
     DATA(t6) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
     t5 = t6.
     me->m = t5.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
     DATA t7 TYPE string.
-    DATA(t8) = t1.
-    t7 = t8->get_raw( ).
+    DATA(t8) = CAST zif_lnt_file( t1 ).
+    t7 = t8->get_raw(  ).
     me->process( i_raw = t7 ).
     DATA t9 TYPE REF TO zcl_lnt_iabaplexer_result.
-    DATA(t10) = t1.
-    DATA(t11) = me->tokens.
-    t9 = NEW zcl_lnt_iabaplexer_result( i_file = t10 i_tokens = t11 ).
+    DATA t10 TYPE REF TO zif_lnt_file.
+    DATA(t11) = CAST zif_lnt_file( t1 ).
+    t10 = t11.
+    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+    t12 = t13.
+    t9 = NEW zcl_lnt_iabaplexer_result( i_file = t10 i_tokens = t12 ).
+    CREATE OBJECT t9->zlnt_view_ownkeys_b0e8086400eb.
+    t9->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t14.
+    IF t9->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t9->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t14 ).
+    ENDIF.
+    DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t15.
+    IF t9->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t9->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tokens` p1 = t15 ).
+    ENDIF.
+    CREATE OBJECT t9->zlnt_json_ownkeys_70e5fd461788.
+    t9->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t16) = CONV string( |file| ).
+    DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t17.
+    IF t9->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t9->zlnt_json_ownkeys_70e5fd461788->put( p0 = t16 p1 = t17 ).
+    ENDIF.
+    DATA(t18) = CONV string( |tokens| ).
+    DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t19.
+    IF t9->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t9->zlnt_json_ownkeys_70e5fd461788->put( p0 = t18 p1 = t19 ).
+    ENDIF.
     result = t9.
-
+    RETURN.
   ENDMETHOD.
-
   METHOD add_51c1.
-    CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
-    CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    CONSTANTS range_int_check_hi_zik0zj TYPE int8 VALUE '2147483647'.
-    CONSTANTS range_int_check_lo_nzik0zk TYPE int8 VALUE '-2147483648'.
+    CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
+    CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = VALUE string( ).
     DATA t4 TYPE REF TO zcl_lnt_lexer_buffer.
-    DATA(t5) = me->buffer.
+    DATA(t5) = CAST zcl_lnt_lexer_buffer( me->buffer ).
     t4 = t5.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE string.
-    DATA(t8) = t4.
+    DATA(t8) = CAST zcl_lnt_lexer_buffer( t4 ).
     t7 = t8->raw.
     DATA t9 TYPE i.
-    DATA(t10) = t4.
+    DATA(t10) = CAST zcl_lnt_lexer_buffer( t4 ).
     t9 = t10->start.
     DATA t11 TYPE i.
-    DATA(t12) = t4.
+    DATA(t12) = CAST zcl_lnt_lexer_buffer( t4 ).
     t11 = t12->end.
-    DATA(t13) = strlen( t7 ).
+    DATA(t13) = CONV i( strlen( t7 ) ).
     t9 = COND i( WHEN t9 < 0 THEN 0 WHEN t9 > t13 THEN t13 ELSE t9 ).
     t11 = COND i( WHEN t11 < 0 THEN 0 WHEN t11 > t13 THEN t13 ELSE t11 ).
     IF t9 > t11.
@@ -72,7 +104,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     t13 = t11 - t9.
     t6 = t7+t9(t13).
     t3 = t6.
-    DATA(t14) = strlen( t3 ).
+    DATA(t14) = CONV i( strlen( t3 ) ).
     DATA t15 TYPE i.
     DATA t16 TYPE i.
     t15 = 0.
@@ -152,110 +184,113 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
     t1 = t2.
     DATA t33 TYPE abap_bool.
     DATA t34 TYPE i.
-    DATA(t35) = t1.
-    DATA(t36) = strlen( t35 ).
+    DATA(t35) = CONV string( t1 ).
+    DATA(t36) = CONV i( strlen( t35 ) ).
     t34 = t36.
-    DATA(t37) = 0.
+    DATA(t37) = CONV i( 0 ).
     t33 = xsdbool( t34 > t37 ).
     IF t33 = abap_true.
-      DATA t38 TYPE int8.
-      DATA t39 TYPE int8.
+      DATA t38 TYPE f.
+      DATA t39 TYPE f.
       DATA t40 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t41) = me->stream.
+      DATA(t41) = CAST zcl_lnt_lexer_stream( me->stream ).
       t40 = t41.
-      DATA t42 TYPE int8.
-      DATA(t43) = t40.
+      DATA t42 TYPE f.
+      DATA(t43) = CAST zcl_lnt_lexer_stream( t40 ).
       t42 = t43->col.
       t39 = t42.
       t38 = t39.
-      DATA t44 TYPE int8.
-      DATA t45 TYPE int8.
+      DATA t44 TYPE f.
+      DATA t45 TYPE f.
       DATA t46 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t47) = me->stream.
+      DATA(t47) = CAST zcl_lnt_lexer_stream( me->stream ).
       t46 = t47.
-      DATA t48 TYPE int8.
-      DATA(t49) = t46.
+      DATA t48 TYPE f.
+      DATA(t49) = CAST zcl_lnt_lexer_stream( t46 ).
       t48 = t49->row.
       t45 = t48.
       t44 = t45.
       DATA t50 TYPE abap_bool.
-      DATA(t51) = abap_false.
+      DATA(t51) = CONV abap_bool( abap_false ).
       t50 = t51.
       DATA t52 TYPE i.
       DATA t53 TYPE i.
       DATA t54 TYPE i.
-      DATA t55 TYPE int8.
+      DATA t55 TYPE f.
       DATA t56 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t57) = me->stream.
+      DATA(t57) = CAST zcl_lnt_lexer_stream( me->stream ).
       t56 = t57.
-      DATA t58 TYPE int8.
+      DATA t58 TYPE f.
       DATA t59 TYPE i.
-      DATA(t60) = t56.
+      DATA(t60) = CAST zcl_lnt_lexer_stream( t56 ).
       t59 = t60->offset.
       t58 = t59.
       t55 = t58.
       t54 = t55.
       DATA t61 TYPE i.
-      DATA(t62) = t1.
-      DATA(t63) = strlen( t62 ).
+      DATA(t62) = CONV string( t1 ).
+      DATA(t63) = CONV i( strlen( t62 ) ).
       t61 = t63.
       t53 = t54 - t61.
       t52 = t53.
       DATA t64 TYPE abap_bool.
-      DATA(t65) = t52.
-      DATA(t66) = 0.
+      DATA(t65) = CONV i( t52 ).
+      DATA(t66) = CONV i( 0 ).
       t64 = xsdbool( t65 >= t66 ).
       IF t64 = abap_true.
         DATA(t67) = VALUE i( ).
         DATA(t68) = VALUE i( ).
-        DATA(t69) = VALUE int8( ).
+        DATA(t69) = VALUE f( ).
         DATA t70 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t71) = me->stream.
+        DATA(t71) = CAST zcl_lnt_lexer_stream( me->stream ).
         t70 = t71.
-        DATA t72 TYPE int8.
-        DATA t73 TYPE int8.
-        DATA(t74) = t52.
+        DATA t72 TYPE f.
+        DATA t73 TYPE f.
+        DATA(t74) = CONV i( t52 ).
         t73 = t74.
         t72 = t73.
-        DATA(t75) = VALUE int8( ).
+        DATA(t75) = VALUE f( ).
         DATA t76 TYPE abap_bool.
         DATA t77 TYPE abap_bool.
-        DATA(t78) = t72.
-        DATA(t79) = CONV int8( 0 ).
+        DATA(t78) = CONV f( t72 ).
+        DATA(t79) = CONV f( 0 ).
         t77 = xsdbool( t78 < t79 ).
         t76 = t77.
         IF t77 = abap_false.
           DATA t80 TYPE abap_bool.
-          DATA(t81) = t72.
-          DATA t82 TYPE int8.
+          DATA(t81) = CONV f( t72 ).
+          DATA t82 TYPE f.
           DATA t83 TYPE i.
           DATA t84 TYPE string.
-          DATA(t85) = t70.
+          DATA(t85) = CAST zcl_lnt_lexer_stream( t70 ).
           t84 = t85->raw.
-          DATA(t86) = strlen( t84 ).
+          DATA(t86) = CONV i( strlen( t84 ) ).
           t83 = t86.
           t82 = t83.
           t80 = xsdbool( t81 >= t82 ).
           t76 = t80.
         ENDIF.
         IF t76 = abap_true.
-          DATA t87 TYPE int8.
+          DATA t87 TYPE f.
           DATA(t88) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
           t87 = t88.
           t75 = t87.
         ELSE.
-          DATA(t89) = VALUE int8( ).
+          DATA(t89) = VALUE f( ).
           DATA(t90) = VALUE i( ).
           DATA t91 TYPE string.
-          DATA(t92) = t70.
+          DATA(t92) = CAST zcl_lnt_lexer_stream( t70 ).
           t91 = t92->raw.
           DATA(t93) = VALUE i( ).
-          DATA(t94) = t72.
-          IF t94 < range_int_check_lo_nzik0zk OR t94 > range_int_check_hi_zik0zj.
-            RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+          DATA(t94) = CONV f( t72 ).
+          IF t94 > range_i32_upper.
+            t93 = range_i32_upper.
+          ELSEIF t94 < range_i32_lower.
+            t93 = range_i32_lower.
+          ELSE.
+            t93 = trunc( t94 ).
           ENDIF.
-          t93 = t94.
-          DATA(t95) = strlen( t91 ).
+          DATA(t95) = CONV i( strlen( t91 ) ).
           IF t93 < 0 OR t93 >= t95.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
@@ -291,13 +326,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         DATA(t103) = VALUE abap_bool( ).
         DATA t104 TYPE abap_bool.
         DATA t105 TYPE abap_bool.
-        DATA(t106) = t67.
+        DATA(t106) = CONV i( t67 ).
         DATA(t107) = CONV i( zcl_lnt_lexer_module=>ch_space ).
         t105 = xsdbool( t106 = t107 ).
         t104 = t105.
         IF t105 = abap_false.
           DATA t108 TYPE abap_bool.
-          DATA(t109) = t67.
+          DATA(t109) = CONV i( t67 ).
           DATA(t110) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
           t108 = xsdbool( t109 = t110 ).
           t104 = t108.
@@ -305,7 +340,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         t103 = t104.
         IF t104 = abap_false.
           DATA t111 TYPE abap_bool.
-          DATA(t112) = t67.
+          DATA(t112) = CONV i( t67 ).
           DATA(t113) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
           t111 = xsdbool( t112 = t113 ).
           t103 = t111.
@@ -313,66 +348,63 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
         t102 = t103.
         IF t103 = abap_false.
           DATA t114 TYPE abap_bool.
-          DATA(t115) = t67.
+          DATA(t115) = CONV i( t67 ).
           DATA(t116) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
           t114 = xsdbool( t115 = t116 ).
           t102 = t114.
         ENDIF.
         IF t102 = abap_true.
-          DATA(t117) = abap_true.
+          DATA(t117) = CONV abap_bool( abap_true ).
           t50 = t117.
         ENDIF.
       ENDIF.
       DATA t118 TYPE abap_bool.
-      DATA(t119) = abap_false.
+      DATA(t119) = CONV abap_bool( abap_false ).
       t118 = t119.
       DATA(t120) = VALUE i( ).
       DATA(t121) = VALUE i( ).
-      DATA(t122) = VALUE int8( ).
+      DATA(t122) = VALUE f( ).
       DATA t123 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t124) = me->stream.
+      DATA(t124) = CAST zcl_lnt_lexer_stream( me->stream ).
       t123 = t124.
-      DATA(t125) = VALUE int8( ).
-      DATA(t126) = VALUE int8( ).
+      DATA(t125) = VALUE f( ).
+      DATA t126 TYPE int8.
       DATA t127 TYPE int8.
       DATA t128 TYPE int8.
       DATA t129 TYPE i.
-      DATA(t130) = t123.
+      DATA(t130) = CAST zcl_lnt_lexer_stream( t123 ).
       t129 = t130->offset.
       t128 = t129.
       DATA(t131) = CONV int8( 1 ).
       t127 = t128 + t131.
-      IF t127 < range_int8_bound_min OR t127 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
       t126 = t127.
-      DATA(t132) = VALUE int8( ).
+      DATA(t132) = VALUE f( ).
       DATA t133 TYPE abap_bool.
-      DATA(t134) = t126.
+      DATA(t134) = CONV int8( t126 ).
       DATA t135 TYPE int8.
       DATA t136 TYPE i.
       DATA t137 TYPE string.
-      DATA(t138) = t123.
+      DATA(t138) = CAST zcl_lnt_lexer_stream( t123 ).
       t137 = t138->raw.
-      DATA(t139) = strlen( t137 ).
+      DATA(t139) = CONV i( strlen( t137 ) ).
       t136 = t139.
       t135 = t136.
       t133 = xsdbool( t134 >= t135 ).
       IF t133 = abap_true.
-        DATA t140 TYPE int8.
+        DATA t140 TYPE f.
         DATA(t141) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
         t140 = t141.
         t132 = t140.
       ELSE.
-        DATA(t142) = VALUE int8( ).
+        DATA(t142) = VALUE f( ).
         DATA(t143) = VALUE i( ).
         DATA t144 TYPE string.
-        DATA(t145) = t123.
+        DATA(t145) = CAST zcl_lnt_lexer_stream( t123 ).
         t144 = t145->raw.
         DATA t146 TYPE i.
-        DATA(t147) = t126.
+        DATA(t147) = CONV int8( t126 ).
         t146 = t147.
-        DATA(t148) = strlen( t144 ).
+        DATA(t148) = CONV i( strlen( t144 ) ).
         IF t146 < 0 OR t146 >= t148.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -413,13 +445,13 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       DATA(t160) = VALUE abap_bool( ).
       DATA t161 TYPE abap_bool.
       DATA t162 TYPE abap_bool.
-      DATA(t163) = t120.
+      DATA(t163) = CONV i( t120 ).
       DATA(t164) = CONV i( zcl_lnt_lexer_module=>ch_space ).
       t162 = xsdbool( t163 = t164 ).
       t161 = t162.
       IF t162 = abap_false.
         DATA t165 TYPE abap_bool.
-        DATA(t166) = t120.
+        DATA(t166) = CONV i( t120 ).
         DATA(t167) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
         t165 = xsdbool( t166 = t167 ).
         t161 = t165.
@@ -427,7 +459,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t160 = t161.
       IF t161 = abap_false.
         DATA t168 TYPE abap_bool.
-        DATA(t169) = t120.
+        DATA(t169) = CONV i( t120 ).
         DATA(t170) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
         t168 = xsdbool( t169 = t170 ).
         t160 = t168.
@@ -435,7 +467,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t159 = t160.
       IF t160 = abap_false.
         DATA t171 TYPE abap_bool.
-        DATA(t172) = t120.
+        DATA(t172) = CONV i( t120 ).
         DATA(t173) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
         t171 = xsdbool( t172 = t173 ).
         t159 = t171.
@@ -443,7 +475,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t158 = t159.
       IF t159 = abap_false.
         DATA t174 TYPE abap_bool.
-        DATA(t175) = t120.
+        DATA(t175) = CONV i( t120 ).
         DATA(t176) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
         t174 = xsdbool( t175 = t176 ).
         t158 = t174.
@@ -451,7 +483,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t157 = t158.
       IF t158 = abap_false.
         DATA t177 TYPE abap_bool.
-        DATA(t178) = t120.
+        DATA(t178) = CONV i( t120 ).
         DATA(t179) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
         t177 = xsdbool( t178 = t179 ).
         t157 = t177.
@@ -459,7 +491,7 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t156 = t157.
       IF t157 = abap_false.
         DATA t180 TYPE abap_bool.
-        DATA(t181) = t120.
+        DATA(t181) = CONV i( t120 ).
         DATA(t182) = CONV i( zcl_lnt_lexer_module=>eof ).
         t180 = xsdbool( t181 = t182 ).
         t156 = t180.
@@ -467,720 +499,718 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
       t155 = t156.
       IF t156 = abap_false.
         DATA t183 TYPE abap_bool.
-        DATA(t184) = t120.
+        DATA(t184) = CONV i( t120 ).
         DATA(t185) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
         t183 = xsdbool( t184 = t185 ).
         t155 = t183.
       ENDIF.
       IF t155 = abap_true.
-        DATA(t186) = abap_true.
+        DATA(t186) = CONV abap_bool( abap_true ).
         t118 = t186.
       ENDIF.
       DATA t187 TYPE REF TO zcl_lnt_position.
-      CLEAR t187.
       DATA t188 TYPE REF TO zcl_lnt_position.
-      CLEAR t188.
-      DATA(t189) = t44.
-      DATA t190 TYPE int8.
-      DATA(t191) = t38.
-      DATA t192 TYPE int8.
+      DATA(t189) = CONV f( t44 ).
+      DATA t190 TYPE f.
+      DATA(t191) = CONV f( t38 ).
+      DATA t192 TYPE f.
       DATA t193 TYPE i.
-      DATA(t194) = t1.
-      DATA(t195) = strlen( t194 ).
+      DATA(t194) = CONV string( t1 ).
+      DATA(t195) = CONV i( strlen( t194 ) ).
       t193 = t195.
       t192 = t193.
       t190 = t191 - t192.
-      IF t190 < range_int8_bound_min OR t190 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
-      t188 = NEW zcl_lnt_position( i_row = t189 i_col = t190 ).
+      DATA(t196) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+      t196->has = abap_true.
+      t196->value = t190.
+      t188 = NEW zcl_lnt_position( i_row = t189 i_col = t196 ).
       t187 = t188.
-      DATA t196 TYPE abap_bool.
-      DATA(t197) = me->virtual.
-      t196 = xsdbool( t197 IS BOUND ).
-      IF t196 = abap_true.
-        DATA t198 TYPE REF TO zcl_lnt_virtual_position.
-        DATA t199 TYPE REF TO zcl_lnt_position.
-        DATA(t200) = me->virtual.
-        t199 = t200.
-        DATA t201 TYPE int8.
-        DATA t202 TYPE REF TO zcl_lnt_position.
-        DATA(t203) = t187.
-        t202 = t203.
-        DATA t204 TYPE int8.
-        DATA(t205) = t202.
-        t204 = t205->row.
-        t201 = t204.
-        DATA t206 TYPE int8.
-        DATA t207 TYPE REF TO zcl_lnt_position.
-        DATA(t208) = t187.
-        t207 = t208.
-        DATA t209 TYPE int8.
-        DATA(t210) = t207.
-        t209 = t210->col.
-        t206 = t209.
-        t198 = NEW zcl_lnt_virtual_position( i_virtual = t199 i_row = t201 i_col = t206 ).
-        t187 = t198.
+      DATA t197 TYPE abap_bool.
+      DATA(t198) = CAST zcl_lnt_position( me->virtual ).
+      t197 = xsdbool( t198 IS BOUND ).
+      IF t197 = abap_true.
+        DATA t199 TYPE REF TO zcl_lnt_virtual_position.
+        DATA t200 TYPE REF TO zcl_lnt_position.
+        DATA(t201) = CAST zcl_lnt_position( me->virtual ).
+        t200 = t201.
+        DATA t202 TYPE f.
+        DATA t203 TYPE REF TO zcl_lnt_position.
+        DATA(t204) = CAST zcl_lnt_position( t187 ).
+        t203 = t204.
+        DATA t205 TYPE f.
+        DATA(t206) = CAST zcl_lnt_position( t203 ).
+        t205 = t206->row.
+        t202 = t205.
+        DATA t207 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        DATA t208 TYPE REF TO zcl_lnt_position.
+        DATA(t209) = CAST zcl_lnt_position( t187 ).
+        t208 = t209.
+        DATA t210 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        DATA(t211) = CAST zcl_lnt_position( t208 ).
+        t210 = t211->col.
+        t207 = t210.
+        t199 = NEW zcl_lnt_virtual_position( i_virtual = t200 i_row = t202 i_col = t207 ).
+        t187 = t199.
       ENDIF.
-      DATA t211 TYPE REF TO zcl_lnt_abstract_token.
       DATA t212 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t212.
-      t211 = t212.
-      DATA t213 TYPE abap_bool.
-      DATA(t214) = CONV int8( me->m ).
-      DATA t215 TYPE int8.
-      DATA(t216) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
-      t215 = t216.
-      t213 = xsdbool( t214 = t215 ).
-      IF t213 = abap_true.
-        DATA t217 TYPE REF TO zcl_lnt_lx_comment.
-        DATA(t218) = t187.
-        DATA(t219) = t1.
-        t217 = NEW zcl_lnt_lx_comment( i_start = t218 i_str = t219 ).
-        t211 = t217.
+      DATA t213 TYPE REF TO zcl_lnt_abstract_token.
+      CLEAR t213.
+      t212 = t213.
+      DATA t214 TYPE abap_bool.
+      DATA(t215) = CONV f( me->m ).
+      DATA t216 TYPE f.
+      DATA(t217) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
+      t216 = t217.
+      t214 = xsdbool( t215 = t216 ).
+      IF t214 = abap_true.
+        DATA t218 TYPE REF TO zcl_lnt_lx_comment.
+        DATA(t219) = CAST zcl_lnt_position( t187 ).
+        DATA(t220) = CONV string( t1 ).
+        t218 = NEW zcl_lnt_lx_comment( i_start = t219 i_str = t220 ).
+        t212 = t218.
       ELSE.
-        DATA t220 TYPE abap_bool.
         DATA t221 TYPE abap_bool.
-        DATA(t222) = CONV int8( me->m ).
-        DATA t223 TYPE int8.
-        DATA(t224) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
-        t223 = t224.
-        t221 = xsdbool( t222 = t223 ).
-        t220 = t221.
-        IF t221 = abap_false.
-          DATA t225 TYPE abap_bool.
-          DATA(t226) = CONV int8( me->m ).
-          DATA t227 TYPE int8.
-          DATA(t228) = CONV i( zcl_lnt_lexer_module=>mode_str ).
-          t227 = t228.
-          t225 = xsdbool( t226 = t227 ).
-          t220 = t225.
+        DATA t222 TYPE abap_bool.
+        DATA(t223) = CONV f( me->m ).
+        DATA t224 TYPE f.
+        DATA(t225) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
+        t224 = t225.
+        t222 = xsdbool( t223 = t224 ).
+        t221 = t222.
+        IF t222 = abap_false.
+          DATA t226 TYPE abap_bool.
+          DATA(t227) = CONV f( me->m ).
+          DATA t228 TYPE f.
+          DATA(t229) = CONV i( zcl_lnt_lexer_module=>mode_str ).
+          t228 = t229.
+          t226 = xsdbool( t227 = t228 ).
+          t221 = t226.
         ENDIF.
-        IF t220 = abap_true.
-          DATA t229 TYPE REF TO zcl_lnt_string_token.
-          DATA(t230) = t187.
-          DATA(t231) = t1.
-          t229 = NEW zcl_lnt_string_token( i_start = t230 i_str = t231 ).
-          t211 = t229.
+        IF t221 = abap_true.
+          DATA t230 TYPE REF TO zcl_lnt_string_token.
+          DATA(t231) = CAST zcl_lnt_position( t187 ).
+          DATA(t232) = CONV string( t1 ).
+          t230 = NEW zcl_lnt_string_token( i_start = t231 i_str = t232 ).
+          t212 = t230.
         ELSE.
-          DATA t232 TYPE abap_bool.
-          DATA(t233) = CONV int8( me->m ).
-          DATA t234 TYPE int8.
-          DATA(t235) = CONV i( zcl_lnt_lexer_module=>mode_template ).
-          t234 = t235.
-          t232 = xsdbool( t233 = t234 ).
-          IF t232 = abap_true.
-            DATA(t236) = VALUE string( ).
+          DATA t233 TYPE abap_bool.
+          DATA(t234) = CONV f( me->m ).
+          DATA t235 TYPE f.
+          DATA(t236) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+          t235 = t236.
+          t233 = xsdbool( t234 = t235 ).
+          IF t233 = abap_true.
             DATA(t237) = VALUE string( ).
-            DATA(t238) = t1.
-            DATA(t239) = 0.
-            DATA(t240) = strlen( t238 ).
-            IF t239 < 0 OR t239 >= t240.
-              CLEAR t237.
+            DATA(t238) = VALUE string( ).
+            DATA(t239) = CONV string( t1 ).
+            DATA(t240) = CONV i( 0 ).
+            DATA(t241) = CONV i( strlen( t239 ) ).
+            IF t240 < 0 OR t240 >= t241.
+              CLEAR t238.
             ELSE.
-              t237 = t238+t239(1).
+              t238 = t239+t240(1).
             ENDIF.
-            t236 = t237.
-            DATA(t241) = VALUE string( ).
+            t237 = t238.
             DATA(t242) = VALUE string( ).
-            DATA(t243) = t1.
-            DATA t244 TYPE i.
+            DATA(t243) = VALUE string( ).
+            DATA(t244) = CONV string( t1 ).
             DATA t245 TYPE i.
-            DATA(t246) = t1.
-            DATA(t247) = strlen( t246 ).
-            t245 = t247.
-            DATA(t248) = 1.
-            t244 = t245 - t248.
-            DATA(t249) = strlen( t243 ).
-            IF t244 < 0 OR t244 >= t249.
-              CLEAR t242.
+            DATA t246 TYPE i.
+            DATA(t247) = CONV string( t1 ).
+            DATA(t248) = CONV i( strlen( t247 ) ).
+            t246 = t248.
+            DATA(t249) = CONV i( 1 ).
+            t245 = t246 - t249.
+            DATA(t250) = CONV i( strlen( t244 ) ).
+            IF t245 < 0 OR t245 >= t250.
+              CLEAR t243.
             ELSE.
-              t242 = t243+t244(1).
+              t243 = t244+t245(1).
             ENDIF.
-            t241 = t242.
-            DATA t250 TYPE abap_bool.
+            t242 = t243.
             DATA t251 TYPE abap_bool.
-            DATA(t252) = t236.
-            DATA(t253) = |\||.
-            t251 = xsdbool( t252 = t253 ).
-            t250 = t251.
-            IF t251 = abap_true.
-              DATA t254 TYPE abap_bool.
-              DATA(t255) = t241.
-              DATA(t256) = |\||.
-              t254 = xsdbool( t255 = t256 ).
-              t250 = t254.
+            DATA t252 TYPE abap_bool.
+            DATA(t253) = CONV string( t237 ).
+            DATA(t254) = CONV string( |\|| ).
+            t252 = xsdbool( t253 = t254 ).
+            t251 = t252.
+            IF t252 = abap_true.
+              DATA t255 TYPE abap_bool.
+              DATA(t256) = CONV string( t242 ).
+              DATA(t257) = CONV string( |\|| ).
+              t255 = xsdbool( t256 = t257 ).
+              t251 = t255.
             ENDIF.
-            IF t250 = abap_true.
-              DATA t257 TYPE REF TO zcl_lnt_lx_string_template.
-              DATA(t258) = t187.
-              DATA(t259) = t1.
-              t257 = NEW zcl_lnt_lx_string_template( i_start = t258 i_str = t259 ).
-              t211 = t257.
+            IF t251 = abap_true.
+              DATA t258 TYPE REF TO zcl_lnt_lx_string_template.
+              DATA(t259) = CAST zcl_lnt_position( t187 ).
+              DATA(t260) = CONV string( t1 ).
+              t258 = NEW zcl_lnt_lx_string_template( i_start = t259 i_str = t260 ).
+              t212 = t258.
             ELSE.
-              DATA(t260) = VALUE abap_bool( ).
-              DATA t261 TYPE abap_bool.
+              DATA(t261) = VALUE abap_bool( ).
               DATA t262 TYPE abap_bool.
-              DATA(t263) = t236.
-              DATA(t264) = |\||.
-              t262 = xsdbool( t263 = t264 ).
+              DATA t263 TYPE abap_bool.
+              DATA(t264) = CONV string( t237 ).
+              DATA(t265) = CONV string( |\|| ).
+              t263 = xsdbool( t264 = t265 ).
+              t262 = t263.
+              IF t263 = abap_true.
+                DATA t266 TYPE abap_bool.
+                DATA(t267) = CONV string( t242 ).
+                DATA(t268) = CONV string( |\{| ).
+                t266 = xsdbool( t267 = t268 ).
+                t262 = t266.
+              ENDIF.
               t261 = t262.
               IF t262 = abap_true.
-                DATA t265 TYPE abap_bool.
-                DATA(t266) = t241.
-                DATA(t267) = |\{|.
-                t265 = xsdbool( t266 = t267 ).
-                t261 = t265.
+                DATA t269 TYPE abap_bool.
+                DATA(t270) = CONV abap_bool( t118 ).
+                DATA(t271) = CONV abap_bool( abap_true ).
+                t269 = xsdbool( t270 = t271 ).
+                t261 = t269.
               ENDIF.
-              t260 = t261.
               IF t261 = abap_true.
-                DATA t268 TYPE abap_bool.
-                DATA(t269) = t118.
-                DATA(t270) = abap_true.
-                t268 = xsdbool( t269 = t270 ).
-                t260 = t268.
-              ENDIF.
-              IF t260 = abap_true.
-                DATA t271 TYPE REF TO zcl_lnt_string_template_begin.
-                DATA(t272) = t187.
-                DATA(t273) = t1.
-                t271 = NEW zcl_lnt_string_template_begin( i_start = t272 i_str = t273 ).
-                t211 = t271.
+                DATA t272 TYPE REF TO zcl_lnt_string_template_begin.
+                DATA(t273) = CAST zcl_lnt_position( t187 ).
+                DATA(t274) = CONV string( t1 ).
+                t272 = NEW zcl_lnt_string_template_begin( i_start = t273 i_str = t274 ).
+                t212 = t272.
               ELSE.
-                DATA(t274) = VALUE abap_bool( ).
-                DATA t275 TYPE abap_bool.
+                DATA(t275) = VALUE abap_bool( ).
                 DATA t276 TYPE abap_bool.
-                DATA(t277) = t236.
-                DATA(t278) = |\}|.
-                t276 = xsdbool( t277 = t278 ).
+                DATA t277 TYPE abap_bool.
+                DATA(t278) = CONV string( t237 ).
+                DATA(t279) = CONV string( |\}| ).
+                t277 = xsdbool( t278 = t279 ).
+                t276 = t277.
+                IF t277 = abap_true.
+                  DATA t280 TYPE abap_bool.
+                  DATA(t281) = CONV string( t242 ).
+                  DATA(t282) = CONV string( |\|| ).
+                  t280 = xsdbool( t281 = t282 ).
+                  t276 = t280.
+                ENDIF.
                 t275 = t276.
                 IF t276 = abap_true.
-                  DATA t279 TYPE abap_bool.
-                  DATA(t280) = t241.
-                  DATA(t281) = |\||.
-                  t279 = xsdbool( t280 = t281 ).
-                  t275 = t279.
+                  DATA t283 TYPE abap_bool.
+                  DATA(t284) = CONV abap_bool( t50 ).
+                  DATA(t285) = CONV abap_bool( abap_true ).
+                  t283 = xsdbool( t284 = t285 ).
+                  t275 = t283.
                 ENDIF.
-                t274 = t275.
                 IF t275 = abap_true.
-                  DATA t282 TYPE abap_bool.
-                  DATA(t283) = t50.
-                  DATA(t284) = abap_true.
-                  t282 = xsdbool( t283 = t284 ).
-                  t274 = t282.
-                ENDIF.
-                IF t274 = abap_true.
-                  DATA t285 TYPE REF TO zcl_lnt_string_template_end.
-                  DATA(t286) = t187.
-                  DATA(t287) = t1.
-                  t285 = NEW zcl_lnt_string_template_end( i_start = t286 i_str = t287 ).
-                  t211 = t285.
+                  DATA t286 TYPE REF TO zcl_lnt_string_template_end.
+                  DATA(t287) = CAST zcl_lnt_position( t187 ).
+                  DATA(t288) = CONV string( t1 ).
+                  t286 = NEW zcl_lnt_string_template_end( i_start = t287 i_str = t288 ).
+                  t212 = t286.
                 ELSE.
-                  DATA(t288) = VALUE abap_bool( ).
                   DATA(t289) = VALUE abap_bool( ).
-                  DATA t290 TYPE abap_bool.
+                  DATA(t290) = VALUE abap_bool( ).
                   DATA t291 TYPE abap_bool.
-                  DATA(t292) = t236.
-                  DATA(t293) = |\}|.
-                  t291 = xsdbool( t292 = t293 ).
+                  DATA t292 TYPE abap_bool.
+                  DATA(t293) = CONV string( t237 ).
+                  DATA(t294) = CONV string( |\}| ).
+                  t292 = xsdbool( t293 = t294 ).
+                  t291 = t292.
+                  IF t292 = abap_true.
+                    DATA t295 TYPE abap_bool.
+                    DATA(t296) = CONV string( t242 ).
+                    DATA(t297) = CONV string( |\{| ).
+                    t295 = xsdbool( t296 = t297 ).
+                    t291 = t295.
+                  ENDIF.
                   t290 = t291.
                   IF t291 = abap_true.
-                    DATA t294 TYPE abap_bool.
-                    DATA(t295) = t241.
-                    DATA(t296) = |\{|.
-                    t294 = xsdbool( t295 = t296 ).
-                    t290 = t294.
+                    DATA t298 TYPE abap_bool.
+                    DATA(t299) = CONV abap_bool( t118 ).
+                    DATA(t300) = CONV abap_bool( abap_true ).
+                    t298 = xsdbool( t299 = t300 ).
+                    t290 = t298.
                   ENDIF.
                   t289 = t290.
                   IF t290 = abap_true.
-                    DATA t297 TYPE abap_bool.
-                    DATA(t298) = t118.
-                    DATA(t299) = abap_true.
-                    t297 = xsdbool( t298 = t299 ).
-                    t289 = t297.
+                    DATA t301 TYPE abap_bool.
+                    DATA(t302) = CONV abap_bool( t50 ).
+                    DATA(t303) = CONV abap_bool( abap_true ).
+                    t301 = xsdbool( t302 = t303 ).
+                    t289 = t301.
                   ENDIF.
-                  t288 = t289.
                   IF t289 = abap_true.
-                    DATA t300 TYPE abap_bool.
-                    DATA(t301) = t50.
-                    DATA(t302) = abap_true.
-                    t300 = xsdbool( t301 = t302 ).
-                    t288 = t300.
-                  ENDIF.
-                  IF t288 = abap_true.
-                    DATA t303 TYPE REF TO zcl_lnt_string_template_middle.
-                    DATA(t304) = t187.
-                    DATA(t305) = t1.
-                    t303 = NEW zcl_lnt_string_template_middle( i_start = t304 i_str = t305 ).
-                    t211 = t303.
+                    DATA t304 TYPE REF TO zcl_lnt_string_template_middle.
+                    DATA(t305) = CAST zcl_lnt_position( t187 ).
+                    DATA(t306) = CONV string( t1 ).
+                    t304 = NEW zcl_lnt_string_template_middle( i_start = t305 i_str = t306 ).
+                    t212 = t304.
                   ELSE.
-                    DATA t306 TYPE REF TO zcl_lnt_lx_identifier.
-                    DATA(t307) = t187.
-                    DATA(t308) = t1.
-                    t306 = NEW zcl_lnt_lx_identifier( i_start = t307 i_str = t308 ).
-                    t211 = t306.
+                    DATA t307 TYPE REF TO zcl_lnt_lx_identifier.
+                    DATA(t308) = CAST zcl_lnt_position( t187 ).
+                    DATA(t309) = CONV string( t1 ).
+                    t307 = NEW zcl_lnt_lx_identifier( i_start = t308 i_str = t309 ).
+                    t212 = t307.
                   ENDIF.
                 ENDIF.
               ENDIF.
             ENDIF.
           ELSE.
-            DATA t309 TYPE abap_bool.
             DATA t310 TYPE abap_bool.
-            DATA t311 TYPE i.
-            DATA(t312) = t1.
-            DATA(t313) = strlen( t312 ).
-            t311 = t313.
-            DATA(t314) = 2.
-            t310 = xsdbool( t311 > t314 ).
-            t309 = t310.
-            IF t310 = abap_true.
-              DATA(t315) = VALUE abap_bool( ).
-              DATA(t316) = VALUE string( ).
-              DATA(t317) = t1.
-              DATA(t318) = 0.
-              DATA(t319) = 2.
-              DATA(t320) = strlen( t317 ).
-              IF t318 < 0.
-                t318 = t318 + t320.
-                IF t318 < 0.
-                  t318 = 0.
+            DATA t311 TYPE abap_bool.
+            DATA t312 TYPE i.
+            DATA(t313) = CONV string( t1 ).
+            DATA(t314) = CONV i( strlen( t313 ) ).
+            t312 = t314.
+            DATA(t315) = CONV i( 2 ).
+            t311 = xsdbool( t312 > t315 ).
+            t310 = t311.
+            IF t311 = abap_true.
+              DATA(t316) = VALUE abap_bool( ).
+              DATA(t317) = VALUE string( ).
+              DATA(t318) = CONV string( t1 ).
+              DATA(t319) = CONV i( 0 ).
+              DATA(t320) = CONV i( 2 ).
+              DATA(t321) = CONV i( strlen( t318 ) ).
+              IF t319 < 0.
+                t319 = t319 + t321.
+                IF t319 < 0.
+                  t319 = 0.
                 ENDIF.
               ENDIF.
-              IF t318 > t320 OR t319 <= 0.
-                CLEAR t316.
+              IF t319 > t321 OR t320 <= 0.
+                CLEAR t317.
               ELSE.
-                IF t319 > t320 - t318.
-                  t319 = t320 - t318.
+                IF t320 > t321 - t319.
+                  t320 = t321 - t319.
                 ENDIF.
-                t316 = t317+t318(t319).
+                t317 = t318+t319(t320).
               ENDIF.
-              DATA(t321) = |##|.
-              t315 = xsdbool( t316 = t321 ).
-              t309 = t315.
+              DATA(t322) = CONV string( |##| ).
+              t316 = xsdbool( t317 = t322 ).
+              t310 = t316.
             ENDIF.
-            IF t309 = abap_true.
-              DATA t322 TYPE REF TO zcl_lnt_pragma.
-              DATA(t323) = t187.
-              DATA(t324) = t1.
-              t322 = NEW zcl_lnt_pragma( i_start = t323 i_str = t324 ).
-              t211 = t322.
+            IF t310 = abap_true.
+              DATA t323 TYPE REF TO zcl_lnt_pragma.
+              DATA(t324) = CAST zcl_lnt_position( t187 ).
+              DATA(t325) = CONV string( t1 ).
+              t323 = NEW zcl_lnt_pragma( i_start = t324 i_str = t325 ).
+              t212 = t323.
             ELSE.
-              DATA t325 TYPE abap_bool.
-              DATA t326 TYPE i.
-              DATA(t327) = t1.
-              DATA(t328) = strlen( t327 ).
-              t326 = t328.
-              DATA(t329) = 1.
-              t325 = xsdbool( t326 = t329 ).
-              IF t325 = abap_true.
-                DATA t330 TYPE abap_bool.
+              DATA t326 TYPE abap_bool.
+              DATA t327 TYPE i.
+              DATA(t328) = CONV string( t1 ).
+              DATA(t329) = CONV i( strlen( t328 ) ).
+              t327 = t329.
+              DATA(t330) = CONV i( 1 ).
+              t326 = xsdbool( t327 = t330 ).
+              IF t326 = abap_true.
                 DATA t331 TYPE abap_bool.
-                DATA(t332) = t1.
-                DATA(t333) = |.|.
-                t331 = xsdbool( t332 = t333 ).
-                t330 = t331.
-                IF t331 = abap_false.
-                  DATA t334 TYPE abap_bool.
-                  DATA(t335) = t1.
-                  DATA(t336) = |,|.
-                  t334 = xsdbool( t335 = t336 ).
-                  t330 = t334.
+                DATA t332 TYPE abap_bool.
+                DATA(t333) = CONV string( t1 ).
+                DATA(t334) = CONV string( |.| ).
+                t332 = xsdbool( t333 = t334 ).
+                t331 = t332.
+                IF t332 = abap_false.
+                  DATA t335 TYPE abap_bool.
+                  DATA(t336) = CONV string( t1 ).
+                  DATA(t337) = CONV string( |,| ).
+                  t335 = xsdbool( t336 = t337 ).
+                  t331 = t335.
                 ENDIF.
-                IF t330 = abap_true.
-                  DATA t337 TYPE REF TO zcl_lnt_punctuation.
-                  DATA(t338) = t187.
-                  DATA(t339) = t1.
-                  t337 = NEW zcl_lnt_punctuation( i_start = t338 i_str = t339 ).
-                  t211 = t337.
+                IF t331 = abap_true.
+                  DATA t338 TYPE REF TO zcl_lnt_punctuation.
+                  DATA(t339) = CAST zcl_lnt_position( t187 ).
+                  DATA(t340) = CONV string( t1 ).
+                  t338 = NEW zcl_lnt_punctuation( i_start = t339 i_str = t340 ).
+                  t212 = t338.
                 ELSE.
-                  DATA t340 TYPE abap_bool.
-                  DATA(t341) = t1.
-                  DATA(t342) = |[|.
-                  t340 = xsdbool( t341 = t342 ).
-                  IF t340 = abap_true.
-                    DATA t343 TYPE abap_bool.
+                  DATA t341 TYPE abap_bool.
+                  DATA(t342) = CONV string( t1 ).
+                  DATA(t343) = CONV string( |[| ).
+                  t341 = xsdbool( t342 = t343 ).
+                  IF t341 = abap_true.
                     DATA t344 TYPE abap_bool.
-                    DATA(t345) = t50.
-                    DATA(t346) = abap_true.
-                    t344 = xsdbool( t345 = t346 ).
-                    t343 = t344.
-                    IF t344 = abap_true.
-                      DATA t347 TYPE abap_bool.
-                      DATA(t348) = t118.
-                      DATA(t349) = abap_true.
-                      t347 = xsdbool( t348 = t349 ).
-                      t343 = t347.
+                    DATA t345 TYPE abap_bool.
+                    DATA(t346) = CONV abap_bool( t50 ).
+                    DATA(t347) = CONV abap_bool( abap_true ).
+                    t345 = xsdbool( t346 = t347 ).
+                    t344 = t345.
+                    IF t345 = abap_true.
+                      DATA t348 TYPE abap_bool.
+                      DATA(t349) = CONV abap_bool( t118 ).
+                      DATA(t350) = CONV abap_bool( abap_true ).
+                      t348 = xsdbool( t349 = t350 ).
+                      t344 = t348.
                     ENDIF.
-                    IF t343 = abap_true.
-                      DATA t350 TYPE REF TO zcl_lnt_w_bracket_left_w.
-                      DATA(t351) = t187.
-                      DATA(t352) = t1.
-                      t350 = NEW zcl_lnt_w_bracket_left_w( i_start = t351 i_str = t352 ).
-                      t211 = t350.
+                    IF t344 = abap_true.
+                      DATA t351 TYPE REF TO zcl_lnt_w_bracket_left_w.
+                      DATA(t352) = CAST zcl_lnt_position( t187 ).
+                      DATA(t353) = CONV string( t1 ).
+                      t351 = NEW zcl_lnt_w_bracket_left_w( i_start = t352 i_str = t353 ).
+                      t212 = t351.
                     ELSE.
-                      DATA t353 TYPE abap_bool.
-                      DATA(t354) = t50.
-                      DATA(t355) = abap_true.
-                      t353 = xsdbool( t354 = t355 ).
-                      IF t353 = abap_true.
-                        DATA t356 TYPE REF TO zcl_lnt_w_bracket_left.
-                        DATA(t357) = t187.
-                        DATA(t358) = t1.
-                        t356 = NEW zcl_lnt_w_bracket_left( i_start = t357 i_str = t358 ).
-                        t211 = t356.
+                      DATA t354 TYPE abap_bool.
+                      DATA(t355) = CONV abap_bool( t50 ).
+                      DATA(t356) = CONV abap_bool( abap_true ).
+                      t354 = xsdbool( t355 = t356 ).
+                      IF t354 = abap_true.
+                        DATA t357 TYPE REF TO zcl_lnt_w_bracket_left.
+                        DATA(t358) = CAST zcl_lnt_position( t187 ).
+                        DATA(t359) = CONV string( t1 ).
+                        t357 = NEW zcl_lnt_w_bracket_left( i_start = t358 i_str = t359 ).
+                        t212 = t357.
                       ELSE.
-                        DATA t359 TYPE abap_bool.
-                        DATA(t360) = t118.
-                        DATA(t361) = abap_true.
-                        t359 = xsdbool( t360 = t361 ).
-                        IF t359 = abap_true.
-                          DATA t362 TYPE REF TO zcl_lnt_bracket_left_w.
-                          DATA(t363) = t187.
-                          DATA(t364) = t1.
-                          t362 = NEW zcl_lnt_bracket_left_w( i_start = t363 i_str = t364 ).
-                          t211 = t362.
+                        DATA t360 TYPE abap_bool.
+                        DATA(t361) = CONV abap_bool( t118 ).
+                        DATA(t362) = CONV abap_bool( abap_true ).
+                        t360 = xsdbool( t361 = t362 ).
+                        IF t360 = abap_true.
+                          DATA t363 TYPE REF TO zcl_lnt_bracket_left_w.
+                          DATA(t364) = CAST zcl_lnt_position( t187 ).
+                          DATA(t365) = CONV string( t1 ).
+                          t363 = NEW zcl_lnt_bracket_left_w( i_start = t364 i_str = t365 ).
+                          t212 = t363.
                         ELSE.
-                          DATA t365 TYPE REF TO zcl_lnt_bracket_left.
-                          DATA(t366) = t187.
-                          DATA(t367) = t1.
-                          t365 = NEW zcl_lnt_bracket_left( i_start = t366 i_str = t367 ).
-                          t211 = t365.
+                          DATA t366 TYPE REF TO zcl_lnt_bracket_left.
+                          DATA(t367) = CAST zcl_lnt_position( t187 ).
+                          DATA(t368) = CONV string( t1 ).
+                          t366 = NEW zcl_lnt_bracket_left( i_start = t367 i_str = t368 ).
+                          t212 = t366.
                         ENDIF.
                       ENDIF.
                     ENDIF.
                   ELSE.
-                    DATA t368 TYPE abap_bool.
-                    DATA(t369) = t1.
-                    DATA(t370) = |(|.
-                    t368 = xsdbool( t369 = t370 ).
-                    IF t368 = abap_true.
-                      DATA t371 TYPE abap_bool.
+                    DATA t369 TYPE abap_bool.
+                    DATA(t370) = CONV string( t1 ).
+                    DATA(t371) = CONV string( |(| ).
+                    t369 = xsdbool( t370 = t371 ).
+                    IF t369 = abap_true.
                       DATA t372 TYPE abap_bool.
-                      DATA(t373) = t50.
-                      DATA(t374) = abap_true.
-                      t372 = xsdbool( t373 = t374 ).
-                      t371 = t372.
-                      IF t372 = abap_true.
-                        DATA t375 TYPE abap_bool.
-                        DATA(t376) = t118.
-                        DATA(t377) = abap_true.
-                        t375 = xsdbool( t376 = t377 ).
-                        t371 = t375.
+                      DATA t373 TYPE abap_bool.
+                      DATA(t374) = CONV abap_bool( t50 ).
+                      DATA(t375) = CONV abap_bool( abap_true ).
+                      t373 = xsdbool( t374 = t375 ).
+                      t372 = t373.
+                      IF t373 = abap_true.
+                        DATA t376 TYPE abap_bool.
+                        DATA(t377) = CONV abap_bool( t118 ).
+                        DATA(t378) = CONV abap_bool( abap_true ).
+                        t376 = xsdbool( t377 = t378 ).
+                        t372 = t376.
                       ENDIF.
-                      IF t371 = abap_true.
-                        DATA t378 TYPE REF TO zcl_lnt_w_paren_left_w.
-                        DATA(t379) = t187.
-                        DATA(t380) = t1.
-                        t378 = NEW zcl_lnt_w_paren_left_w( i_start = t379 i_str = t380 ).
-                        t211 = t378.
+                      IF t372 = abap_true.
+                        DATA t379 TYPE REF TO zcl_lnt_w_paren_left_w.
+                        DATA(t380) = CAST zcl_lnt_position( t187 ).
+                        DATA(t381) = CONV string( t1 ).
+                        t379 = NEW zcl_lnt_w_paren_left_w( i_start = t380 i_str = t381 ).
+                        t212 = t379.
                       ELSE.
-                        DATA t381 TYPE abap_bool.
-                        DATA(t382) = t50.
-                        DATA(t383) = abap_true.
-                        t381 = xsdbool( t382 = t383 ).
-                        IF t381 = abap_true.
-                          DATA t384 TYPE REF TO zcl_lnt_w_paren_left.
-                          DATA(t385) = t187.
-                          DATA(t386) = t1.
-                          t384 = NEW zcl_lnt_w_paren_left( i_start = t385 i_str = t386 ).
-                          t211 = t384.
+                        DATA t382 TYPE abap_bool.
+                        DATA(t383) = CONV abap_bool( t50 ).
+                        DATA(t384) = CONV abap_bool( abap_true ).
+                        t382 = xsdbool( t383 = t384 ).
+                        IF t382 = abap_true.
+                          DATA t385 TYPE REF TO zcl_lnt_w_paren_left.
+                          DATA(t386) = CAST zcl_lnt_position( t187 ).
+                          DATA(t387) = CONV string( t1 ).
+                          t385 = NEW zcl_lnt_w_paren_left( i_start = t386 i_str = t387 ).
+                          t212 = t385.
                         ELSE.
-                          DATA t387 TYPE abap_bool.
-                          DATA(t388) = t118.
-                          DATA(t389) = abap_true.
-                          t387 = xsdbool( t388 = t389 ).
-                          IF t387 = abap_true.
-                            DATA t390 TYPE REF TO zcl_lnt_paren_left_w.
-                            DATA(t391) = t187.
-                            DATA(t392) = t1.
-                            t390 = NEW zcl_lnt_paren_left_w( i_start = t391 i_str = t392 ).
-                            t211 = t390.
+                          DATA t388 TYPE abap_bool.
+                          DATA(t389) = CONV abap_bool( t118 ).
+                          DATA(t390) = CONV abap_bool( abap_true ).
+                          t388 = xsdbool( t389 = t390 ).
+                          IF t388 = abap_true.
+                            DATA t391 TYPE REF TO zcl_lnt_paren_left_w.
+                            DATA(t392) = CAST zcl_lnt_position( t187 ).
+                            DATA(t393) = CONV string( t1 ).
+                            t391 = NEW zcl_lnt_paren_left_w( i_start = t392 i_str = t393 ).
+                            t212 = t391.
                           ELSE.
-                            DATA t393 TYPE REF TO zcl_lnt_paren_left.
-                            DATA(t394) = t187.
-                            DATA(t395) = t1.
-                            t393 = NEW zcl_lnt_paren_left( i_start = t394 i_str = t395 ).
-                            t211 = t393.
+                            DATA t394 TYPE REF TO zcl_lnt_paren_left.
+                            DATA(t395) = CAST zcl_lnt_position( t187 ).
+                            DATA(t396) = CONV string( t1 ).
+                            t394 = NEW zcl_lnt_paren_left( i_start = t395 i_str = t396 ).
+                            t212 = t394.
                           ENDIF.
                         ENDIF.
                       ENDIF.
                     ELSE.
-                      DATA t396 TYPE abap_bool.
-                      DATA(t397) = t1.
-                      DATA(t398) = |]|.
-                      t396 = xsdbool( t397 = t398 ).
-                      IF t396 = abap_true.
-                        DATA t399 TYPE abap_bool.
+                      DATA t397 TYPE abap_bool.
+                      DATA(t398) = CONV string( t1 ).
+                      DATA(t399) = CONV string( |]| ).
+                      t397 = xsdbool( t398 = t399 ).
+                      IF t397 = abap_true.
                         DATA t400 TYPE abap_bool.
-                        DATA(t401) = t50.
-                        DATA(t402) = abap_true.
-                        t400 = xsdbool( t401 = t402 ).
-                        t399 = t400.
-                        IF t400 = abap_true.
-                          DATA t403 TYPE abap_bool.
-                          DATA(t404) = t118.
-                          DATA(t405) = abap_true.
-                          t403 = xsdbool( t404 = t405 ).
-                          t399 = t403.
+                        DATA t401 TYPE abap_bool.
+                        DATA(t402) = CONV abap_bool( t50 ).
+                        DATA(t403) = CONV abap_bool( abap_true ).
+                        t401 = xsdbool( t402 = t403 ).
+                        t400 = t401.
+                        IF t401 = abap_true.
+                          DATA t404 TYPE abap_bool.
+                          DATA(t405) = CONV abap_bool( t118 ).
+                          DATA(t406) = CONV abap_bool( abap_true ).
+                          t404 = xsdbool( t405 = t406 ).
+                          t400 = t404.
                         ENDIF.
-                        IF t399 = abap_true.
-                          DATA t406 TYPE REF TO zcl_lnt_w_bracket_right_w.
-                          DATA(t407) = t187.
-                          DATA(t408) = t1.
-                          t406 = NEW zcl_lnt_w_bracket_right_w( i_start = t407 i_str = t408 ).
-                          t211 = t406.
+                        IF t400 = abap_true.
+                          DATA t407 TYPE REF TO zcl_lnt_w_bracket_right_w.
+                          DATA(t408) = CAST zcl_lnt_position( t187 ).
+                          DATA(t409) = CONV string( t1 ).
+                          t407 = NEW zcl_lnt_w_bracket_right_w( i_start = t408 i_str = t409 ).
+                          t212 = t407.
                         ELSE.
-                          DATA t409 TYPE abap_bool.
-                          DATA(t410) = t50.
-                          DATA(t411) = abap_true.
-                          t409 = xsdbool( t410 = t411 ).
-                          IF t409 = abap_true.
-                            DATA t412 TYPE REF TO zcl_lnt_w_bracket_right.
-                            DATA(t413) = t187.
-                            DATA(t414) = t1.
-                            t412 = NEW zcl_lnt_w_bracket_right( i_start = t413 i_str = t414 ).
-                            t211 = t412.
+                          DATA t410 TYPE abap_bool.
+                          DATA(t411) = CONV abap_bool( t50 ).
+                          DATA(t412) = CONV abap_bool( abap_true ).
+                          t410 = xsdbool( t411 = t412 ).
+                          IF t410 = abap_true.
+                            DATA t413 TYPE REF TO zcl_lnt_w_bracket_right.
+                            DATA(t414) = CAST zcl_lnt_position( t187 ).
+                            DATA(t415) = CONV string( t1 ).
+                            t413 = NEW zcl_lnt_w_bracket_right( i_start = t414 i_str = t415 ).
+                            t212 = t413.
                           ELSE.
-                            DATA t415 TYPE abap_bool.
-                            DATA(t416) = t118.
-                            DATA(t417) = abap_true.
-                            t415 = xsdbool( t416 = t417 ).
-                            IF t415 = abap_true.
-                              DATA t418 TYPE REF TO zcl_lnt_bracket_right_w.
-                              DATA(t419) = t187.
-                              DATA(t420) = t1.
-                              t418 = NEW zcl_lnt_bracket_right_w( i_start = t419 i_str = t420 ).
-                              t211 = t418.
+                            DATA t416 TYPE abap_bool.
+                            DATA(t417) = CONV abap_bool( t118 ).
+                            DATA(t418) = CONV abap_bool( abap_true ).
+                            t416 = xsdbool( t417 = t418 ).
+                            IF t416 = abap_true.
+                              DATA t419 TYPE REF TO zcl_lnt_bracket_right_w.
+                              DATA(t420) = CAST zcl_lnt_position( t187 ).
+                              DATA(t421) = CONV string( t1 ).
+                              t419 = NEW zcl_lnt_bracket_right_w( i_start = t420 i_str = t421 ).
+                              t212 = t419.
                             ELSE.
-                              DATA t421 TYPE REF TO zcl_lnt_bracket_right.
-                              DATA(t422) = t187.
-                              DATA(t423) = t1.
-                              t421 = NEW zcl_lnt_bracket_right( i_start = t422 i_str = t423 ).
-                              t211 = t421.
+                              DATA t422 TYPE REF TO zcl_lnt_bracket_right.
+                              DATA(t423) = CAST zcl_lnt_position( t187 ).
+                              DATA(t424) = CONV string( t1 ).
+                              t422 = NEW zcl_lnt_bracket_right( i_start = t423 i_str = t424 ).
+                              t212 = t422.
                             ENDIF.
                           ENDIF.
                         ENDIF.
                       ELSE.
-                        DATA t424 TYPE abap_bool.
-                        DATA(t425) = t1.
-                        DATA(t426) = |)|.
-                        t424 = xsdbool( t425 = t426 ).
-                        IF t424 = abap_true.
-                          DATA t427 TYPE abap_bool.
+                        DATA t425 TYPE abap_bool.
+                        DATA(t426) = CONV string( t1 ).
+                        DATA(t427) = CONV string( |)| ).
+                        t425 = xsdbool( t426 = t427 ).
+                        IF t425 = abap_true.
                           DATA t428 TYPE abap_bool.
-                          DATA(t429) = t50.
-                          DATA(t430) = abap_true.
-                          t428 = xsdbool( t429 = t430 ).
-                          t427 = t428.
-                          IF t428 = abap_true.
-                            DATA t431 TYPE abap_bool.
-                            DATA(t432) = t118.
-                            DATA(t433) = abap_true.
-                            t431 = xsdbool( t432 = t433 ).
-                            t427 = t431.
+                          DATA t429 TYPE abap_bool.
+                          DATA(t430) = CONV abap_bool( t50 ).
+                          DATA(t431) = CONV abap_bool( abap_true ).
+                          t429 = xsdbool( t430 = t431 ).
+                          t428 = t429.
+                          IF t429 = abap_true.
+                            DATA t432 TYPE abap_bool.
+                            DATA(t433) = CONV abap_bool( t118 ).
+                            DATA(t434) = CONV abap_bool( abap_true ).
+                            t432 = xsdbool( t433 = t434 ).
+                            t428 = t432.
                           ENDIF.
-                          IF t427 = abap_true.
-                            DATA t434 TYPE REF TO zcl_lnt_w_paren_right_w.
-                            DATA(t435) = t187.
-                            DATA(t436) = t1.
-                            t434 = NEW zcl_lnt_w_paren_right_w( i_start = t435 i_str = t436 ).
-                            t211 = t434.
+                          IF t428 = abap_true.
+                            DATA t435 TYPE REF TO zcl_lnt_w_paren_right_w.
+                            DATA(t436) = CAST zcl_lnt_position( t187 ).
+                            DATA(t437) = CONV string( t1 ).
+                            t435 = NEW zcl_lnt_w_paren_right_w( i_start = t436 i_str = t437 ).
+                            t212 = t435.
                           ELSE.
-                            DATA t437 TYPE abap_bool.
-                            DATA(t438) = t50.
-                            DATA(t439) = abap_true.
-                            t437 = xsdbool( t438 = t439 ).
-                            IF t437 = abap_true.
-                              DATA t440 TYPE REF TO zcl_lnt_w_paren_right.
-                              DATA(t441) = t187.
-                              DATA(t442) = t1.
-                              t440 = NEW zcl_lnt_w_paren_right( i_start = t441 i_str = t442 ).
-                              t211 = t440.
+                            DATA t438 TYPE abap_bool.
+                            DATA(t439) = CONV abap_bool( t50 ).
+                            DATA(t440) = CONV abap_bool( abap_true ).
+                            t438 = xsdbool( t439 = t440 ).
+                            IF t438 = abap_true.
+                              DATA t441 TYPE REF TO zcl_lnt_w_paren_right.
+                              DATA(t442) = CAST zcl_lnt_position( t187 ).
+                              DATA(t443) = CONV string( t1 ).
+                              t441 = NEW zcl_lnt_w_paren_right( i_start = t442 i_str = t443 ).
+                              t212 = t441.
                             ELSE.
-                              DATA t443 TYPE abap_bool.
-                              DATA(t444) = t118.
-                              DATA(t445) = abap_true.
-                              t443 = xsdbool( t444 = t445 ).
-                              IF t443 = abap_true.
-                                DATA t446 TYPE REF TO zcl_lnt_paren_right_w.
-                                DATA(t447) = t187.
-                                DATA(t448) = t1.
-                                t446 = NEW zcl_lnt_paren_right_w( i_start = t447 i_str = t448 ).
-                                t211 = t446.
+                              DATA t444 TYPE abap_bool.
+                              DATA(t445) = CONV abap_bool( t118 ).
+                              DATA(t446) = CONV abap_bool( abap_true ).
+                              t444 = xsdbool( t445 = t446 ).
+                              IF t444 = abap_true.
+                                DATA t447 TYPE REF TO zcl_lnt_paren_right_w.
+                                DATA(t448) = CAST zcl_lnt_position( t187 ).
+                                DATA(t449) = CONV string( t1 ).
+                                t447 = NEW zcl_lnt_paren_right_w( i_start = t448 i_str = t449 ).
+                                t212 = t447.
                               ELSE.
-                                DATA t449 TYPE REF TO zcl_lnt_paren_right.
-                                DATA(t450) = t187.
-                                DATA(t451) = t1.
-                                t449 = NEW zcl_lnt_paren_right( i_start = t450 i_str = t451 ).
-                                t211 = t449.
+                                DATA t450 TYPE REF TO zcl_lnt_paren_right.
+                                DATA(t451) = CAST zcl_lnt_position( t187 ).
+                                DATA(t452) = CONV string( t1 ).
+                                t450 = NEW zcl_lnt_paren_right( i_start = t451 i_str = t452 ).
+                                t212 = t450.
                               ENDIF.
                             ENDIF.
                           ENDIF.
                         ELSE.
-                          DATA t452 TYPE abap_bool.
-                          DATA(t453) = t1.
-                          DATA(t454) = |-|.
-                          t452 = xsdbool( t453 = t454 ).
-                          IF t452 = abap_true.
-                            DATA t455 TYPE abap_bool.
+                          DATA t453 TYPE abap_bool.
+                          DATA(t454) = CONV string( t1 ).
+                          DATA(t455) = CONV string( |-| ).
+                          t453 = xsdbool( t454 = t455 ).
+                          IF t453 = abap_true.
                             DATA t456 TYPE abap_bool.
-                            DATA(t457) = t50.
-                            DATA(t458) = abap_true.
-                            t456 = xsdbool( t457 = t458 ).
-                            t455 = t456.
-                            IF t456 = abap_true.
-                              DATA t459 TYPE abap_bool.
-                              DATA(t460) = t118.
-                              DATA(t461) = abap_true.
-                              t459 = xsdbool( t460 = t461 ).
-                              t455 = t459.
+                            DATA t457 TYPE abap_bool.
+                            DATA(t458) = CONV abap_bool( t50 ).
+                            DATA(t459) = CONV abap_bool( abap_true ).
+                            t457 = xsdbool( t458 = t459 ).
+                            t456 = t457.
+                            IF t457 = abap_true.
+                              DATA t460 TYPE abap_bool.
+                              DATA(t461) = CONV abap_bool( t118 ).
+                              DATA(t462) = CONV abap_bool( abap_true ).
+                              t460 = xsdbool( t461 = t462 ).
+                              t456 = t460.
                             ENDIF.
-                            IF t455 = abap_true.
-                              DATA t462 TYPE REF TO zcl_lnt_w_dash_w.
-                              DATA(t463) = t187.
-                              DATA(t464) = t1.
-                              t462 = NEW zcl_lnt_w_dash_w( i_start = t463 i_str = t464 ).
-                              t211 = t462.
+                            IF t456 = abap_true.
+                              DATA t463 TYPE REF TO zcl_lnt_w_dash_w.
+                              DATA(t464) = CAST zcl_lnt_position( t187 ).
+                              DATA(t465) = CONV string( t1 ).
+                              t463 = NEW zcl_lnt_w_dash_w( i_start = t464 i_str = t465 ).
+                              t212 = t463.
                             ELSE.
-                              DATA t465 TYPE abap_bool.
-                              DATA(t466) = t50.
-                              DATA(t467) = abap_true.
-                              t465 = xsdbool( t466 = t467 ).
-                              IF t465 = abap_true.
-                                DATA t468 TYPE REF TO zcl_lnt_w_dash.
-                                DATA(t469) = t187.
-                                DATA(t470) = t1.
-                                t468 = NEW zcl_lnt_w_dash( i_start = t469 i_str = t470 ).
-                                t211 = t468.
+                              DATA t466 TYPE abap_bool.
+                              DATA(t467) = CONV abap_bool( t50 ).
+                              DATA(t468) = CONV abap_bool( abap_true ).
+                              t466 = xsdbool( t467 = t468 ).
+                              IF t466 = abap_true.
+                                DATA t469 TYPE REF TO zcl_lnt_w_dash.
+                                DATA(t470) = CAST zcl_lnt_position( t187 ).
+                                DATA(t471) = CONV string( t1 ).
+                                t469 = NEW zcl_lnt_w_dash( i_start = t470 i_str = t471 ).
+                                t212 = t469.
                               ELSE.
-                                DATA t471 TYPE abap_bool.
-                                DATA(t472) = t118.
-                                DATA(t473) = abap_true.
-                                t471 = xsdbool( t472 = t473 ).
-                                IF t471 = abap_true.
-                                  DATA t474 TYPE REF TO zcl_lnt_dash_w.
-                                  DATA(t475) = t187.
-                                  DATA(t476) = t1.
-                                  t474 = NEW zcl_lnt_dash_w( i_start = t475 i_str = t476 ).
-                                  t211 = t474.
+                                DATA t472 TYPE abap_bool.
+                                DATA(t473) = CONV abap_bool( t118 ).
+                                DATA(t474) = CONV abap_bool( abap_true ).
+                                t472 = xsdbool( t473 = t474 ).
+                                IF t472 = abap_true.
+                                  DATA t475 TYPE REF TO zcl_lnt_dash_w.
+                                  DATA(t476) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t477) = CONV string( t1 ).
+                                  t475 = NEW zcl_lnt_dash_w( i_start = t476 i_str = t477 ).
+                                  t212 = t475.
                                 ELSE.
-                                  DATA t477 TYPE REF TO zcl_lnt_dash.
-                                  DATA(t478) = t187.
-                                  DATA(t479) = t1.
-                                  t477 = NEW zcl_lnt_dash( i_start = t478 i_str = t479 ).
-                                  t211 = t477.
+                                  DATA t478 TYPE REF TO zcl_lnt_dash.
+                                  DATA(t479) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t480) = CONV string( t1 ).
+                                  t478 = NEW zcl_lnt_dash( i_start = t479 i_str = t480 ).
+                                  t212 = t478.
                                 ENDIF.
                               ENDIF.
                             ENDIF.
                           ELSE.
-                            DATA t480 TYPE abap_bool.
-                            DATA(t481) = t1.
-                            DATA(t482) = |+|.
-                            t480 = xsdbool( t481 = t482 ).
-                            IF t480 = abap_true.
-                              DATA t483 TYPE abap_bool.
+                            DATA t481 TYPE abap_bool.
+                            DATA(t482) = CONV string( t1 ).
+                            DATA(t483) = CONV string( |+| ).
+                            t481 = xsdbool( t482 = t483 ).
+                            IF t481 = abap_true.
                               DATA t484 TYPE abap_bool.
-                              DATA(t485) = t50.
-                              DATA(t486) = abap_true.
-                              t484 = xsdbool( t485 = t486 ).
-                              t483 = t484.
-                              IF t484 = abap_true.
-                                DATA t487 TYPE abap_bool.
-                                DATA(t488) = t118.
-                                DATA(t489) = abap_true.
-                                t487 = xsdbool( t488 = t489 ).
-                                t483 = t487.
+                              DATA t485 TYPE abap_bool.
+                              DATA(t486) = CONV abap_bool( t50 ).
+                              DATA(t487) = CONV abap_bool( abap_true ).
+                              t485 = xsdbool( t486 = t487 ).
+                              t484 = t485.
+                              IF t485 = abap_true.
+                                DATA t488 TYPE abap_bool.
+                                DATA(t489) = CONV abap_bool( t118 ).
+                                DATA(t490) = CONV abap_bool( abap_true ).
+                                t488 = xsdbool( t489 = t490 ).
+                                t484 = t488.
                               ENDIF.
-                              IF t483 = abap_true.
-                                DATA t490 TYPE REF TO zcl_lnt_w_plus_w.
-                                DATA(t491) = t187.
-                                DATA(t492) = t1.
-                                t490 = NEW zcl_lnt_w_plus_w( i_start = t491 i_str = t492 ).
-                                t211 = t490.
+                              IF t484 = abap_true.
+                                DATA t491 TYPE REF TO zcl_lnt_w_plus_w.
+                                DATA(t492) = CAST zcl_lnt_position( t187 ).
+                                DATA(t493) = CONV string( t1 ).
+                                t491 = NEW zcl_lnt_w_plus_w( i_start = t492 i_str = t493 ).
+                                t212 = t491.
                               ELSE.
-                                DATA t493 TYPE abap_bool.
-                                DATA(t494) = t50.
-                                DATA(t495) = abap_true.
-                                t493 = xsdbool( t494 = t495 ).
-                                IF t493 = abap_true.
-                                  DATA t496 TYPE REF TO zcl_lnt_w_plus.
-                                  DATA(t497) = t187.
-                                  DATA(t498) = t1.
-                                  t496 = NEW zcl_lnt_w_plus( i_start = t497 i_str = t498 ).
-                                  t211 = t496.
+                                DATA t494 TYPE abap_bool.
+                                DATA(t495) = CONV abap_bool( t50 ).
+                                DATA(t496) = CONV abap_bool( abap_true ).
+                                t494 = xsdbool( t495 = t496 ).
+                                IF t494 = abap_true.
+                                  DATA t497 TYPE REF TO zcl_lnt_w_plus.
+                                  DATA(t498) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t499) = CONV string( t1 ).
+                                  t497 = NEW zcl_lnt_w_plus( i_start = t498 i_str = t499 ).
+                                  t212 = t497.
                                 ELSE.
-                                  DATA t499 TYPE abap_bool.
-                                  DATA(t500) = t118.
-                                  DATA(t501) = abap_true.
-                                  t499 = xsdbool( t500 = t501 ).
-                                  IF t499 = abap_true.
-                                    DATA t502 TYPE REF TO zcl_lnt_plus_w.
-                                    DATA(t503) = t187.
-                                    DATA(t504) = t1.
-                                    t502 = NEW zcl_lnt_plus_w( i_start = t503 i_str = t504 ).
-                                    t211 = t502.
+                                  DATA t500 TYPE abap_bool.
+                                  DATA(t501) = CONV abap_bool( t118 ).
+                                  DATA(t502) = CONV abap_bool( abap_true ).
+                                  t500 = xsdbool( t501 = t502 ).
+                                  IF t500 = abap_true.
+                                    DATA t503 TYPE REF TO zcl_lnt_plus_w.
+                                    DATA(t504) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t505) = CONV string( t1 ).
+                                    t503 = NEW zcl_lnt_plus_w( i_start = t504 i_str = t505 ).
+                                    t212 = t503.
                                   ELSE.
-                                    DATA t505 TYPE REF TO zcl_lnt_lx_plus.
-                                    DATA(t506) = t187.
-                                    DATA(t507) = t1.
-                                    t505 = NEW zcl_lnt_lx_plus( i_start = t506 i_str = t507 ).
-                                    t211 = t505.
+                                    DATA t506 TYPE REF TO zcl_lnt_lx_plus.
+                                    DATA(t507) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t508) = CONV string( t1 ).
+                                    t506 = NEW zcl_lnt_lx_plus( i_start = t507 i_str = t508 ).
+                                    t212 = t506.
                                   ENDIF.
                                 ENDIF.
                               ENDIF.
                             ELSE.
-                              DATA t508 TYPE abap_bool.
-                              DATA(t509) = t1.
-                              DATA(t510) = |@|.
-                              t508 = xsdbool( t509 = t510 ).
-                              IF t508 = abap_true.
-                                DATA t511 TYPE abap_bool.
+                              DATA t509 TYPE abap_bool.
+                              DATA(t510) = CONV string( t1 ).
+                              DATA(t511) = CONV string( |@| ).
+                              t509 = xsdbool( t510 = t511 ).
+                              IF t509 = abap_true.
                                 DATA t512 TYPE abap_bool.
-                                DATA(t513) = t50.
-                                DATA(t514) = abap_true.
-                                t512 = xsdbool( t513 = t514 ).
-                                t511 = t512.
-                                IF t512 = abap_true.
-                                  DATA t515 TYPE abap_bool.
-                                  DATA(t516) = t118.
-                                  DATA(t517) = abap_true.
-                                  t515 = xsdbool( t516 = t517 ).
-                                  t511 = t515.
+                                DATA t513 TYPE abap_bool.
+                                DATA(t514) = CONV abap_bool( t50 ).
+                                DATA(t515) = CONV abap_bool( abap_true ).
+                                t513 = xsdbool( t514 = t515 ).
+                                t512 = t513.
+                                IF t513 = abap_true.
+                                  DATA t516 TYPE abap_bool.
+                                  DATA(t517) = CONV abap_bool( t118 ).
+                                  DATA(t518) = CONV abap_bool( abap_true ).
+                                  t516 = xsdbool( t517 = t518 ).
+                                  t512 = t516.
                                 ENDIF.
-                                IF t511 = abap_true.
-                                  DATA t518 TYPE REF TO zcl_lnt_w_at_w.
-                                  DATA(t519) = t187.
-                                  DATA(t520) = t1.
-                                  t518 = NEW zcl_lnt_w_at_w( i_start = t519 i_str = t520 ).
-                                  t211 = t518.
+                                IF t512 = abap_true.
+                                  DATA t519 TYPE REF TO zcl_lnt_w_at_w.
+                                  DATA(t520) = CAST zcl_lnt_position( t187 ).
+                                  DATA(t521) = CONV string( t1 ).
+                                  t519 = NEW zcl_lnt_w_at_w( i_start = t520 i_str = t521 ).
+                                  t212 = t519.
                                 ELSE.
-                                  DATA t521 TYPE abap_bool.
-                                  DATA(t522) = t50.
-                                  DATA(t523) = abap_true.
-                                  t521 = xsdbool( t522 = t523 ).
-                                  IF t521 = abap_true.
-                                    DATA t524 TYPE REF TO zcl_lnt_w_at.
-                                    DATA(t525) = t187.
-                                    DATA(t526) = t1.
-                                    t524 = NEW zcl_lnt_w_at( i_start = t525 i_str = t526 ).
-                                    t211 = t524.
+                                  DATA t522 TYPE abap_bool.
+                                  DATA(t523) = CONV abap_bool( t50 ).
+                                  DATA(t524) = CONV abap_bool( abap_true ).
+                                  t522 = xsdbool( t523 = t524 ).
+                                  IF t522 = abap_true.
+                                    DATA t525 TYPE REF TO zcl_lnt_w_at.
+                                    DATA(t526) = CAST zcl_lnt_position( t187 ).
+                                    DATA(t527) = CONV string( t1 ).
+                                    t525 = NEW zcl_lnt_w_at( i_start = t526 i_str = t527 ).
+                                    t212 = t525.
                                   ELSE.
-                                    DATA t527 TYPE abap_bool.
-                                    DATA(t528) = t118.
-                                    DATA(t529) = abap_true.
-                                    t527 = xsdbool( t528 = t529 ).
-                                    IF t527 = abap_true.
-                                      DATA t530 TYPE REF TO zcl_lnt_at_w.
-                                      DATA(t531) = t187.
-                                      DATA(t532) = t1.
-                                      t530 = NEW zcl_lnt_at_w( i_start = t531 i_str = t532 ).
-                                      t211 = t530.
+                                    DATA t528 TYPE abap_bool.
+                                    DATA(t529) = CONV abap_bool( t118 ).
+                                    DATA(t530) = CONV abap_bool( abap_true ).
+                                    t528 = xsdbool( t529 = t530 ).
+                                    IF t528 = abap_true.
+                                      DATA t531 TYPE REF TO zcl_lnt_at_w.
+                                      DATA(t532) = CAST zcl_lnt_position( t187 ).
+                                      DATA(t533) = CONV string( t1 ).
+                                      t531 = NEW zcl_lnt_at_w( i_start = t532 i_str = t533 ).
+                                      t212 = t531.
                                     ELSE.
-                                      DATA t533 TYPE REF TO zcl_lnt_lx_at.
-                                      DATA(t534) = t187.
-                                      DATA(t535) = t1.
-                                      t533 = NEW zcl_lnt_lx_at( i_start = t534 i_str = t535 ).
-                                      t211 = t533.
+                                      DATA t534 TYPE REF TO zcl_lnt_lx_at.
+                                      DATA(t535) = CAST zcl_lnt_position( t187 ).
+                                      DATA(t536) = CONV string( t1 ).
+                                      t534 = NEW zcl_lnt_lx_at( i_start = t535 i_str = t536 ).
+                                      t212 = t534.
                                     ENDIF.
                                   ENDIF.
                                 ENDIF.
@@ -1193,122 +1223,122 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
                   ENDIF.
                 ENDIF.
               ELSE.
-                DATA t536 TYPE abap_bool.
-                DATA t537 TYPE i.
-                DATA(t538) = t1.
-                DATA(t539) = strlen( t538 ).
-                t537 = t539.
-                DATA(t540) = 2.
-                t536 = xsdbool( t537 = t540 ).
-                IF t536 = abap_true.
-                  DATA t541 TYPE abap_bool.
-                  DATA(t542) = t1.
-                  DATA(t543) = |->|.
-                  t541 = xsdbool( t542 = t543 ).
-                  IF t541 = abap_true.
-                    DATA t544 TYPE abap_bool.
+                DATA t537 TYPE abap_bool.
+                DATA t538 TYPE i.
+                DATA(t539) = CONV string( t1 ).
+                DATA(t540) = CONV i( strlen( t539 ) ).
+                t538 = t540.
+                DATA(t541) = CONV i( 2 ).
+                t537 = xsdbool( t538 = t541 ).
+                IF t537 = abap_true.
+                  DATA t542 TYPE abap_bool.
+                  DATA(t543) = CONV string( t1 ).
+                  DATA(t544) = CONV string( |->| ).
+                  t542 = xsdbool( t543 = t544 ).
+                  IF t542 = abap_true.
                     DATA t545 TYPE abap_bool.
-                    DATA(t546) = t50.
-                    DATA(t547) = abap_true.
-                    t545 = xsdbool( t546 = t547 ).
-                    t544 = t545.
-                    IF t545 = abap_true.
-                      DATA t548 TYPE abap_bool.
-                      DATA(t549) = t118.
-                      DATA(t550) = abap_true.
-                      t548 = xsdbool( t549 = t550 ).
-                      t544 = t548.
+                    DATA t546 TYPE abap_bool.
+                    DATA(t547) = CONV abap_bool( t50 ).
+                    DATA(t548) = CONV abap_bool( abap_true ).
+                    t546 = xsdbool( t547 = t548 ).
+                    t545 = t546.
+                    IF t546 = abap_true.
+                      DATA t549 TYPE abap_bool.
+                      DATA(t550) = CONV abap_bool( t118 ).
+                      DATA(t551) = CONV abap_bool( abap_true ).
+                      t549 = xsdbool( t550 = t551 ).
+                      t545 = t549.
                     ENDIF.
-                    IF t544 = abap_true.
-                      DATA t551 TYPE REF TO zcl_lnt_w_instance_arrow_w.
-                      DATA(t552) = t187.
-                      DATA(t553) = t1.
-                      t551 = NEW zcl_lnt_w_instance_arrow_w( i_start = t552 i_str = t553 ).
-                      t211 = t551.
+                    IF t545 = abap_true.
+                      DATA t552 TYPE REF TO zcl_lnt_w_instance_arrow_w.
+                      DATA(t553) = CAST zcl_lnt_position( t187 ).
+                      DATA(t554) = CONV string( t1 ).
+                      t552 = NEW zcl_lnt_w_instance_arrow_w( i_start = t553 i_str = t554 ).
+                      t212 = t552.
                     ELSE.
-                      DATA t554 TYPE abap_bool.
-                      DATA(t555) = t50.
-                      DATA(t556) = abap_true.
-                      t554 = xsdbool( t555 = t556 ).
-                      IF t554 = abap_true.
-                        DATA t557 TYPE REF TO zcl_lnt_w_instance_arrow.
-                        DATA(t558) = t187.
-                        DATA(t559) = t1.
-                        t557 = NEW zcl_lnt_w_instance_arrow( i_start = t558 i_str = t559 ).
-                        t211 = t557.
+                      DATA t555 TYPE abap_bool.
+                      DATA(t556) = CONV abap_bool( t50 ).
+                      DATA(t557) = CONV abap_bool( abap_true ).
+                      t555 = xsdbool( t556 = t557 ).
+                      IF t555 = abap_true.
+                        DATA t558 TYPE REF TO zcl_lnt_w_instance_arrow.
+                        DATA(t559) = CAST zcl_lnt_position( t187 ).
+                        DATA(t560) = CONV string( t1 ).
+                        t558 = NEW zcl_lnt_w_instance_arrow( i_start = t559 i_str = t560 ).
+                        t212 = t558.
                       ELSE.
-                        DATA t560 TYPE abap_bool.
-                        DATA(t561) = t118.
-                        DATA(t562) = abap_true.
-                        t560 = xsdbool( t561 = t562 ).
-                        IF t560 = abap_true.
-                          DATA t563 TYPE REF TO zcl_lnt_instance_arrow_w.
-                          DATA(t564) = t187.
-                          DATA(t565) = t1.
-                          t563 = NEW zcl_lnt_instance_arrow_w( i_start = t564 i_str = t565 ).
-                          t211 = t563.
+                        DATA t561 TYPE abap_bool.
+                        DATA(t562) = CONV abap_bool( t118 ).
+                        DATA(t563) = CONV abap_bool( abap_true ).
+                        t561 = xsdbool( t562 = t563 ).
+                        IF t561 = abap_true.
+                          DATA t564 TYPE REF TO zcl_lnt_instance_arrow_w.
+                          DATA(t565) = CAST zcl_lnt_position( t187 ).
+                          DATA(t566) = CONV string( t1 ).
+                          t564 = NEW zcl_lnt_instance_arrow_w( i_start = t565 i_str = t566 ).
+                          t212 = t564.
                         ELSE.
-                          DATA t566 TYPE REF TO zcl_lnt_instance_arrow.
-                          DATA(t567) = t187.
-                          DATA(t568) = t1.
-                          t566 = NEW zcl_lnt_instance_arrow( i_start = t567 i_str = t568 ).
-                          t211 = t566.
+                          DATA t567 TYPE REF TO zcl_lnt_instance_arrow.
+                          DATA(t568) = CAST zcl_lnt_position( t187 ).
+                          DATA(t569) = CONV string( t1 ).
+                          t567 = NEW zcl_lnt_instance_arrow( i_start = t568 i_str = t569 ).
+                          t212 = t567.
                         ENDIF.
                       ENDIF.
                     ENDIF.
                   ELSE.
-                    DATA t569 TYPE abap_bool.
-                    DATA(t570) = t1.
-                    DATA(t571) = |=>|.
-                    t569 = xsdbool( t570 = t571 ).
-                    IF t569 = abap_true.
-                      DATA t572 TYPE abap_bool.
+                    DATA t570 TYPE abap_bool.
+                    DATA(t571) = CONV string( t1 ).
+                    DATA(t572) = CONV string( |=>| ).
+                    t570 = xsdbool( t571 = t572 ).
+                    IF t570 = abap_true.
                       DATA t573 TYPE abap_bool.
-                      DATA(t574) = t50.
-                      DATA(t575) = abap_true.
-                      t573 = xsdbool( t574 = t575 ).
-                      t572 = t573.
-                      IF t573 = abap_true.
-                        DATA t576 TYPE abap_bool.
-                        DATA(t577) = t118.
-                        DATA(t578) = abap_true.
-                        t576 = xsdbool( t577 = t578 ).
-                        t572 = t576.
+                      DATA t574 TYPE abap_bool.
+                      DATA(t575) = CONV abap_bool( t50 ).
+                      DATA(t576) = CONV abap_bool( abap_true ).
+                      t574 = xsdbool( t575 = t576 ).
+                      t573 = t574.
+                      IF t574 = abap_true.
+                        DATA t577 TYPE abap_bool.
+                        DATA(t578) = CONV abap_bool( t118 ).
+                        DATA(t579) = CONV abap_bool( abap_true ).
+                        t577 = xsdbool( t578 = t579 ).
+                        t573 = t577.
                       ENDIF.
-                      IF t572 = abap_true.
-                        DATA t579 TYPE REF TO zcl_lnt_w_static_arrow_w.
-                        DATA(t580) = t187.
-                        DATA(t581) = t1.
-                        t579 = NEW zcl_lnt_w_static_arrow_w( i_start = t580 i_str = t581 ).
-                        t211 = t579.
+                      IF t573 = abap_true.
+                        DATA t580 TYPE REF TO zcl_lnt_w_static_arrow_w.
+                        DATA(t581) = CAST zcl_lnt_position( t187 ).
+                        DATA(t582) = CONV string( t1 ).
+                        t580 = NEW zcl_lnt_w_static_arrow_w( i_start = t581 i_str = t582 ).
+                        t212 = t580.
                       ELSE.
-                        DATA t582 TYPE abap_bool.
-                        DATA(t583) = t50.
-                        DATA(t584) = abap_true.
-                        t582 = xsdbool( t583 = t584 ).
-                        IF t582 = abap_true.
-                          DATA t585 TYPE REF TO zcl_lnt_w_static_arrow.
-                          DATA(t586) = t187.
-                          DATA(t587) = t1.
-                          t585 = NEW zcl_lnt_w_static_arrow( i_start = t586 i_str = t587 ).
-                          t211 = t585.
+                        DATA t583 TYPE abap_bool.
+                        DATA(t584) = CONV abap_bool( t50 ).
+                        DATA(t585) = CONV abap_bool( abap_true ).
+                        t583 = xsdbool( t584 = t585 ).
+                        IF t583 = abap_true.
+                          DATA t586 TYPE REF TO zcl_lnt_w_static_arrow.
+                          DATA(t587) = CAST zcl_lnt_position( t187 ).
+                          DATA(t588) = CONV string( t1 ).
+                          t586 = NEW zcl_lnt_w_static_arrow( i_start = t587 i_str = t588 ).
+                          t212 = t586.
                         ELSE.
-                          DATA t588 TYPE abap_bool.
-                          DATA(t589) = t118.
-                          DATA(t590) = abap_true.
-                          t588 = xsdbool( t589 = t590 ).
-                          IF t588 = abap_true.
-                            DATA t591 TYPE REF TO zcl_lnt_static_arrow_w.
-                            DATA(t592) = t187.
-                            DATA(t593) = t1.
-                            t591 = NEW zcl_lnt_static_arrow_w( i_start = t592 i_str = t593 ).
-                            t211 = t591.
+                          DATA t589 TYPE abap_bool.
+                          DATA(t590) = CONV abap_bool( t118 ).
+                          DATA(t591) = CONV abap_bool( abap_true ).
+                          t589 = xsdbool( t590 = t591 ).
+                          IF t589 = abap_true.
+                            DATA t592 TYPE REF TO zcl_lnt_static_arrow_w.
+                            DATA(t593) = CAST zcl_lnt_position( t187 ).
+                            DATA(t594) = CONV string( t1 ).
+                            t592 = NEW zcl_lnt_static_arrow_w( i_start = t593 i_str = t594 ).
+                            t212 = t592.
                           ELSE.
-                            DATA t594 TYPE REF TO zcl_lnt_static_arrow.
-                            DATA(t595) = t187.
-                            DATA(t596) = t1.
-                            t594 = NEW zcl_lnt_static_arrow( i_start = t595 i_str = t596 ).
-                            t211 = t594.
+                            DATA t595 TYPE REF TO zcl_lnt_static_arrow.
+                            DATA(t596) = CAST zcl_lnt_position( t187 ).
+                            DATA(t597) = CONV string( t1 ).
+                            t595 = NEW zcl_lnt_static_arrow( i_start = t596 i_str = t597 ).
+                            t212 = t595.
                           ENDIF.
                         ENDIF.
                       ENDIF.
@@ -1320,1156 +1350,1144 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           ENDIF.
         ENDIF.
       ENDIF.
-      DATA(t597) = VALUE abap_bool( ).
       DATA(t598) = VALUE abap_bool( ).
       DATA(t599) = VALUE abap_bool( ).
-      DATA t600 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t601) = t211.
-      t600 = t601.
-      DATA t602 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA(t600) = VALUE abap_bool( ).
+      DATA t601 TYPE REF TO zcl_lnt_abstract_token.
+      DATA(t602) = CAST zcl_lnt_abstract_token( t212 ).
+      t601 = t602.
       DATA t603 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t603.
-      t602 = t603.
-      DATA(t604) = VALUE abap_bool( ).
-      DATA(t605) = t600.
-      IF t605 IS INITIAL.
-        t604 = abap_true.
+      DATA t604 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t604.
+      t603 = t604.
+      DATA(t605) = VALUE abap_bool( ).
+      DATA(t606) = CAST zcl_lnt_abstract_token( t601 ).
+      IF t606 IS INITIAL.
+        t605 = abap_true.
       ENDIF.
-      t599 = t604.
+      t600 = t605.
+      t599 = t600.
+      IF t600 = abap_true.
+        DATA t607 TYPE abap_bool.
+        DATA(t608) = CONV f( me->m ).
+        DATA t609 TYPE f.
+        DATA(t610) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+        t609 = t610.
+        t607 = xsdbool( t608 = t609 ).
+        t599 = t607.
+      ENDIF.
       t598 = t599.
       IF t599 = abap_true.
-        DATA t606 TYPE abap_bool.
-        DATA(t607) = CONV int8( me->m ).
-        DATA t608 TYPE int8.
-        DATA(t609) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-        t608 = t609.
-        t606 = xsdbool( t607 = t608 ).
-        t598 = t606.
-      ENDIF.
-      t597 = t598.
-      IF t598 = abap_true.
-        DATA(t610) = VALUE abap_bool( ).
-        DATA(t611) = VALUE string( ).
-        DATA(t612) = t1.
-        DATA(t613) = 0.
-        DATA(t614) = strlen( t612 ).
-        IF t613 < 0 OR t613 >= t614.
-          CLEAR t611.
+        DATA(t611) = VALUE abap_bool( ).
+        DATA(t612) = VALUE string( ).
+        DATA(t613) = CONV string( t1 ).
+        DATA(t614) = CONV i( 0 ).
+        DATA(t615) = CONV i( strlen( t613 ) ).
+        IF t614 < 0 OR t614 >= t615.
+          CLEAR t612.
         ELSE.
-          t611 = t612+t613(1).
+          t612 = t613+t614(1).
         ENDIF.
-        DATA(t615) = `\`.
-        t610 = xsdbool( t611 = t615 ).
-        t597 = t610.
+        DATA(t616) = CONV string( `\` ).
+        t611 = xsdbool( t612 = t616 ).
+        t598 = t611.
       ENDIF.
-      IF t597 = abap_true.
-        DATA(t616) = VALUE i( ).
+      IF t598 = abap_true.
         DATA(t617) = VALUE i( ).
-        DATA(t618) = VALUE abap_bool( ).
-        DATA(t619) = VALUE i( ).
-        DATA(t620) = VALUE int8( ).
-        DATA t621 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t622) = me->stream.
-        t621 = t622.
-        DATA(t623) = VALUE int8( ).
-        DATA(t624) = VALUE int8( ).
+        DATA(t618) = VALUE i( ).
+        DATA(t619) = VALUE abap_bool( ).
+        DATA(t620) = VALUE i( ).
+        DATA(t621) = VALUE f( ).
+        DATA t622 TYPE REF TO zcl_lnt_lexer_stream.
+        DATA(t623) = CAST zcl_lnt_lexer_stream( me->stream ).
+        t622 = t623.
+        DATA(t624) = VALUE f( ).
         DATA t625 TYPE int8.
         DATA t626 TYPE int8.
-        DATA t627 TYPE i.
-        DATA(t628) = t621.
-        t627 = t628->offset.
-        t626 = t627.
-        DATA(t629) = CONV int8( 1 ).
-        t625 = t626 + t629.
-        IF t625 < range_int8_bound_min OR t625 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-        ENDIF.
-        t624 = t625.
-        DATA(t630) = VALUE int8( ).
-        DATA t631 TYPE abap_bool.
-        DATA(t632) = t624.
-        DATA t633 TYPE int8.
-        DATA t634 TYPE i.
-        DATA t635 TYPE string.
-        DATA(t636) = t621.
-        t635 = t636->raw.
-        DATA(t637) = strlen( t635 ).
-        t634 = t637.
-        t633 = t634.
-        t631 = xsdbool( t632 >= t633 ).
-        IF t631 = abap_true.
-          DATA t638 TYPE int8.
-          DATA(t639) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-          t638 = t639.
-          t630 = t638.
+        DATA t627 TYPE int8.
+        DATA t628 TYPE i.
+        DATA(t629) = CAST zcl_lnt_lexer_stream( t622 ).
+        t628 = t629->offset.
+        t627 = t628.
+        DATA(t630) = CONV int8( 1 ).
+        t626 = t627 + t630.
+        t625 = t626.
+        DATA(t631) = VALUE f( ).
+        DATA t632 TYPE abap_bool.
+        DATA(t633) = CONV int8( t625 ).
+        DATA t634 TYPE int8.
+        DATA t635 TYPE i.
+        DATA t636 TYPE string.
+        DATA(t637) = CAST zcl_lnt_lexer_stream( t622 ).
+        t636 = t637->raw.
+        DATA(t638) = CONV i( strlen( t636 ) ).
+        t635 = t638.
+        t634 = t635.
+        t632 = xsdbool( t633 >= t634 ).
+        IF t632 = abap_true.
+          DATA t639 TYPE f.
+          DATA(t640) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+          t639 = t640.
+          t631 = t639.
         ELSE.
-          DATA(t640) = VALUE int8( ).
-          DATA(t641) = VALUE i( ).
-          DATA t642 TYPE string.
-          DATA(t643) = t621.
-          t642 = t643->raw.
-          DATA t644 TYPE i.
-          DATA(t645) = t624.
-          t644 = t645.
-          DATA(t646) = strlen( t642 ).
-          IF t644 < 0 OR t644 >= t646.
+          DATA(t641) = VALUE f( ).
+          DATA(t642) = VALUE i( ).
+          DATA t643 TYPE string.
+          DATA(t644) = CAST zcl_lnt_lexer_stream( t622 ).
+          t643 = t644->raw.
+          DATA t645 TYPE i.
+          DATA(t646) = CONV int8( t625 ).
+          t645 = t646.
+          DATA(t647) = CONV i( strlen( t643 ) ).
+          IF t645 < 0 OR t645 >= t647.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
-          DATA(t647) = CONV string( t642+t644(1) ).
-          DATA t648 TYPE c LENGTH 1.
-          CLEAR t648.
-          DATA(t649) = VALUE xstring( ).
-          DATA t650 TYPE x LENGTH 1.
-          CLEAR t650.
+          DATA(t648) = CONV string( t643+t645(1) ).
+          DATA t649 TYPE c LENGTH 1.
+          CLEAR t649.
+          DATA(t650) = VALUE xstring( ).
           DATA t651 TYPE x LENGTH 1.
           CLEAR t651.
-          DATA(t652) = VALUE i( ).
-          t648 = t647.
-          t641 = cl_abap_conv_out_ce=>uccpi( t648 ).
-          IF t641 >= 255.
+          DATA t652 TYPE x LENGTH 1.
+          CLEAR t652.
+          DATA(t653) = VALUE i( ).
+          t649 = t648.
+          t642 = cl_abap_conv_out_ce=>uccpi( t649 ).
+          IF t642 >= 255.
             IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
               zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
             ENDIF.
-            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t647 IMPORTING buffer = t649 ).
-            t650 = t649(1).
-            t651 = t649+1(1).
-            t641 = t650.
-            t652 = t651.
-            t641 = t641 + t652 * 256.
+            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t648 IMPORTING buffer = t650 ).
+            t651 = t650(1).
+            t652 = t650+1(1).
+            t642 = t651.
+            t653 = t652.
+            t642 = t642 + t653 * 256.
           ENDIF.
-          t640 = t641.
-          t630 = t640.
+          t641 = t642.
+          t631 = t641.
         ENDIF.
-        t623 = t630.
-        t620 = t623.
-        t619 = t620.
-        DATA(t653) = CONV i( zcl_lnt_lexer_module=>eof ).
-        t618 = xsdbool( t619 = t653 ).
-        IF t618 = abap_true.
-          DATA(t654) = 1.
-          t617 = t654.
+        t624 = t631.
+        t621 = t624.
+        t620 = t621.
+        DATA(t654) = CONV i( zcl_lnt_lexer_module=>eof ).
+        t619 = xsdbool( t620 = t654 ).
+        IF t619 = abap_true.
+          DATA(t655) = CONV i( 1 ).
+          t618 = t655.
         ELSE.
-          DATA(t655) = 0.
-          t617 = t655.
+          DATA(t656) = CONV i( 0 ).
+          t618 = t656.
         ENDIF.
-        t616 = t617.
-        DATA(t656) = VALUE int8( ).
+        t617 = t618.
         DATA t657 TYPE int8.
         DATA t658 TYPE int8.
-        DATA t659 TYPE i.
+        DATA t659 TYPE int8.
         DATA t660 TYPE i.
-        DATA t661 TYPE int8.
-        DATA t662 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t663) = me->stream.
-        t662 = t663.
-        DATA t664 TYPE int8.
-        DATA t665 TYPE i.
-        DATA(t666) = t662.
-        t665 = t666->offset.
-        t664 = t665.
-        t661 = t664.
-        t660 = t661.
-        DATA t667 TYPE i.
-        DATA(t668) = t1.
-        DATA(t669) = strlen( t668 ).
-        t667 = t669.
-        t659 = t660 - t667.
-        t658 = t659.
-        DATA t670 TYPE int8.
-        DATA(t671) = t616.
-        t670 = t671.
-        t657 = t658 - t670.
-        IF t657 < range_int8_bound_min OR t657 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-        ENDIF.
-        t656 = t657.
-        DATA(t672) = VALUE i( ).
+        DATA t661 TYPE i.
+        DATA t662 TYPE f.
+        DATA t663 TYPE REF TO zcl_lnt_lexer_stream.
+        DATA(t664) = CAST zcl_lnt_lexer_stream( me->stream ).
+        t663 = t664.
+        DATA t665 TYPE f.
+        DATA t666 TYPE i.
+        DATA(t667) = CAST zcl_lnt_lexer_stream( t663 ).
+        t666 = t667->offset.
+        t665 = t666.
+        t662 = t665.
+        t661 = t662.
+        DATA t668 TYPE i.
+        DATA(t669) = CONV string( t1 ).
+        DATA(t670) = CONV i( strlen( t669 ) ).
+        t668 = t670.
+        t660 = t661 - t668.
+        t659 = t660.
+        DATA t671 TYPE int8.
+        DATA(t672) = CONV i( t617 ).
+        t671 = t672.
+        t658 = t659 - t671.
+        t657 = t658.
         DATA(t673) = VALUE i( ).
-        DATA(t674) = VALUE int8( ).
-        DATA t675 TYPE REF TO zcl_lnt_lexer_stream.
-        DATA(t676) = me->stream.
-        t675 = t676.
-        DATA t677 TYPE int8.
-        DATA(t678) = t656.
-        t677 = t678.
-        DATA(t679) = VALUE int8( ).
-        DATA t680 TYPE abap_bool.
-        DATA t681 TYPE abap_bool.
-        DATA(t682) = t677.
-        DATA(t683) = CONV int8( 0 ).
-        t681 = xsdbool( t682 < t683 ).
-        t680 = t681.
-        IF t681 = abap_false.
-          DATA t684 TYPE abap_bool.
-          DATA(t685) = t677.
-          DATA t686 TYPE int8.
-          DATA t687 TYPE i.
-          DATA t688 TYPE string.
-          DATA(t689) = t675.
-          t688 = t689->raw.
-          DATA(t690) = strlen( t688 ).
-          t687 = t690.
-          t686 = t687.
-          t684 = xsdbool( t685 >= t686 ).
-          t680 = t684.
+        DATA(t674) = VALUE i( ).
+        DATA(t675) = VALUE f( ).
+        DATA t676 TYPE REF TO zcl_lnt_lexer_stream.
+        DATA(t677) = CAST zcl_lnt_lexer_stream( me->stream ).
+        t676 = t677.
+        DATA t678 TYPE f.
+        DATA t679 TYPE f.
+        DATA(t680) = CONV int8( t657 ).
+        t679 = t680.
+        t678 = t679.
+        DATA(t681) = VALUE f( ).
+        DATA t682 TYPE abap_bool.
+        DATA t683 TYPE abap_bool.
+        DATA(t684) = CONV f( t678 ).
+        DATA(t685) = CONV f( 0 ).
+        t683 = xsdbool( t684 < t685 ).
+        t682 = t683.
+        IF t683 = abap_false.
+          DATA t686 TYPE abap_bool.
+          DATA(t687) = CONV f( t678 ).
+          DATA t688 TYPE f.
+          DATA t689 TYPE i.
+          DATA t690 TYPE string.
+          DATA(t691) = CAST zcl_lnt_lexer_stream( t676 ).
+          t690 = t691->raw.
+          DATA(t692) = CONV i( strlen( t690 ) ).
+          t689 = t692.
+          t688 = t689.
+          t686 = xsdbool( t687 >= t688 ).
+          t682 = t686.
         ENDIF.
-        IF t680 = abap_true.
-          DATA t691 TYPE int8.
-          DATA(t692) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-          t691 = t692.
-          t679 = t691.
+        IF t682 = abap_true.
+          DATA t693 TYPE f.
+          DATA(t694) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+          t693 = t694.
+          t681 = t693.
         ELSE.
-          DATA(t693) = VALUE int8( ).
-          DATA(t694) = VALUE i( ).
-          DATA t695 TYPE string.
-          DATA(t696) = t675.
-          t695 = t696->raw.
-          DATA(t697) = VALUE i( ).
-          DATA(t698) = t677.
-          IF t698 < range_int_check_lo_nzik0zk OR t698 > range_int_check_hi_zik0zj.
+          DATA(t695) = VALUE f( ).
+          DATA(t696) = VALUE i( ).
+          DATA t697 TYPE string.
+          DATA(t698) = CAST zcl_lnt_lexer_stream( t676 ).
+          t697 = t698->raw.
+          DATA(t699) = VALUE i( ).
+          DATA(t700) = CONV f( t678 ).
+          IF t700 > range_i32_upper.
+            t699 = range_i32_upper.
+          ELSEIF t700 < range_i32_lower.
+            t699 = range_i32_lower.
+          ELSE.
+            t699 = trunc( t700 ).
+          ENDIF.
+          DATA(t701) = CONV i( strlen( t697 ) ).
+          IF t699 < 0 OR t699 >= t701.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
-          t697 = t698.
-          DATA(t699) = strlen( t695 ).
-          IF t697 < 0 OR t697 >= t699.
-            RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-          ENDIF.
-          DATA(t700) = CONV string( t695+t697(1) ).
-          DATA t701 TYPE c LENGTH 1.
-          CLEAR t701.
-          DATA(t702) = VALUE xstring( ).
-          DATA t703 TYPE x LENGTH 1.
+          DATA(t702) = CONV string( t697+t699(1) ).
+          DATA t703 TYPE c LENGTH 1.
           CLEAR t703.
-          DATA t704 TYPE x LENGTH 1.
-          CLEAR t704.
-          DATA(t705) = VALUE i( ).
-          t701 = t700.
-          t694 = cl_abap_conv_out_ce=>uccpi( t701 ).
-          IF t694 >= 255.
+          DATA(t704) = VALUE xstring( ).
+          DATA t705 TYPE x LENGTH 1.
+          CLEAR t705.
+          DATA t706 TYPE x LENGTH 1.
+          CLEAR t706.
+          DATA(t707) = VALUE i( ).
+          t703 = t702.
+          t696 = cl_abap_conv_out_ce=>uccpi( t703 ).
+          IF t696 >= 255.
             IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
               zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
             ENDIF.
-            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t700 IMPORTING buffer = t702 ).
-            t703 = t702(1).
-            t704 = t702+1(1).
-            t694 = t703.
-            t705 = t704.
-            t694 = t694 + t705 * 256.
+            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t702 IMPORTING buffer = t704 ).
+            t705 = t704(1).
+            t706 = t704+1(1).
+            t696 = t705.
+            t707 = t706.
+            t696 = t696 + t707 * 256.
           ENDIF.
-          t693 = t694.
-          t679 = t693.
+          t695 = t696.
+          t681 = t695.
         ENDIF.
-        t674 = t679.
+        t675 = t681.
+        t674 = t675.
         t673 = t674.
-        t672 = t673.
-        DATA(t706) = VALUE abap_bool( ).
-        DATA(t707) = VALUE abap_bool( ).
         DATA(t708) = VALUE abap_bool( ).
-        DATA t709 TYPE abap_bool.
-        DATA t710 TYPE abap_bool.
-        DATA(t711) = t672.
-        DATA(t712) = CONV i( zcl_lnt_lexer_module=>ch_space ).
-        t710 = xsdbool( t711 = t712 ).
+        DATA(t709) = VALUE abap_bool( ).
+        DATA(t710) = VALUE abap_bool( ).
+        DATA t711 TYPE abap_bool.
+        DATA t712 TYPE abap_bool.
+        DATA(t713) = CONV i( t673 ).
+        DATA(t714) = CONV i( zcl_lnt_lexer_module=>ch_space ).
+        t712 = xsdbool( t713 = t714 ).
+        t711 = t712.
+        IF t712 = abap_false.
+          DATA t715 TYPE abap_bool.
+          DATA(t716) = CONV i( t673 ).
+          DATA(t717) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
+          t715 = xsdbool( t716 = t717 ).
+          t711 = t715.
+        ENDIF.
+        t710 = t711.
+        IF t711 = abap_false.
+          DATA t718 TYPE abap_bool.
+          DATA(t719) = CONV i( t673 ).
+          DATA(t720) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
+          t718 = xsdbool( t719 = t720 ).
+          t710 = t718.
+        ENDIF.
         t709 = t710.
         IF t710 = abap_false.
-          DATA t713 TYPE abap_bool.
-          DATA(t714) = t672.
-          DATA(t715) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
-          t713 = xsdbool( t714 = t715 ).
-          t709 = t713.
+          DATA t721 TYPE abap_bool.
+          DATA(t722) = CONV i( t673 ).
+          DATA(t723) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
+          t721 = xsdbool( t722 = t723 ).
+          t709 = t721.
         ENDIF.
         t708 = t709.
-        IF t709 = abap_false.
-          DATA t716 TYPE abap_bool.
-          DATA(t717) = t672.
-          DATA(t718) = CONV i( zcl_lnt_lexer_module=>ch_tab ).
-          t716 = xsdbool( t717 = t718 ).
-          t708 = t716.
-        ENDIF.
-        t707 = t708.
-        IF t708 = abap_false.
-          DATA t719 TYPE abap_bool.
-          DATA(t720) = t672.
-          DATA(t721) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
-          t719 = xsdbool( t720 = t721 ).
-          t707 = t719.
-        ENDIF.
-        t706 = t707.
-        DATA t722 TYPE abap_bool.
-        DATA(t723) = t706.
-        t722 = xsdbool( t723 = abap_false ).
-        IF t722 = abap_true.
-          DATA t724 TYPE REF TO zcl_lnt_association_name.
-          DATA(t725) = t187.
-          DATA(t726) = t1.
-          t724 = NEW zcl_lnt_association_name( i_start = t725 i_str = t726 ).
-          t211 = t724.
+        DATA t724 TYPE abap_bool.
+        DATA(t725) = CONV abap_bool( t708 ).
+        t724 = xsdbool( t725 = abap_false ).
+        IF t724 = abap_true.
+          DATA t726 TYPE REF TO zcl_lnt_association_name.
+          DATA(t727) = CAST zcl_lnt_position( t187 ).
+          DATA(t728) = CONV string( t1 ).
+          t726 = NEW zcl_lnt_association_name( i_start = t727 i_str = t728 ).
+          t212 = t726.
         ENDIF.
       ENDIF.
-      DATA(t727) = VALUE abap_bool( ).
-      DATA t728 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t729) = t211.
-      t728 = t729.
-      DATA t730 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t731 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t731.
+      DATA(t729) = VALUE abap_bool( ).
+      DATA t730 TYPE REF TO zcl_lnt_abstract_token.
+      DATA(t731) = CAST zcl_lnt_abstract_token( t212 ).
       t730 = t731.
-      DATA(t732) = VALUE abap_bool( ).
-      DATA(t733) = t728.
-      IF t733 IS INITIAL.
-        t732 = abap_true.
+      DATA t732 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA t733 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t733.
+      t732 = t733.
+      DATA(t734) = VALUE abap_bool( ).
+      DATA(t735) = CAST zcl_lnt_abstract_token( t730 ).
+      IF t735 IS INITIAL.
+        t734 = abap_true.
       ENDIF.
-      t727 = t732.
-      IF t727 = abap_true.
-        DATA t734 TYPE REF TO zcl_lnt_lx_identifier.
-        DATA(t735) = t187.
-        DATA(t736) = t1.
-        t734 = NEW zcl_lnt_lx_identifier( i_start = t735 i_str = t736 ).
-        t211 = t734.
+      t729 = t734.
+      IF t729 = abap_true.
+        DATA t736 TYPE REF TO zcl_lnt_lx_identifier.
+        DATA(t737) = CAST zcl_lnt_position( t187 ).
+        DATA(t738) = CONV string( t1 ).
+        t736 = NEW zcl_lnt_lx_identifier( i_start = t737 i_str = t738 ).
+        t212 = t736.
       ENDIF.
-      DATA(t737) = me->tokens.
-      DATA t738 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t739) = t211.
-      t738 = t739.
-      APPEND t738 TO t737->items.
+      DATA(t739) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+      DATA t740 TYPE REF TO zcl_lnt_abstract_token.
+      DATA(t741) = CAST zcl_lnt_abstract_token( t212 ).
+      t740 = t741.
+      t739->load( ).
+      APPEND t740 TO t739->items.
+      t739->save( ).
     ENDIF.
-    DATA t740 TYPE REF TO zcl_lnt_lexer_buffer.
-    DATA(t741) = me->buffer.
-    t740 = t741.
-    DATA(t742) = t740.
-    DATA(t743) = 0.
-    t742->start = t743.
-    DATA(t744) = t740.
-    DATA(t745) = 0.
-    t744->end = t745.
-    DATA(t746) = t740.
-    DATA(t747) = abap_true.
-    t746->empty_a4a6 = t747.
+    DATA t742 TYPE REF TO zcl_lnt_lexer_buffer.
+    DATA(t743) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+    t742 = t743.
+    DATA(t744) = CAST zcl_lnt_lexer_buffer( t742 ).
+    DATA(t745) = CONV i( 0 ).
+    t744->start = t745.
+    DELETE t744->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
+    DATA(t746) = CAST zcl_lnt_lexer_buffer( t742 ).
+    DATA(t747) = CONV i( 0 ).
+    t746->end = t747.
+    DELETE t746->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
+    DATA(t748) = CAST zcl_lnt_lexer_buffer( t742 ).
+    DATA(t749) = CONV abap_bool( abap_true ).
+    t748->empty_a4a6 = t749.
+    DELETE t748->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
   ENDMETHOD.
-
   METHOD process.
-    CONSTANTS range_int8_bound_max TYPE int8 VALUE '9007199254740991'.
-    CONSTANTS range_int8_bound_min TYPE int8 VALUE '-9007199254740991'.
-    CONSTANTS range_int_check_hi_zik0zi TYPE int8 VALUE '2147483646'.
-    CONSTANTS range_int_check_lo_nzik0zk TYPE int8 VALUE '-2147483648'.
-    DATA(t1) = i_raw.
+    CONSTANTS range_check_hi_zik0zi TYPE f VALUE '2147483646'.
+    CONSTANTS range_check_lo_nzik0zk TYPE f VALUE '-2147483648'.
+    DATA(t1) = CONV string( i_raw ).
     DATA t2 TYPE REF TO zcl_lnt_lexer_stream.
     DATA t3 TYPE REF TO zcl_lnt_lexer_stream.
     DATA t4 TYPE string.
-    DATA(t5) = t1.
-    DATA(t6) = ||.
-    DATA t7 TYPE c LENGTH 1.
-    CLEAR t7.
-    t7 = cl_abap_conv_in_ce=>uccpi( 13 ).
-    CONCATENATE t6 t7 INTO t6 RESPECTING BLANKS.
-    DATA(t8) = ||.
-    DATA(t9) = strlen( t5 ).
+    DATA(t5) = CONV string( t1 ).
+    DATA(t6) = CONV string( |\r| ).
+    DATA(t7) = CONV string( || ).
+    DATA(t8) = CONV i( strlen( t5 ) ).
     t4 = t5.
-    REPLACE ALL OCCURRENCES OF t6 IN t4 WITH t8.
+    REPLACE ALL OCCURRENCES OF t6 IN t4 WITH t7.
     t3 = NEW zcl_lnt_lexer_stream( i_raw = t4 ).
     t2 = t3.
-    DATA(t10) = t2.
-    me->stream = t10.
-    DATA t11 TYPE REF TO zcl_lnt_lexer_buffer.
-    DATA t12 TYPE string.
-    DATA t13 TYPE REF TO zcl_lnt_lexer_stream.
-    DATA(t14) = t2.
-    t13 = t14.
-    DATA t15 TYPE string.
-    DATA(t16) = t13.
-    t15 = t16->raw.
-    t12 = t15.
-    t11 = NEW zcl_lnt_lexer_buffer( i_raw = t12 ).
-    me->buffer = t11.
+    DATA(t9) = CAST zcl_lnt_lexer_stream( t2 ).
+    me->stream = t9.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stream`.
+    DATA t10 TYPE REF TO zcl_lnt_lexer_buffer.
+    DATA t11 TYPE string.
+    DATA t12 TYPE REF TO zcl_lnt_lexer_stream.
+    DATA(t13) = CAST zcl_lnt_lexer_stream( t2 ).
+    t12 = t13.
+    DATA t14 TYPE string.
+    DATA(t15) = CAST zcl_lnt_lexer_stream( t12 ).
+    t14 = t15->raw.
+    t11 = t14.
+    t10 = NEW zcl_lnt_lexer_buffer( i_raw = t11 ).
+    me->buffer = t10.
+    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
     DO.
-      DATA(t17) = abap_true.
-      IF t17 = abap_false.
+      DATA(t16) = CONV abap_bool( abap_true ).
+      IF t16 = abap_false.
         EXIT.
       ENDIF.
+      DATA(t17) = VALUE i( ).
       DATA(t18) = VALUE i( ).
-      DATA(t19) = VALUE i( ).
-      DATA(t20) = VALUE int8( ).
-      DATA t21 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t22) = t2.
-      t21 = t22.
-      DATA(t23) = VALUE int8( ).
-      DATA t24 TYPE abap_bool.
-      DATA t25 TYPE i.
-      DATA(t26) = t21.
-      t25 = t26->offset.
-      DATA(t27) = 0.
-      t24 = xsdbool( t25 < t27 ).
-      IF t24 = abap_true.
-        DATA t28 TYPE int8.
-        DATA(t29) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
-        t28 = t29.
-        t23 = t28.
+      DATA(t19) = VALUE f( ).
+      DATA t20 TYPE REF TO zcl_lnt_lexer_stream.
+      DATA(t21) = CAST zcl_lnt_lexer_stream( t2 ).
+      t20 = t21.
+      DATA(t22) = VALUE f( ).
+      DATA t23 TYPE abap_bool.
+      DATA t24 TYPE i.
+      DATA(t25) = CAST zcl_lnt_lexer_stream( t20 ).
+      t24 = t25->offset.
+      DATA(t26) = CONV i( 0 ).
+      t23 = xsdbool( t24 < t26 ).
+      IF t23 = abap_true.
+        DATA t27 TYPE f.
+        DATA(t28) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
+        t27 = t28.
+        t22 = t27.
       ELSE.
-        DATA(t30) = VALUE int8( ).
-        DATA t31 TYPE abap_bool.
-        DATA t32 TYPE i.
-        DATA(t33) = t21.
-        t32 = t33->offset.
-        DATA t34 TYPE i.
-        DATA t35 TYPE string.
-        DATA(t36) = t21.
-        t35 = t36->raw.
-        DATA(t37) = strlen( t35 ).
-        t34 = t37.
-        t31 = xsdbool( t32 >= t34 ).
-        IF t31 = abap_true.
-          DATA t38 TYPE int8.
-          DATA(t39) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-          t38 = t39.
-          t30 = t38.
+        DATA(t29) = VALUE f( ).
+        DATA t30 TYPE abap_bool.
+        DATA t31 TYPE i.
+        DATA(t32) = CAST zcl_lnt_lexer_stream( t20 ).
+        t31 = t32->offset.
+        DATA t33 TYPE i.
+        DATA t34 TYPE string.
+        DATA(t35) = CAST zcl_lnt_lexer_stream( t20 ).
+        t34 = t35->raw.
+        DATA(t36) = CONV i( strlen( t34 ) ).
+        t33 = t36.
+        t30 = xsdbool( t31 >= t33 ).
+        IF t30 = abap_true.
+          DATA t37 TYPE f.
+          DATA(t38) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+          t37 = t38.
+          t29 = t37.
         ELSE.
-          DATA(t40) = VALUE int8( ).
-          DATA(t41) = VALUE i( ).
-          DATA t42 TYPE string.
-          DATA(t43) = t21.
-          t42 = t43->raw.
-          DATA t44 TYPE i.
-          DATA(t45) = t21.
-          t44 = t45->offset.
-          DATA(t46) = strlen( t42 ).
-          IF t44 < 0 OR t44 >= t46.
+          DATA(t39) = VALUE f( ).
+          DATA(t40) = VALUE i( ).
+          DATA t41 TYPE string.
+          DATA(t42) = CAST zcl_lnt_lexer_stream( t20 ).
+          t41 = t42->raw.
+          DATA t43 TYPE i.
+          DATA(t44) = CAST zcl_lnt_lexer_stream( t20 ).
+          t43 = t44->offset.
+          DATA(t45) = CONV i( strlen( t41 ) ).
+          IF t43 < 0 OR t43 >= t45.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
-          DATA(t47) = CONV string( t42+t44(1) ).
-          DATA t48 TYPE c LENGTH 1.
-          CLEAR t48.
-          DATA(t49) = VALUE xstring( ).
+          DATA(t46) = CONV string( t41+t43(1) ).
+          DATA t47 TYPE c LENGTH 1.
+          CLEAR t47.
+          DATA(t48) = VALUE xstring( ).
+          DATA t49 TYPE x LENGTH 1.
+          CLEAR t49.
           DATA t50 TYPE x LENGTH 1.
           CLEAR t50.
-          DATA t51 TYPE x LENGTH 1.
-          CLEAR t51.
-          DATA(t52) = VALUE i( ).
-          t48 = t47.
-          t41 = cl_abap_conv_out_ce=>uccpi( t48 ).
-          IF t41 >= 255.
+          DATA(t51) = VALUE i( ).
+          t47 = t46.
+          t40 = cl_abap_conv_out_ce=>uccpi( t47 ).
+          IF t40 >= 255.
             IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
               zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
             ENDIF.
-            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t47 IMPORTING buffer = t49 ).
-            t50 = t49(1).
-            t51 = t49+1(1).
-            t41 = t50.
-            t52 = t51.
-            t41 = t41 + t52 * 256.
+            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t46 IMPORTING buffer = t48 ).
+            t49 = t48(1).
+            t50 = t48+1(1).
+            t40 = t49.
+            t51 = t50.
+            t40 = t40 + t51 * 256.
           ENDIF.
-          t40 = t41.
-          t30 = t40.
+          t39 = t40.
+          t29 = t39.
         ENDIF.
-        t23 = t30.
+        t22 = t29.
       ENDIF.
-      t20 = t23.
-      t19 = t20.
+      t19 = t22.
       t18 = t19.
-      DATA t53 TYPE REF TO zcl_lnt_lexer_buffer.
-      DATA(t54) = me->buffer.
-      t53 = t54.
-      DATA t55 TYPE int8.
-      DATA t56 TYPE int8.
-      DATA t57 TYPE i.
-      DATA t58 TYPE int8.
-      DATA t59 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t60) = t2.
-      t59 = t60.
-      DATA t61 TYPE int8.
-      DATA t62 TYPE i.
-      DATA(t63) = t59.
-      t62 = t63->offset.
-      t61 = t62.
-      t58 = t61.
-      t57 = t58.
+      t17 = t18.
+      DATA t52 TYPE REF TO zcl_lnt_lexer_buffer.
+      DATA(t53) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+      t52 = t53.
+      DATA t54 TYPE f.
+      DATA t55 TYPE f.
+      DATA t56 TYPE i.
+      DATA t57 TYPE f.
+      DATA t58 TYPE REF TO zcl_lnt_lexer_stream.
+      DATA(t59) = CAST zcl_lnt_lexer_stream( t2 ).
+      t58 = t59.
+      DATA t60 TYPE f.
+      DATA t61 TYPE i.
+      DATA(t62) = CAST zcl_lnt_lexer_stream( t58 ).
+      t61 = t62->offset.
+      t60 = t61.
+      t57 = t60.
       t56 = t57.
       t55 = t56.
+      t54 = t55.
+      DATA(t63) = VALUE i( ).
       DATA(t64) = VALUE i( ).
-      DATA(t65) = VALUE i( ).
-      DATA(t66) = t55.
-      IF t66 < range_int_check_lo_nzik0zk OR t66 > range_int_check_hi_zik0zi.
+      DATA(t65) = CONV f( t54 ).
+      IF t65 <> trunc( t65 ) OR t65 < range_check_lo_nzik0zk OR t65 > range_check_hi_zik0zi.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
-      t65 = t66.
       t64 = t65.
+      t63 = t64.
+      DATA t66 TYPE abap_bool.
       DATA t67 TYPE abap_bool.
-      DATA t68 TYPE abap_bool.
-      DATA(t69) = t53.
-      t68 = t69->empty_a4a6.
-      DATA(t70) = abap_true.
-      t67 = xsdbool( t68 = t70 ).
-      IF t67 = abap_true.
-        DATA(t71) = t53.
-        DATA(t72) = VALUE i( ).
-        DATA t73 TYPE abap_bool.
-        DATA(t74) = t64.
-        DATA(t75) = 0.
-        t73 = xsdbool( t74 < t75 ).
-        IF t73 = abap_true.
-          DATA(t76) = 0.
-          t72 = t76.
+      DATA(t68) = CAST zcl_lnt_lexer_buffer( t52 ).
+      t67 = t68->empty_a4a6.
+      DATA(t69) = CONV abap_bool( abap_true ).
+      t66 = xsdbool( t67 = t69 ).
+      IF t66 = abap_true.
+        DATA(t70) = CAST zcl_lnt_lexer_buffer( t52 ).
+        DATA(t71) = VALUE i( ).
+        DATA t72 TYPE abap_bool.
+        DATA(t73) = CONV i( t63 ).
+        DATA(t74) = CONV i( 0 ).
+        t72 = xsdbool( t73 < t74 ).
+        IF t72 = abap_true.
+          DATA(t75) = CONV i( 0 ).
+          t71 = t75.
         ELSE.
-          DATA(t77) = t64.
-          t72 = t77.
+          DATA(t76) = CONV i( t63 ).
+          t71 = t76.
         ENDIF.
-        t71->start = t72.
-        DATA(t78) = t53.
-        DATA(t79) = abap_false.
-        t78->empty_a4a6 = t79.
+        t70->start = t71.
+        DELETE t70->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
+        DATA(t77) = CAST zcl_lnt_lexer_buffer( t52 ).
+        DATA(t78) = CONV abap_bool( abap_false ).
+        t77->empty_a4a6 = t78.
+        DELETE t77->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
       ENDIF.
-      DATA(t80) = t53.
-      DATA t81 TYPE i.
-      DATA(t82) = t64.
-      DATA(t83) = 1.
-      t81 = t82 + t83.
-      t80->end = t81.
+      DATA(t79) = CAST zcl_lnt_lexer_buffer( t52 ).
+      DATA t80 TYPE i.
+      DATA(t81) = CONV i( t63 ).
+      DATA(t82) = CONV i( 1 ).
+      t80 = t81 + t82.
+      t79->end = t80.
+      DELETE t79->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
+      DATA(t83) = VALUE i( ).
       DATA(t84) = VALUE i( ).
-      DATA(t85) = VALUE i( ).
-      DATA(t86) = VALUE int8( ).
-      DATA t87 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t88) = t2.
-      t87 = t88.
-      DATA(t89) = VALUE int8( ).
-      DATA(t90) = VALUE int8( ).
+      DATA(t85) = VALUE f( ).
+      DATA t86 TYPE REF TO zcl_lnt_lexer_stream.
+      DATA(t87) = CAST zcl_lnt_lexer_stream( t2 ).
+      t86 = t87.
+      DATA(t88) = VALUE f( ).
+      DATA t89 TYPE int8.
+      DATA t90 TYPE int8.
       DATA t91 TYPE int8.
-      DATA t92 TYPE int8.
-      DATA t93 TYPE i.
-      DATA(t94) = t87.
-      t93 = t94->offset.
-      t92 = t93.
-      DATA(t95) = CONV int8( 1 ).
-      t91 = t92 + t95.
-      IF t91 < range_int8_bound_min OR t91 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
-      t90 = t91.
-      DATA(t96) = VALUE int8( ).
-      DATA t97 TYPE abap_bool.
-      DATA(t98) = t90.
-      DATA t99 TYPE int8.
-      DATA t100 TYPE i.
-      DATA t101 TYPE string.
-      DATA(t102) = t87.
-      t101 = t102->raw.
-      DATA(t103) = strlen( t101 ).
-      t100 = t103.
-      t99 = t100.
-      t97 = xsdbool( t98 >= t99 ).
-      IF t97 = abap_true.
-        DATA t104 TYPE int8.
-        DATA(t105) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-        t104 = t105.
-        t96 = t104.
+      DATA t92 TYPE i.
+      DATA(t93) = CAST zcl_lnt_lexer_stream( t86 ).
+      t92 = t93->offset.
+      t91 = t92.
+      DATA(t94) = CONV int8( 1 ).
+      t90 = t91 + t94.
+      t89 = t90.
+      DATA(t95) = VALUE f( ).
+      DATA t96 TYPE abap_bool.
+      DATA(t97) = CONV int8( t89 ).
+      DATA t98 TYPE int8.
+      DATA t99 TYPE i.
+      DATA t100 TYPE string.
+      DATA(t101) = CAST zcl_lnt_lexer_stream( t86 ).
+      t100 = t101->raw.
+      DATA(t102) = CONV i( strlen( t100 ) ).
+      t99 = t102.
+      t98 = t99.
+      t96 = xsdbool( t97 >= t98 ).
+      IF t96 = abap_true.
+        DATA t103 TYPE f.
+        DATA(t104) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+        t103 = t104.
+        t95 = t103.
       ELSE.
-        DATA(t106) = VALUE int8( ).
-        DATA(t107) = VALUE i( ).
-        DATA t108 TYPE string.
-        DATA(t109) = t87.
-        t108 = t109->raw.
-        DATA t110 TYPE i.
-        DATA(t111) = t90.
-        t110 = t111.
-        DATA(t112) = strlen( t108 ).
-        IF t110 < 0 OR t110 >= t112.
+        DATA(t105) = VALUE f( ).
+        DATA(t106) = VALUE i( ).
+        DATA t107 TYPE string.
+        DATA(t108) = CAST zcl_lnt_lexer_stream( t86 ).
+        t107 = t108->raw.
+        DATA t109 TYPE i.
+        DATA(t110) = CONV int8( t89 ).
+        t109 = t110.
+        DATA(t111) = CONV i( strlen( t107 ) ).
+        IF t109 < 0 OR t109 >= t111.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        DATA(t113) = CONV string( t108+t110(1) ).
-        DATA t114 TYPE c LENGTH 1.
-        CLEAR t114.
-        DATA(t115) = VALUE xstring( ).
+        DATA(t112) = CONV string( t107+t109(1) ).
+        DATA t113 TYPE c LENGTH 1.
+        CLEAR t113.
+        DATA(t114) = VALUE xstring( ).
+        DATA t115 TYPE x LENGTH 1.
+        CLEAR t115.
         DATA t116 TYPE x LENGTH 1.
         CLEAR t116.
-        DATA t117 TYPE x LENGTH 1.
-        CLEAR t117.
-        DATA(t118) = VALUE i( ).
-        t114 = t113.
-        t107 = cl_abap_conv_out_ce=>uccpi( t114 ).
-        IF t107 >= 255.
+        DATA(t117) = VALUE i( ).
+        t113 = t112.
+        t106 = cl_abap_conv_out_ce=>uccpi( t113 ).
+        IF t106 >= 255.
           IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
             zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
           ENDIF.
-          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t113 IMPORTING buffer = t115 ).
-          t116 = t115(1).
-          t117 = t115+1(1).
-          t107 = t116.
-          t118 = t117.
-          t107 = t107 + t118 * 256.
+          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t112 IMPORTING buffer = t114 ).
+          t115 = t114(1).
+          t116 = t114+1(1).
+          t106 = t115.
+          t117 = t116.
+          t106 = t106 + t117 * 256.
         ENDIF.
-        t106 = t107.
-        t96 = t106.
+        t105 = t106.
+        t95 = t105.
       ENDIF.
-      t89 = t96.
-      t86 = t89.
-      t85 = t86.
+      t88 = t95.
+      t85 = t88.
       t84 = t85.
+      t83 = t84.
+      DATA(t118) = VALUE i( ).
       DATA(t119) = VALUE i( ).
-      DATA(t120) = VALUE i( ).
-      DATA(t121) = VALUE int8( ).
-      DATA t122 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t123) = t2.
-      t122 = t123.
-      DATA(t124) = VALUE int8( ).
-      DATA(t125) = VALUE int8( ).
+      DATA(t120) = VALUE f( ).
+      DATA t121 TYPE REF TO zcl_lnt_lexer_stream.
+      DATA(t122) = CAST zcl_lnt_lexer_stream( t2 ).
+      t121 = t122.
+      DATA(t123) = VALUE f( ).
+      DATA t124 TYPE int8.
+      DATA t125 TYPE int8.
       DATA t126 TYPE int8.
-      DATA t127 TYPE int8.
-      DATA t128 TYPE i.
-      DATA(t129) = t122.
-      t128 = t129->offset.
-      t127 = t128.
-      DATA(t130) = CONV int8( 2 ).
-      t126 = t127 + t130.
-      IF t126 < range_int8_bound_min OR t126 > range_int8_bound_max.
-        RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-      ENDIF.
-      t125 = t126.
-      DATA(t131) = VALUE int8( ).
-      DATA t132 TYPE abap_bool.
-      DATA(t133) = t125.
-      DATA t134 TYPE int8.
-      DATA t135 TYPE i.
-      DATA t136 TYPE string.
-      DATA(t137) = t122.
-      t136 = t137->raw.
-      DATA(t138) = strlen( t136 ).
-      t135 = t138.
-      t134 = t135.
-      t132 = xsdbool( t133 >= t134 ).
-      IF t132 = abap_true.
-        DATA t139 TYPE int8.
-        DATA(t140) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-        t139 = t140.
-        t131 = t139.
+      DATA t127 TYPE i.
+      DATA(t128) = CAST zcl_lnt_lexer_stream( t121 ).
+      t127 = t128->offset.
+      t126 = t127.
+      DATA(t129) = CONV int8( 2 ).
+      t125 = t126 + t129.
+      t124 = t125.
+      DATA(t130) = VALUE f( ).
+      DATA t131 TYPE abap_bool.
+      DATA(t132) = CONV int8( t124 ).
+      DATA t133 TYPE int8.
+      DATA t134 TYPE i.
+      DATA t135 TYPE string.
+      DATA(t136) = CAST zcl_lnt_lexer_stream( t121 ).
+      t135 = t136->raw.
+      DATA(t137) = CONV i( strlen( t135 ) ).
+      t134 = t137.
+      t133 = t134.
+      t131 = xsdbool( t132 >= t133 ).
+      IF t131 = abap_true.
+        DATA t138 TYPE f.
+        DATA(t139) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+        t138 = t139.
+        t130 = t138.
       ELSE.
-        DATA(t141) = VALUE int8( ).
-        DATA(t142) = VALUE i( ).
-        DATA t143 TYPE string.
-        DATA(t144) = t122.
-        t143 = t144->raw.
-        DATA t145 TYPE i.
-        DATA(t146) = t125.
-        t145 = t146.
-        DATA(t147) = strlen( t143 ).
-        IF t145 < 0 OR t145 >= t147.
+        DATA(t140) = VALUE f( ).
+        DATA(t141) = VALUE i( ).
+        DATA t142 TYPE string.
+        DATA(t143) = CAST zcl_lnt_lexer_stream( t121 ).
+        t142 = t143->raw.
+        DATA t144 TYPE i.
+        DATA(t145) = CONV int8( t124 ).
+        t144 = t145.
+        DATA(t146) = CONV i( strlen( t142 ) ).
+        IF t144 < 0 OR t144 >= t146.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        DATA(t148) = CONV string( t143+t145(1) ).
-        DATA t149 TYPE c LENGTH 1.
-        CLEAR t149.
-        DATA(t150) = VALUE xstring( ).
+        DATA(t147) = CONV string( t142+t144(1) ).
+        DATA t148 TYPE c LENGTH 1.
+        CLEAR t148.
+        DATA(t149) = VALUE xstring( ).
+        DATA t150 TYPE x LENGTH 1.
+        CLEAR t150.
         DATA t151 TYPE x LENGTH 1.
         CLEAR t151.
-        DATA t152 TYPE x LENGTH 1.
-        CLEAR t152.
-        DATA(t153) = VALUE i( ).
-        t149 = t148.
-        t142 = cl_abap_conv_out_ce=>uccpi( t149 ).
-        IF t142 >= 255.
+        DATA(t152) = VALUE i( ).
+        t148 = t147.
+        t141 = cl_abap_conv_out_ce=>uccpi( t148 ).
+        IF t141 >= 255.
           IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
             zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
           ENDIF.
-          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t148 IMPORTING buffer = t150 ).
-          t151 = t150(1).
-          t152 = t150+1(1).
-          t142 = t151.
-          t153 = t152.
-          t142 = t142 + t153 * 256.
+          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t147 IMPORTING buffer = t149 ).
+          t150 = t149(1).
+          t151 = t149+1(1).
+          t141 = t150.
+          t152 = t151.
+          t141 = t141 + t152 * 256.
         ENDIF.
-        t141 = t142.
-        t131 = t141.
+        t140 = t141.
+        t130 = t140.
       ENDIF.
-      t124 = t131.
-      t121 = t124.
-      t120 = t121.
+      t123 = t130.
+      t120 = t123.
       t119 = t120.
-      DATA t154 TYPE abap_bool.
-      DATA(t155) = CONV int8( me->m ).
-      DATA t156 TYPE int8.
-      DATA(t157) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-      t156 = t157.
-      t154 = xsdbool( t155 = t156 ).
-      IF t154 = abap_true.
-        DATA(t158) = VALUE abap_bool( ).
-        DATA t159 TYPE int8.
-        DATA t160 TYPE int8.
-        DATA(t161) = t84.
-        t160 = t161.
+      t118 = t119.
+      DATA t153 TYPE abap_bool.
+      DATA(t154) = CONV f( me->m ).
+      DATA t155 TYPE f.
+      DATA(t156) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+      t155 = t156.
+      t153 = xsdbool( t154 = t155 ).
+      IF t153 = abap_true.
+        DATA(t157) = VALUE abap_bool( ).
+        DATA t158 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+        CLEAR t158.
+        IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
+          zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
+        ENDIF.
+        t158 = zcl_lnt_lexer_module=>splits.
+        DATA t159 TYPE f.
+        DATA(t160) = CONV i( t83 ).
         t159 = t160.
-        t158 = xsdbool( t159 = 32
-        OR t159 = 58
-        OR t159 = 46
-        OR t159 = 44
-        OR t159 = 45
-        OR t159 = 43
-        OR t159 = 40
-        OR t159 = 41
-        OR t159 = 91
-        OR t159 = 93
-        OR t159 = 92
-        OR t159 = 9
-        OR t159 = 10
-        ).
-        IF t158 = abap_true.
-          me->add_51c1( ).
+        t157 = t158->has( p0 = t159 ).
+        IF t157 = abap_true.
+          me->add_51c1(  ).
         ELSE.
-          DATA t162 TYPE abap_bool.
-          DATA(t163) = t84.
-          DATA(t164) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-          t162 = xsdbool( t163 = t164 ).
-          IF t162 = abap_true.
-            me->add_51c1( ).
-            DATA t165 TYPE int8.
-            DATA(t166) = CONV i( zcl_lnt_lexer_module=>mode_str ).
-            t165 = t166.
-            me->m = t165.
+          DATA t161 TYPE abap_bool.
+          DATA(t162) = CONV i( t83 ).
+          DATA(t163) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+          t161 = xsdbool( t162 = t163 ).
+          IF t161 = abap_true.
+            me->add_51c1(  ).
+            DATA t164 TYPE f.
+            DATA(t165) = CONV i( zcl_lnt_lexer_module=>mode_str ).
+            t164 = t165.
+            me->m = t164.
+            DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
           ELSE.
+            DATA t166 TYPE abap_bool.
             DATA t167 TYPE abap_bool.
-            DATA t168 TYPE abap_bool.
-            DATA(t169) = t84.
-            DATA(t170) = CONV i( zcl_lnt_lexer_module=>ch_pipe ).
-            t168 = xsdbool( t169 = t170 ).
-            t167 = t168.
-            IF t168 = abap_false.
-              DATA t171 TYPE abap_bool.
-              DATA(t172) = t84.
-              DATA(t173) = CONV i( zcl_lnt_lexer_module=>ch_rbrace ).
-              t171 = xsdbool( t172 = t173 ).
-              t167 = t171.
+            DATA(t168) = CONV i( t83 ).
+            DATA(t169) = CONV i( zcl_lnt_lexer_module=>ch_pipe ).
+            t167 = xsdbool( t168 = t169 ).
+            t166 = t167.
+            IF t167 = abap_false.
+              DATA t170 TYPE abap_bool.
+              DATA(t171) = CONV i( t83 ).
+              DATA(t172) = CONV i( zcl_lnt_lexer_module=>ch_rbrace ).
+              t170 = xsdbool( t171 = t172 ).
+              t166 = t170.
             ENDIF.
-            IF t167 = abap_true.
-              me->add_51c1( ).
-              DATA t174 TYPE int8.
-              DATA(t175) = CONV i( zcl_lnt_lexer_module=>mode_template ).
-              t174 = t175.
-              me->m = t174.
+            IF t166 = abap_true.
+              me->add_51c1(  ).
+              DATA t173 TYPE f.
+              DATA(t174) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+              t173 = t174.
+              me->m = t173.
+              DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
             ELSE.
-              DATA t176 TYPE abap_bool.
-              DATA(t177) = t84.
-              DATA(t178) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-              t176 = xsdbool( t177 = t178 ).
-              IF t176 = abap_true.
-                me->add_51c1( ).
-                DATA t179 TYPE int8.
-                DATA(t180) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
-                t179 = t180.
-                me->m = t179.
+              DATA t175 TYPE abap_bool.
+              DATA(t176) = CONV i( t83 ).
+              DATA(t177) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
+              t175 = xsdbool( t176 = t177 ).
+              IF t175 = abap_true.
+                me->add_51c1(  ).
+                DATA t178 TYPE f.
+                DATA(t179) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
+                t178 = t179.
+                me->m = t178.
+                DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
               ELSE.
+                DATA t180 TYPE abap_bool.
                 DATA t181 TYPE abap_bool.
-                DATA t182 TYPE abap_bool.
-                DATA(t183) = t84.
-                DATA(t184) = CONV i( zcl_lnt_lexer_module=>ch_hash ).
-                t182 = xsdbool( t183 = t184 ).
-                t181 = t182.
-                IF t182 = abap_true.
-                  DATA t185 TYPE abap_bool.
-                  DATA(t186) = t119.
-                  DATA(t187) = CONV i( zcl_lnt_lexer_module=>ch_hash ).
-                  t185 = xsdbool( t186 = t187 ).
-                  t181 = t185.
-                ENDIF.
+                DATA(t182) = CONV i( t83 ).
+                DATA(t183) = CONV i( zcl_lnt_lexer_module=>ch_hash ).
+                t181 = xsdbool( t182 = t183 ).
+                t180 = t181.
                 IF t181 = abap_true.
-                  me->add_51c1( ).
-                  DATA t188 TYPE int8.
-                  DATA(t189) = CONV i( zcl_lnt_lexer_module=>mode_pragma ).
-                  t188 = t189.
-                  me->m = t188.
+                  DATA t184 TYPE abap_bool.
+                  DATA(t185) = CONV i( t118 ).
+                  DATA(t186) = CONV i( zcl_lnt_lexer_module=>ch_hash ).
+                  t184 = xsdbool( t185 = t186 ).
+                  t180 = t184.
+                ENDIF.
+                IF t180 = abap_true.
+                  me->add_51c1(  ).
+                  DATA t187 TYPE f.
+                  DATA(t188) = CONV i( zcl_lnt_lexer_module=>mode_pragma ).
+                  t187 = t188.
+                  me->m = t187.
+                  DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
                 ELSE.
+                  DATA t189 TYPE abap_bool.
                   DATA t190 TYPE abap_bool.
-                  DATA t191 TYPE abap_bool.
-                  DATA(t192) = t84.
-                  DATA(t193) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
-                  t191 = xsdbool( t192 = t193 ).
-                  t190 = t191.
-                  IF t191 = abap_false.
+                  DATA(t191) = CONV i( t83 ).
+                  DATA(t192) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
+                  t190 = xsdbool( t191 = t192 ).
+                  t189 = t190.
+                  IF t190 = abap_false.
+                    DATA t193 TYPE abap_bool.
                     DATA t194 TYPE abap_bool.
-                    DATA t195 TYPE abap_bool.
-                    DATA(t196) = t84.
-                    DATA(t197) = CONV i( zcl_lnt_lexer_module=>ch_star ).
-                    t195 = xsdbool( t196 = t197 ).
-                    t194 = t195.
-                    IF t195 = abap_true.
-                      DATA t198 TYPE abap_bool.
-                      DATA(t199) = t18.
-                      DATA(t200) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
-                      t198 = xsdbool( t199 = t200 ).
-                      t194 = t198.
+                    DATA(t195) = CONV i( t83 ).
+                    DATA(t196) = CONV i( zcl_lnt_lexer_module=>ch_star ).
+                    t194 = xsdbool( t195 = t196 ).
+                    t193 = t194.
+                    IF t194 = abap_true.
+                      DATA t197 TYPE abap_bool.
+                      DATA(t198) = CONV i( t17 ).
+                      DATA(t199) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
+                      t197 = xsdbool( t198 = t199 ).
+                      t193 = t197.
                     ENDIF.
-                    t190 = t194.
+                    t189 = t193.
                   ENDIF.
-                  IF t190 = abap_true.
-                    me->add_51c1( ).
-                    DATA t201 TYPE int8.
-                    DATA(t202) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
-                    t201 = t202.
-                    me->m = t201.
+                  IF t189 = abap_true.
+                    me->add_51c1(  ).
+                    DATA t200 TYPE f.
+                    DATA(t201) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
+                    t200 = t201.
+                    me->m = t200.
+                    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
                   ELSE.
+                    DATA t202 TYPE abap_bool.
                     DATA t203 TYPE abap_bool.
-                    DATA t204 TYPE abap_bool.
-                    DATA(t205) = t84.
-                    DATA(t206) = CONV i( zcl_lnt_lexer_module=>ch_at ).
-                    t204 = xsdbool( t205 = t206 ).
-                    t203 = t204.
-                    IF t204 = abap_true.
-                      DATA(t207) = VALUE abap_bool( ).
-                      DATA(t208) = VALUE i( ).
+                    DATA(t204) = CONV i( t83 ).
+                    DATA(t205) = CONV i( zcl_lnt_lexer_module=>ch_at ).
+                    t203 = xsdbool( t204 = t205 ).
+                    t202 = t203.
+                    IF t203 = abap_true.
+                      DATA(t206) = VALUE abap_bool( ).
+                      DATA(t207) = VALUE i( ).
+                      DATA(t208) = VALUE string( ).
                       DATA(t209) = VALUE string( ).
-                      DATA(t210) = VALUE string( ).
-                      DATA t211 TYPE REF TO zcl_lnt_lexer_buffer.
-                      DATA(t212) = me->buffer.
-                      t211 = t212.
-                      DATA(t213) = VALUE string( ).
-                      DATA t214 TYPE string.
-                      DATA(t215) = t211.
-                      t214 = t215->raw.
-                      DATA t216 TYPE i.
-                      DATA(t217) = t211.
-                      t216 = t217->start.
-                      DATA t218 TYPE i.
-                      DATA(t219) = t211.
-                      t218 = t219->end.
-                      DATA(t220) = strlen( t214 ).
-                      t216 = COND i( WHEN t216 < 0 THEN 0 WHEN t216 > t220 THEN t220 ELSE t216 ).
-                      t218 = COND i( WHEN t218 < 0 THEN 0 WHEN t218 > t220 THEN t220 ELSE t218 ).
-                      IF t216 > t218.
-                        t220 = t216.
-                        t216 = t218.
-                        t218 = t220.
+                      DATA t210 TYPE REF TO zcl_lnt_lexer_buffer.
+                      DATA(t211) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                      t210 = t211.
+                      DATA(t212) = VALUE string( ).
+                      DATA t213 TYPE string.
+                      DATA(t214) = CAST zcl_lnt_lexer_buffer( t210 ).
+                      t213 = t214->raw.
+                      DATA t215 TYPE i.
+                      DATA(t216) = CAST zcl_lnt_lexer_buffer( t210 ).
+                      t215 = t216->start.
+                      DATA t217 TYPE i.
+                      DATA(t218) = CAST zcl_lnt_lexer_buffer( t210 ).
+                      t217 = t218->end.
+                      DATA(t219) = CONV i( strlen( t213 ) ).
+                      t215 = COND i( WHEN t215 < 0 THEN 0 WHEN t215 > t219 THEN t219 ELSE t215 ).
+                      t217 = COND i( WHEN t217 < 0 THEN 0 WHEN t217 > t219 THEN t219 ELSE t217 ).
+                      IF t215 > t217.
+                        t219 = t215.
+                        t215 = t217.
+                        t217 = t219.
                       ENDIF.
-                      t220 = t218 - t216.
-                      t213 = t214+t216(t220).
-                      t210 = t213.
-                      DATA(t221) = strlen( t210 ).
+                      t219 = t217 - t215.
+                      t212 = t213+t215(t219).
+                      t209 = t212.
+                      DATA(t220) = CONV i( strlen( t209 ) ).
+                      DATA t221 TYPE i.
                       DATA t222 TYPE i.
-                      DATA t223 TYPE i.
-                      t222 = 0.
-                      t223 = t221.
+                      t221 = 0.
+                      t222 = t220.
+                      DATA(t223) = VALUE i( ).
                       DATA(t224) = VALUE i( ).
-                      DATA(t225) = VALUE i( ).
-                      DATA(t226) = VALUE string( ).
-                      WHILE t222 < t223.
-                        t225 = t222.
-                        t226 = t210+t225(1).
-                        DATA t227 TYPE c LENGTH 1.
-                        CLEAR t227.
-                        DATA(t228) = VALUE xstring( ).
+                      DATA(t225) = VALUE string( ).
+                      WHILE t221 < t222.
+                        t224 = t221.
+                        t225 = t209+t224(1).
+                        DATA t226 TYPE c LENGTH 1.
+                        CLEAR t226.
+                        DATA(t227) = VALUE xstring( ).
+                        DATA t228 TYPE x LENGTH 1.
+                        CLEAR t228.
                         DATA t229 TYPE x LENGTH 1.
                         CLEAR t229.
-                        DATA t230 TYPE x LENGTH 1.
-                        CLEAR t230.
-                        DATA(t231) = VALUE i( ).
-                        t227 = t226.
-                        t224 = cl_abap_conv_out_ce=>uccpi( t227 ).
-                        IF t224 >= 255.
+                        DATA(t230) = VALUE i( ).
+                        t226 = t225.
+                        t223 = cl_abap_conv_out_ce=>uccpi( t226 ).
+                        IF t223 >= 255.
                           IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                             zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                           ENDIF.
-                          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t226 IMPORTING buffer = t228 ).
-                          t229 = t228(1).
-                          t230 = t228+1(1).
-                          t224 = t229.
-                          t231 = t230.
-                          t224 = t224 + t231 * 256.
+                          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t225 IMPORTING buffer = t227 ).
+                          t228 = t227(1).
+                          t229 = t227+1(1).
+                          t223 = t228.
+                          t230 = t229.
+                          t223 = t223 + t230 * 256.
                         ENDIF.
-                        IF t224 = 9 OR t224 = 10 OR t224 = 11 OR t224 = 12 OR t224 = 13 OR t224 = 32 OR t224 = 160 OR t224 = 5760 OR t224 = 8232 OR t224 = 8233 OR t224 = 8239 OR t224 = 8287 OR t224 = 12288 OR t224 = 65279 OR t224 >= 8192 AND t224 <= 8202.
-                          t222 = t222 + 1.
+                        IF t223 = 9 OR t223 = 10 OR t223 = 11 OR t223 = 12 OR t223 = 13 OR t223 = 32 OR t223 = 160 OR t223 = 5760 OR t223 = 8232 OR t223 = 8233 OR t223 = 8239 OR t223 = 8287 OR t223 = 12288 OR t223 = 65279 OR t223 >= 8192 AND t223 <= 8202.
+                          t221 = t221 + 1.
                         ELSE.
                           EXIT.
                         ENDIF.
                       ENDWHILE.
+                      DATA(t231) = VALUE i( ).
                       DATA(t232) = VALUE i( ).
-                      DATA(t233) = VALUE i( ).
-                      DATA(t234) = VALUE string( ).
-                      WHILE t223 > t222.
-                        t233 = t223 - 1.
-                        t234 = t210+t233(1).
-                        DATA t235 TYPE c LENGTH 1.
-                        CLEAR t235.
-                        DATA(t236) = VALUE xstring( ).
+                      DATA(t233) = VALUE string( ).
+                      WHILE t222 > t221.
+                        t232 = t222 - 1.
+                        t233 = t209+t232(1).
+                        DATA t234 TYPE c LENGTH 1.
+                        CLEAR t234.
+                        DATA(t235) = VALUE xstring( ).
+                        DATA t236 TYPE x LENGTH 1.
+                        CLEAR t236.
                         DATA t237 TYPE x LENGTH 1.
                         CLEAR t237.
-                        DATA t238 TYPE x LENGTH 1.
-                        CLEAR t238.
-                        DATA(t239) = VALUE i( ).
-                        t235 = t234.
-                        t232 = cl_abap_conv_out_ce=>uccpi( t235 ).
-                        IF t232 >= 255.
+                        DATA(t238) = VALUE i( ).
+                        t234 = t233.
+                        t231 = cl_abap_conv_out_ce=>uccpi( t234 ).
+                        IF t231 >= 255.
                           IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                             zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                           ENDIF.
-                          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t234 IMPORTING buffer = t236 ).
-                          t237 = t236(1).
-                          t238 = t236+1(1).
-                          t232 = t237.
-                          t239 = t238.
-                          t232 = t232 + t239 * 256.
+                          zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t233 IMPORTING buffer = t235 ).
+                          t236 = t235(1).
+                          t237 = t235+1(1).
+                          t231 = t236.
+                          t238 = t237.
+                          t231 = t231 + t238 * 256.
                         ENDIF.
-                        IF t232 = 9 OR t232 = 10 OR t232 = 11 OR t232 = 12 OR t232 = 13 OR t232 = 32 OR t232 = 160 OR t232 = 5760 OR t232 = 8232 OR t232 = 8233 OR t232 = 8239 OR t232 = 8287 OR t232 = 12288 OR t232 = 65279 OR t232 >= 8192 AND t232 <= 8202.
-                          t223 = t223 - 1.
+                        IF t231 = 9 OR t231 = 10 OR t231 = 11 OR t231 = 12 OR t231 = 13 OR t231 = 32 OR t231 = 160 OR t231 = 5760 OR t231 = 8232 OR t231 = 8233 OR t231 = 8239 OR t231 = 8287 OR t231 = 12288 OR t231 = 65279 OR t231 >= 8192 AND t231 <= 8202.
+                          t222 = t222 - 1.
                         ELSE.
                           EXIT.
                         ENDIF.
                       ENDWHILE.
-                      IF t223 > t222.
-                        t221 = t223 - t222.
-                        t209 = t210+t222(t221).
+                      IF t222 > t221.
+                        t220 = t222 - t221.
+                        t208 = t209+t221(t220).
                       ELSE.
-                        CLEAR t209.
+                        CLEAR t208.
                       ENDIF.
-                      DATA(t240) = strlen( t209 ).
-                      t208 = t240.
-                      DATA(t241) = 0.
-                      t207 = xsdbool( t208 = t241 ).
-                      t203 = t207.
+                      DATA(t239) = CONV i( strlen( t208 ) ).
+                      t207 = t239.
+                      DATA(t240) = CONV i( 0 ).
+                      t206 = xsdbool( t207 = t240 ).
+                      t202 = t206.
                     ENDIF.
-                    IF t203 = abap_true.
-                      me->add_51c1( ).
+                    IF t202 = abap_true.
+                      me->add_51c1(  ).
                     ELSE.
-                      DATA(t242) = VALUE abap_bool( ).
+                      DATA(t241) = VALUE abap_bool( ).
+                      DATA t242 TYPE abap_bool.
                       DATA t243 TYPE abap_bool.
-                      DATA t244 TYPE abap_bool.
-                      DATA(t245) = t84.
-                      DATA(t246) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
-                      t244 = xsdbool( t245 = t246 ).
-                      t243 = t244.
-                      IF t244 = abap_false.
-                        DATA t247 TYPE abap_bool.
-                        DATA(t248) = t84.
-                        DATA(t249) = CONV i( zcl_lnt_lexer_module=>ch_equals ).
-                        t247 = xsdbool( t248 = t249 ).
-                        t243 = t247.
-                      ENDIF.
+                      DATA(t244) = CONV i( t83 ).
+                      DATA(t245) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
+                      t243 = xsdbool( t244 = t245 ).
                       t242 = t243.
-                      IF t243 = abap_true.
-                        DATA t250 TYPE abap_bool.
-                        DATA(t251) = t119.
-                        DATA(t252) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
-                        t250 = xsdbool( t251 = t252 ).
-                        t242 = t250.
+                      IF t243 = abap_false.
+                        DATA t246 TYPE abap_bool.
+                        DATA(t247) = CONV i( t83 ).
+                        DATA(t248) = CONV i( zcl_lnt_lexer_module=>ch_equals ).
+                        t246 = xsdbool( t247 = t248 ).
+                        t242 = t246.
                       ENDIF.
+                      t241 = t242.
                       IF t242 = abap_true.
-                        me->add_51c1( ).
+                        DATA t249 TYPE abap_bool.
+                        DATA(t250) = CONV i( t118 ).
+                        DATA(t251) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
+                        t249 = xsdbool( t250 = t251 ).
+                        t241 = t249.
+                      ENDIF.
+                      IF t241 = abap_true.
+                        me->add_51c1(  ).
                       ELSE.
-                        DATA(t253) = VALUE abap_bool( ).
+                        DATA(t252) = VALUE abap_bool( ).
+                        DATA t253 TYPE abap_bool.
                         DATA t254 TYPE abap_bool.
-                        DATA t255 TYPE abap_bool.
-                        DATA(t256) = t18.
-                        DATA(t257) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
-                        t255 = xsdbool( t256 = t257 ).
-                        t254 = t255.
-                        IF t255 = abap_true.
-                          DATA t258 TYPE abap_bool.
-                          DATA(t259) = t84.
-                          DATA(t260) = CONV i( zcl_lnt_lexer_module=>ch_space ).
-                          t258 = xsdbool( t259 <> t260 ).
-                          t254 = t258.
-                        ENDIF.
+                        DATA(t255) = CONV i( t17 ).
+                        DATA(t256) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
+                        t254 = xsdbool( t255 = t256 ).
                         t253 = t254.
                         IF t254 = abap_true.
+                          DATA t257 TYPE abap_bool.
+                          DATA(t258) = CONV i( t83 ).
+                          DATA(t259) = CONV i( zcl_lnt_lexer_module=>ch_space ).
+                          t257 = xsdbool( t258 <> t259 ).
+                          t253 = t257.
+                        ENDIF.
+                        t252 = t253.
+                        IF t253 = abap_true.
+                          DATA(t260) = VALUE abap_bool( ).
                           DATA(t261) = VALUE abap_bool( ).
-                          DATA(t262) = VALUE abap_bool( ).
-                          DATA(t263) = VALUE i( ).
-                          DATA(t264) = VALUE int8( ).
-                          DATA t265 TYPE REF TO zcl_lnt_lexer_stream.
-                          DATA(t266) = t2.
-                          t265 = t266.
-                          DATA(t267) = VALUE int8( ).
+                          DATA(t262) = VALUE i( ).
+                          DATA(t263) = VALUE f( ).
+                          DATA t264 TYPE REF TO zcl_lnt_lexer_stream.
+                          DATA(t265) = CAST zcl_lnt_lexer_stream( t2 ).
+                          t264 = t265.
+                          DATA(t266) = VALUE f( ).
+                          DATA t267 TYPE i.
                           DATA t268 TYPE i.
                           DATA t269 TYPE i.
-                          DATA t270 TYPE i.
-                          DATA(t271) = t265.
-                          t270 = t271->offset.
-                          DATA(t272) = 1.
-                          t269 = t270 - t272.
-                          t268 = t269.
-                          DATA(t273) = VALUE int8( ).
-                          DATA t274 TYPE abap_bool.
-                          DATA(t275) = t268.
-                          DATA(t276) = 0.
-                          t274 = xsdbool( t275 < t276 ).
-                          IF t274 = abap_true.
-                            DATA t277 TYPE int8.
-                            DATA(t278) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-                            t277 = t278.
-                            t273 = t277.
+                          DATA(t270) = CAST zcl_lnt_lexer_stream( t264 ).
+                          t269 = t270->offset.
+                          DATA(t271) = CONV i( 1 ).
+                          t268 = t269 - t271.
+                          t267 = t268.
+                          DATA(t272) = VALUE f( ).
+                          DATA t273 TYPE abap_bool.
+                          DATA(t274) = CONV i( t267 ).
+                          DATA(t275) = CONV i( 0 ).
+                          t273 = xsdbool( t274 < t275 ).
+                          IF t273 = abap_true.
+                            DATA t276 TYPE f.
+                            DATA(t277) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+                            t276 = t277.
+                            t272 = t276.
                           ELSE.
-                            DATA(t279) = VALUE int8( ).
-                            DATA(t280) = VALUE i( ).
-                            DATA t281 TYPE string.
-                            DATA(t282) = t265.
-                            t281 = t282->raw.
-                            DATA(t283) = t268.
-                            DATA(t284) = strlen( t281 ).
-                            IF t283 < 0 OR t283 >= t284.
+                            DATA(t278) = VALUE f( ).
+                            DATA(t279) = VALUE i( ).
+                            DATA t280 TYPE string.
+                            DATA(t281) = CAST zcl_lnt_lexer_stream( t264 ).
+                            t280 = t281->raw.
+                            DATA(t282) = CONV i( t267 ).
+                            DATA(t283) = CONV i( strlen( t280 ) ).
+                            IF t282 < 0 OR t282 >= t283.
                               RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                             ENDIF.
-                            DATA(t285) = CONV string( t281+t283(1) ).
-                            DATA t286 TYPE c LENGTH 1.
-                            CLEAR t286.
-                            DATA(t287) = VALUE xstring( ).
+                            DATA(t284) = CONV string( t280+t282(1) ).
+                            DATA t285 TYPE c LENGTH 1.
+                            CLEAR t285.
+                            DATA(t286) = VALUE xstring( ).
+                            DATA t287 TYPE x LENGTH 1.
+                            CLEAR t287.
                             DATA t288 TYPE x LENGTH 1.
                             CLEAR t288.
-                            DATA t289 TYPE x LENGTH 1.
-                            CLEAR t289.
-                            DATA(t290) = VALUE i( ).
-                            t286 = t285.
-                            t280 = cl_abap_conv_out_ce=>uccpi( t286 ).
-                            IF t280 >= 255.
+                            DATA(t289) = VALUE i( ).
+                            t285 = t284.
+                            t279 = cl_abap_conv_out_ce=>uccpi( t285 ).
+                            IF t279 >= 255.
                               IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                                 zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                               ENDIF.
-                              zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t285 IMPORTING buffer = t287 ).
-                              t288 = t287(1).
-                              t289 = t287+1(1).
-                              t280 = t288.
-                              t290 = t289.
-                              t280 = t280 + t290 * 256.
+                              zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t284 IMPORTING buffer = t286 ).
+                              t287 = t286(1).
+                              t288 = t286+1(1).
+                              t279 = t287.
+                              t289 = t288.
+                              t279 = t279 + t289 * 256.
                             ENDIF.
-                            t279 = t280.
-                            t273 = t279.
+                            t278 = t279.
+                            t272 = t278.
                           ENDIF.
-                          t267 = t273.
-                          t264 = t267.
-                          t263 = t264.
-                          DATA(t291) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
-                          t262 = xsdbool( t263 = t291 ).
-                          t261 = t262.
-                          IF t262 = abap_false.
-                            DATA(t292) = VALUE abap_bool( ).
-                            DATA(t293) = VALUE i( ).
-                            DATA(t294) = VALUE int8( ).
-                            DATA t295 TYPE REF TO zcl_lnt_lexer_stream.
-                            DATA(t296) = t2.
-                            t295 = t296.
-                            DATA(t297) = VALUE int8( ).
+                          t266 = t272.
+                          t263 = t266.
+                          t262 = t263.
+                          DATA(t290) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
+                          t261 = xsdbool( t262 = t290 ).
+                          t260 = t261.
+                          IF t261 = abap_false.
+                            DATA(t291) = VALUE abap_bool( ).
+                            DATA(t292) = VALUE i( ).
+                            DATA(t293) = VALUE f( ).
+                            DATA t294 TYPE REF TO zcl_lnt_lexer_stream.
+                            DATA(t295) = CAST zcl_lnt_lexer_stream( t2 ).
+                            t294 = t295.
+                            DATA(t296) = VALUE f( ).
+                            DATA t297 TYPE i.
                             DATA t298 TYPE i.
                             DATA t299 TYPE i.
-                            DATA t300 TYPE i.
-                            DATA(t301) = t295.
-                            t300 = t301->offset.
-                            DATA(t302) = 1.
-                            t299 = t300 - t302.
-                            t298 = t299.
-                            DATA(t303) = VALUE int8( ).
-                            DATA t304 TYPE abap_bool.
-                            DATA(t305) = t298.
-                            DATA(t306) = 0.
-                            t304 = xsdbool( t305 < t306 ).
-                            IF t304 = abap_true.
-                              DATA t307 TYPE int8.
-                              DATA(t308) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-                              t307 = t308.
-                              t303 = t307.
+                            DATA(t300) = CAST zcl_lnt_lexer_stream( t294 ).
+                            t299 = t300->offset.
+                            DATA(t301) = CONV i( 1 ).
+                            t298 = t299 - t301.
+                            t297 = t298.
+                            DATA(t302) = VALUE f( ).
+                            DATA t303 TYPE abap_bool.
+                            DATA(t304) = CONV i( t297 ).
+                            DATA(t305) = CONV i( 0 ).
+                            t303 = xsdbool( t304 < t305 ).
+                            IF t303 = abap_true.
+                              DATA t306 TYPE f.
+                              DATA(t307) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+                              t306 = t307.
+                              t302 = t306.
                             ELSE.
-                              DATA(t309) = VALUE int8( ).
-                              DATA(t310) = VALUE i( ).
-                              DATA t311 TYPE string.
-                              DATA(t312) = t295.
-                              t311 = t312->raw.
-                              DATA(t313) = t298.
-                              DATA(t314) = strlen( t311 ).
-                              IF t313 < 0 OR t313 >= t314.
+                              DATA(t308) = VALUE f( ).
+                              DATA(t309) = VALUE i( ).
+                              DATA t310 TYPE string.
+                              DATA(t311) = CAST zcl_lnt_lexer_stream( t294 ).
+                              t310 = t311->raw.
+                              DATA(t312) = CONV i( t297 ).
+                              DATA(t313) = CONV i( strlen( t310 ) ).
+                              IF t312 < 0 OR t312 >= t313.
                                 RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                               ENDIF.
-                              DATA(t315) = CONV string( t311+t313(1) ).
-                              DATA t316 TYPE c LENGTH 1.
-                              CLEAR t316.
-                              DATA(t317) = VALUE xstring( ).
+                              DATA(t314) = CONV string( t310+t312(1) ).
+                              DATA t315 TYPE c LENGTH 1.
+                              CLEAR t315.
+                              DATA(t316) = VALUE xstring( ).
+                              DATA t317 TYPE x LENGTH 1.
+                              CLEAR t317.
                               DATA t318 TYPE x LENGTH 1.
                               CLEAR t318.
-                              DATA t319 TYPE x LENGTH 1.
-                              CLEAR t319.
-                              DATA(t320) = VALUE i( ).
-                              t316 = t315.
-                              t310 = cl_abap_conv_out_ce=>uccpi( t316 ).
-                              IF t310 >= 255.
+                              DATA(t319) = VALUE i( ).
+                              t315 = t314.
+                              t309 = cl_abap_conv_out_ce=>uccpi( t315 ).
+                              IF t309 >= 255.
                                 IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                                   zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                                 ENDIF.
-                                zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t315 IMPORTING buffer = t317 ).
-                                t318 = t317(1).
-                                t319 = t317+1(1).
-                                t310 = t318.
-                                t320 = t319.
-                                t310 = t310 + t320 * 256.
+                                zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t314 IMPORTING buffer = t316 ).
+                                t317 = t316(1).
+                                t318 = t316+1(1).
+                                t309 = t317.
+                                t319 = t318.
+                                t309 = t309 + t319 * 256.
                               ENDIF.
-                              t309 = t310.
-                              t303 = t309.
+                              t308 = t309.
+                              t302 = t308.
                             ENDIF.
-                            t297 = t303.
-                            t294 = t297.
-                            t293 = t294.
-                            DATA(t321) = CONV i( zcl_lnt_lexer_module=>ch_equals ).
-                            t292 = xsdbool( t293 = t321 ).
-                            t261 = t292.
+                            t296 = t302.
+                            t293 = t296.
+                            t292 = t293.
+                            DATA(t320) = CONV i( zcl_lnt_lexer_module=>ch_equals ).
+                            t291 = xsdbool( t292 = t320 ).
+                            t260 = t291.
                           ENDIF.
-                          t253 = t261.
+                          t252 = t260.
                         ENDIF.
-                        IF t253 = abap_true.
-                          me->add_51c1( ).
+                        IF t252 = abap_true.
+                          me->add_51c1(  ).
                         ELSE.
-                          DATA(t322) = VALUE abap_bool( ).
-                          DATA(t323) = VALUE abap_bool( ).
-                          DATA(t324) = VALUE int8( ).
+                          DATA t321 TYPE abap_bool.
+                          DATA t322 TYPE abap_bool.
+                          DATA t323 TYPE int8.
+                          DATA t324 TYPE f.
                           DATA t325 TYPE REF TO zcl_lnt_lexer_buffer.
-                          DATA(t326) = me->buffer.
+                          DATA(t326) = CAST zcl_lnt_lexer_buffer( me->buffer ).
                           t325 = t326.
-                          DATA t327 TYPE int8.
+                          DATA t327 TYPE f.
                           DATA t328 TYPE int8.
-                          DATA t329 TYPE i.
-                          DATA(t330) = t325.
-                          t329 = t330->end.
-                          t328 = t329.
-                          DATA t331 TYPE int8.
-                          DATA t332 TYPE i.
-                          DATA(t333) = t325.
-                          t332 = t333->start.
-                          t331 = t332.
-                          t327 = t328 - t331.
-                          IF t327 < range_int8_bound_min OR t327 > range_int8_bound_max.
-                            RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-                          ENDIF.
+                          DATA t329 TYPE int8.
+                          DATA t330 TYPE i.
+                          DATA(t331) = CAST zcl_lnt_lexer_buffer( t325 ).
+                          t330 = t331->end.
+                          t329 = t330.
+                          DATA t332 TYPE int8.
+                          DATA t333 TYPE i.
+                          DATA(t334) = CAST zcl_lnt_lexer_buffer( t325 ).
+                          t333 = t334->start.
+                          t332 = t333.
+                          t328 = t329 - t332.
+                          t327 = t328.
                           t324 = t327.
-                          DATA(t334) = CONV int8( 1 ).
-                          t323 = xsdbool( t324 = t334 ).
-                          t322 = t323.
-                          IF t323 = abap_true.
-                            DATA t335 TYPE abap_bool.
-                            DATA(t336) = VALUE abap_bool( ).
-                            DATA t337 TYPE int8.
-                            DATA t338 TYPE int8.
-                            DATA(t339) = t18.
-                            t338 = t339.
-                            t337 = t338.
-                            t336 = xsdbool( t337 = 46
-                            OR t337 = 44
-                            OR t337 = 58
-                            OR t337 = 40
-                            OR t337 = 41
-                            OR t337 = 91
-                            OR t337 = 93
-                            OR t337 = 43
-                            OR t337 = 64
-                            ).
-                            t335 = t336.
-                            IF t336 = abap_false.
-                              DATA t340 TYPE abap_bool.
-                              DATA t341 TYPE abap_bool.
-                              DATA(t342) = t18.
-                              DATA(t343) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
-                              t341 = xsdbool( t342 = t343 ).
-                              t340 = t341.
-                              IF t341 = abap_true.
-                                DATA t344 TYPE abap_bool.
-                                DATA(t345) = t84.
-                                DATA(t346) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
-                                t344 = xsdbool( t345 <> t346 ).
-                                t340 = t344.
-                              ENDIF.
-                              t335 = t340.
-                            ENDIF.
-                            t322 = t335.
-                          ENDIF.
+                          t323 = t324.
+                          DATA(t335) = CONV int8( 1 ).
+                          t322 = xsdbool( t323 = t335 ).
+                          t321 = t322.
                           IF t322 = abap_true.
-                            me->add_51c1( ).
+                            DATA(t336) = VALUE abap_bool( ).
+                            DATA(t337) = VALUE abap_bool( ).
+                            DATA t338 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+                            CLEAR t338.
+                            IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
+                              zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
+                            ENDIF.
+                            t338 = zcl_lnt_lexer_module=>bufs.
+                            DATA t339 TYPE f.
+                            DATA(t340) = CONV i( t17 ).
+                            t339 = t340.
+                            t337 = t338->has( p0 = t339 ).
+                            t336 = t337.
+                            IF t337 = abap_false.
+                              DATA t341 TYPE abap_bool.
+                              DATA t342 TYPE abap_bool.
+                              DATA(t343) = CONV i( t17 ).
+                              DATA(t344) = CONV i( zcl_lnt_lexer_module=>ch_dash ).
+                              t342 = xsdbool( t343 = t344 ).
+                              t341 = t342.
+                              IF t342 = abap_true.
+                                DATA t345 TYPE abap_bool.
+                                DATA(t346) = CONV i( t83 ).
+                                DATA(t347) = CONV i( zcl_lnt_lexer_module=>ch_gt ).
+                                t345 = xsdbool( t346 <> t347 ).
+                                t341 = t345.
+                              ENDIF.
+                              t336 = t341.
+                            ENDIF.
+                            t321 = t336.
+                          ENDIF.
+                          IF t321 = abap_true.
+                            me->add_51c1(  ).
                           ENDIF.
                         ENDIF.
                       ENDIF.
@@ -2481,676 +2499,662 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           ENDIF.
         ENDIF.
       ELSE.
-        DATA t347 TYPE abap_bool.
         DATA t348 TYPE abap_bool.
-        DATA(t349) = CONV int8( me->m ).
-        DATA t350 TYPE int8.
-        DATA(t351) = CONV i( zcl_lnt_lexer_module=>mode_pragma ).
-        t350 = t351.
-        t348 = xsdbool( t349 = t350 ).
-        t347 = t348.
-        IF t348 = abap_true.
-          DATA(t352) = VALUE abap_bool( ).
+        DATA t349 TYPE abap_bool.
+        DATA(t350) = CONV f( me->m ).
+        DATA t351 TYPE f.
+        DATA(t352) = CONV i( zcl_lnt_lexer_module=>mode_pragma ).
+        t351 = t352.
+        t349 = xsdbool( t350 = t351 ).
+        t348 = t349.
+        IF t349 = abap_true.
           DATA(t353) = VALUE abap_bool( ).
           DATA(t354) = VALUE abap_bool( ).
-          DATA t355 TYPE abap_bool.
+          DATA(t355) = VALUE abap_bool( ).
           DATA t356 TYPE abap_bool.
-          DATA(t357) = t84.
-          DATA(t358) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
-          t356 = xsdbool( t357 = t358 ).
+          DATA t357 TYPE abap_bool.
+          DATA(t358) = CONV i( t83 ).
+          DATA(t359) = CONV i( zcl_lnt_lexer_module=>ch_comma ).
+          t357 = xsdbool( t358 = t359 ).
+          t356 = t357.
+          IF t357 = abap_false.
+            DATA t360 TYPE abap_bool.
+            DATA(t361) = CONV i( t83 ).
+            DATA(t362) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
+            t360 = xsdbool( t361 = t362 ).
+            t356 = t360.
+          ENDIF.
           t355 = t356.
           IF t356 = abap_false.
-            DATA t359 TYPE abap_bool.
-            DATA(t360) = t84.
-            DATA(t361) = CONV i( zcl_lnt_lexer_module=>ch_colon ).
-            t359 = xsdbool( t360 = t361 ).
-            t355 = t359.
+            DATA t363 TYPE abap_bool.
+            DATA(t364) = CONV i( t83 ).
+            DATA(t365) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
+            t363 = xsdbool( t364 = t365 ).
+            t355 = t363.
           ENDIF.
           t354 = t355.
           IF t355 = abap_false.
-            DATA t362 TYPE abap_bool.
-            DATA(t363) = t84.
-            DATA(t364) = CONV i( zcl_lnt_lexer_module=>ch_dot ).
-            t362 = xsdbool( t363 = t364 ).
-            t354 = t362.
+            DATA t366 TYPE abap_bool.
+            DATA(t367) = CONV i( t83 ).
+            DATA(t368) = CONV i( zcl_lnt_lexer_module=>ch_space ).
+            t366 = xsdbool( t367 = t368 ).
+            t354 = t366.
           ENDIF.
           t353 = t354.
           IF t354 = abap_false.
-            DATA t365 TYPE abap_bool.
-            DATA(t366) = t84.
-            DATA(t367) = CONV i( zcl_lnt_lexer_module=>ch_space ).
-            t365 = xsdbool( t366 = t367 ).
-            t353 = t365.
+            DATA t369 TYPE abap_bool.
+            DATA(t370) = CONV i( t83 ).
+            DATA(t371) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
+            t369 = xsdbool( t370 = t371 ).
+            t353 = t369.
           ENDIF.
-          t352 = t353.
-          IF t353 = abap_false.
-            DATA t368 TYPE abap_bool.
-            DATA(t369) = t84.
-            DATA(t370) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
-            t368 = xsdbool( t369 = t370 ).
-            t352 = t368.
-          ENDIF.
-          t347 = t352.
+          t348 = t353.
         ENDIF.
-        IF t347 = abap_true.
-          me->add_51c1( ).
-          DATA t371 TYPE int8.
-          DATA(t372) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-          t371 = t372.
-          me->m = t371.
+        IF t348 = abap_true.
+          me->add_51c1(  ).
+          DATA t372 TYPE f.
+          DATA(t373) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+          t372 = t373.
+          me->m = t372.
+          DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
         ELSE.
-          DATA(t373) = VALUE abap_bool( ).
           DATA(t374) = VALUE abap_bool( ).
           DATA(t375) = VALUE abap_bool( ).
           DATA(t376) = VALUE abap_bool( ).
-          DATA t377 TYPE abap_bool.
+          DATA(t377) = VALUE abap_bool( ).
           DATA t378 TYPE abap_bool.
-          DATA(t379) = CONV int8( me->m ).
-          DATA t380 TYPE int8.
-          DATA(t381) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
-          t380 = t381.
-          t378 = xsdbool( t379 = t380 ).
-          t377 = t378.
-          IF t378 = abap_true.
-            DATA(t382) = VALUE abap_bool( ).
-            DATA(t383) = VALUE int8( ).
-            DATA t384 TYPE REF TO zcl_lnt_lexer_buffer.
-            DATA(t385) = me->buffer.
-            t384 = t385.
-            DATA t386 TYPE int8.
-            DATA t387 TYPE int8.
-            DATA t388 TYPE i.
-            DATA(t389) = t384.
-            t388 = t389->end.
-            t387 = t388.
+          DATA t379 TYPE abap_bool.
+          DATA(t380) = CONV f( me->m ).
+          DATA t381 TYPE f.
+          DATA(t382) = CONV i( zcl_lnt_lexer_module=>mode_ping ).
+          t381 = t382.
+          t379 = xsdbool( t380 = t381 ).
+          t378 = t379.
+          IF t379 = abap_true.
+            DATA t383 TYPE abap_bool.
+            DATA t384 TYPE int8.
+            DATA t385 TYPE f.
+            DATA t386 TYPE REF TO zcl_lnt_lexer_buffer.
+            DATA(t387) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+            t386 = t387.
+            DATA t388 TYPE f.
+            DATA t389 TYPE int8.
             DATA t390 TYPE int8.
             DATA t391 TYPE i.
-            DATA(t392) = t384.
-            t391 = t392->start.
+            DATA(t392) = CAST zcl_lnt_lexer_buffer( t386 ).
+            t391 = t392->end.
             t390 = t391.
-            t386 = t387 - t390.
-            IF t386 < range_int8_bound_min OR t386 > range_int8_bound_max.
-              RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-            ENDIF.
-            t383 = t386.
-            DATA(t393) = CONV int8( 1 ).
-            t382 = xsdbool( t383 > t393 ).
-            t377 = t382.
+            DATA t393 TYPE int8.
+            DATA t394 TYPE i.
+            DATA(t395) = CAST zcl_lnt_lexer_buffer( t386 ).
+            t394 = t395->start.
+            t393 = t394.
+            t389 = t390 - t393.
+            t388 = t389.
+            t385 = t388.
+            t384 = t385.
+            DATA(t396) = CONV int8( 1 ).
+            t383 = xsdbool( t384 > t396 ).
+            t378 = t383.
+          ENDIF.
+          t377 = t378.
+          IF t378 = abap_true.
+            DATA t397 TYPE abap_bool.
+            DATA(t398) = CONV i( t17 ).
+            DATA(t399) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
+            t397 = xsdbool( t398 = t399 ).
+            t377 = t397.
           ENDIF.
           t376 = t377.
           IF t377 = abap_true.
-            DATA t394 TYPE abap_bool.
-            DATA(t395) = t18.
-            DATA(t396) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-            t394 = xsdbool( t395 = t396 ).
-            t376 = t394.
+            DATA(t400) = VALUE abap_bool( ).
+            DATA t401 TYPE abap_bool.
+            DATA t402 TYPE abap_bool.
+            DATA(t403) = CONV i( t83 ).
+            DATA(t404) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
+            t402 = xsdbool( t403 = t404 ).
+            t401 = t402.
+            IF t402 = abap_true.
+              DATA t405 TYPE abap_bool.
+              DATA(t406) = CONV i( t118 ).
+              DATA(t407) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
+              t405 = xsdbool( t406 = t407 ).
+              t401 = t405.
+            ENDIF.
+            t400 = xsdbool( t401 = abap_false ).
+            t376 = t400.
           ENDIF.
           t375 = t376.
           IF t376 = abap_true.
-            DATA(t397) = VALUE abap_bool( ).
-            DATA t398 TYPE abap_bool.
-            DATA t399 TYPE abap_bool.
-            DATA(t400) = t84.
-            DATA(t401) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-            t399 = xsdbool( t400 = t401 ).
-            t398 = t399.
-            IF t399 = abap_true.
-              DATA t402 TYPE abap_bool.
-              DATA(t403) = t119.
-              DATA(t404) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-              t402 = xsdbool( t403 = t404 ).
-              t398 = t402.
-            ENDIF.
-            t397 = xsdbool( t398 = abap_false ).
-            t375 = t397.
+            DATA t408 TYPE abap_bool.
+            DATA(t409) = CONV i( t83 ).
+            DATA(t410) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
+            t408 = xsdbool( t409 <> t410 ).
+            t375 = t408.
           ENDIF.
           t374 = t375.
           IF t375 = abap_true.
-            DATA t405 TYPE abap_bool.
-            DATA(t406) = t84.
-            DATA(t407) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-            t405 = xsdbool( t406 <> t407 ).
-            t374 = t405.
-          ENDIF.
-          t373 = t374.
-          IF t374 = abap_true.
-            DATA t408 TYPE abap_bool.
-            DATA(t409) = me->buffer.
-            DATA t410 TYPE int8.
-            DATA(t411) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
-            t410 = t411.
-            t408 = t409->count_is_even( i_char = t410 ).
-            t373 = t408.
-          ENDIF.
-          IF t373 = abap_true.
-            DATA(t412) = VALUE abap_bool( ).
-            DATA t413 TYPE int8.
-            DATA t414 TYPE int8.
-            DATA(t415) = t84.
-            t414 = t415.
+            DATA t411 TYPE abap_bool.
+            DATA(t412) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+            DATA t413 TYPE f.
+            DATA(t414) = CONV i( zcl_lnt_lexer_module=>ch_backtick ).
             t413 = t414.
-            t412 = xsdbool( t413 = -1
-            OR t413 = 32
-            OR t413 = 9
-            OR t413 = 10
-            OR t413 = 46
-            OR t413 = 44
-            OR t413 = 58
-            OR t413 = 34
-            OR t413 = 40
-            OR t413 = 41
-            OR t413 = 91
-            OR t413 = 93
-            ).
-            IF t412 = abap_true.
-              me->add_51c1( ).
+            t411 = t412->count_is_even( i_char = t413 ).
+            t374 = t411.
+          ENDIF.
+          IF t374 = abap_true.
+            DATA(t415) = VALUE abap_bool( ).
+            DATA t416 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+            CLEAR t416.
+            IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
+              zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
             ENDIF.
-            DATA t416 TYPE abap_bool.
-            DATA(t417) = t84.
-            DATA(t418) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
-            t416 = xsdbool( t417 = t418 ).
-            IF t416 = abap_true.
-              DATA t419 TYPE int8.
-              DATA(t420) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
-              t419 = t420.
-              me->m = t419.
+            t416 = zcl_lnt_lexer_module=>after_literal.
+            DATA t417 TYPE f.
+            DATA(t418) = CONV i( t83 ).
+            t417 = t418.
+            t415 = t416->has( p0 = t417 ).
+            IF t415 = abap_true.
+              me->add_51c1(  ).
+            ENDIF.
+            DATA t419 TYPE abap_bool.
+            DATA(t420) = CONV i( t83 ).
+            DATA(t421) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
+            t419 = xsdbool( t420 = t421 ).
+            IF t419 = abap_true.
+              DATA t422 TYPE f.
+              DATA(t423) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
+              t422 = t423.
+              me->m = t422.
+              DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
             ELSE.
-              DATA t421 TYPE int8.
-              DATA(t422) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-              t421 = t422.
-              me->m = t421.
+              DATA t424 TYPE f.
+              DATA(t425) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+              t424 = t425.
+              me->m = t424.
+              DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
             ENDIF.
           ELSE.
-            DATA(t423) = VALUE abap_bool( ).
-            DATA(t424) = VALUE abap_bool( ).
-            DATA t425 TYPE abap_bool.
-            DATA t426 TYPE abap_bool.
-            DATA(t427) = CONV int8( me->m ).
-            DATA t428 TYPE int8.
-            DATA(t429) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+            DATA(t426) = VALUE abap_bool( ).
+            DATA(t427) = VALUE abap_bool( ).
+            DATA t428 TYPE abap_bool.
+            DATA t429 TYPE abap_bool.
+            DATA(t430) = CONV f( me->m ).
+            DATA t431 TYPE f.
+            DATA(t432) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+            t431 = t432.
+            t429 = xsdbool( t430 = t431 ).
             t428 = t429.
-            t426 = xsdbool( t427 = t428 ).
-            t425 = t426.
-            IF t426 = abap_true.
-              DATA(t430) = VALUE abap_bool( ).
-              DATA(t431) = VALUE int8( ).
-              DATA t432 TYPE REF TO zcl_lnt_lexer_buffer.
-              DATA(t433) = me->buffer.
-              t432 = t433.
+            IF t429 = abap_true.
+              DATA t433 TYPE abap_bool.
               DATA t434 TYPE int8.
-              DATA t435 TYPE int8.
-              DATA t436 TYPE i.
-              DATA(t437) = t432.
-              t436 = t437->end.
-              t435 = t436.
-              DATA t438 TYPE int8.
-              DATA t439 TYPE i.
-              DATA(t440) = t432.
-              t439 = t440->start.
+              DATA t435 TYPE f.
+              DATA t436 TYPE REF TO zcl_lnt_lexer_buffer.
+              DATA(t437) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+              t436 = t437.
+              DATA t438 TYPE f.
+              DATA t439 TYPE int8.
+              DATA t440 TYPE int8.
+              DATA t441 TYPE i.
+              DATA(t442) = CAST zcl_lnt_lexer_buffer( t436 ).
+              t441 = t442->end.
+              t440 = t441.
+              DATA t443 TYPE int8.
+              DATA t444 TYPE i.
+              DATA(t445) = CAST zcl_lnt_lexer_buffer( t436 ).
+              t444 = t445->start.
+              t443 = t444.
+              t439 = t440 - t443.
               t438 = t439.
-              t434 = t435 - t438.
-              IF t434 < range_int8_bound_min OR t434 > range_int8_bound_max.
-                RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-              ENDIF.
-              t431 = t434.
-              DATA(t441) = CONV int8( 1 ).
-              t430 = xsdbool( t431 > t441 ).
-              t425 = t430.
+              t435 = t438.
+              t434 = t435.
+              DATA(t446) = CONV int8( 1 ).
+              t433 = xsdbool( t434 > t446 ).
+              t428 = t433.
             ENDIF.
-            t424 = t425.
-            IF t425 = abap_true.
-              DATA t442 TYPE abap_bool.
-              DATA t443 TYPE abap_bool.
-              DATA(t444) = t18.
-              DATA(t445) = CONV i( zcl_lnt_lexer_module=>ch_pipe ).
-              t443 = xsdbool( t444 = t445 ).
-              t442 = t443.
-              IF t443 = abap_false.
-                DATA t446 TYPE abap_bool.
-                DATA(t447) = t18.
-                DATA(t448) = CONV i( zcl_lnt_lexer_module=>ch_lbrace ).
-                t446 = xsdbool( t447 = t448 ).
-                t442 = t446.
+            t427 = t428.
+            IF t428 = abap_true.
+              DATA t447 TYPE abap_bool.
+              DATA t448 TYPE abap_bool.
+              DATA(t449) = CONV i( t17 ).
+              DATA(t450) = CONV i( zcl_lnt_lexer_module=>ch_pipe ).
+              t448 = xsdbool( t449 = t450 ).
+              t447 = t448.
+              IF t448 = abap_false.
+                DATA t451 TYPE abap_bool.
+                DATA(t452) = CONV i( t17 ).
+                DATA(t453) = CONV i( zcl_lnt_lexer_module=>ch_lbrace ).
+                t451 = xsdbool( t452 = t453 ).
+                t447 = t451.
               ENDIF.
-              t424 = t442.
+              t427 = t447.
             ENDIF.
-            t423 = t424.
-            IF t424 = abap_true.
-              DATA(t449) = VALUE abap_bool( ).
-              DATA(t450) = VALUE abap_bool( ).
-              DATA(t451) = VALUE i( ).
-              DATA(t452) = VALUE int8( ).
-              DATA t453 TYPE REF TO zcl_lnt_lexer_stream.
-              DATA(t454) = t2.
-              t453 = t454.
-              DATA(t455) = VALUE int8( ).
-              DATA t456 TYPE i.
-              DATA t457 TYPE i.
-              DATA t458 TYPE i.
-              DATA(t459) = t453.
-              t458 = t459->offset.
-              DATA(t460) = 1.
-              t457 = t458 - t460.
-              t456 = t457.
-              DATA(t461) = VALUE int8( ).
-              DATA t462 TYPE abap_bool.
-              DATA(t463) = t456.
-              DATA(t464) = 0.
-              t462 = xsdbool( t463 < t464 ).
-              IF t462 = abap_true.
-                DATA t465 TYPE int8.
-                DATA(t466) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-                t465 = t466.
-                t461 = t465.
+            t426 = t427.
+            IF t427 = abap_true.
+              DATA(t454) = VALUE abap_bool( ).
+              DATA(t455) = VALUE abap_bool( ).
+              DATA(t456) = VALUE i( ).
+              DATA(t457) = VALUE f( ).
+              DATA t458 TYPE REF TO zcl_lnt_lexer_stream.
+              DATA(t459) = CAST zcl_lnt_lexer_stream( t2 ).
+              t458 = t459.
+              DATA(t460) = VALUE f( ).
+              DATA t461 TYPE i.
+              DATA t462 TYPE i.
+              DATA t463 TYPE i.
+              DATA(t464) = CAST zcl_lnt_lexer_stream( t458 ).
+              t463 = t464->offset.
+              DATA(t465) = CONV i( 1 ).
+              t462 = t463 - t465.
+              t461 = t462.
+              DATA(t466) = VALUE f( ).
+              DATA t467 TYPE abap_bool.
+              DATA(t468) = CONV i( t461 ).
+              DATA(t469) = CONV i( 0 ).
+              t467 = xsdbool( t468 < t469 ).
+              IF t467 = abap_true.
+                DATA t470 TYPE f.
+                DATA(t471) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+                t470 = t471.
+                t466 = t470.
               ELSE.
-                DATA(t467) = VALUE int8( ).
-                DATA(t468) = VALUE i( ).
-                DATA t469 TYPE string.
-                DATA(t470) = t453.
-                t469 = t470->raw.
-                DATA(t471) = t456.
-                DATA(t472) = strlen( t469 ).
-                IF t471 < 0 OR t471 >= t472.
+                DATA(t472) = VALUE f( ).
+                DATA(t473) = VALUE i( ).
+                DATA t474 TYPE string.
+                DATA(t475) = CAST zcl_lnt_lexer_stream( t458 ).
+                t474 = t475->raw.
+                DATA(t476) = CONV i( t461 ).
+                DATA(t477) = CONV i( strlen( t474 ) ).
+                IF t476 < 0 OR t476 >= t477.
                   RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                 ENDIF.
-                DATA(t473) = CONV string( t469+t471(1) ).
-                DATA t474 TYPE c LENGTH 1.
-                CLEAR t474.
-                DATA(t475) = VALUE xstring( ).
-                DATA t476 TYPE x LENGTH 1.
-                CLEAR t476.
-                DATA t477 TYPE x LENGTH 1.
-                CLEAR t477.
-                DATA(t478) = VALUE i( ).
-                t474 = t473.
-                t468 = cl_abap_conv_out_ce=>uccpi( t474 ).
-                IF t468 >= 255.
+                DATA(t478) = CONV string( t474+t476(1) ).
+                DATA t479 TYPE c LENGTH 1.
+                CLEAR t479.
+                DATA(t480) = VALUE xstring( ).
+                DATA t481 TYPE x LENGTH 1.
+                CLEAR t481.
+                DATA t482 TYPE x LENGTH 1.
+                CLEAR t482.
+                DATA(t483) = VALUE i( ).
+                t479 = t478.
+                t473 = cl_abap_conv_out_ce=>uccpi( t479 ).
+                IF t473 >= 255.
                   IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                     zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                   ENDIF.
-                  zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t473 IMPORTING buffer = t475 ).
-                  t476 = t475(1).
-                  t477 = t475+1(1).
-                  t468 = t476.
-                  t478 = t477.
-                  t468 = t468 + t478 * 256.
+                  zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t478 IMPORTING buffer = t480 ).
+                  t481 = t480(1).
+                  t482 = t480+1(1).
+                  t473 = t481.
+                  t483 = t482.
+                  t473 = t473 + t483 * 256.
                 ENDIF.
-                t467 = t468.
-                t461 = t467.
+                t472 = t473.
+                t466 = t472.
               ENDIF.
-              t455 = t461.
-              t452 = t455.
-              t451 = t452.
-              DATA(t479) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
-              t450 = xsdbool( t451 <> t479 ).
-              t449 = t450.
-              IF t450 = abap_false.
-                DATA(t480) = VALUE abap_bool( ).
-                DATA(t481) = VALUE abap_bool( ).
-                DATA(t482) = VALUE i( ).
-                DATA(t483) = VALUE int8( ).
-                DATA t484 TYPE REF TO zcl_lnt_lexer_stream.
-                DATA(t485) = t2.
-                t484 = t485.
-                DATA(t486) = VALUE int8( ).
-                DATA t487 TYPE i.
-                DATA t488 TYPE i.
-                DATA t489 TYPE i.
-                DATA(t490) = t484.
-                t489 = t490->offset.
-                DATA(t491) = 2.
-                t488 = t489 - t491.
-                t487 = t488.
-                DATA(t492) = VALUE int8( ).
-                DATA t493 TYPE abap_bool.
-                DATA(t494) = t487.
-                DATA(t495) = 0.
-                t493 = xsdbool( t494 < t495 ).
-                IF t493 = abap_true.
-                  DATA t496 TYPE int8.
-                  DATA(t497) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-                  t496 = t497.
-                  t492 = t496.
+              t460 = t466.
+              t457 = t460.
+              t456 = t457.
+              DATA(t484) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
+              t455 = xsdbool( t456 <> t484 ).
+              t454 = t455.
+              IF t455 = abap_false.
+                DATA(t485) = VALUE abap_bool( ).
+                DATA(t486) = VALUE abap_bool( ).
+                DATA(t487) = VALUE i( ).
+                DATA(t488) = VALUE f( ).
+                DATA t489 TYPE REF TO zcl_lnt_lexer_stream.
+                DATA(t490) = CAST zcl_lnt_lexer_stream( t2 ).
+                t489 = t490.
+                DATA(t491) = VALUE f( ).
+                DATA t492 TYPE i.
+                DATA t493 TYPE i.
+                DATA t494 TYPE i.
+                DATA(t495) = CAST zcl_lnt_lexer_stream( t489 ).
+                t494 = t495->offset.
+                DATA(t496) = CONV i( 2 ).
+                t493 = t494 - t496.
+                t492 = t493.
+                DATA(t497) = VALUE f( ).
+                DATA t498 TYPE abap_bool.
+                DATA(t499) = CONV i( t492 ).
+                DATA(t500) = CONV i( 0 ).
+                t498 = xsdbool( t499 < t500 ).
+                IF t498 = abap_true.
+                  DATA t501 TYPE f.
+                  DATA(t502) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+                  t501 = t502.
+                  t497 = t501.
                 ELSE.
-                  DATA(t498) = VALUE int8( ).
-                  DATA(t499) = VALUE i( ).
-                  DATA t500 TYPE string.
-                  DATA(t501) = t484.
-                  t500 = t501->raw.
-                  DATA(t502) = t487.
-                  DATA(t503) = strlen( t500 ).
-                  IF t502 < 0 OR t502 >= t503.
+                  DATA(t503) = VALUE f( ).
+                  DATA(t504) = VALUE i( ).
+                  DATA t505 TYPE string.
+                  DATA(t506) = CAST zcl_lnt_lexer_stream( t489 ).
+                  t505 = t506->raw.
+                  DATA(t507) = CONV i( t492 ).
+                  DATA(t508) = CONV i( strlen( t505 ) ).
+                  IF t507 < 0 OR t507 >= t508.
                     RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                   ENDIF.
-                  DATA(t504) = CONV string( t500+t502(1) ).
-                  DATA t505 TYPE c LENGTH 1.
-                  CLEAR t505.
-                  DATA(t506) = VALUE xstring( ).
-                  DATA t507 TYPE x LENGTH 1.
-                  CLEAR t507.
-                  DATA t508 TYPE x LENGTH 1.
-                  CLEAR t508.
-                  DATA(t509) = VALUE i( ).
-                  t505 = t504.
-                  t499 = cl_abap_conv_out_ce=>uccpi( t505 ).
-                  IF t499 >= 255.
+                  DATA(t509) = CONV string( t505+t507(1) ).
+                  DATA t510 TYPE c LENGTH 1.
+                  CLEAR t510.
+                  DATA(t511) = VALUE xstring( ).
+                  DATA t512 TYPE x LENGTH 1.
+                  CLEAR t512.
+                  DATA t513 TYPE x LENGTH 1.
+                  CLEAR t513.
+                  DATA(t514) = VALUE i( ).
+                  t510 = t509.
+                  t504 = cl_abap_conv_out_ce=>uccpi( t510 ).
+                  IF t504 >= 255.
                     IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                       zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                     ENDIF.
-                    zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t504 IMPORTING buffer = t506 ).
-                    t507 = t506(1).
-                    t508 = t506+1(1).
-                    t499 = t507.
-                    t509 = t508.
-                    t499 = t499 + t509 * 256.
+                    zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t509 IMPORTING buffer = t511 ).
+                    t512 = t511(1).
+                    t513 = t511+1(1).
+                    t504 = t512.
+                    t514 = t513.
+                    t504 = t504 + t514 * 256.
                   ENDIF.
-                  t498 = t499.
-                  t492 = t498.
+                  t503 = t504.
+                  t497 = t503.
                 ENDIF.
-                t486 = t492.
-                t483 = t486.
-                t482 = t483.
-                DATA(t510) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
-                t481 = xsdbool( t482 = t510 ).
-                t480 = t481.
-                IF t481 = abap_true.
-                  DATA(t511) = VALUE abap_bool( ).
-                  DATA(t512) = VALUE i( ).
-                  DATA(t513) = VALUE int8( ).
-                  DATA t514 TYPE REF TO zcl_lnt_lexer_stream.
-                  DATA(t515) = t2.
-                  t514 = t515.
-                  DATA(t516) = VALUE int8( ).
-                  DATA t517 TYPE i.
-                  DATA t518 TYPE i.
-                  DATA t519 TYPE i.
-                  DATA(t520) = t514.
-                  t519 = t520->offset.
-                  DATA(t521) = 1.
-                  t518 = t519 - t521.
-                  t517 = t518.
-                  DATA(t522) = VALUE int8( ).
-                  DATA t523 TYPE abap_bool.
-                  DATA(t524) = t517.
-                  DATA(t525) = 0.
-                  t523 = xsdbool( t524 < t525 ).
-                  IF t523 = abap_true.
-                    DATA t526 TYPE int8.
-                    DATA(t527) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-                    t526 = t527.
-                    t522 = t526.
+                t491 = t497.
+                t488 = t491.
+                t487 = t488.
+                DATA(t515) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
+                t486 = xsdbool( t487 = t515 ).
+                t485 = t486.
+                IF t486 = abap_true.
+                  DATA(t516) = VALUE abap_bool( ).
+                  DATA(t517) = VALUE i( ).
+                  DATA(t518) = VALUE f( ).
+                  DATA t519 TYPE REF TO zcl_lnt_lexer_stream.
+                  DATA(t520) = CAST zcl_lnt_lexer_stream( t2 ).
+                  t519 = t520.
+                  DATA(t521) = VALUE f( ).
+                  DATA t522 TYPE i.
+                  DATA t523 TYPE i.
+                  DATA t524 TYPE i.
+                  DATA(t525) = CAST zcl_lnt_lexer_stream( t519 ).
+                  t524 = t525->offset.
+                  DATA(t526) = CONV i( 1 ).
+                  t523 = t524 - t526.
+                  t522 = t523.
+                  DATA(t527) = VALUE f( ).
+                  DATA t528 TYPE abap_bool.
+                  DATA(t529) = CONV i( t522 ).
+                  DATA(t530) = CONV i( 0 ).
+                  t528 = xsdbool( t529 < t530 ).
+                  IF t528 = abap_true.
+                    DATA t531 TYPE f.
+                    DATA(t532) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+                    t531 = t532.
+                    t527 = t531.
                   ELSE.
-                    DATA(t528) = VALUE int8( ).
-                    DATA(t529) = VALUE i( ).
-                    DATA t530 TYPE string.
-                    DATA(t531) = t514.
-                    t530 = t531->raw.
-                    DATA(t532) = t517.
-                    DATA(t533) = strlen( t530 ).
-                    IF t532 < 0 OR t532 >= t533.
+                    DATA(t533) = VALUE f( ).
+                    DATA(t534) = VALUE i( ).
+                    DATA t535 TYPE string.
+                    DATA(t536) = CAST zcl_lnt_lexer_stream( t519 ).
+                    t535 = t536->raw.
+                    DATA(t537) = CONV i( t522 ).
+                    DATA(t538) = CONV i( strlen( t535 ) ).
+                    IF t537 < 0 OR t537 >= t538.
                       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                     ENDIF.
-                    DATA(t534) = CONV string( t530+t532(1) ).
-                    DATA t535 TYPE c LENGTH 1.
-                    CLEAR t535.
-                    DATA(t536) = VALUE xstring( ).
-                    DATA t537 TYPE x LENGTH 1.
-                    CLEAR t537.
-                    DATA t538 TYPE x LENGTH 1.
-                    CLEAR t538.
-                    DATA(t539) = VALUE i( ).
-                    t535 = t534.
-                    t529 = cl_abap_conv_out_ce=>uccpi( t535 ).
-                    IF t529 >= 255.
+                    DATA(t539) = CONV string( t535+t537(1) ).
+                    DATA t540 TYPE c LENGTH 1.
+                    CLEAR t540.
+                    DATA(t541) = VALUE xstring( ).
+                    DATA t542 TYPE x LENGTH 1.
+                    CLEAR t542.
+                    DATA t543 TYPE x LENGTH 1.
+                    CLEAR t543.
+                    DATA(t544) = VALUE i( ).
+                    t540 = t539.
+                    t534 = cl_abap_conv_out_ce=>uccpi( t540 ).
+                    IF t534 >= 255.
                       IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
                         zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
                       ENDIF.
-                      zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t534 IMPORTING buffer = t536 ).
-                      t537 = t536(1).
-                      t538 = t536+1(1).
-                      t529 = t537.
-                      t539 = t538.
-                      t529 = t529 + t539 * 256.
+                      zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t539 IMPORTING buffer = t541 ).
+                      t542 = t541(1).
+                      t543 = t541+1(1).
+                      t534 = t542.
+                      t544 = t543.
+                      t534 = t534 + t544 * 256.
                     ENDIF.
-                    t528 = t529.
-                    t522 = t528.
+                    t533 = t534.
+                    t527 = t533.
                   ENDIF.
-                  t516 = t522.
-                  t513 = t516.
-                  t512 = t513.
-                  DATA(t540) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
-                  t511 = xsdbool( t512 = t540 ).
-                  t480 = t511.
+                  t521 = t527.
+                  t518 = t521.
+                  t517 = t518.
+                  DATA(t545) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
+                  t516 = xsdbool( t517 = t545 ).
+                  t485 = t516.
                 ENDIF.
-                t449 = t480.
+                t454 = t485.
               ENDIF.
-              t423 = t449.
+              t426 = t454.
             ENDIF.
-            IF t423 = abap_true.
-              DATA t541 TYPE abap_bool.
-              DATA t542 TYPE abap_bool.
-              DATA(t543) = t18.
-              DATA(t544) = CONV i( zcl_lnt_lexer_module=>ch_lbrace ).
-              t542 = xsdbool( t543 = t544 ).
-              t541 = t542.
-              IF t542 = abap_false.
-                DATA(t545) = VALUE abap_bool( ).
-                DATA t546 TYPE int8.
-                DATA t547 TYPE int8.
-                DATA(t548) = t84.
-                t547 = t548.
-                t546 = t547.
-                t545 = xsdbool( t546 = -1
-                OR t546 = 32
-                OR t546 = 9
-                OR t546 = 10
-                OR t546 = 46
-                OR t546 = 44
-                OR t546 = 58
-                OR t546 = 34
-                OR t546 = 40
-                OR t546 = 41
-                OR t546 = 91
-                OR t546 = 93
-                ).
-                t541 = t545.
+            IF t426 = abap_true.
+              DATA t546 TYPE abap_bool.
+              DATA t547 TYPE abap_bool.
+              DATA(t548) = CONV i( t17 ).
+              DATA(t549) = CONV i( zcl_lnt_lexer_module=>ch_lbrace ).
+              t547 = xsdbool( t548 = t549 ).
+              t546 = t547.
+              IF t547 = abap_false.
+                DATA(t550) = VALUE abap_bool( ).
+                DATA t551 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+                CLEAR t551.
+                IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
+                  zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
+                ENDIF.
+                t551 = zcl_lnt_lexer_module=>after_literal.
+                DATA t552 TYPE f.
+                DATA(t553) = CONV i( t83 ).
+                t552 = t553.
+                t550 = t551->has( p0 = t552 ).
+                t546 = t550.
               ENDIF.
-              IF t541 = abap_true.
-                me->add_51c1( ).
+              IF t546 = abap_true.
+                me->add_51c1(  ).
               ENDIF.
-              DATA t549 TYPE int8.
-              DATA(t550) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-              t549 = t550.
-              me->m = t549.
+              DATA t554 TYPE f.
+              DATA(t555) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+              t554 = t555.
+              me->m = t554.
+              DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
             ELSE.
-              DATA(t551) = VALUE abap_bool( ).
-              DATA t552 TYPE abap_bool.
-              DATA t553 TYPE abap_bool.
-              DATA(t554) = CONV int8( me->m ).
-              DATA t555 TYPE int8.
-              DATA(t556) = CONV i( zcl_lnt_lexer_module=>mode_template ).
-              t555 = t556.
-              t553 = xsdbool( t554 = t555 ).
-              t552 = t553.
-              IF t553 = abap_true.
-                DATA t557 TYPE abap_bool.
-                DATA(t558) = t84.
-                DATA(t559) = CONV i( zcl_lnt_lexer_module=>ch_rbrace ).
-                t557 = xsdbool( t558 = t559 ).
-                t552 = t557.
+              DATA(t556) = VALUE abap_bool( ).
+              DATA t557 TYPE abap_bool.
+              DATA t558 TYPE abap_bool.
+              DATA(t559) = CONV f( me->m ).
+              DATA t560 TYPE f.
+              DATA(t561) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+              t560 = t561.
+              t558 = xsdbool( t559 = t560 ).
+              t557 = t558.
+              IF t558 = abap_true.
+                DATA t562 TYPE abap_bool.
+                DATA(t563) = CONV i( t83 ).
+                DATA(t564) = CONV i( zcl_lnt_lexer_module=>ch_rbrace ).
+                t562 = xsdbool( t563 = t564 ).
+                t557 = t562.
               ENDIF.
-              t551 = t552.
-              IF t552 = abap_true.
-                DATA t560 TYPE abap_bool.
-                DATA(t561) = t18.
-                DATA(t562) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
-                t560 = xsdbool( t561 <> t562 ).
-                t551 = t560.
+              t556 = t557.
+              IF t557 = abap_true.
+                DATA t565 TYPE abap_bool.
+                DATA(t566) = CONV i( t17 ).
+                DATA(t567) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
+                t565 = xsdbool( t566 <> t567 ).
+                t556 = t565.
               ENDIF.
-              IF t551 = abap_true.
-                me->add_51c1( ).
+              IF t556 = abap_true.
+                me->add_51c1(  ).
               ELSE.
-                DATA(t563) = VALUE abap_bool( ).
-                DATA(t564) = VALUE abap_bool( ).
-                DATA(t565) = VALUE abap_bool( ).
-                DATA(t566) = VALUE abap_bool( ).
-                DATA t567 TYPE abap_bool.
-                DATA t568 TYPE abap_bool.
-                DATA(t569) = CONV int8( me->m ).
-                DATA t570 TYPE int8.
-                DATA(t571) = CONV i( zcl_lnt_lexer_module=>mode_str ).
-                t570 = t571.
-                t568 = xsdbool( t569 = t570 ).
-                t567 = t568.
-                IF t568 = abap_true.
-                  DATA t572 TYPE abap_bool.
-                  DATA(t573) = t18.
-                  DATA(t574) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-                  t572 = xsdbool( t573 = t574 ).
-                  t567 = t572.
+                DATA(t568) = VALUE abap_bool( ).
+                DATA(t569) = VALUE abap_bool( ).
+                DATA(t570) = VALUE abap_bool( ).
+                DATA(t571) = VALUE abap_bool( ).
+                DATA t572 TYPE abap_bool.
+                DATA t573 TYPE abap_bool.
+                DATA(t574) = CONV f( me->m ).
+                DATA t575 TYPE f.
+                DATA(t576) = CONV i( zcl_lnt_lexer_module=>mode_str ).
+                t575 = t576.
+                t573 = xsdbool( t574 = t575 ).
+                t572 = t573.
+                IF t573 = abap_true.
+                  DATA t577 TYPE abap_bool.
+                  DATA(t578) = CONV i( t17 ).
+                  DATA(t579) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+                  t577 = xsdbool( t578 = t579 ).
+                  t572 = t577.
                 ENDIF.
-                t566 = t567.
-                IF t567 = abap_true.
-                  DATA(t575) = VALUE abap_bool( ).
-                  DATA(t576) = VALUE int8( ).
-                  DATA t577 TYPE REF TO zcl_lnt_lexer_buffer.
-                  DATA(t578) = me->buffer.
-                  t577 = t578.
-                  DATA t579 TYPE int8.
-                  DATA t580 TYPE int8.
-                  DATA t581 TYPE i.
-                  DATA(t582) = t577.
-                  t581 = t582->end.
-                  t580 = t581.
-                  DATA t583 TYPE int8.
-                  DATA t584 TYPE i.
-                  DATA(t585) = t577.
-                  t584 = t585->start.
+                t571 = t572.
+                IF t572 = abap_true.
+                  DATA t580 TYPE abap_bool.
+                  DATA t581 TYPE int8.
+                  DATA t582 TYPE f.
+                  DATA t583 TYPE REF TO zcl_lnt_lexer_buffer.
+                  DATA(t584) = CAST zcl_lnt_lexer_buffer( me->buffer ).
                   t583 = t584.
-                  t579 = t580 - t583.
-                  IF t579 < range_int8_bound_min OR t579 > range_int8_bound_max.
-                    RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-                  ENDIF.
-                  t576 = t579.
-                  DATA(t586) = CONV int8( 1 ).
-                  t575 = xsdbool( t576 > t586 ).
-                  t566 = t575.
+                  DATA t585 TYPE f.
+                  DATA t586 TYPE int8.
+                  DATA t587 TYPE int8.
+                  DATA t588 TYPE i.
+                  DATA(t589) = CAST zcl_lnt_lexer_buffer( t583 ).
+                  t588 = t589->end.
+                  t587 = t588.
+                  DATA t590 TYPE int8.
+                  DATA t591 TYPE i.
+                  DATA(t592) = CAST zcl_lnt_lexer_buffer( t583 ).
+                  t591 = t592->start.
+                  t590 = t591.
+                  t586 = t587 - t590.
+                  t585 = t586.
+                  t582 = t585.
+                  t581 = t582.
+                  DATA(t593) = CONV int8( 1 ).
+                  t580 = xsdbool( t581 > t593 ).
+                  t571 = t580.
                 ENDIF.
-                t565 = t566.
-                IF t566 = abap_true.
-                  DATA(t587) = VALUE abap_bool( ).
-                  DATA t588 TYPE abap_bool.
-                  DATA t589 TYPE abap_bool.
-                  DATA(t590) = t84.
-                  DATA(t591) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-                  t589 = xsdbool( t590 = t591 ).
-                  t588 = t589.
-                  IF t589 = abap_true.
-                    DATA t592 TYPE abap_bool.
-                    DATA(t593) = t119.
-                    DATA(t594) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-                    t592 = xsdbool( t593 = t594 ).
-                    t588 = t592.
-                  ENDIF.
-                  t587 = xsdbool( t588 = abap_false ).
-                  t565 = t587.
-                ENDIF.
-                t564 = t565.
-                IF t565 = abap_true.
+                t570 = t571.
+                IF t571 = abap_true.
+                  DATA(t594) = VALUE abap_bool( ).
                   DATA t595 TYPE abap_bool.
-                  DATA(t596) = t84.
-                  DATA(t597) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-                  t595 = xsdbool( t596 <> t597 ).
-                  t564 = t595.
-                ENDIF.
-                t563 = t564.
-                IF t564 = abap_true.
-                  DATA t598 TYPE abap_bool.
-                  DATA(t599) = me->buffer.
-                  DATA t600 TYPE int8.
-                  DATA(t601) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
-                  t600 = t601.
-                  t598 = t599->count_is_even( i_char = t600 ).
-                  t563 = t598.
-                ENDIF.
-                IF t563 = abap_true.
-                  DATA(t602) = VALUE abap_bool( ).
-                  DATA t603 TYPE int8.
-                  DATA t604 TYPE int8.
-                  DATA(t605) = t84.
-                  t604 = t605.
-                  t603 = t604.
-                  t602 = xsdbool( t603 = -1
-                  OR t603 = 32
-                  OR t603 = 9
-                  OR t603 = 10
-                  OR t603 = 46
-                  OR t603 = 44
-                  OR t603 = 58
-                  OR t603 = 34
-                  OR t603 = 40
-                  OR t603 = 41
-                  OR t603 = 91
-                  OR t603 = 93
-                  ).
-                  IF t602 = abap_true.
-                    me->add_51c1( ).
+                  DATA t596 TYPE abap_bool.
+                  DATA(t597) = CONV i( t83 ).
+                  DATA(t598) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+                  t596 = xsdbool( t597 = t598 ).
+                  t595 = t596.
+                  IF t596 = abap_true.
+                    DATA t599 TYPE abap_bool.
+                    DATA(t600) = CONV i( t118 ).
+                    DATA(t601) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+                    t599 = xsdbool( t600 = t601 ).
+                    t595 = t599.
                   ENDIF.
-                  DATA t606 TYPE abap_bool.
-                  DATA(t607) = t84.
-                  DATA(t608) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
-                  t606 = xsdbool( t607 = t608 ).
-                  IF t606 = abap_true.
-                    DATA t609 TYPE int8.
-                    DATA(t610) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
-                    t609 = t610.
-                    me->m = t609.
+                  t594 = xsdbool( t595 = abap_false ).
+                  t570 = t594.
+                ENDIF.
+                t569 = t570.
+                IF t570 = abap_true.
+                  DATA t602 TYPE abap_bool.
+                  DATA(t603) = CONV i( t83 ).
+                  DATA(t604) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+                  t602 = xsdbool( t603 <> t604 ).
+                  t569 = t602.
+                ENDIF.
+                t568 = t569.
+                IF t569 = abap_true.
+                  DATA t605 TYPE abap_bool.
+                  DATA(t606) = CAST zcl_lnt_lexer_buffer( me->buffer ).
+                  DATA t607 TYPE f.
+                  DATA(t608) = CONV i( zcl_lnt_lexer_module=>ch_quote ).
+                  t607 = t608.
+                  t605 = t606->count_is_even( i_char = t607 ).
+                  t568 = t605.
+                ENDIF.
+                IF t568 = abap_true.
+                  DATA(t609) = VALUE abap_bool( ).
+                  DATA t610 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+                  CLEAR t610.
+                  IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
+                    zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
+                  ENDIF.
+                  t610 = zcl_lnt_lexer_module=>after_literal.
+                  DATA t611 TYPE f.
+                  DATA(t612) = CONV i( t83 ).
+                  t611 = t612.
+                  t609 = t610->has( p0 = t611 ).
+                  IF t609 = abap_true.
+                    me->add_51c1(  ).
+                  ENDIF.
+                  DATA t613 TYPE abap_bool.
+                  DATA(t614) = CONV i( t83 ).
+                  DATA(t615) = CONV i( zcl_lnt_lexer_module=>ch_dquote ).
+                  t613 = xsdbool( t614 = t615 ).
+                  IF t613 = abap_true.
+                    DATA t616 TYPE f.
+                    DATA(t617) = CONV i( zcl_lnt_lexer_module=>mode_comment ).
+                    t616 = t617.
+                    me->m = t616.
+                    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
                   ELSE.
-                    DATA t611 TYPE int8.
-                    DATA(t612) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-                    t611 = t612.
-                    me->m = t611.
+                    DATA t618 TYPE f.
+                    DATA(t619) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+                    t618 = t619.
+                    me->m = t618.
+                    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
                   ENDIF.
                 ELSE.
-                  DATA t613 TYPE abap_bool.
-                  DATA t614 TYPE abap_bool.
-                  DATA(t615) = t84.
-                  DATA(t616) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
-                  t614 = xsdbool( t615 = t616 ).
-                  t613 = t614.
-                  IF t614 = abap_true.
-                    DATA t617 TYPE abap_bool.
-                    DATA(t618) = CONV int8( me->m ).
-                    DATA t619 TYPE int8.
-                    DATA(t620) = CONV i( zcl_lnt_lexer_module=>mode_template ).
-                    t619 = t620.
-                    t617 = xsdbool( t618 <> t619 ).
-                    t613 = t617.
-                  ENDIF.
-                  IF t613 = abap_true.
-                    me->add_51c1( ).
-                    DATA t621 TYPE int8.
-                    DATA(t622) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
-                    t621 = t622.
-                    me->m = t621.
-                  ELSE.
-                    DATA t623 TYPE abap_bool.
+                  DATA t620 TYPE abap_bool.
+                  DATA t621 TYPE abap_bool.
+                  DATA(t622) = CONV i( t83 ).
+                  DATA(t623) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
+                  t621 = xsdbool( t622 = t623 ).
+                  t620 = t621.
+                  IF t621 = abap_true.
                     DATA t624 TYPE abap_bool.
-                    DATA(t625) = CONV int8( me->m ).
-                    DATA t626 TYPE int8.
+                    DATA(t625) = CONV f( me->m ).
+                    DATA t626 TYPE f.
                     DATA(t627) = CONV i( zcl_lnt_lexer_module=>mode_template ).
                     t626 = t627.
-                    t624 = xsdbool( t625 = t626 ).
-                    t623 = t624.
-                    IF t624 = abap_true.
-                      DATA t628 TYPE abap_bool.
-                      DATA(t629) = t18.
-                      DATA(t630) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
-                      t628 = xsdbool( t629 = t630 ).
-                      t623 = t628.
+                    t624 = xsdbool( t625 <> t626 ).
+                    t620 = t624.
+                  ENDIF.
+                  IF t620 = abap_true.
+                    me->add_51c1(  ).
+                    DATA t628 TYPE f.
+                    DATA(t629) = CONV i( zcl_lnt_lexer_module=>mode_normal ).
+                    t628 = t629.
+                    me->m = t628.
+                    DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `m`.
+                  ELSE.
+                    DATA t630 TYPE abap_bool.
+                    DATA t631 TYPE abap_bool.
+                    DATA(t632) = CONV f( me->m ).
+                    DATA t633 TYPE f.
+                    DATA(t634) = CONV i( zcl_lnt_lexer_module=>mode_template ).
+                    t633 = t634.
+                    t631 = xsdbool( t632 = t633 ).
+                    t630 = t631.
+                    IF t631 = abap_true.
+                      DATA t635 TYPE abap_bool.
+                      DATA(t636) = CONV i( t17 ).
+                      DATA(t637) = CONV i( zcl_lnt_lexer_module=>ch_nl ).
+                      t635 = xsdbool( t636 = t637 ).
+                      t630 = t635.
                     ENDIF.
-                    IF t623 = abap_true.
-                      me->add_51c1( ).
+                    IF t630 = abap_true.
+                      me->add_51c1(  ).
                     ENDIF.
                   ENDIF.
                 ENDIF.
@@ -3159,170 +3163,173 @@ CLASS zcl_lnt_lexer IMPLEMENTATION.
           ENDIF.
         ENDIF.
       ENDIF.
-      DATA(t631) = VALUE abap_bool( ).
-      DATA(t632) = VALUE abap_bool( ).
-      DATA t633 TYPE REF TO zcl_lnt_lexer_stream.
-      DATA(t634) = t2.
-      t633 = t634.
-      DATA(t635) = VALUE abap_bool( ).
-      DATA(t636) = VALUE abap_bool( ).
-      DATA(t637) = VALUE i( ).
-      DATA(t638) = VALUE int8( ).
-      DATA t639 TYPE abap_bool.
-      DATA t640 TYPE i.
-      DATA(t641) = t633.
-      t640 = t641->offset.
-      DATA(t642) = 0.
-      t639 = xsdbool( t640 < t642 ).
-      IF t639 = abap_true.
-        DATA t643 TYPE int8.
-        DATA(t644) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
-        t643 = t644.
-        t638 = t643.
+      DATA(t638) = VALUE abap_bool( ).
+      DATA(t639) = VALUE abap_bool( ).
+      DATA t640 TYPE REF TO zcl_lnt_lexer_stream.
+      DATA(t641) = CAST zcl_lnt_lexer_stream( t2 ).
+      t640 = t641.
+      DATA(t642) = VALUE abap_bool( ).
+      DATA(t643) = VALUE abap_bool( ).
+      DATA(t644) = VALUE i( ).
+      DATA(t645) = VALUE f( ).
+      DATA t646 TYPE abap_bool.
+      DATA t647 TYPE i.
+      DATA(t648) = CAST zcl_lnt_lexer_stream( t640 ).
+      t647 = t648->offset.
+      DATA(t649) = CONV i( 0 ).
+      t646 = xsdbool( t647 < t649 ).
+      IF t646 = abap_true.
+        DATA t650 TYPE f.
+        DATA(t651) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
+        t650 = t651.
+        t645 = t650.
       ELSE.
-        DATA(t645) = VALUE int8( ).
-        DATA t646 TYPE abap_bool.
-        DATA t647 TYPE i.
-        DATA(t648) = t633.
-        t647 = t648->offset.
-        DATA t649 TYPE i.
-        DATA t650 TYPE string.
-        DATA(t651) = t633.
-        t650 = t651->raw.
-        DATA(t652) = strlen( t650 ).
-        t649 = t652.
-        t646 = xsdbool( t647 >= t649 ).
-        IF t646 = abap_true.
-          DATA t653 TYPE int8.
-          DATA(t654) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-          t653 = t654.
-          t645 = t653.
+        DATA(t652) = VALUE f( ).
+        DATA t653 TYPE abap_bool.
+        DATA t654 TYPE i.
+        DATA(t655) = CAST zcl_lnt_lexer_stream( t640 ).
+        t654 = t655->offset.
+        DATA t656 TYPE i.
+        DATA t657 TYPE string.
+        DATA(t658) = CAST zcl_lnt_lexer_stream( t640 ).
+        t657 = t658->raw.
+        DATA(t659) = CONV i( strlen( t657 ) ).
+        t656 = t659.
+        t653 = xsdbool( t654 >= t656 ).
+        IF t653 = abap_true.
+          DATA t660 TYPE f.
+          DATA(t661) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+          t660 = t661.
+          t652 = t660.
         ELSE.
-          DATA(t655) = VALUE int8( ).
-          DATA(t656) = VALUE i( ).
-          DATA t657 TYPE string.
-          DATA(t658) = t633.
-          t657 = t658->raw.
-          DATA t659 TYPE i.
-          DATA(t660) = t633.
-          t659 = t660->offset.
-          DATA(t661) = strlen( t657 ).
-          IF t659 < 0 OR t659 >= t661.
+          DATA(t662) = VALUE f( ).
+          DATA(t663) = VALUE i( ).
+          DATA t664 TYPE string.
+          DATA(t665) = CAST zcl_lnt_lexer_stream( t640 ).
+          t664 = t665->raw.
+          DATA t666 TYPE i.
+          DATA(t667) = CAST zcl_lnt_lexer_stream( t640 ).
+          t666 = t667->offset.
+          DATA(t668) = CONV i( strlen( t664 ) ).
+          IF t666 < 0 OR t666 >= t668.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
-          DATA(t662) = CONV string( t657+t659(1) ).
-          DATA t663 TYPE c LENGTH 1.
-          CLEAR t663.
-          DATA(t664) = VALUE xstring( ).
-          DATA t665 TYPE x LENGTH 1.
-          CLEAR t665.
-          DATA t666 TYPE x LENGTH 1.
-          CLEAR t666.
-          DATA(t667) = VALUE i( ).
-          t663 = t662.
-          t656 = cl_abap_conv_out_ce=>uccpi( t663 ).
-          IF t656 >= 255.
+          DATA(t669) = CONV string( t664+t666(1) ).
+          DATA t670 TYPE c LENGTH 1.
+          CLEAR t670.
+          DATA(t671) = VALUE xstring( ).
+          DATA t672 TYPE x LENGTH 1.
+          CLEAR t672.
+          DATA t673 TYPE x LENGTH 1.
+          CLEAR t673.
+          DATA(t674) = VALUE i( ).
+          t670 = t669.
+          t663 = cl_abap_conv_out_ce=>uccpi( t670 ).
+          IF t663 >= 255.
             IF zlnt_builtin_code_3bfe63ca77b3 IS NOT BOUND.
               zlnt_builtin_code_3bfe63ca77b3 = cl_abap_conv_out_ce=>create( encoding = '4103' ).
             ENDIF.
-            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t662 IMPORTING buffer = t664 ).
-            t665 = t664(1).
-            t666 = t664+1(1).
-            t656 = t665.
-            t667 = t666.
-            t656 = t656 + t667 * 256.
+            zlnt_builtin_code_3bfe63ca77b3->convert( EXPORTING data = t669 IMPORTING buffer = t671 ).
+            t672 = t671(1).
+            t673 = t671+1(1).
+            t663 = t672.
+            t674 = t673.
+            t663 = t663 + t674 * 256.
           ENDIF.
-          t655 = t656.
-          t645 = t655.
+          t662 = t663.
+          t652 = t662.
         ENDIF.
-        t638 = t645.
+        t645 = t652.
       ENDIF.
-      t637 = t638.
-      DATA(t668) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
-      t636 = xsdbool( t637 = t668 ).
-      IF t636 = abap_true.
-        DATA(t669) = t633.
-        DATA(t670) = CONV int8( 1 ).
-        t669->col = t670.
-        DATA(t671) = t633.
-        DATA t672 TYPE int8.
-        DATA t673 TYPE int8.
-        DATA(t674) = t633.
-        t673 = t674->row.
-        DATA(t675) = CONV int8( 1 ).
-        t672 = t673 + t675.
-        IF t672 < range_int8_bound_min OR t672 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-        ENDIF.
-        t671->row = t672.
+      t644 = t645.
+      DATA(t675) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
+      t643 = xsdbool( t644 = t675 ).
+      IF t643 = abap_true.
+        DATA(t676) = CAST zcl_lnt_lexer_stream( t640 ).
+        DATA(t677) = CONV f( 1 ).
+        t676->col = t677.
+        DELETE t676->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
+        DATA(t678) = CAST zcl_lnt_lexer_stream( t640 ).
+        DATA t679 TYPE f.
+        DATA t680 TYPE f.
+        DATA(t681) = CAST zcl_lnt_lexer_stream( t640 ).
+        t680 = t681->row.
+        DATA(t682) = CONV f( 1 ).
+        t679 = t680 + t682.
+        t678->row = t679.
+        DELETE t678->zlnt_record_delet_0597644d88b4 WHERE table_line = `row`.
       ENDIF.
-      DATA(t676) = VALUE abap_bool( ).
-      DATA t677 TYPE abap_bool.
-      DATA t678 TYPE i.
-      DATA(t679) = t633.
-      t678 = t679->offset.
-      DATA t680 TYPE i.
-      DATA t681 TYPE string.
-      DATA(t682) = t633.
-      t681 = t682->raw.
-      DATA(t683) = strlen( t681 ).
-      t680 = t683.
-      t677 = xsdbool( t678 = t680 ).
-      IF t677 = abap_true.
-        DATA(t684) = VALUE abap_bool( ).
-        DATA(t685) = t633.
-        DATA t686 TYPE int8.
-        DATA t687 TYPE int8.
-        DATA(t688) = t633.
-        t687 = t688->col.
-        DATA(t689) = CONV int8( 1 ).
-        t686 = t687 - t689.
-        IF t686 < range_int8_bound_min OR t686 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-        ENDIF.
-        t685->col = t686.
-        DATA(t690) = abap_false.
-        t684 = t690.
-        t676 = t684.
-      ELSE.
-        DATA(t691) = VALUE abap_bool( ).
-        DATA(t692) = t633.
-        DATA t693 TYPE int8.
-        DATA t694 TYPE int8.
-        DATA(t695) = t633.
+      DATA(t683) = VALUE abap_bool( ).
+      DATA t684 TYPE abap_bool.
+      DATA t685 TYPE i.
+      DATA(t686) = CAST zcl_lnt_lexer_stream( t640 ).
+      t685 = t686->offset.
+      DATA t687 TYPE i.
+      DATA t688 TYPE string.
+      DATA(t689) = CAST zcl_lnt_lexer_stream( t640 ).
+      t688 = t689->raw.
+      DATA(t690) = CONV i( strlen( t688 ) ).
+      t687 = t690.
+      t684 = xsdbool( t685 = t687 ).
+      IF t684 = abap_true.
+        DATA t691 TYPE abap_bool.
+        DATA(t692) = CAST zcl_lnt_lexer_stream( t640 ).
+        DATA t693 TYPE f.
+        DATA t694 TYPE f.
+        DATA(t695) = CAST zcl_lnt_lexer_stream( t640 ).
         t694 = t695->col.
-        DATA(t696) = CONV int8( 1 ).
-        t693 = t694 + t696.
-        IF t693 < range_int8_bound_min OR t693 > range_int8_bound_max.
-          RAISE EXCEPTION TYPE cx_sy_arithmetic_overflow.
-        ENDIF.
+        DATA(t696) = CONV f( 1 ).
+        t693 = t694 - t696.
         t692->col = t693.
-        DATA(t697) = t633.
-        DATA t698 TYPE i.
-        DATA t699 TYPE i.
-        DATA(t700) = t633.
-        t699 = t700->offset.
-        DATA(t701) = 1.
-        t698 = t699 + t701.
-        t697->offset = t698.
-        DATA(t702) = abap_true.
-        t691 = t702.
-        t676 = t691.
+        DELETE t692->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
+        DATA(t697) = CONV abap_bool( abap_false ).
+        t691 = t697.
+        t683 = t691.
+      ELSE.
+        DATA t698 TYPE abap_bool.
+        DATA(t699) = CAST zcl_lnt_lexer_stream( t640 ).
+        DATA t700 TYPE f.
+        DATA t701 TYPE f.
+        DATA(t702) = CAST zcl_lnt_lexer_stream( t640 ).
+        t701 = t702->col.
+        DATA(t703) = CONV f( 1 ).
+        t700 = t701 + t703.
+        t699->col = t700.
+        DELETE t699->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
+        DATA(t704) = CAST zcl_lnt_lexer_stream( t640 ).
+        DATA t705 TYPE i.
+        DATA t706 TYPE i.
+        DATA(t707) = CAST zcl_lnt_lexer_stream( t640 ).
+        t706 = t707->offset.
+        DATA(t708) = CONV i( 1 ).
+        t705 = t706 + t708.
+        t704->offset = t705.
+        DELETE t704->zlnt_record_delet_0597644d88b4 WHERE table_line = `offset`.
+        DATA(t709) = CONV abap_bool( abap_true ).
+        t698 = t709.
+        t683 = t698.
       ENDIF.
-      t635 = t676.
-      t632 = t635.
-      t631 = xsdbool( t632 = abap_false ).
-      IF t631 = abap_true.
+      t642 = t683.
+      t639 = t642.
+      t638 = xsdbool( t639 = abap_false ).
+      IF t638 = abap_true.
         EXIT.
       ENDIF.
     ENDDO.
-    me->add_51c1( ).
+    me->add_51c1(  ).
   ENDMETHOD.
-
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
-
+  METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_nati_72359f490bf2( ).
+  ENDMETHOD.
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d9_e4f0b8f112f46b.
   ENDMETHOD.

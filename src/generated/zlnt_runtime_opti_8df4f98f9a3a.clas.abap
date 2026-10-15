@@ -1,0 +1,10 @@
+CLASS zlnt_runtime_opti_8df4f98f9a3a DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    DATA value TYPE f.
+    DATA has TYPE abap_bool.
+    DATA number_special TYPE i.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zlnt_runtime_opti_8df4f98f9a3a IMPLEMENTATION.
+ENDCLASS.
