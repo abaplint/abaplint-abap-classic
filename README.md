@@ -1,35 +1,9 @@
-# morph2: abaplint to ABAP
+# abaplint as Classic ABAP on stack
 
-This folder generates ABAP for abaplint using the latest stable [ABAPiti release](https://github.com/oisee/abapiti/releases/latest) with readable names.
+BETA RELEASE
 
-## Run
+abaplint for classic ABAP code inspector/ATC
 
-Prerequisite: Node.js 22 or newer and npm.
+Install via [abapGit](https://github.com/abapgit/abapgit), its a lot of code so it will take some time to pull, and enable the checks via `SCI` transaction.
 
-From this folder, run:
-
-```sh
-npm run abapiti
-```
-
-`npm run abapiti` checks GitHub for the latest stable release, downloads the matching platform binary, and runs `abapiti abaplint -o ...` with `ABAPITI_NAMES=readable`. It verifies the asset SHA-256 digest when GitHub provides one, and caches the binary under `.cache/abapiti-release/<tag>/`. Generated classes and packages go under `output/`; the manifest records the release tag, binary digest, and naming mode. The script then replaces everything in `src/generated` except `package.devc.xml` with the contents of `output/classes`.
-
-Before `abaplint --fix`, `scripts/abapgit-xml.mjs` writes an abapGit `.clas.xml` or `.intf.xml` next to each object in `src/generated`, so abaplint checks and fixes the objects with their metadata. Descriptions come from the `* TS:` header of each object, and classes that inherit from a `CX_` class get exception category 40.
-
-`scripts/checks.mjs` then replaces everything in `src/checks` except `package.devc.xml` with one Code Inspector check per rule tagged `SingleFile`. Each check inherits from `CL_CI_TEST_ROOT`, is named after its rule class with the prefix `ZCL_LNC_` instead of `ZCL_LNT_`, and for now only has a constructor that sets `MYNAME` and the rule title as `DESCRIPTION`.
-
-The release bundle is self-contained; the generated output does not use the local `packages/core/src` tree. Each run checks the latest release tag before reusing its cached binary, so a newly published release is picked up automatically.
-
-## Scope and limits
-
-The release scope covers the abaplint code paths exercised by checking zabapgit with abapGit's CI configuration (v702 and six rules). Other paths may be refused with the TypeScript location of unsupported code. Treat this output as an experiment within that scope.
-
-## Transpile to JavaScript
-
-The ABAP in `src` can be transpiled to JavaScript with [@abaplint/transpiler](https://github.com/abaplint/transpiler), using `open-abap-core` and `open-abap-ci` as libraries, see `abap_transpile.json`.
-
-```sh
-npm run transpile
-```
-
-Output is written to `transpiled/`. `npm run unit` transpiles and runs the ABAP unit tests.
+Currently only default configurations are supported, things will change so only use it for experimental purposes.
