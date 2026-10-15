@@ -37,6 +37,11 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
       CHANGING
         ct_scimessages TYPE scimessages.
 
+    "! Opens the documentation of an abaplint rule on rules.abaplint.org
+    CLASS-METHODS display_documentation
+      IMPORTING
+        iv_rule TYPE csequence.
+
     CLASS-METHODS set_source_reader
       IMPORTING
         ii_reader TYPE REF TO zif_lnt_source_reader.
@@ -123,6 +128,27 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
       code = c_code-dump
       kind = cl_ci_test_root=>c_error
       text = 'abaplint failed: &1' ) INTO TABLE ct_scimessages.
+  ENDMETHOD.
+
+  METHOD display_documentation.
+    DATA lv_url TYPE string.
+
+    lv_url = |https://rules.abaplint.org/{ iv_rule }/|.
+
+    cl_gui_frontend_services=>execute(
+      EXPORTING
+        document               = lv_url
+      EXCEPTIONS
+        cntl_error             = 1
+        error_no_gui           = 2
+        bad_parameter          = 3
+        file_not_found         = 4
+        path_not_found         = 5
+        file_extension_unknown = 6
+        error_execute_failed   = 7
+        synchronous_failed     = 8
+        not_supported_by_gui   = 9
+        OTHERS                 = 10 ) ##SUBRC_OK.
   ENDMETHOD.
 
   METHOD run_rule.

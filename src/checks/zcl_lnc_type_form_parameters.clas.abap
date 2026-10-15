@@ -4,6 +4,7 @@ CLASS zcl_lnc_type_form_parameters DEFINITION PUBLIC INHERITING FROM cl_ci_test_
     CONSTANTS c_rule TYPE string VALUE `type_form_parameters`.
     METHODS constructor.
     METHODS run REDEFINITION.
+    METHODS if_ci_test~display_documentation REDEFINITION.
 ENDCLASS.
 
 CLASS zcl_lnc_type_form_parameters IMPLEMENTATION.
@@ -12,6 +13,7 @@ CLASS zcl_lnc_type_form_parameters IMPLEMENTATION.
     myname = 'ZCL_LNC_TYPE_FORM_PARAMETERS'.
     description = `abaplint - Type FORM parameters`.
     category = 'ZCL_LNT_CATEGORY'.
+    has_documentation = abap_true.
     LOOP AT zcl_lnt_utils=>object_types( ) INTO DATA(lv_type).
       add_obj_type( lv_type ).
     ENDLOOP.
@@ -36,5 +38,9 @@ CLASS zcl_lnc_type_form_parameters IMPLEMENTATION.
               p_code         = ls_finding-code
               p_param_1      = ls_finding-text ).
     ENDLOOP.
+  ENDMETHOD.
+
+  METHOD if_ci_test~display_documentation.
+    zcl_lnt_utils=>display_documentation( c_rule ).
   ENDMETHOD.
 ENDCLASS.

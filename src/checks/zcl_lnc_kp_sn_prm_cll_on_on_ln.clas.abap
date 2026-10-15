@@ -4,6 +4,7 @@ CLASS zcl_lnc_kp_sn_prm_cll_on_on_ln DEFINITION PUBLIC INHERITING FROM cl_ci_tes
     CONSTANTS c_rule TYPE string VALUE `keep_single_parameter_on_one_line`.
     METHODS constructor.
     METHODS run REDEFINITION.
+    METHODS if_ci_test~display_documentation REDEFINITION.
 ENDCLASS.
 
 CLASS zcl_lnc_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
@@ -12,6 +13,7 @@ CLASS zcl_lnc_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     myname = 'ZCL_LNC_KP_SN_PRM_CLL_ON_ON_LN'.
     description = `abaplint - Keep single parameters on one line`.
     category = 'ZCL_LNT_CATEGORY'.
+    has_documentation = abap_true.
     LOOP AT zcl_lnt_utils=>object_types( ) INTO DATA(lv_type).
       add_obj_type( lv_type ).
     ENDLOOP.
@@ -36,5 +38,9 @@ CLASS zcl_lnc_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
               p_code         = ls_finding-code
               p_param_1      = ls_finding-text ).
     ENDLOOP.
+  ENDMETHOD.
+
+  METHOD if_ci_test~display_documentation.
+    zcl_lnt_utils=>display_documentation( c_rule ).
   ENDMETHOD.
 ENDCLASS.

@@ -10,6 +10,9 @@
     },
     {
       "url": "https://github.com/open-abap/open-abap-ci"
+    },
+    {
+      "url": "https://github.com/open-abap/open-abap-gui"
     }
   ],
   "options": {
