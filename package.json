@@ -7,10 +7,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "abapiti": "node scripts/call-abapiti.mjs && node scripts/abapgit-xml.mjs && node scripts/checks.mjs && abaplint --fix",
-    "transpile": "abap_transpile",
+    "regenerate": "node scripts/call-abapiti.mjs && node scripts/abapgit-xml.mjs && node scripts/checks.mjs && abaplint --fix",
     "unit": "abap_transpile && node transpiled/index.mjs",
-    "test": "npm run abapiti && abaplint && npm run unit"
+    "test": "abaplint && npm run unit"
   },
   "devDependencies": {
     "@abaplint/cli": "^2.120.79",
