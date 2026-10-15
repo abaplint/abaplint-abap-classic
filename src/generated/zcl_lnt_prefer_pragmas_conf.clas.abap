@@ -30,13 +30,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t4) = t2.
     DATA t5 TYPE REF TO zcl_lnt_shape_4696a092.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |#EC CI_SUBRC| ).
+    DATA(t7) = |#EC CI_SUBRC|.
     t6 = t7.
     DATA t8 TYPE string.
-    DATA(t9) = CONV string( |SUBRC_OK| ).
+    DATA(t9) = |SUBRC_OK|.
     t8 = t9.
     t5 = NEW zcl_lnt_shape_4696a092( i_pseudo = t6 i_pragma = t8 ).
     CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
@@ -53,13 +53,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t12) = CONV string( |pseudo| ).
+    DATA(t12) = |pseudo|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
     ENDIF.
-    DATA(t14) = CONV string( |pragma| ).
+    DATA(t14) = |pragma|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -68,13 +68,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     t4->load( ).
     APPEND t5 TO t4->items.
     t4->save( ).
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t16) = t2.
     DATA t17 TYPE REF TO zcl_lnt_shape_4696a092.
     DATA t18 TYPE string.
-    DATA(t19) = CONV string( |#EC NEEDED| ).
+    DATA(t19) = |#EC NEEDED|.
     t18 = t19.
     DATA t20 TYPE string.
-    DATA(t21) = CONV string( |NEEDED| ).
+    DATA(t21) = |NEEDED|.
     t20 = t21.
     t17 = NEW zcl_lnt_shape_4696a092( i_pseudo = t18 i_pragma = t20 ).
     CREATE OBJECT t17->zlnt_view_ownkeys_b0e8086400eb.
@@ -91,13 +91,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t17->zlnt_json_ownkeys_70e5fd461788.
     t17->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t24) = CONV string( |pseudo| ).
+    DATA(t24) = |pseudo|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t25.
     IF t17->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t17->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
     ENDIF.
-    DATA(t26) = CONV string( |pragma| ).
+    DATA(t26) = |pragma|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t27.
     IF t17->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -106,13 +106,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     t16->load( ).
     APPEND t17 TO t16->items.
     t16->save( ).
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t28) = t2.
     DATA t29 TYPE REF TO zcl_lnt_shape_4696a092.
     DATA t30 TYPE string.
-    DATA(t31) = CONV string( |#EC NOTEXT| ).
+    DATA(t31) = |#EC NOTEXT|.
     t30 = t31.
     DATA t32 TYPE string.
-    DATA(t33) = CONV string( |NO_TEXT| ).
+    DATA(t33) = |NO_TEXT|.
     t32 = t33.
     t29 = NEW zcl_lnt_shape_4696a092( i_pseudo = t30 i_pragma = t32 ).
     CREATE OBJECT t29->zlnt_view_ownkeys_b0e8086400eb.
@@ -129,13 +129,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t29->zlnt_json_ownkeys_70e5fd461788.
     t29->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t36) = CONV string( |pseudo| ).
+    DATA(t36) = |pseudo|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t37.
     IF t29->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t29->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
     ENDIF.
-    DATA(t38) = CONV string( |pragma| ).
+    DATA(t38) = |pragma|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t39.
     IF t29->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -144,13 +144,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     t28->load( ).
     APPEND t29 TO t28->items.
     t28->save( ).
-    DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t40) = t2.
     DATA t41 TYPE REF TO zcl_lnt_shape_4696a092.
     DATA t42 TYPE string.
-    DATA(t43) = CONV string( |#EC NO_HANDLER| ).
+    DATA(t43) = |#EC NO_HANDLER|.
     t42 = t43.
     DATA t44 TYPE string.
-    DATA(t45) = CONV string( |NO_HANDLER| ).
+    DATA(t45) = |NO_HANDLER|.
     t44 = t45.
     t41 = NEW zcl_lnt_shape_4696a092( i_pseudo = t42 i_pragma = t44 ).
     CREATE OBJECT t41->zlnt_view_ownkeys_b0e8086400eb.
@@ -167,13 +167,13 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t41->zlnt_json_ownkeys_70e5fd461788.
     t41->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t48) = CONV string( |pseudo| ).
+    DATA(t48) = |pseudo|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t49.
     IF t41->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t41->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
     ENDIF.
-    DATA(t50) = CONV string( |pragma| ).
+    DATA(t50) = |pragma|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t51.
     IF t41->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -182,21 +182,24 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     t40->load( ).
     APPEND t41 TO t40->items.
     t40->save( ).
-    DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t52) = t2.
     t1 = t52.
     me->zlnt_view_write_s_73f0f97a5d9a( p0 = t1 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1661_83910276aee0.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_527943ee5149.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `check` ) ).
@@ -263,6 +266,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
       result = me->check_bf6e.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_73f0f97a5d9a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -300,6 +304,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `check`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -318,6 +323,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -325,6 +331,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -348,6 +355,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -438,6 +446,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

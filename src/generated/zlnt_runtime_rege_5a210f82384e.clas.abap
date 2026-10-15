@@ -153,6 +153,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       posix = '(?:)'.
     ENDIF.
   ENDMETHOD.
+
   METHOD test.
     IF excluded IS NOT INITIAL.
       IF ignore_case = abap_true.
@@ -173,6 +174,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD match_test.
     IF excluded IS NOT INITIAL.
       IF ignore_case = abap_true.
@@ -193,6 +195,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD replace.
     IF p1 CS '$'.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -223,6 +226,7 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD match.
     DATA matches TYPE match_result_tab.
     DATA hit TYPE match_result.
@@ -281,9 +285,10 @@ CLASS zlnt_runtime_rege_5a210f82384e IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD class_hyphens.
     TYPES: BEGIN OF atom,
-    text TYPE string,
+    text   TYPE string,
     is_set TYPE abap_bool,
     END OF atom.
     DATA atoms TYPE STANDARD TABLE OF atom WITH DEFAULT KEY.

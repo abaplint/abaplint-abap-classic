@@ -10,8 +10,9 @@ CLASS zcl_lnt_sqlcte_associations DEFINITION PUBLIC INHERITING FROM zcl_lnt_expr
 ENDCLASS.
 CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -27,7 +28,7 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = CONV string( |v751| ).
+    DATA(t6) = |v751|.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     CLEAR t2.
@@ -65,7 +66,7 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
-    DATA(t13) = CONV string( |ASSOCIATIONS| ).
+    DATA(t13) = |ASSOCIATIONS|.
     CLEAR t12.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -81,7 +82,7 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
-    DATA(t19) = NEW zcl_lnt_sql_associations_list(  ).
+    DATA(t19) = NEW zcl_lnt_sql_associations_list( ).
     CLEAR t18.
     IF t19 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -114,7 +115,7 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633 ).
+    DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
     CLEAR t23.
     IF t24 IS BOUND.
       CREATE OBJECT t23.
@@ -130,9 +131,9 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     t25 = t26.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t27.
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t17 ).
-    DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t28) = t17.
+    DATA(t29) = t22.
+    DATA(t30) = t25.
     t27 = zcl_lnt_st_combi_module=>alt_prio( i_first = t28 i_second = t29 i_rest = t30 ).
     t16 = t27.
     CLEAR t15.
@@ -171,9 +172,9 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     t33 = t34.
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t35.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t11 ).
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t33 ).
+    DATA(t36) = t11.
+    DATA(t37) = t14.
+    DATA(t38) = t33.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t10 = t35.
     CLEAR t9.
@@ -207,14 +208,16 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     CLEAR t41.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t41 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c.
   ENDMETHOD.

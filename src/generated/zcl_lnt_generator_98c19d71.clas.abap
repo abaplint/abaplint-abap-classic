@@ -23,31 +23,32 @@ CLASS zcl_lnt_generator_98c19d71 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_method_definitions( i_outer ).
-    DATA(t2) = CAST zcl_lnt_method_definitions( t1 ).
+    DATA(t1) = i_outer.
+    DATA(t2) = t1.
     me->outer = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `outer`.
     DATA(t3) = CONV f( 6 ).
     me->state = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
   ENDMETHOD.
+
   METHOD next.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA(t1) = CONV abap_bool( me->running ).
     IF t1 = abap_true.
       DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
-      DATA(t3) = CONV string( |src/abap/types/method_definitions.ts:18:3: reentrant generat| ).
+      DATA(t3) = |src/abap/types/method_definitions.ts:18:3: reentrant generat|.
       t3 = t3 && |or next() is unsupported|.
       t2->source_location = t3.
       RAISE EXCEPTION t2.
     ENDIF.
     DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = CONV abap_bool( abap_false ).
+    DATA(t5) = abap_false.
     t4 = t5.
     DATA t6 TYPE REF TO zcl_lnt_generator_0f216880.
     CLEAR t6.
-    DATA(t7) = CONV abap_bool( abap_true ).
+    DATA(t7) = abap_true.
     me->running = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `running`.
     DATA t8 TYPE REF TO cx_root.
@@ -55,14 +56,14 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
     TRY.
         DO.
           DATA(t9) = VALUE abap_bool( ).
-          DATA(t10) = CONV abap_bool( t4 ).
+          DATA(t10) = t4.
           t9 = xsdbool( t10 = abap_false ).
           IF t9 = abap_false.
             EXIT.
           ENDIF.
           DATA(t11) = VALUE abap_bool( ).
           DATA(t12) = VALUE abap_bool( ).
-          DATA(t13) = CONV abap_bool( t4 ).
+          DATA(t13) = t4.
           t12 = xsdbool( t13 = abap_false ).
           t11 = t12.
           IF t12 = abap_true.
@@ -78,17 +79,17 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             DATA t18 TYPE REF TO zcl_lnt_generator_0f216880.
             CLEAR t18.
-            DATA(t19) = CONV abap_bool( abap_true ).
+            DATA(t19) = abap_true.
             DATA t20 TYPE REF TO zif_lnt_method_definition.
             CLEAR t20.
             t18 = NEW zcl_lnt_generator_0f216880( i_done = t19 i_value = t20 ).
             t6 = t18.
-            DATA(t21) = CONV abap_bool( abap_true ).
+            DATA(t21) = abap_true.
             t4 = t21.
           ENDIF.
           DATA(t22) = VALUE abap_bool( ).
           DATA(t23) = VALUE abap_bool( ).
-          DATA(t24) = CONV abap_bool( t4 ).
+          DATA(t24) = t4.
           t23 = xsdbool( t24 = abap_false ).
           t22 = t23.
           IF t23 = abap_true.
@@ -106,7 +107,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DATA(t30) = CONV f( me->local_machine129757 ).
             DATA(t31) = VALUE f( ).
             DATA(t32) = VALUE i( ).
-            DATA(t33) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->local_machine129755 ).
+            DATA(t33) = me->local_machine129755.
             t33->load( ).
             t32 = lines( t33->items ).
             t31 = t32.
@@ -123,7 +124,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
           ENDIF.
           DATA(t36) = VALUE abap_bool( ).
           DATA(t37) = VALUE abap_bool( ).
-          DATA(t38) = CONV abap_bool( t4 ).
+          DATA(t38) = t4.
           t37 = xsdbool( t38 = abap_false ).
           t36 = t37.
           IF t37 = abap_true.
@@ -149,7 +150,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
           ENDIF.
           DATA(t47) = VALUE abap_bool( ).
           DATA(t48) = VALUE abap_bool( ).
-          DATA(t49) = CONV abap_bool( t4 ).
+          DATA(t49) = t4.
           t48 = xsdbool( t49 = abap_false ).
           t47 = t48.
           IF t48 = abap_true.
@@ -165,10 +166,10 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             DATA t54 TYPE REF TO zcl_lnt_generator_0f216880.
             CLEAR t54.
-            DATA(t55) = CONV abap_bool( abap_false ).
+            DATA(t55) = abap_false.
             DATA t56 TYPE REF TO zif_lnt_method_definition.
             CLEAR t56.
-            DATA(t57) = CONV abap_bool( abap_true ).
+            DATA(t57) = abap_true.
             IF t57 = abap_true.
               DATA t58 TYPE REF TO zif_lnt_method_definition.
               CLEAR t58.
@@ -176,7 +177,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
               CLEAR t59.
               DATA t60 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
               CLEAR t60.
-              DATA(t61) = CAST zcl_lnt_method_definitions( me->outer ).
+              DATA(t61) = me->outer.
               t60 = t61->all.
               DATA(t62) = CONV string( me->local_a ).
               t59 = t60->get( p0 = t62 ).
@@ -193,14 +194,14 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DATA(t64) = CONV f( 2 ).
             me->state = t64.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t65) = CAST zcl_lnt_generator_0f216880( me->local_machine129758 ).
+            DATA(t65) = me->local_machine129758.
             t6 = t65.
-            DATA(t66) = CONV abap_bool( abap_true ).
+            DATA(t66) = abap_true.
             t4 = t66.
           ENDIF.
           DATA(t67) = VALUE abap_bool( ).
           DATA(t68) = VALUE abap_bool( ).
-          DATA(t69) = CONV abap_bool( t4 ).
+          DATA(t69) = t4.
           t68 = xsdbool( t69 = abap_false ).
           t67 = t68.
           IF t68 = abap_true.
@@ -215,7 +216,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             me->state = t73.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             DATA(t74) = VALUE abap_bool( ).
-            DATA(t75) = CAST zlnt_runtime_map__df7ea9ca9d2a( me->local_machine129756 ).
+            DATA(t75) = me->local_machine129756.
             DATA(t76) = CONV string( me->local_a ).
             t74 = t75->has( p0 = t76 ).
             IF t74 = abap_true.
@@ -230,7 +231,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
           ENDIF.
           DATA(t79) = VALUE abap_bool( ).
           DATA(t80) = VALUE abap_bool( ).
-          DATA(t81) = CONV abap_bool( t4 ).
+          DATA(t81) = t4.
           t80 = xsdbool( t81 = abap_false ).
           t79 = t80.
           IF t80 = abap_true.
@@ -247,7 +248,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DATA(t86) = VALUE string( ).
             DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t87.
-            DATA(t88) = CAST zlnt_runtime_arra_8ecd6afe19e0( me->local_machine129755 ).
+            DATA(t88) = me->local_machine129755.
             DATA(t89) = VALUE i( ).
             DATA(t90) = CONV f( me->local_machine129757 ).
             IF t90 > range_i32_upper.
@@ -267,7 +268,7 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
           ENDIF.
           DATA(t92) = VALUE abap_bool( ).
           DATA(t93) = VALUE abap_bool( ).
-          DATA(t94) = CONV abap_bool( t4 ).
+          DATA(t94) = t4.
           t93 = xsdbool( t94 = abap_false ).
           t92 = t93.
           IF t93 = abap_true.
@@ -283,14 +284,14 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             DATA t99 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
             CLEAR t99.
-            DATA(t100) = CAST zcl_lnt_method_definitions( me->outer ).
+            DATA(t100) = me->outer.
             t99 = t100->all.
             me->local_machine129756 = t99.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine129756`.
             DATA t101 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t101.
-            DATA(t102) = CAST zlnt_runtime_map__df7ea9ca9d2a( me->local_machine129756 ).
-            t101 = t102->keys(  ).
+            DATA(t102) = me->local_machine129756.
+            t101 = t102->keys( ).
             me->local_machine129755 = t101.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine129755`.
             DATA(t103) = CONV f( 0 ).
@@ -302,55 +303,65 @@ CLASS zcl_lnt_generator_98c19d71 IMPLEMENTATION.
           ENDIF.
         ENDDO.
       CATCH cx_root INTO t8.
-        DATA(t105) = CONV abap_bool( abap_false ).
+        DATA(t105) = abap_false.
         me->running = t105.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `running`.
         RAISE EXCEPTION t8.
     ENDTRY.
-    DATA(t106) = CONV abap_bool( abap_false ).
+    DATA(t106) = abap_false.
     me->running = t106.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `running`.
-    DATA(t107) = CAST zcl_lnt_generator_0f216880( t6 ).
+    DATA(t107) = t6.
     result = t107.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD close.
     DATA(t1) = CONV f( 0 ).
     me->state = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
   ENDMETHOD.
+
   METHOD iterate.
     DATA t1 TYPE REF TO zif_lnt_generator_0f59ca3c.
-    DATA(t2) = CAST zcl_lnt_generator_98c19d71( me ).
+    DATA(t2) = me.
     t1 ?= t2.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_c8762dfcc211=>zlnt_member_d3_93b114c6beac5f.
   ENDMETHOD.
+
   METHOD zif_lnt_generator_0f59ca3c~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_0f59ca3c~next.
-    result = me->next(  ).
+    result = me->next( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_0f59ca3c~close.
-    me->close(  ).
+    me->close( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_0f59ca3c~iterate.
-    result = me->iterate(  ).
+    result = me->iterate( ).
   ENDMETHOD.
 ENDCLASS.

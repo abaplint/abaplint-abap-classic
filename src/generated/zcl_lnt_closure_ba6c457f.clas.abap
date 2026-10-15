@@ -12,23 +12,27 @@ CLASS zcl_lnt_closure_ba6c457f DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_closure_ba6c457f IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_value ).
-    DATA(t2) = CONV string( t1 ).
+    DATA(t1) = i_value.
+    DATA(t2) = t1.
     me->value = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `value`.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_61ac7bd03e15=>zlnt_member_d2_33f63f78ed485d.
   ENDMETHOD.

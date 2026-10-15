@@ -28,8 +28,8 @@ CLASS zcl_lnt_class DEFINITION PUBLIC INHERITING FROM zcl_lnt_abap_object CREATE
 ENDCLASS.
 CLASS zcl_lnt_class IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_name ).
-    DATA(t2) = CONV string( t1 ).
+    DATA(t1) = i_name.
+    DATA(t2) = t1.
     super->constructor( i_name = t2 ).
     DATA t3 TYPE REF TO zif_lnt_class_definition.
     CLEAR t3.
@@ -40,11 +40,13 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     me->parsed_xml = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsedXML`.
   ENDMETHOD.
+
   METHOD get_type.
-    DATA(t1) = CONV string( |CLAS| ).
+    DATA(t1) = |CLAS|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_sequenced_files.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t1.
@@ -52,27 +54,27 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t6) = CAST zcl_lnt_class( me ).
+    DATA(t6) = me.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = CAST zcl_lnt_abap_object( t5 ).
+    DATA(t8) = t5.
     t7 = t8->parsed.
     t4 = t7.
-    t3 = t4->slice0(  ).
+    t3 = t4->slice0( ).
     t2 = t3.
     DATA t9 TYPE i.
     DATA t10 TYPE i.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t11) = t2.
     t11->load( ).
     t10 = lines( t11->items ).
     t9 = t10.
     DATA t12 TYPE i.
-    DATA(t13) = CONV i( 1 ).
+    DATA(t13) = 1.
     t12 = t13.
     DO.
       DATA t14 TYPE abap_bool.
-      DATA(t15) = CONV i( t12 ).
-      DATA(t16) = CONV i( t9 ).
+      DATA(t15) = t12.
+      DATA(t16) = t9.
       t14 = xsdbool( t15 < t16 ).
       IF t14 = abap_false.
         EXIT.
@@ -83,8 +85,8 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       CLEAR t18.
       DATA t19 TYPE REF TO zcl_lnt_abap_file.
       CLEAR t19.
-      DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t21) = CONV i( t12 ).
+      DATA(t20) = t2.
+      DATA(t21) = t12.
       DATA t22 TYPE REF TO object.
       t22 = t20->get( p0 = t21 ).
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -101,12 +103,12 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       t18 = t19.
       t17 = t18.
       DATA t25 TYPE i.
-      DATA(t26) = CONV i( t12 ).
+      DATA(t26) = t12.
       t25 = t26.
       DO.
         DATA t27 TYPE abap_bool.
-        DATA(t28) = CONV i( t25 ).
-        DATA(t29) = CONV i( 0 ).
+        DATA(t28) = t25.
+        DATA(t29) = 0.
         t27 = xsdbool( t28 > t29 ).
         IF t27 = abap_false.
           EXIT.
@@ -117,10 +119,10 @@ CLASS zcl_lnt_class IMPLEMENTATION.
         CLEAR t31.
         DATA t32 TYPE REF TO zcl_lnt_abap_file.
         CLEAR t32.
-        DATA(t33) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t33) = t2.
         DATA t34 TYPE i.
-        DATA(t35) = CONV i( t25 ).
-        DATA(t36) = CONV i( 1 ).
+        DATA(t35) = t25.
+        DATA(t36) = 1.
         t34 = t35 - t36.
         DATA t37 TYPE REF TO object.
         t37 = t33->get( p0 = t34 ).
@@ -143,14 +145,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
         DATA(t43) = VALUE abap_bool( ).
         DATA t44 TYPE string.
         DATA t45 TYPE REF TO zcl_lnt_abstract_file.
-        DATA(t46) = CAST zcl_lnt_abap_file( t30 ).
+        DATA(t46) = t30.
         t45 = t46.
         DATA t47 TYPE string.
-        DATA(t48) = CAST zcl_lnt_abstract_file( t45 ).
+        DATA(t48) = t45.
         t47 = t48->filename.
         t44 = t47.
-        DATA(t49) = CONV string( |.clas.locals_def.abap| ).
-        DATA(t50) = CONV i( strlen( t44 ) ).
+        DATA(t49) = |.clas.locals_def.abap|.
+        DATA(t50) = strlen( t44 ).
         DATA t51 TYPE i.
         DATA(t52) = VALUE i( ).
         DATA(t53) = VALUE string( ).
@@ -166,21 +168,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t43 = abap_true.
-          DATA(t54) = CONV i( 0 ).
+          DATA(t54) = 0.
           t42 = t54.
         ELSE.
           DATA(t55) = VALUE i( ).
           DATA(t56) = VALUE abap_bool( ).
           DATA t57 TYPE string.
           DATA t58 TYPE REF TO zcl_lnt_abstract_file.
-          DATA(t59) = CAST zcl_lnt_abap_file( t30 ).
+          DATA(t59) = t30.
           t58 = t59.
           DATA t60 TYPE string.
-          DATA(t61) = CAST zcl_lnt_abstract_file( t58 ).
+          DATA(t61) = t58.
           t60 = t61->filename.
           t57 = t60.
-          DATA(t62) = CONV string( |.clas.locals_imp.abap| ).
-          DATA(t63) = CONV i( strlen( t57 ) ).
+          DATA(t62) = |.clas.locals_imp.abap|.
+          DATA(t63) = strlen( t57 ).
           DATA t64 TYPE i.
           DATA(t65) = VALUE i( ).
           DATA(t66) = VALUE string( ).
@@ -196,21 +198,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t56 = abap_true.
-            DATA(t67) = CONV i( 1 ).
+            DATA(t67) = 1.
             t55 = t67.
           ELSE.
             DATA(t68) = VALUE i( ).
             DATA(t69) = VALUE abap_bool( ).
             DATA t70 TYPE string.
             DATA t71 TYPE REF TO zcl_lnt_abstract_file.
-            DATA(t72) = CAST zcl_lnt_abap_file( t30 ).
+            DATA(t72) = t30.
             t71 = t72.
             DATA t73 TYPE string.
-            DATA(t74) = CAST zcl_lnt_abstract_file( t71 ).
+            DATA(t74) = t71.
             t73 = t74->filename.
             t70 = t73.
-            DATA(t75) = CONV string( |.clas.abap| ).
-            DATA(t76) = CONV i( strlen( t70 ) ).
+            DATA(t75) = |.clas.abap|.
+            DATA(t76) = strlen( t70 ).
             DATA t77 TYPE i.
             DATA(t78) = VALUE i( ).
             DATA(t79) = VALUE string( ).
@@ -226,21 +228,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t69 = abap_true.
-              DATA(t80) = CONV i( 2 ).
+              DATA(t80) = 2.
               t68 = t80.
             ELSE.
               DATA(t81) = VALUE i( ).
               DATA(t82) = VALUE abap_bool( ).
               DATA t83 TYPE string.
               DATA t84 TYPE REF TO zcl_lnt_abstract_file.
-              DATA(t85) = CAST zcl_lnt_abap_file( t30 ).
+              DATA(t85) = t30.
               t84 = t85.
               DATA t86 TYPE string.
-              DATA(t87) = CAST zcl_lnt_abstract_file( t84 ).
+              DATA(t87) = t84.
               t86 = t87->filename.
               t83 = t86.
-              DATA(t88) = CONV string( |.clas.testclasses.abap| ).
-              DATA(t89) = CONV i( strlen( t83 ) ).
+              DATA(t88) = |.clas.testclasses.abap|.
+              DATA(t89) = strlen( t83 ).
               DATA t90 TYPE i.
               DATA(t91) = VALUE i( ).
               DATA(t92) = VALUE string( ).
@@ -256,10 +258,10 @@ CLASS zcl_lnt_class IMPLEMENTATION.
                 ENDIF.
               ENDIF.
               IF t82 = abap_true.
-                DATA(t93) = CONV i( 3 ).
+                DATA(t93) = 3.
                 t81 = t93.
               ELSE.
-                DATA(t94) = CONV i( -1 ).
+                DATA(t94) = -1.
                 t81 = t94.
               ENDIF.
               t68 = t81.
@@ -272,14 +274,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
         DATA(t96) = VALUE abap_bool( ).
         DATA t97 TYPE string.
         DATA t98 TYPE REF TO zcl_lnt_abstract_file.
-        DATA(t99) = CAST zcl_lnt_abap_file( t17 ).
+        DATA(t99) = t17.
         t98 = t99.
         DATA t100 TYPE string.
-        DATA(t101) = CAST zcl_lnt_abstract_file( t98 ).
+        DATA(t101) = t98.
         t100 = t101->filename.
         t97 = t100.
-        DATA(t102) = CONV string( |.clas.locals_def.abap| ).
-        DATA(t103) = CONV i( strlen( t97 ) ).
+        DATA(t102) = |.clas.locals_def.abap|.
+        DATA(t103) = strlen( t97 ).
         DATA t104 TYPE i.
         DATA(t105) = VALUE i( ).
         DATA(t106) = VALUE string( ).
@@ -295,21 +297,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t96 = abap_true.
-          DATA(t107) = CONV i( 0 ).
+          DATA(t107) = 0.
           t95 = t107.
         ELSE.
           DATA(t108) = VALUE i( ).
           DATA(t109) = VALUE abap_bool( ).
           DATA t110 TYPE string.
           DATA t111 TYPE REF TO zcl_lnt_abstract_file.
-          DATA(t112) = CAST zcl_lnt_abap_file( t17 ).
+          DATA(t112) = t17.
           t111 = t112.
           DATA t113 TYPE string.
-          DATA(t114) = CAST zcl_lnt_abstract_file( t111 ).
+          DATA(t114) = t111.
           t113 = t114->filename.
           t110 = t113.
-          DATA(t115) = CONV string( |.clas.locals_imp.abap| ).
-          DATA(t116) = CONV i( strlen( t110 ) ).
+          DATA(t115) = |.clas.locals_imp.abap|.
+          DATA(t116) = strlen( t110 ).
           DATA t117 TYPE i.
           DATA(t118) = VALUE i( ).
           DATA(t119) = VALUE string( ).
@@ -325,21 +327,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t109 = abap_true.
-            DATA(t120) = CONV i( 1 ).
+            DATA(t120) = 1.
             t108 = t120.
           ELSE.
             DATA(t121) = VALUE i( ).
             DATA(t122) = VALUE abap_bool( ).
             DATA t123 TYPE string.
             DATA t124 TYPE REF TO zcl_lnt_abstract_file.
-            DATA(t125) = CAST zcl_lnt_abap_file( t17 ).
+            DATA(t125) = t17.
             t124 = t125.
             DATA t126 TYPE string.
-            DATA(t127) = CAST zcl_lnt_abstract_file( t124 ).
+            DATA(t127) = t124.
             t126 = t127->filename.
             t123 = t126.
-            DATA(t128) = CONV string( |.clas.abap| ).
-            DATA(t129) = CONV i( strlen( t123 ) ).
+            DATA(t128) = |.clas.abap|.
+            DATA(t129) = strlen( t123 ).
             DATA t130 TYPE i.
             DATA(t131) = VALUE i( ).
             DATA(t132) = VALUE string( ).
@@ -355,21 +357,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t122 = abap_true.
-              DATA(t133) = CONV i( 2 ).
+              DATA(t133) = 2.
               t121 = t133.
             ELSE.
               DATA(t134) = VALUE i( ).
               DATA(t135) = VALUE abap_bool( ).
               DATA t136 TYPE string.
               DATA t137 TYPE REF TO zcl_lnt_abstract_file.
-              DATA(t138) = CAST zcl_lnt_abap_file( t17 ).
+              DATA(t138) = t17.
               t137 = t138.
               DATA t139 TYPE string.
-              DATA(t140) = CAST zcl_lnt_abstract_file( t137 ).
+              DATA(t140) = t137.
               t139 = t140->filename.
               t136 = t139.
-              DATA(t141) = CONV string( |.clas.testclasses.abap| ).
-              DATA(t142) = CONV i( strlen( t136 ) ).
+              DATA(t141) = |.clas.testclasses.abap|.
+              DATA(t142) = strlen( t136 ).
               DATA t143 TYPE i.
               DATA(t144) = VALUE i( ).
               DATA(t145) = VALUE string( ).
@@ -385,10 +387,10 @@ CLASS zcl_lnt_class IMPLEMENTATION.
                 ENDIF.
               ENDIF.
               IF t135 = abap_true.
-                DATA(t146) = CONV i( 3 ).
+                DATA(t146) = 3.
                 t134 = t146.
               ELSE.
-                DATA(t147) = CONV i( -1 ).
+                DATA(t147) = -1.
                 t134 = t147.
               ENDIF.
               t121 = t134.
@@ -398,54 +400,57 @@ CLASS zcl_lnt_class IMPLEMENTATION.
           t95 = t108.
         ENDIF.
         t41 = t42 - t95.
-        DATA(t148) = CONV i( 0 ).
+        DATA(t148) = 0.
         t40 = xsdbool( t41 <= t148 ).
         IF t40 = abap_true.
           EXIT.
         ENDIF.
-        DATA(t149) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t150) = CONV i( t25 ).
-        DATA(t151) = CAST zcl_lnt_abap_file( t30 ).
+        DATA(t149) = t2.
+        DATA(t150) = t25.
+        DATA(t151) = t30.
         t149->put( p0 = t150 p1 = t151 ).
         DATA t152 TYPE i.
-        DATA(t153) = CONV i( t25 ).
-        DATA(t154) = CONV i( 1 ).
+        DATA(t153) = t25.
+        DATA(t154) = 1.
         t152 = t153 - t154.
         t25 = t152.
       ENDDO.
-      DATA(t155) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t156) = CONV i( t25 ).
-      DATA(t157) = CAST zcl_lnt_abap_file( t17 ).
+      DATA(t155) = t2.
+      DATA(t156) = t25.
+      DATA(t157) = t17.
       t155->put( p0 = t156 p1 = t157 ).
       DATA t158 TYPE i.
-      DATA(t159) = CONV i( t12 ).
-      DATA(t160) = CONV i( 1 ).
+      DATA(t159) = t12.
+      DATA(t160) = 1.
       t158 = t159 + t160.
       t12 = t158.
     ENDDO.
-    DATA(t161) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t161) = t2.
     t1 = t161.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_definition.
-    DATA(t1) = CAST zif_lnt_class_definition( i_def ).
-    DATA(t2) = CAST zif_lnt_class_definition( t1 ).
+    DATA(t1) = i_def.
+    DATA(t2) = t1.
     me->def = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `def`.
   ENDMETHOD.
+
   METHOD gt_dfn_ins_src_obj_cls_ts_clss.
-    DATA(t1) = CAST zif_lnt_class_definition( me->def ).
+    DATA(t1) = me->def.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
     DATA t2 TYPE f.
     DATA(t3) = CONV f( 30 ).
     t2 = t3.
     DATA t4 TYPE abap_bool.
-    DATA(t5) = CONV abap_bool( abap_true ).
+    DATA(t5) = abap_true.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -466,21 +471,22 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t10) = CONV string( |maxLength| ).
+    DATA(t10) = |maxLength|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t11.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
     ENDIF.
-    DATA(t12) = CONV string( |allowNamespace| ).
+    DATA(t12) = |allowNamespace|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA t1 TYPE REF TO zif_lnt_class_definition.
     CLEAR t1.
@@ -490,8 +496,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     CLEAR t2.
     me->parsed_xml = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsedXML`.
-    super->set_dirty(  ).
+    super->set_dirty( ).
   ENDMETHOD.
+
   METHOD get_class_definition.
     DATA t1 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t1.
@@ -500,12 +507,12 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t3 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t5) = CAST zcl_lnt_abap_file( me->get_main_abap_file(  ) ).
+    DATA(t5) = CAST zcl_lnt_abap_file( me->get_main_abap_file( ) ).
     t4 = t5.
     DATA t6 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zcl_lnt_abap_file( t4 ).
+    DATA(t8) = t4.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -517,11 +524,11 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA t10 TYPE REF TO zif_lnt_abap_file_information.
       DATA t11 TYPE REF TO zcl_lnt_abap_file.
       DATA t12 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t13) = CAST zcl_lnt_abap_file( t4 ).
+      DATA(t13) = t4.
       t12 = t13.
       t11 = t12.
       DATA t14 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t15) = CAST zcl_lnt_abap_file( t11 ).
+      DATA(t15) = t11.
       t14 = t15->info.
       t10 = t14.
       t6 = t10.
@@ -531,7 +538,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t16 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t16.
     DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = CAST zif_lnt_abap_file_information( t2 ).
+    DATA(t18) = t2.
     IF t18 IS INITIAL.
       t17 = abap_true.
     ENDIF.
@@ -542,14 +549,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t20 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t21 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t22) = CAST zif_lnt_abap_file_information( t2 ).
+      DATA(t22) = t2.
       t21 = t22.
       DATA t23 TYPE string.
       DATA t24 TYPE REF TO zcl_lnt_abstract_object.
-      DATA(t25) = CAST zcl_lnt_class( me ).
+      DATA(t25) = me.
       t24 = t25.
       DATA t26 TYPE string.
-      DATA(t27) = CAST zcl_lnt_abstract_object( t24 ).
+      DATA(t27) = t24.
       t26 = t27->name.
       t23 = t26.
       t20 = t21->get_class_definition_by_name( i_name = t23 ).
@@ -557,8 +564,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     t1 = t16.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_identifier.
     DATA t1 TYPE REF TO zcl_lnt_fi_identifier.
     CLEAR t1.
@@ -571,12 +579,12 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t5 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t5.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t7) = CAST zcl_lnt_abap_file( me->get_main_abap_file(  ) ).
+    DATA(t7) = CAST zcl_lnt_abap_file( me->get_main_abap_file( ) ).
     t6 = t7.
     DATA t8 TYPE REF TO zif_lnt_abap_file_information.
     CLEAR t8.
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = CAST zcl_lnt_abap_file( t6 ).
+    DATA(t10) = t6.
     IF t10 IS INITIAL.
       t9 = abap_true.
     ENDIF.
@@ -588,11 +596,11 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA t12 TYPE REF TO zif_lnt_abap_file_information.
       DATA t13 TYPE REF TO zcl_lnt_abap_file.
       DATA t14 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t15) = CAST zcl_lnt_abap_file( t6 ).
+      DATA(t15) = t6.
       t14 = t15.
       t13 = t14.
       DATA t16 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t17) = CAST zcl_lnt_abap_file( t13 ).
+      DATA(t17) = t13.
       t16 = t17->info.
       t12 = t16.
       t8 = t12.
@@ -602,7 +610,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t18 TYPE REF TO zcl_lnt_info_class_definition.
     CLEAR t18.
     DATA(t19) = VALUE abap_bool( ).
-    DATA(t20) = CAST zif_lnt_abap_file_information( t4 ).
+    DATA(t20) = t4.
     IF t20 IS INITIAL.
       t19 = abap_true.
     ENDIF.
@@ -613,14 +621,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t22 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t23 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t24) = CAST zif_lnt_abap_file_information( t4 ).
+      DATA(t24) = t4.
       t23 = t24.
       DATA t25 TYPE string.
       DATA t26 TYPE REF TO zcl_lnt_abstract_object.
-      DATA(t27) = CAST zcl_lnt_class( me ).
+      DATA(t27) = me.
       t26 = t27.
       DATA t28 TYPE string.
-      DATA(t29) = CAST zcl_lnt_abstract_object( t26 ).
+      DATA(t29) = t26.
       t28 = t29->name.
       t25 = t28.
       t22 = t23->get_class_definition_by_name( i_name = t25 ).
@@ -631,7 +639,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t30 TYPE REF TO zcl_lnt_fi_identifier.
     CLEAR t30.
     DATA(t31) = VALUE abap_bool( ).
-    DATA(t32) = CAST zcl_lnt_info_class_definition( t2 ).
+    DATA(t32) = t2.
     IF t32 IS INITIAL.
       t31 = abap_true.
     ENDIF.
@@ -642,26 +650,27 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t34 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t35 TYPE REF TO zcl_lnt_info_class_definition.
-      DATA(t36) = CAST zcl_lnt_info_class_definition( t2 ).
+      DATA(t36) = t2.
       t35 = t36.
       t34 = t35->identifier.
       t30 = t34.
     ENDIF.
     t1 = t30.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_description.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t3) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t3) = me->parsed_xml.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_shape_e272b380( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -672,26 +681,27 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
-      DATA(t10) = CAST zcl_lnt_shape_e272b380( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->description.
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_name_from_xml.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t3) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t3) = me->parsed_xml.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_shape_e272b380( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -702,26 +712,27 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
-      DATA(t10) = CAST zcl_lnt_shape_e272b380( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->name.
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_category.
-    me->parse_xml(  ).
+    me->parse_xml( ).
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t3) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t3) = me->parsed_xml.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_shape_e272b380( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -732,22 +743,23 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
-      DATA(t10) = CAST zcl_lnt_shape_e272b380( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->category.
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_locals_imp_file.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t3) = CAST zcl_lnt_class( me ).
+    DATA(t3) = me.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zcl_lnt_abap_object( t2 ).
+    DATA(t5) = t2.
     t4 = t5->parsed.
     t1 = t4.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
@@ -777,14 +789,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA(t11) = VALUE abap_bool( ).
       DATA t12 TYPE string.
       DATA t13 TYPE REF TO zcl_lnt_abstract_file.
-      DATA(t14) = CAST zcl_lnt_abap_file( t6 ).
+      DATA(t14) = t6.
       t13 = t14.
       DATA t15 TYPE string.
-      DATA(t16) = CAST zcl_lnt_abstract_file( t13 ).
+      DATA(t16) = t13.
       t15 = t16->filename.
       t12 = t15.
-      DATA(t17) = CONV string( |.clas.locals_imp.abap| ).
-      DATA(t18) = CONV i( strlen( t12 ) ).
+      DATA(t17) = |.clas.locals_imp.abap|.
+      DATA(t18) = strlen( t12 ).
       DATA t19 TYPE i.
       DATA(t20) = VALUE i( ).
       DATA(t21) = VALUE string( ).
@@ -802,9 +814,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       IF t11 = abap_true.
         DATA t22 TYPE REF TO zcl_lnt_abap_file.
         CLEAR t22.
-        DATA(t23) = CONV abap_bool( abap_true ).
+        DATA(t23) = abap_true.
         IF t23 = abap_true.
-          DATA(t24) = CAST zcl_lnt_abap_file( t6 ).
+          DATA(t24) = t6.
           t22 = t24.
         ELSE.
           DATA t25 TYPE REF TO zcl_lnt_abap_file.
@@ -818,15 +830,16 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t26 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t26.
     result = t26.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_testclass_file.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t3) = CAST zcl_lnt_class( me ).
+    DATA(t3) = me.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zcl_lnt_abap_object( t2 ).
+    DATA(t5) = t2.
     t4 = t5->parsed.
     t1 = t4.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
@@ -856,14 +869,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA(t11) = VALUE abap_bool( ).
       DATA t12 TYPE string.
       DATA t13 TYPE REF TO zcl_lnt_abstract_file.
-      DATA(t14) = CAST zcl_lnt_abap_file( t6 ).
+      DATA(t14) = t6.
       t13 = t14.
       DATA t15 TYPE string.
-      DATA(t16) = CAST zcl_lnt_abstract_file( t13 ).
+      DATA(t16) = t13.
       t15 = t16->filename.
       t12 = t15.
-      DATA(t17) = CONV string( |.clas.testclasses.abap| ).
-      DATA(t18) = CONV i( strlen( t12 ) ).
+      DATA(t17) = |.clas.testclasses.abap|.
+      DATA(t18) = strlen( t12 ).
       DATA t19 TYPE i.
       DATA(t20) = VALUE i( ).
       DATA(t21) = VALUE string( ).
@@ -881,9 +894,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       IF t11 = abap_true.
         DATA t22 TYPE REF TO zcl_lnt_abap_file.
         CLEAR t22.
-        DATA(t23) = CONV abap_bool( abap_true ).
+        DATA(t23) = abap_true.
         IF t23 = abap_true.
-          DATA(t24) = CAST zcl_lnt_abap_file( t6 ).
+          DATA(t24) = t6.
           t22 = t24.
         ELSE.
           DATA t25 TYPE REF TO zcl_lnt_abap_file.
@@ -897,12 +910,13 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t26 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t26.
     result = t26.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD parse_xml.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t3) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t3) = me->parsed_xml.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -910,7 +924,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     t4 = t5.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zcl_lnt_shape_e272b380( t2 ).
+    DATA(t8) = t2.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -921,7 +935,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zcl_lnt_shape_e272b380.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
       DATA t11 TYPE REF TO zcl_lnt_shape_e272b380.
       DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -950,14 +964,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     me->parsed_xml = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsedXML`.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2(  ) ).
+    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     t19 = t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
     DATA(t23) = VALUE abap_bool( ).
-    DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t19 ).
+    DATA(t24) = t19.
     IF t24 IS INITIAL.
       t23 = abap_true.
     ENDIF.
@@ -967,7 +981,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       t22 = t25.
     ELSE.
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t27) = CAST zlnt_runtime_dyna_a429568d5be8( t19 ).
+      DATA(t27) = t19.
       t26 = t27.
       t22 = t26.
     ENDIF.
@@ -986,14 +1000,14 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t34.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t21 ).
+    DATA(t36) = t21.
     t35 = t36.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t37.
     DATA(t38) = VALUE abap_bool( ).
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t39.
-    DATA(t40) = CAST zlnt_runtime_dyna_a429568d5be8( t35 ).
+    DATA(t40) = t35.
     CLEAR t39.
     IF t40 IS BOUND.
       t39 = t40.
@@ -1010,9 +1024,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t44) = CAST zlnt_runtime_dyna_a429568d5be8( t35 ).
+      DATA(t44) = t35.
       t43 = t44.
-      DATA(t45) = CONV string( |abapGit| ).
+      DATA(t45) = |abapGit|.
       t42 = t43->get( p0 = t45 ).
       t37 = t42.
     ENDIF.
@@ -1023,7 +1037,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t47) = VALUE abap_bool( ).
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t48.
-    DATA(t49) = CAST zlnt_runtime_dyna_a429568d5be8( t33 ).
+    DATA(t49) = t33.
     CLEAR t48.
     IF t49 IS BOUND.
       t48 = t49.
@@ -1040,9 +1054,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t53) = CAST zlnt_runtime_dyna_a429568d5be8( t33 ).
+      DATA(t53) = t33.
       t52 = t53.
-      DATA(t54) = CONV string( |asx:abap| ).
+      DATA(t54) = |asx:abap|.
       t51 = t52->get( p0 = t54 ).
       t46 = t51.
     ENDIF.
@@ -1053,7 +1067,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t56) = VALUE abap_bool( ).
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t57.
-    DATA(t58) = CAST zlnt_runtime_dyna_a429568d5be8( t31 ).
+    DATA(t58) = t31.
     CLEAR t57.
     IF t58 IS BOUND.
       t57 = t58.
@@ -1070,9 +1084,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t62) = CAST zlnt_runtime_dyna_a429568d5be8( t31 ).
+      DATA(t62) = t31.
       t61 = t62.
-      DATA(t63) = CONV string( |asx:values| ).
+      DATA(t63) = |asx:values|.
       t60 = t61->get( p0 = t63 ).
       t55 = t60.
     ENDIF.
@@ -1083,7 +1097,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     CLEAR t65.
     t64 = t65.
     DATA(t66) = VALUE abap_bool( ).
-    DATA(t67) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+    DATA(t67) = t29.
     IF t67 IS INITIAL.
       t66 = abap_true.
     ENDIF.
@@ -1106,15 +1120,15 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t77) = CAST zlnt_runtime_dyna_a429568d5be8( t21 ).
+    DATA(t77) = t21.
     t76 = t77.
-    DATA(t78) = CONV string( |abapGit| ).
+    DATA(t78) = |abapGit|.
     t75 = t76->get( p0 = t78 ).
     t74 = t75.
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t79.
     DATA(t80) = VALUE abap_bool( ).
-    DATA(t81) = CAST zlnt_runtime_dyna_a429568d5be8( t74 ).
+    DATA(t81) = t74.
     IF t81 IS NOT BOUND.
       t80 = abap_true.
     ELSE.
@@ -1126,8 +1140,8 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       t79 = t82.
     ELSE.
       DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t84) = CAST zlnt_runtime_dyna_a429568d5be8( t74 ).
-      DATA(t85) = CONV string( |asx:abap| ).
+      DATA(t84) = t74.
+      DATA(t85) = |asx:abap|.
       t83 = t84->get( p0 = t85 ).
       t79 = t83.
     ENDIF.
@@ -1138,7 +1152,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t87) = VALUE abap_bool( ).
     DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t88.
-    DATA(t89) = CAST zlnt_runtime_dyna_a429568d5be8( t72 ).
+    DATA(t89) = t72.
     CLEAR t88.
     IF t89 IS BOUND.
       t88 = t89.
@@ -1155,9 +1169,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t93) = CAST zlnt_runtime_dyna_a429568d5be8( t72 ).
+      DATA(t93) = t72.
       t92 = t93.
-      DATA(t94) = CONV string( |asx:values| ).
+      DATA(t94) = |asx:values|.
       t91 = t92->get( p0 = t94 ).
       t86 = t91.
     ENDIF.
@@ -1168,7 +1182,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t96) = VALUE abap_bool( ).
     DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t97.
-    DATA(t98) = CAST zlnt_runtime_dyna_a429568d5be8( t70 ).
+    DATA(t98) = t70.
     CLEAR t97.
     IF t98 IS BOUND.
       t97 = t98.
@@ -1185,9 +1199,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t102) = CAST zlnt_runtime_dyna_a429568d5be8( t70 ).
+      DATA(t102) = t70.
       t101 = t102.
-      DATA(t103) = CONV string( |VSEOCLASS| ).
+      DATA(t103) = |VSEOCLASS|.
       t100 = t101->get( p0 = t103 ).
       t95 = t100.
     ENDIF.
@@ -1198,7 +1212,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t105.
     DATA(t106) = VALUE abap_bool( ).
-    DATA(t107) = CAST zlnt_runtime_dyna_a429568d5be8( t68 ).
+    DATA(t107) = t68.
     IF t107 IS INITIAL.
       t106 = abap_true.
     ENDIF.
@@ -1208,21 +1222,21 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       t105 = t108.
     ELSE.
       DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t110) = CAST zlnt_runtime_dyna_a429568d5be8( t68 ).
+      DATA(t110) = t68.
       t109 = t110.
       t105 = t109.
     ENDIF.
     t104 = t105.
     DATA(t111) = VALUE abap_bool( ).
     DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t113) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t113) = t104.
     t112 = t113.
     DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t115.
     t114 = t115.
     DATA(t116) = VALUE abap_bool( ).
-    DATA(t117) = CAST zlnt_runtime_dyna_a429568d5be8( t112 ).
+    DATA(t117) = t112.
     IF t117 IS INITIAL.
       t116 = abap_true.
     ENDIF.
@@ -1233,18 +1247,18 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t121) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t121) = t104.
     t120 = t121.
-    DATA(t122) = CONV string( |CATEGORY| ).
+    DATA(t122) = |CATEGORY|.
     t119 = t120->get( p0 = t122 ).
     t118 = t119.
     DATA t123 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t124) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t124) = me->parsed_xml.
     t123 = t124.
     DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t125.
     DATA(t126) = VALUE abap_bool( ).
-    DATA(t127) = CAST zlnt_runtime_dyna_a429568d5be8( t118 ).
+    DATA(t127) = t118.
     IF t127 IS INITIAL.
       t126 = abap_true.
     ENDIF.
@@ -1254,7 +1268,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       t125 = t128.
     ELSE.
       DATA t129 TYPE string.
-      DATA(t130) = CAST zlnt_runtime_dyna_a429568d5be8( t118 ).
+      DATA(t130) = t118.
       t129 = t130->as_string( ).
       DATA(t131) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t131->has = abap_true.
@@ -1268,23 +1282,23 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     IF t123->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t123->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `category` p1 = t132 ).
     ENDIF.
-    DATA(t133) = CONV string( |category| ).
+    DATA(t133) = |category|.
     DATA t134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t134.
     IF t123->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t123->zlnt_json_ownkeys_70e5fd461788->put( p0 = t133 p1 = t134 ).
     ENDIF.
     DATA t135 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t136) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t136) = me->parsed_xml.
     t135 = t136.
     DATA t137 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t137.
     DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t141) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t141) = t104.
     t140 = t141.
-    DATA(t142) = CONV string( |DESCRIPT| ).
+    DATA(t142) = |DESCRIPT|.
     t139 = t140->get( p0 = t142 ).
     t138 = t139.
     DATA t143 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1292,9 +1306,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t144) = VALUE abap_bool( ).
     DATA t145 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t147) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t147) = t104.
     t146 = t147.
-    DATA(t148) = CONV string( |DESCRIPT| ).
+    DATA(t148) = |DESCRIPT|.
     t145 = t146->get( p0 = t148 ).
     IF t145 IS BOUND.
       t144 = t145->truth( ).
@@ -1303,7 +1317,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA t149 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t149.
       DATA(t150) = VALUE abap_bool( ).
-      DATA(t151) = CAST zlnt_runtime_dyna_a429568d5be8( t138 ).
+      DATA(t151) = t138.
       IF t151 IS INITIAL.
         t150 = abap_true.
       ENDIF.
@@ -1313,7 +1327,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
         t149 = t152.
       ELSE.
         DATA t153 TYPE string.
-        DATA(t154) = CAST zlnt_runtime_dyna_a429568d5be8( t138 ).
+        DATA(t154) = t138.
         t153 = t154->as_string( ).
         DATA(t155) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t155->has = abap_true.
@@ -1324,9 +1338,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t156 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t156.
-      DATA(t157) = CONV abap_bool( abap_true ).
+      DATA(t157) = abap_true.
       IF t157 = abap_true.
-        DATA(t158) = CONV string( || ).
+        DATA(t158) = ||.
         DATA(t159) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t159->has = abap_true.
         t159->value = t158.
@@ -1346,23 +1360,23 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     IF t135->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t135->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `description` p1 = t161 ).
     ENDIF.
-    DATA(t162) = CONV string( |description| ).
+    DATA(t162) = |description|.
     DATA t163 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t163.
     IF t135->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t135->zlnt_json_ownkeys_70e5fd461788->put( p0 = t162 p1 = t163 ).
     ENDIF.
     DATA t164 TYPE REF TO zcl_lnt_shape_e272b380.
-    DATA(t165) = CAST zcl_lnt_shape_e272b380( me->parsed_xml ).
+    DATA(t165) = me->parsed_xml.
     t164 = t165.
     DATA t166 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t166.
     DATA t167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t168 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t170) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t170) = t104.
     t169 = t170.
-    DATA(t171) = CONV string( |CLSNAME| ).
+    DATA(t171) = |CLSNAME|.
     t168 = t169->get( p0 = t171 ).
     t167 = t168.
     DATA t172 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1370,9 +1384,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     DATA(t173) = VALUE abap_bool( ).
     DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t175 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t176) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t176) = t104.
     t175 = t176.
-    DATA(t177) = CONV string( |CLSNAME| ).
+    DATA(t177) = |CLSNAME|.
     t174 = t175->get( p0 = t177 ).
     IF t174 IS BOUND.
       t173 = t174->truth( ).
@@ -1381,7 +1395,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
       DATA t178 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t178.
       DATA(t179) = VALUE abap_bool( ).
-      DATA(t180) = CAST zlnt_runtime_dyna_a429568d5be8( t167 ).
+      DATA(t180) = t167.
       IF t180 IS INITIAL.
         t179 = abap_true.
       ENDIF.
@@ -1391,7 +1405,7 @@ CLASS zcl_lnt_class IMPLEMENTATION.
         t178 = t181.
       ELSE.
         DATA t182 TYPE string.
-        DATA(t183) = CAST zlnt_runtime_dyna_a429568d5be8( t167 ).
+        DATA(t183) = t167.
         t182 = t183->as_string( ).
         DATA(t184) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t184->has = abap_true.
@@ -1402,9 +1416,9 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     ELSE.
       DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t185.
-      DATA(t186) = CONV abap_bool( abap_true ).
+      DATA(t186) = abap_true.
       IF t186 = abap_true.
-        DATA(t187) = CONV string( || ).
+        DATA(t187) = ||.
         DATA(t188) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t188->has = abap_true.
         t188->value = t187.
@@ -1424,188 +1438,244 @@ CLASS zcl_lnt_class IMPLEMENTATION.
     IF t164->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t164->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t190 ).
     ENDIF.
-    DATA(t191) = CONV string( |name| ).
+    DATA(t191) = |name|.
     DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t192.
     IF t164->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t164->zlnt_json_ownkeys_70e5fd461788->put( p0 = t191 p1 = t192 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD get_definition.
-    DATA(t1) = CAST zif_lnt_class_definition( me->gt_dfn_ins_src_obj_cls_ts_clss(  ) ).
+    DATA(t1) = CAST zif_lnt_class_definition( me->gt_dfn_ins_src_obj_cls_ts_clss( ) ).
     DATA t2 TYPE REF TO object.
     t2 = t1.
     DATA t3 TYPE REF TO zif_lnt_interface_definition.
     t3 ?= t2.
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1224_79bf9124506a.
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~add_file.
-    me->add_file(  i_file = i_file ).
+    me->add_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~contains_file.
-    result = me->contains_file(  i_filename = i_filename ).
+    result = me->contains_file( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~debug_description.
-    result = me->debug_description(  ).
+    result = me->debug_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_abap_file_by_name.
-    result = me->get_abap_file_by_name(  i_filename = i_filename ).
+    result = me->get_abap_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_abap_files.
-    result = me->get_abap_files(  ).
+    result = me->get_abap_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_definition.
-    result = me->get_definition(  ).
+    result = me->get_definition( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_identifier.
-    result = me->get_identifier(  ).
+    result = me->get_identifier( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_main_abap_file.
-    result = me->get_main_abap_file(  ).
+    result = me->get_main_abap_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_name_from_xml.
-    result = me->get_name_from_xml(  ).
+    result = me->get_name_from_xml( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_parsing_issues.
-    result = me->get_parsing_issues(  ).
+    result = me->get_parsing_issues( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_sequenced_files.
-    result = me->get_sequenced_files(  ).
+    result = me->get_sequenced_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_elements.
-    result = me->get_text_elements(  ).
+    result = me->get_text_elements( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_elements_translations.
-    result = me->get_text_elements_translations(  ).
+    result = me->get_text_elements_translations( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_text_symbols.
-    result = me->get_text_symbols(  ).
+    result = me->get_text_symbols( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_xml.
-    result = me->get_xml(  ).
+    result = me->get_xml( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~get_xml_file.
-    result = me->get_xml_file(  ).
+    result = me->get_xml_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~is_dirty.
-    result = me->is_dirty(  ).
+    result = me->is_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~parse.
-    result = me->parse(  i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
+    result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~remove_file.
-    me->remove_file(  i_file = i_file ).
+    me->remove_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~set_definition.
-    me->set_definition(  i_def = i_def ).
+    me->set_definition( i_def = i_def ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~set_dirty.
-    me->set_dirty(  ).
+    me->set_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_291f04b3~update_file.
-    me->update_file(  i_file = i_file ).
+    me->update_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~add_file.
-    me->add_file(  i_file = i_file ).
+    me->add_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~contains_file.
-    result = me->contains_file(  i_filename = i_filename ).
+    result = me->contains_file( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~debug_description.
-    result = me->debug_description(  ).
+    result = me->debug_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_abap_file_by_name.
-    result = me->get_abap_file_by_name(  i_filename = i_filename ).
+    result = me->get_abap_file_by_name( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_abap_files.
-    result = me->get_abap_files(  ).
+    result = me->get_abap_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_allowed_naming.
-    result = me->get_allowed_naming(  ).
+    result = me->get_allowed_naming( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_files.
-    result = me->get_files(  ).
+    result = me->get_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_identifier.
-    result = me->get_identifier(  ).
+    result = me->get_identifier( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_main_abap_file.
-    result = me->get_main_abap_file(  ).
+    result = me->get_main_abap_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_parsing_issues.
-    result = me->get_parsing_issues(  ).
+    result = me->get_parsing_issues( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_sequenced_files.
-    result = me->get_sequenced_files(  ).
+    result = me->get_sequenced_files( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_text_elements.
-    result = me->get_text_elements(  ).
+    result = me->get_text_elements( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_text_elements_translations.
-    result = me->get_text_elements_translations(  ).
+    result = me->get_text_elements_translations( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_text_symbols.
-    result = me->get_text_symbols(  ).
+    result = me->get_text_symbols( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_type.
-    result = me->get_type(  ).
+    result = me->get_type( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_xml.
-    result = me->get_xml(  ).
+    result = me->get_xml( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~get_xml_file.
-    result = me->get_xml_file(  ).
+    result = me->get_xml_file( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~is_dirty.
-    result = me->is_dirty(  ).
+    result = me->is_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~parse.
-    result = me->parse(  i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
+    result = me->parse( i_release_7928 = i_release_7928 i_global_macros_5535 = i_global_macros_5535 i_reg_f149 = i_reg_f149 i_language_version_0e1d = i_language_version_0e1d ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~remove_file.
-    me->remove_file(  i_file = i_file ).
+    me->remove_file( i_file = i_file ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~set_dirty.
-    me->set_dirty(  ).
+    me->set_dirty( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_35a9fad2~update_file.
-    me->update_file(  i_file = i_file ).
+    me->update_file( i_file = i_file ).
   ENDMETHOD.
 ENDCLASS.

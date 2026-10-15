@@ -26,23 +26,23 @@ CLASS zcl_lnt_ty_table_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_t
 ENDCLASS.
 CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type( i_row_type ).
-    DATA(t2) = CAST zcl_lnt_itable_options( i_options ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( i_description ).
+    DATA(t1) = i_row_type.
+    DATA(t2) = i_options.
+    DATA(t3) = i_qualified_name.
+    DATA(t4) = i_description.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t5.
-    DATA(t6) = CONV abap_bool( abap_true ).
+    DATA(t6) = abap_true.
     IF t6 = abap_true.
       DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t8.
-      DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+      DATA(t9) = t3.
       t8 = t9.
       DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t10.
-      DATA(t11) = CAST zlnt_runtime_opti_4ba3bdccd169( t4 ).
+      DATA(t11) = t4.
       t10 = t11.
       DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t12.
@@ -79,13 +79,13 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t7->zlnt_json_ownkeys_70e5fd461788.
       t7->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t22) = CONV string( |qualifiedName| ).
+      DATA(t22) = |qualifiedName|.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
       ENDIF.
-      DATA(t24) = CONV string( |description| ).
+      DATA(t24) = |description|.
       DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t25.
       IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -98,10 +98,10 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       t5 = t26.
     ENDIF.
     super->constructor( i_input_967e = t5 ).
-    DATA(t27) = CAST zcl_lnt_abstract_type( t1 ).
+    DATA(t27) = t1.
     me->row_type = t27.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `rowType`.
-    DATA(t28) = CAST zcl_lnt_itable_options( t2 ).
+    DATA(t28) = t2.
     me->options = t28.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `options`.
     DATA(t29) = VALUE abap_bool( ).
@@ -112,13 +112,13 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     CLEAR t32.
     DATA t33 TYPE REF TO zcl_lnt_itable_key.
     CLEAR t33.
-    DATA(t34) = CAST zcl_lnt_itable_options( t2 ).
+    DATA(t34) = t2.
     t33 = t34->zlnt_view_read_sr_48b89cc62ab9( ).
     t32 = t33.
     DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t35.
     DATA(t36) = VALUE abap_bool( ).
-    DATA(t37) = CAST zcl_lnt_itable_key( t32 ).
+    DATA(t37) = t32.
     IF t37 IS INITIAL.
       t36 = abap_true.
     ENDIF.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       DATA(t39) = VALUE string( ).
       DATA t40 TYPE REF TO zcl_lnt_itable_key.
       CLEAR t40.
-      DATA(t41) = CAST zcl_lnt_itable_key( t32 ).
+      DATA(t41) = t32.
       t40 = t41.
       t39 = t40->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t42) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -141,9 +141,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     t31 = t35.
     DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t43.
-    DATA(t44) = CONV abap_bool( abap_true ).
+    DATA(t44) = abap_true.
     IF t44 = abap_true.
-      DATA(t45) = CONV string( |STANDARD| ).
+      DATA(t45) = |STANDARD|.
       DATA(t46) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t46->has = abap_true.
       t46->value = t45.
@@ -176,11 +176,11 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       CLEAR t52.
       DATA t53 TYPE REF TO zcl_lnt_itable_key.
       CLEAR t53.
-      DATA(t54) = CAST zcl_lnt_itable_options( t2 ).
+      DATA(t54) = t2.
       t53 = t54->zlnt_view_read_sr_48b89cc62ab9( ).
       t52 = t53.
       t51 = t52->zlnt_view_read_sr_3206010d7211( ).
-      DATA(t55) = CONV abap_bool( abap_true ).
+      DATA(t55) = abap_true.
       t50 = xsdbool( t51 = t55 ).
       t29 = t50.
     ENDIF.
@@ -191,9 +191,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       CLEAR t57.
       DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t58.
-      DATA(t59) = CONV abap_bool( abap_true ).
+      DATA(t59) = abap_true.
       IF t59 = abap_true.
-        DATA(t60) = CONV string( |STANDARD tables cannot have UNIQUE key| ).
+        DATA(t60) = |STANDARD tables cannot have UNIQUE key|.
         DATA(t61) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t61->has = abap_true.
         t61->value = t60.
@@ -236,30 +236,33 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       RAISE EXCEPTION t56.
     ENDIF.
   ENDMETHOD.
+
   METHOD get_options.
-    DATA(t1) = CAST zcl_lnt_itable_options( me->options ).
+    DATA(t1) = me->options.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_with_header.
     DATA t1 TYPE abap_bool.
-    DATA(t2) = CAST zcl_lnt_itable_options( me->options ).
+    DATA(t2) = me->options.
     t1 = t2->zlnt_view_read_sr_ec4602663c93( ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_access_type.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_itable_key.
     DATA t3 TYPE REF TO zcl_lnt_itable_key.
-    DATA(t4) = CAST zcl_lnt_itable_options( me->options ).
+    DATA(t4) = me->options.
     t3 = t4->zlnt_view_read_sr_48b89cc62ab9( ).
     t2 = t3.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zcl_lnt_itable_key( t2 ).
+    DATA(t7) = t2.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
@@ -270,7 +273,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ELSE.
       DATA t9 TYPE string.
       DATA t10 TYPE REF TO zcl_lnt_itable_key.
-      DATA(t11) = CAST zcl_lnt_itable_key( t2 ).
+      DATA(t11) = t2.
       t10 = t11.
       t9 = t10->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -280,69 +283,73 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t1 = t5.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_row_type.
-    DATA(t1) = CAST zcl_lnt_abstract_type( me->row_type ).
+    DATA(t1) = me->row_type.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |STANDARD TABLE OF | ).
+    DATA(t3) = |STANDARD TABLE OF |.
     DATA t4 TYPE string.
-    DATA(t5) = CAST zcl_lnt_abstract_type( me->row_type ).
-    t4 = t5->to_abap(  ).
-    DATA(t6) = CONV i( strlen( t3 ) ).
+    DATA(t5) = me->row_type.
+    t4 = t5->to_abap( ).
+    DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = CONV string( | WITH DEFAULT KEY| ).
-    DATA(t8) = CONV i( strlen( t2 ) ).
+    DATA(t7) = | WITH DEFAULT KEY|.
+    DATA(t8) = strlen( t2 ).
     t1 = |{ t2 }{ t7 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV f( i_level ).
+    DATA(t1) = i_level.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t3) = CAST zcl_lnt_abstract_type( me->row_type ).
+    DATA(t3) = me->row_type.
     t2 = t3.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = CAST zcl_lnt_itable_options( me->options ).
+    DATA(t6) = me->options.
     t5 = t6->zlnt_view_read_sr_ec4602663c93( ).
-    DATA(t7) = CONV abap_bool( abap_true ).
+    DATA(t7) = abap_true.
     t4 = xsdbool( t5 = t7 ).
     IF t4 = abap_true.
       DATA t8 TYPE string.
-      DATA(t9) = CONV string( |Table with header of | ).
+      DATA(t9) = |Table with header of |.
       DATA t10 TYPE string.
-      DATA(t11) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t11) = t2.
       DATA t12 TYPE f.
-      DATA(t13) = CONV f( t1 ).
+      DATA(t13) = t1.
       DATA(t14) = CONV f( 1 ).
       t12 = t13 + t14.
       t10 = t11->to_text( i_level = t12 ).
-      DATA(t15) = CONV i( strlen( t9 ) ).
+      DATA(t15) = strlen( t9 ).
       t8 = |{ t9 }{ t10 }|.
       result = t8.
       RETURN.
     ELSE.
       DATA t16 TYPE string.
-      DATA(t17) = CONV string( |Table of | ).
+      DATA(t17) = |Table of |.
       DATA t18 TYPE string.
-      DATA(t19) = CAST zcl_lnt_abstract_type( t2 ).
+      DATA(t19) = t2.
       DATA t20 TYPE f.
-      DATA(t21) = CONV f( t1 ).
+      DATA(t21) = t1.
       DATA(t22) = CONV f( 1 ).
       t20 = t21 + t22.
       t18 = t19->to_text( i_level = t20 ).
-      DATA(t23) = CONV i( strlen( t17 ) ).
+      DATA(t23) = strlen( t17 ).
       t16 = |{ t17 }{ t18 }|.
       result = t16.
-      RETURN.
+
     ENDIF.
   ENDMETHOD.
+
   METHOD is_generic.
     DATA(t1) = VALUE abap_bool( ).
     DATA(t2) = VALUE abap_bool( ).
@@ -351,13 +358,13 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     CLEAR t4.
     DATA t5 TYPE REF TO zcl_lnt_itable_key.
     DATA t6 TYPE REF TO zcl_lnt_itable_key.
-    DATA(t7) = CAST zcl_lnt_itable_options( me->options ).
+    DATA(t7) = me->options.
     t6 = t7->zlnt_view_read_sr_48b89cc62ab9( ).
     t5 = t6.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = CAST zcl_lnt_itable_key( t5 ).
+    DATA(t10) = t5.
     IF t10 IS INITIAL.
       t9 = abap_true.
     ENDIF.
@@ -368,7 +375,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ELSE.
       DATA t12 TYPE string.
       DATA t13 TYPE REF TO zcl_lnt_itable_key.
-      DATA(t14) = CAST zcl_lnt_itable_key( t5 ).
+      DATA(t14) = t5.
       t13 = t14.
       t12 = t13->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t15) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -379,9 +386,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     t4 = t8.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t16.
-    DATA(t17) = CONV abap_bool( abap_true ).
+    DATA(t17) = abap_true.
     IF t17 = abap_true.
-      DATA(t18) = CONV string( |STANDARD| ).
+      DATA(t18) = |STANDARD|.
       DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t19->has = abap_true.
       t19->value = t18.
@@ -415,9 +422,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     IF t3 = abap_true.
       DATA t23 TYPE abap_bool.
       DATA t24 TYPE string.
-      DATA(t25) = CAST zcl_lnt_itable_options( me->options ).
+      DATA(t25) = me->options.
       t24 = t25->zlnt_view_read_sr_79d5aa355dd3( ).
-      DATA(t26) = CONV string( |USER| ).
+      DATA(t26) = |USER|.
       t23 = xsdbool( t24 = t26 ).
       t2 = t23.
     ENDIF.
@@ -432,13 +439,13 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       CLEAR t30.
       DATA t31 TYPE REF TO zcl_lnt_itable_key.
       DATA t32 TYPE REF TO zcl_lnt_itable_key.
-      DATA(t33) = CAST zcl_lnt_itable_options( me->options ).
+      DATA(t33) = me->options.
       t32 = t33->zlnt_view_read_sr_48b89cc62ab9( ).
       t31 = t32.
       DATA t34 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t34.
       DATA(t35) = VALUE abap_bool( ).
-      DATA(t36) = CAST zcl_lnt_itable_key( t31 ).
+      DATA(t36) = t31.
       IF t36 IS INITIAL.
         t35 = abap_true.
       ENDIF.
@@ -449,7 +456,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       ELSE.
         DATA t38 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t39 TYPE REF TO zcl_lnt_itable_key.
-        DATA(t40) = CAST zcl_lnt_itable_key( t31 ).
+        DATA(t40) = t31.
         t39 = t40.
         t38 = t39->zlnt_view_read_sr_e0192e283129( ).
         t34 = t38.
@@ -459,7 +466,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t41.
       DATA(t42) = VALUE abap_bool( ).
-      DATA(t43) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+      DATA(t43) = t29.
       IF t43 IS INITIAL.
         t42 = abap_true.
       ENDIF.
@@ -471,7 +478,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
         DATA t45 TYPE f.
         DATA t46 TYPE i.
         DATA t47 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA(t48) = CAST zlnt_runtime_arra_8ecd6afe19e0( t29 ).
+        DATA(t48) = t29.
         t47 = t48.
         t47->load( ).
         t46 = lines( t47->items ).
@@ -484,7 +491,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       t28 = t41.
       DATA t50 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t50.
-      DATA(t51) = CONV abap_bool( abap_true ).
+      DATA(t51) = abap_true.
       IF t51 = abap_true.
         DATA(t52) = CONV f( 0 ).
         DATA(t53) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
@@ -518,215 +525,279 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       t1 = t27.
     ENDIF.
     IF t1 = abap_true.
-      DATA(t57) = CONV abap_bool( abap_true ).
+      DATA(t57) = abap_true.
       result = t57.
       RETURN.
     ENDIF.
     DATA t58 TYPE abap_bool.
-    DATA(t59) = CAST zcl_lnt_abstract_type( me->row_type ).
-    t58 = t59->is_generic(  ).
+    DATA(t59) = me->row_type.
+    t58 = t59->is_generic( ).
     result = t58.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD contains_void.
     DATA t1 TYPE abap_bool.
-    DATA(t2) = CAST zcl_lnt_abstract_type( me->row_type ).
-    t1 = t2->contains_void(  ).
+    DATA(t2) = me->row_type.
+    t1 = t2->contains_void( ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
-    DATA(t1) = CONV string( |abap.TODO_TABLE| ).
+    DATA(t1) = |abap.TODO_TABLE|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1043_18fb8ae33dc3.
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_2724f734~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_72e2c467~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
 ENDCLASS.

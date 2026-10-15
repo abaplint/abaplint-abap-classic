@@ -4,8 +4,8 @@ CLASS zlnt_runtime_json_3bdc898797fb DEFINITION PUBLIC CREATE PRIVATE.
     CLASS-METHODS parse IMPORTING p0 TYPE string RETURNING VALUE(result) TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
   PRIVATE SECTION.
     TYPES: BEGIN OF edit,
-    offset TYPE i,
-    count TYPE i,
+    offset      TYPE i,
+    count       TYPE i,
     replacement TYPE string,
     END OF edit.
     TYPES edits TYPE STANDARD TABLE OF edit WITH DEFAULT KEY.
@@ -20,6 +20,7 @@ CLASS zlnt_runtime_json_3bdc898797fb IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_exception_js_dd4bf8ec1aa1.
     ENDTRY.
   ENDMETHOD.
+
   METHOD normalize.
     DATA length TYPE i.
     DATA cursor TYPE i.

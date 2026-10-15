@@ -13,6 +13,7 @@ CLASS zcx_lnt_builtin_4c6a1223 IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_b425d82119de=>zlnt_member_d5_fe178efb571dcf.
   ENDMETHOD.

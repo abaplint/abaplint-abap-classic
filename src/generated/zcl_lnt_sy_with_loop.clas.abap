@@ -12,11 +12,11 @@ CLASS zcl_lnt_sy_with_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_with_loop IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0.
     t3 = t4->find_all_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t6.
@@ -42,8 +42,8 @@ CLASS zcl_lnt_sy_with_loop IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA(t11) = CAST zcl_lnt_expression_node( t6 ).
-      DATA(t12) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t11) = t6.
+      DATA(t12) = t2.
       DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t13.
       DATA t14 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -51,25 +51,31 @@ CLASS zcl_lnt_sy_with_loop IMPLEMENTATION.
       zcl_lnt_sy_expres_select=>run_syntax( i_node = t11 i_input_967e = t12 i_skip_implicit_into = t13 i_select_loop_6767 = t14 ).
     ENDDO.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d988_4de15e29dca8.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

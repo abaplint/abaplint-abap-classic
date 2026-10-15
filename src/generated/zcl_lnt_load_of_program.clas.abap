@@ -17,15 +17,15 @@ CLASS zcl_lnt_load_of_program IMPLEMENTATION.
     CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t2.
-    DATA(t3) = CONV string( |LOAD-OF-PROGRAM| ).
+    DATA(t3) = |LOAD-OF-PROGRAM|.
     t2 = zcl_lnt_st_combi_module=>str( i_s = t3 ).
     t1 = t2.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t4.
-    DATA(t5) = CONV string( |Cloud| ).
+    DATA(t5) = |Cloud|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t7) = t1.
     CLEAR t6.
     IF t7 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -55,29 +55,36 @@ CLASS zcl_lnt_load_of_program IMPLEMENTATION.
     ENDIF.
     t4 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t5 i_first = t6 ).
     result = t4.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d544_b65fb33374a3.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

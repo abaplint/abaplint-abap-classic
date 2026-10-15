@@ -10,8 +10,9 @@ CLASS zcl_lnt_sql_path_for_entity DEFINITION PUBLIC INHERITING FROM zcl_lnt_expr
 ENDCLASS.
 CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -21,7 +22,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t4.
-    DATA(t5) = NEW zcl_lnt_sqlcte_path_prefix(  ).
+    DATA(t5) = NEW zcl_lnt_sqlcte_path_prefix( ).
     CLEAR t4.
     IF t5 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -95,9 +96,9 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     t14 = t15.
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t16.
-    DATA(t17) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t17) = t3.
+    DATA(t18) = t8.
+    DATA(t19) = t14.
     t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t17 i_second = t18 i_rest = t19 ).
     t2 = t16.
     t1 = t2.
@@ -115,7 +116,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t24 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t25) = CONV string( |v740sp05| ).
+    DATA(t25) = |v740sp05|.
     t23 = t24->get( p0 = t25 ).
     t22 = t23.
     CLEAR t21.
@@ -157,7 +158,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     CLEAR t32.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
-    DATA(t34) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t34) = t1.
     CLEAR t33.
     IF t34 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -291,9 +292,9 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     t49 = t50.
     DATA t51 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t51.
-    DATA(t52) = CAST zlnt_runtime_dyna_a429568d5be8( t30 ).
-    DATA(t53) = CAST zlnt_runtime_dyna_a429568d5be8( t39 ).
-    DATA(t54) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
+    DATA(t52) = t30.
+    DATA(t53) = t39.
+    DATA(t54) = t49.
     t51 = zcl_lnt_st_combi_module=>seq( i_first = t52 i_second = t53 i_rest = t54 ).
     t29 = t51.
     CLEAR t28.
@@ -327,14 +328,16 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     CLEAR t57.
     t20 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t21 i_first = t28 i_opts = t57 ).
     result = t20.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d343_356b2fce6a0b.
   ENDMETHOD.

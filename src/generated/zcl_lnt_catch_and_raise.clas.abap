@@ -21,30 +21,31 @@ ENDCLASS.
 CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_catch_and_raise_conf(  ).
+    DATA(t1) = NEW zcl_lnt_catch_and_raise_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |catch_and_raise| ).
+    DATA(t3) = |catch_and_raise|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Catch and re-raise same exception| ).
+    DATA(t5) = |Catch and re-raise same exception|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Reports CATCH blocks that only re-raise the caught exception| ).
+    DATA(t7) = |Reports CATCH blocks that only re-raise the caught exception|.
     t7 = t7 && | without any handling|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |TRY.\n  something( ).\nCATCH zcx_something INTO DATA(lv_exc).\n| ).
+      DATA(t11) = |TRY.\n  something( ).\nCATCH zcx_something INTO DATA(lv_exc).\n|.
       t11 = t11 && |  RAISE EXCEPTION lv_exc.\nENDTRY.|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
@@ -60,9 +61,9 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
-      DATA(t17) = CONV string( |TRY.\n  something( ).\nCATCH zcx_something.\n  " handle excepti| ).
+      DATA(t17) = |TRY.\n  something( ).\nCATCH zcx_something.\n  " handle excepti|.
       t17 = t17 && |on\nENDTRY.|.
       DATA(t18) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t18->has = abap_true.
@@ -78,19 +79,19 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     CLEAR t20.
     DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t21.
-    DATA(t22) = CONV abap_bool( abap_true ).
+    DATA(t22) = abap_true.
     IF t22 = abap_true.
       DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t25.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
-      DATA(t27) = CONV string( |SingleFile| ).
+      DATA(t26) = t24.
+      DATA(t27) = |SingleFile|.
       t26->load( ).
       APPEND t27 TO t26->items.
       t26->save( ).
-      DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t24 ).
+      DATA(t28) = t24.
       t23 = t28.
       t21 = t23.
     ELSE.
@@ -146,58 +147,61 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t42) = CONV string( |key| ).
+    DATA(t42) = |key|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t43.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
     ENDIF.
-    DATA(t44) = CONV string( |title| ).
+    DATA(t44) = |title|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t45.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
     ENDIF.
-    DATA(t46) = CONV string( |shortDescription| ).
+    DATA(t46) = |shortDescription|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t47.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
     ENDIF.
-    DATA(t48) = CONV string( |badExample| ).
+    DATA(t48) = |badExample|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t49.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
     ENDIF.
-    DATA(t50) = CONV string( |goodExample| ).
+    DATA(t50) = |goodExample|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t51.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
     ENDIF.
-    DATA(t52) = CONV string( |tags| ).
+    DATA(t52) = |tags|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t53.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_ct_an_rs_ts_ct_an_rs.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_ct_an_rs_ts_ct_an_rs.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_catch_and_raise_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_ct_an_rs_ts_ct_an_rs.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -205,23 +209,23 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
     DATA t5 TYPE REF TO zcl_lnt_structure_node.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t7) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t9) = CAST zcl_lnt_abap_file( t6 ).
+    DATA(t9) = t6.
     t8 = t9->structure.
     t5 = t8.
     t4 = t5.
     DATA(t10) = VALUE abap_bool( ).
     DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t12) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t12) = t4.
     t11 = t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
     t13 = t14.
     DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = CAST zcl_lnt_structure_node( t11 ).
+    DATA(t16) = t11.
     IF t16 IS INITIAL.
       t15 = abap_true.
     ENDIF.
@@ -234,9 +238,9 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t19 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t20) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t20) = t4.
     t19 = t20.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d712_8689fb760a6c ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d712_8689fb760a6c.
     t18 = t19->find_all_structures( i_type_9913 = t21 ).
     DATA t22 TYPE REF TO zcl_lnt_structure_node.
     CLEAR t22.
@@ -264,20 +268,20 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       ENDIF.
       DATA t27 TYPE REF TO zcl_lnt_statement_node.
       DATA t28 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t29) = CAST zcl_lnt_structure_node( t22 ).
-      DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d402_a27e9c5370ec ).
+      DATA(t29) = t22.
+      DATA(t30) = zlnt_runtime_desc_78196487750d=>zlnt_member_d402_a27e9c5370ec.
       t28 = t29->find_direct_statement( i_type_9913 = t30 ).
       t27 = t28.
       DATA(t31) = VALUE abap_bool( ).
       DATA t32 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t33) = CAST zcl_lnt_statement_node( t27 ).
+      DATA(t33) = t27.
       t32 = t33.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t35.
       t34 = t35.
       DATA(t36) = VALUE abap_bool( ).
-      DATA(t37) = CAST zcl_lnt_statement_node( t32 ).
+      DATA(t37) = t32.
       IF t37 IS INITIAL.
         t36 = abap_true.
       ENDIF.
@@ -288,21 +292,21 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA t38 TYPE REF TO zcl_lnt_expression_node.
       DATA t39 TYPE REF TO zcl_lnt_expression_node.
       DATA t40 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t41) = CAST zcl_lnt_statement_node( t27 ).
+      DATA(t41) = t27.
       t40 = t41.
-      DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494 ).
+      DATA(t42) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
       t39 = t40->find_first_expression( i_type_9913 = t42 ).
       t38 = t39.
       DATA(t43) = VALUE abap_bool( ).
       DATA t44 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t45) = CAST zcl_lnt_expression_node( t38 ).
+      DATA(t45) = t38.
       t44 = t45.
       DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t47.
       t46 = t47.
       DATA(t48) = VALUE abap_bool( ).
-      DATA(t49) = CAST zcl_lnt_expression_node( t44 ).
+      DATA(t49) = t44.
       IF t49 IS INITIAL.
         t48 = abap_true.
       ENDIF.
@@ -313,21 +317,21 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA t50 TYPE REF TO zcl_lnt_expression_node.
       DATA t51 TYPE REF TO zcl_lnt_expression_node.
       DATA t52 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t53) = CAST zcl_lnt_expression_node( t38 ).
+      DATA(t53) = t38.
       t52 = t53.
-      DATA(t54) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844 ).
+      DATA(t54) = zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844.
       t51 = t52->find_first_expression( i_type_9913 = t54 ).
       t50 = t51.
       DATA(t55) = VALUE abap_bool( ).
       DATA t56 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t57) = CAST zcl_lnt_expression_node( t50 ).
+      DATA(t57) = t50.
       t56 = t57.
       DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t59.
       t58 = t59.
       DATA(t60) = VALUE abap_bool( ).
-      DATA(t61) = CAST zcl_lnt_expression_node( t56 ).
+      DATA(t61) = t56.
       IF t61 IS INITIAL.
         t60 = abap_true.
       ENDIF.
@@ -341,15 +345,15 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA t65 TYPE REF TO zcl_lnt_abstract_token.
       DATA t66 TYPE REF TO zcl_lnt_abstract_token.
       DATA t67 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t68) = CAST zcl_lnt_expression_node( t50 ).
+      DATA(t68) = t50.
       t67 = t68.
-      t66 = t67->get_first_token(  ).
+      t66 = t67->get_first_token( ).
       t65 = t66.
       DATA t69 TYPE string.
-      DATA(t70) = CAST zcl_lnt_abstract_token( t65 ).
+      DATA(t70) = t65.
       t69 = t70->str.
       t64 = t69.
-      DATA(t71) = CONV i( strlen( t64 ) ).
+      DATA(t71) = strlen( t64 ).
       t63 = t64.
       IF t63 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t63 TO UPPER CASE.
@@ -359,15 +363,15 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       t62 = t63.
       DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t73 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t74) = CAST zcl_lnt_structure_node( t22 ).
-      t73 = t74->find_all_statement_nodes(  ).
+      DATA(t74) = t22.
+      t73 = t74->find_all_statement_nodes( ).
       t72 = t73.
       DATA t75 TYPE abap_bool.
       DATA t76 TYPE i.
-      DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t72 ).
+      DATA(t77) = t72.
       t77->load( ).
       t76 = lines( t77->items ).
-      DATA(t78) = CONV i( 2 ).
+      DATA(t78) = 2.
       t75 = xsdbool( t76 <> t78 ).
       IF t75 = abap_true.
         CONTINUE.
@@ -378,7 +382,7 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       CLEAR t81.
       DATA t82 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t82.
-      DATA(t83) = CAST zlnt_runtime_arra_c22708faf2e3( t72 ).
+      DATA(t83) = t72.
       DATA t84 TYPE REF TO object.
       CLEAR t84.
       t83->load( ).
@@ -395,7 +399,7 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       ELSE.
         t82 ?= t84.
       ENDIF.
-      t81 = t82->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      t81 = t82->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t80 = xsdbool( t81 IS BOUND AND t81 IS INSTANCE OF zcl_lnt_st_raise ).
       t79 = xsdbool( t80 = abap_false ).
       IF t79 = abap_true.
@@ -405,7 +409,7 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       CLEAR t87.
       DATA t88 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t88.
-      DATA(t89) = CAST zlnt_runtime_arra_c22708faf2e3( t72 ).
+      DATA(t89) = t72.
       DATA t90 TYPE REF TO object.
       CLEAR t90.
       t89->load( ).
@@ -428,9 +432,9 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA(t95) = VALUE string( ).
       DATA t96 TYPE string.
       DATA t97 TYPE string.
-      DATA(t98) = CAST zcl_lnt_statement_node( t87 ).
-      t97 = t98->concat_tokens(  ).
-      DATA(t99) = CONV i( strlen( t97 ) ).
+      DATA(t98) = t87.
+      t97 = t98->concat_tokens( ).
+      DATA(t99) = strlen( t97 ).
       t96 = t97.
       IF t96 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t96 TO UPPER CASE.
@@ -439,13 +443,13 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       ENDIF.
       DATA t100 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t100.
-      DATA(t101) = CONV string( `\.$` ).
-      DATA(t102) = CONV string( || ).
+      DATA(t101) = `\.$`.
+      DATA(t102) = ||.
       CREATE OBJECT t100 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t101 flags = t102.
-      DATA(t103) = CONV string( || ).
-      DATA(t104) = CONV i( strlen( t96 ) ).
+      DATA(t103) = ||.
+      DATA(t104) = strlen( t96 ).
       t95 = t100->replace( p0 = t96 p1 = t103 ).
-      DATA(t105) = CONV i( strlen( t95 ) ).
+      DATA(t105) = strlen( t95 ).
       DATA t106 TYPE i.
       DATA t107 TYPE i.
       t106 = 0.
@@ -525,9 +529,9 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       t93 = t94.
       DATA(t124) = VALUE abap_bool( ).
       DATA(t125) = VALUE abap_bool( ).
-      DATA(t126) = CONV string( t93 ).
-      DATA(t127) = CONV string( |RAISE EXCEPTION | ).
-      DATA(t128) = CONV i( strlen( t126 ) ).
+      DATA(t126) = t93.
+      DATA(t127) = |RAISE EXCEPTION |.
+      DATA(t128) = strlen( t126 ).
       DATA t129 TYPE i.
       DATA(t130) = VALUE i( ).
       DATA(t131) = VALUE string( ).
@@ -548,14 +552,14 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA t132 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t133 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t134 TYPE string.
-      DATA(t135) = CONV string( t93 ).
+      DATA(t135) = t93.
       t134 = t135.
       DATA t136 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t137) = CONV string( t134 ).
+      DATA(t137) = t134.
       DATA t138 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t138.
-      DATA(t139) = CONV string( `\s+` ).
-      DATA(t140) = CONV string( |[\t\n| ).
+      DATA(t139) = `\s+`.
+      DATA(t140) = |[\t\n|.
       DATA t141 TYPE c LENGTH 1.
       CLEAR t141.
       t141 = cl_abap_conv_in_ce=>uccpi( 11 ).
@@ -579,34 +583,34 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       t145 = cl_abap_conv_in_ce=>uccpi( 65279 ).
       CONCATENATE t140 t145 INTO t140 RESPECTING BLANKS.
       t140 = t140 && |]+|.
-      DATA(t146) = CONV string( || ).
+      DATA(t146) = ||.
       CREATE OBJECT t138 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t140 flags = t146.
       t138->source = t139.
       DATA(t147) = CONV f( '4294967295' ).
-      DATA(t148) = CONV i( strlen( t137 ) ).
+      DATA(t148) = strlen( t137 ).
       t136 = zlnt_runtime_stri_248d3505915c=>split( text = t137 pattern = t138 limit = t147 ).
       t133 = t136.
       t132 = t133.
       DATA t149 TYPE abap_bool.
       DATA t150 TYPE i.
-      DATA(t151) = CAST zlnt_runtime_arra_8ecd6afe19e0( t132 ).
+      DATA(t151) = t132.
       t151->load( ).
       t150 = lines( t151->items ).
-      DATA(t152) = CONV i( 3 ).
+      DATA(t152) = 3.
       t149 = xsdbool( t150 <> t152 ).
       IF t149 = abap_true.
         CONTINUE.
       ENDIF.
       DATA(t153) = VALUE abap_bool( ).
       DATA t154 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t155) = CAST zlnt_runtime_arra_8ecd6afe19e0( t132 ).
-      DATA(t156) = CONV i( 2 ).
+      DATA(t155) = t132.
+      DATA(t156) = 2.
       t154 = t155->get( p0 = t156 ).
       DATA t157 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t157.
-      DATA(t158) = CONV abap_bool( abap_true ).
+      DATA(t158) = abap_true.
       IF t158 = abap_true.
-        DATA(t159) = CONV string( t62 ).
+        DATA(t159) = t62.
         DATA(t160) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t160->has = abap_true.
         t160->value = t159.
@@ -632,35 +636,35 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t153 = abap_true.
-        DATA(t164) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t164) = t2.
         DATA t165 TYPE REF TO zcl_lnt_issue.
         CLEAR t165.
-        DATA(t166) = CAST zcl_lnt_abap_file( t1 ).
+        DATA(t166) = t1.
         DATA t167 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t168) = CAST zcl_lnt_statement_node( t27 ).
+        DATA(t168) = t27.
         t167 = t168.
-        DATA(t169) = CONV string( |Caught exception is immediately re-raised, CATCH block has n| ).
+        DATA(t169) = |Caught exception is immediately re-raised, CATCH block has n|.
         t169 = t169 && |o effect|.
         DATA(t170) = VALUE string( ).
         DATA t171 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t171.
         DATA t172 TYPE string.
-        DATA(t173) = CONV string( |catch_and_raise| ).
+        DATA(t173) = |catch_and_raise|.
         t172 = t173.
         DATA t174 TYPE string.
-        DATA(t175) = CONV string( |Catch and re-raise same exception| ).
+        DATA(t175) = |Catch and re-raise same exception|.
         t174 = t175.
         DATA t176 TYPE string.
-        DATA(t177) = CONV string( |Reports CATCH blocks that only re-raise the caught exception| ).
+        DATA(t177) = |Reports CATCH blocks that only re-raise the caught exception|.
         t177 = t177 && | without any handling|.
         t176 = t177.
         DATA t178 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t178.
         DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t179.
-        DATA(t180) = CONV abap_bool( abap_true ).
+        DATA(t180) = abap_true.
         IF t180 = abap_true.
-          DATA(t181) = CONV string( |TRY.\n  something( ).\nCATCH zcx_something INTO DATA(lv_exc).\n| ).
+          DATA(t181) = |TRY.\n  something( ).\nCATCH zcx_something INTO DATA(lv_exc).\n|.
           t181 = t181 && |  RAISE EXCEPTION lv_exc.\nENDTRY.|.
           DATA(t182) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t182->has = abap_true.
@@ -676,9 +680,9 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         CLEAR t184.
         DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t185.
-        DATA(t186) = CONV abap_bool( abap_true ).
+        DATA(t186) = abap_true.
         IF t186 = abap_true.
-          DATA(t187) = CONV string( |TRY.\n  something( ).\nCATCH zcx_something.\n  " handle excepti| ).
+          DATA(t187) = |TRY.\n  something( ).\nCATCH zcx_something.\n  " handle excepti|.
           t187 = t187 && |on\nENDTRY.|.
           DATA(t188) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t188->has = abap_true.
@@ -694,19 +698,19 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         CLEAR t190.
         DATA t191 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t191.
-        DATA(t192) = CONV abap_bool( abap_true ).
+        DATA(t192) = abap_true.
         IF t192 = abap_true.
           DATA t193 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t194 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t195 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t195.
           t194 = t195.
-          DATA(t196) = CAST zlnt_runtime_arra_8ecd6afe19e0( t194 ).
-          DATA(t197) = CONV string( |SingleFile| ).
+          DATA(t196) = t194.
+          DATA(t197) = |SingleFile|.
           t196->load( ).
           APPEND t197 TO t196->items.
           t196->save( ).
-          DATA(t198) = CAST zlnt_runtime_arra_8ecd6afe19e0( t194 ).
+          DATA(t198) = t194.
           t193 = t198.
           t191 = t193.
         ELSE.
@@ -762,37 +766,37 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t171->zlnt_json_ownkeys_70e5fd461788.
         t171->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t212) = CONV string( |key| ).
+        DATA(t212) = |key|.
         DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t213.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t212 p1 = t213 ).
         ENDIF.
-        DATA(t214) = CONV string( |title| ).
+        DATA(t214) = |title|.
         DATA t215 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t215.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t214 p1 = t215 ).
         ENDIF.
-        DATA(t216) = CONV string( |shortDescription| ).
+        DATA(t216) = |shortDescription|.
         DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t217.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t216 p1 = t217 ).
         ENDIF.
-        DATA(t218) = CONV string( |badExample| ).
+        DATA(t218) = |badExample|.
         DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t219.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t218 p1 = t219 ).
         ENDIF.
-        DATA(t220) = CONV string( |goodExample| ).
+        DATA(t220) = |goodExample|.
         DATA t221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t221.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t220 p1 = t221 ).
         ENDIF.
-        DATA(t222) = CONV string( |tags| ).
+        DATA(t222) = |tags|.
         DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t223.
         IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -800,7 +804,7 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         ENDIF.
         t170 = t171->key.
         DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t225) = CAST zcl_lnt_catch_and_raise_conf( me->conf ).
+        DATA(t225) = me->conf.
         t224 = t225->zlnt_view_read_sr_15c06369f827( ).
         DATA t226 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t226.
@@ -812,26 +816,30 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         t164->save( ).
       ENDIF.
     ENDDO.
-    DATA(t228) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t228) = t2.
     result = t228.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_message.
-    DATA(t1) = CONV string( |Caught exception is immediately re-raised, CATCH block has n| ).
+    DATA(t1) = |Caught exception is immediately re-raised, CATCH block has n|.
     t1 = t1 && |o effect|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs(  ) ).
+    DATA(t1) = CAST zcl_lnt_catch_and_raise_conf( me->g_c_i_s_r_ct_an_rs_ts_ct_an_rs( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_catch_and_raise_conf.
     CLEAR t1.
@@ -863,19 +871,22 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_ct_an_rs_ts_ct_an_rs( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_ct_an_rs_ts_ct_an_rs( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1414_aba1c02164e6.
   ENDMETHOD.

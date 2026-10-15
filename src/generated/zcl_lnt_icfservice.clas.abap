@@ -18,22 +18,24 @@ CLASS zcl_lnt_icfservice DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_obje
 ENDCLASS.
 CLASS zcl_lnt_icfservice IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_name ).
-    DATA(t2) = CONV string( t1 ).
+    DATA(t1) = i_name.
+    DATA(t2) = t1.
     super->constructor( i_name = t2 ).
   ENDMETHOD.
+
   METHOD get_type.
-    DATA(t1) = CONV string( |SICF| ).
+    DATA(t1) = |SICF|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
     DATA t2 TYPE f.
     DATA(t3) = CONV f( 100 ).
     t2 = t3.
     DATA t4 TYPE abap_bool.
-    DATA(t5) = CONV abap_bool( abap_true ).
+    DATA(t5) = abap_true.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -54,45 +56,48 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t10) = CONV string( |maxLength| ).
+    DATA(t10) = |maxLength|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t11.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
     ENDIF.
-    DATA(t12) = CONV string( |allowNamespace| ).
+    DATA(t12) = |allowNamespace|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_dirty.
     DATA t1 TYPE REF TO zcl_lnt_shape_c9bc8812.
     CLEAR t1.
     me->parsed_xml = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsedXML`.
-    super->set_dirty(  ).
+    super->set_dirty( ).
   ENDMETHOD.
+
   METHOD get_description.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_url.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv( ) ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_shape_c9bc8812.
-    DATA(t4) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+    DATA(t4) = me->parsed_xml.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zcl_lnt_shape_c9bc8812( t3 ).
+    DATA(t7) = t3.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
@@ -103,26 +108,27 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t10 TYPE REF TO zcl_lnt_shape_c9bc8812.
-      DATA(t11) = CAST zcl_lnt_shape_c9bc8812( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
       t9 = t10->url_01ab.
       t5 = t9.
     ENDIF.
     t2 = t5.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_handler_list.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv( ) ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_shape_c9bc8812.
-    DATA(t4) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+    DATA(t4) = me->parsed_xml.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t5.
     DATA(t6) = VALUE abap_bool( ).
-    DATA(t7) = CAST zcl_lnt_shape_c9bc8812( t3 ).
+    DATA(t7) = t3.
     IF t7 IS INITIAL.
       t6 = abap_true.
     ENDIF.
@@ -133,24 +139,25 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zcl_lnt_shape_c9bc8812.
-      DATA(t11) = CAST zcl_lnt_shape_c9bc8812( t3 ).
+      DATA(t11) = t3.
       t10 = t11.
       t9 = t10->handlers.
       t5 = t9.
     ENDIF.
     t2 = t5.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD pr_in_sr_ob_icf_srv_ts_icf_srv.
     DATA(t1) = VALUE abap_bool( ).
-    DATA(t2) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+    DATA(t2) = me->parsed_xml.
     t1 = xsdbool( t2 IS BOUND ).
     IF t1 = abap_true.
       DATA t3 TYPE REF TO zcl_lnt_iparse_result.
       CLEAR t3.
       DATA(t4) = VALUE abap_bool( ).
-      DATA(t5) = CONV abap_bool( abap_false ).
+      DATA(t5) = abap_false.
       t4 = t5.
       DATA(t6) = VALUE f( ).
       DATA(t7) = CONV f( 0 ).
@@ -175,13 +182,13 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t3->zlnt_json_ownkeys_70e5fd461788.
       t3->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t12) = CONV string( |updated| ).
+      DATA(t12) = |updated|.
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t13.
       IF t3->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
       ENDIF.
-      DATA(t14) = CONV string( |runtime| ).
+      DATA(t14) = |runtime|.
       DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t15.
       IF t3->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -192,12 +199,12 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ENDIF.
     DATA(t16) = VALUE f( ).
     DATA(t17) = VALUE f( ).
-    DATA(t18) = CONV i( 0 ).
+    DATA(t18) = 0.
     t17 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     t16 = t17.
     DATA t19 TYPE REF TO zcl_lnt_shape_c9bc8812.
     CLEAR t19.
-    DATA(t20) = CONV abap_bool( abap_true ).
+    DATA(t20) = abap_true.
     IF t20 = abap_true.
       DATA t21 TYPE REF TO zcl_lnt_shape_c9bc8812.
       CLEAR t21.
@@ -226,14 +233,14 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsedXML`.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t27.
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2(  ) ).
+    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     t27 = t28.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t30.
     DATA(t31) = VALUE abap_bool( ).
-    DATA(t32) = CAST zlnt_runtime_dyna_a429568d5be8( t27 ).
+    DATA(t32) = t27.
     IF t32 IS INITIAL.
       t31 = abap_true.
     ENDIF.
@@ -244,7 +251,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t34.
-      DATA(t35) = CAST zlnt_runtime_dyna_a429568d5be8( t27 ).
+      DATA(t35) = t27.
       t34 = t35.
       t30 = t34.
     ENDIF.
@@ -254,7 +261,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA(t38) = VALUE abap_bool( ).
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t39.
-    DATA(t40) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+    DATA(t40) = t29.
     t39 = t40.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t41.
@@ -262,7 +269,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     CLEAR t42.
     t41 = t42.
     DATA(t43) = VALUE abap_bool( ).
-    DATA(t44) = CAST zlnt_runtime_dyna_a429568d5be8( t39 ).
+    DATA(t44) = t39.
     IF t44 IS INITIAL.
       t43 = abap_true.
     ENDIF.
@@ -276,9 +283,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t47.
       DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t48.
-      DATA(t49) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+      DATA(t49) = t29.
       t48 = t49.
-      DATA(t50) = CONV string( |abapGit| ).
+      DATA(t50) = |abapGit|.
       t47 = t48->get( p0 = t50 ).
       t46 = t47.
       DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -287,7 +294,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t52.
       t51 = t52.
       DATA(t53) = VALUE abap_bool( ).
-      DATA(t54) = CAST zlnt_runtime_dyna_a429568d5be8( t46 ).
+      DATA(t54) = t46.
       IF t54 IS INITIAL.
         t53 = abap_true.
       ENDIF.
@@ -311,15 +318,15 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t61.
       DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t62.
-      DATA(t63) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+      DATA(t63) = t29.
       t62 = t63.
-      DATA(t64) = CONV string( |abapGit| ).
+      DATA(t64) = |abapGit|.
       t61 = t62->get( p0 = t64 ).
       t60 = t61.
       DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t65.
       DATA(t66) = VALUE abap_bool( ).
-      DATA(t67) = CAST zlnt_runtime_dyna_a429568d5be8( t60 ).
+      DATA(t67) = t60.
       IF t67 IS NOT BOUND.
         t66 = abap_true.
       ELSE.
@@ -332,8 +339,8 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       ELSE.
         DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t69.
-        DATA(t70) = CAST zlnt_runtime_dyna_a429568d5be8( t60 ).
-        DATA(t71) = CONV string( |asx:abap| ).
+        DATA(t70) = t60.
+        DATA(t71) = |asx:abap|.
         t69 = t70->get( p0 = t71 ).
         t65 = t69.
       ENDIF.
@@ -344,7 +351,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       DATA(t73) = VALUE abap_bool( ).
       DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t74.
-      DATA(t75) = CAST zlnt_runtime_dyna_a429568d5be8( t58 ).
+      DATA(t75) = t58.
       CLEAR t74.
       IF t75 IS BOUND.
         t74 = t75.
@@ -363,9 +370,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
         CLEAR t77.
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t78.
-        DATA(t79) = CAST zlnt_runtime_dyna_a429568d5be8( t58 ).
+        DATA(t79) = t58.
         t78 = t79.
-        DATA(t80) = CONV string( |asx:values| ).
+        DATA(t80) = |asx:values|.
         t77 = t78->get( p0 = t80 ).
         t72 = t77.
       ENDIF.
@@ -377,7 +384,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t82.
       t81 = t82.
       DATA(t83) = VALUE abap_bool( ).
-      DATA(t84) = CAST zlnt_runtime_dyna_a429568d5be8( t56 ).
+      DATA(t84) = t56.
       IF t84 IS INITIAL.
         t83 = abap_true.
       ENDIF.
@@ -388,7 +395,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       DATA t85 TYPE REF TO zcl_lnt_iparse_result.
       CLEAR t85.
       DATA(t86) = VALUE abap_bool( ).
-      DATA(t87) = CONV abap_bool( abap_false ).
+      DATA(t87) = abap_false.
       t86 = t87.
       DATA(t88) = VALUE f( ).
       DATA(t89) = CONV f( 0 ).
@@ -413,13 +420,13 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t85->zlnt_json_ownkeys_70e5fd461788.
       t85->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t94) = CONV string( |updated| ).
+      DATA(t94) = |updated|.
       DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t95.
       IF t85->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t85->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
       ENDIF.
-      DATA(t96) = CONV string( |runtime| ).
+      DATA(t96) = |runtime|.
       DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t97.
       IF t85->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -446,15 +453,15 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     CLEAR t105.
     DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t106.
-    DATA(t107) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+    DATA(t107) = t29.
     t106 = t107.
-    DATA(t108) = CONV string( |abapGit| ).
+    DATA(t108) = |abapGit|.
     t105 = t106->get( p0 = t108 ).
     t104 = t105.
     DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t109.
     DATA(t110) = VALUE abap_bool( ).
-    DATA(t111) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
+    DATA(t111) = t104.
     IF t111 IS NOT BOUND.
       t110 = abap_true.
     ELSE.
@@ -467,8 +474,8 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t113.
-      DATA(t114) = CAST zlnt_runtime_dyna_a429568d5be8( t104 ).
-      DATA(t115) = CONV string( |asx:abap| ).
+      DATA(t114) = t104.
+      DATA(t115) = |asx:abap|.
       t113 = t114->get( p0 = t115 ).
       t109 = t113.
     ENDIF.
@@ -479,7 +486,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA(t117) = VALUE abap_bool( ).
     DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t118.
-    DATA(t119) = CAST zlnt_runtime_dyna_a429568d5be8( t102 ).
+    DATA(t119) = t102.
     CLEAR t118.
     IF t119 IS BOUND.
       t118 = t119.
@@ -498,9 +505,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t121.
       DATA t122 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t122.
-      DATA(t123) = CAST zlnt_runtime_dyna_a429568d5be8( t102 ).
+      DATA(t123) = t102.
       t122 = t123.
-      DATA(t124) = CONV string( |asx:values| ).
+      DATA(t124) = |asx:values|.
       t121 = t122->get( p0 = t124 ).
       t116 = t121.
     ENDIF.
@@ -511,7 +518,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA(t126) = VALUE abap_bool( ).
     DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t127.
-    DATA(t128) = CAST zlnt_runtime_dyna_a429568d5be8( t100 ).
+    DATA(t128) = t100.
     CLEAR t127.
     IF t128 IS BOUND.
       t127 = t128.
@@ -530,9 +537,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t130.
       DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t131.
-      DATA(t132) = CAST zlnt_runtime_dyna_a429568d5be8( t100 ).
+      DATA(t132) = t100.
       t131 = t132.
-      DATA(t133) = CONV string( |ICFHANDLER_TABLE| ).
+      DATA(t133) = |ICFHANDLER_TABLE|.
       t130 = t131->get( p0 = t133 ).
       t125 = t130.
     ENDIF.
@@ -543,7 +550,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t135.
     DATA(t136) = VALUE abap_bool( ).
-    DATA(t137) = CAST zlnt_runtime_dyna_a429568d5be8( t98 ).
+    DATA(t137) = t98.
     IF t137 IS INITIAL.
       t136 = abap_true.
     ENDIF.
@@ -554,18 +561,18 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t139.
-      DATA(t140) = CAST zlnt_runtime_dyna_a429568d5be8( t98 ).
+      DATA(t140) = t98.
       t139 = t140.
       t135 = t139.
     ENDIF.
     t134 = t135.
     DATA t141 TYPE REF TO zcl_lnt_shape_c9bc8812.
     CLEAR t141.
-    DATA(t142) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+    DATA(t142) = me->parsed_xml.
     t141 = t142.
     DATA t143 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t143.
-    DATA(t144) = CONV abap_bool( abap_true ).
+    DATA(t144) = abap_true.
     IF t144 = abap_true.
       DATA t145 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t145.
@@ -583,7 +590,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     IF t141->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t141->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `handlers` p1 = t147 ).
     ENDIF.
-    DATA(t148) = CONV string( |handlers| ).
+    DATA(t148) = |handlers|.
     DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t149.
     IF t141->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -593,7 +600,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     CLEAR t150.
     DATA t151 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t151.
-    DATA(t152) = CAST zlnt_runtime_dyna_a429568d5be8( t134 ).
+    DATA(t152) = t134.
     CLEAR t151.
     IF t152 IS BOUND.
       t151 = t152.
@@ -664,8 +671,8 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t161.
       DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t162.
-      DATA(t163) = CAST zlnt_runtime_dyna_a429568d5be8( t153 ).
-      DATA(t164) = CONV string( |ICFHANDLER| ).
+      DATA(t163) = t153.
+      DATA(t164) = |ICFHANDLER|.
       t162 = t163->get( p0 = t164 ).
       t161 = t162.
       DATA t165 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -675,7 +682,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       t165 = t166.
       DATA(t167) = VALUE abap_bool( ).
       DATA(t168) = VALUE abap_bool( ).
-      DATA(t169) = CAST zlnt_runtime_dyna_a429568d5be8( t161 ).
+      DATA(t169) = t161.
       IF t169 IS INITIAL.
         t168 = abap_true.
       ENDIF.
@@ -688,7 +695,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
         CLEAR t171.
         DATA t172 TYPE REF TO zcl_lnt_shape_c9bc8812.
         CLEAR t172.
-        DATA(t173) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+        DATA(t173) = me->parsed_xml.
         t172 = t173.
         t171 = t172->handlers.
         t170 = t171.
@@ -697,10 +704,10 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
         CLEAR t175.
         DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t176.
-        DATA(t177) = CAST zlnt_runtime_dyna_a429568d5be8( t153 ).
-        DATA(t178) = CONV string( |ICFHANDLER| ).
+        DATA(t177) = t153.
+        DATA(t178) = |ICFHANDLER|.
         t176 = t177->get( p0 = t178 ).
-        DATA(t179) = CONV string( |ICFHANDLER| ).
+        DATA(t179) = |ICFHANDLER|.
         t175 = t176->get( p0 = t179 ).
         t174 = t175->as_string( ).
         t170->load( ).
@@ -726,15 +733,15 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     CLEAR t187.
     DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t188.
-    DATA(t189) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
+    DATA(t189) = t29.
     t188 = t189.
-    DATA(t190) = CONV string( |abapGit| ).
+    DATA(t190) = |abapGit|.
     t187 = t188->get( p0 = t190 ).
     t186 = t187.
     DATA t191 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t191.
     DATA(t192) = VALUE abap_bool( ).
-    DATA(t193) = CAST zlnt_runtime_dyna_a429568d5be8( t186 ).
+    DATA(t193) = t186.
     IF t193 IS NOT BOUND.
       t192 = abap_true.
     ELSE.
@@ -747,8 +754,8 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ELSE.
       DATA t195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t195.
-      DATA(t196) = CAST zlnt_runtime_dyna_a429568d5be8( t186 ).
-      DATA(t197) = CONV string( |asx:abap| ).
+      DATA(t196) = t186.
+      DATA(t197) = |asx:abap|.
       t195 = t196->get( p0 = t197 ).
       t191 = t195.
     ENDIF.
@@ -759,7 +766,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA(t199) = VALUE abap_bool( ).
     DATA t200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t200.
-    DATA(t201) = CAST zlnt_runtime_dyna_a429568d5be8( t184 ).
+    DATA(t201) = t184.
     CLEAR t200.
     IF t201 IS BOUND.
       t200 = t201.
@@ -778,9 +785,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t203.
       DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t204.
-      DATA(t205) = CAST zlnt_runtime_dyna_a429568d5be8( t184 ).
+      DATA(t205) = t184.
       t204 = t205.
-      DATA(t206) = CONV string( |asx:values| ).
+      DATA(t206) = |asx:values|.
       t203 = t204->get( p0 = t206 ).
       t198 = t203.
     ENDIF.
@@ -791,7 +798,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     DATA(t208) = VALUE abap_bool( ).
     DATA t209 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t209.
-    DATA(t210) = CAST zlnt_runtime_dyna_a429568d5be8( t182 ).
+    DATA(t210) = t182.
     CLEAR t209.
     IF t210 IS BOUND.
       t209 = t210.
@@ -810,9 +817,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       CLEAR t212.
       DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t213.
-      DATA(t214) = CAST zlnt_runtime_dyna_a429568d5be8( t182 ).
+      DATA(t214) = t182.
       t213 = t214.
-      DATA(t215) = CONV string( |URL| ).
+      DATA(t215) = |URL|.
       t212 = t213->get( p0 = t215 ).
       t207 = t212.
     ENDIF.
@@ -820,12 +827,12 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     t180 = t181.
     DATA t216 TYPE REF TO zcl_lnt_shape_c9bc8812.
     CLEAR t216.
-    DATA(t217) = CAST zcl_lnt_shape_c9bc8812( me->parsed_xml ).
+    DATA(t217) = me->parsed_xml.
     t216 = t217.
     DATA t218 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t218.
     DATA(t219) = VALUE abap_bool( ).
-    DATA(t220) = CAST zlnt_runtime_dyna_a429568d5be8( t180 ).
+    DATA(t220) = t180.
     IF t220 IS INITIAL.
       t219 = abap_true.
     ENDIF.
@@ -837,7 +844,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
       DATA(t222) = VALUE string( ).
       DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t223.
-      DATA(t224) = CAST zlnt_runtime_dyna_a429568d5be8( t180 ).
+      DATA(t224) = t180.
       t223 = t224.
       t222 = t223->as_string( ).
       DATA(t225) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -852,7 +859,7 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     IF t216->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t216->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `url` p1 = t226 ).
     ENDIF.
-    DATA(t227) = CONV string( |url| ).
+    DATA(t227) = |url|.
     DATA t228 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t228.
     IF t216->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -860,18 +867,18 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ENDIF.
     DATA(t229) = VALUE f( ).
     DATA(t230) = VALUE f( ).
-    DATA(t231) = CONV i( 0 ).
+    DATA(t231) = 0.
     t230 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     t229 = t230.
     DATA t232 TYPE REF TO zcl_lnt_iparse_result.
     CLEAR t232.
     DATA(t233) = VALUE abap_bool( ).
-    DATA(t234) = CONV abap_bool( abap_true ).
+    DATA(t234) = abap_true.
     t233 = t234.
     DATA(t235) = VALUE f( ).
     DATA(t236) = VALUE f( ).
-    DATA(t237) = CONV f( t229 ).
-    DATA(t238) = CONV f( t16 ).
+    DATA(t237) = t229.
+    DATA(t238) = t16.
     t236 = t237 - t238.
     t235 = t236.
     DATA t239 TYPE REF TO zcl_lnt_shape_8fc6df03.
@@ -894,32 +901,35 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t232->zlnt_json_ownkeys_70e5fd461788.
     t232->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t243) = CONV string( |updated| ).
+    DATA(t243) = |updated|.
     DATA t244 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t244.
     IF t232->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t232->zlnt_json_ownkeys_70e5fd461788->put( p0 = t243 p1 = t244 ).
     ENDIF.
-    DATA(t245) = CONV string( |runtime| ).
+    DATA(t245) = |runtime|.
     DATA t246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t246.
     IF t232->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t232->zlnt_json_ownkeys_70e5fd461788->put( p0 = t245 p1 = t246 ).
     ENDIF.
     result = t232.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv(  ) ).
+    DATA(t1) = CAST zcl_lnt_iparse_result( me->pr_in_sr_ob_icf_srv_ts_icf_srv( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1276_7ddf35ef50dd.
   ENDMETHOD.

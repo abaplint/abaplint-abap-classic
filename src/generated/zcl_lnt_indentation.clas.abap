@@ -19,49 +19,50 @@ ENDCLASS.
 CLASS zcl_lnt_indentation IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_indentation_conf(  ).
+    DATA(t1) = NEW zcl_lnt_indentation_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |indentation| ).
+    DATA(t3) = |indentation|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Indentation| ).
+    DATA(t5) = |Indentation|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Checks indentation| ).
+    DATA(t7) = |Checks indentation|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t13.
       t12 = t13.
-      DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t15) = CONV string( |Whitespace| ).
+      DATA(t14) = t12.
+      DATA(t15) = |Whitespace|.
       t14->load( ).
       APPEND t15 TO t14->items.
       t14->save( ).
-      DATA(t16) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t17) = CONV string( |Quickfix| ).
+      DATA(t16) = t12.
+      DATA(t17) = |Quickfix|.
       t16->load( ).
       APPEND t17 TO t16->items.
       t16->save( ).
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t19) = CONV string( |SingleFile| ).
+      DATA(t18) = t12.
+      DATA(t19) = |SingleFile|.
       t18->load( ).
       APPEND t19 TO t18->items.
       t18->save( ).
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+      DATA(t20) = t12.
       t11 = t20.
       t9 = t11.
     ELSE.
@@ -74,9 +75,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t23.
-    DATA(t24) = CONV abap_bool( abap_true ).
+    DATA(t24) = abap_true.
     IF t24 = abap_true.
-      DATA(t25) = CONV string( |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n| ).
+      DATA(t25) = |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n|.
       t25 = t25 && |ENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\nMETHOD constructor.\nEND|.
       t25 = t25 && |METHOD.\nENDCLASS.|.
       DATA(t26) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -93,9 +94,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     CLEAR t28.
     DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t29.
-    DATA(t30) = CONV abap_bool( abap_true ).
+    DATA(t30) = abap_true.
     IF t30 = abap_true.
-      DATA(t31) = CONV string( |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru| ).
+      DATA(t31) = |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru|.
       t31 = t31 && |ctor.\nENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\n  METHOD construc|.
       t31 = t31 && |tor.\n  ENDMETHOD.\nENDCLASS.|.
       DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -155,76 +156,79 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t46) = CONV string( |key| ).
+    DATA(t46) = |key|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t47.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
     ENDIF.
-    DATA(t48) = CONV string( |title| ).
+    DATA(t48) = |title|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t49.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
     ENDIF.
-    DATA(t50) = CONV string( |shortDescription| ).
+    DATA(t50) = |shortDescription|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t51.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
     ENDIF.
-    DATA(t52) = CONV string( |tags| ).
+    DATA(t52) = |tags|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t53.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
     ENDIF.
-    DATA(t54) = CONV string( |badExample| ).
+    DATA(t54) = |badExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t55.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
     ENDIF.
-    DATA(t56) = CONV string( |goodExample| ).
+    DATA(t56) = |goodExample|.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t57.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD gt_cnf_ins_src_rls_ind_ts_indn.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD st_cnf_ins_src_rls_ind_ts_indn.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_indentation_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD rn_prs_ins_src_rls_ind_ts_indn.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_obj_1ed0.
     DATA t3 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t5) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn(  ) ).
+    DATA(t5) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn( ) ).
     t4 = t5->zlnt_view_read_sr_7d407689ecd3( ).
     t3 = t4.
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
     DATA t8 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t9) = CAST zlnt_runtime_opti_8df4f98f9a3a( t3 ).
+    DATA(t9) = t3.
     t8 = t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t11.
     t10 = t11.
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zlnt_runtime_opti_8df4f98f9a3a( t8 ).
+    DATA(t13) = t8.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ELSEIF t13->has = abap_false.
@@ -235,7 +239,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     IF t7 = abap_false.
       DATA(t14) = VALUE abap_bool( ).
       DATA(t15) = VALUE f( ).
-      DATA(t16) = CAST zlnt_runtime_opti_8df4f98f9a3a( t3 ).
+      DATA(t16) = t3.
       IF t16->number_special <> 0.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -247,7 +251,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     IF t6 = abap_true.
       DATA t18 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t18.
-      DATA(t19) = CONV abap_bool( abap_true ).
+      DATA(t19) = abap_true.
       IF t19 = abap_true.
         DATA(t20) = CONV f( 10 ).
         DATA(t21) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
@@ -262,16 +266,16 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t3 = t18.
     ENDIF.
     DATA t23 TYPE abap_bool.
-    DATA(t24) = CONV abap_bool( abap_false ).
+    DATA(t24) = abap_false.
     t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
     DATA t26 TYPE REF TO zcl_lnt_structure_node.
     DATA t27 TYPE REF TO zcl_lnt_structure_node.
     DATA t28 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t29) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t29) = t1.
     t28 = t29.
     DATA t30 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t31) = CAST zcl_lnt_abap_file( t28 ).
+    DATA(t31) = t28.
     t30 = t31->structure.
     t27 = t30.
     t26 = t27.
@@ -280,7 +284,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     CLEAR t33.
     t32 = t33.
     DATA(t34) = VALUE abap_bool( ).
-    DATA(t35) = CAST zcl_lnt_structure_node( t26 ).
+    DATA(t35) = t26.
     IF t35 IS INITIAL.
       t34 = abap_true.
     ENDIF.
@@ -292,7 +296,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t37 TYPE abap_bool.
-    DATA(t38) = CAST zif_lnt_object( t2 ).
+    DATA(t38) = t2.
     t37 = xsdbool( t38 IS BOUND AND t38 IS INSTANCE OF zcl_lnt_class ).
     IF t37 = abap_true.
       DATA t39 TYPE REF TO zcl_lnt_info_class_definition.
@@ -301,7 +305,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       CLEAR t40.
       DATA t41 TYPE REF TO zcl_lnt_class.
       DATA t42 TYPE REF TO zcl_lnt_class.
-      DATA(t43) = CAST zif_lnt_object( t2 ).
+      DATA(t43) = t2.
       DATA t44 TYPE REF TO object.
       t44 = t43.
       t42 ?= t44.
@@ -314,13 +318,13 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       CLEAR t47.
       DATA t48 TYPE REF TO zcl_lnt_abap_file.
       DATA t49 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t50) = CAST zcl_lnt_class( t41 ).
-      t49 = t50->get_main_abap_file(  ).
+      DATA(t50) = t41.
+      t49 = t50->get_main_abap_file( ).
       t48 = t49.
       DATA t51 TYPE REF TO zif_lnt_abap_file_information.
       CLEAR t51.
       DATA(t52) = VALUE abap_bool( ).
-      DATA(t53) = CAST zcl_lnt_abap_file( t48 ).
+      DATA(t53) = t48.
       IF t53 IS INITIAL.
         t52 = abap_true.
       ENDIF.
@@ -332,11 +336,11 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t55 TYPE REF TO zif_lnt_abap_file_information.
         DATA t56 TYPE REF TO zcl_lnt_abap_file.
         DATA t57 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t58) = CAST zcl_lnt_abap_file( t48 ).
+        DATA(t58) = t48.
         t57 = t58.
         t56 = t57.
         DATA t59 TYPE REF TO zif_lnt_abap_file_information.
-        DATA(t60) = CAST zcl_lnt_abap_file( t56 ).
+        DATA(t60) = t56.
         t59 = t60->info.
         t55 = t59.
         t51 = t55.
@@ -346,7 +350,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       DATA t61 TYPE REF TO zcl_lnt_info_class_definition.
       CLEAR t61.
       DATA(t62) = VALUE abap_bool( ).
-      DATA(t63) = CAST zif_lnt_abap_file_information( t46 ).
+      DATA(t63) = t46.
       IF t63 IS INITIAL.
         t62 = abap_true.
       ENDIF.
@@ -357,14 +361,14 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ELSE.
         DATA t65 TYPE REF TO zcl_lnt_info_class_definition.
         DATA t66 TYPE REF TO zif_lnt_abap_file_information.
-        DATA(t67) = CAST zif_lnt_abap_file_information( t46 ).
+        DATA(t67) = t46.
         t66 = t67.
         DATA t68 TYPE string.
         DATA t69 TYPE REF TO zcl_lnt_abstract_object.
-        DATA(t70) = CAST zcl_lnt_class( t41 ).
+        DATA(t70) = t41.
         t69 = t70.
         DATA t71 TYPE string.
-        DATA(t72) = CAST zcl_lnt_abstract_object( t69 ).
+        DATA(t72) = t69.
         t71 = t72->name.
         t68 = t71.
         t65 = t66->get_class_definition_by_name( i_name = t68 ).
@@ -375,19 +379,19 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t39 = t40.
       DATA t73 TYPE REF TO zcl_lnt_ddic.
       DATA t74 TYPE REF TO zcl_lnt_ddic.
-      DATA(t75) = CAST zif_lnt_registry( me->reg ).
+      DATA(t75) = me->reg.
       t74 = NEW zcl_lnt_ddic( i_reg_f149 = t75 ).
       t73 = t74.
       DATA(t76) = VALUE abap_bool( ).
       DATA t77 TYPE REF TO zcl_lnt_info_class_definition.
-      DATA(t78) = CAST zcl_lnt_info_class_definition( t39 ).
+      DATA(t78) = t39.
       t77 = t78.
       DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t80.
       t79 = t80.
       DATA(t81) = VALUE abap_bool( ).
-      DATA(t82) = CAST zcl_lnt_info_class_definition( t77 ).
+      DATA(t82) = t77.
       IF t82 IS INITIAL.
         t81 = abap_true.
       ENDIF.
@@ -401,7 +405,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA(t84) = VALUE abap_bool( ).
         DATA(t85) = VALUE abap_bool( ).
         DATA t86 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA(t87) = CAST zcl_lnt_indentation_conf( me->conf ).
+        DATA(t87) = me->conf.
         t86 = t87->zlnt_view_read_sr_649aa078d171( ).
         IF t86 IS BOUND.
           IF t86->has = abap_true.
@@ -411,13 +415,13 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         t84 = t85.
         IF t85 = abap_true.
           DATA(t88) = VALUE abap_bool( ).
-          DATA(t89) = CAST zcl_lnt_ddic( t73 ).
+          DATA(t89) = t73.
           DATA t90 TYPE REF TO zcl_lnt_info_class_definition.
           CLEAR t90.
-          DATA(t91) = CONV abap_bool( abap_true ).
+          DATA(t91) = abap_true.
           IF t91 = abap_true.
             DATA t92 TYPE REF TO zcl_lnt_info_class_definition.
-            DATA(t93) = CAST zcl_lnt_info_class_definition( t39 ).
+            DATA(t93) = t39.
             t92 = t93.
             t90 = t92.
           ELSE.
@@ -426,7 +430,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
             t90 = t94.
           ENDIF.
           DATA t95 TYPE REF TO zcl_lnt_class.
-          DATA(t96) = CAST zif_lnt_object( t2 ).
+          DATA(t96) = t2.
           DATA t97 TYPE REF TO object.
           t97 = t96.
           t95 ?= t97.
@@ -450,12 +454,12 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     DATA t102 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t102.
     DATA t103 TYPE REF TO zcl_lnt_indentation_conf.
-    DATA(t104) = CAST zcl_lnt_indentation_conf( me->conf ).
+    DATA(t104) = me->conf.
     t103 = t104.
     DATA t105 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t105.
     DATA(t106) = VALUE abap_bool( ).
-    DATA(t107) = CAST zcl_lnt_indentation_conf( t103 ).
+    DATA(t107) = t103.
     IF t107 IS INITIAL.
       t106 = abap_true.
     ENDIF.
@@ -465,7 +469,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t105 = t108.
     ELSE.
       DATA t109 TYPE abap_bool.
-      DATA(t110) = CAST zcl_lnt_indentation_conf( t103 ).
+      DATA(t110) = t103.
       t109 = t110->zlnt_view_read_sr_d06af785ba41( ).
       DATA(t111) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t111->has = abap_true.
@@ -479,12 +483,12 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     DATA t113 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t113.
     DATA t114 TYPE REF TO zcl_lnt_indentation_conf.
-    DATA(t115) = CAST zcl_lnt_indentation_conf( me->conf ).
+    DATA(t115) = me->conf.
     t114 = t115.
     DATA t116 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t116.
     DATA(t117) = VALUE abap_bool( ).
-    DATA(t118) = CAST zcl_lnt_indentation_conf( t114 ).
+    DATA(t118) = t114.
     IF t118 IS INITIAL.
       t117 = abap_true.
     ENDIF.
@@ -494,7 +498,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t116 = t119.
     ELSE.
       DATA t120 TYPE abap_bool.
-      DATA(t121) = CAST zcl_lnt_indentation_conf( t114 ).
+      DATA(t121) = t114.
       t120 = t121->zlnt_view_read_sr_5c35b8f00615( ).
       DATA(t122) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t122->has = abap_true.
@@ -507,10 +511,10 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     CLEAR t123.
     DATA t124 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t124.
-    DATA(t125) = CONV abap_bool( abap_true ).
+    DATA(t125) = abap_true.
     IF t125 = abap_true.
       DATA t126 TYPE abap_bool.
-      DATA(t127) = CAST zcl_lnt_indentation_conf( me->conf ).
+      DATA(t127) = me->conf.
       t126 = t127->zlnt_view_read_sr_e38337070bb8( ).
       DATA(t128) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t128->has = abap_true.
@@ -542,19 +546,19 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t100->zlnt_json_ownkeys_70e5fd461788.
     t100->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t133) = CONV string( |selectionScreenBlockIndentation| ).
+    DATA(t133) = |selectionScreenBlockIndentation|.
     DATA t134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t134.
     IF t100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t100->zlnt_json_ownkeys_70e5fd461788->put( p0 = t133 p1 = t134 ).
     ENDIF.
-    DATA(t135) = CONV string( |alignTryCatch| ).
+    DATA(t135) = |alignTryCatch|.
     DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t136.
     IF t100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t100->zlnt_json_ownkeys_70e5fd461788->put( p0 = t135 p1 = t136 ).
     ENDIF.
-    DATA(t137) = CONV string( |globalClassSkipFirst| ).
+    DATA(t137) = |globalClassSkipFirst|.
     DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t138.
     IF t100->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -569,9 +573,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     CLEAR t141.
     DATA t142 TYPE REF TO zcl_lnt_iindentation_options.
     CLEAR t142.
-    DATA(t143) = CONV abap_bool( abap_true ).
+    DATA(t143) = abap_true.
     IF t143 = abap_true.
-      DATA(t144) = CAST zcl_lnt_iindentation_options( t99 ).
+      DATA(t144) = t99.
       t142 = t144.
     ELSE.
       DATA t145 TYPE REF TO zcl_lnt_iindentation_options.
@@ -579,7 +583,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t142 = t145.
     ENDIF.
     t141 = NEW zcl_lnt_indent( i_options = t142 ).
-    DATA(t146) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t146) = t1.
     t140 = t141->get_expected_indents( i_file = t146 ).
     t139 = t140.
     DATA t147 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -592,10 +596,10 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
     t149 = t150.
     DATA t151 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t152 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t153) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t153) = t1.
     t152 = t153.
     DATA t154 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t155) = CAST zcl_lnt_abap_file( t152 ).
+    DATA(t155) = t152.
     t154 = t155->statements.
     t151 = t154.
     DATA t156 TYPE REF TO zcl_lnt_statement_node.
@@ -626,28 +630,28 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       DATA t162 TYPE REF TO zcl_lnt_position.
       DATA t163 TYPE REF TO zcl_lnt_abstract_token.
       DATA t164 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t165) = CAST zcl_lnt_statement_node( t156 ).
-      t164 = t165->get_first_token(  ).
+      DATA(t165) = t156.
+      t164 = t165->get_first_token( ).
       t163 = t164.
       DATA t166 TYPE REF TO zcl_lnt_position.
-      DATA(t167) = CAST zcl_lnt_abstract_token( t163 ).
+      DATA(t167) = t163.
       t166 = t167->start.
       t162 = t166.
       t161 = t162.
       DATA t168 TYPE abap_bool.
-      DATA(t169) = CAST zcl_lnt_position( t161 ).
+      DATA(t169) = t161.
       t168 = xsdbool( t169 IS BOUND AND t169 IS INSTANCE OF zcl_lnt_virtual_position ).
       IF t168 = abap_true.
         CONTINUE.
       ENDIF.
       DATA t170 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       DATA t171 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA(t172) = CAST zlnt_runtime_arra_595b0cb55f64( t139 ).
-      t171 = t172->shift(  ).
+      DATA(t172) = t139.
+      t171 = t172->shift( ).
       t170 = t171.
       DATA(t173) = VALUE abap_bool( ).
       DATA t174 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      DATA(t175) = CAST zcl_lnt_indentation_conf( me->conf ).
+      DATA(t175) = me->conf.
       t174 = t175->zlnt_view_read_sr_3de28dccde0f( ).
       IF t174 IS BOUND.
         IF t174->has = abap_true.
@@ -658,46 +662,46 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t176 TYPE abap_bool.
         DATA t177 TYPE abap_bool.
         DATA t178 TYPE REF TO zif_lnt_statement.
-        DATA(t179) = CAST zcl_lnt_statement_node( t156 ).
-        t178 = t179->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t179) = t156.
+        t178 = t179->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t177 = xsdbool( t178 IS BOUND AND t178 IS INSTANCE OF zcl_lnt_st_class_definition ).
         t176 = t177.
         IF t177 = abap_true.
           DATA t180 TYPE abap_bool.
           DATA t181 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t182) = CAST zcl_lnt_statement_node( t156 ).
-          DATA(t183) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df ).
+          DATA(t182) = t156.
+          DATA(t183) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
           t181 = t182->find_first_expression( i_type_9913 = t183 ).
           t180 = xsdbool( t181 IS BOUND ).
           t176 = t180.
         ENDIF.
         IF t176 = abap_true.
-          DATA(t184) = CONV abap_bool( abap_true ).
+          DATA(t184) = abap_true.
           t23 = t184.
           CONTINUE.
         ELSE.
           DATA t185 TYPE abap_bool.
           DATA t186 TYPE abap_bool.
-          DATA(t187) = CONV abap_bool( t23 ).
-          DATA(t188) = CONV abap_bool( abap_true ).
+          DATA(t187) = t23.
+          DATA(t188) = abap_true.
           t186 = xsdbool( t187 = t188 ).
           t185 = t186.
           IF t186 = abap_true.
             DATA t189 TYPE abap_bool.
             DATA t190 TYPE REF TO zif_lnt_statement.
-            DATA(t191) = CAST zcl_lnt_statement_node( t156 ).
-            t190 = t191->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+            DATA(t191) = t156.
+            t190 = t191->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
             t189 = xsdbool( t190 IS BOUND AND t190 IS INSTANCE OF zcl_lnt_end_class ).
             t185 = t189.
           ENDIF.
           IF t185 = abap_true.
-            DATA(t192) = CONV abap_bool( abap_false ).
+            DATA(t192) = abap_false.
             t23 = t192.
             CONTINUE.
           ELSE.
             DATA t193 TYPE abap_bool.
-            DATA(t194) = CONV abap_bool( t23 ).
-            DATA(t195) = CONV abap_bool( abap_true ).
+            DATA(t194) = t23.
+            DATA(t195) = abap_true.
             t193 = xsdbool( t194 = t195 ).
             IF t193 = abap_true.
               CONTINUE.
@@ -707,7 +711,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ENDIF.
       DATA(t196) = VALUE abap_bool( ).
       DATA t197 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      DATA(t198) = CAST zcl_lnt_indentation_conf( me->conf ).
+      DATA(t198) = me->conf.
       t197 = t198->zlnt_view_read_sr_0529cf4a1dad( ).
       IF t197 IS BOUND.
         IF t197->has = abap_true.
@@ -718,46 +722,46 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t199 TYPE abap_bool.
         DATA t200 TYPE abap_bool.
         DATA t201 TYPE REF TO zif_lnt_statement.
-        DATA(t202) = CAST zcl_lnt_statement_node( t156 ).
-        t201 = t202->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t202) = t156.
+        t201 = t202->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t200 = xsdbool( t201 IS BOUND AND t201 IS INSTANCE OF zcl_lnt_st_interface ).
         t199 = t200.
         IF t200 = abap_true.
           DATA t203 TYPE abap_bool.
           DATA t204 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t205) = CAST zcl_lnt_statement_node( t156 ).
-          DATA(t206) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df ).
+          DATA(t205) = t156.
+          DATA(t206) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
           t204 = t205->find_first_expression( i_type_9913 = t206 ).
           t203 = xsdbool( t204 IS BOUND ).
           t199 = t203.
         ENDIF.
         IF t199 = abap_true.
-          DATA(t207) = CONV abap_bool( abap_true ).
+          DATA(t207) = abap_true.
           t23 = t207.
           CONTINUE.
         ELSE.
           DATA t208 TYPE abap_bool.
           DATA t209 TYPE abap_bool.
-          DATA(t210) = CONV abap_bool( t23 ).
-          DATA(t211) = CONV abap_bool( abap_true ).
+          DATA(t210) = t23.
+          DATA(t211) = abap_true.
           t209 = xsdbool( t210 = t211 ).
           t208 = t209.
           IF t209 = abap_true.
             DATA t212 TYPE abap_bool.
             DATA t213 TYPE REF TO zif_lnt_statement.
-            DATA(t214) = CAST zcl_lnt_statement_node( t156 ).
-            t213 = t214->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+            DATA(t214) = t156.
+            t213 = t214->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
             t212 = xsdbool( t213 IS BOUND AND t213 IS INSTANCE OF zcl_lnt_end_interface ).
             t208 = t212.
           ENDIF.
           IF t208 = abap_true.
-            DATA(t215) = CONV abap_bool( abap_false ).
+            DATA(t215) = abap_false.
             t23 = t215.
             CONTINUE.
           ELSE.
             DATA t216 TYPE abap_bool.
-            DATA(t217) = CONV abap_bool( t23 ).
-            DATA(t218) = CONV abap_bool( abap_true ).
+            DATA(t217) = t23.
+            DATA(t218) = abap_true.
             t216 = xsdbool( t217 = t218 ).
             IF t216 = abap_true.
               CONTINUE.
@@ -767,8 +771,8 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ENDIF.
       DATA t219 TYPE abap_bool.
       DATA t220 TYPE REF TO zif_lnt_statement.
-      DATA(t221) = CAST zcl_lnt_statement_node( t156 ).
-      t220 = t221->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      DATA(t221) = t156.
+      t220 = t221->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t219 = xsdbool( t220 IS BOUND AND t220 IS INSTANCE OF zcl_lnt_native_sql ).
       IF t219 = abap_true.
         CONTINUE.
@@ -779,10 +783,10 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       DATA t225 TYPE REF TO zcl_lnt_abstract_token.
       DATA t226 TYPE REF TO zcl_lnt_abstract_token.
       DATA t227 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t228) = CAST zcl_lnt_statement_node( t156 ).
+      DATA(t228) = t156.
       t227 = t228.
       DATA t229 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t230) = CAST zcl_lnt_statement_node( t227 ).
+      DATA(t230) = t227.
       t229 = t230->colon.
       t226 = t229.
       t225 = t226.
@@ -792,7 +796,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       t231 = t232.
       DATA(t233) = VALUE abap_bool( ).
       DATA(t234) = VALUE abap_bool( ).
-      DATA(t235) = CAST zcl_lnt_abstract_token( t225 ).
+      DATA(t235) = t225.
       IF t235 IS INITIAL.
         t234 = abap_true.
       ENDIF.
@@ -806,12 +810,12 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t238 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t238.
         DATA t239 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t240) = CAST zcl_lnt_statement_node( t149 ).
+        DATA(t240) = t149.
         t239 = t240.
         DATA t241 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t241.
         DATA(t242) = VALUE abap_bool( ).
-        DATA(t243) = CAST zcl_lnt_statement_node( t239 ).
+        DATA(t243) = t239.
         IF t243 IS INITIAL.
           t242 = abap_true.
         ENDIF.
@@ -823,11 +827,11 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
           DATA t245 TYPE REF TO zcl_lnt_abstract_token.
           DATA t246 TYPE REF TO zcl_lnt_statement_node.
           DATA t247 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t248) = CAST zcl_lnt_statement_node( t239 ).
+          DATA(t248) = t239.
           t247 = t248.
           t246 = t247.
           DATA t249 TYPE REF TO zcl_lnt_abstract_token.
-          DATA(t250) = CAST zcl_lnt_statement_node( t246 ).
+          DATA(t250) = t246.
           t249 = t250->colon.
           t245 = t249.
           t241 = t245.
@@ -840,7 +844,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         t251 = t252.
         DATA(t253) = VALUE abap_bool( ).
         DATA(t254) = VALUE abap_bool( ).
-        DATA(t255) = CAST zcl_lnt_abstract_token( t237 ).
+        DATA(t255) = t237.
         IF t255 IS INITIAL.
           t254 = abap_true.
         ENDIF.
@@ -856,16 +860,16 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t259 TYPE REF TO zcl_lnt_abstract_token.
         DATA t260 TYPE REF TO zcl_lnt_abstract_token.
         DATA t261 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t262) = CAST zcl_lnt_statement_node( t156 ).
+        DATA(t262) = t156.
         t261 = t262.
         DATA t263 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t264) = CAST zcl_lnt_statement_node( t261 ).
+        DATA(t264) = t261.
         t263 = t264->colon.
         t260 = t263.
         t259 = t260.
         t258 = t259.
         DATA t265 TYPE REF TO zcl_lnt_position.
-        DATA(t266) = CAST zcl_lnt_abstract_token( t258 ).
+        DATA(t266) = t258.
         t265 = t266->start.
         t257 = t265.
         DATA t267 TYPE REF TO zcl_lnt_position.
@@ -874,17 +878,17 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA t270 TYPE REF TO zcl_lnt_abstract_token.
         DATA t271 TYPE REF TO zcl_lnt_statement_node.
         DATA t272 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t273) = CAST zcl_lnt_statement_node( t149 ).
+        DATA(t273) = t149.
         t272 = t273.
         t271 = t272.
         DATA t274 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t275) = CAST zcl_lnt_statement_node( t271 ).
+        DATA(t275) = t271.
         t274 = t275->colon.
         t270 = t274.
         t269 = t270.
         t268 = t269.
         DATA t276 TYPE REF TO zcl_lnt_position.
-        DATA(t277) = CAST zcl_lnt_abstract_token( t268 ).
+        DATA(t277) = t268.
         t276 = t277->start.
         t267 = t276.
         t256 = t257->equals( i_p = t267 ).
@@ -896,7 +900,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       DATA(t278) = VALUE abap_bool( ).
       DATA(t279) = VALUE abap_bool( ).
       DATA(t280) = VALUE abap_bool( ).
-      DATA(t281) = CAST zlnt_runtime_opti_8df4f98f9a3a( t170 ).
+      DATA(t281) = t170.
       IF t281 IS BOUND.
         IF t281->has = abap_true.
           IF t281->number_special <> 0.
@@ -910,7 +914,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       IF t280 = abap_true.
         DATA(t282) = VALUE abap_bool( ).
         DATA(t283) = VALUE f( ).
-        DATA(t284) = CAST zlnt_runtime_opti_8df4f98f9a3a( t170 ).
+        DATA(t284) = t170.
         IF t284->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -923,7 +927,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       IF t279 = abap_true.
         DATA(t286) = VALUE abap_bool( ).
         DATA(t287) = VALUE f( ).
-        DATA(t288) = CAST zlnt_runtime_opti_8df4f98f9a3a( t170 ).
+        DATA(t288) = t170.
         IF t288->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -933,10 +937,10 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         t289->value = t287.
         DATA t290 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         DATA t291 TYPE REF TO zcl_lnt_position.
-        DATA(t292) = CAST zcl_lnt_position( t161 ).
+        DATA(t292) = t161.
         t291 = t292.
         DATA t293 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        DATA(t294) = CAST zcl_lnt_position( t291 ).
+        DATA(t294) = t291.
         t293 = t294->col.
         t290 = t293.
         t286 = zlnt_runtime_numb_290eb04a9758=>compare( left = t289 right = t290 op = `!=` ).
@@ -946,7 +950,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA(t295) = VALUE f( ).
         DATA(t296) = VALUE f( ).
         DATA(t297) = VALUE f( ).
-        DATA(t298) = CAST zlnt_runtime_opti_8df4f98f9a3a( t170 ).
+        DATA(t298) = t170.
         IF t298->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -958,14 +962,14 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         CLEAR t300.
         DATA t301 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t301.
-        DATA(t302) = CAST zcl_lnt_abap_file( t1 ).
+        DATA(t302) = t1.
         DATA t303 TYPE REF TO zcl_lnt_position.
         DATA t304 TYPE f.
         DATA t305 TYPE REF TO zcl_lnt_position.
-        DATA(t306) = CAST zcl_lnt_position( t161 ).
+        DATA(t306) = t161.
         t305 = t306.
         DATA t307 TYPE f.
-        DATA(t308) = CAST zcl_lnt_position( t305 ).
+        DATA(t308) = t305.
         t307 = t308->row.
         t304 = t307.
         DATA(t309) = CONV f( 1 ).
@@ -973,15 +977,15 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         t310->has = abap_true.
         t310->value = t309.
         t303 = NEW zcl_lnt_position( i_row = t304 i_col = t310 ).
-        DATA(t311) = CAST zcl_lnt_position( t161 ).
+        DATA(t311) = t161.
         DATA(t312) = VALUE string( ).
         DATA t313 TYPE string.
-        DATA(t314) = CONV string( | | ).
+        DATA(t314) = | |.
         t313 = t314.
         DATA(t315) = VALUE string( ).
-        DATA(t316) = CONV string( t313 ).
-        DATA(t317) = CONV f( t295 ).
-        DATA(t318) = CONV i( strlen( t316 ) ).
+        DATA(t316) = t313.
+        DATA(t317) = t295.
+        DATA(t318) = strlen( t316 ).
         DATA(t319) = CONV f( trunc( t317 ) ).
         IF t319 < 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -999,66 +1003,66 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         DATA(t320) = VALUE string( ).
         DATA(t321) = VALUE string( ).
         DATA(t322) = VALUE string( ).
-        DATA(t323) = CONV string( |Indentation problem, expected | ).
+        DATA(t323) = |Indentation problem, expected |.
         DATA(t324) = VALUE string( ).
-        DATA(t325) = CONV f( t295 ).
+        DATA(t325) = t295.
         IF t325 <> trunc( t325 ) OR t325 > range_safe_integer OR t325 < 0 - range_safe_integer.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         DATA(t326) = CONV int8( t325 ).
         t324 = |{ t326 }|.
-        DATA(t327) = CONV i( strlen( t323 ) ).
+        DATA(t327) = strlen( t323 ).
         t322 = |{ t323 }{ t324 }|.
-        DATA(t328) = CONV string( | spaces| ).
-        DATA(t329) = CONV i( strlen( t322 ) ).
+        DATA(t328) = | spaces|.
+        DATA(t329) = strlen( t322 ).
         t321 = |{ t322 }{ t328 }|.
         t320 = t321.
         DATA t330 TYPE REF TO zcl_lnt_issue.
         CLEAR t330.
         DATA t331 TYPE REF TO zcl_lnt_issue.
         CLEAR t331.
-        DATA(t332) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t333) = CAST zcl_lnt_position( t161 ).
-        DATA(t334) = CONV string( t320 ).
+        DATA(t332) = t1.
+        DATA(t333) = t161.
+        DATA(t334) = t320.
         DATA(t335) = VALUE string( ).
         DATA t336 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t336.
         DATA t337 TYPE string.
-        DATA(t338) = CONV string( |indentation| ).
+        DATA(t338) = |indentation|.
         t337 = t338.
         DATA t339 TYPE string.
-        DATA(t340) = CONV string( |Indentation| ).
+        DATA(t340) = |Indentation|.
         t339 = t340.
         DATA t341 TYPE string.
-        DATA(t342) = CONV string( |Checks indentation| ).
+        DATA(t342) = |Checks indentation|.
         t341 = t342.
         DATA t343 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t343.
         DATA t344 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t344.
-        DATA(t345) = CONV abap_bool( abap_true ).
+        DATA(t345) = abap_true.
         IF t345 = abap_true.
           DATA t346 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t347 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t348 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t348.
           t347 = t348.
-          DATA(t349) = CAST zlnt_runtime_arra_8ecd6afe19e0( t347 ).
-          DATA(t350) = CONV string( |Whitespace| ).
+          DATA(t349) = t347.
+          DATA(t350) = |Whitespace|.
           t349->load( ).
           APPEND t350 TO t349->items.
           t349->save( ).
-          DATA(t351) = CAST zlnt_runtime_arra_8ecd6afe19e0( t347 ).
-          DATA(t352) = CONV string( |Quickfix| ).
+          DATA(t351) = t347.
+          DATA(t352) = |Quickfix|.
           t351->load( ).
           APPEND t352 TO t351->items.
           t351->save( ).
-          DATA(t353) = CAST zlnt_runtime_arra_8ecd6afe19e0( t347 ).
-          DATA(t354) = CONV string( |SingleFile| ).
+          DATA(t353) = t347.
+          DATA(t354) = |SingleFile|.
           t353->load( ).
           APPEND t354 TO t353->items.
           t353->save( ).
-          DATA(t355) = CAST zlnt_runtime_arra_8ecd6afe19e0( t347 ).
+          DATA(t355) = t347.
           t346 = t355.
           t344 = t346.
         ELSE.
@@ -1071,9 +1075,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         CLEAR t357.
         DATA t358 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t358.
-        DATA(t359) = CONV abap_bool( abap_true ).
+        DATA(t359) = abap_true.
         IF t359 = abap_true.
-          DATA(t360) = CONV string( |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n| ).
+          DATA(t360) = |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n|.
           t360 = t360 && |ENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\nMETHOD constructor.\nEND|.
           t360 = t360 && |METHOD.\nENDCLASS.|.
           DATA(t361) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1090,9 +1094,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         CLEAR t363.
         DATA t364 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t364.
-        DATA(t365) = CONV abap_bool( abap_true ).
+        DATA(t365) = abap_true.
         IF t365 = abap_true.
-          DATA(t366) = CONV string( |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru| ).
+          DATA(t366) = |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru|.
           t366 = t366 && |ctor.\nENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\n  METHOD construc|.
           t366 = t366 && |tor.\n  ENDMETHOD.\nENDCLASS.|.
           DATA(t367) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1152,37 +1156,37 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t336->zlnt_json_ownkeys_70e5fd461788.
         t336->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t381) = CONV string( |key| ).
+        DATA(t381) = |key|.
         DATA t382 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t382.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t381 p1 = t382 ).
         ENDIF.
-        DATA(t383) = CONV string( |title| ).
+        DATA(t383) = |title|.
         DATA t384 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t384.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t383 p1 = t384 ).
         ENDIF.
-        DATA(t385) = CONV string( |shortDescription| ).
+        DATA(t385) = |shortDescription|.
         DATA t386 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t386.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t385 p1 = t386 ).
         ENDIF.
-        DATA(t387) = CONV string( |tags| ).
+        DATA(t387) = |tags|.
         DATA t388 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t388.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t387 p1 = t388 ).
         ENDIF.
-        DATA(t389) = CONV string( |badExample| ).
+        DATA(t389) = |badExample|.
         DATA t390 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t390.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t389 p1 = t390 ).
         ENDIF.
-        DATA(t391) = CONV string( |goodExample| ).
+        DATA(t391) = |goodExample|.
         DATA t392 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t392.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1190,13 +1194,13 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         ENDIF.
         t335 = t336->key.
         DATA t393 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t394) = CAST zcl_lnt_indentation_conf( me->conf ).
+        DATA(t394) = me->conf.
         t393 = t394->zlnt_view_read_sr_15c06369f827( ).
         DATA t395 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t395.
-        DATA(t396) = CONV abap_bool( abap_true ).
+        DATA(t396) = abap_true.
         IF t396 = abap_true.
-          DATA(t397) = CAST zlnt_runtime_map__4fdf767b61ba( t300 ).
+          DATA(t397) = t300.
           t395 = t397.
         ELSE.
           DATA t398 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -1205,20 +1209,20 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         ENDIF.
         t331 = zcl_lnt_issue=>at_position( i_file = t332 i_start = t333 i_message_26cb = t334 i_key = t335 i_severity = t393 i_fix = t395 ).
         t330 = t331.
-        DATA(t399) = CAST zlnt_runtime_arra_c22708faf2e3( t147 ).
-        DATA(t400) = CAST zcl_lnt_issue( t330 ).
+        DATA(t399) = t147.
+        DATA(t400) = t330.
         t399->load( ).
         APPEND t400 TO t399->items.
         t399->save( ).
         DATA(t401) = VALUE abap_bool( ).
         DATA t402 TYPE f.
         DATA t403 TYPE i.
-        DATA(t404) = CAST zlnt_runtime_arra_c22708faf2e3( t147 ).
+        DATA(t404) = t147.
         t404->load( ).
         t403 = lines( t404->items ).
         t402 = t403.
         DATA(t405) = VALUE f( ).
-        DATA(t406) = CAST zlnt_runtime_opti_8df4f98f9a3a( t3 ).
+        DATA(t406) = t3.
         IF t406->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1230,9 +1234,9 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ENDIF.
       DATA t407 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t407.
-      DATA(t408) = CONV abap_bool( abap_true ).
+      DATA(t408) = abap_true.
       IF t408 = abap_true.
-        DATA(t409) = CAST zcl_lnt_statement_node( t156 ).
+        DATA(t409) = t156.
         t407 = t409.
       ELSE.
         DATA t410 TYPE REF TO zcl_lnt_statement_node.
@@ -1241,20 +1245,23 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ENDIF.
       t149 = t407.
     ENDDO.
-    DATA(t411) = CAST zlnt_runtime_arra_c22708faf2e3( t147 ).
+    DATA(t411) = t147.
     result = t411.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn(  ) ).
+    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn(  ) ).
+    DATA(t1) = CAST zcl_lnt_indentation_conf( me->gt_cnf_ins_src_rls_ind_ts_indn( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_indentation_conf.
     CLEAR t1.
@@ -1287,19 +1294,22 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->st_cnf_ins_src_rls_ind_ts_indn( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_prs_ins_src_rls_ind_ts_indn( i_file = i_file i_obj_1ed0 = i_obj_1ed0 ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1544_53a78a0bafbc.
   ENDMETHOD.

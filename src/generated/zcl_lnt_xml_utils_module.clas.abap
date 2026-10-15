@@ -14,11 +14,11 @@ CLASS zcl_lnt_xml_utils_module DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
   METHOD xml_to_array.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_data_dc02 ).
+    DATA(t1) = i_data_dc02.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
@@ -26,7 +26,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -39,7 +39,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       RETURN.
     ELSE.
       DATA(t10) = VALUE abap_bool( ).
-      DATA(t11) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+      DATA(t11) = t1.
       t10 = abap_false.
       IF t11 IS BOUND.
         IF t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
@@ -57,7 +57,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       IF t10 = abap_true.
         DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t13.
-        DATA(t14) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t14) = t1.
         CLEAR t13.
         IF t14 IS BOUND.
           IF t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -138,23 +138,24 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
         CLEAR t23.
         CREATE OBJECT t23.
         t22 = t23.
-        DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t22 ).
-        DATA(t25) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+        DATA(t24) = t22.
+        DATA(t25) = t1.
         t24->load( ).
         APPEND t25 TO t24->items.
         t24->save( ).
-        DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t22 ).
+        DATA(t26) = t22.
         t21 = t26.
         result = t21.
         RETURN.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD unescape.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_str ).
+    DATA(t1) = i_str.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE string( ).
-    DATA(t4) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t4) = t1.
     IF t4 IS BOUND.
       t3 = t4->type_of( ).
       IF t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref AND t4->oval IS INSTANCE OF zlnt_runtime_call_776cb4afcfb7.
@@ -163,93 +164,98 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     ELSE.
       t3 = `undefined`.
     ENDIF.
-    DATA(t5) = CONV string( |string| ).
+    DATA(t5) = |string|.
     t2 = xsdbool( t3 <> t5 ).
     IF t2 = abap_true.
-      DATA(t6) = CONV string( || ).
+      DATA(t6) = ||.
       result = t6.
       RETURN.
     ENDIF.
     DATA t7 TYPE string.
     DATA t8 TYPE string.
     DATA t9 TYPE string.
-    DATA(t10) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t10) = t1.
     t9 = t10->as_string( ).
     DATA t11 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t11.
-    DATA(t12) = CONV string( |&amp;| ).
-    DATA(t13) = CONV string( |g| ).
+    DATA(t12) = |&amp;|.
+    DATA(t13) = |g|.
     CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t12 flags = t13 checked = abap_true.
-    DATA(t14) = CONV string( |&| ).
-    DATA(t15) = CONV i( strlen( t9 ) ).
+    DATA(t14) = |&|.
+    DATA(t15) = strlen( t9 ).
     t8 = t11->replace( p0 = t9 p1 = t14 ).
     t7 = t8.
     DATA t16 TYPE string.
-    DATA(t17) = CONV string( t7 ).
+    DATA(t17) = t7.
     DATA t18 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t18.
-    DATA(t19) = CONV string( |&gt;| ).
-    DATA(t20) = CONV string( |g| ).
+    DATA(t19) = |&gt;|.
+    DATA(t20) = |g|.
     CREATE OBJECT t18 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t19 flags = t20 checked = abap_true.
-    DATA(t21) = CONV string( |>| ).
-    DATA(t22) = CONV i( strlen( t17 ) ).
+    DATA(t21) = |>|.
+    DATA(t22) = strlen( t17 ).
     t16 = t18->replace( p0 = t17 p1 = t21 ).
     t7 = t16.
     DATA t23 TYPE string.
-    DATA(t24) = CONV string( t7 ).
+    DATA(t24) = t7.
     DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t25.
-    DATA(t26) = CONV string( |&lt;| ).
-    DATA(t27) = CONV string( |g| ).
+    DATA(t26) = |&lt;|.
+    DATA(t27) = |g|.
     CREATE OBJECT t25 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t26 flags = t27 checked = abap_true.
-    DATA(t28) = CONV string( |<| ).
-    DATA(t29) = CONV i( strlen( t24 ) ).
+    DATA(t28) = |<|.
+    DATA(t29) = strlen( t24 ).
     t23 = t25->replace( p0 = t24 p1 = t28 ).
     t7 = t23.
     DATA t30 TYPE string.
-    DATA(t31) = CONV string( t7 ).
+    DATA(t31) = t7.
     DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t32.
-    DATA(t33) = CONV string( |&quot;| ).
-    DATA(t34) = CONV string( |g| ).
+    DATA(t33) = |&quot;|.
+    DATA(t34) = |g|.
     CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t33 flags = t34 checked = abap_true.
-    DATA(t35) = CONV string( |"| ).
-    DATA(t36) = CONV i( strlen( t31 ) ).
+    DATA(t35) = |"|.
+    DATA(t36) = strlen( t31 ).
     t30 = t32->replace( p0 = t31 p1 = t35 ).
     t7 = t30.
     DATA t37 TYPE string.
-    DATA(t38) = CONV string( t7 ).
+    DATA(t38) = t7.
     DATA t39 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t39.
-    DATA(t40) = CONV string( |&apos;| ).
-    DATA(t41) = CONV string( |g| ).
+    DATA(t40) = |&apos;|.
+    DATA(t41) = |g|.
     CREATE OBJECT t39 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t40 flags = t41 checked = abap_true.
-    DATA(t42) = CONV string( |'| ).
-    DATA(t43) = CONV i( strlen( t38 ) ).
+    DATA(t42) = |'|.
+    DATA(t43) = strlen( t38 ).
     t37 = t39->replace( p0 = t38 p1 = t42 ).
     t7 = t37.
-    DATA(t44) = CONV string( t7 ).
+    DATA(t44) = t7.
     result = t44.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_92a4db672ef8.
     IF zlnt_builtin_init_e23a8274c2ff = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_e23a8274c2ff = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1936_cf2a5e999be6.
   ENDMETHOD.

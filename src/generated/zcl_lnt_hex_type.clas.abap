@@ -17,17 +17,17 @@ CLASS zcl_lnt_hex_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_type C
 ENDCLASS.
 CLASS zcl_lnt_hex_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV f( i_length ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_length.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t3.
-    DATA(t4) = CONV abap_bool( abap_true ).
+    DATA(t4) = abap_true.
     IF t4 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t5.
       DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t6.
-      DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t7) = t2.
       t6 = t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t8.
@@ -64,7 +64,7 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
       t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t19) = CONV string( |qualifiedName| ).
+      DATA(t19) = |qualifiedName|.
       DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t20.
       IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -78,7 +78,7 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     ENDIF.
     super->constructor( i_input_967e = t3 ).
     DATA(t22) = VALUE abap_bool( ).
-    DATA(t23) = CONV f( t1 ).
+    DATA(t23) = t1.
     DATA(t24) = CONV f( 0 ).
     t22 = xsdbool( t23 <= t24 ).
     IF t22 = abap_true.
@@ -88,9 +88,9 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
       CLEAR t26.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t27.
-      DATA(t28) = CONV abap_bool( abap_true ).
+      DATA(t28) = abap_true.
       IF t28 = abap_true.
-        DATA(t29) = CONV string( |Bad LENGTH, Hex| ).
+        DATA(t29) = |Bad LENGTH, Hex|.
         DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t30->has = abap_true.
         t30->value = t29.
@@ -132,20 +132,22 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
       ENDIF.
       RAISE EXCEPTION t25.
     ENDIF.
-    DATA(t34) = CONV f( t1 ).
+    DATA(t34) = t1.
     me->length = t34.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `length`.
   ENDMETHOD.
+
   METHOD get_length.
     DATA(t1) = CONV f( me->length ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
-    DATA(t3) = CONV string( |```x LENGTH | ).
+    DATA(t3) = |```x LENGTH |.
     DATA(t4) = VALUE string( ).
     DATA(t5) = CONV f( me->length ).
     IF t5 <> trunc( t5 ) OR t5 > range_safe_integer OR t5 < 0 - range_safe_integer.
@@ -153,18 +155,19 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     ENDIF.
     DATA(t6) = CONV int8( t5 ).
     t4 = |{ t6 }|.
-    DATA(t7) = CONV i( strlen( t3 ) ).
+    DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = CONV string( |```| ).
-    DATA(t9) = CONV i( strlen( t2 ) ).
+    DATA(t8) = |```|.
+    DATA(t9) = strlen( t2 ).
     t1 = |{ t2 }{ t8 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = VALUE string( ).
-    DATA(t2) = CONV string( |x LENGTH | ).
+    DATA(t2) = |x LENGTH |.
     DATA(t3) = VALUE string( ).
     DATA(t4) = CONV f( me->length ).
     IF t4 <> trunc( t4 ) OR t4 > range_safe_integer OR t4 < 0 - range_safe_integer.
@@ -172,26 +175,29 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     ENDIF.
     DATA(t5) = CONV int8( t4 ).
     t3 = |{ t5 }|.
-    DATA(t6) = CONV i( strlen( t2 ) ).
+    DATA(t6) = strlen( t2 ).
     t1 = |{ t2 }{ t3 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_generic.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD contains_void.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
-    DATA(t3) = CONV string( |abap.raw( | ).
+    DATA(t3) = |abap.raw( |.
     DATA(t4) = VALUE string( ).
     DATA(t5) = CONV f( me->length ).
     IF t5 <> trunc( t5 ) OR t5 > range_safe_integer OR t5 < 0 - range_safe_integer.
@@ -199,25 +205,28 @@ CLASS zcl_lnt_hex_type IMPLEMENTATION.
     ENDIF.
     DATA(t6) = CONV int8( t5 ).
     t4 = |{ t6 }|.
-    DATA(t7) = CONV i( strlen( t3 ) ).
+    DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = CONV string( | )| ).
-    DATA(t9) = CONV i( strlen( t2 ) ).
+    DATA(t8) = | )|.
+    DATA(t9) = strlen( t2 ).
     t1 = |{ t2 }{ t8 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_hx_ty_ts_hx_ty( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1031_e503345f4c84.
   ENDMETHOD.

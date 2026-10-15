@@ -26,24 +26,26 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
     me->list = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `list`.
   ENDMETHOD.
+
   METHOD push.
-    DATA(t1) = CAST zcl_lnt_info_method_definition( i_id ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
-    DATA(t3) = CAST zcl_lnt_info_method_definition( t1 ).
+    DATA(t1) = i_id.
+    DATA(t2) = me->list.
+    DATA(t3) = t1.
     t2->load( ).
     APPEND t3 TO t2->items.
     t2->save( ).
   ENDMETHOD.
+
   METHOD remove_if_exists.
-    DATA(t1) = CAST zcl_lnt_fi_identifier( i_id ).
+    DATA(t1) = i_id.
     DATA t2 TYPE i.
-    DATA(t3) = CONV i( 0 ).
+    DATA(t3) = 0.
     t2 = t3.
     DO.
       DATA t4 TYPE abap_bool.
-      DATA(t5) = CONV i( t2 ).
+      DATA(t5) = t2.
       DATA t6 TYPE i.
-      DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+      DATA(t7) = me->list.
       t7->load( ).
       t6 = lines( t7->items ).
       t4 = xsdbool( t5 < t6 ).
@@ -52,7 +54,7 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       ENDIF.
       DATA(t8) = VALUE abap_bool( ).
       DATA t9 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t10) = CAST zcl_lnt_fi_identifier( t1 ).
+      DATA(t10) = t1.
       t9 = t10.
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t11.
@@ -60,8 +62,8 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       CLEAR t12.
       DATA t13 TYPE REF TO zcl_lnt_info_method_definition.
       CLEAR t13.
-      DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
-      DATA(t15) = CONV i( t2 ).
+      DATA(t14) = me->list.
+      DATA(t15) = t2.
       t15 = t15 + 1.
       DATA t16 TYPE REF TO object.
       CLEAR t16.
@@ -85,27 +87,27 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       DATA t20 TYPE abap_bool.
       DATA t21 TYPE REF TO zcl_lnt_position.
       DATA t22 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t23) = CAST zcl_lnt_fi_identifier( t11 ).
+      DATA(t23) = t11.
       t22 = t23.
       DATA t24 TYPE REF TO zcl_lnt_position.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t27) = CAST zcl_lnt_fi_identifier( t22 ).
+      DATA(t27) = t22.
       t26 = t27->token.
       t25 = t26.
       DATA t28 TYPE REF TO zcl_lnt_position.
-      DATA(t29) = CAST zcl_lnt_abstract_token( t25 ).
+      DATA(t29) = t25.
       t28 = t29->start.
       t24 = t28.
       t21 = t24.
       DATA t30 TYPE REF TO zcl_lnt_position.
       DATA t31 TYPE REF TO zcl_lnt_abstract_token.
       DATA t32 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t33) = CAST zcl_lnt_fi_identifier( t9 ).
+      DATA(t33) = t9.
       t32 = t33->token.
       t31 = t32.
       DATA t34 TYPE REF TO zcl_lnt_position.
-      DATA(t35) = CAST zcl_lnt_abstract_token( t31 ).
+      DATA(t35) = t31.
       t34 = t35->start.
       t30 = t34.
       t20 = t21->equals( i_p = t30 ).
@@ -114,14 +116,14 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
         DATA t36 TYPE abap_bool.
         DATA t37 TYPE string.
         DATA t38 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA(t39) = CAST zcl_lnt_fi_identifier( t11 ).
+        DATA(t39) = t11.
         t38 = t39.
         DATA t40 TYPE string.
-        DATA(t41) = CAST zcl_lnt_fi_identifier( t38 ).
+        DATA(t41) = t38.
         t40 = t41->filename.
         t37 = t40.
         DATA t42 TYPE string.
-        DATA(t43) = CAST zcl_lnt_fi_identifier( t9 ).
+        DATA(t43) = t9.
         t42 = t43->filename.
         t36 = xsdbool( t37 = t42 ).
         t19 = t36.
@@ -129,21 +131,22 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       t8 = t19.
       IF t8 = abap_true.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
-        DATA(t46) = CONV i( t2 ).
-        DATA(t47) = CONV i( 1 ).
+        DATA(t45) = me->list.
+        DATA(t46) = t2.
+        DATA(t47) = 1.
         t44 = t45->splice2( p0 = t46 p1 = t47 ).
         RETURN.
       ENDIF.
       DATA t48 TYPE i.
-      DATA(t49) = CONV i( t2 ).
-      DATA(t50) = CONV i( 1 ).
+      DATA(t49) = t2.
+      DATA(t50) = 1.
       t48 = t49 + t50.
       t2 = t48.
     ENDDO.
   ENDMETHOD.
+
   METHOD contains_proteted.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+    DATA(t1) = me->list.
     DATA t2 TYPE REF TO zcl_lnt_info_method_definition.
     CLEAR t2.
     DATA t3 TYPE REF TO object.
@@ -170,47 +173,53 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       ENDIF.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE f.
-      DATA(t9) = CAST zcl_lnt_info_method_definition( t2 ).
+      DATA(t9) = t2.
       t8 = t9->visibility.
       DATA(t10) = CONV f( 2 ).
       t7 = xsdbool( t8 = t10 ).
       IF t7 = abap_true.
-        DATA(t11) = CONV abap_bool( abap_true ).
+        DATA(t11) = abap_true.
         result = t11.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA(t12) = CONV abap_bool( abap_false ).
+    DATA(t12) = abap_false.
     result = t12.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_length.
     DATA t1 TYPE f.
     DATA t2 TYPE i.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+    DATA(t3) = me->list.
     t3->load( ).
     t2 = lines( t3->items ).
     t1 = t2.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_db65.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->list ).
+    DATA(t1) = me->list.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1756_5ec04d8fea6e.
   ENDMETHOD.

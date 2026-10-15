@@ -10,8 +10,9 @@ CLASS zcl_lnt_table_body DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CR
 ENDCLASS.
 CLASS zcl_lnt_table_body IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -23,7 +24,7 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     CLEAR t4.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t5.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d16_4dbebe58fab420 ).
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d16_4dbebe58fab420.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     CLEAR t4.
     IF t5 IS BOUND.
@@ -65,7 +66,7 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     CLEAR t13.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t14.
-    DATA(t15) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d19_66a0d47a314d37 ).
+    DATA(t15) = zlnt_runtime_desc_78196487750d=>zlnt_member_d19_66a0d47a314d37.
     t14 = zcl_lnt_st_combi_module=>tok( i_t = t15 ).
     CLEAR t13.
     IF t14 IS BOUND.
@@ -101,7 +102,7 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     CLEAR t19.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t20.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d18_19680539f6df90 ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d18_19680539f6df90.
     t20 = zcl_lnt_st_combi_module=>tok( i_t = t21 ).
     CLEAR t19.
     IF t20 IS BOUND.
@@ -139,9 +140,9 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     t24 = t25.
     DATA t26 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t26.
-    DATA(t27) = CAST zlnt_runtime_dyna_a429568d5be8( t12 ).
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t18 ).
-    DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t24 ).
+    DATA(t27) = t12.
+    DATA(t28) = t18.
+    DATA(t29) = t24.
     t26 = zcl_lnt_st_combi_module=>alt_prio( i_first = t27 i_second = t28 i_rest = t29 ).
     t11 = t26.
     CLEAR t10.
@@ -180,22 +181,24 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     t32 = t33.
     DATA t34 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t34.
-    DATA(t35) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
-    DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t32 ).
+    DATA(t35) = t3.
+    DATA(t36) = t9.
+    DATA(t37) = t32.
     t34 = zcl_lnt_st_combi_module=>seq( i_first = t35 i_second = t36 i_rest = t37 ).
     t2 = t34.
     t1 = t2.
-    DATA(t38) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t38) = t1.
     result = t38.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d102_cb65ad2c1bba.
   ENDMETHOD.

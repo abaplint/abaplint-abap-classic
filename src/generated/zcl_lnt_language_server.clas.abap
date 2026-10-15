@@ -31,48 +31,50 @@ CLASS zcl_lnt_language_server DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_language_server IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
   ENDMETHOD.
+
   METHOD document_symbol.
-    DATA(t1) = CAST zcl_lnt_idcmnt_symbl_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_symbols.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_symbols( i_reg_f149 = t5 ).
     DATA t6 TYPE string.
     DATA t7 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t8) = CAST zcl_lnt_idcmnt_symbl_prms( t1 ).
+    DATA(t8) = t1.
     t7 = t8->text_document.
     t6 = t7->zlnt_view_read_no_0041136eb871( ).
     t3 = t4->find_8f95( i_uri = t6 ).
     t2 ?= t3.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD hover.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zcl_lnt_shape_d0b60cb0.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_shape_d0b60cb0.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_hover.
     CLEAR t4.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_hover( i_reg_f149 = t5 ).
-    DATA(t6) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t6) = t1.
     t3 = t4->find_8f95( i_pos = t6 ).
     t2 = t3.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zcl_lnt_shape_d0b60cb0( t2 ).
+    DATA(t8) = t2.
     t7 = xsdbool( t8 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_shape_748ae280.
       CLEAR t9.
-      DATA(t10) = CONV abap_bool( abap_true ).
+      DATA(t10) = abap_true.
       IF t10 = abap_true.
         DATA t11 TYPE REF TO zcl_lnt_shape_748ae280.
         CLEAR t11.
@@ -80,13 +82,13 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
         CLEAR t12.
         DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t13.
-        DATA(t14) = CONV abap_bool( abap_true ).
+        DATA(t14) = abap_true.
         IF t14 = abap_true.
           DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t15.
           DATA t16 TYPE REF TO zcl_lnt_shape_d0b60cb0.
           CLEAR t16.
-          DATA(t17) = CAST zcl_lnt_shape_d0b60cb0( t2 ).
+          DATA(t17) = t2.
           t16 = t17.
           CLEAR t15.
           IF t16 IS BOUND.
@@ -137,7 +139,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t11->zlnt_json_ownkeys_70e5fd461788.
         t11->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t24) = CONV string( |contents| ).
+        DATA(t24) = |contents|.
         DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t25.
         IF t11->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -155,46 +157,48 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     DATA t27 TYPE REF TO zcl_lnt_shape_748ae280.
     CLEAR t27.
     result = t27.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD goto_definition.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zcl_lnt_location.
     DATA t3 TYPE REF TO zcl_lnt_definition.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_definition( i_reg_f149 = t4 ).
     DATA t5 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t6) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t6) = t1.
     t5 = t6->zlnt_view_read_sr_ecd019429cea( ).
     DATA t7 TYPE REF TO zcl_lnt_no_position.
-    DATA(t8) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t8) = t1.
     t7 = t8->zlnt_view_read_sr_5fb39d89ef2d( ).
     t2 = t3->find_8f95( i_text_document = t5 i_position_a3fd = t7 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD document_formatting.
-    DATA(t1) = CAST zcl_lnt_shape_1cd8e7a1( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zcl_lnt_abap_file.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     DATA t5 TYPE string.
     DATA t6 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t7) = CAST zcl_lnt_shape_1cd8e7a1( t1 ).
+    DATA(t7) = t1.
     t6 = t7->text_document.
     t5 = t6->zlnt_view_read_no_0041136eb871( ).
     t3 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t4 i_filename = t5 ).
     t2 = t3.
     DATA(t8) = VALUE abap_bool( ).
     DATA t9 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t10) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t10) = t2.
     t9 = t10.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
     t11 = t12.
     DATA(t13) = VALUE abap_bool( ).
-    DATA(t14) = CAST zcl_lnt_abap_file( t9 ).
+    DATA(t14) = t9.
     IF t14 IS INITIAL.
       t13 = abap_true.
     ENDIF.
@@ -209,41 +213,41 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     DATA t17 TYPE string.
     DATA t18 TYPE REF TO zcl_lnt_pretty_printer.
     DATA t19 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t20) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t20) = t2.
     t19 = t20.
     DATA t21 TYPE REF TO zif_lnt_configuration.
-    DATA(t22) = CAST zif_lnt_registry( me->reg ).
-    t21 = t22->get_config(  ).
+    DATA(t22) = me->reg.
+    t21 = t22->get_config( ).
     t18 = NEW zcl_lnt_pretty_printer( i_file = t19 i_config = t21 ).
-    t17 = t18->run(  ).
+    t17 = t18->run( ).
     t16 = t17.
     DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t25 TYPE REF TO zcl_lnt_abap_file.
     DATA t26 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t27) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t27) = t2.
     t26 = t27.
     t25 = t26.
     DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t29 TYPE REF TO zif_lnt_file.
-    DATA(t30) = CAST zcl_lnt_abap_file( t25 ).
+    DATA(t30) = t25.
     t29 = t30->file.
-    t28 = t29->get_raw_rows(  ).
+    t28 = t29->get_raw_rows( ).
     t24 = t28.
     t23 = t24.
     DATA t31 TYPE abap_bool.
-    DATA(t32) = CONV string( t16 ).
+    DATA(t32) = t16.
     DATA t33 TYPE string.
     DATA t34 TYPE REF TO zcl_lnt_abap_file.
     DATA t35 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t36) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t36) = t2.
     t35 = t36.
     t34 = t35.
     DATA t37 TYPE string.
     DATA t38 TYPE REF TO zif_lnt_file.
-    DATA(t39) = CAST zcl_lnt_abap_file( t34 ).
+    DATA(t39) = t34.
     t38 = t39->file.
-    t37 = t38->get_raw(  ).
+    t37 = t38->get_raw( ).
     t33 = t37.
     t31 = xsdbool( t32 = t33 ).
     IF t31 = abap_true.
@@ -258,7 +262,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t43.
       t42 = t43.
-      DATA(t44) = CAST zlnt_runtime_arra_c22708faf2e3( t42 ).
+      DATA(t44) = t42.
       DATA t45 TYPE REF TO zcl_lnt_text_edit.
       CLEAR t45.
       DATA t46 TYPE REF TO zcl_lnt_range.
@@ -266,14 +270,14 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       DATA t47 TYPE REF TO zcl_lnt_range.
       CLEAR t47.
       DATA t48 TYPE i.
-      DATA(t49) = CONV i( 0 ).
+      DATA(t49) = 0.
       t48 = t49.
       DATA t50 TYPE i.
-      DATA(t51) = CONV i( 0 ).
+      DATA(t51) = 0.
       t50 = t51.
       DATA t52 TYPE i.
       DATA t53 TYPE i.
-      DATA(t54) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t54) = t23.
       t54->load( ).
       t53 = lines( t54->items ).
       t52 = t53.
@@ -282,13 +286,13 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       DATA(t57) = VALUE int8( ).
       DATA(t58) = VALUE i( ).
       DATA(t59) = VALUE string( ).
-      DATA(t60) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t60) = t23.
       DATA t61 TYPE i.
       DATA t62 TYPE i.
-      DATA(t63) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
+      DATA(t63) = t23.
       t63->load( ).
       t62 = lines( t63->items ).
-      DATA(t64) = CONV i( 1 ).
+      DATA(t64) = 1.
       t61 = t62 - t64.
       t61 = t61 + 1.
       IF t60->has( t61 - 1 ) = abap_false.
@@ -297,7 +301,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       t60->load( ).
       CLEAR t59.
       READ TABLE t60->items INDEX t61 INTO t59.
-      DATA(t65) = CONV i( strlen( t59 ) ).
+      DATA(t65) = strlen( t59 ).
       t58 = t65.
       t57 = t58.
       DATA(t66) = CONV int8( 1 ).
@@ -309,10 +313,10 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       CLEAR t68.
       DATA t69 TYPE REF TO zcl_lnt_no_position.
       DATA t70 TYPE f.
-      DATA(t71) = CONV i( t48 ).
+      DATA(t71) = t48.
       t70 = t71.
       DATA t72 TYPE f.
-      DATA(t73) = CONV i( t50 ).
+      DATA(t73) = t50.
       t72 = t73.
       DATA(t74) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t74->has = abap_true.
@@ -335,10 +339,10 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       CLEAR t77.
       DATA t78 TYPE REF TO zcl_lnt_no_position.
       DATA t79 TYPE f.
-      DATA(t80) = CONV i( t52 ).
+      DATA(t80) = t52.
       t79 = t80.
       DATA t81 TYPE f.
-      DATA(t82) = CONV int8( t55 ).
+      DATA(t82) = t55.
       t81 = t82.
       DATA(t83) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t83->has = abap_true.
@@ -372,13 +376,13 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t67->zlnt_json_ownkeys_70e5fd461788.
       t67->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t88) = CONV string( |start| ).
+      DATA(t88) = |start|.
       DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t89.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
       ENDIF.
-      DATA(t90) = CONV string( |end| ).
+      DATA(t90) = |end|.
       DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t91.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -387,7 +391,7 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       t47 = t67.
       t46 = t47.
       DATA t92 TYPE string.
-      DATA(t93) = CONV string( t16 ).
+      DATA(t93) = t16.
       t92 = t93.
       t45 = NEW zcl_lnt_text_edit( i_range = t46 i_new_text = t92 ).
       CREATE OBJECT t45->zlnt_view_ownkeys_b0e8086400eb.
@@ -404,13 +408,13 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t45->zlnt_json_ownkeys_70e5fd461788.
       t45->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t96) = CONV string( |range| ).
+      DATA(t96) = |range|.
       DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t97.
       IF t45->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
       ENDIF.
-      DATA(t98) = CONV string( |newText| ).
+      DATA(t98) = |newText|.
       DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t99.
       IF t45->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -419,99 +423,108 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
       t44->load( ).
       APPEND t45 TO t44->items.
       t44->save( ).
-      DATA(t100) = CAST zlnt_runtime_arra_c22708faf2e3( t42 ).
+      DATA(t100) = t42.
       t41 = t100.
       result = t41.
-      RETURN.
+
     ENDIF.
   ENDMETHOD.
+
   METHOD diagnostics.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_diagnostics.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_diagnostics( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t2 = t3->find_8f95( i_text_document = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD prepare_rename.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA(t2) = NEW zlnt_exception_un_5f2d02892fe8( ).
-    DATA(t3) = CONV string( |lowering trap: src/lsp/language_server.ts:83:3: HIR verifica| ).
+    DATA(t3) = |lowering trap: src/lsp/language_server.ts:83:3: HIR verifica|.
     t3 = t3 && |tion: node 152576 (src/lsp/language_server.ts:84:5): assignm|.
     t3 = t3 && |ent type mismatch|.
     t2->source_location = t3.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD rename.
-    DATA(t1) = CAST zcl_lnt_irename_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zcl_lnt_shape_36bc2e57.
     DATA t3 TYPE REF TO object.
     DATA t4 TYPE REF TO zcl_lnt_rename.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_rename( i_reg_f149 = t5 ).
-    DATA(t6) = CAST zcl_lnt_irename_params( t1 ).
+    DATA(t6) = t1.
     t3 = t4->rename( i_params_4c59 = t6 ).
     t2 ?= t3.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD code_actions.
-    DATA(t1) = CAST zcl_lnt_icode_action_params( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_code_actions.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_code_actions( i_reg_f149 = t5 ).
-    DATA(t6) = CAST zcl_lnt_icode_action_params( t1 ).
+    DATA(t6) = t1.
     t3 = t4->find_8f95( i_params_4c59 = t6 ).
     t2 ?= t3.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD document_highlight.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_c5c7 ).
+    DATA(t1) = i_params_c5c7.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD implementation.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_implementation.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_implementation( i_reg_f149 = t4 ).
     DATA t5 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t6) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t6) = t1.
     t5 = t6->zlnt_view_read_sr_ecd019429cea( ).
     DATA t7 TYPE REF TO zcl_lnt_no_position.
-    DATA(t8) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t8) = t1.
     t7 = t8->zlnt_view_read_sr_5fb39d89ef2d( ).
     t2 = t3->find_8f95( i_text_document = t5 i_position_a3fd = t7 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD references.
-    DATA(t1) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( i_params_4c59 ).
+    DATA(t1) = i_params_4c59.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_references.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_references( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_itxt_dcmnt_pstn_prms( t1 ).
+    DATA(t5) = t1.
     t2 = t3->references( i_pos = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD semantic_tokens_legend.
-    DATA(t1) = CAST zcl_lnt_shape_2d2f513b( zcl_lnt_semantic_highlighting=>semantic_tokens_legend(  ) ).
+    DATA(t1) = CAST zcl_lnt_shape_2d2f513b( zcl_lnt_semantic_highlighting=>semantic_tokens_legend( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD semantic_tokens_range.
-    DATA(t1) = CAST zcl_lnt_itext_document_range( i_range ).
+    DATA(t1) = i_range.
     DATA t2 TYPE REF TO zcl_lnt_shape_d48da73b.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_semantic_highlighting.
@@ -519,95 +532,105 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     IF zcl_lnt_semantic_highlighting=>zlnt_builtin_init_ceda21d7331d = abap_false.
       zcl_lnt_semantic_highlighting=>zlnt_builtin_init_1c3f77c0f160( ).
     ENDIF.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_semantic_highlighting( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_itext_document_range( t1 ).
+    DATA(t5) = t1.
     t2 = t3->semantic_tokens_range( i_range = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD code_lens.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_code_lens_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_code_lens.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_code_lens( i_reg_f149 = t5 ).
-    DATA(t6) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
-    DATA(t7) = CAST zcl_lnt_code_lens_settings( t2 ).
+    DATA(t6) = t1.
+    DATA(t7) = t2.
     t3 = t4->list( i_text_document = t6 i_settings = t7 ).
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD inlay_hints.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_inlay_hints_settings( i_settings ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_settings.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_inlay_hints.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
+    DATA(t5) = me->reg.
     t4 = NEW zcl_lnt_inlay_hints( i_reg_f149 = t5 ).
-    DATA(t6) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
-    DATA(t7) = CAST zcl_lnt_inlay_hints_settings( t2 ).
+    DATA(t6) = t1.
+    DATA(t7) = t2.
     t3 = t4->list( i_text_document = t6 i_settings = t7 ).
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD help.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
-    DATA(t2) = CAST zcl_lnt_no_position( i_position_a3fd ).
+    DATA(t1) = i_text_document.
+    DATA(t2) = i_position_a3fd.
     DATA t3 TYPE string.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
-    DATA(t6) = CAST zcl_lnt_no_position( t2 ).
+    DATA(t4) = me->reg.
+    DATA(t5) = t1.
+    DATA(t6) = t2.
     t3 = zcl_lnt_help=>find_8f95( i_reg_f149 = t4 i_text_document = t5 i_position_a3fd = t6 ).
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_definition_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_highlight.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_highlight( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t2 = t3->list_definition_positions( i_text_document = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_read_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_highlight.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_highlight( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t2 = t3->list_read_positions( i_text_document = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_write_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_highlight.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     t3 = NEW zcl_lnt_highlight( i_reg_f149 = t4 ).
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t2 = t3->list_write_positions( i_text_document = t5 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1173_68d9a944e1cb.
   ENDMETHOD.

@@ -20,7 +20,7 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
     IF zcl_lnt_scope_type_module=>zlnt_builtin_init_dfd373a603fc = abap_false.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250(  ).
+    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
     zcl_lnt_scope_type_module=>scope_type_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t2.
@@ -30,8 +30,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t3 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t4) = CONV string( |BuiltIn| ).
-    DATA(t5) = CONV string( |_builtin| ).
+    DATA(t4) = |BuiltIn|.
+    DATA(t5) = |_builtin|.
     t2 = t3->set( p0 = t4 p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t6.
@@ -41,8 +41,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t7 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t8) = CONV string( |Dummy| ).
-    DATA(t9) = CONV string( |_dummy| ).
+    DATA(t8) = |Dummy|.
+    DATA(t9) = |_dummy|.
     t6 = t7->set( p0 = t8 p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t10.
@@ -52,8 +52,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t11 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t12) = CONV string( |SelectionEvent| ).
-    DATA(t13) = CONV string( |selection_event| ).
+    DATA(t12) = |SelectionEvent|.
+    DATA(t13) = |selection_event|.
     t10 = t11->set( p0 = t12 p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t14.
@@ -63,8 +63,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t15 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t16) = CONV string( |Global| ).
-    DATA(t17) = CONV string( |_global| ).
+    DATA(t16) = |Global|.
+    DATA(t17) = |_global|.
     t14 = t15->set( p0 = t16 p1 = t17 ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t18.
@@ -74,8 +74,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t19 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t20) = CONV string( |Program| ).
-    DATA(t21) = CONV string( |_program| ).
+    DATA(t20) = |Program|.
+    DATA(t21) = |_program|.
     t18 = t19->set( p0 = t20 p1 = t21 ).
     DATA t22 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t22.
@@ -85,8 +85,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t23 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t24) = CONV string( |TypePool| ).
-    DATA(t25) = CONV string( |_type_pool| ).
+    DATA(t24) = |TypePool|.
+    DATA(t25) = |_type_pool|.
     t22 = t23->set( p0 = t24 p1 = t25 ).
     DATA t26 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t26.
@@ -96,8 +96,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t27 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t28) = CONV string( |FunctionGroup| ).
-    DATA(t29) = CONV string( |_function_group| ).
+    DATA(t28) = |FunctionGroup|.
+    DATA(t29) = |_function_group|.
     t26 = t27->set( p0 = t28 p1 = t29 ).
     DATA t30 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t30.
@@ -107,8 +107,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t31 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t32) = CONV string( |ClassDefinition| ).
-    DATA(t33) = CONV string( |class_definition| ).
+    DATA(t32) = |ClassDefinition|.
+    DATA(t33) = |class_definition|.
     t30 = t31->set( p0 = t32 p1 = t33 ).
     DATA t34 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t34.
@@ -118,8 +118,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t35 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t36) = CONV string( |Interface| ).
-    DATA(t37) = CONV string( |interface| ).
+    DATA(t36) = |Interface|.
+    DATA(t37) = |interface|.
     t34 = t35->set( p0 = t36 p1 = t37 ).
     DATA t38 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t38.
@@ -129,8 +129,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t39 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t40) = CONV string( |ClassImplementation| ).
-    DATA(t41) = CONV string( |class_implementation| ).
+    DATA(t40) = |ClassImplementation|.
+    DATA(t41) = |class_implementation|.
     t38 = t39->set( p0 = t40 p1 = t41 ).
     DATA t42 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t42.
@@ -140,8 +140,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t43 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t44) = CONV string( |Form| ).
-    DATA(t45) = CONV string( |form| ).
+    DATA(t44) = |Form|.
+    DATA(t45) = |form|.
     t42 = t43->set( p0 = t44 p1 = t45 ).
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t46.
@@ -151,8 +151,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t47 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t48) = CONV string( |FunctionModule| ).
-    DATA(t49) = CONV string( |function| ).
+    DATA(t48) = |FunctionModule|.
+    DATA(t49) = |function|.
     t46 = t47->set( p0 = t48 p1 = t49 ).
     DATA t50 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t50.
@@ -162,8 +162,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t51 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t52) = CONV string( |Method| ).
-    DATA(t53) = CONV string( |method| ).
+    DATA(t52) = |Method|.
+    DATA(t53) = |method|.
     t50 = t51->set( p0 = t52 p1 = t53 ).
     DATA t54 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t54.
@@ -173,8 +173,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t55 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t56) = CONV string( |MethodInstance| ).
-    DATA(t57) = CONV string( |method_instance| ).
+    DATA(t56) = |MethodInstance|.
+    DATA(t57) = |method_instance|.
     t54 = t55->set( p0 = t56 p1 = t57 ).
     DATA t58 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t58.
@@ -184,8 +184,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t59 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t60) = CONV string( |MethodDefinition| ).
-    DATA(t61) = CONV string( |method_definition| ).
+    DATA(t60) = |MethodDefinition|.
+    DATA(t61) = |method_definition|.
     t58 = t59->set( p0 = t60 p1 = t61 ).
     DATA t62 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t62.
@@ -195,8 +195,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t63 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t64) = CONV string( |For| ).
-    DATA(t65) = CONV string( |for| ).
+    DATA(t64) = |For|.
+    DATA(t65) = |for|.
     t62 = t63->set( p0 = t64 p1 = t65 ).
     DATA t66 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t66.
@@ -206,8 +206,8 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t67 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t68) = CONV string( |Let| ).
-    DATA(t69) = CONV string( |let| ).
+    DATA(t68) = |Let|.
+    DATA(t69) = |let|.
     t66 = t67->set( p0 = t68 p1 = t69 ).
     DATA t70 TYPE REF TO zlnt_runtime_map__a1006b231250.
     CLEAR t70.
@@ -217,22 +217,26 @@ CLASS zcl_lnt_scope_type_module IMPLEMENTATION.
       zcl_lnt_scope_type_module=>zlnt_builtin_init_f8ae50df5ce6( ).
     ENDIF.
     t71 = zcl_lnt_scope_type_module=>scope_type_namespace.
-    DATA(t72) = CONV string( |OpenSQL| ).
-    DATA(t73) = CONV string( |open_sql| ).
+    DATA(t72) = |OpenSQL|.
+    DATA(t73) = |open_sql|.
     t70 = t71->set( p0 = t72 p1 = t73 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1964_fcee8548109b.
   ENDMETHOD.

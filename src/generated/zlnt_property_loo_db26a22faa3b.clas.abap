@@ -177,6 +177,7 @@ CLASS zlnt_property_loo_db26a22faa3b IMPLEMENTATION.
     CREATE OBJECT token22.
     token22 = zlnt_property_tok_d0ec64d8cfa1=>get( ).
   ENDMETHOD.
+
   METHOD get.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.
@@ -266,6 +267,7 @@ CLASS zlnt_property_loo_db26a22faa3b IMPLEMENTATION.
         result = token22.
     ENDCASE.
   ENDMETHOD.
+
   METHOD own.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.
@@ -282,6 +284,7 @@ CLASS zlnt_property_loo_db26a22faa3b IMPLEMENTATION.
     ENDIF.
     result = row-own.
   ENDMETHOD.
+
   METHOD has.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.

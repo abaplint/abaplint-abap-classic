@@ -16,39 +16,43 @@ CLASS zcl_lnt_tuple_cc45ee1d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_cc45ee1d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_clas_a39833db3295( i_f0 ).
-    DATA(t2) = CAST zif_lnt_statement_runnable( i_f1 ).
-    DATA(t3) = CONV string( i_f2 ).
-    DATA(t4) = CAST zif_lnt_statement_runnable( i_f3 ).
-    DATA(t5) = CONV string( i_f4 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( t1 ).
+    DATA(t1) = i_f0.
+    DATA(t2) = i_f1.
+    DATA(t3) = i_f2.
+    DATA(t4) = i_f3.
+    DATA(t5) = i_f4.
+    DATA(t6) = t1.
     me->f0 = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f0`.
-    DATA(t7) = CAST zif_lnt_statement_runnable( t2 ).
+    DATA(t7) = t2.
     me->f1 = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f1`.
-    DATA(t8) = CONV string( t3 ).
+    DATA(t8) = t3.
     me->f2 = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f2`.
-    DATA(t9) = CAST zif_lnt_statement_runnable( t4 ).
+    DATA(t9) = t4.
     me->f3 = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f3`.
-    DATA(t10) = CONV string( t5 ).
+    DATA(t10) = t5.
     me->f4 = t10.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f4`.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d11_b829914c6cc66c.
   ENDMETHOD.

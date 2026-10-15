@@ -17,53 +17,60 @@ CLASS zcl_lnt_sr_catch IMPLEMENTATION.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
     DATA t3 TYPE REF TO zif_lnt_structure_runnable.
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d402_a27e9c5370ec ).
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d402_a27e9c5370ec.
     t4 = zcl_lnt_sr_combi_module=>sta( i_s = t5 ).
     t3 = t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t8) = t6.
     DATA t9 TYPE REF TO zif_lnt_structure_runnable.
     DATA t10 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t11) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424 ).
+    DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
     t10 = zcl_lnt_sr_combi_module=>sub( i_s = t11 ).
     t9 = zcl_lnt_sr_combi_module=>opt( i_o = t10 ).
     t8->load( ).
     APPEND t9 TO t8->items.
     t8->save( ).
     DATA t12 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t13) = CAST zif_lnt_structure_runnable( t3 ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t6 ).
+    DATA(t13) = t3.
+    DATA(t14) = t6.
     t12 = zcl_lnt_sr_combi_module=>seq( i_first = t13 i_rest = t14 ).
     t2 = t12.
     t1 = t2.
-    DATA(t15) = CAST zif_lnt_structure_runnable( t1 ).
+    DATA(t15) = t1.
     result = t15.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d712_8689fb760a6c.
   ENDMETHOD.
+
   METHOD zif_lnt_structure~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

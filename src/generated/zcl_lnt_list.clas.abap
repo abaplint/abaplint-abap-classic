@@ -20,10 +20,11 @@ CLASS zcl_lnt_list IMPLEMENTATION.
     me->words = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `words`.
   ENDMETHOD.
+
   METHOD add_51c1.
-    DATA(t1) = CAST zlnt_runtime_arra_8ecd6afe19e0( i_keywords ).
-    DATA(t2) = CONV string( i_source_75cf ).
-    DATA(t3) = CAST zlnt_runtime_arra_8ecd6afe19e0( t1 ).
+    DATA(t1) = i_keywords.
+    DATA(t2) = i_source_75cf.
+    DATA(t3) = t1.
     DATA(t4) = VALUE string( ).
     t3->dense( ).
     DATA(t5) = VALUE i( ).
@@ -40,20 +41,20 @@ CLASS zcl_lnt_list IMPLEMENTATION.
       t5 = t5 + 1.
       DATA t6 TYPE i.
       DATA t7 TYPE i.
-      DATA(t8) = CONV string( t4 ).
+      DATA(t8) = t4.
       t7 = me->find_8f95( i_keyword = t8 ).
       t6 = t7.
       DATA t9 TYPE abap_bool.
-      DATA(t10) = CONV i( t6 ).
-      DATA(t11) = CONV i( 0 ).
+      DATA(t10) = t6.
+      DATA(t11) = 0.
       t9 = xsdbool( t10 >= t11 ).
       IF t9 = abap_true.
         DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t12.
         DATA t13 TYPE REF TO zcl_lnt_ikeyword.
         CLEAR t13.
-        DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
-        DATA(t15) = CONV i( t6 ).
+        DATA(t14) = me->words.
+        DATA(t15) = t6.
         t15 = t15 + 1.
         DATA t16 TYPE REF TO object.
         CLEAR t16.
@@ -72,15 +73,15 @@ CLASS zcl_lnt_list IMPLEMENTATION.
           t13 ?= t16.
         ENDIF.
         t12 = t13->source.
-        DATA(t19) = CONV string( t2 ).
+        DATA(t19) = t2.
         t12->load( ).
         APPEND t19 TO t12->items.
         t12->save( ).
       ELSE.
-        DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+        DATA(t20) = me->words.
         DATA t21 TYPE REF TO zcl_lnt_ikeyword.
         DATA t22 TYPE string.
-        DATA(t23) = CONV string( t4 ).
+        DATA(t23) = t4.
         t22 = t23.
         DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -88,12 +89,12 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CREATE OBJECT t27.
         t26 = t27.
-        DATA(t28) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
-        DATA(t29) = CONV string( t2 ).
+        DATA(t28) = t26.
+        DATA(t29) = t2.
         t28->load( ).
         APPEND t29 TO t28->items.
         t28->save( ).
-        DATA(t30) = CAST zlnt_runtime_arra_8ecd6afe19e0( t26 ).
+        DATA(t30) = t26.
         t25 = t30.
         t24 = t25.
         t21 = NEW zcl_lnt_ikeyword( i_word = t22 i_source_75cf = t24 ).
@@ -111,13 +112,13 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t21->zlnt_json_ownkeys_70e5fd461788.
         t21->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t33) = CONV string( |word| ).
+        DATA(t33) = |word|.
         DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t34.
         IF t21->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t33 p1 = t34 ).
         ENDIF.
-        DATA(t35) = CONV string( |source| ).
+        DATA(t35) = |source|.
         DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t36.
         IF t21->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -129,21 +130,23 @@ CLASS zcl_lnt_list IMPLEMENTATION.
       ENDIF.
     ENDDO.
   ENDMETHOD.
+
   METHOD get_db65.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+    DATA(t1) = me->words.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD find_8f95.
-    DATA(t1) = CONV string( i_keyword ).
+    DATA(t1) = i_keyword.
     DATA t2 TYPE i.
-    DATA(t3) = CONV i( 0 ).
+    DATA(t3) = 0.
     t2 = t3.
     DO.
       DATA t4 TYPE abap_bool.
-      DATA(t5) = CONV i( t2 ).
+      DATA(t5) = t2.
       DATA t6 TYPE i.
-      DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+      DATA(t7) = me->words.
       t7->load( ).
       t6 = lines( t7->items ).
       t4 = xsdbool( t5 < t6 ).
@@ -154,8 +157,8 @@ CLASS zcl_lnt_list IMPLEMENTATION.
       DATA(t9) = VALUE string( ).
       DATA t10 TYPE REF TO zcl_lnt_ikeyword.
       CLEAR t10.
-      DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
-      DATA(t12) = CONV i( t2 ).
+      DATA(t11) = me->words.
+      DATA(t12) = t2.
       t12 = t12 + 1.
       DATA t13 TYPE REF TO object.
       CLEAR t13.
@@ -174,35 +177,39 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         t10 ?= t13.
       ENDIF.
       t9 = t10->word.
-      DATA(t16) = CONV string( t1 ).
+      DATA(t16) = t1.
       t8 = xsdbool( t9 = t16 ).
       IF t8 = abap_true.
-        DATA(t17) = CONV i( t2 ).
+        DATA(t17) = t2.
         result = t17.
         RETURN.
       ENDIF.
       DATA t18 TYPE i.
-      DATA(t19) = CONV i( t2 ).
-      DATA(t20) = CONV i( 1 ).
+      DATA(t19) = t2.
+      DATA(t20) = 1.
       t18 = t19 + t20.
       t2 = t18.
     ENDDO.
-    DATA(t21) = CONV i( -1 ).
+    DATA(t21) = -1.
     result = t21.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1003_0173dcfeb8f2.
   ENDMETHOD.

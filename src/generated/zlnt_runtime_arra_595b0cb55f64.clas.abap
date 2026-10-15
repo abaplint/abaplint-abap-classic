@@ -29,7 +29,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 DEFINITION PUBLIC CREATE PUBLIC.
     METHODS splice3 IMPORTING p0 TYPE i p1 TYPE i p2 TYPE f RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
     METHODS pop RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     METHODS shift RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    METHODS indexOf IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE i.
+    METHODS indexof IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE i.
     METHODS includes IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE abap_bool.
     METHODS join IMPORTING p0 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169 RETURNING VALUE(result) TYPE string.
     METHODS get IMPORTING p0 TYPE i RETURNING VALUE(result) TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
@@ -47,6 +47,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     READ TABLE missing WITH TABLE KEY table_line = idx TRANSPORTING NO FIELDS.
     result = xsdbool( sy-subrc <> 0 ).
   ENDMETHOD.
+
   METHOD delete.
     load( ).
     DATA idx TYPE i.
@@ -59,6 +60,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     result = abap_true.
     save( ).
   ENDMETHOD.
+
   METHOD put.
     load( ).
     IF p0 < 0 OR p0 >= 2147483647.
@@ -77,6 +79,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     MODIFY items FROM p1 INDEX idx.
     save( ).
   ENDMETHOD.
+
   METHOD allocate.
     load( ).
     IF p0 < 0.
@@ -91,12 +94,14 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     ENDWHILE.
     save( ).
   ENDMETHOD.
+
   METHOD dense.
     load( ).
     IF missing IS NOT INITIAL.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
   ENDMETHOD.
+
   METHOD reverse.
     load( ).
     DATA holes TYPE missing_type.
@@ -124,12 +129,14 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     ENDWHILE.
     save( ).
   ENDMETHOD.
+
   METHOD push.
     load( ).
     APPEND p0 TO items.
     result = lines( items ).
     save( ).
   ENDMETHOD.
+
   METHOD unshift.
     load( ).
     dense( ).
@@ -137,10 +144,12 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     result = lines( items ).
     save( ).
   ENDMETHOD.
+
   METHOD length.
     load( ).
     result = lines( items ).
   ENDMETHOD.
+
   METHOD concat.
     load( ).
     p0->load( ).
@@ -150,12 +159,14 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     APPEND LINES OF items TO result->items.
     APPEND LINES OF p0->items TO result->items.
   ENDMETHOD.
+
   METHOD slice0.
     load( ).
     CREATE OBJECT result.
     result->missing = missing.
     APPEND LINES OF items TO result->items.
   ENDMETHOD.
+
   METHOD slice1.
     load( ).
     dense( ).
@@ -172,6 +183,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       APPEND LINES OF items FROM from + 1 TO result->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD slice2.
     load( ).
     dense( ).
@@ -196,6 +208,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       APPEND LINES OF items FROM from + 1 TO upto TO result->items.
     ENDIF.
   ENDMETHOD.
+
   METHOD splice1.
     load( ).
     dense( ).
@@ -231,12 +244,14 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     items = head.
     save( ).
   ENDMETHOD.
+
   METHOD splice1_view.
     load( ).
     dense( ).
     result = splice1( p0 ).
     save( ).
   ENDMETHOD.
+
   METHOD splice2.
     load( ).
     dense( ).
@@ -272,6 +287,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     ENDIF.
     save( ).
   ENDMETHOD.
+
   METHOD splice3.
     load( ).
     dense( ).
@@ -306,6 +322,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     INSERT p2 INTO items INDEX from.
     save( ).
   ENDMETHOD.
+
   METHOD pop.
     load( ).
     DATA hole TYPE i.
@@ -326,6 +343,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     ENDIF.
     save( ).
   ENDMETHOD.
+
   METHOD shift.
     load( ).
     dense( ).
@@ -339,7 +357,8 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     ENDIF.
     save( ).
   ENDMETHOD.
-  METHOD indexOf.
+
+  METHOD indexof.
     load( ).
     dense( ).
     DATA row TYPE f.
@@ -351,6 +370,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD includes.
     load( ).
     dense( ).
@@ -359,6 +379,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD join.
     load( ).
     dense( ).
@@ -375,6 +396,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD get.
     load( ).
     IF has( p0 ) = abap_false.
@@ -391,6 +413,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       result->value = val.
     ENDIF.
   ENDMETHOD.
+
   METHOD load.
     IF source IS NOT BOUND.
       RETURN.
@@ -418,6 +441,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       APPEND t3 TO items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD save.
     IF source IS NOT BOUND.
       RETURN.
@@ -436,17 +460,22 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
       APPEND t2 TO source->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~source.
     result = source.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~structural.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_array.go: has: live-array key presence unavailable`.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_array.go: delete: live-array key deletion unavailable`.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -470,6 +499,7 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
     result->nval = t3.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

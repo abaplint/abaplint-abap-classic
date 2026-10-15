@@ -17,6 +17,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
     ENDIF.
     result = value->value.
   ENDMETHOD.
+
   METHOD calculate.
     DATA a TYPE f.
     DATA b TYPE f.
@@ -62,6 +63,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_exception_st_3209c6b944d9.
     ENDCASE.
   ENDMETHOD.
+
   METHOD compare.
     DATA a TYPE f.
     DATA b TYPE f.
@@ -97,6 +99,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_exception_st_3209c6b944d9.
     ENDCASE.
   ENDMETHOD.
+
   METHOD minmax.
     IF left IS NOT BOUND OR right IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_exception_st_3209c6b944d9.
@@ -115,6 +118,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD negate.
     CREATE OBJECT result.
     result->has = abap_true.
@@ -136,6 +140,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
         result->number_special = 2.
     ENDCASE.
   ENDMETHOD.
+
   METHOD index.
     IF value IS NOT BOUND OR value->has = abap_false OR value->number_special = 1.
       RETURN.
@@ -148,6 +153,7 @@ CLASS zlnt_runtime_numb_290eb04a9758 IMPLEMENTATION.
       result = trunc( value->value ).
     ENDIF.
   ENDMETHOD.
+
   METHOD text.
     IF value IS NOT BOUND OR value->has = abap_false.
       result = 'undefined'.

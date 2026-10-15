@@ -10,8 +10,9 @@ CLASS zcl_lnt_sql_mppng_frm_entty DEFINITION PUBLIC INHERITING FROM zcl_lnt_expr
 ENDCLASS.
 CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -27,7 +28,7 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = CONV string( |v789| ).
+    DATA(t6) = |v789|.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     CLEAR t2.
@@ -59,7 +60,7 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CONV string( |MAPPING FROM ENTITY| ).
+    DATA(t10) = |MAPPING FROM ENTITY|.
     CLEAR t9.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -68,14 +69,16 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
     CLEAR t11.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t11 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d339_ea6d392265d6.
   ENDMETHOD.

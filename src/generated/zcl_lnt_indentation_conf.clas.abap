@@ -42,23 +42,23 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     DATA(t2) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t2->has = abap_true.
     t2->value = t1.
     me->zlnt_view_write_s_3bab095d9e20( p0 = t2 ).
-    DATA(t3) = CONV abap_bool( abap_false ).
+    DATA(t3) = abap_false.
     me->zlnt_view_write_s_b8ec4c22f5cf( p0 = t3 ).
-    DATA(t4) = CONV abap_bool( abap_false ).
+    DATA(t4) = abap_false.
     me->zlnt_view_write_s_3d3631111b81( p0 = t4 ).
-    DATA(t5) = CONV abap_bool( abap_false ).
+    DATA(t5) = abap_false.
     me->zlnt_view_write_s_198f0d321172( p0 = t5 ).
-    DATA(t6) = CONV abap_bool( abap_false ).
+    DATA(t6) = abap_false.
     DATA(t7) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t7->has = abap_true.
     t7->value = t6.
     me->zlnt_view_write_s_3f4481a902ef( p0 = t7 ).
-    DATA(t8) = CONV abap_bool( abap_false ).
+    DATA(t8) = abap_false.
     DATA(t9) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t9->has = abap_true.
     t9->value = t8.
@@ -69,17 +69,20 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
     t11->value = t10.
     me->zlnt_view_write_s_af7e24cd0731( p0 = t11 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1543_157a0b68a203.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_649aa078d171.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
@@ -93,6 +96,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->ignore_exceptions.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_3bab095d9e20.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -110,6 +114,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreExceptions`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_5c35b8f00615.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `alignTryCatch` ) ).
@@ -118,6 +123,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->align_try_catch.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_b8ec4c22f5cf.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -132,6 +138,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `alignTryCatch`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_d06af785ba41.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `selectionScreenBlockIndentation` ) ).
@@ -140,6 +147,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->slctn_scrn_blck_indnttn.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_3d3631111b81.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -154,6 +162,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `selectionScreenBlockIndentation`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_e38337070bb8.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `globalClassSkipFirst` ) ).
@@ -162,6 +171,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->global_class_skip_first.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_198f0d321172.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -176,6 +186,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `globalClassSkipFirst`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_3de28dccde0f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalClassDefinition` ) ).
@@ -189,6 +200,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->ignore_global_class_definition.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_3f4481a902ef.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -206,6 +218,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreGlobalClassDefinition`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_0529cf4a1dad.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalInterface` ) ).
@@ -219,6 +232,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->ignore_global_interface.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_0d6c8aa0d6b1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -236,6 +250,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreGlobalInterface`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_7d407689ecd3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `maxIssuesPerFile` ) ).
@@ -252,6 +267,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = me->max_issues_per_file.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_af7e24cd0731.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -270,6 +286,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `maxIssuesPerFile`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -300,6 +317,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -307,6 +325,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -354,6 +373,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -464,6 +484,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

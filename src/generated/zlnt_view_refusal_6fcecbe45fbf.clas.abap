@@ -11,6 +11,7 @@ CLASS zlnt_view_refusal_6fcecbe45fbf IMPLEMENTATION.
     super->constructor( ).
     me->reason = reason.
   ENDMETHOD.
+
   METHOD get_text.
     result = |ABAP view refused: { reason }|.
   ENDMETHOD.

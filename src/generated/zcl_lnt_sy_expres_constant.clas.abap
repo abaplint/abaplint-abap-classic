@@ -11,11 +11,11 @@ CLASS zcl_lnt_sy_expres_constant DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
+    DATA(t1) = i_node.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t4) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81.
     t3 = t4->find_direct_expression( i_type_9913 = t5 ).
     t2 = xsdbool( t3 IS BOUND ).
     IF t2 = abap_true.
@@ -23,7 +23,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
       CLEAR t6.
       DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t7.
-      DATA(t8) = CONV abap_bool( abap_true ).
+      DATA(t8) = abap_true.
       IF t8 = abap_true.
         DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t9.
@@ -31,9 +31,9 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         CLEAR t10.
         DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t11.
-        DATA(t12) = CONV abap_bool( abap_true ).
+        DATA(t12) = abap_true.
         IF t12 = abap_true.
-          DATA(t13) = CONV abap_bool( abap_true ).
+          DATA(t13) = abap_true.
           DATA(t14) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t14->has = abap_true.
           t14->value = t13.
@@ -74,7 +74,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t9->zlnt_json_ownkeys_70e5fd461788.
         t9->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t27) = CONV string( |derivedFromConstant| ).
+        DATA(t27) = |derivedFromConstant|.
         DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t28.
         IF t9->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -94,18 +94,18 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
     DATA t31 TYPE string.
     DATA t32 TYPE REF TO zcl_lnt_abstract_token.
     DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t34) = CAST zcl_lnt_expression_node( t1 ).
-    t33 = t34->get_first_token(  ).
+    DATA(t34) = t1.
+    t33 = t34->get_first_token( ).
     t32 = t33.
     DATA t35 TYPE string.
-    DATA(t36) = CAST zcl_lnt_abstract_token( t32 ).
+    DATA(t36) = t32.
     t35 = t36->str.
     t31 = t35.
     t30 = t31.
     DATA(t37) = VALUE abap_bool( ).
-    DATA(t38) = CONV string( t30 ).
-    DATA(t39) = CONV string( |'| ).
-    DATA(t40) = CONV i( strlen( t38 ) ).
+    DATA(t38) = t30.
+    DATA(t39) = |'|.
+    DATA(t40) = strlen( t38 ).
     DATA t41 TYPE i.
     DATA(t42) = VALUE i( ).
     DATA(t43) = VALUE string( ).
@@ -123,28 +123,28 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
       DATA t44 TYPE i.
       DATA t45 TYPE i.
       DATA t46 TYPE i.
-      DATA(t47) = CONV string( t30 ).
-      DATA(t48) = CONV i( strlen( t47 ) ).
+      DATA(t47) = t30.
+      DATA(t48) = strlen( t47 ).
       t46 = t48.
-      DATA(t49) = CONV i( 2 ).
+      DATA(t49) = 2.
       t45 = t46 - t49.
       t44 = t45.
       DATA t50 TYPE abap_bool.
-      DATA(t51) = CONV i( t44 ).
-      DATA(t52) = CONV i( 0 ).
+      DATA(t51) = t44.
+      DATA(t52) = 0.
       t50 = xsdbool( t51 <= t52 ).
       IF t50 = abap_true.
-        DATA(t53) = CONV i( 1 ).
+        DATA(t53) = 1.
         t44 = t53.
       ENDIF.
       DATA t54 TYPE REF TO zcl_lnt_character_type.
       CLEAR t54.
       DATA t55 TYPE f.
-      DATA(t56) = CONV i( t44 ).
+      DATA(t56) = t44.
       t55 = t56.
       DATA t57 TYPE REF TO zcl_lnt_abstract_type_data.
       CLEAR t57.
-      DATA(t58) = CONV abap_bool( abap_true ).
+      DATA(t58) = abap_true.
       IF t58 = abap_true.
         DATA t59 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t59.
@@ -152,9 +152,9 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         CLEAR t60.
         DATA t61 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t61.
-        DATA(t62) = CONV abap_bool( abap_true ).
+        DATA(t62) = abap_true.
         IF t62 = abap_true.
-          DATA(t63) = CONV abap_bool( abap_true ).
+          DATA(t63) = abap_true.
           DATA(t64) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t64->has = abap_true.
           t64->value = t63.
@@ -195,7 +195,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t59->zlnt_json_ownkeys_70e5fd461788.
         t59->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t77) = CONV string( |derivedFromConstant| ).
+        DATA(t77) = |derivedFromConstant|.
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t78.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -212,9 +212,9 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
       RETURN.
     ELSE.
       DATA(t80) = VALUE abap_bool( ).
-      DATA(t81) = CONV string( t30 ).
-      DATA(t82) = CONV string( |`| ).
-      DATA(t83) = CONV i( strlen( t81 ) ).
+      DATA(t81) = t30.
+      DATA(t82) = |`|.
+      DATA(t83) = strlen( t81 ).
       DATA t84 TYPE i.
       DATA(t85) = VALUE i( ).
       DATA(t86) = VALUE string( ).
@@ -233,7 +233,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         CLEAR t87.
         DATA t88 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t88.
-        DATA(t89) = CONV abap_bool( abap_true ).
+        DATA(t89) = abap_true.
         IF t89 = abap_true.
           DATA t90 TYPE REF TO zcl_lnt_abstract_type_data.
           CLEAR t90.
@@ -241,9 +241,9 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
           CLEAR t91.
           DATA t92 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           CLEAR t92.
-          DATA(t93) = CONV abap_bool( abap_true ).
+          DATA(t93) = abap_true.
           IF t93 = abap_true.
-            DATA(t94) = CONV abap_bool( abap_true ).
+            DATA(t94) = abap_true.
             DATA(t95) = NEW zlnt_runtime_opti_7f2541396f43( ).
             t95->has = abap_true.
             t95->value = t94.
@@ -284,7 +284,7 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
           t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t108) = CONV string( |derivedFromConstant| ).
+          DATA(t108) = |derivedFromConstant|.
           DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t109.
           IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -309,18 +309,22 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d794_0f024dad6ad6.
   ENDMETHOD.

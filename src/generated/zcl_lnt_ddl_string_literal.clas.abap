@@ -10,25 +10,28 @@ CLASS zcl_lnt_ddl_string_literal DEFINITION PUBLIC INHERITING FROM zcl_lnt_expre
 ENDCLASS.
 CLASS zcl_lnt_ddl_string_literal IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t2.
-    DATA(t3) = CONV string( |^'[^']*'$| ).
-    DATA(t4) = CONV string( || ).
+    DATA(t3) = |^'[^']*'$|.
+    DATA(t4) = ||.
     CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t4.
     t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1141_65d0e12620dc.
   ENDMETHOD.

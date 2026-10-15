@@ -27,17 +27,20 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
     DATA(t1) = CONV f( 4 ).
     me->zlnt_view_write_s_1572ec26e687( p0 = t1 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1695_a2c3621ecead.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_b5fa62719708.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `lines` ) ).
@@ -49,6 +52,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
       result = me->lines.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_1572ec26e687.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -63,6 +67,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `lines`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -81,6 +86,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -88,6 +94,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -111,6 +118,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -178,6 +186,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
         result->nval = me->lines.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

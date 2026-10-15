@@ -10,8 +10,9 @@ CLASS zcl_lnt_ddl_cardinality_value DEFINITION PUBLIC INHERITING FROM zcl_lnt_ex
 ENDCLASS.
 CLASS zcl_lnt_ddl_cardinality_value IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -19,7 +20,7 @@ CLASS zcl_lnt_ddl_cardinality_value IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1090_761dcdeb1ada ).
+    DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1090_761dcdeb1ada.
     CLEAR t3.
     IF t4 IS BOUND.
       CREATE OBJECT t3.
@@ -30,7 +31,7 @@ CLASS zcl_lnt_ddl_cardinality_value IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t6.
-    DATA(t7) = CONV string( |*| ).
+    DATA(t7) = |*|.
     CLEAR t6.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -41,20 +42,22 @@ CLASS zcl_lnt_ddl_cardinality_value IMPLEMENTATION.
     CREATE OBJECT t9.
     t8 = t9.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t11) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t12) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t8 ).
+    DATA(t11) = t2.
+    DATA(t12) = t5.
+    DATA(t13) = t8.
     t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t11 i_second = t12 i_rest = t13 ).
     t1 = t10.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1133_fb80fe4177d4.
   ENDMETHOD.

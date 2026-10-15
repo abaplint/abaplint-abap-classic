@@ -23,31 +23,32 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
   METHOD constructor.
     DATA t1 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
     DATA t2 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
-    DATA(t3) = NEW zlnt_runtime_map__a8db3647ad44(  ).
+    DATA(t3) = NEW zlnt_runtime_map__a8db3647ad44( ).
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_map__a8db3647ad44( t2 ).
+    DATA(t4) = t2.
     t1 = t4.
     me->definitions = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `definitions`.
     DATA t5 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     DATA t6 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    DATA(t7) = NEW zlnt_runtime_map__68aa8717233d(  ).
+    DATA(t7) = NEW zlnt_runtime_map__68aa8717233d( ).
     t6 = t7.
-    DATA(t8) = CAST zlnt_runtime_map__68aa8717233d( t6 ).
+    DATA(t8) = t6.
     t5 = t8.
     me->references = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `references`.
   ENDMETHOD.
+
   METHOD add_definition.
-    DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
-    DATA(t2) = CAST zcl_lnt_position( i_start ).
-    DATA(t3) = CAST zcl_lnt_position( i_end ).
+    DATA(t1) = i_ref.
+    DATA(t2) = i_start.
+    DATA(t3) = i_end.
     DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+    DATA(t7) = me->definitions.
     DATA t8 TYPE string.
-    DATA(t9) = CAST zcl_lnt_ifilename_and_token( t1 ).
+    DATA(t9) = t1.
     t8 = t9->filename.
     t6 = t7->get( p0 = t8 ).
     t5 = t6.
@@ -56,16 +57,16 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t11.
     t10 = t11.
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t13) = t5.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ENDIF.
     t4 = t12.
     IF t4 = abap_true.
       DATA t14 TYPE REF TO zlnt_runtime_map__a8db3647ad44.
-      DATA(t15) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+      DATA(t15) = me->definitions.
       DATA t16 TYPE string.
-      DATA(t17) = CAST zcl_lnt_ifilename_and_token( t1 ).
+      DATA(t17) = t1.
       t16 = t17->filename.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t18.
@@ -77,21 +78,21 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t24) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+      DATA(t24) = me->definitions.
       DATA t25 TYPE string.
-      DATA(t26) = CAST zcl_lnt_ifilename_and_token( t1 ).
+      DATA(t26) = t1.
       t25 = t26->filename.
       t23 = t24->get( p0 = t25 ).
       t22 = t23.
       t21 = t22.
       DATA t27 TYPE i.
       DATA t28 TYPE i.
-      DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t21 ).
+      DATA(t29) = t21.
       t29->load( ).
       t28 = lines( t29->items ).
       t27 = t28.
       DATA t30 TYPE i.
-      DATA(t31) = CONV i( 0 ).
+      DATA(t31) = 0.
       t30 = t31.
       DATA t32 TYPE REF TO zcl_lnt_shape_88c047d7.
       DATA t33 TYPE REF TO zcl_lnt_shape_88c047d7.
@@ -99,8 +100,8 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       t32 = t33.
       DO.
         DATA t34 TYPE abap_bool.
-        DATA(t35) = CONV i( t30 ).
-        DATA(t36) = CONV i( t27 ).
+        DATA(t35) = t30.
+        DATA(t36) = t27.
         t34 = xsdbool( t35 < t36 ).
         IF t34 = abap_false.
           EXIT.
@@ -111,8 +112,8 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
         CLEAR t38.
         DATA t39 TYPE REF TO zcl_lnt_shape_88c047d7.
         CLEAR t39.
-        DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t21 ).
-        DATA(t41) = CONV i( t30 ).
+        DATA(t40) = t21.
+        DATA(t41) = t30.
         DATA t42 TYPE REF TO object.
         t42 = t40->get( p0 = t41 ).
         DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -132,30 +133,30 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
         DATA t46 TYPE REF TO zcl_lnt_position.
         DATA t47 TYPE REF TO zcl_lnt_abstract_token.
         DATA t48 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t49) = CAST zcl_lnt_shape_88c047d7( t37 ).
+        DATA(t49) = t37.
         t48 = t49->token.
         t47 = t48.
         DATA t50 TYPE REF TO zcl_lnt_position.
-        DATA(t51) = CAST zcl_lnt_abstract_token( t47 ).
+        DATA(t51) = t47.
         t50 = t51->start.
         t46 = t50.
         DATA t52 TYPE REF TO zcl_lnt_position.
         DATA t53 TYPE REF TO zcl_lnt_abstract_token.
         DATA t54 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t55) = CAST zcl_lnt_ifilename_and_token( t1 ).
+        DATA(t55) = t1.
         t54 = t55->token.
         t53 = t54.
         DATA t56 TYPE REF TO zcl_lnt_position.
-        DATA(t57) = CAST zcl_lnt_abstract_token( t53 ).
+        DATA(t57) = t53.
         t56 = t57->start.
         t52 = t56.
         t45 = t46->equals( i_p = t52 ).
         IF t45 = abap_true.
           DATA t58 TYPE REF TO zcl_lnt_shape_88c047d7.
           CLEAR t58.
-          DATA(t59) = CONV abap_bool( abap_true ).
+          DATA(t59) = abap_true.
           IF t59 = abap_true.
-            DATA(t60) = CAST zcl_lnt_shape_88c047d7( t37 ).
+            DATA(t60) = t37.
             t58 = t60.
           ELSE.
             DATA t61 TYPE REF TO zcl_lnt_shape_88c047d7.
@@ -166,12 +167,12 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
           EXIT.
         ENDIF.
         DATA t62 TYPE i.
-        DATA(t63) = CONV i( t30 ).
-        DATA(t64) = CONV i( 1 ).
+        DATA(t63) = t30.
+        DATA(t64) = 1.
         t62 = t63 + t64.
         t30 = t62.
       ENDDO.
-      DATA(t65) = CAST zcl_lnt_shape_88c047d7( t32 ).
+      DATA(t65) = t32.
       t20 = t65.
       t19 = xsdbool( t20 IS BOUND ).
       IF t19 = abap_true.
@@ -180,9 +181,9 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     ENDIF.
     DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t67 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t68) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+    DATA(t68) = me->definitions.
     DATA t69 TYPE string.
-    DATA(t70) = CAST zcl_lnt_ifilename_and_token( t1 ).
+    DATA(t70) = t1.
     t69 = t70->filename.
     t67 = t68->get( p0 = t69 ).
     t66 = t67.
@@ -192,10 +193,10 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t72.
     DATA t73 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t73.
-    DATA(t74) = CONV abap_bool( abap_true ).
+    DATA(t74) = abap_true.
     IF t74 = abap_true.
       DATA t75 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t76) = CAST zcl_lnt_ifilename_and_token( t1 ).
+      DATA(t76) = t1.
       t75 = t76->token.
       t73 = t75.
     ELSE.
@@ -208,9 +209,9 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t78.
     DATA t79 TYPE REF TO zcl_lnt_position.
     CLEAR t79.
-    DATA(t80) = CONV abap_bool( abap_true ).
+    DATA(t80) = abap_true.
     IF t80 = abap_true.
-      DATA(t81) = CAST zcl_lnt_position( t2 ).
+      DATA(t81) = t2.
       t79 = t81.
     ELSE.
       DATA t82 TYPE REF TO zcl_lnt_position.
@@ -222,9 +223,9 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t83.
     DATA t84 TYPE REF TO zcl_lnt_position.
     CLEAR t84.
-    DATA(t85) = CONV abap_bool( abap_true ).
+    DATA(t85) = abap_true.
     IF t85 = abap_true.
-      DATA(t86) = CAST zcl_lnt_position( t3 ).
+      DATA(t86) = t3.
       t84 = t86.
     ELSE.
       DATA t87 TYPE REF TO zcl_lnt_position.
@@ -252,19 +253,19 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t71->zlnt_json_ownkeys_70e5fd461788.
     t71->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t91) = CONV string( |token| ).
+    DATA(t91) = |token|.
     DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t92.
     IF t71->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t71->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
     ENDIF.
-    DATA(t93) = CONV string( |start| ).
+    DATA(t93) = |start|.
     DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t94.
     IF t71->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t71->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
     ENDIF.
-    DATA(t95) = CONV string( |end| ).
+    DATA(t95) = |end|.
     DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t96.
     IF t71->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -274,25 +275,26 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     APPEND t71 TO t66->items.
     t66->save( ).
   ENDMETHOD.
+
   METHOD get_definition_range.
-    DATA(t1) = CONV string( i_filename ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_filename.
+    DATA(t2) = i_token.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
-    DATA(t7) = CONV string( t1 ).
+    DATA(t6) = me->definitions.
+    DATA(t7) = t1.
     t5 = t6->get( p0 = t7 ).
     t4 = t5.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t8.
     DATA t9 TYPE abap_bool.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t10) = t4.
     t9 = xsdbool( t10 IS BOUND ).
     IF t9 = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+      DATA(t12) = t4.
       t11 = t12.
       t8 = t11.
     ELSE.
@@ -329,36 +331,36 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       DATA t20 TYPE REF TO zcl_lnt_position.
       DATA t21 TYPE REF TO zcl_lnt_abstract_token.
       DATA t22 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t23) = CAST zcl_lnt_shape_88c047d7( t14 ).
+      DATA(t23) = t14.
       t22 = t23->token.
       t21 = t22.
       DATA t24 TYPE REF TO zcl_lnt_position.
-      DATA(t25) = CAST zcl_lnt_abstract_token( t21 ).
+      DATA(t25) = t21.
       t24 = t25->start.
       t20 = t24.
       DATA t26 TYPE REF TO zcl_lnt_position.
       DATA t27 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t28) = CAST zcl_lnt_abstract_token( t2 ).
+      DATA(t28) = t2.
       t27 = t28.
       DATA t29 TYPE REF TO zcl_lnt_position.
-      DATA(t30) = CAST zcl_lnt_abstract_token( t27 ).
+      DATA(t30) = t27.
       t29 = t30->start.
       t26 = t29.
       t19 = t20->equals( i_p = t26 ).
       IF t19 = abap_true.
         DATA t31 TYPE REF TO zcl_lnt_irange.
         CLEAR t31.
-        DATA(t32) = CONV abap_bool( abap_true ).
+        DATA(t32) = abap_true.
         IF t32 = abap_true.
           DATA t33 TYPE REF TO zcl_lnt_irange.
           DATA t34 TYPE REF TO zcl_lnt_position.
           DATA t35 TYPE REF TO zcl_lnt_position.
-          DATA(t36) = CAST zcl_lnt_shape_88c047d7( t14 ).
+          DATA(t36) = t14.
           t35 = t36->start.
           t34 = t35.
           DATA t37 TYPE REF TO zcl_lnt_position.
           DATA t38 TYPE REF TO zcl_lnt_position.
-          DATA(t39) = CAST zcl_lnt_shape_88c047d7( t14 ).
+          DATA(t39) = t14.
           t38 = t39->end.
           t37 = t38.
           t33 = NEW zcl_lnt_irange( i_start = t34 i_end = t37 ).
@@ -376,13 +378,13 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t33->zlnt_json_ownkeys_70e5fd461788.
           t33->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t42) = CONV string( |start| ).
+          DATA(t42) = |start|.
           DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t43.
           IF t33->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t33->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
           ENDIF.
-          DATA(t44) = CONV string( |end| ).
+          DATA(t44) = |end|.
           DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t45.
           IF t33->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -401,16 +403,17 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     DATA t47 TYPE REF TO zcl_lnt_irange.
     CLEAR t47.
     result = t47.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD add_reference.
-    DATA(t1) = CAST zcl_lnt_ifilename_and_token( i_ref ).
+    DATA(t1) = i_ref.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
+    DATA(t5) = me->references.
     DATA t6 TYPE string.
-    DATA(t7) = CAST zcl_lnt_ifilename_and_token( t1 ).
+    DATA(t7) = t1.
     t6 = t7->filename.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
@@ -419,16 +422,16 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t9.
     t8 = t9.
     DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t11) = t3.
     IF t11 IS INITIAL.
       t10 = abap_true.
     ENDIF.
     t2 = t10.
     IF t2 = abap_true.
       DATA t12 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      DATA(t13) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
+      DATA(t13) = me->references.
       DATA t14 TYPE string.
-      DATA(t15) = CAST zcl_lnt_ifilename_and_token( t1 ).
+      DATA(t15) = t1.
       t14 = t15->filename.
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t16.
@@ -436,19 +439,20 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t19) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
+    DATA(t19) = me->references.
     DATA t20 TYPE string.
-    DATA(t21) = CAST zcl_lnt_ifilename_and_token( t1 ).
+    DATA(t21) = t1.
     t20 = t21->filename.
     t18 = t19->get( p0 = t20 ).
     t17 = t18.
-    DATA(t22) = CAST zcl_lnt_ifilename_and_token( t1 ).
+    DATA(t22) = t1.
     t17->load( ).
     APPEND t22 TO t17->items.
     t17->save( ).
   ENDMETHOD.
+
   METHOD list_definitions_by_file.
-    DATA(t1) = CONV string( i_filename ).
+    DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -457,18 +461,18 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
-    DATA(t8) = CONV string( t1 ).
+    DATA(t7) = me->definitions.
+    DATA(t8) = t1.
     t6 = t7->get( p0 = t8 ).
     t5 = t6.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t9.
     DATA t10 TYPE abap_bool.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t11) = t5.
     t10 = xsdbool( t11 IS BOUND ).
     IF t10 = abap_true.
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+      DATA(t13) = t5.
       t12 = t13.
       t9 = t12.
     ELSE.
@@ -501,21 +505,22 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       ELSE.
         t15 ?= t16.
       ENDIF.
-      DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t20) = t2.
       DATA t21 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t22) = CAST zcl_lnt_shape_88c047d7( t15 ).
+      DATA(t22) = t15.
       t21 = t22->token.
       t20->load( ).
       APPEND t21 TO t20->items.
       t20->save( ).
     ENDDO.
-    DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t23) = t2.
     result = t23.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_usagesby_macro.
-    DATA(t1) = CONV string( i_filename ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_filename.
+    DATA(t2) = i_token.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t4.
@@ -524,13 +529,13 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     DATA t6 TYPE string.
     DATA t7 TYPE string.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t9) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t9) = t2.
     t8 = t9.
     DATA t10 TYPE string.
-    DATA(t11) = CAST zcl_lnt_abstract_token( t8 ).
+    DATA(t11) = t8.
     t10 = t11->str.
     t7 = t10.
-    DATA(t12) = CONV i( strlen( t7 ) ).
+    DATA(t12) = strlen( t7 ).
     t6 = t7.
     IF t6 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t6 TO UPPER CASE.
@@ -542,18 +547,18 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t13.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t16) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
-    DATA(t17) = CONV string( t1 ).
+    DATA(t16) = me->references.
+    DATA(t17) = t1.
     t15 = t16->get( p0 = t17 ).
     t14 = t15.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t18.
     DATA t19 TYPE abap_bool.
-    DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t20) = t14.
     t19 = xsdbool( t20 IS BOUND ).
     IF t19 = abap_true.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+      DATA(t22) = t14.
       t21 = t22.
       t18 = t21.
     ELSE.
@@ -591,61 +596,63 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       DATA t31 TYPE string.
       DATA t32 TYPE REF TO zcl_lnt_abstract_token.
       DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t34) = CAST zcl_lnt_ifilename_and_token( t24 ).
+      DATA(t34) = t24.
       t33 = t34->token.
       t32 = t33.
       DATA t35 TYPE string.
-      DATA(t36) = CAST zcl_lnt_abstract_token( t32 ).
+      DATA(t36) = t32.
       t35 = t36->str.
       t31 = t35.
-      DATA(t37) = CONV i( strlen( t31 ) ).
+      DATA(t37) = strlen( t31 ).
       t30 = t31.
       IF t30 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t30 TO UPPER CASE.
       ELSE.
         t30 = zlnt_runtime_uppe_91169605024d=>full( t30 ).
       ENDIF.
-      DATA(t38) = CONV string( t5 ).
+      DATA(t38) = t5.
       t29 = xsdbool( t30 = t38 ).
       IF t29 = abap_true.
-        DATA(t39) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
-        DATA(t40) = CAST zcl_lnt_ifilename_and_token( t24 ).
+        DATA(t39) = t3.
+        DATA(t40) = t24.
         t39->load( ).
         APPEND t40 TO t39->items.
         t39->save( ).
       ENDIF.
     ENDDO.
-    DATA(t41) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t41) = t3.
     result = t41.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD clear_feba.
-    DATA(t1) = CONV string( i_filename ).
+    DATA(t1) = i_filename.
     DATA t2 TYPE abap_bool.
-    DATA(t3) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
-    DATA(t4) = CONV string( t1 ).
+    DATA(t3) = me->definitions.
+    DATA(t4) = t1.
     DELETE t3->entries WHERE k = t4.
     t2 = abap_true.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
-    DATA(t7) = CONV string( t1 ).
+    DATA(t6) = me->references.
+    DATA(t7) = t1.
     DELETE t6->entries WHERE k = t7.
     t5 = abap_true.
   ENDMETHOD.
+
   METHOD find_definition_by_usage.
-    DATA(t1) = CONV string( i_filename ).
-    DATA(t2) = CAST zcl_lnt_abstract_token( i_token ).
+    DATA(t1) = i_filename.
+    DATA(t2) = i_token.
     DATA(t3) = VALUE string( ).
     DATA t4 TYPE string.
     DATA t5 TYPE string.
     DATA t6 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t7) = CAST zcl_lnt_abstract_token( t2 ).
+    DATA(t7) = t2.
     t6 = t7.
     DATA t8 TYPE string.
-    DATA(t9) = CAST zcl_lnt_abstract_token( t6 ).
+    DATA(t9) = t6.
     t8 = t9->str.
     t5 = t8.
-    DATA(t10) = CONV i( strlen( t5 ) ).
+    DATA(t10) = strlen( t5 ).
     t4 = t5.
     IF t4 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t4 TO UPPER CASE.
@@ -657,18 +664,18 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t14) = CAST zlnt_runtime_map__68aa8717233d( me->references ).
-    DATA(t15) = CONV string( t1 ).
+    DATA(t14) = me->references.
+    DATA(t15) = t1.
     t13 = t14->get( p0 = t15 ).
     t12 = t13.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t16.
     DATA t17 TYPE abap_bool.
-    DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+    DATA(t18) = t12.
     t17 = xsdbool( t18 IS BOUND ).
     IF t17 = abap_true.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t12 ).
+      DATA(t20) = t12.
       t19 = t20.
       t16 = t19.
     ELSE.
@@ -705,19 +712,19 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
       DATA t28 TYPE REF TO zcl_lnt_position.
       DATA t29 TYPE REF TO zcl_lnt_abstract_token.
       DATA t30 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t31) = CAST zcl_lnt_ifilename_and_token( t22 ).
+      DATA(t31) = t22.
       t30 = t31->token.
       t29 = t30.
       DATA t32 TYPE REF TO zcl_lnt_position.
-      DATA(t33) = CAST zcl_lnt_abstract_token( t29 ).
+      DATA(t33) = t29.
       t32 = t33->start.
       t28 = t32.
       DATA t34 TYPE REF TO zcl_lnt_position.
       DATA t35 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t36) = CAST zcl_lnt_abstract_token( t2 ).
+      DATA(t36) = t2.
       t35 = t36.
       DATA t37 TYPE REF TO zcl_lnt_position.
-      DATA(t38) = CAST zcl_lnt_abstract_token( t35 ).
+      DATA(t38) = t35.
       t37 = t38->start.
       t34 = t37.
       t27 = t28->equals( i_p = t34 ).
@@ -726,20 +733,20 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
         CLEAR t39.
         DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t42) = CAST zlnt_runtime_map__a8db3647ad44( me->definitions ).
+        DATA(t42) = me->definitions.
         DATA t43 TYPE string.
-        DATA(t44) = CAST zcl_lnt_ifilename_and_token( t22 ).
+        DATA(t44) = t22.
         t43 = t44->filename.
         t41 = t42->get( p0 = t43 ).
         t40 = t41.
         DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t45.
         DATA t46 TYPE abap_bool.
-        DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t40 ).
+        DATA(t47) = t40.
         t46 = xsdbool( t47 IS BOUND ).
         IF t46 = abap_true.
           DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA(t49) = CAST zlnt_runtime_arra_c22708faf2e3( t40 ).
+          DATA(t49) = t40.
           t48 = t49.
           t45 = t48.
         ELSE.
@@ -777,36 +784,36 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
           DATA t58 TYPE string.
           DATA t59 TYPE REF TO zcl_lnt_abstract_token.
           DATA t60 TYPE REF TO zcl_lnt_abstract_token.
-          DATA(t61) = CAST zcl_lnt_shape_88c047d7( t51 ).
+          DATA(t61) = t51.
           t60 = t61->token.
           t59 = t60.
           DATA t62 TYPE string.
-          DATA(t63) = CAST zcl_lnt_abstract_token( t59 ).
+          DATA(t63) = t59.
           t62 = t63->str.
           t58 = t62.
-          DATA(t64) = CONV i( strlen( t58 ) ).
+          DATA(t64) = strlen( t58 ).
           t57 = t58.
           IF t57 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
             TRANSLATE t57 TO UPPER CASE.
           ELSE.
             t57 = zlnt_runtime_uppe_91169605024d=>full( t57 ).
           ENDIF.
-          DATA(t65) = CONV string( t3 ).
+          DATA(t65) = t3.
           t56 = xsdbool( t57 = t65 ).
           IF t56 = abap_true.
             DATA t66 TYPE REF TO zcl_lnt_ifilename_and_token.
             CLEAR t66.
-            DATA(t67) = CONV abap_bool( abap_true ).
+            DATA(t67) = abap_true.
             IF t67 = abap_true.
               DATA t68 TYPE REF TO zcl_lnt_ifilename_and_token.
               DATA t69 TYPE string.
               DATA t70 TYPE string.
-              DATA(t71) = CAST zcl_lnt_ifilename_and_token( t22 ).
+              DATA(t71) = t22.
               t70 = t71->filename.
               t69 = t70.
               DATA t72 TYPE REF TO zcl_lnt_abstract_token.
               DATA t73 TYPE REF TO zcl_lnt_abstract_token.
-              DATA(t74) = CAST zcl_lnt_shape_88c047d7( t51 ).
+              DATA(t74) = t51.
               t73 = t74->token.
               t72 = t73.
               t68 = NEW zcl_lnt_ifilename_and_token( i_filename = t69 i_token = t72 ).
@@ -824,13 +831,13 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
               ENDIF.
               CREATE OBJECT t68->zlnt_json_ownkeys_70e5fd461788.
               t68->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA(t77) = CONV string( |filename| ).
+              DATA(t77) = |filename|.
               DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t78.
               IF t68->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
                 t68->zlnt_json_ownkeys_70e5fd461788->put( p0 = t77 p1 = t78 ).
               ENDIF.
-              DATA(t79) = CONV string( |token| ).
+              DATA(t79) = |token|.
               DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t80.
               IF t68->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -851,45 +858,57 @@ CLASS zcl_lnt_macro_references IMPLEMENTATION.
     DATA t82 TYPE REF TO zcl_lnt_ifilename_and_token.
     CLEAR t82.
     result = t82.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1180_337b232411b4.
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~add_definition.
-    me->add_definition(  i_ref = i_ref i_start = i_start i_end = i_end ).
+    me->add_definition( i_ref = i_ref i_start = i_start i_end = i_end ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~add_reference.
-    me->add_reference(  i_ref = i_ref ).
+    me->add_reference( i_ref = i_ref ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~list_definitions_by_file.
-    result = me->list_definitions_by_file(  i_filename = i_filename ).
+    result = me->list_definitions_by_file( i_filename = i_filename ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~list_usagesby_macro.
-    result = me->list_usagesby_macro(  i_filename = i_filename i_token = i_token ).
+    result = me->list_usagesby_macro( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~get_definition_range.
-    result = me->get_definition_range(  i_filename = i_filename i_token = i_token ).
+    result = me->get_definition_range( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~find_definition_by_usage.
-    result = me->find_definition_by_usage(  i_filename = i_filename i_token = i_token ).
+    result = me->find_definition_by_usage( i_filename = i_filename i_token = i_token ).
   ENDMETHOD.
+
   METHOD zif_lnt_macro_references~clear_feba.
-    me->clear_feba(  i_filename = i_filename ).
+    me->clear_feba( i_filename = i_filename ).
   ENDMETHOD.
 ENDCLASS.

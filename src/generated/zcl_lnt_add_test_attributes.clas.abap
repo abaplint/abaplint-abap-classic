@@ -19,40 +19,41 @@ ENDCLASS.
 CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_add_tst_attrbts_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_add_tst_attrbts_cnf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |add_test_attributes| ).
+    DATA(t3) = |add_test_attributes|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Add test attributes for tests classes with test methods| ).
+    DATA(t5) = |Add test attributes for tests classes with test methods|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Add test attributes DURATION and RISK LEVEL for tests classe| ).
+    DATA(t7) = |Add test attributes DURATION and RISK LEVEL for tests classe|.
     t7 = t7 && |s with test methods|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t13.
       t12 = t13.
-      DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t15) = CONV string( |SingleFile| ).
+      DATA(t14) = t12.
+      DATA(t15) = |SingleFile|.
       t14->load( ).
       APPEND t15 TO t14->items.
       t14->save( ).
-      DATA(t16) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+      DATA(t16) = t12.
       t11 = t16.
       t9 = t11.
     ELSE.
@@ -65,9 +66,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
     CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t19.
-    DATA(t20) = CONV abap_bool( abap_true ).
+    DATA(t20) = abap_true.
     IF t20 = abap_true.
-      DATA(t21) = CONV string( |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT| ).
+      DATA(t21) = |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT|.
       t21 = t21 && |ION.\n  PROTECTED SECTION.\n  PRIVATE SECTION.\n    METHODS tes|.
       t21 = t21 && |t FOR TESTING RAISING cx_static_check.\nENDCLASS.\n\nCLASS ltcl|.
       t21 = t21 && |_test1 IMPLEMENTATION.\n  METHOD test.\n  ENDMETHOD.\nENDCLASS.|.
@@ -85,9 +86,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
     CLEAR t24.
     DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t25.
-    DATA(t26) = CONV abap_bool( abap_true ).
+    DATA(t26) = abap_true.
     IF t26 = abap_true.
-      DATA(t27) = CONV string( |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT| ).
+      DATA(t27) = |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT|.
       t27 = t27 && | RISK LEVEL HARMLESS.\n  PUBLIC SECTION.\n  PROTECTED SECTION.|.
       t27 = t27 && |\n  PRIVATE SECTION.\n    METHODS test FOR TESTING RAISING cx_|.
       t27 = t27 && |static_check.\nENDCLASS.\n\nCLASS ltcl_test2 IMPLEMENTATION.\n  |.
@@ -149,58 +150,61 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t42) = CONV string( |key| ).
+    DATA(t42) = |key|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t43.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
     ENDIF.
-    DATA(t44) = CONV string( |title| ).
+    DATA(t44) = |title|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t45.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
     ENDIF.
-    DATA(t46) = CONV string( |shortDescription| ).
+    DATA(t46) = |shortDescription|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t47.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
     ENDIF.
-    DATA(t48) = CONV string( |tags| ).
+    DATA(t48) = |tags|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t49.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
     ENDIF.
-    DATA(t50) = CONV string( |badExample| ).
+    DATA(t50) = |badExample|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t51.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
     ENDIF.
-    DATA(t52) = CONV string( |goodExample| ).
+    DATA(t52) = |goodExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t53.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_add_tst_attrbts_cnf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_ad_ts_at_ts_ad_ts_at.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -208,23 +212,23 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
     DATA t5 TYPE REF TO zcl_lnt_structure_node.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t7) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t9) = CAST zcl_lnt_abap_file( t6 ).
+    DATA(t9) = t6.
     t8 = t9->structure.
     t5 = t8.
     t4 = t5.
     DATA(t10) = VALUE abap_bool( ).
     DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t12) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t12) = t4.
     t11 = t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
     t13 = t14.
     DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = CAST zcl_lnt_structure_node( t11 ).
+    DATA(t16) = t11.
     IF t16 IS INITIAL.
       t15 = abap_true.
     ENDIF.
@@ -237,9 +241,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t19 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t20) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t20) = t4.
     t19 = t20.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d701_259241cbe79e ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d701_259241cbe79e.
     t18 = t19->find_all_structures( i_type_9913 = t21 ).
     DATA t22 TYPE REF TO zcl_lnt_structure_node.
     CLEAR t22.
@@ -267,20 +271,20 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       ENDIF.
       DATA t27 TYPE REF TO zcl_lnt_statement_node.
       DATA t28 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t29) = CAST zcl_lnt_structure_node( t22 ).
-      DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d411_59ccb35321de ).
+      DATA(t29) = t22.
+      DATA(t30) = zlnt_runtime_desc_78196487750d=>zlnt_member_d411_59ccb35321de.
       t28 = t29->find_first_statement( i_type_9913 = t30 ).
       t27 = t28.
       DATA(t31) = VALUE abap_bool( ).
       DATA t32 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t33) = CAST zcl_lnt_statement_node( t27 ).
+      DATA(t33) = t27.
       t32 = t33.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t35.
       t34 = t35.
       DATA(t36) = VALUE abap_bool( ).
-      DATA(t37) = CAST zcl_lnt_statement_node( t32 ).
+      DATA(t37) = t32.
       IF t37 IS INITIAL.
         t36 = abap_true.
       ENDIF.
@@ -298,13 +302,13 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       CLEAR t41.
       DATA t42 TYPE REF TO zcl_lnt_statement_node.
       DATA t43 TYPE REF TO zcl_lnt_statement_node.
-      DATA(t44) = CAST zcl_lnt_statement_node( t27 ).
+      DATA(t44) = t27.
       t43 = t44.
       t42 = t43.
       DATA t45 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t45.
       DATA(t46) = VALUE abap_bool( ).
-      DATA(t47) = CAST zcl_lnt_statement_node( t42 ).
+      DATA(t47) = t42.
       IF t47 IS INITIAL.
         t46 = abap_true.
       ENDIF.
@@ -314,8 +318,8 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         t45 = t48.
       ELSE.
         DATA t49 TYPE string.
-        DATA(t50) = CAST zcl_lnt_statement_node( t42 ).
-        t49 = t50->concat_tokens(  ).
+        DATA(t50) = t42.
+        t49 = t50->concat_tokens( ).
         DATA(t51) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t51->has = abap_true.
         t51->value = t49.
@@ -326,7 +330,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t52.
       DATA(t53) = VALUE abap_bool( ).
-      DATA(t54) = CAST zlnt_runtime_opti_4ba3bdccd169( t40 ).
+      DATA(t54) = t40.
       IF t54 IS INITIAL.
         t53 = abap_true.
       ELSEIF t54->has = abap_false.
@@ -339,9 +343,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       ELSE.
         DATA t56 TYPE string.
         DATA t57 TYPE string.
-        DATA(t58) = CAST zlnt_runtime_opti_4ba3bdccd169( t40 ).
+        DATA(t58) = t40.
         t57 = t58->value.
-        DATA(t59) = CONV i( strlen( t57 ) ).
+        DATA(t59) = strlen( t57 ).
         t56 = t57.
         IF t56 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t56 TO UPPER CASE.
@@ -359,12 +363,12 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t62 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t62.
       DATA t63 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t64) = CAST zlnt_runtime_opti_4ba3bdccd169( t38 ).
+      DATA(t64) = t38.
       t63 = t64.
       DATA t65 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t65.
       DATA(t66) = VALUE abap_bool( ).
-      DATA(t67) = CAST zlnt_runtime_opti_4ba3bdccd169( t63 ).
+      DATA(t67) = t63.
       IF t67 IS INITIAL.
         t66 = abap_true.
       ELSEIF t67->has = abap_false.
@@ -378,10 +382,10 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         DATA(t69) = VALUE abap_bool( ).
         DATA(t70) = VALUE i( ).
         DATA t71 TYPE string.
-        DATA(t72) = CAST zlnt_runtime_opti_4ba3bdccd169( t63 ).
+        DATA(t72) = t63.
         t71 = t72->value.
-        DATA(t73) = CONV string( | FOR TESTING| ).
-        DATA(t74) = CONV i( strlen( t71 ) ).
+        DATA(t73) = | FOR TESTING|.
+        DATA(t74) = strlen( t71 ).
         IF t73 IS INITIAL.
           t70 = 0.
         ELSE.
@@ -390,7 +394,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
             t70 = -1.
           ENDIF.
         ENDIF.
-        DATA(t75) = CONV i( 0 ).
+        DATA(t75) = 0.
         t69 = xsdbool( t70 >= t75 ).
         DATA(t76) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t76->has = abap_true.
@@ -400,9 +404,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       t62 = t65.
       DATA t77 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t77.
-      DATA(t78) = CONV abap_bool( abap_true ).
+      DATA(t78) = abap_true.
       IF t78 = abap_true.
-        DATA(t79) = CONV abap_bool( abap_false ).
+        DATA(t79) = abap_false.
         DATA(t80) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t80->has = abap_true.
         t80->value = t79.
@@ -435,12 +439,12 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t85 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t85.
       DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t87) = CAST zlnt_runtime_opti_4ba3bdccd169( t38 ).
+      DATA(t87) = t38.
       t86 = t87.
       DATA t88 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t88.
       DATA(t89) = VALUE abap_bool( ).
-      DATA(t90) = CAST zlnt_runtime_opti_4ba3bdccd169( t86 ).
+      DATA(t90) = t86.
       IF t90 IS INITIAL.
         t89 = abap_true.
       ELSEIF t90->has = abap_false.
@@ -454,10 +458,10 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         DATA(t92) = VALUE abap_bool( ).
         DATA(t93) = VALUE i( ).
         DATA t94 TYPE string.
-        DATA(t95) = CAST zlnt_runtime_opti_4ba3bdccd169( t86 ).
+        DATA(t95) = t86.
         t94 = t95->value.
-        DATA(t96) = CONV string( | DURATION | ).
-        DATA(t97) = CONV i( strlen( t94 ) ).
+        DATA(t96) = | DURATION |.
+        DATA(t97) = strlen( t94 ).
         IF t96 IS INITIAL.
           t93 = 0.
         ELSE.
@@ -466,7 +470,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
             t93 = -1.
           ENDIF.
         ENDIF.
-        DATA(t98) = CONV i( 0 ).
+        DATA(t98) = 0.
         t92 = xsdbool( t93 >= t98 ).
         DATA(t99) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t99->has = abap_true.
@@ -480,12 +484,12 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t101 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t101.
       DATA t102 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t103) = CAST zlnt_runtime_opti_4ba3bdccd169( t38 ).
+      DATA(t103) = t38.
       t102 = t103.
       DATA t104 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t104.
       DATA(t105) = VALUE abap_bool( ).
-      DATA(t106) = CAST zlnt_runtime_opti_4ba3bdccd169( t102 ).
+      DATA(t106) = t102.
       IF t106 IS INITIAL.
         t105 = abap_true.
       ELSEIF t106->has = abap_false.
@@ -499,10 +503,10 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         DATA(t108) = VALUE abap_bool( ).
         DATA(t109) = VALUE i( ).
         DATA t110 TYPE string.
-        DATA(t111) = CAST zlnt_runtime_opti_4ba3bdccd169( t102 ).
+        DATA(t111) = t102.
         t110 = t111->value.
-        DATA(t112) = CONV string( | RISK LEVEL | ).
-        DATA(t113) = CONV i( strlen( t110 ) ).
+        DATA(t112) = | RISK LEVEL |.
+        DATA(t113) = strlen( t110 ).
         IF t112 IS INITIAL.
           t109 = 0.
         ELSE.
@@ -511,7 +515,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
             t109 = -1.
           ENDIF.
         ENDIF.
-        DATA(t114) = CONV i( 0 ).
+        DATA(t114) = 0.
         t108 = xsdbool( t109 >= t114 ).
         DATA(t115) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t115->has = abap_true.
@@ -523,17 +527,17 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       DATA t116 TYPE abap_bool.
       DATA t117 TYPE abap_bool.
       DATA t118 TYPE abap_bool.
-      DATA(t119) = CAST zlnt_runtime_opti_7f2541396f43( t84 ).
+      DATA(t119) = t84.
       t118 = t119->value.
-      DATA(t120) = CONV abap_bool( abap_true ).
+      DATA(t120) = abap_true.
       t117 = xsdbool( t118 = t120 ).
       t116 = t117.
       IF t117 = abap_true.
         DATA t121 TYPE abap_bool.
         DATA t122 TYPE abap_bool.
-        DATA(t123) = CAST zlnt_runtime_opti_7f2541396f43( t100 ).
+        DATA(t123) = t100.
         t122 = t123->value.
-        DATA(t124) = CONV abap_bool( abap_true ).
+        DATA(t124) = abap_true.
         t121 = xsdbool( t122 = t124 ).
         t116 = t121.
       ENDIF.
@@ -541,11 +545,11 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t125 TYPE abap_bool.
-      DATA(t126) = CONV abap_bool( abap_false ).
+      DATA(t126) = abap_false.
       t125 = t126.
       DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t128) = CAST zcl_lnt_structure_node( t22 ).
-      DATA(t129) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58 ).
+      DATA(t128) = t22.
+      DATA(t129) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
       t127 = t128->find_all_statements( i_type_9913 = t129 ).
       DATA t130 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t130.
@@ -574,9 +578,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         DATA(t135) = VALUE string( ).
         DATA t136 TYPE string.
         DATA t137 TYPE string.
-        DATA(t138) = CAST zcl_lnt_statement_node( t130 ).
-        t137 = t138->concat_tokens(  ).
-        DATA(t139) = CONV i( strlen( t137 ) ).
+        DATA(t138) = t130.
+        t137 = t138->concat_tokens( ).
+        DATA(t139) = strlen( t137 ).
         t136 = t137.
         IF t136 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t136 TO UPPER CASE.
@@ -586,9 +590,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         t135 = t136.
         DATA(t140) = VALUE abap_bool( ).
         DATA(t141) = VALUE i( ).
-        DATA(t142) = CONV string( t135 ).
-        DATA(t143) = CONV string( | FOR TESTING| ).
-        DATA(t144) = CONV i( strlen( t142 ) ).
+        DATA(t142) = t135.
+        DATA(t143) = | FOR TESTING|.
+        DATA(t144) = strlen( t142 ).
         IF t143 IS INITIAL.
           t141 = 0.
         ELSE.
@@ -597,65 +601,65 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
             t141 = -1.
           ENDIF.
         ENDIF.
-        DATA(t145) = CONV i( 0 ).
+        DATA(t145) = 0.
         t140 = xsdbool( t141 >= t145 ).
         IF t140 = abap_true.
-          DATA(t146) = CONV abap_bool( abap_true ).
+          DATA(t146) = abap_true.
           t125 = t146.
         ENDIF.
       ENDDO.
       DATA t147 TYPE abap_bool.
-      DATA(t148) = CONV abap_bool( t125 ).
-      DATA(t149) = CONV abap_bool( abap_false ).
+      DATA(t148) = t125.
+      DATA(t149) = abap_false.
       t147 = xsdbool( t148 = t149 ).
       IF t147 = abap_true.
         CONTINUE.
       ENDIF.
       DATA t150 TYPE abap_bool.
       DATA t151 TYPE abap_bool.
-      DATA(t152) = CAST zlnt_runtime_opti_7f2541396f43( t84 ).
+      DATA(t152) = t84.
       t151 = t152->value.
-      DATA(t153) = CONV abap_bool( abap_false ).
+      DATA(t153) = abap_false.
       t150 = xsdbool( t151 = t153 ).
       IF t150 = abap_true.
-        DATA(t154) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t154) = t2.
         DATA t155 TYPE REF TO zcl_lnt_issue.
         CLEAR t155.
-        DATA(t156) = CAST zcl_lnt_abap_file( t1 ).
+        DATA(t156) = t1.
         DATA t157 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t158) = CAST zcl_lnt_statement_node( t27 ).
+        DATA(t158) = t27.
         t157 = t158.
-        DATA(t159) = CONV string( |Add DURATION| ).
+        DATA(t159) = |Add DURATION|.
         DATA(t160) = VALUE string( ).
         DATA t161 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t161.
         DATA t162 TYPE string.
-        DATA(t163) = CONV string( |add_test_attributes| ).
+        DATA(t163) = |add_test_attributes|.
         t162 = t163.
         DATA t164 TYPE string.
-        DATA(t165) = CONV string( |Add test attributes for tests classes with test methods| ).
+        DATA(t165) = |Add test attributes for tests classes with test methods|.
         t164 = t165.
         DATA t166 TYPE string.
-        DATA(t167) = CONV string( |Add test attributes DURATION and RISK LEVEL for tests classe| ).
+        DATA(t167) = |Add test attributes DURATION and RISK LEVEL for tests classe|.
         t167 = t167 && |s with test methods|.
         t166 = t167.
         DATA t168 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t168.
         DATA t169 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t169.
-        DATA(t170) = CONV abap_bool( abap_true ).
+        DATA(t170) = abap_true.
         IF t170 = abap_true.
           DATA t171 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t172 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t173 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t173.
           t172 = t173.
-          DATA(t174) = CAST zlnt_runtime_arra_8ecd6afe19e0( t172 ).
-          DATA(t175) = CONV string( |SingleFile| ).
+          DATA(t174) = t172.
+          DATA(t175) = |SingleFile|.
           t174->load( ).
           APPEND t175 TO t174->items.
           t174->save( ).
-          DATA(t176) = CAST zlnt_runtime_arra_8ecd6afe19e0( t172 ).
+          DATA(t176) = t172.
           t171 = t176.
           t169 = t171.
         ELSE.
@@ -668,9 +672,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         CLEAR t178.
         DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t179.
-        DATA(t180) = CONV abap_bool( abap_true ).
+        DATA(t180) = abap_true.
         IF t180 = abap_true.
-          DATA(t181) = CONV string( |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT| ).
+          DATA(t181) = |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT|.
           t181 = t181 && |ION.\n  PROTECTED SECTION.\n  PRIVATE SECTION.\n    METHODS tes|.
           t181 = t181 && |t FOR TESTING RAISING cx_static_check.\nENDCLASS.\n\nCLASS ltcl|.
           t181 = t181 && |_test1 IMPLEMENTATION.\n  METHOD test.\n  ENDMETHOD.\nENDCLASS.|.
@@ -688,9 +692,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         CLEAR t184.
         DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t185.
-        DATA(t186) = CONV abap_bool( abap_true ).
+        DATA(t186) = abap_true.
         IF t186 = abap_true.
-          DATA(t187) = CONV string( |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT| ).
+          DATA(t187) = |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT|.
           t187 = t187 && | RISK LEVEL HARMLESS.\n  PUBLIC SECTION.\n  PROTECTED SECTION.|.
           t187 = t187 && |\n  PRIVATE SECTION.\n    METHODS test FOR TESTING RAISING cx_|.
           t187 = t187 && |static_check.\nENDCLASS.\n\nCLASS ltcl_test2 IMPLEMENTATION.\n  |.
@@ -752,37 +756,37 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t161->zlnt_json_ownkeys_70e5fd461788.
         t161->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t202) = CONV string( |key| ).
+        DATA(t202) = |key|.
         DATA t203 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t203.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t161->zlnt_json_ownkeys_70e5fd461788->put( p0 = t202 p1 = t203 ).
         ENDIF.
-        DATA(t204) = CONV string( |title| ).
+        DATA(t204) = |title|.
         DATA t205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t205.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t161->zlnt_json_ownkeys_70e5fd461788->put( p0 = t204 p1 = t205 ).
         ENDIF.
-        DATA(t206) = CONV string( |shortDescription| ).
+        DATA(t206) = |shortDescription|.
         DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t207.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t161->zlnt_json_ownkeys_70e5fd461788->put( p0 = t206 p1 = t207 ).
         ENDIF.
-        DATA(t208) = CONV string( |tags| ).
+        DATA(t208) = |tags|.
         DATA t209 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t209.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t161->zlnt_json_ownkeys_70e5fd461788->put( p0 = t208 p1 = t209 ).
         ENDIF.
-        DATA(t210) = CONV string( |badExample| ).
+        DATA(t210) = |badExample|.
         DATA t211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t211.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t161->zlnt_json_ownkeys_70e5fd461788->put( p0 = t210 p1 = t211 ).
         ENDIF.
-        DATA(t212) = CONV string( |goodExample| ).
+        DATA(t212) = |goodExample|.
         DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t213.
         IF t161->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -790,7 +794,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         ENDIF.
         t160 = t161->key.
         DATA t214 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t215) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at(  ) ).
+        DATA(t215) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at( ) ).
         t214 = t215->zlnt_view_read_sr_15c06369f827( ).
         DATA t216 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t216.
@@ -803,49 +807,49 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       ENDIF.
       DATA t218 TYPE abap_bool.
       DATA t219 TYPE abap_bool.
-      DATA(t220) = CAST zlnt_runtime_opti_7f2541396f43( t100 ).
+      DATA(t220) = t100.
       t219 = t220->value.
-      DATA(t221) = CONV abap_bool( abap_false ).
+      DATA(t221) = abap_false.
       t218 = xsdbool( t219 = t221 ).
       IF t218 = abap_true.
-        DATA(t222) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t222) = t2.
         DATA t223 TYPE REF TO zcl_lnt_issue.
         CLEAR t223.
-        DATA(t224) = CAST zcl_lnt_abap_file( t1 ).
+        DATA(t224) = t1.
         DATA t225 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t226) = CAST zcl_lnt_statement_node( t27 ).
+        DATA(t226) = t27.
         t225 = t226.
-        DATA(t227) = CONV string( |Add RISK LEVEL| ).
+        DATA(t227) = |Add RISK LEVEL|.
         DATA(t228) = VALUE string( ).
         DATA t229 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t229.
         DATA t230 TYPE string.
-        DATA(t231) = CONV string( |add_test_attributes| ).
+        DATA(t231) = |add_test_attributes|.
         t230 = t231.
         DATA t232 TYPE string.
-        DATA(t233) = CONV string( |Add test attributes for tests classes with test methods| ).
+        DATA(t233) = |Add test attributes for tests classes with test methods|.
         t232 = t233.
         DATA t234 TYPE string.
-        DATA(t235) = CONV string( |Add test attributes DURATION and RISK LEVEL for tests classe| ).
+        DATA(t235) = |Add test attributes DURATION and RISK LEVEL for tests classe|.
         t235 = t235 && |s with test methods|.
         t234 = t235.
         DATA t236 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t236.
         DATA t237 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t237.
-        DATA(t238) = CONV abap_bool( abap_true ).
+        DATA(t238) = abap_true.
         IF t238 = abap_true.
           DATA t239 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t240 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t241 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t241.
           t240 = t241.
-          DATA(t242) = CAST zlnt_runtime_arra_8ecd6afe19e0( t240 ).
-          DATA(t243) = CONV string( |SingleFile| ).
+          DATA(t242) = t240.
+          DATA(t243) = |SingleFile|.
           t242->load( ).
           APPEND t243 TO t242->items.
           t242->save( ).
-          DATA(t244) = CAST zlnt_runtime_arra_8ecd6afe19e0( t240 ).
+          DATA(t244) = t240.
           t239 = t244.
           t237 = t239.
         ELSE.
@@ -858,9 +862,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         CLEAR t246.
         DATA t247 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t247.
-        DATA(t248) = CONV abap_bool( abap_true ).
+        DATA(t248) = abap_true.
         IF t248 = abap_true.
-          DATA(t249) = CONV string( |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT| ).
+          DATA(t249) = |CLASS ltcl_test1 DEFINITION FINAL FOR TESTING.\n  PUBLIC SECT|.
           t249 = t249 && |ION.\n  PROTECTED SECTION.\n  PRIVATE SECTION.\n    METHODS tes|.
           t249 = t249 && |t FOR TESTING RAISING cx_static_check.\nENDCLASS.\n\nCLASS ltcl|.
           t249 = t249 && |_test1 IMPLEMENTATION.\n  METHOD test.\n  ENDMETHOD.\nENDCLASS.|.
@@ -878,9 +882,9 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         CLEAR t252.
         DATA t253 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t253.
-        DATA(t254) = CONV abap_bool( abap_true ).
+        DATA(t254) = abap_true.
         IF t254 = abap_true.
-          DATA(t255) = CONV string( |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT| ).
+          DATA(t255) = |CLASS ltcl_test2 DEFINITION FINAL FOR TESTING DURATION SHORT|.
           t255 = t255 && | RISK LEVEL HARMLESS.\n  PUBLIC SECTION.\n  PROTECTED SECTION.|.
           t255 = t255 && |\n  PRIVATE SECTION.\n    METHODS test FOR TESTING RAISING cx_|.
           t255 = t255 && |static_check.\nENDCLASS.\n\nCLASS ltcl_test2 IMPLEMENTATION.\n  |.
@@ -942,37 +946,37 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t229->zlnt_json_ownkeys_70e5fd461788.
         t229->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t270) = CONV string( |key| ).
+        DATA(t270) = |key|.
         DATA t271 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t271.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t270 p1 = t271 ).
         ENDIF.
-        DATA(t272) = CONV string( |title| ).
+        DATA(t272) = |title|.
         DATA t273 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t273.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t272 p1 = t273 ).
         ENDIF.
-        DATA(t274) = CONV string( |shortDescription| ).
+        DATA(t274) = |shortDescription|.
         DATA t275 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t275.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t274 p1 = t275 ).
         ENDIF.
-        DATA(t276) = CONV string( |tags| ).
+        DATA(t276) = |tags|.
         DATA t277 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t277.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t276 p1 = t277 ).
         ENDIF.
-        DATA(t278) = CONV string( |badExample| ).
+        DATA(t278) = |badExample|.
         DATA t279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t279.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t278 p1 = t279 ).
         ENDIF.
-        DATA(t280) = CONV string( |goodExample| ).
+        DATA(t280) = |goodExample|.
         DATA t281 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t281.
         IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -980,7 +984,7 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         ENDIF.
         t228 = t229->key.
         DATA t282 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t283) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at(  ) ).
+        DATA(t283) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at( ) ).
         t282 = t283->zlnt_view_read_sr_15c06369f827( ).
         DATA t284 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t284.
@@ -992,20 +996,23 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         t222->save( ).
       ENDIF.
     ENDDO.
-    DATA(t286) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t286) = t2.
     result = t286.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at(  ) ).
+    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at(  ) ).
+    DATA(t1) = CAST zcl_lnt_add_tst_attrbts_cnf( me->g_c_i_s_r_ad_ts_at_ts_ad_ts_at( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_add_tst_attrbts_cnf.
     CLEAR t1.
@@ -1037,19 +1044,22 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_ad_ts_at_ts_ad_ts_at( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_ad_ts_at_ts_ad_ts_at( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1388_008124b94723.
   ENDMETHOD.

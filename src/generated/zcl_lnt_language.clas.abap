@@ -10,8 +10,9 @@ CLASS zcl_lnt_language DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression CREA
 ENDCLASS.
 CLASS zcl_lnt_language IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -19,7 +20,7 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CONV string( |LANGUAGE| ).
+    DATA(t4) = |LANGUAGE|.
     CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -35,7 +36,7 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CONV string( |SQLSCRIPT| ).
+    DATA(t10) = |SQLSCRIPT|.
     CLEAR t9.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -45,7 +46,7 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
-    DATA(t13) = CONV string( |SQL| ).
+    DATA(t13) = |SQL|.
     CLEAR t12.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -57,10 +58,10 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     CLEAR t15.
     CREATE OBJECT t15.
     t14 = t15.
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t16) = t14.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
-    DATA(t18) = CONV string( |GRAPH| ).
+    DATA(t18) = |GRAPH|.
     CLEAR t17.
     CREATE OBJECT t17.
     t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -70,9 +71,9 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     t16->save( ).
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t19.
-    DATA(t20) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t21) = CAST zlnt_runtime_dyna_a429568d5be8( t11 ).
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t20) = t8.
+    DATA(t21) = t11.
+    DATA(t22) = t14.
     t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t20 i_second = t21 i_rest = t22 ).
     t7 = t19.
     CLEAR t6.
@@ -111,20 +112,22 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     t25 = t26.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t27.
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t28) = t2.
+    DATA(t29) = t5.
+    DATA(t30) = t25.
     t27 = zcl_lnt_st_combi_module=>seq( i_first = t28 i_second = t29 i_rest = t30 ).
     t1 = t27.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d206_6fcb20c2de74.
   ENDMETHOD.

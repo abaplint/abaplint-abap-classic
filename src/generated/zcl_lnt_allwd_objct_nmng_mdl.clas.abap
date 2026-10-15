@@ -22,25 +22,29 @@ CLASS zcl_lnt_allwd_objct_nmng_mdl IMPLEMENTATION.
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t1.
-    DATA(t2) = CONV string( `^(\/[A-Z_\d]{3,8}\/)?[A-Z_\d<> ]+$` ).
-    DATA(t3) = CONV string( `^(\/[A-Z_0-9]{3,8}\/)?[A-Z_0-9<> ]+$` ).
-    DATA(t4) = CONV string( |i| ).
+    DATA(t2) = `^(\/[A-Z_\d]{3,8}\/)?[A-Z_\d<> ]+$`.
+    DATA(t3) = `^(\/[A-Z_0-9]{3,8}\/)?[A-Z_0-9<> ]+$`.
+    DATA(t4) = |i|.
     CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t4.
     t1->source = t2.
     zcl_lnt_allwd_objct_nmng_mdl=>name_regex = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1953_ef4cc5e4de3a.
   ENDMETHOD.

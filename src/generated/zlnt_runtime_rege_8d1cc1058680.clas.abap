@@ -1221,6 +1221,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       posix = '(?:)'.
     ENDIF.
   ENDMETHOD.
+
   METHOD test.
     DATA hit TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     hit = me->exec( p0 ).
@@ -1228,6 +1229,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD match_test.
     IF global = abap_true.
       last_index = 0.
@@ -1237,6 +1239,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       last_index = 0.
     ENDIF.
   ENDMETHOD.
+
   METHOD replace.
     DATA text TYPE string.
     DATA last TYPE i.
@@ -1271,6 +1274,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
     n = strlen( p0 ) - last.
     result = result && p0+last(n).
   ENDMETHOD.
+
   METHOD match.
     IF global = abap_false.
       result = me->exec( p0 ).
@@ -1338,9 +1342,10 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD class_hyphens.
     TYPES: BEGIN OF atom,
-    text TYPE string,
+    text   TYPE string,
     is_set TYPE abap_bool,
     END OF atom.
     DATA atoms TYPE STANDARD TABLE OF atom WITH DEFAULT KEY.
@@ -1433,6 +1438,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       i = i + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD exec.
     DATA start TYPE i.
     DATA text TYPE string.
@@ -1505,6 +1511,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       APPEND part TO result->items.
     ENDLOOP.
   ENDMETHOD.
+
   METHOD unit_text.
     DATA i TYPE i.
     DATA c TYPE string.
@@ -1519,6 +1526,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       i = i + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD pcre_pattern.
     DATA i TYPE i.
     DATA c TYPE string.
@@ -1548,6 +1556,7 @@ CLASS zlnt_runtime_rege_8d1cc1058680 IMPLEMENTATION.
       i = i + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD exec_legacy.
     DATA js TYPE REF TO zlnt_runtime_rege_8d1cc1058680.
     TRY.

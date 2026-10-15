@@ -25,42 +25,46 @@ CLASS zcl_lnt_sql_in_module IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    DATA(t5) = CONV string( |SIGN| ).
+    DATA(t4) = t2.
+    DATA(t5) = |SIGN|.
     t4->load( ).
     APPEND t5 TO t4->items.
     t4->save( ).
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    DATA(t7) = CONV string( |OPTION| ).
+    DATA(t6) = t2.
+    DATA(t7) = |OPTION|.
     t6->load( ).
     APPEND t7 TO t6->items.
     t6->save( ).
-    DATA(t8) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    DATA(t9) = CONV string( |LOW| ).
+    DATA(t8) = t2.
+    DATA(t9) = |LOW|.
     t8->load( ).
     APPEND t9 TO t8->items.
     t8->save( ).
-    DATA(t10) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    DATA(t11) = CONV string( |HIGH| ).
+    DATA(t10) = t2.
+    DATA(t11) = |HIGH|.
     t10->load( ).
     APPEND t11 TO t10->items.
     t10->save( ).
-    DATA(t12) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t12) = t2.
     t1 = t12.
     zcl_lnt_sql_in_module=>range_components = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1946_cdf8f36a0b8a.
   ENDMETHOD.

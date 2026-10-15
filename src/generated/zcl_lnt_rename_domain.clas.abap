@@ -15,18 +15,19 @@ CLASS zcl_lnt_rename_domain DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rename_domain IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
   ENDMETHOD.
+
   METHOD b_e_in_sr_ob_rn_rn_dm_ts_rn_dm.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
-    DATA(t2) = CONV string( i_old_name ).
-    DATA(t3) = CONV string( i_new_name ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_old_name.
+    DATA(t3) = i_new_name.
     DATA(t4) = VALUE abap_bool( ).
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zif_lnt_object( t1 ).
+    DATA(t6) = t1.
     t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_domain ).
     t4 = xsdbool( t5 = abap_false ).
     IF t4 = abap_true.
@@ -36,9 +37,9 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
       CLEAR t8.
       DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t9.
-      DATA(t10) = CONV abap_bool( abap_true ).
+      DATA(t10) = abap_true.
       IF t10 = abap_true.
-        DATA(t11) = CONV string( |RenameDomain, not a domain| ).
+        DATA(t11) = |RenameDomain, not a domain|.
         DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t12->has = abap_true.
         t12->value = t11.
@@ -90,27 +91,27 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     CLEAR t18.
     DATA t19 TYPE REF TO zcl_lnt_renamer_helper.
     CLEAR t19.
-    DATA(t20) = CAST zif_lnt_registry( me->reg ).
+    DATA(t20) = me->reg.
     t19 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
     t18 = t19.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t21.
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+    DATA(t22) = t16.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t24.
-    DATA(t25) = CAST zcl_lnt_renamer_helper( t18 ).
+    DATA(t25) = t18.
     DATA t26 TYPE REF TO zcl_lnt_domain.
     CLEAR t26.
-    DATA(t27) = CAST zif_lnt_object( t1 ).
+    DATA(t27) = t1.
     DATA t28 TYPE REF TO object.
     CLEAR t28.
     t28 = t27.
     t26 ?= t28.
-    DATA(t29) = CONV string( |DOMNAME| ).
-    DATA(t30) = CONV string( t2 ).
-    DATA(t31) = CONV string( t3 ).
+    DATA(t29) = |DOMNAME|.
+    DATA(t30) = t2.
+    DATA(t31) = t3.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t32.
     t24 = t25->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = t29 i_old_name = t30 i_new_name = t31 i_use_lower_case = t32 ).
@@ -119,39 +120,39 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     t16 = t21.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t33.
-    DATA(t34) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+    DATA(t34) = t16.
     DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t35.
-    DATA(t36) = CAST zcl_lnt_renamer_helper( t18 ).
+    DATA(t36) = t18.
     DATA t37 TYPE REF TO zcl_lnt_domain.
     CLEAR t37.
-    DATA(t38) = CAST zif_lnt_object( t1 ).
+    DATA(t38) = t1.
     DATA t39 TYPE REF TO object.
     CLEAR t39.
     t39 = t38.
     t37 ?= t39.
-    DATA(t40) = CONV string( t2 ).
-    DATA(t41) = CONV string( t3 ).
+    DATA(t40) = t2.
+    DATA(t41) = t3.
     t35 = t36->rename_files( i_obj_1ed0 = t37 i_old_name = t40 i_name = t41 ).
     t33 = t34->concat( p0 = t35 ).
     t16 = t33.
     DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t42.
-    DATA(t43) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+    DATA(t43) = t16.
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t44.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t45.
-    DATA(t46) = CAST zcl_lnt_renamer_helper( t18 ).
+    DATA(t46) = t18.
     DATA t47 TYPE REF TO zcl_lnt_domain.
     CLEAR t47.
-    DATA(t48) = CAST zif_lnt_object( t1 ).
+    DATA(t48) = t1.
     DATA t49 TYPE REF TO object.
     CLEAR t49.
     t49 = t48.
     t47 ?= t49.
-    DATA(t50) = CONV string( t2 ).
-    DATA(t51) = CONV string( t3 ).
+    DATA(t50) = t2.
+    DATA(t51) = t3.
     t45 = t46->rename_ddicdtel_references( i_obj_1ed0 = t47 i_old_name = t50 i_new_name = t51 ).
     t44 ?= t45.
     t42 = t43->concat( p0 = t44 ).
@@ -162,9 +163,9 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     CLEAR t53.
     DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t54.
-    DATA(t55) = CONV abap_bool( abap_true ).
+    DATA(t55) = abap_true.
     IF t55 = abap_true.
-      DATA(t56) = CAST zlnt_runtime_arra_c22708faf2e3( t16 ).
+      DATA(t56) = t16.
       t54 = t56.
     ELSE.
       DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -192,48 +193,55 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t52->zlnt_json_ownkeys_70e5fd461788.
     t52->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t63) = CONV string( |documentChanges| ).
+    DATA(t63) = |documentChanges|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t64.
     IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
     ENDIF.
     result = t52.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD build_edits.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
-    DATA(t2) = CONV string( i_old_name ).
-    DATA(t3) = CONV string( i_new_name ).
+    DATA(t1) = i_obj_1ed0.
+    DATA(t2) = i_old_name.
+    DATA(t3) = i_new_name.
     DATA t4 TYPE REF TO zcl_lnt_shape_36bc2e57.
     DATA t5 TYPE REF TO object.
-    DATA(t6) = CAST zif_lnt_object( t1 ).
-    DATA(t7) = CONV string( t2 ).
-    DATA(t8) = CONV string( t3 ).
+    DATA(t6) = t1.
+    DATA(t7) = t2.
+    DATA(t8) = t3.
     t5 = me->b_e_in_sr_ob_rn_rn_dm_ts_rn_dm( i_obj_1ed0 = t6 i_old_name = t7 i_new_name = t8 ).
     t4 ?= t5.
     result = t4.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1329_aa9055745549.
   ENDMETHOD.
+
   METHOD zif_lnt_object_renamer~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_object_renamer~build_edits.
-    result = me->build_edits(  i_obj_1ed0 = i_obj_1ed0 i_old_name = i_old_name i_new_name = i_new_name ).
+    result = me->build_edits( i_obj_1ed0 = i_obj_1ed0 i_old_name = i_old_name i_new_name = i_new_name ).
   ENDMETHOD.
 ENDCLASS.

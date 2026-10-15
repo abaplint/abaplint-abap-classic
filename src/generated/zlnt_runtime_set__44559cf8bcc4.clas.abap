@@ -6,7 +6,7 @@ CLASS zlnt_runtime_set__44559cf8bcc4 DEFINITION PUBLIC CREATE PUBLIC.
     METHODS size RETURNING VALUE(result) TYPE i.
     METHODS has IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE abap_bool.
     METHODS add IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    METHODS fromArray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_595b0cb55f64 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
+    METHODS fromarray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_595b0cb55f64 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
     METHODS copy IMPORTING p0 TYPE REF TO zlnt_runtime_set__44559cf8bcc4 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
     METHODS delete IMPORTING p0 TYPE f RETURNING VALUE(result) TYPE abap_bool.
     METHODS values RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
@@ -17,12 +17,14 @@ CLASS zlnt_runtime_set__44559cf8bcc4 IMPLEMENTATION.
   METHOD size.
     result = lines( entries ).
   ENDMETHOD.
+
   METHOD has.
     READ TABLE entries WITH KEY by_k COMPONENTS k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD add.
     READ TABLE entries WITH KEY by_k COMPONENTS k = p0 ASSIGNING FIELD-SYMBOL(<row>).
     IF sy-subrc = 0.
@@ -32,7 +34,8 @@ CLASS zlnt_runtime_set__44559cf8bcc4 IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
-  METHOD fromArray.
+
+  METHOD fromarray.
     p0->dense( ).
     DATA row TYPE f.
     DATA ignored TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
@@ -41,16 +44,19 @@ CLASS zlnt_runtime_set__44559cf8bcc4 IMPLEMENTATION.
     ENDLOOP.
     result = me.
   ENDMETHOD.
+
   METHOD copy.
     CREATE OBJECT result.
     APPEND LINES OF p0->entries TO result->entries.
   ENDMETHOD.
+
   METHOD delete.
     DELETE TABLE entries WITH TABLE KEY by_k COMPONENTS k = p0.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD values.
     result = NEW #( ).
     LOOP AT entries INTO DATA(row).

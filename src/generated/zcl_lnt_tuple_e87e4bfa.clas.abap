@@ -13,27 +13,31 @@ CLASS zcl_lnt_tuple_e87e4bfa DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_e87e4bfa IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_f0 ).
-    DATA(t2) = CAST zcl_lnt_shape_ca561c1a( i_f1 ).
-    DATA(t3) = CONV string( t1 ).
+    DATA(t1) = i_f0.
+    DATA(t2) = i_f1.
+    DATA(t3) = t1.
     me->f0 = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f0`.
-    DATA(t4) = CAST zcl_lnt_shape_ca561c1a( t2 ).
+    DATA(t4) = t2.
     me->f1 = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f1`.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_40944bb56651=>zlnt_member_d4_13543b5ca4726d.
   ENDMETHOD.

@@ -10,8 +10,9 @@ CLASS zcl_lnt_definition_name DEFINITION PUBLIC INHERITING FROM zcl_lnt_expressi
 ENDCLASS.
 CLASS zcl_lnt_definition_name IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -19,10 +20,10 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t3.
-    DATA(t4) = CONV string( `^&|&?((\w*\/\w+\/)|(\w*\/\w+\/)?[\w\*$%\?#]+)$` ).
-    DATA(t5) = CONV string( `^&|&?(([A-Za-z0-9_]*\/[A-Za-z0-9_]+\/)|([A-Za-z0-9_]*\/[A-Za` ).
+    DATA(t4) = `^&|&?((\w*\/\w+\/)|(\w*\/\w+\/)?[\w\*$%\?#]+)$`.
+    DATA(t5) = `^&|&?(([A-Za-z0-9_]*\/[A-Za-z0-9_]+\/)|([A-Za-z0-9_]*\/[A-Za`.
     t5 = t5 && `-z0-9_]+\/)?[A-Za-z0-9_\*$%\?#]+)$`.
-    DATA(t6) = CONV string( || ).
+    DATA(t6) = ||.
     CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
     t3->source = t4.
     t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
@@ -33,7 +34,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
-    DATA(t10) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t10) = t1.
     CLEAR t9.
     IF t10 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -78,7 +79,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t19.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t20.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817 ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
     t20 = zcl_lnt_st_combi_module=>tok( i_t = t21 ).
     CLEAR t19.
     IF t20 IS BOUND.
@@ -116,7 +117,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t26.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t27.
-    DATA(t28) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t28) = t1.
     CLEAR t27.
     IF t28 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -181,9 +182,9 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     t33 = t34.
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t35.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t18 ).
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t24 ).
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t33 ).
+    DATA(t36) = t18.
+    DATA(t37) = t24.
+    DATA(t38) = t33.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t17 = t35.
     CLEAR t16.
@@ -248,7 +249,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t44.
     CREATE OBJECT t44.
     t43 = t44.
-    DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+    DATA(t45) = t43.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t46.
     DATA t47 TYPE REF TO zif_lnt_statement_runnable.
@@ -257,7 +258,7 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     CLEAR t48.
     DATA t49 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t49.
-    DATA(t50) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d23_6b4b88957b2c9e ).
+    DATA(t50) = zlnt_runtime_desc_78196487750d=>zlnt_member_d23_6b4b88957b2c9e.
     t49 = zcl_lnt_st_combi_module=>tok( i_t = t50 ).
     CLEAR t48.
     IF t49 IS BOUND.
@@ -319,20 +320,22 @@ CLASS zcl_lnt_definition_name IMPLEMENTATION.
     t45->save( ).
     DATA t55 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t55.
-    DATA(t56) = CAST zlnt_runtime_dyna_a429568d5be8( t8 ).
-    DATA(t57) = CAST zlnt_runtime_dyna_a429568d5be8( t13 ).
-    DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+    DATA(t56) = t8.
+    DATA(t57) = t13.
+    DATA(t58) = t43.
     t55 = zcl_lnt_st_combi_module=>seq( i_first = t56 i_second = t57 i_rest = t58 ).
     t7 = t55.
     result = t7.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57.
   ENDMETHOD.

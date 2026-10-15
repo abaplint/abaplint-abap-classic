@@ -20,7 +20,7 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb(  ).
+    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
     zcl_lnt_visibility_module=>visibility_namespace = t1.
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     CLEAR t2.
@@ -30,10 +30,10 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t3 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t4) = CONV string( |1| ).
+    DATA(t4) = |1|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
-    DATA(t6) = CONV string( |Private| ).
+    DATA(t6) = |Private|.
     CLEAR t5.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -47,10 +47,10 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t8 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t9) = CONV string( |2| ).
+    DATA(t9) = |2|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
-    DATA(t11) = CONV string( |Protected| ).
+    DATA(t11) = |Protected|.
     CLEAR t10.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -64,10 +64,10 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t13 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t14) = CONV string( |3| ).
+    DATA(t14) = |3|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CONV string( |Public| ).
+    DATA(t16) = |Public|.
     CLEAR t15.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -81,10 +81,10 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t18 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t19) = CONV string( |Private| ).
+    DATA(t19) = |Private|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
-    DATA(t21) = CONV i( 1 ).
+    DATA(t21) = 1.
     CLEAR t20.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
@@ -98,10 +98,10 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t23 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t24) = CONV string( |Protected| ).
+    DATA(t24) = |Protected|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t25.
-    DATA(t26) = CONV i( 2 ).
+    DATA(t26) = 2.
     CLEAR t25.
     CREATE OBJECT t25.
     t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
@@ -115,28 +115,32 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t28 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t29) = CONV string( |Public| ).
+    DATA(t29) = |Public|.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t30.
-    DATA(t31) = CONV i( 3 ).
+    DATA(t31) = 3.
     CLEAR t30.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
     t30->nval = t31.
     t27 = t28->set( p0 = t29 p1 = t30 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1962_3ec8ee501045.
   ENDMETHOD.

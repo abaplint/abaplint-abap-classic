@@ -34,33 +34,38 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_url_8ce1 ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_branch ).
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( i_folder_5c67 ).
-    DATA(t4) = CONV string( i_files ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t1) = i_url_8ce1.
+    DATA(t2) = i_branch.
+    DATA(t3) = i_folder_5c67.
+    DATA(t4) = i_files.
+    DATA(t5) = t1.
     me->zlnt_view_write_s_2136ba3f4cee( p0 = t5 ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t6) = t2.
     me->zlnt_view_write_s_07044db726b2( p0 = t6 ).
-    DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( t3 ).
+    DATA(t7) = t3.
     me->zlnt_view_write_s_af42215226c0( p0 = t7 ).
-    DATA(t8) = CONV string( t4 ).
+    DATA(t8) = t4.
     me->zlnt_view_write_s_bd7f5998f3fc( p0 = t8 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1_2d6b79a5b052ba.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_06f3af1c2093.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `url` ) ).
@@ -74,6 +79,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       result = me->url_01ab.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_2136ba3f4cee.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -96,6 +102,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `url`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_7b515b59e1bc.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `branch` ) ).
@@ -109,6 +116,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       result = me->branch.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_07044db726b2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -131,6 +139,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `branch`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_784285cef737.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `folder` ) ).
@@ -144,6 +153,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       result = me->folder_5143.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_af42215226c0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -166,6 +176,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `folder`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_12a3d7389cfe.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `files` ) ).
@@ -174,6 +185,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       result = me->files.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_bd7f5998f3fc.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -193,12 +205,15 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `files`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~structural.
     result = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~source.
     result = me->zlnt_view_source_36f3bf68b9b8.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -212,6 +227,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       result = me->zlnt_view_extras_47272813ead1->has( p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     DATA ignored TYPE abap_bool.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
@@ -241,6 +257,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ENDIF.
     result = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -254,6 +271,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -323,6 +341,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

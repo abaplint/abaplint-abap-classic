@@ -26,6 +26,7 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     CLEAR t1.
     super->constructor( i_input_967e = t1 ).
   ENDMETHOD.
+
   METHOD get_db65.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
@@ -37,38 +38,45 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_simple_type=>singleton.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty.
-    DATA(t1) = CONV string( |```simple```| ).
+    DATA(t1) = |```simple```|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
-    DATA(t1) = CONV string( |simple| ).
+    DATA(t1) = |simple|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_generic.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD contains_void.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
-    DATA(t1) = CONV string( |abap.TODO_SIMPLE| ).
+    DATA(t1) = |abap.TODO_SIMPLE|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_5860290dc37a.
     IF zlnt_builtin_init_6880937654df = abap_true.
       RETURN.
@@ -82,15 +90,17 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
-    t1 = NEW zcl_lnt_simple_type(  ).
+    t1 = NEW zcl_lnt_simple_type( ).
     zcl_lnt_simple_type=>singleton = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1039_204717d2f6bf.
   ENDMETHOD.

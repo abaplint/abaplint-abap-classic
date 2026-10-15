@@ -23,12 +23,12 @@ CLASS zcl_lnt_word_sequence DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_stri ).
+    DATA(t1) = i_stri.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     me->words = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `words`.
-    DATA(t3) = CONV string( t1 ).
+    DATA(t3) = t1.
     me->stri = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stri`.
     DATA t4 TYPE string.
@@ -36,19 +36,19 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     DATA(t6) = CONV string( me->stri ).
     DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t7.
-    DATA(t8) = CONV string( |-| ).
-    DATA(t9) = CONV string( |g| ).
+    DATA(t8) = |-|.
+    DATA(t9) = |g|.
     CREATE OBJECT t7 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t8 flags = t9 checked = abap_true.
-    DATA(t10) = CONV string( | - | ).
-    DATA(t11) = CONV i( strlen( t6 ) ).
+    DATA(t10) = | - |.
+    DATA(t11) = strlen( t6 ).
     t5 = t7->replace( p0 = t6 p1 = t10 ).
     t4 = t5.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t14) = CONV string( t4 ).
-    DATA(t15) = CONV string( | | ).
-    DATA(t16) = CONV i( strlen( t14 ) ).
+    DATA(t14) = t4.
+    DATA(t15) = | |.
+    DATA(t16) = strlen( t14 ).
     DATA t17 TYPE i.
     DATA(t18) = VALUE i( ).
     DATA(t19) = VALUE i( ).
@@ -84,7 +84,7 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t12 = t13.
-    DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+    DATA(t22) = t12.
     DATA(t23) = VALUE string( ).
     t22->dense( ).
     DATA(t24) = VALUE i( ).
@@ -99,83 +99,89 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t24 = t24 + 1.
-      DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+      DATA(t25) = me->words.
       DATA t26 TYPE REF TO zcl_lnt_word.
-      DATA(t27) = CONV string( t23 ).
+      DATA(t27) = t23.
       t26 = NEW zcl_lnt_word( i_s = t27 ).
       t25->load( ).
       APPEND t26 TO t25->items.
       t25->save( ).
     ENDDO.
     DATA t28 TYPE REF TO zcl_lnt_st_sequence.
-    DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+    DATA(t29) = me->words.
     t28 = NEW zcl_lnt_st_sequence( i_list = t29 ).
     me->seq = t28.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `seq`.
   ENDMETHOD.
+
   METHOD list_keywords.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t4) = t2.
     DATA(t5) = CONV string( me->stri ).
     t4->load( ).
     APPEND t5 TO t4->items.
     t4->save( ).
-    DATA(t6) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
+    DATA(t6) = t2.
     t1 = t6.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_using.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zcl_lnt_st_sequence( me->seq ).
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = me->seq.
+    DATA(t4) = t1.
     t2 = t3->run( i_r_f634 = t4 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD railroad.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |Railroad.Terminal('"| ).
+    DATA(t3) = |Railroad.Terminal('"|.
     DATA(t4) = CONV string( me->stri ).
-    DATA(t5) = CONV i( strlen( t3 ) ).
+    DATA(t5) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t6) = CONV string( |"')| ).
-    DATA(t7) = CONV i( strlen( t2 ) ).
+    DATA(t6) = |"')|.
+    DATA(t7) = strlen( t2 ).
     t1 = |{ t2 }{ t6 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_str.
     DATA t1 TYPE string.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |str(| ).
+    DATA(t3) = |str(|.
     DATA(t4) = CONV string( me->stri ).
-    DATA(t5) = CONV i( strlen( t3 ) ).
+    DATA(t5) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t6) = CONV string( |)| ).
-    DATA(t7) = CONV i( strlen( t2 ) ).
+    DATA(t6) = |)|.
+    DATA(t7) = strlen( t2 ).
     t1 = |{ t2 }{ t6 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->words ).
+    DATA(t3) = me->words.
     DATA t4 TYPE REF TO object.
     CLEAR t4.
     t3->load( ).
@@ -192,12 +198,13 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     ELSE.
       t2 ?= t4.
     ENDIF.
-    t1 = t2->first(  ).
+    t1 = t2->first( ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -205,61 +212,74 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
-    DATA(t8) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t7) = t5.
+    DATA(t8) = t1.
     t7->load( ).
     APPEND t8 TO t7->items.
     t7->save( ).
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( t5 ).
+    DATA(t9) = t5.
     t4 = t9.
     t3 = t4.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = CAST zcl_lnt_st_sequence( me->seq ).
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t11) = me->seq.
+    DATA(t12) = t3.
     t10 = t11->run( i_r_f634 = t12 ).
     t2 = t10.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d74_8cc8f0f34eff40.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run.
-    result = me->run(  i_r_f634 = i_r_f634 ).
+    result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~railroad.
-    result = me->railroad(  ).
+    result = me->railroad( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~to_str.
-    result = me->to_str(  ).
+    result = me->to_str( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~list_keywords.
-    result = me->list_keywords(  ).
+    result = me->list_keywords( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run_one.
-    result = me->run_one(  i_x = i_x ).
+    result = me->run_one( i_x = i_x ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

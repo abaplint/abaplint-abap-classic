@@ -11,11 +11,11 @@ CLASS zcl_lnt_cds_parser DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_cds_parser IMPLEMENTATION.
   METHOD parse.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
+    DATA(t1) = i_file.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zif_lnt_file.
     CLEAR t3.
-    DATA(t4) = CAST zif_lnt_file( t1 ).
+    DATA(t4) = t1.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
@@ -23,7 +23,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t6.
     t5 = t6.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = CAST zif_lnt_file( t3 ).
+    DATA(t8) = t3.
     IF t8 IS INITIAL.
       t7 = abap_true.
     ENDIF.
@@ -40,7 +40,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zif_lnt_file.
     CLEAR t12.
-    DATA(t13) = CAST zif_lnt_file( t1 ).
+    DATA(t13) = t1.
     t12 = t13.
     t11 = zcl_lnt_cds_lexer=>run( i_file = t12 ).
     t10 = t11.
@@ -52,7 +52,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t16.
     CREATE OBJECT t16.
     t15 = t16.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t17) = t10.
     DATA t18 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t18.
     DATA t19 TYPE REF TO object.
@@ -80,26 +80,26 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ENDIF.
       DATA(t23) = VALUE abap_bool( ).
       DATA(t24) = VALUE abap_bool( ).
-      DATA(t25) = CAST zcl_lnt_abstract_token( t18 ).
+      DATA(t25) = t18.
       t24 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_lx_comment ).
       t23 = xsdbool( t24 = abap_false ).
       IF t23 = abap_true.
-        DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t15 ).
-        DATA(t27) = CAST zcl_lnt_abstract_token( t18 ).
+        DATA(t26) = t15.
+        DATA(t27) = t18.
         t26->load( ).
         APPEND t27 TO t26->items.
         t26->save( ).
       ENDIF.
     ENDDO.
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t15 ).
+    DATA(t28) = t15.
     t14 = t28.
     t10 = t14.
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t29.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t30.
-    DATA(t31) = NEW zcl_lnt_cds_define_view(  ).
-    DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+    DATA(t31) = NEW zcl_lnt_cds_define_view( ).
+    DATA(t32) = t10.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
     DATA t34 TYPE REF TO zcl_lnt_abap_release.
@@ -143,7 +143,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t39) = VALUE abap_bool( ).
     DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t40.
-    DATA(t41) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t41) = t29.
     t40 = t41.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t42.
@@ -151,7 +151,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t43.
     t42 = t43.
     DATA(t44) = VALUE abap_bool( ).
-    DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t40 ).
+    DATA(t45) = t40.
     IF t45 IS INITIAL.
       t44 = abap_true.
     ENDIF.
@@ -164,7 +164,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t48.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t49.
-      DATA(t50) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t50) = t29.
       t49 = t50.
       DATA t51 TYPE REF TO object.
       CLEAR t51.
@@ -190,8 +190,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t38 = abap_true.
       DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t54.
-      DATA(t55) = NEW zcl_lnt_cds_define_abstract(  ).
-      DATA(t56) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t55) = NEW zcl_lnt_cds_define_abstract( ).
+      DATA(t56) = t10.
       DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t57.
       DATA t58 TYPE REF TO zcl_lnt_abap_release.
@@ -236,7 +236,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t63) = VALUE abap_bool( ).
     DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t64.
-    DATA(t65) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t65) = t29.
     t64 = t65.
     DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t66.
@@ -244,7 +244,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t67.
     t66 = t67.
     DATA(t68) = VALUE abap_bool( ).
-    DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t69) = t64.
     IF t69 IS INITIAL.
       t68 = abap_true.
     ENDIF.
@@ -257,7 +257,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t72.
       DATA t73 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t73.
-      DATA(t74) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t74) = t29.
       t73 = t74.
       DATA t75 TYPE REF TO object.
       CLEAR t75.
@@ -283,8 +283,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t62 = abap_true.
       DATA t78 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t78.
-      DATA(t79) = NEW zcl_lnt_cds_define_projection(  ).
-      DATA(t80) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t79) = NEW zcl_lnt_cds_define_projection( ).
+      DATA(t80) = t10.
       DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t81.
       DATA t82 TYPE REF TO zcl_lnt_abap_release.
@@ -329,7 +329,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t87) = VALUE abap_bool( ).
     DATA t88 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t88.
-    DATA(t89) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t89) = t29.
     t88 = t89.
     DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t90.
@@ -337,7 +337,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t91.
     t90 = t91.
     DATA(t92) = VALUE abap_bool( ).
-    DATA(t93) = CAST zlnt_runtime_arra_c22708faf2e3( t88 ).
+    DATA(t93) = t88.
     IF t93 IS INITIAL.
       t92 = abap_true.
     ENDIF.
@@ -350,7 +350,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t96.
       DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t97.
-      DATA(t98) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t98) = t29.
       t97 = t98.
       DATA t99 TYPE REF TO object.
       CLEAR t99.
@@ -376,8 +376,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t86 = abap_true.
       DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t102.
-      DATA(t103) = NEW zcl_lnt_cds_annotate(  ).
-      DATA(t104) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t103) = NEW zcl_lnt_cds_annotate( ).
+      DATA(t104) = t10.
       DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t105.
       DATA t106 TYPE REF TO zcl_lnt_abap_release.
@@ -422,7 +422,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t111) = VALUE abap_bool( ).
     DATA t112 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t112.
-    DATA(t113) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t113) = t29.
     t112 = t113.
     DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t114.
@@ -430,7 +430,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t115.
     t114 = t115.
     DATA(t116) = VALUE abap_bool( ).
-    DATA(t117) = CAST zlnt_runtime_arra_c22708faf2e3( t112 ).
+    DATA(t117) = t112.
     IF t117 IS INITIAL.
       t116 = abap_true.
     ENDIF.
@@ -443,7 +443,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t120.
       DATA t121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t121.
-      DATA(t122) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t122) = t29.
       t121 = t122.
       DATA t123 TYPE REF TO object.
       CLEAR t123.
@@ -469,8 +469,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t110 = abap_true.
       DATA t126 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t126.
-      DATA(t127) = NEW zcl_lnt_cds_define_custom(  ).
-      DATA(t128) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t127) = NEW zcl_lnt_cds_define_custom( ).
+      DATA(t128) = t10.
       DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t129.
       DATA t130 TYPE REF TO zcl_lnt_abap_release.
@@ -515,7 +515,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t135) = VALUE abap_bool( ).
     DATA t136 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t136.
-    DATA(t137) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t137) = t29.
     t136 = t137.
     DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t138.
@@ -523,7 +523,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t139.
     t138 = t139.
     DATA(t140) = VALUE abap_bool( ).
-    DATA(t141) = CAST zlnt_runtime_arra_c22708faf2e3( t136 ).
+    DATA(t141) = t136.
     IF t141 IS INITIAL.
       t140 = abap_true.
     ENDIF.
@@ -536,7 +536,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t144.
       DATA t145 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t145.
-      DATA(t146) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t146) = t29.
       t145 = t146.
       DATA t147 TYPE REF TO object.
       CLEAR t147.
@@ -562,8 +562,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t134 = abap_true.
       DATA t150 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t150.
-      DATA(t151) = NEW zcl_lnt_cds_dfn_tbl_fnctn(  ).
-      DATA(t152) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t151) = NEW zcl_lnt_cds_dfn_tbl_fnctn( ).
+      DATA(t152) = t10.
       DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t153.
       DATA t154 TYPE REF TO zcl_lnt_abap_release.
@@ -608,7 +608,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t159) = VALUE abap_bool( ).
     DATA t160 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t160.
-    DATA(t161) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t161) = t29.
     t160 = t161.
     DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t162.
@@ -616,7 +616,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t163.
     t162 = t163.
     DATA(t164) = VALUE abap_bool( ).
-    DATA(t165) = CAST zlnt_runtime_arra_c22708faf2e3( t160 ).
+    DATA(t165) = t160.
     IF t165 IS INITIAL.
       t164 = abap_true.
     ENDIF.
@@ -629,7 +629,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t168.
       DATA t169 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t169.
-      DATA(t170) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t170) = t29.
       t169 = t170.
       DATA t171 TYPE REF TO object.
       CLEAR t171.
@@ -655,8 +655,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t158 = abap_true.
       DATA t174 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t174.
-      DATA(t175) = NEW zcl_lnt_cds_extend_view(  ).
-      DATA(t176) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t175) = NEW zcl_lnt_cds_extend_view( ).
+      DATA(t176) = t10.
       DATA t177 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t177.
       DATA t178 TYPE REF TO zcl_lnt_abap_release.
@@ -701,7 +701,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t183) = VALUE abap_bool( ).
     DATA t184 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t184.
-    DATA(t185) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t185) = t29.
     t184 = t185.
     DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t186.
@@ -709,7 +709,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t187.
     t186 = t187.
     DATA(t188) = VALUE abap_bool( ).
-    DATA(t189) = CAST zlnt_runtime_arra_c22708faf2e3( t184 ).
+    DATA(t189) = t184.
     IF t189 IS INITIAL.
       t188 = abap_true.
     ENDIF.
@@ -722,7 +722,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t192.
       DATA t193 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t193.
-      DATA(t194) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t194) = t29.
       t193 = t194.
       DATA t195 TYPE REF TO object.
       CLEAR t195.
@@ -748,8 +748,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t182 = abap_true.
       DATA t198 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t198.
-      DATA(t199) = NEW zcl_lnt_cds_define_hierarchy(  ).
-      DATA(t200) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t199) = NEW zcl_lnt_cds_define_hierarchy( ).
+      DATA(t200) = t10.
       DATA t201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t201.
       DATA t202 TYPE REF TO zcl_lnt_abap_release.
@@ -794,7 +794,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t207) = VALUE abap_bool( ).
     DATA t208 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t208.
-    DATA(t209) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t209) = t29.
     t208 = t209.
     DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t210.
@@ -802,7 +802,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t211.
     t210 = t211.
     DATA(t212) = VALUE abap_bool( ).
-    DATA(t213) = CAST zlnt_runtime_arra_c22708faf2e3( t208 ).
+    DATA(t213) = t208.
     IF t213 IS INITIAL.
       t212 = abap_true.
     ENDIF.
@@ -815,7 +815,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t216.
       DATA t217 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t217.
-      DATA(t218) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t218) = t29.
       t217 = t218.
       DATA t219 TYPE REF TO object.
       CLEAR t219.
@@ -841,8 +841,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t206 = abap_true.
       DATA t222 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t222.
-      DATA(t223) = NEW zcl_lnt_cds_dfn_extrnl_entty(  ).
-      DATA(t224) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t223) = NEW zcl_lnt_cds_dfn_extrnl_entty( ).
+      DATA(t224) = t10.
       DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t225.
       DATA t226 TYPE REF TO zcl_lnt_abap_release.
@@ -887,7 +887,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t231) = VALUE abap_bool( ).
     DATA t232 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t232.
-    DATA(t233) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t233) = t29.
     t232 = t233.
     DATA t234 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t234.
@@ -895,7 +895,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t235.
     t234 = t235.
     DATA(t236) = VALUE abap_bool( ).
-    DATA(t237) = CAST zlnt_runtime_arra_c22708faf2e3( t232 ).
+    DATA(t237) = t232.
     IF t237 IS INITIAL.
       t236 = abap_true.
     ENDIF.
@@ -908,7 +908,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t240.
       DATA t241 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t241.
-      DATA(t242) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t242) = t29.
       t241 = t242.
       DATA t243 TYPE REF TO object.
       CLEAR t243.
@@ -934,8 +934,8 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     IF t230 = abap_true.
       DATA t246 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t246.
-      DATA(t247) = NEW zcl_lnt_cds_dfn_tbl_entty(  ).
-      DATA(t248) = CAST zlnt_runtime_arra_c22708faf2e3( t10 ).
+      DATA(t247) = NEW zcl_lnt_cds_dfn_tbl_entty( ).
+      DATA(t248) = t10.
       DATA t249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t249.
       DATA t250 TYPE REF TO zcl_lnt_abap_release.
@@ -980,7 +980,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     DATA(t255) = VALUE abap_bool( ).
     DATA t256 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t256.
-    DATA(t257) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+    DATA(t257) = t29.
     t256 = t257.
     DATA t258 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t258.
@@ -988,7 +988,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     CLEAR t259.
     t258 = t259.
     DATA(t260) = VALUE abap_bool( ).
-    DATA(t261) = CAST zlnt_runtime_arra_c22708faf2e3( t256 ).
+    DATA(t261) = t256.
     IF t261 IS INITIAL.
       t260 = abap_true.
     ENDIF.
@@ -1001,7 +1001,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t264.
       DATA t265 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t265.
-      DATA(t266) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t266) = t29.
       t265 = t266.
       DATA t267 TYPE REF TO object.
       CLEAR t267.
@@ -1032,7 +1032,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     ENDIF.
     DATA t271 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t271.
-    DATA(t272) = CONV abap_bool( abap_true ).
+    DATA(t272) = abap_true.
     IF t272 = abap_true.
       DATA t273 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t273.
@@ -1040,7 +1040,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       CLEAR t274.
       DATA t275 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t275.
-      DATA(t276) = CAST zlnt_runtime_arra_c22708faf2e3( t29 ).
+      DATA(t276) = t29.
       t275 = t276.
       DATA t277 TYPE REF TO object.
       CLEAR t277.
@@ -1070,20 +1070,24 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       t271 = t281.
     ENDIF.
     result = t271.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1073_c7888841318b.
   ENDMETHOD.

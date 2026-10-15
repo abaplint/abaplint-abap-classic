@@ -17,12 +17,12 @@ CLASS zcl_lnt_st_work_area DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_work_area IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_file( i_file ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens ).
-    DATA(t3) = CAST zif_lnt_file( t1 ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_tokens.
+    DATA(t3) = t1.
     me->file = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t4) = t2.
     me->tokens = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tokens`.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -30,41 +30,43 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     me->statements = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `statements`.
   ENDMETHOD.
+
   METHOD add_unknown.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_pre ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_post ).
-    DATA(t3) = CAST zcl_lnt_abstract_token( i_colon ).
+    DATA(t1) = i_pre.
+    DATA(t2) = i_post.
+    DATA(t3) = i_colon.
     DATA t4 TYPE REF TO zcl_lnt_statement_node.
     DATA t5 TYPE REF TO zcl_lnt_statement_node.
-    DATA(t6) = NEW zcl_lnt_unknown(  ).
-    DATA(t7) = CAST zcl_lnt_abstract_token( t3 ).
+    DATA(t6) = NEW zcl_lnt_unknown( ).
+    DATA(t7) = t3.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t8.
     t5 = NEW zcl_lnt_statement_node( i_statement = t6 i_colon = t7 i_pragmas = t8 ).
     t4 = t5.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
-    DATA(t10) = CAST zcl_lnt_statement_node( t4 ).
+    DATA(t10) = t4.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t12) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t12) = t1.
+    DATA(t13) = t2.
     t11 = me->tokens_to_nodes( i_tokens1 = t12 i_tokens2 = t13 ).
     t9 = t10->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = t11 ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
-    DATA(t15) = CAST zcl_lnt_statement_node( t4 ).
+    DATA(t14) = me->statements.
+    DATA(t15) = t4.
     t14->load( ).
     APPEND t15 TO t14->items.
     t14->save( ).
   ENDMETHOD.
+
   METHOD to_result.
     DATA t1 TYPE REF TO zcl_lnt_istatement_result.
     DATA t2 TYPE REF TO zif_lnt_file.
-    DATA(t3) = CAST zif_lnt_file( me->file ).
+    DATA(t3) = me->file.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( me->tokens ).
+    DATA(t5) = me->tokens.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( me->statements ).
+    DATA(t7) = me->statements.
     t6 = t7.
     t1 = NEW zcl_lnt_istatement_result( i_file = t2 i_tokens = t4 i_statements = t6 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
@@ -86,35 +88,36 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t11) = CONV string( |file| ).
+    DATA(t11) = |file|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
     ENDIF.
-    DATA(t13) = CONV string( |tokens| ).
+    DATA(t13) = |tokens|.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t13 p1 = t14 ).
     ENDIF.
-    DATA(t15) = CONV string( |statements| ).
+    DATA(t15) = |statements|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t16.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD tokens_to_nodes.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens1 ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_tokens2 ).
+    DATA(t1) = i_tokens1.
+    DATA(t2) = i_tokens2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t4.
     t3 = t4.
-    DATA(t5) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t5) = t1.
     DATA t6 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t6.
     DATA t7 TYPE REF TO object.
@@ -139,15 +142,15 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t11) = t3.
       DATA t12 TYPE REF TO zcl_lnt_token_node.
-      DATA(t13) = CAST zcl_lnt_abstract_token( t6 ).
+      DATA(t13) = t6.
       t12 = NEW zcl_lnt_token_node( i_token = t13 ).
       t11->load( ).
       APPEND t12 TO t11->items.
       t11->save( ).
     ENDDO.
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t14) = t2.
     DATA t15 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t15.
     DATA t16 TYPE REF TO object.
@@ -172,30 +175,34 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
       ELSE.
         t15 ?= t16.
       ENDIF.
-      DATA(t20) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+      DATA(t20) = t3.
       DATA t21 TYPE REF TO zcl_lnt_token_node.
-      DATA(t22) = CAST zcl_lnt_abstract_token( t15 ).
+      DATA(t22) = t15.
       t21 = NEW zcl_lnt_token_node( i_token = t22 ).
       t20->load( ).
       APPEND t21 TO t20->items.
       t20->save( ).
     ENDDO.
-    DATA(t23) = CAST zlnt_runtime_arra_c22708faf2e3( t3 ).
+    DATA(t23) = t3.
     result = t23.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d360_4e63564df591.
   ENDMETHOD.

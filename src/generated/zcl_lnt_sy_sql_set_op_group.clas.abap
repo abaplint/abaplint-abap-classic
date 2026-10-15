@@ -11,22 +11,22 @@ CLASS zcl_lnt_sy_sql_set_op_group DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_expression_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079 ).
+    DATA(t5) = t1.
+    DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079.
     t4 = t5->find_direct_expression( i_type_9913 = t6 ).
     t3 = xsdbool( t4 IS BOUND ).
     IF t3 = abap_true.
-      DATA(t7) = CAST zcl_lnt_expression_node( t1 ).
-      DATA(t8) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t7) = t1.
+      DATA(t8) = t2.
       DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t9.
-      DATA(t10) = CONV abap_bool( abap_true ).
+      DATA(t10) = abap_true.
       IF t10 = abap_true.
-        DATA(t11) = CONV abap_bool( abap_true ).
+        DATA(t11) = abap_true.
         DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t12->has = abap_true.
         t12->value = t11.
@@ -41,8 +41,8 @@ CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
       zcl_lnt_sy_expres_select=>run_syntax( i_node = t7 i_input_967e = t8 i_skip_implicit_into = t9 i_select_loop_6767 = t14 ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t16) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t17) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d ).
+    DATA(t16) = t1.
+    DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d.
     t15 = t16->find_direct_expressions( i_type_9913 = t17 ).
     DATA t18 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t18.
@@ -68,13 +68,13 @@ CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
       ELSE.
         t18 ?= t19.
       ENDIF.
-      DATA(t23) = CAST zcl_lnt_expression_node( t18 ).
-      DATA(t24) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t23) = t18.
+      DATA(t24) = t2.
       zcl_lnt_sy_sql_set_op_group=>run_syntax( i_node = t23 i_input_967e = t24 ).
     ENDDO.
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t26) = CAST zcl_lnt_expression_node( t1 ).
-    DATA(t27) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d260_1308f310bc0a ).
+    DATA(t26) = t1.
+    DATA(t27) = zlnt_runtime_desc_78196487750d=>zlnt_member_d260_1308f310bc0a.
     t25 = t26->find_direct_expressions( i_type_9913 = t27 ).
     DATA t28 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t28.
@@ -100,23 +100,27 @@ CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
       ELSE.
         t28 ?= t29.
       ENDIF.
-      DATA(t33) = CAST zcl_lnt_expression_node( t28 ).
-      DATA(t34) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t33) = t28.
+      DATA(t34) = t2.
       zcl_lnt_sy_sql_set_op_group=>run_syntax( i_node = t33 i_input_967e = t34 ).
     ENDDO.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d840_cd1c20458c1b.
   ENDMETHOD.

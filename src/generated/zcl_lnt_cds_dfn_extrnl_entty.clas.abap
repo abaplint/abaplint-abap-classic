@@ -10,8 +10,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty DEFINITION PUBLIC INHERITING FROM zcl_lnt_exp
 ENDCLASS.
 CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -21,7 +22,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t4.
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t4.
     IF t5 IS BOUND.
       CREATE OBJECT t4.
@@ -37,8 +38,8 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t9.
-    DATA(t10) = CONV string( |^"(?:[^"]\|"")*"$| ).
-    DATA(t11) = CONV string( || ).
+    DATA(t10) = |^"(?:[^"]\|"")*"$|.
+    DATA(t11) = ||.
     CREATE OBJECT t9 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t10 flags = t11.
     t8 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t9 ).
     CLEAR t7.
@@ -77,9 +78,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t14 = t15.
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t16.
-    DATA(t17) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t14 ).
+    DATA(t17) = t3.
+    DATA(t18) = t6.
+    DATA(t19) = t14.
     t16 = zcl_lnt_st_combi_module=>alt( i_first = t17 i_second = t18 i_rest = t19 ).
     t2 = t16.
     t1 = t2.
@@ -91,7 +92,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
-    DATA(t24) = CONV string( |EXTERNAL| ).
+    DATA(t24) = |EXTERNAL|.
     CLEAR t23.
     CREATE OBJECT t23.
     t23->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -101,7 +102,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t25.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t26.
-    DATA(t27) = CONV string( |NAME| ).
+    DATA(t27) = |NAME|.
     CLEAR t26.
     CREATE OBJECT t26.
     t26->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -113,10 +114,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t29.
     CREATE OBJECT t29.
     t28 = t29.
-    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t28 ).
+    DATA(t30) = t28.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t31.
-    DATA(t32) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t32) = t1.
     CLEAR t31.
     IF t32 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -149,9 +150,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t30->save( ).
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t35.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t25 ).
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t28 ).
+    DATA(t36) = t22.
+    DATA(t37) = t25.
+    DATA(t38) = t28.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t21 = t35.
     t20 = t21.
@@ -167,7 +168,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t43.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t44.
-    DATA(t45) = CONV string( |NOT NULL| ).
+    DATA(t45) = |NOT NULL|.
     CLEAR t44.
     CREATE OBJECT t44.
     t44->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -177,7 +178,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t46.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t47.
-    DATA(t48) = CONV string( |NULL| ).
+    DATA(t48) = |NULL|.
     CLEAR t47.
     CREATE OBJECT t47.
     t47->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -191,9 +192,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t49 = t50.
     DATA t51 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t51.
-    DATA(t52) = CAST zlnt_runtime_dyna_a429568d5be8( t43 ).
-    DATA(t53) = CAST zlnt_runtime_dyna_a429568d5be8( t46 ).
-    DATA(t54) = CAST zlnt_runtime_arra_c22708faf2e3( t49 ).
+    DATA(t52) = t43.
+    DATA(t53) = t46.
+    DATA(t54) = t49.
     t51 = zcl_lnt_st_combi_module=>alt( i_first = t52 i_second = t53 i_rest = t54 ).
     t42 = t51.
     CLEAR t41.
@@ -237,7 +238,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t61.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t62.
-    DATA(t63) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c ).
+    DATA(t63) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c.
     CLEAR t62.
     IF t63 IS BOUND.
       CREATE OBJECT t62.
@@ -283,7 +284,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t69.
     DATA t70 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t70.
-    DATA(t71) = CONV string( |KEY| ).
+    DATA(t71) = |KEY|.
     t70 = zcl_lnt_st_combi_module=>str( i_s = t71 ).
     CLEAR t69.
     IF t70 IS BOUND.
@@ -347,10 +348,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t77.
     CREATE OBJECT t77.
     t76 = t77.
-    DATA(t78) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t78) = t76.
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t79.
-    DATA(t80) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t80) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t79.
     IF t80 IS BOUND.
       CREATE OBJECT t79.
@@ -360,10 +361,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t78->load( ).
     APPEND t79 TO t78->items.
     t78->save( ).
-    DATA(t81) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t81) = t76.
     DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t82.
-    DATA(t83) = CONV string( |:| ).
+    DATA(t83) = |:|.
     CLEAR t82.
     CREATE OBJECT t82.
     t82->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -371,10 +372,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t81->load( ).
     APPEND t82 TO t81->items.
     t81->save( ).
-    DATA(t84) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t84) = t76.
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t85.
-    DATA(t86) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1075_bb8c443f99f5 ).
+    DATA(t86) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1075_bb8c443f99f5.
     CLEAR t85.
     IF t86 IS BOUND.
       CREATE OBJECT t85.
@@ -384,10 +385,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t84->load( ).
     APPEND t85 TO t84->items.
     t84->save( ).
-    DATA(t87) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t87) = t76.
     DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t88.
-    DATA(t89) = CAST zif_lnt_statement_runnable( t39 ).
+    DATA(t89) = t39.
     CLEAR t88.
     IF t89 IS BOUND.
       DATA t90 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -418,14 +419,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t87->load( ).
     APPEND t88 TO t87->items.
     t87->save( ).
-    DATA(t92) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t92) = t76.
     DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t93.
     DATA t94 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t94.
     DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t95.
-    DATA(t96) = CAST zif_lnt_statement_runnable( t20 ).
+    DATA(t96) = t20.
     CLEAR t95.
     IF t96 IS BOUND.
       DATA t97 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -484,10 +485,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t92->load( ).
     APPEND t93 TO t92->items.
     t92->save( ).
-    DATA(t101) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t101) = t76.
     DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t102.
-    DATA(t103) = CONV string( |;| ).
+    DATA(t103) = |;|.
     CLEAR t102.
     CREATE OBJECT t102.
     t102->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -497,9 +498,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t101->save( ).
     DATA t104 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t104.
-    DATA(t105) = CAST zlnt_runtime_dyna_a429568d5be8( t59 ).
-    DATA(t106) = CAST zlnt_runtime_dyna_a429568d5be8( t66 ).
-    DATA(t107) = CAST zlnt_runtime_arra_c22708faf2e3( t76 ).
+    DATA(t105) = t59.
+    DATA(t106) = t66.
+    DATA(t107) = t76.
     t104 = zcl_lnt_st_combi_module=>seq( i_first = t105 i_second = t106 i_rest = t107 ).
     t58 = t104.
     t57 = t58.
@@ -515,7 +516,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t112.
     DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t113.
-    DATA(t114) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c ).
+    DATA(t114) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c.
     CLEAR t113.
     IF t114 IS BOUND.
       CREATE OBJECT t113.
@@ -555,7 +556,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t117.
     DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t118.
-    DATA(t119) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t119) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t118.
     IF t119 IS BOUND.
       CREATE OBJECT t118.
@@ -569,10 +570,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t121.
     CREATE OBJECT t121.
     t120 = t121.
-    DATA(t122) = CAST zlnt_runtime_arra_c22708faf2e3( t120 ).
+    DATA(t122) = t120.
     DATA t123 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t123.
-    DATA(t124) = CONV string( |:| ).
+    DATA(t124) = |:|.
     CLEAR t123.
     CREATE OBJECT t123.
     t123->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -580,7 +581,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t122->load( ).
     APPEND t123 TO t122->items.
     t122->save( ).
-    DATA(t125) = CAST zlnt_runtime_arra_c22708faf2e3( t120 ).
+    DATA(t125) = t120.
     DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t126.
     DATA t127 TYPE REF TO zif_lnt_statement_runnable.
@@ -589,7 +590,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t128.
     DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t129.
-    DATA(t130) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1096_358eab8a400f ).
+    DATA(t130) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1096_358eab8a400f.
     CLEAR t129.
     IF t130 IS BOUND.
       CREATE OBJECT t129.
@@ -601,7 +602,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t131.
     DATA t132 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t132.
-    DATA(t133) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1095_9dff9bf77964 ).
+    DATA(t133) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1095_9dff9bf77964.
     CLEAR t132.
     IF t133 IS BOUND.
       CREATE OBJECT t132.
@@ -617,9 +618,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t134 = t135.
     DATA t136 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t136.
-    DATA(t137) = CAST zlnt_runtime_dyna_a429568d5be8( t128 ).
-    DATA(t138) = CAST zlnt_runtime_dyna_a429568d5be8( t131 ).
-    DATA(t139) = CAST zlnt_runtime_arra_c22708faf2e3( t134 ).
+    DATA(t137) = t128.
+    DATA(t138) = t131.
+    DATA(t139) = t134.
     t136 = zcl_lnt_st_combi_module=>alt( i_first = t137 i_second = t138 i_rest = t139 ).
     t127 = t136.
     CLEAR t126.
@@ -652,10 +653,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t125->load( ).
     APPEND t126 TO t125->items.
     t125->save( ).
-    DATA(t142) = CAST zlnt_runtime_arra_c22708faf2e3( t120 ).
+    DATA(t142) = t120.
     DATA t143 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t143.
-    DATA(t144) = CONV string( |;| ).
+    DATA(t144) = |;|.
     CLEAR t143.
     CREATE OBJECT t143.
     t143->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -665,9 +666,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t142->save( ).
     DATA t145 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t145.
-    DATA(t146) = CAST zlnt_runtime_dyna_a429568d5be8( t110 ).
-    DATA(t147) = CAST zlnt_runtime_dyna_a429568d5be8( t117 ).
-    DATA(t148) = CAST zlnt_runtime_arra_c22708faf2e3( t120 ).
+    DATA(t146) = t110.
+    DATA(t147) = t117.
+    DATA(t148) = t120.
     t145 = zcl_lnt_st_combi_module=>seq( i_first = t146 i_second = t147 i_rest = t148 ).
     t109 = t145.
     t108 = t109.
@@ -683,7 +684,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t153.
     DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t154.
-    DATA(t155) = CAST zif_lnt_statement_runnable( t57 ).
+    DATA(t155) = t57.
     CLEAR t154.
     IF t155 IS BOUND.
       DATA t156 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -716,7 +717,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t158.
     DATA t159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t159.
-    DATA(t160) = CAST zif_lnt_statement_runnable( t108 ).
+    DATA(t160) = t108.
     CLEAR t159.
     IF t160 IS BOUND.
       DATA t161 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -753,9 +754,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t163 = t164.
     DATA t165 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t165.
-    DATA(t166) = CAST zlnt_runtime_dyna_a429568d5be8( t153 ).
-    DATA(t167) = CAST zlnt_runtime_dyna_a429568d5be8( t158 ).
-    DATA(t168) = CAST zlnt_runtime_arra_c22708faf2e3( t163 ).
+    DATA(t166) = t153.
+    DATA(t167) = t158.
+    DATA(t168) = t163.
     t165 = zcl_lnt_st_combi_module=>alt( i_first = t166 i_second = t167 i_rest = t168 ).
     t152 = t165.
     CLEAR t151.
@@ -799,7 +800,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t175.
     DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t176.
-    DATA(t177) = CONV string( |WRITABLE| ).
+    DATA(t177) = |WRITABLE|.
     CLEAR t176.
     CREATE OBJECT t176.
     t176->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -837,7 +838,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t180.
     DATA t181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t181.
-    DATA(t182) = CONV string( |EXTERNAL| ).
+    DATA(t182) = |EXTERNAL|.
     CLEAR t181.
     CREATE OBJECT t181.
     t181->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -849,10 +850,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t184.
     CREATE OBJECT t184.
     t183 = t184.
-    DATA(t185) = CAST zlnt_runtime_arra_c22708faf2e3( t183 ).
+    DATA(t185) = t183.
     DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t186.
-    DATA(t187) = CONV string( |ENTITY| ).
+    DATA(t187) = |ENTITY|.
     CLEAR t186.
     CREATE OBJECT t186.
     t186->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -860,10 +861,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t185->load( ).
     APPEND t186 TO t185->items.
     t185->save( ).
-    DATA(t188) = CAST zlnt_runtime_arra_c22708faf2e3( t183 ).
+    DATA(t188) = t183.
     DATA t189 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t189.
-    DATA(t190) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t190) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t189.
     IF t190 IS BOUND.
       CREATE OBJECT t189.
@@ -873,14 +874,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t188->load( ).
     APPEND t189 TO t188->items.
     t188->save( ).
-    DATA(t191) = CAST zlnt_runtime_arra_c22708faf2e3( t183 ).
+    DATA(t191) = t183.
     DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t192.
     DATA t193 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t193.
     DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t194.
-    DATA(t195) = CAST zif_lnt_statement_runnable( t20 ).
+    DATA(t195) = t20.
     CLEAR t194.
     IF t195 IS BOUND.
       DATA t196 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -939,14 +940,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t191->load( ).
     APPEND t192 TO t191->items.
     t191->save( ).
-    DATA(t200) = CAST zlnt_runtime_arra_c22708faf2e3( t183 ).
+    DATA(t200) = t183.
     DATA t201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t201.
     DATA t202 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t202.
     DATA t203 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t203.
-    DATA(t204) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1097_1528186a58df ).
+    DATA(t204) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1097_1528186a58df.
     CLEAR t203.
     IF t204 IS BOUND.
       CREATE OBJECT t203.
@@ -986,9 +987,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t200->save( ).
     DATA t207 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t207.
-    DATA(t208) = CAST zlnt_runtime_dyna_a429568d5be8( t173 ).
-    DATA(t209) = CAST zlnt_runtime_dyna_a429568d5be8( t180 ).
-    DATA(t210) = CAST zlnt_runtime_arra_c22708faf2e3( t183 ).
+    DATA(t208) = t173.
+    DATA(t209) = t180.
+    DATA(t210) = t183.
     t207 = zcl_lnt_st_combi_module=>seq( i_first = t208 i_second = t209 i_rest = t210 ).
     t172 = t207.
     t171 = t172.
@@ -1000,7 +1001,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t213.
     DATA t214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t214.
-    DATA(t215) = CONV string( |STATIC| ).
+    DATA(t215) = |STATIC|.
     CLEAR t214.
     CREATE OBJECT t214.
     t214->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1010,7 +1011,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t216.
     DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t217.
-    DATA(t218) = CONV string( |ENTITY| ).
+    DATA(t218) = |ENTITY|.
     CLEAR t217.
     CREATE OBJECT t217.
     t217->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1022,10 +1023,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t220.
     CREATE OBJECT t220.
     t219 = t220.
-    DATA(t221) = CAST zlnt_runtime_arra_c22708faf2e3( t219 ).
+    DATA(t221) = t219.
     DATA t222 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t222.
-    DATA(t223) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t223) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t222.
     IF t223 IS BOUND.
       CREATE OBJECT t222.
@@ -1035,14 +1036,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t221->load( ).
     APPEND t222 TO t221->items.
     t221->save( ).
-    DATA(t224) = CAST zlnt_runtime_arra_c22708faf2e3( t219 ).
+    DATA(t224) = t219.
     DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t225.
     DATA t226 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t226.
     DATA t227 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t227.
-    DATA(t228) = CAST zif_lnt_statement_runnable( t20 ).
+    DATA(t228) = t20.
     CLEAR t227.
     IF t228 IS BOUND.
       DATA t229 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1103,9 +1104,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t224->save( ).
     DATA t233 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t233.
-    DATA(t234) = CAST zlnt_runtime_dyna_a429568d5be8( t213 ).
-    DATA(t235) = CAST zlnt_runtime_dyna_a429568d5be8( t216 ).
-    DATA(t236) = CAST zlnt_runtime_arra_c22708faf2e3( t219 ).
+    DATA(t234) = t213.
+    DATA(t235) = t216.
+    DATA(t236) = t219.
     t233 = zcl_lnt_st_combi_module=>seq( i_first = t234 i_second = t235 i_rest = t236 ).
     t212 = t233.
     t211 = t212.
@@ -1119,7 +1120,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t240.
     DATA t241 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t241.
-    DATA(t242) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c ).
+    DATA(t242) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1083_3e6a5d04365c.
     CLEAR t241.
     IF t242 IS BOUND.
       CREATE OBJECT t241.
@@ -1163,7 +1164,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t247.
     DATA t248 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t248.
-    DATA(t249) = CONV string( |DEFINE| ).
+    DATA(t249) = |DEFINE|.
     CLEAR t248.
     CREATE OBJECT t248.
     t248->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1203,14 +1204,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t253.
     CREATE OBJECT t253.
     t252 = t253.
-    DATA(t254) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t254) = t252.
     DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t255.
     DATA t256 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t256.
     DATA t257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t257.
-    DATA(t258) = CONV string( |ROOT| ).
+    DATA(t258) = |ROOT|.
     CLEAR t257.
     CREATE OBJECT t257.
     t257->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1246,7 +1247,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t254->load( ).
     APPEND t255 TO t254->items.
     t254->save( ).
-    DATA(t261) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t261) = t252.
     DATA t262 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t262.
     DATA t263 TYPE REF TO zif_lnt_statement_runnable.
@@ -1255,7 +1256,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t264.
     DATA t265 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t265.
-    DATA(t266) = CAST zif_lnt_statement_runnable( t171 ).
+    DATA(t266) = t171.
     CLEAR t265.
     IF t266 IS BOUND.
       DATA t267 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1288,7 +1289,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t269.
     DATA t270 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t270.
-    DATA(t271) = CAST zif_lnt_statement_runnable( t211 ).
+    DATA(t271) = t211.
     CLEAR t270.
     IF t271 IS BOUND.
       DATA t272 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1325,9 +1326,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t274 = t275.
     DATA t276 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t276.
-    DATA(t277) = CAST zlnt_runtime_dyna_a429568d5be8( t264 ).
-    DATA(t278) = CAST zlnt_runtime_dyna_a429568d5be8( t269 ).
-    DATA(t279) = CAST zlnt_runtime_arra_c22708faf2e3( t274 ).
+    DATA(t277) = t264.
+    DATA(t278) = t269.
+    DATA(t279) = t274.
     t276 = zcl_lnt_st_combi_module=>alt( i_first = t277 i_second = t278 i_rest = t279 ).
     t263 = t276.
     CLEAR t262.
@@ -1360,12 +1361,12 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t261->load( ).
     APPEND t262 TO t261->items.
     t261->save( ).
-    DATA(t282) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t282) = t252.
     DATA t283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t283.
     DATA t284 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t284.
-    DATA(t285) = CONV string( |\{| ).
+    DATA(t285) = |\{|.
     t284 = zcl_lnt_st_combi_module=>str( i_s = t285 ).
     CLEAR t283.
     IF t284 IS BOUND.
@@ -1397,10 +1398,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t282->load( ).
     APPEND t283 TO t282->items.
     t282->save( ).
-    DATA(t288) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t288) = t252.
     DATA t289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t289.
-    DATA(t290) = CAST zif_lnt_statement_runnable( t149 ).
+    DATA(t290) = t149.
     CLEAR t289.
     IF t290 IS BOUND.
       DATA t291 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1431,12 +1432,12 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t288->load( ).
     APPEND t289 TO t288->items.
     t288->save( ).
-    DATA(t293) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t293) = t252.
     DATA t294 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t294.
     DATA t295 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t295.
-    DATA(t296) = CONV string( |\}| ).
+    DATA(t296) = |\}|.
     t295 = zcl_lnt_st_combi_module=>str( i_s = t296 ).
     CLEAR t294.
     IF t295 IS BOUND.
@@ -1468,7 +1469,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t293->load( ).
     APPEND t294 TO t293->items.
     t293->save( ).
-    DATA(t299) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t299) = t252.
     DATA t300 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t300.
     DATA t301 TYPE REF TO zif_lnt_statement_runnable.
@@ -1481,7 +1482,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t304.
     DATA t305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t305.
-    DATA(t306) = CONV string( |WITH| ).
+    DATA(t306) = |WITH|.
     CLEAR t305.
     CREATE OBJECT t305.
     t305->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1491,7 +1492,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t307.
     DATA t308 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t308.
-    DATA(t309) = CONV string( |FEDERATED| ).
+    DATA(t309) = |FEDERATED|.
     CLEAR t308.
     CREATE OBJECT t308.
     t308->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1503,10 +1504,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t311.
     CREATE OBJECT t311.
     t310 = t311.
-    DATA(t312) = CAST zlnt_runtime_arra_c22708faf2e3( t310 ).
+    DATA(t312) = t310.
     DATA t313 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t313.
-    DATA(t314) = CONV string( |DATA| ).
+    DATA(t314) = |DATA|.
     CLEAR t313.
     CREATE OBJECT t313.
     t313->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1514,7 +1515,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t312->load( ).
     APPEND t313 TO t312->items.
     t312->save( ).
-    DATA(t315) = CAST zlnt_runtime_arra_c22708faf2e3( t310 ).
+    DATA(t315) = t310.
     DATA t316 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t316.
     DATA t317 TYPE REF TO zif_lnt_statement_runnable.
@@ -1533,7 +1534,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t323.
     DATA t324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t324.
-    DATA(t325) = CONV string( |PROVIDED| ).
+    DATA(t325) = |PROVIDED|.
     CLEAR t324.
     CREATE OBJECT t324.
     t324->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1543,7 +1544,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t326.
     DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t327.
-    DATA(t328) = CONV string( |AT| ).
+    DATA(t328) = |AT|.
     CLEAR t327.
     CREATE OBJECT t327.
     t327->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1555,10 +1556,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t330.
     CREATE OBJECT t330.
     t329 = t330.
-    DATA(t331) = CAST zlnt_runtime_arra_c22708faf2e3( t329 ).
+    DATA(t331) = t329.
     DATA t332 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t332.
-    DATA(t333) = CONV string( |RUNTIME| ).
+    DATA(t333) = |RUNTIME|.
     CLEAR t332.
     CREATE OBJECT t332.
     t332->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1568,9 +1569,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t331->save( ).
     DATA t334 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t334.
-    DATA(t335) = CAST zlnt_runtime_dyna_a429568d5be8( t323 ).
-    DATA(t336) = CAST zlnt_runtime_dyna_a429568d5be8( t326 ).
-    DATA(t337) = CAST zlnt_runtime_arra_c22708faf2e3( t329 ).
+    DATA(t335) = t323.
+    DATA(t336) = t326.
+    DATA(t337) = t329.
     t334 = zcl_lnt_st_combi_module=>seq( i_first = t335 i_second = t336 i_rest = t337 ).
     t322 = t334.
     CLEAR t321.
@@ -1611,7 +1612,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t343.
     DATA t344 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t344.
-    DATA(t345) = CONV string( |PROVIDED| ).
+    DATA(t345) = |PROVIDED|.
     CLEAR t344.
     CREATE OBJECT t344.
     t344->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1621,7 +1622,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t346.
     DATA t347 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t347.
-    DATA(t348) = CONV string( |BY| ).
+    DATA(t348) = |BY|.
     CLEAR t347.
     CREATE OBJECT t347.
     t347->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1633,10 +1634,10 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t350.
     CREATE OBJECT t350.
     t349 = t350.
-    DATA(t351) = CAST zlnt_runtime_arra_c22708faf2e3( t349 ).
+    DATA(t351) = t349.
     DATA t352 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t352.
-    DATA(t353) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b ).
+    DATA(t353) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
     CLEAR t352.
     IF t353 IS BOUND.
       CREATE OBJECT t352.
@@ -1648,9 +1649,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t351->save( ).
     DATA t354 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t354.
-    DATA(t355) = CAST zlnt_runtime_dyna_a429568d5be8( t343 ).
-    DATA(t356) = CAST zlnt_runtime_dyna_a429568d5be8( t346 ).
-    DATA(t357) = CAST zlnt_runtime_arra_c22708faf2e3( t349 ).
+    DATA(t355) = t343.
+    DATA(t356) = t346.
+    DATA(t357) = t349.
     t354 = zcl_lnt_st_combi_module=>seq( i_first = t355 i_second = t356 i_rest = t357 ).
     t342 = t354.
     CLEAR t341.
@@ -1689,9 +1690,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t360 = t361.
     DATA t362 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t362.
-    DATA(t363) = CAST zlnt_runtime_dyna_a429568d5be8( t320 ).
-    DATA(t364) = CAST zlnt_runtime_dyna_a429568d5be8( t340 ).
-    DATA(t365) = CAST zlnt_runtime_arra_c22708faf2e3( t360 ).
+    DATA(t363) = t320.
+    DATA(t364) = t340.
+    DATA(t365) = t360.
     t362 = zcl_lnt_st_combi_module=>alt( i_first = t363 i_second = t364 i_rest = t365 ).
     t319 = t362.
     CLEAR t318.
@@ -1752,7 +1753,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t315->load( ).
     APPEND t316 TO t315->items.
     t315->save( ).
-    DATA(t370) = CAST zlnt_runtime_arra_c22708faf2e3( t310 ).
+    DATA(t370) = t310.
     DATA t371 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t371.
     DATA t372 TYPE REF TO zif_lnt_statement_runnable.
@@ -1765,7 +1766,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t375.
     DATA t376 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t376.
-    DATA(t377) = CONV string( |ON| ).
+    DATA(t377) = |ON|.
     CLEAR t376.
     CREATE OBJECT t376.
     t376->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1775,7 +1776,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t378.
     DATA t379 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t379.
-    DATA(t380) = CONV string( |UNLINKED| ).
+    DATA(t380) = |UNLINKED|.
     CLEAR t379.
     CREATE OBJECT t379.
     t379->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1787,7 +1788,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t382.
     CREATE OBJECT t382.
     t381 = t382.
-    DATA(t383) = CAST zlnt_runtime_arra_c22708faf2e3( t381 ).
+    DATA(t383) = t381.
     DATA t384 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t384.
     DATA t385 TYPE REF TO zif_lnt_statement_runnable.
@@ -1796,7 +1797,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t386.
     DATA t387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t387.
-    DATA(t388) = CONV string( |FAIL| ).
+    DATA(t388) = |FAIL|.
     CLEAR t387.
     CREATE OBJECT t387.
     t387->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1806,7 +1807,7 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     CLEAR t389.
     DATA t390 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t390.
-    DATA(t391) = CONV string( |IGNORE| ).
+    DATA(t391) = |IGNORE|.
     CLEAR t390.
     CREATE OBJECT t390.
     t390->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1820,9 +1821,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t392 = t393.
     DATA t394 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t394.
-    DATA(t395) = CAST zlnt_runtime_dyna_a429568d5be8( t386 ).
-    DATA(t396) = CAST zlnt_runtime_dyna_a429568d5be8( t389 ).
-    DATA(t397) = CAST zlnt_runtime_arra_c22708faf2e3( t392 ).
+    DATA(t395) = t386.
+    DATA(t396) = t389.
+    DATA(t397) = t392.
     t394 = zcl_lnt_st_combi_module=>alt_prio( i_first = t395 i_second = t396 i_rest = t397 ).
     t385 = t394.
     CLEAR t384.
@@ -1857,9 +1858,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t383->save( ).
     DATA t400 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t400.
-    DATA(t401) = CAST zlnt_runtime_dyna_a429568d5be8( t375 ).
-    DATA(t402) = CAST zlnt_runtime_dyna_a429568d5be8( t378 ).
-    DATA(t403) = CAST zlnt_runtime_arra_c22708faf2e3( t381 ).
+    DATA(t401) = t375.
+    DATA(t402) = t378.
+    DATA(t403) = t381.
     t400 = zcl_lnt_st_combi_module=>seq( i_first = t401 i_second = t402 i_rest = t403 ).
     t374 = t400.
     CLEAR t373.
@@ -1922,9 +1923,9 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t370->save( ).
     DATA t408 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t408.
-    DATA(t409) = CAST zlnt_runtime_dyna_a429568d5be8( t304 ).
-    DATA(t410) = CAST zlnt_runtime_dyna_a429568d5be8( t307 ).
-    DATA(t411) = CAST zlnt_runtime_arra_c22708faf2e3( t310 ).
+    DATA(t409) = t304.
+    DATA(t410) = t307.
+    DATA(t411) = t310.
     t408 = zcl_lnt_st_combi_module=>seq( i_first = t409 i_second = t410 i_rest = t411 ).
     t303 = t408.
     CLEAR t302.
@@ -1985,14 +1986,14 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t299->load( ).
     APPEND t300 TO t299->items.
     t299->save( ).
-    DATA(t416) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t416) = t252.
     DATA t417 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t417.
     DATA t418 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t418.
     DATA t419 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t419.
-    DATA(t420) = CONV string( |;| ).
+    DATA(t420) = |;|.
     CLEAR t419.
     CREATE OBJECT t419.
     t419->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2030,20 +2031,22 @@ CLASS zcl_lnt_cds_dfn_extrnl_entty IMPLEMENTATION.
     t416->save( ).
     DATA t423 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t423.
-    DATA(t424) = CAST zlnt_runtime_dyna_a429568d5be8( t238 ).
-    DATA(t425) = CAST zlnt_runtime_dyna_a429568d5be8( t245 ).
-    DATA(t426) = CAST zlnt_runtime_arra_c22708faf2e3( t252 ).
+    DATA(t424) = t238.
+    DATA(t425) = t245.
+    DATA(t426) = t252.
     t423 = zcl_lnt_st_combi_module=>seq( i_first = t424 i_second = t425 i_rest = t426 ).
     t237 = t423.
     result = t237.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1100_58347daca360.
   ENDMETHOD.

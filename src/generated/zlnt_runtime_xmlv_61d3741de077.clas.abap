@@ -35,6 +35,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
     ENDIF.
     result = parser->scan( ).
   ENDMETHOD.
+
   METHOD at.
     DATA ch TYPE c LENGTH 1.
     DATA bytes TYPE xstring.
@@ -58,11 +59,13 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD white.
     IF c = 32 OR c = 9 OR c = 10 OR c = 13.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD jswhite.
     result = white( c ).
     IF c = 11 OR c = 12 OR c = 160 OR c = 5760 OR ( c >= 8192 AND c <= 8202 )
@@ -70,6 +73,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD name_start.
     IF c = 58 OR c = 95 OR ( c >= 65 AND c <= 90 ) OR ( c >= 97 AND c <= 122 )
     OR ( c >= 192 AND c <= 214 ) OR ( c >= 216 AND c <= 246 ) OR ( c >= 248 AND c <= 767 )
@@ -79,6 +83,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD valid_name.
     DATA parser TYPE REF TO zlnt_runtime_xmlv_61d3741de077.
     DATA i TYPE i.
@@ -99,6 +104,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
     ENDWHILE.
     result = abap_true.
   ENDMETHOD.
+
   METHOD cut.
     DATA count TYPE i.
     count = finish - start.
@@ -106,6 +112,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       result = input+start(count).
     ENDIF.
   ENDMETHOD.
+
   METHOD trimmed.
     DATA parser TYPE REF TO zlnt_runtime_xmlv_61d3741de077.
     DATA first TYPE i.
@@ -124,6 +131,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
     ENDWHILE.
     result = parser->cut( start = first finish = last ).
   ENDMETHOD.
+
   METHOD position.
     DATA i TYPE i.
     ln = 1.
@@ -138,6 +146,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       i = i + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD error.
     DATA details TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -166,12 +175,14 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
     details->put( p0 = 'col' p1 = value ).
     result->put( p0 = 'err' p1 = details ).
   ENDMETHOD.
+
   METHOD failure.
     DATA ln TYPE i.
     DATA col TYPE i.
     position( EXPORTING idx = idx IMPORTING ln = ln col = col ).
     result = error( code = code msg = msg ln = ln col = col ).
   ENDMETHOD.
+
   METHOD pi.
     DATA start TYPE i.
     DATA name TYPE string.
@@ -191,6 +202,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD comment.
     DATA depth TYPE i.
     DATA word TYPE string.
@@ -233,6 +245,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD amp.
     DATA hex TYPE abap_bool.
     DATA count TYPE i.
@@ -275,6 +288,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
     ENDWHILE.
     result = cursor.
   ENDMETHOD.
+
   METHOD attrs.
     DATA parser TYPE REF TO zlnt_runtime_xmlv_61d3741de077.
     DATA names TYPE SORTED TABLE OF string WITH UNIQUE KEY table_line.
@@ -363,6 +377,7 @@ CLASS zlnt_runtime_xmlv_61d3741de077 IMPLEMENTATION.
       INSERT name INTO TABLE names.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD scan.
     DATA tags TYPE tags_type.
     DATA opened TYPE open_tag.

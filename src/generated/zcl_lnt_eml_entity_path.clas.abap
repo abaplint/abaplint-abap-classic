@@ -10,8 +10,9 @@ CLASS zcl_lnt_eml_entity_path DEFINITION PUBLIC INHERITING FROM zcl_lnt_expressi
 ENDCLASS.
 CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -25,7 +26,7 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t6.
-    DATA(t7) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d13_724b547adff3ae ).
+    DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d13_724b547adff3ae.
     t6 = zcl_lnt_st_combi_module=>tok( i_t = t7 ).
     CLEAR t5.
     IF t6 IS BOUND.
@@ -63,9 +64,9 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t13.
-    DATA(t14) = CONV string( `^\\[\w]+$` ).
-    DATA(t15) = CONV string( `^\\[A-Za-z0-9_]+$` ).
-    DATA(t16) = CONV string( || ).
+    DATA(t14) = `^\\[\w]+$`.
+    DATA(t15) = `^\\[A-Za-z0-9_]+$`.
+    DATA(t16) = ||.
     CREATE OBJECT t13 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t15 flags = t16.
     t13->source = t14.
     t12 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t13 ).
@@ -105,9 +106,9 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     t19 = t20.
     DATA t21 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t21.
-    DATA(t22) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
-    DATA(t23) = CAST zlnt_runtime_dyna_a429568d5be8( t10 ).
-    DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t19 ).
+    DATA(t22) = t4.
+    DATA(t23) = t10.
+    DATA(t24) = t19.
     t21 = zcl_lnt_st_combi_module=>alt_prio( i_first = t22 i_second = t23 i_rest = t24 ).
     t3 = t21.
     CLEAR t2.
@@ -139,14 +140,16 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>plus_prio( i_first = t2 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d161_a1a721da0257.
   ENDMETHOD.

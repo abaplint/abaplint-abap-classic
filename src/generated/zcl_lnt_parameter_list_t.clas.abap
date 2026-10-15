@@ -10,14 +10,15 @@ CLASS zcl_lnt_parameter_list_t DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_parameter_list_t IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d236_e9f6471ae6bb ).
+    DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d236_e9f6471ae6bb.
     CLEAR t2.
     IF t3 IS BOUND.
       CREATE OBJECT t2.
@@ -26,14 +27,16 @@ CLASS zcl_lnt_parameter_list_t IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>plus( i_first = t2 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d199_07bab553574b.
   ENDMETHOD.

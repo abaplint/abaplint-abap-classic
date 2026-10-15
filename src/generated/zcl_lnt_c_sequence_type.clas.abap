@@ -15,20 +15,23 @@ CLASS zcl_lnt_c_sequence_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract
 ENDCLASS.
 CLASS zcl_lnt_c_sequence_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t1) = i_input_967e.
+    DATA(t2) = t1.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
+
   METHOD t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty.
-    DATA(t1) = CONV string( |```csequence```| ).
+    DATA(t1) = |```csequence```|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_generic.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     CLEAR t1.
@@ -36,9 +39,9 @@ CLASS zcl_lnt_c_sequence_type IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t3.
-    DATA(t4) = CONV abap_bool( abap_true ).
+    DATA(t4) = abap_true.
     IF t4 = abap_true.
-      DATA(t5) = CONV string( |csequence, generic| ).
+      DATA(t5) = |csequence, generic|.
       DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t6->has = abap_true.
       t6->value = t5.
@@ -80,27 +83,32 @@ CLASS zcl_lnt_c_sequence_type IMPLEMENTATION.
     ENDIF.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD contains_void.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
-    DATA(t1) = CONV string( |abap.TODO_CSEQUENCE| ).
+    DATA(t1) = |abap.TODO_CSEQUENCE|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cs_ty_ts_c_sq_ty( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1020_58ef07ed54a1.
   ENDMETHOD.

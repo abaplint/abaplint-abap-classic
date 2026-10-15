@@ -29,11 +29,13 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
       result = result + hi * 256.
     ENDIF.
   ENDMETHOD.
+
   METHOD whitespace.
     DATA code TYPE i.
     code = code_unit( ch ).
     result = xsdbool( code >= 8192 AND code <= 8202 OR code = 9 OR code = 10 OR code = 11 OR code = 12 OR code = 13 OR code = 32 OR code = 160 OR code = 5760 OR code = 8232 OR code = 8233 OR code = 8239 OR code = 8287 OR code = 12288 OR code = 65279 ).
   ENDMETHOD.
+
   METHOD pad.
     DATA count TYPE f.
     DATA needed TYPE i.
@@ -58,6 +60,7 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
     APPEND text TO fragments.
     CONCATENATE LINES OF fragments INTO result RESPECTING BLANKS.
   ENDMETHOD.
+
   METHOD float_optional.
     DATA start TYPE i.
     DATA count TYPE i.
@@ -97,6 +100,7 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
         ENDIF.
     ENDTRY.
   ENDMETHOD.
+
   METHOD int_optional.
     DATA start TYPE i.
     DATA count TYPE i.
@@ -128,6 +132,7 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
         ENDIF.
     ENDTRY.
   ENDMETHOD.
+
   METHOD float_prefix.
     DATA start TYPE i.
     DATA count TYPE i.
@@ -156,6 +161,7 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_exception_st_3209c6b944d9.
     ENDIF.
   ENDMETHOD.
+
   METHOD sha1.
     DATA cursor TYPE i.
     DATA ch TYPE string.
@@ -182,6 +188,7 @@ CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
     cl_abap_message_digest=>calculate_hash_for_char( EXPORTING if_algorithm = 'SHA1' if_data = text IMPORTING ef_hashstring = result ).
     TRANSLATE result TO LOWER CASE.
   ENDMETHOD.
+
   METHOD split.
     DATA lim TYPE f.
     DATA quotient TYPE f.

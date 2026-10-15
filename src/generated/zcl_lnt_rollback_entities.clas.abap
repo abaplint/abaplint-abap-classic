@@ -14,11 +14,11 @@ ENDCLASS.
 CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
   METHOD get_matcher.
     DATA(t1) = VALUE string( ).
-    DATA(t2) = CONV string( |ROLLBACK ENTITIES| ).
+    DATA(t2) = |ROLLBACK ENTITIES|.
     t1 = t2.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t3.
-    DATA(t4) = CONV string( |KeyUser| ).
+    DATA(t4) = |KeyUser|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t5.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
@@ -35,7 +35,7 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t10 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t11) = CONV string( |v754| ).
+    DATA(t11) = |v754|.
     t9 = t10->get( p0 = t11 ).
     t8 = t9.
     CLEAR t7.
@@ -67,14 +67,14 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
-    DATA(t15) = CONV string( t1 ).
+    DATA(t15) = t1.
     CLEAR t14.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t14->sval = t15.
     DATA t16 TYPE REF TO zcl_lnt_iver_options.
     CLEAR t16.
-    DATA(t17) = CONV abap_bool( abap_true ).
+    DATA(t17) = abap_true.
     IF t17 = abap_true.
       DATA t18 TYPE REF TO zcl_lnt_iver_options.
       CLEAR t18.
@@ -82,9 +82,9 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
       CLEAR t19.
       DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t20.
-      DATA(t21) = CONV abap_bool( abap_true ).
+      DATA(t21) = abap_true.
       IF t21 = abap_true.
-        DATA(t22) = CONV string( |OpenABAP| ).
+        DATA(t22) = |OpenABAP|.
         DATA(t23) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t23->has = abap_true.
         t23->value = t22.
@@ -105,7 +105,7 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t18->zlnt_json_ownkeys_70e5fd461788.
       t18->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t26) = CONV string( |also| ).
+      DATA(t26) = |also|.
       DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t27.
       IF t18->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -147,29 +147,36 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
     ENDIF.
     t3 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t4 i_first = t5 ).
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d607_bbac092fc6e3.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

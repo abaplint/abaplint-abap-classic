@@ -17,19 +17,20 @@ CLASS zcl_lnt_highlight DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_highlight IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
   ENDMETHOD.
+
   METHOD list_definition_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t6.
@@ -38,15 +39,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t10) = CAST zcl_lnt_txt_dcmnt_idntfr( t4 ).
+    DATA(t10) = t4.
     t9 = t10.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t11.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
     DATA t13 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t14) = CAST zif_lnt_registry( me->reg ).
+    DATA(t14) = me->reg.
     DATA t15 TYPE string.
-    DATA(t16) = CAST zcl_lnt_txt_dcmnt_idntfr( t9 ).
+    DATA(t16) = t9.
     t15 = t16->zlnt_view_read_no_0041136eb871( ).
     t13 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t14 i_filename = t15 ).
     t12 = t13.
@@ -54,14 +55,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t17.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t20) = CAST zcl_lnt_abap_file( t12 ).
+    DATA(t20) = t12.
     t19 = t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
     t21 = t22.
     DATA(t23) = VALUE abap_bool( ).
-    DATA(t24) = CAST zcl_lnt_abap_file( t19 ).
+    DATA(t24) = t19.
     IF t24 IS INITIAL.
       t23 = abap_true.
     ENDIF.
@@ -77,12 +78,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zif_lnt_object.
       CLEAR t28.
-      DATA(t29) = CAST zif_lnt_registry( me->reg ).
+      DATA(t29) = me->reg.
       DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t30.
       DATA t31 TYPE REF TO zcl_lnt_abstract_file.
       DATA t32 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t33) = CAST zcl_lnt_abap_file( t12 ).
+      DATA(t33) = t12.
       t32 = t33.
       t31 = t32.
       DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -91,10 +92,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t35.
       DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t37 TYPE string.
-      DATA(t38) = CAST zcl_lnt_abstract_file( t31 ).
-      t37 = t38->base_name(  ).
-      DATA(t39) = CONV string( |.| ).
-      DATA(t40) = CONV i( strlen( t37 ) ).
+      DATA(t38) = t31.
+      t37 = t38->base_name( ).
+      DATA(t39) = |.|.
+      DATA(t40) = strlen( t37 ).
       DATA t41 TYPE i.
       DATA(t42) = VALUE i( ).
       DATA(t43) = VALUE i( ).
@@ -134,14 +135,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t46.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
-      DATA(t50) = CONV i( 1 ).
+      DATA(t49) = t35.
+      DATA(t50) = 1.
       t48 = t49->get( p0 = t50 ).
       t47 = t48.
       DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t51.
       DATA(t52) = VALUE abap_bool( ).
-      DATA(t53) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+      DATA(t53) = t47.
       IF t53 IS INITIAL.
         t52 = abap_true.
       ELSEIF t53->has = abap_false.
@@ -154,9 +155,9 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         DATA t55 TYPE string.
         DATA t56 TYPE string.
-        DATA(t57) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+        DATA(t57) = t47.
         t56 = t57->value.
-        DATA(t58) = CONV i( strlen( t56 ) ).
+        DATA(t58) = strlen( t56 ).
         t55 = t56.
         IF t55 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t55 TO UPPER CASE.
@@ -173,12 +174,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t30 = t34.
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t60.
-      DATA(t61) = CONV abap_bool( abap_true ).
+      DATA(t61) = abap_true.
       IF t61 = abap_true.
         DATA(t62) = VALUE string( ).
         DATA t63 TYPE REF TO zcl_lnt_abstract_file.
         DATA t64 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t65) = CAST zcl_lnt_abap_file( t12 ).
+        DATA(t65) = t12.
         t64 = t65.
         t63 = t64.
         DATA(t66) = VALUE string( ).
@@ -186,10 +187,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         CLEAR t67.
         DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t69 TYPE string.
-        DATA(t70) = CAST zcl_lnt_abstract_file( t63 ).
-        t69 = t70->base_name(  ).
-        DATA(t71) = CONV string( |.| ).
-        DATA(t72) = CONV i( strlen( t69 ) ).
+        DATA(t70) = t63.
+        t69 = t70->base_name( ).
+        DATA(t71) = |.|.
+        DATA(t72) = strlen( t69 ).
         DATA t73 TYPE i.
         DATA(t74) = VALUE i( ).
         DATA(t75) = VALUE i( ).
@@ -225,11 +226,11 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         t67 = t68.
-        DATA(t78) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t79) = CONV i( 0 ).
+        DATA(t78) = t67.
+        DATA(t79) = 0.
         DATA(t80) = VALUE string( ).
         DATA(t81) = VALUE string( ).
-        DATA(t82) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t82) = t67.
         IF t82->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -238,18 +239,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t82->items INDEX 1 INTO t81.
         DATA t83 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t83.
-        DATA(t84) = CONV string( |%23| ).
-        DATA(t85) = CONV string( |g| ).
+        DATA(t84) = |%23|.
+        DATA(t85) = |g|.
         CREATE OBJECT t83 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t84 flags = t85 checked = abap_true.
-        DATA(t86) = CONV string( |#| ).
-        DATA(t87) = CONV i( strlen( t81 ) ).
+        DATA(t86) = |#|.
+        DATA(t87) = strlen( t81 ).
         t80 = t83->replace( p0 = t81 p1 = t86 ).
         t78->put( p0 = t79 p1 = t80 ).
-        DATA(t88) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t89) = CONV i( 0 ).
+        DATA(t88) = t67.
+        DATA(t89) = 0.
         DATA(t90) = VALUE string( ).
         DATA(t91) = VALUE string( ).
-        DATA(t92) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t92) = t67.
         IF t92->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -258,18 +259,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t92->items INDEX 1 INTO t91.
         DATA t93 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t93.
-        DATA(t94) = CONV string( |%3e| ).
-        DATA(t95) = CONV string( |g| ).
+        DATA(t94) = |%3e|.
+        DATA(t95) = |g|.
         CREATE OBJECT t93 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t94 flags = t95 checked = abap_true.
-        DATA(t96) = CONV string( |>| ).
-        DATA(t97) = CONV i( strlen( t91 ) ).
+        DATA(t96) = |>|.
+        DATA(t97) = strlen( t91 ).
         t90 = t93->replace( p0 = t91 p1 = t96 ).
         t88->put( p0 = t89 p1 = t90 ).
-        DATA(t98) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t99) = CONV i( 0 ).
+        DATA(t98) = t67.
+        DATA(t99) = 0.
         DATA(t100) = VALUE string( ).
         DATA(t101) = VALUE string( ).
-        DATA(t102) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t102) = t67.
         IF t102->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -278,26 +279,26 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t102->items INDEX 1 INTO t101.
         DATA t103 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t103.
-        DATA(t104) = CONV string( |%3c| ).
-        DATA(t105) = CONV string( |g| ).
+        DATA(t104) = |%3c|.
+        DATA(t105) = |g|.
         CREATE OBJECT t103 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t104 flags = t105 checked = abap_true.
-        DATA(t106) = CONV string( |<| ).
-        DATA(t107) = CONV i( strlen( t101 ) ).
+        DATA(t106) = |<|.
+        DATA(t107) = strlen( t101 ).
         t100 = t103->replace( p0 = t101 p1 = t106 ).
         t98->put( p0 = t99 p1 = t100 ).
-        DATA(t108) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t109) = CONV i( 0 ).
+        DATA(t108) = t67.
+        DATA(t109) = 0.
         DATA(t110) = VALUE string( ).
         DATA(t111) = VALUE string( ).
         DATA(t112) = VALUE string( ).
-        DATA(t113) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t113) = t67.
         IF t113->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t113->load( ).
         CLEAR t112.
         READ TABLE t113->items INDEX 1 INTO t112.
-        DATA(t114) = CONV i( strlen( t112 ) ).
+        DATA(t114) = strlen( t112 ).
         t111 = t112.
         IF t111 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t111 TO UPPER CASE.
@@ -306,49 +307,49 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         ENDIF.
         DATA t115 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t115.
-        DATA(t116) = CONV string( |#| ).
-        DATA(t117) = CONV string( |g| ).
+        DATA(t116) = |#|.
+        DATA(t117) = |g|.
         CREATE OBJECT t115 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t116 flags = t117 checked = abap_true.
-        DATA(t118) = CONV string( |/| ).
-        DATA(t119) = CONV i( strlen( t111 ) ).
+        DATA(t118) = |/|.
+        DATA(t119) = strlen( t111 ).
         t110 = t115->replace( p0 = t111 p1 = t118 ).
         t108->put( p0 = t109 p1 = t110 ).
-        DATA(t120) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t121) = CONV i( 0 ).
+        DATA(t120) = t67.
+        DATA(t121) = 0.
         DATA(t122) = VALUE string( ).
         DATA(t123) = VALUE string( ).
-        DATA(t124) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t124) = t67.
         IF t124->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t124->load( ).
         CLEAR t123.
         READ TABLE t124->items INDEX 1 INTO t123.
-        DATA(t125) = CONV string( |(| ).
-        DATA(t126) = CONV string( |/| ).
-        DATA(t127) = CONV i( strlen( t123 ) ).
+        DATA(t125) = |(|.
+        DATA(t126) = |/|.
+        DATA(t127) = strlen( t123 ).
         t122 = t123.
         REPLACE ALL OCCURRENCES OF t125 IN t122 WITH t126.
         t120->put( p0 = t121 p1 = t122 ).
-        DATA(t128) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t129) = CONV i( 0 ).
+        DATA(t128) = t67.
+        DATA(t129) = 0.
         DATA(t130) = VALUE string( ).
         DATA(t131) = VALUE string( ).
-        DATA(t132) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t132) = t67.
         IF t132->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t132->load( ).
         CLEAR t131.
         READ TABLE t132->items INDEX 1 INTO t131.
-        DATA(t133) = CONV string( |)| ).
-        DATA(t134) = CONV string( |/| ).
-        DATA(t135) = CONV i( strlen( t131 ) ).
+        DATA(t133) = |)|.
+        DATA(t134) = |/|.
+        DATA(t135) = strlen( t131 ).
         t130 = t131.
         REPLACE ALL OCCURRENCES OF t133 IN t130 WITH t134.
         t128->put( p0 = t129 p1 = t130 ).
         DATA(t136) = VALUE string( ).
-        DATA(t137) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t137) = t67.
         IF t137->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -371,15 +372,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t140.
       DATA t141 TYPE abap_bool.
-      DATA(t142) = CAST zif_lnt_object( t27 ).
+      DATA(t142) = t27.
       t141 = xsdbool( t142 IS BOUND AND t142 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t141 = abap_true.
         DATA t143 TYPE REF TO zcl_lnt_abap_object.
         CLEAR t143.
-        DATA(t144) = CONV abap_bool( abap_true ).
+        DATA(t144) = abap_true.
         IF t144 = abap_true.
           DATA t145 TYPE REF TO zcl_lnt_abap_object.
-          DATA(t146) = CAST zif_lnt_object( t27 ).
+          DATA(t146) = t27.
           DATA t147 TYPE REF TO object.
           t147 = t146.
           t145 ?= t147.
@@ -405,14 +406,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t150.
     DATA(t151) = VALUE abap_bool( ).
     DATA t152 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t153) = CAST zcl_lnt_abap_object( t7 ).
+    DATA(t153) = t7.
     t152 = t153.
     DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t155.
     t154 = t155.
     DATA(t156) = VALUE abap_bool( ).
-    DATA(t157) = CAST zcl_lnt_abap_object( t152 ).
+    DATA(t157) = t152.
     IF t157 IS INITIAL.
       t156 = abap_true.
     ENDIF.
@@ -424,17 +425,17 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     ELSE.
       DATA t159 TYPE REF TO zif_lnt_spaghetti_scope.
       CLEAR t159.
-      DATA(t160) = CONV abap_bool( abap_true ).
+      DATA(t160) = abap_true.
       IF t160 = abap_true.
         DATA t161 TYPE REF TO zif_lnt_spaghetti_scope.
         DATA t162 TYPE REF TO zcl_lnt_isyntax_result.
         DATA t163 TYPE REF TO zcl_lnt_syntax_logic.
-        DATA(t164) = CAST zif_lnt_registry( me->reg ).
+        DATA(t164) = me->reg.
         DATA t165 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t166) = CAST zcl_lnt_abap_object( t7 ).
+        DATA(t166) = t7.
         t165 = t166.
         t163 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t164 i_object_19cd = t165 ).
-        t162 = t163->run(  ).
+        t162 = t163->run( ).
         t161 = t162->zlnt_view_read_sr_b6b1d9e0c93e( ).
         t159 = t161.
       ELSE.
@@ -449,14 +450,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t2 = t3.
     DATA(t168) = VALUE abap_bool( ).
     DATA t169 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t170) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t170) = t2.
     t169 = t170.
     DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t172.
     t171 = t172.
     DATA(t173) = VALUE abap_bool( ).
-    DATA(t174) = CAST zif_lnt_spaghetti_scope( t169 ).
+    DATA(t174) = t169.
     IF t174 IS INITIAL.
       t173 = abap_true.
     ENDIF.
@@ -470,10 +471,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t176 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t177 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t178 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t179) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t179) = t2.
     t178 = t179.
     DATA t180 TYPE string.
-    DATA(t181) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t181) = t1.
     t180 = t181->zlnt_view_read_no_0041136eb871( ).
     t177 = t178->list_definitions( i_filename = t180 ).
     t176 = t177.
@@ -481,7 +482,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t183 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t183.
     t182 = t183.
-    DATA(t184) = CAST zlnt_runtime_arra_c22708faf2e3( t176 ).
+    DATA(t184) = t176.
     DATA t185 TYPE REF TO zcl_lnt_iscope_variable.
     CLEAR t185.
     DATA t186 TYPE REF TO object.
@@ -506,16 +507,16 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         t185 ?= t186.
       ENDIF.
-      DATA(t190) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+      DATA(t190) = t182.
       DATA t191 TYPE REF TO zcl_lnt_range.
       DATA t192 TYPE REF TO zcl_lnt_abstract_token.
       DATA t193 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t194 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t195) = CAST zcl_lnt_iscope_variable( t185 ).
+      DATA(t195) = t185.
       t194 = t195->identifier.
       t193 = t194.
       DATA t196 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t197) = CAST zcl_lnt_fi_identifier( t193 ).
+      DATA(t197) = t193.
       t196 = t197->token.
       t192 = t196.
       t191 = zcl_lnt_lsp_utils=>token_to_range( i_token = t192 ).
@@ -523,18 +524,19 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       APPEND t191 TO t190->items.
       t190->save( ).
     ENDDO.
-    DATA(t198) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+    DATA(t198) = t182.
     result = t198.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_read_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t6.
@@ -543,15 +545,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t10) = CAST zcl_lnt_txt_dcmnt_idntfr( t4 ).
+    DATA(t10) = t4.
     t9 = t10.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t11.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
     DATA t13 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t14) = CAST zif_lnt_registry( me->reg ).
+    DATA(t14) = me->reg.
     DATA t15 TYPE string.
-    DATA(t16) = CAST zcl_lnt_txt_dcmnt_idntfr( t9 ).
+    DATA(t16) = t9.
     t15 = t16->zlnt_view_read_no_0041136eb871( ).
     t13 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t14 i_filename = t15 ).
     t12 = t13.
@@ -559,14 +561,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t17.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t20) = CAST zcl_lnt_abap_file( t12 ).
+    DATA(t20) = t12.
     t19 = t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
     t21 = t22.
     DATA(t23) = VALUE abap_bool( ).
-    DATA(t24) = CAST zcl_lnt_abap_file( t19 ).
+    DATA(t24) = t19.
     IF t24 IS INITIAL.
       t23 = abap_true.
     ENDIF.
@@ -582,12 +584,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zif_lnt_object.
       CLEAR t28.
-      DATA(t29) = CAST zif_lnt_registry( me->reg ).
+      DATA(t29) = me->reg.
       DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t30.
       DATA t31 TYPE REF TO zcl_lnt_abstract_file.
       DATA t32 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t33) = CAST zcl_lnt_abap_file( t12 ).
+      DATA(t33) = t12.
       t32 = t33.
       t31 = t32.
       DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -596,10 +598,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t35.
       DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t37 TYPE string.
-      DATA(t38) = CAST zcl_lnt_abstract_file( t31 ).
-      t37 = t38->base_name(  ).
-      DATA(t39) = CONV string( |.| ).
-      DATA(t40) = CONV i( strlen( t37 ) ).
+      DATA(t38) = t31.
+      t37 = t38->base_name( ).
+      DATA(t39) = |.|.
+      DATA(t40) = strlen( t37 ).
       DATA t41 TYPE i.
       DATA(t42) = VALUE i( ).
       DATA(t43) = VALUE i( ).
@@ -639,14 +641,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t46.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
-      DATA(t50) = CONV i( 1 ).
+      DATA(t49) = t35.
+      DATA(t50) = 1.
       t48 = t49->get( p0 = t50 ).
       t47 = t48.
       DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t51.
       DATA(t52) = VALUE abap_bool( ).
-      DATA(t53) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+      DATA(t53) = t47.
       IF t53 IS INITIAL.
         t52 = abap_true.
       ELSEIF t53->has = abap_false.
@@ -659,9 +661,9 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         DATA t55 TYPE string.
         DATA t56 TYPE string.
-        DATA(t57) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+        DATA(t57) = t47.
         t56 = t57->value.
-        DATA(t58) = CONV i( strlen( t56 ) ).
+        DATA(t58) = strlen( t56 ).
         t55 = t56.
         IF t55 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t55 TO UPPER CASE.
@@ -678,12 +680,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t30 = t34.
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t60.
-      DATA(t61) = CONV abap_bool( abap_true ).
+      DATA(t61) = abap_true.
       IF t61 = abap_true.
         DATA(t62) = VALUE string( ).
         DATA t63 TYPE REF TO zcl_lnt_abstract_file.
         DATA t64 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t65) = CAST zcl_lnt_abap_file( t12 ).
+        DATA(t65) = t12.
         t64 = t65.
         t63 = t64.
         DATA(t66) = VALUE string( ).
@@ -691,10 +693,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         CLEAR t67.
         DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t69 TYPE string.
-        DATA(t70) = CAST zcl_lnt_abstract_file( t63 ).
-        t69 = t70->base_name(  ).
-        DATA(t71) = CONV string( |.| ).
-        DATA(t72) = CONV i( strlen( t69 ) ).
+        DATA(t70) = t63.
+        t69 = t70->base_name( ).
+        DATA(t71) = |.|.
+        DATA(t72) = strlen( t69 ).
         DATA t73 TYPE i.
         DATA(t74) = VALUE i( ).
         DATA(t75) = VALUE i( ).
@@ -730,11 +732,11 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         t67 = t68.
-        DATA(t78) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t79) = CONV i( 0 ).
+        DATA(t78) = t67.
+        DATA(t79) = 0.
         DATA(t80) = VALUE string( ).
         DATA(t81) = VALUE string( ).
-        DATA(t82) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t82) = t67.
         IF t82->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -743,18 +745,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t82->items INDEX 1 INTO t81.
         DATA t83 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t83.
-        DATA(t84) = CONV string( |%23| ).
-        DATA(t85) = CONV string( |g| ).
+        DATA(t84) = |%23|.
+        DATA(t85) = |g|.
         CREATE OBJECT t83 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t84 flags = t85 checked = abap_true.
-        DATA(t86) = CONV string( |#| ).
-        DATA(t87) = CONV i( strlen( t81 ) ).
+        DATA(t86) = |#|.
+        DATA(t87) = strlen( t81 ).
         t80 = t83->replace( p0 = t81 p1 = t86 ).
         t78->put( p0 = t79 p1 = t80 ).
-        DATA(t88) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t89) = CONV i( 0 ).
+        DATA(t88) = t67.
+        DATA(t89) = 0.
         DATA(t90) = VALUE string( ).
         DATA(t91) = VALUE string( ).
-        DATA(t92) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t92) = t67.
         IF t92->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -763,18 +765,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t92->items INDEX 1 INTO t91.
         DATA t93 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t93.
-        DATA(t94) = CONV string( |%3e| ).
-        DATA(t95) = CONV string( |g| ).
+        DATA(t94) = |%3e|.
+        DATA(t95) = |g|.
         CREATE OBJECT t93 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t94 flags = t95 checked = abap_true.
-        DATA(t96) = CONV string( |>| ).
-        DATA(t97) = CONV i( strlen( t91 ) ).
+        DATA(t96) = |>|.
+        DATA(t97) = strlen( t91 ).
         t90 = t93->replace( p0 = t91 p1 = t96 ).
         t88->put( p0 = t89 p1 = t90 ).
-        DATA(t98) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t99) = CONV i( 0 ).
+        DATA(t98) = t67.
+        DATA(t99) = 0.
         DATA(t100) = VALUE string( ).
         DATA(t101) = VALUE string( ).
-        DATA(t102) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t102) = t67.
         IF t102->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -783,26 +785,26 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t102->items INDEX 1 INTO t101.
         DATA t103 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t103.
-        DATA(t104) = CONV string( |%3c| ).
-        DATA(t105) = CONV string( |g| ).
+        DATA(t104) = |%3c|.
+        DATA(t105) = |g|.
         CREATE OBJECT t103 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t104 flags = t105 checked = abap_true.
-        DATA(t106) = CONV string( |<| ).
-        DATA(t107) = CONV i( strlen( t101 ) ).
+        DATA(t106) = |<|.
+        DATA(t107) = strlen( t101 ).
         t100 = t103->replace( p0 = t101 p1 = t106 ).
         t98->put( p0 = t99 p1 = t100 ).
-        DATA(t108) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t109) = CONV i( 0 ).
+        DATA(t108) = t67.
+        DATA(t109) = 0.
         DATA(t110) = VALUE string( ).
         DATA(t111) = VALUE string( ).
         DATA(t112) = VALUE string( ).
-        DATA(t113) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t113) = t67.
         IF t113->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t113->load( ).
         CLEAR t112.
         READ TABLE t113->items INDEX 1 INTO t112.
-        DATA(t114) = CONV i( strlen( t112 ) ).
+        DATA(t114) = strlen( t112 ).
         t111 = t112.
         IF t111 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t111 TO UPPER CASE.
@@ -811,49 +813,49 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         ENDIF.
         DATA t115 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t115.
-        DATA(t116) = CONV string( |#| ).
-        DATA(t117) = CONV string( |g| ).
+        DATA(t116) = |#|.
+        DATA(t117) = |g|.
         CREATE OBJECT t115 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t116 flags = t117 checked = abap_true.
-        DATA(t118) = CONV string( |/| ).
-        DATA(t119) = CONV i( strlen( t111 ) ).
+        DATA(t118) = |/|.
+        DATA(t119) = strlen( t111 ).
         t110 = t115->replace( p0 = t111 p1 = t118 ).
         t108->put( p0 = t109 p1 = t110 ).
-        DATA(t120) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t121) = CONV i( 0 ).
+        DATA(t120) = t67.
+        DATA(t121) = 0.
         DATA(t122) = VALUE string( ).
         DATA(t123) = VALUE string( ).
-        DATA(t124) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t124) = t67.
         IF t124->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t124->load( ).
         CLEAR t123.
         READ TABLE t124->items INDEX 1 INTO t123.
-        DATA(t125) = CONV string( |(| ).
-        DATA(t126) = CONV string( |/| ).
-        DATA(t127) = CONV i( strlen( t123 ) ).
+        DATA(t125) = |(|.
+        DATA(t126) = |/|.
+        DATA(t127) = strlen( t123 ).
         t122 = t123.
         REPLACE ALL OCCURRENCES OF t125 IN t122 WITH t126.
         t120->put( p0 = t121 p1 = t122 ).
-        DATA(t128) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t129) = CONV i( 0 ).
+        DATA(t128) = t67.
+        DATA(t129) = 0.
         DATA(t130) = VALUE string( ).
         DATA(t131) = VALUE string( ).
-        DATA(t132) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t132) = t67.
         IF t132->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t132->load( ).
         CLEAR t131.
         READ TABLE t132->items INDEX 1 INTO t131.
-        DATA(t133) = CONV string( |)| ).
-        DATA(t134) = CONV string( |/| ).
-        DATA(t135) = CONV i( strlen( t131 ) ).
+        DATA(t133) = |)|.
+        DATA(t134) = |/|.
+        DATA(t135) = strlen( t131 ).
         t130 = t131.
         REPLACE ALL OCCURRENCES OF t133 IN t130 WITH t134.
         t128->put( p0 = t129 p1 = t130 ).
         DATA(t136) = VALUE string( ).
-        DATA(t137) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t137) = t67.
         IF t137->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -876,15 +878,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t140.
       DATA t141 TYPE abap_bool.
-      DATA(t142) = CAST zif_lnt_object( t27 ).
+      DATA(t142) = t27.
       t141 = xsdbool( t142 IS BOUND AND t142 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t141 = abap_true.
         DATA t143 TYPE REF TO zcl_lnt_abap_object.
         CLEAR t143.
-        DATA(t144) = CONV abap_bool( abap_true ).
+        DATA(t144) = abap_true.
         IF t144 = abap_true.
           DATA t145 TYPE REF TO zcl_lnt_abap_object.
-          DATA(t146) = CAST zif_lnt_object( t27 ).
+          DATA(t146) = t27.
           DATA t147 TYPE REF TO object.
           t147 = t146.
           t145 ?= t147.
@@ -910,14 +912,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t150.
     DATA(t151) = VALUE abap_bool( ).
     DATA t152 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t153) = CAST zcl_lnt_abap_object( t7 ).
+    DATA(t153) = t7.
     t152 = t153.
     DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t155.
     t154 = t155.
     DATA(t156) = VALUE abap_bool( ).
-    DATA(t157) = CAST zcl_lnt_abap_object( t152 ).
+    DATA(t157) = t152.
     IF t157 IS INITIAL.
       t156 = abap_true.
     ENDIF.
@@ -929,17 +931,17 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     ELSE.
       DATA t159 TYPE REF TO zif_lnt_spaghetti_scope.
       CLEAR t159.
-      DATA(t160) = CONV abap_bool( abap_true ).
+      DATA(t160) = abap_true.
       IF t160 = abap_true.
         DATA t161 TYPE REF TO zif_lnt_spaghetti_scope.
         DATA t162 TYPE REF TO zcl_lnt_isyntax_result.
         DATA t163 TYPE REF TO zcl_lnt_syntax_logic.
-        DATA(t164) = CAST zif_lnt_registry( me->reg ).
+        DATA(t164) = me->reg.
         DATA t165 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t166) = CAST zcl_lnt_abap_object( t7 ).
+        DATA(t166) = t7.
         t165 = t166.
         t163 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t164 i_object_19cd = t165 ).
-        t162 = t163->run(  ).
+        t162 = t163->run( ).
         t161 = t162->zlnt_view_read_sr_b6b1d9e0c93e( ).
         t159 = t161.
       ELSE.
@@ -954,14 +956,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t2 = t3.
     DATA(t168) = VALUE abap_bool( ).
     DATA t169 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t170) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t170) = t2.
     t169 = t170.
     DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t172.
     t171 = t172.
     DATA(t173) = VALUE abap_bool( ).
-    DATA(t174) = CAST zif_lnt_spaghetti_scope( t169 ).
+    DATA(t174) = t169.
     IF t174 IS INITIAL.
       t173 = abap_true.
     ENDIF.
@@ -975,10 +977,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t176 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t177 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t178 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t179) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t179) = t2.
     t178 = t179.
     DATA t180 TYPE string.
-    DATA(t181) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t181) = t1.
     t180 = t181->zlnt_view_read_no_0041136eb871( ).
     t177 = t178->list_read_positions( i_filename = t180 ).
     t176 = t177.
@@ -986,7 +988,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t183 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t183.
     t182 = t183.
-    DATA(t184) = CAST zlnt_runtime_arra_c22708faf2e3( t176 ).
+    DATA(t184) = t176.
     DATA t185 TYPE REF TO zcl_lnt_fi_identifier.
     CLEAR t185.
     DATA t186 TYPE REF TO object.
@@ -1011,14 +1013,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         t185 ?= t186.
       ENDIF.
-      DATA(t190) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+      DATA(t190) = t182.
       DATA t191 TYPE REF TO zcl_lnt_range.
       DATA t192 TYPE REF TO zcl_lnt_abstract_token.
       DATA t193 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t194) = CAST zcl_lnt_fi_identifier( t185 ).
+      DATA(t194) = t185.
       t193 = t194.
       DATA t195 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t196) = CAST zcl_lnt_fi_identifier( t193 ).
+      DATA(t196) = t193.
       t195 = t196->token.
       t192 = t195.
       t191 = zcl_lnt_lsp_utils=>token_to_range( i_token = t192 ).
@@ -1026,18 +1028,19 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       APPEND t191 TO t190->items.
       t190->save( ).
     ENDDO.
-    DATA(t197) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+    DATA(t197) = t182.
     result = t197.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD list_write_positions.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t6.
@@ -1046,15 +1049,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t8.
     DATA t9 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t10) = CAST zcl_lnt_txt_dcmnt_idntfr( t4 ).
+    DATA(t10) = t4.
     t9 = t10.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t11.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
     DATA t13 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t14) = CAST zif_lnt_registry( me->reg ).
+    DATA(t14) = me->reg.
     DATA t15 TYPE string.
-    DATA(t16) = CAST zcl_lnt_txt_dcmnt_idntfr( t9 ).
+    DATA(t16) = t9.
     t15 = t16->zlnt_view_read_no_0041136eb871( ).
     t13 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t14 i_filename = t15 ).
     t12 = t13.
@@ -1062,14 +1065,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t17.
     DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t20) = CAST zcl_lnt_abap_file( t12 ).
+    DATA(t20) = t12.
     t19 = t20.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t22.
     t21 = t22.
     DATA(t23) = VALUE abap_bool( ).
-    DATA(t24) = CAST zcl_lnt_abap_file( t19 ).
+    DATA(t24) = t19.
     IF t24 IS INITIAL.
       t23 = abap_true.
     ENDIF.
@@ -1085,12 +1088,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zif_lnt_object.
       CLEAR t28.
-      DATA(t29) = CAST zif_lnt_registry( me->reg ).
+      DATA(t29) = me->reg.
       DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t30.
       DATA t31 TYPE REF TO zcl_lnt_abstract_file.
       DATA t32 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t33) = CAST zcl_lnt_abap_file( t12 ).
+      DATA(t33) = t12.
       t32 = t33.
       t31 = t32.
       DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1099,10 +1102,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t35.
       DATA t36 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t37 TYPE string.
-      DATA(t38) = CAST zcl_lnt_abstract_file( t31 ).
-      t37 = t38->base_name(  ).
-      DATA(t39) = CONV string( |.| ).
-      DATA(t40) = CONV i( strlen( t37 ) ).
+      DATA(t38) = t31.
+      t37 = t38->base_name( ).
+      DATA(t39) = |.|.
+      DATA(t40) = strlen( t37 ).
       DATA t41 TYPE i.
       DATA(t42) = VALUE i( ).
       DATA(t43) = VALUE i( ).
@@ -1142,14 +1145,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t46.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t49) = CAST zlnt_runtime_arra_8ecd6afe19e0( t35 ).
-      DATA(t50) = CONV i( 1 ).
+      DATA(t49) = t35.
+      DATA(t50) = 1.
       t48 = t49->get( p0 = t50 ).
       t47 = t48.
       DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t51.
       DATA(t52) = VALUE abap_bool( ).
-      DATA(t53) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+      DATA(t53) = t47.
       IF t53 IS INITIAL.
         t52 = abap_true.
       ELSEIF t53->has = abap_false.
@@ -1162,9 +1165,9 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         DATA t55 TYPE string.
         DATA t56 TYPE string.
-        DATA(t57) = CAST zlnt_runtime_opti_4ba3bdccd169( t47 ).
+        DATA(t57) = t47.
         t56 = t57->value.
-        DATA(t58) = CONV i( strlen( t56 ) ).
+        DATA(t58) = strlen( t56 ).
         t55 = t56.
         IF t55 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t55 TO UPPER CASE.
@@ -1181,12 +1184,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t30 = t34.
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t60.
-      DATA(t61) = CONV abap_bool( abap_true ).
+      DATA(t61) = abap_true.
       IF t61 = abap_true.
         DATA(t62) = VALUE string( ).
         DATA t63 TYPE REF TO zcl_lnt_abstract_file.
         DATA t64 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t65) = CAST zcl_lnt_abap_file( t12 ).
+        DATA(t65) = t12.
         t64 = t65.
         t63 = t64.
         DATA(t66) = VALUE string( ).
@@ -1194,10 +1197,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         CLEAR t67.
         DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t69 TYPE string.
-        DATA(t70) = CAST zcl_lnt_abstract_file( t63 ).
-        t69 = t70->base_name(  ).
-        DATA(t71) = CONV string( |.| ).
-        DATA(t72) = CONV i( strlen( t69 ) ).
+        DATA(t70) = t63.
+        t69 = t70->base_name( ).
+        DATA(t71) = |.|.
+        DATA(t72) = strlen( t69 ).
         DATA t73 TYPE i.
         DATA(t74) = VALUE i( ).
         DATA(t75) = VALUE i( ).
@@ -1233,11 +1236,11 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         t67 = t68.
-        DATA(t78) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t79) = CONV i( 0 ).
+        DATA(t78) = t67.
+        DATA(t79) = 0.
         DATA(t80) = VALUE string( ).
         DATA(t81) = VALUE string( ).
-        DATA(t82) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t82) = t67.
         IF t82->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1246,18 +1249,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t82->items INDEX 1 INTO t81.
         DATA t83 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t83.
-        DATA(t84) = CONV string( |%23| ).
-        DATA(t85) = CONV string( |g| ).
+        DATA(t84) = |%23|.
+        DATA(t85) = |g|.
         CREATE OBJECT t83 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t84 flags = t85 checked = abap_true.
-        DATA(t86) = CONV string( |#| ).
-        DATA(t87) = CONV i( strlen( t81 ) ).
+        DATA(t86) = |#|.
+        DATA(t87) = strlen( t81 ).
         t80 = t83->replace( p0 = t81 p1 = t86 ).
         t78->put( p0 = t79 p1 = t80 ).
-        DATA(t88) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t89) = CONV i( 0 ).
+        DATA(t88) = t67.
+        DATA(t89) = 0.
         DATA(t90) = VALUE string( ).
         DATA(t91) = VALUE string( ).
-        DATA(t92) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t92) = t67.
         IF t92->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1266,18 +1269,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t92->items INDEX 1 INTO t91.
         DATA t93 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t93.
-        DATA(t94) = CONV string( |%3e| ).
-        DATA(t95) = CONV string( |g| ).
+        DATA(t94) = |%3e|.
+        DATA(t95) = |g|.
         CREATE OBJECT t93 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t94 flags = t95 checked = abap_true.
-        DATA(t96) = CONV string( |>| ).
-        DATA(t97) = CONV i( strlen( t91 ) ).
+        DATA(t96) = |>|.
+        DATA(t97) = strlen( t91 ).
         t90 = t93->replace( p0 = t91 p1 = t96 ).
         t88->put( p0 = t89 p1 = t90 ).
-        DATA(t98) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t99) = CONV i( 0 ).
+        DATA(t98) = t67.
+        DATA(t99) = 0.
         DATA(t100) = VALUE string( ).
         DATA(t101) = VALUE string( ).
-        DATA(t102) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t102) = t67.
         IF t102->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1286,26 +1289,26 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t102->items INDEX 1 INTO t101.
         DATA t103 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t103.
-        DATA(t104) = CONV string( |%3c| ).
-        DATA(t105) = CONV string( |g| ).
+        DATA(t104) = |%3c|.
+        DATA(t105) = |g|.
         CREATE OBJECT t103 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t104 flags = t105 checked = abap_true.
-        DATA(t106) = CONV string( |<| ).
-        DATA(t107) = CONV i( strlen( t101 ) ).
+        DATA(t106) = |<|.
+        DATA(t107) = strlen( t101 ).
         t100 = t103->replace( p0 = t101 p1 = t106 ).
         t98->put( p0 = t99 p1 = t100 ).
-        DATA(t108) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t109) = CONV i( 0 ).
+        DATA(t108) = t67.
+        DATA(t109) = 0.
         DATA(t110) = VALUE string( ).
         DATA(t111) = VALUE string( ).
         DATA(t112) = VALUE string( ).
-        DATA(t113) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t113) = t67.
         IF t113->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t113->load( ).
         CLEAR t112.
         READ TABLE t113->items INDEX 1 INTO t112.
-        DATA(t114) = CONV i( strlen( t112 ) ).
+        DATA(t114) = strlen( t112 ).
         t111 = t112.
         IF t111 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t111 TO UPPER CASE.
@@ -1314,49 +1317,49 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         ENDIF.
         DATA t115 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t115.
-        DATA(t116) = CONV string( |#| ).
-        DATA(t117) = CONV string( |g| ).
+        DATA(t116) = |#|.
+        DATA(t117) = |g|.
         CREATE OBJECT t115 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t116 flags = t117 checked = abap_true.
-        DATA(t118) = CONV string( |/| ).
-        DATA(t119) = CONV i( strlen( t111 ) ).
+        DATA(t118) = |/|.
+        DATA(t119) = strlen( t111 ).
         t110 = t115->replace( p0 = t111 p1 = t118 ).
         t108->put( p0 = t109 p1 = t110 ).
-        DATA(t120) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t121) = CONV i( 0 ).
+        DATA(t120) = t67.
+        DATA(t121) = 0.
         DATA(t122) = VALUE string( ).
         DATA(t123) = VALUE string( ).
-        DATA(t124) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t124) = t67.
         IF t124->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t124->load( ).
         CLEAR t123.
         READ TABLE t124->items INDEX 1 INTO t123.
-        DATA(t125) = CONV string( |(| ).
-        DATA(t126) = CONV string( |/| ).
-        DATA(t127) = CONV i( strlen( t123 ) ).
+        DATA(t125) = |(|.
+        DATA(t126) = |/|.
+        DATA(t127) = strlen( t123 ).
         t122 = t123.
         REPLACE ALL OCCURRENCES OF t125 IN t122 WITH t126.
         t120->put( p0 = t121 p1 = t122 ).
-        DATA(t128) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
-        DATA(t129) = CONV i( 0 ).
+        DATA(t128) = t67.
+        DATA(t129) = 0.
         DATA(t130) = VALUE string( ).
         DATA(t131) = VALUE string( ).
-        DATA(t132) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t132) = t67.
         IF t132->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t132->load( ).
         CLEAR t131.
         READ TABLE t132->items INDEX 1 INTO t131.
-        DATA(t133) = CONV string( |)| ).
-        DATA(t134) = CONV string( |/| ).
-        DATA(t135) = CONV i( strlen( t131 ) ).
+        DATA(t133) = |)|.
+        DATA(t134) = |/|.
+        DATA(t135) = strlen( t131 ).
         t130 = t131.
         REPLACE ALL OCCURRENCES OF t133 IN t130 WITH t134.
         t128->put( p0 = t129 p1 = t130 ).
         DATA(t136) = VALUE string( ).
-        DATA(t137) = CAST zlnt_runtime_arra_8ecd6afe19e0( t67 ).
+        DATA(t137) = t67.
         IF t137->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1379,15 +1382,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t140.
       DATA t141 TYPE abap_bool.
-      DATA(t142) = CAST zif_lnt_object( t27 ).
+      DATA(t142) = t27.
       t141 = xsdbool( t142 IS BOUND AND t142 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t141 = abap_true.
         DATA t143 TYPE REF TO zcl_lnt_abap_object.
         CLEAR t143.
-        DATA(t144) = CONV abap_bool( abap_true ).
+        DATA(t144) = abap_true.
         IF t144 = abap_true.
           DATA t145 TYPE REF TO zcl_lnt_abap_object.
-          DATA(t146) = CAST zif_lnt_object( t27 ).
+          DATA(t146) = t27.
           DATA t147 TYPE REF TO object.
           t147 = t146.
           t145 ?= t147.
@@ -1413,14 +1416,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t150.
     DATA(t151) = VALUE abap_bool( ).
     DATA t152 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t153) = CAST zcl_lnt_abap_object( t7 ).
+    DATA(t153) = t7.
     t152 = t153.
     DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t155.
     t154 = t155.
     DATA(t156) = VALUE abap_bool( ).
-    DATA(t157) = CAST zcl_lnt_abap_object( t152 ).
+    DATA(t157) = t152.
     IF t157 IS INITIAL.
       t156 = abap_true.
     ENDIF.
@@ -1432,17 +1435,17 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     ELSE.
       DATA t159 TYPE REF TO zif_lnt_spaghetti_scope.
       CLEAR t159.
-      DATA(t160) = CONV abap_bool( abap_true ).
+      DATA(t160) = abap_true.
       IF t160 = abap_true.
         DATA t161 TYPE REF TO zif_lnt_spaghetti_scope.
         DATA t162 TYPE REF TO zcl_lnt_isyntax_result.
         DATA t163 TYPE REF TO zcl_lnt_syntax_logic.
-        DATA(t164) = CAST zif_lnt_registry( me->reg ).
+        DATA(t164) = me->reg.
         DATA t165 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t166) = CAST zcl_lnt_abap_object( t7 ).
+        DATA(t166) = t7.
         t165 = t166.
         t163 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t164 i_object_19cd = t165 ).
-        t162 = t163->run(  ).
+        t162 = t163->run( ).
         t161 = t162->zlnt_view_read_sr_b6b1d9e0c93e( ).
         t159 = t161.
       ELSE.
@@ -1457,14 +1460,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t2 = t3.
     DATA(t168) = VALUE abap_bool( ).
     DATA t169 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t170) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t170) = t2.
     t169 = t170.
     DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t172.
     t171 = t172.
     DATA(t173) = VALUE abap_bool( ).
-    DATA(t174) = CAST zif_lnt_spaghetti_scope( t169 ).
+    DATA(t174) = t169.
     IF t174 IS INITIAL.
       t173 = abap_true.
     ENDIF.
@@ -1478,10 +1481,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t176 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t177 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t178 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA(t179) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t179) = t2.
     t178 = t179.
     DATA t180 TYPE string.
-    DATA(t181) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t181) = t1.
     t180 = t181->zlnt_view_read_no_0041136eb871( ).
     t177 = t178->list_write_positions( i_filename = t180 ).
     t176 = t177.
@@ -1489,7 +1492,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     DATA t183 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t183.
     t182 = t183.
-    DATA(t184) = CAST zlnt_runtime_arra_c22708faf2e3( t176 ).
+    DATA(t184) = t176.
     DATA t185 TYPE REF TO zcl_lnt_fi_identifier.
     CLEAR t185.
     DATA t186 TYPE REF TO object.
@@ -1514,14 +1517,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         t185 ?= t186.
       ENDIF.
-      DATA(t190) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+      DATA(t190) = t182.
       DATA t191 TYPE REF TO zcl_lnt_range.
       DATA t192 TYPE REF TO zcl_lnt_abstract_token.
       DATA t193 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t194) = CAST zcl_lnt_fi_identifier( t185 ).
+      DATA(t194) = t185.
       t193 = t194.
       DATA t195 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t196) = CAST zcl_lnt_fi_identifier( t193 ).
+      DATA(t196) = t193.
       t195 = t196->token.
       t192 = t195.
       t191 = zcl_lnt_lsp_utils=>token_to_range( i_token = t192 ).
@@ -1529,26 +1532,27 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       APPEND t191 TO t190->items.
       t190->save( ).
     ENDDO.
-    DATA(t197) = CAST zlnt_runtime_arra_c22708faf2e3( t182 ).
+    DATA(t197) = t182.
     result = t197.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    DATA(t5) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA t6 TYPE REF TO zcl_lnt_abap_object.
     CLEAR t6.
     DATA t7 TYPE REF TO zcl_lnt_abap_file.
     DATA t8 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t9) = CAST zif_lnt_registry( me->reg ).
+    DATA(t9) = me->reg.
     DATA t10 TYPE string.
-    DATA(t11) = CAST zcl_lnt_txt_dcmnt_idntfr( t4 ).
+    DATA(t11) = t4.
     t10 = t11->zlnt_view_read_no_0041136eb871( ).
     t8 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t9 i_filename = t10 ).
     t7 = t8.
@@ -1556,14 +1560,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t12.
     DATA(t13) = VALUE abap_bool( ).
     DATA t14 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t15) = CAST zcl_lnt_abap_file( t7 ).
+    DATA(t15) = t7.
     t14 = t15.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
     t16 = t17.
     DATA(t18) = VALUE abap_bool( ).
-    DATA(t19) = CAST zcl_lnt_abap_file( t14 ).
+    DATA(t19) = t14.
     IF t19 IS INITIAL.
       t18 = abap_true.
     ENDIF.
@@ -1579,12 +1583,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t22.
       DATA t23 TYPE REF TO zif_lnt_object.
       CLEAR t23.
-      DATA(t24) = CAST zif_lnt_registry( me->reg ).
+      DATA(t24) = me->reg.
       DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t25.
       DATA t26 TYPE REF TO zcl_lnt_abstract_file.
       DATA t27 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t28) = CAST zcl_lnt_abap_file( t7 ).
+      DATA(t28) = t7.
       t27 = t28.
       t26 = t27.
       DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1593,10 +1597,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t30.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t32 TYPE string.
-      DATA(t33) = CAST zcl_lnt_abstract_file( t26 ).
-      t32 = t33->base_name(  ).
-      DATA(t34) = CONV string( |.| ).
-      DATA(t35) = CONV i( strlen( t32 ) ).
+      DATA(t33) = t26.
+      t32 = t33->base_name( ).
+      DATA(t34) = |.|.
+      DATA(t35) = strlen( t32 ).
       DATA t36 TYPE i.
       DATA(t37) = VALUE i( ).
       DATA(t38) = VALUE i( ).
@@ -1636,14 +1640,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t41.
       DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t44) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
-      DATA(t45) = CONV i( 1 ).
+      DATA(t44) = t30.
+      DATA(t45) = 1.
       t43 = t44->get( p0 = t45 ).
       t42 = t43.
       DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t46.
       DATA(t47) = VALUE abap_bool( ).
-      DATA(t48) = CAST zlnt_runtime_opti_4ba3bdccd169( t42 ).
+      DATA(t48) = t42.
       IF t48 IS INITIAL.
         t47 = abap_true.
       ELSEIF t48->has = abap_false.
@@ -1656,9 +1660,9 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ELSE.
         DATA t50 TYPE string.
         DATA t51 TYPE string.
-        DATA(t52) = CAST zlnt_runtime_opti_4ba3bdccd169( t42 ).
+        DATA(t52) = t42.
         t51 = t52->value.
-        DATA(t53) = CONV i( strlen( t51 ) ).
+        DATA(t53) = strlen( t51 ).
         t50 = t51.
         IF t50 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t50 TO UPPER CASE.
@@ -1675,12 +1679,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t25 = t29.
       DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t55.
-      DATA(t56) = CONV abap_bool( abap_true ).
+      DATA(t56) = abap_true.
       IF t56 = abap_true.
         DATA(t57) = VALUE string( ).
         DATA t58 TYPE REF TO zcl_lnt_abstract_file.
         DATA t59 TYPE REF TO zcl_lnt_abap_file.
-        DATA(t60) = CAST zcl_lnt_abap_file( t7 ).
+        DATA(t60) = t7.
         t59 = t60.
         t58 = t59.
         DATA(t61) = VALUE string( ).
@@ -1688,10 +1692,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         CLEAR t62.
         DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t64 TYPE string.
-        DATA(t65) = CAST zcl_lnt_abstract_file( t58 ).
-        t64 = t65->base_name(  ).
-        DATA(t66) = CONV string( |.| ).
-        DATA(t67) = CONV i( strlen( t64 ) ).
+        DATA(t65) = t58.
+        t64 = t65->base_name( ).
+        DATA(t66) = |.|.
+        DATA(t67) = strlen( t64 ).
         DATA t68 TYPE i.
         DATA(t69) = VALUE i( ).
         DATA(t70) = VALUE i( ).
@@ -1727,11 +1731,11 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         t62 = t63.
-        DATA(t73) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t74) = CONV i( 0 ).
+        DATA(t73) = t62.
+        DATA(t74) = 0.
         DATA(t75) = VALUE string( ).
         DATA(t76) = VALUE string( ).
-        DATA(t77) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t77) = t62.
         IF t77->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1740,18 +1744,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t77->items INDEX 1 INTO t76.
         DATA t78 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t78.
-        DATA(t79) = CONV string( |%23| ).
-        DATA(t80) = CONV string( |g| ).
+        DATA(t79) = |%23|.
+        DATA(t80) = |g|.
         CREATE OBJECT t78 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t79 flags = t80 checked = abap_true.
-        DATA(t81) = CONV string( |#| ).
-        DATA(t82) = CONV i( strlen( t76 ) ).
+        DATA(t81) = |#|.
+        DATA(t82) = strlen( t76 ).
         t75 = t78->replace( p0 = t76 p1 = t81 ).
         t73->put( p0 = t74 p1 = t75 ).
-        DATA(t83) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t84) = CONV i( 0 ).
+        DATA(t83) = t62.
+        DATA(t84) = 0.
         DATA(t85) = VALUE string( ).
         DATA(t86) = VALUE string( ).
-        DATA(t87) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t87) = t62.
         IF t87->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1760,18 +1764,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t87->items INDEX 1 INTO t86.
         DATA t88 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t88.
-        DATA(t89) = CONV string( |%3e| ).
-        DATA(t90) = CONV string( |g| ).
+        DATA(t89) = |%3e|.
+        DATA(t90) = |g|.
         CREATE OBJECT t88 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t89 flags = t90 checked = abap_true.
-        DATA(t91) = CONV string( |>| ).
-        DATA(t92) = CONV i( strlen( t86 ) ).
+        DATA(t91) = |>|.
+        DATA(t92) = strlen( t86 ).
         t85 = t88->replace( p0 = t86 p1 = t91 ).
         t83->put( p0 = t84 p1 = t85 ).
-        DATA(t93) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t94) = CONV i( 0 ).
+        DATA(t93) = t62.
+        DATA(t94) = 0.
         DATA(t95) = VALUE string( ).
         DATA(t96) = VALUE string( ).
-        DATA(t97) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t97) = t62.
         IF t97->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1780,26 +1784,26 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         READ TABLE t97->items INDEX 1 INTO t96.
         DATA t98 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t98.
-        DATA(t99) = CONV string( |%3c| ).
-        DATA(t100) = CONV string( |g| ).
+        DATA(t99) = |%3c|.
+        DATA(t100) = |g|.
         CREATE OBJECT t98 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t99 flags = t100 checked = abap_true.
-        DATA(t101) = CONV string( |<| ).
-        DATA(t102) = CONV i( strlen( t96 ) ).
+        DATA(t101) = |<|.
+        DATA(t102) = strlen( t96 ).
         t95 = t98->replace( p0 = t96 p1 = t101 ).
         t93->put( p0 = t94 p1 = t95 ).
-        DATA(t103) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t104) = CONV i( 0 ).
+        DATA(t103) = t62.
+        DATA(t104) = 0.
         DATA(t105) = VALUE string( ).
         DATA(t106) = VALUE string( ).
         DATA(t107) = VALUE string( ).
-        DATA(t108) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t108) = t62.
         IF t108->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t108->load( ).
         CLEAR t107.
         READ TABLE t108->items INDEX 1 INTO t107.
-        DATA(t109) = CONV i( strlen( t107 ) ).
+        DATA(t109) = strlen( t107 ).
         t106 = t107.
         IF t106 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t106 TO UPPER CASE.
@@ -1808,49 +1812,49 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         ENDIF.
         DATA t110 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t110.
-        DATA(t111) = CONV string( |#| ).
-        DATA(t112) = CONV string( |g| ).
+        DATA(t111) = |#|.
+        DATA(t112) = |g|.
         CREATE OBJECT t110 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t111 flags = t112 checked = abap_true.
-        DATA(t113) = CONV string( |/| ).
-        DATA(t114) = CONV i( strlen( t106 ) ).
+        DATA(t113) = |/|.
+        DATA(t114) = strlen( t106 ).
         t105 = t110->replace( p0 = t106 p1 = t113 ).
         t103->put( p0 = t104 p1 = t105 ).
-        DATA(t115) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t116) = CONV i( 0 ).
+        DATA(t115) = t62.
+        DATA(t116) = 0.
         DATA(t117) = VALUE string( ).
         DATA(t118) = VALUE string( ).
-        DATA(t119) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t119) = t62.
         IF t119->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t119->load( ).
         CLEAR t118.
         READ TABLE t119->items INDEX 1 INTO t118.
-        DATA(t120) = CONV string( |(| ).
-        DATA(t121) = CONV string( |/| ).
-        DATA(t122) = CONV i( strlen( t118 ) ).
+        DATA(t120) = |(|.
+        DATA(t121) = |/|.
+        DATA(t122) = strlen( t118 ).
         t117 = t118.
         REPLACE ALL OCCURRENCES OF t120 IN t117 WITH t121.
         t115->put( p0 = t116 p1 = t117 ).
-        DATA(t123) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
-        DATA(t124) = CONV i( 0 ).
+        DATA(t123) = t62.
+        DATA(t124) = 0.
         DATA(t125) = VALUE string( ).
         DATA(t126) = VALUE string( ).
-        DATA(t127) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t127) = t62.
         IF t127->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t127->load( ).
         CLEAR t126.
         READ TABLE t127->items INDEX 1 INTO t126.
-        DATA(t128) = CONV string( |)| ).
-        DATA(t129) = CONV string( |/| ).
-        DATA(t130) = CONV i( strlen( t126 ) ).
+        DATA(t128) = |)|.
+        DATA(t129) = |/|.
+        DATA(t130) = strlen( t126 ).
         t125 = t126.
         REPLACE ALL OCCURRENCES OF t128 IN t125 WITH t129.
         t123->put( p0 = t124 p1 = t125 ).
         DATA(t131) = VALUE string( ).
-        DATA(t132) = CAST zlnt_runtime_arra_8ecd6afe19e0( t62 ).
+        DATA(t132) = t62.
         IF t132->has( 1 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
@@ -1873,15 +1877,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t135 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t135.
       DATA t136 TYPE abap_bool.
-      DATA(t137) = CAST zif_lnt_object( t22 ).
+      DATA(t137) = t22.
       t136 = xsdbool( t137 IS BOUND AND t137 IS INSTANCE OF zcl_lnt_abap_object ).
       IF t136 = abap_true.
         DATA t138 TYPE REF TO zcl_lnt_abap_object.
         CLEAR t138.
-        DATA(t139) = CONV abap_bool( abap_true ).
+        DATA(t139) = abap_true.
         IF t139 = abap_true.
           DATA t140 TYPE REF TO zcl_lnt_abap_object.
-          DATA(t141) = CAST zif_lnt_object( t22 ).
+          DATA(t141) = t22.
           DATA t142 TYPE REF TO object.
           t142 = t141.
           t140 ?= t142.
@@ -1905,14 +1909,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t2 = t3.
     DATA(t145) = VALUE abap_bool( ).
     DATA t146 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t147) = CAST zcl_lnt_abap_object( t2 ).
+    DATA(t147) = t2.
     t146 = t147.
     DATA t148 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t149.
     t148 = t149.
     DATA(t150) = VALUE abap_bool( ).
-    DATA(t151) = CAST zcl_lnt_abap_object( t146 ).
+    DATA(t151) = t146.
     IF t151 IS INITIAL.
       t150 = abap_true.
     ENDIF.
@@ -1925,17 +1929,17 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     ENDIF.
     DATA t153 TYPE REF TO zif_lnt_spaghetti_scope.
     CLEAR t153.
-    DATA(t154) = CONV abap_bool( abap_true ).
+    DATA(t154) = abap_true.
     IF t154 = abap_true.
       DATA t155 TYPE REF TO zif_lnt_spaghetti_scope.
       DATA t156 TYPE REF TO zcl_lnt_isyntax_result.
       DATA t157 TYPE REF TO zcl_lnt_syntax_logic.
-      DATA(t158) = CAST zif_lnt_registry( me->reg ).
+      DATA(t158) = me->reg.
       DATA t159 TYPE REF TO zcl_lnt_abap_object.
-      DATA(t160) = CAST zcl_lnt_abap_object( t2 ).
+      DATA(t160) = t2.
       t159 = t160.
       t157 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t158 i_object_19cd = t159 ).
-      t156 = t157->run(  ).
+      t156 = t157->run( ).
       t155 = t156->zlnt_view_read_sr_b6b1d9e0c93e( ).
       t153 = t155.
     ELSE.
@@ -1944,28 +1948,29 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t153 = t161.
     ENDIF.
     result = t153.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD find_object.
-    DATA(t1) = CAST zcl_lnt_txt_dcmnt_idntfr( i_text_document ).
+    DATA(t1) = i_text_document.
     DATA t2 TYPE REF TO zcl_lnt_abap_file.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     DATA t5 TYPE string.
-    DATA(t6) = CAST zcl_lnt_txt_dcmnt_idntfr( t1 ).
+    DATA(t6) = t1.
     t5 = t6->zlnt_view_read_no_0041136eb871( ).
     t3 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t4 i_filename = t5 ).
     t2 = t3.
     DATA(t7) = VALUE abap_bool( ).
     DATA t8 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t9) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t9) = t2.
     t8 = t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t11.
     t10 = t11.
     DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = CAST zcl_lnt_abap_file( t8 ).
+    DATA(t13) = t8.
     IF t13 IS INITIAL.
       t12 = abap_true.
     ENDIF.
@@ -1980,12 +1985,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t15.
     DATA t16 TYPE REF TO zif_lnt_object.
     CLEAR t16.
-    DATA(t17) = CAST zif_lnt_registry( me->reg ).
+    DATA(t17) = me->reg.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t18.
     DATA t19 TYPE REF TO zcl_lnt_abstract_file.
     DATA t20 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t21) = CAST zcl_lnt_abap_file( t2 ).
+    DATA(t21) = t2.
     t20 = t21.
     t19 = t20.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1994,10 +1999,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t25 TYPE string.
-    DATA(t26) = CAST zcl_lnt_abstract_file( t19 ).
-    t25 = t26->base_name(  ).
-    DATA(t27) = CONV string( |.| ).
-    DATA(t28) = CONV i( strlen( t25 ) ).
+    DATA(t26) = t19.
+    t25 = t26->base_name( ).
+    DATA(t27) = |.|.
+    DATA(t28) = strlen( t25 ).
     DATA t29 TYPE i.
     DATA(t30) = VALUE i( ).
     DATA(t31) = VALUE i( ).
@@ -2037,14 +2042,14 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     CLEAR t34.
     DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t37) = CAST zlnt_runtime_arra_8ecd6afe19e0( t23 ).
-    DATA(t38) = CONV i( 1 ).
+    DATA(t37) = t23.
+    DATA(t38) = 1.
     t36 = t37->get( p0 = t38 ).
     t35 = t36.
     DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t39.
     DATA(t40) = VALUE abap_bool( ).
-    DATA(t41) = CAST zlnt_runtime_opti_4ba3bdccd169( t35 ).
+    DATA(t41) = t35.
     IF t41 IS INITIAL.
       t40 = abap_true.
     ELSEIF t41->has = abap_false.
@@ -2057,9 +2062,9 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     ELSE.
       DATA t43 TYPE string.
       DATA t44 TYPE string.
-      DATA(t45) = CAST zlnt_runtime_opti_4ba3bdccd169( t35 ).
+      DATA(t45) = t35.
       t44 = t45->value.
-      DATA(t46) = CONV i( strlen( t44 ) ).
+      DATA(t46) = strlen( t44 ).
       t43 = t44.
       IF t43 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t43 TO UPPER CASE.
@@ -2076,12 +2081,12 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t18 = t22.
     DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t48.
-    DATA(t49) = CONV abap_bool( abap_true ).
+    DATA(t49) = abap_true.
     IF t49 = abap_true.
       DATA(t50) = VALUE string( ).
       DATA t51 TYPE REF TO zcl_lnt_abstract_file.
       DATA t52 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t53) = CAST zcl_lnt_abap_file( t2 ).
+      DATA(t53) = t2.
       t52 = t53.
       t51 = t52.
       DATA(t54) = VALUE string( ).
@@ -2089,10 +2094,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       CLEAR t55.
       DATA t56 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t57 TYPE string.
-      DATA(t58) = CAST zcl_lnt_abstract_file( t51 ).
-      t57 = t58->base_name(  ).
-      DATA(t59) = CONV string( |.| ).
-      DATA(t60) = CONV i( strlen( t57 ) ).
+      DATA(t58) = t51.
+      t57 = t58->base_name( ).
+      DATA(t59) = |.|.
+      DATA(t60) = strlen( t57 ).
       DATA t61 TYPE i.
       DATA(t62) = VALUE i( ).
       DATA(t63) = VALUE i( ).
@@ -2128,11 +2133,11 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
         ENDWHILE.
       ENDIF.
       t55 = t56.
-      DATA(t66) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t67) = CONV i( 0 ).
+      DATA(t66) = t55.
+      DATA(t67) = 0.
       DATA(t68) = VALUE string( ).
       DATA(t69) = VALUE string( ).
-      DATA(t70) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t70) = t55.
       IF t70->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -2141,18 +2146,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       READ TABLE t70->items INDEX 1 INTO t69.
       DATA t71 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t71.
-      DATA(t72) = CONV string( |%23| ).
-      DATA(t73) = CONV string( |g| ).
+      DATA(t72) = |%23|.
+      DATA(t73) = |g|.
       CREATE OBJECT t71 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t72 flags = t73 checked = abap_true.
-      DATA(t74) = CONV string( |#| ).
-      DATA(t75) = CONV i( strlen( t69 ) ).
+      DATA(t74) = |#|.
+      DATA(t75) = strlen( t69 ).
       t68 = t71->replace( p0 = t69 p1 = t74 ).
       t66->put( p0 = t67 p1 = t68 ).
-      DATA(t76) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t77) = CONV i( 0 ).
+      DATA(t76) = t55.
+      DATA(t77) = 0.
       DATA(t78) = VALUE string( ).
       DATA(t79) = VALUE string( ).
-      DATA(t80) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t80) = t55.
       IF t80->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -2161,18 +2166,18 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       READ TABLE t80->items INDEX 1 INTO t79.
       DATA t81 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t81.
-      DATA(t82) = CONV string( |%3e| ).
-      DATA(t83) = CONV string( |g| ).
+      DATA(t82) = |%3e|.
+      DATA(t83) = |g|.
       CREATE OBJECT t81 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t82 flags = t83 checked = abap_true.
-      DATA(t84) = CONV string( |>| ).
-      DATA(t85) = CONV i( strlen( t79 ) ).
+      DATA(t84) = |>|.
+      DATA(t85) = strlen( t79 ).
       t78 = t81->replace( p0 = t79 p1 = t84 ).
       t76->put( p0 = t77 p1 = t78 ).
-      DATA(t86) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t87) = CONV i( 0 ).
+      DATA(t86) = t55.
+      DATA(t87) = 0.
       DATA(t88) = VALUE string( ).
       DATA(t89) = VALUE string( ).
-      DATA(t90) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t90) = t55.
       IF t90->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -2181,26 +2186,26 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       READ TABLE t90->items INDEX 1 INTO t89.
       DATA t91 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t91.
-      DATA(t92) = CONV string( |%3c| ).
-      DATA(t93) = CONV string( |g| ).
+      DATA(t92) = |%3c|.
+      DATA(t93) = |g|.
       CREATE OBJECT t91 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t92 flags = t93 checked = abap_true.
-      DATA(t94) = CONV string( |<| ).
-      DATA(t95) = CONV i( strlen( t89 ) ).
+      DATA(t94) = |<|.
+      DATA(t95) = strlen( t89 ).
       t88 = t91->replace( p0 = t89 p1 = t94 ).
       t86->put( p0 = t87 p1 = t88 ).
-      DATA(t96) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t97) = CONV i( 0 ).
+      DATA(t96) = t55.
+      DATA(t97) = 0.
       DATA(t98) = VALUE string( ).
       DATA(t99) = VALUE string( ).
       DATA(t100) = VALUE string( ).
-      DATA(t101) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t101) = t55.
       IF t101->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t101->load( ).
       CLEAR t100.
       READ TABLE t101->items INDEX 1 INTO t100.
-      DATA(t102) = CONV i( strlen( t100 ) ).
+      DATA(t102) = strlen( t100 ).
       t99 = t100.
       IF t99 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t99 TO UPPER CASE.
@@ -2209,49 +2214,49 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       ENDIF.
       DATA t103 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t103.
-      DATA(t104) = CONV string( |#| ).
-      DATA(t105) = CONV string( |g| ).
+      DATA(t104) = |#|.
+      DATA(t105) = |g|.
       CREATE OBJECT t103 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t104 flags = t105 checked = abap_true.
-      DATA(t106) = CONV string( |/| ).
-      DATA(t107) = CONV i( strlen( t99 ) ).
+      DATA(t106) = |/|.
+      DATA(t107) = strlen( t99 ).
       t98 = t103->replace( p0 = t99 p1 = t106 ).
       t96->put( p0 = t97 p1 = t98 ).
-      DATA(t108) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t109) = CONV i( 0 ).
+      DATA(t108) = t55.
+      DATA(t109) = 0.
       DATA(t110) = VALUE string( ).
       DATA(t111) = VALUE string( ).
-      DATA(t112) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t112) = t55.
       IF t112->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t112->load( ).
       CLEAR t111.
       READ TABLE t112->items INDEX 1 INTO t111.
-      DATA(t113) = CONV string( |(| ).
-      DATA(t114) = CONV string( |/| ).
-      DATA(t115) = CONV i( strlen( t111 ) ).
+      DATA(t113) = |(|.
+      DATA(t114) = |/|.
+      DATA(t115) = strlen( t111 ).
       t110 = t111.
       REPLACE ALL OCCURRENCES OF t113 IN t110 WITH t114.
       t108->put( p0 = t109 p1 = t110 ).
-      DATA(t116) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
-      DATA(t117) = CONV i( 0 ).
+      DATA(t116) = t55.
+      DATA(t117) = 0.
       DATA(t118) = VALUE string( ).
       DATA(t119) = VALUE string( ).
-      DATA(t120) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t120) = t55.
       IF t120->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t120->load( ).
       CLEAR t119.
       READ TABLE t120->items INDEX 1 INTO t119.
-      DATA(t121) = CONV string( |)| ).
-      DATA(t122) = CONV string( |/| ).
-      DATA(t123) = CONV i( strlen( t119 ) ).
+      DATA(t121) = |)|.
+      DATA(t122) = |/|.
+      DATA(t123) = strlen( t119 ).
       t118 = t119.
       REPLACE ALL OCCURRENCES OF t121 IN t118 WITH t122.
       t116->put( p0 = t117 p1 = t118 ).
       DATA(t124) = VALUE string( ).
-      DATA(t125) = CAST zlnt_runtime_arra_8ecd6afe19e0( t55 ).
+      DATA(t125) = t55.
       IF t125->has( 1 - 1 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -2272,15 +2277,15 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t16 = t17->get_object( i_type_9913 = t18 i_name = t48 ).
     t15 = t16.
     DATA t128 TYPE abap_bool.
-    DATA(t129) = CAST zif_lnt_object( t15 ).
+    DATA(t129) = t15.
     t128 = xsdbool( t129 IS BOUND AND t129 IS INSTANCE OF zcl_lnt_abap_object ).
     IF t128 = abap_true.
       DATA t130 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t130.
-      DATA(t131) = CONV abap_bool( abap_true ).
+      DATA(t131) = abap_true.
       IF t131 = abap_true.
         DATA t132 TYPE REF TO zcl_lnt_abap_object.
-        DATA(t133) = CAST zif_lnt_object( t15 ).
+        DATA(t133) = t15.
         DATA t134 TYPE REF TO object.
         t134 = t133.
         t132 ?= t134.
@@ -2296,21 +2301,25 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t136 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t136.
       result = t136.
-      RETURN.
+
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1169_66efdac3028a.
   ENDMETHOD.

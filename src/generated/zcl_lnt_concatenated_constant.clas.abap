@@ -10,8 +10,9 @@ CLASS zcl_lnt_concatenated_constant DEFINITION PUBLIC INHERITING FROM zcl_lnt_ex
 ENDCLASS.
 CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -25,8 +26,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t6.
-    DATA(t7) = CONV string( |^`.*`$| ).
-    DATA(t8) = CONV string( |^`[^\n\r| ).
+    DATA(t7) = |^`.*`$|.
+    DATA(t8) = |^`[^\n\r|.
     DATA t9 TYPE c LENGTH 1.
     CLEAR t9.
     t9 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -36,7 +37,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t10 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t8 t10 INTO t8 RESPECTING BLANKS.
     t8 = t8 && |]*`$|.
-    DATA(t11) = CONV string( || ).
+    DATA(t11) = ||.
     CREATE OBJECT t6 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t8 flags = t11.
     t6->source = t7.
     t5 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t6 ).
@@ -82,7 +83,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t19.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
-    DATA(t21) = CONV string( |&| ).
+    DATA(t21) = |&|.
     CLEAR t20.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -96,8 +97,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t24.
     DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t25.
-    DATA(t26) = CONV string( |^`.*`$| ).
-    DATA(t27) = CONV string( |^`[^\n\r| ).
+    DATA(t26) = |^`.*`$|.
+    DATA(t27) = |^`[^\n\r|.
     DATA t28 TYPE c LENGTH 1.
     CLEAR t28.
     t28 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -107,7 +108,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t29 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t27 t29 INTO t27 RESPECTING BLANKS.
     t27 = t27 && |]*`$|.
-    DATA(t30) = CONV string( || ).
+    DATA(t30) = ||.
     CREATE OBJECT t25 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t27 flags = t30.
     t25->source = t26.
     t24 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t25 ).
@@ -147,9 +148,9 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t33 = t34.
     DATA t35 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t35.
-    DATA(t36) = CAST zlnt_runtime_dyna_a429568d5be8( t19 ).
-    DATA(t37) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t33 ).
+    DATA(t36) = t19.
+    DATA(t37) = t22.
+    DATA(t38) = t33.
     t35 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t37 i_rest = t38 ).
     t18 = t35.
     CLEAR t17.
@@ -216,9 +217,9 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t43 = t44.
     DATA t45 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t45.
-    DATA(t46) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t47) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t48) = CAST zlnt_runtime_arra_c22708faf2e3( t43 ).
+    DATA(t46) = t3.
+    DATA(t47) = t14.
+    DATA(t48) = t43.
     t45 = zcl_lnt_st_combi_module=>seq( i_first = t46 i_second = t47 i_rest = t48 ).
     t2 = t45.
     t1 = t2.
@@ -234,8 +235,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t53.
     DATA t54 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t54.
-    DATA(t55) = CONV string( |^'.*'$| ).
-    DATA(t56) = CONV string( |^'[^\n\r| ).
+    DATA(t55) = |^'.*'$|.
+    DATA(t56) = |^'[^\n\r|.
     DATA t57 TYPE c LENGTH 1.
     CLEAR t57.
     t57 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -245,7 +246,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t58 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t56 t58 INTO t56 RESPECTING BLANKS.
     t56 = t56 && |]*'$|.
-    DATA(t59) = CONV string( || ).
+    DATA(t59) = ||.
     CREATE OBJECT t54 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t56 flags = t59.
     t54->source = t55.
     t53 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t54 ).
@@ -291,7 +292,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t67.
     DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t68.
-    DATA(t69) = CONV string( |&| ).
+    DATA(t69) = |&|.
     CLEAR t68.
     CREATE OBJECT t68.
     t68->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -305,8 +306,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t72.
     DATA t73 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t73.
-    DATA(t74) = CONV string( |^'.*'$| ).
-    DATA(t75) = CONV string( |^'[^\n\r| ).
+    DATA(t74) = |^'.*'$|.
+    DATA(t75) = |^'[^\n\r|.
     DATA t76 TYPE c LENGTH 1.
     CLEAR t76.
     t76 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -316,7 +317,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t77 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t75 t77 INTO t75 RESPECTING BLANKS.
     t75 = t75 && |]*'$|.
-    DATA(t78) = CONV string( || ).
+    DATA(t78) = ||.
     CREATE OBJECT t73 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t75 flags = t78.
     t73->source = t74.
     t72 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t73 ).
@@ -356,9 +357,9 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t81 = t82.
     DATA t83 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t83.
-    DATA(t84) = CAST zlnt_runtime_dyna_a429568d5be8( t67 ).
-    DATA(t85) = CAST zlnt_runtime_dyna_a429568d5be8( t70 ).
-    DATA(t86) = CAST zlnt_runtime_arra_c22708faf2e3( t81 ).
+    DATA(t84) = t67.
+    DATA(t85) = t70.
+    DATA(t86) = t81.
     t83 = zcl_lnt_st_combi_module=>seq( i_first = t84 i_second = t85 i_rest = t86 ).
     t66 = t83.
     CLEAR t65.
@@ -425,9 +426,9 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t91 = t92.
     DATA t93 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t93.
-    DATA(t94) = CAST zlnt_runtime_dyna_a429568d5be8( t51 ).
-    DATA(t95) = CAST zlnt_runtime_dyna_a429568d5be8( t62 ).
-    DATA(t96) = CAST zlnt_runtime_arra_c22708faf2e3( t91 ).
+    DATA(t94) = t51.
+    DATA(t95) = t62.
+    DATA(t96) = t91.
     t93 = zcl_lnt_st_combi_module=>seq( i_first = t94 i_second = t95 i_rest = t96 ).
     t50 = t93.
     t49 = t50.
@@ -437,7 +438,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t98.
     DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t99.
-    DATA(t100) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t100) = t1.
     CLEAR t99.
     IF t100 IS BOUND.
       DATA t101 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -470,7 +471,7 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     CLEAR t103.
     DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t104.
-    DATA(t105) = CAST zif_lnt_statement_runnable( t49 ).
+    DATA(t105) = t49.
     CLEAR t104.
     IF t105 IS BOUND.
       DATA t106 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -507,20 +508,22 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t108 = t109.
     DATA t110 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t110.
-    DATA(t111) = CAST zlnt_runtime_dyna_a429568d5be8( t98 ).
-    DATA(t112) = CAST zlnt_runtime_dyna_a429568d5be8( t103 ).
-    DATA(t113) = CAST zlnt_runtime_arra_c22708faf2e3( t108 ).
+    DATA(t111) = t98.
+    DATA(t112) = t103.
+    DATA(t113) = t108.
     t110 = zcl_lnt_st_combi_module=>alt_prio( i_first = t111 i_second = t112 i_rest = t113 ).
     t97 = t110.
     result = t97.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d134_34bac62ef421.
   ENDMETHOD.

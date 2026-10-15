@@ -17,7 +17,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t2.
-    DATA(t3) = CONV string( |AT NEXT APPLICATION STATEMENT| ).
+    DATA(t3) = |AT NEXT APPLICATION STATEMENT|.
     t2 = zcl_lnt_st_combi_module=>str( i_s = t3 ).
     t1 = t2.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
@@ -34,7 +34,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t10.
-    DATA(t11) = CONV string( |BREAK-POINT| ).
+    DATA(t11) = |BREAK-POINT|.
     CLEAR t10.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -54,7 +54,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
-    DATA(t19) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t19) = t1.
     CLEAR t18.
     IF t19 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -87,7 +87,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
+    DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     CLEAR t23.
     IF t24 IS BOUND.
       CREATE OBJECT t23.
@@ -103,9 +103,9 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     t25 = t26.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t27.
-    DATA(t28) = CAST zlnt_runtime_dyna_a429568d5be8( t17 ).
-    DATA(t29) = CAST zlnt_runtime_dyna_a429568d5be8( t22 ).
-    DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t25 ).
+    DATA(t28) = t17.
+    DATA(t29) = t22.
+    DATA(t30) = t25.
     t27 = zcl_lnt_st_combi_module=>alt_prio( i_first = t28 i_second = t29 i_rest = t30 ).
     t16 = t27.
     CLEAR t15.
@@ -172,9 +172,9 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     t35 = t36.
     DATA t37 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t37.
-    DATA(t38) = CAST zlnt_runtime_dyna_a429568d5be8( t9 ).
-    DATA(t39) = CAST zlnt_runtime_dyna_a429568d5be8( t12 ).
-    DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t35 ).
+    DATA(t38) = t9.
+    DATA(t39) = t12.
+    DATA(t40) = t35.
     t37 = zcl_lnt_st_combi_module=>seq( i_first = t38 i_second = t39 i_rest = t40 ).
     t8 = t37.
     CLEAR t7.
@@ -215,7 +215,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t46.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t47.
-    DATA(t48) = CONV string( |BREAK| ).
+    DATA(t48) = |BREAK|.
     CLEAR t47.
     CREATE OBJECT t47.
     t47->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -233,8 +233,8 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     CLEAR t53.
     DATA t54 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t54.
-    DATA(t55) = CONV string( |.*| ).
-    DATA(t56) = CONV string( |[^\n\r| ).
+    DATA(t55) = |.*|.
+    DATA(t56) = |[^\n\r|.
     DATA t57 TYPE c LENGTH 1.
     CLEAR t57.
     t57 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -244,7 +244,7 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     t58 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t56 t58 INTO t56 RESPECTING BLANKS.
     t56 = t56 && |]*|.
-    DATA(t59) = CONV string( || ).
+    DATA(t59) = ||.
     CREATE OBJECT t54 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t56 flags = t59.
     t54->source = t55.
     t53 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t54 ).
@@ -312,9 +312,9 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     t64 = t65.
     DATA t66 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t66.
-    DATA(t67) = CAST zlnt_runtime_dyna_a429568d5be8( t46 ).
-    DATA(t68) = CAST zlnt_runtime_dyna_a429568d5be8( t49 ).
-    DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t67) = t46.
+    DATA(t68) = t49.
+    DATA(t69) = t64.
     t66 = zcl_lnt_st_combi_module=>seq( i_first = t67 i_second = t68 i_rest = t69 ).
     t45 = t66.
     CLEAR t44.
@@ -353,18 +353,18 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     t72 = t73.
     DATA t74 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t74.
-    DATA(t75) = CAST zlnt_runtime_dyna_a429568d5be8( t6 ).
-    DATA(t76) = CAST zlnt_runtime_dyna_a429568d5be8( t43 ).
-    DATA(t77) = CAST zlnt_runtime_arra_c22708faf2e3( t72 ).
+    DATA(t75) = t6.
+    DATA(t76) = t43.
+    DATA(t77) = t72.
     t74 = zcl_lnt_st_combi_module=>alt_prio( i_first = t75 i_second = t76 i_rest = t77 ).
     t5 = t74.
     t4 = t5.
     DATA t78 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t78.
-    DATA(t79) = CONV string( |Cloud| ).
+    DATA(t79) = |Cloud|.
     DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t80.
-    DATA(t81) = CAST zif_lnt_statement_runnable( t4 ).
+    DATA(t81) = t4.
     CLEAR t80.
     IF t81 IS BOUND.
       DATA t82 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -394,29 +394,36 @@ CLASS zcl_lnt_break IMPLEMENTATION.
     ENDIF.
     t78 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t79 i_first = t80 ).
     result = t78.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d386_3ffcc7d99584.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

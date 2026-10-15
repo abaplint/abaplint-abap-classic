@@ -23,16 +23,18 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_using.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD rn_in_sr_ab_2_st_cmb_ts_fl_cmb.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_7825 ).
+    DATA(t1) = i_r_7825.
     DATA t2 TYPE REF TO zlnt_exception_cl_e4a48bc113b2.
     CLEAR t2.
     DATA t3 TYPE REF TO zcx_lnt_fail_combinator_error.
@@ -71,88 +73,106 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
     ENDIF.
     RAISE EXCEPTION t2.
   ENDMETHOD.
+
   METHOD railroad.
-    DATA(t1) = CONV string( |Railroad.Terminal('!FailCombinator')| ).
+    DATA(t1) = |Railroad.Terminal('!FailCombinator')|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_str.
-    DATA(t1) = CONV string( |fail()| ).
+    DATA(t1) = |fail()|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_r_f634 ).
+    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t3) = t1.
     t2 = me->rn_in_sr_ab_2_st_cmb_ts_fl_cmb( i_r_7825 = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_one.
-    DATA(t1) = CAST zcl_lnt_st_result( i_x ).
+    DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
-    DATA(t7) = CAST zcl_lnt_st_result( t1 ).
+    DATA(t6) = t4.
+    DATA(t7) = t1.
     t6->load( ).
     APPEND t7 TO t6->items.
     t6->save( ).
-    DATA(t8) = CAST zlnt_runtime_arra_c22708faf2e3( t4 ).
+    DATA(t8) = t4.
     t3 = t8.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d77_d30e6c784021e6.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run.
-    result = me->run(  i_r_f634 = i_r_f634 ).
+    result = me->run( i_r_f634 = i_r_f634 ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~railroad.
-    result = me->railroad(  ).
+    result = me->railroad( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~to_str.
-    result = me->to_str(  ).
+    result = me->to_str( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~get_using.
-    result = me->get_using(  ).
+    result = me->get_using( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~list_keywords.
-    result = me->list_keywords(  ).
+    result = me->list_keywords( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~first.
-    result = me->first(  ).
+    result = me->first( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_runnable~run_one.
-    result = me->run_one(  i_x = i_x ).
+    result = me->run_one( i_x = i_x ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_daf022d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -6,7 +6,7 @@ CLASS zlnt_runtime_set__569a685d95a8 DEFINITION PUBLIC CREATE PUBLIC.
     METHODS size RETURNING VALUE(result) TYPE i.
     METHODS has IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE abap_bool.
     METHODS add IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
-    METHODS fromArray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_c22708faf2e3 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
+    METHODS fromarray IMPORTING p0 TYPE REF TO zlnt_runtime_arra_c22708faf2e3 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
     METHODS copy IMPORTING p0 TYPE REF TO zlnt_runtime_set__569a685d95a8 RETURNING VALUE(result) TYPE REF TO zlnt_runtime_set__569a685d95a8.
     METHODS delete IMPORTING p0 TYPE REF TO zcl_lnt_abap_object RETURNING VALUE(result) TYPE abap_bool.
     METHODS values RETURNING VALUE(result) TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -17,12 +17,14 @@ CLASS zlnt_runtime_set__569a685d95a8 IMPLEMENTATION.
   METHOD size.
     result = lines( entries ).
   ENDMETHOD.
+
   METHOD has.
     READ TABLE entries WITH KEY k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD add.
     READ TABLE entries WITH KEY k = p0 ASSIGNING FIELD-SYMBOL(<row>).
     IF sy-subrc = 0.
@@ -32,7 +34,8 @@ CLASS zlnt_runtime_set__569a685d95a8 IMPLEMENTATION.
     ENDIF.
     result = me.
   ENDMETHOD.
-  METHOD fromArray.
+
+  METHOD fromarray.
     p0->dense( ).
     DATA row TYPE REF TO zcl_lnt_abap_object.
     DATA ignored TYPE REF TO zlnt_runtime_set__569a685d95a8.
@@ -43,10 +46,12 @@ CLASS zlnt_runtime_set__569a685d95a8 IMPLEMENTATION.
     ENDLOOP.
     result = me.
   ENDMETHOD.
+
   METHOD copy.
     CREATE OBJECT result.
     APPEND LINES OF p0->entries TO result->entries.
   ENDMETHOD.
+
   METHOD delete.
     READ TABLE entries WITH KEY k = p0 TRANSPORTING NO FIELDS.
     IF sy-subrc = 0.
@@ -54,6 +59,7 @@ CLASS zlnt_runtime_set__569a685d95a8 IMPLEMENTATION.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD values.
     result = NEW #( ).
     LOOP AT entries INTO DATA(row).

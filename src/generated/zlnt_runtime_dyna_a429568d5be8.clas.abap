@@ -44,6 +44,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
   METHOD is_number.
     result = xsdbool( tag = tag_number ).
   ENDMETHOD.
+
   METHOD as_number.
     IF tag <> tag_number.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
@@ -53,6 +54,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
     ENDIF.
     result = nval.
   ENDMETHOD.
+
   METHOD type_of.
     CASE tag.
       WHEN tag_string.
@@ -69,6 +71,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
         result = `undefined`.
     ENDCASE.
   ENDMETHOD.
+
   METHOD to_string.
     DATA integer TYPE int8.
     IF tag = tag_string.
@@ -102,28 +105,33 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
   ENDMETHOD.
+
   METHOD is_string.
     IF tag = tag_string.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD is_function.
     IF tag = tag_class.
       result = abap_true.
     ENDIF.
   ENDMETHOD.
+
   METHOD as_string.
     IF tag <> tag_string.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
     result = sval.
   ENDMETHOD.
+
   METHOD as_classvalue.
     IF tag <> tag_class.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
     result = cval.
   ENDMETHOD.
+
   METHOD as_ref.
     IF tag = tag_object OR tag = tag_array.
       result = me.
@@ -183,6 +191,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
   ENDMETHOD.
+
   METHOD array_index.
     IF p0 CN '0123456789' OR p0 IS INITIAL OR strlen( p0 ) > 10 OR ( strlen( p0 ) > 1 AND p0+0(1) = '0' ).
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -194,6 +203,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
     ENDIF.
     result = number.
   ENDMETHOD.
+
   METHOD put.
     IF tag = tag_ref.
       DATA adapter TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -229,12 +239,14 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
       APPEND VALUE #( k = p0 v = p1 ) TO entries.
     ENDIF.
   ENDMETHOD.
+
   METHOD append.
     IF tag <> tag_array.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
     APPEND p0 TO items.
   ENDMETHOD.
+
   METHOD add_xml.
     DATA old TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA arr TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -251,6 +263,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
       put( p0 = p0 p1 = arr ).
     ENDIF.
   ENDMETHOD.
+
   METHOD truth.
     CASE tag.
       WHEN tag_null.
@@ -269,12 +282,14 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
         result = abap_true.
     ENDCASE.
   ENDMETHOD.
+
   METHOD as_boolean.
     IF tag <> tag_boolean.
       RAISE EXCEPTION TYPE cx_sy_move_cast_error.
     ENDIF.
     result = bval.
   ENDMETHOD.
+
   METHOD strict_equals.
     IF p0 IS NOT BOUND OR tag <> p0->tag.
       RETURN.
@@ -317,6 +332,7 @@ CLASS zlnt_runtime_dyna_a429568d5be8 IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = 'record_storage.go: dynamic.has: source is not object or reference'.
     ENDIF.
   ENDMETHOD.
+
   METHOD delete.
     IF tag = tag_object.
       DELETE entries WHERE k = p0.

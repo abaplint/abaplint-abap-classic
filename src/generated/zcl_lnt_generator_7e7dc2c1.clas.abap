@@ -17,18 +17,19 @@ CLASS zcl_lnt_generator_7e7dc2c1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_array ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_array.
+    DATA(t2) = t1.
     me->array = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `array`.
   ENDMETHOD.
+
   METHOD next.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA(t1) = CONV abap_bool( me->closed ).
     IF t1 = abap_true.
       DATA t2 TYPE REF TO zcl_lnt_generator_17955b8b.
-      DATA(t3) = CONV abap_bool( abap_true ).
+      DATA(t3) = abap_true.
       DATA t4 TYPE REF TO zif_lnt_object.
       CLEAR t4.
       t2 = NEW zcl_lnt_generator_17955b8b( i_done = t3 i_value = t4 ).
@@ -39,17 +40,17 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     DATA(t6) = CONV f( me->index ).
     DATA t7 TYPE f.
     DATA t8 TYPE i.
-    DATA(t9) = CAST zlnt_runtime_arra_c22708faf2e3( me->array ).
+    DATA(t9) = me->array.
     t9->load( ).
     t8 = lines( t9->items ).
     t7 = t8.
     t5 = xsdbool( t6 >= t7 ).
     IF t5 = abap_true.
-      DATA(t10) = CONV abap_bool( abap_true ).
+      DATA(t10) = abap_true.
       me->closed = t10.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `closed`.
       DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
-      DATA(t12) = CONV abap_bool( abap_true ).
+      DATA(t12) = abap_true.
       DATA t13 TYPE REF TO zif_lnt_object.
       CLEAR t13.
       t11 = NEW zcl_lnt_generator_17955b8b( i_done = t12 i_value = t13 ).
@@ -60,7 +61,7 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zif_lnt_object.
     CLEAR t15.
-    DATA(t16) = CAST zlnt_runtime_arra_c22708faf2e3( me->array ).
+    DATA(t16) = me->array.
     DATA(t17) = VALUE i( ).
     DATA(t18) = CONV f( me->index ).
     IF t18 > range_i32_upper.
@@ -91,51 +92,61 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     me->index = t22.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `index`.
     DATA t25 TYPE REF TO zcl_lnt_generator_17955b8b.
-    DATA(t26) = CONV abap_bool( abap_false ).
-    DATA(t27) = CAST zif_lnt_object( t14 ).
+    DATA(t26) = abap_false.
+    DATA(t27) = t14.
     t25 = NEW zcl_lnt_generator_17955b8b( i_done = t26 i_value = t27 ).
     result = t25.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD close.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     me->closed = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `closed`.
   ENDMETHOD.
+
   METHOD iterate.
     DATA t1 TYPE REF TO zif_lnt_generator_8f73cd1c.
     DATA t2 TYPE REF TO zcl_lnt_generator_7e7dc2c1.
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( me->array ).
+    DATA(t3) = me->array.
     t2 = NEW zcl_lnt_generator_7e7dc2c1( i_array = t3 ).
     t1 ?= t2.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_c8762dfcc211=>zlnt_member_d7_82881b26b0f5bb.
   ENDMETHOD.
+
   METHOD zif_lnt_generator_8f73cd1c~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_8f73cd1c~next.
-    result = me->next(  ).
+    result = me->next( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_8f73cd1c~close.
-    me->close(  ).
+    me->close( ).
   ENDMETHOD.
+
   METHOD zif_lnt_generator_8f73cd1c~iterate.
-    result = me->iterate(  ).
+    result = me->iterate( ).
   ENDMETHOD.
 ENDCLASS.

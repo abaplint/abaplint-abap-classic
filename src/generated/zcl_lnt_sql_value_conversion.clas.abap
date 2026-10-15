@@ -23,29 +23,30 @@ CLASS zcl_lnt_sql_value_conversion DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_sql_vl_cnvrsn_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_sql_vl_cnvrsn_cnf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |sql_value_conversion| ).
+    DATA(t3) = |sql_value_conversion|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Implicit SQL Value Conversion| ).
+    DATA(t5) = |Implicit SQL Value Conversion|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Ensure types match when selecting from database| ).
+    DATA(t7) = |Ensure types match when selecting from database|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |\n* Integer to CHAR conversion\n* Integer to NUMC conversion\n*| ).
+      DATA(t11) = |\n* Integer to CHAR conversion\n* Integer to NUMC conversion\n*|.
       t11 = t11 && | NUMC to Integer conversion\n* CHAR to Integer conversion\n* S|.
       t11 = t11 && |ource field longer than database field, CHAR -> CHAR\n* Sourc|.
       t11 = t11 && |e field longer than database field, NUMC -> NUMC|.
@@ -63,7 +64,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t17.
@@ -120,71 +121,75 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = CONV string( |key| ).
+    DATA(t32) = |key|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
     ENDIF.
-    DATA(t34) = CONV string( |title| ).
+    DATA(t34) = |title|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t35.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
     ENDIF.
-    DATA(t36) = CONV string( |shortDescription| ).
+    DATA(t36) = |shortDescription|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t37.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
     ENDIF.
-    DATA(t38) = CONV string( |extendedInformation| ).
+    DATA(t38) = |extendedInformation|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t39.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
     ENDIF.
-    DATA(t40) = CONV string( |tags| ).
+    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t41.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_sq_vl_cn_ts_sq_vl_cn.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
-    DATA(t3) = CAST zcl_lnt_sql_value_conversion( me ).
+    DATA(t3) = me.
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE abap_bool.
-    DATA(t5) = CAST zif_lnt_object( t1 ).
+    DATA(t5) = t1.
     t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_abap_object ).
     t3 = xsdbool( t4 = abap_false ).
     t2 = t3.
     IF t3 = abap_false.
       DATA t6 TYPE abap_bool.
-      DATA(t7) = CAST zif_lnt_object( t1 ).
+      DATA(t7) = t1.
       t6 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_ob_interface ).
       t2 = t6.
     ENDIF.
@@ -200,32 +205,33 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     DATA t12 TYPE REF TO zif_lnt_spaghetti_scope.
     DATA t13 TYPE REF TO zcl_lnt_isyntax_result.
     DATA t14 TYPE REF TO zcl_lnt_syntax_logic.
-    DATA(t15) = CAST zif_lnt_registry( me->reg ).
+    DATA(t15) = me->reg.
     DATA t16 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t17) = CAST zif_lnt_object( t1 ).
+    DATA(t17) = t1.
     DATA t18 TYPE REF TO object.
     t18 = t17.
     t16 ?= t18.
     t14 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t15 i_object_19cd = t16 ).
-    t13 = t14->run(  ).
+    t13 = t14->run( ).
     t12 = t13->zlnt_view_read_sr_b6b1d9e0c93e( ).
-    t11 = t12->get_top(  ).
+    t11 = t12->get_top( ).
     t10 = me->traverse( i_node = t11 ).
     t9 = t10.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t19) = t9.
     result = t19.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD traverse.
-    DATA(t1) = CAST zif_lnt_spaghetti_scope_node( i_node ).
+    DATA(t1) = i_node.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_iscope_data.
-    DATA(t6) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-    t5 = t6->get_data(  ).
+    DATA(t6) = t1.
+    t5 = t6->get_data( ).
     t4 = t5->sql_conversion.
     DATA t7 TYPE REF TO zcl_lnt_shape_9a575e77.
     CLEAR t7.
@@ -253,24 +259,24 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       ENDIF.
       DATA t12 TYPE REF TO zif_lnt_file.
       DATA t13 TYPE REF TO zif_lnt_file.
-      DATA(t14) = CAST zif_lnt_registry( me->reg ).
+      DATA(t14) = me->reg.
       DATA t15 TYPE string.
       DATA t16 TYPE REF TO zcl_lnt_iscope_identifier.
-      DATA(t17) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-      t16 = t17->get_identifier(  ).
+      DATA(t17) = t1.
+      t16 = t17->get_identifier( ).
       t15 = t16->filename.
       t13 = t14->get_file_by_name( i_filename = t15 ).
       t12 = t13.
       DATA(t18) = VALUE abap_bool( ).
       DATA t19 TYPE REF TO zif_lnt_file.
-      DATA(t20) = CAST zif_lnt_file( t12 ).
+      DATA(t20) = t12.
       t19 = t20.
       DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t22.
       t21 = t22.
       DATA(t23) = VALUE abap_bool( ).
-      DATA(t24) = CAST zif_lnt_file( t19 ).
+      DATA(t24) = t19.
       IF t24 IS INITIAL.
         t23 = abap_true.
       ENDIF.
@@ -278,37 +284,37 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       IF t18 = abap_true.
         CONTINUE.
       ENDIF.
-      DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t25) = t2.
       DATA t26 TYPE REF TO zcl_lnt_issue.
       CLEAR t26.
       DATA t27 TYPE REF TO zif_lnt_file.
-      DATA(t28) = CAST zif_lnt_file( t12 ).
+      DATA(t28) = t12.
       t27 = t28.
       DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t30) = CAST zcl_lnt_shape_9a575e77( t7 ).
+      DATA(t30) = t7.
       t29 = t30->token.
       DATA t31 TYPE string.
-      DATA(t32) = CAST zcl_lnt_shape_9a575e77( t7 ).
+      DATA(t32) = t7.
       t31 = t32->message_25cb.
       DATA(t33) = VALUE string( ).
       DATA t34 TYPE REF TO zcl_lnt_irule_metadata.
       CLEAR t34.
       DATA t35 TYPE string.
-      DATA(t36) = CONV string( |sql_value_conversion| ).
+      DATA(t36) = |sql_value_conversion|.
       t35 = t36.
       DATA t37 TYPE string.
-      DATA(t38) = CONV string( |Implicit SQL Value Conversion| ).
+      DATA(t38) = |Implicit SQL Value Conversion|.
       t37 = t38.
       DATA t39 TYPE string.
-      DATA(t40) = CONV string( |Ensure types match when selecting from database| ).
+      DATA(t40) = |Ensure types match when selecting from database|.
       t39 = t40.
       DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t41.
       DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t42.
-      DATA(t43) = CONV abap_bool( abap_true ).
+      DATA(t43) = abap_true.
       IF t43 = abap_true.
-        DATA(t44) = CONV string( |\n* Integer to CHAR conversion\n* Integer to NUMC conversion\n*| ).
+        DATA(t44) = |\n* Integer to CHAR conversion\n* Integer to NUMC conversion\n*|.
         t44 = t44 && | NUMC to Integer conversion\n* CHAR to Integer conversion\n* S|.
         t44 = t44 && |ource field longer than database field, CHAR -> CHAR\n* Sourc|.
         t44 = t44 && |e field longer than database field, NUMC -> NUMC|.
@@ -326,7 +332,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       CLEAR t47.
       DATA t48 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t48.
-      DATA(t49) = CONV abap_bool( abap_true ).
+      DATA(t49) = abap_true.
       IF t49 = abap_true.
         DATA t50 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CREATE OBJECT t50.
@@ -383,31 +389,31 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t34->zlnt_json_ownkeys_70e5fd461788.
       t34->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t65) = CONV string( |key| ).
+      DATA(t65) = |key|.
       DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t66.
       IF t34->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t34->zlnt_json_ownkeys_70e5fd461788->put( p0 = t65 p1 = t66 ).
       ENDIF.
-      DATA(t67) = CONV string( |title| ).
+      DATA(t67) = |title|.
       DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t68.
       IF t34->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t34->zlnt_json_ownkeys_70e5fd461788->put( p0 = t67 p1 = t68 ).
       ENDIF.
-      DATA(t69) = CONV string( |shortDescription| ).
+      DATA(t69) = |shortDescription|.
       DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t70.
       IF t34->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t34->zlnt_json_ownkeys_70e5fd461788->put( p0 = t69 p1 = t70 ).
       ENDIF.
-      DATA(t71) = CONV string( |extendedInformation| ).
+      DATA(t71) = |extendedInformation|.
       DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t72.
       IF t34->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t34->zlnt_json_ownkeys_70e5fd461788->put( p0 = t71 p1 = t72 ).
       ENDIF.
-      DATA(t73) = CONV string( |tags| ).
+      DATA(t73) = |tags|.
       DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t74.
       IF t34->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -415,7 +421,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       ENDIF.
       t33 = t34->key.
       DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t76) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn(  ) ).
+      DATA(t76) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn( ) ).
       t75 = t76->zlnt_view_read_sr_15c06369f827( ).
       DATA t77 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t77.
@@ -425,8 +431,8 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       t25->save( ).
     ENDDO.
     DATA t78 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t79) = CAST zif_lnt_spaghetti_scope_node( t1 ).
-    t78 = t79->get_children(  ).
+    DATA(t79) = t1.
+    t78 = t79->get_children( ).
     DATA t80 TYPE REF TO zif_lnt_spaghetti_scope_node.
     CLEAR t80.
     DATA t81 TYPE REF TO object.
@@ -453,7 +459,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       ENDIF.
       DATA(t85) = VALUE i( ).
       DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t87) = CAST zif_lnt_spaghetti_scope_node( t80 ).
+      DATA(t87) = t80.
       t86 = me->traverse( i_node = t87 ).
       DATA t88 TYPE REF TO zcl_lnt_issue.
       CLEAR t88.
@@ -479,35 +485,38 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
         ELSE.
           t88 ?= t89.
         ENDIF.
-        DATA(t93) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t94) = CAST zcl_lnt_issue( t88 ).
+        DATA(t93) = t2.
+        DATA(t94) = t88.
         t93->load( ).
         APPEND t94 TO t93->items.
         t93->save( ).
       ENDDO.
       DATA t95 TYPE i.
-      DATA(t96) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t96) = t2.
       t96->load( ).
       t95 = lines( t96->items ).
       t85 = t95.
     ENDDO.
-    DATA(t97) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t97) = t2.
     result = t97.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn(  ) ).
+    DATA(t1) = CAST zcl_lnt_sql_vl_cnvrsn_cnf( me->g_c_i_s_r_sq_vl_cn_ts_sq_vl_cn( ) ).
   ENDMETHOD.
+
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA t2 TYPE REF TO zcl_lnt_sql_vl_cnvrsn_cnf.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t3) = t1.
     CLEAR t2.
     IF t3 IS BOUND.
       IF t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -537,40 +546,51 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     ENDIF.
     me->s_c_i_s_r_sq_vl_cn_ts_sq_vl_cn( i_conf = t2 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1712_e00d364f7f6f.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

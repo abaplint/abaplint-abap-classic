@@ -15,15 +15,15 @@ CLASS zcl_lnt_event_definition DEFINITION PUBLIC INHERITING FROM zcl_lnt_fi_iden
 ENDCLASS.
 CLASS zcl_lnt_event_definition IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CONV f( i_visibility_33e6 ).
-    DATA(t3) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_visibility_33e6.
+    DATA(t3) = i_input_967e.
     DATA(t4) = VALUE abap_bool( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zif_lnt_statement.
     CLEAR t6.
-    DATA(t7) = CAST zcl_lnt_statement_node( t1 ).
-    t6 = t7->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+    DATA(t7) = t1.
+    t6 = t7->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_events ).
     t4 = xsdbool( t5 = abap_false ).
     IF t4 = abap_true.
@@ -33,9 +33,9 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       CLEAR t9.
       DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t10.
-      DATA(t11) = CONV abap_bool( abap_true ).
+      DATA(t11) = abap_true.
       IF t11 = abap_true.
-        DATA(t12) = CONV string( |MethodDefinition, expected MethodDef as part of input node| ).
+        DATA(t12) = |MethodDefinition, expected MethodDef as part of input node|.
         DATA(t13) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t13->has = abap_true.
         t13->value = t12.
@@ -81,14 +81,14 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     CLEAR t17.
     DATA t18 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t18.
-    DATA(t19) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd ).
+    DATA(t19) = t1.
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd.
     t18 = t19->find_first_expression( i_type_9913 = t20 ).
     t17 = t18.
     DATA(t21) = VALUE abap_bool( ).
     DATA t22 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t22.
-    DATA(t23) = CAST zcl_lnt_expression_node( t17 ).
+    DATA(t23) = t17.
     t22 = t23.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t24.
@@ -96,7 +96,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     CLEAR t25.
     t24 = t25.
     DATA(t26) = VALUE abap_bool( ).
-    DATA(t27) = CAST zcl_lnt_expression_node( t22 ).
+    DATA(t27) = t22.
     IF t27 IS INITIAL.
       t26 = abap_true.
     ENDIF.
@@ -108,9 +108,9 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       CLEAR t29.
       DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t30.
-      DATA(t31) = CONV abap_bool( abap_true ).
+      DATA(t31) = abap_true.
       IF t31 = abap_true.
-        DATA(t32) = CONV string( |MethodDefinition, expected MethodDef as part of input node| ).
+        DATA(t32) = |MethodDefinition, expected MethodDef as part of input node|.
         DATA(t33) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t33->has = abap_true.
         t33->value = t32.
@@ -156,11 +156,11 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     CLEAR t37.
     DATA t38 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t38.
-    DATA(t39) = CAST zcl_lnt_expression_node( t17 ).
+    DATA(t39) = t17.
     t38 = t39.
-    t37 = t38->get_first_token(  ).
+    t37 = t38->get_first_token( ).
     DATA(t40) = VALUE string( ).
-    DATA(t41) = CAST zcl_lnt_syntax_input( t3 ).
+    DATA(t41) = t3.
     t40 = t41->filename.
     super->constructor( i_token = t37 i_filename = t40 ).
     DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -168,8 +168,8 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     CREATE OBJECT t42.
     me->parameters = t42.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parameters`.
-    DATA(t43) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t44) = CAST zcl_lnt_syntax_input( t3 ).
+    DATA(t43) = t1.
+    DATA(t44) = t3.
     me->parse( i_node = t43 i_input_967e = t44 ).
     DATA(t45) = VALUE abap_bool( ).
     DATA(t46) = VALUE string( ).
@@ -178,41 +178,44 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     CLEAR t48.
     DATA t49 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t49.
-    DATA(t50) = CAST zcl_lnt_statement_node( t1 ).
-    t49 = t50->get_first_token(  ).
+    DATA(t50) = t1.
+    t49 = t50->get_first_token( ).
     t48 = t49.
     DATA(t51) = VALUE string( ).
-    DATA(t52) = CAST zcl_lnt_abstract_token( t48 ).
+    DATA(t52) = t48.
     t51 = t52->str.
     t47 = t51.
-    DATA(t53) = CONV i( strlen( t47 ) ).
+    DATA(t53) = strlen( t47 ).
     t46 = t47.
     IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t46 TO UPPER CASE.
     ELSE.
       t46 = zlnt_runtime_uppe_91169605024d=>full( t46 ).
     ENDIF.
-    DATA(t54) = CONV string( |CLASS| ).
+    DATA(t54) = |CLASS|.
     t45 = xsdbool( t46 = t54 ).
     me->is_static_b389 = t45.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `is_static`.
   ENDMETHOD.
+
   METHOD get_parameters.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->parameters ).
+    DATA(t1) = me->parameters.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_static_4685.
     DATA(t1) = CONV abap_bool( me->is_static_b389 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD parse.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t5) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d230_9e8d73de9f81 ).
+    DATA(t4) = t1.
+    DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d230_9e8d73de9f81.
     t3 = t4->find_all_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t6.
@@ -238,10 +241,10 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( me->parameters ).
+      DATA(t11) = me->parameters.
       DATA t12 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t13) = CAST zcl_lnt_expression_node( t6 ).
-      DATA(t14) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t13) = t6.
+      DATA(t14) = t2.
       DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t15.
       t12 = zcl_lnt_sy_method_param=>run_syntax( i_node = t13 i_input_967e = t14 i_meta = t15 ).
@@ -250,25 +253,31 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       t11->save( ).
     ENDDO.
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1056_72dc81e49d9c.
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~get_name.
-    result = me->get_name(  ).
+    result = me->get_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~get_parameters.
-    result = me->get_parameters(  ).
+    result = me->get_parameters( ).
   ENDMETHOD.
+
   METHOD zif_lnt_event_definition~is_static_4685.
-    result = me->is_static_4685(  ).
+    result = me->is_static_4685( ).
   ENDMETHOD.
 ENDCLASS.

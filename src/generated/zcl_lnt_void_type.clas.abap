@@ -32,15 +32,15 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_voided ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_voided.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     CLEAR t3.
-    DATA(t4) = CONV abap_bool( abap_true ).
+    DATA(t4) = abap_true.
     IF t4 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
       DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t7) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t7) = t2.
       t6 = t7.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -72,7 +72,7 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
       t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t19) = CONV string( |qualifiedName| ).
+      DATA(t19) = |qualifiedName|.
       DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t20.
       IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -85,40 +85,43 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
       t3 = t21.
     ENDIF.
     super->constructor( i_input_967e = t3 ).
-    DATA(t22) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t22) = t1.
     me->voided = t22.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `voided`.
   ENDMETHOD.
+
   METHOD get_db65.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_voided ).
-    DATA(t2) = CAST zlnt_runtime_opti_4ba3bdccd169( i_qualified_name ).
+    DATA(t1) = i_voided.
+    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_void_type.
     CLEAR t3.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t4) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
-    DATA(t5) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t4) = t1.
+    DATA(t5) = t2.
     t3 = NEW zcl_lnt_void_type( i_voided = t4 i_qualified_name = t5 ).
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_voided.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( me->voided ).
+    DATA(t1) = me->voided.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
     DATA(t1) = VALUE string( ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t3) = CAST zlnt_runtime_opti_4ba3bdccd169( me->voided ).
+    DATA(t3) = me->voided.
     t2 = t3.
     DATA(t4) = VALUE string( ).
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+    DATA(t6) = t2.
     IF t6 IS BOUND.
       IF t6->has = abap_true.
         t5 = xsdbool( strlen( t6->value ) > 0 ).
@@ -126,71 +129,77 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     ENDIF.
     IF t5 = abap_true.
       DATA t7 TYPE string.
-      DATA(t8) = CAST zlnt_runtime_opti_4ba3bdccd169( t2 ).
+      DATA(t8) = t2.
       t7 = t8->value.
       t4 = t7.
     ELSE.
-      DATA(t9) = CONV string( |VOIDEDtoABAP| ).
+      DATA(t9) = |VOIDEDtoABAP|.
       t4 = t9.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD t_t_i_s_a_ty_bs_vd_ty_ts_vd_ty.
     DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
-    DATA(t3) = CONV string( |Void(| ).
+    DATA(t3) = |Void(|.
     DATA(t4) = VALUE string( ).
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = CAST zlnt_runtime_opti_4ba3bdccd169( me->voided ).
+    DATA(t6) = me->voided.
     t5 = t6.
     DATA(t7) = VALUE string( ).
     DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+    DATA(t9) = t5.
     IF t9 IS INITIAL.
       t8 = abap_true.
     ELSEIF t9->has = abap_false.
       t8 = abap_true.
     ENDIF.
     IF t8 = abap_true.
-      DATA(t10) = CONV string( |undefined| ).
+      DATA(t10) = |undefined|.
       t7 = t10.
     ELSE.
       DATA t11 TYPE string.
-      DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t5 ).
+      DATA(t12) = t5.
       t11 = t12->value.
       t7 = t11.
     ENDIF.
     t4 = t7.
-    DATA(t13) = CONV i( strlen( t3 ) ).
+    DATA(t13) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t14) = CONV string( |)| ).
-    DATA(t15) = CONV i( strlen( t2 ) ).
+    DATA(t14) = |)|.
+    DATA(t15) = strlen( t2 ).
     t1 = |{ t2 }{ t14 }|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_generic.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD contains_void.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
-    DATA(t1) = CONV string( |abap.TODO_VOID| ).
+    DATA(t1) = |abap.TODO_VOID|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_vd_ty_ts_vd_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_ty_bs_vd_ty_ts_vd_ty( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_d4e641a3993b.
     IF zlnt_builtin_init_8e2cbb35b29e = abap_true.
       RETURN.
@@ -199,271 +208,358 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__363847cd8bb7(  ).
+    DATA(t1) = NEW zlnt_runtime_map__363847cd8bb7( ).
     zcl_lnt_void_type=>singletons = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1047_2e694b68f8c3.
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_89dd54d5~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_8cd68e5e~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_48da8d64~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_adffe656~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_ba49a4e5~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_297610d4~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_60f022dd~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~contains_void.
-    result = me->contains_void(  ).
+    result = me->contains_void( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_abstract_type_data.
-    result = me->get_abstract_type_data(  ).
+    result = me->get_abstract_type_data( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_conversion_exit.
-    result = me->get_conversion_exit(  ).
+    result = me->get_conversion_exit( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_ddic_name.
-    result = me->get_ddic_name(  ).
+    result = me->get_ddic_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_description.
-    result = me->get_description(  ).
+    result = me->get_description( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_qualified_name.
-    result = me->get_qualified_name(  ).
+    result = me->get_qualified_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~get_rtti_name.
-    result = me->get_rtti_name(  ).
+    result = me->get_rtti_name( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~is_generic.
-    result = me->is_generic(  ).
+    result = me->is_generic( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~to_abap.
-    result = me->to_abap(  ).
+    result = me->to_abap( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~to_cds.
-    result = me->to_cds(  ).
+    result = me->to_cds( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_265b2b50~to_text.
-    result = me->to_text(  i_level = i_level ).
+    result = me->to_text( i_level = i_level ).
   ENDMETHOD.
 ENDCLASS.

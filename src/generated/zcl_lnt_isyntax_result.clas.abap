@@ -27,27 +27,32 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_issues ).
-    DATA(t2) = CAST zif_lnt_spaghetti_scope( i_spaghetti ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_issues.
+    DATA(t2) = i_spaghetti.
+    DATA(t3) = t1.
     me->zlnt_view_write_s_6bf517164d8f( p0 = t3 ).
-    DATA(t4) = CAST zif_lnt_spaghetti_scope( t2 ).
+    DATA(t4) = t2.
     me->zlnt_view_write_s_7720575782fc( p0 = t4 ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d780_7184b6fdb7fe.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_bd188c319c03.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `issues` ) ).
@@ -89,6 +94,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       result = me->issues.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_6bf517164d8f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -131,6 +137,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `issues`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_b6b1d9e0c93e.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `spaghetti` ) ).
@@ -141,6 +148,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       result = me->spaghetti.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_7720575782fc.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -183,12 +191,15 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `spaghetti`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~structural.
     result = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~source.
     result = me->zlnt_view_source_36f3bf68b9b8.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -202,6 +213,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       result = me->zlnt_view_extras_47272813ead1->has( p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     DATA ignored TYPE abap_bool.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
@@ -224,6 +236,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
     ENDIF.
     result = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -237,6 +250,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -333,6 +347,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

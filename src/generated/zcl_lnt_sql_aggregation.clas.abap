@@ -10,8 +10,9 @@ CLASS zcl_lnt_sql_aggregation DEFINITION PUBLIC INHERITING FROM zcl_lnt_expressi
 ENDCLASS.
 CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -35,7 +36,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t9 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t10) = CONV string( |v740sp08| ).
+    DATA(t10) = |v740sp08|.
     t8 = t9->get( p0 = t10 ).
     t7 = t8.
     CLEAR t6.
@@ -67,7 +68,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t13.
     IF t14 IS BOUND.
       CREATE OBJECT t13.
@@ -109,7 +110,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t19.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26 ).
+    DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26.
     CLEAR t19.
     IF t20 IS BOUND.
       CREATE OBJECT t19.
@@ -125,9 +126,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t21 = t22.
     DATA t23 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t23.
-    DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t3 ).
-    DATA(t25) = CAST zlnt_runtime_dyna_a429568d5be8( t18 ).
-    DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t21 ).
+    DATA(t24) = t3.
+    DATA(t25) = t18.
+    DATA(t26) = t21.
     t23 = zcl_lnt_st_combi_module=>alt_prio( i_first = t24 i_second = t25 i_rest = t26 ).
     t2 = t23.
     t1 = t2.
@@ -141,7 +142,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t30.
     DATA t31 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t31.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97 ).
+    DATA(t32) = zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97.
     t31 = zcl_lnt_st_combi_module=>tok( i_t = t32 ).
     CLEAR t30.
     IF t31 IS BOUND.
@@ -177,7 +178,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t36.
     DATA t37 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t37.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d54_e55193f1dae9de ).
+    DATA(t38) = zlnt_runtime_desc_78196487750d=>zlnt_member_d54_e55193f1dae9de.
     t37 = zcl_lnt_st_combi_module=>tok( i_t = t38 ).
     CLEAR t36.
     IF t37 IS BOUND.
@@ -213,12 +214,12 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t42.
     CREATE OBJECT t42.
     t41 = t42.
-    DATA(t43) = CAST zlnt_runtime_arra_c22708faf2e3( t41 ).
+    DATA(t43) = t41.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t44.
     DATA t45 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t45.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e ).
+    DATA(t46) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
     t45 = zcl_lnt_st_combi_module=>tok( i_t = t46 ).
     CLEAR t44.
     IF t45 IS BOUND.
@@ -252,9 +253,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t43->save( ).
     DATA t49 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t49.
-    DATA(t50) = CAST zlnt_runtime_dyna_a429568d5be8( t29 ).
-    DATA(t51) = CAST zlnt_runtime_dyna_a429568d5be8( t35 ).
-    DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t41 ).
+    DATA(t50) = t29.
+    DATA(t51) = t35.
+    DATA(t52) = t41.
     t49 = zcl_lnt_st_combi_module=>alt_prio( i_first = t50 i_second = t51 i_rest = t52 ).
     t28 = t49.
     t27 = t28.
@@ -268,7 +269,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t56.
     DATA t57 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t57.
-    DATA(t58) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t58) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t57 = zcl_lnt_st_combi_module=>tok( i_t = t58 ).
     CLEAR t56.
     IF t57 IS BOUND.
@@ -302,7 +303,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t61.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t62.
-    DATA(t63) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t63) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t62.
     IF t63 IS BOUND.
       CREATE OBJECT t62.
@@ -316,10 +317,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t65.
     CREATE OBJECT t65.
     t64 = t65.
-    DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t66) = t64.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t67.
-    DATA(t68) = CONV string( |,| ).
+    DATA(t68) = |,|.
     CLEAR t67.
     CREATE OBJECT t67.
     t67->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -327,10 +328,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t66->load( ).
     APPEND t67 TO t66->items.
     t66->save( ).
-    DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t69) = t64.
     DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t70.
-    DATA(t71) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t71) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t70.
     IF t71 IS BOUND.
       CREATE OBJECT t70.
@@ -340,12 +341,12 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t69->load( ).
     APPEND t70 TO t69->items.
     t69->save( ).
-    DATA(t72) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t72) = t64.
     DATA t73 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t73.
     DATA t74 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t74.
-    DATA(t75) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97 ).
+    DATA(t75) = zlnt_runtime_desc_78196487750d=>zlnt_member_d55_6610642b610c97.
     t74 = zcl_lnt_st_combi_module=>tok( i_t = t75 ).
     CLEAR t73.
     IF t74 IS BOUND.
@@ -379,9 +380,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t72->save( ).
     DATA t78 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t78.
-    DATA(t79) = CAST zlnt_runtime_dyna_a429568d5be8( t55 ).
-    DATA(t80) = CAST zlnt_runtime_dyna_a429568d5be8( t61 ).
-    DATA(t81) = CAST zlnt_runtime_arra_c22708faf2e3( t64 ).
+    DATA(t79) = t55.
+    DATA(t80) = t61.
+    DATA(t81) = t64.
     t78 = zcl_lnt_st_combi_module=>seq( i_first = t79 i_second = t80 i_rest = t81 ).
     t54 = t78.
     t53 = t54.
@@ -399,7 +400,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t87.
     DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t88.
-    DATA(t89) = CONV string( |DEC| ).
+    DATA(t89) = |DEC|.
     CLEAR t88.
     CREATE OBJECT t88.
     t88->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -409,7 +410,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t90.
     DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t91.
-    DATA(t92) = CAST zif_lnt_statement_runnable( t53 ).
+    DATA(t92) = t53.
     CLEAR t91.
     IF t92 IS BOUND.
       DATA t93 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -446,9 +447,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t95 = t96.
     DATA t97 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t97.
-    DATA(t98) = CAST zlnt_runtime_dyna_a429568d5be8( t87 ).
-    DATA(t99) = CAST zlnt_runtime_dyna_a429568d5be8( t90 ).
-    DATA(t100) = CAST zlnt_runtime_arra_c22708faf2e3( t95 ).
+    DATA(t98) = t87.
+    DATA(t99) = t90.
+    DATA(t100) = t95.
     t97 = zcl_lnt_st_combi_module=>seq( i_first = t98 i_second = t99 i_rest = t100 ).
     t86 = t97.
     CLEAR t85.
@@ -489,7 +490,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t106.
     DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t107.
-    DATA(t108) = CONV string( |CURR| ).
+    DATA(t108) = |CURR|.
     CLEAR t107.
     CREATE OBJECT t107.
     t107->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -499,7 +500,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t109.
     DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t110.
-    DATA(t111) = CAST zif_lnt_statement_runnable( t53 ).
+    DATA(t111) = t53.
     CLEAR t110.
     IF t111 IS BOUND.
       DATA t112 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -536,9 +537,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t114 = t115.
     DATA t116 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t116.
-    DATA(t117) = CAST zlnt_runtime_dyna_a429568d5be8( t106 ).
-    DATA(t118) = CAST zlnt_runtime_dyna_a429568d5be8( t109 ).
-    DATA(t119) = CAST zlnt_runtime_arra_c22708faf2e3( t114 ).
+    DATA(t117) = t106.
+    DATA(t118) = t109.
+    DATA(t119) = t114.
     t116 = zcl_lnt_st_combi_module=>seq( i_first = t117 i_second = t118 i_rest = t119 ).
     t105 = t116.
     CLEAR t104.
@@ -575,7 +576,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t123.
     CREATE OBJECT t123.
     t122 = t123.
-    DATA(t124) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
+    DATA(t124) = t122.
     DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t125.
     DATA t126 TYPE REF TO zif_lnt_statement_runnable.
@@ -584,7 +585,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t127.
     DATA t128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t128.
-    DATA(t129) = CONV string( |QUAN| ).
+    DATA(t129) = |QUAN|.
     CLEAR t128.
     CREATE OBJECT t128.
     t128->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -594,7 +595,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t130.
     DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t131.
-    DATA(t132) = CAST zif_lnt_statement_runnable( t53 ).
+    DATA(t132) = t53.
     CLEAR t131.
     IF t132 IS BOUND.
       DATA t133 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -631,9 +632,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t135 = t136.
     DATA t137 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t137.
-    DATA(t138) = CAST zlnt_runtime_dyna_a429568d5be8( t127 ).
-    DATA(t139) = CAST zlnt_runtime_dyna_a429568d5be8( t130 ).
-    DATA(t140) = CAST zlnt_runtime_arra_c22708faf2e3( t135 ).
+    DATA(t138) = t127.
+    DATA(t139) = t130.
+    DATA(t140) = t135.
     t137 = zcl_lnt_st_combi_module=>seq( i_first = t138 i_second = t139 i_rest = t140 ).
     t126 = t137.
     CLEAR t125.
@@ -666,10 +667,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t124->load( ).
     APPEND t125 TO t124->items.
     t124->save( ).
-    DATA(t143) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
+    DATA(t143) = t122.
     DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t144.
-    DATA(t145) = CONV string( |D16N| ).
+    DATA(t145) = |D16N|.
     CLEAR t144.
     CREATE OBJECT t144.
     t144->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -677,10 +678,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t143->load( ).
     APPEND t144 TO t143->items.
     t143->save( ).
-    DATA(t146) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
+    DATA(t146) = t122.
     DATA t147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t147.
-    DATA(t148) = CONV string( |D34N| ).
+    DATA(t148) = |D34N|.
     CLEAR t147.
     CREATE OBJECT t147.
     t147->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -688,10 +689,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t146->load( ).
     APPEND t147 TO t146->items.
     t146->save( ).
-    DATA(t149) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
+    DATA(t149) = t122.
     DATA t150 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t150.
-    DATA(t151) = CONV string( |FLTP| ).
+    DATA(t151) = |FLTP|.
     CLEAR t150.
     CREATE OBJECT t150.
     t150->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -701,9 +702,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t149->save( ).
     DATA t152 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t152.
-    DATA(t153) = CAST zlnt_runtime_dyna_a429568d5be8( t84 ).
-    DATA(t154) = CAST zlnt_runtime_dyna_a429568d5be8( t103 ).
-    DATA(t155) = CAST zlnt_runtime_arra_c22708faf2e3( t122 ).
+    DATA(t153) = t84.
+    DATA(t154) = t103.
+    DATA(t155) = t122.
     t152 = zcl_lnt_st_combi_module=>alt_prio( i_first = t153 i_second = t154 i_rest = t155 ).
     t83 = t152.
     t82 = t83.
@@ -715,7 +716,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t158.
     DATA t159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t159.
-    DATA(t160) = CONV string( |COUNT| ).
+    DATA(t160) = |COUNT|.
     CLEAR t159.
     CREATE OBJECT t159.
     t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -765,14 +766,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t167.
     CREATE OBJECT t167.
     t166 = t167.
-    DATA(t168) = CAST zlnt_runtime_arra_c22708faf2e3( t166 ).
+    DATA(t168) = t166.
     DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t169.
     DATA t170 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t170.
     DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t171.
-    DATA(t172) = CONV string( |DISTINCT| ).
+    DATA(t172) = |DISTINCT|.
     CLEAR t171.
     CREATE OBJECT t171.
     t171->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -808,7 +809,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t168->load( ).
     APPEND t169 TO t168->items.
     t168->save( ).
-    DATA(t175) = CAST zlnt_runtime_arra_c22708faf2e3( t166 ).
+    DATA(t175) = t166.
     DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t176.
     DATA t177 TYPE REF TO zif_lnt_statement_runnable.
@@ -817,7 +818,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t178.
     DATA t179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t179.
-    DATA(t180) = CONV string( |*| ).
+    DATA(t180) = |*|.
     CLEAR t179.
     CREATE OBJECT t179.
     t179->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -827,7 +828,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t181.
     DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t182.
-    DATA(t183) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t183) = t1.
     CLEAR t182.
     IF t183 IS BOUND.
       DATA t184 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -864,9 +865,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t186 = t187.
     DATA t188 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t188.
-    DATA(t189) = CAST zlnt_runtime_dyna_a429568d5be8( t178 ).
-    DATA(t190) = CAST zlnt_runtime_dyna_a429568d5be8( t181 ).
-    DATA(t191) = CAST zlnt_runtime_arra_c22708faf2e3( t186 ).
+    DATA(t189) = t178.
+    DATA(t190) = t181.
+    DATA(t191) = t186.
     t188 = zcl_lnt_st_combi_module=>alt_prio( i_first = t189 i_second = t190 i_rest = t191 ).
     t177 = t188.
     CLEAR t176.
@@ -899,7 +900,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t175->load( ).
     APPEND t176 TO t175->items.
     t175->save( ).
-    DATA(t194) = CAST zlnt_runtime_arra_c22708faf2e3( t166 ).
+    DATA(t194) = t166.
     DATA t195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t195.
     DATA t196 TYPE REF TO zif_lnt_statement_runnable.
@@ -938,14 +939,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t194->load( ).
     APPEND t195 TO t194->items.
     t194->save( ).
-    DATA(t199) = CAST zlnt_runtime_arra_c22708faf2e3( t166 ).
+    DATA(t199) = t166.
     DATA t200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t200.
     DATA t201 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t201.
     DATA t202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t202.
-    DATA(t203) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t203) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t202.
     IF t203 IS BOUND.
       CREATE OBJECT t202.
@@ -985,9 +986,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t199->save( ).
     DATA t206 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t206.
-    DATA(t207) = CAST zlnt_runtime_dyna_a429568d5be8( t158 ).
-    DATA(t208) = CAST zlnt_runtime_dyna_a429568d5be8( t161 ).
-    DATA(t209) = CAST zlnt_runtime_arra_c22708faf2e3( t166 ).
+    DATA(t207) = t158.
+    DATA(t208) = t161.
+    DATA(t209) = t166.
     t206 = zcl_lnt_st_combi_module=>seq( i_first = t207 i_second = t208 i_rest = t209 ).
     t157 = t206.
     t156 = t157.
@@ -999,7 +1000,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t212.
     DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t213.
-    DATA(t214) = CONV string( |MAX| ).
+    DATA(t214) = |MAX|.
     CLEAR t213.
     CREATE OBJECT t213.
     t213->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1049,14 +1050,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t221.
     CREATE OBJECT t221.
     t220 = t221.
-    DATA(t222) = CAST zlnt_runtime_arra_c22708faf2e3( t220 ).
+    DATA(t222) = t220.
     DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t223.
     DATA t224 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t224.
     DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t225.
-    DATA(t226) = CONV string( |DISTINCT| ).
+    DATA(t226) = |DISTINCT|.
     CLEAR t225.
     CREATE OBJECT t225.
     t225->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1092,10 +1093,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t222->load( ).
     APPEND t223 TO t222->items.
     t222->save( ).
-    DATA(t229) = CAST zlnt_runtime_arra_c22708faf2e3( t220 ).
+    DATA(t229) = t220.
     DATA t230 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t230.
-    DATA(t231) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t231) = t1.
     CLEAR t230.
     IF t231 IS BOUND.
       DATA t232 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1126,7 +1127,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t229->load( ).
     APPEND t230 TO t229->items.
     t229->save( ).
-    DATA(t234) = CAST zlnt_runtime_arra_c22708faf2e3( t220 ).
+    DATA(t234) = t220.
     DATA t235 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t235.
     DATA t236 TYPE REF TO zif_lnt_statement_runnable.
@@ -1165,14 +1166,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t234->load( ).
     APPEND t235 TO t234->items.
     t234->save( ).
-    DATA(t239) = CAST zlnt_runtime_arra_c22708faf2e3( t220 ).
+    DATA(t239) = t220.
     DATA t240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t240.
     DATA t241 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t241.
     DATA t242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t242.
-    DATA(t243) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t243) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t242.
     IF t243 IS BOUND.
       CREATE OBJECT t242.
@@ -1212,9 +1213,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t239->save( ).
     DATA t246 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t246.
-    DATA(t247) = CAST zlnt_runtime_dyna_a429568d5be8( t212 ).
-    DATA(t248) = CAST zlnt_runtime_dyna_a429568d5be8( t215 ).
-    DATA(t249) = CAST zlnt_runtime_arra_c22708faf2e3( t220 ).
+    DATA(t247) = t212.
+    DATA(t248) = t215.
+    DATA(t249) = t220.
     t246 = zcl_lnt_st_combi_module=>seq( i_first = t247 i_second = t248 i_rest = t249 ).
     t211 = t246.
     t210 = t211.
@@ -1226,7 +1227,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t252.
     DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t253.
-    DATA(t254) = CONV string( |MIN| ).
+    DATA(t254) = |MIN|.
     CLEAR t253.
     CREATE OBJECT t253.
     t253->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1276,14 +1277,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t261.
     CREATE OBJECT t261.
     t260 = t261.
-    DATA(t262) = CAST zlnt_runtime_arra_c22708faf2e3( t260 ).
+    DATA(t262) = t260.
     DATA t263 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t263.
     DATA t264 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t264.
     DATA t265 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t265.
-    DATA(t266) = CONV string( |DISTINCT| ).
+    DATA(t266) = |DISTINCT|.
     CLEAR t265.
     CREATE OBJECT t265.
     t265->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1319,10 +1320,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t262->load( ).
     APPEND t263 TO t262->items.
     t262->save( ).
-    DATA(t269) = CAST zlnt_runtime_arra_c22708faf2e3( t260 ).
+    DATA(t269) = t260.
     DATA t270 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t270.
-    DATA(t271) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t271) = t1.
     CLEAR t270.
     IF t271 IS BOUND.
       DATA t272 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1353,7 +1354,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t269->load( ).
     APPEND t270 TO t269->items.
     t269->save( ).
-    DATA(t274) = CAST zlnt_runtime_arra_c22708faf2e3( t260 ).
+    DATA(t274) = t260.
     DATA t275 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t275.
     DATA t276 TYPE REF TO zif_lnt_statement_runnable.
@@ -1392,14 +1393,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t274->load( ).
     APPEND t275 TO t274->items.
     t274->save( ).
-    DATA(t279) = CAST zlnt_runtime_arra_c22708faf2e3( t260 ).
+    DATA(t279) = t260.
     DATA t280 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t280.
     DATA t281 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t281.
     DATA t282 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t282.
-    DATA(t283) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t283) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t282.
     IF t283 IS BOUND.
       CREATE OBJECT t282.
@@ -1439,9 +1440,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t279->save( ).
     DATA t286 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t286.
-    DATA(t287) = CAST zlnt_runtime_dyna_a429568d5be8( t252 ).
-    DATA(t288) = CAST zlnt_runtime_dyna_a429568d5be8( t255 ).
-    DATA(t289) = CAST zlnt_runtime_arra_c22708faf2e3( t260 ).
+    DATA(t287) = t252.
+    DATA(t288) = t255.
+    DATA(t289) = t260.
     t286 = zcl_lnt_st_combi_module=>seq( i_first = t287 i_second = t288 i_rest = t289 ).
     t251 = t286.
     t250 = t251.
@@ -1453,7 +1454,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t292.
     DATA t293 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t293.
-    DATA(t294) = CONV string( |SUM| ).
+    DATA(t294) = |SUM|.
     CLEAR t293.
     CREATE OBJECT t293.
     t293->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1503,14 +1504,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t301.
     CREATE OBJECT t301.
     t300 = t301.
-    DATA(t302) = CAST zlnt_runtime_arra_c22708faf2e3( t300 ).
+    DATA(t302) = t300.
     DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t303.
     DATA t304 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t304.
     DATA t305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t305.
-    DATA(t306) = CONV string( |DISTINCT| ).
+    DATA(t306) = |DISTINCT|.
     CLEAR t305.
     CREATE OBJECT t305.
     t305->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1546,10 +1547,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t302->load( ).
     APPEND t303 TO t302->items.
     t302->save( ).
-    DATA(t309) = CAST zlnt_runtime_arra_c22708faf2e3( t300 ).
+    DATA(t309) = t300.
     DATA t310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t310.
-    DATA(t311) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t311) = t1.
     CLEAR t310.
     IF t311 IS BOUND.
       DATA t312 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1580,7 +1581,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t309->load( ).
     APPEND t310 TO t309->items.
     t309->save( ).
-    DATA(t314) = CAST zlnt_runtime_arra_c22708faf2e3( t300 ).
+    DATA(t314) = t300.
     DATA t315 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t315.
     DATA t316 TYPE REF TO zif_lnt_statement_runnable.
@@ -1619,14 +1620,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t314->load( ).
     APPEND t315 TO t314->items.
     t314->save( ).
-    DATA(t319) = CAST zlnt_runtime_arra_c22708faf2e3( t300 ).
+    DATA(t319) = t300.
     DATA t320 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t320.
     DATA t321 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t321.
     DATA t322 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t322.
-    DATA(t323) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t323) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t322.
     IF t323 IS BOUND.
       CREATE OBJECT t322.
@@ -1666,9 +1667,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t319->save( ).
     DATA t326 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t326.
-    DATA(t327) = CAST zlnt_runtime_dyna_a429568d5be8( t292 ).
-    DATA(t328) = CAST zlnt_runtime_dyna_a429568d5be8( t295 ).
-    DATA(t329) = CAST zlnt_runtime_arra_c22708faf2e3( t300 ).
+    DATA(t327) = t292.
+    DATA(t328) = t295.
+    DATA(t329) = t300.
     t326 = zcl_lnt_st_combi_module=>seq( i_first = t327 i_second = t328 i_rest = t329 ).
     t291 = t326.
     t290 = t291.
@@ -1680,7 +1681,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t332.
     DATA t333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t333.
-    DATA(t334) = CONV string( |AVG| ).
+    DATA(t334) = |AVG|.
     CLEAR t333.
     CREATE OBJECT t333.
     t333->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1692,7 +1693,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t336.
     DATA t337 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t337.
-    DATA(t338) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t338) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t337 = zcl_lnt_st_combi_module=>tok( i_t = t338 ).
     CLEAR t336.
     IF t337 IS BOUND.
@@ -1728,14 +1729,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t342.
     CREATE OBJECT t342.
     t341 = t342.
-    DATA(t343) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t343) = t341.
     DATA t344 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t344.
     DATA t345 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t345.
     DATA t346 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t346.
-    DATA(t347) = CONV string( |DISTINCT| ).
+    DATA(t347) = |DISTINCT|.
     CLEAR t346.
     CREATE OBJECT t346.
     t346->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1771,10 +1772,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t343->load( ).
     APPEND t344 TO t343->items.
     t343->save( ).
-    DATA(t350) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t350) = t341.
     DATA t351 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t351.
-    DATA(t352) = CAST zif_lnt_statement_runnable( t1 ).
+    DATA(t352) = t1.
     CLEAR t351.
     IF t352 IS BOUND.
       DATA t353 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1805,7 +1806,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t350->load( ).
     APPEND t351 TO t350->items.
     t350->save( ).
-    DATA(t355) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t355) = t341.
     DATA t356 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t356.
     DATA t357 TYPE REF TO zif_lnt_statement_runnable.
@@ -1826,7 +1827,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t363 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t364) = CONV string( |v751| ).
+    DATA(t364) = |v751|.
     t362 = t363->get( p0 = t364 ).
     t361 = t362.
     CLEAR t360.
@@ -1864,7 +1865,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t369.
     DATA t370 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t370.
-    DATA(t371) = CONV string( |AS| ).
+    DATA(t371) = |AS|.
     CLEAR t370.
     CREATE OBJECT t370.
     t370->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -1874,7 +1875,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t372.
     DATA t373 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t373.
-    DATA(t374) = CAST zif_lnt_statement_runnable( t82 ).
+    DATA(t374) = t82.
     CLEAR t373.
     IF t374 IS BOUND.
       DATA t375 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1911,9 +1912,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t377 = t378.
     DATA t379 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t379.
-    DATA(t380) = CAST zlnt_runtime_dyna_a429568d5be8( t369 ).
-    DATA(t381) = CAST zlnt_runtime_dyna_a429568d5be8( t372 ).
-    DATA(t382) = CAST zlnt_runtime_arra_c22708faf2e3( t377 ).
+    DATA(t380) = t369.
+    DATA(t381) = t372.
+    DATA(t382) = t377.
     t379 = zcl_lnt_st_combi_module=>seq( i_first = t380 i_second = t381 i_rest = t382 ).
     t368 = t379.
     CLEAR t367.
@@ -2004,10 +2005,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t355->load( ).
     APPEND t356 TO t355->items.
     t355->save( ).
-    DATA(t390) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t390) = t341.
     DATA t391 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t391.
-    DATA(t392) = CAST zif_lnt_statement_runnable( t27 ).
+    DATA(t392) = t27.
     CLEAR t391.
     IF t392 IS BOUND.
       DATA t393 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -2038,14 +2039,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t390->load( ).
     APPEND t391 TO t390->items.
     t390->save( ).
-    DATA(t395) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t395) = t341.
     DATA t396 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t396.
     DATA t397 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t397.
     DATA t398 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t398.
-    DATA(t399) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t399) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t398.
     IF t399 IS BOUND.
       CREATE OBJECT t398.
@@ -2085,9 +2086,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t395->save( ).
     DATA t402 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t402.
-    DATA(t403) = CAST zlnt_runtime_dyna_a429568d5be8( t332 ).
-    DATA(t404) = CAST zlnt_runtime_dyna_a429568d5be8( t335 ).
-    DATA(t405) = CAST zlnt_runtime_arra_c22708faf2e3( t341 ).
+    DATA(t403) = t332.
+    DATA(t404) = t335.
+    DATA(t405) = t341.
     t402 = zcl_lnt_st_combi_module=>seq( i_first = t403 i_second = t404 i_rest = t405 ).
     t331 = t402.
     t330 = t331.
@@ -2107,7 +2108,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t411 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t412) = CONV string( |v757| ).
+    DATA(t412) = |v757|.
     t410 = t411->get( p0 = t412 ).
     t409 = t410.
     CLEAR t408.
@@ -2151,7 +2152,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t420.
     DATA t421 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t421.
-    DATA(t422) = CONV string( |ROW_NUMBER| ).
+    DATA(t422) = |ROW_NUMBER|.
     CLEAR t421.
     CREATE OBJECT t421.
     t421->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2161,7 +2162,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t423.
     DATA t424 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t424.
-    DATA(t425) = CONV string( |RANK| ).
+    DATA(t425) = |RANK|.
     CLEAR t424.
     CREATE OBJECT t424.
     t424->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2173,10 +2174,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t427.
     CREATE OBJECT t427.
     t426 = t427.
-    DATA(t428) = CAST zlnt_runtime_arra_c22708faf2e3( t426 ).
+    DATA(t428) = t426.
     DATA t429 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t429.
-    DATA(t430) = CONV string( |DENSE_RANK| ).
+    DATA(t430) = |DENSE_RANK|.
     CLEAR t429.
     CREATE OBJECT t429.
     t429->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2186,9 +2187,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t428->save( ).
     DATA t431 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t431.
-    DATA(t432) = CAST zlnt_runtime_dyna_a429568d5be8( t420 ).
-    DATA(t433) = CAST zlnt_runtime_dyna_a429568d5be8( t423 ).
-    DATA(t434) = CAST zlnt_runtime_arra_c22708faf2e3( t426 ).
+    DATA(t432) = t420.
+    DATA(t433) = t423.
+    DATA(t434) = t426.
     t431 = zcl_lnt_st_combi_module=>alt_prio( i_first = t432 i_second = t433 i_rest = t434 ).
     t419 = t431.
     CLEAR t418.
@@ -2263,7 +2264,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t443.
     CREATE OBJECT t443.
     t442 = t443.
-    DATA(t444) = CAST zlnt_runtime_arra_c22708faf2e3( t442 ).
+    DATA(t444) = t442.
     DATA t445 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t445.
     DATA t446 TYPE REF TO zif_lnt_statement_runnable.
@@ -2302,10 +2303,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t444->load( ).
     APPEND t445 TO t444->items.
     t444->save( ).
-    DATA(t449) = CAST zlnt_runtime_arra_c22708faf2e3( t442 ).
+    DATA(t449) = t442.
     DATA t450 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t450.
-    DATA(t451) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t451) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t450.
     IF t451 IS BOUND.
       CREATE OBJECT t450.
@@ -2317,9 +2318,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t449->save( ).
     DATA t452 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t452.
-    DATA(t453) = CAST zlnt_runtime_dyna_a429568d5be8( t417 ).
-    DATA(t454) = CAST zlnt_runtime_dyna_a429568d5be8( t437 ).
-    DATA(t455) = CAST zlnt_runtime_arra_c22708faf2e3( t442 ).
+    DATA(t453) = t417.
+    DATA(t454) = t437.
+    DATA(t455) = t442.
     t452 = zcl_lnt_st_combi_module=>seq( i_first = t453 i_second = t454 i_rest = t455 ).
     t416 = t452.
     CLEAR t415.
@@ -2369,7 +2370,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t464 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t465) = CONV string( |v757| ).
+    DATA(t465) = |v757|.
     t463 = t464->get( p0 = t465 ).
     t462 = t463.
     CLEAR t461.
@@ -2413,7 +2414,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t473.
     DATA t474 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t474.
-    DATA(t475) = CONV string( |LEAD| ).
+    DATA(t475) = |LEAD|.
     CLEAR t474.
     CREATE OBJECT t474.
     t474->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2423,7 +2424,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t476.
     DATA t477 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t477.
-    DATA(t478) = CONV string( |LAG| ).
+    DATA(t478) = |LAG|.
     CLEAR t477.
     CREATE OBJECT t477.
     t477->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2437,9 +2438,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t479 = t480.
     DATA t481 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t481.
-    DATA(t482) = CAST zlnt_runtime_dyna_a429568d5be8( t473 ).
-    DATA(t483) = CAST zlnt_runtime_dyna_a429568d5be8( t476 ).
-    DATA(t484) = CAST zlnt_runtime_arra_c22708faf2e3( t479 ).
+    DATA(t482) = t473.
+    DATA(t483) = t476.
+    DATA(t484) = t479.
     t481 = zcl_lnt_st_combi_module=>alt_prio( i_first = t482 i_second = t483 i_rest = t484 ).
     t472 = t481.
     CLEAR t471.
@@ -2476,7 +2477,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t488.
     DATA t489 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t489.
-    DATA(t490) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t490) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t489 = zcl_lnt_st_combi_module=>tok( i_t = t490 ).
     CLEAR t488.
     IF t489 IS BOUND.
@@ -2512,10 +2513,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t494.
     CREATE OBJECT t494.
     t493 = t494.
-    DATA(t495) = CAST zlnt_runtime_arra_c22708faf2e3( t493 ).
+    DATA(t495) = t493.
     DATA t496 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t496.
-    DATA(t497) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t497) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t496.
     IF t497 IS BOUND.
       CREATE OBJECT t496.
@@ -2525,7 +2526,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t495->load( ).
     APPEND t496 TO t495->items.
     t495->save( ).
-    DATA(t498) = CAST zlnt_runtime_arra_c22708faf2e3( t493 ).
+    DATA(t498) = t493.
     DATA t499 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t499.
     DATA t500 TYPE REF TO zif_lnt_statement_runnable.
@@ -2538,7 +2539,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t503.
     DATA t504 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t504.
-    DATA(t505) = CONV string( |,| ).
+    DATA(t505) = |,|.
     CLEAR t504.
     CREATE OBJECT t504.
     t504->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2548,7 +2549,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t506.
     DATA t507 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t507.
-    DATA(t508) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t508) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t507.
     IF t508 IS BOUND.
       CREATE OBJECT t507.
@@ -2562,7 +2563,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t510.
     CREATE OBJECT t510.
     t509 = t510.
-    DATA(t511) = CAST zlnt_runtime_arra_c22708faf2e3( t509 ).
+    DATA(t511) = t509.
     DATA t512 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t512.
     DATA t513 TYPE REF TO zif_lnt_statement_runnable.
@@ -2575,7 +2576,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t516.
     DATA t517 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t517.
-    DATA(t518) = CONV string( |,| ).
+    DATA(t518) = |,|.
     CLEAR t517.
     CREATE OBJECT t517.
     t517->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2585,7 +2586,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t519.
     DATA t520 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t520.
-    DATA(t521) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t521) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t520.
     IF t521 IS BOUND.
       CREATE OBJECT t520.
@@ -2601,9 +2602,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t522 = t523.
     DATA t524 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t524.
-    DATA(t525) = CAST zlnt_runtime_dyna_a429568d5be8( t516 ).
-    DATA(t526) = CAST zlnt_runtime_dyna_a429568d5be8( t519 ).
-    DATA(t527) = CAST zlnt_runtime_arra_c22708faf2e3( t522 ).
+    DATA(t525) = t516.
+    DATA(t526) = t519.
+    DATA(t527) = t522.
     t524 = zcl_lnt_st_combi_module=>seq( i_first = t525 i_second = t526 i_rest = t527 ).
     t515 = t524.
     CLEAR t514.
@@ -2666,9 +2667,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t511->save( ).
     DATA t532 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t532.
-    DATA(t533) = CAST zlnt_runtime_dyna_a429568d5be8( t503 ).
-    DATA(t534) = CAST zlnt_runtime_dyna_a429568d5be8( t506 ).
-    DATA(t535) = CAST zlnt_runtime_arra_c22708faf2e3( t509 ).
+    DATA(t533) = t503.
+    DATA(t534) = t506.
+    DATA(t535) = t509.
     t532 = zcl_lnt_st_combi_module=>seq( i_first = t533 i_second = t534 i_rest = t535 ).
     t502 = t532.
     CLEAR t501.
@@ -2729,7 +2730,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t498->load( ).
     APPEND t499 TO t498->items.
     t498->save( ).
-    DATA(t540) = CAST zlnt_runtime_arra_c22708faf2e3( t493 ).
+    DATA(t540) = t493.
     DATA t541 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t541.
     DATA t542 TYPE REF TO zif_lnt_statement_runnable.
@@ -2768,10 +2769,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t540->load( ).
     APPEND t541 TO t540->items.
     t540->save( ).
-    DATA(t545) = CAST zlnt_runtime_arra_c22708faf2e3( t493 ).
+    DATA(t545) = t493.
     DATA t546 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t546.
-    DATA(t547) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t547) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t546.
     IF t547 IS BOUND.
       CREATE OBJECT t546.
@@ -2783,9 +2784,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t545->save( ).
     DATA t548 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t548.
-    DATA(t549) = CAST zlnt_runtime_dyna_a429568d5be8( t470 ).
-    DATA(t550) = CAST zlnt_runtime_dyna_a429568d5be8( t487 ).
-    DATA(t551) = CAST zlnt_runtime_arra_c22708faf2e3( t493 ).
+    DATA(t549) = t470.
+    DATA(t550) = t487.
+    DATA(t551) = t493.
     t548 = zcl_lnt_st_combi_module=>seq( i_first = t549 i_second = t550 i_rest = t551 ).
     t469 = t548.
     CLEAR t468.
@@ -2835,7 +2836,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t560 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t561) = CONV string( |v757| ).
+    DATA(t561) = |v757|.
     t559 = t560->get( p0 = t561 ).
     t558 = t559.
     CLEAR t557.
@@ -2879,7 +2880,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t569.
     DATA t570 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t570.
-    DATA(t571) = CONV string( |FIRST_VALUE| ).
+    DATA(t571) = |FIRST_VALUE|.
     CLEAR t570.
     CREATE OBJECT t570.
     t570->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2889,7 +2890,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t572.
     DATA t573 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t573.
-    DATA(t574) = CONV string( |LAST_VALUE| ).
+    DATA(t574) = |LAST_VALUE|.
     CLEAR t573.
     CREATE OBJECT t573.
     t573->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -2903,9 +2904,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t575 = t576.
     DATA t577 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t577.
-    DATA(t578) = CAST zlnt_runtime_dyna_a429568d5be8( t569 ).
-    DATA(t579) = CAST zlnt_runtime_dyna_a429568d5be8( t572 ).
-    DATA(t580) = CAST zlnt_runtime_arra_c22708faf2e3( t575 ).
+    DATA(t578) = t569.
+    DATA(t579) = t572.
+    DATA(t580) = t575.
     t577 = zcl_lnt_st_combi_module=>alt_prio( i_first = t578 i_second = t579 i_rest = t580 ).
     t568 = t577.
     CLEAR t567.
@@ -2942,7 +2943,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t584.
     DATA t585 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t585.
-    DATA(t586) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t586) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t585 = zcl_lnt_st_combi_module=>tok( i_t = t586 ).
     CLEAR t584.
     IF t585 IS BOUND.
@@ -2978,10 +2979,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t590.
     CREATE OBJECT t590.
     t589 = t590.
-    DATA(t591) = CAST zlnt_runtime_arra_c22708faf2e3( t589 ).
+    DATA(t591) = t589.
     DATA t592 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t592.
-    DATA(t593) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t593) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t592.
     IF t593 IS BOUND.
       CREATE OBJECT t592.
@@ -2991,7 +2992,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t591->load( ).
     APPEND t592 TO t591->items.
     t591->save( ).
-    DATA(t594) = CAST zlnt_runtime_arra_c22708faf2e3( t589 ).
+    DATA(t594) = t589.
     DATA t595 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t595.
     DATA t596 TYPE REF TO zif_lnt_statement_runnable.
@@ -3030,10 +3031,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t594->load( ).
     APPEND t595 TO t594->items.
     t594->save( ).
-    DATA(t599) = CAST zlnt_runtime_arra_c22708faf2e3( t589 ).
+    DATA(t599) = t589.
     DATA t600 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t600.
-    DATA(t601) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t601) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t600.
     IF t601 IS BOUND.
       CREATE OBJECT t600.
@@ -3045,9 +3046,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t599->save( ).
     DATA t602 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t602.
-    DATA(t603) = CAST zlnt_runtime_dyna_a429568d5be8( t566 ).
-    DATA(t604) = CAST zlnt_runtime_dyna_a429568d5be8( t583 ).
-    DATA(t605) = CAST zlnt_runtime_arra_c22708faf2e3( t589 ).
+    DATA(t603) = t566.
+    DATA(t604) = t583.
+    DATA(t605) = t589.
     t602 = zcl_lnt_st_combi_module=>seq( i_first = t603 i_second = t604 i_rest = t605 ).
     t565 = t602.
     CLEAR t564.
@@ -3097,7 +3098,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t614 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t615) = CONV string( |v757| ).
+    DATA(t615) = |v757|.
     t613 = t614->get( p0 = t615 ).
     t612 = t613.
     CLEAR t611.
@@ -3135,7 +3136,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t620.
     DATA t621 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t621.
-    DATA(t622) = CONV string( |STRING_AGG| ).
+    DATA(t622) = |STRING_AGG|.
     CLEAR t621.
     CREATE OBJECT t621.
     t621->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3147,7 +3148,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t624.
     DATA t625 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t625.
-    DATA(t626) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t626) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t625 = zcl_lnt_st_combi_module=>tok( i_t = t626 ).
     CLEAR t624.
     IF t625 IS BOUND.
@@ -3183,10 +3184,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t630.
     CREATE OBJECT t630.
     t629 = t630.
-    DATA(t631) = CAST zlnt_runtime_arra_c22708faf2e3( t629 ).
+    DATA(t631) = t629.
     DATA t632 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t632.
-    DATA(t633) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t633) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t632.
     IF t633 IS BOUND.
       CREATE OBJECT t632.
@@ -3196,7 +3197,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t631->load( ).
     APPEND t632 TO t631->items.
     t631->save( ).
-    DATA(t634) = CAST zlnt_runtime_arra_c22708faf2e3( t629 ).
+    DATA(t634) = t629.
     DATA t635 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t635.
     DATA t636 TYPE REF TO zif_lnt_statement_runnable.
@@ -3209,7 +3210,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t639.
     DATA t640 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t640.
-    DATA(t641) = CONV string( |,| ).
+    DATA(t641) = |,|.
     CLEAR t640.
     CREATE OBJECT t640.
     t640->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3219,7 +3220,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t642.
     DATA t643 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t643.
-    DATA(t644) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t644) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t643.
     IF t644 IS BOUND.
       CREATE OBJECT t643.
@@ -3235,9 +3236,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t645 = t646.
     DATA t647 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t647.
-    DATA(t648) = CAST zlnt_runtime_dyna_a429568d5be8( t639 ).
-    DATA(t649) = CAST zlnt_runtime_dyna_a429568d5be8( t642 ).
-    DATA(t650) = CAST zlnt_runtime_arra_c22708faf2e3( t645 ).
+    DATA(t648) = t639.
+    DATA(t649) = t642.
+    DATA(t650) = t645.
     t647 = zcl_lnt_st_combi_module=>seq( i_first = t648 i_second = t649 i_rest = t650 ).
     t638 = t647.
     CLEAR t637.
@@ -3298,7 +3299,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t634->load( ).
     APPEND t635 TO t634->items.
     t634->save( ).
-    DATA(t655) = CAST zlnt_runtime_arra_c22708faf2e3( t629 ).
+    DATA(t655) = t629.
     DATA t656 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t656.
     DATA t657 TYPE REF TO zif_lnt_statement_runnable.
@@ -3337,14 +3338,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t655->load( ).
     APPEND t656 TO t655->items.
     t655->save( ).
-    DATA(t660) = CAST zlnt_runtime_arra_c22708faf2e3( t629 ).
+    DATA(t660) = t629.
     DATA t661 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t661.
     DATA t662 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t662.
     DATA t663 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t663.
-    DATA(t664) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t664) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t663.
     IF t664 IS BOUND.
       CREATE OBJECT t663.
@@ -3384,9 +3385,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t660->save( ).
     DATA t667 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t667.
-    DATA(t668) = CAST zlnt_runtime_dyna_a429568d5be8( t620 ).
-    DATA(t669) = CAST zlnt_runtime_dyna_a429568d5be8( t623 ).
-    DATA(t670) = CAST zlnt_runtime_arra_c22708faf2e3( t629 ).
+    DATA(t668) = t620.
+    DATA(t669) = t623.
+    DATA(t670) = t629.
     t667 = zcl_lnt_st_combi_module=>seq( i_first = t668 i_second = t669 i_rest = t670 ).
     t619 = t667.
     CLEAR t618.
@@ -3436,7 +3437,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t679 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t680) = CONV string( |v757| ).
+    DATA(t680) = |v757|.
     t678 = t679->get( p0 = t680 ).
     t677 = t678.
     CLEAR t676.
@@ -3474,7 +3475,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t685.
     DATA t686 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t686.
-    DATA(t687) = CONV string( |NTILE| ).
+    DATA(t687) = |NTILE|.
     CLEAR t686.
     CREATE OBJECT t686.
     t686->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3486,7 +3487,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t689.
     DATA t690 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t690.
-    DATA(t691) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t691) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t690 = zcl_lnt_st_combi_module=>tok( i_t = t691 ).
     CLEAR t689.
     IF t690 IS BOUND.
@@ -3522,10 +3523,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t695.
     CREATE OBJECT t695.
     t694 = t695.
-    DATA(t696) = CAST zlnt_runtime_arra_c22708faf2e3( t694 ).
+    DATA(t696) = t694.
     DATA t697 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t697.
-    DATA(t698) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t698) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t697.
     IF t698 IS BOUND.
       CREATE OBJECT t697.
@@ -3535,7 +3536,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t696->load( ).
     APPEND t697 TO t696->items.
     t696->save( ).
-    DATA(t699) = CAST zlnt_runtime_arra_c22708faf2e3( t694 ).
+    DATA(t699) = t694.
     DATA t700 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t700.
     DATA t701 TYPE REF TO zif_lnt_statement_runnable.
@@ -3574,10 +3575,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t699->load( ).
     APPEND t700 TO t699->items.
     t699->save( ).
-    DATA(t704) = CAST zlnt_runtime_arra_c22708faf2e3( t694 ).
+    DATA(t704) = t694.
     DATA t705 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t705.
-    DATA(t706) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t706) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t705.
     IF t706 IS BOUND.
       CREATE OBJECT t705.
@@ -3589,9 +3590,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t704->save( ).
     DATA t707 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t707.
-    DATA(t708) = CAST zlnt_runtime_dyna_a429568d5be8( t685 ).
-    DATA(t709) = CAST zlnt_runtime_dyna_a429568d5be8( t688 ).
-    DATA(t710) = CAST zlnt_runtime_arra_c22708faf2e3( t694 ).
+    DATA(t708) = t685.
+    DATA(t709) = t688.
+    DATA(t710) = t694.
     t707 = zcl_lnt_st_combi_module=>seq( i_first = t708 i_second = t709 i_rest = t710 ).
     t684 = t707.
     CLEAR t683.
@@ -3641,7 +3642,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t719 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t720) = CONV string( |v757| ).
+    DATA(t720) = |v757|.
     t718 = t719->get( p0 = t720 ).
     t717 = t718.
     CLEAR t716.
@@ -3685,7 +3686,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t728.
     DATA t729 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t729.
-    DATA(t730) = CONV string( |CORR_SPEARMAN| ).
+    DATA(t730) = |CORR_SPEARMAN|.
     CLEAR t729.
     CREATE OBJECT t729.
     t729->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3695,7 +3696,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t731.
     DATA t732 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t732.
-    DATA(t733) = CONV string( |CORR| ).
+    DATA(t733) = |CORR|.
     CLEAR t732.
     CREATE OBJECT t732.
     t732->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3709,9 +3710,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t734 = t735.
     DATA t736 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t736.
-    DATA(t737) = CAST zlnt_runtime_dyna_a429568d5be8( t728 ).
-    DATA(t738) = CAST zlnt_runtime_dyna_a429568d5be8( t731 ).
-    DATA(t739) = CAST zlnt_runtime_arra_c22708faf2e3( t734 ).
+    DATA(t737) = t728.
+    DATA(t738) = t731.
+    DATA(t739) = t734.
     t736 = zcl_lnt_st_combi_module=>alt_prio( i_first = t737 i_second = t738 i_rest = t739 ).
     t727 = t736.
     CLEAR t726.
@@ -3748,7 +3749,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t743.
     DATA t744 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t744.
-    DATA(t745) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t745) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t744 = zcl_lnt_st_combi_module=>tok( i_t = t745 ).
     CLEAR t743.
     IF t744 IS BOUND.
@@ -3784,10 +3785,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t749.
     CREATE OBJECT t749.
     t748 = t749.
-    DATA(t750) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t750) = t748.
     DATA t751 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t751.
-    DATA(t752) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t752) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t751.
     IF t752 IS BOUND.
       CREATE OBJECT t751.
@@ -3797,10 +3798,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t750->load( ).
     APPEND t751 TO t750->items.
     t750->save( ).
-    DATA(t753) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t753) = t748.
     DATA t754 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t754.
-    DATA(t755) = CONV string( |,| ).
+    DATA(t755) = |,|.
     CLEAR t754.
     CREATE OBJECT t754.
     t754->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -3808,10 +3809,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t753->load( ).
     APPEND t754 TO t753->items.
     t753->save( ).
-    DATA(t756) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t756) = t748.
     DATA t757 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t757.
-    DATA(t758) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t758) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t757.
     IF t758 IS BOUND.
       CREATE OBJECT t757.
@@ -3821,7 +3822,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t756->load( ).
     APPEND t757 TO t756->items.
     t756->save( ).
-    DATA(t759) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t759) = t748.
     DATA t760 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t760.
     DATA t761 TYPE REF TO zif_lnt_statement_runnable.
@@ -3860,14 +3861,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t759->load( ).
     APPEND t760 TO t759->items.
     t759->save( ).
-    DATA(t764) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t764) = t748.
     DATA t765 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t765.
     DATA t766 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t766.
     DATA t767 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t767.
-    DATA(t768) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t768) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t767.
     IF t768 IS BOUND.
       CREATE OBJECT t767.
@@ -3907,9 +3908,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t764->save( ).
     DATA t771 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t771.
-    DATA(t772) = CAST zlnt_runtime_dyna_a429568d5be8( t725 ).
-    DATA(t773) = CAST zlnt_runtime_dyna_a429568d5be8( t742 ).
-    DATA(t774) = CAST zlnt_runtime_arra_c22708faf2e3( t748 ).
+    DATA(t772) = t725.
+    DATA(t773) = t742.
+    DATA(t774) = t748.
     t771 = zcl_lnt_st_combi_module=>seq( i_first = t772 i_second = t773 i_rest = t774 ).
     t724 = t771.
     CLEAR t723.
@@ -3959,7 +3960,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t783 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t784) = CONV string( |v757| ).
+    DATA(t784) = |v757|.
     t782 = t783->get( p0 = t784 ).
     t781 = t782.
     CLEAR t780.
@@ -4003,7 +4004,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t792.
     DATA t793 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t793.
-    DATA(t794) = CONV string( |PRODUCT| ).
+    DATA(t794) = |PRODUCT|.
     CLEAR t793.
     CREATE OBJECT t793.
     t793->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -4013,7 +4014,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t795.
     DATA t796 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t796.
-    DATA(t797) = CONV string( |MEDIAN| ).
+    DATA(t797) = |MEDIAN|.
     CLEAR t796.
     CREATE OBJECT t796.
     t796->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -4025,10 +4026,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t799.
     CREATE OBJECT t799.
     t798 = t799.
-    DATA(t800) = CAST zlnt_runtime_arra_c22708faf2e3( t798 ).
+    DATA(t800) = t798.
     DATA t801 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t801.
-    DATA(t802) = CONV string( |VAR| ).
+    DATA(t802) = |VAR|.
     CLEAR t801.
     CREATE OBJECT t801.
     t801->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -4036,10 +4037,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t800->load( ).
     APPEND t801 TO t800->items.
     t800->save( ).
-    DATA(t803) = CAST zlnt_runtime_arra_c22708faf2e3( t798 ).
+    DATA(t803) = t798.
     DATA t804 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t804.
-    DATA(t805) = CONV string( |STDDEV| ).
+    DATA(t805) = |STDDEV|.
     CLEAR t804.
     CREATE OBJECT t804.
     t804->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -4049,9 +4050,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t803->save( ).
     DATA t806 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t806.
-    DATA(t807) = CAST zlnt_runtime_dyna_a429568d5be8( t792 ).
-    DATA(t808) = CAST zlnt_runtime_dyna_a429568d5be8( t795 ).
-    DATA(t809) = CAST zlnt_runtime_arra_c22708faf2e3( t798 ).
+    DATA(t807) = t792.
+    DATA(t808) = t795.
+    DATA(t809) = t798.
     t806 = zcl_lnt_st_combi_module=>alt_prio( i_first = t807 i_second = t808 i_rest = t809 ).
     t791 = t806.
     CLEAR t790.
@@ -4088,7 +4089,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t813.
     DATA t814 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t814.
-    DATA(t815) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44 ).
+    DATA(t815) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
     t814 = zcl_lnt_st_combi_module=>tok( i_t = t815 ).
     CLEAR t813.
     IF t814 IS BOUND.
@@ -4124,10 +4125,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t819.
     CREATE OBJECT t819.
     t818 = t819.
-    DATA(t820) = CAST zlnt_runtime_arra_c22708faf2e3( t818 ).
+    DATA(t820) = t818.
     DATA t821 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t821.
-    DATA(t822) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463 ).
+    DATA(t822) = zlnt_runtime_desc_78196487750d=>zlnt_member_d281_992ebc392463.
     CLEAR t821.
     IF t822 IS BOUND.
       CREATE OBJECT t821.
@@ -4137,7 +4138,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t820->load( ).
     APPEND t821 TO t820->items.
     t820->save( ).
-    DATA(t823) = CAST zlnt_runtime_arra_c22708faf2e3( t818 ).
+    DATA(t823) = t818.
     DATA t824 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t824.
     DATA t825 TYPE REF TO zif_lnt_statement_runnable.
@@ -4176,14 +4177,14 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t823->load( ).
     APPEND t824 TO t823->items.
     t823->save( ).
-    DATA(t828) = CAST zlnt_runtime_arra_c22708faf2e3( t818 ).
+    DATA(t828) = t818.
     DATA t829 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t829.
     DATA t830 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t830.
     DATA t831 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t831.
-    DATA(t832) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006 ).
+    DATA(t832) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
     CLEAR t831.
     IF t832 IS BOUND.
       CREATE OBJECT t831.
@@ -4223,9 +4224,9 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t828->save( ).
     DATA t835 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t835.
-    DATA(t836) = CAST zlnt_runtime_dyna_a429568d5be8( t789 ).
-    DATA(t837) = CAST zlnt_runtime_dyna_a429568d5be8( t812 ).
-    DATA(t838) = CAST zlnt_runtime_arra_c22708faf2e3( t818 ).
+    DATA(t836) = t789.
+    DATA(t837) = t812.
+    DATA(t838) = t818.
     t835 = zcl_lnt_st_combi_module=>seq( i_first = t836 i_second = t837 i_rest = t838 ).
     t788 = t835.
     CLEAR t787.
@@ -4265,7 +4266,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t843.
     DATA t844 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t844.
-    DATA(t845) = CAST zif_lnt_statement_runnable( t406 ).
+    DATA(t845) = t406.
     CLEAR t844.
     IF t845 IS BOUND.
       DATA t846 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4298,7 +4299,7 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t848.
     DATA t849 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t849.
-    DATA(t850) = CAST zif_lnt_statement_runnable( t459 ).
+    DATA(t850) = t459.
     CLEAR t849.
     IF t850 IS BOUND.
       DATA t851 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4333,10 +4334,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     CLEAR t854.
     CREATE OBJECT t854.
     t853 = t854.
-    DATA(t855) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t855) = t853.
     DATA t856 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t856.
-    DATA(t857) = CAST zif_lnt_statement_runnable( t555 ).
+    DATA(t857) = t555.
     CLEAR t856.
     IF t857 IS BOUND.
       DATA t858 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4367,10 +4368,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t855->load( ).
     APPEND t856 TO t855->items.
     t855->save( ).
-    DATA(t860) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t860) = t853.
     DATA t861 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t861.
-    DATA(t862) = CAST zif_lnt_statement_runnable( t609 ).
+    DATA(t862) = t609.
     CLEAR t861.
     IF t862 IS BOUND.
       DATA t863 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4401,10 +4402,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t860->load( ).
     APPEND t861 TO t860->items.
     t860->save( ).
-    DATA(t865) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t865) = t853.
     DATA t866 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t866.
-    DATA(t867) = CAST zif_lnt_statement_runnable( t674 ).
+    DATA(t867) = t674.
     CLEAR t866.
     IF t867 IS BOUND.
       DATA t868 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4435,10 +4436,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t865->load( ).
     APPEND t866 TO t865->items.
     t865->save( ).
-    DATA(t870) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t870) = t853.
     DATA t871 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t871.
-    DATA(t872) = CAST zif_lnt_statement_runnable( t714 ).
+    DATA(t872) = t714.
     CLEAR t871.
     IF t872 IS BOUND.
       DATA t873 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4469,10 +4470,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t870->load( ).
     APPEND t871 TO t870->items.
     t870->save( ).
-    DATA(t875) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t875) = t853.
     DATA t876 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t876.
-    DATA(t877) = CAST zif_lnt_statement_runnable( t778 ).
+    DATA(t877) = t778.
     CLEAR t876.
     IF t877 IS BOUND.
       DATA t878 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4503,10 +4504,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t875->load( ).
     APPEND t876 TO t875->items.
     t875->save( ).
-    DATA(t880) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t880) = t853.
     DATA t881 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t881.
-    DATA(t882) = CAST zif_lnt_statement_runnable( t156 ).
+    DATA(t882) = t156.
     CLEAR t881.
     IF t882 IS BOUND.
       DATA t883 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4537,10 +4538,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t880->load( ).
     APPEND t881 TO t880->items.
     t880->save( ).
-    DATA(t885) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t885) = t853.
     DATA t886 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t886.
-    DATA(t887) = CAST zif_lnt_statement_runnable( t210 ).
+    DATA(t887) = t210.
     CLEAR t886.
     IF t887 IS BOUND.
       DATA t888 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4571,10 +4572,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t885->load( ).
     APPEND t886 TO t885->items.
     t885->save( ).
-    DATA(t890) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t890) = t853.
     DATA t891 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t891.
-    DATA(t892) = CAST zif_lnt_statement_runnable( t250 ).
+    DATA(t892) = t250.
     CLEAR t891.
     IF t892 IS BOUND.
       DATA t893 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4605,10 +4606,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t890->load( ).
     APPEND t891 TO t890->items.
     t890->save( ).
-    DATA(t895) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t895) = t853.
     DATA t896 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t896.
-    DATA(t897) = CAST zif_lnt_statement_runnable( t290 ).
+    DATA(t897) = t290.
     CLEAR t896.
     IF t897 IS BOUND.
       DATA t898 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4639,10 +4640,10 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t895->load( ).
     APPEND t896 TO t895->items.
     t895->save( ).
-    DATA(t900) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t900) = t853.
     DATA t901 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t901.
-    DATA(t902) = CAST zif_lnt_statement_runnable( t330 ).
+    DATA(t902) = t330.
     CLEAR t901.
     IF t902 IS BOUND.
       DATA t903 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -4675,20 +4676,22 @@ CLASS zcl_lnt_sql_aggregation IMPLEMENTATION.
     t900->save( ).
     DATA t905 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t905.
-    DATA(t906) = CAST zlnt_runtime_dyna_a429568d5be8( t843 ).
-    DATA(t907) = CAST zlnt_runtime_dyna_a429568d5be8( t848 ).
-    DATA(t908) = CAST zlnt_runtime_arra_c22708faf2e3( t853 ).
+    DATA(t906) = t843.
+    DATA(t907) = t848.
+    DATA(t908) = t853.
     t905 = zcl_lnt_st_combi_module=>alt_prio( i_first = t906 i_second = t907 i_rest = t908 ).
     t842 = t905.
     result = t842.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d284_6229eec94af2.
   ENDMETHOD.

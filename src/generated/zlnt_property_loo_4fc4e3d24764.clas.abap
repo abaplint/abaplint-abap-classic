@@ -251,6 +251,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
     CREATE OBJECT token48.
     token48 = zlnt_property_tok_d0ec64d8cfa1=>get( ).
   ENDMETHOD.
+
   METHOD get.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.
@@ -689,6 +690,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
         result = token48.
     ENDCASE.
   ENDMETHOD.
+
   METHOD own.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.
@@ -709,6 +711,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
     ENDIF.
     result = row-own.
   ENDMETHOD.
+
   METHOD has.
     DATA row TYPE entry.
     IF p0 IS NOT BOUND.

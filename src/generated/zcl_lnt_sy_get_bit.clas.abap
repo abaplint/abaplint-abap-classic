@@ -12,15 +12,15 @@ CLASS zcl_lnt_sy_get_bit DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_node ).
-    DATA(t2) = CAST zcl_lnt_syntax_input( i_input_967e ).
+    DATA(t1) = i_node.
+    DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
     DATA t4 TYPE REF TO zcl_lnt_abstract_type.
     CLEAR t4.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t7) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185 ).
+    DATA(t6) = t1.
+    DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t5 = t6->find_direct_expressions( i_type_9913 = t7 ).
     DATA t8 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t8.
@@ -50,16 +50,16 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
       CLEAR t13.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t14.
-      DATA(t15) = CONV abap_bool( abap_true ).
+      DATA(t15) = abap_true.
       IF t15 = abap_true.
-        DATA(t16) = CAST zcl_lnt_expression_node( t8 ).
+        DATA(t16) = t8.
         t14 = t16.
       ELSE.
         DATA t17 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t17.
         t14 = t17.
       ENDIF.
-      DATA(t18) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t18) = t2.
       DATA t19 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t19.
       DATA t20 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -73,7 +73,7 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
     ENDDO.
     DATA t23 TYPE abap_bool.
     DATA t24 TYPE abap_bool.
-    DATA(t25) = CAST zcl_lnt_abstract_type( t3 ).
+    DATA(t25) = t3.
     t24 = xsdbool( t25 IS BOUND ).
     t23 = t24.
     IF t24 = abap_true.
@@ -81,15 +81,15 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
       DATA(t27) = VALUE abap_bool( ).
       DATA t28 TYPE REF TO zcl_lnt_type_utils.
       DATA t29 TYPE REF TO zcl_lnt_current_scope.
-      DATA(t30) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t30) = t2.
       t29 = t30->scope.
       t28 = NEW zcl_lnt_type_utils( i_scope = t29 ).
       DATA t31 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t31.
-      DATA(t32) = CONV abap_bool( abap_true ).
+      DATA(t32) = abap_true.
       IF t32 = abap_true.
         DATA t33 TYPE REF TO zcl_lnt_abstract_type.
-        DATA(t34) = CAST zcl_lnt_abstract_type( t3 ).
+        DATA(t34) = t3.
         t33 = t34.
         t31 = t33.
       ELSE.
@@ -98,23 +98,23 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
         t31 = t35.
       ENDIF.
       t27 = t28->is_hex_like( i_type_9913 = t31 ).
-      DATA(t36) = CONV abap_bool( abap_false ).
+      DATA(t36) = abap_false.
       t26 = xsdbool( t27 = t36 ).
       t23 = t26.
     ENDIF.
     IF t23 = abap_true.
       DATA t37 TYPE string.
-      DATA(t38) = CONV string( |Input must be byte-like| ).
+      DATA(t38) = |Input must be byte-like|.
       t37 = t38.
       DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t40) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t40) = t2.
       t39 = t40->issues.
       DATA t41 TYPE REF TO zcl_lnt_issue.
-      DATA(t42) = CAST zcl_lnt_syntax_input( t2 ).
+      DATA(t42) = t2.
       DATA t43 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t44) = CAST zcl_lnt_statement_node( t1 ).
-      t43 = t44->get_first_token(  ).
-      DATA(t45) = CONV string( t37 ).
+      DATA(t44) = t1.
+      t43 = t44->get_first_token( ).
+      DATA(t45) = t37.
       DATA t46 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t46.
       t41 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t42 i_token = t43 i_message_26cb = t45 i_fix = t46 ).
@@ -124,8 +124,8 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t48) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t49) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494 ).
+    DATA(t48) = t1.
+    DATA(t49) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
     t47 = t48->find_direct_expressions( i_type_9913 = t49 ).
     DATA t50 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t50.
@@ -156,12 +156,12 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
       DATA t56 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t56.
       DATA t57 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t58) = CAST zcl_lnt_expression_node( t50 ).
+      DATA(t58) = t50.
       t57 = t58.
       DATA t59 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t59.
       DATA(t60) = VALUE abap_bool( ).
-      DATA(t61) = CAST zcl_lnt_expression_node( t57 ).
+      DATA(t61) = t57.
       IF t61 IS INITIAL.
         t60 = abap_true.
       ENDIF.
@@ -171,19 +171,19 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
         t59 = t62.
       ELSE.
         DATA t63 TYPE REF TO zcl_lnt_expression_node.
-        DATA(t64) = CAST zcl_lnt_expression_node( t57 ).
-        DATA(t65) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27 ).
+        DATA(t64) = t57.
+        DATA(t65) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
         t63 = t64->find_direct_expression( i_type_9913 = t65 ).
         t59 = t63.
       ENDIF.
       t56 = t59.
       t55 = t56.
       DATA t66 TYPE abap_bool.
-      DATA(t67) = CAST zcl_lnt_expression_node( t55 ).
+      DATA(t67) = t55.
       t66 = xsdbool( t67 IS BOUND ).
       IF t66 = abap_true.
-        DATA(t68) = CAST zcl_lnt_expression_node( t50 ).
-        DATA(t69) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t68) = t50.
+        DATA(t69) = t2.
         DATA t70 TYPE REF TO zcl_lnt_integer_type.
         DATA t71 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t71.
@@ -191,31 +191,37 @@ CLASS zcl_lnt_sy_get_bit IMPLEMENTATION.
         zcl_lnt_sy_inline_data=>run_syntax( i_node = t68 i_input_967e = t69 i_type_9913 = t70 ).
       ELSE.
         DATA t72 TYPE REF TO zcl_lnt_abstract_type.
-        DATA(t73) = CAST zcl_lnt_expression_node( t50 ).
-        DATA(t74) = CAST zcl_lnt_syntax_input( t2 ).
+        DATA(t73) = t50.
+        DATA(t74) = t2.
         t72 = zcl_lnt_sy_target=>run_syntax( i_node = t73 i_input_967e = t74 ).
       ENDIF.
     ENDDO.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d906_2d2a73eda936.
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement_syntax~run_syntax.
-    me->run_syntax(  i_node = i_node i_input_967e = i_input_967e ).
+    me->run_syntax( i_node = i_node i_input_967e = i_input_967e ).
   ENDMETHOD.
 ENDCLASS.

@@ -22,6 +22,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
     ENDIF.
   ENDMETHOD.
+
   METHOD whitespace.
     DATA ch TYPE c LENGTH 1.
     DATA cr TYPE c LENGTH 1.
@@ -34,6 +35,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDWHILE.
   ENDMETHOD.
+
   METHOD hex.
     DATA ch TYPE c LENGTH 1.
     DATA digit TYPE i.
@@ -51,6 +53,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       cursor = cursor + 1.
     ENDDO.
   ENDMETHOD.
+
   METHOD text.
     DATA ch TYPE string.
     DATA code TYPE i.
@@ -125,6 +128,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     ENDWHILE.
     RAISE EXCEPTION TYPE zlnt_exception_js_ebcc2df7d5e4.
   ENDMETHOD.
+
   METHOD value.
     DATA ch TYPE string.
     DATA key TYPE string.
@@ -236,6 +240,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
         ENDCASE.
     ENDCASE.
   ENDMETHOD.
+
   METHOD unicode_unit.
     DATA unit TYPE x LENGTH 2.
     DATA padding TYPE x LENGTH 2.

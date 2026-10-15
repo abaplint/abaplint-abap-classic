@@ -12,24 +12,26 @@ CLASS zcl_lnt_memory_file DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_fil
 ENDCLASS.
 CLASS zcl_lnt_memory_file IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CONV string( i_filename ).
-    DATA(t2) = CONV string( i_raw ).
-    DATA(t3) = CONV string( t1 ).
+    DATA(t1) = i_filename.
+    DATA(t2) = i_raw.
+    DATA(t3) = t1.
     super->constructor( i_filename = t3 ).
-    DATA(t4) = CONV string( t2 ).
+    DATA(t4) = t2.
     me->raw = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `raw`.
   ENDMETHOD.
+
   METHOD get_raw.
     DATA(t1) = CONV string( me->raw ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_raw_rows.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t2) = CONV string( me->raw ).
-    DATA(t3) = CONV string( |\n| ).
-    DATA(t4) = CONV i( strlen( t2 ) ).
+    DATA(t3) = |\n|.
+    DATA(t4) = strlen( t2 ).
     DATA t5 TYPE i.
     DATA(t6) = VALUE i( ).
     DATA(t7) = VALUE i( ).
@@ -65,14 +67,16 @@ CLASS zcl_lnt_memory_file IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1150_0e2ee585e933.
   ENDMETHOD.

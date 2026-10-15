@@ -10,8 +10,9 @@ CLASS zcl_lnt_sqlcte_hierarchy DEFINITION PUBLIC INHERITING FROM zcl_lnt_express
 ENDCLASS.
 CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -27,7 +28,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = CONV string( |v751| ).
+    DATA(t6) = |v751|.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     CLEAR t2.
@@ -65,7 +66,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
-    DATA(t13) = CONV string( |HIERARCHY| ).
+    DATA(t13) = |HIERARCHY|.
     CLEAR t12.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -75,7 +76,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d289_f424b1178837 ).
+    DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d289_f424b1178837.
     CLEAR t15.
     IF t16 IS BOUND.
       CREATE OBJECT t15.
@@ -89,7 +90,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t18.
     CREATE OBJECT t18.
     t17 = t18.
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t19) = t17.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     DATA t21 TYPE REF TO zif_lnt_statement_runnable.
@@ -102,7 +103,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t24.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t25.
-    DATA(t26) = CONV string( |WITH| ).
+    DATA(t26) = |WITH|.
     CLEAR t25.
     CREATE OBJECT t25.
     t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -112,7 +113,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t27.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t28.
-    DATA(t29) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c ).
+    DATA(t29) = zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c.
     CLEAR t28.
     IF t29 IS BOUND.
       CREATE OBJECT t28.
@@ -128,9 +129,9 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t30 = t31.
     DATA t32 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t32.
-    DATA(t33) = CAST zlnt_runtime_dyna_a429568d5be8( t24 ).
-    DATA(t34) = CAST zlnt_runtime_dyna_a429568d5be8( t27 ).
-    DATA(t35) = CAST zlnt_runtime_arra_c22708faf2e3( t30 ).
+    DATA(t33) = t24.
+    DATA(t34) = t27.
+    DATA(t35) = t30.
     t32 = zcl_lnt_st_combi_module=>seq( i_first = t33 i_second = t34 i_rest = t35 ).
     t23 = t32.
     CLEAR t22.
@@ -193,9 +194,9 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t19->save( ).
     DATA t40 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t40.
-    DATA(t41) = CAST zlnt_runtime_dyna_a429568d5be8( t11 ).
-    DATA(t42) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t43) = CAST zlnt_runtime_arra_c22708faf2e3( t17 ).
+    DATA(t41) = t11.
+    DATA(t42) = t14.
+    DATA(t43) = t17.
     t40 = zcl_lnt_st_combi_module=>seq( i_first = t41 i_second = t42 i_rest = t43 ).
     t10 = t40.
     CLEAR t9.
@@ -229,14 +230,16 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     CLEAR t46.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t46 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d307_fbcde215a988.
   ENDMETHOD.

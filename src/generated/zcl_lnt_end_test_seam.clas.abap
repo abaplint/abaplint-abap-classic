@@ -27,7 +27,7 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = CONV string( |v750| ).
+    DATA(t6) = |v750|.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     CLEAR t2.
@@ -61,7 +61,7 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
     CLEAR t9.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t10.
-    DATA(t11) = CONV string( |END-TEST-SEAM| ).
+    DATA(t11) = |END-TEST-SEAM|.
     t10 = zcl_lnt_st_combi_module=>str( i_s = t11 ).
     CLEAR t9.
     IF t10 IS BOUND.
@@ -92,7 +92,7 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zcl_lnt_iver_options.
     CLEAR t14.
-    DATA(t15) = CONV abap_bool( abap_true ).
+    DATA(t15) = abap_true.
     IF t15 = abap_true.
       DATA t16 TYPE REF TO zcl_lnt_iver_options.
       CLEAR t16.
@@ -100,9 +100,9 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
       CLEAR t17.
       DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t18.
-      DATA(t19) = CONV abap_bool( abap_true ).
+      DATA(t19) = abap_true.
       IF t19 = abap_true.
-        DATA(t20) = CONV string( |OpenABAP| ).
+        DATA(t20) = |OpenABAP|.
         DATA(t21) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t21->has = abap_true.
         t21->value = t20.
@@ -123,7 +123,7 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t16->zlnt_json_ownkeys_70e5fd461788.
       t16->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t24) = CONV string( |also| ).
+      DATA(t24) = |also|.
       DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t25.
       IF t16->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -137,29 +137,36 @@ CLASS zcl_lnt_end_test_seam IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t14 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d464_ff5a841fdaad.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

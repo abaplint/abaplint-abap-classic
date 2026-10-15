@@ -34,7 +34,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
       zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
     ENDIF.
     t6 = zcl_lnt_rl_index_module=>ns.
-    t5 = t6->keys(  ).
+    t5 = t6->keys( ).
     DATA(t7) = VALUE string( ).
     t5->dense( ).
     DATA(t8) = VALUE i( ).
@@ -63,7 +63,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
       ENDIF.
       t13 = zcl_lnt_rl_index_module=>ns.
-      DATA(t14) = CONV string( t7 ).
+      DATA(t14) = t7.
       t12 = t13->get( p0 = t14 ).
       t11 = t12.
       DATA t15 TYPE REF TO object.
@@ -86,7 +86,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         ENDTRY.
       ENDIF.
       IF t16 = abap_true.
-        DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+        DATA(t19) = t1.
         DATA t20 TYPE REF TO zif_lnt_rule.
         CLEAR t20.
         DATA t21 TYPE REF TO object.
@@ -98,22 +98,26 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         t19->save( ).
       ENDIF.
     ENDDO.
-    DATA(t22) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t22) = t1.
     result = t22.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1068_c1f83dd7e96f.
   ENDMETHOD.

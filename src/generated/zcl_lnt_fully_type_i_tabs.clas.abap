@@ -19,29 +19,30 @@ ENDCLASS.
 CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_fully_type_i_tabs_conf(  ).
+    DATA(t1) = NEW zcl_lnt_fully_type_i_tabs_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |fully_type_itabs| ).
+    DATA(t3) = |fully_type_itabs|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Fully type internal tables| ).
+    DATA(t5) = |Fully type internal tables|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |No implict table types or table keys| ).
+    DATA(t7) = |No implict table types or table keys|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea| ).
+      DATA(t11) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
       t11 = t11 && |nABAP.md#use-the-right-table-type\nhttps://github.com/SAP/sty|.
       t11 = t11 && |leguides/blob/main/clean-abap/CleanABAP.md#avoid-default-key|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -58,9 +59,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
-      DATA(t17) = CONV string( |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL| ).
+      DATA(t17) = |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL|.
       t17 = t17 && |E OF ty.|.
       DATA(t18) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t18->has = abap_true.
@@ -76,9 +77,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
     CLEAR t20.
     DATA t21 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t21.
-    DATA(t22) = CONV abap_bool( abap_true ).
+    DATA(t22) = abap_true.
     IF t22 = abap_true.
-      DATA(t23) = CONV string( |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.| ).
+      DATA(t23) = |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.|.
       DATA(t24) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t24->has = abap_true.
       t24->value = t23.
@@ -93,19 +94,19 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
     CLEAR t26.
     DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t27.
-    DATA(t28) = CONV abap_bool( abap_true ).
+    DATA(t28) = abap_true.
     IF t28 = abap_true.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t31 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
-      DATA(t33) = CONV string( |SingleFile| ).
+      DATA(t32) = t30.
+      DATA(t33) = |SingleFile|.
       t32->load( ).
       APPEND t33 TO t32->items.
       t32->save( ).
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t34) = t30.
       t29 = t34.
       t27 = t29.
     ELSE.
@@ -162,74 +163,77 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = CONV string( |key| ).
+    DATA(t47) = |key|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t48.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
     ENDIF.
-    DATA(t49) = CONV string( |title| ).
+    DATA(t49) = |title|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t50.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
     ENDIF.
-    DATA(t51) = CONV string( |shortDescription| ).
+    DATA(t51) = |shortDescription|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t52.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
     ENDIF.
-    DATA(t53) = CONV string( |extendedInformation| ).
+    DATA(t53) = |extendedInformation|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t54.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
     ENDIF.
-    DATA(t55) = CONV string( |badExample| ).
+    DATA(t55) = |badExample|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t56.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
     ENDIF.
-    DATA(t57) = CONV string( |goodExample| ).
+    DATA(t57) = |goodExample|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t58.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
     ENDIF.
-    DATA(t59) = CONV string( |tags| ).
+    DATA(t59) = |tags|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t60.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_f_t_it_ts_fl_ty_i_tb.
-    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_f_t_it_ts_fl_ty_i_tb.
-    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_fully_type_i_tabs_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_f_t_it_ts_fl_ty_i_tb.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t6) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = CAST zcl_lnt_abap_file( t5 ).
+    DATA(t8) = t5.
     t7 = t8->statements.
     t4 = t7.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
@@ -260,15 +264,15 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       DATA t15 TYPE abap_bool.
       DATA t16 TYPE abap_bool.
       DATA t17 TYPE REF TO zif_lnt_statement.
-      DATA(t18) = CAST zcl_lnt_statement_node( t9 ).
-      t17 = t18->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      DATA(t18) = t9.
+      t17 = t18->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t16 = xsdbool( t17 IS BOUND AND t17 IS INSTANCE OF zcl_lnt_st_data ).
       t15 = t16.
       IF t16 = abap_false.
         DATA t19 TYPE abap_bool.
         DATA t20 TYPE REF TO zif_lnt_statement.
-        DATA(t21) = CAST zcl_lnt_statement_node( t9 ).
-        t20 = t21->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t21) = t9.
+        t20 = t21->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t19 = xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_st_statem_type ).
         t15 = t19.
       ENDIF.
@@ -278,20 +282,20 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       ENDIF.
       DATA t22 TYPE REF TO zcl_lnt_expression_node.
       DATA t23 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t24) = CAST zcl_lnt_statement_node( t9 ).
-      DATA(t25) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d151_c07675a56057 ).
+      DATA(t24) = t9.
+      DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d151_c07675a56057.
       t23 = t24->find_first_expression( i_type_9913 = t25 ).
       t22 = t23.
       DATA(t26) = VALUE abap_bool( ).
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t28) = CAST zcl_lnt_expression_node( t22 ).
+      DATA(t28) = t22.
       t27 = t28.
       DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t30.
       t29 = t30.
       DATA(t31) = VALUE abap_bool( ).
-      DATA(t32) = CAST zcl_lnt_expression_node( t27 ).
+      DATA(t32) = t27.
       IF t32 IS INITIAL.
         t31 = abap_true.
       ENDIF.
@@ -303,10 +307,10 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       DATA t34 TYPE string.
       DATA t35 TYPE string.
       DATA t36 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t37) = CAST zcl_lnt_expression_node( t22 ).
+      DATA(t37) = t22.
       t36 = t37.
-      t35 = t36->concat_tokens(  ).
-      DATA(t38) = CONV i( strlen( t35 ) ).
+      t35 = t36->concat_tokens( ).
+      DATA(t38) = strlen( t35 ).
       t34 = t35.
       IF t34 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t34 TO UPPER CASE.
@@ -316,9 +320,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       t33 = t34.
       DATA(t39) = VALUE abap_bool( ).
       DATA(t40) = VALUE i( ).
-      DATA(t41) = CONV string( t33 ).
-      DATA(t42) = CONV string( |TYPE TABLE OF| ).
-      DATA(t43) = CONV i( strlen( t41 ) ).
+      DATA(t41) = t33.
+      DATA(t42) = |TYPE TABLE OF|.
+      DATA(t43) = strlen( t41 ).
       IF t42 IS INITIAL.
         t40 = 0.
       ELSE.
@@ -327,48 +331,48 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
           t40 = -1.
         ENDIF.
       ENDIF.
-      DATA(t44) = CONV i( 0 ).
+      DATA(t44) = 0.
       t39 = xsdbool( t40 >= t44 ).
       IF t39 = abap_true.
         DATA t45 TYPE string.
-        DATA(t46) = CONV string( |Specify table type| ).
+        DATA(t46) = |Specify table type|.
         t45 = t46.
-        DATA(t47) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t47) = t2.
         DATA t48 TYPE REF TO zcl_lnt_issue.
         CLEAR t48.
-        DATA(t49) = CAST zcl_lnt_abap_file( t1 ).
+        DATA(t49) = t1.
         DATA t50 TYPE REF TO zcl_lnt_position.
         DATA t51 TYPE REF TO zcl_lnt_abstract_token.
         DATA t52 TYPE REF TO zcl_lnt_abstract_token.
         DATA t53 TYPE REF TO zcl_lnt_expression_node.
-        DATA(t54) = CAST zcl_lnt_expression_node( t22 ).
+        DATA(t54) = t22.
         t53 = t54.
-        t52 = t53->get_first_token(  ).
+        t52 = t53->get_first_token( ).
         t51 = t52.
         DATA t55 TYPE REF TO zcl_lnt_position.
-        DATA(t56) = CAST zcl_lnt_abstract_token( t51 ).
+        DATA(t56) = t51.
         t55 = t56->start.
         t50 = t55.
-        DATA(t57) = CONV string( t45 ).
+        DATA(t57) = t45.
         DATA(t58) = VALUE string( ).
         DATA t59 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t59.
         DATA t60 TYPE string.
-        DATA(t61) = CONV string( |fully_type_itabs| ).
+        DATA(t61) = |fully_type_itabs|.
         t60 = t61.
         DATA t62 TYPE string.
-        DATA(t63) = CONV string( |Fully type internal tables| ).
+        DATA(t63) = |Fully type internal tables|.
         t62 = t63.
         DATA t64 TYPE string.
-        DATA(t65) = CONV string( |No implict table types or table keys| ).
+        DATA(t65) = |No implict table types or table keys|.
         t64 = t65.
         DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t66.
         DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t67.
-        DATA(t68) = CONV abap_bool( abap_true ).
+        DATA(t68) = abap_true.
         IF t68 = abap_true.
-          DATA(t69) = CONV string( |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea| ).
+          DATA(t69) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
           t69 = t69 && |nABAP.md#use-the-right-table-type\nhttps://github.com/SAP/sty|.
           t69 = t69 && |leguides/blob/main/clean-abap/CleanABAP.md#avoid-default-key|.
           DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -385,9 +389,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         CLEAR t72.
         DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t73.
-        DATA(t74) = CONV abap_bool( abap_true ).
+        DATA(t74) = abap_true.
         IF t74 = abap_true.
-          DATA(t75) = CONV string( |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL| ).
+          DATA(t75) = |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL|.
           t75 = t75 && |E OF ty.|.
           DATA(t76) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t76->has = abap_true.
@@ -403,9 +407,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         CLEAR t78.
         DATA t79 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t79.
-        DATA(t80) = CONV abap_bool( abap_true ).
+        DATA(t80) = abap_true.
         IF t80 = abap_true.
-          DATA(t81) = CONV string( |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.| ).
+          DATA(t81) = |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.|.
           DATA(t82) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t82->has = abap_true.
           t82->value = t81.
@@ -420,19 +424,19 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         CLEAR t84.
         DATA t85 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t85.
-        DATA(t86) = CONV abap_bool( abap_true ).
+        DATA(t86) = abap_true.
         IF t86 = abap_true.
           DATA t87 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t88 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t89 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t89.
           t88 = t89.
-          DATA(t90) = CAST zlnt_runtime_arra_8ecd6afe19e0( t88 ).
-          DATA(t91) = CONV string( |SingleFile| ).
+          DATA(t90) = t88.
+          DATA(t91) = |SingleFile|.
           t90->load( ).
           APPEND t91 TO t90->items.
           t90->save( ).
-          DATA(t92) = CAST zlnt_runtime_arra_8ecd6afe19e0( t88 ).
+          DATA(t92) = t88.
           t87 = t92.
           t85 = t87.
         ELSE.
@@ -489,43 +493,43 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t59->zlnt_json_ownkeys_70e5fd461788.
         t59->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t105) = CONV string( |key| ).
+        DATA(t105) = |key|.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t106.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
         ENDIF.
-        DATA(t107) = CONV string( |title| ).
+        DATA(t107) = |title|.
         DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t108.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
         ENDIF.
-        DATA(t109) = CONV string( |shortDescription| ).
+        DATA(t109) = |shortDescription|.
         DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t110.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t109 p1 = t110 ).
         ENDIF.
-        DATA(t111) = CONV string( |extendedInformation| ).
+        DATA(t111) = |extendedInformation|.
         DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t112.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t111 p1 = t112 ).
         ENDIF.
-        DATA(t113) = CONV string( |badExample| ).
+        DATA(t113) = |badExample|.
         DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t114.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
         ENDIF.
-        DATA(t115) = CONV string( |goodExample| ).
+        DATA(t115) = |goodExample|.
         DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t116.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t115 p1 = t116 ).
         ENDIF.
-        DATA(t117) = CONV string( |tags| ).
+        DATA(t117) = |tags|.
         DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t118.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -533,7 +537,7 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         ENDIF.
         t58 = t59->key.
         DATA t119 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t120) = CAST zcl_lnt_fully_type_i_tabs_conf( me->conf ).
+        DATA(t120) = me->conf.
         t119 = t120->zlnt_view_read_sr_15c06369f827( ).
         DATA t121 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t121.
@@ -544,9 +548,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       ELSE.
         DATA(t122) = VALUE abap_bool( ).
         DATA(t123) = VALUE i( ).
-        DATA(t124) = CONV string( t33 ).
-        DATA(t125) = CONV string( | TABLE FOR | ).
-        DATA(t126) = CONV i( strlen( t124 ) ).
+        DATA(t124) = t33.
+        DATA(t125) = | TABLE FOR |.
+        DATA(t126) = strlen( t124 ).
         IF t125 IS INITIAL.
           t123 = 0.
         ELSE.
@@ -555,7 +559,7 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             t123 = -1.
           ENDIF.
         ENDIF.
-        DATA(t127) = CONV i( 0 ).
+        DATA(t127) = 0.
         t122 = xsdbool( t123 >= t127 ).
         IF t122 = abap_true.
           CONTINUE.
@@ -564,9 +568,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
           DATA(t129) = VALUE abap_bool( ).
           DATA(t130) = VALUE abap_bool( ).
           DATA(t131) = VALUE i( ).
-          DATA(t132) = CONV string( t33 ).
-          DATA(t133) = CONV string( | WITH | ).
-          DATA(t134) = CONV i( strlen( t132 ) ).
+          DATA(t132) = t33.
+          DATA(t133) = | WITH |.
+          DATA(t134) = strlen( t132 ).
           IF t133 IS INITIAL.
             t131 = 0.
           ELSE.
@@ -575,18 +579,18 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
               t131 = -1.
             ENDIF.
           ENDIF.
-          DATA(t135) = CONV i( 0 ).
+          DATA(t135) = 0.
           t130 = xsdbool( t131 >= t135 ).
-          DATA(t136) = CONV abap_bool( abap_false ).
+          DATA(t136) = abap_false.
           t129 = xsdbool( t130 = t136 ).
           t128 = t129.
           IF t129 = abap_true.
             DATA(t137) = VALUE abap_bool( ).
             DATA(t138) = VALUE abap_bool( ).
             DATA(t139) = VALUE i( ).
-            DATA(t140) = CONV string( t33 ).
-            DATA(t141) = CONV string( | RANGE OF | ).
-            DATA(t142) = CONV i( strlen( t140 ) ).
+            DATA(t140) = t33.
+            DATA(t141) = | RANGE OF |.
+            DATA(t142) = strlen( t140 ).
             IF t141 IS INITIAL.
               t139 = 0.
             ELSE.
@@ -595,52 +599,52 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
                 t139 = -1.
               ENDIF.
             ENDIF.
-            DATA(t143) = CONV i( 0 ).
+            DATA(t143) = 0.
             t138 = xsdbool( t139 >= t143 ).
-            DATA(t144) = CONV abap_bool( abap_false ).
+            DATA(t144) = abap_false.
             t137 = xsdbool( t138 = t144 ).
             t128 = t137.
           ENDIF.
           IF t128 = abap_true.
             DATA t145 TYPE string.
-            DATA(t146) = CONV string( |Specify table key| ).
+            DATA(t146) = |Specify table key|.
             t145 = t146.
-            DATA(t147) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+            DATA(t147) = t2.
             DATA t148 TYPE REF TO zcl_lnt_issue.
             CLEAR t148.
-            DATA(t149) = CAST zcl_lnt_abap_file( t1 ).
+            DATA(t149) = t1.
             DATA t150 TYPE REF TO zcl_lnt_position.
             DATA t151 TYPE REF TO zcl_lnt_abstract_token.
             DATA t152 TYPE REF TO zcl_lnt_abstract_token.
             DATA t153 TYPE REF TO zcl_lnt_expression_node.
-            DATA(t154) = CAST zcl_lnt_expression_node( t22 ).
+            DATA(t154) = t22.
             t153 = t154.
-            t152 = t153->get_first_token(  ).
+            t152 = t153->get_first_token( ).
             t151 = t152.
             DATA t155 TYPE REF TO zcl_lnt_position.
-            DATA(t156) = CAST zcl_lnt_abstract_token( t151 ).
+            DATA(t156) = t151.
             t155 = t156->start.
             t150 = t155.
-            DATA(t157) = CONV string( t145 ).
+            DATA(t157) = t145.
             DATA(t158) = VALUE string( ).
             DATA t159 TYPE REF TO zcl_lnt_irule_metadata.
             CLEAR t159.
             DATA t160 TYPE string.
-            DATA(t161) = CONV string( |fully_type_itabs| ).
+            DATA(t161) = |fully_type_itabs|.
             t160 = t161.
             DATA t162 TYPE string.
-            DATA(t163) = CONV string( |Fully type internal tables| ).
+            DATA(t163) = |Fully type internal tables|.
             t162 = t163.
             DATA t164 TYPE string.
-            DATA(t165) = CONV string( |No implict table types or table keys| ).
+            DATA(t165) = |No implict table types or table keys|.
             t164 = t165.
             DATA t166 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t166.
             DATA t167 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t167.
-            DATA(t168) = CONV abap_bool( abap_true ).
+            DATA(t168) = abap_true.
             IF t168 = abap_true.
-              DATA(t169) = CONV string( |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea| ).
+              DATA(t169) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
               t169 = t169 && |nABAP.md#use-the-right-table-type\nhttps://github.com/SAP/sty|.
               t169 = t169 && |leguides/blob/main/clean-abap/CleanABAP.md#avoid-default-key|.
               DATA(t170) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -657,9 +661,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             CLEAR t172.
             DATA t173 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t173.
-            DATA(t174) = CONV abap_bool( abap_true ).
+            DATA(t174) = abap_true.
             IF t174 = abap_true.
-              DATA(t175) = CONV string( |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL| ).
+              DATA(t175) = |DATA lt_foo TYPE TABLE OF ty.\nDATA lt_bar TYPE STANDARD TABL|.
               t175 = t175 && |E OF ty.|.
               DATA(t176) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t176->has = abap_true.
@@ -675,9 +679,9 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             CLEAR t178.
             DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t179.
-            DATA(t180) = CONV abap_bool( abap_true ).
+            DATA(t180) = abap_true.
             IF t180 = abap_true.
-              DATA(t181) = CONV string( |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.| ).
+              DATA(t181) = |DATA lt_foo TYPE STANDARD TABLE OF ty WITH EMPTY KEY.|.
               DATA(t182) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t182->has = abap_true.
               t182->value = t181.
@@ -692,19 +696,19 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             CLEAR t184.
             DATA t185 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t185.
-            DATA(t186) = CONV abap_bool( abap_true ).
+            DATA(t186) = abap_true.
             IF t186 = abap_true.
               DATA t187 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               DATA t188 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               DATA t189 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CREATE OBJECT t189.
               t188 = t189.
-              DATA(t190) = CAST zlnt_runtime_arra_8ecd6afe19e0( t188 ).
-              DATA(t191) = CONV string( |SingleFile| ).
+              DATA(t190) = t188.
+              DATA(t191) = |SingleFile|.
               t190->load( ).
               APPEND t191 TO t190->items.
               t190->save( ).
-              DATA(t192) = CAST zlnt_runtime_arra_8ecd6afe19e0( t188 ).
+              DATA(t192) = t188.
               t187 = t192.
               t185 = t187.
             ELSE.
@@ -761,43 +765,43 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t159->zlnt_json_ownkeys_70e5fd461788.
             t159->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t205) = CONV string( |key| ).
+            DATA(t205) = |key|.
             DATA t206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t206.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t205 p1 = t206 ).
             ENDIF.
-            DATA(t207) = CONV string( |title| ).
+            DATA(t207) = |title|.
             DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t208.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
             ENDIF.
-            DATA(t209) = CONV string( |shortDescription| ).
+            DATA(t209) = |shortDescription|.
             DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t210.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t209 p1 = t210 ).
             ENDIF.
-            DATA(t211) = CONV string( |extendedInformation| ).
+            DATA(t211) = |extendedInformation|.
             DATA t212 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t212.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t211 p1 = t212 ).
             ENDIF.
-            DATA(t213) = CONV string( |badExample| ).
+            DATA(t213) = |badExample|.
             DATA t214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t214.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t213 p1 = t214 ).
             ENDIF.
-            DATA(t215) = CONV string( |goodExample| ).
+            DATA(t215) = |goodExample|.
             DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t216.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
               t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t215 p1 = t216 ).
             ENDIF.
-            DATA(t217) = CONV string( |tags| ).
+            DATA(t217) = |tags|.
             DATA t218 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t218.
             IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -805,7 +809,7 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             ENDIF.
             t158 = t159->key.
             DATA t219 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            DATA(t220) = CAST zcl_lnt_fully_type_i_tabs_conf( me->conf ).
+            DATA(t220) = me->conf.
             t219 = t220->zlnt_view_read_sr_15c06369f827( ).
             DATA t221 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             CLEAR t221.
@@ -817,20 +821,23 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA(t222) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t222) = t2.
     result = t222.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( me->g_c_i_s_r_f_t_it_ts_fl_ty_i_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( me->g_c_i_s_r_f_t_it_ts_fl_ty_i_tb( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( me->g_c_i_s_r_f_t_it_ts_fl_ty_i_tb(  ) ).
+    DATA(t1) = CAST zcl_lnt_fully_type_i_tabs_conf( me->g_c_i_s_r_f_t_it_ts_fl_ty_i_tb( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_fully_type_i_tabs_conf.
     CLEAR t1.
@@ -862,19 +869,22 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_f_t_it_ts_fl_ty_i_tb( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_f_t_it_ts_fl_ty_i_tb( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1516_8d2e666f6124.
   ENDMETHOD.

@@ -10,19 +10,22 @@ CLASS zcl_lnt_st_source_field_symbol DEFINITION PUBLIC INHERITING FROM zcl_lnt_e
 ENDCLASS.
 CLASS zcl_lnt_st_source_field_symbol IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
-    DATA(t1) = NEW zcl_lnt_st_expres_field_symbol(  ).
+    DATA(t1) = NEW zcl_lnt_st_expres_field_symbol( ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d170_d4b536f00e50.
   ENDMETHOD.

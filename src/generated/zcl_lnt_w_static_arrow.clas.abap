@@ -10,23 +10,26 @@ CLASS zcl_lnt_w_static_arrow DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_
 ENDCLASS.
 CLASS zcl_lnt_w_static_arrow IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_position( i_start ).
-    DATA(t2) = CONV string( i_str ).
-    DATA(t3) = CAST zcl_lnt_position( t1 ).
-    DATA(t4) = CONV string( t2 ).
+    DATA(t1) = i_start.
+    DATA(t2) = i_str.
+    DATA(t3) = t1.
+    DATA(t4) = t2.
     super->constructor( i_start = t3 i_str = t4 ).
   ENDMETHOD.
+
   METHOD railroad.
-    DATA(t1) = CONV string( | =>| ).
+    DATA(t1) = | =>|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d58_65527297cce1a0.
   ENDMETHOD.

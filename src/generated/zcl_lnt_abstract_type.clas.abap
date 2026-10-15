@@ -25,26 +25,28 @@ CLASS zcl_lnt_abstract_type DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( i_input_967e ).
-    DATA(t2) = CAST zcl_lnt_abstract_type_data( t1 ).
+    DATA(t1) = i_input_967e.
+    DATA(t2) = t1.
     me->data_56cc = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `data`.
   ENDMETHOD.
+
   METHOD get_abstract_type_data.
-    DATA(t1) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t1) = me->data_56cc.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_qualified_name.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -55,25 +57,26 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->zlnt_view_read_sr_c978da49ae47( ).
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_rtti_name.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -84,25 +87,26 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->zlnt_view_read_sr_a5933bdf8829( ).
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_description.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -113,25 +117,26 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->zlnt_view_read_sr_b2a3e27508db( ).
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_conversion_exit.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -142,25 +147,26 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->zlnt_view_read_sr_dfbdd4b4a00f( ).
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_ddic_name.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA(t3) = CAST zcl_lnt_abstract_type_data( me->data_56cc ).
+    DATA(t3) = me->data_56cc.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t4.
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = CAST zcl_lnt_abstract_type_data( t2 ).
+    DATA(t6) = t2.
     IF t6 IS INITIAL.
       t5 = abap_true.
     ENDIF.
@@ -171,33 +177,39 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     ELSE.
       DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA(t10) = CAST zcl_lnt_abstract_type_data( t2 ).
+      DATA(t10) = t2.
       t9 = t10.
       t8 = t9->zlnt_view_read_sr_19ee0de30d00( ).
       t4 = t8.
     ENDIF.
     t1 = t4.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1015_9f7859f16d8d.
   ENDMETHOD.
+
   METHOD zif_lnt_union_ea265422~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_b6d4892d~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

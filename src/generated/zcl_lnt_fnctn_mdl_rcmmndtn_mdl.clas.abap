@@ -13,7 +13,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
   METHOD resolve_release.
-    DATA(t1) = CONV string( i_from ).
+    DATA(t1) = i_from.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zcl_lnt_abap_release.
     CLEAR t3.
@@ -25,7 +25,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = CONV string( t1 ).
+    DATA(t6) = t1.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -35,7 +35,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
     t7 = t8.
     DATA(t9) = VALUE abap_bool( ).
     DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = CAST zcl_lnt_abap_release( t3 ).
+    DATA(t11) = t3.
     IF t11 IS INITIAL.
       t10 = abap_true.
     ENDIF.
@@ -50,7 +50,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
         zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
       ENDIF.
       t13 = zcl_lnt_version_module=>release_b8cd.
-      DATA(t14) = CONV string( t1 ).
+      DATA(t14) = t1.
       t12 = t13->get( p0 = t14 ).
       result = t12.
       RETURN.
@@ -60,11 +60,11 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
     TRY.
         DATA t16 TYPE REF TO zcl_lnt_abap_release.
         CLEAR t16.
-        DATA(t17) = CONV abap_bool( abap_true ).
+        DATA(t17) = abap_true.
         IF t17 = abap_true.
           DATA t18 TYPE REF TO zcl_lnt_abap_release.
           CLEAR t18.
-          DATA(t19) = CONV string( t1 ).
+          DATA(t19) = t1.
           t18 = zcl_lnt_version_module=>version_to_abap_release( i_v = t19 ).
           t16 = t18.
         ELSE.
@@ -75,31 +75,36 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
         result = t16.
         RETURN.
       CATCH zlnt_exception_cl_30eec8e8805d INTO t15.
-        DATA(t21) = CAST zcl_lnt_builtin_e8b3bd7e( t15->payload ).
+        DATA(t21) = t15->payload.
         DATA t22 TYPE REF TO zcl_lnt_abap_release.
         CLEAR t22.
         result = t22.
         RETURN.
     ENDTRY.
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_bbc75f437615.
     IF zlnt_builtin_init_2ff71e38d1e6 = abap_true.
       RETURN.
     ENDIF.
     zlnt_builtin_init_2ff71e38d1e6 = abap_true.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1933_12c4c7596615.
   ENDMETHOD.

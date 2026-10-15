@@ -30,13 +30,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t4) = t2.
     DATA t5 TYPE REF TO zcl_lnt_recommendations.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |CALCULATE_HASH_FOR_CHAR| ).
+    DATA(t7) = |CALCULATE_HASH_FOR_CHAR|.
     t6 = t7.
     DATA t8 TYPE string.
-    DATA(t9) = CONV string( |use CL_ABAP_MESSAGE_DIGEST| ).
+    DATA(t9) = |use CL_ABAP_MESSAGE_DIGEST|.
     t8 = t9.
     DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -57,13 +57,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t14) = CONV string( |name| ).
+    DATA(t14) = |name|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
     ENDIF.
-    DATA(t16) = CONV string( |replace| ).
+    DATA(t16) = |replace|.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t17.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -72,13 +72,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t4->load( ).
     APPEND t5 TO t4->items.
     t4->save( ).
-    DATA(t18) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t18) = t2.
     DATA t19 TYPE REF TO zcl_lnt_recommendations.
     DATA t20 TYPE string.
-    DATA(t21) = CONV string( |CALCULATE_HASH_FOR_RAW| ).
+    DATA(t21) = |CALCULATE_HASH_FOR_RAW|.
     t20 = t21.
     DATA t22 TYPE string.
-    DATA(t23) = CONV string( |use CL_ABAP_HMAC or CL_ABAP_MESSAGE_DIGEST| ).
+    DATA(t23) = |use CL_ABAP_HMAC or CL_ABAP_MESSAGE_DIGEST|.
     t22 = t23.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -99,13 +99,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t19->zlnt_json_ownkeys_70e5fd461788.
     t19->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t28) = CONV string( |name| ).
+    DATA(t28) = |name|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t28 p1 = t29 ).
     ENDIF.
-    DATA(t30) = CONV string( |replace| ).
+    DATA(t30) = |replace|.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t31.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -114,13 +114,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t18->load( ).
     APPEND t19 TO t18->items.
     t18->save( ).
-    DATA(t32) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t32) = t2.
     DATA t33 TYPE REF TO zcl_lnt_recommendations.
     DATA t34 TYPE string.
-    DATA(t35) = CONV string( |CCU_TIMESTAMP_DIFFERENCE| ).
+    DATA(t35) = |CCU_TIMESTAMP_DIFFERENCE|.
     t34 = t35.
     DATA t36 TYPE string.
-    DATA(t37) = CONV string( |use CL_ABAP_TSTMP| ).
+    DATA(t37) = |use CL_ABAP_TSTMP|.
     t36 = t37.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -141,13 +141,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t33->zlnt_json_ownkeys_70e5fd461788.
     t33->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t42) = CONV string( |name| ).
+    DATA(t42) = |name|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t43.
     IF t33->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t33->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
     ENDIF.
-    DATA(t44) = CONV string( |replace| ).
+    DATA(t44) = |replace|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t45.
     IF t33->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -156,13 +156,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t32->load( ).
     APPEND t33 TO t32->items.
     t32->save( ).
-    DATA(t46) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t46) = t2.
     DATA t47 TYPE REF TO zcl_lnt_recommendations.
     DATA t48 TYPE string.
-    DATA(t49) = CONV string( |CLPB_EXPORT| ).
+    DATA(t49) = |CLPB_EXPORT|.
     t48 = t49.
     DATA t50 TYPE string.
-    DATA(t51) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t51) = |use CL_GUI_FRONTEND_SERVICES|.
     t50 = t51.
     DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -183,13 +183,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t47->zlnt_json_ownkeys_70e5fd461788.
     t47->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t56) = CONV string( |name| ).
+    DATA(t56) = |name|.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t57.
     IF t47->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t47->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
     ENDIF.
-    DATA(t58) = CONV string( |replace| ).
+    DATA(t58) = |replace|.
     DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t59.
     IF t47->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -198,13 +198,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t46->load( ).
     APPEND t47 TO t46->items.
     t46->save( ).
-    DATA(t60) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t60) = t2.
     DATA t61 TYPE REF TO zcl_lnt_recommendations.
     DATA t62 TYPE string.
-    DATA(t63) = CONV string( |CLPB_IMPORT| ).
+    DATA(t63) = |CLPB_IMPORT|.
     t62 = t63.
     DATA t64 TYPE string.
-    DATA(t65) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t65) = |use CL_GUI_FRONTEND_SERVICES|.
     t64 = t65.
     DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -225,13 +225,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t61->zlnt_json_ownkeys_70e5fd461788.
     t61->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t70) = CONV string( |name| ).
+    DATA(t70) = |name|.
     DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t71.
     IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t70 p1 = t71 ).
     ENDIF.
-    DATA(t72) = CONV string( |replace| ).
+    DATA(t72) = |replace|.
     DATA t73 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t73.
     IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -240,13 +240,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t60->load( ).
     APPEND t61 TO t60->items.
     t60->save( ).
-    DATA(t74) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t74) = t2.
     DATA t75 TYPE REF TO zcl_lnt_recommendations.
     DATA t76 TYPE string.
-    DATA(t77) = CONV string( |CONVERT_DATE_TO_EXTERNAL| ).
+    DATA(t77) = |CONVERT_DATE_TO_EXTERNAL|.
     t76 = t77.
     DATA t78 TYPE string.
-    DATA(t79) = CONV string( |use CL_ABAP_DATFM| ).
+    DATA(t79) = |use CL_ABAP_DATFM|.
     t78 = t79.
     DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t81 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -267,13 +267,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t75->zlnt_json_ownkeys_70e5fd461788.
     t75->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t84) = CONV string( |name| ).
+    DATA(t84) = |name|.
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t85.
     IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
     ENDIF.
-    DATA(t86) = CONV string( |replace| ).
+    DATA(t86) = |replace|.
     DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t87.
     IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -282,13 +282,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t74->load( ).
     APPEND t75 TO t74->items.
     t74->save( ).
-    DATA(t88) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t88) = t2.
     DATA t89 TYPE REF TO zcl_lnt_recommendations.
     DATA t90 TYPE string.
-    DATA(t91) = CONV string( |CONVERT_TIME_INPUT| ).
+    DATA(t91) = |CONVERT_TIME_INPUT|.
     t90 = t91.
     DATA t92 TYPE string.
-    DATA(t93) = CONV string( |use CL_ABAP_TIMEFM| ).
+    DATA(t93) = |use CL_ABAP_TIMEFM|.
     t92 = t93.
     DATA t94 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -309,13 +309,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t89->zlnt_json_ownkeys_70e5fd461788.
     t89->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t98) = CONV string( |name| ).
+    DATA(t98) = |name|.
     DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t99.
     IF t89->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t89->zlnt_json_ownkeys_70e5fd461788->put( p0 = t98 p1 = t99 ).
     ENDIF.
-    DATA(t100) = CONV string( |replace| ).
+    DATA(t100) = |replace|.
     DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t101.
     IF t89->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -324,13 +324,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t88->load( ).
     APPEND t89 TO t88->items.
     t88->save( ).
-    DATA(t102) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t102) = t2.
     DATA t103 TYPE REF TO zcl_lnt_recommendations.
     DATA t104 TYPE string.
-    DATA(t105) = CONV string( |DOWNLOAD| ).
+    DATA(t105) = |DOWNLOAD|.
     t104 = t105.
     DATA t106 TYPE string.
-    DATA(t107) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t107) = |use CL_GUI_FRONTEND_SERVICES|.
     t106 = t107.
     DATA t108 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -351,13 +351,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t103->zlnt_json_ownkeys_70e5fd461788.
     t103->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t112) = CONV string( |name| ).
+    DATA(t112) = |name|.
     DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t113.
     IF t103->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t103->zlnt_json_ownkeys_70e5fd461788->put( p0 = t112 p1 = t113 ).
     ENDIF.
-    DATA(t114) = CONV string( |replace| ).
+    DATA(t114) = |replace|.
     DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t115.
     IF t103->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -366,13 +366,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t102->load( ).
     APPEND t103 TO t102->items.
     t102->save( ).
-    DATA(t116) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t116) = t2.
     DATA t117 TYPE REF TO zcl_lnt_recommendations.
     DATA t118 TYPE string.
-    DATA(t119) = CONV string( |ECATT_CONV_XSTRING_TO_STRING| ).
+    DATA(t119) = |ECATT_CONV_XSTRING_TO_STRING|.
     t118 = t119.
     DATA t120 TYPE string.
-    DATA(t121) = CONV string( |use CL_BINARY_CONVERT| ).
+    DATA(t121) = |use CL_BINARY_CONVERT|.
     t120 = t121.
     DATA t122 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t123 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -393,13 +393,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t117->zlnt_json_ownkeys_70e5fd461788.
     t117->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t126) = CONV string( |name| ).
+    DATA(t126) = |name|.
     DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t127.
     IF t117->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t117->zlnt_json_ownkeys_70e5fd461788->put( p0 = t126 p1 = t127 ).
     ENDIF.
-    DATA(t128) = CONV string( |replace| ).
+    DATA(t128) = |replace|.
     DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t129.
     IF t117->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -408,13 +408,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t116->load( ).
     APPEND t117 TO t116->items.
     t116->save( ).
-    DATA(t130) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t130) = t2.
     DATA t131 TYPE REF TO zcl_lnt_recommendations.
     DATA t132 TYPE string.
-    DATA(t133) = CONV string( |F4_FILENAME| ).
+    DATA(t133) = |F4_FILENAME|.
     t132 = t133.
     DATA t134 TYPE string.
-    DATA(t135) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t135) = |use CL_GUI_FRONTEND_SERVICES|.
     t134 = t135.
     DATA t136 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t137 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -435,13 +435,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t131->zlnt_json_ownkeys_70e5fd461788.
     t131->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t140) = CONV string( |name| ).
+    DATA(t140) = |name|.
     DATA t141 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t141.
     IF t131->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t131->zlnt_json_ownkeys_70e5fd461788->put( p0 = t140 p1 = t141 ).
     ENDIF.
-    DATA(t142) = CONV string( |replace| ).
+    DATA(t142) = |replace|.
     DATA t143 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t143.
     IF t131->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -450,13 +450,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t130->load( ).
     APPEND t131 TO t130->items.
     t130->save( ).
-    DATA(t144) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t144) = t2.
     DATA t145 TYPE REF TO zcl_lnt_recommendations.
     DATA t146 TYPE string.
-    DATA(t147) = CONV string( |FUNCTION_EXISTS| ).
+    DATA(t147) = |FUNCTION_EXISTS|.
     t146 = t147.
     DATA t148 TYPE string.
-    DATA(t149) = CONV string( |surround with try-catch CX_SY_DYN_CALL_ILLEGAL_METHOD instea| ).
+    DATA(t149) = |surround with try-catch CX_SY_DYN_CALL_ILLEGAL_METHOD instea|.
     t149 = t149 && |d|.
     t148 = t149.
     DATA t150 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -478,13 +478,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t145->zlnt_json_ownkeys_70e5fd461788.
     t145->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t154) = CONV string( |name| ).
+    DATA(t154) = |name|.
     DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t155.
     IF t145->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t145->zlnt_json_ownkeys_70e5fd461788->put( p0 = t154 p1 = t155 ).
     ENDIF.
-    DATA(t156) = CONV string( |replace| ).
+    DATA(t156) = |replace|.
     DATA t157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t157.
     IF t145->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -493,13 +493,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t144->load( ).
     APPEND t145 TO t144->items.
     t144->save( ).
-    DATA(t158) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t158) = t2.
     DATA t159 TYPE REF TO zcl_lnt_recommendations.
     DATA t160 TYPE string.
-    DATA(t161) = CONV string( |GUI_CREATE_DIRECTORY| ).
+    DATA(t161) = |GUI_CREATE_DIRECTORY|.
     t160 = t161.
     DATA t162 TYPE string.
-    DATA(t163) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t163) = |use CL_GUI_FRONTEND_SERVICES|.
     t162 = t163.
     DATA t164 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t165 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -520,13 +520,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t159->zlnt_json_ownkeys_70e5fd461788.
     t159->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t168) = CONV string( |name| ).
+    DATA(t168) = |name|.
     DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t169.
     IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t159->zlnt_json_ownkeys_70e5fd461788->put( p0 = t168 p1 = t169 ).
     ENDIF.
-    DATA(t170) = CONV string( |replace| ).
+    DATA(t170) = |replace|.
     DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t171.
     IF t159->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -535,13 +535,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t158->load( ).
     APPEND t159 TO t158->items.
     t158->save( ).
-    DATA(t172) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t172) = t2.
     DATA t173 TYPE REF TO zcl_lnt_recommendations.
     DATA t174 TYPE string.
-    DATA(t175) = CONV string( |GUI_DELETE_FILE| ).
+    DATA(t175) = |GUI_DELETE_FILE|.
     t174 = t175.
     DATA t176 TYPE string.
-    DATA(t177) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t177) = |use CL_GUI_FRONTEND_SERVICES|.
     t176 = t177.
     DATA t178 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -562,13 +562,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t173->zlnt_json_ownkeys_70e5fd461788.
     t173->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t182) = CONV string( |name| ).
+    DATA(t182) = |name|.
     DATA t183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t183.
     IF t173->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t173->zlnt_json_ownkeys_70e5fd461788->put( p0 = t182 p1 = t183 ).
     ENDIF.
-    DATA(t184) = CONV string( |replace| ).
+    DATA(t184) = |replace|.
     DATA t185 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t185.
     IF t173->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -577,13 +577,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t172->load( ).
     APPEND t173 TO t172->items.
     t172->save( ).
-    DATA(t186) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t186) = t2.
     DATA t187 TYPE REF TO zcl_lnt_recommendations.
     DATA t188 TYPE string.
-    DATA(t189) = CONV string( |GUI_DOWNLOAD| ).
+    DATA(t189) = |GUI_DOWNLOAD|.
     t188 = t189.
     DATA t190 TYPE string.
-    DATA(t191) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t191) = |use CL_GUI_FRONTEND_SERVICES|.
     t190 = t191.
     DATA t192 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t193 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -604,13 +604,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t187->zlnt_json_ownkeys_70e5fd461788.
     t187->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t196) = CONV string( |name| ).
+    DATA(t196) = |name|.
     DATA t197 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t197.
     IF t187->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t187->zlnt_json_ownkeys_70e5fd461788->put( p0 = t196 p1 = t197 ).
     ENDIF.
-    DATA(t198) = CONV string( |replace| ).
+    DATA(t198) = |replace|.
     DATA t199 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t199.
     IF t187->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -619,13 +619,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t186->load( ).
     APPEND t187 TO t186->items.
     t186->save( ).
-    DATA(t200) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t200) = t2.
     DATA t201 TYPE REF TO zcl_lnt_recommendations.
     DATA t202 TYPE string.
-    DATA(t203) = CONV string( |GUI_EXEC| ).
+    DATA(t203) = |GUI_EXEC|.
     t202 = t203.
     DATA t204 TYPE string.
-    DATA(t205) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t205) = |use CL_GUI_FRONTEND_SERVICES|.
     t204 = t205.
     DATA t206 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t207 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -646,13 +646,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t201->zlnt_json_ownkeys_70e5fd461788.
     t201->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t210) = CONV string( |name| ).
+    DATA(t210) = |name|.
     DATA t211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t211.
     IF t201->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = t210 p1 = t211 ).
     ENDIF.
-    DATA(t212) = CONV string( |replace| ).
+    DATA(t212) = |replace|.
     DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t213.
     IF t201->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -661,13 +661,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t200->load( ).
     APPEND t201 TO t200->items.
     t200->save( ).
-    DATA(t214) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t214) = t2.
     DATA t215 TYPE REF TO zcl_lnt_recommendations.
     DATA t216 TYPE string.
-    DATA(t217) = CONV string( |GUI_FB_USAGE| ).
+    DATA(t217) = |GUI_FB_USAGE|.
     t216 = t217.
     DATA t218 TYPE string.
-    DATA(t219) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t219) = |use CL_GUI_FRONTEND_SERVICES|.
     t218 = t219.
     DATA t220 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t221 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -688,13 +688,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t215->zlnt_json_ownkeys_70e5fd461788.
     t215->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t224) = CONV string( |name| ).
+    DATA(t224) = |name|.
     DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t225.
     IF t215->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t215->zlnt_json_ownkeys_70e5fd461788->put( p0 = t224 p1 = t225 ).
     ENDIF.
-    DATA(t226) = CONV string( |replace| ).
+    DATA(t226) = |replace|.
     DATA t227 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t227.
     IF t215->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -703,13 +703,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t214->load( ).
     APPEND t215 TO t214->items.
     t214->save( ).
-    DATA(t228) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t228) = t2.
     DATA t229 TYPE REF TO zcl_lnt_recommendations.
     DATA t230 TYPE string.
-    DATA(t231) = CONV string( |GUI_FILE_LOAD_DIALOG| ).
+    DATA(t231) = |GUI_FILE_LOAD_DIALOG|.
     t230 = t231.
     DATA t232 TYPE string.
-    DATA(t233) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t233) = |use CL_GUI_FRONTEND_SERVICES|.
     t232 = t233.
     DATA t234 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -730,13 +730,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t229->zlnt_json_ownkeys_70e5fd461788.
     t229->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t238) = CONV string( |name| ).
+    DATA(t238) = |name|.
     DATA t239 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t239.
     IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t229->zlnt_json_ownkeys_70e5fd461788->put( p0 = t238 p1 = t239 ).
     ENDIF.
-    DATA(t240) = CONV string( |replace| ).
+    DATA(t240) = |replace|.
     DATA t241 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t241.
     IF t229->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -745,13 +745,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t228->load( ).
     APPEND t229 TO t228->items.
     t228->save( ).
-    DATA(t242) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t242) = t2.
     DATA t243 TYPE REF TO zcl_lnt_recommendations.
     DATA t244 TYPE string.
-    DATA(t245) = CONV string( |GUI_FILE_SAVE_DIALOG| ).
+    DATA(t245) = |GUI_FILE_SAVE_DIALOG|.
     t244 = t245.
     DATA t246 TYPE string.
-    DATA(t247) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t247) = |use CL_GUI_FRONTEND_SERVICES|.
     t246 = t247.
     DATA t248 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t249 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -772,13 +772,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t243->zlnt_json_ownkeys_70e5fd461788.
     t243->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t252) = CONV string( |name| ).
+    DATA(t252) = |name|.
     DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t253.
     IF t243->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t243->zlnt_json_ownkeys_70e5fd461788->put( p0 = t252 p1 = t253 ).
     ENDIF.
-    DATA(t254) = CONV string( |replace| ).
+    DATA(t254) = |replace|.
     DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t255.
     IF t243->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -787,13 +787,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t242->load( ).
     APPEND t243 TO t242->items.
     t242->save( ).
-    DATA(t256) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t256) = t2.
     DATA t257 TYPE REF TO zcl_lnt_recommendations.
     DATA t258 TYPE string.
-    DATA(t259) = CONV string( |GUI_GET_DESKTOP_INFO| ).
+    DATA(t259) = |GUI_GET_DESKTOP_INFO|.
     t258 = t259.
     DATA t260 TYPE string.
-    DATA(t261) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t261) = |use CL_GUI_FRONTEND_SERVICES|.
     t260 = t261.
     DATA t262 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t263 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -814,13 +814,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t257->zlnt_json_ownkeys_70e5fd461788.
     t257->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t266) = CONV string( |name| ).
+    DATA(t266) = |name|.
     DATA t267 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t267.
     IF t257->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t257->zlnt_json_ownkeys_70e5fd461788->put( p0 = t266 p1 = t267 ).
     ENDIF.
-    DATA(t268) = CONV string( |replace| ).
+    DATA(t268) = |replace|.
     DATA t269 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t269.
     IF t257->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -829,13 +829,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t256->load( ).
     APPEND t257 TO t256->items.
     t256->save( ).
-    DATA(t270) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t270) = t2.
     DATA t271 TYPE REF TO zcl_lnt_recommendations.
     DATA t272 TYPE string.
-    DATA(t273) = CONV string( |GUI_GET_FILE_INFO| ).
+    DATA(t273) = |GUI_GET_FILE_INFO|.
     t272 = t273.
     DATA t274 TYPE string.
-    DATA(t275) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t275) = |use CL_GUI_FRONTEND_SERVICES|.
     t274 = t275.
     DATA t276 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t277 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -856,13 +856,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t271->zlnt_json_ownkeys_70e5fd461788.
     t271->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t280) = CONV string( |name| ).
+    DATA(t280) = |name|.
     DATA t281 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t281.
     IF t271->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t271->zlnt_json_ownkeys_70e5fd461788->put( p0 = t280 p1 = t281 ).
     ENDIF.
-    DATA(t282) = CONV string( |replace| ).
+    DATA(t282) = |replace|.
     DATA t283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t283.
     IF t271->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -871,13 +871,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t270->load( ).
     APPEND t271 TO t270->items.
     t270->save( ).
-    DATA(t284) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t284) = t2.
     DATA t285 TYPE REF TO zcl_lnt_recommendations.
     DATA t286 TYPE string.
-    DATA(t287) = CONV string( |GUI_GET_REGVALUE| ).
+    DATA(t287) = |GUI_GET_REGVALUE|.
     t286 = t287.
     DATA t288 TYPE string.
-    DATA(t289) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t289) = |use CL_GUI_FRONTEND_SERVICES|.
     t288 = t289.
     DATA t290 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t291 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -898,13 +898,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t285->zlnt_json_ownkeys_70e5fd461788.
     t285->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t294) = CONV string( |name| ).
+    DATA(t294) = |name|.
     DATA t295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t295.
     IF t285->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t285->zlnt_json_ownkeys_70e5fd461788->put( p0 = t294 p1 = t295 ).
     ENDIF.
-    DATA(t296) = CONV string( |replace| ).
+    DATA(t296) = |replace|.
     DATA t297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t297.
     IF t285->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -913,13 +913,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t284->load( ).
     APPEND t285 TO t284->items.
     t284->save( ).
-    DATA(t298) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t298) = t2.
     DATA t299 TYPE REF TO zcl_lnt_recommendations.
     DATA t300 TYPE string.
-    DATA(t301) = CONV string( |GUI_MULTIPLE_FILE_LOAD_DIALOG| ).
+    DATA(t301) = |GUI_MULTIPLE_FILE_LOAD_DIALOG|.
     t300 = t301.
     DATA t302 TYPE string.
-    DATA(t303) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t303) = |use CL_GUI_FRONTEND_SERVICES|.
     t302 = t303.
     DATA t304 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t305 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -940,13 +940,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t299->zlnt_json_ownkeys_70e5fd461788.
     t299->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t308) = CONV string( |name| ).
+    DATA(t308) = |name|.
     DATA t309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t309.
     IF t299->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t299->zlnt_json_ownkeys_70e5fd461788->put( p0 = t308 p1 = t309 ).
     ENDIF.
-    DATA(t310) = CONV string( |replace| ).
+    DATA(t310) = |replace|.
     DATA t311 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t311.
     IF t299->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -955,13 +955,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t298->load( ).
     APPEND t299 TO t298->items.
     t298->save( ).
-    DATA(t312) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t312) = t2.
     DATA t313 TYPE REF TO zcl_lnt_recommendations.
     DATA t314 TYPE string.
-    DATA(t315) = CONV string( |GUI_REMOVE_DIRECTORY| ).
+    DATA(t315) = |GUI_REMOVE_DIRECTORY|.
     t314 = t315.
     DATA t316 TYPE string.
-    DATA(t317) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t317) = |use CL_GUI_FRONTEND_SERVICES|.
     t316 = t317.
     DATA t318 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t319 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -982,13 +982,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t313->zlnt_json_ownkeys_70e5fd461788.
     t313->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t322) = CONV string( |name| ).
+    DATA(t322) = |name|.
     DATA t323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t323.
     IF t313->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t313->zlnt_json_ownkeys_70e5fd461788->put( p0 = t322 p1 = t323 ).
     ENDIF.
-    DATA(t324) = CONV string( |replace| ).
+    DATA(t324) = |replace|.
     DATA t325 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t325.
     IF t313->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -997,13 +997,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t312->load( ).
     APPEND t313 TO t312->items.
     t312->save( ).
-    DATA(t326) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t326) = t2.
     DATA t327 TYPE REF TO zcl_lnt_recommendations.
     DATA t328 TYPE string.
-    DATA(t329) = CONV string( |GUI_RUN| ).
+    DATA(t329) = |GUI_RUN|.
     t328 = t329.
     DATA t330 TYPE string.
-    DATA(t331) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t331) = |use CL_GUI_FRONTEND_SERVICES|.
     t330 = t331.
     DATA t332 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t333 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1024,13 +1024,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t327->zlnt_json_ownkeys_70e5fd461788.
     t327->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t336) = CONV string( |name| ).
+    DATA(t336) = |name|.
     DATA t337 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t337.
     IF t327->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t327->zlnt_json_ownkeys_70e5fd461788->put( p0 = t336 p1 = t337 ).
     ENDIF.
-    DATA(t338) = CONV string( |replace| ).
+    DATA(t338) = |replace|.
     DATA t339 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t339.
     IF t327->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1039,13 +1039,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t326->load( ).
     APPEND t327 TO t326->items.
     t326->save( ).
-    DATA(t340) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t340) = t2.
     DATA t341 TYPE REF TO zcl_lnt_recommendations.
     DATA t342 TYPE string.
-    DATA(t343) = CONV string( |GUI_SET_REGVALUE| ).
+    DATA(t343) = |GUI_SET_REGVALUE|.
     t342 = t343.
     DATA t344 TYPE string.
-    DATA(t345) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t345) = |use CL_GUI_FRONTEND_SERVICES|.
     t344 = t345.
     DATA t346 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t347 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1066,13 +1066,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t341->zlnt_json_ownkeys_70e5fd461788.
     t341->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t350) = CONV string( |name| ).
+    DATA(t350) = |name|.
     DATA t351 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t351.
     IF t341->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t341->zlnt_json_ownkeys_70e5fd461788->put( p0 = t350 p1 = t351 ).
     ENDIF.
-    DATA(t352) = CONV string( |replace| ).
+    DATA(t352) = |replace|.
     DATA t353 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t353.
     IF t341->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1081,13 +1081,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t340->load( ).
     APPEND t341 TO t340->items.
     t340->save( ).
-    DATA(t354) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t354) = t2.
     DATA t355 TYPE REF TO zcl_lnt_recommendations.
     DATA t356 TYPE string.
-    DATA(t357) = CONV string( |GUI_UPLOAD| ).
+    DATA(t357) = |GUI_UPLOAD|.
     t356 = t357.
     DATA t358 TYPE string.
-    DATA(t359) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t359) = |use CL_GUI_FRONTEND_SERVICES|.
     t358 = t359.
     DATA t360 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t361 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1108,13 +1108,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t355->zlnt_json_ownkeys_70e5fd461788.
     t355->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t364) = CONV string( |name| ).
+    DATA(t364) = |name|.
     DATA t365 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t365.
     IF t355->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t355->zlnt_json_ownkeys_70e5fd461788->put( p0 = t364 p1 = t365 ).
     ENDIF.
-    DATA(t366) = CONV string( |replace| ).
+    DATA(t366) = |replace|.
     DATA t367 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t367.
     IF t355->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1123,13 +1123,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t354->load( ).
     APPEND t355 TO t354->items.
     t354->save( ).
-    DATA(t368) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t368) = t2.
     DATA t369 TYPE REF TO zcl_lnt_recommendations.
     DATA t370 TYPE string.
-    DATA(t371) = CONV string( |GUI_VSS_DOWNLOAD| ).
+    DATA(t371) = |GUI_VSS_DOWNLOAD|.
     t370 = t371.
     DATA t372 TYPE string.
-    DATA(t373) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t373) = |use CL_GUI_FRONTEND_SERVICES|.
     t372 = t373.
     DATA t374 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t375 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1150,13 +1150,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t369->zlnt_json_ownkeys_70e5fd461788.
     t369->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t378) = CONV string( |name| ).
+    DATA(t378) = |name|.
     DATA t379 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t379.
     IF t369->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t369->zlnt_json_ownkeys_70e5fd461788->put( p0 = t378 p1 = t379 ).
     ENDIF.
-    DATA(t380) = CONV string( |replace| ).
+    DATA(t380) = |replace|.
     DATA t381 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t381.
     IF t369->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1165,13 +1165,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t368->load( ).
     APPEND t369 TO t368->items.
     t368->save( ).
-    DATA(t382) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t382) = t2.
     DATA t383 TYPE REF TO zcl_lnt_recommendations.
     DATA t384 TYPE string.
-    DATA(t385) = CONV string( |GUI_VSS_UPLOAD| ).
+    DATA(t385) = |GUI_VSS_UPLOAD|.
     t384 = t385.
     DATA t386 TYPE string.
-    DATA(t387) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t387) = |use CL_GUI_FRONTEND_SERVICES|.
     t386 = t387.
     DATA t388 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t389 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1192,13 +1192,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t383->zlnt_json_ownkeys_70e5fd461788.
     t383->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t392) = CONV string( |name| ).
+    DATA(t392) = |name|.
     DATA t393 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t393.
     IF t383->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t383->zlnt_json_ownkeys_70e5fd461788->put( p0 = t392 p1 = t393 ).
     ENDIF.
-    DATA(t394) = CONV string( |replace| ).
+    DATA(t394) = |replace|.
     DATA t395 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t395.
     IF t383->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1207,13 +1207,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t382->load( ).
     APPEND t383 TO t382->items.
     t382->save( ).
-    DATA(t396) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t396) = t2.
     DATA t397 TYPE REF TO zcl_lnt_recommendations.
     DATA t398 TYPE string.
-    DATA(t399) = CONV string( |GUID_CREATE| ).
+    DATA(t399) = |GUID_CREATE|.
     t398 = t399.
     DATA t400 TYPE string.
-    DATA(t401) = CONV string( |use CL_SYSTEM_UUID| ).
+    DATA(t401) = |use CL_SYSTEM_UUID|.
     t400 = t401.
     DATA t402 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t403 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1234,13 +1234,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t397->zlnt_json_ownkeys_70e5fd461788.
     t397->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t406) = CONV string( |name| ).
+    DATA(t406) = |name|.
     DATA t407 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t407.
     IF t397->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t397->zlnt_json_ownkeys_70e5fd461788->put( p0 = t406 p1 = t407 ).
     ENDIF.
-    DATA(t408) = CONV string( |replace| ).
+    DATA(t408) = |replace|.
     DATA t409 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t409.
     IF t397->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1249,13 +1249,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t396->load( ).
     APPEND t397 TO t396->items.
     t396->save( ).
-    DATA(t410) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t410) = t2.
     DATA t411 TYPE REF TO zcl_lnt_recommendations.
     DATA t412 TYPE string.
-    DATA(t413) = CONV string( |IGN_TIMESTAMP_DIFFERENCE| ).
+    DATA(t413) = |IGN_TIMESTAMP_DIFFERENCE|.
     t412 = t413.
     DATA t414 TYPE string.
-    DATA(t415) = CONV string( |use CL_ABAP_TSTMP| ).
+    DATA(t415) = |use CL_ABAP_TSTMP|.
     t414 = t415.
     DATA t416 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t417 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1276,13 +1276,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t411->zlnt_json_ownkeys_70e5fd461788.
     t411->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t420) = CONV string( |name| ).
+    DATA(t420) = |name|.
     DATA t421 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t421.
     IF t411->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t411->zlnt_json_ownkeys_70e5fd461788->put( p0 = t420 p1 = t421 ).
     ENDIF.
-    DATA(t422) = CONV string( |replace| ).
+    DATA(t422) = |replace|.
     DATA t423 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t423.
     IF t411->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1291,13 +1291,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t410->load( ).
     APPEND t411 TO t410->items.
     t410->save( ).
-    DATA(t424) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t424) = t2.
     DATA t425 TYPE REF TO zcl_lnt_recommendations.
     DATA t426 TYPE string.
-    DATA(t427) = CONV string( |IGN_TIMESTAMP_PLUSMINUS| ).
+    DATA(t427) = |IGN_TIMESTAMP_PLUSMINUS|.
     t426 = t427.
     DATA t428 TYPE string.
-    DATA(t429) = CONV string( |use CL_ABAP_TSTMP| ).
+    DATA(t429) = |use CL_ABAP_TSTMP|.
     t428 = t429.
     DATA t430 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t431 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1318,13 +1318,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t425->zlnt_json_ownkeys_70e5fd461788.
     t425->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t434) = CONV string( |name| ).
+    DATA(t434) = |name|.
     DATA t435 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t435.
     IF t425->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t425->zlnt_json_ownkeys_70e5fd461788->put( p0 = t434 p1 = t435 ).
     ENDIF.
-    DATA(t436) = CONV string( |replace| ).
+    DATA(t436) = |replace|.
     DATA t437 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t437.
     IF t425->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1333,13 +1333,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t424->load( ).
     APPEND t425 TO t424->items.
     t424->save( ).
-    DATA(t438) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t438) = t2.
     DATA t439 TYPE REF TO zcl_lnt_recommendations.
     DATA t440 TYPE string.
-    DATA(t441) = CONV string( |ISM_SD_GET_PRICING_CONDITIONS| ).
+    DATA(t441) = |ISM_SD_GET_PRICING_CONDITIONS|.
     t440 = t441.
     DATA t442 TYPE string.
-    DATA(t443) = CONV string( |use CL_PRC_RESULT_FACTORY as per note 2220005| ).
+    DATA(t443) = |use CL_PRC_RESULT_FACTORY as per note 2220005|.
     t442 = t443.
     DATA t444 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t445 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1360,13 +1360,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t439->zlnt_json_ownkeys_70e5fd461788.
     t439->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t448) = CONV string( |name| ).
+    DATA(t448) = |name|.
     DATA t449 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t449.
     IF t439->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t439->zlnt_json_ownkeys_70e5fd461788->put( p0 = t448 p1 = t449 ).
     ENDIF.
-    DATA(t450) = CONV string( |replace| ).
+    DATA(t450) = |replace|.
     DATA t451 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t451.
     IF t439->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1375,13 +1375,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t438->load( ).
     APPEND t439 TO t438->items.
     t438->save( ).
-    DATA(t452) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t452) = t2.
     DATA t453 TYPE REF TO zcl_lnt_recommendations.
     DATA t454 TYPE string.
-    DATA(t455) = CONV string( |JOB_CREATE| ).
+    DATA(t455) = |JOB_CREATE|.
     t454 = t455.
     DATA t456 TYPE string.
-    DATA(t457) = CONV string( |use CL_BP_ABAP_JOB| ).
+    DATA(t457) = |use CL_BP_ABAP_JOB|.
     t456 = t457.
     DATA t458 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t459 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1402,13 +1402,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t453->zlnt_json_ownkeys_70e5fd461788.
     t453->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t462) = CONV string( |name| ).
+    DATA(t462) = |name|.
     DATA t463 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t463.
     IF t453->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t453->zlnt_json_ownkeys_70e5fd461788->put( p0 = t462 p1 = t463 ).
     ENDIF.
-    DATA(t464) = CONV string( |replace| ).
+    DATA(t464) = |replace|.
     DATA t465 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t465.
     IF t453->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1417,13 +1417,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t452->load( ).
     APPEND t453 TO t452->items.
     t452->save( ).
-    DATA(t466) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t466) = t2.
     DATA t467 TYPE REF TO zcl_lnt_recommendations.
     DATA t468 TYPE string.
-    DATA(t469) = CONV string( |JOB_SUBMIT| ).
+    DATA(t469) = |JOB_SUBMIT|.
     t468 = t469.
     DATA t470 TYPE string.
-    DATA(t471) = CONV string( |use CL_BP_ABAP_JOB| ).
+    DATA(t471) = |use CL_BP_ABAP_JOB|.
     t470 = t471.
     DATA t472 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t473 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1444,13 +1444,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t467->zlnt_json_ownkeys_70e5fd461788.
     t467->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t476) = CONV string( |name| ).
+    DATA(t476) = |name|.
     DATA t477 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t477.
     IF t467->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t467->zlnt_json_ownkeys_70e5fd461788->put( p0 = t476 p1 = t477 ).
     ENDIF.
-    DATA(t478) = CONV string( |replace| ).
+    DATA(t478) = |replace|.
     DATA t479 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t479.
     IF t467->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1459,13 +1459,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t466->load( ).
     APPEND t467 TO t466->items.
     t466->save( ).
-    DATA(t480) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t480) = t2.
     DATA t481 TYPE REF TO zcl_lnt_recommendations.
     DATA t482 TYPE string.
-    DATA(t483) = CONV string( |MD5_CALCULATE_HASH_FOR_CHAR| ).
+    DATA(t483) = |MD5_CALCULATE_HASH_FOR_CHAR|.
     t482 = t483.
     DATA t484 TYPE string.
-    DATA(t485) = CONV string( |use CL_ABAP_MESSAGE_DIGEST| ).
+    DATA(t485) = |use CL_ABAP_MESSAGE_DIGEST|.
     t484 = t485.
     DATA t486 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t487 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1486,13 +1486,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t481->zlnt_json_ownkeys_70e5fd461788.
     t481->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t490) = CONV string( |name| ).
+    DATA(t490) = |name|.
     DATA t491 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t491.
     IF t481->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t481->zlnt_json_ownkeys_70e5fd461788->put( p0 = t490 p1 = t491 ).
     ENDIF.
-    DATA(t492) = CONV string( |replace| ).
+    DATA(t492) = |replace|.
     DATA t493 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t493.
     IF t481->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1501,13 +1501,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t480->load( ).
     APPEND t481 TO t480->items.
     t480->save( ).
-    DATA(t494) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t494) = t2.
     DATA t495 TYPE REF TO zcl_lnt_recommendations.
     DATA t496 TYPE string.
-    DATA(t497) = CONV string( |MD5_CALCULATE_HASH_FOR_RAW| ).
+    DATA(t497) = |MD5_CALCULATE_HASH_FOR_RAW|.
     t496 = t497.
     DATA t498 TYPE string.
-    DATA(t499) = CONV string( |use CL_ABAP_MESSAGE_DIGEST| ).
+    DATA(t499) = |use CL_ABAP_MESSAGE_DIGEST|.
     t498 = t499.
     DATA t500 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t501 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1528,13 +1528,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t495->zlnt_json_ownkeys_70e5fd461788.
     t495->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t504) = CONV string( |name| ).
+    DATA(t504) = |name|.
     DATA t505 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t505.
     IF t495->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t495->zlnt_json_ownkeys_70e5fd461788->put( p0 = t504 p1 = t505 ).
     ENDIF.
-    DATA(t506) = CONV string( |replace| ).
+    DATA(t506) = |replace|.
     DATA t507 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t507.
     IF t495->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1543,13 +1543,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t494->load( ).
     APPEND t495 TO t494->items.
     t494->save( ).
-    DATA(t508) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t508) = t2.
     DATA t509 TYPE REF TO zcl_lnt_recommendations.
     DATA t510 TYPE string.
-    DATA(t511) = CONV string( |POPUP_TO_CONFIRM_LOSS_OF_DATA| ).
+    DATA(t511) = |POPUP_TO_CONFIRM_LOSS_OF_DATA|.
     t510 = t511.
     DATA t512 TYPE string.
-    DATA(t513) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t513) = |use POPUP_TO_CONFIRM|.
     t512 = t513.
     DATA t514 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t515 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1570,13 +1570,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t509->zlnt_json_ownkeys_70e5fd461788.
     t509->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t518) = CONV string( |name| ).
+    DATA(t518) = |name|.
     DATA t519 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t519.
     IF t509->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t509->zlnt_json_ownkeys_70e5fd461788->put( p0 = t518 p1 = t519 ).
     ENDIF.
-    DATA(t520) = CONV string( |replace| ).
+    DATA(t520) = |replace|.
     DATA t521 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t521.
     IF t509->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1585,13 +1585,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t508->load( ).
     APPEND t509 TO t508->items.
     t508->save( ).
-    DATA(t522) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t522) = t2.
     DATA t523 TYPE REF TO zcl_lnt_recommendations.
     DATA t524 TYPE string.
-    DATA(t525) = CONV string( |POPUP_TO_CONFIRM_STEP| ).
+    DATA(t525) = |POPUP_TO_CONFIRM_STEP|.
     t524 = t525.
     DATA t526 TYPE string.
-    DATA(t527) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t527) = |use POPUP_TO_CONFIRM|.
     t526 = t527.
     DATA t528 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t529 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1612,13 +1612,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t523->zlnt_json_ownkeys_70e5fd461788.
     t523->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t532) = CONV string( |name| ).
+    DATA(t532) = |name|.
     DATA t533 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t533.
     IF t523->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t523->zlnt_json_ownkeys_70e5fd461788->put( p0 = t532 p1 = t533 ).
     ENDIF.
-    DATA(t534) = CONV string( |replace| ).
+    DATA(t534) = |replace|.
     DATA t535 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t535.
     IF t523->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1627,13 +1627,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t522->load( ).
     APPEND t523 TO t522->items.
     t522->save( ).
-    DATA(t536) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t536) = t2.
     DATA t537 TYPE REF TO zcl_lnt_recommendations.
     DATA t538 TYPE string.
-    DATA(t539) = CONV string( |POPUP_TO_CONFIRM_WITH_MESSAGE| ).
+    DATA(t539) = |POPUP_TO_CONFIRM_WITH_MESSAGE|.
     t538 = t539.
     DATA t540 TYPE string.
-    DATA(t541) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t541) = |use POPUP_TO_CONFIRM|.
     t540 = t541.
     DATA t542 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t543 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1654,13 +1654,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t537->zlnt_json_ownkeys_70e5fd461788.
     t537->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t546) = CONV string( |name| ).
+    DATA(t546) = |name|.
     DATA t547 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t547.
     IF t537->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t537->zlnt_json_ownkeys_70e5fd461788->put( p0 = t546 p1 = t547 ).
     ENDIF.
-    DATA(t548) = CONV string( |replace| ).
+    DATA(t548) = |replace|.
     DATA t549 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t549.
     IF t537->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1669,13 +1669,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t536->load( ).
     APPEND t537 TO t536->items.
     t536->save( ).
-    DATA(t550) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t550) = t2.
     DATA t551 TYPE REF TO zcl_lnt_recommendations.
     DATA t552 TYPE string.
-    DATA(t553) = CONV string( |POPUP_TO_CONFIRM_WITH_VALUE| ).
+    DATA(t553) = |POPUP_TO_CONFIRM_WITH_VALUE|.
     t552 = t553.
     DATA t554 TYPE string.
-    DATA(t555) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t555) = |use POPUP_TO_CONFIRM|.
     t554 = t555.
     DATA t556 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t557 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1696,13 +1696,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t551->zlnt_json_ownkeys_70e5fd461788.
     t551->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t560) = CONV string( |name| ).
+    DATA(t560) = |name|.
     DATA t561 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t561.
     IF t551->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t551->zlnt_json_ownkeys_70e5fd461788->put( p0 = t560 p1 = t561 ).
     ENDIF.
-    DATA(t562) = CONV string( |replace| ).
+    DATA(t562) = |replace|.
     DATA t563 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t563.
     IF t551->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1711,13 +1711,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t550->load( ).
     APPEND t551 TO t550->items.
     t550->save( ).
-    DATA(t564) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t564) = t2.
     DATA t565 TYPE REF TO zcl_lnt_recommendations.
     DATA t566 TYPE string.
-    DATA(t567) = CONV string( |POPUP_TO_CONFIRM_WITH_VALUE_2| ).
+    DATA(t567) = |POPUP_TO_CONFIRM_WITH_VALUE_2|.
     t566 = t567.
     DATA t568 TYPE string.
-    DATA(t569) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t569) = |use POPUP_TO_CONFIRM|.
     t568 = t569.
     DATA t570 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t571 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1738,13 +1738,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t565->zlnt_json_ownkeys_70e5fd461788.
     t565->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t574) = CONV string( |name| ).
+    DATA(t574) = |name|.
     DATA t575 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t575.
     IF t565->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t565->zlnt_json_ownkeys_70e5fd461788->put( p0 = t574 p1 = t575 ).
     ENDIF.
-    DATA(t576) = CONV string( |replace| ).
+    DATA(t576) = |replace|.
     DATA t577 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t577.
     IF t565->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1753,13 +1753,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t564->load( ).
     APPEND t565 TO t564->items.
     t564->save( ).
-    DATA(t578) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t578) = t2.
     DATA t579 TYPE REF TO zcl_lnt_recommendations.
     DATA t580 TYPE string.
-    DATA(t581) = CONV string( |POPUP_TO_DECIDE| ).
+    DATA(t581) = |POPUP_TO_DECIDE|.
     t580 = t581.
     DATA t582 TYPE string.
-    DATA(t583) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t583) = |use POPUP_TO_CONFIRM|.
     t582 = t583.
     DATA t584 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t585 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1780,13 +1780,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t579->zlnt_json_ownkeys_70e5fd461788.
     t579->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t588) = CONV string( |name| ).
+    DATA(t588) = |name|.
     DATA t589 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t589.
     IF t579->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t579->zlnt_json_ownkeys_70e5fd461788->put( p0 = t588 p1 = t589 ).
     ENDIF.
-    DATA(t590) = CONV string( |replace| ).
+    DATA(t590) = |replace|.
     DATA t591 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t591.
     IF t579->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1795,13 +1795,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t578->load( ).
     APPEND t579 TO t578->items.
     t578->save( ).
-    DATA(t592) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t592) = t2.
     DATA t593 TYPE REF TO zcl_lnt_recommendations.
     DATA t594 TYPE string.
-    DATA(t595) = CONV string( |POPUP_TO_DECIDE_INFO| ).
+    DATA(t595) = |POPUP_TO_DECIDE_INFO|.
     t594 = t595.
     DATA t596 TYPE string.
-    DATA(t597) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t597) = |use POPUP_TO_CONFIRM|.
     t596 = t597.
     DATA t598 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t599 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1822,13 +1822,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t593->zlnt_json_ownkeys_70e5fd461788.
     t593->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t602) = CONV string( |name| ).
+    DATA(t602) = |name|.
     DATA t603 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t603.
     IF t593->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t593->zlnt_json_ownkeys_70e5fd461788->put( p0 = t602 p1 = t603 ).
     ENDIF.
-    DATA(t604) = CONV string( |replace| ).
+    DATA(t604) = |replace|.
     DATA t605 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t605.
     IF t593->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1837,13 +1837,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t592->load( ).
     APPEND t593 TO t592->items.
     t592->save( ).
-    DATA(t606) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t606) = t2.
     DATA t607 TYPE REF TO zcl_lnt_recommendations.
     DATA t608 TYPE string.
-    DATA(t609) = CONV string( |POPUP_TO_DECIDE_WITH_MESSAGE| ).
+    DATA(t609) = |POPUP_TO_DECIDE_WITH_MESSAGE|.
     t608 = t609.
     DATA t610 TYPE string.
-    DATA(t611) = CONV string( |use POPUP_TO_CONFIRM| ).
+    DATA(t611) = |use POPUP_TO_CONFIRM|.
     t610 = t611.
     DATA t612 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t613 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1864,13 +1864,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t607->zlnt_json_ownkeys_70e5fd461788.
     t607->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t616) = CONV string( |name| ).
+    DATA(t616) = |name|.
     DATA t617 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t617.
     IF t607->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t607->zlnt_json_ownkeys_70e5fd461788->put( p0 = t616 p1 = t617 ).
     ENDIF.
-    DATA(t618) = CONV string( |replace| ).
+    DATA(t618) = |replace|.
     DATA t619 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t619.
     IF t607->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1879,13 +1879,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t606->load( ).
     APPEND t607 TO t606->items.
     t606->save( ).
-    DATA(t620) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t620) = t2.
     DATA t621 TYPE REF TO zcl_lnt_recommendations.
     DATA t622 TYPE string.
-    DATA(t623) = CONV string( |POPUP_TO_GET_VALUE| ).
+    DATA(t623) = |POPUP_TO_GET_VALUE|.
     t622 = t623.
     DATA t624 TYPE string.
-    DATA(t625) = CONV string( |use POPUP_GET_VALUES| ).
+    DATA(t625) = |use POPUP_GET_VALUES|.
     t624 = t625.
     DATA t626 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t627 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1906,13 +1906,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t621->zlnt_json_ownkeys_70e5fd461788.
     t621->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t630) = CONV string( |name| ).
+    DATA(t630) = |name|.
     DATA t631 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t631.
     IF t621->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t621->zlnt_json_ownkeys_70e5fd461788->put( p0 = t630 p1 = t631 ).
     ENDIF.
-    DATA(t632) = CONV string( |replace| ).
+    DATA(t632) = |replace|.
     DATA t633 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t633.
     IF t621->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1921,13 +1921,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t620->load( ).
     APPEND t621 TO t620->items.
     t620->save( ).
-    DATA(t634) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t634) = t2.
     DATA t635 TYPE REF TO zcl_lnt_recommendations.
     DATA t636 TYPE string.
-    DATA(t637) = CONV string( |QF05_RANDOM_INTEGER| ).
+    DATA(t637) = |QF05_RANDOM_INTEGER|.
     t636 = t637.
     DATA t638 TYPE string.
-    DATA(t639) = CONV string( |use CL_ABAP_RANDOM_INT| ).
+    DATA(t639) = |use CL_ABAP_RANDOM_INT|.
     t638 = t639.
     DATA t640 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t641 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1948,13 +1948,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t635->zlnt_json_ownkeys_70e5fd461788.
     t635->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t644) = CONV string( |name| ).
+    DATA(t644) = |name|.
     DATA t645 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t645.
     IF t635->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t635->zlnt_json_ownkeys_70e5fd461788->put( p0 = t644 p1 = t645 ).
     ENDIF.
-    DATA(t646) = CONV string( |replace| ).
+    DATA(t646) = |replace|.
     DATA t647 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t647.
     IF t635->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -1963,13 +1963,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t634->load( ).
     APPEND t635 TO t634->items.
     t634->save( ).
-    DATA(t648) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t648) = t2.
     DATA t649 TYPE REF TO zcl_lnt_recommendations.
     DATA t650 TYPE string.
-    DATA(t651) = CONV string( |REGISTRY_GET| ).
+    DATA(t651) = |REGISTRY_GET|.
     t650 = t651.
     DATA t652 TYPE string.
-    DATA(t653) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t653) = |use CL_GUI_FRONTEND_SERVICES|.
     t652 = t653.
     DATA t654 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t655 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1990,13 +1990,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t649->zlnt_json_ownkeys_70e5fd461788.
     t649->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t658) = CONV string( |name| ).
+    DATA(t658) = |name|.
     DATA t659 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t659.
     IF t649->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t649->zlnt_json_ownkeys_70e5fd461788->put( p0 = t658 p1 = t659 ).
     ENDIF.
-    DATA(t660) = CONV string( |replace| ).
+    DATA(t660) = |replace|.
     DATA t661 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t661.
     IF t649->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2005,13 +2005,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t648->load( ).
     APPEND t649 TO t648->items.
     t648->save( ).
-    DATA(t662) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t662) = t2.
     DATA t663 TYPE REF TO zcl_lnt_recommendations.
     DATA t664 TYPE string.
-    DATA(t665) = CONV string( |REGISTRY_SET| ).
+    DATA(t665) = |REGISTRY_SET|.
     t664 = t665.
     DATA t666 TYPE string.
-    DATA(t667) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t667) = |use CL_GUI_FRONTEND_SERVICES|.
     t666 = t667.
     DATA t668 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t669 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2032,13 +2032,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t663->zlnt_json_ownkeys_70e5fd461788.
     t663->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t672) = CONV string( |name| ).
+    DATA(t672) = |name|.
     DATA t673 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t673.
     IF t663->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t663->zlnt_json_ownkeys_70e5fd461788->put( p0 = t672 p1 = t673 ).
     ENDIF.
-    DATA(t674) = CONV string( |replace| ).
+    DATA(t674) = |replace|.
     DATA t675 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t675.
     IF t663->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2047,13 +2047,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t662->load( ).
     APPEND t663 TO t662->items.
     t662->save( ).
-    DATA(t676) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t676) = t2.
     DATA t677 TYPE REF TO zcl_lnt_recommendations.
     DATA t678 TYPE string.
-    DATA(t679) = CONV string( |REUSE_ALV_GRID_DISPLAY| ).
+    DATA(t679) = |REUSE_ALV_GRID_DISPLAY|.
     t678 = t679.
     DATA t680 TYPE string.
-    DATA(t681) = CONV string( |use CL_SALV_TABLE=>FACTORY or CL_GUI_ALV_GRID| ).
+    DATA(t681) = |use CL_SALV_TABLE=>FACTORY or CL_GUI_ALV_GRID|.
     t680 = t681.
     DATA t682 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t683 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2074,13 +2074,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t677->zlnt_json_ownkeys_70e5fd461788.
     t677->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t686) = CONV string( |name| ).
+    DATA(t686) = |name|.
     DATA t687 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t687.
     IF t677->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t677->zlnt_json_ownkeys_70e5fd461788->put( p0 = t686 p1 = t687 ).
     ENDIF.
-    DATA(t688) = CONV string( |replace| ).
+    DATA(t688) = |replace|.
     DATA t689 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t689.
     IF t677->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2089,13 +2089,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t676->load( ).
     APPEND t677 TO t676->items.
     t676->save( ).
-    DATA(t690) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t690) = t2.
     DATA t691 TYPE REF TO zcl_lnt_recommendations.
     DATA t692 TYPE string.
-    DATA(t693) = CONV string( |ROUND| ).
+    DATA(t693) = |ROUND|.
     t692 = t693.
     DATA t694 TYPE string.
-    DATA(t695) = CONV string( |use built in function: round()| ).
+    DATA(t695) = |use built in function: round()|.
     t694 = t695.
     DATA t696 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t697 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2116,13 +2116,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t691->zlnt_json_ownkeys_70e5fd461788.
     t691->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t700) = CONV string( |name| ).
+    DATA(t700) = |name|.
     DATA t701 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t701.
     IF t691->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t691->zlnt_json_ownkeys_70e5fd461788->put( p0 = t700 p1 = t701 ).
     ENDIF.
-    DATA(t702) = CONV string( |replace| ).
+    DATA(t702) = |replace|.
     DATA t703 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t703.
     IF t691->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2131,13 +2131,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t690->load( ).
     APPEND t691 TO t690->items.
     t690->save( ).
-    DATA(t704) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t704) = t2.
     DATA t705 TYPE REF TO zcl_lnt_recommendations.
     DATA t706 TYPE string.
-    DATA(t707) = CONV string( |SAPGUI_PROGRESS_INDICATOR| ).
+    DATA(t707) = |SAPGUI_PROGRESS_INDICATOR|.
     t706 = t707.
     DATA t708 TYPE string.
-    DATA(t709) = CONV string( |use CL_PROGRESS_INDICATOR| ).
+    DATA(t709) = |use CL_PROGRESS_INDICATOR|.
     t708 = t709.
     DATA t710 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t711 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2158,13 +2158,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t705->zlnt_json_ownkeys_70e5fd461788.
     t705->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t714) = CONV string( |name| ).
+    DATA(t714) = |name|.
     DATA t715 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t715.
     IF t705->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t705->zlnt_json_ownkeys_70e5fd461788->put( p0 = t714 p1 = t715 ).
     ENDIF.
-    DATA(t716) = CONV string( |replace| ).
+    DATA(t716) = |replace|.
     DATA t717 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t717.
     IF t705->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2173,13 +2173,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t704->load( ).
     APPEND t705 TO t704->items.
     t704->save( ).
-    DATA(t718) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t718) = t2.
     DATA t719 TYPE REF TO zcl_lnt_recommendations.
     DATA t720 TYPE string.
-    DATA(t721) = CONV string( |SCMS_BASE64_DECODE_STR| ).
+    DATA(t721) = |SCMS_BASE64_DECODE_STR|.
     t720 = t721.
     DATA t722 TYPE string.
-    DATA(t723) = CONV string( |use class CL_HTTP_UTILITY methods| ).
+    DATA(t723) = |use class CL_HTTP_UTILITY methods|.
     t722 = t723.
     DATA t724 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t725 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2200,13 +2200,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t719->zlnt_json_ownkeys_70e5fd461788.
     t719->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t728) = CONV string( |name| ).
+    DATA(t728) = |name|.
     DATA t729 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t729.
     IF t719->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t719->zlnt_json_ownkeys_70e5fd461788->put( p0 = t728 p1 = t729 ).
     ENDIF.
-    DATA(t730) = CONV string( |replace| ).
+    DATA(t730) = |replace|.
     DATA t731 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t731.
     IF t719->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2215,13 +2215,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t718->load( ).
     APPEND t719 TO t718->items.
     t718->save( ).
-    DATA(t732) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t732) = t2.
     DATA t733 TYPE REF TO zcl_lnt_recommendations.
     DATA t734 TYPE string.
-    DATA(t735) = CONV string( |SCMS_STRING_TO_XSTRING| ).
+    DATA(t735) = |SCMS_STRING_TO_XSTRING|.
     t734 = t735.
     DATA t736 TYPE string.
-    DATA(t737) = CONV string( |use CL_BINARY_CONVERT| ).
+    DATA(t737) = |use CL_BINARY_CONVERT|.
     t736 = t737.
     DATA t738 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t739 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2242,13 +2242,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t733->zlnt_json_ownkeys_70e5fd461788.
     t733->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t742) = CONV string( |name| ).
+    DATA(t742) = |name|.
     DATA t743 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t743.
     IF t733->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t733->zlnt_json_ownkeys_70e5fd461788->put( p0 = t742 p1 = t743 ).
     ENDIF.
-    DATA(t744) = CONV string( |replace| ).
+    DATA(t744) = |replace|.
     DATA t745 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t745.
     IF t733->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2257,13 +2257,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t732->load( ).
     APPEND t733 TO t732->items.
     t732->save( ).
-    DATA(t746) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t746) = t2.
     DATA t747 TYPE REF TO zcl_lnt_recommendations.
     DATA t748 TYPE string.
-    DATA(t749) = CONV string( |SO_NEW_DOCUMENT_ATT_SEND_API1| ).
+    DATA(t749) = |SO_NEW_DOCUMENT_ATT_SEND_API1|.
     t748 = t749.
     DATA t750 TYPE string.
-    DATA(t751) = CONV string( |use CL_BCS| ).
+    DATA(t751) = |use CL_BCS|.
     t750 = t751.
     DATA t752 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t753 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2284,13 +2284,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t747->zlnt_json_ownkeys_70e5fd461788.
     t747->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t756) = CONV string( |name| ).
+    DATA(t756) = |name|.
     DATA t757 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t757.
     IF t747->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t747->zlnt_json_ownkeys_70e5fd461788->put( p0 = t756 p1 = t757 ).
     ENDIF.
-    DATA(t758) = CONV string( |replace| ).
+    DATA(t758) = |replace|.
     DATA t759 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t759.
     IF t747->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2299,13 +2299,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t746->load( ).
     APPEND t747 TO t746->items.
     t746->save( ).
-    DATA(t760) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t760) = t2.
     DATA t761 TYPE REF TO zcl_lnt_recommendations.
     DATA t762 TYPE string.
-    DATA(t763) = CONV string( |SSFC_BASE64_DECODE| ).
+    DATA(t763) = |SSFC_BASE64_DECODE|.
     t762 = t763.
     DATA t764 TYPE string.
-    DATA(t765) = CONV string( |use class CL_HTTP_UTILITY methods| ).
+    DATA(t765) = |use class CL_HTTP_UTILITY methods|.
     t764 = t765.
     DATA t766 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t767 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2326,13 +2326,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t761->zlnt_json_ownkeys_70e5fd461788.
     t761->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t770) = CONV string( |name| ).
+    DATA(t770) = |name|.
     DATA t771 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t771.
     IF t761->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t761->zlnt_json_ownkeys_70e5fd461788->put( p0 = t770 p1 = t771 ).
     ENDIF.
-    DATA(t772) = CONV string( |replace| ).
+    DATA(t772) = |replace|.
     DATA t773 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t773.
     IF t761->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2341,13 +2341,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t760->load( ).
     APPEND t761 TO t760->items.
     t760->save( ).
-    DATA(t774) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t774) = t2.
     DATA t775 TYPE REF TO zcl_lnt_recommendations.
     DATA t776 TYPE string.
-    DATA(t777) = CONV string( |SSFC_BASE64_ENCODE| ).
+    DATA(t777) = |SSFC_BASE64_ENCODE|.
     t776 = t777.
     DATA t778 TYPE string.
-    DATA(t779) = CONV string( |use class CL_HTTP_UTILITY methods| ).
+    DATA(t779) = |use class CL_HTTP_UTILITY methods|.
     t778 = t779.
     DATA t780 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t781 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2368,13 +2368,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t775->zlnt_json_ownkeys_70e5fd461788.
     t775->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t784) = CONV string( |name| ).
+    DATA(t784) = |name|.
     DATA t785 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t785.
     IF t775->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t775->zlnt_json_ownkeys_70e5fd461788->put( p0 = t784 p1 = t785 ).
     ENDIF.
-    DATA(t786) = CONV string( |replace| ).
+    DATA(t786) = |replace|.
     DATA t787 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t787.
     IF t775->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2383,13 +2383,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t774->load( ).
     APPEND t775 TO t774->items.
     t774->save( ).
-    DATA(t788) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t788) = t2.
     DATA t789 TYPE REF TO zcl_lnt_recommendations.
     DATA t790 TYPE string.
-    DATA(t791) = CONV string( |SUBST_GET_FILE_LIST| ).
+    DATA(t791) = |SUBST_GET_FILE_LIST|.
     t790 = t791.
     DATA t792 TYPE string.
-    DATA(t793) = CONV string( |see note 1686357| ).
+    DATA(t793) = |see note 1686357|.
     t792 = t793.
     DATA t794 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t795 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2410,13 +2410,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t789->zlnt_json_ownkeys_70e5fd461788.
     t789->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t798) = CONV string( |name| ).
+    DATA(t798) = |name|.
     DATA t799 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t799.
     IF t789->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t789->zlnt_json_ownkeys_70e5fd461788->put( p0 = t798 p1 = t799 ).
     ENDIF.
-    DATA(t800) = CONV string( |replace| ).
+    DATA(t800) = |replace|.
     DATA t801 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t801.
     IF t789->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2425,13 +2425,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t788->load( ).
     APPEND t789 TO t788->items.
     t788->save( ).
-    DATA(t802) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t802) = t2.
     DATA t803 TYPE REF TO zcl_lnt_recommendations.
     DATA t804 TYPE string.
-    DATA(t805) = CONV string( |SYSTEM_GET_UNIQUE_ID| ).
+    DATA(t805) = |SYSTEM_GET_UNIQUE_ID|.
     t804 = t805.
     DATA t806 TYPE string.
-    DATA(t807) = CONV string( |use CL_SYSTEM_UUID| ).
+    DATA(t807) = |use CL_SYSTEM_UUID|.
     t806 = t807.
     DATA t808 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t809 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2452,13 +2452,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t803->zlnt_json_ownkeys_70e5fd461788.
     t803->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t812) = CONV string( |name| ).
+    DATA(t812) = |name|.
     DATA t813 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t813.
     IF t803->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t803->zlnt_json_ownkeys_70e5fd461788->put( p0 = t812 p1 = t813 ).
     ENDIF.
-    DATA(t814) = CONV string( |replace| ).
+    DATA(t814) = |replace|.
     DATA t815 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t815.
     IF t803->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2467,13 +2467,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t802->load( ).
     APPEND t803 TO t802->items.
     t802->save( ).
-    DATA(t816) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t816) = t2.
     DATA t817 TYPE REF TO zcl_lnt_recommendations.
     DATA t818 TYPE string.
-    DATA(t819) = CONV string( |SYSTEM_UUID_C_CREATE| ).
+    DATA(t819) = |SYSTEM_UUID_C_CREATE|.
     t818 = t819.
     DATA t820 TYPE string.
-    DATA(t821) = CONV string( |use CL_SYSTEM_UUID| ).
+    DATA(t821) = |use CL_SYSTEM_UUID|.
     t820 = t821.
     DATA t822 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t823 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2494,13 +2494,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t817->zlnt_json_ownkeys_70e5fd461788.
     t817->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t826) = CONV string( |name| ).
+    DATA(t826) = |name|.
     DATA t827 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t827.
     IF t817->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t817->zlnt_json_ownkeys_70e5fd461788->put( p0 = t826 p1 = t827 ).
     ENDIF.
-    DATA(t828) = CONV string( |replace| ).
+    DATA(t828) = |replace|.
     DATA t829 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t829.
     IF t817->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2509,13 +2509,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t816->load( ).
     APPEND t817 TO t816->items.
     t816->save( ).
-    DATA(t830) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t830) = t2.
     DATA t831 TYPE REF TO zcl_lnt_recommendations.
     DATA t832 TYPE string.
-    DATA(t833) = CONV string( |UPLOAD| ).
+    DATA(t833) = |UPLOAD|.
     t832 = t833.
     DATA t834 TYPE string.
-    DATA(t835) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t835) = |use CL_GUI_FRONTEND_SERVICES|.
     t834 = t835.
     DATA t836 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t837 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2536,13 +2536,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t831->zlnt_json_ownkeys_70e5fd461788.
     t831->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t840) = CONV string( |name| ).
+    DATA(t840) = |name|.
     DATA t841 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t841.
     IF t831->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t831->zlnt_json_ownkeys_70e5fd461788->put( p0 = t840 p1 = t841 ).
     ENDIF.
-    DATA(t842) = CONV string( |replace| ).
+    DATA(t842) = |replace|.
     DATA t843 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t843.
     IF t831->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2551,13 +2551,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t830->load( ).
     APPEND t831 TO t830->items.
     t830->save( ).
-    DATA(t844) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t844) = t2.
     DATA t845 TYPE REF TO zcl_lnt_recommendations.
     DATA t846 TYPE string.
-    DATA(t847) = CONV string( |WS_DOWNLOAD| ).
+    DATA(t847) = |WS_DOWNLOAD|.
     t846 = t847.
     DATA t848 TYPE string.
-    DATA(t849) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t849) = |use CL_GUI_FRONTEND_SERVICES|.
     t848 = t849.
     DATA t850 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t851 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2578,13 +2578,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t845->zlnt_json_ownkeys_70e5fd461788.
     t845->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t854) = CONV string( |name| ).
+    DATA(t854) = |name|.
     DATA t855 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t855.
     IF t845->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t845->zlnt_json_ownkeys_70e5fd461788->put( p0 = t854 p1 = t855 ).
     ENDIF.
-    DATA(t856) = CONV string( |replace| ).
+    DATA(t856) = |replace|.
     DATA t857 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t857.
     IF t845->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2593,13 +2593,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t844->load( ).
     APPEND t845 TO t844->items.
     t844->save( ).
-    DATA(t858) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t858) = t2.
     DATA t859 TYPE REF TO zcl_lnt_recommendations.
     DATA t860 TYPE string.
-    DATA(t861) = CONV string( |WS_EXECUTE| ).
+    DATA(t861) = |WS_EXECUTE|.
     t860 = t861.
     DATA t862 TYPE string.
-    DATA(t863) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t863) = |use CL_GUI_FRONTEND_SERVICES|.
     t862 = t863.
     DATA t864 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t865 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2620,13 +2620,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t859->zlnt_json_ownkeys_70e5fd461788.
     t859->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t868) = CONV string( |name| ).
+    DATA(t868) = |name|.
     DATA t869 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t869.
     IF t859->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t859->zlnt_json_ownkeys_70e5fd461788->put( p0 = t868 p1 = t869 ).
     ENDIF.
-    DATA(t870) = CONV string( |replace| ).
+    DATA(t870) = |replace|.
     DATA t871 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t871.
     IF t859->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2635,13 +2635,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t858->load( ).
     APPEND t859 TO t858->items.
     t858->save( ).
-    DATA(t872) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t872) = t2.
     DATA t873 TYPE REF TO zcl_lnt_recommendations.
     DATA t874 TYPE string.
-    DATA(t875) = CONV string( |WS_FILENAME_GET| ).
+    DATA(t875) = |WS_FILENAME_GET|.
     t874 = t875.
     DATA t876 TYPE string.
-    DATA(t877) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t877) = |use CL_GUI_FRONTEND_SERVICES|.
     t876 = t877.
     DATA t878 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t879 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2662,13 +2662,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t873->zlnt_json_ownkeys_70e5fd461788.
     t873->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t882) = CONV string( |name| ).
+    DATA(t882) = |name|.
     DATA t883 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t883.
     IF t873->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t873->zlnt_json_ownkeys_70e5fd461788->put( p0 = t882 p1 = t883 ).
     ENDIF.
-    DATA(t884) = CONV string( |replace| ).
+    DATA(t884) = |replace|.
     DATA t885 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t885.
     IF t873->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2677,13 +2677,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t872->load( ).
     APPEND t873 TO t872->items.
     t872->save( ).
-    DATA(t886) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t886) = t2.
     DATA t887 TYPE REF TO zcl_lnt_recommendations.
     DATA t888 TYPE string.
-    DATA(t889) = CONV string( |WS_FILE_ATTRIB| ).
+    DATA(t889) = |WS_FILE_ATTRIB|.
     t888 = t889.
     DATA t890 TYPE string.
-    DATA(t891) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t891) = |use CL_GUI_FRONTEND_SERVICES|.
     t890 = t891.
     DATA t892 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t893 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2704,13 +2704,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t887->zlnt_json_ownkeys_70e5fd461788.
     t887->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t896) = CONV string( |name| ).
+    DATA(t896) = |name|.
     DATA t897 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t897.
     IF t887->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t887->zlnt_json_ownkeys_70e5fd461788->put( p0 = t896 p1 = t897 ).
     ENDIF.
-    DATA(t898) = CONV string( |replace| ).
+    DATA(t898) = |replace|.
     DATA t899 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t899.
     IF t887->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2719,13 +2719,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t886->load( ).
     APPEND t887 TO t886->items.
     t886->save( ).
-    DATA(t900) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t900) = t2.
     DATA t901 TYPE REF TO zcl_lnt_recommendations.
     DATA t902 TYPE string.
-    DATA(t903) = CONV string( |WS_FILE_COPY| ).
+    DATA(t903) = |WS_FILE_COPY|.
     t902 = t903.
     DATA t904 TYPE string.
-    DATA(t905) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t905) = |use CL_GUI_FRONTEND_SERVICES|.
     t904 = t905.
     DATA t906 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t907 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2746,13 +2746,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t901->zlnt_json_ownkeys_70e5fd461788.
     t901->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t910) = CONV string( |name| ).
+    DATA(t910) = |name|.
     DATA t911 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t911.
     IF t901->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t901->zlnt_json_ownkeys_70e5fd461788->put( p0 = t910 p1 = t911 ).
     ENDIF.
-    DATA(t912) = CONV string( |replace| ).
+    DATA(t912) = |replace|.
     DATA t913 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t913.
     IF t901->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2761,13 +2761,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t900->load( ).
     APPEND t901 TO t900->items.
     t900->save( ).
-    DATA(t914) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t914) = t2.
     DATA t915 TYPE REF TO zcl_lnt_recommendations.
     DATA t916 TYPE string.
-    DATA(t917) = CONV string( |WS_FILE_DELETE| ).
+    DATA(t917) = |WS_FILE_DELETE|.
     t916 = t917.
     DATA t918 TYPE string.
-    DATA(t919) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t919) = |use CL_GUI_FRONTEND_SERVICES|.
     t918 = t919.
     DATA t920 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t921 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2788,13 +2788,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t915->zlnt_json_ownkeys_70e5fd461788.
     t915->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t924) = CONV string( |name| ).
+    DATA(t924) = |name|.
     DATA t925 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t925.
     IF t915->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t915->zlnt_json_ownkeys_70e5fd461788->put( p0 = t924 p1 = t925 ).
     ENDIF.
-    DATA(t926) = CONV string( |replace| ).
+    DATA(t926) = |replace|.
     DATA t927 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t927.
     IF t915->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2803,13 +2803,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t914->load( ).
     APPEND t915 TO t914->items.
     t914->save( ).
-    DATA(t928) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t928) = t2.
     DATA t929 TYPE REF TO zcl_lnt_recommendations.
     DATA t930 TYPE string.
-    DATA(t931) = CONV string( |WS_QUERY| ).
+    DATA(t931) = |WS_QUERY|.
     t930 = t931.
     DATA t932 TYPE string.
-    DATA(t933) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t933) = |use CL_GUI_FRONTEND_SERVICES|.
     t932 = t933.
     DATA t934 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t935 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2830,13 +2830,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t929->zlnt_json_ownkeys_70e5fd461788.
     t929->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t938) = CONV string( |name| ).
+    DATA(t938) = |name|.
     DATA t939 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t939.
     IF t929->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t929->zlnt_json_ownkeys_70e5fd461788->put( p0 = t938 p1 = t939 ).
     ENDIF.
-    DATA(t940) = CONV string( |replace| ).
+    DATA(t940) = |replace|.
     DATA t941 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t941.
     IF t929->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2845,13 +2845,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t928->load( ).
     APPEND t929 TO t928->items.
     t928->save( ).
-    DATA(t942) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t942) = t2.
     DATA t943 TYPE REF TO zcl_lnt_recommendations.
     DATA t944 TYPE string.
-    DATA(t945) = CONV string( |WS_UPLOAD| ).
+    DATA(t945) = |WS_UPLOAD|.
     t944 = t945.
     DATA t946 TYPE string.
-    DATA(t947) = CONV string( |use CL_GUI_FRONTEND_SERVICES| ).
+    DATA(t947) = |use CL_GUI_FRONTEND_SERVICES|.
     t946 = t947.
     DATA t948 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t949 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2872,13 +2872,13 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t943->zlnt_json_ownkeys_70e5fd461788.
     t943->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t952) = CONV string( |name| ).
+    DATA(t952) = |name|.
     DATA t953 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t953.
     IF t943->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t943->zlnt_json_ownkeys_70e5fd461788->put( p0 = t952 p1 = t953 ).
     ENDIF.
-    DATA(t954) = CONV string( |replace| ).
+    DATA(t954) = |replace|.
     DATA t955 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t955.
     IF t943->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -2887,21 +2887,24 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     t942->load( ).
     APPEND t943 TO t942->items.
     t942->save( ).
-    DATA(t956) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t956) = t2.
     t1 = t956.
     me->zlnt_view_write_s_0f506212eca3( p0 = t1 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1517_8372396b0f05.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_0a6bdd5621d6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `recommendations` ) ).
@@ -2970,6 +2973,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
       result = me->recommendations.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_0f506212eca3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -3007,6 +3011,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `recommendations`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -3025,6 +3030,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -3032,6 +3038,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -3055,6 +3062,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -3145,6 +3153,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_cnf IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

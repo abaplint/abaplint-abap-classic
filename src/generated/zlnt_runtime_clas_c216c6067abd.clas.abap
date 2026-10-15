@@ -68,16 +68,16 @@ CLASS zlnt_runtime_clas_c216c6067abd DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-METHODS new_part_61 IMPORTING class_name TYPE string p0 TYPE REF TO zlnt_runtime_clas_a39833db3295 RETURNING VALUE(result) TYPE REF TO object.
     CLASS-METHODS new_part_62 IMPORTING class_name TYPE string p0 TYPE REF TO zlnt_runtime_clas_a39833db3295 RETURNING VALUE(result) TYPE REF TO object.
     TYPES: BEGIN OF args_frame_2019,
-    a0 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a1 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a2 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a3 TYPE REF TO zcl_lnt_tuple_e87e4bfa,
-    a4 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a5 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a6 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a7 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a8 TYPE REF TO zcl_lnt_tuple_8eedfa28,
-    a9 TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a0  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a1  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a2  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a3  TYPE REF TO zcl_lnt_tuple_e87e4bfa,
+    a4  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a5  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a6  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a7  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a8  TYPE REF TO zcl_lnt_tuple_8eedfa28,
+    a9  TYPE REF TO zcl_lnt_tuple_8eedfa28,
     a10 TYPE REF TO zcl_lnt_tuple_8eedfa28,
     a11 TYPE REF TO zcl_lnt_tuple_8eedfa28,
     a12 TYPE REF TO zcl_lnt_tuple_8eedfa28,
@@ -134,106 +134,106 @@ CLASS zlnt_runtime_clas_c216c6067abd DEFINITION PUBLIC CREATE PUBLIC.
     CLASS-METHODS args_write_2019_1 IMPORTING instance TYPE REF TO zcl_lnt_tuple_56775d3d frame TYPE args_frame_2019.
     CLASS-METHODS args_write_2019_2 IMPORTING instance TYPE REF TO zcl_lnt_tuple_56775d3d frame TYPE args_frame_2019.
     TYPES: BEGIN OF args_frame_2033,
-    a0 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a1 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a2 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a3 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a4 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a5 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a6 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a7 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a8 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a9 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a10 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a11 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a12 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a13 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a14 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a15 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a16 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a17 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a18 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a19 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a20 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a21 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a22 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a23 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a24 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a25 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a26 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a27 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a28 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a29 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a30 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a31 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a32 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a33 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a34 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a35 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a36 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a37 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a38 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a39 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a40 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a41 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a42 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a43 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a44 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a45 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a46 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a47 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a48 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a49 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a50 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a51 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a52 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a53 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a54 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a55 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a56 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a57 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a58 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a59 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a60 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a61 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a62 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a63 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a64 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a65 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a66 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a67 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a68 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a69 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a70 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a71 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a72 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a73 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a74 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a75 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a76 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a77 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a78 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a79 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a80 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a81 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a82 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a83 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a84 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a85 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a86 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a87 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a88 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a89 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a90 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a91 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a92 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a93 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a94 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a95 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a96 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a97 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a98 TYPE REF TO zlnt_runtime_clas_a39833db3295,
-    a99 TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a0   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a1   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a2   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a3   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a4   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a5   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a6   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a7   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a8   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a9   TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a10  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a11  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a12  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a13  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a14  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a15  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a16  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a17  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a18  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a19  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a20  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a21  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a22  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a23  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a24  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a25  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a26  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a27  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a28  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a29  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a30  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a31  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a32  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a33  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a34  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a35  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a36  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a37  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a38  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a39  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a40  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a41  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a42  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a43  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a44  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a45  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a46  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a47  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a48  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a49  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a50  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a51  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a52  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a53  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a54  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a55  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a56  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a57  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a58  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a59  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a60  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a61  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a62  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a63  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a64  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a65  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a66  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a67  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a68  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a69  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a70  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a71  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a72  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a73  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a74  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a75  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a76  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a77  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a78  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a79  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a80  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a81  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a82  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a83  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a84  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a85  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a86  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a87  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a88  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a89  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a90  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a91  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a92  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a93  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a94  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a95  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a96  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a97  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a98  TYPE REF TO zlnt_runtime_clas_a39833db3295,
+    a99  TYPE REF TO zlnt_runtime_clas_a39833db3295,
     a100 TYPE REF TO zlnt_runtime_clas_a39833db3295,
     a101 TYPE REF TO zlnt_runtime_clas_a39833db3295,
     a102 TYPE REF TO zlnt_runtime_clas_a39833db3295,
@@ -591,6 +591,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     TRANSLATE class_name TO UPPER CASE.
     result = new_part_0( class_name = class_name p0 = p0 ).
   ENDMETHOD.
+
   METHOD new_part_5.
     CASE class_name.
       WHEN `ZCL_LNT_ABAPDOC`.
@@ -693,6 +694,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_6.
     CASE class_name.
       WHEN `ZCL_LNT_BHVR_DFNTN_NM`.
@@ -795,6 +797,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_4.
     IF class_name <= `ZCL_LNT_BGN_SNGL_INCLD_CNF`.
       result = new_part_5( class_name = class_name p0 = p0 ).
@@ -802,6 +805,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_6( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_8.
     CASE class_name.
       WHEN `ZCL_LNT_CDS_FIELD_ORDER`.
@@ -904,6 +908,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_9.
     CASE class_name.
       WHEN `ZCL_LNT_CHECK_DDIC`.
@@ -1006,6 +1011,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_7.
     IF class_name <= `ZCL_LNT_CHECK_COMMENTS_MODULE`.
       result = new_part_8( class_name = class_name p0 = p0 ).
@@ -1013,6 +1019,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_9( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_3.
     IF class_name <= `ZCL_LNT_CDS_EXTEND_VIEW`.
       result = new_part_4( class_name = class_name p0 = p0 ).
@@ -1020,6 +1027,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_7( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_12.
     CASE class_name.
       WHEN `ZCL_LNT_CONDITIONS`.
@@ -1122,6 +1130,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_13.
     CASE class_name.
       WHEN `ZCL_LNT_DDL_STRUCTURE_FIELD`.
@@ -1224,6 +1233,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_11.
     IF class_name <= `ZCL_LNT_DDL_STRUCTURE`.
       result = new_part_12( class_name = class_name p0 = p0 ).
@@ -1231,6 +1241,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_13( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_15.
     CASE class_name.
       WHEN `ZCL_LNT_EMPTY_STRUCTURE_CONF`.
@@ -1333,6 +1344,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_16.
     CASE class_name.
       WHEN `ZCL_LNT_FIELD_ALL`.
@@ -1437,6 +1449,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_14.
     IF class_name <= `ZCL_LNT_FIELDS`.
       result = new_part_15( class_name = class_name p0 = p0 ).
@@ -1444,6 +1457,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_16( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_10.
     IF class_name <= `ZCL_LNT_EMPTY_STRUCTURE`.
       result = new_part_11( class_name = class_name p0 = p0 ).
@@ -1451,6 +1465,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_14( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_2.
     IF class_name <= `ZCL_LNT_CONCATENATED_CONSTANT`.
       result = new_part_3( class_name = class_name p0 = p0 ).
@@ -1458,6 +1473,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_10( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_20.
     CASE class_name.
       WHEN `ZCL_LNT_GRAPH`.
@@ -1560,6 +1576,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_21.
     CASE class_name.
       WHEN `ZCL_LNT_INTF_RFRNCNG_CLS_CNF`.
@@ -1662,6 +1679,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_19.
     IF class_name <= `ZCL_LNT_INTF_REFERENCING_CLAS`.
       result = new_part_20( class_name = class_name p0 = p0 ).
@@ -1669,6 +1687,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_21( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_23.
     CASE class_name.
       WHEN `ZCL_LNT_LSP_LOOKUP_RESULT`.
@@ -1771,6 +1790,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_24.
     CASE class_name.
       WHEN `ZCL_LNT_MTHD_IMPLMNTD_TWC`.
@@ -1873,6 +1893,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_22.
     IF class_name <= `ZCL_LNT_MSSG_TYP_AND_NMBR`.
       result = new_part_23( class_name = class_name p0 = p0 ).
@@ -1880,6 +1901,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_24( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_18.
     IF class_name <= `ZCL_LNT_LSP_LOOKUP`.
       result = new_part_19( class_name = class_name p0 = p0 ).
@@ -1887,6 +1909,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_22( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_27.
     CASE class_name.
       WHEN `ZCL_LNT_N_PBLC_ATTRBTS_CNF`.
@@ -1989,6 +2012,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_28.
     CASE class_name.
       WHEN `ZCL_LNT_PRFR_ABP_BL_MDL`.
@@ -2091,6 +2115,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_26.
     IF class_name <= `ZCL_LNT_PRFRRD_CMPR_OPRTR_CNF`.
       result = new_part_27( class_name = class_name p0 = p0 ).
@@ -2098,6 +2123,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_28( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_30.
     CASE class_name.
       WHEN `ZCL_LNT_REPORT`.
@@ -2200,6 +2226,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_31.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_0B343CF6`.
@@ -2304,6 +2331,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_29.
     IF class_name <= `ZCL_LNT_SHAPE_0802EB0F`.
       result = new_part_30( class_name = class_name p0 = p0 ).
@@ -2311,6 +2339,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_31( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_25.
     IF class_name <= `ZCL_LNT_RENAME_MODULE`.
       result = new_part_26( class_name = class_name p0 = p0 ).
@@ -2318,6 +2347,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_29( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_17.
     IF class_name <= `ZCL_LNT_N_MND_IN_DTBS_OPRT_CNF`.
       result = new_part_18( class_name = class_name p0 = p0 ).
@@ -2325,6 +2355,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_25( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_1.
     IF class_name <= `ZCL_LNT_GNRC_OBJCT_RFRNC_TYP`.
       result = new_part_2( class_name = class_name p0 = p0 ).
@@ -2332,6 +2363,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_17( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_36.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_E534171C`.
@@ -2434,6 +2466,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_37.
     CASE class_name.
       WHEN `ZCL_LNT_SQL_ASSOCIATION_ENTRY`.
@@ -2536,6 +2569,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_35.
     IF class_name <= `ZCL_LNT_SQL_ASSOCIATIONS_LIST`.
       result = new_part_36( class_name = class_name p0 = p0 ).
@@ -2543,6 +2577,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_37( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_39.
     CASE class_name.
       WHEN `ZCL_LNT_SQL_OFFSET`.
@@ -2645,6 +2680,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_40.
     CASE class_name.
       WHEN `ZCL_LNT_SR_ELSE_IF`.
@@ -2747,6 +2783,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_38.
     IF class_name <= `ZCL_LNT_SR_ELSE`.
       result = new_part_39( class_name = class_name p0 = p0 ).
@@ -2754,6 +2791,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_40( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_34.
     IF class_name <= `ZCL_LNT_SQL_OCCRRNCS_RGXPR`.
       result = new_part_35( class_name = class_name p0 = p0 ).
@@ -2761,6 +2799,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_38( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_43.
     CASE class_name.
       WHEN `ZCL_LNT_STTMNT_PRSR_MDL`.
@@ -2863,6 +2902,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_44.
     CASE class_name.
       WHEN `ZCL_LNT_ST_CONDENSE`.
@@ -2965,6 +3005,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_42.
     IF class_name <= `ZCL_LNT_ST_COND`.
       result = new_part_43( class_name = class_name p0 = p0 ).
@@ -2972,6 +3013,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_44( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_46.
     CASE class_name.
       WHEN `ZCL_LNT_ST_FORMAT`.
@@ -3074,6 +3116,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_47.
     CASE class_name.
       WHEN `ZCL_LNT_ST_MODIFY_ENTITIES`.
@@ -3178,6 +3221,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_45.
     IF class_name <= `ZCL_LNT_ST_MODIFY_DATABASE`.
       result = new_part_46( class_name = class_name p0 = p0 ).
@@ -3185,6 +3229,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_47( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_41.
     IF class_name <= `ZCL_LNT_ST_FORM`.
       result = new_part_42( class_name = class_name p0 = p0 ).
@@ -3192,6 +3237,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_45( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_33.
     IF class_name <= `ZCL_LNT_STTC_CLL_V_INSTNC_CNF`.
       result = new_part_34( class_name = class_name p0 = p0 ).
@@ -3199,6 +3245,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_41( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_51.
     CASE class_name.
       WHEN `ZCL_LNT_ST_SET_TITLEBAR`.
@@ -3301,6 +3348,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_52.
     CASE class_name.
       WHEN `ZCL_LNT_ST_WHEN_TYPE`.
@@ -3403,6 +3451,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_50.
     IF class_name <= `ZCL_LNT_ST_WHEN`.
       result = new_part_51( class_name = class_name p0 = p0 ).
@@ -3410,6 +3459,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_52( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_54.
     CASE class_name.
       WHEN `ZCL_LNT_SY_COMPONENT_COMPARE`.
@@ -3512,6 +3562,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_55.
     CASE class_name.
       WHEN `ZCL_LNT_SY_GET_BADI`.
@@ -3616,6 +3667,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_53.
     IF class_name <= `ZCL_LNT_SY_FUNCTION_PARAMETERS`.
       result = new_part_54( class_name = class_name p0 = p0 ).
@@ -3623,6 +3675,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_55( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_49.
     IF class_name <= `ZCL_LNT_SY_COMPONENT_CHAIN`.
       result = new_part_50( class_name = class_name p0 = p0 ).
@@ -3630,6 +3683,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_53( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_58.
     CASE class_name.
       WHEN `ZCL_LNT_SY_OPEN_CURSOR`.
@@ -3732,6 +3786,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_59.
     CASE class_name.
       WHEN `ZCL_LNT_SY_STATEM_CLASS_DATA`.
@@ -3834,6 +3889,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_57.
     IF class_name <= `ZCL_LNT_SY_SQL_SOURCE`.
       result = new_part_58( class_name = class_name p0 = p0 ).
@@ -3841,6 +3897,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_59( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_61.
     CASE class_name.
       WHEN `ZCL_LNT_TEXT_ELEMENT_KEY`.
@@ -3943,6 +4000,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_62.
     CASE class_name.
       WHEN `ZCL_LNT_UNUSED_DDIC_CONF`.
@@ -4047,6 +4105,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE (class_name).
     ENDCASE.
   ENDMETHOD.
+
   METHOD new_part_60.
     IF class_name <= `ZCL_LNT_UNUSED_DDIC`.
       result = new_part_61( class_name = class_name p0 = p0 ).
@@ -4054,6 +4113,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_62( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_56.
     IF class_name <= `ZCL_LNT_TEXT_ELEMENT`.
       result = new_part_57( class_name = class_name p0 = p0 ).
@@ -4061,6 +4121,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_60( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_48.
     IF class_name <= `ZCL_LNT_SY_NEW_OBJECT`.
       result = new_part_49( class_name = class_name p0 = p0 ).
@@ -4068,6 +4129,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_56( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_32.
     IF class_name <= `ZCL_LNT_ST_SET_PF_STATUS`.
       result = new_part_33( class_name = class_name p0 = p0 ).
@@ -4075,6 +4137,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_48( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_part_0.
     IF class_name <= `ZCL_LNT_SHAPE_E272B380`.
       result = new_part_1( class_name = class_name p0 = p0 ).
@@ -4082,6 +4145,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = new_part_32( class_name = class_name p0 = p0 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD new_args.
     IF p0 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -4094,6 +4158,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     ENDIF.
     result = args_part_0( class_name = class_name p0 = p0 p1 = p1 ).
   ENDMETHOD.
+
   METHOD args_part_5.
     CASE class_name.
       WHEN `ZCL_LNT_ABAPDOC`.
@@ -4165,7 +4230,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t1993.
         READ TABLE p1->items INDEX 2 INTO t1993.
         t1992 ?= t1993.
-        DATA(t1994) = CAST zlnt_runtime_dyna_a429568d5be8( t1992 ).
+        DATA(t1994) = t1992.
         DATA t1995 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t1995.
         IF p1 IS NOT BOUND.
@@ -4175,7 +4240,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t1996.
         READ TABLE p1->items INDEX 3 INTO t1996.
         t1995 ?= t1996.
-        DATA(t1997) = CAST zlnt_runtime_dyna_a429568d5be8( t1995 ).
+        DATA(t1997) = t1995.
         DATA t1998 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t1998.
         IF p1 IS NOT BOUND.
@@ -4185,7 +4250,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t1999.
         READ TABLE p1->items INDEX 4 INTO t1999.
         t1998 ?= t1999.
-        DATA(t2000) = CAST zlnt_runtime_dyna_a429568d5be8( t1998 ).
+        DATA(t2000) = t1998.
         DATA t2001 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t2001.
         IF p1 IS NOT BOUND.
@@ -4195,7 +4260,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t2002.
         READ TABLE p1->items INDEX 5 INTO t2002.
         t2001 ?= t2002.
-        DATA(t2003) = CAST zlnt_runtime_dyna_a429568d5be8( t2001 ).
+        DATA(t2003) = t2001.
         DATA t2004 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t2004.
         IF p1 IS NOT BOUND.
@@ -4205,7 +4270,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t2005.
         READ TABLE p1->items INDEX 6 INTO t2005.
         t2004 ?= t2005.
-        DATA(t2006) = CAST zlnt_runtime_dyna_a429568d5be8( t2004 ).
+        DATA(t2006) = t2004.
         DATA t2007 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t2007.
         IF p1 IS NOT BOUND.
@@ -4740,6 +4805,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_6.
     CASE class_name.
       WHEN `ZCL_LNT_ATHRZTN_CHCK_FLD`.
@@ -5416,6 +5482,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_4.
     IF class_name <= `ZCL_LNT_ATC_CHECK_VARIANT`.
       result = args_part_5( class_name = class_name p0 = p0 p1 = p1 ).
@@ -5423,6 +5490,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_6( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_8.
     CASE class_name.
       WHEN `ZCL_LNT_CDS_CARDINALITY`.
@@ -5647,6 +5715,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_9.
     CASE class_name.
       WHEN `ZCL_LNT_CHCK_TRNSFRMTN_EXSTS`.
@@ -5806,7 +5875,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t919.
         READ TABLE p1->items INDEX 3 INTO t919.
         t918 ?= t919.
-        DATA(t920) = CAST zlnt_runtime_dyna_a429568d5be8( t918 ).
+        DATA(t920) = t918.
         CREATE OBJECT result TYPE zcl_lnt_class_constant EXPORTING i_id = t913 i_visibility_5c1f = t917 i_value = t920.
       WHEN `ZCL_LNT_CLASS_DATA_BEGIN`.
         CREATE OBJECT result TYPE zcl_lnt_class_data_begin.
@@ -6039,6 +6108,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_7.
     IF class_name <= `ZCL_LNT_CHCK_OFFST_LNGTH_MDL`.
       result = args_part_8( class_name = class_name p0 = p0 p1 = p1 ).
@@ -6046,6 +6116,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_9( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_3.
     IF class_name <= `ZCL_LNT_CDS_ASSOCIATION_NAME`.
       result = args_part_4( class_name = class_name p0 = p0 p1 = p1 ).
@@ -6053,6 +6124,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_7( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_12.
     CASE class_name.
       WHEN `ZCL_LNT_COMMENTED_CODE`.
@@ -6617,6 +6689,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_13.
     CASE class_name.
       WHEN `ZCL_LNT_DDL_FOREIGN_KEY`.
@@ -7287,6 +7360,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_11.
     IF class_name <= `ZCL_LNT_DDL_EXTEND_TYPE`.
       result = args_part_12( class_name = class_name p0 = p0 p1 = p1 ).
@@ -7294,6 +7368,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_13( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_15.
     CASE class_name.
       WHEN `ZCL_LNT_EMAIL_TEMPLATE`.
@@ -7610,6 +7685,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_17.
     CASE class_name.
       WHEN `ZCL_LNT_FAIL_COMBINATOR`.
@@ -7786,7 +7862,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t974.
         READ TABLE p1->items INDEX 1 INTO t974.
         t973 ?= t974.
-        DATA(t975) = CAST zlnt_runtime_dyna_a429568d5be8( t973 ).
+        DATA(t975) = t973.
         CREATE OBJECT result TYPE zcl_lnt_fnctn_mdl_dfntn EXPORTING i_data_dc02 = t975.
       WHEN `ZCL_LNT_FNCTN_MDL_DFNTN_MDL`.
         IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
@@ -7880,6 +7956,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_18.
     CASE class_name.
       WHEN `ZCL_LNT_FORM_PARAM_NAME`.
@@ -8135,6 +8212,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_16.
     IF class_name <= `ZCL_LNT_FORM_OBJECT_INTERFACE`.
       result = args_part_17( class_name = class_name p0 = p0 p1 = p1 ).
@@ -8142,6 +8220,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_18( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_14.
     IF class_name <= `ZCL_LNT_EXTRACT`.
       result = args_part_15( class_name = class_name p0 = p0 p1 = p1 ).
@@ -8149,6 +8228,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_16( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_10.
     IF class_name <= `ZCL_LNT_EDIT_HELPER_MODULE`.
       result = args_part_11( class_name = class_name p0 = p0 p1 = p1 ).
@@ -8156,6 +8236,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_14( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_2.
     IF class_name <= `ZCL_LNT_COMMAND`.
       result = args_part_3( class_name = class_name p0 = p0 p1 = p1 ).
@@ -8163,6 +8244,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_10( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_23.
     CASE class_name.
       WHEN `ZCL_LNT_GENERATOR_7E7DC2C1`.
@@ -8560,6 +8642,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_24.
     CASE class_name.
       WHEN `ZCL_LNT_IAMAPP`.
@@ -9201,6 +9284,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_22.
     IF class_name <= `ZCL_LNT_IALLOWED_NAMING`.
       result = args_part_23( class_name = class_name p0 = p0 p1 = p1 ).
@@ -9208,6 +9292,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_24( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_26.
     CASE class_name.
       WHEN `ZCL_LNT_IISSUE_DATA`.
@@ -9879,6 +9964,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_27.
     CASE class_name.
       WHEN `ZCL_LNT_INFO_IMPLEMENTING`.
@@ -10287,6 +10373,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_25.
     IF class_name <= `ZCL_LNT_INFO_FORM_DEFINITION`.
       result = args_part_26( class_name = class_name p0 = p0 p1 = p1 ).
@@ -10294,6 +10381,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_27( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_21.
     IF class_name <= `ZCL_LNT_IINDENTATION_OPTIONS`.
       result = args_part_22( class_name = class_name p0 = p0 p1 = p1 ).
@@ -10301,6 +10389,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_25( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_31.
     CASE class_name.
       WHEN `ZCL_LNT_IPARSE_RESULT`.
@@ -10823,6 +10912,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_32.
     CASE class_name.
       WHEN `ZCL_LNT_ISTRUCTURE_COMPONENT`.
@@ -11146,6 +11236,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_30.
     IF class_name <= `ZCL_LNT_ISTATEMENT_RESULT`.
       result = args_part_31( class_name = class_name p0 = p0 p1 = p1 ).
@@ -11153,6 +11244,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_32( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_33.
     CASE class_name.
       WHEN `ZCL_LNT_KEYWORD_CASE_MODULE`.
@@ -11350,6 +11442,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_29.
     IF class_name <= `ZCL_LNT_KEYWORD_CASE_CONF`.
       result = args_part_30( class_name = class_name p0 = p0 p1 = p1 ).
@@ -11357,6 +11450,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_33( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_35.
     CASE class_name.
       WHEN `ZCL_LNT_LOCAL`.
@@ -11728,6 +11822,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_36.
     CASE class_name.
       WHEN `ZCL_LNT_MAX_ONE_STATEMENT`.
@@ -11955,6 +12050,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_34.
     IF class_name <= `ZCL_LNT_MANY_PARENTHESES_CONF`.
       result = args_part_35( class_name = class_name p0 = p0 p1 = p1 ).
@@ -11962,6 +12058,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_36( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_28.
     IF class_name <= `ZCL_LNT_LOB_HANDLE_TYPE_MODULE`.
       result = args_part_29( class_name = class_name p0 = p0 p1 = p1 ).
@@ -11969,6 +12066,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_34( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_20.
     IF class_name <= `ZCL_LNT_IPARAMETER_DATA`.
       result = args_part_21( class_name = class_name p0 = p0 p1 = p1 ).
@@ -11976,6 +12074,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_28( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_39.
     CASE class_name.
       WHEN `ZCL_LNT_MN_FL_CNTNTS_CNF`.
@@ -12468,6 +12567,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_40.
     CASE class_name.
       WHEN `ZCL_LNT_NPTN_CSTM_JS_HLPR`.
@@ -12931,7 +13031,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CLEAR t2237.
         READ TABLE p1->items INDEX 2 INTO t2237.
         t2236 ?= t2237.
-        DATA(t2238) = CAST zlnt_runtime_dyna_a429568d5be8( t2236 ).
+        DATA(t2238) = t2236.
         CREATE OBJECT result TYPE zcl_lnt_opt_vrsn_txt_dcmn_idnt EXPORTING i_uri = t2235 i_version = t2238.
       WHEN `ZCL_LNT_OR`.
         CREATE OBJECT result TYPE zcl_lnt_or.
@@ -13132,6 +13232,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_38.
     IF class_name <= `ZCL_LNT_NO_YODA_CONDITIONS`.
       result = args_part_39( class_name = class_name p0 = p0 p1 = p1 ).
@@ -13139,6 +13240,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_40( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_42.
     CASE class_name.
       WHEN `ZCL_LNT_PAREN_RIGHT`.
@@ -13813,6 +13915,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_44.
     CASE class_name.
       WHEN `ZCL_LNT_PUBLIC_SECTION`.
@@ -14099,6 +14202,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_45.
     CASE class_name.
       WHEN `ZCL_LNT_RENAMER_HELPER`.
@@ -14593,6 +14697,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_43.
     IF class_name <= `ZCL_LNT_RENAMER`.
       result = args_part_44( class_name = class_name p0 = p0 p1 = p1 ).
@@ -14600,6 +14705,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_45( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_41.
     IF class_name <= `ZCL_LNT_PUBLIC`.
       result = args_part_42( class_name = class_name p0 = p0 p1 = p1 ).
@@ -14607,6 +14713,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_43( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_37.
     IF class_name <= `ZCL_LNT_PAREN_LEFT_W`.
       result = args_part_38( class_name = class_name p0 = p0 p1 = p1 ).
@@ -14614,6 +14721,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_41( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_19.
     IF class_name <= `ZCL_LNT_MNTNN_AND_TRNSPR_OBJCT`.
       result = args_part_20( class_name = class_name p0 = p0 p1 = p1 ).
@@ -14621,6 +14729,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_37( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_1.
     IF class_name <= `ZCL_LNT_GENERATOR_17955B8B`.
       result = args_part_2( class_name = class_name p0 = p0 p1 = p1 ).
@@ -14628,6 +14737,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_19( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_51.
     CASE class_name.
       WHEN `ZCL_LNT_ROLLBACK`.
@@ -14825,6 +14935,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_53.
     CASE class_name.
       WHEN `ZCL_LNT_SET_MARGIN`.
@@ -15181,6 +15292,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_54.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_0DBCB8A9`.
@@ -15785,6 +15897,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_52.
     IF class_name <= `ZCL_LNT_SHAPE_0B343CF6`.
       result = args_part_53( class_name = class_name p0 = p0 p1 = p1 ).
@@ -15792,6 +15905,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_54( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_50.
     IF class_name <= `ZCL_LNT_SET_LOCKS`.
       result = args_part_51( class_name = class_name p0 = p0 p1 = p1 ).
@@ -15799,6 +15913,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_52( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_58.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_36BC2E57`.
@@ -16445,6 +16560,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_59.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_50142CBD`.
@@ -16704,6 +16820,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_57.
     IF class_name <= `ZCL_LNT_SHAPE_4EBEEEE9`.
       result = args_part_58( class_name = class_name p0 = p0 p1 = p1 ).
@@ -16711,6 +16828,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_59( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_60.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_5BD99AC8`.
@@ -17362,6 +17480,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_56.
     IF class_name <= `ZCL_LNT_SHAPE_5AE9C337`.
       result = args_part_57( class_name = class_name p0 = p0 p1 = p1 ).
@@ -17369,6 +17488,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_60( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_62.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_88C047D7`.
@@ -18085,6 +18205,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_63.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_A38E878F`.
@@ -18734,6 +18855,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_61.
     IF class_name <= `ZCL_LNT_SHAPE_A19BF969`.
       result = args_part_62( class_name = class_name p0 = p0 p1 = p1 ).
@@ -18741,6 +18863,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_63( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_55.
     IF class_name <= `ZCL_LNT_SHAPE_88A44908`.
       result = args_part_56( class_name = class_name p0 = p0 p1 = p1 ).
@@ -18748,6 +18871,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_61( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_49.
     IF class_name <= `ZCL_LNT_SHAPE_35310764`.
       result = args_part_50( class_name = class_name p0 = p0 p1 = p1 ).
@@ -18755,6 +18879,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_55( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_68.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_C9BC8812`.
@@ -19065,6 +19190,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_69.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_D77DA4ED`.
@@ -19676,6 +19802,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_67.
     IF class_name <= `ZCL_LNT_SHAPE_D6DAFB2C`.
       result = args_part_68( class_name = class_name p0 = p0 p1 = p1 ).
@@ -19683,6 +19810,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_69( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_70.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_E8FB1D71`.
@@ -20230,6 +20358,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_66.
     IF class_name <= `ZCL_LNT_SHAPE_E534171C`.
       result = args_part_67( class_name = class_name p0 = p0 p1 = p1 ).
@@ -20237,6 +20366,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_70( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_71.
     CASE class_name.
       WHEN `ZCL_LNT_SIMPLE_SOURCE3`.
@@ -20425,6 +20555,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_65.
     IF class_name <= `ZCL_LNT_SIMPLE_SOURCE2`.
       result = args_part_66( class_name = class_name p0 = p0 p1 = p1 ).
@@ -20432,6 +20563,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_71( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_73.
     CASE class_name.
       WHEN `ZCL_LNT_SQL_AGGREGATION`.
@@ -20505,6 +20637,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_74.
     CASE class_name.
       WHEN `ZCL_LNT_SQL_FROM_SOURCE`.
@@ -20652,6 +20785,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_72.
     IF class_name <= `ZCL_LNT_SQL_FROM_BODY`.
       result = args_part_73( class_name = class_name p0 = p0 p1 = p1 ).
@@ -20659,6 +20793,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_74( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_64.
     IF class_name <= `ZCL_LNT_SQLCTE_PATH_PREFIX`.
       result = args_part_65( class_name = class_name p0 = p0 p1 = p1 ).
@@ -20666,6 +20801,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_72( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_48.
     IF class_name <= `ZCL_LNT_SHAPE_C89A2931`.
       result = args_part_49( class_name = class_name p0 = p0 p1 = p1 ).
@@ -20673,6 +20809,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_64( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_77.
     CASE class_name.
       WHEN `ZCL_LNT_SQL_PRIVILEGED_ACCESS`.
@@ -20850,6 +20987,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_78.
     CASE class_name.
       WHEN `ZCL_LNT_SR_TEST_SEAM`.
@@ -21349,6 +21487,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_76.
     IF class_name <= `ZCL_LNT_SR_TEST_INJECTION`.
       result = args_part_77( class_name = class_name p0 = p0 p1 = p1 ).
@@ -21356,6 +21495,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_78( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_80.
     CASE class_name.
       WHEN `ZCL_LNT_ST_CAST`.
@@ -21515,6 +21655,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_82.
     CASE class_name.
       WHEN `ZCL_LNT_ST_EXPRES_TYPE`.
@@ -21585,6 +21726,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_83.
     CASE class_name.
       WHEN `ZCL_LNT_ST_INLINE_DATA`.
@@ -21657,6 +21799,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_81.
     IF class_name <= `ZCL_LNT_ST_INCLUDE_TYPE`.
       result = args_part_82( class_name = class_name p0 = p0 p1 = p1 ).
@@ -21664,6 +21807,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_83( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_79.
     IF class_name <= `ZCL_LNT_ST_EXPRES_SELECT`.
       result = args_part_80( class_name = class_name p0 = p0 p1 = p1 ).
@@ -21671,6 +21815,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_81( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_75.
     IF class_name <= `ZCL_LNT_ST_CASE_TYPE`.
       result = args_part_76( class_name = class_name p0 = p0 p1 = p1 ).
@@ -21678,6 +21823,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_79( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_47.
     IF class_name <= `ZCL_LNT_SQL_PATH_SEGMENT`.
       result = args_part_48( class_name = class_name p0 = p0 p1 = p1 ).
@@ -21685,6 +21831,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_75( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_87.
     CASE class_name.
       WHEN `ZCL_LNT_ST_MTHD_DF_RTRNNG`.
@@ -21870,6 +22017,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_88.
     CASE class_name.
       WHEN `ZCL_LNT_ST_STATEM_FIELD`.
@@ -22136,6 +22284,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_86.
     IF class_name <= `ZCL_LNT_ST_STATEM_CONSTANT`.
       result = args_part_87( class_name = class_name p0 = p0 p1 = p1 ).
@@ -22143,6 +22292,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_88( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_90.
     CASE class_name.
       WHEN `ZCL_LNT_SY_ATTRIBUTE_NAME`.
@@ -22277,6 +22427,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_92.
     CASE class_name.
       WHEN `ZCL_LNT_SY_FILTER_BODY`.
@@ -22347,6 +22498,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_93.
     CASE class_name.
       WHEN `ZCL_LNT_SY_INTERFACE_DEFERRED`.
@@ -22455,6 +22607,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_91.
     IF class_name <= `ZCL_LNT_SY_INSERT_TEXTPOOL`.
       result = args_part_92( class_name = class_name p0 = p0 p1 = p1 ).
@@ -22462,6 +22615,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_93( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_89.
     IF class_name <= `ZCL_LNT_SY_FIELD_SYMBOL`.
       result = args_part_90( class_name = class_name p0 = p0 p1 = p1 ).
@@ -22469,6 +22623,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_91( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_85.
     IF class_name <= `ZCL_LNT_SY_ATTRIBUTE_CHAIN`.
       result = args_part_86( class_name = class_name p0 = p0 p1 = p1 ).
@@ -22476,6 +22631,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_89( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_96.
     CASE class_name.
       WHEN `ZCL_LNT_SY_RAISE_EVENT`.
@@ -22613,6 +22769,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_97.
     CASE class_name.
       WHEN `ZCL_LNT_SY_TYPE_ENUM`.
@@ -23368,6 +23525,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_95.
     IF class_name <= `ZCL_LNT_SY_TYPES`.
       result = args_part_96( class_name = class_name p0 = p0 p1 = p1 ).
@@ -23375,6 +23533,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_97( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_99.
     CASE class_name.
       WHEN `ZCL_LNT_TYPE_DEFINITIONS`.
@@ -23950,6 +24109,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_101.
     CASE class_name.
       WHEN `ZCL_LNT_VALUE`.
@@ -24383,6 +24543,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_102.
     CASE class_name.
       WHEN `ZCL_LNT_WRNG_ABPDC_PSTN_CNF`.
@@ -25150,6 +25311,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
   ENDMETHOD.
+
   METHOD args_part_100.
     IF class_name <= `ZCL_LNT_WRITE_OFFSET_LENGTH`.
       result = args_part_101( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25157,6 +25319,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_102( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_98.
     IF class_name <= `ZCL_LNT_UTC_LONG_TYPE`.
       result = args_part_99( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25164,6 +25327,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_100( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_94.
     IF class_name <= `ZCL_LNT_TYPE_BEGIN`.
       result = args_part_95( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25171,6 +25335,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_98( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_84.
     IF class_name <= `ZCL_LNT_SY_RAISE`.
       result = args_part_85( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25178,6 +25343,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_94( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_46.
     IF class_name <= `ZCL_LNT_ST_MOVE_CORRESPONDING`.
       result = args_part_47( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25185,6 +25351,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_84( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_part_0.
     IF class_name <= `ZCL_LNT_RNM_GLBL_INTRFC`.
       result = args_part_1( class_name = class_name p0 = p0 p1 = p1 ).
@@ -25192,6 +25359,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       result = args_part_46( class_name = class_name p0 = p0 p1 = p1 ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2019_0.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -25554,6 +25722,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t72 = t70->as_ref( ).
     frame-a23 ?= t72.
   ENDMETHOD.
+
   METHOD args_decode_2019_1.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -25916,6 +26085,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t72 = t70->as_ref( ).
     frame-a47 ?= t72.
   ENDMETHOD.
+
   METHOD args_decode_2019_2.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -26068,6 +26238,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t30 = t28->as_ref( ).
     frame-a57 ?= t30.
   ENDMETHOD.
+
   METHOD args_write_2019_0.
     DATA(t1) = CAST zcl_lnt_tuple_8eedfa28( frame-a0 ).
     instance->f0 = t1.
@@ -26118,6 +26289,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     DATA(t24) = CAST zcl_lnt_tuple_356df4c3( frame-a23 ).
     instance->f23 = t24.
   ENDMETHOD.
+
   METHOD args_write_2019_1.
     DATA(t1) = CAST zcl_lnt_tuple_356df4c3( frame-a24 ).
     instance->f24 = t1.
@@ -26168,6 +26340,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     DATA(t24) = CAST zcl_lnt_tuple_356df4c3( frame-a47 ).
     instance->f47 = t24.
   ENDMETHOD.
+
   METHOD args_write_2019_2.
     DATA(t1) = CAST zcl_lnt_tuple_356df4c3( frame-a48 ).
     instance->f48 = t1.
@@ -26190,6 +26363,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     DATA(t10) = CAST zcl_lnt_tuple_db7d0a56( frame-a57 ).
     instance->f57 = t10.
   ENDMETHOD.
+
   METHOD args_decode_2033_0.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -26552,6 +26726,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a23 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_1.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -26914,6 +27089,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a47 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_2.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -27276,6 +27452,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a71 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_3.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -27638,6 +27815,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a95 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_4.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -28000,6 +28178,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a119 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_5.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -28362,6 +28541,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a143 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_6.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -28724,6 +28904,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a167 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_7.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -29086,6 +29267,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a191 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_8.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -29448,6 +29630,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a215 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_9.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -29810,6 +29993,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a239 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_10.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -30172,6 +30356,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a263 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_11.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -30534,6 +30719,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a287 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_12.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -30896,6 +31082,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a311 = t47->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_decode_2033_13.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -30973,6 +31160,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a316 = t9->as_classvalue( ).
     ENDIF.
   ENDMETHOD.
+
   METHOD args_write_2033_0.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a0 ).
@@ -31071,6 +31259,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->convert_text = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_1.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a24 ).
@@ -31169,6 +31358,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->assert = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_2.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a48 ).
@@ -31267,6 +31457,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->when_2c09 = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_3.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a72 ).
@@ -31365,6 +31556,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->controls = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_4.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a96 ).
@@ -31463,6 +31655,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->replace_acb7 = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_5.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a120 ).
@@ -31561,6 +31754,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->pack_3e97 = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_6.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a144 ).
@@ -31659,6 +31853,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->end_interface = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_7.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a168 ).
@@ -31757,6 +31952,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->at_c575 = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_8.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a192 ).
@@ -31855,6 +32051,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->free_ae65 = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_9.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a216 ).
@@ -31953,6 +32150,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->method_def = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_10.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a240 ).
@@ -32051,6 +32249,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->dynpro_loop = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_11.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a264 ).
@@ -32149,6 +32348,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->uline = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_12.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a288 ).
@@ -32247,6 +32447,7 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t47 = t48.
     instance->get_permissions = t47.
   ENDMETHOD.
+
   METHOD args_write_2033_13.
     DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
     DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a312 ).

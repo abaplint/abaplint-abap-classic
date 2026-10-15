@@ -10,8 +10,9 @@ CLASS zcl_lnt_text_element DEFINITION PUBLIC INHERITING FROM zcl_lnt_expression 
 ENDCLASS.
 CLASS zcl_lnt_text_element IMPLEMENTATION.
   METHOD constructor.
-    super->constructor(  ).
+    super->constructor( ).
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
@@ -19,7 +20,7 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
-    DATA(t4) = CONV string( |TEXT| ).
+    DATA(t4) = |TEXT|.
     CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -31,7 +32,7 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
     CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t7.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817 ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
     t7 = zcl_lnt_st_combi_module=>tok( i_t = t8 ).
     CLEAR t6.
     IF t7 IS BOUND.
@@ -67,10 +68,10 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
     CLEAR t12.
     CREATE OBJECT t12.
     t11 = t12.
-    DATA(t13) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t13) = t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
-    DATA(t15) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d350_60b8c1b06659 ).
+    DATA(t15) = zlnt_runtime_desc_78196487750d=>zlnt_member_d350_60b8c1b06659.
     CLEAR t14.
     IF t15 IS BOUND.
       CREATE OBJECT t14.
@@ -82,20 +83,22 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
     t13->save( ).
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t16.
-    DATA(t17) = CAST zlnt_runtime_dyna_a429568d5be8( t2 ).
-    DATA(t18) = CAST zlnt_runtime_dyna_a429568d5be8( t5 ).
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t11 ).
+    DATA(t17) = t2.
+    DATA(t18) = t5.
+    DATA(t19) = t11.
     t16 = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t18 i_rest = t19 ).
     t1 = t16.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d157_1c35602cbab5.
   ENDMETHOD.

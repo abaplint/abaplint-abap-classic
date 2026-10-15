@@ -33,6 +33,7 @@ CLASS zlnt_runtime_dyna_1ad87e6a776f IMPLEMENTATION.
     result->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
     result->cval = descriptor.
   ENDMETHOD.
+
   METHOD name.
     IF p0 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.

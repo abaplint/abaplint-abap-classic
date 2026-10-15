@@ -17,16 +17,19 @@ CLASS zlnt_runtime_lspg_9f4574ef5f1a IMPLEMENTATION.
       result = xsdbool( p0->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string ).
     ENDIF.
   ENDMETHOD.
+
   METHOD boolean_value.
     IF p0 IS BOUND.
       result = xsdbool( p0->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean ).
     ENDIF.
   ENDMETHOD.
+
   METHOD integer_value.
     IF p0 IS BOUND AND p0->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       result = xsdbool( p0->number_special = 0 AND p0->nval >= '-2147483648' AND p0->nval <= '2147483647' ).
     ENDIF.
   ENDMETHOD.
+
   METHOD text_document.
     DATA td TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA v TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -61,6 +64,7 @@ CLASS zlnt_runtime_lspg_9f4574ef5f1a IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD candidate.
     DATA falsy TYPE abap_bool.
     falsy = abap_true.
@@ -79,6 +83,7 @@ CLASS zlnt_runtime_lspg_9f4574ef5f1a IMPLEMENTATION.
     ENDIF.
     result = abap_true.
   ENDMETHOD.
+
   METHOD tail.
     DATA v TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA options TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -96,6 +101,7 @@ CLASS zlnt_runtime_lspg_9f4574ef5f1a IMPLEMENTATION.
     v = p0->get( 'annotationId' ).
     result = xsdbool( v IS NOT BOUND OR string_value( v ) = abap_true ).
   ENDMETHOD.
+
   METHOD resource.
     DATA v TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF candidate( p0 = p0 condition = condition ) = abap_false.
@@ -117,6 +123,7 @@ CLASS zlnt_runtime_lspg_9f4574ef5f1a IMPLEMENTATION.
     ENDIF.
     result = tail( p0 = p0 option1 = option1 option2 = option2 ).
   ENDMETHOD.
+
   METHOD rename.
     DATA v TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF candidate( p0 = p0 condition = condition ) = abap_false.

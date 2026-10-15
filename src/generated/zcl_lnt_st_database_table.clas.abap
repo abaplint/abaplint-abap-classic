@@ -11,9 +11,9 @@ CLASS zcl_lnt_st_database_table DEFINITION PUBLIC INHERITING FROM zcl_lnt_expres
 ENDCLASS.
 CLASS zcl_lnt_st_database_table IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zlnt_runtime_opti_7f2541396f43( i_no_dynamic ).
+    DATA(t1) = i_no_dynamic.
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    DATA(t3) = t1.
     IF t3 IS INITIAL.
       t2 = abap_true.
     ELSEIF t3->has = abap_false.
@@ -22,9 +22,9 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     IF t2 = abap_true.
       DATA t4 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t4.
-      DATA(t5) = CONV abap_bool( abap_true ).
+      DATA(t5) = abap_true.
       IF t5 = abap_true.
-        DATA(t6) = CONV abap_bool( abap_false ).
+        DATA(t6) = abap_false.
         DATA(t7) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t7->has = abap_true.
         t7->value = t6.
@@ -36,14 +36,15 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       ENDIF.
       t1 = t4.
     ENDIF.
-    super->constructor(  ).
-    DATA(t9) = CAST zlnt_runtime_opti_7f2541396f43( t1 ).
+    super->constructor( ).
+    DATA(t9) = t1.
     me->no_dynamic = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `noDynamic`.
   ENDMETHOD.
+
   METHOD get_runnable.
     DATA(t1) = VALUE abap_bool( ).
-    DATA(t2) = CAST zlnt_runtime_opti_7f2541396f43( me->no_dynamic ).
+    DATA(t2) = me->no_dynamic.
     IF t2 IS BOUND.
       IF t2->has = abap_true.
         t1 = xsdbool( t2->value IS NOT INITIAL ).
@@ -58,10 +59,10 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       CLEAR t5.
       DATA t6 TYPE REF TO zif_lnt_statement_runnable.
       CLEAR t6.
-      DATA(t7) = CONV string( |KeyUser| ).
+      DATA(t7) = |KeyUser|.
       DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t8.
-      DATA(t9) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633 ).
+      DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
       CLEAR t8.
       IF t9 IS BOUND.
         CREATE OBJECT t8.
@@ -105,9 +106,9 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       CLEAR t14.
       DATA t15 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t15.
-      DATA(t16) = CONV string( `^\*?(\/\w+\/)?\w+$` ).
-      DATA(t17) = CONV string( `^\*?(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$` ).
-      DATA(t18) = CONV string( || ).
+      DATA(t16) = `^\*?(\/\w+\/)?\w+$`.
+      DATA(t17) = `^\*?(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$`.
+      DATA(t18) = ||.
       CREATE OBJECT t15 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t17 flags = t18.
       t15->source = t16.
       t14 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t15 ).
@@ -147,9 +148,9 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       t21 = t22.
       DATA t23 TYPE REF TO zif_lnt_statement_runnable.
       CLEAR t23.
-      DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t4 ).
-      DATA(t25) = CAST zlnt_runtime_dyna_a429568d5be8( t12 ).
-      DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t21 ).
+      DATA(t24) = t4.
+      DATA(t25) = t12.
+      DATA(t26) = t21.
       t23 = zcl_lnt_st_combi_module=>alt_prio( i_first = t24 i_second = t25 i_rest = t26 ).
       t3 = t23.
       result = t3.
@@ -161,7 +162,7 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     CLEAR t28.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633 ).
+    DATA(t30) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
     CLEAR t29.
     IF t30 IS BOUND.
       CREATE OBJECT t29.
@@ -177,9 +178,9 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     CLEAR t33.
     DATA t34 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t34.
-    DATA(t35) = CONV string( `^\*?(\/\w+\/)?\w+$` ).
-    DATA(t36) = CONV string( `^\*?(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$` ).
-    DATA(t37) = CONV string( || ).
+    DATA(t35) = `^\*?(\/\w+\/)?\w+$`.
+    DATA(t36) = `^\*?(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$`.
+    DATA(t37) = ||.
     CREATE OBJECT t34 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t36 flags = t37.
     t34->source = t35.
     t33 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t34 ).
@@ -219,20 +220,22 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     t40 = t41.
     DATA t42 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t42.
-    DATA(t43) = CAST zlnt_runtime_dyna_a429568d5be8( t28 ).
-    DATA(t44) = CAST zlnt_runtime_dyna_a429568d5be8( t31 ).
-    DATA(t45) = CAST zlnt_runtime_arra_c22708faf2e3( t40 ).
+    DATA(t43) = t28.
+    DATA(t44) = t31.
+    DATA(t45) = t40.
     t42 = zcl_lnt_st_combi_module=>alt_prio( i_first = t43 i_second = t44 i_rest = t45 ).
     t27 = t42.
     result = t27.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
   ENDMETHOD.

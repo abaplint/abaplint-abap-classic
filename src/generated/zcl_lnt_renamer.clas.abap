@@ -18,31 +18,32 @@ CLASS zcl_lnt_renamer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_renamer IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
   ENDMETHOD.
+
   METHOD rename.
-    DATA(t1) = CONV string( i_type_9913 ).
-    DATA(t2) = CONV string( i_old_name ).
-    DATA(t3) = CONV string( i_new_name ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_old_name.
+    DATA(t3) = i_new_name.
     DATA t4 TYPE REF TO zcl_lnt_shape_36bc2e57.
     CLEAR t4.
     DATA t5 TYPE REF TO zcl_lnt_shape_36bc2e57.
     CLEAR t5.
     DATA t6 TYPE REF TO object.
     CLEAR t6.
-    DATA(t7) = CONV string( t1 ).
-    DATA(t8) = CONV string( t2 ).
-    DATA(t9) = CONV string( t3 ).
+    DATA(t7) = t1.
+    DATA(t8) = t2.
+    DATA(t9) = t3.
     t6 = me->build_edits( i_type_9913 = t7 i_old_name = t8 i_new_name = t9 ).
     t5 ?= t6.
     t4 = t5.
     DATA(t10) = VALUE abap_bool( ).
     DATA t11 TYPE REF TO zcl_lnt_shape_36bc2e57.
     CLEAR t11.
-    DATA(t12) = CAST zcl_lnt_shape_36bc2e57( t4 ).
+    DATA(t12) = t4.
     t11 = t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
@@ -50,7 +51,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t14.
     t13 = t14.
     DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = CAST zcl_lnt_shape_36bc2e57( t11 ).
+    DATA(t16) = t11.
     IF t16 IS INITIAL.
       t15 = abap_true.
     ENDIF.
@@ -62,9 +63,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t18.
       DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t19.
-      DATA(t20) = CONV abap_bool( abap_true ).
+      DATA(t20) = abap_true.
       IF t20 = abap_true.
-        DATA(t21) = CONV string( |no changes could be determined| ).
+        DATA(t21) = |no changes could be determined|.
         DATA(t22) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t22->has = abap_true.
         t22->value = t21.
@@ -111,7 +112,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zcl_lnt_shape_36bc2e57.
       CLEAR t28.
-      DATA(t29) = CAST zcl_lnt_shape_36bc2e57( t4 ).
+      DATA(t29) = t4.
       t28 = t29.
       t27 = t28->changes.
       t26 = xsdbool( t27 IS BOUND ).
@@ -122,9 +123,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t31.
         DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t32.
-        DATA(t33) = CONV abap_bool( abap_true ).
+        DATA(t33) = abap_true.
         IF t33 = abap_true.
-          DATA(t34) = CONV string( |only documentChanges expected| ).
+          DATA(t34) = |only documentChanges expected|.
           DATA(t35) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t35->has = abap_true.
           t35->value = t34.
@@ -173,38 +174,39 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t40.
     DATA t41 TYPE REF TO zcl_lnt_shape_36bc2e57.
     CLEAR t41.
-    DATA(t42) = CAST zcl_lnt_shape_36bc2e57( t4 ).
+    DATA(t42) = t4.
     t41 = t42.
     t40 = me->apply( i_edits = t41 ).
     t39 = t40.
     DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t43.
-    DATA(t44) = CAST zif_lnt_registry( me->reg ).
+    DATA(t44) = me->reg.
     DATA t45 TYPE REF TO zcl_lnt_irun_input.
     CLEAR t45.
     t43 = t44->find_issues( i_input_967e = t45 ).
-    DATA(t46) = CAST zcl_lnt_irename_result( t39 ).
+    DATA(t46) = t39.
     result = t46.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD build_edits.
-    DATA(t1) = CONV string( i_type_9913 ).
-    DATA(t2) = CONV string( i_old_name ).
-    DATA(t3) = CONV string( i_new_name ).
+    DATA(t1) = i_type_9913.
+    DATA(t2) = i_old_name.
+    DATA(t3) = i_new_name.
     DATA t4 TYPE REF TO zif_lnt_registry.
     CLEAR t4.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
-    t4 = t5->parse(  ).
+    DATA(t5) = me->reg.
+    t4 = t5->parse( ).
     DATA t6 TYPE REF TO zif_lnt_object.
     CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_object.
     CLEAR t7.
-    DATA(t8) = CAST zif_lnt_registry( me->reg ).
+    DATA(t8) = me->reg.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( t1 ).
+      DATA(t11) = t1.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
       t12->value = t11.
@@ -216,9 +218,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t14.
-    DATA(t15) = CONV abap_bool( abap_true ).
+    DATA(t15) = abap_true.
     IF t15 = abap_true.
-      DATA(t16) = CONV string( t2 ).
+      DATA(t16) = t2.
       DATA(t17) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t17->has = abap_true.
       t17->value = t16.
@@ -234,7 +236,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA(t20) = VALUE abap_bool( ).
     DATA t21 TYPE REF TO zif_lnt_object.
     CLEAR t21.
-    DATA(t22) = CAST zif_lnt_object( t6 ).
+    DATA(t22) = t6.
     t21 = t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t23.
@@ -242,7 +244,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t24.
     t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = CAST zif_lnt_object( t21 ).
+    DATA(t26) = t21.
     IF t26 IS INITIAL.
       t25 = abap_true.
     ENDIF.
@@ -250,8 +252,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t19 = t20.
     IF t20 = abap_true.
       DATA(t27) = VALUE abap_bool( ).
-      DATA(t28) = CONV string( t1 ).
-      DATA(t29) = CONV string( |SICF| ).
+      DATA(t28) = t1.
+      DATA(t29) = |SICF|.
       t27 = xsdbool( t28 = t29 ).
       t19 = t27.
     ENDIF.
@@ -274,12 +276,12 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t36.
       DATA t37 TYPE REF TO zif_lnt_generator_8f73cd1c.
       CLEAR t37.
-      DATA(t38) = CAST zif_lnt_registry( me->reg ).
-      t37 = t38->get_objects(  ).
-      t36 = t37->iterate(  ).
+      DATA(t38) = me->reg.
+      t37 = t38->get_objects( ).
+      t36 = t37->iterate( ).
       t35 = t36.
       DO.
-        DATA(t39) = CONV abap_bool( abap_true ).
+        DATA(t39) = abap_true.
         IF t39 = abap_false.
           EXIT.
         ENDIF.
@@ -287,11 +289,11 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t40.
         DATA t41 TYPE REF TO zcl_lnt_generator_17955b8b.
         CLEAR t41.
-        DATA(t42) = CAST zif_lnt_generator_8f73cd1c( t35 ).
-        t41 = t42->next(  ).
+        DATA(t42) = t35.
+        t41 = t42->next( ).
         t40 = t41.
         DATA(t43) = VALUE abap_bool( ).
-        DATA(t44) = CAST zcl_lnt_generator_17955b8b( t40 ).
+        DATA(t44) = t40.
         t43 = t44->done.
         IF t43 = abap_true.
           EXIT.
@@ -302,61 +304,61 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t46.
         DATA t47 TYPE REF TO zif_lnt_object.
         CLEAR t47.
-        DATA(t48) = CAST zcl_lnt_generator_17955b8b( t40 ).
+        DATA(t48) = t40.
         t47 = t48->value.
         t46 = t47.
         t45 = t46.
         DATA(t49) = VALUE f( ).
         DATA(t50) = VALUE f( ).
         DATA(t51) = VALUE abap_bool( ).
-        DATA(t52) = CONV abap_bool( abap_false ).
+        DATA(t52) = abap_false.
         t51 = t52.
         DATA t53 TYPE REF TO cx_root.
         CLEAR t53.
         TRY.
             DATA(t54) = VALUE f( ).
             DATA(t55) = VALUE i( ).
-            DATA(t56) = CAST zlnt_runtime_arra_c22708faf2e3( t33 ).
-            DATA(t57) = CAST zif_lnt_object( t45 ).
+            DATA(t56) = t33.
+            DATA(t57) = t45.
             t56->load( ).
             APPEND t57 TO t56->items.
             t55 = lines( t56->items ).
             t56->save( ).
             t54 = t55.
             t50 = t54.
-            DATA(t58) = CONV abap_bool( abap_true ).
+            DATA(t58) = abap_true.
             t51 = t58.
           CATCH cx_root INTO t53.
             DATA(t59) = VALUE abap_bool( ).
-            DATA(t60) = CONV abap_bool( t51 ).
+            DATA(t60) = t51.
             t59 = xsdbool( t60 = abap_false ).
             IF t59 = abap_true.
-              DATA(t61) = CAST zif_lnt_generator_8f73cd1c( t35 ).
-              t61->close(  ).
+              DATA(t61) = t35.
+              t61->close( ).
             ENDIF.
             RAISE EXCEPTION t53.
         ENDTRY.
         DATA(t62) = VALUE abap_bool( ).
-        DATA(t63) = CONV abap_bool( t51 ).
+        DATA(t63) = t51.
         t62 = xsdbool( t63 = abap_false ).
         IF t62 = abap_true.
-          DATA(t64) = CAST zif_lnt_generator_8f73cd1c( t35 ).
-          t64->close(  ).
+          DATA(t64) = t35.
+          t64->close( ).
         ENDIF.
-        DATA(t65) = CONV f( t50 ).
+        DATA(t65) = t50.
         t49 = t65.
       ENDDO.
-      DATA(t66) = CAST zlnt_runtime_arra_c22708faf2e3( t33 ).
+      DATA(t66) = t33.
       t32 = t66.
       t31 = t32.
       DATA(t67) = VALUE i( ).
       DATA(t68) = VALUE i( ).
-      DATA(t69) = CAST zlnt_runtime_arra_c22708faf2e3( t31 ).
+      DATA(t69) = t31.
       t69->load( ).
       t68 = lines( t69->items ).
       t67 = t68.
       DATA(t70) = VALUE i( ).
-      DATA(t71) = CONV i( 0 ).
+      DATA(t71) = 0.
       t70 = t71.
       DATA t72 TYPE REF TO zif_lnt_object.
       CLEAR t72.
@@ -365,8 +367,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       t72 = t73.
       DO.
         DATA(t74) = VALUE abap_bool( ).
-        DATA(t75) = CONV i( t70 ).
-        DATA(t76) = CONV i( t67 ).
+        DATA(t75) = t70.
+        DATA(t76) = t67.
         t74 = xsdbool( t75 < t76 ).
         IF t74 = abap_false.
           EXIT.
@@ -377,8 +379,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t78.
         DATA t79 TYPE REF TO zif_lnt_object.
         CLEAR t79.
-        DATA(t80) = CAST zlnt_runtime_arra_c22708faf2e3( t31 ).
-        DATA(t81) = CONV i( t70 ).
+        DATA(t80) = t31.
+        DATA(t81) = t70.
         DATA t82 TYPE REF TO object.
         CLEAR t82.
         t82 = t80->get( p0 = t81 ).
@@ -399,18 +401,18 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         DATA(t85) = VALUE abap_bool( ).
         DATA(t86) = VALUE abap_bool( ).
         DATA(t87) = VALUE string( ).
-        DATA(t88) = CAST zif_lnt_object( t77 ).
-        t87 = t88->get_type(  ).
-        DATA(t89) = CONV string( |SICF| ).
+        DATA(t88) = t77.
+        t87 = t88->get_type( ).
+        DATA(t89) = |SICF|.
         t86 = xsdbool( t87 = t89 ).
         t85 = t86.
         IF t86 = abap_true.
           DATA(t90) = VALUE abap_bool( ).
           DATA(t91) = VALUE string( ).
           DATA(t92) = VALUE string( ).
-          DATA(t93) = CAST zif_lnt_object( t77 ).
-          t92 = t93->get_name(  ).
-          DATA(t94) = CONV i( strlen( t92 ) ).
+          DATA(t93) = t77.
+          t92 = t93->get_name( ).
+          DATA(t94) = strlen( t92 ).
           t91 = t92.
           IF t91 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
             TRANSLATE t91 TO UPPER CASE.
@@ -419,18 +421,18 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
           ENDIF.
           DATA(t95) = VALUE string( ).
           DATA(t96) = VALUE string( ).
-          DATA(t97) = CONV string( t2 ).
-          DATA(t98) = CONV i( strlen( t97 ) ).
+          DATA(t97) = t2.
+          DATA(t98) = strlen( t97 ).
           t96 = t97.
           IF t96 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
             TRANSLATE t96 TO UPPER CASE.
           ELSE.
             t96 = zlnt_runtime_uppe_91169605024d=>full( t96 ).
           ENDIF.
-          DATA(t99) = CONV string( | | ).
-          DATA(t100) = CONV i( strlen( t96 ) ).
+          DATA(t99) = | |.
+          DATA(t100) = strlen( t96 ).
           t95 = |{ t96 }{ t99 }|.
-          DATA(t101) = CONV i( strlen( t91 ) ).
+          DATA(t101) = strlen( t91 ).
           DATA(t102) = VALUE i( ).
           DATA(t103) = VALUE i( ).
           DATA(t104) = VALUE string( ).
@@ -449,9 +451,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         IF t85 = abap_true.
           DATA t105 TYPE REF TO zif_lnt_object.
           CLEAR t105.
-          DATA(t106) = CONV abap_bool( abap_true ).
+          DATA(t106) = abap_true.
           IF t106 = abap_true.
-            DATA(t107) = CAST zif_lnt_object( t77 ).
+            DATA(t107) = t77.
             t105 = t107.
           ELSE.
             DATA t108 TYPE REF TO zif_lnt_object.
@@ -462,19 +464,19 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
           EXIT.
         ENDIF.
         DATA(t109) = VALUE i( ).
-        DATA(t110) = CONV i( t70 ).
-        DATA(t111) = CONV i( 1 ).
+        DATA(t110) = t70.
+        DATA(t111) = 1.
         t109 = t110 + t111.
         t70 = t109.
       ENDDO.
-      DATA(t112) = CAST zif_lnt_object( t72 ).
+      DATA(t112) = t72.
       t30 = t112.
       t6 = t30.
     ENDIF.
     DATA(t113) = VALUE abap_bool( ).
     DATA t114 TYPE REF TO zif_lnt_object.
     CLEAR t114.
-    DATA(t115) = CAST zif_lnt_object( t6 ).
+    DATA(t115) = t6.
     t114 = t115.
     DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t116.
@@ -482,7 +484,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t117.
     t116 = t117.
     DATA(t118) = VALUE abap_bool( ).
-    DATA(t119) = CAST zif_lnt_object( t114 ).
+    DATA(t119) = t114.
     IF t119 IS INITIAL.
       t118 = abap_true.
     ENDIF.
@@ -494,9 +496,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t121.
       DATA t122 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t122.
-      DATA(t123) = CONV abap_bool( abap_true ).
+      DATA(t123) = abap_true.
       IF t123 = abap_true.
-        DATA(t124) = CONV string( |rename, object not found| ).
+        DATA(t124) = |rename, object not found|.
         DATA(t125) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t125->has = abap_true.
         t125->value = t124.
@@ -541,8 +543,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA(t129) = VALUE abap_bool( ).
       DATA(t130) = VALUE f( ).
       DATA(t131) = VALUE i( ).
-      DATA(t132) = CONV string( t3 ).
-      DATA(t133) = CONV i( strlen( t132 ) ).
+      DATA(t132) = t3.
+      DATA(t133) = strlen( t132 ).
       t131 = t133.
       t130 = t131.
       DATA(t134) = VALUE f( ).
@@ -550,9 +552,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t135.
       DATA t136 TYPE REF TO zif_lnt_object.
       CLEAR t136.
-      DATA(t137) = CAST zif_lnt_object( t6 ).
+      DATA(t137) = t6.
       t136 = t137.
-      t135 = t136->get_allowed_naming(  ).
+      t135 = t136->get_allowed_naming( ).
       t134 = t135->max_length.
       t129 = xsdbool( t130 > t134 ).
       IF t129 = abap_true.
@@ -562,9 +564,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t139.
         DATA t140 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t140.
-        DATA(t141) = CONV abap_bool( abap_true ).
+        DATA(t141) = abap_true.
         IF t141 = abap_true.
-          DATA(t142) = CONV string( |Name not allowed| ).
+          DATA(t142) = |Name not allowed|.
           DATA(t143) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t143->has = abap_true.
           t143->value = t142.
@@ -611,136 +613,137 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t147.
     DATA t148 TYPE REF TO zif_lnt_object_renamer.
     CLEAR t148.
-    DATA(t149) = CONV string( t1 ).
+    DATA(t149) = t1.
     t148 = me->factory( i_type_9913 = t149 ).
     t147 = t148.
     DATA t150 TYPE REF TO zcl_lnt_shape_36bc2e57.
     CLEAR t150.
-    DATA(t151) = CAST zif_lnt_object_renamer( t147 ).
+    DATA(t151) = t147.
     DATA t152 TYPE REF TO zif_lnt_object.
     CLEAR t152.
-    DATA(t153) = CAST zif_lnt_object( t6 ).
+    DATA(t153) = t6.
     t152 = t153.
     DATA(t154) = VALUE string( ).
-    DATA(t155) = CONV string( t2 ).
-    DATA(t156) = CONV i( strlen( t155 ) ).
+    DATA(t155) = t2.
+    DATA(t156) = strlen( t155 ).
     t154 = t155.
     IF t154 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t154 TO UPPER CASE.
     ELSE.
       t154 = zlnt_runtime_uppe_91169605024d=>full( t154 ).
     ENDIF.
-    DATA(t157) = CONV string( t3 ).
+    DATA(t157) = t3.
     t150 = t151->build_edits( i_obj_1ed0 = t152 i_old_name = t154 i_new_name = t157 ).
     result = t150.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD factory.
-    DATA(t1) = CONV string( i_type_9913 ).
+    DATA(t1) = i_type_9913.
     DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = CONV string( t1 ).
-    DATA(t4) = CONV string( |CLAS| ).
+    DATA(t3) = t1.
+    DATA(t4) = |CLAS|.
     t2 = xsdbool( t3 = t4 ).
     IF t2 = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_rename_global_class.
       CLEAR t5.
-      DATA(t6) = CAST zif_lnt_registry( me->reg ).
+      DATA(t6) = me->reg.
       t5 = NEW zcl_lnt_rename_global_class( i_reg_f149 = t6 ).
       result = t5.
       RETURN.
     ELSE.
       DATA(t7) = VALUE abap_bool( ).
-      DATA(t8) = CONV string( t1 ).
-      DATA(t9) = CONV string( |DTEL| ).
+      DATA(t8) = t1.
+      DATA(t9) = |DTEL|.
       t7 = xsdbool( t8 = t9 ).
       IF t7 = abap_true.
         DATA t10 TYPE REF TO zcl_lnt_rename_data_element.
         CLEAR t10.
-        DATA(t11) = CAST zif_lnt_registry( me->reg ).
+        DATA(t11) = me->reg.
         t10 = NEW zcl_lnt_rename_data_element( i_reg_f149 = t11 ).
         result = t10.
         RETURN.
       ELSE.
         DATA(t12) = VALUE abap_bool( ).
-        DATA(t13) = CONV string( t1 ).
-        DATA(t14) = CONV string( |DOMA| ).
+        DATA(t13) = t1.
+        DATA(t14) = |DOMA|.
         t12 = xsdbool( t13 = t14 ).
         IF t12 = abap_true.
           DATA t15 TYPE REF TO zcl_lnt_rename_domain.
           CLEAR t15.
-          DATA(t16) = CAST zif_lnt_registry( me->reg ).
+          DATA(t16) = me->reg.
           t15 = NEW zcl_lnt_rename_domain( i_reg_f149 = t16 ).
           result = t15.
           RETURN.
         ELSE.
           DATA(t17) = VALUE abap_bool( ).
-          DATA(t18) = CONV string( t1 ).
-          DATA(t19) = CONV string( |TABL| ).
+          DATA(t18) = t1.
+          DATA(t19) = |TABL|.
           t17 = xsdbool( t18 = t19 ).
           IF t17 = abap_true.
             DATA t20 TYPE REF TO zcl_lnt_rename_table.
             CLEAR t20.
-            DATA(t21) = CAST zif_lnt_registry( me->reg ).
+            DATA(t21) = me->reg.
             t20 = NEW zcl_lnt_rename_table( i_reg_f149 = t21 ).
             result = t20.
             RETURN.
           ELSE.
             DATA(t22) = VALUE abap_bool( ).
-            DATA(t23) = CONV string( t1 ).
-            DATA(t24) = CONV string( |TTYP| ).
+            DATA(t23) = t1.
+            DATA(t24) = |TTYP|.
             t22 = xsdbool( t23 = t24 ).
             IF t22 = abap_true.
               DATA t25 TYPE REF TO zcl_lnt_rename_table_type.
               CLEAR t25.
-              DATA(t26) = CAST zif_lnt_registry( me->reg ).
+              DATA(t26) = me->reg.
               t25 = NEW zcl_lnt_rename_table_type( i_reg_f149 = t26 ).
               result = t25.
               RETURN.
             ELSE.
               DATA(t27) = VALUE abap_bool( ).
-              DATA(t28) = CONV string( t1 ).
-              DATA(t29) = CONV string( |INTF| ).
+              DATA(t28) = t1.
+              DATA(t29) = |INTF|.
               t27 = xsdbool( t28 = t29 ).
               IF t27 = abap_true.
                 DATA t30 TYPE REF TO zcl_lnt_rnm_glbl_intrfc.
                 CLEAR t30.
-                DATA(t31) = CAST zif_lnt_registry( me->reg ).
+                DATA(t31) = me->reg.
                 t30 = NEW zcl_lnt_rnm_glbl_intrfc( i_reg_f149 = t31 ).
                 result = t30.
                 RETURN.
               ELSE.
                 DATA(t32) = VALUE abap_bool( ).
-                DATA(t33) = CONV string( t1 ).
-                DATA(t34) = CONV string( |PROG| ).
+                DATA(t33) = t1.
+                DATA(t34) = |PROG|.
                 t32 = xsdbool( t33 = t34 ).
                 IF t32 = abap_true.
                   DATA t35 TYPE REF TO zcl_lnt_rename_program.
                   CLEAR t35.
-                  DATA(t36) = CAST zif_lnt_registry( me->reg ).
+                  DATA(t36) = me->reg.
                   t35 = NEW zcl_lnt_rename_program( i_reg_f149 = t36 ).
                   result = t35.
                   RETURN.
                 ELSE.
                   DATA(t37) = VALUE abap_bool( ).
-                  DATA(t38) = CONV string( t1 ).
-                  DATA(t39) = CONV string( |MSAG| ).
+                  DATA(t38) = t1.
+                  DATA(t39) = |MSAG|.
                   t37 = xsdbool( t38 = t39 ).
                   IF t37 = abap_true.
                     DATA t40 TYPE REF TO zcl_lnt_rename_message_class.
                     CLEAR t40.
-                    DATA(t41) = CAST zif_lnt_registry( me->reg ).
+                    DATA(t41) = me->reg.
                     t40 = NEW zcl_lnt_rename_message_class( i_reg_f149 = t41 ).
                     result = t40.
                     RETURN.
                   ELSE.
                     DATA(t42) = VALUE abap_bool( ).
-                    DATA(t43) = CONV string( t1 ).
-                    DATA(t44) = CONV string( |SICF| ).
+                    DATA(t43) = t1.
+                    DATA(t44) = |SICF|.
                     t42 = xsdbool( t43 = t44 ).
                     IF t42 = abap_true.
                       DATA t45 TYPE REF TO zcl_lnt_rename_icf_service.
                       CLEAR t45.
-                      DATA(t46) = CAST zif_lnt_registry( me->reg ).
+                      DATA(t46) = me->reg.
                       t45 = NEW zcl_lnt_rename_icf_service( i_reg_f149 = t46 ).
                       result = t45.
                       RETURN.
@@ -751,16 +754,16 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
                       CLEAR t48.
                       DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                       CLEAR t49.
-                      DATA(t50) = CONV abap_bool( abap_true ).
+                      DATA(t50) = abap_true.
                       IF t50 = abap_true.
                         DATA(t51) = VALUE string( ).
                         DATA(t52) = VALUE string( ).
-                        DATA(t53) = CONV string( |Renaming of | ).
-                        DATA(t54) = CONV string( t1 ).
-                        DATA(t55) = CONV i( strlen( t53 ) ).
+                        DATA(t53) = |Renaming of |.
+                        DATA(t54) = t1.
+                        DATA(t55) = strlen( t53 ).
                         t52 = |{ t53 }{ t54 }|.
-                        DATA(t56) = CONV string( | not yet supported| ).
-                        DATA(t57) = CONV i( strlen( t52 ) ).
+                        DATA(t56) = | not yet supported|.
+                        DATA(t57) = strlen( t52 ).
                         t51 = |{ t52 }{ t56 }|.
                         DATA(t58) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                         t58->has = abap_true.
@@ -812,6 +815,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.
+
   METHOD apply.
     DATA t1 TYPE REF TO object.
     CLEAR t1.
@@ -828,15 +832,15 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     CLEAR t6.
-    DATA(t7) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t7) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     CLEAR t8.
-    DATA(t9) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t9) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t8 = t9.
     DATA t10 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     CLEAR t10.
-    DATA(t11) = NEW zlnt_runtime_set__1827558fd4c7(  ).
+    DATA(t11) = NEW zlnt_runtime_set__1827558fd4c7( ).
     t10 = t11.
     t5 = NEW zcl_lnt_irename_result( i_deleted_files = t8 i_added_files = t6 i_updated_files = t10 ).
     CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
@@ -858,19 +862,19 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t15) = CONV string( |addedFiles| ).
+    DATA(t15) = |addedFiles|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t16.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
-    DATA(t17) = CONV string( |deletedFiles| ).
+    DATA(t17) = |deletedFiles|.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t17 p1 = t18 ).
     ENDIF.
-    DATA(t19) = CONV string( |updatedFiles| ).
+    DATA(t19) = |updatedFiles|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t20.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -894,12 +898,12 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t26.
     DATA(t27) = VALUE abap_bool( ).
-    DATA(t28) = CAST zlnt_runtime_arra_c22708faf2e3( t22 ).
+    DATA(t28) = t22.
     t27 = xsdbool( t28 IS BOUND ).
     IF t27 = abap_true.
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t29.
-      DATA(t30) = CAST zlnt_runtime_arra_c22708faf2e3( t22 ).
+      DATA(t30) = t22.
       t29 = t30.
       t26 = t29.
     ELSE.
@@ -969,7 +973,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t42.
         DATA t43 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
         CLEAR t43.
-        DATA(t44) = CAST zcl_lnt_irename_result( t4 ).
+        DATA(t44) = t4.
         t43 = t44->updated_files.
         DATA(t45) = VALUE string( ).
         DATA t46 TYPE REF TO zcl_lnt_opt_vrsn_txt_dcmn_idnt.
@@ -1017,10 +1021,10 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
             ENDIF.
           ENDIF.
         ENDIF.
-        DATA(t54) = CONV abap_bool( abap_true ).
+        DATA(t54) = abap_true.
         t49 = zlnt_runtime_lspg_9f4574ef5f1a=>rename( p0 = t50 condition = t54 ).
         IF t49 = abap_true.
-          DATA(t55) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+          DATA(t55) = t2.
           DATA t56 TYPE REF TO zcl_lnt_rename_file.
           CLEAR t56.
           DATA t57 TYPE REF TO object.
@@ -1037,9 +1041,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
           CLEAR t59.
           DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t60.
-          DATA(t61) = CONV abap_bool( abap_true ).
+          DATA(t61) = abap_true.
           IF t61 = abap_true.
-            DATA(t62) = CONV string( |unexpected documentChange type| ).
+            DATA(t62) = |unexpected documentChange type|.
             DATA(t63) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t63->has = abap_true.
             t63->value = t62.
@@ -1083,7 +1087,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA(t67) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t67) = t2.
     DATA t68 TYPE REF TO zcl_lnt_rename_file.
     CLEAR t68.
     DATA t69 TYPE REF TO object.
@@ -1112,39 +1116,40 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA(t73) = VALUE abap_bool( ).
       DATA t74 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       CLEAR t74.
-      DATA(t75) = CAST zcl_lnt_irename_result( t4 ).
+      DATA(t75) = t4.
       t74 = t75->updated_files.
       DATA(t76) = VALUE string( ).
-      DATA(t77) = CAST zcl_lnt_rename_file( t68 ).
+      DATA(t77) = t68.
       t76 = t77->old_uri.
       t73 = t74->delete( p0 = t76 ).
       DATA t78 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       CLEAR t78.
       DATA t79 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       CLEAR t79.
-      DATA(t80) = CAST zcl_lnt_irename_result( t4 ).
+      DATA(t80) = t4.
       t79 = t80->deleted_files.
       DATA(t81) = VALUE string( ).
-      DATA(t82) = CAST zcl_lnt_rename_file( t68 ).
+      DATA(t82) = t68.
       t81 = t82->old_uri.
       t78 = t79->add( p0 = t81 ).
       DATA t83 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       CLEAR t83.
       DATA t84 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       CLEAR t84.
-      DATA(t85) = CAST zcl_lnt_irename_result( t4 ).
+      DATA(t85) = t4.
       t84 = t85->added_files.
       DATA(t86) = VALUE string( ).
-      DATA(t87) = CAST zcl_lnt_rename_file( t68 ).
+      DATA(t87) = t68.
       t86 = t87->new_uri.
       t83 = t84->add( p0 = t86 ).
     ENDDO.
-    DATA(t88) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t88) = t2.
     me->apply_renames( i_renames = t88 ).
-    DATA(t89) = CAST zcl_lnt_irename_result( t4 ).
+    DATA(t89) = t4.
     result = t89.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD apply_edit.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
@@ -1155,7 +1160,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_file.
     CLEAR t3.
-    DATA(t4) = CAST zif_lnt_registry( me->reg ).
+    DATA(t4) = me->reg.
     DATA(t5) = VALUE string( ).
     DATA t6 TYPE REF TO zcl_lnt_opt_vrsn_txt_dcmn_idnt.
     CLEAR t6.
@@ -1172,7 +1177,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA(t9) = VALUE abap_bool( ).
     DATA t10 TYPE REF TO zif_lnt_file.
     CLEAR t10.
-    DATA(t11) = CAST zif_lnt_file( t2 ).
+    DATA(t11) = t2.
     t10 = t11.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t12.
@@ -1180,7 +1185,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t13.
     t12 = t13.
     DATA(t14) = VALUE abap_bool( ).
-    DATA(t15) = CAST zif_lnt_file( t10 ).
+    DATA(t15) = t10.
     IF t15 IS INITIAL.
       t14 = abap_true.
     ENDIF.
@@ -1192,11 +1197,11 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t17.
       DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t18.
-      DATA(t19) = CONV abap_bool( abap_true ).
+      DATA(t19) = abap_true.
       IF t19 = abap_true.
         DATA(t20) = VALUE string( ).
         DATA(t21) = VALUE string( ).
-        DATA(t22) = CONV string( |file | ).
+        DATA(t22) = |file |.
         DATA(t23) = VALUE string( ).
         DATA t24 TYPE REF TO zcl_lnt_opt_vrsn_txt_dcmn_idnt.
         CLEAR t24.
@@ -1208,10 +1213,10 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         t25 ?= t26.
         t24 = t25->text_document.
         t23 = t24->zlnt_view_read_no_99604757acee( ).
-        DATA(t27) = CONV i( strlen( t22 ) ).
+        DATA(t27) = strlen( t22 ).
         t21 = |{ t22 }{ t23 }|.
-        DATA(t28) = CONV string( | not found| ).
-        DATA(t29) = CONV i( strlen( t21 ) ).
+        DATA(t28) = | not found|.
+        DATA(t29) = strlen( t21 ).
         t20 = |{ t21 }{ t28 }|.
         DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t30->has = abap_true.
@@ -1260,9 +1265,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     CLEAR t35.
     DATA t36 TYPE REF TO zif_lnt_file.
     CLEAR t36.
-    DATA(t37) = CAST zif_lnt_file( t2 ).
+    DATA(t37) = t2.
     t36 = t37.
-    t35 = t36->get_raw_rows(  ).
+    t35 = t36->get_raw_rows( ).
     t34 = t35.
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t38.
@@ -1290,7 +1295,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA(t44) = VALUE abap_bool( ).
       DATA(t45) = VALUE abap_bool( ).
       DATA(t46) = VALUE string( ).
-      DATA(t47) = CONV string( |newText| ).
+      DATA(t47) = |newText|.
       t46 = t47.
       DATA t48 TYPE REF TO object.
       CLEAR t48.
@@ -1302,7 +1307,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA t51 TYPE REF TO object.
       CLEAR t51.
       t51 = t48.
-      DATA(t52) = CONV string( t46 ).
+      DATA(t52) = t46.
       DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t53.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -1342,7 +1347,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         OR t52 = `__defineSetter__` OR t52 = `__lookupGetter__` OR t52 = `__lookupSetter__` ).
       ENDIF.
       t45 = t50.
-      DATA(t55) = CONV abap_bool( abap_false ).
+      DATA(t55) = abap_false.
       t44 = xsdbool( t45 = t55 ).
       IF t44 = abap_true.
         DATA t56 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
@@ -1351,9 +1356,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t57.
         DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t58.
-        DATA(t59) = CONV abap_bool( abap_true ).
+        DATA(t59) = abap_true.
         IF t59 = abap_true.
-          DATA(t60) = CONV string( |applyEdit, snippet edit not supported| ).
+          DATA(t60) = |applyEdit, snippet edit not supported|.
           DATA(t61) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t61->has = abap_true.
           t61->value = t60.
@@ -1542,9 +1547,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t85.
         DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t86.
-        DATA(t87) = CONV abap_bool( abap_true ).
+        DATA(t87) = abap_true.
         IF t87 = abap_true.
-          DATA(t88) = CONV string( |applyEdit, start and end line differ| ).
+          DATA(t88) = |applyEdit, start and end line differ|.
           DATA(t89) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t89->has = abap_true.
           t89->value = t88.
@@ -1588,7 +1593,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       ENDIF.
       DATA(t93) = VALUE string( ).
       DATA(t94) = VALUE string( ).
-      DATA(t95) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t95) = t34.
       DATA(t96) = VALUE i( ).
       DATA(t97) = VALUE f( ).
       DATA t98 TYPE REF TO zcl_lnt_no_position.
@@ -1674,7 +1679,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t94.
       READ TABLE t95->items INDEX t96 INTO t94.
       t93 = t94.
-      DATA(t106) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
+      DATA(t106) = t34.
       DATA(t107) = VALUE i( ).
       DATA(t108) = VALUE f( ).
       DATA t109 TYPE REF TO zcl_lnt_no_position.
@@ -1755,8 +1760,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA(t117) = VALUE string( ).
       DATA(t118) = VALUE string( ).
       DATA(t119) = VALUE string( ).
-      DATA(t120) = CONV string( t93 ).
-      DATA(t121) = CONV i( 0 ).
+      DATA(t120) = t93.
+      DATA(t121) = 0.
       DATA(t122) = VALUE i( ).
       DATA t123 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t123.
@@ -1829,7 +1834,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       t124 = t125->zlnt_view_read_no_afe0c94a5142( ).
       t123 = t124->zlnt_view_read_no_a9574d1ec283( ).
       t122 = zlnt_runtime_numb_290eb04a9758=>index( t123 ).
-      DATA(t132) = CONV i( strlen( t120 ) ).
+      DATA(t132) = strlen( t120 ).
       t121 = COND i( WHEN t121 < 0 THEN 0 WHEN t121 > t132 THEN t132 ELSE t121 ).
       t122 = COND i( WHEN t122 < 0 THEN 0 WHEN t122 > t132 THEN t132 ELSE t122 ).
       IF t121 > t122.
@@ -1902,14 +1907,14 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         ENDIF.
       ENDIF.
       t133 = t134->zlnt_view_read_un_3c4b2399a89f( ).
-      DATA(t140) = CONV i( strlen( t119 ) ).
+      DATA(t140) = strlen( t119 ).
       t118 = |{ t119 }{ t133 }|.
       DATA(t141) = VALUE string( ).
       DATA(t142) = VALUE string( ).
-      DATA(t143) = CONV string( t93 ).
+      DATA(t143) = t93.
       t142 = t143.
       DATA(t144) = VALUE string( ).
-      DATA(t145) = CONV string( t142 ).
+      DATA(t145) = t142.
       DATA(t146) = VALUE i( ).
       DATA t147 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t147.
@@ -1983,10 +1988,10 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       t147 = t148->zlnt_view_read_no_a9574d1ec283( ).
       t146 = zlnt_runtime_numb_290eb04a9758=>index( t147 ).
       DATA(t156) = VALUE i( ).
-      DATA(t157) = CONV string( t142 ).
-      DATA(t158) = CONV i( strlen( t157 ) ).
+      DATA(t157) = t142.
+      DATA(t158) = strlen( t157 ).
       t156 = t158.
-      DATA(t159) = CONV i( strlen( t145 ) ).
+      DATA(t159) = strlen( t145 ).
       t146 = COND i( WHEN t146 < 0 THEN 0 WHEN t146 > t159 THEN t159 ELSE t146 ).
       t156 = COND i( WHEN t156 < 0 THEN 0 WHEN t156 > t159 THEN t159 ELSE t156 ).
       IF t146 > t156.
@@ -1997,7 +2002,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       t159 = t156 - t146.
       t144 = t145+t146(t159).
       t141 = t144.
-      DATA(t160) = CONV i( strlen( t118 ) ).
+      DATA(t160) = strlen( t118 ).
       t117 = |{ t118 }{ t141 }|.
       t106->put( p0 = t107 p1 = t117 ).
     ENDDO.
@@ -2017,8 +2022,8 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t164 = t165->text_document.
     t163 = t164->zlnt_view_read_no_99604757acee( ).
     DATA(t167) = VALUE string( ).
-    DATA(t168) = CAST zlnt_runtime_arra_8ecd6afe19e0( t34 ).
-    DATA(t169) = CONV string( |\n| ).
+    DATA(t168) = t34.
+    DATA(t169) = |\n|.
     DATA(t170) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t170->has = abap_true.
     t170->value = t169.
@@ -2027,13 +2032,14 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t161 = t162.
     DATA t171 TYPE REF TO zif_lnt_registry.
     CLEAR t171.
-    DATA(t172) = CAST zif_lnt_registry( me->reg ).
-    DATA(t173) = CAST zcl_lnt_memory_file( t161 ).
+    DATA(t172) = me->reg.
+    DATA(t173) = t161.
     t171 = t172->update_file( i_file = t173 ).
   ENDMETHOD.
+
   METHOD apply_renames.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_renames ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t1) = i_renames.
+    DATA(t2) = t1.
     DATA t3 TYPE REF TO zcl_lnt_rename_file.
     CLEAR t3.
     DATA t4 TYPE REF TO object.
@@ -2063,16 +2069,16 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t8.
       DATA t9 TYPE REF TO zif_lnt_file.
       CLEAR t9.
-      DATA(t10) = CAST zif_lnt_registry( me->reg ).
+      DATA(t10) = me->reg.
       DATA(t11) = VALUE string( ).
-      DATA(t12) = CAST zcl_lnt_rename_file( t3 ).
+      DATA(t12) = t3.
       t11 = t12->old_uri.
       t9 = t10->get_file_by_name( i_filename = t11 ).
       t8 = t9.
       DATA(t13) = VALUE abap_bool( ).
       DATA t14 TYPE REF TO zif_lnt_file.
       CLEAR t14.
-      DATA(t15) = CAST zif_lnt_file( t8 ).
+      DATA(t15) = t8.
       t14 = t15.
       DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t16.
@@ -2080,7 +2086,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       CLEAR t17.
       t16 = t17.
       DATA(t18) = VALUE abap_bool( ).
-      DATA(t19) = CAST zif_lnt_file( t14 ).
+      DATA(t19) = t14.
       IF t19 IS INITIAL.
         t18 = abap_true.
       ENDIF.
@@ -2092,9 +2098,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t21.
         DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t22.
-        DATA(t23) = CONV abap_bool( abap_true ).
+        DATA(t23) = abap_true.
         IF t23 = abap_true.
-          DATA(t24) = CONV string( |applyRenames, old not found| ).
+          DATA(t24) = |applyRenames, old not found|.
           DATA(t25) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t25->has = abap_true.
           t25->value = t24.
@@ -2141,43 +2147,47 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA t30 TYPE REF TO zcl_lnt_memory_file.
       CLEAR t30.
       DATA(t31) = VALUE string( ).
-      DATA(t32) = CAST zcl_lnt_rename_file( t3 ).
+      DATA(t32) = t3.
       t31 = t32->new_uri.
       DATA(t33) = VALUE string( ).
       DATA t34 TYPE REF TO zif_lnt_file.
       CLEAR t34.
-      DATA(t35) = CAST zif_lnt_file( t8 ).
+      DATA(t35) = t8.
       t34 = t35.
-      t33 = t34->get_raw(  ).
+      t33 = t34->get_raw( ).
       t30 = NEW zcl_lnt_memory_file( i_filename = t31 i_raw = t33 ).
       t29 = t30.
       DATA t36 TYPE REF TO zif_lnt_registry.
       CLEAR t36.
-      DATA(t37) = CAST zif_lnt_registry( me->reg ).
+      DATA(t37) = me->reg.
       DATA t38 TYPE REF TO zif_lnt_file.
       CLEAR t38.
-      DATA(t39) = CAST zif_lnt_file( t8 ).
+      DATA(t39) = t8.
       t38 = t39.
       t36 = t37->remove_file( i_file = t38 ).
       DATA t40 TYPE REF TO zif_lnt_registry.
       CLEAR t40.
-      DATA(t41) = CAST zif_lnt_registry( me->reg ).
-      DATA(t42) = CAST zcl_lnt_memory_file( t29 ).
+      DATA(t41) = me->reg.
+      DATA(t42) = t29.
       t40 = t41->add_file( i_file = t42 ).
     ENDDO.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1338_0381d2f9028f.
   ENDMETHOD.

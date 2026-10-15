@@ -17,7 +17,7 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     IF zcl_lnt_include_graph_module=>zlnt_builtin_init_672ad5f3b5e9 = abap_false.
       zcl_lnt_include_graph_module=>zlnt_builtin_init_eae383aaa208( ).
     ENDIF.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -30,12 +30,12 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     CLEAR t5.
     DATA t6 TYPE REF TO zif_lnt_generator_8f73cd1c.
     CLEAR t6.
-    DATA(t7) = CAST zif_lnt_registry( t1 ).
-    t6 = t7->get_objects(  ).
-    t5 = t6->iterate(  ).
+    DATA(t7) = t1.
+    t6 = t7->get_objects( ).
+    t5 = t6->iterate( ).
     t4 = t5.
     DO.
-      DATA(t8) = CONV abap_bool( abap_true ).
+      DATA(t8) = abap_true.
       IF t8 = abap_false.
         EXIT.
       ENDIF.
@@ -43,11 +43,11 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
       CLEAR t9.
       DATA t10 TYPE REF TO zcl_lnt_generator_17955b8b.
       CLEAR t10.
-      DATA(t11) = CAST zif_lnt_generator_8f73cd1c( t4 ).
-      t10 = t11->next(  ).
+      DATA(t11) = t4.
+      t10 = t11->next( ).
       t9 = t10.
       DATA(t12) = VALUE abap_bool( ).
-      DATA(t13) = CAST zcl_lnt_generator_17955b8b( t9 ).
+      DATA(t13) = t9.
       t12 = t13->done.
       IF t12 = abap_true.
         EXIT.
@@ -58,58 +58,58 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
       CLEAR t15.
       DATA t16 TYPE REF TO zif_lnt_object.
       CLEAR t16.
-      DATA(t17) = CAST zcl_lnt_generator_17955b8b( t9 ).
+      DATA(t17) = t9.
       t16 = t17->value.
       t15 = t16.
       t14 = t15.
       DATA(t18) = VALUE abap_bool( ).
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
-      DATA(t21) = CONV abap_bool( abap_false ).
+      DATA(t21) = abap_false.
       t20 = t21.
       DATA t22 TYPE REF TO cx_root.
       CLEAR t22.
       TRY.
           DATA(t23) = VALUE abap_bool( ).
-          DATA(t24) = CAST zif_lnt_object( t14 ).
+          DATA(t24) = t14.
           t23 = xsdbool( t24 IS BOUND AND t24 IS INSTANCE OF zcl_lnt_abap_object ).
           t19 = t23.
-          DATA(t25) = CONV abap_bool( abap_true ).
+          DATA(t25) = abap_true.
           t20 = t25.
         CATCH cx_root INTO t22.
           DATA(t26) = VALUE abap_bool( ).
-          DATA(t27) = CONV abap_bool( t20 ).
+          DATA(t27) = t20.
           t26 = xsdbool( t27 = abap_false ).
           IF t26 = abap_true.
-            DATA(t28) = CAST zif_lnt_generator_8f73cd1c( t4 ).
-            t28->close(  ).
+            DATA(t28) = t4.
+            t28->close( ).
           ENDIF.
           RAISE EXCEPTION t22.
       ENDTRY.
       DATA(t29) = VALUE abap_bool( ).
-      DATA(t30) = CONV abap_bool( t20 ).
+      DATA(t30) = t20.
       t29 = xsdbool( t30 = abap_false ).
       IF t29 = abap_true.
-        DATA(t31) = CAST zif_lnt_generator_8f73cd1c( t4 ).
-        t31->close(  ).
+        DATA(t31) = t4.
+        t31->close( ).
       ENDIF.
-      DATA(t32) = CONV abap_bool( t19 ).
+      DATA(t32) = t19.
       t18 = t32.
       IF t18 = abap_true.
         DATA(t33) = VALUE f( ).
         DATA(t34) = VALUE f( ).
         DATA(t35) = VALUE abap_bool( ).
-        DATA(t36) = CONV abap_bool( abap_false ).
+        DATA(t36) = abap_false.
         t35 = t36.
         DATA t37 TYPE REF TO cx_root.
         CLEAR t37.
         TRY.
             DATA(t38) = VALUE f( ).
             DATA(t39) = VALUE i( ).
-            DATA(t40) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+            DATA(t40) = t2.
             DATA t41 TYPE REF TO zcl_lnt_abap_object.
             CLEAR t41.
-            DATA(t42) = CAST zif_lnt_object( t14 ).
+            DATA(t42) = t14.
             DATA t43 TYPE REF TO object.
             CLEAR t43.
             t43 = t42.
@@ -120,33 +120,34 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
             t40->save( ).
             t38 = t39.
             t34 = t38.
-            DATA(t44) = CONV abap_bool( abap_true ).
+            DATA(t44) = abap_true.
             t35 = t44.
           CATCH cx_root INTO t37.
             DATA(t45) = VALUE abap_bool( ).
-            DATA(t46) = CONV abap_bool( t35 ).
+            DATA(t46) = t35.
             t45 = xsdbool( t46 = abap_false ).
             IF t45 = abap_true.
-              DATA(t47) = CAST zif_lnt_generator_8f73cd1c( t4 ).
-              t47->close(  ).
+              DATA(t47) = t4.
+              t47->close( ).
             ENDIF.
             RAISE EXCEPTION t37.
         ENDTRY.
         DATA(t48) = VALUE abap_bool( ).
-        DATA(t49) = CONV abap_bool( t35 ).
+        DATA(t49) = t35.
         t48 = xsdbool( t49 = abap_false ).
         IF t48 = abap_true.
-          DATA(t50) = CAST zif_lnt_generator_8f73cd1c( t4 ).
-          t50->close(  ).
+          DATA(t50) = t4.
+          t50->close( ).
         ENDIF.
-        DATA(t51) = CONV f( t34 ).
+        DATA(t51) = t34.
         t33 = t51.
       ENDIF.
     ENDDO.
-    DATA(t52) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t52) = t2.
     result = t52.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_eae383aaa208.
     IF zlnt_builtin_init_672ad5f3b5e9 = abap_true.
       RETURN.
@@ -157,8 +158,8 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t1.
-    DATA(t2) = CONV string( `^(\/\w+\/)?L.+XX$` ).
-    DATA(t3) = CONV string( `^(\/[A-Za-z0-9_]+\/)?L[^` ).
+    DATA(t2) = `^(\/\w+\/)?L.+XX$`.
+    DATA(t3) = `^(\/[A-Za-z0-9_]+\/)?L[^`.
     t3 = t3 && |\n\r|.
     DATA t4 TYPE c LENGTH 1.
     CLEAR t4.
@@ -169,23 +170,27 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     t5 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t3 t5 INTO t3 RESPECTING BLANKS.
     t3 = t3 && |]+XX$|.
-    DATA(t6) = CONV string( || ).
+    DATA(t6) = ||.
     CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t6.
     t1->source = t2.
     zcl_lnt_include_graph_module=>fmxxinclude = t1.
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1934_060fd3204315.
   ENDMETHOD.

@@ -13,6 +13,7 @@ CLASS zlnt_runtime_rege_57df8b70dc9e IMPLEMENTATION.
     me->pattern = pattern.
     me->flags = flags.
   ENDMETHOD.
+
   METHOD get_text.
     result = |unreviewed JavaScript regexp /{ pattern }/{ flags }|.
   ENDMETHOD.

@@ -25,29 +25,30 @@ CLASS zcl_lnt_smim_consistency DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_smim_consistency_conf(  ).
+    DATA(t1) = NEW zcl_lnt_smim_consistency_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |smim_consistency| ).
+    DATA(t3) = |smim_consistency|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |SMIM consistency check| ).
+    DATA(t5) = |SMIM consistency check|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |SMIM consistency check| ).
+    DATA(t7) = |SMIM consistency check|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |Checks that the parent folder of each MIME object exists in | ).
+      DATA(t11) = |Checks that the parent folder of each MIME object exists in |.
       t11 = t11 && |the registry. The SAP system folder /SAP/PUBLIC is always al|.
       t11 = t11 && |lowed as a parent even if not present in the repository.|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -105,62 +106,66 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t28) = CONV string( |key| ).
+    DATA(t28) = |key|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t29.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t28 p1 = t29 ).
     ENDIF.
-    DATA(t30) = CONV string( |title| ).
+    DATA(t30) = |title|.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t31.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t30 p1 = t31 ).
     ENDIF.
-    DATA(t32) = CONV string( |shortDescription| ).
+    DATA(t32) = |shortDescription|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t33.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
     ENDIF.
-    DATA(t34) = CONV string( |extendedInformation| ).
+    DATA(t34) = |extendedInformation|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t35.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_sm_cn_ts_sm_cns.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_sm_cn_ts_sm_cns.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_smim_consistency_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD in_in_sr_rl_smm_cns_ts_smm_cns.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
-    DATA(t2) = CAST zif_lnt_registry( t1 ).
+    DATA(t1) = i_reg_f149.
+    DATA(t2) = t1.
     me->reg = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
-    DATA(t3) = CAST zcl_lnt_smim_consistency( me ).
+    DATA(t3) = me.
     result = t3.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = CAST zif_lnt_object( t1 ).
+    DATA(t6) = t1.
     t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_mime_object ).
     t4 = xsdbool( t5 = abap_false ).
     IF t4 = abap_true.
@@ -179,7 +184,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     CLEAR t13.
     DATA t14 TYPE REF TO zcl_lnt_mime_object.
     DATA t15 TYPE REF TO zcl_lnt_mime_object.
-    DATA(t16) = CAST zif_lnt_object( t1 ).
+    DATA(t16) = t1.
     DATA t17 TYPE REF TO object.
     t17 = t16.
     t15 ?= t17.
@@ -187,19 +192,19 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t18.
     DATA t19 TYPE REF TO zcl_lnt_iparse_result.
-    DATA(t20) = CAST zcl_lnt_mime_object( t14 ).
-    t19 = t20->pr_in_src_obj_mm_obj_ts_mm_obj(  ).
+    DATA(t20) = t14.
+    t19 = t20->pr_in_src_obj_mm_obj_ts_mm_obj( ).
     DATA t21 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t21.
     DATA t22 TYPE REF TO zcl_lnt_shape_c0acc5f0.
     DATA t23 TYPE REF TO zcl_lnt_shape_c0acc5f0.
-    DATA(t24) = CAST zcl_lnt_mime_object( t14 ).
+    DATA(t24) = t14.
     t23 = t24->parsed_xml.
     t22 = t23.
     DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t25.
     DATA(t26) = VALUE abap_bool( ).
-    DATA(t27) = CAST zcl_lnt_shape_c0acc5f0( t22 ).
+    DATA(t27) = t22.
     IF t27 IS INITIAL.
       t26 = abap_true.
     ENDIF.
@@ -210,7 +215,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ELSE.
       DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t30 TYPE REF TO zcl_lnt_shape_c0acc5f0.
-      DATA(t31) = CAST zcl_lnt_shape_c0acc5f0( t22 ).
+      DATA(t31) = t22.
       t30 = t31.
       t29 = t30->url_a050.
       t25 = t29.
@@ -221,7 +226,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     t12 = t13.
     DATA(t32) = VALUE string( ).
     DATA(t33) = VALUE abap_bool( ).
-    DATA(t34) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
+    DATA(t34) = t12.
     IF t34 IS BOUND.
       IF t34->has = abap_true.
         t33 = xsdbool( strlen( t34->value ) > 0 ).
@@ -229,11 +234,11 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ENDIF.
     IF t33 = abap_true.
       DATA t35 TYPE string.
-      DATA(t36) = CAST zlnt_runtime_opti_4ba3bdccd169( t12 ).
+      DATA(t36) = t12.
       t35 = t36->value.
       t32 = t35.
     ELSE.
-      DATA(t37) = CONV string( || ).
+      DATA(t37) = ||.
       t32 = t37.
     ENDIF.
     t11 = t32.
@@ -242,9 +247,9 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     DATA t39 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t39.
     DATA t40 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t41) = CONV string( t10 ).
-    DATA(t42) = CONV string( |/| ).
-    DATA(t43) = CONV i( strlen( t41 ) ).
+    DATA(t41) = t10.
+    DATA(t42) = |/|.
+    DATA(t43) = strlen( t41 ).
     DATA t44 TYPE i.
     DATA(t45) = VALUE i( ).
     DATA(t46) = VALUE i( ).
@@ -281,11 +286,11 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ENDIF.
     t39 = t40.
     DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t50) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
-    t49 = t50->pop(  ).
+    DATA(t50) = t39.
+    t49 = t50->pop( ).
     DATA t51 TYPE string.
-    DATA(t52) = CAST zlnt_runtime_arra_8ecd6afe19e0( t39 ).
-    DATA(t53) = CONV string( |/| ).
+    DATA(t52) = t39.
+    DATA(t53) = |/|.
     DATA(t54) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t54->has = abap_true.
     t54->value = t53.
@@ -296,14 +301,14 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     DATA(t55) = VALUE abap_bool( ).
     DATA t56 TYPE abap_bool.
     DATA t57 TYPE abap_bool.
-    DATA(t58) = CONV string( t8 ).
-    DATA(t59) = CONV string( || ).
+    DATA(t58) = t8.
+    DATA(t59) = ||.
     t57 = xsdbool( t58 <> t59 ).
     t56 = t57.
     IF t57 = abap_true.
       DATA t60 TYPE abap_bool.
-      DATA(t61) = CONV string( t8 ).
-      DATA(t62) = CONV string( |/SAP/PUBLIC| ).
+      DATA(t61) = t8.
+      DATA(t62) = |/SAP/PUBLIC|.
       t60 = xsdbool( t61 <> t62 ).
       t56 = t60.
     ENDIF.
@@ -311,9 +316,9 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     IF t56 = abap_true.
       DATA t63 TYPE abap_bool.
       DATA t64 TYPE abap_bool.
-      DATA(t65) = CONV string( t8 ).
+      DATA(t65) = t8.
       t64 = me->find_folder( i_base = t65 ).
-      DATA(t66) = CONV abap_bool( abap_false ).
+      DATA(t66) = abap_false.
       t63 = xsdbool( t64 = t66 ).
       t55 = t63.
     ENDIF.
@@ -321,12 +326,12 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       DATA t67 TYPE string.
       DATA t68 TYPE string.
       DATA t69 TYPE string.
-      DATA(t70) = CONV string( |Parent folder "| ).
-      DATA(t71) = CONV string( t8 ).
-      DATA(t72) = CONV i( strlen( t70 ) ).
+      DATA(t70) = |Parent folder "|.
+      DATA(t71) = t8.
+      DATA(t72) = strlen( t70 ).
       t69 = |{ t70 }{ t71 }|.
-      DATA(t73) = CONV string( |" not found| ).
-      DATA(t74) = CONV i( strlen( t69 ) ).
+      DATA(t73) = |" not found|.
+      DATA(t74) = strlen( t69 ).
       t68 = |{ t69 }{ t73 }|.
       t67 = t68.
       DATA t75 TYPE REF TO zcl_lnt_position.
@@ -347,13 +352,13 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t84 TYPE REF TO zcl_lnt_abstract_object.
       DATA t85 TYPE REF TO zcl_lnt_mime_object.
-      DATA(t86) = CAST zif_lnt_object( t1 ).
+      DATA(t86) = t1.
       DATA t87 TYPE REF TO object.
       t87 = t86.
       t85 ?= t87.
       t84 = t85.
       DATA t88 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t89) = CAST zcl_lnt_abstract_object( t84 ).
+      DATA(t89) = t84.
       t88 = t89->files.
       t83 = t88.
       DATA t90 TYPE REF TO object.
@@ -372,27 +377,27 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       ELSE.
         t82 ?= t90.
       ENDIF.
-      DATA(t93) = CAST zcl_lnt_position( t75 ).
-      DATA(t94) = CONV string( t67 ).
+      DATA(t93) = t75.
+      DATA(t94) = t67.
       DATA(t95) = VALUE string( ).
       DATA t96 TYPE REF TO zcl_lnt_irule_metadata.
       CLEAR t96.
       DATA t97 TYPE string.
-      DATA(t98) = CONV string( |smim_consistency| ).
+      DATA(t98) = |smim_consistency|.
       t97 = t98.
       DATA t99 TYPE string.
-      DATA(t100) = CONV string( |SMIM consistency check| ).
+      DATA(t100) = |SMIM consistency check|.
       t99 = t100.
       DATA t101 TYPE string.
-      DATA(t102) = CONV string( |SMIM consistency check| ).
+      DATA(t102) = |SMIM consistency check|.
       t101 = t102.
       DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t103.
       DATA t104 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t104.
-      DATA(t105) = CONV abap_bool( abap_true ).
+      DATA(t105) = abap_true.
       IF t105 = abap_true.
-        DATA(t106) = CONV string( |Checks that the parent folder of each MIME object exists in | ).
+        DATA(t106) = |Checks that the parent folder of each MIME object exists in |.
         t106 = t106 && |the registry. The SAP system folder /SAP/PUBLIC is always al|.
         t106 = t106 && |lowed as a parent even if not present in the repository.|.
         DATA(t107) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -450,25 +455,25 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t96->zlnt_json_ownkeys_70e5fd461788.
       t96->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t123) = CONV string( |key| ).
+      DATA(t123) = |key|.
       DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t124.
       IF t96->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t96->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
       ENDIF.
-      DATA(t125) = CONV string( |title| ).
+      DATA(t125) = |title|.
       DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t126.
       IF t96->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t96->zlnt_json_ownkeys_70e5fd461788->put( p0 = t125 p1 = t126 ).
       ENDIF.
-      DATA(t127) = CONV string( |shortDescription| ).
+      DATA(t127) = |shortDescription|.
       DATA t128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t128.
       IF t96->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t96->zlnt_json_ownkeys_70e5fd461788->put( p0 = t127 p1 = t128 ).
       ENDIF.
-      DATA(t129) = CONV string( |extendedInformation| ).
+      DATA(t129) = |extendedInformation|.
       DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t130.
       IF t96->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -476,30 +481,31 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       ENDIF.
       t95 = t96->key.
       DATA t131 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t132) = CAST zcl_lnt_smim_consistency_conf( me->conf ).
+      DATA(t132) = me->conf.
       t131 = t132->zlnt_view_read_sr_15c06369f827( ).
       DATA t133 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t133.
       t81 = zcl_lnt_issue=>at_position( i_file = t82 i_start = t93 i_message_26cb = t94 i_key = t95 i_severity = t131 i_fix = t133 ).
       t80 = t81.
-      DATA(t134) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-      DATA(t135) = CAST zcl_lnt_issue( t80 ).
+      DATA(t134) = t2.
+      DATA(t135) = t80.
       t134->load( ).
       APPEND t135 TO t134->items.
       t134->save( ).
     ENDIF.
-    DATA(t136) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t136) = t2.
     result = t136.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD base.
-    DATA(t1) = CONV string( i_full ).
+    DATA(t1) = i_full.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t4) = CONV string( t1 ).
-    DATA(t5) = CONV string( |/| ).
-    DATA(t6) = CONV i( strlen( t4 ) ).
+    DATA(t4) = t1.
+    DATA(t5) = |/|.
+    DATA(t6) = strlen( t4 ).
     DATA t7 TYPE i.
     DATA(t8) = VALUE i( ).
     DATA(t9) = VALUE i( ).
@@ -536,33 +542,34 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t13) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    t12 = t13->pop(  ).
+    DATA(t13) = t2.
+    t12 = t13->pop( ).
     DATA t14 TYPE string.
-    DATA(t15) = CAST zlnt_runtime_arra_8ecd6afe19e0( t2 ).
-    DATA(t16) = CONV string( |/| ).
+    DATA(t15) = t2.
+    DATA(t16) = |/|.
     DATA(t17) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t17->has = abap_true.
     t17->value = t16.
     t14 = t15->join( p0 = t17 ).
     result = t14.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD find_folder.
-    DATA(t1) = CONV string( i_base ).
+    DATA(t1) = i_base.
     DATA t2 TYPE REF TO zif_lnt_generator_8f73cd1c.
     CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_generator_8f73cd1c.
     CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_generator_8f73cd1c.
     CLEAR t4.
-    DATA(t5) = CAST zif_lnt_registry( me->reg ).
-    DATA(t6) = CONV string( |SMIM| ).
+    DATA(t5) = me->reg.
+    DATA(t6) = |SMIM|.
     t4 = t5->get_objects_by_type( i_type_9913 = t6 ).
-    t3 = t4->iterate(  ).
+    t3 = t4->iterate( ).
     t2 = t3.
     DO.
-      DATA(t7) = CONV abap_bool( abap_true ).
+      DATA(t7) = abap_true.
       IF t7 = abap_false.
         EXIT.
       ENDIF.
@@ -570,11 +577,11 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       CLEAR t8.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
       CLEAR t9.
-      DATA(t10) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-      t9 = t10->next(  ).
+      DATA(t10) = t2.
+      t9 = t10->next( ).
       t8 = t9.
       DATA(t11) = VALUE abap_bool( ).
-      DATA(t12) = CAST zcl_lnt_generator_17955b8b( t8 ).
+      DATA(t12) = t8.
       t11 = t12->done.
       IF t11 = abap_true.
         EXIT.
@@ -585,7 +592,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       CLEAR t14.
       DATA t15 TYPE REF TO zif_lnt_object.
       CLEAR t15.
-      DATA(t16) = CAST zcl_lnt_generator_17955b8b( t8 ).
+      DATA(t16) = t8.
       t15 = t16->value.
       t14 = t15.
       t13 = t14.
@@ -596,42 +603,42 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       DATA t19 TYPE REF TO zcl_lnt_mime_object.
       CLEAR t19.
       DATA(t20) = VALUE abap_bool( ).
-      DATA(t21) = CONV abap_bool( abap_false ).
+      DATA(t21) = abap_false.
       t20 = t21.
       DATA t22 TYPE REF TO cx_root.
       CLEAR t22.
       TRY.
           DATA t23 TYPE REF TO zcl_lnt_mime_object.
           CLEAR t23.
-          DATA(t24) = CAST zif_lnt_object( t13 ).
+          DATA(t24) = t13.
           t23 ?= t24.
           t19 = t23.
-          DATA(t25) = CONV abap_bool( abap_true ).
+          DATA(t25) = abap_true.
           t20 = t25.
         CATCH cx_root INTO t22.
           DATA(t26) = VALUE abap_bool( ).
-          DATA(t27) = CONV abap_bool( t20 ).
+          DATA(t27) = t20.
           t26 = xsdbool( t27 = abap_false ).
           IF t26 = abap_true.
-            DATA(t28) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-            t28->close(  ).
+            DATA(t28) = t2.
+            t28->close( ).
           ENDIF.
           RAISE EXCEPTION t22.
       ENDTRY.
       DATA(t29) = VALUE abap_bool( ).
-      DATA(t30) = CONV abap_bool( t20 ).
+      DATA(t30) = t20.
       t29 = xsdbool( t30 = abap_false ).
       IF t29 = abap_true.
-        DATA(t31) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-        t31->close(  ).
+        DATA(t31) = t2.
+        t31->close( ).
       ENDIF.
-      DATA(t32) = CAST zcl_lnt_mime_object( t19 ).
+      DATA(t32) = t19.
       t18 = t32.
       t17 = t18.
       DATA(t33) = VALUE abap_bool( ).
       DATA(t34) = VALUE abap_bool( ).
       DATA(t35) = VALUE abap_bool( ).
-      DATA(t36) = CONV abap_bool( abap_false ).
+      DATA(t36) = abap_false.
       t35 = t36.
       DATA t37 TYPE REF TO cx_root.
       CLEAR t37.
@@ -640,9 +647,9 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
           DATA(t39) = VALUE abap_bool( ).
           DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t40.
-          DATA(t41) = CONV abap_bool( abap_true ).
+          DATA(t41) = abap_true.
           IF t41 = abap_true.
-            DATA(t42) = CONV string( t1 ).
+            DATA(t42) = t1.
             DATA(t43) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t43->has = abap_true.
             t43->value = t42.
@@ -656,27 +663,27 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
           CLEAR t45.
           DATA t46 TYPE REF TO zcl_lnt_mime_object.
           CLEAR t46.
-          DATA(t47) = CAST zcl_lnt_mime_object( t17 ).
+          DATA(t47) = t17.
           t46 = t47.
           DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t48.
           DATA t49 TYPE REF TO zcl_lnt_iparse_result.
           CLEAR t49.
-          DATA(t50) = CAST zcl_lnt_mime_object( t46 ).
-          t49 = t50->pr_in_src_obj_mm_obj_ts_mm_obj(  ).
+          DATA(t50) = t46.
+          t49 = t50->pr_in_src_obj_mm_obj_ts_mm_obj( ).
           DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t51.
           DATA t52 TYPE REF TO zcl_lnt_shape_c0acc5f0.
           CLEAR t52.
           DATA t53 TYPE REF TO zcl_lnt_shape_c0acc5f0.
           CLEAR t53.
-          DATA(t54) = CAST zcl_lnt_mime_object( t46 ).
+          DATA(t54) = t46.
           t53 = t54->parsed_xml.
           t52 = t53.
           DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t55.
           DATA(t56) = VALUE abap_bool( ).
-          DATA(t57) = CAST zcl_lnt_shape_c0acc5f0( t52 ).
+          DATA(t57) = t52.
           IF t57 IS INITIAL.
             t56 = abap_true.
           ENDIF.
@@ -689,7 +696,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
             CLEAR t59.
             DATA t60 TYPE REF TO zcl_lnt_shape_c0acc5f0.
             CLEAR t60.
-            DATA(t61) = CAST zcl_lnt_shape_c0acc5f0( t52 ).
+            DATA(t61) = t52.
             t60 = t61.
             t59 = t60->url_a050.
             t55 = t59.
@@ -718,7 +725,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
             DATA(t65) = VALUE abap_bool( ).
             DATA t66 TYPE REF TO zcl_lnt_mime_object.
             CLEAR t66.
-            DATA(t67) = CAST zcl_lnt_mime_object( t17 ).
+            DATA(t67) = t17.
             t66 = t67.
             DATA(t68) = VALUE abap_bool( ).
             DATA t69 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -727,13 +734,13 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
             CLEAR t70.
             DATA t71 TYPE REF TO zcl_lnt_shape_c0acc5f0.
             CLEAR t71.
-            DATA(t72) = CAST zcl_lnt_mime_object( t66 ).
+            DATA(t72) = t66.
             t71 = t72->parsed_xml.
             t70 = t71.
             DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t73.
             DATA(t74) = VALUE abap_bool( ).
-            DATA(t75) = CAST zcl_lnt_shape_c0acc5f0( t70 ).
+            DATA(t75) = t70.
             IF t75 IS INITIAL.
               t74 = abap_true.
             ENDIF.
@@ -746,7 +753,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
               CLEAR t77.
               DATA t78 TYPE REF TO zcl_lnt_shape_c0acc5f0.
               CLEAR t78.
-              DATA(t79) = CAST zcl_lnt_shape_c0acc5f0( t70 ).
+              DATA(t79) = t70.
               t78 = t79.
               t77 = t78->folder_6de9.
               t73 = t77.
@@ -754,9 +761,9 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
             t69 = t73.
             DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t80.
-            DATA(t81) = CONV abap_bool( abap_true ).
+            DATA(t81) = abap_true.
             IF t81 = abap_true.
-              DATA(t82) = CONV string( |X| ).
+              DATA(t82) = |X|.
               DATA(t83) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t83->has = abap_true.
               t83->value = t82.
@@ -782,60 +789,63 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
               ENDIF.
             ENDIF.
             t65 = t68.
-            DATA(t87) = CONV abap_bool( abap_true ).
+            DATA(t87) = abap_true.
             t64 = xsdbool( t65 = t87 ).
             t38 = t64.
           ENDIF.
           t34 = t38.
-          DATA(t88) = CONV abap_bool( abap_true ).
+          DATA(t88) = abap_true.
           t35 = t88.
         CATCH cx_root INTO t37.
           DATA(t89) = VALUE abap_bool( ).
-          DATA(t90) = CONV abap_bool( t35 ).
+          DATA(t90) = t35.
           t89 = xsdbool( t90 = abap_false ).
           IF t89 = abap_true.
-            DATA(t91) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-            t91->close(  ).
+            DATA(t91) = t2.
+            t91->close( ).
           ENDIF.
           RAISE EXCEPTION t37.
       ENDTRY.
       DATA(t92) = VALUE abap_bool( ).
-      DATA(t93) = CONV abap_bool( t35 ).
+      DATA(t93) = t35.
       t92 = xsdbool( t93 = abap_false ).
       IF t92 = abap_true.
-        DATA(t94) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-        t94->close(  ).
+        DATA(t94) = t2.
+        t94->close( ).
       ENDIF.
-      DATA(t95) = CONV abap_bool( t34 ).
+      DATA(t95) = t34.
       t33 = t95.
       IF t33 = abap_true.
         DATA(t96) = VALUE abap_bool( ).
-        DATA(t97) = CONV abap_bool( abap_true ).
+        DATA(t97) = abap_true.
         t96 = t97.
-        DATA(t98) = CAST zif_lnt_generator_8f73cd1c( t2 ).
-        t98->close(  ).
-        DATA(t99) = CONV abap_bool( t96 ).
+        DATA(t98) = t2.
+        t98->close( ).
+        DATA(t99) = t96.
         result = t99.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA(t100) = CONV abap_bool( abap_false ).
+    DATA(t100) = abap_false.
     result = t100.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns(  ) ).
+    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns(  ) ).
+    DATA(t1) = CAST zcl_lnt_smim_consistency_conf( me->gt_cn_in_sr_rl_sm_cn_ts_sm_cns( ) ).
   ENDMETHOD.
+
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA t2 TYPE REF TO zcl_lnt_smim_consistency_conf.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t3) = t1.
     CLEAR t2.
     IF t3 IS BOUND.
       IF t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -865,48 +875,60 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     ENDIF.
     me->st_cn_in_sr_rl_sm_cn_ts_sm_cns( i_conf = t2 ).
   ENDMETHOD.
+
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_smim_consistency.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->in_in_sr_rl_smm_cns_ts_smm_cns( i_reg_f149 = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1704_87980d34371a.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

@@ -21,45 +21,46 @@ ENDCLASS.
 CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_prsr_bd_excptns_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_prsr_bd_excptns_cnf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |parser_bad_exceptions| ).
+    DATA(t3) = |parser_bad_exceptions|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Parser Error, bad EXCEPTIONS in CALL FUNCTION| ).
+    DATA(t5) = |Parser Error, bad EXCEPTIONS in CALL FUNCTION|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Checks for syntax not recognized by abaplint, related to EXC| ).
+    DATA(t7) = |Checks for syntax not recognized by abaplint, related to EXC|.
     t7 = t7 && |EPTIONS in CALL FUNCTION.|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t13.
       t12 = t13.
-      DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t15) = CONV string( |Syntax| ).
+      DATA(t14) = t12.
+      DATA(t15) = |Syntax|.
       t14->load( ).
       APPEND t15 TO t14->items.
       t14->save( ).
-      DATA(t16) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
-      DATA(t17) = CONV string( |SingleFile| ).
+      DATA(t16) = t12.
+      DATA(t17) = |SingleFile|.
       t16->load( ).
       APPEND t17 TO t16->items.
       t16->save( ).
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t12 ).
+      DATA(t18) = t12.
       t11 = t18.
       t9 = t11.
     ELSE.
@@ -113,56 +114,59 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = CONV string( |key| ).
+    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t35.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
     ENDIF.
-    DATA(t36) = CONV string( |title| ).
+    DATA(t36) = |title|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t37.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
     ENDIF.
-    DATA(t38) = CONV string( |shortDescription| ).
+    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t39.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
     ENDIF.
-    DATA(t40) = CONV string( |tags| ).
+    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t41.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_pr_bd_ex_ts_pr_bd_ex.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_prsr_bd_excptns_cnf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_pr_bd_ex_ts_pr_bd_ex.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t6) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = CAST zcl_lnt_abap_file( t5 ).
+    DATA(t8) = t5.
     t7 = t8->statements.
     t4 = t7.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
@@ -192,8 +196,8 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       DATA t14 TYPE abap_bool.
       DATA t15 TYPE abap_bool.
       DATA t16 TYPE REF TO zif_lnt_statement.
-      DATA(t17) = CAST zcl_lnt_statement_node( t9 ).
-      t16 = t17->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      DATA(t17) = t9.
+      t16 = t17->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t15 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_call_function ).
       t14 = xsdbool( t15 = abap_false ).
       IF t14 = abap_true.
@@ -201,13 +205,13 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       ENDIF.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t20) = CAST zcl_lnt_statement_node( t9 ).
+      DATA(t20) = t9.
       t19 = me->find_exception_tokens( i_statement = t20 ).
       t18 = t19.
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
       DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t24) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+      DATA(t24) = t18.
       t23 = t24.
       DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -215,7 +219,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       t25 = t26.
       DATA(t27) = VALUE abap_bool( ).
       DATA(t28) = VALUE abap_bool( ).
-      DATA(t29) = CAST zlnt_runtime_arra_c22708faf2e3( t23 ).
+      DATA(t29) = t23.
       IF t29 IS INITIAL.
         t28 = abap_true.
       ENDIF.
@@ -225,18 +229,18 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       IF t22 = abap_true.
         DATA t30 TYPE abap_bool.
         DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t32) = CAST zcl_lnt_statement_node( t9 ).
-        DATA(t33) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95 ).
+        DATA(t32) = t9.
+        DATA(t33) = zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95.
         t31 = t32->find_all_expressions( i_type_9913 = t33 ).
         t30 = me->cntns_mxd_excptn_syntx( i_exceptions = t31 ).
         t21 = t30.
       ENDIF.
       IF t21 = abap_true.
         DATA t34 TYPE string.
-        DATA(t35) = CONV string( |Bad EXCEPTIONS syntax in CALL FUNCTION| ).
+        DATA(t35) = |Bad EXCEPTIONS syntax in CALL FUNCTION|.
         t34 = t35.
         DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t37) = CAST zlnt_runtime_arra_c22708faf2e3( t18 ).
+        DATA(t37) = t18.
         t36 = t37.
         DATA t38 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t38.
@@ -262,47 +266,47 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           ELSE.
             t38 ?= t39.
           ENDIF.
-          DATA(t43) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+          DATA(t43) = t2.
           DATA t44 TYPE REF TO zcl_lnt_issue.
           CLEAR t44.
-          DATA(t45) = CAST zcl_lnt_abap_file( t1 ).
-          DATA(t46) = CAST zcl_lnt_abstract_token( t38 ).
-          DATA(t47) = CONV string( t34 ).
+          DATA(t45) = t1.
+          DATA(t46) = t38.
+          DATA(t47) = t34.
           DATA(t48) = VALUE string( ).
           DATA t49 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t49.
           DATA t50 TYPE string.
-          DATA(t51) = CONV string( |parser_bad_exceptions| ).
+          DATA(t51) = |parser_bad_exceptions|.
           t50 = t51.
           DATA t52 TYPE string.
-          DATA(t53) = CONV string( |Parser Error, bad EXCEPTIONS in CALL FUNCTION| ).
+          DATA(t53) = |Parser Error, bad EXCEPTIONS in CALL FUNCTION|.
           t52 = t53.
           DATA t54 TYPE string.
-          DATA(t55) = CONV string( |Checks for syntax not recognized by abaplint, related to EXC| ).
+          DATA(t55) = |Checks for syntax not recognized by abaplint, related to EXC|.
           t55 = t55 && |EPTIONS in CALL FUNCTION.|.
           t54 = t55.
           DATA t56 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t56.
           DATA t57 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t57.
-          DATA(t58) = CONV abap_bool( abap_true ).
+          DATA(t58) = abap_true.
           IF t58 = abap_true.
             DATA t59 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             DATA t60 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             DATA t61 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CREATE OBJECT t61.
             t60 = t61.
-            DATA(t62) = CAST zlnt_runtime_arra_8ecd6afe19e0( t60 ).
-            DATA(t63) = CONV string( |Syntax| ).
+            DATA(t62) = t60.
+            DATA(t63) = |Syntax|.
             t62->load( ).
             APPEND t63 TO t62->items.
             t62->save( ).
-            DATA(t64) = CAST zlnt_runtime_arra_8ecd6afe19e0( t60 ).
-            DATA(t65) = CONV string( |SingleFile| ).
+            DATA(t64) = t60.
+            DATA(t65) = |SingleFile|.
             t64->load( ).
             APPEND t65 TO t64->items.
             t64->save( ).
-            DATA(t66) = CAST zlnt_runtime_arra_8ecd6afe19e0( t60 ).
+            DATA(t66) = t60.
             t59 = t66.
             t57 = t59.
           ELSE.
@@ -356,25 +360,25 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t49->zlnt_json_ownkeys_70e5fd461788.
           t49->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t82) = CONV string( |key| ).
+          DATA(t82) = |key|.
           DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t83.
           IF t49->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t49->zlnt_json_ownkeys_70e5fd461788->put( p0 = t82 p1 = t83 ).
           ENDIF.
-          DATA(t84) = CONV string( |title| ).
+          DATA(t84) = |title|.
           DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t85.
           IF t49->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t49->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
           ENDIF.
-          DATA(t86) = CONV string( |shortDescription| ).
+          DATA(t86) = |shortDescription|.
           DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t87.
           IF t49->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t49->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
           ENDIF.
-          DATA(t88) = CONV string( |tags| ).
+          DATA(t88) = |tags|.
           DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t89.
           IF t49->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -382,7 +386,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           ENDIF.
           t48 = t49->key.
           DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t91) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->conf ).
+          DATA(t91) = me->conf.
           t90 = t91->zlnt_view_read_sr_15c06369f827( ).
           DATA t92 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t92.
@@ -394,8 +398,8 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t94) = CAST zcl_lnt_statement_node( t9 ).
-      DATA(t95) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95 ).
+      DATA(t94) = t9.
+      DATA(t95) = zlnt_runtime_desc_78196487750d=>zlnt_member_d241_133545949f95.
       t93 = t94->find_all_expressions( i_type_9913 = t95 ).
       DATA t96 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t96.
@@ -424,8 +428,8 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         DATA(t101) = VALUE abap_bool( ).
         DATA t102 TYPE REF TO zcl_lnt_abstract_token.
         DATA t103 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t104) = CAST zcl_lnt_expression_node( t96 ).
-        DATA(t105) = CONV string( |=| ).
+        DATA(t104) = t96.
+        DATA(t105) = |=|.
         t103 = t104->find_direct_token_by_text( i_text = t105 ).
         t102 = t103.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -433,58 +437,58 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         CLEAR t107.
         t106 = t107.
         DATA(t108) = VALUE abap_bool( ).
-        DATA(t109) = CAST zcl_lnt_abstract_token( t102 ).
+        DATA(t109) = t102.
         IF t109 IS INITIAL.
           t108 = abap_true.
         ENDIF.
         t101 = t108.
         IF t101 = abap_true.
           DATA t110 TYPE string.
-          DATA(t111) = CONV string( |Bad EXCEPTIONS syntax in CALL FUNCTION| ).
+          DATA(t111) = |Bad EXCEPTIONS syntax in CALL FUNCTION|.
           t110 = t111.
-          DATA(t112) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+          DATA(t112) = t2.
           DATA t113 TYPE REF TO zcl_lnt_issue.
           CLEAR t113.
-          DATA(t114) = CAST zcl_lnt_abap_file( t1 ).
+          DATA(t114) = t1.
           DATA t115 TYPE REF TO zcl_lnt_abstract_token.
-          DATA(t116) = CAST zcl_lnt_expression_node( t96 ).
-          t115 = t116->get_first_token(  ).
-          DATA(t117) = CONV string( t110 ).
+          DATA(t116) = t96.
+          t115 = t116->get_first_token( ).
+          DATA(t117) = t110.
           DATA(t118) = VALUE string( ).
           DATA t119 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t119.
           DATA t120 TYPE string.
-          DATA(t121) = CONV string( |parser_bad_exceptions| ).
+          DATA(t121) = |parser_bad_exceptions|.
           t120 = t121.
           DATA t122 TYPE string.
-          DATA(t123) = CONV string( |Parser Error, bad EXCEPTIONS in CALL FUNCTION| ).
+          DATA(t123) = |Parser Error, bad EXCEPTIONS in CALL FUNCTION|.
           t122 = t123.
           DATA t124 TYPE string.
-          DATA(t125) = CONV string( |Checks for syntax not recognized by abaplint, related to EXC| ).
+          DATA(t125) = |Checks for syntax not recognized by abaplint, related to EXC|.
           t125 = t125 && |EPTIONS in CALL FUNCTION.|.
           t124 = t125.
           DATA t126 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t126.
           DATA t127 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t127.
-          DATA(t128) = CONV abap_bool( abap_true ).
+          DATA(t128) = abap_true.
           IF t128 = abap_true.
             DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             DATA t130 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             DATA t131 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CREATE OBJECT t131.
             t130 = t131.
-            DATA(t132) = CAST zlnt_runtime_arra_8ecd6afe19e0( t130 ).
-            DATA(t133) = CONV string( |Syntax| ).
+            DATA(t132) = t130.
+            DATA(t133) = |Syntax|.
             t132->load( ).
             APPEND t133 TO t132->items.
             t132->save( ).
-            DATA(t134) = CAST zlnt_runtime_arra_8ecd6afe19e0( t130 ).
-            DATA(t135) = CONV string( |SingleFile| ).
+            DATA(t134) = t130.
+            DATA(t135) = |SingleFile|.
             t134->load( ).
             APPEND t135 TO t134->items.
             t134->save( ).
-            DATA(t136) = CAST zlnt_runtime_arra_8ecd6afe19e0( t130 ).
+            DATA(t136) = t130.
             t129 = t136.
             t127 = t129.
           ELSE.
@@ -538,25 +542,25 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t119->zlnt_json_ownkeys_70e5fd461788.
           t119->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t152) = CONV string( |key| ).
+          DATA(t152) = |key|.
           DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t153.
           IF t119->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t119->zlnt_json_ownkeys_70e5fd461788->put( p0 = t152 p1 = t153 ).
           ENDIF.
-          DATA(t154) = CONV string( |title| ).
+          DATA(t154) = |title|.
           DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t155.
           IF t119->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t119->zlnt_json_ownkeys_70e5fd461788->put( p0 = t154 p1 = t155 ).
           ENDIF.
-          DATA(t156) = CONV string( |shortDescription| ).
+          DATA(t156) = |shortDescription|.
           DATA t157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t157.
           IF t119->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
             t119->zlnt_json_ownkeys_70e5fd461788->put( p0 = t156 p1 = t157 ).
           ENDIF.
-          DATA(t158) = CONV string( |tags| ).
+          DATA(t158) = |tags|.
           DATA t159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t159.
           IF t119->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -564,7 +568,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           ENDIF.
           t118 = t119->key.
           DATA t160 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t161) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->conf ).
+          DATA(t161) = me->conf.
           t160 = t161->zlnt_view_read_sr_15c06369f827( ).
           DATA t162 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t162.
@@ -575,18 +579,19 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         ENDIF.
       ENDDO.
     ENDDO.
-    DATA(t163) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t163) = t2.
     result = t163.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD cntns_mxd_excptn_syntx.
-    DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( i_exceptions ).
+    DATA(t1) = i_exceptions.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE abap_bool.
-    DATA(t5) = CONV abap_bool( abap_false ).
+    DATA(t5) = abap_false.
     t4 = t5.
-    DATA(t6) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t6) = t1.
     DATA t7 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t7.
     DATA t8 TYPE REF TO object.
@@ -614,8 +619,8 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       DATA(t12) = VALUE abap_bool( ).
       DATA t13 TYPE REF TO zcl_lnt_abstract_token.
       DATA t14 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t15) = CAST zcl_lnt_expression_node( t7 ).
-      DATA(t16) = CONV string( |=| ).
+      DATA(t15) = t7.
+      DATA(t16) = |=|.
       t14 = t15->find_direct_token_by_text( i_text = t16 ).
       t13 = t14.
       DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -623,26 +628,26 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       CLEAR t18.
       t17 = t18.
       DATA(t19) = VALUE abap_bool( ).
-      DATA(t20) = CAST zcl_lnt_abstract_token( t13 ).
+      DATA(t20) = t13.
       IF t20 IS INITIAL.
         t19 = abap_true.
       ENDIF.
       t12 = t19.
       IF t12 = abap_true.
-        DATA(t21) = CONV abap_bool( abap_true ).
+        DATA(t21) = abap_true.
         t4 = t21.
         EXIT.
       ENDIF.
     ENDDO.
-    DATA(t22) = CONV abap_bool( t4 ).
+    DATA(t22) = t4.
     t3 = t22.
     t2 = t3.
     IF t3 = abap_true.
       DATA(t23) = VALUE abap_bool( ).
       DATA t24 TYPE abap_bool.
-      DATA(t25) = CONV abap_bool( abap_false ).
+      DATA(t25) = abap_false.
       t24 = t25.
-      DATA(t26) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+      DATA(t26) = t1.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t27.
       DATA t28 TYPE REF TO object.
@@ -670,8 +675,8 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         DATA(t32) = VALUE abap_bool( ).
         DATA t33 TYPE REF TO zcl_lnt_abstract_token.
         DATA t34 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t35) = CAST zcl_lnt_expression_node( t27 ).
-        DATA(t36) = CONV string( |=| ).
+        DATA(t35) = t27.
+        DATA(t36) = |=|.
         t34 = t35->find_direct_token_by_text( i_text = t36 ).
         t33 = t34.
         DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -680,33 +685,34 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         t37 = t38.
         DATA(t39) = VALUE abap_bool( ).
         DATA(t40) = VALUE abap_bool( ).
-        DATA(t41) = CAST zcl_lnt_abstract_token( t33 ).
+        DATA(t41) = t33.
         IF t41 IS INITIAL.
           t40 = abap_true.
         ENDIF.
         t39 = xsdbool( t40 = abap_false ).
         t32 = t39.
         IF t32 = abap_true.
-          DATA(t42) = CONV abap_bool( abap_true ).
+          DATA(t42) = abap_true.
           t24 = t42.
           EXIT.
         ENDIF.
       ENDDO.
-      DATA(t43) = CONV abap_bool( t24 ).
+      DATA(t43) = t24.
       t23 = t43.
       t2 = t23.
     ENDIF.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD find_exception_tokens.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_statement ).
+    DATA(t1) = i_statement.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = CAST zcl_lnt_statement_node( t1 ).
-    t3 = t4->get_tokens(  ).
+    DATA(t4) = t1.
+    t3 = t4->get_tokens( ).
     t2 = t3.
     DATA(t5) = VALUE f( ).
     DATA(t6) = VALUE f( ).
@@ -716,7 +722,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
     DATA t9 TYPE f.
     DATA(t10) = CONV f( -1 ).
     t9 = t10.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t11) = t2.
     DATA t12 TYPE REF TO zcl_lnt_abstract_token.
     CLEAR t12.
     DATA t13 TYPE REF TO object.
@@ -742,7 +748,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         t12 ?= t13.
       ENDIF.
       DATA t17 TYPE f.
-      DATA(t18) = CONV f( t7 ).
+      DATA(t18) = t7.
       DATA(t19) = CONV f( 1 ).
       t17 = t18 + t19.
       t7 = t17.
@@ -750,32 +756,32 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       DATA t21 TYPE string.
       DATA t22 TYPE string.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t24) = CAST zcl_lnt_abstract_token( t12 ).
+      DATA(t24) = t12.
       t23 = t24.
       DATA t25 TYPE string.
-      DATA(t26) = CAST zcl_lnt_abstract_token( t23 ).
+      DATA(t26) = t23.
       t25 = t26->str.
       t22 = t25.
-      DATA(t27) = CONV i( strlen( t22 ) ).
+      DATA(t27) = strlen( t22 ).
       t21 = t22.
       IF t21 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t21 TO UPPER CASE.
       ELSE.
         t21 = zlnt_runtime_uppe_91169605024d=>full( t21 ).
       ENDIF.
-      DATA(t28) = CONV string( |EXCEPTIONS| ).
+      DATA(t28) = |EXCEPTIONS|.
       t20 = xsdbool( t21 = t28 ).
       IF t20 = abap_true.
-        DATA(t29) = CONV f( t7 ).
+        DATA(t29) = t7.
         t9 = t29.
         EXIT.
       ENDIF.
     ENDDO.
-    DATA(t30) = CONV f( t9 ).
+    DATA(t30) = t9.
     t6 = t30.
     t5 = t6.
     DATA t31 TYPE abap_bool.
-    DATA(t32) = CONV f( t5 ).
+    DATA(t32) = t5.
     DATA(t33) = CONV f( -1 ).
     t31 = xsdbool( t32 = t33 ).
     IF t31 = abap_true.
@@ -786,7 +792,7 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CLEAR t35.
-    DATA(t36) = CONV abap_bool( abap_true ).
+    DATA(t36) = abap_true.
     IF t36 = abap_true.
       DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t37.
@@ -796,9 +802,9 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       t38 = t39.
       DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t40.
-      DATA(t41) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t41) = t2.
       DATA(t42) = VALUE i( ).
-      DATA(t43) = CONV f( t5 ).
+      DATA(t43) = t5.
       IF t43 > range_i32_upper.
         t42 = range_i32_upper.
       ELSEIF t43 < range_i32_lower.
@@ -834,23 +840,23 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
         DATA t49 TYPE abap_bool.
         DATA t50 TYPE string.
         DATA t51 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t52) = CAST zcl_lnt_abstract_token( t44 ).
+        DATA(t52) = t44.
         t51 = t52.
         DATA t53 TYPE string.
-        DATA(t54) = CAST zcl_lnt_abstract_token( t51 ).
+        DATA(t54) = t51.
         t53 = t54->str.
         t50 = t53.
-        DATA(t55) = CONV string( |.| ).
+        DATA(t55) = |.|.
         t49 = xsdbool( t50 <> t55 ).
         IF t49 = abap_true.
-          DATA(t56) = CAST zlnt_runtime_arra_c22708faf2e3( t38 ).
-          DATA(t57) = CAST zcl_lnt_abstract_token( t44 ).
+          DATA(t56) = t38.
+          DATA(t57) = t44.
           t56->load( ).
           APPEND t57 TO t56->items.
           t56->save( ).
         ENDIF.
       ENDDO.
-      DATA(t58) = CAST zlnt_runtime_arra_c22708faf2e3( t38 ).
+      DATA(t58) = t38.
       t37 = t58.
       t35 = t37.
     ELSE.
@@ -859,18 +865,21 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       t35 = t59.
     ENDIF.
     result = t35.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex(  ) ).
+    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex(  ) ).
+    DATA(t1) = CAST zcl_lnt_prsr_bd_excptns_cnf( me->g_c_i_s_r_pr_bd_ex_ts_pr_bd_ex( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_prsr_bd_excptns_cnf.
     CLEAR t1.
@@ -902,19 +911,22 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_pr_bd_ex_ts_pr_bd_ex( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_pr_bd_ex_ts_pr_bd_ex( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1643_fb61e317a4d3.
   ENDMETHOD.

@@ -11,9 +11,9 @@ CLASS zcl_lnt_exclude_helper DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
   METHOD is_excluded.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_filename ).
-    DATA(t2) = CAST zlnt_runtime_arra_c22708faf2e3( i_exclude_patterns ).
-    DATA(t3) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t1) = i_filename.
+    DATA(t2) = i_exclude_patterns.
+    DATA(t3) = t2.
     DATA t4 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t4.
     DATA t5 TYPE REF TO object.
@@ -37,52 +37,56 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
         t4 ?= t5.
       ENDIF.
       DATA(t8) = VALUE abap_bool( ).
-      DATA(t9) = CAST zlnt_runtime_rege_5a210f82384e( t4 ).
+      DATA(t9) = t4.
       DATA(t10) = VALUE string( ).
       DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t12) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+      DATA(t12) = t1.
       t11 = t12.
       DATA(t13) = VALUE string( ).
       DATA(t14) = VALUE abap_bool( ).
-      DATA(t15) = CAST zlnt_runtime_opti_4ba3bdccd169( t11 ).
+      DATA(t15) = t11.
       IF t15 IS INITIAL.
         t14 = abap_true.
       ELSEIF t15->has = abap_false.
         t14 = abap_true.
       ENDIF.
       IF t14 = abap_true.
-        DATA(t16) = CONV string( |undefined| ).
+        DATA(t16) = |undefined|.
         t13 = t16.
       ELSE.
         DATA t17 TYPE string.
-        DATA(t18) = CAST zlnt_runtime_opti_4ba3bdccd169( t11 ).
+        DATA(t18) = t11.
         t17 = t18->value.
         t13 = t17.
       ENDIF.
       t10 = t13.
       t8 = t9->test( p0 = t10 ).
       IF t8 = abap_true.
-        DATA(t19) = CONV abap_bool( abap_true ).
+        DATA(t19) = abap_true.
         result = t19.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA(t20) = CONV abap_bool( abap_false ).
+    DATA(t20) = abap_false.
     result = t20.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1787_427d323a3283.
   ENDMETHOD.

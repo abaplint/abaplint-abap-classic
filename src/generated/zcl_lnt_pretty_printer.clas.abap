@@ -16,26 +16,26 @@ CLASS zcl_lnt_pretty_printer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
-    DATA(t2) = CAST zif_lnt_configuration( i_config ).
+    DATA(t1) = i_file.
+    DATA(t2) = i_config.
     DATA(t3) = VALUE string( ).
     DATA t4 TYPE REF TO zcl_lnt_abap_file.
     CLEAR t4.
-    DATA(t5) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t5) = t1.
     t4 = t5.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE REF TO zif_lnt_file.
     CLEAR t7.
-    DATA(t8) = CAST zcl_lnt_abap_file( t4 ).
+    DATA(t8) = t4.
     t7 = t8->file.
-    t6 = t7->get_raw(  ).
+    t6 = t7->get_raw( ).
     t3 = t6.
     me->result_9728 = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `result`.
-    DATA(t9) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t9) = t1.
     me->file = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
-    DATA(t10) = CAST zif_lnt_configuration( t2 ).
+    DATA(t10) = t2.
     me->config = t10.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `config`.
     DATA t11 TYPE REF TO zcl_lnt_indentation_conf.
@@ -44,30 +44,30 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t13.
-    DATA(t14) = CAST zif_lnt_configuration( t2 ).
+    DATA(t14) = t2.
     DATA(t15) = VALUE string( ).
     DATA t16 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t16.
     DATA t17 TYPE REF TO zcl_lnt_indentation.
     CLEAR t17.
-    DATA(t18) = NEW zcl_lnt_indentation(  ).
+    DATA(t18) = NEW zcl_lnt_indentation( ).
     t17 = t18.
     DATA t19 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t19.
     DATA(t20) = VALUE string( ).
-    DATA(t21) = CONV string( |indentation| ).
+    DATA(t21) = |indentation|.
     t20 = t21.
     DATA(t22) = VALUE string( ).
-    DATA(t23) = CONV string( |Indentation| ).
+    DATA(t23) = |Indentation|.
     t22 = t23.
     DATA(t24) = VALUE string( ).
-    DATA(t25) = CONV string( |Checks indentation| ).
+    DATA(t25) = |Checks indentation|.
     t24 = t25.
     DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t26.
     DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t27.
-    DATA(t28) = CONV abap_bool( abap_true ).
+    DATA(t28) = abap_true.
     IF t28 = abap_true.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t29.
@@ -77,22 +77,22 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       CLEAR t31.
       CREATE OBJECT t31.
       t30 = t31.
-      DATA(t32) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
-      DATA(t33) = CONV string( |Whitespace| ).
+      DATA(t32) = t30.
+      DATA(t33) = |Whitespace|.
       t32->load( ).
       APPEND t33 TO t32->items.
       t32->save( ).
-      DATA(t34) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
-      DATA(t35) = CONV string( |Quickfix| ).
+      DATA(t34) = t30.
+      DATA(t35) = |Quickfix|.
       t34->load( ).
       APPEND t35 TO t34->items.
       t34->save( ).
-      DATA(t36) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
-      DATA(t37) = CONV string( |SingleFile| ).
+      DATA(t36) = t30.
+      DATA(t37) = |SingleFile|.
       t36->load( ).
       APPEND t37 TO t36->items.
       t36->save( ).
-      DATA(t38) = CAST zlnt_runtime_arra_8ecd6afe19e0( t30 ).
+      DATA(t38) = t30.
       t29 = t38.
       t27 = t29.
     ELSE.
@@ -105,9 +105,9 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t40.
     DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t41.
-    DATA(t42) = CONV abap_bool( abap_true ).
+    DATA(t42) = abap_true.
     IF t42 = abap_true.
-      DATA(t43) = CONV string( |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n| ).
+      DATA(t43) = |CLASS lcl DEFINITION.\nPRIVATE SECTION.\nMETHODS constructor.\n|.
       t43 = t43 && |ENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\nMETHOD constructor.\nEND|.
       t43 = t43 && |METHOD.\nENDCLASS.|.
       DATA(t44) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -124,9 +124,9 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t46.
     DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t47.
-    DATA(t48) = CONV abap_bool( abap_true ).
+    DATA(t48) = abap_true.
     IF t48 = abap_true.
-      DATA(t49) = CONV string( |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru| ).
+      DATA(t49) = |CLASS lcl DEFINITION.\n  PRIVATE SECTION.\n    METHODS constru|.
       t49 = t49 && |ctor.\nENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\n  METHOD construc|.
       t49 = t49 && |tor.\n  ENDMETHOD.\nENDCLASS.|.
       DATA(t50) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -189,37 +189,37 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t19->zlnt_json_ownkeys_70e5fd461788.
     t19->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t64) = CONV string( |key| ).
+    DATA(t64) = |key|.
     DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t65.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t64 p1 = t65 ).
     ENDIF.
-    DATA(t66) = CONV string( |title| ).
+    DATA(t66) = |title|.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t67.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t66 p1 = t67 ).
     ENDIF.
-    DATA(t68) = CONV string( |shortDescription| ).
+    DATA(t68) = |shortDescription|.
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t69.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t68 p1 = t69 ).
     ENDIF.
-    DATA(t70) = CONV string( |tags| ).
+    DATA(t70) = |tags|.
     DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t71.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t70 p1 = t71 ).
     ENDIF.
-    DATA(t72) = CONV string( |badExample| ).
+    DATA(t72) = |badExample|.
     DATA t73 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t73.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t19->zlnt_json_ownkeys_70e5fd461788->put( p0 = t72 p1 = t73 ).
     ENDIF.
-    DATA(t74) = CONV string( |goodExample| ).
+    DATA(t74) = |goodExample|.
     DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t75.
     IF t19->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -264,12 +264,12 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t79.
     DATA t80 TYPE REF TO zcl_lnt_indentation_conf.
     CLEAR t80.
-    DATA(t81) = CAST zcl_lnt_indentation_conf( t11 ).
+    DATA(t81) = t11.
     t80 = t81.
     DATA t82 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t82.
     DATA(t83) = VALUE abap_bool( ).
-    DATA(t84) = CAST zcl_lnt_indentation_conf( t80 ).
+    DATA(t84) = t80.
     IF t84 IS INITIAL.
       t83 = abap_true.
     ENDIF.
@@ -279,7 +279,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       t82 = t85.
     ELSE.
       DATA(t86) = VALUE abap_bool( ).
-      DATA(t87) = CAST zcl_lnt_indentation_conf( t80 ).
+      DATA(t87) = t80.
       t86 = t87->zlnt_view_read_sr_5c35b8f00615( ).
       DATA(t88) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t88->has = abap_true.
@@ -294,12 +294,12 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t90.
     DATA t91 TYPE REF TO zcl_lnt_indentation_conf.
     CLEAR t91.
-    DATA(t92) = CAST zcl_lnt_indentation_conf( t11 ).
+    DATA(t92) = t11.
     t91 = t92.
     DATA t93 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     CLEAR t93.
     DATA(t94) = VALUE abap_bool( ).
-    DATA(t95) = CAST zcl_lnt_indentation_conf( t91 ).
+    DATA(t95) = t91.
     IF t95 IS INITIAL.
       t94 = abap_true.
     ENDIF.
@@ -309,7 +309,7 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       t93 = t96.
     ELSE.
       DATA(t97) = VALUE abap_bool( ).
-      DATA(t98) = CAST zcl_lnt_indentation_conf( t91 ).
+      DATA(t98) = t91.
       t97 = t98->zlnt_view_read_sr_e38337070bb8( ).
       DATA(t99) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t99->has = abap_true.
@@ -338,13 +338,13 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t77->zlnt_json_ownkeys_70e5fd461788.
     t77->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t104) = CONV string( |alignTryCatch| ).
+    DATA(t104) = |alignTryCatch|.
     DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t105.
     IF t77->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t77->zlnt_json_ownkeys_70e5fd461788->put( p0 = t104 p1 = t105 ).
     ENDIF.
-    DATA(t106) = CONV string( |globalClassSkipFirst| ).
+    DATA(t106) = |globalClassSkipFirst|.
     DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t107.
     IF t77->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -353,18 +353,19 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     me->options = t77.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `options`.
   ENDMETHOD.
+
   METHOD run.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t4) = CAST zcl_lnt_abap_file( me->file ).
+    DATA(t4) = me->file.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = CAST zcl_lnt_abap_file( t3 ).
+    DATA(t6) = t3.
     t5 = t6->statements.
     t2 = t5.
     t1 = t2.
-    DATA(t7) = CAST zlnt_runtime_arra_c22708faf2e3( t1 ).
+    DATA(t7) = t1.
     DATA t8 TYPE REF TO zcl_lnt_statement_node.
     CLEAR t8.
     DATA t9 TYPE REF TO object.
@@ -395,15 +396,15 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       DATA t16 TYPE abap_bool.
       DATA t17 TYPE abap_bool.
       DATA t18 TYPE REF TO zif_lnt_statement.
-      DATA(t19) = CAST zcl_lnt_statement_node( t8 ).
-      t18 = t19->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      DATA(t19) = t8.
+      t18 = t19->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t17 = xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_unknown ).
       t16 = t17.
       IF t17 = abap_false.
         DATA t20 TYPE abap_bool.
         DATA t21 TYPE REF TO zif_lnt_statement.
-        DATA(t22) = CAST zcl_lnt_statement_node( t8 ).
-        t21 = t22->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t22) = t8.
+        t21 = t22->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t20 = xsdbool( t21 IS BOUND AND t21 IS INSTANCE OF zcl_lnt_macro_content ).
         t16 = t20.
       ENDIF.
@@ -411,8 +412,8 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       IF t16 = abap_false.
         DATA t23 TYPE abap_bool.
         DATA t24 TYPE REF TO zif_lnt_statement.
-        DATA(t25) = CAST zcl_lnt_statement_node( t8 ).
-        t24 = t25->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t25) = t8.
+        t24 = t25->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t23 = xsdbool( t24 IS BOUND AND t24 IS INSTANCE OF zcl_lnt_macro_call ).
         t15 = t23.
       ENDIF.
@@ -422,11 +423,11 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
         DATA t27 TYPE REF TO zcl_lnt_position.
         DATA t28 TYPE REF TO zcl_lnt_abstract_token.
         DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t30) = CAST zcl_lnt_statement_node( t8 ).
-        t29 = t30->get_first_token(  ).
+        DATA(t30) = t8.
+        t29 = t30->get_first_token( ).
         t28 = t29.
         DATA t31 TYPE REF TO zcl_lnt_position.
-        DATA(t32) = CAST zcl_lnt_abstract_token( t28 ).
+        DATA(t32) = t28.
         t31 = t32->start.
         t27 = t31.
         t26 = xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_virtual_position ).
@@ -436,8 +437,8 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       IF t14 = abap_false.
         DATA t33 TYPE abap_bool.
         DATA t34 TYPE REF TO zif_lnt_statement.
-        DATA(t35) = CAST zcl_lnt_statement_node( t8 ).
-        t34 = t35->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t35) = t8.
+        t34 = t35->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t33 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_comment ).
         t13 = t33.
       ENDIF.
@@ -447,12 +448,12 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
       DATA t36 TYPE REF TO zcl_lnt_fix_case.
       DATA t37 TYPE REF TO zcl_lnt_fix_case.
       DATA(t38) = CONV string( me->result_9728 ).
-      DATA(t39) = CAST zif_lnt_configuration( me->config ).
+      DATA(t39) = me->config.
       t37 = NEW zcl_lnt_fix_case( i_file_contents = t38 i_config = t39 ).
       t36 = t37.
       DATA t40 TYPE string.
-      DATA(t41) = CAST zcl_lnt_fix_case( t36 ).
-      DATA(t42) = CAST zcl_lnt_statement_node( t8 ).
+      DATA(t41) = t36.
+      DATA(t42) = t8.
       t40 = t41->execute( i_statement = t42 ).
       me->result_9728 = t40.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `result`.
@@ -463,9 +464,9 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     CLEAR t44.
     DATA t45 TYPE REF TO zcl_lnt_iindentation_options.
     CLEAR t45.
-    DATA(t46) = CONV abap_bool( abap_true ).
+    DATA(t46) = abap_true.
     IF t46 = abap_true.
-      DATA(t47) = CAST zcl_lnt_iindentation_options( me->options ).
+      DATA(t47) = me->options.
       t45 = t47.
     ELSE.
       DATA t48 TYPE REF TO zcl_lnt_iindentation_options.
@@ -475,28 +476,32 @@ CLASS zcl_lnt_pretty_printer IMPLEMENTATION.
     t44 = NEW zcl_lnt_indent( i_options = t45 ).
     t43 = t44.
     DATA t49 TYPE string.
-    DATA(t50) = CAST zcl_lnt_indent( t43 ).
-    DATA(t51) = CAST zcl_lnt_abap_file( me->file ).
+    DATA(t50) = t43.
+    DATA(t51) = me->file.
     DATA(t52) = CONV string( me->result_9728 ).
     t49 = t50->execute( i_original = t51 i_modified = t52 ).
     me->result_9728 = t49.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `result`.
     DATA(t53) = CONV string( me->result_9728 ).
     result = t53.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1376_9d55e8666060.
   ENDMETHOD.

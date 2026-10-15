@@ -48,34 +48,34 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV string( |upper| ).
+    DATA(t1) = |upper|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
     t2->value = t1.
     me->zlnt_view_write_s_b5f35bae4d8c( p0 = t2 ).
-    DATA(t3) = CONV abap_bool( abap_true ).
+    DATA(t3) = abap_true.
     DATA(t4) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t4->has = abap_true.
     t4->value = t3.
     me->zlnt_view_write_s_98f31361663b( p0 = t4 ).
-    DATA(t5) = CONV abap_bool( abap_true ).
+    DATA(t5) = abap_true.
     DATA(t6) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t6->has = abap_true.
     t6->value = t5.
     me->zlnt_view_write_s_62340e480568( p0 = t6 ).
-    DATA(t7) = CONV abap_bool( abap_false ).
+    DATA(t7) = abap_false.
     DATA(t8) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t8->has = abap_true.
     t8->value = t7.
     me->zlnt_view_write_s_a9656df83491( p0 = t8 ).
-    DATA(t9) = CONV abap_bool( abap_false ).
+    DATA(t9) = abap_false.
     DATA(t10) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t10->has = abap_true.
     t10->value = t9.
     me->zlnt_view_write_s_ac01bd221b31( p0 = t10 ).
-    DATA(t11) = CONV abap_bool( abap_false ).
+    DATA(t11) = abap_false.
     me->zlnt_view_write_s_c6b2a3c554bb( p0 = t11 ).
-    DATA(t12) = CONV abap_bool( abap_false ).
+    DATA(t12) = abap_false.
     DATA(t13) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t13->has = abap_true.
     t13->value = t12.
@@ -89,17 +89,20 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
     t16->value = t15.
     me->zlnt_view_write_s_a55fb27298a6( p0 = t16 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1555_8b16ca09c68c.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_98fc2d44a45f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `style` ) ).
@@ -113,6 +116,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->style.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_b5f35bae4d8c.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -130,6 +134,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `style`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_10e8de9b4f9f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
@@ -143,6 +148,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_exceptions.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_98f31361663b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -160,6 +166,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreExceptions`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_274b357e7ae8.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreLowerClassImplmentationStatement` ) ).
@@ -173,6 +180,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignr_lwr_clss_implmnttn_sttmnt.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_62340e480568.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -190,6 +198,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreLowerClassImplmentationStatement`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_3e49b3d4558c.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalClassDefinition` ) ).
@@ -203,6 +212,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_global_class_definition.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_a9656df83491.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -220,6 +230,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreGlobalClassDefinition`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_a14b6839a5a2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalInterface` ) ).
@@ -233,6 +244,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_global_interface.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_ac01bd221b31.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -250,6 +262,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreGlobalInterface`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_767dc70211a6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreFunctionModuleName` ) ).
@@ -258,6 +271,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_function_module_name.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_c6b2a3c554bb.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -272,6 +286,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreFunctionModuleName`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_8a9646993486.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalClassBoundaries` ) ).
@@ -285,6 +300,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_global_class_boundaries.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_948df8ac89ce.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -302,6 +318,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreGlobalClassBoundaries`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_20e2964f7001.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreKeywords` ) ).
@@ -328,6 +345,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->ignore_keywords.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_380cf81d7f21.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -368,6 +386,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreKeywords`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_a5f5d8291c71.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `maxIssuesPerFile` ) ).
@@ -384,6 +403,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = me->max_issues_per_file.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_a55fb27298a6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -402,6 +422,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `maxIssuesPerFile`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -436,6 +457,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -443,6 +465,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -498,6 +521,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -653,6 +677,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
         ENDIF.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

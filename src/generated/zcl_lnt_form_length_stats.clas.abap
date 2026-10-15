@@ -12,7 +12,7 @@ CLASS zcl_lnt_form_length_stats DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -22,17 +22,17 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
     CLEAR t5.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( || ).
+    DATA(t7) = ||.
     t6 = t7.
     DATA t8 TYPE f.
     DATA(t9) = CONV f( 0 ).
     t8 = t9.
     DATA t10 TYPE abap_bool.
-    DATA(t11) = CONV abap_bool( abap_false ).
+    DATA(t11) = abap_false.
     t10 = t11.
     DATA t12 TYPE abap_bool.
     DATA t13 TYPE abap_bool.
-    DATA(t14) = CAST zif_lnt_object( t1 ).
+    DATA(t14) = t1.
     t13 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
     t12 = xsdbool( t13 = abap_false ).
     IF t12 = abap_true.
@@ -44,13 +44,13 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t17 TYPE REF TO zcl_lnt_abap_object.
     DATA t18 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t19) = CAST zif_lnt_object( t1 ).
+    DATA(t19) = t1.
     DATA t20 TYPE REF TO object.
     t20 = t19.
     t18 ?= t20.
     t17 = t18.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t22) = CAST zcl_lnt_abap_object( t17 ).
+    DATA(t22) = t17.
     t21 = t22->parsed.
     t16 = t21.
     DATA t23 TYPE REF TO zcl_lnt_abap_file.
@@ -79,10 +79,10 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
       ENDIF.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t29 TYPE REF TO zcl_lnt_abap_file.
-      DATA(t30) = CAST zcl_lnt_abap_file( t23 ).
+      DATA(t30) = t23.
       t29 = t30.
       DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t32) = CAST zcl_lnt_abap_file( t29 ).
+      DATA(t32) = t29.
       t31 = t32->statements.
       t28 = t31.
       DATA t33 TYPE REF TO zcl_lnt_statement_node.
@@ -111,25 +111,25 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
         ENDIF.
         DATA t38 TYPE REF TO zif_lnt_statement.
         DATA t39 TYPE REF TO zif_lnt_statement.
-        DATA(t40) = CAST zcl_lnt_statement_node( t33 ).
-        t39 = t40->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+        DATA(t40) = t33.
+        t39 = t40->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t38 = t39.
         DATA t41 TYPE abap_bool.
-        DATA(t42) = CAST zif_lnt_statement( t38 ).
+        DATA(t42) = t38.
         t41 = xsdbool( t42 IS BOUND AND t42 IS INSTANCE OF zcl_lnt_st_form ).
         IF t41 = abap_true.
           DATA t43 TYPE REF TO zcl_lnt_position.
           CLEAR t43.
-          DATA(t44) = CONV abap_bool( abap_true ).
+          DATA(t44) = abap_true.
           IF t44 = abap_true.
             DATA t45 TYPE REF TO zcl_lnt_position.
             DATA t46 TYPE REF TO zcl_lnt_abstract_token.
             DATA t47 TYPE REF TO zcl_lnt_abstract_token.
-            DATA(t48) = CAST zcl_lnt_statement_node( t33 ).
-            t47 = t48->get_first_token(  ).
+            DATA(t48) = t33.
+            t47 = t48->get_first_token( ).
             t46 = t47.
             DATA t49 TYPE REF TO zcl_lnt_position.
-            DATA(t50) = CAST zcl_lnt_abstract_token( t46 ).
+            DATA(t50) = t46.
             t49 = t50->start.
             t45 = t49.
             t43 = t45.
@@ -140,39 +140,39 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
           ENDIF.
           t4 = t43.
           DATA t52 TYPE string.
-          DATA(t53) = CAST zcl_lnt_statement_node( t33 ).
+          DATA(t53) = t33.
           t52 = zcl_lnt_form_length_stats=>find_name( i_stat = t53 ).
           t6 = t52.
-          DATA(t54) = CONV abap_bool( abap_true ).
+          DATA(t54) = abap_true.
           t10 = t54.
           DATA(t55) = CONV f( 0 ).
           t8 = t55.
         ELSE.
           DATA t56 TYPE abap_bool.
-          DATA(t57) = CAST zif_lnt_statement( t38 ).
+          DATA(t57) = t38.
           t56 = xsdbool( t57 IS BOUND AND t57 IS INSTANCE OF zcl_lnt_end_form ).
           IF t56 = abap_true.
             DATA t58 TYPE abap_bool.
-            DATA(t59) = CAST zcl_lnt_position( t4 ).
+            DATA(t59) = t4.
             t58 = xsdbool( t59 IS BOUND ).
             IF t58 = abap_true.
-              DATA(t60) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+              DATA(t60) = t2.
               DATA t61 TYPE REF TO zcl_lnt_imethod_length_result.
               DATA t62 TYPE string.
-              DATA(t63) = CONV string( t6 ).
+              DATA(t63) = t6.
               t62 = t63.
               DATA t64 TYPE string.
-              DATA(t65) = CONV string( || ).
+              DATA(t65) = ||.
               t64 = t65.
               DATA t66 TYPE f.
-              DATA(t67) = CONV f( t8 ).
+              DATA(t67) = t8.
               t66 = t67.
               DATA t68 TYPE REF TO zcl_lnt_abap_file.
-              DATA(t69) = CAST zcl_lnt_abap_file( t23 ).
+              DATA(t69) = t23.
               t68 = t69.
               DATA t70 TYPE REF TO zcl_lnt_position.
               DATA t71 TYPE REF TO zcl_lnt_position.
-              DATA(t72) = CAST zcl_lnt_position( t4 ).
+              DATA(t72) = t4.
               t71 = t72.
               t70 = t71.
               t61 = NEW zcl_lnt_imethod_length_result( i_class_name = t64 i_name = t62 i_count = t66 i_file = t68 i_pos = t70 ).
@@ -205,31 +205,31 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
               ENDIF.
               CREATE OBJECT t61->zlnt_json_ownkeys_70e5fd461788.
               t61->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA(t78) = CONV string( |name| ).
+              DATA(t78) = |name|.
               DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t79.
               IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
                 t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t78 p1 = t79 ).
               ENDIF.
-              DATA(t80) = CONV string( |className| ).
+              DATA(t80) = |className|.
               DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t81.
               IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
                 t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t80 p1 = t81 ).
               ENDIF.
-              DATA(t82) = CONV string( |count| ).
+              DATA(t82) = |count|.
               DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t83.
               IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
                 t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t82 p1 = t83 ).
               ENDIF.
-              DATA(t84) = CONV string( |file| ).
+              DATA(t84) = |file|.
               DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t85.
               IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
                 t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
               ENDIF.
-              DATA(t86) = CONV string( |pos| ).
+              DATA(t86) = |pos|.
               DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t87.
               IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -241,20 +241,20 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
             ELSE.
               CONTINUE.
             ENDIF.
-            DATA(t88) = CONV abap_bool( abap_false ).
+            DATA(t88) = abap_false.
             t10 = t88.
           ELSE.
             DATA(t89) = VALUE abap_bool( ).
             DATA t90 TYPE abap_bool.
             DATA t91 TYPE abap_bool.
-            DATA(t92) = CONV abap_bool( t10 ).
-            DATA(t93) = CONV abap_bool( abap_true ).
+            DATA(t92) = t10.
+            DATA(t93) = abap_true.
             t91 = xsdbool( t92 = t93 ).
             t90 = t91.
             IF t91 = abap_true.
               DATA t94 TYPE abap_bool.
               DATA t95 TYPE abap_bool.
-              DATA(t96) = CAST zif_lnt_statement( t38 ).
+              DATA(t96) = t38.
               t95 = xsdbool( t96 IS BOUND AND t96 IS INSTANCE OF zcl_lnt_st_comment ).
               t94 = xsdbool( t95 = abap_false ).
               t90 = t94.
@@ -263,14 +263,14 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
             IF t90 = abap_true.
               DATA t97 TYPE abap_bool.
               DATA t98 TYPE abap_bool.
-              DATA(t99) = CAST zif_lnt_statement( t38 ).
+              DATA(t99) = t38.
               t98 = xsdbool( t99 IS BOUND AND t99 IS INSTANCE OF zcl_lnt_empty ).
               t97 = xsdbool( t98 = abap_false ).
               t89 = t97.
             ENDIF.
             IF t89 = abap_true.
               DATA t100 TYPE f.
-              DATA(t101) = CONV f( t8 ).
+              DATA(t101) = t8.
               DATA(t102) = CONV f( 1 ).
               t100 = t101 + t102.
               t8 = t100.
@@ -279,25 +279,26 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
         ENDIF.
       ENDDO.
     ENDDO.
-    DATA(t103) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t103) = t2.
     result = t103.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD find_name.
-    DATA(t1) = CAST zcl_lnt_statement_node( i_stat ).
+    DATA(t1) = i_stat.
     DATA(t2) = VALUE string( ).
-    DATA(t3) = CONV string( || ).
+    DATA(t3) = ||.
     t2 = t3.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t4.
     DATA t5 TYPE REF TO zcl_lnt_expression_node.
     CLEAR t5.
-    DATA(t6) = CAST zcl_lnt_statement_node( t1 ).
-    DATA(t7) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c ).
+    DATA(t6) = t1.
+    DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c.
     t5 = t6->find_first_expression( i_type_9913 = t7 ).
     t4 = t5.
     DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = CAST zcl_lnt_expression_node( t4 ).
+    DATA(t9) = t4.
     t8 = xsdbool( t9 IS BOUND ).
     IF t8 = abap_true.
       DATA(t10) = VALUE string( ).
@@ -307,12 +308,12 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
       CLEAR t12.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t13.
-      DATA(t14) = CAST zcl_lnt_expression_node( t4 ).
+      DATA(t14) = t4.
       t13 = t14.
-      t12 = t13->get_first_token(  ).
+      t12 = t13->get_first_token( ).
       t11 = t12.
       DATA(t15) = VALUE string( ).
-      DATA(t16) = CAST zcl_lnt_abstract_token( t11 ).
+      DATA(t16) = t11.
       t15 = t16->str.
       t10 = t15.
       t2 = t10.
@@ -323,9 +324,9 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
       CLEAR t18.
       DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t19.
-      DATA(t20) = CONV abap_bool( abap_true ).
+      DATA(t20) = abap_true.
       IF t20 = abap_true.
-        DATA(t21) = CONV string( |FormLength, findName, expected FormName| ).
+        DATA(t21) = |FormLength, findName, expected FormName|.
         DATA(t22) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t22->has = abap_true.
         t22->value = t21.
@@ -367,22 +368,26 @@ CLASS zcl_lnt_form_length_stats IMPLEMENTATION.
       ENDIF.
       RAISE EXCEPTION t17.
     ENDIF.
-    DATA(t26) = CONV string( t2 ).
+    DATA(t26) = t2.
     result = t26.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1788_e68bc2dcfb59.
   ENDMETHOD.

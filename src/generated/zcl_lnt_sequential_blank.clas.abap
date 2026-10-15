@@ -21,17 +21,18 @@ ENDCLASS.
 CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sequential_blank_conf(  ).
+    DATA(t1) = NEW zcl_lnt_sequential_blank_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD is_blank_or_whitespace.
-    DATA(t1) = CAST zlnt_runtime_opti_4ba3bdccd169( i_line ).
+    DATA(t1) = i_line.
     DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     CLEAR t3.
-    DATA(t4) = CONV string( `^\s*$` ).
-    DATA(t5) = CONV string( |^[\t\n| ).
+    DATA(t4) = `^\s*$`.
+    DATA(t5) = |^[\t\n|.
     DATA t6 TYPE c LENGTH 1.
     CLEAR t6.
     t6 = cl_abap_conv_in_ce=>uccpi( 11 ).
@@ -55,55 +56,56 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     t10 = cl_abap_conv_in_ce=>uccpi( 65279 ).
     CONCATENATE t5 t10 INTO t5 RESPECTING BLANKS.
     t5 = t5 && |]*$|.
-    DATA(t11) = CONV string( || ).
+    DATA(t11) = ||.
     CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t11.
     t3->source = t4.
     DATA(t12) = VALUE string( ).
     DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t14) = CAST zlnt_runtime_opti_4ba3bdccd169( t1 ).
+    DATA(t14) = t1.
     t13 = t14.
     DATA(t15) = VALUE string( ).
     DATA(t16) = VALUE abap_bool( ).
-    DATA(t17) = CAST zlnt_runtime_opti_4ba3bdccd169( t13 ).
+    DATA(t17) = t13.
     IF t17 IS INITIAL.
       t16 = abap_true.
     ELSEIF t17->has = abap_false.
       t16 = abap_true.
     ENDIF.
     IF t16 = abap_true.
-      DATA(t18) = CONV string( |undefined| ).
+      DATA(t18) = |undefined|.
       t15 = t18.
     ELSE.
       DATA t19 TYPE string.
-      DATA(t20) = CAST zlnt_runtime_opti_4ba3bdccd169( t13 ).
+      DATA(t20) = t13.
       t19 = t20->value.
       t15 = t19.
     ENDIF.
     t12 = t15.
     t2 = t3->test( p0 = t12 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |sequential_blank| ).
+    DATA(t3) = |sequential_blank|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Sequential blank lines| ).
+    DATA(t5) = |Sequential blank lines|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Checks that code does not contain more than the configured n| ).
+    DATA(t7) = |Checks that code does not contain more than the configured n|.
     t7 = t7 && |umber of blank lines in a row.|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea| ).
+      DATA(t11) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
       t11 = t11 && |nABAP.md#add-a-single-blank-line-to-separate-things-but-not-|.
       t11 = t11 && |more|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -120,29 +122,29 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t19.
       t18 = t19.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t21) = CONV string( |Whitespace| ).
+      DATA(t20) = t18.
+      DATA(t21) = |Whitespace|.
       t20->load( ).
       APPEND t21 TO t20->items.
       t20->save( ).
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t23) = CONV string( |Quickfix| ).
+      DATA(t22) = t18.
+      DATA(t23) = |Quickfix|.
       t22->load( ).
       APPEND t23 TO t22->items.
       t22->save( ).
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t25) = CONV string( |SingleFile| ).
+      DATA(t24) = t18.
+      DATA(t25) = |SingleFile|.
       t24->load( ).
       APPEND t25 TO t24->items.
       t24->save( ).
-      DATA(t26) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
+      DATA(t26) = t18.
       t17 = t26.
       t15 = t17.
     ELSE.
@@ -197,59 +199,63 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t41) = CONV string( |key| ).
+    DATA(t41) = |key|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t42.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
     ENDIF.
-    DATA(t43) = CONV string( |title| ).
+    DATA(t43) = |title|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t44.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
     ENDIF.
-    DATA(t45) = CONV string( |shortDescription| ).
+    DATA(t45) = |shortDescription|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t46.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
     ENDIF.
-    DATA(t47) = CONV string( |extendedInformation| ).
+    DATA(t47) = |extendedInformation|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t48.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
     ENDIF.
-    DATA(t49) = CONV string( |tags| ).
+    DATA(t49) = |tags|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t50.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_message.
-    DATA(t1) = CONV string( |Remove sequential blank lines| ).
+    DATA(t1) = |Remove sequential blank lines|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_sq_bl_ts_sq_bln.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_sq_bl_ts_sq_bln.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_sequential_blank_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD rn_pr_in_sr_rl_sq_bl_ts_sq_bln.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -257,26 +263,26 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t7) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t9 TYPE REF TO zif_lnt_file.
-    DATA(t10) = CAST zcl_lnt_abap_file( t6 ).
+    DATA(t10) = t6.
     t9 = t10->file.
-    t8 = t9->get_raw_rows(  ).
+    t8 = t9->get_raw_rows( ).
     t5 = t8.
     t4 = t5.
     DATA t11 TYPE f.
     DATA(t12) = CONV f( 0 ).
     t11 = t12.
     DATA t13 TYPE i.
-    DATA(t14) = CONV i( 0 ).
+    DATA(t14) = 0.
     t13 = t14.
     DO.
       DATA t15 TYPE abap_bool.
-      DATA(t16) = CONV i( t13 ).
+      DATA(t16) = t13.
       DATA t17 TYPE i.
-      DATA(t18) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
+      DATA(t18) = t4.
       t18->load( ).
       t17 = lines( t18->items ).
       t15 = xsdbool( t16 < t17 ).
@@ -285,13 +291,13 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
       ENDIF.
       DATA t19 TYPE abap_bool.
       DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t21) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
-      DATA(t22) = CONV i( t13 ).
+      DATA(t21) = t4.
+      DATA(t22) = t13.
       t20 = t21->get( p0 = t22 ).
       t19 = zcl_lnt_sequential_blank=>is_blank_or_whitespace( i_line = t20 ).
       IF t19 = abap_true.
         DATA t23 TYPE f.
-        DATA(t24) = CONV f( t11 ).
+        DATA(t24) = t11.
         DATA(t25) = CONV f( 1 ).
         t23 = t24 + t25.
         t11 = t23.
@@ -300,9 +306,9 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         t11 = t26.
       ENDIF.
       DATA t27 TYPE abap_bool.
-      DATA(t28) = CONV f( t11 ).
+      DATA(t28) = t11.
       DATA t29 TYPE f.
-      DATA(t30) = CAST zcl_lnt_sequential_blank_conf( me->conf ).
+      DATA(t30) = me->conf.
       t29 = t30->zlnt_view_read_sr_b5fa62719708( ).
       t27 = xsdbool( t28 = t29 ).
       IF t27 = abap_true.
@@ -314,13 +320,13 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
           DATA t34 TYPE abap_bool.
           DATA t35 TYPE f.
           DATA t36 TYPE f.
-          DATA(t37) = CONV i( t13 ).
+          DATA(t37) = t13.
           t36 = t37.
-          DATA(t38) = CONV f( t31 ).
+          DATA(t38) = t31.
           t35 = t36 + t38.
           DATA t39 TYPE f.
           DATA t40 TYPE i.
-          DATA(t41) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
+          DATA(t41) = t4.
           t41->load( ).
           t40 = lines( t41->items ).
           t39 = t40.
@@ -330,13 +336,13 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
             DATA(t42) = VALUE abap_bool( ).
             DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t43.
-            DATA(t44) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
+            DATA(t44) = t4.
             DATA(t45) = VALUE i( ).
             DATA t46 TYPE f.
             DATA t47 TYPE f.
-            DATA(t48) = CONV i( t13 ).
+            DATA(t48) = t13.
             t47 = t48.
-            DATA(t49) = CONV f( t31 ).
+            DATA(t49) = t31.
             t46 = t47 + t49.
             IF t46 > range_i32_upper.
               t45 = range_i32_upper.
@@ -354,25 +360,25 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
           ENDIF.
           DATA t50 TYPE f.
           DATA t51 TYPE f.
-          DATA(t52) = CONV f( t31 ).
+          DATA(t52) = t31.
           t51 = t52.
           DATA t53 TYPE f.
           DATA t54 TYPE f.
-          DATA(t55) = CONV f( t51 ).
+          DATA(t55) = t51.
           DATA(t56) = CONV f( 1 ).
           t54 = t55 + t56.
           t53 = t54.
-          DATA(t57) = CONV f( t53 ).
+          DATA(t57) = t53.
           t31 = t57.
-          DATA(t58) = CONV f( t53 ).
+          DATA(t58) = t53.
           t50 = t58.
         ENDDO.
         DATA t59 TYPE REF TO zcl_lnt_position.
         DATA t60 TYPE REF TO zcl_lnt_position.
         DATA t61 TYPE f.
         DATA t62 TYPE i.
-        DATA(t63) = CONV i( t13 ).
-        DATA(t64) = CONV i( 1 ).
+        DATA(t63) = t13.
+        DATA(t64) = 1.
         t62 = t63 + t64.
         t61 = t62.
         DATA(t65) = CONV f( 1 ).
@@ -386,15 +392,15 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         DATA t68 TYPE REF TO zcl_lnt_position.
         CLEAR t68.
         DATA t69 TYPE f.
-        DATA(t70) = CONV i( t13 ).
+        DATA(t70) = t13.
         t69 = t70.
         DATA(t71) = VALUE f( ).
         DATA(t72) = VALUE int8( ).
         DATA(t73) = VALUE int8( ).
         DATA(t74) = VALUE i( ).
         DATA(t75) = VALUE string( ).
-        DATA(t76) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
-        DATA(t77) = CONV i( t13 ).
+        DATA(t76) = t4.
+        DATA(t77) = t13.
         t77 = t77 + 1.
         IF t76->has( t77 - 1 ) = abap_false.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -402,7 +408,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         t76->load( ).
         CLEAR t75.
         READ TABLE t76->items INDEX t77 INTO t75.
-        DATA(t78) = CONV i( strlen( t75 ) ).
+        DATA(t78) = strlen( t75 ).
         t74 = t78.
         t73 = t74.
         DATA(t79) = CONV int8( 1 ).
@@ -419,23 +425,23 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         CLEAR t82.
         DATA t83 TYPE f.
         DATA t84 TYPE f.
-        DATA(t85) = CONV i( t13 ).
+        DATA(t85) = t13.
         t84 = t85.
-        DATA(t86) = CONV f( t31 ).
+        DATA(t86) = t31.
         t83 = t84 + t86.
         DATA(t87) = VALUE f( ).
         DATA(t88) = VALUE int8( ).
         DATA(t89) = VALUE int8( ).
         DATA(t90) = VALUE i( ).
         DATA(t91) = VALUE string( ).
-        DATA(t92) = CAST zlnt_runtime_arra_8ecd6afe19e0( t4 ).
+        DATA(t92) = t4.
         DATA(t93) = VALUE i( ).
         DATA t94 TYPE f.
         DATA t95 TYPE f.
         DATA t96 TYPE f.
-        DATA(t97) = CONV i( t13 ).
+        DATA(t97) = t13.
         t96 = t97.
-        DATA(t98) = CONV f( t31 ).
+        DATA(t98) = t31.
         t95 = t96 + t98.
         DATA(t99) = CONV f( 1 ).
         t94 = t95 - t99.
@@ -453,7 +459,7 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         t92->load( ).
         CLEAR t91.
         READ TABLE t92->items INDEX t93 INTO t91.
-        DATA(t100) = CONV i( strlen( t91 ) ).
+        DATA(t100) = strlen( t91 ).
         t90 = t100.
         t89 = t90.
         DATA(t101) = CONV int8( 1 ).
@@ -466,38 +472,38 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         t81 = t82.
         DATA t103 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         DATA t104 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        DATA(t105) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t106) = CAST zcl_lnt_position( t67 ).
-        DATA(t107) = CAST zcl_lnt_position( t81 ).
+        DATA(t105) = t1.
+        DATA(t106) = t67.
+        DATA(t107) = t81.
         t104 = zcl_lnt_edit_helper=>delete_range( i_file = t105 i_start = t106 i_end = t107 ).
         t103 = t104.
         DATA t108 TYPE REF TO zcl_lnt_issue.
         CLEAR t108.
         DATA t109 TYPE REF TO zcl_lnt_issue.
         CLEAR t109.
-        DATA(t110) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t111) = CAST zcl_lnt_position( t59 ).
-        DATA(t112) = CONV string( |Remove sequential blank lines| ).
+        DATA(t110) = t1.
+        DATA(t111) = t59.
+        DATA(t112) = |Remove sequential blank lines|.
         DATA(t113) = VALUE string( ).
         DATA t114 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t114.
         DATA t115 TYPE string.
-        DATA(t116) = CONV string( |sequential_blank| ).
+        DATA(t116) = |sequential_blank|.
         t115 = t116.
         DATA t117 TYPE string.
-        DATA(t118) = CONV string( |Sequential blank lines| ).
+        DATA(t118) = |Sequential blank lines|.
         t117 = t118.
         DATA t119 TYPE string.
-        DATA(t120) = CONV string( |Checks that code does not contain more than the configured n| ).
+        DATA(t120) = |Checks that code does not contain more than the configured n|.
         t120 = t120 && |umber of blank lines in a row.|.
         t119 = t120.
         DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t121.
         DATA t122 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t122.
-        DATA(t123) = CONV abap_bool( abap_true ).
+        DATA(t123) = abap_true.
         IF t123 = abap_true.
-          DATA(t124) = CONV string( |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea| ).
+          DATA(t124) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
           t124 = t124 && |nABAP.md#add-a-single-blank-line-to-separate-things-but-not-|.
           t124 = t124 && |more|.
           DATA(t125) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -514,29 +520,29 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         CLEAR t127.
         DATA t128 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t128.
-        DATA(t129) = CONV abap_bool( abap_true ).
+        DATA(t129) = abap_true.
         IF t129 = abap_true.
           DATA t130 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t131 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t132 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t132.
           t131 = t132.
-          DATA(t133) = CAST zlnt_runtime_arra_8ecd6afe19e0( t131 ).
-          DATA(t134) = CONV string( |Whitespace| ).
+          DATA(t133) = t131.
+          DATA(t134) = |Whitespace|.
           t133->load( ).
           APPEND t134 TO t133->items.
           t133->save( ).
-          DATA(t135) = CAST zlnt_runtime_arra_8ecd6afe19e0( t131 ).
-          DATA(t136) = CONV string( |Quickfix| ).
+          DATA(t135) = t131.
+          DATA(t136) = |Quickfix|.
           t135->load( ).
           APPEND t136 TO t135->items.
           t135->save( ).
-          DATA(t137) = CAST zlnt_runtime_arra_8ecd6afe19e0( t131 ).
-          DATA(t138) = CONV string( |SingleFile| ).
+          DATA(t137) = t131.
+          DATA(t138) = |SingleFile|.
           t137->load( ).
           APPEND t138 TO t137->items.
           t137->save( ).
-          DATA(t139) = CAST zlnt_runtime_arra_8ecd6afe19e0( t131 ).
+          DATA(t139) = t131.
           t130 = t139.
           t128 = t130.
         ELSE.
@@ -591,31 +597,31 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t114->zlnt_json_ownkeys_70e5fd461788.
         t114->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t154) = CONV string( |key| ).
+        DATA(t154) = |key|.
         DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t155.
         IF t114->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t114->zlnt_json_ownkeys_70e5fd461788->put( p0 = t154 p1 = t155 ).
         ENDIF.
-        DATA(t156) = CONV string( |title| ).
+        DATA(t156) = |title|.
         DATA t157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t157.
         IF t114->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t114->zlnt_json_ownkeys_70e5fd461788->put( p0 = t156 p1 = t157 ).
         ENDIF.
-        DATA(t158) = CONV string( |shortDescription| ).
+        DATA(t158) = |shortDescription|.
         DATA t159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t159.
         IF t114->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t114->zlnt_json_ownkeys_70e5fd461788->put( p0 = t158 p1 = t159 ).
         ENDIF.
-        DATA(t160) = CONV string( |extendedInformation| ).
+        DATA(t160) = |extendedInformation|.
         DATA t161 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t161.
         IF t114->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t114->zlnt_json_ownkeys_70e5fd461788->put( p0 = t160 p1 = t161 ).
         ENDIF.
-        DATA(t162) = CONV string( |tags| ).
+        DATA(t162) = |tags|.
         DATA t163 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t163.
         IF t114->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -623,13 +629,13 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         ENDIF.
         t113 = t114->key.
         DATA t164 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t165) = CAST zcl_lnt_sequential_blank_conf( me->conf ).
+        DATA(t165) = me->conf.
         t164 = t165->zlnt_view_read_sr_15c06369f827( ).
         DATA t166 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t166.
-        DATA(t167) = CONV abap_bool( abap_true ).
+        DATA(t167) = abap_true.
         IF t167 = abap_true.
-          DATA(t168) = CAST zlnt_runtime_map__4fdf767b61ba( t103 ).
+          DATA(t168) = t103.
           t166 = t168.
         ELSE.
           DATA t169 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -638,32 +644,35 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         ENDIF.
         t109 = zcl_lnt_issue=>at_position( i_file = t110 i_start = t111 i_message_26cb = t112 i_key = t113 i_severity = t164 i_fix = t166 ).
         t108 = t109.
-        DATA(t170) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t171) = CAST zcl_lnt_issue( t108 ).
+        DATA(t170) = t2.
+        DATA(t171) = t108.
         t170->load( ).
         APPEND t171 TO t170->items.
         t170->save( ).
       ENDIF.
       DATA t172 TYPE i.
-      DATA(t173) = CONV i( t13 ).
-      DATA(t174) = CONV i( 1 ).
+      DATA(t173) = t13.
+      DATA(t174) = 1.
       t172 = t173 + t174.
       t13 = t172.
     ENDDO.
-    DATA(t175) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t175) = t2.
     result = t175.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
+    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln(  ) ).
+    DATA(t1) = CAST zcl_lnt_sequential_blank_conf( me->gt_cn_in_sr_rl_sq_bl_ts_sq_bln( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_sequential_blank_conf.
     CLEAR t1.
@@ -695,19 +704,22 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->st_cn_in_sr_rl_sq_bl_ts_sq_bln( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->rn_pr_in_sr_rl_sq_bl_ts_sq_bln( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1696_5cbcc15e2edc.
   ENDMETHOD.

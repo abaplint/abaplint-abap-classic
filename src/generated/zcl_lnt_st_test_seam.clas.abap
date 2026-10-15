@@ -15,7 +15,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t1.
-    DATA(t2) = CONV string( |KeyUser| ).
+    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
@@ -32,7 +32,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t8 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t9) = CONV string( |v750| ).
+    DATA(t9) = |v750|.
     t7 = t8->get( p0 = t9 ).
     t6 = t7.
     CLEAR t5.
@@ -70,7 +70,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t15.
-    DATA(t16) = CONV string( |TEST-SEAM| ).
+    DATA(t16) = |TEST-SEAM|.
     CLEAR t15.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
@@ -80,7 +80,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t18.
-    DATA(t19) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d349_cecd27d97080 ).
+    DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d349_cecd27d97080.
     CLEAR t18.
     IF t19 IS BOUND.
       CREATE OBJECT t18.
@@ -96,9 +96,9 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     t20 = t21.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
     CLEAR t22.
-    DATA(t23) = CAST zlnt_runtime_dyna_a429568d5be8( t14 ).
-    DATA(t24) = CAST zlnt_runtime_dyna_a429568d5be8( t17 ).
-    DATA(t25) = CAST zlnt_runtime_arra_c22708faf2e3( t20 ).
+    DATA(t23) = t14.
+    DATA(t24) = t17.
+    DATA(t25) = t20.
     t22 = zcl_lnt_st_combi_module=>seq( i_first = t23 i_second = t24 i_rest = t25 ).
     t13 = t22.
     CLEAR t12.
@@ -130,7 +130,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     ENDIF.
     DATA t28 TYPE REF TO zcl_lnt_iver_options.
     CLEAR t28.
-    DATA(t29) = CONV abap_bool( abap_true ).
+    DATA(t29) = abap_true.
     IF t29 = abap_true.
       DATA t30 TYPE REF TO zcl_lnt_iver_options.
       CLEAR t30.
@@ -138,9 +138,9 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
       CLEAR t31.
       DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t32.
-      DATA(t33) = CONV abap_bool( abap_true ).
+      DATA(t33) = abap_true.
       IF t33 = abap_true.
-        DATA(t34) = CONV string( |OpenABAP| ).
+        DATA(t34) = |OpenABAP|.
         DATA(t35) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t35->has = abap_true.
         t35->value = t34.
@@ -161,7 +161,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t30->zlnt_json_ownkeys_70e5fd461788.
       t30->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t38) = CONV string( |also| ).
+      DATA(t38) = |also|.
       DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t39.
       IF t30->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -203,29 +203,36 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d656_df22ae66bcf6.
   ENDMETHOD.
+
   METHOD zif_lnt_statement~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_statement~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

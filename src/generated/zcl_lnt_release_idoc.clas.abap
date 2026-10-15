@@ -23,20 +23,21 @@ CLASS zcl_lnt_release_idoc DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_release_idoc IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_release_idoc_conf(  ).
+    DATA(t1) = NEW zcl_lnt_release_idoc_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |release_idoc| ).
+    DATA(t3) = |release_idoc|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |Release iDoc| ).
+    DATA(t5) = |Release iDoc|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Checks idoc types and segments are set to status released| ).
+    DATA(t7) = |Checks idoc types and segments are set to status released|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -82,66 +83,71 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t23) = CONV string( |key| ).
+    DATA(t23) = |key|.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t24.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t23 p1 = t24 ).
     ENDIF.
-    DATA(t25) = CONV string( |title| ).
+    DATA(t25) = |title|.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t26.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t25 p1 = t26 ).
     ENDIF.
-    DATA(t27) = CONV string( |shortDescription| ).
+    DATA(t27) = |shortDescription|.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t28.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t27 p1 = t28 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_message.
-    DATA(t1) = CONV string( |Idoc type/segement status must be set to released| ).
+    DATA(t1) = |Idoc type/segement status must be set to released|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD gt_cn_in_sr_rl_rl_id_ts_rl_idc.
-    DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD st_cn_in_sr_rl_rl_id_ts_rl_idc.
-    DATA(t1) = CAST zcl_lnt_release_idoc_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_release_idoc_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD in_in_sr_rl_rls_idc_ts_rls_idc.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
-    DATA(t2) = CAST zcl_lnt_release_idoc( me ).
+    DATA(t1) = i_reg_d009.
+    DATA(t2) = me.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zif_lnt_file.
     DATA t3 TYPE REF TO zif_lnt_file.
-    DATA(t4) = CAST zif_lnt_object( t1 ).
-    t3 = t4->get_xml_file(  ).
+    DATA(t4) = t1.
+    t3 = t4->get_xml_file( ).
     t2 = t3.
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zif_lnt_file.
-    DATA(t7) = CAST zif_lnt_file( t2 ).
+    DATA(t7) = t2.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t9.
     t8 = t9.
     DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = CAST zif_lnt_file( t6 ).
+    DATA(t11) = t6.
     IF t11 IS INITIAL.
       t10 = abap_true.
     ENDIF.
@@ -153,7 +159,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t13 TYPE abap_bool.
-    DATA(t14) = CAST zif_lnt_object( t1 ).
+    DATA(t14) = t1.
     t13 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_table ).
     IF t13 = abap_true.
       DATA(t15) = VALUE abap_bool( ).
@@ -161,11 +167,11 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       DATA(t17) = VALUE i( ).
       DATA t18 TYPE string.
       DATA t19 TYPE REF TO zif_lnt_file.
-      DATA(t20) = CAST zif_lnt_file( t2 ).
+      DATA(t20) = t2.
       t19 = t20.
-      t18 = t19->get_raw(  ).
-      DATA(t21) = CONV string( |<SEGMENTDEFINITION>| ).
-      DATA(t22) = CONV i( strlen( t18 ) ).
+      t18 = t19->get_raw( ).
+      DATA(t21) = |<SEGMENTDEFINITION>|.
+      DATA(t22) = strlen( t18 ).
       IF t21 IS INITIAL.
         t17 = 0.
       ELSE.
@@ -174,9 +180,9 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
           t17 = -1.
         ENDIF.
       ENDIF.
-      DATA(t23) = CONV i( 0 ).
+      DATA(t23) = 0.
       t16 = xsdbool( t17 >= t23 ).
-      DATA(t24) = CONV abap_bool( abap_false ).
+      DATA(t24) = abap_false.
       t15 = xsdbool( t16 = t24 ).
       IF t15 = abap_true.
         DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -187,7 +193,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     ELSE.
       DATA t26 TYPE abap_bool.
       DATA t27 TYPE abap_bool.
-      DATA(t28) = CAST zif_lnt_object( t1 ).
+      DATA(t28) = t1.
       t27 = xsdbool( t28 IS BOUND AND t28 IS INSTANCE OF zcl_lnt_idoc ).
       t26 = xsdbool( t27 = abap_false ).
       IF t26 = abap_true.
@@ -202,11 +208,11 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     DATA(t32) = VALUE i( ).
     DATA t33 TYPE string.
     DATA t34 TYPE REF TO zif_lnt_file.
-    DATA(t35) = CAST zif_lnt_file( t2 ).
+    DATA(t35) = t2.
     t34 = t35.
-    t33 = t34->get_raw(  ).
-    DATA(t36) = CONV string( |<CLOSED>X</CLOSED>| ).
-    DATA(t37) = CONV i( strlen( t33 ) ).
+    t33 = t34->get_raw( ).
+    DATA(t36) = |<CLOSED>X</CLOSED>|.
+    DATA(t37) = strlen( t33 ).
     IF t36 IS INITIAL.
       t32 = 0.
     ELSE.
@@ -215,9 +221,9 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
         t32 = -1.
       ENDIF.
     ENDIF.
-    DATA(t38) = CONV i( 0 ).
+    DATA(t38) = 0.
     t31 = xsdbool( t32 >= t38 ).
-    DATA(t39) = CONV abap_bool( abap_false ).
+    DATA(t39) = abap_false.
     t30 = xsdbool( t31 = t39 ).
     IF t30 = abap_true.
       DATA t40 TYPE REF TO zcl_lnt_position.
@@ -237,9 +243,9 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       CLEAR t47.
       DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t49 TYPE REF TO zif_lnt_union_17d1aaf2.
-      DATA(t50) = CAST zif_lnt_object( t1 ).
+      DATA(t50) = t1.
       t49 ?= t50.
-      t48 = t49->get_files(  ).
+      t48 = t49->get_files( ).
       DATA t51 TYPE REF TO object.
       CLEAR t51.
       t48->load( ).
@@ -256,18 +262,18 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       ELSE.
         t47 ?= t51.
       ENDIF.
-      DATA(t54) = CAST zcl_lnt_position( t40 ).
-      DATA(t55) = CONV string( |Idoc type/segement status must be set to released| ).
+      DATA(t54) = t40.
+      DATA(t55) = |Idoc type/segement status must be set to released|.
       DATA(t56) = VALUE string( ).
       DATA t57 TYPE REF TO zcl_lnt_irule_metadata.
       DATA t58 TYPE string.
-      DATA(t59) = CONV string( |release_idoc| ).
+      DATA(t59) = |release_idoc|.
       t58 = t59.
       DATA t60 TYPE string.
-      DATA(t61) = CONV string( |Release iDoc| ).
+      DATA(t61) = |Release iDoc|.
       t60 = t61.
       DATA t62 TYPE string.
-      DATA(t63) = CONV string( |Checks idoc types and segments are set to status released| ).
+      DATA(t63) = |Checks idoc types and segments are set to status released|.
       t62 = t63.
       DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -313,19 +319,19 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t57->zlnt_json_ownkeys_70e5fd461788.
       t57->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t79) = CONV string( |key| ).
+      DATA(t79) = |key|.
       DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t80.
       IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t79 p1 = t80 ).
       ENDIF.
-      DATA(t81) = CONV string( |title| ).
+      DATA(t81) = |title|.
       DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t82.
       IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
         t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t81 p1 = t82 ).
       ENDIF.
-      DATA(t83) = CONV string( |shortDescription| ).
+      DATA(t83) = |shortDescription|.
       DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t84.
       IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -333,7 +339,7 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       ENDIF.
       t56 = t57->key.
       DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t86) = CAST zcl_lnt_release_idoc_conf( me->conf ).
+      DATA(t86) = me->conf.
       t85 = t86->zlnt_view_read_sr_15c06369f827( ).
       DATA t87 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t87.
@@ -344,12 +350,12 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       DATA t90 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t90.
       t89 = t90.
-      DATA(t91) = CAST zlnt_runtime_arra_c22708faf2e3( t89 ).
-      DATA(t92) = CAST zcl_lnt_issue( t45 ).
+      DATA(t91) = t89.
+      DATA(t92) = t45.
       t91->load( ).
       APPEND t92 TO t91->items.
       t91->save( ).
-      DATA(t93) = CAST zlnt_runtime_arra_c22708faf2e3( t89 ).
+      DATA(t93) = t89.
       t88 = t93.
       result = t88.
       RETURN.
@@ -357,22 +363,25 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t94.
       result = t94.
-      RETURN.
+
     ENDIF.
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc(  ) ).
+    DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc(  ) ).
+    DATA(t1) = CAST zcl_lnt_release_idoc_conf( me->gt_cn_in_sr_rl_rl_id_ts_rl_idc( ) ).
   ENDMETHOD.
+
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA t2 TYPE REF TO zcl_lnt_release_idoc_conf.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t3) = t1.
     CLEAR t2.
     IF t3 IS BOUND.
       IF t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -402,48 +411,60 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     ENDIF.
     me->st_cn_in_sr_rl_rl_id_ts_rl_idc( i_conf = t2 ).
   ENDMETHOD.
+
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_release_idoc.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->in_in_sr_rl_rls_idc_ts_rls_idc( i_reg_d009 = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1680_f009769b508b.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

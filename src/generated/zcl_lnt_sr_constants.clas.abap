@@ -15,67 +15,74 @@ CLASS zcl_lnt_sr_constants IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t3) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d427_175d0fe40287 ).
+    DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d427_175d0fe40287.
     t2 = zcl_lnt_sr_combi_module=>sta( i_s = t3 ).
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
     DATA t5 TYPE REF TO zif_lnt_structure_runnable.
     DATA t6 TYPE REF TO zif_lnt_structure_runnable.
     DATA t7 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d426_fb8ad08dadf9 ).
+    DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d426_fb8ad08dadf9.
     t7 = zcl_lnt_sr_combi_module=>sta( i_s = t8 ).
     t6 = t7.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
     t9 = t10.
-    DATA(t11) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t11) = t9.
     DATA t12 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t13) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d529_17510302e89e ).
+    DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d529_17510302e89e.
     t12 = zcl_lnt_sr_combi_module=>sta( i_s = t13 ).
     t11->load( ).
     APPEND t12 TO t11->items.
     t11->save( ).
-    DATA(t14) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t14) = t9.
     DATA t15 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d723_8da98a28a8d6 ).
+    DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d723_8da98a28a8d6.
     t15 = zcl_lnt_sr_combi_module=>sub( i_s = t16 ).
     t14->load( ).
     APPEND t15 TO t14->items.
     t14->save( ).
     DATA t17 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t18) = CAST zif_lnt_structure_runnable( t6 ).
-    DATA(t19) = CAST zlnt_runtime_arra_c22708faf2e3( t9 ).
+    DATA(t18) = t6.
+    DATA(t19) = t9.
     t17 = zcl_lnt_sr_combi_module=>alt( i_first = t18 i_rest = t19 ).
     t5 = t17.
     t4 = zcl_lnt_sr_combi_module=>star( i_s = t5 ).
     DATA t20 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d428_511c28b0360e ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d428_511c28b0360e.
     t20 = zcl_lnt_sr_combi_module=>sta( i_s = t21 ).
     t1 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = t20 ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d723_8da98a28a8d6.
   ENDMETHOD.
+
   METHOD zif_lnt_structure~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_structure~get_matcher.
-    result = me->get_matcher(  ).
+    result = me->get_matcher( ).
   ENDMETHOD.
+
   METHOD zif_lnt_union_dc0fb493~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.

@@ -36,31 +36,34 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     DATA(t2) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t2->has = abap_true.
     t2->value = t1.
     me->zlnt_view_write_s_2e42c89c15ac( p0 = t2 ).
-    DATA(t3) = CONV string( |^I._.+$| ).
+    DATA(t3) = |^I._.+$|.
     me->zlnt_view_write_s_c3773554879f( p0 = t3 ).
-    DATA(t4) = CONV string( |^R._.+$| ).
+    DATA(t4) = |^R._.+$|.
     me->zlnt_view_write_s_9baeddea44ac( p0 = t4 ).
-    DATA(t5) = CONV string( |^C._.+$| ).
+    DATA(t5) = |^C._.+$|.
     me->zlnt_view_write_s_1ebab26f5140( p0 = t5 ).
-    DATA(t6) = CONV string( |^E._.+$| ).
+    DATA(t6) = |^E._.+$|.
     me->zlnt_view_write_s_2f01ae7907ef( p0 = t6 ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     IF zlnt_view_source_36f3bf68b9b8 IS NOT BOUND.
       result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1590_4ec81dee782c.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_0a69a8d19e64.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
@@ -74,6 +77,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = me->ignore_exceptions.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_2e42c89c15ac.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -91,6 +95,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ignoreExceptions`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_f91ac81de17a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `importing` ) ).
@@ -99,6 +104,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = me->importing.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_c3773554879f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -113,6 +119,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `importing`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_c2b9ba314ce4.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `returning` ) ).
@@ -121,6 +128,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = me->returning.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_9baeddea44ac.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -135,6 +143,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `returning`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_14784b935524.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `changing` ) ).
@@ -143,6 +152,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = me->changing.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_1ebab26f5140.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -157,6 +167,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `changing`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_read_sr_b316e3c54933.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `exporting` ) ).
@@ -165,6 +176,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = me->exporting.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_write_s_2f01ae7907ef.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -179,6 +191,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `exporting`.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~has.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->has( p0 ).
@@ -211,6 +224,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
       result = abap_false.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~delete.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = me->zlnt_view_source_36f3bf68b9b8->delete( p0 ).
@@ -218,6 +232,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_nati_be494c0b072c=>run( p0 = me key = p0 ).
   ENDMETHOD.
+
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t1.
@@ -269,6 +284,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
     ENDIF.
     result = zlnt_runtime_ownk_4497b85e405d=>keys( t1 ).
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~get.
     IF p0 = `constructor` OR p0 = `toString` OR p0 = `toLocaleString` OR p0 = `valueOf` OR p0 = `hasOwnProperty` OR p0 = `isPrototypeOf` OR p0 = `propertyIsEnumerable` OR p0 = `__proto__` OR p0 = `__defineGetter__` OR p0 =
     `__defineSetter__` OR p0 = `__lookupGetter__` OR p0 = `__lookupSetter__`.
@@ -429,6 +445,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
         result->sval = me->exporting.
     ENDCASE.
   ENDMETHOD.
+
   METHOD zlnt_view_storage_74017ca272ac~put.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       me->zlnt_view_source_36f3bf68b9b8->put( p0 = p0 p1 = p1 ).

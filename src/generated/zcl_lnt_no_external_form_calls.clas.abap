@@ -19,29 +19,30 @@ ENDCLASS.
 CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_n_extrnl_frm_clls_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_n_extrnl_frm_clls_cnf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |no_external_form_calls| ).
+    DATA(t3) = |no_external_form_calls|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |No external FORM calls| ).
+    DATA(t5) = |No external FORM calls|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |Detect external form calls| ).
+    DATA(t7) = |Detect external form calls|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).| ).
+      DATA(t11) = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
       t12->value = t11.
@@ -56,19 +57,19 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t19.
       t18 = t19.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t21) = CONV string( |SingleFile| ).
+      DATA(t20) = t18.
+      DATA(t21) = |SingleFile|.
       t20->load( ).
       APPEND t21 TO t20->items.
       t20->save( ).
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
+      DATA(t22) = t18.
       t17 = t22.
       t15 = t17.
     ELSE.
@@ -123,52 +124,55 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = CONV string( |key| ).
+    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t38.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
     ENDIF.
-    DATA(t39) = CONV string( |title| ).
+    DATA(t39) = |title|.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t40.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
     ENDIF.
-    DATA(t41) = CONV string( |shortDescription| ).
+    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t42.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
     ENDIF.
-    DATA(t43) = CONV string( |badExample| ).
+    DATA(t43) = |badExample|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t44.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
     ENDIF.
-    DATA(t45) = CONV string( |tags| ).
+    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t46.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_n_e_f_c_t_n_ex_fr_cl.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_n_e_f_c_t_n_ex_fr_cl.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -176,37 +180,37 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
     DATA t5 TYPE REF TO zcl_lnt_structure_node.
     DATA t6 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t7) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t7) = t1.
     t6 = t7.
     DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t9) = CAST zcl_lnt_abap_file( t6 ).
+    DATA(t9) = t6.
     t8 = t9->structure.
     t5 = t8.
     t4 = t5.
     DATA(t10) = VALUE abap_bool( ).
     DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t12) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t12) = t4.
     t11 = t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t14.
     t13 = t14.
     DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = CAST zcl_lnt_structure_node( t11 ).
+    DATA(t16) = t11.
     IF t16 IS INITIAL.
       t15 = abap_true.
     ENDIF.
     t10 = t15.
     IF t10 = abap_true.
-      DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+      DATA(t17) = t2.
       result = t17.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t19 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t20) = CAST zcl_lnt_structure_node( t4 ).
+    DATA(t20) = t4.
     t19 = t20.
-    DATA(t21) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d573_76d229f1cfae ).
+    DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d573_76d229f1cfae.
     t18 = t19->find_all_statements( i_type_9913 = t21 ).
     DATA t22 TYPE REF TO zcl_lnt_statement_node.
     CLEAR t22.
@@ -235,49 +239,49 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
       DATA t27 TYPE abap_bool.
       DATA t28 TYPE abap_bool.
       DATA t29 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t30) = CAST zcl_lnt_statement_node( t22 ).
-      DATA(t31) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106 ).
+      DATA(t30) = t22.
+      DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
       t29 = t30->find_direct_expression( i_type_9913 = t31 ).
       t28 = xsdbool( t29 IS BOUND ).
       t27 = t28.
       IF t28 = abap_false.
         DATA t32 TYPE abap_bool.
         DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t34) = CAST zcl_lnt_statement_node( t22 ).
-        DATA(t35) = CONV string( |PROGRAM| ).
+        DATA(t34) = t22.
+        DATA(t35) = |PROGRAM|.
         t33 = t34->find_direct_token_by_text( i_text = t35 ).
         t32 = xsdbool( t33 IS BOUND ).
         t27 = t32.
       ENDIF.
       IF t27 = abap_true.
         DATA t36 TYPE string.
-        DATA(t37) = CONV string( |No external FORM calls| ).
+        DATA(t37) = |No external FORM calls|.
         t36 = t37.
-        DATA(t38) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t38) = t2.
         DATA t39 TYPE REF TO zcl_lnt_issue.
         CLEAR t39.
-        DATA(t40) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t41) = CAST zcl_lnt_statement_node( t22 ).
-        DATA(t42) = CONV string( t36 ).
+        DATA(t40) = t1.
+        DATA(t41) = t22.
+        DATA(t42) = t36.
         DATA(t43) = VALUE string( ).
         DATA t44 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t44.
         DATA t45 TYPE string.
-        DATA(t46) = CONV string( |no_external_form_calls| ).
+        DATA(t46) = |no_external_form_calls|.
         t45 = t46.
         DATA t47 TYPE string.
-        DATA(t48) = CONV string( |No external FORM calls| ).
+        DATA(t48) = |No external FORM calls|.
         t47 = t48.
         DATA t49 TYPE string.
-        DATA(t50) = CONV string( |Detect external form calls| ).
+        DATA(t50) = |Detect external form calls|.
         t49 = t50.
         DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t51.
         DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t52.
-        DATA(t53) = CONV abap_bool( abap_true ).
+        DATA(t53) = abap_true.
         IF t53 = abap_true.
-          DATA(t54) = CONV string( |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).| ).
+          DATA(t54) = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
           DATA(t55) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t55->has = abap_true.
           t55->value = t54.
@@ -292,19 +296,19 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         CLEAR t57.
         DATA t58 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t58.
-        DATA(t59) = CONV abap_bool( abap_true ).
+        DATA(t59) = abap_true.
         IF t59 = abap_true.
           DATA t60 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t61 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t62.
           t61 = t62.
-          DATA(t63) = CAST zlnt_runtime_arra_8ecd6afe19e0( t61 ).
-          DATA(t64) = CONV string( |SingleFile| ).
+          DATA(t63) = t61.
+          DATA(t64) = |SingleFile|.
           t63->load( ).
           APPEND t64 TO t63->items.
           t63->save( ).
-          DATA(t65) = CAST zlnt_runtime_arra_8ecd6afe19e0( t61 ).
+          DATA(t65) = t61.
           t60 = t65.
           t58 = t60.
         ELSE.
@@ -359,31 +363,31 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t44->zlnt_json_ownkeys_70e5fd461788.
         t44->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t80) = CONV string( |key| ).
+        DATA(t80) = |key|.
         DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t81.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t80 p1 = t81 ).
         ENDIF.
-        DATA(t82) = CONV string( |title| ).
+        DATA(t82) = |title|.
         DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t83.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t82 p1 = t83 ).
         ENDIF.
-        DATA(t84) = CONV string( |shortDescription| ).
+        DATA(t84) = |shortDescription|.
         DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t85.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
         ENDIF.
-        DATA(t86) = CONV string( |badExample| ).
+        DATA(t86) = |badExample|.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t87.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
         ENDIF.
-        DATA(t88) = CONV string( |tags| ).
+        DATA(t88) = |tags|.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -391,7 +395,7 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         ENDIF.
         t43 = t44->key.
         DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t91) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->conf ).
+        DATA(t91) = me->conf.
         t90 = t91->zlnt_view_read_sr_15c06369f827( ).
         DATA t92 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t92.
@@ -403,20 +407,23 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         t38->save( ).
       ENDIF.
     ENDDO.
-    DATA(t94) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t94) = t2.
     result = t94.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl(  ) ).
+    DATA(t1) = CAST zcl_lnt_n_extrnl_frm_clls_cnf( me->g_c_i_s_r_n_e_f_c_t_n_ex_fr_cl( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_n_extrnl_frm_clls_cnf.
     CLEAR t1.
@@ -448,19 +455,22 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_n_e_f_c_t_n_ex_fr_cl( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_n_e_f_c_t_n_ex_fr_cl( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1615_f3c0e2c8d80f.
   ENDMETHOD.

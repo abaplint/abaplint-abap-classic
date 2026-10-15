@@ -23,29 +23,30 @@ CLASS zcl_lnt_cds_parser_error DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = NEW zcl_lnt_cds_parser_error_conf(  ).
+    DATA(t1) = NEW zcl_lnt_cds_parser_error_conf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |cds_parser_error| ).
+    DATA(t3) = |cds_parser_error|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |CDS Parser Error| ).
+    DATA(t5) = |CDS Parser Error|.
     t4 = t5.
     DATA t6 TYPE string.
-    DATA(t7) = CONV string( |CDS parsing| ).
+    DATA(t7) = |CDS parsing|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t9.
-    DATA(t10) = CONV abap_bool( abap_true ).
+    DATA(t10) = abap_true.
     IF t10 = abap_true.
-      DATA(t11) = CONV string( |Parses CDS and issues parser errors| ).
+      DATA(t11) = |Parses CDS and issues parser errors|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
       t12->value = t11.
@@ -60,24 +61,24 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t15.
-    DATA(t16) = CONV abap_bool( abap_true ).
+    DATA(t16) = abap_true.
     IF t16 = abap_true.
       DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t19.
       t18 = t19.
-      DATA(t20) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t21) = CONV string( |Syntax| ).
+      DATA(t20) = t18.
+      DATA(t21) = |Syntax|.
       t20->load( ).
       APPEND t21 TO t20->items.
       t20->save( ).
-      DATA(t22) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
-      DATA(t23) = CONV string( |SingleFile| ).
+      DATA(t22) = t18.
+      DATA(t23) = |SingleFile|.
       t22->load( ).
       APPEND t23 TO t22->items.
       t22->save( ).
-      DATA(t24) = CAST zlnt_runtime_arra_8ecd6afe19e0( t18 ).
+      DATA(t24) = t18.
       t17 = t24.
       t15 = t17.
     ELSE.
@@ -132,58 +133,62 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t39) = CONV string( |key| ).
+    DATA(t39) = |key|.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t40.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
     ENDIF.
-    DATA(t41) = CONV string( |title| ).
+    DATA(t41) = |title|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t42.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
     ENDIF.
-    DATA(t43) = CONV string( |shortDescription| ).
+    DATA(t43) = |shortDescription|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t44.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
     ENDIF.
-    DATA(t45) = CONV string( |extendedInformation| ).
+    DATA(t45) = |extendedInformation|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t46.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
     ENDIF.
-    DATA(t47) = CONV string( |tags| ).
+    DATA(t47) = |tags|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t48.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_cd_pr_er_ts_cd_pr_er.
-    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_cd_pr_er_ts_cd_pr_er.
-    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_cds_parser_error_conf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD i_i_sr_rl_cd_pr_er_ts_cd_pr_er.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_d009 ).
-    DATA(t2) = CAST zcl_lnt_cds_parser_error( me ).
+    DATA(t1) = i_reg_d009.
+    DATA(t2) = me.
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD r_i_sr_rl_cd_pr_er_ts_cd_pr_er.
-    DATA(t1) = CAST zif_lnt_object( i_object_19cd ).
+    DATA(t1) = i_object_19cd.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
@@ -192,14 +197,14 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE abap_bool.
     DATA t7 TYPE string.
-    DATA(t8) = CAST zif_lnt_object( t1 ).
-    t7 = t8->get_type(  ).
-    DATA(t9) = CONV string( |DDLS| ).
+    DATA(t8) = t1.
+    t7 = t8->get_type( ).
+    DATA(t9) = |DDLS|.
     t6 = xsdbool( t7 = t9 ).
     t5 = t6.
     IF t6 = abap_true.
       DATA t10 TYPE abap_bool.
-      DATA(t11) = CAST zif_lnt_object( t1 ).
+      DATA(t11) = t1.
       t10 = xsdbool( t11 IS BOUND AND t11 IS INSTANCE OF zcl_lnt_ob_data_definition ).
       t5 = t10.
     ENDIF.
@@ -208,14 +213,14 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
       DATA t12 TYPE abap_bool.
       DATA t13 TYPE abap_bool.
       DATA t14 TYPE string.
-      DATA(t15) = CAST zif_lnt_object( t1 ).
-      t14 = t15->get_type(  ).
-      DATA(t16) = CONV string( |DDLX| ).
+      DATA(t15) = t1.
+      t14 = t15->get_type( ).
+      DATA(t16) = |DDLX|.
       t13 = xsdbool( t14 = t16 ).
       t12 = t13.
       IF t13 = abap_true.
         DATA t17 TYPE abap_bool.
-        DATA(t18) = CAST zif_lnt_object( t1 ).
+        DATA(t18) = t1.
         t17 = xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_cds_metadata_extension ).
         t12 = t17.
       ENDIF.
@@ -225,25 +230,25 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
       DATA t19 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t20 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t21 TYPE REF TO zif_lnt_union_ce65ceec.
-      DATA(t22) = CAST zif_lnt_object( t1 ).
+      DATA(t22) = t1.
       t21 ?= t22.
-      t20 = t21->has_parser_error(  ).
+      t20 = t21->has_parser_error( ).
       t19 = t20.
       DATA t23 TYPE REF TO zif_lnt_file.
       DATA t24 TYPE REF TO zif_lnt_file.
       DATA t25 TYPE REF TO zif_lnt_union_ce65ceec.
-      DATA(t26) = CAST zif_lnt_object( t1 ).
+      DATA(t26) = t1.
       t25 ?= t26.
-      t24 = t25->find_source_file(  ).
+      t24 = t25->find_source_file( ).
       t23 = t24.
       DATA(t27) = VALUE abap_bool( ).
       DATA(t28) = VALUE abap_bool( ).
-      DATA(t29) = CAST zlnt_runtime_opti_7f2541396f43( t19 ).
+      DATA(t29) = t19.
       DATA t30 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t30.
-      DATA(t31) = CONV abap_bool( abap_true ).
+      DATA(t31) = abap_true.
       IF t31 = abap_true.
-        DATA(t32) = CONV abap_bool( abap_true ).
+        DATA(t32) = abap_true.
         DATA(t33) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t33->has = abap_true.
         t33->value = t32.
@@ -271,7 +276,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
       t27 = t28.
       IF t28 = abap_true.
         DATA t37 TYPE abap_bool.
-        DATA(t38) = CAST zif_lnt_file( t23 ).
+        DATA(t38) = t23.
         t37 = xsdbool( t38 IS BOUND ).
         t27 = t37.
       ENDIF.
@@ -282,55 +287,55 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
         DATA t42 TYPE i.
         DATA t43 TYPE string.
         DATA t44 TYPE REF TO zif_lnt_file.
-        DATA(t45) = CAST zif_lnt_file( t23 ).
+        DATA(t45) = t23.
         t44 = t45.
-        t43 = t44->get_raw(  ).
-        DATA(t46) = CONV i( strlen( t43 ) ).
+        t43 = t44->get_raw( ).
+        DATA(t46) = strlen( t43 ).
         t42 = t46.
-        DATA(t47) = CONV i( 0 ).
+        DATA(t47) = 0.
         t41 = xsdbool( t42 = t47 ).
         IF t41 = abap_true.
-          DATA(t48) = CONV string( |, empty file| ).
+          DATA(t48) = |, empty file|.
           t40 = t48.
         ELSE.
-          DATA(t49) = CONV string( || ).
+          DATA(t49) = ||.
           t40 = t49.
         ENDIF.
         t39 = t40.
         DATA t50 TYPE string.
         DATA t51 TYPE string.
-        DATA(t52) = CONV string( |CDS Parser error| ).
-        DATA(t53) = CONV string( t39 ).
-        DATA(t54) = CONV i( strlen( t52 ) ).
+        DATA(t52) = |CDS Parser error|.
+        DATA(t53) = t39.
+        DATA(t54) = strlen( t52 ).
         t51 = |{ t52 }{ t53 }|.
         t50 = t51.
-        DATA(t55) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+        DATA(t55) = t2.
         DATA t56 TYPE REF TO zcl_lnt_issue.
         CLEAR t56.
         DATA t57 TYPE REF TO zif_lnt_file.
-        DATA(t58) = CAST zif_lnt_file( t23 ).
+        DATA(t58) = t23.
         t57 = t58.
         DATA(t59) = CONV f( 1 ).
-        DATA(t60) = CONV string( t50 ).
+        DATA(t60) = t50.
         DATA(t61) = VALUE string( ).
         DATA t62 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t62.
         DATA t63 TYPE string.
-        DATA(t64) = CONV string( |cds_parser_error| ).
+        DATA(t64) = |cds_parser_error|.
         t63 = t64.
         DATA t65 TYPE string.
-        DATA(t66) = CONV string( |CDS Parser Error| ).
+        DATA(t66) = |CDS Parser Error|.
         t65 = t66.
         DATA t67 TYPE string.
-        DATA(t68) = CONV string( |CDS parsing| ).
+        DATA(t68) = |CDS parsing|.
         t67 = t68.
         DATA t69 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t69.
         DATA t70 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t70.
-        DATA(t71) = CONV abap_bool( abap_true ).
+        DATA(t71) = abap_true.
         IF t71 = abap_true.
-          DATA(t72) = CONV string( |Parses CDS and issues parser errors| ).
+          DATA(t72) = |Parses CDS and issues parser errors|.
           DATA(t73) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t73->has = abap_true.
           t73->value = t72.
@@ -345,24 +350,24 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
         CLEAR t75.
         DATA t76 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t76.
-        DATA(t77) = CONV abap_bool( abap_true ).
+        DATA(t77) = abap_true.
         IF t77 = abap_true.
           DATA t78 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t79 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t80 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t80.
           t79 = t80.
-          DATA(t81) = CAST zlnt_runtime_arra_8ecd6afe19e0( t79 ).
-          DATA(t82) = CONV string( |Syntax| ).
+          DATA(t81) = t79.
+          DATA(t82) = |Syntax|.
           t81->load( ).
           APPEND t82 TO t81->items.
           t81->save( ).
-          DATA(t83) = CAST zlnt_runtime_arra_8ecd6afe19e0( t79 ).
-          DATA(t84) = CONV string( |SingleFile| ).
+          DATA(t83) = t79.
+          DATA(t84) = |SingleFile|.
           t83->load( ).
           APPEND t84 TO t83->items.
           t83->save( ).
-          DATA(t85) = CAST zlnt_runtime_arra_8ecd6afe19e0( t79 ).
+          DATA(t85) = t79.
           t78 = t85.
           t76 = t78.
         ELSE.
@@ -417,31 +422,31 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t62->zlnt_json_ownkeys_70e5fd461788.
         t62->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t100) = CONV string( |key| ).
+        DATA(t100) = |key|.
         DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t101.
         IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t100 p1 = t101 ).
         ENDIF.
-        DATA(t102) = CONV string( |title| ).
+        DATA(t102) = |title|.
         DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t103.
         IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t102 p1 = t103 ).
         ENDIF.
-        DATA(t104) = CONV string( |shortDescription| ).
+        DATA(t104) = |shortDescription|.
         DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t105.
         IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t104 p1 = t105 ).
         ENDIF.
-        DATA(t106) = CONV string( |extendedInformation| ).
+        DATA(t106) = |extendedInformation|.
         DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t107.
         IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t106 p1 = t107 ).
         ENDIF.
-        DATA(t108) = CONV string( |tags| ).
+        DATA(t108) = |tags|.
         DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t109.
         IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -449,7 +454,7 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
         ENDIF.
         t61 = t62->key.
         DATA t110 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t111) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er(  ) ).
+        DATA(t111) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er( ) ).
         t110 = t111->zlnt_view_read_sr_15c06369f827( ).
         t56 = zcl_lnt_issue=>at_row( i_file = t57 i_row = t59 i_message_26cb = t60 i_key = t61 i_severity = t110 ).
         t55->load( ).
@@ -457,23 +462,26 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
         t55->save( ).
       ENDIF.
     ENDIF.
-    DATA(t112) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t112) = t2.
     result = t112.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er(  ) ).
+    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er(  ) ).
+    DATA(t1) = CAST zcl_lnt_cds_parser_error_conf( me->g_c_i_s_r_cd_pr_er_ts_cd_pr_er( ) ).
   ENDMETHOD.
+
   METHOD set_config.
-    DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( i_conf ).
+    DATA(t1) = i_conf.
     DATA t2 TYPE REF TO zcl_lnt_cds_parser_error_conf.
     CLEAR t2.
-    DATA(t3) = CAST zlnt_runtime_dyna_a429568d5be8( t1 ).
+    DATA(t3) = t1.
     CLEAR t2.
     IF t3 IS BOUND.
       IF t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -503,56 +511,69 @@ CLASS zcl_lnt_cds_parser_error IMPLEMENTATION.
     ENDIF.
     me->s_c_i_s_r_cd_pr_er_ts_cd_pr_er( i_conf = t2 ).
   ENDMETHOD.
+
   METHOD initialize.
-    DATA(t1) = CAST zif_lnt_registry( i_reg_f149 ).
+    DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zif_lnt_rule.
-    DATA(t3) = CAST zif_lnt_registry( t1 ).
+    DATA(t3) = t1.
     t2 = me->i_i_sr_rl_cd_pr_er_ts_cd_pr_er( i_reg_d009 = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run.
-    DATA(t1) = CAST zif_lnt_object( i_obj_1ed0 ).
+    DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = CAST zif_lnt_object( t1 ).
+    DATA(t3) = t1.
     t2 = me->r_i_sr_rl_cd_pr_er_ts_cd_pr_er( i_object_19cd = t3 ).
     result = t2.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_nati_72359f490bf2( ).
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1428_d470d509fb8d.
   ENDMETHOD.
+
   METHOD zif_lnt_rule~zlnt_builtin_clas_3f891b097658.
     result = me->zlnt_builtin_clas_3f891b097658( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_metadata.
-    result = me->get_metadata(  ).
+    result = me->get_metadata( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config.
-    me->get_config(  ).
+    me->get_config( ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~set_config.
-    me->set_config(  i_conf = i_conf ).
+    me->set_config( i_conf = i_conf ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~initialize.
-    result = me->initialize(  i_reg_f149 = i_reg_f149 ).
+    result = me->initialize( i_reg_f149 = i_reg_f149 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~run.
-    result = me->run(  i_obj_1ed0 = i_obj_1ed0 ).
+    result = me->run( i_obj_1ed0 = i_obj_1ed0 ).
   ENDMETHOD.
+
   METHOD zif_lnt_rule~get_config_value.
-    result = me->get_config_value(  ).
+    result = me->get_config_value( ).
   ENDMETHOD.
 ENDCLASS.

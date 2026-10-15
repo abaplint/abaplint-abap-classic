@@ -26,6 +26,7 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     CLEAR t1.
     super->constructor( i_input_967e = t1 ).
   ENDMETHOD.
+
   METHOD get_db65.
     IF zcl_lnt_c_generic_type=>zlnt_builtin_init_b3858169ee77 = abap_false.
       zcl_lnt_c_generic_type=>zlnt_builtin_init_21b229b5f4f7( ).
@@ -37,18 +38,21 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     ENDIF.
     t1 = zcl_lnt_c_generic_type=>singleton.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD t_t_i_s_a_t_b_cg_ty_ts_c_gn_ty.
-    DATA(t1) = CONV string( |```c```| ).
+    DATA(t1) = |```c```|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD is_generic.
-    DATA(t1) = CONV abap_bool( abap_true ).
+    DATA(t1) = abap_true.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     CLEAR t1.
@@ -56,9 +60,9 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t3.
-    DATA(t4) = CONV abap_bool( abap_true ).
+    DATA(t4) = abap_true.
     IF t4 = abap_true.
-      DATA(t5) = CONV string( |c, generic| ).
+      DATA(t5) = |c, generic|.
       DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t6->has = abap_true.
       t6->value = t5.
@@ -100,21 +104,25 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     ENDIF.
     RAISE EXCEPTION t1.
   ENDMETHOD.
+
   METHOD contains_void.
-    DATA(t1) = CONV abap_bool( abap_false ).
+    DATA(t1) = abap_false.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_cds.
-    DATA(t1) = CONV string( |abap.TODO_CGENERIC| ).
+    DATA(t1) = |abap.TODO_CGENERIC|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD to_text.
-    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cg_ty_ts_c_gn_ty(  ) ).
+    DATA(t1) = CONV string( me->t_t_i_s_a_t_b_cg_ty_ts_c_gn_ty( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_init_21b229b5f4f7.
     IF zlnt_builtin_init_b3858169ee77 = abap_true.
       RETURN.
@@ -128,15 +136,17 @@ CLASS zcl_lnt_c_generic_type IMPLEMENTATION.
     IF zcl_lnt_c_generic_type=>zlnt_builtin_init_b3858169ee77 = abap_false.
       zcl_lnt_c_generic_type=>zlnt_builtin_init_21b229b5f4f7( ).
     ENDIF.
-    t1 = NEW zcl_lnt_c_generic_type(  ).
+    t1 = NEW zcl_lnt_c_generic_type( ).
     zcl_lnt_c_generic_type=>singleton = t1.
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1017_e1bb045d8973.
   ENDMETHOD.

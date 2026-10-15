@@ -20,36 +20,37 @@ ENDCLASS.
 CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_rfc_errr_hndlng_cnf(  ).
+    DATA(t1) = NEW zcl_lnt_rfc_errr_hndlng_cnf( ).
     me->conf = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
     CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = CONV string( |rfc_error_handling| ).
+    DATA(t3) = |rfc_error_handling|.
     t2 = t3.
     DATA t4 TYPE string.
-    DATA(t5) = CONV string( |RFC error handling| ).
+    DATA(t5) = |RFC error handling|.
     t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CLEAR t7.
-    DATA(t8) = CONV abap_bool( abap_true ).
+    DATA(t8) = abap_true.
     IF t8 = abap_true.
       DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t11.
       t10 = t11.
-      DATA(t12) = CAST zlnt_runtime_arra_8ecd6afe19e0( t10 ).
-      DATA(t13) = CONV string( |SingleFile| ).
+      DATA(t12) = t10.
+      DATA(t13) = |SingleFile|.
       t12->load( ).
       APPEND t13 TO t12->items.
       t12->save( ).
-      DATA(t14) = CAST zlnt_runtime_arra_8ecd6afe19e0( t10 ).
+      DATA(t14) = t10.
       t9 = t14.
       t7 = t9.
     ELSE.
@@ -59,16 +60,16 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
     ENDIF.
     t6 = t7.
     DATA t16 TYPE string.
-    DATA(t17) = CONV string( |Checks that exceptions 'system_failure' and 'communication_f| ).
+    DATA(t17) = |Checks that exceptions 'system_failure' and 'communication_f|.
     t17 = t17 && |ailure' are handled in RFC calls|.
     t16 = t17.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t19.
-    DATA(t20) = CONV abap_bool( abap_true ).
+    DATA(t20) = abap_true.
     IF t20 = abap_true.
-      DATA(t21) = CONV string( |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en| ).
+      DATA(t21) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
       t21 = t21 && |-US/abenrfc_exception.html|.
       DATA(t22) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t22->has = abap_true.
@@ -84,9 +85,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
     CLEAR t24.
     DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t25.
-    DATA(t26) = CONV abap_bool( abap_true ).
+    DATA(t26) = abap_true.
     IF t26 = abap_true.
-      DATA(t27) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.| ).
+      DATA(t27) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.|.
       DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t28->has = abap_true.
       t28->value = t27.
@@ -101,9 +102,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
     CLEAR t30.
     DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     CLEAR t31.
-    DATA(t32) = CONV abap_bool( abap_true ).
+    DATA(t32) = abap_true.
     IF t32 = abap_true.
-      DATA(t33) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s| ).
+      DATA(t33) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s|.
       t33 = t33 && |ystem_failure        = 1 MESSAGE msg\n    communication_failu|.
       t33 = t33 && |re = 2 MESSAGE msg\n    resource_failure      = 3\n    OTHERS |.
       t33 = t33 && |               = 4.|.
@@ -165,80 +166,84 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = CONV string( |key| ).
+    DATA(t47) = |key|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t48.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
     ENDIF.
-    DATA(t49) = CONV string( |title| ).
+    DATA(t49) = |title|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t50.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
     ENDIF.
-    DATA(t51) = CONV string( |tags| ).
+    DATA(t51) = |tags|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t52.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
     ENDIF.
-    DATA(t53) = CONV string( |shortDescription| ).
+    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t54.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
     ENDIF.
-    DATA(t55) = CONV string( |extendedInformation| ).
+    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t56.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
     ENDIF.
-    DATA(t57) = CONV string( |badExample| ).
+    DATA(t57) = |badExample|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t58.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
     ENDIF.
-    DATA(t59) = CONV string( |goodExample| ).
+    DATA(t59) = |goodExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CLEAR t60.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
     ENDIF.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_message.
-    DATA(t1) = CONV string( |RFC error handling: At least one unhandled exception from SY| ).
+    DATA(t1) = |RFC error handling: At least one unhandled exception from SY|.
     t1 = t1 && |STEM_FAILURE, COMMUNICATION_FAILURE, RESOURCE_FAILURE|.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD g_c_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->conf ).
+    DATA(t1) = me->conf.
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD s_c_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( i_conf ).
-    DATA(t2) = CAST zcl_lnt_rfc_errr_hndlng_cnf( t1 ).
+    DATA(t1) = i_conf.
+    DATA(t2) = t1.
     me->conf = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
+
   METHOD r_p_i_s_r_rf_er_hn_ts_rf_er_hn.
-    DATA(t1) = CAST zcl_lnt_abap_file( i_file ).
+    DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t6) = CAST zcl_lnt_abap_file( t1 ).
+    DATA(t6) = t1.
     t5 = t6.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = CAST zcl_lnt_abap_file( t5 ).
+    DATA(t8) = t5.
     t7 = t8->statements.
     t4 = t7.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
@@ -267,14 +272,14 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       ENDIF.
       DATA t14 TYPE REF TO zcl_lnt_abstract_token.
       DATA t15 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t16) = CAST zcl_lnt_statement_node( t9 ).
-      t15 = t16->get_first_token(  ).
+      DATA(t16) = t9.
+      t15 = t16->get_first_token( ).
       t14 = t15.
       DATA t17 TYPE abap_bool.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE REF TO zif_lnt_statement.
-      DATA(t20) = CAST zcl_lnt_statement_node( t9 ).
-      t19 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd(  ).
+      DATA(t20) = t9.
+      t19 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t18 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_st_call_function ).
       t17 = xsdbool( t18 = abap_false ).
       IF t17 = abap_true.
@@ -283,8 +288,8 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       DATA t21 TYPE abap_bool.
       DATA t22 TYPE abap_bool.
       DATA t23 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t24) = CAST zcl_lnt_statement_node( t9 ).
-      DATA(t25) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d160_b1cea157d835 ).
+      DATA(t24) = t9.
+      DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d160_b1cea157d835.
       t23 = t24->find_first_expression( i_type_9913 = t25 ).
       t22 = xsdbool( t23 IS BOUND ).
       t21 = xsdbool( t22 = abap_false ).
@@ -293,20 +298,20 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       ENDIF.
       DATA t26 TYPE REF TO zcl_lnt_expression_node.
       DATA t27 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t28) = CAST zcl_lnt_statement_node( t9 ).
-      DATA(t29) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d200_9c08cf3762d0 ).
+      DATA(t28) = t9.
+      DATA(t29) = zlnt_runtime_desc_78196487750d=>zlnt_member_d200_9c08cf3762d0.
       t27 = t28->find_first_expression( i_type_9913 = t29 ).
       t26 = t27.
       DATA(t30) = VALUE abap_bool( ).
       DATA t31 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t32) = CAST zcl_lnt_expression_node( t26 ).
+      DATA(t32) = t26.
       t31 = t32.
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t34.
       t33 = t34.
       DATA(t35) = VALUE abap_bool( ).
-      DATA(t36) = CAST zcl_lnt_expression_node( t31 ).
+      DATA(t36) = t31.
       IF t36 IS INITIAL.
         t35 = abap_true.
       ENDIF.
@@ -316,36 +321,36 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t37.
         DATA t38 TYPE REF TO zcl_lnt_issue.
         CLEAR t38.
-        DATA(t39) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t40) = CAST zcl_lnt_abstract_token( t14 ).
-        DATA(t41) = CONV string( |RFC error handling: At least one unhandled exception from SY| ).
+        DATA(t39) = t1.
+        DATA(t40) = t14.
+        DATA(t41) = |RFC error handling: At least one unhandled exception from SY|.
         t41 = t41 && |STEM_FAILURE, COMMUNICATION_FAILURE, RESOURCE_FAILURE|.
         DATA(t42) = VALUE string( ).
         DATA t43 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t43.
         DATA t44 TYPE string.
-        DATA(t45) = CONV string( |rfc_error_handling| ).
+        DATA(t45) = |rfc_error_handling|.
         t44 = t45.
         DATA t46 TYPE string.
-        DATA(t47) = CONV string( |RFC error handling| ).
+        DATA(t47) = |RFC error handling|.
         t46 = t47.
         DATA t48 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t48.
         DATA t49 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t49.
-        DATA(t50) = CONV abap_bool( abap_true ).
+        DATA(t50) = abap_true.
         IF t50 = abap_true.
           DATA t51 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t52 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t53.
           t52 = t53.
-          DATA(t54) = CAST zlnt_runtime_arra_8ecd6afe19e0( t52 ).
-          DATA(t55) = CONV string( |SingleFile| ).
+          DATA(t54) = t52.
+          DATA(t55) = |SingleFile|.
           t54->load( ).
           APPEND t55 TO t54->items.
           t54->save( ).
-          DATA(t56) = CAST zlnt_runtime_arra_8ecd6afe19e0( t52 ).
+          DATA(t56) = t52.
           t51 = t56.
           t49 = t51.
         ELSE.
@@ -355,16 +360,16 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         t48 = t49.
         DATA t58 TYPE string.
-        DATA(t59) = CONV string( |Checks that exceptions 'system_failure' and 'communication_f| ).
+        DATA(t59) = |Checks that exceptions 'system_failure' and 'communication_f|.
         t59 = t59 && |ailure' are handled in RFC calls|.
         t58 = t59.
         DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t60.
         DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t61.
-        DATA(t62) = CONV abap_bool( abap_true ).
+        DATA(t62) = abap_true.
         IF t62 = abap_true.
-          DATA(t63) = CONV string( |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en| ).
+          DATA(t63) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
           t63 = t63 && |-US/abenrfc_exception.html|.
           DATA(t64) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t64->has = abap_true.
@@ -380,9 +385,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t66.
         DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t67.
-        DATA(t68) = CONV abap_bool( abap_true ).
+        DATA(t68) = abap_true.
         IF t68 = abap_true.
-          DATA(t69) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.| ).
+          DATA(t69) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.|.
           DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t70->has = abap_true.
           t70->value = t69.
@@ -397,9 +402,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t72.
         DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t73.
-        DATA(t74) = CONV abap_bool( abap_true ).
+        DATA(t74) = abap_true.
         IF t74 = abap_true.
-          DATA(t75) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s| ).
+          DATA(t75) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s|.
           t75 = t75 && |ystem_failure        = 1 MESSAGE msg\n    communication_failu|.
           t75 = t75 && |re = 2 MESSAGE msg\n    resource_failure      = 3\n    OTHERS |.
           t75 = t75 && |               = 4.|.
@@ -461,43 +466,43 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t43->zlnt_json_ownkeys_70e5fd461788.
         t43->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t89) = CONV string( |key| ).
+        DATA(t89) = |key|.
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t90.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t89 p1 = t90 ).
         ENDIF.
-        DATA(t91) = CONV string( |title| ).
+        DATA(t91) = |title|.
         DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t92.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
         ENDIF.
-        DATA(t93) = CONV string( |tags| ).
+        DATA(t93) = |tags|.
         DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t94.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
         ENDIF.
-        DATA(t95) = CONV string( |shortDescription| ).
+        DATA(t95) = |shortDescription|.
         DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t96.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
         ENDIF.
-        DATA(t97) = CONV string( |extendedInformation| ).
+        DATA(t97) = |extendedInformation|.
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
         ENDIF.
-        DATA(t99) = CONV string( |badExample| ).
+        DATA(t99) = |badExample|.
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t100.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t43->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
         ENDIF.
-        DATA(t101) = CONV string( |goodExample| ).
+        DATA(t101) = |goodExample|.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         IF t43->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -505,14 +510,14 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         t42 = t43->key.
         DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t104) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->conf ).
+        DATA(t104) = me->conf.
         t103 = t104->zlnt_view_read_sr_15c06369f827( ).
         DATA t105 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t105.
         t38 = zcl_lnt_issue=>at_token( i_file = t39 i_token = t40 i_message_26cb = t41 i_key = t42 i_severity = t103 i_fix = t105 ).
         t37 = t38.
-        DATA(t106) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t107) = CAST zcl_lnt_issue( t37 ).
+        DATA(t106) = t2.
+        DATA(t107) = t37.
         t106->load( ).
         APPEND t107 TO t106->items.
         t106->save( ).
@@ -521,16 +526,16 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       DATA t108 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t109 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t110 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t111) = CAST zcl_lnt_expression_node( t26 ).
+      DATA(t111) = t26.
       t110 = t111.
-      DATA(t112) = CAST zlnt_runtime_clas_a39833db3295( zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a ).
+      DATA(t112) = zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a.
       t109 = t110->find_all_expressions( i_type_9913 = t112 ).
       t108 = t109.
       DATA t113 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t114 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t114.
       t113 = t114.
-      DATA(t115) = CAST zlnt_runtime_arra_c22708faf2e3( t108 ).
+      DATA(t115) = t108.
       DATA t116 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t116.
       DATA t117 TYPE REF TO object.
@@ -555,19 +560,19 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ELSE.
           t116 ?= t117.
         ENDIF.
-        DATA(t121) = CAST zlnt_runtime_arra_8ecd6afe19e0( t113 ).
+        DATA(t121) = t113.
         DATA t122 TYPE string.
         DATA t123 TYPE string.
         DATA t124 TYPE REF TO zcl_lnt_abstract_token.
         DATA t125 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t126) = CAST zcl_lnt_expression_node( t116 ).
-        t125 = t126->get_first_token(  ).
+        DATA(t126) = t116.
+        t125 = t126->get_first_token( ).
         t124 = t125.
         DATA t127 TYPE string.
-        DATA(t128) = CAST zcl_lnt_abstract_token( t124 ).
+        DATA(t128) = t124.
         t127 = t128->str.
         t123 = t127.
-        DATA(t129) = CONV i( strlen( t123 ) ).
+        DATA(t129) = strlen( t123 ).
         t122 = t123.
         IF t122 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
           TRANSLATE t122 TO UPPER CASE.
@@ -582,19 +587,19 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       DATA t131 TYPE abap_bool.
       DATA t132 TYPE abap_bool.
       DATA t133 TYPE i.
-      DATA(t134) = CAST zlnt_runtime_arra_8ecd6afe19e0( t113 ).
-      DATA(t135) = CONV string( |SYSTEM_FAILURE| ).
-      t133 = t134->indexOf( p0 = t135 ).
-      DATA(t136) = CONV i( 0 ).
+      DATA(t134) = t113.
+      DATA(t135) = |SYSTEM_FAILURE|.
+      t133 = t134->indexof( p0 = t135 ).
+      DATA(t136) = 0.
       t132 = xsdbool( t133 < t136 ).
       t131 = t132.
       IF t132 = abap_false.
         DATA t137 TYPE abap_bool.
         DATA t138 TYPE i.
-        DATA(t139) = CAST zlnt_runtime_arra_8ecd6afe19e0( t113 ).
-        DATA(t140) = CONV string( |COMMUNICATION_FAILURE| ).
-        t138 = t139->indexOf( p0 = t140 ).
-        DATA(t141) = CONV i( 0 ).
+        DATA(t139) = t113.
+        DATA(t140) = |COMMUNICATION_FAILURE|.
+        t138 = t139->indexof( p0 = t140 ).
+        DATA(t141) = 0.
         t137 = xsdbool( t138 < t141 ).
         t131 = t137.
       ENDIF.
@@ -602,10 +607,10 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       IF t131 = abap_false.
         DATA t142 TYPE abap_bool.
         DATA t143 TYPE i.
-        DATA(t144) = CAST zlnt_runtime_arra_8ecd6afe19e0( t113 ).
-        DATA(t145) = CONV string( |RESOURCE_FAILURE| ).
-        t143 = t144->indexOf( p0 = t145 ).
-        DATA(t146) = CONV i( 0 ).
+        DATA(t144) = t113.
+        DATA(t145) = |RESOURCE_FAILURE|.
+        t143 = t144->indexof( p0 = t145 ).
+        DATA(t146) = 0.
         t142 = xsdbool( t143 < t146 ).
         t130 = t142.
       ENDIF.
@@ -614,36 +619,36 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t147.
         DATA t148 TYPE REF TO zcl_lnt_issue.
         CLEAR t148.
-        DATA(t149) = CAST zcl_lnt_abap_file( t1 ).
-        DATA(t150) = CAST zcl_lnt_abstract_token( t14 ).
-        DATA(t151) = CONV string( |RFC error handling: At least one unhandled exception from SY| ).
+        DATA(t149) = t1.
+        DATA(t150) = t14.
+        DATA(t151) = |RFC error handling: At least one unhandled exception from SY|.
         t151 = t151 && |STEM_FAILURE, COMMUNICATION_FAILURE, RESOURCE_FAILURE|.
         DATA(t152) = VALUE string( ).
         DATA t153 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t153.
         DATA t154 TYPE string.
-        DATA(t155) = CONV string( |rfc_error_handling| ).
+        DATA(t155) = |rfc_error_handling|.
         t154 = t155.
         DATA t156 TYPE string.
-        DATA(t157) = CONV string( |RFC error handling| ).
+        DATA(t157) = |RFC error handling|.
         t156 = t157.
         DATA t158 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t158.
         DATA t159 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t159.
-        DATA(t160) = CONV abap_bool( abap_true ).
+        DATA(t160) = abap_true.
         IF t160 = abap_true.
           DATA t161 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t162 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t163 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CREATE OBJECT t163.
           t162 = t163.
-          DATA(t164) = CAST zlnt_runtime_arra_8ecd6afe19e0( t162 ).
-          DATA(t165) = CONV string( |SingleFile| ).
+          DATA(t164) = t162.
+          DATA(t165) = |SingleFile|.
           t164->load( ).
           APPEND t165 TO t164->items.
           t164->save( ).
-          DATA(t166) = CAST zlnt_runtime_arra_8ecd6afe19e0( t162 ).
+          DATA(t166) = t162.
           t161 = t166.
           t159 = t161.
         ELSE.
@@ -653,16 +658,16 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         t158 = t159.
         DATA t168 TYPE string.
-        DATA(t169) = CONV string( |Checks that exceptions 'system_failure' and 'communication_f| ).
+        DATA(t169) = |Checks that exceptions 'system_failure' and 'communication_f|.
         t169 = t169 && |ailure' are handled in RFC calls|.
         t168 = t169.
         DATA t170 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t170.
         DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t171.
-        DATA(t172) = CONV abap_bool( abap_true ).
+        DATA(t172) = abap_true.
         IF t172 = abap_true.
-          DATA(t173) = CONV string( |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en| ).
+          DATA(t173) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
           t173 = t173 && |-US/abenrfc_exception.html|.
           DATA(t174) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t174->has = abap_true.
@@ -678,9 +683,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t176.
         DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t177.
-        DATA(t178) = CONV abap_bool( abap_true ).
+        DATA(t178) = abap_true.
         IF t178 = abap_true.
-          DATA(t179) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.| ).
+          DATA(t179) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc.|.
           DATA(t180) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t180->has = abap_true.
           t180->value = t179.
@@ -695,9 +700,9 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         CLEAR t182.
         DATA t183 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t183.
-        DATA(t184) = CONV abap_bool( abap_true ).
+        DATA(t184) = abap_true.
         IF t184 = abap_true.
-          DATA(t185) = CONV string( |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s| ).
+          DATA(t185) = |CALL FUNCTION 'ZRFC'\n  DESTINATION lv_rfc\n  EXCEPTIONS\n    s|.
           t185 = t185 && |ystem_failure        = 1 MESSAGE msg\n    communication_failu|.
           t185 = t185 && |re = 2 MESSAGE msg\n    resource_failure      = 3\n    OTHERS |.
           t185 = t185 && |               = 4.|.
@@ -759,43 +764,43 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t153->zlnt_json_ownkeys_70e5fd461788.
         t153->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t199) = CONV string( |key| ).
+        DATA(t199) = |key|.
         DATA t200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t200.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t199 p1 = t200 ).
         ENDIF.
-        DATA(t201) = CONV string( |title| ).
+        DATA(t201) = |title|.
         DATA t202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t202.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t201 p1 = t202 ).
         ENDIF.
-        DATA(t203) = CONV string( |tags| ).
+        DATA(t203) = |tags|.
         DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t204.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t203 p1 = t204 ).
         ENDIF.
-        DATA(t205) = CONV string( |shortDescription| ).
+        DATA(t205) = |shortDescription|.
         DATA t206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t206.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t205 p1 = t206 ).
         ENDIF.
-        DATA(t207) = CONV string( |extendedInformation| ).
+        DATA(t207) = |extendedInformation|.
         DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t208.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
         ENDIF.
-        DATA(t209) = CONV string( |badExample| ).
+        DATA(t209) = |badExample|.
         DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t210.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
           t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t209 p1 = t210 ).
         ENDIF.
-        DATA(t211) = CONV string( |goodExample| ).
+        DATA(t211) = |goodExample|.
         DATA t212 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t212.
         IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
@@ -803,34 +808,37 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         ENDIF.
         t152 = t153->key.
         DATA t213 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t214) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->conf ).
+        DATA(t214) = me->conf.
         t213 = t214->zlnt_view_read_sr_15c06369f827( ).
         DATA t215 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t215.
         t148 = zcl_lnt_issue=>at_token( i_file = t149 i_token = t150 i_message_26cb = t151 i_key = t152 i_severity = t213 i_fix = t215 ).
         t147 = t148.
-        DATA(t216) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
-        DATA(t217) = CAST zcl_lnt_issue( t147 ).
+        DATA(t216) = t2.
+        DATA(t217) = t147.
         t216->load( ).
         APPEND t217 TO t216->items.
         t216->save( ).
         CONTINUE.
       ENDIF.
     ENDDO.
-    DATA(t218) = CAST zlnt_runtime_arra_c22708faf2e3( t2 ).
+    DATA(t218) = t2.
     result = t218.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->g_c_i_s_r_rf_er_hn_ts_rf_er_hn(  ) ).
+    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->g_c_i_s_r_rf_er_hn_ts_rf_er_hn( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->g_c_i_s_r_rf_er_hn_ts_rf_er_hn(  ) ).
+    DATA(t1) = CAST zcl_lnt_rfc_errr_hndlng_cnf( me->g_c_i_s_r_rf_er_hn_ts_rf_er_hn( ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_rfc_errr_hndlng_cnf.
     CLEAR t1.
@@ -862,19 +870,22 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
       ENDIF.
     ENDIF.
     me->s_c_i_s_r_rf_er_hn_ts_rf_er_hn( i_conf = t1 ).
-    RETURN.
+
   ENDMETHOD.
+
   METHOD run_parsed.
     DATA(t1) = CAST zlnt_runtime_arra_c22708faf2e3( me->r_p_i_s_r_rf_er_hn_ts_rf_er_hn( i_file = i_file ) ).
     result = t1.
-    RETURN.
+
   ENDMETHOD.
+
   METHOD zlnt_builtin_nati_72359f490bf2.
     result = me->zlnt_builtin_clas_3f891b097658( ).
     IF result IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
   ENDMETHOD.
+
   METHOD zlnt_builtin_clas_3f891b097658.
     result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1684_77b131f7340c.
   ENDMETHOD.
