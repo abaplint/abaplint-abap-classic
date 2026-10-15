@@ -1,0 +1,114 @@
+* TS: src/objects/concepts_of_package.ts:4:1 ConceptsOfPackage
+CLASS zcl_lnt_concepts_of_package DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_object CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS constructor IMPORTING i_name TYPE string.
+    METHODS get_type REDEFINITION.
+    METHODS get_allowed_naming REDEFINITION.
+    METHODS get_description REDEFINITION.
+    METHODS zlnt_builtin_clas_3f891b097658 REDEFINITION.
+    METHODS zlnt_builtin_nati_72359f490bf2 REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zcl_lnt_concepts_of_package IMPLEMENTATION.
+  METHOD constructor.
+    DATA(t1) = i_name.
+    DATA(t2) = t1.
+    super->constructor( i_name = t2 ).
+  ENDMETHOD.
+
+  METHOD get_type.
+    DATA(t1) = |SOTS|.
+    result = t1.
+
+  ENDMETHOD.
+
+  METHOD get_allowed_naming.
+    DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
+    CLEAR t1.
+    DATA t2 TYPE f.
+    DATA(t3) = CONV f( 30 ).
+    t2 = t3.
+    DATA t4 TYPE abap_bool.
+    DATA(t5) = abap_true.
+    t4 = t5.
+    DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t6.
+    DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CLEAR t7.
+    DATA(t8) = abap_true.
+    IF t8 = abap_true.
+      DATA t9 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+      CLEAR t9.
+      DATA(t10) = `^(\/[A-Z_\d]{3,8}\/)?[A-Z_-\d<> ]+$`.
+      DATA(t11) = `^(\/[A-Z_0-9]{3,8}\/)?[-A-Z_0-9<> ]+$`.
+      DATA(t12) = |i|.
+      CREATE OBJECT t9 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t11 flags = t12.
+      t9->source = t10.
+      t7 = t9.
+    ELSE.
+      DATA t13 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+      CLEAR t13.
+      t7 = t13.
+    ENDIF.
+    t6 = t7.
+    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t4 i_custom_regex = t6 ).
+    CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
+    t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t14.
+    IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `maxLength` p1 = t14 ).
+    ENDIF.
+    DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t15.
+    IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `allowNamespace` p1 = t15 ).
+    ENDIF.
+    DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t16.
+    IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `customRegex` p1 = t16 ).
+    ENDIF.
+    CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
+    t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t17) = |maxLength|.
+    DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t18.
+    IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t17 p1 = t18 ).
+    ENDIF.
+    DATA(t19) = |allowNamespace|.
+    DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t20.
+    IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+    ENDIF.
+    DATA(t21) = |customRegex|.
+    DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR t22.
+    IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t21 p1 = t22 ).
+    ENDIF.
+    result = t1.
+
+  ENDMETHOD.
+
+  METHOD get_description.
+    DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    CLEAR t1.
+    result = t1.
+
+  ENDMETHOD.
+
+  METHOD zlnt_builtin_nati_72359f490bf2.
+    result = me->zlnt_builtin_clas_3f891b097658( ).
+    IF result IS NOT BOUND.
+      RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
+    ENDIF.
+  ENDMETHOD.
+
+  METHOD zlnt_builtin_clas_3f891b097658.
+    result = zlnt_runtime_desc_78196487750d=>zlnt_member_d1229_80301d71b2ff.
+  ENDMETHOD.
+ENDCLASS.

@@ -1,0 +1,9 @@
+CLASS zlnt_runtime_prom_0ff5910e175e DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    DATA value TYPE REF TO zif_lnt_registry.
+    DATA rejection TYPE REF TO zlnt_exception_ts_bf7a77bb9e12.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zlnt_runtime_prom_0ff5910e175e IMPLEMENTATION.
+ENDCLASS.

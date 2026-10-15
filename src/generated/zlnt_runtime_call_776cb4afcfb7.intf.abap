@@ -1,0 +1,2 @@
+INTERFACE zlnt_runtime_call_776cb4afcfb7 PUBLIC.
+ENDINTERFACE.

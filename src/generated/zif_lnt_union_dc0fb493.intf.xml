@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_LNT_UNION_DC0FB493</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>union.5bc88764c76a509b40e8dd01d88221e95a9801a5e44f2630354...</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,9 @@
+CLASS zlnt_runtime_opti_7fb1553a12de DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    DATA value TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA has TYPE abap_bool.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zlnt_runtime_opti_7fb1553a12de IMPLEMENTATION.
+ENDCLASS.

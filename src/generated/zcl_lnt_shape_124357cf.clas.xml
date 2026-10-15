@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_LNT_SHAPE_124357CF</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>shape.0e610234a61c59728f9f67694a386e1b3a2f7dc5de0a2d3b1ef...</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

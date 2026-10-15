@@ -1,0 +1,19 @@
+{
+  "name": "@abaplint/abaplint-abap-classic",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ABAPiti transpilation experiments for @abaplint/core",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "regenerate": "node scripts/call-abapiti.mjs && node scripts/abapgit-xml.mjs && node scripts/checks.mjs && abaplint --fix",
+    "unit": "node --max-old-space-size=20480 node_modules/@abaplint/transpiler-cli/abap_transpile && node transpiled/index.mjs",
+    "test": "abaplint && npm run unit"
+  },
+  "devDependencies": {
+    "@abaplint/cli": "^2.120.80",
+    "@abaplint/runtime": "^2.14.7",
+    "@abaplint/transpiler-cli": "^2.14.7"
+  }
+}

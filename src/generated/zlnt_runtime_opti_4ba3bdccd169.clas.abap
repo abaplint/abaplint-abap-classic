@@ -1,0 +1,9 @@
+CLASS zlnt_runtime_opti_4ba3bdccd169 DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+    DATA value TYPE string.
+    DATA has TYPE abap_bool.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+CLASS zlnt_runtime_opti_4ba3bdccd169 IMPLEMENTATION.
+ENDCLASS.
