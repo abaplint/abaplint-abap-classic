@@ -80,12 +80,18 @@ CLASS ltd_rule IMPLEMENTATION.
 
     result = NEW #( ).
     LOOP AT mt_issues INTO DATA(ls_issue).
+      DATA(lo_start_col) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+      lo_start_col->value = ls_issue-col.
+      lo_start_col->has = abap_true.
+      DATA(lo_end_col) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+      lo_end_col->value = ls_issue-col + 1.
+      lo_end_col->has = abap_true.
       INSERT NEW zcl_lnt_issue( NEW zcl_lnt_iissue_data(
         i_filename     = ls_issue-filename
         i_message_26cb = ls_issue-message
         i_key          = `test_rule`
-        i_start        = NEW zcl_lnt_position( i_row = ls_issue-row i_col = ls_issue-col )
-        i_end          = NEW zcl_lnt_position( i_row = ls_issue-row i_col = ls_issue-col + 1 )
+        i_start        = NEW zcl_lnt_position( i_row = ls_issue-row i_col = lo_start_col )
+        i_end          = NEW zcl_lnt_position( i_row = ls_issue-row i_col = lo_end_col )
         i_severity     = ls_issue-severity ) ) INTO TABLE result->items.
     ENDLOOP.
   ENDMETHOD.

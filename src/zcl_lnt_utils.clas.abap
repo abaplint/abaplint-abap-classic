@@ -269,7 +269,10 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
         IMPORTING
           ev_include     = ls_finding-include
           ev_line        = ls_finding-line ).
-      ls_finding-column = lo_start->col.
+      DATA(lo_col) = lo_start->get_col( ).
+      IF lo_col IS BOUND AND lo_col->has = abap_true.
+        ls_finding-column = lo_col->value.
+      ENDIF.
       ls_finding-kind = map_severity( lo_issue->get_severity( ) ).
       ls_finding-code = c_code-issue.
       ls_finding-text = lo_issue->get_message( ).

@@ -40,7 +40,9 @@ function methodBody(source, method) {
 function stringValue(body, variable) {
   const start = new RegExp(`^\\s*DATA\\(${variable}\\) = \\|((?:[^|\\\\]|\\\\.)*)\\|\\.$`, "m").exec(body);
   if (!start) {
-    return undefined;
+    // follow "DATA t2 TYPE string." plus "t2 = t3."
+    const copy = new RegExp(`^\\s*${variable} = (t\\d+)\\.$`, "m").exec(body);
+    return copy ? stringValue(body, copy[1]) : undefined;
   }
   let value = unescapeTemplate(start[1]);
   const append = new RegExp(`^\\s*${variable} = ${variable} && \\|((?:[^|\\\\]|\\\\.)*)\\|\\.$`, "gm");
