@@ -34,8 +34,8 @@ CLASS ltd_rule DEFINITION FINAL FOR TESTING.
     TYPES:
       BEGIN OF ty_issue,
         filename TYPE string,
-        row      TYPE int8,
-        col      TYPE int8,
+        row      TYPE f,
+        col      TYPE f,
         severity TYPE string,
         message  TYPE string,
       END OF ty_issue,
@@ -106,7 +106,6 @@ CLASS ltcl_run_rule DEFINITION FINAL FOR TESTING RISK LEVEL HARMLESS DURATION SH
     METHODS no_issues FOR TESTING RAISING cx_static_check.
     METHODS not_found FOR TESTING RAISING cx_static_check.
     METHODS unknown_object_type FOR TESTING RAISING cx_static_check.
-    METHODS unsupported_rule FOR TESTING RAISING cx_static_check.
     METHODS unsupported_exception FOR TESTING RAISING cx_static_check.
     METHODS error_gives_dump FOR TESTING RAISING cx_static_check.
     METHODS severity FOR TESTING RAISING cx_static_check.
@@ -200,18 +199,6 @@ CLASS ltcl_run_rule IMPLEMENTATION.
       io_rule        = lo_rule
       iv_object_type = 'TABL' ) ).
     cl_abap_unit_assert=>assert_not_bound( lo_rule->mi_reg ).
-  ENDMETHOD.
-
-  METHOD unsupported_rule.
-* double_space runs into code that is not supported by the ABAPiti output
-    set_broken_prog( ).
-
-    TRY.
-        run( NEW zcl_lnt_double_space( ) ).
-        cl_abap_unit_assert=>fail( 'expected exception' ).
-      CATCH zlnt_exception_un_5f2d02892fe8.
-        RETURN.
-    ENDTRY.
   ENDMETHOD.
 
   METHOD unsupported_exception.
@@ -386,12 +373,7 @@ CLASS ltcl_run_rule IMPLEMENTATION.
     set_broken_prog( ).
 
     DATA(lt_first) = run( NEW zcl_lnt_parser_error( ) ).
-    TRY.
-        run( NEW zcl_lnt_double_space( ) ).
-      CATCH zlnt_exception_un_5f2d02892fe8 INTO DATA(lx_unsupported).
-* expected, double_space is not supported by the ABAPiti output
-        cl_abap_unit_assert=>assert_bound( lx_unsupported ).
-    ENDTRY.
+    run( NEW zcl_lnt_double_space( ) ).
     run( NEW zcl_lnt_allowed_object_naming( ) ).
     DATA(lt_second) = run( NEW zcl_lnt_parser_error( ) ).
 
@@ -461,7 +443,7 @@ CLASS ltcl_checks DEFINITION FINAL FOR TESTING RISK LEVEL HARMLESS DURATION SHOR
   PRIVATE SECTION.
     METHODS setup.
     METHODS parser_error FOR TESTING RAISING cx_static_check.
-    METHODS unsupported FOR TESTING RAISING cx_static_check.
+    METHODS double_space FOR TESTING RAISING cx_static_check.
 ENDCLASS.
 
 CLASS ltcl_checks IMPLEMENTATION.
@@ -485,15 +467,10 @@ CLASS ltcl_checks IMPLEMENTATION.
     lo_check->run( ).
   ENDMETHOD.
 
-  METHOD unsupported.
+  METHOD double_space.
     DATA(lo_check) = NEW ltd_double_space( ).
 
     lo_check->set_object( iv_type = 'PROG' iv_name = 'ZTEST' ).
-    TRY.
-        lo_check->run( ).
-        cl_abap_unit_assert=>fail( 'expected exception' ).
-      CATCH zlnt_exception_un_5f2d02892fe8.
-        RETURN.
-    ENDTRY.
+    lo_check->run( ).
   ENDMETHOD.
 ENDCLASS.
