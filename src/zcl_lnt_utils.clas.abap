@@ -20,7 +20,8 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
 
     CLASS-METHODS object_types RETURNING VALUE(rt_types) TYPE ty_object_types.
 
-    "! Runs one abaplint rule on an object, never raises
+    "! Runs one abaplint rule on an object, raises zlnt_exception_un_5f2d02892fe8
+    "! for paths not supported by the ABAPiti output, other errors give a DUMP finding
     CLASS-METHODS run_rule
       IMPORTING
         io_rule            TYPE REF TO zif_lnt_rule
@@ -163,10 +164,11 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
           io_issues      = lo_issues
           it_line_map    = lt_line_map
           iv_object_name = iv_object_name ).
-      CATCH zlnt_exception_un_5f2d02892fe8.
-* not supported by the ABAPiti output, drop silently
-        CLEAR rt_findings.
       CATCH cx_root INTO DATA(lx_error).
+        IF lx_error IS INSTANCE OF zlnt_exception_un_5f2d02892fe8.
+* not supported by the ABAPiti output, pass on to the caller
+          RAISE EXCEPTION lx_error.
+        ENDIF.
         map_position(
           EXPORTING
             iv_filename    = ``

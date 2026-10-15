@@ -206,7 +206,12 @@ CLASS ltcl_run_rule IMPLEMENTATION.
 * double_space runs into code that is not supported by the ABAPiti output
     set_broken_prog( ).
 
-    cl_abap_unit_assert=>assert_initial( run( NEW zcl_lnt_double_space( ) ) ).
+    TRY.
+        run( NEW zcl_lnt_double_space( ) ).
+        cl_abap_unit_assert=>fail( 'expected exception' ).
+      CATCH zlnt_exception_un_5f2d02892fe8.
+        RETURN.
+    ENDTRY.
   ENDMETHOD.
 
   METHOD unsupported_exception.
@@ -214,7 +219,12 @@ CLASS ltcl_run_rule IMPLEMENTATION.
     DATA(lo_rule) = NEW ltd_rule( ).
     lo_rule->mv_raise_unsupported = abap_true.
 
-    cl_abap_unit_assert=>assert_initial( run( lo_rule ) ).
+    TRY.
+        run( lo_rule ).
+        cl_abap_unit_assert=>fail( 'expected exception' ).
+      CATCH zlnt_exception_un_5f2d02892fe8.
+        RETURN.
+    ENDTRY.
   ENDMETHOD.
 
   METHOD error_gives_dump.
@@ -376,7 +386,12 @@ CLASS ltcl_run_rule IMPLEMENTATION.
     set_broken_prog( ).
 
     DATA(lt_first) = run( NEW zcl_lnt_parser_error( ) ).
-    run( NEW zcl_lnt_double_space( ) ).
+    TRY.
+        run( NEW zcl_lnt_double_space( ) ).
+      CATCH zlnt_exception_un_5f2d02892fe8 INTO DATA(lx_unsupported).
+* expected, double_space is not supported by the ABAPiti output
+        cl_abap_unit_assert=>assert_bound( lx_unsupported ).
+    ENDTRY.
     run( NEW zcl_lnt_allowed_object_naming( ) ).
     DATA(lt_second) = run( NEW zcl_lnt_parser_error( ) ).
 
@@ -474,6 +489,11 @@ CLASS ltcl_checks IMPLEMENTATION.
     DATA(lo_check) = NEW ltd_double_space( ).
 
     lo_check->set_object( iv_type = 'PROG' iv_name = 'ZTEST' ).
-    lo_check->run( ).
+    TRY.
+        lo_check->run( ).
+        cl_abap_unit_assert=>fail( 'expected exception' ).
+      CATCH zlnt_exception_un_5f2d02892fe8.
+        RETURN.
+    ENDTRY.
   ENDMETHOD.
 ENDCLASS.
