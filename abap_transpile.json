@@ -12,7 +12,11 @@
       "url": "https://github.com/open-abap/open-abap-ci"
     },
     {
-      "url": "https://github.com/open-abap/open-abap-gui"
+      "url": "https://github.com/open-abap/open-abap-bal"
+    },
+    {
+      "url": "https://github.com/open-abap/open-abap-gui",
+      "files": ["/src/**", "/framework/**"]
     }
   ],
   "options": {
