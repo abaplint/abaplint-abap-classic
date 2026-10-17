@@ -24,6 +24,16 @@
     "errorNamespace": "."
   },
   "rules": {
+    "alias_never_reassigned": true,
+    "boolean_flag_via_if": true,
+    "bound_check_after_create": true,
+    "clear_after_declaration": true,
+    "constant_condition": true,
+    "copy_chain": true,
+    "copy_of_initial_variable": true,
+    "single_use_expression_temp": true,
+    "try_cast_empty_catch": false,
+    "unnecessary_copy": true,
     "indentation": true,
     "unnecessary_return": true,
     "redundant_conversion": true,
