@@ -130,9 +130,8 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_b6b1d9e0c93e.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `spaghetti` ) ).
       DATA t2 TYPE REF TO object.
-      t2 = t1->as_ref( ).
+      t2 = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `spaghetti` ) )->as_ref( ).
       result ?= t2.
     ELSE.
       result = me->spaghetti.

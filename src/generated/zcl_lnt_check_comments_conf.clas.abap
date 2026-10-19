@@ -28,10 +28,9 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
       RETURN.
     ENDIF.
     me->zlnt_view_write_s_1f9bc2af93e1( p0 = abap_false ).
-    DATA(t2) = CONV f( 10 ).
     DATA(t3) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t3->has = abap_true.
-    t3->value = t2.
+    t3->value = CONV f( 10 ).
     me->zlnt_view_write_s_f5eda22e8d58( p0 = t3 ).
   ENDMETHOD.
 
@@ -50,8 +49,7 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_938313da583d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEndOfLine` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEndOfLine` ) )->as_boolean( ).
     ELSE.
       result = me->allow_end_of_line.
     ENDIF.

@@ -15,15 +15,10 @@ CLASS zcl_lnt_sqlcte_path_prefix IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t4) = `^\w+~$`.
-    DATA(t5) = |^[A-Za-z0-9_]+~$|.
-    DATA(t6) = ||.
-    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
-    t3->source = t4.
-    t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
-    t1 = t2.
+    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+~$| flags = ||.
+    t3->source = `^\w+~$`.
+    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -79,9 +74,7 @@ CLASS zcl_lnt_sqlcte_path_prefix IMPLEMENTATION.
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t23.
-    DATA t24 TYPE REF TO zif_lnt_statement_runnable.
-    t24 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t18 i_rest = t23 ).
-    t10 = t24.
+    t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t18 i_rest = t23 ).
     IF t10 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t29 TYPE REF TO object.
@@ -131,9 +124,7 @@ CLASS zcl_lnt_sqlcte_path_prefix IMPLEMENTATION.
     ENDIF.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t36.
-    DATA t37 TYPE REF TO zif_lnt_statement_runnable.
-    t37 = zcl_lnt_st_combi_module=>alt_prio( i_first = t9 i_second = t31 i_rest = t36 ).
-    result = t37.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t9 i_second = t31 i_rest = t36 ).
 
   ENDMETHOD.
 

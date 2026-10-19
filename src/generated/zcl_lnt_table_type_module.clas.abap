@@ -23,81 +23,49 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_table_type_module=>table_access_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t3 = zcl_lnt_table_type_module=>table_access_type_namespace.
-    DATA(t4) = |standard|.
-    DATA(t5) = |STANDARD|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_table_type_module=>table_access_type_namespace->set( p0 = |standard| p1 = |STANDARD| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t7 = zcl_lnt_table_type_module=>table_access_type_namespace.
-    DATA(t8) = |sorted|.
-    DATA(t9) = |SORTED|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_table_type_module=>table_access_type_namespace->set( p0 = |sorted| p1 = |SORTED| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t11 = zcl_lnt_table_type_module=>table_access_type_namespace.
-    DATA(t12) = |hashed|.
-    DATA(t13) = |HASHED|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_table_type_module=>table_access_type_namespace->set( p0 = |hashed| p1 = |HASHED| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t15 = zcl_lnt_table_type_module=>table_access_type_namespace.
-    DATA(t16) = |index|.
-    DATA(t17) = |INDEX|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_table_type_module=>table_access_type_namespace->set( p0 = |index| p1 = |INDEX| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t19 = zcl_lnt_table_type_module=>table_access_type_namespace.
-    DATA(t20) = |any|.
-    DATA(t21) = |ANY|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_table_type_module=>table_access_type_namespace->set( p0 = |any| p1 = |ANY| ).
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
     zcl_lnt_table_type_module=>table_key_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t24 = zcl_lnt_table_type_module=>table_key_type_namespace.
-    DATA(t25) = |default|.
-    DATA(t26) = |DEFAULT|.
-    t23 = t24->set( p0 = t25 p1 = t26 ).
+    t23 = zcl_lnt_table_type_module=>table_key_type_namespace->set( p0 = |default| p1 = |DEFAULT| ).
     DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t28 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t28 = zcl_lnt_table_type_module=>table_key_type_namespace.
-    DATA(t29) = |user|.
-    DATA(t30) = |USER|.
-    t27 = t28->set( p0 = t29 p1 = t30 ).
+    t27 = zcl_lnt_table_type_module=>table_key_type_namespace->set( p0 = |user| p1 = |USER| ).
     DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t32 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    t32 = zcl_lnt_table_type_module=>table_key_type_namespace.
-    DATA(t33) = |empty|.
-    DATA(t34) = |EMPTY|.
-    t31 = t32->set( p0 = t33 p1 = t34 ).
+    t31 = zcl_lnt_table_type_module=>table_key_type_namespace->set( p0 = |empty| p1 = |EMPTY| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -24,8 +24,7 @@ CLASS zcl_lnt_rdc_prcdrl_cd_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 10 ).
-    me->zlnt_view_write_s_2d2bf267445c( p0 = t1 ).
+    me->zlnt_view_write_s_2d2bf267445c( p0 = CONV f( 10 ) ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

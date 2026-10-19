@@ -26,10 +26,6 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |exit_or_check|.
-    DATA t4 TYPE string.
-    t4 = |Find EXIT or CHECK outside loops|.
     DATA t6 TYPE string.
     DATA(t7) = |Detects usages of EXIT or CHECK statements outside of loops.|.
     t7 = t7 && |\nUse RETURN to leave procesing blocks instead.|.
@@ -46,37 +42,28 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t25) = |Quickfix|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |Quickfix| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t31) = |CHECK is_valid = abap_true.\ndo_something( ).|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
-    t32->value = t31.
+    t32->value = |CHECK is_valid = abap_true.\ndo_something( ).|.
     t28 = t32.
-    DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t37) = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
     DATA(t38) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t38->has = abap_true.
-    t38->value = t37.
-    t34 = t38.
+    t38->value = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |exit_or_check| i_title = |Find EXIT or CHECK outside loops| i_short_description = t6 i_bad_example = t28 i_good_example = t38 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -107,38 +94,31 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t51) = |key|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
-    DATA(t53) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t52 ).
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |shortDescription|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |extendedInformation|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |tags|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |badExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t62 ).
     ENDIF.
-    DATA(t63) = |goodExample|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t64 ).
     ENDIF.
     result = t1.
 
@@ -157,17 +137,11 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
   METHOD r_p_i_s_r_ex_or_ch_ts_ex_or_ch.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t9 = t1->statements.
-    t6 = t9.
+    t6 = t1->statements.
     DATA t11 TYPE REF TO zcl_lnt_statement_node.
     DATA t12 TYPE REF TO object.
     DATA(t13) = VALUE i( ).
@@ -191,9 +165,7 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
         t11 ?= t12.
       ENDIF.
       DATA t16 TYPE REF TO zif_lnt_statement.
-      DATA t17 TYPE REF TO zif_lnt_statement.
-      t17 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t16 = t17.
+      t16 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
@@ -202,27 +174,19 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
       t23 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_loop ).
       t22 = t23.
       IF t23 = abap_false.
-        DATA t25 TYPE abap_bool.
-        t25 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_while ).
-        t22 = t25.
+        t22 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_while ).
       ENDIF.
       t21 = t22.
       IF t22 = abap_false.
-        DATA t27 TYPE abap_bool.
-        t27 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_loop_at_screen ).
-        t21 = t27.
+        t21 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_loop_at_screen ).
       ENDIF.
       t20 = t21.
       IF t21 = abap_false.
-        DATA t29 TYPE abap_bool.
-        t29 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_select_loop ).
-        t20 = t29.
+        t20 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_select_loop ).
       ENDIF.
       t19 = t20.
       IF t20 = abap_false.
-        DATA t31 TYPE abap_bool.
-        t31 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_do ).
-        t19 = t31.
+        t19 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_do ).
       ENDIF.
       IF t19 = abap_true.
         t4->load( ).
@@ -236,21 +200,15 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
         t38 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_loop ).
         t37 = t38.
         IF t38 = abap_false.
-          DATA t40 TYPE abap_bool.
-          t40 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_while ).
-          t37 = t40.
+          t37 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_while ).
         ENDIF.
         t36 = t37.
         IF t37 = abap_false.
-          DATA t42 TYPE abap_bool.
-          t42 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_select ).
-          t36 = t42.
+          t36 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_select ).
         ENDIF.
         t35 = t36.
         IF t36 = abap_false.
-          DATA t44 TYPE abap_bool.
-          t44 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_do ).
-          t35 = t44.
+          t35 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_do ).
         ENDIF.
         IF t35 = abap_true.
           DATA t46 TYPE REF TO zcl_lnt_statement_node.
@@ -277,37 +235,22 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
           t53 = xsdbool( t54 = abap_false ).
           t52 = t53.
           IF t53 = abap_true.
-            DATA t57 TYPE abap_bool.
-            t57 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_check ).
-            t52 = t57.
+            t52 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_check ).
           ENDIF.
           t51 = t52.
           IF t52 = abap_true.
-            DATA t59 TYPE abap_bool.
-            DATA t60 TYPE i.
             t4->load( ).
-            t60 = lines( t4->items ).
-            DATA(t62) = 0.
-            t59 = xsdbool( t60 = t62 ).
-            t51 = t59.
+            t51 = xsdbool( lines( t4->items ) = 0 ).
           ENDIF.
           IF t51 = abap_true.
-            DATA(t64) = |CHECK is not allowed outside of loops|.
             DATA t65 TYPE string.
-            DATA t66 TYPE string.
-            t66 = t11->concat_tokens( ).
-            t65 = t66.
-            DATA t68 TYPE string.
+            t65 = t11->concat_tokens( ).
             DATA(t69) = t65.
             DATA t70 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
             CLEAR t70.
-            DATA(t71) = |^check |.
-            DATA(t72) = |i|.
-            CREATE OBJECT t70 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t71 flags = t72.
-            DATA(t73) = |CHECK |.
+            CREATE OBJECT t70 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^check | flags = |i|.
             DATA(t74) = strlen( t69 ).
-            t68 = t70->replace( p0 = t69 p1 = t73 ).
-            t65 = t68.
+            t65 = t70->replace( p0 = t69 p1 = |CHECK | ).
             DATA(t75) = VALUE string( ).
             DATA(t76) = VALUE string( ).
             DATA t77 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -352,7 +295,6 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
               RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
             ENDIF.
             t77->load( ).
-            CLEAR t76.
             READ TABLE t77->items INDEX 2 INTO t76.
             DATA(t86) = strlen( t76 ).
             DATA t87 TYPE i.
@@ -437,55 +379,28 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             DATA(t108) = |IF NOT |.
             DATA(t110) = strlen( t108 ).
             t107 = |{ t108 }{ t65 }|.
-            DATA(t111) = |\n  RETURN.\nENDIF.|.
             DATA(t112) = strlen( t107 ).
-            t106 = |{ t107 }{ t111 }|.
+            t106 = |{ t107 }{ |\n  RETURN.\nENDIF.| }|.
             DATA t114 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
             DATA t116 TYPE REF TO zcl_lnt_position.
-            DATA t118 TYPE REF TO zcl_lnt_abstract_token.
-            t118 = t11->get_first_token( ).
-            DATA t120 TYPE REF TO zcl_lnt_position.
-            t120 = t118->start.
-            t116 = t120.
-            DATA t122 TYPE REF TO zcl_lnt_position.
+            t116 = t11->get_first_token( )->start.
             DATA t123 TYPE REF TO zcl_lnt_abstract_token.
-            DATA t124 TYPE REF TO zcl_lnt_abstract_token.
-            t124 = t11->get_last_token( ).
-            t123 = t124.
-            DATA t126 TYPE REF TO zcl_lnt_position.
+            t123 = t11->get_last_token( ).
             DATA t127 TYPE f.
-            DATA t129 TYPE REF TO zcl_lnt_position.
-            t129 = t123->start.
-            DATA t131 TYPE f.
-            t131 = t129->row.
-            t127 = t131.
-            DATA t133 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+            t127 = t123->start->row.
             DATA t134 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            DATA t136 TYPE REF TO zcl_lnt_position.
-            t136 = t123->start.
-            DATA t138 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            t138 = t136->col.
-            t134 = t138.
+            t134 = t123->start->col.
             DATA t140 TYPE f.
-            DATA t142 TYPE string.
-            t142 = t123->str.
-            t140 = strlen( t142 ).
+            t140 = strlen( t123->str ).
             DATA(t145) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
             t145->has = abap_true.
             t145->value = t140.
-            t133 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t134 right = t145 op = `+` ).
-            t126 = NEW zcl_lnt_position( i_row = t127 i_col = t133 ).
-            t122 = t126.
-            t114 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t116 i_end = t122 i_text = t106 ).
+            t114 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t116 i_end = NEW zcl_lnt_position( i_row = t127 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t134 right = t145 op = `+` ) ) i_text = t106 ).
             DATA t148 TYPE REF TO zcl_lnt_issue.
             CLEAR t148.
             DATA(t152) = VALUE string( ).
             DATA t153 TYPE REF TO zcl_lnt_irule_metadata.
             CLEAR t153.
-            DATA t154 TYPE string.
-            t154 = |exit_or_check|.
-            DATA t156 TYPE string.
-            t156 = |Find EXIT or CHECK outside loops|.
             DATA t158 TYPE string.
             DATA(t159) = |Detects usages of EXIT or CHECK statements outside of loops.|.
             t159 = t159 && |\nUse RETURN to leave procesing blocks instead.|.
@@ -504,41 +419,34 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             DATA t166 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t166.
             DATA t170 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            DATA t171 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CREATE OBJECT t171.
-            t170 = t171.
-            DATA(t173) = |Styleguide|.
+            CREATE OBJECT t170.
             t170->load( ).
-            APPEND t173 TO t170->items.
+            APPEND |Styleguide| TO t170->items.
             t170->save( ).
-            DATA(t175) = |SingleFile|.
             t170->load( ).
-            APPEND t175 TO t170->items.
+            APPEND |SingleFile| TO t170->items.
             t170->save( ).
-            DATA(t177) = |Quickfix|.
             t170->load( ).
-            APPEND t177 TO t170->items.
+            APPEND |Quickfix| TO t170->items.
             t170->save( ).
             t166 = t170.
             DATA t180 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t180.
-            DATA(t183) = |CHECK is_valid = abap_true.\ndo_something( ).|.
             DATA(t184) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t184->has = abap_true.
-            t184->value = t183.
+            t184->value = |CHECK is_valid = abap_true.\ndo_something( ).|.
             t180 = t184.
             DATA t186 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t186.
-            DATA(t189) = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
             DATA(t190) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t190->has = abap_true.
-            t190->value = t189.
+            t190->value = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
             t186 = t190.
             DATA t192 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t192.
             DATA t194 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t194.
-            t153 = NEW zcl_lnt_irule_metadata( i_key = t154 i_title = t156 i_short_description = t158 i_bad_example = t180 i_good_example = t186 i_extended_information = t160 i_tags = t166 i_pragma = t192 i_pseudo_comment = t194 ).
+            t153 = NEW zcl_lnt_irule_metadata( i_key = |exit_or_check| i_title = |Find EXIT or CHECK outside loops| i_short_description = t158 i_bad_example = t180 i_good_example = t186 i_extended_information = t160 i_tags = t166 i_pragma = t192 i_pseudo_comment = t194 ).
             CREATE OBJECT t153->zlnt_view_ownkeys_b0e8086400eb.
             t153->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
             DATA t196 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -576,45 +484,38 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t153->zlnt_json_ownkeys_70e5fd461788.
             t153->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t203) = |key|.
             DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t204.
-            t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t203 p1 = t204 ).
-            DATA(t205) = |title|.
+            t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t204 ).
             DATA t206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t206.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t205 p1 = t206 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t206 ).
             ENDIF.
-            DATA(t207) = |shortDescription|.
             DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t208.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t208 ).
             ENDIF.
-            DATA(t209) = |extendedInformation|.
             DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t210.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t209 p1 = t210 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t210 ).
             ENDIF.
-            DATA(t211) = |tags|.
             DATA t212 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t212.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t211 p1 = t212 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t212 ).
             ENDIF.
-            DATA(t213) = |badExample|.
             DATA t214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t214.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t213 p1 = t214 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t214 ).
             ENDIF.
-            DATA(t215) = |goodExample|.
             DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t216.
             IF t153->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = t215 p1 = t216 ).
+              t153->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t216 ).
             ENDIF.
             t152 = t153->key.
             DATA t217 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -624,7 +525,7 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             t219 = t114.
             DATA t223 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             CLEAR t223.
-            t148 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t11 i_message_26cb = t64 i_key = t152 i_severity = t217 i_fix = t219 i_alternative_fixes = t223 ).
+            t148 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t11 i_message_26cb = |CHECK is not allowed outside of loops| i_key = t152 i_severity = t217 i_fix = t219 i_alternative_fixes = t223 ).
             t2->load( ).
             APPEND t148 TO t2->items.
             t2->save( ).
@@ -637,36 +538,21 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             t228 = xsdbool( t229 = abap_false ).
             t227 = t228.
             IF t228 = abap_true.
-              DATA t232 TYPE abap_bool.
-              t232 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_exit ).
-              t227 = t232.
+              t227 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_exit ).
             ENDIF.
             t226 = t227.
             IF t227 = abap_true.
-              DATA t234 TYPE abap_bool.
-              DATA t235 TYPE i.
               t4->load( ).
-              t235 = lines( t4->items ).
-              DATA(t237) = 0.
-              t234 = xsdbool( t235 = t237 ).
-              t226 = t234.
+              t226 = xsdbool( lines( t4->items ) = 0 ).
             ENDIF.
             IF t226 = abap_true.
-              DATA(t239) = |EXIT is not allowed outside of loops|.
               DATA t241 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-              DATA t243 TYPE REF TO zcl_lnt_abstract_token.
-              t243 = t11->get_first_token( ).
-              DATA(t245) = |RETURN|.
-              t241 = zcl_lnt_edit_helper=>replace_token( i_file = t1 i_token = t243 i_text = t245 ).
+              t241 = zcl_lnt_edit_helper=>replace_token( i_file = t1 i_token = t11->get_first_token( ) i_text = |RETURN| ).
               DATA t247 TYPE REF TO zcl_lnt_issue.
               CLEAR t247.
               DATA(t251) = VALUE string( ).
               DATA t252 TYPE REF TO zcl_lnt_irule_metadata.
               CLEAR t252.
-              DATA t253 TYPE string.
-              t253 = |exit_or_check|.
-              DATA t255 TYPE string.
-              t255 = |Find EXIT or CHECK outside loops|.
               DATA t257 TYPE string.
               DATA(t258) = |Detects usages of EXIT or CHECK statements outside of loops.|.
               t258 = t258 && |\nUse RETURN to leave procesing blocks instead.|.
@@ -685,41 +571,34 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
               DATA t265 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t265.
               DATA t269 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              DATA t270 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CREATE OBJECT t270.
-              t269 = t270.
-              DATA(t272) = |Styleguide|.
+              CREATE OBJECT t269.
               t269->load( ).
-              APPEND t272 TO t269->items.
+              APPEND |Styleguide| TO t269->items.
               t269->save( ).
-              DATA(t274) = |SingleFile|.
               t269->load( ).
-              APPEND t274 TO t269->items.
+              APPEND |SingleFile| TO t269->items.
               t269->save( ).
-              DATA(t276) = |Quickfix|.
               t269->load( ).
-              APPEND t276 TO t269->items.
+              APPEND |Quickfix| TO t269->items.
               t269->save( ).
               t265 = t269.
               DATA t279 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t279.
-              DATA(t282) = |CHECK is_valid = abap_true.\ndo_something( ).|.
               DATA(t283) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t283->has = abap_true.
-              t283->value = t282.
+              t283->value = |CHECK is_valid = abap_true.\ndo_something( ).|.
               t279 = t283.
               DATA t285 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t285.
-              DATA(t288) = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
               DATA(t289) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t289->has = abap_true.
-              t289->value = t288.
+              t289->value = |IF is_valid = abap_false.\n  RETURN.\nENDIF.\ndo_something( ).|.
               t285 = t289.
               DATA t291 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t291.
               DATA t293 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t293.
-              t252 = NEW zcl_lnt_irule_metadata( i_key = t253 i_title = t255 i_short_description = t257 i_bad_example = t279 i_good_example = t285 i_extended_information = t259 i_tags = t265 i_pragma = t291 i_pseudo_comment = t293 ).
+              t252 = NEW zcl_lnt_irule_metadata( i_key = |exit_or_check| i_title = |Find EXIT or CHECK outside loops| i_short_description = t257 i_bad_example = t279 i_good_example = t285 i_extended_information = t259 i_tags = t265 i_pragma = t291 i_pseudo_comment = t293 ).
               CREATE OBJECT t252->zlnt_view_ownkeys_b0e8086400eb.
               t252->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -757,45 +636,38 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
               ENDIF.
               CREATE OBJECT t252->zlnt_json_ownkeys_70e5fd461788.
               t252->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA(t302) = |key|.
               DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t303.
-              t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t302 p1 = t303 ).
-              DATA(t304) = |title|.
+              t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t303 ).
               DATA t305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t305.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t304 p1 = t305 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t305 ).
               ENDIF.
-              DATA(t306) = |shortDescription|.
               DATA t307 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t307.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t306 p1 = t307 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t307 ).
               ENDIF.
-              DATA(t308) = |extendedInformation|.
               DATA t309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t309.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t308 p1 = t309 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t309 ).
               ENDIF.
-              DATA(t310) = |tags|.
               DATA t311 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t311.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t310 p1 = t311 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t311 ).
               ENDIF.
-              DATA(t312) = |badExample|.
               DATA t313 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t313.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t312 p1 = t313 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t313 ).
               ENDIF.
-              DATA(t314) = |goodExample|.
               DATA t315 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t315.
               IF t252->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = t314 p1 = t315 ).
+                t252->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t315 ).
               ENDIF.
               t251 = t252->key.
               DATA t316 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -805,7 +677,7 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
               t318 = t241.
               DATA t322 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CLEAR t322.
-              t247 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t11 i_message_26cb = t239 i_key = t251 i_severity = t316 i_fix = t318 i_alternative_fixes = t322 ).
+              t247 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t11 i_message_26cb = |EXIT is not allowed outside of loops| i_key = t251 i_severity = t316 i_fix = t318 i_alternative_fixes = t322 ).
               t2->load( ).
               APPEND t247 TO t2->items.
               t2->save( ).

@@ -30,12 +30,9 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^L._.+$|.
-    me->zlnt_view_write_s_28b33920b847( p0 = t1 ).
-    DATA(t2) = |^LC_.+$|.
-    me->zlnt_view_write_s_959caf766a06( p0 = t2 ).
-    DATA(t3) = |^<L._.+>$|.
-    me->zlnt_view_write_s_2e8b9abc1750( p0 = t3 ).
+    me->zlnt_view_write_s_28b33920b847( p0 = |^L._.+$| ).
+    me->zlnt_view_write_s_959caf766a06( p0 = |^LC_.+$| ).
+    me->zlnt_view_write_s_2e8b9abc1750( p0 = |^<L._.+>$| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -53,8 +50,7 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_2cb5fe9e0aa7.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedData` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedData` ) )->as_string( ).
     ELSE.
       result = me->expected_data.
     ENDIF.
@@ -75,8 +71,7 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_b54b84b45d72.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedConstant` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedConstant` ) )->as_string( ).
     ELSE.
       result = me->expected_constant.
     ENDIF.
@@ -97,8 +92,7 @@ CLASS zcl_lnt_lcl_vrbl_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_6ea768f84b35.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedFS` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `expectedFS` ) )->as_string( ).
     ELSE.
       result = me->expected_fs.
     ENDIF.

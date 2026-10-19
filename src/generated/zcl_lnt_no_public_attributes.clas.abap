@@ -30,10 +30,6 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |no_public_attributes|.
-    DATA t4 TYPE string.
-    t4 = |No public attributes|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks that classes and interfaces don't contain any public |.
     t7 = t7 && |attributes.\nExceptions are excluded from this rule.|.
@@ -47,16 +43,12 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -66,16 +58,14 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
     t30->has = abap_true.
     t30->value = t29.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t35) = |CLASS zcl_foo DEFINITION PUBLIC.\n  PRIVATE SECTION.\n    DATA|.
     t35 = t35 && | counter TYPE i.\nENDCLASS.|.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
     t36->value = t35.
-    t32 = t36.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |no_public_attributes| i_title = |No public attributes| i_short_description = t6 i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -106,53 +96,43 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_description.
-    DATA t2 TYPE string.
     DATA t3 TYPE string.
     DATA(t4) = |Public attributes are not allowed, attribute "|.
     DATA(t6) = strlen( t4 ).
     t3 = |{ t4 }{ i_name }|.
-    DATA(t7) = |"|.
     DATA(t8) = strlen( t3 ).
-    t2 = |{ t3 }{ t7 }|.
-    result = t2.
+    result = |{ t3 }{ |"| }|.
 
   ENDMETHOD.
 
@@ -171,39 +151,19 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
     me->file = i_file.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t13 = me->gt_all_pblc_clss_attrbts( i_obj_1ed0 = t2 ).
-    t11 = t9->concat( p0 = t13 ).
-    t9 = t11.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t17) = CAST zlnt_runtime_arra_c22708faf2e3( me->gt_all_pblc_intrfc_attrbts( ) ).
-    t15 = t9->concat( p0 = t17 ).
-    t9 = t15.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t19 = me->find_all_issues( i_attributes = t9 ).
-    result = t19.
+    CREATE OBJECT t9.
+    t9 = t9->concat( p0 = me->gt_all_pblc_clss_attrbts( i_obj_1ed0 = t2 ) ).
+    t9 = t9->concat( p0 = CAST zlnt_runtime_arra_c22708faf2e3( me->gt_all_pblc_intrfc_attrbts( ) ) ).
+    result = me->find_all_issues( i_attributes = t9 ).
 
   ENDMETHOD.
 
   METHOD get_all_public_attributes.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t6 = me->gt_all_pblc_clss_attrbts( i_obj_1ed0 = t1 ).
-    t4 = t2->concat( p0 = t6 ).
-    t2 = t4.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t10) = CAST zlnt_runtime_arra_c22708faf2e3( me->gt_all_pblc_intrfc_attrbts( ) ).
-    t8 = t2->concat( p0 = t10 ).
-    t2 = t8.
+    CREATE OBJECT t2.
+    t2 = t2->concat( p0 = me->gt_all_pblc_clss_attrbts( i_obj_1ed0 = t1 ) ).
+    t2 = t2->concat( p0 = CAST zlnt_runtime_arra_c22708faf2e3( me->gt_all_pblc_intrfc_attrbts( ) ) ).
     result = t2.
 
   ENDMETHOD.
@@ -211,20 +171,12 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   METHOD gt_all_pblc_clss_attrbts.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_ddic.
-    DATA t5 TYPE REF TO zcl_lnt_ddic.
     DATA(t6) = me->reg.
-    t5 = NEW zcl_lnt_ddic( i_reg_f149 = t6 ).
-    t4 = t5.
+    t4 = NEW zcl_lnt_ddic( i_reg_f149 = t6 ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t8 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t11 TYPE REF TO zif_lnt_abap_file_information.
-    t11 = me->file->info.
-    t8 = t11.
-    t7 = t8->list_class_definitions( ).
+    t7 = me->file->info->list_class_definitions( ).
     DATA t13 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t14 TYPE REF TO object.
     DATA(t15) = VALUE i( ).
@@ -247,22 +199,11 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       ELSE.
         t13 ?= t14.
       ENDIF.
-      DATA(t18) = VALUE abap_bool( ).
-      DATA t20 TYPE REF TO zcl_lnt_info_class_definition.
-      CLEAR t20.
-      t20 = t13.
-      t18 = t4->is_exception( i_def = t20 i_obj_ac26 = t1 ).
-      IF t18 = abap_true.
+      IF t4->is_exception( i_def = t13 i_obj_ac26 = t1 ) = abap_true.
         CONTINUE.
       ENDIF.
-      DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t25.
-      DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t27.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t29.
-      t28 = t29.
+      CREATE OBJECT t28.
       DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t30 = t13->attributes.
       DATA t32 TYPE REF TO zcl_lnt_info_attribute.
@@ -289,20 +230,13 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
         ELSE.
           t32 ?= t33.
         ENDIF.
-        DATA t37 TYPE abap_bool.
-        DATA t38 TYPE f.
-        t38 = t32->visibility.
-        DATA(t40) = CONV f( 3 ).
-        t37 = xsdbool( t38 = t40 ).
-        IF t37 = abap_true.
+        IF xsdbool( t32->visibility = CONV f( 3 ) ) = abap_true.
           t28->load( ).
           APPEND t32 TO t28->items.
           t28->save( ).
         ENDIF.
       ENDDO.
-      t27 = t28.
-      t25 = t2->concat( p0 = t27 ).
-      t2 = t25.
+      t2 = t2->concat( p0 = t28 ).
     ENDDO.
     result = t2.
 
@@ -310,15 +244,9 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
 
   METHOD gt_all_pblc_intrfc_attrbts.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t7 TYPE REF TO zif_lnt_abap_file_information.
-    t7 = me->file->info.
-    t4 = t7.
-    t3 = t4->list_interface_definitions( ).
+    t3 = me->file->info->list_interface_definitions( ).
     DATA t9 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     DATA t10 TYPE REF TO object.
     DATA(t11) = VALUE i( ).
@@ -341,14 +269,8 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       ELSE.
         t9 ?= t10.
       ENDIF.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t14.
-      DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t16.
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t18.
-      t17 = t18.
+      CREATE OBJECT t17.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t19 = t9->attributes.
       DATA t21 TYPE REF TO zcl_lnt_info_attribute.
@@ -375,20 +297,13 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
         ELSE.
           t21 ?= t22.
         ENDIF.
-        DATA t26 TYPE abap_bool.
-        DATA t27 TYPE f.
-        t27 = t21->visibility.
-        DATA(t29) = CONV f( 3 ).
-        t26 = xsdbool( t27 = t29 ).
-        IF t26 = abap_true.
+        IF xsdbool( t21->visibility = CONV f( 3 ) ) = abap_true.
           t17->load( ).
           APPEND t21 TO t17->items.
           t17->save( ).
         ENDIF.
       ENDDO.
-      t16 = t17.
-      t14 = t1->concat( p0 = t16 ).
-      t1 = t14.
+      t1 = t1->concat( p0 = t17 ).
     ENDDO.
     result = t1.
 
@@ -397,9 +312,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
   METHOD find_all_issues.
     DATA(t1) = i_attributes.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_info_attribute.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -429,19 +342,12 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       t11 = xsdbool( t12 = abap_true ).
       t10 = t11.
       IF t11 = abap_true.
-        DATA t15 TYPE abap_bool.
-        t15 = t5->read_only.
-        t10 = t15.
+        t10 = t5->read_only.
       ENDIF.
       IF t10 = abap_true.
         CONTINUE.
       ELSE.
-        DATA t17 TYPE abap_bool.
-        DATA t18 TYPE string.
-        t18 = t5->level.
-        DATA(t20) = |constant|.
-        t17 = xsdbool( t18 = t20 ).
-        IF t17 = abap_true.
+        IF xsdbool( t5->level = |constant| ) = abap_true.
           CONTINUE.
         ELSE.
           DATA t21 TYPE abap_bool.
@@ -451,14 +357,11 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
           t22 = xsdbool( t23 = abap_true ).
           t21 = t22.
           IF t22 = abap_true.
-            DATA(t26) = VALUE abap_bool( ).
             DATA(t27) = VALUE i( ).
             DATA t28 TYPE string.
             DATA t29 TYPE REF TO zcl_lnt_abstract_file.
             t29 = me->file.
-            DATA t31 TYPE string.
-            t31 = t29->filename.
-            t28 = t31.
+            t28 = t29->filename.
             DATA(t33) = |.testclasses.|.
             DATA(t34) = strlen( t28 ).
             IF t33 IS INITIAL.
@@ -469,9 +372,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
                 t27 = -1.
               ENDIF.
             ENDIF.
-            DATA(t35) = 0.
-            t26 = xsdbool( t27 >= t35 ).
-            t21 = t26.
+            t21 = xsdbool( t27 >= 0 ).
           ENDIF.
           IF t21 = abap_true.
             CONTINUE.
@@ -485,22 +386,15 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       DATA t40 TYPE string.
       DATA t42 TYPE string.
       t42 = t5->name.
-      DATA t44 TYPE string.
       DATA t45 TYPE string.
       DATA(t46) = |Public attributes are not allowed, attribute "|.
       DATA(t48) = strlen( t46 ).
       t45 = |{ t46 }{ t42 }|.
-      DATA(t49) = |"|.
       DATA(t50) = strlen( t45 ).
-      t44 = |{ t45 }{ t49 }|.
-      t40 = t44.
+      t40 = |{ t45 }{ |"| }|.
       DATA(t51) = VALUE string( ).
       DATA t52 TYPE REF TO zcl_lnt_irule_metadata.
       CLEAR t52.
-      DATA t53 TYPE string.
-      t53 = |no_public_attributes|.
-      DATA t55 TYPE string.
-      t55 = |No public attributes|.
       DATA t57 TYPE string.
       DATA(t58) = |Checks that classes and interfaces don't contain any public |.
       t58 = t58 && |attributes.\nExceptions are excluded from this rule.|.
@@ -516,16 +410,12 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       DATA t65 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t65.
       DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t70 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t70.
-      t69 = t70.
-      DATA(t72) = |Styleguide|.
+      CREATE OBJECT t69.
       t69->load( ).
-      APPEND t72 TO t69->items.
+      APPEND |Styleguide| TO t69->items.
       t69->save( ).
-      DATA(t74) = |SingleFile|.
       t69->load( ).
-      APPEND t74 TO t69->items.
+      APPEND |SingleFile| TO t69->items.
       t69->save( ).
       t65 = t69.
       DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -548,7 +438,7 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       CLEAR t89.
       DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t91.
-      t52 = NEW zcl_lnt_irule_metadata( i_key = t53 i_title = t55 i_short_description = t57 i_bad_example = t77 i_good_example = t83 i_extended_information = t59 i_tags = t65 i_pragma = t89 i_pseudo_comment = t91 ).
+      t52 = NEW zcl_lnt_irule_metadata( i_key = |no_public_attributes| i_title = |No public attributes| i_short_description = t57 i_bad_example = t77 i_good_example = t83 i_extended_information = t59 i_tags = t65 i_pragma = t89 i_pseudo_comment = t91 ).
       CREATE OBJECT t52->zlnt_view_ownkeys_b0e8086400eb.
       t52->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -586,45 +476,38 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t52->zlnt_json_ownkeys_70e5fd461788.
       t52->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t100) = |key|.
       DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t101.
-      t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t100 p1 = t101 ).
-      DATA(t102) = |title|.
+      t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t101 ).
       DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t103.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t102 p1 = t103 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t103 ).
       ENDIF.
-      DATA(t104) = |shortDescription|.
       DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t105.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t104 p1 = t105 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t105 ).
       ENDIF.
-      DATA(t106) = |extendedInformation|.
       DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t107.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t106 p1 = t107 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t107 ).
       ENDIF.
-      DATA(t108) = |tags|.
       DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t109.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t108 p1 = t109 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t109 ).
       ENDIF.
-      DATA(t110) = |badExample|.
       DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t111.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t110 p1 = t111 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t111 ).
       ENDIF.
-      DATA(t112) = |goodExample|.
       DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t113.
       IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t112 p1 = t113 ).
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t113 ).
       ENDIF.
       t51 = t52->key.
       DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

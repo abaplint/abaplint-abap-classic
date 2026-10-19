@@ -25,10 +25,9 @@ CLASS zcl_lnt_code_lens_settings IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `messageText` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |messageText|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |messageText| p1 = t6 ).
     ENDIF.
     me->dynamic_exceptions = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `dynamicExceptions`.
@@ -36,10 +35,9 @@ CLASS zcl_lnt_code_lens_settings IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `dynamicExceptions` p1 = t8 ).
     ENDIF.
-    DATA(t9) = |dynamicExceptions|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |dynamicExceptions| p1 = t10 ).
     ENDIF.
   ENDMETHOD.
 

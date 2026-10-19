@@ -22,15 +22,12 @@ CLASS zcl_lnt_ddl_cardinality_value IMPLEMENTATION.
       t3->cval = t4.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |*|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |*|.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t9.
-    DATA t10 TYPE REF TO zif_lnt_statement_runnable.
-    t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t6 i_rest = t9 ).
-    result = t10.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t6 i_rest = t9 ).
 
   ENDMETHOD.
 

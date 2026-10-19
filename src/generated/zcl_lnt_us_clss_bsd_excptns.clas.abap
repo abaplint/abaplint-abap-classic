@@ -26,10 +26,6 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |use_class_based_exceptions|.
-    DATA t4 TYPE string.
-    t4 = |Use class based exceptions|.
     DATA t6 TYPE string.
     DATA(t7) = |Use class based exceptions, checks interface and class defin|.
     t7 = t7 && |itions|.
@@ -43,16 +39,12 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -62,16 +54,14 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
     t30->has = abap_true.
     t30->value = t29.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t35) = |INTERFACE lif.\n  METHODS load_data\n    RAISING\n      cx_some|.
     t35 = t35 && |thing.\nENDINTERFACE.|.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
     t36->value = t35.
-    t32 = t36.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |use_class_based_exceptions| i_title = |Use class based exceptions| i_short_description = t6 i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -102,38 +92,31 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
@@ -157,36 +140,25 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
   METHOD r_p_i_s_r_u_c_b_e_t_u_cl_bs_ex.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_structure_node.
-    DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    t11 = t1->structure.
-    t7 = t11.
+    t7 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t14) = xsdbool( t7 IS INITIAL ).
-    IF t14 = abap_true.
+    IF xsdbool( t7 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t18 TYPE REF TO zcl_lnt_structure_node.
       t18 = t7.
       DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
-      t17 = t18->find_all_statements( i_type_9913 = t20 ).
-      t13 = t17.
+      t13 = t18->find_all_statements( i_type_9913 = t20 ).
     ENDIF.
     t5 = t13.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t22 TYPE abap_bool.
-    t22 = xsdbool( t5 IS BOUND ).
-    IF t22 = abap_true.
+    IF xsdbool( t5 IS BOUND ) = abap_true.
       t21 = t5.
     ELSE.
-      DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t26.
-      t21 = t26.
+      CREATE OBJECT t21.
     ENDIF.
     t4 = t21.
     DATA t27 TYPE REF TO zcl_lnt_statement_node.
@@ -212,27 +184,16 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
         t27 ?= t28.
       ENDIF.
       DATA t32 TYPE REF TO zcl_lnt_expression_node.
-      DATA t33 TYPE REF TO zcl_lnt_expression_node.
       DATA(t35) = zlnt_runtime_desc_78196487750d=>zlnt_member_d229_3a5c1215c384.
-      t33 = t27->find_direct_expression( i_type_9913 = t35 ).
-      t32 = t33.
-      DATA t36 TYPE abap_bool.
-      t36 = xsdbool( t32 IS BOUND ).
-      IF t36 = abap_true.
+      t32 = t27->find_direct_expression( i_type_9913 = t35 ).
+      IF xsdbool( t32 IS BOUND ) = abap_true.
         DATA t39 TYPE REF TO zcl_lnt_issue.
         CLEAR t39.
         DATA t41 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t42 TYPE REF TO zcl_lnt_expression_node.
-        t42 = t32.
-        t41 = t42->get_first_token( ).
-        DATA(t44) = |Use class based exceptions|.
+        t41 = t32->get_first_token( ).
         DATA(t45) = VALUE string( ).
         DATA t46 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t46.
-        DATA t47 TYPE string.
-        t47 = |use_class_based_exceptions|.
-        DATA t49 TYPE string.
-        t49 = |Use class based exceptions|.
         DATA t51 TYPE string.
         DATA(t52) = |Use class based exceptions, checks interface and class defin|.
         t52 = t52 && |itions|.
@@ -248,16 +209,12 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
         DATA t59 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t59.
         DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t64.
-        t63 = t64.
-        DATA(t66) = |Styleguide|.
+        CREATE OBJECT t63.
         t63->load( ).
-        APPEND t66 TO t63->items.
+        APPEND |Styleguide| TO t63->items.
         t63->save( ).
-        DATA(t68) = |SingleFile|.
         t63->load( ).
-        APPEND t68 TO t63->items.
+        APPEND |SingleFile| TO t63->items.
         t63->save( ).
         t59 = t63.
         DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -280,7 +237,7 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
         CLEAR t83.
         DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t85.
-        t46 = NEW zcl_lnt_irule_metadata( i_key = t47 i_title = t49 i_short_description = t51 i_bad_example = t71 i_good_example = t77 i_extended_information = t53 i_tags = t59 i_pragma = t83 i_pseudo_comment = t85 ).
+        t46 = NEW zcl_lnt_irule_metadata( i_key = |use_class_based_exceptions| i_title = |Use class based exceptions| i_short_description = t51 i_bad_example = t71 i_good_example = t77 i_extended_information = t53 i_tags = t59 i_pragma = t83 i_pseudo_comment = t85 ).
         CREATE OBJECT t46->zlnt_view_ownkeys_b0e8086400eb.
         t46->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -318,52 +275,45 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t46->zlnt_json_ownkeys_70e5fd461788.
         t46->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t94) = |key|.
         DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t95.
-        t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
-        DATA(t96) = |title|.
+        t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t95 ).
         DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t97.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t97 ).
         ENDIF.
-        DATA(t98) = |shortDescription|.
         DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t99.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t98 p1 = t99 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t99 ).
         ENDIF.
-        DATA(t100) = |extendedInformation|.
         DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t101.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t100 p1 = t101 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t101 ).
         ENDIF.
-        DATA(t102) = |tags|.
         DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t103.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t102 p1 = t103 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t103 ).
         ENDIF.
-        DATA(t104) = |badExample|.
         DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t105.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t104 p1 = t105 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t105 ).
         ENDIF.
-        DATA(t106) = |goodExample|.
         DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t107.
         IF t46->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = t106 p1 = t107 ).
+          t46->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t107 ).
         ENDIF.
         t45 = t46->key.
         DATA t108 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t108.
         DATA t109 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t109.
-        t39 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t41 i_message_26cb = t44 i_key = t45 i_severity = t108 i_fix = t109 ).
+        t39 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t41 i_message_26cb = |Use class based exceptions| i_key = t45 i_severity = t108 i_fix = t109 ).
         t2->load( ).
         APPEND t39 TO t2->items.
         t2->save( ).

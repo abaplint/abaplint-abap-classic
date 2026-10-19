@@ -38,7 +38,6 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
 
   METHOD get_by_name.
     DATA(t1) = i_name.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t3 = t1.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -48,12 +47,10 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     ELSEIF t3->has = abap_false.
       t7 = abap_true.
     ENDIF.
-    t2 = t7.
-    IF t2 = abap_true.
+    IF t7 = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
-    DATA t10 TYPE REF TO zif_lnt_method_definition.
     DATA(t11) = me->all.
     DATA t12 TYPE string.
     DATA t13 TYPE string.
@@ -65,18 +62,15 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     ELSE.
       t12 = zlnt_runtime_uppe_91169605024d=>full( t12 ).
     ENDIF.
-    t10 = t11->get( p0 = t12 ).
-    result = t10.
+    result = t11->get( p0 = t12 ).
 
   ENDMETHOD.
 
   METHOD parse_interface.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
-    t4 = i_node->find_all_statements( i_type_9913 = t6 ).
-    t3 = t4.
+    t3 = i_node->find_all_statements( i_type_9913 = t6 ).
     DATA t8 TYPE REF TO zcl_lnt_statement_node.
     DATA t9 TYPE REF TO object.
     DATA(t10) = VALUE i( ).
@@ -99,8 +93,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       ELSE.
         t8 ?= t9.
       ENDIF.
-      DATA(t14) = 3.
-      me->add_51c1( i_def = t8 i_visibility_5c1f = t14 i_input_967e = t2 ).
+      me->add_51c1( i_def = t8 i_visibility_5c1f = 3 i_input_967e = t2 ).
     ENDDO.
   ENDMETHOD.
 
@@ -110,32 +103,22 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d700_0943ee7a14b4.
     t4 = t1->find_direct_structure( i_type_9913 = t6 ).
-    DATA(t7) = VALUE abap_bool( ).
-    t7 = xsdbool( t4 IS BOUND ).
-    IF t7 = abap_true.
+    IF xsdbool( t4 IS BOUND ) = abap_true.
       me->parse_interface( i_node = t1 i_input_967e = t2 ).
       RETURN.
     ENDIF.
     DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    DATA t12 TYPE REF TO zcl_lnt_structure_node.
     DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d701_259241cbe79e.
-    t12 = t1->find_direct_structure( i_type_9913 = t14 ).
-    t11 = t12.
-    DATA(t15) = VALUE abap_bool( ).
-    DATA(t16) = VALUE abap_bool( ).
-    t16 = xsdbool( t11 IS BOUND ).
-    t15 = xsdbool( t16 = abap_false ).
-    IF t15 = abap_true.
+    t11 = t1->find_direct_structure( i_type_9913 = t14 ).
+    IF xsdbool( xsdbool( t11 IS BOUND ) = abap_false ) = abap_true.
       DATA t18 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t19 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t22) = |MethodDefinitions, expected ClassDefinition as part of input|.
       t22 = t22 && | node|.
       DATA(t23) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t23->has = abap_true.
       t23->value = t22.
-      t20 = t23.
-      t19 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t20 ).
+      t19 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t23 ).
       t18 = NEW #( ).
       t18->payload = t19.
       CLEAR t18->source_value.
@@ -162,36 +145,27 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       ENDIF.
       RAISE EXCEPTION t18.
     ENDIF.
-    DATA t28 TYPE REF TO zcl_lnt_structure_node.
     DATA t29 TYPE REF TO zcl_lnt_structure_node.
     t29 = t11.
     DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d718_3ac015f16676.
-    t28 = t29->find_direct_structure( i_type_9913 = t31 ).
     DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t35 TYPE REF TO zcl_lnt_structure_node.
-    t35 = t28.
+    t35 = t29->find_direct_structure( i_type_9913 = t31 ).
     DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t38) = xsdbool( t35 IS INITIAL ).
-    IF t38 = abap_true.
+    IF xsdbool( t35 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t42 TYPE REF TO zcl_lnt_structure_node.
       t42 = t35.
       DATA(t44) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
-      t41 = t42->find_all_statements( i_type_9913 = t44 ).
-      t37 = t41.
+      t37 = t42->find_all_statements( i_type_9913 = t44 ).
     ENDIF.
     t33 = t37.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t46) = VALUE abap_bool( ).
-    t46 = xsdbool( t33 IS BOUND ).
-    IF t46 = abap_true.
+    IF xsdbool( t33 IS BOUND ) = abap_true.
       t45 = t33.
     ELSE.
-      DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t50.
-      t45 = t50.
+      CREATE OBJECT t45.
     ENDIF.
     t32 = t45.
     DATA t51 TYPE REF TO zcl_lnt_statement_node.
@@ -217,37 +191,27 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       ELSE.
         t51 ?= t52.
       ENDIF.
-      DATA(t57) = 1.
-      me->add_51c1( i_def = t51 i_visibility_5c1f = t57 i_input_967e = t2 ).
+      me->add_51c1( i_def = t51 i_visibility_5c1f = 1 i_input_967e = t2 ).
     ENDDO.
-    DATA t60 TYPE REF TO zcl_lnt_structure_node.
     DATA(t62) = zlnt_runtime_desc_78196487750d=>zlnt_member_d717_78ede11c0134.
-    t60 = t1->find_direct_structure( i_type_9913 = t62 ).
     DATA t63 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t66 TYPE REF TO zcl_lnt_structure_node.
-    t66 = t60.
+    t66 = t1->find_direct_structure( i_type_9913 = t62 ).
     DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t69) = xsdbool( t66 IS INITIAL ).
-    IF t69 = abap_true.
+    IF xsdbool( t66 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t73 TYPE REF TO zcl_lnt_structure_node.
       t73 = t66.
       DATA(t75) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
-      t72 = t73->find_all_statements( i_type_9913 = t75 ).
-      t68 = t72.
+      t68 = t73->find_all_statements( i_type_9913 = t75 ).
     ENDIF.
     t64 = t68.
     DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t77) = VALUE abap_bool( ).
-    t77 = xsdbool( t64 IS BOUND ).
-    IF t77 = abap_true.
+    IF xsdbool( t64 IS BOUND ) = abap_true.
       t76 = t64.
     ELSE.
-      DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t81.
-      t76 = t81.
+      CREATE OBJECT t76.
     ENDIF.
     t63 = t76.
     DATA t82 TYPE REF TO zcl_lnt_statement_node.
@@ -273,37 +237,27 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       ELSE.
         t82 ?= t83.
       ENDIF.
-      DATA(t88) = 2.
-      me->add_51c1( i_def = t82 i_visibility_5c1f = t88 i_input_967e = t2 ).
+      me->add_51c1( i_def = t82 i_visibility_5c1f = 2 i_input_967e = t2 ).
     ENDDO.
-    DATA t91 TYPE REF TO zcl_lnt_structure_node.
     DATA(t93) = zlnt_runtime_desc_78196487750d=>zlnt_member_d716_74fc3af0c6d3.
-    t91 = t1->find_direct_structure( i_type_9913 = t93 ).
     DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t95 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t97 TYPE REF TO zcl_lnt_structure_node.
-    t97 = t91.
+    t97 = t1->find_direct_structure( i_type_9913 = t93 ).
     DATA t99 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t100) = xsdbool( t97 IS INITIAL ).
-    IF t100 = abap_true.
+    IF xsdbool( t97 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t104 TYPE REF TO zcl_lnt_structure_node.
       t104 = t97.
       DATA(t106) = zlnt_runtime_desc_78196487750d=>zlnt_member_d553_51f8e3543d58.
-      t103 = t104->find_all_statements( i_type_9913 = t106 ).
-      t99 = t103.
+      t99 = t104->find_all_statements( i_type_9913 = t106 ).
     ENDIF.
     t95 = t99.
     DATA t107 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t108) = VALUE abap_bool( ).
-    t108 = xsdbool( t95 IS BOUND ).
-    IF t108 = abap_true.
+    IF xsdbool( t95 IS BOUND ) = abap_true.
       t107 = t95.
     ELSE.
-      DATA t112 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t112.
-      t107 = t112.
+      CREATE OBJECT t107.
     ENDIF.
     t94 = t107.
     DATA t113 TYPE REF TO zcl_lnt_statement_node.
@@ -329,8 +283,7 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       ELSE.
         t113 ?= t114.
       ENDIF.
-      DATA(t119) = 3.
-      me->add_51c1( i_def = t113 i_visibility_5c1f = t119 i_input_967e = t2 ).
+      me->add_51c1( i_def = t113 i_visibility_5c1f = 3 i_input_967e = t2 ).
     ENDDO.
   ENDMETHOD.
 
@@ -340,27 +293,17 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     TRY.
         DATA t5 TYPE REF TO zcl_lnt_method_definition.
-        DATA t6 TYPE REF TO zcl_lnt_method_definition.
         DATA(t8) = VALUE f( ).
         t8 = i_visibility_5c1f.
-        t6 = NEW zcl_lnt_method_definition( i_node = t1 i_visibility_5c1f = t8 i_input_967e = t3 ).
-        t5 = t6.
+        t5 = NEW zcl_lnt_method_definition( i_node = t1 i_visibility_5c1f = t8 i_input_967e = t3 ).
         DATA t11 TYPE REF TO zlnt_runtime_map__df7ea9ca9d2a.
         DATA(t12) = me->all.
         DATA(t13) = VALUE string( ).
         DATA(t14) = VALUE string( ).
         DATA t15 TYPE REF TO zcl_lnt_fi_identifier.
         t15 = t5.
-        DATA(t17) = VALUE string( ).
         DATA(t18) = VALUE string( ).
-        DATA(t19) = VALUE string( ).
-        DATA t21 TYPE REF TO zcl_lnt_abstract_token.
-        t21 = t15->token.
-        DATA(t23) = VALUE string( ).
-        t23 = t21->str.
-        t19 = t23.
-        t18 = t19.
-        DATA(t25) = VALUE abap_bool( ).
+        t18 = t15->token->str.
         DATA(t26) = VALUE string( ).
         DATA(t27) = t18.
         DATA(t28) = 0.
@@ -373,17 +316,13 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t28 > t30 OR t29 <= 0.
-          CLEAR t26.
         ELSE.
           IF t29 > t30 - t28.
             t29 = t30 - t28.
           ENDIF.
           t26 = t27+t28(t29).
         ENDIF.
-        DATA(t31) = |!|.
-        t25 = xsdbool( t26 = t31 ).
-        IF t25 = abap_true.
-          DATA(t32) = VALUE string( ).
+        IF xsdbool( t26 = |!| ) = abap_true.
           DATA(t33) = VALUE string( ).
           t33 = t18.
           DATA(t35) = VALUE string( ).
@@ -398,18 +337,15 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t37 > t41 OR t38 <= 0.
-            CLEAR t35.
           ELSE.
             IF t38 > t41 - t37.
               t38 = t41 - t37.
             ENDIF.
             t35 = t33+t37(t38).
           ENDIF.
-          t32 = t35.
-          t18 = t32.
+          t18 = t35.
         ENDIF.
-        t17 = t18.
-        t14 = t17.
+        t14 = t18.
         DATA(t43) = strlen( t14 ).
         t13 = t14.
         IF t13 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.

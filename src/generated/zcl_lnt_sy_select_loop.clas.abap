@@ -14,13 +14,9 @@ CLASS zcl_lnt_sy_select_loop IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0.
-    t4 = i_node->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA t7 TYPE abap_bool.
-    t7 = xsdbool( t3 IS BOUND ).
-    IF t7 = abap_true.
+    t3 = i_node->find_direct_expression( i_type_9913 = t6 ).
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_expression_node.
       t9 = t3.
       DATA t12 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -28,12 +24,10 @@ CLASS zcl_lnt_sy_select_loop IMPLEMENTATION.
       t15->has = abap_true.
       t15->value = abap_false.
       t12 = t15.
-      DATA t17 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA(t20) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t20->has = abap_true.
       t20->value = abap_true.
-      t17 = t20.
-      zcl_lnt_sy_expres_select=>run_syntax( i_node = t9 i_input_967e = t2 i_skip_implicit_into = t12 i_select_loop_6767 = t17 ).
+      zcl_lnt_sy_expres_select=>run_syntax( i_node = t9 i_input_967e = t2 i_skip_implicit_into = t12 i_select_loop_6767 = t20 ).
     ENDIF.
   ENDMETHOD.
 

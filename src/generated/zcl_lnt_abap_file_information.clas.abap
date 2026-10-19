@@ -25,16 +25,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_class_implementations.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t1 = me->parsed->implementations.
-    result = t1.
+    result = me->parsed->implementations.
 
   ENDMETHOD.
 
   METHOD list_interface_definitions.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t1 = me->parsed->interfaces.
-    result = t1.
+    result = me->parsed->interfaces.
 
   ENDMETHOD.
 
@@ -74,19 +70,10 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t8 ?= t9.
       ENDIF.
-      DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      t17 = t8->identifier.
-      DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      t23 = t17->token.
-      DATA t25 TYPE string.
-      t25 = t23->str.
-      t20 = t25.
-      DATA(t27) = VALUE abap_bool( ).
+      t20 = t8->identifier->token->str.
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
       DATA(t30) = 0.
@@ -99,17 +86,13 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t30 > t32 OR t31 <= 0.
-        CLEAR t28.
       ELSE.
         IF t31 > t32 - t30.
           t31 = t32 - t30.
         ENDIF.
         t28 = t29+t30(t31).
       ENDIF.
-      DATA(t33) = |!|.
-      t27 = xsdbool( t28 = t33 ).
-      IF t27 = abap_true.
-        DATA(t34) = VALUE string( ).
+      IF xsdbool( t28 = |!| ) = abap_true.
         DATA t35 TYPE string.
         t35 = t20.
         DATA(t37) = VALUE string( ).
@@ -124,18 +107,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t39 > t43 OR t40 <= 0.
-          CLEAR t37.
         ELSE.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
           t37 = t35+t39(t40).
         ENDIF.
-        t34 = t37.
-        t20 = t34.
+        t20 = t37.
       ENDIF.
-      t19 = t20.
-      t15 = t19.
+      t15 = t20.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
       IF t14 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -143,8 +123,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      t13 = xsdbool( t14 = t2 ).
-      IF t13 = abap_true.
+      IF xsdbool( t14 = t2 ) = abap_true.
         result = t8.
         RETURN.
       ENDIF.
@@ -154,9 +133,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_class_definitions.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t1 = me->parsed->classes.
-    result = t1.
+    result = me->parsed->classes.
 
   ENDMETHOD.
 
@@ -196,19 +173,10 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t8 ?= t9.
       ENDIF.
-      DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      t17 = t8->identifier.
-      DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      t23 = t17->token.
-      DATA t25 TYPE string.
-      t25 = t23->str.
-      t20 = t25.
-      DATA(t27) = VALUE abap_bool( ).
+      t20 = t8->identifier->token->str.
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
       DATA(t30) = 0.
@@ -221,17 +189,13 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t30 > t32 OR t31 <= 0.
-        CLEAR t28.
       ELSE.
         IF t31 > t32 - t30.
           t31 = t32 - t30.
         ENDIF.
         t28 = t29+t30(t31).
       ENDIF.
-      DATA(t33) = |!|.
-      t27 = xsdbool( t28 = t33 ).
-      IF t27 = abap_true.
-        DATA(t34) = VALUE string( ).
+      IF xsdbool( t28 = |!| ) = abap_true.
         DATA t35 TYPE string.
         t35 = t20.
         DATA(t37) = VALUE string( ).
@@ -246,18 +210,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t39 > t43 OR t40 <= 0.
-          CLEAR t37.
         ELSE.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
           t37 = t35+t39(t40).
         ENDIF.
-        t34 = t37.
-        t20 = t34.
+        t20 = t37.
       ENDIF.
-      t19 = t20.
-      t15 = t19.
+      t15 = t20.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
       IF t14 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -265,8 +226,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      t13 = xsdbool( t14 = t2 ).
-      IF t13 = abap_true.
+      IF xsdbool( t14 = t2 ) = abap_true.
         result = t8.
         RETURN.
       ENDIF.
@@ -311,19 +271,10 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t8 ?= t9.
       ENDIF.
-      DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      t17 = t8->identifier.
-      DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      t23 = t17->token.
-      DATA t25 TYPE string.
-      t25 = t23->str.
-      t20 = t25.
-      DATA(t27) = VALUE abap_bool( ).
+      t20 = t8->identifier->token->str.
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
       DATA(t30) = 0.
@@ -336,17 +287,13 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t30 > t32 OR t31 <= 0.
-        CLEAR t28.
       ELSE.
         IF t31 > t32 - t30.
           t31 = t32 - t30.
         ENDIF.
         t28 = t29+t30(t31).
       ENDIF.
-      DATA(t33) = |!|.
-      t27 = xsdbool( t28 = t33 ).
-      IF t27 = abap_true.
-        DATA(t34) = VALUE string( ).
+      IF xsdbool( t28 = |!| ) = abap_true.
         DATA t35 TYPE string.
         t35 = t20.
         DATA(t37) = VALUE string( ).
@@ -361,18 +308,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t39 > t43 OR t40 <= 0.
-          CLEAR t37.
         ELSE.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
           t37 = t35+t39(t40).
         ENDIF.
-        t34 = t37.
-        t20 = t34.
+        t20 = t37.
       ENDIF.
-      t19 = t20.
-      t15 = t19.
+      t15 = t20.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
       IF t14 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -380,8 +324,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      t13 = xsdbool( t14 = t2 ).
-      IF t13 = abap_true.
+      IF xsdbool( t14 = t2 ) = abap_true.
         result = t8.
         RETURN.
       ENDIF.
@@ -391,9 +334,7 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_form_definitions.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t1 = me->parsed->forms.
-    result = t1.
+    result = me->parsed->forms.
 
   ENDMETHOD.
 

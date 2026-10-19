@@ -29,19 +29,13 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |release_idoc|.
-    DATA t4 TYPE string.
-    t4 = |Release iDoc|.
-    DATA t6 TYPE string.
-    t6 = |Checks idoc types and segments are set to status released|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t8 i_good_example = t10 i_extended_information = t12 i_tags = t14 i_pragma = t16 i_pseudo_comment = t18 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |release_idoc| i_title = |Release iDoc| i_short_description = |Checks idoc types and segments are set to status released| i_bad_example = t8 i_good_example = t10 i_extended_information = t12 i_tags = t14 i_pragma = t16 i_pseudo_comment = t18 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -56,18 +50,15 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t23) = |key|.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t23 p1 = t24 ).
-    DATA(t25) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t24 ).
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t25 p1 = t26 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t26 ).
     ENDIF.
-    DATA(t27) = |shortDescription|.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t27 p1 = t28 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t28 ).
     ENDIF.
     result = t1.
 
@@ -97,28 +88,16 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zif_lnt_file.
-    DATA t3 TYPE REF TO zif_lnt_file.
-    t3 = t1->get_xml_file( ).
-    t2 = t3.
-    DATA(t5) = VALUE abap_bool( ).
+    t2 = t1->get_xml_file( ).
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t5 = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t12.
-      result = t12.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
-    DATA t13 TYPE abap_bool.
-    t13 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ).
-    IF t13 = abap_true.
-      DATA(t15) = VALUE abap_bool( ).
-      DATA(t16) = VALUE abap_bool( ).
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ) = abap_true.
       DATA(t17) = VALUE i( ).
       DATA t18 TYPE string.
-      DATA t19 TYPE REF TO zif_lnt_file.
-      t19 = t2.
-      t18 = t19->get_raw( ).
+      t18 = t2->get_raw( ).
       DATA(t21) = |<SEGMENTDEFINITION>|.
       DATA(t22) = strlen( t18 ).
       IF t21 IS INITIAL.
@@ -129,34 +108,19 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
           t17 = -1.
         ENDIF.
       ENDIF.
-      DATA(t23) = 0.
-      t16 = xsdbool( t17 >= t23 ).
-      t15 = xsdbool( t16 = abap_false ).
-      IF t15 = abap_true.
-        DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t25.
-        result = t25.
+      IF xsdbool( xsdbool( t17 >= 0 ) = abap_false ) = abap_true.
+        CREATE OBJECT result.
         RETURN.
       ENDIF.
     ELSE.
-      DATA t26 TYPE abap_bool.
-      DATA t27 TYPE abap_bool.
-      t27 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_idoc ).
-      t26 = xsdbool( t27 = abap_false ).
-      IF t26 = abap_true.
-        DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t29.
-        result = t29.
+      IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_idoc ) = abap_false ) = abap_true.
+        CREATE OBJECT result.
         RETURN.
       ENDIF.
     ENDIF.
-    DATA(t30) = VALUE abap_bool( ).
-    DATA(t31) = VALUE abap_bool( ).
     DATA(t32) = VALUE i( ).
     DATA t33 TYPE string.
-    DATA t34 TYPE REF TO zif_lnt_file.
-    t34 = t2.
-    t33 = t34->get_raw( ).
+    t33 = t2->get_raw( ).
     DATA(t36) = |<CLOSED>X</CLOSED>|.
     DATA(t37) = strlen( t33 ).
     IF t36 IS INITIAL.
@@ -167,17 +131,12 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
         t32 = -1.
       ENDIF.
     ENDIF.
-    DATA(t38) = 0.
-    t31 = xsdbool( t32 >= t38 ).
-    t30 = xsdbool( t31 = abap_false ).
-    IF t30 = abap_true.
+    IF xsdbool( xsdbool( t32 >= 0 ) = abap_false ) = abap_true.
       DATA t41 TYPE REF TO zcl_lnt_position.
-      DATA(t42) = CONV f( 1 ).
-      DATA(t43) = CONV f( 1 ).
       DATA(t44) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t44->has = abap_true.
-      t44->value = t43.
-      t41 = NEW zcl_lnt_position( i_row = t42 i_col = t44 ).
+      t44->value = CONV f( 1 ).
+      t41 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t44 ).
       DATA t46 TYPE REF TO zcl_lnt_issue.
       DATA t47 TYPE REF TO zif_lnt_file.
       DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -196,22 +155,15 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       ELSE.
         t47 ?= t51.
       ENDIF.
-      DATA(t55) = |Idoc type/segement status must be set to released|.
       DATA(t56) = VALUE string( ).
       DATA t57 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t58 TYPE string.
-      t58 = |release_idoc|.
-      DATA t60 TYPE string.
-      t60 = |Release iDoc|.
-      DATA t62 TYPE string.
-      t62 = |Checks idoc types and segments are set to status released|.
       DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t70 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t72 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t57 = NEW zcl_lnt_irule_metadata( i_key = t58 i_title = t60 i_short_description = t62 i_bad_example = t64 i_good_example = t66 i_extended_information = t68 i_tags = t70 i_pragma = t72 i_pseudo_comment = t74 ).
+      t57 = NEW zcl_lnt_irule_metadata( i_key = |release_idoc| i_title = |Release iDoc| i_short_description = |Checks idoc types and segments are set to status released| i_bad_example = t64 i_good_example = t66 i_extended_information = t68 i_tags = t70 i_pragma = t72 i_pseudo_comment = t74 ).
       CREATE OBJECT t57->zlnt_view_ownkeys_b0e8086400eb.
       t57->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -226,37 +178,28 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t57->zlnt_json_ownkeys_70e5fd461788.
       t57->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t79) = |key|.
       DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t79 p1 = t80 ).
-      DATA(t81) = |title|.
+      t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t80 ).
       DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t81 p1 = t82 ).
+        t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t82 ).
       ENDIF.
-      DATA(t83) = |shortDescription|.
       DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t83 p1 = t84 ).
+        t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t84 ).
       ENDIF.
       t56 = t57->key.
-      DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t85 = me->conf->zlnt_view_read_sr_15c06369f827( ).
       DATA t87 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t46 = zcl_lnt_issue=>at_position( i_file = t47 i_start = t41 i_message_26cb = t55 i_key = t56 i_severity = t85 i_fix = t87 ).
+      t46 = zcl_lnt_issue=>at_position( i_file = t47 i_start = t41 i_message_26cb = |Idoc type/segement status must be set to released| i_key = t56 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t87 ).
       DATA t89 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t90 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t90.
-      t89 = t90.
+      CREATE OBJECT t89.
       t89->load( ).
       APPEND t46 TO t89->items.
       t89->save( ).
       result = t89.
       RETURN.
     ELSE.
-      DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t94.
-      result = t94.
+      CREATE OBJECT result.
 
     ENDIF.
   ENDMETHOD.
@@ -302,10 +245,8 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_release_idoc.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_rls_idc_ts_rls_idc( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_rls_idc_ts_rls_idc( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

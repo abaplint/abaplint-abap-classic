@@ -46,8 +46,7 @@ CLASS zcl_lnt_union_6c8220bd IMPLEMENTATION.
 
   METHOD zlnt_view_read_un_3c4b2399a89f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `newText` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `newText` ) )->as_string( ).
     ELSE.
       result = me->new_text.
     ENDIF.

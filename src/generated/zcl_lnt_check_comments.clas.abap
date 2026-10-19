@@ -27,12 +27,6 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |check_comments|.
-    DATA t4 TYPE string.
-    t4 = |Check Comments|.
-    DATA t6 TYPE string.
-    t6 = |\nVarious checks for comment usage.|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |\nDetects end of line comments. Comments starting with "#EC" |.
     t11 = t11 && |or "##" are ignored\n\nhttps://github.com/SAP/styleguides/blob|.
@@ -44,33 +38,25 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t29) = |WRITE 2. " descriptive comment|.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
-    t30->value = t29.
+    t30->value = |WRITE 2. " descriptive comment|.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t35) = |" descriptive comment\nWRITE 2.|.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
-    t36->value = t35.
-    t32 = t36.
+    t36->value = |" descriptive comment\nWRITE 2.|.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |check_comments| i_title = |Check Comments| i_short_description = |\nVarious checks for comment usage.| i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -101,48 +87,38 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_description.
-    DATA t2 TYPE abap_bool.
-    DATA(t4) = 0.
-    t2 = xsdbool( i_issue_type = t4 ).
-    IF t2 = abap_true.
+    IF xsdbool( i_issue_type = 0 ) = abap_true.
       DATA(t5) = |Do not use end of line comments - move comment to previous r|.
       t5 = t5 && |ow instead|.
       result = t5.
@@ -166,30 +142,17 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
   METHOD rn_pr_in_sr_rl_ch_cm_ts_ch_cmm.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t9 TYPE REF TO zif_lnt_file.
-    t9 = t1->file.
-    t8 = t9->get_raw_rows( ).
-    t4 = t8.
-    DATA t11 TYPE abap_bool.
+    t4 = t1->file->get_raw_rows( ).
     DATA t12 TYPE abap_bool.
     t12 = me->conf->zlnt_view_read_sr_938313da583d( ).
-    t11 = xsdbool( t12 = abap_true ).
-    IF t11 = abap_true.
-      DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t15.
-      result = t15.
+    IF xsdbool( t12 = abap_true ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t17 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t18) = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm( ) ).
-    t17 = t18->zlnt_view_read_sr_ff80acbf8164( ).
-    t16 = t17.
+    t16 = CAST zcl_lnt_check_comments_conf( me->gt_cn_in_sr_rl_ch_cm_ts_ch_cmm( ) )->zlnt_view_read_sr_ff80acbf8164( ).
     DATA(t19) = VALUE abap_bool( ).
     DATA(t20) = VALUE abap_bool( ).
     DATA t21 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
@@ -204,37 +167,25 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
     t20 = t25.
     t19 = t20.
     IF t20 = abap_false.
-      DATA(t27) = VALUE abap_bool( ).
-      DATA(t28) = VALUE f( ).
       DATA(t29) = t16.
       IF t29->number_special <> 0.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
-      t28 = t29->value.
-      DATA(t30) = CONV f( 1 ).
-      t27 = xsdbool( t28 < t30 ).
-      t19 = t27.
+      t19 = xsdbool( t29->value < CONV f( 1 ) ).
     ENDIF.
     IF t19 = abap_true.
-      DATA(t33) = CONV f( 10 ).
       DATA(t34) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t34->has = abap_true.
-      t34->value = t33.
+      t34->value = CONV f( 10 ).
       t16 = t34.
     ENDIF.
     DATA t36 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    DATA t37 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    CREATE OBJECT t37.
-    t36 = t37.
+    CREATE OBJECT t36.
     DATA t38 TYPE i.
     t38 = 0.
     DO.
-      DATA t40 TYPE abap_bool.
-      DATA t42 TYPE i.
       t4->load( ).
-      t42 = lines( t4->items ).
-      t40 = xsdbool( t38 < t42 ).
-      IF t40 = abap_false.
+      IF xsdbool( t38 < lines( t4->items ) ) = abap_false.
         EXIT.
       ENDIF.
       DATA(t44) = VALUE string( ).
@@ -245,7 +196,6 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t4->load( ).
-      CLEAR t45.
       READ TABLE t4->items INDEX t47 INTO t45.
       t44 = t45.
       DATA(t48) = VALUE abap_bool( ).
@@ -448,28 +398,19 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         APPEND t104 TO t36->items.
         t36->save( ).
       ENDIF.
-      DATA t106 TYPE i.
       DATA(t108) = 1.
-      t106 = t38 + t108.
-      t38 = t106.
+      t38 = t38 + t108.
     ENDDO.
     DATA t109 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t113 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t113 = t1->statements.
-    t109 = t113.
+    t109 = t1->statements.
     DATA t115 TYPE i.
-    DATA t116 TYPE i.
     DATA t117 TYPE i.
     t109->load( ).
     t117 = lines( t109->items ).
     DATA(t119) = 1.
-    t116 = t117 - t119.
-    t115 = t116.
+    t115 = t117 - t119.
     DO.
-      DATA t120 TYPE abap_bool.
-      DATA(t122) = 0.
-      t120 = xsdbool( t115 >= t122 ).
-      IF t120 = abap_false.
+      IF xsdbool( t115 >= 0 ) = abap_false.
         EXIT.
       ENDIF.
       DATA t123 TYPE REF TO zcl_lnt_statement_node.
@@ -502,32 +443,20 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
       t131 = xsdbool( t132 IS BOUND AND t132 IS INSTANCE OF zcl_lnt_st_comment ).
       t130 = t131.
       IF t131 = abap_true.
-        DATA t134 TYPE abap_bool.
-        DATA t135 TYPE abap_bool.
         DATA t137 TYPE f.
         DATA t138 TYPE f.
-        DATA t145 TYPE REF TO zcl_lnt_abstract_token.
-        t145 = t123->get_first_token( ).
         DATA t147 TYPE REF TO zcl_lnt_position.
-        t147 = t145->start.
-        DATA t149 TYPE f.
-        t149 = t147->row.
-        t138 = t149.
+        t147 = t123->get_first_token( )->start.
+        t138 = t147->row.
         DATA(t151) = CONV f( 1 ).
         t137 = t138 - t151.
-        t135 = t36->includes( p0 = t137 ).
-        t134 = xsdbool( t135 = abap_false ).
-        t130 = t134.
+        t130 = xsdbool( t36->includes( p0 = t137 ) = abap_false ).
       ENDIF.
       IF t130 = abap_true.
         DATA(t152) = VALUE abap_bool( ).
         DATA(t153) = VALUE abap_bool( ).
         DATA t154 TYPE string.
-        DATA t156 TYPE REF TO zcl_lnt_abstract_token.
-        t156 = t123->get_first_token( ).
-        DATA t158 TYPE string.
-        t158 = t156->str.
-        t154 = t158.
+        t154 = t123->get_first_token( )->str.
         DATA(t160) = |"#EC|.
         DATA(t161) = strlen( t154 ).
         DATA t162 TYPE i.
@@ -547,11 +476,7 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         IF t153 = abap_false.
           DATA(t165) = VALUE abap_bool( ).
           DATA t166 TYPE string.
-          DATA t168 TYPE REF TO zcl_lnt_abstract_token.
-          t168 = t123->get_first_token( ).
-          DATA t170 TYPE string.
-          t170 = t168->str.
-          t166 = t170.
+          t166 = t123->get_first_token( )->str.
           DATA(t172) = |"##|.
           DATA(t173) = strlen( t166 ).
           DATA t174 TYPE i.
@@ -570,20 +495,14 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
           t152 = t165.
         ENDIF.
         IF t152 = abap_true.
-          DATA t177 TYPE i.
           DATA(t179) = 1.
-          t177 = t115 - t179.
-          t115 = t177.
+          t115 = t115 - t179.
           CONTINUE.
         ENDIF.
         DATA t181 TYPE REF TO zcl_lnt_issue.
         CLEAR t181.
         DATA(t184) = VALUE string( ).
-        DATA t185 TYPE abap_bool.
-        DATA(t186) = 0.
-        DATA(t187) = 0.
-        t185 = xsdbool( t186 = t187 ).
-        IF t185 = abap_true.
+        IF xsdbool( 0 = 0 ) = abap_true.
           DATA(t188) = |Do not use end of line comments - move comment to previous r|.
           t188 = t188 && |ow instead|.
           t184 = t188.
@@ -593,12 +512,6 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         DATA(t190) = VALUE string( ).
         DATA t191 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t191.
-        DATA t192 TYPE string.
-        t192 = |check_comments|.
-        DATA t194 TYPE string.
-        t194 = |Check Comments|.
-        DATA t196 TYPE string.
-        t196 = |\nVarious checks for comment usage.|.
         DATA t198 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t198.
         DATA(t201) = |\nDetects end of line comments. Comments starting with "#EC" |.
@@ -612,37 +525,31 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         DATA t204 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t204.
         DATA t208 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t209 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t209.
-        t208 = t209.
-        DATA(t211) = |Styleguide|.
+        CREATE OBJECT t208.
         t208->load( ).
-        APPEND t211 TO t208->items.
+        APPEND |Styleguide| TO t208->items.
         t208->save( ).
-        DATA(t213) = |SingleFile|.
         t208->load( ).
-        APPEND t213 TO t208->items.
+        APPEND |SingleFile| TO t208->items.
         t208->save( ).
         t204 = t208.
         DATA t216 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t216.
-        DATA(t219) = |WRITE 2. " descriptive comment|.
         DATA(t220) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t220->has = abap_true.
-        t220->value = t219.
+        t220->value = |WRITE 2. " descriptive comment|.
         t216 = t220.
         DATA t222 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t222.
-        DATA(t225) = |" descriptive comment\nWRITE 2.|.
         DATA(t226) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t226->has = abap_true.
-        t226->value = t225.
+        t226->value = |" descriptive comment\nWRITE 2.|.
         t222 = t226.
         DATA t228 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t228.
         DATA t230 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t230.
-        t191 = NEW zcl_lnt_irule_metadata( i_key = t192 i_title = t194 i_short_description = t196 i_bad_example = t216 i_good_example = t222 i_extended_information = t198 i_tags = t204 i_pragma = t228 i_pseudo_comment = t230 ).
+        t191 = NEW zcl_lnt_irule_metadata( i_key = |check_comments| i_title = |Check Comments| i_short_description = |\nVarious checks for comment usage.| i_bad_example = t216 i_good_example = t222 i_extended_information = t198 i_tags = t204 i_pragma = t228 i_pseudo_comment = t230 ).
         CREATE OBJECT t191->zlnt_view_ownkeys_b0e8086400eb.
         t191->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -680,45 +587,38 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t191->zlnt_json_ownkeys_70e5fd461788.
         t191->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t239) = |key|.
         DATA t240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t240.
-        t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t239 p1 = t240 ).
-        DATA(t241) = |title|.
+        t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t240 ).
         DATA t242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t242.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t241 p1 = t242 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t242 ).
         ENDIF.
-        DATA(t243) = |shortDescription|.
         DATA t244 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t244.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t243 p1 = t244 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t244 ).
         ENDIF.
-        DATA(t245) = |extendedInformation|.
         DATA t246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t246.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t245 p1 = t246 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t246 ).
         ENDIF.
-        DATA(t247) = |tags|.
         DATA t248 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t248.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t247 p1 = t248 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t248 ).
         ENDIF.
-        DATA(t249) = |badExample|.
         DATA t250 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t250.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t249 p1 = t250 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t250 ).
         ENDIF.
-        DATA(t251) = |goodExample|.
         DATA t252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t252.
         IF t191->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = t251 p1 = t252 ).
+          t191->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t252 ).
         ENDIF.
         t190 = t191->key.
         DATA t253 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -731,26 +631,18 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         t2->load( ).
         APPEND t181 TO t2->items.
         t2->save( ).
-        DATA(t257) = VALUE abap_bool( ).
         DATA t258 TYPE f.
-        DATA t259 TYPE i.
         t2->load( ).
-        t259 = lines( t2->items ).
-        t258 = t259.
-        DATA(t261) = VALUE f( ).
+        t258 = lines( t2->items ).
         IF t16->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        t261 = t16->value.
-        t257 = xsdbool( t258 >= t261 ).
-        IF t257 = abap_true.
+        IF xsdbool( t258 >= t16->value ) = abap_true.
           EXIT.
         ENDIF.
       ENDIF.
-      DATA t263 TYPE i.
       DATA(t265) = 1.
-      t263 = t115 - t265.
-      t115 = t263.
+      t115 = t115 - t265.
     ENDDO.
     result = t2.
 

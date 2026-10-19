@@ -42,8 +42,7 @@ CLASS zcl_lnt_empty_lnn_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_59fc08e254c6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowChained` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowChained` ) )->as_boolean( ).
     ELSE.
       result = me->allow_chained.
     ENDIF.

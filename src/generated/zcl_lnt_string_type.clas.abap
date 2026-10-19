@@ -34,12 +34,10 @@ CLASS zcl_lnt_string_type IMPLEMENTATION.
       zcl_lnt_string_type=>zlnt_builtin_init_a076d2e8e5a5( ).
     ENDIF.
     DATA(t1) = i_input_967e.
-    DATA t2 TYPE REF TO zcl_lnt_string_type.
     IF zcl_lnt_string_type=>zlnt_builtin_init_89055a07a79c = abap_false.
       zcl_lnt_string_type=>zlnt_builtin_init_a076d2e8e5a5( ).
     ENDIF.
-    t2 = NEW zcl_lnt_string_type( i_input_967e = t1 ).
-    result = t2.
+    result = NEW zcl_lnt_string_type( i_input_967e = t1 ).
 
   ENDMETHOD.
 
@@ -48,17 +46,11 @@ CLASS zcl_lnt_string_type IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     t3 = me->data_56cc.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = xsdbool( t3 IS INITIAL ).
-    IF t6 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t10 TYPE REF TO zcl_lnt_abstract_type_data.
-      t10 = t3.
-      t9 = t10->zlnt_view_read_sr_c978da49ae47( ).
-      t5 = t9.
+      t5 = t3->zlnt_view_read_sr_c978da49ae47( ).
     ENDIF.
     t1 = t5.
-    DATA(t12) = VALUE abap_bool( ).
     DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t13 = t1.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -68,12 +60,10 @@ CLASS zcl_lnt_string_type IMPLEMENTATION.
     ELSEIF t13->has = abap_false.
       t17 = abap_true.
     ENDIF.
-    t12 = t17.
-    IF t12 = abap_true.
-      DATA(t21) = |STRING|.
+    IF t17 = abap_true.
       DATA(t22) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t22->has = abap_true.
-      t22->value = t21.
+      t22->value = |STRING|.
       result = t22.
       RETURN.
     ENDIF.

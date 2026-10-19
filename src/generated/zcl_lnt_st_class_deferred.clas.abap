@@ -13,15 +13,12 @@ CLASS zcl_lnt_st_class_deferred DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |CLASS|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |CLASS|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
     IF t10 IS BOUND.
@@ -30,24 +27,20 @@ CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
       t9->cval = t10.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t12.
-    t11 = t12.
+    CREATE OBJECT t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t15) = |DEFINITION DEFERRED|.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t14->sval = t15.
+    t14->sval = |DEFINITION DEFERRED|.
     t11->load( ).
     APPEND t14 TO t11->items.
     t11->save( ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t20) = |PUBLIC|.
     CREATE OBJECT t19.
     t19->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t19->sval = t20.
+    t19->sval = |PUBLIC|.
     t18 = zcl_lnt_st_combi_module=>opt_prio( i_first = t19 ).
     IF t18 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -75,9 +68,7 @@ CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
     t11->load( ).
     APPEND t17 TO t11->items.
     t11->save( ).
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t11 ).
-    t4 = t23.
+    t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t11 ).
     IF t4 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t28 TYPE REF TO object.
@@ -101,8 +92,7 @@ CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

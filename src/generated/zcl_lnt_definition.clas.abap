@@ -21,21 +21,14 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
     DATA(t1) = i_text_document.
     DATA(t2) = i_position_a3fd.
     DATA t3 TYPE REF TO zcl_lnt_abap_file.
-    DATA t4 TYPE REF TO zcl_lnt_abap_file.
     DATA(t5) = me->reg.
-    DATA t6 TYPE string.
-    t6 = t1->zlnt_view_read_no_0041136eb871( ).
-    t4 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t5 i_filename = t6 ).
-    t3 = t4.
-    DATA(t8) = VALUE abap_bool( ).
+    t3 = zcl_lnt_lsp_utils=>get_abap_file( i_reg_f149 = t5 i_filename = t1->zlnt_view_read_no_0041136eb871( ) ).
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t8 = xsdbool( t3 IS INITIAL ).
-    IF t8 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
     DATA t16 TYPE REF TO zif_lnt_object.
-    DATA t17 TYPE REF TO zif_lnt_object.
     DATA(t18) = me->reg.
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t20 TYPE REF TO zcl_lnt_abstract_file.
@@ -80,10 +73,7 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t39) = 1.
-    t37 = t25->get( p0 = t39 ).
-    t36 = t37.
+    t36 = t25->get( p0 = 1 ).
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t41) = VALUE abap_bool( ).
     IF t36 IS INITIAL.
@@ -109,11 +99,8 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
       t40 = t48.
     ENDIF.
     t19 = t40.
-    DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t51) = VALUE string( ).
     DATA t52 TYPE REF TO zcl_lnt_abstract_file.
     t52 = t3.
-    DATA(t55) = VALUE string( ).
     DATA t56 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t57 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t58 TYPE string.
@@ -155,66 +142,42 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t56 = t57.
-    DATA(t68) = 0.
-    DATA(t69) = VALUE string( ).
     DATA(t70) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t70.
     READ TABLE t56->items INDEX 1 INTO t70.
     DATA t72 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t73) = |%23|.
-    DATA(t74) = |g|.
-    CREATE OBJECT t72 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t73 flags = t74 checked = abap_true.
-    DATA(t75) = |#|.
+    CREATE OBJECT t72 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%23| flags = |g| checked = abap_true.
     DATA(t76) = strlen( t70 ).
-    t69 = t72->replace( p0 = t70 p1 = t75 ).
-    t56->put( p0 = t68 p1 = t69 ).
-    DATA(t78) = 0.
-    DATA(t79) = VALUE string( ).
+    t56->put( p0 = 0 p1 = t72->replace( p0 = t70 p1 = |#| ) ).
     DATA(t80) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t80.
     READ TABLE t56->items INDEX 1 INTO t80.
     DATA t82 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t83) = |%3e|.
-    DATA(t84) = |g|.
-    CREATE OBJECT t82 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t83 flags = t84 checked = abap_true.
-    DATA(t85) = |>|.
+    CREATE OBJECT t82 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%3e| flags = |g| checked = abap_true.
     DATA(t86) = strlen( t80 ).
-    t79 = t82->replace( p0 = t80 p1 = t85 ).
-    t56->put( p0 = t78 p1 = t79 ).
-    DATA(t88) = 0.
-    DATA(t89) = VALUE string( ).
+    t56->put( p0 = 0 p1 = t82->replace( p0 = t80 p1 = |>| ) ).
     DATA(t90) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t90.
     READ TABLE t56->items INDEX 1 INTO t90.
     DATA t92 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t93) = |%3c|.
-    DATA(t94) = |g|.
-    CREATE OBJECT t92 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t93 flags = t94 checked = abap_true.
-    DATA(t95) = |<|.
+    CREATE OBJECT t92 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%3c| flags = |g| checked = abap_true.
     DATA(t96) = strlen( t90 ).
-    t89 = t92->replace( p0 = t90 p1 = t95 ).
-    t56->put( p0 = t88 p1 = t89 ).
-    DATA(t98) = 0.
-    DATA(t99) = VALUE string( ).
+    t56->put( p0 = 0 p1 = t92->replace( p0 = t90 p1 = |<| ) ).
     DATA(t100) = VALUE string( ).
     DATA(t101) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t101.
     READ TABLE t56->items INDEX 1 INTO t101.
     DATA(t103) = strlen( t101 ).
     t100 = t101.
@@ -224,75 +187,53 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
       t100 = zlnt_runtime_uppe_91169605024d=>full( t100 ).
     ENDIF.
     DATA t104 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t105) = |#|.
-    DATA(t106) = |g|.
-    CREATE OBJECT t104 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t105 flags = t106 checked = abap_true.
-    DATA(t107) = |/|.
+    CREATE OBJECT t104 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |#| flags = |g| checked = abap_true.
     DATA(t108) = strlen( t100 ).
-    t99 = t104->replace( p0 = t100 p1 = t107 ).
-    t56->put( p0 = t98 p1 = t99 ).
-    DATA(t110) = 0.
+    t56->put( p0 = 0 p1 = t104->replace( p0 = t100 p1 = |/| ) ).
     DATA(t111) = VALUE string( ).
     DATA(t112) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t112.
     READ TABLE t56->items INDEX 1 INTO t112.
     DATA(t114) = |(|.
     DATA(t115) = |/|.
     DATA(t116) = strlen( t112 ).
     t111 = t112.
     REPLACE ALL OCCURRENCES OF t114 IN t111 WITH t115.
-    t56->put( p0 = t110 p1 = t111 ).
-    DATA(t118) = 0.
+    t56->put( p0 = 0 p1 = t111 ).
     DATA(t119) = VALUE string( ).
     DATA(t120) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t120.
     READ TABLE t56->items INDEX 1 INTO t120.
     DATA(t122) = |)|.
     DATA(t123) = |/|.
     DATA(t124) = strlen( t120 ).
     t119 = t120.
     REPLACE ALL OCCURRENCES OF t122 IN t119 WITH t123.
-    t56->put( p0 = t118 p1 = t119 ).
+    t56->put( p0 = 0 p1 = t119 ).
     DATA(t125) = VALUE string( ).
     IF t56->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t56->load( ).
-    CLEAR t125.
     READ TABLE t56->items INDEX 1 INTO t125.
-    t55 = t125.
-    t51 = t55.
     DATA(t127) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t127->has = abap_true.
-    t127->value = t51.
-    t49 = t127.
-    t17 = t18->get_object( i_type_9913 = t19 i_name = t49 ).
-    t16 = t17.
-    DATA t129 TYPE abap_bool.
-    DATA t130 TYPE abap_bool.
-    t130 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_abap_object ).
-    t129 = xsdbool( t130 = abap_false ).
-    IF t129 = abap_true.
+    t127->value = t125.
+    t16 = t18->get_object( i_type_9913 = t19 i_name = t127 ).
+    IF xsdbool( xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
     DATA t133 TYPE REF TO zcl_lnt_icursor_data.
-    DATA t134 TYPE REF TO zcl_lnt_icursor_data.
     DATA(t135) = me->reg.
     DATA t136 TYPE REF TO zcl_lnt_itxt_dcmnt_pstn_prms.
-    DATA t137 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-    t137 = t1.
-    DATA t139 TYPE REF TO zcl_lnt_no_position.
-    t139 = t2.
-    t136 = NEW zcl_lnt_itxt_dcmnt_pstn_prms( i_text_document = t137 i_position_a3fd = t139 ).
+    t136 = NEW zcl_lnt_itxt_dcmnt_pstn_prms( i_text_document = t1 i_position_a3fd = t2 ).
     CREATE OBJECT t136->zlnt_view_ownkeys_b0e8086400eb.
     t136->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t141 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -303,25 +244,19 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t136->zlnt_json_ownkeys_70e5fd461788.
     t136->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t143) = |textDocument|.
     DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t136->zlnt_json_ownkeys_70e5fd461788->put( p0 = t143 p1 = t144 ).
-    DATA(t145) = |position|.
+    t136->zlnt_json_ownkeys_70e5fd461788->put( p0 = |textDocument| p1 = t144 ).
     DATA t146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t136->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t136->zlnt_json_ownkeys_70e5fd461788->put( p0 = t145 p1 = t146 ).
+      t136->zlnt_json_ownkeys_70e5fd461788->put( p0 = |position| p1 = t146 ).
     ENDIF.
-    t134 = zcl_lnt_lsp_utils=>find_cursor( i_reg_f149 = t135 i_pos = t136 ).
-    t133 = t134.
-    DATA(t147) = VALUE abap_bool( ).
+    t133 = zcl_lnt_lsp_utils=>find_cursor( i_reg_f149 = t135 i_pos = t136 ).
     DATA t150 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t147 = xsdbool( t133 IS INITIAL ).
-    IF t147 = abap_true.
+    IF xsdbool( t133 IS INITIAL ) = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
     DATA t156 TYPE REF TO zcl_lnt_lsp_lookup_result.
-    DATA t157 TYPE REF TO zcl_lnt_lsp_lookup_result.
     DATA t158 TYPE REF TO zcl_lnt_icursor_data.
     t158 = t133.
     DATA(t160) = me->reg.
@@ -329,17 +264,11 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
     DATA t163 TYPE REF TO object.
     t163 = t16.
     t161 ?= t163.
-    t157 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t158 i_reg_f149 = t160 i_obj_1ed0 = t161 ).
-    t156 = t157.
+    t156 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t158 i_reg_f149 = t160 i_obj_1ed0 = t161 ).
     DATA t164 TYPE REF TO zcl_lnt_location.
-    DATA(t165) = xsdbool( t156 IS INITIAL ).
-    IF t165 = abap_true.
+    IF xsdbool( t156 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t168 TYPE REF TO zcl_lnt_location.
-      DATA t169 TYPE REF TO zcl_lnt_lsp_lookup_result.
-      t169 = t156.
-      t168 = t169->definition_ef89.
-      t164 = t168.
+      t164 = t156->definition_ef89.
     ENDIF.
     result = t164.
 

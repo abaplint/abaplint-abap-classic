@@ -23,108 +23,64 @@ CLASS zcl_lnt_table_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_table_module=>enhancement_category_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t3 = zcl_lnt_table_module=>enhancement_category_namespace.
-    DATA(t4) = |NotClassified|.
-    DATA(t5) = |0|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_table_module=>enhancement_category_namespace->set( p0 = |NotClassified| p1 = |0| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t7 = zcl_lnt_table_module=>enhancement_category_namespace.
-    DATA(t8) = |CannotBeEnhanced|.
-    DATA(t9) = |1|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_table_module=>enhancement_category_namespace->set( p0 = |CannotBeEnhanced| p1 = |1| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t11 = zcl_lnt_table_module=>enhancement_category_namespace.
-    DATA(t12) = |Character|.
-    DATA(t13) = |2|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_table_module=>enhancement_category_namespace->set( p0 = |Character| p1 = |2| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t15 = zcl_lnt_table_module=>enhancement_category_namespace.
-    DATA(t16) = |CharacterOrNumeric|.
-    DATA(t17) = |3|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_table_module=>enhancement_category_namespace->set( p0 = |CharacterOrNumeric| p1 = |3| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t19 = zcl_lnt_table_module=>enhancement_category_namespace.
-    DATA(t20) = |Deep|.
-    DATA(t21) = |4|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_table_module=>enhancement_category_namespace->set( p0 = |Deep| p1 = |4| ).
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
     zcl_lnt_table_module=>table_category_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t24 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t25) = |Transparent|.
-    DATA(t26) = |TRANSP|.
-    t23 = t24->set( p0 = t25 p1 = t26 ).
+    t23 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |Transparent| p1 = |TRANSP| ).
     DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t28 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t28 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t29) = |Structure|.
-    DATA(t30) = |INTTAB|.
-    t27 = t28->set( p0 = t29 p1 = t30 ).
+    t27 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |Structure| p1 = |INTTAB| ).
     DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t32 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t32 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t33) = |Cluster|.
-    DATA(t34) = |CLUSTER|.
-    t31 = t32->set( p0 = t33 p1 = t34 ).
+    t31 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |Cluster| p1 = |CLUSTER| ).
     DATA t35 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t36 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t36 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t37) = |Pooled|.
-    DATA(t38) = |POOL|.
-    t35 = t36->set( p0 = t37 p1 = t38 ).
+    t35 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |Pooled| p1 = |POOL| ).
     DATA t39 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t40 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t40 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t41) = |View|.
-    DATA(t42) = |VIEW|.
-    t39 = t40->set( p0 = t41 p1 = t42 ).
+    t39 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |View| p1 = |VIEW| ).
     DATA t43 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t44 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_table_module=>zlnt_builtin_init_204630f669b0 = abap_false.
       zcl_lnt_table_module=>zlnt_builtin_init_aad83507db3c( ).
     ENDIF.
-    t44 = zcl_lnt_table_module=>table_category_namespace.
-    DATA(t45) = |Append|.
-    DATA(t46) = |APPEND|.
-    t43 = t44->set( p0 = t45 p1 = t46 ).
+    t43 = zcl_lnt_table_module=>table_category_namespace->set( p0 = |Append| p1 = |APPEND| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

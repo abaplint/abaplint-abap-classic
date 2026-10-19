@@ -13,19 +13,15 @@ CLASS zcl_lnt_sr_dynpro_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_dynpro_loop IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d454_adcbc941e96f.
     t2 = zcl_lnt_sr_combi_module=>sta( i_s = t3 ).
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t5 TYPE REF TO zif_lnt_structure_runnable.
     DATA t7 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d560_1073f613c8c9.
     t7 = zcl_lnt_sr_combi_module=>sta( i_s = t8 ).
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d495_455bba123ac8.
     t12 = zcl_lnt_sr_combi_module=>sta( i_s = t13 ).
@@ -38,15 +34,9 @@ CLASS zcl_lnt_sr_dynpro_loop IMPLEMENTATION.
     t9->load( ).
     APPEND t15 TO t9->items.
     t9->save( ).
-    DATA t17 TYPE REF TO zif_lnt_structure_runnable.
-    t17 = zcl_lnt_sr_combi_module=>alt( i_first = t7 i_rest = t9 ).
-    t5 = t17.
-    t4 = zcl_lnt_sr_combi_module=>star( i_s = t5 ).
-    DATA t20 TYPE REF TO zif_lnt_structure_runnable.
+    t4 = zcl_lnt_sr_combi_module=>star( i_s = zcl_lnt_sr_combi_module=>alt( i_first = t7 i_rest = t9 ) ).
     DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d476_e0523f307ef8.
-    t20 = zcl_lnt_sr_combi_module=>sta( i_s = t21 ).
-    t1 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = t20 ).
-    result = t1.
+    result = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = zcl_lnt_sr_combi_module=>sta( i_s = t21 ) ).
 
   ENDMETHOD.
 

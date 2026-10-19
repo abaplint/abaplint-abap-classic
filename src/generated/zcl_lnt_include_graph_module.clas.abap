@@ -19,59 +19,37 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t5 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t6 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    t6 = t1->get_objects( ).
-    t5 = t6->iterate( ).
-    t4 = t5.
+    t4 = t1->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
       CLEAR t9.
-      DATA t10 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t10.
-      t10 = t4->next( ).
-      t9 = t10.
-      DATA(t12) = VALUE abap_bool( ).
-      t12 = t9->done.
-      IF t12 = abap_true.
+      t9 = t4->next( ).
+      IF t9->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_object.
       CLEAR t14.
-      DATA t16 TYPE REF TO zif_lnt_object.
-      CLEAR t16.
-      t16 = t9->value.
-      t14 = t16.
-      DATA(t18) = VALUE abap_bool( ).
+      t14 = t9->value.
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
       t20 = abap_false.
       DATA t22 TYPE REF TO cx_root.
       CLEAR t22.
       TRY.
-          DATA(t23) = VALUE abap_bool( ).
-          t23 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
-          t19 = t23.
+          t19 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
           t20 = abap_true.
         CATCH cx_root INTO t22.
-          DATA(t26) = VALUE abap_bool( ).
-          t26 = xsdbool( t20 = abap_false ).
-          IF t26 = abap_true.
+          IF xsdbool( t20 = abap_false ) = abap_true.
             t4->close( ).
           ENDIF.
           RAISE EXCEPTION t22.
       ENDTRY.
-      DATA(t29) = VALUE abap_bool( ).
-      t29 = xsdbool( t20 = abap_false ).
-      IF t29 = abap_true.
+      IF xsdbool( t20 = abap_false ) = abap_true.
         t4->close( ).
       ENDIF.
-      t18 = t19.
-      IF t18 = abap_true.
+      IF t19 = abap_true.
         DATA(t33) = VALUE f( ).
         DATA(t34) = VALUE f( ).
         DATA(t35) = VALUE abap_bool( ).
@@ -95,16 +73,12 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
             t34 = t38.
             t35 = abap_true.
           CATCH cx_root INTO t37.
-            DATA(t45) = VALUE abap_bool( ).
-            t45 = xsdbool( t35 = abap_false ).
-            IF t45 = abap_true.
+            IF xsdbool( t35 = abap_false ) = abap_true.
               t4->close( ).
             ENDIF.
             RAISE EXCEPTION t37.
         ENDTRY.
-        DATA(t48) = VALUE abap_bool( ).
-        t48 = xsdbool( t35 = abap_false ).
-        IF t48 = abap_true.
+        IF xsdbool( t35 = abap_false ) = abap_true.
           t4->close( ).
         ENDIF.
         t33 = t34.
@@ -123,7 +97,6 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
       zcl_lnt_include_graph_module=>zlnt_builtin_init_eae383aaa208( ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t2) = `^(\/\w+\/)?L.+XX$`.
     DATA(t3) = `^(\/[A-Za-z0-9_]+\/)?L[^`.
     t3 = t3 && |\n\r|.
     DATA t4 TYPE c LENGTH 1.
@@ -133,9 +106,8 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     t5 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t3 t5 INTO t3 RESPECTING BLANKS.
     t3 = t3 && |]+XX$|.
-    DATA(t6) = ||.
-    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t6.
-    t1->source = t2.
+    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = ||.
+    t1->source = `^(\/\w+\/)?L.+XX$`.
     zcl_lnt_include_graph_module=>fmxxinclude = t1.
   ENDMETHOD.
 

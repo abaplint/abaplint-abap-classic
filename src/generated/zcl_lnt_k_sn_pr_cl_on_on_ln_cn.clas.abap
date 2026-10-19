@@ -24,8 +24,7 @@ CLASS zcl_lnt_k_sn_pr_cl_on_on_ln_cn IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 120 ).
-    me->zlnt_view_write_s_50c40fd47755( p0 = t1 ).
+    me->zlnt_view_write_s_50c40fd47755( p0 = CONV f( 120 ) ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

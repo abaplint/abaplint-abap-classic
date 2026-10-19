@@ -33,8 +33,6 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
       ELSE.
         t4 ?= t5.
       ENDIF.
-      DATA(t8) = VALUE abap_bool( ).
-      DATA(t10) = VALUE string( ).
       DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t11 = t1.
       DATA(t13) = VALUE string( ).
@@ -47,13 +45,9 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
       IF t14 = abap_true.
         t13 = |undefined|.
       ELSE.
-        DATA t17 TYPE string.
-        t17 = t11->value.
-        t13 = t17.
+        t13 = t11->value.
       ENDIF.
-      t10 = t13.
-      t8 = t4->test( p0 = t10 ).
-      IF t8 = abap_true.
+      IF t4->test( p0 = t13 ) = abap_true.
         result = abap_true.
         RETURN.
       ENDIF.

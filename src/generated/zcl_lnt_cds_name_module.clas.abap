@@ -21,84 +21,63 @@ CLASS zcl_lnt_cds_name_module IMPLEMENTATION.
       zcl_lnt_cds_name_module=>zlnt_builtin_init_dfb42c40df8c( ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = |AS|.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND |AS| TO t2->items.
     t2->save( ).
-    DATA(t7) = |ON|.
     t2->load( ).
-    APPEND t7 TO t2->items.
+    APPEND |ON| TO t2->items.
     t2->save( ).
-    DATA(t9) = |WHERE|.
     t2->load( ).
-    APPEND t9 TO t2->items.
+    APPEND |WHERE| TO t2->items.
     t2->save( ).
-    DATA(t11) = |WITH|.
     t2->load( ).
-    APPEND t11 TO t2->items.
+    APPEND |WITH| TO t2->items.
     t2->save( ).
-    DATA(t13) = |UNION|.
     t2->load( ).
-    APPEND t13 TO t2->items.
+    APPEND |UNION| TO t2->items.
     t2->save( ).
-    DATA(t15) = |GROUP|.
     t2->load( ).
-    APPEND t15 TO t2->items.
+    APPEND |GROUP| TO t2->items.
     t2->save( ).
-    DATA(t17) = |HAVING|.
     t2->load( ).
-    APPEND t17 TO t2->items.
+    APPEND |HAVING| TO t2->items.
     t2->save( ).
-    DATA(t19) = |AND|.
     t2->load( ).
-    APPEND t19 TO t2->items.
+    APPEND |AND| TO t2->items.
     t2->save( ).
-    DATA(t21) = |OR|.
     t2->load( ).
-    APPEND t21 TO t2->items.
+    APPEND |OR| TO t2->items.
     t2->save( ).
-    DATA(t23) = |BETWEEN|.
     t2->load( ).
-    APPEND t23 TO t2->items.
+    APPEND |BETWEEN| TO t2->items.
     t2->save( ).
-    DATA(t25) = |LIKE|.
     t2->load( ).
-    APPEND t25 TO t2->items.
+    APPEND |LIKE| TO t2->items.
     t2->save( ).
-    DATA(t27) = |IN|.
     t2->load( ).
-    APPEND t27 TO t2->items.
+    APPEND |IN| TO t2->items.
     t2->save( ).
-    DATA(t29) = |EXISTS|.
     t2->load( ).
-    APPEND t29 TO t2->items.
+    APPEND |EXISTS| TO t2->items.
     t2->save( ).
-    DATA(t31) = |WHEN|.
     t2->load( ).
-    APPEND t31 TO t2->items.
+    APPEND |WHEN| TO t2->items.
     t2->save( ).
-    DATA(t33) = |THEN|.
     t2->load( ).
-    APPEND t33 TO t2->items.
+    APPEND |THEN| TO t2->items.
     t2->save( ).
-    DATA(t35) = |ELSE|.
     t2->load( ).
-    APPEND t35 TO t2->items.
+    APPEND |ELSE| TO t2->items.
     t2->save( ).
-    DATA(t37) = |END|.
     t2->load( ).
-    APPEND t37 TO t2->items.
+    APPEND |END| TO t2->items.
     t2->save( ).
-    DATA(t39) = |CASE|.
     t2->load( ).
-    APPEND t39 TO t2->items.
+    APPEND |CASE| TO t2->items.
     t2->save( ).
-    DATA(t41) = |CAST|.
     t2->load( ).
-    APPEND t41 TO t2->items.
+    APPEND |CAST| TO t2->items.
     t2->save( ).
     zcl_lnt_cds_name_module=>keywords_36a7 = t2.
   ENDMETHOD.

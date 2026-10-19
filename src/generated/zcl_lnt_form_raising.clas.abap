@@ -16,10 +16,9 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |RESUMABLE|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |RESUMABLE|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4.
@@ -48,9 +47,7 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t13.
-    t12 = t13.
+    CREATE OBJECT t12.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
     IF t16 IS BOUND.
@@ -91,14 +88,11 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
     t12->load( ).
     APPEND t18 TO t12->items.
     t12->save( ).
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t12 ).
-    t1 = t23.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t12 ).
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = |RAISING|.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t30->sval = t31.
+    t30->sval = |RAISING|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t34 TYPE REF TO zif_lnt_statement_runnable.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -136,9 +130,7 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
     ENDIF.
     DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t46.
-    DATA t47 TYPE REF TO zif_lnt_statement_runnable.
-    t47 = zcl_lnt_st_combi_module=>alt( i_first = t38 i_second = t41 i_rest = t46 ).
-    t36 = t47.
+    t36 = zcl_lnt_st_combi_module=>alt( i_first = t38 i_second = t41 i_rest = t46 ).
     IF t36 IS BOUND.
       DATA t51 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t52 TYPE REF TO object.
@@ -188,9 +180,7 @@ CLASS zcl_lnt_form_raising IMPLEMENTATION.
     ENDIF.
     DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t56.
-    DATA t57 TYPE REF TO zif_lnt_statement_runnable.
-    t57 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t56 ).
-    result = t57.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t56 ).
 
   ENDMETHOD.
 

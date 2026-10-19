@@ -56,9 +56,7 @@ CLASS zcl_lnt_st_conv_body IMPLEMENTATION.
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t13.
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    t14 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t10 i_rest = t13 ).
-    result = t14.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t10 i_rest = t13 ).
 
   ENDMETHOD.
 

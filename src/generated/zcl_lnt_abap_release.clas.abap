@@ -84,8 +84,7 @@ CLASS zcl_lnt_abap_release IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_8e17f9b6728c.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) )->as_string( ).
     ELSE.
       result = me->name.
     ENDIF.

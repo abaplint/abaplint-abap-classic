@@ -15,24 +15,19 @@ CLASS zcl_lnt_ddl_reference IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |WITH|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |WITH|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |REFERENCE|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |REFERENCE|.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t12) = |TABLE|.
     CREATE OBJECT t11.
     t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t11->sval = t12.
+    t11->sval = |TABLE|.
     t8->load( ).
     APPEND t11 TO t8->items.
     t8->save( ).
@@ -47,26 +42,23 @@ CLASS zcl_lnt_ddl_reference IMPLEMENTATION.
     APPEND t14 TO t8->items.
     t8->save( ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t18) = |AND|.
     CREATE OBJECT t17.
     t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t17->sval = t18.
+    t17->sval = |AND|.
     t8->load( ).
     APPEND t17 TO t8->items.
     t8->save( ).
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t21) = |REFERENCE|.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t20->sval = t21.
+    t20->sval = |REFERENCE|.
     t8->load( ).
     APPEND t20 TO t8->items.
     t8->save( ).
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t24) = |FIELD|.
     CREATE OBJECT t23.
     t23->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t23->sval = t24.
+    t23->sval = |FIELD|.
     t8->load( ).
     APPEND t23 TO t8->items.
     t8->save( ).
@@ -80,9 +72,7 @@ CLASS zcl_lnt_ddl_reference IMPLEMENTATION.
     t8->load( ).
     APPEND t26 TO t8->items.
     t8->save( ).
-    DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-    t28 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
-    result = t28.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
 
   ENDMETHOD.
 

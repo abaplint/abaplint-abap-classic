@@ -15,126 +15,107 @@ CLASS zcl_lnt_sql_compare_operator IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |=|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |=|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |<>|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |<>|.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |<|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |<|.
     t9->load( ).
     APPEND t12 TO t9->items.
     t9->save( ).
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t16) = |>|.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t15->sval = t16.
+    t15->sval = |>|.
     t9->load( ).
     APPEND t15 TO t9->items.
     t9->save( ).
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t19) = |<=|.
     CREATE OBJECT t18.
     t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t18->sval = t19.
+    t18->sval = |<=|.
     t9->load( ).
     APPEND t18 TO t9->items.
     t9->save( ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t22) = |>=|.
     CREATE OBJECT t21.
     t21->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t21->sval = t22.
+    t21->sval = |>=|.
     t9->load( ).
     APPEND t21 TO t9->items.
     t9->save( ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t25) = |EQ|.
     CREATE OBJECT t24.
     t24->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t24->sval = t25.
+    t24->sval = |EQ|.
     t9->load( ).
     APPEND t24 TO t9->items.
     t9->save( ).
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t28) = |NE|.
     CREATE OBJECT t27.
     t27->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t27->sval = t28.
+    t27->sval = |NE|.
     t9->load( ).
     APPEND t27 TO t9->items.
     t9->save( ).
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = |GE|.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t30->sval = t31.
+    t30->sval = |GE|.
     t9->load( ).
     APPEND t30 TO t9->items.
     t9->save( ).
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t34) = |GT|.
     CREATE OBJECT t33.
     t33->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t33->sval = t34.
+    t33->sval = |GT|.
     t9->load( ).
     APPEND t33 TO t9->items.
     t9->save( ).
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t37) = |LT|.
     CREATE OBJECT t36.
     t36->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t36->sval = t37.
+    t36->sval = |LT|.
     t9->load( ).
     APPEND t36 TO t9->items.
     t9->save( ).
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t40) = |LE|.
     CREATE OBJECT t39.
     t39->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t39->sval = t40.
+    t39->sval = |LE|.
     t9->load( ).
     APPEND t39 TO t9->items.
     t9->save( ).
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t43) = |><|.
     CREATE OBJECT t42.
     t42->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t42->sval = t43.
+    t42->sval = |><|.
     t9->load( ).
     APPEND t42 TO t9->items.
     t9->save( ).
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t46) = |=>|.
     CREATE OBJECT t45.
     t45->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t45->sval = t46.
+    t45->sval = |=>|.
     t9->load( ).
     APPEND t45 TO t9->items.
     t9->save( ).
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t49) = |=<|.
     CREATE OBJECT t48.
     t48->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t48->sval = t49.
+    t48->sval = |=<|.
     t9->load( ).
     APPEND t48 TO t9->items.
     t9->save( ).
-    DATA t50 TYPE REF TO zif_lnt_statement_runnable.
-    t50 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t9 ).
-    result = t50.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t9 ).
 
   ENDMETHOD.
 

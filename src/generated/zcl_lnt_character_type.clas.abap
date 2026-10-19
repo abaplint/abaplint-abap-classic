@@ -23,19 +23,13 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA(t1) = i_length.
     DATA(t3) = i_extra.
     super->constructor( i_input_967e = t3 ).
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t6) = CONV f( 0 ).
-    t4 = xsdbool( t1 <= t6 ).
-    IF t4 = abap_true.
+    IF xsdbool( t1 <= CONV f( 0 ) ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |Bad LENGTH, Character|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |Bad LENGTH, Character|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -71,9 +65,8 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t6) = |\{\}|.
     TRY.
-        t5 = zlnt_runtime_json_7c6b3012af76=>parse( t6 ).
+        t5 = zlnt_runtime_json_7c6b3012af76=>parse( |\{\}| ).
       CATCH zlnt_exception_js_ebcc2df7d5e4.
         DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t7->has = abap_true.
@@ -112,9 +105,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA t15 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t16 TYPE REF TO zcl_lnt_abstract_type.
     t16 = me.
-    DATA t18 TYPE REF TO zcl_lnt_abstract_type_data.
-    t18 = t16->data_56cc.
-    t15 = t18.
+    t15 = t16->data_56cc.
     IF t15 IS BOUND.
       IF t15 IS BOUND.
         DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -141,15 +132,13 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     t13 = t14.
-    DATA(t22) = VALUE abap_bool( ).
     DATA(t23) = VALUE abap_bool( ).
     IF t13 IS NOT BOUND.
       t23 = abap_true.
     ELSE.
       t23 = xsdbool( t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_null ).
     ENDIF.
-    t22 = xsdbool( t23 = abap_false ).
-    IF t22 = abap_true.
+    IF xsdbool( t23 = abap_false ) = abap_true.
       DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       t25 = zlnt_runtime_ownk_4497b85e405d=>keys( t13 ).
       DATA(t27) = VALUE string( ).
@@ -166,10 +155,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t28 = t28 + 1.
-        DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t31.
-        t31 = t13->get( p0 = t27 ).
-        t4->put( p0 = t27 p1 = t31 ).
+        t4->put( p0 = t27 p1 = t13->get( p0 = t27 ) ).
       ENDDO.
     ENDIF.
     DATA t34 TYPE REF TO zcl_lnt_abstract_type_data.
@@ -214,16 +200,12 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t43 = abap_true.
-      DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t49) = VALUE string( ).
-      DATA t50 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t50 = t1->zlnt_view_read_sr_c978da49ae47( ).
-      t49 = t50->value.
+      t49 = t1->zlnt_view_read_sr_c978da49ae47( )->value.
       DATA(t52) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t52->has = abap_true.
       t52->value = t49.
-      t47 = t52.
-      t2->zlnt_view_write_s_97a0b5bff1fc( p0 = t47 ).
+      t2->zlnt_view_write_s_97a0b5bff1fc( p0 = t52 ).
     ENDIF.
     DATA(t54) = VALUE abap_bool( ).
     DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -234,16 +216,12 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t54 = abap_true.
-      DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t60) = VALUE string( ).
-      DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t61 = t1->zlnt_view_read_sr_19ee0de30d00( ).
-      t60 = t61->value.
+      t60 = t1->zlnt_view_read_sr_19ee0de30d00( )->value.
       DATA(t63) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t63->has = abap_true.
       t63->value = t60.
-      t58 = t63.
-      t2->zlnt_view_write_s_8e32d930c893( p0 = t58 ).
+      t2->zlnt_view_write_s_8e32d930c893( p0 = t63 ).
     ENDIF.
     DATA(t65) = VALUE abap_bool( ).
     DATA t66 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -254,23 +232,15 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t65 = abap_true.
-      DATA t69 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA(t71) = VALUE abap_bool( ).
-      DATA t72 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      t72 = t1->zlnt_view_read_sr_b01015468803( ).
-      t71 = t72->value.
+      t71 = t1->zlnt_view_read_sr_b01015468803( )->value.
       DATA(t74) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t74->has = abap_true.
       t74->value = t71.
-      t69 = t74.
-      t2->zlnt_view_write_s_f5f18077e8ab( p0 = t69 ).
+      t2->zlnt_view_write_s_f5f18077e8ab( p0 = t74 ).
     ENDIF.
-    DATA t76 TYPE REF TO zcl_lnt_character_type.
     DATA(t77) = CONV f( me->length ).
-    DATA t78 TYPE REF TO zcl_lnt_abstract_type_data.
-    t78 = t2.
-    t76 = NEW zcl_lnt_character_type( i_length = t77 i_extra = t78 ).
-    result = t76.
+    result = NEW zcl_lnt_character_type( i_length = t77 i_extra = t2 ).
 
   ENDMETHOD.
 
@@ -282,7 +252,6 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
 
   METHOD t_t_i_s_a_ty_bs_ch_ty_ts_ch_ty.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = |```c LENGTH |.
     DATA(t4) = VALUE string( ).
@@ -294,16 +263,13 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     t4 = |{ t6 }|.
     DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = |```|.
     DATA(t9) = strlen( t2 ).
-    t1 = |{ t2 }{ t8 }|.
-    result = t1.
+    result = |{ t2 }{ |```| }|.
 
   ENDMETHOD.
 
   METHOD to_abap.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = |c LENGTH |.
     DATA(t3) = VALUE string( ).
     DATA(t4) = CONV f( me->length ).
@@ -313,8 +279,7 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     DATA(t5) = CONV int8( t4 ).
     t3 = |{ t5 }|.
     DATA(t6) = strlen( t2 ).
-    t1 = |{ t2 }{ t3 }|.
-    result = t1.
+    result = |{ t2 }{ t3 }|.
 
   ENDMETHOD.
 
@@ -335,7 +300,6 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
 
   METHOD to_cds.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = |abap.char( |.
     DATA(t4) = VALUE string( ).
@@ -347,10 +311,8 @@ CLASS zcl_lnt_character_type IMPLEMENTATION.
     t4 = |{ t6 }|.
     DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = | )|.
     DATA(t9) = strlen( t2 ).
-    t1 = |{ t2 }{ t8 }|.
-    result = t1.
+    result = |{ t2 }{ | )| }|.
 
   ENDMETHOD.
 

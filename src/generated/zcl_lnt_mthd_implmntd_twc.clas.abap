@@ -25,32 +25,20 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |method_implemented_twice|.
-    DATA t4 TYPE string.
-    t4 = |Method implemented twice|.
-    DATA t6 TYPE string.
-    t6 = |Reports an error if a method is implemented or defined twice|.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    DATA(t17) = |Syntax|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |Syntax| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |method_implemented_twice| i_title = |Method implemented twice| i_short_description = |Reports an error if a method is implemented or defined twice| i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -69,23 +57,19 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -104,15 +88,9 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
   METHOD r_p_i_s_r_mt_im_tw_ts_mt_im_tw.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t8 TYPE REF TO zif_lnt_abap_file_information.
-    t8 = t1->info.
-    t5 = t8.
-    t4 = t5->list_class_implementations( ).
+    t4 = t1->info->list_class_implementations( ).
     DATA t10 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -166,14 +144,8 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
         DATA(t27) = VALUE string( ).
         DATA(t28) = VALUE string( ).
         DATA(t29) = VALUE string( ).
-        DATA(t32) = VALUE string( ).
         DATA t33 TYPE string.
-        DATA t36 TYPE REF TO zcl_lnt_abstract_token.
-        t36 = t22->token.
-        DATA t38 TYPE string.
-        t38 = t36->str.
-        t33 = t38.
-        DATA(t40) = VALUE abap_bool( ).
+        t33 = t22->token->str.
         DATA(t41) = VALUE string( ).
         DATA(t42) = t33.
         DATA(t43) = 0.
@@ -186,17 +158,13 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t43 > t45 OR t44 <= 0.
-          CLEAR t41.
         ELSE.
           IF t44 > t45 - t43.
             t44 = t45 - t43.
           ENDIF.
           t41 = t42+t43(t44).
         ENDIF.
-        DATA(t46) = |!|.
-        t40 = xsdbool( t41 = t46 ).
-        IF t40 = abap_true.
-          DATA(t47) = VALUE string( ).
+        IF xsdbool( t41 = |!| ) = abap_true.
           DATA t48 TYPE string.
           t48 = t33.
           DATA(t50) = VALUE string( ).
@@ -211,18 +179,15 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t52 > t56 OR t53 <= 0.
-            CLEAR t50.
           ELSE.
             IF t53 > t56 - t52.
               t53 = t56 - t52.
             ENDIF.
             t50 = t48+t52(t53).
           ENDIF.
-          t47 = t50.
-          t33 = t47.
+          t33 = t50.
         ENDIF.
-        t32 = t33.
-        t29 = t32.
+        t29 = t33.
         DATA(t58) = strlen( t29 ).
         t28 = t29.
         IF t28 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -231,11 +196,8 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t28 = zlnt_runtime_uppe_91169605024d=>full( t28 ).
         ENDIF.
         t27 = t28.
-        DATA(t59) = VALUE abap_bool( ).
         DATA t60 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA t61 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        t61 = t15->get( p0 = t27 ).
-        t60 = t61.
+        t60 = t15->get( p0 = t27 ).
         DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t64.
         DATA(t66) = VALUE abap_bool( ).
@@ -244,8 +206,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
         ELSEIF t60->has = abap_false.
           t66 = abap_true.
         ENDIF.
-        t59 = t66.
-        IF t59 = abap_true.
+        IF t66 = abap_true.
           DATA t68 TYPE REF TO zlnt_runtime_map__45a2315f90b8.
           t68 = t15->set( p0 = t27 p1 = abap_true ).
         ELSE.
@@ -254,37 +215,24 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           DATA(t75) = |Method |.
           DATA(t77) = strlen( t75 ).
           t74 = |{ t75 }{ t27 }|.
-          DATA(t78) = | implemented twice|.
           DATA(t79) = strlen( t74 ).
-          t73 = |{ t74 }{ t78 }|.
+          t73 = |{ t74 }{ | implemented twice| }|.
           DATA t81 TYPE REF TO zcl_lnt_issue.
           CLEAR t81.
           DATA t83 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t86 TYPE REF TO zcl_lnt_abstract_token.
-          t86 = t22->token.
-          t83 = t86.
+          t83 = t22->token.
           DATA(t89) = VALUE string( ).
           DATA t90 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t90.
-          DATA t91 TYPE string.
-          t91 = |method_implemented_twice|.
-          DATA t93 TYPE string.
-          t93 = |Method implemented twice|.
-          DATA t95 TYPE string.
-          t95 = |Reports an error if a method is implemented or defined twice|.
           DATA t97 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t97.
           DATA t101 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t102 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t102.
-          t101 = t102.
-          DATA(t104) = |SingleFile|.
+          CREATE OBJECT t101.
           t101->load( ).
-          APPEND t104 TO t101->items.
+          APPEND |SingleFile| TO t101->items.
           t101->save( ).
-          DATA(t106) = |Syntax|.
           t101->load( ).
-          APPEND t106 TO t101->items.
+          APPEND |Syntax| TO t101->items.
           t101->save( ).
           t97 = t101.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -297,7 +245,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           CLEAR t115.
           DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t117.
-          t90 = NEW zcl_lnt_irule_metadata( i_key = t91 i_title = t93 i_short_description = t95 i_bad_example = t109 i_good_example = t111 i_extended_information = t113 i_tags = t97 i_pragma = t115 i_pseudo_comment = t117 ).
+          t90 = NEW zcl_lnt_irule_metadata( i_key = |method_implemented_twice| i_title = |Method implemented twice| i_short_description = |Reports an error if a method is implemented or defined twice| i_bad_example = t109 i_good_example = t111 i_extended_information = t113 i_tags = t97 i_pragma = t115 i_pseudo_comment = t117 ).
           CREATE OBJECT t90->zlnt_view_ownkeys_b0e8086400eb.
           t90->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -320,32 +268,27 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
           t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t123) = |key|.
           DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t124.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
-          DATA(t125) = |title|.
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t124 ).
           DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t126.
           IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t125 p1 = t126 ).
+            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t126 ).
           ENDIF.
-          DATA(t127) = |shortDescription|.
           DATA t128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t128.
           IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t127 p1 = t128 ).
+            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t128 ).
           ENDIF.
-          DATA(t129) = |tags|.
           DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t130.
           IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t129 p1 = t130 ).
+            t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t130 ).
           ENDIF.
           t89 = t90->key.
           DATA t131 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t132) = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) ).
-          t131 = t132->zlnt_view_read_sr_15c06369f827( ).
+          t131 = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) )->zlnt_view_read_sr_15c06369f827( ).
           DATA t133 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t133.
           t81 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t83 i_message_26cb = t73 i_key = t89 i_severity = t131 i_fix = t133 ).
@@ -356,11 +299,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
       ENDDO.
     ENDDO.
     DATA t134 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t135 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t138 TYPE REF TO zif_lnt_abap_file_information.
-    t138 = t1->info.
-    t135 = t138.
-    t134 = t135->list_class_definitions( ).
+    t134 = t1->info->list_class_definitions( ).
     DATA t140 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t141 TYPE REF TO object.
     DATA(t142) = VALUE i( ).
@@ -423,11 +362,8 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t158 = zlnt_runtime_uppe_91169605024d=>full( t158 ).
         ENDIF.
         t157 = t158.
-        DATA(t162) = VALUE abap_bool( ).
         DATA t163 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA t164 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        t164 = t145->get( p0 = t157 ).
-        t163 = t164.
+        t163 = t145->get( p0 = t157 ).
         DATA t167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t167.
         DATA(t169) = VALUE abap_bool( ).
@@ -436,8 +372,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
         ELSEIF t163->has = abap_false.
           t169 = abap_true.
         ENDIF.
-        t162 = t169.
-        IF t162 = abap_true.
+        IF t169 = abap_true.
           DATA t171 TYPE REF TO zlnt_runtime_map__45a2315f90b8.
           t171 = t145->set( p0 = t157 p1 = abap_true ).
         ELSE.
@@ -446,39 +381,24 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           DATA(t178) = |Method |.
           DATA(t180) = strlen( t178 ).
           t177 = |{ t178 }{ t157 }|.
-          DATA(t181) = | defined twice|.
           DATA(t182) = strlen( t177 ).
-          t176 = |{ t177 }{ t181 }|.
+          t176 = |{ t177 }{ | defined twice| }|.
           DATA t184 TYPE REF TO zcl_lnt_issue.
           CLEAR t184.
           DATA t186 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t188 TYPE REF TO zcl_lnt_fi_identifier.
-          t188 = t152->identifier.
-          DATA t190 TYPE REF TO zcl_lnt_abstract_token.
-          t190 = t188->token.
-          t186 = t190.
+          t186 = t152->identifier->token.
           DATA(t193) = VALUE string( ).
           DATA t194 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t194.
-          DATA t195 TYPE string.
-          t195 = |method_implemented_twice|.
-          DATA t197 TYPE string.
-          t197 = |Method implemented twice|.
-          DATA t199 TYPE string.
-          t199 = |Reports an error if a method is implemented or defined twice|.
           DATA t201 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t201.
           DATA t205 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t206 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t206.
-          t205 = t206.
-          DATA(t208) = |SingleFile|.
+          CREATE OBJECT t205.
           t205->load( ).
-          APPEND t208 TO t205->items.
+          APPEND |SingleFile| TO t205->items.
           t205->save( ).
-          DATA(t210) = |Syntax|.
           t205->load( ).
-          APPEND t210 TO t205->items.
+          APPEND |Syntax| TO t205->items.
           t205->save( ).
           t201 = t205.
           DATA t213 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -491,7 +411,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           CLEAR t219.
           DATA t221 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t221.
-          t194 = NEW zcl_lnt_irule_metadata( i_key = t195 i_title = t197 i_short_description = t199 i_bad_example = t213 i_good_example = t215 i_extended_information = t217 i_tags = t201 i_pragma = t219 i_pseudo_comment = t221 ).
+          t194 = NEW zcl_lnt_irule_metadata( i_key = |method_implemented_twice| i_title = |Method implemented twice| i_short_description = |Reports an error if a method is implemented or defined twice| i_bad_example = t213 i_good_example = t215 i_extended_information = t217 i_tags = t201 i_pragma = t219 i_pseudo_comment = t221 ).
           CREATE OBJECT t194->zlnt_view_ownkeys_b0e8086400eb.
           t194->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -514,32 +434,27 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t194->zlnt_json_ownkeys_70e5fd461788.
           t194->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t227) = |key|.
           DATA t228 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t228.
-          t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t227 p1 = t228 ).
-          DATA(t229) = |title|.
+          t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t228 ).
           DATA t230 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t230.
           IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t229 p1 = t230 ).
+            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t230 ).
           ENDIF.
-          DATA(t231) = |shortDescription|.
           DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t232.
           IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t231 p1 = t232 ).
+            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t232 ).
           ENDIF.
-          DATA(t233) = |tags|.
           DATA t234 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t234.
           IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t233 p1 = t234 ).
+            t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t234 ).
           ENDIF.
           t193 = t194->key.
           DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t236) = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) ).
-          t235 = t236->zlnt_view_read_sr_15c06369f827( ).
+          t235 = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) )->zlnt_view_read_sr_15c06369f827( ).
           DATA t237 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t237.
           t184 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t186 i_message_26cb = t176 i_key = t193 i_severity = t235 i_fix = t237 ).
@@ -550,11 +465,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
       ENDDO.
     ENDDO.
     DATA t238 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t239 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t242 TYPE REF TO zif_lnt_abap_file_information.
-    t242 = t1->info.
-    t239 = t242.
-    t238 = t239->list_interface_definitions( ).
+    t238 = t1->info->list_interface_definitions( ).
     DATA t244 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     DATA t245 TYPE REF TO object.
     DATA(t246) = VALUE i( ).
@@ -617,11 +528,8 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t262 = zlnt_runtime_uppe_91169605024d=>full( t262 ).
         ENDIF.
         t261 = t262.
-        DATA(t266) = VALUE abap_bool( ).
         DATA t267 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        DATA t268 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        t268 = t249->get( p0 = t261 ).
-        t267 = t268.
+        t267 = t249->get( p0 = t261 ).
         DATA t271 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t271.
         DATA(t273) = VALUE abap_bool( ).
@@ -630,8 +538,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
         ELSEIF t267->has = abap_false.
           t273 = abap_true.
         ENDIF.
-        t266 = t273.
-        IF t266 = abap_true.
+        IF t273 = abap_true.
           DATA t275 TYPE REF TO zlnt_runtime_map__45a2315f90b8.
           t275 = t249->set( p0 = t261 p1 = abap_true ).
         ELSE.
@@ -640,9 +547,8 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           DATA(t282) = |Method |.
           DATA(t284) = strlen( t282 ).
           t281 = |{ t282 }{ t261 }|.
-          DATA(t285) = | implemented twice|.
           DATA(t286) = strlen( t281 ).
-          t280 = |{ t281 }{ t285 }|.
+          t280 = |{ t281 }{ | implemented twice| }|.
           DATA t288 TYPE REF TO zcl_lnt_issue.
           CLEAR t288.
           DATA t289 TYPE REF TO zcl_lnt_fi_identifier.
@@ -650,25 +556,15 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           DATA(t292) = VALUE string( ).
           DATA t293 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t293.
-          DATA t294 TYPE string.
-          t294 = |method_implemented_twice|.
-          DATA t296 TYPE string.
-          t296 = |Method implemented twice|.
-          DATA t298 TYPE string.
-          t298 = |Reports an error if a method is implemented or defined twice|.
           DATA t300 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t300.
           DATA t304 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t305 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t305.
-          t304 = t305.
-          DATA(t307) = |SingleFile|.
+          CREATE OBJECT t304.
           t304->load( ).
-          APPEND t307 TO t304->items.
+          APPEND |SingleFile| TO t304->items.
           t304->save( ).
-          DATA(t309) = |Syntax|.
           t304->load( ).
-          APPEND t309 TO t304->items.
+          APPEND |Syntax| TO t304->items.
           t304->save( ).
           t300 = t304.
           DATA t312 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -681,7 +577,7 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           CLEAR t318.
           DATA t320 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t320.
-          t293 = NEW zcl_lnt_irule_metadata( i_key = t294 i_title = t296 i_short_description = t298 i_bad_example = t312 i_good_example = t314 i_extended_information = t316 i_tags = t300 i_pragma = t318 i_pseudo_comment = t320 ).
+          t293 = NEW zcl_lnt_irule_metadata( i_key = |method_implemented_twice| i_title = |Method implemented twice| i_short_description = |Reports an error if a method is implemented or defined twice| i_bad_example = t312 i_good_example = t314 i_extended_information = t316 i_tags = t300 i_pragma = t318 i_pseudo_comment = t320 ).
           CREATE OBJECT t293->zlnt_view_ownkeys_b0e8086400eb.
           t293->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t322 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -704,32 +600,27 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t293->zlnt_json_ownkeys_70e5fd461788.
           t293->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t326) = |key|.
           DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t327.
-          t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = t326 p1 = t327 ).
-          DATA(t328) = |title|.
+          t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t327 ).
           DATA t329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t329.
           IF t293->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = t328 p1 = t329 ).
+            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t329 ).
           ENDIF.
-          DATA(t330) = |shortDescription|.
           DATA t331 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t331.
           IF t293->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = t330 p1 = t331 ).
+            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t331 ).
           ENDIF.
-          DATA(t332) = |tags|.
           DATA t333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t333.
           IF t293->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = t332 p1 = t333 ).
+            t293->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t333 ).
           ENDIF.
           t292 = t293->key.
           DATA t334 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t335) = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) ).
-          t334 = t335->zlnt_view_read_sr_15c06369f827( ).
+          t334 = CAST zcl_lnt_mthd_implmntd_twc_cnf( me->g_c_i_s_r_mt_im_tw_ts_mt_im_tw( ) )->zlnt_view_read_sr_15c06369f827( ).
           DATA t336 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t336.
           t288 = zcl_lnt_issue=>at_identifier( i_identifier = t289 i_message_26cb = t280 i_key = t292 i_severity = t334 i_fix = t336 ).

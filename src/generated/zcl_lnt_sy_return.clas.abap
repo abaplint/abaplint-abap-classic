@@ -14,33 +14,18 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-    t4 = i_node->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA t7 TYPE abap_bool.
-    t7 = xsdbool( t3 IS BOUND ).
-    IF t7 = abap_true.
+    t3 = i_node->find_direct_expression( i_type_9913 = t6 ).
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA t10 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA t11 TYPE REF TO zcl_lnt_current_scope.
-      t11 = t2->scope.
-      t10 = t11->find_returning_parameter( ).
-      t9 = t10.
-      DATA(t13) = VALUE abap_bool( ).
+      t9 = t2->scope->find_returning_parameter( ).
       DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t13 = xsdbool( t9 IS INITIAL ).
-      IF t13 = abap_true.
-        DATA(t21) = |Method does not have a RETURNING parameter to assign to|.
+      IF xsdbool( t9 IS INITIAL ) = abap_true.
         DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t22 = t2->issues.
         DATA t24 TYPE REF TO zcl_lnt_issue.
-        DATA t26 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t27 TYPE REF TO zcl_lnt_expression_node.
-        t27 = t3.
-        t26 = t27->get_first_token( ).
         DATA t30 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        t24 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t26 i_message_26cb = t21 i_fix = t30 ).
+        t24 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t3->get_first_token( ) i_message_26cb = |Method does not have a RETURNING parameter to assign to| i_fix = t30 ).
         t22->load( ).
         APPEND t24 TO t22->items.
         t22->save( ).
@@ -49,18 +34,13 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
       DATA t31 TYPE REF TO zcl_lnt_current_scope.
       t31 = t2->scope.
       DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t35 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t36 TYPE REF TO zcl_lnt_expression_node.
-      t36 = t3.
-      t35 = t36->get_first_token( ).
-      t33 = t35.
+      t33 = t3->get_first_token( ).
       DATA t39 TYPE REF TO zcl_lnt_typed_identifier.
       t39 = t9.
       DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t42) = |Read From|.
       CREATE OBJECT t41.
       t41->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-      t41->sval = t42.
+      t41->sval = |Read From|.
       DATA t43 TYPE string.
       t43 = t2->filename.
       DATA t45 TYPE REF TO zcl_lnt_ireference_extras.
@@ -68,14 +48,12 @@ CLASS zcl_lnt_sy_return IMPLEMENTATION.
       DATA t46 TYPE REF TO zcl_lnt_abstract_type.
       DATA t47 TYPE REF TO zcl_lnt_expression_node.
       t47 = t3.
-      DATA t53 TYPE REF TO zcl_lnt_abstract_type.
       DATA t59 TYPE REF TO zcl_lnt_abstract_type.
       t59 = t9->type_cba0.
-      t53 = t59.
       DATA t62 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t63 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t64 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      t46 = zcl_lnt_sy_source=>run_syntax( i_node = t47 i_input_967e = t2 i_target_type = t53 i_write_reference = t62 i_allow_generic_deference = t63 i_read_reference = t64 ).
+      t46 = zcl_lnt_sy_source=>run_syntax( i_node = t47 i_input_967e = t2 i_target_type = t59 i_write_reference = t62 i_allow_generic_deference = t63 i_read_reference = t64 ).
     ENDIF.
   ENDMETHOD.
 

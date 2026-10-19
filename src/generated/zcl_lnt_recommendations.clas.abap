@@ -58,8 +58,7 @@ CLASS zcl_lnt_recommendations IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_76927b478f89.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) )->as_string( ).
     ELSE.
       result = me->name.
     ENDIF.
@@ -84,8 +83,7 @@ CLASS zcl_lnt_recommendations IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e143aed5d80b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `replace` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `replace` ) )->as_string( ).
     ELSE.
       result = me->replace_128a.
     ENDIF.

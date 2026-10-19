@@ -29,12 +29,6 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |nrob_consistency|.
-    DATA t4 TYPE string.
-    t4 = |Number range consistency|.
-    DATA t6 TYPE string.
-    t6 = |Consistency checks for number ranges|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |Issue reported if percentage warning is over 50%\n\nIssue repo|.
     t11 = t11 && |rted if the referenced domain is not found(taking error name|.
@@ -43,21 +37,16 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     t12->has = abap_true.
     t12->value = t11.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |nrob_consistency| i_title = |Number range consistency| i_short_description = |Consistency checks for number ranges| i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -80,28 +69,23 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |extendedInformation|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -126,20 +110,12 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_number_range ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_number_range ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA t8 TYPE REF TO zcl_lnt_fi_identifier.
     DATA t10 TYPE REF TO zcl_lnt_abstract_object.
     DATA t11 TYPE REF TO zcl_lnt_number_range.
@@ -148,42 +124,24 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     t11 ?= t13.
     t10 = t11.
     DATA t15 TYPE REF TO zif_lnt_file.
-    DATA t16 TYPE REF TO zif_lnt_file.
-    t16 = t10->get_xml_file( ).
-    t15 = t16.
+    t15 = t10->get_xml_file( ).
     DATA t18 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t19) = VALUE abap_bool( ).
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t19 = xsdbool( t15 IS INITIAL ).
-    IF t19 = abap_true.
+    IF xsdbool( t15 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t29 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t30 TYPE REF TO zcl_lnt_lx_identifier.
       DATA t31 TYPE REF TO zcl_lnt_position.
-      DATA(t32) = CONV f( 1 ).
-      DATA(t33) = CONV f( 1 ).
       DATA(t34) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t34->has = abap_true.
-      t34->value = t33.
-      t31 = NEW zcl_lnt_position( i_row = t32 i_col = t34 ).
+      t34->value = CONV f( 1 ).
+      t31 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t34 ).
       DATA t35 TYPE string.
       t35 = t10->name.
-      t30 = NEW zcl_lnt_lx_identifier( i_start = t31 i_str = t35 ).
-      DATA t37 TYPE string.
-      DATA t38 TYPE REF TO zif_lnt_file.
-      t38 = t15.
-      t37 = t38->get_filename( ).
-      t29 = NEW zcl_lnt_fi_identifier( i_token = t30 i_filename = t37 ).
-      t18 = t29.
+      t18 = NEW zcl_lnt_fi_identifier( i_token = NEW zcl_lnt_lx_identifier( i_start = t31 i_str = t35 ) i_filename = t15->get_filename( ) ).
     ENDIF.
     t8 = t18.
-    DATA(t41) = VALUE abap_bool( ).
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t41 = xsdbool( t8 IS INITIAL ).
-    IF t41 = abap_true.
-      DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t48.
-      result = t48.
+    IF xsdbool( t8 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA(t49) = VALUE abap_bool( ).
@@ -198,18 +156,11 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     DATA t57 TYPE REF TO zcl_lnt_iparse_result.
     t57 = t52->pr_in_sr_ob_nmb_rng_ts_nmb_rng( ).
     DATA t60 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-    DATA t61 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-    t61 = t52->parsed_xml.
-    t60 = t61.
+    t60 = t52->parsed_xml.
     DATA t63 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t64) = xsdbool( t60 IS INITIAL ).
-    IF t64 = abap_true.
+    IF xsdbool( t60 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t67 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t68 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-      t68 = t60.
-      t67 = t68->percentage.
-      t63 = t67.
+      t63 = t60->percentage.
     ENDIF.
     t51 = t63.
     IF t51 IS BOUND.
@@ -223,25 +174,14 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     ENDIF.
     t49 = t50.
     IF t50 = abap_false.
-      DATA t70 TYPE abap_bool.
-      DATA(t71) = 0.
-      DATA(t72) = 50.
-      t70 = xsdbool( t71 > t72 ).
-      t49 = t70.
+      t49 = xsdbool( 0 > 50 ).
     ENDIF.
     IF t49 = abap_true.
-      DATA(t74) = |Percentage more than 50|.
       DATA t76 TYPE REF TO zcl_lnt_issue.
       DATA t77 TYPE REF TO zcl_lnt_fi_identifier.
       t77 = t8.
       DATA(t80) = VALUE string( ).
       DATA t81 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t82 TYPE string.
-      t82 = |nrob_consistency|.
-      DATA t84 TYPE string.
-      t84 = |Number range consistency|.
-      DATA t86 TYPE string.
-      t86 = |Consistency checks for number ranges|.
       DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t91) = |Issue reported if percentage warning is over 50%\n\nIssue repo|.
       t91 = t91 && |rted if the referenced domain is not found(taking error name|.
@@ -250,21 +190,16 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       t92->has = abap_true.
       t92->value = t91.
       t88 = t92.
-      DATA t94 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t98 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t99 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t99.
-      t98 = t99.
-      DATA(t101) = |SingleFile|.
+      CREATE OBJECT t98.
       t98->load( ).
-      APPEND t101 TO t98->items.
+      APPEND |SingleFile| TO t98->items.
       t98->save( ).
-      t94 = t98.
       DATA t104 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t108 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t110 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t81 = NEW zcl_lnt_irule_metadata( i_key = t82 i_title = t84 i_short_description = t86 i_bad_example = t104 i_good_example = t106 i_extended_information = t88 i_tags = t94 i_pragma = t108 i_pseudo_comment = t110 ).
+      t81 = NEW zcl_lnt_irule_metadata( i_key = |nrob_consistency| i_title = |Number range consistency| i_short_description = |Consistency checks for number ranges| i_bad_example = t104 i_good_example = t106 i_extended_information = t88 i_tags = t98 i_pragma = t108 i_pseudo_comment = t110 ).
       CREATE OBJECT t81->zlnt_view_ownkeys_b0e8086400eb.
       t81->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -287,35 +222,27 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t81->zlnt_json_ownkeys_70e5fd461788.
       t81->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t117) = |key|.
       DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = t117 p1 = t118 ).
-      DATA(t119) = |title|.
+      t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t118 ).
       DATA t120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t81->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = t119 p1 = t120 ).
+        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t120 ).
       ENDIF.
-      DATA(t121) = |shortDescription|.
       DATA t122 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t81->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = t121 p1 = t122 ).
+        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t122 ).
       ENDIF.
-      DATA(t123) = |extendedInformation|.
       DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t81->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
+        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t124 ).
       ENDIF.
-      DATA(t125) = |tags|.
       DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t81->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = t125 p1 = t126 ).
+        t81->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t126 ).
       ENDIF.
       t80 = t81->key.
-      DATA t127 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t128) = CAST zcl_lnt_nrob_consistency_conf( me->gt_cn_in_sr_rl_nr_cn_ts_nr_cns( ) ).
-      t127 = t128->zlnt_view_read_sr_15c06369f827( ).
       DATA t129 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t76 = zcl_lnt_issue=>at_identifier( i_identifier = t77 i_message_26cb = t74 i_key = t80 i_severity = t127 i_fix = t129 ).
+      t76 = zcl_lnt_issue=>at_identifier( i_identifier = t77 i_message_26cb = |Percentage more than 50| i_key = t80 i_severity = CAST zcl_lnt_nrob_consistency_conf( me->gt_cn_in_sr_rl_nr_cn_ts_nr_cns( ) )->zlnt_view_read_sr_15c06369f827( ) i_fix = t129 ).
       t6->load( ).
       APPEND t76 TO t6->items.
       t6->save( ).
@@ -330,18 +257,11 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     DATA t137 TYPE REF TO zcl_lnt_iparse_result.
     t137 = t132->pr_in_sr_ob_nmb_rng_ts_nmb_rng( ).
     DATA t140 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-    DATA t141 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-    t141 = t132->parsed_xml.
-    t140 = t141.
+    t140 = t132->parsed_xml.
     DATA t143 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t144) = xsdbool( t140 IS INITIAL ).
-    IF t144 = abap_true.
+    IF xsdbool( t140 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t148 TYPE REF TO zcl_lnt_shape_f96fb7aa.
-      t148 = t140.
-      t147 = t148->domain.
-      t143 = t147.
+      t143 = t140->domain.
     ENDIF.
     t130 = t143.
     DATA(t150) = VALUE abap_bool( ).
@@ -354,36 +274,29 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     ENDIF.
     t151 = t152.
     IF t152 = abap_true.
-      DATA(t154) = VALUE abap_bool( ).
       DATA t156 TYPE REF TO zif_lnt_object.
       DATA(t157) = me->reg.
       DATA t158 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t160) = |DOMA|.
       DATA(t161) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t161->has = abap_true.
-      t161->value = t160.
+      t161->value = |DOMA|.
       t158 = t161.
-      DATA t163 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t165 TYPE string.
       t165 = t130->value.
       DATA(t167) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t167->has = abap_true.
       t167->value = t165.
-      t163 = t167.
-      t156 = t157->get_object( i_type_9913 = t158 i_name = t163 ).
+      t156 = t157->get_object( i_type_9913 = t158 i_name = t167 ).
       DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t154 = xsdbool( t156 IS INITIAL ).
-      t151 = t154.
+      t151 = xsdbool( t156 IS INITIAL ).
     ENDIF.
     t150 = t151.
     IF t151 = abap_true.
-      DATA t173 TYPE abap_bool.
       DATA t174 TYPE abap_bool.
       DATA t176 TYPE string.
       t176 = t130->value.
       t174 = me->reg->in_error_namespace( i_name = t176 ).
-      t173 = xsdbool( t174 = abap_true ).
-      t150 = t173.
+      t150 = xsdbool( t174 = abap_true ).
     ENDIF.
     IF t150 = abap_true.
       DATA t180 TYPE string.
@@ -393,20 +306,13 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       t183 = t130->value.
       DATA(t185) = strlen( t182 ).
       t181 = |{ t182 }{ t183 }|.
-      DATA(t186) = | not found|.
       DATA(t187) = strlen( t181 ).
-      t180 = |{ t181 }{ t186 }|.
+      t180 = |{ t181 }{ | not found| }|.
       DATA t189 TYPE REF TO zcl_lnt_issue.
       DATA t190 TYPE REF TO zcl_lnt_fi_identifier.
       t190 = t8.
       DATA(t193) = VALUE string( ).
       DATA t194 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t195 TYPE string.
-      t195 = |nrob_consistency|.
-      DATA t197 TYPE string.
-      t197 = |Number range consistency|.
-      DATA t199 TYPE string.
-      t199 = |Consistency checks for number ranges|.
       DATA t201 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t204) = |Issue reported if percentage warning is over 50%\n\nIssue repo|.
       t204 = t204 && |rted if the referenced domain is not found(taking error name|.
@@ -415,21 +321,16 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       t205->has = abap_true.
       t205->value = t204.
       t201 = t205.
-      DATA t207 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t211 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t212 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t212.
-      t211 = t212.
-      DATA(t214) = |SingleFile|.
+      CREATE OBJECT t211.
       t211->load( ).
-      APPEND t214 TO t211->items.
+      APPEND |SingleFile| TO t211->items.
       t211->save( ).
-      t207 = t211.
       DATA t217 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t219 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t221 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t223 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t194 = NEW zcl_lnt_irule_metadata( i_key = t195 i_title = t197 i_short_description = t199 i_bad_example = t217 i_good_example = t219 i_extended_information = t201 i_tags = t207 i_pragma = t221 i_pseudo_comment = t223 ).
+      t194 = NEW zcl_lnt_irule_metadata( i_key = |nrob_consistency| i_title = |Number range consistency| i_short_description = |Consistency checks for number ranges| i_bad_example = t217 i_good_example = t219 i_extended_information = t201 i_tags = t211 i_pragma = t221 i_pseudo_comment = t223 ).
       CREATE OBJECT t194->zlnt_view_ownkeys_b0e8086400eb.
       t194->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -452,42 +353,32 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t194->zlnt_json_ownkeys_70e5fd461788.
       t194->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t230) = |key|.
       DATA t231 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t230 p1 = t231 ).
-      DATA(t232) = |title|.
+      t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t231 ).
       DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t232 p1 = t233 ).
+        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t233 ).
       ENDIF.
-      DATA(t234) = |shortDescription|.
       DATA t235 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t234 p1 = t235 ).
+        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t235 ).
       ENDIF.
-      DATA(t236) = |extendedInformation|.
       DATA t237 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t236 p1 = t237 ).
+        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t237 ).
       ENDIF.
-      DATA(t238) = |tags|.
       DATA t239 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t194->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = t238 p1 = t239 ).
+        t194->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t239 ).
       ENDIF.
       t193 = t194->key.
-      DATA t240 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t241) = CAST zcl_lnt_nrob_consistency_conf( me->gt_cn_in_sr_rl_nr_cn_ts_nr_cns( ) ).
-      t240 = t241->zlnt_view_read_sr_15c06369f827( ).
       DATA t242 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t189 = zcl_lnt_issue=>at_identifier( i_identifier = t190 i_message_26cb = t180 i_key = t193 i_severity = t240 i_fix = t242 ).
+      t189 = zcl_lnt_issue=>at_identifier( i_identifier = t190 i_message_26cb = t180 i_key = t193 i_severity = CAST zcl_lnt_nrob_consistency_conf( me->gt_cn_in_sr_rl_nr_cn_ts_nr_cns( ) )->zlnt_view_read_sr_15c06369f827( ) i_fix = t242 ).
       t6->load( ).
       APPEND t189 TO t6->items.
       t6->save( ).
     ENDIF.
-    DATA t243 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t243.
-    result = t243.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
@@ -532,10 +423,8 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_nrob_consistency.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_nrb_cns_ts_nrb_cns( i_reg_f149 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_nrb_cns_ts_nrb_cns( i_reg_f149 = t3 ).
 
   ENDMETHOD.
 

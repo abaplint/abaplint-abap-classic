@@ -39,13 +39,8 @@ CLASS zcl_lnt_list IMPLEMENTATION.
       ENDIF.
       t5 = t5 + 1.
       DATA t6 TYPE i.
-      DATA t7 TYPE i.
-      t7 = me->find_8f95( i_keyword = t4 ).
-      t6 = t7.
-      DATA t9 TYPE abap_bool.
-      DATA(t11) = 0.
-      t9 = xsdbool( t6 >= t11 ).
-      IF t9 = abap_true.
+      t6 = me->find_8f95( i_keyword = t4 ).
+      IF xsdbool( t6 >= 0 ) = abap_true.
         DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t12.
         DATA t13 TYPE REF TO zcl_lnt_ikeyword.
@@ -78,16 +73,12 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         DATA t21 TYPE REF TO zcl_lnt_ikeyword.
         DATA t22 TYPE string.
         t22 = t4.
-        DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t27.
-        t26 = t27.
+        CREATE OBJECT t26.
         t26->load( ).
         APPEND t2 TO t26->items.
         t26->save( ).
-        t24 = t26.
-        t21 = NEW zcl_lnt_ikeyword( i_word = t22 i_source_75cf = t24 ).
+        t21 = NEW zcl_lnt_ikeyword( i_word = t22 i_source_75cf = t26 ).
         CREATE OBJECT t21->zlnt_view_ownkeys_b0e8086400eb.
         t21->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -100,15 +91,13 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t21->zlnt_json_ownkeys_70e5fd461788.
         t21->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t33) = |word|.
         DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t34.
-        t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t33 p1 = t34 ).
-        DATA(t35) = |source|.
+        t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = |word| p1 = t34 ).
         DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t36.
         IF t21->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t35 p1 = t36 ).
+          t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = |source| p1 = t36 ).
         ENDIF.
         t20->load( ).
         APPEND t21 TO t20->items.
@@ -127,17 +116,11 @@ CLASS zcl_lnt_list IMPLEMENTATION.
     DATA t2 TYPE i.
     t2 = 0.
     DO.
-      DATA t4 TYPE abap_bool.
-      DATA t6 TYPE i.
       DATA(t7) = me->words.
       t7->load( ).
-      t6 = lines( t7->items ).
-      t4 = xsdbool( t2 < t6 ).
-      IF t4 = abap_false.
+      IF xsdbool( t2 < lines( t7->items ) ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t8) = VALUE abap_bool( ).
-      DATA(t9) = VALUE string( ).
       DATA t10 TYPE REF TO zcl_lnt_ikeyword.
       CLEAR t10.
       DATA(t11) = me->words.
@@ -159,16 +142,12 @@ CLASS zcl_lnt_list IMPLEMENTATION.
       ELSE.
         t10 ?= t13.
       ENDIF.
-      t9 = t10->word.
-      t8 = xsdbool( t9 = t1 ).
-      IF t8 = abap_true.
+      IF xsdbool( t10->word = t1 ) = abap_true.
         result = t2.
         RETURN.
       ENDIF.
-      DATA t18 TYPE i.
       DATA(t20) = 1.
-      t18 = t2 + t20.
-      t2 = t18.
+      t2 = t2 + t20.
     ENDDO.
     result = -1.
 

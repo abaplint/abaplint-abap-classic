@@ -15,10 +15,9 @@ CLASS zcl_lnt_events IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |EXPORTING|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |EXPORTING|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -54,26 +53,20 @@ CLASS zcl_lnt_events IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    t15 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
-    t1 = t15.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t25) = |CLASS-EVENTS|.
     CREATE OBJECT t24.
     t24->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t24->sval = t25.
+    t24->sval = |CLASS-EVENTS|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t28) = |EVENTS|.
     CREATE OBJECT t27.
     t27->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t27->sval = t28.
+    t27->sval = |EVENTS|.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t30.
-    DATA t31 TYPE REF TO zif_lnt_statement_runnable.
-    t31 = zcl_lnt_st_combi_module=>alt_prio( i_first = t24 i_second = t27 i_rest = t30 ).
-    t22 = t31.
+    t22 = zcl_lnt_st_combi_module=>alt_prio( i_first = t24 i_second = t27 i_rest = t30 ).
     IF t22 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t36 TYPE REF TO object.
@@ -105,9 +98,7 @@ CLASS zcl_lnt_events IMPLEMENTATION.
       t38->cval = t39.
     ENDIF.
     DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t41.
-    t40 = t41.
+    CREATE OBJECT t40.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t44 TYPE REF TO zif_lnt_statement_runnable.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -161,9 +152,7 @@ CLASS zcl_lnt_events IMPLEMENTATION.
     t40->load( ).
     APPEND t43 TO t40->items.
     t40->save( ).
-    DATA t51 TYPE REF TO zif_lnt_statement_runnable.
-    t51 = zcl_lnt_st_combi_module=>seq( i_first = t21 i_second = t38 i_rest = t40 ).
-    result = t51.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t21 i_second = t38 i_rest = t40 ).
 
   ENDMETHOD.
 

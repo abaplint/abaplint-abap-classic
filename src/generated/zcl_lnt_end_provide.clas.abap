@@ -14,12 +14,7 @@ ENDCLASS.
 CLASS zcl_lnt_end_provide IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t3) = |ENDPROVIDE|.
-    t2 = zcl_lnt_st_combi_module=>str( i_s = t3 ).
-    t1 = t2.
-    DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t5) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>str( i_s = |ENDPROVIDE| ).
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -44,8 +39,7 @@ CLASS zcl_lnt_end_provide IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t4 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t5 i_first = t6 ).
-    result = t4.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t6 ).
 
   ENDMETHOD.
 

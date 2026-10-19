@@ -26,25 +26,19 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -67,29 +61,22 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t10 TYPE abap_bool.
       DATA t11 TYPE int8.
       DATA t13 TYPE REF TO zcl_lnt_st_result.
       t13 = t5.
       DATA t15 TYPE f.
       DATA t16 TYPE int8.
       DATA t17 TYPE int8.
-      DATA t18 TYPE i.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t19 = t13->tokens.
       t19->load( ).
-      t18 = lines( t19->items ).
-      t17 = t18.
+      t17 = lines( t19->items ).
       DATA t21 TYPE int8.
-      DATA t22 TYPE i.
-      t22 = t13->token_index.
-      t21 = t22.
+      t21 = t13->token_index.
       t16 = t17 - t21.
       t15 = t16.
       t11 = t15.
-      DATA(t24) = CONV int8( 0 ).
-      t10 = xsdbool( t11 = t24 ).
-      IF t10 = abap_true.
+      IF xsdbool( t11 = CONV int8( 0 ) ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
@@ -120,30 +107,22 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
         t29 ?= t34.
       ENDIF.
       t25 = t29.
-      DATA t37 TYPE abap_bool.
       DATA t38 TYPE abap_bool.
-      DATA t40 TYPE string.
       DATA t43 TYPE string.
       t43 = t25->str.
-      t40 = t43.
-      t38 = me->regexp->test( p0 = t40 ).
-      t37 = xsdbool( t38 = abap_true ).
-      IF t37 = abap_true.
+      t38 = me->regexp->test( p0 = t43 ).
+      IF xsdbool( t38 = abap_true ) = abap_true.
         DATA t47 TYPE REF TO zcl_lnt_st_result.
         CLEAR t47.
         DATA t48 TYPE REF TO zcl_lnt_st_result.
         t48 = t5.
         DATA t51 TYPE REF TO zcl_lnt_token_node_regex.
         t51 = NEW zcl_lnt_token_node_regex( i_token = t25 ).
-        DATA t53 TYPE REF TO zcl_lnt_st_result.
-        CLEAR t53.
         DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t54 = t48->tokens.
         DATA t56 TYPE int8.
         DATA t57 TYPE int8.
-        DATA t58 TYPE i.
-        t58 = t48->token_index.
-        t57 = t58.
+        t57 = t48->token_index.
         DATA(t60) = CONV int8( 1 ).
         t56 = t57 + t60.
         DATA t61 TYPE REF TO zcl_lnt_result_node.
@@ -151,11 +130,9 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
         DATA t63 TYPE REF TO zcl_lnt_result_node.
         DATA t64 TYPE REF TO zif_lnt_union_4cf1d054.
         t64 = t51.
-        DATA t66 TYPE REF TO zcl_lnt_result_node.
         DATA t67 TYPE REF TO zcl_lnt_result_node.
         t67 = t48->nodes_0226.
-        t66 = t67.
-        t63 = NEW zcl_lnt_result_node( i_node = t64 i_previous = t66 ).
+        t63 = NEW zcl_lnt_result_node( i_node = t64 i_previous = t67 ).
         CREATE OBJECT t63->zlnt_view_ownkeys_b0e8086400eb.
         t63->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -168,15 +145,13 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t63->zlnt_json_ownkeys_70e5fd461788.
         t63->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t71) = |node|.
         DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t72.
-        t63->zlnt_json_ownkeys_70e5fd461788->put( p0 = t71 p1 = t72 ).
-        DATA(t73) = |previous|.
+        t63->zlnt_json_ownkeys_70e5fd461788->put( p0 = |node| p1 = t72 ).
         DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t74.
         IF t63->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t63->zlnt_json_ownkeys_70e5fd461788->put( p0 = t73 p1 = t74 ).
+          t63->zlnt_json_ownkeys_70e5fd461788->put( p0 = |previous| p1 = t74 ).
         ENDIF.
         t61 = t63.
         DATA t76 TYPE f.
@@ -184,8 +159,7 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
         t77 = t48->node_count.
         DATA(t79) = CONV f( 1 ).
         t76 = t77 + t79.
-        t53 = zcl_lnt_st_result=>from_chain( i_tokens = t54 i_token_index = t56 i_nodes_5198 = t61 i_node_count = t76 ).
-        t47 = t53.
+        t47 = zcl_lnt_st_result=>from_chain( i_tokens = t54 i_token_index = t56 i_nodes_5198 = t61 i_node_count = t76 ).
         t2->load( ).
         APPEND t47 TO t2->items.
         t2->save( ).
@@ -196,7 +170,6 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Terminal("|.
     DATA t4 TYPE string.
@@ -204,25 +177,17 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
     DATA t6 TYPE string.
     t6 = me->regexp->source.
     DATA t8 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t9) = `\\`.
-    DATA(t10) = |g|.
-    CREATE OBJECT t8 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t9 flags = t10 checked = abap_true.
-    DATA(t11) = `\\`.
+    CREATE OBJECT t8 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\\` flags = |g| checked = abap_true.
     DATA(t12) = strlen( t6 ).
-    t5 = t8->replace( p0 = t6 p1 = t11 ).
+    t5 = t8->replace( p0 = t6 p1 = `\\` ).
     DATA t13 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t14) = |"|.
-    DATA(t15) = |g|.
-    CREATE OBJECT t13 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t14 flags = t15 checked = abap_true.
-    DATA(t16) = `\"`.
+    CREATE OBJECT t13 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |"| flags = |g| checked = abap_true.
     DATA(t17) = strlen( t5 ).
-    t4 = t13->replace( p0 = t5 p1 = t16 ).
+    t4 = t13->replace( p0 = t5 p1 = `\"` ).
     DATA(t18) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t19) = |")|.
     DATA(t20) = strlen( t2 ).
-    t1 = |{ t2 }{ t19 }|.
-    result = t1.
+    result = |{ t2 }{ |")| }|.
 
   ENDMETHOD.
 
@@ -240,12 +205,9 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -253,18 +215,12 @@ CLASS zcl_lnt_regex IMPLEMENTATION.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     t4->load( ).
     APPEND t1 TO t4->items.
     t4->save( ).
-    t3 = t4.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 

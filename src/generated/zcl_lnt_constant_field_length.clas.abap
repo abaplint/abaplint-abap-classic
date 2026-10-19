@@ -59,9 +59,7 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t19.
-    DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    t20 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t16 i_rest = t19 ).
-    t11 = t20.
+    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t16 i_rest = t19 ).
     IF t11 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t25 TYPE REF TO object.
@@ -86,9 +84,7 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t27.
-    t26 = t27.
+    CREATE OBJECT t26.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t30 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
@@ -119,9 +115,7 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
     t26->load( ).
     APPEND t29 TO t26->items.
     t26->save( ).
-    DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    t34 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t26 ).
-    result = t34.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t26 ).
 
   ENDMETHOD.
 

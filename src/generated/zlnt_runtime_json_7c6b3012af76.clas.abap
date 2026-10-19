@@ -61,7 +61,6 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     DATA pair TYPE string.
     DATA bytes TYPE xstring.
     DATA unit TYPE x LENGTH 2.
-    DATA converter TYPE REF TO cl_abap_conv_in_ce.
     cursor = cursor + 1.
     WHILE cursor < strlen( input ).
       ch = input+cursor(1).
@@ -99,8 +98,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
                   CONCATENATE unit+1(1) unit+0(1) INTO bytes IN BYTE MODE.
                   unit = low.
                   CONCATENATE bytes unit+1(1) unit+0(1) INTO bytes IN BYTE MODE.
-                  converter = cl_abap_conv_in_ce=>create( encoding = '4103' ).
-                  converter->convert( EXPORTING input = bytes IMPORTING data = ch ).
+                  cl_abap_conv_in_ce=>create( encoding = '4103' )->convert( EXPORTING input = bytes IMPORTING data = ch ).
                 ELSE.
                   cursor = cursor - 6.
                   ch = unicode_unit( code ).
@@ -245,7 +243,6 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
     DATA unit TYPE x LENGTH 2.
     DATA padding TYPE x LENGTH 2.
     DATA bytes TYPE xstring.
-    DATA converter TYPE REF TO cl_abap_conv_in_ce.
     IF p0 < 55296 OR p0 > 57343.
       result = cl_abap_conv_in_ce=>uccpi( p0 ).
       RETURN.
@@ -259,8 +256,7 @@ CLASS zlnt_runtime_json_7c6b3012af76 IMPLEMENTATION.
       padding = '00D8'.
       CONCATENATE padding bytes INTO bytes IN BYTE MODE.
     ENDIF.
-    converter = cl_abap_conv_in_ce=>create( encoding = '4103' ).
-    converter->convert( EXPORTING input = bytes IMPORTING data = result ).
+    cl_abap_conv_in_ce=>create( encoding = '4103' )->convert( EXPORTING input = bytes IMPORTING data = result ).
     IF p0 < 56320.
       result = result+0(1).
     ELSE.

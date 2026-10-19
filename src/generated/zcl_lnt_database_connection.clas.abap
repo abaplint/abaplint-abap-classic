@@ -15,20 +15,14 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t4) = `[\w\/]+`.
-    DATA(t5) = `[A-Za-z0-9_\/]+`.
-    DATA(t6) = ||.
-    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
-    t3->source = t4.
-    t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
-    t1 = t2.
+    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `[A-Za-z0-9_\/]+` flags = ||.
+    t3->source = `[\w\/]+`.
+    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t10) = |CONNECTION|.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t9->sval = t10.
+    t9->sval = |CONNECTION|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -63,9 +57,7 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
       t20->cval = t21.
     ENDIF.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t23.
-    t22 = t23.
+    CREATE OBJECT t22.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t26) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
     IF t26 IS BOUND.
@@ -76,9 +68,7 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
     t22->load( ).
     APPEND t25 TO t22->items.
     t22->save( ).
-    DATA t27 TYPE REF TO zif_lnt_statement_runnable.
-    t27 = zcl_lnt_st_combi_module=>alt_prio( i_first = t15 i_second = t20 i_rest = t22 ).
-    t13 = t27.
+    t13 = zcl_lnt_st_combi_module=>alt_prio( i_first = t15 i_second = t20 i_rest = t22 ).
     IF t13 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t32 TYPE REF TO object.
@@ -104,9 +94,7 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
     ENDIF.
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t34.
-    DATA t35 TYPE REF TO zif_lnt_statement_runnable.
-    t35 = zcl_lnt_st_combi_module=>seq( i_first = t9 i_second = t12 i_rest = t34 ).
-    result = t35.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t9 i_second = t12 i_rest = t34 ).
 
   ENDMETHOD.
 

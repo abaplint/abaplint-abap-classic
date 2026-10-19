@@ -12,18 +12,12 @@ ENDCLASS.
 CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_type_9913.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_ty_table_type ).
-    IF t3 = abap_true.
+    IF xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
       DATA t5 TYPE REF TO zcl_lnt_abstract_type.
       DATA t8 TYPE REF TO zcl_lnt_ty_table_type.
       t8 ?= t2.
-      DATA t10 TYPE REF TO zcl_lnt_abstract_type.
-      t10 = t8->row_type.
-      t5 = t10.
-      DATA t12 TYPE abap_bool.
-      t12 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_structure_type ).
-      IF t12 = abap_true.
+      t5 = t8->row_type.
+      IF xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
         DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
         t14 = i_node->find_all_expressions( i_type_9913 = t16 ).
@@ -50,22 +44,16 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             t17 ?= t18.
           ENDIF.
           DATA t22 TYPE string.
-          DATA t23 TYPE string.
           DATA t24 TYPE string.
           t24 = t17->concat_tokens( ).
           DATA t26 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           CLEAR t26.
-          DATA(t27) = |^!|.
-          DATA(t28) = ||.
-          CREATE OBJECT t26 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t27 flags = t28.
-          DATA(t29) = ||.
+          CREATE OBJECT t26 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^!| flags = ||.
           DATA(t30) = strlen( t24 ).
-          t23 = t26->replace( p0 = t24 p1 = t29 ).
-          t22 = t23.
+          t22 = t26->replace( p0 = t24 p1 = || ).
           DATA(t31) = VALUE abap_bool( ).
           DATA(t32) = VALUE abap_bool( ).
           DATA(t33) = VALUE abap_bool( ).
-          DATA(t34) = VALUE abap_bool( ).
           DATA(t35) = VALUE i( ).
           DATA(t37) = |-|.
           DATA(t38) = strlen( t22 ).
@@ -77,12 +65,9 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
               t35 = -1.
             ENDIF.
           ENDIF.
-          DATA(t39) = 0.
-          t34 = xsdbool( t35 >= t39 ).
-          t33 = xsdbool( t34 = abap_false ).
+          t33 = xsdbool( xsdbool( t35 >= 0 ) = abap_false ).
           t32 = t33.
           IF t33 = abap_true.
-            DATA(t41) = VALUE abap_bool( ).
             DATA t45 TYPE REF TO zcl_lnt_structure_type.
             t45 ?= t5.
             DATA t47 TYPE string.
@@ -102,12 +87,10 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             t49 = t50->get( p0 = t52 ).
             DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t55.
-            t41 = xsdbool( t49 IS INITIAL ).
-            t32 = t41.
+            t32 = xsdbool( t49 IS INITIAL ).
           ENDIF.
           t31 = t32.
           IF t32 = abap_true.
-            DATA(t59) = VALUE abap_bool( ).
             DATA t60 TYPE string.
             DATA(t62) = strlen( t22 ).
             t60 = t22.
@@ -116,24 +99,19 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
             ELSE.
               t60 = zlnt_runtime_uppe_91169605024d=>full( t60 ).
             ENDIF.
-            DATA(t63) = |TABLE_LINE|.
-            t59 = xsdbool( t60 <> t63 ).
-            t31 = t59.
+            t31 = xsdbool( t60 <> |TABLE_LINE| ).
           ENDIF.
           IF t31 = abap_true.
-            DATA t66 TYPE REF TO zcl_lnt_unknown_type.
             DATA t67 TYPE string.
             DATA t68 TYPE string.
             DATA(t69) = |Field |.
             DATA(t71) = strlen( t69 ).
             t68 = |{ t69 }{ t22 }|.
-            DATA(t72) = | not part of structure|.
             DATA(t73) = strlen( t68 ).
-            t67 = |{ t68 }{ t72 }|.
+            t67 = |{ t68 }{ | not part of structure| }|.
             DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t74.
-            t66 = NEW zcl_lnt_unknown_type( i_error = t67 i_qualified_name = t74 ).
-            result = t66.
+            result = NEW zcl_lnt_unknown_type( i_error = t67 i_qualified_name = t74 ).
             RETURN.
           ENDIF.
         ENDDO.

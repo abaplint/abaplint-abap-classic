@@ -30,8 +30,7 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
   METHOD constructor.
     me->outer = i_outer.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `outer`.
-    DATA(t3) = CONV f( 13 ).
-    me->state = t3.
+    me->state = CONV f( 13 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
   ENDMETHOD.
 
@@ -54,9 +53,7 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
     DATA t8 TYPE REF TO cx_root.
     TRY.
         DO.
-          DATA(t9) = VALUE abap_bool( ).
-          t9 = xsdbool( t4 = abap_false ).
-          IF t9 = abap_false.
+          IF xsdbool( t4 = abap_false ) = abap_false.
             EXIT.
           ENDIF.
           DATA(t11) = VALUE abap_bool( ).
@@ -64,22 +61,15 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t12 = xsdbool( t4 = abap_false ).
           t11 = t12.
           IF t12 = abap_true.
-            DATA(t14) = VALUE abap_bool( ).
             DATA(t15) = CONV f( me->state ).
-            DATA(t16) = CONV f( 0 ).
-            t14 = xsdbool( t15 = t16 ).
-            t11 = t14.
+            t11 = xsdbool( t15 = CONV f( 0 ) ).
           ENDIF.
           IF t11 = abap_true.
-            DATA(t17) = CONV f( 0 ).
-            me->state = t17.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA t18 TYPE REF TO zcl_lnt_generator_17955b8b.
-            CLEAR t18.
             DATA t20 TYPE REF TO zif_lnt_object.
             CLEAR t20.
-            t18 = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t20 ).
-            t6 = t18.
+            t6 = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t20 ).
             t4 = abap_true.
           ENDIF.
           DATA(t22) = VALUE abap_bool( ).
@@ -87,32 +77,22 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t23 = xsdbool( t4 = abap_false ).
           t22 = t23.
           IF t23 = abap_true.
-            DATA(t25) = VALUE abap_bool( ).
             DATA(t26) = CONV f( me->state ).
-            DATA(t27) = CONV f( 1 ).
-            t25 = xsdbool( t26 = t27 ).
-            t22 = t25.
+            t22 = xsdbool( t26 = CONV f( 1 ) ).
           ENDIF.
           IF t22 = abap_true.
-            DATA(t28) = CONV f( 0 ).
-            me->state = t28.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t29) = VALUE abap_bool( ).
             DATA(t30) = CONV f( me->local_machine177064 ).
             DATA(t31) = VALUE f( ).
-            DATA(t32) = VALUE i( ).
             DATA(t33) = me->local_machine177062.
             t33->load( ).
-            t32 = lines( t33->items ).
-            t31 = t32.
-            t29 = xsdbool( t30 < t31 ).
-            IF t29 = abap_true.
-              DATA(t34) = CONV f( 12 ).
-              me->state = t34.
+            t31 = lines( t33->items ).
+            IF xsdbool( t30 < t31 ) = abap_true.
+              me->state = CONV f( 12 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ELSE.
-              DATA(t35) = CONV f( 0 ).
-              me->state = t35.
+              me->state = CONV f( 0 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ENDIF.
           ENDIF.
@@ -121,24 +101,17 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t37 = xsdbool( t4 = abap_false ).
           t36 = t37.
           IF t37 = abap_true.
-            DATA(t39) = VALUE abap_bool( ).
             DATA(t40) = CONV f( me->state ).
-            DATA(t41) = CONV f( 2 ).
-            t39 = xsdbool( t40 = t41 ).
-            t36 = t39.
+            t36 = xsdbool( t40 = CONV f( 2 ) ).
           ENDIF.
           IF t36 = abap_true.
-            DATA(t42) = CONV f( 0 ).
-            me->state = t42.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t43) = VALUE f( ).
             DATA(t44) = CONV f( me->local_machine177064 ).
             DATA(t45) = CONV f( 1 ).
-            t43 = t44 + t45.
-            me->local_machine177064 = t43.
+            me->local_machine177064 = t44 + t45.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177064`.
-            DATA(t46) = CONV f( 1 ).
-            me->state = t46.
+            me->state = CONV f( 1 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t47) = VALUE abap_bool( ).
@@ -146,32 +119,22 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t48 = xsdbool( t4 = abap_false ).
           t47 = t48.
           IF t48 = abap_true.
-            DATA(t50) = VALUE abap_bool( ).
             DATA(t51) = CONV f( me->state ).
-            DATA(t52) = CONV f( 3 ).
-            t50 = xsdbool( t51 = t52 ).
-            t47 = t50.
+            t47 = xsdbool( t51 = CONV f( 3 ) ).
           ENDIF.
           IF t47 = abap_true.
-            DATA(t53) = CONV f( 0 ).
-            me->state = t53.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t54) = VALUE abap_bool( ).
             DATA(t55) = CONV f( me->local_machine177067 ).
             DATA(t56) = VALUE f( ).
-            DATA(t57) = VALUE i( ).
             DATA(t58) = me->local_machine177065.
             t58->load( ).
-            t57 = lines( t58->items ).
-            t56 = t57.
-            t54 = xsdbool( t55 < t56 ).
-            IF t54 = abap_true.
-              DATA(t59) = CONV f( 7 ).
-              me->state = t59.
+            t56 = lines( t58->items ).
+            IF xsdbool( t55 < t56 ) = abap_true.
+              me->state = CONV f( 7 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ELSE.
-              DATA(t60) = CONV f( 2 ).
-              me->state = t60.
+              me->state = CONV f( 2 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ENDIF.
           ENDIF.
@@ -180,24 +143,17 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t62 = xsdbool( t4 = abap_false ).
           t61 = t62.
           IF t62 = abap_true.
-            DATA(t64) = VALUE abap_bool( ).
             DATA(t65) = CONV f( me->state ).
-            DATA(t66) = CONV f( 4 ).
-            t64 = xsdbool( t65 = t66 ).
-            t61 = t64.
+            t61 = xsdbool( t65 = CONV f( 4 ) ).
           ENDIF.
           IF t61 = abap_true.
-            DATA(t67) = CONV f( 0 ).
-            me->state = t67.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t68) = VALUE f( ).
             DATA(t69) = CONV f( me->local_machine177067 ).
             DATA(t70) = CONV f( 1 ).
-            t68 = t69 + t70.
-            me->local_machine177067 = t68.
+            me->local_machine177067 = t69 + t70.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177067`.
-            DATA(t71) = CONV f( 3 ).
-            me->state = t71.
+            me->state = CONV f( 3 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t72) = VALUE abap_bool( ).
@@ -205,40 +161,23 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t73 = xsdbool( t4 = abap_false ).
           t72 = t73.
           IF t73 = abap_true.
-            DATA(t75) = VALUE abap_bool( ).
             DATA(t76) = CONV f( me->state ).
-            DATA(t77) = CONV f( 5 ).
-            t75 = xsdbool( t76 = t77 ).
-            t72 = t75.
+            t72 = xsdbool( t76 = CONV f( 5 ) ).
           ENDIF.
           IF t72 = abap_true.
-            DATA(t78) = CONV f( 0 ).
-            me->state = t78.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA t79 TYPE REF TO zcl_lnt_generator_17955b8b.
-            CLEAR t79.
-            DATA t81 TYPE REF TO zif_lnt_object.
-            CLEAR t81.
-            DATA t84 TYPE REF TO zif_lnt_object.
-            CLEAR t84.
             DATA t85 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
             CLEAR t85.
-            DATA t86 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
-            CLEAR t86.
             DATA t87 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
             CLEAR t87.
             t87 = me->outer->objects.
             DATA(t89) = CONV string( me->local_name ).
-            t86 = t87->get( p0 = t89 ).
-            t85 = t86.
+            t85 = t87->get( p0 = t89 ).
             DATA(t90) = CONV string( me->local_type ).
-            t84 = t85->get( p0 = t90 ).
-            t81 = t84.
-            t79 = NEW zcl_lnt_generator_17955b8b( i_done = abap_false i_value = t81 ).
-            me->local_machine177068 = t79.
+            me->local_machine177068 = NEW zcl_lnt_generator_17955b8b( i_done = abap_false i_value = t85->get( p0 = t90 ) ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177068`.
-            DATA(t92) = CONV f( 4 ).
-            me->state = t92.
+            me->state = CONV f( 4 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             t6 = me->local_machine177068.
             t4 = abap_true.
@@ -248,26 +187,18 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t96 = xsdbool( t4 = abap_false ).
           t95 = t96.
           IF t96 = abap_true.
-            DATA(t98) = VALUE abap_bool( ).
             DATA(t99) = CONV f( me->state ).
-            DATA(t100) = CONV f( 6 ).
-            t98 = xsdbool( t99 = t100 ).
-            t95 = t98.
+            t95 = xsdbool( t99 = CONV f( 6 ) ).
           ENDIF.
           IF t95 = abap_true.
-            DATA(t101) = CONV f( 0 ).
-            me->state = t101.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t102) = VALUE abap_bool( ).
             DATA(t104) = CONV string( me->local_type ).
-            t102 = me->local_machine177066->has( p0 = t104 ).
-            IF t102 = abap_true.
-              DATA(t105) = CONV f( 5 ).
-              me->state = t105.
+            IF me->local_machine177066->has( p0 = t104 ) = abap_true.
+              me->state = CONV f( 5 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ELSE.
-              DATA(t106) = CONV f( 4 ).
-              me->state = t106.
+              me->state = CONV f( 4 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ENDIF.
           ENDIF.
@@ -276,19 +207,12 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t108 = xsdbool( t4 = abap_false ).
           t107 = t108.
           IF t108 = abap_true.
-            DATA(t110) = VALUE abap_bool( ).
             DATA(t111) = CONV f( me->state ).
-            DATA(t112) = CONV f( 7 ).
-            t110 = xsdbool( t111 = t112 ).
-            t107 = t110.
+            t107 = xsdbool( t111 = CONV f( 7 ) ).
           ENDIF.
           IF t107 = abap_true.
-            DATA(t113) = CONV f( 0 ).
-            me->state = t113.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t114) = VALUE string( ).
-            DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t115.
             DATA(t117) = VALUE i( ).
             DATA(t118) = CONV f( me->local_machine177067 ).
             IF t118 > range_i32_upper.
@@ -298,12 +222,9 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
             ELSE.
               t117 = trunc( t118 ).
             ENDIF.
-            t115 = me->local_machine177065->get( p0 = t117 ).
-            t114 = t115->value.
-            me->local_type = t114.
+            me->local_type = me->local_machine177065->get( p0 = t117 )->value.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_type`.
-            DATA(t119) = CONV f( 6 ).
-            me->state = t119.
+            me->state = CONV f( 6 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t120) = VALUE abap_bool( ).
@@ -311,28 +232,19 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t121 = xsdbool( t4 = abap_false ).
           t120 = t121.
           IF t121 = abap_true.
-            DATA(t123) = VALUE abap_bool( ).
             DATA(t124) = CONV f( me->state ).
-            DATA(t125) = CONV f( 8 ).
-            t123 = xsdbool( t124 = t125 ).
-            t120 = t123.
+            t120 = xsdbool( t124 = CONV f( 8 ) ).
           ENDIF.
           IF t120 = abap_true.
-            DATA(t126) = CONV f( 0 ).
-            me->state = t126.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             me->local_machine177066 = me->local_t177043.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177066`.
-            DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t129.
-            t129 = me->local_machine177066->keys( ).
-            me->local_machine177065 = t129.
+            me->local_machine177065 = me->local_machine177066->keys( ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177065`.
-            DATA(t131) = CONV f( 0 ).
-            me->local_machine177067 = t131.
+            me->local_machine177067 = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177067`.
-            DATA(t132) = CONV f( 3 ).
-            me->state = t132.
+            me->state = CONV f( 3 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t133) = VALUE abap_bool( ).
@@ -340,26 +252,18 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t134 = xsdbool( t4 = abap_false ).
           t133 = t134.
           IF t134 = abap_true.
-            DATA(t136) = VALUE abap_bool( ).
             DATA(t137) = CONV f( me->state ).
-            DATA(t138) = CONV f( 9 ).
-            t136 = xsdbool( t137 = t138 ).
-            t133 = t136.
+            t133 = xsdbool( t137 = CONV f( 9 ) ).
           ENDIF.
           IF t133 = abap_true.
-            DATA(t139) = CONV f( 0 ).
-            me->state = t139.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t140) = VALUE abap_bool( ).
             DATA(t141) = xsdbool( me->local_t177043 IS INITIAL ).
-            t140 = xsdbool( t141 = abap_false ).
-            IF t140 = abap_true.
-              DATA(t143) = CONV f( 8 ).
-              me->state = t143.
+            IF xsdbool( t141 = abap_false ) = abap_true.
+              me->state = CONV f( 8 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ELSE.
-              DATA(t144) = CONV f( 2 ).
-              me->state = t144.
+              me->state = CONV f( 2 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ENDIF.
           ENDIF.
@@ -368,27 +272,19 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t146 = xsdbool( t4 = abap_false ).
           t145 = t146.
           IF t146 = abap_true.
-            DATA(t148) = VALUE abap_bool( ).
             DATA(t149) = CONV f( me->state ).
-            DATA(t150) = CONV f( 10 ).
-            t148 = xsdbool( t149 = t150 ).
-            t145 = t148.
+            t145 = xsdbool( t149 = CONV f( 10 ) ).
           ENDIF.
           IF t145 = abap_true.
-            DATA(t151) = CONV f( 0 ).
-            me->state = t151.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA t152 TYPE REF TO zlnt_runtime_map__b4fe03e97505.
-            CLEAR t152.
             DATA t153 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
             CLEAR t153.
             t153 = me->outer->objects.
             DATA(t155) = CONV string( me->local_name ).
-            t152 = t153->get( p0 = t155 ).
-            me->local_t177043 = t152.
+            me->local_t177043 = t153->get( p0 = t155 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_t177043`.
-            DATA(t156) = CONV f( 9 ).
-            me->state = t156.
+            me->state = CONV f( 9 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t157) = VALUE abap_bool( ).
@@ -396,26 +292,18 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t158 = xsdbool( t4 = abap_false ).
           t157 = t158.
           IF t158 = abap_true.
-            DATA(t160) = VALUE abap_bool( ).
             DATA(t161) = CONV f( me->state ).
-            DATA(t162) = CONV f( 11 ).
-            t160 = xsdbool( t161 = t162 ).
-            t157 = t160.
+            t157 = xsdbool( t161 = CONV f( 11 ) ).
           ENDIF.
           IF t157 = abap_true.
-            DATA(t163) = CONV f( 0 ).
-            me->state = t163.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t164) = VALUE abap_bool( ).
             DATA(t166) = CONV string( me->local_name ).
-            t164 = me->local_machine177063->has( p0 = t166 ).
-            IF t164 = abap_true.
-              DATA(t167) = CONV f( 10 ).
-              me->state = t167.
+            IF me->local_machine177063->has( p0 = t166 ) = abap_true.
+              me->state = CONV f( 10 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ELSE.
-              DATA(t168) = CONV f( 2 ).
-              me->state = t168.
+              me->state = CONV f( 2 ).
               DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
             ENDIF.
           ENDIF.
@@ -424,19 +312,12 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t170 = xsdbool( t4 = abap_false ).
           t169 = t170.
           IF t170 = abap_true.
-            DATA(t172) = VALUE abap_bool( ).
             DATA(t173) = CONV f( me->state ).
-            DATA(t174) = CONV f( 12 ).
-            t172 = xsdbool( t173 = t174 ).
-            t169 = t172.
+            t169 = xsdbool( t173 = CONV f( 12 ) ).
           ENDIF.
           IF t169 = abap_true.
-            DATA(t175) = CONV f( 0 ).
-            me->state = t175.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA(t176) = VALUE string( ).
-            DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t177.
             DATA(t179) = VALUE i( ).
             DATA(t180) = CONV f( me->local_machine177064 ).
             IF t180 > range_i32_upper.
@@ -446,12 +327,9 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
             ELSE.
               t179 = trunc( t180 ).
             ENDIF.
-            t177 = me->local_machine177062->get( p0 = t179 ).
-            t176 = t177->value.
-            me->local_name = t176.
+            me->local_name = me->local_machine177062->get( p0 = t179 )->value.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_name`.
-            DATA(t181) = CONV f( 11 ).
-            me->state = t181.
+            me->state = CONV f( 11 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
           DATA(t182) = VALUE abap_bool( ).
@@ -459,31 +337,19 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
           t183 = xsdbool( t4 = abap_false ).
           t182 = t183.
           IF t183 = abap_true.
-            DATA(t185) = VALUE abap_bool( ).
             DATA(t186) = CONV f( me->state ).
-            DATA(t187) = CONV f( 13 ).
-            t185 = xsdbool( t186 = t187 ).
-            t182 = t185.
+            t182 = xsdbool( t186 = CONV f( 13 ) ).
           ENDIF.
           IF t182 = abap_true.
-            DATA(t188) = CONV f( 0 ).
-            me->state = t188.
+            me->state = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
-            DATA t189 TYPE REF TO zlnt_runtime_map__6ec5bb307efb.
-            CLEAR t189.
-            t189 = me->outer->objects.
-            me->local_machine177063 = t189.
+            me->local_machine177063 = me->outer->objects.
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177063`.
-            DATA t191 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t191.
-            t191 = me->local_machine177063->keys( ).
-            me->local_machine177062 = t191.
+            me->local_machine177062 = me->local_machine177063->keys( ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177062`.
-            DATA(t193) = CONV f( 0 ).
-            me->local_machine177064 = t193.
+            me->local_machine177064 = CONV f( 0 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `local_machine177064`.
-            DATA(t194) = CONV f( 1 ).
-            me->state = t194.
+            me->state = CONV f( 1 ).
             DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
           ENDIF.
         ENDDO.
@@ -499,8 +365,7 @@ CLASS zcl_lnt_generator_a921479b IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD close.
-    DATA(t1) = CONV f( 0 ).
-    me->state = t1.
+    me->state = CONV f( 0 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `state`.
   ENDMETHOD.
 

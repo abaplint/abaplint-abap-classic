@@ -15,26 +15,21 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |GLOBAL AUTHORIZATION|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |GLOBAL AUTHORIZATION|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |INSTANCE|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |INSTANCE|.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
+    t1 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t15 TYPE REF TO zif_lnt_statement_runnable.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t19) = |FROM|.
     CREATE OBJECT t18.
     t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t18->sval = t19.
+    t18->sval = |FROM|.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t22 IS BOUND.
@@ -44,15 +39,12 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     ENDIF.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t24.
-    DATA t25 TYPE REF TO zif_lnt_statement_runnable.
-    t25 = zcl_lnt_st_combi_module=>seq( i_first = t18 i_second = t21 i_rest = t24 ).
-    t15 = t25.
+    t15 = zcl_lnt_st_combi_module=>seq( i_first = t18 i_second = t21 i_rest = t24 ).
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t33) = |GET PERMISSIONS ONLY|.
     CREATE OBJECT t32.
     t32->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t32->sval = t33.
+    t32->sval = |GET PERMISSIONS ONLY|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -78,14 +70,11 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t40.
-    t39 = t40.
+    CREATE OBJECT t39.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t43) = |ENTITY|.
     CREATE OBJECT t42.
     t42->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t42->sval = t43.
+    t42->sval = |ENTITY|.
     t39->load( ).
     APPEND t42 TO t39->items.
     t39->save( ).
@@ -153,10 +142,9 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     APPEND t48 TO t39->items.
     t39->save( ).
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t58) = |REQUEST|.
     CREATE OBJECT t57.
     t57->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t57->sval = t58.
+    t57->sval = |REQUEST|.
     t39->load( ).
     APPEND t57 TO t39->items.
     t39->save( ).
@@ -171,10 +159,9 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     APPEND t60 TO t39->items.
     t39->save( ).
     DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t64) = |RESULT|.
     CREATE OBJECT t63.
     t63->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t63->sval = t64.
+    t63->sval = |RESULT|.
     t39->load( ).
     APPEND t63 TO t39->items.
     t39->save( ).
@@ -189,10 +176,9 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     APPEND t66 TO t39->items.
     t39->save( ).
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t70) = |FAILED|.
     CREATE OBJECT t69.
     t69->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t69->sval = t70.
+    t69->sval = |FAILED|.
     t39->load( ).
     APPEND t69 TO t39->items.
     t39->save( ).
@@ -207,10 +193,9 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     APPEND t72 TO t39->items.
     t39->save( ).
     DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t76) = |REPORTED|.
     CREATE OBJECT t75.
     t75->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t75->sval = t76.
+    t75->sval = |REPORTED|.
     t39->load( ).
     APPEND t75 TO t39->items.
     t39->save( ).
@@ -224,21 +209,13 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     t39->load( ).
     APPEND t78 TO t39->items.
     t39->save( ).
-    DATA t80 TYPE REF TO zif_lnt_statement_runnable.
-    t80 = zcl_lnt_st_combi_module=>seq( i_first = t32 i_second = t35 i_rest = t39 ).
-    t29 = t80.
-    DATA t84 TYPE REF TO zif_lnt_statement_runnable.
+    t29 = zcl_lnt_st_combi_module=>seq( i_first = t32 i_second = t35 i_rest = t39 ).
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t86 TYPE REF TO zcl_lnt_abap_release.
-    DATA t87 TYPE REF TO zcl_lnt_abap_release.
-    DATA t88 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t88 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t89) = |v754|.
-    t87 = t88->get( p0 = t89 ).
-    t86 = t87.
+    t86 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v754| ).
     IF t86 IS BOUND.
       DATA t90 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t91 TYPE REF TO object.
@@ -286,27 +263,20 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    DATA t96 TYPE REF TO zcl_lnt_iver_options.
     DATA t98 TYPE REF TO zcl_lnt_iver_options.
-    DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t102) = |OpenABAP|.
     DATA(t103) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t103->has = abap_true.
-    t103->value = t102.
-    t99 = t103.
-    t98 = NEW zcl_lnt_iver_options( i_also = t99 ).
+    t103->value = |OpenABAP|.
+    t98 = NEW zcl_lnt_iver_options( i_also = t103 ).
     CREATE OBJECT t98->zlnt_view_ownkeys_b0e8086400eb.
     t98->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t98->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t105 ).
     CREATE OBJECT t98->zlnt_json_ownkeys_70e5fd461788.
     t98->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t106) = |also|.
     DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t98->zlnt_json_ownkeys_70e5fd461788->put( p0 = t106 p1 = t107 ).
-    t96 = t98.
-    t84 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t85 i_first = t92 i_opts = t96 ).
-    result = t84.
+    t98->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t107 ).
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t85 i_first = t92 i_opts = t98 ).
 
   ENDMETHOD.
 

@@ -23,7 +23,6 @@ ENDCLASS.
 CLASS zcl_lnt_unknown_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_error.
-    DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t6 = i_qualified_name.
@@ -39,11 +38,9 @@ CLASS zcl_lnt_unknown_type IMPLEMENTATION.
     t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t19) = |qualifiedName|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-    t3 = t5.
-    super->constructor( i_input_967e = t3 ).
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t20 ).
+    super->constructor( i_input_967e = t5 ).
     me->error = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
   ENDMETHOD.
@@ -55,19 +52,16 @@ CLASS zcl_lnt_unknown_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD t_t_i_s_a_ty_bs_un_ty_ts_un_ty.
-    DATA t1 TYPE string.
     DATA(t2) = |Unknown type: |.
     DATA(t3) = CONV string( me->error ).
     DATA(t4) = strlen( t2 ).
-    t1 = |{ t2 }{ t3 }|.
-    result = t1.
+    result = |{ t2 }{ t3 }|.
 
   ENDMETHOD.
 
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t5) = VALUE string( ).
     DATA(t6) = |unknown, generic: |.
     DATA(t7) = CONV string( me->error ).
@@ -76,8 +70,7 @@ CLASS zcl_lnt_unknown_type IMPLEMENTATION.
     DATA(t9) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t9->has = abap_true.
     t9->value = t5.
-    t3 = t9.
-    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
+    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.

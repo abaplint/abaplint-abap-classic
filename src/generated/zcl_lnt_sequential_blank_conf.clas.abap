@@ -24,8 +24,7 @@ CLASS zcl_lnt_sequential_blank_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 4 ).
-    me->zlnt_view_write_s_1572ec26e687( p0 = t1 ).
+    me->zlnt_view_write_s_1572ec26e687( p0 = CONV f( 4 ) ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

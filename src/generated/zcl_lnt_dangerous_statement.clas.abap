@@ -27,12 +27,6 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |dangerous_statement|.
-    DATA t4 TYPE string.
-    t4 = |Dangerous statement|.
-    DATA t6 TYPE string.
-    t6 = |Detects potentially dangerous statements|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |Dynamic SQL: Typically ABAP logic does not need dynamic SQL,|.
     t11 = t11 && |\ndynamic SQL can potentially create SQL injection problems|.
@@ -42,33 +36,25 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t23) = |Security|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |Security| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t29) = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
-    t30->value = t29.
+    t30->value = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t35) = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
-    t36->value = t35.
-    t32 = t36.
+    t36->value = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |dangerous_statement| i_title = |Dangerous statement| i_short_description = |Detects potentially dangerous statements| i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -99,49 +85,40 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_description.
-    DATA t2 TYPE string.
     DATA(t3) = |Potential dangerous statement |.
     DATA(t5) = strlen( t3 ).
-    t2 = |{ t3 }{ i_statement }|.
-    result = t2.
+    result = |{ t3 }{ i_statement }|.
 
   ENDMETHOD.
 
@@ -158,15 +135,11 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   METHOD rn_pr_in_sr_rl_dn_st_ts_dn_stt.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE abap_bool.
     t4 = abap_false.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t9 = t1->statements.
-    t6 = t9.
+    t6 = t1->statements.
     DATA t11 TYPE REF TO zcl_lnt_statement_node.
     DATA t12 TYPE REF TO object.
     DATA(t13) = VALUE i( ).
@@ -190,31 +163,22 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         t11 ?= t12.
       ENDIF.
       DATA t16 TYPE REF TO zif_lnt_statement.
-      DATA t17 TYPE REF TO zif_lnt_statement.
-      t17 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t16 = t17.
-      DATA t19 TYPE abap_bool.
-      t19 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_mthd_implmnttn ).
-      IF t19 = abap_true.
+      t16 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+      IF xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_mthd_implmnttn ) = abap_true.
         DATA t21 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t21.
         DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t23.
         DATA t25 TYPE REF TO zcl_lnt_expression_node.
-        DATA t26 TYPE REF TO zcl_lnt_expression_node.
         DATA(t28) = zlnt_runtime_desc_78196487750d=>zlnt_member_d88_73c97f542216fb.
-        t26 = t11->find_first_expression( i_type_9913 = t28 ).
-        t25 = t26.
+        t25 = t11->find_first_expression( i_type_9913 = t28 ).
         DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t29.
-        DATA(t30) = xsdbool( t25 IS INITIAL ).
-        IF t30 = abap_true.
+        IF xsdbool( t25 IS INITIAL ) = abap_true.
           CLEAR t29.
         ELSE.
           DATA t33 TYPE string.
-          DATA t34 TYPE REF TO zcl_lnt_expression_node.
-          t34 = t25.
-          t33 = t34->concat_tokens( ).
+          t33 = t25->concat_tokens( ).
           DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t36->has = abap_true.
           t36->value = t33.
@@ -258,10 +222,9 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           DATA(t51) = VALUE abap_bool( ).
           DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t53.
-          DATA(t55) = |IF_RAP_QUERY_PROVIDER~SELECT|.
           DATA(t56) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t56->has = abap_true.
-          t56->value = t55.
+          t56->value = |IF_RAP_QUERY_PROVIDER~SELECT|.
           t53 = t56.
           DATA(t58) = VALUE abap_bool( ).
           DATA(t59) = VALUE abap_bool( ).
@@ -282,9 +245,7 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         ENDIF.
         t4 = t46.
       ELSE.
-        DATA t60 TYPE abap_bool.
-        t60 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_method ).
-        IF t60 = abap_true.
+        IF xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_end_method ) = abap_true.
           t4 = abap_false.
         ENDIF.
       ENDIF.
@@ -301,15 +262,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
       ENDIF.
       t65 = t66.
       IF t66 = abap_true.
-        DATA t69 TYPE abap_bool.
-        t69 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_exec_sql ).
-        t65 = t69.
+        t65 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_exec_sql ).
       ENDIF.
       IF t65 = abap_true.
-        DATA(t73) = |EXEC SQL|.
         DATA(t74) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t74->has = abap_true.
-        t74->value = t73.
+        t74->value = |EXEC SQL|.
         t63 = t74.
       ELSE.
         DATA(t76) = VALUE abap_bool( ).
@@ -323,15 +281,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         ENDIF.
         t76 = t77.
         IF t77 = abap_true.
-          DATA t80 TYPE abap_bool.
-          t80 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_call_kernel ).
-          t76 = t80.
+          t76 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_call_kernel ).
         ENDIF.
         IF t76 = abap_true.
-          DATA(t84) = |KERNEL CALL|.
           DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t85->has = abap_true.
-          t85->value = t84.
+          t85->value = |KERNEL CALL|.
           t63 = t85.
         ELSE.
           DATA(t87) = VALUE abap_bool( ).
@@ -345,15 +300,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           ENDIF.
           t87 = t88.
           IF t88 = abap_true.
-            DATA t91 TYPE abap_bool.
-            t91 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_system_call ).
-            t87 = t91.
+            t87 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_system_call ).
           ENDIF.
           IF t87 = abap_true.
-            DATA(t95) = |SYSTEM-CALL|.
             DATA(t96) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t96->has = abap_true.
-            t96->value = t95.
+            t96->value = |SYSTEM-CALL|.
             t63 = t96.
           ELSE.
             DATA(t98) = VALUE abap_bool( ).
@@ -367,15 +319,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
             ENDIF.
             t98 = t99.
             IF t99 = abap_true.
-              DATA t102 TYPE abap_bool.
-              t102 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_insert_report ).
-              t98 = t102.
+              t98 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_insert_report ).
             ENDIF.
             IF t98 = abap_true.
-              DATA(t106) = |INSERT REPORT|.
               DATA(t107) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t107->has = abap_true.
-              t107->value = t106.
+              t107->value = |INSERT REPORT|.
               t63 = t107.
             ELSE.
               DATA(t109) = VALUE abap_bool( ).
@@ -389,15 +338,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
               ENDIF.
               t109 = t110.
               IF t110 = abap_true.
-                DATA t113 TYPE abap_bool.
-                t113 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_dynpro ).
-                t109 = t113.
+                t109 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_dynpro ).
               ENDIF.
               IF t109 = abap_true.
-                DATA(t117) = |GENERATE DYNPRO|.
                 DATA(t118) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t118->has = abap_true.
-                t118->value = t117.
+                t118->value = |GENERATE DYNPRO|.
                 t63 = t118.
               ELSE.
                 DATA(t120) = VALUE abap_bool( ).
@@ -411,15 +357,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                 ENDIF.
                 t120 = t121.
                 IF t121 = abap_true.
-                  DATA t124 TYPE abap_bool.
-                  t124 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_report ).
-                  t120 = t124.
+                  t120 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_report ).
                 ENDIF.
                 IF t120 = abap_true.
-                  DATA(t128) = |GENERATE REPORT|.
                   DATA(t129) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                   t129->has = abap_true.
-                  t129->value = t128.
+                  t129->value = |GENERATE REPORT|.
                   t63 = t129.
                 ELSE.
                   DATA(t131) = VALUE abap_bool( ).
@@ -433,15 +376,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                   ENDIF.
                   t131 = t132.
                   IF t132 = abap_true.
-                    DATA t135 TYPE abap_bool.
-                    t135 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_subroutine ).
-                    t131 = t135.
+                    t131 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_generate_subroutine ).
                   ENDIF.
                   IF t131 = abap_true.
-                    DATA(t139) = |GENERATE SUBROUTINE|.
                     DATA(t140) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                     t140->has = abap_true.
-                    t140->value = t139.
+                    t140->value = |GENERATE SUBROUTINE|.
                     t63 = t140.
                   ELSE.
                     DATA(t142) = VALUE abap_bool( ).
@@ -455,15 +395,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                     ENDIF.
                     t142 = t143.
                     IF t143 = abap_true.
-                      DATA t146 TYPE abap_bool.
-                      t146 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_delete_report ).
-                      t142 = t146.
+                      t142 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_delete_report ).
                     ENDIF.
                     IF t142 = abap_true.
-                      DATA(t150) = |DELETE REPORT|.
                       DATA(t151) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                       t151->has = abap_true.
-                      t151->value = t150.
+                      t151->value = |DELETE REPORT|.
                       t63 = t151.
                     ELSE.
                       DATA(t153) = VALUE abap_bool( ).
@@ -477,15 +414,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                       ENDIF.
                       t153 = t154.
                       IF t154 = abap_true.
-                        DATA t157 TYPE abap_bool.
-                        t157 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_delete_textpool ).
-                        t153 = t157.
+                        t153 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_delete_textpool ).
                       ENDIF.
                       IF t153 = abap_true.
-                        DATA(t161) = |DELETE TEXTPOOL|.
                         DATA(t162) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                         t162->has = abap_true.
-                        t162->value = t161.
+                        t162->value = |DELETE TEXTPOOL|.
                         t63 = t162.
                       ELSE.
                         DATA(t164) = VALUE abap_bool( ).
@@ -499,15 +433,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                         ENDIF.
                         t164 = t165.
                         IF t165 = abap_true.
-                          DATA t168 TYPE abap_bool.
-                          t168 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_insert_textpool ).
-                          t164 = t168.
+                          t164 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_insert_textpool ).
                         ENDIF.
                         IF t164 = abap_true.
-                          DATA(t172) = |INSERT TEXTPOOL|.
                           DATA(t173) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                           t173->has = abap_true.
-                          t173->value = t172.
+                          t173->value = |INSERT TEXTPOOL|.
                           t63 = t173.
                         ELSE.
                           DATA(t175) = VALUE abap_bool( ).
@@ -521,15 +452,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                           ENDIF.
                           t175 = t176.
                           IF t176 = abap_true.
-                            DATA t179 TYPE abap_bool.
-                            t179 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_delete_dynpro ).
-                            t175 = t179.
+                            t175 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_delete_dynpro ).
                           ENDIF.
                           IF t175 = abap_true.
-                            DATA(t183) = |DELETE DYNPRO|.
                             DATA(t184) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                             t184->has = abap_true.
-                            t184->value = t183.
+                            t184->value = |DELETE DYNPRO|.
                             t63 = t184.
                           ELSE.
                             DATA(t186) = VALUE abap_bool( ).
@@ -543,15 +471,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                             ENDIF.
                             t186 = t187.
                             IF t187 = abap_true.
-                              DATA t190 TYPE abap_bool.
-                              t190 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_export_dynpro ).
-                              t186 = t190.
+                              t186 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_export_dynpro ).
                             ENDIF.
                             IF t186 = abap_true.
-                              DATA(t194) = |EXPORT DYNPRO|.
                               DATA(t195) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                               t195->has = abap_true.
-                              t195->value = t194.
+                              t195->value = |EXPORT DYNPRO|.
                               t63 = t195.
                             ELSE.
                               DATA(t197) = VALUE abap_bool( ).
@@ -566,24 +491,18 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
                               ENDIF.
                               t198 = t199.
                               IF t199 = abap_true.
-                                DATA t202 TYPE abap_bool.
-                                t202 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_editor_call ).
-                                t198 = t202.
+                                t198 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_editor_call ).
                               ENDIF.
                               t197 = t198.
                               IF t198 = abap_true.
-                                DATA t204 TYPE abap_bool.
                                 DATA t205 TYPE REF TO zcl_lnt_abstract_token.
-                                DATA(t207) = |REPORT|.
-                                t205 = t11->find_direct_token_by_text( i_text = t207 ).
-                                t204 = xsdbool( t205 IS BOUND ).
-                                t197 = t204.
+                                t205 = t11->find_direct_token_by_text( i_text = |REPORT| ).
+                                t197 = xsdbool( t205 IS BOUND ).
                               ENDIF.
                               IF t197 = abap_true.
-                                DATA(t210) = |EDITOR-CALL FOR REPORT|.
                                 DATA(t211) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                                 t211->has = abap_true.
-                                t211->value = t210.
+                                t211->value = |EDITOR-CALL FOR REPORT|.
                                 t63 = t211.
                               ENDIF.
                             ENDIF.
@@ -611,20 +530,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         DATA t219 TYPE string.
         DATA t221 TYPE string.
         t221 = t63->value.
-        DATA t223 TYPE string.
         DATA(t224) = |Potential dangerous statement |.
         DATA(t226) = strlen( t224 ).
-        t223 = |{ t224 }{ t221 }|.
-        t219 = t223.
+        t219 = |{ t224 }{ t221 }|.
         DATA(t227) = VALUE string( ).
         DATA t228 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t228.
-        DATA t229 TYPE string.
-        t229 = |dangerous_statement|.
-        DATA t231 TYPE string.
-        t231 = |Dangerous statement|.
-        DATA t233 TYPE string.
-        t233 = |Detects potentially dangerous statements|.
         DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t235.
         DATA(t238) = |Dynamic SQL: Typically ABAP logic does not need dynamic SQL,|.
@@ -636,37 +547,31 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         DATA t241 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t241.
         DATA t245 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t246 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t246.
-        t245 = t246.
-        DATA(t248) = |SingleFile|.
+        CREATE OBJECT t245.
         t245->load( ).
-        APPEND t248 TO t245->items.
+        APPEND |SingleFile| TO t245->items.
         t245->save( ).
-        DATA(t250) = |Security|.
         t245->load( ).
-        APPEND t250 TO t245->items.
+        APPEND |Security| TO t245->items.
         t245->save( ).
         t241 = t245.
         DATA t253 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t253.
-        DATA(t256) = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
         DATA(t257) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t257->has = abap_true.
-        t257->value = t256.
+        t257->value = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
         t253 = t257.
         DATA t259 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t259.
-        DATA(t262) = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
         DATA(t263) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t263->has = abap_true.
-        t263->value = t262.
+        t263->value = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
         t259 = t263.
         DATA t265 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t265.
         DATA t267 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t267.
-        t228 = NEW zcl_lnt_irule_metadata( i_key = t229 i_title = t231 i_short_description = t233 i_bad_example = t253 i_good_example = t259 i_extended_information = t235 i_tags = t241 i_pragma = t265 i_pseudo_comment = t267 ).
+        t228 = NEW zcl_lnt_irule_metadata( i_key = |dangerous_statement| i_title = |Dangerous statement| i_short_description = |Detects potentially dangerous statements| i_bad_example = t253 i_good_example = t259 i_extended_information = t235 i_tags = t241 i_pragma = t265 i_pseudo_comment = t267 ).
         CREATE OBJECT t228->zlnt_view_ownkeys_b0e8086400eb.
         t228->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t269 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -704,45 +609,38 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t228->zlnt_json_ownkeys_70e5fd461788.
         t228->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t276) = |key|.
         DATA t277 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t277.
-        t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t276 p1 = t277 ).
-        DATA(t278) = |title|.
+        t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t277 ).
         DATA t279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t279.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t278 p1 = t279 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t279 ).
         ENDIF.
-        DATA(t280) = |shortDescription|.
         DATA t281 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t281.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t280 p1 = t281 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t281 ).
         ENDIF.
-        DATA(t282) = |extendedInformation|.
         DATA t283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t283.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t282 p1 = t283 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t283 ).
         ENDIF.
-        DATA(t284) = |tags|.
         DATA t285 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t285.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t284 p1 = t285 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t285 ).
         ENDIF.
-        DATA(t286) = |badExample|.
         DATA t287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t287.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t286 p1 = t287 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t287 ).
         ENDIF.
-        DATA(t288) = |goodExample|.
         DATA t289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t289.
         IF t228->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = t288 p1 = t289 ).
+          t228->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t289 ).
         ENDIF.
         t227 = t228->key.
         DATA t290 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -767,14 +665,10 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
       ENDIF.
       t294 = t295.
       IF t295 = abap_true.
-        DATA t298 TYPE abap_bool.
-        t298 = xsdbool( t4 = abap_false ).
-        t294 = t298.
+        t294 = xsdbool( t4 = abap_false ).
       ENDIF.
       IF t294 = abap_true.
-        DATA t301 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t301 = me->find_dynamic_sql( i_statement_node = t11 ).
-        t63 = t301.
+        t63 = me->find_dynamic_sql( i_statement_node = t11 ).
         DATA(t303) = VALUE abap_bool( ).
         IF t63 IS BOUND.
           IF t63->has = abap_true.
@@ -787,20 +681,12 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           DATA t309 TYPE string.
           DATA t311 TYPE string.
           t311 = t63->value.
-          DATA t313 TYPE string.
           DATA(t314) = |Potential dangerous statement |.
           DATA(t316) = strlen( t314 ).
-          t313 = |{ t314 }{ t311 }|.
-          t309 = t313.
+          t309 = |{ t314 }{ t311 }|.
           DATA(t317) = VALUE string( ).
           DATA t318 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t318.
-          DATA t319 TYPE string.
-          t319 = |dangerous_statement|.
-          DATA t321 TYPE string.
-          t321 = |Dangerous statement|.
-          DATA t323 TYPE string.
-          t323 = |Detects potentially dangerous statements|.
           DATA t325 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t325.
           DATA(t328) = |Dynamic SQL: Typically ABAP logic does not need dynamic SQL,|.
@@ -812,37 +698,31 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           DATA t331 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t331.
           DATA t335 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t336 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t336.
-          t335 = t336.
-          DATA(t338) = |SingleFile|.
+          CREATE OBJECT t335.
           t335->load( ).
-          APPEND t338 TO t335->items.
+          APPEND |SingleFile| TO t335->items.
           t335->save( ).
-          DATA(t340) = |Security|.
           t335->load( ).
-          APPEND t340 TO t335->items.
+          APPEND |Security| TO t335->items.
           t335->save( ).
           t331 = t335.
           DATA t343 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t343.
-          DATA(t346) = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
           DATA(t347) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t347->has = abap_true.
-          t347->value = t346.
+          t347->value = |SELECT * FROM (lv_table_name) INTO TABLE @DATA(lt_rows).|.
           t343 = t347.
           DATA t349 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t349.
-          DATA(t352) = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
           DATA(t353) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t353->has = abap_true.
-          t353->value = t352.
+          t353->value = |SELECT * FROM zknown_table INTO TABLE @DATA(lt_rows).|.
           t349 = t353.
           DATA t355 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t355.
           DATA t357 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t357.
-          t318 = NEW zcl_lnt_irule_metadata( i_key = t319 i_title = t321 i_short_description = t323 i_bad_example = t343 i_good_example = t349 i_extended_information = t325 i_tags = t331 i_pragma = t355 i_pseudo_comment = t357 ).
+          t318 = NEW zcl_lnt_irule_metadata( i_key = |dangerous_statement| i_title = |Dangerous statement| i_short_description = |Detects potentially dangerous statements| i_bad_example = t343 i_good_example = t349 i_extended_information = t325 i_tags = t331 i_pragma = t355 i_pseudo_comment = t357 ).
           CREATE OBJECT t318->zlnt_view_ownkeys_b0e8086400eb.
           t318->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t359 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -880,45 +760,38 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t318->zlnt_json_ownkeys_70e5fd461788.
           t318->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t366) = |key|.
           DATA t367 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t367.
-          t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t366 p1 = t367 ).
-          DATA(t368) = |title|.
+          t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t367 ).
           DATA t369 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t369.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t368 p1 = t369 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t369 ).
           ENDIF.
-          DATA(t370) = |shortDescription|.
           DATA t371 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t371.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t370 p1 = t371 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t371 ).
           ENDIF.
-          DATA(t372) = |extendedInformation|.
           DATA t373 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t373.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t372 p1 = t373 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t373 ).
           ENDIF.
-          DATA(t374) = |tags|.
           DATA t375 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t375.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t374 p1 = t375 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t375 ).
           ENDIF.
-          DATA(t376) = |badExample|.
           DATA t377 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t377.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t376 p1 = t377 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t377 ).
           ENDIF.
-          DATA(t378) = |goodExample|.
           DATA t379 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t379.
           IF t318->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = t378 p1 = t379 ).
+            t318->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t379 ).
           ENDIF.
           t317 = t318->key.
           DATA t380 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -941,9 +814,7 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
   METHOD find_dynamic_sql.
     DATA(t1) = i_statement_node.
     DATA t2 TYPE REF TO zif_lnt_statement.
-    DATA t3 TYPE REF TO zif_lnt_statement.
-    t3 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-    t2 = t3.
+    t2 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
@@ -953,60 +824,45 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
     t10 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_update_database ).
     t9 = t10.
     IF t10 = abap_false.
-      DATA t12 TYPE abap_bool.
-      t12 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_statem_select ).
-      t9 = t12.
+      t9 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_statem_select ).
     ENDIF.
     t8 = t9.
     IF t9 = abap_false.
-      DATA t14 TYPE abap_bool.
-      t14 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_select_loop ).
-      t8 = t14.
+      t8 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_select_loop ).
     ENDIF.
     t7 = t8.
     IF t8 = abap_false.
-      DATA t16 TYPE abap_bool.
-      t16 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_insert_database ).
-      t7 = t16.
+      t7 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_insert_database ).
     ENDIF.
     t6 = t7.
     IF t7 = abap_false.
-      DATA t18 TYPE abap_bool.
-      t18 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_modify_database ).
-      t6 = t18.
+      t6 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_modify_database ).
     ENDIF.
     t5 = t6.
     IF t6 = abap_false.
-      DATA t20 TYPE abap_bool.
-      t20 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_delete_database ).
-      t5 = t20.
+      t5 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_delete_database ).
     ENDIF.
     IF t5 = abap_true.
       DATA t22 TYPE REF TO zcl_lnt_expression_node.
-      DATA t23 TYPE REF TO zcl_lnt_expression_node.
       DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
-      t23 = t1->find_first_expression( i_type_9913 = t25 ).
-      t22 = t23.
+      t22 = t1->find_first_expression( i_type_9913 = t25 ).
       DATA t26 TYPE abap_bool.
       DATA t27 TYPE abap_bool.
       t27 = xsdbool( t22 IS BOUND ).
       t26 = t27.
       IF t27 = abap_true.
-        DATA(t29) = VALUE abap_bool( ).
         DATA t31 TYPE REF TO zcl_lnt_expression_node.
         DATA t32 TYPE REF TO zcl_lnt_expression_node.
         t32 = t22.
         DATA(t34) = zlnt_runtime_desc_78196487750d=>zlnt_member_d121_2f7db81dd46d.
         t31 = t32->find_direct_expression( i_type_9913 = t34 ).
         DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t29 = xsdbool( t31 IS INITIAL ).
-        t26 = t29.
+        t26 = xsdbool( t31 IS INITIAL ).
       ENDIF.
       IF t26 = abap_true.
-        DATA(t41) = |Dynamic SQL|.
         DATA(t42) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t42->has = abap_true.
-        t42->value = t41.
+        t42->value = |Dynamic SQL|.
         result = t42.
         RETURN.
       ENDIF.

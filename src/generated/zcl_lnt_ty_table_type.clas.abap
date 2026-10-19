@@ -28,7 +28,6 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_row_type.
     DATA(t2) = i_options.
-    DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t8 = i_qualified_name.
@@ -49,16 +48,13 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t7->zlnt_json_ownkeys_70e5fd461788.
     t7->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t22) = |qualifiedName|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
-    DATA(t24) = |description|.
+    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t23 ).
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
+      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |description| p1 = t25 ).
     ENDIF.
-    t5 = t7.
-    super->constructor( i_input_967e = t5 ).
+    super->constructor( i_input_967e = t7 ).
     me->row_type = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `rowType`.
     me->options = t2.
@@ -67,17 +63,12 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     DATA(t30) = VALUE abap_bool( ).
     DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t32 TYPE REF TO zcl_lnt_itable_key.
-    DATA t33 TYPE REF TO zcl_lnt_itable_key.
-    t33 = t2->zlnt_view_read_sr_48b89cc62ab9( ).
-    t32 = t33.
+    t32 = t2->zlnt_view_read_sr_48b89cc62ab9( ).
     DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t36) = xsdbool( t32 IS INITIAL ).
-    IF t36 = abap_true.
+    IF xsdbool( t32 IS INITIAL ) = abap_true.
     ELSE.
       DATA(t39) = VALUE string( ).
-      DATA t40 TYPE REF TO zcl_lnt_itable_key.
-      t40 = t32.
-      t39 = t40->zlnt_view_read_sr_f361ef311f50( ).
+      t39 = t32->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t42) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t42->has = abap_true.
       t42->value = t39.
@@ -85,10 +76,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t31 = t35.
     DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t45) = |STANDARD|.
     DATA(t46) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t46->has = abap_true.
-    t46->value = t45.
+    t46->value = |STANDARD|.
     t43 = t46.
     DATA(t48) = VALUE abap_bool( ).
     DATA(t49) = VALUE abap_bool( ).
@@ -107,26 +97,15 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t29 = t30.
     IF t30 = abap_true.
-      DATA(t50) = VALUE abap_bool( ).
-      DATA(t51) = VALUE abap_bool( ).
-      DATA t52 TYPE REF TO zcl_lnt_itable_key.
-      DATA t53 TYPE REF TO zcl_lnt_itable_key.
-      t53 = t2->zlnt_view_read_sr_48b89cc62ab9( ).
-      t52 = t53.
-      t51 = t52->zlnt_view_read_sr_3206010d7211( ).
-      t50 = xsdbool( t51 = abap_true ).
-      t29 = t50.
+      t29 = xsdbool( t2->zlnt_view_read_sr_48b89cc62ab9( )->zlnt_view_read_sr_3206010d7211( ) = abap_true ).
     ENDIF.
     IF t29 = abap_true.
       DATA t56 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t57 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t60) = |STANDARD tables cannot have UNIQUE key|.
       DATA(t61) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t61->has = abap_true.
-      t61->value = t60.
-      t58 = t61.
-      t57 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t58 ).
+      t61->value = |STANDARD tables cannot have UNIQUE key|.
+      t57 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t61 ).
       t56 = NEW #( ).
       t56->payload = t57.
       CLEAR t56->source_value.
@@ -161,25 +140,18 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_with_header.
-    DATA t1 TYPE abap_bool.
-    t1 = me->options->zlnt_view_read_sr_ec4602663c93( ).
-    result = t1.
+    result = me->options->zlnt_view_read_sr_ec4602663c93( ).
 
   ENDMETHOD.
 
   METHOD get_access_type.
     DATA t2 TYPE REF TO zcl_lnt_itable_key.
-    DATA t3 TYPE REF TO zcl_lnt_itable_key.
-    t3 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
-    t2 = t3.
+    t2 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = xsdbool( t2 IS INITIAL ).
-    IF t6 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
       DATA t9 TYPE string.
-      DATA t10 TYPE REF TO zcl_lnt_itable_key.
-      t10 = t2.
-      t9 = t10->zlnt_view_read_sr_f361ef311f50( ).
+      t9 = t2->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
       t12->value = t9.
@@ -195,17 +167,14 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |STANDARD TABLE OF |.
     DATA t4 TYPE string.
     t4 = me->row_type->to_abap( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = | WITH DEFAULT KEY|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ | WITH DEFAULT KEY| }|.
 
   ENDMETHOD.
 
@@ -213,12 +182,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     DATA(t1) = i_level.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type.
     t2 = me->row_type.
-    DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
     t5 = me->options->zlnt_view_read_sr_ec4602663c93( ).
-    t4 = xsdbool( t5 = abap_true ).
-    IF t4 = abap_true.
-      DATA t8 TYPE string.
+    IF xsdbool( t5 = abap_true ) = abap_true.
       DATA(t9) = |Table with header of |.
       DATA t10 TYPE string.
       DATA t12 TYPE f.
@@ -226,11 +192,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       t12 = t1 + t14.
       t10 = t2->to_text( i_level = t12 ).
       DATA(t15) = strlen( t9 ).
-      t8 = |{ t9 }{ t10 }|.
-      result = t8.
+      result = |{ t9 }{ t10 }|.
       RETURN.
     ELSE.
-      DATA t16 TYPE string.
       DATA(t17) = |Table of |.
       DATA t18 TYPE string.
       DATA t20 TYPE f.
@@ -238,8 +202,7 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       t20 = t1 + t22.
       t18 = t2->to_text( i_level = t20 ).
       DATA(t23) = strlen( t17 ).
-      t16 = |{ t17 }{ t18 }|.
-      result = t16.
+      result = |{ t17 }{ t18 }|.
 
     ENDIF.
   ENDMETHOD.
@@ -250,17 +213,12 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t5 TYPE REF TO zcl_lnt_itable_key.
-    DATA t6 TYPE REF TO zcl_lnt_itable_key.
-    t6 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
-    t5 = t6.
+    t5 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t9) = xsdbool( t5 IS INITIAL ).
-    IF t9 = abap_true.
+    IF xsdbool( t5 IS INITIAL ) = abap_true.
     ELSE.
       DATA t12 TYPE string.
-      DATA t13 TYPE REF TO zcl_lnt_itable_key.
-      t13 = t5.
-      t12 = t13->zlnt_view_read_sr_f361ef311f50( ).
+      t12 = t5->zlnt_view_read_sr_f361ef311f50( ).
       DATA(t15) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t15->has = abap_true.
       t15->value = t12.
@@ -268,10 +226,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t4 = t8.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t18) = |STANDARD|.
     DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t19->has = abap_true.
-    t19->value = t18.
+    t19->value = |STANDARD|.
     t16 = t19.
     DATA(t21) = VALUE abap_bool( ).
     DATA(t22) = VALUE abap_bool( ).
@@ -295,12 +252,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     IF t3 = abap_true.
-      DATA t23 TYPE abap_bool.
       DATA t24 TYPE string.
       t24 = me->options->zlnt_view_read_sr_79d5aa355dd3( ).
-      DATA(t26) = |USER|.
-      t23 = xsdbool( t24 = t26 ).
-      t2 = t23.
+      t2 = xsdbool( t24 = |USER| ).
     ENDIF.
     t1 = t2.
     IF t2 = abap_true.
@@ -308,31 +262,21 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t31 TYPE REF TO zcl_lnt_itable_key.
-      DATA t32 TYPE REF TO zcl_lnt_itable_key.
-      t32 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
-      t31 = t32.
+      t31 = me->options->zlnt_view_read_sr_48b89cc62ab9( ).
       DATA t34 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t35) = xsdbool( t31 IS INITIAL ).
-      IF t35 = abap_true.
+      IF xsdbool( t31 IS INITIAL ) = abap_true.
       ELSE.
-        DATA t38 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t39 TYPE REF TO zcl_lnt_itable_key.
-        t39 = t31.
-        t38 = t39->zlnt_view_read_sr_e0192e283129( ).
-        t34 = t38.
+        t34 = t31->zlnt_view_read_sr_e0192e283129( ).
       ENDIF.
       t29 = t34.
       DATA t41 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA(t42) = xsdbool( t29 IS INITIAL ).
-      IF t42 = abap_true.
+      IF xsdbool( t29 IS INITIAL ) = abap_true.
       ELSE.
         DATA t45 TYPE f.
-        DATA t46 TYPE i.
         DATA t47 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         t47 = t29.
         t47->load( ).
-        t46 = lines( t47->items ).
-        t45 = t46.
+        t45 = lines( t47->items ).
         DATA(t49) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t49->has = abap_true.
         t49->value = t45.
@@ -340,10 +284,9 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       ENDIF.
       t28 = t41.
       DATA t50 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA(t52) = CONV f( 0 ).
       DATA(t53) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t53->has = abap_true.
-      t53->value = t52.
+      t53->value = CONV f( 0 ).
       t50 = t53.
       DATA(t55) = VALUE abap_bool( ).
       DATA(t56) = VALUE abap_bool( ).
@@ -370,16 +313,12 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       result = abap_true.
       RETURN.
     ENDIF.
-    DATA t58 TYPE abap_bool.
-    t58 = me->row_type->is_generic( ).
-    result = t58.
+    result = me->row_type->is_generic( ).
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA t1 TYPE abap_bool.
-    t1 = me->row_type->contains_void( ).
-    result = t1.
+    result = me->row_type->contains_void( ).
 
   ENDMETHOD.
 

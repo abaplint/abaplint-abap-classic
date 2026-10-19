@@ -13,12 +13,9 @@ CLASS zcl_lnt_end_form DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_end_form IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t5) = |ENDFORM|.
-    t4 = zcl_lnt_st_combi_module=>str( i_s = t5 ).
+    t4 = zcl_lnt_st_combi_module=>str( i_s = |ENDFORM| ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t7 TYPE REF TO object.
@@ -42,8 +39,7 @@ CLASS zcl_lnt_end_form IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

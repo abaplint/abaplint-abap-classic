@@ -23,9 +23,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_iindentation_options.
     t4 = t1.
     DATA t6 TYPE REF TO zcl_lnt_iindentation_options.
-    DATA t7 TYPE abap_bool.
-    t7 = xsdbool( t4 IS BOUND ).
-    IF t7 = abap_true.
+    IF xsdbool( t4 IS BOUND ) = abap_true.
       t6 = t4.
     ELSE.
       DATA t11 TYPE REF TO zcl_lnt_iindentation_options.
@@ -49,13 +47,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     DATA(t1) = i_original.
     DATA(t2) = i_modified.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t7 = t1->statements.
-    t3 = t7.
+    t3 = t1->statements.
     DATA t9 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    t10 = me->get_expected_indents( i_file = t1 ).
-    t9 = t10.
+    t9 = me->get_expected_indents( i_file = t1 ).
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t15) = |\n|.
@@ -117,21 +111,13 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ELSE.
         t23 ?= t24.
       ENDIF.
-      DATA t28 TYPE abap_bool.
       DATA t29 TYPE REF TO zcl_lnt_position.
-      DATA t31 TYPE REF TO zcl_lnt_abstract_token.
-      t31 = t23->get_first_token( ).
-      DATA t33 TYPE REF TO zcl_lnt_position.
-      t33 = t31->start.
-      t29 = t33.
-      t28 = xsdbool( t29 IS BOUND AND t29 IS INSTANCE OF zcl_lnt_virtual_position ).
-      IF t28 = abap_true.
+      t29 = t23->get_first_token( )->start.
+      IF xsdbool( t29 IS BOUND AND t29 IS INSTANCE OF zcl_lnt_virtual_position ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t35 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t36 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t36 = t9->shift( ).
-      t35 = t36.
+      t35 = t9->shift( ).
       DATA(t38) = VALUE abap_bool( ).
       DATA(t39) = VALUE abap_bool( ).
       DATA t40 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
@@ -147,32 +133,21 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       t39 = t44.
       t38 = t39.
       IF t39 = abap_false.
-        DATA(t46) = VALUE abap_bool( ).
-        DATA(t47) = VALUE f( ).
         IF t35->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        t47 = t35->value.
-        DATA(t49) = CONV f( 0 ).
-        t46 = xsdbool( t47 < t49 ).
-        t38 = t46.
+        t38 = xsdbool( t35->value < CONV f( 0 ) ).
       ENDIF.
       IF t38 = abap_true.
         CONTINUE.
       ENDIF.
       DATA t50 TYPE f.
-      DATA t51 TYPE f.
       DATA t52 TYPE f.
-      DATA t56 TYPE REF TO zcl_lnt_abstract_token.
-      t56 = t23->get_first_token( ).
       DATA t58 TYPE REF TO zcl_lnt_position.
-      t58 = t56->start.
-      DATA t60 TYPE f.
-      t60 = t58->row.
-      t52 = t60.
+      t58 = t23->get_first_token( )->start.
+      t52 = t58->row.
       DATA(t62) = CONV f( 1 ).
-      t51 = t52 - t62.
-      t50 = t51.
+      t50 = t52 - t62.
       DATA(t64) = VALUE i( ).
       IF t50 > range_i32_upper.
         t64 = range_i32_upper.
@@ -196,7 +171,6 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t12->load( ).
-      CLEAR t67.
       READ TABLE t12->items INDEX t69 INTO t67.
       DATA(t71) = strlen( t67 ).
       DATA t72 TYPE i.
@@ -277,17 +251,12 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ENDIF.
       t12->put( p0 = t64 p1 = t66 ).
       DATA t90 TYPE f.
-      DATA(t91) = CONV f( 1 ).
-      t90 = t91.
+      t90 = CONV f( 1 ).
       DO.
-        DATA(t92) = VALUE abap_bool( ).
-        DATA(t94) = VALUE f( ).
         IF t35->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        t94 = t35->value.
-        t92 = xsdbool( t90 < t94 ).
-        IF t92 = abap_false.
+        IF xsdbool( t90 < t35->value ) = abap_false.
           EXIT.
         ENDIF.
         DATA(t97) = VALUE i( ).
@@ -298,7 +267,6 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         ELSE.
           t97 = trunc( t50 ).
         ENDIF.
-        DATA(t99) = VALUE string( ).
         DATA(t100) = | |.
         DATA(t101) = VALUE string( ).
         DATA(t103) = VALUE i( ).
@@ -314,33 +282,24 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t12->load( ).
-        CLEAR t101.
         READ TABLE t12->items INDEX t103 INTO t101.
         DATA(t105) = strlen( t100 ).
-        t99 = |{ t100 }{ t101 }|.
-        t12->put( p0 = t97 p1 = t99 ).
-        DATA t106 TYPE f.
+        t12->put( p0 = t97 p1 = |{ t100 }{ t101 }| ).
         DATA(t108) = CONV f( 1 ).
-        t106 = t90 + t108.
-        t90 = t106.
+        t90 = t90 + t108.
       ENDDO.
     ENDDO.
-    DATA t109 TYPE string.
-    DATA(t111) = |\n|.
     DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t112->has = abap_true.
-    t112->value = t111.
-    t109 = t12->join( p0 = t112 ).
-    result = t109.
+    t112->value = |\n|.
+    result = t12->join( p0 = t112 ).
 
   ENDMETHOD.
 
   METHOD get_expected_indents.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE i.
     t4 = 1.
     DATA t6 TYPE REF TO zcl_lnt_stack.
@@ -352,30 +311,19 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
     DATA t11 TYPE abap_bool.
     t11 = abap_false.
     DATA(t13) = VALUE abap_bool( ).
-    DATA(t14) = VALUE abap_bool( ).
     DATA t15 TYPE REF TO zif_lnt_structure.
     DATA t16 TYPE REF TO zcl_lnt_structure_node.
-    DATA t20 TYPE REF TO zcl_lnt_structure_node.
-    t20 = t1->structure.
-    t16 = t20.
+    t16 = t1->structure.
     DATA t22 TYPE REF TO zif_lnt_structure.
-    DATA(t23) = xsdbool( t16 IS INITIAL ).
-    IF t23 = abap_true.
+    IF xsdbool( t16 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t26 TYPE REF TO zif_lnt_structure.
-      DATA t27 TYPE REF TO zcl_lnt_structure_node.
-      t27 = t16.
-      t26 = t27->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-      t22 = t26.
+      t22 = t16->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
     ENDIF.
     t15 = t22.
-    t14 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_dynpro_logic ).
-    t13 = t14.
+    t13 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_dynpro_logic ).
     DATA t29 TYPE REF TO zcl_lnt_statement_node.
     DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t34 = t1->statements.
-    t31 = t34.
+    t31 = t1->statements.
     DATA t36 TYPE REF TO zcl_lnt_statement_node.
     DATA t37 TYPE REF TO object.
     DATA(t38) = VALUE i( ).
@@ -398,21 +346,13 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ELSE.
         t36 ?= t37.
       ENDIF.
-      DATA t41 TYPE abap_bool.
       DATA t42 TYPE REF TO zcl_lnt_position.
-      DATA t44 TYPE REF TO zcl_lnt_abstract_token.
-      t44 = t36->get_first_token( ).
-      DATA t46 TYPE REF TO zcl_lnt_position.
-      t46 = t44->start.
-      t42 = t46.
-      t41 = xsdbool( t42 IS BOUND AND t42 IS INSTANCE OF zcl_lnt_virtual_position ).
-      IF t41 = abap_true.
+      t42 = t36->get_first_token( )->start.
+      IF xsdbool( t42 IS BOUND AND t42 IS INSTANCE OF zcl_lnt_virtual_position ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t48 TYPE REF TO zif_lnt_statement.
-      DATA t49 TYPE REF TO zif_lnt_statement.
-      t49 = t36->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t48 = t49.
+      t48 = t36->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       DATA(t51) = VALUE abap_bool( ).
       DATA(t52) = VALUE abap_bool( ).
       DATA(t53) = VALUE abap_bool( ).
@@ -436,87 +376,59 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       t70 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_if ).
       t69 = t70.
       IF t70 = abap_false.
-        DATA t72 TYPE abap_bool.
-        t72 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_while ).
-        t69 = t72.
+        t69 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_while ).
       ENDIF.
       t68 = t69.
       IF t69 = abap_false.
-        DATA t74 TYPE abap_bool.
-        t74 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_module ).
-        t68 = t74.
+        t68 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_module ).
       ENDIF.
       t67 = t68.
       IF t68 = abap_false.
-        DATA t76 TYPE abap_bool.
-        t76 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_select ).
-        t67 = t76.
+        t67 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_select ).
       ENDIF.
       t66 = t67.
       IF t67 = abap_false.
-        DATA t78 TYPE abap_bool.
-        t78 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_method ).
-        t66 = t78.
+        t66 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_method ).
       ENDIF.
       t65 = t66.
       IF t66 = abap_false.
-        DATA t80 TYPE abap_bool.
-        t80 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_chain ).
-        t65 = t80.
+        t65 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_chain ).
       ENDIF.
       t64 = t65.
       IF t65 = abap_false.
-        DATA t82 TYPE abap_bool.
-        t82 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_at ).
-        t64 = t82.
+        t64 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_at ).
       ENDIF.
       t63 = t64.
       IF t64 = abap_false.
-        DATA t84 TYPE abap_bool.
-        t84 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else ).
-        t63 = t84.
+        t63 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else ).
       ENDIF.
       t62 = t63.
       IF t63 = abap_false.
-        DATA t86 TYPE abap_bool.
-        t86 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_exec ).
-        t62 = t86.
+        t62 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_exec ).
       ENDIF.
       t61 = t62.
       IF t62 = abap_false.
-        DATA t88 TYPE abap_bool.
-        t88 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_definition ).
-        t61 = t88.
+        t61 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_definition ).
       ENDIF.
       t60 = t61.
       IF t61 = abap_false.
-        DATA t90 TYPE abap_bool.
-        t90 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_loop ).
-        t60 = t90.
+        t60 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_loop ).
       ENDIF.
       t59 = t60.
       IF t60 = abap_false.
-        DATA t92 TYPE abap_bool.
-        t92 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_test_injection ).
-        t59 = t92.
+        t59 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_test_injection ).
       ENDIF.
       t58 = t59.
       IF t59 = abap_false.
-        DATA t94 TYPE abap_bool.
-        t94 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_test_seam ).
-        t58 = t94.
+        t58 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_test_seam ).
       ENDIF.
       t57 = t58.
       IF t58 = abap_false.
-        DATA t96 TYPE abap_bool.
-        t96 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_form ).
-        t57 = t96.
+        t57 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_form ).
       ENDIF.
       t56 = t57.
       IF t57 = abap_false.
-        DATA t98 TYPE abap_bool.
-        t98 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_catch ).
-        t56 = t98.
+        t56 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_catch ).
       ENDIF.
       t55 = t56.
       IF t56 = abap_false.
@@ -548,9 +460,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         ENDIF.
         t101 = t102.
         IF t102 = abap_true.
-          DATA t112 TYPE abap_bool.
-          t112 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-          t101 = t112.
+          t101 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_selection_screen ).
         ENDIF.
         t100 = t101.
         IF t101 = abap_true.
@@ -578,11 +488,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
               t117 = -1.
             ENDIF.
           ENDIF.
-          DATA(t124) = 0.
-          t116 = xsdbool( t117 >= t124 ).
+          t116 = xsdbool( t117 >= 0 ).
           t115 = t116.
           IF t116 = abap_false.
-            DATA(t125) = VALUE abap_bool( ).
             DATA(t126) = VALUE i( ).
             DATA t127 TYPE string.
             DATA t128 TYPE string.
@@ -604,13 +512,10 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 t126 = -1.
               ENDIF.
             ENDIF.
-            DATA(t133) = 0.
-            t125 = xsdbool( t126 >= t133 ).
-            t115 = t125.
+            t115 = xsdbool( t126 >= 0 ).
           ENDIF.
           t114 = t115.
           IF t115 = abap_false.
-            DATA(t134) = VALUE abap_bool( ).
             DATA(t135) = VALUE i( ).
             DATA t136 TYPE string.
             DATA t137 TYPE string.
@@ -632,9 +537,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 t135 = -1.
               ENDIF.
             ENDIF.
-            DATA(t142) = 0.
-            t134 = xsdbool( t135 >= t142 ).
-            t114 = t134.
+            t114 = xsdbool( t135 >= 0 ).
           ENDIF.
           t100 = t114.
         ENDIF.
@@ -642,33 +545,23 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ENDIF.
       t54 = t55.
       IF t55 = abap_false.
-        DATA t143 TYPE abap_bool.
-        t143 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else_if ).
-        t54 = t143.
+        t54 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else_if ).
       ENDIF.
       t53 = t54.
       IF t54 = abap_false.
-        DATA t145 TYPE abap_bool.
-        t145 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_function ).
-        t53 = t145.
+        t53 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_function ).
       ENDIF.
       t52 = t53.
       IF t53 = abap_false.
-        DATA t147 TYPE abap_bool.
-        t147 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_interface ).
-        t52 = t147.
+        t52 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_interface ).
       ENDIF.
       t51 = t52.
       IF t52 = abap_false.
-        DATA t149 TYPE abap_bool.
-        t149 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_do ).
-        t51 = t149.
+        t51 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_do ).
       ENDIF.
       IF t51 = abap_true.
-        DATA t151 TYPE f.
         DATA(t153) = CONV f( 2 ).
-        t151 = t8 - t153.
-        t8 = t151.
+        t8 = t8 - t153.
       ELSE.
         DATA(t154) = VALUE abap_bool( ).
         DATA(t155) = VALUE abap_bool( ).
@@ -686,75 +579,51 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         t166 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_start_of_selection ).
         t165 = t166.
         IF t166 = abap_false.
-          DATA t168 TYPE abap_bool.
-          t168 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_selection_screen ).
-          t165 = t168.
+          t165 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_selection_screen ).
         ENDIF.
         t164 = t165.
         IF t165 = abap_false.
-          DATA t170 TYPE abap_bool.
-          t170 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_line_selection ).
-          t164 = t170.
+          t164 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_line_selection ).
         ENDIF.
         t163 = t164.
         IF t164 = abap_false.
-          DATA t172 TYPE abap_bool.
-          t172 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_pf ).
-          t163 = t172.
+          t163 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_pf ).
         ENDIF.
         t162 = t163.
         IF t163 = abap_false.
-          DATA t174 TYPE abap_bool.
-          t174 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_initialization ).
-          t162 = t174.
+          t162 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_initialization ).
         ENDIF.
         t161 = t162.
         IF t162 = abap_false.
-          DATA t176 TYPE abap_bool.
-          t176 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_user_command ).
-          t161 = t176.
+          t161 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_user_command ).
         ENDIF.
         t160 = t161.
         IF t161 = abap_false.
-          DATA t178 TYPE abap_bool.
-          t178 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_process_after_input ).
-          t160 = t178.
+          t160 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_process_after_input ).
         ENDIF.
         t159 = t160.
         IF t160 = abap_false.
-          DATA t180 TYPE abap_bool.
-          t180 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_bfr_otpt ).
-          t159 = t180.
+          t159 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_bfr_otpt ).
         ENDIF.
         t158 = t159.
         IF t159 = abap_false.
-          DATA t182 TYPE abap_bool.
-          t182 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_on_vl_rqst ).
-          t158 = t182.
+          t158 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_on_vl_rqst ).
         ENDIF.
         t157 = t158.
         IF t158 = abap_false.
-          DATA t184 TYPE abap_bool.
-          t184 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_top_of_page ).
-          t157 = t184.
+          t157 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_top_of_page ).
         ENDIF.
         t156 = t157.
         IF t157 = abap_false.
-          DATA t186 TYPE abap_bool.
-          t186 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_get ).
-          t156 = t186.
+          t156 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_get ).
         ENDIF.
         t155 = t156.
         IF t156 = abap_false.
-          DATA t188 TYPE abap_bool.
-          t188 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_selection ).
-          t155 = t188.
+          t155 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_selection ).
         ENDIF.
         t154 = t155.
         IF t155 = abap_false.
-          DATA t190 TYPE abap_bool.
-          t190 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_load_of_program ).
-          t154 = t190.
+          t154 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_load_of_program ).
         ENDIF.
         IF t154 = abap_true.
           DATA t192 TYPE f.
@@ -786,23 +655,17 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
             t206 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_module ).
             t205 = t206.
             IF t206 = abap_true.
-              DATA t208 TYPE abap_bool.
-              t208 = xsdbool( t13 = abap_false ).
-              t205 = t208.
+              t205 = xsdbool( t13 = abap_false ).
             ENDIF.
             t197 = t205.
           ENDIF.
           t196 = t197.
           IF t197 = abap_false.
-            DATA t211 TYPE abap_bool.
-            t211 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
-            t196 = t211.
+            t196 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
           ENDIF.
           t195 = t196.
           IF t196 = abap_false.
-            DATA t213 TYPE abap_bool.
-            t213 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_class_definition ).
-            t195 = t213.
+            t195 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_class_definition ).
           ENDIF.
           IF t195 = abap_true.
             DATA t215 TYPE f.
@@ -815,12 +678,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
             t219 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_cleanup ).
             t218 = t219.
             IF t219 = abap_false.
-              DATA t221 TYPE abap_bool.
-              t221 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_catch ).
-              t218 = t221.
+              t218 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_catch ).
             ENDIF.
             IF t218 = abap_true.
-              DATA(t223) = VALUE f( ).
               DATA(t224) = VALUE f( ).
               DATA t225 TYPE REF TO zcl_lnt_stack.
               t225 = t6.
@@ -840,12 +700,10 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
               ENDIF.
               t228->load( ).
-              CLEAR t227.
               READ TABLE t228->items INDEX t230 INTO t227.
               t224 = t227.
               DATA(t235) = CONV f( 2 ).
-              t223 = t224 - t235.
-              t8 = t223.
+              t8 = t224 - t235.
             ELSE.
               DATA(t236) = VALUE abap_bool( ).
               DATA(t237) = VALUE abap_bool( ).
@@ -856,36 +714,25 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
               t241 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_public ).
               t240 = t241.
               IF t241 = abap_false.
-                DATA t243 TYPE abap_bool.
-                t243 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_protected ).
-                t240 = t243.
+                t240 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_protected ).
               ENDIF.
               t239 = t240.
               IF t240 = abap_false.
-                DATA t245 TYPE abap_bool.
-                t245 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_private ).
-                t239 = t245.
+                t239 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_private ).
               ENDIF.
               t238 = t239.
               IF t239 = abap_false.
-                DATA t247 TYPE abap_bool.
-                t247 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when_type ).
-                t238 = t247.
+                t238 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when_type ).
               ENDIF.
               t237 = t238.
               IF t238 = abap_false.
-                DATA t249 TYPE abap_bool.
-                t249 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_when_others ).
-                t237 = t249.
+                t237 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_when_others ).
               ENDIF.
               t236 = t237.
               IF t237 = abap_false.
-                DATA t251 TYPE abap_bool.
-                t251 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when ).
-                t236 = t251.
+                t236 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when ).
               ENDIF.
               IF t236 = abap_true.
-                DATA(t253) = VALUE f( ).
                 DATA t254 TYPE REF TO zcl_lnt_stack.
                 t254 = t6.
                 DATA(t256) = VALUE f( ).
@@ -904,20 +751,13 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                   RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                 ENDIF.
                 t257->load( ).
-                CLEAR t256.
                 READ TABLE t257->items INDEX t259 INTO t256.
-                t253 = t256.
-                t8 = t253.
+                t8 = t256.
               ELSE.
-                DATA t264 TYPE abap_bool.
-                t264 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_try ).
-                IF t264 = abap_true.
-                  DATA(t266) = VALUE f( ).
+                IF xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_try ) = abap_true.
                   DATA(t267) = VALUE f( ).
                   DATA t268 TYPE REF TO zcl_lnt_stack.
                   t268 = t6.
-                  DATA(t270) = VALUE f( ).
-                  DATA(t271) = VALUE f( ).
                   DATA(t272) = VALUE f( ).
                   DATA t273 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                   t273 = t268->items.
@@ -934,13 +774,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                     RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                   ENDIF.
                   t273->load( ).
-                  CLEAR t272.
                   READ TABLE t273->items INDEX t275 INTO t272.
-                  t271 = t272.
-                  DATA t281 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                   DATA t282 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                   t282 = t268->items.
-                  DATA(t284) = 0.
                   DATA t285 TYPE i.
                   DATA t286 TYPE i.
                   DATA t287 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
@@ -949,11 +785,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                   t286 = lines( t287->items ).
                   DATA(t289) = 1.
                   t285 = t286 - t289.
-                  t281 = t282->slice2( p0 = t284 p1 = t285 ).
-                  t268->items = t281.
+                  t268->items = t282->slice2( p0 = 0 p1 = t285 ).
                   DELETE t268->zlnt_record_delet_0597644d88b4 WHERE table_line = `items`.
-                  t270 = t271.
-                  t267 = t270.
+                  t267 = t272.
                   DATA(t291) = VALUE f( ).
                   DATA(t292) = VALUE i( ).
                   DATA(t293) = VALUE abap_bool( ).
@@ -970,25 +804,19 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                     t292 = 4.
                   ENDIF.
                   t291 = t292.
-                  t266 = t267 - t291.
-                  t8 = t266.
+                  t8 = t267 - t291.
                 ELSE.
                   DATA t298 TYPE abap_bool.
                   DATA t299 TYPE abap_bool.
                   t299 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_class ).
                   t298 = t299.
                   IF t299 = abap_false.
-                    DATA t301 TYPE abap_bool.
-                    t301 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_case ).
-                    t298 = t301.
+                    t298 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_case ).
                   ENDIF.
                   IF t298 = abap_true.
-                    DATA(t303) = VALUE f( ).
                     DATA(t304) = VALUE f( ).
                     DATA t305 TYPE REF TO zcl_lnt_stack.
                     t305 = t6.
-                    DATA(t307) = VALUE f( ).
-                    DATA(t308) = VALUE f( ).
                     DATA(t309) = VALUE f( ).
                     DATA t310 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                     t310 = t305->items.
@@ -1005,13 +833,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
                     ENDIF.
                     t310->load( ).
-                    CLEAR t309.
                     READ TABLE t310->items INDEX t312 INTO t309.
-                    t308 = t309.
-                    DATA t318 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                     DATA t319 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
                     t319 = t305->items.
-                    DATA(t321) = 0.
                     DATA t322 TYPE i.
                     DATA t323 TYPE i.
                     DATA t324 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
@@ -1020,14 +844,11 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                     t323 = lines( t324->items ).
                     DATA(t326) = 1.
                     t322 = t323 - t326.
-                    t318 = t319->slice2( p0 = t321 p1 = t322 ).
-                    t305->items = t318.
+                    t305->items = t319->slice2( p0 = 0 p1 = t322 ).
                     DELETE t305->zlnt_record_delet_0597644d88b4 WHERE table_line = `items`.
-                    t307 = t308.
-                    t304 = t307.
+                    t304 = t309.
                     DATA(t328) = CONV f( 2 ).
-                    t303 = t304 - t328.
-                    t8 = t303.
+                    t8 = t304 - t328.
                     DATA t329 TYPE f.
                     DATA(t330) = t8.
                     DATA t331 TYPE f.
@@ -1048,26 +869,19 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                     t336 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_comment ).
                     t335 = t336.
                     IF t336 = abap_false.
-                      DATA t338 TYPE abap_bool.
-                      t338 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_include_type ).
-                      t335 = t338.
+                      t335 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_include_type ).
                     ENDIF.
                     t334 = t335.
                     IF t335 = abap_false.
-                      DATA t340 TYPE abap_bool.
-                      t340 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_empty ).
-                      t334 = t340.
+                      t334 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_empty ).
                     ENDIF.
                     t333 = t334.
                     IF t334 = abap_false.
-                      DATA t342 TYPE abap_bool.
-                      t342 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_macro_content ).
-                      t333 = t342.
+                      t333 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_macro_content ).
                     ENDIF.
                     IF t333 = abap_true.
-                      DATA(t345) = CONV f( -1 ).
                       t2->load( ).
-                      APPEND t345 TO t2->items.
+                      APPEND CONV f( -1 ) TO t2->items.
                       t2->save( ).
                       t29 = t36.
                       CONTINUE.
@@ -1085,67 +899,32 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       t352 = xsdbool( t29 IS BOUND ).
       t351 = t352.
       IF t352 = abap_true.
-        DATA t354 TYPE abap_bool.
-        DATA t355 TYPE abap_bool.
         DATA t356 TYPE REF TO zif_lnt_statement.
-        DATA t357 TYPE REF TO zcl_lnt_statement_node.
-        t357 = t29.
-        t356 = t357->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t355 = xsdbool( t356 IS BOUND AND t356 IS INSTANCE OF zcl_lnt_st_comment ).
-        t354 = xsdbool( t355 = abap_false ).
-        t351 = t354.
+        t356 = t29->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+        t351 = xsdbool( xsdbool( t356 IS BOUND AND t356 IS INSTANCE OF zcl_lnt_st_comment ) = abap_false ).
       ENDIF.
       t350 = t351.
       IF t351 = abap_true.
-        DATA t359 TYPE abap_bool.
         DATA t360 TYPE f.
         DATA t363 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t364 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t365 TYPE REF TO zcl_lnt_statement_node.
-        t365 = t29.
-        t364 = t365->get_last_token( ).
-        t363 = t364.
-        DATA t367 TYPE REF TO zcl_lnt_position.
+        t363 = t29->get_last_token( ).
         DATA t368 TYPE f.
-        DATA t370 TYPE REF TO zcl_lnt_position.
-        t370 = t363->start.
-        DATA t372 TYPE f.
-        t372 = t370->row.
-        t368 = t372.
-        DATA t374 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t368 = t363->start->row.
         DATA t375 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        DATA t377 TYPE REF TO zcl_lnt_position.
-        t377 = t363->start.
-        DATA t379 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        t379 = t377->col.
-        t375 = t379.
+        t375 = t363->start->col.
         DATA t381 TYPE f.
-        DATA t383 TYPE string.
-        t383 = t363->str.
-        t381 = strlen( t383 ).
+        t381 = strlen( t363->str ).
         DATA(t386) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t386->has = abap_true.
         t386->value = t381.
-        t374 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t375 right = t386 op = `+` ).
-        t367 = NEW zcl_lnt_position( i_row = t368 i_col = t374 ).
-        DATA t387 TYPE f.
-        t387 = t367->row.
-        t360 = t387.
-        DATA t389 TYPE f.
-        DATA t393 TYPE REF TO zcl_lnt_abstract_token.
-        t393 = t36->get_first_token( ).
+        t360 = NEW zcl_lnt_position( i_row = t368 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t375 right = t386 op = `+` ) )->row.
         DATA t395 TYPE REF TO zcl_lnt_position.
-        t395 = t393->start.
-        DATA t397 TYPE f.
-        t397 = t395->row.
-        t389 = t397.
-        t359 = xsdbool( t360 = t389 ).
-        t350 = t359.
+        t395 = t36->get_first_token( )->start.
+        t350 = xsdbool( t360 = t395->row ).
       ENDIF.
       IF t350 = abap_true.
-        DATA(t400) = CONV f( -1 ).
         t2->load( ).
-        APPEND t400 TO t2->items.
+        APPEND CONV f( -1 ) TO t2->items.
         t2->save( ).
         t29 = t36.
         CONTINUE.
@@ -1199,9 +978,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       t449 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_if ).
       t448 = t449.
       IF t449 = abap_false.
-        DATA t451 TYPE abap_bool.
-        t451 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_while ).
-        t448 = t451.
+        t448 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_while ).
       ENDIF.
       t447 = t448.
       IF t448 = abap_false.
@@ -1210,173 +987,117 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         t454 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_module ).
         t453 = t454.
         IF t454 = abap_true.
-          DATA t456 TYPE abap_bool.
-          t456 = xsdbool( t13 = abap_false ).
-          t453 = t456.
+          t453 = xsdbool( t13 = abap_false ).
         ENDIF.
         t447 = t453.
       ENDIF.
       t446 = t447.
       IF t447 = abap_false.
-        DATA t459 TYPE abap_bool.
-        t459 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_select_loop ).
-        t446 = t459.
+        t446 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_select_loop ).
       ENDIF.
       t445 = t446.
       IF t446 = abap_false.
-        DATA t461 TYPE abap_bool.
-        t461 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_function_module ).
-        t445 = t461.
+        t445 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_function_module ).
       ENDIF.
       t444 = t445.
       IF t445 = abap_false.
-        DATA t463 TYPE abap_bool.
-        t463 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_interface ).
-        t444 = t463.
+        t444 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_interface ).
       ENDIF.
       t443 = t444.
       IF t444 = abap_false.
-        DATA t465 TYPE abap_bool.
-        t465 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_do ).
-        t443 = t465.
+        t443 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_do ).
       ENDIF.
       t442 = t443.
       IF t443 = abap_false.
-        DATA t467 TYPE abap_bool.
-        t467 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at ).
-        t442 = t467.
+        t442 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at ).
       ENDIF.
       t441 = t442.
       IF t442 = abap_false.
-        DATA t469 TYPE abap_bool.
-        t469 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_first ).
-        t441 = t469.
+        t441 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_first ).
       ENDIF.
       t440 = t441.
       IF t441 = abap_false.
-        DATA t471 TYPE abap_bool.
-        t471 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_last ).
-        t440 = t471.
+        t440 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_last ).
       ENDIF.
       t439 = t440.
       IF t440 = abap_false.
-        DATA t473 TYPE abap_bool.
-        t473 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_exec_sql ).
-        t439 = t473.
+        t439 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_exec_sql ).
       ENDIF.
       t438 = t439.
       IF t439 = abap_false.
-        DATA t475 TYPE abap_bool.
-        t475 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_catch ).
-        t438 = t475.
+        t438 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_catch ).
       ENDIF.
       t437 = t438.
       IF t438 = abap_false.
-        DATA t477 TYPE abap_bool.
-        t477 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_process_after_input ).
-        t437 = t477.
+        t437 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_process_after_input ).
       ENDIF.
       t436 = t437.
       IF t437 = abap_false.
-        DATA t479 TYPE abap_bool.
-        t479 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_bfr_otpt ).
-        t436 = t479.
+        t436 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_bfr_otpt ).
       ENDIF.
       t435 = t436.
       IF t436 = abap_false.
-        DATA t481 TYPE abap_bool.
-        t481 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_on_vl_rqst ).
-        t435 = t481.
+        t435 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_prcss_on_vl_rqst ).
       ENDIF.
       t434 = t435.
       IF t435 = abap_false.
-        DATA t483 TYPE abap_bool.
-        t483 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_define ).
-        t434 = t483.
+        t434 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_define ).
       ENDIF.
       t433 = t434.
       IF t434 = abap_false.
-        DATA t485 TYPE abap_bool.
-        t485 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when ).
-        t433 = t485.
+        t433 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when ).
       ENDIF.
       t432 = t433.
       IF t433 = abap_false.
-        DATA t487 TYPE abap_bool.
-        t487 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when_type ).
-        t432 = t487.
+        t432 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_when_type ).
       ENDIF.
       t431 = t432.
       IF t432 = abap_false.
-        DATA t489 TYPE abap_bool.
-        t489 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_when_others ).
-        t431 = t489.
+        t431 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_when_others ).
       ENDIF.
       t430 = t431.
       IF t431 = abap_false.
-        DATA t491 TYPE abap_bool.
-        t491 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_cleanup ).
-        t430 = t491.
+        t430 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_cleanup ).
       ENDIF.
       t429 = t430.
       IF t430 = abap_false.
-        DATA t493 TYPE abap_bool.
-        t493 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_loop ).
-        t429 = t493.
+        t429 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_loop ).
       ENDIF.
       t428 = t429.
       IF t429 = abap_false.
-        DATA t495 TYPE abap_bool.
-        t495 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_loop_at_screen ).
-        t428 = t495.
+        t428 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_loop_at_screen ).
       ENDIF.
       t427 = t428.
       IF t428 = abap_false.
-        DATA t497 TYPE abap_bool.
-        t497 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_ctch_systm_excptns ).
-        t427 = t497.
+        t427 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_ctch_systm_excptns ).
       ENDIF.
       t426 = t427.
       IF t427 = abap_false.
-        DATA t499 TYPE abap_bool.
-        t499 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_form ).
-        t426 = t499.
+        t426 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_form ).
       ENDIF.
       t425 = t426.
       IF t426 = abap_false.
-        DATA t501 TYPE abap_bool.
-        t501 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else ).
-        t425 = t501.
+        t425 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else ).
       ENDIF.
       t424 = t425.
       IF t425 = abap_false.
-        DATA t503 TYPE abap_bool.
-        t503 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else_if ).
-        t424 = t503.
+        t424 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_else_if ).
       ENDIF.
       t423 = t424.
       IF t424 = abap_false.
-        DATA t505 TYPE abap_bool.
-        t505 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_mthd_implmnttn ).
-        t423 = t505.
+        t423 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_mthd_implmnttn ).
       ENDIF.
       t422 = t423.
       IF t423 = abap_false.
-        DATA t507 TYPE abap_bool.
-        t507 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_chain ).
-        t422 = t507.
+        t422 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_chain ).
       ENDIF.
       t421 = t422.
       IF t422 = abap_false.
-        DATA t509 TYPE abap_bool.
-        t509 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_test_injection ).
-        t421 = t509.
+        t421 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_test_injection ).
       ENDIF.
       t420 = t421.
       IF t421 = abap_false.
-        DATA t511 TYPE abap_bool.
-        t511 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_test_seam ).
-        t420 = t511.
+        t420 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_test_seam ).
       ENDIF.
       t419 = t420.
       IF t420 = abap_false.
@@ -1408,9 +1129,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         ENDIF.
         t514 = t515.
         IF t515 = abap_true.
-          DATA t525 TYPE abap_bool.
-          t525 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-          t514 = t525.
+          t514 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_selection_screen ).
         ENDIF.
         t513 = t514.
         IF t514 = abap_true.
@@ -1439,11 +1158,9 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
               t531 = -1.
             ENDIF.
           ENDIF.
-          DATA(t538) = 0.
-          t530 = xsdbool( t531 >= t538 ).
+          t530 = xsdbool( t531 >= 0 ).
           t529 = t530.
           IF t530 = abap_false.
-            DATA(t539) = VALUE abap_bool( ).
             DATA(t540) = VALUE i( ).
             DATA t541 TYPE string.
             DATA t542 TYPE string.
@@ -1465,13 +1182,10 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 t540 = -1.
               ENDIF.
             ENDIF.
-            DATA(t547) = 0.
-            t539 = xsdbool( t540 >= t547 ).
-            t529 = t539.
+            t529 = xsdbool( t540 >= 0 ).
           ENDIF.
           t528 = t529.
           IF t529 = abap_false.
-            DATA(t548) = VALUE abap_bool( ).
             DATA(t549) = VALUE i( ).
             DATA t550 TYPE string.
             DATA t551 TYPE string.
@@ -1493,13 +1207,10 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 t549 = -1.
               ENDIF.
             ENDIF.
-            DATA(t556) = 0.
-            t548 = xsdbool( t549 >= t556 ).
-            t528 = t548.
+            t528 = xsdbool( t549 >= 0 ).
           ENDIF.
           t527 = t528.
           IF t528 = abap_false.
-            DATA(t557) = VALUE abap_bool( ).
             DATA(t558) = VALUE i( ).
             DATA t559 TYPE string.
             DATA t560 TYPE string.
@@ -1521,9 +1232,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
                 t558 = -1.
               ENDIF.
             ENDIF.
-            DATA(t565) = 0.
-            t557 = xsdbool( t558 >= t565 ).
-            t527 = t557.
+            t527 = xsdbool( t558 >= 0 ).
           ENDIF.
           t513 = t527.
         ENDIF.
@@ -1531,86 +1240,57 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ENDIF.
       t418 = t419.
       IF t419 = abap_false.
-        DATA t566 TYPE abap_bool.
-        t566 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_start_of_selection ).
-        t418 = t566.
+        t418 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_start_of_selection ).
       ENDIF.
       t417 = t418.
       IF t418 = abap_false.
-        DATA t568 TYPE abap_bool.
-        t568 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_get ).
-        t417 = t568.
+        t417 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_get ).
       ENDIF.
       t416 = t417.
       IF t417 = abap_false.
-        DATA t570 TYPE abap_bool.
-        t570 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_selection_screen ).
-        t416 = t570.
+        t416 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_at_selection_screen ).
       ENDIF.
       t415 = t416.
       IF t416 = abap_false.
-        DATA t572 TYPE abap_bool.
-        t572 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_line_selection ).
-        t415 = t572.
+        t415 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_line_selection ).
       ENDIF.
       t414 = t415.
       IF t415 = abap_false.
-        DATA t574 TYPE abap_bool.
-        t574 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_load_of_program ).
-        t414 = t574.
+        t414 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_load_of_program ).
       ENDIF.
       t413 = t414.
       IF t414 = abap_false.
-        DATA t576 TYPE abap_bool.
-        t576 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_initialization ).
-        t413 = t576.
+        t413 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_initialization ).
       ENDIF.
       t412 = t413.
       IF t413 = abap_false.
-        DATA t578 TYPE abap_bool.
-        t578 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_user_command ).
-        t412 = t578.
+        t412 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_at_user_command ).
       ENDIF.
       t411 = t412.
       IF t412 = abap_false.
-        DATA t580 TYPE abap_bool.
-        t580 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_top_of_page ).
-        t411 = t580.
+        t411 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_top_of_page ).
       ENDIF.
       t410 = t411.
       IF t411 = abap_false.
-        DATA t582 TYPE abap_bool.
-        t582 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_selection ).
-        t410 = t582.
+        t410 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_end_of_selection ).
       ENDIF.
       t409 = t410.
       IF t410 = abap_false.
-        DATA t584 TYPE abap_bool.
-        t584 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_public ).
-        t409 = t584.
+        t409 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_public ).
       ENDIF.
       t408 = t409.
       IF t409 = abap_false.
-        DATA t586 TYPE abap_bool.
-        t586 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_protected ).
-        t408 = t586.
+        t408 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_protected ).
       ENDIF.
       t407 = t408.
       IF t408 = abap_false.
-        DATA t588 TYPE abap_bool.
-        t588 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_private ).
-        t407 = t588.
+        t407 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_private ).
       ENDIF.
       IF t407 = abap_true.
-        DATA t590 TYPE f.
         DATA(t592) = CONV f( 2 ).
-        t590 = t8 + t592.
-        t8 = t590.
+        t8 = t8 + t592.
       ELSE.
-        DATA t593 TYPE abap_bool.
-        t593 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_try ).
-        IF t593 = abap_true.
-          DATA(t595) = VALUE f( ).
+        IF xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_try ) = abap_true.
           DATA(t597) = VALUE f( ).
           DATA(t598) = VALUE i( ).
           DATA(t599) = VALUE abap_bool( ).
@@ -1627,8 +1307,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
             t598 = 4.
           ENDIF.
           t597 = t598.
-          t595 = t8 + t597.
-          t8 = t595.
+          t8 = t8 + t597.
           DATA t608 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
           t608 = t6->items.
           t608->load( ).
@@ -1642,36 +1321,26 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
           t614 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_class_definition ).
           t613 = t614.
           IF t614 = abap_false.
-            DATA t616 TYPE abap_bool.
-            t616 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_case ).
-            t613 = t616.
+            t613 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_case ).
           ENDIF.
           t612 = t613.
           IF t613 = abap_false.
-            DATA t618 TYPE abap_bool.
-            t618 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_case_type ).
-            t612 = t618.
+            t612 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_case_type ).
           ENDIF.
           t611 = t612.
           IF t612 = abap_false.
-            DATA t620 TYPE abap_bool.
-            t620 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
-            t611 = t620.
+            t611 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
           ENDIF.
           IF t611 = abap_true.
-            DATA(t622) = VALUE f( ).
             DATA(t624) = VALUE f( ).
             DATA(t625) = VALUE i( ).
-            DATA t626 TYPE abap_bool.
-            t626 = me->skip_indent_for_global_class( i_statement = t36 ).
-            IF t626 = abap_true.
+            IF me->skip_indent_for_global_class( i_statement = t36 ) = abap_true.
               t625 = 0.
             ELSE.
               t625 = 2.
             ENDIF.
             t624 = t625.
-            t622 = t8 + t624.
-            t8 = t622.
+            t8 = t8 + t624.
             DATA t634 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
             t634 = t6->items.
             t634->load( ).
@@ -1688,7 +1357,6 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
 
   METHOD skip_indent_for_global_class.
     DATA(t1) = i_statement.
-    DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t4 = me->options->global_class_skip_first.
@@ -1697,47 +1365,32 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         t3 = xsdbool( t4->value IS NOT INITIAL ).
       ENDIF.
     ENDIF.
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
+    IF xsdbool( t3 = abap_false ) = abap_true.
       result = abap_false.
       RETURN.
     ENDIF.
     DATA t7 TYPE REF TO zif_lnt_statement.
-    DATA t8 TYPE REF TO zif_lnt_statement.
-    t8 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-    t7 = t8.
+    t7 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     DATA t10 TYPE abap_bool.
     DATA t11 TYPE abap_bool.
     t11 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_st_class_definition ).
     t10 = t11.
     IF t11 = abap_true.
-      DATA t13 TYPE abap_bool.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
       DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
       t14 = t1->find_first_expression( i_type_9913 = t16 ).
-      t13 = xsdbool( t14 IS BOUND ).
-      t10 = t13.
+      t10 = xsdbool( t14 IS BOUND ).
     ENDIF.
     IF t10 = abap_true.
       DATA t17 TYPE REF TO zcl_lnt_expression_node.
-      DATA t18 TYPE REF TO zcl_lnt_expression_node.
       DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
-      t18 = t1->find_first_expression( i_type_9913 = t20 ).
-      t17 = t18.
-      DATA t21 TYPE abap_bool.
-      t21 = xsdbool( t17 IS BOUND ).
-      IF t21 = abap_true.
+      t17 = t1->find_first_expression( i_type_9913 = t20 ).
+      IF xsdbool( t17 IS BOUND ) = abap_true.
         DATA t23 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
         DATA(t24) = me->global_classes.
         DATA t25 TYPE string.
         DATA t26 TYPE string.
-        DATA t28 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t29 TYPE REF TO zcl_lnt_expression_node.
-        t29 = t17.
-        t28 = t29->get_first_token( ).
-        DATA t31 TYPE string.
-        t31 = t28->str.
-        t26 = t31.
+        t26 = t17->get_first_token( )->str.
         DATA(t33) = strlen( t26 ).
         t25 = t26.
         IF t25 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1750,30 +1403,19 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       result = abap_true.
       RETURN.
     ELSE.
-      DATA t35 TYPE abap_bool.
-      t35 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
-      IF t35 = abap_true.
+      IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ) = abap_true.
         DATA t37 TYPE REF TO zcl_lnt_expression_node.
-        DATA t38 TYPE REF TO zcl_lnt_expression_node.
         DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
-        t38 = t1->find_first_expression( i_type_9913 = t40 ).
-        t37 = t38.
+        t37 = t1->find_first_expression( i_type_9913 = t40 ).
         DATA t41 TYPE abap_bool.
         DATA t42 TYPE abap_bool.
         t42 = xsdbool( t37 IS BOUND ).
         t41 = t42.
         IF t42 = abap_true.
-          DATA(t44) = VALUE abap_bool( ).
           DATA(t45) = me->global_classes.
           DATA t46 TYPE string.
           DATA t47 TYPE string.
-          DATA t49 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t50 TYPE REF TO zcl_lnt_expression_node.
-          t50 = t37.
-          t49 = t50->get_first_token( ).
-          DATA t52 TYPE string.
-          t52 = t49->str.
-          t47 = t52.
+          t47 = t37->get_first_token( )->str.
           DATA(t54) = strlen( t47 ).
           t46 = t47.
           IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1781,8 +1423,7 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
           ELSE.
             t46 = zlnt_runtime_uppe_91169605024d=>full( t46 ).
           ENDIF.
-          t44 = t45->has( p0 = t46 ).
-          t41 = t44.
+          t41 = t45->has( p0 = t46 ).
         ENDIF.
         IF t41 = abap_true.
           result = abap_true.

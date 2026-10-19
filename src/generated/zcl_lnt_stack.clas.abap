@@ -44,14 +44,12 @@ CLASS zcl_lnt_stack IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t2->load( ).
-    CLEAR t1.
     READ TABLE t2->items INDEX t3 INTO t1.
     result = t1.
 
   ENDMETHOD.
 
   METHOD pop.
-    DATA(t1) = VALUE f( ).
     DATA(t2) = VALUE f( ).
     DATA(t3) = me->items.
     DATA t4 TYPE i.
@@ -66,12 +64,8 @@ CLASS zcl_lnt_stack IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t3->load( ).
-    CLEAR t2.
     READ TABLE t3->items INDEX t4 INTO t2.
-    t1 = t2.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
     DATA(t9) = me->items.
-    DATA(t10) = 0.
     DATA t11 TYPE i.
     DATA t12 TYPE i.
     DATA(t13) = me->items.
@@ -79,10 +73,9 @@ CLASS zcl_lnt_stack IMPLEMENTATION.
     t12 = lines( t13->items ).
     DATA(t14) = 1.
     t11 = t12 - t14.
-    t8 = t9->slice2( p0 = t10 p1 = t11 ).
-    me->items = t8.
+    me->items = t9->slice2( p0 = 0 p1 = t11 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `items`.
-    result = t1.
+    result = t2.
 
   ENDMETHOD.
 

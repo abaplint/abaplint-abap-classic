@@ -28,10 +28,6 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |aff_and_xml|.
-    DATA t4 TYPE string.
-    t4 = |AFF and XML|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks for objects that have both AFF (.json) and XML (.xml)|.
     t7 = t7 && | files|.
@@ -43,21 +39,16 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
     t12->has = abap_true.
     t12->value = t11.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Syntax|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Syntax| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |aff_and_xml| i_title = |AFF and XML| i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -80,28 +71,23 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |extendedInformation|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -126,9 +112,7 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t3 = t1->get_files( ).
-    t2 = t3.
+    t2 = t1->get_files( ).
     DATA t5 TYPE abap_bool.
     t5 = abap_false.
     DATA t7 TYPE abap_bool.
@@ -177,9 +161,8 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
       DATA(t29) = |.|.
       DATA(t31) = strlen( t29 ).
       t28 = |{ t29 }{ t9 }|.
-      DATA(t32) = |.json|.
       DATA(t33) = strlen( t28 ).
-      t27 = |{ t28 }{ t32 }|.
+      t27 = |{ t28 }{ |.json| }|.
       DATA(t34) = strlen( t20 ).
       DATA t35 TYPE i.
       DATA(t36) = VALUE i( ).
@@ -204,9 +187,8 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
         DATA(t43) = |.|.
         DATA(t45) = strlen( t43 ).
         t42 = |{ t43 }{ t9 }|.
-        DATA(t46) = |.xml|.
         DATA(t47) = strlen( t42 ).
-        t41 = |{ t42 }{ t46 }|.
+        t41 = |{ t42 }{ |.xml| }|.
         DATA(t48) = strlen( t20 ).
         DATA t49 TYPE i.
         DATA(t50) = VALUE i( ).
@@ -234,27 +216,15 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
     ENDIF.
     IF t53 = abap_true.
       DATA t56 TYPE REF TO zif_lnt_file.
-      DATA t57 TYPE REF TO zif_lnt_file.
-      t57 = t1->get_xml_file( ).
-      t56 = t57.
-      DATA t59 TYPE abap_bool.
-      t59 = xsdbool( t56 IS BOUND ).
-      IF t59 = abap_true.
-        DATA(t62) = |Object has both AFF JSON and XML files, remove the XML|.
+      t56 = t1->get_xml_file( ).
+      IF xsdbool( t56 IS BOUND ) = abap_true.
         DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t65.
-        t64 = t65.
+        CREATE OBJECT t64.
         DATA t67 TYPE REF TO zcl_lnt_issue.
         DATA t68 TYPE REF TO zif_lnt_file.
         t68 = t56.
-        DATA(t70) = CONV f( 1 ).
         DATA(t72) = VALUE string( ).
         DATA t73 TYPE REF TO zcl_lnt_irule_metadata.
-        DATA t74 TYPE string.
-        t74 = |aff_and_xml|.
-        DATA t76 TYPE string.
-        t76 = |AFF and XML|.
         DATA t78 TYPE string.
         DATA(t79) = |Checks for objects that have both AFF (.json) and XML (.xml)|.
         t79 = t79 && | files|.
@@ -266,21 +236,16 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
         t84->has = abap_true.
         t84->value = t83.
         t80 = t84.
-        DATA t86 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t90 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t91 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t91.
-        t90 = t91.
-        DATA(t93) = |Syntax|.
+        CREATE OBJECT t90.
         t90->load( ).
-        APPEND t93 TO t90->items.
+        APPEND |Syntax| TO t90->items.
         t90->save( ).
-        t86 = t90.
         DATA t96 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t102 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t73 = NEW zcl_lnt_irule_metadata( i_key = t74 i_title = t76 i_short_description = t78 i_bad_example = t96 i_good_example = t98 i_extended_information = t80 i_tags = t86 i_pragma = t100 i_pseudo_comment = t102 ).
+        t73 = NEW zcl_lnt_irule_metadata( i_key = |aff_and_xml| i_title = |AFF and XML| i_short_description = t78 i_bad_example = t96 i_good_example = t98 i_extended_information = t80 i_tags = t90 i_pragma = t100 i_pseudo_comment = t102 ).
         CREATE OBJECT t73->zlnt_view_ownkeys_b0e8086400eb.
         t73->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -303,33 +268,28 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t73->zlnt_json_ownkeys_70e5fd461788.
         t73->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t109) = |key|.
         DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t109 p1 = t110 ).
-        DATA(t111) = |title|.
+        t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t110 ).
         DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t111 p1 = t112 ).
+          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t112 ).
         ENDIF.
-        DATA(t113) = |shortDescription|.
         DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
+          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t114 ).
         ENDIF.
-        DATA(t115) = |extendedInformation|.
         DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t115 p1 = t116 ).
+          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t116 ).
         ENDIF.
-        DATA(t117) = |tags|.
         DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t117 p1 = t118 ).
+          t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t118 ).
         ENDIF.
         t72 = t73->key.
         DATA t119 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t119 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-        t67 = zcl_lnt_issue=>at_row( i_file = t68 i_row = t70 i_message_26cb = t62 i_key = t72 i_severity = t119 ).
+        t67 = zcl_lnt_issue=>at_row( i_file = t68 i_row = CONV f( 1 ) i_message_26cb = |Object has both AFF JSON and XML files, remove the XML| i_key = t72 i_severity = t119 ).
         t64->load( ).
         APPEND t67 TO t64->items.
         t64->save( ).
@@ -337,9 +297,7 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
         RETURN.
       ENDIF.
     ENDIF.
-    DATA t122 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t122.
-    result = t122.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
@@ -384,10 +342,8 @@ CLASS zcl_lnt_aff_and_xml IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_aff_and_xml.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_sr_rl_af_an_xm_ts_af_an_xm( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->i_i_sr_rl_af_an_xm_ts_af_an_xm( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

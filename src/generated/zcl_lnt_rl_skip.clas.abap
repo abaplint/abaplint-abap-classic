@@ -30,9 +30,7 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
   METHOD skip_statement.
     DATA(t1) = i_statement.
     DATA t2 TYPE REF TO zif_lnt_statement.
-    DATA t3 TYPE REF TO zif_lnt_statement.
-    t3 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-    t2 = t3.
+    t2 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE abap_bool( ).
     DATA(t7) = VALUE abap_bool( ).
@@ -42,39 +40,25 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
     t10 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_unknown ).
     t9 = t10.
     IF t10 = abap_false.
-      DATA t12 TYPE abap_bool.
-      t12 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_native_sql ).
-      t9 = t12.
+      t9 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_native_sql ).
     ENDIF.
     t8 = t9.
     IF t9 = abap_false.
-      DATA t14 TYPE abap_bool.
-      t14 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_macro_content ).
-      t8 = t14.
+      t8 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_macro_content ).
     ENDIF.
     t7 = t8.
     IF t8 = abap_false.
-      DATA t16 TYPE abap_bool.
-      t16 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_macro_call ).
-      t7 = t16.
+      t7 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_macro_call ).
     ENDIF.
     t6 = t7.
     IF t7 = abap_false.
-      DATA t18 TYPE abap_bool.
       DATA t19 TYPE REF TO zcl_lnt_position.
-      DATA t21 TYPE REF TO zcl_lnt_abstract_token.
-      t21 = t1->get_first_token( ).
-      DATA t23 TYPE REF TO zcl_lnt_position.
-      t23 = t21->start.
-      t19 = t23.
-      t18 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_virtual_position ).
-      t6 = t18.
+      t19 = t1->get_first_token( )->start.
+      t6 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_virtual_position ).
     ENDIF.
     t5 = t6.
     IF t6 = abap_false.
-      DATA t25 TYPE abap_bool.
-      t25 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_comment ).
-      t5 = t25.
+      t5 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_comment ).
     ENDIF.
     IF t5 = abap_true.
       result = abap_true.
@@ -96,12 +80,10 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
       t34 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_interface ).
       t33 = t34.
       IF t34 = abap_true.
-        DATA t36 TYPE abap_bool.
         DATA t37 TYPE REF TO zcl_lnt_expression_node.
         DATA(t39) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
         t37 = t1->find_first_expression( i_type_9913 = t39 ).
-        t36 = xsdbool( t37 IS BOUND ).
-        t33 = t36.
+        t33 = xsdbool( t37 IS BOUND ).
       ENDIF.
       IF t33 = abap_true.
         me->is_global_if = abap_true.
@@ -115,9 +97,7 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
         t43 = xsdbool( t44 = abap_true ).
         t42 = t43.
         IF t43 = abap_true.
-          DATA t46 TYPE abap_bool.
-          t46 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_end_interface ).
-          t42 = t46.
+          t42 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_end_interface ).
         ENDIF.
         IF t42 = abap_true.
           result = abap_true.
@@ -129,12 +109,10 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
       t50 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_class_definition ).
       t49 = t50.
       IF t50 = abap_true.
-        DATA t52 TYPE abap_bool.
         DATA t53 TYPE REF TO zcl_lnt_expression_node.
         DATA(t55) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
         t53 = t1->find_first_expression( i_type_9913 = t55 ).
-        t52 = xsdbool( t53 IS BOUND ).
-        t49 = t52.
+        t49 = xsdbool( t53 IS BOUND ).
       ENDIF.
       IF t49 = abap_true.
         me->is_global_class = abap_true.
@@ -153,9 +131,7 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
           t63 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_end_class ).
           t62 = t63.
           IF t63 = abap_false.
-            DATA t65 TYPE abap_bool.
-            t65 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
-            t62 = t65.
+            t62 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ).
           ENDIF.
           t58 = t62.
         ENDIF.
@@ -179,12 +155,10 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
       t72 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_class_definition ).
       t71 = t72.
       IF t72 = abap_true.
-        DATA t74 TYPE abap_bool.
         DATA t75 TYPE REF TO zcl_lnt_expression_node.
         DATA(t77) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
         t75 = t1->find_first_expression( i_type_9913 = t77 ).
-        t74 = xsdbool( t75 IS BOUND ).
-        t71 = t74.
+        t71 = xsdbool( t75 IS BOUND ).
       ENDIF.
       IF t71 = abap_true.
         me->skip_0892 = abap_true.
@@ -198,9 +172,7 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
         t81 = xsdbool( t82 = abap_true ).
         t80 = t81.
         IF t81 = abap_true.
-          DATA t84 TYPE abap_bool.
-          t84 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_end_class ).
-          t80 = t84.
+          t80 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_end_class ).
         ENDIF.
         IF t80 = abap_true.
           me->skip_0892 = abap_false.
@@ -208,10 +180,8 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
           result = abap_true.
           RETURN.
         ELSE.
-          DATA t88 TYPE abap_bool.
           DATA(t89) = CONV abap_bool( me->skip_0892 ).
-          t88 = xsdbool( t89 = abap_true ).
-          IF t88 = abap_true.
+          IF xsdbool( t89 = abap_true ) = abap_true.
             result = abap_true.
             RETURN.
           ENDIF.
@@ -232,12 +202,10 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
       t96 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_interface ).
       t95 = t96.
       IF t96 = abap_true.
-        DATA t98 TYPE abap_bool.
         DATA t99 TYPE REF TO zcl_lnt_expression_node.
         DATA(t101) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
         t99 = t1->find_first_expression( i_type_9913 = t101 ).
-        t98 = xsdbool( t99 IS BOUND ).
-        t95 = t98.
+        t95 = xsdbool( t99 IS BOUND ).
       ENDIF.
       IF t95 = abap_true.
         me->skip_0892 = abap_true.
@@ -251,9 +219,7 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
         t105 = xsdbool( t106 = abap_true ).
         t104 = t105.
         IF t105 = abap_true.
-          DATA t108 TYPE abap_bool.
-          t108 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_end_interface ).
-          t104 = t108.
+          t104 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_end_interface ).
         ENDIF.
         IF t104 = abap_true.
           me->skip_0892 = abap_false.
@@ -261,10 +227,8 @@ CLASS zcl_lnt_rl_skip IMPLEMENTATION.
           result = abap_true.
           RETURN.
         ELSE.
-          DATA t112 TYPE abap_bool.
           DATA(t113) = CONV abap_bool( me->skip_0892 ).
-          t112 = xsdbool( t113 = abap_true ).
-          IF t112 = abap_true.
+          IF xsdbool( t113 = abap_true ) = abap_true.
             result = abap_true.
             RETURN.
           ENDIF.

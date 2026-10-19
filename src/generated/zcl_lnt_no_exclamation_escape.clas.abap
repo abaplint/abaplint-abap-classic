@@ -25,10 +25,6 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |no_exclamation_escape|.
-    DATA t4 TYPE string.
-    t4 = |No exclamation escape|.
     DATA t6 TYPE string.
     DATA(t7) = |Detects and removes exclamation marks (!) used to escape ide|.
     t7 = t7 && |ntifiers|.
@@ -42,16 +38,12 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t23) = |Quickfix|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |Quickfix| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -61,16 +53,14 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
     t30->has = abap_true.
     t30->value = t29.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t35) = |methods CONVERT changing CO_sdf type ref to ZCL_sdf optional|.
     t35 = t35 && |.|.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
     t36->value = t35.
-    t32 = t36.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |no_exclamation_escape| i_title = |No exclamation escape| i_short_description = t6 i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -101,38 +91,31 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
@@ -151,9 +134,7 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
   METHOD r_p_i_sr_rl_n_ex_es_ts_n_ex_es.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t4 = t1->get_tokens( i_with_pragmas = t6 ).
@@ -179,17 +160,13 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
       ELSE.
         t7 ?= t8.
       ENDIF.
-      DATA t12 TYPE abap_bool.
-      t12 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_lx_identifier ).
-      IF t12 = abap_true.
+      IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_lx_identifier ) = abap_true.
         DATA t14 TYPE string.
         DATA t16 TYPE REF TO zcl_lnt_abstract_token.
         DATA t17 TYPE REF TO zcl_lnt_lx_identifier.
         t17 ?= t7.
         t16 = t17.
-        DATA t19 TYPE string.
-        t19 = t16->str.
-        t14 = t19.
+        t14 = t16->str.
         DATA(t21) = VALUE abap_bool( ).
         DATA(t23) = |!|.
         DATA(t24) = strlen( t14 ).
@@ -208,7 +185,6 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
         ENDIF.
         IF t21 = abap_true.
           DATA(t28) = VALUE string( ).
-          DATA(t29) = VALUE string( ).
           DATA t30 TYPE string.
           t30 = t14.
           DATA(t32) = VALUE string( ).
@@ -225,8 +201,7 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           ENDIF.
           t38 = t35 - t34.
           t32 = t30+t34(t38).
-          t29 = t32.
-          t28 = t29.
+          t28 = t32.
           DATA t40 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           DATA t42 TYPE REF TO zcl_lnt_lx_identifier.
           t42 ?= t7.
@@ -235,14 +210,9 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           CLEAR t46.
           DATA t48 TYPE REF TO zcl_lnt_lx_identifier.
           t48 ?= t7.
-          DATA(t50) = |Do not use exclamation mark to escape identifiers|.
           DATA(t51) = VALUE string( ).
           DATA t52 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t52.
-          DATA t53 TYPE string.
-          t53 = |no_exclamation_escape|.
-          DATA t55 TYPE string.
-          t55 = |No exclamation escape|.
           DATA t57 TYPE string.
           DATA(t58) = |Detects and removes exclamation marks (!) used to escape ide|.
           t58 = t58 && |ntifiers|.
@@ -258,16 +228,12 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           DATA t65 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t65.
           DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t70 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t70.
-          t69 = t70.
-          DATA(t72) = |SingleFile|.
+          CREATE OBJECT t69.
           t69->load( ).
-          APPEND t72 TO t69->items.
+          APPEND |SingleFile| TO t69->items.
           t69->save( ).
-          DATA(t74) = |Quickfix|.
           t69->load( ).
-          APPEND t74 TO t69->items.
+          APPEND |Quickfix| TO t69->items.
           t69->save( ).
           t65 = t69.
           DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -290,7 +256,7 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           CLEAR t89.
           DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t91.
-          t52 = NEW zcl_lnt_irule_metadata( i_key = t53 i_title = t55 i_short_description = t57 i_bad_example = t77 i_good_example = t83 i_extended_information = t59 i_tags = t65 i_pragma = t89 i_pseudo_comment = t91 ).
+          t52 = NEW zcl_lnt_irule_metadata( i_key = |no_exclamation_escape| i_title = |No exclamation escape| i_short_description = t57 i_bad_example = t77 i_good_example = t83 i_extended_information = t59 i_tags = t65 i_pragma = t89 i_pseudo_comment = t91 ).
           CREATE OBJECT t52->zlnt_view_ownkeys_b0e8086400eb.
           t52->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -328,53 +294,41 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t52->zlnt_json_ownkeys_70e5fd461788.
           t52->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t100) = |key|.
           DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t101.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t100 p1 = t101 ).
-          DATA(t102) = |title|.
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t101 ).
           DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t103.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t102 p1 = t103 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t103 ).
           ENDIF.
-          DATA(t104) = |shortDescription|.
           DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t105.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t104 p1 = t105 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t105 ).
           ENDIF.
-          DATA(t106) = |extendedInformation|.
           DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t107.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t106 p1 = t107 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t107 ).
           ENDIF.
-          DATA(t108) = |tags|.
           DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t109.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t108 p1 = t109 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t109 ).
           ENDIF.
-          DATA(t110) = |badExample|.
           DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t111.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t110 p1 = t111 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t111 ).
           ENDIF.
-          DATA(t112) = |goodExample|.
           DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t113.
           IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t112 p1 = t113 ).
+            t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t113 ).
           ENDIF.
           t51 = t52->key.
-          DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t114 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-          DATA t116 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          CLEAR t116.
-          t116 = t40.
-          t46 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t48 i_message_26cb = t50 i_key = t51 i_severity = t114 i_fix = t116 ).
+          t46 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t48 i_message_26cb = |Do not use exclamation mark to escape identifiers| i_key = t51 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t40 ).
           t2->load( ).
           APPEND t46 TO t2->items.
           t2->save( ).

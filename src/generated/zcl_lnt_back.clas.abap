@@ -13,15 +13,11 @@ CLASS zcl_lnt_back DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_back IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |Cloud|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |BACK|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    t3->sval = |BACK|.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t3 ).
 
   ENDMETHOD.
 

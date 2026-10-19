@@ -15,11 +15,8 @@ CLASS zcl_lnt_sy_format IMPLEMENTATION.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t4) = i_node.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t6->load( ).
     APPEND t9 TO t6->items.
@@ -28,9 +25,8 @@ CLASS zcl_lnt_sy_format IMPLEMENTATION.
     t6->load( ).
     APPEND t11 TO t6->items.
     t6->save( ).
-    t5 = t6.
     DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t3 = t4->find_all_expressions_multi( i_type_9913 = t5 i_recursive = t13 ).
+    t3 = t4->find_all_expressions_multi( i_type_9913 = t6 i_recursive = t13 ).
     DATA t14 TYPE REF TO zcl_lnt_expression_node.
     DATA t15 TYPE REF TO object.
     DATA(t16) = VALUE i( ).

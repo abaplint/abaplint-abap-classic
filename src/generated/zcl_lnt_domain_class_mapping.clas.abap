@@ -64,8 +64,7 @@ CLASS zcl_lnt_domain_class_mapping IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f8de08988c9e.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `domain` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `domain` ) )->as_string( ).
     ELSE.
       result = me->domain.
     ENDIF.
@@ -90,8 +89,7 @@ CLASS zcl_lnt_domain_class_mapping IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_86cf045b7b25.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `class` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `class` ) )->as_string( ).
     ELSE.
       result = me->class_fa7d.
     ENDIF.

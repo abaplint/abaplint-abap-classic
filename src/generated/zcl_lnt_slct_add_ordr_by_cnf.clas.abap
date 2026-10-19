@@ -42,8 +42,7 @@ CLASS zcl_lnt_slct_add_ordr_by_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_72f34613dda9.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `skipForAllEntries` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `skipForAllEntries` ) )->as_boolean( ).
     ELSE.
       result = me->skip_for_all_entries.
     ENDIF.

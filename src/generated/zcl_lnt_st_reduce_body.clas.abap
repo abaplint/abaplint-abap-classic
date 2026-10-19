@@ -16,10 +16,9 @@ CLASS zcl_lnt_st_reduce_body IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |INIT|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |INIT|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -55,9 +54,7 @@ CLASS zcl_lnt_st_reduce_body IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    t15 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
-    t1 = t15.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -116,9 +113,7 @@ CLASS zcl_lnt_st_reduce_body IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t33.
-    t32 = t33.
+    CREATE OBJECT t32.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t36 TYPE REF TO zif_lnt_statement_runnable.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -165,9 +160,7 @@ CLASS zcl_lnt_st_reduce_body IMPLEMENTATION.
     t32->load( ).
     APPEND t42 TO t32->items.
     t32->save( ).
-    DATA t44 TYPE REF TO zif_lnt_statement_runnable.
-    t44 = zcl_lnt_st_combi_module=>seq( i_first = t21 i_second = t28 i_rest = t32 ).
-    result = t44.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t21 i_second = t28 i_rest = t32 ).
 
   ENDMETHOD.
 

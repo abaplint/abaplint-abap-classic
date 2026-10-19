@@ -77,9 +77,8 @@ CLASS zcl_lnt_range IMPLEMENTATION.
               RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
             ENDIF.
           ENDIF.
-          DATA(t3) = VALUE f( ).
           DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          result = NEW zcl_lnt_no_position( view_source = t1 i_line = t3 i_character = t4 ).
+          result = NEW zcl_lnt_no_position( view_source = t1 i_line = VALUE f( ) i_character = t4 ).
         ENDIF.
       ENDIF.
     ELSE.
@@ -150,9 +149,8 @@ CLASS zcl_lnt_range IMPLEMENTATION.
               RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
             ENDIF.
           ENDIF.
-          DATA(t3) = VALUE f( ).
           DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          result = NEW zcl_lnt_no_position( view_source = t1 i_line = t3 i_character = t4 ).
+          result = NEW zcl_lnt_no_position( view_source = t1 i_line = VALUE f( ) i_character = t4 ).
         ENDIF.
       ENDIF.
     ELSE.

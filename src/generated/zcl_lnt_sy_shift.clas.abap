@@ -55,34 +55,22 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
       t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
     ENDDO.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
-    DATA t22 TYPE REF TO zcl_lnt_expression_node.
     DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t22 = t1->find_direct_expression( i_type_9913 = t24 ).
-    t21 = t22.
-    DATA(t25) = VALUE abap_bool( ).
+    t21 = t1->find_direct_expression( i_type_9913 = t24 ).
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t25 = xsdbool( t21 IS INITIAL ).
-    IF t25 = abap_true.
-      DATA(t33) = |Shift, Target not found|.
+    IF xsdbool( t21 IS INITIAL ) = abap_true.
       DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t34 = t2->issues.
       DATA t36 TYPE REF TO zcl_lnt_issue.
-      DATA t38 TYPE REF TO zcl_lnt_abstract_token.
-      t38 = t1->get_first_token( ).
       DATA t41 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t36 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t38 i_message_26cb = t33 i_fix = t41 ).
+      t36 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Shift, Target not found| i_fix = t41 ).
       t34->load( ).
       APPEND t36 TO t34->items.
       t34->save( ).
       RETURN.
     ENDIF.
     DATA t42 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t43 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t44 TYPE REF TO zcl_lnt_expression_node.
-    t44 = t21.
-    t43 = zcl_lnt_sy_target=>run_syntax( i_node = t44 i_input_967e = t2 ).
-    t42 = t43.
-    DATA(t47) = VALUE abap_bool( ).
+    t42 = zcl_lnt_sy_target=>run_syntax( i_node = t21 i_input_967e = t2 ).
     DATA(t48) = VALUE i( ).
     DATA t49 TYPE string.
     DATA t50 TYPE string.
@@ -104,49 +92,29 @@ CLASS zcl_lnt_sy_shift IMPLEMENTATION.
         t48 = -1.
       ENDIF.
     ENDIF.
-    DATA(t55) = 0.
-    t47 = xsdbool( t48 >= t55 ).
-    IF t47 = abap_true.
-      DATA t56 TYPE abap_bool.
-      DATA t57 TYPE abap_bool.
-      DATA t58 TYPE REF TO zcl_lnt_type_utils.
+    IF xsdbool( t48 >= 0 ) = abap_true.
       DATA t59 TYPE REF TO zcl_lnt_current_scope.
       t59 = t2->scope.
-      t58 = NEW zcl_lnt_type_utils( i_scope = t59 ).
-      t57 = t58->is_hex_like( i_type_9913 = t42 ).
-      t56 = xsdbool( t57 = abap_false ).
-      IF t56 = abap_true.
-        DATA(t64) = |Shift, Target not hex like|.
+      IF xsdbool( NEW zcl_lnt_type_utils( i_scope = t59 )->is_hex_like( i_type_9913 = t42 ) = abap_false ) = abap_true.
         DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t65 = t2->issues.
         DATA t67 TYPE REF TO zcl_lnt_issue.
-        DATA t69 TYPE REF TO zcl_lnt_abstract_token.
-        t69 = t1->get_first_token( ).
         DATA t72 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        t67 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t69 i_message_26cb = t64 i_fix = t72 ).
+        t67 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Shift, Target not hex like| i_fix = t72 ).
         t65->load( ).
         APPEND t67 TO t65->items.
         t65->save( ).
         RETURN.
       ENDIF.
     ELSE.
-      DATA t73 TYPE abap_bool.
-      DATA t74 TYPE abap_bool.
-      DATA t75 TYPE REF TO zcl_lnt_type_utils.
       DATA t76 TYPE REF TO zcl_lnt_current_scope.
       t76 = t2->scope.
-      t75 = NEW zcl_lnt_type_utils( i_scope = t76 ).
-      t74 = t75->is_char_like( i_type_9913 = t42 ).
-      t73 = xsdbool( t74 = abap_false ).
-      IF t73 = abap_true.
-        DATA(t81) = |Shift, Target not char like|.
+      IF xsdbool( NEW zcl_lnt_type_utils( i_scope = t76 )->is_char_like( i_type_9913 = t42 ) = abap_false ) = abap_true.
         DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t82 = t2->issues.
         DATA t84 TYPE REF TO zcl_lnt_issue.
-        DATA t86 TYPE REF TO zcl_lnt_abstract_token.
-        t86 = t1->get_first_token( ).
         DATA t89 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        t84 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t86 i_message_26cb = t81 i_fix = t89 ).
+        t84 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Shift, Target not char like| i_fix = t89 ).
         t82->load( ).
         APPEND t84 TO t82->items.
         t82->save( ).

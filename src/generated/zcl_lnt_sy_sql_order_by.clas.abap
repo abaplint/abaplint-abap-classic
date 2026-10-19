@@ -13,16 +13,10 @@ CLASS zcl_lnt_sy_sql_order_by IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d96_026ea9c145a633.
-    t4 = i_node->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA t7 TYPE abap_bool.
-    t7 = xsdbool( t3 IS BOUND ).
-    IF t7 = abap_true.
-      DATA t9 TYPE REF TO zcl_lnt_expression_node.
-      t9 = t3.
-      zcl_lnt_sy_dynamic=>run_syntax( i_node = t9 i_input_967e = t2 ).
+    t3 = i_node->find_direct_expression( i_type_9913 = t6 ).
+    IF xsdbool( t3 IS BOUND ) = abap_true.
+      zcl_lnt_sy_dynamic=>run_syntax( i_node = t3 i_input_967e = t2 ).
     ENDIF.
   ENDMETHOD.
 

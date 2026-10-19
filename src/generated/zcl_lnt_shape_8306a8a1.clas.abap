@@ -25,10 +25,9 @@ CLASS zcl_lnt_shape_8306a8a1 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `location` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |location|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |location| p1 = t7 ).
     ENDIF.
     me->message_25cb = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `message`.
@@ -36,10 +35,9 @@ CLASS zcl_lnt_shape_8306a8a1 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `message` p1 = t9 ).
     ENDIF.
-    DATA(t10) = |message|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |message| p1 = t11 ).
     ENDIF.
   ENDMETHOD.
 

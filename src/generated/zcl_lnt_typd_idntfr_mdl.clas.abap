@@ -22,194 +22,110 @@ CLASS zcl_lnt_typd_idntfr_mdl IMPLEMENTATION.
     ENDIF.
     zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t3 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t4) = |MethodImporting|.
-    DATA(t5) = |importing|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |MethodImporting| p1 = |importing| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t7 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t8) = |MethodExporting|.
-    DATA(t9) = |exporting|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |MethodExporting| p1 = |exporting| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t11 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t12) = |MethodChanging|.
-    DATA(t13) = |changing|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |MethodChanging| p1 = |changing| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t15 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t16) = |MethodReturning|.
-    DATA(t17) = |returning|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |MethodReturning| p1 = |returning| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t19 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t20) = |FunctionModuleImporting|.
-    DATA(t21) = |function_module_importing|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FunctionModuleImporting| p1 = |function_module_importing| ).
     DATA t22 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t23 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t24) = |FunctionModuleExporting|.
-    DATA(t25) = |function_module_exporting|.
-    t22 = t23->set( p0 = t24 p1 = t25 ).
+    t22 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FunctionModuleExporting| p1 = |function_module_exporting| ).
     DATA t26 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t27 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t28) = |FunctionModuleChanging|.
-    DATA(t29) = |function_module_changing|.
-    t26 = t27->set( p0 = t28 p1 = t29 ).
+    t26 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FunctionModuleChanging| p1 = |function_module_changing| ).
     DATA t30 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t31 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t32) = |FunctionModuleTables|.
-    DATA(t33) = |function_module_tables|.
-    t30 = t31->set( p0 = t32 p1 = t33 ).
+    t30 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FunctionModuleTables| p1 = |function_module_tables| ).
     DATA t34 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t35 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t35 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t36) = |EventParameter|.
-    DATA(t37) = |event_parameter|.
-    t34 = t35->set( p0 = t36 p1 = t37 ).
+    t34 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |EventParameter| p1 = |event_parameter| ).
     DATA t38 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t39 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t39 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t40) = |FormParameter|.
-    DATA(t41) = |form_parameter|.
-    t38 = t39->set( p0 = t40 p1 = t41 ).
+    t38 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FormParameter| p1 = |form_parameter| ).
     DATA t42 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t43 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t43 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t44) = |FormParameterStructure|.
-    DATA(t45) = |form_parameter_structure|.
-    t42 = t43->set( p0 = t44 p1 = t45 ).
+    t42 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |FormParameterStructure| p1 = |form_parameter_structure| ).
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t47 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t47 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t48) = |ReadOnly|.
-    DATA(t49) = |read_only|.
-    t46 = t47->set( p0 = t48 p1 = t49 ).
+    t46 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |ReadOnly| p1 = |read_only| ).
     DATA t50 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t51 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t51 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t52) = |Tables|.
-    DATA(t53) = |tables|.
-    t50 = t51->set( p0 = t52 p1 = t53 ).
+    t50 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |Tables| p1 = |tables| ).
     DATA t54 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t55 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t55 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t56) = |Abstract|.
-    DATA(t57) = |abstract|.
-    t54 = t55->set( p0 = t56 p1 = t57 ).
+    t54 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |Abstract| p1 = |abstract| ).
     DATA t58 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t59 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t59 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t60) = |PassByValue|.
-    DATA(t61) = |pass_by_value|.
-    t58 = t59->set( p0 = t60 p1 = t61 ).
+    t58 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |PassByValue| p1 = |pass_by_value| ).
     DATA t62 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t63 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t63 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t64) = |InlineDefinition|.
-    DATA(t65) = |inline|.
-    t62 = t63->set( p0 = t64 p1 = t65 ).
+    t62 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |InlineDefinition| p1 = |inline| ).
     DATA t66 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t67 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t67 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t68) = |BuiltIn|.
-    DATA(t69) = |built-in|.
-    t66 = t67->set( p0 = t68 p1 = t69 ).
+    t66 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |BuiltIn| p1 = |built-in| ).
     DATA t70 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t71 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t71 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t72) = |DDIC|.
-    DATA(t73) = |ddic|.
-    t70 = t71->set( p0 = t72 p1 = t73 ).
+    t70 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |DDIC| p1 = |ddic| ).
     DATA t74 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t75 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t75 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t76) = |Static|.
-    DATA(t77) = |static|.
-    t74 = t75->set( p0 = t76 p1 = t77 ).
+    t74 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |Static| p1 = |static| ).
     DATA t78 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t79 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t79 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t80) = |Enum|.
-    DATA(t81) = |enum|.
-    t78 = t79->set( p0 = t80 p1 = t81 ).
+    t78 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |Enum| p1 = |enum| ).
     DATA t82 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t83 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
       zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
     ENDIF.
-    t83 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace.
-    DATA(t84) = |SelectionScreenTab|.
-    DATA(t85) = |selection_screen_tab|.
-    t82 = t83->set( p0 = t84 p1 = t85 ).
+    t82 = zcl_lnt_typd_idntfr_mdl=>identifier_meta_namespace->set( p0 = |SelectionScreenTab| p1 = |selection_screen_tab| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

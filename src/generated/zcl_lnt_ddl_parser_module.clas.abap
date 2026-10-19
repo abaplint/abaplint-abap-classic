@@ -22,41 +22,25 @@ CLASS zcl_lnt_ddl_parser_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_ddl_parser_module=>ddl_kind_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_ddl_parser_module=>zlnt_builtin_init_404a4a6d3871 = abap_false.
       zcl_lnt_ddl_parser_module=>zlnt_builtin_init_db5eecedf70a( ).
     ENDIF.
-    t3 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace.
-    DATA(t4) = |Structure|.
-    DATA(t5) = |structure|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace->set( p0 = |Structure| p1 = |structure| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_ddl_parser_module=>zlnt_builtin_init_404a4a6d3871 = abap_false.
       zcl_lnt_ddl_parser_module=>zlnt_builtin_init_db5eecedf70a( ).
     ENDIF.
-    t7 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace.
-    DATA(t8) = |Table|.
-    DATA(t9) = |table|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace->set( p0 = |Table| p1 = |table| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_ddl_parser_module=>zlnt_builtin_init_404a4a6d3871 = abap_false.
       zcl_lnt_ddl_parser_module=>zlnt_builtin_init_db5eecedf70a( ).
     ENDIF.
-    t11 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace.
-    DATA(t12) = |Aspect|.
-    DATA(t13) = |aspect|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace->set( p0 = |Aspect| p1 = |aspect| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_ddl_parser_module=>zlnt_builtin_init_404a4a6d3871 = abap_false.
       zcl_lnt_ddl_parser_module=>zlnt_builtin_init_db5eecedf70a( ).
     ENDIF.
-    t15 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace.
-    DATA(t16) = |ExtendType|.
-    DATA(t17) = |extend-type|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_ddl_parser_module=>ddl_kind_namespace->set( p0 = |ExtendType| p1 = |extend-type| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

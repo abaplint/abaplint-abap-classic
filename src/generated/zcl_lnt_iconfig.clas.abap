@@ -219,8 +219,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                   CLEAR t7.
                   DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                   CLEAR t8.
-                  DATA(t9) = VALUE string( ).
-                  t3 = NEW zcl_lnt_idependency( view_source = t4 i_url_8ce1 = t6 i_branch = t7 i_folder_5c67 = t8 i_files = t9 ).
+                  t3 = NEW zcl_lnt_idependency( view_source = t4 i_url_8ce1 = t6 i_branch = t7 i_folder_5c67 = t8 i_files = VALUE string( ) ).
                 ENDIF.
               ENDIF.
             ELSE.
@@ -300,11 +299,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          DATA(t4) = VALUE string( ).
           DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          result = NEW zcl_lnt_isyntax_settings( view_source = t1 i_version = t3 i_error_namespace = t4 i_global_constants = t5 i_ambigious_voids = t6 i_global_macros_5535 = t7 ).
+          result = NEW zcl_lnt_isyntax_settings( view_source = t1 i_version = t3 i_error_namespace = VALUE string( ) i_global_constants = t5 i_ambigious_voids = t6 i_global_macros_5535 = t7 ).
         ENDIF.
       ENDIF.
     ELSE.
@@ -917,8 +915,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                     CLEAR t19.
                     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     CLEAR t20.
-                    DATA(t21) = VALUE string( ).
-                    t15 = NEW zcl_lnt_idependency( view_source = t16 i_url_8ce1 = t18 i_branch = t19 i_folder_5c67 = t20 i_files = t21 ).
+                    t15 = NEW zcl_lnt_idependency( view_source = t16 i_url_8ce1 = t18 i_branch = t19 i_folder_5c67 = t20 i_files = VALUE string( ) ).
                   ENDIF.
                 ENDIF.
               ELSE.

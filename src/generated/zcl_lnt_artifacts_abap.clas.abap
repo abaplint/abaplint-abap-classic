@@ -39,23 +39,17 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
 
   METHOD get_statements.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    DATA t4 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     IF zcl_lnt_st_statem_index_module=>zlnt_builtin_init_e3b892b911e2 = abap_false.
       zcl_lnt_st_statem_index_module=>zlnt_builtin_init_b3124ba2f205( ).
     ENDIF.
-    t4 = zcl_lnt_st_statem_index_module=>ns.
-    t3 = t4.
+    t3 = zcl_lnt_st_statem_index_module=>ns.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
     IF zcl_lnt_st_statem_index_module=>zlnt_builtin_init_e3b892b911e2 = abap_false.
       zcl_lnt_st_statem_index_module=>zlnt_builtin_init_b3124ba2f205( ).
     ENDIF.
-    t6 = zcl_lnt_st_statem_index_module=>ns.
-    t5 = t6->keys( ).
+    t5 = zcl_lnt_st_statem_index_module=>ns->keys( ).
     DATA(t7) = VALUE string( ).
     t5->dense( ).
     DATA(t8) = VALUE i( ).
@@ -70,32 +64,20 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t8 = t8 + 1.
-      DATA(t9) = VALUE abap_bool( ).
       DATA t10 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      t11 = t3->get( p0 = t7 ).
-      t10 = t11.
-      DATA(t14) = VALUE abap_bool( ).
+      t10 = t3->get( p0 = t7 ).
       DATA(t15) = VALUE string( ).
-      DATA(t16) = xsdbool( t10 IS INITIAL ).
-      IF t16 = abap_true.
+      IF xsdbool( t10 IS INITIAL ) = abap_true.
         t15 = |undefined|.
       ELSE.
         DATA t20 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         t20 = t10.
         t15 = |function|.
       ENDIF.
-      DATA(t23) = |function|.
-      t14 = xsdbool( t15 = t23 ).
-      t9 = t14.
-      IF t9 = abap_true.
+      IF xsdbool( t15 = |function| ) = abap_true.
         DATA t25 TYPE REF TO zif_lnt_statement.
-        DATA t26 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        t27 = t3->get( p0 = t7 ).
-        t26 = t27.
         DATA t30 TYPE REF TO object.
-        t30 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t26 ).
+        t30 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t3->get( p0 = t7 ) ).
         t25 ?= t30.
         t1->load( ).
         APPEND t25 TO t1->items.

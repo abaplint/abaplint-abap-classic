@@ -14,14 +14,11 @@ ENDCLASS.
 CLASS zcl_lnt_sr_process_after_input IMPLEMENTATION.
   METHOD get_matcher.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t3 TYPE REF TO zif_lnt_structure_runnable.
     DATA t5 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d560_1073f613c8c9.
     t5 = zcl_lnt_sr_combi_module=>sta( i_s = t6 ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t8.
-    t7 = t8.
+    CREATE OBJECT t7.
     DATA t10 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d495_455bba123ac8.
     t10 = zcl_lnt_sr_combi_module=>sta( i_s = t11 ).
@@ -58,23 +55,16 @@ CLASS zcl_lnt_sr_process_after_input IMPLEMENTATION.
     t7->load( ).
     APPEND t25 TO t7->items.
     t7->save( ).
-    DATA t27 TYPE REF TO zif_lnt_structure_runnable.
-    t27 = zcl_lnt_sr_combi_module=>alt( i_first = t5 i_rest = t7 ).
-    t3 = t27.
-    t2 = zcl_lnt_sr_combi_module=>star( i_s = t3 ).
+    t2 = zcl_lnt_sr_combi_module=>star( i_s = zcl_lnt_sr_combi_module=>alt( i_first = t5 i_rest = t7 ) ).
     DATA t32 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t33) = zlnt_runtime_desc_78196487750d=>zlnt_member_d577_96008512c3b0.
     t32 = zcl_lnt_sr_combi_module=>sta( i_s = t33 ).
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t35.
-    t34 = t35.
+    CREATE OBJECT t34.
     t34->load( ).
     APPEND t2 TO t34->items.
     t34->save( ).
-    DATA t38 TYPE REF TO zif_lnt_structure_runnable.
-    t38 = zcl_lnt_sr_combi_module=>seq( i_first = t32 i_rest = t34 ).
-    result = t38.
+    result = zcl_lnt_sr_combi_module=>seq( i_first = t32 i_rest = t34 ).
 
   ENDMETHOD.
 

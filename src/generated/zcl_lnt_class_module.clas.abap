@@ -22,50 +22,30 @@ CLASS zcl_lnt_class_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_class_module=>class_category_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    t3 = zcl_lnt_class_module=>class_category_namespace.
-    DATA(t4) = |Test|.
-    DATA(t5) = |05|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_class_module=>class_category_namespace->set( p0 = |Test| p1 = |05| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    t7 = zcl_lnt_class_module=>class_category_namespace.
-    DATA(t8) = |Persistent|.
-    DATA(t9) = |10|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_class_module=>class_category_namespace->set( p0 = |Persistent| p1 = |10| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    t11 = zcl_lnt_class_module=>class_category_namespace.
-    DATA(t12) = |PersistentFactory|.
-    DATA(t13) = |11|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_class_module=>class_category_namespace->set( p0 = |PersistentFactory| p1 = |11| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    t15 = zcl_lnt_class_module=>class_category_namespace.
-    DATA(t16) = |Exception|.
-    DATA(t17) = |40|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_class_module=>class_category_namespace->set( p0 = |Exception| p1 = |40| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_class_module=>zlnt_builtin_init_13a963be492d = abap_false.
       zcl_lnt_class_module=>zlnt_builtin_init_5c9d4964deda( ).
     ENDIF.
-    t19 = zcl_lnt_class_module=>class_category_namespace.
-    DATA(t20) = |SharedObject|.
-    DATA(t21) = |45|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_class_module=>class_category_namespace->set( p0 = |SharedObject| p1 = |45| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

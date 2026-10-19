@@ -34,25 +34,20 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->runnable->list_keywords( ).
-    result = t1.
+    result = me->runnable->list_keywords( ).
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
-    DATA t2 TYPE abap_bool.
     DATA(t3) = CONV abap_bool( zcl_lnt_combi=>is_open_abap( ) ).
-    t2 = xsdbool( t3 = abap_true ).
-    IF t2 = abap_true.
+    IF xsdbool( t3 = abap_true ) = abap_true.
       DATA(t5) = VALUE abap_bool( ).
       DATA(t6) = me->also.
       DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t9) = |OpenABAP|.
       DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t10->has = abap_true.
-      t10->value = t9.
+      t10->value = |OpenABAP|.
       t7 = t10.
       DATA(t12) = VALUE abap_bool( ).
       DATA(t13) = VALUE abap_bool( ).
@@ -70,69 +65,45 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t5 = abap_true.
-        DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t14 = me->runnable->run( i_r_f634 = t1 ).
-        result = t14.
+        result = me->runnable->run( i_r_f634 = t1 ).
         RETURN.
       ENDIF.
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t18) = VALUE abap_bool( ).
       DATA t19 TYPE REF TO zcl_lnt_abap_release.
-      DATA t20 TYPE REF TO zcl_lnt_abap_release.
-      DATA t21 TYPE REF TO zlnt_runtime_map__201f3699a39e.
       IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
         zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
       ENDIF.
-      t21 = zcl_lnt_version_module=>release_b8cd.
-      DATA(t22) = |v702|.
-      t20 = t21->get( p0 = t22 ).
-      t19 = t20.
+      t19 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v702| ).
       DATA(t23) = me->release_3664.
-      t18 = zcl_lnt_version_module=>release_at_least( i_running = t19 i_required = t23 ).
-      IF t18 = abap_true.
-        DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t24 = me->runnable->run( i_r_f634 = t1 ).
-        t17 = t24.
+      IF zcl_lnt_version_module=>release_at_least( i_running = t19 i_required = t23 ) = abap_true.
+        t17 = me->runnable->run( i_r_f634 = t1 ).
       ELSE.
-        DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t27.
-        t17 = t27.
+        CREATE OBJECT t17.
       ENDIF.
       result = t17.
       RETURN.
     ENDIF.
     DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t29 TYPE abap_bool.
     DATA(t30) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
     DATA(t31) = me->release_3664.
-    t29 = zcl_lnt_version_module=>release_at_least( i_running = t30 i_required = t31 ).
-    IF t29 = abap_true.
-      DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t32 = me->runnable->run( i_r_f634 = t1 ).
-      t28 = t32.
+    IF zcl_lnt_version_module=>release_at_least( i_running = t30 i_required = t31 ) = abap_true.
+      t28 = me->runnable->run( i_r_f634 = t1 ).
     ELSE.
-      DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t35.
-      t28 = t35.
+      CREATE OBJECT t28.
     ENDIF.
     result = t28.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->runnable->get_using( ).
-    result = t1.
+    result = me->runnable->get_using( ).
 
   ENDMETHOD.
 
   METHOD railroad.
     DATA(t1) = VALUE string( ).
-    DATA(t2) = VALUE string( ).
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t4 = me->release_3664->zlnt_view_read_sr_82456ee3ad31( ).
-    t3 = t4.
+    t3 = me->release_3664->zlnt_view_read_sr_82456ee3ad31( ).
     DATA(t6) = VALUE string( ).
     DATA(t7) = VALUE abap_bool( ).
     IF t3 IS NOT BOUND.
@@ -143,12 +114,9 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     IF t7 = abap_true.
       t6 = |Newest|.
     ELSE.
-      DATA t10 TYPE string.
-      t10 = t3->as_string( ).
-      t6 = t10.
+      t6 = t3->as_string( ).
     ENDIF.
-    t2 = t6.
-    t1 = t2.
+    t1 = t6.
     DATA(t12) = VALUE abap_bool( ).
     DATA(t13) = me->also.
     IF t13 IS BOUND.
@@ -157,7 +125,6 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t12 = abap_true.
-      DATA t14 TYPE string.
       DATA(t15) = t1.
       DATA t16 TYPE string.
       DATA(t17) = | or |.
@@ -166,49 +133,39 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
       DATA(t20) = strlen( t17 ).
       t16 = |{ t17 }{ t18 }|.
       DATA(t21) = strlen( t15 ).
-      t14 = |{ t15 }{ t16 }|.
-      t1 = t14.
+      t1 = |{ t15 }{ t16 }|.
     ENDIF.
-    DATA t22 TYPE string.
     DATA t23 TYPE string.
     DATA t24 TYPE string.
     DATA t25 TYPE string.
     DATA(t26) = |Railroad.Sequence(Railroad.Comment("|.
     DATA(t28) = strlen( t26 ).
     t25 = |{ t26 }{ t1 }|.
-    DATA(t29) = |", \{\}), |.
     DATA(t30) = strlen( t25 ).
-    t24 = |{ t25 }{ t29 }|.
+    t24 = |{ t25 }{ |", \{\}), | }|.
     DATA t31 TYPE string.
     t31 = me->runnable->railroad( ).
     DATA(t33) = strlen( t24 ).
     t23 = |{ t24 }{ t31 }|.
-    DATA(t34) = |)|.
     DATA(t35) = strlen( t23 ).
-    t22 = |{ t23 }{ t34 }|.
-    result = t22.
+    result = |{ t23 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Version(|.
     DATA t4 TYPE string.
     t4 = me->runnable->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->runnable->first( ).
-    result = t1.
+    result = me->runnable->first( ).
 
   ENDMETHOD.
 
@@ -216,26 +173,21 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
     DATA(t1) = i_x.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     t5->load( ).
     APPEND t1 TO t5->items.
     t5->save( ).
     t3 = t5.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE abap_bool.
     DATA(t12) = CONV abap_bool( zcl_lnt_combi=>is_open_abap( ) ).
-    t11 = xsdbool( t12 = abap_true ).
-    IF t11 = abap_true.
+    IF xsdbool( t12 = abap_true ) = abap_true.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t15) = VALUE abap_bool( ).
       DATA(t16) = me->also.
       DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t19) = |OpenABAP|.
       DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t20->has = abap_true.
-      t20->value = t19.
+      t20->value = |OpenABAP|.
       t17 = t20.
       DATA(t22) = VALUE abap_bool( ).
       DATA(t23) = VALUE abap_bool( ).
@@ -253,50 +205,31 @@ CLASS zcl_lnt_vers IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t15 = abap_true.
-        DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t24 = me->runnable->run( i_r_f634 = t3 ).
-        t14 = t24.
+        t14 = me->runnable->run( i_r_f634 = t3 ).
       ELSE.
         DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t28) = VALUE abap_bool( ).
         DATA t29 TYPE REF TO zcl_lnt_abap_release.
-        DATA t30 TYPE REF TO zcl_lnt_abap_release.
-        DATA t31 TYPE REF TO zlnt_runtime_map__201f3699a39e.
         IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
           zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
         ENDIF.
-        t31 = zcl_lnt_version_module=>release_b8cd.
-        DATA(t32) = |v702|.
-        t30 = t31->get( p0 = t32 ).
-        t29 = t30.
+        t29 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v702| ).
         DATA(t33) = me->release_3664.
-        t28 = zcl_lnt_version_module=>release_at_least( i_running = t29 i_required = t33 ).
-        IF t28 = abap_true.
-          DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t34 = me->runnable->run( i_r_f634 = t3 ).
-          t27 = t34.
+        IF zcl_lnt_version_module=>release_at_least( i_running = t29 i_required = t33 ) = abap_true.
+          t27 = me->runnable->run( i_r_f634 = t3 ).
         ELSE.
-          DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CREATE OBJECT t37.
-          t27 = t37.
+          CREATE OBJECT t27.
         ENDIF.
         t14 = t27.
       ENDIF.
       t10 = t14.
     ELSE.
       DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t39 TYPE abap_bool.
       DATA(t40) = CAST zcl_lnt_abap_release( zcl_lnt_combi=>get_release( ) ).
       DATA(t41) = me->release_3664.
-      t39 = zcl_lnt_version_module=>release_at_least( i_running = t40 i_required = t41 ).
-      IF t39 = abap_true.
-        DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t42 = me->runnable->run( i_r_f634 = t3 ).
-        t38 = t42.
+      IF zcl_lnt_version_module=>release_at_least( i_running = t40 i_required = t41 ) = abap_true.
+        t38 = me->runnable->run( i_r_f634 = t3 ).
       ELSE.
-        DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t45.
-        t38 = t45.
+        CREATE OBJECT t38.
       ENDIF.
       t10 = t38.
     ENDIF.

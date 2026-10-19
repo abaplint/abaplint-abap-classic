@@ -13,10 +13,7 @@ CLASS zcl_lnt_st_with_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_with_loop IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = NEW zcl_lnt_st_with( ).
-    t1 = t2->get_matcher( ).
-    result = t1.
+    result = NEW zcl_lnt_st_with( )->get_matcher( ).
 
   ENDMETHOD.
 

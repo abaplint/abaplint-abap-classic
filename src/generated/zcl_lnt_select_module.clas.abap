@@ -21,11 +21,8 @@ CLASS zcl_lnt_select_module IMPLEMENTATION.
       zcl_lnt_select_module=>zlnt_builtin_init_bca3e12ebc13( ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t2) = `^\w+$`.
-    DATA(t3) = |^[A-Za-z0-9_]+$|.
-    DATA(t4) = ||.
-    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t4.
-    t1->source = t2.
+    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t1->source = `^\w+$`.
     zcl_lnt_select_module=>is_simple = t1.
   ENDMETHOD.
 

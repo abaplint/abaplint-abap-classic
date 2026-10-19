@@ -14,35 +14,22 @@ ENDCLASS.
 CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
   METHOD resolve_release.
     DATA(t1) = i_from.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    DATA t5 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t5 = zcl_lnt_version_module=>release_b8cd.
-    t4 = t5->get( p0 = t1 ).
+    t4 = zcl_lnt_version_module=>release_b8cd->get( p0 = t1 ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = xsdbool( t4 IS INITIAL ).
-    t9 = xsdbool( t10 = abap_false ).
-    t2 = t9.
-    IF t2 = abap_true.
-      DATA t12 TYPE REF TO zcl_lnt_abap_release.
-      DATA t13 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF xsdbool( xsdbool( t4 IS INITIAL ) = abap_false ) = abap_true.
       IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
         zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
       ENDIF.
-      t13 = zcl_lnt_version_module=>release_b8cd.
-      t12 = t13->get( p0 = t1 ).
-      result = t12.
+      result = zcl_lnt_version_module=>release_b8cd->get( p0 = t1 ).
       RETURN.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     TRY.
-        DATA t18 TYPE REF TO zcl_lnt_abap_release.
-        t18 = zcl_lnt_version_module=>version_to_abap_release( i_v = t1 ).
-        result = t18.
+        result = zcl_lnt_version_module=>version_to_abap_release( i_v = t1 ).
         RETURN.
       CATCH zlnt_exception_cl_30eec8e8805d INTO t15.
         DATA(t21) = t15->payload.

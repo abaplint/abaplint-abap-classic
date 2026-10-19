@@ -14,24 +14,19 @@ ENDCLASS.
 CLASS zcl_lnt_constant_end IMPLEMENTATION.
   METHOD get_matcher.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |CONSTANTS|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |CONSTANTS|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |END|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |END|.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |OF|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |OF|.
     t9->load( ).
     APPEND t12 TO t9->items.
     t9->save( ).
@@ -45,9 +40,7 @@ CLASS zcl_lnt_constant_end IMPLEMENTATION.
     t9->load( ).
     APPEND t15 TO t9->items.
     t9->save( ).
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    t17 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
-    result = t17.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
 
   ENDMETHOD.
 

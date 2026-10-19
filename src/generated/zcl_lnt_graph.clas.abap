@@ -29,29 +29,21 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
 
   METHOD add_vertex.
     DATA(t1) = i_vertex.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t4 = t1->include_name.
-    t3 = t4.
+    t3 = t1->include_name.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = VALUE abap_bool( ).
     DATA(t9) = VALUE abap_bool( ).
     IF t3 IS INITIAL.
       t9 = abap_true.
     ELSEIF t3->has = abap_false.
       t9 = abap_true.
     ENDIF.
-    t8 = xsdbool( t9 = abap_false ).
-    t2 = t8.
-    IF t2 = abap_true.
+    IF xsdbool( t9 = abap_false ) = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
       DATA(t12) = me->vertices_includename_index.
       DATA t13 TYPE string.
       DATA t14 TYPE string.
-      DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t15 = t1->include_name.
-      t14 = t15->value.
+      t14 = t1->include_name->value.
       DATA(t17) = strlen( t14 ).
       t13 = t14.
       IF t13 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -78,7 +70,6 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
 
   METHOD find_vertex_via_includename.
     DATA(t1) = i_include_name.
-    DATA t2 TYPE REF TO zcl_lnt_ivertex.
     DATA(t3) = me->vertices_includename_index.
     DATA t4 TYPE string.
     DATA(t6) = strlen( t1 ).
@@ -88,14 +79,12 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     ELSE.
       t4 = zlnt_runtime_uppe_91169605024d=>full( t4 ).
     ENDIF.
-    t2 = t3->get( p0 = t4 ).
-    result = t2.
+    result = t3->get( p0 = t4 ).
 
   ENDMETHOD.
 
   METHOD find_vertex_by_filename.
     DATA(t1) = i_filename.
-    DATA t2 TYPE REF TO zcl_lnt_ivertex.
     DATA(t3) = me->vertices_filename_index.
     DATA t4 TYPE string.
     DATA(t6) = strlen( t1 ).
@@ -105,22 +94,19 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
     ELSE.
       t4 = zlnt_runtime_uppe_91169605024d=>full( t4 ).
     ENDIF.
-    t2 = t3->get( p0 = t4 ).
-    result = t2.
+    result = t3->get( p0 = t4 ).
 
   ENDMETHOD.
 
   METHOD add_edge.
     DATA(t1) = i_from.
     DATA(t2) = i_to_filename.
-    DATA(t3) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t7 TYPE string.
     t7 = t1->filename.
     t5 = me->edges->get( p0 = t7 ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t3 = xsdbool( t5 IS INITIAL ).
-    IF t3 = abap_true.
+    IF xsdbool( t5 IS INITIAL ) = abap_true.
       DATA t13 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
       DATA(t14) = me->edges.
       DATA t15 TYPE string.
@@ -130,11 +116,9 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
       t13 = t14->set( p0 = t15 p1 = t17 ).
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t21 TYPE string.
     t21 = t1->filename.
-    t19 = me->edges->get( p0 = t21 ).
-    t18 = t19.
+    t18 = me->edges->get( p0 = t21 ).
     t18->load( ).
     APPEND t2 TO t18->items.
     t18->save( ).
@@ -143,23 +127,15 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
   METHOD find_top.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t6 = me->edges->get( p0 = t1 ).
-    t5 = t6.
+    t5 = me->edges->get( p0 = t1 ).
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t10 TYPE abap_bool.
-    t10 = xsdbool( t5 IS BOUND ).
-    IF t10 = abap_true.
+    IF xsdbool( t5 IS BOUND ) = abap_true.
       t9 = t5.
     ELSE.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t14.
-      t9 = t14.
+      CREATE OBJECT t9.
     ENDIF.
     t4 = t9.
     DATA(t15) = VALUE string( ).
@@ -207,22 +183,14 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
         APPEND t20 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t27 TYPE i.
       t2->load( ).
-      t27 = lines( t2->items ).
-      t17 = t27.
+      t17 = lines( t2->items ).
     ENDDO.
-    DATA t29 TYPE abap_bool.
-    DATA t30 TYPE i.
     t2->load( ).
-    t30 = lines( t2->items ).
-    DATA(t32) = 0.
-    t29 = xsdbool( t30 = t32 ).
-    IF t29 = abap_true.
+    IF xsdbool( lines( t2->items ) = 0 ) = abap_true.
       DATA t33 TYPE REF TO zcl_lnt_ivertex.
       DATA t35 TYPE string.
       t35 = t1.
-      DATA t37 TYPE REF TO zcl_lnt_ivertex.
       DATA(t38) = me->vertices_filename_index.
       DATA t39 TYPE string.
       DATA(t41) = strlen( t35 ).
@@ -232,15 +200,9 @@ CLASS zcl_lnt_graph IMPLEMENTATION.
       ELSE.
         t39 = zlnt_runtime_uppe_91169605024d=>full( t39 ).
       ENDIF.
-      t37 = t38->get( p0 = t39 ).
-      t33 = t37.
-      DATA(t42) = VALUE abap_bool( ).
+      t33 = t38->get( p0 = t39 ).
       DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t47) = VALUE abap_bool( ).
-      DATA(t48) = xsdbool( t33 IS INITIAL ).
-      t47 = xsdbool( t48 = abap_false ).
-      t42 = t47.
-      IF t42 = abap_true.
+      IF xsdbool( xsdbool( t33 IS INITIAL ) = abap_false ) = abap_true.
         DATA t51 TYPE REF TO zcl_lnt_ivertex.
         t51 = t33.
         t2->load( ).

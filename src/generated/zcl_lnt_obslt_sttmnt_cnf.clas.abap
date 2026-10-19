@@ -236,8 +236,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e5182c9cb5b0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `refresh` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `refresh` ) )->as_boolean( ).
     ELSE.
       result = me->refresh_83dc.
     ENDIF.
@@ -258,8 +257,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_74d4d49d4745.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `compute` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `compute` ) )->as_boolean( ).
     ELSE.
       result = me->compute_3a6a.
     ENDIF.
@@ -280,8 +278,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e1b5545ca094.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `add` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `add` ) )->as_boolean( ).
     ELSE.
       result = me->add_51c1.
     ENDIF.
@@ -302,8 +299,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_7cd00c4cd3d2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `subtract` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `subtract` ) )->as_boolean( ).
     ELSE.
       result = me->subtract_1d9c.
     ENDIF.
@@ -324,8 +320,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_53e2daddf5c0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `multiply` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `multiply` ) )->as_boolean( ).
     ELSE.
       result = me->multiply_0deb.
     ENDIF.
@@ -346,8 +341,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_199e22f3d1e2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `divide` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `divide` ) )->as_boolean( ).
     ELSE.
       result = me->divide_5c22.
     ENDIF.
@@ -368,8 +362,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f1ab3a745d20.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `move` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `move` ) )->as_boolean( ).
     ELSE.
       result = me->move_9ad0.
     ENDIF.
@@ -477,8 +470,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_5ab84e52ca26.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeaderLine` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeaderLine` ) )->as_boolean( ).
     ELSE.
       result = me->with_header_line.
     ENDIF.
@@ -557,8 +549,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_79f97f0da28d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `load` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `load` ) )->as_boolean( ).
     ELSE.
       result = me->load.
     ENDIF.
@@ -840,8 +831,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_1e511c9f8d04.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `regex` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `regex` ) )->as_boolean( ).
     ELSE.
       result = me->regex.
     ENDIF.
@@ -891,8 +881,7 @@ CLASS zcl_lnt_obslt_sttmnt_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_76df01b8d502.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `clientSpecified` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `clientSpecified` ) )->as_boolean( ).
     ELSE.
       result = me->client_specified.
     ENDIF.

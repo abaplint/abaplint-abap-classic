@@ -77,9 +77,7 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t15.
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t15 ).
-    zcl_lnt_sql_aggregation_module=>lparen = t16.
+    zcl_lnt_sql_aggregation_module=>lparen = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t15 ).
     IF zcl_lnt_sql_aggregation_module=>zlnt_builtin_init_aece59aa6618 = abap_false.
       zcl_lnt_sql_aggregation_module=>zlnt_builtin_init_9d9f9f91b60e( ).
     ENDIF.
@@ -138,9 +136,7 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t34.
-    t33 = t34.
+    CREATE OBJECT t33.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t37 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t38) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
@@ -171,9 +167,7 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t33->load( ).
     APPEND t36 TO t33->items.
     t33->save( ).
-    DATA t41 TYPE REF TO zif_lnt_statement_runnable.
-    t41 = zcl_lnt_st_combi_module=>alt_prio( i_first = t22 i_second = t28 i_rest = t33 ).
-    zcl_lnt_sql_aggregation_module=>rparen = t41.
+    zcl_lnt_sql_aggregation_module=>rparen = zcl_lnt_st_combi_module=>alt_prio( i_first = t22 i_second = t28 i_rest = t33 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

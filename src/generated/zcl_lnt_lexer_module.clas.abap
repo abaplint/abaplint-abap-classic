@@ -73,20 +73,15 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     t21 = t22.
     t19 = t1->add( p0 = t21 ).
     DATA t23 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t25) = CONV f( 43 ).
-    t23 = t1->add( p0 = t25 ).
+    t23 = t1->add( p0 = CONV f( 43 ) ).
     DATA t26 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t28) = CONV f( 40 ).
-    t26 = t1->add( p0 = t28 ).
+    t26 = t1->add( p0 = CONV f( 40 ) ).
     DATA t29 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t31) = CONV f( 41 ).
-    t29 = t1->add( p0 = t31 ).
+    t29 = t1->add( p0 = CONV f( 41 ) ).
     DATA t32 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t34) = CONV f( 91 ).
-    t32 = t1->add( p0 = t34 ).
+    t32 = t1->add( p0 = CONV f( 91 ) ).
     DATA t35 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t37) = CONV f( 93 ).
-    t35 = t1->add( p0 = t37 ).
+    t35 = t1->add( p0 = CONV f( 93 ) ).
     DATA t38 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
     DATA t40 TYPE f.
     DATA(t41) = CONV i( zcl_lnt_lexer_module=>ch_backslash ).
@@ -124,20 +119,15 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     t63 = t64.
     t61 = t51->add( p0 = t63 ).
     DATA t65 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t67) = CONV f( 40 ).
-    t65 = t51->add( p0 = t67 ).
+    t65 = t51->add( p0 = CONV f( 40 ) ).
     DATA t68 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t70) = CONV f( 41 ).
-    t68 = t51->add( p0 = t70 ).
+    t68 = t51->add( p0 = CONV f( 41 ) ).
     DATA t71 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t73) = CONV f( 91 ).
-    t71 = t51->add( p0 = t73 ).
+    t71 = t51->add( p0 = CONV f( 91 ) ).
     DATA t74 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t76) = CONV f( 93 ).
-    t74 = t51->add( p0 = t76 ).
+    t74 = t51->add( p0 = CONV f( 93 ) ).
     DATA t77 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t79) = CONV f( 43 ).
-    t77 = t51->add( p0 = t79 ).
+    t77 = t51->add( p0 = CONV f( 43 ) ).
     DATA t80 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
     DATA t82 TYPE f.
     DATA(t83) = CONV i( zcl_lnt_lexer_module=>ch_at ).
@@ -190,17 +180,13 @@ CLASS zcl_lnt_lexer_module IMPLEMENTATION.
     t117 = t118.
     t115 = t85->add( p0 = t117 ).
     DATA t119 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t121) = CONV f( 40 ).
-    t119 = t85->add( p0 = t121 ).
+    t119 = t85->add( p0 = CONV f( 40 ) ).
     DATA t122 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t124) = CONV f( 41 ).
-    t122 = t85->add( p0 = t124 ).
+    t122 = t85->add( p0 = CONV f( 41 ) ).
     DATA t125 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t127) = CONV f( 91 ).
-    t125 = t85->add( p0 = t127 ).
+    t125 = t85->add( p0 = CONV f( 91 ) ).
     DATA t128 TYPE REF TO zlnt_runtime_set__44559cf8bcc4.
-    DATA(t130) = CONV f( 93 ).
-    t128 = t85->add( p0 = t130 ).
+    t128 = t85->add( p0 = CONV f( 93 ) ).
     IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
       zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
     ENDIF.

@@ -25,33 +25,21 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |no_external_form_calls|.
-    DATA t4 TYPE string.
-    t4 = |No external FORM calls|.
-    DATA t6 TYPE string.
-    t6 = |Detect external form calls|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t11) = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t8 i_good_example = t24 i_extended_information = t26 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |no_external_form_calls| i_title = |No external FORM calls| i_short_description = |Detect external form calls| i_bad_example = t8 i_good_example = t24 i_extended_information = t26 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -74,28 +62,23 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |badExample|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -114,17 +97,11 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
   METHOD r_p_i_s_r_n_e_f_c_t_n_ex_fr_cl.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
       result = t2.
       RETURN.
     ENDIF.
@@ -163,42 +140,28 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
       t28 = xsdbool( t29 IS BOUND ).
       t27 = t28.
       IF t28 = abap_false.
-        DATA t32 TYPE abap_bool.
         DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t35) = |PROGRAM|.
-        t33 = t22->find_direct_token_by_text( i_text = t35 ).
-        t32 = xsdbool( t33 IS BOUND ).
-        t27 = t32.
+        t33 = t22->find_direct_token_by_text( i_text = |PROGRAM| ).
+        t27 = xsdbool( t33 IS BOUND ).
       ENDIF.
       IF t27 = abap_true.
-        DATA(t37) = |No external FORM calls|.
         DATA t39 TYPE REF TO zcl_lnt_issue.
         CLEAR t39.
         DATA(t43) = VALUE string( ).
         DATA t44 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t44.
-        DATA t45 TYPE string.
-        t45 = |no_external_form_calls|.
-        DATA t47 TYPE string.
-        t47 = |No external FORM calls|.
-        DATA t49 TYPE string.
-        t49 = |Detect external form calls|.
         DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t51.
-        DATA(t54) = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
         DATA(t55) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t55->has = abap_true.
-        t55->value = t54.
+        t55->value = |PERFORM foo IN PROGRAM bar.\n\nPERFORM foo(bar).|.
         t51 = t55.
         DATA t57 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t57.
         DATA t61 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t62.
-        t61 = t62.
-        DATA(t64) = |SingleFile|.
+        CREATE OBJECT t61.
         t61->load( ).
-        APPEND t64 TO t61->items.
+        APPEND |SingleFile| TO t61->items.
         t61->save( ).
         t57 = t61.
         DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -209,7 +172,7 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         CLEAR t71.
         DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t73.
-        t44 = NEW zcl_lnt_irule_metadata( i_key = t45 i_title = t47 i_short_description = t49 i_bad_example = t51 i_good_example = t67 i_extended_information = t69 i_tags = t57 i_pragma = t71 i_pseudo_comment = t73 ).
+        t44 = NEW zcl_lnt_irule_metadata( i_key = |no_external_form_calls| i_title = |No external FORM calls| i_short_description = |Detect external form calls| i_bad_example = t51 i_good_example = t67 i_extended_information = t69 i_tags = t57 i_pragma = t71 i_pseudo_comment = t73 ).
         CREATE OBJECT t44->zlnt_view_ownkeys_b0e8086400eb.
         t44->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -237,33 +200,28 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t44->zlnt_json_ownkeys_70e5fd461788.
         t44->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t80) = |key|.
         DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t81.
-        t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t80 p1 = t81 ).
-        DATA(t82) = |title|.
+        t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t81 ).
         DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t83.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t82 p1 = t83 ).
+          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t83 ).
         ENDIF.
-        DATA(t84) = |shortDescription|.
         DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t85.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
+          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t85 ).
         ENDIF.
-        DATA(t86) = |badExample|.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t87.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
+          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t87 ).
         ENDIF.
-        DATA(t88) = |tags|.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
+          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t89 ).
         ENDIF.
         t43 = t44->key.
         DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -272,7 +230,7 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         CLEAR t92.
         DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t93.
-        t39 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t22 i_message_26cb = t37 i_key = t43 i_severity = t90 i_fix = t92 i_alternative_fixes = t93 ).
+        t39 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t22 i_message_26cb = |No external FORM calls| i_key = t43 i_severity = t90 i_fix = t92 i_alternative_fixes = t93 ).
         t2->load( ).
         APPEND t39 TO t2->items.
         t2->save( ).

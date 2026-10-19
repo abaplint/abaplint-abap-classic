@@ -14,9 +14,7 @@ CLASS zcl_lnt_constant_string IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t3) = |^('.*')\|(`.*`)$|.
     DATA(t4) = |^('[^\n\r|.
     DATA t5 TYPE c LENGTH 1.
     t5 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -32,11 +30,9 @@ CLASS zcl_lnt_constant_string IMPLEMENTATION.
     t8 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t4 t8 INTO t4 RESPECTING BLANKS.
     t4 = t4 && |]*`)$|.
-    DATA(t9) = ||.
-    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = t9.
-    t2->source = t3.
-    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
-    result = t1.
+    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = ||.
+    t2->source = |^('.*')\|(`.*`)$|.
+    result = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
 
   ENDMETHOD.
 

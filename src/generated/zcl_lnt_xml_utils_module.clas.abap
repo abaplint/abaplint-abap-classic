@@ -15,13 +15,9 @@ ENDCLASS.
 CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
   METHOD xml_to_array.
     DATA(t1) = i_data_dc02.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t2 = xsdbool( t1 IS INITIAL ).
-    IF t2 = abap_true.
-      DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t9.
-      result = t9.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ELSE.
       DATA(t10) = VALUE abap_bool( ).
@@ -110,9 +106,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
         RETURN.
       ELSE.
         DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t23.
-        t22 = t23.
+        CREATE OBJECT t22.
         t22->load( ).
         APPEND t1 TO t22->items.
         t22->save( ).
@@ -124,7 +118,6 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
 
   METHOD unescape.
     DATA(t1) = i_str.
-    DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE string( ).
     IF t1 IS BOUND.
       t3 = t1->type_of( ).
@@ -134,64 +127,37 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     ELSE.
       t3 = `undefined`.
     ENDIF.
-    DATA(t5) = |string|.
-    t2 = xsdbool( t3 <> t5 ).
-    IF t2 = abap_true.
+    IF xsdbool( t3 <> |string| ) = abap_true.
       result = ||.
       RETURN.
     ENDIF.
     DATA t7 TYPE string.
-    DATA t8 TYPE string.
     DATA t9 TYPE string.
     t9 = t1->as_string( ).
     DATA t11 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t12) = |&amp;|.
-    DATA(t13) = |g|.
-    CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t12 flags = t13 checked = abap_true.
-    DATA(t14) = |&|.
+    CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&amp;| flags = |g| checked = abap_true.
     DATA(t15) = strlen( t9 ).
-    t8 = t11->replace( p0 = t9 p1 = t14 ).
-    t7 = t8.
-    DATA t16 TYPE string.
+    t7 = t11->replace( p0 = t9 p1 = |&| ).
     DATA(t17) = t7.
     DATA t18 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t19) = |&gt;|.
-    DATA(t20) = |g|.
-    CREATE OBJECT t18 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t19 flags = t20 checked = abap_true.
-    DATA(t21) = |>|.
+    CREATE OBJECT t18 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&gt;| flags = |g| checked = abap_true.
     DATA(t22) = strlen( t17 ).
-    t16 = t18->replace( p0 = t17 p1 = t21 ).
-    t7 = t16.
-    DATA t23 TYPE string.
+    t7 = t18->replace( p0 = t17 p1 = |>| ).
     DATA(t24) = t7.
     DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t26) = |&lt;|.
-    DATA(t27) = |g|.
-    CREATE OBJECT t25 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t26 flags = t27 checked = abap_true.
-    DATA(t28) = |<|.
+    CREATE OBJECT t25 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&lt;| flags = |g| checked = abap_true.
     DATA(t29) = strlen( t24 ).
-    t23 = t25->replace( p0 = t24 p1 = t28 ).
-    t7 = t23.
-    DATA t30 TYPE string.
+    t7 = t25->replace( p0 = t24 p1 = |<| ).
     DATA(t31) = t7.
     DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t33) = |&quot;|.
-    DATA(t34) = |g|.
-    CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t33 flags = t34 checked = abap_true.
-    DATA(t35) = |"|.
+    CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&quot;| flags = |g| checked = abap_true.
     DATA(t36) = strlen( t31 ).
-    t30 = t32->replace( p0 = t31 p1 = t35 ).
-    t7 = t30.
-    DATA t37 TYPE string.
+    t7 = t32->replace( p0 = t31 p1 = |"| ).
     DATA(t38) = t7.
     DATA t39 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t40) = |&apos;|.
-    DATA(t41) = |g|.
-    CREATE OBJECT t39 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t40 flags = t41 checked = abap_true.
-    DATA(t42) = |'|.
+    CREATE OBJECT t39 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&apos;| flags = |g| checked = abap_true.
     DATA(t43) = strlen( t38 ).
-    t37 = t39->replace( p0 = t38 p1 = t42 ).
-    t7 = t37.
+    t7 = t39->replace( p0 = t38 p1 = |'| ).
     result = t7.
 
   ENDMETHOD.

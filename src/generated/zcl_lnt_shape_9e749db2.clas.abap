@@ -58,8 +58,7 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
 
   METHOD zlnt_view_read_sh_f56a32cb8e05.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) )->as_string( ).
     ELSE.
       result = me->type_cba0.
     ENDIF.
@@ -84,8 +83,7 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
 
   METHOD zlnt_view_read_sh_a3910c0e10c1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `oldName` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `oldName` ) )->as_string( ).
     ELSE.
       result = me->old_name.
     ENDIF.
@@ -110,8 +108,7 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
 
   METHOD zlnt_view_read_sh_774a1a9a5025.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `newName` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `newName` ) )->as_string( ).
     ELSE.
       result = me->new_name.
     ENDIF.

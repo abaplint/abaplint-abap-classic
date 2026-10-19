@@ -15,10 +15,9 @@ CLASS zcl_lnt_st_call_kernel IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |CALL|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |CALL|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -37,9 +36,7 @@ CLASS zcl_lnt_st_call_kernel IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t16.
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    t17 = zcl_lnt_st_combi_module=>alt_prio( i_first = t10 i_second = t13 i_rest = t16 ).
-    t8 = t17.
+    t8 = zcl_lnt_st_combi_module=>alt_prio( i_first = t10 i_second = t13 i_rest = t16 ).
     IF t8 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t22 TYPE REF TO object.
@@ -64,9 +61,7 @@ CLASS zcl_lnt_st_call_kernel IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t24.
-    t23 = t24.
+    CREATE OBJECT t23.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -103,11 +98,7 @@ CLASS zcl_lnt_st_call_kernel IMPLEMENTATION.
     t23->load( ).
     APPEND t26 TO t23->items.
     t23->save( ).
-    DATA t32 TYPE REF TO zif_lnt_statement_runnable.
-    t32 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t23 ).
-    t1 = t32.
-    DATA t36 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t37) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t23 ).
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -132,8 +123,7 @@ CLASS zcl_lnt_st_call_kernel IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t36 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t37 i_first = t38 ).
-    result = t36.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t38 ).
 
   ENDMETHOD.
 

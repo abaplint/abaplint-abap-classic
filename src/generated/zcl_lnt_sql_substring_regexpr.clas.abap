@@ -16,32 +16,22 @@ CLASS zcl_lnt_sql_substring_regexpr IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |SUBSTRING_REGEXPR|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |SUBSTRING_REGEXPR|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |SUBSTR_REGEXPR|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |SUBSTR_REGEXPR|.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
+    t1 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t17 TYPE REF TO zcl_lnt_abap_release.
-    DATA t18 TYPE REF TO zcl_lnt_abap_release.
-    DATA t19 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t19 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t20) = |v758|.
-    t18 = t19->get( p0 = t20 ).
-    t17 = t18.
+    t17 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v758| ).
     IF t17 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t22 TYPE REF TO object.
@@ -119,9 +109,7 @@ CLASS zcl_lnt_sql_substring_regexpr IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t37.
-    t36 = t37.
+    CREATE OBJECT t36.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d335_fce3d394071e.
     IF t40 IS BOUND.
@@ -270,9 +258,7 @@ CLASS zcl_lnt_sql_substring_regexpr IMPLEMENTATION.
     t36->load( ).
     APPEND t63 TO t36->items.
     t36->save( ).
-    DATA t68 TYPE REF TO zif_lnt_statement_runnable.
-    t68 = zcl_lnt_st_combi_module=>seq( i_first = t26 i_second = t31 i_rest = t36 ).
-    t24 = t68.
+    t24 = zcl_lnt_st_combi_module=>seq( i_first = t26 i_second = t31 i_rest = t36 ).
     IF t24 IS BOUND.
       DATA t72 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t73 TYPE REF TO object.
@@ -297,8 +283,7 @@ CLASS zcl_lnt_sql_substring_regexpr IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t74 TYPE REF TO zcl_lnt_iver_options.
-    t15 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t16 i_first = t23 i_opts = t74 ).
-    result = t15.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t16 i_first = t23 i_opts = t74 ).
 
   ENDMETHOD.
 

@@ -24,8 +24,7 @@ CLASS zcl_lnt_macro_naming_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^_.+$|.
-    me->zlnt_view_write_s_253fc432b36b( p0 = t1 ).
+    me->zlnt_view_write_s_253fc432b36b( p0 = |^_.+$| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -43,8 +42,7 @@ CLASS zcl_lnt_macro_naming_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9e75020a19aa.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `pattern` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `pattern` ) )->as_string( ).
     ELSE.
       result = me->pattern.
     ENDIF.

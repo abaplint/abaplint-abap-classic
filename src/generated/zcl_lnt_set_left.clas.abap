@@ -15,10 +15,9 @@ CLASS zcl_lnt_set_left IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |COLUMN|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |COLUMN|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t8 IS BOUND.
@@ -28,18 +27,13 @@ CLASS zcl_lnt_set_left IMPLEMENTATION.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t16) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t21) = |SET LEFT SCROLL-BOUNDARY|.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t20->sval = t21.
+    t20->sval = |SET LEFT SCROLL-BOUNDARY|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t24 TYPE REF TO zif_lnt_statement_runnable.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -92,9 +86,7 @@ CLASS zcl_lnt_set_left IMPLEMENTATION.
     ENDIF.
     DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t32.
-    DATA t33 TYPE REF TO zif_lnt_statement_runnable.
-    t33 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t32 ).
-    t18 = t33.
+    t18 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t32 ).
     IF t18 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t38 TYPE REF TO object.
@@ -118,8 +110,7 @@ CLASS zcl_lnt_set_left IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t15 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t16 i_first = t17 ).
-    result = t15.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t17 ).
 
   ENDMETHOD.
 

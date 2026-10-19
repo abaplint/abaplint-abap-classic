@@ -15,10 +15,9 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |EXPORTING|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |EXPORTING|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d225_0eec1dcc9b8a.
     IF t8 IS BOUND.
@@ -28,18 +27,13 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t16) = |KeyUser|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t21) = |RAISE EVENT|.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t20->sval = t21.
+    t20->sval = |RAISE EVENT|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd.
     IF t24 IS BOUND.
@@ -48,9 +42,7 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
       t23->cval = t24.
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t26.
-    t25 = t26.
+    CREATE OBJECT t25.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -104,9 +96,7 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
     t25->load( ).
     APPEND t28 TO t25->items.
     t25->save( ).
-    DATA t36 TYPE REF TO zif_lnt_statement_runnable.
-    t36 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t25 ).
-    t18 = t36.
+    t18 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t25 ).
     IF t18 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t41 TYPE REF TO object.
@@ -130,8 +120,7 @@ CLASS zcl_lnt_st_raise_event IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t15 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t16 i_first = t17 ).
-    result = t15.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t17 ).
 
   ENDMETHOD.
 

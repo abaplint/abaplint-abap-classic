@@ -19,35 +19,23 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
     DATA(t3) = i_method.
     DATA(t4) = i_input_967e.
     DATA t5 TYPE REF TO zcl_lnt_expression_node.
-    DATA t6 TYPE REF TO zcl_lnt_expression_node.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
-    t6 = t1->find_direct_expression( i_type_9913 = t8 ).
-    t5 = t6.
+    t5 = t1->find_direct_expression( i_type_9913 = t8 ).
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = VALUE abap_bool( ).
     DATA t12 TYPE REF TO zcl_lnt_expression_node.
     DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t12 = t1->find_direct_expression( i_type_9913 = t14 ).
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = xsdbool( t12 IS INITIAL ).
-    t17 = xsdbool( t18 = abap_false ).
-    t10 = t17.
-    t9 = t10.
+    t9 = xsdbool( xsdbool( t12 IS INITIAL ) = abap_false ).
     DATA(t20) = VALUE abap_bool( ).
     DATA(t21) = VALUE abap_bool( ).
     DATA(t22) = VALUE abap_bool( ).
     DATA(t23) = VALUE abap_bool( ).
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t28) = VALUE abap_bool( ).
-    DATA(t29) = xsdbool( t5 IS INITIAL ).
-    t28 = xsdbool( t29 = abap_false ).
-    t23 = t28.
+    t23 = xsdbool( xsdbool( t5 IS INITIAL ) = abap_false ).
     t22 = t23.
     IF t23 = abap_true.
-      DATA t31 TYPE abap_bool.
-      t31 = xsdbool( t9 = abap_false ).
-      t22 = t31.
+      t22 = xsdbool( t9 = abap_false ).
     ENDIF.
     t21 = t22.
     IF t22 = abap_true.
@@ -59,24 +47,16 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
       DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d103_04a0f92dd4f1.
       t37 = t38->find_direct_expression( i_type_9913 = t40 ).
       DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t43) = VALUE abap_bool( ).
-      DATA(t44) = xsdbool( t37 IS INITIAL ).
-      t43 = xsdbool( t44 = abap_false ).
-      t35 = t43.
+      t35 = xsdbool( xsdbool( t37 IS INITIAL ) = abap_false ).
       t34 = t35.
       IF t35 = abap_false.
-        DATA(t46) = VALUE abap_bool( ).
         DATA t48 TYPE REF TO zcl_lnt_expression_node.
         DATA t49 TYPE REF TO zcl_lnt_expression_node.
         t49 = t5.
         DATA(t51) = zlnt_runtime_desc_78196487750d=>zlnt_member_d104_b395e4e66ee3.
         t48 = t49->find_direct_expression( i_type_9913 = t51 ).
         DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA(t54) = VALUE abap_bool( ).
-        DATA(t55) = xsdbool( t48 IS INITIAL ).
-        t54 = xsdbool( t55 = abap_false ).
-        t46 = t54.
-        t34 = t46.
+        t34 = xsdbool( xsdbool( t48 IS INITIAL ) = abap_false ).
       ENDIF.
       t21 = t34.
     ENDIF.
@@ -85,11 +65,7 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
     DATA t58 TYPE abap_bool.
     t58 = t20.
     IF t20 = abap_true.
-      DATA t60 TYPE abap_bool.
-      DATA t61 TYPE abap_bool.
-      t61 = xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_built_in_method ).
-      t60 = xsdbool( t61 = abap_false ).
-      t58 = t60.
+      t58 = xsdbool( xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_built_in_method ) = abap_false ).
     ENDIF.
     t57 = t58.
     IF t58 = abap_true.
@@ -98,9 +74,7 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
       t64 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_string_type ).
       t63 = t64.
       IF t64 = abap_false.
-        DATA t66 TYPE abap_bool.
-        t66 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_x_string_type ).
-        t63 = t66.
+        t63 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_x_string_type ).
       ENDIF.
       t57 = t63.
     ENDIF.
@@ -110,10 +84,8 @@ CLASS zcl_lnt_chck_offst_lngth_mdl IMPLEMENTATION.
       DATA t70 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t70 = t4->issues.
       DATA t72 TYPE REF TO zcl_lnt_issue.
-      DATA t74 TYPE REF TO zcl_lnt_abstract_token.
-      t74 = t1->get_first_token( ).
       DATA t77 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t72 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t4 i_token = t74 i_message_26cb = t69 i_fix = t77 ).
+      t72 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t4 i_token = t1->get_first_token( ) i_message_26cb = t69 i_fix = t77 ).
       t70->load( ).
       APPEND t72 TO t70->items.
       t70->save( ).

@@ -27,12 +27,6 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |no_chained_assignment|.
-    DATA t4 TYPE string.
-    t4 = |No chained assignment|.
-    DATA t6 TYPE string.
-    t6 = |Find chained assingments and reports issues|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
     t11 = t11 && |nABAP.md#dont-chain-assignments|.
@@ -42,37 +36,28 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t23) = |Styleguide|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t25) = |Quickfix|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |Quickfix| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t31) = |var1 = var2 = var3.|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
-    t32->value = t31.
+    t32->value = |var1 = var2 = var3.|.
     t28 = t32.
-    DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t37) = |var2 = var3.\nvar1 = var2.|.
     DATA(t38) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t38->has = abap_true.
-    t38->value = t37.
-    t34 = t38.
+    t38->value = |var2 = var3.\nvar1 = var2.|.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |no_chained_assignment| i_title = |No chained assignment| i_short_description = |Find chained assingments and reports issues| i_bad_example = t28 i_good_example = t38 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -103,38 +88,31 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t51) = |key|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
-    DATA(t53) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t52 ).
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |shortDescription|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |extendedInformation|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |tags|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |badExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t62 ).
     ENDIF.
-    DATA(t63) = |goodExample|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t64 ).
     ENDIF.
     result = t1.
 
@@ -153,13 +131,9 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
   METHOD r_p_i_sr_rl_n_ch_as_ts_n_ch_as.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t7 = t1->statements.
-    t4 = t7.
+    t4 = t1->statements.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
     DATA t10 TYPE REF TO object.
     DATA(t11) = VALUE i( ).
@@ -182,26 +156,16 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
       ELSE.
         t9 ?= t10.
       ENDIF.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE abap_bool.
       DATA t16 TYPE REF TO zif_lnt_statement.
       t16 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t15 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_move ).
-      t14 = xsdbool( t15 = abap_false ).
-      IF t14 = abap_true.
+      IF xsdbool( xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_st_move ) = abap_false ) = abap_true.
         CONTINUE.
       ENDIF.
-      DATA t18 TYPE abap_bool.
-      DATA t19 TYPE i.
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
       t20 = t9->find_direct_expressions( i_type_9913 = t22 ).
       t20->load( ).
-      t19 = lines( t20->items ).
-      DATA(t23) = 2.
-      t18 = xsdbool( t19 >= t23 ).
-      IF t18 = abap_true.
-        DATA(t25) = |No chained assignment|.
+      IF xsdbool( lines( t20->items ) >= 2 ) = abap_true.
         DATA t27 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         t27 = me->build_fix( i_file = t1 i_node = t9 ).
         DATA t31 TYPE REF TO zcl_lnt_issue.
@@ -209,12 +173,6 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
         DATA(t35) = VALUE string( ).
         DATA t36 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t36.
-        DATA t37 TYPE string.
-        t37 = |no_chained_assignment|.
-        DATA t39 TYPE string.
-        t39 = |No chained assignment|.
-        DATA t41 TYPE string.
-        t41 = |Find chained assingments and reports issues|.
         DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t43.
         DATA(t46) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -226,41 +184,34 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
         DATA t49 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t49.
         DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t54 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t54.
-        t53 = t54.
-        DATA(t56) = |SingleFile|.
+        CREATE OBJECT t53.
         t53->load( ).
-        APPEND t56 TO t53->items.
+        APPEND |SingleFile| TO t53->items.
         t53->save( ).
-        DATA(t58) = |Styleguide|.
         t53->load( ).
-        APPEND t58 TO t53->items.
+        APPEND |Styleguide| TO t53->items.
         t53->save( ).
-        DATA(t60) = |Quickfix|.
         t53->load( ).
-        APPEND t60 TO t53->items.
+        APPEND |Quickfix| TO t53->items.
         t53->save( ).
         t49 = t53.
         DATA t63 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t63.
-        DATA(t66) = |var1 = var2 = var3.|.
         DATA(t67) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t67->has = abap_true.
-        t67->value = t66.
+        t67->value = |var1 = var2 = var3.|.
         t63 = t67.
         DATA t69 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t69.
-        DATA(t72) = |var2 = var3.\nvar1 = var2.|.
         DATA(t73) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t73->has = abap_true.
-        t73->value = t72.
+        t73->value = |var2 = var3.\nvar1 = var2.|.
         t69 = t73.
         DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t75.
         DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t77.
-        t36 = NEW zcl_lnt_irule_metadata( i_key = t37 i_title = t39 i_short_description = t41 i_bad_example = t63 i_good_example = t69 i_extended_information = t43 i_tags = t49 i_pragma = t75 i_pseudo_comment = t77 ).
+        t36 = NEW zcl_lnt_irule_metadata( i_key = |no_chained_assignment| i_title = |No chained assignment| i_short_description = |Find chained assingments and reports issues| i_bad_example = t63 i_good_example = t69 i_extended_information = t43 i_tags = t49 i_pragma = t75 i_pseudo_comment = t77 ).
         CREATE OBJECT t36->zlnt_view_ownkeys_b0e8086400eb.
         t36->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -298,53 +249,45 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t36->zlnt_json_ownkeys_70e5fd461788.
         t36->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t86) = |key|.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t87.
-        t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
-        DATA(t88) = |title|.
+        t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t87 ).
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t89 ).
         ENDIF.
-        DATA(t90) = |shortDescription|.
         DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t91.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t90 p1 = t91 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t91 ).
         ENDIF.
-        DATA(t92) = |extendedInformation|.
         DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t93.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t92 p1 = t93 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t93 ).
         ENDIF.
-        DATA(t94) = |tags|.
         DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t95.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t95 ).
         ENDIF.
-        DATA(t96) = |badExample|.
         DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t97.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t97 ).
         ENDIF.
-        DATA(t98) = |goodExample|.
         DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t99.
         IF t36->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = t98 p1 = t99 ).
+          t36->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t99 ).
         ENDIF.
         t35 = t36->key.
         DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t101) = CAST zcl_lnt_n_chnd_assgnmnt_cnf( me->g_c_i_sr_rl_n_ch_as_ts_n_ch_as( ) ).
-        t100 = t101->zlnt_view_read_sr_15c06369f827( ).
+        t100 = CAST zcl_lnt_n_chnd_assgnmnt_cnf( me->g_c_i_sr_rl_n_ch_as_ts_n_ch_as( ) )->zlnt_view_read_sr_15c06369f827( ).
         DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t103.
-        t31 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t9 i_message_26cb = t25 i_key = t35 i_severity = t100 i_fix = t27 i_alternative_fixes = t103 ).
+        t31 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t9 i_message_26cb = |No chained assignment| i_key = t35 i_severity = t100 i_fix = t27 i_alternative_fixes = t103 ).
         t2->load( ).
         APPEND t31 TO t2->items.
         t2->save( ).
@@ -362,30 +305,22 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t2.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t8 = t6->children.
-    t5 = t8.
+    t5 = t6->children.
     t4 ?= t5.
     t3 = t4.
     DATA t10 TYPE string.
     t10 = ||.
     DATA t12 TYPE i.
-    DATA t13 TYPE i.
     DATA t14 TYPE i.
     t3->load( ).
     t14 = lines( t3->items ).
     DATA(t16) = 4.
-    t13 = t14 - t16.
-    t12 = t13.
+    t12 = t14 - t16.
     DO.
-      DATA t17 TYPE abap_bool.
-      DATA(t19) = 0.
-      t17 = xsdbool( t12 >= t19 ).
-      IF t17 = abap_false.
+      IF xsdbool( t12 >= 0 ) = abap_false.
         EXIT.
       ENDIF.
       DATA(t20) = VALUE string( ).
-      DATA(t21) = VALUE string( ).
       DATA(t22) = VALUE string( ).
       DATA(t23) = VALUE string( ).
       DATA(t24) = VALUE string( ).
@@ -411,9 +346,8 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
         t26 ?= t29.
       ENDIF.
       t25 = t26->concat_tokens( ).
-      DATA(t32) = | |.
       DATA(t33) = strlen( t25 ).
-      t24 = |{ t25 }{ t32 }|.
+      t24 = |{ t25 }{ | | }|.
       DATA(t34) = VALUE string( ).
       DATA t35 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t35.
@@ -440,9 +374,8 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
       t34 = t35->concat_tokens( ).
       DATA(t43) = strlen( t24 ).
       t23 = |{ t24 }{ t34 }|.
-      DATA(t44) = | |.
       DATA(t45) = strlen( t23 ).
-      t22 = |{ t23 }{ t44 }|.
+      t22 = |{ t23 }{ | | }|.
       DATA(t46) = VALUE string( ).
       DATA t47 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t47.
@@ -468,58 +401,31 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
       ENDIF.
       t46 = t47->concat_tokens( ).
       DATA(t55) = strlen( t22 ).
-      t21 = |{ t22 }{ t46 }|.
-      t20 = t21.
-      DATA t56 TYPE string.
+      t20 = |{ t22 }{ t46 }|.
       DATA(t57) = t10.
       DATA t58 TYPE string.
-      DATA(t60) = |.\n|.
       DATA(t61) = strlen( t20 ).
-      t58 = |{ t20 }{ t60 }|.
+      t58 = |{ t20 }{ |.\n| }|.
       DATA(t62) = strlen( t57 ).
-      t56 = |{ t57 }{ t58 }|.
-      t10 = t56.
-      DATA t63 TYPE i.
+      t10 = |{ t57 }{ t58 }|.
       DATA(t65) = 2.
-      t63 = t12 - t65.
-      t12 = t63.
+      t12 = t12 - t65.
     ENDDO.
-    DATA t68 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA t70 TYPE REF TO zcl_lnt_position.
-    DATA t75 TYPE REF TO zcl_lnt_abstract_token.
-    t75 = t2->get_first_token( ).
-    DATA t77 TYPE REF TO zcl_lnt_position.
-    t77 = t75->start.
-    t70 = t77.
+    t70 = t2->get_first_token( )->start.
     DATA t79 TYPE REF TO zcl_lnt_position.
-    DATA t84 TYPE REF TO zcl_lnt_abstract_token.
-    t84 = t2->get_last_token( ).
     DATA t87 TYPE REF TO zcl_lnt_abstract_token.
-    t87 = t84.
-    DATA t89 TYPE REF TO zcl_lnt_position.
+    t87 = t2->get_last_token( ).
     DATA t90 TYPE f.
-    DATA t92 TYPE REF TO zcl_lnt_position.
-    t92 = t87->start.
-    DATA t94 TYPE f.
-    t94 = t92->row.
-    t90 = t94.
-    DATA t96 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t90 = t87->start->row.
     DATA t97 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t99 TYPE REF TO zcl_lnt_position.
-    t99 = t87->start.
-    DATA t101 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t101 = t99->col.
-    t97 = t101.
+    t97 = t87->start->col.
     DATA t103 TYPE f.
-    DATA t105 TYPE string.
-    t105 = t87->str.
-    t103 = strlen( t105 ).
+    t103 = strlen( t87->str ).
     DATA(t108) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t108->has = abap_true.
     t108->value = t103.
-    t96 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t97 right = t108 op = `+` ).
-    t89 = NEW zcl_lnt_position( i_row = t90 i_col = t96 ).
-    t79 = t89.
+    t79 = NEW zcl_lnt_position( i_row = t90 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t97 right = t108 op = `+` ) ).
     DATA(t109) = VALUE string( ).
     DATA(t111) = strlen( t10 ).
     DATA t112 TYPE i.
@@ -565,8 +471,7 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
     ELSE.
       CLEAR t109.
     ENDIF.
-    t68 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t70 i_end = t79 i_text = t109 ).
-    result = t68.
+    result = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t70 i_end = t79 i_text = t109 ).
 
   ENDMETHOD.
 

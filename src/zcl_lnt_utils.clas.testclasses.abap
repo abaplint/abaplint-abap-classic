@@ -375,10 +375,9 @@ CLASS ltcl_run_rule IMPLEMENTATION.
     DATA(lt_first) = run( NEW zcl_lnt_parser_error( ) ).
     run( NEW zcl_lnt_double_space( ) ).
     run( NEW zcl_lnt_allowed_object_naming( ) ).
-    DATA(lt_second) = run( NEW zcl_lnt_parser_error( ) ).
 
     cl_abap_unit_assert=>assert_equals(
-      act = lt_second
+      act = run( NEW zcl_lnt_parser_error( ) )
       exp = lt_first ).
   ENDMETHOD.
 

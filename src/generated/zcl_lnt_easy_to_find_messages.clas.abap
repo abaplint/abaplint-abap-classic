@@ -29,12 +29,6 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |easy_to_find_messages|.
-    DATA t4 TYPE string.
-    t4 = |Easy to find messages|.
-    DATA t6 TYPE string.
-    t6 = |Make messages easy to find|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |All messages must be statically referenced exactly once\n\nOnl|.
     t11 = t11 && |y MESSAGE and RAISE statments are counted as static referenc|.
@@ -45,21 +39,16 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
     t12->has = abap_true.
     t12->value = t11.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |easy_to_find_messages| i_title = |Easy to find messages| i_short_description = |Make messages easy to find| i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -82,28 +71,23 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |extendedInformation|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -121,60 +105,38 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
 
   METHOD initialize.
     DATA(t1) = i_reg_f149.
-    DATA t2 TYPE REF TO zif_lnt_msag_references.
-    t2 = t1->get_msag_references( ).
-    me->msag_references = t2.
+    me->msag_references = t1->get_msag_references( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `msagReferences`.
     DATA t4 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t5 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t6 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    t6 = t1->get_objects( ).
-    t5 = t6->iterate( ).
-    t4 = t5.
+    t4 = t1->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
       CLEAR t9.
-      DATA t10 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t10.
-      t10 = t4->next( ).
-      t9 = t10.
-      DATA(t12) = VALUE abap_bool( ).
-      t12 = t9->done.
-      IF t12 = abap_true.
+      t9 = t4->next( ).
+      IF t9->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_object.
       CLEAR t14.
-      DATA t16 TYPE REF TO zif_lnt_object.
-      CLEAR t16.
-      t16 = t9->value.
-      t14 = t16.
-      DATA(t18) = VALUE abap_bool( ).
+      t14 = t9->value.
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
       t20 = abap_false.
       DATA t22 TYPE REF TO cx_root.
       CLEAR t22.
       TRY.
-          DATA(t23) = VALUE abap_bool( ).
-          t23 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
-          t19 = t23.
+          t19 = xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_abap_object ).
           t20 = abap_true.
         CATCH cx_root INTO t22.
-          DATA(t26) = VALUE abap_bool( ).
-          t26 = xsdbool( t20 = abap_false ).
-          IF t26 = abap_true.
+          IF xsdbool( t20 = abap_false ) = abap_true.
             t4->close( ).
           ENDIF.
           RAISE EXCEPTION t22.
       ENDTRY.
-      DATA(t29) = VALUE abap_bool( ).
-      t29 = xsdbool( t20 = abap_false ).
-      IF t29 = abap_true.
+      IF xsdbool( t20 = abap_false ) = abap_true.
         t4->close( ).
       ENDIF.
-      t18 = t19.
-      IF t18 = abap_true.
+      IF t19 = abap_true.
         DATA t33 TYPE REF TO zcl_lnt_isyntax_result.
         CLEAR t33.
         DATA t34 TYPE REF TO zcl_lnt_isyntax_result.
@@ -184,31 +146,21 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
         DATA t37 TYPE REF TO cx_root.
         CLEAR t37.
         TRY.
-            DATA t38 TYPE REF TO zcl_lnt_isyntax_result.
-            CLEAR t38.
-            DATA t39 TYPE REF TO zcl_lnt_syntax_logic.
-            CLEAR t39.
             DATA t41 TYPE REF TO zcl_lnt_abap_object.
             CLEAR t41.
             DATA t43 TYPE REF TO object.
             CLEAR t43.
             t43 = t14.
             t41 ?= t43.
-            t39 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t41 ).
-            t38 = t39->run( ).
-            t34 = t38.
+            t34 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t41 )->run( ).
             t35 = abap_true.
           CATCH cx_root INTO t37.
-            DATA(t45) = VALUE abap_bool( ).
-            t45 = xsdbool( t35 = abap_false ).
-            IF t45 = abap_true.
+            IF xsdbool( t35 = abap_false ) = abap_true.
               t4->close( ).
             ENDIF.
             RAISE EXCEPTION t37.
         ENDTRY.
-        DATA(t48) = VALUE abap_bool( ).
-        t48 = xsdbool( t35 = abap_false ).
-        IF t48 = abap_true.
+        IF xsdbool( t35 = abap_false ) = abap_true.
           t4->close( ).
         ENDIF.
         t33 = t34.
@@ -221,15 +173,8 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   METHOD r_i_s_r_e_t_f_ms_ts_es_t_fn_ms.
     DATA(t1) = i_object_19cd.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA t4 TYPE abap_bool.
-    DATA t5 TYPE string.
-    t5 = t1->get_type( ).
-    DATA(t7) = |MSAG|.
-    t4 = xsdbool( t5 = t7 ).
-    IF t4 = abap_true.
+    CREATE OBJECT t2.
+    IF xsdbool( t1->get_type( ) = |MSAG| ) = abap_true.
       DATA t8 TYPE REF TO zcl_lnt_ob_message_class.
       DATA t9 TYPE REF TO zcl_lnt_ob_message_class.
       t9 ?= t1.
@@ -240,29 +185,18 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
       t12->parse_xml( ).
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t18 TYPE REF TO zcl_lnt_parsed_message_class.
-      DATA t19 TYPE REF TO zcl_lnt_parsed_message_class.
-      t19 = t12->xml.
-      t18 = t19.
+      t18 = t12->xml.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t22) = xsdbool( t18 IS INITIAL ).
-      IF t22 = abap_true.
+      IF xsdbool( t18 IS INITIAL ) = abap_true.
       ELSE.
-        DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t26 TYPE REF TO zcl_lnt_parsed_message_class.
-        t26 = t18.
-        t25 = t26->parsed_messages.
-        t21 = t25.
+        t21 = t18->parsed_messages.
       ENDIF.
       t16 = t21.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t29 TYPE abap_bool.
-      t29 = xsdbool( t16 IS BOUND ).
-      IF t29 = abap_true.
+      IF xsdbool( t16 IS BOUND ) = abap_true.
         t28 = t16.
       ELSE.
-        DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t33.
-        t28 = t33.
+        CREATE OBJECT t28.
       ENDIF.
       t11 = t28.
       DATA t34 TYPE REF TO zcl_lnt_ty_message.
@@ -289,16 +223,12 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
         ENDIF.
         DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t39.
-        DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t40.
         DATA(t41) = me->msag_references.
         DATA t42 TYPE string.
         DATA t43 TYPE string.
         DATA t44 TYPE REF TO zcl_lnt_abstract_object.
         t44 = t8.
-        DATA t46 TYPE string.
-        t46 = t44->name.
-        t43 = t46.
+        t43 = t44->name.
         DATA(t48) = strlen( t43 ).
         t42 = t43.
         IF t42 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -307,41 +237,24 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           t42 = zlnt_runtime_uppe_91169605024d=>full( t42 ).
         ENDIF.
         DATA t49 TYPE string.
-        DATA t52 TYPE string.
-        DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t53 = t34->number.
-        t52 = t53->value.
-        t49 = t52.
-        t40 = t41->list_by_message( i_message_class = t42 i_number = t49 ).
-        t39 = t40.
-        DATA t55 TYPE abap_bool.
-        DATA t56 TYPE i.
+        t49 = t34->number->value.
+        t39 = t41->list_by_message( i_message_class = t42 i_number = t49 ).
         t39->load( ).
-        t56 = lines( t39->items ).
-        DATA(t58) = 0.
-        t55 = xsdbool( t56 = t58 ).
-        IF t55 = abap_true.
+        IF xsdbool( lines( t39->items ) = 0 ) = abap_true.
           DATA t60 TYPE string.
           DATA t61 TYPE string.
           DATA(t62) = |Message |.
           DATA t63 TYPE string.
-          DATA t66 TYPE string.
-          DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t67 = t34->number.
-          t66 = t67->value.
-          t63 = t66.
+          t63 = t34->number->value.
           DATA(t69) = strlen( t62 ).
           t61 = |{ t62 }{ t63 }|.
-          DATA(t70) = | not statically referenced|.
           DATA(t71) = strlen( t61 ).
-          t60 = |{ t61 }{ t70 }|.
+          t60 = |{ t61 }{ | not statically referenced| }|.
           DATA t73 TYPE REF TO zcl_lnt_position.
-          DATA(t74) = CONV f( 1 ).
-          DATA(t75) = CONV f( 1 ).
           DATA(t76) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t76->has = abap_true.
-          t76->value = t75.
-          t73 = NEW zcl_lnt_position( i_row = t74 i_col = t76 ).
+          t76->value = CONV f( 1 ).
+          t73 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t76 ).
           DATA t78 TYPE REF TO zcl_lnt_issue.
           CLEAR t78.
           DATA t79 TYPE REF TO zif_lnt_file.
@@ -367,12 +280,6 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           DATA(t87) = VALUE string( ).
           DATA t88 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t88.
-          DATA t89 TYPE string.
-          t89 = |easy_to_find_messages|.
-          DATA t91 TYPE string.
-          t91 = |Easy to find messages|.
-          DATA t93 TYPE string.
-          t93 = |Make messages easy to find|.
           DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t95.
           DATA(t98) = |All messages must be statically referenced exactly once\n\nOnl|.
@@ -387,12 +294,9 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           DATA t101 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t101.
           DATA t105 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t106 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t106.
-          t105 = t106.
-          DATA(t108) = |Styleguide|.
+          CREATE OBJECT t105.
           t105->load( ).
-          APPEND t108 TO t105->items.
+          APPEND |Styleguide| TO t105->items.
           t105->save( ).
           t101 = t105.
           DATA t111 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -403,7 +307,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           CLEAR t115.
           DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t117.
-          t88 = NEW zcl_lnt_irule_metadata( i_key = t89 i_title = t91 i_short_description = t93 i_bad_example = t111 i_good_example = t113 i_extended_information = t95 i_tags = t101 i_pragma = t115 i_pseudo_comment = t117 ).
+          t88 = NEW zcl_lnt_irule_metadata( i_key = |easy_to_find_messages| i_title = |Easy to find messages| i_short_description = |Make messages easy to find| i_bad_example = t111 i_good_example = t113 i_extended_information = t95 i_tags = t101 i_pragma = t115 i_pseudo_comment = t117 ).
           CREATE OBJECT t88->zlnt_view_ownkeys_b0e8086400eb.
           t88->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -431,33 +335,28 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t88->zlnt_json_ownkeys_70e5fd461788.
           t88->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t124) = |key|.
           DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t125.
-          t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t124 p1 = t125 ).
-          DATA(t126) = |title|.
+          t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t125 ).
           DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t127.
           IF t88->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t126 p1 = t127 ).
+            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t127 ).
           ENDIF.
-          DATA(t128) = |shortDescription|.
           DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t129.
           IF t88->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t128 p1 = t129 ).
+            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t129 ).
           ENDIF.
-          DATA(t130) = |extendedInformation|.
           DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t131.
           IF t88->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t130 p1 = t131 ).
+            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t131 ).
           ENDIF.
-          DATA(t132) = |tags|.
           DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t133.
           IF t88->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t132 p1 = t133 ).
+            t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t133 ).
           ENDIF.
           t87 = t88->key.
           DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -469,34 +368,22 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           APPEND t78 TO t2->items.
           t2->save( ).
         ELSE.
-          DATA t139 TYPE abap_bool.
-          DATA t140 TYPE i.
           t39->load( ).
-          t140 = lines( t39->items ).
-          DATA(t142) = 2.
-          t139 = xsdbool( t140 >= t142 ).
-          IF t139 = abap_true.
+          IF xsdbool( lines( t39->items ) >= 2 ) = abap_true.
             DATA t144 TYPE string.
             DATA t145 TYPE string.
             DATA(t146) = |Message |.
             DATA t147 TYPE string.
-            DATA t150 TYPE string.
-            DATA t151 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t151 = t34->number.
-            t150 = t151->value.
-            t147 = t150.
+            t147 = t34->number->value.
             DATA(t153) = strlen( t146 ).
             t145 = |{ t146 }{ t147 }|.
-            DATA(t154) = | referenced more than once|.
             DATA(t155) = strlen( t145 ).
-            t144 = |{ t145 }{ t154 }|.
+            t144 = |{ t145 }{ | referenced more than once| }|.
             DATA t157 TYPE REF TO zcl_lnt_position.
-            DATA(t158) = CONV f( 1 ).
-            DATA(t159) = CONV f( 1 ).
             DATA(t160) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
             t160->has = abap_true.
-            t160->value = t159.
-            t157 = NEW zcl_lnt_position( i_row = t158 i_col = t160 ).
+            t160->value = CONV f( 1 ).
+            t157 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t160 ).
             DATA t162 TYPE REF TO zcl_lnt_issue.
             CLEAR t162.
             DATA t163 TYPE REF TO zif_lnt_file.
@@ -522,12 +409,6 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
             DATA(t171) = VALUE string( ).
             DATA t172 TYPE REF TO zcl_lnt_irule_metadata.
             CLEAR t172.
-            DATA t173 TYPE string.
-            t173 = |easy_to_find_messages|.
-            DATA t175 TYPE string.
-            t175 = |Easy to find messages|.
-            DATA t177 TYPE string.
-            t177 = |Make messages easy to find|.
             DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t179.
             DATA(t182) = |All messages must be statically referenced exactly once\n\nOnl|.
@@ -542,12 +423,9 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
             DATA t185 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t185.
             DATA t189 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            DATA t190 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CREATE OBJECT t190.
-            t189 = t190.
-            DATA(t192) = |Styleguide|.
+            CREATE OBJECT t189.
             t189->load( ).
-            APPEND t192 TO t189->items.
+            APPEND |Styleguide| TO t189->items.
             t189->save( ).
             t185 = t189.
             DATA t195 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -558,7 +436,7 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
             CLEAR t199.
             DATA t201 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t201.
-            t172 = NEW zcl_lnt_irule_metadata( i_key = t173 i_title = t175 i_short_description = t177 i_bad_example = t195 i_good_example = t197 i_extended_information = t179 i_tags = t185 i_pragma = t199 i_pseudo_comment = t201 ).
+            t172 = NEW zcl_lnt_irule_metadata( i_key = |easy_to_find_messages| i_title = |Easy to find messages| i_short_description = |Make messages easy to find| i_bad_example = t195 i_good_example = t197 i_extended_information = t179 i_tags = t185 i_pragma = t199 i_pseudo_comment = t201 ).
             CREATE OBJECT t172->zlnt_view_ownkeys_b0e8086400eb.
             t172->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
             DATA t203 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -586,33 +464,28 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t172->zlnt_json_ownkeys_70e5fd461788.
             t172->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t208) = |key|.
             DATA t209 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t209.
-            t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = t208 p1 = t209 ).
-            DATA(t210) = |title|.
+            t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t209 ).
             DATA t211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t211.
             IF t172->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = t210 p1 = t211 ).
+              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t211 ).
             ENDIF.
-            DATA(t212) = |shortDescription|.
             DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t213.
             IF t172->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = t212 p1 = t213 ).
+              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t213 ).
             ENDIF.
-            DATA(t214) = |extendedInformation|.
             DATA t215 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t215.
             IF t172->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = t214 p1 = t215 ).
+              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t215 ).
             ENDIF.
-            DATA(t216) = |tags|.
             DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t217.
             IF t172->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = t216 p1 = t217 ).
+              t172->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t217 ).
             ENDIF.
             t171 = t172->key.
             DATA t218 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -672,10 +545,8 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t3) = i_obj_1ed0.
-    t2 = me->r_i_s_r_e_t_f_ms_ts_es_t_fn_ms( i_object_19cd = t3 ).
-    result = t2.
+    result = me->r_i_s_r_e_t_f_ms_ts_es_t_fn_ms( i_object_19cd = t3 ).
 
   ENDMETHOD.
 

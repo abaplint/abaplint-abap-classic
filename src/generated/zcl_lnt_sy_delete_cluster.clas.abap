@@ -55,39 +55,26 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
       t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
     ENDDO.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
-    DATA t22 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t24) = |DATABASE|.
-    t22 = t1->find_expression_after_token( i_text = t24 ).
-    t21 = t22.
-    DATA t25 TYPE abap_bool.
-    t25 = xsdbool( t21 IS BOUND ).
-    IF t25 = abap_true.
+    t21 = t1->find_expression_after_token( i_text = |DATABASE| ).
+    IF xsdbool( t21 IS BOUND ) = abap_true.
       DATA t27 TYPE REF TO zcl_lnt_ilookup_result.
       DATA t29 TYPE REF TO zcl_lnt_ddic.
-      DATA t32 TYPE REF TO zcl_lnt_current_scope.
-      t32 = t2->scope.
-      DATA t34 TYPE REF TO zcl_lnt_ddic.
       DATA t35 TYPE REF TO zif_lnt_registry.
-      t35 = t32->reg.
-      t34 = NEW zcl_lnt_ddic( i_reg_f149 = t35 ).
-      t29 = t34.
+      t35 = t2->scope->reg.
+      t29 = NEW zcl_lnt_ddic( i_reg_f149 = t35 ).
       DATA t37 TYPE REF TO zcl_lnt_ilookup_result.
-      DATA(t38) = xsdbool( t29 IS INITIAL ).
-      IF t38 = abap_true.
+      IF xsdbool( t29 IS INITIAL ) = abap_true.
       ELSE.
         DATA t42 TYPE REF TO zcl_lnt_ddic.
         t42 = t29.
         DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t47 TYPE string.
-        DATA t48 TYPE REF TO zcl_lnt_expression_node.
-        t48 = t21.
-        t47 = t48->concat_tokens( ).
+        t47 = t21->concat_tokens( ).
         DATA(t50) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t50->has = abap_true.
         t50->value = t47.
         t44 = t50.
         DATA t52 TYPE REF TO zcl_lnt_ilookup_result.
-        DATA(t53) = VALUE abap_bool( ).
         DATA t54 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t54 = t44.
         DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -97,15 +84,11 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
         ELSEIF t54->has = abap_false.
           t58 = abap_true.
         ENDIF.
-        t53 = t58.
-        IF t53 = abap_true.
+        IF t58 = abap_true.
           DATA t60 TYPE REF TO zcl_lnt_ilookup_result.
           DATA t61 TYPE REF TO zcl_lnt_abstract_type.
-          DATA t62 TYPE REF TO zcl_lnt_unknown_type.
-          DATA(t63) = |undefined, lookupTableOrView|.
           DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t62 = NEW zcl_lnt_unknown_type( i_error = t63 i_qualified_name = t64 ).
-          t61 = t62.
+          t61 = NEW zcl_lnt_unknown_type( i_error = |undefined, lookupTableOrView| i_qualified_name = t64 ).
           DATA t65 TYPE REF TO zif_lnt_object.
           t60 = NEW zcl_lnt_ilookup_result( i_type_9913 = t61 i_object_19cd = t65 ).
           CREATE OBJECT t60->zlnt_view_ownkeys_b0e8086400eb.
@@ -114,49 +97,39 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
           t60->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t67 ).
           CREATE OBJECT t60->zlnt_json_ownkeys_70e5fd461788.
           t60->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t68) = |type|.
           DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t60->zlnt_json_ownkeys_70e5fd461788->put( p0 = t68 p1 = t69 ).
+          t60->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t69 ).
           t52 = t60.
         ELSE.
           DATA t71 TYPE REF TO zcl_lnt_table.
           DATA t72 TYPE REF TO zcl_lnt_table.
-          DATA t73 TYPE REF TO zif_lnt_object.
           DATA t74 TYPE REF TO zif_lnt_registry.
           t74 = t42->reg.
           DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t78) = |TABL|.
           DATA(t79) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t79->has = abap_true.
-          t79->value = t78.
+          t79->value = |TABL|.
           t76 = t79.
-          DATA t81 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           DATA t83 TYPE string.
           t83 = t44->value.
           DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t85->has = abap_true.
           t85->value = t83.
-          t81 = t85.
-          t73 = t74->get_object( i_type_9913 = t76 i_name = t81 ).
           DATA t87 TYPE REF TO object.
-          t87 = t73.
+          t87 = t74->get_object( i_type_9913 = t76 i_name = t85 ).
           t72 ?= t87.
           t71 = t72.
           DATA t88 TYPE REF TO zcl_lnt_ilookup_result.
-          DATA t89 TYPE abap_bool.
-          t89 = xsdbool( t71 IS BOUND ).
-          IF t89 = abap_true.
+          IF xsdbool( t71 IS BOUND ) = abap_true.
             DATA t91 TYPE REF TO zcl_lnt_ilookup_result.
             DATA t92 TYPE REF TO zcl_lnt_abstract_type.
-            DATA t93 TYPE REF TO zcl_lnt_abstract_type.
             DATA t94 TYPE REF TO zcl_lnt_table.
             t94 = t71.
             DATA t96 TYPE REF TO zif_lnt_registry.
             t96 = t42->reg.
             DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t93 = t94->parse_type( i_reg_f149 = t96 i_data_element = t98 i_description = t99 ).
-            t92 = t93.
+            t92 = t94->parse_type( i_reg_f149 = t96 i_data_element = t98 i_description = t99 ).
             DATA t100 TYPE REF TO zif_lnt_object.
             t100 = t71.
             t91 = NEW zcl_lnt_ilookup_result( i_type_9913 = t92 i_object_19cd = t100 ).
@@ -170,31 +143,23 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t91->zlnt_json_ownkeys_70e5fd461788.
             t91->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t105) = |type|.
             DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            t91->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
-            DATA(t107) = |object|.
+            t91->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t106 ).
             DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             IF t91->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t91->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
+              t91->zlnt_json_ownkeys_70e5fd461788->put( p0 = |object| p1 = t108 ).
             ENDIF.
             t88 = t91.
           ELSE.
             DATA t110 TYPE REF TO zcl_lnt_ilookup_result.
-            DATA t111 TYPE REF TO zcl_lnt_ilookup_result.
-            DATA t113 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t115 TYPE string.
             t115 = t44->value.
             DATA(t117) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t117->has = abap_true.
             t117->value = t115.
-            t113 = t117.
-            t111 = t42->lookup_ddls( i_name = t113 ).
-            t110 = t111.
+            t110 = t42->lookup_ddls( i_name = t117 ).
             DATA t119 TYPE REF TO zcl_lnt_ilookup_result.
-            DATA t120 TYPE abap_bool.
-            t120 = xsdbool( t110 IS BOUND ).
-            IF t120 = abap_true.
+            IF xsdbool( t110 IS BOUND ) = abap_true.
               t119 = t110.
             ELSE.
               DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -205,7 +170,6 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
               t130->value = t128.
               t125 = t130.
               DATA t132 TYPE REF TO zcl_lnt_ilookup_result.
-              DATA(t133) = VALUE abap_bool( ).
               DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               t134 = t125.
               DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -215,15 +179,11 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
               ELSEIF t134->has = abap_false.
                 t138 = abap_true.
               ENDIF.
-              t133 = t138.
-              IF t133 = abap_true.
+              IF t138 = abap_true.
                 DATA t140 TYPE REF TO zcl_lnt_ilookup_result.
                 DATA t141 TYPE REF TO zcl_lnt_abstract_type.
-                DATA t142 TYPE REF TO zcl_lnt_unknown_type.
-                DATA(t143) = |undefined, lookupView|.
                 DATA t144 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                t142 = NEW zcl_lnt_unknown_type( i_error = t143 i_qualified_name = t144 ).
-                t141 = t142.
+                t141 = NEW zcl_lnt_unknown_type( i_error = |undefined, lookupView| i_qualified_name = t144 ).
                 DATA t145 TYPE REF TO zif_lnt_object.
                 t140 = NEW zcl_lnt_ilookup_result( i_type_9913 = t141 i_object_19cd = t145 ).
                 CREATE OBJECT t140->zlnt_view_ownkeys_b0e8086400eb.
@@ -232,49 +192,39 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
                 t140->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t147 ).
                 CREATE OBJECT t140->zlnt_json_ownkeys_70e5fd461788.
                 t140->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-                DATA(t148) = |type|.
                 DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                t140->zlnt_json_ownkeys_70e5fd461788->put( p0 = t148 p1 = t149 ).
+                t140->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t149 ).
                 t132 = t140.
               ELSE.
                 DATA t151 TYPE REF TO zcl_lnt_table.
                 DATA t152 TYPE REF TO zcl_lnt_table.
-                DATA t153 TYPE REF TO zif_lnt_object.
                 DATA t154 TYPE REF TO zif_lnt_registry.
                 t154 = t42->reg.
                 DATA t156 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                DATA(t158) = |VIEW|.
                 DATA(t159) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t159->has = abap_true.
-                t159->value = t158.
+                t159->value = |VIEW|.
                 t156 = t159.
-                DATA t161 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 DATA t163 TYPE string.
                 t163 = t125->value.
                 DATA(t165) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t165->has = abap_true.
                 t165->value = t163.
-                t161 = t165.
-                t153 = t154->get_object( i_type_9913 = t156 i_name = t161 ).
                 DATA t167 TYPE REF TO object.
-                t167 = t153.
+                t167 = t154->get_object( i_type_9913 = t156 i_name = t165 ).
                 t152 ?= t167.
                 t151 = t152.
                 DATA t168 TYPE REF TO zcl_lnt_ilookup_result.
-                DATA t169 TYPE abap_bool.
-                t169 = xsdbool( t151 IS BOUND ).
-                IF t169 = abap_true.
+                IF xsdbool( t151 IS BOUND ) = abap_true.
                   DATA t171 TYPE REF TO zcl_lnt_ilookup_result.
                   DATA t172 TYPE REF TO zcl_lnt_abstract_type.
-                  DATA t173 TYPE REF TO zcl_lnt_abstract_type.
                   DATA t174 TYPE REF TO zcl_lnt_table.
                   t174 = t151.
                   DATA t176 TYPE REF TO zif_lnt_registry.
                   t176 = t42->reg.
                   DATA t178 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                   DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                  t173 = t174->parse_type( i_reg_f149 = t176 i_data_element = t178 i_description = t179 ).
-                  t172 = t173.
+                  t172 = t174->parse_type( i_reg_f149 = t176 i_data_element = t178 i_description = t179 ).
                   DATA t180 TYPE REF TO zif_lnt_object.
                   t180 = t151.
                   t171 = NEW zcl_lnt_ilookup_result( i_type_9913 = t172 i_object_19cd = t180 ).
@@ -288,36 +238,27 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
                   ENDIF.
                   CREATE OBJECT t171->zlnt_json_ownkeys_70e5fd461788.
                   t171->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-                  DATA(t185) = |type|.
                   DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                  t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t185 p1 = t186 ).
-                  DATA(t187) = |object|.
+                  t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t186 ).
                   DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
                   IF t171->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                    t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = t187 p1 = t188 ).
+                    t171->zlnt_json_ownkeys_70e5fd461788->put( p0 = |object| p1 = t188 ).
                   ENDIF.
                   t168 = t171.
                 ELSE.
                   DATA t189 TYPE REF TO zcl_lnt_ilookup_result.
-                  DATA t190 TYPE abap_bool.
                   DATA t191 TYPE REF TO zif_lnt_registry.
                   t191 = t42->reg.
                   DATA t193 TYPE string.
                   t193 = t125->value.
-                  t190 = t191->in_error_namespace( i_name = t193 ).
-                  IF t190 = abap_true.
+                  IF t191->in_error_namespace( i_name = t193 ) = abap_true.
                     DATA t195 TYPE REF TO zcl_lnt_ilookup_result.
                     DATA t196 TYPE REF TO zcl_lnt_abstract_type.
-                    DATA t197 TYPE REF TO zcl_lnt_unknown_type.
-                    DATA t198 TYPE string.
                     DATA t199 TYPE string.
                     t199 = t125->value.
-                    DATA(t201) = | not found, lookupView|.
                     DATA(t202) = strlen( t199 ).
-                    t198 = |{ t199 }{ t201 }|.
                     DATA t203 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                    t197 = NEW zcl_lnt_unknown_type( i_error = t198 i_qualified_name = t203 ).
-                    t196 = t197.
+                    t196 = NEW zcl_lnt_unknown_type( i_error = |{ t199 }{ | not found, lookupView| }| i_qualified_name = t203 ).
                     DATA t204 TYPE REF TO zif_lnt_object.
                     t195 = NEW zcl_lnt_ilookup_result( i_type_9913 = t196 i_object_19cd = t204 ).
                     CREATE OBJECT t195->zlnt_view_ownkeys_b0e8086400eb.
@@ -326,24 +267,19 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
                     t195->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t206 ).
                     CREATE OBJECT t195->zlnt_json_ownkeys_70e5fd461788.
                     t195->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-                    DATA(t207) = |type|.
                     DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                    t195->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
+                    t195->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t208 ).
                     t189 = t195.
                   ELSE.
                     DATA t209 TYPE REF TO zcl_lnt_ilookup_result.
                     DATA t210 TYPE REF TO zcl_lnt_abstract_type.
-                    DATA t211 TYPE REF TO zcl_lnt_void_type.
-                    DATA t212 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     DATA t214 TYPE string.
                     t214 = t125->value.
                     DATA(t216) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                     t216->has = abap_true.
                     t216->value = t214.
-                    t212 = t216.
                     DATA t218 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                    t211 = zcl_lnt_void_type=>get_db65( i_voided = t212 i_qualified_name = t218 ).
-                    t210 = t211.
+                    t210 = zcl_lnt_void_type=>get_db65( i_voided = t216 i_qualified_name = t218 ).
                     DATA t219 TYPE REF TO zif_lnt_object.
                     t209 = NEW zcl_lnt_ilookup_result( i_type_9913 = t210 i_object_19cd = t219 ).
                     CREATE OBJECT t209->zlnt_view_ownkeys_b0e8086400eb.
@@ -352,9 +288,8 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
                     t209->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t221 ).
                     CREATE OBJECT t209->zlnt_json_ownkeys_70e5fd461788.
                     t209->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-                    DATA(t222) = |type|.
                     DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                    t209->zlnt_json_ownkeys_70e5fd461788->put( p0 = t222 p1 = t223 ).
+                    t209->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t223 ).
                     t189 = t209.
                   ENDIF.
                   t168 = t189.
@@ -370,47 +305,26 @@ CLASS zcl_lnt_sy_delete_cluster IMPLEMENTATION.
         t37 = t52.
       ENDIF.
       t27 = t37.
-      DATA t224 TYPE abap_bool.
       DATA t225 TYPE REF TO zcl_lnt_ilookup_result.
       t225 = t27.
-      t224 = xsdbool( t225 IS BOUND ).
-      IF t224 = abap_true.
+      IF xsdbool( t225 IS BOUND ) = abap_true.
         DATA t227 TYPE REF TO zif_lnt_ddic_references.
-        DATA t229 TYPE REF TO zcl_lnt_current_scope.
-        t229 = t2->scope.
-        DATA t231 TYPE REF TO zif_lnt_ddic_references.
-        DATA t232 TYPE REF TO zif_lnt_registry.
-        t232 = t229->reg.
-        t231 = t232->get_ddic_references( ).
-        t227 = t231.
+        t227 = t2->scope->reg->get_ddic_references( ).
         DATA t234 TYPE REF TO zif_lnt_object.
-        DATA t236 TYPE REF TO zcl_lnt_current_scope.
-        t236 = t2->scope.
-        DATA t238 TYPE REF TO zif_lnt_object.
-        t238 = t236->parent_obj.
-        t234 = t238.
-        DATA t240 TYPE REF TO zcl_lnt_iobject_and_token.
+        t234 = t2->scope->parent_obj.
         DATA t242 TYPE REF TO zcl_lnt_iobject_and_token.
-        DATA t243 TYPE REF TO zif_lnt_object.
-        DATA t244 TYPE REF TO zif_lnt_object.
-        DATA t245 TYPE REF TO zcl_lnt_ilookup_result.
-        t245 = t27.
-        t244 = t245->zlnt_view_read_sr_2de0200e6505( ).
-        t243 = t244.
         DATA t247 TYPE REF TO zcl_lnt_abstract_token.
         DATA t249 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t242 = NEW zcl_lnt_iobject_and_token( i_object_19cd = t243 i_token = t247 i_filename = t249 ).
+        t242 = NEW zcl_lnt_iobject_and_token( i_object_19cd = t27->zlnt_view_read_sr_2de0200e6505( ) i_token = t247 i_filename = t249 ).
         CREATE OBJECT t242->zlnt_view_ownkeys_b0e8086400eb.
         t242->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         t242->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `object` p1 = t251 ).
         CREATE OBJECT t242->zlnt_json_ownkeys_70e5fd461788.
         t242->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t252) = |object|.
         DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t242->zlnt_json_ownkeys_70e5fd461788->put( p0 = t252 p1 = t253 ).
-        t240 = t242.
-        t227->add_using( i_obj_1ed0 = t234 i_using = t240 ).
+        t242->zlnt_json_ownkeys_70e5fd461788->put( p0 = |object| p1 = t253 ).
+        t227->add_using( i_obj_1ed0 = t234 i_using = t242 ).
       ENDIF.
     ENDIF.
   ENDMETHOD.

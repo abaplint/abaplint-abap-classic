@@ -13,22 +13,18 @@ CLASS zcl_lnt_rollback DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rollback IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |ROLLBACK|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |ROLLBACK|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |WORK|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |WORK|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d155_5eb73ae6c401.
     IF t16 IS BOUND.
@@ -38,9 +34,7 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
-    DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t12 i_second = t15 i_rest = t18 ).
-    t10 = t19.
+    t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t12 i_second = t15 i_rest = t18 ).
     IF t10 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t24 TYPE REF TO object.
@@ -66,9 +60,7 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
     ENDIF.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t26.
-    DATA t27 TYPE REF TO zif_lnt_statement_runnable.
-    t27 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t26 ).
-    t4 = t27.
+    t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t26 ).
     IF t4 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t32 TYPE REF TO object.
@@ -92,8 +84,7 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

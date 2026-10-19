@@ -15,13 +15,10 @@ CLASS zcl_lnt_unknown IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = |Unknown Statement, get_matcher|.
     DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t6->has = abap_true.
-    t6->value = t5.
-    t3 = t6.
-    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
+    t6->value = |Unknown Statement, get_matcher|.
+    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t6 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.

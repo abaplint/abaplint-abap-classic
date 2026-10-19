@@ -22,34 +22,27 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Optional(|.
     DATA t4 TYPE string.
     t4 = me->obj->to_railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->obj->get_using( ).
-    result = t1.
+    result = me->obj->get_using( ).
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t2) = i_parent.
     DATA t3 TYPE REF TO zcl_lnt_imatch.
-    DATA t4 TYPE REF TO zcl_lnt_imatch.
     DATA(t6) = i_statements.
-    t4 = me->obj->run( i_statements = t6 i_parent = t2 ).
-    t3 = t4.
+    t3 = me->obj->run( i_statements = t6 i_parent = t2 ).
     DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t12->has = abap_true.
     t12->value = abap_false.
@@ -59,10 +52,9 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
     IF t3->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t3->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t14 ).
     ENDIF.
-    DATA(t15) = |error|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t3->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t16 ).
     ENDIF.
     result = t3.
 
@@ -70,12 +62,9 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 

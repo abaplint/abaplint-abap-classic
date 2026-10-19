@@ -32,26 +32,17 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     DATA t2 TYPE string.
     DATA(t3) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
     t2 = t3.
-    DATA t4 TYPE string.
-    t4 = |Check syntax|.
-    DATA t6 TYPE string.
-    t6 = |Enables syntax check and variable resolution|.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Syntax|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Syntax| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t8 i_pragma = t24 i_pseudo_comment = t26 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = |Check syntax| i_short_description = |Enables syntax check and variable resolution| i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t12 i_pragma = t24 i_pseudo_comment = t26 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -70,23 +61,19 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = |key|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-    DATA(t34) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t33 ).
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t35 ).
     ENDIF.
-    DATA(t36) = |shortDescription|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |tags|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t39 ).
     ENDIF.
     result = t1.
 
@@ -111,29 +98,17 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t8 TYPE REF TO zcl_lnt_isyntax_result.
-    DATA t9 TYPE REF TO zcl_lnt_syntax_logic.
     DATA(t10) = me->reg.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
     DATA t13 TYPE REF TO object.
     t13 = t1.
     t11 ?= t13.
-    t9 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 ).
-    t8 = t9->run( ).
-    t7 = t8->zlnt_view_read_sr_bd188c319c03( ).
-    t6 = t7.
+    t6 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 )->run( )->zlnt_view_read_sr_bd188c319c03( ).
     DATA(t14) = VALUE abap_bool( ).
     DATA(t15) = VALUE abap_bool( ).
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -145,30 +120,21 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     ENDIF.
     t14 = t15.
     IF t15 = abap_true.
-      DATA t18 TYPE abap_bool.
       DATA t19 TYPE string.
-      DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t20 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-      t19 = t20->value.
-      DATA(t22) = |Error|.
-      t18 = xsdbool( t19 <> t22 ).
-      t14 = t18.
+      t19 = me->conf->zlnt_view_read_sr_15c06369f827( )->value.
+      t14 = xsdbool( t19 <> |Error| ).
     ENDIF.
     IF t14 = abap_true.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t24 = t6.
       DATA t26 TYPE i.
-      DATA t27 TYPE i.
       t24->load( ).
-      t27 = lines( t24->items ).
-      t26 = t27.
+      t26 = lines( t24->items ).
       DATA t29 TYPE i.
       t29 = 0.
       DO.
-        DATA t31 TYPE abap_bool.
-        t31 = xsdbool( t29 < t26 ).
-        IF t31 = abap_false.
+        IF xsdbool( t29 < t26 ) = abap_false.
           EXIT.
         ENDIF.
         DATA t36 TYPE REF TO zcl_lnt_issue.
@@ -187,33 +153,22 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
           t36 ?= t39.
         ENDIF.
         DATA t44 TYPE REF TO zcl_lnt_iissue_data.
-        DATA t48 TYPE REF TO zcl_lnt_iissue_data.
-        t48 = t36->data_56cc.
-        t44 = t48.
-        DATA t51 TYPE string.
-        DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t52 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-        t51 = t52->value.
-        t44->severity = t51.
+        t44 = t36->data_56cc.
+        t44->severity = me->conf->zlnt_view_read_sr_15c06369f827( )->value.
         DELETE t44->zlnt_record_delet_0597644d88b4 WHERE table_line = `severity`.
         DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t54.
         IF t44->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
           t44->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `severity` p1 = t54 ).
         ENDIF.
-        DATA(t55) = |severity|.
         DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t56.
         IF t44->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+          t44->zlnt_json_ownkeys_70e5fd461788->put( p0 = |severity| p1 = t56 ).
         ENDIF.
-        DATA t59 TYPE REF TO zcl_lnt_issue.
-        t59 = NEW zcl_lnt_issue( i_data_dc02 = t44 ).
-        t6->put( p0 = t29 p1 = t59 ).
-        DATA t61 TYPE i.
+        t6->put( p0 = t29 p1 = NEW zcl_lnt_issue( i_data_dc02 = t44 ) ).
         DATA(t63) = 1.
-        t61 = t29 + t63.
-        t29 = t61.
+        t29 = t29 + t63.
       ENDDO.
     ENDIF.
     result = t6.
@@ -230,10 +185,8 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_check_syntax.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_chc_syn_ts_chc_syn( i_reg_f149 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_chc_syn_ts_chc_syn( i_reg_f149 = t3 ).
 
   ENDMETHOD.
 

@@ -25,44 +25,32 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |names_no_dash|.
-    DATA t4 TYPE string.
-    t4 = |No dashes in FORM and DATA names|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
     t7 = t7 && |names|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    DATA(t17) = |Naming|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |Naming| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t23) = |DATA foo-bar TYPE i.|.
     DATA(t24) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t24->has = abap_true.
-    t24->value = t23.
+    t24->value = |DATA foo-bar TYPE i.|.
     t20 = t24.
-    DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t29) = |DATA foobar TYPE i.|.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
-    t30->value = t29.
-    t26 = t30.
+    t30->value = |DATA foobar TYPE i.|.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t26 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |names_no_dash| i_title = |No dashes in FORM and DATA names| i_short_description = t6 i_bad_example = t20 i_good_example = t30 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -89,33 +77,27 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t44) = |key|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
-    DATA(t46) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t45 ).
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t47 ).
     ENDIF.
-    DATA(t48) = |shortDescription|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |tags|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |badExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |goodExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t55 ).
     ENDIF.
     result = t1.
 
@@ -140,34 +122,20 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_obj_1ed0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE REF TO zcl_lnt_structure_node.
-    DATA t9 TYPE REF TO zcl_lnt_structure_node.
-    t9 = t1->structure.
-    t5 = t9.
-    DATA(t11) = VALUE abap_bool( ).
+    t5 = t1->structure.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t11 = xsdbool( t5 IS INITIAL ).
-    IF t11 = abap_true.
+    IF xsdbool( t5 IS INITIAL ) = abap_true.
       result = t3.
       RETURN.
     ENDIF.
     DATA t19 TYPE abap_bool.
     DATA t20 TYPE abap_bool.
-    DATA t21 TYPE string.
-    t21 = t2->get_type( ).
-    DATA(t23) = |CLAS|.
-    t20 = xsdbool( t21 <> t23 ).
+    t20 = xsdbool( t2->get_type( ) <> |CLAS| ).
     t19 = t20.
     IF t20 = abap_true.
-      DATA t24 TYPE abap_bool.
-      DATA t25 TYPE string.
-      t25 = t2->get_type( ).
-      DATA(t27) = |INTF|.
-      t24 = xsdbool( t25 <> t27 ).
-      t19 = t24.
+      t19 = xsdbool( t2->get_type( ) <> |INTF| ).
     ENDIF.
     IF t19 = abap_true.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -206,33 +174,20 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         t43 = t38.
         DATA t45 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t45.
-        DATA(t46) = xsdbool( t43 IS INITIAL ).
-        IF t46 = abap_true.
+        IF xsdbool( t43 IS INITIAL ) = abap_true.
           CLEAR t45.
         ELSE.
-          DATA t49 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t50 TYPE REF TO zcl_lnt_expression_node.
-          t50 = t43.
-          DATA(t52) = |-|.
-          t49 = t50->find_direct_token_by_text( i_text = t52 ).
-          t45 = t49.
+          t45 = t43->find_direct_token_by_text( i_text = |-| ).
         ENDIF.
         t41 = t45.
-        DATA t53 TYPE abap_bool.
-        t53 = xsdbool( t41 IS BOUND ).
-        IF t53 = abap_true.
+        IF xsdbool( t41 IS BOUND ) = abap_true.
           DATA t56 TYPE REF TO zcl_lnt_issue.
           CLEAR t56.
           DATA t58 TYPE REF TO zcl_lnt_abstract_token.
           t58 = t41.
-          DATA(t60) = |No dash allowed in FORM and DATA names|.
           DATA(t61) = VALUE string( ).
           DATA t62 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t62.
-          DATA t63 TYPE string.
-          t63 = |names_no_dash|.
-          DATA t65 TYPE string.
-          t65 = |No dashes in FORM and DATA names|.
           DATA t67 TYPE string.
           DATA(t68) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t68 = t68 && |names|.
@@ -240,31 +195,25 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t69.
           DATA t73 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t74 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t74.
-          t73 = t74.
-          DATA(t76) = |SingleFile|.
+          CREATE OBJECT t73.
           t73->load( ).
-          APPEND t76 TO t73->items.
+          APPEND |SingleFile| TO t73->items.
           t73->save( ).
-          DATA(t78) = |Naming|.
           t73->load( ).
-          APPEND t78 TO t73->items.
+          APPEND |Naming| TO t73->items.
           t73->save( ).
           t69 = t73.
           DATA t81 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t81.
-          DATA(t84) = |DATA foo-bar TYPE i.|.
           DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t85->has = abap_true.
-          t85->value = t84.
+          t85->value = |DATA foo-bar TYPE i.|.
           t81 = t85.
           DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t87.
-          DATA(t90) = |DATA foobar TYPE i.|.
           DATA(t91) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t91->has = abap_true.
-          t91->value = t90.
+          t91->value = |DATA foobar TYPE i.|.
           t87 = t91.
           DATA t93 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t93.
@@ -272,7 +221,7 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           CLEAR t95.
           DATA t97 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t97.
-          t62 = NEW zcl_lnt_irule_metadata( i_key = t63 i_title = t65 i_short_description = t67 i_bad_example = t81 i_good_example = t87 i_extended_information = t93 i_tags = t69 i_pragma = t95 i_pseudo_comment = t97 ).
+          t62 = NEW zcl_lnt_irule_metadata( i_key = |names_no_dash| i_title = |No dashes in FORM and DATA names| i_short_description = t67 i_bad_example = t81 i_good_example = t87 i_extended_information = t93 i_tags = t69 i_pragma = t95 i_pseudo_comment = t97 ).
           CREATE OBJECT t62->zlnt_view_ownkeys_b0e8086400eb.
           t62->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -305,46 +254,40 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t62->zlnt_json_ownkeys_70e5fd461788.
           t62->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t105) = |key|.
           DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t106.
-          t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
-          DATA(t107) = |title|.
+          t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t106 ).
           DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t108.
           IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
+            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t108 ).
           ENDIF.
-          DATA(t109) = |shortDescription|.
           DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t110.
           IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t109 p1 = t110 ).
+            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t110 ).
           ENDIF.
-          DATA(t111) = |tags|.
           DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t112.
           IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t111 p1 = t112 ).
+            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t112 ).
           ENDIF.
-          DATA(t113) = |badExample|.
           DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t114.
           IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
+            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t114 ).
           ENDIF.
-          DATA(t115) = |goodExample|.
           DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t116.
           IF t62->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = t115 p1 = t116 ).
+            t62->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t116 ).
           ENDIF.
           t61 = t62->key.
           DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t117 = me->conf->zlnt_view_read_sr_15c06369f827( ).
           DATA t119 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t119.
-          t56 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t58 i_message_26cb = t60 i_key = t61 i_severity = t117 i_fix = t119 ).
+          t56 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t58 i_message_26cb = |No dash allowed in FORM and DATA names| i_key = t61 i_severity = t117 i_fix = t119 ).
           t3->load( ).
           APPEND t56 TO t3->items.
           t3->save( ).
@@ -386,33 +329,20 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         t137 = t132.
         DATA t139 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t139.
-        DATA(t140) = xsdbool( t137 IS INITIAL ).
-        IF t140 = abap_true.
+        IF xsdbool( t137 IS INITIAL ) = abap_true.
           CLEAR t139.
         ELSE.
-          DATA t143 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t144 TYPE REF TO zcl_lnt_expression_node.
-          t144 = t137.
-          DATA(t146) = |-|.
-          t143 = t144->find_direct_token_by_text( i_text = t146 ).
-          t139 = t143.
+          t139 = t137->find_direct_token_by_text( i_text = |-| ).
         ENDIF.
         t135 = t139.
-        DATA t147 TYPE abap_bool.
-        t147 = xsdbool( t135 IS BOUND ).
-        IF t147 = abap_true.
+        IF xsdbool( t135 IS BOUND ) = abap_true.
           DATA t150 TYPE REF TO zcl_lnt_issue.
           CLEAR t150.
           DATA t152 TYPE REF TO zcl_lnt_abstract_token.
           t152 = t135.
-          DATA(t154) = |No dash allowed in FORM and DATA names|.
           DATA(t155) = VALUE string( ).
           DATA t156 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t156.
-          DATA t157 TYPE string.
-          t157 = |names_no_dash|.
-          DATA t159 TYPE string.
-          t159 = |No dashes in FORM and DATA names|.
           DATA t161 TYPE string.
           DATA(t162) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t162 = t162 && |names|.
@@ -420,31 +350,25 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           DATA t163 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t163.
           DATA t167 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t168 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t168.
-          t167 = t168.
-          DATA(t170) = |SingleFile|.
+          CREATE OBJECT t167.
           t167->load( ).
-          APPEND t170 TO t167->items.
+          APPEND |SingleFile| TO t167->items.
           t167->save( ).
-          DATA(t172) = |Naming|.
           t167->load( ).
-          APPEND t172 TO t167->items.
+          APPEND |Naming| TO t167->items.
           t167->save( ).
           t163 = t167.
           DATA t175 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t175.
-          DATA(t178) = |DATA foo-bar TYPE i.|.
           DATA(t179) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t179->has = abap_true.
-          t179->value = t178.
+          t179->value = |DATA foo-bar TYPE i.|.
           t175 = t179.
           DATA t181 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t181.
-          DATA(t184) = |DATA foobar TYPE i.|.
           DATA(t185) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t185->has = abap_true.
-          t185->value = t184.
+          t185->value = |DATA foobar TYPE i.|.
           t181 = t185.
           DATA t187 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t187.
@@ -452,7 +376,7 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           CLEAR t189.
           DATA t191 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t191.
-          t156 = NEW zcl_lnt_irule_metadata( i_key = t157 i_title = t159 i_short_description = t161 i_bad_example = t175 i_good_example = t181 i_extended_information = t187 i_tags = t163 i_pragma = t189 i_pseudo_comment = t191 ).
+          t156 = NEW zcl_lnt_irule_metadata( i_key = |names_no_dash| i_title = |No dashes in FORM and DATA names| i_short_description = t161 i_bad_example = t175 i_good_example = t181 i_extended_information = t187 i_tags = t163 i_pragma = t189 i_pseudo_comment = t191 ).
           CREATE OBJECT t156->zlnt_view_ownkeys_b0e8086400eb.
           t156->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t193 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -485,46 +409,40 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t156->zlnt_json_ownkeys_70e5fd461788.
           t156->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t199) = |key|.
           DATA t200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t200.
-          t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t199 p1 = t200 ).
-          DATA(t201) = |title|.
+          t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t200 ).
           DATA t202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t202.
           IF t156->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t201 p1 = t202 ).
+            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t202 ).
           ENDIF.
-          DATA(t203) = |shortDescription|.
           DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t204.
           IF t156->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t203 p1 = t204 ).
+            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t204 ).
           ENDIF.
-          DATA(t205) = |tags|.
           DATA t206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t206.
           IF t156->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t205 p1 = t206 ).
+            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t206 ).
           ENDIF.
-          DATA(t207) = |badExample|.
           DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t208.
           IF t156->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
+            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t208 ).
           ENDIF.
-          DATA(t209) = |goodExample|.
           DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t210.
           IF t156->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = t209 p1 = t210 ).
+            t156->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t210 ).
           ENDIF.
           t155 = t156->key.
           DATA t211 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t211 = me->conf->zlnt_view_read_sr_15c06369f827( ).
           DATA t213 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t213.
-          t150 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t152 i_message_26cb = t154 i_key = t155 i_severity = t211 i_fix = t213 ).
+          t150 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t152 i_message_26cb = |No dash allowed in FORM and DATA names| i_key = t155 i_severity = t211 i_fix = t213 ).
           t3->load( ).
           APPEND t150 TO t3->items.
           t3->save( ).
@@ -566,33 +484,20 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         t231 = t226.
         DATA t233 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t233.
-        DATA(t234) = xsdbool( t231 IS INITIAL ).
-        IF t234 = abap_true.
+        IF xsdbool( t231 IS INITIAL ) = abap_true.
           CLEAR t233.
         ELSE.
-          DATA t237 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t238 TYPE REF TO zcl_lnt_expression_node.
-          t238 = t231.
-          DATA(t240) = |-|.
-          t237 = t238->find_direct_token_by_text( i_text = t240 ).
-          t233 = t237.
+          t233 = t231->find_direct_token_by_text( i_text = |-| ).
         ENDIF.
         t229 = t233.
-        DATA t241 TYPE abap_bool.
-        t241 = xsdbool( t229 IS BOUND ).
-        IF t241 = abap_true.
+        IF xsdbool( t229 IS BOUND ) = abap_true.
           DATA t244 TYPE REF TO zcl_lnt_issue.
           CLEAR t244.
           DATA t246 TYPE REF TO zcl_lnt_abstract_token.
           t246 = t229.
-          DATA(t248) = |No dash allowed in FORM and DATA names|.
           DATA(t249) = VALUE string( ).
           DATA t250 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t250.
-          DATA t251 TYPE string.
-          t251 = |names_no_dash|.
-          DATA t253 TYPE string.
-          t253 = |No dashes in FORM and DATA names|.
           DATA t255 TYPE string.
           DATA(t256) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t256 = t256 && |names|.
@@ -600,31 +505,25 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           DATA t257 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t257.
           DATA t261 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t262 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t262.
-          t261 = t262.
-          DATA(t264) = |SingleFile|.
+          CREATE OBJECT t261.
           t261->load( ).
-          APPEND t264 TO t261->items.
+          APPEND |SingleFile| TO t261->items.
           t261->save( ).
-          DATA(t266) = |Naming|.
           t261->load( ).
-          APPEND t266 TO t261->items.
+          APPEND |Naming| TO t261->items.
           t261->save( ).
           t257 = t261.
           DATA t269 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t269.
-          DATA(t272) = |DATA foo-bar TYPE i.|.
           DATA(t273) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t273->has = abap_true.
-          t273->value = t272.
+          t273->value = |DATA foo-bar TYPE i.|.
           t269 = t273.
           DATA t275 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t275.
-          DATA(t278) = |DATA foobar TYPE i.|.
           DATA(t279) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t279->has = abap_true.
-          t279->value = t278.
+          t279->value = |DATA foobar TYPE i.|.
           t275 = t279.
           DATA t281 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t281.
@@ -632,7 +531,7 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           CLEAR t283.
           DATA t285 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t285.
-          t250 = NEW zcl_lnt_irule_metadata( i_key = t251 i_title = t253 i_short_description = t255 i_bad_example = t269 i_good_example = t275 i_extended_information = t281 i_tags = t257 i_pragma = t283 i_pseudo_comment = t285 ).
+          t250 = NEW zcl_lnt_irule_metadata( i_key = |names_no_dash| i_title = |No dashes in FORM and DATA names| i_short_description = t255 i_bad_example = t269 i_good_example = t275 i_extended_information = t281 i_tags = t257 i_pragma = t283 i_pseudo_comment = t285 ).
           CREATE OBJECT t250->zlnt_view_ownkeys_b0e8086400eb.
           t250->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -665,46 +564,40 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t250->zlnt_json_ownkeys_70e5fd461788.
           t250->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t293) = |key|.
           DATA t294 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t294.
-          t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t293 p1 = t294 ).
-          DATA(t295) = |title|.
+          t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t294 ).
           DATA t296 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t296.
           IF t250->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t295 p1 = t296 ).
+            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t296 ).
           ENDIF.
-          DATA(t297) = |shortDescription|.
           DATA t298 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t298.
           IF t250->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t297 p1 = t298 ).
+            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t298 ).
           ENDIF.
-          DATA(t299) = |tags|.
           DATA t300 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t300.
           IF t250->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t299 p1 = t300 ).
+            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t300 ).
           ENDIF.
-          DATA(t301) = |badExample|.
           DATA t302 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t302.
           IF t250->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t301 p1 = t302 ).
+            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t302 ).
           ENDIF.
-          DATA(t303) = |goodExample|.
           DATA t304 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t304.
           IF t250->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = t303 p1 = t304 ).
+            t250->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t304 ).
           ENDIF.
           t249 = t250->key.
           DATA t305 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t305 = me->conf->zlnt_view_read_sr_15c06369f827( ).
           DATA t307 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t307.
-          t244 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t246 i_message_26cb = t248 i_key = t249 i_severity = t305 i_fix = t307 ).
+          t244 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t246 i_message_26cb = |No dash allowed in FORM and DATA names| i_key = t249 i_severity = t305 i_fix = t307 ).
           t3->load( ).
           APPEND t244 TO t3->items.
           t3->save( ).
@@ -739,10 +632,7 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         t314 ?= t315.
       ENDIF.
       DATA t319 TYPE string.
-      DATA t320 TYPE string.
-      t320 = t314->concat_tokens( ).
-      t319 = t320.
-      DATA(t322) = VALUE abap_bool( ).
+      t319 = t314->concat_tokens( ).
       DATA(t323) = VALUE i( ).
       DATA(t325) = |-|.
       DATA(t326) = strlen( t319 ).
@@ -754,21 +644,14 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           t323 = -1.
         ENDIF.
       ENDIF.
-      DATA(t327) = 0.
-      t322 = xsdbool( t323 >= t327 ).
-      IF t322 = abap_true.
+      IF xsdbool( t323 >= 0 ) = abap_true.
         DATA t329 TYPE REF TO zcl_lnt_issue.
         CLEAR t329.
         DATA t331 TYPE REF TO zcl_lnt_abstract_token.
         t331 = t314->get_first_token( ).
-        DATA(t333) = |No dash allowed in FORM and DATA names|.
         DATA(t334) = VALUE string( ).
         DATA t335 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t335.
-        DATA t336 TYPE string.
-        t336 = |names_no_dash|.
-        DATA t338 TYPE string.
-        t338 = |No dashes in FORM and DATA names|.
         DATA t340 TYPE string.
         DATA(t341) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
         t341 = t341 && |names|.
@@ -776,31 +659,25 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         DATA t342 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t342.
         DATA t346 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t347 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t347.
-        t346 = t347.
-        DATA(t349) = |SingleFile|.
+        CREATE OBJECT t346.
         t346->load( ).
-        APPEND t349 TO t346->items.
+        APPEND |SingleFile| TO t346->items.
         t346->save( ).
-        DATA(t351) = |Naming|.
         t346->load( ).
-        APPEND t351 TO t346->items.
+        APPEND |Naming| TO t346->items.
         t346->save( ).
         t342 = t346.
         DATA t354 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t354.
-        DATA(t357) = |DATA foo-bar TYPE i.|.
         DATA(t358) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t358->has = abap_true.
-        t358->value = t357.
+        t358->value = |DATA foo-bar TYPE i.|.
         t354 = t358.
         DATA t360 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t360.
-        DATA(t363) = |DATA foobar TYPE i.|.
         DATA(t364) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t364->has = abap_true.
-        t364->value = t363.
+        t364->value = |DATA foobar TYPE i.|.
         t360 = t364.
         DATA t366 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t366.
@@ -808,7 +685,7 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         CLEAR t368.
         DATA t370 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t370.
-        t335 = NEW zcl_lnt_irule_metadata( i_key = t336 i_title = t338 i_short_description = t340 i_bad_example = t354 i_good_example = t360 i_extended_information = t366 i_tags = t342 i_pragma = t368 i_pseudo_comment = t370 ).
+        t335 = NEW zcl_lnt_irule_metadata( i_key = |names_no_dash| i_title = |No dashes in FORM and DATA names| i_short_description = t340 i_bad_example = t354 i_good_example = t360 i_extended_information = t366 i_tags = t342 i_pragma = t368 i_pseudo_comment = t370 ).
         CREATE OBJECT t335->zlnt_view_ownkeys_b0e8086400eb.
         t335->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t372 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -841,46 +718,40 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t335->zlnt_json_ownkeys_70e5fd461788.
         t335->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t378) = |key|.
         DATA t379 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t379.
-        t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t378 p1 = t379 ).
-        DATA(t380) = |title|.
+        t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t379 ).
         DATA t381 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t381.
         IF t335->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t380 p1 = t381 ).
+          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t381 ).
         ENDIF.
-        DATA(t382) = |shortDescription|.
         DATA t383 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t383.
         IF t335->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t382 p1 = t383 ).
+          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t383 ).
         ENDIF.
-        DATA(t384) = |tags|.
         DATA t385 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t385.
         IF t335->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t384 p1 = t385 ).
+          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t385 ).
         ENDIF.
-        DATA(t386) = |badExample|.
         DATA t387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t387.
         IF t335->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t386 p1 = t387 ).
+          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t387 ).
         ENDIF.
-        DATA(t388) = |goodExample|.
         DATA t389 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t389.
         IF t335->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = t388 p1 = t389 ).
+          t335->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t389 ).
         ENDIF.
         t334 = t335->key.
         DATA t390 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t390 = me->conf->zlnt_view_read_sr_15c06369f827( ).
         DATA t392 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t392.
-        t329 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t331 i_message_26cb = t333 i_key = t334 i_severity = t390 i_fix = t392 ).
+        t329 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t331 i_message_26cb = |No dash allowed in FORM and DATA names| i_key = t334 i_severity = t390 i_fix = t392 ).
         t3->load( ).
         APPEND t329 TO t3->items.
         t3->save( ).

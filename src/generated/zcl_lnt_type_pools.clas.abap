@@ -14,21 +14,15 @@ ENDCLASS.
 CLASS zcl_lnt_type_pools IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t4) = `^\w+$`.
-    DATA(t5) = |^[A-Za-z0-9_]+$|.
-    DATA(t6) = ||.
-    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
-    t3->source = t4.
-    t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
-    t1 = t2.
+    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t3->source = `^\w+$`.
+    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = |TYPE-POOLS|.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
+    t10->sval = |TYPE-POOLS|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -55,11 +49,7 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
-    DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    t19 = zcl_lnt_st_combi_module=>seq( i_first = t10 i_second = t13 i_rest = t18 ).
-    t7 = t19.
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t24) = |Cloud|.
+    t7 = zcl_lnt_st_combi_module=>seq( i_first = t10 i_second = t13 i_rest = t18 ).
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -84,8 +74,7 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t23 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t24 i_first = t25 ).
-    result = t23.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t25 ).
 
   ENDMETHOD.
 

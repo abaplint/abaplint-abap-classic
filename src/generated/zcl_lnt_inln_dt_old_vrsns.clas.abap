@@ -25,34 +25,24 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |inline_data_old_versions|.
-    DATA t4 TYPE string.
-    t4 = |Inline data, old versions|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks for inline data declarations in older releases. Only |.
     t7 = t7 && |active for versions less than v740sp02|.
     t6 = t7.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Syntax|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Syntax| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |inline_data_old_versions| i_title = |Inline data, old versions| i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -71,23 +61,19 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -106,56 +92,34 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
   METHOD r_p_i_s_r_i_d_o_v_t_i_dt_ol_vr.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = VALUE abap_bool( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zcl_lnt_abap_release.
-    DATA t8 TYPE REF TO zif_lnt_configuration.
-    t8 = me->reg->get_config( ).
-    t7 = t8->get_release( ).
-    DATA t10 TYPE REF TO zcl_lnt_abap_release.
-    DATA t11 TYPE REF TO zcl_lnt_abap_release.
+    t7 = me->reg->get_config( )->get_release( ).
     DATA t12 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t12 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t13) = |v740sp02|.
-    t11 = t12->get( p0 = t13 ).
-    t10 = t11.
-    t6 = zcl_lnt_version_module=>release_at_least( i_running = t7 i_required = t10 ).
+    t6 = zcl_lnt_version_module=>release_at_least( i_running = t7 i_required = t12->get( p0 = |v740sp02| ) ).
     t5 = t6.
     IF t6 = abap_false.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE REF TO zif_lnt_configuration.
-      t15 = me->reg->get_config( ).
-      t14 = t15->is_open_abap( ).
-      t5 = t14.
+      t5 = me->reg->get_config( )->is_open_abap( ).
     ENDIF.
     t4 = t5.
     IF t5 = abap_false.
-      DATA t17 TYPE abap_bool.
       DATA t18 TYPE string.
-      DATA t19 TYPE REF TO zif_lnt_configuration.
-      t19 = me->reg->get_config( ).
-      t18 = t19->get_language_version( ).
-      DATA(t21) = |Cloud|.
-      t17 = xsdbool( t18 = t21 ).
-      t4 = t17.
+      t18 = me->reg->get_config( )->get_language_version( ).
+      t4 = xsdbool( t18 = |Cloud| ).
     ENDIF.
     IF t4 = abap_true.
-      DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t22.
-      result = t22.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t26 = t1->statements.
-    t23 = t26.
+    t23 = t1->statements.
     DATA t28 TYPE REF TO zcl_lnt_statement_node.
     DATA t29 TYPE REF TO object.
     DATA(t30) = VALUE i( ).
@@ -206,22 +170,12 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
           t36 ?= t37.
         ENDIF.
         DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t42 = t36->get_all_tokens( ).
-        t41 = t42.
-        DATA t44 TYPE abap_bool.
-        DATA t45 TYPE i.
+        t41 = t36->get_all_tokens( ).
         t41->load( ).
-        t45 = lines( t41->items ).
-        DATA(t47) = 4.
-        t44 = xsdbool( t45 <> t47 ).
-        IF t44 = abap_true.
+        IF xsdbool( lines( t41->items ) <> 4 ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA(t48) = VALUE abap_bool( ).
-        DATA(t49) = VALUE abap_bool( ).
         DATA(t50) = VALUE string( ).
-        DATA(t51) = VALUE string( ).
         DATA t53 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t53.
         DATA t55 TYPE REF TO object.
@@ -240,24 +194,13 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ELSE.
           t53 ?= t55.
         ENDIF.
-        DATA t58 TYPE string.
-        t58 = t53->str.
-        t51 = t58.
-        t50 = t51.
-        DATA t60 TYPE abap_bool.
+        t50 = t53->str.
         DATA t61 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t61.
-        DATA(t62) = |DATA|.
-        DATA(t63) = |i|.
-        CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t62 flags = t63.
-        t60 = t61->match_test( p0 = t50 ).
-        t49 = t60.
-        t48 = xsdbool( t49 = abap_false ).
-        IF t48 = abap_true.
+        CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |DATA| flags = |i|.
+        IF xsdbool( t61->match_test( p0 = t50 ) = abap_false ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA(t65) = VALUE abap_bool( ).
-        DATA(t66) = VALUE string( ).
         DATA t68 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t68.
         DATA t70 TYPE REF TO object.
@@ -276,16 +219,9 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ELSE.
           t68 ?= t70.
         ENDIF.
-        DATA t73 TYPE string.
-        t73 = t68->str.
-        t66 = t73.
-        DATA(t75) = |(|.
-        t65 = xsdbool( t66 <> t75 ).
-        IF t65 = abap_true.
+        IF xsdbool( t68->str <> |(| ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA(t76) = VALUE abap_bool( ).
-        DATA(t77) = VALUE string( ).
         DATA t79 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t79.
         DATA t81 TYPE REF TO object.
@@ -304,20 +240,13 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ELSE.
           t79 ?= t81.
         ENDIF.
-        DATA t84 TYPE string.
-        t84 = t79->str.
-        t77 = t84.
-        DATA(t86) = |)|.
-        t76 = xsdbool( t77 <> t86 ).
-        IF t76 = abap_true.
+        IF xsdbool( t79->str <> |)| ) = abap_true.
           CONTINUE.
         ENDIF.
         DATA t88 TYPE string.
         DATA(t89) = |Inline DATA not possible in |.
         DATA t90 TYPE string.
-        DATA t91 TYPE REF TO zif_lnt_configuration.
-        t91 = me->reg->get_config( ).
-        t90 = t91->get_version( ).
+        t90 = me->reg->get_config( )->get_version( ).
         DATA(t93) = strlen( t89 ).
         t88 = |{ t89 }{ t90 }|.
         DATA t95 TYPE REF TO zcl_lnt_issue.
@@ -343,10 +272,6 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         DATA(t103) = VALUE string( ).
         DATA t104 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t104.
-        DATA t105 TYPE string.
-        t105 = |inline_data_old_versions|.
-        DATA t107 TYPE string.
-        t107 = |Inline data, old versions|.
         DATA t109 TYPE string.
         DATA(t110) = |Checks for inline data declarations in older releases. Only |.
         t110 = t110 && |active for versions less than v740sp02|.
@@ -354,16 +279,12 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         DATA t111 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t111.
         DATA t115 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t116 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t116.
-        t115 = t116.
-        DATA(t118) = |Syntax|.
+        CREATE OBJECT t115.
         t115->load( ).
-        APPEND t118 TO t115->items.
+        APPEND |Syntax| TO t115->items.
         t115->save( ).
-        DATA(t120) = |SingleFile|.
         t115->load( ).
-        APPEND t120 TO t115->items.
+        APPEND |SingleFile| TO t115->items.
         t115->save( ).
         t111 = t115.
         DATA t123 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -376,7 +297,7 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         CLEAR t129.
         DATA t131 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t131.
-        t104 = NEW zcl_lnt_irule_metadata( i_key = t105 i_title = t107 i_short_description = t109 i_bad_example = t123 i_good_example = t125 i_extended_information = t127 i_tags = t111 i_pragma = t129 i_pseudo_comment = t131 ).
+        t104 = NEW zcl_lnt_irule_metadata( i_key = |inline_data_old_versions| i_title = |Inline data, old versions| i_short_description = t109 i_bad_example = t123 i_good_example = t125 i_extended_information = t127 i_tags = t111 i_pragma = t129 i_pseudo_comment = t131 ).
         CREATE OBJECT t104->zlnt_view_ownkeys_b0e8086400eb.
         t104->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -399,27 +320,23 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t104->zlnt_json_ownkeys_70e5fd461788.
         t104->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t137) = |key|.
         DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t138.
-        t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = t137 p1 = t138 ).
-        DATA(t139) = |title|.
+        t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t138 ).
         DATA t140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t140.
         IF t104->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = t139 p1 = t140 ).
+          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t140 ).
         ENDIF.
-        DATA(t141) = |shortDescription|.
         DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t142.
         IF t104->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = t141 p1 = t142 ).
+          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t142 ).
         ENDIF.
-        DATA(t143) = |tags|.
         DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t144.
         IF t104->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = t143 p1 = t144 ).
+          t104->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t144 ).
         ENDIF.
         t103 = t104->key.
         DATA t145 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

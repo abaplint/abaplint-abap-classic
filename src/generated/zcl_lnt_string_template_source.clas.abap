@@ -56,9 +56,7 @@ CLASS zcl_lnt_string_template_source IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    t15 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
-    result = t15.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
 
   ENDMETHOD.
 

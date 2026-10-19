@@ -26,48 +26,35 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |colon_missing_space|.
-    DATA t4 TYPE string.
-    t4 = |Colon missing space|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks for missing spaces after colons in chained statements|.
     t7 = t7 && |.|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Whitespace|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Whitespace| TO t12->items.
     t12->save( ).
-    DATA(t17) = |Quickfix|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |Quickfix| TO t12->items.
     t12->save( ).
-    DATA(t19) = |SingleFile|.
     t12->load( ).
-    APPEND t19 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t25) = |WRITE:hello, world.|.
     DATA(t26) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t26->has = abap_true.
-    t26->value = t25.
+    t26->value = |WRITE:hello, world.|.
     t22 = t26.
-    DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t31) = |WRITE: hello, world.|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
-    t32->value = t31.
-    t28 = t32.
+    t32->value = |WRITE: hello, world.|.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t22 i_good_example = t28 i_extended_information = t34 i_tags = t8 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |colon_missing_space| i_title = |Colon missing space| i_short_description = t6 i_bad_example = t22 i_good_example = t32 i_extended_information = t34 i_tags = t8 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -94,33 +81,27 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t46) = |key|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
-    DATA(t48) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t47 ).
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |shortDescription|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |tags|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |badExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t55 ).
     ENDIF.
-    DATA(t56) = |goodExample|.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t57 ).
     ENDIF.
     result = t1.
 
@@ -144,13 +125,9 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
   METHOD r_p_i_s_r_cl_ms_sp_ts_cl_ms_sp.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t7 = t1->statements.
-    t4 = t7.
+    t4 = t1->statements.
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
     DATA t10 TYPE REF TO object.
     DATA(t11) = VALUE i( ).
@@ -174,9 +151,7 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
         t9 ?= t10.
       ENDIF.
       DATA t14 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t18 TYPE REF TO zcl_lnt_abstract_token.
-      t18 = t9->colon.
-      t14 = t18.
+      t14 = t9->colon.
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
@@ -185,19 +160,15 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
       t22 = xsdbool( t14 IS INITIAL ).
       t21 = t22.
       IF t22 = abap_false.
-        DATA t29 TYPE abap_bool.
         DATA t30 TYPE REF TO zif_lnt_statement.
         t30 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t29 = xsdbool( t30 IS BOUND AND t30 IS INSTANCE OF zcl_lnt_native_sql ).
-        t21 = t29.
+        t21 = xsdbool( t30 IS BOUND AND t30 IS INSTANCE OF zcl_lnt_native_sql ).
       ENDIF.
       t20 = t21.
       IF t21 = abap_false.
-        DATA t32 TYPE abap_bool.
         DATA t33 TYPE REF TO zif_lnt_statement.
         t33 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t32 = xsdbool( t33 IS BOUND AND t33 IS INSTANCE OF zcl_lnt_st_comment ).
-        t20 = t32.
+        t20 = xsdbool( t33 IS BOUND AND t33 IS INSTANCE OF zcl_lnt_st_comment ).
       ENDIF.
       IF t20 = abap_true.
         CONTINUE.
@@ -205,11 +176,7 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
       DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t38.
-      DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t42 = t9->get_tokens( ).
-      t40 = t38->concat( p0 = t42 ).
-      t35 = t40.
+      t35 = t38->concat( p0 = t9->get_tokens( ) ).
       DATA t46 TYPE REF TO zcl_lnt_abstract_token.
       t46 = t14.
       t35->load( ).
@@ -222,21 +189,14 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
       DATA t51 TYPE i.
       t51 = 1.
       DO.
-        DATA t53 TYPE abap_bool.
-        DATA t55 TYPE i.
         t49->load( ).
-        t55 = lines( t49->items ).
-        t53 = xsdbool( t51 < t55 ).
-        IF t53 = abap_false.
+        IF xsdbool( t51 < lines( t49->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA t57 TYPE i.
         t57 = t51.
         DO.
-          DATA t59 TYPE abap_bool.
-          DATA(t61) = 0.
-          t59 = xsdbool( t57 > t61 ).
-          IF t59 = abap_false.
+          IF xsdbool( t57 > 0 ) = abap_false.
             EXIT.
           ENDIF.
           DATA t63 TYPE REF TO zcl_lnt_abstract_token.
@@ -281,26 +241,17 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           ELSE.
             t72 ?= t75.
           ENDIF.
-          DATA(t78) = VALUE abap_bool( ).
           DATA(t79) = VALUE i( ).
-          DATA t80 TYPE abap_bool.
           DATA t81 TYPE REF TO zcl_lnt_position.
-          DATA t84 TYPE REF TO zcl_lnt_position.
-          t84 = t63->start.
-          t81 = t84.
+          t81 = t63->start.
           DATA t86 TYPE REF TO zcl_lnt_position.
-          DATA t89 TYPE REF TO zcl_lnt_position.
-          t89 = t72->start.
-          t86 = t89.
-          t80 = t81->is_after( i_p = t86 ).
-          IF t80 = abap_true.
+          t86 = t72->start.
+          IF t81->is_after( i_p = t86 ) = abap_true.
             t79 = 1.
           ELSE.
             t79 = -1.
           ENDIF.
-          DATA(t93) = 0.
-          t78 = xsdbool( t79 > t93 ).
-          IF t78 = abap_true.
+          IF xsdbool( t79 > 0 ) = abap_true.
             DATA t95 TYPE REF TO zcl_lnt_abstract_token.
             CLEAR t95.
             DATA t97 TYPE i.
@@ -348,29 +299,21 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
             ENDIF.
             t49->put( p0 = t104 p1 = t107 ).
             t49->put( p0 = t57 p1 = t95 ).
-            DATA t116 TYPE i.
             DATA(t118) = 1.
-            t116 = t57 - t118.
-            t57 = t116.
+            t57 = t57 - t118.
           ELSE.
             EXIT.
           ENDIF.
         ENDDO.
-        DATA t119 TYPE i.
         DATA(t121) = 1.
-        t119 = t51 + t121.
-        t51 = t119.
+        t51 = t51 + t121.
       ENDDO.
       t48 = t49.
       DATA t123 TYPE i.
       t123 = 0.
       DO.
-        DATA t125 TYPE abap_bool.
-        DATA t127 TYPE i.
         t35->load( ).
-        t127 = lines( t35->items ).
-        t125 = xsdbool( t123 < t127 ).
-        IF t125 = abap_false.
+        IF xsdbool( t123 < lines( t35->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA t129 TYPE REF TO zcl_lnt_abstract_token.
@@ -400,15 +343,9 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
         DATA(t137) = VALUE abap_bool( ).
         DATA t138 TYPE abap_bool.
         DATA t139 TYPE abap_bool.
-        DATA t140 TYPE string.
-        DATA t143 TYPE string.
-        t143 = t129->str.
-        t140 = t143.
-        DATA(t145) = |:|.
-        t139 = xsdbool( t140 = t145 ).
+        t139 = xsdbool( t129->str = |:| ).
         t138 = t139.
         IF t139 = abap_true.
-          DATA(t146) = VALUE abap_bool( ).
           DATA t148 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t148.
           DATA t150 TYPE i.
@@ -433,16 +370,10 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           ENDIF.
           DATA t156 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t156.
-          DATA(t158) = VALUE abap_bool( ).
-          DATA(t159) = xsdbool( t148 IS INITIAL ).
-          t158 = xsdbool( t159 = abap_false ).
-          t146 = t158.
-          t138 = t146.
+          t138 = xsdbool( xsdbool( t148 IS INITIAL ) = abap_false ).
         ENDIF.
         t137 = t138.
         IF t138 = abap_true.
-          DATA(t161) = VALUE abap_bool( ).
-          DATA(t162) = VALUE f( ).
           DATA t164 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t164.
           DATA t166 TYPE i.
@@ -465,23 +396,10 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           ELSE.
             t164 ?= t169.
           ENDIF.
-          DATA t174 TYPE REF TO zcl_lnt_position.
-          t174 = t164->start.
-          DATA t176 TYPE f.
-          t176 = t174->row.
-          t162 = t176.
-          DATA t178 TYPE f.
-          DATA t183 TYPE REF TO zcl_lnt_position.
-          t183 = t129->start.
-          DATA t185 TYPE f.
-          t185 = t183->row.
-          t178 = t185.
-          t161 = xsdbool( t162 = t178 ).
-          t137 = t161.
+          t137 = xsdbool( t164->start->row = t129->start->row ).
         ENDIF.
         t136 = t137.
         IF t137 = abap_true.
-          DATA(t187) = VALUE abap_bool( ).
           DATA t188 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t188.
           DATA t190 TYPE REF TO zcl_lnt_abstract_token.
@@ -506,62 +424,33 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           ELSE.
             t190 ?= t195.
           ENDIF.
-          DATA t200 TYPE REF TO zcl_lnt_position.
-          t200 = t190->start.
-          DATA t202 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t202 = t200->col.
-          t188 = t202.
-          DATA t204 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+          t188 = t190->start->col.
           DATA t205 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          DATA t210 TYPE REF TO zcl_lnt_position.
-          t210 = t129->start.
-          DATA t212 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t212 = t210->col.
-          t205 = t212.
-          DATA(t214) = CONV f( 1 ).
+          t205 = t129->start->col.
           DATA(t215) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t215->has = abap_true.
-          t215->value = t214.
-          t204 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t205 right = t215 op = `+` ).
-          t187 = zlnt_runtime_numb_290eb04a9758=>compare( left = t188 right = t204 op = `==` ).
-          t136 = t187.
+          t215->value = CONV f( 1 ).
+          t136 = zlnt_runtime_numb_290eb04a9758=>compare( left = t188 right = zlnt_runtime_numb_290eb04a9758=>calculate( left = t205 right = t215 op = `+` ) op = `==` ).
         ENDIF.
         IF t136 = abap_true.
           DATA t216 TYPE REF TO zcl_lnt_position.
-          DATA t220 TYPE REF TO zcl_lnt_position.
-          t220 = t129->start.
-          t216 = t220.
+          t216 = t129->start.
           DATA t222 TYPE REF TO zcl_lnt_position.
-          DATA t223 TYPE REF TO zcl_lnt_position.
           DATA t224 TYPE f.
-          DATA t227 TYPE f.
-          t227 = t216->row.
-          t224 = t227.
-          DATA t229 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+          t224 = t216->row.
           DATA t230 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          DATA t233 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t233 = t216->col.
-          t230 = t233.
-          DATA(t235) = CONV f( 1 ).
+          t230 = t216->col.
           DATA(t236) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t236->has = abap_true.
-          t236->value = t235.
-          t229 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t230 right = t236 op = `+` ).
-          t223 = NEW zcl_lnt_position( i_row = t224 i_col = t229 ).
-          t222 = t223.
+          t236->value = CONV f( 1 ).
+          t222 = NEW zcl_lnt_position( i_row = t224 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t230 right = t236 op = `+` ) ).
           DATA t238 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          DATA(t241) = | |.
-          t238 = zcl_lnt_edit_helper=>insert_at( i_file = t1 i_pos = t222 i_text = t241 ).
+          t238 = zcl_lnt_edit_helper=>insert_at( i_file = t1 i_pos = t222 i_text = | | ).
           DATA t243 TYPE REF TO zcl_lnt_issue.
           CLEAR t243.
-          DATA(t247) = |Missing space after the colon|.
           DATA(t248) = VALUE string( ).
           DATA t249 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t249.
-          DATA t250 TYPE string.
-          t250 = |colon_missing_space|.
-          DATA t252 TYPE string.
-          t252 = |Colon missing space|.
           DATA t254 TYPE string.
           DATA(t255) = |Checks for missing spaces after colons in chained statements|.
           t255 = t255 && |.|.
@@ -569,35 +458,28 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           DATA t256 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t256.
           DATA t260 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t261 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t261.
-          t260 = t261.
-          DATA(t263) = |Whitespace|.
+          CREATE OBJECT t260.
           t260->load( ).
-          APPEND t263 TO t260->items.
+          APPEND |Whitespace| TO t260->items.
           t260->save( ).
-          DATA(t265) = |Quickfix|.
           t260->load( ).
-          APPEND t265 TO t260->items.
+          APPEND |Quickfix| TO t260->items.
           t260->save( ).
-          DATA(t267) = |SingleFile|.
           t260->load( ).
-          APPEND t267 TO t260->items.
+          APPEND |SingleFile| TO t260->items.
           t260->save( ).
           t256 = t260.
           DATA t270 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t270.
-          DATA(t273) = |WRITE:hello, world.|.
           DATA(t274) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t274->has = abap_true.
-          t274->value = t273.
+          t274->value = |WRITE:hello, world.|.
           t270 = t274.
           DATA t276 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t276.
-          DATA(t279) = |WRITE: hello, world.|.
           DATA(t280) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t280->has = abap_true.
-          t280->value = t279.
+          t280->value = |WRITE: hello, world.|.
           t276 = t280.
           DATA t282 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t282.
@@ -605,7 +487,7 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           CLEAR t284.
           DATA t286 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t286.
-          t249 = NEW zcl_lnt_irule_metadata( i_key = t250 i_title = t252 i_short_description = t254 i_bad_example = t270 i_good_example = t276 i_extended_information = t282 i_tags = t256 i_pragma = t284 i_pseudo_comment = t286 ).
+          t249 = NEW zcl_lnt_irule_metadata( i_key = |colon_missing_space| i_title = |Colon missing space| i_short_description = t254 i_bad_example = t270 i_good_example = t276 i_extended_information = t282 i_tags = t256 i_pragma = t284 i_pseudo_comment = t286 ).
           CREATE OBJECT t249->zlnt_view_ownkeys_b0e8086400eb.
           t249->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -638,39 +520,33 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t249->zlnt_json_ownkeys_70e5fd461788.
           t249->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t294) = |key|.
           DATA t295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t295.
-          t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t294 p1 = t295 ).
-          DATA(t296) = |title|.
+          t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t295 ).
           DATA t297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t297.
           IF t249->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t296 p1 = t297 ).
+            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t297 ).
           ENDIF.
-          DATA(t298) = |shortDescription|.
           DATA t299 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t299.
           IF t249->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t298 p1 = t299 ).
+            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t299 ).
           ENDIF.
-          DATA(t300) = |tags|.
           DATA t301 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t301.
           IF t249->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t300 p1 = t301 ).
+            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t301 ).
           ENDIF.
-          DATA(t302) = |badExample|.
           DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t303.
           IF t249->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t302 p1 = t303 ).
+            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t303 ).
           ENDIF.
-          DATA(t304) = |goodExample|.
           DATA t305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t305.
           IF t249->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = t304 p1 = t305 ).
+            t249->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t305 ).
           ENDIF.
           t248 = t249->key.
           DATA t306 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -680,15 +556,13 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           t308 = t238.
           DATA t312 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t312.
-          t243 = zcl_lnt_issue=>at_range( i_file = t1 i_start = t216 i_end = t222 i_message_26cb = t247 i_key = t248 i_severity = t306 i_fix = t308 i_alternative_fixes = t312 ).
+          t243 = zcl_lnt_issue=>at_range( i_file = t1 i_start = t216 i_end = t222 i_message_26cb = |Missing space after the colon| i_key = t248 i_severity = t306 i_fix = t308 i_alternative_fixes = t312 ).
           t2->load( ).
           APPEND t243 TO t2->items.
           t2->save( ).
         ENDIF.
-        DATA t315 TYPE i.
         DATA(t317) = 1.
-        t315 = t123 + t317.
-        t123 = t315.
+        t123 = t123 + t317.
       ENDDO.
     ENDDO.
     result = t2.

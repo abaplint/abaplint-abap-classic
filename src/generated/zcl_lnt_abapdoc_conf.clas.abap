@@ -54,8 +54,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_6201f324c67f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkLocal` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkLocal` ) )->as_boolean( ).
     ELSE.
       result = me->check_local.
     ENDIF.
@@ -76,8 +75,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_a4d201238a70.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `classDefinition` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `classDefinition` ) )->as_boolean( ).
     ELSE.
       result = me->class_definition_38cb.
     ENDIF.
@@ -98,8 +96,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_566d7b4baf0b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `interfaceDefinition` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `interfaceDefinition` ) )->as_boolean( ).
     ELSE.
       result = me->interface_definition.
     ENDIF.
@@ -120,8 +117,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_79466e3b7ce0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreTestClasses` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreTestClasses` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_test_classes.
     ENDIF.

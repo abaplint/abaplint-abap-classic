@@ -13,19 +13,15 @@ CLASS zcl_lnt_sy_sql_set_op_group IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
-    DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d271_46df92fbd079.
     t4 = t1->find_direct_expression( i_type_9913 = t6 ).
-    t3 = xsdbool( t4 IS BOUND ).
-    IF t3 = abap_true.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    IF xsdbool( t4 IS BOUND ) = abap_true.
       DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t12->has = abap_true.
       t12->value = abap_true.
-      t9 = t12.
       DATA t14 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      zcl_lnt_sy_expres_select=>run_syntax( i_node = t1 i_input_967e = t2 i_skip_implicit_into = t9 i_select_loop_6767 = t14 ).
+      zcl_lnt_sy_expres_select=>run_syntax( i_node = t1 i_input_967e = t2 i_skip_implicit_into = t12 i_select_loop_6767 = t14 ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d276_d6ee8049769d.

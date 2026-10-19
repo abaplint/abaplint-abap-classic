@@ -23,30 +23,22 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
   METHOD push.
     DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_runtime.
-    DATA t3 TYPE abap_bool.
-    DATA(t5) = CONV f( 100 ).
-    t3 = xsdbool( t2 < t5 ).
-    IF t3 = abap_true.
+    IF xsdbool( t2 < CONV f( 100 ) ) = abap_true.
       RETURN.
     ENDIF.
     DATA(t6) = me->results.
     DATA t7 TYPE REF TO zcl_lnt_shape_a69dd887.
     DATA t8 TYPE f.
     t8 = t2.
-    DATA t10 TYPE string.
-    DATA t11 TYPE string.
     DATA t12 TYPE string.
     DATA t13 TYPE string.
     t13 = t1->get_type( ).
-    DATA(t15) = | |.
     DATA(t16) = strlen( t13 ).
-    t12 = |{ t13 }{ t15 }|.
+    t12 = |{ t13 }{ | | }|.
     DATA t17 TYPE string.
     t17 = t1->get_name( ).
     DATA(t19) = strlen( t12 ).
-    t11 = |{ t12 }{ t17 }|.
-    t10 = t11.
-    t7 = NEW zcl_lnt_shape_a69dd887( i_runtime = t8 i_name = t10 ).
+    t7 = NEW zcl_lnt_shape_a69dd887( i_runtime = t8 i_name = |{ t12 }{ t17 }| ).
     CREATE OBJECT t7->zlnt_view_ownkeys_b0e8086400eb.
     t7->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -57,13 +49,11 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t7->zlnt_json_ownkeys_70e5fd461788.
     t7->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t22) = |runtime|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
-    DATA(t24) = |name|.
+    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |runtime| p1 = t23 ).
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
+      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |name| p1 = t25 ).
     ENDIF.
     t6->load( ).
     APPEND t7 TO t6->items.
@@ -71,29 +61,20 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output.
-    DATA t1 TYPE i.
-    t1 = 10.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t4 = me->results.
     DATA t6 TYPE i.
     t6 = 1.
     DO.
-      DATA t8 TYPE abap_bool.
-      DATA t10 TYPE i.
       t4->load( ).
-      t10 = lines( t4->items ).
-      t8 = xsdbool( t6 < t10 ).
-      IF t8 = abap_false.
+      IF xsdbool( t6 < lines( t4->items ) ) = abap_false.
         EXIT.
       ENDIF.
       DATA t12 TYPE i.
       t12 = t6.
       DO.
-        DATA t14 TYPE abap_bool.
-        DATA(t16) = 0.
-        t14 = xsdbool( t12 > t16 ).
-        IF t14 = abap_false.
+        IF xsdbool( t12 > 0 ) = abap_false.
           EXIT.
         ENDIF.
         DATA t18 TYPE REF TO zcl_lnt_shape_a69dd887.
@@ -138,16 +119,13 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
         ELSE.
           t27 ?= t30.
         ENDIF.
-        DATA t33 TYPE abap_bool.
         DATA t34 TYPE f.
         DATA t35 TYPE f.
         t35 = t27->runtime.
         DATA t37 TYPE f.
         t37 = t18->runtime.
         t34 = t35 - t37.
-        DATA(t39) = CONV f( 0 ).
-        t33 = xsdbool( t34 > t39 ).
-        IF t33 = abap_true.
+        IF xsdbool( t34 > CONV f( 0 ) ) = abap_true.
           DATA t41 TYPE REF TO zcl_lnt_shape_a69dd887.
           CLEAR t41.
           DATA t43 TYPE i.
@@ -195,26 +173,20 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
           ENDIF.
           t4->put( p0 = t50 p1 = t53 ).
           t4->put( p0 = t12 p1 = t41 ).
-          DATA t62 TYPE i.
           DATA(t64) = 1.
-          t62 = t12 - t64.
-          t12 = t62.
+          t12 = t12 - t64.
         ELSE.
           EXIT.
         ENDIF.
       ENDDO.
-      DATA t65 TYPE i.
       DATA(t67) = 1.
-      t65 = t6 + t67.
-      t6 = t65.
+      t6 = t6 + t67.
     ENDDO.
     t3 = t4.
     DATA t69 TYPE i.
     t69 = 0.
     DO.
-      DATA t71 TYPE abap_bool.
-      t71 = xsdbool( t69 < t1 ).
-      IF t71 = abap_false.
+      IF xsdbool( t69 < 10 ) = abap_false.
         EXIT.
       ENDIF.
       DATA t75 TYPE REF TO zcl_lnt_shape_a69dd887.
@@ -238,20 +210,16 @@ CLASS zcl_lnt_syntax_performance IMPLEMENTATION.
       ELSE.
         t75 ?= t78.
       ENDIF.
-      DATA(t81) = VALUE abap_bool( ).
       DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t84.
-      t81 = xsdbool( t75 IS INITIAL ).
-      IF t81 = abap_true.
+      IF xsdbool( t75 IS INITIAL ) = abap_true.
         EXIT.
       ENDIF.
       DATA(t88) = NEW zlnt_exception_un_5f2d02892fe8( ).
       t88->source_location = |src/rules_runner.ts:34:7|.
       RAISE EXCEPTION t88.
-      DATA t90 TYPE i.
       DATA(t92) = 1.
-      t90 = t69 + t92.
-      t69 = t90.
+      t69 = t69 + t92.
     ENDDO.
   ENDMETHOD.
 

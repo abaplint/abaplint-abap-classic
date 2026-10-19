@@ -28,28 +28,17 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |identical_form_names|.
-    DATA t4 TYPE string.
-    t4 = |Identical FORM names|.
-    DATA t6 TYPE string.
-    t6 = |Detects identically named FORMs|.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Syntax|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Syntax| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t8 i_pragma = t24 i_pseudo_comment = t26 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |identical_form_names| i_title = |Identical FORM names| i_short_description = |Detects identically named FORMs| i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t12 i_pragma = t24 i_pseudo_comment = t26 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -68,23 +57,19 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = |key|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-    DATA(t34) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t33 ).
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t35 ).
     ENDIF.
-    DATA(t36) = |shortDescription|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |tags|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t39 ).
     ENDIF.
     result = t1.
 
@@ -108,32 +93,20 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abap_object.
     DATA t14 TYPE REF TO object.
     t14 = t1.
     t12 ?= t14.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t15 = t12->parsed.
-    t10 = t15.
+    t10 = t12->parsed.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO object.
     DATA(t19) = VALUE i( ).
@@ -157,11 +130,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
         t17 ?= t18.
       ENDIF.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t23 TYPE REF TO zif_lnt_abap_file_information.
-      DATA t26 TYPE REF TO zif_lnt_abap_file_information.
-      t26 = t17->info.
-      t23 = t26.
-      t22 = t23->list_form_definitions( ).
+      t22 = t17->info->list_form_definitions( ).
       DATA t28 TYPE REF TO zcl_lnt_info_form_definition.
       CLEAR t28.
       DATA t29 TYPE REF TO object.
@@ -198,20 +167,14 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
           t34 = zlnt_runtime_uppe_91169605024d=>full( t34 ).
         ENDIF.
         t33 = t34.
-        DATA t38 TYPE abap_bool.
-        DATA t39 TYPE i.
-        t39 = t8->indexof( p0 = t33 ).
-        DATA(t42) = 0.
-        t38 = xsdbool( t39 >= t42 ).
-        IF t38 = abap_true.
+        IF xsdbool( t8->indexof( p0 = t33 ) >= 0 ) = abap_true.
           DATA t44 TYPE string.
           DATA t45 TYPE string.
           DATA(t46) = |Identical FORM Names: "|.
           DATA(t48) = strlen( t46 ).
           t45 = |{ t46 }{ t33 }|.
-          DATA(t49) = |"|.
           DATA(t50) = strlen( t45 ).
-          t44 = |{ t45 }{ t49 }|.
+          t44 = |{ t45 }{ |"| }|.
           DATA t52 TYPE REF TO zcl_lnt_issue.
           CLEAR t52.
           DATA t53 TYPE REF TO zcl_lnt_fi_identifier.
@@ -219,21 +182,12 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
           DATA(t56) = VALUE string( ).
           DATA t57 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t57.
-          DATA t58 TYPE string.
-          t58 = |identical_form_names|.
-          DATA t60 TYPE string.
-          t60 = |Identical FORM names|.
-          DATA t62 TYPE string.
-          t62 = |Detects identically named FORMs|.
           DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t64.
           DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t69.
-          t68 = t69.
-          DATA(t71) = |Syntax|.
+          CREATE OBJECT t68.
           t68->load( ).
-          APPEND t71 TO t68->items.
+          APPEND |Syntax| TO t68->items.
           t68->save( ).
           t64 = t68.
           DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -246,7 +200,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
           CLEAR t80.
           DATA t82 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t82.
-          t57 = NEW zcl_lnt_irule_metadata( i_key = t58 i_title = t60 i_short_description = t62 i_bad_example = t74 i_good_example = t76 i_extended_information = t78 i_tags = t64 i_pragma = t80 i_pseudo_comment = t82 ).
+          t57 = NEW zcl_lnt_irule_metadata( i_key = |identical_form_names| i_title = |Identical FORM names| i_short_description = |Detects identically named FORMs| i_bad_example = t74 i_good_example = t76 i_extended_information = t78 i_tags = t64 i_pragma = t80 i_pseudo_comment = t82 ).
           CREATE OBJECT t57->zlnt_view_ownkeys_b0e8086400eb.
           t57->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -269,27 +223,23 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t57->zlnt_json_ownkeys_70e5fd461788.
           t57->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t88) = |key|.
           DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t89.
-          t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
-          DATA(t90) = |title|.
+          t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t89 ).
           DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t91.
           IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t90 p1 = t91 ).
+            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t91 ).
           ENDIF.
-          DATA(t92) = |shortDescription|.
           DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t93.
           IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t92 p1 = t93 ).
+            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t93 ).
           ENDIF.
-          DATA(t94) = |tags|.
           DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t95.
           IF t57->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
+            t57->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t95 ).
           ENDIF.
           t56 = t57->key.
           DATA t96 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -352,10 +302,8 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_identical_form_names.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_sr_rl_id_fr_nm_ts_id_fr_nm( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->i_i_sr_rl_id_fr_nm_ts_id_fr_nm( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

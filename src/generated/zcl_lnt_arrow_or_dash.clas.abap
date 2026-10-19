@@ -69,9 +69,7 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t15.
-    t14 = t15.
+    CREATE OBJECT t14.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t18 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
@@ -102,9 +100,7 @@ CLASS zcl_lnt_arrow_or_dash IMPLEMENTATION.
     t14->load( ).
     APPEND t17 TO t14->items.
     t14->save( ).
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    t22 = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t14 ).
-    result = t22.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t14 ).
 
   ENDMETHOD.
 

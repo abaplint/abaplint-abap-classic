@@ -24,41 +24,30 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = |EQ|.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND |EQ| TO t2->items.
     t2->save( ).
-    DATA(t7) = |><|.
     t2->load( ).
-    APPEND t7 TO t2->items.
+    APPEND |><| TO t2->items.
     t2->save( ).
-    DATA(t9) = |NE|.
     t2->load( ).
-    APPEND t9 TO t2->items.
+    APPEND |NE| TO t2->items.
     t2->save( ).
-    DATA(t11) = |GE|.
     t2->load( ).
-    APPEND t11 TO t2->items.
+    APPEND |GE| TO t2->items.
     t2->save( ).
-    DATA(t13) = |GT|.
     t2->load( ).
-    APPEND t13 TO t2->items.
+    APPEND |GT| TO t2->items.
     t2->save( ).
-    DATA(t15) = |LT|.
     t2->load( ).
-    APPEND t15 TO t2->items.
+    APPEND |LT| TO t2->items.
     t2->save( ).
-    DATA(t17) = |LE|.
     t2->load( ).
-    APPEND t17 TO t2->items.
+    APPEND |LE| TO t2->items.
     t2->save( ).
-    t1 = t2.
-    me->zlnt_view_write_s_0f0b7da17ee0( p0 = t1 ).
+    me->zlnt_view_write_s_0f0b7da17ee0( p0 = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

@@ -40,22 +40,15 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
     DATA t2 TYPE i.
     t2 = 0.
     DO.
-      DATA t4 TYPE abap_bool.
-      DATA t6 TYPE i.
       DATA(t7) = me->list.
       t7->load( ).
-      t6 = lines( t7->items ).
-      t4 = xsdbool( t2 < t6 ).
-      IF t4 = abap_false.
+      IF xsdbool( t2 < lines( t7->items ) ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t8) = VALUE abap_bool( ).
       DATA t9 TYPE REF TO zcl_lnt_fi_identifier.
       t9 = t1.
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t11.
-      DATA t12 TYPE REF TO zcl_lnt_fi_identifier.
-      CLEAR t12.
       DATA t13 TYPE REF TO zcl_lnt_info_method_definition.
       CLEAR t13.
       DATA(t14) = me->list.
@@ -77,46 +70,25 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       ELSE.
         t13 ?= t16.
       ENDIF.
-      t12 = t13->identifier.
-      t11 = t12.
+      t11 = t13->identifier.
       DATA t19 TYPE abap_bool.
       DATA t20 TYPE abap_bool.
       DATA t21 TYPE REF TO zcl_lnt_position.
-      DATA t26 TYPE REF TO zcl_lnt_abstract_token.
-      t26 = t11->token.
-      DATA t28 TYPE REF TO zcl_lnt_position.
-      t28 = t26->start.
-      t21 = t28.
-      DATA t30 TYPE REF TO zcl_lnt_position.
-      DATA t32 TYPE REF TO zcl_lnt_abstract_token.
-      t32 = t9->token.
+      t21 = t11->token->start.
       DATA t34 TYPE REF TO zcl_lnt_position.
-      t34 = t32->start.
-      t30 = t34.
-      t20 = t21->equals( i_p = t30 ).
+      t34 = t9->token->start.
+      t20 = t21->equals( i_p = t34 ).
       t19 = t20.
       IF t20 = abap_true.
-        DATA t36 TYPE abap_bool.
-        DATA t37 TYPE string.
-        DATA t40 TYPE string.
-        t40 = t11->filename.
-        t37 = t40.
-        DATA t42 TYPE string.
-        t42 = t9->filename.
-        t36 = xsdbool( t37 = t42 ).
-        t19 = t36.
+        t19 = xsdbool( t11->filename = t9->filename ).
       ENDIF.
-      t8 = t19.
-      IF t8 = abap_true.
+      IF t19 = abap_true.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t47) = 1.
-        t44 = me->list->splice2( p0 = t2 p1 = t47 ).
+        t44 = me->list->splice2( p0 = t2 p1 = 1 ).
         RETURN.
       ENDIF.
-      DATA t48 TYPE i.
       DATA(t50) = 1.
-      t48 = t2 + t50.
-      t2 = t48.
+      t2 = t2 + t50.
     ENDDO.
   ENDMETHOD.
 
@@ -144,12 +116,7 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       ELSE.
         t2 ?= t3.
       ENDIF.
-      DATA t7 TYPE abap_bool.
-      DATA t8 TYPE f.
-      t8 = t2->visibility.
-      DATA(t10) = CONV f( 2 ).
-      t7 = xsdbool( t8 = t10 ).
-      IF t7 = abap_true.
+      IF xsdbool( t2->visibility = CONV f( 2 ) ) = abap_true.
         result = abap_true.
         RETURN.
       ENDIF.
@@ -160,11 +127,9 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
 
   METHOD get_length.
     DATA t1 TYPE f.
-    DATA t2 TYPE i.
     DATA(t3) = me->list.
     t3->load( ).
-    t2 = lines( t3->items ).
-    t1 = t2.
+    t1 = lines( t3->items ).
     result = t1.
 
   ENDMETHOD.

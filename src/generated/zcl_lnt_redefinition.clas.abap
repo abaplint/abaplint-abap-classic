@@ -17,10 +17,9 @@ CLASS zcl_lnt_redefinition IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t6) = |FINAL|.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
+    t5->sval = |FINAL|.
     t4 = zcl_lnt_st_combi_module=>opt( i_first = t5 ).
     IF t4 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -46,15 +45,12 @@ CLASS zcl_lnt_redefinition IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = |REDEFINITION|.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
+    t10->sval = |REDEFINITION|.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t13.
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    t14 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t10 i_rest = t13 ).
-    result = t14.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t10 i_rest = t13 ).
 
   ENDMETHOD.
 

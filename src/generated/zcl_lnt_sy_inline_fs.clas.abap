@@ -16,60 +16,36 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
     DATA(t3) = i_type_9913.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    DATA t7 TYPE REF TO zcl_lnt_expression_node.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d181_df35d03977d7.
-    t7 = t1->find_first_expression( i_type_9913 = t9 ).
-    t6 = t7.
+    t6 = t1->find_first_expression( i_type_9913 = t9 ).
     DATA t10 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t11) = xsdbool( t6 IS INITIAL ).
-    IF t11 = abap_true.
+    IF xsdbool( t6 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t14 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t15 TYPE REF TO zcl_lnt_expression_node.
-      t15 = t6.
-      t14 = t15->get_first_token( ).
-      t10 = t14.
+      t10 = t6->get_first_token( ).
     ENDIF.
     t4 = t10.
     DATA t17 TYPE REF TO zcl_lnt_expression_node.
-    DATA t18 TYPE REF TO zcl_lnt_expression_node.
     DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d172_090204a1a05d.
-    t18 = t1->find_first_expression( i_type_9913 = t20 ).
-    t17 = t18.
+    t17 = t1->find_first_expression( i_type_9913 = t20 ).
     DATA t21 TYPE abap_bool.
     DATA t22 TYPE abap_bool.
     t22 = xsdbool( t17 IS BOUND ).
     t21 = t22.
     IF t22 = abap_true.
-      DATA t24 TYPE abap_bool.
-      DATA t25 TYPE i.
-      DATA t26 TYPE string.
-      DATA t27 TYPE REF TO zcl_lnt_expression_node.
-      t27 = t17.
-      t26 = t27->concat_tokens( ).
-      t25 = strlen( t26 ).
-      DATA(t30) = 30.
-      t24 = xsdbool( t25 > t30 ).
-      t21 = t24.
+      t21 = xsdbool( strlen( t17->concat_tokens( ) ) > 30 ).
     ENDIF.
     IF t21 = abap_true.
       DATA t32 TYPE string.
       DATA(t33) = |FIELD-SYMBOLS name too long, |.
       DATA t34 TYPE string.
-      DATA t35 TYPE REF TO zcl_lnt_expression_node.
-      t35 = t17.
-      t34 = t35->concat_tokens( ).
+      t34 = t17->concat_tokens( ).
       DATA(t37) = strlen( t33 ).
       t32 = |{ t33 }{ t34 }|.
       DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t38 = t2->issues.
       DATA t40 TYPE REF TO zcl_lnt_issue.
-      DATA t42 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t43 TYPE REF TO zcl_lnt_expression_node.
-      t43 = t17.
-      t42 = t43->get_first_token( ).
       DATA t46 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t40 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t42 i_message_26cb = t32 i_fix = t46 ).
+      t40 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t17->get_first_token( ) i_message_26cb = t32 i_fix = t46 ).
       t38->load( ).
       APPEND t40 TO t38->items.
       t38->save( ).
@@ -79,52 +55,34 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
     t48 = xsdbool( t4 IS BOUND ).
     t47 = t48.
     IF t48 = abap_true.
-      DATA t50 TYPE abap_bool.
-      t50 = xsdbool( t3 IS BOUND ).
-      t47 = t50.
+      t47 = xsdbool( t3 IS BOUND ).
     ENDIF.
     IF t47 = abap_true.
       DATA t52 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA t53 TYPE REF TO zcl_lnt_typed_identifier.
       DATA t54 TYPE REF TO zcl_lnt_abstract_token.
       t54 = t4.
       DATA t56 TYPE string.
       t56 = t2->filename.
       DATA t58 TYPE REF TO zcl_lnt_abstract_type.
       t58 = t3.
-      DATA t60 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t64.
-      t63 = t64.
-      DATA(t66) = |inline|.
+      CREATE OBJECT t63.
       t63->load( ).
-      APPEND t66 TO t63->items.
+      APPEND |inline| TO t63->items.
       t63->save( ).
-      t60 = t63.
       DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t53 = NEW zcl_lnt_typed_identifier( i_token = t54 i_filename = t56 i_type_9913 = t58 i_meta = t60 i_value = t69 ).
-      t52 = t53.
+      t52 = NEW zcl_lnt_typed_identifier( i_token = t54 i_filename = t56 i_type_9913 = t58 i_meta = t63 i_value = t69 ).
       DATA t71 TYPE REF TO zcl_lnt_current_scope.
       t71 = t2->scope.
       DATA t73 TYPE REF TO zcl_lnt_typed_identifier.
       t73 = t52.
-      DATA(t78) = VALUE abap_bool( ).
       DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t78 = xsdbool( t73 IS INITIAL ).
-      IF t78 = abap_true.
+      IF xsdbool( t73 IS INITIAL ) = abap_true.
       ELSE.
-        DATA(t86) = VALUE string( ).
         DATA t87 TYPE REF TO zcl_lnt_fi_identifier.
         t87 = t73.
-        DATA(t90) = VALUE string( ).
         DATA t91 TYPE string.
-        DATA t94 TYPE REF TO zcl_lnt_abstract_token.
-        t94 = t87->token.
-        DATA t96 TYPE string.
-        t96 = t94->str.
-        t91 = t96.
-        DATA(t98) = VALUE abap_bool( ).
+        t91 = t87->token->str.
         DATA(t99) = VALUE string( ).
         DATA(t100) = t91.
         DATA(t101) = 0.
@@ -137,17 +95,13 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t101 > t103 OR t102 <= 0.
-          CLEAR t99.
         ELSE.
           IF t102 > t103 - t101.
             t102 = t103 - t101.
           ENDIF.
           t99 = t100+t101(t102).
         ENDIF.
-        DATA(t104) = |!|.
-        t98 = xsdbool( t99 = t104 ).
-        IF t98 = abap_true.
-          DATA(t105) = VALUE string( ).
+        IF xsdbool( t99 = |!| ) = abap_true.
           DATA t106 TYPE string.
           t106 = t91.
           DATA(t108) = VALUE string( ).
@@ -162,53 +116,40 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t110 > t114 OR t111 <= 0.
-            CLEAR t108.
           ELSE.
             IF t111 > t114 - t110.
               t111 = t114 - t110.
             ENDIF.
             t108 = t106+t110(t111).
           ENDIF.
-          t105 = t108.
-          t91 = t105.
+          t91 = t108.
         ENDIF.
-        t90 = t91.
-        t86 = t90.
-        DATA t116 TYPE REF TO zcl_lnt_typed_identifier.
-        t116 = t73.
-        t71->add_named_identifier( i_name = t86 i_identifier = t116 ).
+        t71->add_named_identifier( i_name = t91 i_identifier = t73 ).
       ENDIF.
       DATA t118 TYPE REF TO zcl_lnt_current_scope.
       t118 = t2->scope.
       DATA t120 TYPE REF TO zcl_lnt_abstract_token.
       t120 = t4.
       DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t127) = |Write To|.
       CREATE OBJECT t126.
       t126->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-      t126->sval = t127.
+      t126->sval = |Write To|.
       DATA t128 TYPE string.
       t128 = t2->filename.
       DATA t130 TYPE REF TO zcl_lnt_ireference_extras.
       t118->add_reference( i_usage = t120 i_referencing = t52 i_type_9913 = t126 i_filename = t128 i_extra = t130 ).
     ELSE.
-      DATA t131 TYPE abap_bool.
-      t131 = xsdbool( t4 IS BOUND ).
-      IF t131 = abap_true.
+      IF xsdbool( t4 IS BOUND ) = abap_true.
         DATA t134 TYPE string.
         DATA t135 TYPE string.
         DATA(t136) = |InlineFS, could not determine type for "|.
         DATA t137 TYPE string.
-        DATA t141 TYPE string.
-        t141 = t4->str.
-        t137 = t141.
+        t137 = t4->str.
         DATA(t143) = strlen( t136 ).
         t135 = |{ t136 }{ t137 }|.
-        DATA(t144) = |"|.
         DATA(t145) = strlen( t135 ).
-        t134 = |{ t135 }{ t144 }|.
+        t134 = |{ t135 }{ |"| }|.
         DATA t146 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t147 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t148 TYPE REF TO zcl_lnt_abstract_token.
         t148 = t4.
         DATA t150 TYPE string.
@@ -216,39 +157,24 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
         DATA t152 TYPE REF TO zcl_lnt_unknown_type.
         DATA t154 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t152 = NEW zcl_lnt_unknown_type( i_error = t134 i_qualified_name = t154 ).
-        DATA t155 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t158 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t159 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t159.
-        t158 = t159.
-        DATA(t161) = |inline|.
+        CREATE OBJECT t158.
         t158->load( ).
-        APPEND t161 TO t158->items.
+        APPEND |inline| TO t158->items.
         t158->save( ).
-        t155 = t158.
         DATA t164 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t147 = NEW zcl_lnt_typed_identifier( i_token = t148 i_filename = t150 i_type_9913 = t152 i_meta = t155 i_value = t164 ).
-        t146 = t147.
+        t146 = NEW zcl_lnt_typed_identifier( i_token = t148 i_filename = t150 i_type_9913 = t152 i_meta = t158 i_value = t164 ).
         DATA t166 TYPE REF TO zcl_lnt_current_scope.
         t166 = t2->scope.
         DATA t168 TYPE REF TO zcl_lnt_typed_identifier.
         t168 = t146.
-        DATA(t173) = VALUE abap_bool( ).
         DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t173 = xsdbool( t168 IS INITIAL ).
-        IF t173 = abap_true.
+        IF xsdbool( t168 IS INITIAL ) = abap_true.
         ELSE.
-          DATA(t181) = VALUE string( ).
           DATA t182 TYPE REF TO zcl_lnt_fi_identifier.
           t182 = t168.
-          DATA(t185) = VALUE string( ).
           DATA t186 TYPE string.
-          DATA t189 TYPE REF TO zcl_lnt_abstract_token.
-          t189 = t182->token.
-          DATA t191 TYPE string.
-          t191 = t189->str.
-          t186 = t191.
-          DATA(t193) = VALUE abap_bool( ).
+          t186 = t182->token->str.
           DATA(t194) = VALUE string( ).
           DATA(t195) = t186.
           DATA(t196) = 0.
@@ -261,17 +187,13 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t196 > t198 OR t197 <= 0.
-            CLEAR t194.
           ELSE.
             IF t197 > t198 - t196.
               t197 = t198 - t196.
             ENDIF.
             t194 = t195+t196(t197).
           ENDIF.
-          DATA(t199) = |!|.
-          t193 = xsdbool( t194 = t199 ).
-          IF t193 = abap_true.
-            DATA(t200) = VALUE string( ).
+          IF xsdbool( t194 = |!| ) = abap_true.
             DATA t201 TYPE string.
             t201 = t186.
             DATA(t203) = VALUE string( ).
@@ -286,31 +208,24 @@ CLASS zcl_lnt_sy_inline_fs IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t205 > t209 OR t206 <= 0.
-              CLEAR t203.
             ELSE.
               IF t206 > t209 - t205.
                 t206 = t209 - t205.
               ENDIF.
               t203 = t201+t205(t206).
             ENDIF.
-            t200 = t203.
-            t186 = t200.
+            t186 = t203.
           ENDIF.
-          t185 = t186.
-          t181 = t185.
-          DATA t211 TYPE REF TO zcl_lnt_typed_identifier.
-          t211 = t168.
-          t166->add_named_identifier( i_name = t181 i_identifier = t211 ).
+          t166->add_named_identifier( i_name = t186 i_identifier = t168 ).
         ENDIF.
         DATA t213 TYPE REF TO zcl_lnt_current_scope.
         t213 = t2->scope.
         DATA t215 TYPE REF TO zcl_lnt_abstract_token.
         t215 = t4.
         DATA t221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA(t222) = |Write To|.
         CREATE OBJECT t221.
         t221->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-        t221->sval = t222.
+        t221->sval = |Write To|.
         DATA t223 TYPE string.
         t223 = t2->filename.
         DATA t225 TYPE REF TO zcl_lnt_ireference_extras.

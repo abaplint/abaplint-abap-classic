@@ -17,13 +17,8 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
     DATA(t2) = i_db_sources.
     DATA(t3) = i_input_967e.
     DATA(t4) = i_token.
-    DATA t5 TYPE abap_bool.
-    DATA t6 TYPE i.
     t2->load( ).
-    t6 = lines( t2->items ).
-    DATA(t8) = 1.
-    t5 = xsdbool( t6 > t8 ).
-    IF t5 = abap_true.
+    IF xsdbool( lines( t2->items ) > 1 ) = abap_true.
       RETURN.
     ENDIF.
     DATA t9 TYPE REF TO zif_lnt_union_c74a232f.
@@ -31,49 +26,33 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
     t2->load( ).
     READ TABLE t2->items INDEX 1 INTO t10.
     t9 = t10.
-    DATA(t12) = VALUE abap_bool( ).
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t12 = xsdbool( t9 IS INITIAL ).
-    IF t12 = abap_true.
+    IF xsdbool( t9 IS INITIAL ) = abap_true.
       RETURN.
     ENDIF.
     DATA t19 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t20 TYPE REF TO zcl_lnt_abstract_type.
     DATA t21 TYPE REF TO zif_lnt_union_c74a232f.
     t21 = t9.
-    DATA t23 TYPE REF TO zif_lnt_registry.
-    DATA t25 TYPE REF TO zcl_lnt_current_scope.
-    t25 = t3->scope.
     DATA t27 TYPE REF TO zif_lnt_registry.
-    t27 = t25->reg.
-    t23 = t27.
+    t27 = t3->scope->reg.
     DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t20 = t21->parse_type( i_reg_f149 = t23 i_data_element = t29 i_description = t30 ).
-    t19 = t20.
+    t19 = t21->parse_type( i_reg_f149 = t27 i_data_element = t29 i_description = t30 ).
     DATA t31 TYPE abap_bool.
     DATA t32 TYPE abap_bool.
     t32 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_void_type ).
     t31 = t32.
     IF t32 = abap_false.
-      DATA t34 TYPE abap_bool.
-      t34 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_unknown_type ).
-      t31 = t34.
+      t31 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_unknown_type ).
     ENDIF.
     IF t31 = abap_true.
       RETURN.
     ENDIF.
-    DATA t36 TYPE abap_bool.
-    DATA t37 TYPE abap_bool.
-    t37 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_structure_type ).
-    t36 = xsdbool( t37 = abap_false ).
-    IF t36 = abap_true.
+    IF xsdbool( xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_structure_type ) = abap_false ) = abap_true.
       DATA t40 TYPE string.
       DATA(t41) = |checkFields, expected structure, |.
       DATA t42 TYPE string.
-      DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      t43 = t19->zlnt_builtin_clas_3f891b097658( ).
-      t42 = t43->name.
+      t42 = t19->zlnt_builtin_clas_3f891b097658( )->name.
       DATA(t45) = strlen( t41 ).
       t40 = |{ t41 }{ t42 }|.
       DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -100,25 +79,18 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t55 = t55 + 1.
-      DATA t56 TYPE abap_bool.
-      DATA(t58) = |*|.
-      t56 = xsdbool( t54 = t58 ).
-      IF t56 = abap_true.
+      IF xsdbool( t54 = |*| ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t59 TYPE abap_bool.
       DATA t60 TYPE abap_bool.
       DATA t61 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t61.
-      DATA(t62) = `^[A-Z_]\w*$`.
-      DATA(t63) = |^[A-Z_][A-Za-z0-9_]*$|.
-      DATA(t64) = |i|.
-      CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t63 flags = t64.
-      t61->source = t62.
+      CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Z_][A-Za-z0-9_]*$| flags = |i|.
+      t61->source = `^[A-Z_]\w*$`.
       t60 = t61->test( p0 = t54 ).
       t59 = t60.
       IF t60 = abap_true.
-        DATA(t66) = VALUE abap_bool( ).
         DATA t70 TYPE REF TO zcl_lnt_structure_type.
         t70 ?= t19.
         DATA t72 TYPE string.
@@ -138,8 +110,7 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         t74 = t75->get( p0 = t77 ).
         DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t80.
-        t66 = xsdbool( t74 IS INITIAL ).
-        t59 = t66.
+        t59 = xsdbool( t74 IS INITIAL ).
       ENDIF.
       IF t59 = abap_true.
         DATA t85 TYPE string.
@@ -147,9 +118,8 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
         DATA(t87) = |checkFields, field |.
         DATA(t89) = strlen( t87 ).
         t86 = |{ t87 }{ t54 }|.
-        DATA(t90) = | not found|.
         DATA(t91) = strlen( t86 ).
-        t85 = |{ t86 }{ t90 }|.
+        t85 = |{ t86 }{ | not found| }|.
         DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t92 = t3->issues.
         DATA t94 TYPE REF TO zcl_lnt_issue.

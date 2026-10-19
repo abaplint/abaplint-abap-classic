@@ -206,10 +206,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
                     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
                   ENDIF.
                 ENDIF.
-                DATA(t6) = VALUE string( ).
-                DATA(t7) = VALUE string( ).
-                DATA(t8) = VALUE string( ).
-                t3 = NEW zcl_lnt_shape_9e749db2( view_source = t4 i_type_9913 = t6 i_old_name = t7 i_new_name = t8 ).
+                t3 = NEW zcl_lnt_shape_9e749db2( view_source = t4 i_type_9913 = VALUE string( ) i_old_name = VALUE string( ) i_new_name = VALUE string( ) ).
               ENDIF.
             ENDIF.
           ELSE.
@@ -509,10 +506,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
                       RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
                     ENDIF.
                   ENDIF.
-                  DATA(t5) = VALUE string( ).
-                  DATA(t6) = VALUE string( ).
-                  DATA(t7) = VALUE string( ).
-                  t2 = NEW zcl_lnt_shape_9e749db2( view_source = t3 i_type_9913 = t5 i_old_name = t6 i_new_name = t7 ).
+                  t2 = NEW zcl_lnt_shape_9e749db2( view_source = t3 i_type_9913 = VALUE string( ) i_old_name = VALUE string( ) i_new_name = VALUE string( ) ).
                 ENDIF.
               ENDIF.
             ELSE.

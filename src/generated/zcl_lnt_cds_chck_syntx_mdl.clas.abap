@@ -25,64 +25,48 @@ CLASS zcl_lnt_cds_chck_syntx_mdl IMPLEMENTATION.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = |MENGE_D|.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND |MENGE_D| TO t2->items.
     t2->save( ).
     zcl_lnt_cds_chck_syntx_mdl=>known_quan_data_elements = t2.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t9.
-    t8 = t9.
-    DATA(t11) = |BWERT|.
+    CREATE OBJECT t8.
     t8->load( ).
-    APPEND t11 TO t8->items.
+    APPEND |BWERT| TO t8->items.
     t8->save( ).
-    DATA(t13) = |DZWERT|.
     t8->load( ).
-    APPEND t13 TO t8->items.
+    APPEND |DZWERT| TO t8->items.
     t8->save( ).
     zcl_lnt_cds_chck_syntx_mdl=>known_curr_data_elements = t8.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t17.
-    t16 = t17.
-    DATA(t19) = |BEGIN|.
+    CREATE OBJECT t16.
     t16->load( ).
-    APPEND t19 TO t16->items.
+    APPEND |BEGIN| TO t16->items.
     t16->save( ).
-    DATA(t21) = |NUMBER|.
     t16->load( ).
-    APPEND t21 TO t16->items.
+    APPEND |NUMBER| TO t16->items.
     t16->save( ).
-    DATA(t23) = |POSITION|.
     t16->load( ).
-    APPEND t23 TO t16->items.
+    APPEND |POSITION| TO t16->items.
     t16->save( ).
     zcl_lnt_cds_chck_syntx_mdl=>reserved_element_names = t16.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
     DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t27.
-    t26 = t27.
-    DATA(t29) = |Semantics.unitOfMeasure|.
+    CREATE OBJECT t26.
     t26->load( ).
-    APPEND t29 TO t26->items.
+    APPEND |Semantics.unitOfMeasure| TO t26->items.
     t26->save( ).
-    DATA(t31) = |Semantics.currencyCode|.
     t26->load( ).
-    APPEND t31 TO t26->items.
+    APPEND |Semantics.currencyCode| TO t26->items.
     t26->save( ).
     zcl_lnt_cds_chck_syntx_mdl=>vw_entty_frbddn_annttns = t26.
   ENDMETHOD.

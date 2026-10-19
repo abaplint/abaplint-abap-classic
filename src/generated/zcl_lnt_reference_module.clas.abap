@@ -22,149 +22,85 @@ CLASS zcl_lnt_reference_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_reference_module=>reference_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t3 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t4) = |ObjectOrientedReference|.
-    DATA(t5) = |Object|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |ObjectOrientedReference| p1 = |Object| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t7 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t8) = |ObjectOrientedVoidReference|.
-    DATA(t9) = |Object (Void)|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |ObjectOrientedVoidReference| p1 = |Object (Void)| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t11 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t12) = |ObjectOrientedUnknownReference|.
-    DATA(t13) = |Object (Unknown)|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |ObjectOrientedUnknownReference| p1 = |Object (Unknown)| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t15 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t16) = |TableReference|.
-    DATA(t17) = |Table|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |TableReference| p1 = |Table| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t19 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t20) = |TableVoidReference|.
-    DATA(t21) = |Table (Void)|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |TableVoidReference| p1 = |Table (Void)| ).
     DATA t22 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t23 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t24) = |MethodReference|.
-    DATA(t25) = |Method|.
-    t22 = t23->set( p0 = t24 p1 = t25 ).
+    t22 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |MethodReference| p1 = |Method| ).
     DATA t26 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t27 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t28) = |BuiltinMethodReference|.
-    DATA(t29) = |Builtin Method|.
-    t26 = t27->set( p0 = t28 p1 = t29 ).
+    t26 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |BuiltinMethodReference| p1 = |Builtin Method| ).
     DATA t30 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t31 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t32) = |ConstructorReference|.
-    DATA(t33) = |Constructor Reference|.
-    t30 = t31->set( p0 = t32 p1 = t33 ).
+    t30 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |ConstructorReference| p1 = |Constructor Reference| ).
     DATA t34 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t35 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t35 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t36) = |MethodImplementationReference|.
-    DATA(t37) = |Method Implementation|.
-    t34 = t35->set( p0 = t36 p1 = t37 ).
+    t34 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |MethodImplementationReference| p1 = |Method Implementation| ).
     DATA t38 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t39 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t39 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t40) = |TypeReference|.
-    DATA(t41) = |Type|.
-    t38 = t39->set( p0 = t40 p1 = t41 ).
+    t38 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |TypeReference| p1 = |Type| ).
     DATA t42 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t43 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t43 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t44) = |BuiltinTypeReference|.
-    DATA(t45) = |Builtin Type|.
-    t42 = t43->set( p0 = t44 p1 = t45 ).
+    t42 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |BuiltinTypeReference| p1 = |Builtin Type| ).
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t47 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t47 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t48) = |VoidType|.
-    DATA(t49) = |Type (Void)|.
-    t46 = t47->set( p0 = t48 p1 = t49 ).
+    t46 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |VoidType| p1 = |Type (Void)| ).
     DATA t50 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t51 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t51 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t52) = |InferredType|.
-    DATA(t53) = |Inferred Type|.
-    t50 = t51->set( p0 = t52 p1 = t53 ).
+    t50 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |InferredType| p1 = |Inferred Type| ).
     DATA t54 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t55 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t55 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t56) = |FormReference|.
-    DATA(t57) = |Form|.
-    t54 = t55->set( p0 = t56 p1 = t57 ).
+    t54 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |FormReference| p1 = |Form| ).
     DATA t58 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t59 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t59 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t60) = |DataReadReference|.
-    DATA(t61) = |Read From|.
-    t58 = t59->set( p0 = t60 p1 = t61 ).
+    t58 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |DataReadReference| p1 = |Read From| ).
     DATA t62 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t63 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_reference_module=>zlnt_builtin_init_38ac8d5ee955 = abap_false.
       zcl_lnt_reference_module=>zlnt_builtin_init_6f85eeba361a( ).
     ENDIF.
-    t63 = zcl_lnt_reference_module=>reference_type_namespace.
-    DATA(t64) = |DataWriteReference|.
-    DATA(t65) = |Write To|.
-    t62 = t63->set( p0 = t64 p1 = t65 ).
+    t62 = zcl_lnt_reference_module=>reference_type_namespace->set( p0 = |DataWriteReference| p1 = |Write To| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -15,21 +15,16 @@ CLASS zcl_lnt_st_inline_fs IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
-    t2 = zcl_lnt_st_combi_module=>tok( i_t = t3 ).
-    t1 = t2.
+    t1 = zcl_lnt_st_combi_module=>tok( i_t = t3 ).
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4.
-    t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
-    t4 = t5.
+    t4 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = |FIELD-SYMBOL|.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
+    t10->sval = |FIELD-SYMBOL|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t4 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -55,9 +50,7 @@ CLASS zcl_lnt_st_inline_fs IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t18.
-    t17 = t18.
+    CREATE OBJECT t17.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d181_df35d03977d7.
     IF t21 IS BOUND.
@@ -95,21 +88,13 @@ CLASS zcl_lnt_st_inline_fs IMPLEMENTATION.
     t17->load( ).
     APPEND t23 TO t17->items.
     t17->save( ).
-    DATA t27 TYPE REF TO zif_lnt_statement_runnable.
-    t27 = zcl_lnt_st_combi_module=>seq( i_first = t10 i_second = t13 i_rest = t17 ).
-    t7 = t27.
-    DATA t31 TYPE REF TO zif_lnt_statement_runnable.
+    t7 = zcl_lnt_st_combi_module=>seq( i_first = t10 i_second = t13 i_rest = t17 ).
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t33 TYPE REF TO zcl_lnt_abap_release.
-    DATA t34 TYPE REF TO zcl_lnt_abap_release.
-    DATA t35 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t35 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t36) = |v740sp02|.
-    t34 = t35->get( p0 = t36 ).
-    t33 = t34.
+    t33 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v740sp02| ).
     IF t33 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t38 TYPE REF TO object.
@@ -157,27 +142,20 @@ CLASS zcl_lnt_st_inline_fs IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    DATA t43 TYPE REF TO zcl_lnt_iver_options.
     DATA t45 TYPE REF TO zcl_lnt_iver_options.
-    DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t49) = |OpenABAP|.
     DATA(t50) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t50->has = abap_true.
-    t50->value = t49.
-    t46 = t50.
-    t45 = NEW zcl_lnt_iver_options( i_also = t46 ).
+    t50->value = |OpenABAP|.
+    t45 = NEW zcl_lnt_iver_options( i_also = t50 ).
     CREATE OBJECT t45->zlnt_view_ownkeys_b0e8086400eb.
     t45->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t45->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t52 ).
     CREATE OBJECT t45->zlnt_json_ownkeys_70e5fd461788.
     t45->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t53) = |also|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
-    t43 = t45.
-    t31 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t32 i_first = t39 i_opts = t43 ).
-    result = t31.
+    t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t54 ).
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t32 i_first = t39 i_opts = t45 ).
 
   ENDMETHOD.
 

@@ -15,8 +15,7 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
   METHOD get_matcher.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t5) = |RETURN|.
-    t4 = zcl_lnt_st_combi_module=>str( i_s = t5 ).
+    t4 = zcl_lnt_st_combi_module=>str( i_s = |RETURN| ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t7 TYPE REF TO object.
@@ -46,15 +45,10 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zcl_lnt_abap_release.
-    DATA t15 TYPE REF TO zcl_lnt_abap_release.
-    DATA t16 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t16 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t17) = |v758|.
-    t15 = t16->get( p0 = t17 ).
-    t14 = t15.
+    t14 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v758| ).
     IF t14 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t19 TYPE REF TO object.
@@ -85,26 +79,20 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
       t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t20->cval = t21.
     ENDIF.
-    DATA t22 TYPE REF TO zcl_lnt_iver_options.
     DATA t24 TYPE REF TO zcl_lnt_iver_options.
-    DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t28) = |OpenABAP|.
     DATA(t29) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t29->has = abap_true.
-    t29->value = t28.
-    t25 = t29.
-    t24 = NEW zcl_lnt_iver_options( i_also = t25 ).
+    t29->value = |OpenABAP|.
+    t24 = NEW zcl_lnt_iver_options( i_also = t29 ).
     CREATE OBJECT t24->zlnt_view_ownkeys_b0e8086400eb.
     t24->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t24->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t31 ).
     CREATE OBJECT t24->zlnt_json_ownkeys_70e5fd461788.
     t24->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = |also|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t24->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-    t22 = t24.
-    t12 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t13 i_first = t20 i_opts = t22 ).
+    t24->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t33 ).
+    t12 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t13 i_first = t20 i_opts = t24 ).
     IF t12 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t36 TYPE REF TO object.
@@ -154,9 +142,7 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
     ENDIF.
     DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t40.
-    DATA t41 TYPE REF TO zif_lnt_statement_runnable.
-    t41 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t9 i_rest = t40 ).
-    result = t41.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t9 i_rest = t40 ).
 
   ENDMETHOD.
 

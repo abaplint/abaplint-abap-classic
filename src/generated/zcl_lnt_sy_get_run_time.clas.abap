@@ -14,42 +14,27 @@ CLASS zcl_lnt_sy_get_run_time IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t4 = i_node->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
+    t3 = i_node->find_direct_expression( i_type_9913 = t6 ).
     DATA t7 TYPE REF TO zcl_lnt_expression_node.
     DATA t9 TYPE REF TO zcl_lnt_expression_node.
     t9 = t3.
     DATA t11 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t12) = xsdbool( t9 IS INITIAL ).
-    IF t12 = abap_true.
+    IF xsdbool( t9 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t15 TYPE REF TO zcl_lnt_expression_node.
       DATA t16 TYPE REF TO zcl_lnt_expression_node.
       t16 = t9.
       DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
-      t15 = t16->find_direct_expression( i_type_9913 = t18 ).
-      t11 = t15.
+      t11 = t16->find_direct_expression( i_type_9913 = t18 ).
     ENDIF.
     t7 = t11.
-    DATA t19 TYPE abap_bool.
-    t19 = xsdbool( t7 IS BOUND ).
-    IF t19 = abap_true.
-      DATA t21 TYPE REF TO zcl_lnt_expression_node.
-      t21 = t7.
-      DATA t24 TYPE REF TO zcl_lnt_integer_type.
+    IF xsdbool( t7 IS BOUND ) = abap_true.
       DATA t25 TYPE REF TO zcl_lnt_abstract_type_data.
-      t24 = zcl_lnt_integer_type=>get_db65( i_input_967e = t25 ).
-      zcl_lnt_sy_inline_data=>run_syntax( i_node = t21 i_input_967e = t2 i_type_9913 = t24 ).
+      zcl_lnt_sy_inline_data=>run_syntax( i_node = t7 i_input_967e = t2 i_type_9913 = zcl_lnt_integer_type=>get_db65( i_input_967e = t25 ) ).
     ELSE.
-      DATA t26 TYPE abap_bool.
-      t26 = xsdbool( t3 IS BOUND ).
-      IF t26 = abap_true.
+      IF xsdbool( t3 IS BOUND ) = abap_true.
         DATA t28 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t29 TYPE REF TO zcl_lnt_expression_node.
-        t29 = t3.
-        t28 = zcl_lnt_sy_target=>run_syntax( i_node = t29 i_input_967e = t2 ).
+        t28 = zcl_lnt_sy_target=>run_syntax( i_node = t3 i_input_967e = t2 ).
       ENDIF.
     ENDIF.
   ENDMETHOD.

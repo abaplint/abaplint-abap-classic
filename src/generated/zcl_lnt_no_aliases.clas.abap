@@ -26,20 +26,11 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |no_aliases|.
-    DATA t4 TYPE string.
-    t4 = |No ALIASES|.
-    DATA t6 TYPE string.
-    t6 = |Detects use of the ALIAS statement|.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -49,16 +40,13 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
     t22->has = abap_true.
     t22->value = t21.
     t18 = t22.
-    DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t27) = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
     DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t28->has = abap_true.
-    t28->value = t27.
-    t24 = t28.
+    t28->value = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t18 i_good_example = t24 i_extended_information = t30 i_tags = t8 i_pragma = t32 i_pseudo_comment = t34 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |no_aliases| i_title = |No ALIASES| i_short_description = |Detects use of the ALIAS statement| i_bad_example = t18 i_good_example = t28 i_extended_information = t30 i_tags = t8 i_pragma = t32 i_pseudo_comment = t34 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -85,33 +73,27 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t42) = |key|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
-    DATA(t44) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t43 ).
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t45 ).
     ENDIF.
-    DATA(t46) = |shortDescription|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t47 ).
     ENDIF.
-    DATA(t48) = |tags|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |badExample|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |goodExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t53 ).
     ENDIF.
     result = t1.
 
@@ -130,17 +112,11 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
   METHOD rn_pr_in_sr_rls_n_als_ts_n_als.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE string.
     t4 = |Do not use ALIASES|.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t10 TYPE REF TO zif_lnt_abap_file_information.
-    t10 = t1->info.
-    t7 = t10.
-    t6 = t7->list_class_definitions( ).
+    t6 = t1->info->list_class_definitions( ).
     DATA t12 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t13 TYPE REF TO object.
     DATA(t14) = VALUE i( ).
@@ -189,7 +165,6 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         ELSE.
           t19 ?= t20.
         ENDIF.
-        DATA(t24) = VALUE abap_bool( ).
         DATA t27 TYPE abap_bool.
         DATA t28 TYPE abap_bool.
         DATA t29 TYPE abap_bool.
@@ -197,15 +172,9 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         t28 = xsdbool( t29 = abap_true ).
         t27 = t28.
         IF t28 = abap_true.
-          DATA t32 TYPE abap_bool.
-          DATA t33 TYPE f.
-          t33 = t19->visibility.
-          DATA(t35) = CONV f( 1 ).
-          t32 = xsdbool( t33 = t35 ).
-          t27 = t32.
+          t27 = xsdbool( t19->visibility = CONV f( 1 ) ).
         ENDIF.
-        t24 = t27.
-        IF t24 = abap_true.
+        IF t27 = abap_true.
           CONTINUE.
         ENDIF.
         DATA t37 TYPE REF TO zcl_lnt_issue.
@@ -215,21 +184,12 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         DATA(t41) = VALUE string( ).
         DATA t42 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t42.
-        DATA t43 TYPE string.
-        t43 = |no_aliases|.
-        DATA t45 TYPE string.
-        t45 = |No ALIASES|.
-        DATA t47 TYPE string.
-        t47 = |Detects use of the ALIAS statement|.
         DATA t49 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t49.
         DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t54 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t54.
-        t53 = t54.
-        DATA(t56) = |SingleFile|.
+        CREATE OBJECT t53.
         t53->load( ).
-        APPEND t56 TO t53->items.
+        APPEND |SingleFile| TO t53->items.
         t53->save( ).
         t49 = t53.
         DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -242,10 +202,9 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         t59 = t63.
         DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t65.
-        DATA(t68) = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
         DATA(t69) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t69->has = abap_true.
-        t69->value = t68.
+        t69->value = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
         t65 = t69.
         DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t71.
@@ -253,7 +212,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         CLEAR t73.
         DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t75.
-        t42 = NEW zcl_lnt_irule_metadata( i_key = t43 i_title = t45 i_short_description = t47 i_bad_example = t59 i_good_example = t65 i_extended_information = t71 i_tags = t49 i_pragma = t73 i_pseudo_comment = t75 ).
+        t42 = NEW zcl_lnt_irule_metadata( i_key = |no_aliases| i_title = |No ALIASES| i_short_description = |Detects use of the ALIAS statement| i_bad_example = t59 i_good_example = t65 i_extended_information = t71 i_tags = t49 i_pragma = t73 i_pseudo_comment = t75 ).
         CREATE OBJECT t42->zlnt_view_ownkeys_b0e8086400eb.
         t42->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t77 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -286,39 +245,33 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t42->zlnt_json_ownkeys_70e5fd461788.
         t42->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t83) = |key|.
         DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t84.
-        t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t83 p1 = t84 ).
-        DATA(t85) = |title|.
+        t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t84 ).
         DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t86.
         IF t42->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t85 p1 = t86 ).
+          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t86 ).
         ENDIF.
-        DATA(t87) = |shortDescription|.
         DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t88.
         IF t42->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t87 p1 = t88 ).
+          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t88 ).
         ENDIF.
-        DATA(t89) = |tags|.
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t90.
         IF t42->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t89 p1 = t90 ).
+          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t90 ).
         ENDIF.
-        DATA(t91) = |badExample|.
         DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t92.
         IF t42->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
+          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t92 ).
         ENDIF.
-        DATA(t93) = |goodExample|.
         DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t94.
         IF t42->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
+          t42->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t94 ).
         ENDIF.
         t41 = t42->key.
         DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -332,11 +285,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
       ENDDO.
     ENDDO.
     DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t99 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t102 TYPE REF TO zif_lnt_abap_file_information.
-    t102 = t1->info.
-    t99 = t102.
-    t98 = t99->list_interface_definitions( ).
+    t98 = t1->info->list_interface_definitions( ).
     DATA t104 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     DATA t105 TYPE REF TO object.
     DATA(t106) = VALUE i( ).
@@ -392,21 +341,12 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         DATA(t121) = VALUE string( ).
         DATA t122 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t122.
-        DATA t123 TYPE string.
-        t123 = |no_aliases|.
-        DATA t125 TYPE string.
-        t125 = |No ALIASES|.
-        DATA t127 TYPE string.
-        t127 = |Detects use of the ALIAS statement|.
         DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t129.
         DATA t133 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t134 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t134.
-        t133 = t134.
-        DATA(t136) = |SingleFile|.
+        CREATE OBJECT t133.
         t133->load( ).
-        APPEND t136 TO t133->items.
+        APPEND |SingleFile| TO t133->items.
         t133->save( ).
         t129 = t133.
         DATA t139 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -419,10 +359,9 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         t139 = t143.
         DATA t145 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t145.
-        DATA(t148) = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
         DATA(t149) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t149->has = abap_true.
-        t149->value = t148.
+        t149->value = |INTERFACE lif_foo.\n  METHODS long_method_name.\nENDINTERFACE.|.
         t145 = t149.
         DATA t151 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t151.
@@ -430,7 +369,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         CLEAR t153.
         DATA t155 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t155.
-        t122 = NEW zcl_lnt_irule_metadata( i_key = t123 i_title = t125 i_short_description = t127 i_bad_example = t139 i_good_example = t145 i_extended_information = t151 i_tags = t129 i_pragma = t153 i_pseudo_comment = t155 ).
+        t122 = NEW zcl_lnt_irule_metadata( i_key = |no_aliases| i_title = |No ALIASES| i_short_description = |Detects use of the ALIAS statement| i_bad_example = t139 i_good_example = t145 i_extended_information = t151 i_tags = t129 i_pragma = t153 i_pseudo_comment = t155 ).
         CREATE OBJECT t122->zlnt_view_ownkeys_b0e8086400eb.
         t122->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -463,39 +402,33 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t122->zlnt_json_ownkeys_70e5fd461788.
         t122->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t163) = |key|.
         DATA t164 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t164.
-        t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t163 p1 = t164 ).
-        DATA(t165) = |title|.
+        t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t164 ).
         DATA t166 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t166.
         IF t122->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t165 p1 = t166 ).
+          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t166 ).
         ENDIF.
-        DATA(t167) = |shortDescription|.
         DATA t168 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t168.
         IF t122->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t167 p1 = t168 ).
+          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t168 ).
         ENDIF.
-        DATA(t169) = |tags|.
         DATA t170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t170.
         IF t122->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t169 p1 = t170 ).
+          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t170 ).
         ENDIF.
-        DATA(t171) = |badExample|.
         DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t172.
         IF t122->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t171 p1 = t172 ).
+          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t172 ).
         ENDIF.
-        DATA(t173) = |goodExample|.
         DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t174.
         IF t122->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = t173 p1 = t174 ).
+          t122->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t174 ).
         ENDIF.
         t121 = t122->key.
         DATA t175 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -521,12 +454,7 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
     t3 = xsdbool( t4 = abap_true ).
     t2 = t3.
     IF t3 = abap_true.
-      DATA t7 TYPE abap_bool.
-      DATA t8 TYPE f.
-      t8 = t1->visibility.
-      DATA(t10) = CONV f( 1 ).
-      t7 = xsdbool( t8 = t10 ).
-      t2 = t7.
+      t2 = xsdbool( t1->visibility = CONV f( 1 ) ).
     ENDIF.
     result = t2.
 

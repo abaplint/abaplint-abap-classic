@@ -19,9 +19,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abstract_node.
     t8 = t1.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t10 = t8->children.
-    t7 = t10.
+    t7 = t8->children.
     t6 ?= t7.
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t13 TYPE REF TO object.
@@ -45,20 +43,14 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
       ELSE.
         t12 ?= t13.
       ENDIF.
-      DATA t17 TYPE abap_bool.
-      t17 = xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_expression_node ).
-      IF t17 = abap_true.
-        DATA t19 TYPE abap_bool.
+      IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
         DATA t20 TYPE REF TO zif_lnt_statement_runnable.
         DATA t21 TYPE REF TO zcl_lnt_expression_node.
         DATA t23 TYPE REF TO object.
         t23 = t12.
         t21 ?= t23.
         t20 = t21->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-        t19 = xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_component_chain_simple ).
-        IF t19 = abap_true.
-          DATA t24 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t24.
+        IF xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_component_chain_simple ) = abap_true.
           DATA t25 TYPE REF TO zcl_lnt_abstract_type.
           CLEAR t25.
           t25 = t3.
@@ -66,18 +58,15 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
           DATA t31 TYPE REF TO object.
           t31 = t12.
           t29 ?= t31.
-          t24 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t25 i_node = t29 i_input_967e = t2 ).
-          t4 = t24.
+          t4 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t25 i_node = t29 i_input_967e = t2 ).
         ELSE.
-          DATA t33 TYPE abap_bool.
           DATA t34 TYPE REF TO zif_lnt_statement_runnable.
           DATA t35 TYPE REF TO zcl_lnt_expression_node.
           DATA t37 TYPE REF TO object.
           t37 = t12.
           t35 ?= t37.
           t34 = t35->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-          t33 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_dynamic ).
-          IF t33 = abap_true.
+          IF xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_dynamic ) = abap_true.
             CLEAR t4.
           ELSE.
             DATA(t39) = VALUE abap_bool( ).
@@ -92,27 +81,23 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
             t41 = xsdbool( t42 IS BOUND AND t42 IS INSTANCE OF zcl_lnt_st_source ).
             t40 = t41.
             IF t41 = abap_false.
-              DATA t46 TYPE abap_bool.
               DATA t47 TYPE REF TO zif_lnt_statement_runnable.
               DATA t48 TYPE REF TO zcl_lnt_expression_node.
               DATA t50 TYPE REF TO object.
               t50 = t12.
               t48 ?= t50.
               t47 = t48->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-              t46 = xsdbool( t47 IS BOUND AND t47 IS INSTANCE OF zcl_lnt_simple_source4 ).
-              t40 = t46.
+              t40 = xsdbool( t47 IS BOUND AND t47 IS INSTANCE OF zcl_lnt_simple_source4 ).
             ENDIF.
             t39 = t40.
             IF t40 = abap_false.
-              DATA t51 TYPE abap_bool.
               DATA t52 TYPE REF TO zif_lnt_statement_runnable.
               DATA t53 TYPE REF TO zcl_lnt_expression_node.
               DATA t55 TYPE REF TO object.
               t55 = t12.
               t53 ?= t55.
               t52 = t53->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-              t51 = xsdbool( t52 IS BOUND AND t52 IS INSTANCE OF zcl_lnt_simple_source2 ).
-              t39 = t51.
+              t39 = xsdbool( t52 IS BOUND AND t52 IS INSTANCE OF zcl_lnt_simple_source2 ).
             ENDIF.
             IF t39 = abap_true.
               DATA t57 TYPE REF TO zcl_lnt_abstract_type.
@@ -136,21 +121,11 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               t70 = xsdbool( t4 IS BOUND ).
               t69 = t70.
               IF t70 = abap_true.
-                DATA(t72) = VALUE abap_bool( ).
-                DATA(t73) = VALUE abap_bool( ).
-                DATA t74 TYPE REF TO zcl_lnt_type_utils.
                 DATA t75 TYPE REF TO zcl_lnt_current_scope.
                 t75 = t2->scope.
-                t74 = NEW zcl_lnt_type_utils( i_scope = t75 ).
-                DATA t78 TYPE REF TO zcl_lnt_abstract_type.
-                CLEAR t78.
-                t78 = t4.
-                t73 = t74->is_assignable( i_source_75cf = t57 i_target_5f8a = t78 ).
-                t72 = xsdbool( t73 = abap_false ).
-                t69 = t72.
+                t69 = xsdbool( NEW zcl_lnt_type_utils( i_scope = t75 )->is_assignable( i_source_75cf = t57 i_target_5f8a = t4 ) = abap_false ).
               ENDIF.
               IF t69 = abap_true.
-                DATA(t85) = |ComponentCompareSimple, incompatible types|.
                 DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 t86 = t2->issues.
                 DATA t88 TYPE REF TO zcl_lnt_issue.
@@ -158,14 +133,13 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
                 t90 = t1->get_first_token( ).
                 DATA t93 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                 CLEAR t93.
-                t88 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t90 i_message_26cb = t85 i_fix = t93 ).
+                t88 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t90 i_message_26cb = |ComponentCompareSimple, incompatible types| i_fix = t93 ).
                 t86->load( ).
                 APPEND t88 TO t86->items.
                 t86->save( ).
                 RETURN.
               ENDIF.
             ELSE.
-              DATA(t95) = |ComponentCompareSimple, unexpected node|.
               DATA t96 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t96 = t2->issues.
               DATA t98 TYPE REF TO zcl_lnt_issue.
@@ -173,7 +147,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               t100 = t1->get_first_token( ).
               DATA t103 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
               CLEAR t103.
-              t98 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t100 i_message_26cb = t95 i_fix = t103 ).
+              t98 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t100 i_message_26cb = |ComponentCompareSimple, unexpected node| i_fix = t103 ).
               t96->load( ).
               APPEND t98 TO t96->items.
               t96->save( ).

@@ -14,51 +14,35 @@ CLASS zcl_lnt_sy_get_reference IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-    t4 = t1->find_direct_expression( i_type_9913 = t6 ).
     DATA t7 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t8 TYPE REF TO zcl_lnt_abstract_type.
     DATA t11 TYPE REF TO zcl_lnt_abstract_type.
     DATA t12 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA t14 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t8 = zcl_lnt_sy_source=>run_syntax( i_node = t4 i_input_967e = t2 i_target_type = t11 i_write_reference = t12 i_allow_generic_deference = t13 i_read_reference = t14 ).
-    t7 = t8.
+    t7 = zcl_lnt_sy_source=>run_syntax( i_node = t1->find_direct_expression( i_type_9913 = t6 ) i_input_967e = t2 i_target_type = t11 i_write_reference = t12 i_allow_generic_deference = t13 i_read_reference = t14 ).
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
-    DATA t16 TYPE REF TO zcl_lnt_expression_node.
     DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t16 = t1->find_direct_expression( i_type_9913 = t18 ).
-    t15 = t16.
+    t15 = t1->find_direct_expression( i_type_9913 = t18 ).
     DATA t19 TYPE REF TO zcl_lnt_expression_node.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
     t21 = t15.
     DATA t23 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t24) = xsdbool( t21 IS INITIAL ).
-    IF t24 = abap_true.
+    IF xsdbool( t21 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA t28 TYPE REF TO zcl_lnt_expression_node.
       t28 = t21.
       DATA(t30) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
-      t27 = t28->find_direct_expression( i_type_9913 = t30 ).
-      t23 = t27.
+      t23 = t28->find_direct_expression( i_type_9913 = t30 ).
     ENDIF.
     t19 = t23.
-    DATA t31 TYPE abap_bool.
-    t31 = xsdbool( t19 IS BOUND ).
-    IF t31 = abap_true.
-      DATA t33 TYPE abap_bool.
-      t33 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_any_type ).
-      IF t33 = abap_true.
-        DATA(t36) = |GET REFERENCE generic and inline declaration not possible|.
+    IF xsdbool( t19 IS BOUND ) = abap_true.
+      IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_any_type ) = abap_true.
         DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t37 = t2->issues.
         DATA t39 TYPE REF TO zcl_lnt_issue.
-        DATA t41 TYPE REF TO zcl_lnt_abstract_token.
-        t41 = t1->get_first_token( ).
         DATA t44 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        t39 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t41 i_message_26cb = t36 i_fix = t44 ).
+        t39 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |GET REFERENCE generic and inline declaration not possible| i_fix = t44 ).
         t37->load( ).
         APPEND t39 TO t37->items.
         t37->save( ).
@@ -68,28 +52,18 @@ CLASS zcl_lnt_sy_get_reference IMPLEMENTATION.
       t45 = t19.
       DATA t48 TYPE REF TO zcl_lnt_data_reference.
       DATA t49 TYPE REF TO zcl_lnt_abstract_type.
-      DATA t50 TYPE abap_bool.
-      t50 = xsdbool( t7 IS BOUND ).
-      IF t50 = abap_true.
-        DATA t52 TYPE REF TO zcl_lnt_data_reference.
-        DATA t53 TYPE REF TO zcl_lnt_abstract_type.
-        t53 = t7.
+      IF xsdbool( t7 IS BOUND ) = abap_true.
         DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t52 = NEW zcl_lnt_data_reference( i_type_9913 = t53 i_qualified_name = t55 ).
-        t49 = t52.
+        t49 = NEW zcl_lnt_data_reference( i_type_9913 = t7 i_qualified_name = t55 ).
       ELSE.
         CLEAR t49.
       ENDIF.
       t48 ?= t49.
       zcl_lnt_sy_inline_data=>run_syntax( i_node = t45 i_input_967e = t2 i_type_9913 = t48 ).
     ELSE.
-      DATA t57 TYPE abap_bool.
-      t57 = xsdbool( t15 IS BOUND ).
-      IF t57 = abap_true.
+      IF xsdbool( t15 IS BOUND ) = abap_true.
         DATA t59 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t60 TYPE REF TO zcl_lnt_expression_node.
-        t60 = t15.
-        t59 = zcl_lnt_sy_target=>run_syntax( i_node = t60 i_input_967e = t2 ).
+        t59 = zcl_lnt_sy_target=>run_syntax( i_node = t15 i_input_967e = t2 ).
       ENDIF.
     ENDIF.
   ENDMETHOD.

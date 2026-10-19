@@ -61,9 +61,7 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
     ENDIF.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t20.
-    DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    t21 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t17 i_rest = t20 ).
-    t9 = t21.
+    t9 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t17 i_rest = t20 ).
     IF t9 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t26 TYPE REF TO object.
@@ -113,9 +111,7 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
     ENDIF.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t30.
-    DATA t31 TYPE REF TO zif_lnt_statement_runnable.
-    t31 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t30 ).
-    result = t31.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t30 ).
 
   ENDMETHOD.
 

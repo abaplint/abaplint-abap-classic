@@ -31,9 +31,7 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD list_definitions.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->all_nodes( ) ).
     DATA t5 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA t6 TYPE REF TO object.
@@ -57,25 +55,11 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t10 TYPE abap_bool.
-      DATA t11 TYPE string.
-      DATA t12 TYPE REF TO zcl_lnt_iscope_identifier.
-      DATA t15 TYPE REF TO zcl_lnt_iscope_identifier.
-      t15 = t5->identifier.
-      t12 = t15.
-      t11 = t12->filename.
-      t10 = xsdbool( t11 = t1 ).
-      IF t10 = abap_true.
+      IF xsdbool( t5->identifier->filename = t1 ) = abap_true.
         DATA t18 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
-        DATA t19 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
-        DATA t20 TYPE REF TO zcl_lnt_iscope_data.
         DATA t21 TYPE REF TO zcl_lnt_scope_data.
         t21 = t5.
-        DATA t23 TYPE REF TO zcl_lnt_iscope_data.
-        t23 = t21->data_56cc.
-        t20 = t23.
-        t19 = t20->vars.
-        t18 = t19.
+        t18 = t21->data_56cc->vars.
         DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         t25 = t18->keys( ).
         DATA(t27) = VALUE string( ).
@@ -92,25 +76,11 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t28 = t28 + 1.
-          DATA t29 TYPE abap_bool.
-          DATA t30 TYPE string.
           DATA t31 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t33 TYPE REF TO zcl_lnt_typed_identifier.
-          t33 = t18->get( p0 = t27 ).
-          t31 = t33.
-          DATA t36 TYPE string.
-          t36 = t31->filename.
-          t30 = t36.
-          t29 = xsdbool( t30 = t1 ).
-          IF t29 = abap_true.
+          t31 = t18->get( p0 = t27 ).
+          IF xsdbool( t31->filename = t1 ) = abap_true.
             DATA t40 TYPE REF TO zcl_lnt_iscope_variable.
-            DATA t41 TYPE string.
-            t41 = t27.
-            DATA t43 TYPE REF TO zcl_lnt_typed_identifier.
-            DATA t45 TYPE REF TO zcl_lnt_typed_identifier.
-            t45 = t18->get( p0 = t27 ).
-            t43 = t45.
-            t40 = NEW zcl_lnt_iscope_variable( i_name = t41 i_identifier = t43 ).
+            t40 = NEW zcl_lnt_iscope_variable( i_name = t27 i_identifier = t18->get( p0 = t27 ) ).
             CREATE OBJECT t40->zlnt_view_ownkeys_b0e8086400eb.
             t40->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
             DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -123,15 +93,13 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t40->zlnt_json_ownkeys_70e5fd461788.
             t40->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t50) = |name|.
             DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t51.
-            t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
-            DATA(t52) = |identifier|.
+            t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |name| p1 = t51 ).
             DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t53.
             IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+              t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |identifier| p1 = t53 ).
             ENDIF.
             t2->load( ).
             APPEND t40 TO t2->items.
@@ -147,9 +115,7 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD list_read_positions.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->all_nodes( ) ).
     DATA t5 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA t6 TYPE REF TO object.
@@ -173,23 +139,11 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t10 TYPE abap_bool.
-      DATA t11 TYPE string.
-      DATA t12 TYPE REF TO zcl_lnt_iscope_identifier.
-      DATA t15 TYPE REF TO zcl_lnt_iscope_identifier.
-      t15 = t5->identifier.
-      t12 = t15.
-      t11 = t12->filename.
-      t10 = xsdbool( t11 = t1 ).
-      IF t10 = abap_true.
+      IF xsdbool( t5->identifier->filename = t1 ) = abap_true.
         DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t19 TYPE REF TO zcl_lnt_iscope_data.
         DATA t20 TYPE REF TO zcl_lnt_scope_data.
         t20 = t5.
-        DATA t22 TYPE REF TO zcl_lnt_iscope_data.
-        t22 = t20->data_56cc.
-        t19 = t22.
-        t18 = t19->references.
+        t18 = t20->data_56cc->references.
         DATA t24 TYPE REF TO zcl_lnt_ireference.
         CLEAR t24.
         DATA t25 TYPE REF TO object.
@@ -216,21 +170,10 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
           ENDIF.
           DATA t29 TYPE abap_bool.
           DATA t30 TYPE abap_bool.
-          DATA t31 TYPE string.
-          t31 = t24->reference_type.
-          DATA(t33) = |Read From|.
-          t30 = xsdbool( t31 = t33 ).
+          t30 = xsdbool( t24->reference_type = |Read From| ).
           t29 = t30.
           IF t30 = abap_true.
-            DATA t34 TYPE abap_bool.
-            DATA t35 TYPE string.
-            DATA t37 TYPE REF TO zcl_lnt_fi_identifier.
-            t37 = t24->position_7b94.
-            DATA t39 TYPE string.
-            t39 = t37->filename.
-            t35 = t39.
-            t34 = xsdbool( t35 = t1 ).
-            t29 = t34.
+            t29 = xsdbool( t24->position_7b94->filename = t1 ).
           ENDIF.
           IF t29 = abap_true.
             DATA t43 TYPE REF TO zcl_lnt_fi_identifier.
@@ -249,9 +192,7 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
   METHOD list_write_positions.
     DATA(t1) = i_filename.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = CAST zlnt_runtime_arra_c22708faf2e3( me->all_nodes( ) ).
     DATA t5 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA t6 TYPE REF TO object.
@@ -275,23 +216,11 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t10 TYPE abap_bool.
-      DATA t11 TYPE string.
-      DATA t12 TYPE REF TO zcl_lnt_iscope_identifier.
-      DATA t15 TYPE REF TO zcl_lnt_iscope_identifier.
-      t15 = t5->identifier.
-      t12 = t15.
-      t11 = t12->filename.
-      t10 = xsdbool( t11 = t1 ).
-      IF t10 = abap_true.
+      IF xsdbool( t5->identifier->filename = t1 ) = abap_true.
         DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t19 TYPE REF TO zcl_lnt_iscope_data.
         DATA t20 TYPE REF TO zcl_lnt_scope_data.
         t20 = t5.
-        DATA t22 TYPE REF TO zcl_lnt_iscope_data.
-        t22 = t20->data_56cc.
-        t19 = t22.
-        t18 = t19->references.
+        t18 = t20->data_56cc->references.
         DATA t24 TYPE REF TO zcl_lnt_ireference.
         CLEAR t24.
         DATA t25 TYPE REF TO object.
@@ -318,21 +247,10 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
           ENDIF.
           DATA t29 TYPE abap_bool.
           DATA t30 TYPE abap_bool.
-          DATA t31 TYPE string.
-          t31 = t24->reference_type.
-          DATA(t33) = |Write To|.
-          t30 = xsdbool( t31 = t33 ).
+          t30 = xsdbool( t24->reference_type = |Write To| ).
           t29 = t30.
           IF t30 = abap_true.
-            DATA t34 TYPE abap_bool.
-            DATA t35 TYPE string.
-            DATA t37 TYPE REF TO zcl_lnt_fi_identifier.
-            t37 = t24->position_7b94.
-            DATA t39 TYPE string.
-            t39 = t37->filename.
-            t35 = t39.
-            t34 = xsdbool( t35 = t1 ).
-            t29 = t34.
+            t29 = xsdbool( t24->position_7b94->filename = t1 ).
           ENDIF.
           IF t29 = abap_true.
             DATA t43 TYPE REF TO zcl_lnt_fi_identifier.
@@ -357,7 +275,6 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
     t4 = xsdbool( t1 IS INITIAL ).
     t3 = t4.
     IF t4 = abap_false.
-      DATA(t11) = VALUE abap_bool( ).
       DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t12 = t2.
       DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -367,28 +284,23 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       ELSEIF t12->has = abap_false.
         t16 = abap_true.
       ENDIF.
-      t11 = t16.
-      t3 = t11.
+      t3 = t16.
     ENDIF.
     IF t3 = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
-    DATA t19 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA t20 TYPE REF TO zcl_lnt_position.
     t20 = t1.
     DATA t22 TYPE string.
     t22 = t2->value.
     DATA(t24) = me->node.
-    t19 = me->lookup_position_traverse( i_p = t20 i_filename = t22 i_node = t24 ).
-    result = t19.
+    result = me->lookup_position_traverse( i_p = t20 i_filename = t22 i_node = t24 ).
 
   ENDMETHOD.
 
   METHOD g_f_c_i_s_a_5_s_sp_sc_ts_sp_sc.
-    DATA t1 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-    t1 = me->node->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd( ).
-    result = t1.
+    result = me->node->g_f_c_i_s_a_5_s_s_s_t_sp_sc_nd( ).
 
   ENDMETHOD.
 
@@ -399,27 +311,18 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
 
   METHOD all_nodes.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     DATA(t8) = me->node.
     t5->load( ).
     APPEND t8 TO t5->items.
     t5->save( ).
     t3 = t5.
     DO.
-      DATA t10 TYPE abap_bool.
-      DATA t11 TYPE i.
       t3->load( ).
-      t11 = lines( t3->items ).
-      DATA(t13) = 0.
-      t10 = xsdbool( t11 > t13 ).
-      IF t10 = abap_false.
+      IF xsdbool( lines( t3->items ) > 0 ) = abap_false.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zcl_lnt_spaghetti_scope_node.
@@ -474,10 +377,8 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
         APPEND t26 TO t3->items.
         t3->save( ).
       ENDDO.
-      DATA t33 TYPE i.
       t3->load( ).
-      t33 = lines( t3->items ).
-      t23 = t33.
+      t23 = lines( t3->items ).
     ENDDO.
     result = t1.
 
@@ -488,22 +389,12 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
     DATA(t2) = i_filename.
     DATA(t3) = i_node.
     DATA t4 TYPE REF TO zcl_lnt_irange.
-    DATA t5 TYPE REF TO zcl_lnt_irange.
-    t5 = t3->calc_coverage( ).
-    t4 = t5.
+    t4 = t3->calc_coverage( ).
     DATA t7 TYPE abap_bool.
     DATA t8 TYPE abap_bool.
-    DATA t9 TYPE string.
-    DATA t10 TYPE REF TO zcl_lnt_iscope_identifier.
-    DATA t13 TYPE REF TO zcl_lnt_iscope_identifier.
-    t13 = t3->identifier.
-    t10 = t13.
-    t9 = t10->filename.
-    t8 = xsdbool( t9 = t2 ).
+    t8 = xsdbool( t3->identifier->filename = t2 ).
     t7 = t8.
     IF t8 = abap_true.
-      DATA(t16) = VALUE abap_bool( ).
-      DATA(t17) = VALUE abap_bool( ).
       DATA t18 TYPE REF TO zcl_lnt_position.
       t18 = t1.
       DATA t21 TYPE REF TO zcl_lnt_position.
@@ -515,43 +406,29 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       t27 = t18->is_after( i_p = t21 ).
       t26 = t27.
       IF t27 = abap_true.
-        DATA(t30) = VALUE abap_bool( ).
         DATA t31 TYPE REF TO zcl_lnt_position.
         t31 = t24.
         DATA t33 TYPE abap_bool.
         DATA t34 TYPE abap_bool.
-        DATA t35 TYPE f.
-        t35 = t18->row.
-        DATA t37 TYPE f.
-        t37 = t31->row.
-        t34 = xsdbool( t35 < t37 ).
+        t34 = xsdbool( t18->row < t31->row ).
         t33 = t34.
         IF t34 = abap_false.
           DATA t39 TYPE abap_bool.
           DATA t40 TYPE abap_bool.
-          DATA t41 TYPE f.
-          t41 = t18->row.
-          DATA t43 TYPE f.
-          t43 = t31->row.
-          t40 = xsdbool( t41 = t43 ).
+          t40 = xsdbool( t18->row = t31->row ).
           t39 = t40.
           IF t40 = abap_true.
-            DATA t45 TYPE abap_bool.
             DATA t46 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
             t46 = t18->col.
             DATA t48 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
             t48 = t31->col.
-            t45 = zlnt_runtime_numb_290eb04a9758=>compare( left = t46 right = t48 op = `<` ).
-            t39 = t45.
+            t39 = zlnt_runtime_numb_290eb04a9758=>compare( left = t46 right = t48 op = `<` ).
           ENDIF.
           t33 = t39.
         ENDIF.
-        t30 = t33.
-        t26 = t30.
+        t26 = t33.
       ENDIF.
-      t17 = t26.
-      t16 = xsdbool( t17 = abap_false ).
-      t7 = t16.
+      t7 = xsdbool( t26 = abap_false ).
     ENDIF.
     IF t7 = abap_true.
       CLEAR result.
@@ -582,33 +459,19 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
         t54 ?= t55.
       ENDIF.
       DATA t59 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      DATA t60 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      t60 = me->lookup_position_traverse( i_p = t1 i_filename = t2 i_node = t54 ).
-      t59 = t60.
-      DATA(t64) = VALUE abap_bool( ).
+      t59 = me->lookup_position_traverse( i_p = t1 i_filename = t2 i_node = t54 ).
       DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t67.
-      DATA(t69) = VALUE abap_bool( ).
-      DATA(t70) = xsdbool( t59 IS INITIAL ).
-      t69 = xsdbool( t70 = abap_false ).
-      t64 = t69.
-      IF t64 = abap_true.
+      IF xsdbool( xsdbool( t59 IS INITIAL ) = abap_false ) = abap_true.
         result = t59.
         RETURN.
       ENDIF.
     ENDDO.
     DATA t77 TYPE abap_bool.
     DATA t78 TYPE abap_bool.
-    DATA t79 TYPE string.
-    DATA t80 TYPE REF TO zcl_lnt_iscope_identifier.
-    DATA t83 TYPE REF TO zcl_lnt_iscope_identifier.
-    t83 = t3->identifier.
-    t80 = t83.
-    t79 = t80->filename.
-    t78 = xsdbool( t79 = t2 ).
+    t78 = xsdbool( t3->identifier->filename = t2 ).
     t77 = t78.
     IF t78 = abap_true.
-      DATA(t86) = VALUE abap_bool( ).
       DATA t87 TYPE REF TO zcl_lnt_position.
       t87 = t1.
       DATA t90 TYPE REF TO zcl_lnt_position.
@@ -620,42 +483,29 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
       t96 = t87->is_after( i_p = t90 ).
       t95 = t96.
       IF t96 = abap_true.
-        DATA(t99) = VALUE abap_bool( ).
         DATA t100 TYPE REF TO zcl_lnt_position.
         t100 = t93.
         DATA t102 TYPE abap_bool.
         DATA t103 TYPE abap_bool.
-        DATA t104 TYPE f.
-        t104 = t87->row.
-        DATA t106 TYPE f.
-        t106 = t100->row.
-        t103 = xsdbool( t104 < t106 ).
+        t103 = xsdbool( t87->row < t100->row ).
         t102 = t103.
         IF t103 = abap_false.
           DATA t108 TYPE abap_bool.
           DATA t109 TYPE abap_bool.
-          DATA t110 TYPE f.
-          t110 = t87->row.
-          DATA t112 TYPE f.
-          t112 = t100->row.
-          t109 = xsdbool( t110 = t112 ).
+          t109 = xsdbool( t87->row = t100->row ).
           t108 = t109.
           IF t109 = abap_true.
-            DATA t114 TYPE abap_bool.
             DATA t115 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
             t115 = t87->col.
             DATA t117 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
             t117 = t100->col.
-            t114 = zlnt_runtime_numb_290eb04a9758=>compare( left = t115 right = t117 op = `<` ).
-            t108 = t114.
+            t108 = zlnt_runtime_numb_290eb04a9758=>compare( left = t115 right = t117 op = `<` ).
           ENDIF.
           t102 = t108.
         ENDIF.
-        t99 = t102.
-        t95 = t99.
+        t95 = t102.
       ENDIF.
-      t86 = t95.
-      t77 = t86.
+      t77 = t95.
     ENDIF.
     IF t77 = abap_true.
       result = t3.
@@ -667,10 +517,8 @@ CLASS zcl_lnt_spaghetti_scope IMPLEMENTATION.
 
   METHOD lookup_position.
     DATA(t2) = i_filename.
-    DATA t3 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     DATA(t4) = i_p.
-    t3 = me->l_p_i_s_ab_5_sy_sp_sc_ts_sp_sc( i_p = t4 i_filename = t2 ).
-    result = t3.
+    result = me->l_p_i_s_ab_5_sy_sp_sc_ts_sp_sc( i_p = t4 i_filename = t2 ).
 
   ENDMETHOD.
 

@@ -28,28 +28,17 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |cyclomatic_complexity|.
-    DATA t4 TYPE string.
-    t4 = |Cyclomatic Complexity|.
-    DATA t6 TYPE string.
-    t6 = |Cyclomatic complexity, only reported for methods|.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t8 i_pragma = t24 i_pseudo_comment = t26 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |cyclomatic_complexity| i_title = |Cyclomatic Complexity| i_short_description = |Cyclomatic complexity, only reported for methods| i_bad_example = t18 i_good_example = t20 i_extended_information = t22 i_tags = t12 i_pragma = t24 i_pseudo_comment = t26 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -68,23 +57,19 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = |key|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-    DATA(t34) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t33 ).
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t35 ).
     ENDIF.
-    DATA(t36) = |shortDescription|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |tags|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t39 ).
     ENDIF.
     result = t1.
 
@@ -98,11 +83,8 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
   METHOD st_cn_in_sr_rl_cy_cm_ts_cy_cmp.
     me->conf = i_conf.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
-    DATA(t3) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t5 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t5 = me->conf->zlnt_view_read_sr_8292704b4f8f( ).
-    t4 = t5.
+    t4 = me->conf->zlnt_view_read_sr_8292704b4f8f( ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t9) = VALUE abap_bool( ).
     IF t4 IS INITIAL.
@@ -110,13 +92,8 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
     ELSEIF t4->has = abap_false.
       t9 = abap_true.
     ENDIF.
-    t3 = t9.
-    IF t3 = abap_true.
-      DATA(t11) = me->conf.
-      DATA t12 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA(t13) = NEW zcl_lnt_cyclmtc_cmplxty_cnf( ).
-      t12 = t13->zlnt_view_read_sr_8292704b4f8f( ).
-      t11->zlnt_view_write_s_82a67f33691e( p0 = t12 ).
+    IF t9 = abap_true.
+      me->conf->zlnt_view_write_s_82a67f33691e( p0 = NEW zcl_lnt_cyclmtc_cmplxty_cnf( )->zlnt_view_read_sr_8292704b4f8f( ) ).
     ENDIF.
   ENDMETHOD.
 
@@ -130,13 +107,9 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t5 = zcl_lnt_cyclmtc_cmplxty_stts=>run( i_obj_1ed0 = t1 ).
-    t4 = t5.
+    t4 = zcl_lnt_cyclmtc_cmplxty_stts=>run( i_obj_1ed0 = t1 ).
     DATA t8 TYPE REF TO zcl_lnt_icyclmtc_cmplxty_rslt.
     DATA t9 TYPE REF TO object.
     DATA(t10) = VALUE i( ).
@@ -159,13 +132,10 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
       ELSE.
         t8 ?= t9.
       ENDIF.
-      DATA(t13) = VALUE abap_bool( ).
       DATA t15 TYPE f.
       t15 = t8->count.
       DATA t17 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t18 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t18 = me->conf->zlnt_view_read_sr_8292704b4f8f( ).
-      t17 = t18.
+      t17 = me->conf->zlnt_view_read_sr_8292704b4f8f( ).
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
@@ -177,19 +147,13 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
       t21 = xsdbool( t22 = abap_false ).
       t20 = t21.
       IF t21 = abap_true.
-        DATA(t24) = VALUE abap_bool( ).
-        DATA(t26) = VALUE f( ).
         IF t17->number_special <> 0.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
-        t26 = t17->value.
-        t24 = xsdbool( t15 > t26 ).
-        t20 = t24.
+        t20 = xsdbool( t15 > t17->value ).
       ENDIF.
-      t13 = t20.
-      IF t13 = abap_true.
+      IF t20 = abap_true.
         DATA(t28) = VALUE string( ).
-        DATA(t29) = VALUE string( ).
         DATA(t30) = VALUE string( ).
         DATA(t31) = VALUE string( ).
         DATA(t32) = |Max cyclomatic complexity reached, |.
@@ -203,14 +167,12 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
         t33 = |{ t36 }|.
         DATA(t37) = strlen( t32 ).
         t31 = |{ t32 }{ t33 }|.
-        DATA(t38) = |, |.
         DATA(t39) = strlen( t31 ).
-        t30 = |{ t31 }{ t38 }|.
+        t30 = |{ t31 }{ |, | }|.
         DATA t40 TYPE string.
         t40 = t8->name.
         DATA(t42) = strlen( t30 ).
-        t29 = |{ t30 }{ t40 }|.
-        t28 = t29.
+        t28 = |{ t30 }{ t40 }|.
         DATA t44 TYPE REF TO zcl_lnt_issue.
         CLEAR t44.
         DATA t45 TYPE REF TO zif_lnt_file.
@@ -220,21 +182,12 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
         DATA(t50) = VALUE string( ).
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t51.
-        DATA t52 TYPE string.
-        t52 = |cyclomatic_complexity|.
-        DATA t54 TYPE string.
-        t54 = |Cyclomatic Complexity|.
-        DATA t56 TYPE string.
-        t56 = |Cyclomatic complexity, only reported for methods|.
         DATA t58 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t58.
         DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t63.
-        t62 = t63.
-        DATA(t65) = |SingleFile|.
+        CREATE OBJECT t62.
         t62->load( ).
-        APPEND t65 TO t62->items.
+        APPEND |SingleFile| TO t62->items.
         t62->save( ).
         t58 = t62.
         DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -247,7 +200,7 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
         CLEAR t74.
         DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t76.
-        t51 = NEW zcl_lnt_irule_metadata( i_key = t52 i_title = t54 i_short_description = t56 i_bad_example = t68 i_good_example = t70 i_extended_information = t72 i_tags = t58 i_pragma = t74 i_pseudo_comment = t76 ).
+        t51 = NEW zcl_lnt_irule_metadata( i_key = |cyclomatic_complexity| i_title = |Cyclomatic Complexity| i_short_description = |Cyclomatic complexity, only reported for methods| i_bad_example = t68 i_good_example = t70 i_extended_information = t72 i_tags = t58 i_pragma = t74 i_pseudo_comment = t76 ).
         CREATE OBJECT t51->zlnt_view_ownkeys_b0e8086400eb.
         t51->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -270,27 +223,23 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t51->zlnt_json_ownkeys_70e5fd461788.
         t51->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t82) = |key|.
         DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t83.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t82 p1 = t83 ).
-        DATA(t84) = |title|.
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t83 ).
         DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t85.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t84 p1 = t85 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t85 ).
         ENDIF.
-        DATA(t86) = |shortDescription|.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t87.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t87 ).
         ENDIF.
-        DATA(t88) = |tags|.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t89 ).
         ENDIF.
         t50 = t51->key.
         DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -348,10 +297,8 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_cyclomatic_complexity.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_cyc_cmp_ts_cyc_cmp( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_cyc_cmp_ts_cyc_cmp( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

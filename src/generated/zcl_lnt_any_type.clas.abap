@@ -33,12 +33,10 @@ CLASS zcl_lnt_any_type IMPLEMENTATION.
       zcl_lnt_any_type=>zlnt_builtin_init_f9b071448284( ).
     ENDIF.
     DATA(t1) = i_input_967e.
-    DATA t2 TYPE REF TO zcl_lnt_any_type.
     IF zcl_lnt_any_type=>zlnt_builtin_init_fc118198c777 = abap_false.
       zcl_lnt_any_type=>zlnt_builtin_init_f9b071448284( ).
     ENDIF.
-    t2 = NEW zcl_lnt_any_type( i_input_967e = t1 ).
-    result = t2.
+    result = NEW zcl_lnt_any_type( i_input_967e = t1 ).
 
   ENDMETHOD.
 

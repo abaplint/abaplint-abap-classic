@@ -25,24 +25,14 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |db_operation_in_loop|.
-    DATA t4 TYPE string.
-    t4 = |Database operation in loop|.
-    DATA t6 TYPE string.
-    t6 = |Database operation in LOOP/DO/WHILE|.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    DATA(t17) = |Performance|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |Performance| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -53,7 +43,6 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
     t24->has = abap_true.
     t24->value = t23.
     t20 = t24.
-    DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t29) = |ASSERT lines( lt_items ) > 0.\nSELECT id, name FROM zcustomer|.
     t29 = t29 && | INTO TABLE @DATA(lt_customers)\n  FOR ALL ENTRIES IN @lt_ite|.
     t29 = t29 && |ms\n  WHERE id = @lt_items-customer_id.\n\nLOOP AT lt_items INT|.
@@ -62,11 +51,10 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
     t30->value = t29.
-    t26 = t30.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t26 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |db_operation_in_loop| i_title = |Database operation in loop| i_short_description = |Database operation in LOOP/DO/WHILE| i_bad_example = t20 i_good_example = t30 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -93,33 +81,27 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t44) = |key|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
-    DATA(t46) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t45 ).
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t47 ).
     ENDIF.
-    DATA(t48) = |shortDescription|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |tags|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |badExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |goodExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t55 ).
     ENDIF.
     result = t1.
 
@@ -138,27 +120,19 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
   METHOD r_p_i_s_r_d_o_i_l_t_d_op_in_lp.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
       result = t2.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t20 TYPE REF TO zcl_lnt_structure_node.
     t20 = t4.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d741_a4c2609517be.
-    t19 = t20->find_all_structures( i_type_9913 = t22 ).
-    t18 = t19.
+    t18 = t20->find_all_structures( i_type_9913 = t22 ).
     DATA(t23) = VALUE i( ).
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_structure_node.
@@ -191,10 +165,8 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
       APPEND t28 TO t18->items.
       t18->save( ).
     ENDDO.
-    DATA t35 TYPE i.
     t18->load( ).
-    t35 = lines( t18->items ).
-    t23 = t35.
+    t23 = lines( t18->items ).
     DATA(t37) = VALUE i( ).
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t39 TYPE REF TO zcl_lnt_structure_node.
@@ -227,10 +199,8 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
       APPEND t42 TO t18->items.
       t18->save( ).
     ENDDO.
-    DATA t49 TYPE i.
     t18->load( ).
-    t49 = lines( t18->items ).
-    t37 = t49.
+    t37 = lines( t18->items ).
     DATA t52 TYPE REF TO zcl_lnt_structure_node.
     DATA t53 TYPE REF TO object.
     DATA(t54) = VALUE i( ).
@@ -255,70 +225,43 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
       ENDIF.
       DATA t57 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t57.
-      DATA(t59) = VALUE abap_bool( ).
       DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t62.
-      t59 = xsdbool( t57 IS INITIAL ).
-      IF t59 = abap_true.
-        DATA t66 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t68) = zlnt_runtime_desc_78196487750d=>zlnt_member_d611_2852a1970316.
-        t66 = t52->find_first_statement( i_type_9913 = t68 ).
-        t57 = t66.
+        t57 = t52->find_first_statement( i_type_9913 = t68 ).
       ENDIF.
-      DATA(t69) = VALUE abap_bool( ).
       DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t72.
-      t69 = xsdbool( t57 IS INITIAL ).
-      IF t69 = abap_true.
-        DATA t76 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t78) = zlnt_runtime_desc_78196487750d=>zlnt_member_d612_458d252c73b7.
-        t76 = t52->find_first_statement( i_type_9913 = t78 ).
-        t57 = t76.
+        t57 = t52->find_first_statement( i_type_9913 = t78 ).
       ENDIF.
-      DATA(t79) = VALUE abap_bool( ).
       DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t82.
-      t79 = xsdbool( t57 IS INITIAL ).
-      IF t79 = abap_true.
-        DATA t86 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t88) = zlnt_runtime_desc_78196487750d=>zlnt_member_d534_4a06e0073eb0.
-        t86 = t52->find_first_statement( i_type_9913 = t88 ).
-        t57 = t86.
+        t57 = t52->find_first_statement( i_type_9913 = t88 ).
       ENDIF.
-      DATA(t89) = VALUE abap_bool( ).
       DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t92.
-      t89 = xsdbool( t57 IS INITIAL ).
-      IF t89 = abap_true.
-        DATA t96 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t98) = zlnt_runtime_desc_78196487750d=>zlnt_member_d442_7bcff8928bf7.
-        t96 = t52->find_first_statement( i_type_9913 = t98 ).
-        t57 = t96.
+        t57 = t52->find_first_statement( i_type_9913 = t98 ).
       ENDIF.
-      DATA(t99) = VALUE abap_bool( ).
       DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t102.
-      t99 = xsdbool( t57 IS INITIAL ).
-      IF t99 = abap_true.
-        DATA t106 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t108) = zlnt_runtime_desc_78196487750d=>zlnt_member_d676_4264b2ce5dbc.
-        t106 = t52->find_first_statement( i_type_9913 = t108 ).
-        t57 = t106.
+        t57 = t52->find_first_statement( i_type_9913 = t108 ).
       ENDIF.
-      DATA(t109) = VALUE abap_bool( ).
       DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t112.
-      t109 = xsdbool( t57 IS INITIAL ).
-      IF t109 = abap_true.
-        DATA t116 TYPE REF TO zcl_lnt_statement_node.
+      IF xsdbool( t57 IS INITIAL ) = abap_true.
         DATA(t118) = zlnt_runtime_desc_78196487750d=>zlnt_member_d555_4421dfbe5302.
-        t116 = t52->find_first_statement( i_type_9913 = t118 ).
-        t57 = t116.
+        t57 = t52->find_first_statement( i_type_9913 = t118 ).
       ENDIF.
-      DATA t119 TYPE abap_bool.
-      t119 = xsdbool( t57 IS BOUND ).
-      IF t119 = abap_true.
-        DATA(t122) = |Database operation in loop|.
+      IF xsdbool( t57 IS BOUND ) = abap_true.
         DATA t124 TYPE REF TO zcl_lnt_issue.
         CLEAR t124.
         DATA t126 TYPE REF TO zcl_lnt_statement_node.
@@ -326,25 +269,15 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
         DATA(t129) = VALUE string( ).
         DATA t130 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t130.
-        DATA t131 TYPE string.
-        t131 = |db_operation_in_loop|.
-        DATA t133 TYPE string.
-        t133 = |Database operation in loop|.
-        DATA t135 TYPE string.
-        t135 = |Database operation in LOOP/DO/WHILE|.
         DATA t137 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t137.
         DATA t141 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t142 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t142.
-        t141 = t142.
-        DATA(t144) = |SingleFile|.
+        CREATE OBJECT t141.
         t141->load( ).
-        APPEND t144 TO t141->items.
+        APPEND |SingleFile| TO t141->items.
         t141->save( ).
-        DATA(t146) = |Performance|.
         t141->load( ).
-        APPEND t146 TO t141->items.
+        APPEND |Performance| TO t141->items.
         t141->save( ).
         t137 = t141.
         DATA t149 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -373,7 +306,7 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
         CLEAR t163.
         DATA t165 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t165.
-        t130 = NEW zcl_lnt_irule_metadata( i_key = t131 i_title = t133 i_short_description = t135 i_bad_example = t149 i_good_example = t155 i_extended_information = t161 i_tags = t137 i_pragma = t163 i_pseudo_comment = t165 ).
+        t130 = NEW zcl_lnt_irule_metadata( i_key = |db_operation_in_loop| i_title = |Database operation in loop| i_short_description = |Database operation in LOOP/DO/WHILE| i_bad_example = t149 i_good_example = t155 i_extended_information = t161 i_tags = t137 i_pragma = t163 i_pseudo_comment = t165 ).
         CREATE OBJECT t130->zlnt_view_ownkeys_b0e8086400eb.
         t130->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -406,39 +339,33 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t130->zlnt_json_ownkeys_70e5fd461788.
         t130->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t173) = |key|.
         DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t174.
-        t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t173 p1 = t174 ).
-        DATA(t175) = |title|.
+        t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t174 ).
         DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t176.
         IF t130->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t175 p1 = t176 ).
+          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t176 ).
         ENDIF.
-        DATA(t177) = |shortDescription|.
         DATA t178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t178.
         IF t130->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t177 p1 = t178 ).
+          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t178 ).
         ENDIF.
-        DATA(t179) = |tags|.
         DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t180.
         IF t130->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t179 p1 = t180 ).
+          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t180 ).
         ENDIF.
-        DATA(t181) = |badExample|.
         DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t182.
         IF t130->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t181 p1 = t182 ).
+          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t182 ).
         ENDIF.
-        DATA(t183) = |goodExample|.
         DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t184.
         IF t130->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = t183 p1 = t184 ).
+          t130->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t184 ).
         ENDIF.
         t129 = t130->key.
         DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -447,7 +374,7 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
         CLEAR t187.
         DATA t188 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t188.
-        t124 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t126 i_message_26cb = t122 i_key = t129 i_severity = t185 i_fix = t187 i_alternative_fixes = t188 ).
+        t124 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t126 i_message_26cb = |Database operation in loop| i_key = t129 i_severity = t185 i_fix = t187 i_alternative_fixes = t188 ).
         t2->load( ).
         APPEND t124 TO t2->items.
         t2->save( ).

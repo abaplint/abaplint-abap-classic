@@ -15,29 +15,16 @@ CLASS zcl_lnt_sy_method_call_body IMPLEMENTATION.
     DATA(t2) = i_input_967e.
     DATA(t3) = i_method.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA t5 TYPE REF TO zcl_lnt_expression_node.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470.
-    t5 = t1->find_direct_expression( i_type_9913 = t7 ).
-    t4 = t5.
-    DATA t8 TYPE abap_bool.
-    t8 = xsdbool( t4 IS BOUND ).
-    IF t8 = abap_true.
-      DATA(t10) = NEW zcl_lnt_sy_method_parameters( ).
-      DATA t11 TYPE REF TO zcl_lnt_expression_node.
-      t11 = t4.
-      t10->run_syntax( i_node = t11 i_input_967e = t2 i_method = t3 ).
+    t4 = t1->find_direct_expression( i_type_9913 = t7 ).
+    IF xsdbool( t4 IS BOUND ) = abap_true.
+      NEW zcl_lnt_sy_method_parameters( )->run_syntax( i_node = t4 i_input_967e = t2 i_method = t3 ).
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
-    DATA t16 TYPE REF TO zcl_lnt_expression_node.
     DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb.
-    t16 = t1->find_direct_expression( i_type_9913 = t18 ).
-    t15 = t16.
-    DATA t19 TYPE abap_bool.
-    t19 = xsdbool( t15 IS BOUND ).
-    IF t19 = abap_true.
-      DATA t21 TYPE REF TO zcl_lnt_expression_node.
-      t21 = t15.
-      zcl_lnt_sy_method_call_param=>run_syntax( i_node = t21 i_input_967e = t2 i_method = t3 ).
+    t15 = t1->find_direct_expression( i_type_9913 = t18 ).
+    IF xsdbool( t15 IS BOUND ) = abap_true.
+      zcl_lnt_sy_method_call_param=>run_syntax( i_node = t15 i_input_967e = t2 i_method = t3 ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t27) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.

@@ -15,17 +15,15 @@ CLASS zcl_lnt_top_of_page IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |TOP-OF-PAGE|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |TOP-OF-PAGE|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t10) = |DURING LINE-SELECTION|.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t9->sval = t10.
+    t9->sval = |DURING LINE-SELECTION|.
     t8 = zcl_lnt_st_combi_module=>opt( i_first = t9 ).
     IF t8 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -52,11 +50,7 @@ CLASS zcl_lnt_top_of_page IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    t15 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
-    t1 = t15.
-    DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t20) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -81,8 +75,7 @@ CLASS zcl_lnt_top_of_page IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t19 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t20 i_first = t21 ).
-    result = t19.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t21 ).
 
   ENDMETHOD.
 

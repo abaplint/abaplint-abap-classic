@@ -31,12 +31,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |dynpro_checks|.
-    DATA t4 TYPE string.
-    t4 = |Dynpro Checks|.
-    DATA t6 TYPE string.
-    t6 = |Various Dynpro checks|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |* Check length of PUSH elements less than 132\n* Check for ov|.
     t11 = t11 && |erlapping screen elements|.
@@ -44,21 +38,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     t12->has = abap_true.
     t12->value = t11.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Syntax|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Syntax| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |dynpro_checks| i_title = |Dynpro Checks| i_short_description = |Various Dynpro checks| i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -81,28 +70,23 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |extendedInformation|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -127,34 +111,20 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA t4 TYPE abap_bool.
-    DATA t5 TYPE abap_bool.
-    t5 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_program ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
-      DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t7.
-      result = t7.
+    CREATE OBJECT t2.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_program ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t8 TYPE REF TO zif_lnt_file.
-    DATA t9 TYPE REF TO zif_lnt_file.
     DATA t10 TYPE REF TO zcl_lnt_ob_program.
     DATA t12 TYPE REF TO object.
     t12 = t1.
     t10 ?= t12.
-    t9 = t10->get_xml_file( ).
-    t8 = t9.
-    DATA(t13) = VALUE abap_bool( ).
+    t8 = t10->get_xml_file( ).
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t13 = xsdbool( t8 IS INITIAL ).
-    IF t13 = abap_true.
-      DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t20.
-      result = t20.
+    IF xsdbool( t8 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -166,22 +136,12 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     t22 = t23.
     t22->parse_xml( ).
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t31 TYPE REF TO zcl_lnt_shape_d77da4ed.
-    DATA t32 TYPE REF TO zcl_lnt_shape_d77da4ed.
-    t32 = t22->parsed_xml.
-    t31 = t32.
-    t30 = t31->dynpros.
-    t29 = t30.
+    t29 = t22->parsed_xml->dynpros.
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t35 TYPE abap_bool.
-    t35 = xsdbool( t29 IS BOUND ).
-    IF t35 = abap_true.
+    IF xsdbool( t29 IS BOUND ) = abap_true.
       t34 = t29.
     ELSE.
-      DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t38.
-      t34 = t38.
+      CREATE OBJECT t34.
     ENDIF.
     t21 = t34.
     DATA t39 TYPE REF TO zcl_lnt_dynpro_header.
@@ -238,10 +198,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         t53 = t46->type_cba0.
         DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t55.
-        DATA(t57) = |PUSH|.
         DATA(t58) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t58->has = abap_true.
-        t58->value = t57.
+        t58->value = |PUSH|.
         t55 = t58.
         DATA(t60) = VALUE abap_bool( ).
         DATA(t61) = VALUE abap_bool( ).
@@ -260,25 +219,17 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         ENDIF.
         t51 = t52.
         IF t52 = abap_true.
-          DATA t62 TYPE abap_bool.
-          DATA t63 TYPE f.
-          t63 = t46->length.
-          DATA(t65) = CONV f( 132 ).
-          t62 = xsdbool( t63 > t65 ).
-          t51 = t62.
+          t51 = xsdbool( t46->length > CONV f( 132 ) ).
         ENDIF.
         IF t51 = abap_true.
           DATA(t66) = VALUE string( ).
-          DATA(t67) = VALUE string( ).
           DATA(t68) = VALUE string( ).
           DATA(t69) = VALUE string( ).
           DATA(t70) = VALUE string( ).
           DATA(t71) = |Screen |.
           DATA(t72) = VALUE string( ).
           DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t74 = t39->number.
-          t73 = t74.
+          t73 = t39->number.
           DATA(t76) = VALUE string( ).
           DATA(t77) = VALUE abap_bool( ).
           IF t73 IS INITIAL.
@@ -289,21 +240,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           IF t77 = abap_true.
             t76 = |undefined|.
           ELSE.
-            DATA t80 TYPE string.
-            t80 = t73->value.
-            t76 = t80.
+            t76 = t73->value.
           ENDIF.
           t72 = t76.
           DATA(t82) = strlen( t71 ).
           t70 = |{ t71 }{ t72 }|.
-          DATA(t83) = |, field |.
           DATA(t84) = strlen( t70 ).
-          t69 = |{ t70 }{ t83 }|.
+          t69 = |{ t70 }{ |, field | }|.
           DATA(t85) = VALUE string( ).
           DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t87 = t46->name.
-          t86 = t87.
+          t86 = t46->name.
           DATA(t89) = VALUE string( ).
           DATA(t90) = VALUE abap_bool( ).
           IF t86 IS INITIAL.
@@ -314,37 +260,25 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           IF t90 = abap_true.
             t89 = |undefined|.
           ELSE.
-            DATA t93 TYPE string.
-            t93 = t86->value.
-            t89 = t93.
+            t89 = t86->value.
           ENDIF.
           t85 = t89.
           DATA(t95) = strlen( t69 ).
           t68 = |{ t69 }{ t85 }|.
-          DATA(t96) = | LENGTH longer than 132|.
           DATA(t97) = strlen( t68 ).
-          t67 = |{ t68 }{ t96 }|.
-          t66 = t67.
+          t66 = |{ t68 }{ | LENGTH longer than 132| }|.
           DATA t99 TYPE REF TO zcl_lnt_issue.
           CLEAR t99.
           DATA t100 TYPE REF TO zif_lnt_file.
           t100 = t8.
           DATA t102 TYPE REF TO zcl_lnt_position.
-          DATA(t103) = CONV f( 1 ).
-          DATA(t104) = CONV f( 1 ).
           DATA(t105) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t105->has = abap_true.
-          t105->value = t104.
-          t102 = NEW zcl_lnt_position( i_row = t103 i_col = t105 ).
+          t105->value = CONV f( 1 ).
+          t102 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t105 ).
           DATA(t107) = VALUE string( ).
           DATA t108 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t108.
-          DATA t109 TYPE string.
-          t109 = |dynpro_checks|.
-          DATA t111 TYPE string.
-          t111 = |Dynpro Checks|.
-          DATA t113 TYPE string.
-          t113 = |Various Dynpro checks|.
           DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t115.
           DATA(t118) = |* Check length of PUSH elements less than 132\n* Check for ov|.
@@ -356,12 +290,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           DATA t121 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t121.
           DATA t125 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t126 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t126.
-          t125 = t126.
-          DATA(t128) = |Syntax|.
+          CREATE OBJECT t125.
           t125->load( ).
-          APPEND t128 TO t125->items.
+          APPEND |Syntax| TO t125->items.
           t125->save( ).
           t121 = t125.
           DATA t131 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -372,7 +303,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           CLEAR t135.
           DATA t137 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t137.
-          t108 = NEW zcl_lnt_irule_metadata( i_key = t109 i_title = t111 i_short_description = t113 i_bad_example = t131 i_good_example = t133 i_extended_information = t115 i_tags = t121 i_pragma = t135 i_pseudo_comment = t137 ).
+          t108 = NEW zcl_lnt_irule_metadata( i_key = |dynpro_checks| i_title = |Dynpro Checks| i_short_description = |Various Dynpro checks| i_bad_example = t131 i_good_example = t133 i_extended_information = t115 i_tags = t121 i_pragma = t135 i_pseudo_comment = t137 ).
           CREATE OBJECT t108->zlnt_view_ownkeys_b0e8086400eb.
           t108->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -400,38 +331,32 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t108->zlnt_json_ownkeys_70e5fd461788.
           t108->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t144) = |key|.
           DATA t145 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t145.
-          t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = t144 p1 = t145 ).
-          DATA(t146) = |title|.
+          t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t145 ).
           DATA t147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t147.
           IF t108->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = t146 p1 = t147 ).
+            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t147 ).
           ENDIF.
-          DATA(t148) = |shortDescription|.
           DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t149.
           IF t108->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = t148 p1 = t149 ).
+            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t149 ).
           ENDIF.
-          DATA(t150) = |extendedInformation|.
           DATA t151 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t151.
           IF t108->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = t150 p1 = t151 ).
+            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t151 ).
           ENDIF.
-          DATA(t152) = |tags|.
           DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t153.
           IF t108->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = t152 p1 = t153 ).
+            t108->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t153 ).
           ENDIF.
           t107 = t108->key.
           DATA t154 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t155) = CAST zcl_lnt_dynpro_checks_conf( me->gt_cn_in_sr_rl_dy_ch_ts_dy_chc( ) ).
-          t154 = t155->zlnt_view_read_sr_15c06369f827( ).
+          t154 = CAST zcl_lnt_dynpro_checks_conf( me->gt_cn_in_sr_rl_dy_ch_ts_dy_chc( ) )->zlnt_view_read_sr_15c06369f827( ).
           DATA t156 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t156.
           t99 = zcl_lnt_issue=>at_position( i_file = t100 i_start = t102 i_message_26cb = t66 i_key = t107 i_severity = t154 i_fix = t156 ).
@@ -442,9 +367,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       ENDDO.
       DATA(t157) = VALUE i( ).
       DATA t158 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t160 TYPE REF TO zif_lnt_file.
-      t160 = t8.
-      t158 = me->find_overlapping_fields( i_dynpro = t39 i_file = t160 ).
+      t158 = me->find_overlapping_fields( i_dynpro = t39 i_file = t8 ).
       DATA t162 TYPE REF TO zcl_lnt_issue.
       CLEAR t162.
       DATA t163 TYPE REF TO object.
@@ -473,10 +396,8 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         APPEND t162 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t169 TYPE i.
       t2->load( ).
-      t169 = lines( t2->items ).
-      t157 = t169.
+      t157 = lines( t2->items ).
     ENDDO.
     result = t2.
 
@@ -486,20 +407,14 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA(t1) = i_dynpro.
     DATA(t2) = i_file.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE i.
     t5 = 0.
     DO.
-      DATA t7 TYPE abap_bool.
-      DATA t9 TYPE i.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t10 = t1->fields_464c.
       t10->load( ).
-      t9 = lines( t10->items ).
-      t7 = xsdbool( t5 < t9 ).
-      IF t7 = abap_false.
+      IF xsdbool( t5 < lines( t10->items ) ) = abap_false.
         EXIT.
       ENDIF.
       DATA t12 TYPE REF TO zcl_lnt_dynpro_field.
@@ -531,9 +446,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
       DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t24 = t12->name.
-      t23 = t24.
+      t23 = t12->name.
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t26.
       DATA(t28) = VALUE abap_bool( ).
@@ -550,10 +463,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         t31 = t12->type_cba0.
         DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t33.
-        DATA(t35) = |FRAME|.
         DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t36->has = abap_true.
-        t36->value = t35.
+        t36->value = |FRAME|.
         t33 = t36.
         DATA(t38) = VALUE abap_bool( ).
         DATA(t39) = VALUE abap_bool( ).
@@ -574,7 +486,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       ENDIF.
       t20 = t21.
       IF t21 = abap_false.
-        DATA(t40) = VALUE abap_bool( ).
         DATA t41 TYPE REF TO zcl_lnt_dynpro_field.
         t41 = t12.
         DATA(t43) = VALUE abap_bool( ).
@@ -584,10 +495,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         t46 = t41->cont_type.
         DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t48.
-        DATA(t50) = |TABLE_CTRL|.
         DATA(t51) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t51->has = abap_true.
-        t51->value = t50.
+        t51->value = |TABLE_CTRL|.
         t48 = t51.
         DATA(t53) = VALUE abap_bool( ).
         DATA(t54) = VALUE abap_bool( ).
@@ -611,10 +521,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           t56 = t41->cont_type.
           DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t58.
-          DATA(t60) = |LOOP|.
           DATA(t61) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t61->has = abap_true.
-          t61->value = t60.
+          t61->value = |LOOP|.
           t58 = t61.
           DATA(t63) = VALUE abap_bool( ).
           DATA(t64) = VALUE abap_bool( ).
@@ -640,10 +549,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           t66 = t41->cont_type.
           DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t68.
-          DATA(t70) = |STRIP_CTRL|.
           DATA(t71) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t71->has = abap_true.
-          t71->value = t70.
+          t71->value = |STRIP_CTRL|.
           t68 = t71.
           DATA(t73) = VALUE abap_bool( ).
           DATA(t74) = VALUE abap_bool( ).
@@ -662,30 +570,21 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           ENDIF.
           t43 = t65.
         ENDIF.
-        t40 = t43.
-        t20 = t40.
+        t20 = t43.
       ENDIF.
       IF t20 = abap_true.
-        DATA t75 TYPE i.
         DATA(t77) = 1.
-        t75 = t5 + t77.
-        t5 = t75.
+        t5 = t5 + t77.
         CONTINUE.
       ENDIF.
       DATA t78 TYPE i.
-      DATA t79 TYPE i.
       DATA(t81) = 1.
-      t79 = t5 + t81.
-      t78 = t79.
+      t78 = t5 + t81.
       DO.
-        DATA t82 TYPE abap_bool.
-        DATA t84 TYPE i.
         DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t85 = t1->fields_464c.
         t85->load( ).
-        t84 = lines( t85->items ).
-        t82 = xsdbool( t78 < t84 ).
-        IF t82 = abap_false.
+        IF xsdbool( t78 < lines( t85->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA t87 TYPE REF TO zcl_lnt_dynpro_field.
@@ -718,9 +617,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA(t97) = VALUE abap_bool( ).
         DATA(t98) = VALUE abap_bool( ).
         DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t100 = t87->name.
-        t99 = t100.
+        t99 = t87->name.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         DATA(t104) = VALUE abap_bool( ).
@@ -737,10 +634,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           t107 = t87->type_cba0.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t109.
-          DATA(t111) = |FRAME|.
           DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t112->has = abap_true.
-          t112->value = t111.
+          t112->value = |FRAME|.
           t109 = t112.
           DATA(t114) = VALUE abap_bool( ).
           DATA(t115) = VALUE abap_bool( ).
@@ -761,7 +657,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         ENDIF.
         t96 = t97.
         IF t97 = abap_false.
-          DATA(t116) = VALUE abap_bool( ).
           DATA t117 TYPE REF TO zcl_lnt_dynpro_field.
           t117 = t87.
           DATA(t119) = VALUE abap_bool( ).
@@ -771,10 +666,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           t122 = t117->cont_type.
           DATA t124 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t124.
-          DATA(t126) = |TABLE_CTRL|.
           DATA(t127) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t127->has = abap_true.
-          t127->value = t126.
+          t127->value = |TABLE_CTRL|.
           t124 = t127.
           DATA(t129) = VALUE abap_bool( ).
           DATA(t130) = VALUE abap_bool( ).
@@ -798,10 +692,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
             t132 = t117->cont_type.
             DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t134.
-            DATA(t136) = |LOOP|.
             DATA(t137) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t137->has = abap_true.
-            t137->value = t136.
+            t137->value = |LOOP|.
             t134 = t137.
             DATA(t139) = VALUE abap_bool( ).
             DATA(t140) = VALUE abap_bool( ).
@@ -827,10 +720,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
             t142 = t117->cont_type.
             DATA t144 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t144.
-            DATA(t146) = |STRIP_CTRL|.
             DATA(t147) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t147->has = abap_true.
-            t147->value = t146.
+            t147->value = |STRIP_CTRL|.
             t144 = t147.
             DATA(t149) = VALUE abap_bool( ).
             DATA(t150) = VALUE abap_bool( ).
@@ -849,26 +741,20 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
             ENDIF.
             t119 = t141.
           ENDIF.
-          t116 = t119.
-          t96 = t116.
+          t96 = t119.
         ENDIF.
         t95 = t96.
         IF t96 = abap_false.
-          DATA t151 TYPE abap_bool.
           DATA t152 TYPE abap_bool.
           t152 = me->overlaps( i_first = t12 i_second = t87 ).
-          t151 = xsdbool( t152 = abap_false ).
-          t95 = t151.
+          t95 = xsdbool( t152 = abap_false ).
         ENDIF.
         IF t95 = abap_true.
-          DATA t156 TYPE i.
           DATA(t158) = 1.
-          t156 = t78 + t158.
-          t78 = t156.
+          t78 = t78 + t158.
           CONTINUE.
         ENDIF.
         DATA(t159) = VALUE string( ).
-        DATA(t160) = VALUE string( ).
         DATA(t161) = VALUE string( ).
         DATA(t162) = VALUE string( ).
         DATA(t163) = VALUE string( ).
@@ -881,9 +767,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA(t170) = |Screen |.
         DATA(t171) = VALUE string( ).
         DATA t172 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t173 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t173 = t1->number.
-        t172 = t173.
+        t172 = t1->number.
         DATA(t175) = VALUE string( ).
         DATA(t176) = VALUE abap_bool( ).
         IF t172 IS INITIAL.
@@ -894,21 +778,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         IF t176 = abap_true.
           t175 = |undefined|.
         ELSE.
-          DATA t179 TYPE string.
-          t179 = t172->value.
-          t175 = t179.
+          t175 = t172->value.
         ENDIF.
         t171 = t175.
         DATA(t181) = strlen( t170 ).
         t169 = |{ t170 }{ t171 }|.
-        DATA(t182) = |, |.
         DATA(t183) = strlen( t169 ).
-        t168 = |{ t169 }{ t182 }|.
+        t168 = |{ t169 }{ |, | }|.
         DATA(t184) = VALUE string( ).
         DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t186 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t186 = t12->type_cba0.
-        t185 = t186.
+        t185 = t12->type_cba0.
         DATA(t188) = VALUE string( ).
         DATA(t189) = VALUE abap_bool( ).
         IF t185 IS INITIAL.
@@ -919,21 +798,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         IF t189 = abap_true.
           t188 = |undefined|.
         ELSE.
-          DATA t192 TYPE string.
-          t192 = t185->value.
-          t188 = t192.
+          t188 = t185->value.
         ENDIF.
         t184 = t188.
         DATA(t194) = strlen( t168 ).
         t167 = |{ t168 }{ t184 }|.
-        DATA(t195) = | |.
         DATA(t196) = strlen( t167 ).
-        t166 = |{ t167 }{ t195 }|.
+        t166 = |{ t167 }{ | | }|.
         DATA(t197) = VALUE string( ).
         DATA t198 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t199 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t199 = t12->name.
-        t198 = t199.
+        t198 = t12->name.
         DATA(t201) = VALUE string( ).
         DATA(t202) = VALUE abap_bool( ).
         IF t198 IS INITIAL.
@@ -944,21 +818,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         IF t202 = abap_true.
           t201 = |undefined|.
         ELSE.
-          DATA t205 TYPE string.
-          t205 = t198->value.
-          t201 = t205.
+          t201 = t198->value.
         ENDIF.
         t197 = t201.
         DATA(t207) = strlen( t166 ).
         t165 = |{ t166 }{ t197 }|.
-        DATA(t208) = | and |.
         DATA(t209) = strlen( t165 ).
-        t164 = |{ t165 }{ t208 }|.
+        t164 = |{ t165 }{ | and | }|.
         DATA(t210) = VALUE string( ).
         DATA t211 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t212 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t212 = t87->type_cba0.
-        t211 = t212.
+        t211 = t87->type_cba0.
         DATA(t214) = VALUE string( ).
         DATA(t215) = VALUE abap_bool( ).
         IF t211 IS INITIAL.
@@ -969,21 +838,16 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         IF t215 = abap_true.
           t214 = |undefined|.
         ELSE.
-          DATA t218 TYPE string.
-          t218 = t211->value.
-          t214 = t218.
+          t214 = t211->value.
         ENDIF.
         t210 = t214.
         DATA(t220) = strlen( t164 ).
         t163 = |{ t164 }{ t210 }|.
-        DATA(t221) = | |.
         DATA(t222) = strlen( t163 ).
-        t162 = |{ t163 }{ t221 }|.
+        t162 = |{ t163 }{ | | }|.
         DATA(t223) = VALUE string( ).
         DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t225 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t225 = t87->name.
-        t224 = t225.
+        t224 = t87->name.
         DATA(t227) = VALUE string( ).
         DATA(t228) = VALUE abap_bool( ).
         IF t224 IS INITIAL.
@@ -994,35 +858,23 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         IF t228 = abap_true.
           t227 = |undefined|.
         ELSE.
-          DATA t231 TYPE string.
-          t231 = t224->value.
-          t227 = t231.
+          t227 = t224->value.
         ENDIF.
         t223 = t227.
         DATA(t233) = strlen( t162 ).
         t161 = |{ t162 }{ t223 }|.
-        DATA(t234) = | are overlapping|.
         DATA(t235) = strlen( t161 ).
-        t160 = |{ t161 }{ t234 }|.
-        t159 = t160.
+        t159 = |{ t161 }{ | are overlapping| }|.
         DATA t237 TYPE REF TO zcl_lnt_issue.
         CLEAR t237.
         DATA t239 TYPE REF TO zcl_lnt_position.
-        DATA(t240) = CONV f( 1 ).
-        DATA(t241) = CONV f( 1 ).
         DATA(t242) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t242->has = abap_true.
-        t242->value = t241.
-        t239 = NEW zcl_lnt_position( i_row = t240 i_col = t242 ).
+        t242->value = CONV f( 1 ).
+        t239 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t242 ).
         DATA(t244) = VALUE string( ).
         DATA t245 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t245.
-        DATA t246 TYPE string.
-        t246 = |dynpro_checks|.
-        DATA t248 TYPE string.
-        t248 = |Dynpro Checks|.
-        DATA t250 TYPE string.
-        t250 = |Various Dynpro checks|.
         DATA t252 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t252.
         DATA(t255) = |* Check length of PUSH elements less than 132\n* Check for ov|.
@@ -1034,12 +886,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA t258 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t258.
         DATA t262 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t263 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t263.
-        t262 = t263.
-        DATA(t265) = |Syntax|.
+        CREATE OBJECT t262.
         t262->load( ).
-        APPEND t265 TO t262->items.
+        APPEND |Syntax| TO t262->items.
         t262->save( ).
         t258 = t262.
         DATA t268 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1050,7 +899,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         CLEAR t272.
         DATA t274 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t274.
-        t245 = NEW zcl_lnt_irule_metadata( i_key = t246 i_title = t248 i_short_description = t250 i_bad_example = t268 i_good_example = t270 i_extended_information = t252 i_tags = t258 i_pragma = t272 i_pseudo_comment = t274 ).
+        t245 = NEW zcl_lnt_irule_metadata( i_key = |dynpro_checks| i_title = |Dynpro Checks| i_short_description = |Various Dynpro checks| i_bad_example = t268 i_good_example = t270 i_extended_information = t252 i_tags = t258 i_pragma = t272 i_pseudo_comment = t274 ).
         CREATE OBJECT t245->zlnt_view_ownkeys_b0e8086400eb.
         t245->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t276 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1078,53 +927,43 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t245->zlnt_json_ownkeys_70e5fd461788.
         t245->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t281) = |key|.
         DATA t282 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t282.
-        t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = t281 p1 = t282 ).
-        DATA(t283) = |title|.
+        t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t282 ).
         DATA t284 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t284.
         IF t245->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = t283 p1 = t284 ).
+          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t284 ).
         ENDIF.
-        DATA(t285) = |shortDescription|.
         DATA t286 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t286.
         IF t245->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = t285 p1 = t286 ).
+          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t286 ).
         ENDIF.
-        DATA(t287) = |extendedInformation|.
         DATA t288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t288.
         IF t245->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = t287 p1 = t288 ).
+          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t288 ).
         ENDIF.
-        DATA(t289) = |tags|.
         DATA t290 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t290.
         IF t245->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = t289 p1 = t290 ).
+          t245->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t290 ).
         ENDIF.
         t244 = t245->key.
         DATA t291 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t292) = CAST zcl_lnt_dynpro_checks_conf( me->gt_cn_in_sr_rl_dy_ch_ts_dy_chc( ) ).
-        t291 = t292->zlnt_view_read_sr_15c06369f827( ).
+        t291 = CAST zcl_lnt_dynpro_checks_conf( me->gt_cn_in_sr_rl_dy_ch_ts_dy_chc( ) )->zlnt_view_read_sr_15c06369f827( ).
         DATA t293 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t293.
         t237 = zcl_lnt_issue=>at_position( i_file = t2 i_start = t239 i_message_26cb = t159 i_key = t244 i_severity = t291 i_fix = t293 ).
         t3->load( ).
         APPEND t237 TO t3->items.
         t3->save( ).
-        DATA t294 TYPE i.
         DATA(t296) = 1.
-        t294 = t78 + t296.
-        t78 = t294.
+        t78 = t78 + t296.
       ENDDO.
-      DATA t297 TYPE i.
       DATA(t299) = 1.
-      t297 = t5 + t299.
-      t5 = t297.
+      t5 = t5 + t299.
     ENDDO.
     result = t3.
 
@@ -1138,10 +977,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t5 = t1->cont_type.
     DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t9) = |TABLE_CTRL|.
     DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = |TABLE_CTRL|.
     t7 = t10.
     DATA(t12) = VALUE abap_bool( ).
     DATA(t13) = VALUE abap_bool( ).
@@ -1164,10 +1002,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t15 = t1->cont_type.
       DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t19) = |LOOP|.
       DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t20->has = abap_true.
-      t20->value = t19.
+      t20->value = |LOOP|.
       t17 = t20.
       DATA(t22) = VALUE abap_bool( ).
       DATA(t23) = VALUE abap_bool( ).
@@ -1192,10 +1029,9 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t25 = t1->cont_type.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t29) = |STRIP_CTRL|.
       DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t30->has = abap_true.
-      t30->value = t29.
+      t30->value = |STRIP_CTRL|.
       t27 = t30.
       DATA(t32) = VALUE abap_bool( ).
       DATA(t33) = VALUE abap_bool( ).
@@ -1225,36 +1061,18 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE abap_bool.
-    DATA t7 TYPE f.
-    t7 = t1->line.
-    DATA(t9) = CONV f( 0 ).
-    t6 = xsdbool( t7 = t9 ).
+    t6 = xsdbool( t1->line = CONV f( 0 ) ).
     t5 = t6.
     IF t6 = abap_false.
-      DATA t10 TYPE abap_bool.
-      DATA t11 TYPE f.
-      t11 = t2->line.
-      DATA(t13) = CONV f( 0 ).
-      t10 = xsdbool( t11 = t13 ).
-      t5 = t10.
+      t5 = xsdbool( t2->line = CONV f( 0 ) ).
     ENDIF.
     t4 = t5.
     IF t5 = abap_false.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE f.
-      t15 = t1->column.
-      DATA(t17) = CONV f( 0 ).
-      t14 = xsdbool( t15 = t17 ).
-      t4 = t14.
+      t4 = xsdbool( t1->column = CONV f( 0 ) ).
     ENDIF.
     t3 = t4.
     IF t4 = abap_false.
-      DATA t18 TYPE abap_bool.
-      DATA t19 TYPE f.
-      t19 = t2->column.
-      DATA(t21) = CONV f( 0 ).
-      t18 = xsdbool( t19 = t21 ).
-      t3 = t18.
+      t3 = xsdbool( t2->column = CONV f( 0 ) ).
     ENDIF.
     IF t3 = abap_true.
       result = abap_false.
@@ -1264,8 +1082,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA t24 TYPE f.
     DATA t25 TYPE f.
     t25 = t1->height.
-    DATA(t27) = CONV f( 1 ).
-    t24 = t27.
+    t24 = CONV f( 1 ).
     IF t24 = 0 AND t25 = 0.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
@@ -1277,8 +1094,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA t29 TYPE f.
     DATA t30 TYPE f.
     t30 = t2->height.
-    DATA(t32) = CONV f( 1 ).
-    t29 = t32.
+    t29 = CONV f( 1 ).
     IF t29 = 0 AND t30 = 0.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
@@ -1302,45 +1118,31 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     t41 = t42 - t46.
     DATA t47 TYPE abap_bool.
     DATA t48 TYPE abap_bool.
-    DATA t50 TYPE f.
-    t50 = t2->line.
-    t48 = xsdbool( t34 < t50 ).
+    t48 = xsdbool( t34 < t2->line ).
     t47 = t48.
     IF t48 = abap_false.
-      DATA t52 TYPE abap_bool.
-      DATA t54 TYPE f.
-      t54 = t1->line.
-      t52 = xsdbool( t41 < t54 ).
-      t47 = t52.
+      t47 = xsdbool( t41 < t1->line ).
     ENDIF.
     IF t47 = abap_true.
       result = abap_false.
       RETURN.
     ENDIF.
     DATA(t57) = VALUE f( ).
-    DATA(t58) = VALUE f( ).
     DATA(t59) = VALUE f( ).
     DATA t60 TYPE f.
     t60 = t1->column.
     DATA(t62) = VALUE f( ).
     DATA(t63) = VALUE f( ).
     DATA t64 TYPE f.
-    DATA t65 TYPE f.
-    t65 = t1->vislength.
-    t64 = t65.
+    t64 = t1->vislength.
     DATA(t67) = VALUE f( ).
-    DATA t68 TYPE abap_bool.
-    t68 = xsdbool( t64 IS NOT INITIAL ).
-    IF t68 = abap_true.
+    IF xsdbool( t64 IS NOT INITIAL ) = abap_true.
       t67 = t64.
     ELSE.
-      DATA t71 TYPE f.
-      t71 = t1->length.
-      t67 = t71.
+      t67 = t1->length.
     ENDIF.
     t63 = t67.
-    DATA(t73) = CONV f( 1 ).
-    t62 = t73.
+    t62 = CONV f( 1 ).
     IF t62 = 0 AND t63 = 0.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
@@ -1349,32 +1151,23 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     ENDIF.
     t59 = t60 + t62.
     DATA(t74) = CONV f( 1 ).
-    t58 = t59 - t74.
-    t57 = t58.
+    t57 = t59 - t74.
     DATA(t75) = VALUE f( ).
-    DATA(t76) = VALUE f( ).
     DATA(t77) = VALUE f( ).
     DATA t78 TYPE f.
     t78 = t2->column.
     DATA(t80) = VALUE f( ).
     DATA(t81) = VALUE f( ).
     DATA t82 TYPE f.
-    DATA t83 TYPE f.
-    t83 = t2->vislength.
-    t82 = t83.
+    t82 = t2->vislength.
     DATA(t85) = VALUE f( ).
-    DATA t86 TYPE abap_bool.
-    t86 = xsdbool( t82 IS NOT INITIAL ).
-    IF t86 = abap_true.
+    IF xsdbool( t82 IS NOT INITIAL ) = abap_true.
       t85 = t82.
     ELSE.
-      DATA t89 TYPE f.
-      t89 = t2->length.
-      t85 = t89.
+      t85 = t2->length.
     ENDIF.
     t81 = t85.
-    DATA(t91) = CONV f( 1 ).
-    t80 = t91.
+    t80 = CONV f( 1 ).
     IF t80 = 0 AND t81 = 0.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
@@ -1383,30 +1176,21 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     ENDIF.
     t77 = t78 + t80.
     DATA(t92) = CONV f( 1 ).
-    t76 = t77 - t92.
-    t75 = t76.
+    t75 = t77 - t92.
     DATA t93 TYPE abap_bool.
     DATA t94 TYPE abap_bool.
-    DATA t95 TYPE f.
-    t95 = t1->column.
-    t94 = xsdbool( t95 <= t75 ).
+    t94 = xsdbool( t1->column <= t75 ).
     t93 = t94.
     IF t94 = abap_true.
-      DATA t98 TYPE abap_bool.
-      DATA t99 TYPE f.
-      t99 = t2->column.
-      t98 = xsdbool( t99 <= t57 ).
-      t93 = t98.
+      t93 = xsdbool( t2->column <= t57 ).
     ENDIF.
     result = t93.
 
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_dynpro_checks.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_dyn_chc_ts_dyn_chc( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_dyn_chc_ts_dyn_chc( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

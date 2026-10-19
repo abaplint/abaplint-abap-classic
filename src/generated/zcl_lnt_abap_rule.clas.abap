@@ -28,14 +28,8 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t7 TYPE REF TO zcl_lnt_abap_object.
@@ -43,13 +37,9 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
     t9 = t1.
     t7 ?= t9.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t11.
-    t10 = t11.
+    CREATE OBJECT t10.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t15 = t7->parsed.
-    t12 = t15.
+    t12 = t7->parsed.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO object.
     DATA(t19) = VALUE i( ).
@@ -107,20 +97,16 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
         APPEND t28 TO t10->items.
         t10->save( ).
       ENDDO.
-      DATA t35 TYPE i.
       t10->load( ).
-      t35 = lines( t10->items ).
-      t22 = t35.
+      t22 = lines( t10->items ).
     ENDDO.
     result = t10.
 
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_abap_rule.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
-    result = t2.
+    result = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
 
   ENDMETHOD.
 

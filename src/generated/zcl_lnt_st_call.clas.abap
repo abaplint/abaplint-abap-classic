@@ -14,15 +14,12 @@ ENDCLASS.
 CLASS zcl_lnt_st_call IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t3) = |KeyUser|.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |CALL METHOD|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |CALL METHOD|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d237_6d1df3154820.
     IF t11 IS BOUND.
@@ -31,9 +28,7 @@ CLASS zcl_lnt_st_call IMPLEMENTATION.
       t10->cval = t11.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t13.
-    t12 = t13.
+    CREATE OBJECT t12.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d223_6da5f452a761.
     IF t16 IS BOUND.
@@ -44,9 +39,7 @@ CLASS zcl_lnt_st_call IMPLEMENTATION.
     t12->load( ).
     APPEND t15 TO t12->items.
     t12->save( ).
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    t17 = zcl_lnt_st_combi_module=>seq( i_first = t7 i_second = t10 i_rest = t12 ).
-    t5 = t17.
+    t5 = zcl_lnt_st_combi_module=>seq( i_first = t7 i_second = t10 i_rest = t12 ).
     IF t5 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t22 TYPE REF TO object.
@@ -70,8 +63,7 @@ CLASS zcl_lnt_st_call IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t2 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t3 i_first = t4 ).
-    t1 = t2.
+    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t4 ).
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -105,9 +97,7 @@ CLASS zcl_lnt_st_call IMPLEMENTATION.
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t33.
-    DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    t34 = zcl_lnt_st_combi_module=>alt_prio( i_first = t25 i_second = t30 i_rest = t33 ).
-    result = t34.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t25 i_second = t30 i_rest = t33 ).
 
   ENDMETHOD.
 

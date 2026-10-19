@@ -22,22 +22,14 @@ ENDCLASS.
 CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_list.
-    DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = VALUE i( ).
     t1->load( ).
-    t3 = lines( t1->items ).
-    DATA(t5) = 2.
-    t2 = xsdbool( t3 < t5 ).
-    IF t2 = abap_true.
+    IF xsdbool( lines( t1->items ) < 2 ) = abap_true.
       DATA t6 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t7 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t10) = |Alternative, length error|.
       DATA(t11) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t11->has = abap_true.
-      t11->value = t10.
-      t8 = t11.
-      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t8 ).
+      t11->value = |Alternative, length error|.
+      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t11 ).
       t6 = NEW #( ).
       t6->payload = t7.
       CLEAR t6->source_value.
@@ -70,9 +62,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
 
   METHOD list_keywords.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA(t3) = me->list.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO object.
@@ -117,10 +107,8 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
         APPEND t12 TO t1->items.
         t1->save( ).
       ENDDO.
-      DATA t16 TYPE i.
       t1->load( ).
-      t16 = lines( t1->items ).
-      t9 = t16.
+      t9 = lines( t1->items ).
     ENDDO.
     result = t1.
 
@@ -128,9 +116,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
 
   METHOD get_using.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = me->list.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO object.
@@ -154,11 +140,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t14 = t5->get_using( ).
-      t12 = t2->concat( p0 = t14 ).
-      t2 = t12.
+      t2 = t2->concat( p0 = t5->get_using( ) ).
     ENDDO.
     result = t2.
 
@@ -167,9 +149,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = me->list.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO object.
@@ -194,23 +174,11 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
         t5 ?= t6.
       ENDIF.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t11 = t5->run( i_r_f634 = t1 ).
-      t10 = t11.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE i.
+      t10 = t5->run( i_r_f634 = t1 ).
       t10->load( ).
-      t15 = lines( t10->items ).
-      DATA(t17) = 0.
-      t14 = xsdbool( t15 > t17 ).
-      IF t14 = abap_true.
-        DATA t18 TYPE abap_bool.
-        DATA t19 TYPE i.
+      IF xsdbool( lines( t10->items ) > 0 ) = abap_true.
         t10->load( ).
-        t19 = lines( t10->items ).
-        DATA(t21) = 1.
-        t18 = xsdbool( t19 = t21 ).
-        IF t18 = abap_true.
+        IF xsdbool( lines( t10->items ) = 1 ) = abap_true.
           DATA t23 TYPE REF TO zcl_lnt_st_result.
           CLEAR t23.
           DATA t25 TYPE REF TO object.
@@ -262,10 +230,8 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
             APPEND t30 TO t2->items.
             t2->save( ).
           ENDDO.
-          DATA t37 TYPE i.
           t2->load( ).
-          t37 = lines( t2->items ).
-          t28 = t37.
+          t28 = lines( t2->items ).
         ENDIF.
         EXIT.
       ENDIF.
@@ -276,9 +242,7 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
 
   METHOD railroad.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA(t5) = me->list.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO object.
@@ -308,7 +272,6 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
       APPEND t12 TO t3->items.
       t3->save( ).
     ENDDO.
-    DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA(t17) = |Railroad.Choice(0, |.
     DATA t18 TYPE string.
@@ -316,10 +279,8 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     t18 = t3->join( p0 = t20 ).
     DATA(t21) = strlen( t17 ).
     t16 = |{ t17 }{ t18 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t16 ).
-    t15 = |{ t16 }{ t22 }|.
-    result = t15.
+    result = |{ t16 }{ |)| }|.
 
   ENDMETHOD.
 
@@ -349,52 +310,37 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
       ELSE.
         t4 ?= t5.
       ENDIF.
-      DATA t9 TYPE string.
       DATA t10 TYPE string.
       DATA(t11) = t1.
       DATA t12 TYPE string.
       t12 = t4->to_str( ).
       DATA(t14) = strlen( t11 ).
       t10 = |{ t11 }{ t12 }|.
-      DATA(t15) = |,|.
       DATA(t16) = strlen( t10 ).
-      t9 = |{ t10 }{ t15 }|.
-      t1 = t9.
+      t1 = |{ t10 }{ |,| }|.
     ENDDO.
-    DATA t17 TYPE string.
     DATA t18 TYPE string.
     DATA(t19) = |alt(|.
     DATA(t21) = strlen( t19 ).
     t18 = |{ t19 }{ t1 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t18 ).
-    t17 = |{ t18 }{ t22 }|.
-    result = t17.
+    result = |{ t18 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE abap_bool.
-    DATA t2 TYPE i.
     DATA(t3) = me->list.
     t3->load( ).
-    t2 = lines( t3->items ).
-    DATA(t4) = 2.
-    t1 = xsdbool( t2 <> t4 ).
-    IF t1 = abap_true.
+    IF xsdbool( lines( t3->items ) <> 2 ) = abap_true.
       DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t7.
-      t6 = t7.
-      DATA(t9) = ||.
+      CREATE OBJECT t6.
       t6->load( ).
-      APPEND t9 TO t6->items.
+      APPEND || TO t6->items.
       t6->save( ).
       result = t6.
       RETURN.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t14) = me->list.
     DATA t15 TYPE REF TO object.
@@ -409,10 +355,8 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     ELSE.
       t13 ?= t15.
     ENDIF.
-    t12 = t13->first( ).
-    t11 = t12.
+    t11 = t13->first( ).
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t21) = me->list.
     DATA t22 TYPE REF TO object.
@@ -427,26 +371,20 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     ELSE.
       t20 ?= t22.
     ENDIF.
-    t19 = t20->first( ).
-    t18 = t19.
+    t18 = t20->first( ).
     DATA t25 TYPE abap_bool.
     DATA t26 TYPE abap_bool.
-    DATA t27 TYPE i.
     t11->load( ).
-    t27 = lines( t11->items ).
-    DATA(t29) = 1.
-    t26 = xsdbool( t27 = t29 ).
+    t26 = xsdbool( lines( t11->items ) = 1 ).
     t25 = t26.
     IF t26 = abap_true.
       DATA(t30) = VALUE abap_bool( ).
       DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t33) = 0.
-      t31 = t11->get( p0 = t33 ).
+      t31 = t11->get( p0 = 0 ).
       DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t36) = ||.
       DATA(t37) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t37->has = abap_true.
-      t37->value = t36.
+      t37->value = ||.
       t34 = t37.
       DATA(t39) = VALUE abap_bool( ).
       DATA(t40) = VALUE abap_bool( ).
@@ -471,22 +409,17 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     ENDIF.
     DATA t42 TYPE abap_bool.
     DATA t43 TYPE abap_bool.
-    DATA t44 TYPE i.
     t18->load( ).
-    t44 = lines( t18->items ).
-    DATA(t46) = 1.
-    t43 = xsdbool( t44 = t46 ).
+    t43 = xsdbool( lines( t18->items ) = 1 ).
     t42 = t43.
     IF t43 = abap_true.
       DATA(t47) = VALUE abap_bool( ).
       DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t50) = 0.
-      t48 = t18->get( p0 = t50 ).
+      t48 = t18->get( p0 = 0 ).
       DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t53) = ||.
       DATA(t54) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t54->has = abap_true.
-      t54->value = t53.
+      t54->value = ||.
       t51 = t54.
       DATA(t56) = VALUE abap_bool( ).
       DATA(t57) = VALUE abap_bool( ).
@@ -512,30 +445,20 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
     DATA(t59) = VALUE abap_bool( ).
     DATA t60 TYPE abap_bool.
     DATA t61 TYPE abap_bool.
-    DATA t62 TYPE i.
     t11->load( ).
-    t62 = lines( t11->items ).
-    DATA(t64) = 1.
-    t61 = xsdbool( t62 = t64 ).
+    t61 = xsdbool( lines( t11->items ) = 1 ).
     t60 = t61.
     IF t61 = abap_true.
-      DATA t65 TYPE abap_bool.
-      DATA t66 TYPE i.
       t18->load( ).
-      t66 = lines( t18->items ).
-      DATA(t68) = 1.
-      t65 = xsdbool( t66 = t68 ).
-      t60 = t65.
+      t60 = xsdbool( lines( t18->items ) = 1 ).
     ENDIF.
     t59 = t60.
     IF t60 = abap_true.
       DATA(t69) = VALUE abap_bool( ).
       DATA t70 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t72) = 0.
-      t70 = t11->get( p0 = t72 ).
+      t70 = t11->get( p0 = 0 ).
       DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t75) = 0.
-      t73 = t18->get( p0 = t75 ).
+      t73 = t18->get( p0 = 0 ).
       DATA(t76) = VALUE abap_bool( ).
       DATA(t77) = VALUE abap_bool( ).
       IF t70 IS BOUND.
@@ -576,28 +499,20 @@ CLASS zcl_lnt_alternative_priority IMPLEMENTATION.
       APPEND t81 TO t11->items.
       t11->save( ).
     ENDDO.
-    DATA t85 TYPE i.
     t11->load( ).
-    t85 = lines( t11->items ).
-    t79 = t85.
+    t79 = lines( t11->items ).
     result = t11.
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     t4->load( ).
     APPEND t1 TO t4->items.
     t4->save( ).
-    t3 = t4.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 

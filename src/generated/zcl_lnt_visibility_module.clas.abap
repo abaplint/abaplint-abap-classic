@@ -27,78 +27,66 @@ CLASS zcl_lnt_visibility_module IMPLEMENTATION.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t3 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t4) = |1|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t6) = |Private|.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t5->sval = |Private|.
+    t2 = t3->set( p0 = |1| p1 = t5 ).
     DATA t7 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t8 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t8 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t9) = |2|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = |Protected|.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
-    t7 = t8->set( p0 = t9 p1 = t10 ).
+    t10->sval = |Protected|.
+    t7 = t8->set( p0 = |2| p1 = t10 ).
     DATA t12 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t13 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t13 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t14) = |3|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t16) = |Public|.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t15->sval = t16.
-    t12 = t13->set( p0 = t14 p1 = t15 ).
+    t15->sval = |Public|.
+    t12 = t13->set( p0 = |3| p1 = t15 ).
     DATA t17 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t18 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t18 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t19) = |Private|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t21) = 1.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t20->nval = t21.
-    t17 = t18->set( p0 = t19 p1 = t20 ).
+    t20->nval = 1.
+    t17 = t18->set( p0 = |Private| p1 = t20 ).
     DATA t22 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t23 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t23 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t24) = |Protected|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t26) = 2.
     CREATE OBJECT t25.
     t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t25->nval = t26.
-    t22 = t23->set( p0 = t24 p1 = t25 ).
+    t25->nval = 2.
+    t22 = t23->set( p0 = |Protected| p1 = t25 ).
     DATA t27 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t28 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_visibility_module=>zlnt_builtin_init_dc5a80768619 = abap_false.
       zcl_lnt_visibility_module=>zlnt_builtin_init_61fa093deb98( ).
     ENDIF.
     t28 = zcl_lnt_visibility_module=>visibility_namespace.
-    DATA(t29) = |Public|.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = 3.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t30->nval = t31.
-    t27 = t28->set( p0 = t29 p1 = t30 ).
+    t30->nval = 3.
+    t27 = t28->set( p0 = |Public| p1 = t30 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

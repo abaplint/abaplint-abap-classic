@@ -42,8 +42,7 @@ CLASS zcl_lnt_fnctnl_wrtng_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_73796bbbf173.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_exceptions.
     ENDIF.

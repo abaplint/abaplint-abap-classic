@@ -15,18 +15,12 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    DATA t5 TYPE REF TO zcl_lnt_abap_release.
-    DATA t6 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t6 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t7) = |v917|.
-    t5 = t6->get( p0 = t7 ).
-    t4 = t5.
+    t4 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v917| ).
     IF t4 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t9 TYPE REF TO object.
@@ -53,10 +47,9 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t14) = |LEVEL|.
     CREATE OBJECT t13.
     t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t13->sval = t14.
+    t13->sval = |LEVEL|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d297_8dd76b8d3d10.
     IF t17 IS BOUND.
@@ -66,9 +59,7 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t19.
-    DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    t20 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t19 ).
-    t11 = t20.
+    t11 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t19 ).
     IF t11 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t25 TYPE REF TO object.
@@ -93,13 +84,11 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t26 TYPE REF TO zcl_lnt_iver_options.
-    t2 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t3 i_first = t10 i_opts = t26 ).
-    t1 = t2.
+    t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t3 i_first = t10 i_opts = t26 ).
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t30) = |PRIVILEGED ACCESS|.
     CREATE OBJECT t29.
     t29->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t29->sval = t30.
+    t29->sval = |PRIVILEGED ACCESS|.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t33 TYPE REF TO zif_lnt_statement_runnable.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -152,9 +141,7 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t41.
-    DATA t42 TYPE REF TO zif_lnt_statement_runnable.
-    t42 = zcl_lnt_st_combi_module=>seq( i_first = t29 i_second = t32 i_rest = t41 ).
-    result = t42.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t29 i_second = t32 i_rest = t41 ).
 
   ENDMETHOD.
 

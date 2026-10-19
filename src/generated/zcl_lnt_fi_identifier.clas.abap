@@ -28,10 +28,7 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
 
   METHOD get_name.
     DATA t1 TYPE string.
-    DATA t5 TYPE string.
-    t5 = me->token->str.
-    t1 = t5.
-    DATA(t7) = VALUE abap_bool( ).
+    t1 = me->token->str.
     DATA(t8) = VALUE string( ).
     DATA(t9) = t1.
     DATA(t10) = 0.
@@ -44,17 +41,13 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t10 > t12 OR t11 <= 0.
-      CLEAR t8.
     ELSE.
       IF t11 > t12 - t10.
         t11 = t12 - t10.
       ENDIF.
       t8 = t9+t10(t11).
     ENDIF.
-    DATA(t13) = |!|.
-    t7 = xsdbool( t8 = t13 ).
-    IF t7 = abap_true.
-      DATA(t14) = VALUE string( ).
+    IF xsdbool( t8 = |!| ) = abap_true.
       DATA t15 TYPE string.
       t15 = t1.
       DATA(t17) = VALUE string( ).
@@ -69,15 +62,13 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t19 > t23 OR t20 <= 0.
-        CLEAR t17.
       ELSE.
         IF t20 > t23 - t19.
           t20 = t23 - t19.
         ENDIF.
         t17 = t15+t19(t20).
       ENDIF.
-      t14 = t17.
-      t1 = t14.
+      t1 = t17.
     ENDIF.
     result = t1.
 
@@ -88,26 +79,16 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE REF TO zcl_lnt_position.
-    DATA t9 TYPE REF TO zcl_lnt_abstract_token.
-    t9 = t1->token.
-    DATA t11 TYPE REF TO zcl_lnt_position.
-    t11 = t9->start.
-    t4 = t11.
-    DATA t13 TYPE REF TO zcl_lnt_position.
+    t4 = t1->token->start.
     DATA t16 TYPE REF TO zcl_lnt_position.
     t16 = me->token->start.
-    t13 = t16.
-    t3 = t4->equals( i_p = t13 ).
+    t3 = t4->equals( i_p = t16 ).
     t2 = t3.
     IF t3 = abap_true.
-      DATA t18 TYPE abap_bool.
       DATA t19 TYPE string.
-      DATA t22 TYPE string.
-      t22 = t1->filename.
-      t19 = t22.
+      t19 = t1->filename.
       DATA(t24) = CONV string( me->filename ).
-      t18 = xsdbool( t19 = t24 ).
-      t2 = t18.
+      t2 = xsdbool( t19 = t24 ).
     ENDIF.
     result = t2.
 
@@ -125,39 +106,23 @@ CLASS zcl_lnt_fi_identifier IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_start.
-    DATA t4 TYPE REF TO zcl_lnt_position.
-    t4 = me->token->start.
-    result = t4.
+    result = me->token->start.
 
   ENDMETHOD.
 
   METHOD get_end.
     DATA t2 TYPE REF TO zcl_lnt_abstract_token.
     t2 = me->token.
-    DATA t4 TYPE REF TO zcl_lnt_position.
     DATA t5 TYPE f.
-    DATA t7 TYPE REF TO zcl_lnt_position.
-    t7 = t2->start.
-    DATA t9 TYPE f.
-    t9 = t7->row.
-    t5 = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t5 = t2->start->row.
     DATA t12 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t14 TYPE REF TO zcl_lnt_position.
-    t14 = t2->start.
-    DATA t16 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t16 = t14->col.
-    t12 = t16.
+    t12 = t2->start->col.
     DATA t18 TYPE f.
-    DATA t20 TYPE string.
-    t20 = t2->str.
-    t18 = strlen( t20 ).
+    t18 = strlen( t2->str ).
     DATA(t23) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t23->has = abap_true.
     t23->value = t18.
-    t11 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t12 right = t23 op = `+` ).
-    t4 = NEW zcl_lnt_position( i_row = t5 i_col = t11 ).
-    result = t4.
+    result = NEW zcl_lnt_position( i_row = t5 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t12 right = t23 op = `+` ) ).
 
   ENDMETHOD.
 

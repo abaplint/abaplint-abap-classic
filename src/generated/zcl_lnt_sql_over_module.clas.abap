@@ -21,10 +21,8 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     IF zcl_lnt_sql_over_module=>zlnt_builtin_init_7e5747627b9e = abap_false.
       zcl_lnt_sql_over_module=>zlnt_builtin_init_8db5e9302d91( ).
     ENDIF.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t2) = zlnt_runtime_desc_78196487750d=>zlnt_member_d28_3a57ab83f0ed44.
-    t1 = zcl_lnt_st_combi_module=>tok( i_t = t2 ).
-    zcl_lnt_sql_over_module=>lparen = t1.
+    zcl_lnt_sql_over_module=>lparen = zcl_lnt_st_combi_module=>tok( i_t = t2 ).
     IF zcl_lnt_sql_over_module=>zlnt_builtin_init_7e5747627b9e = abap_false.
       zcl_lnt_sql_over_module=>zlnt_builtin_init_8db5e9302d91( ).
     ENDIF.
@@ -84,9 +82,7 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t17.
-    DATA t18 TYPE REF TO zif_lnt_statement_runnable.
-    t18 = zcl_lnt_st_combi_module=>alt_prio( i_first = t5 i_second = t11 i_rest = t17 ).
-    zcl_lnt_sql_over_module=>rparen = t18.
+    zcl_lnt_sql_over_module=>rparen = zcl_lnt_st_combi_module=>alt_prio( i_first = t5 i_second = t11 i_rest = t17 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

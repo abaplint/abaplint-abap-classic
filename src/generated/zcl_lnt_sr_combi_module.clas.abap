@@ -25,20 +25,12 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_first.
     DATA(t2) = i_rest.
-    DATA t3 TYPE REF TO zcl_lnt_sr_sequence.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     t6->load( ).
     APPEND t1 TO t6->items.
     t6->save( ).
-    t5 = t6.
-    t4 = t5->concat( p0 = t2 ).
-    t3 = NEW zcl_lnt_sr_sequence( i_list = t4 ).
-    result = t3.
+    result = NEW zcl_lnt_sr_sequence( i_list = t6->concat( p0 = t2 ) ).
 
   ENDMETHOD.
 
@@ -48,20 +40,12 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_first.
     DATA(t2) = i_rest.
-    DATA t3 TYPE REF TO zcl_lnt_sr_alternative.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     t6->load( ).
     APPEND t1 TO t6->items.
     t6->save( ).
-    t5 = t6.
-    t4 = t5->concat( p0 = t2 ).
-    t3 = NEW zcl_lnt_sr_alternative( i_list = t4 ).
-    result = t3.
+    result = NEW zcl_lnt_sr_alternative( i_list = t6->concat( p0 = t2 ) ).
 
   ENDMETHOD.
 
@@ -72,12 +56,8 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     DATA(t1) = i_begin.
     DATA(t2) = i_body.
     DATA(t3) = i_end.
-    DATA t4 TYPE REF TO zcl_lnt_sr_sequence.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     t6->load( ).
     APPEND t1 TO t6->items.
     t6->save( ).
@@ -87,9 +67,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t6->load( ).
     APPEND t3 TO t6->items.
     t6->save( ).
-    t5 = t6.
-    t4 = NEW zcl_lnt_sr_sequence( i_list = t5 ).
-    result = t4.
+    result = NEW zcl_lnt_sr_sequence( i_list = t6 ).
 
   ENDMETHOD.
 
@@ -97,10 +75,8 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
     ENDIF.
-    DATA t2 TYPE REF TO zcl_lnt_sr_optional.
     DATA(t3) = i_o.
-    t2 = NEW zcl_lnt_sr_optional( i_obj_1ed0 = t3 ).
-    result = t2.
+    result = NEW zcl_lnt_sr_optional( i_obj_1ed0 = t3 ).
 
   ENDMETHOD.
 
@@ -108,10 +84,8 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
     ENDIF.
-    DATA t2 TYPE REF TO zcl_lnt_sr_star.
     DATA(t3) = i_s.
-    t2 = NEW zcl_lnt_sr_star( i_obj_1ed0 = t3 ).
-    result = t2.
+    result = NEW zcl_lnt_sr_star( i_obj_1ed0 = t3 ).
 
   ENDMETHOD.
 
@@ -119,10 +93,8 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
     ENDIF.
-    DATA t2 TYPE REF TO zcl_lnt_sub_statement.
     DATA(t3) = i_s.
-    t2 = NEW zcl_lnt_sub_statement( i_obj_1ed0 = t3 ).
-    result = t2.
+    result = NEW zcl_lnt_sub_statement( i_obj_1ed0 = t3 ).
 
   ENDMETHOD.
 
@@ -131,7 +103,6 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
     ENDIF.
     DATA(t1) = i_s.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zcl_lnt_sub_structure.
     DATA t5 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -142,8 +113,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t6 = t1->name.
     t4 = t5->get( p0 = t6 ).
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t2 = xsdbool( t4 IS INITIAL ).
-    IF t2 = abap_true.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
       DATA t12 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
       DATA t13 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
       IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
@@ -152,15 +122,12 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
       t13 = zcl_lnt_sr_combi_module=>singletons.
       DATA t14 TYPE string.
       t14 = t1->name.
-      DATA t16 TYPE REF TO zcl_lnt_sub_structure.
       DATA t17 TYPE REF TO zif_lnt_structure.
       DATA t19 TYPE REF TO object.
       t19 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t1 ).
       t17 ?= t19.
-      t16 = NEW zcl_lnt_sub_structure( i_s = t17 ).
-      t12 = t13->set( p0 = t14 p1 = t16 ).
+      t12 = t13->set( p0 = t14 p1 = NEW zcl_lnt_sub_structure( i_s = t17 ) ).
     ENDIF.
-    DATA t21 TYPE REF TO zcl_lnt_sub_structure.
     DATA t22 TYPE REF TO zlnt_runtime_map__7f28925f9deb.
     IF zcl_lnt_sr_combi_module=>zlnt_builtin_init_925c84de8315 = abap_false.
       zcl_lnt_sr_combi_module=>zlnt_builtin_init_92502b133500( ).
@@ -168,8 +135,7 @@ CLASS zcl_lnt_sr_combi_module IMPLEMENTATION.
     t22 = zcl_lnt_sr_combi_module=>singletons.
     DATA t23 TYPE string.
     t23 = t1->name.
-    t21 = t22->get( p0 = t23 ).
-    result = t21.
+    result = t22->get( p0 = t23 ).
 
   ENDMETHOD.
 

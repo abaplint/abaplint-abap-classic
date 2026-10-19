@@ -14,10 +14,9 @@ ENDCLASS.
 CLASS zcl_lnt_include IMPLEMENTATION.
   METHOD get_matcher.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |INCLUDE|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |INCLUDE|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
     IF t8 IS BOUND.
@@ -26,16 +25,13 @@ CLASS zcl_lnt_include IMPLEMENTATION.
       t7->cval = t8.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t15) = |IF FOUND|.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t14->sval = t15.
+    t14->sval = |IF FOUND|.
     t13 = zcl_lnt_st_combi_module=>opt( i_first = t14 ).
     IF t13 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -63,9 +59,7 @@ CLASS zcl_lnt_include IMPLEMENTATION.
     t9->load( ).
     APPEND t12 TO t9->items.
     t9->save( ).
-    DATA t18 TYPE REF TO zif_lnt_statement_runnable.
-    t18 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
-    result = t18.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
 
   ENDMETHOD.
 

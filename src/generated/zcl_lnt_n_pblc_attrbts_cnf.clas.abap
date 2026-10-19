@@ -46,8 +46,7 @@ CLASS zcl_lnt_n_pblc_attrbts_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_edcfd557fbf6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowReadOnly` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowReadOnly` ) )->as_boolean( ).
     ELSE.
       result = me->allow_read_only.
     ENDIF.
@@ -68,8 +67,7 @@ CLASS zcl_lnt_n_pblc_attrbts_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_48dae5000976.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreTestClasses` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreTestClasses` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_test_classes.
     ENDIF.

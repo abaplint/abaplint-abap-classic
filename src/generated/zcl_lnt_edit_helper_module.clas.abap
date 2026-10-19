@@ -38,43 +38,27 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       CLEAR t7.
       DATA t9 TYPE REF TO zif_lnt_file.
       CLEAR t9.
-      DATA t10 TYPE REF TO zif_lnt_file.
-      CLEAR t10.
-      t10 = t1->get_file_by_name( i_filename = t5 ).
-      t9 = t10.
+      t9 = t1->get_file_by_name( i_filename = t5 ).
       DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t13.
-      DATA(t14) = xsdbool( t9 IS INITIAL ).
-      IF t14 = abap_true.
+      IF xsdbool( t9 IS INITIAL ) = abap_true.
         CLEAR t13.
       ELSE.
-        DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t17.
-        DATA t18 TYPE REF TO zif_lnt_file.
-        CLEAR t18.
-        t18 = t9.
-        t17 = t18->get_raw_rows( ).
-        t13 = t17.
+        t13 = t9->get_raw_rows( ).
       ENDIF.
       t7 = t13.
-      DATA(t20) = VALUE abap_bool( ).
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       CLEAR t23.
-      t20 = xsdbool( t7 IS INITIAL ).
-      IF t20 = abap_true.
+      IF xsdbool( t7 IS INITIAL ) = abap_true.
         DATA t27 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
         CLEAR t27.
         DATA t28 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
         CLEAR t28.
-        DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t29.
-        DATA(t31) = |applyEdit, file not found|.
         DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t32->has = abap_true.
-        t32->value = t31.
-        t29 = t32.
-        t28 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t29 ).
+        t32->value = |applyEdit, file not found|.
+        t28 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t32 ).
         t27 = NEW #( ).
         t27->payload = t28.
         CLEAR t27->source_value.
@@ -106,10 +90,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       ENDIF.
       DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t36.
-      DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t37.
-      t37 = t2->get( p0 = t5 ).
-      t36 = t37.
+      t36 = t2->get( p0 = t5 ).
       DATA t40 TYPE REF TO zcl_lnt_itext_edit.
       CLEAR t40.
       DATA t41 TYPE REF TO object.
@@ -135,29 +116,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
         ELSE.
           t40 ?= t41.
         ENDIF.
-        DATA(t45) = VALUE abap_bool( ).
-        DATA(t46) = VALUE f( ).
-        DATA t48 TYPE REF TO zcl_lnt_position.
-        CLEAR t48.
-        DATA t49 TYPE REF TO zcl_lnt_irange.
-        CLEAR t49.
-        t49 = t40->range.
-        t48 = t49->start.
-        DATA(t51) = VALUE f( ).
-        t51 = t48->row.
-        t46 = t51.
-        DATA(t53) = VALUE f( ).
-        DATA t55 TYPE REF TO zcl_lnt_position.
-        CLEAR t55.
-        DATA t56 TYPE REF TO zcl_lnt_irange.
-        CLEAR t56.
-        t56 = t40->range.
-        t55 = t56->end.
-        DATA(t58) = VALUE f( ).
-        t58 = t55->row.
-        t53 = t58.
-        t45 = xsdbool( t46 = t53 ).
-        IF t45 = abap_true.
+        IF xsdbool( t40->range->start->row = t40->range->end->row ) = abap_true.
           DATA(t60) = VALUE string( ).
           DATA(t61) = VALUE string( ).
           DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -166,15 +125,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t64) = VALUE i( ).
           DATA(t65) = VALUE f( ).
           DATA(t66) = VALUE f( ).
-          DATA t68 TYPE REF TO zcl_lnt_position.
-          CLEAR t68.
-          DATA t69 TYPE REF TO zcl_lnt_irange.
-          CLEAR t69.
-          t69 = t40->range.
-          t68 = t69->start.
-          DATA(t71) = VALUE f( ).
-          t71 = t68->row.
-          t66 = t71.
+          t66 = t40->range->start->row.
           DATA(t73) = CONV f( 1 ).
           t65 = t66 - t73.
           IF t65 > range_i32_upper.
@@ -189,7 +140,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t62->load( ).
-          CLEAR t61.
           READ TABLE t62->items INDEX t64 INTO t61.
           t60 = t61.
           DATA t74 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -198,15 +148,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t76) = VALUE i( ).
           DATA(t77) = VALUE f( ).
           DATA(t78) = VALUE f( ).
-          DATA t80 TYPE REF TO zcl_lnt_position.
-          CLEAR t80.
-          DATA t81 TYPE REF TO zcl_lnt_irange.
-          CLEAR t81.
-          t81 = t40->range.
-          t80 = t81->start.
-          DATA(t83) = VALUE f( ).
-          t83 = t80->row.
-          t78 = t83.
+          t78 = t40->range->start->row.
           DATA(t85) = CONV f( 1 ).
           t77 = t78 - t85.
           IF t77 > range_i32_upper.
@@ -216,31 +158,17 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           ELSE.
             t76 = trunc( t77 ).
           ENDIF.
-          DATA(t86) = VALUE string( ).
           DATA(t87) = VALUE string( ).
           DATA(t88) = VALUE string( ).
           DATA(t90) = 0.
           DATA(t91) = VALUE i( ).
-          DATA t92 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t92.
           DATA t93 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t93.
-          DATA t95 TYPE REF TO zcl_lnt_position.
-          CLEAR t95.
-          DATA t96 TYPE REF TO zcl_lnt_irange.
-          CLEAR t96.
-          t96 = t40->range.
-          t95 = t96->start.
-          DATA t98 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t98.
-          t98 = t95->col.
-          t93 = t98.
-          DATA(t100) = CONV f( 1 ).
+          t93 = t40->range->start->col.
           DATA(t101) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t101->has = abap_true.
-          t101->value = t100.
-          t92 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t93 right = t101 op = `-` ).
-          t91 = zlnt_runtime_numb_290eb04a9758=>index( t92 ).
+          t101->value = CONV f( 1 ).
+          t91 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t93 right = t101 op = `-` ) ).
           DATA(t102) = strlen( t60 ).
           IF t90 < 0.
             t90 = t90 + t102.
@@ -249,7 +177,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t90 > t102 OR t91 <= 0.
-            CLEAR t88.
           ELSE.
             IF t91 > t102 - t90.
               t91 = t102 - t90.
@@ -265,26 +192,13 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           t107 = t60.
           DATA(t109) = VALUE string( ).
           DATA(t111) = VALUE i( ).
-          DATA t112 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t112.
           DATA t113 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t113.
-          DATA t115 TYPE REF TO zcl_lnt_position.
-          CLEAR t115.
-          DATA t116 TYPE REF TO zcl_lnt_irange.
-          CLEAR t116.
-          t116 = t40->range.
-          t115 = t116->end.
-          DATA t118 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t118.
-          t118 = t115->col.
-          t113 = t118.
-          DATA(t120) = CONV f( 1 ).
+          t113 = t40->range->end->col.
           DATA(t121) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t121->has = abap_true.
-          t121->value = t120.
-          t112 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t113 right = t121 op = `-` ).
-          t111 = zlnt_runtime_numb_290eb04a9758=>index( t112 ).
+          t121->value = CONV f( 1 ).
+          t111 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t113 right = t121 op = `-` ) ).
           DATA(t122) = VALUE i( ).
           t122 = strlen( t107 ).
           DATA(t125) = strlen( t107 ).
@@ -295,7 +209,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t111 > t125 OR t122 <= 0.
-            CLEAR t109.
           ELSE.
             IF t122 > t125 - t111.
               t122 = t125 - t111.
@@ -304,8 +217,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           ENDIF.
           t106 = t109.
           DATA(t126) = strlen( t87 ).
-          t86 = |{ t87 }{ t106 }|.
-          t74->put( p0 = t76 p1 = t86 ).
+          t74->put( p0 = t76 p1 = |{ t87 }{ t106 }| ).
         ELSE.
           DATA(t127) = VALUE string( ).
           DATA(t128) = VALUE string( ).
@@ -315,15 +227,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t131) = VALUE i( ).
           DATA(t132) = VALUE f( ).
           DATA(t133) = VALUE f( ).
-          DATA t135 TYPE REF TO zcl_lnt_position.
-          CLEAR t135.
-          DATA t136 TYPE REF TO zcl_lnt_irange.
-          CLEAR t136.
-          t136 = t40->range.
-          t135 = t136->start.
-          DATA(t138) = VALUE f( ).
-          t138 = t135->row.
-          t133 = t138.
+          t133 = t40->range->start->row.
           DATA(t140) = CONV f( 1 ).
           t132 = t133 - t140.
           IF t132 > range_i32_upper.
@@ -338,34 +242,19 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t129->load( ).
-          CLEAR t128.
           READ TABLE t129->items INDEX t131 INTO t128.
           t127 = t128.
           DATA(t141) = VALUE string( ).
-          DATA(t142) = VALUE string( ).
           DATA(t143) = VALUE string( ).
           DATA(t145) = 0.
           DATA(t146) = VALUE i( ).
-          DATA t147 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t147.
           DATA t148 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t148.
-          DATA t150 TYPE REF TO zcl_lnt_position.
-          CLEAR t150.
-          DATA t151 TYPE REF TO zcl_lnt_irange.
-          CLEAR t151.
-          t151 = t40->range.
-          t150 = t151->start.
-          DATA t153 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t153.
-          t153 = t150->col.
-          t148 = t153.
-          DATA(t155) = CONV f( 1 ).
+          t148 = t40->range->start->col.
           DATA(t156) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t156->has = abap_true.
-          t156->value = t155.
-          t147 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t148 right = t156 op = `-` ).
-          t146 = zlnt_runtime_numb_290eb04a9758=>index( t147 ).
+          t156->value = CONV f( 1 ).
+          t146 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t148 right = t156 op = `-` ) ).
           DATA(t157) = strlen( t127 ).
           IF t145 < 0.
             t145 = t145 + t157.
@@ -374,7 +263,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t145 > t157 OR t146 <= 0.
-            CLEAR t143.
           ELSE.
             IF t146 > t157 - t145.
               t146 = t157 - t145.
@@ -384,9 +272,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t158) = VALUE string( ).
           t158 = t40->new_text.
           DATA(t160) = strlen( t143 ).
-          t142 = |{ t143 }{ t158 }|.
-          t141 = t142.
-          DATA(t161) = VALUE string( ).
+          t141 = |{ t143 }{ t158 }|.
           DATA(t162) = VALUE string( ).
           DATA t163 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t163.
@@ -394,15 +280,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t165) = VALUE i( ).
           DATA(t166) = VALUE f( ).
           DATA(t167) = VALUE f( ).
-          DATA t169 TYPE REF TO zcl_lnt_position.
-          CLEAR t169.
-          DATA t170 TYPE REF TO zcl_lnt_irange.
-          CLEAR t170.
-          t170 = t40->range.
-          t169 = t170->end.
-          DATA(t172) = VALUE f( ).
-          t172 = t169->row.
-          t167 = t172.
+          t167 = t40->range->end->row.
           DATA(t174) = CONV f( 1 ).
           t166 = t167 - t174.
           IF t166 > range_i32_upper.
@@ -417,36 +295,20 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t163->load( ).
-          CLEAR t162.
           READ TABLE t163->items INDEX t165 INTO t162.
-          t161 = t162.
-          DATA(t175) = VALUE string( ).
           DATA(t176) = t141.
           DATA(t177) = VALUE string( ).
           DATA(t178) = VALUE string( ).
-          t178 = t161.
+          t178 = t162.
           DATA(t180) = VALUE string( ).
           DATA(t182) = VALUE i( ).
-          DATA t183 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t183.
           DATA t184 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t184.
-          DATA t186 TYPE REF TO zcl_lnt_position.
-          CLEAR t186.
-          DATA t187 TYPE REF TO zcl_lnt_irange.
-          CLEAR t187.
-          t187 = t40->range.
-          t186 = t187->end.
-          DATA t189 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          CLEAR t189.
-          t189 = t186->col.
-          t184 = t189.
-          DATA(t191) = CONV f( 1 ).
+          t184 = t40->range->end->col.
           DATA(t192) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t192->has = abap_true.
-          t192->value = t191.
-          t183 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t184 right = t192 op = `-` ).
-          t182 = zlnt_runtime_numb_290eb04a9758=>index( t183 ).
+          t192->value = CONV f( 1 ).
+          t182 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t184 right = t192 op = `-` ) ).
           DATA(t193) = VALUE i( ).
           t193 = strlen( t178 ).
           DATA(t196) = strlen( t178 ).
@@ -457,7 +319,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t182 > t196 OR t193 <= 0.
-            CLEAR t180.
           ELSE.
             IF t193 > t196 - t182.
               t193 = t196 - t182.
@@ -466,8 +327,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           ENDIF.
           t177 = t180.
           DATA(t197) = strlen( t176 ).
-          t175 = |{ t176 }{ t177 }|.
-          t141 = t175.
+          t141 = |{ t176 }{ t177 }|.
           DATA t198 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t198.
           DATA t199 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -475,15 +335,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           t199 = t7.
           DATA(t201) = VALUE i( ).
           DATA(t202) = VALUE f( ).
-          DATA t204 TYPE REF TO zcl_lnt_position.
-          CLEAR t204.
-          DATA t205 TYPE REF TO zcl_lnt_irange.
-          CLEAR t205.
-          t205 = t40->range.
-          t204 = t205->start.
-          DATA(t207) = VALUE f( ).
-          t207 = t204->row.
-          t202 = t207.
+          t202 = t40->range->start->row.
           IF t202 > range_i32_upper.
             t201 = range_i32_upper.
           ELSEIF t202 < range_i32_lower.
@@ -494,25 +346,9 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t209) = VALUE i( ).
           DATA(t210) = VALUE f( ).
           DATA(t211) = VALUE f( ).
-          DATA t213 TYPE REF TO zcl_lnt_position.
-          CLEAR t213.
-          DATA t214 TYPE REF TO zcl_lnt_irange.
-          CLEAR t214.
-          t214 = t40->range.
-          t213 = t214->end.
-          DATA(t216) = VALUE f( ).
-          t216 = t213->row.
-          t211 = t216.
+          t211 = t40->range->end->row.
           DATA(t218) = VALUE f( ).
-          DATA t220 TYPE REF TO zcl_lnt_position.
-          CLEAR t220.
-          DATA t221 TYPE REF TO zcl_lnt_irange.
-          CLEAR t221.
-          t221 = t40->range.
-          t220 = t221->start.
-          DATA(t223) = VALUE f( ).
-          t223 = t220->row.
-          t218 = t223.
+          t218 = t40->range->start->row.
           t210 = t211 - t218.
           IF t210 > range_i32_upper.
             t209 = range_i32_upper.
@@ -528,15 +364,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t227) = VALUE i( ).
           DATA(t228) = VALUE f( ).
           DATA(t229) = VALUE f( ).
-          DATA t231 TYPE REF TO zcl_lnt_position.
-          CLEAR t231.
-          DATA t232 TYPE REF TO zcl_lnt_irange.
-          CLEAR t232.
-          t232 = t40->range.
-          t231 = t232->start.
-          DATA(t234) = VALUE f( ).
-          t234 = t231->row.
-          t229 = t234.
+          t229 = t40->range->start->row.
           DATA(t236) = CONV f( 1 ).
           t228 = t229 - t236.
           IF t228 > range_i32_upper.
@@ -553,10 +381,9 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA t242 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t242.
           t242 = t7.
-          DATA(t244) = |\n|.
           DATA(t245) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t245->has = abap_true.
-          t245->value = t244.
+          t245->value = |\n|.
           t241 = t242->join( p0 = t245 ).
           DATA(t246) = |\n|.
           DATA(t247) = strlen( t241 ).
@@ -599,16 +426,13 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       ENDDO.
       DATA t255 TYPE REF TO zcl_lnt_memory_file.
       CLEAR t255.
-      DATA(t257) = VALUE string( ).
       DATA t258 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t258.
       t258 = t7.
-      DATA(t260) = |\n|.
       DATA(t261) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t261->has = abap_true.
-      t261->value = t260.
-      t257 = t258->join( p0 = t261 ).
-      t255 = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t257 ).
+      t261->value = |\n|.
+      t255 = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t258->join( p0 = t261 ) ).
       DATA t262 TYPE REF TO zif_lnt_registry.
       CLEAR t262.
       t262 = t1->update_file( i_file = t255 ).
@@ -619,12 +443,9 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
     DATA(t1) = i_reg_f149.
     DATA(t2) = i_edits.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE f.
-    DATA(t6) = CONV f( 0 ).
-    t5 = t6.
+    t5 = CONV f( 0 ).
     DATA t7 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     t7 = NEW zlnt_runtime_map__4fdf767b61ba( ).
     DATA t13 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
@@ -665,34 +486,20 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t21 = t21 + 1.
-        DATA(t22) = VALUE abap_bool( ).
         DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t24 = t7->get( p0 = t20 ).
         DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t27.
-        t22 = xsdbool( t24 IS INITIAL ).
-        IF t22 = abap_true.
+        IF xsdbool( t24 IS INITIAL ) = abap_true.
           DATA t31 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CREATE OBJECT t34.
           t31 = t7->set( p0 = t20 p1 = t34 ).
-          DATA t35 TYPE f.
           DATA(t37) = CONV f( 1 ).
-          t35 = t5 + t37.
-          t5 = t35.
+          t5 = t5 + t37.
         ENDIF.
         DATA t38 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t43 = t7->get( p0 = t20 ).
-        t42 = t43.
-        DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t47 = t13->get( p0 = t20 ).
-        t46 = t47.
-        t41 = t42->concat( p0 = t46 ).
-        t38 = t7->set( p0 = t20 p1 = t41 ).
+        t38 = t7->set( p0 = t20 p1 = t7->get( p0 = t20 )->concat( p0 = t13->get( p0 = t20 ) ) ).
       ENDDO.
     ENDDO.
     DATA t50 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -715,30 +522,19 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       t54 = NEW zlnt_runtime_map__4fdf767b61ba( ).
       DATA t59 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t59.
-      DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t62.
       DATA t63 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t65 = t7->get( p0 = t52 ).
-      t63 = t65.
+      t63 = t7->get( p0 = t52 ).
       DATA t68 TYPE i.
       t68 = 1.
       DO.
-        DATA t70 TYPE abap_bool.
-        DATA t72 TYPE i.
         t63->load( ).
-        t72 = lines( t63->items ).
-        t70 = xsdbool( t68 < t72 ).
-        IF t70 = abap_false.
+        IF xsdbool( t68 < lines( t63->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA t74 TYPE i.
         t74 = t68.
         DO.
-          DATA t76 TYPE abap_bool.
-          DATA(t78) = 0.
-          t76 = xsdbool( t74 > t78 ).
-          IF t76 = abap_false.
+          IF xsdbool( t74 > 0 ) = abap_false.
             EXIT.
           ENDIF.
           DATA t79 TYPE REF TO zcl_lnt_itext_edit.
@@ -789,66 +585,34 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             t89 ?= t92.
           ENDIF.
           t88 = t89.
-          DATA(t95) = VALUE abap_bool( ).
           DATA t96 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           CLEAR t96.
           DATA t97 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           DATA t98 TYPE f.
           DATA t99 TYPE f.
-          DATA t101 TYPE REF TO zcl_lnt_position.
-          DATA t102 TYPE REF TO zcl_lnt_irange.
-          t102 = t88->range.
-          t101 = t102->start.
-          DATA t104 TYPE f.
-          t104 = t101->row.
-          t99 = t104.
+          t99 = t88->range->start->row.
           DATA t106 TYPE f.
-          DATA t108 TYPE REF TO zcl_lnt_position.
-          DATA t109 TYPE REF TO zcl_lnt_irange.
-          t109 = t79->range.
-          t108 = t109->start.
-          DATA t111 TYPE f.
-          t111 = t108->row.
-          t106 = t111.
+          t106 = t79->range->start->row.
           t98 = t99 - t106.
           DATA(t113) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t113->has = abap_true.
           t113->value = t98.
           t97 = t113.
-          DATA t114 TYPE abap_bool.
-          DATA(t116) = CONV f( 0 ).
           DATA(t117) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t117->has = abap_true.
-          t117->value = t116.
-          t114 = zlnt_runtime_numb_290eb04a9758=>compare( left = t97 right = t117 op = `==` ).
-          IF t114 = abap_true.
-            DATA t118 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+          t117->value = CONV f( 0 ).
+          IF zlnt_runtime_numb_290eb04a9758=>compare( left = t97 right = t117 op = `==` ) = abap_true.
             DATA t119 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            DATA t121 TYPE REF TO zcl_lnt_position.
-            DATA t122 TYPE REF TO zcl_lnt_irange.
-            t122 = t88->range.
-            t121 = t122->start.
-            DATA t124 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            t124 = t121->col.
-            t119 = t124.
-            DATA t126 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            DATA t128 TYPE REF TO zcl_lnt_position.
-            DATA t129 TYPE REF TO zcl_lnt_irange.
-            t129 = t79->range.
-            t128 = t129->start.
+            t119 = t88->range->start->col.
             DATA t131 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            t131 = t128->col.
-            t126 = t131.
-            t118 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t119 right = t126 op = `-` ).
-            t97 = t118.
+            t131 = t79->range->start->col.
+            t97 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t119 right = t131 op = `-` ).
           ENDIF.
           t96 = t97.
-          DATA(t134) = CONV f( 0 ).
           DATA(t135) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t135->has = abap_true.
-          t135->value = t134.
-          t95 = zlnt_runtime_numb_290eb04a9758=>compare( left = t96 right = t135 op = `>` ).
-          IF t95 = abap_true.
+          t135->value = CONV f( 0 ).
+          IF zlnt_runtime_numb_290eb04a9758=>compare( left = t96 right = t135 op = `>` ) = abap_true.
             DATA t137 TYPE REF TO zcl_lnt_itext_edit.
             CLEAR t137.
             DATA t139 TYPE i.
@@ -896,21 +660,16 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
             ENDIF.
             t63->put( p0 = t146 p1 = t149 ).
             t63->put( p0 = t74 p1 = t137 ).
-            DATA t158 TYPE i.
             DATA(t160) = 1.
-            t158 = t74 - t160.
-            t74 = t158.
+            t74 = t74 - t160.
           ELSE.
             EXIT.
           ENDIF.
         ENDDO.
-        DATA t161 TYPE i.
         DATA(t163) = 1.
-        t161 = t68 + t163.
-        t68 = t161.
+        t68 = t68 + t163.
       ENDDO.
-      t62 = t63.
-      t59 = t54->set( p0 = t52 p1 = t62 ).
+      t59 = t54->set( p0 = t52 p1 = t63 ).
       zcl_lnt_edit_helper_module=>apply_edit_single( i_reg_f149 = t1 i_edit = t54 ).
       t3->load( ).
       APPEND t52 TO t3->items.

@@ -23,20 +23,13 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
     DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = VALUE abap_bool( ).
-    t5 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_data_element ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_data_element ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |RenameDataElement, not a data element|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |RenameDataElement, not a data element|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -64,37 +57,25 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t17.
-    t16 = t17.
+    CREATE OBJECT t16.
     DATA t18 TYPE REF TO zcl_lnt_renamer_helper.
-    DATA t19 TYPE REF TO zcl_lnt_renamer_helper.
     DATA(t20) = me->reg.
-    t19 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
-    t18 = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t18 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t26 TYPE REF TO zcl_lnt_data_element.
     DATA t28 TYPE REF TO object.
     t28 = t1.
     t26 ?= t28.
-    DATA(t29) = |ROLLNAME|.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = t29 i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
+    t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |ROLLNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
-    t21 = t16->concat( p0 = t23 ).
-    t16 = t21.
-    DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t23 ).
     DATA t37 TYPE REF TO zcl_lnt_data_element.
     DATA t39 TYPE REF TO object.
     t39 = t1.
     t37 ?= t39.
-    t35 = t18->rename_files( i_obj_1ed0 = t37 i_old_name = t2 i_name = t3 ).
-    t33 = t16->concat( p0 = t35 ).
-    t16 = t33.
-    DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t37 i_old_name = t2 i_name = t3 ) ).
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t47 TYPE REF TO zcl_lnt_data_element.
@@ -103,9 +84,7 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
     t47 ?= t49.
     t45 = t18->rename_ddic_code_references( i_obj_1ed0 = t47 i_old_name = t2 i_new_name = t3 ).
     t44 ?= t45.
-    t42 = t16->concat( p0 = t44 ).
-    t16 = t42.
-    DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t44 ).
     DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t57 TYPE REF TO zcl_lnt_data_element.
@@ -114,9 +93,7 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
     t57 ?= t59.
     t55 = t18->rename_ddictabl_references( i_obj_1ed0 = t57 i_old_name = t2 i_new_name = t3 ).
     t54 ?= t55.
-    t52 = t16->concat( p0 = t54 ).
-    t16 = t52.
-    DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t54 ).
     DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t67 TYPE REF TO zcl_lnt_data_element.
@@ -125,9 +102,7 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
     t67 ?= t69.
     t65 = t18->rename_ddicttyp_references( i_obj_1ed0 = t67 i_old_name = t2 i_new_name = t3 ).
     t64 ?= t65.
-    t62 = t16->concat( p0 = t64 ).
-    t16 = t62.
-    DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t64 ).
     DATA t74 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t77 TYPE REF TO zcl_lnt_data_element.
@@ -136,23 +111,19 @@ CLASS zcl_lnt_rename_data_element IMPLEMENTATION.
     t77 ?= t79.
     t75 = t18->rename_ddicauth_references( i_obj_1ed0 = t77 i_old_name = t2 i_new_name = t3 ).
     t74 ?= t75.
-    t72 = t16->concat( p0 = t74 ).
-    t16 = t72.
+    t16 = t16->concat( p0 = t74 ).
     DATA t82 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t83 = t16.
     DATA t88 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
     DATA t90 TYPE REF TO zlnt_runtime_map__617ff131b0f3.
-    t82 = NEW zcl_lnt_shape_36bc2e57( i_changes = t88 i_document_changes = t83 i_change_annotations = t90 ).
+    t82 = NEW zcl_lnt_shape_36bc2e57( i_changes = t88 i_document_changes = t16 i_change_annotations = t90 ).
     CREATE OBJECT t82->zlnt_view_ownkeys_b0e8086400eb.
     t82->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t82->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `documentChanges` p1 = t92 ).
     CREATE OBJECT t82->zlnt_json_ownkeys_70e5fd461788.
     t82->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t93) = |documentChanges|.
     DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t82->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
+    t82->zlnt_json_ownkeys_70e5fd461788->put( p0 = |documentChanges| p1 = t94 ).
     result = t82.
 
   ENDMETHOD.

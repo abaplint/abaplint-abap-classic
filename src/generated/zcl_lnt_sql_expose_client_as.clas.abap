@@ -15,18 +15,14 @@ CLASS zcl_lnt_sql_expose_client_as IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |EXPOSE CLIENT AS|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |EXPOSE CLIENT AS|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA t8 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t9) = `^\w+$`.
-    DATA(t10) = |^[A-Za-z0-9_]+$|.
-    DATA(t11) = ||.
-    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t10 flags = t11.
-    t8->source = t9.
+    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t8->source = `^\w+$`.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
     IF t7 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -53,9 +49,7 @@ CLASS zcl_lnt_sql_expose_client_as IMPLEMENTATION.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t15.
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t15 ).
-    result = t16.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t15 ).
 
   ENDMETHOD.
 

@@ -17,20 +17,16 @@ CLASS zcl_lnt_st_get_time IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |STAMP FIELD|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |STAMP FIELD|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = |FIELD|.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
+    t10->sval = |FIELD|.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t13.
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    t14 = zcl_lnt_st_combi_module=>alt( i_first = t7 i_second = t10 i_rest = t13 ).
-    t5 = t14.
+    t5 = zcl_lnt_st_combi_module=>alt( i_first = t7 i_second = t10 i_rest = t13 ).
     IF t5 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t19 TYPE REF TO object.
@@ -63,18 +59,13 @@ CLASS zcl_lnt_st_get_time IMPLEMENTATION.
     ENDIF.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t24.
-    DATA t25 TYPE REF TO zif_lnt_statement_runnable.
-    t25 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t21 i_rest = t24 ).
-    t1 = t25.
-    DATA t29 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t30) = |KeyUser|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t21 i_rest = t24 ).
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t32 TYPE REF TO zif_lnt_statement_runnable.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t35) = |GET TIME|.
     CREATE OBJECT t34.
     t34->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t34->sval = t35.
+    t34->sval = |GET TIME|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t38 TYPE REF TO zif_lnt_statement_runnable.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -127,9 +118,7 @@ CLASS zcl_lnt_st_get_time IMPLEMENTATION.
     ENDIF.
     DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t46.
-    DATA t47 TYPE REF TO zif_lnt_statement_runnable.
-    t47 = zcl_lnt_st_combi_module=>seq( i_first = t34 i_second = t37 i_rest = t46 ).
-    t32 = t47.
+    t32 = zcl_lnt_st_combi_module=>seq( i_first = t34 i_second = t37 i_rest = t46 ).
     IF t32 IS BOUND.
       DATA t51 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t52 TYPE REF TO object.
@@ -153,8 +142,7 @@ CLASS zcl_lnt_st_get_time IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t29 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t30 i_first = t31 ).
-    result = t29.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t31 ).
 
   ENDMETHOD.
 

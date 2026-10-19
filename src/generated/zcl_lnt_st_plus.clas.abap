@@ -24,12 +24,8 @@ CLASS zcl_lnt_st_plus IMPLEMENTATION.
   METHOD constructor.
     me->plu = i_plu.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `plu`.
-    DATA t3 TYPE REF TO zcl_lnt_st_sequence.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     DATA(t8) = me->plu.
     t5->load( ).
     APPEND t8 TO t5->items.
@@ -40,83 +36,63 @@ CLASS zcl_lnt_st_plus IMPLEMENTATION.
     t5->load( ).
     APPEND t10 TO t5->items.
     t5->save( ).
-    t4 = t5.
-    t3 = NEW zcl_lnt_st_sequence( i_list = t4 ).
-    me->sub = t3.
+    me->sub = NEW zcl_lnt_st_sequence( i_list = t5 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `sub`.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->plu->list_keywords( ).
-    result = t1.
+    result = me->plu->list_keywords( ).
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->plu->get_using( ).
-    result = t1.
+    result = me->plu->get_using( ).
 
   ENDMETHOD.
 
   METHOD run.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t4) = i_r_f634.
-    t2 = me->sub->run( i_r_f634 = t4 ).
-    result = t2.
+    result = me->sub->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.OneOrMore(|.
     DATA t4 TYPE string.
     t4 = me->plu->railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |plus(|.
     DATA t4 TYPE string.
     t4 = me->plu->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->plu->first( ).
-    result = t1.
+    result = me->plu->first( ).
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     t5->load( ).
     APPEND t1 TO t5->items.
     t5->save( ).
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t10 = me->sub->run( i_r_f634 = t5 ).
-    result = t10.
+    result = me->sub->run( i_r_f634 = t5 ).
 
   ENDMETHOD.
 

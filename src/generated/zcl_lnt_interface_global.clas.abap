@@ -14,19 +14,13 @@ ENDCLASS.
 CLASS zcl_lnt_interface_global IMPLEMENTATION.
   METHOD get_matcher.
     DATA t3 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t4 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d672_80ccb3caa5ab.
-    t4 = zcl_lnt_sr_combi_module=>sta( i_s = t5 ).
-    t3 = zcl_lnt_sr_combi_module=>star( i_s = t4 ).
+    t3 = zcl_lnt_sr_combi_module=>star( i_s = zcl_lnt_sr_combi_module=>sta( i_s = t5 ) ).
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA t9 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t10 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d542_0aa767c92614.
-    t10 = zcl_lnt_sr_combi_module=>sta( i_s = t11 ).
-    t9 = zcl_lnt_sr_combi_module=>star( i_s = t10 ).
+    t9 = zcl_lnt_sr_combi_module=>star( i_s = zcl_lnt_sr_combi_module=>sta( i_s = t11 ) ).
     t6->load( ).
     APPEND t9 TO t6->items.
     t6->save( ).
@@ -36,9 +30,7 @@ CLASS zcl_lnt_interface_global IMPLEMENTATION.
     t6->load( ).
     APPEND t13 TO t6->items.
     t6->save( ).
-    DATA t15 TYPE REF TO zif_lnt_structure_runnable.
-    t15 = zcl_lnt_sr_combi_module=>seq( i_first = t3 i_rest = t6 ).
-    result = t15.
+    result = zcl_lnt_sr_combi_module=>seq( i_first = t3 i_rest = t6 ).
 
   ENDMETHOD.
 

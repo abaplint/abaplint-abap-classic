@@ -17,44 +17,32 @@ CLASS zcl_lnt_dynpro_logic IMPLEMENTATION.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d728_88830252bc13.
     t3 = zcl_lnt_sr_combi_module=>sub( i_s = t4 ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     DATA t8 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t9 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d729_b022852130b8.
-    t9 = zcl_lnt_sr_combi_module=>sub( i_s = t10 ).
-    t8 = zcl_lnt_sr_combi_module=>opt( i_o = t9 ).
+    t8 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t10 ) ).
     t5->load( ).
     APPEND t8 TO t5->items.
     t5->save( ).
     DATA t12 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t13 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d730_2ce7d22b4d6f.
-    t13 = zcl_lnt_sr_combi_module=>sub( i_s = t14 ).
-    t12 = zcl_lnt_sr_combi_module=>opt( i_o = t13 ).
+    t12 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t14 ) ).
     t5->load( ).
     APPEND t12 TO t5->items.
     t5->save( ).
     DATA t16 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t17 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d731_b42f23a70705.
-    t17 = zcl_lnt_sr_combi_module=>sub( i_s = t18 ).
-    t16 = zcl_lnt_sr_combi_module=>opt( i_o = t17 ).
+    t16 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t18 ) ).
     t5->load( ).
     APPEND t16 TO t5->items.
     t5->save( ).
     DATA t20 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t21 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d730_2ce7d22b4d6f.
-    t21 = zcl_lnt_sr_combi_module=>sub( i_s = t22 ).
-    t20 = zcl_lnt_sr_combi_module=>opt( i_o = t21 ).
+    t20 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t22 ) ).
     t5->load( ).
     APPEND t20 TO t5->items.
     t5->save( ).
-    DATA t23 TYPE REF TO zif_lnt_structure_runnable.
-    t23 = zcl_lnt_sr_combi_module=>seq( i_first = t3 i_rest = t5 ).
-    result = t23.
+    result = zcl_lnt_sr_combi_module=>seq( i_first = t3 i_rest = t5 ).
 
   ENDMETHOD.
 

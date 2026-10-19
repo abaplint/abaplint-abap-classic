@@ -29,10 +29,9 @@ CLASS zcl_lnt_basic_rule_config IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     me->zlnt_view_write_s_1f4f39b4e3f3( p0 = t1 ).
-    DATA(t2) = |Error|.
     DATA(t3) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t3->has = abap_true.
-    t3->value = t2.
+    t3->value = |Error|.
     me->zlnt_view_write_s_6ebe8213e64c( p0 = t3 ).
   ENDMETHOD.
 

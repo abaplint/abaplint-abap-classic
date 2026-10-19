@@ -15,10 +15,9 @@ CLASS zcl_lnt_st_sql_from IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |FROM|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |FROM|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t7) = NEW zcl_lnt_sql_from_body( ).
     DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -44,9 +43,7 @@ CLASS zcl_lnt_st_sql_from IMPLEMENTATION.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t11.
-    DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    t12 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
-    result = t12.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
 
   ENDMETHOD.
 

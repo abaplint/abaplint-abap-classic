@@ -14,17 +14,13 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA(t3) = i_target_type.
-    DATA(t4) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t4 = xsdbool( t1 IS INITIAL ).
-    IF t4 = abap_true.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
       result = t3.
       RETURN.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8d6bb411953d.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8d6bb411953d.
-    CREATE OBJECT t13.
-    t12 = t13.
+    CREATE OBJECT t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
     t15 = t1.
@@ -71,56 +67,42 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
       t12->save( ).
     ENDDO.
     DATA t35 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t36 TYPE abap_bool.
     DATA t37 TYPE REF TO zcl_lnt_abstract_type.
     t12->load( ).
     READ TABLE t12->items INDEX 1 INTO t37.
-    t36 = xsdbool( t37 IS BOUND AND t37 IS INSTANCE OF zcl_lnt_ty_table_type ).
-    IF t36 = abap_true.
+    IF xsdbool( t37 IS BOUND AND t37 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
       DATA t43 TYPE REF TO zcl_lnt_ty_table_type.
       DATA t44 TYPE REF TO zcl_lnt_abstract_type.
       t12->load( ).
       READ TABLE t12->items INDEX 1 INTO t44.
       t43 ?= t44.
-      DATA t46 TYPE REF TO zcl_lnt_abstract_type.
-      t46 = t43->row_type.
-      t35 = t46.
+      t35 = t43->row_type.
     ELSE.
       CLEAR t35.
     ENDIF.
     DATA t51 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t52 TYPE abap_bool.
     DATA t53 TYPE REF TO zcl_lnt_abstract_type.
     t12->load( ).
     READ TABLE t12->items INDEX 2 INTO t53.
-    t52 = xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_ty_table_type ).
-    IF t52 = abap_true.
+    IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
       DATA t59 TYPE REF TO zcl_lnt_ty_table_type.
       DATA t60 TYPE REF TO zcl_lnt_abstract_type.
       t12->load( ).
       READ TABLE t12->items INDEX 2 INTO t60.
       t59 ?= t60.
-      DATA t62 TYPE REF TO zcl_lnt_abstract_type.
-      t62 = t59->row_type.
-      t51 = t62.
+      t51 = t59->row_type.
     ELSE.
       CLEAR t51.
     ENDIF.
-    DATA t66 TYPE REF TO zcl_lnt_expression_node.
-    DATA t67 TYPE REF TO zcl_lnt_expression_node.
     DATA t68 TYPE REF TO zcl_lnt_expression_node.
     t68 = t1.
     DATA(t70) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
-    t67 = t68->find_direct_expression( i_type_9913 = t70 ).
-    t66 = t67.
-    zcl_lnt_sy_component_cond=>run_syntax( i_node = t66 i_input_967e = t2 i_left_type = t35 i_right_type = t51 ).
+    zcl_lnt_sy_component_cond=>run_syntax( i_node = t68->find_direct_expression( i_type_9913 = t70 ) i_input_967e = t2 i_left_type = t35 i_right_type = t51 ).
     DATA t74 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t75 TYPE abap_bool.
     DATA t76 TYPE REF TO zcl_lnt_abstract_type.
     t12->load( ).
     READ TABLE t12->items INDEX 1 INTO t76.
-    t75 = xsdbool( t76 IS BOUND ).
-    IF t75 = abap_true.
+    IF xsdbool( t76 IS BOUND ) = abap_true.
       DATA t81 TYPE REF TO zcl_lnt_abstract_type.
       t12->load( ).
       READ TABLE t12->items INDEX 1 INTO t81.

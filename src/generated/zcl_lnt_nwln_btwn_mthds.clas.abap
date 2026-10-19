@@ -27,32 +27,20 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |newline_between_methods|.
-    DATA t4 TYPE string.
-    t4 = |New line between methods|.
-    DATA t6 TYPE string.
-    t6 = |Checks for newlines between method implementations.|.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Whitespace|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Whitespace| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |newline_between_methods| i_title = |New line between methods| i_short_description = |Checks for newlines between method implementations.| i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -71,23 +59,19 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -96,14 +80,8 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
   METHOD get_message.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA t1 TYPE string.
-    DATA t2 TYPE string.
-    t2 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-    t1 = t2.
-    DATA t4 TYPE abap_bool.
-    DATA(t6) = |exact|.
-    t4 = xsdbool( t1 = t6 ).
-    IF t4 = abap_true.
-      DATA(t7) = VALUE string( ).
+    t1 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
+    IF xsdbool( t1 = |exact| ) = abap_true.
       DATA(t8) = VALUE string( ).
       DATA(t9) = |Exactly |.
       DATA(t10) = VALUE string( ).
@@ -116,17 +94,11 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
       t10 = |{ t13 }|.
       DATA(t14) = strlen( t9 ).
       t8 = |{ t9 }{ t10 }|.
-      DATA(t15) = | newlines are required in between methods|.
       DATA(t16) = strlen( t8 ).
-      t7 = |{ t8 }{ t15 }|.
-      result = t7.
+      result = |{ t8 }{ | newlines are required in between methods| }|.
       RETURN.
     ELSE.
-      DATA t17 TYPE abap_bool.
-      DATA(t19) = |less|.
-      t17 = xsdbool( t1 = t19 ).
-      IF t17 = abap_true.
-        DATA(t20) = VALUE string( ).
+      IF xsdbool( t1 = |less| ) = abap_true.
         DATA(t21) = VALUE string( ).
         DATA(t22) = |Less than |.
         DATA(t23) = VALUE string( ).
@@ -142,8 +114,7 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         DATA(t28) = | newlines and at least a single newline are required in betw|.
         t28 = t28 && |een methods|.
         DATA(t29) = strlen( t21 ).
-        t20 = |{ t21 }{ t28 }|.
-        result = t20.
+        result = |{ t21 }{ t28 }|.
         RETURN.
       ELSE.
         result = ||.
@@ -168,39 +139,27 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t9 TYPE REF TO zif_lnt_file.
-    t9 = t1->file.
-    t8 = t9->get_raw_rows( ).
-    t4 = t8.
-    DATA(t11) = VALUE abap_bool( ).
+    t4 = t1->file->get_raw_rows( ).
     DATA(t12) = VALUE abap_bool( ).
     DATA t13 TYPE abap_bool.
     DATA t14 TYPE abap_bool.
     DATA t15 TYPE f.
     t15 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
-    DATA(t17) = CONV f( 1 ).
-    t14 = xsdbool( t15 < t17 ).
+    t14 = xsdbool( t15 < CONV f( 1 ) ).
     t13 = t14.
     IF t14 = abap_false.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE abap_bool.
       DATA t20 TYPE f.
       t20 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
-      DATA(t22) = CONV f( 1 ).
-      t19 = xsdbool( t20 = t22 ).
+      t19 = xsdbool( t20 = CONV f( 1 ) ).
       t18 = t19.
       IF t19 = abap_true.
-        DATA t23 TYPE abap_bool.
         DATA t24 TYPE string.
         t24 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-        DATA(t26) = |less|.
-        t23 = xsdbool( t24 = t26 ).
-        t18 = t23.
+        t18 = xsdbool( t24 = |less| ).
       ENDIF.
       t13 = t18.
     ENDIF.
@@ -209,17 +168,12 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
     ELSE.
       t12 = abap_true.
     ENDIF.
-    t11 = xsdbool( t12 = abap_false ).
-    IF t11 = abap_true.
-      DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t29.
-      result = t29.
+    IF xsdbool( t12 = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t33 = t1->statements.
-    t30 = t33.
+    t30 = t1->statements.
     DATA t35 TYPE REF TO zcl_lnt_statement_node.
     DATA t36 TYPE REF TO object.
     DATA(t37) = VALUE i( ).
@@ -243,20 +197,14 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         t35 ?= t36.
       ENDIF.
       DATA t40 TYPE f.
-      DATA t48 TYPE REF TO zcl_lnt_abstract_token.
-      t48 = t35->get_first_token( ).
       DATA t50 TYPE REF TO zcl_lnt_position.
-      t50 = t48->start.
-      DATA t52 TYPE f.
-      t52 = t50->row.
-      t40 = t52.
+      t50 = t35->get_first_token( )->start.
+      t40 = t50->row.
       DATA t54 TYPE abap_bool.
       DATA t55 TYPE abap_bool.
-      DATA t56 TYPE abap_bool.
       DATA t57 TYPE REF TO zif_lnt_statement.
       t57 = t35->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t56 = xsdbool( t57 IS BOUND AND t57 IS INSTANCE OF zcl_lnt_end_method ).
-      t55 = xsdbool( t56 = abap_false ).
+      t55 = xsdbool( xsdbool( t57 IS BOUND AND t57 IS INSTANCE OF zcl_lnt_end_method ) = abap_false ).
       t54 = t55.
       IF t55 = abap_false.
         DATA(t59) = VALUE abap_bool( ).
@@ -266,8 +214,6 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         CLEAR t61.
         DATA t63 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t63.
-        DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t64.
         DATA(t66) = VALUE i( ).
         DATA(t67) = t40.
         IF t67 > range_i32_upper.
@@ -277,8 +223,7 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         ELSE.
           t66 = trunc( t67 ).
         ENDIF.
-        t64 = t4->get( p0 = t66 ).
-        t63 = t64.
+        t63 = t4->get( p0 = t66 ).
         DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t68.
         DATA(t69) = VALUE abap_bool( ).
@@ -331,8 +276,7 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
               t82 = -1.
             ENDIF.
           ENDIF.
-          DATA(t87) = 0.
-          t81 = xsdbool( t82 >= t87 ).
+          t81 = xsdbool( t82 >= 0 ).
           DATA(t88) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t88->has = abap_true.
           t88->value = t81.
@@ -350,13 +294,10 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t89 TYPE f.
-      DATA(t90) = CONV f( 0 ).
-      t89 = t90.
+      t89 = CONV f( 0 ).
       DO.
         DATA(t91) = VALUE abap_bool( ).
         DATA(t92) = VALUE abap_bool( ).
-        DATA t93 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t93.
         DATA(t95) = VALUE i( ).
         DATA(t96) = t40.
         IF t96 > range_i32_upper.
@@ -366,30 +307,23 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         ELSE.
           t95 = trunc( t96 ).
         ENDIF.
-        t93 = t4->get( p0 = t95 ).
-        t92 = zcl_lnt_sequential_blank=>is_blank_or_whitespace( i_line = t93 ).
+        t92 = zcl_lnt_sequential_blank=>is_blank_or_whitespace( i_line = t4->get( p0 = t95 ) ).
         t91 = t92.
         IF t92 = abap_true.
-          DATA t97 TYPE abap_bool.
           DATA t99 TYPE f.
           DATA t100 TYPE f.
           t100 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
           DATA(t102) = CONV f( 1 ).
           t99 = t100 + t102.
-          t97 = xsdbool( t89 <= t99 ).
-          t91 = t97.
+          t91 = xsdbool( t89 <= t99 ).
         ENDIF.
         IF t91 = abap_false.
           EXIT.
         ENDIF.
-        DATA t103 TYPE f.
         DATA(t105) = CONV f( 1 ).
-        t103 = t89 + t105.
-        t89 = t103.
-        DATA t106 TYPE f.
+        t89 = t89 + t105.
         DATA(t108) = CONV f( 1 ).
-        t106 = t40 + t108.
-        t40 = t106.
+        t40 = t40 + t108.
       ENDDO.
       DATA(t109) = VALUE abap_bool( ).
       DATA(t110) = VALUE abap_bool( ).
@@ -400,12 +334,9 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
       t112 = xsdbool( t89 <> t114 ).
       t111 = t112.
       IF t112 = abap_true.
-        DATA t116 TYPE abap_bool.
         DATA t117 TYPE string.
         t117 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-        DATA(t119) = |exact|.
-        t116 = xsdbool( t117 = t119 ).
-        t111 = t116.
+        t111 = xsdbool( t117 = |exact| ).
       ENDIF.
       t110 = t111.
       IF t111 = abap_false.
@@ -416,36 +347,24 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         t121 = xsdbool( t89 >= t123 ).
         t120 = t121.
         IF t121 = abap_true.
-          DATA t125 TYPE abap_bool.
           DATA t126 TYPE string.
           t126 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-          DATA(t128) = |less|.
-          t125 = xsdbool( t126 = t128 ).
-          t120 = t125.
+          t120 = xsdbool( t126 = |less| ).
         ENDIF.
         t110 = t120.
       ENDIF.
       t109 = t110.
       IF t110 = abap_false.
-        DATA t129 TYPE abap_bool.
-        DATA(t131) = CONV f( 0 ).
-        t129 = xsdbool( t89 = t131 ).
-        t109 = t129.
+        t109 = xsdbool( t89 = CONV f( 0 ) ).
       ENDIF.
       IF t109 = abap_true.
         DATA t133 TYPE REF TO zcl_lnt_issue.
         CLEAR t133.
         DATA(t136) = VALUE string( ).
         DATA t137 TYPE string.
-        DATA t138 TYPE string.
-        t138 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-        t137 = t138.
+        t137 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
         DATA(t140) = VALUE string( ).
-        DATA t141 TYPE abap_bool.
-        DATA(t143) = |exact|.
-        t141 = xsdbool( t137 = t143 ).
-        IF t141 = abap_true.
-          DATA(t144) = VALUE string( ).
+        IF xsdbool( t137 = |exact| ) = abap_true.
           DATA(t145) = VALUE string( ).
           DATA(t146) = |Exactly |.
           DATA(t147) = VALUE string( ).
@@ -458,17 +377,11 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
           t147 = |{ t150 }|.
           DATA(t151) = strlen( t146 ).
           t145 = |{ t146 }{ t147 }|.
-          DATA(t152) = | newlines are required in between methods|.
           DATA(t153) = strlen( t145 ).
-          t144 = |{ t145 }{ t152 }|.
-          t140 = t144.
+          t140 = |{ t145 }{ | newlines are required in between methods| }|.
         ELSE.
           DATA(t154) = VALUE string( ).
-          DATA t155 TYPE abap_bool.
-          DATA(t157) = |less|.
-          t155 = xsdbool( t137 = t157 ).
-          IF t155 = abap_true.
-            DATA(t158) = VALUE string( ).
+          IF xsdbool( t137 = |less| ) = abap_true.
             DATA(t159) = VALUE string( ).
             DATA(t160) = |Less than |.
             DATA(t161) = VALUE string( ).
@@ -484,8 +397,7 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
             DATA(t166) = | newlines and at least a single newline are required in betw|.
             t166 = t166 && |een methods|.
             DATA(t167) = strlen( t159 ).
-            t158 = |{ t159 }{ t166 }|.
-            t154 = t158.
+            t154 = |{ t159 }{ t166 }|.
           ELSE.
             t154 = ||.
           ENDIF.
@@ -495,25 +407,15 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         DATA(t169) = VALUE string( ).
         DATA t170 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t170.
-        DATA t171 TYPE string.
-        t171 = |newline_between_methods|.
-        DATA t173 TYPE string.
-        t173 = |New line between methods|.
-        DATA t175 TYPE string.
-        t175 = |Checks for newlines between method implementations.|.
         DATA t177 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t177.
         DATA t181 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t182 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t182.
-        t181 = t182.
-        DATA(t184) = |Whitespace|.
+        CREATE OBJECT t181.
         t181->load( ).
-        APPEND t184 TO t181->items.
+        APPEND |Whitespace| TO t181->items.
         t181->save( ).
-        DATA(t186) = |SingleFile|.
         t181->load( ).
-        APPEND t186 TO t181->items.
+        APPEND |SingleFile| TO t181->items.
         t181->save( ).
         t177 = t181.
         DATA t189 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -526,7 +428,7 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         CLEAR t195.
         DATA t197 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t197.
-        t170 = NEW zcl_lnt_irule_metadata( i_key = t171 i_title = t173 i_short_description = t175 i_bad_example = t189 i_good_example = t191 i_extended_information = t193 i_tags = t177 i_pragma = t195 i_pseudo_comment = t197 ).
+        t170 = NEW zcl_lnt_irule_metadata( i_key = |newline_between_methods| i_title = |New line between methods| i_short_description = |Checks for newlines between method implementations.| i_bad_example = t189 i_good_example = t191 i_extended_information = t193 i_tags = t177 i_pragma = t195 i_pseudo_comment = t197 ).
         CREATE OBJECT t170->zlnt_view_ownkeys_b0e8086400eb.
         t170->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t199 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -549,27 +451,23 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t170->zlnt_json_ownkeys_70e5fd461788.
         t170->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t203) = |key|.
         DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t204.
-        t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = t203 p1 = t204 ).
-        DATA(t205) = |title|.
+        t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t204 ).
         DATA t206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t206.
         IF t170->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = t205 p1 = t206 ).
+          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t206 ).
         ENDIF.
-        DATA(t207) = |shortDescription|.
         DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t208.
         IF t170->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = t207 p1 = t208 ).
+          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t208 ).
         ENDIF.
-        DATA(t209) = |tags|.
         DATA t210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t210.
         IF t170->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = t209 p1 = t210 ).
+          t170->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t210 ).
         ENDIF.
         t169 = t170->key.
         DATA t211 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -593,24 +491,19 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE f.
     t3 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
-    DATA(t5) = CONV f( 1 ).
-    t2 = xsdbool( t3 < t5 ).
+    t2 = xsdbool( t3 < CONV f( 1 ) ).
     t1 = t2.
     IF t2 = abap_false.
       DATA t6 TYPE abap_bool.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE f.
       t8 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
-      DATA(t10) = CONV f( 1 ).
-      t7 = xsdbool( t8 = t10 ).
+      t7 = xsdbool( t8 = CONV f( 1 ) ).
       t6 = t7.
       IF t7 = abap_true.
-        DATA t11 TYPE abap_bool.
         DATA t12 TYPE string.
         t12 = me->conf->zlnt_view_read_sr_2ac95bad942d( ).
-        DATA(t14) = |less|.
-        t11 = xsdbool( t12 = t14 ).
-        t6 = t11.
+        t6 = xsdbool( t12 = |less| ).
       ENDIF.
       t1 = t6.
     ENDIF.

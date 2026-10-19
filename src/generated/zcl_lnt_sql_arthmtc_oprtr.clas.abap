@@ -69,28 +69,22 @@ CLASS zcl_lnt_sql_arthmtc_oprtr IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t16.
-    t15 = t16.
+    CREATE OBJECT t15.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t19) = |*|.
     CREATE OBJECT t18.
     t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t18->sval = t19.
+    t18->sval = |*|.
     t15->load( ).
     APPEND t18 TO t15->items.
     t15->save( ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t22) = |/|.
     CREATE OBJECT t21.
     t21->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t21->sval = t22.
+    t21->sval = |/|.
     t15->load( ).
     APPEND t21 TO t15->items.
     t15->save( ).
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t10 i_rest = t15 ).
-    result = t23.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t10 i_rest = t15 ).
 
   ENDMETHOD.
 

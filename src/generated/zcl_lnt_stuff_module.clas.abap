@@ -22,9 +22,7 @@ CLASS zcl_lnt_stuff_module IMPLEMENTATION.
       zcl_lnt_stuff_module=>zlnt_builtin_init_bdd646de0219( ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d640_24ab508a512a.
     t2->load( ).
     APPEND t5 TO t2->items.
@@ -74,9 +72,7 @@ CLASS zcl_lnt_stuff_module IMPLEMENTATION.
       zcl_lnt_stuff_module=>zlnt_builtin_init_bdd646de0219( ).
     ENDIF.
     DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t29.
-    t28 = t29.
+    CREATE OBJECT t28.
     DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d662_d497981e80c2.
     t28->load( ).
     APPEND t31 TO t28->items.

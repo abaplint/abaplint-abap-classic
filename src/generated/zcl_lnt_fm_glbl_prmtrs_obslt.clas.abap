@@ -28,12 +28,6 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |fm_global_parameters_obsolete|.
-    DATA t4 TYPE string.
-    t4 = |FM Global Parameters Obsolete|.
-    DATA t6 TYPE string.
-    t6 = |Check for function modules with global parameters|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
     t11 = t11 && |-US/abenglobal_parameters_obsolete.html|.
@@ -42,14 +36,12 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
     t12->value = t11.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t17.
-    t14 = t17.
+    CREATE OBJECT t14.
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t21 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t19 i_good_example = t21 i_extended_information = t8 i_tags = t14 i_pragma = t23 i_pseudo_comment = t25 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |fm_global_parameters_obsolete| i_title = |FM Global Parameters Obsolete| i_short_description = |Check for function modules with global parameters| i_bad_example = t19 i_good_example = t21 i_extended_information = t8 i_tags = t14 i_pragma = t23 i_pseudo_comment = t25 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -72,28 +64,23 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t32) = |key|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-    DATA(t34) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t33 ).
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t35 ).
     ENDIF.
-    DATA(t36) = |shortDescription|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |extendedInformation|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -117,20 +104,12 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_function_group ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_function_group ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t9 TYPE REF TO zcl_lnt_function_group.
     DATA t11 TYPE REF TO object.
@@ -159,60 +138,39 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
       ELSE.
         t12 ?= t13.
       ENDIF.
-      DATA t17 TYPE abap_bool.
-      DATA t18 TYPE abap_bool.
-      DATA t21 TYPE abap_bool.
-      t21 = t12->global_parameters.
-      t18 = t21.
-      t17 = xsdbool( t18 = abap_true ).
-      IF t17 = abap_true.
+      IF xsdbool( t12->global_parameters = abap_true ) = abap_true.
         DATA t24 TYPE REF TO zcl_lnt_abap_file.
-        DATA t25 TYPE REF TO zcl_lnt_abap_file.
         DATA t26 TYPE REF TO zcl_lnt_function_group.
         DATA t28 TYPE REF TO object.
         t28 = t1.
         t26 ?= t28.
-        t25 = t26->get_main_abap_file( ).
-        t24 = t25.
-        DATA(t29) = VALUE abap_bool( ).
+        t24 = t26->get_main_abap_file( ).
         DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t32.
-        t29 = xsdbool( t24 IS INITIAL ).
-        IF t29 = abap_true.
+        IF xsdbool( t24 IS INITIAL ) = abap_true.
           CONTINUE.
         ENDIF.
         DATA t37 TYPE string.
         DATA t38 TYPE string.
         DATA(t39) = |Function Module "|.
         DATA t40 TYPE string.
-        DATA t43 TYPE string.
-        t43 = t12->name.
-        t40 = t43.
+        t40 = t12->name.
         DATA(t45) = strlen( t39 ).
         t38 = |{ t39 }{ t40 }|.
-        DATA(t46) = |" uses obsolete global parameters|.
         DATA(t47) = strlen( t38 ).
-        t37 = |{ t38 }{ t46 }|.
+        t37 = |{ t38 }{ |" uses obsolete global parameters| }|.
         DATA t49 TYPE REF TO zcl_lnt_issue.
         CLEAR t49.
         DATA t50 TYPE REF TO zcl_lnt_abap_file.
         t50 = t24.
         DATA t52 TYPE REF TO zcl_lnt_position.
-        DATA(t53) = CONV f( 1 ).
-        DATA(t54) = CONV f( 1 ).
         DATA(t55) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t55->has = abap_true.
-        t55->value = t54.
-        t52 = NEW zcl_lnt_position( i_row = t53 i_col = t55 ).
+        t55->value = CONV f( 1 ).
+        t52 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t55 ).
         DATA(t57) = VALUE string( ).
         DATA t58 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t58.
-        DATA t59 TYPE string.
-        t59 = |fm_global_parameters_obsolete|.
-        DATA t61 TYPE string.
-        t61 = |FM Global Parameters Obsolete|.
-        DATA t63 TYPE string.
-        t63 = |Check for function modules with global parameters|.
         DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t65.
         DATA(t68) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
@@ -223,9 +181,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
         t65 = t69.
         DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t71.
-        DATA t74 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t74.
-        t71 = t74.
+        CREATE OBJECT t71.
         DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t76.
         DATA t78 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -234,7 +190,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
         CLEAR t80.
         DATA t82 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t82.
-        t58 = NEW zcl_lnt_irule_metadata( i_key = t59 i_title = t61 i_short_description = t63 i_bad_example = t76 i_good_example = t78 i_extended_information = t65 i_tags = t71 i_pragma = t80 i_pseudo_comment = t82 ).
+        t58 = NEW zcl_lnt_irule_metadata( i_key = |fm_global_parameters_obsolete| i_title = |FM Global Parameters Obsolete| i_short_description = |Check for function modules with global parameters| i_bad_example = t76 i_good_example = t78 i_extended_information = t65 i_tags = t71 i_pragma = t80 i_pseudo_comment = t82 ).
         CREATE OBJECT t58->zlnt_view_ownkeys_b0e8086400eb.
         t58->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -262,33 +218,28 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t58->zlnt_json_ownkeys_70e5fd461788.
         t58->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t89) = |key|.
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t90.
-        t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = t89 p1 = t90 ).
-        DATA(t91) = |title|.
+        t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t90 ).
         DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t92.
         IF t58->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
+          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t92 ).
         ENDIF.
-        DATA(t93) = |shortDescription|.
         DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t94.
         IF t58->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
+          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t94 ).
         ENDIF.
-        DATA(t95) = |extendedInformation|.
         DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t96.
         IF t58->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
+          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t96 ).
         ENDIF.
-        DATA(t97) = |tags|.
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
         IF t58->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
+          t58->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t98 ).
         ENDIF.
         t57 = t58->key.
         DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -306,10 +257,8 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_fm_glbl_prmtrs_obslt.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_s_r_f_g_p_o_ts_fm_gl_pr_ob( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->i_i_s_r_f_g_p_o_ts_fm_gl_pr_ob( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

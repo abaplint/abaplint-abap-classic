@@ -24,17 +24,10 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_shape_4696a092.
-    DATA t6 TYPE string.
-    t6 = |#EC CI_SUBRC|.
-    DATA t8 TYPE string.
-    t8 = |SUBRC_OK|.
-    t5 = NEW zcl_lnt_shape_4696a092( i_pseudo = t6 i_pragma = t8 ).
+    t5 = NEW zcl_lnt_shape_4696a092( i_pseudo = |#EC CI_SUBRC| i_pragma = |SUBRC_OK| ).
     CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
     t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -45,23 +38,17 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t12) = |pseudo|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
-    DATA(t14) = |pragma|.
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pseudo| p1 = t13 ).
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+      t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pragma| p1 = t15 ).
     ENDIF.
     t2->load( ).
     APPEND t5 TO t2->items.
     t2->save( ).
     DATA t17 TYPE REF TO zcl_lnt_shape_4696a092.
-    DATA t18 TYPE string.
-    t18 = |#EC NEEDED|.
-    DATA t20 TYPE string.
-    t20 = |NEEDED|.
-    t17 = NEW zcl_lnt_shape_4696a092( i_pseudo = t18 i_pragma = t20 ).
+    t17 = NEW zcl_lnt_shape_4696a092( i_pseudo = |#EC NEEDED| i_pragma = |NEEDED| ).
     CREATE OBJECT t17->zlnt_view_ownkeys_b0e8086400eb.
     t17->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -72,23 +59,17 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t17->zlnt_json_ownkeys_70e5fd461788.
     t17->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t24) = |pseudo|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t17->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
-    DATA(t26) = |pragma|.
+    t17->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pseudo| p1 = t25 ).
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t17->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t17->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
+      t17->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pragma| p1 = t27 ).
     ENDIF.
     t2->load( ).
     APPEND t17 TO t2->items.
     t2->save( ).
     DATA t29 TYPE REF TO zcl_lnt_shape_4696a092.
-    DATA t30 TYPE string.
-    t30 = |#EC NOTEXT|.
-    DATA t32 TYPE string.
-    t32 = |NO_TEXT|.
-    t29 = NEW zcl_lnt_shape_4696a092( i_pseudo = t30 i_pragma = t32 ).
+    t29 = NEW zcl_lnt_shape_4696a092( i_pseudo = |#EC NOTEXT| i_pragma = |NO_TEXT| ).
     CREATE OBJECT t29->zlnt_view_ownkeys_b0e8086400eb.
     t29->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -99,23 +80,17 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t29->zlnt_json_ownkeys_70e5fd461788.
     t29->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t36) = |pseudo|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t29->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
-    DATA(t38) = |pragma|.
+    t29->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pseudo| p1 = t37 ).
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t29->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t29->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pragma| p1 = t39 ).
     ENDIF.
     t2->load( ).
     APPEND t29 TO t2->items.
     t2->save( ).
     DATA t41 TYPE REF TO zcl_lnt_shape_4696a092.
-    DATA t42 TYPE string.
-    t42 = |#EC NO_HANDLER|.
-    DATA t44 TYPE string.
-    t44 = |NO_HANDLER|.
-    t41 = NEW zcl_lnt_shape_4696a092( i_pseudo = t42 i_pragma = t44 ).
+    t41 = NEW zcl_lnt_shape_4696a092( i_pseudo = |#EC NO_HANDLER| i_pragma = |NO_HANDLER| ).
     CREATE OBJECT t41->zlnt_view_ownkeys_b0e8086400eb.
     t41->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -126,19 +101,16 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t41->zlnt_json_ownkeys_70e5fd461788.
     t41->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t48) = |pseudo|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t41->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
-    DATA(t50) = |pragma|.
+    t41->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pseudo| p1 = t49 ).
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t41->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t41->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t41->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pragma| p1 = t51 ).
     ENDIF.
     t2->load( ).
     APPEND t41 TO t2->items.
     t2->save( ).
-    t1 = t2.
-    me->zlnt_view_write_s_73f0f97a5d9a( p0 = t1 ).
+    me->zlnt_view_write_s_73f0f97a5d9a( p0 = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -204,9 +176,7 @@ CLASS zcl_lnt_prefer_pragmas_conf IMPLEMENTATION.
                     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
                   ENDIF.
                 ENDIF.
-                DATA(t6) = VALUE string( ).
-                DATA(t7) = VALUE string( ).
-                t3 = NEW zcl_lnt_shape_4696a092( view_source = t4 i_pseudo = t6 i_pragma = t7 ).
+                t3 = NEW zcl_lnt_shape_4696a092( view_source = t4 i_pseudo = VALUE string( ) i_pragma = VALUE string( ) ).
               ENDIF.
             ENDIF.
           ELSE.

@@ -53,9 +53,8 @@ CLASS zcl_lnt_ilookup_result IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9be58e2d4893.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) ).
       DATA t2 TYPE REF TO object.
-      t2 = t1->as_ref( ).
+      t2 = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) )->as_ref( ).
       result ?= t2.
     ELSE.
       result = me->type_cba0.

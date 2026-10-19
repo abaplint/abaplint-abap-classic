@@ -27,12 +27,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |line_only_punc|.
-    DATA t4 TYPE string.
-    t4 = |Line containing only punctuation|.
-    DATA t6 TYPE string.
-    t6 = |Detects lines containing only punctuation.|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
     t11 = t11 && |nABAP.md#close-brackets-at-line-end\nhttps://docs.abapopenche|.
@@ -43,37 +37,28 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |Quickfix|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |Quickfix| TO t18->items.
     t18->save( ).
-    DATA(t25) = |SingleFile|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t31) = |zcl_class=>method(\n).|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
-    t32->value = t31.
+    t32->value = |zcl_class=>method(\n).|.
     t28 = t32.
-    DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t37) = |zcl_class=>method( ).|.
     DATA(t38) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t38->has = abap_true.
-    t38->value = t37.
-    t34 = t38.
+    t38->value = |zcl_class=>method( ).|.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |line_only_punc| i_title = |Line containing only punctuation| i_short_description = |Detects lines containing only punctuation.| i_bad_example = t28 i_good_example = t38 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -104,38 +89,31 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t51) = |key|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
-    DATA(t53) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t52 ).
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |shortDescription|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |extendedInformation|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |tags|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |badExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t62 ).
     ENDIF.
-    DATA(t63) = |goodExample|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t64 ).
     ENDIF.
     result = t1.
 
@@ -160,15 +138,11 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_obj_1ed0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t6 TYPE REF TO zcl_lnt_ddic.
     DATA(t7) = me->reg.
     t6 = NEW zcl_lnt_ddic( i_reg_f149 = t7 ).
-    DATA t8 TYPE abap_bool.
-    t8 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_class ).
-    IF t8 = abap_true.
+    IF xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_class ) = abap_true.
       DATA t10 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t12 TYPE REF TO zcl_lnt_class.
       DATA t13 TYPE REF TO zcl_lnt_class.
@@ -178,42 +152,28 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
       t12 = t13.
       DATA t17 TYPE REF TO zif_lnt_abap_file_information.
       DATA t19 TYPE REF TO zcl_lnt_abap_file.
-      DATA t20 TYPE REF TO zcl_lnt_abap_file.
-      t20 = t12->get_main_abap_file( ).
-      t19 = t20.
+      t19 = t12->get_main_abap_file( ).
       DATA t22 TYPE REF TO zif_lnt_abap_file_information.
-      DATA(t23) = xsdbool( t19 IS INITIAL ).
-      IF t23 = abap_true.
+      IF xsdbool( t19 IS INITIAL ) = abap_true.
       ELSE.
-        DATA t30 TYPE REF TO zif_lnt_abap_file_information.
-        t30 = t19->info.
-        t22 = t30.
+        t22 = t19->info.
       ENDIF.
       t17 = t22.
       DATA t32 TYPE REF TO zcl_lnt_info_class_definition.
-      DATA(t33) = xsdbool( t17 IS INITIAL ).
-      IF t33 = abap_true.
+      IF xsdbool( t17 IS INITIAL ) = abap_true.
       ELSE.
-        DATA t36 TYPE REF TO zcl_lnt_info_class_definition.
         DATA t37 TYPE REF TO zif_lnt_abap_file_information.
         t37 = t17.
         DATA t39 TYPE string.
         DATA t40 TYPE REF TO zcl_lnt_abstract_object.
         t40 = t12.
-        DATA t42 TYPE string.
-        t42 = t40->name.
-        t39 = t42.
-        t36 = t37->get_class_definition_by_name( i_name = t39 ).
-        t32 = t36.
+        t39 = t40->name.
+        t32 = t37->get_class_definition_by_name( i_name = t39 ).
       ENDIF.
       t10 = t32.
-      DATA(t44) = VALUE abap_bool( ).
       DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t44 = xsdbool( t10 IS INITIAL ).
-      IF t44 = abap_true.
-        DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t51.
-        result = t51.
+      IF xsdbool( t10 IS INITIAL ) = abap_true.
+        CREATE OBJECT result.
         RETURN.
       ELSE.
         DATA(t52) = VALUE abap_bool( ).
@@ -227,33 +187,24 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         ENDIF.
         t52 = t53.
         IF t53 = abap_true.
-          DATA(t56) = VALUE abap_bool( ).
           DATA t58 TYPE REF TO zcl_lnt_info_class_definition.
           t58 = t10.
           DATA t63 TYPE REF TO zcl_lnt_class.
           DATA t65 TYPE REF TO object.
           t65 = t2.
           t63 ?= t65.
-          t56 = t6->is_exception( i_def = t58 i_obj_ac26 = t63 ).
-          t52 = t56.
+          t52 = t6->is_exception( i_def = t58 i_obj_ac26 = t63 ).
         ENDIF.
         IF t52 = abap_true.
-          DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CREATE OBJECT t66.
-          result = t66.
+          CREATE OBJECT result.
           RETURN.
         ENDIF.
       ENDIF.
     ENDIF.
     DATA t67 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t72 TYPE REF TO zif_lnt_file.
-    t72 = t1->file.
-    t71 = t72->get_raw_rows( ).
-    t67 = t71.
+    t67 = t1->file->get_raw_rows( ).
     DATA t74 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     DATA t75 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t76) = `^\)?\. *(\".*)?$`.
     DATA(t77) = `^\)?\. *(\"[^`.
     t77 = t77 && |\n\r|.
     DATA t78 TYPE c LENGTH 1.
@@ -263,22 +214,16 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
     t79 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t77 t79 INTO t77 RESPECTING BLANKS.
     t77 = t77 && |]*)?$|.
-    DATA(t80) = ||.
-    CREATE OBJECT t75 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t77 flags = t80.
-    t75->source = t76.
+    CREATE OBJECT t75 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t77 flags = ||.
+    t75->source = `^\)?\. *(\".*)?$`.
     t74 = t75.
     DATA t81 TYPE i.
     t81 = 0.
     DO.
-      DATA t83 TYPE abap_bool.
-      DATA t85 TYPE i.
       t67->load( ).
-      t85 = lines( t67->items ).
-      t83 = xsdbool( t81 < t85 ).
-      IF t83 = abap_false.
+      IF xsdbool( t81 < lines( t67->items ) ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t87) = VALUE abap_bool( ).
       DATA(t89) = VALUE string( ).
       DATA(t90) = VALUE string( ).
       DATA(t92) = t81.
@@ -287,7 +232,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t67->load( ).
-      CLEAR t90.
       READ TABLE t67->items INDEX t92 INTO t90.
       DATA(t93) = strlen( t90 ).
       DATA t94 TYPE i.
@@ -366,11 +310,8 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
       ELSE.
         CLEAR t89.
       ENDIF.
-      t87 = t74->test( p0 = t89 ).
-      IF t87 = abap_true.
-        DATA(t112) = VALUE i( ).
+      IF t74->test( p0 = t89 ) = abap_true.
         DATA(t113) = VALUE i( ).
-        DATA(t114) = VALUE abap_bool( ).
         DATA(t115) = VALUE i( ).
         DATA(t116) = VALUE string( ).
         DATA(t118) = t81.
@@ -379,7 +320,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t67->load( ).
-        CLEAR t116.
         READ TABLE t67->items INDEX t118 INTO t116.
         DATA(t119) = |)|.
         DATA(t120) = strlen( t116 ).
@@ -391,10 +331,7 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             t115 = -1.
           ENDIF.
         ENDIF.
-        DATA(t121) = 0.
-        t114 = xsdbool( t115 >= t121 ).
-        IF t114 = abap_true.
-          DATA(t122) = VALUE i( ).
+        IF xsdbool( t115 >= 0 ) = abap_true.
           DATA(t123) = VALUE i( ).
           DATA(t124) = VALUE string( ).
           DATA(t126) = t81.
@@ -403,7 +340,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t124.
           READ TABLE t67->items INDEX t126 INTO t124.
           DATA(t127) = |)|.
           DATA(t128) = strlen( t124 ).
@@ -416,10 +352,8 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA(t129) = 1.
-          t122 = t123 + t129.
-          t113 = t122.
+          t113 = t123 + t129.
         ELSE.
-          DATA(t130) = VALUE i( ).
           DATA(t131) = VALUE i( ).
           DATA(t132) = VALUE string( ).
           DATA(t134) = t81.
@@ -428,7 +362,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t132.
           READ TABLE t67->items INDEX t134 INTO t132.
           DATA(t135) = |.|.
           DATA(t136) = strlen( t132 ).
@@ -441,10 +374,8 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA(t137) = 1.
-          t130 = t131 + t137.
-          t113 = t130.
+          t113 = t131 + t137.
         ENDIF.
-        t112 = t113.
         DATA t139 TYPE REF TO zcl_lnt_position.
         DATA t140 TYPE f.
         DATA t141 TYPE i.
@@ -452,7 +383,7 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         t141 = t81 + t143.
         t140 = t141.
         DATA t144 TYPE f.
-        t144 = t112.
+        t144 = t113.
         DATA(t146) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t146->has = abap_true.
         t146->value = t144.
@@ -466,7 +397,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t67->load( ).
-        CLEAR t149.
         READ TABLE t67->items INDEX t151 INTO t149.
         DATA(t152) = strlen( t149 ).
         DATA t153 TYPE i.
@@ -549,13 +479,9 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         DATA(t171) = VALUE abap_bool( ).
         DATA t172 TYPE abap_bool.
         DATA t173 TYPE abap_bool.
-        DATA t174 TYPE i.
-        t174 = strlen( t147 ).
-        DATA(t177) = 1.
-        t173 = xsdbool( t174 > t177 ).
+        t173 = xsdbool( strlen( t147 ) > 1 ).
         t172 = t173.
         IF t173 = abap_true.
-          DATA(t178) = VALUE abap_bool( ).
           DATA(t179) = VALUE abap_bool( ).
           DATA(t180) = VALUE string( ).
           DATA t182 TYPE i.
@@ -566,7 +492,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t180.
           READ TABLE t67->items INDEX t182 INTO t180.
           DATA(t185) = | |.
           DATA(t186) = strlen( t180 ).
@@ -584,12 +509,10 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
               t179 = abap_true.
             ENDIF.
           ENDIF.
-          t178 = xsdbool( t179 = abap_false ).
-          t172 = t178.
+          t172 = xsdbool( t179 = abap_false ).
         ENDIF.
         t171 = t172.
         IF t172 = abap_true.
-          DATA(t190) = VALUE abap_bool( ).
           DATA(t191) = VALUE abap_bool( ).
           DATA(t192) = VALUE string( ).
           DATA t194 TYPE i.
@@ -600,7 +523,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t192.
           READ TABLE t67->items INDEX t194 INTO t192.
           DATA(t197) = | \r|.
           DATA(t198) = strlen( t192 ).
@@ -618,15 +540,12 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
               t191 = abap_true.
             ENDIF.
           ENDIF.
-          t190 = xsdbool( t191 = abap_false ).
-          t171 = t190.
+          t171 = xsdbool( t191 = abap_false ).
         ENDIF.
         IF t171 = abap_true.
-          DATA t202 TYPE string.
           DATA(t203) = | |.
           DATA(t205) = strlen( t203 ).
-          t202 = |{ t203 }{ t147 }|.
-          t147 = t202.
+          t147 = |{ t203 }{ t147 }|.
         ENDIF.
         DATA t206 TYPE i.
         t206 = 0.
@@ -634,12 +553,10 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         DATA t209 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t209.
         DATA t210 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t211 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t213 TYPE i.
         DATA(t215) = 1.
         t213 = t81 - t215.
-        t211 = t67->get( p0 = t213 ).
-        t210 = t211.
+        t210 = t67->get( p0 = t213 ).
         DATA t216 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         CLEAR t216.
         DATA(t217) = VALUE abap_bool( ).
@@ -688,19 +605,15 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         CLEAR t231.
         DATA t232 TYPE f.
         t232 = t81.
-        DATA t234 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t234.
         DATA t235 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         CLEAR t235.
         DATA t236 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         CLEAR t236.
         DATA t238 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t239 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t241 TYPE i.
         DATA(t243) = 1.
         t241 = t81 - t243.
-        t239 = t67->get( p0 = t241 ).
-        t238 = t239.
+        t238 = t67->get( p0 = t241 ).
         DATA t244 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         CLEAR t244.
         DATA(t245) = VALUE abap_bool( ).
@@ -713,18 +626,13 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           CLEAR t244.
         ELSE.
           DATA t248 TYPE f.
-          DATA t250 TYPE string.
-          t250 = t238->value.
-          t248 = strlen( t250 ).
+          t248 = strlen( t238->value ).
           DATA(t253) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t253->has = abap_true.
           t253->value = t248.
           t244 = t253.
         ENDIF.
         t236 = t244.
-        DATA(t255) = 1.
-        DATA t256 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t256.
         DATA t257 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         CLEAR t257.
         DATA(t258) = VALUE abap_bool( ).
@@ -734,10 +642,7 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           t258 = abap_true.
         ENDIF.
         IF t258 = abap_true.
-          DATA t260 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          DATA(t261) = |NaN|.
-          t260 = zlnt_runtime_stri_248d3505915c=>float_optional( t261 ).
-          t257 = t260.
+          t257 = zlnt_runtime_stri_248d3505915c=>float_optional( |NaN| ).
         ELSE.
           DATA(t262) = VALUE f( ).
           IF t236->number_special <> 0.
@@ -750,19 +655,17 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           t257 = t264.
         ENDIF.
         DATA t265 TYPE f.
-        t265 = t255.
+        t265 = 1.
         DATA(t267) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t267->has = abap_true.
         t267->value = t265.
-        t256 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t257 right = t267 op = `+` ).
-        t235 = t256.
+        t235 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t257 right = t267 op = `+` ).
         DATA t268 TYPE f.
         t268 = t206.
         DATA(t270) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t270->has = abap_true.
         t270->value = t268.
-        t234 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t235 right = t270 op = `+` ).
-        t231 = NEW zcl_lnt_position( i_row = t232 i_col = t234 ).
+        t231 = NEW zcl_lnt_position( i_row = t232 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t235 right = t270 op = `+` ) ).
         DATA t272 TYPE REF TO zcl_lnt_position.
         CLEAR t272.
         DATA t273 TYPE f.
@@ -773,7 +676,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         DATA(t277) = VALUE f( ).
         DATA(t278) = VALUE int8( ).
         DATA(t279) = VALUE int8( ).
-        DATA(t280) = VALUE i( ).
         DATA(t281) = VALUE string( ).
         DATA(t283) = t81.
         t283 = t283 + 1.
@@ -781,10 +683,8 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t67->load( ).
-        CLEAR t281.
         READ TABLE t67->items INDEX t283 INTO t281.
-        t280 = strlen( t281 ).
-        t279 = t280.
+        t279 = strlen( t281 ).
         DATA(t285) = CONV int8( 1 ).
         t278 = t279 + t285.
         t277 = t278.
@@ -794,19 +694,15 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         t272 = NEW zcl_lnt_position( i_row = t273 i_col = t286 ).
         DATA t287 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t287.
-        DATA t290 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        t290 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t231 i_end = t272 i_text = t147 ).
-        t287 = t290.
+        t287 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t231 i_end = t272 i_text = t147 ).
         DATA(t296) = VALUE abap_bool( ).
         DATA(t297) = VALUE abap_bool( ).
         DATA(t298) = VALUE abap_bool( ).
         DATA t299 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t300 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t302 TYPE i.
         DATA(t304) = 1.
         t302 = t81 - t304.
-        t300 = t67->get( p0 = t302 ).
-        t299 = t300.
+        t299 = t67->get( p0 = t302 ).
         DATA t305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t305.
         DATA(t307) = VALUE abap_bool( ).
@@ -818,7 +714,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         t298 = t307.
         t297 = t298.
         IF t298 = abap_false.
-          DATA(t309) = VALUE abap_bool( ).
           DATA(t310) = VALUE i( ).
           DATA(t311) = VALUE string( ).
           DATA t313 TYPE i.
@@ -829,7 +724,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t311.
           READ TABLE t67->items INDEX t313 INTO t311.
           DATA(t316) = |*|.
           DATA(t317) = strlen( t311 ).
@@ -841,13 +735,10 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
               t310 = -1.
             ENDIF.
           ENDIF.
-          DATA(t318) = 0.
-          t309 = xsdbool( t310 = t318 ).
-          t297 = t309.
+          t297 = xsdbool( t310 = 0 ).
         ENDIF.
         t296 = t297.
         IF t297 = abap_false.
-          DATA(t319) = VALUE abap_bool( ).
           DATA(t320) = VALUE i( ).
           DATA(t321) = VALUE string( ).
           DATA t323 TYPE i.
@@ -858,7 +749,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t67->load( ).
-          CLEAR t321.
           READ TABLE t67->items INDEX t323 INTO t321.
           DATA(t326) = |"|.
           DATA(t327) = strlen( t321 ).
@@ -870,25 +760,16 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
               t320 = -1.
             ENDIF.
           ENDIF.
-          DATA(t328) = 0.
-          t319 = xsdbool( t320 >= t328 ).
-          t296 = t319.
+          t296 = xsdbool( t320 >= 0 ).
         ENDIF.
         IF t296 = abap_true.
           CLEAR t287.
         ENDIF.
         DATA t331 TYPE REF TO zcl_lnt_issue.
         CLEAR t331.
-        DATA(t334) = |A line should not contain only "." or ")."|.
         DATA(t335) = VALUE string( ).
         DATA t336 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t336.
-        DATA t337 TYPE string.
-        t337 = |line_only_punc|.
-        DATA t339 TYPE string.
-        t339 = |Line containing only punctuation|.
-        DATA t341 TYPE string.
-        t341 = |Detects lines containing only punctuation.|.
         DATA t343 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t343.
         DATA(t346) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -901,41 +782,34 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         DATA t349 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t349.
         DATA t353 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t354 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t354.
-        t353 = t354.
-        DATA(t356) = |Styleguide|.
+        CREATE OBJECT t353.
         t353->load( ).
-        APPEND t356 TO t353->items.
+        APPEND |Styleguide| TO t353->items.
         t353->save( ).
-        DATA(t358) = |Quickfix|.
         t353->load( ).
-        APPEND t358 TO t353->items.
+        APPEND |Quickfix| TO t353->items.
         t353->save( ).
-        DATA(t360) = |SingleFile|.
         t353->load( ).
-        APPEND t360 TO t353->items.
+        APPEND |SingleFile| TO t353->items.
         t353->save( ).
         t349 = t353.
         DATA t363 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t363.
-        DATA(t366) = |zcl_class=>method(\n).|.
         DATA(t367) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t367->has = abap_true.
-        t367->value = t366.
+        t367->value = |zcl_class=>method(\n).|.
         t363 = t367.
         DATA t369 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t369.
-        DATA(t372) = |zcl_class=>method( ).|.
         DATA(t373) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t373->has = abap_true.
-        t373->value = t372.
+        t373->value = |zcl_class=>method( ).|.
         t369 = t373.
         DATA t375 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t375.
         DATA t377 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t377.
-        t336 = NEW zcl_lnt_irule_metadata( i_key = t337 i_title = t339 i_short_description = t341 i_bad_example = t363 i_good_example = t369 i_extended_information = t343 i_tags = t349 i_pragma = t375 i_pseudo_comment = t377 ).
+        t336 = NEW zcl_lnt_irule_metadata( i_key = |line_only_punc| i_title = |Line containing only punctuation| i_short_description = |Detects lines containing only punctuation.| i_bad_example = t363 i_good_example = t369 i_extended_information = t343 i_tags = t349 i_pragma = t375 i_pseudo_comment = t377 ).
         CREATE OBJECT t336->zlnt_view_ownkeys_b0e8086400eb.
         t336->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t379 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -973,58 +847,47 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t336->zlnt_json_ownkeys_70e5fd461788.
         t336->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t386) = |key|.
         DATA t387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t387.
-        t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t386 p1 = t387 ).
-        DATA(t388) = |title|.
+        t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t387 ).
         DATA t389 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t389.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t388 p1 = t389 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t389 ).
         ENDIF.
-        DATA(t390) = |shortDescription|.
         DATA t391 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t391.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t390 p1 = t391 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t391 ).
         ENDIF.
-        DATA(t392) = |extendedInformation|.
         DATA t393 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t393.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t392 p1 = t393 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t393 ).
         ENDIF.
-        DATA(t394) = |tags|.
         DATA t395 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t395.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t394 p1 = t395 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t395 ).
         ENDIF.
-        DATA(t396) = |badExample|.
         DATA t397 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t397.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t396 p1 = t397 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t397 ).
         ENDIF.
-        DATA(t398) = |goodExample|.
         DATA t399 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t399.
         IF t336->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = t398 p1 = t399 ).
+          t336->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t399 ).
         ENDIF.
         t335 = t336->key.
-        DATA t400 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t400 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-        t331 = zcl_lnt_issue=>at_position( i_file = t1 i_start = t139 i_message_26cb = t334 i_key = t335 i_severity = t400 i_fix = t287 ).
+        t331 = zcl_lnt_issue=>at_position( i_file = t1 i_start = t139 i_message_26cb = |A line should not contain only "." or ")."| i_key = t335 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t287 ).
         t3->load( ).
         APPEND t331 TO t3->items.
         t3->save( ).
       ENDIF.
-      DATA t405 TYPE i.
       DATA(t407) = 1.
-      t405 = t81 + t407.
-      t81 = t405.
+      t81 = t81 + t407.
     ENDDO.
     result = t3.
 

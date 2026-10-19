@@ -17,9 +17,7 @@ CLASS zcl_lnt_normal IMPLEMENTATION.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d561_0fa14d6404b6.
     t3 = zcl_lnt_sr_combi_module=>sta( i_s = t4 ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     DATA t8 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d388_aaf1742db2dc.
     t8 = zcl_lnt_sr_combi_module=>sta( i_s = t9 ).
@@ -1394,9 +1392,7 @@ CLASS zcl_lnt_normal IMPLEMENTATION.
     t5->load( ).
     APPEND t692 TO t5->items.
     t5->save( ).
-    DATA t694 TYPE REF TO zif_lnt_structure_runnable.
-    t694 = zcl_lnt_sr_combi_module=>alt( i_first = t3 i_rest = t5 ).
-    result = t694.
+    result = zcl_lnt_sr_combi_module=>alt( i_first = t3 i_rest = t5 ).
 
   ENDMETHOD.
 

@@ -65,21 +65,13 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t15.
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t9 i_rest = t15 ).
-    t1 = t16.
-    DATA t20 TYPE REF TO zif_lnt_statement_runnable.
+    t1 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t9 i_rest = t15 ).
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t22 TYPE REF TO zcl_lnt_abap_release.
-    DATA t23 TYPE REF TO zcl_lnt_abap_release.
-    DATA t24 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t24 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t25) = |v740sp05|.
-    t23 = t24->get( p0 = t25 ).
-    t22 = t23.
+    t22 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v740sp05| ).
     IF t22 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t27 TYPE REF TO object.
@@ -208,9 +200,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
     ENDIF.
     DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t50.
-    DATA t51 TYPE REF TO zif_lnt_statement_runnable.
-    t51 = zcl_lnt_st_combi_module=>seq( i_first = t31 i_second = t40 i_rest = t50 ).
-    t29 = t51.
+    t29 = zcl_lnt_st_combi_module=>seq( i_first = t31 i_second = t40 i_rest = t50 ).
     IF t29 IS BOUND.
       DATA t55 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t56 TYPE REF TO object.
@@ -235,8 +225,7 @@ CLASS zcl_lnt_sql_path_for_entity IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t57 TYPE REF TO zcl_lnt_iver_options.
-    t20 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t21 i_first = t28 i_opts = t57 ).
-    result = t20.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t21 i_first = t28 i_opts = t57 ).
 
   ENDMETHOD.
 

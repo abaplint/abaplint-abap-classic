@@ -23,72 +23,44 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     ENDIF.
     zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t3 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc.
-    DATA(t4) = |importing|.
-    DATA(t5) = |importing|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc->set( p0 = |importing| p1 = |importing| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t7 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc.
-    DATA(t8) = |exporting|.
-    DATA(t9) = |exporting|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc->set( p0 = |exporting| p1 = |exporting| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t11 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc.
-    DATA(t12) = |changing|.
-    DATA(t13) = |changing|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc->set( p0 = |changing| p1 = |changing| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t15 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc.
-    DATA(t16) = |tables|.
-    DATA(t17) = |tables|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc->set( p0 = |tables| p1 = |tables| ).
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
     zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t20 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t20 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace.
-    DATA(t21) = |regular|.
-    DATA(t22) = |regular|.
-    t19 = t20->set( p0 = t21 p1 = t22 ).
+    t19 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace->set( p0 = |regular| p1 = |regular| ).
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t24 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace.
-    DATA(t25) = |remote|.
-    DATA(t26) = |remoteEnabled|.
-    t23 = t24->set( p0 = t25 p1 = t26 ).
+    t23 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace->set( p0 = |remote| p1 = |remoteEnabled| ).
     DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t28 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    t28 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace.
-    DATA(t29) = |update|.
-    DATA(t30) = |update|.
-    t27 = t28->set( p0 = t29 p1 = t30 ).
+    t27 = zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace->set( p0 = |update| p1 = |update| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

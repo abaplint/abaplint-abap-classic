@@ -16,48 +16,35 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t4 = t1->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
+    t3 = t1->find_direct_expression( i_type_9913 = t6 ).
     DATA t7 TYPE REF TO zcl_lnt_abstract_token.
     DATA t9 TYPE REF TO zcl_lnt_expression_node.
     DATA t11 TYPE REF TO zcl_lnt_expression_node.
     DATA t13 TYPE REF TO zcl_lnt_expression_node.
     t13 = t3.
     DATA t15 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t16) = xsdbool( t13 IS INITIAL ).
-    IF t16 = abap_true.
+    IF xsdbool( t13 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t19 TYPE REF TO zcl_lnt_expression_node.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       t20 = t13.
       DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
-      t19 = t20->find_direct_expression( i_type_9913 = t22 ).
-      t15 = t19.
+      t15 = t20->find_direct_expression( i_type_9913 = t22 ).
     ENDIF.
     t11 = t15.
     DATA t23 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t24) = xsdbool( t11 IS INITIAL ).
-    IF t24 = abap_true.
+    IF xsdbool( t11 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t27 TYPE REF TO zcl_lnt_expression_node.
       DATA t28 TYPE REF TO zcl_lnt_expression_node.
       t28 = t11.
       DATA(t30) = zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844.
-      t27 = t28->find_first_expression( i_type_9913 = t30 ).
-      t23 = t27.
+      t23 = t28->find_first_expression( i_type_9913 = t30 ).
     ENDIF.
     t9 = t23.
     DATA t31 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t32) = xsdbool( t9 IS INITIAL ).
-    IF t32 = abap_true.
+    IF xsdbool( t9 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t35 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t36 TYPE REF TO zcl_lnt_expression_node.
-      t36 = t9.
-      t35 = t36->get_first_token( ).
-      t31 = t35.
+      t31 = t9->get_first_token( ).
     ENDIF.
     t7 = t31.
     DATA t38 TYPE abap_bool.
@@ -65,26 +52,14 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     t39 = xsdbool( t7 IS BOUND ).
     t38 = t39.
     IF t39 = abap_true.
-      DATA t41 TYPE abap_bool.
-      DATA t42 TYPE i.
-      DATA t43 TYPE string.
-      DATA t47 TYPE string.
-      t47 = t7->str.
-      t43 = t47.
-      t42 = strlen( t43 ).
-      DATA(t50) = 30.
-      t41 = xsdbool( t42 > t50 ).
-      t38 = t41.
+      t38 = xsdbool( strlen( t7->str ) > 30 ).
     ENDIF.
     IF t38 = abap_true.
       DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t51 = t2->issues.
       DATA t53 TYPE REF TO zcl_lnt_issue.
-      DATA t55 TYPE REF TO zcl_lnt_abstract_token.
-      t55 = t7.
-      DATA(t57) = |Inline exception name longer than 30 characters|.
       DATA t58 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t53 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t55 i_message_26cb = t57 i_fix = t58 ).
+      t53 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t7 i_message_26cb = |Inline exception name longer than 30 characters| i_fix = t58 ).
       t51->load( ).
       APPEND t53 TO t51->items.
       t51->save( ).
@@ -117,15 +92,11 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t64 ?= t65.
       ENDIF.
       DATA t69 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t70 TYPE REF TO zcl_lnt_abstract_token.
-      t70 = t64->get_first_token( ).
-      t69 = t70.
+      t69 = t64->get_first_token( ).
       DATA(t72) = VALUE string( ).
       DATA t73 TYPE string.
       DATA t74 TYPE string.
-      DATA t77 TYPE string.
-      t77 = t69->str.
-      t74 = t77.
+      t74 = t69->str.
       DATA(t79) = strlen( t74 ).
       t73 = t74.
       IF t73 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -136,38 +107,25 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       t72 = t73.
       DATA t80 TYPE REF TO zcl_lnt_shape_59e28496.
       CLEAR t80.
-      DATA t81 TYPE REF TO zcl_lnt_shape_59e28496.
-      CLEAR t81.
       DATA t82 TYPE REF TO zcl_lnt_current_scope.
       t82 = t2->scope.
-      DATA t84 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t84.
       DATA(t87) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t87->has = abap_true.
       t87->value = t72.
-      t84 = t87.
-      t81 = t82->exists_object( i_name = t84 ).
-      t80 = t81.
-      DATA(t89) = VALUE abap_bool( ).
+      t80 = t82->exists_object( i_name = t87 ).
       DATA t90 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t90.
       DATA t91 TYPE REF TO zcl_lnt_shape_59e28496.
       t91 = t80.
       DATA t93 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t93.
-      DATA(t94) = xsdbool( t91 IS INITIAL ).
-      IF t94 = abap_true.
+      IF xsdbool( t91 IS INITIAL ) = abap_true.
         CLEAR t93.
       ELSE.
-        DATA t97 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t98 TYPE REF TO zcl_lnt_shape_59e28496.
-        t98 = t91.
-        t97 = t98->id.
-        t93 = t97.
+        t93 = t91->id.
       ENDIF.
       t90 = t93.
-      t89 = xsdbool( t90 IS BOUND ).
-      IF t89 = abap_true.
+      IF xsdbool( t90 IS BOUND ) = abap_true.
         DATA t100 TYPE REF TO zcl_lnt_current_scope.
         t100 = t2->scope.
         DATA t102 TYPE REF TO zcl_lnt_abstract_token.
@@ -175,31 +133,22 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t102 = t69.
         DATA t106 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t106.
-        DATA t109 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t110 TYPE REF TO zcl_lnt_shape_59e28496.
-        t110 = t80.
-        t109 = t110->id.
-        t106 = t109.
+        t106 = t80->id.
         DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t113.
-        DATA(t114) = |Object|.
         CLEAR t113.
         CREATE OBJECT t113.
         t113->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-        t113->sval = t114.
+        t113->sval = |Object|.
         DATA t115 TYPE string.
         t115 = t2->filename.
         DATA t117 TYPE REF TO zcl_lnt_ireference_extras.
         CLEAR t117.
         t100->add_reference( i_usage = t102 i_referencing = t106 i_type_9913 = t113 i_filename = t115 i_extra = t117 ).
       ELSE.
-        DATA(t118) = VALUE abap_bool( ).
-        DATA(t119) = VALUE abap_bool( ).
-        DATA t123 TYPE REF TO zcl_lnt_current_scope.
-        t123 = t2->scope.
         DATA t125 TYPE REF TO zcl_lnt_ddic.
         DATA t126 TYPE REF TO zif_lnt_registry.
-        t126 = t123->reg.
+        t126 = t2->scope->reg.
         t125 = NEW zcl_lnt_ddic( i_reg_f149 = t126 ).
         DATA t128 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t128.
@@ -208,7 +157,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t132->value = t72.
         t128 = t132.
         DATA(t134) = VALUE abap_bool( ).
-        DATA(t135) = VALUE abap_bool( ).
         DATA t136 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t136 = t128.
         DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -219,21 +167,16 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         ELSEIF t136->has = abap_false.
           t140 = abap_true.
         ENDIF.
-        t135 = t140.
-        IF t135 = abap_true.
+        IF t140 = abap_true.
           t134 = abap_true.
         ELSE.
-          DATA t143 TYPE abap_bool.
           DATA t144 TYPE REF TO zif_lnt_registry.
           t144 = t125->reg.
           DATA t146 TYPE string.
           t146 = t128->value.
-          t143 = t144->in_error_namespace( i_name = t146 ).
-          t134 = t143.
+          t134 = t144->in_error_namespace( i_name = t146 ).
         ENDIF.
-        t119 = t134.
-        t118 = xsdbool( t119 = abap_false ).
-        IF t118 = abap_true.
+        IF xsdbool( t134 = abap_false ) = abap_true.
           DATA t150 TYPE REF TO zcl_lnt_ireference_extras.
           CLEAR t150.
           DATA t151 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -244,10 +187,9 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t151 = t155.
           DATA t157 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t157.
-          DATA(t160) = |Void|.
           DATA(t161) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t161->has = abap_true.
-          t161->value = t160.
+          t161->value = |Void|.
           t157 = t161.
           DATA t163 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           CLEAR t163.
@@ -264,15 +206,13 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t150->zlnt_json_ownkeys_70e5fd461788.
           t150->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t167) = |ooName|.
           DATA t168 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t168.
-          t150->zlnt_json_ownkeys_70e5fd461788->put( p0 = t167 p1 = t168 ).
-          DATA(t169) = |ooType|.
+          t150->zlnt_json_ownkeys_70e5fd461788->put( p0 = |ooName| p1 = t168 ).
           DATA t170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t170.
           IF t150->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t150->zlnt_json_ownkeys_70e5fd461788->put( p0 = t169 p1 = t170 ).
+            t150->zlnt_json_ownkeys_70e5fd461788->put( p0 = |ooType| p1 = t170 ).
           ENDIF.
           DATA t171 TYPE REF TO zcl_lnt_current_scope.
           t171 = t2->scope.
@@ -283,17 +223,13 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           CLEAR t177.
           DATA t178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t178.
-          DATA(t179) = |Object (Void)|.
           CLEAR t178.
           CREATE OBJECT t178.
           t178->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-          t178->sval = t179.
+          t178->sval = |Object (Void)|.
           DATA t180 TYPE string.
           t180 = t2->filename.
-          DATA t182 TYPE REF TO zcl_lnt_ireference_extras.
-          CLEAR t182.
-          t182 = t150.
-          t171->add_reference( i_usage = t173 i_referencing = t177 i_type_9913 = t178 i_filename = t180 i_extra = t182 ).
+          t171->add_reference( i_usage = t173 i_referencing = t177 i_type_9913 = t178 i_filename = t180 i_extra = t150 ).
         ELSE.
           DATA t187 TYPE string.
           DATA(t188) = |CATCH, unknown class |.
@@ -310,9 +246,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t191->save( ).
         ENDIF.
       ENDIF.
-      DATA t198 TYPE abap_bool.
-      t198 = t59->has( p0 = t72 ).
-      IF t198 = abap_true.
+      IF t59->has( p0 = t72 ) = abap_true.
         DATA t202 TYPE string.
         DATA(t203) = |Duplicate class name in CATCH: |.
         DATA(t205) = strlen( t203 ).
@@ -333,78 +267,51 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       DATA t214 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
       t214 = t59->add( p0 = t72 ).
     ENDDO.
-    DATA(t217) = VALUE abap_bool( ).
     DATA t218 TYPE REF TO zcl_lnt_expression_node.
     DATA t219 TYPE REF TO zcl_lnt_expression_node.
     t219 = t3.
     DATA t221 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t222) = xsdbool( t219 IS INITIAL ).
-    IF t222 = abap_true.
+    IF xsdbool( t219 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t225 TYPE REF TO zcl_lnt_expression_node.
       DATA t226 TYPE REF TO zcl_lnt_expression_node.
       t226 = t219.
       DATA(t228) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
-      t225 = t226->find_direct_expression( i_type_9913 = t228 ).
-      t221 = t225.
+      t221 = t226->find_direct_expression( i_type_9913 = t228 ).
     ENDIF.
     t218 = t221.
-    t217 = xsdbool( t218 IS BOUND ).
-    IF t217 = abap_true.
+    IF xsdbool( t218 IS BOUND ) = abap_true.
       DATA t229 TYPE REF TO zcl_lnt_abstract_token.
       DATA t231 TYPE REF TO zcl_lnt_expression_node.
-      DATA t232 TYPE REF TO zcl_lnt_expression_node.
       DATA t233 TYPE REF TO zcl_lnt_expression_node.
       t233 = t3.
       DATA(t235) = zlnt_runtime_desc_78196487750d=>zlnt_member_d180_085bc4e4d844.
-      t232 = t233->find_first_expression( i_type_9913 = t235 ).
-      t231 = t232.
+      t231 = t233->find_first_expression( i_type_9913 = t235 ).
       DATA t236 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t237) = xsdbool( t231 IS INITIAL ).
-      IF t237 = abap_true.
+      IF xsdbool( t231 IS INITIAL ) = abap_true.
       ELSE.
-        DATA t240 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t241 TYPE REF TO zcl_lnt_expression_node.
-        t241 = t231.
-        t240 = t241->get_first_token( ).
-        t236 = t240.
+        t236 = t231->get_first_token( ).
       ENDIF.
       t229 = t236.
-      DATA t243 TYPE abap_bool.
-      t243 = xsdbool( t229 IS BOUND ).
-      IF t243 = abap_true.
+      IF xsdbool( t229 IS BOUND ) = abap_true.
         DATA t245 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t246 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        t246 = t59->values( ).
-        t245 = t246.
+        t245 = t59->values( ).
         DATA t248 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t250 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         t250 = t245.
         DATA t252 TYPE i.
-        DATA t253 TYPE i.
         t250->load( ).
-        t253 = lines( t250->items ).
-        t252 = t253.
+        t252 = lines( t250->items ).
         DATA t255 TYPE i.
         t255 = 0.
         DATA t257 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DO.
-          DATA t259 TYPE abap_bool.
-          t259 = xsdbool( t255 < t252 ).
-          IF t259 = abap_false.
+          IF xsdbool( t255 < t252 ) = abap_false.
             EXIT.
           ENDIF.
           DATA t262 TYPE string.
-          DATA t263 TYPE string.
-          DATA t264 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t264 = t250->get( p0 = t255 ).
-          t263 = t264->value.
-          t262 = t263.
-          DATA(t267) = VALUE abap_bool( ).
+          t262 = t250->get( p0 = t255 )->value.
           DATA t270 TYPE REF TO zcl_lnt_current_scope.
-          DATA t271 TYPE REF TO zcl_lnt_current_scope.
-          t271 = t2->scope.
-          t270 = t271.
+          t270 = t2->scope.
           DATA t273 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t273.
           DATA(t277) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -413,7 +320,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t273 = t277.
           DATA t279 TYPE REF TO zif_lnt_class_definition.
           CLEAR t279.
-          DATA(t280) = VALUE abap_bool( ).
           DATA t281 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t281 = t273.
           DATA t283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -424,76 +330,55 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           ELSEIF t281->has = abap_false.
             t285 = abap_true.
           ENDIF.
-          t280 = t285.
-          IF t280 = abap_true.
+          IF t285 = abap_true.
             CLEAR t279.
           ELSE.
             DATA t289 TYPE REF TO zif_lnt_class_definition.
             CLEAR t289.
             DATA t291 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-            DATA t292 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-            t292 = t270->current.
-            t291 = t292.
+            t291 = t270->current.
             DATA t294 TYPE REF TO zif_lnt_class_definition.
             CLEAR t294.
-            DATA(t295) = xsdbool( t291 IS INITIAL ).
-            IF t295 = abap_true.
+            IF xsdbool( t291 IS INITIAL ) = abap_true.
               CLEAR t294.
             ELSE.
-              DATA t298 TYPE REF TO zif_lnt_class_definition.
               DATA t299 TYPE REF TO zcl_lnt_spaghetti_scope_node.
               t299 = t291.
               DATA t301 TYPE string.
               t301 = t273->value.
-              t298 = t299->find_class_definition( i_name = t301 ).
-              t294 = t298.
+              t294 = t299->find_class_definition( i_name = t301 ).
             ENDIF.
             t289 = t294.
             DATA t303 TYPE REF TO zif_lnt_class_definition.
             CLEAR t303.
-            DATA t304 TYPE abap_bool.
-            t304 = xsdbool( t289 IS BOUND ).
-            IF t304 = abap_true.
+            IF xsdbool( t289 IS BOUND ) = abap_true.
               t303 = t289.
             ELSE.
               DATA t312 TYPE REF TO zcl_lnt_class.
               CLEAR t312.
               DATA t313 TYPE REF TO zcl_lnt_class.
               CLEAR t313.
-              DATA t314 TYPE REF TO zif_lnt_object.
-              CLEAR t314.
               DATA t315 TYPE REF TO zif_lnt_registry.
               t315 = t270->reg.
               DATA t317 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t317.
-              DATA(t319) = |CLAS|.
               DATA(t320) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t320->has = abap_true.
-              t320->value = t319.
+              t320->value = |CLAS|.
               t317 = t320.
-              DATA t322 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t322.
               DATA t324 TYPE string.
               t324 = t273->value.
               DATA(t326) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t326->has = abap_true.
               t326->value = t324.
-              t322 = t326.
-              t314 = t315->get_object( i_type_9913 = t317 i_name = t322 ).
               DATA t328 TYPE REF TO object.
-              t328 = t314.
+              t328 = t315->get_object( i_type_9913 = t317 i_name = t326 ).
               t313 ?= t328.
               t312 = t313.
               DATA t329 TYPE REF TO zif_lnt_class_definition.
               CLEAR t329.
-              DATA t330 TYPE abap_bool.
-              t330 = xsdbool( t312 IS BOUND ).
-              IF t330 = abap_true.
-                DATA t332 TYPE REF TO zif_lnt_class_definition.
-                DATA t333 TYPE REF TO zcl_lnt_class.
-                t333 = t312.
-                t332 = t333->gt_dfn_ins_src_obj_cls_ts_clss( ).
-                t329 = t332.
+              IF xsdbool( t312 IS BOUND ) = abap_true.
+                t329 = t312->gt_dfn_ins_src_obj_cls_ts_clss( ).
               ELSE.
                 CLEAR t329.
               ENDIF.
@@ -503,23 +388,19 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           ENDIF.
           DATA t336 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t336.
-          t267 = xsdbool( t279 IS INITIAL ).
-          IF t267 = abap_true.
+          IF xsdbool( t279 IS INITIAL ) = abap_true.
             DATA(t343) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t343->has = abap_true.
             t343->value = t262.
             t257 = t343.
             EXIT.
           ENDIF.
-          DATA t345 TYPE i.
           DATA(t347) = 1.
-          t345 = t255 + t347.
-          t255 = t345.
+          t255 = t255 + t347.
         ENDDO.
         t248 = t257.
         DATA t349 TYPE REF TO zif_lnt_class_definition.
         DATA t350 TYPE REF TO zif_lnt_class_definition.
-        DATA(t351) = VALUE abap_bool( ).
         DATA t352 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t352 = t248.
         DATA t354 TYPE REF TO zif_lnt_class_definition.
@@ -529,31 +410,21 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         ELSEIF t352->has = abap_false.
           t356 = abap_true.
         ENDIF.
-        t351 = t356.
-        IF t351 = abap_true.
-          DATA t358 TYPE REF TO zif_lnt_class_definition.
-          t358 = me->find_common_superclass( i_class_names = t245 i_input_967e = t2 ).
-          t350 = t358.
+        IF t356 = abap_true.
+          t350 = me->find_common_superclass( i_class_names = t245 i_input_967e = t2 ).
         ELSE.
           CLEAR t350.
         ENDIF.
         t349 = t350.
         DATA t363 TYPE REF TO zif_lnt_union_265b2b50.
-        DATA t364 TYPE abap_bool.
-        t364 = xsdbool( t349 IS BOUND ).
-        IF t364 = abap_true.
-          DATA t366 TYPE REF TO zcl_lnt_object_reference_type.
+        IF xsdbool( t349 IS BOUND ) = abap_true.
           DATA t367 TYPE REF TO zcl_lnt_fi_identifier.
           DATA t368 TYPE REF TO zif_lnt_class_definition.
           t368 = t349.
           t367 ?= t368.
           DATA t370 TYPE REF TO zcl_lnt_abstract_type_data.
-          t366 = NEW zcl_lnt_object_reference_type( i_id = t367 i_extra = t370 ).
-          t363 = t366.
+          t363 = NEW zcl_lnt_object_reference_type( i_id = t367 i_extra = t370 ).
         ELSE.
-          DATA t371 TYPE REF TO zcl_lnt_void_type.
-          DATA t372 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t374) = VALUE string( ).
           DATA t375 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t375 = t248.
           DATA(t377) = VALUE string( ).
@@ -564,68 +435,44 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t378 = abap_true.
-            DATA t380 TYPE string.
-            t380 = t375->value.
-            t377 = t380.
+            t377 = t375->value.
           ELSE.
-            DATA t382 TYPE string.
-            DATA(t384) = | |.
             DATA(t385) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t385->has = abap_true.
-            t385->value = t384.
-            t382 = t245->join( p0 = t385 ).
-            t377 = t382.
+            t385->value = | |.
+            t377 = t245->join( p0 = t385 ).
           ENDIF.
-          t374 = t377.
           DATA(t386) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t386->has = abap_true.
-          t386->value = t374.
-          t372 = t386.
+          t386->value = t377.
           DATA t388 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t371 = zcl_lnt_void_type=>get_db65( i_voided = t372 i_qualified_name = t388 ).
-          t363 = t371.
+          t363 = zcl_lnt_void_type=>get_db65( i_voided = t386 i_qualified_name = t388 ).
         ENDIF.
         DATA t389 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t390 TYPE REF TO zcl_lnt_typed_identifier.
         DATA t391 TYPE REF TO zcl_lnt_abstract_token.
         t391 = t229.
         DATA t393 TYPE string.
         t393 = t2->filename.
         DATA t395 TYPE REF TO zif_lnt_union_ea265422.
         t395 ?= t363.
-        DATA t397 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t400 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t401 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t401.
-        t400 = t401.
-        DATA(t403) = |inline|.
+        CREATE OBJECT t400.
         t400->load( ).
-        APPEND t403 TO t400->items.
+        APPEND |inline| TO t400->items.
         t400->save( ).
-        t397 = t400.
         DATA t406 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t390 = NEW zcl_lnt_typed_identifier( i_token = t391 i_filename = t393 i_type_9913 = t395 i_meta = t397 i_value = t406 ).
-        t389 = t390.
+        t389 = NEW zcl_lnt_typed_identifier( i_token = t391 i_filename = t393 i_type_9913 = t395 i_meta = t400 i_value = t406 ).
         DATA t408 TYPE REF TO zcl_lnt_current_scope.
         t408 = t2->scope.
         DATA t410 TYPE REF TO zcl_lnt_typed_identifier.
         t410 = t389.
-        DATA(t415) = VALUE abap_bool( ).
         DATA t418 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t415 = xsdbool( t410 IS INITIAL ).
-        IF t415 = abap_true.
+        IF xsdbool( t410 IS INITIAL ) = abap_true.
         ELSE.
-          DATA(t423) = VALUE string( ).
           DATA t424 TYPE REF TO zcl_lnt_fi_identifier.
           t424 = t410.
-          DATA(t427) = VALUE string( ).
           DATA t428 TYPE string.
-          DATA t431 TYPE REF TO zcl_lnt_abstract_token.
-          t431 = t424->token.
-          DATA t433 TYPE string.
-          t433 = t431->str.
-          t428 = t433.
-          DATA(t435) = VALUE abap_bool( ).
+          t428 = t424->token->str.
           DATA(t436) = VALUE string( ).
           DATA(t437) = t428.
           DATA(t438) = 0.
@@ -638,17 +485,13 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t438 > t440 OR t439 <= 0.
-            CLEAR t436.
           ELSE.
             IF t439 > t440 - t438.
               t439 = t440 - t438.
             ENDIF.
             t436 = t437+t438(t439).
           ENDIF.
-          DATA(t441) = |!|.
-          t435 = xsdbool( t436 = t441 ).
-          IF t435 = abap_true.
-            DATA(t442) = VALUE string( ).
+          IF xsdbool( t436 = |!| ) = abap_true.
             DATA t443 TYPE string.
             t443 = t428.
             DATA(t445) = VALUE string( ).
@@ -663,49 +506,34 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t447 > t451 OR t448 <= 0.
-              CLEAR t445.
             ELSE.
               IF t448 > t451 - t447.
                 t448 = t451 - t447.
               ENDIF.
               t445 = t443+t447(t448).
             ENDIF.
-            t442 = t445.
-            t428 = t442.
+            t428 = t445.
           ENDIF.
-          t427 = t428.
-          t423 = t427.
-          DATA t453 TYPE REF TO zcl_lnt_typed_identifier.
-          t453 = t410.
-          t408->add_named_identifier( i_name = t423 i_identifier = t453 ).
+          t408->add_named_identifier( i_name = t428 i_identifier = t410 ).
         ENDIF.
         DATA t455 TYPE REF TO zcl_lnt_current_scope.
         t455 = t2->scope.
         DATA t457 TYPE REF TO zcl_lnt_abstract_token.
         t457 = t229.
         DATA t463 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA(t464) = |Write To|.
         CREATE OBJECT t463.
         t463->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-        t463->sval = t464.
+        t463->sval = |Write To|.
         DATA t465 TYPE string.
         t465 = t2->filename.
         DATA t467 TYPE REF TO zcl_lnt_ireference_extras.
         t455->add_reference( i_usage = t457 i_referencing = t389 i_type_9913 = t463 i_filename = t465 i_extra = t467 ).
       ENDIF.
     ELSE.
-      DATA t468 TYPE abap_bool.
-      t468 = xsdbool( t3 IS BOUND ).
-      IF t468 = abap_true.
+      IF xsdbool( t3 IS BOUND ) = abap_true.
         DATA t470 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t471 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t472 TYPE REF TO zcl_lnt_expression_node.
-        t472 = t3.
-        t471 = zcl_lnt_sy_target=>run_syntax( i_node = t472 i_input_967e = t2 ).
-        t470 = t471.
-        DATA t475 TYPE abap_bool.
-        t475 = xsdbool( t470 IS BOUND AND t470 IS INSTANCE OF zcl_lnt_object_reference_type ).
-        IF t475 = abap_true.
+        t470 = zcl_lnt_sy_target=>run_syntax( i_node = t3 i_input_967e = t2 ).
+        IF xsdbool( t470 IS BOUND AND t470 IS INSTANCE OF zcl_lnt_object_reference_type ) = abap_true.
           DATA t477 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA(t479) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
           t477 = t1->find_direct_expressions( i_type_9913 = t479 ).
@@ -732,15 +560,11 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
               t480 ?= t481.
             ENDIF.
             DATA t485 TYPE REF TO zcl_lnt_abstract_token.
-            DATA t486 TYPE REF TO zcl_lnt_abstract_token.
-            t486 = t480->get_first_token( ).
-            t485 = t486.
+            t485 = t480->get_first_token( ).
             DATA(t488) = VALUE string( ).
             DATA t489 TYPE string.
             DATA t490 TYPE string.
-            DATA t493 TYPE string.
-            t493 = t485->str.
-            t490 = t493.
+            t490 = t485->str.
             DATA(t495) = strlen( t490 ).
             t489 = t490.
             IF t489 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -751,50 +575,31 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             t488 = t489.
             DATA t496 TYPE REF TO zcl_lnt_shape_59e28496.
             CLEAR t496.
-            DATA t497 TYPE REF TO zcl_lnt_shape_59e28496.
-            CLEAR t497.
             DATA t498 TYPE REF TO zcl_lnt_current_scope.
             t498 = t2->scope.
-            DATA t500 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t500.
             DATA(t503) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t503->has = abap_true.
             t503->value = t488.
-            t500 = t503.
-            t497 = t498->exists_object( i_name = t500 ).
-            t496 = t497.
-            DATA(t505) = VALUE abap_bool( ).
+            t496 = t498->exists_object( i_name = t503 ).
             DATA t506 TYPE REF TO zcl_lnt_fi_identifier.
             CLEAR t506.
             DATA t507 TYPE REF TO zcl_lnt_shape_59e28496.
             t507 = t496.
             DATA t509 TYPE REF TO zcl_lnt_fi_identifier.
             CLEAR t509.
-            DATA(t510) = xsdbool( t507 IS INITIAL ).
-            IF t510 = abap_true.
+            IF xsdbool( t507 IS INITIAL ) = abap_true.
               CLEAR t509.
             ELSE.
-              DATA t513 TYPE REF TO zcl_lnt_fi_identifier.
-              DATA t514 TYPE REF TO zcl_lnt_shape_59e28496.
-              t514 = t507.
-              t513 = t514->id.
-              t509 = t513.
+              t509 = t507->id.
             ENDIF.
             t506 = t509.
-            t505 = xsdbool( t506 IS BOUND ).
-            IF t505 = abap_true.
+            IF xsdbool( t506 IS BOUND ) = abap_true.
               DATA t517 TYPE REF TO zcl_lnt_object_reference_type.
               DATA t518 TYPE REF TO zcl_lnt_fi_identifier.
-              DATA t519 TYPE REF TO zcl_lnt_fi_identifier.
-              DATA t520 TYPE REF TO zcl_lnt_shape_59e28496.
-              t520 = t496.
-              t519 = t520->id.
-              t518 = t519.
+              t518 = t496->id.
               DATA t522 TYPE REF TO zcl_lnt_abstract_type_data.
               CLEAR t522.
               t517 = NEW zcl_lnt_object_reference_type( i_id = t518 i_extra = t522 ).
-              DATA t523 TYPE abap_bool.
-              DATA t524 TYPE abap_bool.
               DATA t525 TYPE REF TO zcl_lnt_type_utils.
               DATA t526 TYPE REF TO zcl_lnt_current_scope.
               t526 = t2->scope.
@@ -803,9 +608,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
               t529 ?= t470.
               DATA t531 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t531.
-              t524 = t525->is_assignable_strict( i_source_75cf = t517 i_target_5f8a = t529 i_node = t531 ).
-              t523 = xsdbool( t524 = abap_false ).
-              IF t523 = abap_true.
+              IF xsdbool( t525->is_assignable_strict( i_source_75cf = t517 i_target_5f8a = t529 i_node = t531 ) = abap_false ) = abap_true.
                 DATA t534 TYPE string.
                 DATA(t535) = |CATCH target not compatible with |.
                 DATA(t537) = strlen( t535 ).
@@ -832,9 +635,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     DATA(t1) = i_class_names.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA(t6) = VALUE string( ).
     t1->dense( ).
     DATA(t7) = VALUE i( ).
@@ -859,10 +660,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       CLEAR t10.
       DATA t12 TYPE REF TO zcl_lnt_current_scope.
       CLEAR t12.
-      DATA t13 TYPE REF TO zcl_lnt_current_scope.
-      CLEAR t13.
-      t13 = t2->scope.
-      t12 = t13.
+      t12 = t2->scope.
       DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t15.
       DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -871,7 +669,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       t15 = t19.
       DATA t21 TYPE REF TO zif_lnt_class_definition.
       CLEAR t21.
-      DATA(t22) = VALUE abap_bool( ).
       DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t23.
       t23 = t15.
@@ -884,40 +681,30 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       ELSEIF t23->has = abap_false.
         t27 = abap_true.
       ENDIF.
-      t22 = t27.
-      IF t22 = abap_true.
+      IF t27 = abap_true.
         CLEAR t21.
       ELSE.
         DATA t31 TYPE REF TO zif_lnt_class_definition.
         CLEAR t31.
         DATA t33 TYPE REF TO zcl_lnt_spaghetti_scope_node.
         CLEAR t33.
-        DATA t34 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t34.
-        t34 = t12->current.
-        t33 = t34.
+        t33 = t12->current.
         DATA t36 TYPE REF TO zif_lnt_class_definition.
         CLEAR t36.
-        DATA(t37) = xsdbool( t33 IS INITIAL ).
-        IF t37 = abap_true.
+        IF xsdbool( t33 IS INITIAL ) = abap_true.
           CLEAR t36.
         ELSE.
-          DATA t40 TYPE REF TO zif_lnt_class_definition.
-          CLEAR t40.
           DATA t41 TYPE REF TO zcl_lnt_spaghetti_scope_node.
           CLEAR t41.
           t41 = t33.
           DATA(t43) = VALUE string( ).
           t43 = t15->value.
-          t40 = t41->find_class_definition( i_name = t43 ).
-          t36 = t40.
+          t36 = t41->find_class_definition( i_name = t43 ).
         ENDIF.
         t31 = t36.
         DATA t45 TYPE REF TO zif_lnt_class_definition.
         CLEAR t45.
-        DATA(t46) = VALUE abap_bool( ).
-        t46 = xsdbool( t31 IS BOUND ).
-        IF t46 = abap_true.
+        IF xsdbool( t31 IS BOUND ) = abap_true.
           t45 = t31.
         ELSE.
           DATA t54 TYPE REF TO zcl_lnt_class.
@@ -931,20 +718,16 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t57 = t12->reg.
           DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t59.
-          DATA(t61) = |CLAS|.
           DATA(t62) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t62->has = abap_true.
-          t62->value = t61.
+          t62->value = |CLAS|.
           t59 = t62.
-          DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t64.
           DATA(t66) = VALUE string( ).
           t66 = t15->value.
           DATA(t68) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t68->has = abap_true.
           t68->value = t66.
-          t64 = t68.
-          t56 = t57->get_object( i_type_9913 = t59 i_name = t64 ).
+          t56 = t57->get_object( i_type_9913 = t59 i_name = t68 ).
           DATA t70 TYPE REF TO object.
           CLEAR t70.
           t70 = t56.
@@ -952,16 +735,8 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t54 = t55.
           DATA t71 TYPE REF TO zif_lnt_class_definition.
           CLEAR t71.
-          DATA(t72) = VALUE abap_bool( ).
-          t72 = xsdbool( t54 IS BOUND ).
-          IF t72 = abap_true.
-            DATA t74 TYPE REF TO zif_lnt_class_definition.
-            CLEAR t74.
-            DATA t75 TYPE REF TO zcl_lnt_class.
-            CLEAR t75.
-            t75 = t54.
-            t74 = t75->gt_dfn_ins_src_obj_cls_ts_clss( ).
-            t71 = t74.
+          IF xsdbool( t54 IS BOUND ) = abap_true.
+            t71 = t54->gt_dfn_ins_src_obj_cls_ts_clss( ).
           ELSE.
             CLEAR t71.
           ENDIF.
@@ -979,14 +754,9 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t81 = xsdbool( t10 IS BOUND ).
         t80 = t81.
         IF t81 = abap_true.
-          DATA(t83) = VALUE abap_bool( ).
-          DATA(t84) = VALUE abap_bool( ).
           DATA(t86) = VALUE string( ).
           DATA(t87) = VALUE string( ).
-          DATA t88 TYPE REF TO zif_lnt_class_definition.
-          CLEAR t88.
-          t88 = t10.
-          t87 = t88->get_name( ).
+          t87 = t10->get_name( ).
           DATA(t90) = strlen( t87 ).
           t86 = t87.
           IF t86 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -994,9 +764,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           ELSE.
             t86 = zlnt_runtime_uppe_91169605024d=>full( t86 ).
           ENDIF.
-          t84 = t78->has( p0 = t86 ).
-          t83 = xsdbool( t84 = abap_false ).
-          t80 = t83.
+          t80 = xsdbool( t78->has( p0 = t86 ) = abap_false ).
         ENDIF.
         IF t80 = abap_false.
           EXIT.
@@ -1011,10 +779,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         CLEAR t95.
         DATA(t97) = VALUE string( ).
         DATA(t98) = VALUE string( ).
-        DATA t99 TYPE REF TO zif_lnt_class_definition.
-        CLEAR t99.
-        t99 = t10.
-        t98 = t99->get_name( ).
+        t98 = t10->get_name( ).
         DATA(t101) = strlen( t98 ).
         t97 = t98.
         IF t97 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1025,22 +790,12 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t95 = t78->add( p0 = t97 ).
         DATA t103 TYPE REF TO zcl_lnt_current_scope.
         CLEAR t103.
-        DATA t104 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t104.
-        t104 = t2->scope.
-        t103 = t104.
+        t103 = t2->scope.
         DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t106.
-        DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t107.
-        DATA t108 TYPE REF TO zif_lnt_class_definition.
-        CLEAR t108.
-        t108 = t10.
-        t107 = t108->get_super_class( ).
-        t106 = t107.
+        t106 = t10->get_super_class( ).
         DATA t110 TYPE REF TO zif_lnt_class_definition.
         CLEAR t110.
-        DATA(t111) = VALUE abap_bool( ).
         DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t112.
         t112 = t106.
@@ -1053,40 +808,30 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         ELSEIF t112->has = abap_false.
           t116 = abap_true.
         ENDIF.
-        t111 = t116.
-        IF t111 = abap_true.
+        IF t116 = abap_true.
           CLEAR t110.
         ELSE.
           DATA t120 TYPE REF TO zif_lnt_class_definition.
           CLEAR t120.
           DATA t122 TYPE REF TO zcl_lnt_spaghetti_scope_node.
           CLEAR t122.
-          DATA t123 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-          CLEAR t123.
-          t123 = t103->current.
-          t122 = t123.
+          t122 = t103->current.
           DATA t125 TYPE REF TO zif_lnt_class_definition.
           CLEAR t125.
-          DATA(t126) = xsdbool( t122 IS INITIAL ).
-          IF t126 = abap_true.
+          IF xsdbool( t122 IS INITIAL ) = abap_true.
             CLEAR t125.
           ELSE.
-            DATA t129 TYPE REF TO zif_lnt_class_definition.
-            CLEAR t129.
             DATA t130 TYPE REF TO zcl_lnt_spaghetti_scope_node.
             CLEAR t130.
             t130 = t122.
             DATA(t132) = VALUE string( ).
             t132 = t106->value.
-            t129 = t130->find_class_definition( i_name = t132 ).
-            t125 = t129.
+            t125 = t130->find_class_definition( i_name = t132 ).
           ENDIF.
           t120 = t125.
           DATA t134 TYPE REF TO zif_lnt_class_definition.
           CLEAR t134.
-          DATA(t135) = VALUE abap_bool( ).
-          t135 = xsdbool( t120 IS BOUND ).
-          IF t135 = abap_true.
+          IF xsdbool( t120 IS BOUND ) = abap_true.
             t134 = t120.
           ELSE.
             DATA t143 TYPE REF TO zcl_lnt_class.
@@ -1100,20 +845,16 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             t146 = t103->reg.
             DATA t148 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t148.
-            DATA(t150) = |CLAS|.
             DATA(t151) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t151->has = abap_true.
-            t151->value = t150.
+            t151->value = |CLAS|.
             t148 = t151.
-            DATA t153 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t153.
             DATA(t155) = VALUE string( ).
             t155 = t106->value.
             DATA(t157) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t157->has = abap_true.
             t157->value = t155.
-            t153 = t157.
-            t145 = t146->get_object( i_type_9913 = t148 i_name = t153 ).
+            t145 = t146->get_object( i_type_9913 = t148 i_name = t157 ).
             DATA t159 TYPE REF TO object.
             CLEAR t159.
             t159 = t145.
@@ -1121,16 +862,8 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             t143 = t144.
             DATA t160 TYPE REF TO zif_lnt_class_definition.
             CLEAR t160.
-            DATA(t161) = VALUE abap_bool( ).
-            t161 = xsdbool( t143 IS BOUND ).
-            IF t161 = abap_true.
-              DATA t163 TYPE REF TO zif_lnt_class_definition.
-              CLEAR t163.
-              DATA t164 TYPE REF TO zcl_lnt_class.
-              CLEAR t164.
-              t164 = t143.
-              t163 = t164->gt_dfn_ins_src_obj_cls_ts_clss( ).
-              t160 = t163.
+            IF xsdbool( t143 IS BOUND ) = abap_true.
+              t160 = t143->gt_dfn_ins_src_obj_cls_ts_clss( ).
             ELSE.
               CLEAR t160.
             ENDIF.
@@ -1146,9 +879,8 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     ENDDO.
     DATA t170 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t171 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t173) = 0.
     DATA t174 TYPE REF TO object.
-    t174 = t3->get( p0 = t173 ).
+    t174 = t3->get( p0 = 0 ).
     DATA t175 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t174 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
       t175 ?= t174.
@@ -1188,23 +920,18 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
     ENDIF.
     t170 = t171.
     DATA t180 TYPE REF TO zif_lnt_class_definition.
-    DATA(t181) = xsdbool( t170 IS INITIAL ).
-    IF t181 = abap_true.
+    IF xsdbool( t170 IS INITIAL ) = abap_true.
     ELSE.
       DATA t185 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t185 = t170.
       DATA(t188) = VALUE i( ).
-      DATA(t189) = VALUE i( ).
       t185->load( ).
-      t189 = lines( t185->items ).
-      t188 = t189.
+      t188 = lines( t185->items ).
       DATA(t191) = VALUE i( ).
       t191 = 0.
       DATA t193 TYPE REF TO zif_lnt_class_definition.
       DO.
-        DATA(t195) = VALUE abap_bool( ).
-        t195 = xsdbool( t191 < t188 ).
-        IF t195 = abap_false.
+        IF xsdbool( t191 < t188 ) = abap_false.
           EXIT.
         ENDIF.
         DATA t198 TYPE REF TO zif_lnt_class_definition.
@@ -1227,23 +954,18 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t200 ?= t203.
         ENDIF.
         t198 = t200.
-        DATA(t206) = VALUE abap_bool( ).
         DATA t207 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t207.
         t207 = t3.
         DATA(t209) = VALUE i( ).
-        DATA(t210) = VALUE i( ).
         t207->load( ).
-        t210 = lines( t207->items ).
-        t209 = t210.
+        t209 = lines( t207->items ).
         DATA(t212) = VALUE i( ).
         t212 = 0.
         DATA(t214) = VALUE abap_bool( ).
         t214 = abap_true.
         DO.
-          DATA(t216) = VALUE abap_bool( ).
-          t216 = xsdbool( t212 < t209 ).
-          IF t216 = abap_false.
+          IF xsdbool( t212 < t209 ) = abap_false.
             EXIT.
           ENDIF.
           DATA t219 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1296,8 +1018,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             t221 ?= t224.
           ENDIF.
           t219 = t221.
-          DATA(t230) = VALUE abap_bool( ).
-          DATA(t231) = VALUE abap_bool( ).
           DATA(t232) = VALUE abap_bool( ).
           t232 = abap_false.
           DATA t235 TYPE REF TO zif_lnt_class_definition.
@@ -1325,7 +1045,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             ELSE.
               t235 ?= t236.
             ENDIF.
-            DATA(t240) = VALUE abap_bool( ).
             DATA(t241) = VALUE string( ).
             DATA(t242) = VALUE string( ).
             t242 = t235->get_name( ).
@@ -1346,32 +1065,24 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             ELSE.
               t245 = zlnt_runtime_uppe_91169605024d=>full( t245 ).
             ENDIF.
-            t240 = xsdbool( t241 = t245 ).
-            IF t240 = abap_true.
+            IF xsdbool( t241 = t245 ) = abap_true.
               t232 = abap_true.
               EXIT.
             ENDIF.
           ENDDO.
-          t231 = t232.
-          t230 = xsdbool( t231 = abap_false ).
-          IF t230 = abap_true.
+          IF xsdbool( t232 = abap_false ) = abap_true.
             t214 = abap_false.
             EXIT.
           ENDIF.
-          DATA(t252) = VALUE i( ).
           DATA(t254) = 1.
-          t252 = t212 + t254.
-          t212 = t252.
+          t212 = t212 + t254.
         ENDDO.
-        t206 = t214.
-        IF t206 = abap_true.
+        IF t214 = abap_true.
           t193 = t198.
           EXIT.
         ENDIF.
-        DATA(t260) = VALUE i( ).
         DATA(t262) = 1.
-        t260 = t191 + t262.
-        t191 = t260.
+        t191 = t191 + t262.
       ENDDO.
       t180 = t193.
     ENDIF.

@@ -22,7 +22,6 @@ CLASS zcl_lnt_ty_message IMPLEMENTATION.
     DATA(t3) = i_class_name.
     me->number = i_number.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `number`.
-    DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t6 = me->number.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -32,18 +31,15 @@ CLASS zcl_lnt_ty_message IMPLEMENTATION.
     ELSEIF t6->has = abap_false.
       t10 = abap_true.
     ENDIF.
-    t5 = t10.
-    IF t5 = abap_true.
-      DATA(t14) = ||.
+    IF t10 = abap_true.
       DATA(t15) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t15->has = abap_true.
-      t15->value = t14.
+      t15->value = ||.
       me->number = t15.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `number`.
     ENDIF.
     me->message_25cb = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `message`.
-    DATA(t18) = VALUE abap_bool( ).
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t19 = me->message_25cb.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -53,18 +49,15 @@ CLASS zcl_lnt_ty_message IMPLEMENTATION.
     ELSEIF t19->has = abap_false.
       t23 = abap_true.
     ENDIF.
-    t18 = t23.
-    IF t18 = abap_true.
-      DATA(t27) = ||.
+    IF t23 = abap_true.
       DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t28->has = abap_true.
-      t28->value = t27.
+      t28->value = ||.
       me->message_25cb = t28.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `message`.
     ENDIF.
     me->class_name = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `className`.
-    DATA(t31) = VALUE abap_bool( ).
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t32 = me->class_name.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -74,98 +67,70 @@ CLASS zcl_lnt_ty_message IMPLEMENTATION.
     ELSEIF t32->has = abap_false.
       t36 = abap_true.
     ENDIF.
-    t31 = t36.
-    IF t31 = abap_true.
-      DATA(t40) = ||.
+    IF t36 = abap_true.
       DATA(t41) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t41->has = abap_true.
-      t41->value = t40.
+      t41->value = ||.
       me->class_name = t41.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `className`.
     ENDIF.
   ENDMETHOD.
 
   METHOD get_message_class.
-    DATA t1 TYPE string.
-    t1 = me->class_name->value.
-    result = t1.
+    result = me->class_name->value.
 
   ENDMETHOD.
 
   METHOD get_number.
-    DATA t1 TYPE string.
-    t1 = me->number->value.
-    result = t1.
+    result = me->number->value.
 
   ENDMETHOD.
 
   METHOD get_message.
-    DATA t1 TYPE string.
-    t1 = me->message_25cb->value.
-    result = t1.
+    result = me->message_25cb->value.
 
   ENDMETHOD.
 
   METHOD get_placeholder_count.
-    DATA(t1) = VALUE i( ).
     DATA(t2) = VALUE i( ).
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t7 TYPE string.
     t7 = me->message_25cb->value.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t11 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t12) = |&&|.
-    DATA(t13) = |g|.
-    CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t12 flags = t13 checked = abap_true.
-    t9 = t11->match( t7 ).
-    t4 = t9.
+    CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&&| flags = |g| checked = abap_true.
+    t4 = t11->match( t7 ).
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t15 TYPE abap_bool.
-    t15 = xsdbool( t4 IS BOUND ).
-    IF t15 = abap_true.
+    IF xsdbool( t4 IS BOUND ) = abap_true.
       t14 = t4.
     ELSE.
-      DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t19.
-      t14 = t19.
+      CREATE OBJECT t14.
     ENDIF.
     t3 = t14.
     t3->load( ).
     t2 = lines( t3->items ).
-    t1 = t2.
     DATA(t20) = VALUE f( ).
     DATA(t21) = VALUE int8( ).
     DATA(t22) = VALUE int8( ).
-    DATA(t23) = VALUE i( ).
     DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t28 TYPE string.
     t28 = me->message_25cb->value.
-    DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t33) = |&|.
-    DATA(t34) = |g|.
-    CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t33 flags = t34 checked = abap_true.
-    t30 = t32->match( t28 ).
-    t25 = t30.
+    CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&| flags = |g| checked = abap_true.
+    t25 = t32->match( t28 ).
     DATA t35 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t36 TYPE abap_bool.
-    t36 = xsdbool( t25 IS BOUND ).
-    IF t36 = abap_true.
+    IF xsdbool( t25 IS BOUND ) = abap_true.
       t35 = t25.
     ELSE.
-      DATA t40 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t40.
-      t35 = t40.
+      CREATE OBJECT t35.
     ENDIF.
     t24 = t35.
     t24->load( ).
-    t23 = lines( t24->items ).
-    t22 = t23.
+    t22 = lines( t24->items ).
     DATA t41 TYPE int8.
     DATA t42 TYPE int8.
-    t42 = t1.
+    t42 = t2.
     DATA(t44) = CONV int8( 2 ).
     t41 = t42 * t44.
     t21 = t22 - t41.

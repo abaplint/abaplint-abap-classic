@@ -13,10 +13,7 @@ CLASS zcl_lnt_public DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_public IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |PUBLIC SECTION|.
-    t1 = zcl_lnt_st_combi_module=>str( i_s = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>str( i_s = |PUBLIC SECTION| ).
 
   ENDMETHOD.
 

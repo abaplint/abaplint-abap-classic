@@ -22,32 +22,20 @@ CLASS zcl_lnt_severity_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_severity_module=>severity_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_severity_module=>zlnt_builtin_init_20227f255c22 = abap_false.
       zcl_lnt_severity_module=>zlnt_builtin_init_4dbbf2fa0f24( ).
     ENDIF.
-    t3 = zcl_lnt_severity_module=>severity_namespace.
-    DATA(t4) = |Error|.
-    DATA(t5) = |Error|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_severity_module=>severity_namespace->set( p0 = |Error| p1 = |Error| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_severity_module=>zlnt_builtin_init_20227f255c22 = abap_false.
       zcl_lnt_severity_module=>zlnt_builtin_init_4dbbf2fa0f24( ).
     ENDIF.
-    t7 = zcl_lnt_severity_module=>severity_namespace.
-    DATA(t8) = |Warning|.
-    DATA(t9) = |Warning|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_severity_module=>severity_namespace->set( p0 = |Warning| p1 = |Warning| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_severity_module=>zlnt_builtin_init_20227f255c22 = abap_false.
       zcl_lnt_severity_module=>zlnt_builtin_init_4dbbf2fa0f24( ).
     ENDIF.
-    t11 = zcl_lnt_severity_module=>severity_namespace.
-    DATA(t12) = |Info|.
-    DATA(t13) = |Info|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_severity_module=>severity_namespace->set( p0 = |Info| p1 = |Info| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

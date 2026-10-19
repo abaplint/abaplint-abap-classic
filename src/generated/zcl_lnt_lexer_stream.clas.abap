@@ -32,36 +32,26 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `offset`.
     me->raw = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `raw`.
-    DATA(t4) = CONV f( 0 ).
-    me->row = t4.
+    me->row = CONV f( 0 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `row`.
-    DATA(t5) = CONV f( 0 ).
-    me->col = t5.
+    me->col = CONV f( 0 ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
   ENDMETHOD.
 
   METHOD advance.
-    DATA(t1) = VALUE abap_bool( ).
     DATA(t2) = VALUE i( ).
     DATA(t3) = VALUE f( ).
-    DATA t4 TYPE abap_bool.
     DATA(t5) = CONV i( me->offset ).
-    DATA(t6) = 0.
-    t4 = xsdbool( t5 < t6 ).
-    IF t4 = abap_true.
+    IF xsdbool( t5 < 0 ) = abap_true.
       DATA t7 TYPE f.
       DATA(t8) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
       t7 = t8.
       t3 = t7.
     ELSE.
       DATA(t9) = VALUE f( ).
-      DATA t10 TYPE abap_bool.
       DATA(t11) = CONV i( me->offset ).
-      DATA t12 TYPE i.
       DATA(t13) = CONV string( me->raw ).
-      t12 = strlen( t13 ).
-      t10 = xsdbool( t11 >= t12 ).
-      IF t10 = abap_true.
+      IF xsdbool( t11 >= strlen( t13 ) ) = abap_true.
         DATA t15 TYPE f.
         DATA(t16) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
         t15 = t16.
@@ -101,45 +91,31 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA(t28) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
-    t1 = xsdbool( t2 = t28 ).
-    IF t1 = abap_true.
-      DATA(t29) = CONV f( 1 ).
-      me->col = t29.
+    IF xsdbool( t2 = t28 ) = abap_true.
+      me->col = CONV f( 1 ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
-      DATA t30 TYPE f.
       DATA(t31) = CONV f( me->row ).
       DATA(t32) = CONV f( 1 ).
-      t30 = t31 + t32.
-      me->row = t30.
+      me->row = t31 + t32.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `row`.
     ENDIF.
-    DATA t33 TYPE abap_bool.
     DATA(t34) = CONV i( me->offset ).
-    DATA t35 TYPE i.
     DATA(t36) = CONV string( me->raw ).
-    t35 = strlen( t36 ).
-    t33 = xsdbool( t34 = t35 ).
-    IF t33 = abap_true.
-      DATA t38 TYPE f.
+    IF xsdbool( t34 = strlen( t36 ) ) = abap_true.
       DATA(t39) = CONV f( me->col ).
       DATA(t40) = CONV f( 1 ).
-      t38 = t39 - t40.
-      me->col = t38.
+      me->col = t39 - t40.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
       result = abap_false.
       RETURN.
     ENDIF.
-    DATA t42 TYPE f.
     DATA(t43) = CONV f( me->col ).
     DATA(t44) = CONV f( 1 ).
-    t42 = t43 + t44.
-    me->col = t42.
+    me->col = t43 + t44.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
-    DATA t45 TYPE i.
     DATA(t46) = CONV i( me->offset ).
     DATA(t47) = 1.
-    t45 = t46 + t47.
-    me->offset = t45.
+    me->offset = t46 + t47.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `offset`.
     result = abap_true.
 
@@ -159,15 +135,10 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
 
   METHOD prev_char.
     DATA t1 TYPE i.
-    DATA t2 TYPE i.
     DATA(t3) = CONV i( me->offset ).
     DATA(t4) = 1.
-    t2 = t3 - t4.
-    t1 = t2.
-    DATA t5 TYPE abap_bool.
-    DATA(t7) = 0.
-    t5 = xsdbool( t1 < t7 ).
-    IF t5 = abap_true.
+    t1 = t3 - t4.
+    IF xsdbool( t1 < 0 ) = abap_true.
       DATA t8 TYPE f.
       DATA(t9) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
       t8 = t9.
@@ -207,15 +178,10 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
 
   METHOD prev_prev_char.
     DATA t1 TYPE i.
-    DATA t2 TYPE i.
     DATA(t3) = CONV i( me->offset ).
     DATA(t4) = 2.
-    t2 = t3 - t4.
-    t1 = t2.
-    DATA t5 TYPE abap_bool.
-    DATA(t7) = 0.
-    t5 = xsdbool( t1 < t7 ).
-    IF t5 = abap_true.
+    t1 = t3 - t4.
+    IF xsdbool( t1 < 0 ) = abap_true.
       DATA t8 TYPE f.
       DATA(t9) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
       t8 = t9.
@@ -254,24 +220,17 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD current_char.
-    DATA t1 TYPE abap_bool.
     DATA(t2) = CONV i( me->offset ).
-    DATA(t3) = 0.
-    t1 = xsdbool( t2 < t3 ).
-    IF t1 = abap_true.
+    IF xsdbool( t2 < 0 ) = abap_true.
       DATA t4 TYPE f.
       DATA(t5) = CONV i( zcl_lnt_lexer_stream_module=>nl ).
       t4 = t5.
       result = t4.
       RETURN.
     ELSE.
-      DATA t6 TYPE abap_bool.
       DATA(t7) = CONV i( me->offset ).
-      DATA t8 TYPE i.
       DATA(t9) = CONV string( me->raw ).
-      t8 = strlen( t9 ).
-      t6 = xsdbool( t7 >= t8 ).
-      IF t6 = abap_true.
+      IF xsdbool( t7 >= strlen( t9 ) ) = abap_true.
         DATA t11 TYPE f.
         DATA(t12) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
         t11 = t12.
@@ -313,19 +272,15 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
 
   METHOD next_char.
     DATA t1 TYPE int8.
-    DATA t2 TYPE int8.
     DATA t3 TYPE int8.
     DATA(t4) = CONV i( me->offset ).
     t3 = t4.
     DATA(t5) = CONV int8( 1 ).
-    t2 = t3 + t5.
-    t1 = t2.
-    DATA t6 TYPE abap_bool.
+    t1 = t3 + t5.
     DATA t8 TYPE int8.
     DATA(t10) = CONV string( me->raw ).
     t8 = strlen( t10 ).
-    t6 = xsdbool( t1 >= t8 ).
-    IF t6 = abap_true.
+    IF xsdbool( t1 >= t8 ) = abap_true.
       DATA t12 TYPE f.
       DATA(t13) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
       t12 = t13.
@@ -367,19 +322,15 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
 
   METHOD next_next_char.
     DATA t1 TYPE int8.
-    DATA t2 TYPE int8.
     DATA t3 TYPE int8.
     DATA(t4) = CONV i( me->offset ).
     t3 = t4.
     DATA(t5) = CONV int8( 2 ).
-    t2 = t3 + t5.
-    t1 = t2.
-    DATA t6 TYPE abap_bool.
+    t1 = t3 + t5.
     DATA t8 TYPE int8.
     DATA(t10) = CONV string( me->raw ).
     t8 = strlen( t10 ).
-    t6 = xsdbool( t1 >= t8 ).
-    IF t6 = abap_true.
+    IF xsdbool( t1 >= t8 ) = abap_true.
       DATA t12 TYPE f.
       DATA(t13) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
       t12 = t13.
@@ -425,16 +376,13 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t1) = i_o.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
-    DATA(t5) = CONV f( 0 ).
-    t3 = xsdbool( t1 < t5 ).
+    t3 = xsdbool( t1 < CONV f( 0 ) ).
     t2 = t3.
     IF t3 = abap_false.
-      DATA t6 TYPE abap_bool.
       DATA t8 TYPE f.
       DATA(t10) = CONV string( me->raw ).
       t8 = strlen( t10 ).
-      t6 = xsdbool( t1 >= t8 ).
-      t2 = t6.
+      t2 = xsdbool( t1 >= t8 ).
     ENDIF.
     IF t2 = abap_true.
       DATA t12 TYPE f.

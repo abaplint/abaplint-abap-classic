@@ -22,9 +22,7 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
     CLEAR me->end.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t4 = t1->get_raw_rows( ).
-    me->rows = t4.
+    me->rows = t1->get_raw_rows( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `rows`.
     me->file = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
@@ -41,76 +39,54 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     t4 = xsdbool( me->start IS INITIAL ).
     t3 = t4.
     IF t4 = abap_false.
-      DATA(t11) = VALUE abap_bool( ).
       DATA t12 TYPE REF TO zcl_lnt_position.
       t12 = t1.
       DATA t14 TYPE REF TO zcl_lnt_position.
       t14 = me->start.
       DATA t17 TYPE abap_bool.
       DATA t18 TYPE abap_bool.
-      DATA t19 TYPE f.
-      t19 = t12->row.
-      DATA t21 TYPE f.
-      t21 = t14->row.
-      t18 = xsdbool( t19 < t21 ).
+      t18 = xsdbool( t12->row < t14->row ).
       t17 = t18.
       IF t18 = abap_false.
         DATA t23 TYPE abap_bool.
         DATA t24 TYPE abap_bool.
-        DATA t25 TYPE f.
-        t25 = t12->row.
-        DATA t27 TYPE f.
-        t27 = t14->row.
-        t24 = xsdbool( t25 = t27 ).
+        t24 = xsdbool( t12->row = t14->row ).
         t23 = t24.
         IF t24 = abap_true.
-          DATA t29 TYPE abap_bool.
           DATA t30 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           t30 = t12->col.
           DATA t32 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           t32 = t14->col.
-          t29 = zlnt_runtime_numb_290eb04a9758=>compare( left = t30 right = t32 op = `<` ).
-          t23 = t29.
+          t23 = zlnt_runtime_numb_290eb04a9758=>compare( left = t30 right = t32 op = `<` ).
         ENDIF.
         t17 = t23.
       ENDIF.
-      t11 = t17.
-      t3 = t11.
+      t3 = t17.
     ENDIF.
     IF t3 = abap_true.
       me->start = t1.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
     ENDIF.
     DATA t38 TYPE REF TO zcl_lnt_position.
-    DATA t39 TYPE REF TO zcl_lnt_position.
     DATA t40 TYPE f.
-    DATA t43 TYPE f.
-    t43 = t1->row.
-    t40 = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t40 = t1->row.
     DATA t46 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t49 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t49 = t1->col.
-    t46 = t49.
+    t46 = t1->col.
     DATA t51 TYPE f.
     t51 = strlen( t2 ).
     DATA(t55) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t55->has = abap_true.
     t55->value = t51.
-    t45 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t46 right = t55 op = `+` ).
-    t39 = NEW zcl_lnt_position( i_row = t40 i_col = t45 ).
-    t38 = t39.
+    t38 = NEW zcl_lnt_position( i_row = t40 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t46 right = t55 op = `+` ) ).
     DATA(t56) = VALUE abap_bool( ).
     DATA(t57) = VALUE abap_bool( ).
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t57 = xsdbool( me->end IS INITIAL ).
     t56 = t57.
     IF t57 = abap_false.
-      DATA t64 TYPE abap_bool.
       DATA t66 TYPE REF TO zcl_lnt_position.
       t66 = me->end.
-      t64 = t38->is_after( i_p = t66 ).
-      t56 = t64.
+      t56 = t38->is_after( i_p = t66 ).
     ENDIF.
     IF t56 = abap_true.
       me->end = t38.
@@ -122,9 +98,7 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     DATA(t75) = VALUE i( ).
     DATA t76 TYPE f.
     DATA t77 TYPE f.
-    DATA t80 TYPE f.
-    t80 = t1->row.
-    t77 = t80.
+    t77 = t1->row.
     DATA(t82) = CONV f( 1 ).
     t76 = t77 - t82.
     IF t76 > range_i32_upper.
@@ -139,16 +113,13 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t74->load( ).
-    CLEAR t73.
     READ TABLE t74->items INDEX t75 INTO t73.
     t72 = t73.
     DATA(t83) = me->rows.
     DATA(t84) = VALUE i( ).
     DATA t85 TYPE f.
     DATA t86 TYPE f.
-    DATA t89 TYPE f.
-    t89 = t1->row.
-    t86 = t89.
+    t86 = t1->row.
     DATA(t91) = CONV f( 1 ).
     t85 = t86 - t91.
     IF t85 > range_i32_upper.
@@ -158,22 +129,16 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     ELSE.
       t84 = trunc( t85 ).
     ENDIF.
-    DATA(t92) = VALUE string( ).
     DATA(t93) = VALUE string( ).
     DATA(t94) = VALUE string( ).
     DATA(t96) = 0.
     DATA t97 TYPE i.
-    DATA t98 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     DATA t99 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t102 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t102 = t1->col.
-    t99 = t102.
-    DATA(t104) = CONV f( 1 ).
+    t99 = t1->col.
     DATA(t105) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t105->has = abap_true.
-    t105->value = t104.
-    t98 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t99 right = t105 op = `-` ).
-    t97 = zlnt_runtime_numb_290eb04a9758=>index( t98 ).
+    t105->value = CONV f( 1 ).
+    t97 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t99 right = t105 op = `-` ) ).
     DATA(t106) = strlen( t72 ).
     IF t96 < 0.
       t96 = t96 + t106.
@@ -182,7 +147,6 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t96 > t106 OR t97 <= 0.
-      CLEAR t94.
     ELSE.
       IF t97 > t106 - t96.
         t97 = t106 - t96.
@@ -196,24 +160,19 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     t110 = t72.
     DATA(t112) = VALUE string( ).
     DATA t114 TYPE i.
-    DATA t115 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     DATA t116 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     DATA t117 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t120 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t120 = t1->col.
-    t117 = t120.
+    t117 = t1->col.
     DATA t122 TYPE f.
     t122 = strlen( t2 ).
     DATA(t126) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t126->has = abap_true.
     t126->value = t122.
     t116 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t117 right = t126 op = `+` ).
-    DATA(t127) = CONV f( 1 ).
     DATA(t128) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t128->has = abap_true.
-    t128->value = t127.
-    t115 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t116 right = t128 op = `-` ).
-    t114 = zlnt_runtime_numb_290eb04a9758=>index( t115 ).
+    t128->value = CONV f( 1 ).
+    t114 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t116 right = t128 op = `-` ) ).
     DATA t129 TYPE i.
     t129 = strlen( t110 ).
     DATA(t132) = strlen( t110 ).
@@ -224,7 +183,6 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t114 > t132 OR t129 <= 0.
-      CLEAR t112.
     ELSE.
       IF t129 > t132 - t114.
         t129 = t132 - t114.
@@ -233,17 +191,14 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     ENDIF.
     t109 = t112.
     DATA(t133) = strlen( t93 ).
-    t92 = |{ t93 }{ t109 }|.
-    t83->put( p0 = t84 p1 = t92 ).
+    t83->put( p0 = t84 p1 = |{ t93 }{ t109 }| ).
   ENDMETHOD.
 
   METHOD to_edit.
     CONSTANTS range_i32_lower TYPE f VALUE '-2147483648'.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
-    DATA(t1) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1 = xsdbool( me->start IS INITIAL ).
-    IF t1 = abap_true.
+    IF xsdbool( me->start IS INITIAL ) = abap_true.
       DATA t8 TYPE REF TO zlnt_exception_st_fa837731be5a.
       DATA(t9) = |EditDraft, start undefined|.
       t8 = NEW #( ).
@@ -254,10 +209,8 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
       t8->source_value->sval = t9.
       RAISE EXCEPTION t8.
     ELSE.
-      DATA(t10) = VALUE abap_bool( ).
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t10 = xsdbool( me->end IS INITIAL ).
-      IF t10 = abap_true.
+      IF xsdbool( me->end IS INITIAL ) = abap_true.
         DATA t17 TYPE REF TO zlnt_exception_st_fa837731be5a.
         DATA(t18) = |EditDraft, end undefined|.
         t17 = NEW #( ).
@@ -272,35 +225,23 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
     DATA t19 TYPE string.
     t19 = ||.
     DATA t21 TYPE f.
-    DATA t26 TYPE f.
-    t26 = me->start->row.
-    t21 = t26.
+    t21 = me->start->row.
     DO.
-      DATA t28 TYPE abap_bool.
       DATA t30 TYPE f.
-      DATA t34 TYPE f.
-      t34 = me->end->row.
-      t30 = t34.
-      t28 = xsdbool( t21 <= t30 ).
-      IF t28 = abap_false.
+      t30 = me->end->row.
+      IF xsdbool( t21 <= t30 ) = abap_false.
         EXIT.
       ENDIF.
       DATA t36 TYPE abap_bool.
       DATA t37 TYPE abap_bool.
-      DATA t39 TYPE f.
       DATA t43 TYPE f.
       t43 = me->start->row.
-      t39 = t43.
-      t37 = xsdbool( t21 = t39 ).
+      t37 = xsdbool( t21 = t43 ).
       t36 = t37.
       IF t37 = abap_true.
-        DATA t45 TYPE abap_bool.
         DATA t47 TYPE f.
-        DATA t51 TYPE f.
-        t51 = me->end->row.
-        t47 = t51.
-        t45 = xsdbool( t21 = t47 ).
-        t36 = t45.
+        t47 = me->end->row.
+        t36 = xsdbool( t21 = t47 ).
       ENDIF.
       IF t36 = abap_true.
         DATA(t53) = VALUE string( ).
@@ -322,32 +263,21 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t55->load( ).
-        CLEAR t54.
         READ TABLE t55->items INDEX t56 INTO t54.
         DATA t60 TYPE i.
-        DATA t61 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         DATA t62 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        DATA t66 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        t66 = me->start->col.
-        t62 = t66.
-        DATA(t68) = CONV f( 1 ).
+        t62 = me->start->col.
         DATA(t69) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t69->has = abap_true.
-        t69->value = t68.
-        t61 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t62 right = t69 op = `-` ).
-        t60 = zlnt_runtime_numb_290eb04a9758=>index( t61 ).
+        t69->value = CONV f( 1 ).
+        t60 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t62 right = t69 op = `-` ) ).
         DATA t70 TYPE i.
-        DATA t71 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         DATA t72 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        DATA t76 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        t76 = me->end->col.
-        t72 = t76.
-        DATA(t78) = CONV f( 1 ).
+        t72 = me->end->col.
         DATA(t79) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t79->has = abap_true.
-        t79->value = t78.
-        t71 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t72 right = t79 op = `-` ).
-        t70 = zlnt_runtime_numb_290eb04a9758=>index( t71 ).
+        t79->value = CONV f( 1 ).
+        t70 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t72 right = t79 op = `-` ) ).
         DATA(t80) = strlen( t54 ).
         t60 = COND i( WHEN t60 < 0 THEN 0 WHEN t60 > t80 THEN t80 ELSE t60 ).
         t70 = COND i( WHEN t70 < 0 THEN 0 WHEN t70 > t80 THEN t80 ELSE t70 ).
@@ -360,14 +290,9 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
         t53 = t54+t60(t80).
         t19 = t53.
       ELSE.
-        DATA t81 TYPE abap_bool.
         DATA t83 TYPE f.
-        DATA t87 TYPE f.
-        t87 = me->start->row.
-        t83 = t87.
-        t81 = xsdbool( t21 = t83 ).
-        IF t81 = abap_true.
-          DATA(t89) = VALUE string( ).
+        t83 = me->start->row.
+        IF xsdbool( t21 = t83 ) = abap_true.
           DATA(t90) = VALUE string( ).
           DATA(t91) = VALUE string( ).
           DATA(t92) = me->rows.
@@ -387,22 +312,16 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t92->load( ).
-          CLEAR t91.
           READ TABLE t92->items INDEX t93 INTO t91.
           t90 = t91.
           DATA(t97) = VALUE string( ).
           DATA t99 TYPE i.
-          DATA t100 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           DATA t101 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          DATA t105 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t105 = me->start->col.
-          t101 = t105.
-          DATA(t107) = CONV f( 1 ).
+          t101 = me->start->col.
           DATA(t108) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t108->has = abap_true.
-          t108->value = t107.
-          t100 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t101 right = t108 op = `-` ).
-          t99 = zlnt_runtime_numb_290eb04a9758=>index( t100 ).
+          t108->value = CONV f( 1 ).
+          t99 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t101 right = t108 op = `-` ) ).
           DATA t109 TYPE i.
           t109 = strlen( t90 ).
           DATA(t112) = strlen( t90 ).
@@ -415,17 +334,11 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
           ENDIF.
           t112 = t109 - t99.
           t97 = t90+t99(t112).
-          t89 = t97.
-          t19 = t89.
+          t19 = t97.
         ELSE.
-          DATA t113 TYPE abap_bool.
           DATA t115 TYPE f.
-          DATA t119 TYPE f.
-          t119 = me->end->row.
-          t115 = t119.
-          t113 = xsdbool( t21 = t115 ).
-          IF t113 = abap_true.
-            DATA(t121) = VALUE string( ).
+          t115 = me->end->row.
+          IF xsdbool( t21 = t115 ) = abap_true.
             DATA(t122) = t19.
             DATA(t123) = VALUE string( ).
             DATA(t124) = |\n|.
@@ -448,21 +361,15 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
               RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
             ENDIF.
             t127->load( ).
-            CLEAR t126.
             READ TABLE t127->items INDEX t128 INTO t126.
             DATA(t132) = 0.
             DATA t133 TYPE i.
-            DATA t134 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
             DATA t135 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            DATA t139 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            t139 = me->end->col.
-            t135 = t139.
-            DATA(t141) = CONV f( 1 ).
+            t135 = me->end->col.
             DATA(t142) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
             t142->has = abap_true.
-            t142->value = t141.
-            t134 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t135 right = t142 op = `-` ).
-            t133 = zlnt_runtime_numb_290eb04a9758=>index( t134 ).
+            t142->value = CONV f( 1 ).
+            t133 = zlnt_runtime_numb_290eb04a9758=>index( zlnt_runtime_numb_290eb04a9758=>calculate( left = t135 right = t142 op = `-` ) ).
             DATA(t143) = strlen( t126 ).
             t132 = COND i( WHEN t132 < 0 THEN 0 WHEN t132 > t143 THEN t143 ELSE t132 ).
             t133 = COND i( WHEN t133 < 0 THEN 0 WHEN t133 > t143 THEN t143 ELSE t133 ).
@@ -476,10 +383,8 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
             DATA(t144) = strlen( t124 ).
             t123 = |{ t124 }{ t125 }|.
             DATA(t145) = strlen( t122 ).
-            t121 = |{ t122 }{ t123 }|.
-            t19 = t121.
+            t19 = |{ t122 }{ t123 }|.
           ELSE.
-            DATA(t146) = VALUE string( ).
             DATA(t147) = t19.
             DATA(t148) = VALUE string( ).
             DATA(t149) = |\n|.
@@ -501,29 +406,23 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
               RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
             ENDIF.
             t151->load( ).
-            CLEAR t150.
             READ TABLE t151->items INDEX t152 INTO t150.
             DATA(t156) = strlen( t149 ).
             t148 = |{ t149 }{ t150 }|.
             DATA(t157) = strlen( t147 ).
-            t146 = |{ t147 }{ t148 }|.
-            t19 = t146.
+            t19 = |{ t147 }{ t148 }|.
           ENDIF.
         ENDIF.
       ENDIF.
-      DATA t158 TYPE f.
       DATA(t160) = CONV f( 1 ).
-      t158 = t21 + t160.
-      t21 = t158.
+      t21 = t21 + t160.
     ENDDO.
-    DATA t161 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
     DATA(t162) = me->file.
     DATA t163 TYPE REF TO zcl_lnt_position.
     t163 = me->start.
     DATA t165 TYPE REF TO zcl_lnt_position.
     t165 = me->end.
-    t161 = zcl_lnt_edit_helper=>replace_range( i_file = t162 i_start = t163 i_end = t165 i_text = t19 ).
-    result = t161.
+    result = zcl_lnt_edit_helper=>replace_range( i_file = t162 i_start = t163 i_end = t165 i_text = t19 ).
 
   ENDMETHOD.
 

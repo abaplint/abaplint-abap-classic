@@ -41,14 +41,9 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     ENDIF.
     DATA t10 TYPE string.
     t10 = |Railroad.Diagram(|.
-    DATA t12 TYPE abap_bool.
-    DATA t13 TYPE abap_bool.
-    t13 = t2->value.
-    t12 = xsdbool( t13 = abap_true ).
-    IF t12 = abap_true.
+    IF xsdbool( t2->value = abap_true ) = abap_true.
       t10 = |Railroad.ComplexDiagram(|.
     ENDIF.
-    DATA t18 TYPE string.
     DATA t19 TYPE string.
     DATA t20 TYPE string.
     DATA(t21) = |Railroad.Diagram.INTERNAL_ALIGNMENT = 'left';\n|.
@@ -58,10 +53,8 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     t24 = t1->railroad( ).
     DATA(t26) = strlen( t20 ).
     t19 = |{ t20 }{ t24 }|.
-    DATA(t27) = |).toString();|.
     DATA(t28) = strlen( t19 ).
-    t18 = |{ t19 }{ t27 }|.
-    result = t18.
+    result = |{ t19 }{ |).toString();| }|.
 
   ENDMETHOD.
 
@@ -70,18 +63,13 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t3 = i_runnable->list_keywords( ).
-    t2 = t3.
+    t2 = i_runnable->list_keywords( ).
     DATA t6 TYPE f.
-    DATA(t7) = CONV f( -1 ).
-    t6 = t7.
+    t6 = CONV f( -1 ).
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t8 = t2.
     DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t11.
-    t10 = t11.
+    CREATE OBJECT t10.
     DATA(t12) = t2.
     DATA(t13) = VALUE string( ).
     t12->dense( ).
@@ -97,17 +85,11 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t14 = t14 + 1.
-      DATA t15 TYPE f.
       DATA(t17) = CONV f( 1 ).
-      t15 = t6 + t17.
-      t6 = t15.
-      DATA t18 TYPE abap_bool.
+      t6 = t6 + t17.
       DATA t19 TYPE f.
-      DATA t20 TYPE i.
-      t20 = t8->indexof( p0 = t13 ).
-      t19 = t20.
-      t18 = xsdbool( t19 = t6 ).
-      IF t18 = abap_true.
+      t19 = t8->indexof( p0 = t13 ).
+      IF xsdbool( t19 = t6 ) = abap_true.
         t10->load( ).
         APPEND t13 TO t10->items.
         t10->save( ).
@@ -134,19 +116,15 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
       t5 = abap_true.
     ENDIF.
     IF t5 = abap_true.
-      DATA(t9) = |Normal|.
       DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t10->has = abap_true.
-      t10->value = t9.
+      t10->value = |Normal|.
       t4 = t10.
     ENDIF.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    DATA(t12) = VALUE string( ).
-    t12 = t4->value.
-    zcl_lnt_combi=>lang_ver = t12.
-    DATA(t14) = VALUE abap_bool( ).
+    zcl_lnt_combi=>lang_ver = t4->value.
     DATA(t15) = VALUE string( ).
     IF t3 IS BOUND.
       t15 = t3->type_of( ).
@@ -156,17 +134,11 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     ELSE.
       t15 = `undefined`.
     ENDIF.
-    DATA(t17) = |string|.
-    t14 = xsdbool( t15 = t17 ).
-    IF t14 = abap_true.
+    IF xsdbool( t15 = |string| ) = abap_true.
       IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
         zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
       ENDIF.
-      DATA t18 TYPE REF TO zcl_lnt_abap_release.
-      DATA(t19) = VALUE string( ).
-      t19 = t3->as_string( ).
-      t18 = zcl_lnt_version_module=>version_to_abap_release( i_v = t19 ).
-      zcl_lnt_combi=>release_3664 = t18.
+      zcl_lnt_combi=>release_3664 = zcl_lnt_version_module=>version_to_abap_release( i_v = t3->as_string( ) ).
     ELSE.
       IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
         zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
@@ -194,28 +166,23 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
               RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
             ENDIF.
           ENDIF.
-          DATA(t24) = VALUE string( ).
           DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          DATA(t30) = VALUE f( ).
-          t21 = NEW zcl_lnt_abap_release( view_source = t3 i_name = t24 i_abap = t25 i_kernel = t26 i_op = t27 i_cloud_47cd = t28 i_ce = t29 i_ordinal = t30 ).
+          t21 = NEW zcl_lnt_abap_release( view_source = t3 i_name = VALUE string( ) i_abap = t25 i_kernel = t26 i_op = t27 i_cloud_47cd = t28 i_ce = t29 i_ordinal = VALUE f( ) ).
         ENDIF.
       ENDIF.
       zcl_lnt_combi=>release_3664 = t21.
     ENDIF.
     DATA t32 TYPE REF TO zcl_lnt_st_result.
-    DATA(t34) = CONV f( 0 ).
     DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t32 = NEW zcl_lnt_st_result( i_tokens = t2 i_token_index = t34 i_nodes_5198 = t35 ).
+    t32 = NEW zcl_lnt_st_result( i_tokens = t2 i_token_index = CONV f( 0 ) i_nodes_5198 = t35 ).
     DATA t36 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     TRY.
         DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t38 = t1->run_one( i_x = t32 ).
-        t37 = t38.
+        t37 = t1->run_one( i_x = t32 ).
         DATA t42 TYPE REF TO zcl_lnt_st_result.
         DATA t43 TYPE REF TO object.
         DATA(t44) = VALUE i( ).
@@ -239,45 +206,31 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
           ELSE.
             t42 ?= t43.
           ENDIF.
-          DATA(t47) = VALUE abap_bool( ).
           DATA(t48) = VALUE int8( ).
-          DATA(t49) = VALUE f( ).
           DATA t50 TYPE REF TO zcl_lnt_st_result.
           CLEAR t50.
           t50 = t42.
           DATA(t52) = VALUE f( ).
           DATA(t53) = VALUE int8( ).
           DATA(t54) = VALUE int8( ).
-          DATA(t55) = VALUE i( ).
           DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t56.
           t56 = t50->tokens.
           t56->load( ).
-          t55 = lines( t56->items ).
-          t54 = t55.
+          t54 = lines( t56->items ).
           DATA(t58) = VALUE int8( ).
-          DATA(t59) = VALUE i( ).
-          t59 = t50->token_index.
-          t58 = t59.
+          t58 = t50->token_index.
           t53 = t54 - t58.
           t52 = t53.
-          t49 = t52.
-          t48 = t49.
-          DATA(t61) = CONV int8( 0 ).
-          t47 = xsdbool( t48 = t61 ).
-          IF t47 = abap_true.
-            DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            CLEAR t64.
-            t64 = t42->get_nodes( ).
-            result = t64.
+          t48 = t52.
+          IF xsdbool( t48 = CONV int8( 0 ) ) = abap_true.
+            result = t42->get_nodes( ).
             RETURN.
           ENDIF.
         ENDDO.
       CATCH zlnt_exception_cl_30eec8e8805d INTO t36.
         DATA(t67) = t36->payload.
-        DATA(t68) = VALUE abap_bool( ).
-        t68 = xsdbool( t67 IS BOUND AND t67 IS INSTANCE OF zcx_lnt_fail_combinator_error ).
-        IF t68 = abap_true.
+        IF xsdbool( t67 IS BOUND AND t67 IS INSTANCE OF zcx_lnt_fail_combinator_error ) = abap_true.
           CLEAR result.
           RETURN.
         ENDIF.
@@ -318,12 +271,10 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_abap_release.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    t1 = zcl_lnt_combi=>release_3664.
-    result = t1.
+    result = zcl_lnt_combi=>release_3664.
 
   ENDMETHOD.
 
@@ -331,12 +282,10 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    DATA(t1) = VALUE string( ).
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    t1 = zcl_lnt_combi=>lang_ver.
-    result = t1.
+    result = zcl_lnt_combi=>lang_ver.
 
   ENDMETHOD.
 
@@ -346,20 +295,15 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     ENDIF.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zcl_lnt_abap_release.
-    DATA t4 TYPE REF TO zcl_lnt_abap_release.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    t4 = zcl_lnt_combi=>release_3664.
-    t2 = t4.
+    t2 = zcl_lnt_combi=>release_3664.
     DATA t6 TYPE REF TO zcl_lnt_abap_release.
-    DATA t7 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t7 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t8) = |open-abap|.
-    t6 = t7->get( p0 = t8 ).
+    t6 = zcl_lnt_version_module=>release_b8cd->get( p0 = |open-abap| ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t2 IS BOUND.
@@ -429,15 +373,10 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.
-    DATA t2 TYPE REF TO zcl_lnt_abap_release.
-    DATA t3 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t3 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t4) = |v758|.
-    t2 = t3->get( p0 = t4 ).
-    zcl_lnt_combi=>release_3664 = t2.
+    zcl_lnt_combi=>release_3664 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v758| ).
     IF zcl_lnt_combi=>zlnt_builtin_init_eaa3c6c35789 = abap_false.
       zcl_lnt_combi=>zlnt_builtin_init_6f0e2d68980a( ).
     ENDIF.

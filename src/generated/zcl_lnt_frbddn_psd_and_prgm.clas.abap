@@ -25,42 +25,28 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |forbidden_pseudo_and_pragma|.
-    DATA t4 TYPE string.
-    t4 = |Forbidden pseudo comments and pragma|.
-    DATA t6 TYPE string.
-    t6 = |Checks for unwanted pseudo comments and pragma|.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Quickfix|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Quickfix| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t23) = |DATA i TYPE i. "#EC *|.
     DATA(t24) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t24->has = abap_true.
-    t24->value = t23.
+    t24->value = |DATA i TYPE i. "#EC *|.
     t20 = t24.
-    DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t29) = |DATA i TYPE i.|.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
-    t30->value = t29.
-    t26 = t30.
+    t30->value = |DATA i TYPE i.|.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t26 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_pseudo_and_pragma| i_title = |Forbidden pseudo comments and pragma| i_short_description = |Checks for unwanted pseudo comments and pragma| i_bad_example = t20 i_good_example = t30 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -87,33 +73,27 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t44) = |key|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
-    DATA(t46) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t45 ).
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t47 ).
     ENDIF.
-    DATA(t48) = |shortDescription|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |tags|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |badExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |goodExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t55 ).
     ENDIF.
     result = t1.
 
@@ -121,23 +101,19 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
 
   METHOD g_c_i_s_r_f_p_a_p_t_f_ps_an_pr.
     DATA(t1) = me->conf.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t4 = me->conf->zlnt_view_read_sr_21ada0793ffa( ).
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t2 = xsdbool( t4 IS INITIAL ).
-    IF t2 = abap_true.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
       DATA(t10) = me->conf.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t11.
       t10->zlnt_view_write_s_e895eea6be84( p0 = t11 ).
     ENDIF.
-    DATA(t12) = VALUE abap_bool( ).
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t14 = me->conf->zlnt_view_read_sr_7e3130177b9e( ).
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t12 = xsdbool( t14 IS INITIAL ).
-    IF t12 = abap_true.
+    IF xsdbool( t14 IS INITIAL ) = abap_true.
       DATA(t20) = me->conf.
       DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t21.
@@ -157,9 +133,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     t2 = abap_false.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t6 = me->conf->zlnt_view_read_sr_7e3130177b9e( ).
     DATA(t8) = VALUE string( ).
@@ -177,9 +151,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
       ENDIF.
       t9 = t9 + 1.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t13 = t1->statements.
-      t10 = t13.
+      t10 = t1->statements.
       DATA t15 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t15.
       DATA t16 TYPE REF TO object.
@@ -204,11 +176,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
         ELSE.
           t15 ?= t16.
         ENDIF.
-        DATA t20 TYPE abap_bool.
         DATA t21 TYPE abap_bool.
         t21 = me->conf->zlnt_view_read_sr_493aa9b7723d( ).
-        t20 = xsdbool( t21 = abap_true ).
-        IF t20 = abap_true.
+        IF xsdbool( t21 = abap_true ) = abap_true.
           DATA t24 TYPE abap_bool.
           DATA t25 TYPE abap_bool.
           DATA t26 TYPE REF TO zif_lnt_statement.
@@ -216,12 +186,10 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t25 = xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_st_class_definition ).
           t24 = t25.
           IF t25 = abap_true.
-            DATA t28 TYPE abap_bool.
             DATA t29 TYPE REF TO zcl_lnt_expression_node.
             DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
             t29 = t15->find_first_expression( i_type_9913 = t31 ).
-            t28 = xsdbool( t29 IS BOUND ).
-            t24 = t28.
+            t24 = xsdbool( t29 IS BOUND ).
           ENDIF.
           IF t24 = abap_true.
             t2 = abap_true.
@@ -232,11 +200,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t34 = xsdbool( t2 = abap_true ).
             t33 = t34.
             IF t34 = abap_true.
-              DATA t37 TYPE abap_bool.
               DATA t38 TYPE REF TO zif_lnt_statement.
               t38 = t15->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-              t37 = xsdbool( t38 IS BOUND AND t38 IS INSTANCE OF zcl_lnt_end_class ).
-              t33 = t37.
+              t33 = xsdbool( t38 IS BOUND AND t38 IS INSTANCE OF zcl_lnt_end_class ).
             ENDIF.
             IF t33 = abap_true.
               t2 = abap_false.
@@ -244,11 +210,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             ENDIF.
           ENDIF.
         ENDIF.
-        DATA t41 TYPE abap_bool.
         DATA t42 TYPE abap_bool.
         t42 = me->conf->zlnt_view_read_sr_2c496c208fd0( ).
-        t41 = xsdbool( t42 = abap_true ).
-        IF t41 = abap_true.
+        IF xsdbool( t42 = abap_true ) = abap_true.
           DATA t45 TYPE abap_bool.
           DATA t46 TYPE abap_bool.
           DATA t47 TYPE REF TO zif_lnt_statement.
@@ -256,12 +220,10 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t46 = xsdbool( t47 IS BOUND AND t47 IS INSTANCE OF zcl_lnt_st_interface ).
           t45 = t46.
           IF t46 = abap_true.
-            DATA t49 TYPE abap_bool.
             DATA t50 TYPE REF TO zcl_lnt_expression_node.
             DATA(t52) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
             t50 = t15->find_first_expression( i_type_9913 = t52 ).
-            t49 = xsdbool( t50 IS BOUND ).
-            t45 = t49.
+            t45 = xsdbool( t50 IS BOUND ).
           ENDIF.
           IF t45 = abap_true.
             t2 = abap_true.
@@ -272,11 +234,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t55 = xsdbool( t2 = abap_true ).
             t54 = t55.
             IF t55 = abap_true.
-              DATA t58 TYPE abap_bool.
               DATA t59 TYPE REF TO zif_lnt_statement.
               t59 = t15->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-              t58 = xsdbool( t59 IS BOUND AND t59 IS INSTANCE OF zcl_lnt_end_interface ).
-              t54 = t58.
+              t54 = xsdbool( t59 IS BOUND AND t59 IS INSTANCE OF zcl_lnt_end_interface ).
             ENDIF.
             IF t54 = abap_true.
               t2 = abap_false.
@@ -284,9 +244,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             ENDIF.
           ENDIF.
         ENDIF.
-        DATA t62 TYPE abap_bool.
-        t62 = xsdbool( t2 = abap_true ).
-        IF t62 = abap_true.
+        IF xsdbool( t2 = abap_true ) = abap_true.
           CONTINUE.
         ENDIF.
         DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -296,18 +254,14 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
         DATA t73 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t73 = t69.
         DATA t75 TYPE i.
-        DATA t76 TYPE i.
         t73->load( ).
-        t76 = lines( t73->items ).
-        t75 = t76.
+        t75 = lines( t73->items ).
         DATA t78 TYPE i.
         t78 = 0.
         DATA t80 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t80.
         DO.
-          DATA t82 TYPE abap_bool.
-          t82 = xsdbool( t78 < t75 ).
-          IF t82 = abap_false.
+          IF xsdbool( t78 < t75 ) = abap_false.
             EXIT.
           ENDIF.
           DATA t85 TYPE REF TO zcl_lnt_abstract_token.
@@ -328,12 +282,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t87 ?= t90.
           ENDIF.
           t85 = t87.
-          DATA(t93) = VALUE abap_bool( ).
           DATA t94 TYPE string.
           DATA t95 TYPE string.
-          DATA t98 TYPE string.
-          t98 = t85->str.
-          t95 = t98.
+          t95 = t85->str.
           DATA(t100) = strlen( t95 ).
           t94 = t95.
           IF t94 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -349,25 +300,17 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           ELSE.
             t101 = zlnt_runtime_uppe_91169605024d=>full( t101 ).
           ENDIF.
-          t93 = xsdbool( t94 = t101 ).
-          IF t93 = abap_true.
+          IF xsdbool( t94 = t101 ) = abap_true.
             t80 = t85.
             EXIT.
           ENDIF.
-          DATA t108 TYPE i.
           DATA(t110) = 1.
-          t108 = t78 + t110.
-          t78 = t108.
+          t78 = t78 + t110.
         ENDDO.
         t71 = t80.
-        DATA t112 TYPE abap_bool.
-        t112 = xsdbool( t71 IS BOUND ).
-        IF t112 = abap_true.
+        IF xsdbool( t71 IS BOUND ) = abap_true.
           DATA t115 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          DATA t117 TYPE REF TO zcl_lnt_abstract_token.
-          t117 = t71.
-          t115 = zcl_lnt_edit_helper=>delete_token( i_file = t1 i_token = t117 ).
-          DATA(t120) = |Forbidden pragma|.
+          t115 = zcl_lnt_edit_helper=>delete_token( i_file = t1 i_token = t71 ).
           DATA t122 TYPE REF TO zcl_lnt_issue.
           CLEAR t122.
           DATA t124 TYPE REF TO zcl_lnt_abstract_token.
@@ -375,40 +318,28 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           DATA(t127) = VALUE string( ).
           DATA t128 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t128.
-          DATA t129 TYPE string.
-          t129 = |forbidden_pseudo_and_pragma|.
-          DATA t131 TYPE string.
-          t131 = |Forbidden pseudo comments and pragma|.
-          DATA t133 TYPE string.
-          t133 = |Checks for unwanted pseudo comments and pragma|.
           DATA t135 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t135.
           DATA t139 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t140 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t140.
-          t139 = t140.
-          DATA(t142) = |Quickfix|.
+          CREATE OBJECT t139.
           t139->load( ).
-          APPEND t142 TO t139->items.
+          APPEND |Quickfix| TO t139->items.
           t139->save( ).
-          DATA(t144) = |SingleFile|.
           t139->load( ).
-          APPEND t144 TO t139->items.
+          APPEND |SingleFile| TO t139->items.
           t139->save( ).
           t135 = t139.
           DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t147.
-          DATA(t150) = |DATA i TYPE i. "#EC *|.
           DATA(t151) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t151->has = abap_true.
-          t151->value = t150.
+          t151->value = |DATA i TYPE i. "#EC *|.
           t147 = t151.
           DATA t153 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t153.
-          DATA(t156) = |DATA i TYPE i.|.
           DATA(t157) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t157->has = abap_true.
-          t157->value = t156.
+          t157->value = |DATA i TYPE i.|.
           t153 = t157.
           DATA t159 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t159.
@@ -416,7 +347,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           CLEAR t161.
           DATA t163 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t163.
-          t128 = NEW zcl_lnt_irule_metadata( i_key = t129 i_title = t131 i_short_description = t133 i_bad_example = t147 i_good_example = t153 i_extended_information = t159 i_tags = t135 i_pragma = t161 i_pseudo_comment = t163 ).
+          t128 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_pseudo_and_pragma| i_title = |Forbidden pseudo comments and pragma| i_short_description = |Checks for unwanted pseudo comments and pragma| i_bad_example = t147 i_good_example = t153 i_extended_information = t159 i_tags = t135 i_pragma = t161 i_pseudo_comment = t163 ).
           CREATE OBJECT t128->zlnt_view_ownkeys_b0e8086400eb.
           t128->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t165 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -449,47 +380,36 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t128->zlnt_json_ownkeys_70e5fd461788.
           t128->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t171) = |key|.
           DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t172.
-          t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t171 p1 = t172 ).
-          DATA(t173) = |title|.
+          t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t172 ).
           DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t174.
           IF t128->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t173 p1 = t174 ).
+            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t174 ).
           ENDIF.
-          DATA(t175) = |shortDescription|.
           DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t176.
           IF t128->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t175 p1 = t176 ).
+            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t176 ).
           ENDIF.
-          DATA(t177) = |tags|.
           DATA t178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t178.
           IF t128->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t177 p1 = t178 ).
+            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t178 ).
           ENDIF.
-          DATA(t179) = |badExample|.
           DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t180.
           IF t128->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t179 p1 = t180 ).
+            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t180 ).
           ENDIF.
-          DATA(t181) = |goodExample|.
           DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t182.
           IF t128->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = t181 p1 = t182 ).
+            t128->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t182 ).
           ENDIF.
           t127 = t128->key.
-          DATA t183 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t183 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-          DATA t185 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          CLEAR t185.
-          t185 = t115.
-          t122 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t124 i_message_26cb = t120 i_key = t127 i_severity = t183 i_fix = t185 ).
+          t122 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t124 i_message_26cb = |Forbidden pragma| i_key = t127 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t115 ).
           t4->load( ).
           APPEND t122 TO t4->items.
           t4->save( ).
@@ -514,9 +434,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
       ENDIF.
       t193 = t193 + 1.
       DATA t194 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t197 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t197 = t1->statements.
-      t194 = t197.
+      t194 = t1->statements.
       DATA t199 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t199.
       DATA t200 TYPE REF TO object.
@@ -541,11 +459,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
         ELSE.
           t199 ?= t200.
         ENDIF.
-        DATA t204 TYPE abap_bool.
         DATA t205 TYPE abap_bool.
         t205 = me->conf->zlnt_view_read_sr_493aa9b7723d( ).
-        t204 = xsdbool( t205 = abap_true ).
-        IF t204 = abap_true.
+        IF xsdbool( t205 = abap_true ) = abap_true.
           DATA t208 TYPE abap_bool.
           DATA t209 TYPE abap_bool.
           DATA t210 TYPE REF TO zif_lnt_statement.
@@ -553,12 +469,10 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t209 = xsdbool( t210 IS BOUND AND t210 IS INSTANCE OF zcl_lnt_st_class_definition ).
           t208 = t209.
           IF t209 = abap_true.
-            DATA t212 TYPE abap_bool.
             DATA t213 TYPE REF TO zcl_lnt_expression_node.
             DATA(t215) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
             t213 = t199->find_first_expression( i_type_9913 = t215 ).
-            t212 = xsdbool( t213 IS BOUND ).
-            t208 = t212.
+            t208 = xsdbool( t213 IS BOUND ).
           ENDIF.
           IF t208 = abap_true.
             t2 = abap_true.
@@ -569,11 +483,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t218 = xsdbool( t2 = abap_true ).
             t217 = t218.
             IF t218 = abap_true.
-              DATA t221 TYPE abap_bool.
               DATA t222 TYPE REF TO zif_lnt_statement.
               t222 = t199->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-              t221 = xsdbool( t222 IS BOUND AND t222 IS INSTANCE OF zcl_lnt_end_class ).
-              t217 = t221.
+              t217 = xsdbool( t222 IS BOUND AND t222 IS INSTANCE OF zcl_lnt_end_class ).
             ENDIF.
             IF t217 = abap_true.
               t2 = abap_false.
@@ -581,11 +493,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             ENDIF.
           ENDIF.
         ENDIF.
-        DATA t225 TYPE abap_bool.
         DATA t226 TYPE abap_bool.
         t226 = me->conf->zlnt_view_read_sr_2c496c208fd0( ).
-        t225 = xsdbool( t226 = abap_true ).
-        IF t225 = abap_true.
+        IF xsdbool( t226 = abap_true ) = abap_true.
           DATA t229 TYPE abap_bool.
           DATA t230 TYPE abap_bool.
           DATA t231 TYPE REF TO zif_lnt_statement.
@@ -593,12 +503,10 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t230 = xsdbool( t231 IS BOUND AND t231 IS INSTANCE OF zcl_lnt_st_interface ).
           t229 = t230.
           IF t230 = abap_true.
-            DATA t233 TYPE abap_bool.
             DATA t234 TYPE REF TO zcl_lnt_expression_node.
             DATA(t236) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
             t234 = t199->find_first_expression( i_type_9913 = t236 ).
-            t233 = xsdbool( t234 IS BOUND ).
-            t229 = t233.
+            t229 = xsdbool( t234 IS BOUND ).
           ENDIF.
           IF t229 = abap_true.
             t2 = abap_true.
@@ -609,11 +517,9 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t239 = xsdbool( t2 = abap_true ).
             t238 = t239.
             IF t239 = abap_true.
-              DATA t242 TYPE abap_bool.
               DATA t243 TYPE REF TO zif_lnt_statement.
               t243 = t199->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-              t242 = xsdbool( t243 IS BOUND AND t243 IS INSTANCE OF zcl_lnt_end_interface ).
-              t238 = t242.
+              t238 = xsdbool( t243 IS BOUND AND t243 IS INSTANCE OF zcl_lnt_end_interface ).
             ENDIF.
             IF t238 = abap_true.
               t2 = abap_false.
@@ -621,21 +527,14 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             ENDIF.
           ENDIF.
         ENDIF.
-        DATA t246 TYPE abap_bool.
-        t246 = xsdbool( t2 = abap_true ).
-        IF t246 = abap_true.
+        IF xsdbool( t2 = abap_true ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA t249 TYPE abap_bool.
-        DATA t250 TYPE abap_bool.
         DATA t251 TYPE REF TO zif_lnt_statement.
         t251 = t199->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t250 = xsdbool( t251 IS BOUND AND t251 IS INSTANCE OF zcl_lnt_st_comment ).
-        t249 = xsdbool( t250 = abap_false ).
-        IF t249 = abap_true.
+        IF xsdbool( xsdbool( t251 IS BOUND AND t251 IS INSTANCE OF zcl_lnt_st_comment ) = abap_false ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA(t253) = VALUE abap_bool( ).
         DATA(t254) = VALUE i( ).
         DATA t255 TYPE string.
         DATA t256 TYPE string.
@@ -664,51 +563,36 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
             t254 = -1.
           ENDIF.
         ENDIF.
-        DATA(t263) = 0.
-        t253 = xsdbool( t254 >= t263 ).
-        IF t253 = abap_true.
+        IF xsdbool( t254 >= 0 ) = abap_true.
           DATA t265 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           t265 = zcl_lnt_edit_helper=>delete_statement( i_file = t1 i_statement = t199 ).
-          DATA(t269) = |Forbidden pseudo comment|.
           DATA t271 TYPE REF TO zcl_lnt_issue.
           CLEAR t271.
           DATA(t275) = VALUE string( ).
           DATA t276 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t276.
-          DATA t277 TYPE string.
-          t277 = |forbidden_pseudo_and_pragma|.
-          DATA t279 TYPE string.
-          t279 = |Forbidden pseudo comments and pragma|.
-          DATA t281 TYPE string.
-          t281 = |Checks for unwanted pseudo comments and pragma|.
           DATA t283 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t283.
           DATA t287 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t288 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t288.
-          t287 = t288.
-          DATA(t290) = |Quickfix|.
+          CREATE OBJECT t287.
           t287->load( ).
-          APPEND t290 TO t287->items.
+          APPEND |Quickfix| TO t287->items.
           t287->save( ).
-          DATA(t292) = |SingleFile|.
           t287->load( ).
-          APPEND t292 TO t287->items.
+          APPEND |SingleFile| TO t287->items.
           t287->save( ).
           t283 = t287.
           DATA t295 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t295.
-          DATA(t298) = |DATA i TYPE i. "#EC *|.
           DATA(t299) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t299->has = abap_true.
-          t299->value = t298.
+          t299->value = |DATA i TYPE i. "#EC *|.
           t295 = t299.
           DATA t301 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t301.
-          DATA(t304) = |DATA i TYPE i.|.
           DATA(t305) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t305->has = abap_true.
-          t305->value = t304.
+          t305->value = |DATA i TYPE i.|.
           t301 = t305.
           DATA t307 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t307.
@@ -716,7 +600,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           CLEAR t309.
           DATA t311 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t311.
-          t276 = NEW zcl_lnt_irule_metadata( i_key = t277 i_title = t279 i_short_description = t281 i_bad_example = t295 i_good_example = t301 i_extended_information = t307 i_tags = t283 i_pragma = t309 i_pseudo_comment = t311 ).
+          t276 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_pseudo_and_pragma| i_title = |Forbidden pseudo comments and pragma| i_short_description = |Checks for unwanted pseudo comments and pragma| i_bad_example = t295 i_good_example = t301 i_extended_information = t307 i_tags = t283 i_pragma = t309 i_pseudo_comment = t311 ).
           CREATE OBJECT t276->zlnt_view_ownkeys_b0e8086400eb.
           t276->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t313 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -749,39 +633,33 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t276->zlnt_json_ownkeys_70e5fd461788.
           t276->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t319) = |key|.
           DATA t320 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t320.
-          t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t319 p1 = t320 ).
-          DATA(t321) = |title|.
+          t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t320 ).
           DATA t322 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t322.
           IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t321 p1 = t322 ).
+            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t322 ).
           ENDIF.
-          DATA(t323) = |shortDescription|.
           DATA t324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t324.
           IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t323 p1 = t324 ).
+            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t324 ).
           ENDIF.
-          DATA(t325) = |tags|.
           DATA t326 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t326.
           IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t325 p1 = t326 ).
+            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t326 ).
           ENDIF.
-          DATA(t327) = |badExample|.
           DATA t328 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t328.
           IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t327 p1 = t328 ).
+            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t328 ).
           ENDIF.
-          DATA(t329) = |goodExample|.
           DATA t330 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t330.
           IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = t329 p1 = t330 ).
+            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t330 ).
           ENDIF.
           t275 = t276->key.
           DATA t331 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -791,7 +669,7 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t333 = t265.
           DATA t337 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t337.
-          t271 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t199 i_message_26cb = t269 i_key = t275 i_severity = t331 i_fix = t333 i_alternative_fixes = t337 ).
+          t271 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t199 i_message_26cb = |Forbidden pseudo comment| i_key = t275 i_severity = t331 i_fix = t333 i_alternative_fixes = t337 ).
           t4->load( ).
           APPEND t271 TO t4->items.
           t4->save( ).

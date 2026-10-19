@@ -22,24 +22,19 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.ZeroOrMore(|.
     DATA t4 TYPE string.
     t4 = me->obj->to_railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->obj->get_using( ).
-    result = t1.
+    result = me->obj->get_using( ).
 
   ENDMETHOD.
 
@@ -48,36 +43,21 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t3 = i_statements.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t6.
-    t5 = t6.
+    CREATE OBJECT t5.
     DO.
-      DATA t8 TYPE abap_bool.
-      DATA t9 TYPE i.
       DATA(t10) = t3.
       t10->load( ).
-      t9 = lines( t10->items ).
-      DATA(t11) = 0.
-      t8 = xsdbool( t9 = t11 ).
-      IF t8 = abap_true.
+      IF xsdbool( lines( t10->items ) = 0 ) = abap_true.
         DATA t12 TYPE REF TO zcl_lnt_imatch.
         CLEAR t12.
         DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t13 = t5.
         DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t15 = t3.
-        DATA t17 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t17.
         DATA(t21) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t21->has = abap_true.
         t21->value = abap_false.
-        t17 = t21.
-        DATA t23 TYPE string.
-        t23 = ||.
-        DATA t25 TYPE f.
-        DATA(t26) = CONV f( 0 ).
-        t25 = t26.
-        t12 = NEW zcl_lnt_imatch( i_matched = t13 i_unmatched = t15 i_error = t17 i_error_description = t23 i_error_matched = t25 ).
+        t12 = NEW zcl_lnt_imatch( i_matched = t13 i_unmatched = t15 i_error = t21 i_error_description = || i_error_matched = CONV f( 0 ) ).
         CREATE OBJECT t12->zlnt_view_ownkeys_b0e8086400eb.
         t12->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -105,41 +85,34 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t12->zlnt_json_ownkeys_70e5fd461788.
         t12->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t32) = |matched|.
         DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t33.
-        t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
-        DATA(t34) = |unmatched|.
+        t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t33 ).
         DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t35.
         IF t12->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t35 ).
         ENDIF.
-        DATA(t36) = |error|.
         DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t37.
         IF t12->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t37 ).
         ENDIF.
-        DATA(t38) = |errorDescription|.
         DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t39.
         IF t12->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t39 ).
         ENDIF.
-        DATA(t40) = |errorMatched|.
         DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t41.
         IF t12->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+          t12->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t41 ).
         ENDIF.
         result = t12.
         RETURN.
       ENDIF.
       DATA t42 TYPE REF TO zcl_lnt_imatch.
-      DATA t43 TYPE REF TO zcl_lnt_imatch.
-      t43 = me->obj->run( i_statements = t3 i_parent = t2 ).
-      t42 = t43.
+      t42 = me->obj->run( i_statements = t3 i_parent = t2 ).
       DATA(t47) = VALUE abap_bool( ).
       DATA t48 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t48 = t42->error.
@@ -165,12 +138,7 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t47 = abap_true.
-        DATA t57 TYPE abap_bool.
-        DATA t58 TYPE f.
-        t58 = t42->error_matched.
-        DATA(t60) = CONV f( 0 ).
-        t57 = xsdbool( t58 > t60 ).
-        IF t57 = abap_true.
+        IF xsdbool( t42->error_matched > CONV f( 0 ) ) = abap_true.
           DATA t61 TYPE REF TO zcl_lnt_imatch.
           CLEAR t61.
           DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -184,14 +152,10 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           t70->value = abap_true.
           t66 = t70.
           DATA t72 TYPE string.
-          DATA t73 TYPE string.
-          t73 = t42->error_description.
-          t72 = t73.
-          DATA t75 TYPE f.
+          t72 = t42->error_description.
           DATA t76 TYPE f.
           t76 = t42->error_matched.
-          t75 = t76.
-          t61 = NEW zcl_lnt_imatch( i_matched = t62 i_unmatched = t64 i_error = t66 i_error_description = t72 i_error_matched = t75 ).
+          t61 = NEW zcl_lnt_imatch( i_matched = t62 i_unmatched = t64 i_error = t66 i_error_description = t72 i_error_matched = t76 ).
           CREATE OBJECT t61->zlnt_view_ownkeys_b0e8086400eb.
           t61->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -219,33 +183,28 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t61->zlnt_json_ownkeys_70e5fd461788.
           t61->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t83) = |matched|.
           DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t84.
-          t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t83 p1 = t84 ).
-          DATA(t85) = |unmatched|.
+          t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t84 ).
           DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t86.
           IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t85 p1 = t86 ).
+            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t86 ).
           ENDIF.
-          DATA(t87) = |error|.
           DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t88.
           IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t87 p1 = t88 ).
+            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t88 ).
           ENDIF.
-          DATA(t89) = |errorDescription|.
           DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t90.
           IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t89 p1 = t90 ).
+            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t90 ).
           ENDIF.
-          DATA(t91) = |errorMatched|.
           DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t92.
           IF t61->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
+            t61->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t92 ).
           ENDIF.
           result = t61.
           RETURN.
@@ -256,18 +215,10 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           t94 = t5.
           DATA t96 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           t96 = t3.
-          DATA t98 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t98.
           DATA(t102) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t102->has = abap_true.
           t102->value = abap_false.
-          t98 = t102.
-          DATA t104 TYPE string.
-          t104 = ||.
-          DATA t106 TYPE f.
-          DATA(t107) = CONV f( 0 ).
-          t106 = t107.
-          t93 = NEW zcl_lnt_imatch( i_matched = t94 i_unmatched = t96 i_error = t98 i_error_description = t104 i_error_matched = t106 ).
+          t93 = NEW zcl_lnt_imatch( i_matched = t94 i_unmatched = t96 i_error = t102 i_error_description = || i_error_matched = CONV f( 0 ) ).
           CREATE OBJECT t93->zlnt_view_ownkeys_b0e8086400eb.
           t93->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -295,47 +246,37 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t93->zlnt_json_ownkeys_70e5fd461788.
           t93->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t113) = |matched|.
           DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t114.
-          t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
-          DATA(t115) = |unmatched|.
+          t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t114 ).
           DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t116.
           IF t93->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = t115 p1 = t116 ).
+            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t116 ).
           ENDIF.
-          DATA(t117) = |error|.
           DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t118.
           IF t93->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = t117 p1 = t118 ).
+            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t118 ).
           ENDIF.
-          DATA(t119) = |errorDescription|.
           DATA t120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t120.
           IF t93->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = t119 p1 = t120 ).
+            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t120 ).
           ENDIF.
-          DATA(t121) = |errorMatched|.
           DATA t122 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t122.
           IF t93->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = t121 p1 = t122 ).
+            t93->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t122 ).
           ENDIF.
           result = t93.
           RETURN.
         ENDIF.
       ENDIF.
-      DATA t123 TYPE abap_bool.
-      DATA t124 TYPE i.
       DATA t125 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t125 = t42->matched.
       t125->load( ).
-      t124 = lines( t125->items ).
-      DATA(t127) = 100.
-      t123 = xsdbool( t124 < t127 ).
-      IF t123 = abap_true.
+      IF xsdbool( lines( t125->items ) < 100 ) = abap_true.
         DATA(t128) = VALUE i( ).
         DATA t129 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t129 = t42->matched.
@@ -368,32 +309,23 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           APPEND t131 TO t136->items.
           t136->save( ).
         ENDDO.
-        DATA t138 TYPE i.
         DATA(t139) = t5.
         t139->load( ).
-        t138 = lines( t139->items ).
-        t128 = t138.
+        t128 = lines( t139->items ).
       ELSE.
-        DATA t140 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t142 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t142 = t42->matched.
-        t140 = t5->concat( p0 = t142 ).
-        t5 = t140.
+        t5 = t5->concat( p0 = t142 ).
       ENDIF.
-      DATA t144 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t144 = t42->unmatched.
-      t3 = t144.
+      t3 = t42->unmatched.
     ENDDO.
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 

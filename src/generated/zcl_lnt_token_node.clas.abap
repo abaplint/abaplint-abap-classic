@@ -34,13 +34,10 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
     DATA(t1) = i_n_2941.
     DATA t2 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     DATA t3 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = |TokenNode, Method not implemented.|.
     DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t7->has = abap_true.
-    t7->value = t6.
-    t4 = t7.
-    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t4 ).
+    t7->value = |TokenNode, Method not implemented.|.
+    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t7 ).
     t2 = NEW #( ).
     t2->payload = t3.
     CLEAR t2->source_value.
@@ -72,13 +69,10 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
     DATA(t1) = i_children_ea49.
     DATA t2 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     DATA t3 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = |TokenNode, Method not implemented.|.
     DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t7->has = abap_true.
-    t7->value = t6.
-    t4 = t7.
-    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t4 ).
+    t7->value = |TokenNode, Method not implemented.|.
+    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t7 ).
     t2 = NEW #( ).
     t2->payload = t3.
     CLEAR t2->source_value.
@@ -107,19 +101,15 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_children.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     IF zcl_lnt_token_node_module=>zlnt_builtin_init_67616964ab0b = abap_false.
       zcl_lnt_token_node_module=>zlnt_builtin_init_fbfa5be386ab( ).
     ENDIF.
-    t1 = zcl_lnt_token_node_module=>empty_children.
-    result = t1.
+    result = zcl_lnt_token_node_module=>empty_children.
 
   ENDMETHOD.
 
   METHOD concat_tokens.
-    DATA t4 TYPE string.
-    t4 = me->token->str.
-    result = t4.
+    result = me->token->str.
 
   ENDMETHOD.
 
@@ -129,8 +119,7 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD count_tokens.
-    DATA(t1) = CONV f( 1 ).
-    result = t1.
+    result = CONV f( 1 ).
 
   ENDMETHOD.
 

@@ -25,12 +25,6 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |classic_exceptions_overlap|.
-    DATA t4 TYPE string.
-    t4 = |Classic exceptions overlap when catching|.
-    DATA t6 TYPE string.
-    t6 = |Find overlapping classic exceptions|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |When debugging its typically good to know exactly which exce|.
     t11 = t11 && |ption is caught|.
@@ -40,12 +34,9 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -57,7 +48,6 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
     t28->has = abap_true.
     t28->value = t27.
     t24 = t28.
-    DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t33) = |CALL FUNCTION 'SOMETHING'\n  EXCEPTIONS\n    system_failure   |.
     t33 = t33 && |     = 1 MESSAGE lv_message\n    communication_failure = 2 ME|.
     t33 = t33 && |SSAGE lv_message\n    resource_failure      = 3\n    OTHERS   |.
@@ -65,10 +55,9 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
     DATA(t34) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t34->has = abap_true.
     t34->value = t33.
-    t30 = t34.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t30 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |classic_exceptions_overlap| i_title = |Classic exceptions overlap when catching| i_short_description = |Find overlapping classic exceptions| i_bad_example = t24 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -99,38 +88,31 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = |key|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
-    DATA(t49) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t48 ).
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t50 ).
     ENDIF.
-    DATA(t51) = |shortDescription|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |extendedInformation|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |tags|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |badExample|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |goodExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t60 ).
     ENDIF.
     result = t1.
 
@@ -149,20 +131,12 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
   METHOD r_p_i_s_r_cl_ex_ov_ts_cl_ex_ov.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t17.
-      result = t17.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -226,20 +200,15 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
         DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t39.
         DATA t41 TYPE REF TO zcl_lnt_expression_node.
-        DATA t42 TYPE REF TO zcl_lnt_expression_node.
         DATA(t44) = zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81.
-        t42 = t32->find_direct_expression( i_type_9913 = t44 ).
-        t41 = t42.
+        t41 = t32->find_direct_expression( i_type_9913 = t44 ).
         DATA t45 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t45.
-        DATA(t46) = xsdbool( t41 IS INITIAL ).
-        IF t46 = abap_true.
+        IF xsdbool( t41 IS INITIAL ) = abap_true.
           CLEAR t45.
         ELSE.
           DATA t49 TYPE string.
-          DATA t50 TYPE REF TO zcl_lnt_expression_node.
-          t50 = t41.
-          t49 = t50->concat_tokens( ).
+          t49 = t41->concat_tokens( ).
           DATA(t52) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t52->has = abap_true.
           t52->value = t49.
@@ -273,7 +242,6 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           t53 = t61.
         ENDIF.
         t37 = t53.
-        DATA(t62) = VALUE abap_bool( ).
         DATA t63 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t63 = t37.
         DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -284,15 +252,12 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
         ELSEIF t63->has = abap_false.
           t67 = abap_true.
         ENDIF.
-        t62 = t67.
-        IF t62 = abap_true.
+        IF t67 = abap_true.
           CONTINUE.
         ENDIF.
-        DATA t69 TYPE abap_bool.
         DATA t71 TYPE string.
         t71 = t37->value.
-        t69 = t27->has( p0 = t71 ).
-        IF t69 = abap_true.
+        IF t27->has( p0 = t71 ) = abap_true.
           DATA t74 TYPE string.
           DATA(t75) = |Exception overlap, |.
           DATA t76 TYPE string.
@@ -306,12 +271,6 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           DATA(t85) = VALUE string( ).
           DATA t86 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t86.
-          DATA t87 TYPE string.
-          t87 = |classic_exceptions_overlap|.
-          DATA t89 TYPE string.
-          t89 = |Classic exceptions overlap when catching|.
-          DATA t91 TYPE string.
-          t91 = |Find overlapping classic exceptions|.
           DATA t93 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t93.
           DATA(t96) = |When debugging its typically good to know exactly which exce|.
@@ -323,12 +282,9 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           DATA t99 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t99.
           DATA t103 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t104 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t104.
-          t103 = t104.
-          DATA(t106) = |SingleFile|.
+          CREATE OBJECT t103.
           t103->load( ).
-          APPEND t106 TO t103->items.
+          APPEND |SingleFile| TO t103->items.
           t103->save( ).
           t99 = t103.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -355,7 +311,7 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           CLEAR t121.
           DATA t123 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t123.
-          t86 = NEW zcl_lnt_irule_metadata( i_key = t87 i_title = t89 i_short_description = t91 i_bad_example = t109 i_good_example = t115 i_extended_information = t93 i_tags = t99 i_pragma = t121 i_pseudo_comment = t123 ).
+          t86 = NEW zcl_lnt_irule_metadata( i_key = |classic_exceptions_overlap| i_title = |Classic exceptions overlap when catching| i_short_description = |Find overlapping classic exceptions| i_bad_example = t109 i_good_example = t115 i_extended_information = t93 i_tags = t99 i_pragma = t121 i_pseudo_comment = t123 ).
           CREATE OBJECT t86->zlnt_view_ownkeys_b0e8086400eb.
           t86->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -393,50 +349,42 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t86->zlnt_json_ownkeys_70e5fd461788.
           t86->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t132) = |key|.
           DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t133.
-          t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t132 p1 = t133 ).
-          DATA(t134) = |title|.
+          t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t133 ).
           DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t135.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t134 p1 = t135 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t135 ).
           ENDIF.
-          DATA(t136) = |shortDescription|.
           DATA t137 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t137.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t136 p1 = t137 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t137 ).
           ENDIF.
-          DATA(t138) = |extendedInformation|.
           DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t139.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t138 p1 = t139 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t139 ).
           ENDIF.
-          DATA(t140) = |tags|.
           DATA t141 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t141.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t140 p1 = t141 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t141 ).
           ENDIF.
-          DATA(t142) = |badExample|.
           DATA t143 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t143.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t142 p1 = t143 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t143 ).
           ENDIF.
-          DATA(t144) = |goodExample|.
           DATA t145 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t145.
           IF t86->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = t144 p1 = t145 ).
+            t86->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t145 ).
           ENDIF.
           t85 = t86->key.
           DATA t146 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA(t147) = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov( ) ).
-          t146 = t147->zlnt_view_read_sr_15c06369f827( ).
+          t146 = CAST zcl_lnt_clssc_excptn_ovrlp_cnf( me->g_c_i_s_r_cl_ex_ov_ts_cl_ex_ov( ) )->zlnt_view_read_sr_15c06369f827( ).
           DATA t148 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t148.
           t80 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t82 i_message_26cb = t74 i_key = t85 i_severity = t146 i_fix = t148 ).

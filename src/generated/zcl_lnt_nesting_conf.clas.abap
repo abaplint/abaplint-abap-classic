@@ -24,8 +24,7 @@ CLASS zcl_lnt_nesting_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 5 ).
-    me->zlnt_view_write_s_8a23b52e8b20( p0 = t1 ).
+    me->zlnt_view_write_s_8a23b52e8b20( p0 = CONV f( 5 ) ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

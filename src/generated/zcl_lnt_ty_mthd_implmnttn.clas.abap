@@ -11,22 +11,15 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_node.
     DATA(t2) = i_filename.
-    DATA(t3) = VALUE abap_bool( ).
-    DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zif_lnt_structure.
     t5 = t1->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-    t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_method ).
-    t3 = xsdbool( t4 = abap_false ).
-    IF t3 = abap_true.
+    IF xsdbool( xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_method ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |MethodImplementation, expected Method as part of input node|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |MethodImplementation, expected Method as part of input node|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -54,24 +47,18 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA t16 TYPE REF TO zcl_lnt_expression_node.
-    DATA t17 TYPE REF TO zcl_lnt_expression_node.
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d88_73c97f542216fb.
-    t17 = t1->find_first_expression( i_type_9913 = t19 ).
-    t16 = t17.
-    DATA(t20) = VALUE abap_bool( ).
+    t16 = t1->find_first_expression( i_type_9913 = t19 ).
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t20 = xsdbool( t16 IS INITIAL ).
-    IF t20 = abap_true.
+    IF xsdbool( t16 IS INITIAL ) = abap_true.
       DATA t27 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t28 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t31) = |MethodImplementation, expected MethodName as part of input n|.
       t31 = t31 && |ode|.
       DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t32->has = abap_true.
       t32->value = t31.
-      t29 = t32.
-      t28 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t29 ).
+      t28 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t32 ).
       t27 = NEW #( ).
       t27->payload = t28.
       CLEAR t27->source_value.
@@ -99,9 +86,7 @@ CLASS zcl_lnt_ty_mthd_implmnttn IMPLEMENTATION.
       RAISE EXCEPTION t27.
     ENDIF.
     DATA t36 TYPE REF TO zcl_lnt_abstract_token.
-    DATA t37 TYPE REF TO zcl_lnt_expression_node.
-    t37 = t16.
-    t36 = t37->get_first_token( ).
+    t36 = t16->get_first_token( ).
     super->constructor( i_token = t36 i_filename = t2 ).
   ENDMETHOD.
 

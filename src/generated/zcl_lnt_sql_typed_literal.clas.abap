@@ -15,9 +15,7 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t4) = VALUE string( ).
     DATA(t5) = VALUE string( ).
     DATA(t6) = |^(|.
     DATA(t7) = VALUE string( ).
@@ -26,20 +24,15 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
       zcl_lnt_sql_typd_ltrl_mdl=>zlnt_builtin_init_527ecce2c635( ).
     ENDIF.
     t8 = zcl_lnt_sql_typd_ltrl_mdl=>typed_literal_types.
-    DATA(t9) = |\||.
     DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = |\||.
     t7 = t8->join( p0 = t10 ).
     DATA(t11) = strlen( t6 ).
     t5 = |{ t6 }{ t7 }|.
-    DATA(t12) = |)$|.
     DATA(t13) = strlen( t5 ).
-    t4 = |{ t5 }{ t12 }|.
-    DATA(t14) = |i|.
-    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = t14.
-    t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
-    t1 = t2.
+    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |{ t5 }{ |)$| }| flags = |i|.
+    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -67,7 +60,6 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t23 TYPE REF TO zif_lnt_statement_runnable.
     DATA t24 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t25) = |^`.*`$|.
     DATA(t26) = |^`[^\n\r|.
     DATA t27 TYPE c LENGTH 1.
     t27 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -76,9 +68,8 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     t28 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t26 t28 INTO t26 RESPECTING BLANKS.
     t26 = t26 && |]*`$|.
-    DATA(t29) = ||.
-    CREATE OBJECT t24 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t26 flags = t29.
-    t24->source = t25.
+    CREATE OBJECT t24 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t26 flags = ||.
+    t24->source = |^`.*`$|.
     t23 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t24 ).
     IF t23 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -105,9 +96,7 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t33.
-    DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    t34 = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t22 i_rest = t33 ).
-    result = t34.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t22 i_rest = t33 ).
 
   ENDMETHOD.
 

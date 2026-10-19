@@ -42,8 +42,7 @@ CLASS zcl_lnt_n_yd_cndtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_bdd636150a95.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `onlyConstants` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `onlyConstants` ) )->as_boolean( ).
     ELSE.
       result = me->only_constants.
     ENDIF.

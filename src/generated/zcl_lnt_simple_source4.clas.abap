@@ -29,9 +29,7 @@ CLASS zcl_lnt_simple_source4 IMPLEMENTATION.
       t6->cval = t7.
     ENDIF.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
     IF t12 IS BOUND.
@@ -52,9 +50,7 @@ CLASS zcl_lnt_simple_source4 IMPLEMENTATION.
     t8->load( ).
     APPEND t14 TO t8->items.
     t8->save( ).
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>alt( i_first = t3 i_second = t6 i_rest = t8 ).
-    result = t16.
+    result = zcl_lnt_st_combi_module=>alt( i_first = t3 i_second = t6 i_rest = t8 ).
 
   ENDMETHOD.
 

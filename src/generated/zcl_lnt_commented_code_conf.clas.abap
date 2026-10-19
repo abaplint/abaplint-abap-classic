@@ -42,8 +42,7 @@ CLASS zcl_lnt_commented_code_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_77c0cb4e3d06.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIncludeInFugr` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIncludeInFugr` ) )->as_boolean( ).
     ELSE.
       result = me->allow_include_in_fugr.
     ENDIF.

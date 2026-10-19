@@ -24,10 +24,9 @@ CLASS zcl_lnt_method_param_optional IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t9) = |OPTIONAL|.
     CREATE OBJECT t8.
     t8->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t8->sval = t9.
+    t8->sval = |OPTIONAL|.
     t7 = zcl_lnt_st_combi_module=>opt_prio( i_first = t8 ).
     IF t7 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -54,9 +53,7 @@ CLASS zcl_lnt_method_param_optional IMPLEMENTATION.
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t13.
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    t14 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t13 ).
-    result = t14.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t13 ).
 
   ENDMETHOD.
 

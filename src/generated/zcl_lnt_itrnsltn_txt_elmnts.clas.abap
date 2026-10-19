@@ -86,9 +86,8 @@ CLASS zcl_lnt_itrnsltn_txt_elmnts IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f2debfe321d5.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `textElements` ) ).
       DATA t2 TYPE REF TO object.
-      t2 = t1->as_ref( ).
+      t2 = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `textElements` ) )->as_ref( ).
       result ?= t2.
     ELSE.
       result = me->text_elements.

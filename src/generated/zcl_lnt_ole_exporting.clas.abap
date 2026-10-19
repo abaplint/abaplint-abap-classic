@@ -18,11 +18,8 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t7) = `^[&_!#\*]?[\w\d\*%\$\?#]+$`.
-    DATA(t8) = `^[&_!#\*]?[A-Za-z0-9_0-9\*%\$\?#]+$`.
-    DATA(t9) = ||.
-    CREATE OBJECT t6 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t8 flags = t9.
-    t6->source = t7.
+    CREATE OBJECT t6 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^[&_!#\*]?[A-Za-z0-9_0-9\*%\$\?#]+$` flags = ||.
+    t6->source = `^[&_!#\*]?[\w\d\*%\$\?#]+$`.
     t5 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t6 ).
     IF t5 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -48,14 +45,11 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t14) = |=|.
     CREATE OBJECT t13.
     t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t13->sval = t14.
+    t13->sval = |=|.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t16.
-    t15 = t16.
+    CREATE OBJECT t15.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t19 IS BOUND.
@@ -66,14 +60,11 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     t15->load( ).
     APPEND t18 TO t15->items.
     t15->save( ).
-    DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    t20 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t13 i_rest = t15 ).
-    t1 = t20.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t13 i_rest = t15 ).
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t27) = |EXPORTING|.
     CREATE OBJECT t26.
     t26->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t26->sval = t27.
+    t26->sval = |EXPORTING|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t30 TYPE REF TO zif_lnt_statement_runnable.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -126,9 +117,7 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     ENDIF.
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t38.
-    DATA t39 TYPE REF TO zif_lnt_statement_runnable.
-    t39 = zcl_lnt_st_combi_module=>seq( i_first = t26 i_second = t29 i_rest = t38 ).
-    result = t39.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t26 i_second = t29 i_rest = t38 ).
 
   ENDMETHOD.
 

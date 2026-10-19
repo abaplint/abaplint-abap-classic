@@ -22,113 +22,65 @@ CLASS zcl_lnt_irule_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_irule_module=>rule_tag_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t3 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t4) = |Experimental|.
-    DATA(t5) = |Experimental|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Experimental| p1 = |Experimental| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t7 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t8) = |DeprecationCandidate|.
-    DATA(t9) = |DeprecationCandidate|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |DeprecationCandidate| p1 = |DeprecationCandidate| ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t11 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t12) = |Upport|.
-    DATA(t13) = |Upport|.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Upport| p1 = |Upport| ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t15 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t16) = |Downport|.
-    DATA(t17) = |Downport|.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Downport| p1 = |Downport| ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t19 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t20) = |Whitespace|.
-    DATA(t21) = |Whitespace|.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Whitespace| p1 = |Whitespace| ).
     DATA t22 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t23 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t24) = |Naming|.
-    DATA(t25) = |Naming|.
-    t22 = t23->set( p0 = t24 p1 = t25 ).
+    t22 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Naming| p1 = |Naming| ).
     DATA t26 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t27 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t28) = |Quickfix|.
-    DATA(t29) = |Quickfix|.
-    t26 = t27->set( p0 = t28 p1 = t29 ).
+    t26 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Quickfix| p1 = |Quickfix| ).
     DATA t30 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t31 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t32) = |Performance|.
-    DATA(t33) = |Performance|.
-    t30 = t31->set( p0 = t32 p1 = t33 ).
+    t30 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Performance| p1 = |Performance| ).
     DATA t34 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t35 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t35 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t36) = |Syntax|.
-    DATA(t37) = |Syntax|.
-    t34 = t35->set( p0 = t36 p1 = t37 ).
+    t34 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Syntax| p1 = |Syntax| ).
     DATA t38 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t39 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t39 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t40) = |Security|.
-    DATA(t41) = |Security|.
-    t38 = t39->set( p0 = t40 p1 = t41 ).
+    t38 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Security| p1 = |Security| ).
     DATA t42 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t43 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t43 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t44) = |Styleguide|.
-    DATA(t45) = |Styleguide|.
-    t42 = t43->set( p0 = t44 p1 = t45 ).
+    t42 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |Styleguide| p1 = |Styleguide| ).
     DATA t46 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t47 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_irule_module=>zlnt_builtin_init_b4b858c11bcd = abap_false.
       zcl_lnt_irule_module=>zlnt_builtin_init_65c8e36e282f( ).
     ENDIF.
-    t47 = zcl_lnt_irule_module=>rule_tag_namespace.
-    DATA(t48) = |SingleFile|.
-    DATA(t49) = |SingleFile|.
-    t46 = t47->set( p0 = t48 p1 = t49 ).
+    t46 = zcl_lnt_irule_module=>rule_tag_namespace->set( p0 = |SingleFile| p1 = |SingleFile| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -42,8 +42,7 @@ CLASS zcl_lnt_flly_typ_cnsnts_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_2d1dce4fd73b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkData` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkData` ) )->as_boolean( ).
     ELSE.
       result = me->check_data.
     ENDIF.

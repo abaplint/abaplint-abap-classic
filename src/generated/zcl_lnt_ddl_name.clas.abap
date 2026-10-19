@@ -24,9 +24,7 @@ CLASS zcl_lnt_ddl_name IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA t8 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t9) = |^"[^"]*"$|.
-    DATA(t10) = ||.
-    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t9 flags = t10.
+    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^"[^"]*"$| flags = ||.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
     IF t7 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -53,9 +51,7 @@ CLASS zcl_lnt_ddl_name IMPLEMENTATION.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    t15 = zcl_lnt_st_combi_module=>alt( i_first = t3 i_second = t6 i_rest = t14 ).
-    result = t15.
+    result = zcl_lnt_st_combi_module=>alt( i_first = t3 i_second = t6 i_rest = t14 ).
 
   ENDMETHOD.
 

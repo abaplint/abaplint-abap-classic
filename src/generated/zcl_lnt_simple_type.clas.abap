@@ -30,12 +30,10 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_simple_type.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
-    t1 = zcl_lnt_simple_type=>singleton.
-    result = t1.
+    result = zcl_lnt_simple_type=>singleton.
 
   ENDMETHOD.
 
@@ -78,12 +76,10 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_simple_type.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
-    t1 = NEW zcl_lnt_simple_type( ).
-    zcl_lnt_simple_type=>singleton = t1.
+    zcl_lnt_simple_type=>singleton = NEW zcl_lnt_simple_type( ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

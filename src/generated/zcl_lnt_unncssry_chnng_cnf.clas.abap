@@ -27,10 +27,9 @@ CLASS zcl_lnt_unncssry_chnng_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 10 ).
     DATA(t2) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = CONV f( 10 ).
     me->zlnt_view_write_s_426a57b58706( p0 = t2 ).
     me->zlnt_view_write_s_7e1445bc275b( p0 = abap_true ).
   ENDMETHOD.
@@ -83,8 +82,7 @@ CLASS zcl_lnt_unncssry_chnng_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f1237ade84fb.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_exceptions.
     ENDIF.

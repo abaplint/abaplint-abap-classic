@@ -42,8 +42,7 @@ CLASS zcl_lnt_unncssry_rtrn_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_b8269287eadd.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEmpty` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEmpty` ) )->as_boolean( ).
     ELSE.
       result = me->allow_empty.
     ENDIF.

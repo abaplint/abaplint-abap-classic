@@ -45,41 +45,34 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^[LGM].?_|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |^[LGM].?_|.
     me->zlnt_view_write_s_d12305478068( p0 = t2 ).
-    DATA(t3) = |^S.?_|.
     DATA(t4) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = |^S.?_|.
     me->zlnt_view_write_s_de66a556be8d( p0 = t4 ).
-    DATA(t5) = |^<[LGM].?_|.
     DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t6->has = abap_true.
-    t6->value = t5.
+    t6->value = |^<[LGM].?_|.
     me->zlnt_view_write_s_a94744793f24( p0 = t6 ).
-    DATA(t7) = |^[LGM]?C.?_|.
     DATA(t8) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t8->has = abap_true.
-    t8->value = t7.
+    t8->value = |^[LGM]?C.?_|.
     me->zlnt_view_write_s_566074400cd1( p0 = t8 ).
-    DATA(t9) = |^TY_|.
     DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = |^TY_|.
     me->zlnt_view_write_s_df9f5d93b53a( p0 = t10 ).
-    DATA(t11) = |^[ICER].?_|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |^[ICER].?_|.
     me->zlnt_view_write_s_8febcfc2d485( p0 = t12 ).
     me->zlnt_view_write_s_5d2436c6d6c3( p0 = abap_true ).
-    DATA(t14) = CONV f( 10 ).
     DATA(t15) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t15->has = abap_true.
-    t15->value = t14.
+    t15->value = CONV f( 10 ).
     me->zlnt_view_write_s_17c92bfb8c4c( p0 = t15 ).
   ENDMETHOD.
 
@@ -272,8 +265,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_c67116829635.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIsPrefixBoolean` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIsPrefixBoolean` ) )->as_boolean( ).
     ELSE.
       result = me->allow_is_prefix_boolean.
     ENDIF.

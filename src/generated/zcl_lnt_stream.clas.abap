@@ -20,7 +20,6 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD take_next.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = CONV string( me->buffer ).
     DATA(t4) = 0.
@@ -35,8 +34,6 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
     ENDIF.
     t6 = t5 - t4.
     t2 = t3+t4(t6).
-    t1 = t2.
-    DATA(t7) = VALUE string( ).
     DATA t8 TYPE string.
     DATA(t9) = CONV string( me->buffer ).
     t8 = t9.
@@ -54,15 +51,13 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
     ENDIF.
     t16 = t13 - t12.
     t10 = t8+t12(t16).
-    t7 = t10.
-    me->buffer = t7.
+    me->buffer = t10.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-    result = t1.
+    result = t2.
 
   ENDMETHOD.
 
   METHOD peek_next.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = CONV string( me->buffer ).
     DATA(t4) = 0.
@@ -77,8 +72,7 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
     ENDIF.
     t6 = t5 - t4.
     t2 = t3+t4(t6).
-    t1 = t2.
-    result = t1.
+    result = t2.
 
   ENDMETHOD.
 

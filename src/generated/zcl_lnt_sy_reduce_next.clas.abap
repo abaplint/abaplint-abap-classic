@@ -13,10 +13,8 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
-    DATA(t3) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t3 = xsdbool( t1 IS INITIAL ).
-    IF t3 = abap_true.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

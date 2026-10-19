@@ -15,10 +15,9 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |EXTENDED RESULT|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |EXTENDED RESULT|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d42_9f93cd02a8cf40.
@@ -47,17 +46,12 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t12.
-    t11 = t12.
+    CREATE OBJECT t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t15 TYPE REF TO zif_lnt_statement_runnable.
     DATA t16 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t17) = `^\w+$`.
-    DATA(t18) = |^[A-Za-z0-9_]+$|.
-    DATA(t19) = ||.
-    CREATE OBJECT t16 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t18 flags = t19.
-    t16->source = t17.
+    CREATE OBJECT t16 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t16->source = `^\w+$`.
     t15 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t16 ).
     IF t15 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -85,9 +79,7 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
     t11->load( ).
     APPEND t14 TO t11->items.
     t11->save( ).
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    t22 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
-    result = t22.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
 
   ENDMETHOD.
 

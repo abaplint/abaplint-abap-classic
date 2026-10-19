@@ -28,34 +28,24 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |index_completely_contained|.
-    DATA t4 TYPE string.
-    t4 = |Check if database table indexes are completely contained|.
     DATA t6 TYPE string.
     DATA(t7) = |If indexes are completely contained in other indexes, they c|.
     t7 = t7 && |an be removed to improve performance.|.
     t6 = t7.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Performance|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Performance| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |index_completely_contained| i_title = |Check if database table indexes are completely contained| i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -74,23 +64,19 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -113,14 +99,8 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    t3 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -130,27 +110,18 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
     t11 = t1.
     t9 ?= t11.
     t8 = t9.
-    DATA(t13) = VALUE abap_bool( ).
     DATA t15 TYPE REF TO zcl_lnt_shape_b90fc0d5.
     t15 = t8->parsed_data.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t13 = xsdbool( t15 IS INITIAL ).
-    IF t13 = abap_true.
+    IF xsdbool( t15 IS INITIAL ) = abap_true.
       t8->parse_xml( ).
     ENDIF.
     DATA t23 TYPE REF TO zcl_lnt_shape_b90fc0d5.
-    DATA t24 TYPE REF TO zcl_lnt_shape_b90fc0d5.
-    t24 = t8->parsed_data.
-    t23 = t24.
+    t23 = t8->parsed_data.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t27) = xsdbool( t23 IS INITIAL ).
-    IF t27 = abap_true.
+    IF xsdbool( t23 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t31 TYPE REF TO zcl_lnt_shape_b90fc0d5.
-      t31 = t23.
-      t30 = t31->secondary_indexes.
-      t26 = t30.
+      t26 = t23->secondary_indexes.
     ENDIF.
     t6 = t26.
     DATA(t33) = VALUE abap_bool( ).
@@ -159,37 +130,24 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
     t34 = xsdbool( t6 IS INITIAL ).
     t33 = t34.
     IF t34 = abap_false.
-      DATA t41 TYPE abap_bool.
-      DATA t42 TYPE i.
       DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t43 = t6.
       t43->load( ).
-      t42 = lines( t43->items ).
-      DATA(t45) = 0.
-      t41 = xsdbool( t42 = t45 ).
-      t33 = t41.
+      t33 = xsdbool( lines( t43->items ) = 0 ).
     ENDIF.
     IF t33 = abap_true.
-      DATA t46 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t46.
-      result = t46.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t48.
-    t47 = t48.
+    CREATE OBJECT t47.
     DATA t49 TYPE i.
     t49 = 0.
     DO.
-      DATA t51 TYPE abap_bool.
-      DATA t53 TYPE i.
       DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t54 = t6.
       t54->load( ).
-      t53 = lines( t54->items ).
-      t51 = xsdbool( t49 < t53 ).
-      IF t51 = abap_false.
+      IF xsdbool( t49 < lines( t54->items ) ) = abap_false.
         EXIT.
       ENDIF.
       DATA t56 TYPE REF TO zcl_lnt_secondary_index.
@@ -220,23 +178,15 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
       DATA t64 TYPE i.
       t64 = 0.
       DO.
-        DATA t66 TYPE abap_bool.
-        DATA t68 TYPE i.
         DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t69 = t6.
         t69->load( ).
-        t68 = lines( t69->items ).
-        t66 = xsdbool( t64 < t68 ).
-        IF t66 = abap_false.
+        IF xsdbool( t64 < lines( t69->items ) ) = abap_false.
           EXIT.
         ENDIF.
-        DATA t71 TYPE abap_bool.
-        t71 = xsdbool( t49 = t64 ).
-        IF t71 = abap_true.
-          DATA t74 TYPE i.
+        IF xsdbool( t49 = t64 ) = abap_true.
           DATA(t76) = 1.
-          t74 = t64 + t76.
-          t64 = t74.
+          t64 = t64 + t76.
           CONTINUE.
         ENDIF.
         DATA t77 TYPE REF TO zcl_lnt_secondary_index.
@@ -282,37 +232,25 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t90 = t90 + 1.
-          DATA t91 TYPE abap_bool.
-          DATA t92 TYPE i.
-          DATA t93 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          t93 = t77->fields_464c.
-          t92 = t93->indexof( p0 = t89 ).
-          DATA(t96) = -1.
-          t91 = xsdbool( t92 = t96 ).
-          IF t91 = abap_true.
+          IF xsdbool( t77->fields_464c->indexof( p0 = t89 ) = -1 ) = abap_true.
             t85 = abap_false.
             EXIT.
           ENDIF.
         ENDDO.
         IF t85 = abap_true.
           DATA t100 TYPE REF TO zcl_lnt_position.
-          DATA(t101) = CONV f( 1 ).
-          DATA(t102) = CONV f( 1 ).
           DATA(t103) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t103->has = abap_true.
-          t103->value = t102.
-          t100 = NEW zcl_lnt_position( i_row = t101 i_col = t103 ).
+          t103->value = CONV f( 1 ).
+          t100 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t103 ).
           DATA(t104) = VALUE string( ).
-          DATA(t105) = VALUE string( ).
           DATA(t106) = VALUE string( ).
           DATA(t107) = VALUE string( ).
           DATA(t108) = VALUE string( ).
           DATA(t109) = |Index "|.
           DATA(t110) = VALUE string( ).
           DATA t111 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t112 = t56->name.
-          t111 = t112.
+          t111 = t56->name.
           DATA(t114) = VALUE string( ).
           DATA(t115) = VALUE abap_bool( ).
           IF t111 IS INITIAL.
@@ -323,21 +261,16 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           IF t115 = abap_true.
             t114 = |undefined|.
           ELSE.
-            DATA t118 TYPE string.
-            t118 = t111->value.
-            t114 = t118.
+            t114 = t111->value.
           ENDIF.
           t110 = t114.
           DATA(t120) = strlen( t109 ).
           t108 = |{ t109 }{ t110 }|.
-          DATA(t121) = |" is completely contained in index "|.
           DATA(t122) = strlen( t108 ).
-          t107 = |{ t108 }{ t121 }|.
+          t107 = |{ t108 }{ |" is completely contained in index "| }|.
           DATA(t123) = VALUE string( ).
           DATA t124 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t125 = t77->name.
-          t124 = t125.
+          t124 = t77->name.
           DATA(t127) = VALUE string( ).
           DATA(t128) = VALUE abap_bool( ).
           IF t124 IS INITIAL.
@@ -348,17 +281,13 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           IF t128 = abap_true.
             t127 = |undefined|.
           ELSE.
-            DATA t131 TYPE string.
-            t131 = t124->value.
-            t127 = t131.
+            t127 = t124->value.
           ENDIF.
           t123 = t127.
           DATA(t133) = strlen( t107 ).
           t106 = |{ t107 }{ t123 }|.
-          DATA(t134) = |"|.
           DATA(t135) = strlen( t106 ).
-          t105 = |{ t106 }{ t134 }|.
-          t104 = t105.
+          t104 = |{ t106 }{ |"| }|.
           DATA t137 TYPE REF TO zcl_lnt_issue.
           CLEAR t137.
           DATA t138 TYPE REF TO zif_lnt_file.
@@ -370,9 +299,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           t143 = t1.
           t141 ?= t143.
           t140 = t141.
-          DATA t144 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t144 = t140->files.
-          t139 = t144.
+          t139 = t140->files.
           DATA t146 TYPE REF TO object.
           CLEAR t146.
           t139->load( ).
@@ -392,10 +319,6 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           DATA(t151) = VALUE string( ).
           DATA t152 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t152.
-          DATA t153 TYPE string.
-          t153 = |index_completely_contained|.
-          DATA t155 TYPE string.
-          t155 = |Check if database table indexes are completely contained|.
           DATA t157 TYPE string.
           DATA(t158) = |If indexes are completely contained in other indexes, they c|.
           t158 = t158 && |an be removed to improve performance.|.
@@ -403,16 +326,12 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           DATA t159 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t159.
           DATA t163 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t164 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t164.
-          t163 = t164.
-          DATA(t166) = |Performance|.
+          CREATE OBJECT t163.
           t163->load( ).
-          APPEND t166 TO t163->items.
+          APPEND |Performance| TO t163->items.
           t163->save( ).
-          DATA(t168) = |SingleFile|.
           t163->load( ).
-          APPEND t168 TO t163->items.
+          APPEND |SingleFile| TO t163->items.
           t163->save( ).
           t159 = t163.
           DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -425,7 +344,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           CLEAR t177.
           DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t179.
-          t152 = NEW zcl_lnt_irule_metadata( i_key = t153 i_title = t155 i_short_description = t157 i_bad_example = t171 i_good_example = t173 i_extended_information = t175 i_tags = t159 i_pragma = t177 i_pseudo_comment = t179 ).
+          t152 = NEW zcl_lnt_irule_metadata( i_key = |index_completely_contained| i_title = |Check if database table indexes are completely contained| i_short_description = t157 i_bad_example = t171 i_good_example = t173 i_extended_information = t175 i_tags = t159 i_pragma = t177 i_pseudo_comment = t179 ).
           CREATE OBJECT t152->zlnt_view_ownkeys_b0e8086400eb.
           t152->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -448,27 +367,23 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t152->zlnt_json_ownkeys_70e5fd461788.
           t152->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t185) = |key|.
           DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t186.
-          t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = t185 p1 = t186 ).
-          DATA(t187) = |title|.
+          t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t186 ).
           DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t188.
           IF t152->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = t187 p1 = t188 ).
+            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t188 ).
           ENDIF.
-          DATA(t189) = |shortDescription|.
           DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t190.
           IF t152->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = t189 p1 = t190 ).
+            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t190 ).
           ENDIF.
-          DATA(t191) = |tags|.
           DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t192.
           IF t152->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = t191 p1 = t192 ).
+            t152->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t192 ).
           ENDIF.
           t151 = t152->key.
           DATA t193 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -480,15 +395,11 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           APPEND t137 TO t47->items.
           t47->save( ).
         ENDIF.
-        DATA t196 TYPE i.
         DATA(t198) = 1.
-        t196 = t64 + t198.
-        t64 = t196.
+        t64 = t64 + t198.
       ENDDO.
-      DATA t199 TYPE i.
       DATA(t201) = 1.
-      t199 = t49 + t201.
-      t49 = t199.
+      t49 = t49 + t201.
     ENDDO.
     result = t47.
 

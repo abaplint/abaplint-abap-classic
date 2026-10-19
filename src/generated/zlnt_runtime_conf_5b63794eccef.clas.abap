@@ -8828,15 +8828,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__3e259f4987b9=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_0e125074a773( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -8884,15 +8882,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__ca02e874f6d5=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_d02df6f7cfb7( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -8940,15 +8936,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__7946c121f0e1=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_995e5d3708b1( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -8996,15 +8990,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__a8db3647ad44=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_22af2cbe6a7c( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9052,15 +9044,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__8a73eae8287f=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_28c72505a173( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9108,15 +9098,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__68aa8717233d=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_9169e5c5d40b( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9164,15 +9152,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__4fdf767b61ba=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_ff4bb47388ec( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9220,15 +9206,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__9af21ec489fc=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_8d98ed20742d( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9242,15 +9226,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__9f51cbbe9de8=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_a_17dadd04f5b8( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9264,15 +9246,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__45a2315f90b8=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_b_54eca26cd53d( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9293,15 +9273,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__755fcb8e49f3=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_7d29fd0041d6( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9322,15 +9300,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__5a3c0ec03a13=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_380844c5259d( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9351,15 +9327,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__617ff131b0f3=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_53df9edca868( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9380,15 +9354,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__eb808f96a04f=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_f0de5f2dde89( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9409,15 +9381,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__be9b74e2658e=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_717e53798265( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9438,15 +9408,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__7f28925f9deb=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_927c43c5bc45( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9467,15 +9435,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__c27ad0d4c484=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_68fed941cf87( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9496,15 +9462,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__f9d623f88b73=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_1f373a0354d6( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9518,15 +9482,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__b1b44c588059=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_0a38d6bb7923( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9547,15 +9509,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__d1f17afcc3e9=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_2823b9b55fc5( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9576,15 +9536,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__126b79e3f8a9=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_990b928fe54f( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9598,15 +9556,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__41b3bb94df3d=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_b4c8f0f001b2( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9627,15 +9583,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__f0ab54f50466=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_85168c319220( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9656,15 +9610,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__64901630341d=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_74f79d92eef3( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9685,15 +9637,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__fc7cfbd4d3c1=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_f72ff69ed3a0( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9714,15 +9664,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__363847cd8bb7=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_936605080663( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9743,15 +9691,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__0a96e2468aae=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_3ead51092cb6( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9772,15 +9718,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__1a1c43cd0638=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_6e85d2e5e492( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9805,15 +9749,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__201f3699a39e=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_22eb8e4e3cf5( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9834,15 +9776,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__a5ffc3d163a5=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_c_cd0069ebd541( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9856,15 +9796,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__abd6fd794ffb=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_d_c0d21e601b2d( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9885,15 +9823,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__e0d0c31d82d4=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_01215116a2c9( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9907,15 +9843,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__05e804ab454e=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_16ea44f80b6e( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9936,15 +9870,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__1746889b1684=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_e8ad4c742b1a( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9965,15 +9897,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__3d720b31a8f8=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_a7be8237e3ef( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -9994,15 +9924,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__0fbcc10173b8=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_bd3bdbc5bbb8( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10023,15 +9951,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__df7ea9ca9d2a=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_01c834b80114( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10052,15 +9978,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__b4fe03e97505=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_9531f731fb73( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10081,15 +10005,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__89ba5e9f6101=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_i_ee45525d6858( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10103,15 +10025,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__1966acad182d=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_f367cb2f080d( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10125,15 +10045,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__e91283f90792=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_4932064d357b( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10147,15 +10065,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__64c5859ed39f=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_69dace769ee0( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10169,15 +10085,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__e02fab5a9752=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_a2febf22e731( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10191,15 +10105,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__f8cd1b113b3e=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_a6be85f9a358( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10213,15 +10125,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__6ec5bb307efb=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_m_9e2e22b1bf34( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10235,15 +10145,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__fed782b2fc26=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_n_d6765948a8f4( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10271,15 +10179,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__36824941f28a=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_o_4f9d013fbc24( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10293,15 +10199,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__70f58d75267f=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_o_1388abd23543( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -10315,15 +10219,13 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     enter( p0 ).
     DATA graph TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA row TYPE zlnt_runtime_map__a1006b231250=>entry.
-    DATA value TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA text TYPE string.
     CREATE OBJECT graph.
     graph->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT p0->entries INTO row.
       text = zlnt_json_write_s_46aa4beb20b8( row-v ).
       IF text IS NOT INITIAL.
-        value = zlnt_runtime_json_7c6b3012af76=>parse( text ).
-        graph->put( p0 = row-k p1 = value ).
+        graph->put( p0 = row-k p1 = zlnt_runtime_json_7c6b3012af76=>parse( text ) ).
       ENDIF.
     ENDLOOP.
     result = zlnt_json_write_d_c0d21e601b2d( graph ).
@@ -39183,7 +39085,6 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD code_unit.
-    DATA converter TYPE REF TO cl_abap_conv_out_ce.
     DATA bytes TYPE xstring.
     DATA low TYPE x LENGTH 1.
     DATA high TYPE x LENGTH 1.
@@ -39192,8 +39093,7 @@ CLASS zlnt_runtime_conf_5b63794eccef IMPLEMENTATION.
     unit = p0.
     result = cl_abap_conv_out_ce=>uccpi( unit ).
     IF result >= 255.
-      converter = cl_abap_conv_out_ce=>create( encoding = '4103' ).
-      converter->convert( EXPORTING data = unit IMPORTING buffer = bytes ).
+      cl_abap_conv_out_ce=>create( encoding = '4103' )->convert( EXPORTING data = unit IMPORTING buffer = bytes ).
       low = bytes+0(1).
       high = bytes+1(1).
       result = low.

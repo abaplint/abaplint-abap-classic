@@ -15,22 +15,15 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_node.
     DATA(t2) = i_filename.
-    DATA(t3) = VALUE abap_bool( ).
-    DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zif_lnt_structure.
     t5 = t1->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-    t4 = xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_sr_clss_implmnttn ).
-    t3 = xsdbool( t4 = abap_false ).
-    IF t3 = abap_true.
+    IF xsdbool( xsdbool( t5 IS BOUND AND t5 IS INSTANCE OF zcl_lnt_sr_clss_implmnttn ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |ClassImplementation, unexpected node type|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |ClassImplementation, unexpected node type|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -58,17 +51,11 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA t17 TYPE REF TO zcl_lnt_abstract_token.
-    DATA t18 TYPE REF TO zcl_lnt_expression_node.
-    DATA t19 TYPE REF TO zcl_lnt_expression_node.
     DATA t20 TYPE REF TO zcl_lnt_statement_node.
-    DATA t21 TYPE REF TO zcl_lnt_statement_node.
     DATA(t23) = zlnt_runtime_desc_78196487750d=>zlnt_member_d413_4f364af5c7c0.
-    t21 = t1->find_first_statement( i_type_9913 = t23 ).
-    t20 = t21.
+    t20 = t1->find_first_statement( i_type_9913 = t23 ).
     DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
-    t19 = t20->find_first_expression( i_type_9913 = t24 ).
-    t18 = t19.
-    t17 = t18->get_first_token( ).
+    t17 = t20->find_first_expression( i_type_9913 = t24 )->get_first_token( ).
     super->constructor( i_token = t17 i_filename = t2 ).
     me->node = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `node`.
@@ -76,9 +63,7 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
 
   METHOD get_method_implementations.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d721_06b6159f9afc.
     t3 = me->node->find_all_structures( i_type_9913 = t5 ).
@@ -140,19 +125,12 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
       ELSE.
         t3 ?= t4.
       ENDIF.
-      DATA(t8) = VALUE abap_bool( ).
       DATA(t9) = VALUE string( ).
       DATA(t10) = VALUE string( ).
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
       t11 = t3.
-      DATA(t13) = VALUE string( ).
       DATA t14 TYPE string.
-      DATA t17 TYPE REF TO zcl_lnt_abstract_token.
-      t17 = t11->token.
-      DATA t19 TYPE string.
-      t19 = t17->str.
-      t14 = t19.
-      DATA(t21) = VALUE abap_bool( ).
+      t14 = t11->token->str.
       DATA(t22) = VALUE string( ).
       DATA(t23) = t14.
       DATA(t24) = 0.
@@ -165,17 +143,13 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t24 > t26 OR t25 <= 0.
-        CLEAR t22.
       ELSE.
         IF t25 > t26 - t24.
           t25 = t26 - t24.
         ENDIF.
         t22 = t23+t24(t25).
       ENDIF.
-      DATA(t27) = |!|.
-      t21 = xsdbool( t22 = t27 ).
-      IF t21 = abap_true.
-        DATA(t28) = VALUE string( ).
+      IF xsdbool( t22 = |!| ) = abap_true.
         DATA t29 TYPE string.
         t29 = t14.
         DATA(t31) = VALUE string( ).
@@ -190,18 +164,15 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t33 > t37 OR t34 <= 0.
-          CLEAR t31.
         ELSE.
           IF t34 > t37 - t33.
             t34 = t37 - t33.
           ENDIF.
           t31 = t29+t33(t34).
         ENDIF.
-        t28 = t31.
-        t14 = t28.
+        t14 = t31.
       ENDIF.
-      t13 = t14.
-      t10 = t13.
+      t10 = t14.
       DATA(t39) = strlen( t10 ).
       t9 = t10.
       IF t9 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -217,8 +188,7 @@ CLASS zcl_lnt_ty_clss_implmnttn IMPLEMENTATION.
       ELSE.
         t40 = zlnt_runtime_uppe_91169605024d=>full( t40 ).
       ENDIF.
-      t8 = xsdbool( t9 = t40 ).
-      IF t8 = abap_true.
+      IF xsdbool( t9 = t40 ) = abap_true.
         result = t3.
         RETURN.
       ENDIF.

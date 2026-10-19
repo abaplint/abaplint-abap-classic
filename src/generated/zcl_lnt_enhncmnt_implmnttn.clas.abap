@@ -34,13 +34,8 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
 
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
-    DATA t2 TYPE f.
-    DATA(t3) = CONV f( 30 ).
-    t2 = t3.
-    DATA t4 TYPE abap_bool.
-    t4 = abap_true.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t4 i_custom_regex = t6 ).
+    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = CONV f( 30 ) i_allow_namespace = abap_true i_custom_regex = t6 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -51,13 +46,11 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t10) = |maxLength|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
-    DATA(t12) = |allowNamespace|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |maxLength| p1 = t11 ).
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |allowNamespace| p1 = t13 ).
     ENDIF.
     result = t1.
 
@@ -68,14 +61,9 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_shape_55554241.
     t3 = me->parsed_xml.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = xsdbool( t3 IS INITIAL ).
-    IF t6 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t10 TYPE REF TO zcl_lnt_shape_55554241.
-      t10 = t3.
-      t9 = t10->class_name.
-      t5 = t9.
+      t5 = t3->class_name.
     ENDIF.
     result = t5.
 
@@ -86,31 +74,19 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_shape_55554241.
     t3 = me->parsed_xml.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = xsdbool( t3 IS INITIAL ).
-    IF t6 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t10 TYPE REF TO zcl_lnt_shape_55554241.
-      t10 = t3.
-      t9 = t10->description.
-      t5 = t9.
+      t5 = t3->description.
     ENDIF.
     result = t5.
 
   ENDMETHOD.
 
   METHOD pr_in_sr_ob_enh_imp_ts_enh_imp.
-    DATA t1 TYPE abap_bool.
-    t1 = xsdbool( me->parsed_xml IS BOUND ).
-    IF t1 = abap_true.
+    IF xsdbool( me->parsed_xml IS BOUND ) = abap_true.
       DATA t3 TYPE REF TO zcl_lnt_iparse_result.
-      DATA t4 TYPE abap_bool.
-      t4 = abap_false.
-      DATA t6 TYPE f.
-      DATA(t7) = CONV f( 0 ).
-      t6 = t7.
       DATA t8 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      t3 = NEW zcl_lnt_iparse_result( i_updated = t4 i_runtime = t6 i_runtime_extra = t8 ).
+      t3 = NEW zcl_lnt_iparse_result( i_updated = abap_false i_runtime = CONV f( 0 ) i_runtime_extra = t8 ).
       CREATE OBJECT t3->zlnt_view_ownkeys_b0e8086400eb.
       t3->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -121,13 +97,11 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t3->zlnt_json_ownkeys_70e5fd461788.
       t3->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t12) = |updated|.
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
-      DATA(t14) = |runtime|.
+      t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = |updated| p1 = t13 ).
       DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t3->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+        t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = |runtime| p1 = t15 ).
       ENDIF.
       result = t3.
       RETURN.
@@ -149,8 +123,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     t27 = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = xsdbool( t27 IS INITIAL ).
-    IF t31 = abap_true.
+    IF xsdbool( t27 IS INITIAL ) = abap_true.
     ELSE.
       t30 = t27.
     ENDIF.
@@ -162,27 +135,16 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     t38 = xsdbool( t29 IS INITIAL ).
     t37 = t38.
     IF t38 = abap_false.
-      DATA(t45) = VALUE abap_bool( ).
       DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t48 = t29.
-      DATA(t50) = |abapGit|.
-      t47 = t48->get( p0 = t50 ).
+      t47 = t29->get( p0 = |abapGit| ).
       DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t45 = xsdbool( t47 IS INITIAL ).
-      t37 = t45.
+      t37 = xsdbool( t47 IS INITIAL ).
     ENDIF.
     t36 = t37.
     IF t37 = abap_false.
-      DATA(t55) = VALUE abap_bool( ).
       DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t62 = t29.
-      DATA(t64) = |abapGit|.
-      t61 = t62->get( p0 = t64 ).
-      t60 = t61.
+      t60 = t29->get( p0 = |abapGit| ).
       DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA(t66) = VALUE abap_bool( ).
       IF t60 IS NOT BOUND.
@@ -192,10 +154,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
       ENDIF.
       IF t66 = abap_true.
       ELSE.
-        DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA(t71) = |asx:abap|.
-        t69 = t60->get( p0 = t71 ).
-        t65 = t69.
+        t65 = t60->get( p0 = |asx:abap| ).
       ENDIF.
       t58 = t65.
       DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -211,26 +170,15 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
       ENDIF.
       IF t73 = abap_true.
       ELSE.
-        DATA t77 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t78 = t58.
-        DATA(t80) = |asx:values|.
-        t77 = t78->get( p0 = t80 ).
-        t72 = t77.
+        t72 = t58->get( p0 = |asx:values| ).
       ENDIF.
       DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t55 = xsdbool( t72 IS INITIAL ).
-      t36 = t55.
+      t36 = xsdbool( t72 IS INITIAL ).
     ENDIF.
     IF t36 = abap_true.
       DATA t85 TYPE REF TO zcl_lnt_iparse_result.
-      DATA t86 TYPE abap_bool.
-      t86 = abap_false.
-      DATA t88 TYPE f.
-      DATA(t89) = CONV f( 0 ).
-      t88 = t89.
       DATA t90 TYPE REF TO zcl_lnt_shape_8fc6df03.
-      t85 = NEW zcl_lnt_iparse_result( i_updated = t86 i_runtime = t88 i_runtime_extra = t90 ).
+      t85 = NEW zcl_lnt_iparse_result( i_updated = abap_false i_runtime = CONV f( 0 ) i_runtime_extra = t90 ).
       CREATE OBJECT t85->zlnt_view_ownkeys_b0e8086400eb.
       t85->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -241,13 +189,11 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t85->zlnt_json_ownkeys_70e5fd461788.
       t85->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t94) = |updated|.
       DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t85->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
-      DATA(t96) = |runtime|.
+      t85->zlnt_json_ownkeys_70e5fd461788->put( p0 = |updated| p1 = t95 ).
       DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t85->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t85->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
+        t85->zlnt_json_ownkeys_70e5fd461788->put( p0 = |runtime| p1 = t97 ).
       ENDIF.
       result = t85.
       RETURN.
@@ -256,12 +202,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t106 = t29.
-    DATA(t108) = |abapGit|.
-    t105 = t106->get( p0 = t108 ).
-    t104 = t105.
+    t104 = t29->get( p0 = |abapGit| ).
     DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t110) = VALUE abap_bool( ).
     IF t104 IS NOT BOUND.
@@ -271,10 +212,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t110 = abap_true.
     ELSE.
-      DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t115) = |asx:abap|.
-      t113 = t104->get( p0 = t115 ).
-      t109 = t113.
+      t109 = t104->get( p0 = |asx:abap| ).
     ENDIF.
     t102 = t109.
     DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -290,12 +228,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t117 = abap_true.
     ELSE.
-      DATA t121 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t122 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t122 = t102.
-      DATA(t124) = |asx:values|.
-      t121 = t122->get( p0 = t124 ).
-      t116 = t121.
+      t116 = t102->get( p0 = |asx:values| ).
     ENDIF.
     t100 = t116.
     DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -311,24 +244,16 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t126 = abap_true.
     ELSE.
-      DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t131 = t100.
-      DATA(t133) = |CLASS|.
-      t130 = t131->get( p0 = t133 ).
-      t125 = t130.
+      t125 = t100->get( p0 = |CLASS| ).
     ENDIF.
     t98 = t125.
     DATA t134 TYPE REF TO zcl_lnt_shape_55554241.
     t134 = me->parsed_xml.
     DATA t136 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t137) = xsdbool( t98 IS INITIAL ).
-    IF t137 = abap_true.
+    IF xsdbool( t98 IS INITIAL ) = abap_true.
     ELSE.
       DATA t140 TYPE string.
-      DATA t141 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t141 = t98.
-      t140 = t141->as_string( ).
+      t140 = t98->as_string( ).
       DATA(t143) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t143->has = abap_true.
       t143->value = t140.
@@ -340,21 +265,15 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     IF t134->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t134->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `className` p1 = t144 ).
     ENDIF.
-    DATA(t145) = |className|.
     DATA t146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t134->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t134->zlnt_json_ownkeys_70e5fd461788->put( p0 = t145 p1 = t146 ).
+      t134->zlnt_json_ownkeys_70e5fd461788->put( p0 = |className| p1 = t146 ).
     ENDIF.
     DATA t147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t151 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t155 = t29.
-    DATA(t157) = |abapGit|.
-    t154 = t155->get( p0 = t157 ).
-    t153 = t154.
+    t153 = t29->get( p0 = |abapGit| ).
     DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t159) = VALUE abap_bool( ).
     IF t153 IS NOT BOUND.
@@ -364,10 +283,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t159 = abap_true.
     ELSE.
-      DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t164) = |asx:abap|.
-      t162 = t153->get( p0 = t164 ).
-      t158 = t162.
+      t158 = t153->get( p0 = |asx:abap| ).
     ENDIF.
     t151 = t158.
     DATA t165 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -383,12 +299,7 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t166 = abap_true.
     ELSE.
-      DATA t170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t171 = t151.
-      DATA(t173) = |asx:values|.
-      t170 = t171->get( p0 = t173 ).
-      t165 = t170.
+      t165 = t151->get( p0 = |asx:values| ).
     ENDIF.
     t149 = t165.
     DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -404,24 +315,16 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     IF t175 = abap_true.
     ELSE.
-      DATA t179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t180 = t149.
-      DATA(t182) = |SHORTTEXT|.
-      t179 = t180->get( p0 = t182 ).
-      t174 = t179.
+      t174 = t149->get( p0 = |SHORTTEXT| ).
     ENDIF.
     t147 = t174.
     DATA t183 TYPE REF TO zcl_lnt_shape_55554241.
     t183 = me->parsed_xml.
     DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t186) = xsdbool( t147 IS INITIAL ).
-    IF t186 = abap_true.
+    IF xsdbool( t147 IS INITIAL ) = abap_true.
     ELSE.
       DATA t189 TYPE string.
-      DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t190 = t147.
-      t189 = t190->as_string( ).
+      t189 = t147->as_string( ).
       DATA(t192) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t192->has = abap_true.
       t192->value = t189.
@@ -433,23 +336,18 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     IF t183->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t183->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `description` p1 = t193 ).
     ENDIF.
-    DATA(t194) = |description|.
     DATA t195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t183->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t183->zlnt_json_ownkeys_70e5fd461788->put( p0 = t194 p1 = t195 ).
+      t183->zlnt_json_ownkeys_70e5fd461788->put( p0 = |description| p1 = t195 ).
     ENDIF.
     DATA t197 TYPE f.
     DATA(t198) = 0.
     t197 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     DATA t199 TYPE REF TO zcl_lnt_iparse_result.
-    DATA t200 TYPE abap_bool.
-    t200 = abap_true.
     DATA t202 TYPE f.
-    DATA t203 TYPE f.
-    t203 = t197 - t17.
-    t202 = t203.
+    t202 = t197 - t17.
     DATA t206 TYPE REF TO zcl_lnt_shape_8fc6df03.
-    t199 = NEW zcl_lnt_iparse_result( i_updated = t200 i_runtime = t202 i_runtime_extra = t206 ).
+    t199 = NEW zcl_lnt_iparse_result( i_updated = abap_true i_runtime = t202 i_runtime_extra = t206 ).
     CREATE OBJECT t199->zlnt_view_ownkeys_b0e8086400eb.
     t199->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -460,13 +358,11 @@ CLASS zcl_lnt_enhncmnt_implmnttn IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t199->zlnt_json_ownkeys_70e5fd461788.
     t199->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t210) = |updated|.
     DATA t211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t199->zlnt_json_ownkeys_70e5fd461788->put( p0 = t210 p1 = t211 ).
-    DATA(t212) = |runtime|.
+    t199->zlnt_json_ownkeys_70e5fd461788->put( p0 = |updated| p1 = t211 ).
     DATA t213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t199->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t199->zlnt_json_ownkeys_70e5fd461788->put( p0 = t212 p1 = t213 ).
+      t199->zlnt_json_ownkeys_70e5fd461788->put( p0 = |runtime| p1 = t213 ).
     ENDIF.
     result = t199.
 

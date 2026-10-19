@@ -40,14 +40,10 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
     t2->has = abap_true.
     t2->value = abap_true.
     me->zlnt_view_write_s_2e42c89c15ac( p0 = t2 ).
-    DATA(t3) = |^I._.+$|.
-    me->zlnt_view_write_s_c3773554879f( p0 = t3 ).
-    DATA(t4) = |^R._.+$|.
-    me->zlnt_view_write_s_9baeddea44ac( p0 = t4 ).
-    DATA(t5) = |^C._.+$|.
-    me->zlnt_view_write_s_1ebab26f5140( p0 = t5 ).
-    DATA(t6) = |^E._.+$|.
-    me->zlnt_view_write_s_2f01ae7907ef( p0 = t6 ).
+    me->zlnt_view_write_s_c3773554879f( p0 = |^I._.+$| ).
+    me->zlnt_view_write_s_9baeddea44ac( p0 = |^R._.+$| ).
+    me->zlnt_view_write_s_1ebab26f5140( p0 = |^C._.+$| ).
+    me->zlnt_view_write_s_2f01ae7907ef( p0 = |^E._.+$| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -94,8 +90,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f91ac81de17a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `importing` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `importing` ) )->as_string( ).
     ELSE.
       result = me->importing.
     ENDIF.
@@ -116,8 +111,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_c2b9ba314ce4.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `returning` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `returning` ) )->as_string( ).
     ELSE.
       result = me->returning.
     ENDIF.
@@ -138,8 +132,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_14784b935524.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `changing` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `changing` ) )->as_string( ).
     ELSE.
       result = me->changing.
     ENDIF.
@@ -160,8 +153,7 @@ CLASS zcl_lnt_mthd_prmtr_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_b316e3c54933.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `exporting` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `exporting` ) )->as_string( ).
     ELSE.
       result = me->exporting.
     ENDIF.

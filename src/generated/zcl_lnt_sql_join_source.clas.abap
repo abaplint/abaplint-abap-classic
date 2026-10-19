@@ -76,9 +76,7 @@ CLASS zcl_lnt_sql_join_source IMPLEMENTATION.
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t21.
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    t22 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t18 i_rest = t21 ).
-    t11 = t22.
+    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t18 i_rest = t21 ).
     IF t11 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t27 TYPE REF TO object.
@@ -103,9 +101,7 @@ CLASS zcl_lnt_sql_join_source IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t29.
-    t28 = t29.
+    CREATE OBJECT t28.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t32 TYPE REF TO zif_lnt_statement_runnable.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -188,9 +184,7 @@ CLASS zcl_lnt_sql_join_source IMPLEMENTATION.
     ENDIF.
     DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t51.
-    DATA t52 TYPE REF TO zif_lnt_statement_runnable.
-    t52 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t46 i_rest = t51 ).
-    t34 = t52.
+    t34 = zcl_lnt_st_combi_module=>seq( i_first = t36 i_second = t46 i_rest = t51 ).
     IF t34 IS BOUND.
       DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t57 TYPE REF TO object.
@@ -297,9 +291,7 @@ CLASS zcl_lnt_sql_join_source IMPLEMENTATION.
     t28->load( ).
     APPEND t61 TO t28->items.
     t28->save( ).
-    DATA t70 TYPE REF TO zif_lnt_statement_runnable.
-    t70 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t28 ).
-    t1 = t70.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t28 ).
     DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t78 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -333,9 +325,7 @@ CLASS zcl_lnt_sql_join_source IMPLEMENTATION.
     ENDIF.
     DATA t84 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t84.
-    DATA t85 TYPE REF TO zif_lnt_statement_runnable.
-    t85 = zcl_lnt_st_combi_module=>alt_prio( i_first = t76 i_second = t81 i_rest = t84 ).
-    result = t85.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t76 i_second = t81 i_rest = t84 ).
 
   ENDMETHOD.
 

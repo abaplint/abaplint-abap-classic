@@ -33,15 +33,10 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     DATA(t2) = i_post.
     DATA(t3) = i_colon.
     DATA t4 TYPE REF TO zcl_lnt_statement_node.
-    DATA t5 TYPE REF TO zcl_lnt_statement_node.
-    DATA(t6) = NEW zcl_lnt_unknown( ).
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t5 = NEW zcl_lnt_statement_node( i_statement = t6 i_colon = t3 i_pragmas = t8 ).
-    t4 = t5.
+    t4 = NEW zcl_lnt_statement_node( i_statement = NEW zcl_lnt_unknown( ) i_colon = t3 i_pragmas = t8 ).
     DATA t9 TYPE REF TO zcl_lnt_statement_node.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t11 = me->tokens_to_nodes( i_tokens1 = t1 i_tokens2 = t2 ).
-    t9 = t4->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = t11 ).
+    t9 = t4->s_c_in_sr_ab_nd_st_nd_ts_st_nd( i_children_9020 = me->tokens_to_nodes( i_tokens1 = t1 i_tokens2 = t2 ) ).
     DATA(t14) = me->statements.
     t14->load( ).
     APPEND t4 TO t14->items.
@@ -71,18 +66,15 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t11) = |file|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
-    DATA(t13) = |tokens|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t12 ).
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t13 p1 = t14 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tokens| p1 = t14 ).
     ENDIF.
-    DATA(t15) = |statements|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |statements| p1 = t16 ).
     ENDIF.
     result = t1.
 
@@ -92,9 +84,7 @@ CLASS zcl_lnt_st_work_area IMPLEMENTATION.
     DATA(t1) = i_tokens1.
     DATA(t2) = i_tokens2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_token.
     DATA t7 TYPE REF TO object.
     DATA(t8) = VALUE i( ).

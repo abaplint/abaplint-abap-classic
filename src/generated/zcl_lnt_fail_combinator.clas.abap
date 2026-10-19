@@ -20,16 +20,12 @@ CLASS zcl_lnt_fail_combinator DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
@@ -77,34 +73,24 @@ CLASS zcl_lnt_fail_combinator IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD run.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t3) = i_r_f634.
-    t2 = me->rn_in_sr_ab_2_st_cmb_ts_fl_cmb( i_r_7825 = t3 ).
-    result = t2.
+    result = me->rn_in_sr_ab_2_st_cmb_ts_fl_cmb( i_r_7825 = t3 ).
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     t4->load( ).
     APPEND t1 TO t4->items.
     t4->save( ).
-    t3 = t4.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 

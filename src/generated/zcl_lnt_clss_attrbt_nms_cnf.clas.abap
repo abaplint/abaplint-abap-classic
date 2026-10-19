@@ -42,12 +42,9 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
     me->zlnt_view_write_s_a1cfb5902d8d( p0 = abap_true ).
     me->zlnt_view_write_s_6afbf72590b8( p0 = abap_true ).
     me->zlnt_view_write_s_ac9f0b72db6f( p0 = abap_false ).
-    DATA(t4) = |^G._.+$|.
-    me->zlnt_view_write_s_4e2f6dbb2791( p0 = t4 ).
-    DATA(t5) = |^M._.+$|.
-    me->zlnt_view_write_s_0da863a539ce( p0 = t5 ).
-    DATA(t6) = ||.
-    me->zlnt_view_write_s_1f73d21a6034( p0 = t6 ).
+    me->zlnt_view_write_s_4e2f6dbb2791( p0 = |^G._.+$| ).
+    me->zlnt_view_write_s_0da863a539ce( p0 = |^M._.+$| ).
+    me->zlnt_view_write_s_1f73d21a6034( p0 = || ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -65,8 +62,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9e03d5ab100a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreExceptions` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_exceptions.
     ENDIF.
@@ -87,8 +83,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f48d79db9126.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreLocal` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreLocal` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_local.
     ENDIF.
@@ -109,8 +104,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_8168a86be8c6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreInterfaces` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreInterfaces` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_interfaces.
     ENDIF.
@@ -131,8 +125,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_341955304f75.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `statics` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `statics` ) )->as_string( ).
     ELSE.
       result = me->statics.
     ENDIF.
@@ -153,8 +146,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e8cbf985871b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `instance` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `instance` ) )->as_string( ).
     ELSE.
       result = me->instance.
     ENDIF.
@@ -175,8 +167,7 @@ CLASS zcl_lnt_clss_attrbt_nms_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_2dc0cab76d28.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `constants` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `constants` ) )->as_string( ).
     ELSE.
       result = me->constants.
     ENDIF.

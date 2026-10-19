@@ -29,20 +29,13 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     DATA(t2) = i_token.
     DATA(t3) = i_message_class.
     DATA(t4) = i_number.
-    DATA t5 TYPE abap_bool.
-    DATA t6 TYPE i.
-    t6 = strlen( t4 ).
-    DATA(t9) = 3.
-    t5 = xsdbool( t6 <> t9 ).
-    IF t5 = abap_true.
+    IF xsdbool( strlen( t4 ) <> 3 ) = abap_true.
       RETURN.
     ENDIF.
-    DATA(t10) = VALUE abap_bool( ).
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t12 = me->filename_index->get( p0 = t1 ).
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t12 IS INITIAL ).
-    IF t10 = abap_true.
+    IF xsdbool( t12 IS INITIAL ) = abap_true.
       DATA t19 TYPE REF TO zlnt_runtime_map__ca02e874f6d5.
       DATA(t20) = me->filename_index.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -50,17 +43,9 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
       t19 = t20->set( p0 = t1 p1 = t22 ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t24 = me->filename_index->get( p0 = t1 ).
-    t23 = t24.
+    t23 = me->filename_index->get( p0 = t1 ).
     DATA t27 TYPE REF TO zcl_lnt_shape_08db6d95.
-    DATA t28 TYPE REF TO zcl_lnt_abstract_token.
-    t28 = t2.
-    DATA t33 TYPE string.
-    t33 = t3.
-    DATA t35 TYPE string.
-    t35 = t4.
-    t27 = NEW zcl_lnt_shape_08db6d95( i_token = t28 i_message_class = t33 i_number = t35 ).
+    t27 = NEW zcl_lnt_shape_08db6d95( i_token = t2 i_message_class = t3 i_number = t4 ).
     CREATE OBJECT t27->zlnt_view_ownkeys_b0e8086400eb.
     t27->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -75,67 +60,41 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t27->zlnt_json_ownkeys_70e5fd461788.
     t27->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t40) = |token|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
-    DATA(t42) = |messageClass|.
+    t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = |token| p1 = t41 ).
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t27->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
+      t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = |messageClass| p1 = t43 ).
     ENDIF.
-    DATA(t44) = |number|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t27->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
+      t27->zlnt_json_ownkeys_70e5fd461788->put( p0 = |number| p1 = t45 ).
     ENDIF.
     t23->load( ).
     APPEND t27 TO t23->items.
     t23->save( ).
-    DATA(t46) = VALUE abap_bool( ).
     DATA t48 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     t48 = me->name_number_index->get( p0 = t3 ).
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t46 = xsdbool( t48 IS INITIAL ).
-    IF t46 = abap_true.
+    IF xsdbool( t48 IS INITIAL ) = abap_true.
       DATA t55 TYPE REF TO zlnt_runtime_map__e91283f90792.
-      DATA(t56) = me->name_number_index.
-      DATA t58 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      t58 = NEW zlnt_runtime_map__68aa8717233d( ).
-      t55 = t56->set( p0 = t3 p1 = t58 ).
+      t55 = me->name_number_index->set( p0 = t3 p1 = NEW zlnt_runtime_map__68aa8717233d( ) ).
     ENDIF.
-    DATA(t62) = VALUE abap_bool( ).
     DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t65 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    DATA t66 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    t66 = me->name_number_index->get( p0 = t3 ).
-    t65 = t66.
-    t64 = t65->get( p0 = t4 ).
+    t64 = me->name_number_index->get( p0 = t3 )->get( p0 = t4 ).
     DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t62 = xsdbool( t64 IS INITIAL ).
-    IF t62 = abap_true.
+    IF xsdbool( t64 IS INITIAL ) = abap_true.
       DATA t74 TYPE REF TO zlnt_runtime_map__68aa8717233d.
       DATA t75 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      DATA t76 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      t76 = me->name_number_index->get( p0 = t3 ).
-      t75 = t76.
+      t75 = me->name_number_index->get( p0 = t3 ).
       DATA t80 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t80.
       t74 = t75->set( p0 = t4 p1 = t80 ).
     ENDIF.
     DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t83 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    DATA t84 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    t84 = me->name_number_index->get( p0 = t3 ).
-    t83 = t84.
-    t82 = t83->get( p0 = t4 ).
-    t81 = t82.
+    t81 = me->name_number_index->get( p0 = t3 )->get( p0 = t4 ).
     DATA t88 TYPE REF TO zcl_lnt_ifilename_and_token.
-    DATA t89 TYPE string.
-    t89 = t1.
-    DATA t91 TYPE REF TO zcl_lnt_abstract_token.
-    t91 = t2.
-    t88 = NEW zcl_lnt_ifilename_and_token( i_filename = t89 i_token = t91 ).
+    t88 = NEW zcl_lnt_ifilename_and_token( i_filename = t1 i_token = t2 ).
     CREATE OBJECT t88->zlnt_view_ownkeys_b0e8086400eb.
     t88->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -146,13 +105,11 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t88->zlnt_json_ownkeys_70e5fd461788.
     t88->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t95) = |filename|.
     DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
-    DATA(t97) = |token|.
+    t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |filename| p1 = t96 ).
     DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t88->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
+      t88->zlnt_json_ownkeys_70e5fd461788->put( p0 = |token| p1 = t98 ).
     ENDIF.
     t81->load( ).
     APPEND t88 TO t81->items.
@@ -185,25 +142,17 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
         t4 ?= t5.
       ENDIF.
       DATA t9 TYPE string.
-      DATA t10 TYPE string.
-      t10 = t4->get_filename( ).
-      t9 = t10.
+      t9 = t4->get_filename( ).
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t12.
       DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t14 = me->filename_index->get( p0 = t9 ).
-      t13 = t14.
+      t13 = me->filename_index->get( p0 = t9 ).
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t17.
-      DATA t18 TYPE abap_bool.
-      t18 = xsdbool( t13 IS BOUND ).
-      IF t18 = abap_true.
+      IF xsdbool( t13 IS BOUND ) = abap_true.
         t17 = t13.
       ELSE.
-        DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t22.
-        t17 = t22.
+        CREATE OBJECT t17.
       ENDIF.
       t12 = t17.
       DATA t23 TYPE REF TO zcl_lnt_shape_08db6d95.
@@ -233,31 +182,21 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
         DATA t28 TYPE REF TO zlnt_runtime_map__68aa8717233d.
         CLEAR t28.
         DATA t29 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-        DATA t30 TYPE REF TO zlnt_runtime_map__68aa8717233d.
         DATA t32 TYPE string.
         t32 = t23->message_class.
-        t30 = me->name_number_index->get( p0 = t32 ).
-        t29 = t30.
+        t29 = me->name_number_index->get( p0 = t32 ).
         DATA t34 TYPE string.
         t34 = t23->number.
-        DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t36.
         DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t38.
-        t37 = t38.
+        CREATE OBJECT t37.
         DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t41 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-        DATA t42 TYPE REF TO zlnt_runtime_map__68aa8717233d.
         DATA t44 TYPE string.
         t44 = t23->message_class.
-        t42 = me->name_number_index->get( p0 = t44 ).
-        t41 = t42.
+        t41 = me->name_number_index->get( p0 = t44 ).
         DATA t46 TYPE string.
         t46 = t23->number.
-        t40 = t41->get( p0 = t46 ).
-        t39 = t40.
+        t39 = t41->get( p0 = t46 ).
         DATA t48 TYPE REF TO zcl_lnt_ifilename_and_token.
         CLEAR t48.
         DATA t49 TYPE REF TO object.
@@ -282,18 +221,13 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
           ELSE.
             t48 ?= t49.
           ENDIF.
-          DATA t53 TYPE abap_bool.
-          DATA t54 TYPE string.
-          t54 = t48->filename.
-          t53 = xsdbool( t54 <> t9 ).
-          IF t53 = abap_true.
+          IF xsdbool( t48->filename <> t9 ) = abap_true.
             t37->load( ).
             APPEND t48 TO t37->items.
             t37->save( ).
           ENDIF.
         ENDDO.
-        t36 = t37.
-        t28 = t29->set( p0 = t34 p1 = t36 ).
+        t28 = t29->set( p0 = t34 p1 = t37 ).
       ENDDO.
       DATA t60 TYPE abap_bool.
       DATA(t61) = me->filename_index.
@@ -304,19 +238,13 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
 
   METHOD list_by_filename.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t6) = i_filename.
-    t4 = me->filename_index->get( p0 = t6 ).
-    t3 = t4.
+    t3 = me->filename_index->get( p0 = t6 ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t8 TYPE abap_bool.
-    t8 = xsdbool( t3 IS BOUND ).
-    IF t8 = abap_true.
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       t7 = t3.
     ELSE.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t12.
-      t7 = t12.
+      CREATE OBJECT t7.
     ENDIF.
     result = t7.
 
@@ -326,30 +254,19 @@ CLASS zcl_lnt_msag_references IMPLEMENTATION.
     DATA(t2) = i_number.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-    DATA t7 TYPE REF TO zlnt_runtime_map__68aa8717233d.
     DATA(t9) = i_message_class.
-    t7 = me->name_number_index->get( p0 = t9 ).
-    t6 = t7.
+    t6 = me->name_number_index->get( p0 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = xsdbool( t6 IS INITIAL ).
-    IF t11 = abap_true.
+    IF xsdbool( t6 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t15 TYPE REF TO zlnt_runtime_map__68aa8717233d.
-      t15 = t6.
-      t14 = t15->get( p0 = t2 ).
-      t10 = t14.
+      t10 = t6->get( p0 = t2 ).
     ENDIF.
     t4 = t10.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE abap_bool.
-    t19 = xsdbool( t4 IS BOUND ).
-    IF t19 = abap_true.
+    IF xsdbool( t4 IS BOUND ) = abap_true.
       t18 = t4.
     ELSE.
-      DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t23.
-      t18 = t23.
+      CREATE OBJECT t18.
     ENDIF.
     result = t18.
 

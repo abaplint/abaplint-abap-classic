@@ -42,25 +42,19 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV f( me->row ).
-    DATA t5 TYPE f.
-    t5 = t1->row.
-    t3 = xsdbool( t4 > t5 ).
+    t3 = xsdbool( t4 > t1->row ).
     t2 = t3.
     IF t3 = abap_false.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE abap_bool.
       DATA(t9) = CONV f( me->row ).
-      DATA t10 TYPE f.
-      t10 = t1->row.
-      t8 = xsdbool( t9 = t10 ).
+      t8 = xsdbool( t9 = t1->row ).
       t7 = t8.
       IF t8 = abap_true.
-        DATA t12 TYPE abap_bool.
         DATA(t13) = me->col.
         DATA t14 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         t14 = t1->col.
-        t12 = zlnt_runtime_numb_290eb04a9758=>compare( left = t13 right = t14 op = `>=` ).
-        t7 = t12.
+        t7 = zlnt_runtime_numb_290eb04a9758=>compare( left = t13 right = t14 op = `>=` ).
       ENDIF.
       t2 = t7.
     ENDIF.
@@ -73,21 +67,13 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV f( me->row ).
-    DATA t5 TYPE f.
-    DATA t8 TYPE f.
-    t8 = t1->row.
-    t5 = t8.
-    t3 = xsdbool( t4 = t5 ).
+    t3 = xsdbool( t4 = t1->row ).
     t2 = t3.
     IF t3 = abap_true.
-      DATA t10 TYPE abap_bool.
       DATA(t11) = me->col.
       DATA t12 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t15 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t15 = t1->col.
-      t12 = t15.
-      t10 = zlnt_runtime_numb_290eb04a9758=>compare( left = t11 right = t12 op = `==` ).
-      t2 = t10.
+      t12 = t1->col.
+      t2 = zlnt_runtime_numb_290eb04a9758=>compare( left = t11 right = t12 op = `==` ).
     ENDIF.
     result = t2.
 
@@ -98,25 +84,19 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
     DATA(t4) = CONV f( me->row ).
-    DATA t5 TYPE f.
-    t5 = t1->row.
-    t3 = xsdbool( t4 < t5 ).
+    t3 = xsdbool( t4 < t1->row ).
     t2 = t3.
     IF t3 = abap_false.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE abap_bool.
       DATA(t9) = CONV f( me->row ).
-      DATA t10 TYPE f.
-      t10 = t1->row.
-      t8 = xsdbool( t9 = t10 ).
+      t8 = xsdbool( t9 = t1->row ).
       t7 = t8.
       IF t8 = abap_true.
-        DATA t12 TYPE abap_bool.
         DATA(t13) = me->col.
         DATA t14 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         t14 = t1->col.
-        t12 = zlnt_runtime_numb_290eb04a9758=>compare( left = t13 right = t14 op = `<` ).
-        t7 = t12.
+        t7 = zlnt_runtime_numb_290eb04a9758=>compare( left = t13 right = t14 op = `<` ).
       ENDIF.
       t2 = t7.
     ENDIF.
@@ -132,36 +112,28 @@ CLASS zcl_lnt_position IMPLEMENTATION.
     t4 = me->is_after( i_p = t5 ).
     t3 = t4.
     IF t4 = abap_true.
-      DATA(t6) = VALUE abap_bool( ).
       DATA t7 TYPE REF TO zcl_lnt_position.
       t7 = t2.
       DATA t9 TYPE abap_bool.
       DATA t10 TYPE abap_bool.
       DATA(t11) = CONV f( me->row ).
-      DATA t12 TYPE f.
-      t12 = t7->row.
-      t10 = xsdbool( t11 < t12 ).
+      t10 = xsdbool( t11 < t7->row ).
       t9 = t10.
       IF t10 = abap_false.
         DATA t14 TYPE abap_bool.
         DATA t15 TYPE abap_bool.
         DATA(t16) = CONV f( me->row ).
-        DATA t17 TYPE f.
-        t17 = t7->row.
-        t15 = xsdbool( t16 = t17 ).
+        t15 = xsdbool( t16 = t7->row ).
         t14 = t15.
         IF t15 = abap_true.
-          DATA t19 TYPE abap_bool.
           DATA(t20) = me->col.
           DATA t21 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           t21 = t7->col.
-          t19 = zlnt_runtime_numb_290eb04a9758=>compare( left = t20 right = t21 op = `<` ).
-          t14 = t19.
+          t14 = zlnt_runtime_numb_290eb04a9758=>compare( left = t20 right = t21 op = `<` ).
         ENDIF.
         t9 = t14.
       ENDIF.
-      t6 = t9.
-      t3 = t6.
+      t3 = t9.
     ENDIF.
     result = t3.
 

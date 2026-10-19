@@ -61,54 +61,29 @@ CLASS zcl_lnt_closure_0944c662 IMPLEMENTATION.
     DATA(t14) = me->using.
     DATA t15 TYPE REF TO zif_lnt_form_definition.
     DATA t17 TYPE REF TO zif_lnt_form_definition.
-    DATA t20 TYPE REF TO zcl_lnt_current_scope.
-    t20 = t5->scope.
     DATA t25 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-    DATA t26 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-    t26 = t20->current.
-    t25 = t26.
+    t25 = t5->scope->current.
     DATA t28 TYPE REF TO zif_lnt_form_definition.
-    DATA(t29) = xsdbool( t25 IS INITIAL ).
-    IF t29 = abap_true.
+    IF xsdbool( t25 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t32 TYPE REF TO zif_lnt_form_definition.
-      DATA t33 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      t33 = t25.
-      t32 = t33->find_form_definition( i_name = t8 ).
-      t28 = t32.
+      t28 = t25->find_form_definition( i_name = t8 ).
     ENDIF.
     t17 = t28.
     DATA t36 TYPE REF TO zif_lnt_form_definition.
-    DATA(t37) = xsdbool( t17 IS INITIAL ).
-    IF t37 = abap_true.
+    IF xsdbool( t17 IS INITIAL ) = abap_true.
       t36 = t4.
     ELSE.
       t36 = t17.
     ENDIF.
     t15 = t36.
-    DATA t43 TYPE abap_bool.
-    DATA t44 TYPE abap_bool.
     DATA(t45) = me->outer.
-    DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t48 = t15->get_tables_parameters( ).
-    DATA(t50) = |TABLES|.
-    t44 = t45->check_parameters( i_node = t9 i_actual = t12 i_formal = t48 i_kind = t50 i_input_967e = t5 ).
-    t43 = xsdbool( t44 = abap_false ).
-    IF t43 = abap_true.
+    IF xsdbool( t45->check_parameters( i_node = t9 i_actual = t12 i_formal = t15->get_tables_parameters( ) i_kind = |TABLES| i_input_967e = t5 ) = abap_false ) = abap_true.
       RETURN.
     ENDIF.
     DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t55 = t15->get_using_parameters( ).
-    DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t57 = t15->get_changing_parameters( ).
-    t54 = t55->concat( p0 = t57 ).
+    t54 = t15->get_using_parameters( )->concat( p0 = t15->get_changing_parameters( ) ).
     DATA t59 TYPE abap_bool.
-    DATA(t60) = me->outer.
-    DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t62 = t14->concat( p0 = t2 ).
-    DATA(t66) = |USING/CHANGING|.
-    t59 = t60->check_parameters( i_node = t9 i_actual = t62 i_formal = t54 i_kind = t66 i_input_967e = t5 ).
+    t59 = me->outer->check_parameters( i_node = t9 i_actual = t14->concat( p0 = t2 ) i_formal = t54 i_kind = |USING/CHANGING| i_input_967e = t5 ).
   ENDMETHOD.
 
   METHOD call_7bd1.

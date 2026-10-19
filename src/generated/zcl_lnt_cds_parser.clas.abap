@@ -12,23 +12,15 @@ ENDCLASS.
 CLASS zcl_lnt_cds_parser IMPLEMENTATION.
   METHOD parse.
     DATA(t1) = i_file.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t2 = xsdbool( t1 IS INITIAL ).
-    IF t2 = abap_true.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zif_lnt_file.
-    t12 = t1.
-    t11 = zcl_lnt_cds_lexer=>run( i_file = t12 ).
-    t10 = t11.
+    t10 = zcl_lnt_cds_lexer=>run( i_file = t1 ).
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t16.
-    t15 = t16.
+    CREATE OBJECT t15.
     DATA(t17) = t10.
     DATA t18 TYPE REF TO zcl_lnt_abstract_token.
     DATA t19 TYPE REF TO object.
@@ -53,11 +45,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t18 ?= t19.
       ENDIF.
-      DATA(t23) = VALUE abap_bool( ).
-      DATA(t24) = VALUE abap_bool( ).
-      t24 = xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_lx_comment ).
-      t23 = xsdbool( t24 = abap_false ).
-      IF t23 = abap_true.
+      IF xsdbool( xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_lx_comment ) = abap_false ) = abap_true.
         t15->load( ).
         APPEND t18 TO t15->items.
         t15->save( ).
@@ -65,7 +53,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     ENDDO.
     t10 = t15.
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t31) = NEW zcl_lnt_cds_define_view( ).
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t34 TYPE REF TO zcl_lnt_abap_release.
@@ -97,16 +84,13 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t30 = zcl_lnt_combi=>run( i_runnable = t31 i_tokens = t10 i_version_or_release = t33 i_language_version_0e1d = t37 ).
-    t29 = t30.
+    t29 = zcl_lnt_combi=>run( i_runnable = t31 i_tokens = t10 i_version_or_release = t33 i_language_version_0e1d = t37 ).
     DATA(t38) = VALUE abap_bool( ).
     DATA(t39) = VALUE abap_bool( ).
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t39 = xsdbool( t29 IS INITIAL ).
     t38 = t39.
     IF t39 = abap_false.
-      DATA(t46) = VALUE abap_bool( ).
-      DATA(t47) = VALUE abap_bool( ).
       DATA t48 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t49 = t29.
@@ -122,12 +106,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t48 ?= t51.
       ENDIF.
-      t47 = xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_expression_node ).
-      t46 = xsdbool( t47 = abap_false ).
-      t38 = t46.
+      t38 = xsdbool( xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t38 = abap_true.
-      DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t55) = NEW zcl_lnt_cds_define_abstract( ).
       DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t58 TYPE REF TO zcl_lnt_abap_release.
@@ -159,8 +140,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t54 = zcl_lnt_combi=>run( i_runnable = t55 i_tokens = t10 i_version_or_release = t57 i_language_version_0e1d = t61 ).
-      t29 = t54.
+      t29 = zcl_lnt_combi=>run( i_runnable = t55 i_tokens = t10 i_version_or_release = t57 i_language_version_0e1d = t61 ).
     ENDIF.
     DATA(t62) = VALUE abap_bool( ).
     DATA(t63) = VALUE abap_bool( ).
@@ -168,8 +148,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t63 = xsdbool( t29 IS INITIAL ).
     t62 = t63.
     IF t63 = abap_false.
-      DATA(t70) = VALUE abap_bool( ).
-      DATA(t71) = VALUE abap_bool( ).
       DATA t72 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t73 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t73 = t29.
@@ -185,12 +163,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t72 ?= t75.
       ENDIF.
-      t71 = xsdbool( t72 IS BOUND AND t72 IS INSTANCE OF zcl_lnt_expression_node ).
-      t70 = xsdbool( t71 = abap_false ).
-      t62 = t70.
+      t62 = xsdbool( xsdbool( t72 IS BOUND AND t72 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t62 = abap_true.
-      DATA t78 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t79) = NEW zcl_lnt_cds_define_projection( ).
       DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t82 TYPE REF TO zcl_lnt_abap_release.
@@ -222,8 +197,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t78 = zcl_lnt_combi=>run( i_runnable = t79 i_tokens = t10 i_version_or_release = t81 i_language_version_0e1d = t85 ).
-      t29 = t78.
+      t29 = zcl_lnt_combi=>run( i_runnable = t79 i_tokens = t10 i_version_or_release = t81 i_language_version_0e1d = t85 ).
     ENDIF.
     DATA(t86) = VALUE abap_bool( ).
     DATA(t87) = VALUE abap_bool( ).
@@ -231,8 +205,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t87 = xsdbool( t29 IS INITIAL ).
     t86 = t87.
     IF t87 = abap_false.
-      DATA(t94) = VALUE abap_bool( ).
-      DATA(t95) = VALUE abap_bool( ).
       DATA t96 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t97 = t29.
@@ -248,12 +220,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t96 ?= t99.
       ENDIF.
-      t95 = xsdbool( t96 IS BOUND AND t96 IS INSTANCE OF zcl_lnt_expression_node ).
-      t94 = xsdbool( t95 = abap_false ).
-      t86 = t94.
+      t86 = xsdbool( xsdbool( t96 IS BOUND AND t96 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t86 = abap_true.
-      DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t103) = NEW zcl_lnt_cds_annotate( ).
       DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t106 TYPE REF TO zcl_lnt_abap_release.
@@ -285,8 +254,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t102 = zcl_lnt_combi=>run( i_runnable = t103 i_tokens = t10 i_version_or_release = t105 i_language_version_0e1d = t109 ).
-      t29 = t102.
+      t29 = zcl_lnt_combi=>run( i_runnable = t103 i_tokens = t10 i_version_or_release = t105 i_language_version_0e1d = t109 ).
     ENDIF.
     DATA(t110) = VALUE abap_bool( ).
     DATA(t111) = VALUE abap_bool( ).
@@ -294,8 +262,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t111 = xsdbool( t29 IS INITIAL ).
     t110 = t111.
     IF t111 = abap_false.
-      DATA(t118) = VALUE abap_bool( ).
-      DATA(t119) = VALUE abap_bool( ).
       DATA t120 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t121 = t29.
@@ -311,12 +277,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t120 ?= t123.
       ENDIF.
-      t119 = xsdbool( t120 IS BOUND AND t120 IS INSTANCE OF zcl_lnt_expression_node ).
-      t118 = xsdbool( t119 = abap_false ).
-      t110 = t118.
+      t110 = xsdbool( xsdbool( t120 IS BOUND AND t120 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t110 = abap_true.
-      DATA t126 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t127) = NEW zcl_lnt_cds_define_custom( ).
       DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t130 TYPE REF TO zcl_lnt_abap_release.
@@ -348,8 +311,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t133 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t126 = zcl_lnt_combi=>run( i_runnable = t127 i_tokens = t10 i_version_or_release = t129 i_language_version_0e1d = t133 ).
-      t29 = t126.
+      t29 = zcl_lnt_combi=>run( i_runnable = t127 i_tokens = t10 i_version_or_release = t129 i_language_version_0e1d = t133 ).
     ENDIF.
     DATA(t134) = VALUE abap_bool( ).
     DATA(t135) = VALUE abap_bool( ).
@@ -357,8 +319,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t135 = xsdbool( t29 IS INITIAL ).
     t134 = t135.
     IF t135 = abap_false.
-      DATA(t142) = VALUE abap_bool( ).
-      DATA(t143) = VALUE abap_bool( ).
       DATA t144 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t145 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t145 = t29.
@@ -374,12 +334,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t144 ?= t147.
       ENDIF.
-      t143 = xsdbool( t144 IS BOUND AND t144 IS INSTANCE OF zcl_lnt_expression_node ).
-      t142 = xsdbool( t143 = abap_false ).
-      t134 = t142.
+      t134 = xsdbool( xsdbool( t144 IS BOUND AND t144 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t134 = abap_true.
-      DATA t150 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t151) = NEW zcl_lnt_cds_dfn_tbl_fnctn( ).
       DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t154 TYPE REF TO zcl_lnt_abap_release.
@@ -411,8 +368,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t157 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t150 = zcl_lnt_combi=>run( i_runnable = t151 i_tokens = t10 i_version_or_release = t153 i_language_version_0e1d = t157 ).
-      t29 = t150.
+      t29 = zcl_lnt_combi=>run( i_runnable = t151 i_tokens = t10 i_version_or_release = t153 i_language_version_0e1d = t157 ).
     ENDIF.
     DATA(t158) = VALUE abap_bool( ).
     DATA(t159) = VALUE abap_bool( ).
@@ -420,8 +376,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t159 = xsdbool( t29 IS INITIAL ).
     t158 = t159.
     IF t159 = abap_false.
-      DATA(t166) = VALUE abap_bool( ).
-      DATA(t167) = VALUE abap_bool( ).
       DATA t168 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t169 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t169 = t29.
@@ -437,12 +391,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t168 ?= t171.
       ENDIF.
-      t167 = xsdbool( t168 IS BOUND AND t168 IS INSTANCE OF zcl_lnt_expression_node ).
-      t166 = xsdbool( t167 = abap_false ).
-      t158 = t166.
+      t158 = xsdbool( xsdbool( t168 IS BOUND AND t168 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t158 = abap_true.
-      DATA t174 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t175) = NEW zcl_lnt_cds_extend_view( ).
       DATA t177 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t178 TYPE REF TO zcl_lnt_abap_release.
@@ -474,8 +425,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t181 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t174 = zcl_lnt_combi=>run( i_runnable = t175 i_tokens = t10 i_version_or_release = t177 i_language_version_0e1d = t181 ).
-      t29 = t174.
+      t29 = zcl_lnt_combi=>run( i_runnable = t175 i_tokens = t10 i_version_or_release = t177 i_language_version_0e1d = t181 ).
     ENDIF.
     DATA(t182) = VALUE abap_bool( ).
     DATA(t183) = VALUE abap_bool( ).
@@ -483,8 +433,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t183 = xsdbool( t29 IS INITIAL ).
     t182 = t183.
     IF t183 = abap_false.
-      DATA(t190) = VALUE abap_bool( ).
-      DATA(t191) = VALUE abap_bool( ).
       DATA t192 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t193 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t193 = t29.
@@ -500,12 +448,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t192 ?= t195.
       ENDIF.
-      t191 = xsdbool( t192 IS BOUND AND t192 IS INSTANCE OF zcl_lnt_expression_node ).
-      t190 = xsdbool( t191 = abap_false ).
-      t182 = t190.
+      t182 = xsdbool( xsdbool( t192 IS BOUND AND t192 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t182 = abap_true.
-      DATA t198 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t199) = NEW zcl_lnt_cds_define_hierarchy( ).
       DATA t201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t202 TYPE REF TO zcl_lnt_abap_release.
@@ -537,8 +482,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t205 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t198 = zcl_lnt_combi=>run( i_runnable = t199 i_tokens = t10 i_version_or_release = t201 i_language_version_0e1d = t205 ).
-      t29 = t198.
+      t29 = zcl_lnt_combi=>run( i_runnable = t199 i_tokens = t10 i_version_or_release = t201 i_language_version_0e1d = t205 ).
     ENDIF.
     DATA(t206) = VALUE abap_bool( ).
     DATA(t207) = VALUE abap_bool( ).
@@ -546,8 +490,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t207 = xsdbool( t29 IS INITIAL ).
     t206 = t207.
     IF t207 = abap_false.
-      DATA(t214) = VALUE abap_bool( ).
-      DATA(t215) = VALUE abap_bool( ).
       DATA t216 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t217 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t217 = t29.
@@ -563,12 +505,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t216 ?= t219.
       ENDIF.
-      t215 = xsdbool( t216 IS BOUND AND t216 IS INSTANCE OF zcl_lnt_expression_node ).
-      t214 = xsdbool( t215 = abap_false ).
-      t206 = t214.
+      t206 = xsdbool( xsdbool( t216 IS BOUND AND t216 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t206 = abap_true.
-      DATA t222 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t223) = NEW zcl_lnt_cds_dfn_extrnl_entty( ).
       DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t226 TYPE REF TO zcl_lnt_abap_release.
@@ -600,8 +539,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t229 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t222 = zcl_lnt_combi=>run( i_runnable = t223 i_tokens = t10 i_version_or_release = t225 i_language_version_0e1d = t229 ).
-      t29 = t222.
+      t29 = zcl_lnt_combi=>run( i_runnable = t223 i_tokens = t10 i_version_or_release = t225 i_language_version_0e1d = t229 ).
     ENDIF.
     DATA(t230) = VALUE abap_bool( ).
     DATA(t231) = VALUE abap_bool( ).
@@ -609,8 +547,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t231 = xsdbool( t29 IS INITIAL ).
     t230 = t231.
     IF t231 = abap_false.
-      DATA(t238) = VALUE abap_bool( ).
-      DATA(t239) = VALUE abap_bool( ).
       DATA t240 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t241 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t241 = t29.
@@ -626,12 +562,9 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t240 ?= t243.
       ENDIF.
-      t239 = xsdbool( t240 IS BOUND AND t240 IS INSTANCE OF zcl_lnt_expression_node ).
-      t238 = xsdbool( t239 = abap_false ).
-      t230 = t238.
+      t230 = xsdbool( xsdbool( t240 IS BOUND AND t240 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t230 = abap_true.
-      DATA t246 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t247) = NEW zcl_lnt_cds_dfn_tbl_entty( ).
       DATA t249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t250 TYPE REF TO zcl_lnt_abap_release.
@@ -663,8 +596,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t253 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t246 = zcl_lnt_combi=>run( i_runnable = t247 i_tokens = t10 i_version_or_release = t249 i_language_version_0e1d = t253 ).
-      t29 = t246.
+      t29 = zcl_lnt_combi=>run( i_runnable = t247 i_tokens = t10 i_version_or_release = t249 i_language_version_0e1d = t253 ).
     ENDIF.
     DATA(t254) = VALUE abap_bool( ).
     DATA(t255) = VALUE abap_bool( ).
@@ -672,8 +604,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     t255 = xsdbool( t29 IS INITIAL ).
     t254 = t255.
     IF t255 = abap_false.
-      DATA(t262) = VALUE abap_bool( ).
-      DATA(t263) = VALUE abap_bool( ).
       DATA t264 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t265 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t265 = t29.
@@ -689,9 +619,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       ELSE.
         t264 ?= t267.
       ENDIF.
-      t263 = xsdbool( t264 IS BOUND AND t264 IS INSTANCE OF zcl_lnt_expression_node ).
-      t262 = xsdbool( t263 = abap_false ).
-      t254 = t262.
+      t254 = xsdbool( xsdbool( t264 IS BOUND AND t264 IS INSTANCE OF zcl_lnt_expression_node ) = abap_false ).
     ENDIF.
     IF t254 = abap_true.
       CLEAR result.

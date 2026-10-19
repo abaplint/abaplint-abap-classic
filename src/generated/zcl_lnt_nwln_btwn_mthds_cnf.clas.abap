@@ -27,10 +27,8 @@ CLASS zcl_lnt_nwln_btwn_mthds_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 3 ).
-    me->zlnt_view_write_s_798c8e20c7d1( p0 = t1 ).
-    DATA(t2) = |less|.
-    me->zlnt_view_write_s_c470d8e57112( p0 = t2 ).
+    me->zlnt_view_write_s_798c8e20c7d1( p0 = CONV f( 3 ) ).
+    me->zlnt_view_write_s_c470d8e57112( p0 = |less| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -73,8 +71,7 @@ CLASS zcl_lnt_nwln_btwn_mthds_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_2ac95bad942d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `logic` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `logic` ) )->as_string( ).
     ELSE.
       result = me->logic.
     ENDIF.

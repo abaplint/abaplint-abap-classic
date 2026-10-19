@@ -49,9 +49,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
       CLEAR t14.
       DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t15.
-      DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t18.
-      t15 = t18.
+      CREATE OBJECT t15.
       DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t20.
       t14 = NEW zcl_lnt_shape_9d228663( i_statements = t15 i_filename = t20 ).
@@ -67,15 +65,13 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t14->zlnt_json_ownkeys_70e5fd461788.
       t14->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t24) = |statements|.
       DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t25.
-      t14->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
-      DATA(t26) = |filename|.
+      t14->zlnt_json_ownkeys_70e5fd461788->put( p0 = |statements| p1 = t25 ).
       DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t27.
       IF t14->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t14->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
+        t14->zlnt_json_ownkeys_70e5fd461788->put( p0 = |filename| p1 = t27 ).
       ENDIF.
       t9 = t10->set( p0 = t11 p1 = t14 ).
     ENDDO.
@@ -85,11 +81,9 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     DATA(t1) = i_name.
     DATA(t2) = i_contents.
     DATA(t3) = i_filename.
-    DATA(t4) = VALUE abap_bool( ).
     DATA t5 TYPE string.
     t5 = t1.
     DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = VALUE abap_bool( ).
     DATA t9 TYPE REF TO zcl_lnt_shape_9d228663.
     DATA(t10) = me->macros.
     DATA t11 TYPE string.
@@ -101,14 +95,12 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
       t11 = zlnt_runtime_uppe_91169605024d=>full( t11 ).
     ENDIF.
     t9 = t10->get( p0 = t11 ).
-    t8 = xsdbool( t9 IS BOUND ).
-    IF t8 = abap_true.
+    IF xsdbool( t9 IS BOUND ) = abap_true.
       t7 = abap_true.
     ELSE.
       t7 = abap_false.
     ENDIF.
-    t4 = t7.
-    IF t4 = abap_true.
+    IF t7 = abap_true.
       RETURN.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
@@ -124,12 +116,10 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     DATA t21 TYPE REF TO zcl_lnt_shape_9d228663.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t22 = t2.
-    DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t31->has = abap_true.
     t31->value = t3.
-    t27 = t31.
-    t21 = NEW zcl_lnt_shape_9d228663( i_statements = t22 i_filename = t27 ).
+    t21 = NEW zcl_lnt_shape_9d228663( i_statements = t22 i_filename = t31 ).
     CREATE OBJECT t21->zlnt_view_ownkeys_b0e8086400eb.
     t21->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -140,22 +130,17 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t21->zlnt_json_ownkeys_70e5fd461788.
     t21->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t35) = |statements|.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t35 p1 = t36 ).
-    DATA(t37) = |filename|.
+    t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = |statements| p1 = t36 ).
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t21->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
+      t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = |filename| p1 = t38 ).
     ENDIF.
     t16 = t17->set( p0 = t18 p1 = t21 ).
   ENDMETHOD.
 
   METHOD get_contents.
     DATA(t1) = i_name.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zcl_lnt_shape_9d228663.
-    DATA t6 TYPE REF TO zcl_lnt_shape_9d228663.
     DATA(t7) = me->macros.
     DATA t8 TYPE string.
     DATA(t10) = strlen( t1 ).
@@ -165,23 +150,17 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     ELSE.
       t8 = zlnt_runtime_uppe_91169605024d=>full( t8 ).
     ENDIF.
-    t6 = t7->get( p0 = t8 ).
-    t5 = t6.
-    t4 = t5->statements.
-    result = t4.
+    result = t7->get( p0 = t8 )->statements.
 
   ENDMETHOD.
 
   METHOD list_macro_names.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->macros->keys( ).
-    result = t1.
+    result = me->macros->keys( ).
 
   ENDMETHOD.
 
   METHOD is_macro.
     DATA(t1) = i_name.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zcl_lnt_shape_9d228663.
     DATA(t4) = me->macros.
     DATA t5 TYPE string.
@@ -193,8 +172,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
       t5 = zlnt_runtime_uppe_91169605024d=>full( t5 ).
     ENDIF.
     t3 = t4->get( p0 = t5 ).
-    t2 = xsdbool( t3 IS BOUND ).
-    IF t2 = abap_true.
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       result = abap_true.
       RETURN.
     ENDIF.
@@ -204,9 +182,6 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
 
   METHOD get_macro_filename.
     DATA(t1) = i_name.
-    DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t3 TYPE REF TO zcl_lnt_shape_9d228663.
-    DATA t4 TYPE REF TO zcl_lnt_shape_9d228663.
     DATA(t5) = me->macros.
     DATA t6 TYPE string.
     DATA(t8) = strlen( t1 ).
@@ -216,10 +191,7 @@ CLASS zcl_lnt_macros IMPLEMENTATION.
     ELSE.
       t6 = zlnt_runtime_uppe_91169605024d=>full( t6 ).
     ENDIF.
-    t4 = t5->get( p0 = t6 ).
-    t3 = t4.
-    t2 = t3->filename.
-    result = t2.
+    result = t5->get( p0 = t6 )->filename.
 
   ENDMETHOD.
 

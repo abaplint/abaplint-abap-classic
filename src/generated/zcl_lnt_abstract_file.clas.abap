@@ -36,7 +36,6 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA(t2) = CONV string( me->filename ).
     t1 = t2.
     DATA(t3) = VALUE int8( ).
-    DATA(t4) = VALUE int8( ).
     DATA t5 TYPE string.
     t5 = t1.
     DATA t7 TYPE string.
@@ -44,21 +43,15 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA t9 TYPE i.
     t9 = strlen( t7 ).
     DATA t13 TYPE i.
-    DATA t14 TYPE i.
     DATA t15 TYPE i.
     t15 = strlen( t5 ).
-    t14 = t15 - t9.
-    t13 = t14.
+    t13 = t15 - t9.
     DATA t19 TYPE i.
     t19 = -1.
     DO.
-      DATA t21 TYPE abap_bool.
-      DATA(t23) = 0.
-      t21 = xsdbool( t13 >= t23 ).
-      IF t21 = abap_false.
+      IF xsdbool( t13 >= 0 ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t24) = VALUE abap_bool( ).
       DATA(t25) = VALUE string( ).
       DATA(t27) = t13.
       DATA(t28) = VALUE i( ).
@@ -87,35 +80,26 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDIF.
       t35 = t28 - t27.
       t25 = t5+t27(t35).
-      t24 = xsdbool( t25 = t7 ).
-      IF t24 = abap_true.
+      IF xsdbool( t25 = t7 ) = abap_true.
         t19 = t13.
         EXIT.
       ENDIF.
-      DATA t38 TYPE i.
       DATA(t40) = 1.
-      t38 = t13 - t40.
-      t13 = t38.
+      t13 = t13 - t40.
     ENDDO.
     DATA t41 TYPE int8.
     t41 = t19.
-    t4 = t41.
-    t3 = t4.
-    DATA t43 TYPE abap_bool.
+    t3 = t41.
     DATA t44 TYPE i.
     t44 = t3.
-    t43 = xsdbool( t44 IS NOT INITIAL ).
-    IF t43 = abap_true.
-      DATA t46 TYPE int8.
+    IF xsdbool( t44 IS NOT INITIAL ) = abap_true.
       DATA t47 TYPE int8.
       DATA t48 TYPE i.
       t48 = t3.
       t47 = t48.
       DATA(t50) = CONV int8( 1 ).
-      t46 = t47 + t50.
-      t3 = t46.
+      t3 = t47 + t50.
     ENDIF.
-    DATA(t51) = VALUE string( ).
     DATA t52 TYPE string.
     t52 = t1.
     DATA(t54) = VALUE string( ).
@@ -141,9 +125,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ENDIF.
     t62 = t59 - t56.
     t54 = t52+t56(t62).
-    t51 = t54.
-    t1 = t51.
-    DATA(t63) = VALUE int8( ).
+    t1 = t54.
     DATA t64 TYPE string.
     t64 = t1.
     DATA t66 TYPE string.
@@ -151,21 +133,15 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     DATA t68 TYPE i.
     t68 = strlen( t66 ).
     DATA t72 TYPE i.
-    DATA t73 TYPE i.
     DATA t74 TYPE i.
     t74 = strlen( t64 ).
-    t73 = t74 - t68.
-    t72 = t73.
+    t72 = t74 - t68.
     DATA t78 TYPE i.
     t78 = -1.
     DO.
-      DATA t80 TYPE abap_bool.
-      DATA(t82) = 0.
-      t80 = xsdbool( t72 >= t82 ).
-      IF t80 = abap_false.
+      IF xsdbool( t72 >= 0 ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t83) = VALUE abap_bool( ).
       DATA(t84) = VALUE string( ).
       DATA(t86) = t72.
       DATA(t87) = VALUE i( ).
@@ -194,35 +170,26 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDIF.
       t94 = t87 - t86.
       t84 = t64+t86(t94).
-      t83 = xsdbool( t84 = t66 ).
-      IF t83 = abap_true.
+      IF xsdbool( t84 = t66 ) = abap_true.
         t78 = t72.
         EXIT.
       ENDIF.
-      DATA t97 TYPE i.
       DATA(t99) = 1.
-      t97 = t72 - t99.
-      t72 = t97.
+      t72 = t72 - t99.
     ENDDO.
     DATA t100 TYPE int8.
     t100 = t78.
-    t63 = t100.
-    t3 = t63.
-    DATA t102 TYPE abap_bool.
+    t3 = t100.
     DATA t103 TYPE i.
     t103 = t3.
-    t102 = xsdbool( t103 IS NOT INITIAL ).
-    IF t102 = abap_true.
-      DATA t105 TYPE int8.
+    IF xsdbool( t103 IS NOT INITIAL ) = abap_true.
       DATA t106 TYPE int8.
       DATA t107 TYPE i.
       t107 = t3.
       t106 = t107.
       DATA(t109) = CONV int8( 1 ).
-      t105 = t106 + t109.
-      t3 = t105.
+      t3 = t106 + t109.
     ENDIF.
-    DATA(t110) = VALUE string( ).
     DATA t111 TYPE string.
     t111 = t1.
     DATA(t113) = VALUE string( ).
@@ -248,8 +215,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
     ENDIF.
     t121 = t118 - t115.
     t113 = t111+t115(t121).
-    t110 = t113.
-    result = t110.
+    result = t113.
 
   ENDMETHOD.
 
@@ -293,10 +259,7 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t15) = 1.
-    t13 = t2->get( p0 = t15 ).
-    t12 = t13.
+    t12 = t2->get( p0 = 1 ).
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t17) = VALUE abap_bool( ).
     IF t12 IS INITIAL.
@@ -366,66 +329,42 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t1 = t2.
-    DATA(t12) = 0.
-    DATA(t13) = VALUE string( ).
     DATA(t14) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t14.
     READ TABLE t1->items INDEX 1 INTO t14.
     DATA t16 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t17) = |%23|.
-    DATA(t18) = |g|.
-    CREATE OBJECT t16 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t17 flags = t18 checked = abap_true.
-    DATA(t19) = |#|.
+    CREATE OBJECT t16 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%23| flags = |g| checked = abap_true.
     DATA(t20) = strlen( t14 ).
-    t13 = t16->replace( p0 = t14 p1 = t19 ).
-    t1->put( p0 = t12 p1 = t13 ).
-    DATA(t22) = 0.
-    DATA(t23) = VALUE string( ).
+    t1->put( p0 = 0 p1 = t16->replace( p0 = t14 p1 = |#| ) ).
     DATA(t24) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t24.
     READ TABLE t1->items INDEX 1 INTO t24.
     DATA t26 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t27) = |%3e|.
-    DATA(t28) = |g|.
-    CREATE OBJECT t26 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t27 flags = t28 checked = abap_true.
-    DATA(t29) = |>|.
+    CREATE OBJECT t26 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%3e| flags = |g| checked = abap_true.
     DATA(t30) = strlen( t24 ).
-    t23 = t26->replace( p0 = t24 p1 = t29 ).
-    t1->put( p0 = t22 p1 = t23 ).
-    DATA(t32) = 0.
-    DATA(t33) = VALUE string( ).
+    t1->put( p0 = 0 p1 = t26->replace( p0 = t24 p1 = |>| ) ).
     DATA(t34) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t34.
     READ TABLE t1->items INDEX 1 INTO t34.
     DATA t36 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t37) = |%3c|.
-    DATA(t38) = |g|.
-    CREATE OBJECT t36 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t37 flags = t38 checked = abap_true.
-    DATA(t39) = |<|.
+    CREATE OBJECT t36 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |%3c| flags = |g| checked = abap_true.
     DATA(t40) = strlen( t34 ).
-    t33 = t36->replace( p0 = t34 p1 = t39 ).
-    t1->put( p0 = t32 p1 = t33 ).
-    DATA(t42) = 0.
-    DATA(t43) = VALUE string( ).
+    t1->put( p0 = 0 p1 = t36->replace( p0 = t34 p1 = |<| ) ).
     DATA(t44) = VALUE string( ).
     DATA(t45) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t45.
     READ TABLE t1->items INDEX 1 INTO t45.
     DATA(t47) = strlen( t45 ).
     t44 = t45.
@@ -435,49 +374,40 @@ CLASS zcl_lnt_abstract_file IMPLEMENTATION.
       t44 = zlnt_runtime_uppe_91169605024d=>full( t44 ).
     ENDIF.
     DATA t48 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t49) = |#|.
-    DATA(t50) = |g|.
-    CREATE OBJECT t48 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t49 flags = t50 checked = abap_true.
-    DATA(t51) = |/|.
+    CREATE OBJECT t48 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |#| flags = |g| checked = abap_true.
     DATA(t52) = strlen( t44 ).
-    t43 = t48->replace( p0 = t44 p1 = t51 ).
-    t1->put( p0 = t42 p1 = t43 ).
-    DATA(t54) = 0.
+    t1->put( p0 = 0 p1 = t48->replace( p0 = t44 p1 = |/| ) ).
     DATA(t55) = VALUE string( ).
     DATA(t56) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t56.
     READ TABLE t1->items INDEX 1 INTO t56.
     DATA(t58) = |(|.
     DATA(t59) = |/|.
     DATA(t60) = strlen( t56 ).
     t55 = t56.
     REPLACE ALL OCCURRENCES OF t58 IN t55 WITH t59.
-    t1->put( p0 = t54 p1 = t55 ).
-    DATA(t62) = 0.
+    t1->put( p0 = 0 p1 = t55 ).
     DATA(t63) = VALUE string( ).
     DATA(t64) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t64.
     READ TABLE t1->items INDEX 1 INTO t64.
     DATA(t66) = |)|.
     DATA(t67) = |/|.
     DATA(t68) = strlen( t64 ).
     t63 = t64.
     REPLACE ALL OCCURRENCES OF t66 IN t63 WITH t67.
-    t1->put( p0 = t62 p1 = t63 ).
+    t1->put( p0 = 0 p1 = t63 ).
     DATA(t69) = VALUE string( ).
     IF t1->has( 1 - 1 ) = abap_false.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     t1->load( ).
-    CLEAR t69.
     READ TABLE t1->items INDEX 1 INTO t69.
     result = t69.
 

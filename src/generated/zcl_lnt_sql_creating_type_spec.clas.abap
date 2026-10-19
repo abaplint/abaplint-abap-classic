@@ -16,20 +16,16 @@ CLASS zcl_lnt_sql_creating_type_spec IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |LOCATOR|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |LOCATOR|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t8) = |READER|.
     CREATE OBJECT t7.
     t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t7->sval = t8.
+    t7->sval = |READER|.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
+    t1 = zcl_lnt_st_combi_module=>alt_prio( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -63,9 +59,7 @@ CLASS zcl_lnt_sql_creating_type_spec IMPLEMENTATION.
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t25.
-    DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-    t26 = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t22 i_rest = t25 ).
-    result = t26.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t22 i_rest = t25 ).
 
   ENDMETHOD.
 

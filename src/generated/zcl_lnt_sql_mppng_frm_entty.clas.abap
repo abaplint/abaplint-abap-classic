@@ -14,18 +14,12 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t3 TYPE REF TO zcl_lnt_abap_release.
-    DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    DATA t5 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = |v789|.
-    t4 = t5->get( p0 = t6 ).
-    t3 = t4.
+    t3 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v789| ).
     IF t3 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t8 TYPE REF TO object.
@@ -50,13 +44,11 @@ CLASS zcl_lnt_sql_mppng_frm_entty IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t10) = |MAPPING FROM ENTITY|.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t9->sval = t10.
+    t9->sval = |MAPPING FROM ENTITY|.
     DATA t11 TYPE REF TO zcl_lnt_iver_options.
-    t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t11 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t11 ).
 
   ENDMETHOD.
 

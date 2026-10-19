@@ -22,14 +22,11 @@ CLASS zcl_lnt_parameter_s IMPLEMENTATION.
       t3->cval = t4.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |=|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |=|.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t12 IS BOUND.
@@ -40,9 +37,7 @@ CLASS zcl_lnt_parameter_s IMPLEMENTATION.
     t8->load( ).
     APPEND t11 TO t8->items.
     t8->save( ).
-    DATA t13 TYPE REF TO zif_lnt_statement_runnable.
-    t13 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
-    result = t13.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
 
   ENDMETHOD.
 

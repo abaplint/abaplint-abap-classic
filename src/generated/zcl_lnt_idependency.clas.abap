@@ -163,8 +163,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_12a3d7389cfe.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `files` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `files` ) )->as_string( ).
     ELSE.
       result = me->files.
     ENDIF.

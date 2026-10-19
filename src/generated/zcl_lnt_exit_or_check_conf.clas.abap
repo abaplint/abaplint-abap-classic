@@ -46,8 +46,7 @@ CLASS zcl_lnt_exit_or_check_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_969b304ae6d2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowExit` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowExit` ) )->as_boolean( ).
     ELSE.
       result = me->allow_exit.
     ENDIF.
@@ -68,8 +67,7 @@ CLASS zcl_lnt_exit_or_check_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_265ef3eb9a19.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowCheck` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowCheck` ) )->as_boolean( ).
     ELSE.
       result = me->allow_check.
     ENDIF.

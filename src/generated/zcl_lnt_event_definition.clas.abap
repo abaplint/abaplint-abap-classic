@@ -18,22 +18,15 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_visibility_33e6.
     DATA(t3) = i_input_967e.
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zif_lnt_statement.
     t6 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-    t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_events ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
+    IF xsdbool( xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_events ) = abap_false ) = abap_true.
       DATA t8 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t9 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t12) = |MethodDefinition, expected MethodDef as part of input node|.
       DATA(t13) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t13->has = abap_true.
-      t13->value = t12.
-      t10 = t13.
-      t9 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t10 ).
+      t13->value = |MethodDefinition, expected MethodDef as part of input node|.
+      t9 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t13 ).
       t8 = NEW #( ).
       t8->payload = t9.
       CLEAR t8->source_value.
@@ -61,23 +54,16 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       RAISE EXCEPTION t8.
     ENDIF.
     DATA t17 TYPE REF TO zcl_lnt_expression_node.
-    DATA t18 TYPE REF TO zcl_lnt_expression_node.
     DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd.
-    t18 = t1->find_first_expression( i_type_9913 = t20 ).
-    t17 = t18.
-    DATA(t21) = VALUE abap_bool( ).
+    t17 = t1->find_first_expression( i_type_9913 = t20 ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t21 = xsdbool( t17 IS INITIAL ).
-    IF t21 = abap_true.
+    IF xsdbool( t17 IS INITIAL ) = abap_true.
       DATA t28 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t29 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t32) = |MethodDefinition, expected MethodDef as part of input node|.
       DATA(t33) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t33->has = abap_true.
-      t33->value = t32.
-      t30 = t33.
-      t29 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t30 ).
+      t33->value = |MethodDefinition, expected MethodDef as part of input node|.
+      t29 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t33 ).
       t28 = NEW #( ).
       t28->payload = t29.
       CLEAR t28->source_value.
@@ -105,9 +91,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
       RAISE EXCEPTION t28.
     ENDIF.
     DATA t37 TYPE REF TO zcl_lnt_abstract_token.
-    DATA t38 TYPE REF TO zcl_lnt_expression_node.
-    t38 = t17.
-    t37 = t38->get_first_token( ).
+    t37 = t17->get_first_token( ).
     DATA(t40) = VALUE string( ).
     t40 = t3->filename.
     super->constructor( i_token = t37 i_filename = t40 ).
@@ -116,14 +100,9 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     me->parameters = t42.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parameters`.
     me->parse( i_node = t1 i_input_967e = t3 ).
-    DATA(t45) = VALUE abap_bool( ).
     DATA(t46) = VALUE string( ).
     DATA(t47) = VALUE string( ).
-    DATA t49 TYPE REF TO zcl_lnt_abstract_token.
-    t49 = t1->get_first_token( ).
-    DATA(t51) = VALUE string( ).
-    t51 = t49->str.
-    t47 = t51.
+    t47 = t1->get_first_token( )->str.
     DATA(t53) = strlen( t47 ).
     t46 = t47.
     IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -131,9 +110,7 @@ CLASS zcl_lnt_event_definition IMPLEMENTATION.
     ELSE.
       t46 = zlnt_runtime_uppe_91169605024d=>full( t46 ).
     ENDIF.
-    DATA(t54) = |CLASS|.
-    t45 = xsdbool( t46 = t54 ).
-    me->is_static_b389 = t45.
+    me->is_static_b389 = xsdbool( t46 = |CLASS| ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `is_static`.
   ENDMETHOD.
 

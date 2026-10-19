@@ -13,18 +13,12 @@ CLASS zcl_lnt_type_mesh_end DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_type_mesh_end IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    DATA t5 TYPE REF TO zcl_lnt_abap_release.
-    DATA t6 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t6 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t7) = |v740sp05|.
-    t5 = t6->get( p0 = t7 ).
-    t4 = t5.
+    t4 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v740sp05| ).
     IF t4 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t9 TYPE REF TO object.
@@ -51,19 +45,15 @@ CLASS zcl_lnt_type_mesh_end IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t11 TYPE REF TO zif_lnt_statement_runnable.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t14) = |TYPES|.
     CREATE OBJECT t13.
     t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t13->sval = t14.
+    t13->sval = |TYPES|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t17) = |END OF MESH|.
     CREATE OBJECT t16.
     t16->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t16->sval = t17.
+    t16->sval = |END OF MESH|.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t19.
-    t18 = t19.
+    CREATE OBJECT t18.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.
     IF t22 IS BOUND.
@@ -74,9 +64,7 @@ CLASS zcl_lnt_type_mesh_end IMPLEMENTATION.
     t18->load( ).
     APPEND t21 TO t18->items.
     t18->save( ).
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t18 ).
-    t11 = t23.
+    t11 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t18 ).
     IF t11 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t28 TYPE REF TO object.
@@ -101,8 +89,7 @@ CLASS zcl_lnt_type_mesh_end IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t29 TYPE REF TO zcl_lnt_iver_options.
-    t2 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t3 i_first = t10 i_opts = t29 ).
-    result = t2.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t3 i_first = t10 i_opts = t29 ).
 
   ENDMETHOD.
 

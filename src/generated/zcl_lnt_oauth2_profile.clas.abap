@@ -24,13 +24,8 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
 
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
-    DATA t2 TYPE f.
-    DATA(t3) = CONV f( 30 ).
-    t2 = t3.
-    DATA t4 TYPE abap_bool.
-    t4 = abap_true.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t4 i_custom_regex = t6 ).
+    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = CONV f( 30 ) i_allow_namespace = abap_true i_custom_regex = t6 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -41,13 +36,11 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t10) = |maxLength|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
-    DATA(t12) = |allowNamespace|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |maxLength| p1 = t11 ).
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |allowNamespace| p1 = t13 ).
     ENDIF.
     result = t1.
 
@@ -60,14 +53,11 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
 
   METHOD list_scopes.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t3 = CAST zlnt_runtime_dyna_a429568d5be8( me->parse_raw2( ) ).
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = xsdbool( t3 IS INITIAL ).
-    IF t7 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
     ELSE.
       t6 = t3.
     ENDIF.
@@ -94,12 +84,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t28 = abap_true.
     ELSE.
-      DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t33 = t25.
-      DATA(t35) = |abapGit|.
-      t32 = t33->get( p0 = t35 ).
-      t27 = t32.
+      t27 = t25->get( p0 = |abapGit| ).
     ENDIF.
     t23 = t27.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -115,12 +100,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t37 = abap_true.
     ELSE.
-      DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t42 = t23.
-      DATA(t44) = |asx:abap|.
-      t41 = t42->get( p0 = t44 ).
-      t36 = t41.
+      t36 = t23->get( p0 = |asx:abap| ).
     ENDIF.
     t21 = t36.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -136,12 +116,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t46 = abap_true.
     ELSE.
-      DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t51 = t21.
-      DATA(t53) = |asx:values|.
-      t50 = t51->get( p0 = t53 ).
-      t45 = t50.
+      t45 = t21->get( p0 = |asx:values| ).
     ENDIF.
     t19 = t45.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -157,12 +132,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t55 = abap_true.
     ELSE.
-      DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t60 = t19.
-      DATA(t62) = |PROFILE|.
-      t59 = t60->get( p0 = t62 ).
-      t54 = t59.
+      t54 = t19->get( p0 = |PROFILE| ).
     ENDIF.
     t17 = t54.
     DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -178,12 +148,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t64 = abap_true.
     ELSE.
-      DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t69 = t17.
-      DATA(t71) = |T_SCOPES|.
-      t68 = t69->get( p0 = t71 ).
-      t63 = t68.
+      t63 = t17->get( p0 = |T_SCOPES| ).
     ENDIF.
     t15 = t63.
     DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -199,12 +164,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
     ENDIF.
     IF t73 = abap_true.
     ELSE.
-      DATA t77 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t78 = t15.
-      DATA(t80) = |OA2P_SCOPES|.
-      t77 = t78->get( p0 = t80 ).
-      t72 = t77.
+      t72 = t15->get( p0 = |OA2P_SCOPES| ).
     ENDIF.
     t14 = t72.
     IF t14 IS BOUND.
@@ -270,11 +230,7 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA(t89) = VALUE string( ).
-      DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t90.
-      DATA(t92) = |SCOPE|.
-      t90 = t81->get( p0 = t92 ).
-      t89 = t90->as_string( ).
+      t89 = t81->get( p0 = |SCOPE| )->as_string( ).
       t1->load( ).
       APPEND t89 TO t1->items.
       t1->save( ).

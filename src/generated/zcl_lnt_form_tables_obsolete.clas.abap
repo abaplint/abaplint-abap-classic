@@ -25,12 +25,6 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |form_tables_obsolete|.
-    DATA t4 TYPE string.
-    t4 = |TABLES parameters are obsolete|.
-    DATA t6 TYPE string.
-    t6 = |Checks for TABLES parameters in forms.|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
     t11 = t11 && |-US/abapform_tables.html|.
@@ -40,29 +34,22 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t27) = |FORM update_items TABLES items.\nENDFORM.|.
     DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t28->has = abap_true.
-    t28->value = t27.
+    t28->value = |FORM update_items TABLES items.\nENDFORM.|.
     t24 = t28.
-    DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t33) = |FORM update_items CHANGING items TYPE ty_items.\nENDFORM.|.
     DATA(t34) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t34->has = abap_true.
-    t34->value = t33.
-    t30 = t34.
+    t34->value = |FORM update_items CHANGING items TYPE ty_items.\nENDFORM.|.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t30 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |form_tables_obsolete| i_title = |TABLES parameters are obsolete| i_short_description = |Checks for TABLES parameters in forms.| i_bad_example = t24 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -93,38 +80,31 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = |key|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
-    DATA(t49) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t48 ).
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t50 ).
     ENDIF.
-    DATA(t51) = |shortDescription|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |extendedInformation|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |tags|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |badExample|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |goodExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t60 ).
     ENDIF.
     result = t1.
 
@@ -149,22 +129,16 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_obj_1ed0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE REF TO zcl_lnt_structure_node.
-    DATA t9 TYPE REF TO zcl_lnt_structure_node.
-    t9 = t1->structure.
-    t5 = t9.
+    t5 = t1->structure.
     DATA t11 TYPE abap_bool.
     DATA t12 TYPE abap_bool.
     t12 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_class ).
     t11 = t12.
     IF t12 = abap_false.
-      DATA(t14) = VALUE abap_bool( ).
       DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t14 = xsdbool( t5 IS INITIAL ).
-      t11 = t14.
+      t11 = xsdbool( t5 IS INITIAL ).
     ENDIF.
     IF t11 = abap_true.
       result = t3.
@@ -201,16 +175,9 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
       t32 = t26->get_first_token( ).
       DATA t35 TYPE REF TO zcl_lnt_issue.
       CLEAR t35.
-      DATA(t38) = |FORM TABLES parameters are obsolete|.
       DATA(t39) = VALUE string( ).
       DATA t40 TYPE REF TO zcl_lnt_irule_metadata.
       CLEAR t40.
-      DATA t41 TYPE string.
-      t41 = |form_tables_obsolete|.
-      DATA t43 TYPE string.
-      t43 = |TABLES parameters are obsolete|.
-      DATA t45 TYPE string.
-      t45 = |Checks for TABLES parameters in forms.|.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t47.
       DATA(t50) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
@@ -222,33 +189,28 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
       DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t53.
       DATA t57 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t58 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t58.
-      t57 = t58.
-      DATA(t60) = |SingleFile|.
+      CREATE OBJECT t57.
       t57->load( ).
-      APPEND t60 TO t57->items.
+      APPEND |SingleFile| TO t57->items.
       t57->save( ).
       t53 = t57.
       DATA t63 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t63.
-      DATA(t66) = |FORM update_items TABLES items.\nENDFORM.|.
       DATA(t67) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t67->has = abap_true.
-      t67->value = t66.
+      t67->value = |FORM update_items TABLES items.\nENDFORM.|.
       t63 = t67.
       DATA t69 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t69.
-      DATA(t72) = |FORM update_items CHANGING items TYPE ty_items.\nENDFORM.|.
       DATA(t73) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t73->has = abap_true.
-      t73->value = t72.
+      t73->value = |FORM update_items CHANGING items TYPE ty_items.\nENDFORM.|.
       t69 = t73.
       DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t75.
       DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t77.
-      t40 = NEW zcl_lnt_irule_metadata( i_key = t41 i_title = t43 i_short_description = t45 i_bad_example = t63 i_good_example = t69 i_extended_information = t47 i_tags = t53 i_pragma = t75 i_pseudo_comment = t77 ).
+      t40 = NEW zcl_lnt_irule_metadata( i_key = |form_tables_obsolete| i_title = |TABLES parameters are obsolete| i_short_description = |Checks for TABLES parameters in forms.| i_bad_example = t63 i_good_example = t69 i_extended_information = t47 i_tags = t53 i_pragma = t75 i_pseudo_comment = t77 ).
       CREATE OBJECT t40->zlnt_view_ownkeys_b0e8086400eb.
       t40->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -286,52 +248,45 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t40->zlnt_json_ownkeys_70e5fd461788.
       t40->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t86) = |key|.
       DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t87.
-      t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t86 p1 = t87 ).
-      DATA(t88) = |title|.
+      t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t87 ).
       DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t89.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t88 p1 = t89 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t89 ).
       ENDIF.
-      DATA(t90) = |shortDescription|.
       DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t91.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t90 p1 = t91 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t91 ).
       ENDIF.
-      DATA(t92) = |extendedInformation|.
       DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t93.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t92 p1 = t93 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t93 ).
       ENDIF.
-      DATA(t94) = |tags|.
       DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t95.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t95 ).
       ENDIF.
-      DATA(t96) = |badExample|.
       DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t97.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t97 ).
       ENDIF.
-      DATA(t98) = |goodExample|.
       DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t99.
       IF t40->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = t98 p1 = t99 ).
+        t40->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t99 ).
       ENDIF.
       t39 = t40->key.
       DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t100 = me->conf->zlnt_view_read_sr_15c06369f827( ).
       DATA t102 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t102.
-      t35 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t32 i_message_26cb = t38 i_key = t39 i_severity = t100 i_fix = t102 ).
+      t35 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t32 i_message_26cb = |FORM TABLES parameters are obsolete| i_key = t39 i_severity = t100 i_fix = t102 ).
       t3->load( ).
       APPEND t35 TO t3->items.
       t3->save( ).

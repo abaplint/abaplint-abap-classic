@@ -17,16 +17,12 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     DATA t4 TYPE i.
     t4 = 0.
     DATA t6 TYPE f.
-    DATA(t7) = CONV f( 1 ).
-    t6 = t7.
+    t6 = CONV f( 1 ).
     DATA t8 TYPE f.
-    DATA(t9) = CONV f( 1 ).
-    t8 = t9.
+    t8 = CONV f( 1 ).
     DATA t10 TYPE string.
     t10 = ||.
     DATA t12 TYPE REF TO zcl_lnt_stream.
-    DATA t13 TYPE REF TO zcl_lnt_stream.
-    DATA t14 TYPE string.
     DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA t17 TYPE string.
@@ -37,42 +33,26 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     t16 = t17.
     REPLACE ALL OCCURRENCES OF t19 IN t16 WITH t20.
     DATA t22 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t23) = `\u00a0`.
-    DATA(t24) = |g|.
-    CREATE OBJECT t22 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t23 flags = t24 checked = abap_true.
-    DATA(t25) = | |.
+    CREATE OBJECT t22 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\u00a0` flags = |g| checked = abap_true.
     DATA(t26) = strlen( t16 ).
-    t15 = t22->replace( p0 = t16 p1 = t25 ).
+    t15 = t22->replace( p0 = t16 p1 = | | ).
     DATA t27 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t28) = `\u000b`.
-    DATA(t29) = |g|.
-    CREATE OBJECT t27 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t28 flags = t29 checked = abap_true.
-    DATA(t30) = | |.
+    CREATE OBJECT t27 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\u000b` flags = |g| checked = abap_true.
     DATA(t31) = strlen( t15 ).
-    t14 = t27->replace( p0 = t15 p1 = t30 ).
-    t13 = NEW zcl_lnt_stream( i_buffer = t14 ).
-    t12 = t13.
+    t12 = NEW zcl_lnt_stream( i_buffer = t27->replace( p0 = t15 p1 = | | ) ).
     DATA t32 TYPE string.
     t32 = ||.
     DO.
-      DATA t34 TYPE abap_bool.
       DATA t35 TYPE i.
       DATA t39 TYPE f.
-      DATA t41 TYPE string.
-      t41 = t12->buffer.
-      t39 = strlen( t41 ).
+      t39 = strlen( t12->buffer ).
       t35 = t39.
-      DATA(t44) = 0.
-      t34 = xsdbool( t35 > t44 ).
-      IF t34 = abap_false.
+      IF xsdbool( t35 > 0 ) = abap_false.
         EXIT.
       ENDIF.
       DATA(t46) = t32.
-      DATA(t47) = VALUE string( ).
       DATA t48 TYPE REF TO zcl_lnt_stream.
       t48 = t12.
-      DATA(t50) = VALUE string( ).
-      DATA(t51) = VALUE string( ).
       DATA(t52) = VALUE string( ).
       DATA t53 TYPE string.
       t53 = t48->buffer.
@@ -88,12 +68,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       ENDIF.
       t57 = t56 - t55.
       t52 = t53+t55(t57).
-      t51 = t52.
-      DATA(t59) = VALUE string( ).
       DATA t60 TYPE string.
-      DATA t61 TYPE string.
-      t61 = t48->buffer.
-      t60 = t61.
+      t60 = t48->buffer.
       DATA(t63) = VALUE string( ).
       DATA(t65) = 1.
       DATA t66 TYPE i.
@@ -108,16 +84,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       ENDIF.
       t69 = t66 - t65.
       t63 = t60+t65(t69).
-      t59 = t63.
-      t48->buffer = t59.
+      t48->buffer = t63.
       DELETE t48->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-      t50 = t51.
-      t47 = t50.
-      t32 = t47.
+      t32 = t52.
       DATA(t71) = VALUE string( ).
-      DATA(t72) = VALUE string( ).
-      DATA(t75) = VALUE string( ).
-      DATA(t76) = VALUE string( ).
       DATA(t77) = VALUE string( ).
       DATA t78 TYPE string.
       t78 = t12->buffer.
@@ -133,42 +103,25 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
       ENDIF.
       t82 = t81 - t80.
       t77 = t78+t80(t82).
-      t76 = t77.
-      t75 = t76.
-      t72 = t75.
-      t71 = t72.
-      DATA t84 TYPE f.
+      t71 = t77.
       DATA(t86) = CONV f( 1 ).
-      t84 = t8 + t86.
-      t8 = t84.
-      DATA t87 TYPE abap_bool.
-      DATA(t89) = 1.
-      t87 = xsdbool( t4 = t89 ).
-      IF t87 = abap_true.
-        DATA t90 TYPE string.
+      t8 = t8 + t86.
+      IF xsdbool( t4 = 1 ) = abap_true.
         DATA(t91) = t10.
         DATA(t93) = strlen( t91 ).
-        t90 = |{ t91 }{ t32 }|.
-        t10 = t90.
+        t10 = |{ t91 }{ t32 }|.
         DATA t94 TYPE abap_bool.
         DATA t95 TYPE abap_bool.
-        DATA(t97) = |'|.
-        t95 = xsdbool( t32 = t97 ).
+        t95 = xsdbool( t32 = |'| ).
         t94 = t95.
         IF t95 = abap_true.
-          DATA t98 TYPE abap_bool.
-          DATA(t100) = |'|.
-          t98 = xsdbool( t71 = t100 ).
-          t94 = t98.
+          t94 = xsdbool( t71 = |'| ).
         ENDIF.
         IF t94 = abap_true.
-          DATA(t101) = VALUE string( ).
           DATA(t102) = t10.
           DATA(t103) = VALUE string( ).
           DATA t104 TYPE REF TO zcl_lnt_stream.
           t104 = t12.
-          DATA(t106) = VALUE string( ).
-          DATA(t107) = VALUE string( ).
           DATA(t108) = VALUE string( ).
           DATA t109 TYPE string.
           t109 = t104->buffer.
@@ -184,12 +137,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t113 = t112 - t111.
           t108 = t109+t111(t113).
-          t107 = t108.
-          DATA(t115) = VALUE string( ).
           DATA t116 TYPE string.
-          DATA t117 TYPE string.
-          t117 = t104->buffer.
-          t116 = t117.
+          t116 = t104->buffer.
           DATA(t119) = VALUE string( ).
           DATA(t121) = 1.
           DATA t122 TYPE i.
@@ -204,38 +153,26 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t125 = t122 - t121.
           t119 = t116+t121(t125).
-          t115 = t119.
-          t104->buffer = t115.
+          t104->buffer = t119.
           DELETE t104->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-          t106 = t107.
-          t103 = t106.
+          t103 = t108.
           DATA(t127) = strlen( t102 ).
-          t101 = |{ t102 }{ t103 }|.
-          t10 = t101.
-          DATA t128 TYPE f.
+          t10 = |{ t102 }{ t103 }|.
           DATA(t130) = CONV f( 1 ).
-          t128 = t8 + t130.
-          t8 = t128.
+          t8 = t8 + t130.
         ELSE.
           DATA t131 TYPE abap_bool.
           DATA t132 TYPE abap_bool.
-          DATA(t134) = `\`.
-          t132 = xsdbool( t32 = t134 ).
+          t132 = xsdbool( t32 = `\` ).
           t131 = t132.
           IF t132 = abap_true.
-            DATA t135 TYPE abap_bool.
-            DATA(t137) = `\`.
-            t135 = xsdbool( t71 = t137 ).
-            t131 = t135.
+            t131 = xsdbool( t71 = `\` ).
           ENDIF.
           IF t131 = abap_true.
-            DATA(t138) = VALUE string( ).
             DATA(t139) = t10.
             DATA(t140) = VALUE string( ).
             DATA t141 TYPE REF TO zcl_lnt_stream.
             t141 = t12.
-            DATA(t143) = VALUE string( ).
-            DATA(t144) = VALUE string( ).
             DATA(t145) = VALUE string( ).
             DATA t146 TYPE string.
             t146 = t141->buffer.
@@ -251,12 +188,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             ENDIF.
             t150 = t149 - t148.
             t145 = t146+t148(t150).
-            t144 = t145.
-            DATA(t152) = VALUE string( ).
             DATA t153 TYPE string.
-            DATA t154 TYPE string.
-            t154 = t141->buffer.
-            t153 = t154.
+            t153 = t141->buffer.
             DATA(t156) = VALUE string( ).
             DATA(t158) = 1.
             DATA t159 TYPE i.
@@ -271,38 +204,26 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             ENDIF.
             t162 = t159 - t158.
             t156 = t153+t158(t162).
-            t152 = t156.
-            t141->buffer = t152.
+            t141->buffer = t156.
             DELETE t141->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-            t143 = t144.
-            t140 = t143.
+            t140 = t145.
             DATA(t164) = strlen( t139 ).
-            t138 = |{ t139 }{ t140 }|.
-            t10 = t138.
-            DATA t165 TYPE f.
+            t10 = |{ t139 }{ t140 }|.
             DATA(t167) = CONV f( 1 ).
-            t165 = t8 + t167.
-            t8 = t165.
+            t8 = t8 + t167.
           ELSE.
             DATA t168 TYPE abap_bool.
             DATA t169 TYPE abap_bool.
-            DATA(t171) = `\`.
-            t169 = xsdbool( t32 = t171 ).
+            t169 = xsdbool( t32 = `\` ).
             t168 = t169.
             IF t169 = abap_true.
-              DATA t172 TYPE abap_bool.
-              DATA(t174) = |'|.
-              t172 = xsdbool( t71 = t174 ).
-              t168 = t172.
+              t168 = xsdbool( t71 = |'| ).
             ENDIF.
             IF t168 = abap_true.
-              DATA(t175) = VALUE string( ).
               DATA(t176) = t10.
               DATA(t177) = VALUE string( ).
               DATA t178 TYPE REF TO zcl_lnt_stream.
               t178 = t12.
-              DATA(t180) = VALUE string( ).
-              DATA(t181) = VALUE string( ).
               DATA(t182) = VALUE string( ).
               DATA t183 TYPE string.
               t183 = t178->buffer.
@@ -318,12 +239,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               ENDIF.
               t187 = t186 - t185.
               t182 = t183+t185(t187).
-              t181 = t182.
-              DATA(t189) = VALUE string( ).
               DATA t190 TYPE string.
-              DATA t191 TYPE string.
-              t191 = t178->buffer.
-              t190 = t191.
+              t190 = t178->buffer.
               DATA(t193) = VALUE string( ).
               DATA(t195) = 1.
               DATA t196 TYPE i.
@@ -338,24 +255,15 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               ENDIF.
               t199 = t196 - t195.
               t193 = t190+t195(t199).
-              t189 = t193.
-              t178->buffer = t189.
+              t178->buffer = t193.
               DELETE t178->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-              t180 = t181.
-              t177 = t180.
+              t177 = t182.
               DATA(t201) = strlen( t176 ).
-              t175 = |{ t176 }{ t177 }|.
-              t10 = t175.
-              DATA t202 TYPE f.
+              t10 = |{ t176 }{ t177 }|.
               DATA(t204) = CONV f( 1 ).
-              t202 = t8 + t204.
-              t8 = t202.
+              t8 = t8 + t204.
             ELSE.
-              DATA t205 TYPE abap_bool.
-              DATA(t207) = |'|.
-              t205 = xsdbool( t32 = t207 ).
-              IF t205 = abap_true.
-                DATA(t208) = VALUE string( ).
+              IF xsdbool( t32 = |'| ) = abap_true.
                 DATA t209 TYPE REF TO zcl_lnt_cd_result.
                 t209 = t2.
                 DATA t211 TYPE string.
@@ -366,17 +274,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 t215 = t8.
                 DATA t218 TYPE f.
                 t218 = t4.
-                DATA(t220) = VALUE string( ).
-                DATA t221 TYPE abap_bool.
-                DATA t222 TYPE i.
-                t222 = strlen( t211 ).
-                DATA(t225) = 0.
-                t221 = xsdbool( t222 > t225 ).
-                IF t221 = abap_true.
+                IF xsdbool( strlen( t211 ) > 0 ) = abap_true.
                   DATA t226 TYPE abap_bool.
                   DATA t227 TYPE abap_bool.
-                  DATA(t229) = CONV f( 3 ).
-                  t227 = xsdbool( t218 = t229 ).
+                  t227 = xsdbool( t218 = CONV f( 3 ) ).
                   t226 = t227.
                   IF t227 = abap_true.
                     DATA(t230) = VALUE abap_bool( ).
@@ -422,7 +323,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA t245 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     t245 = t209->result_9728.
                     DATA t247 TYPE REF TO zcl_lnt_lx_comment.
-                    DATA t248 TYPE REF TO zcl_lnt_position.
                     DATA t250 TYPE f.
                     DATA t252 TYPE f.
                     t252 = strlen( t211 ).
@@ -430,8 +330,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA(t256) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                     t256->has = abap_true.
                     t256->value = t250.
-                    t248 = NEW zcl_lnt_position( i_row = t213 i_col = t256 ).
-                    t247 = NEW zcl_lnt_lx_comment( i_start = t248 i_str = t211 ).
+                    t247 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t213 i_col = t256 ) i_str = t211 ).
                     t245->load( ).
                     APPEND t247 TO t245->items.
                     t245->save( ).
@@ -439,20 +338,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA t258 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     t258 = t209->result_9728.
                     DATA t260 TYPE REF TO zcl_lnt_lx_identifier.
-                    DATA t261 TYPE REF TO zcl_lnt_position.
                     DATA(t264) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                     t264->has = abap_true.
                     t264->value = t215.
-                    t261 = NEW zcl_lnt_position( i_row = t213 i_col = t264 ).
-                    t260 = NEW zcl_lnt_lx_identifier( i_start = t261 i_str = t211 ).
+                    t260 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t213 i_col = t264 ) i_str = t211 ).
                     t258->load( ).
                     APPEND t260 TO t258->items.
                     t258->save( ).
                   ENDIF.
                 ENDIF.
-                t220 = ||.
-                t208 = t220.
-                t10 = t208.
+                t10 = ||.
                 t4 = 0.
               ENDIF.
             ENDIF.
@@ -460,34 +355,22 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         ENDIF.
         CONTINUE.
       ENDIF.
-      DATA t268 TYPE abap_bool.
-      DATA(t270) = 2.
-      t268 = xsdbool( t4 = t270 ).
-      IF t268 = abap_true.
-        DATA t271 TYPE string.
+      IF xsdbool( t4 = 2 ) = abap_true.
         DATA(t272) = t10.
         DATA(t274) = strlen( t272 ).
-        t271 = |{ t272 }{ t32 }|.
-        t10 = t271.
+        t10 = |{ t272 }{ t32 }|.
         DATA t275 TYPE abap_bool.
         DATA t276 TYPE abap_bool.
-        DATA(t278) = `\`.
-        t276 = xsdbool( t32 = t278 ).
+        t276 = xsdbool( t32 = `\` ).
         t275 = t276.
         IF t276 = abap_true.
-          DATA t279 TYPE abap_bool.
-          DATA(t281) = |"|.
-          t279 = xsdbool( t71 = t281 ).
-          t275 = t279.
+          t275 = xsdbool( t71 = |"| ).
         ENDIF.
         IF t275 = abap_true.
-          DATA(t282) = VALUE string( ).
           DATA(t283) = t10.
           DATA(t284) = VALUE string( ).
           DATA t285 TYPE REF TO zcl_lnt_stream.
           t285 = t12.
-          DATA(t287) = VALUE string( ).
-          DATA(t288) = VALUE string( ).
           DATA(t289) = VALUE string( ).
           DATA t290 TYPE string.
           t290 = t285->buffer.
@@ -503,12 +386,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t294 = t293 - t292.
           t289 = t290+t292(t294).
-          t288 = t289.
-          DATA(t296) = VALUE string( ).
           DATA t297 TYPE string.
-          DATA t298 TYPE string.
-          t298 = t285->buffer.
-          t297 = t298.
+          t297 = t285->buffer.
           DATA(t300) = VALUE string( ).
           DATA(t302) = 1.
           DATA t303 TYPE i.
@@ -523,38 +402,26 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t306 = t303 - t302.
           t300 = t297+t302(t306).
-          t296 = t300.
-          t285->buffer = t296.
+          t285->buffer = t300.
           DELETE t285->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-          t287 = t288.
-          t284 = t287.
+          t284 = t289.
           DATA(t308) = strlen( t283 ).
-          t282 = |{ t283 }{ t284 }|.
-          t10 = t282.
-          DATA t309 TYPE f.
+          t10 = |{ t283 }{ t284 }|.
           DATA(t311) = CONV f( 1 ).
-          t309 = t8 + t311.
-          t8 = t309.
+          t8 = t8 + t311.
         ELSE.
           DATA t312 TYPE abap_bool.
           DATA t313 TYPE abap_bool.
-          DATA(t315) = |"|.
-          t313 = xsdbool( t32 = t315 ).
+          t313 = xsdbool( t32 = |"| ).
           t312 = t313.
           IF t313 = abap_true.
-            DATA t316 TYPE abap_bool.
-            DATA(t318) = |"|.
-            t316 = xsdbool( t71 = t318 ).
-            t312 = t316.
+            t312 = xsdbool( t71 = |"| ).
           ENDIF.
           IF t312 = abap_true.
-            DATA(t319) = VALUE string( ).
             DATA(t320) = t10.
             DATA(t321) = VALUE string( ).
             DATA t322 TYPE REF TO zcl_lnt_stream.
             t322 = t12.
-            DATA(t324) = VALUE string( ).
-            DATA(t325) = VALUE string( ).
             DATA(t326) = VALUE string( ).
             DATA t327 TYPE string.
             t327 = t322->buffer.
@@ -570,12 +437,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             ENDIF.
             t331 = t330 - t329.
             t326 = t327+t329(t331).
-            t325 = t326.
-            DATA(t333) = VALUE string( ).
             DATA t334 TYPE string.
-            DATA t335 TYPE string.
-            t335 = t322->buffer.
-            t334 = t335.
+            t334 = t322->buffer.
             DATA(t337) = VALUE string( ).
             DATA(t339) = 1.
             DATA t340 TYPE i.
@@ -590,24 +453,15 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             ENDIF.
             t343 = t340 - t339.
             t337 = t334+t339(t343).
-            t333 = t337.
-            t322->buffer = t333.
+            t322->buffer = t337.
             DELETE t322->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-            t324 = t325.
-            t321 = t324.
+            t321 = t326.
             DATA(t345) = strlen( t320 ).
-            t319 = |{ t320 }{ t321 }|.
-            t10 = t319.
-            DATA t346 TYPE f.
+            t10 = |{ t320 }{ t321 }|.
             DATA(t348) = CONV f( 1 ).
-            t346 = t8 + t348.
-            t8 = t346.
+            t8 = t8 + t348.
           ELSE.
-            DATA t349 TYPE abap_bool.
-            DATA(t351) = |"|.
-            t349 = xsdbool( t32 = t351 ).
-            IF t349 = abap_true.
-              DATA(t352) = VALUE string( ).
+            IF xsdbool( t32 = |"| ) = abap_true.
               DATA t353 TYPE REF TO zcl_lnt_cd_result.
               t353 = t2.
               DATA t355 TYPE string.
@@ -618,17 +472,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               t359 = t8.
               DATA t362 TYPE f.
               t362 = t4.
-              DATA(t364) = VALUE string( ).
-              DATA t365 TYPE abap_bool.
-              DATA t366 TYPE i.
-              t366 = strlen( t355 ).
-              DATA(t369) = 0.
-              t365 = xsdbool( t366 > t369 ).
-              IF t365 = abap_true.
+              IF xsdbool( strlen( t355 ) > 0 ) = abap_true.
                 DATA t370 TYPE abap_bool.
                 DATA t371 TYPE abap_bool.
-                DATA(t373) = CONV f( 3 ).
-                t371 = xsdbool( t362 = t373 ).
+                t371 = xsdbool( t362 = CONV f( 3 ) ).
                 t370 = t371.
                 IF t371 = abap_true.
                   DATA(t374) = VALUE abap_bool( ).
@@ -674,7 +521,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA t389 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   t389 = t353->result_9728.
                   DATA t391 TYPE REF TO zcl_lnt_lx_comment.
-                  DATA t392 TYPE REF TO zcl_lnt_position.
                   DATA t394 TYPE f.
                   DATA t396 TYPE f.
                   t396 = strlen( t355 ).
@@ -682,8 +528,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA(t400) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                   t400->has = abap_true.
                   t400->value = t394.
-                  t392 = NEW zcl_lnt_position( i_row = t357 i_col = t400 ).
-                  t391 = NEW zcl_lnt_lx_comment( i_start = t392 i_str = t355 ).
+                  t391 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t357 i_col = t400 ) i_str = t355 ).
                   t389->load( ).
                   APPEND t391 TO t389->items.
                   t389->save( ).
@@ -691,35 +536,24 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA t402 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   t402 = t353->result_9728.
                   DATA t404 TYPE REF TO zcl_lnt_lx_identifier.
-                  DATA t405 TYPE REF TO zcl_lnt_position.
                   DATA(t408) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                   t408->has = abap_true.
                   t408->value = t359.
-                  t405 = NEW zcl_lnt_position( i_row = t357 i_col = t408 ).
-                  t404 = NEW zcl_lnt_lx_identifier( i_start = t405 i_str = t355 ).
+                  t404 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t357 i_col = t408 ) i_str = t355 ).
                   t402->load( ).
                   APPEND t404 TO t402->items.
                   t402->save( ).
                 ENDIF.
               ENDIF.
-              t364 = ||.
-              t352 = t364.
-              t10 = t352.
+              t10 = ||.
               t4 = 0.
             ENDIF.
           ENDIF.
         ENDIF.
         CONTINUE.
       ENDIF.
-      DATA t412 TYPE abap_bool.
-      DATA(t414) = 3.
-      t412 = xsdbool( t4 = t414 ).
-      IF t412 = abap_true.
-        DATA t415 TYPE abap_bool.
-        DATA(t417) = |\n|.
-        t415 = xsdbool( t32 = t417 ).
-        IF t415 = abap_true.
-          DATA(t418) = VALUE string( ).
+      IF xsdbool( t4 = 3 ) = abap_true.
+        IF xsdbool( t32 = |\n| ) = abap_true.
           DATA t419 TYPE REF TO zcl_lnt_cd_result.
           t419 = t2.
           DATA t421 TYPE string.
@@ -730,17 +564,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t425 = t8.
           DATA t428 TYPE f.
           t428 = t4.
-          DATA(t430) = VALUE string( ).
-          DATA t431 TYPE abap_bool.
-          DATA t432 TYPE i.
-          t432 = strlen( t421 ).
-          DATA(t435) = 0.
-          t431 = xsdbool( t432 > t435 ).
-          IF t431 = abap_true.
+          IF xsdbool( strlen( t421 ) > 0 ) = abap_true.
             DATA t436 TYPE abap_bool.
             DATA t437 TYPE abap_bool.
-            DATA(t439) = CONV f( 3 ).
-            t437 = xsdbool( t428 = t439 ).
+            t437 = xsdbool( t428 = CONV f( 3 ) ).
             t436 = t437.
             IF t437 = abap_true.
               DATA(t440) = VALUE abap_bool( ).
@@ -786,7 +613,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t455 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t455 = t419->result_9728.
               DATA t457 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t458 TYPE REF TO zcl_lnt_position.
               DATA t460 TYPE f.
               DATA t462 TYPE f.
               t462 = strlen( t421 ).
@@ -794,8 +620,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA(t466) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t466->has = abap_true.
               t466->value = t460.
-              t458 = NEW zcl_lnt_position( i_row = t423 i_col = t466 ).
-              t457 = NEW zcl_lnt_lx_comment( i_start = t458 i_str = t421 ).
+              t457 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t423 i_col = t466 ) i_str = t421 ).
               t455->load( ).
               APPEND t457 TO t455->items.
               t455->save( ).
@@ -803,52 +628,38 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t468 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t468 = t419->result_9728.
               DATA t470 TYPE REF TO zcl_lnt_lx_identifier.
-              DATA t471 TYPE REF TO zcl_lnt_position.
               DATA(t474) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t474->has = abap_true.
               t474->value = t425.
-              t471 = NEW zcl_lnt_position( i_row = t423 i_col = t474 ).
-              t470 = NEW zcl_lnt_lx_identifier( i_start = t471 i_str = t421 ).
+              t470 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t423 i_col = t474 ) i_str = t421 ).
               t468->load( ).
               APPEND t470 TO t468->items.
               t468->save( ).
             ENDIF.
           ENDIF.
-          t430 = ||.
-          t418 = t430.
-          t10 = t418.
+          t10 = ||.
           t4 = 0.
         ELSE.
-          DATA t478 TYPE string.
           DATA(t479) = t10.
           DATA(t481) = strlen( t479 ).
-          t478 = |{ t479 }{ t32 }|.
-          t10 = t478.
+          t10 = |{ t479 }{ t32 }|.
           CONTINUE.
         ENDIF.
       ELSE.
         DATA(t482) = VALUE abap_bool( ).
         DATA t483 TYPE abap_bool.
         DATA t484 TYPE abap_bool.
-        DATA(t486) = 0.
-        t484 = xsdbool( t4 = t486 ).
+        t484 = xsdbool( t4 = 0 ).
         t483 = t484.
         IF t484 = abap_true.
-          DATA t487 TYPE abap_bool.
-          DATA(t489) = |/|.
-          t487 = xsdbool( t32 = t489 ).
-          t483 = t487.
+          t483 = xsdbool( t32 = |/| ).
         ENDIF.
         t482 = t483.
         IF t483 = abap_true.
-          DATA t490 TYPE abap_bool.
-          DATA(t492) = |/|.
-          t490 = xsdbool( t71 = t492 ).
-          t482 = t490.
+          t482 = xsdbool( t71 = |/| ).
         ENDIF.
         IF t482 = abap_true.
           t4 = 3.
-          DATA(t494) = VALUE string( ).
           DATA t495 TYPE REF TO zcl_lnt_cd_result.
           t495 = t2.
           DATA t497 TYPE string.
@@ -859,17 +670,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t501 = t8.
           DATA t504 TYPE f.
           t504 = t4.
-          DATA(t506) = VALUE string( ).
-          DATA t507 TYPE abap_bool.
-          DATA t508 TYPE i.
-          t508 = strlen( t497 ).
-          DATA(t511) = 0.
-          t507 = xsdbool( t508 > t511 ).
-          IF t507 = abap_true.
+          IF xsdbool( strlen( t497 ) > 0 ) = abap_true.
             DATA t512 TYPE abap_bool.
             DATA t513 TYPE abap_bool.
-            DATA(t515) = CONV f( 3 ).
-            t513 = xsdbool( t504 = t515 ).
+            t513 = xsdbool( t504 = CONV f( 3 ) ).
             t512 = t513.
             IF t513 = abap_true.
               DATA(t516) = VALUE abap_bool( ).
@@ -915,7 +719,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t531 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t531 = t495->result_9728.
               DATA t533 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t534 TYPE REF TO zcl_lnt_position.
               DATA t536 TYPE f.
               DATA t538 TYPE f.
               t538 = strlen( t497 ).
@@ -923,8 +726,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA(t542) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t542->has = abap_true.
               t542->value = t536.
-              t534 = NEW zcl_lnt_position( i_row = t499 i_col = t542 ).
-              t533 = NEW zcl_lnt_lx_comment( i_start = t534 i_str = t497 ).
+              t533 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t499 i_col = t542 ) i_str = t497 ).
               t531->load( ).
               APPEND t533 TO t531->items.
               t531->save( ).
@@ -932,49 +734,35 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t544 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t544 = t495->result_9728.
               DATA t546 TYPE REF TO zcl_lnt_lx_identifier.
-              DATA t547 TYPE REF TO zcl_lnt_position.
               DATA(t550) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t550->has = abap_true.
               t550->value = t501.
-              t547 = NEW zcl_lnt_position( i_row = t499 i_col = t550 ).
-              t546 = NEW zcl_lnt_lx_identifier( i_start = t547 i_str = t497 ).
+              t546 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t499 i_col = t550 ) i_str = t497 ).
               t544->load( ).
               APPEND t546 TO t544->items.
               t544->save( ).
             ENDIF.
           ENDIF.
-          t506 = ||.
-          t494 = t506.
-          t10 = t494.
-          DATA t553 TYPE string.
+          t10 = ||.
           DATA(t554) = t10.
           DATA(t556) = strlen( t554 ).
-          t553 = |{ t554 }{ t32 }|.
-          t10 = t553.
+          t10 = |{ t554 }{ t32 }|.
           CONTINUE.
         ELSE.
           DATA(t557) = VALUE abap_bool( ).
           DATA t558 TYPE abap_bool.
           DATA t559 TYPE abap_bool.
-          DATA(t561) = 0.
-          t559 = xsdbool( t4 = t561 ).
+          t559 = xsdbool( t4 = 0 ).
           t558 = t559.
           IF t559 = abap_true.
-            DATA t562 TYPE abap_bool.
-            DATA(t564) = |-|.
-            t562 = xsdbool( t32 = t564 ).
-            t558 = t562.
+            t558 = xsdbool( t32 = |-| ).
           ENDIF.
           t557 = t558.
           IF t558 = abap_true.
-            DATA t565 TYPE abap_bool.
-            DATA(t567) = |-|.
-            t565 = xsdbool( t71 = t567 ).
-            t557 = t565.
+            t557 = xsdbool( t71 = |-| ).
           ENDIF.
           IF t557 = abap_true.
             t4 = 3.
-            DATA(t569) = VALUE string( ).
             DATA t570 TYPE REF TO zcl_lnt_cd_result.
             t570 = t2.
             DATA t572 TYPE string.
@@ -985,17 +773,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             t576 = t8.
             DATA t579 TYPE f.
             t579 = t4.
-            DATA(t581) = VALUE string( ).
-            DATA t582 TYPE abap_bool.
-            DATA t583 TYPE i.
-            t583 = strlen( t572 ).
-            DATA(t586) = 0.
-            t582 = xsdbool( t583 > t586 ).
-            IF t582 = abap_true.
+            IF xsdbool( strlen( t572 ) > 0 ) = abap_true.
               DATA t587 TYPE abap_bool.
               DATA t588 TYPE abap_bool.
-              DATA(t590) = CONV f( 3 ).
-              t588 = xsdbool( t579 = t590 ).
+              t588 = xsdbool( t579 = CONV f( 3 ) ).
               t587 = t588.
               IF t588 = abap_true.
                 DATA(t591) = VALUE abap_bool( ).
@@ -1041,7 +822,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA t606 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 t606 = t570->result_9728.
                 DATA t608 TYPE REF TO zcl_lnt_lx_comment.
-                DATA t609 TYPE REF TO zcl_lnt_position.
                 DATA t611 TYPE f.
                 DATA t613 TYPE f.
                 t613 = strlen( t572 ).
@@ -1049,8 +829,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA(t617) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                 t617->has = abap_true.
                 t617->value = t611.
-                t609 = NEW zcl_lnt_position( i_row = t574 i_col = t617 ).
-                t608 = NEW zcl_lnt_lx_comment( i_start = t609 i_str = t572 ).
+                t608 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t574 i_col = t617 ) i_str = t572 ).
                 t606->load( ).
                 APPEND t608 TO t606->items.
                 t606->save( ).
@@ -1058,52 +837,34 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA t619 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 t619 = t570->result_9728.
                 DATA t621 TYPE REF TO zcl_lnt_lx_identifier.
-                DATA t622 TYPE REF TO zcl_lnt_position.
                 DATA(t625) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                 t625->has = abap_true.
                 t625->value = t576.
-                t622 = NEW zcl_lnt_position( i_row = t574 i_col = t625 ).
-                t621 = NEW zcl_lnt_lx_identifier( i_start = t622 i_str = t572 ).
+                t621 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t574 i_col = t625 ) i_str = t572 ).
                 t619->load( ).
                 APPEND t621 TO t619->items.
                 t619->save( ).
               ENDIF.
             ENDIF.
-            t581 = ||.
-            t569 = t581.
-            t10 = t569.
-            DATA t628 TYPE string.
+            t10 = ||.
             DATA(t629) = t10.
             DATA(t631) = strlen( t629 ).
-            t628 = |{ t629 }{ t32 }|.
-            t10 = t628.
+            t10 = |{ t629 }{ t32 }|.
             CONTINUE.
           ENDIF.
         ENDIF.
       ENDIF.
-      DATA t632 TYPE abap_bool.
-      DATA(t634) = 4.
-      t632 = xsdbool( t4 = t634 ).
-      IF t632 = abap_true.
-        DATA t635 TYPE abap_bool.
-        DATA(t637) = |\n|.
-        t635 = xsdbool( t32 = t637 ).
-        IF t635 = abap_true.
-          DATA t638 TYPE f.
+      IF xsdbool( t4 = 4 ) = abap_true.
+        IF xsdbool( t32 = |\n| ) = abap_true.
           DATA(t640) = CONV f( 1 ).
-          t638 = t6 + t640.
-          t6 = t638.
+          t6 = t6 + t640.
         ELSE.
           DATA t641 TYPE abap_bool.
           DATA t642 TYPE abap_bool.
-          DATA(t644) = |*|.
-          t642 = xsdbool( t46 = t644 ).
+          t642 = xsdbool( t46 = |*| ).
           t641 = t642.
           IF t642 = abap_true.
-            DATA t645 TYPE abap_bool.
-            DATA(t647) = |/|.
-            t645 = xsdbool( t32 = t647 ).
-            t641 = t645.
+            t641 = xsdbool( t32 = |/| ).
           ENDIF.
           IF t641 = abap_true.
             t4 = 0.
@@ -1114,25 +875,17 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         DATA(t649) = VALUE abap_bool( ).
         DATA t650 TYPE abap_bool.
         DATA t651 TYPE abap_bool.
-        DATA(t653) = 0.
-        t651 = xsdbool( t4 = t653 ).
+        t651 = xsdbool( t4 = 0 ).
         t650 = t651.
         IF t651 = abap_true.
-          DATA t654 TYPE abap_bool.
-          DATA(t656) = |/|.
-          t654 = xsdbool( t32 = t656 ).
-          t650 = t654.
+          t650 = xsdbool( t32 = |/| ).
         ENDIF.
         t649 = t650.
         IF t650 = abap_true.
-          DATA t657 TYPE abap_bool.
-          DATA(t659) = |*|.
-          t657 = xsdbool( t71 = t659 ).
-          t649 = t657.
+          t649 = xsdbool( t71 = |*| ).
         ENDIF.
         IF t649 = abap_true.
           t4 = 4.
-          DATA(t661) = VALUE string( ).
           DATA t662 TYPE REF TO zcl_lnt_cd_result.
           t662 = t2.
           DATA t664 TYPE string.
@@ -1143,17 +896,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t668 = t8.
           DATA t671 TYPE f.
           t671 = t4.
-          DATA(t673) = VALUE string( ).
-          DATA t674 TYPE abap_bool.
-          DATA t675 TYPE i.
-          t675 = strlen( t664 ).
-          DATA(t678) = 0.
-          t674 = xsdbool( t675 > t678 ).
-          IF t674 = abap_true.
+          IF xsdbool( strlen( t664 ) > 0 ) = abap_true.
             DATA t679 TYPE abap_bool.
             DATA t680 TYPE abap_bool.
-            DATA(t682) = CONV f( 3 ).
-            t680 = xsdbool( t671 = t682 ).
+            t680 = xsdbool( t671 = CONV f( 3 ) ).
             t679 = t680.
             IF t680 = abap_true.
               DATA(t683) = VALUE abap_bool( ).
@@ -1199,7 +945,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t698 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t698 = t662->result_9728.
               DATA t700 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t701 TYPE REF TO zcl_lnt_position.
               DATA t703 TYPE f.
               DATA t705 TYPE f.
               t705 = strlen( t664 ).
@@ -1207,8 +952,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA(t709) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t709->has = abap_true.
               t709->value = t703.
-              t701 = NEW zcl_lnt_position( i_row = t666 i_col = t709 ).
-              t700 = NEW zcl_lnt_lx_comment( i_start = t701 i_str = t664 ).
+              t700 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t709 ) i_str = t664 ).
               t698->load( ).
               APPEND t700 TO t698->items.
               t698->save( ).
@@ -1216,25 +960,19 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t711 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t711 = t662->result_9728.
               DATA t713 TYPE REF TO zcl_lnt_lx_identifier.
-              DATA t714 TYPE REF TO zcl_lnt_position.
               DATA(t717) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t717->has = abap_true.
               t717->value = t668.
-              t714 = NEW zcl_lnt_position( i_row = t666 i_col = t717 ).
-              t713 = NEW zcl_lnt_lx_identifier( i_start = t714 i_str = t664 ).
+              t713 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t717 ) i_str = t664 ).
               t711->load( ).
               APPEND t713 TO t711->items.
               t711->save( ).
             ENDIF.
           ENDIF.
-          t673 = ||.
-          t661 = t673.
-          t10 = t661.
+          t10 = ||.
           DATA(t720) = VALUE string( ).
           DATA t721 TYPE REF TO zcl_lnt_stream.
           t721 = t12.
-          DATA(t723) = VALUE string( ).
-          DATA(t724) = VALUE string( ).
           DATA(t725) = VALUE string( ).
           DATA t726 TYPE string.
           t726 = t721->buffer.
@@ -1250,12 +988,8 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t730 = t729 - t728.
           t725 = t726+t728(t730).
-          t724 = t725.
-          DATA(t732) = VALUE string( ).
           DATA t733 TYPE string.
-          DATA t734 TYPE string.
-          t734 = t721->buffer.
-          t733 = t734.
+          t733 = t721->buffer.
           DATA(t736) = VALUE string( ).
           DATA(t738) = 1.
           DATA t739 TYPE i.
@@ -1270,23 +1004,15 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
           t742 = t739 - t738.
           t736 = t733+t738(t742).
-          t732 = t736.
-          t721->buffer = t732.
+          t721->buffer = t736.
           DELETE t721->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-          t723 = t724.
-          t720 = t723.
-          DATA t744 TYPE f.
+          t720 = t725.
           DATA(t746) = CONV f( 1 ).
-          t744 = t8 + t746.
-          t8 = t744.
+          t8 = t8 + t746.
           CONTINUE.
         ENDIF.
       ENDIF.
-      DATA t747 TYPE abap_bool.
-      DATA(t749) = |'|.
-      t747 = xsdbool( t32 = t749 ).
-      IF t747 = abap_true.
-        DATA(t750) = VALUE string( ).
+      IF xsdbool( t32 = |'| ) = abap_true.
         DATA t751 TYPE REF TO zcl_lnt_cd_result.
         t751 = t2.
         DATA t753 TYPE string.
@@ -1297,17 +1023,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         t757 = t8.
         DATA t760 TYPE f.
         t760 = t4.
-        DATA(t762) = VALUE string( ).
-        DATA t763 TYPE abap_bool.
-        DATA t764 TYPE i.
-        t764 = strlen( t753 ).
-        DATA(t767) = 0.
-        t763 = xsdbool( t764 > t767 ).
-        IF t763 = abap_true.
+        IF xsdbool( strlen( t753 ) > 0 ) = abap_true.
           DATA t768 TYPE abap_bool.
           DATA t769 TYPE abap_bool.
-          DATA(t771) = CONV f( 3 ).
-          t769 = xsdbool( t760 = t771 ).
+          t769 = xsdbool( t760 = CONV f( 3 ) ).
           t768 = t769.
           IF t769 = abap_true.
             DATA(t772) = VALUE abap_bool( ).
@@ -1353,7 +1072,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA t787 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             t787 = t751->result_9728.
             DATA t789 TYPE REF TO zcl_lnt_lx_comment.
-            DATA t790 TYPE REF TO zcl_lnt_position.
             DATA t792 TYPE f.
             DATA t794 TYPE f.
             t794 = strlen( t753 ).
@@ -1361,8 +1079,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA(t798) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
             t798->has = abap_true.
             t798->value = t792.
-            t790 = NEW zcl_lnt_position( i_row = t755 i_col = t798 ).
-            t789 = NEW zcl_lnt_lx_comment( i_start = t790 i_str = t753 ).
+            t789 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t755 i_col = t798 ) i_str = t753 ).
             t787->load( ).
             APPEND t789 TO t787->items.
             t787->save( ).
@@ -1370,32 +1087,22 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             DATA t800 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             t800 = t751->result_9728.
             DATA t802 TYPE REF TO zcl_lnt_lx_identifier.
-            DATA t803 TYPE REF TO zcl_lnt_position.
             DATA(t806) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
             t806->has = abap_true.
             t806->value = t757.
-            t803 = NEW zcl_lnt_position( i_row = t755 i_col = t806 ).
-            t802 = NEW zcl_lnt_lx_identifier( i_start = t803 i_str = t753 ).
+            t802 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t755 i_col = t806 ) i_str = t753 ).
             t800->load( ).
             APPEND t802 TO t800->items.
             t800->save( ).
           ENDIF.
         ENDIF.
-        t762 = ||.
-        t750 = t762.
-        t10 = t750.
+        t10 = ||.
         t4 = 1.
-        DATA t810 TYPE string.
         DATA(t811) = t10.
         DATA(t813) = strlen( t811 ).
-        t810 = |{ t811 }{ t32 }|.
-        t10 = t810.
+        t10 = |{ t811 }{ t32 }|.
       ELSE.
-        DATA t814 TYPE abap_bool.
-        DATA(t816) = |"|.
-        t814 = xsdbool( t32 = t816 ).
-        IF t814 = abap_true.
-          DATA(t817) = VALUE string( ).
+        IF xsdbool( t32 = |"| ) = abap_true.
           DATA t818 TYPE REF TO zcl_lnt_cd_result.
           t818 = t2.
           DATA t820 TYPE string.
@@ -1406,17 +1113,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           t824 = t8.
           DATA t827 TYPE f.
           t827 = t4.
-          DATA(t829) = VALUE string( ).
-          DATA t830 TYPE abap_bool.
-          DATA t831 TYPE i.
-          t831 = strlen( t820 ).
-          DATA(t834) = 0.
-          t830 = xsdbool( t831 > t834 ).
-          IF t830 = abap_true.
+          IF xsdbool( strlen( t820 ) > 0 ) = abap_true.
             DATA t835 TYPE abap_bool.
             DATA t836 TYPE abap_bool.
-            DATA(t838) = CONV f( 3 ).
-            t836 = xsdbool( t827 = t838 ).
+            t836 = xsdbool( t827 = CONV f( 3 ) ).
             t835 = t836.
             IF t836 = abap_true.
               DATA(t839) = VALUE abap_bool( ).
@@ -1462,7 +1162,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t854 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t854 = t818->result_9728.
               DATA t856 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t857 TYPE REF TO zcl_lnt_position.
               DATA t859 TYPE f.
               DATA t861 TYPE f.
               t861 = strlen( t820 ).
@@ -1470,8 +1169,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA(t865) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t865->has = abap_true.
               t865->value = t859.
-              t857 = NEW zcl_lnt_position( i_row = t822 i_col = t865 ).
-              t856 = NEW zcl_lnt_lx_comment( i_start = t857 i_str = t820 ).
+              t856 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t822 i_col = t865 ) i_str = t820 ).
               t854->load( ).
               APPEND t856 TO t854->items.
               t854->save( ).
@@ -1479,32 +1177,22 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               DATA t867 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               t867 = t818->result_9728.
               DATA t869 TYPE REF TO zcl_lnt_lx_identifier.
-              DATA t870 TYPE REF TO zcl_lnt_position.
               DATA(t873) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
               t873->has = abap_true.
               t873->value = t824.
-              t870 = NEW zcl_lnt_position( i_row = t822 i_col = t873 ).
-              t869 = NEW zcl_lnt_lx_identifier( i_start = t870 i_str = t820 ).
+              t869 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t822 i_col = t873 ) i_str = t820 ).
               t867->load( ).
               APPEND t869 TO t867->items.
               t867->save( ).
             ENDIF.
           ENDIF.
-          t829 = ||.
-          t817 = t829.
-          t10 = t817.
+          t10 = ||.
           t4 = 2.
-          DATA t877 TYPE string.
           DATA(t878) = t10.
           DATA(t880) = strlen( t878 ).
-          t877 = |{ t878 }{ t32 }|.
-          t10 = t877.
+          t10 = |{ t878 }{ t32 }|.
         ELSE.
-          DATA t881 TYPE abap_bool.
-          DATA(t883) = | |.
-          t881 = xsdbool( t32 = t883 ).
-          IF t881 = abap_true.
-            DATA(t884) = VALUE string( ).
+          IF xsdbool( t32 = | | ) = abap_true.
             DATA t885 TYPE REF TO zcl_lnt_cd_result.
             t885 = t2.
             DATA t887 TYPE string.
@@ -1515,17 +1203,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
             t891 = t8.
             DATA t894 TYPE f.
             t894 = t4.
-            DATA(t896) = VALUE string( ).
-            DATA t897 TYPE abap_bool.
-            DATA t898 TYPE i.
-            t898 = strlen( t887 ).
-            DATA(t901) = 0.
-            t897 = xsdbool( t898 > t901 ).
-            IF t897 = abap_true.
+            IF xsdbool( strlen( t887 ) > 0 ) = abap_true.
               DATA t902 TYPE abap_bool.
               DATA t903 TYPE abap_bool.
-              DATA(t905) = CONV f( 3 ).
-              t903 = xsdbool( t894 = t905 ).
+              t903 = xsdbool( t894 = CONV f( 3 ) ).
               t902 = t903.
               IF t903 = abap_true.
                 DATA(t906) = VALUE abap_bool( ).
@@ -1571,7 +1252,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA t921 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 t921 = t885->result_9728.
                 DATA t923 TYPE REF TO zcl_lnt_lx_comment.
-                DATA t924 TYPE REF TO zcl_lnt_position.
                 DATA t926 TYPE f.
                 DATA t928 TYPE f.
                 t928 = strlen( t887 ).
@@ -1579,8 +1259,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA(t932) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                 t932->has = abap_true.
                 t932->value = t926.
-                t924 = NEW zcl_lnt_position( i_row = t889 i_col = t932 ).
-                t923 = NEW zcl_lnt_lx_comment( i_start = t924 i_str = t887 ).
+                t923 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t889 i_col = t932 ) i_str = t887 ).
                 t921->load( ).
                 APPEND t923 TO t921->items.
                 t921->save( ).
@@ -1588,26 +1267,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 DATA t934 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 t934 = t885->result_9728.
                 DATA t936 TYPE REF TO zcl_lnt_lx_identifier.
-                DATA t937 TYPE REF TO zcl_lnt_position.
                 DATA(t940) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                 t940->has = abap_true.
                 t940->value = t891.
-                t937 = NEW zcl_lnt_position( i_row = t889 i_col = t940 ).
-                t936 = NEW zcl_lnt_lx_identifier( i_start = t937 i_str = t887 ).
+                t936 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t889 i_col = t940 ) i_str = t887 ).
                 t934->load( ).
                 APPEND t936 TO t934->items.
                 t934->save( ).
               ENDIF.
             ENDIF.
-            t896 = ||.
-            t884 = t896.
-            t10 = t884.
+            t10 = ||.
           ELSE.
-            DATA t943 TYPE abap_bool.
-            DATA(t945) = |\t|.
-            t943 = xsdbool( t32 = t945 ).
-            IF t943 = abap_true.
-              DATA(t946) = VALUE string( ).
+            IF xsdbool( t32 = |\t| ) = abap_true.
               DATA t947 TYPE REF TO zcl_lnt_cd_result.
               t947 = t2.
               DATA t949 TYPE string.
@@ -1618,17 +1289,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
               t953 = t8.
               DATA t956 TYPE f.
               t956 = t4.
-              DATA(t958) = VALUE string( ).
-              DATA t959 TYPE abap_bool.
-              DATA t960 TYPE i.
-              t960 = strlen( t949 ).
-              DATA(t963) = 0.
-              t959 = xsdbool( t960 > t963 ).
-              IF t959 = abap_true.
+              IF xsdbool( strlen( t949 ) > 0 ) = abap_true.
                 DATA t964 TYPE abap_bool.
                 DATA t965 TYPE abap_bool.
-                DATA(t967) = CONV f( 3 ).
-                t965 = xsdbool( t956 = t967 ).
+                t965 = xsdbool( t956 = CONV f( 3 ) ).
                 t964 = t965.
                 IF t965 = abap_true.
                   DATA(t968) = VALUE abap_bool( ).
@@ -1674,7 +1338,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA t983 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   t983 = t947->result_9728.
                   DATA t985 TYPE REF TO zcl_lnt_lx_comment.
-                  DATA t986 TYPE REF TO zcl_lnt_position.
                   DATA t988 TYPE f.
                   DATA t990 TYPE f.
                   t990 = strlen( t949 ).
@@ -1682,8 +1345,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA(t994) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                   t994->has = abap_true.
                   t994->value = t988.
-                  t986 = NEW zcl_lnt_position( i_row = t951 i_col = t994 ).
-                  t985 = NEW zcl_lnt_lx_comment( i_start = t986 i_str = t949 ).
+                  t985 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t951 i_col = t994 ) i_str = t949 ).
                   t983->load( ).
                   APPEND t985 TO t983->items.
                   t983->save( ).
@@ -1691,26 +1353,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   DATA t996 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   t996 = t947->result_9728.
                   DATA t998 TYPE REF TO zcl_lnt_lx_identifier.
-                  DATA t999 TYPE REF TO zcl_lnt_position.
                   DATA(t1002) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                   t1002->has = abap_true.
                   t1002->value = t953.
-                  t999 = NEW zcl_lnt_position( i_row = t951 i_col = t1002 ).
-                  t998 = NEW zcl_lnt_lx_identifier( i_start = t999 i_str = t949 ).
+                  t998 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t951 i_col = t1002 ) i_str = t949 ).
                   t996->load( ).
                   APPEND t998 TO t996->items.
                   t996->save( ).
                 ENDIF.
               ENDIF.
-              t958 = ||.
-              t946 = t958.
-              t10 = t946.
+              t10 = ||.
             ELSE.
-              DATA t1005 TYPE abap_bool.
-              DATA(t1007) = |\n|.
-              t1005 = xsdbool( t32 = t1007 ).
-              IF t1005 = abap_true.
-                DATA(t1008) = VALUE string( ).
+              IF xsdbool( t32 = |\n| ) = abap_true.
                 DATA t1009 TYPE REF TO zcl_lnt_cd_result.
                 t1009 = t2.
                 DATA t1011 TYPE string.
@@ -1721,17 +1375,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                 t1015 = t8.
                 DATA t1018 TYPE f.
                 t1018 = t4.
-                DATA(t1020) = VALUE string( ).
-                DATA t1021 TYPE abap_bool.
-                DATA t1022 TYPE i.
-                t1022 = strlen( t1011 ).
-                DATA(t1025) = 0.
-                t1021 = xsdbool( t1022 > t1025 ).
-                IF t1021 = abap_true.
+                IF xsdbool( strlen( t1011 ) > 0 ) = abap_true.
                   DATA t1026 TYPE abap_bool.
                   DATA t1027 TYPE abap_bool.
-                  DATA(t1029) = CONV f( 3 ).
-                  t1027 = xsdbool( t1018 = t1029 ).
+                  t1027 = xsdbool( t1018 = CONV f( 3 ) ).
                   t1026 = t1027.
                   IF t1027 = abap_true.
                     DATA(t1030) = VALUE abap_bool( ).
@@ -1777,7 +1424,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA t1045 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     t1045 = t1009->result_9728.
                     DATA t1047 TYPE REF TO zcl_lnt_lx_comment.
-                    DATA t1048 TYPE REF TO zcl_lnt_position.
                     DATA t1050 TYPE f.
                     DATA t1052 TYPE f.
                     t1052 = strlen( t1011 ).
@@ -1785,8 +1431,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA(t1056) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                     t1056->has = abap_true.
                     t1056->value = t1050.
-                    t1048 = NEW zcl_lnt_position( i_row = t1013 i_col = t1056 ).
-                    t1047 = NEW zcl_lnt_lx_comment( i_start = t1048 i_str = t1011 ).
+                    t1047 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1013 i_col = t1056 ) i_str = t1011 ).
                     t1045->load( ).
                     APPEND t1047 TO t1045->items.
                     t1045->save( ).
@@ -1794,32 +1439,21 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     DATA t1058 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     t1058 = t1009->result_9728.
                     DATA t1060 TYPE REF TO zcl_lnt_lx_identifier.
-                    DATA t1061 TYPE REF TO zcl_lnt_position.
                     DATA(t1064) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                     t1064->has = abap_true.
                     t1064->value = t1015.
-                    t1061 = NEW zcl_lnt_position( i_row = t1013 i_col = t1064 ).
-                    t1060 = NEW zcl_lnt_lx_identifier( i_start = t1061 i_str = t1011 ).
+                    t1060 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1013 i_col = t1064 ) i_str = t1011 ).
                     t1058->load( ).
                     APPEND t1060 TO t1058->items.
                     t1058->save( ).
                   ENDIF.
                 ENDIF.
-                t1020 = ||.
-                t1008 = t1020.
-                t10 = t1008.
-                DATA t1067 TYPE f.
+                t10 = ||.
                 DATA(t1069) = CONV f( 1 ).
-                t1067 = t6 + t1069.
-                t6 = t1067.
-                DATA(t1070) = CONV f( 0 ).
-                t8 = t1070.
+                t6 = t6 + t1069.
+                t8 = CONV f( 0 ).
               ELSE.
-                DATA t1071 TYPE abap_bool.
-                DATA(t1073) = |;|.
-                t1071 = xsdbool( t32 = t1073 ).
-                IF t1071 = abap_true.
-                  DATA(t1074) = VALUE string( ).
+                IF xsdbool( t32 = |;| ) = abap_true.
                   DATA t1075 TYPE REF TO zcl_lnt_cd_result.
                   t1075 = t2.
                   DATA t1077 TYPE string.
@@ -1830,17 +1464,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   t1081 = t8.
                   DATA t1084 TYPE f.
                   t1084 = t4.
-                  DATA(t1086) = VALUE string( ).
-                  DATA t1087 TYPE abap_bool.
-                  DATA t1088 TYPE i.
-                  t1088 = strlen( t1077 ).
-                  DATA(t1091) = 0.
-                  t1087 = xsdbool( t1088 > t1091 ).
-                  IF t1087 = abap_true.
+                  IF xsdbool( strlen( t1077 ) > 0 ) = abap_true.
                     DATA t1092 TYPE abap_bool.
                     DATA t1093 TYPE abap_bool.
-                    DATA(t1095) = CONV f( 3 ).
-                    t1093 = xsdbool( t1084 = t1095 ).
+                    t1093 = xsdbool( t1084 = CONV f( 3 ) ).
                     t1092 = t1093.
                     IF t1093 = abap_true.
                       DATA(t1096) = VALUE abap_bool( ).
@@ -1886,7 +1513,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA t1111 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       t1111 = t1075->result_9728.
                       DATA t1113 TYPE REF TO zcl_lnt_lx_comment.
-                      DATA t1114 TYPE REF TO zcl_lnt_position.
                       DATA t1116 TYPE f.
                       DATA t1118 TYPE f.
                       t1118 = strlen( t1077 ).
@@ -1894,8 +1520,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA(t1122) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                       t1122->has = abap_true.
                       t1122->value = t1116.
-                      t1114 = NEW zcl_lnt_position( i_row = t1079 i_col = t1122 ).
-                      t1113 = NEW zcl_lnt_lx_comment( i_start = t1114 i_str = t1077 ).
+                      t1113 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1079 i_col = t1122 ) i_str = t1077 ).
                       t1111->load( ).
                       APPEND t1113 TO t1111->items.
                       t1111->save( ).
@@ -1903,20 +1528,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA t1124 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       t1124 = t1075->result_9728.
                       DATA t1126 TYPE REF TO zcl_lnt_lx_identifier.
-                      DATA t1127 TYPE REF TO zcl_lnt_position.
                       DATA(t1130) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                       t1130->has = abap_true.
                       t1130->value = t1081.
-                      t1127 = NEW zcl_lnt_position( i_row = t1079 i_col = t1130 ).
-                      t1126 = NEW zcl_lnt_lx_identifier( i_start = t1127 i_str = t1077 ).
+                      t1126 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1079 i_col = t1130 ) i_str = t1077 ).
                       t1124->load( ).
                       APPEND t1126 TO t1124->items.
                       t1124->save( ).
                     ENDIF.
                   ENDIF.
-                  t1086 = ||.
-                  t1074 = t1086.
-                  t10 = t1074.
+                  t10 = ||.
                   DATA(t1133) = VALUE string( ).
                   DATA t1134 TYPE REF TO zcl_lnt_cd_result.
                   t1134 = t2.
@@ -1928,17 +1549,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                   t1140 = t8.
                   DATA t1143 TYPE f.
                   t1143 = t4.
-                  DATA(t1145) = VALUE string( ).
-                  DATA t1146 TYPE abap_bool.
-                  DATA t1147 TYPE i.
-                  t1147 = strlen( t1136 ).
-                  DATA(t1150) = 0.
-                  t1146 = xsdbool( t1147 > t1150 ).
-                  IF t1146 = abap_true.
+                  IF xsdbool( strlen( t1136 ) > 0 ) = abap_true.
                     DATA t1151 TYPE abap_bool.
                     DATA t1152 TYPE abap_bool.
-                    DATA(t1154) = CONV f( 3 ).
-                    t1152 = xsdbool( t1143 = t1154 ).
+                    t1152 = xsdbool( t1143 = CONV f( 3 ) ).
                     t1151 = t1152.
                     IF t1152 = abap_true.
                       DATA(t1155) = VALUE abap_bool( ).
@@ -1984,7 +1598,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA t1170 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       t1170 = t1134->result_9728.
                       DATA t1172 TYPE REF TO zcl_lnt_lx_comment.
-                      DATA t1173 TYPE REF TO zcl_lnt_position.
                       DATA t1175 TYPE f.
                       DATA t1177 TYPE f.
                       t1177 = strlen( t1136 ).
@@ -1992,8 +1605,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA(t1181) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                       t1181->has = abap_true.
                       t1181->value = t1175.
-                      t1173 = NEW zcl_lnt_position( i_row = t1138 i_col = t1181 ).
-                      t1172 = NEW zcl_lnt_lx_comment( i_start = t1173 i_str = t1136 ).
+                      t1172 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1138 i_col = t1181 ) i_str = t1136 ).
                       t1170->load( ).
                       APPEND t1172 TO t1170->items.
                       t1170->save( ).
@@ -2001,25 +1613,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       DATA t1183 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       t1183 = t1134->result_9728.
                       DATA t1185 TYPE REF TO zcl_lnt_lx_identifier.
-                      DATA t1186 TYPE REF TO zcl_lnt_position.
                       DATA(t1189) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                       t1189->has = abap_true.
                       t1189->value = t1140.
-                      t1186 = NEW zcl_lnt_position( i_row = t1138 i_col = t1189 ).
-                      t1185 = NEW zcl_lnt_lx_identifier( i_start = t1186 i_str = t1136 ).
+                      t1185 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1138 i_col = t1189 ) i_str = t1136 ).
                       t1183->load( ).
                       APPEND t1185 TO t1183->items.
                       t1183->save( ).
                     ENDIF.
                   ENDIF.
-                  t1145 = ||.
-                  t1133 = t1145.
+                  t1133 = ||.
                 ELSE.
-                  DATA t1192 TYPE abap_bool.
-                  DATA(t1194) = |:|.
-                  t1192 = xsdbool( t32 = t1194 ).
-                  IF t1192 = abap_true.
-                    DATA(t1195) = VALUE string( ).
+                  IF xsdbool( t32 = |:| ) = abap_true.
                     DATA t1196 TYPE REF TO zcl_lnt_cd_result.
                     t1196 = t2.
                     DATA t1198 TYPE string.
@@ -2030,17 +1635,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     t1202 = t8.
                     DATA t1205 TYPE f.
                     t1205 = t4.
-                    DATA(t1207) = VALUE string( ).
-                    DATA t1208 TYPE abap_bool.
-                    DATA t1209 TYPE i.
-                    t1209 = strlen( t1198 ).
-                    DATA(t1212) = 0.
-                    t1208 = xsdbool( t1209 > t1212 ).
-                    IF t1208 = abap_true.
+                    IF xsdbool( strlen( t1198 ) > 0 ) = abap_true.
                       DATA t1213 TYPE abap_bool.
                       DATA t1214 TYPE abap_bool.
-                      DATA(t1216) = CONV f( 3 ).
-                      t1214 = xsdbool( t1205 = t1216 ).
+                      t1214 = xsdbool( t1205 = CONV f( 3 ) ).
                       t1213 = t1214.
                       IF t1214 = abap_true.
                         DATA(t1217) = VALUE abap_bool( ).
@@ -2086,7 +1684,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA t1232 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         t1232 = t1196->result_9728.
                         DATA t1234 TYPE REF TO zcl_lnt_lx_comment.
-                        DATA t1235 TYPE REF TO zcl_lnt_position.
                         DATA t1237 TYPE f.
                         DATA t1239 TYPE f.
                         t1239 = strlen( t1198 ).
@@ -2094,8 +1691,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA(t1243) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                         t1243->has = abap_true.
                         t1243->value = t1237.
-                        t1235 = NEW zcl_lnt_position( i_row = t1200 i_col = t1243 ).
-                        t1234 = NEW zcl_lnt_lx_comment( i_start = t1235 i_str = t1198 ).
+                        t1234 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1200 i_col = t1243 ) i_str = t1198 ).
                         t1232->load( ).
                         APPEND t1234 TO t1232->items.
                         t1232->save( ).
@@ -2103,20 +1699,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA t1245 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         t1245 = t1196->result_9728.
                         DATA t1247 TYPE REF TO zcl_lnt_lx_identifier.
-                        DATA t1248 TYPE REF TO zcl_lnt_position.
                         DATA(t1251) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                         t1251->has = abap_true.
                         t1251->value = t1202.
-                        t1248 = NEW zcl_lnt_position( i_row = t1200 i_col = t1251 ).
-                        t1247 = NEW zcl_lnt_lx_identifier( i_start = t1248 i_str = t1198 ).
+                        t1247 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1200 i_col = t1251 ) i_str = t1198 ).
                         t1245->load( ).
                         APPEND t1247 TO t1245->items.
                         t1245->save( ).
                       ENDIF.
                     ENDIF.
-                    t1207 = ||.
-                    t1195 = t1207.
-                    t10 = t1195.
+                    t10 = ||.
                     DATA(t1254) = VALUE string( ).
                     DATA t1255 TYPE REF TO zcl_lnt_cd_result.
                     t1255 = t2.
@@ -2128,17 +1720,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                     t1261 = t8.
                     DATA t1264 TYPE f.
                     t1264 = t4.
-                    DATA(t1266) = VALUE string( ).
-                    DATA t1267 TYPE abap_bool.
-                    DATA t1268 TYPE i.
-                    t1268 = strlen( t1257 ).
-                    DATA(t1271) = 0.
-                    t1267 = xsdbool( t1268 > t1271 ).
-                    IF t1267 = abap_true.
+                    IF xsdbool( strlen( t1257 ) > 0 ) = abap_true.
                       DATA t1272 TYPE abap_bool.
                       DATA t1273 TYPE abap_bool.
-                      DATA(t1275) = CONV f( 3 ).
-                      t1273 = xsdbool( t1264 = t1275 ).
+                      t1273 = xsdbool( t1264 = CONV f( 3 ) ).
                       t1272 = t1273.
                       IF t1273 = abap_true.
                         DATA(t1276) = VALUE abap_bool( ).
@@ -2184,7 +1769,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA t1291 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         t1291 = t1255->result_9728.
                         DATA t1293 TYPE REF TO zcl_lnt_lx_comment.
-                        DATA t1294 TYPE REF TO zcl_lnt_position.
                         DATA t1296 TYPE f.
                         DATA t1298 TYPE f.
                         t1298 = strlen( t1257 ).
@@ -2192,8 +1776,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA(t1302) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                         t1302->has = abap_true.
                         t1302->value = t1296.
-                        t1294 = NEW zcl_lnt_position( i_row = t1259 i_col = t1302 ).
-                        t1293 = NEW zcl_lnt_lx_comment( i_start = t1294 i_str = t1257 ).
+                        t1293 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1259 i_col = t1302 ) i_str = t1257 ).
                         t1291->load( ).
                         APPEND t1293 TO t1291->items.
                         t1291->save( ).
@@ -2201,25 +1784,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         DATA t1304 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         t1304 = t1255->result_9728.
                         DATA t1306 TYPE REF TO zcl_lnt_lx_identifier.
-                        DATA t1307 TYPE REF TO zcl_lnt_position.
                         DATA(t1310) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                         t1310->has = abap_true.
                         t1310->value = t1261.
-                        t1307 = NEW zcl_lnt_position( i_row = t1259 i_col = t1310 ).
-                        t1306 = NEW zcl_lnt_lx_identifier( i_start = t1307 i_str = t1257 ).
+                        t1306 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1259 i_col = t1310 ) i_str = t1257 ).
                         t1304->load( ).
                         APPEND t1306 TO t1304->items.
                         t1304->save( ).
                       ENDIF.
                     ENDIF.
-                    t1266 = ||.
-                    t1254 = t1266.
+                    t1254 = ||.
                   ELSE.
-                    DATA t1313 TYPE abap_bool.
-                    DATA(t1315) = |,|.
-                    t1313 = xsdbool( t32 = t1315 ).
-                    IF t1313 = abap_true.
-                      DATA(t1316) = VALUE string( ).
+                    IF xsdbool( t32 = |,| ) = abap_true.
                       DATA t1317 TYPE REF TO zcl_lnt_cd_result.
                       t1317 = t2.
                       DATA t1319 TYPE string.
@@ -2230,17 +1806,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       t1323 = t8.
                       DATA t1326 TYPE f.
                       t1326 = t4.
-                      DATA(t1328) = VALUE string( ).
-                      DATA t1329 TYPE abap_bool.
-                      DATA t1330 TYPE i.
-                      t1330 = strlen( t1319 ).
-                      DATA(t1333) = 0.
-                      t1329 = xsdbool( t1330 > t1333 ).
-                      IF t1329 = abap_true.
+                      IF xsdbool( strlen( t1319 ) > 0 ) = abap_true.
                         DATA t1334 TYPE abap_bool.
                         DATA t1335 TYPE abap_bool.
-                        DATA(t1337) = CONV f( 3 ).
-                        t1335 = xsdbool( t1326 = t1337 ).
+                        t1335 = xsdbool( t1326 = CONV f( 3 ) ).
                         t1334 = t1335.
                         IF t1335 = abap_true.
                           DATA(t1338) = VALUE abap_bool( ).
@@ -2286,7 +1855,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA t1353 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                           t1353 = t1317->result_9728.
                           DATA t1355 TYPE REF TO zcl_lnt_lx_comment.
-                          DATA t1356 TYPE REF TO zcl_lnt_position.
                           DATA t1358 TYPE f.
                           DATA t1360 TYPE f.
                           t1360 = strlen( t1319 ).
@@ -2294,8 +1862,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA(t1364) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                           t1364->has = abap_true.
                           t1364->value = t1358.
-                          t1356 = NEW zcl_lnt_position( i_row = t1321 i_col = t1364 ).
-                          t1355 = NEW zcl_lnt_lx_comment( i_start = t1356 i_str = t1319 ).
+                          t1355 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1321 i_col = t1364 ) i_str = t1319 ).
                           t1353->load( ).
                           APPEND t1355 TO t1353->items.
                           t1353->save( ).
@@ -2303,20 +1870,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA t1366 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                           t1366 = t1317->result_9728.
                           DATA t1368 TYPE REF TO zcl_lnt_lx_identifier.
-                          DATA t1369 TYPE REF TO zcl_lnt_position.
                           DATA(t1372) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                           t1372->has = abap_true.
                           t1372->value = t1323.
-                          t1369 = NEW zcl_lnt_position( i_row = t1321 i_col = t1372 ).
-                          t1368 = NEW zcl_lnt_lx_identifier( i_start = t1369 i_str = t1319 ).
+                          t1368 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1321 i_col = t1372 ) i_str = t1319 ).
                           t1366->load( ).
                           APPEND t1368 TO t1366->items.
                           t1366->save( ).
                         ENDIF.
                       ENDIF.
-                      t1328 = ||.
-                      t1316 = t1328.
-                      t10 = t1316.
+                      t10 = ||.
                       DATA(t1375) = VALUE string( ).
                       DATA t1376 TYPE REF TO zcl_lnt_cd_result.
                       t1376 = t2.
@@ -2328,17 +1891,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                       t1382 = t8.
                       DATA t1385 TYPE f.
                       t1385 = t4.
-                      DATA(t1387) = VALUE string( ).
-                      DATA t1388 TYPE abap_bool.
-                      DATA t1389 TYPE i.
-                      t1389 = strlen( t1378 ).
-                      DATA(t1392) = 0.
-                      t1388 = xsdbool( t1389 > t1392 ).
-                      IF t1388 = abap_true.
+                      IF xsdbool( strlen( t1378 ) > 0 ) = abap_true.
                         DATA t1393 TYPE abap_bool.
                         DATA t1394 TYPE abap_bool.
-                        DATA(t1396) = CONV f( 3 ).
-                        t1394 = xsdbool( t1385 = t1396 ).
+                        t1394 = xsdbool( t1385 = CONV f( 3 ) ).
                         t1393 = t1394.
                         IF t1394 = abap_true.
                           DATA(t1397) = VALUE abap_bool( ).
@@ -2384,7 +1940,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA t1412 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                           t1412 = t1376->result_9728.
                           DATA t1414 TYPE REF TO zcl_lnt_lx_comment.
-                          DATA t1415 TYPE REF TO zcl_lnt_position.
                           DATA t1417 TYPE f.
                           DATA t1419 TYPE f.
                           t1419 = strlen( t1378 ).
@@ -2392,8 +1947,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA(t1423) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                           t1423->has = abap_true.
                           t1423->value = t1417.
-                          t1415 = NEW zcl_lnt_position( i_row = t1380 i_col = t1423 ).
-                          t1414 = NEW zcl_lnt_lx_comment( i_start = t1415 i_str = t1378 ).
+                          t1414 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1380 i_col = t1423 ) i_str = t1378 ).
                           t1412->load( ).
                           APPEND t1414 TO t1412->items.
                           t1412->save( ).
@@ -2401,25 +1955,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           DATA t1425 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                           t1425 = t1376->result_9728.
                           DATA t1427 TYPE REF TO zcl_lnt_lx_identifier.
-                          DATA t1428 TYPE REF TO zcl_lnt_position.
                           DATA(t1431) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                           t1431->has = abap_true.
                           t1431->value = t1382.
-                          t1428 = NEW zcl_lnt_position( i_row = t1380 i_col = t1431 ).
-                          t1427 = NEW zcl_lnt_lx_identifier( i_start = t1428 i_str = t1378 ).
+                          t1427 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1380 i_col = t1431 ) i_str = t1378 ).
                           t1425->load( ).
                           APPEND t1427 TO t1425->items.
                           t1425->save( ).
                         ENDIF.
                       ENDIF.
-                      t1387 = ||.
-                      t1375 = t1387.
+                      t1375 = ||.
                     ELSE.
-                      DATA t1434 TYPE abap_bool.
-                      DATA(t1436) = |.|.
-                      t1434 = xsdbool( t32 = t1436 ).
-                      IF t1434 = abap_true.
-                        DATA(t1437) = VALUE string( ).
+                      IF xsdbool( t32 = |.| ) = abap_true.
                         DATA t1438 TYPE REF TO zcl_lnt_cd_result.
                         t1438 = t2.
                         DATA t1440 TYPE string.
@@ -2430,17 +1977,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         t1444 = t8.
                         DATA t1447 TYPE f.
                         t1447 = t4.
-                        DATA(t1449) = VALUE string( ).
-                        DATA t1450 TYPE abap_bool.
-                        DATA t1451 TYPE i.
-                        t1451 = strlen( t1440 ).
-                        DATA(t1454) = 0.
-                        t1450 = xsdbool( t1451 > t1454 ).
-                        IF t1450 = abap_true.
+                        IF xsdbool( strlen( t1440 ) > 0 ) = abap_true.
                           DATA t1455 TYPE abap_bool.
                           DATA t1456 TYPE abap_bool.
-                          DATA(t1458) = CONV f( 3 ).
-                          t1456 = xsdbool( t1447 = t1458 ).
+                          t1456 = xsdbool( t1447 = CONV f( 3 ) ).
                           t1455 = t1456.
                           IF t1456 = abap_true.
                             DATA(t1459) = VALUE abap_bool( ).
@@ -2486,7 +2026,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA t1474 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                             t1474 = t1438->result_9728.
                             DATA t1476 TYPE REF TO zcl_lnt_lx_comment.
-                            DATA t1477 TYPE REF TO zcl_lnt_position.
                             DATA t1479 TYPE f.
                             DATA t1481 TYPE f.
                             t1481 = strlen( t1440 ).
@@ -2494,8 +2033,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA(t1485) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                             t1485->has = abap_true.
                             t1485->value = t1479.
-                            t1477 = NEW zcl_lnt_position( i_row = t1442 i_col = t1485 ).
-                            t1476 = NEW zcl_lnt_lx_comment( i_start = t1477 i_str = t1440 ).
+                            t1476 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1442 i_col = t1485 ) i_str = t1440 ).
                             t1474->load( ).
                             APPEND t1476 TO t1474->items.
                             t1474->save( ).
@@ -2503,20 +2041,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA t1487 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                             t1487 = t1438->result_9728.
                             DATA t1489 TYPE REF TO zcl_lnt_lx_identifier.
-                            DATA t1490 TYPE REF TO zcl_lnt_position.
                             DATA(t1493) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                             t1493->has = abap_true.
                             t1493->value = t1444.
-                            t1490 = NEW zcl_lnt_position( i_row = t1442 i_col = t1493 ).
-                            t1489 = NEW zcl_lnt_lx_identifier( i_start = t1490 i_str = t1440 ).
+                            t1489 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1442 i_col = t1493 ) i_str = t1440 ).
                             t1487->load( ).
                             APPEND t1489 TO t1487->items.
                             t1487->save( ).
                           ENDIF.
                         ENDIF.
-                        t1449 = ||.
-                        t1437 = t1449.
-                        t10 = t1437.
+                        t10 = ||.
                         DATA(t1496) = VALUE string( ).
                         DATA t1497 TYPE REF TO zcl_lnt_cd_result.
                         t1497 = t2.
@@ -2528,17 +2062,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                         t1503 = t8.
                         DATA t1506 TYPE f.
                         t1506 = t4.
-                        DATA(t1508) = VALUE string( ).
-                        DATA t1509 TYPE abap_bool.
-                        DATA t1510 TYPE i.
-                        t1510 = strlen( t1499 ).
-                        DATA(t1513) = 0.
-                        t1509 = xsdbool( t1510 > t1513 ).
-                        IF t1509 = abap_true.
+                        IF xsdbool( strlen( t1499 ) > 0 ) = abap_true.
                           DATA t1514 TYPE abap_bool.
                           DATA t1515 TYPE abap_bool.
-                          DATA(t1517) = CONV f( 3 ).
-                          t1515 = xsdbool( t1506 = t1517 ).
+                          t1515 = xsdbool( t1506 = CONV f( 3 ) ).
                           t1514 = t1515.
                           IF t1515 = abap_true.
                             DATA(t1518) = VALUE abap_bool( ).
@@ -2584,7 +2111,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA t1533 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                             t1533 = t1497->result_9728.
                             DATA t1535 TYPE REF TO zcl_lnt_lx_comment.
-                            DATA t1536 TYPE REF TO zcl_lnt_position.
                             DATA t1538 TYPE f.
                             DATA t1540 TYPE f.
                             t1540 = strlen( t1499 ).
@@ -2592,8 +2118,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA(t1544) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                             t1544->has = abap_true.
                             t1544->value = t1538.
-                            t1536 = NEW zcl_lnt_position( i_row = t1501 i_col = t1544 ).
-                            t1535 = NEW zcl_lnt_lx_comment( i_start = t1536 i_str = t1499 ).
+                            t1535 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1501 i_col = t1544 ) i_str = t1499 ).
                             t1533->load( ).
                             APPEND t1535 TO t1533->items.
                             t1533->save( ).
@@ -2601,25 +2126,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             DATA t1546 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                             t1546 = t1497->result_9728.
                             DATA t1548 TYPE REF TO zcl_lnt_lx_identifier.
-                            DATA t1549 TYPE REF TO zcl_lnt_position.
                             DATA(t1552) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                             t1552->has = abap_true.
                             t1552->value = t1503.
-                            t1549 = NEW zcl_lnt_position( i_row = t1501 i_col = t1552 ).
-                            t1548 = NEW zcl_lnt_lx_identifier( i_start = t1549 i_str = t1499 ).
+                            t1548 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1501 i_col = t1552 ) i_str = t1499 ).
                             t1546->load( ).
                             APPEND t1548 TO t1546->items.
                             t1546->save( ).
                           ENDIF.
                         ENDIF.
-                        t1508 = ||.
-                        t1496 = t1508.
+                        t1496 = ||.
                       ELSE.
-                        DATA t1555 TYPE abap_bool.
-                        DATA(t1557) = |\{|.
-                        t1555 = xsdbool( t32 = t1557 ).
-                        IF t1555 = abap_true.
-                          DATA(t1558) = VALUE string( ).
+                        IF xsdbool( t32 = |\{| ) = abap_true.
                           DATA t1559 TYPE REF TO zcl_lnt_cd_result.
                           t1559 = t2.
                           DATA t1561 TYPE string.
@@ -2630,17 +2148,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           t1565 = t8.
                           DATA t1568 TYPE f.
                           t1568 = t4.
-                          DATA(t1570) = VALUE string( ).
-                          DATA t1571 TYPE abap_bool.
-                          DATA t1572 TYPE i.
-                          t1572 = strlen( t1561 ).
-                          DATA(t1575) = 0.
-                          t1571 = xsdbool( t1572 > t1575 ).
-                          IF t1571 = abap_true.
+                          IF xsdbool( strlen( t1561 ) > 0 ) = abap_true.
                             DATA t1576 TYPE abap_bool.
                             DATA t1577 TYPE abap_bool.
-                            DATA(t1579) = CONV f( 3 ).
-                            t1577 = xsdbool( t1568 = t1579 ).
+                            t1577 = xsdbool( t1568 = CONV f( 3 ) ).
                             t1576 = t1577.
                             IF t1577 = abap_true.
                               DATA(t1580) = VALUE abap_bool( ).
@@ -2686,7 +2197,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA t1595 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                               t1595 = t1559->result_9728.
                               DATA t1597 TYPE REF TO zcl_lnt_lx_comment.
-                              DATA t1598 TYPE REF TO zcl_lnt_position.
                               DATA t1600 TYPE f.
                               DATA t1602 TYPE f.
                               t1602 = strlen( t1561 ).
@@ -2694,8 +2204,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA(t1606) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                               t1606->has = abap_true.
                               t1606->value = t1600.
-                              t1598 = NEW zcl_lnt_position( i_row = t1563 i_col = t1606 ).
-                              t1597 = NEW zcl_lnt_lx_comment( i_start = t1598 i_str = t1561 ).
+                              t1597 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1563 i_col = t1606 ) i_str = t1561 ).
                               t1595->load( ).
                               APPEND t1597 TO t1595->items.
                               t1595->save( ).
@@ -2703,20 +2212,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA t1608 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                               t1608 = t1559->result_9728.
                               DATA t1610 TYPE REF TO zcl_lnt_lx_identifier.
-                              DATA t1611 TYPE REF TO zcl_lnt_position.
                               DATA(t1614) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                               t1614->has = abap_true.
                               t1614->value = t1565.
-                              t1611 = NEW zcl_lnt_position( i_row = t1563 i_col = t1614 ).
-                              t1610 = NEW zcl_lnt_lx_identifier( i_start = t1611 i_str = t1561 ).
+                              t1610 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1563 i_col = t1614 ) i_str = t1561 ).
                               t1608->load( ).
                               APPEND t1610 TO t1608->items.
                               t1608->save( ).
                             ENDIF.
                           ENDIF.
-                          t1570 = ||.
-                          t1558 = t1570.
-                          t10 = t1558.
+                          t10 = ||.
                           DATA(t1617) = VALUE string( ).
                           DATA t1618 TYPE REF TO zcl_lnt_cd_result.
                           t1618 = t2.
@@ -2728,17 +2233,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                           t1624 = t8.
                           DATA t1627 TYPE f.
                           t1627 = t4.
-                          DATA(t1629) = VALUE string( ).
-                          DATA t1630 TYPE abap_bool.
-                          DATA t1631 TYPE i.
-                          t1631 = strlen( t1620 ).
-                          DATA(t1634) = 0.
-                          t1630 = xsdbool( t1631 > t1634 ).
-                          IF t1630 = abap_true.
+                          IF xsdbool( strlen( t1620 ) > 0 ) = abap_true.
                             DATA t1635 TYPE abap_bool.
                             DATA t1636 TYPE abap_bool.
-                            DATA(t1638) = CONV f( 3 ).
-                            t1636 = xsdbool( t1627 = t1638 ).
+                            t1636 = xsdbool( t1627 = CONV f( 3 ) ).
                             t1635 = t1636.
                             IF t1636 = abap_true.
                               DATA(t1639) = VALUE abap_bool( ).
@@ -2784,7 +2282,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA t1654 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                               t1654 = t1618->result_9728.
                               DATA t1656 TYPE REF TO zcl_lnt_lx_comment.
-                              DATA t1657 TYPE REF TO zcl_lnt_position.
                               DATA t1659 TYPE f.
                               DATA t1661 TYPE f.
                               t1661 = strlen( t1620 ).
@@ -2792,8 +2289,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA(t1665) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                               t1665->has = abap_true.
                               t1665->value = t1659.
-                              t1657 = NEW zcl_lnt_position( i_row = t1622 i_col = t1665 ).
-                              t1656 = NEW zcl_lnt_lx_comment( i_start = t1657 i_str = t1620 ).
+                              t1656 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1622 i_col = t1665 ) i_str = t1620 ).
                               t1654->load( ).
                               APPEND t1656 TO t1654->items.
                               t1654->save( ).
@@ -2801,25 +2297,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               DATA t1667 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                               t1667 = t1618->result_9728.
                               DATA t1669 TYPE REF TO zcl_lnt_lx_identifier.
-                              DATA t1670 TYPE REF TO zcl_lnt_position.
                               DATA(t1673) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                               t1673->has = abap_true.
                               t1673->value = t1624.
-                              t1670 = NEW zcl_lnt_position( i_row = t1622 i_col = t1673 ).
-                              t1669 = NEW zcl_lnt_lx_identifier( i_start = t1670 i_str = t1620 ).
+                              t1669 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1622 i_col = t1673 ) i_str = t1620 ).
                               t1667->load( ).
                               APPEND t1669 TO t1667->items.
                               t1667->save( ).
                             ENDIF.
                           ENDIF.
-                          t1629 = ||.
-                          t1617 = t1629.
+                          t1617 = ||.
                         ELSE.
-                          DATA t1676 TYPE abap_bool.
-                          DATA(t1678) = |\}|.
-                          t1676 = xsdbool( t32 = t1678 ).
-                          IF t1676 = abap_true.
-                            DATA(t1679) = VALUE string( ).
+                          IF xsdbool( t32 = |\}| ) = abap_true.
                             DATA t1680 TYPE REF TO zcl_lnt_cd_result.
                             t1680 = t2.
                             DATA t1682 TYPE string.
@@ -2830,17 +2319,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             t1686 = t8.
                             DATA t1689 TYPE f.
                             t1689 = t4.
-                            DATA(t1691) = VALUE string( ).
-                            DATA t1692 TYPE abap_bool.
-                            DATA t1693 TYPE i.
-                            t1693 = strlen( t1682 ).
-                            DATA(t1696) = 0.
-                            t1692 = xsdbool( t1693 > t1696 ).
-                            IF t1692 = abap_true.
+                            IF xsdbool( strlen( t1682 ) > 0 ) = abap_true.
                               DATA t1697 TYPE abap_bool.
                               DATA t1698 TYPE abap_bool.
-                              DATA(t1700) = CONV f( 3 ).
-                              t1698 = xsdbool( t1689 = t1700 ).
+                              t1698 = xsdbool( t1689 = CONV f( 3 ) ).
                               t1697 = t1698.
                               IF t1698 = abap_true.
                                 DATA(t1701) = VALUE abap_bool( ).
@@ -2886,7 +2368,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA t1716 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                 t1716 = t1680->result_9728.
                                 DATA t1718 TYPE REF TO zcl_lnt_lx_comment.
-                                DATA t1719 TYPE REF TO zcl_lnt_position.
                                 DATA t1721 TYPE f.
                                 DATA t1723 TYPE f.
                                 t1723 = strlen( t1682 ).
@@ -2894,8 +2375,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA(t1727) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                 t1727->has = abap_true.
                                 t1727->value = t1721.
-                                t1719 = NEW zcl_lnt_position( i_row = t1684 i_col = t1727 ).
-                                t1718 = NEW zcl_lnt_lx_comment( i_start = t1719 i_str = t1682 ).
+                                t1718 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1684 i_col = t1727 ) i_str = t1682 ).
                                 t1716->load( ).
                                 APPEND t1718 TO t1716->items.
                                 t1716->save( ).
@@ -2903,20 +2383,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA t1729 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                 t1729 = t1680->result_9728.
                                 DATA t1731 TYPE REF TO zcl_lnt_lx_identifier.
-                                DATA t1732 TYPE REF TO zcl_lnt_position.
                                 DATA(t1735) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                 t1735->has = abap_true.
                                 t1735->value = t1686.
-                                t1732 = NEW zcl_lnt_position( i_row = t1684 i_col = t1735 ).
-                                t1731 = NEW zcl_lnt_lx_identifier( i_start = t1732 i_str = t1682 ).
+                                t1731 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1684 i_col = t1735 ) i_str = t1682 ).
                                 t1729->load( ).
                                 APPEND t1731 TO t1729->items.
                                 t1729->save( ).
                               ENDIF.
                             ENDIF.
-                            t1691 = ||.
-                            t1679 = t1691.
-                            t10 = t1679.
+                            t10 = ||.
                             DATA(t1738) = VALUE string( ).
                             DATA t1739 TYPE REF TO zcl_lnt_cd_result.
                             t1739 = t2.
@@ -2928,17 +2404,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                             t1745 = t8.
                             DATA t1748 TYPE f.
                             t1748 = t4.
-                            DATA(t1750) = VALUE string( ).
-                            DATA t1751 TYPE abap_bool.
-                            DATA t1752 TYPE i.
-                            t1752 = strlen( t1741 ).
-                            DATA(t1755) = 0.
-                            t1751 = xsdbool( t1752 > t1755 ).
-                            IF t1751 = abap_true.
+                            IF xsdbool( strlen( t1741 ) > 0 ) = abap_true.
                               DATA t1756 TYPE abap_bool.
                               DATA t1757 TYPE abap_bool.
-                              DATA(t1759) = CONV f( 3 ).
-                              t1757 = xsdbool( t1748 = t1759 ).
+                              t1757 = xsdbool( t1748 = CONV f( 3 ) ).
                               t1756 = t1757.
                               IF t1757 = abap_true.
                                 DATA(t1760) = VALUE abap_bool( ).
@@ -2984,7 +2453,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA t1775 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                 t1775 = t1739->result_9728.
                                 DATA t1777 TYPE REF TO zcl_lnt_lx_comment.
-                                DATA t1778 TYPE REF TO zcl_lnt_position.
                                 DATA t1780 TYPE f.
                                 DATA t1782 TYPE f.
                                 t1782 = strlen( t1741 ).
@@ -2992,8 +2460,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA(t1786) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                 t1786->has = abap_true.
                                 t1786->value = t1780.
-                                t1778 = NEW zcl_lnt_position( i_row = t1743 i_col = t1786 ).
-                                t1777 = NEW zcl_lnt_lx_comment( i_start = t1778 i_str = t1741 ).
+                                t1777 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1743 i_col = t1786 ) i_str = t1741 ).
                                 t1775->load( ).
                                 APPEND t1777 TO t1775->items.
                                 t1775->save( ).
@@ -3001,25 +2468,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 DATA t1788 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                 t1788 = t1739->result_9728.
                                 DATA t1790 TYPE REF TO zcl_lnt_lx_identifier.
-                                DATA t1791 TYPE REF TO zcl_lnt_position.
                                 DATA(t1794) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                 t1794->has = abap_true.
                                 t1794->value = t1745.
-                                t1791 = NEW zcl_lnt_position( i_row = t1743 i_col = t1794 ).
-                                t1790 = NEW zcl_lnt_lx_identifier( i_start = t1791 i_str = t1741 ).
+                                t1790 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1743 i_col = t1794 ) i_str = t1741 ).
                                 t1788->load( ).
                                 APPEND t1790 TO t1788->items.
                                 t1788->save( ).
                               ENDIF.
                             ENDIF.
-                            t1750 = ||.
-                            t1738 = t1750.
+                            t1738 = ||.
                           ELSE.
-                            DATA t1797 TYPE abap_bool.
-                            DATA(t1799) = |(|.
-                            t1797 = xsdbool( t32 = t1799 ).
-                            IF t1797 = abap_true.
-                              DATA(t1800) = VALUE string( ).
+                            IF xsdbool( t32 = |(| ) = abap_true.
                               DATA t1801 TYPE REF TO zcl_lnt_cd_result.
                               t1801 = t2.
                               DATA t1803 TYPE string.
@@ -3030,17 +2490,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               t1807 = t8.
                               DATA t1810 TYPE f.
                               t1810 = t4.
-                              DATA(t1812) = VALUE string( ).
-                              DATA t1813 TYPE abap_bool.
-                              DATA t1814 TYPE i.
-                              t1814 = strlen( t1803 ).
-                              DATA(t1817) = 0.
-                              t1813 = xsdbool( t1814 > t1817 ).
-                              IF t1813 = abap_true.
+                              IF xsdbool( strlen( t1803 ) > 0 ) = abap_true.
                                 DATA t1818 TYPE abap_bool.
                                 DATA t1819 TYPE abap_bool.
-                                DATA(t1821) = CONV f( 3 ).
-                                t1819 = xsdbool( t1810 = t1821 ).
+                                t1819 = xsdbool( t1810 = CONV f( 3 ) ).
                                 t1818 = t1819.
                                 IF t1819 = abap_true.
                                   DATA(t1822) = VALUE abap_bool( ).
@@ -3086,7 +2539,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA t1837 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                   t1837 = t1801->result_9728.
                                   DATA t1839 TYPE REF TO zcl_lnt_lx_comment.
-                                  DATA t1840 TYPE REF TO zcl_lnt_position.
                                   DATA t1842 TYPE f.
                                   DATA t1844 TYPE f.
                                   t1844 = strlen( t1803 ).
@@ -3094,8 +2546,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA(t1848) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                   t1848->has = abap_true.
                                   t1848->value = t1842.
-                                  t1840 = NEW zcl_lnt_position( i_row = t1805 i_col = t1848 ).
-                                  t1839 = NEW zcl_lnt_lx_comment( i_start = t1840 i_str = t1803 ).
+                                  t1839 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1805 i_col = t1848 ) i_str = t1803 ).
                                   t1837->load( ).
                                   APPEND t1839 TO t1837->items.
                                   t1837->save( ).
@@ -3103,20 +2554,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA t1850 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                   t1850 = t1801->result_9728.
                                   DATA t1852 TYPE REF TO zcl_lnt_lx_identifier.
-                                  DATA t1853 TYPE REF TO zcl_lnt_position.
                                   DATA(t1856) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                   t1856->has = abap_true.
                                   t1856->value = t1807.
-                                  t1853 = NEW zcl_lnt_position( i_row = t1805 i_col = t1856 ).
-                                  t1852 = NEW zcl_lnt_lx_identifier( i_start = t1853 i_str = t1803 ).
+                                  t1852 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1805 i_col = t1856 ) i_str = t1803 ).
                                   t1850->load( ).
                                   APPEND t1852 TO t1850->items.
                                   t1850->save( ).
                                 ENDIF.
                               ENDIF.
-                              t1812 = ||.
-                              t1800 = t1812.
-                              t10 = t1800.
+                              t10 = ||.
                               DATA(t1859) = VALUE string( ).
                               DATA t1860 TYPE REF TO zcl_lnt_cd_result.
                               t1860 = t2.
@@ -3128,17 +2575,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                               t1866 = t8.
                               DATA t1869 TYPE f.
                               t1869 = t4.
-                              DATA(t1871) = VALUE string( ).
-                              DATA t1872 TYPE abap_bool.
-                              DATA t1873 TYPE i.
-                              t1873 = strlen( t1862 ).
-                              DATA(t1876) = 0.
-                              t1872 = xsdbool( t1873 > t1876 ).
-                              IF t1872 = abap_true.
+                              IF xsdbool( strlen( t1862 ) > 0 ) = abap_true.
                                 DATA t1877 TYPE abap_bool.
                                 DATA t1878 TYPE abap_bool.
-                                DATA(t1880) = CONV f( 3 ).
-                                t1878 = xsdbool( t1869 = t1880 ).
+                                t1878 = xsdbool( t1869 = CONV f( 3 ) ).
                                 t1877 = t1878.
                                 IF t1878 = abap_true.
                                   DATA(t1881) = VALUE abap_bool( ).
@@ -3184,7 +2624,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA t1896 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                   t1896 = t1860->result_9728.
                                   DATA t1898 TYPE REF TO zcl_lnt_lx_comment.
-                                  DATA t1899 TYPE REF TO zcl_lnt_position.
                                   DATA t1901 TYPE f.
                                   DATA t1903 TYPE f.
                                   t1903 = strlen( t1862 ).
@@ -3192,8 +2631,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA(t1907) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                   t1907->has = abap_true.
                                   t1907->value = t1901.
-                                  t1899 = NEW zcl_lnt_position( i_row = t1864 i_col = t1907 ).
-                                  t1898 = NEW zcl_lnt_lx_comment( i_start = t1899 i_str = t1862 ).
+                                  t1898 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1864 i_col = t1907 ) i_str = t1862 ).
                                   t1896->load( ).
                                   APPEND t1898 TO t1896->items.
                                   t1896->save( ).
@@ -3201,25 +2639,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   DATA t1909 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                   t1909 = t1860->result_9728.
                                   DATA t1911 TYPE REF TO zcl_lnt_lx_identifier.
-                                  DATA t1912 TYPE REF TO zcl_lnt_position.
                                   DATA(t1915) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                   t1915->has = abap_true.
                                   t1915->value = t1866.
-                                  t1912 = NEW zcl_lnt_position( i_row = t1864 i_col = t1915 ).
-                                  t1911 = NEW zcl_lnt_lx_identifier( i_start = t1912 i_str = t1862 ).
+                                  t1911 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1864 i_col = t1915 ) i_str = t1862 ).
                                   t1909->load( ).
                                   APPEND t1911 TO t1909->items.
                                   t1909->save( ).
                                 ENDIF.
                               ENDIF.
-                              t1871 = ||.
-                              t1859 = t1871.
+                              t1859 = ||.
                             ELSE.
-                              DATA t1918 TYPE abap_bool.
-                              DATA(t1920) = |)|.
-                              t1918 = xsdbool( t32 = t1920 ).
-                              IF t1918 = abap_true.
-                                DATA(t1921) = VALUE string( ).
+                              IF xsdbool( t32 = |)| ) = abap_true.
                                 DATA t1922 TYPE REF TO zcl_lnt_cd_result.
                                 t1922 = t2.
                                 DATA t1924 TYPE string.
@@ -3230,17 +2661,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 t1928 = t8.
                                 DATA t1931 TYPE f.
                                 t1931 = t4.
-                                DATA(t1933) = VALUE string( ).
-                                DATA t1934 TYPE abap_bool.
-                                DATA t1935 TYPE i.
-                                t1935 = strlen( t1924 ).
-                                DATA(t1938) = 0.
-                                t1934 = xsdbool( t1935 > t1938 ).
-                                IF t1934 = abap_true.
+                                IF xsdbool( strlen( t1924 ) > 0 ) = abap_true.
                                   DATA t1939 TYPE abap_bool.
                                   DATA t1940 TYPE abap_bool.
-                                  DATA(t1942) = CONV f( 3 ).
-                                  t1940 = xsdbool( t1931 = t1942 ).
+                                  t1940 = xsdbool( t1931 = CONV f( 3 ) ).
                                   t1939 = t1940.
                                   IF t1940 = abap_true.
                                     DATA(t1943) = VALUE abap_bool( ).
@@ -3286,7 +2710,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA t1958 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                     t1958 = t1922->result_9728.
                                     DATA t1960 TYPE REF TO zcl_lnt_lx_comment.
-                                    DATA t1961 TYPE REF TO zcl_lnt_position.
                                     DATA t1963 TYPE f.
                                     DATA t1965 TYPE f.
                                     t1965 = strlen( t1924 ).
@@ -3294,8 +2717,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA(t1969) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                     t1969->has = abap_true.
                                     t1969->value = t1963.
-                                    t1961 = NEW zcl_lnt_position( i_row = t1926 i_col = t1969 ).
-                                    t1960 = NEW zcl_lnt_lx_comment( i_start = t1961 i_str = t1924 ).
+                                    t1960 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1926 i_col = t1969 ) i_str = t1924 ).
                                     t1958->load( ).
                                     APPEND t1960 TO t1958->items.
                                     t1958->save( ).
@@ -3303,20 +2725,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA t1971 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                     t1971 = t1922->result_9728.
                                     DATA t1973 TYPE REF TO zcl_lnt_lx_identifier.
-                                    DATA t1974 TYPE REF TO zcl_lnt_position.
                                     DATA(t1977) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                     t1977->has = abap_true.
                                     t1977->value = t1928.
-                                    t1974 = NEW zcl_lnt_position( i_row = t1926 i_col = t1977 ).
-                                    t1973 = NEW zcl_lnt_lx_identifier( i_start = t1974 i_str = t1924 ).
+                                    t1973 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1926 i_col = t1977 ) i_str = t1924 ).
                                     t1971->load( ).
                                     APPEND t1973 TO t1971->items.
                                     t1971->save( ).
                                   ENDIF.
                                 ENDIF.
-                                t1933 = ||.
-                                t1921 = t1933.
-                                t10 = t1921.
+                                t10 = ||.
                                 DATA(t1980) = VALUE string( ).
                                 DATA t1981 TYPE REF TO zcl_lnt_cd_result.
                                 t1981 = t2.
@@ -3328,17 +2746,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                 t1987 = t8.
                                 DATA t1990 TYPE f.
                                 t1990 = t4.
-                                DATA(t1992) = VALUE string( ).
-                                DATA t1993 TYPE abap_bool.
-                                DATA t1994 TYPE i.
-                                t1994 = strlen( t1983 ).
-                                DATA(t1997) = 0.
-                                t1993 = xsdbool( t1994 > t1997 ).
-                                IF t1993 = abap_true.
+                                IF xsdbool( strlen( t1983 ) > 0 ) = abap_true.
                                   DATA t1998 TYPE abap_bool.
                                   DATA t1999 TYPE abap_bool.
-                                  DATA(t2001) = CONV f( 3 ).
-                                  t1999 = xsdbool( t1990 = t2001 ).
+                                  t1999 = xsdbool( t1990 = CONV f( 3 ) ).
                                   t1998 = t1999.
                                   IF t1999 = abap_true.
                                     DATA(t2002) = VALUE abap_bool( ).
@@ -3384,7 +2795,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA t2017 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                     t2017 = t1981->result_9728.
                                     DATA t2019 TYPE REF TO zcl_lnt_lx_comment.
-                                    DATA t2020 TYPE REF TO zcl_lnt_position.
                                     DATA t2022 TYPE f.
                                     DATA t2024 TYPE f.
                                     t2024 = strlen( t1983 ).
@@ -3392,8 +2802,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA(t2028) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                     t2028->has = abap_true.
                                     t2028->value = t2022.
-                                    t2020 = NEW zcl_lnt_position( i_row = t1985 i_col = t2028 ).
-                                    t2019 = NEW zcl_lnt_lx_comment( i_start = t2020 i_str = t1983 ).
+                                    t2019 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t1985 i_col = t2028 ) i_str = t1983 ).
                                     t2017->load( ).
                                     APPEND t2019 TO t2017->items.
                                     t2017->save( ).
@@ -3401,25 +2810,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     DATA t2030 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                     t2030 = t1981->result_9728.
                                     DATA t2032 TYPE REF TO zcl_lnt_lx_identifier.
-                                    DATA t2033 TYPE REF TO zcl_lnt_position.
                                     DATA(t2036) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                     t2036->has = abap_true.
                                     t2036->value = t1987.
-                                    t2033 = NEW zcl_lnt_position( i_row = t1985 i_col = t2036 ).
-                                    t2032 = NEW zcl_lnt_lx_identifier( i_start = t2033 i_str = t1983 ).
+                                    t2032 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t1985 i_col = t2036 ) i_str = t1983 ).
                                     t2030->load( ).
                                     APPEND t2032 TO t2030->items.
                                     t2030->save( ).
                                   ENDIF.
                                 ENDIF.
-                                t1992 = ||.
-                                t1980 = t1992.
+                                t1980 = ||.
                               ELSE.
-                                DATA t2039 TYPE abap_bool.
-                                DATA(t2041) = |[|.
-                                t2039 = xsdbool( t32 = t2041 ).
-                                IF t2039 = abap_true.
-                                  DATA(t2042) = VALUE string( ).
+                                IF xsdbool( t32 = |[| ) = abap_true.
                                   DATA t2043 TYPE REF TO zcl_lnt_cd_result.
                                   t2043 = t2.
                                   DATA t2045 TYPE string.
@@ -3430,17 +2832,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   t2049 = t8.
                                   DATA t2052 TYPE f.
                                   t2052 = t4.
-                                  DATA(t2054) = VALUE string( ).
-                                  DATA t2055 TYPE abap_bool.
-                                  DATA t2056 TYPE i.
-                                  t2056 = strlen( t2045 ).
-                                  DATA(t2059) = 0.
-                                  t2055 = xsdbool( t2056 > t2059 ).
-                                  IF t2055 = abap_true.
+                                  IF xsdbool( strlen( t2045 ) > 0 ) = abap_true.
                                     DATA t2060 TYPE abap_bool.
                                     DATA t2061 TYPE abap_bool.
-                                    DATA(t2063) = CONV f( 3 ).
-                                    t2061 = xsdbool( t2052 = t2063 ).
+                                    t2061 = xsdbool( t2052 = CONV f( 3 ) ).
                                     t2060 = t2061.
                                     IF t2061 = abap_true.
                                       DATA(t2064) = VALUE abap_bool( ).
@@ -3486,7 +2881,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA t2079 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                       t2079 = t2043->result_9728.
                                       DATA t2081 TYPE REF TO zcl_lnt_lx_comment.
-                                      DATA t2082 TYPE REF TO zcl_lnt_position.
                                       DATA t2084 TYPE f.
                                       DATA t2086 TYPE f.
                                       t2086 = strlen( t2045 ).
@@ -3494,8 +2888,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA(t2090) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                       t2090->has = abap_true.
                                       t2090->value = t2084.
-                                      t2082 = NEW zcl_lnt_position( i_row = t2047 i_col = t2090 ).
-                                      t2081 = NEW zcl_lnt_lx_comment( i_start = t2082 i_str = t2045 ).
+                                      t2081 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2047 i_col = t2090 ) i_str = t2045 ).
                                       t2079->load( ).
                                       APPEND t2081 TO t2079->items.
                                       t2079->save( ).
@@ -3503,20 +2896,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA t2092 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                       t2092 = t2043->result_9728.
                                       DATA t2094 TYPE REF TO zcl_lnt_lx_identifier.
-                                      DATA t2095 TYPE REF TO zcl_lnt_position.
                                       DATA(t2098) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                       t2098->has = abap_true.
                                       t2098->value = t2049.
-                                      t2095 = NEW zcl_lnt_position( i_row = t2047 i_col = t2098 ).
-                                      t2094 = NEW zcl_lnt_lx_identifier( i_start = t2095 i_str = t2045 ).
+                                      t2094 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2047 i_col = t2098 ) i_str = t2045 ).
                                       t2092->load( ).
                                       APPEND t2094 TO t2092->items.
                                       t2092->save( ).
                                     ENDIF.
                                   ENDIF.
-                                  t2054 = ||.
-                                  t2042 = t2054.
-                                  t10 = t2042.
+                                  t10 = ||.
                                   DATA(t2101) = VALUE string( ).
                                   DATA t2102 TYPE REF TO zcl_lnt_cd_result.
                                   t2102 = t2.
@@ -3528,17 +2917,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                   t2108 = t8.
                                   DATA t2111 TYPE f.
                                   t2111 = t4.
-                                  DATA(t2113) = VALUE string( ).
-                                  DATA t2114 TYPE abap_bool.
-                                  DATA t2115 TYPE i.
-                                  t2115 = strlen( t2104 ).
-                                  DATA(t2118) = 0.
-                                  t2114 = xsdbool( t2115 > t2118 ).
-                                  IF t2114 = abap_true.
+                                  IF xsdbool( strlen( t2104 ) > 0 ) = abap_true.
                                     DATA t2119 TYPE abap_bool.
                                     DATA t2120 TYPE abap_bool.
-                                    DATA(t2122) = CONV f( 3 ).
-                                    t2120 = xsdbool( t2111 = t2122 ).
+                                    t2120 = xsdbool( t2111 = CONV f( 3 ) ).
                                     t2119 = t2120.
                                     IF t2120 = abap_true.
                                       DATA(t2123) = VALUE abap_bool( ).
@@ -3584,7 +2966,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA t2138 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                       t2138 = t2102->result_9728.
                                       DATA t2140 TYPE REF TO zcl_lnt_lx_comment.
-                                      DATA t2141 TYPE REF TO zcl_lnt_position.
                                       DATA t2143 TYPE f.
                                       DATA t2145 TYPE f.
                                       t2145 = strlen( t2104 ).
@@ -3592,8 +2973,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA(t2149) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                       t2149->has = abap_true.
                                       t2149->value = t2143.
-                                      t2141 = NEW zcl_lnt_position( i_row = t2106 i_col = t2149 ).
-                                      t2140 = NEW zcl_lnt_lx_comment( i_start = t2141 i_str = t2104 ).
+                                      t2140 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2106 i_col = t2149 ) i_str = t2104 ).
                                       t2138->load( ).
                                       APPEND t2140 TO t2138->items.
                                       t2138->save( ).
@@ -3601,25 +2981,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       DATA t2151 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                       t2151 = t2102->result_9728.
                                       DATA t2153 TYPE REF TO zcl_lnt_lx_identifier.
-                                      DATA t2154 TYPE REF TO zcl_lnt_position.
                                       DATA(t2157) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                       t2157->has = abap_true.
                                       t2157->value = t2108.
-                                      t2154 = NEW zcl_lnt_position( i_row = t2106 i_col = t2157 ).
-                                      t2153 = NEW zcl_lnt_lx_identifier( i_start = t2154 i_str = t2104 ).
+                                      t2153 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2106 i_col = t2157 ) i_str = t2104 ).
                                       t2151->load( ).
                                       APPEND t2153 TO t2151->items.
                                       t2151->save( ).
                                     ENDIF.
                                   ENDIF.
-                                  t2113 = ||.
-                                  t2101 = t2113.
+                                  t2101 = ||.
                                 ELSE.
-                                  DATA t2160 TYPE abap_bool.
-                                  DATA(t2162) = |]|.
-                                  t2160 = xsdbool( t32 = t2162 ).
-                                  IF t2160 = abap_true.
-                                    DATA(t2163) = VALUE string( ).
+                                  IF xsdbool( t32 = |]| ) = abap_true.
                                     DATA t2164 TYPE REF TO zcl_lnt_cd_result.
                                     t2164 = t2.
                                     DATA t2166 TYPE string.
@@ -3630,17 +3003,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     t2170 = t8.
                                     DATA t2173 TYPE f.
                                     t2173 = t4.
-                                    DATA(t2175) = VALUE string( ).
-                                    DATA t2176 TYPE abap_bool.
-                                    DATA t2177 TYPE i.
-                                    t2177 = strlen( t2166 ).
-                                    DATA(t2180) = 0.
-                                    t2176 = xsdbool( t2177 > t2180 ).
-                                    IF t2176 = abap_true.
+                                    IF xsdbool( strlen( t2166 ) > 0 ) = abap_true.
                                       DATA t2181 TYPE abap_bool.
                                       DATA t2182 TYPE abap_bool.
-                                      DATA(t2184) = CONV f( 3 ).
-                                      t2182 = xsdbool( t2173 = t2184 ).
+                                      t2182 = xsdbool( t2173 = CONV f( 3 ) ).
                                       t2181 = t2182.
                                       IF t2182 = abap_true.
                                         DATA(t2185) = VALUE abap_bool( ).
@@ -3686,7 +3052,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA t2200 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                         t2200 = t2164->result_9728.
                                         DATA t2202 TYPE REF TO zcl_lnt_lx_comment.
-                                        DATA t2203 TYPE REF TO zcl_lnt_position.
                                         DATA t2205 TYPE f.
                                         DATA t2207 TYPE f.
                                         t2207 = strlen( t2166 ).
@@ -3694,8 +3059,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA(t2211) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                         t2211->has = abap_true.
                                         t2211->value = t2205.
-                                        t2203 = NEW zcl_lnt_position( i_row = t2168 i_col = t2211 ).
-                                        t2202 = NEW zcl_lnt_lx_comment( i_start = t2203 i_str = t2166 ).
+                                        t2202 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2168 i_col = t2211 ) i_str = t2166 ).
                                         t2200->load( ).
                                         APPEND t2202 TO t2200->items.
                                         t2200->save( ).
@@ -3703,20 +3067,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA t2213 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                         t2213 = t2164->result_9728.
                                         DATA t2215 TYPE REF TO zcl_lnt_lx_identifier.
-                                        DATA t2216 TYPE REF TO zcl_lnt_position.
                                         DATA(t2219) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                         t2219->has = abap_true.
                                         t2219->value = t2170.
-                                        t2216 = NEW zcl_lnt_position( i_row = t2168 i_col = t2219 ).
-                                        t2215 = NEW zcl_lnt_lx_identifier( i_start = t2216 i_str = t2166 ).
+                                        t2215 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2168 i_col = t2219 ) i_str = t2166 ).
                                         t2213->load( ).
                                         APPEND t2215 TO t2213->items.
                                         t2213->save( ).
                                       ENDIF.
                                     ENDIF.
-                                    t2175 = ||.
-                                    t2163 = t2175.
-                                    t10 = t2163.
+                                    t10 = ||.
                                     DATA(t2222) = VALUE string( ).
                                     DATA t2223 TYPE REF TO zcl_lnt_cd_result.
                                     t2223 = t2.
@@ -3728,17 +3088,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                     t2229 = t8.
                                     DATA t2232 TYPE f.
                                     t2232 = t4.
-                                    DATA(t2234) = VALUE string( ).
-                                    DATA t2235 TYPE abap_bool.
-                                    DATA t2236 TYPE i.
-                                    t2236 = strlen( t2225 ).
-                                    DATA(t2239) = 0.
-                                    t2235 = xsdbool( t2236 > t2239 ).
-                                    IF t2235 = abap_true.
+                                    IF xsdbool( strlen( t2225 ) > 0 ) = abap_true.
                                       DATA t2240 TYPE abap_bool.
                                       DATA t2241 TYPE abap_bool.
-                                      DATA(t2243) = CONV f( 3 ).
-                                      t2241 = xsdbool( t2232 = t2243 ).
+                                      t2241 = xsdbool( t2232 = CONV f( 3 ) ).
                                       t2240 = t2241.
                                       IF t2241 = abap_true.
                                         DATA(t2244) = VALUE abap_bool( ).
@@ -3784,7 +3137,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA t2259 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                         t2259 = t2223->result_9728.
                                         DATA t2261 TYPE REF TO zcl_lnt_lx_comment.
-                                        DATA t2262 TYPE REF TO zcl_lnt_position.
                                         DATA t2264 TYPE f.
                                         DATA t2266 TYPE f.
                                         t2266 = strlen( t2225 ).
@@ -3792,8 +3144,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA(t2270) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                         t2270->has = abap_true.
                                         t2270->value = t2264.
-                                        t2262 = NEW zcl_lnt_position( i_row = t2227 i_col = t2270 ).
-                                        t2261 = NEW zcl_lnt_lx_comment( i_start = t2262 i_str = t2225 ).
+                                        t2261 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2227 i_col = t2270 ) i_str = t2225 ).
                                         t2259->load( ).
                                         APPEND t2261 TO t2259->items.
                                         t2259->save( ).
@@ -3801,25 +3152,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         DATA t2272 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                         t2272 = t2223->result_9728.
                                         DATA t2274 TYPE REF TO zcl_lnt_lx_identifier.
-                                        DATA t2275 TYPE REF TO zcl_lnt_position.
                                         DATA(t2278) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                         t2278->has = abap_true.
                                         t2278->value = t2229.
-                                        t2275 = NEW zcl_lnt_position( i_row = t2227 i_col = t2278 ).
-                                        t2274 = NEW zcl_lnt_lx_identifier( i_start = t2275 i_str = t2225 ).
+                                        t2274 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2227 i_col = t2278 ) i_str = t2225 ).
                                         t2272->load( ).
                                         APPEND t2274 TO t2272->items.
                                         t2272->save( ).
                                       ENDIF.
                                     ENDIF.
-                                    t2234 = ||.
-                                    t2222 = t2234.
+                                    t2222 = ||.
                                   ELSE.
-                                    DATA t2281 TYPE abap_bool.
-                                    DATA(t2283) = |!|.
-                                    t2281 = xsdbool( t32 = t2283 ).
-                                    IF t2281 = abap_true.
-                                      DATA(t2284) = VALUE string( ).
+                                    IF xsdbool( t32 = |!| ) = abap_true.
                                       DATA t2285 TYPE REF TO zcl_lnt_cd_result.
                                       t2285 = t2.
                                       DATA t2287 TYPE string.
@@ -3830,17 +3174,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       t2291 = t8.
                                       DATA t2294 TYPE f.
                                       t2294 = t4.
-                                      DATA(t2296) = VALUE string( ).
-                                      DATA t2297 TYPE abap_bool.
-                                      DATA t2298 TYPE i.
-                                      t2298 = strlen( t2287 ).
-                                      DATA(t2301) = 0.
-                                      t2297 = xsdbool( t2298 > t2301 ).
-                                      IF t2297 = abap_true.
+                                      IF xsdbool( strlen( t2287 ) > 0 ) = abap_true.
                                         DATA t2302 TYPE abap_bool.
                                         DATA t2303 TYPE abap_bool.
-                                        DATA(t2305) = CONV f( 3 ).
-                                        t2303 = xsdbool( t2294 = t2305 ).
+                                        t2303 = xsdbool( t2294 = CONV f( 3 ) ).
                                         t2302 = t2303.
                                         IF t2303 = abap_true.
                                           DATA(t2306) = VALUE abap_bool( ).
@@ -3886,7 +3223,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA t2321 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                           t2321 = t2285->result_9728.
                                           DATA t2323 TYPE REF TO zcl_lnt_lx_comment.
-                                          DATA t2324 TYPE REF TO zcl_lnt_position.
                                           DATA t2326 TYPE f.
                                           DATA t2328 TYPE f.
                                           t2328 = strlen( t2287 ).
@@ -3894,8 +3230,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA(t2332) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                           t2332->has = abap_true.
                                           t2332->value = t2326.
-                                          t2324 = NEW zcl_lnt_position( i_row = t2289 i_col = t2332 ).
-                                          t2323 = NEW zcl_lnt_lx_comment( i_start = t2324 i_str = t2287 ).
+                                          t2323 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2289 i_col = t2332 ) i_str = t2287 ).
                                           t2321->load( ).
                                           APPEND t2323 TO t2321->items.
                                           t2321->save( ).
@@ -3903,20 +3238,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA t2334 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                           t2334 = t2285->result_9728.
                                           DATA t2336 TYPE REF TO zcl_lnt_lx_identifier.
-                                          DATA t2337 TYPE REF TO zcl_lnt_position.
                                           DATA(t2340) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                           t2340->has = abap_true.
                                           t2340->value = t2291.
-                                          t2337 = NEW zcl_lnt_position( i_row = t2289 i_col = t2340 ).
-                                          t2336 = NEW zcl_lnt_lx_identifier( i_start = t2337 i_str = t2287 ).
+                                          t2336 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2289 i_col = t2340 ) i_str = t2287 ).
                                           t2334->load( ).
                                           APPEND t2336 TO t2334->items.
                                           t2334->save( ).
                                         ENDIF.
                                       ENDIF.
-                                      t2296 = ||.
-                                      t2284 = t2296.
-                                      t10 = t2284.
+                                      t10 = ||.
                                       DATA(t2343) = VALUE string( ).
                                       DATA t2344 TYPE REF TO zcl_lnt_cd_result.
                                       t2344 = t2.
@@ -3928,17 +3259,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                       t2350 = t8.
                                       DATA t2353 TYPE f.
                                       t2353 = t4.
-                                      DATA(t2355) = VALUE string( ).
-                                      DATA t2356 TYPE abap_bool.
-                                      DATA t2357 TYPE i.
-                                      t2357 = strlen( t2346 ).
-                                      DATA(t2360) = 0.
-                                      t2356 = xsdbool( t2357 > t2360 ).
-                                      IF t2356 = abap_true.
+                                      IF xsdbool( strlen( t2346 ) > 0 ) = abap_true.
                                         DATA t2361 TYPE abap_bool.
                                         DATA t2362 TYPE abap_bool.
-                                        DATA(t2364) = CONV f( 3 ).
-                                        t2362 = xsdbool( t2353 = t2364 ).
+                                        t2362 = xsdbool( t2353 = CONV f( 3 ) ).
                                         t2361 = t2362.
                                         IF t2362 = abap_true.
                                           DATA(t2365) = VALUE abap_bool( ).
@@ -3984,7 +3308,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA t2380 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                           t2380 = t2344->result_9728.
                                           DATA t2382 TYPE REF TO zcl_lnt_lx_comment.
-                                          DATA t2383 TYPE REF TO zcl_lnt_position.
                                           DATA t2385 TYPE f.
                                           DATA t2387 TYPE f.
                                           t2387 = strlen( t2346 ).
@@ -3992,8 +3315,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA(t2391) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                           t2391->has = abap_true.
                                           t2391->value = t2385.
-                                          t2383 = NEW zcl_lnt_position( i_row = t2348 i_col = t2391 ).
-                                          t2382 = NEW zcl_lnt_lx_comment( i_start = t2383 i_str = t2346 ).
+                                          t2382 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2348 i_col = t2391 ) i_str = t2346 ).
                                           t2380->load( ).
                                           APPEND t2382 TO t2380->items.
                                           t2380->save( ).
@@ -4001,25 +3323,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           DATA t2393 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                           t2393 = t2344->result_9728.
                                           DATA t2395 TYPE REF TO zcl_lnt_lx_identifier.
-                                          DATA t2396 TYPE REF TO zcl_lnt_position.
                                           DATA(t2399) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                           t2399->has = abap_true.
                                           t2399->value = t2350.
-                                          t2396 = NEW zcl_lnt_position( i_row = t2348 i_col = t2399 ).
-                                          t2395 = NEW zcl_lnt_lx_identifier( i_start = t2396 i_str = t2346 ).
+                                          t2395 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2348 i_col = t2399 ) i_str = t2346 ).
                                           t2393->load( ).
                                           APPEND t2395 TO t2393->items.
                                           t2393->save( ).
                                         ENDIF.
                                       ENDIF.
-                                      t2355 = ||.
-                                      t2343 = t2355.
+                                      t2343 = ||.
                                     ELSE.
-                                      DATA t2402 TYPE abap_bool.
-                                      DATA(t2404) = |=|.
-                                      t2402 = xsdbool( t32 = t2404 ).
-                                      IF t2402 = abap_true.
-                                        DATA(t2405) = VALUE string( ).
+                                      IF xsdbool( t32 = |=| ) = abap_true.
                                         DATA t2406 TYPE REF TO zcl_lnt_cd_result.
                                         t2406 = t2.
                                         DATA t2408 TYPE string.
@@ -4030,17 +3345,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         t2412 = t8.
                                         DATA t2415 TYPE f.
                                         t2415 = t4.
-                                        DATA(t2417) = VALUE string( ).
-                                        DATA t2418 TYPE abap_bool.
-                                        DATA t2419 TYPE i.
-                                        t2419 = strlen( t2408 ).
-                                        DATA(t2422) = 0.
-                                        t2418 = xsdbool( t2419 > t2422 ).
-                                        IF t2418 = abap_true.
+                                        IF xsdbool( strlen( t2408 ) > 0 ) = abap_true.
                                           DATA t2423 TYPE abap_bool.
                                           DATA t2424 TYPE abap_bool.
-                                          DATA(t2426) = CONV f( 3 ).
-                                          t2424 = xsdbool( t2415 = t2426 ).
+                                          t2424 = xsdbool( t2415 = CONV f( 3 ) ).
                                           t2423 = t2424.
                                           IF t2424 = abap_true.
                                             DATA(t2427) = VALUE abap_bool( ).
@@ -4086,7 +3394,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA t2442 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                             t2442 = t2406->result_9728.
                                             DATA t2444 TYPE REF TO zcl_lnt_lx_comment.
-                                            DATA t2445 TYPE REF TO zcl_lnt_position.
                                             DATA t2447 TYPE f.
                                             DATA t2449 TYPE f.
                                             t2449 = strlen( t2408 ).
@@ -4094,8 +3401,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA(t2453) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                             t2453->has = abap_true.
                                             t2453->value = t2447.
-                                            t2445 = NEW zcl_lnt_position( i_row = t2410 i_col = t2453 ).
-                                            t2444 = NEW zcl_lnt_lx_comment( i_start = t2445 i_str = t2408 ).
+                                            t2444 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2410 i_col = t2453 ) i_str = t2408 ).
                                             t2442->load( ).
                                             APPEND t2444 TO t2442->items.
                                             t2442->save( ).
@@ -4103,20 +3409,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA t2455 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                             t2455 = t2406->result_9728.
                                             DATA t2457 TYPE REF TO zcl_lnt_lx_identifier.
-                                            DATA t2458 TYPE REF TO zcl_lnt_position.
                                             DATA(t2461) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                             t2461->has = abap_true.
                                             t2461->value = t2412.
-                                            t2458 = NEW zcl_lnt_position( i_row = t2410 i_col = t2461 ).
-                                            t2457 = NEW zcl_lnt_lx_identifier( i_start = t2458 i_str = t2408 ).
+                                            t2457 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2410 i_col = t2461 ) i_str = t2408 ).
                                             t2455->load( ).
                                             APPEND t2457 TO t2455->items.
                                             t2455->save( ).
                                           ENDIF.
                                         ENDIF.
-                                        t2417 = ||.
-                                        t2405 = t2417.
-                                        t10 = t2405.
+                                        t10 = ||.
                                         DATA(t2464) = VALUE string( ).
                                         DATA t2465 TYPE REF TO zcl_lnt_cd_result.
                                         t2465 = t2.
@@ -4128,17 +3430,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                         t2471 = t8.
                                         DATA t2474 TYPE f.
                                         t2474 = t4.
-                                        DATA(t2476) = VALUE string( ).
-                                        DATA t2477 TYPE abap_bool.
-                                        DATA t2478 TYPE i.
-                                        t2478 = strlen( t2467 ).
-                                        DATA(t2481) = 0.
-                                        t2477 = xsdbool( t2478 > t2481 ).
-                                        IF t2477 = abap_true.
+                                        IF xsdbool( strlen( t2467 ) > 0 ) = abap_true.
                                           DATA t2482 TYPE abap_bool.
                                           DATA t2483 TYPE abap_bool.
-                                          DATA(t2485) = CONV f( 3 ).
-                                          t2483 = xsdbool( t2474 = t2485 ).
+                                          t2483 = xsdbool( t2474 = CONV f( 3 ) ).
                                           t2482 = t2483.
                                           IF t2483 = abap_true.
                                             DATA(t2486) = VALUE abap_bool( ).
@@ -4184,7 +3479,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA t2501 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                             t2501 = t2465->result_9728.
                                             DATA t2503 TYPE REF TO zcl_lnt_lx_comment.
-                                            DATA t2504 TYPE REF TO zcl_lnt_position.
                                             DATA t2506 TYPE f.
                                             DATA t2508 TYPE f.
                                             t2508 = strlen( t2467 ).
@@ -4192,8 +3486,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA(t2512) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                             t2512->has = abap_true.
                                             t2512->value = t2506.
-                                            t2504 = NEW zcl_lnt_position( i_row = t2469 i_col = t2512 ).
-                                            t2503 = NEW zcl_lnt_lx_comment( i_start = t2504 i_str = t2467 ).
+                                            t2503 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2469 i_col = t2512 ) i_str = t2467 ).
                                             t2501->load( ).
                                             APPEND t2503 TO t2501->items.
                                             t2501->save( ).
@@ -4201,25 +3494,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             DATA t2514 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                             t2514 = t2465->result_9728.
                                             DATA t2516 TYPE REF TO zcl_lnt_lx_identifier.
-                                            DATA t2517 TYPE REF TO zcl_lnt_position.
                                             DATA(t2520) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                             t2520->has = abap_true.
                                             t2520->value = t2471.
-                                            t2517 = NEW zcl_lnt_position( i_row = t2469 i_col = t2520 ).
-                                            t2516 = NEW zcl_lnt_lx_identifier( i_start = t2517 i_str = t2467 ).
+                                            t2516 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2469 i_col = t2520 ) i_str = t2467 ).
                                             t2514->load( ).
                                             APPEND t2516 TO t2514->items.
                                             t2514->save( ).
                                           ENDIF.
                                         ENDIF.
-                                        t2476 = ||.
-                                        t2464 = t2476.
+                                        t2464 = ||.
                                       ELSE.
-                                        DATA t2523 TYPE abap_bool.
-                                        DATA(t2525) = |<|.
-                                        t2523 = xsdbool( t32 = t2525 ).
-                                        IF t2523 = abap_true.
-                                          DATA(t2526) = VALUE string( ).
+                                        IF xsdbool( t32 = |<| ) = abap_true.
                                           DATA t2527 TYPE REF TO zcl_lnt_cd_result.
                                           t2527 = t2.
                                           DATA t2529 TYPE string.
@@ -4230,17 +3516,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           t2533 = t8.
                                           DATA t2536 TYPE f.
                                           t2536 = t4.
-                                          DATA(t2538) = VALUE string( ).
-                                          DATA t2539 TYPE abap_bool.
-                                          DATA t2540 TYPE i.
-                                          t2540 = strlen( t2529 ).
-                                          DATA(t2543) = 0.
-                                          t2539 = xsdbool( t2540 > t2543 ).
-                                          IF t2539 = abap_true.
+                                          IF xsdbool( strlen( t2529 ) > 0 ) = abap_true.
                                             DATA t2544 TYPE abap_bool.
                                             DATA t2545 TYPE abap_bool.
-                                            DATA(t2547) = CONV f( 3 ).
-                                            t2545 = xsdbool( t2536 = t2547 ).
+                                            t2545 = xsdbool( t2536 = CONV f( 3 ) ).
                                             t2544 = t2545.
                                             IF t2545 = abap_true.
                                               DATA(t2548) = VALUE abap_bool( ).
@@ -4286,7 +3565,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA t2563 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                               t2563 = t2527->result_9728.
                                               DATA t2565 TYPE REF TO zcl_lnt_lx_comment.
-                                              DATA t2566 TYPE REF TO zcl_lnt_position.
                                               DATA t2568 TYPE f.
                                               DATA t2570 TYPE f.
                                               t2570 = strlen( t2529 ).
@@ -4294,8 +3572,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA(t2574) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                               t2574->has = abap_true.
                                               t2574->value = t2568.
-                                              t2566 = NEW zcl_lnt_position( i_row = t2531 i_col = t2574 ).
-                                              t2565 = NEW zcl_lnt_lx_comment( i_start = t2566 i_str = t2529 ).
+                                              t2565 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2531 i_col = t2574 ) i_str = t2529 ).
                                               t2563->load( ).
                                               APPEND t2565 TO t2563->items.
                                               t2563->save( ).
@@ -4303,20 +3580,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA t2576 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                               t2576 = t2527->result_9728.
                                               DATA t2578 TYPE REF TO zcl_lnt_lx_identifier.
-                                              DATA t2579 TYPE REF TO zcl_lnt_position.
                                               DATA(t2582) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                               t2582->has = abap_true.
                                               t2582->value = t2533.
-                                              t2579 = NEW zcl_lnt_position( i_row = t2531 i_col = t2582 ).
-                                              t2578 = NEW zcl_lnt_lx_identifier( i_start = t2579 i_str = t2529 ).
+                                              t2578 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2531 i_col = t2582 ) i_str = t2529 ).
                                               t2576->load( ).
                                               APPEND t2578 TO t2576->items.
                                               t2576->save( ).
                                             ENDIF.
                                           ENDIF.
-                                          t2538 = ||.
-                                          t2526 = t2538.
-                                          t10 = t2526.
+                                          t10 = ||.
                                           DATA(t2585) = VALUE string( ).
                                           DATA t2586 TYPE REF TO zcl_lnt_cd_result.
                                           t2586 = t2.
@@ -4328,17 +3601,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                           t2592 = t8.
                                           DATA t2595 TYPE f.
                                           t2595 = t4.
-                                          DATA(t2597) = VALUE string( ).
-                                          DATA t2598 TYPE abap_bool.
-                                          DATA t2599 TYPE i.
-                                          t2599 = strlen( t2588 ).
-                                          DATA(t2602) = 0.
-                                          t2598 = xsdbool( t2599 > t2602 ).
-                                          IF t2598 = abap_true.
+                                          IF xsdbool( strlen( t2588 ) > 0 ) = abap_true.
                                             DATA t2603 TYPE abap_bool.
                                             DATA t2604 TYPE abap_bool.
-                                            DATA(t2606) = CONV f( 3 ).
-                                            t2604 = xsdbool( t2595 = t2606 ).
+                                            t2604 = xsdbool( t2595 = CONV f( 3 ) ).
                                             t2603 = t2604.
                                             IF t2604 = abap_true.
                                               DATA(t2607) = VALUE abap_bool( ).
@@ -4384,7 +3650,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA t2622 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                               t2622 = t2586->result_9728.
                                               DATA t2624 TYPE REF TO zcl_lnt_lx_comment.
-                                              DATA t2625 TYPE REF TO zcl_lnt_position.
                                               DATA t2627 TYPE f.
                                               DATA t2629 TYPE f.
                                               t2629 = strlen( t2588 ).
@@ -4392,8 +3657,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA(t2633) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                               t2633->has = abap_true.
                                               t2633->value = t2627.
-                                              t2625 = NEW zcl_lnt_position( i_row = t2590 i_col = t2633 ).
-                                              t2624 = NEW zcl_lnt_lx_comment( i_start = t2625 i_str = t2588 ).
+                                              t2624 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2590 i_col = t2633 ) i_str = t2588 ).
                                               t2622->load( ).
                                               APPEND t2624 TO t2622->items.
                                               t2622->save( ).
@@ -4401,25 +3665,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               DATA t2635 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                               t2635 = t2586->result_9728.
                                               DATA t2637 TYPE REF TO zcl_lnt_lx_identifier.
-                                              DATA t2638 TYPE REF TO zcl_lnt_position.
                                               DATA(t2641) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                               t2641->has = abap_true.
                                               t2641->value = t2592.
-                                              t2638 = NEW zcl_lnt_position( i_row = t2590 i_col = t2641 ).
-                                              t2637 = NEW zcl_lnt_lx_identifier( i_start = t2638 i_str = t2588 ).
+                                              t2637 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2590 i_col = t2641 ) i_str = t2588 ).
                                               t2635->load( ).
                                               APPEND t2637 TO t2635->items.
                                               t2635->save( ).
                                             ENDIF.
                                           ENDIF.
-                                          t2597 = ||.
-                                          t2585 = t2597.
+                                          t2585 = ||.
                                         ELSE.
-                                          DATA t2644 TYPE abap_bool.
-                                          DATA(t2646) = |>|.
-                                          t2644 = xsdbool( t32 = t2646 ).
-                                          IF t2644 = abap_true.
-                                            DATA(t2647) = VALUE string( ).
+                                          IF xsdbool( t32 = |>| ) = abap_true.
                                             DATA t2648 TYPE REF TO zcl_lnt_cd_result.
                                             t2648 = t2.
                                             DATA t2650 TYPE string.
@@ -4430,17 +3687,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             t2654 = t8.
                                             DATA t2657 TYPE f.
                                             t2657 = t4.
-                                            DATA(t2659) = VALUE string( ).
-                                            DATA t2660 TYPE abap_bool.
-                                            DATA t2661 TYPE i.
-                                            t2661 = strlen( t2650 ).
-                                            DATA(t2664) = 0.
-                                            t2660 = xsdbool( t2661 > t2664 ).
-                                            IF t2660 = abap_true.
+                                            IF xsdbool( strlen( t2650 ) > 0 ) = abap_true.
                                               DATA t2665 TYPE abap_bool.
                                               DATA t2666 TYPE abap_bool.
-                                              DATA(t2668) = CONV f( 3 ).
-                                              t2666 = xsdbool( t2657 = t2668 ).
+                                              t2666 = xsdbool( t2657 = CONV f( 3 ) ).
                                               t2665 = t2666.
                                               IF t2666 = abap_true.
                                                 DATA(t2669) = VALUE abap_bool( ).
@@ -4486,7 +3736,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA t2684 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                 t2684 = t2648->result_9728.
                                                 DATA t2686 TYPE REF TO zcl_lnt_lx_comment.
-                                                DATA t2687 TYPE REF TO zcl_lnt_position.
                                                 DATA t2689 TYPE f.
                                                 DATA t2691 TYPE f.
                                                 t2691 = strlen( t2650 ).
@@ -4494,8 +3743,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA(t2695) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                 t2695->has = abap_true.
                                                 t2695->value = t2689.
-                                                t2687 = NEW zcl_lnt_position( i_row = t2652 i_col = t2695 ).
-                                                t2686 = NEW zcl_lnt_lx_comment( i_start = t2687 i_str = t2650 ).
+                                                t2686 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2652 i_col = t2695 ) i_str = t2650 ).
                                                 t2684->load( ).
                                                 APPEND t2686 TO t2684->items.
                                                 t2684->save( ).
@@ -4503,20 +3751,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA t2697 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                 t2697 = t2648->result_9728.
                                                 DATA t2699 TYPE REF TO zcl_lnt_lx_identifier.
-                                                DATA t2700 TYPE REF TO zcl_lnt_position.
                                                 DATA(t2703) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                 t2703->has = abap_true.
                                                 t2703->value = t2654.
-                                                t2700 = NEW zcl_lnt_position( i_row = t2652 i_col = t2703 ).
-                                                t2699 = NEW zcl_lnt_lx_identifier( i_start = t2700 i_str = t2650 ).
+                                                t2699 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2652 i_col = t2703 ) i_str = t2650 ).
                                                 t2697->load( ).
                                                 APPEND t2699 TO t2697->items.
                                                 t2697->save( ).
                                               ENDIF.
                                             ENDIF.
-                                            t2659 = ||.
-                                            t2647 = t2659.
-                                            t10 = t2647.
+                                            t10 = ||.
                                             DATA(t2706) = VALUE string( ).
                                             DATA t2707 TYPE REF TO zcl_lnt_cd_result.
                                             t2707 = t2.
@@ -4528,17 +3772,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                             t2713 = t8.
                                             DATA t2716 TYPE f.
                                             t2716 = t4.
-                                            DATA(t2718) = VALUE string( ).
-                                            DATA t2719 TYPE abap_bool.
-                                            DATA t2720 TYPE i.
-                                            t2720 = strlen( t2709 ).
-                                            DATA(t2723) = 0.
-                                            t2719 = xsdbool( t2720 > t2723 ).
-                                            IF t2719 = abap_true.
+                                            IF xsdbool( strlen( t2709 ) > 0 ) = abap_true.
                                               DATA t2724 TYPE abap_bool.
                                               DATA t2725 TYPE abap_bool.
-                                              DATA(t2727) = CONV f( 3 ).
-                                              t2725 = xsdbool( t2716 = t2727 ).
+                                              t2725 = xsdbool( t2716 = CONV f( 3 ) ).
                                               t2724 = t2725.
                                               IF t2725 = abap_true.
                                                 DATA(t2728) = VALUE abap_bool( ).
@@ -4584,7 +3821,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA t2743 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                 t2743 = t2707->result_9728.
                                                 DATA t2745 TYPE REF TO zcl_lnt_lx_comment.
-                                                DATA t2746 TYPE REF TO zcl_lnt_position.
                                                 DATA t2748 TYPE f.
                                                 DATA t2750 TYPE f.
                                                 t2750 = strlen( t2709 ).
@@ -4592,8 +3828,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA(t2754) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                 t2754->has = abap_true.
                                                 t2754->value = t2748.
-                                                t2746 = NEW zcl_lnt_position( i_row = t2711 i_col = t2754 ).
-                                                t2745 = NEW zcl_lnt_lx_comment( i_start = t2746 i_str = t2709 ).
+                                                t2745 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2711 i_col = t2754 ) i_str = t2709 ).
                                                 t2743->load( ).
                                                 APPEND t2745 TO t2743->items.
                                                 t2743->save( ).
@@ -4601,25 +3836,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 DATA t2756 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                 t2756 = t2707->result_9728.
                                                 DATA t2758 TYPE REF TO zcl_lnt_lx_identifier.
-                                                DATA t2759 TYPE REF TO zcl_lnt_position.
                                                 DATA(t2762) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                 t2762->has = abap_true.
                                                 t2762->value = t2713.
-                                                t2759 = NEW zcl_lnt_position( i_row = t2711 i_col = t2762 ).
-                                                t2758 = NEW zcl_lnt_lx_identifier( i_start = t2759 i_str = t2709 ).
+                                                t2758 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2711 i_col = t2762 ) i_str = t2709 ).
                                                 t2756->load( ).
                                                 APPEND t2758 TO t2756->items.
                                                 t2756->save( ).
                                               ENDIF.
                                             ENDIF.
-                                            t2718 = ||.
-                                            t2706 = t2718.
+                                            t2706 = ||.
                                           ELSE.
-                                            DATA t2765 TYPE abap_bool.
-                                            DATA(t2767) = |+|.
-                                            t2765 = xsdbool( t32 = t2767 ).
-                                            IF t2765 = abap_true.
-                                              DATA(t2768) = VALUE string( ).
+                                            IF xsdbool( t32 = |+| ) = abap_true.
                                               DATA t2769 TYPE REF TO zcl_lnt_cd_result.
                                               t2769 = t2.
                                               DATA t2771 TYPE string.
@@ -4630,17 +3858,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               t2775 = t8.
                                               DATA t2778 TYPE f.
                                               t2778 = t4.
-                                              DATA(t2780) = VALUE string( ).
-                                              DATA t2781 TYPE abap_bool.
-                                              DATA t2782 TYPE i.
-                                              t2782 = strlen( t2771 ).
-                                              DATA(t2785) = 0.
-                                              t2781 = xsdbool( t2782 > t2785 ).
-                                              IF t2781 = abap_true.
+                                              IF xsdbool( strlen( t2771 ) > 0 ) = abap_true.
                                                 DATA t2786 TYPE abap_bool.
                                                 DATA t2787 TYPE abap_bool.
-                                                DATA(t2789) = CONV f( 3 ).
-                                                t2787 = xsdbool( t2778 = t2789 ).
+                                                t2787 = xsdbool( t2778 = CONV f( 3 ) ).
                                                 t2786 = t2787.
                                                 IF t2787 = abap_true.
                                                   DATA(t2790) = VALUE abap_bool( ).
@@ -4686,7 +3907,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA t2805 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                   t2805 = t2769->result_9728.
                                                   DATA t2807 TYPE REF TO zcl_lnt_lx_comment.
-                                                  DATA t2808 TYPE REF TO zcl_lnt_position.
                                                   DATA t2810 TYPE f.
                                                   DATA t2812 TYPE f.
                                                   t2812 = strlen( t2771 ).
@@ -4694,8 +3914,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA(t2816) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                   t2816->has = abap_true.
                                                   t2816->value = t2810.
-                                                  t2808 = NEW zcl_lnt_position( i_row = t2773 i_col = t2816 ).
-                                                  t2807 = NEW zcl_lnt_lx_comment( i_start = t2808 i_str = t2771 ).
+                                                  t2807 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2773 i_col = t2816 ) i_str = t2771 ).
                                                   t2805->load( ).
                                                   APPEND t2807 TO t2805->items.
                                                   t2805->save( ).
@@ -4703,20 +3922,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA t2818 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                   t2818 = t2769->result_9728.
                                                   DATA t2820 TYPE REF TO zcl_lnt_lx_identifier.
-                                                  DATA t2821 TYPE REF TO zcl_lnt_position.
                                                   DATA(t2824) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                   t2824->has = abap_true.
                                                   t2824->value = t2775.
-                                                  t2821 = NEW zcl_lnt_position( i_row = t2773 i_col = t2824 ).
-                                                  t2820 = NEW zcl_lnt_lx_identifier( i_start = t2821 i_str = t2771 ).
+                                                  t2820 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2773 i_col = t2824 ) i_str = t2771 ).
                                                   t2818->load( ).
                                                   APPEND t2820 TO t2818->items.
                                                   t2818->save( ).
                                                 ENDIF.
                                               ENDIF.
-                                              t2780 = ||.
-                                              t2768 = t2780.
-                                              t10 = t2768.
+                                              t10 = ||.
                                               DATA(t2827) = VALUE string( ).
                                               DATA t2828 TYPE REF TO zcl_lnt_cd_result.
                                               t2828 = t2.
@@ -4728,17 +3943,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                               t2834 = t8.
                                               DATA t2837 TYPE f.
                                               t2837 = t4.
-                                              DATA(t2839) = VALUE string( ).
-                                              DATA t2840 TYPE abap_bool.
-                                              DATA t2841 TYPE i.
-                                              t2841 = strlen( t2830 ).
-                                              DATA(t2844) = 0.
-                                              t2840 = xsdbool( t2841 > t2844 ).
-                                              IF t2840 = abap_true.
+                                              IF xsdbool( strlen( t2830 ) > 0 ) = abap_true.
                                                 DATA t2845 TYPE abap_bool.
                                                 DATA t2846 TYPE abap_bool.
-                                                DATA(t2848) = CONV f( 3 ).
-                                                t2846 = xsdbool( t2837 = t2848 ).
+                                                t2846 = xsdbool( t2837 = CONV f( 3 ) ).
                                                 t2845 = t2846.
                                                 IF t2846 = abap_true.
                                                   DATA(t2849) = VALUE abap_bool( ).
@@ -4784,7 +3992,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA t2864 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                   t2864 = t2828->result_9728.
                                                   DATA t2866 TYPE REF TO zcl_lnt_lx_comment.
-                                                  DATA t2867 TYPE REF TO zcl_lnt_position.
                                                   DATA t2869 TYPE f.
                                                   DATA t2871 TYPE f.
                                                   t2871 = strlen( t2830 ).
@@ -4792,8 +3999,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA(t2875) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                   t2875->has = abap_true.
                                                   t2875->value = t2869.
-                                                  t2867 = NEW zcl_lnt_position( i_row = t2832 i_col = t2875 ).
-                                                  t2866 = NEW zcl_lnt_lx_comment( i_start = t2867 i_str = t2830 ).
+                                                  t2866 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2832 i_col = t2875 ) i_str = t2830 ).
                                                   t2864->load( ).
                                                   APPEND t2866 TO t2864->items.
                                                   t2864->save( ).
@@ -4801,25 +4007,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   DATA t2877 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                   t2877 = t2828->result_9728.
                                                   DATA t2879 TYPE REF TO zcl_lnt_lx_identifier.
-                                                  DATA t2880 TYPE REF TO zcl_lnt_position.
                                                   DATA(t2883) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                   t2883->has = abap_true.
                                                   t2883->value = t2834.
-                                                  t2880 = NEW zcl_lnt_position( i_row = t2832 i_col = t2883 ).
-                                                  t2879 = NEW zcl_lnt_lx_identifier( i_start = t2880 i_str = t2830 ).
+                                                  t2879 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2832 i_col = t2883 ) i_str = t2830 ).
                                                   t2877->load( ).
                                                   APPEND t2879 TO t2877->items.
                                                   t2877->save( ).
                                                 ENDIF.
                                               ENDIF.
-                                              t2839 = ||.
-                                              t2827 = t2839.
+                                              t2827 = ||.
                                             ELSE.
-                                              DATA t2886 TYPE abap_bool.
-                                              DATA(t2888) = |-|.
-                                              t2886 = xsdbool( t32 = t2888 ).
-                                              IF t2886 = abap_true.
-                                                DATA(t2889) = VALUE string( ).
+                                              IF xsdbool( t32 = |-| ) = abap_true.
                                                 DATA t2890 TYPE REF TO zcl_lnt_cd_result.
                                                 t2890 = t2.
                                                 DATA t2892 TYPE string.
@@ -4830,17 +4029,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 t2896 = t8.
                                                 DATA t2899 TYPE f.
                                                 t2899 = t4.
-                                                DATA(t2901) = VALUE string( ).
-                                                DATA t2902 TYPE abap_bool.
-                                                DATA t2903 TYPE i.
-                                                t2903 = strlen( t2892 ).
-                                                DATA(t2906) = 0.
-                                                t2902 = xsdbool( t2903 > t2906 ).
-                                                IF t2902 = abap_true.
+                                                IF xsdbool( strlen( t2892 ) > 0 ) = abap_true.
                                                   DATA t2907 TYPE abap_bool.
                                                   DATA t2908 TYPE abap_bool.
-                                                  DATA(t2910) = CONV f( 3 ).
-                                                  t2908 = xsdbool( t2899 = t2910 ).
+                                                  t2908 = xsdbool( t2899 = CONV f( 3 ) ).
                                                   t2907 = t2908.
                                                   IF t2908 = abap_true.
                                                     DATA(t2911) = VALUE abap_bool( ).
@@ -4886,7 +4078,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA t2926 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                     t2926 = t2890->result_9728.
                                                     DATA t2928 TYPE REF TO zcl_lnt_lx_comment.
-                                                    DATA t2929 TYPE REF TO zcl_lnt_position.
                                                     DATA t2931 TYPE f.
                                                     DATA t2933 TYPE f.
                                                     t2933 = strlen( t2892 ).
@@ -4894,8 +4085,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA(t2937) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                     t2937->has = abap_true.
                                                     t2937->value = t2931.
-                                                    t2929 = NEW zcl_lnt_position( i_row = t2894 i_col = t2937 ).
-                                                    t2928 = NEW zcl_lnt_lx_comment( i_start = t2929 i_str = t2892 ).
+                                                    t2928 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2894 i_col = t2937 ) i_str = t2892 ).
                                                     t2926->load( ).
                                                     APPEND t2928 TO t2926->items.
                                                     t2926->save( ).
@@ -4903,20 +4093,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA t2939 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                     t2939 = t2890->result_9728.
                                                     DATA t2941 TYPE REF TO zcl_lnt_lx_identifier.
-                                                    DATA t2942 TYPE REF TO zcl_lnt_position.
                                                     DATA(t2945) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                     t2945->has = abap_true.
                                                     t2945->value = t2896.
-                                                    t2942 = NEW zcl_lnt_position( i_row = t2894 i_col = t2945 ).
-                                                    t2941 = NEW zcl_lnt_lx_identifier( i_start = t2942 i_str = t2892 ).
+                                                    t2941 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2894 i_col = t2945 ) i_str = t2892 ).
                                                     t2939->load( ).
                                                     APPEND t2941 TO t2939->items.
                                                     t2939->save( ).
                                                   ENDIF.
                                                 ENDIF.
-                                                t2901 = ||.
-                                                t2889 = t2901.
-                                                t10 = t2889.
+                                                t10 = ||.
                                                 DATA(t2948) = VALUE string( ).
                                                 DATA t2949 TYPE REF TO zcl_lnt_cd_result.
                                                 t2949 = t2.
@@ -4928,17 +4114,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                 t2955 = t8.
                                                 DATA t2958 TYPE f.
                                                 t2958 = t4.
-                                                DATA(t2960) = VALUE string( ).
-                                                DATA t2961 TYPE abap_bool.
-                                                DATA t2962 TYPE i.
-                                                t2962 = strlen( t2951 ).
-                                                DATA(t2965) = 0.
-                                                t2961 = xsdbool( t2962 > t2965 ).
-                                                IF t2961 = abap_true.
+                                                IF xsdbool( strlen( t2951 ) > 0 ) = abap_true.
                                                   DATA t2966 TYPE abap_bool.
                                                   DATA t2967 TYPE abap_bool.
-                                                  DATA(t2969) = CONV f( 3 ).
-                                                  t2967 = xsdbool( t2958 = t2969 ).
+                                                  t2967 = xsdbool( t2958 = CONV f( 3 ) ).
                                                   t2966 = t2967.
                                                   IF t2967 = abap_true.
                                                     DATA(t2970) = VALUE abap_bool( ).
@@ -4984,7 +4163,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA t2985 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                     t2985 = t2949->result_9728.
                                                     DATA t2987 TYPE REF TO zcl_lnt_lx_comment.
-                                                    DATA t2988 TYPE REF TO zcl_lnt_position.
                                                     DATA t2990 TYPE f.
                                                     DATA t2992 TYPE f.
                                                     t2992 = strlen( t2951 ).
@@ -4992,8 +4170,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA(t2996) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                     t2996->has = abap_true.
                                                     t2996->value = t2990.
-                                                    t2988 = NEW zcl_lnt_position( i_row = t2953 i_col = t2996 ).
-                                                    t2987 = NEW zcl_lnt_lx_comment( i_start = t2988 i_str = t2951 ).
+                                                    t2987 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2953 i_col = t2996 ) i_str = t2951 ).
                                                     t2985->load( ).
                                                     APPEND t2987 TO t2985->items.
                                                     t2985->save( ).
@@ -5001,25 +4178,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     DATA t2998 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                     t2998 = t2949->result_9728.
                                                     DATA t3000 TYPE REF TO zcl_lnt_lx_identifier.
-                                                    DATA t3001 TYPE REF TO zcl_lnt_position.
                                                     DATA(t3004) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                     t3004->has = abap_true.
                                                     t3004->value = t2955.
-                                                    t3001 = NEW zcl_lnt_position( i_row = t2953 i_col = t3004 ).
-                                                    t3000 = NEW zcl_lnt_lx_identifier( i_start = t3001 i_str = t2951 ).
+                                                    t3000 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2953 i_col = t3004 ) i_str = t2951 ).
                                                     t2998->load( ).
                                                     APPEND t3000 TO t2998->items.
                                                     t2998->save( ).
                                                   ENDIF.
                                                 ENDIF.
-                                                t2960 = ||.
-                                                t2948 = t2960.
+                                                t2948 = ||.
                                               ELSE.
-                                                DATA t3007 TYPE abap_bool.
-                                                DATA(t3009) = |*|.
-                                                t3007 = xsdbool( t32 = t3009 ).
-                                                IF t3007 = abap_true.
-                                                  DATA(t3010) = VALUE string( ).
+                                                IF xsdbool( t32 = |*| ) = abap_true.
                                                   DATA t3011 TYPE REF TO zcl_lnt_cd_result.
                                                   t3011 = t2.
                                                   DATA t3013 TYPE string.
@@ -5030,17 +4200,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   t3017 = t8.
                                                   DATA t3020 TYPE f.
                                                   t3020 = t4.
-                                                  DATA(t3022) = VALUE string( ).
-                                                  DATA t3023 TYPE abap_bool.
-                                                  DATA t3024 TYPE i.
-                                                  t3024 = strlen( t3013 ).
-                                                  DATA(t3027) = 0.
-                                                  t3023 = xsdbool( t3024 > t3027 ).
-                                                  IF t3023 = abap_true.
+                                                  IF xsdbool( strlen( t3013 ) > 0 ) = abap_true.
                                                     DATA t3028 TYPE abap_bool.
                                                     DATA t3029 TYPE abap_bool.
-                                                    DATA(t3031) = CONV f( 3 ).
-                                                    t3029 = xsdbool( t3020 = t3031 ).
+                                                    t3029 = xsdbool( t3020 = CONV f( 3 ) ).
                                                     t3028 = t3029.
                                                     IF t3029 = abap_true.
                                                       DATA(t3032) = VALUE abap_bool( ).
@@ -5086,7 +4249,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA t3047 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                       t3047 = t3011->result_9728.
                                                       DATA t3049 TYPE REF TO zcl_lnt_lx_comment.
-                                                      DATA t3050 TYPE REF TO zcl_lnt_position.
                                                       DATA t3052 TYPE f.
                                                       DATA t3054 TYPE f.
                                                       t3054 = strlen( t3013 ).
@@ -5094,8 +4256,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA(t3058) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                       t3058->has = abap_true.
                                                       t3058->value = t3052.
-                                                      t3050 = NEW zcl_lnt_position( i_row = t3015 i_col = t3058 ).
-                                                      t3049 = NEW zcl_lnt_lx_comment( i_start = t3050 i_str = t3013 ).
+                                                      t3049 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3015 i_col = t3058 ) i_str = t3013 ).
                                                       t3047->load( ).
                                                       APPEND t3049 TO t3047->items.
                                                       t3047->save( ).
@@ -5103,20 +4264,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA t3060 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                       t3060 = t3011->result_9728.
                                                       DATA t3062 TYPE REF TO zcl_lnt_lx_identifier.
-                                                      DATA t3063 TYPE REF TO zcl_lnt_position.
                                                       DATA(t3066) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                       t3066->has = abap_true.
                                                       t3066->value = t3017.
-                                                      t3063 = NEW zcl_lnt_position( i_row = t3015 i_col = t3066 ).
-                                                      t3062 = NEW zcl_lnt_lx_identifier( i_start = t3063 i_str = t3013 ).
+                                                      t3062 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3015 i_col = t3066 ) i_str = t3013 ).
                                                       t3060->load( ).
                                                       APPEND t3062 TO t3060->items.
                                                       t3060->save( ).
                                                     ENDIF.
                                                   ENDIF.
-                                                  t3022 = ||.
-                                                  t3010 = t3022.
-                                                  t10 = t3010.
+                                                  t10 = ||.
                                                   DATA(t3069) = VALUE string( ).
                                                   DATA t3070 TYPE REF TO zcl_lnt_cd_result.
                                                   t3070 = t2.
@@ -5128,17 +4285,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                   t3076 = t8.
                                                   DATA t3079 TYPE f.
                                                   t3079 = t4.
-                                                  DATA(t3081) = VALUE string( ).
-                                                  DATA t3082 TYPE abap_bool.
-                                                  DATA t3083 TYPE i.
-                                                  t3083 = strlen( t3072 ).
-                                                  DATA(t3086) = 0.
-                                                  t3082 = xsdbool( t3083 > t3086 ).
-                                                  IF t3082 = abap_true.
+                                                  IF xsdbool( strlen( t3072 ) > 0 ) = abap_true.
                                                     DATA t3087 TYPE abap_bool.
                                                     DATA t3088 TYPE abap_bool.
-                                                    DATA(t3090) = CONV f( 3 ).
-                                                    t3088 = xsdbool( t3079 = t3090 ).
+                                                    t3088 = xsdbool( t3079 = CONV f( 3 ) ).
                                                     t3087 = t3088.
                                                     IF t3088 = abap_true.
                                                       DATA(t3091) = VALUE abap_bool( ).
@@ -5184,7 +4334,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA t3106 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                       t3106 = t3070->result_9728.
                                                       DATA t3108 TYPE REF TO zcl_lnt_lx_comment.
-                                                      DATA t3109 TYPE REF TO zcl_lnt_position.
                                                       DATA t3111 TYPE f.
                                                       DATA t3113 TYPE f.
                                                       t3113 = strlen( t3072 ).
@@ -5192,8 +4341,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA(t3117) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                       t3117->has = abap_true.
                                                       t3117->value = t3111.
-                                                      t3109 = NEW zcl_lnt_position( i_row = t3074 i_col = t3117 ).
-                                                      t3108 = NEW zcl_lnt_lx_comment( i_start = t3109 i_str = t3072 ).
+                                                      t3108 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3074 i_col = t3117 ) i_str = t3072 ).
                                                       t3106->load( ).
                                                       APPEND t3108 TO t3106->items.
                                                       t3106->save( ).
@@ -5201,25 +4349,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       DATA t3119 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                       t3119 = t3070->result_9728.
                                                       DATA t3121 TYPE REF TO zcl_lnt_lx_identifier.
-                                                      DATA t3122 TYPE REF TO zcl_lnt_position.
                                                       DATA(t3125) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                       t3125->has = abap_true.
                                                       t3125->value = t3076.
-                                                      t3122 = NEW zcl_lnt_position( i_row = t3074 i_col = t3125 ).
-                                                      t3121 = NEW zcl_lnt_lx_identifier( i_start = t3122 i_str = t3072 ).
+                                                      t3121 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3074 i_col = t3125 ) i_str = t3072 ).
                                                       t3119->load( ).
                                                       APPEND t3121 TO t3119->items.
                                                       t3119->save( ).
                                                     ENDIF.
                                                   ENDIF.
-                                                  t3081 = ||.
-                                                  t3069 = t3081.
+                                                  t3069 = ||.
                                                 ELSE.
-                                                  DATA t3128 TYPE abap_bool.
-                                                  DATA(t3130) = |/|.
-                                                  t3128 = xsdbool( t32 = t3130 ).
-                                                  IF t3128 = abap_true.
-                                                    DATA(t3131) = VALUE string( ).
+                                                  IF xsdbool( t32 = |/| ) = abap_true.
                                                     DATA t3132 TYPE REF TO zcl_lnt_cd_result.
                                                     t3132 = t2.
                                                     DATA t3134 TYPE string.
@@ -5230,17 +4371,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     t3138 = t8.
                                                     DATA t3141 TYPE f.
                                                     t3141 = t4.
-                                                    DATA(t3143) = VALUE string( ).
-                                                    DATA t3144 TYPE abap_bool.
-                                                    DATA t3145 TYPE i.
-                                                    t3145 = strlen( t3134 ).
-                                                    DATA(t3148) = 0.
-                                                    t3144 = xsdbool( t3145 > t3148 ).
-                                                    IF t3144 = abap_true.
+                                                    IF xsdbool( strlen( t3134 ) > 0 ) = abap_true.
                                                       DATA t3149 TYPE abap_bool.
                                                       DATA t3150 TYPE abap_bool.
-                                                      DATA(t3152) = CONV f( 3 ).
-                                                      t3150 = xsdbool( t3141 = t3152 ).
+                                                      t3150 = xsdbool( t3141 = CONV f( 3 ) ).
                                                       t3149 = t3150.
                                                       IF t3150 = abap_true.
                                                         DATA(t3153) = VALUE abap_bool( ).
@@ -5286,7 +4420,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA t3168 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                         t3168 = t3132->result_9728.
                                                         DATA t3170 TYPE REF TO zcl_lnt_lx_comment.
-                                                        DATA t3171 TYPE REF TO zcl_lnt_position.
                                                         DATA t3173 TYPE f.
                                                         DATA t3175 TYPE f.
                                                         t3175 = strlen( t3134 ).
@@ -5294,8 +4427,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA(t3179) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                         t3179->has = abap_true.
                                                         t3179->value = t3173.
-                                                        t3171 = NEW zcl_lnt_position( i_row = t3136 i_col = t3179 ).
-                                                        t3170 = NEW zcl_lnt_lx_comment( i_start = t3171 i_str = t3134 ).
+                                                        t3170 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3136 i_col = t3179 ) i_str = t3134 ).
                                                         t3168->load( ).
                                                         APPEND t3170 TO t3168->items.
                                                         t3168->save( ).
@@ -5303,20 +4435,16 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA t3181 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                         t3181 = t3132->result_9728.
                                                         DATA t3183 TYPE REF TO zcl_lnt_lx_identifier.
-                                                        DATA t3184 TYPE REF TO zcl_lnt_position.
                                                         DATA(t3187) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                         t3187->has = abap_true.
                                                         t3187->value = t3138.
-                                                        t3184 = NEW zcl_lnt_position( i_row = t3136 i_col = t3187 ).
-                                                        t3183 = NEW zcl_lnt_lx_identifier( i_start = t3184 i_str = t3134 ).
+                                                        t3183 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3136 i_col = t3187 ) i_str = t3134 ).
                                                         t3181->load( ).
                                                         APPEND t3183 TO t3181->items.
                                                         t3181->save( ).
                                                       ENDIF.
                                                     ENDIF.
-                                                    t3143 = ||.
-                                                    t3131 = t3143.
-                                                    t10 = t3131.
+                                                    t10 = ||.
                                                     DATA(t3190) = VALUE string( ).
                                                     DATA t3191 TYPE REF TO zcl_lnt_cd_result.
                                                     t3191 = t2.
@@ -5328,17 +4456,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                     t3197 = t8.
                                                     DATA t3200 TYPE f.
                                                     t3200 = t4.
-                                                    DATA(t3202) = VALUE string( ).
-                                                    DATA t3203 TYPE abap_bool.
-                                                    DATA t3204 TYPE i.
-                                                    t3204 = strlen( t3193 ).
-                                                    DATA(t3207) = 0.
-                                                    t3203 = xsdbool( t3204 > t3207 ).
-                                                    IF t3203 = abap_true.
+                                                    IF xsdbool( strlen( t3193 ) > 0 ) = abap_true.
                                                       DATA t3208 TYPE abap_bool.
                                                       DATA t3209 TYPE abap_bool.
-                                                      DATA(t3211) = CONV f( 3 ).
-                                                      t3209 = xsdbool( t3200 = t3211 ).
+                                                      t3209 = xsdbool( t3200 = CONV f( 3 ) ).
                                                       t3208 = t3209.
                                                       IF t3209 = abap_true.
                                                         DATA(t3212) = VALUE abap_bool( ).
@@ -5384,7 +4505,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA t3227 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                         t3227 = t3191->result_9728.
                                                         DATA t3229 TYPE REF TO zcl_lnt_lx_comment.
-                                                        DATA t3230 TYPE REF TO zcl_lnt_position.
                                                         DATA t3232 TYPE f.
                                                         DATA t3234 TYPE f.
                                                         t3234 = strlen( t3193 ).
@@ -5392,8 +4512,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA(t3238) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                         t3238->has = abap_true.
                                                         t3238->value = t3232.
-                                                        t3230 = NEW zcl_lnt_position( i_row = t3195 i_col = t3238 ).
-                                                        t3229 = NEW zcl_lnt_lx_comment( i_start = t3230 i_str = t3193 ).
+                                                        t3229 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3195 i_col = t3238 ) i_str = t3193 ).
                                                         t3227->load( ).
                                                         APPEND t3229 TO t3227->items.
                                                         t3227->save( ).
@@ -5401,25 +4520,18 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                         DATA t3240 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                         t3240 = t3191->result_9728.
                                                         DATA t3242 TYPE REF TO zcl_lnt_lx_identifier.
-                                                        DATA t3243 TYPE REF TO zcl_lnt_position.
                                                         DATA(t3246) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                         t3246->has = abap_true.
                                                         t3246->value = t3197.
-                                                        t3243 = NEW zcl_lnt_position( i_row = t3195 i_col = t3246 ).
-                                                        t3242 = NEW zcl_lnt_lx_identifier( i_start = t3243 i_str = t3193 ).
+                                                        t3242 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3195 i_col = t3246 ) i_str = t3193 ).
                                                         t3240->load( ).
                                                         APPEND t3242 TO t3240->items.
                                                         t3240->save( ).
                                                       ENDIF.
                                                     ENDIF.
-                                                    t3202 = ||.
-                                                    t3190 = t3202.
+                                                    t3190 = ||.
                                                   ELSE.
-                                                    DATA t3249 TYPE abap_bool.
-                                                    DATA(t3251) = |@|.
-                                                    t3249 = xsdbool( t32 = t3251 ).
-                                                    IF t3249 = abap_true.
-                                                      DATA(t3252) = VALUE string( ).
+                                                    IF xsdbool( t32 = |@| ) = abap_true.
                                                       DATA t3253 TYPE REF TO zcl_lnt_cd_result.
                                                       t3253 = t2.
                                                       DATA t3255 TYPE string.
@@ -5430,17 +4542,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                       t3259 = t8.
                                                       DATA t3262 TYPE f.
                                                       t3262 = t4.
-                                                      DATA(t3264) = VALUE string( ).
-                                                      DATA t3265 TYPE abap_bool.
-                                                      DATA t3266 TYPE i.
-                                                      t3266 = strlen( t3255 ).
-                                                      DATA(t3269) = 0.
-                                                      t3265 = xsdbool( t3266 > t3269 ).
-                                                      IF t3265 = abap_true.
+                                                      IF xsdbool( strlen( t3255 ) > 0 ) = abap_true.
                                                         DATA t3270 TYPE abap_bool.
                                                         DATA t3271 TYPE abap_bool.
-                                                        DATA(t3273) = CONV f( 3 ).
-                                                        t3271 = xsdbool( t3262 = t3273 ).
+                                                        t3271 = xsdbool( t3262 = CONV f( 3 ) ).
                                                         t3270 = t3271.
                                                         IF t3271 = abap_true.
                                                           DATA(t3274) = VALUE abap_bool( ).
@@ -5486,7 +4591,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                           DATA t3289 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                           t3289 = t3253->result_9728.
                                                           DATA t3291 TYPE REF TO zcl_lnt_lx_comment.
-                                                          DATA t3292 TYPE REF TO zcl_lnt_position.
                                                           DATA t3294 TYPE f.
                                                           DATA t3296 TYPE f.
                                                           t3296 = strlen( t3255 ).
@@ -5494,8 +4598,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                           DATA(t3300) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                           t3300->has = abap_true.
                                                           t3300->value = t3294.
-                                                          t3292 = NEW zcl_lnt_position( i_row = t3257 i_col = t3300 ).
-                                                          t3291 = NEW zcl_lnt_lx_comment( i_start = t3292 i_str = t3255 ).
+                                                          t3291 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3257 i_col = t3300 ) i_str = t3255 ).
                                                           t3289->load( ).
                                                           APPEND t3291 TO t3289->items.
                                                           t3289->save( ).
@@ -5503,27 +4606,21 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
                                                           DATA t3302 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                                                           t3302 = t3253->result_9728.
                                                           DATA t3304 TYPE REF TO zcl_lnt_lx_identifier.
-                                                          DATA t3305 TYPE REF TO zcl_lnt_position.
                                                           DATA(t3308) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
                                                           t3308->has = abap_true.
                                                           t3308->value = t3259.
-                                                          t3305 = NEW zcl_lnt_position( i_row = t3257 i_col = t3308 ).
-                                                          t3304 = NEW zcl_lnt_lx_identifier( i_start = t3305 i_str = t3255 ).
+                                                          t3304 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3257 i_col = t3308 ) i_str = t3255 ).
                                                           t3302->load( ).
                                                           APPEND t3304 TO t3302->items.
                                                           t3302->save( ).
                                                         ENDIF.
                                                       ENDIF.
-                                                      t3264 = ||.
-                                                      t3252 = t3264.
-                                                      t10 = t3252.
+                                                      t10 = ||.
                                                       t10 = |@|.
                                                     ELSE.
-                                                      DATA t3312 TYPE string.
                                                       DATA(t3313) = t10.
                                                       DATA(t3315) = strlen( t3313 ).
-                                                      t3312 = |{ t3313 }{ t32 }|.
-                                                      t10 = t3312.
+                                                      t10 = |{ t3313 }{ t32 }|.
                                                     ENDIF.
                                                   ENDIF.
                                                 ENDIF.
@@ -5560,17 +4657,10 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
     t3323 = t8.
     DATA t3326 TYPE f.
     t3326 = t4.
-    DATA(t3328) = VALUE string( ).
-    DATA t3329 TYPE abap_bool.
-    DATA t3330 TYPE i.
-    t3330 = strlen( t3319 ).
-    DATA(t3333) = 0.
-    t3329 = xsdbool( t3330 > t3333 ).
-    IF t3329 = abap_true.
+    IF xsdbool( strlen( t3319 ) > 0 ) = abap_true.
       DATA t3334 TYPE abap_bool.
       DATA t3335 TYPE abap_bool.
-      DATA(t3337) = CONV f( 3 ).
-      t3335 = xsdbool( t3326 = t3337 ).
+      t3335 = xsdbool( t3326 = CONV f( 3 ) ).
       t3334 = t3335.
       IF t3335 = abap_true.
         DATA(t3338) = VALUE abap_bool( ).
@@ -5616,7 +4706,6 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         DATA t3353 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t3353 = t3317->result_9728.
         DATA t3355 TYPE REF TO zcl_lnt_lx_comment.
-        DATA t3356 TYPE REF TO zcl_lnt_position.
         DATA t3358 TYPE f.
         DATA t3360 TYPE f.
         t3360 = strlen( t3319 ).
@@ -5624,8 +4713,7 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         DATA(t3364) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t3364->has = abap_true.
         t3364->value = t3358.
-        t3356 = NEW zcl_lnt_position( i_row = t3321 i_col = t3364 ).
-        t3355 = NEW zcl_lnt_lx_comment( i_start = t3356 i_str = t3319 ).
+        t3355 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t3321 i_col = t3364 ) i_str = t3319 ).
         t3353->load( ).
         APPEND t3355 TO t3353->items.
         t3353->save( ).
@@ -5633,22 +4721,17 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
         DATA t3366 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t3366 = t3317->result_9728.
         DATA t3368 TYPE REF TO zcl_lnt_lx_identifier.
-        DATA t3369 TYPE REF TO zcl_lnt_position.
         DATA(t3372) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t3372->has = abap_true.
         t3372->value = t3323.
-        t3369 = NEW zcl_lnt_position( i_row = t3321 i_col = t3372 ).
-        t3368 = NEW zcl_lnt_lx_identifier( i_start = t3369 i_str = t3319 ).
+        t3368 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t3321 i_col = t3372 ) i_str = t3319 ).
         t3366->load( ).
         APPEND t3368 TO t3366->items.
         t3366->save( ).
       ENDIF.
     ENDIF.
-    t3328 = ||.
-    t3316 = t3328.
-    DATA t3378 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t3378 = t2->result_9728.
-    result = t3378.
+    t3316 = ||.
+    result = t2->result_9728.
 
   ENDMETHOD.
 

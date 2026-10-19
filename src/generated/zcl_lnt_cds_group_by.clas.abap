@@ -15,10 +15,9 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |GROUP BY|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |GROUP BY|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1074_6ed9f11fc08a.
     IF t7 IS BOUND.
@@ -27,18 +26,15 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
       t6->cval = t7.
     ENDIF.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t17) = |,|.
     CREATE OBJECT t16.
     t16->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t16->sval = t17.
+    t16->sval = |,|.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1074_6ed9f11fc08a.
     IF t20 IS BOUND.
@@ -48,9 +44,7 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
     ENDIF.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t22.
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>seq( i_first = t16 i_second = t19 i_rest = t22 ).
-    t14 = t23.
+    t14 = zcl_lnt_st_combi_module=>seq( i_first = t16 i_second = t19 i_rest = t22 ).
     IF t14 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t28 TYPE REF TO object.
@@ -101,9 +95,7 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
     t8->load( ).
     APPEND t11 TO t8->items.
     t8->save( ).
-    DATA t31 TYPE REF TO zif_lnt_statement_runnable.
-    t31 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
-    result = t31.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
 
   ENDMETHOD.
 

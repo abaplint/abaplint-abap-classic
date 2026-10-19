@@ -13,15 +13,12 @@ CLASS zcl_lnt_st_test_injection DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_test_injection IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |TEST-INJECTION|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |TEST-INJECTION|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d349_cecd27d97080.
     IF t10 IS BOUND.
@@ -31,9 +28,7 @@ CLASS zcl_lnt_st_test_injection IMPLEMENTATION.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t12.
-    DATA t13 TYPE REF TO zif_lnt_statement_runnable.
-    t13 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t12 ).
-    t4 = t13.
+    t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t12 ).
     IF t4 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t18 TYPE REF TO object.
@@ -57,8 +52,7 @@ CLASS zcl_lnt_st_test_injection IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

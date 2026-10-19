@@ -21,56 +21,39 @@ CLASS zcl_lnt_sy_rd_rstrctn_mdl IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     t1 = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA t3 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t5) = |SY-BATCH|.
-    t3 = t1->add( p0 = t5 ).
+    t3 = t1->add( p0 = |SY-BATCH| ).
     DATA t6 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t8) = |SY-DBCNT|.
-    t6 = t1->add( p0 = t8 ).
+    t6 = t1->add( p0 = |SY-DBCNT| ).
     DATA t9 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t11) = |SY-FDPOS|.
-    t9 = t1->add( p0 = t11 ).
+    t9 = t1->add( p0 = |SY-FDPOS| ).
     DATA t12 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t14) = |SY-INDEX|.
-    t12 = t1->add( p0 = t14 ).
+    t12 = t1->add( p0 = |SY-INDEX| ).
     DATA t15 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t17) = |SY-LANGU|.
-    t15 = t1->add( p0 = t17 ).
+    t15 = t1->add( p0 = |SY-LANGU| ).
     DATA t18 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t20) = |SY-MANDT|.
-    t18 = t1->add( p0 = t20 ).
+    t18 = t1->add( p0 = |SY-MANDT| ).
     DATA t21 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t23) = |SY-MSGID|.
-    t21 = t1->add( p0 = t23 ).
+    t21 = t1->add( p0 = |SY-MSGID| ).
     DATA t24 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t26) = |SY-MSGNO|.
-    t24 = t1->add( p0 = t26 ).
+    t24 = t1->add( p0 = |SY-MSGNO| ).
     DATA t27 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t29) = |SY-MSGTY|.
-    t27 = t1->add( p0 = t29 ).
+    t27 = t1->add( p0 = |SY-MSGTY| ).
     DATA t30 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t32) = |SY-MSGV1|.
-    t30 = t1->add( p0 = t32 ).
+    t30 = t1->add( p0 = |SY-MSGV1| ).
     DATA t33 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t35) = |SY-MSGV2|.
-    t33 = t1->add( p0 = t35 ).
+    t33 = t1->add( p0 = |SY-MSGV2| ).
     DATA t36 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t38) = |SY-MSGV3|.
-    t36 = t1->add( p0 = t38 ).
+    t36 = t1->add( p0 = |SY-MSGV3| ).
     DATA t39 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t41) = |SY-MSGV4|.
-    t39 = t1->add( p0 = t41 ).
+    t39 = t1->add( p0 = |SY-MSGV4| ).
     DATA t42 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t44) = |SY-SUBRC|.
-    t42 = t1->add( p0 = t44 ).
+    t42 = t1->add( p0 = |SY-SUBRC| ).
     DATA t45 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t47) = |SY-SYSID|.
-    t45 = t1->add( p0 = t47 ).
+    t45 = t1->add( p0 = |SY-SYSID| ).
     DATA t48 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t50) = |SY-TABIX|.
-    t48 = t1->add( p0 = t50 ).
+    t48 = t1->add( p0 = |SY-TABIX| ).
     DATA t51 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t53) = |SY-UNAME|.
-    t51 = t1->add( p0 = t53 ).
+    t51 = t1->add( p0 = |SY-UNAME| ).
     IF zcl_lnt_sy_rd_rstrctn_mdl=>zlnt_builtin_init_56bea28f17d9 = abap_false.
       zcl_lnt_sy_rd_rstrctn_mdl=>zlnt_builtin_init_d81bf6eacb03( ).
     ENDIF.
@@ -78,20 +61,15 @@ CLASS zcl_lnt_sy_rd_rstrctn_mdl IMPLEMENTATION.
     DATA t55 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     t55 = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA t57 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t59) = |SY-DBCNT|.
-    t57 = t55->add( p0 = t59 ).
+    t57 = t55->add( p0 = |SY-DBCNT| ).
     DATA t60 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t62) = |SY-FDPOS|.
-    t60 = t55->add( p0 = t62 ).
+    t60 = t55->add( p0 = |SY-FDPOS| ).
     DATA t63 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t65) = |SY-INDEX|.
-    t63 = t55->add( p0 = t65 ).
+    t63 = t55->add( p0 = |SY-INDEX| ).
     DATA t66 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t68) = |SY-SUBRC|.
-    t66 = t55->add( p0 = t68 ).
+    t66 = t55->add( p0 = |SY-SUBRC| ).
     DATA t69 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t71) = |SY-TABIX|.
-    t69 = t55->add( p0 = t71 ).
+    t69 = t55->add( p0 = |SY-TABIX| ).
     IF zcl_lnt_sy_rd_rstrctn_mdl=>zlnt_builtin_init_56bea28f17d9 = abap_false.
       zcl_lnt_sy_rd_rstrctn_mdl=>zlnt_builtin_init_d81bf6eacb03( ).
     ENDIF.

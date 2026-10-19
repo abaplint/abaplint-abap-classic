@@ -37,25 +37,18 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
       RETURN.
     ENDIF.
     me->zlnt_view_write_s_9c54627bcb25( p0 = abap_true ).
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
-    DATA(t6) = |CHANGING|.
+    CREATE OBJECT t3.
     t3->load( ).
-    APPEND t6 TO t3->items.
+    APPEND |CHANGING| TO t3->items.
     t3->save( ).
-    DATA(t8) = |EXPORTING|.
     t3->load( ).
-    APPEND t8 TO t3->items.
+    APPEND |EXPORTING| TO t3->items.
     t3->save( ).
-    DATA(t10) = |OTHERS|.
     t3->load( ).
-    APPEND t10 TO t3->items.
+    APPEND |OTHERS| TO t3->items.
     t3->save( ).
-    t2 = t3.
-    me->zlnt_view_write_s_37b40751ec20( p0 = t2 ).
+    me->zlnt_view_write_s_37b40751ec20( p0 = t3 ).
     me->zlnt_view_write_s_7c49753518b6( p0 = abap_true ).
     me->zlnt_view_write_s_8a18fe66f51f( p0 = abap_true ).
     me->zlnt_view_write_s_72d78e3a99be( p0 = abap_true ).
@@ -76,8 +69,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_abd40c6b7e93.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keywords` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keywords` ) )->as_boolean( ).
     ELSE.
       result = me->keywords_835e.
     ENDIF.
@@ -160,8 +152,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_35380942de4b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `startParen` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `startParen` ) )->as_boolean( ).
     ELSE.
       result = me->start_paren.
     ENDIF.
@@ -182,8 +173,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_d180c0b9d146.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `endParen` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `endParen` ) )->as_boolean( ).
     ELSE.
       result = me->end_paren.
     ENDIF.
@@ -204,8 +194,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_d1ea83d4ea4d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `afterColon` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `afterColon` ) )->as_boolean( ).
     ELSE.
       result = me->after_colon.
     ENDIF.

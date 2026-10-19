@@ -26,25 +26,19 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->optional->list_keywords( ).
-    result = t1.
+    result = me->optional->list_keywords( ).
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->optional->get_using( ).
-    result = t1.
+    result = me->optional->get_using( ).
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -71,16 +65,9 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
       APPEND t5 TO t2->items.
       t2->save( ).
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t13 = me->optional->run_one( i_x = t5 ).
-      t12 = t13.
-      DATA t16 TYPE abap_bool.
-      DATA t17 TYPE i.
+      t12 = me->optional->run_one( i_x = t5 ).
       t12->load( ).
-      t17 = lines( t12->items ).
-      DATA(t19) = 1.
-      t16 = xsdbool( t17 = t19 ).
-      IF t16 = abap_true.
+      IF xsdbool( lines( t12->items ) = 1 ) = abap_true.
         DATA t21 TYPE REF TO zcl_lnt_st_result.
         CLEAR t21.
         DATA t23 TYPE REF TO object.
@@ -132,10 +119,8 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
           APPEND t28 TO t2->items.
           t2->save( ).
         ENDDO.
-        DATA t35 TYPE i.
         t2->load( ).
-        t35 = lines( t2->items ).
-        t26 = t35.
+        t26 = lines( t2->items ).
       ENDIF.
     ENDDO.
     result = t2.
@@ -143,43 +128,34 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Optional(|.
     DATA t4 TYPE string.
     t4 = me->optional->railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |opt(|.
     DATA t4 TYPE string.
     t4 = me->optional->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -188,25 +164,16 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_st_result.
     t4 = t1.
     t2->load( ).
     APPEND t4 TO t2->items.
     t2->save( ).
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t9 = me->optional->run_one( i_x = t4 ).
-    t8 = t9.
-    DATA t12 TYPE abap_bool.
-    DATA t13 TYPE i.
+    t8 = me->optional->run_one( i_x = t4 ).
     t8->load( ).
-    t13 = lines( t8->items ).
-    DATA(t15) = 1.
-    t12 = xsdbool( t13 = t15 ).
-    IF t12 = abap_true.
+    IF xsdbool( lines( t8->items ) = 1 ) = abap_true.
       DATA t17 TYPE REF TO zcl_lnt_st_result.
       DATA t19 TYPE REF TO object.
       t8->load( ).
@@ -251,10 +218,8 @@ CLASS zcl_lnt_st_optional IMPLEMENTATION.
         APPEND t24 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t31 TYPE i.
       t2->load( ).
-      t31 = lines( t2->items ).
-      t22 = t31.
+      t22 = lines( t2->items ).
     ENDIF.
     result = t2.
 

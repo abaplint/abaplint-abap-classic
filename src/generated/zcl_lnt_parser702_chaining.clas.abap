@@ -27,35 +27,25 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |parser_702_chaining|.
-    DATA t4 TYPE string.
-    t4 = |Parser Error, bad chaining on 702|.
     DATA t6 TYPE string.
     DATA(t7) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
     t7 = t7 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.
     t7 = t7 && |orts errors.\nOnly active on target version 702 and below.|.
     t6 = t7.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Syntax|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Syntax| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |parser_702_chaining| i_title = |Parser Error, bad chaining on 702| i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -74,23 +64,19 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -109,25 +95,16 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
   METHOD r_p_in_sr_rl_pr_70_ch_ts_pr_ch.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = VALUE abap_bool( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA t6 TYPE REF TO zcl_lnt_abap_release.
-    DATA t7 TYPE REF TO zif_lnt_configuration.
-    t7 = me->reg->get_config( ).
-    t6 = t7->get_release( ).
+    t6 = me->reg->get_config( )->get_release( ).
     DATA t9 TYPE REF TO zcl_lnt_abap_release.
-    DATA t10 TYPE REF TO zcl_lnt_abap_release.
-    DATA t11 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t11 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t12) = |v702|.
-    t10 = t11->get( p0 = t12 ).
-    t9 = t10.
+    t9 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v702| ).
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t6 IS BOUND.
@@ -186,19 +163,12 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
     IF t5 = abap_true.
       DATA(t19) = VALUE abap_bool( ).
       DATA t20 TYPE REF TO zcl_lnt_abap_release.
-      DATA t21 TYPE REF TO zif_lnt_configuration.
-      t21 = me->reg->get_config( ).
-      t20 = t21->get_release( ).
+      t20 = me->reg->get_config( )->get_release( ).
       DATA t23 TYPE REF TO zcl_lnt_abap_release.
-      DATA t24 TYPE REF TO zcl_lnt_abap_release.
-      DATA t25 TYPE REF TO zlnt_runtime_map__201f3699a39e.
       IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
         zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
       ENDIF.
-      t25 = zcl_lnt_version_module=>release_b8cd.
-      DATA(t26) = |v700|.
-      t24 = t25->get( p0 = t26 ).
-      t23 = t24.
+      t23 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v700| ).
       DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t20 IS BOUND.
@@ -256,22 +226,14 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       t4 = t19.
     ENDIF.
     IF t4 = abap_true.
-      DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t33.
-      result = t33.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t34 TYPE REF TO zcl_lnt_structure_node.
-    DATA t38 TYPE REF TO zcl_lnt_structure_node.
-    t38 = t1->structure.
-    t34 = t38.
-    DATA(t40) = VALUE abap_bool( ).
+    t34 = t1->structure.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t40 = xsdbool( t34 IS INITIAL ).
-    IF t40 = abap_true.
-      DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t47.
-      result = t47.
+    IF xsdbool( t34 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -304,18 +266,10 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       ENDIF.
       DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t57.
-      DATA t58 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t58.
       DATA(t60) = zlnt_runtime_desc_78196487750d=>zlnt_member_d221_0c54ed92df99.
-      t58 = t52->find_direct_expressions( i_type_9913 = t60 ).
-      t57 = t58.
-      DATA(t61) = VALUE abap_bool( ).
-      DATA(t62) = VALUE i( ).
+      t57 = t52->find_direct_expressions( i_type_9913 = t60 ).
       t57->load( ).
-      t62 = lines( t57->items ).
-      DATA(t64) = 2.
-      t61 = xsdbool( t62 < t64 ).
-      IF t61 = abap_true.
+      IF xsdbool( lines( t57->items ) < 2 ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t66 TYPE REF TO zcl_lnt_expression_node.
@@ -345,35 +299,25 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         ENDIF.
         DATA t71 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t71.
-        DATA t72 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t72.
         DATA(t74) = zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb.
-        t72 = t66->find_direct_expression( i_type_9913 = t74 ).
-        t71 = t72.
-        DATA(t75) = VALUE abap_bool( ).
+        t71 = t66->find_direct_expression( i_type_9913 = t74 ).
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t78.
         CLEAR t78.
-        t75 = xsdbool( t71 IS INITIAL ).
-        IF t75 = abap_true.
+        IF xsdbool( t71 IS INITIAL ) = abap_true.
           CONTINUE.
         ENDIF.
         DATA t82 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t82.
-        DATA t83 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t83.
         DATA t84 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t84.
         t84 = t71.
         DATA(t86) = zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470.
-        t83 = t84->find_direct_expression( i_type_9913 = t86 ).
-        t82 = t83.
-        DATA(t87) = VALUE abap_bool( ).
+        t82 = t84->find_direct_expression( i_type_9913 = t86 ).
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t90.
         CLEAR t90.
-        t87 = xsdbool( t82 IS INITIAL ).
-        IF t87 = abap_true.
+        IF xsdbool( t82 IS INITIAL ) = abap_true.
           CONTINUE.
         ENDIF.
         DATA(t94) = VALUE abap_bool( ).
@@ -381,43 +325,23 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         DATA(t96) = VALUE abap_bool( ).
         DATA t97 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t97.
-        DATA t98 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t98.
-        t98 = t82.
-        DATA(t100) = |IMPORTING|.
-        t97 = t98->find_direct_token_by_text( i_text = t100 ).
+        t97 = t82->find_direct_token_by_text( i_text = |IMPORTING| ).
         t96 = xsdbool( t97 IS BOUND ).
         t95 = t96.
         IF t96 = abap_false.
-          DATA(t101) = VALUE abap_bool( ).
           DATA t102 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t102.
-          DATA t103 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t103.
-          t103 = t82.
-          DATA(t105) = |CHANGING|.
-          t102 = t103->find_direct_token_by_text( i_text = t105 ).
-          t101 = xsdbool( t102 IS BOUND ).
-          t95 = t101.
+          t102 = t82->find_direct_token_by_text( i_text = |CHANGING| ).
+          t95 = xsdbool( t102 IS BOUND ).
         ENDIF.
         t94 = t95.
         IF t95 = abap_false.
-          DATA(t106) = VALUE abap_bool( ).
           DATA t107 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t107.
-          DATA t108 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t108.
-          t108 = t82.
-          DATA(t110) = |EXCEPTIONS|.
-          t107 = t108->find_direct_token_by_text( i_text = t110 ).
-          t106 = xsdbool( t107 IS BOUND ).
-          t94 = t106.
+          t107 = t82->find_direct_token_by_text( i_text = |EXCEPTIONS| ).
+          t94 = xsdbool( t107 IS BOUND ).
         ENDIF.
         IF t94 = abap_true.
-          DATA(t111) = VALUE string( ).
-          t111 = |This kind of method chaining not possible in 702|.
-          DATA(t113) = VALUE string( ).
-          t113 = t111.
           DATA t120 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t120.
           t120 = t2.
@@ -425,20 +349,10 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           CLEAR t123.
           DATA t125 TYPE REF TO zcl_lnt_position.
           CLEAR t125.
-          DATA t127 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t127.
-          t127 = t82->get_first_token( ).
-          DATA t129 TYPE REF TO zcl_lnt_position.
-          CLEAR t129.
-          t129 = t127->start.
-          t125 = t129.
+          t125 = t82->get_first_token( )->start.
           DATA(t132) = VALUE string( ).
           DATA t133 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t133.
-          DATA(t134) = VALUE string( ).
-          t134 = |parser_702_chaining|.
-          DATA(t136) = VALUE string( ).
-          t136 = |Parser Error, bad chaining on 702|.
           DATA(t138) = VALUE string( ).
           DATA(t139) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
           t139 = t139 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.
@@ -452,13 +366,11 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           CLEAR t145.
           CREATE OBJECT t145.
           t144 = t145.
-          DATA(t147) = |Syntax|.
           t144->load( ).
-          APPEND t147 TO t144->items.
+          APPEND |Syntax| TO t144->items.
           t144->save( ).
-          DATA(t149) = |SingleFile|.
           t144->load( ).
-          APPEND t149 TO t144->items.
+          APPEND |SingleFile| TO t144->items.
           t144->save( ).
           t140 = t144.
           DATA t152 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -476,7 +388,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           DATA t160 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t160.
           CLEAR t160.
-          t133 = NEW zcl_lnt_irule_metadata( i_key = t134 i_title = t136 i_short_description = t138 i_bad_example = t152 i_good_example = t154 i_extended_information = t156 i_tags = t140 i_pragma = t158 i_pseudo_comment = t160 ).
+          t133 = NEW zcl_lnt_irule_metadata( i_key = |parser_702_chaining| i_title = |Parser Error, bad chaining on 702| i_short_description = t138 i_bad_example = t152 i_good_example = t154 i_extended_information = t156 i_tags = t140 i_pragma = t158 i_pseudo_comment = t160 ).
           CREATE OBJECT t133->zlnt_view_ownkeys_b0e8086400eb.
           t133->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -499,27 +411,23 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t133->zlnt_json_ownkeys_70e5fd461788.
           t133->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t166) = |key|.
           DATA t167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t167.
-          t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = t166 p1 = t167 ).
-          DATA(t168) = |title|.
+          t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t167 ).
           DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t169.
           IF t133->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = t168 p1 = t169 ).
+            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t169 ).
           ENDIF.
-          DATA(t170) = |shortDescription|.
           DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t171.
           IF t133->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = t170 p1 = t171 ).
+            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t171 ).
           ENDIF.
-          DATA(t172) = |tags|.
           DATA t173 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t173.
           IF t133->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = t172 p1 = t173 ).
+            t133->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t173 ).
           ENDIF.
           t132 = t133->key.
           DATA t174 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -527,7 +435,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           t174 = me->conf->zlnt_view_read_sr_15c06369f827( ).
           DATA t176 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t176.
-          t123 = zcl_lnt_issue=>at_position( i_file = t1 i_start = t125 i_message_26cb = t113 i_key = t132 i_severity = t174 i_fix = t176 ).
+          t123 = zcl_lnt_issue=>at_position( i_file = t1 i_start = t125 i_message_26cb = |This kind of method chaining not possible in 702| i_key = t132 i_severity = t174 i_fix = t176 ).
           t120->load( ).
           APPEND t123 TO t120->items.
           t120->save( ).
@@ -535,9 +443,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       ENDDO.
     ENDDO.
     DATA t179 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t182 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t182 = t1->statements.
-    t179 = t182.
+    t179 = t1->statements.
     DATA t184 TYPE REF TO zcl_lnt_statement_node.
     DATA t185 TYPE REF TO object.
     DATA(t186) = VALUE i( ).
@@ -561,35 +467,23 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       ELSE.
         t184 ?= t185.
       ENDIF.
-      DATA(t189) = VALUE abap_bool( ).
-      DATA(t190) = VALUE abap_bool( ).
       DATA t191 TYPE REF TO zif_lnt_statement.
       CLEAR t191.
       t191 = t184->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t190 = xsdbool( t191 IS BOUND AND t191 IS INSTANCE OF zcl_lnt_st_move ).
-      t189 = xsdbool( t190 = abap_false ).
-      IF t189 = abap_true.
+      IF xsdbool( xsdbool( t191 IS BOUND AND t191 IS INSTANCE OF zcl_lnt_st_move ) = abap_false ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t193 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t193.
-      DATA t194 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t194.
       DATA(t196) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-      t194 = t184->find_direct_expression( i_type_9913 = t196 ).
-      t193 = t194.
-      DATA(t197) = VALUE abap_bool( ).
+      t193 = t184->find_direct_expression( i_type_9913 = t196 ).
       DATA t200 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t200.
       CLEAR t200.
-      t197 = xsdbool( t193 IS INITIAL ).
-      IF t197 = abap_true.
+      IF xsdbool( t193 IS INITIAL ) = abap_true.
         CONTINUE.
       ENDIF.
-      DATA t204 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t204.
-      t204 = t193.
-      me->ensr_src_hs_n_prcdrl_kywrds( i_source_75cf = t204 i_file = t1 i_issues = t2 ).
+      me->ensr_src_hs_n_prcdrl_kywrds( i_source_75cf = t193 i_file = t1 i_issues = t2 ).
     ENDDO.
     DATA t208 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t209 TYPE REF TO zcl_lnt_structure_node.
@@ -650,23 +544,15 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         ENDIF.
         DATA t225 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t225.
-        DATA t226 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t226.
         DATA(t228) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-        t226 = t220->find_direct_expression( i_type_9913 = t228 ).
-        t225 = t226.
-        DATA(t229) = VALUE abap_bool( ).
+        t225 = t220->find_direct_expression( i_type_9913 = t228 ).
         DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t232.
         CLEAR t232.
-        t229 = xsdbool( t225 IS INITIAL ).
-        IF t229 = abap_true.
+        IF xsdbool( t225 IS INITIAL ) = abap_true.
           CONTINUE.
         ENDIF.
-        DATA t236 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t236.
-        t236 = t225.
-        me->ensr_src_hs_n_prcdrl_kywrds( i_source_75cf = t236 i_file = t1 i_issues = t2 ).
+        me->ensr_src_hs_n_prcdrl_kywrds( i_source_75cf = t225 i_file = t1 i_issues = t2 ).
       ENDDO.
     ENDDO.
     result = t2.
@@ -679,24 +565,18 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
     DATA(t3) = i_issues.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t7.
-    t6 = t7.
-    DATA(t9) = |EXPORTING|.
+    CREATE OBJECT t6.
     t6->load( ).
-    APPEND t9 TO t6->items.
+    APPEND |EXPORTING| TO t6->items.
     t6->save( ).
-    DATA(t11) = |IMPORTING|.
     t6->load( ).
-    APPEND t11 TO t6->items.
+    APPEND |IMPORTING| TO t6->items.
     t6->save( ).
-    DATA(t13) = |CHANGING|.
     t6->load( ).
-    APPEND t13 TO t6->items.
+    APPEND |CHANGING| TO t6->items.
     t6->save( ).
-    DATA(t15) = |EXCEPTIONS|.
     t6->load( ).
-    APPEND t15 TO t6->items.
+    APPEND |EXCEPTIONS| TO t6->items.
     t6->save( ).
     t4 = t6.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -729,41 +609,29 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       t27 = t4.
       DATA t29 TYPE i.
-      DATA t30 TYPE i.
       t27->load( ).
-      t30 = lines( t27->items ).
-      t29 = t30.
+      t29 = lines( t27->items ).
       DATA t32 TYPE i.
       t32 = 0.
       DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t34.
       DO.
-        DATA t36 TYPE abap_bool.
-        t36 = xsdbool( t32 < t29 ).
-        IF t36 = abap_false.
+        IF xsdbool( t32 < t29 ) = abap_false.
           EXIT.
         ENDIF.
         DATA t39 TYPE string.
-        DATA t40 TYPE string.
-        DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t41 = t27->get( p0 = t32 ).
-        t40 = t41->value.
-        t39 = t40.
-        DATA t44 TYPE abap_bool.
+        t39 = t27->get( p0 = t32 )->value.
         DATA t45 TYPE REF TO zcl_lnt_abstract_token.
         t45 = t20->find_direct_token_by_text( i_text = t39 ).
-        t44 = xsdbool( t45 IS BOUND ).
-        IF t44 = abap_true.
+        IF xsdbool( t45 IS BOUND ) = abap_true.
           DATA(t51) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t51->has = abap_true.
           t51->value = t39.
           t34 = t51.
           EXIT.
         ENDIF.
-        DATA t53 TYPE i.
         DATA(t55) = 1.
-        t53 = t32 + t55.
-        t32 = t53.
+        t32 = t32 + t55.
       ENDDO.
       t25 = t34.
       DATA(t57) = VALUE abap_bool( ).
@@ -780,26 +648,17 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         t63 = t25->value.
         DATA(t65) = strlen( t62 ).
         t61 = |{ t62 }{ t63 }|.
-        DATA(t66) = | in functional method call|.
         DATA(t67) = strlen( t61 ).
-        t60 = |{ t61 }{ t66 }|.
+        t60 = |{ t61 }{ | in functional method call| }|.
         DATA t74 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t74 = t3.
         DATA t77 TYPE REF TO zcl_lnt_issue.
         CLEAR t77.
         DATA t79 TYPE REF TO zcl_lnt_position.
-        DATA t81 TYPE REF TO zcl_lnt_abstract_token.
-        t81 = t20->get_first_token( ).
-        DATA t83 TYPE REF TO zcl_lnt_position.
-        t83 = t81->start.
-        t79 = t83.
+        t79 = t20->get_first_token( )->start.
         DATA(t86) = VALUE string( ).
         DATA t87 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t87.
-        DATA t88 TYPE string.
-        t88 = |parser_702_chaining|.
-        DATA t90 TYPE string.
-        t90 = |Parser Error, bad chaining on 702|.
         DATA t92 TYPE string.
         DATA(t93) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
         t93 = t93 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.
@@ -808,16 +667,12 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         DATA t94 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t94.
         DATA t98 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t99 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t99.
-        t98 = t99.
-        DATA(t101) = |Syntax|.
+        CREATE OBJECT t98.
         t98->load( ).
-        APPEND t101 TO t98->items.
+        APPEND |Syntax| TO t98->items.
         t98->save( ).
-        DATA(t103) = |SingleFile|.
         t98->load( ).
-        APPEND t103 TO t98->items.
+        APPEND |SingleFile| TO t98->items.
         t98->save( ).
         t94 = t98.
         DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -830,7 +685,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         CLEAR t112.
         DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t114.
-        t87 = NEW zcl_lnt_irule_metadata( i_key = t88 i_title = t90 i_short_description = t92 i_bad_example = t106 i_good_example = t108 i_extended_information = t110 i_tags = t94 i_pragma = t112 i_pseudo_comment = t114 ).
+        t87 = NEW zcl_lnt_irule_metadata( i_key = |parser_702_chaining| i_title = |Parser Error, bad chaining on 702| i_short_description = t92 i_bad_example = t106 i_good_example = t108 i_extended_information = t110 i_tags = t94 i_pragma = t112 i_pseudo_comment = t114 ).
         CREATE OBJECT t87->zlnt_view_ownkeys_b0e8086400eb.
         t87->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -853,27 +708,23 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t87->zlnt_json_ownkeys_70e5fd461788.
         t87->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t120) = |key|.
         DATA t121 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t121.
-        t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = t120 p1 = t121 ).
-        DATA(t122) = |title|.
+        t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t121 ).
         DATA t123 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t123.
         IF t87->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = t122 p1 = t123 ).
+          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t123 ).
         ENDIF.
-        DATA(t124) = |shortDescription|.
         DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t125.
         IF t87->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = t124 p1 = t125 ).
+          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t125 ).
         ENDIF.
-        DATA(t126) = |tags|.
         DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t127.
         IF t87->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = t126 p1 = t127 ).
+          t87->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t127 ).
         ENDIF.
         t86 = t87->key.
         DATA t128 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -894,42 +745,28 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
     DATA t6 TYPE REF TO zcl_lnt_issue.
     DATA(t7) = i_file.
     DATA t8 TYPE REF TO zcl_lnt_position.
-    DATA t10 TYPE REF TO zcl_lnt_abstract_token.
-    t10 = i_node->get_first_token( ).
-    DATA t12 TYPE REF TO zcl_lnt_position.
-    t12 = t10->start.
-    t8 = t12.
+    t8 = i_node->get_first_token( )->start.
     DATA(t15) = VALUE string( ).
     DATA t16 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t17 TYPE string.
-    t17 = |parser_702_chaining|.
-    DATA t19 TYPE string.
-    t19 = |Parser Error, bad chaining on 702|.
     DATA t21 TYPE string.
     DATA(t22) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
     t22 = t22 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.
     t22 = t22 && |orts errors.\nOnly active on target version 702 and below.|.
     t21 = t22.
-    DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t28.
-    t27 = t28.
-    DATA(t30) = |Syntax|.
+    CREATE OBJECT t27.
     t27->load( ).
-    APPEND t30 TO t27->items.
+    APPEND |Syntax| TO t27->items.
     t27->save( ).
-    DATA(t32) = |SingleFile|.
     t27->load( ).
-    APPEND t32 TO t27->items.
+    APPEND |SingleFile| TO t27->items.
     t27->save( ).
-    t23 = t27.
     DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t39 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t16 = NEW zcl_lnt_irule_metadata( i_key = t17 i_title = t19 i_short_description = t21 i_bad_example = t35 i_good_example = t37 i_extended_information = t39 i_tags = t23 i_pragma = t41 i_pseudo_comment = t43 ).
+    t16 = NEW zcl_lnt_irule_metadata( i_key = |parser_702_chaining| i_title = |Parser Error, bad chaining on 702| i_short_description = t21 i_bad_example = t35 i_good_example = t37 i_extended_information = t39 i_tags = t27 i_pragma = t41 i_pseudo_comment = t43 ).
     CREATE OBJECT t16->zlnt_view_ownkeys_b0e8086400eb.
     t16->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -948,29 +785,23 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t16->zlnt_json_ownkeys_70e5fd461788.
     t16->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t16->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t16->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |tags|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t16->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t16->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t56 ).
     ENDIF.
     t15 = t16->key.
-    DATA t57 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t57 = me->conf->zlnt_view_read_sr_15c06369f827( ).
     DATA t59 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-    t6 = zcl_lnt_issue=>at_position( i_file = t7 i_start = t8 i_message_26cb = t1 i_key = t15 i_severity = t57 i_fix = t59 ).
+    t6 = zcl_lnt_issue=>at_position( i_file = t7 i_start = t8 i_message_26cb = t1 i_key = t15 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t59 ).
     t4->load( ).
     APPEND t6 TO t4->items.
     t4->save( ).

@@ -22,30 +22,21 @@ ENDCLASS.
 CLASS zcl_lnt_permutation IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_list.
-    DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = VALUE i( ).
     t1->load( ).
-    t3 = lines( t1->items ).
-    DATA(t5) = 2.
-    t2 = xsdbool( t3 < t5 ).
-    IF t2 = abap_true.
+    IF xsdbool( lines( t1->items ) < 2 ) = abap_true.
       DATA t6 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t7 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t10) = VALUE string( ).
       DATA(t11) = |Permutation, length error, got |.
       DATA(t12) = VALUE string( ).
-      DATA(t13) = VALUE i( ).
       t1->load( ).
-      t13 = lines( t1->items ).
-      t12 = |{ t13 }|.
+      t12 = |{ lines( t1->items ) }|.
       DATA(t15) = strlen( t11 ).
       t10 = |{ t11 }{ t12 }|.
       DATA(t16) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t16->has = abap_true.
       t16->value = t10.
-      t8 = t16.
-      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t8 ).
+      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t16 ).
       t6 = NEW #( ).
       t6->payload = t7.
       CLEAR t6->source_value.
@@ -78,9 +69,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
 
   METHOD list_keywords.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA(t3) = me->list.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO object.
@@ -125,10 +114,8 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
         APPEND t12 TO t1->items.
         t1->save( ).
       ENDDO.
-      DATA t16 TYPE i.
       t1->load( ).
-      t16 = lines( t1->items ).
-      t9 = t16.
+      t9 = lines( t1->items ).
     ENDDO.
     result = t1.
 
@@ -136,9 +123,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
 
   METHOD get_using.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = me->list.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO object.
@@ -162,11 +147,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t14 = t5->get_using( ).
-      t12 = t2->concat( p0 = t14 ).
-      t2 = t12.
+      t2 = t2->concat( p0 = t5->get_using( ) ).
     ENDDO.
     result = t2.
 
@@ -175,29 +156,19 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t5 = me->list->slice0( ).
-    t4 = t5.
+    t4 = me->list->slice0( ).
     DATA t7 TYPE i.
     t7 = 0.
     DO.
-      DATA t9 TYPE abap_bool.
-      DATA t11 TYPE i.
       DATA(t12) = me->list.
       t12->load( ).
-      t11 = lines( t12->items ).
-      t9 = xsdbool( t7 < t11 ).
-      IF t9 = abap_false.
+      IF xsdbool( t7 < lines( t12->items ) ) = abap_false.
         EXIT.
       ENDIF.
       DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t13.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t14.
       DATA t15 TYPE REF TO zif_lnt_statement_runnable.
       CLEAR t15.
       DATA(t16) = me->list.
@@ -219,15 +190,9 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       ELSE.
         t15 ?= t18.
       ENDIF.
-      t14 = t15->run( i_r_f634 = t1 ).
-      t13 = t14.
-      DATA t22 TYPE abap_bool.
-      DATA t23 TYPE i.
+      t13 = t15->run( i_r_f634 = t1 ).
       t13->load( ).
-      t23 = lines( t13->items ).
-      DATA(t25) = 0.
-      t22 = xsdbool( t23 <> t25 ).
-      IF t22 = abap_true.
+      IF xsdbool( lines( t13->items ) <> 0 ) = abap_true.
         DATA(t26) = VALUE i( ).
         DATA t28 TYPE REF TO zcl_lnt_st_result.
         CLEAR t28.
@@ -257,22 +222,14 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
           APPEND t28 TO t2->items.
           t2->save( ).
         ENDDO.
-        DATA t35 TYPE i.
         t2->load( ).
-        t35 = lines( t2->items ).
-        t26 = t35.
+        t26 = lines( t2->items ).
         DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t37 = t4.
         DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t42) = 1.
-        t39 = t37->splice2( p0 = t7 p1 = t42 ).
-        DATA t43 TYPE abap_bool.
-        DATA t44 TYPE i.
+        t39 = t37->splice2( p0 = t7 p1 = 1 ).
         t37->load( ).
-        t44 = lines( t37->items ).
-        DATA(t46) = 1.
-        t43 = xsdbool( t44 = t46 ).
-        IF t43 = abap_true.
+        IF xsdbool( lines( t37->items ) = 1 ) = abap_true.
           DATA(t47) = VALUE i( ).
           DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t48.
@@ -323,16 +280,12 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
             APPEND t55 TO t2->items.
             t2->save( ).
           ENDDO.
-          DATA t62 TYPE i.
           t2->load( ).
-          t62 = lines( t2->items ).
-          t47 = t62.
+          t47 = lines( t2->items ).
         ELSE.
           DATA(t64) = VALUE i( ).
           DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t66 TYPE REF TO zcl_lnt_permutation.
-          t66 = NEW zcl_lnt_permutation( i_list = t37 ).
-          t65 = t66->run( i_r_f634 = t13 ).
+          t65 = NEW zcl_lnt_permutation( i_list = t37 )->run( i_r_f634 = t13 ).
           DATA t69 TYPE REF TO zcl_lnt_st_result.
           CLEAR t69.
           DATA t70 TYPE REF TO object.
@@ -361,16 +314,12 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
             APPEND t69 TO t2->items.
             t2->save( ).
           ENDDO.
-          DATA t76 TYPE i.
           t2->load( ).
-          t76 = lines( t2->items ).
-          t64 = t76.
+          t64 = lines( t2->items ).
         ENDIF.
       ENDIF.
-      DATA t78 TYPE i.
       DATA(t80) = 1.
-      t78 = t7 + t80.
-      t7 = t78.
+      t7 = t7 + t80.
     ENDDO.
     result = t2.
 
@@ -378,9 +327,7 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
 
   METHOD railroad.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA(t5) = me->list.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO object.
@@ -410,7 +357,6 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       APPEND t12 TO t3->items.
       t3->save( ).
     ENDDO.
-    DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA(t17) = |Railroad.MultipleChoice(0, 'any',|.
     DATA t18 TYPE string.
@@ -418,18 +364,14 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
     t18 = t3->join( p0 = t20 ).
     DATA(t21) = strlen( t17 ).
     t16 = |{ t17 }{ t18 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t16 ).
-    t15 = |{ t16 }{ t22 }|.
-    result = t15.
+    result = |{ t16 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA(t5) = me->list.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO object.
@@ -459,7 +401,6 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
       APPEND t12 TO t3->items.
       t3->save( ).
     ENDDO.
-    DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA(t17) = |per(|.
     DATA t18 TYPE string.
@@ -467,21 +408,16 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
     t18 = t3->join( p0 = t20 ).
     DATA(t21) = strlen( t17 ).
     t16 = |{ t17 }{ t18 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t16 ).
-    t15 = |{ t16 }{ t22 }|.
-    result = t15.
+    result = |{ t16 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -489,18 +425,12 @@ CLASS zcl_lnt_permutation IMPLEMENTATION.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     t4->load( ).
     APPEND t1 TO t4->items.
     t4->save( ).
-    t3 = t4.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 

@@ -15,10 +15,7 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t6) = |DO|.
-    t4 = t1->find_expression_after_token( i_text = t6 ).
-    t3 = t4.
+    t3 = t1->find_expression_after_token( i_text = |DO| ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t7 = t1->find_direct_expressions( i_type_9913 = t9 ).
@@ -135,26 +132,17 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       ENDIF.
       t26 = t27.
       IF t27 = abap_true.
-        DATA(t39) = VALUE abap_bool( ).
-        DATA(t40) = VALUE abap_bool( ).
         DATA t41 TYPE REF TO zcl_lnt_type_utils.
         CLEAR t41.
         DATA t42 TYPE REF TO zcl_lnt_current_scope.
         CLEAR t42.
         t42 = t2->scope.
         t41 = NEW zcl_lnt_type_utils( i_scope = t42 ).
-        DATA t45 TYPE REF TO zcl_lnt_integer_type.
-        CLEAR t45.
         DATA t46 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t46.
-        t45 = zcl_lnt_integer_type=>get_db65( i_input_967e = t46 ).
-        t40 = t41->is_assignable( i_source_75cf = t16 i_target_5f8a = t45 ).
-        t39 = xsdbool( t40 = abap_false ).
-        t26 = t39.
+        t26 = xsdbool( t41->is_assignable( i_source_75cf = t16 i_target_5f8a = zcl_lnt_integer_type=>get_db65( i_input_967e = t46 ) ) = abap_false ).
       ENDIF.
       IF t26 = abap_true.
-        DATA(t48) = VALUE string( ).
-        t48 = |DO TIMES must be numeric|.
         DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t50.
         t50 = t2->issues.
@@ -165,7 +153,7 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
         t54 = t1->get_first_token( ).
         DATA t57 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t57.
-        t52 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t54 i_message_26cb = t48 i_fix = t57 ).
+        t52 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t54 i_message_26cb = |DO TIMES must be numeric| i_fix = t57 ).
         t50->load( ).
         APPEND t52 TO t50->items.
         t50->save( ).

@@ -30,10 +30,9 @@ CLASS zcl_lnt_shape_c5606a32 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `description` p1 = t6 ).
     ENDIF.
-    DATA(t7) = |description|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |description| p1 = t8 ).
     ENDIF.
     me->program_name = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `programName`.
@@ -41,10 +40,9 @@ CLASS zcl_lnt_shape_c5606a32 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `programName` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |programName|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |programName| p1 = t12 ).
     ENDIF.
     me->cinfo = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `cinfo`.
@@ -52,10 +50,9 @@ CLASS zcl_lnt_shape_c5606a32 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `cinfo` p1 = t14 ).
     ENDIF.
-    DATA(t15) = |cinfo|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |cinfo| p1 = t16 ).
     ENDIF.
     me->texts_translations = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `textsTranslations`.
@@ -63,10 +60,9 @@ CLASS zcl_lnt_shape_c5606a32 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `textsTranslations` p1 = t18 ).
     ENDIF.
-    DATA(t19) = |textsTranslations|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |textsTranslations| p1 = t20 ).
     ENDIF.
   ENDMETHOD.
 

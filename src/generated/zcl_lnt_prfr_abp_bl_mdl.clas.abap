@@ -20,17 +20,13 @@ CLASS zcl_lnt_prfr_abp_bl_mdl IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
     t1 = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA t3 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t5) = |XFELD|.
-    t3 = t1->add( p0 = t5 ).
+    t3 = t1->add( p0 = |XFELD| ).
     DATA t6 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t8) = |SAP_BOOL|.
-    t6 = t1->add( p0 = t8 ).
+    t6 = t1->add( p0 = |SAP_BOOL| ).
     DATA t9 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t11) = |BOOLE_D|.
-    t9 = t1->add( p0 = t11 ).
+    t9 = t1->add( p0 = |BOOLE_D| ).
     DATA t12 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-    DATA(t14) = |FLAG|.
-    t12 = t1->add( p0 = t14 ).
+    t12 = t1->add( p0 = |FLAG| ).
     IF zcl_lnt_prfr_abp_bl_mdl=>zlnt_builtin_init_c96b25bbd049 = abap_false.
       zcl_lnt_prfr_abp_bl_mdl=>zlnt_builtin_init_3838d3e910b3( ).
     ENDIF.

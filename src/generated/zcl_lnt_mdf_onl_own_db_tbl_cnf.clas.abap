@@ -28,8 +28,7 @@ CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf IMPLEMENTATION.
       RETURN.
     ENDIF.
     me->zlnt_view_write_s_40cea36e0644( p0 = abap_true ).
-    DATA(t2) = |^[yz]|.
-    me->zlnt_view_write_s_368f1bf82beb( p0 = t2 ).
+    me->zlnt_view_write_s_368f1bf82beb( p0 = |^[yz]| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -47,8 +46,7 @@ CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_8ae9d43d290d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportDynamic` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportDynamic` ) )->as_boolean( ).
     ELSE.
       result = me->report_dynamic.
     ENDIF.
@@ -69,8 +67,7 @@ CLASS zcl_lnt_mdf_onl_own_db_tbl_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_51808c27f6e2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ownTables` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ownTables` ) )->as_string( ).
     ELSE.
       result = me->own_tables.
     ENDIF.

@@ -24,20 +24,13 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = VALUE abap_bool( ).
-    t5 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_icfservice ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_icfservice ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |RenameICFService, not a ICF Service|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |RenameICFService, not a ICF Service|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -65,32 +58,19 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA(t16) = VALUE string( ).
-    DATA(t17) = VALUE string( ).
-    t17 = me->fn_immediate_166522( i_new_name = t3 i_old_name = t2 ).
-    t16 = t17.
+    t16 = me->fn_immediate_166522( i_new_name = t3 i_old_name = t2 ).
     DATA(t20) = VALUE string( ).
-    DATA(t21) = VALUE string( ).
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t26) = VALUE string( ).
     t26 = t2.
-    DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t30 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t31) = |^[^ ]+|.
-    DATA(t32) = ||.
-    CREATE OBJECT t30 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t31 flags = t32.
-    t28 = t30->match( t26 ).
-    t24 = t28.
+    CREATE OBJECT t30 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[^ ]+| flags = ||.
+    t24 = t30->match( t26 ).
     DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t34) = xsdbool( t24 IS INITIAL ).
-    IF t34 = abap_true.
+    IF xsdbool( t24 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t38 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t38 = t24.
-      DATA(t40) = 0.
-      t37 = t38->get( p0 = t40 ).
-      t33 = t37.
+      t33 = t24->get( p0 = 0 ).
     ENDIF.
     t22 = t33.
     DATA(t41) = VALUE string( ).
@@ -103,35 +83,21 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     IF t42 = abap_true.
       t41 = t2.
     ELSE.
-      DATA(t45) = VALUE string( ).
-      t45 = t22->value.
-      t41 = t45.
+      t41 = t22->value.
     ENDIF.
-    t21 = t41.
-    t20 = t21.
+    t20 = t41.
     DATA(t47) = VALUE string( ).
-    DATA(t48) = VALUE string( ).
     DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t51 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA(t53) = VALUE string( ).
     t53 = t3.
-    DATA t55 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t57 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t58) = |^[^ ]+|.
-    DATA(t59) = ||.
-    CREATE OBJECT t57 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t58 flags = t59.
-    t55 = t57->match( t53 ).
-    t51 = t55.
+    CREATE OBJECT t57 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[^ ]+| flags = ||.
+    t51 = t57->match( t53 ).
     DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t61) = xsdbool( t51 IS INITIAL ).
-    IF t61 = abap_true.
+    IF xsdbool( t51 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t64 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t65 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t65 = t51.
-      DATA(t67) = 0.
-      t64 = t65->get( p0 = t67 ).
-      t60 = t64.
+      t60 = t51->get( p0 = 0 ).
     ENDIF.
     t49 = t60.
     DATA(t68) = VALUE string( ).
@@ -144,22 +110,14 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     IF t69 = abap_true.
       t68 = t3.
     ELSE.
-      DATA(t72) = VALUE string( ).
-      t72 = t49->value.
-      t68 = t72.
+      t68 = t49->value.
     ENDIF.
-    t48 = t68.
-    t47 = t48.
+    t47 = t68.
     DATA t74 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t75.
-    t74 = t75.
+    CREATE OBJECT t74.
     DATA t76 TYPE REF TO zcl_lnt_renamer_helper.
-    DATA t77 TYPE REF TO zcl_lnt_renamer_helper.
     DATA(t78) = me->reg.
-    t77 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t78 ).
-    t76 = t77.
-    DATA t79 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t76 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t78 ).
     DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t84 TYPE REF TO zcl_lnt_icfservice.
@@ -168,62 +126,46 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     t84 ?= t86.
     t82 = t76->build_url_file_edits( i_object_19cd = t84 i_old_name = t20 i_new_name = t47 ).
     t81 ?= t82.
-    t79 = t74->concat( p0 = t81 ).
-    t74 = t79.
-    DATA t89 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t74 = t74->concat( p0 = t81 ).
     DATA t91 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t94 TYPE REF TO zcl_lnt_icfservice.
     DATA t96 TYPE REF TO object.
     t96 = t1.
     t94 ?= t96.
-    DATA(t97) = |ICF_NAME|.
     DATA t100 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t92 = t76->build_xml_file_edits( i_object_19cd = t94 i_xml_tag = t97 i_old_name = t20 i_new_name = t47 i_use_lower_case = t100 ).
+    t92 = t76->build_xml_file_edits( i_object_19cd = t94 i_xml_tag = |ICF_NAME| i_old_name = t20 i_new_name = t47 i_use_lower_case = t100 ).
     t91 ?= t92.
-    t89 = t74->concat( p0 = t91 ).
-    t74 = t89.
-    DATA t101 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t74 = t74->concat( p0 = t91 ).
     DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t104 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t106 TYPE REF TO zcl_lnt_icfservice.
     DATA t108 TYPE REF TO object.
     t108 = t1.
     t106 ?= t108.
-    DATA(t109) = |ORIG_NAME|.
-    DATA t112 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA(t115) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t115->has = abap_true.
     t115->value = abap_true.
-    t112 = t115.
-    t104 = t76->build_xml_file_edits( i_object_19cd = t106 i_xml_tag = t109 i_old_name = t20 i_new_name = t47 i_use_lower_case = t112 ).
+    t104 = t76->build_xml_file_edits( i_object_19cd = t106 i_xml_tag = |ORIG_NAME| i_old_name = t20 i_new_name = t47 i_use_lower_case = t115 ).
     t103 ?= t104.
-    t101 = t74->concat( p0 = t103 ).
-    t74 = t101.
-    DATA t117 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t119 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t74 = t74->concat( p0 = t103 ).
     DATA t121 TYPE REF TO zcl_lnt_icfservice.
     DATA t123 TYPE REF TO object.
     t123 = t1.
     t121 ?= t123.
-    t119 = t76->rename_files( i_obj_1ed0 = t121 i_old_name = t2 i_name = t16 ).
-    t117 = t74->concat( p0 = t119 ).
-    t74 = t117.
+    t74 = t74->concat( p0 = t76->rename_files( i_obj_1ed0 = t121 i_old_name = t2 i_name = t16 ) ).
     DATA t126 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t127 = t74.
     DATA t132 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
     DATA t134 TYPE REF TO zlnt_runtime_map__617ff131b0f3.
-    t126 = NEW zcl_lnt_shape_36bc2e57( i_changes = t132 i_document_changes = t127 i_change_annotations = t134 ).
+    t126 = NEW zcl_lnt_shape_36bc2e57( i_changes = t132 i_document_changes = t74 i_change_annotations = t134 ).
     CREATE OBJECT t126->zlnt_view_ownkeys_b0e8086400eb.
     t126->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t126->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `documentChanges` p1 = t136 ).
     CREATE OBJECT t126->zlnt_json_ownkeys_70e5fd461788.
     t126->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t137) = |documentChanges|.
     DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t126->zlnt_json_ownkeys_70e5fd461788->put( p0 = t137 p1 = t138 ).
+    t126->zlnt_json_ownkeys_70e5fd461788->put( p0 = |documentChanges| p1 = t138 ).
     result = t126.
 
   ENDMETHOD.
@@ -246,29 +188,20 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     DATA(t1) = i_new_name.
     DATA(t2) = i_old_name.
     DATA t4 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t5) = ` \{[0-9A-Fa-f]{16,32}\}`.
-    DATA(t6) = ||.
-    CREATE OBJECT t4 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
+    CREATE OBJECT t4 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = ` \{[0-9A-Fa-f]{16,32}\}` flags = ||.
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t11 = t4->match( t2 ).
-    t7 = t11.
-    DATA t14 TYPE abap_bool.
-    t14 = xsdbool( t7 IS BOUND ).
-    IF t14 = abap_true.
+    t7 = t4->match( t2 ).
+    IF xsdbool( t7 IS BOUND ) = abap_true.
       DATA(t16) = VALUE f( ).
       DATA(t17) = VALUE f( ).
-      DATA(t18) = VALUE i( ).
       DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       t19 = t7.
       IF t19->match_has_index <> abap_true.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
-      t18 = t19->match_index.
-      t17 = t18.
+      t17 = t19->match_index.
       t16 = t17.
       DATA(t21) = VALUE string( ).
-      DATA(t22) = VALUE string( ).
       DATA t23 TYPE string.
       t23 = t2.
       DATA(t25) = VALUE string( ).
@@ -292,10 +225,8 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
       ENDIF.
       t32 = t29 - t27.
       t25 = t23+t27(t32).
-      t22 = t25.
-      t21 = t22.
+      t21 = t25.
       DATA(t33) = VALUE string( ).
-      DATA(t34) = VALUE abap_bool( ).
       DATA(t35) = VALUE i( ).
       DATA(t38) = strlen( t1 ).
       IF t21 IS INITIAL.
@@ -306,15 +237,11 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
           t35 = -1.
         ENDIF.
       ENDIF.
-      DATA(t39) = 0.
-      t34 = xsdbool( t35 >= t39 ).
-      IF t34 = abap_true.
+      IF xsdbool( t35 >= 0 ) = abap_true.
         t33 = t1.
       ELSE.
-        DATA t41 TYPE string.
         DATA(t44) = strlen( t1 ).
-        t41 = |{ t1 }{ t21 }|.
-        t33 = t41.
+        t33 = |{ t1 }{ t21 }|.
       ENDIF.
       result = t33.
       RETURN.
@@ -332,12 +259,8 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
       ENDIF.
     ENDIF.
     t45 = t46.
-    DATA t50 TYPE abap_bool.
-    DATA(t52) = -1.
-    t50 = xsdbool( t45 > t52 ).
-    IF t50 = abap_true.
+    IF xsdbool( t45 > -1 ) = abap_true.
       DATA(t53) = VALUE string( ).
-      DATA(t54) = VALUE string( ).
       DATA t55 TYPE string.
       t55 = t2.
       DATA(t57) = VALUE string( ).
@@ -354,10 +277,8 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
       ENDIF.
       t63 = t60 - t59.
       t57 = t55+t59(t63).
-      t54 = t57.
-      t53 = t54.
+      t53 = t57.
       DATA(t64) = VALUE string( ).
-      DATA(t65) = VALUE abap_bool( ).
       DATA(t66) = VALUE i( ).
       DATA(t69) = strlen( t1 ).
       IF t53 IS INITIAL.
@@ -368,15 +289,11 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
           t66 = -1.
         ENDIF.
       ENDIF.
-      DATA(t70) = 0.
-      t65 = xsdbool( t66 >= t70 ).
-      IF t65 = abap_true.
+      IF xsdbool( t66 >= 0 ) = abap_true.
         t64 = t1.
       ELSE.
-        DATA t72 TYPE string.
         DATA(t75) = strlen( t1 ).
-        t72 = |{ t1 }{ t53 }|.
-        t64 = t72.
+        t64 = |{ t1 }{ t53 }|.
       ENDIF.
       result = t64.
       RETURN.

@@ -147,49 +147,27 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
         t52 ?= t53.
       ENDIF.
       DATA t57 TYPE REF TO zcl_lnt_expression_node.
-      DATA t58 TYPE REF TO zcl_lnt_expression_node.
       DATA(t60) = zlnt_runtime_desc_78196487750d=>zlnt_member_d299_0ba2c1ef340d.
-      t58 = t52->find_direct_expression( i_type_9913 = t60 ).
-      t57 = t58.
-      DATA(t61) = VALUE abap_bool( ).
+      t57 = t52->find_direct_expression( i_type_9913 = t60 ).
       DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t64.
-      DATA(t66) = VALUE abap_bool( ).
-      DATA(t67) = xsdbool( t57 IS INITIAL ).
-      t66 = xsdbool( t67 = abap_false ).
-      t61 = t66.
-      IF t61 = abap_true.
-        DATA t69 TYPE REF TO zcl_lnt_expression_node.
-        t69 = t57.
-        zcl_lnt_sy_sql_in=>run_syntax( i_node = t69 i_input_967e = t2 ).
+      IF xsdbool( xsdbool( t57 IS INITIAL ) = abap_false ) = abap_true.
+        zcl_lnt_sy_sql_in=>run_syntax( i_node = t57 i_input_967e = t2 ).
       ENDIF.
     ENDDO.
     DATA t72 TYPE REF TO zcl_lnt_expression_node.
-    DATA t73 TYPE REF TO zcl_lnt_expression_node.
     DATA(t75) = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
-    t73 = t1->find_first_expression( i_type_9913 = t75 ).
-    t72 = t73.
-    DATA(t76) = VALUE abap_bool( ).
+    t72 = t1->find_first_expression( i_type_9913 = t75 ).
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t81) = VALUE abap_bool( ).
-    DATA(t82) = xsdbool( t72 IS INITIAL ).
-    t81 = xsdbool( t82 = abap_false ).
-    t76 = t81.
-    IF t76 = abap_true.
+    IF xsdbool( xsdbool( t72 IS INITIAL ) = abap_false ) = abap_true.
       DATA t85 TYPE REF TO zif_lnt_union_c74a232f.
-      DATA t86 TYPE REF TO zcl_lnt_expression_node.
-      t86 = t72.
-      t85 = zcl_lnt_sy_database_table=>run_syntax( i_node = t86 i_input_967e = t2 ).
+      t85 = zcl_lnt_sy_database_table=>run_syntax( i_node = t72 i_input_967e = t2 ).
       DATA t89 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t91 TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
-      DATA t92 TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
-      CREATE OBJECT t92.
-      t91 = t92.
+      CREATE OBJECT t91.
       DATA t93 TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
       DATA t94 TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
-      DATA t95 TYPE REF TO zlnt_runtime_arra_a3200b8dc4ad.
-      CREATE OBJECT t95.
-      t94 = t95.
+      CREATE OBJECT t94.
       DATA t96 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA(t98) = zlnt_runtime_desc_78196487750d=>zlnt_member_d301_61c04e5b3781.
       t96 = t1->find_all_expressions( i_type_9913 = t98 ).
@@ -220,20 +198,15 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
         DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t106.
         DATA t108 TYPE REF TO zcl_lnt_expression_node.
-        DATA t109 TYPE REF TO zcl_lnt_expression_node.
         DATA(t111) = zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26.
-        t109 = t99->find_direct_expression( i_type_9913 = t111 ).
-        t108 = t109.
+        t108 = t99->find_direct_expression( i_type_9913 = t111 ).
         DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t112.
-        DATA(t113) = xsdbool( t108 IS INITIAL ).
-        IF t113 = abap_true.
+        IF xsdbool( t108 IS INITIAL ) = abap_true.
           CLEAR t112.
         ELSE.
           DATA t116 TYPE string.
-          DATA t117 TYPE REF TO zcl_lnt_expression_node.
-          t117 = t108.
-          t116 = t117->concat_tokens( ).
+          t116 = t108->concat_tokens( ).
           DATA(t119) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t119->has = abap_true.
           t119->value = t116.
@@ -282,21 +255,17 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
         CLEAR t130.
         READ TABLE t93->items INDEX t131 + 1 INTO t130.
         t131 = t131 + 1.
-        DATA(t132) = VALUE abap_bool( ).
         DATA t133 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t133 = t130.
         DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t135.
-        DATA(t137) = VALUE abap_bool( ).
         DATA(t138) = VALUE abap_bool( ).
         IF t133 IS INITIAL.
           t138 = abap_true.
         ELSEIF t133->has = abap_false.
           t138 = abap_true.
         ENDIF.
-        t137 = xsdbool( t138 = abap_false ).
-        t132 = t137.
-        IF t132 = abap_true.
+        IF xsdbool( t138 = abap_false ) = abap_true.
           t91->load( ).
           APPEND t130 TO t91->items.
           t91->save( ).
@@ -343,9 +312,7 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
         DATA t154 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t154.
         DATA t155 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t156 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t156.
-        t155 = t156.
+        CREATE OBJECT t155.
         DATA t157 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t159) = zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26.
         t157 = t148->find_all_expressions( i_type_9913 = t159 ).
@@ -406,23 +373,15 @@ CLASS zcl_lnt_sy_delete_database IMPLEMENTATION.
           APPEND t171 TO t89->items.
           t89->save( ).
         ENDDO.
-        DATA t175 TYPE i.
         t89->load( ).
-        t175 = lines( t89->items ).
-        t153 = t175.
+        t153 = lines( t89->items ).
       ENDDO.
-      DATA t178 TYPE REF TO zlnt_runtime_arra_b72089862d0f.
       DATA t179 TYPE REF TO zlnt_runtime_arra_b72089862d0f.
-      DATA t180 TYPE REF TO zlnt_runtime_arra_b72089862d0f.
-      CREATE OBJECT t180.
-      t179 = t180.
+      CREATE OBJECT t179.
       t179->load( ).
       APPEND t85 TO t179->items.
       t179->save( ).
-      t178 = t179.
-      DATA t185 TYPE REF TO zcl_lnt_abstract_token.
-      t185 = t1->get_first_token( ).
-      zcl_lnt_chck_dtbs_flds_mdl=>check_database_fields( i_fields_62af = t89 i_db_sources = t178 i_input_967e = t2 i_token = t185 ).
+      zcl_lnt_chck_dtbs_flds_mdl=>check_database_fields( i_fields_62af = t89 i_db_sources = t179 i_input_967e = t2 i_token = t1->get_first_token( ) ).
     ENDIF.
   ENDMETHOD.
 

@@ -14,18 +14,12 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t3 TYPE REF TO zcl_lnt_abap_release.
-    DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    DATA t5 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = |v751|.
-    t4 = t5->get( p0 = t6 ).
-    t3 = t4.
+    t3 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v751| ).
     IF t3 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t8 TYPE REF TO object.
@@ -52,10 +46,9 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |HIERARCHY|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |HIERARCHY|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d289_f424b1178837.
     IF t16 IS BOUND.
@@ -64,18 +57,15 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
       t15->cval = t16.
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t18.
-    t17 = t18.
+    CREATE OBJECT t17.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t21 TYPE REF TO zif_lnt_statement_runnable.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t23 TYPE REF TO zif_lnt_statement_runnable.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t26) = |WITH|.
     CREATE OBJECT t25.
     t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t25->sval = t26.
+    t25->sval = |WITH|.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t29) = zlnt_runtime_desc_78196487750d=>zlnt_member_d306_9aee0313349c.
     IF t29 IS BOUND.
@@ -85,9 +75,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t31.
-    DATA t32 TYPE REF TO zif_lnt_statement_runnable.
-    t32 = zcl_lnt_st_combi_module=>seq( i_first = t25 i_second = t28 i_rest = t31 ).
-    t23 = t32.
+    t23 = zcl_lnt_st_combi_module=>seq( i_first = t25 i_second = t28 i_rest = t31 ).
     IF t23 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t37 TYPE REF TO object.
@@ -138,9 +126,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t17->load( ).
     APPEND t20 TO t17->items.
     t17->save( ).
-    DATA t40 TYPE REF TO zif_lnt_statement_runnable.
-    t40 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t17 ).
-    t10 = t40.
+    t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t17 ).
     IF t10 IS BOUND.
       DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t45 TYPE REF TO object.
@@ -165,8 +151,7 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t46 TYPE REF TO zcl_lnt_iver_options.
-    t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t46 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t46 ).
 
   ENDMETHOD.
 

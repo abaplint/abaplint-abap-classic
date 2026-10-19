@@ -37,10 +37,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `description` p1 = t9 ).
     ENDIF.
-    DATA(t10) = |description|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |description| p1 = t11 ).
     ENDIF.
     me->datatype_2b0f = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `datatype`.
@@ -48,10 +47,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `datatype` p1 = t13 ).
     ENDIF.
-    DATA(t14) = |datatype|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |datatype| p1 = t15 ).
     ENDIF.
     me->length = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `length`.
@@ -59,10 +57,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `length` p1 = t17 ).
     ENDIF.
-    DATA(t18) = |length|.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t18 p1 = t19 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |length| p1 = t19 ).
     ENDIF.
     me->decimals_29bf = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `decimals`.
@@ -70,10 +67,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `decimals` p1 = t21 ).
     ENDIF.
-    DATA(t22) = |decimals|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |decimals| p1 = t23 ).
     ENDIF.
     me->conversion_exit = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conversionExit`.
@@ -81,10 +77,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `conversionExit` p1 = t25 ).
     ENDIF.
-    DATA(t26) = |conversionExit|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |conversionExit| p1 = t27 ).
     ENDIF.
     me->values = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `values`.
@@ -92,10 +87,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `values` p1 = t29 ).
     ENDIF.
-    DATA(t30) = |values|.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t30 p1 = t31 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |values| p1 = t31 ).
     ENDIF.
     me->values_translations = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `valuesTranslations`.
@@ -103,10 +97,9 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `valuesTranslations` p1 = t33 ).
     ENDIF.
-    DATA(t34) = |valuesTranslations|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |valuesTranslations| p1 = t35 ).
     ENDIF.
   ENDMETHOD.
 

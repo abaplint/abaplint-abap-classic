@@ -36,10 +36,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `counter` p1 = t9 ).
     ENDIF.
-    DATA(t10) = |counter|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |counter| p1 = t11 ).
     ENDIF.
     me->mandatory = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `mandatory`.
@@ -47,10 +46,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `mandatory` p1 = t13 ).
     ENDIF.
-    DATA(t14) = |mandatory|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |mandatory| p1 = t15 ).
     ENDIF.
     me->optional = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `optional`.
@@ -58,10 +56,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `optional` p1 = t17 ).
     ENDIF.
-    DATA(t18) = |optional|.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t18 p1 = t19 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |optional| p1 = t19 ).
     ENDIF.
     me->release_3664 = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `release`.
@@ -69,10 +66,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `release` p1 = t21 ).
     ENDIF.
-    DATA(t22) = |release|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |release| p1 = t23 ).
     ENDIF.
     me->predicate = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `predicate`.
@@ -80,10 +76,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `predicate` p1 = t25 ).
     ENDIF.
-    DATA(t26) = |predicate|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |predicate| p1 = t27 ).
     ENDIF.
     me->return_5392 = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `return`.
@@ -91,10 +86,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `return` p1 = t29 ).
     ENDIF.
-    DATA(t30) = |return|.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t30 p1 = t31 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |return| p1 = t31 ).
     ENDIF.
     me->cache = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `cache`.
@@ -102,10 +96,9 @@ CLASS zcl_lnt_ibuiltin_method IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `cache` p1 = t33 ).
     ENDIF.
-    DATA(t34) = |cache|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |cache| p1 = t35 ).
     ENDIF.
   ENDMETHOD.
 

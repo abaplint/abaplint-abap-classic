@@ -14,74 +14,44 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA(t3) = i_target_type.
-    DATA(t4) = VALUE abap_bool( ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t4 = xsdbool( t1 IS INITIAL ).
-    IF t4 = abap_true.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
       CLEAR result.
       RETURN.
     ENDIF.
     DATA t12 TYPE REF TO zcl_lnt_expression_node.
-    DATA t13 TYPE REF TO zcl_lnt_expression_node.
-    DATA t14 TYPE REF TO zcl_lnt_expression_node.
-    t14 = t1.
-    DATA(t16) = |THEN|.
-    t13 = t14->find_expression_after_token( i_text = t16 ).
-    t12 = t13.
-    DATA(t17) = VALUE abap_bool( ).
-    DATA(t18) = VALUE abap_bool( ).
+    t12 = t1->find_expression_after_token( i_text = |THEN| ).
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
     DATA t20 TYPE REF TO zcl_lnt_expression_node.
     t20 = t12.
     DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t23) = xsdbool( t20 IS INITIAL ).
-    IF t23 = abap_true.
+    IF xsdbool( t20 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-      DATA t27 TYPE REF TO zcl_lnt_expression_node.
-      t27 = t20.
-      t26 = t27->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-      t22 = t26.
+      t22 = t20->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
     ENDIF.
     t19 = t22.
-    t18 = xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_st_source ).
-    t17 = xsdbool( t18 = abap_false ).
-    IF t17 = abap_true.
-      DATA(t29) = VALUE string( ).
-      t29 = |SwitchBody, unexpected|.
+    IF xsdbool( xsdbool( t19 IS BOUND AND t19 IS INSTANCE OF zcl_lnt_st_source ) = abap_false ) = abap_true.
       DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t31 = t2->issues.
       DATA t33 TYPE REF TO zcl_lnt_issue.
-      DATA t35 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t36 TYPE REF TO zcl_lnt_expression_node.
-      t36 = t1.
-      t35 = t36->get_first_token( ).
       DATA t39 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t33 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t35 i_message_26cb = t29 i_fix = t39 ).
+      t33 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |SwitchBody, unexpected| i_fix = t39 ).
       t31->load( ).
       APPEND t33 TO t31->items.
       t31->save( ).
-      DATA t40 TYPE REF TO zcl_lnt_void_type.
-      DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t43) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
       DATA(t44) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t44->has = abap_true.
       t44->value = t43.
-      t41 = t44.
       DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t40 = zcl_lnt_void_type=>get_db65( i_voided = t41 i_qualified_name = t46 ).
-      result = t40.
+      result = zcl_lnt_void_type=>get_db65( i_voided = t44 i_qualified_name = t46 ).
       RETURN.
     ENDIF.
     DATA t47 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t48 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t49 TYPE REF TO zcl_lnt_expression_node.
-    t49 = t12.
     DATA t56 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA t57 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     DATA t58 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t48 = zcl_lnt_sy_source=>run_syntax( i_node = t49 i_input_967e = t2 i_target_type = t3 i_write_reference = t56 i_allow_generic_deference = t57 i_read_reference = t58 ).
-    t47 = t48.
+    t47 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t3 i_write_reference = t56 i_allow_generic_deference = t57 i_read_reference = t58 ).
     DATA t59 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t60 TYPE REF TO zcl_lnt_expression_node.
     t60 = t1.
@@ -192,8 +162,7 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       t85 = t3.
       DATA t87 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t87.
-      DATA(t88) = xsdbool( t85 IS INITIAL ).
-      IF t88 = abap_true.
+      IF xsdbool( t85 IS INITIAL ) = abap_true.
         t87 = t47.
       ELSE.
         t87 = t85.

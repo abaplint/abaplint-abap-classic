@@ -85,34 +85,25 @@ CLASS zcl_lnt_sy_commit_entities IMPLEMENTATION.
       t31 = t24.
       DATA t33 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t33.
-      DATA(t34) = xsdbool( t31 IS INITIAL ).
-      IF t34 = abap_true.
+      IF xsdbool( t31 IS INITIAL ) = abap_true.
         CLEAR t33.
       ELSE.
-        DATA t37 TYPE REF TO zcl_lnt_expression_node.
         DATA(t39) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
-        t37 = t31->find_direct_expression( i_type_9913 = t39 ).
-        t33 = t37.
+        t33 = t31->find_direct_expression( i_type_9913 = t39 ).
       ENDIF.
       t29 = t33.
-      DATA t40 TYPE abap_bool.
-      t40 = xsdbool( t29 IS BOUND ).
-      IF t40 = abap_true.
+      IF xsdbool( t29 IS BOUND ) = abap_true.
         DATA t42 TYPE REF TO zcl_lnt_expression_node.
         t42 = t29.
-        DATA t45 TYPE REF TO zcl_lnt_void_type.
-        CLEAR t45.
         DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t46.
-        DATA(t48) = |CommitEntities|.
         DATA(t49) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t49->has = abap_true.
-        t49->value = t48.
+        t49->value = |CommitEntities|.
         t46 = t49.
         DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t51.
-        t45 = zcl_lnt_void_type=>get_db65( i_voided = t46 i_qualified_name = t51 ).
-        zcl_lnt_sy_inline_data=>run_syntax( i_node = t42 i_input_967e = t2 i_type_9913 = t45 ).
+        zcl_lnt_sy_inline_data=>run_syntax( i_node = t42 i_input_967e = t2 i_type_9913 = zcl_lnt_void_type=>get_db65( i_voided = t46 i_qualified_name = t51 ) ).
       ELSE.
         DATA t52 TYPE REF TO zcl_lnt_abstract_type.
         t52 = zcl_lnt_sy_target=>run_syntax( i_node = t24 i_input_967e = t2 ).

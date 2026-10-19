@@ -55,12 +55,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA t2 TYPE string.
-    DATA t3 TYPE REF TO zcl_lnt_registry.
     DATA(t4) = i_config.
-    t3 = me->parse( i_config = t4 ).
-    t2 = me->report_0493( i_reg_f149 = t3 ).
-    result = t2.
+    result = me->report_0493( i_reg_f149 = me->parse( i_config = t4 ) ).
 
   ENDMETHOD.
 
@@ -73,12 +69,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
   METHOD parse.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA t2 TYPE REF TO zcl_lnt_registry.
-    DATA t3 TYPE REF TO zcl_lnt_registry.
-    DATA t4 TYPE REF TO zcl_lnt_config.
     DATA(t5) = i_config.
-    t4 = NEW zcl_lnt_config( i_json = t5 ).
-    t3 = NEW zcl_lnt_registry( i_conf = t4 ).
-    t2 = t3.
+    t2 = NEW zcl_lnt_registry( i_conf = NEW zcl_lnt_config( i_json = t5 ) ).
     DATA t6 TYPE REF TO zif_lnt_registry.
     DATA(t8) = me->files.
     t6 = t2->add_files_179c( i_files = t8 ).
@@ -86,43 +78,27 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     DATA(t11) = me->dependencies.
     t9 = t2->add_dependencies( i_files = t11 ).
     DATA t12 TYPE REF TO zif_lnt_configuration.
-    DATA t16 TYPE REF TO zif_lnt_configuration.
-    t16 = t2->conf.
-    t12 = t16.
+    t12 = t2->conf.
     DATA(t18) = VALUE f( ).
-    DATA(t19) = CONV f( 0 ).
-    t18 = t19.
+    t18 = CONV f( 0 ).
     DATA(t20) = VALUE f( ).
-    DATA(t21) = CONV f( 0 ).
-    t20 = t21.
+    t20 = CONV f( 0 ).
     DATA(t22) = VALUE f( ).
-    DATA(t23) = CONV f( 0 ).
-    t22 = t23.
+    t22 = CONV f( 0 ).
     DATA(t24) = VALUE f( ).
-    DATA(t25) = VALUE f( ).
     DATA(t26) = 0.
-    t25 = zlnt_runtime_tele_970d5104e5f4=>now( ).
-    t24 = t25.
+    t24 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     DATA t27 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t28 TYPE REF TO zif_lnt_generator_8f73cd1c.
-    DATA t29 TYPE REF TO zif_lnt_generator_8f73cd1c.
     DATA t32 TYPE REF TO zif_lnt_generator_8f73cd1c.
     DATA t33 TYPE REF TO zcl_lnt_generator_a921479b.
     t33 = NEW zcl_lnt_generator_a921479b( i_outer = t2 ).
     t32 ?= t33.
-    t29 = t32.
-    t28 = t29->iterate( ).
-    t27 = t28.
+    t27 = t32->iterate( ).
     DO.
       DATA t36 TYPE REF TO zcl_lnt_generator_17955b8b.
       CLEAR t36.
-      DATA t37 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t37.
-      t37 = t27->next( ).
-      t36 = t37.
-      DATA(t39) = VALUE abap_bool( ).
-      t39 = t36->done.
-      IF t39 = abap_true.
+      t36 = t27->next( ).
+      IF t36->done = abap_true.
         EXIT.
       ENDIF.
       DATA t43 TYPE REF TO zif_lnt_object.
@@ -137,207 +113,127 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t50 TYPE REF TO cx_root.
       CLEAR t50.
       TRY.
-          DATA t51 TYPE REF TO zcl_lnt_iparse_result.
-          CLEAR t51.
           DATA t53 TYPE REF TO zcl_lnt_abap_release.
           CLEAR t53.
-          DATA t55 TYPE REF TO zcl_lnt_abap_release.
-          CLEAR t55.
-          t55 = t12->get_release( ).
-          t53 = t55.
+          t53 = t12->get_release( ).
           DATA t58 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t58.
-          DATA t59 TYPE REF TO zcl_lnt_isyntax_settings.
-          CLEAR t59.
-          t59 = t12->get_syntax_setttings( ).
-          t58 = t59->zlnt_view_read_sr_94cd949ccfb3( ).
-          DATA t62 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t62.
+          t58 = t12->get_syntax_setttings( )->zlnt_view_read_sr_94cd949ccfb3( ).
           DATA(t64) = VALUE string( ).
           t64 = t12->get_language_version( ).
           DATA(t66) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t66->has = abap_true.
           t66->value = t64.
-          t62 = t66.
-          t51 = t43->parse( i_release_7928 = t53 i_global_macros_5535 = t58 i_reg_f149 = t2 i_language_version_0e1d = t62 ).
-          t47 = t51.
+          t47 = t43->parse( i_release_7928 = t53 i_global_macros_5535 = t58 i_reg_f149 = t2 i_language_version_0e1d = t66 ).
           t48 = abap_true.
         CATCH cx_root INTO t50.
-          DATA(t69) = VALUE abap_bool( ).
-          t69 = xsdbool( t48 = abap_false ).
-          IF t69 = abap_true.
+          IF xsdbool( t48 = abap_false ) = abap_true.
             t27->close( ).
           ENDIF.
           RAISE EXCEPTION t50.
       ENDTRY.
-      DATA(t72) = VALUE abap_bool( ).
-      t72 = xsdbool( t48 = abap_false ).
-      IF t72 = abap_true.
+      IF xsdbool( t48 = abap_false ) = abap_true.
         t27->close( ).
       ENDIF.
       t45 = t47.
-      DATA(t76) = VALUE abap_bool( ).
       DATA(t77) = VALUE abap_bool( ).
       DATA(t78) = VALUE abap_bool( ).
       t78 = abap_false.
       DATA t80 TYPE REF TO cx_root.
       CLEAR t80.
       TRY.
-          DATA(t81) = VALUE abap_bool( ).
           DATA t83 TYPE REF TO zcl_lnt_shape_8fc6df03.
           CLEAR t83.
           t83 = t45->runtime_extra.
           DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t85.
           CLEAR t85.
-          DATA(t87) = VALUE abap_bool( ).
-          DATA(t88) = xsdbool( t83 IS INITIAL ).
-          t87 = xsdbool( t88 = abap_false ).
-          t81 = t87.
-          t77 = t81.
+          t77 = xsdbool( xsdbool( t83 IS INITIAL ) = abap_false ).
           t78 = abap_true.
         CATCH cx_root INTO t80.
-          DATA(t91) = VALUE abap_bool( ).
-          t91 = xsdbool( t78 = abap_false ).
-          IF t91 = abap_true.
+          IF xsdbool( t78 = abap_false ) = abap_true.
             t27->close( ).
           ENDIF.
           RAISE EXCEPTION t80.
       ENDTRY.
-      DATA(t94) = VALUE abap_bool( ).
-      t94 = xsdbool( t78 = abap_false ).
-      IF t94 = abap_true.
+      IF xsdbool( t78 = abap_false ) = abap_true.
         t27->close( ).
       ENDIF.
-      t76 = t77.
-      IF t76 = abap_true.
-        DATA(t98) = VALUE f( ).
+      IF t77 = abap_true.
         DATA(t99) = VALUE f( ).
         DATA(t100) = VALUE abap_bool( ).
         t100 = abap_false.
         DATA t102 TYPE REF TO cx_root.
         CLEAR t102.
         TRY.
-            DATA(t103) = VALUE f( ).
             DATA(t105) = VALUE f( ).
-            DATA t106 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t106.
-            DATA t107 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t107.
-            t107 = t45->runtime_extra.
-            t106 = t107.
-            t105 = t106->lexing.
-            t103 = t18 + t105.
-            t99 = t103.
+            t105 = t45->runtime_extra->lexing.
+            t99 = t18 + t105.
             t100 = abap_true.
           CATCH cx_root INTO t102.
-            DATA(t110) = VALUE abap_bool( ).
-            t110 = xsdbool( t100 = abap_false ).
-            IF t110 = abap_true.
+            IF xsdbool( t100 = abap_false ) = abap_true.
               t27->close( ).
             ENDIF.
             RAISE EXCEPTION t102.
         ENDTRY.
-        DATA(t113) = VALUE abap_bool( ).
-        t113 = xsdbool( t100 = abap_false ).
-        IF t113 = abap_true.
+        IF xsdbool( t100 = abap_false ) = abap_true.
           t27->close( ).
         ENDIF.
-        t98 = t99.
-        t18 = t98.
-        DATA(t117) = VALUE f( ).
+        t18 = t99.
         DATA(t118) = VALUE f( ).
         DATA(t119) = VALUE abap_bool( ).
         t119 = abap_false.
         DATA t121 TYPE REF TO cx_root.
         CLEAR t121.
         TRY.
-            DATA(t122) = VALUE f( ).
             DATA(t124) = VALUE f( ).
-            DATA t125 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t125.
-            DATA t126 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t126.
-            t126 = t45->runtime_extra.
-            t125 = t126.
-            t124 = t125->statements.
-            t122 = t20 + t124.
-            t118 = t122.
+            t124 = t45->runtime_extra->statements.
+            t118 = t20 + t124.
             t119 = abap_true.
           CATCH cx_root INTO t121.
-            DATA(t129) = VALUE abap_bool( ).
-            t129 = xsdbool( t119 = abap_false ).
-            IF t129 = abap_true.
+            IF xsdbool( t119 = abap_false ) = abap_true.
               t27->close( ).
             ENDIF.
             RAISE EXCEPTION t121.
         ENDTRY.
-        DATA(t132) = VALUE abap_bool( ).
-        t132 = xsdbool( t119 = abap_false ).
-        IF t132 = abap_true.
+        IF xsdbool( t119 = abap_false ) = abap_true.
           t27->close( ).
         ENDIF.
-        t117 = t118.
-        t20 = t117.
-        DATA(t136) = VALUE f( ).
+        t20 = t118.
         DATA(t137) = VALUE f( ).
         DATA(t138) = VALUE abap_bool( ).
         t138 = abap_false.
         DATA t140 TYPE REF TO cx_root.
         CLEAR t140.
         TRY.
-            DATA(t141) = VALUE f( ).
             DATA(t143) = VALUE f( ).
-            DATA t144 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t144.
-            DATA t145 TYPE REF TO zcl_lnt_shape_8fc6df03.
-            CLEAR t145.
-            t145 = t45->runtime_extra.
-            t144 = t145.
-            t143 = t144->structure.
-            t141 = t22 + t143.
-            t137 = t141.
+            t143 = t45->runtime_extra->structure.
+            t137 = t22 + t143.
             t138 = abap_true.
           CATCH cx_root INTO t140.
-            DATA(t148) = VALUE abap_bool( ).
-            t148 = xsdbool( t138 = abap_false ).
-            IF t148 = abap_true.
+            IF xsdbool( t138 = abap_false ) = abap_true.
               t27->close( ).
             ENDIF.
             RAISE EXCEPTION t140.
         ENDTRY.
-        DATA(t151) = VALUE abap_bool( ).
-        t151 = xsdbool( t138 = abap_false ).
-        IF t151 = abap_true.
+        IF xsdbool( t138 = abap_false ) = abap_true.
           t27->close( ).
         ENDIF.
-        t136 = t137.
-        t22 = t136.
+        t22 = t137.
       ENDIF.
     ENDDO.
     DATA(t155) = VALUE f( ).
-    DATA(t156) = VALUE f( ).
     DATA(t157) = 0.
-    t156 = zlnt_runtime_tele_970d5104e5f4=>now( ).
-    t155 = t156.
-    DATA t158 TYPE REF TO zcl_lnt_cross_include_macros.
-    t158 = NEW zcl_lnt_cross_include_macros( i_reg_f149 = t2 ).
-    t158->run( ).
+    t155 = zlnt_runtime_tele_970d5104e5f4=>now( ).
+    NEW zcl_lnt_cross_include_macros( i_reg_f149 = t2 )->run( ).
     DATA(t160) = VALUE f( ).
-    DATA(t161) = VALUE f( ).
     DATA(t162) = 0.
-    t161 = zlnt_runtime_tele_970d5104e5f4=>now( ).
-    t160 = t161.
-    DATA t163 TYPE REF TO zcl_lnt_fnd_glbl_dfntns.
-    t163 = NEW zcl_lnt_fnd_glbl_dfntns( i_reg_f149 = t2 ).
+    t160 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     DATA t165 TYPE REF TO zif_lnt_progress.
-    t163->run( i_progress = t165 ).
+    NEW zcl_lnt_fnd_glbl_dfntns( i_reg_f149 = t2 )->run( i_progress = t165 ).
     DATA(t166) = VALUE f( ).
-    DATA(t167) = VALUE f( ).
     DATA(t168) = 0.
-    t167 = zlnt_runtime_tele_970d5104e5f4=>now( ).
-    t166 = t167.
-    DATA(t169) = VALUE string( ).
+    t166 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     DATA(t170) = VALUE string( ).
     DATA(t171) = VALUE string( ).
     DATA(t172) = VALUE string( ).
@@ -358,9 +254,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t182 = |{ t184 }|.
     DATA(t185) = strlen( t181 ).
     t180 = |{ t181 }{ t182 }|.
-    DATA(t186) = | statements=|.
     DATA(t187) = strlen( t180 ).
-    t179 = |{ t180 }{ t186 }|.
+    t179 = |{ t180 }{ | statements=| }|.
     DATA(t188) = VALUE string( ).
     IF t20 <> trunc( t20 ) OR t20 > range_safe_integer OR t20 < 0 - range_safe_integer.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -369,9 +264,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t188 = |{ t190 }|.
     DATA(t191) = strlen( t179 ).
     t178 = |{ t179 }{ t188 }|.
-    DATA(t192) = | structures=|.
     DATA(t193) = strlen( t178 ).
-    t177 = |{ t178 }{ t192 }|.
+    t177 = |{ t178 }{ | structures=| }|.
     DATA(t194) = VALUE string( ).
     IF t22 <> trunc( t22 ) OR t22 > range_safe_integer OR t22 < 0 - range_safe_integer.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -380,9 +274,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t194 = |{ t196 }|.
     DATA(t197) = strlen( t177 ).
     t176 = |{ t177 }{ t194 }|.
-    DATA(t198) = | objects=|.
     DATA(t199) = strlen( t176 ).
-    t175 = |{ t176 }{ t198 }|.
+    t175 = |{ t176 }{ | objects=| }|.
     DATA(t200) = VALUE string( ).
     DATA(t201) = VALUE f( ).
     t201 = t155 - t24.
@@ -393,9 +286,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t200 = |{ t204 }|.
     DATA(t205) = strlen( t175 ).
     t174 = |{ t175 }{ t200 }|.
-    DATA(t206) = | macros=|.
     DATA(t207) = strlen( t174 ).
-    t173 = |{ t174 }{ t206 }|.
+    t173 = |{ t174 }{ | macros=| }|.
     DATA(t208) = VALUE string( ).
     DATA(t209) = VALUE f( ).
     t209 = t160 - t155.
@@ -406,9 +298,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t208 = |{ t212 }|.
     DATA(t213) = strlen( t173 ).
     t172 = |{ t173 }{ t208 }|.
-    DATA(t214) = | globals=|.
     DATA(t215) = strlen( t172 ).
-    t171 = |{ t172 }{ t214 }|.
+    t171 = |{ t172 }{ | globals=| }|.
     DATA(t216) = VALUE string( ).
     DATA(t217) = VALUE f( ).
     t217 = t166 - t160.
@@ -419,10 +310,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t216 = |{ t220 }|.
     DATA(t221) = strlen( t171 ).
     t170 = |{ t171 }{ t216 }|.
-    DATA(t222) = ||.
     DATA(t223) = strlen( t170 ).
-    t169 = |{ t170 }{ t222 }|.
-    me->stages = t169.
+    me->stages = |{ t170 }{ || }|.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stages`.
     result = t2.
 
@@ -432,27 +321,15 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
     DATA(t1) = i_reg_f149.
     DATA t2 TYPE REF TO zcl_lnt_rules_runner.
-    DATA t3 TYPE REF TO zcl_lnt_rules_runner.
-    t3 = NEW zcl_lnt_rules_runner( i_reg_f149 = t1 ).
-    t2 = t3.
+    t2 = NEW zcl_lnt_rules_runner( i_reg_f149 = t1 ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zif_lnt_configuration.
-    DATA t10 TYPE REF TO zif_lnt_configuration.
-    t10 = t1->conf.
-    t7 = t10.
-    t6 = t7->get_enabled_rules( ).
-    t5 = t6.
+    t5 = t1->conf->get_enabled_rules( ).
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t15 TYPE REF TO zif_lnt_generator_8f73cd1c.
     DATA t18 TYPE REF TO zif_lnt_generator_8f73cd1c.
     DATA t19 TYPE REF TO zcl_lnt_generator_a921479b.
     t19 = NEW zcl_lnt_generator_a921479b( i_outer = t1 ).
     t18 ?= t19.
-    t15 = t18.
-    t13 = t2->objects_to_check( i_objects = t15 ).
-    t12 = t13.
+    t12 = t2->objects_to_check( i_objects = t18 ).
     DATA t22 TYPE f.
     DATA(t23) = 0.
     t22 = zlnt_runtime_tele_970d5104e5f4=>now( ).
@@ -478,26 +355,20 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       ELSE.
         t25 ?= t26.
       ENDIF.
-      DATA t30 TYPE abap_bool.
-      t30 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_abap_object ).
-      IF t30 = abap_true.
+      IF xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t32 TYPE REF TO zcl_lnt_isyntax_result.
-        DATA t33 TYPE REF TO zcl_lnt_syntax_logic.
         DATA t35 TYPE REF TO zcl_lnt_abap_object.
         DATA t37 TYPE REF TO object.
         t37 = t25.
         t35 ?= t37.
-        t33 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t35 ).
-        t32 = t33->run( ).
+        t32 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t35 )->run( ).
       ENDIF.
     ENDDO.
     DATA t39 TYPE f.
     DATA(t40) = 0.
     t39 = zlnt_runtime_tele_970d5104e5f4=>now( ).
     DATA t41 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    DATA t42 TYPE REF TO zlnt_runtime_arra_595b0cb55f64.
-    CREATE OBJECT t42.
-    t41 = t42.
+    CREATE OBJECT t41.
     DATA t44 TYPE REF TO zif_lnt_rule.
     DATA t45 TYPE REF TO object.
     DATA(t46) = VALUE i( ).
@@ -535,9 +406,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t41->save( ).
     ENDDO.
     DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t61.
-    t60 = t61.
+    CREATE OBJECT t60.
     DATA t63 TYPE REF TO zif_lnt_object.
     DATA t64 TYPE REF TO object.
     DATA(t65) = VALUE i( ).
@@ -563,12 +432,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t68 TYPE i.
       t68 = 0.
       DO.
-        DATA t70 TYPE abap_bool.
-        DATA t72 TYPE i.
         t5->load( ).
-        t72 = lines( t5->items ).
-        t70 = xsdbool( t68 < t72 ).
-        IF t70 = abap_false.
+        IF xsdbool( t68 < lines( t5->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA t75 TYPE f.
@@ -626,10 +491,8 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
           APPEND t86 TO t60->items.
           t60->save( ).
         ENDDO.
-        DATA t93 TYPE i.
         t60->load( ).
-        t93 = lines( t60->items ).
-        t77 = t93.
+        t77 = lines( t60->items ).
         DATA(t97) = VALUE f( ).
         DATA(t98) = VALUE f( ).
         DATA(t99) = VALUE f( ).
@@ -639,7 +502,6 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t41->load( ).
-        CLEAR t99.
         READ TABLE t41->items INDEX t101 INTO t99.
         DATA t102 TYPE f.
         DATA(t103) = 0.
@@ -647,30 +509,21 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         t98 = t99 + t102.
         t97 = t98 - t75.
         t41->put( p0 = t68 p1 = t97 ).
-        DATA t105 TYPE i.
         DATA(t107) = 1.
-        t105 = t68 + t107.
-        t68 = t105.
+        t68 = t68 + t107.
       ENDDO.
     ENDDO.
     DATA t108 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t109 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t109 = t2->exclude_issues( i_issues = t60 ).
-    t108 = t109.
+    t108 = t2->exclude_issues( i_issues = t60 ).
     DATA t112 TYPE string.
     t112 = ||.
     DATA t114 TYPE i.
     t114 = 0.
     DO.
-      DATA t116 TYPE abap_bool.
-      DATA t118 TYPE i.
       t5->load( ).
-      t118 = lines( t5->items ).
-      t116 = xsdbool( t114 < t118 ).
-      IF t116 = abap_false.
+      IF xsdbool( t114 < lines( t5->items ) ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t120) = VALUE string( ).
       DATA(t121) = t112.
       DATA(t122) = VALUE string( ).
       DATA(t123) = VALUE string( ).
@@ -678,8 +531,6 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA(t125) = VALUE string( ).
       DATA(t126) = | |.
       DATA(t127) = VALUE string( ).
-      DATA t128 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t128.
       DATA t129 TYPE REF TO zif_lnt_rule.
       CLEAR t129.
       DATA(t131) = t114.
@@ -700,13 +551,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       ELSE.
         t129 ?= t132.
       ENDIF.
-      t128 = t129->get_metadata( ).
-      t127 = t128->key.
+      t127 = t129->get_metadata( )->key.
       DATA(t135) = strlen( t126 ).
       t125 = |{ t126 }{ t127 }|.
-      DATA(t136) = |=|.
       DATA(t137) = strlen( t125 ).
-      t124 = |{ t125 }{ t136 }|.
+      t124 = |{ t125 }{ |=| }|.
       DATA(t138) = VALUE string( ).
       DATA(t139) = VALUE f( ).
       DATA(t141) = t114.
@@ -715,7 +564,6 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t41->load( ).
-      CLEAR t139.
       READ TABLE t41->items INDEX t141 INTO t139.
       IF t139 <> trunc( t139 ) OR t139 > range_safe_integer OR t139 < 0 - range_safe_integer.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
@@ -724,18 +572,13 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t138 = |{ t142 }|.
       DATA(t143) = strlen( t124 ).
       t123 = |{ t124 }{ t138 }|.
-      DATA(t144) = ||.
       DATA(t145) = strlen( t123 ).
-      t122 = |{ t123 }{ t144 }|.
+      t122 = |{ t123 }{ || }|.
       DATA(t146) = strlen( t121 ).
-      t120 = |{ t121 }{ t122 }|.
-      t112 = t120.
-      DATA t147 TYPE i.
+      t112 = |{ t121 }{ t122 }|.
       DATA(t149) = 1.
-      t147 = t114 + t149.
-      t114 = t147.
+      t114 = t114 + t149.
     ENDDO.
-    DATA(t150) = VALUE string( ).
     DATA(t151) = CONV string( me->stages ).
     DATA(t152) = VALUE string( ).
     DATA(t153) = VALUE string( ).
@@ -752,33 +595,25 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t157 = |{ t161 }|.
     DATA(t162) = strlen( t156 ).
     t155 = |{ t156 }{ t157 }|.
-    DATA(t163) = ||.
     DATA(t164) = strlen( t155 ).
-    t154 = |{ t155 }{ t163 }|.
+    t154 = |{ t155 }{ || }|.
     DATA(t166) = strlen( t154 ).
     t153 = |{ t154 }{ t112 }|.
-    DATA(t167) = ||.
     DATA(t168) = strlen( t153 ).
-    t152 = |{ t153 }{ t167 }|.
+    t152 = |{ t153 }{ || }|.
     DATA(t169) = strlen( t151 ).
-    t150 = |{ t151 }{ t152 }|.
-    me->stages = t150.
+    me->stages = |{ t151 }{ t152 }|.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stages`.
     DATA t170 TYPE string.
-    DATA t171 TYPE string.
     DATA t172 TYPE string.
     DATA(t173) = ||.
     DATA t174 TYPE string.
-    DATA t175 TYPE i.
     t108->load( ).
-    t175 = lines( t108->items ).
-    t174 = |{ t175 }|.
+    t174 = |{ lines( t108->items ) }|.
     DATA(t177) = strlen( t173 ).
     t172 = |{ t173 }{ t174 }|.
-    DATA(t178) = ||.
     DATA(t179) = strlen( t172 ).
-    t171 = |{ t172 }{ t178 }|.
-    t170 = t171.
+    t170 = |{ t172 }{ || }|.
     DATA t181 TYPE REF TO zcl_lnt_issue.
     DATA t182 TYPE REF TO object.
     DATA(t183) = VALUE i( ).
@@ -801,7 +636,6 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       ELSE.
         t181 ?= t182.
       ENDIF.
-      DATA(t186) = VALUE string( ).
       DATA(t187) = t170.
       DATA(t188) = VALUE string( ).
       DATA(t189) = VALUE string( ).
@@ -821,47 +655,26 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       DATA t203 TYPE string.
       DATA(t204) = |\n|.
       DATA t205 TYPE string.
-      DATA t208 TYPE string.
-      DATA t209 TYPE REF TO zcl_lnt_iissue_data.
-      t209 = t181->data_56cc.
-      t208 = t209->key.
-      t205 = t208.
+      t205 = t181->data_56cc->key.
       DATA(t211) = strlen( t204 ).
       t203 = |{ t204 }{ t205 }|.
-      DATA(t212) = |\||.
       DATA(t213) = strlen( t203 ).
-      t202 = |{ t203 }{ t212 }|.
+      t202 = |{ t203 }{ |\|| }|.
       DATA t214 TYPE string.
-      DATA t217 TYPE string.
-      DATA t218 TYPE REF TO zcl_lnt_iissue_data.
-      t218 = t181->data_56cc.
-      t217 = t218->severity.
-      t214 = t217.
+      t214 = t181->data_56cc->severity.
       DATA(t220) = strlen( t202 ).
       t201 = |{ t202 }{ t214 }|.
-      DATA(t221) = |\||.
       DATA(t222) = strlen( t201 ).
-      t200 = |{ t201 }{ t221 }|.
+      t200 = |{ t201 }{ |\|| }|.
       DATA t223 TYPE string.
-      DATA t226 TYPE string.
-      DATA t227 TYPE REF TO zcl_lnt_iissue_data.
-      t227 = t181->data_56cc.
-      t226 = t227->filename.
-      t223 = t226.
+      t223 = t181->data_56cc->filename.
       DATA(t229) = strlen( t200 ).
       t199 = |{ t200 }{ t223 }|.
-      DATA(t230) = |\||.
       DATA(t231) = strlen( t199 ).
-      t198 = |{ t199 }{ t230 }|.
+      t198 = |{ t199 }{ |\|| }|.
       DATA(t232) = VALUE string( ).
       DATA t233 TYPE f.
-      DATA t238 TYPE REF TO zcl_lnt_position.
-      DATA t239 TYPE REF TO zcl_lnt_iissue_data.
-      t239 = t181->data_56cc.
-      t238 = t239->start.
-      DATA t241 TYPE f.
-      t241 = t238->row.
-      t233 = t241.
+      t233 = t181->data_56cc->start->row.
       IF t233 <> trunc( t233 ) OR t233 > range_safe_integer OR t233 < 0 - range_safe_integer.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -869,33 +682,19 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t232 = |{ t243 }|.
       DATA(t244) = strlen( t198 ).
       t197 = |{ t198 }{ t232 }|.
-      DATA(t245) = |:|.
       DATA(t246) = strlen( t197 ).
-      t196 = |{ t197 }{ t245 }|.
+      t196 = |{ t197 }{ |:| }|.
       DATA t247 TYPE string.
-      DATA t248 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t253 TYPE REF TO zcl_lnt_position.
-      DATA t254 TYPE REF TO zcl_lnt_iissue_data.
-      t254 = t181->data_56cc.
-      t253 = t254->start.
       DATA t256 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t256 = t253->col.
-      t248 = t256.
-      t247 = zlnt_runtime_numb_290eb04a9758=>text( t248 ).
+      t256 = t181->data_56cc->start->col.
+      t247 = zlnt_runtime_numb_290eb04a9758=>text( t256 ).
       DATA(t258) = strlen( t196 ).
       t195 = |{ t196 }{ t247 }|.
-      DATA(t259) = |\||.
       DATA(t260) = strlen( t195 ).
-      t194 = |{ t195 }{ t259 }|.
+      t194 = |{ t195 }{ |\|| }|.
       DATA(t261) = VALUE string( ).
       DATA t262 TYPE f.
-      DATA t267 TYPE REF TO zcl_lnt_position.
-      DATA t268 TYPE REF TO zcl_lnt_iissue_data.
-      t268 = t181->data_56cc.
-      t267 = t268->end.
-      DATA t270 TYPE f.
-      t270 = t267->row.
-      t262 = t270.
+      t262 = t181->data_56cc->end->row.
       IF t262 <> trunc( t262 ) OR t262 > range_safe_integer OR t262 < 0 - range_safe_integer.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
@@ -903,38 +702,24 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       t261 = |{ t272 }|.
       DATA(t273) = strlen( t194 ).
       t193 = |{ t194 }{ t261 }|.
-      DATA(t274) = |:|.
       DATA(t275) = strlen( t193 ).
-      t192 = |{ t193 }{ t274 }|.
+      t192 = |{ t193 }{ |:| }|.
       DATA t276 TYPE string.
-      DATA t277 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t282 TYPE REF TO zcl_lnt_position.
-      DATA t283 TYPE REF TO zcl_lnt_iissue_data.
-      t283 = t181->data_56cc.
-      t282 = t283->end.
       DATA t285 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t285 = t282->col.
-      t277 = t285.
-      t276 = zlnt_runtime_numb_290eb04a9758=>text( t277 ).
+      t285 = t181->data_56cc->end->col.
+      t276 = zlnt_runtime_numb_290eb04a9758=>text( t285 ).
       DATA(t287) = strlen( t192 ).
       t191 = |{ t192 }{ t276 }|.
-      DATA(t288) = |\||.
       DATA(t289) = strlen( t191 ).
-      t190 = |{ t191 }{ t288 }|.
+      t190 = |{ t191 }{ |\|| }|.
       DATA t290 TYPE string.
-      DATA t293 TYPE string.
-      DATA t294 TYPE REF TO zcl_lnt_iissue_data.
-      t294 = t181->data_56cc.
-      t293 = t294->message_25cb.
-      t290 = t293.
+      t290 = t181->data_56cc->message_25cb.
       DATA(t296) = strlen( t190 ).
       t189 = |{ t190 }{ t290 }|.
-      DATA(t297) = ||.
       DATA(t298) = strlen( t189 ).
-      t188 = |{ t189 }{ t297 }|.
+      t188 = |{ t189 }{ || }|.
       DATA(t299) = strlen( t187 ).
-      t186 = |{ t187 }{ t188 }|.
-      t170 = t186.
+      t170 = |{ t187 }{ t188 }|.
     ENDDO.
     result = t170.
 

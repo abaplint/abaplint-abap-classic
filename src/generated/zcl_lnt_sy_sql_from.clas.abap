@@ -14,14 +14,10 @@ CLASS zcl_lnt_sy_sql_from IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_b72089862d0f.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_b72089862d0f.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d321_17502cdda795.
-    t6 = t1->find_all_expressions( i_type_9913 = t8 ).
-    t5 = t6.
+    t5 = t1->find_all_expressions( i_type_9913 = t8 ).
     DATA t10 TYPE REF TO zcl_lnt_expression_node.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -74,22 +70,13 @@ CLASS zcl_lnt_sy_sql_from IMPLEMENTATION.
         zcl_lnt_sy_dynamic=>run_syntax( i_node = t18 i_input_967e = t2 ).
       ENDDO.
       DATA t25 TYPE REF TO zcl_lnt_expression_node.
-      DATA t26 TYPE REF TO zcl_lnt_expression_node.
       DATA(t28) = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
-      t26 = t10->find_first_expression( i_type_9913 = t28 ).
-      t25 = t26.
-      DATA(t29) = VALUE abap_bool( ).
+      t25 = t10->find_first_expression( i_type_9913 = t28 ).
       DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t32.
-      DATA(t34) = VALUE abap_bool( ).
-      DATA(t35) = xsdbool( t25 IS INITIAL ).
-      t34 = xsdbool( t35 = abap_false ).
-      t29 = t34.
-      IF t29 = abap_true.
+      IF xsdbool( xsdbool( t25 IS INITIAL ) = abap_false ) = abap_true.
         DATA t38 TYPE REF TO zif_lnt_union_c74a232f.
-        DATA t39 TYPE REF TO zcl_lnt_expression_node.
-        t39 = t25.
-        t38 = zcl_lnt_sy_database_table=>run_syntax( i_node = t39 i_input_967e = t2 ).
+        t38 = zcl_lnt_sy_database_table=>run_syntax( i_node = t25 i_input_967e = t2 ).
         t3->load( ).
         APPEND t38 TO t3->items.
         t3->save( ).

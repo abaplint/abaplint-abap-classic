@@ -23,7 +23,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_components.
     DATA(t2) = i_qualified_name.
-    DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t8 = t2.
@@ -49,37 +48,25 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t7->zlnt_json_ownkeys_70e5fd461788.
     t7->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t23) = |qualifiedName|.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t23 p1 = t24 ).
-    DATA(t25) = |ddicName|.
+    t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t24 ).
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t25 p1 = t26 ).
+      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |ddicName| p1 = t26 ).
     ENDIF.
-    DATA(t27) = |description|.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = t27 p1 = t28 ).
+      t7->zlnt_json_ownkeys_70e5fd461788->put( p0 = |description| p1 = t28 ).
     ENDIF.
-    t5 = t7.
-    super->constructor( i_input_967e = t5 ).
-    DATA(t30) = VALUE abap_bool( ).
-    DATA(t31) = VALUE i( ).
+    super->constructor( i_input_967e = t7 ).
     t1->load( ).
-    t31 = lines( t1->items ).
-    DATA(t33) = 0.
-    t30 = xsdbool( t31 = t33 ).
-    IF t30 = abap_true.
+    IF xsdbool( lines( t1->items ) = 0 ) = abap_true.
       DATA t34 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t35 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t38) = |Structure does not contain any components|.
       DATA(t39) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t39->has = abap_true.
-      t39->value = t38.
-      t36 = t39.
-      t35 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t36 ).
+      t39->value = |Structure does not contain any components|.
+      t35 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t39 ).
       t34 = NEW #( ).
       t34->payload = t35.
       CLEAR t34->source_value.
@@ -173,33 +160,25 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         t58 = zlnt_runtime_uppe_91169605024d=>full( t58 ).
       ENDIF.
       t57 = t58.
-      DATA(t62) = VALUE abap_bool( ).
       DATA t64 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t64.
       t64 = me->indexed->get( p0 = t57 ).
       DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t67.
       CLEAR t67.
-      DATA(t69) = VALUE abap_bool( ).
-      DATA(t70) = xsdbool( t64 IS INITIAL ).
-      t69 = xsdbool( t70 = abap_false ).
-      t62 = t69.
-      IF t62 = abap_true.
+      IF xsdbool( xsdbool( t64 IS INITIAL ) = abap_false ) = abap_true.
         DATA t72 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
         CLEAR t72.
         DATA t73 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
         CLEAR t73.
-        DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t74.
         DATA(t76) = VALUE string( ).
         DATA(t77) = VALUE string( ).
         DATA(t78) = VALUE string( ).
         DATA(t79) = |Structure, duplicate field name "|.
         DATA(t81) = strlen( t79 ).
         t78 = |{ t79 }{ t57 }|.
-        DATA(t82) = |", |.
         DATA(t83) = strlen( t78 ).
-        t77 = |{ t78 }{ t82 }|.
+        t77 = |{ t78 }{ |", | }|.
         DATA(t84) = VALUE string( ).
         DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t85.
@@ -214,9 +193,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         IF t88 = abap_true.
           t87 = |undefined|.
         ELSE.
-          DATA(t91) = VALUE string( ).
-          t91 = t85->value.
-          t87 = t91.
+          t87 = t85->value.
         ENDIF.
         t84 = t87.
         DATA(t93) = strlen( t77 ).
@@ -224,8 +201,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         DATA(t94) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t94->has = abap_true.
         t94->value = t76.
-        t74 = t94.
-        t73 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t74 ).
+        t73 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t94 ).
         t72 = NEW #( ).
         t72->payload = t73.
         CLEAR t72->source_value.
@@ -257,11 +233,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       ENDIF.
       DATA t98 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
       CLEAR t98.
-      DATA(t99) = me->indexed.
-      DATA t101 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t101.
-      t101 = t48->zlnt_view_read_sr_455340cd1e80( ).
-      t98 = t99->set( p0 = t57 p1 = t101 ).
+      t98 = me->indexed->set( p0 = t57 p1 = t48->zlnt_view_read_sr_455340cd1e80( ) ).
     ENDDO.
     me->components = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `components`.
@@ -274,7 +246,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
 
   METHOD get_component_by_name.
     DATA(t1) = i_name.
-    DATA t2 TYPE REF TO zcl_lnt_abstract_type.
     DATA(t3) = me->indexed.
     DATA t4 TYPE string.
     DATA(t6) = strlen( t1 ).
@@ -284,17 +255,14 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     ELSE.
       t4 = zlnt_runtime_uppe_91169605024d=>full( t4 ).
     ENDIF.
-    t2 = t3->get( p0 = t4 ).
-    result = t2.
+    result = t3->get( p0 = t4 ).
 
   ENDMETHOD.
 
   METHOD to_text.
     DATA(t1) = i_level.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = me->components.
     DATA t5 TYPE REF TO zcl_lnt_istructure_component.
     DATA t6 TYPE REF TO object.
@@ -353,9 +321,8 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       DATA(t16) = VALUE string( ).
       DATA(t17) = VALUE string( ).
       t17 = t5->zlnt_view_read_sr_dae473e680bd( ).
-      DATA(t19) = | TYPE |.
       DATA(t20) = strlen( t17 ).
-      t16 = |{ t17 }{ t19 }|.
+      t16 = |{ t17 }{ | TYPE | }|.
       DATA(t21) = VALUE string( ).
       DATA t22 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t22.
@@ -371,7 +338,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       t2->save( ).
     ENDDO.
     DATA(t28) = VALUE string( ).
-    DATA(t29) = VALUE string( ).
     DATA(t30) = VALUE string( ).
     t30 = |  |.
     DATA(t32) = VALUE string( ).
@@ -380,40 +346,34 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     IF t36 < 0.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
-    CLEAR t32.
     IF t30 IS NOT INITIAL.
       IF t36 > 2147483647 OR t36 * strlen( t30 ) > 2147483647.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t32 = repeat( val = t30 occ = CONV i( t36 ) ).
     ENDIF.
-    t29 = t32.
-    t28 = t29.
-    DATA(t37) = VALUE string( ).
+    t28 = t32.
     DATA(t38) = VALUE string( ).
     DATA(t39) = VALUE string( ).
     DATA(t40) = |Structure\n|.
     DATA(t42) = strlen( t40 ).
     t39 = |{ t40 }{ t28 }|.
-    DATA(t43) = |* |.
     DATA(t44) = strlen( t39 ).
-    t38 = |{ t39 }{ t43 }|.
+    t38 = |{ t39 }{ |* | }|.
     DATA(t45) = VALUE string( ).
     DATA(t47) = VALUE string( ).
     DATA(t48) = VALUE string( ).
     DATA(t49) = |\n|.
     DATA(t51) = strlen( t49 ).
     t48 = |{ t49 }{ t28 }|.
-    DATA(t52) = |* |.
     DATA(t53) = strlen( t48 ).
-    t47 = |{ t48 }{ t52 }|.
+    t47 = |{ t48 }{ |* | }|.
     DATA(t54) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t54->has = abap_true.
     t54->value = t47.
     t45 = t2->join( p0 = t54 ).
     DATA(t55) = strlen( t38 ).
-    t37 = |{ t38 }{ t45 }|.
-    result = t37.
+    result = |{ t38 }{ t45 }|.
 
   ENDMETHOD.
 
@@ -427,18 +387,11 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
     t3 = me.
     DATA t6 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
-    t7 = t3->data_56cc.
-    t6 = t7.
+    t6 = t3->data_56cc.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t10) = xsdbool( t6 IS INITIAL ).
-    IF t10 = abap_true.
+    IF xsdbool( t6 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t14 TYPE REF TO zcl_lnt_abstract_type_data.
-      t14 = t6.
-      t13 = t14->zlnt_view_read_sr_c978da49ae47( ).
-      t9 = t13.
+      t9 = t6->zlnt_view_read_sr_c978da49ae47( ).
     ENDIF.
     t1 = t9.
     DATA(t16) = VALUE abap_bool( ).
@@ -448,9 +401,7 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t16 = abap_true.
-      DATA t18 TYPE string.
-      t18 = t1->value.
-      result = t18.
+      result = t1->value.
       RETURN.
     ENDIF.
     result = |StructureTypetoABAPtodo|.
@@ -458,7 +409,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = VALUE abap_bool( ).
     DATA(t2) = VALUE abap_bool( ).
     t2 = abap_false.
     DATA(t4) = me->components.
@@ -515,18 +465,12 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA(t14) = VALUE abap_bool( ).
-      DATA t15 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t15.
-      t15 = t5->zlnt_view_read_sr_455340cd1e80( ).
-      t14 = t15->contains_void( ).
-      IF t14 = abap_true.
+      IF t5->zlnt_view_read_sr_455340cd1e80( )->contains_void( ) = abap_true.
         t2 = abap_true.
         EXIT.
       ENDIF.
     ENDDO.
-    t1 = t2.
-    result = t1.
+    result = t2.
 
   ENDMETHOD.
 

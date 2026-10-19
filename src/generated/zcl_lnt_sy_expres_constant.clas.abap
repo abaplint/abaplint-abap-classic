@@ -12,46 +12,33 @@ ENDCLASS.
 CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t1) = i_node.
-    DATA t2 TYPE abap_bool.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d108_ef0500b17c81.
     t3 = t1->find_direct_expression( i_type_9913 = t5 ).
-    t2 = xsdbool( t3 IS BOUND ).
-    IF t2 = abap_true.
-      DATA t6 TYPE REF TO zcl_lnt_integer_type.
-      DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA(t14) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t14->has = abap_true.
       t14->value = abap_true.
-      t10 = t14.
       DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t18 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t9 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t16 i_conversion_exit = t18 i_derived_from_constant = t10 i_ddic_name = t20 i_rtti_name = t22 i_description = t24 ).
+      t9 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t16 i_conversion_exit = t18 i_derived_from_constant = t14 i_ddic_name = t20 i_rtti_name = t22 i_description = t24 ).
       CREATE OBJECT t9->zlnt_view_ownkeys_b0e8086400eb.
       t9->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       t9->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `derivedFromConstant` p1 = t26 ).
       CREATE OBJECT t9->zlnt_json_ownkeys_70e5fd461788.
       t9->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t27) = |derivedFromConstant|.
       DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t9->zlnt_json_ownkeys_70e5fd461788->put( p0 = t27 p1 = t28 ).
-      t7 = t9.
-      t6 = zcl_lnt_integer_type=>get_db65( i_input_967e = t7 ).
-      result = t6.
+      t9->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t28 ).
+      result = zcl_lnt_integer_type=>get_db65( i_input_967e = t9 ).
       RETURN.
     ENDIF.
     DATA t30 TYPE string.
-    DATA t33 TYPE REF TO zcl_lnt_abstract_token.
-    t33 = t1->get_first_token( ).
-    DATA t35 TYPE string.
-    t35 = t33->str.
-    t30 = t35.
+    t30 = t1->get_first_token( )->str.
     DATA(t37) = VALUE abap_bool( ).
     DATA(t39) = |'|.
     DATA(t40) = strlen( t30 ).
@@ -70,46 +57,34 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
     ENDIF.
     IF t37 = abap_true.
       DATA t44 TYPE i.
-      DATA t45 TYPE i.
       DATA t46 TYPE i.
       t46 = strlen( t30 ).
       DATA(t49) = 2.
-      t45 = t46 - t49.
-      t44 = t45.
-      DATA t50 TYPE abap_bool.
-      DATA(t52) = 0.
-      t50 = xsdbool( t44 <= t52 ).
-      IF t50 = abap_true.
+      t44 = t46 - t49.
+      IF xsdbool( t44 <= 0 ) = abap_true.
         t44 = 1.
       ENDIF.
-      DATA t54 TYPE REF TO zcl_lnt_character_type.
       DATA t55 TYPE f.
       t55 = t44.
-      DATA t57 TYPE REF TO zcl_lnt_abstract_type_data.
       DATA t59 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA t60 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA(t64) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t64->has = abap_true.
       t64->value = abap_true.
-      t60 = t64.
       DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t70 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t72 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t59 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t66 i_conversion_exit = t68 i_derived_from_constant = t60 i_ddic_name = t70 i_rtti_name = t72 i_description = t74 ).
+      t59 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t66 i_conversion_exit = t68 i_derived_from_constant = t64 i_ddic_name = t70 i_rtti_name = t72 i_description = t74 ).
       CREATE OBJECT t59->zlnt_view_ownkeys_b0e8086400eb.
       t59->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       t59->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `derivedFromConstant` p1 = t76 ).
       CREATE OBJECT t59->zlnt_json_ownkeys_70e5fd461788.
       t59->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t77) = |derivedFromConstant|.
       DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t77 p1 = t78 ).
-      t57 = t59.
-      t54 = NEW zcl_lnt_character_type( i_length = t55 i_extra = t57 ).
-      result = t54.
+      t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t78 ).
+      result = NEW zcl_lnt_character_type( i_length = t55 i_extra = t59 ).
       RETURN.
     ELSE.
       DATA(t80) = VALUE abap_bool( ).
@@ -129,38 +104,29 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t80 = abap_true.
-        DATA t87 TYPE REF TO zcl_lnt_string_type.
-        DATA t88 TYPE REF TO zcl_lnt_abstract_type_data.
         DATA t90 TYPE REF TO zcl_lnt_abstract_type_data.
-        DATA t91 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         DATA(t95) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t95->has = abap_true.
         t95->value = abap_true.
-        t91 = t95.
         DATA t97 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t105 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t90 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t97 i_conversion_exit = t99 i_derived_from_constant = t91 i_ddic_name = t101 i_rtti_name = t103 i_description = t105 ).
+        t90 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t97 i_conversion_exit = t99 i_derived_from_constant = t95 i_ddic_name = t101 i_rtti_name = t103 i_description = t105 ).
         CREATE OBJECT t90->zlnt_view_ownkeys_b0e8086400eb.
         t90->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         t90->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `derivedFromConstant` p1 = t107 ).
         CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
         t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t108) = |derivedFromConstant|.
         DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t108 p1 = t109 ).
-        t88 = t90.
-        t87 = zcl_lnt_string_type=>get_db65( i_input_967e = t88 ).
-        result = t87.
+        t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t109 ).
+        result = zcl_lnt_string_type=>get_db65( i_input_967e = t90 ).
         RETURN.
       ELSE.
-        DATA t111 TYPE REF TO zcl_lnt_string_type.
         DATA t112 TYPE REF TO zcl_lnt_abstract_type_data.
-        t111 = zcl_lnt_string_type=>get_db65( i_input_967e = t112 ).
-        result = t111.
+        result = zcl_lnt_string_type=>get_db65( i_input_967e = t112 ).
         RETURN.
       ENDIF.
     ENDIF.

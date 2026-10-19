@@ -122,21 +122,12 @@ CLASS zcl_lnt_sy_insert_database IMPLEMENTATION.
       zcl_lnt_sy_dynamic=>run_syntax( i_node = t42 i_input_967e = t2 ).
     ENDDO.
     DATA t49 TYPE REF TO zcl_lnt_expression_node.
-    DATA t50 TYPE REF TO zcl_lnt_expression_node.
     DATA(t52) = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
-    t50 = t1->find_first_expression( i_type_9913 = t52 ).
-    t49 = t50.
-    DATA(t53) = VALUE abap_bool( ).
+    t49 = t1->find_first_expression( i_type_9913 = t52 ).
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t58) = VALUE abap_bool( ).
-    DATA(t59) = xsdbool( t49 IS INITIAL ).
-    t58 = xsdbool( t59 = abap_false ).
-    t53 = t58.
-    IF t53 = abap_true.
+    IF xsdbool( xsdbool( t49 IS INITIAL ) = abap_false ) = abap_true.
       DATA t61 TYPE REF TO zif_lnt_union_c74a232f.
-      DATA t62 TYPE REF TO zcl_lnt_expression_node.
-      t62 = t49.
-      t61 = zcl_lnt_sy_database_table=>run_syntax( i_node = t62 i_input_967e = t2 ).
+      t61 = zcl_lnt_sy_database_table=>run_syntax( i_node = t49 i_input_967e = t2 ).
     ENDIF.
   ENDMETHOD.
 

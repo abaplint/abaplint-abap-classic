@@ -30,13 +30,9 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t4) = VALUE abap_bool( ).
+    CREATE OBJECT t2.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t4 = xsdbool( me->runnable IS INITIAL ).
-    IF t4 = abap_true.
+    IF xsdbool( me->runnable IS INITIAL ) = abap_true.
       me->runnable = CAST zif_lnt_statement_runnable( me->get_runnable( ) ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runnable`.
     ENDIF.
@@ -63,11 +59,7 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
         t16 ?= t17.
       ENDIF.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-      t23 = me->runnable.
-      t22 = t23->run_one( i_x = t16 ).
-      t21 = t22.
+      t21 = me->runnable->run_one( i_x = t16 ).
       DATA t27 TYPE REF TO zcl_lnt_st_result.
       CLEAR t27.
       DATA t28 TYPE REF TO object.
@@ -93,23 +85,18 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
           t27 ?= t28.
         ENDIF.
         DATA t32 TYPE int8.
-        DATA t33 TYPE int8.
         DATA t34 TYPE int8.
         DATA t36 TYPE REF TO zcl_lnt_st_result.
         t36 = t16.
         DATA t38 TYPE f.
         DATA t39 TYPE int8.
         DATA t40 TYPE int8.
-        DATA t41 TYPE i.
         DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t42 = t36->tokens.
         t42->load( ).
-        t41 = lines( t42->items ).
-        t40 = t41.
+        t40 = lines( t42->items ).
         DATA t44 TYPE int8.
-        DATA t45 TYPE i.
-        t45 = t36->token_index.
-        t44 = t45.
+        t44 = t36->token_index.
         t39 = t40 - t44.
         t38 = t39.
         t34 = t38.
@@ -119,25 +106,17 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
         DATA t51 TYPE f.
         DATA t52 TYPE int8.
         DATA t53 TYPE int8.
-        DATA t54 TYPE i.
         DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t55 = t49->tokens.
         t55->load( ).
-        t54 = lines( t55->items ).
-        t53 = t54.
+        t53 = lines( t55->items ).
         DATA t57 TYPE int8.
-        DATA t58 TYPE i.
-        t58 = t49->token_index.
-        t57 = t58.
+        t57 = t49->token_index.
         t52 = t53 - t57.
         t51 = t52.
         t47 = t51.
-        t33 = t34 - t47.
-        t32 = t33.
-        DATA t60 TYPE abap_bool.
-        DATA(t62) = CONV int8( 0 ).
-        t60 = xsdbool( t32 > t62 ).
-        IF t60 = abap_true.
+        t32 = t34 - t47.
+        IF xsdbool( t32 > CONV int8( 0 ) ) = abap_true.
           DATA t64 TYPE REF TO zcl_lnt_expression_node.
           t64 = NEW zcl_lnt_expression_node( i_expression = me ).
           DATA t67 TYPE REF TO zcl_lnt_st_result.
@@ -159,23 +138,17 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD get_using.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE string.
     DATA(t6) = |expression/|.
     DATA t7 TYPE string.
-    DATA t8 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t8 = me->zlnt_builtin_clas_3f891b097658( ).
-    t7 = t8->name.
+    t7 = me->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t10) = strlen( t6 ).
     t5 = |{ t6 }{ t7 }|.
     t2->load( ).
@@ -186,88 +159,60 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_name.
-    DATA t1 TYPE string.
-    DATA t2 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t2 = me->zlnt_builtin_clas_3f891b097658( ).
-    t1 = t2->name.
-    result = t1.
+    result = me->zlnt_builtin_clas_3f891b097658( )->name.
 
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA t3 TYPE string.
     DATA t4 TYPE string.
     DATA(t5) = |Railroad.NonTerminal('|.
     DATA t6 TYPE string.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t7 = me->zlnt_builtin_clas_3f891b097658( ).
-    t6 = t7->name.
+    t6 = me->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t9) = strlen( t5 ).
     t4 = |{ t5 }{ t6 }|.
-    DATA(t10) = |', \{href: '#/expression/|.
     DATA(t11) = strlen( t4 ).
-    t3 = |{ t4 }{ t10 }|.
+    t3 = |{ t4 }{ |', \{href: '#/expression/| }|.
     DATA t12 TYPE string.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t13 = me->zlnt_builtin_clas_3f891b097658( ).
-    t12 = t13->name.
+    t12 = me->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t15) = strlen( t3 ).
     t2 = |{ t3 }{ t12 }|.
-    DATA(t16) = |'\})|.
     DATA(t17) = strlen( t2 ).
-    t1 = |{ t2 }{ t16 }|.
-    result = t1.
+    result = |{ t2 }{ |'\})| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |expression(|.
     DATA t4 TYPE string.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t5 = me->zlnt_builtin_clas_3f891b097658( ).
-    t4 = t5->name.
+    t4 = me->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = |)|.
     DATA(t9) = strlen( t2 ).
-    t1 = |{ t2 }{ t8 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = CAST zif_lnt_statement_runnable( me->get_runnable( ) ).
-    t1 = t2->first( ).
-    result = t1.
+    result = CAST zif_lnt_statement_runnable( me->get_runnable( ) )->first( ).
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t4) = VALUE abap_bool( ).
+    CREATE OBJECT t2.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t4 = xsdbool( me->runnable IS INITIAL ).
-    IF t4 = abap_true.
+    IF xsdbool( me->runnable IS INITIAL ) = abap_true.
       me->runnable = CAST zif_lnt_statement_runnable( me->get_runnable( ) ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runnable`.
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_st_result.
     t15 = t1.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    t19 = me->runnable.
-    t18 = t19->run_one( i_x = t15 ).
-    t17 = t18.
+    t17 = me->runnable->run_one( i_x = t15 ).
     DATA t23 TYPE REF TO zcl_lnt_st_result.
     DATA t24 TYPE REF TO object.
     DATA(t25) = VALUE i( ).
@@ -291,23 +236,18 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
         t23 ?= t24.
       ENDIF.
       DATA t28 TYPE int8.
-      DATA t29 TYPE int8.
       DATA t30 TYPE int8.
       DATA t32 TYPE REF TO zcl_lnt_st_result.
       t32 = t15.
       DATA t34 TYPE f.
       DATA t35 TYPE int8.
       DATA t36 TYPE int8.
-      DATA t37 TYPE i.
       DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t38 = t32->tokens.
       t38->load( ).
-      t37 = lines( t38->items ).
-      t36 = t37.
+      t36 = lines( t38->items ).
       DATA t40 TYPE int8.
-      DATA t41 TYPE i.
-      t41 = t32->token_index.
-      t40 = t41.
+      t40 = t32->token_index.
       t35 = t36 - t40.
       t34 = t35.
       t30 = t34.
@@ -317,25 +257,17 @@ CLASS zcl_lnt_expression IMPLEMENTATION.
       DATA t47 TYPE f.
       DATA t48 TYPE int8.
       DATA t49 TYPE int8.
-      DATA t50 TYPE i.
       DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t51 = t45->tokens.
       t51->load( ).
-      t50 = lines( t51->items ).
-      t49 = t50.
+      t49 = lines( t51->items ).
       DATA t53 TYPE int8.
-      DATA t54 TYPE i.
-      t54 = t45->token_index.
-      t53 = t54.
+      t53 = t45->token_index.
       t48 = t49 - t53.
       t47 = t48.
       t43 = t47.
-      t29 = t30 - t43.
-      t28 = t29.
-      DATA t56 TYPE abap_bool.
-      DATA(t58) = CONV int8( 0 ).
-      t56 = xsdbool( t28 > t58 ).
-      IF t56 = abap_true.
+      t28 = t30 - t43.
+      IF xsdbool( t28 > CONV int8( 0 ) ) = abap_true.
         DATA t60 TYPE REF TO zcl_lnt_expression_node.
         t60 = NEW zcl_lnt_expression_node( i_expression = me ).
         DATA t63 TYPE REF TO zcl_lnt_st_result.

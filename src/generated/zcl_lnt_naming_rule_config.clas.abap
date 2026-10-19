@@ -30,10 +30,9 @@ CLASS zcl_lnt_naming_rule_config IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |required|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |required|.
     me->zlnt_view_write_s_9ebcbca32e92( p0 = t2 ).
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.

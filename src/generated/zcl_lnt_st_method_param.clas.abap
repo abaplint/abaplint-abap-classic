@@ -16,10 +16,9 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |REFERENCE|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |REFERENCE|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4.
@@ -48,9 +47,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t13.
-    t12 = t13.
+    CREATE OBJECT t12.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d164_a1523c275ce1.
     IF t16 IS BOUND.
@@ -91,15 +88,12 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
     t12->load( ).
     APPEND t18 TO t12->items.
     t12->save( ).
-    DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    t23 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t12 ).
-    t1 = t23.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t12 ).
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = |VALUE|.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t30->sval = t31.
+    t30->sval = |VALUE|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t34 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t35) = zlnt_runtime_desc_78196487750d=>zlnt_member_d27_96f129ab7f18e4.
@@ -128,9 +122,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t39.
-    t38 = t39.
+    CREATE OBJECT t38.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t42) = zlnt_runtime_desc_78196487750d=>zlnt_member_d164_a1523c275ce1.
     IF t42 IS BOUND.
@@ -171,9 +163,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
     t38->load( ).
     APPEND t44 TO t38->items.
     t38->save( ).
-    DATA t49 TYPE REF TO zif_lnt_statement_runnable.
-    t49 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t38 ).
-    t27 = t49.
+    t27 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t38 ).
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t57 TYPE REF TO zif_lnt_statement_runnable.
     DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -225,9 +215,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t69.
-    t68 = t69.
+    CREATE OBJECT t68.
     DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t72) = zlnt_runtime_desc_78196487750d=>zlnt_member_d164_a1523c275ce1.
     IF t72 IS BOUND.
@@ -238,9 +226,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
     t68->load( ).
     APPEND t71 TO t68->items.
     t68->save( ).
-    DATA t73 TYPE REF TO zif_lnt_statement_runnable.
-    t73 = zcl_lnt_st_combi_module=>alt_prio( i_first = t59 i_second = t64 i_rest = t68 ).
-    t57 = t73.
+    t57 = zcl_lnt_st_combi_module=>alt_prio( i_first = t59 i_second = t64 i_rest = t68 ).
     IF t57 IS BOUND.
       DATA t77 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t78 TYPE REF TO object.
@@ -273,9 +259,7 @@ CLASS zcl_lnt_st_method_param IMPLEMENTATION.
     ENDIF.
     DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t83.
-    DATA t84 TYPE REF TO zif_lnt_statement_runnable.
-    t84 = zcl_lnt_st_combi_module=>seq( i_first = t56 i_second = t80 i_rest = t83 ).
-    result = t84.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t56 i_second = t80 i_rest = t83 ).
 
   ENDMETHOD.
 

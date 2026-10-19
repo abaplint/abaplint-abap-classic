@@ -24,10 +24,9 @@ CLASS zcl_lnt_cyclmtc_cmplxty_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 20 ).
     DATA(t2) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = CONV f( 20 ).
     me->zlnt_view_write_s_82a67f33691e( p0 = t2 ).
   ENDMETHOD.
 

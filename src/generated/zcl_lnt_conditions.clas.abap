@@ -37,38 +37,24 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t2 = me->arr.
     DATA t4 TYPE i.
-    DATA t5 TYPE i.
     t2->load( ).
-    t5 = lines( t2->items ).
-    t4 = t5.
+    t4 = lines( t2->items ).
     DATA t7 TYPE i.
     t7 = 0.
     DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DO.
-      DATA t11 TYPE abap_bool.
-      t11 = xsdbool( t7 < t4 ).
-      IF t11 = abap_false.
+      IF xsdbool( t7 < t4 ) = abap_false.
         EXIT.
       ENDIF.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE abap_bool.
-      t15 = t2->has( p0 = t7 ).
-      t14 = xsdbool( t15 = abap_false ).
-      IF t14 = abap_true.
+      IF xsdbool( t2->has( p0 = t7 ) = abap_false ) = abap_true.
         DATA(t18) = NEW zlnt_exception_un_5f2d02892fe8( ).
         t18->source_location = |primitive find requires a present slot|.
         RAISE EXCEPTION t18.
       ENDIF.
       DATA t20 TYPE string.
-      DATA t21 TYPE string.
-      DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t22 = t2->get( p0 = t7 ).
-      t21 = t22->value.
-      t20 = t21.
-      DATA(t25) = VALUE abap_bool( ).
+      t20 = t2->get( p0 = t7 )->value.
       DATA t26 TYPE i.
       t26 = me->arr->indexof( p0 = t20 ).
-      DATA(t29) = VALUE i( ).
       DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       t30 = me->arr.
       DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -78,25 +64,18 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
       t36->value = t20.
       t32 = t36.
       DATA t38 TYPE i.
-      DATA t39 TYPE i.
       DATA t40 TYPE i.
       t30->load( ).
       t40 = lines( t30->items ).
       DATA(t42) = 1.
-      t39 = t40 - t42.
-      t38 = t39.
+      t38 = t40 - t42.
       DATA t43 TYPE i.
       t43 = -1.
       DO.
-        DATA t45 TYPE abap_bool.
-        DATA(t47) = 0.
-        t45 = xsdbool( t38 >= t47 ).
-        IF t45 = abap_false.
+        IF xsdbool( t38 >= 0 ) = abap_false.
           EXIT.
         ENDIF.
-        DATA t48 TYPE abap_bool.
-        t48 = t30->has( p0 = t38 ).
-        IF t48 = abap_true.
+        IF t30->has( p0 = t38 ) = abap_true.
           DATA(t51) = VALUE abap_bool( ).
           DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t52 = t30->get( p0 = t38 ).
@@ -120,24 +99,18 @@ CLASS zcl_lnt_conditions IMPLEMENTATION.
             EXIT.
           ENDIF.
         ENDIF.
-        DATA t59 TYPE i.
         DATA(t61) = 1.
-        t59 = t38 - t61.
-        t38 = t59.
+        t38 = t38 - t61.
       ENDDO.
-      t29 = t43.
-      t25 = xsdbool( t26 <> t29 ).
-      IF t25 = abap_true.
+      IF xsdbool( t26 <> t43 ) = abap_true.
         DATA(t66) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t66->has = abap_true.
         t66->value = t20.
         t9 = t66.
         EXIT.
       ENDIF.
-      DATA t68 TYPE i.
       DATA(t70) = 1.
-      t68 = t7 + t70.
-      t7 = t68.
+      t7 = t7 + t70.
     ENDDO.
     result = t9.
 

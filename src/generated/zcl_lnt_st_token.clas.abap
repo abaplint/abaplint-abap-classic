@@ -25,32 +25,24 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
     DATA(t1) = i_t.
     me->token_type = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tokenType`.
-    DATA t3 TYPE string.
-    t3 = t1->name.
-    me->name = t3.
+    me->name = t1->name.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `name`.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -81,28 +73,21 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA t16 TYPE f.
       DATA t17 TYPE int8.
       DATA t18 TYPE int8.
-      DATA t19 TYPE i.
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t20 = t14->tokens.
       t20->load( ).
-      t19 = lines( t20->items ).
-      t18 = t19.
+      t18 = lines( t20->items ).
       DATA t22 TYPE int8.
-      DATA t23 TYPE i.
-      t23 = t14->token_index.
-      t22 = t23.
+      t22 = t14->token_index.
       t17 = t18 - t22.
       t16 = t17.
       t12 = t16.
-      DATA(t25) = CONV int8( 0 ).
-      t11 = xsdbool( t12 <> t25 ).
+      t11 = xsdbool( t12 <> CONV int8( 0 ) ).
       t10 = t11.
       IF t11 = abap_true.
         DATA(t26) = VALUE abap_bool( ).
         DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         CLEAR t27.
-        DATA t28 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t28.
         DATA t29 TYPE REF TO zcl_lnt_st_result.
         t29 = t5.
         DATA t31 TYPE REF TO zcl_lnt_abstract_token.
@@ -128,8 +113,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         ELSE.
           t31 ?= t36.
         ENDIF.
-        t28 = t31.
-        t27 = t28->zlnt_builtin_clas_3f891b097658( ).
+        t27 = t31->zlnt_builtin_clas_3f891b097658( ).
         DATA(t39) = me->token_type.
         DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t40.
@@ -161,8 +145,6 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         t44 = t5.
         DATA t47 TYPE REF TO zcl_lnt_token_node.
         CLEAR t47.
-        DATA t48 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t48.
         DATA t49 TYPE REF TO zcl_lnt_st_result.
         t49 = t5.
         DATA t51 TYPE REF TO zcl_lnt_abstract_token.
@@ -188,17 +170,12 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         ELSE.
           t51 ?= t56.
         ENDIF.
-        t48 = t51.
-        t47 = NEW zcl_lnt_token_node( i_token = t48 ).
-        DATA t59 TYPE REF TO zcl_lnt_st_result.
-        CLEAR t59.
+        t47 = NEW zcl_lnt_token_node( i_token = t51 ).
         DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t60 = t44->tokens.
         DATA t62 TYPE int8.
         DATA t63 TYPE int8.
-        DATA t64 TYPE i.
-        t64 = t44->token_index.
-        t63 = t64.
+        t63 = t44->token_index.
         DATA(t66) = CONV int8( 1 ).
         t62 = t63 + t66.
         DATA t67 TYPE REF TO zcl_lnt_result_node.
@@ -206,11 +183,9 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         DATA t69 TYPE REF TO zcl_lnt_result_node.
         DATA t70 TYPE REF TO zif_lnt_union_4cf1d054.
         t70 = t47.
-        DATA t72 TYPE REF TO zcl_lnt_result_node.
         DATA t73 TYPE REF TO zcl_lnt_result_node.
         t73 = t44->nodes_0226.
-        t72 = t73.
-        t69 = NEW zcl_lnt_result_node( i_node = t70 i_previous = t72 ).
+        t69 = NEW zcl_lnt_result_node( i_node = t70 i_previous = t73 ).
         CREATE OBJECT t69->zlnt_view_ownkeys_b0e8086400eb.
         t69->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -223,15 +198,13 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t69->zlnt_json_ownkeys_70e5fd461788.
         t69->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t77) = |node|.
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t78.
-        t69->zlnt_json_ownkeys_70e5fd461788->put( p0 = t77 p1 = t78 ).
-        DATA(t79) = |previous|.
+        t69->zlnt_json_ownkeys_70e5fd461788->put( p0 = |node| p1 = t78 ).
         DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t80.
         IF t69->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t69->zlnt_json_ownkeys_70e5fd461788->put( p0 = t79 p1 = t80 ).
+          t69->zlnt_json_ownkeys_70e5fd461788->put( p0 = |previous| p1 = t80 ).
         ENDIF.
         t67 = t69.
         DATA t82 TYPE f.
@@ -239,8 +212,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
         t83 = t44->node_count.
         DATA(t85) = CONV f( 1 ).
         t82 = t83 + t85.
-        t59 = zcl_lnt_st_result=>from_chain( i_tokens = t60 i_token_index = t62 i_nodes_5198 = t67 i_node_count = t82 ).
-        t43 = t59.
+        t43 = zcl_lnt_st_result=>from_chain( i_tokens = t60 i_token_index = t62 i_nodes_5198 = t67 i_node_count = t82 ).
         t2->load( ).
         APPEND t43 TO t2->items.
         t2->save( ).
@@ -263,27 +235,21 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Token "|.
     DATA(t4) = CONV string( me->name ).
     DATA(t5) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t6) = |"|.
     DATA(t7) = strlen( t2 ).
-    t1 = |{ t2 }{ t6 }|.
-    result = t1.
+    result = |{ t2 }{ |"| }|.
 
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -292,9 +258,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_st_result.
     t4 = t1.
     DATA t6 TYPE abap_bool.
@@ -305,26 +269,20 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
     DATA t12 TYPE f.
     DATA t13 TYPE int8.
     DATA t14 TYPE int8.
-    DATA t15 TYPE i.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t16 = t10->tokens.
     t16->load( ).
-    t15 = lines( t16->items ).
-    t14 = t15.
+    t14 = lines( t16->items ).
     DATA t18 TYPE int8.
-    DATA t19 TYPE i.
-    t19 = t10->token_index.
-    t18 = t19.
+    t18 = t10->token_index.
     t13 = t14 - t18.
     t12 = t13.
     t8 = t12.
-    DATA(t21) = CONV int8( 0 ).
-    t7 = xsdbool( t8 <> t21 ).
+    t7 = xsdbool( t8 <> CONV int8( 0 ) ).
     t6 = t7.
     IF t7 = abap_true.
       DATA(t22) = VALUE abap_bool( ).
       DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      DATA t24 TYPE REF TO zcl_lnt_abstract_token.
       DATA t25 TYPE REF TO zcl_lnt_st_result.
       t25 = t4.
       DATA t27 TYPE REF TO zcl_lnt_abstract_token.
@@ -345,8 +303,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       ELSE.
         t27 ?= t32.
       ENDIF.
-      t24 = t27.
-      t23 = t24->zlnt_builtin_clas_3f891b097658( ).
+      t23 = t27->zlnt_builtin_clas_3f891b097658( ).
       DATA(t35) = me->token_type.
       DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -372,7 +329,6 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       DATA t40 TYPE REF TO zcl_lnt_st_result.
       t40 = t4.
       DATA t43 TYPE REF TO zcl_lnt_token_node.
-      DATA t44 TYPE REF TO zcl_lnt_abstract_token.
       DATA t45 TYPE REF TO zcl_lnt_st_result.
       t45 = t4.
       DATA t47 TYPE REF TO zcl_lnt_abstract_token.
@@ -393,27 +349,21 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       ELSE.
         t47 ?= t52.
       ENDIF.
-      t44 = t47.
-      t43 = NEW zcl_lnt_token_node( i_token = t44 ).
-      DATA t55 TYPE REF TO zcl_lnt_st_result.
+      t43 = NEW zcl_lnt_token_node( i_token = t47 ).
       DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t56 = t40->tokens.
       DATA t58 TYPE int8.
       DATA t59 TYPE int8.
-      DATA t60 TYPE i.
-      t60 = t40->token_index.
-      t59 = t60.
+      t59 = t40->token_index.
       DATA(t62) = CONV int8( 1 ).
       t58 = t59 + t62.
       DATA t63 TYPE REF TO zcl_lnt_result_node.
       DATA t65 TYPE REF TO zcl_lnt_result_node.
       DATA t66 TYPE REF TO zif_lnt_union_4cf1d054.
       t66 = t43.
-      DATA t68 TYPE REF TO zcl_lnt_result_node.
       DATA t69 TYPE REF TO zcl_lnt_result_node.
       t69 = t40->nodes_0226.
-      t68 = t69.
-      t65 = NEW zcl_lnt_result_node( i_node = t66 i_previous = t68 ).
+      t65 = NEW zcl_lnt_result_node( i_node = t66 i_previous = t69 ).
       CREATE OBJECT t65->zlnt_view_ownkeys_b0e8086400eb.
       t65->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -424,13 +374,11 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t65->zlnt_json_ownkeys_70e5fd461788.
       t65->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t73) = |node|.
       DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t65->zlnt_json_ownkeys_70e5fd461788->put( p0 = t73 p1 = t74 ).
-      DATA(t75) = |previous|.
+      t65->zlnt_json_ownkeys_70e5fd461788->put( p0 = |node| p1 = t74 ).
       DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t65->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t65->zlnt_json_ownkeys_70e5fd461788->put( p0 = t75 p1 = t76 ).
+        t65->zlnt_json_ownkeys_70e5fd461788->put( p0 = |previous| p1 = t76 ).
       ENDIF.
       t63 = t65.
       DATA t78 TYPE f.
@@ -438,8 +386,7 @@ CLASS zcl_lnt_st_token IMPLEMENTATION.
       t79 = t40->node_count.
       DATA(t81) = CONV f( 1 ).
       t78 = t79 + t81.
-      t55 = zcl_lnt_st_result=>from_chain( i_tokens = t56 i_token_index = t58 i_nodes_5198 = t63 i_node_count = t78 ).
-      t39 = t55.
+      t39 = zcl_lnt_st_result=>from_chain( i_tokens = t56 i_token_index = t58 i_nodes_5198 = t63 i_node_count = t78 ).
       t2->load( ).
       APPEND t39 TO t2->items.
       t2->save( ).

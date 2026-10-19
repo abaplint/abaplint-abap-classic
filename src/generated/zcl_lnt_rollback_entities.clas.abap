@@ -13,23 +13,14 @@ CLASS zcl_lnt_rollback_entities DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
   METHOD get_matcher.
-    DATA(t1) = VALUE string( ).
-    t1 = |ROLLBACK ENTITIES|.
-    DATA t3 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t4) = |KeyUser|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zcl_lnt_abap_release.
-    DATA t9 TYPE REF TO zcl_lnt_abap_release.
-    DATA t10 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t10 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t11) = |v754|.
-    t9 = t10->get( p0 = t11 ).
-    t8 = t9.
+    t8 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v754| ).
     IF t8 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t13 TYPE REF TO object.
@@ -56,27 +47,21 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t14->sval = t1.
-    DATA t16 TYPE REF TO zcl_lnt_iver_options.
+    t14->sval = |ROLLBACK ENTITIES|.
     DATA t18 TYPE REF TO zcl_lnt_iver_options.
-    DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t22) = |OpenABAP|.
     DATA(t23) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t23->has = abap_true.
-    t23->value = t22.
-    t19 = t23.
-    t18 = NEW zcl_lnt_iver_options( i_also = t19 ).
+    t23->value = |OpenABAP|.
+    t18 = NEW zcl_lnt_iver_options( i_also = t23 ).
     CREATE OBJECT t18->zlnt_view_ownkeys_b0e8086400eb.
     t18->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t18->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t25 ).
     CREATE OBJECT t18->zlnt_json_ownkeys_70e5fd461788.
     t18->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t26) = |also|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t18->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
-    t16 = t18.
-    t6 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t7 i_first = t14 i_opts = t16 ).
+    t18->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t27 ).
+    t6 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t7 i_first = t14 i_opts = t18 ).
     IF t6 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t30 TYPE REF TO object.
@@ -100,8 +85,7 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t3 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t4 i_first = t5 ).
-    result = t3.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t5 ).
 
   ENDMETHOD.
 

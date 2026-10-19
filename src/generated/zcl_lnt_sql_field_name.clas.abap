@@ -14,7 +14,6 @@ CLASS zcl_lnt_sql_field_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     DATA(t3) = |^(?!(?:FROM\|INTO\|HAVING\|FOR\|DISTINCT\|UNION\|INTERSECT\|EXCEPT\||.
     t3 = t3 && |NOT\|WHEN\|CASE\|AS\|APPENDING\|WHERE\|CONNECTION\|EXISTS\|INSERT\|MO|.
@@ -24,11 +23,9 @@ CLASS zcl_lnt_sql_field_name IMPLEMENTATION.
     DATA(t5) = |^(?:FROM\|INTO\|HAVING\|FOR\|DISTINCT\|UNION\|INTERSECT\|EXCEPT\|NOT|.
     t5 = t5 && |\|WHEN\|CASE\|AS\|APPENDING\|WHERE\|CONNECTION\|EXISTS\|INSERT\|MODIF|.
     t5 = t5 && |Y)$|.
-    DATA(t6) = |i|.
-    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = t6 excluded_pattern = t5.
+    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = |i| excluded_pattern = t5.
     t2->source = t3.
-    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
 
   ENDMETHOD.
 

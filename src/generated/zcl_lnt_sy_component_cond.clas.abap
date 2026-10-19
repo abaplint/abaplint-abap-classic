@@ -41,16 +41,10 @@ CLASS zcl_lnt_sy_component_cond IMPLEMENTATION.
         t8 ?= t9.
       ENDIF.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
-      DATA t14 TYPE REF TO zcl_lnt_expression_node.
       DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
-      t14 = t8->find_direct_expression( i_type_9913 = t16 ).
-      t13 = t14.
-      DATA t17 TYPE abap_bool.
-      t17 = xsdbool( t13 IS BOUND ).
-      IF t17 = abap_true.
-        DATA t19 TYPE REF TO zcl_lnt_expression_node.
-        t19 = t13.
-        zcl_lnt_sy_component_cond=>run_syntax( i_node = t19 i_input_967e = t2 i_left_type = t3 i_right_type = t4 ).
+      t13 = t8->find_direct_expression( i_type_9913 = t16 ).
+      IF xsdbool( t13 IS BOUND ) = abap_true.
+        zcl_lnt_sy_component_cond=>run_syntax( i_node = t13 i_input_967e = t2 i_left_type = t3 i_right_type = t4 ).
       ENDIF.
     ENDDO.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

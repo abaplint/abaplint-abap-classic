@@ -27,15 +27,13 @@ CLASS zcl_lnt_line_length_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 120 ).
     DATA(t2) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = CONV f( 120 ).
     me->zlnt_view_write_s_f8dfe74665cb( p0 = t2 ).
-    DATA(t3) = CONV f( 10 ).
     DATA(t4) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = CONV f( 10 ).
     me->zlnt_view_write_s_4f101c7fcda5( p0 = t4 ).
   ENDMETHOD.
 

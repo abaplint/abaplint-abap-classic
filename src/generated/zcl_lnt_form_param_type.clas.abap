@@ -16,10 +16,9 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |DEFAULT|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |DEFAULT|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -38,9 +37,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t16.
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    t17 = zcl_lnt_st_combi_module=>alt( i_first = t10 i_second = t13 i_rest = t16 ).
-    t8 = t17.
+    t8 = zcl_lnt_st_combi_module=>alt( i_first = t10 i_second = t13 i_rest = t16 ).
     IF t8 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t22 TYPE REF TO object.
@@ -66,53 +63,42 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t24.
-    DATA t25 TYPE REF TO zif_lnt_statement_runnable.
-    t25 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t24 ).
-    t1 = t25.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t24 ).
     DATA t29 TYPE REF TO zif_lnt_statement_runnable.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t33 TYPE REF TO zif_lnt_statement_runnable.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t36) = |STANDARD|.
     CREATE OBJECT t35.
     t35->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t35->sval = t36.
+    t35->sval = |STANDARD|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t39) = |HASHED|.
     CREATE OBJECT t38.
     t38->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t38->sval = t39.
+    t38->sval = |HASHED|.
     DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t41.
-    t40 = t41.
+    CREATE OBJECT t40.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t44) = |INDEX|.
     CREATE OBJECT t43.
     t43->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t43->sval = t44.
+    t43->sval = |INDEX|.
     t40->load( ).
     APPEND t43 TO t40->items.
     t40->save( ).
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t47) = |SORTED|.
     CREATE OBJECT t46.
     t46->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t46->sval = t47.
+    t46->sval = |SORTED|.
     t40->load( ).
     APPEND t46 TO t40->items.
     t40->save( ).
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t50) = |ANY|.
     CREATE OBJECT t49.
     t49->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t49->sval = t50.
+    t49->sval = |ANY|.
     t40->load( ).
     APPEND t49 TO t40->items.
     t40->save( ).
-    DATA t51 TYPE REF TO zif_lnt_statement_runnable.
-    t51 = zcl_lnt_st_combi_module=>alt( i_first = t35 i_second = t38 i_rest = t40 ).
-    t33 = t51.
+    t33 = zcl_lnt_st_combi_module=>alt( i_first = t35 i_second = t38 i_rest = t40 ).
     IF t33 IS BOUND.
       DATA t55 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t56 TYPE REF TO object.
@@ -137,15 +123,12 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t59) = |TABLE|.
     CREATE OBJECT t58.
     t58->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t58->sval = t59.
+    t58->sval = |TABLE|.
     DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t61.
-    DATA t62 TYPE REF TO zif_lnt_statement_runnable.
-    t62 = zcl_lnt_st_combi_module=>seq( i_first = t32 i_second = t58 i_rest = t61 ).
-    t29 = t62.
+    t29 = zcl_lnt_st_combi_module=>seq( i_first = t32 i_second = t58 i_rest = t61 ).
     DATA t66 TYPE REF TO zif_lnt_statement_runnable.
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
@@ -176,10 +159,9 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t77 TYPE REF TO zif_lnt_statement_runnable.
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t80) = |OF|.
     CREATE OBJECT t79.
     t79->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t79->sval = t80.
+    t79->sval = |OF|.
     DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t83) = zlnt_runtime_desc_78196487750d=>zlnt_member_d189_7457e1b1f519.
     IF t83 IS BOUND.
@@ -189,9 +171,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t85.
-    DATA t86 TYPE REF TO zif_lnt_statement_runnable.
-    t86 = zcl_lnt_st_combi_module=>seq( i_first = t79 i_second = t82 i_rest = t85 ).
-    t77 = t86.
+    t77 = zcl_lnt_st_combi_module=>seq( i_first = t79 i_second = t82 i_rest = t85 ).
     IF t77 IS BOUND.
       DATA t90 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t91 TYPE REF TO object.
@@ -241,29 +221,23 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t95 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t95.
-    DATA t96 TYPE REF TO zif_lnt_statement_runnable.
-    t96 = zcl_lnt_st_combi_module=>seq( i_first = t69 i_second = t74 i_rest = t95 ).
-    t66 = t96.
+    t66 = zcl_lnt_st_combi_module=>seq( i_first = t69 i_second = t74 i_rest = t95 ).
     DATA t100 TYPE REF TO zif_lnt_statement_runnable.
     DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t104 TYPE REF TO zif_lnt_statement_runnable.
     DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t106 TYPE REF TO zif_lnt_statement_runnable.
     DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t109) = |REF TO|.
     CREATE OBJECT t108.
     t108->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t108->sval = t109.
+    t108->sval = |REF TO|.
     DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t112) = |LINE OF|.
     CREATE OBJECT t111.
     t111->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t111->sval = t112.
+    t111->sval = |LINE OF|.
     DATA t114 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t114.
-    DATA t115 TYPE REF TO zif_lnt_statement_runnable.
-    t115 = zcl_lnt_st_combi_module=>alt( i_first = t108 i_second = t111 i_rest = t114 ).
-    t106 = t115.
+    t106 = zcl_lnt_st_combi_module=>alt( i_first = t108 i_second = t111 i_rest = t114 ).
     IF t106 IS BOUND.
       DATA t119 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t120 TYPE REF TO object.
@@ -319,9 +293,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
       t124->cval = t125.
     ENDIF.
     DATA t126 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t127.
-    t126 = t127.
+    CREATE OBJECT t126.
     DATA t129 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t130 TYPE REF TO zif_lnt_statement_runnable.
     DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -375,34 +347,27 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     t126->load( ).
     APPEND t129 TO t126->items.
     t126->save( ).
-    DATA t137 TYPE REF TO zif_lnt_statement_runnable.
-    t137 = zcl_lnt_st_combi_module=>seq( i_first = t103 i_second = t124 i_rest = t126 ).
-    t100 = t137.
+    t100 = zcl_lnt_st_combi_module=>seq( i_first = t103 i_second = t124 i_rest = t126 ).
     DATA t141 TYPE REF TO zif_lnt_statement_runnable.
     DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t145) = |LIKE|.
     CREATE OBJECT t144.
     t144->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t144->sval = t145.
+    t144->sval = |LIKE|.
     DATA t147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t148 TYPE REF TO zif_lnt_statement_runnable.
     DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t150 TYPE REF TO zif_lnt_statement_runnable.
     DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t153) = |REF TO|.
     CREATE OBJECT t152.
     t152->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t152->sval = t153.
+    t152->sval = |REF TO|.
     DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t156) = |LINE OF|.
     CREATE OBJECT t155.
     t155->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t155->sval = t156.
+    t155->sval = |LINE OF|.
     DATA t158 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t158.
-    DATA t159 TYPE REF TO zif_lnt_statement_runnable.
-    t159 = zcl_lnt_st_combi_module=>alt( i_first = t152 i_second = t155 i_rest = t158 ).
-    t150 = t159.
+    t150 = zcl_lnt_st_combi_module=>alt( i_first = t152 i_second = t155 i_rest = t158 ).
     IF t150 IS BOUND.
       DATA t163 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t164 TYPE REF TO object.
@@ -451,9 +416,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t167 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t168 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t168.
-    t167 = t168.
+    CREATE OBJECT t167.
     DATA t170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t171) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
     IF t171 IS BOUND.
@@ -464,16 +427,13 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     t167->load( ).
     APPEND t170 TO t167->items.
     t167->save( ).
-    DATA t172 TYPE REF TO zif_lnt_statement_runnable.
-    t172 = zcl_lnt_st_combi_module=>seq( i_first = t144 i_second = t147 i_rest = t167 ).
-    t141 = t172.
+    t141 = zcl_lnt_st_combi_module=>seq( i_first = t144 i_second = t147 i_rest = t167 ).
     DATA t178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t179 TYPE REF TO zif_lnt_statement_runnable.
     DATA t181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t182) = |TYPE|.
     CREATE OBJECT t181.
     t181->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t181->sval = t182.
+    t181->sval = |TYPE|.
     DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t185 TYPE REF TO zif_lnt_statement_runnable.
     DATA t187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -504,15 +464,10 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     DATA t193 TYPE REF TO zif_lnt_statement_runnable.
     DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t195 TYPE REF TO zcl_lnt_abap_release.
-    DATA t196 TYPE REF TO zcl_lnt_abap_release.
-    DATA t197 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t197 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t198) = |v916|.
-    t196 = t197->get( p0 = t198 ).
-    t195 = t196.
+    t195 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v916| ).
     IF t195 IS BOUND.
       DATA t199 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t200 TYPE REF TO object.
@@ -539,20 +494,16 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     DATA t201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t202 TYPE REF TO zif_lnt_statement_runnable.
     DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t205) = |ANY|.
     CREATE OBJECT t204.
     t204->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t204->sval = t205.
+    t204->sval = |ANY|.
     DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t208) = |STRUCTURE|.
     CREATE OBJECT t207.
     t207->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t207->sval = t208.
+    t207->sval = |STRUCTURE|.
     DATA t210 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t210.
-    DATA t211 TYPE REF TO zif_lnt_statement_runnable.
-    t211 = zcl_lnt_st_combi_module=>seq( i_first = t204 i_second = t207 i_rest = t210 ).
-    t202 = t211.
+    t202 = zcl_lnt_st_combi_module=>seq( i_first = t204 i_second = t207 i_rest = t210 ).
     IF t202 IS BOUND.
       DATA t215 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t216 TYPE REF TO object.
@@ -602,9 +553,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t220 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t221 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t221.
-    t220 = t221.
+    CREATE OBJECT t220.
     DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t100 IS BOUND.
       DATA t225 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -632,9 +581,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     t220->load( ).
     APPEND t223 TO t220->items.
     t220->save( ).
-    DATA t227 TYPE REF TO zif_lnt_statement_runnable.
-    t227 = zcl_lnt_st_combi_module=>alt_prio( i_first = t187 i_second = t192 i_rest = t220 ).
-    t185 = t227.
+    t185 = zcl_lnt_st_combi_module=>alt_prio( i_first = t187 i_second = t192 i_rest = t220 ).
     IF t185 IS BOUND.
       DATA t231 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t232 TYPE REF TO object.
@@ -660,9 +607,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t234 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t234.
-    DATA t235 TYPE REF TO zif_lnt_statement_runnable.
-    t235 = zcl_lnt_st_combi_module=>seq( i_first = t181 i_second = t184 i_rest = t234 ).
-    t179 = t235.
+    t179 = zcl_lnt_st_combi_module=>seq( i_first = t181 i_second = t184 i_rest = t234 ).
     IF t179 IS BOUND.
       DATA t239 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t240 TYPE REF TO object.
@@ -712,9 +657,7 @@ CLASS zcl_lnt_form_param_type IMPLEMENTATION.
     ENDIF.
     DATA t247 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t247.
-    DATA t248 TYPE REF TO zif_lnt_statement_runnable.
-    t248 = zcl_lnt_st_combi_module=>alt( i_first = t178 i_second = t242 i_rest = t247 ).
-    result = t248.
+    result = zcl_lnt_st_combi_module=>alt( i_first = t178 i_second = t242 i_rest = t247 ).
 
   ENDMETHOD.
 

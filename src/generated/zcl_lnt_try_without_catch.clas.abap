@@ -26,33 +26,21 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA(t2) = VALUE string( ).
-    t2 = |try_without_catch|.
-    DATA(t4) = VALUE string( ).
-    t4 = |TRY without CATCH|.
-    DATA(t6) = VALUE string( ).
-    t6 = |Checks for TRY blocks without a CATCH and CLEANUP block|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t11) = |TRY.\n  WRITE 'hello world'.\nENDTRY.|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |TRY.\n  WRITE 'hello world'.\nENDTRY.|.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t8 i_good_example = t24 i_extended_information = t26 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |try_without_catch| i_title = |TRY without CATCH| i_short_description = |Checks for TRY blocks without a CATCH and CLEANUP block| i_bad_example = t8 i_good_example = t24 i_extended_information = t26 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -75,28 +63,23 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |badExample|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -122,29 +105,19 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
   METHOD r_p_i_s_r_tr_wt_ct_ts_tr_wt_ct.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t17.
-      result = t17.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t20 TYPE REF TO zcl_lnt_structure_node.
     t20 = t4.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d744_dbdc6f78b1c3.
-    t19 = t20->find_all_structures( i_type_9913 = t22 ).
-    t18 = t19.
+    t18 = t20->find_all_structures( i_type_9913 = t22 ).
     DATA t24 TYPE REF TO zcl_lnt_structure_node.
     DATA t25 TYPE REF TO object.
     DATA(t26) = VALUE i( ).
@@ -184,12 +157,10 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
       t38 = xsdbool( t34 IS INITIAL ).
       t37 = t38.
       IF t38 = abap_true.
-        DATA(t45) = VALUE abap_bool( ).
         DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t48.
         CLEAR t48.
-        t45 = xsdbool( t30 IS INITIAL ).
-        t37 = t45.
+        t37 = xsdbool( t30 IS INITIAL ).
       ENDIF.
       IF t37 = abap_true.
         DATA t53 TYPE REF TO zcl_lnt_issue.
@@ -202,18 +173,11 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         DATA(t58) = VALUE string( ).
         DATA t59 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t59.
-        DATA(t60) = VALUE string( ).
-        t60 = |try_without_catch|.
-        DATA(t62) = VALUE string( ).
-        t62 = |TRY without CATCH|.
-        DATA(t64) = VALUE string( ).
-        t64 = |Checks for TRY blocks without a CATCH and CLEANUP block|.
         DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t66.
-        DATA(t69) = |TRY.\n  WRITE 'hello world'.\nENDTRY.|.
         DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t70->has = abap_true.
-        t70->value = t69.
+        t70->value = |TRY.\n  WRITE 'hello world'.\nENDTRY.|.
         t66 = t70.
         DATA t72 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t72.
@@ -223,9 +187,8 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         CLEAR t77.
         CREATE OBJECT t77.
         t76 = t77.
-        DATA(t79) = |SingleFile|.
         t76->load( ).
-        APPEND t79 TO t76->items.
+        APPEND |SingleFile| TO t76->items.
         t76->save( ).
         t72 = t76.
         DATA t82 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -240,7 +203,7 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t88.
         CLEAR t88.
-        t59 = NEW zcl_lnt_irule_metadata( i_key = t60 i_title = t62 i_short_description = t64 i_bad_example = t66 i_good_example = t82 i_extended_information = t84 i_tags = t72 i_pragma = t86 i_pseudo_comment = t88 ).
+        t59 = NEW zcl_lnt_irule_metadata( i_key = |try_without_catch| i_title = |TRY without CATCH| i_short_description = |Checks for TRY blocks without a CATCH and CLEANUP block| i_bad_example = t66 i_good_example = t82 i_extended_information = t84 i_tags = t72 i_pragma = t86 i_pseudo_comment = t88 ).
         CREATE OBJECT t59->zlnt_view_ownkeys_b0e8086400eb.
         t59->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -268,33 +231,28 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t59->zlnt_json_ownkeys_70e5fd461788.
         t59->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t95) = |key|.
         DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t96.
-        t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
-        DATA(t97) = |title|.
+        t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t96 ).
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
+          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t98 ).
         ENDIF.
-        DATA(t99) = |shortDescription|.
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t100.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
+          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t100 ).
         ENDIF.
-        DATA(t101) = |badExample|.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t101 p1 = t102 ).
+          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t102 ).
         ENDIF.
-        DATA(t103) = |tags|.
         DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t104.
         IF t59->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = t103 p1 = t104 ).
+          t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t104 ).
         ENDIF.
         t58 = t59->key.
         DATA t105 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

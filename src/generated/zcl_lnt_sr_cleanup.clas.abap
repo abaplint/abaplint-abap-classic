@@ -17,20 +17,14 @@ CLASS zcl_lnt_sr_cleanup IMPLEMENTATION.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d415_90544e90c161.
     t4 = zcl_lnt_sr_combi_module=>sta( i_s = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
+    CREATE OBJECT t6.
     DATA t9 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t10 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
-    t10 = zcl_lnt_sr_combi_module=>sub( i_s = t11 ).
-    t9 = zcl_lnt_sr_combi_module=>opt( i_o = t10 ).
+    t9 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t11 ) ).
     t6->load( ).
     APPEND t9 TO t6->items.
     t6->save( ).
-    DATA t12 TYPE REF TO zif_lnt_structure_runnable.
-    t12 = zcl_lnt_sr_combi_module=>seq( i_first = t4 i_rest = t6 ).
-    result = t12.
+    result = zcl_lnt_sr_combi_module=>seq( i_first = t4 i_rest = t6 ).
 
   ENDMETHOD.
 

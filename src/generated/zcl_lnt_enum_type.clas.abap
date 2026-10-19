@@ -30,23 +30,15 @@ CLASS zcl_lnt_enum_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = VALUE string( ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t4 TYPE REF TO zcl_lnt_abstract_type.
     t4 = me.
     DATA t7 TYPE REF TO zcl_lnt_abstract_type_data.
-    DATA t8 TYPE REF TO zcl_lnt_abstract_type_data.
-    t8 = t4->data_56cc.
-    t7 = t8.
+    t7 = t4->data_56cc.
     DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t11) = xsdbool( t7 IS INITIAL ).
-    IF t11 = abap_true.
+    IF xsdbool( t7 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t15 TYPE REF TO zcl_lnt_abstract_type_data.
-      t15 = t7.
-      t14 = t15->zlnt_view_read_sr_c978da49ae47( ).
-      t10 = t14.
+      t10 = t7->zlnt_view_read_sr_c978da49ae47( ).
     ENDIF.
     t2 = t10.
     DATA(t17) = VALUE string( ).
@@ -57,14 +49,11 @@ CLASS zcl_lnt_enum_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t18 = abap_true.
-      DATA t20 TYPE string.
-      t20 = t2->value.
-      t17 = t20.
+      t17 = t2->value.
     ELSE.
       t17 = |enum|.
     ENDIF.
-    t1 = t17.
-    result = t1.
+    result = t17.
 
   ENDMETHOD.
 

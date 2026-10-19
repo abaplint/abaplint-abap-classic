@@ -30,12 +30,10 @@ CLASS zcl_lnt_p_generic_type IMPLEMENTATION.
     IF zcl_lnt_p_generic_type=>zlnt_builtin_init_01a37d5212e0 = abap_false.
       zcl_lnt_p_generic_type=>zlnt_builtin_init_0a476ab1bba4( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_p_generic_type.
     IF zcl_lnt_p_generic_type=>zlnt_builtin_init_01a37d5212e0 = abap_false.
       zcl_lnt_p_generic_type=>zlnt_builtin_init_0a476ab1bba4( ).
     ENDIF.
-    t1 = zcl_lnt_p_generic_type=>singleton.
-    result = t1.
+    result = zcl_lnt_p_generic_type=>singleton.
 
   ENDMETHOD.
 
@@ -52,13 +50,10 @@ CLASS zcl_lnt_p_generic_type IMPLEMENTATION.
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = |p, generic|.
     DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t6->has = abap_true.
-    t6->value = t5.
-    t3 = t6.
-    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
+    t6->value = |p, generic|.
+    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t6 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.
@@ -110,12 +105,10 @@ CLASS zcl_lnt_p_generic_type IMPLEMENTATION.
     IF zcl_lnt_p_generic_type=>zlnt_builtin_init_01a37d5212e0 = abap_false.
       zcl_lnt_p_generic_type=>zlnt_builtin_init_0a476ab1bba4( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_p_generic_type.
     IF zcl_lnt_p_generic_type=>zlnt_builtin_init_01a37d5212e0 = abap_false.
       zcl_lnt_p_generic_type=>zlnt_builtin_init_0a476ab1bba4( ).
     ENDIF.
-    t1 = NEW zcl_lnt_p_generic_type( ).
-    zcl_lnt_p_generic_type=>singleton = t1.
+    zcl_lnt_p_generic_type=>singleton = NEW zcl_lnt_p_generic_type( ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

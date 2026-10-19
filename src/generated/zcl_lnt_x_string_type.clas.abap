@@ -31,12 +31,10 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
     DATA(t1) = i_input_967e.
-    DATA t2 TYPE REF TO zcl_lnt_x_string_type.
     IF zcl_lnt_x_string_type=>zlnt_builtin_init_5b41ede9197f = abap_false.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
-    t2 = NEW zcl_lnt_x_string_type( i_input_967e = t1 ).
-    result = t2.
+    result = NEW zcl_lnt_x_string_type( i_input_967e = t1 ).
 
   ENDMETHOD.
 

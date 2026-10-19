@@ -29,51 +29,35 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |whitespace_end|.
-    DATA t4 TYPE string.
-    t4 = |Whitespace at end of line|.
-    DATA t6 TYPE string.
-    t6 = |Checks for redundant whitespace at the end of each line.|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t11) = |SMIM and W3MI files are not checked.|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |SMIM and W3MI files are not checked.|.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Whitespace|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Whitespace| TO t18->items.
     t18->save( ).
-    DATA(t23) = |Quickfix|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |Quickfix| TO t18->items.
     t18->save( ).
-    DATA(t25) = |SingleFile|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t31) = |WRITE 'hello'.      |.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
-    t32->value = t31.
+    t32->value = |WRITE 'hello'.      |.
     t28 = t32.
-    DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t37) = |WRITE 'hello'.|.
     DATA(t38) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t38->has = abap_true.
-    t38->value = t37.
-    t34 = t38.
+    t38->value = |WRITE 'hello'.|.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |whitespace_end| i_title = |Whitespace at end of line| i_short_description = |Checks for redundant whitespace at the end of each line.| i_bad_example = t28 i_good_example = t38 i_extended_information = t8 i_tags = t14 i_pragma = t40 i_pseudo_comment = t42 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -104,38 +88,31 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t51) = |key|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
-    DATA(t53) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t52 ).
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |shortDescription|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |extendedInformation|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |tags|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |badExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t62 ).
     ENDIF.
-    DATA(t63) = |goodExample|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t64 ).
     ENDIF.
     result = t1.
 
@@ -165,9 +142,7 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t4 = t1->get_files( ).
     DATA t6 TYPE REF TO zif_lnt_file.
@@ -197,26 +172,18 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
       t12 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_mime_object ).
       t11 = t12.
       IF t12 = abap_false.
-        DATA t14 TYPE abap_bool.
-        t14 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_web_mime ).
-        t11 = t14.
+        t11 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_web_mime ).
       ENDIF.
       IF t11 = abap_true.
         CONTINUE.
       ENDIF.
       DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t17 = t6->get_raw_rows( ).
-      t16 = t17.
+      t16 = t6->get_raw_rows( ).
       DATA t19 TYPE i.
       t19 = 0.
       DO.
-        DATA t21 TYPE abap_bool.
-        DATA t23 TYPE i.
         t16->load( ).
-        t23 = lines( t16->items ).
-        t21 = xsdbool( t19 < t23 ).
-        IF t21 = abap_false.
+        IF xsdbool( t19 < lines( t16->items ) ) = abap_false.
           EXIT.
         ENDIF.
         DATA(t25) = VALUE abap_bool( ).
@@ -228,7 +195,6 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
         ENDIF.
         t16->load( ).
-        CLEAR t27.
         READ TABLE t16->items INDEX t29 INTO t27.
         DATA(t30) = | |.
         DATA(t31) = strlen( t27 ).
@@ -256,7 +222,6 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t16->load( ).
-          CLEAR t36.
           READ TABLE t16->items INDEX t38 INTO t36.
           DATA(t39) = | \r|.
           DATA(t40) = strlen( t36 ).
@@ -281,14 +246,9 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           CLEAR t45.
           DATA t46 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
           CLEAR t46.
-          DATA(t47) = ` +\r?$`.
-          DATA(t48) = ||.
-          CREATE OBJECT t46 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t47 flags = t48.
-          DATA(t49) = VALUE string( ).
+          CREATE OBJECT t46 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = ` +\r?$` flags = ||.
           DATA t50 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t51 = t16->get( p0 = t19 ).
-          t50 = t51.
+          t50 = t16->get( p0 = t19 ).
           DATA(t54) = VALUE string( ).
           DATA(t55) = VALUE abap_bool( ).
           IF t50 IS INITIAL.
@@ -299,16 +259,11 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           IF t55 = abap_true.
             t54 = |undefined|.
           ELSE.
-            DATA t58 TYPE string.
-            t58 = t50->value.
-            t54 = t58.
+            t54 = t50->value.
           ENDIF.
-          t49 = t54.
-          t45 = zlnt_runtime_rege_8d1cc1058680=>exec_legacy( p0 = t46 p1 = t49 ).
+          t45 = zlnt_runtime_rege_8d1cc1058680=>exec_legacy( p0 = t46 p1 = t54 ).
           DATA t60 TYPE REF TO zcl_lnt_position.
           CLEAR t60.
-          DATA t61 TYPE REF TO zcl_lnt_position.
-          CLEAR t61.
           DATA t62 TYPE f.
           DATA t63 TYPE i.
           DATA(t65) = 1.
@@ -316,25 +271,20 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           t62 = t63.
           DATA(t66) = VALUE f( ).
           DATA(t67) = VALUE f( ).
-          DATA(t68) = VALUE i( ).
           DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           t69 = t45.
           IF t69->match_has_index <> abap_true.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
-          t68 = t69->match_index.
-          t67 = t68.
+          t67 = t69->match_index.
           DATA(t71) = CONV f( 1 ).
           t66 = t67 + t71.
           DATA(t72) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t72->has = abap_true.
           t72->value = t66.
-          t61 = NEW zcl_lnt_position( i_row = t62 i_col = t72 ).
-          t60 = t61.
+          t60 = NEW zcl_lnt_position( i_row = t62 i_col = t72 ).
           DATA t73 TYPE REF TO zcl_lnt_position.
           CLEAR t73.
-          DATA t74 TYPE REF TO zcl_lnt_position.
-          CLEAR t74.
           DATA t75 TYPE f.
           DATA t76 TYPE i.
           DATA(t78) = 1.
@@ -343,7 +293,6 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           DATA(t79) = VALUE f( ).
           DATA(t80) = VALUE int8( ).
           DATA(t81) = VALUE int8( ).
-          DATA(t82) = VALUE i( ).
           DATA(t83) = VALUE string( ).
           DATA(t85) = t19.
           t85 = t85 + 1.
@@ -351,77 +300,59 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t16->load( ).
-          CLEAR t83.
           READ TABLE t16->items INDEX t85 INTO t83.
-          t82 = strlen( t83 ).
-          t81 = t82.
+          t81 = strlen( t83 ).
           DATA(t87) = CONV int8( 1 ).
           t80 = t81 + t87.
           t79 = t80.
           DATA(t88) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
           t88->has = abap_true.
           t88->value = t79.
-          t74 = NEW zcl_lnt_position( i_row = t75 i_col = t88 ).
-          t73 = t74.
+          t73 = NEW zcl_lnt_position( i_row = t75 i_col = t88 ).
           DATA t90 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           t90 = zcl_lnt_edit_helper=>delete_range( i_file = t6 i_start = t60 i_end = t73 ).
           DATA t95 TYPE REF TO zcl_lnt_issue.
           CLEAR t95.
-          DATA(t99) = |Remove whitespace at end of line|.
           DATA(t100) = VALUE string( ).
           DATA t101 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t101.
-          DATA t102 TYPE string.
-          t102 = |whitespace_end|.
-          DATA t104 TYPE string.
-          t104 = |Whitespace at end of line|.
-          DATA t106 TYPE string.
-          t106 = |Checks for redundant whitespace at the end of each line.|.
           DATA t108 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t108.
-          DATA(t111) = |SMIM and W3MI files are not checked.|.
           DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t112->has = abap_true.
-          t112->value = t111.
+          t112->value = |SMIM and W3MI files are not checked.|.
           t108 = t112.
           DATA t114 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t114.
           DATA t118 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t119 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t119.
-          t118 = t119.
-          DATA(t121) = |Whitespace|.
+          CREATE OBJECT t118.
           t118->load( ).
-          APPEND t121 TO t118->items.
+          APPEND |Whitespace| TO t118->items.
           t118->save( ).
-          DATA(t123) = |Quickfix|.
           t118->load( ).
-          APPEND t123 TO t118->items.
+          APPEND |Quickfix| TO t118->items.
           t118->save( ).
-          DATA(t125) = |SingleFile|.
           t118->load( ).
-          APPEND t125 TO t118->items.
+          APPEND |SingleFile| TO t118->items.
           t118->save( ).
           t114 = t118.
           DATA t128 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t128.
-          DATA(t131) = |WRITE 'hello'.      |.
           DATA(t132) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t132->has = abap_true.
-          t132->value = t131.
+          t132->value = |WRITE 'hello'.      |.
           t128 = t132.
           DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t134.
-          DATA(t137) = |WRITE 'hello'.|.
           DATA(t138) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t138->has = abap_true.
-          t138->value = t137.
+          t138->value = |WRITE 'hello'.|.
           t134 = t138.
           DATA t140 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t140.
           DATA t142 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t142.
-          t101 = NEW zcl_lnt_irule_metadata( i_key = t102 i_title = t104 i_short_description = t106 i_bad_example = t128 i_good_example = t134 i_extended_information = t108 i_tags = t114 i_pragma = t140 i_pseudo_comment = t142 ).
+          t101 = NEW zcl_lnt_irule_metadata( i_key = |whitespace_end| i_title = |Whitespace at end of line| i_short_description = |Checks for redundant whitespace at the end of each line.| i_bad_example = t128 i_good_example = t134 i_extended_information = t108 i_tags = t114 i_pragma = t140 i_pseudo_comment = t142 ).
           CREATE OBJECT t101->zlnt_view_ownkeys_b0e8086400eb.
           t101->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -459,45 +390,38 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t101->zlnt_json_ownkeys_70e5fd461788.
           t101->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t151) = |key|.
           DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t152.
-          t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t151 p1 = t152 ).
-          DATA(t153) = |title|.
+          t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t152 ).
           DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t154.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t153 p1 = t154 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t154 ).
           ENDIF.
-          DATA(t155) = |shortDescription|.
           DATA t156 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t156.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t155 p1 = t156 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t156 ).
           ENDIF.
-          DATA(t157) = |extendedInformation|.
           DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t158.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t157 p1 = t158 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t158 ).
           ENDIF.
-          DATA(t159) = |tags|.
           DATA t160 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t160.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t159 p1 = t160 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t160 ).
           ENDIF.
-          DATA(t161) = |badExample|.
           DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t162.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t161 p1 = t162 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t162 ).
           ENDIF.
-          DATA(t163) = |goodExample|.
           DATA t164 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t164.
           IF t101->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = t163 p1 = t164 ).
+            t101->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t164 ).
           ENDIF.
           t100 = t101->key.
           DATA t165 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -507,15 +431,13 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           t167 = t90.
           DATA t171 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t171.
-          t95 = zcl_lnt_issue=>at_range( i_file = t6 i_start = t60 i_end = t73 i_message_26cb = t99 i_key = t100 i_severity = t165 i_fix = t167 i_alternative_fixes = t171 ).
+          t95 = zcl_lnt_issue=>at_range( i_file = t6 i_start = t60 i_end = t73 i_message_26cb = |Remove whitespace at end of line| i_key = t100 i_severity = t165 i_fix = t167 i_alternative_fixes = t171 ).
           t2->load( ).
           APPEND t95 TO t2->items.
           t2->save( ).
         ENDIF.
-        DATA t174 TYPE i.
         DATA(t176) = 1.
-        t174 = t19 + t176.
-        t19 = t174.
+        t19 = t19 + t176.
       ENDDO.
     ENDDO.
     result = t2.
@@ -563,10 +485,8 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zif_lnt_rule.
     DATA(t3) = i_reg_f149.
-    t2 = me->in_in_sr_rl_wht_end_ts_wht_end( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->in_in_sr_rl_wht_end_ts_wht_end( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

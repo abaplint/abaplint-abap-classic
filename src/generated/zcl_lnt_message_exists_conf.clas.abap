@@ -42,8 +42,7 @@ CLASS zcl_lnt_message_exists_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_6fb4e7507104.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkPlaceholders` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `checkPlaceholders` ) )->as_boolean( ).
     ELSE.
       result = me->check_placeholders.
     ENDIF.

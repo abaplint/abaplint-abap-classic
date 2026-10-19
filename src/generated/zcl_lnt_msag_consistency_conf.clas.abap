@@ -42,8 +42,7 @@ CLASS zcl_lnt_msag_consistency_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_00c52724c39a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `numericParameters` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `numericParameters` ) )->as_boolean( ).
     ELSE.
       result = me->numeric_parameters.
     ENDIF.

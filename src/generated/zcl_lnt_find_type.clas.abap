@@ -14,36 +14,26 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t6) = |REGEX|.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
+    t5->sval = |REGEX|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t9) = |SUBSTRING|.
     CREATE OBJECT t8.
     t8->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t8->sval = t9.
+    t8->sval = |SUBSTRING|.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t11.
-    t10 = t11.
+    CREATE OBJECT t10.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t14 TYPE REF TO zif_lnt_statement_runnable.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t16 TYPE REF TO zcl_lnt_abap_release.
-    DATA t17 TYPE REF TO zcl_lnt_abap_release.
-    DATA t18 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t18 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t19) = |v755|.
-    t17 = t18->get( p0 = t19 ).
-    t16 = t17.
+    t16 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v755| ).
     IF t16 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t21 TYPE REF TO object.
@@ -68,30 +58,23 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t23) = |PCRE|.
     CREATE OBJECT t22.
     t22->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t22->sval = t23.
-    DATA t24 TYPE REF TO zcl_lnt_iver_options.
+    t22->sval = |PCRE|.
     DATA t26 TYPE REF TO zcl_lnt_iver_options.
-    DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t30) = |OpenABAP|.
     DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t31->has = abap_true.
-    t31->value = t30.
-    t27 = t31.
-    t26 = NEW zcl_lnt_iver_options( i_also = t27 ).
+    t31->value = |OpenABAP|.
+    t26 = NEW zcl_lnt_iver_options( i_also = t31 ).
     CREATE OBJECT t26->zlnt_view_ownkeys_b0e8086400eb.
     t26->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t26->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t33 ).
     CREATE OBJECT t26->zlnt_json_ownkeys_70e5fd461788.
     t26->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |also|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t26->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    t24 = t26.
-    t14 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t15 i_first = t22 i_opts = t24 ).
+    t26->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t35 ).
+    t14 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t15 i_first = t22 i_opts = t26 ).
     IF t14 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t38 TYPE REF TO object.
@@ -118,9 +101,7 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     t10->load( ).
     APPEND t13 TO t10->items.
     t10->save( ).
-    DATA t39 TYPE REF TO zif_lnt_statement_runnable.
-    t39 = zcl_lnt_st_combi_module=>alt( i_first = t5 i_second = t8 i_rest = t10 ).
-    t3 = t39.
+    t3 = zcl_lnt_st_combi_module=>alt( i_first = t5 i_second = t8 i_rest = t10 ).
     IF t3 IS BOUND.
       DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t44 TYPE REF TO object.
@@ -144,8 +125,7 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>opt( i_first = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>opt( i_first = t2 ).
 
   ENDMETHOD.
 

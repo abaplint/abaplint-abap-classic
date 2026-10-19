@@ -98,8 +98,7 @@ CLASS zcl_lnt_isyntax_settings IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_912daad1f2d5.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `errorNamespace` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `errorNamespace` ) )->as_string( ).
     ELSE.
       result = me->error_namespace.
     ENDIF.

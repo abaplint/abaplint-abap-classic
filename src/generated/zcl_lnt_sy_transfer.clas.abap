@@ -55,17 +55,11 @@ CLASS zcl_lnt_sy_transfer IMPLEMENTATION.
       t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
     ENDDO.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
-    DATA t22 TYPE REF TO zcl_lnt_expression_node.
     DATA(t24) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t22 = t1->find_direct_expression( i_type_9913 = t24 ).
-    t21 = t22.
-    DATA t25 TYPE abap_bool.
-    t25 = xsdbool( t21 IS BOUND ).
-    IF t25 = abap_true.
+    t21 = t1->find_direct_expression( i_type_9913 = t24 ).
+    IF xsdbool( t21 IS BOUND ) = abap_true.
       DATA t27 TYPE REF TO zcl_lnt_abstract_type.
-      DATA t28 TYPE REF TO zcl_lnt_expression_node.
-      t28 = t21.
-      t27 = zcl_lnt_sy_target=>run_syntax( i_node = t28 i_input_967e = t2 ).
+      t27 = zcl_lnt_sy_target=>run_syntax( i_node = t21 i_input_967e = t2 ).
     ENDIF.
   ENDMETHOD.
 

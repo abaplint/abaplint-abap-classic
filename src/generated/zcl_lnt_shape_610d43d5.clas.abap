@@ -29,10 +29,9 @@ CLASS zcl_lnt_shape_610d43d5 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t6 ).
     ENDIF.
-    DATA(t7) = |kind|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t8 ).
     ENDIF.
     me->uri = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `uri`.
@@ -40,10 +39,9 @@ CLASS zcl_lnt_shape_610d43d5 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `uri` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |uri|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |uri| p1 = t12 ).
     ENDIF.
     me->options = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `options`.
@@ -51,10 +49,9 @@ CLASS zcl_lnt_shape_610d43d5 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `options` p1 = t14 ).
     ENDIF.
-    DATA(t15) = |options|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |options| p1 = t16 ).
     ENDIF.
     me->annotation_id = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `annotationId`.
@@ -62,10 +59,9 @@ CLASS zcl_lnt_shape_610d43d5 IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `annotationId` p1 = t18 ).
     ENDIF.
-    DATA(t19) = |annotationId|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |annotationId| p1 = t20 ).
     ENDIF.
   ENDMETHOD.
 

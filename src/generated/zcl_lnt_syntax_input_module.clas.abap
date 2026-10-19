@@ -16,20 +16,15 @@ ENDCLASS.
 CLASS zcl_lnt_syntax_input_module IMPLEMENTATION.
   METHOD syntax_issue.
     DATA(t4) = i_fix.
-    DATA t5 TYPE REF TO zcl_lnt_issue.
     DATA t6 TYPE string.
     t6 = i_input_967e->filename.
     DATA(t8) = i_token.
     DATA(t9) = i_message_26cb.
     DATA(t10) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
-    DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t13) = |Error|.
     DATA(t14) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t14->has = abap_true.
-    t14->value = t13.
-    t11 = t14.
-    t5 = zcl_lnt_issue=>at_token_filename( i_filename = t6 i_token = t8 i_message_26cb = t9 i_key = t10 i_severity = t11 i_fix = t4 ).
-    result = t5.
+    t14->value = |Error|.
+    result = zcl_lnt_issue=>at_token_filename( i_filename = t6 i_token = t8 i_message_26cb = t9 i_key = t10 i_severity = t14 i_fix = t4 ).
 
   ENDMETHOD.
 

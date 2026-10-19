@@ -24,16 +24,10 @@ CLASS zcl_lnt_cd_result IMPLEMENTATION.
     DATA(t1) = i_text.
     DATA(t2) = i_row.
     DATA(t3) = i_col.
-    DATA t5 TYPE abap_bool.
-    DATA t6 TYPE i.
-    t6 = strlen( t1 ).
-    DATA(t9) = 0.
-    t5 = xsdbool( t6 > t9 ).
-    IF t5 = abap_true.
+    IF xsdbool( strlen( t1 ) > 0 ) = abap_true.
       DATA t10 TYPE abap_bool.
       DATA t11 TYPE abap_bool.
-      DATA(t13) = CONV f( 3 ).
-      t11 = xsdbool( i_mode = t13 ).
+      t11 = xsdbool( i_mode = CONV f( 3 ) ).
       t10 = t11.
       IF t11 = abap_true.
         DATA(t14) = VALUE abap_bool( ).
@@ -78,7 +72,6 @@ CLASS zcl_lnt_cd_result IMPLEMENTATION.
       IF t10 = abap_true.
         DATA(t29) = me->result_9728.
         DATA t30 TYPE REF TO zcl_lnt_lx_comment.
-        DATA t31 TYPE REF TO zcl_lnt_position.
         DATA t33 TYPE f.
         DATA t35 TYPE f.
         t35 = strlen( t1 ).
@@ -86,20 +79,17 @@ CLASS zcl_lnt_cd_result IMPLEMENTATION.
         DATA(t39) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t39->has = abap_true.
         t39->value = t33.
-        t31 = NEW zcl_lnt_position( i_row = t2 i_col = t39 ).
-        t30 = NEW zcl_lnt_lx_comment( i_start = t31 i_str = t1 ).
+        t30 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t2 i_col = t39 ) i_str = t1 ).
         t29->load( ).
         APPEND t30 TO t29->items.
         t29->save( ).
       ELSE.
         DATA(t41) = me->result_9728.
         DATA t42 TYPE REF TO zcl_lnt_lx_identifier.
-        DATA t43 TYPE REF TO zcl_lnt_position.
         DATA(t46) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t46->has = abap_true.
         t46->value = t3.
-        t43 = NEW zcl_lnt_position( i_row = t2 i_col = t46 ).
-        t42 = NEW zcl_lnt_lx_identifier( i_start = t43 i_str = t1 ).
+        t42 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t2 i_col = t46 ) i_str = t1 ).
         t41->load( ).
         APPEND t42 TO t41->items.
         t41->save( ).

@@ -13,23 +13,17 @@ CLASS zcl_lnt_at_pf DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_at_pf IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |Cloud|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t7) = |AT|.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t6->sval = t7.
+    t6->sval = |AT|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
     DATA t11 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t12) = `^PF\d\d?$`.
-    DATA(t13) = |^PF[0-9][0-9]?$|.
-    DATA(t14) = |i|.
-    CREATE OBJECT t11 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t13 flags = t14.
-    t11->source = t12.
+    CREATE OBJECT t11 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^PF[0-9][0-9]?$| flags = |i|.
+    t11->source = `^PF\d\d?$`.
     t10 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t11 ).
     IF t10 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -56,9 +50,7 @@ CLASS zcl_lnt_at_pf IMPLEMENTATION.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t18.
-    DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    t19 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t18 ).
-    t4 = t19.
+    t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t18 ).
     IF t4 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t24 TYPE REF TO object.
@@ -82,8 +74,7 @@ CLASS zcl_lnt_at_pf IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t3 ).
 
   ENDMETHOD.
 

@@ -27,8 +27,7 @@ CLASS zcl_lnt_in_sttmnt_indnttn_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 2 ).
-    me->zlnt_view_write_s_9238828736cd( p0 = t1 ).
+    me->zlnt_view_write_s_9238828736cd( p0 = CONV f( 2 ) ).
     DATA(t3) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t3->has = abap_true.
     t3->value = abap_true.

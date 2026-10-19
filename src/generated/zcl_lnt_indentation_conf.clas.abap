@@ -57,10 +57,9 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
     t9->has = abap_true.
     t9->value = abap_false.
     me->zlnt_view_write_s_0d6c8aa0d6b1( p0 = t9 ).
-    DATA(t10) = CONV f( 10 ).
     DATA(t11) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t11->has = abap_true.
-    t11->value = t10.
+    t11->value = CONV f( 10 ).
     me->zlnt_view_write_s_af7e24cd0731( p0 = t11 ).
   ENDMETHOD.
 
@@ -108,8 +107,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_5c35b8f00615.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `alignTryCatch` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `alignTryCatch` ) )->as_boolean( ).
     ELSE.
       result = me->align_try_catch.
     ENDIF.
@@ -130,8 +128,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_d06af785ba41.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `selectionScreenBlockIndentation` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `selectionScreenBlockIndentation` ) )->as_boolean( ).
     ELSE.
       result = me->slctn_scrn_blck_indnttn.
     ENDIF.
@@ -152,8 +149,7 @@ CLASS zcl_lnt_indentation_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e38337070bb8.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `globalClassSkipFirst` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `globalClassSkipFirst` ) )->as_boolean( ).
     ELSE.
       result = me->global_class_skip_first.
     ENDIF.

@@ -23,10 +23,9 @@ CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `entities` p1 = t3 ).
     ENDIF.
-    DATA(t4) = |entities|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t4 p1 = t5 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |entities| p1 = t5 ).
     ENDIF.
   ENDMETHOD.
 

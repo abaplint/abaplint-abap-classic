@@ -18,7 +18,6 @@ ENDCLASS.
 CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_length.
-    DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t6 = i_qualified_name.
@@ -34,24 +33,16 @@ CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
     t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t19) = |qualifiedName|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-    t3 = t5.
-    super->constructor( i_input_967e = t3 ).
-    DATA(t22) = VALUE abap_bool( ).
-    DATA(t24) = CONV f( 0 ).
-    t22 = xsdbool( t1 <= t24 ).
-    IF t22 = abap_true.
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t20 ).
+    super->constructor( i_input_967e = t5 ).
+    IF xsdbool( t1 <= CONV f( 0 ) ) = abap_true.
       DATA t25 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t26 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t29) = |Bad LENGTH, Floating Point|.
       DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t30->has = abap_true.
-      t30->value = t29.
-      t27 = t30.
-      t26 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t27 ).
+      t30->value = |Bad LENGTH, Floating Point|.
+      t26 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t30 ).
       t25 = NEW #( ).
       t25->payload = t26.
       CLEAR t25->source_value.
@@ -90,7 +81,6 @@ CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
 
   METHOD t_t_i_s_a_t_b_f_p_t_t_fl_pn_ty.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = |```f LENGTH |.
     DATA(t4) = VALUE string( ).
@@ -102,16 +92,13 @@ CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
     t4 = |{ t6 }|.
     DATA(t7) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t8) = |```|.
     DATA(t9) = strlen( t2 ).
-    t1 = |{ t2 }{ t8 }|.
-    result = t1.
+    result = |{ t2 }{ |```| }|.
 
   ENDMETHOD.
 
   METHOD to_abap.
     CONSTANTS range_safe_integer TYPE f VALUE '9007199254740991'.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = |f LENGTH |.
     DATA(t3) = VALUE string( ).
     DATA(t4) = CONV f( me->length ).
@@ -121,8 +108,7 @@ CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
     DATA(t5) = CONV int8( t4 ).
     t3 = |{ t5 }|.
     DATA(t6) = strlen( t2 ).
-    t1 = |{ t2 }{ t3 }|.
-    result = t1.
+    result = |{ t2 }{ t3 }|.
 
   ENDMETHOD.
 

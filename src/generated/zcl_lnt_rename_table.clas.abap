@@ -23,20 +23,13 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = VALUE abap_bool( ).
-    t5 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_table ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t11) = |RenameTable, not a table|.
       DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      t12->value = |RenameTable, not a table|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
@@ -64,50 +57,35 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t17.
-    t16 = t17.
+    CREATE OBJECT t16.
     DATA t18 TYPE REF TO zcl_lnt_renamer_helper.
-    DATA t19 TYPE REF TO zcl_lnt_renamer_helper.
     DATA(t20) = me->reg.
-    t19 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
-    t18 = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t18 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t26 TYPE REF TO zcl_lnt_table.
     DATA t28 TYPE REF TO object.
     t28 = t1.
     t26 ?= t28.
-    DATA(t29) = |TABNAME|.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = t29 i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
+    t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |TABNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
-    t21 = t16->concat( p0 = t23 ).
-    t16 = t21.
-    DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t23 ).
     DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t38 TYPE REF TO zcl_lnt_table.
     DATA t40 TYPE REF TO object.
     t40 = t1.
     t38 ?= t40.
-    DATA(t41) = |FORTABLE|.
     DATA t44 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    t36 = t18->build_xml_file_edits( i_object_19cd = t38 i_xml_tag = t41 i_old_name = t2 i_new_name = t3 i_use_lower_case = t44 ).
+    t36 = t18->build_xml_file_edits( i_object_19cd = t38 i_xml_tag = |FORTABLE| i_old_name = t2 i_new_name = t3 i_use_lower_case = t44 ).
     t35 ?= t36.
-    t33 = t16->concat( p0 = t35 ).
-    t16 = t33.
-    DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t35 ).
     DATA t49 TYPE REF TO zcl_lnt_table.
     DATA t51 TYPE REF TO object.
     t51 = t1.
     t49 ?= t51.
-    t47 = t18->rename_files( i_obj_1ed0 = t49 i_old_name = t2 i_name = t3 ).
-    t45 = t16->concat( p0 = t47 ).
-    t16 = t45.
-    DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t49 i_old_name = t2 i_name = t3 ) ).
     DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t59 TYPE REF TO zcl_lnt_table.
@@ -116,9 +94,7 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     t59 ?= t61.
     t57 = t18->rename_ddic_code_references( i_obj_1ed0 = t59 i_old_name = t2 i_new_name = t3 ).
     t56 ?= t57.
-    t54 = t16->concat( p0 = t56 ).
-    t16 = t54.
-    DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t56 ).
     DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t67 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t69 TYPE REF TO zcl_lnt_table.
@@ -127,9 +103,7 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     t69 ?= t71.
     t67 = t18->rename_ddictabl_references( i_obj_1ed0 = t69 i_old_name = t2 i_new_name = t3 ).
     t66 ?= t67.
-    t64 = t16->concat( p0 = t66 ).
-    t16 = t64.
-    DATA t74 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t16 = t16->concat( p0 = t66 ).
     DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t77 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t79 TYPE REF TO zcl_lnt_table.
@@ -138,23 +112,19 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     t79 ?= t81.
     t77 = t18->rename_ddicttyp_references( i_obj_1ed0 = t79 i_old_name = t2 i_new_name = t3 ).
     t76 ?= t77.
-    t74 = t16->concat( p0 = t76 ).
-    t16 = t74.
+    t16 = t16->concat( p0 = t76 ).
     DATA t84 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t85 = t16.
     DATA t90 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
     DATA t92 TYPE REF TO zlnt_runtime_map__617ff131b0f3.
-    t84 = NEW zcl_lnt_shape_36bc2e57( i_changes = t90 i_document_changes = t85 i_change_annotations = t92 ).
+    t84 = NEW zcl_lnt_shape_36bc2e57( i_changes = t90 i_document_changes = t16 i_change_annotations = t92 ).
     CREATE OBJECT t84->zlnt_view_ownkeys_b0e8086400eb.
     t84->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t84->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `documentChanges` p1 = t94 ).
     CREATE OBJECT t84->zlnt_json_ownkeys_70e5fd461788.
     t84->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t95) = |documentChanges|.
     DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t84->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
+    t84->zlnt_json_ownkeys_70e5fd461788->put( p0 = |documentChanges| p1 = t96 ).
     result = t84.
 
   ENDMETHOD.

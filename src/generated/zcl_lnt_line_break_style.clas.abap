@@ -28,39 +28,28 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |line_break_style|.
-    DATA t4 TYPE string.
-    t4 = |Makes sure line breaks are consistent|.
     DATA t6 TYPE string.
     DATA(t7) = |Enforces LF as newlines in ABAP and XML files\n\nabapGit does |.
     t7 = t7 && |not work with CRLF|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t11) = |SMIM and W3MI files are not checked.|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |SMIM and W3MI files are not checked.|.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Whitespace|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Whitespace| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t28 i_extended_information = t8 i_tags = t14 i_pragma = t30 i_pseudo_comment = t32 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |line_break_style| i_title = |Makes sure line breaks are consistent| i_short_description = t6 i_bad_example = t26 i_good_example = t28 i_extended_information = t8 i_tags = t18 i_pragma = t30 i_pseudo_comment = t32 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -83,28 +72,23 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t39) = |key|.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
-    DATA(t41) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t40 ).
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |shortDescription|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |extendedInformation|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t46 ).
     ENDIF.
-    DATA(t47) = |tags|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t48 ).
     ENDIF.
     result = t1.
 
@@ -129,17 +113,13 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
     t5 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_mime_object ).
     t4 = t5.
     IF t5 = abap_false.
-      DATA t7 TYPE abap_bool.
-      t7 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_web_mime ).
-      t4 = t7.
+      t4 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_web_mime ).
     ENDIF.
     IF t4 = abap_true.
       result = t2.
@@ -170,9 +150,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
         t12 ?= t13.
       ENDIF.
       DATA t17 TYPE string.
-      DATA t18 TYPE string.
-      t18 = t12->get_filename( ).
-      t17 = t18.
+      t17 = t12->get_filename( ).
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
       DATA(t23) = |.abap|.
@@ -234,21 +212,14 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t42 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t43 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        t43 = t12->get_raw_rows( ).
-        t42 = t43.
+        t42 = t12->get_raw_rows( ).
         DATA t45 TYPE i.
         t45 = 0.
         DO.
-          DATA t47 TYPE abap_bool.
-          DATA t49 TYPE i.
           t42->load( ).
-          t49 = lines( t42->items ).
-          t47 = xsdbool( t45 < t49 ).
-          IF t47 = abap_false.
+          IF xsdbool( t45 < lines( t42->items ) ) = abap_false.
             EXIT.
           ENDIF.
-          DATA(t51) = VALUE abap_bool( ).
           DATA(t52) = VALUE abap_bool( ).
           DATA(t53) = VALUE string( ).
           DATA(t55) = t45.
@@ -257,7 +228,6 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
             RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
           ENDIF.
           t42->load( ).
-          CLEAR t53.
           READ TABLE t42->items INDEX t55 INTO t53.
           DATA(t56) = |\r|.
           DATA(t57) = strlen( t53 ).
@@ -275,9 +245,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
               t52 = abap_true.
             ENDIF.
           ENDIF.
-          t51 = xsdbool( t52 = abap_true ).
-          IF t51 = abap_true.
-            DATA(t63) = |Line contains carriage return|.
+          IF xsdbool( t52 = abap_true ) = abap_true.
             DATA t65 TYPE REF TO zcl_lnt_issue.
             CLEAR t65.
             DATA t67 TYPE f.
@@ -288,34 +256,25 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
             DATA(t72) = VALUE string( ).
             DATA t73 TYPE REF TO zcl_lnt_irule_metadata.
             CLEAR t73.
-            DATA t74 TYPE string.
-            t74 = |line_break_style|.
-            DATA t76 TYPE string.
-            t76 = |Makes sure line breaks are consistent|.
             DATA t78 TYPE string.
             DATA(t79) = |Enforces LF as newlines in ABAP and XML files\n\nabapGit does |.
             t79 = t79 && |not work with CRLF|.
             t78 = t79.
             DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t80.
-            DATA(t83) = |SMIM and W3MI files are not checked.|.
             DATA(t84) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t84->has = abap_true.
-            t84->value = t83.
+            t84->value = |SMIM and W3MI files are not checked.|.
             t80 = t84.
             DATA t86 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t86.
             DATA t90 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            DATA t91 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CREATE OBJECT t91.
-            t90 = t91.
-            DATA(t93) = |Whitespace|.
+            CREATE OBJECT t90.
             t90->load( ).
-            APPEND t93 TO t90->items.
+            APPEND |Whitespace| TO t90->items.
             t90->save( ).
-            DATA(t95) = |SingleFile|.
             t90->load( ).
-            APPEND t95 TO t90->items.
+            APPEND |SingleFile| TO t90->items.
             t90->save( ).
             t86 = t90.
             DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -326,7 +285,7 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
             CLEAR t102.
             DATA t104 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t104.
-            t73 = NEW zcl_lnt_irule_metadata( i_key = t74 i_title = t76 i_short_description = t78 i_bad_example = t98 i_good_example = t100 i_extended_information = t80 i_tags = t86 i_pragma = t102 i_pseudo_comment = t104 ).
+            t73 = NEW zcl_lnt_irule_metadata( i_key = |line_break_style| i_title = |Makes sure line breaks are consistent| i_short_description = t78 i_bad_example = t98 i_good_example = t100 i_extended_information = t80 i_tags = t86 i_pragma = t102 i_pseudo_comment = t104 ).
             CREATE OBJECT t73->zlnt_view_ownkeys_b0e8086400eb.
             t73->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
             DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -354,47 +313,38 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
             ENDIF.
             CREATE OBJECT t73->zlnt_json_ownkeys_70e5fd461788.
             t73->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA(t111) = |key|.
             DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t112.
-            t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t111 p1 = t112 ).
-            DATA(t113) = |title|.
+            t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t112 ).
             DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t114.
             IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
+              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t114 ).
             ENDIF.
-            DATA(t115) = |shortDescription|.
             DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t116.
             IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t115 p1 = t116 ).
+              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t116 ).
             ENDIF.
-            DATA(t117) = |extendedInformation|.
             DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t118.
             IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t117 p1 = t118 ).
+              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t118 ).
             ENDIF.
-            DATA(t119) = |tags|.
             DATA t120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t120.
             IF t73->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = t119 p1 = t120 ).
+              t73->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t120 ).
             ENDIF.
             t72 = t73->key.
-            DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t121 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-            t65 = zcl_lnt_issue=>at_row( i_file = t12 i_row = t67 i_message_26cb = t63 i_key = t72 i_severity = t121 ).
+            t65 = zcl_lnt_issue=>at_row( i_file = t12 i_row = t67 i_message_26cb = |Line contains carriage return| i_key = t72 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) ).
             t2->load( ).
             APPEND t65 TO t2->items.
             t2->save( ).
             EXIT.
           ENDIF.
-          DATA t125 TYPE i.
           DATA(t127) = 1.
-          t125 = t45 + t127.
-          t45 = t125.
+          t45 = t45 + t127.
         ENDDO.
       ENDIF.
     ENDDO.
@@ -403,10 +353,8 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_line_break_style.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_sr_rl_ln_br_st_ts_ln_br_st( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->i_i_sr_rl_ln_br_st_ts_ln_br_st( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

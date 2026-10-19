@@ -27,15 +27,13 @@ CLASS zcl_lnt_xml_consistency_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |Error|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |Error|.
     me->zlnt_view_write_s_92ab7ff11c44( p0 = t2 ).
-    DATA(t3) = |Error|.
     DATA(t4) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = |Error|.
     me->zlnt_view_write_s_165dbf41ac5c( p0 = t4 ).
   ENDMETHOD.
 

@@ -15,21 +15,16 @@ CLASS zcl_lnt_sy_form IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d185_9bfafbfe880c.
-    t4 = t1->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
+    t3 = t1->find_direct_expression( i_type_9913 = t6 ).
     DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t9 TYPE REF TO zcl_lnt_expression_node.
     t9 = t3.
     DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t12) = xsdbool( t9 IS INITIAL ).
-    IF t12 = abap_true.
+    IF xsdbool( t9 IS INITIAL ) = abap_true.
     ELSE.
       DATA t15 TYPE string.
-      DATA t16 TYPE REF TO zcl_lnt_expression_node.
-      t16 = t9.
-      t15 = t16->concat_tokens( ).
+      t15 = t9->concat_tokens( ).
       DATA(t18) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t18->has = abap_true.
       t18->value = t15.
@@ -42,7 +37,6 @@ CLASS zcl_lnt_sy_form IMPLEMENTATION.
     t20 = xsdbool( t3 IS INITIAL ).
     t19 = t20.
     IF t20 = abap_false.
-      DATA(t27) = VALUE abap_bool( ).
       DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t28 = t7.
       DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -52,69 +46,41 @@ CLASS zcl_lnt_sy_form IMPLEMENTATION.
       ELSEIF t28->has = abap_false.
         t32 = abap_true.
       ENDIF.
-      t27 = t32.
-      t19 = t27.
+      t19 = t32.
     ENDIF.
     IF t19 = abap_true.
-      DATA(t35) = |Form, could not find name|.
       DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t36 = t2->issues.
       DATA t38 TYPE REF TO zcl_lnt_issue.
-      DATA t40 TYPE REF TO zcl_lnt_abstract_token.
-      t40 = t1->get_first_token( ).
       DATA t43 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t38 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t40 i_message_26cb = t35 i_fix = t43 ).
+      t38 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Form, could not find name| i_fix = t43 ).
       t36->load( ).
       APPEND t38 TO t36->items.
       t36->save( ).
       RETURN.
     ENDIF.
-    DATA t44 TYPE abap_bool.
-    DATA t45 TYPE i.
-    DATA t46 TYPE string.
-    t46 = t7->value.
-    t45 = strlen( t46 ).
-    DATA(t49) = 30.
-    t44 = xsdbool( t45 > t49 ).
-    IF t44 = abap_true.
-      DATA(t51) = |FORM name longer than 30 characters|.
+    IF xsdbool( strlen( t7->value ) > 30 ) = abap_true.
       DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t52 = t2->issues.
       DATA t54 TYPE REF TO zcl_lnt_issue.
-      DATA t56 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t57 TYPE REF TO zcl_lnt_expression_node.
-      t57 = t3.
-      t56 = t57->get_first_token( ).
       DATA t60 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t54 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t56 i_message_26cb = t51 i_fix = t60 ).
+      t54 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t3->get_first_token( ) i_message_26cb = |FORM name longer than 30 characters| i_fix = t60 ).
       t52->load( ).
       APPEND t54 TO t52->items.
       t52->save( ).
     ENDIF.
     DATA t61 TYPE REF TO zcl_lnt_current_scope.
-    DATA t62 TYPE REF TO zcl_lnt_current_scope.
-    t62 = t2->scope.
-    t61 = t62.
+    t61 = t2->scope.
     DATA t65 TYPE string.
     t65 = t7->value.
-    DATA t70 TYPE REF TO zcl_lnt_abstract_token.
-    t70 = t1->get_first_token( ).
     DATA t72 TYPE REF TO zcl_lnt_position.
-    t72 = t70->start.
+    t72 = t1->get_first_token( )->start.
     DATA t75 TYPE string.
     t75 = t2->filename.
     DATA t77 TYPE REF TO zcl_lnt_iscope_identifier.
     DATA t78 TYPE REF TO zcl_lnt_iscope_identifier.
-    DATA t79 TYPE string.
-    t79 = |form|.
-    DATA t81 TYPE string.
-    t81 = t65.
-    DATA t83 TYPE REF TO zcl_lnt_position.
-    t83 = t72.
-    DATA t85 TYPE string.
-    t85 = t75.
     DATA t87 TYPE REF TO zcl_lnt_position.
-    t78 = NEW zcl_lnt_iscope_identifier( i_stype = t79 i_sname = t81 i_filename = t85 i_start = t83 i_end = t87 ).
+    t78 = NEW zcl_lnt_iscope_identifier( i_stype = |form| i_sname = t65 i_filename = t75 i_start = t72 i_end = t87 ).
     CREATE OBJECT t78->zlnt_view_ownkeys_b0e8086400eb.
     t78->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -137,86 +103,59 @@ CLASS zcl_lnt_sy_form IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t78->zlnt_json_ownkeys_70e5fd461788.
     t78->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t94) = |stype|.
     DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = t94 p1 = t95 ).
-    DATA(t96) = |sname|.
+    t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = |stype| p1 = t95 ).
     DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t78->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = t96 p1 = t97 ).
+      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = |sname| p1 = t97 ).
     ENDIF.
-    DATA(t98) = |start|.
     DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t78->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = t98 p1 = t99 ).
+      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = |start| p1 = t99 ).
     ENDIF.
-    DATA(t100) = |filename|.
     DATA t101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t78->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = t100 p1 = t101 ).
+      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = |filename| p1 = t101 ).
     ENDIF.
-    DATA(t102) = |end|.
     DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t78->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = t102 p1 = t103 ).
+      t78->zlnt_json_ownkeys_70e5fd461788->put( p0 = |end| p1 = t103 ).
     ENDIF.
     t77 = t78.
-    DATA(t104) = VALUE abap_bool( ).
     DATA t106 TYPE REF TO zcl_lnt_spaghetti_scope_node.
     t106 = t61->current.
     DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t104 = xsdbool( t106 IS INITIAL ).
-    IF t104 = abap_true.
-      DATA t115 TYPE REF TO zcl_lnt_spaghetti_scope_node.
+    IF xsdbool( t106 IS INITIAL ) = abap_true.
       DATA t117 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      t115 = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t77 i_parent = t117 ).
-      t61->current = t115.
+      t61->current = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t77 i_parent = t117 ).
       DELETE t61->zlnt_record_delet_0597644d88b4 WHERE table_line = `current`.
     ELSE.
       DATA t119 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      DATA t121 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      t121 = t61->current.
-      t119 = t121.
-      DATA t126 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      DATA t128 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-      t128 = t119.
-      t126 = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t77 i_parent = t128 ).
-      t61->current = t126.
+      t119 = t61->current.
+      t61->current = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t77 i_parent = t119 ).
       DELETE t61->zlnt_record_delet_0597644d88b4 WHERE table_line = `current`.
-      DATA t134 TYPE REF TO zcl_lnt_spaghetti_scope_node.
       DATA t135 TYPE REF TO zcl_lnt_spaghetti_scope_node.
       t135 = t61->current.
-      t134 = t135.
-      t119->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t134 ).
+      t119->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t135 ).
     ENDIF.
     DATA t137 TYPE REF TO zcl_lnt_ty_form_definition.
-    DATA t138 TYPE REF TO zcl_lnt_ty_form_definition.
-    t138 = NEW zcl_lnt_ty_form_definition( i_node = t1 i_input_967e = t2 ).
-    t137 = t138.
-    DATA t141 TYPE REF TO zcl_lnt_current_scope.
-    t141 = t2->scope.
-    t141->update_form_definition( i_f = t137 ).
+    t137 = NEW zcl_lnt_ty_form_definition( i_node = t1 i_input_967e = t2 ).
+    t2->scope->update_form_definition( i_f = t137 ).
     DATA t144 TYPE REF TO zcl_lnt_current_scope.
     t144 = t2->scope.
-    DATA t146 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t149 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t149 = t137->using_parameters.
-    t146 = t149.
-    t144->add_list( i_identifiers = t146 ).
+    t144->add_list( i_identifiers = t149 ).
     DATA t151 TYPE REF TO zcl_lnt_current_scope.
     t151 = t2->scope.
-    DATA t153 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t156 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t156 = t137->changing_parameters.
-    t153 = t156.
-    t151->add_list( i_identifiers = t153 ).
+    t151->add_list( i_identifiers = t156 ).
     DATA t158 TYPE REF TO zcl_lnt_current_scope.
     t158 = t2->scope.
-    DATA t160 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t163 = t137->table_parameters.
-    t160 = t163.
-    t158->add_list( i_identifiers = t160 ).
+    t158->add_list( i_identifiers = t163 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -26,28 +26,20 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA(t1) = CONV abap_bool( me->closed ).
     IF t1 = abap_true.
-      DATA t2 TYPE REF TO zcl_lnt_generator_17955b8b.
       DATA t4 TYPE REF TO zif_lnt_object.
-      t2 = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t4 ).
-      result = t2.
+      result = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t4 ).
       RETURN.
     ENDIF.
-    DATA t5 TYPE abap_bool.
     DATA(t6) = CONV f( me->index ).
     DATA t7 TYPE f.
-    DATA t8 TYPE i.
     DATA(t9) = me->array.
     t9->load( ).
-    t8 = lines( t9->items ).
-    t7 = t8.
-    t5 = xsdbool( t6 >= t7 ).
-    IF t5 = abap_true.
+    t7 = lines( t9->items ).
+    IF xsdbool( t6 >= t7 ) = abap_true.
       me->closed = abap_true.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `closed`.
-      DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
       DATA t13 TYPE REF TO zif_lnt_object.
-      t11 = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t13 ).
-      result = t11.
+      result = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t13 ).
       RETURN.
     ENDIF.
     DATA t15 TYPE REF TO zif_lnt_object.
@@ -71,15 +63,11 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     ELSE.
       t15 ?= t19.
     ENDIF.
-    DATA t22 TYPE f.
     DATA(t23) = CONV f( me->index ).
     DATA(t24) = CONV f( 1 ).
-    t22 = t23 + t24.
-    me->index = t22.
+    me->index = t23 + t24.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `index`.
-    DATA t25 TYPE REF TO zcl_lnt_generator_17955b8b.
-    t25 = NEW zcl_lnt_generator_17955b8b( i_done = abap_false i_value = t15 ).
-    result = t25.
+    result = NEW zcl_lnt_generator_17955b8b( i_done = abap_false i_value = t15 ).
 
   ENDMETHOD.
 

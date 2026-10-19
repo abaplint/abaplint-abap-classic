@@ -70,9 +70,7 @@ CLASS zcl_lnt_arrow IMPLEMENTATION.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t15.
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t15 ).
-    result = t16.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t9 i_rest = t15 ).
 
   ENDMETHOD.
 

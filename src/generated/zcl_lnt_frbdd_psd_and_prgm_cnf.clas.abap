@@ -33,17 +33,12 @@ CLASS zcl_lnt_frbdd_psd_and_prgm_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = |"#EC *|.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND |"#EC *| TO t2->items.
     t2->save( ).
-    t1 = t2.
-    me->zlnt_view_write_s_e895eea6be84( p0 = t1 ).
+    me->zlnt_view_write_s_e895eea6be84( p0 = t2 ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t7.
     me->zlnt_view_write_s_ebc42a547430( p0 = t7 ).
@@ -180,8 +175,7 @@ CLASS zcl_lnt_frbdd_psd_and_prgm_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_493aa9b7723d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalClassDefinition` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalClassDefinition` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_global_class_definition.
     ENDIF.
@@ -202,8 +196,7 @@ CLASS zcl_lnt_frbdd_psd_and_prgm_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_2c496c208fd0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalInterface` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreGlobalInterface` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_global_interface.
     ENDIF.

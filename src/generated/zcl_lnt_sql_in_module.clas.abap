@@ -21,24 +21,18 @@ CLASS zcl_lnt_sql_in_module IMPLEMENTATION.
       zcl_lnt_sql_in_module=>zlnt_builtin_init_7517e34af3ee( ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = |SIGN|.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND |SIGN| TO t2->items.
     t2->save( ).
-    DATA(t7) = |OPTION|.
     t2->load( ).
-    APPEND t7 TO t2->items.
+    APPEND |OPTION| TO t2->items.
     t2->save( ).
-    DATA(t9) = |LOW|.
     t2->load( ).
-    APPEND t9 TO t2->items.
+    APPEND |LOW| TO t2->items.
     t2->save( ).
-    DATA(t11) = |HIGH|.
     t2->load( ).
-    APPEND t11 TO t2->items.
+    APPEND |HIGH| TO t2->items.
     t2->save( ).
     zcl_lnt_sql_in_module=>range_components = t2.
   ENDMETHOD.

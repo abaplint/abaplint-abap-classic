@@ -22,23 +22,15 @@ CLASS zcl_lnt_nwln_btwn_mthds_mdl IMPLEMENTATION.
     ENDIF.
     zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_6bb15190b359 = abap_false.
       zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_a4694f196248( ).
     ENDIF.
-    t3 = zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace.
-    DATA(t4) = |Exact|.
-    DATA(t5) = |exact|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace->set( p0 = |Exact| p1 = |exact| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_6bb15190b359 = abap_false.
       zcl_lnt_nwln_btwn_mthds_mdl=>zlnt_builtin_init_a4694f196248( ).
     ENDIF.
-    t7 = zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace.
-    DATA(t8) = |Less|.
-    DATA(t9) = |less|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_nwln_btwn_mthds_mdl=>newline_logic_namespace->set( p0 = |Less| p1 = |less| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

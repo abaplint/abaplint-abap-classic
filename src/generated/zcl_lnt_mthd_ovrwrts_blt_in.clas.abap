@@ -25,12 +25,6 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |method_overwrites_builtin|.
-    DATA t4 TYPE string.
-    t4 = |Method name overwrites builtin function|.
-    DATA t6 TYPE string.
-    t6 = |Checks Method names that overwrite builtin SAP functions|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
     t11 = t11 && |-us/abenbuilt_in_functions_overview.html\n\nhttps://github.com|.
@@ -43,34 +37,27 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Naming|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Naming| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t25) = |Styleguide|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
     t14 = t18.
-    DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t31) = |CLASS lcl DEFINITION.\n  PUBLIC SECTION.\n    METHODS matches.|.
     t31 = t31 && |\nENDCLASS.\n\nCLASS lcl IMPLEMENTATION.\n  METHOD matches.\n  EN|.
     t31 = t31 && |DMETHOD.\nENDCLASS.|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
     t32->value = t31.
-    t28 = t32.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |method_overwrites_builtin| i_title = |Method name overwrites builtin function| i_short_description = |Checks Method names that overwrite builtin SAP functions| i_bad_example = t32 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -97,33 +84,27 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t46) = |key|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
-    DATA(t48) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t47 ).
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |shortDescription|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |extendedInformation|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |tags|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t55 ).
     ENDIF.
-    DATA(t56) = |badExample|.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t57 ).
     ENDIF.
     result = t1.
 
@@ -142,19 +123,11 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
   METHOD r_p_i_s_r_m_o_b_ts_mt_ov_bl_in.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zif_lnt_abap_file_information.
-    DATA t10 TYPE REF TO zif_lnt_abap_file_information.
-    t10 = t1->info.
-    t7 = t10.
-    t6 = t7->list_class_definitions( ).
+    t6 = t1->info->list_class_definitions( ).
     DATA t12 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t13 TYPE REF TO object.
     DATA(t14) = VALUE i( ).
@@ -177,11 +150,9 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
       ELSE.
         t12 ?= t13.
       ENDIF.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t19 = t12->methods.
-      t17 = t4->concat( p0 = t19 ).
-      t4 = t17.
+      t4 = t4->concat( p0 = t19 ).
     ENDDO.
     DATA t22 TYPE REF TO zcl_lnt_info_method_definition.
     DATA t23 TYPE REF TO object.
@@ -205,11 +176,8 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
       ELSE.
         t22 ?= t23.
       ENDIF.
-      DATA(t27) = VALUE abap_bool( ).
       DATA t28 TYPE REF TO zif_lnt_method_definition.
       CLEAR t28.
-      DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t29.
       DATA t31 TYPE string.
       DATA t32 TYPE string.
       t32 = t22->name.
@@ -223,10 +191,8 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
       DATA(t35) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t35->has = abap_true.
       t35->value = t31.
-      t29 = t35.
-      t28 = zcl_lnt_built_in=>search_builtin( i_name = t29 ).
-      t27 = xsdbool( t28 IS BOUND ).
-      IF t27 = abap_true.
+      t28 = zcl_lnt_built_in=>search_builtin( i_name = t35 ).
+      IF xsdbool( t28 IS BOUND ) = abap_true.
         DATA t38 TYPE string.
         DATA t39 TYPE string.
         DATA(t40) = |Method name "|.
@@ -234,9 +200,8 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
         t41 = t22->name.
         DATA(t43) = strlen( t40 ).
         t39 = |{ t40 }{ t41 }|.
-        DATA(t44) = |" overwrites built-in SAP function name|.
         DATA(t45) = strlen( t39 ).
-        t38 = |{ t39 }{ t44 }|.
+        t38 = |{ t39 }{ |" overwrites built-in SAP function name| }|.
         DATA t47 TYPE REF TO zcl_lnt_issue.
         CLEAR t47.
         DATA t48 TYPE REF TO zcl_lnt_fi_identifier.
@@ -244,12 +209,6 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
         DATA(t51) = VALUE string( ).
         DATA t52 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t52.
-        DATA t53 TYPE string.
-        t53 = |method_overwrites_builtin|.
-        DATA t55 TYPE string.
-        t55 = |Method name overwrites builtin function|.
-        DATA t57 TYPE string.
-        t57 = |Checks Method names that overwrite builtin SAP functions|.
         DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t59.
         DATA(t62) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
@@ -264,20 +223,15 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
         DATA t65 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t65.
         DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t70 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t70.
-        t69 = t70.
-        DATA(t72) = |Naming|.
+        CREATE OBJECT t69.
         t69->load( ).
-        APPEND t72 TO t69->items.
+        APPEND |Naming| TO t69->items.
         t69->save( ).
-        DATA(t74) = |SingleFile|.
         t69->load( ).
-        APPEND t74 TO t69->items.
+        APPEND |SingleFile| TO t69->items.
         t69->save( ).
-        DATA(t76) = |Styleguide|.
         t69->load( ).
-        APPEND t76 TO t69->items.
+        APPEND |Styleguide| TO t69->items.
         t69->save( ).
         t65 = t69.
         DATA t79 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -295,7 +249,7 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
         CLEAR t87.
         DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t89.
-        t52 = NEW zcl_lnt_irule_metadata( i_key = t53 i_title = t55 i_short_description = t57 i_bad_example = t79 i_good_example = t85 i_extended_information = t59 i_tags = t65 i_pragma = t87 i_pseudo_comment = t89 ).
+        t52 = NEW zcl_lnt_irule_metadata( i_key = |method_overwrites_builtin| i_title = |Method name overwrites builtin function| i_short_description = |Checks Method names that overwrite builtin SAP functions| i_bad_example = t79 i_good_example = t85 i_extended_information = t59 i_tags = t65 i_pragma = t87 i_pseudo_comment = t89 ).
         CREATE OBJECT t52->zlnt_view_ownkeys_b0e8086400eb.
         t52->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -328,39 +282,33 @@ CLASS zcl_lnt_mthd_ovrwrts_blt_in IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t52->zlnt_json_ownkeys_70e5fd461788.
         t52->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t97) = |key|.
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
-        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
-        DATA(t99) = |title|.
+        t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t98 ).
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t100.
         IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t100 ).
         ENDIF.
-        DATA(t101) = |shortDescription|.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t101 p1 = t102 ).
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t102 ).
         ENDIF.
-        DATA(t103) = |extendedInformation|.
         DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t104.
         IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t103 p1 = t104 ).
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t104 ).
         ENDIF.
-        DATA(t105) = |tags|.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t106.
         IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t106 ).
         ENDIF.
-        DATA(t107) = |badExample|.
         DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t108.
         IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
+          t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t108 ).
         ENDIF.
         t51 = t52->key.
         DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

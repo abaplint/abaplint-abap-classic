@@ -32,10 +32,9 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `matched` p1 = t7 ).
     ENDIF.
-    DATA(t8) = |matched|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t8 p1 = t9 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t9 ).
     ENDIF.
     me->unmatched = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `unmatched`.
@@ -43,10 +42,9 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `unmatched` p1 = t11 ).
     ENDIF.
-    DATA(t12) = |unmatched|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t13 ).
     ENDIF.
     me->error = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
@@ -54,10 +52,9 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t15 ).
     ENDIF.
-    DATA(t16) = |error|.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t16 p1 = t17 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t17 ).
     ENDIF.
     me->error_description = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `errorDescription`.
@@ -65,10 +62,9 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorDescription` p1 = t19 ).
     ENDIF.
-    DATA(t20) = |errorDescription|.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t20 p1 = t21 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t21 ).
     ENDIF.
     me->error_matched = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `errorMatched`.
@@ -76,10 +72,9 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorMatched` p1 = t23 ).
     ENDIF.
-    DATA(t24) = |errorMatched|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t25 ).
     ENDIF.
   ENDMETHOD.
 

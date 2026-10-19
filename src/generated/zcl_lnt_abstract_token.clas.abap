@@ -64,16 +64,12 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_row.
-    DATA t4 TYPE f.
-    t4 = me->start->row.
-    result = t4.
+    result = me->start->row.
 
   ENDMETHOD.
 
   METHOD get_col.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t4 = me->start->col.
-    result = t4.
+    result = me->start->col.
 
   ENDMETHOD.
 
@@ -83,25 +79,17 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_end.
-    DATA t1 TYPE REF TO zcl_lnt_position.
     DATA t2 TYPE f.
-    DATA t5 TYPE f.
-    t5 = me->start->row.
-    t2 = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t2 = me->start->row.
     DATA t8 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t11 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    t11 = me->start->col.
-    t8 = t11.
+    t8 = me->start->col.
     DATA t13 TYPE f.
     DATA(t15) = CONV string( me->str ).
     t13 = strlen( t15 ).
     DATA(t17) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t17->has = abap_true.
     t17->value = t13.
-    t7 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t8 right = t17 op = `+` ).
-    t1 = NEW zcl_lnt_position( i_row = t2 i_col = t7 ).
-    result = t1.
+    result = NEW zcl_lnt_position( i_row = t2 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t8 right = t17 op = `+` ) ).
 
   ENDMETHOD.
 

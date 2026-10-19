@@ -21,12 +21,8 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     t5 = xsdbool( t6 IS BOUND ).
     t4 = t5.
     IF t5 = abap_true.
-      DATA(t8) = VALUE abap_bool( ).
-      DATA(t9) = VALUE i( ).
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t11 = t3->zlnt_view_read_sr_7cd1e1e70d45( ).
-      t10 = t11.
+      t10 = t3->zlnt_view_read_sr_7cd1e1e70d45( ).
       DATA t13 TYPE string.
       DATA t14 TYPE string.
       t14 = t1->value.
@@ -37,10 +33,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       ELSE.
         t13 = zlnt_runtime_uppe_91169605024d=>full( t13 ).
       ENDIF.
-      t9 = t10->indexof( p0 = t13 ).
-      DATA(t17) = 0.
-      t8 = xsdbool( t9 >= t17 ).
-      t4 = t8.
+      t4 = xsdbool( t10->indexof( p0 = t13 ) >= 0 ).
     ENDIF.
     IF t4 = abap_true.
       result = abap_false.
@@ -48,18 +41,12 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t21 = t3->zlnt_view_read_sr_92fa7b522e13( ).
-    t20 = t21.
+    t20 = t3->zlnt_view_read_sr_92fa7b522e13( ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t24 TYPE abap_bool.
-    t24 = xsdbool( t20 IS BOUND ).
-    IF t24 = abap_true.
+    IF xsdbool( t20 IS BOUND ) = abap_true.
       t23 = t20.
     ELSE.
-      DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t28.
-      t23 = t28.
+      CREATE OBJECT t23.
     ENDIF.
     t19 = t23.
     DATA(t29) = VALUE string( ).
@@ -76,12 +63,9 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t30 = t30 + 1.
-      DATA(t31) = VALUE abap_bool( ).
       DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t32.
-      DATA(t34) = |i|.
-      CREATE OBJECT t32 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t29 flags = t34.
-      DATA(t35) = VALUE string( ).
+      CREATE OBJECT t32 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t29 flags = |i|.
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t36 = t1.
       DATA(t38) = VALUE string( ).
@@ -94,13 +78,9 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       IF t39 = abap_true.
         t38 = |undefined|.
       ELSE.
-        DATA t42 TYPE string.
-        t42 = t36->value.
-        t38 = t42.
+        t38 = t36->value.
       ENDIF.
-      t35 = t38.
-      t31 = t32->test( p0 = t35 ).
-      IF t31 = abap_true.
+      IF t32->test( p0 = t38 ) = abap_true.
         result = abap_false.
         RETURN.
       ENDIF.
@@ -119,19 +99,11 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     t47 = xsdbool( t48 = abap_false ).
     t46 = t47.
     IF t47 = abap_false.
-      DATA t51 TYPE abap_bool.
       DATA t52 TYPE string.
-      DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t53 = t3->zlnt_view_read_sr_ef452f77fd06( ).
-      t52 = t53->value.
-      DATA(t55) = |required|.
-      t51 = xsdbool( t52 = t55 ).
-      t46 = t51.
+      t52 = t3->zlnt_view_read_sr_ef452f77fd06( )->value.
+      t46 = xsdbool( t52 = |required| ).
     ENDIF.
     IF t46 = abap_true.
-      DATA(t56) = VALUE abap_bool( ).
-      DATA(t57) = VALUE abap_bool( ).
-      DATA(t59) = VALUE string( ).
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t60 = t1.
       DATA(t62) = VALUE string( ).
@@ -144,18 +116,10 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       IF t63 = abap_true.
         t62 = |undefined|.
       ELSE.
-        DATA t66 TYPE string.
-        t66 = t60->value.
-        t62 = t66.
+        t62 = t60->value.
       ENDIF.
-      t59 = t62.
-      t57 = t2->test( p0 = t59 ).
-      t56 = xsdbool( t57 = abap_false ).
-      t45 = t56.
+      t45 = xsdbool( t2->test( p0 = t62 ) = abap_false ).
     ELSE.
-      DATA(t69) = VALUE abap_bool( ).
-      DATA(t70) = VALUE abap_bool( ).
-      DATA(t72) = VALUE string( ).
       DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t73 = t1.
       DATA(t75) = VALUE string( ).
@@ -168,14 +132,9 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       IF t76 = abap_true.
         t75 = |undefined|.
       ELSE.
-        DATA t79 TYPE string.
-        t79 = t73->value.
-        t75 = t79.
+        t75 = t73->value.
       ENDIF.
-      t72 = t75.
-      t70 = t2->test( p0 = t72 ).
-      t69 = xsdbool( t70 = abap_true ).
-      t45 = t69.
+      t45 = xsdbool( t2->test( p0 = t75 ) = abap_true ).
     ENDIF.
     result = t45.
 

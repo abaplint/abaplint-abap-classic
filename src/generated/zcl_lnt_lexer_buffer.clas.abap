@@ -42,15 +42,10 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     ENDIF.
     t3 = t1.
     t2 = t3.
-    DATA t5 TYPE abap_bool.
     DATA(t6) = CONV abap_bool( me->empty_a4a6 ).
-    t5 = xsdbool( t6 = abap_true ).
-    IF t5 = abap_true.
+    IF xsdbool( t6 = abap_true ) = abap_true.
       DATA(t8) = VALUE i( ).
-      DATA t9 TYPE abap_bool.
-      DATA(t11) = 0.
-      t9 = xsdbool( t2 < t11 ).
-      IF t9 = abap_true.
+      IF xsdbool( t2 < 0 ) = abap_true.
         t8 = 0.
       ELSE.
         t8 = t2.
@@ -60,10 +55,8 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
       me->empty_a4a6 = abap_false.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
     ENDIF.
-    DATA t15 TYPE i.
     DATA(t17) = 1.
-    t15 = t2 + t17.
-    me->end = t15.
+    me->end = t2 + t17.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
   ENDMETHOD.
 
@@ -113,19 +106,15 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
   METHOD count_is_even.
     DATA(t1) = i_char.
     DATA t2 TYPE f.
-    DATA(t3) = CONV f( 0 ).
-    t2 = t3.
+    t2 = CONV f( 0 ).
     DATA t4 TYPE i.
     DATA(t5) = CONV i( me->start ).
     t4 = t5.
     DO.
-      DATA t6 TYPE abap_bool.
       DATA(t8) = CONV i( me->end ).
-      t6 = xsdbool( t4 < t8 ).
-      IF t6 = abap_false.
+      IF xsdbool( t4 < t8 ) = abap_false.
         EXIT.
       ENDIF.
-      DATA(t9) = VALUE abap_bool( ).
       DATA(t10) = VALUE f( ).
       DATA(t11) = VALUE i( ).
       DATA(t12) = CONV string( me->raw ).
@@ -157,27 +146,19 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
         t11 = t11 + t20 * 256.
       ENDIF.
       t10 = t11.
-      t9 = xsdbool( t10 = t1 ).
-      IF t9 = abap_true.
-        DATA t22 TYPE f.
+      IF xsdbool( t10 = t1 ) = abap_true.
         DATA(t24) = CONV f( 1 ).
-        t22 = t2 + t24.
-        t2 = t22.
+        t2 = t2 + t24.
       ENDIF.
-      DATA t25 TYPE i.
       DATA(t27) = 1.
-      t25 = t4 + t27.
-      t4 = t25.
+      t4 = t4 + t27.
     ENDDO.
-    DATA t28 TYPE abap_bool.
     DATA t29 TYPE f.
     DATA(t31) = CONV f( t2 / 2 ).
     t31 = trunc( t31 ).
     t31 = t31 * 2.
     t29 = t2 - t31.
-    DATA(t32) = CONV f( 0 ).
-    t28 = xsdbool( t29 = t32 ).
-    result = t28.
+    result = xsdbool( t29 = CONV f( 0 ) ).
 
   ENDMETHOD.
 

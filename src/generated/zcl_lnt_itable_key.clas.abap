@@ -63,8 +63,7 @@ CLASS zcl_lnt_itable_key IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_a70477ea08ee.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `name` ) )->as_string( ).
     ELSE.
       result = me->name.
     ENDIF.
@@ -89,8 +88,7 @@ CLASS zcl_lnt_itable_key IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_f361ef311f50.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `type` ) )->as_string( ).
     ELSE.
       result = me->type_cba0.
     ENDIF.
@@ -176,8 +174,7 @@ CLASS zcl_lnt_itable_key IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_3206010d7211.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `isUnique` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `isUnique` ) )->as_boolean( ).
     ELSE.
       result = me->is_unique.
     ENDIF.

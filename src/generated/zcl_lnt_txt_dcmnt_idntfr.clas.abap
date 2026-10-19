@@ -48,8 +48,7 @@ CLASS zcl_lnt_txt_dcmnt_idntfr IMPLEMENTATION.
 
   METHOD zlnt_view_read_no_0041136eb871.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `uri` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `uri` ) )->as_string( ).
     ELSE.
       result = me->uri.
     ENDIF.

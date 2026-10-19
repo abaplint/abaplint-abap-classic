@@ -16,10 +16,9 @@ CLASS zcl_lnt_st_subtract IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |SUBTRACT|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |SUBTRACT|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     IF t8 IS BOUND.
@@ -28,14 +27,11 @@ CLASS zcl_lnt_st_subtract IMPLEMENTATION.
       t7->cval = t8.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |FROM|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |FROM|.
     t9->load( ).
     APPEND t12 TO t9->items.
     t9->save( ).
@@ -49,11 +45,7 @@ CLASS zcl_lnt_st_subtract IMPLEMENTATION.
     t9->load( ).
     APPEND t15 TO t9->items.
     t9->save( ).
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    t17 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
-    t1 = t17.
-    DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t22) = |KeyUser|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -78,8 +70,7 @@ CLASS zcl_lnt_st_subtract IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t21 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t22 i_first = t23 ).
-    result = t21.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t23 ).
 
   ENDMETHOD.
 

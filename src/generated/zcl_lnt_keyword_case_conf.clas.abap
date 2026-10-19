@@ -48,10 +48,9 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |upper|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |upper|.
     me->zlnt_view_write_s_b5f35bae4d8c( p0 = t2 ).
     DATA(t4) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t4->has = abap_true.
@@ -77,10 +76,9 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t14.
     me->zlnt_view_write_s_380cf81d7f21( p0 = t14 ).
-    DATA(t15) = CONV f( 10 ).
     DATA(t16) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t16->has = abap_true.
-    t16->value = t15.
+    t16->value = CONV f( 10 ).
     me->zlnt_view_write_s_a55fb27298a6( p0 = t16 ).
   ENDMETHOD.
 
@@ -244,8 +242,7 @@ CLASS zcl_lnt_keyword_case_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_767dc70211a6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreFunctionModuleName` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreFunctionModuleName` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_function_module_name.
     ENDIF.

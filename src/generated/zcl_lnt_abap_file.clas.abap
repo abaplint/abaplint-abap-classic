@@ -43,16 +43,12 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_raw.
-    DATA t1 TYPE string.
-    t1 = me->file->get_raw( ).
-    result = t1.
+    result = me->file->get_raw( ).
 
   ENDMETHOD.
 
   METHOD get_raw_rows.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->file->get_raw_rows( ).
-    result = t1.
+    result = me->file->get_raw_rows( ).
 
   ENDMETHOD.
 
@@ -81,32 +77,22 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
       t7->value = abap_true.
       t1 = t7.
     ENDIF.
-    DATA t9 TYPE abap_bool.
-    DATA t10 TYPE abap_bool.
-    t10 = t1->value.
-    t9 = xsdbool( t10 = abap_true ).
-    IF t9 = abap_true.
+    IF xsdbool( t1->value = abap_true ) = abap_true.
       result = me->tokens.
       RETURN.
     ELSE.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t15.
-      t14 = t15.
+      CREATE OBJECT t14.
       DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t17 = me->tokens.
       DATA t19 TYPE i.
-      DATA t20 TYPE i.
       t17->load( ).
-      t20 = lines( t17->items ).
-      t19 = t20.
+      t19 = lines( t17->items ).
       DATA t22 TYPE i.
       t22 = 0.
       DO.
-        DATA t24 TYPE abap_bool.
-        t24 = xsdbool( t22 < t19 ).
-        IF t24 = abap_false.
+        IF xsdbool( t22 < t19 ) = abap_false.
           EXIT.
         ENDIF.
         DATA t27 TYPE REF TO zcl_lnt_abstract_token.
@@ -127,19 +113,13 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
           t29 ?= t32.
         ENDIF.
         t27 = t29.
-        DATA t35 TYPE abap_bool.
-        DATA t36 TYPE abap_bool.
-        t36 = xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_pragma ).
-        t35 = xsdbool( t36 = abap_false ).
-        IF t35 = abap_true.
+        IF xsdbool( xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_pragma ) = abap_false ) = abap_true.
           t14->load( ).
           APPEND t27 TO t14->items.
           t14->save( ).
         ENDIF.
-        DATA t40 TYPE i.
         DATA(t42) = 1.
-        t40 = t22 + t42.
-        t22 = t40.
+        t22 = t22 + t42.
       ENDDO.
       result = t14.
 

@@ -27,42 +27,22 @@ CLASS zcl_lnt_sy_let IMPLEMENTATION.
       t9->value = abap_false.
       t3 = t9.
     ENDIF.
-    DATA(t11) = VALUE abap_bool( ).
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t11 = xsdbool( t1 IS INITIAL ).
-    IF t11 = abap_true.
+    IF xsdbool( t1 IS INITIAL ) = abap_true.
       result = abap_false.
       RETURN.
     ENDIF.
-    DATA t19 TYPE abap_bool.
-    DATA t20 TYPE abap_bool.
-    t20 = t3->value.
-    t19 = xsdbool( t20 <> abap_true ).
-    IF t19 = abap_true.
+    IF xsdbool( t3->value <> abap_true ) = abap_true.
       DATA t23 TYPE REF TO zcl_lnt_current_scope.
-      DATA t24 TYPE REF TO zcl_lnt_current_scope.
-      t24 = t2->scope.
-      t23 = t24.
-      DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t30 TYPE REF TO zcl_lnt_expression_node.
-      t30 = t1.
-      t29 = t30->get_first_token( ).
+      t23 = t2->scope.
       DATA t32 TYPE REF TO zcl_lnt_position.
-      t32 = t29->start.
+      t32 = t1->get_first_token( )->start.
       DATA t35 TYPE string.
       t35 = t2->filename.
       DATA t37 TYPE REF TO zcl_lnt_iscope_identifier.
       DATA t38 TYPE REF TO zcl_lnt_iscope_identifier.
-      DATA t39 TYPE string.
-      t39 = |let|.
-      DATA t41 TYPE string.
-      t41 = |LET|.
-      DATA t43 TYPE REF TO zcl_lnt_position.
-      t43 = t32.
-      DATA t45 TYPE string.
-      t45 = t35.
       DATA t47 TYPE REF TO zcl_lnt_position.
-      t38 = NEW zcl_lnt_iscope_identifier( i_stype = t39 i_sname = t41 i_filename = t45 i_start = t43 i_end = t47 ).
+      t38 = NEW zcl_lnt_iscope_identifier( i_stype = |let| i_sname = |LET| i_filename = t35 i_start = t32 i_end = t47 ).
       CREATE OBJECT t38->zlnt_view_ownkeys_b0e8086400eb.
       t38->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -85,57 +65,40 @@ CLASS zcl_lnt_sy_let IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t38->zlnt_json_ownkeys_70e5fd461788.
       t38->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t54) = |stype|.
       DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
-      DATA(t56) = |sname|.
+      t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = |stype| p1 = t55 ).
       DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t38->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
+        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = |sname| p1 = t57 ).
       ENDIF.
-      DATA(t58) = |start|.
       DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t38->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = t58 p1 = t59 ).
+        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = |start| p1 = t59 ).
       ENDIF.
-      DATA(t60) = |filename|.
       DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t38->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = t60 p1 = t61 ).
+        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = |filename| p1 = t61 ).
       ENDIF.
-      DATA(t62) = |end|.
       DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t38->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = t62 p1 = t63 ).
+        t38->zlnt_json_ownkeys_70e5fd461788->put( p0 = |end| p1 = t63 ).
       ENDIF.
       t37 = t38.
-      DATA(t64) = VALUE abap_bool( ).
       DATA t66 TYPE REF TO zcl_lnt_spaghetti_scope_node.
       t66 = t23->current.
       DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t64 = xsdbool( t66 IS INITIAL ).
-      IF t64 = abap_true.
-        DATA t75 TYPE REF TO zcl_lnt_spaghetti_scope_node.
+      IF xsdbool( t66 IS INITIAL ) = abap_true.
         DATA t77 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        t75 = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t37 i_parent = t77 ).
-        t23->current = t75.
+        t23->current = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t37 i_parent = t77 ).
         DELETE t23->zlnt_record_delet_0597644d88b4 WHERE table_line = `current`.
       ELSE.
         DATA t79 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        DATA t81 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        t81 = t23->current.
-        t79 = t81.
-        DATA t86 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        DATA t88 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        t88 = t79.
-        t86 = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t37 i_parent = t88 ).
-        t23->current = t86.
+        t79 = t23->current.
+        t23->current = NEW zcl_lnt_spaghetti_scope_node( i_identifier = t37 i_parent = t79 ).
         DELETE t23->zlnt_record_delet_0597644d88b4 WHERE table_line = `current`.
-        DATA t94 TYPE REF TO zcl_lnt_spaghetti_scope_node.
         DATA t95 TYPE REF TO zcl_lnt_spaghetti_scope_node.
         t95 = t23->current.
-        t94 = t95.
-        t79->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t94 ).
+        t79->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t95 ).
       ENDIF.
     ENDIF.
     DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

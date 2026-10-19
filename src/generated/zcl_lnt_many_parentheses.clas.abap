@@ -29,26 +29,18 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |many_parentheses|.
-    DATA t4 TYPE string.
-    t4 = |Too many parentheses|.
     DATA t6 TYPE string.
     DATA(t7) = |Searches for expressions where extra parentheses can safely |.
     t7 = t7 && |be removed|.
     t6 = t7.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |SingleFile|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    DATA(t17) = |Quickfix|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |Quickfix| TO t12->items.
     t12->save( ).
     t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -58,17 +50,15 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t24->has = abap_true.
     t24->value = t23.
     t20 = t24.
-    DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t29) = |\nIF destination IS INITIAL.\nENDIF.\nIF foo = boo AND bar = la|.
     t29 = t29 && |r AND moo = loo.\nENDIF.\n|.
     DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t30->has = abap_true.
     t30->value = t29.
-    t26 = t30.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t26 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t6 i_bad_example = t20 i_good_example = t30 i_extended_information = t32 i_tags = t8 i_pragma = t34 i_pseudo_comment = t36 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -95,33 +85,27 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t44) = |key|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
-    DATA(t46) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t45 ).
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t47 ).
     ENDIF.
-    DATA(t48) = |shortDescription|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |tags|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |badExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |goodExample|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t55 ).
     ENDIF.
     result = t1.
 
@@ -140,30 +124,19 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
   METHOD rn_pr_in_sr_rl_mn_pr_ts_mn_prn.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t17.
-      result = t17.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t19 TYPE REF TO zcl_lnt_structure_node.
     t19 = t4.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t23.
-    t22 = t23.
+    CREATE OBJECT t22.
     DATA(t25) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
     t22->load( ).
     APPEND t25 TO t22->items.
@@ -172,8 +145,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t22->load( ).
     APPEND t27 TO t22->items.
     t22->save( ).
-    t21 = t22.
-    t18 = t19->f_a_e_m_i_s_a_n_st_nd_ts_st_nd( i_type_9913 = t21 ).
+    t18 = t19->f_a_e_m_i_s_a_n_st_nd_ts_st_nd( i_type_9913 = t22 ).
     DATA t29 TYPE REF TO zcl_lnt_expression_node.
     DATA t30 TYPE REF TO object.
     DATA(t31) = VALUE i( ).
@@ -227,19 +199,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         APPEND t38 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t45 TYPE i.
       t2->load( ).
-      t45 = lines( t2->items ).
-      t34 = t45.
+      t34 = lines( t2->items ).
     ENDDO.
     DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t48 TYPE REF TO zcl_lnt_structure_node.
     t48 = t4.
-    DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t52.
-    t51 = t52.
+    CREATE OBJECT t51.
     DATA(t54) = zlnt_runtime_desc_78196487750d=>zlnt_member_d135_0d084eddc054.
     t51->load( ).
     APPEND t54 TO t51->items.
@@ -248,8 +215,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t51->load( ).
     APPEND t56 TO t51->items.
     t51->save( ).
-    t50 = t51.
-    t47 = t48->f_a_e_m_i_s_a_n_st_nd_ts_st_nd( i_type_9913 = t50 ).
+    t47 = t48->f_a_e_m_i_s_a_n_st_nd_ts_st_nd( i_type_9913 = t51 ).
     DATA t58 TYPE REF TO zcl_lnt_expression_node.
     DATA t59 TYPE REF TO object.
     DATA(t60) = VALUE i( ).
@@ -273,35 +239,20 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         t58 ?= t59.
       ENDIF.
       DATA t63 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t64.
-      t63 = t64.
-      DATA t65 TYPE abap_bool.
+      CREATE OBJECT t63.
       DATA t66 TYPE REF TO zif_lnt_statement_runnable.
       t66 = t58->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-      t65 = xsdbool( t66 IS BOUND AND t66 IS INSTANCE OF zcl_lnt_cond_sub ).
-      IF t65 = abap_true.
-        DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      IF xsdbool( t66 IS BOUND AND t66 IS INSTANCE OF zcl_lnt_cond_sub ) = abap_true.
         DATA(t70) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
-        t68 = t58->find_direct_expressions( i_type_9913 = t70 ).
-        t63 = t68.
+        t63 = t58->find_direct_expressions( i_type_9913 = t70 ).
       ELSE.
-        DATA t71 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t73) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
-        t71 = t58->find_direct_expressions( i_type_9913 = t73 ).
-        t63 = t71.
+        t63 = t58->find_direct_expressions( i_type_9913 = t73 ).
       ENDIF.
-      DATA t74 TYPE abap_bool.
-      DATA t75 TYPE i.
       t63->load( ).
-      t75 = lines( t63->items ).
-      DATA(t77) = 1.
-      t74 = xsdbool( t75 <> t77 ).
-      IF t74 = abap_true.
+      IF xsdbool( lines( t63->items ) <> 1 ) = abap_true.
         CONTINUE.
       ENDIF.
-      DATA(t78) = VALUE abap_bool( ).
-      DATA(t79) = VALUE i( ).
       DATA t80 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t80.
       DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -327,41 +278,28 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         t83 ?= t85.
       ENDIF.
       t82 = t83.
-      DATA t88 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t88 = t82->children.
-      t81 = t88.
+      t81 = t82->children.
       t80 ?= t81.
       t80->load( ).
-      t79 = lines( t80->items ).
-      DATA(t90) = 1.
-      t78 = xsdbool( t79 = t90 ).
-      IF t78 = abap_true.
-        DATA(t92) = |Too many parentheses, simple|.
+      IF xsdbool( lines( t80->items ) = 1 ) = abap_true.
         DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t95 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t96 TYPE REF TO zcl_lnt_abstract_node.
         t96 = t58.
-        DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t98 = t96->children.
-        t95 = t98.
+        t95 = t96->children.
         t94 ?= t95.
         t93 = t94.
         DATA t100 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t101 TYPE REF TO zcl_lnt_abstract_token.
-        t101 = t58->get_first_token( ).
-        t100 = t101.
+        t100 = t58->get_first_token( ).
         DATA(t103) = VALUE string( ).
-        DATA(t104) = VALUE string( ).
         DATA t105 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t105.
         DATA t106 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t107 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t108 TYPE REF TO zcl_lnt_abstract_node.
         t108 = t58.
-        DATA t110 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t110 = t108->children.
-        t107 = t110.
+        t107 = t108->children.
         t106 ?= t107.
         DATA t112 TYPE REF TO object.
         CLEAR t112.
@@ -379,14 +317,10 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ELSE.
           t105 ?= t112.
         ENDIF.
-        t104 = t105->concat_tokens( ).
-        t103 = t104.
-        DATA(t115) = VALUE abap_bool( ).
+        t103 = t105->concat_tokens( ).
         DATA t116 TYPE string.
         DATA t117 TYPE string.
-        DATA t120 TYPE string.
-        t120 = t100->str.
-        t117 = t120.
+        t117 = t100->str.
         DATA(t122) = strlen( t117 ).
         t116 = t117.
         IF t116 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -394,11 +328,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ELSE.
           t116 = zlnt_runtime_uppe_91169605024d=>full( t116 ).
         ENDIF.
-        DATA(t123) = |NOT|.
-        t115 = xsdbool( t116 = t123 ).
-        IF t115 = abap_true.
-          DATA t124 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t124.
+        IF xsdbool( t116 = |NOT| ) = abap_true.
           DATA t125 TYPE REF TO zif_lnt_union_4cf1d054.
           CLEAR t125.
           DATA t127 TYPE REF TO object.
@@ -417,18 +347,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           ELSE.
             t125 ?= t127.
           ENDIF.
-          t124 = t125->get_first_token( ).
-          t100 = t124.
-          DATA(t130) = VALUE string( ).
+          t100 = t125->get_first_token( ).
           DATA t131 TYPE REF TO zif_lnt_union_4cf1d054.
           CLEAR t131.
           DATA t132 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t133 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t134 TYPE REF TO zcl_lnt_abstract_node.
           t134 = t58.
-          DATA t136 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t136 = t134->children.
-          t133 = t136.
+          t133 = t134->children.
           t132 ?= t133.
           DATA t138 TYPE REF TO object.
           CLEAR t138.
@@ -446,53 +372,28 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           ELSE.
             t131 ?= t138.
           ENDIF.
-          t130 = t131->concat_tokens( ).
-          t103 = t130.
+          t103 = t131->concat_tokens( ).
         ENDIF.
         DATA t142 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         DATA t144 TYPE REF TO zcl_lnt_position.
-        DATA t147 TYPE REF TO zcl_lnt_position.
-        t147 = t100->start.
-        t144 = t147.
-        DATA t149 TYPE REF TO zcl_lnt_position.
+        t144 = t100->start.
         DATA t150 TYPE REF TO zcl_lnt_abstract_token.
-        DATA t151 TYPE REF TO zcl_lnt_abstract_token.
-        t151 = t58->get_last_token( ).
-        t150 = t151.
-        DATA t153 TYPE REF TO zcl_lnt_position.
+        t150 = t58->get_last_token( ).
         DATA t154 TYPE f.
-        DATA t156 TYPE REF TO zcl_lnt_position.
-        t156 = t150->start.
-        DATA t158 TYPE f.
-        t158 = t156->row.
-        t154 = t158.
-        DATA t160 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t154 = t150->start->row.
         DATA t161 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        DATA t163 TYPE REF TO zcl_lnt_position.
-        t163 = t150->start.
-        DATA t165 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        t165 = t163->col.
-        t161 = t165.
+        t161 = t150->start->col.
         DATA t167 TYPE f.
-        DATA t169 TYPE string.
-        t169 = t150->str.
-        t167 = strlen( t169 ).
+        t167 = strlen( t150->str ).
         DATA(t172) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
         t172->has = abap_true.
         t172->value = t167.
-        t160 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t161 right = t172 op = `+` ).
-        t153 = NEW zcl_lnt_position( i_row = t154 i_col = t160 ).
-        t149 = t153.
-        t142 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t144 i_end = t149 i_text = t103 ).
+        t142 = zcl_lnt_edit_helper=>replace_range( i_file = t1 i_start = t144 i_end = NEW zcl_lnt_position( i_row = t154 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t161 right = t172 op = `+` ) ) i_text = t103 ).
         DATA t175 TYPE REF TO zcl_lnt_issue.
         CLEAR t175.
         DATA(t179) = VALUE string( ).
         DATA t180 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t180.
-        DATA t181 TYPE string.
-        t181 = |many_parentheses|.
-        DATA t183 TYPE string.
-        t183 = |Too many parentheses|.
         DATA t185 TYPE string.
         DATA(t186) = |Searches for expressions where extra parentheses can safely |.
         t186 = t186 && |be removed|.
@@ -500,16 +401,12 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         DATA t187 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t187.
         DATA t191 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t192 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t192.
-        t191 = t192.
-        DATA(t194) = |SingleFile|.
+        CREATE OBJECT t191.
         t191->load( ).
-        APPEND t194 TO t191->items.
+        APPEND |SingleFile| TO t191->items.
         t191->save( ).
-        DATA(t196) = |Quickfix|.
         t191->load( ).
-        APPEND t196 TO t191->items.
+        APPEND |Quickfix| TO t191->items.
         t191->save( ).
         t187 = t191.
         DATA t199 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -534,7 +431,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         CLEAR t213.
         DATA t215 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t215.
-        t180 = NEW zcl_lnt_irule_metadata( i_key = t181 i_title = t183 i_short_description = t185 i_bad_example = t199 i_good_example = t205 i_extended_information = t211 i_tags = t187 i_pragma = t213 i_pseudo_comment = t215 ).
+        t180 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t185 i_bad_example = t199 i_good_example = t205 i_extended_information = t211 i_tags = t187 i_pragma = t213 i_pseudo_comment = t215 ).
         CREATE OBJECT t180->zlnt_view_ownkeys_b0e8086400eb.
         t180->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -567,47 +464,36 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t180->zlnt_json_ownkeys_70e5fd461788.
         t180->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t223) = |key|.
         DATA t224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t224.
-        t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t223 p1 = t224 ).
-        DATA(t225) = |title|.
+        t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t224 ).
         DATA t226 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t226.
         IF t180->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t225 p1 = t226 ).
+          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t226 ).
         ENDIF.
-        DATA(t227) = |shortDescription|.
         DATA t228 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t228.
         IF t180->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t227 p1 = t228 ).
+          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t228 ).
         ENDIF.
-        DATA(t229) = |tags|.
         DATA t230 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t230.
         IF t180->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t229 p1 = t230 ).
+          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t230 ).
         ENDIF.
-        DATA(t231) = |badExample|.
         DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t232.
         IF t180->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t231 p1 = t232 ).
+          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t232 ).
         ENDIF.
-        DATA(t233) = |goodExample|.
         DATA t234 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t234.
         IF t180->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = t233 p1 = t234 ).
+          t180->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t234 ).
         ENDIF.
         t179 = t180->key.
-        DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t235 = me->conf->zlnt_view_read_sr_15c06369f827( ).
-        DATA t237 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-        CLEAR t237.
-        t237 = t142.
-        t175 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t100 i_message_26cb = t92 i_key = t179 i_severity = t235 i_fix = t237 ).
+        t175 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t100 i_message_26cb = |Too many parentheses, simple| i_key = t179 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t142 ).
         t2->load( ).
         APPEND t175 TO t2->items.
         t2->save( ).
@@ -671,10 +557,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         APPEND t256 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t263 TYPE i.
       t2->load( ).
-      t263 = lines( t2->items ).
-      t252 = t263.
+      t252 = lines( t2->items ).
     ENDDO.
     DATA t265 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t266 TYPE REF TO zcl_lnt_structure_node.
@@ -734,10 +618,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         APPEND t278 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t285 TYPE i.
       t2->load( ).
-      t285 = lines( t2->items ).
-      t274 = t285.
+      t274 = lines( t2->items ).
     ENDDO.
     result = t2.
 
@@ -747,25 +629,17 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_m.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d259_29e6bae3a66c.
-    t4 = t2->find_first_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA(t7) = VALUE abap_bool( ).
+    t3 = t2->find_first_expression( i_type_9913 = t6 ).
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t7 = xsdbool( t3 IS INITIAL ).
-    IF t7 = abap_true.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t14.
-      result = t14.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_abstract_token.
     DATA t16 TYPE REF TO zcl_lnt_abstract_token.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t18 TYPE REF TO zcl_lnt_expression_node.
-    t18 = t3.
-    t17 = t18->get_all_tokens( ).
+    t17 = t3->get_all_tokens( ).
     DATA t20 TYPE REF TO object.
     t17->load( ).
     READ TABLE t17->items INDEX 2 INTO t20.
@@ -785,27 +659,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t24 = xsdbool( t15 IS INITIAL ).
     t23 = t24.
     IF t24 = abap_false.
-      DATA t31 TYPE abap_bool.
-      DATA t32 TYPE string.
-      DATA t35 TYPE string.
-      t35 = t15->str.
-      t32 = t35.
-      DATA(t37) = |(|.
-      t31 = xsdbool( t32 <> t37 ).
-      t23 = t31.
+      t23 = xsdbool( t15->str <> |(| ).
     ENDIF.
     IF t23 = abap_true.
-      DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t38.
-      result = t38.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t39 TYPE string.
-    DATA t40 TYPE string.
-    DATA t41 TYPE REF TO zcl_lnt_expression_node.
-    t41 = t3.
-    t40 = t41->concat_tokens( ).
-    t39 = t40.
+    t39 = t3->concat_tokens( ).
     DATA(t43) = VALUE abap_bool( ).
     DATA(t44) = VALUE abap_bool( ).
     DATA(t45) = VALUE abap_bool( ).
@@ -828,8 +689,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t44 = xsdbool( t45 = abap_true ).
     t43 = t44.
     IF t44 = abap_true.
-      DATA(t53) = VALUE abap_bool( ).
-      DATA(t54) = VALUE abap_bool( ).
       DATA(t55) = VALUE i( ).
       DATA(t57) = |,|.
       DATA(t58) = strlen( t39 ).
@@ -841,36 +700,24 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t55 = -1.
         ENDIF.
       ENDIF.
-      DATA(t59) = 0.
-      t54 = xsdbool( t55 >= t59 ).
-      t53 = xsdbool( t54 = abap_false ).
-      t43 = t53.
+      t43 = xsdbool( xsdbool( t55 >= 0 ) = abap_false ).
     ENDIF.
     IF t43 = abap_true.
       DATA t62 TYPE REF TO zcl_lnt_issue.
-      DATA(t65) = |Too many parentheses|.
       DATA(t66) = VALUE string( ).
       DATA t67 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t68 TYPE string.
-      t68 = |many_parentheses|.
-      DATA t70 TYPE string.
-      t70 = |Too many parentheses|.
       DATA t72 TYPE string.
       DATA(t73) = |Searches for expressions where extra parentheses can safely |.
       t73 = t73 && |be removed|.
       t72 = t73.
       DATA t74 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t78 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t79 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t79.
-      t78 = t79.
-      DATA(t81) = |SingleFile|.
+      CREATE OBJECT t78.
       t78->load( ).
-      APPEND t81 TO t78->items.
+      APPEND |SingleFile| TO t78->items.
       t78->save( ).
-      DATA(t83) = |Quickfix|.
       t78->load( ).
-      APPEND t83 TO t78->items.
+      APPEND |Quickfix| TO t78->items.
       t78->save( ).
       t74 = t78.
       DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -880,17 +727,15 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       t90->has = abap_true.
       t90->value = t89.
       t86 = t90.
-      DATA t92 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t95) = |\nIF destination IS INITIAL.\nENDIF.\nIF foo = boo AND bar = la|.
       t95 = t95 && |r AND moo = loo.\nENDIF.\n|.
       DATA(t96) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t96->has = abap_true.
       t96->value = t95.
-      t92 = t96.
       DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t102 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t67 = NEW zcl_lnt_irule_metadata( i_key = t68 i_title = t70 i_short_description = t72 i_bad_example = t86 i_good_example = t92 i_extended_information = t98 i_tags = t74 i_pragma = t100 i_pseudo_comment = t102 ).
+      t67 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t72 i_bad_example = t86 i_good_example = t96 i_extended_information = t98 i_tags = t74 i_pragma = t100 i_pseudo_comment = t102 ).
       CREATE OBJECT t67->zlnt_view_ownkeys_b0e8086400eb.
       t67->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -917,53 +762,41 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t67->zlnt_json_ownkeys_70e5fd461788.
       t67->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t110) = |key|.
       DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t110 p1 = t111 ).
-      DATA(t112) = |title|.
+      t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t111 ).
       DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t112 p1 = t113 ).
+        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t113 ).
       ENDIF.
-      DATA(t114) = |shortDescription|.
       DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t114 p1 = t115 ).
+        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t115 ).
       ENDIF.
-      DATA(t116) = |tags|.
       DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t116 p1 = t117 ).
+        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t117 ).
       ENDIF.
-      DATA(t118) = |badExample|.
       DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t118 p1 = t119 ).
+        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t119 ).
       ENDIF.
-      DATA(t120) = |goodExample|.
       DATA t121 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = t120 p1 = t121 ).
+        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t121 ).
       ENDIF.
       t66 = t67->key.
-      DATA t122 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t122 = me->conf->zlnt_view_read_sr_15c06369f827( ).
       DATA t124 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       DATA t125 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t62 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t2 i_message_26cb = t65 i_key = t66 i_severity = t122 i_fix = t124 i_alternative_fixes = t125 ).
+      t62 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t2 i_message_26cb = |Too many parentheses| i_key = t66 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t124 i_alternative_fixes = t125 ).
       DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t128.
-      t127 = t128.
+      CREATE OBJECT t127.
       t127->load( ).
       APPEND t62 TO t127->items.
       t127->save( ).
       result = t127.
       RETURN.
     ENDIF.
-    DATA t132 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t132.
-    result = t132.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
@@ -971,9 +804,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_m.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t5 = t2->find_all_expressions_recursive( i_type_9913 = t7 ).
@@ -1004,9 +835,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t16 TYPE REF TO zcl_lnt_abstract_node.
       t16 = t8.
-      DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t18 = t16->children.
-      t15 = t18.
+      t15 = t16->children.
       t14 ?= t15.
       t13 = t14.
       DATA(t20) = VALUE abap_bool( ).
@@ -1014,17 +843,11 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       DATA(t22) = VALUE abap_bool( ).
       DATA t23 TYPE abap_bool.
       DATA t24 TYPE abap_bool.
-      DATA t25 TYPE i.
       t13->load( ).
-      t25 = lines( t13->items ).
-      DATA(t27) = 3.
-      t24 = xsdbool( t25 = t27 ).
+      t24 = xsdbool( lines( t13->items ) = 3 ).
       t23 = t24.
       IF t24 = abap_true.
-        DATA(t28) = VALUE abap_bool( ).
         DATA(t29) = VALUE string( ).
-        DATA t31 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t31.
         DATA t32 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t32.
         DATA t34 TYPE REF TO object.
@@ -1043,18 +866,11 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ELSE.
           t32 ?= t34.
         ENDIF.
-        t31 = t32->get_first_token( ).
-        DATA t37 TYPE string.
-        t37 = t31->str.
-        t29 = t37.
-        DATA(t39) = |(|.
-        t28 = xsdbool( t29 = t39 ).
-        t23 = t28.
+        t29 = t32->get_first_token( )->str.
+        t23 = xsdbool( t29 = |(| ).
       ENDIF.
       t22 = t23.
       IF t23 = abap_true.
-        DATA(t40) = VALUE abap_bool( ).
-        DATA(t41) = VALUE i( ).
         DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t42.
         DATA t43 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -1077,18 +893,12 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ENDIF.
         t42 = t43->get_children( ).
         t42->load( ).
-        t41 = lines( t42->items ).
-        DATA(t48) = 1.
-        t40 = xsdbool( t41 = t48 ).
-        t22 = t40.
+        t22 = xsdbool( lines( t42->items ) = 1 ).
       ENDIF.
       t21 = t22.
       IF t22 = abap_true.
-        DATA(t49) = VALUE abap_bool( ).
         DATA(t50) = VALUE abap_bool( ).
         DATA(t51) = VALUE string( ).
-        DATA t53 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t53.
         DATA t54 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t54.
         DATA t56 TYPE REF TO object.
@@ -1107,10 +917,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ELSE.
           t54 ?= t56.
         ENDIF.
-        t53 = t54->get_first_token( ).
-        DATA t59 TYPE string.
-        t59 = t53->str.
-        t51 = t59.
+        t51 = t54->get_first_token( )->str.
         DATA(t61) = |-|.
         DATA(t62) = strlen( t51 ).
         DATA t63 TYPE i.
@@ -1126,15 +933,11 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             t50 = abap_true.
           ENDIF.
         ENDIF.
-        t49 = xsdbool( t50 = abap_false ).
-        t21 = t49.
+        t21 = xsdbool( t50 = abap_false ).
       ENDIF.
       t20 = t21.
       IF t21 = abap_true.
-        DATA(t67) = VALUE abap_bool( ).
         DATA(t68) = VALUE string( ).
-        DATA t70 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t70.
         DATA t71 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t71.
         DATA t73 TYPE REF TO object.
@@ -1153,13 +956,8 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ELSE.
           t71 ?= t73.
         ENDIF.
-        t70 = t71->get_first_token( ).
-        DATA t76 TYPE string.
-        t76 = t70->str.
-        t68 = t76.
-        DATA(t78) = |)|.
-        t67 = xsdbool( t68 = t78 ).
-        t20 = t67.
+        t68 = t71->get_first_token( )->str.
+        t20 = xsdbool( t68 = |)| ).
       ENDIF.
       IF t20 = abap_true.
         DATA t80 TYPE REF TO zcl_lnt_issue.
@@ -1185,14 +983,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t83 ?= t85.
         ENDIF.
         t82 = t83->get_first_token( ).
-        DATA(t88) = |Too many parentheses|.
         DATA(t89) = VALUE string( ).
         DATA t90 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t90.
-        DATA t91 TYPE string.
-        t91 = |many_parentheses|.
-        DATA t93 TYPE string.
-        t93 = |Too many parentheses|.
         DATA t95 TYPE string.
         DATA(t96) = |Searches for expressions where extra parentheses can safely |.
         t96 = t96 && |be removed|.
@@ -1200,16 +993,12 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         DATA t97 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t97.
         DATA t101 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t102 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t102.
-        t101 = t102.
-        DATA(t104) = |SingleFile|.
+        CREATE OBJECT t101.
         t101->load( ).
-        APPEND t104 TO t101->items.
+        APPEND |SingleFile| TO t101->items.
         t101->save( ).
-        DATA(t106) = |Quickfix|.
         t101->load( ).
-        APPEND t106 TO t101->items.
+        APPEND |Quickfix| TO t101->items.
         t101->save( ).
         t97 = t101.
         DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1234,7 +1023,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         CLEAR t123.
         DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t125.
-        t90 = NEW zcl_lnt_irule_metadata( i_key = t91 i_title = t93 i_short_description = t95 i_bad_example = t109 i_good_example = t115 i_extended_information = t121 i_tags = t97 i_pragma = t123 i_pseudo_comment = t125 ).
+        t90 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t95 i_bad_example = t109 i_good_example = t115 i_extended_information = t121 i_tags = t97 i_pragma = t123 i_pseudo_comment = t125 ).
         CREATE OBJECT t90->zlnt_view_ownkeys_b0e8086400eb.
         t90->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1267,46 +1056,40 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
         t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t133) = |key|.
         DATA t134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t134.
-        t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t133 p1 = t134 ).
-        DATA(t135) = |title|.
+        t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t134 ).
         DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t136.
         IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t135 p1 = t136 ).
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t136 ).
         ENDIF.
-        DATA(t137) = |shortDescription|.
         DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t138.
         IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t137 p1 = t138 ).
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t138 ).
         ENDIF.
-        DATA(t139) = |tags|.
         DATA t140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t140.
         IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t139 p1 = t140 ).
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t140 ).
         ENDIF.
-        DATA(t141) = |badExample|.
         DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t142.
         IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t141 p1 = t142 ).
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t142 ).
         ENDIF.
-        DATA(t143) = |goodExample|.
         DATA t144 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t144.
         IF t90->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = t143 p1 = t144 ).
+          t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t144 ).
         ENDIF.
         t89 = t90->key.
         DATA t145 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t145 = me->conf->zlnt_view_read_sr_15c06369f827( ).
         DATA t147 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t147.
-        t80 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t82 i_message_26cb = t88 i_key = t89 i_severity = t145 i_fix = t147 ).
+        t80 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t82 i_message_26cb = |Too many parentheses| i_key = t89 i_severity = t145 i_fix = t147 ).
         t3->load( ).
         APPEND t80 TO t3->items.
         t3->save( ).
@@ -1320,9 +1103,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA(t1) = i_file.
     DATA(t2) = i_cond.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA t5 TYPE string.
     t5 = ||.
     DATA t7 TYPE abap_bool.
@@ -1331,9 +1112,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_abstract_node.
     t11 = t2.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t13 = t11->children.
-    t10 = t13.
+    t10 = t11->children.
     t9 ?= t10.
     DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t16 TYPE REF TO object.
@@ -1359,20 +1138,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       ENDIF.
       DATA t20 TYPE string.
       t20 = ||.
-      DATA t22 TYPE abap_bool.
-      t22 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_token_node ).
-      IF t22 = abap_true.
+      IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA t24 TYPE string.
         DATA t25 TYPE string.
-        DATA t27 TYPE REF TO zcl_lnt_abstract_token.
         DATA t28 TYPE REF TO zcl_lnt_token_node.
         DATA t30 TYPE REF TO object.
         t30 = t15.
         t28 ?= t30.
-        t27 = t28->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
-        DATA t31 TYPE string.
-        t31 = t27->str.
-        t25 = t31.
+        t25 = t28->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t33) = strlen( t25 ).
         t24 = t25.
         IF t24 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1398,31 +1171,24 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t38 = xsdbool( t39 IS BOUND AND t39 IS INSTANCE OF zcl_lnt_cond_sub ).
           t37 = t38.
           IF t38 = abap_false.
-            DATA t43 TYPE abap_bool.
             DATA t44 TYPE REF TO zif_lnt_statement_runnable.
             DATA t45 TYPE REF TO zcl_lnt_expression_node.
             DATA t47 TYPE REF TO object.
             t47 = t15.
             t45 ?= t47.
             t44 = t45->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-            t43 = xsdbool( t44 IS BOUND AND t44 IS INSTANCE OF zcl_lnt_component_cond_sub ).
-            t37 = t43.
+            t37 = xsdbool( t44 IS BOUND AND t44 IS INSTANCE OF zcl_lnt_component_cond_sub ).
           ENDIF.
           t34 = t37.
         ENDIF.
         IF t34 = abap_true.
-          DATA(t48) = VALUE abap_bool( ).
           DATA t49 TYPE string.
           DATA t50 TYPE string.
-          DATA t52 TYPE REF TO zcl_lnt_abstract_token.
           DATA t53 TYPE REF TO zcl_lnt_expression_node.
           DATA t55 TYPE REF TO object.
           t55 = t15.
           t53 ?= t55.
-          t52 = t53->get_first_token( ).
-          DATA t56 TYPE string.
-          t56 = t52->str.
-          t50 = t56.
+          t50 = t53->get_first_token( )->str.
           DATA(t58) = strlen( t50 ).
           t49 = t50.
           IF t49 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -1430,56 +1196,35 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           ELSE.
             t49 = zlnt_runtime_uppe_91169605024d=>full( t49 ).
           ENDIF.
-          DATA(t59) = |NOT|.
-          t48 = xsdbool( t49 = t59 ).
-          IF t48 = abap_true.
-            DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            CREATE OBJECT t60.
-            result = t60.
+          IF xsdbool( t49 = |NOT| ) = abap_true.
+            CREATE OBJECT result.
             RETURN.
           ENDIF.
           DATA t61 TYPE REF TO zcl_lnt_expression_node.
-          DATA t62 TYPE REF TO zcl_lnt_expression_node.
           DATA t63 TYPE REF TO zcl_lnt_expression_node.
           DATA t65 TYPE REF TO object.
           t65 = t15.
           t63 ?= t65.
           DATA(t66) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
-          t62 = t63->find_direct_expression( i_type_9913 = t66 ).
-          t61 = t62.
-          DATA(t67) = VALUE abap_bool( ).
+          t61 = t63->find_direct_expression( i_type_9913 = t66 ).
           DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t70.
-          t67 = xsdbool( t61 IS INITIAL ).
-          IF t67 = abap_true.
-            DATA t74 TYPE REF TO zcl_lnt_expression_node.
+          IF xsdbool( t61 IS INITIAL ) = abap_true.
             DATA t75 TYPE REF TO zcl_lnt_expression_node.
             DATA t77 TYPE REF TO object.
             t77 = t15.
             t75 ?= t77.
             DATA(t78) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
-            t74 = t75->find_direct_expression( i_type_9913 = t78 ).
-            t61 = t74.
+            t61 = t75->find_direct_expression( i_type_9913 = t78 ).
           ENDIF.
-          DATA(t79) = VALUE abap_bool( ).
           DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t82.
-          t79 = xsdbool( t61 IS INITIAL ).
-          IF t79 = abap_true.
-            DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            CREATE OBJECT t86.
-            result = t86.
+          IF xsdbool( t61 IS INITIAL ) = abap_true.
+            CREATE OBJECT result.
             RETURN.
           ENDIF.
-          DATA t87 TYPE string.
-          DATA t88 TYPE REF TO zcl_lnt_expression_node.
-          t88 = t61.
-          t87 = me->find_comparator( i_cond = t88 ).
-          t20 = t87.
-          DATA t90 TYPE abap_bool.
-          DATA(t92) = ||.
-          t90 = xsdbool( t20 <> t92 ).
-          IF t90 = abap_true.
+          t20 = me->find_comparator( i_cond = t61 ).
+          IF xsdbool( t20 <> || ) = abap_true.
             t7 = abap_true.
           ENDIF.
         ELSE.
@@ -1490,19 +1235,16 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t97 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_expression_node ).
           t96 = t97.
           IF t97 = abap_true.
-            DATA t99 TYPE abap_bool.
             DATA t100 TYPE REF TO zif_lnt_statement_runnable.
             DATA t101 TYPE REF TO zcl_lnt_expression_node.
             DATA t103 TYPE REF TO object.
             t103 = t15.
             t101 ?= t103.
             t100 = t101->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
-            t99 = xsdbool( t100 IS BOUND AND t100 IS INSTANCE OF zcl_lnt_st_compare ).
-            t96 = t99.
+            t96 = xsdbool( t100 IS BOUND AND t100 IS INSTANCE OF zcl_lnt_st_compare ).
           ENDIF.
           t95 = t96.
           IF t96 = abap_true.
-            DATA(t104) = VALUE abap_bool( ).
             DATA t105 TYPE REF TO zif_lnt_union_daf022d4.
             CLEAR t105.
             DATA t106 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -1542,28 +1284,20 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             t106 = t107.
             DATA t122 TYPE REF TO zif_lnt_union_daf022d4.
             CLEAR t122.
-            DATA(t123) = xsdbool( t106 IS INITIAL ).
-            IF t123 = abap_true.
+            IF xsdbool( t106 IS INITIAL ) = abap_true.
               CLEAR t122.
             ELSE.
               DATA t126 TYPE REF TO zif_lnt_union_daf022d4.
-              DATA t127 TYPE REF TO object.
-              DATA t128 TYPE REF TO zif_lnt_union_4cf1d054.
-              t128 = t106.
-              t127 = t128->get_db65( ).
               DATA t130 TYPE REF TO object.
-              t130 = t127.
+              t130 = t106->get_db65( ).
               t126 ?= t130.
               t122 = t126.
             ENDIF.
             t105 = t122.
-            t104 = xsdbool( t105 IS BOUND AND t105 IS INSTANCE OF zcl_lnt_st_source ).
-            t95 = t104.
+            t95 = xsdbool( t105 IS BOUND AND t105 IS INSTANCE OF zcl_lnt_st_source ).
           ENDIF.
           t94 = t95.
           IF t95 = abap_true.
-            DATA t131 TYPE abap_bool.
-            DATA t132 TYPE i.
             DATA t133 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t134 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t135 TYPE REF TO zcl_lnt_abstract_node.
@@ -1572,15 +1306,10 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             t138 = t15.
             t136 ?= t138.
             t135 = t136.
-            DATA t139 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            t139 = t135->children.
-            t134 = t139.
+            t134 = t135->children.
             t133 ?= t134.
             t133->load( ).
-            t132 = lines( t133->items ).
-            DATA(t141) = 3.
-            t131 = xsdbool( t132 = t141 ).
-            t94 = t131.
+            t94 = xsdbool( lines( t133->items ) = 3 ).
           ENDIF.
           IF t94 = abap_true.
             DATA t142 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1622,14 +1351,11 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             t144 = t145.
             DATA t160 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t160.
-            DATA(t161) = xsdbool( t144 IS INITIAL ).
-            IF t161 = abap_true.
+            IF xsdbool( t144 IS INITIAL ) = abap_true.
               CLEAR t160.
             ELSE.
               DATA t164 TYPE string.
-              DATA t165 TYPE REF TO zif_lnt_union_4cf1d054.
-              t165 = t144.
-              t164 = t165->concat_tokens( ).
+              t164 = t144->concat_tokens( ).
               DATA(t167) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t167->has = abap_true.
               t167->value = t164.
@@ -1706,7 +1432,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               t168 = t186.
             ENDIF.
             IF t168 = abap_true.
-              DATA(t195) = |Parentheses can be removed|.
               DATA t197 TYPE REF TO zcl_lnt_issue.
               CLEAR t197.
               DATA t199 TYPE REF TO zcl_lnt_abstract_token.
@@ -1718,10 +1443,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               DATA(t204) = VALUE string( ).
               DATA t205 TYPE REF TO zcl_lnt_irule_metadata.
               CLEAR t205.
-              DATA t206 TYPE string.
-              t206 = |many_parentheses|.
-              DATA t208 TYPE string.
-              t208 = |Too many parentheses|.
               DATA t210 TYPE string.
               DATA(t211) = |Searches for expressions where extra parentheses can safely |.
               t211 = t211 && |be removed|.
@@ -1729,16 +1450,12 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               DATA t212 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t212.
               DATA t216 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              DATA t217 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CREATE OBJECT t217.
-              t216 = t217.
-              DATA(t219) = |SingleFile|.
+              CREATE OBJECT t216.
               t216->load( ).
-              APPEND t219 TO t216->items.
+              APPEND |SingleFile| TO t216->items.
               t216->save( ).
-              DATA(t221) = |Quickfix|.
               t216->load( ).
-              APPEND t221 TO t216->items.
+              APPEND |Quickfix| TO t216->items.
               t216->save( ).
               t212 = t216.
               DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1763,7 +1480,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               CLEAR t238.
               DATA t240 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t240.
-              t205 = NEW zcl_lnt_irule_metadata( i_key = t206 i_title = t208 i_short_description = t210 i_bad_example = t224 i_good_example = t230 i_extended_information = t236 i_tags = t212 i_pragma = t238 i_pseudo_comment = t240 ).
+              t205 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t210 i_bad_example = t224 i_good_example = t230 i_extended_information = t236 i_tags = t212 i_pragma = t238 i_pseudo_comment = t240 ).
               CREATE OBJECT t205->zlnt_view_ownkeys_b0e8086400eb.
               t205->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1796,46 +1513,40 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               ENDIF.
               CREATE OBJECT t205->zlnt_json_ownkeys_70e5fd461788.
               t205->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA(t248) = |key|.
               DATA t249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t249.
-              t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t248 p1 = t249 ).
-              DATA(t250) = |title|.
+              t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t249 ).
               DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t251.
               IF t205->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t250 p1 = t251 ).
+                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t251 ).
               ENDIF.
-              DATA(t252) = |shortDescription|.
               DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t253.
               IF t205->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t252 p1 = t253 ).
+                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t253 ).
               ENDIF.
-              DATA(t254) = |tags|.
               DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t255.
               IF t205->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t254 p1 = t255 ).
+                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t255 ).
               ENDIF.
-              DATA(t256) = |badExample|.
               DATA t257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t257.
               IF t205->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t256 p1 = t257 ).
+                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t257 ).
               ENDIF.
-              DATA(t258) = |goodExample|.
               DATA t259 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t259.
               IF t205->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = t258 p1 = t259 ).
+                t205->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t259 ).
               ENDIF.
               t204 = t205->key.
               DATA t260 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               t260 = me->conf->zlnt_view_read_sr_15c06369f827( ).
               DATA t262 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
               CLEAR t262.
-              t197 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t199 i_message_26cb = t195 i_key = t204 i_severity = t260 i_fix = t262 ).
+              t197 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t199 i_message_26cb = |Parentheses can be removed| i_key = t204 i_severity = t260 i_fix = t262 ).
               t3->load( ).
               APPEND t197 TO t3->items.
               t3->save( ).
@@ -1843,34 +1554,23 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           ENDIF.
         ENDIF.
       ENDIF.
-      DATA t265 TYPE abap_bool.
-      DATA(t267) = ||.
-      t265 = xsdbool( t5 = t267 ).
-      IF t265 = abap_true.
+      IF xsdbool( t5 = || ) = abap_true.
         t5 = t20.
       ELSE.
         DATA(t269) = VALUE abap_bool( ).
         DATA t270 TYPE abap_bool.
         DATA t271 TYPE abap_bool.
-        DATA(t273) = ||.
-        t271 = xsdbool( t5 <> t273 ).
+        t271 = xsdbool( t5 <> || ).
         t270 = t271.
         IF t271 = abap_true.
-          DATA t274 TYPE abap_bool.
-          DATA(t276) = ||.
-          t274 = xsdbool( t20 <> t276 ).
-          t270 = t274.
+          t270 = xsdbool( t20 <> || ).
         ENDIF.
         t269 = t270.
         IF t270 = abap_true.
-          DATA t277 TYPE abap_bool.
-          t277 = xsdbool( t5 <> t20 ).
-          t269 = t277.
+          t269 = xsdbool( t5 <> t20 ).
         ENDIF.
         IF t269 = abap_true.
-          DATA t280 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CREATE OBJECT t280.
-          result = t280.
+          CREATE OBJECT result.
           RETURN.
         ENDIF.
       ENDIF.
@@ -1878,48 +1578,33 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA(t281) = VALUE abap_bool( ).
     DATA t282 TYPE abap_bool.
     DATA t283 TYPE abap_bool.
-    DATA(t285) = ||.
-    t283 = xsdbool( t5 <> t285 ).
+    t283 = xsdbool( t5 <> || ).
     t282 = t283.
     IF t283 = abap_true.
-      DATA t286 TYPE abap_bool.
-      DATA(t288) = |MIXED|.
-      t286 = xsdbool( t5 <> t288 ).
-      t282 = t286.
+      t282 = xsdbool( t5 <> |MIXED| ).
     ENDIF.
     t281 = t282.
     IF t282 = abap_true.
-      DATA t289 TYPE abap_bool.
-      t289 = xsdbool( t7 = abap_true ).
-      t281 = t289.
+      t281 = xsdbool( t7 = abap_true ).
     ENDIF.
     IF t281 = abap_true.
-      DATA(t293) = |Too many parentheses, complex|.
       DATA t295 TYPE REF TO zcl_lnt_issue.
       DATA t297 TYPE REF TO zcl_lnt_abstract_token.
       t297 = t2->get_first_token( ).
       DATA(t300) = VALUE string( ).
       DATA t301 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t302 TYPE string.
-      t302 = |many_parentheses|.
-      DATA t304 TYPE string.
-      t304 = |Too many parentheses|.
       DATA t306 TYPE string.
       DATA(t307) = |Searches for expressions where extra parentheses can safely |.
       t307 = t307 && |be removed|.
       t306 = t307.
       DATA t308 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t312 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t313 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t313.
-      t312 = t313.
-      DATA(t315) = |SingleFile|.
+      CREATE OBJECT t312.
       t312->load( ).
-      APPEND t315 TO t312->items.
+      APPEND |SingleFile| TO t312->items.
       t312->save( ).
-      DATA(t317) = |Quickfix|.
       t312->load( ).
-      APPEND t317 TO t312->items.
+      APPEND |Quickfix| TO t312->items.
       t312->save( ).
       t308 = t312.
       DATA t320 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1929,17 +1614,15 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       t324->has = abap_true.
       t324->value = t323.
       t320 = t324.
-      DATA t326 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t329) = |\nIF destination IS INITIAL.\nENDIF.\nIF foo = boo AND bar = la|.
       t329 = t329 && |r AND moo = loo.\nENDIF.\n|.
       DATA(t330) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t330->has = abap_true.
       t330->value = t329.
-      t326 = t330.
       DATA t332 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t334 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t336 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t301 = NEW zcl_lnt_irule_metadata( i_key = t302 i_title = t304 i_short_description = t306 i_bad_example = t320 i_good_example = t326 i_extended_information = t332 i_tags = t308 i_pragma = t334 i_pseudo_comment = t336 ).
+      t301 = NEW zcl_lnt_irule_metadata( i_key = |many_parentheses| i_title = |Too many parentheses| i_short_description = t306 i_bad_example = t320 i_good_example = t330 i_extended_information = t332 i_tags = t308 i_pragma = t334 i_pseudo_comment = t336 ).
       CREATE OBJECT t301->zlnt_view_ownkeys_b0e8086400eb.
       t301->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t338 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1966,39 +1649,31 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t301->zlnt_json_ownkeys_70e5fd461788.
       t301->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t344) = |key|.
       DATA t345 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t344 p1 = t345 ).
-      DATA(t346) = |title|.
+      t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t345 ).
       DATA t347 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t301->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t346 p1 = t347 ).
+        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t347 ).
       ENDIF.
-      DATA(t348) = |shortDescription|.
       DATA t349 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t301->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t348 p1 = t349 ).
+        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t349 ).
       ENDIF.
-      DATA(t350) = |tags|.
       DATA t351 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t301->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t350 p1 = t351 ).
+        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t351 ).
       ENDIF.
-      DATA(t352) = |badExample|.
       DATA t353 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t301->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t352 p1 = t353 ).
+        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t353 ).
       ENDIF.
-      DATA(t354) = |goodExample|.
       DATA t355 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t301->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = t354 p1 = t355 ).
+        t301->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t355 ).
       ENDIF.
       t300 = t301->key.
-      DATA t356 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t356 = me->conf->zlnt_view_read_sr_15c06369f827( ).
       DATA t358 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t295 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t297 i_message_26cb = t293 i_key = t300 i_severity = t356 i_fix = t358 ).
+      t295 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t297 i_message_26cb = |Too many parentheses, complex| i_key = t300 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t358 ).
       t3->load( ).
       APPEND t295 TO t3->items.
       t3->save( ).
@@ -2015,9 +1690,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_abstract_node.
     t7 = i_cond.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t9 = t7->children.
-    t6 = t9.
+    t6 = t7->children.
     t5 ?= t6.
     t4 = t5.
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -2042,21 +1715,15 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       ELSE.
         t12 ?= t13.
       ENDIF.
-      DATA t17 TYPE abap_bool.
-      t17 = xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_token_node ).
-      IF t17 = abap_true.
+      IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA(t19) = VALUE string( ).
         DATA t20 TYPE string.
         DATA t21 TYPE string.
-        DATA t23 TYPE REF TO zcl_lnt_abstract_token.
         DATA t24 TYPE REF TO zcl_lnt_token_node.
         DATA t26 TYPE REF TO object.
         t26 = t12.
         t24 ?= t26.
-        t23 = t24->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
-        DATA t27 TYPE string.
-        t27 = t23->str.
-        t21 = t27.
+        t21 = t24->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t29) = strlen( t21 ).
         t20 = t21.
         IF t20 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -2065,15 +1732,10 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t20 = zlnt_runtime_uppe_91169605024d=>full( t20 ).
         ENDIF.
         t19 = t20.
-        DATA t30 TYPE abap_bool.
-        DATA(t32) = ||.
-        t30 = xsdbool( t2 = t32 ).
-        IF t30 = abap_true.
+        IF xsdbool( t2 = || ) = abap_true.
           t2 = t19.
         ELSE.
-          DATA t34 TYPE abap_bool.
-          t34 = xsdbool( t19 <> t2 ).
-          IF t34 = abap_true.
+          IF xsdbool( t19 <> t2 ) = abap_true.
             result = |MIXED|.
             RETURN.
           ENDIF.

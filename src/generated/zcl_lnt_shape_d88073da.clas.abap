@@ -29,10 +29,9 @@ CLASS zcl_lnt_shape_d88073da IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t6 ).
     ENDIF.
-    DATA(t7) = |name|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |name| p1 = t8 ).
     ENDIF.
     me->node = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `node`.
@@ -40,10 +39,9 @@ CLASS zcl_lnt_shape_d88073da IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `node` p1 = t11 ).
     ENDIF.
-    DATA(t12) = |node|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |node| p1 = t13 ).
     ENDIF.
     me->annotations = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `annotations`.
@@ -51,10 +49,9 @@ CLASS zcl_lnt_shape_d88073da IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `annotations` p1 = t16 ).
     ENDIF.
-    DATA(t17) = |annotations|.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t17 p1 = t18 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |annotations| p1 = t18 ).
     ENDIF.
     me->semantic_type = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `semanticType`.
@@ -62,10 +59,9 @@ CLASS zcl_lnt_shape_d88073da IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `semanticType` p1 = t20 ).
     ENDIF.
-    DATA(t21) = |semanticType|.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t21 p1 = t22 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |semanticType| p1 = t22 ).
     ENDIF.
   ENDMETHOD.
 

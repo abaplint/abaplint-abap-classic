@@ -38,14 +38,9 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     t2 = me->data_56cc.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      t9 = t2.
-      t8 = t9->zlnt_view_read_sr_c978da49ae47( ).
-      t4 = t8.
+      t4 = t2->zlnt_view_read_sr_c978da49ae47( ).
     ENDIF.
     result = t4.
 
@@ -55,14 +50,9 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     t2 = me->data_56cc.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      t9 = t2.
-      t8 = t9->zlnt_view_read_sr_a5933bdf8829( ).
-      t4 = t8.
+      t4 = t2->zlnt_view_read_sr_a5933bdf8829( ).
     ENDIF.
     result = t4.
 
@@ -72,14 +62,9 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     t2 = me->data_56cc.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      t9 = t2.
-      t8 = t9->zlnt_view_read_sr_b2a3e27508db( ).
-      t4 = t8.
+      t4 = t2->zlnt_view_read_sr_b2a3e27508db( ).
     ENDIF.
     result = t4.
 
@@ -89,14 +74,9 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     t2 = me->data_56cc.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      t9 = t2.
-      t8 = t9->zlnt_view_read_sr_dfbdd4b4a00f( ).
-      t4 = t8.
+      t4 = t2->zlnt_view_read_sr_dfbdd4b4a00f( ).
     ENDIF.
     result = t4.
 
@@ -106,14 +86,9 @@ CLASS zcl_lnt_abstract_type IMPLEMENTATION.
     DATA t2 TYPE REF TO zcl_lnt_abstract_type_data.
     t2 = me->data_56cc.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t5) = xsdbool( t2 IS INITIAL ).
-    IF t5 = abap_true.
+    IF xsdbool( t2 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zcl_lnt_abstract_type_data.
-      t9 = t2.
-      t8 = t9->zlnt_view_read_sr_19ee0de30d00( ).
-      t4 = t8.
+      t4 = t2->zlnt_view_read_sr_19ee0de30d00( ).
     ENDIF.
     result = t4.
 

@@ -28,15 +28,8 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_identifier_name.
-    DATA(t1) = VALUE string( ).
-    DATA(t4) = VALUE string( ).
     DATA t5 TYPE string.
-    DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    t8 = me->identifier->token.
-    DATA t10 TYPE string.
-    t10 = t8->str.
-    t5 = t10.
-    DATA(t12) = VALUE abap_bool( ).
+    t5 = me->identifier->token->str.
     DATA(t13) = VALUE string( ).
     DATA(t14) = t5.
     DATA(t15) = 0.
@@ -49,17 +42,13 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t15 > t17 OR t16 <= 0.
-      CLEAR t13.
     ELSE.
       IF t16 > t17 - t15.
         t16 = t17 - t15.
       ENDIF.
       t13 = t14+t15(t16).
     ENDIF.
-    DATA(t18) = |!|.
-    t12 = xsdbool( t13 = t18 ).
-    IF t12 = abap_true.
-      DATA(t19) = VALUE string( ).
+    IF xsdbool( t13 = |!| ) = abap_true.
       DATA t20 TYPE string.
       t20 = t5.
       DATA(t22) = VALUE string( ).
@@ -74,35 +63,24 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t24 > t28 OR t25 <= 0.
-        CLEAR t22.
       ELSE.
         IF t25 > t28 - t24.
           t25 = t28 - t24.
         ENDIF.
         t22 = t20+t24(t25).
       ENDIF.
-      t19 = t22.
-      t5 = t19.
+      t5 = t22.
     ENDIF.
-    t4 = t5.
-    t1 = t4.
-    result = t1.
+    result = t5.
 
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_o_r_t_t_ob_rf_ty.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = |```REF TO |.
     DATA(t4) = VALUE string( ).
-    DATA(t7) = VALUE string( ).
     DATA t8 TYPE string.
-    DATA t11 TYPE REF TO zcl_lnt_abstract_token.
-    t11 = me->identifier->token.
-    DATA t13 TYPE string.
-    t13 = t11->str.
-    t8 = t13.
-    DATA(t15) = VALUE abap_bool( ).
+    t8 = me->identifier->token->str.
     DATA(t16) = VALUE string( ).
     DATA(t17) = t8.
     DATA(t18) = 0.
@@ -115,17 +93,13 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t18 > t20 OR t19 <= 0.
-      CLEAR t16.
     ELSE.
       IF t19 > t20 - t18.
         t19 = t20 - t18.
       ENDIF.
       t16 = t17+t18(t19).
     ENDIF.
-    DATA(t21) = |!|.
-    t15 = xsdbool( t16 = t21 ).
-    IF t15 = abap_true.
-      DATA(t22) = VALUE string( ).
+    IF xsdbool( t16 = |!| ) = abap_true.
       DATA t23 TYPE string.
       t23 = t8.
       DATA(t25) = VALUE string( ).
@@ -140,39 +114,27 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t27 > t31 OR t28 <= 0.
-        CLEAR t25.
       ELSE.
         IF t28 > t31 - t27.
           t28 = t31 - t27.
         ENDIF.
         t25 = t23+t27(t28).
       ENDIF.
-      t22 = t25.
-      t8 = t22.
+      t8 = t25.
     ENDIF.
-    t7 = t8.
-    t4 = t7.
+    t4 = t8.
     DATA(t33) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t34) = |```|.
     DATA(t35) = strlen( t2 ).
-    t1 = |{ t2 }{ t34 }|.
-    result = t1.
+    result = |{ t2 }{ |```| }|.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = |REF TO |.
     DATA(t3) = VALUE string( ).
-    DATA(t6) = VALUE string( ).
     DATA t7 TYPE string.
-    DATA t10 TYPE REF TO zcl_lnt_abstract_token.
-    t10 = me->identifier->token.
-    DATA t12 TYPE string.
-    t12 = t10->str.
-    t7 = t12.
-    DATA(t14) = VALUE abap_bool( ).
+    t7 = me->identifier->token->str.
     DATA(t15) = VALUE string( ).
     DATA(t16) = t7.
     DATA(t17) = 0.
@@ -185,17 +147,13 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t17 > t19 OR t18 <= 0.
-      CLEAR t15.
     ELSE.
       IF t18 > t19 - t17.
         t18 = t19 - t17.
       ENDIF.
       t15 = t16+t17(t18).
     ENDIF.
-    DATA(t20) = |!|.
-    t14 = xsdbool( t15 = t20 ).
-    IF t14 = abap_true.
-      DATA(t21) = VALUE string( ).
+    IF xsdbool( t15 = |!| ) = abap_true.
       DATA t22 TYPE string.
       t22 = t7.
       DATA(t24) = VALUE string( ).
@@ -210,21 +168,17 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t26 > t30 OR t27 <= 0.
-        CLEAR t24.
       ELSE.
         IF t27 > t30 - t26.
           t27 = t30 - t26.
         ENDIF.
         t24 = t22+t26(t27).
       ENDIF.
-      t21 = t24.
-      t7 = t21.
+      t7 = t24.
     ENDIF.
-    t6 = t7.
-    t3 = t6.
+    t3 = t7.
     DATA(t32) = strlen( t2 ).
-    t1 = |{ t2 }{ t3 }|.
-    result = t1.
+    result = |{ t2 }{ t3 }|.
 
   ENDMETHOD.
 

@@ -26,16 +26,12 @@ CLASS zcl_lnt_st_star IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->sta->list_keywords( ).
-    result = t1.
+    result = me->sta->list_keywords( ).
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->sta->get_using( ).
-    result = t1.
+    result = me->sta->get_using( ).
 
   ENDMETHOD.
 
@@ -48,43 +44,20 @@ CLASS zcl_lnt_st_star IMPLEMENTATION.
         DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t5 = t1.
         DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CREATE OBJECT t8.
-        t7 = t8.
+        CREATE OBJECT t7.
         DO.
           t7 = t5.
-          DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t11.
-          t11 = me->sta->run( i_r_f634 = t7 ).
-          t5 = t11.
-          DATA(t14) = VALUE abap_bool( ).
-          DATA(t15) = VALUE i( ).
+          t5 = me->sta->run( i_r_f634 = t7 ).
           t5->load( ).
-          t15 = lines( t5->items ).
-          DATA(t17) = 0.
-          t14 = xsdbool( t15 = t17 ).
-          IF t14 = abap_true.
+          IF xsdbool( lines( t5->items ) = 0 ) = abap_true.
             EXIT.
           ENDIF.
-          DATA(t18) = VALUE abap_bool( ).
-          DATA(t19) = VALUE i( ).
           t5->load( ).
-          t19 = lines( t5->items ).
-          DATA(t21) = 1000.
-          t18 = xsdbool( t19 > t21 ).
-          IF t18 = abap_true.
-            DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            CLEAR t22.
-            t22 = t2->concat( p0 = t5 ).
-            t2 = t22.
+          IF xsdbool( lines( t5->items ) > 1000 ) = abap_true.
+            t2 = t2->concat( p0 = t5 ).
           ELSE.
-            DATA(t25) = VALUE abap_bool( ).
-            DATA(t26) = VALUE i( ).
             t5->load( ).
-            t26 = lines( t5->items ).
-            DATA(t28) = 1.
-            t25 = xsdbool( t26 = t28 ).
-            IF t25 = abap_true.
+            IF xsdbool( lines( t5->items ) = 1 ) = abap_true.
               DATA t30 TYPE REF TO zcl_lnt_st_result.
               CLEAR t30.
               DATA t32 TYPE REF TO object.
@@ -138,18 +111,14 @@ CLASS zcl_lnt_st_star IMPLEMENTATION.
                 APPEND t37 TO t2->items.
                 t2->save( ).
               ENDDO.
-              DATA(t44) = VALUE i( ).
               t2->load( ).
-              t44 = lines( t2->items ).
-              t35 = t44.
+              t35 = lines( t2->items ).
             ENDIF.
           ENDIF.
         ENDDO.
       CATCH zlnt_exception_cl_30eec8e8805d INTO t4.
         DATA(t46) = t4->payload.
-        DATA(t47) = VALUE abap_bool( ).
-        t47 = xsdbool( t46 IS BOUND AND t46 IS INSTANCE OF zcx_lnt_fail_star_error ).
-        IF t47 = abap_true.
+        IF xsdbool( t46 IS BOUND AND t46 IS INSTANCE OF zcx_lnt_fail_star_error ) = abap_true.
           result = t2.
           RETURN.
         ENDIF.
@@ -187,43 +156,34 @@ CLASS zcl_lnt_st_star IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.ZeroOrMore(|.
     DATA t4 TYPE string.
     t4 = me->sta->railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |star(|.
     DATA t4 TYPE string.
     t4 = me->sta->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -231,18 +191,12 @@ CLASS zcl_lnt_st_star IMPLEMENTATION.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
+    CREATE OBJECT t4.
     t4->load( ).
     APPEND t1 TO t4->items.
     t4->save( ).
-    t3 = t4.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 

@@ -15,10 +15,9 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |SET LOCKS OF|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |SET LOCKS OF|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d173_fd387289a527.
     IF t8 IS BOUND.
@@ -27,14 +26,11 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
       t7->cval = t8.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t13) = |ENTITY|.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t12->sval = t13.
+    t12->sval = |ENTITY|.
     t9->load( ).
     APPEND t12 TO t9->items.
     t9->save( ).
@@ -49,10 +45,9 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
     APPEND t15 TO t9->items.
     t9->save( ).
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t19) = |FROM|.
     CREATE OBJECT t18.
     t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t18->sval = t19.
+    t18->sval = |FROM|.
     t9->load( ).
     APPEND t18 TO t9->items.
     t9->save( ).
@@ -67,10 +62,9 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
     APPEND t21 TO t9->items.
     t9->save( ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t25) = |FAILED|.
     CREATE OBJECT t24.
     t24->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t24->sval = t25.
+    t24->sval = |FAILED|.
     t9->load( ).
     APPEND t24 TO t9->items.
     t9->save( ).
@@ -85,10 +79,9 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
     APPEND t27 TO t9->items.
     t9->save( ).
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t31) = |REPORTED|.
     CREATE OBJECT t30.
     t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t30->sval = t31.
+    t30->sval = |REPORTED|.
     t9->load( ).
     APPEND t30 TO t9->items.
     t9->save( ).
@@ -102,24 +95,15 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
     t9->load( ).
     APPEND t33 TO t9->items.
     t9->save( ).
-    DATA t35 TYPE REF TO zif_lnt_statement_runnable.
-    t35 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
-    t1 = t35.
-    DATA t39 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t40) = |KeyUser|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t42 TYPE REF TO zif_lnt_statement_runnable.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t44 TYPE REF TO zcl_lnt_abap_release.
-    DATA t45 TYPE REF TO zcl_lnt_abap_release.
-    DATA t46 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t46 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t47) = |v754|.
-    t45 = t46->get( p0 = t47 ).
-    t44 = t45.
+    t44 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v754| ).
     IF t44 IS BOUND.
       DATA t48 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t49 TYPE REF TO object.
@@ -192,8 +176,7 @@ CLASS zcl_lnt_set_locks IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t39 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t40 i_first = t41 ).
-    result = t39.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t41 ).
 
   ENDMETHOD.
 

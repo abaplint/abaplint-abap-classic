@@ -26,25 +26,19 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->optional->list_keywords( ).
-    result = t1.
+    result = me->optional->list_keywords( ).
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t1 = me->optional->get_using( ).
-    result = t1.
+    result = me->optional->get_using( ).
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -68,16 +62,9 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
         t5 ?= t6.
       ENDIF.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t11 = me->optional->run_one( i_x = t5 ).
-      t10 = t11.
-      DATA t14 TYPE abap_bool.
-      DATA t15 TYPE i.
+      t10 = me->optional->run_one( i_x = t5 ).
       t10->load( ).
-      t15 = lines( t10->items ).
-      DATA(t17) = 1.
-      t14 = xsdbool( t15 > t17 ).
-      IF t14 = abap_true.
+      IF xsdbool( lines( t10->items ) > 1 ) = abap_true.
         DATA(t18) = VALUE i( ).
         DATA t20 TYPE REF TO zcl_lnt_st_result.
         CLEAR t20.
@@ -107,25 +94,16 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
           APPEND t20 TO t2->items.
           t2->save( ).
         ENDDO.
-        DATA t27 TYPE i.
         t2->load( ).
-        t27 = lines( t2->items ).
-        t18 = t27.
+        t18 = lines( t2->items ).
       ELSE.
-        DATA t29 TYPE abap_bool.
-        DATA t30 TYPE i.
         t10->load( ).
-        t30 = lines( t10->items ).
-        DATA(t32) = 0.
-        t29 = xsdbool( t30 = t32 ).
-        IF t29 = abap_true.
+        IF xsdbool( lines( t10->items ) = 0 ) = abap_true.
           t2->load( ).
           APPEND t5 TO t2->items.
           t2->save( ).
         ELSE.
-          DATA(t35) = VALUE abap_bool( ).
           DATA(t36) = VALUE int8( ).
-          DATA(t37) = VALUE f( ).
           DATA t38 TYPE REF TO zcl_lnt_st_result.
           CLEAR t38.
           DATA t39 TYPE REF TO zcl_lnt_st_result.
@@ -150,41 +128,31 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
           DATA t44 TYPE f.
           DATA t45 TYPE int8.
           DATA t46 TYPE int8.
-          DATA t47 TYPE i.
           DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           t48 = t38->tokens.
           t48->load( ).
-          t47 = lines( t48->items ).
-          t46 = t47.
+          t46 = lines( t48->items ).
           DATA t50 TYPE int8.
-          DATA t51 TYPE i.
-          t51 = t38->token_index.
-          t50 = t51.
+          t50 = t38->token_index.
           t45 = t46 - t50.
           t44 = t45.
-          t37 = t44.
-          t36 = t37.
+          t36 = t44.
           DATA t53 TYPE int8.
           DATA t55 TYPE REF TO zcl_lnt_st_result.
           t55 = t5.
           DATA t57 TYPE f.
           DATA t58 TYPE int8.
           DATA t59 TYPE int8.
-          DATA t60 TYPE i.
           DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           t61 = t55->tokens.
           t61->load( ).
-          t60 = lines( t61->items ).
-          t59 = t60.
+          t59 = lines( t61->items ).
           DATA t63 TYPE int8.
-          DATA t64 TYPE i.
-          t64 = t55->token_index.
-          t63 = t64.
+          t63 = t55->token_index.
           t58 = t59 - t63.
           t57 = t58.
           t53 = t57.
-          t35 = xsdbool( t36 < t53 ).
-          IF t35 = abap_true.
+          IF xsdbool( t36 < t53 ) = abap_true.
             DATA(t66) = VALUE i( ).
             DATA t68 TYPE REF TO zcl_lnt_st_result.
             CLEAR t68.
@@ -214,10 +182,8 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
               APPEND t68 TO t2->items.
               t2->save( ).
             ENDDO.
-            DATA t75 TYPE i.
             t2->load( ).
-            t75 = lines( t2->items ).
-            t66 = t75.
+            t66 = lines( t2->items ).
           ELSE.
             t2->load( ).
             APPEND t5 TO t2->items.
@@ -231,43 +197,34 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Optional(|.
     DATA t4 TYPE string.
     t4 = me->optional->railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |opt(|.
     DATA t4 TYPE string.
     t4 = me->optional->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t7) = |)|.
     DATA(t8) = strlen( t2 ).
-    t1 = |{ t2 }{ t7 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t5) = ||.
+    CREATE OBJECT t2.
     t2->load( ).
-    APPEND t5 TO t2->items.
+    APPEND || TO t2->items.
     t2->save( ).
     result = t2.
 
@@ -276,22 +233,13 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_st_result.
     t4 = t1.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t7 = me->optional->run_one( i_x = t4 ).
-    t6 = t7.
-    DATA t10 TYPE abap_bool.
-    DATA t11 TYPE i.
+    t6 = me->optional->run_one( i_x = t4 ).
     t6->load( ).
-    t11 = lines( t6->items ).
-    DATA(t13) = 1.
-    t10 = xsdbool( t11 > t13 ).
-    IF t10 = abap_true.
+    IF xsdbool( lines( t6->items ) > 1 ) = abap_true.
       DATA(t14) = VALUE i( ).
       DATA t16 TYPE REF TO zcl_lnt_st_result.
       DATA t17 TYPE REF TO object.
@@ -319,25 +267,16 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
         APPEND t16 TO t2->items.
         t2->save( ).
       ENDDO.
-      DATA t23 TYPE i.
       t2->load( ).
-      t23 = lines( t2->items ).
-      t14 = t23.
+      t14 = lines( t2->items ).
     ELSE.
-      DATA t25 TYPE abap_bool.
-      DATA t26 TYPE i.
       t6->load( ).
-      t26 = lines( t6->items ).
-      DATA(t28) = 0.
-      t25 = xsdbool( t26 = t28 ).
-      IF t25 = abap_true.
+      IF xsdbool( lines( t6->items ) = 0 ) = abap_true.
         t2->load( ).
         APPEND t4 TO t2->items.
         t2->save( ).
       ELSE.
-        DATA(t31) = VALUE abap_bool( ).
         DATA(t32) = VALUE int8( ).
-        DATA(t33) = VALUE f( ).
         DATA t34 TYPE REF TO zcl_lnt_st_result.
         DATA t35 TYPE REF TO zcl_lnt_st_result.
         DATA t37 TYPE REF TO object.
@@ -356,41 +295,31 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
         DATA t40 TYPE f.
         DATA t41 TYPE int8.
         DATA t42 TYPE int8.
-        DATA t43 TYPE i.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t44 = t34->tokens.
         t44->load( ).
-        t43 = lines( t44->items ).
-        t42 = t43.
+        t42 = lines( t44->items ).
         DATA t46 TYPE int8.
-        DATA t47 TYPE i.
-        t47 = t34->token_index.
-        t46 = t47.
+        t46 = t34->token_index.
         t41 = t42 - t46.
         t40 = t41.
-        t33 = t40.
-        t32 = t33.
+        t32 = t40.
         DATA t49 TYPE int8.
         DATA t51 TYPE REF TO zcl_lnt_st_result.
         t51 = t4.
         DATA t53 TYPE f.
         DATA t54 TYPE int8.
         DATA t55 TYPE int8.
-        DATA t56 TYPE i.
         DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t57 = t51->tokens.
         t57->load( ).
-        t56 = lines( t57->items ).
-        t55 = t56.
+        t55 = lines( t57->items ).
         DATA t59 TYPE int8.
-        DATA t60 TYPE i.
-        t60 = t51->token_index.
-        t59 = t60.
+        t59 = t51->token_index.
         t54 = t55 - t59.
         t53 = t54.
         t49 = t53.
-        t31 = xsdbool( t32 < t49 ).
-        IF t31 = abap_true.
+        IF xsdbool( t32 < t49 ) = abap_true.
           DATA(t62) = VALUE i( ).
           DATA t64 TYPE REF TO zcl_lnt_st_result.
           DATA t65 TYPE REF TO object.
@@ -418,10 +347,8 @@ CLASS zcl_lnt_optional_priority IMPLEMENTATION.
             APPEND t64 TO t2->items.
             t2->save( ).
           ENDDO.
-          DATA t71 TYPE i.
           t2->load( ).
-          t71 = lines( t2->items ).
-          t62 = t71.
+          t62 = lines( t2->items ).
         ELSE.
           t2->load( ).
           APPEND t4 TO t2->items.

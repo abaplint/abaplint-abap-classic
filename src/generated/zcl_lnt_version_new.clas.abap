@@ -53,8 +53,7 @@ CLASS zcl_lnt_version_new IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_6daa33b3cb6b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `release` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `release` ) )->as_string( ).
     ELSE.
       result = me->release_3664.
     ENDIF.
@@ -79,8 +78,7 @@ CLASS zcl_lnt_version_new IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_61201d354c21.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `language` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `language` ) )->as_string( ).
     ELSE.
       result = me->language.
     ENDIF.

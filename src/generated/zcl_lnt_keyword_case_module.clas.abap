@@ -22,23 +22,15 @@ CLASS zcl_lnt_keyword_case_module IMPLEMENTATION.
     ENDIF.
     zcl_lnt_keyword_case_module=>keyword_case_style_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_keyword_case_module=>zlnt_builtin_init_e61a6712c1c7 = abap_false.
       zcl_lnt_keyword_case_module=>zlnt_builtin_init_eb4308e0f790( ).
     ENDIF.
-    t3 = zcl_lnt_keyword_case_module=>keyword_case_style_namespace.
-    DATA(t4) = |Upper|.
-    DATA(t5) = |upper|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_keyword_case_module=>keyword_case_style_namespace->set( p0 = |Upper| p1 = |upper| ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
     IF zcl_lnt_keyword_case_module=>zlnt_builtin_init_e61a6712c1c7 = abap_false.
       zcl_lnt_keyword_case_module=>zlnt_builtin_init_eb4308e0f790( ).
     ENDIF.
-    t7 = zcl_lnt_keyword_case_module=>keyword_case_style_namespace.
-    DATA(t8) = |Lower|.
-    DATA(t9) = |lower|.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = zcl_lnt_keyword_case_module=>keyword_case_style_namespace->set( p0 = |Lower| p1 = |lower| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

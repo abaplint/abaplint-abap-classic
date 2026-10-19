@@ -64,8 +64,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_ec4602663c93.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeader` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeader` ) )->as_boolean( ).
     ELSE.
       result = me->with_header.
     ENDIF.
@@ -90,8 +89,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_79d5aa355dd3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keyType` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keyType` ) )->as_string( ).
     ELSE.
       result = me->key_type.
     ENDIF.
@@ -142,11 +140,8 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
               ENDIF.
             ENDIF.
-            DATA(t3) = VALUE string( ).
-            DATA(t4) = VALUE string( ).
             DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            DATA(t6) = VALUE abap_bool( ).
-            result = NEW zcl_lnt_itable_key( view_source = t1 i_name = t3 i_type_9913 = t4 i_key_fields = t5 i_is_unique = t6 ).
+            result = NEW zcl_lnt_itable_key( view_source = t1 i_name = VALUE string( ) i_type_9913 = VALUE string( ) i_key_fields = t5 i_is_unique = VALUE abap_bool( ) ).
           ENDIF.
         ENDIF.
       ENDIF.
@@ -250,8 +245,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                   DATA(t7) = VALUE string( ).
                   DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                   CLEAR t8.
-                  DATA(t9) = VALUE abap_bool( ).
-                  t3 = NEW zcl_lnt_itable_key( view_source = t4 i_name = t6 i_type_9913 = t7 i_key_fields = t8 i_is_unique = t9 ).
+                  t3 = NEW zcl_lnt_itable_key( view_source = t4 i_name = t6 i_type_9913 = t7 i_key_fields = t8 i_is_unique = VALUE abap_bool( ) ).
                 ENDIF.
               ENDIF.
             ELSE.
@@ -579,8 +573,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                     DATA(t11) = VALUE string( ).
                     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                     CLEAR t12.
-                    DATA(t13) = VALUE abap_bool( ).
-                    t7 = NEW zcl_lnt_itable_key( view_source = t8 i_name = t10 i_type_9913 = t11 i_key_fields = t12 i_is_unique = t13 ).
+                    t7 = NEW zcl_lnt_itable_key( view_source = t8 i_name = t10 i_type_9913 = t11 i_key_fields = t12 i_is_unique = VALUE abap_bool( ) ).
                   ENDIF.
                 ENDIF.
               ELSE.

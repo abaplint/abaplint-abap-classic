@@ -23,14 +23,7 @@ CLASS zcl_lnt_neptune_api IMPLEMENTATION.
 
   METHOD get_allowed_naming.
     DATA t1 TYPE REF TO zcl_lnt_iallowed_naming.
-    DATA t2 TYPE f.
-    DATA(t3) = CONV f( 100 ).
-    t2 = t3.
-    DATA t4 TYPE abap_bool.
-    t4 = abap_true.
-    DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
     DATA t9 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t10) = |.*|.
     DATA(t11) = |[^\n\r|.
     DATA t12 TYPE c LENGTH 1.
     t12 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -39,11 +32,9 @@ CLASS zcl_lnt_neptune_api IMPLEMENTATION.
     t13 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t11 t13 INTO t11 RESPECTING BLANKS.
     t11 = t11 && |]*|.
-    DATA(t14) = |i|.
-    CREATE OBJECT t9 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t11 flags = t14.
-    t9->source = t10.
-    t6 = t9.
-    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t4 i_custom_regex = t6 ).
+    CREATE OBJECT t9 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t11 flags = |i|.
+    t9->source = |.*|.
+    t1 = NEW zcl_lnt_iallowed_naming( i_max_length = CONV f( 100 ) i_allow_namespace = abap_true i_custom_regex = t9 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -58,18 +49,15 @@ CLASS zcl_lnt_neptune_api IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t19) = |maxLength|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-    DATA(t21) = |allowNamespace|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |maxLength| p1 = t20 ).
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t21 p1 = t22 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |allowNamespace| p1 = t22 ).
     ENDIF.
-    DATA(t23) = |customRegex|.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t23 p1 = t24 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |customRegex| p1 = t24 ).
     ENDIF.
     result = t1.
 

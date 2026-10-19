@@ -38,10 +38,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `name` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |name|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |name| p1 = t12 ).
     ENDIF.
     me->type_cba0 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
@@ -49,10 +48,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t14 ).
     ENDIF.
-    DATA(t15) = |type|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t16 ).
     ENDIF.
     me->cont_type = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `contType`.
@@ -60,10 +58,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `contType` p1 = t18 ).
     ENDIF.
-    DATA(t19) = |contType|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |contType| p1 = t20 ).
     ENDIF.
     me->length = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `length`.
@@ -71,10 +68,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `length` p1 = t22 ).
     ENDIF.
-    DATA(t23) = |length|.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t23 p1 = t24 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |length| p1 = t24 ).
     ENDIF.
     me->vislength = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `vislength`.
@@ -82,10 +78,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `vislength` p1 = t26 ).
     ENDIF.
-    DATA(t27) = |vislength|.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t27 p1 = t28 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |vislength| p1 = t28 ).
     ENDIF.
     me->line = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `line`.
@@ -93,10 +88,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `line` p1 = t30 ).
     ENDIF.
-    DATA(t31) = |line|.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t31 p1 = t32 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |line| p1 = t32 ).
     ENDIF.
     me->column = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `column`.
@@ -104,10 +98,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `column` p1 = t34 ).
     ENDIF.
-    DATA(t35) = |column|.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t35 p1 = t36 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |column| p1 = t36 ).
     ENDIF.
     me->height = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `height`.
@@ -115,10 +108,9 @@ CLASS zcl_lnt_dynpro_field IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `height` p1 = t38 ).
     ENDIF.
-    DATA(t39) = |height|.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |height| p1 = t40 ).
     ENDIF.
   ENDMETHOD.
 

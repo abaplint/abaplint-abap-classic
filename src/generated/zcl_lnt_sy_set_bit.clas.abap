@@ -80,29 +80,17 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
         t24 ?= t25.
       ENDIF.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type.
-      DATA t30 TYPE REF TO zcl_lnt_abstract_type.
-      t30 = zcl_lnt_sy_target=>run_syntax( i_node = t24 i_input_967e = t2 ).
-      t29 = t30.
+      t29 = zcl_lnt_sy_target=>run_syntax( i_node = t24 i_input_967e = t2 ).
       DATA t33 TYPE abap_bool.
       DATA t34 TYPE abap_bool.
       t34 = xsdbool( t29 IS BOUND ).
       t33 = t34.
       IF t34 = abap_true.
-        DATA(t36) = VALUE abap_bool( ).
-        DATA(t37) = VALUE abap_bool( ).
-        DATA t38 TYPE REF TO zcl_lnt_type_utils.
         DATA t39 TYPE REF TO zcl_lnt_current_scope.
         t39 = t2->scope.
-        t38 = NEW zcl_lnt_type_utils( i_scope = t39 ).
-        DATA t41 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t41.
-        t41 = t29.
-        t37 = t38->is_hex_like( i_type_9913 = t41 ).
-        t36 = xsdbool( t37 = abap_false ).
-        t33 = t36.
+        t33 = xsdbool( NEW zcl_lnt_type_utils( i_scope = t39 )->is_hex_like( i_type_9913 = t29 ) = abap_false ).
       ENDIF.
       IF t33 = abap_true.
-        DATA(t48) = |Input must be byte-like|.
         DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t49 = t2->issues.
         DATA t51 TYPE REF TO zcl_lnt_issue.
@@ -110,7 +98,7 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
         t53 = t24->get_first_token( ).
         DATA t56 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t56.
-        t51 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t53 i_message_26cb = t48 i_fix = t56 ).
+        t51 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t53 i_message_26cb = |Input must be byte-like| i_fix = t56 ).
         t49->load( ).
         APPEND t51 TO t49->items.
         t49->save( ).

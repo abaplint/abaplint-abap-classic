@@ -13,21 +13,14 @@ CLASS zcl_lnt_st_test_seam DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t6 TYPE REF TO zcl_lnt_abap_release.
-    DATA t7 TYPE REF TO zcl_lnt_abap_release.
-    DATA t8 TYPE REF TO zlnt_runtime_map__201f3699a39e.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t8 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t9) = |v750|.
-    t7 = t8->get( p0 = t9 ).
-    t6 = t7.
+    t6 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v750| ).
     IF t6 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t11 TYPE REF TO object.
@@ -54,10 +47,9 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t16) = |TEST-SEAM|.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t15->sval = t16.
+    t15->sval = |TEST-SEAM|.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d349_cecd27d97080.
     IF t19 IS BOUND.
@@ -67,9 +59,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t21.
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    t22 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t18 i_rest = t21 ).
-    t13 = t22.
+    t13 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t18 i_rest = t21 ).
     IF t13 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t27 TYPE REF TO object.
@@ -93,26 +83,20 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    DATA t28 TYPE REF TO zcl_lnt_iver_options.
     DATA t30 TYPE REF TO zcl_lnt_iver_options.
-    DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t34) = |OpenABAP|.
     DATA(t35) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t35->has = abap_true.
-    t35->value = t34.
-    t31 = t35.
-    t30 = NEW zcl_lnt_iver_options( i_also = t31 ).
+    t35->value = |OpenABAP|.
+    t30 = NEW zcl_lnt_iver_options( i_also = t35 ).
     CREATE OBJECT t30->zlnt_view_ownkeys_b0e8086400eb.
     t30->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t30->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `also` p1 = t37 ).
     CREATE OBJECT t30->zlnt_json_ownkeys_70e5fd461788.
     t30->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t38) = |also|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t30->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
-    t28 = t30.
-    t4 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t5 i_first = t12 i_opts = t28 ).
+    t30->zlnt_json_ownkeys_70e5fd461788->put( p0 = |also| p1 = t39 ).
+    t4 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t5 i_first = t12 i_opts = t30 ).
     IF t4 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t42 TYPE REF TO object.
@@ -136,8 +120,7 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

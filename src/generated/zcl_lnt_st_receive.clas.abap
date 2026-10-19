@@ -15,10 +15,9 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |RECEIVE RESULTS FROM FUNCTION|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |RECEIVE RESULTS FROM FUNCTION|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d198_f214049174db.
     IF t8 IS BOUND.
@@ -27,16 +26,13 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
       t7->cval = t8.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t13 TYPE REF TO zif_lnt_statement_runnable.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t15) = |KEEPING TASK|.
     CREATE OBJECT t14.
     t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t14->sval = t15.
+    t14->sval = |KEEPING TASK|.
     t13 = zcl_lnt_st_combi_module=>opt( i_first = t14 ).
     IF t13 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -74,11 +70,7 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
     t9->load( ).
     APPEND t19 TO t9->items.
     t9->save( ).
-    DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    t21 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
-    t1 = t21.
-    DATA t25 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t26) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -103,8 +95,7 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t25 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t26 i_first = t27 ).
-    result = t25.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t27 ).
 
   ENDMETHOD.
 

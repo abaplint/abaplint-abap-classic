@@ -15,10 +15,9 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |TEXT|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |TEXT|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
@@ -47,9 +46,7 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t12.
-    t11 = t12.
+    CREATE OBJECT t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t15) = zlnt_runtime_desc_78196487750d=>zlnt_member_d350_60b8c1b06659.
     IF t15 IS BOUND.
@@ -60,9 +57,7 @@ CLASS zcl_lnt_text_element IMPLEMENTATION.
     t11->load( ).
     APPEND t14 TO t11->items.
     t11->save( ).
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    t16 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
-    result = t16.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
 
   ENDMETHOD.
 

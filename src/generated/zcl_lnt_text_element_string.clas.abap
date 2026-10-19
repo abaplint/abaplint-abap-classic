@@ -50,9 +50,7 @@ CLASS zcl_lnt_text_element_string IMPLEMENTATION.
       t10->cval = t11.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t13.
-    t12 = t13.
+    CREATE OBJECT t12.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t16 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d30_2f4abb22e3612e.
@@ -83,13 +81,10 @@ CLASS zcl_lnt_text_element_string IMPLEMENTATION.
     t12->load( ).
     APPEND t15 TO t12->items.
     t12->save( ).
-    DATA t20 TYPE REF TO zif_lnt_statement_runnable.
-    t20 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t12 ).
-    t1 = t20.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t12 ).
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t28 TYPE REF TO zif_lnt_statement_runnable.
     DATA t29 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t30) = |^('.*')\|(`.*`)$|.
     DATA(t31) = |^('[^\n\r|.
     DATA t32 TYPE c LENGTH 1.
     t32 = cl_abap_conv_in_ce=>uccpi( 8232 ).
@@ -105,9 +100,8 @@ CLASS zcl_lnt_text_element_string IMPLEMENTATION.
     t35 = cl_abap_conv_in_ce=>uccpi( 8233 ).
     CONCATENATE t31 t35 INTO t31 RESPECTING BLANKS.
     t31 = t31 && |]*`)$|.
-    DATA(t36) = ||.
-    CREATE OBJECT t29 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t31 flags = t36.
-    t29->source = t30.
+    CREATE OBJECT t29 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t31 flags = ||.
+    t29->source = |^('.*')\|(`.*`)$|.
     t28 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t29 ).
     IF t28 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -158,9 +152,7 @@ CLASS zcl_lnt_text_element_string IMPLEMENTATION.
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t45.
-    DATA t46 TYPE REF TO zif_lnt_statement_runnable.
-    t46 = zcl_lnt_st_combi_module=>seq( i_first = t27 i_second = t40 i_rest = t45 ).
-    result = t46.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t27 i_second = t40 i_rest = t45 ).
 
   ENDMETHOD.
 

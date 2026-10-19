@@ -30,20 +30,17 @@ CLASS zcl_lnt_slctn_scrn_nmng_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^P_.+$|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |^P_.+$|.
     me->zlnt_view_write_s_760b672b9075( p0 = t2 ).
-    DATA(t3) = |^S_.+$|.
     DATA(t4) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = |^S_.+$|.
     me->zlnt_view_write_s_f933d4437e31( p0 = t4 ).
-    DATA(t5) = |^SC_.+$|.
     DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t6->has = abap_true.
-    t6->value = t5.
+    t6->value = |^SC_.+$|.
     me->zlnt_view_write_s_6962b6f41cf9( p0 = t6 ).
   ENDMETHOD.
 

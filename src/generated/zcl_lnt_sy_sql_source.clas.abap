@@ -38,8 +38,6 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t12.
       t12 = t6.
@@ -51,8 +49,7 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       CLEAR t19.
       DATA t20 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t20.
-      t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
-      result = t11.
+      result = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
       RETURN.
     ENDDO.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -80,8 +77,6 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       ELSE.
         t24 ?= t25.
       ENDIF.
-      DATA t29 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t29.
       DATA t30 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t30.
       t30 = t24.
@@ -93,8 +88,7 @@ CLASS zcl_lnt_sy_sql_source IMPLEMENTATION.
       CLEAR t37.
       DATA t38 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t38.
-      t29 = zcl_lnt_sy_source=>run_syntax( i_node = t30 i_input_967e = t2 i_target_type = t35 i_write_reference = t36 i_allow_generic_deference = t37 i_read_reference = t38 ).
-      result = t29.
+      result = zcl_lnt_sy_source=>run_syntax( i_node = t30 i_input_967e = t2 i_target_type = t35 i_write_reference = t36 i_allow_generic_deference = t37 i_read_reference = t38 ).
       RETURN.
     ENDDO.
     CLEAR result.

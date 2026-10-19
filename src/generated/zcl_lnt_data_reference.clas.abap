@@ -18,7 +18,6 @@ ENDCLASS.
 CLASS zcl_lnt_data_reference IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_type_9913.
-    DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t6 = i_qualified_name.
@@ -34,17 +33,14 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
     CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
     t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t19) = |qualifiedName|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-    t3 = t5.
-    super->constructor( i_input_967e = t3 ).
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t20 ).
+    super->constructor( i_input_967e = t5 ).
     me->type_cba0 = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
   ENDMETHOD.
 
   METHOD to_text.
-    DATA t2 TYPE string.
     DATA(t3) = |Data REF TO |.
     DATA t4 TYPE string.
     DATA t6 TYPE f.
@@ -52,8 +48,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
     t6 = i_level + t8.
     t4 = me->type_cba0->to_text( i_level = t6 ).
     DATA(t9) = strlen( t3 ).
-    t2 = |{ t3 }{ t4 }|.
-    result = t2.
+    result = |{ t3 }{ t4 }|.
 
   ENDMETHOD.
 
@@ -64,10 +59,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
 
   METHOD to_abap.
     DATA t1 TYPE string.
-    DATA t2 TYPE string.
-    t2 = me->type_cba0->to_abap( ).
-    t1 = t2.
-    DATA(t4) = VALUE abap_bool( ).
+    t1 = me->type_cba0->to_abap( ).
     DATA(t5) = VALUE i( ).
     DATA(t7) = | TABLE OF |.
     DATA(t8) = strlen( t1 ).
@@ -79,27 +71,21 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
         t5 = -1.
       ENDIF.
     ENDIF.
-    DATA(t9) = 0.
-    t4 = xsdbool( t5 >= t9 ).
-    IF t4 = abap_true.
+    IF xsdbool( t5 >= 0 ) = abap_true.
       result = ||.
       RETURN.
     ENDIF.
-    DATA t11 TYPE string.
     DATA(t12) = |REF TO |.
     DATA t13 TYPE string.
     t13 = me->type_cba0->to_abap( ).
     DATA(t15) = strlen( t12 ).
-    t11 = |{ t12 }{ t13 }|.
-    result = t11.
+    result = |{ t12 }{ t13 }|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA t1 TYPE abap_bool.
     DATA(t2) = me->type_cba0.
-    t1 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_any_type ).
-    IF t1 = abap_true.
+    IF xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_any_type ) = abap_true.
       result = abap_true.
       RETURN.
     ENDIF.
@@ -108,9 +94,7 @@ CLASS zcl_lnt_data_reference IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA t1 TYPE abap_bool.
-    t1 = me->type_cba0->contains_void( ).
-    result = t1.
+    result = me->type_cba0->contains_void( ).
 
   ENDMETHOD.
 

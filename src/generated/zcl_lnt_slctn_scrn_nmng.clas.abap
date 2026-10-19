@@ -28,34 +28,24 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |selection_screen_naming|.
-    DATA t4 TYPE string.
-    t4 = |Selection screen naming conventions|.
     DATA t6 TYPE string.
     DATA(t7) = |Allows you to enforce a pattern, such as a prefix, for selec|.
     t7 = t7 && |tion-screen variable names.|.
     t6 = t7.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t13.
-    t12 = t13.
-    DATA(t15) = |Naming|.
+    CREATE OBJECT t12.
     t12->load( ).
-    APPEND t15 TO t12->items.
+    APPEND |Naming| TO t12->items.
     t12->save( ).
-    DATA(t17) = |SingleFile|.
     t12->load( ).
-    APPEND t17 TO t12->items.
+    APPEND |SingleFile| TO t12->items.
     t12->save( ).
-    t8 = t12.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t8 i_pragma = t26 i_pseudo_comment = t28 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |selection_screen_naming| i_title = |Selection screen naming conventions| i_short_description = t6 i_bad_example = t20 i_good_example = t22 i_extended_information = t24 i_tags = t12 i_pragma = t26 i_pseudo_comment = t28 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -74,23 +64,19 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t34) = |key|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
-    DATA(t36) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t35 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t37 ).
     ENDIF.
-    DATA(t38) = |shortDescription|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t39 ).
     ENDIF.
-    DATA(t40) = |tags|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t41 ).
     ENDIF.
     result = t1.
 
@@ -104,10 +90,9 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t5 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
     DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t9) = |required|.
     DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = |required|.
     t7 = t10.
     DATA(t12) = VALUE abap_bool( ).
     DATA(t13) = VALUE abap_bool( ).
@@ -125,39 +110,31 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
       ENDIF.
     ENDIF.
     IF t4 = abap_true.
-      DATA t14 TYPE string.
       DATA t15 TYPE string.
       DATA t16 TYPE string.
       DATA t17 TYPE string.
       DATA(t18) = |Selection-Screen variable name does not match pattern |.
       DATA(t20) = strlen( t18 ).
       t17 = |{ t18 }{ t1 }|.
-      DATA(t21) = |: |.
       DATA(t22) = strlen( t17 ).
-      t16 = |{ t17 }{ t21 }|.
+      t16 = |{ t17 }{ |: | }|.
       DATA(t24) = strlen( t16 ).
       t15 = |{ t16 }{ t2 }|.
-      DATA(t25) = ||.
       DATA(t26) = strlen( t15 ).
-      t14 = |{ t15 }{ t25 }|.
-      t3 = t14.
+      t3 = |{ t15 }{ || }|.
     ELSE.
-      DATA t27 TYPE string.
       DATA t28 TYPE string.
       DATA t29 TYPE string.
       DATA t30 TYPE string.
       DATA(t31) = |Selection-Screen variable name must not match pattern |.
       DATA(t33) = strlen( t31 ).
       t30 = |{ t31 }{ t1 }|.
-      DATA(t34) = |: |.
       DATA(t35) = strlen( t30 ).
-      t29 = |{ t30 }{ t34 }|.
+      t29 = |{ t30 }{ |: | }|.
       DATA(t37) = strlen( t29 ).
       t28 = |{ t29 }{ t2 }|.
-      DATA(t38) = ||.
       DATA(t39) = strlen( t28 ).
-      t27 = |{ t28 }{ t38 }|.
-      t3 = t27.
+      t3 = |{ t28 }{ || }|.
     ENDIF.
     result = t3.
 
@@ -176,14 +153,9 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
   METHOD r_p_i_s_r_sl_sc_nm_ts_sl_sc_nm.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t4) = VALUE abap_bool( ).
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t6 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
-    t5 = t6.
+    t5 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t10) = VALUE abap_bool( ).
     IF t5 IS INITIAL.
@@ -191,16 +163,12 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     ELSEIF t5->has = abap_false.
       t10 = abap_true.
     ENDIF.
-    t4 = t10.
-    IF t4 = abap_true.
+    IF t10 = abap_true.
       DATA(t12) = me->conf.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t15) = |required|.
       DATA(t16) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t16->has = abap_true.
-      t16->value = t15.
-      t13 = t16.
-      t12->zlnt_view_write_s_9ebcbca32e92( p0 = t13 ).
+      t16->value = |required|.
+      t12->zlnt_view_write_s_9ebcbca32e92( p0 = t16 ).
     ENDIF.
     DATA t18 TYPE abap_bool.
     t18 = abap_false.
@@ -211,9 +179,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA(t24) = VALUE abap_bool( ).
     DATA(t25) = VALUE abap_bool( ).
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t27 = me->conf->zlnt_view_read_sr_75544672d945( ).
-    t26 = t27.
+    t26 = me->conf->zlnt_view_read_sr_75544672d945( ).
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t31) = VALUE abap_bool( ).
     IF t26 IS INITIAL.
@@ -224,16 +190,9 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t25 = t31.
     t24 = t25.
     IF t25 = abap_false.
-      DATA t33 TYPE abap_bool.
-      DATA t34 TYPE i.
-      DATA t35 TYPE string.
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t36 = me->conf->zlnt_view_read_sr_75544672d945( ).
-      t35 = t36->value.
-      t34 = strlen( t35 ).
-      DATA(t39) = 0.
-      t33 = xsdbool( t34 = t39 ).
-      t24 = t33.
+      t24 = xsdbool( strlen( t36->value ) = 0 ).
     ENDIF.
     IF t24 = abap_true.
       t18 = abap_true.
@@ -241,9 +200,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA(t41) = VALUE abap_bool( ).
     DATA(t42) = VALUE abap_bool( ).
     DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t44 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
-    t43 = t44.
+    t43 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t48) = VALUE abap_bool( ).
     IF t43 IS INITIAL.
@@ -254,16 +211,9 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t42 = t48.
     t41 = t42.
     IF t42 = abap_false.
-      DATA t50 TYPE abap_bool.
-      DATA t51 TYPE i.
-      DATA t52 TYPE string.
       DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t53 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
-      t52 = t53->value.
-      t51 = strlen( t52 ).
-      DATA(t56) = 0.
-      t50 = xsdbool( t51 = t56 ).
-      t41 = t50.
+      t41 = xsdbool( strlen( t53->value ) = 0 ).
     ENDIF.
     IF t41 = abap_true.
       t20 = abap_true.
@@ -271,9 +221,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA(t58) = VALUE abap_bool( ).
     DATA(t59) = VALUE abap_bool( ).
     DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t61 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
-    t60 = t61.
+    t60 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
     DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t65) = VALUE abap_bool( ).
     IF t60 IS INITIAL.
@@ -284,24 +232,15 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     t59 = t65.
     t58 = t59.
     IF t59 = abap_false.
-      DATA t67 TYPE abap_bool.
-      DATA t68 TYPE i.
-      DATA t69 TYPE string.
       DATA t70 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t70 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
-      t69 = t70->value.
-      t68 = strlen( t69 ).
-      DATA(t73) = 0.
-      t67 = xsdbool( t68 = t73 ).
-      t58 = t67.
+      t58 = xsdbool( strlen( t70->value ) = 0 ).
     ENDIF.
     IF t58 = abap_true.
       t22 = abap_true.
     ENDIF.
     DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t78 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t78 = t1->statements.
-    t75 = t78.
+    t75 = t1->statements.
     DATA t80 TYPE REF TO zcl_lnt_statement_node.
     DATA t81 TYPE REF TO object.
     DATA(t82) = VALUE i( ).
@@ -333,9 +272,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
       t88 = xsdbool( t89 IS BOUND AND t89 IS INSTANCE OF zcl_lnt_st_parameter ).
       t87 = t88.
       IF t88 = abap_true.
-        DATA t91 TYPE abap_bool.
-        t91 = xsdbool( t18 = abap_false ).
-        t87 = t91.
+        t87 = xsdbool( t18 = abap_false ).
       ENDIF.
       t86 = t87.
       IF t87 = abap_false.
@@ -346,9 +283,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
         t94 = xsdbool( t95 IS BOUND AND t95 IS INSTANCE OF zcl_lnt_st_select_option ).
         t93 = t94.
         IF t94 = abap_true.
-          DATA t97 TYPE abap_bool.
-          t97 = xsdbool( t20 = abap_false ).
-          t93 = t97.
+          t93 = xsdbool( t20 = abap_false ).
         ENDIF.
         t86 = t93.
       ENDIF.
@@ -361,9 +296,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
         t100 = xsdbool( t101 IS BOUND AND t101 IS INSTANCE OF zcl_lnt_st_selection_screen ).
         t99 = t100.
         IF t100 = abap_true.
-          DATA t103 TYPE abap_bool.
-          t103 = xsdbool( t22 = abap_false ).
-          t99 = t103.
+          t99 = xsdbool( t22 = abap_false ).
         ENDIF.
         t85 = t99.
       ENDIF.
@@ -374,40 +307,28 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
         t107 = t80.
         DATA t109 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t109.
-        DATA t110 TYPE abap_bool.
         DATA t111 TYPE REF TO zif_lnt_statement.
         t111 = t107->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t110 = xsdbool( t111 IS BOUND AND t111 IS INSTANCE OF zcl_lnt_st_parameter ).
-        IF t110 = abap_true.
-          DATA t113 TYPE REF TO zcl_lnt_expression_node.
+        IF xsdbool( t111 IS BOUND AND t111 IS INSTANCE OF zcl_lnt_st_parameter ) = abap_true.
           DATA(t115) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
-          t113 = t107->find_first_expression( i_type_9913 = t115 ).
-          t109 = t113.
+          t109 = t107->find_first_expression( i_type_9913 = t115 ).
         ELSE.
           DATA t116 TYPE REF TO zcl_lnt_expression_node.
           CLEAR t116.
-          DATA t117 TYPE abap_bool.
           DATA t118 TYPE REF TO zif_lnt_statement.
           t118 = t107->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-          t117 = xsdbool( t118 IS BOUND AND t118 IS INSTANCE OF zcl_lnt_st_select_option ).
-          IF t117 = abap_true.
-            DATA t120 TYPE REF TO zcl_lnt_expression_node.
+          IF xsdbool( t118 IS BOUND AND t118 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
             DATA(t122) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
-            t120 = t107->find_first_expression( i_type_9913 = t122 ).
-            t116 = t120.
+            t116 = t107->find_first_expression( i_type_9913 = t122 ).
           ELSE.
             DATA t123 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t123.
-            DATA t124 TYPE abap_bool.
             DATA t125 TYPE REF TO zif_lnt_statement.
             t125 = t107->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-            t124 = xsdbool( t125 IS BOUND AND t125 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-            IF t124 = abap_true.
+            IF xsdbool( t125 IS BOUND AND t125 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
               DATA t128 TYPE REF TO zcl_lnt_expression_node.
-              DATA t129 TYPE REF TO zcl_lnt_expression_node.
               DATA(t131) = zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604.
-              t129 = t107->find_first_expression( i_type_9913 = t131 ).
-              t128 = t129.
+              t128 = t107->find_first_expression( i_type_9913 = t131 ).
               DATA(t132) = VALUE abap_bool( ).
               DATA(t133) = VALUE abap_bool( ).
               DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -415,7 +336,6 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
               t133 = xsdbool( t128 IS INITIAL ).
               t132 = t133.
               IF t133 = abap_true.
-                DATA(t140) = VALUE abap_bool( ).
                 DATA(t141) = VALUE i( ).
                 DATA t142 TYPE string.
                 DATA t143 TYPE string.
@@ -437,15 +357,11 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
                     t141 = -1.
                   ENDIF.
                 ENDIF.
-                DATA(t148) = 0.
-                t140 = xsdbool( t141 >= t148 ).
-                t132 = t140.
+                t132 = xsdbool( t141 >= 0 ).
               ENDIF.
               IF t132 = abap_true.
-                DATA t149 TYPE REF TO zcl_lnt_expression_node.
                 DATA(t151) = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.
-                t149 = t107->find_first_expression( i_type_9913 = t151 ).
-                t128 = t149.
+                t128 = t107->find_first_expression( i_type_9913 = t151 ).
               ENDIF.
               t123 = t128.
             ELSE.
@@ -458,136 +374,72 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
         t105 = t109.
         DATA t155 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
         CLEAR t155.
-        DATA(t156) = VALUE string( ).
         DATA t157 TYPE REF TO zif_lnt_statement.
-        DATA t158 TYPE REF TO zif_lnt_statement.
-        t158 = t80->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t157 = t158.
-        DATA(t160) = VALUE string( ).
+        t157 = t80->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA t161 TYPE string.
         t161 = ||.
-        DATA t163 TYPE abap_bool.
-        t163 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_parameter ).
-        IF t163 = abap_true.
-          DATA t165 TYPE string.
-          DATA t166 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t166 = me->conf->zlnt_view_read_sr_75544672d945( ).
-          t165 = t166->value.
-          t161 = t165.
+        IF xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_parameter ) = abap_true.
+          t161 = me->conf->zlnt_view_read_sr_75544672d945( )->value.
         ELSE.
-          DATA t168 TYPE abap_bool.
-          t168 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_select_option ).
-          IF t168 = abap_true.
-            DATA t170 TYPE string.
-            DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t171 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
-            t170 = t171->value.
-            t161 = t170.
+          IF xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
+            t161 = me->conf->zlnt_view_read_sr_6d5a5cea1316( )->value.
           ELSE.
-            DATA t173 TYPE abap_bool.
-            t173 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-            IF t173 = abap_true.
-              DATA t175 TYPE string.
-              DATA t176 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              t176 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
-              t175 = t176->value.
-              t161 = t175.
+            IF xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
+              t161 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( )->value.
             ENDIF.
           ENDIF.
         ENDIF.
-        t160 = t161.
-        t156 = t160.
-        DATA(t179) = |i|.
-        CREATE OBJECT t155 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t156 flags = t179.
+        CREATE OBJECT t155 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t161 flags = |i|.
         DATA t180 TYPE abap_bool.
         DATA t181 TYPE abap_bool.
         t181 = xsdbool( t105 IS BOUND ).
         t180 = t181.
         IF t181 = abap_true.
-          DATA(t183) = VALUE abap_bool( ).
           DATA t184 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t184.
-          DATA t188 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t189 TYPE REF TO zcl_lnt_expression_node.
-          t189 = t105.
-          t188 = t189->get_first_token( ).
           DATA t191 TYPE string.
-          t191 = t188->str.
+          t191 = t105->get_first_token( )->str.
           DATA(t193) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t193->has = abap_true.
           t193->value = t191.
           t184 = t193.
           DATA(t196) = me->conf.
-          t183 = zcl_lnt_name_validator=>violates_rule( i_name = t184 i_pattern = t155 i_params_4c59 = t196 ).
-          t180 = t183.
+          t180 = zcl_lnt_name_validator=>violates_rule( i_name = t184 i_pattern = t155 i_params_4c59 = t196 ).
         ENDIF.
         IF t180 = abap_true.
           DATA t198 TYPE REF TO zcl_lnt_issue.
           CLEAR t198.
           DATA t200 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t201 TYPE REF TO zcl_lnt_expression_node.
-          t201 = t105.
-          t200 = t201->get_first_token( ).
+          t200 = t105->get_first_token( ).
           DATA(t203) = VALUE string( ).
           DATA(t204) = VALUE string( ).
-          DATA(t205) = VALUE string( ).
           DATA t206 TYPE REF TO zif_lnt_statement.
-          DATA t207 TYPE REF TO zif_lnt_statement.
-          t207 = t80->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-          t206 = t207.
-          DATA(t209) = VALUE string( ).
+          t206 = t80->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           DATA t210 TYPE string.
           t210 = ||.
-          DATA t212 TYPE abap_bool.
-          t212 = xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_parameter ).
-          IF t212 = abap_true.
-            DATA t214 TYPE string.
-            DATA t215 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t215 = me->conf->zlnt_view_read_sr_75544672d945( ).
-            t214 = t215->value.
-            t210 = t214.
+          IF xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_parameter ) = abap_true.
+            t210 = me->conf->zlnt_view_read_sr_75544672d945( )->value.
           ELSE.
-            DATA t217 TYPE abap_bool.
-            t217 = xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_select_option ).
-            IF t217 = abap_true.
-              DATA t219 TYPE string.
-              DATA t220 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              t220 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
-              t219 = t220->value.
-              t210 = t219.
+            IF xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
+              t210 = me->conf->zlnt_view_read_sr_6d5a5cea1316( )->value.
             ELSE.
-              DATA t222 TYPE abap_bool.
-              t222 = xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-              IF t222 = abap_true.
-                DATA t224 TYPE string.
-                DATA t225 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                t225 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
-                t224 = t225->value.
-                t210 = t224.
+              IF xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
+                t210 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( )->value.
               ENDIF.
             ENDIF.
           ENDIF.
-          t209 = t210.
-          t205 = t209.
-          t204 = t205.
+          t204 = t210.
           DATA t228 TYPE string.
-          DATA t231 TYPE REF TO zcl_lnt_abstract_token.
-          DATA t232 TYPE REF TO zcl_lnt_expression_node.
-          t232 = t105.
-          t231 = t232->get_first_token( ).
-          DATA t234 TYPE string.
-          t234 = t231->str.
-          t228 = t234.
+          t228 = t105->get_first_token( )->str.
           DATA(t236) = VALUE string( ).
           DATA(t237) = VALUE abap_bool( ).
           DATA t238 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t238 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t240 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t240.
-          DATA(t242) = |required|.
           DATA(t243) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t243->has = abap_true.
-          t243->value = t242.
+          t243->value = |required|.
           t240 = t243.
           DATA(t245) = VALUE abap_bool( ).
           DATA(t246) = VALUE abap_bool( ).
@@ -605,48 +457,36 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t237 = abap_true.
-            DATA t247 TYPE string.
             DATA t248 TYPE string.
             DATA t249 TYPE string.
             DATA t250 TYPE string.
             DATA(t251) = |Selection-Screen variable name does not match pattern |.
             DATA(t253) = strlen( t251 ).
             t250 = |{ t251 }{ t204 }|.
-            DATA(t254) = |: |.
             DATA(t255) = strlen( t250 ).
-            t249 = |{ t250 }{ t254 }|.
+            t249 = |{ t250 }{ |: | }|.
             DATA(t257) = strlen( t249 ).
             t248 = |{ t249 }{ t228 }|.
-            DATA(t258) = ||.
             DATA(t259) = strlen( t248 ).
-            t247 = |{ t248 }{ t258 }|.
-            t236 = t247.
+            t236 = |{ t248 }{ || }|.
           ELSE.
-            DATA t260 TYPE string.
             DATA t261 TYPE string.
             DATA t262 TYPE string.
             DATA t263 TYPE string.
             DATA(t264) = |Selection-Screen variable name must not match pattern |.
             DATA(t266) = strlen( t264 ).
             t263 = |{ t264 }{ t204 }|.
-            DATA(t267) = |: |.
             DATA(t268) = strlen( t263 ).
-            t262 = |{ t263 }{ t267 }|.
+            t262 = |{ t263 }{ |: | }|.
             DATA(t270) = strlen( t262 ).
             t261 = |{ t262 }{ t228 }|.
-            DATA(t271) = ||.
             DATA(t272) = strlen( t261 ).
-            t260 = |{ t261 }{ t271 }|.
-            t236 = t260.
+            t236 = |{ t261 }{ || }|.
           ENDIF.
           t203 = t236.
           DATA(t273) = VALUE string( ).
           DATA t274 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t274.
-          DATA t275 TYPE string.
-          t275 = |selection_screen_naming|.
-          DATA t277 TYPE string.
-          t277 = |Selection screen naming conventions|.
           DATA t279 TYPE string.
           DATA(t280) = |Allows you to enforce a pattern, such as a prefix, for selec|.
           t280 = t280 && |tion-screen variable names.|.
@@ -654,16 +494,12 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
           DATA t281 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t281.
           DATA t285 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t286 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t286.
-          t285 = t286.
-          DATA(t288) = |Naming|.
+          CREATE OBJECT t285.
           t285->load( ).
-          APPEND t288 TO t285->items.
+          APPEND |Naming| TO t285->items.
           t285->save( ).
-          DATA(t290) = |SingleFile|.
           t285->load( ).
-          APPEND t290 TO t285->items.
+          APPEND |SingleFile| TO t285->items.
           t285->save( ).
           t281 = t285.
           DATA t293 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -676,7 +512,7 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
           CLEAR t299.
           DATA t301 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t301.
-          t274 = NEW zcl_lnt_irule_metadata( i_key = t275 i_title = t277 i_short_description = t279 i_bad_example = t293 i_good_example = t295 i_extended_information = t297 i_tags = t281 i_pragma = t299 i_pseudo_comment = t301 ).
+          t274 = NEW zcl_lnt_irule_metadata( i_key = |selection_screen_naming| i_title = |Selection screen naming conventions| i_short_description = t279 i_bad_example = t293 i_good_example = t295 i_extended_information = t297 i_tags = t281 i_pragma = t299 i_pseudo_comment = t301 ).
           CREATE OBJECT t274->zlnt_view_ownkeys_b0e8086400eb.
           t274->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -699,27 +535,23 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t274->zlnt_json_ownkeys_70e5fd461788.
           t274->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t307) = |key|.
           DATA t308 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t308.
-          t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = t307 p1 = t308 ).
-          DATA(t309) = |title|.
+          t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t308 ).
           DATA t310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t310.
           IF t274->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = t309 p1 = t310 ).
+            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t310 ).
           ENDIF.
-          DATA(t311) = |shortDescription|.
           DATA t312 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t312.
           IF t274->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = t311 p1 = t312 ).
+            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t312 ).
           ENDIF.
-          DATA(t313) = |tags|.
           DATA t314 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t314.
           IF t274->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = t313 p1 = t314 ).
+            t274->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t314 ).
           ENDIF.
           t273 = t274->key.
           DATA t315 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -741,32 +573,14 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
     DATA(t1) = i_statement.
     DATA t2 TYPE string.
     t2 = ||.
-    DATA t4 TYPE abap_bool.
-    t4 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_parameter ).
-    IF t4 = abap_true.
-      DATA t6 TYPE string.
-      DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t7 = me->conf->zlnt_view_read_sr_75544672d945( ).
-      t6 = t7->value.
-      t2 = t6.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_parameter ) = abap_true.
+      t2 = me->conf->zlnt_view_read_sr_75544672d945( )->value.
     ELSE.
-      DATA t9 TYPE abap_bool.
-      t9 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_select_option ).
-      IF t9 = abap_true.
-        DATA t11 TYPE string.
-        DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t12 = me->conf->zlnt_view_read_sr_6d5a5cea1316( ).
-        t11 = t12->value.
-        t2 = t11.
+      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
+        t2 = me->conf->zlnt_view_read_sr_6d5a5cea1316( )->value.
       ELSE.
-        DATA t14 TYPE abap_bool.
-        t14 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-        IF t14 = abap_true.
-          DATA t16 TYPE string.
-          DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t17 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( ).
-          t16 = t17->value.
-          t2 = t16.
+        IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
+          t2 = me->conf->zlnt_view_read_sr_8f2e2a5ebfb2( )->value.
         ENDIF.
       ENDIF.
     ENDIF.
@@ -776,45 +590,32 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
 
   METHOD get_field_for_statement_node.
     DATA(t1) = i_stat_node.
-    DATA t2 TYPE abap_bool.
     DATA t3 TYPE REF TO zif_lnt_statement.
     t3 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-    t2 = xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_st_parameter ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zcl_lnt_expression_node.
+    IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_st_parameter ) = abap_true.
       DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
-      t5 = t1->find_first_expression( i_type_9913 = t7 ).
-      result = t5.
+      result = t1->find_first_expression( i_type_9913 = t7 ).
       RETURN.
     ELSE.
-      DATA t8 TYPE abap_bool.
       DATA t9 TYPE REF TO zif_lnt_statement.
       t9 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      t8 = xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_st_select_option ).
-      IF t8 = abap_true.
-        DATA t11 TYPE REF TO zcl_lnt_expression_node.
+      IF xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
         DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
-        t11 = t1->find_first_expression( i_type_9913 = t13 ).
-        result = t11.
+        result = t1->find_first_expression( i_type_9913 = t13 ).
         RETURN.
       ELSE.
-        DATA t14 TYPE abap_bool.
         DATA t15 TYPE REF TO zif_lnt_statement.
         t15 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t14 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_st_selection_screen ).
-        IF t14 = abap_true.
+        IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
           DATA t17 TYPE REF TO zcl_lnt_expression_node.
-          DATA t18 TYPE REF TO zcl_lnt_expression_node.
           DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604.
-          t18 = t1->find_first_expression( i_type_9913 = t20 ).
-          t17 = t18.
+          t17 = t1->find_first_expression( i_type_9913 = t20 ).
           DATA(t21) = VALUE abap_bool( ).
           DATA(t22) = VALUE abap_bool( ).
           DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           t22 = xsdbool( t17 IS INITIAL ).
           t21 = t22.
           IF t22 = abap_true.
-            DATA(t29) = VALUE abap_bool( ).
             DATA(t30) = VALUE i( ).
             DATA t31 TYPE string.
             DATA t32 TYPE string.
@@ -836,15 +637,11 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
                 t30 = -1.
               ENDIF.
             ENDIF.
-            DATA(t37) = 0.
-            t29 = xsdbool( t30 >= t37 ).
-            t21 = t29.
+            t21 = xsdbool( t30 >= 0 ).
           ENDIF.
           IF t21 = abap_true.
-            DATA t38 TYPE REF TO zcl_lnt_expression_node.
             DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.
-            t38 = t1->find_first_expression( i_type_9913 = t40 ).
-            t17 = t38.
+            t17 = t1->find_first_expression( i_type_9913 = t40 ).
           ENDIF.
           result = t17.
           RETURN.

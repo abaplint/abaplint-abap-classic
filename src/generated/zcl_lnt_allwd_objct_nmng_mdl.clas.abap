@@ -21,11 +21,8 @@ CLASS zcl_lnt_allwd_objct_nmng_mdl IMPLEMENTATION.
       zcl_lnt_allwd_objct_nmng_mdl=>zlnt_builtin_init_2b08683d792f( ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t2) = `^(\/[A-Z_\d]{3,8}\/)?[A-Z_\d<> ]+$`.
-    DATA(t3) = `^(\/[A-Z_0-9]{3,8}\/)?[A-Z_0-9<> ]+$`.
-    DATA(t4) = |i|.
-    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t4.
-    t1->source = t2.
+    CREATE OBJECT t1 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^(\/[A-Z_0-9]{3,8}\/)?[A-Z_0-9<> ]+$` flags = |i|.
+    t1->source = `^(\/[A-Z_\d]{3,8}\/)?[A-Z_\d<> ]+$`.
     zcl_lnt_allwd_objct_nmng_mdl=>name_regex = t1.
   ENDMETHOD.
 

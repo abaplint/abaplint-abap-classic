@@ -78,8 +78,7 @@ CLASS zcl_lnt_rmv_dscrptns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_cc7a7915a497.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreWorkflow` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `ignoreWorkflow` ) )->as_boolean( ).
     ELSE.
       result = me->ignore_workflow.
     ENDIF.

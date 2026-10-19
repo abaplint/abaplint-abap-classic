@@ -14,7 +14,6 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -47,11 +46,8 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
     DATA t13 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA(t14) = `^\\[\w]+$`.
-    DATA(t15) = `^\\[A-Za-z0-9_]+$`.
-    DATA(t16) = ||.
-    CREATE OBJECT t13 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t15 flags = t16.
-    t13->source = t14.
+    CREATE OBJECT t13 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^\\[A-Za-z0-9_]+$` flags = ||.
+    t13->source = `^\\[\w]+$`.
     t12 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t13 ).
     IF t12 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -78,9 +74,7 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     ENDIF.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t20.
-    DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    t21 = zcl_lnt_st_combi_module=>alt_prio( i_first = t5 i_second = t11 i_rest = t20 ).
-    t3 = t21.
+    t3 = zcl_lnt_st_combi_module=>alt_prio( i_first = t5 i_second = t11 i_rest = t20 ).
     IF t3 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t26 TYPE REF TO object.
@@ -104,8 +98,7 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>plus_prio( i_first = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>plus_prio( i_first = t2 ).
 
   ENDMETHOD.
 

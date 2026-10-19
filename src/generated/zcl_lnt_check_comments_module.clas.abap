@@ -27,26 +27,22 @@ CLASS zcl_lnt_check_comments_module IMPLEMENTATION.
       zcl_lnt_check_comments_module=>zlnt_builtin_init_f2b87bb9dc67( ).
     ENDIF.
     t3 = zcl_lnt_check_comments_module=>issue_type_namespace.
-    DATA(t4) = |0|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t6) = |EndOfLine|.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t5->sval = |EndOfLine|.
+    t2 = t3->set( p0 = |0| p1 = t5 ).
     DATA t7 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     DATA t8 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     IF zcl_lnt_check_comments_module=>zlnt_builtin_init_62c84a7d8f16 = abap_false.
       zcl_lnt_check_comments_module=>zlnt_builtin_init_f2b87bb9dc67( ).
     ENDIF.
     t8 = zcl_lnt_check_comments_module=>issue_type_namespace.
-    DATA(t9) = |EndOfLine|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t11) = 0.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t10->nval = t11.
-    t7 = t8->set( p0 = t9 p1 = t10 ).
+    t10->nval = 0.
+    t7 = t8->set( p0 = |EndOfLine| p1 = t10 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

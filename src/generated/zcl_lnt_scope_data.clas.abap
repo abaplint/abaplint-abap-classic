@@ -21,9 +21,7 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_map__0fbcc10173b8.
     t12 = NEW zlnt_runtime_map__0fbcc10173b8( ).
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t18.
-    t17 = t18.
+    CREATE OBJECT t17.
     DATA t19 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     t19 = NEW zlnt_runtime_map__126b79e3f8a9( ).
     DATA t24 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
@@ -31,13 +29,9 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
     DATA t29 TYPE REF TO zlnt_runtime_map__f9d623f88b73.
     t29 = NEW zlnt_runtime_map__f9d623f88b73( ).
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t35.
-    t34 = t35.
+    CREATE OBJECT t34.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t37.
-    t36 = t37.
+    CREATE OBJECT t36.
     t1 = NEW zcl_lnt_iscope_data( i_vars = t2 i_types = t19 i_extra_like_types = t24 i_deferred = t29 i_cdefs = t7 i_idefs = t12 i_forms = t17 i_references = t34 i_sql_conversion = t36 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -77,48 +71,39 @@ CLASS zcl_lnt_scope_data IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = |vars|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
-    DATA(t49) = |cdefs|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |vars| p1 = t48 ).
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |cdefs| p1 = t50 ).
     ENDIF.
-    DATA(t51) = |idefs|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |idefs| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |forms|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |forms| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |types|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |types| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |extraLikeTypes|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extraLikeTypes| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |deferred|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |deferred| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |references|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |references| p1 = t62 ).
     ENDIF.
-    DATA(t63) = |sqlConversion|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |sqlConversion| p1 = t64 ).
     ENDIF.
     me->data_56cc = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `data`.

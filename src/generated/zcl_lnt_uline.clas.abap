@@ -15,10 +15,9 @@ CLASS zcl_lnt_uline IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |ULINE|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |ULINE|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -53,16 +52,13 @@ CLASS zcl_lnt_uline IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t14.
-    t13 = t14.
+    CREATE OBJECT t13.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t17 TYPE REF TO zif_lnt_statement_runnable.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t19) = |NO-GAP|.
     CREATE OBJECT t18.
     t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t18->sval = t19.
+    t18->sval = |NO-GAP|.
     t17 = zcl_lnt_st_combi_module=>opt_prio( i_first = t18 ).
     IF t17 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -90,11 +86,7 @@ CLASS zcl_lnt_uline IMPLEMENTATION.
     t13->load( ).
     APPEND t16 TO t13->items.
     t13->save( ).
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    t22 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t13 ).
-    t1 = t22.
-    DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t27) = |Cloud|.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t13 ).
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
@@ -119,8 +111,7 @@ CLASS zcl_lnt_uline IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t26 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t27 i_first = t28 ).
-    result = t26.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t28 ).
 
   ENDMETHOD.
 

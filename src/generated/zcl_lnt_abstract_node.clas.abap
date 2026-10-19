@@ -21,12 +21,10 @@ CLASS zcl_lnt_abstract_node DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_node IMPLEMENTATION.
   METHOD constructor.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     IF zcl_lnt_abstract_node_module=>zlnt_builtin_init_9d4dd55c09e0 = abap_false.
       zcl_lnt_abstract_node_module=>zlnt_builtin_init_5b5d85f40577( ).
     ENDIF.
-    t1 = zcl_lnt_abstract_node_module=>empty_57e4.
-    me->children = t1.
+    me->children = zcl_lnt_abstract_node_module=>empty_57e4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `children`.
   ENDMETHOD.
 
@@ -105,9 +103,7 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD set_children.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    t2 = i_children_9020->slice0( ).
-    me->children = t2.
+    me->children = i_children_9020->slice0( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `children`.
   ENDMETHOD.
 

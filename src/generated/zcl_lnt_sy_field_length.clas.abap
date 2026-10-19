@@ -14,25 +14,18 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d171_8a7e3c79c08f.
-    t4 = t1->find_direct_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA t7 TYPE abap_bool.
-    t7 = xsdbool( t3 IS BOUND ).
-    IF t7 = abap_true.
+    t3 = t1->find_direct_expression( i_type_9913 = t6 ).
+    IF xsdbool( t3 IS BOUND ) = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type.
       DATA t10 TYPE REF TO zcl_lnt_expression_node.
       t10 = t3.
-      DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t16) = |Read From|.
       CREATE OBJECT t15.
       t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-      t15->sval = t16.
-      t13 = t15.
+      t15->sval = |Read From|.
       DATA t18 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t2 i_ref_type = t13 i_allow_generic_deference = t18 ).
+      t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t2 i_ref_type = t15 i_allow_generic_deference = t18 ).
       CLEAR result.
       RETURN.
     ELSE.
@@ -41,9 +34,7 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t23 TYPE REF TO zcl_lnt_abstract_node.
       t23 = t1.
-      DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t25 = t23->children.
-      t22 = t25.
+      t22 = t23->children.
       t21 ?= t22.
       t20 = t21.
       DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -68,28 +59,15 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
         t28 ?= t34.
       ENDIF.
       t27 = t28.
-      DATA t37 TYPE abap_bool.
       DATA t38 TYPE string.
-      DATA t40 TYPE REF TO zcl_lnt_abstract_token.
-      t40 = t27->get_last_token( ).
-      DATA t42 TYPE string.
-      t42 = t40->str.
-      t38 = t42.
-      DATA(t44) = |*|.
-      t37 = xsdbool( t38 = t44 ).
-      IF t37 = abap_true.
+      t38 = t27->get_last_token( )->str.
+      IF xsdbool( t38 = |*| ) = abap_true.
         CLEAR result.
         RETURN.
       ENDIF.
-      DATA t48 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      DATA t49 TYPE string.
-      DATA t51 TYPE REF TO zcl_lnt_abstract_token.
-      t51 = t27->get_last_token( ).
       DATA t53 TYPE string.
-      t53 = t51->str.
-      t49 = t53.
-      t48 = zlnt_runtime_stri_248d3505915c=>int_optional( t49 ).
-      result = t48.
+      t53 = t27->get_last_token( )->str.
+      result = zlnt_runtime_stri_248d3505915c=>int_optional( t53 ).
 
     ENDIF.
   ENDMETHOD.

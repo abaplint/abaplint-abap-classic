@@ -15,10 +15,9 @@ CLASS zcl_lnt_type_name_or_infer IMPLEMENTATION.
 
   METHOD get_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t4) = |#|.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
+    t3->sval = |#|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d189_7457e1b1f519.
     IF t7 IS BOUND.
@@ -28,9 +27,7 @@ CLASS zcl_lnt_type_name_or_infer IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t9.
-    DATA t10 TYPE REF TO zif_lnt_statement_runnable.
-    t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t6 i_rest = t9 ).
-    result = t10.
+    result = zcl_lnt_st_combi_module=>alt_prio( i_first = t3 i_second = t6 i_rest = t9 ).
 
   ENDMETHOD.
 

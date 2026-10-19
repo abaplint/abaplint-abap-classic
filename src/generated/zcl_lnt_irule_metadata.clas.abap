@@ -41,10 +41,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t11 ).
     ENDIF.
-    DATA(t12) = |key|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t13 ).
     ENDIF.
     me->title = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `title`.
@@ -52,10 +51,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `title` p1 = t15 ).
     ENDIF.
-    DATA(t16) = |title|.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t16 p1 = t17 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t17 ).
     ENDIF.
     me->short_description = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `shortDescription`.
@@ -63,10 +61,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `shortDescription` p1 = t19 ).
     ENDIF.
-    DATA(t20) = |shortDescription|.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t20 p1 = t21 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t21 ).
     ENDIF.
     me->bad_example = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `badExample`.
@@ -74,10 +71,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `badExample` p1 = t23 ).
     ENDIF.
-    DATA(t24) = |badExample|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t25 ).
     ENDIF.
     me->good_example = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `goodExample`.
@@ -85,10 +81,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `goodExample` p1 = t27 ).
     ENDIF.
-    DATA(t28) = |goodExample|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t28 p1 = t29 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t29 ).
     ENDIF.
     me->extended_information = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `extendedInformation`.
@@ -96,10 +91,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `extendedInformation` p1 = t31 ).
     ENDIF.
-    DATA(t32) = |extendedInformation|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t33 ).
     ENDIF.
     me->tags = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tags`.
@@ -107,10 +101,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tags` p1 = t35 ).
     ENDIF.
-    DATA(t36) = |tags|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t37 ).
     ENDIF.
     me->pragma = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `pragma`.
@@ -118,10 +111,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `pragma` p1 = t39 ).
     ENDIF.
-    DATA(t40) = |pragma|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pragma| p1 = t41 ).
     ENDIF.
     me->pseudo_comment = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `pseudoComment`.
@@ -129,10 +121,9 @@ CLASS zcl_lnt_irule_metadata IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `pseudoComment` p1 = t43 ).
     ENDIF.
-    DATA(t44) = |pseudoComment|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |pseudoComment| p1 = t45 ).
     ENDIF.
   ENDMETHOD.
 

@@ -16,10 +16,9 @@ CLASS zcl_lnt_simple_source1 IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t5) = |&&|.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
+    t4->sval = |&&|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d278_cacef970a917.
     IF t8 IS BOUND.
@@ -29,9 +28,7 @@ CLASS zcl_lnt_simple_source1 IMPLEMENTATION.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
-    DATA t11 TYPE REF TO zif_lnt_statement_runnable.
-    t11 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
-    t1 = t11.
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t10 ).
     DATA t15 TYPE REF TO zif_lnt_statement_runnable.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d278_cacef970a917.
@@ -92,9 +89,7 @@ CLASS zcl_lnt_simple_source1 IMPLEMENTATION.
     ENDIF.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t30.
-    DATA t31 TYPE REF TO zif_lnt_statement_runnable.
-    t31 = zcl_lnt_st_combi_module=>seq( i_first = t18 i_second = t21 i_rest = t30 ).
-    t15 = t31.
+    t15 = zcl_lnt_st_combi_module=>seq( i_first = t18 i_second = t21 i_rest = t30 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t38) = zlnt_runtime_desc_78196487750d=>zlnt_member_d121_2f7db81dd46d.
     IF t38 IS BOUND.
@@ -110,9 +105,7 @@ CLASS zcl_lnt_simple_source1 IMPLEMENTATION.
       t40->cval = t41.
     ENDIF.
     DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t43.
-    t42 = t43.
+    CREATE OBJECT t42.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA(t46) = zlnt_runtime_desc_78196487750d=>zlnt_member_d122_32972f7bb68e.
     IF t46 IS BOUND.
@@ -160,9 +153,7 @@ CLASS zcl_lnt_simple_source1 IMPLEMENTATION.
     t42->load( ).
     APPEND t53 TO t42->items.
     t42->save( ).
-    DATA t55 TYPE REF TO zif_lnt_statement_runnable.
-    t55 = zcl_lnt_st_combi_module=>alt( i_first = t37 i_second = t40 i_rest = t42 ).
-    result = t55.
+    result = zcl_lnt_st_combi_module=>alt( i_first = t37 i_second = t40 i_rest = t42 ).
 
   ENDMETHOD.
 

@@ -25,12 +25,6 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |tables_declared_locally|.
-    DATA t4 TYPE string.
-    t4 = |Check for locally declared TABLES|.
-    DATA t6 TYPE string.
-    t6 = |TABLES are always global, so declare them globally|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
     t11 = t11 && |-us/abaptables.html|.
@@ -40,29 +34,22 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t27) = |FORM foo.\n  TABLES t100.\nENDFORM.|.
     DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t28->has = abap_true.
-    t28->value = t27.
+    t28->value = |FORM foo.\n  TABLES t100.\nENDFORM.|.
     t24 = t28.
-    DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t33) = |TABLES t000.|.
     DATA(t34) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t34->has = abap_true.
-    t34->value = t33.
-    t30 = t34.
+    t34->value = |TABLES t000.|.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t30 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |tables_declared_locally| i_title = |Check for locally declared TABLES| i_short_description = |TABLES are always global, so declare them globally| i_bad_example = t24 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -93,38 +80,31 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t47) = |key|.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t47 p1 = t48 ).
-    DATA(t49) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t48 ).
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t50 ).
     ENDIF.
-    DATA(t51) = |shortDescription|.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |extendedInformation|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |tags|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |badExample|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |goodExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t60 ).
     ENDIF.
     result = t1.
 
@@ -143,29 +123,19 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
   METHOD r_p_i_s_r_tb_dc_lc_ts_tb_dc_lc.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
       result = t2.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t20 TYPE REF TO zcl_lnt_structure_node.
     t20 = t4.
-    DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t24.
-    t23 = t24.
+    CREATE OBJECT t23.
     DATA(t26) = zlnt_runtime_desc_78196487750d=>zlnt_member_d697_195ff21ba72a.
     t23->load( ).
     APPEND t26 TO t23->items.
@@ -174,9 +144,7 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
     t23->load( ).
     APPEND t28 TO t23->items.
     t23->save( ).
-    t22 = t23.
-    t19 = t20->find_all_structures_multi( i_type_9913 = t22 ).
-    t18 = t19.
+    t18 = t20->find_all_structures_multi( i_type_9913 = t23 ).
     DATA t31 TYPE REF TO zcl_lnt_structure_node.
     DATA t32 TYPE REF TO object.
     DATA(t33) = VALUE i( ).
@@ -200,14 +168,9 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         t31 ?= t32.
       ENDIF.
       DATA t36 TYPE REF TO zcl_lnt_statement_node.
-      DATA t37 TYPE REF TO zcl_lnt_statement_node.
       DATA(t39) = zlnt_runtime_desc_78196487750d=>zlnt_member_d654_e863c0d09c0d.
-      t37 = t31->find_first_statement( i_type_9913 = t39 ).
-      t36 = t37.
-      DATA t40 TYPE abap_bool.
-      t40 = xsdbool( t36 IS BOUND ).
-      IF t40 = abap_true.
-        DATA(t43) = |Declare TABLES globaly|.
+      t36 = t31->find_first_statement( i_type_9913 = t39 ).
+      IF xsdbool( t36 IS BOUND ) = abap_true.
         DATA t45 TYPE REF TO zcl_lnt_issue.
         CLEAR t45.
         DATA t47 TYPE REF TO zcl_lnt_statement_node.
@@ -215,12 +178,6 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         DATA(t50) = VALUE string( ).
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t51.
-        DATA t52 TYPE string.
-        t52 = |tables_declared_locally|.
-        DATA t54 TYPE string.
-        t54 = |Check for locally declared TABLES|.
-        DATA t56 TYPE string.
-        t56 = |TABLES are always global, so declare them globally|.
         DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t58.
         DATA(t61) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
@@ -232,33 +189,28 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t64.
         DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t69.
-        t68 = t69.
-        DATA(t71) = |SingleFile|.
+        CREATE OBJECT t68.
         t68->load( ).
-        APPEND t71 TO t68->items.
+        APPEND |SingleFile| TO t68->items.
         t68->save( ).
         t64 = t68.
         DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t74.
-        DATA(t77) = |FORM foo.\n  TABLES t100.\nENDFORM.|.
         DATA(t78) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t78->has = abap_true.
-        t78->value = t77.
+        t78->value = |FORM foo.\n  TABLES t100.\nENDFORM.|.
         t74 = t78.
         DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t80.
-        DATA(t83) = |TABLES t000.|.
         DATA(t84) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t84->has = abap_true.
-        t84->value = t83.
+        t84->value = |TABLES t000.|.
         t80 = t84.
         DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t86.
         DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t88.
-        t51 = NEW zcl_lnt_irule_metadata( i_key = t52 i_title = t54 i_short_description = t56 i_bad_example = t74 i_good_example = t80 i_extended_information = t58 i_tags = t64 i_pragma = t86 i_pseudo_comment = t88 ).
+        t51 = NEW zcl_lnt_irule_metadata( i_key = |tables_declared_locally| i_title = |Check for locally declared TABLES| i_short_description = |TABLES are always global, so declare them globally| i_bad_example = t74 i_good_example = t80 i_extended_information = t58 i_tags = t64 i_pragma = t86 i_pseudo_comment = t88 ).
         CREATE OBJECT t51->zlnt_view_ownkeys_b0e8086400eb.
         t51->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -296,45 +248,38 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t51->zlnt_json_ownkeys_70e5fd461788.
         t51->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t97) = |key|.
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
-        DATA(t99) = |title|.
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t98 ).
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t100.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t100 ).
         ENDIF.
-        DATA(t101) = |shortDescription|.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t101 p1 = t102 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t102 ).
         ENDIF.
-        DATA(t103) = |extendedInformation|.
         DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t104.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t103 p1 = t104 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t104 ).
         ENDIF.
-        DATA(t105) = |tags|.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t106.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t106 ).
         ENDIF.
-        DATA(t107) = |badExample|.
         DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t108.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t108 ).
         ENDIF.
-        DATA(t109) = |goodExample|.
         DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t110.
         IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t109 p1 = t110 ).
+          t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t110 ).
         ENDIF.
         t50 = t51->key.
         DATA t111 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -343,7 +288,7 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         CLEAR t113.
         DATA t114 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t114.
-        t45 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t47 i_message_26cb = t43 i_key = t50 i_severity = t111 i_fix = t113 i_alternative_fixes = t114 ).
+        t45 = zcl_lnt_issue=>at_statement( i_file = t1 i_statement = t47 i_message_26cb = |Declare TABLES globaly| i_key = t50 i_severity = t111 i_fix = t113 i_alternative_fixes = t114 ).
         t2->load( ).
         APPEND t45 TO t2->items.
         t2->save( ).

@@ -42,15 +42,12 @@ CLASS zcl_lnt_st_dereference IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA(t10) = |*|.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t9->sval = t10.
+    t9->sval = |*|.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t12.
-    DATA t13 TYPE REF TO zif_lnt_statement_runnable.
-    t13 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t9 i_rest = t12 ).
-    result = t13.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t9 i_rest = t12 ).
 
   ENDMETHOD.
 

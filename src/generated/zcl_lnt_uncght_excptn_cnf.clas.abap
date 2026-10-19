@@ -46,8 +46,7 @@ CLASS zcl_lnt_uncght_excptn_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_54312afc1b0a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportDynamic` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportDynamic` ) )->as_boolean( ).
     ELSE.
       result = me->report_dynamic.
     ENDIF.
@@ -68,8 +67,7 @@ CLASS zcl_lnt_uncght_excptn_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_d2c23be943f9.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportNoCheck` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `reportNoCheck` ) )->as_boolean( ).
     ELSE.
       result = me->report_no_check.
     ENDIF.

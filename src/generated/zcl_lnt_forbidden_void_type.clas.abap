@@ -32,13 +32,6 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |forbidden_void_type|.
-    DATA t4 TYPE string.
-    t4 = |Forbidden Void Types|.
-    DATA t6 TYPE string.
-    t6 = |Avoid usage of specified void types.|.
-    DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |Inspiration:\nBOOLEAN, BOOLE_D, CHAR01, CHAR1, CHAR10, CHAR12|.
     t11 = t11 && |, CHAR128, CHAR2, CHAR20, CHAR4, CHAR70,\nDATS, TIMS, DATUM, |.
     t11 = t11 && |FLAG, INT4, NUMC3, NUMC4, SAP_BOOL, TEXT25, TEXT80, X255, XF|.
@@ -46,13 +39,12 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
     t12->value = t11.
-    t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t14 i_good_example = t16 i_extended_information = t8 i_tags = t18 i_pragma = t20 i_pseudo_comment = t22 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_void_type| i_title = |Forbidden Void Types| i_short_description = |Avoid usage of specified void types.| i_bad_example = t14 i_good_example = t16 i_extended_information = t12 i_tags = t18 i_pragma = t20 i_pseudo_comment = t22 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -71,23 +63,19 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t28) = |key|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t28 p1 = t29 ).
-    DATA(t30) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t29 ).
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t30 p1 = t31 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t31 ).
     ENDIF.
-    DATA(t32) = |shortDescription|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t33 ).
     ENDIF.
-    DATA(t34) = |extendedInformation|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t35 ).
     ENDIF.
     result = t1.
 
@@ -101,12 +89,10 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   METHOD s_c_i_s_r_fr_vd_ty_ts_fr_vd_ty.
     me->conf = i_conf.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
-    DATA(t3) = VALUE abap_bool( ).
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t5 = me->conf->zlnt_view_read_sr_b42982868281( ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t3 = xsdbool( t5 IS INITIAL ).
-    IF t3 = abap_true.
+    IF xsdbool( t5 IS INITIAL ) = abap_true.
       DATA(t11) = me->conf.
       DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t12.
@@ -125,66 +111,38 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
-    DATA t4 TYPE abap_bool.
-    t4 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ).
-    t3 = xsdbool( t4 = abap_false ).
+    t3 = xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ).
     t2 = t3.
     IF t3 = abap_false.
-      DATA t6 TYPE abap_bool.
-      DATA t7 TYPE i.
       DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       t8 = me->conf->zlnt_view_read_sr_b42982868281( ).
       t8->load( ).
-      t7 = lines( t8->items ).
-      DATA(t10) = 0.
-      t6 = xsdbool( t7 = t10 ).
-      t2 = t6.
+      t2 = xsdbool( lines( t8->items ) = 0 ).
     ENDIF.
     IF t2 = abap_true.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t11.
-      result = t11.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zif_lnt_spaghetti_scope_node.
-    DATA t14 TYPE REF TO zif_lnt_spaghetti_scope.
-    DATA t15 TYPE REF TO zcl_lnt_isyntax_result.
-    DATA t16 TYPE REF TO zcl_lnt_syntax_logic.
     DATA(t17) = me->reg.
     DATA t18 TYPE REF TO zcl_lnt_abap_object.
     DATA t20 TYPE REF TO object.
     t20 = t1.
     t18 ?= t20.
-    t16 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t17 i_object_19cd = t18 ).
-    t15 = t16->run( ).
-    t14 = t15->zlnt_view_read_sr_b6b1d9e0c93e( ).
-    t13 = t14->get_top( ).
-    t12 = me->traverse( i_node = t13 ).
-    result = t12.
+    result = me->traverse( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t17 i_object_19cd = t18 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
 
   ENDMETHOD.
 
   METHOD traverse.
     DATA(t1) = i_node.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE string.
     t4 = |Forbidden void type: |.
-    DATA t6 TYPE abap_bool.
     DATA t7 TYPE string.
-    DATA t8 TYPE REF TO zcl_lnt_iscope_identifier.
-    t8 = t1->get_identifier( ).
-    t7 = t8->stype.
-    DATA(t10) = |_builtin|.
-    t6 = xsdbool( t7 <> t10 ).
-    IF t6 = abap_true.
+    t7 = t1->get_identifier( )->stype.
+    IF xsdbool( t7 <> |_builtin| ) = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t12 TYPE REF TO zcl_lnt_iscope_data.
-      t12 = t1->get_data( ).
-      t11 = t12->references.
+      t11 = t1->get_data( )->references.
       DATA t14 TYPE REF TO zcl_lnt_ireference.
       DATA t15 TYPE REF TO object.
       DATA(t16) = VALUE i( ).
@@ -210,74 +168,48 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
         DATA(t19) = VALUE abap_bool( ).
         DATA t20 TYPE abap_bool.
         DATA t21 TYPE abap_bool.
-        DATA t22 TYPE string.
-        t22 = t14->reference_type.
-        DATA(t24) = |Object (Void)|.
-        t21 = xsdbool( t22 = t24 ).
+        t21 = xsdbool( t14->reference_type = |Object (Void)| ).
         t20 = t21.
         IF t21 = abap_true.
-          DATA(t25) = VALUE abap_bool( ).
           DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t26.
           DATA t28 TYPE REF TO zcl_lnt_ireference_extras.
-          DATA t29 TYPE REF TO zcl_lnt_ireference_extras.
-          t29 = t14->extra.
-          t28 = t29.
+          t28 = t14->extra.
           DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t31.
-          DATA(t32) = xsdbool( t28 IS INITIAL ).
-          IF t32 = abap_true.
+          IF xsdbool( t28 IS INITIAL ) = abap_true.
             CLEAR t31.
           ELSE.
-            DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            DATA t36 TYPE REF TO zcl_lnt_ireference_extras.
-            t36 = t28.
-            t35 = t36->oo_name.
-            t31 = t35.
+            t31 = t28->oo_name.
           ENDIF.
           t26 = t31.
           DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t38.
-          DATA(t40) = VALUE abap_bool( ).
           DATA(t41) = VALUE abap_bool( ).
           IF t26 IS INITIAL.
             t41 = abap_true.
           ELSEIF t26->has = abap_false.
             t41 = abap_true.
           ENDIF.
-          t40 = xsdbool( t41 = abap_false ).
-          t25 = t40.
-          t20 = t25.
+          t20 = xsdbool( t41 = abap_false ).
         ENDIF.
         t19 = t20.
         IF t20 = abap_true.
-          DATA(t43) = VALUE abap_bool( ).
-          DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t44.
-          DATA(t46) = VALUE string( ).
           DATA t47 TYPE REF TO zcl_lnt_ireference_extras.
-          DATA t49 TYPE REF TO zcl_lnt_ireference_extras.
-          t49 = t14->extra.
-          t47 = t49.
+          t47 = t14->extra.
           DATA(t51) = VALUE string( ).
           DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t52.
-          DATA(t53) = xsdbool( t47 IS INITIAL ).
-          IF t53 = abap_true.
+          IF xsdbool( t47 IS INITIAL ) = abap_true.
             CLEAR t52.
           ELSE.
-            DATA t56 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t56 = t47->oo_name.
-            t52 = t56.
+            t52 = t47->oo_name.
           ENDIF.
           t51 = t52->value.
-          t46 = t51.
           DATA(t58) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t58->has = abap_true.
-          t58->value = t46.
-          t44 = t58.
-          t43 = me->is_forbidden_name( i_name = t44 ).
-          t19 = t43.
+          t58->value = t51.
+          t19 = me->is_forbidden_name( i_name = t58 ).
         ENDIF.
         IF t19 = abap_true.
           DATA(t60) = t2.
@@ -288,33 +220,20 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           DATA(t64) = VALUE string( ).
           DATA(t66) = VALUE string( ).
           DATA t67 TYPE REF TO zcl_lnt_ireference_extras.
-          DATA t69 TYPE REF TO zcl_lnt_ireference_extras.
-          t69 = t14->extra.
-          t67 = t69.
-          DATA(t71) = VALUE string( ).
+          t67 = t14->extra.
           DATA t72 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t72.
-          DATA(t73) = xsdbool( t67 IS INITIAL ).
-          IF t73 = abap_true.
+          IF xsdbool( t67 IS INITIAL ) = abap_true.
             CLEAR t72.
           ELSE.
-            DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            t76 = t67->oo_name.
-            t72 = t76.
+            t72 = t67->oo_name.
           ENDIF.
-          t71 = t72->value.
-          t66 = t71.
+          t66 = t72->value.
           DATA(t78) = strlen( t4 ).
           t64 = |{ t4 }{ t66 }|.
           DATA(t79) = VALUE string( ).
           DATA t80 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t80.
-          DATA t81 TYPE string.
-          t81 = |forbidden_void_type|.
-          DATA t83 TYPE string.
-          t83 = |Forbidden Void Types|.
-          DATA t85 TYPE string.
-          t85 = |Avoid usage of specified void types.|.
           DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t87.
           DATA(t90) = |Inspiration:\nBOOLEAN, BOOLE_D, CHAR01, CHAR1, CHAR10, CHAR12|.
@@ -335,7 +254,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           CLEAR t99.
           DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t101.
-          t80 = NEW zcl_lnt_irule_metadata( i_key = t81 i_title = t83 i_short_description = t85 i_bad_example = t93 i_good_example = t95 i_extended_information = t87 i_tags = t97 i_pragma = t99 i_pseudo_comment = t101 ).
+          t80 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_void_type| i_title = |Forbidden Void Types| i_short_description = |Avoid usage of specified void types.| i_bad_example = t93 i_good_example = t95 i_extended_information = t87 i_tags = t97 i_pragma = t99 i_pseudo_comment = t101 ).
           CREATE OBJECT t80->zlnt_view_ownkeys_b0e8086400eb.
           t80->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -358,27 +277,23 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t80->zlnt_json_ownkeys_70e5fd461788.
           t80->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t107) = |key|.
           DATA t108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t108.
-          t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = t107 p1 = t108 ).
-          DATA(t109) = |title|.
+          t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t108 ).
           DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t110.
           IF t80->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = t109 p1 = t110 ).
+            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t110 ).
           ENDIF.
-          DATA(t111) = |shortDescription|.
           DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t112.
           IF t80->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = t111 p1 = t112 ).
+            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t112 ).
           ENDIF.
-          DATA(t113) = |extendedInformation|.
           DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t114.
           IF t80->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = t113 p1 = t114 ).
+            t80->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t114 ).
           ENDIF.
           t79 = t80->key.
           DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -393,35 +308,15 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
         DATA(t118) = VALUE abap_bool( ).
         DATA t119 TYPE abap_bool.
         DATA t120 TYPE abap_bool.
-        DATA t121 TYPE string.
-        t121 = t14->reference_type.
-        DATA(t123) = |Type (Void)|.
-        t120 = xsdbool( t121 = t123 ).
+        t120 = xsdbool( t14->reference_type = |Type (Void)| ).
         t119 = t120.
         IF t120 = abap_false.
-          DATA t124 TYPE abap_bool.
-          DATA t125 TYPE string.
-          t125 = t14->reference_type.
-          DATA(t127) = |Table (Void)|.
-          t124 = xsdbool( t125 = t127 ).
-          t119 = t124.
+          t119 = xsdbool( t14->reference_type = |Table (Void)| ).
         ENDIF.
         t118 = t119.
         IF t119 = abap_true.
-          DATA(t128) = VALUE abap_bool( ).
-          DATA t129 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t129.
-          DATA(t131) = VALUE string( ).
-          DATA t133 TYPE REF TO zcl_lnt_fi_identifier.
-          t133 = t14->position_7b94.
-          DATA(t135) = VALUE string( ).
           DATA t136 TYPE string.
-          DATA t139 TYPE REF TO zcl_lnt_abstract_token.
-          t139 = t133->token.
-          DATA t141 TYPE string.
-          t141 = t139->str.
-          t136 = t141.
-          DATA(t143) = VALUE abap_bool( ).
+          t136 = t14->position_7b94->token->str.
           DATA(t144) = VALUE string( ).
           DATA(t145) = t136.
           DATA(t146) = 0.
@@ -434,17 +329,13 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t146 > t148 OR t147 <= 0.
-            CLEAR t144.
           ELSE.
             IF t147 > t148 - t146.
               t147 = t148 - t146.
             ENDIF.
             t144 = t145+t146(t147).
           ENDIF.
-          DATA(t149) = |!|.
-          t143 = xsdbool( t144 = t149 ).
-          IF t143 = abap_true.
-            DATA(t150) = VALUE string( ).
+          IF xsdbool( t144 = |!| ) = abap_true.
             DATA t151 TYPE string.
             t151 = t136.
             DATA(t153) = VALUE string( ).
@@ -459,24 +350,18 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t155 > t159 OR t156 <= 0.
-              CLEAR t153.
             ELSE.
               IF t156 > t159 - t155.
                 t156 = t159 - t155.
               ENDIF.
               t153 = t151+t155(t156).
             ENDIF.
-            t150 = t153.
-            t136 = t150.
+            t136 = t153.
           ENDIF.
-          t135 = t136.
-          t131 = t135.
           DATA(t161) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t161->has = abap_true.
-          t161->value = t131.
-          t129 = t161.
-          t128 = me->is_forbidden_name( i_name = t129 ).
-          t118 = t128.
+          t161->value = t136.
+          t118 = me->is_forbidden_name( i_name = t161 ).
         ENDIF.
         IF t118 = abap_true.
           DATA(t163) = t2.
@@ -486,16 +371,8 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           t165 = t14->position_7b94.
           DATA(t167) = VALUE string( ).
           DATA(t169) = VALUE string( ).
-          DATA t171 TYPE REF TO zcl_lnt_fi_identifier.
-          t171 = t14->position_7b94.
-          DATA(t173) = VALUE string( ).
           DATA t174 TYPE string.
-          DATA t177 TYPE REF TO zcl_lnt_abstract_token.
-          t177 = t171->token.
-          DATA t179 TYPE string.
-          t179 = t177->str.
-          t174 = t179.
-          DATA(t181) = VALUE abap_bool( ).
+          t174 = t14->position_7b94->token->str.
           DATA(t182) = VALUE string( ).
           DATA(t183) = t174.
           DATA(t184) = 0.
@@ -508,17 +385,13 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
             ENDIF.
           ENDIF.
           IF t184 > t186 OR t185 <= 0.
-            CLEAR t182.
           ELSE.
             IF t185 > t186 - t184.
               t185 = t186 - t184.
             ENDIF.
             t182 = t183+t184(t185).
           ENDIF.
-          DATA(t187) = |!|.
-          t181 = xsdbool( t182 = t187 ).
-          IF t181 = abap_true.
-            DATA(t188) = VALUE string( ).
+          IF xsdbool( t182 = |!| ) = abap_true.
             DATA t189 TYPE string.
             t189 = t174.
             DATA(t191) = VALUE string( ).
@@ -533,29 +406,20 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
               ENDIF.
             ENDIF.
             IF t193 > t197 OR t194 <= 0.
-              CLEAR t191.
             ELSE.
               IF t194 > t197 - t193.
                 t194 = t197 - t193.
               ENDIF.
               t191 = t189+t193(t194).
             ENDIF.
-            t188 = t191.
-            t174 = t188.
+            t174 = t191.
           ENDIF.
-          t173 = t174.
-          t169 = t173.
+          t169 = t174.
           DATA(t199) = strlen( t4 ).
           t167 = |{ t4 }{ t169 }|.
           DATA(t200) = VALUE string( ).
           DATA t201 TYPE REF TO zcl_lnt_irule_metadata.
           CLEAR t201.
-          DATA t202 TYPE string.
-          t202 = |forbidden_void_type|.
-          DATA t204 TYPE string.
-          t204 = |Forbidden Void Types|.
-          DATA t206 TYPE string.
-          t206 = |Avoid usage of specified void types.|.
           DATA t208 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t208.
           DATA(t211) = |Inspiration:\nBOOLEAN, BOOLE_D, CHAR01, CHAR1, CHAR10, CHAR12|.
@@ -576,7 +440,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           CLEAR t220.
           DATA t222 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t222.
-          t201 = NEW zcl_lnt_irule_metadata( i_key = t202 i_title = t204 i_short_description = t206 i_bad_example = t214 i_good_example = t216 i_extended_information = t208 i_tags = t218 i_pragma = t220 i_pseudo_comment = t222 ).
+          t201 = NEW zcl_lnt_irule_metadata( i_key = |forbidden_void_type| i_title = |Forbidden Void Types| i_short_description = |Avoid usage of specified void types.| i_bad_example = t214 i_good_example = t216 i_extended_information = t208 i_tags = t218 i_pragma = t220 i_pseudo_comment = t222 ).
           CREATE OBJECT t201->zlnt_view_ownkeys_b0e8086400eb.
           t201->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -599,27 +463,23 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           ENDIF.
           CREATE OBJECT t201->zlnt_json_ownkeys_70e5fd461788.
           t201->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA(t228) = |key|.
           DATA t229 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t229.
-          t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = t228 p1 = t229 ).
-          DATA(t230) = |title|.
+          t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t229 ).
           DATA t231 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t231.
           IF t201->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = t230 p1 = t231 ).
+            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t231 ).
           ENDIF.
-          DATA(t232) = |shortDescription|.
           DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t233.
           IF t201->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = t232 p1 = t233 ).
+            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t233 ).
           ENDIF.
-          DATA(t234) = |extendedInformation|.
           DATA t235 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t235.
           IF t201->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = t234 p1 = t235 ).
+            t201->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t235 ).
           ENDIF.
           t200 = t201->key.
           DATA t236 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -657,11 +517,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
       ELSE.
         t241 ?= t242.
       ENDIF.
-      DATA t246 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t248 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t248 = me->traverse( i_node = t241 ).
-      t246 = t2->concat( p0 = t248 ).
-      t2 = t246.
+      t2 = t2->concat( p0 = me->traverse( i_node = t241 ) ).
     ENDDO.
     result = t2.
 
@@ -669,18 +525,13 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
 
   METHOD is_forbidden_type.
     DATA(t1) = i_type_9913.
-    DATA(t2) = VALUE abap_bool( ).
-    t2 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ).
-    IF t2 = abap_true.
-      DATA(t4) = VALUE abap_bool( ).
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
       DATA(t5) = VALUE abap_bool( ).
       t5 = abap_false.
       DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t9 TYPE REF TO zcl_lnt_structure_type.
       t9 ?= t1.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t11 = t9->components.
-      t7 = t11.
+      t7 = t9->components.
       DATA t13 TYPE REF TO zcl_lnt_istructure_component.
       DATA t14 TYPE REF TO object.
       DATA(t15) = VALUE i( ).
@@ -734,25 +585,15 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
         ELSE.
           t13 ?= t14.
         ENDIF.
-        DATA(t22) = VALUE abap_bool( ).
-        DATA t23 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t23.
-        t23 = t13->zlnt_view_read_sr_455340cd1e80( ).
-        t22 = me->is_forbidden_type( i_type_9913 = t23 ).
-        IF t22 = abap_true.
+        IF me->is_forbidden_type( i_type_9913 = t13->zlnt_view_read_sr_455340cd1e80( ) ) = abap_true.
           t5 = abap_true.
           EXIT.
         ENDIF.
       ENDDO.
-      t4 = t5.
-      result = t4.
+      result = t5.
       RETURN.
     ELSE.
-      DATA(t27) = VALUE abap_bool( ).
-      DATA(t28) = VALUE abap_bool( ).
-      t28 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_void_type ).
-      t27 = xsdbool( t28 = abap_false ).
-      IF t27 = abap_true.
+      IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_void_type ) = abap_false ) = abap_true.
         result = abap_false.
         RETURN.
       ENDIF.
@@ -761,15 +602,12 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     t34 ?= t1.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t36 = t34->voided.
-    DATA(t38) = VALUE abap_bool( ).
-    t38 = me->is_forbidden_name( i_name = t36 ).
-    result = t38.
+    result = me->is_forbidden_name( i_name = t36 ).
 
   ENDMETHOD.
 
   METHOD is_forbidden_name.
     DATA(t1) = i_name.
-    DATA(t2) = VALUE abap_bool( ).
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t3 = t1.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -779,8 +617,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     ELSEIF t3->has = abap_false.
       t7 = abap_true.
     ENDIF.
-    t2 = t7.
-    IF t2 = abap_true.
+    IF t7 = abap_true.
       result = abap_false.
       RETURN.
     ENDIF.
@@ -802,11 +639,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
       t13 = t13 + 1.
       DATA t15 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t15.
-      DATA(t17) = |i|.
-      CREATE OBJECT t15 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t12 flags = t17.
-      DATA(t18) = VALUE abap_bool( ).
-      DATA(t19) = VALUE abap_bool( ).
-      DATA(t21) = VALUE string( ).
+      CREATE OBJECT t15 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t12 flags = |i|.
       DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t22 = t1.
       DATA(t24) = VALUE string( ).
@@ -819,16 +652,9 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
       IF t25 = abap_true.
         t24 = |undefined|.
       ELSE.
-        DATA t28 TYPE string.
-        t28 = t22->value.
-        t24 = t28.
+        t24 = t22->value.
       ENDIF.
-      t21 = t24.
-      t19 = t15->test( p0 = t21 ).
-      t18 = t19.
-      DATA t30 TYPE abap_bool.
-      t30 = xsdbool( t18 = abap_true ).
-      IF t30 = abap_true.
+      IF xsdbool( t15->test( p0 = t24 ) = abap_true ) = abap_true.
         result = abap_true.
         RETURN.
       ENDIF.
@@ -878,10 +704,8 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_forbidden_void_type.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_sr_rl_fr_vd_ty_ts_fr_vd_ty( i_reg_f149 = t3 ).
-    result = t2.
+    result = me->i_i_sr_rl_fr_vd_ty_ts_fr_vd_ty( i_reg_f149 = t3 ).
 
   ENDMETHOD.
 

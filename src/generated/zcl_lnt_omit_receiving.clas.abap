@@ -25,12 +25,6 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |omit_receiving|.
-    DATA t4 TYPE string.
-    t4 = |Omit RECEIVING|.
-    DATA t6 TYPE string.
-    t6 = |Omit RECEIVING|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
     t11 = t11 && |nABAP.md#omit-receiving|.
@@ -40,16 +34,12 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
     t14 = t18.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -62,7 +52,6 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
     t30->has = abap_true.
     t30->value = t29.
     t26 = t30.
-    DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t35) = |\n      et_objects = upload_pack(\n        io_client       = l|.
     t35 = t35 && |o_client\n        iv_url          = iv_url\n        iv_deepen_|.
     t35 = t35 && |level = iv_deepen_level\n        it_hashes       = lt_hashes |.
@@ -70,10 +59,9 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
     DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t36->has = abap_true.
     t36->value = t35.
-    t32 = t36.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t26 i_good_example = t32 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |omit_receiving| i_title = |Omit RECEIVING| i_short_description = |Omit RECEIVING| i_bad_example = t26 i_good_example = t36 i_extended_information = t8 i_tags = t14 i_pragma = t38 i_pseudo_comment = t40 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -104,38 +92,31 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t49) = |key|.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t49 p1 = t50 ).
-    DATA(t51) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t50 ).
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t51 p1 = t52 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t52 ).
     ENDIF.
-    DATA(t53) = |shortDescription|.
     DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t53 p1 = t54 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t54 ).
     ENDIF.
-    DATA(t55) = |extendedInformation|.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t55 p1 = t56 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t56 ).
     ENDIF.
-    DATA(t57) = |tags|.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t57 p1 = t58 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t58 ).
     ENDIF.
-    DATA(t59) = |badExample|.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t59 p1 = t60 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t60 ).
     ENDIF.
-    DATA(t61) = |goodExample|.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t61 p1 = t62 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t62 ).
     ENDIF.
     result = t1.
 
@@ -154,36 +135,25 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
   METHOD rn_pr_in_sr_rl_om_rc_ts_om_rcv.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_structure_node.
-    DATA t11 TYPE REF TO zcl_lnt_structure_node.
-    t11 = t1->structure.
-    t7 = t11.
+    t7 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t14) = xsdbool( t7 IS INITIAL ).
-    IF t14 = abap_true.
+    IF xsdbool( t7 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t18 TYPE REF TO zcl_lnt_structure_node.
       t18 = t7.
       DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb.
-      t17 = t18->find_all_expressions( i_type_9913 = t20 ).
-      t13 = t17.
+      t13 = t18->find_all_expressions( i_type_9913 = t20 ).
     ENDIF.
     t5 = t13.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t22 TYPE abap_bool.
-    t22 = xsdbool( t5 IS BOUND ).
-    IF t22 = abap_true.
+    IF xsdbool( t5 IS BOUND ) = abap_true.
       t21 = t5.
     ELSE.
-      DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t26.
-      t21 = t26.
+      CREATE OBJECT t21.
     ENDIF.
     t4 = t21.
     DATA t27 TYPE REF TO zcl_lnt_expression_node.
@@ -209,60 +179,34 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
         t27 ?= t28.
       ENDIF.
       DATA t32 TYPE REF TO zcl_lnt_expression_node.
-      DATA t33 TYPE REF TO zcl_lnt_expression_node.
       DATA(t35) = zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470.
-      t33 = t27->find_direct_expression( i_type_9913 = t35 ).
-      t32 = t33.
-      DATA(t36) = VALUE abap_bool( ).
+      t32 = t27->find_direct_expression( i_type_9913 = t35 ).
       DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t39.
-      t36 = xsdbool( t32 IS INITIAL ).
-      IF t36 = abap_true.
+      IF xsdbool( t32 IS INITIAL ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t43 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t44 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t45 TYPE REF TO zcl_lnt_expression_node.
-      t45 = t32.
-      DATA(t47) = |RECEIVING|.
-      t44 = t45->find_direct_token_by_text( i_text = t47 ).
-      t43 = t44.
-      DATA(t48) = VALUE abap_bool( ).
+      t43 = t32->find_direct_token_by_text( i_text = |RECEIVING| ).
       DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t51.
-      t48 = xsdbool( t43 IS INITIAL ).
-      IF t48 = abap_true.
+      IF xsdbool( t43 IS INITIAL ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t56 TYPE REF TO zcl_lnt_abstract_token.
-      DATA t57 TYPE REF TO zcl_lnt_expression_node.
-      t57 = t32.
-      DATA(t59) = |EXCEPTIONS|.
-      t56 = t57->find_direct_token_by_text( i_text = t59 ).
-      DATA(t60) = VALUE abap_bool( ).
+      t56 = t32->find_direct_token_by_text( i_text = |EXCEPTIONS| ).
       DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t63.
-      DATA(t65) = VALUE abap_bool( ).
-      DATA(t66) = xsdbool( t56 IS INITIAL ).
-      t65 = xsdbool( t66 = abap_false ).
-      t60 = t65.
-      IF t60 = abap_true.
+      IF xsdbool( xsdbool( t56 IS INITIAL ) = abap_false ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t69 TYPE REF TO zcl_lnt_issue.
       CLEAR t69.
       DATA t71 TYPE REF TO zcl_lnt_abstract_token.
       t71 = t43.
-      DATA(t73) = |Omit RECEIVING|.
       DATA(t74) = VALUE string( ).
       DATA t75 TYPE REF TO zcl_lnt_irule_metadata.
       CLEAR t75.
-      DATA t76 TYPE string.
-      t76 = |omit_receiving|.
-      DATA t78 TYPE string.
-      t78 = |Omit RECEIVING|.
-      DATA t80 TYPE string.
-      t80 = |Omit RECEIVING|.
       DATA t82 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t82.
       DATA(t85) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -274,16 +218,12 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
       DATA t88 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t88.
       DATA t92 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t93 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t93.
-      t92 = t93.
-      DATA(t95) = |Styleguide|.
+      CREATE OBJECT t92.
       t92->load( ).
-      APPEND t95 TO t92->items.
+      APPEND |Styleguide| TO t92->items.
       t92->save( ).
-      DATA(t97) = |SingleFile|.
       t92->load( ).
-      APPEND t97 TO t92->items.
+      APPEND |SingleFile| TO t92->items.
       t92->save( ).
       t88 = t92.
       DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -311,7 +251,7 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
       CLEAR t112.
       DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t114.
-      t75 = NEW zcl_lnt_irule_metadata( i_key = t76 i_title = t78 i_short_description = t80 i_bad_example = t100 i_good_example = t106 i_extended_information = t82 i_tags = t88 i_pragma = t112 i_pseudo_comment = t114 ).
+      t75 = NEW zcl_lnt_irule_metadata( i_key = |omit_receiving| i_title = |Omit RECEIVING| i_short_description = |Omit RECEIVING| i_bad_example = t100 i_good_example = t106 i_extended_information = t82 i_tags = t88 i_pragma = t112 i_pseudo_comment = t114 ).
       CREATE OBJECT t75->zlnt_view_ownkeys_b0e8086400eb.
       t75->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -349,53 +289,45 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t75->zlnt_json_ownkeys_70e5fd461788.
       t75->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t123) = |key|.
       DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t124.
-      t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
-      DATA(t125) = |title|.
+      t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t124 ).
       DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t126.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t125 p1 = t126 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t126 ).
       ENDIF.
-      DATA(t127) = |shortDescription|.
       DATA t128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t128.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t127 p1 = t128 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t128 ).
       ENDIF.
-      DATA(t129) = |extendedInformation|.
       DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t130.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t129 p1 = t130 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t130 ).
       ENDIF.
-      DATA(t131) = |tags|.
       DATA t132 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t132.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t131 p1 = t132 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t132 ).
       ENDIF.
-      DATA(t133) = |badExample|.
       DATA t134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t134.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t133 p1 = t134 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t134 ).
       ENDIF.
-      DATA(t135) = |goodExample|.
       DATA t136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t136.
       IF t75->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = t135 p1 = t136 ).
+        t75->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t136 ).
       ENDIF.
       t74 = t75->key.
       DATA t137 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t138) = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv( ) ).
-      t137 = t138->zlnt_view_read_sr_15c06369f827( ).
+      t137 = CAST zcl_lnt_omit_receiving_conf( me->gt_cn_in_sr_rl_om_rc_ts_om_rcv( ) )->zlnt_view_read_sr_15c06369f827( ).
       DATA t139 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t139.
-      t69 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t71 i_message_26cb = t73 i_key = t74 i_severity = t137 i_fix = t139 ).
+      t69 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t71 i_message_26cb = |Omit RECEIVING| i_key = t74 i_severity = t137 i_fix = t139 ).
       t2->load( ).
       APPEND t69 TO t2->items.
       t2->save( ).

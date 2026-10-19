@@ -29,12 +29,6 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |allowed_object_types|.
-    DATA t4 TYPE string.
-    t4 = |Check allowed object types|.
-    DATA t6 TYPE string.
-    t6 = |Restricts the set of allowed object types.|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t11) = |"allowed" is a list of 4 character R3TR object types, exampl|.
     t11 = t11 && |e: ["CLAS", "INTF"]|.
@@ -42,21 +36,16 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
     t12->has = abap_true.
     t12->value = t11.
     t8 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |SingleFile|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t26 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t14 i_pragma = t28 i_pseudo_comment = t30 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |allowed_object_types| i_title = |Check allowed object types| i_short_description = |Restricts the set of allowed object types.| i_bad_example = t24 i_good_example = t26 i_extended_information = t8 i_tags = t18 i_pragma = t28 i_pseudo_comment = t30 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -79,28 +68,23 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t37) = |key|.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t37 p1 = t38 ).
-    DATA(t39) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t38 ).
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t39 p1 = t40 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t40 ).
     ENDIF.
-    DATA(t41) = |shortDescription|.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t41 p1 = t42 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t42 ).
     ENDIF.
-    DATA(t43) = |extendedInformation|.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t43 p1 = t44 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t44 ).
     ENDIF.
-    DATA(t45) = |tags|.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t45 p1 = t46 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t46 ).
     ENDIF.
     result = t1.
 
@@ -113,15 +97,12 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_description.
-    DATA t2 TYPE string.
     DATA t3 TYPE string.
     DATA(t4) = |Object type |.
     DATA(t6) = strlen( t4 ).
     t3 = |{ t4 }{ i_object_type }|.
-    DATA(t7) = | not allowed|.
     DATA(t8) = strlen( t3 ).
-    t2 = |{ t3 }{ t7 }|.
-    result = t2.
+    result = |{ t3 }{ | not allowed| }|.
 
   ENDMETHOD.
 
@@ -138,47 +119,28 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_obj_1ed0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t4) = CAST zcl_lnt_allwd_objct_typs_cnf( me->g_c_i_s_r_al_ob_ty_ts_al_ob_ty( ) ).
-    t3 = t4->zlnt_view_read_sr_cb2b67c39f6d( ).
-    t2 = t3.
+    t2 = CAST zcl_lnt_allwd_objct_typs_cnf( me->g_c_i_s_r_al_ob_ty_ts_al_ob_ty( ) )->zlnt_view_read_sr_cb2b67c39f6d( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE abap_bool( ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t6 = xsdbool( t2 IS INITIAL ).
     t5 = t6.
     IF t6 = abap_false.
-      DATA t13 TYPE abap_bool.
-      DATA t14 TYPE i.
       t2->load( ).
-      t14 = lines( t2->items ).
-      DATA(t16) = 0.
-      t13 = xsdbool( t14 = t16 ).
-      t5 = t13.
+      t5 = xsdbool( lines( t2->items ) = 0 ).
     ENDIF.
     IF t5 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t17.
-      result = t17.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t18 TYPE string.
-    DATA t19 TYPE string.
-    t19 = t1->get_type( ).
-    t18 = t19.
-    DATA t21 TYPE abap_bool.
-    DATA t22 TYPE i.
-    t22 = t2->indexof( p0 = t18 ).
-    DATA(t25) = 0.
-    t21 = xsdbool( t22 < t25 ).
-    IF t21 = abap_true.
+    t18 = t1->get_type( ).
+    IF xsdbool( t2->indexof( p0 = t18 ) < 0 ) = abap_true.
       DATA t27 TYPE REF TO zcl_lnt_position.
-      DATA(t28) = CONV f( 1 ).
-      DATA(t29) = CONV f( 1 ).
       DATA(t30) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
       t30->has = abap_true.
-      t30->value = t29.
-      t27 = NEW zcl_lnt_position( i_row = t28 i_col = t30 ).
+      t30->value = CONV f( 1 ).
+      t27 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t30 ).
       DATA t32 TYPE REF TO zcl_lnt_issue.
       DATA t33 TYPE REF TO zif_lnt_file.
       DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -196,23 +158,14 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
         t33 ?= t36.
       ENDIF.
       DATA t40 TYPE string.
-      DATA t43 TYPE string.
       DATA t44 TYPE string.
       DATA(t45) = |Object type |.
       DATA(t47) = strlen( t45 ).
       t44 = |{ t45 }{ t18 }|.
-      DATA(t48) = | not allowed|.
       DATA(t49) = strlen( t44 ).
-      t43 = |{ t44 }{ t48 }|.
-      t40 = t43.
+      t40 = |{ t44 }{ | not allowed| }|.
       DATA(t50) = VALUE string( ).
       DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t52 TYPE string.
-      t52 = |allowed_object_types|.
-      DATA t54 TYPE string.
-      t54 = |Check allowed object types|.
-      DATA t56 TYPE string.
-      t56 = |Restricts the set of allowed object types.|.
       DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t61) = |"allowed" is a list of 4 character R3TR object types, exampl|.
       t61 = t61 && |e: ["CLAS", "INTF"]|.
@@ -220,21 +173,16 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
       t62->has = abap_true.
       t62->value = t61.
       t58 = t62.
-      DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t69.
-      t68 = t69.
-      DATA(t71) = |SingleFile|.
+      CREATE OBJECT t68.
       t68->load( ).
-      APPEND t71 TO t68->items.
+      APPEND |SingleFile| TO t68->items.
       t68->save( ).
-      t64 = t68.
       DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t78 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t51 = NEW zcl_lnt_irule_metadata( i_key = t52 i_title = t54 i_short_description = t56 i_bad_example = t74 i_good_example = t76 i_extended_information = t58 i_tags = t64 i_pragma = t78 i_pseudo_comment = t80 ).
+      t51 = NEW zcl_lnt_irule_metadata( i_key = |allowed_object_types| i_title = |Check allowed object types| i_short_description = |Restricts the set of allowed object types.| i_bad_example = t74 i_good_example = t76 i_extended_information = t58 i_tags = t68 i_pragma = t78 i_pseudo_comment = t80 ).
       CREATE OBJECT t51->zlnt_view_ownkeys_b0e8086400eb.
       t51->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
       DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -257,55 +205,42 @@ CLASS zcl_lnt_allowed_object_types IMPLEMENTATION.
       ENDIF.
       CREATE OBJECT t51->zlnt_json_ownkeys_70e5fd461788.
       t51->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t87) = |key|.
       DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t87 p1 = t88 ).
-      DATA(t89) = |title|.
+      t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t88 ).
       DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t89 p1 = t90 ).
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t90 ).
       ENDIF.
-      DATA(t91) = |shortDescription|.
       DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t91 p1 = t92 ).
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t92 ).
       ENDIF.
-      DATA(t93) = |extendedInformation|.
       DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t93 p1 = t94 ).
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t94 ).
       ENDIF.
-      DATA(t95) = |tags|.
       DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t51->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
+        t51->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t96 ).
       ENDIF.
       t50 = t51->key.
-      DATA t97 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t97 = me->conf->zlnt_view_read_sr_15c06369f827( ).
       DATA t99 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      t32 = zcl_lnt_issue=>at_position( i_file = t33 i_start = t27 i_message_26cb = t40 i_key = t50 i_severity = t97 i_fix = t99 ).
+      t32 = zcl_lnt_issue=>at_position( i_file = t33 i_start = t27 i_message_26cb = t40 i_key = t50 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t99 ).
       DATA t101 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t102.
-      t101 = t102.
+      CREATE OBJECT t101.
       t101->load( ).
       APPEND t32 TO t101->items.
       t101->save( ).
       result = t101.
       RETURN.
     ENDIF.
-    DATA t106 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t106.
-    result = t106.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD initialize.
-    DATA t2 TYPE REF TO zcl_lnt_allowed_object_types.
     DATA(t3) = i_reg_f149.
-    t2 = me->i_i_sr_rl_al_ob_ty_ts_al_ob_ty( i_reg_d009 = t3 ).
-    result = t2.
+    result = me->i_i_sr_rl_al_ob_ty_ts_al_ob_ty( i_reg_d009 = t3 ).
 
   ENDMETHOD.
 

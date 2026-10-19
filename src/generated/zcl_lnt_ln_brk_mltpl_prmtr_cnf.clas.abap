@@ -24,8 +24,7 @@ CLASS zcl_lnt_ln_brk_mltpl_prmtr_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = CONV f( 1 ).
-    me->zlnt_view_write_s_06afa25a50ef( p0 = t1 ).
+    me->zlnt_view_write_s_06afa25a50ef( p0 = CONV f( 1 ) ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

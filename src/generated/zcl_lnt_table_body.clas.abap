@@ -99,9 +99,7 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t25.
-    DATA t26 TYPE REF TO zif_lnt_statement_runnable.
-    t26 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t19 i_rest = t25 ).
-    t11 = t26.
+    t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t19 i_rest = t25 ).
     IF t11 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
       DATA t31 TYPE REF TO object.
@@ -127,9 +125,7 @@ CLASS zcl_lnt_table_body IMPLEMENTATION.
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t33.
-    DATA t34 TYPE REF TO zif_lnt_statement_runnable.
-    t34 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t33 ).
-    result = t34.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t10 i_rest = t33 ).
 
   ENDMETHOD.
 

@@ -22,22 +22,14 @@ ENDCLASS.
 CLASS zcl_lnt_st_sequence IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_list.
-    DATA(t2) = VALUE abap_bool( ).
-    DATA(t3) = VALUE i( ).
     t1->load( ).
-    t3 = lines( t1->items ).
-    DATA(t5) = 2.
-    t2 = xsdbool( t3 < t5 ).
-    IF t2 = abap_true.
+    IF xsdbool( lines( t1->items ) < 2 ) = abap_true.
       DATA t6 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
       DATA t7 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t10) = |Sequence, length error|.
       DATA(t11) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t11->has = abap_true.
-      t11->value = t10.
-      t8 = t11.
-      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t8 ).
+      t11->value = |Sequence, length error|.
+      t7 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t11 ).
       t6 = NEW #( ).
       t6->payload = t7.
       CLEAR t6->source_value.
@@ -70,9 +62,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
 
   METHOD list_keywords.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t2.
-    t1 = t2.
+    CREATE OBJECT t1.
     DATA(t3) = me->list.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
     DATA t5 TYPE REF TO object.
@@ -117,10 +107,8 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
         APPEND t12 TO t1->items.
         t1->save( ).
       ENDDO.
-      DATA t16 TYPE i.
       t1->load( ).
-      t16 = lines( t1->items ).
-      t9 = t16.
+      t9 = lines( t1->items ).
     ENDDO.
     result = t1.
 
@@ -128,9 +116,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
 
   METHOD get_using.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA(t4) = me->list.
     DATA t5 TYPE REF TO zif_lnt_statement_runnable.
     DATA t6 TYPE REF TO object.
@@ -154,11 +140,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
       ELSE.
         t5 ?= t6.
       ENDIF.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      t14 = t5->get_using( ).
-      t12 = t2->concat( p0 = t14 ).
-      t2 = t12.
+      t2 = t2->concat( p0 = t5->get_using( ) ).
     ENDDO.
     result = t2.
 
@@ -167,9 +149,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
     DATA t6 TYPE REF TO object.
     DATA(t7) = VALUE i( ).
@@ -194,9 +174,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
       ENDIF.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t13.
-      t12 = t13.
+      CREATE OBJECT t12.
       t12->load( ).
       APPEND t5 TO t12->items.
       t12->save( ).
@@ -228,41 +206,20 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
         ELSE.
           t20 ?= t21.
         ENDIF.
-        DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t25 = t20->run( i_r_f634 = t10 ).
-        t10 = t25.
-        DATA t28 TYPE abap_bool.
-        DATA t29 TYPE i.
+        t10 = t20->run( i_r_f634 = t10 ).
         t10->load( ).
-        t29 = lines( t10->items ).
-        DATA(t31) = 0.
-        t28 = xsdbool( t29 = t31 ).
-        IF t28 = abap_true.
+        IF xsdbool( lines( t10->items ) = 0 ) = abap_true.
           t17 = abap_false.
           EXIT.
         ENDIF.
       ENDDO.
-      DATA t33 TYPE abap_bool.
-      t33 = xsdbool( t17 = abap_true ).
-      IF t33 = abap_true.
-        DATA t36 TYPE abap_bool.
-        DATA t37 TYPE i.
+      IF xsdbool( t17 = abap_true ) = abap_true.
         t10->load( ).
-        t37 = lines( t10->items ).
-        DATA(t39) = 1000.
-        t36 = xsdbool( t37 > t39 ).
-        IF t36 = abap_true.
-          DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t40 = t2->concat( p0 = t10 ).
-          t2 = t40.
+        IF xsdbool( lines( t10->items ) > 1000 ) = abap_true.
+          t2 = t2->concat( p0 = t10 ).
         ELSE.
-          DATA t43 TYPE abap_bool.
-          DATA t44 TYPE i.
           t10->load( ).
-          t44 = lines( t10->items ).
-          DATA(t46) = 1.
-          t43 = xsdbool( t44 = t46 ).
-          IF t43 = abap_true.
+          IF xsdbool( lines( t10->items ) = 1 ) = abap_true.
             DATA t48 TYPE REF TO zcl_lnt_st_result.
             CLEAR t48.
             DATA t50 TYPE REF TO object.
@@ -314,10 +271,8 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
               APPEND t55 TO t2->items.
               t2->save( ).
             ENDDO.
-            DATA t62 TYPE i.
             t2->load( ).
-            t62 = lines( t2->items ).
-            t53 = t62.
+            t53 = lines( t2->items ).
           ENDIF.
         ENDIF.
       ENDIF.
@@ -328,9 +283,7 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
 
   METHOD railroad.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
+    CREATE OBJECT t3.
     DATA(t5) = me->list.
     DATA t6 TYPE REF TO zif_lnt_statement_runnable.
     DATA t7 TYPE REF TO object.
@@ -360,7 +313,6 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
       APPEND t12 TO t3->items.
       t3->save( ).
     ENDDO.
-    DATA t15 TYPE string.
     DATA t16 TYPE string.
     DATA(t17) = |Railroad.Sequence(|.
     DATA t18 TYPE string.
@@ -368,10 +320,8 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
     t18 = t3->join( p0 = t20 ).
     DATA(t21) = strlen( t17 ).
     t16 = |{ t17 }{ t18 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t16 ).
-    t15 = |{ t16 }{ t22 }|.
-    result = t15.
+    result = |{ t16 }{ |)| }|.
 
   ENDMETHOD.
 
@@ -401,32 +351,25 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
       ELSE.
         t4 ?= t5.
       ENDIF.
-      DATA t9 TYPE string.
       DATA t10 TYPE string.
       DATA(t11) = t1.
       DATA t12 TYPE string.
       t12 = t4->to_str( ).
       DATA(t14) = strlen( t11 ).
       t10 = |{ t11 }{ t12 }|.
-      DATA(t15) = |,|.
       DATA(t16) = strlen( t10 ).
-      t9 = |{ t10 }{ t15 }|.
-      t1 = t9.
+      t1 = |{ t10 }{ |,| }|.
     ENDDO.
-    DATA t17 TYPE string.
     DATA t18 TYPE string.
     DATA(t19) = |seq(|.
     DATA(t21) = strlen( t19 ).
     t18 = |{ t19 }{ t1 }|.
-    DATA(t22) = |)|.
     DATA(t23) = strlen( t18 ).
-    t17 = |{ t18 }{ t22 }|.
-    result = t17.
+    result = |{ t18 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t3) = me->list.
     DATA t4 TYPE REF TO object.
@@ -441,22 +384,17 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
     ELSE.
       t2 ?= t4.
     ENDIF.
-    t1 = t2->first( ).
-    result = t1.
+    result = t2->first( ).
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t9.
-    t8 = t9.
+    CREATE OBJECT t8.
     t8->load( ).
     APPEND t1 TO t8->items.
     t8->save( ).
@@ -486,41 +424,20 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
       ELSE.
         t16 ?= t17.
       ENDIF.
-      DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t21 = t16->run( i_r_f634 = t6 ).
-      t6 = t21.
-      DATA t24 TYPE abap_bool.
-      DATA t25 TYPE i.
+      t6 = t16->run( i_r_f634 = t6 ).
       t6->load( ).
-      t25 = lines( t6->items ).
-      DATA(t27) = 0.
-      t24 = xsdbool( t25 = t27 ).
-      IF t24 = abap_true.
+      IF xsdbool( lines( t6->items ) = 0 ) = abap_true.
         t13 = abap_false.
         EXIT.
       ENDIF.
     ENDDO.
-    DATA t29 TYPE abap_bool.
-    t29 = xsdbool( t13 = abap_true ).
-    IF t29 = abap_true.
-      DATA t32 TYPE abap_bool.
-      DATA t33 TYPE i.
+    IF xsdbool( t13 = abap_true ) = abap_true.
       t6->load( ).
-      t33 = lines( t6->items ).
-      DATA(t35) = 1000.
-      t32 = xsdbool( t33 > t35 ).
-      IF t32 = abap_true.
-        DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        t36 = t2->concat( p0 = t6 ).
-        t2 = t36.
+      IF xsdbool( lines( t6->items ) > 1000 ) = abap_true.
+        t2 = t2->concat( p0 = t6 ).
       ELSE.
-        DATA t39 TYPE abap_bool.
-        DATA t40 TYPE i.
         t6->load( ).
-        t40 = lines( t6->items ).
-        DATA(t42) = 1.
-        t39 = xsdbool( t40 = t42 ).
-        IF t39 = abap_true.
+        IF xsdbool( lines( t6->items ) = 1 ) = abap_true.
           DATA t44 TYPE REF TO zcl_lnt_st_result.
           DATA t46 TYPE REF TO object.
           t6->load( ).
@@ -565,10 +482,8 @@ CLASS zcl_lnt_st_sequence IMPLEMENTATION.
             APPEND t51 TO t2->items.
             t2->save( ).
           ENDDO.
-          DATA t58 TYPE i.
           t2->load( ).
-          t58 = lines( t2->items ).
-          t49 = t58.
+          t49 = lines( t2->items ).
         ENDIF.
       ENDIF.
     ENDIF.

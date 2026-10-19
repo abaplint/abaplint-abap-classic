@@ -17,19 +17,13 @@ CLASS zcl_lnt_class_attribute IMPLEMENTATION.
     DATA t5 TYPE REF TO zcl_lnt_abstract_token.
     DATA t6 TYPE REF TO zcl_lnt_fi_identifier.
     t6 = t1.
-    DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    t8 = t6->token.
-    t5 = t8.
+    t5 = t6->token.
     DATA t10 TYPE string.
     DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
     t11 = t1.
-    DATA t13 TYPE string.
-    t13 = t11->filename.
-    t10 = t13.
+    t10 = t11->filename.
     DATA t15 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t18 TYPE REF TO zcl_lnt_abstract_type.
-    t18 = t1->type_cba0.
-    t15 = t18.
+    t15 = t1->type_cba0.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     t20 = i_meta.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

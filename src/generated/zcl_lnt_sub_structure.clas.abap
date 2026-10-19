@@ -24,44 +24,32 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD to_railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA t3 TYPE string.
     DATA t4 TYPE string.
     DATA(t5) = |Railroad.NonTerminal('|.
     DATA t6 TYPE string.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t7 = me->s->zlnt_builtin_clas_3f891b097658( ).
-    t6 = t7->name.
+    t6 = me->s->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t9) = strlen( t5 ).
     t4 = |{ t5 }{ t6 }|.
-    DATA(t10) = |', \{href: '#/structure/|.
     DATA(t11) = strlen( t4 ).
-    t3 = |{ t4 }{ t10 }|.
+    t3 = |{ t4 }{ |', \{href: '#/structure/| }|.
     DATA t12 TYPE string.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t13 = me->s->zlnt_builtin_clas_3f891b097658( ).
-    t12 = t13->name.
+    t12 = me->s->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t15) = strlen( t3 ).
     t2 = |{ t3 }{ t12 }|.
-    DATA(t16) = |'\})|.
     DATA(t17) = strlen( t2 ).
-    t1 = |{ t2 }{ t16 }|.
-    result = t1.
+    result = |{ t2 }{ |'\})| }|.
 
   ENDMETHOD.
 
   METHOD get_using.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t5 TYPE string.
     DATA(t6) = |structure/|.
     DATA t7 TYPE string.
-    DATA t8 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    t8 = me->s->zlnt_builtin_clas_3f891b097658( ).
-    t7 = t8->name.
+    t7 = me->s->zlnt_builtin_clas_3f891b097658( )->name.
     DATA(t10) = strlen( t6 ).
     t5 = |{ t6 }{ t7 }|.
     t2->load( ).
@@ -72,29 +60,19 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD first.
-    DATA(t1) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1 = xsdbool( me->matcher IS INITIAL ).
-    IF t1 = abap_true.
-      DATA t8 TYPE REF TO zif_lnt_structure_runnable.
-      t8 = me->s->get_matcher( ).
-      me->matcher = t8.
+    IF xsdbool( me->matcher IS INITIAL ) = abap_true.
+      me->matcher = me->s->get_matcher( ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `matcher`.
     ENDIF.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    t10 = me->matcher->first( ).
-    result = t10.
+    result = me->matcher->first( ).
 
   ENDMETHOD.
 
   METHOD setup_matcher.
-    DATA(t1) = VALUE abap_bool( ).
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1 = xsdbool( me->matcher IS INITIAL ).
-    IF t1 = abap_true.
-      DATA t8 TYPE REF TO zif_lnt_structure_runnable.
-      t8 = me->s->get_matcher( ).
-      me->matcher = t8.
+    IF xsdbool( me->matcher IS INITIAL ) = abap_true.
+      me->matcher = me->s->get_matcher( ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `matcher`.
     ENDIF.
   ENDMETHOD.
@@ -103,32 +81,19 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
     DATA(t1) = i_statements.
     DATA(t2) = i_parent.
     DATA t3 TYPE REF TO zcl_lnt_structure_node.
-    DATA t4 TYPE REF TO zcl_lnt_structure_node.
     DATA(t5) = me->s.
-    t4 = NEW zcl_lnt_structure_node( i_structure = t5 ).
-    t3 = t4.
-    DATA(t6) = VALUE abap_bool( ).
+    t3 = NEW zcl_lnt_structure_node( i_structure = t5 ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t6 = xsdbool( me->matcher IS INITIAL ).
-    IF t6 = abap_true.
-      DATA t13 TYPE REF TO zif_lnt_structure_runnable.
-      t13 = me->s->get_matcher( ).
-      me->matcher = t13.
+    IF xsdbool( me->matcher IS INITIAL ) = abap_true.
+      me->matcher = me->s->get_matcher( ).
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `matcher`.
     ENDIF.
     DATA t15 TYPE REF TO zcl_lnt_imatch.
-    DATA t16 TYPE REF TO zcl_lnt_imatch.
-    t16 = me->matcher->run( i_statements = t1 i_parent = t3 ).
-    t15 = t16.
-    DATA t20 TYPE abap_bool.
-    DATA t21 TYPE i.
+    t15 = me->matcher->run( i_statements = t1 i_parent = t3 ).
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t22 = t15->matched.
     t22->load( ).
-    t21 = lines( t22->items ).
-    DATA(t24) = 0.
-    t20 = xsdbool( t21 = t24 ).
-    IF t20 = abap_true.
+    IF xsdbool( lines( t22->items ) = 0 ) = abap_true.
       DATA(t29) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t29->has = abap_true.
       t29->value = abap_true.
@@ -138,10 +103,9 @@ CLASS zcl_lnt_sub_structure IMPLEMENTATION.
       IF t15->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         t15->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t31 ).
       ENDIF.
-      DATA(t32) = |error|.
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF t15->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t15->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
+        t15->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t33 ).
       ENDIF.
     ELSE.
       t2->add_child( i_n_0c97 = t3 ).

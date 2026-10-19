@@ -26,10 +26,6 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    DATA t2 TYPE string.
-    t2 = |mix_returning|.
-    DATA t4 TYPE string.
-    t4 = |Mix of returning and exporting|.
     DATA t6 TYPE string.
     DATA(t7) = |Checks that methods don't have a mixture of returning and ex|.
     t7 = t7 && |porting/changing parameters|.
@@ -47,34 +43,27 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
     t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t19.
-    t18 = t19.
-    DATA(t21) = |Styleguide|.
+    CREATE OBJECT t18.
     t18->load( ).
-    APPEND t21 TO t18->items.
+    APPEND |Styleguide| TO t18->items.
     t18->save( ).
-    DATA(t23) = |SingleFile|.
     t18->load( ).
-    APPEND t23 TO t18->items.
+    APPEND |SingleFile| TO t18->items.
     t18->save( ).
-    DATA(t25) = |Syntax|.
     t18->load( ).
-    APPEND t25 TO t18->items.
+    APPEND |Syntax| TO t18->items.
     t18->save( ).
     t14 = t18.
-    DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t31) = |CLASS lcl DEFINITION.\n  PUBLIC SECTION.\n    METHODS\n      fo|.
     t31 = t31 && |obar\n        EXPORTING foo TYPE i\n        RETURNING VALUE(rv|.
     t31 = t31 && |_string) TYPE string.\nENDCLASS.|.
     DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t32->has = abap_true.
     t32->value = t31.
-    t28 = t32.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t38 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t28 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
+    t1 = NEW zcl_lnt_irule_metadata( i_key = |mix_returning| i_title = |Mix of returning and exporting| i_short_description = t6 i_bad_example = t32 i_good_example = t34 i_extended_information = t8 i_tags = t14 i_pragma = t36 i_pseudo_comment = t38 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -101,33 +90,27 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
     ENDIF.
     CREATE OBJECT t1->zlnt_json_ownkeys_70e5fd461788.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t46) = |key|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
-    DATA(t48) = |title|.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t47 ).
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t49 ).
     ENDIF.
-    DATA(t50) = |shortDescription|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t51 ).
     ENDIF.
-    DATA(t52) = |extendedInformation|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t53 ).
     ENDIF.
-    DATA(t54) = |tags|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t55 ).
     ENDIF.
-    DATA(t56) = |badExample|.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t56 p1 = t57 ).
+      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t57 ).
     ENDIF.
     result = t1.
 
@@ -153,20 +136,12 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
   METHOD rn_pr_in_sr_rl_mx_rt_ts_mx_rtr.
     DATA(t1) = i_file.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
+    CREATE OBJECT t2.
     DATA t4 TYPE REF TO zcl_lnt_structure_node.
-    DATA t8 TYPE REF TO zcl_lnt_structure_node.
-    t8 = t1->structure.
-    t4 = t8.
-    DATA(t10) = VALUE abap_bool( ).
+    t4 = t1->structure.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t10 = xsdbool( t4 IS INITIAL ).
-    IF t10 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t17.
-      result = t17.
+    IF xsdbool( t4 IS INITIAL ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -196,14 +171,10 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
       ELSE.
         t22 ?= t23.
       ENDIF.
-      DATA t27 TYPE abap_bool.
-      DATA t28 TYPE abap_bool.
       DATA t29 TYPE REF TO zcl_lnt_expression_node.
       DATA(t31) = zlnt_runtime_desc_78196487750d=>zlnt_member_d235_40ca0b5f4dca.
       t29 = t22->find_first_expression( i_type_9913 = t31 ).
-      t28 = xsdbool( t29 IS BOUND ).
-      t27 = xsdbool( t28 = abap_false ).
-      IF t27 = abap_true.
+      IF xsdbool( xsdbool( t29 IS BOUND ) = abap_false ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t32 TYPE abap_bool.
@@ -214,12 +185,10 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
       t33 = xsdbool( t34 IS BOUND ).
       t32 = t33.
       IF t33 = abap_false.
-        DATA t37 TYPE abap_bool.
         DATA t38 TYPE REF TO zcl_lnt_expression_node.
         DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d227_3477e061b4c4.
         t38 = t22->find_first_expression( i_type_9913 = t40 ).
-        t37 = xsdbool( t38 IS BOUND ).
-        t32 = t37.
+        t32 = xsdbool( t38 IS BOUND ).
       ENDIF.
       IF t32 = abap_true.
         DATA t42 TYPE REF TO zcl_lnt_abstract_token.
@@ -231,10 +200,6 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
         DATA(t49) = VALUE string( ).
         DATA t50 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t50.
-        DATA t51 TYPE string.
-        t51 = |mix_returning|.
-        DATA t53 TYPE string.
-        t53 = |Mix of returning and exporting|.
         DATA t55 TYPE string.
         DATA(t56) = |Checks that methods don't have a mixture of returning and ex|.
         t56 = t56 && |porting/changing parameters|.
@@ -254,20 +219,15 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
         DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t63.
         DATA t67 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CREATE OBJECT t68.
-        t67 = t68.
-        DATA(t70) = |Styleguide|.
+        CREATE OBJECT t67.
         t67->load( ).
-        APPEND t70 TO t67->items.
+        APPEND |Styleguide| TO t67->items.
         t67->save( ).
-        DATA(t72) = |SingleFile|.
         t67->load( ).
-        APPEND t72 TO t67->items.
+        APPEND |SingleFile| TO t67->items.
         t67->save( ).
-        DATA(t74) = |Syntax|.
         t67->load( ).
-        APPEND t74 TO t67->items.
+        APPEND |Syntax| TO t67->items.
         t67->save( ).
         t63 = t67.
         DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -285,7 +245,7 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
         CLEAR t85.
         DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t87.
-        t50 = NEW zcl_lnt_irule_metadata( i_key = t51 i_title = t53 i_short_description = t55 i_bad_example = t77 i_good_example = t83 i_extended_information = t57 i_tags = t63 i_pragma = t85 i_pseudo_comment = t87 ).
+        t50 = NEW zcl_lnt_irule_metadata( i_key = |mix_returning| i_title = |Mix of returning and exporting| i_short_description = t55 i_bad_example = t77 i_good_example = t83 i_extended_information = t57 i_tags = t63 i_pragma = t85 i_pseudo_comment = t87 ).
         CREATE OBJECT t50->zlnt_view_ownkeys_b0e8086400eb.
         t50->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -318,39 +278,33 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
         ENDIF.
         CREATE OBJECT t50->zlnt_json_ownkeys_70e5fd461788.
         t50->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA(t95) = |key|.
         DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t96.
-        t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t95 p1 = t96 ).
-        DATA(t97) = |title|.
+        t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t96 ).
         DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t98.
         IF t50->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t97 p1 = t98 ).
+          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t98 ).
         ENDIF.
-        DATA(t99) = |shortDescription|.
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t100.
         IF t50->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t99 p1 = t100 ).
+          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t100 ).
         ENDIF.
-        DATA(t101) = |extendedInformation|.
         DATA t102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t102.
         IF t50->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t101 p1 = t102 ).
+          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |extendedInformation| p1 = t102 ).
         ENDIF.
-        DATA(t103) = |tags|.
         DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t104.
         IF t50->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t103 p1 = t104 ).
+          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t104 ).
         ENDIF.
-        DATA(t105) = |badExample|.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t106.
         IF t50->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = t105 p1 = t106 ).
+          t50->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t106 ).
         ENDIF.
         t49 = t50->key.
         DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

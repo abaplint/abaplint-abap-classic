@@ -14,21 +14,16 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
   METHOD run_syntax.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d97_d1013c30597947.
-    t4 = i_node->find_first_expression( i_type_9913 = t6 ).
-    t3 = t4.
-    DATA(t7) = VALUE abap_bool( ).
+    t3 = i_node->find_first_expression( i_type_9913 = t6 ).
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t7 = xsdbool( t3 IS INITIAL ).
-    IF t7 = abap_true.
+    IF xsdbool( t3 IS INITIAL ) = abap_true.
       RETURN.
     ENDIF.
     DATA t16 TYPE REF TO zcl_lnt_expression_node.
     t16 = t3.
     DATA t19 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t20) = xsdbool( t16 IS INITIAL ).
-    IF t20 = abap_true.
+    IF xsdbool( t16 IS INITIAL ) = abap_true.
     ELSE.
       DATA t23 TYPE string.
       t23 = t16->concat_tokens( ).
@@ -37,7 +32,6 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
       t25->value = t23.
       t19 = t25.
     ENDIF.
-    DATA(t26) = VALUE abap_bool( ).
     DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t27 = t19.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -47,8 +41,7 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
     ELSEIF t27->has = abap_false.
       t31 = abap_true.
     ENDIF.
-    t26 = t31.
-    IF t26 = abap_true.
+    IF t31 = abap_true.
       RETURN.
     ENDIF.
     DATA t34 TYPE REF TO zcl_lnt_typed_identifier.
@@ -56,48 +49,31 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
     DATA t37 TYPE REF TO zcl_lnt_expression_node.
     t37 = t3.
     DATA t40 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t41) = xsdbool( t37 IS INITIAL ).
-    IF t41 = abap_true.
+    IF xsdbool( t37 IS INITIAL ) = abap_true.
     ELSE.
-      DATA t44 TYPE REF TO zcl_lnt_abstract_token.
-      t44 = t37->get_first_token( ).
-      t40 = t44.
+      t40 = t37->get_first_token( ).
     ENDIF.
     t35 = t40.
     DATA t46 TYPE string.
     t46 = t2->filename.
-    DATA t48 TYPE REF TO zcl_lnt_void_type.
-    DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t51) = |FIELD-GROUP|.
     DATA(t52) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t52->has = abap_true.
-    t52->value = t51.
-    t49 = t52.
+    t52->value = |FIELD-GROUP|.
     DATA t54 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    t48 = zcl_lnt_void_type=>get_db65( i_voided = t49 i_qualified_name = t54 ).
     DATA t55 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t34 = NEW zcl_lnt_typed_identifier( i_token = t35 i_filename = t46 i_type_9913 = t48 i_meta = t55 i_value = t56 ).
+    t34 = NEW zcl_lnt_typed_identifier( i_token = t35 i_filename = t46 i_type_9913 = zcl_lnt_void_type=>get_db65( i_voided = t52 i_qualified_name = t54 ) i_meta = t55 i_value = t56 ).
     DATA t58 TYPE REF TO zcl_lnt_current_scope.
     t58 = t2->scope.
     DATA t60 TYPE REF TO zcl_lnt_typed_identifier.
     t60 = t34.
-    DATA(t65) = VALUE abap_bool( ).
     DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    t65 = xsdbool( t60 IS INITIAL ).
-    IF t65 = abap_true.
+    IF xsdbool( t60 IS INITIAL ) = abap_true.
     ELSE.
-      DATA(t73) = VALUE string( ).
       DATA t74 TYPE REF TO zcl_lnt_fi_identifier.
       t74 = t60.
-      DATA(t77) = VALUE string( ).
       DATA t78 TYPE string.
-      DATA t81 TYPE REF TO zcl_lnt_abstract_token.
-      t81 = t74->token.
-      DATA t83 TYPE string.
-      t83 = t81->str.
-      t78 = t83.
-      DATA(t85) = VALUE abap_bool( ).
+      t78 = t74->token->str.
       DATA(t86) = VALUE string( ).
       DATA(t87) = t78.
       DATA(t88) = 0.
@@ -110,17 +86,13 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
         ENDIF.
       ENDIF.
       IF t88 > t90 OR t89 <= 0.
-        CLEAR t86.
       ELSE.
         IF t89 > t90 - t88.
           t89 = t90 - t88.
         ENDIF.
         t86 = t87+t88(t89).
       ENDIF.
-      DATA(t91) = |!|.
-      t85 = xsdbool( t86 = t91 ).
-      IF t85 = abap_true.
-        DATA(t92) = VALUE string( ).
+      IF xsdbool( t86 = |!| ) = abap_true.
         DATA t93 TYPE string.
         t93 = t78.
         DATA(t95) = VALUE string( ).
@@ -135,21 +107,15 @@ CLASS zcl_lnt_sy_field_group IMPLEMENTATION.
           ENDIF.
         ENDIF.
         IF t97 > t101 OR t98 <= 0.
-          CLEAR t95.
         ELSE.
           IF t98 > t101 - t97.
             t98 = t101 - t97.
           ENDIF.
           t95 = t93+t97(t98).
         ENDIF.
-        t92 = t95.
-        t78 = t92.
+        t78 = t95.
       ENDIF.
-      t77 = t78.
-      t73 = t77.
-      DATA t103 TYPE REF TO zcl_lnt_typed_identifier.
-      t103 = t60.
-      t58->add_named_identifier( i_name = t73 i_identifier = t103 ).
+      t58->add_named_identifier( i_name = t78 i_identifier = t60 ).
     ENDIF.
   ENDMETHOD.
 

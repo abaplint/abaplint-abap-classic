@@ -25,10 +25,9 @@ CLASS zcl_lnt_shape_2d2f513b IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tokenTypes` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |tokenTypes|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tokenTypes| p1 = t7 ).
     ENDIF.
     me->token_modifiers = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tokenModifiers`.
@@ -36,10 +35,9 @@ CLASS zcl_lnt_shape_2d2f513b IMPLEMENTATION.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tokenModifiers` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |tokenModifiers|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tokenModifiers| p1 = t12 ).
     ENDIF.
   ENDMETHOD.
 
