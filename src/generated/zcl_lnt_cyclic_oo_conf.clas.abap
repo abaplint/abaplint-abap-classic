@@ -33,10 +33,8 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t1.
     me->zlnt_view_write_s_2f08c7c95a10( p0 = t1 ).
-    DATA(t2) = abap_true.
-    me->zlnt_view_write_s_cf80061082ae( p0 = t2 ).
-    DATA(t3) = abap_true.
-    me->zlnt_view_write_s_f77b360d2446( p0 = t3 ).
+    me->zlnt_view_write_s_cf80061082ae( p0 = abap_true ).
+    me->zlnt_view_write_s_f77b360d2446( p0 = abap_true ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -79,14 +77,9 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_2f08c7c95a10.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -126,8 +119,6 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_cf80061082ae.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -150,8 +141,6 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_f77b360d2446.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -195,7 +184,6 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -252,10 +240,7 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.
@@ -289,10 +274,7 @@ CLASS zcl_lnt_cyclic_oo_conf IMPLEMENTATION.
         CLEAR result.
         IF me->skip_0892 IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->skip_0892.
           TRY.
               result ?= t4.

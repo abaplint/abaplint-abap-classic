@@ -20,63 +20,50 @@ CLASS zcl_lnt_iabapparser_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_issues.
     DATA(t2) = i_output.
     DATA(t3) = i_runtime.
     DATA(t4) = i_runtime_extra.
-    DATA(t5) = t1.
-    me->issues = t5.
+    me->issues = i_issues.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `issues`.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `issues` p1 = t6 ).
     ENDIF.
     DATA(t7) = |issues|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
     ENDIF.
-    DATA(t9) = t2.
-    me->output = t9.
+    me->output = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `output`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `output` p1 = t10 ).
     ENDIF.
     DATA(t11) = |output|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
     ENDIF.
-    DATA(t13) = t3.
-    me->runtime = t13.
+    me->runtime = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runtime`.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `runtime` p1 = t14 ).
     ENDIF.
     DATA(t15) = |runtime|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
-    DATA(t17) = t4.
-    me->runtime_extra = t17.
+    me->runtime_extra = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runtimeExtra`.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t18.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `runtimeExtra` p1 = t18 ).
     ENDIF.
     DATA(t19) = |runtimeExtra|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
     ENDIF.
@@ -169,10 +156,7 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
         CLEAR result.
         IF me->issues IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->issues.
           TRY.
               result ?= t2.
@@ -197,10 +181,7 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
         CLEAR result.
         IF me->output IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->output.
           TRY.
               result ?= t4.
@@ -230,10 +211,7 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
         CLEAR result.
         IF me->runtime_extra IS BOUND.
           DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t5.
           DATA t6 TYPE REF TO object.
-          CLEAR t6.
-          CLEAR t5.
           t6 = me->runtime_extra.
           TRY.
               result ?= t6.
@@ -283,9 +261,7 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
           ENDIF.
           me->issues->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_issue.
-          CLEAR t2.
           LOOP AT me->issues->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -319,9 +295,7 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
           ENDIF.
           me->output->load( ).
           DATA t5 TYPE REF TO object.
-          CLEAR t5.
           DATA t6 TYPE REF TO zcl_lnt_abap_file.
-          CLEAR t6.
           LOOP AT me->output->items INTO t5.
             DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t7.
@@ -346,7 +320,6 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runtime`.
       WHEN `runtimeExtra`.
         DATA t9 TYPE REF TO object.
-        CLEAR t9.
         t9 = p1->as_ref( ).
         me->runtime_extra ?= t9.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runtimeExtra`.
@@ -364,7 +337,6 @@ CLASS zcl_lnt_iabapparser_result IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t10 ).
     ENDIF.

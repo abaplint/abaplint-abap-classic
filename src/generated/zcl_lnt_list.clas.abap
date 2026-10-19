@@ -24,30 +24,27 @@ CLASS zcl_lnt_list IMPLEMENTATION.
   METHOD add_51c1.
     DATA(t1) = i_keywords.
     DATA(t2) = i_source_75cf.
-    DATA(t3) = t1.
     DATA(t4) = VALUE string( ).
-    t3->dense( ).
+    t1->dense( ).
     DATA(t5) = VALUE i( ).
     DO.
-      t3->load( ).
-      IF t5 >= lines( t3->items ).
+      t1->load( ).
+      IF t5 >= lines( t1->items ).
         EXIT.
       ENDIF.
       CLEAR t4.
-      READ TABLE t3->items INDEX t5 + 1 INTO t4.
-      IF t3->has( t5 ) = abap_false.
+      READ TABLE t1->items INDEX t5 + 1 INTO t4.
+      IF t1->has( t5 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t5 = t5 + 1.
       DATA t6 TYPE i.
       DATA t7 TYPE i.
-      DATA(t8) = t4.
-      t7 = me->find_8f95( i_keyword = t8 ).
+      t7 = me->find_8f95( i_keyword = t4 ).
       t6 = t7.
       DATA t9 TYPE abap_bool.
-      DATA(t10) = t6.
       DATA(t11) = 0.
-      t9 = xsdbool( t10 >= t11 ).
+      t9 = xsdbool( t6 >= t11 ).
       IF t9 = abap_true.
         DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t12.
@@ -73,38 +70,29 @@ CLASS zcl_lnt_list IMPLEMENTATION.
           t13 ?= t16.
         ENDIF.
         t12 = t13->source.
-        DATA(t19) = t2.
         t12->load( ).
-        APPEND t19 TO t12->items.
+        APPEND t2 TO t12->items.
         t12->save( ).
       ELSE.
         DATA(t20) = me->words.
         DATA t21 TYPE REF TO zcl_lnt_ikeyword.
         DATA t22 TYPE string.
-        DATA(t23) = t4.
-        t22 = t23.
+        t22 = t4.
         DATA t24 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CREATE OBJECT t27.
         t26 = t27.
-        DATA(t28) = t26.
-        DATA(t29) = t2.
-        t28->load( ).
-        APPEND t29 TO t28->items.
-        t28->save( ).
-        DATA(t30) = t26.
-        t25 = t30.
-        t24 = t25.
+        t26->load( ).
+        APPEND t2 TO t26->items.
+        t26->save( ).
+        t24 = t26.
         t21 = NEW zcl_lnt_ikeyword( i_word = t22 i_source_75cf = t24 ).
         CREATE OBJECT t21->zlnt_view_ownkeys_b0e8086400eb.
         t21->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t31.
-        IF t21->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t21->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `word` p1 = t31 ).
-        ENDIF.
+        t21->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `word` p1 = t31 ).
         DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t32.
         IF t21->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
@@ -115,9 +103,7 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         DATA(t33) = |word|.
         DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t34.
-        IF t21->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t33 p1 = t34 ).
-        ENDIF.
+        t21->zlnt_json_ownkeys_70e5fd461788->put( p0 = t33 p1 = t34 ).
         DATA(t35) = |source|.
         DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t36.
@@ -132,24 +118,21 @@ CLASS zcl_lnt_list IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_db65.
-    DATA(t1) = me->words.
-    result = t1.
+    result = me->words.
 
   ENDMETHOD.
 
   METHOD find_8f95.
     DATA(t1) = i_keyword.
     DATA t2 TYPE i.
-    DATA(t3) = 0.
-    t2 = t3.
+    t2 = 0.
     DO.
       DATA t4 TYPE abap_bool.
-      DATA(t5) = t2.
       DATA t6 TYPE i.
       DATA(t7) = me->words.
       t7->load( ).
       t6 = lines( t7->items ).
-      t4 = xsdbool( t5 < t6 ).
+      t4 = xsdbool( t2 < t6 ).
       IF t4 = abap_false.
         EXIT.
       ENDIF.
@@ -177,21 +160,17 @@ CLASS zcl_lnt_list IMPLEMENTATION.
         t10 ?= t13.
       ENDIF.
       t9 = t10->word.
-      DATA(t16) = t1.
-      t8 = xsdbool( t9 = t16 ).
+      t8 = xsdbool( t9 = t1 ).
       IF t8 = abap_true.
-        DATA(t17) = t2.
-        result = t17.
+        result = t2.
         RETURN.
       ENDIF.
       DATA t18 TYPE i.
-      DATA(t19) = t2.
       DATA(t20) = 1.
-      t18 = t19 + t20.
+      t18 = t2 + t20.
       t2 = t18.
     ENDDO.
-    DATA(t21) = -1.
-    result = t21.
+    result = -1.
 
   ENDMETHOD.
 

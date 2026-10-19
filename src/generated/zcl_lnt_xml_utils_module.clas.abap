@@ -16,39 +16,23 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
   METHOD xml_to_array.
     DATA(t1) = i_data_dc02.
     DATA(t2) = VALUE abap_bool( ).
-    DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
-    DATA(t4) = t1.
-    t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
-    DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
-    t5 = t6.
-    DATA(t7) = VALUE abap_bool( ).
-    DATA(t8) = t3.
-    IF t8 IS INITIAL.
-      t7 = abap_true.
-    ENDIF.
-    t2 = t7.
+    t2 = xsdbool( t1 IS INITIAL ).
     IF t2 = abap_true.
       DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t9.
       CREATE OBJECT t9.
       result = t9.
       RETURN.
     ELSE.
       DATA(t10) = VALUE abap_bool( ).
-      DATA(t11) = t1.
       t10 = abap_false.
-      IF t11 IS BOUND.
-        IF t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
+      IF t1 IS BOUND.
+        IF t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
           t10 = abap_true.
-        ELSEIF t11->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref AND t11->oval IS BOUND.
+        ELSEIF t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref AND t1->oval IS BOUND.
           DATA t12 TYPE REF TO zlnt_runtime_arra_6c31174d6e02.
-          CLEAR t12.
           TRY.
-              t12 ?= t11->oval.
+              t12 ?= t1->oval.
               t10 = abap_true.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
@@ -56,27 +40,22 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
       ENDIF.
       IF t10 = abap_true.
         DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t13.
-        DATA(t14) = t1.
-        CLEAR t13.
-        IF t14 IS BOUND.
-          IF t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        IF t1 IS BOUND.
+          IF t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
             TRY.
-                t13 ?= t14->oval.
+                t13 ?= t1->oval.
               CATCH cx_sy_move_cast_error.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_array.go: arrayView: incompatible native array reference`.
             ENDTRY.
-          ELSEIF t14->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
+          ELSEIF t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array.
             CREATE OBJECT t13.
-            t13->source = t14.
+            t13->source = t1.
           ELSE.
             RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_array.go: arrayView: source is neither array graph nor reference`.
           ENDIF.
           t13->load( ).
           DATA t15 TYPE REF TO object.
-          CLEAR t15.
           DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t16.
           LOOP AT t13->items INTO t15.
             DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t17.
@@ -130,22 +109,14 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
         result = t13.
         RETURN.
       ELSE.
-        DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t21.
         DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t22.
         DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t23.
         CREATE OBJECT t23.
         t22 = t23.
-        DATA(t24) = t22.
-        DATA(t25) = t1.
-        t24->load( ).
-        APPEND t25 TO t24->items.
-        t24->save( ).
-        DATA(t26) = t22.
-        t21 = t26.
-        result = t21.
+        t22->load( ).
+        APPEND t1 TO t22->items.
+        t22->save( ).
+        result = t22.
         RETURN.
       ENDIF.
     ENDIF.
@@ -155,10 +126,9 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA(t1) = i_str.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = VALUE string( ).
-    DATA(t4) = t1.
-    IF t4 IS BOUND.
-      t3 = t4->type_of( ).
-      IF t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref AND t4->oval IS INSTANCE OF zlnt_runtime_call_776cb4afcfb7.
+    IF t1 IS BOUND.
+      t3 = t1->type_of( ).
+      IF t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref AND t1->oval IS INSTANCE OF zlnt_runtime_call_776cb4afcfb7.
         t3 = `function`.
       ENDIF.
     ELSE.
@@ -167,17 +137,14 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA(t5) = |string|.
     t2 = xsdbool( t3 <> t5 ).
     IF t2 = abap_true.
-      DATA(t6) = ||.
-      result = t6.
+      result = ||.
       RETURN.
     ENDIF.
     DATA t7 TYPE string.
     DATA t8 TYPE string.
     DATA t9 TYPE string.
-    DATA(t10) = t1.
-    t9 = t10->as_string( ).
+    t9 = t1->as_string( ).
     DATA t11 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t11.
     DATA(t12) = |&amp;|.
     DATA(t13) = |g|.
     CREATE OBJECT t11 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t12 flags = t13 checked = abap_true.
@@ -188,7 +155,6 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA t16 TYPE string.
     DATA(t17) = t7.
     DATA t18 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t18.
     DATA(t19) = |&gt;|.
     DATA(t20) = |g|.
     CREATE OBJECT t18 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t19 flags = t20 checked = abap_true.
@@ -199,7 +165,6 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA t23 TYPE string.
     DATA(t24) = t7.
     DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t25.
     DATA(t26) = |&lt;|.
     DATA(t27) = |g|.
     CREATE OBJECT t25 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t26 flags = t27 checked = abap_true.
@@ -210,7 +175,6 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA t30 TYPE string.
     DATA(t31) = t7.
     DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t32.
     DATA(t33) = |&quot;|.
     DATA(t34) = |g|.
     CREATE OBJECT t32 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t33 flags = t34 checked = abap_true.
@@ -221,7 +185,6 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA t37 TYPE string.
     DATA(t38) = t7.
     DATA t39 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t39.
     DATA(t40) = |&apos;|.
     DATA(t41) = |g|.
     CREATE OBJECT t39 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t40 flags = t41 checked = abap_true.
@@ -229,8 +192,7 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
     DATA(t43) = strlen( t38 ).
     t37 = t39->replace( p0 = t38 p1 = t42 ).
     t7 = t37.
-    DATA(t44) = t7.
-    result = t44.
+    result = t7.
 
   ENDMETHOD.
 

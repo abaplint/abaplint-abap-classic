@@ -16,7 +16,6 @@ CLASS zcl_lnt_bhvr_dfntn_nm IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
     DATA(t3) = `^((\w*\/\w+\/)|(\w*\/\w+\/)?[\w\*$%]+)$`.
     DATA(t4) = `^(([A-Za-z0-9_]*\/[A-Za-z0-9_]+\/)|([A-Za-z0-9_]*\/[A-Za-z0-`.
     t4 = t4 && `9_]+\/)?[A-Za-z0-9_\*$%]+)$`.

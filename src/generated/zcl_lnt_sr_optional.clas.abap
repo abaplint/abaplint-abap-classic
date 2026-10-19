@@ -17,9 +17,7 @@ CLASS zcl_lnt_sr_optional DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_optional IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_obj_1ed0.
-    DATA(t2) = t1.
-    me->obj = t2.
+    me->obj = i_obj_1ed0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `obj`.
   ENDMETHOD.
 
@@ -28,8 +26,7 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Optional(|.
     DATA t4 TYPE string.
-    DATA(t5) = me->obj.
-    t4 = t5->to_railroad( ).
+    t4 = me->obj->to_railroad( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
     DATA(t7) = |)|.
@@ -41,69 +38,46 @@ CLASS zcl_lnt_sr_optional IMPLEMENTATION.
 
   METHOD get_using.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = me->obj.
-    t1 = t2->get_using( ).
+    t1 = me->obj->get_using( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = i_statements.
     DATA(t2) = i_parent.
     DATA t3 TYPE REF TO zcl_lnt_imatch.
     DATA t4 TYPE REF TO zcl_lnt_imatch.
-    DATA(t5) = me->obj.
-    DATA(t6) = t1.
-    DATA(t7) = t2.
-    t4 = t5->run( i_statements = t6 i_parent = t7 ).
+    DATA(t6) = i_statements.
+    t4 = me->obj->run( i_statements = t6 i_parent = t2 ).
     t3 = t4.
-    DATA(t8) = t3.
-    DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t9.
-    DATA(t10) = abap_true.
-    IF t10 = abap_true.
-      DATA(t11) = abap_false.
-      DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-    ELSE.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t13.
-      t9 = t13.
-    ENDIF.
-    t8->error = t9.
-    DELETE t8->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
+    DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
+    t12->has = abap_true.
+    t12->value = abap_false.
+    t3->error = t12.
+    DELETE t3->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
-    IF t8->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-      t8->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t14 ).
+    IF t3->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t3->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t14 ).
     ENDIF.
     DATA(t15) = |error|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
-    IF t8->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t8->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+    IF t3->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t3->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
-    DATA(t17) = t3.
-    result = t17.
+    result = t3.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
     DATA(t5) = ||.
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
-    t1 = t6.
-    result = t1.
+    t2->load( ).
+    APPEND t5 TO t2->items.
+    t2->save( ).
+    result = t2.
 
   ENDMETHOD.
 

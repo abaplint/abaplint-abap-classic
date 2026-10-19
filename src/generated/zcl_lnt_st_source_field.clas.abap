@@ -14,8 +14,7 @@ CLASS zcl_lnt_st_source_field IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA(t1) = NEW zcl_lnt_st_expres_field( ).
-    result = t1.
+    result = NEW zcl_lnt_st_expres_field( ).
 
   ENDMETHOD.
 

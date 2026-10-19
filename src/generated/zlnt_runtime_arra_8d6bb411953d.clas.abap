@@ -394,9 +394,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
     missing = source->missing.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
-    CLEAR t3.
     LOOP AT source->items INTO t2.
       t1 = sy-tabix.
       CLEAR t3.
@@ -424,9 +422,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
     CLEAR source->items.
     source->missing = missing.
     DATA t1 TYPE REF TO zcl_lnt_abstract_type.
-    CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     LOOP AT items INTO t1.
       CLEAR t2.
       CLEAR t2.
@@ -481,9 +477,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~get.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
-    CLEAR t3.
     load( ).
     IF p0 = `length`.
       CREATE OBJECT result.
@@ -502,10 +496,7 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
       CLEAR result.
       IF t3 IS BOUND.
         DATA t4 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t4.
         DATA t5 TYPE REF TO object.
-        CLEAR t5.
-        CLEAR t4.
         t5 = t3.
         TRY.
             result ?= t5.
@@ -532,16 +523,12 @@ CLASS zlnt_runtime_arra_8d6bb411953d IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~put.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type.
-    CLEAR t3.
     CREATE OBJECT t2.
     t1 = t2->array_index( p0 ).
     IF p1 IS BOUND.
-      CLEAR t3.
       IF p1 IS BOUND.
         DATA t4 TYPE REF TO object.
-        CLEAR t4.
         t4 = p1->as_ref( ).
         t3 ?= t4.
       ENDIF.

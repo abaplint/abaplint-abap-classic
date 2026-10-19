@@ -22,28 +22,23 @@ CLASS zcl_lnt_lang_vers_not DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_lang_version.
     DATA(t2) = i_runnable.
-    DATA(t3) = t1.
-    me->lang_version = t3.
+    me->lang_version = i_lang_version.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `langVersion`.
-    DATA(t4) = t2.
-    me->runnable = t4.
+    me->runnable = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `runnable`.
   ENDMETHOD.
 
   METHOD list_keywords.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = me->runnable.
-    t1 = t2->list_keywords( ).
+    t1 = me->runnable->list_keywords( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD get_using.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = me->runnable.
-    t1 = t2->get_using( ).
+    t1 = me->runnable->get_using( ).
     result = t1.
 
   ENDMETHOD.
@@ -60,9 +55,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     t2 = xsdbool( t3 > t5 ).
     IF t2 = abap_true.
       DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t8) = me->runnable.
-      DATA(t9) = t1.
-      t7 = t8->run( i_r_f634 = t9 ).
+      t7 = me->runnable->run( i_r_f634 = t1 ).
       result = t7.
       RETURN.
     ELSE.
@@ -86,8 +79,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     DATA(t9) = strlen( t4 ).
     t3 = |{ t4 }{ t8 }|.
     DATA t10 TYPE string.
-    DATA(t11) = me->runnable.
-    t10 = t11->railroad( ).
+    t10 = me->runnable->railroad( ).
     DATA(t12) = strlen( t3 ).
     t2 = |{ t3 }{ t10 }|.
     DATA(t13) = |)|.
@@ -102,8 +94,7 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     DATA t2 TYPE string.
     DATA(t3) = |LanguageVersionNot(|.
     DATA t4 TYPE string.
-    DATA(t5) = me->runnable.
-    t4 = t5->to_str( ).
+    t4 = me->runnable->to_str( ).
     DATA(t6) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
     DATA(t7) = |)|.
@@ -115,32 +106,21 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
 
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t2) = me->runnable.
-    t1 = t2->first( ).
+    t1 = me->runnable->first( ).
     result = t1.
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t2.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = t5.
-    DATA(t8) = t1.
-    t7->load( ).
-    APPEND t8 TO t7->items.
-    t7->save( ).
-    DATA(t9) = t5.
-    t4 = t9.
-    t3 = t4.
+    t5->load( ).
+    APPEND t1 TO t5->items.
+    t5->save( ).
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t10.
     DATA t11 TYPE abap_bool.
     DATA t12 TYPE i.
     DATA(t13) = CONV string( zcl_lnt_combi=>get_language_version( ) ).
@@ -151,17 +131,14 @@ CLASS zcl_lnt_lang_vers_not IMPLEMENTATION.
     t11 = xsdbool( t12 > t14 ).
     IF t11 = abap_true.
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t17) = me->runnable.
-      DATA(t18) = t3.
-      t16 = t17->run( i_r_f634 = t18 ).
+      t16 = me->runnable->run( i_r_f634 = t5 ).
       t10 = t16.
     ELSE.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t19.
       t10 = t19.
     ENDIF.
-    t2 = t10.
-    result = t2.
+    result = t10.
 
   ENDMETHOD.
 

@@ -21,12 +21,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
-    zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc = t1.
+    zcl_lnt_fnctn_mdl_dfntn_mdl=>fnctn_mdl_prmtr_drctn_nmspc = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t3.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -35,9 +32,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     DATA(t5) = |importing|.
     t2 = t3->set( p0 = t4 p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t7.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -46,9 +41,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     DATA(t9) = |exporting|.
     t6 = t7->set( p0 = t8 p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t11.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -57,9 +50,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     DATA(t13) = |changing|.
     t10 = t11->set( p0 = t12 p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t15.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -70,12 +61,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
-    DATA(t18) = NEW zlnt_runtime_map__a1006b231250( ).
-    zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace = t18.
+    zcl_lnt_fnctn_mdl_dfntn_mdl=>function_module_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t19.
     DATA t20 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t20.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -84,9 +72,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     DATA(t22) = |regular|.
     t19 = t20->set( p0 = t21 p1 = t22 ).
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t24.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.
@@ -95,9 +81,7 @@ CLASS zcl_lnt_fnctn_mdl_dfntn_mdl IMPLEMENTATION.
     DATA(t26) = |remoteEnabled|.
     t23 = t24->set( p0 = t25 p1 = t26 ).
     DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t27.
     DATA t28 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t28.
     IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
       zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
     ENDIF.

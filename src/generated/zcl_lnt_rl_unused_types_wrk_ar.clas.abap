@@ -26,9 +26,7 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
     DATA(t1) = i_id.
     DATA(t2) = me->workarea.
     DATA t3 TYPE REF TO zcl_lnt_typed_identifier.
-    CLEAR t3.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     DATA(t5) = VALUE i( ).
     DO.
       t2->load( ).
@@ -51,53 +49,33 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
       ENDIF.
       DATA(t8) = VALUE abap_bool( ).
       DATA t9 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t10) = t1.
-      t9 = t10.
+      t9 = t1.
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t12) = t3.
-      t11 = t12.
+      t11 = t3.
       DATA t13 TYPE abap_bool.
       DATA t14 TYPE abap_bool.
       DATA t15 TYPE REF TO zcl_lnt_position.
-      DATA t16 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t17) = t11.
-      t16 = t17.
-      DATA t18 TYPE REF TO zcl_lnt_position.
-      DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       DATA t20 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t21) = t16.
-      t20 = t21->token.
-      t19 = t20.
+      t20 = t11->token.
       DATA t22 TYPE REF TO zcl_lnt_position.
-      DATA(t23) = t19.
-      t22 = t23->start.
-      t18 = t22.
-      t15 = t18.
+      t22 = t20->start.
+      t15 = t22.
       DATA t24 TYPE REF TO zcl_lnt_position.
-      DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t27) = t9.
-      t26 = t27->token.
-      t25 = t26.
+      t26 = t9->token.
       DATA t28 TYPE REF TO zcl_lnt_position.
-      DATA(t29) = t25.
-      t28 = t29->start.
+      t28 = t26->start.
       t24 = t28.
       t14 = t15->equals( i_p = t24 ).
       t13 = t14.
       IF t14 = abap_true.
         DATA t30 TYPE abap_bool.
         DATA t31 TYPE string.
-        DATA t32 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA(t33) = t11.
-        t32 = t33.
         DATA t34 TYPE string.
-        DATA(t35) = t32.
-        t34 = t35->filename.
+        t34 = t11->filename.
         t31 = t34.
         DATA t36 TYPE string.
-        DATA(t37) = t9.
-        t36 = t37->filename.
+        t36 = t9->filename.
         t30 = xsdbool( t31 = t36 ).
         t13 = t30.
       ENDIF.
@@ -107,32 +85,28 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
       ENDIF.
     ENDDO.
     DATA(t38) = me->workarea.
-    DATA(t39) = t1.
     t38->load( ).
-    APPEND t39 TO t38->items.
+    APPEND t1 TO t38->items.
     t38->save( ).
   ENDMETHOD.
 
   METHOD remove_if_exists.
     DATA(t1) = i_id.
     DATA t2 TYPE i.
-    DATA(t3) = 0.
-    t2 = t3.
+    t2 = 0.
     DO.
       DATA t4 TYPE abap_bool.
-      DATA(t5) = t2.
       DATA t6 TYPE i.
       DATA(t7) = me->workarea.
       t7->load( ).
       t6 = lines( t7->items ).
-      t4 = xsdbool( t5 < t6 ).
+      t4 = xsdbool( t2 < t6 ).
       IF t4 = abap_false.
         EXIT.
       ENDIF.
       DATA(t8) = VALUE abap_bool( ).
       DATA t9 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t10) = t1.
-      t9 = t10.
+      t9 = t1.
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_typed_identifier.
@@ -160,68 +134,46 @@ CLASS zcl_lnt_rl_unused_types_wrk_ar IMPLEMENTATION.
       DATA t18 TYPE abap_bool.
       DATA t19 TYPE abap_bool.
       DATA t20 TYPE REF TO zcl_lnt_position.
-      DATA t21 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t22) = t11.
-      t21 = t22.
-      DATA t23 TYPE REF TO zcl_lnt_position.
-      DATA t24 TYPE REF TO zcl_lnt_abstract_token.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t26) = t21.
-      t25 = t26->token.
-      t24 = t25.
+      t25 = t11->token.
       DATA t27 TYPE REF TO zcl_lnt_position.
-      DATA(t28) = t24.
-      t27 = t28->start.
-      t23 = t27.
-      t20 = t23.
+      t27 = t25->start.
+      t20 = t27.
       DATA t29 TYPE REF TO zcl_lnt_position.
-      DATA t30 TYPE REF TO zcl_lnt_abstract_token.
       DATA t31 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t32) = t9.
-      t31 = t32->token.
-      t30 = t31.
+      t31 = t9->token.
       DATA t33 TYPE REF TO zcl_lnt_position.
-      DATA(t34) = t30.
-      t33 = t34->start.
+      t33 = t31->start.
       t29 = t33.
       t19 = t20->equals( i_p = t29 ).
       t18 = t19.
       IF t19 = abap_true.
         DATA t35 TYPE abap_bool.
         DATA t36 TYPE string.
-        DATA t37 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA(t38) = t11.
-        t37 = t38.
         DATA t39 TYPE string.
-        DATA(t40) = t37.
-        t39 = t40->filename.
+        t39 = t11->filename.
         t36 = t39.
         DATA t41 TYPE string.
-        DATA(t42) = t9.
-        t41 = t42->filename.
+        t41 = t9->filename.
         t35 = xsdbool( t36 = t41 ).
         t18 = t35.
       ENDIF.
       t8 = t18.
       IF t8 = abap_true.
         DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t44) = me->workarea.
-        DATA(t45) = t2.
         DATA(t46) = 1.
-        t43 = t44->splice2( p0 = t45 p1 = t46 ).
+        t43 = me->workarea->splice2( p0 = t2 p1 = t46 ).
         RETURN.
       ENDIF.
       DATA t47 TYPE i.
-      DATA(t48) = t2.
       DATA(t49) = 1.
-      t47 = t48 + t49.
+      t47 = t2 + t49.
       t2 = t47.
     ENDDO.
   ENDMETHOD.
 
   METHOD get_db65.
-    DATA(t1) = me->workarea.
-    result = t1.
+    result = me->workarea.
 
   ENDMETHOD.
 

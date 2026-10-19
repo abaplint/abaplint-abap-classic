@@ -14,32 +14,18 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA(t3) = VALUE abap_bool( ).
-    DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = t1.
-    t4 = t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
-    t6 = t7.
-    DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = t4.
-    IF t9 IS INITIAL.
-      t8 = abap_true.
-    ENDIF.
-    t3 = t8.
+    t3 = xsdbool( t1 IS INITIAL ).
     IF t3 = abap_true.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t12) = t1.
-    t11 = t12.
+    t11 = t1.
     DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
     t10 = t11->find_direct_expressions( i_type_9913 = t13 ).
     DATA t14 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t14.
     DATA t15 TYPE REF TO object.
-    CLEAR t15.
     DATA(t16) = VALUE i( ).
     DO.
       t10->load( ).
@@ -64,16 +50,7 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
       CLEAR t19.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t20.
-      DATA(t21) = abap_true.
-      IF t21 = abap_true.
-        DATA(t22) = t14.
-        t20 = t22.
-      ELSE.
-        DATA t23 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t23.
-        t20 = t23.
-      ENDIF.
-      DATA(t24) = t2.
+      t20 = t14.
       DATA t25 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t25.
       DATA t26 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -82,18 +59,15 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t28.
-      t19 = zcl_lnt_sy_source=>run_syntax( i_node = t20 i_input_967e = t24 i_target_type = t25 i_write_reference = t26 i_allow_generic_deference = t27 i_read_reference = t28 ).
+      t19 = zcl_lnt_sy_source=>run_syntax( i_node = t20 i_input_967e = t2 i_target_type = t25 i_write_reference = t26 i_allow_generic_deference = t27 i_read_reference = t28 ).
     ENDDO.
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t30 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t31) = t1.
-    t30 = t31.
+    t30 = t1.
     DATA(t32) = zlnt_runtime_desc_78196487750d=>zlnt_member_d255_88331b4186a0.
     t29 = t30->find_direct_expressions( i_type_9913 = t32 ).
     DATA t33 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t33.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     DATA(t35) = VALUE i( ).
     DO.
       t29->load( ).
@@ -115,9 +89,7 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
         t33 ?= t34.
       ENDIF.
       DATA t38 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t39) = t33.
-      DATA(t40) = t2.
-      t38 = zcl_lnt_sy_target=>run_syntax( i_node = t39 i_input_967e = t40 ).
+      t38 = zcl_lnt_sy_target=>run_syntax( i_node = t33 i_input_967e = t2 ).
     ENDDO.
   ENDMETHOD.
 

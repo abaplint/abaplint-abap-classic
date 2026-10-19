@@ -27,7 +27,6 @@ CLASS zcl_lnt_iscope_data DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iscope_data IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_vars.
     DATA(t2) = i_types.
     DATA(t3) = i_extra_like_types.
     DATA(t4) = i_deferred.
@@ -36,129 +35,102 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
     DATA(t7) = i_forms.
     DATA(t8) = i_references.
     DATA(t9) = i_sql_conversion.
-    DATA(t10) = t1.
-    me->vars = t10.
+    me->vars = i_vars.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `vars`.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `vars` p1 = t11 ).
     ENDIF.
     DATA(t12) = |vars|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
     ENDIF.
-    DATA(t14) = t2.
-    me->types = t14.
+    me->types = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `types`.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `types` p1 = t15 ).
     ENDIF.
     DATA(t16) = |types|.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t16 p1 = t17 ).
     ENDIF.
-    DATA(t18) = t3.
-    me->extra_like_types = t18.
+    me->extra_like_types = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `extraLikeTypes`.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `extraLikeTypes` p1 = t19 ).
     ENDIF.
     DATA(t20) = |extraLikeTypes|.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t20 p1 = t21 ).
     ENDIF.
-    DATA(t22) = t4.
-    me->deferred = t22.
+    me->deferred = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `deferred`.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `deferred` p1 = t23 ).
     ENDIF.
     DATA(t24) = |deferred|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
     ENDIF.
-    DATA(t26) = t5.
-    me->cdefs = t26.
+    me->cdefs = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `cdefs`.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `cdefs` p1 = t27 ).
     ENDIF.
     DATA(t28) = |cdefs|.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t28 p1 = t29 ).
     ENDIF.
-    DATA(t30) = t6.
-    me->idefs = t30.
+    me->idefs = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `idefs`.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `idefs` p1 = t31 ).
     ENDIF.
     DATA(t32) = |idefs|.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t32 p1 = t33 ).
     ENDIF.
-    DATA(t34) = t7.
-    me->forms = t34.
+    me->forms = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `forms`.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `forms` p1 = t35 ).
     ENDIF.
     DATA(t36) = |forms|.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t36 p1 = t37 ).
     ENDIF.
-    DATA(t38) = t8.
-    me->references = t38.
+    me->references = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `references`.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `references` p1 = t39 ).
     ENDIF.
     DATA(t40) = |references|.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t40 p1 = t41 ).
     ENDIF.
-    DATA(t42) = t9.
-    me->sql_conversion = t42.
+    me->sql_conversion = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `sqlConversion`.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `sqlConversion` p1 = t43 ).
     ENDIF.
     DATA(t44) = |sqlConversion|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
     ENDIF.
@@ -261,10 +233,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->vars IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->vars.
           TRY.
               result ?= t2.
@@ -289,10 +258,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->types IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->types.
           TRY.
               result ?= t4.
@@ -317,10 +283,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->extra_like_types IS BOUND.
           DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t5.
           DATA t6 TYPE REF TO object.
-          CLEAR t6.
-          CLEAR t5.
           t6 = me->extra_like_types.
           TRY.
               result ?= t6.
@@ -345,10 +308,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->deferred IS BOUND.
           DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t7.
           DATA t8 TYPE REF TO object.
-          CLEAR t8.
-          CLEAR t7.
           t8 = me->deferred.
           TRY.
               result ?= t8.
@@ -373,10 +333,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->cdefs IS BOUND.
           DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t9.
           DATA t10 TYPE REF TO object.
-          CLEAR t10.
-          CLEAR t9.
           t10 = me->cdefs.
           TRY.
               result ?= t10.
@@ -401,10 +358,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->idefs IS BOUND.
           DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t11.
           DATA t12 TYPE REF TO object.
-          CLEAR t12.
-          CLEAR t11.
           t12 = me->idefs.
           TRY.
               result ?= t12.
@@ -429,10 +383,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->forms IS BOUND.
           DATA t13 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t13.
           DATA t14 TYPE REF TO object.
-          CLEAR t14.
-          CLEAR t13.
           t14 = me->forms.
           TRY.
               result ?= t14.
@@ -457,10 +408,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->references IS BOUND.
           DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t15.
           DATA t16 TYPE REF TO object.
-          CLEAR t16.
-          CLEAR t15.
           t16 = me->references.
           TRY.
               result ?= t16.
@@ -485,10 +433,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
         CLEAR result.
         IF me->sql_conversion IS BOUND.
           DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t17.
           DATA t18 TYPE REF TO object.
-          CLEAR t18.
-          CLEAR t17.
           t18 = me->sql_conversion.
           TRY.
               result ?= t18.
@@ -523,37 +468,31 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
     CASE p0.
       WHEN `vars`.
         DATA t1 TYPE REF TO object.
-        CLEAR t1.
         t1 = p1->as_ref( ).
         me->vars ?= t1.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `vars`.
       WHEN `types`.
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
         t2 = p1->as_ref( ).
         me->types ?= t2.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `types`.
       WHEN `extraLikeTypes`.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
         t3 = p1->as_ref( ).
         me->extra_like_types ?= t3.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `extraLikeTypes`.
       WHEN `deferred`.
         DATA t4 TYPE REF TO object.
-        CLEAR t4.
         t4 = p1->as_ref( ).
         me->deferred ?= t4.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `deferred`.
       WHEN `cdefs`.
         DATA t5 TYPE REF TO object.
-        CLEAR t5.
         t5 = p1->as_ref( ).
         me->cdefs ?= t5.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `cdefs`.
       WHEN `idefs`.
         DATA t6 TYPE REF TO object.
-        CLEAR t6.
         t6 = p1->as_ref( ).
         me->idefs ?= t6.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `idefs`.
@@ -574,9 +513,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
           ENDIF.
           me->forms->load( ).
           DATA t7 TYPE REF TO object.
-          CLEAR t7.
           DATA t8 TYPE REF TO zif_lnt_form_definition.
-          CLEAR t8.
           LOOP AT me->forms->items INTO t7.
             DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t9.
@@ -610,9 +547,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
           ENDIF.
           me->references->load( ).
           DATA t11 TYPE REF TO object.
-          CLEAR t11.
           DATA t12 TYPE REF TO zcl_lnt_ireference.
-          CLEAR t12.
           LOOP AT me->references->items INTO t11.
             DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t13.
@@ -646,9 +581,7 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
           ENDIF.
           me->sql_conversion->load( ).
           DATA t15 TYPE REF TO object.
-          CLEAR t15.
           DATA t16 TYPE REF TO zcl_lnt_shape_9a575e77.
-          CLEAR t16.
           LOOP AT me->sql_conversion->items INTO t15.
             DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t17.
@@ -679,7 +612,6 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t19 ).
     ENDIF.

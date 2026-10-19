@@ -14,39 +14,23 @@ CLASS zcl_lnt_ddl_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
-    CLEAR t3.
     IF t4 IS BOUND.
       CREATE OBJECT t3.
       t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t3->cval = t4.
     ENDIF.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t8.
     DATA(t9) = |^"[^"]*"$|.
     DATA(t10) = ||.
     CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t9 flags = t10.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
-    CLEAR t6.
     IF t7 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t11.
       DATA t12 TYPE REF TO object.
-      CLEAR t12.
-      CLEAR t11.
       t12 = t7.
       TRY.
           t6 ?= t12.
@@ -67,21 +51,11 @@ CLASS zcl_lnt_ddl_name IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t5 = t6.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t13.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t14.
     CREATE OBJECT t14.
-    t13 = t14.
     DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t15.
-    DATA(t16) = t2.
-    DATA(t17) = t5.
-    DATA(t18) = t13.
-    t15 = zcl_lnt_st_combi_module=>alt( i_first = t16 i_second = t17 i_rest = t18 ).
-    t1 = t15.
-    result = t1.
+    t15 = zcl_lnt_st_combi_module=>alt( i_first = t3 i_second = t6 i_rest = t14 ).
+    result = t15.
 
   ENDMETHOD.
 

@@ -15,70 +15,38 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtn_mdl IMPLEMENTATION.
   METHOD resolve_release.
     DATA(t1) = i_from.
     DATA(t2) = VALUE abap_bool( ).
-    DATA t3 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t4.
     DATA t5 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t5.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
     t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = t1.
-    t4 = t5->get( p0 = t6 ).
-    t3 = t4.
+    t4 = t5->get( p0 = t1 ).
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
-    DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
-    t7 = t8.
     DATA(t9) = VALUE abap_bool( ).
-    DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = t3.
-    IF t11 IS INITIAL.
-      t10 = abap_true.
-    ENDIF.
+    DATA(t10) = xsdbool( t4 IS INITIAL ).
     t9 = xsdbool( t10 = abap_false ).
     t2 = t9.
     IF t2 = abap_true.
       DATA t12 TYPE REF TO zcl_lnt_abap_release.
-      CLEAR t12.
       DATA t13 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      CLEAR t13.
       IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
         zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
       ENDIF.
       t13 = zcl_lnt_version_module=>release_b8cd.
-      DATA(t14) = t1.
-      t12 = t13->get( p0 = t14 ).
+      t12 = t13->get( p0 = t1 ).
       result = t12.
       RETURN.
     ENDIF.
     DATA t15 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t15.
     TRY.
-        DATA t16 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t16.
-        DATA(t17) = abap_true.
-        IF t17 = abap_true.
-          DATA t18 TYPE REF TO zcl_lnt_abap_release.
-          CLEAR t18.
-          DATA(t19) = t1.
-          t18 = zcl_lnt_version_module=>version_to_abap_release( i_v = t19 ).
-          t16 = t18.
-        ELSE.
-          DATA t20 TYPE REF TO zcl_lnt_abap_release.
-          CLEAR t20.
-          t16 = t20.
-        ENDIF.
-        result = t16.
+        DATA t18 TYPE REF TO zcl_lnt_abap_release.
+        t18 = zcl_lnt_version_module=>version_to_abap_release( i_v = t1 ).
+        result = t18.
         RETURN.
       CATCH zlnt_exception_cl_30eec8e8805d INTO t15.
         DATA(t21) = t15->payload.
-        DATA t22 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t22.
-        result = t22.
+        CLEAR result.
         RETURN.
     ENDTRY.
   ENDMETHOD.

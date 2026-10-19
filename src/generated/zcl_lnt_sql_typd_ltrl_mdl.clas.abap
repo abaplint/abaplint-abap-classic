@@ -20,169 +20,135 @@ CLASS zcl_lnt_sql_typd_ltrl_mdl IMPLEMENTATION.
     IF zcl_lnt_sql_typd_ltrl_mdl=>zlnt_builtin_init_e2b55c8dcc51 = abap_false.
       zcl_lnt_sql_typd_ltrl_mdl=>zlnt_builtin_init_527ecce2c635( ).
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
     DATA(t5) = |CHAR|.
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
+    t2->load( ).
+    APPEND t5 TO t2->items.
+    t2->save( ).
     DATA(t7) = |CLNT|.
-    t6->load( ).
-    APPEND t7 TO t6->items.
-    t6->save( ).
-    DATA(t8) = t2.
+    t2->load( ).
+    APPEND t7 TO t2->items.
+    t2->save( ).
     DATA(t9) = |CUKY|.
-    t8->load( ).
-    APPEND t9 TO t8->items.
-    t8->save( ).
-    DATA(t10) = t2.
+    t2->load( ).
+    APPEND t9 TO t2->items.
+    t2->save( ).
     DATA(t11) = |CURR|.
-    t10->load( ).
-    APPEND t11 TO t10->items.
-    t10->save( ).
-    DATA(t12) = t2.
+    t2->load( ).
+    APPEND t11 TO t2->items.
+    t2->save( ).
     DATA(t13) = |DATN|.
-    t12->load( ).
-    APPEND t13 TO t12->items.
-    t12->save( ).
-    DATA(t14) = t2.
+    t2->load( ).
+    APPEND t13 TO t2->items.
+    t2->save( ).
     DATA(t15) = |DATS|.
-    t14->load( ).
-    APPEND t15 TO t14->items.
-    t14->save( ).
-    DATA(t16) = t2.
+    t2->load( ).
+    APPEND t15 TO t2->items.
+    t2->save( ).
     DATA(t17) = |DEC|.
-    t16->load( ).
-    APPEND t17 TO t16->items.
-    t16->save( ).
-    DATA(t18) = t2.
+    t2->load( ).
+    APPEND t17 TO t2->items.
+    t2->save( ).
     DATA(t19) = |DECFLOAT16|.
-    t18->load( ).
-    APPEND t19 TO t18->items.
-    t18->save( ).
-    DATA(t20) = t2.
+    t2->load( ).
+    APPEND t19 TO t2->items.
+    t2->save( ).
     DATA(t21) = |DECFLOAT34|.
-    t20->load( ).
-    APPEND t21 TO t20->items.
-    t20->save( ).
-    DATA(t22) = t2.
+    t2->load( ).
+    APPEND t21 TO t2->items.
+    t2->save( ).
     DATA(t23) = |D16N|.
-    t22->load( ).
-    APPEND t23 TO t22->items.
-    t22->save( ).
-    DATA(t24) = t2.
+    t2->load( ).
+    APPEND t23 TO t2->items.
+    t2->save( ).
     DATA(t25) = |D34N|.
-    t24->load( ).
-    APPEND t25 TO t24->items.
-    t24->save( ).
-    DATA(t26) = t2.
+    t2->load( ).
+    APPEND t25 TO t2->items.
+    t2->save( ).
     DATA(t27) = |D16D|.
-    t26->load( ).
-    APPEND t27 TO t26->items.
-    t26->save( ).
-    DATA(t28) = t2.
+    t2->load( ).
+    APPEND t27 TO t2->items.
+    t2->save( ).
     DATA(t29) = |D34D|.
-    t28->load( ).
-    APPEND t29 TO t28->items.
-    t28->save( ).
-    DATA(t30) = t2.
+    t2->load( ).
+    APPEND t29 TO t2->items.
+    t2->save( ).
     DATA(t31) = |D16R|.
-    t30->load( ).
-    APPEND t31 TO t30->items.
-    t30->save( ).
-    DATA(t32) = t2.
+    t2->load( ).
+    APPEND t31 TO t2->items.
+    t2->save( ).
     DATA(t33) = |D34R|.
-    t32->load( ).
-    APPEND t33 TO t32->items.
-    t32->save( ).
-    DATA(t34) = t2.
+    t2->load( ).
+    APPEND t33 TO t2->items.
+    t2->save( ).
     DATA(t35) = |FLTP|.
-    t34->load( ).
-    APPEND t35 TO t34->items.
-    t34->save( ).
-    DATA(t36) = t2.
+    t2->load( ).
+    APPEND t35 TO t2->items.
+    t2->save( ).
     DATA(t37) = |INT1|.
-    t36->load( ).
-    APPEND t37 TO t36->items.
-    t36->save( ).
-    DATA(t38) = t2.
+    t2->load( ).
+    APPEND t37 TO t2->items.
+    t2->save( ).
     DATA(t39) = |INT2|.
-    t38->load( ).
-    APPEND t39 TO t38->items.
-    t38->save( ).
-    DATA(t40) = t2.
+    t2->load( ).
+    APPEND t39 TO t2->items.
+    t2->save( ).
     DATA(t41) = |INT4|.
-    t40->load( ).
-    APPEND t41 TO t40->items.
-    t40->save( ).
-    DATA(t42) = t2.
+    t2->load( ).
+    APPEND t41 TO t2->items.
+    t2->save( ).
     DATA(t43) = |INT8|.
-    t42->load( ).
-    APPEND t43 TO t42->items.
-    t42->save( ).
-    DATA(t44) = t2.
+    t2->load( ).
+    APPEND t43 TO t2->items.
+    t2->save( ).
     DATA(t45) = |LANG|.
-    t44->load( ).
-    APPEND t45 TO t44->items.
-    t44->save( ).
-    DATA(t46) = t2.
+    t2->load( ).
+    APPEND t45 TO t2->items.
+    t2->save( ).
     DATA(t47) = |NUMC|.
-    t46->load( ).
-    APPEND t47 TO t46->items.
-    t46->save( ).
-    DATA(t48) = t2.
+    t2->load( ).
+    APPEND t47 TO t2->items.
+    t2->save( ).
     DATA(t49) = |QUAN|.
-    t48->load( ).
-    APPEND t49 TO t48->items.
-    t48->save( ).
-    DATA(t50) = t2.
+    t2->load( ).
+    APPEND t49 TO t2->items.
+    t2->save( ).
     DATA(t51) = |RAW|.
-    t50->load( ).
-    APPEND t51 TO t50->items.
-    t50->save( ).
-    DATA(t52) = t2.
+    t2->load( ).
+    APPEND t51 TO t2->items.
+    t2->save( ).
     DATA(t53) = |RAWSTRING|.
-    t52->load( ).
-    APPEND t53 TO t52->items.
-    t52->save( ).
-    DATA(t54) = t2.
+    t2->load( ).
+    APPEND t53 TO t2->items.
+    t2->save( ).
     DATA(t55) = |SSTRING|.
-    t54->load( ).
-    APPEND t55 TO t54->items.
-    t54->save( ).
-    DATA(t56) = t2.
+    t2->load( ).
+    APPEND t55 TO t2->items.
+    t2->save( ).
     DATA(t57) = |STRING|.
-    t56->load( ).
-    APPEND t57 TO t56->items.
-    t56->save( ).
-    DATA(t58) = t2.
+    t2->load( ).
+    APPEND t57 TO t2->items.
+    t2->save( ).
     DATA(t59) = |TIMN|.
-    t58->load( ).
-    APPEND t59 TO t58->items.
-    t58->save( ).
-    DATA(t60) = t2.
+    t2->load( ).
+    APPEND t59 TO t2->items.
+    t2->save( ).
     DATA(t61) = |TIMS|.
-    t60->load( ).
-    APPEND t61 TO t60->items.
-    t60->save( ).
-    DATA(t62) = t2.
+    t2->load( ).
+    APPEND t61 TO t2->items.
+    t2->save( ).
     DATA(t63) = |UNIT|.
-    t62->load( ).
-    APPEND t63 TO t62->items.
-    t62->save( ).
-    DATA(t64) = t2.
+    t2->load( ).
+    APPEND t63 TO t2->items.
+    t2->save( ).
     DATA(t65) = |UTCLONG|.
-    t64->load( ).
-    APPEND t65 TO t64->items.
-    t64->save( ).
-    DATA(t66) = t2.
-    t1 = t66.
-    zcl_lnt_sql_typd_ltrl_mdl=>typed_literal_types = t1.
+    t2->load( ).
+    APPEND t65 TO t2->items.
+    t2->save( ).
+    zcl_lnt_sql_typd_ltrl_mdl=>typed_literal_types = t2.
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -28,11 +28,9 @@ ENDCLASS.
 CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_raw.
-    DATA(t2) = -1.
-    me->offset = t2.
+    me->offset = -1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `offset`.
-    DATA(t3) = t1.
-    me->raw = t3.
+    me->raw = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `raw`.
     DATA(t4) = CONV f( 0 ).
     me->row = t4.
@@ -61,8 +59,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
       DATA(t11) = CONV i( me->offset ).
       DATA t12 TYPE i.
       DATA(t13) = CONV string( me->raw ).
-      DATA(t14) = strlen( t13 ).
-      t12 = t14.
+      t12 = strlen( t13 ).
       t10 = xsdbool( t11 >= t12 ).
       IF t10 = abap_true.
         DATA t15 TYPE f.
@@ -80,12 +77,9 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
         ENDIF.
         DATA(t22) = CONV string( t19+t20(1) ).
         DATA t23 TYPE c LENGTH 1.
-        CLEAR t23.
         DATA(t24) = VALUE xstring( ).
         DATA t25 TYPE x LENGTH 1.
-        CLEAR t25.
         DATA t26 TYPE x LENGTH 1.
-        CLEAR t26.
         DATA(t27) = VALUE i( ).
         t23 = t22.
         t18 = cl_abap_conv_out_ce=>uccpi( t23 ).
@@ -123,8 +117,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t34) = CONV i( me->offset ).
     DATA t35 TYPE i.
     DATA(t36) = CONV string( me->raw ).
-    DATA(t37) = strlen( t36 ).
-    t35 = t37.
+    t35 = strlen( t36 ).
     t33 = xsdbool( t34 = t35 ).
     IF t33 = abap_true.
       DATA t38 TYPE f.
@@ -133,8 +126,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
       t38 = t39 - t40.
       me->col = t38.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `col`.
-      DATA(t41) = abap_false.
-      result = t41.
+      result = abap_false.
       RETURN.
     ENDIF.
     DATA t42 TYPE f.
@@ -149,8 +141,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     t45 = t46 + t47.
     me->offset = t45.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `offset`.
-    DATA(t48) = abap_true.
-    result = t48.
+    result = abap_true.
 
   ENDMETHOD.
 
@@ -174,9 +165,8 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     t2 = t3 - t4.
     t1 = t2.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = t1.
     DATA(t7) = 0.
-    t5 = xsdbool( t6 < t7 ).
+    t5 = xsdbool( t1 < t7 ).
     IF t5 = abap_true.
       DATA t8 TYPE f.
       DATA(t9) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
@@ -187,19 +177,15 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t10) = VALUE f( ).
     DATA(t11) = VALUE i( ).
     DATA(t12) = CONV string( me->raw ).
-    DATA(t13) = t1.
     DATA(t14) = strlen( t12 ).
-    IF t13 < 0 OR t13 >= t14.
+    IF t1 < 0 OR t1 >= t14.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
-    DATA(t15) = CONV string( t12+t13(1) ).
+    DATA(t15) = CONV string( t12+t1(1) ).
     DATA t16 TYPE c LENGTH 1.
-    CLEAR t16.
     DATA(t17) = VALUE xstring( ).
     DATA t18 TYPE x LENGTH 1.
-    CLEAR t18.
     DATA t19 TYPE x LENGTH 1.
-    CLEAR t19.
     DATA(t20) = VALUE i( ).
     t16 = t15.
     t11 = cl_abap_conv_out_ce=>uccpi( t16 ).
@@ -227,9 +213,8 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     t2 = t3 - t4.
     t1 = t2.
     DATA t5 TYPE abap_bool.
-    DATA(t6) = t1.
     DATA(t7) = 0.
-    t5 = xsdbool( t6 < t7 ).
+    t5 = xsdbool( t1 < t7 ).
     IF t5 = abap_true.
       DATA t8 TYPE f.
       DATA(t9) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
@@ -240,19 +225,15 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t10) = VALUE f( ).
     DATA(t11) = VALUE i( ).
     DATA(t12) = CONV string( me->raw ).
-    DATA(t13) = t1.
     DATA(t14) = strlen( t12 ).
-    IF t13 < 0 OR t13 >= t14.
+    IF t1 < 0 OR t1 >= t14.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
-    DATA(t15) = CONV string( t12+t13(1) ).
+    DATA(t15) = CONV string( t12+t1(1) ).
     DATA t16 TYPE c LENGTH 1.
-    CLEAR t16.
     DATA(t17) = VALUE xstring( ).
     DATA t18 TYPE x LENGTH 1.
-    CLEAR t18.
     DATA t19 TYPE x LENGTH 1.
-    CLEAR t19.
     DATA(t20) = VALUE i( ).
     t16 = t15.
     t11 = cl_abap_conv_out_ce=>uccpi( t16 ).
@@ -288,8 +269,7 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
       DATA(t7) = CONV i( me->offset ).
       DATA t8 TYPE i.
       DATA(t9) = CONV string( me->raw ).
-      DATA(t10) = strlen( t9 ).
-      t8 = t10.
+      t8 = strlen( t9 ).
       t6 = xsdbool( t7 >= t8 ).
       IF t6 = abap_true.
         DATA t11 TYPE f.
@@ -309,12 +289,9 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     ENDIF.
     DATA(t18) = CONV string( t15+t16(1) ).
     DATA t19 TYPE c LENGTH 1.
-    CLEAR t19.
     DATA(t20) = VALUE xstring( ).
     DATA t21 TYPE x LENGTH 1.
-    CLEAR t21.
     DATA t22 TYPE x LENGTH 1.
-    CLEAR t22.
     DATA(t23) = VALUE i( ).
     t19 = t18.
     t14 = cl_abap_conv_out_ce=>uccpi( t19 ).
@@ -344,14 +321,10 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     t2 = t3 + t5.
     t1 = t2.
     DATA t6 TYPE abap_bool.
-    DATA(t7) = t1.
     DATA t8 TYPE int8.
-    DATA t9 TYPE i.
     DATA(t10) = CONV string( me->raw ).
-    DATA(t11) = strlen( t10 ).
-    t9 = t11.
-    t8 = t9.
-    t6 = xsdbool( t7 >= t8 ).
+    t8 = strlen( t10 ).
+    t6 = xsdbool( t1 >= t8 ).
     IF t6 = abap_true.
       DATA t12 TYPE f.
       DATA(t13) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
@@ -363,20 +336,16 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t15) = VALUE i( ).
     DATA(t16) = CONV string( me->raw ).
     DATA t17 TYPE i.
-    DATA(t18) = t1.
-    t17 = t18.
+    t17 = t1.
     DATA(t19) = strlen( t16 ).
     IF t17 < 0 OR t17 >= t19.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     DATA(t20) = CONV string( t16+t17(1) ).
     DATA t21 TYPE c LENGTH 1.
-    CLEAR t21.
     DATA(t22) = VALUE xstring( ).
     DATA t23 TYPE x LENGTH 1.
-    CLEAR t23.
     DATA t24 TYPE x LENGTH 1.
-    CLEAR t24.
     DATA(t25) = VALUE i( ).
     t21 = t20.
     t15 = cl_abap_conv_out_ce=>uccpi( t21 ).
@@ -406,14 +375,10 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     t2 = t3 + t5.
     t1 = t2.
     DATA t6 TYPE abap_bool.
-    DATA(t7) = t1.
     DATA t8 TYPE int8.
-    DATA t9 TYPE i.
     DATA(t10) = CONV string( me->raw ).
-    DATA(t11) = strlen( t10 ).
-    t9 = t11.
-    t8 = t9.
-    t6 = xsdbool( t7 >= t8 ).
+    t8 = strlen( t10 ).
+    t6 = xsdbool( t1 >= t8 ).
     IF t6 = abap_true.
       DATA t12 TYPE f.
       DATA(t13) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
@@ -425,20 +390,16 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t15) = VALUE i( ).
     DATA(t16) = CONV string( me->raw ).
     DATA t17 TYPE i.
-    DATA(t18) = t1.
-    t17 = t18.
+    t17 = t1.
     DATA(t19) = strlen( t16 ).
     IF t17 < 0 OR t17 >= t19.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
     DATA(t20) = CONV string( t16+t17(1) ).
     DATA t21 TYPE c LENGTH 1.
-    CLEAR t21.
     DATA(t22) = VALUE xstring( ).
     DATA t23 TYPE x LENGTH 1.
-    CLEAR t23.
     DATA t24 TYPE x LENGTH 1.
-    CLEAR t24.
     DATA(t25) = VALUE i( ).
     t21 = t20.
     t15 = cl_abap_conv_out_ce=>uccpi( t21 ).
@@ -464,20 +425,15 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t1) = i_o.
     DATA t2 TYPE abap_bool.
     DATA t3 TYPE abap_bool.
-    DATA(t4) = t1.
     DATA(t5) = CONV f( 0 ).
-    t3 = xsdbool( t4 < t5 ).
+    t3 = xsdbool( t1 < t5 ).
     t2 = t3.
     IF t3 = abap_false.
       DATA t6 TYPE abap_bool.
-      DATA(t7) = t1.
       DATA t8 TYPE f.
-      DATA t9 TYPE i.
       DATA(t10) = CONV string( me->raw ).
-      DATA(t11) = strlen( t10 ).
-      t9 = t11.
-      t8 = t9.
-      t6 = xsdbool( t7 >= t8 ).
+      t8 = strlen( t10 ).
+      t6 = xsdbool( t1 >= t8 ).
       t2 = t6.
     ENDIF.
     IF t2 = abap_true.
@@ -491,13 +447,12 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     DATA(t15) = VALUE i( ).
     DATA(t16) = CONV string( me->raw ).
     DATA(t17) = VALUE i( ).
-    DATA(t18) = t1.
-    IF t18 > range_i32_upper.
+    IF t1 > range_i32_upper.
       t17 = range_i32_upper.
-    ELSEIF t18 < range_i32_lower.
+    ELSEIF t1 < range_i32_lower.
       t17 = range_i32_lower.
     ELSE.
-      t17 = trunc( t18 ).
+      t17 = trunc( t1 ).
     ENDIF.
     DATA(t19) = strlen( t16 ).
     IF t17 < 0 OR t17 >= t19.
@@ -505,12 +460,9 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
     ENDIF.
     DATA(t20) = CONV string( t16+t17(1) ).
     DATA t21 TYPE c LENGTH 1.
-    CLEAR t21.
     DATA(t22) = VALUE xstring( ).
     DATA t23 TYPE x LENGTH 1.
-    CLEAR t23.
     DATA t24 TYPE x LENGTH 1.
-    CLEAR t24.
     DATA(t25) = VALUE i( ).
     t21 = t20.
     t15 = cl_abap_conv_out_ce=>uccpi( t21 ).

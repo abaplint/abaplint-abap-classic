@@ -17,8 +17,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     DATA t4 TYPE abap_bool.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t7) = t3.
-    t6 = t7->zlnt_view_read_sr_7cd1e1e70d45( ).
+    t6 = t3->zlnt_view_read_sr_7cd1e1e70d45( ).
     t5 = xsdbool( t6 IS BOUND ).
     t4 = t5.
     IF t5 = abap_true.
@@ -26,13 +25,11 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       DATA(t9) = VALUE i( ).
       DATA t10 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t11 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t12) = t3.
-      t11 = t12->zlnt_view_read_sr_7cd1e1e70d45( ).
+      t11 = t3->zlnt_view_read_sr_7cd1e1e70d45( ).
       t10 = t11.
       DATA t13 TYPE string.
       DATA t14 TYPE string.
-      DATA(t15) = t1.
-      t14 = t15->value.
+      t14 = t1->value.
       DATA(t16) = strlen( t14 ).
       t13 = t14.
       IF t13 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -46,27 +43,19 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       t4 = t8.
     ENDIF.
     IF t4 = abap_true.
-      DATA(t18) = abap_false.
-      result = t18.
+      result = abap_false.
       RETURN.
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t19.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t22) = t3.
-    t21 = t22->zlnt_view_read_sr_92fa7b522e13( ).
+    t21 = t3->zlnt_view_read_sr_92fa7b522e13( ).
     t20 = t21.
     DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t23.
     DATA t24 TYPE abap_bool.
-    DATA(t25) = t20.
-    t24 = xsdbool( t25 IS BOUND ).
+    t24 = xsdbool( t20 IS BOUND ).
     IF t24 = abap_true.
-      DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA(t27) = t20.
-      t26 = t27.
-      t23 = t26.
+      t23 = t20.
     ELSE.
       DATA t28 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t28.
@@ -90,35 +79,29 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       DATA(t31) = VALUE abap_bool( ).
       DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
       CLEAR t32.
-      DATA(t33) = t29.
       DATA(t34) = |i|.
-      CREATE OBJECT t32 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t33 flags = t34.
+      CREATE OBJECT t32 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t29 flags = t34.
       DATA(t35) = VALUE string( ).
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t37) = t1.
-      t36 = t37.
+      t36 = t1.
       DATA(t38) = VALUE string( ).
       DATA(t39) = VALUE abap_bool( ).
-      DATA(t40) = t36.
-      IF t40 IS INITIAL.
+      IF t36 IS INITIAL.
         t39 = abap_true.
-      ELSEIF t40->has = abap_false.
+      ELSEIF t36->has = abap_false.
         t39 = abap_true.
       ENDIF.
       IF t39 = abap_true.
-        DATA(t41) = |undefined|.
-        t38 = t41.
+        t38 = |undefined|.
       ELSE.
         DATA t42 TYPE string.
-        DATA(t43) = t36.
-        t42 = t43->value.
+        t42 = t36->value.
         t38 = t42.
       ENDIF.
       t35 = t38.
       t31 = t32->test( p0 = t35 ).
       IF t31 = abap_true.
-        DATA(t44) = abap_false.
-        result = t44.
+        result = abap_false.
         RETURN.
       ENDIF.
     ENDDO.
@@ -127,8 +110,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     DATA(t47) = VALUE abap_bool( ).
     DATA(t48) = VALUE abap_bool( ).
     DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t50) = t3.
-    t49 = t50->zlnt_view_read_sr_ef452f77fd06( ).
+    t49 = t3->zlnt_view_read_sr_ef452f77fd06( ).
     IF t49 IS BOUND.
       IF t49->has = abap_true.
         t48 = xsdbool( strlen( t49->value ) > 0 ).
@@ -140,8 +122,7 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       DATA t51 TYPE abap_bool.
       DATA t52 TYPE string.
       DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t54) = t3.
-      t53 = t54->zlnt_view_read_sr_ef452f77fd06( ).
+      t53 = t3->zlnt_view_read_sr_ef452f77fd06( ).
       t52 = t53->value.
       DATA(t55) = |required|.
       t51 = xsdbool( t52 = t55 ).
@@ -150,62 +131,50 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
     IF t46 = abap_true.
       DATA(t56) = VALUE abap_bool( ).
       DATA(t57) = VALUE abap_bool( ).
-      DATA(t58) = t2.
       DATA(t59) = VALUE string( ).
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t61) = t1.
-      t60 = t61.
+      t60 = t1.
       DATA(t62) = VALUE string( ).
       DATA(t63) = VALUE abap_bool( ).
-      DATA(t64) = t60.
-      IF t64 IS INITIAL.
+      IF t60 IS INITIAL.
         t63 = abap_true.
-      ELSEIF t64->has = abap_false.
+      ELSEIF t60->has = abap_false.
         t63 = abap_true.
       ENDIF.
       IF t63 = abap_true.
-        DATA(t65) = |undefined|.
-        t62 = t65.
+        t62 = |undefined|.
       ELSE.
         DATA t66 TYPE string.
-        DATA(t67) = t60.
-        t66 = t67->value.
+        t66 = t60->value.
         t62 = t66.
       ENDIF.
       t59 = t62.
-      t57 = t58->test( p0 = t59 ).
-      DATA(t68) = abap_false.
-      t56 = xsdbool( t57 = t68 ).
+      t57 = t2->test( p0 = t59 ).
+      t56 = xsdbool( t57 = abap_false ).
       t45 = t56.
     ELSE.
       DATA(t69) = VALUE abap_bool( ).
       DATA(t70) = VALUE abap_bool( ).
-      DATA(t71) = t2.
       DATA(t72) = VALUE string( ).
       DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t74) = t1.
-      t73 = t74.
+      t73 = t1.
       DATA(t75) = VALUE string( ).
       DATA(t76) = VALUE abap_bool( ).
-      DATA(t77) = t73.
-      IF t77 IS INITIAL.
+      IF t73 IS INITIAL.
         t76 = abap_true.
-      ELSEIF t77->has = abap_false.
+      ELSEIF t73->has = abap_false.
         t76 = abap_true.
       ENDIF.
       IF t76 = abap_true.
-        DATA(t78) = |undefined|.
-        t75 = t78.
+        t75 = |undefined|.
       ELSE.
         DATA t79 TYPE string.
-        DATA(t80) = t73.
-        t79 = t80->value.
+        t79 = t73->value.
         t75 = t79.
       ENDIF.
       t72 = t75.
-      t70 = t71->test( p0 = t72 ).
-      DATA(t81) = abap_true.
-      t69 = xsdbool( t70 = t81 ).
+      t70 = t2->test( p0 = t72 ).
+      t69 = xsdbool( t70 = abap_true ).
       t45 = t69.
     ENDIF.
     result = t45.

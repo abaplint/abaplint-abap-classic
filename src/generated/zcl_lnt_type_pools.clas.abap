@@ -14,11 +14,8 @@ ENDCLASS.
 CLASS zcl_lnt_type_pools IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t3.
     DATA(t4) = `^\w+$`.
     DATA(t5) = |^[A-Za-z0-9_]+$|.
     DATA(t6) = ||.
@@ -27,39 +24,23 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
     t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
     t1 = t2.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
-    DATA t8 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t8.
-    DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     DATA(t11) = |TYPE-POOLS|.
-    CLEAR t10.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t10->sval = t11.
-    t9 = t10.
-    DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
-    DATA(t14) = t1.
-    CLEAR t13.
-    IF t14 IS BOUND.
+    IF t1 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t15.
       DATA t16 TYPE REF TO object.
-      CLEAR t16.
-      CLEAR t15.
-      t16 = t14.
+      t16 = t1.
       TRY.
           t13 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
         TRY.
-            t15 ?= t14.
+            t15 ?= t1.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t15 IS BOUND.
@@ -68,46 +49,29 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
         IF t13 IS NOT BOUND.
           CREATE OBJECT t13.
           t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t13->oval = t14.
+          t13->oval = t1.
         ENDIF.
       ENDIF.
     ENDIF.
-    t12 = t13.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t18.
     CREATE OBJECT t18.
-    t17 = t18.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t19.
-    DATA(t20) = t9.
-    DATA(t21) = t12.
-    DATA(t22) = t17.
-    t19 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t21 i_rest = t22 ).
-    t8 = t19.
-    t7 = t8.
+    t19 = zcl_lnt_st_combi_module=>seq( i_first = t10 i_second = t13 i_rest = t18 ).
+    t7 = t19.
     DATA t23 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t23.
     DATA(t24) = |Cloud|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
-    DATA(t26) = t7.
-    CLEAR t25.
-    IF t26 IS BOUND.
+    IF t7 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t27.
       DATA t28 TYPE REF TO object.
-      CLEAR t28.
-      CLEAR t27.
-      t28 = t26.
+      t28 = t7.
       TRY.
           t25 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t25 IS NOT BOUND.
         TRY.
-            t27 ?= t26.
+            t27 ?= t7.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t27 IS BOUND.
@@ -116,7 +80,7 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
         IF t25 IS NOT BOUND.
           CREATE OBJECT t25.
           t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t25->oval = t26.
+          t25->oval = t7.
         ENDIF.
       ENDIF.
     ENDIF.

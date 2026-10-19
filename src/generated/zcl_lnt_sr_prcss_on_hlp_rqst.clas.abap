@@ -13,34 +13,24 @@ CLASS zcl_lnt_sr_prcss_on_hlp_rqst DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_prcss_on_hlp_rqst IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
     DATA t3 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d495_455bba123ac8.
     t3 = zcl_lnt_sr_combi_module=>sta( i_s = t4 ).
     t2 = zcl_lnt_sr_combi_module=>star( i_s = t3 ).
-    t1 = t2.
-    DATA t5 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t6 TYPE REF TO zif_lnt_structure_runnable.
     DATA t7 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d579_eaac00367bce.
     t7 = zcl_lnt_sr_combi_module=>sta( i_s = t8 ).
-    t6 = t7.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
     t9 = t10.
-    DATA(t11) = t9.
-    DATA(t12) = t1.
-    t11->load( ).
-    APPEND t12 TO t11->items.
-    t11->save( ).
+    t9->load( ).
+    APPEND t2 TO t9->items.
+    t9->save( ).
     DATA t13 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t14) = t6.
-    DATA(t15) = t9.
-    t13 = zcl_lnt_sr_combi_module=>seq( i_first = t14 i_rest = t15 ).
-    t5 = t13.
-    result = t5.
+    t13 = zcl_lnt_sr_combi_module=>seq( i_first = t7 i_rest = t9 ).
+    result = t13.
 
   ENDMETHOD.
 

@@ -16,25 +16,19 @@ CLASS zcl_lnt_tuple_cc45ee1d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_cc45ee1d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_f0.
     DATA(t2) = i_f1.
     DATA(t3) = i_f2.
     DATA(t4) = i_f3.
     DATA(t5) = i_f4.
-    DATA(t6) = t1.
-    me->f0 = t6.
+    me->f0 = i_f0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f0`.
-    DATA(t7) = t2.
-    me->f1 = t7.
+    me->f1 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f1`.
-    DATA(t8) = t3.
-    me->f2 = t8.
+    me->f2 = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f2`.
-    DATA(t9) = t4.
-    me->f3 = t9.
+    me->f3 = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f3`.
-    DATA(t10) = t5.
-    me->f4 = t10.
+    me->f4 = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f4`.
   ENDMETHOD.
 

@@ -28,14 +28,12 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     CREATE OBJECT t2.
     me->words = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `words`.
-    DATA(t3) = t1.
-    me->stri = t3.
+    me->stri = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stri`.
     DATA t4 TYPE string.
     DATA t5 TYPE string.
     DATA(t6) = CONV string( me->stri ).
     DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t7.
     DATA(t8) = |-|.
     DATA(t9) = |g|.
     CREATE OBJECT t7 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t8 flags = t9 checked = abap_true.
@@ -44,11 +42,9 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     t5 = t7->replace( p0 = t6 p1 = t10 ).
     t4 = t5.
     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA(t14) = t4.
     DATA(t15) = | |.
-    DATA(t16) = strlen( t14 ).
+    DATA(t16) = strlen( t4 ).
     DATA t17 TYPE i.
     DATA(t18) = VALUE i( ).
     DATA(t19) = VALUE i( ).
@@ -59,13 +55,13 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
     t17 = 0.
     IF t20 = 0.
       WHILE t17 < t16.
-        t21 = t14+t17(1).
+        t21 = t4+t17(1).
         APPEND t21 TO t13->items.
         t17 = t17 + 1.
       ENDWHILE.
     ELSE.
       WHILE t17 <= t16.
-        FIND FIRST OCCURRENCE OF t15 IN SECTION OFFSET t17 OF t14 MATCH OFFSET t18.
+        FIND FIRST OCCURRENCE OF t15 IN SECTION OFFSET t17 OF t4 MATCH OFFSET t18.
         IF sy-subrc = 0.
           t19 = t18 - t17.
         ELSE.
@@ -74,7 +70,7 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
         ENDIF.
         CLEAR t21.
         IF t19 > 0.
-          t21 = t14+t17(t19).
+          t21 = t4+t17(t19).
         ENDIF.
         APPEND t21 TO t13->items.
         IF t18 < 0.
@@ -84,25 +80,23 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     t12 = t13.
-    DATA(t22) = t12.
     DATA(t23) = VALUE string( ).
-    t22->dense( ).
+    t12->dense( ).
     DATA(t24) = VALUE i( ).
     DO.
-      t22->load( ).
-      IF t24 >= lines( t22->items ).
+      t12->load( ).
+      IF t24 >= lines( t12->items ).
         EXIT.
       ENDIF.
       CLEAR t23.
-      READ TABLE t22->items INDEX t24 + 1 INTO t23.
-      IF t22->has( t24 ) = abap_false.
+      READ TABLE t12->items INDEX t24 + 1 INTO t23.
+      IF t12->has( t24 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t24 = t24 + 1.
       DATA(t25) = me->words.
       DATA t26 TYPE REF TO zcl_lnt_word.
-      DATA(t27) = t23.
-      t26 = NEW zcl_lnt_word( i_s = t27 ).
+      t26 = NEW zcl_lnt_word( i_s = t23 ).
       t25->load( ).
       APPEND t26 TO t25->items.
       t25->save( ).
@@ -115,19 +109,15 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
     DATA(t5) = CONV string( me->stri ).
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
-    t1 = t6.
-    result = t1.
+    t2->load( ).
+    APPEND t5 TO t2->items.
+    t2->save( ).
+    result = t2.
 
   ENDMETHOD.
 
@@ -139,11 +129,9 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = me->seq.
-    DATA(t4) = t1.
-    t2 = t3->run( i_r_f634 = t4 ).
+    DATA(t4) = i_r_f634.
+    t2 = me->seq->run( i_r_f634 = t4 ).
     result = t2.
 
   ENDMETHOD.
@@ -178,18 +166,12 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
 
   METHOD first.
     DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t2.
     DATA(t3) = me->words.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     t3->load( ).
-    CLEAR t4.
     READ TABLE t3->items INDEX 1 INTO t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
-    CLEAR t2.
     IF t4 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
       t5 ?= t4.
       DATA t6 TYPE REF TO object.
@@ -205,27 +187,16 @@ CLASS zcl_lnt_word_sequence IMPLEMENTATION.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t6.
     t5 = t6.
-    DATA(t7) = t5.
-    DATA(t8) = t1.
-    t7->load( ).
-    APPEND t8 TO t7->items.
-    t7->save( ).
-    DATA(t9) = t5.
-    t4 = t9.
-    t3 = t4.
+    t5->load( ).
+    APPEND t1 TO t5->items.
+    t5->save( ).
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t11) = me->seq.
-    DATA(t12) = t3.
-    t10 = t11->run( i_r_f634 = t12 ).
-    t2 = t10.
-    result = t2.
+    t10 = me->seq->run( i_r_f634 = t5 ).
+    result = t10.
 
   ENDMETHOD.
 

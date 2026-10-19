@@ -18,33 +18,26 @@ CLASS zcl_lnt_imethod DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_imethod IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_object_name.
     DATA(t2) = i_method.
-    DATA(t3) = t1.
-    me->object_name = t3.
+    me->object_name = i_object_name.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `objectName`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `objectName` p1 = t4 ).
     ENDIF.
     DATA(t5) = |objectName|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->method = t7.
+    me->method = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `method`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `method` p1 = t8 ).
     ENDIF.
     DATA(t9) = |method|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
     ENDIF.
@@ -138,10 +131,7 @@ CLASS zcl_lnt_imethod IMPLEMENTATION.
         CLEAR result.
         IF me->method IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->method.
           TRY.
               result ?= t2.
@@ -196,7 +186,6 @@ CLASS zcl_lnt_imethod IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t2 ).
     ENDIF.

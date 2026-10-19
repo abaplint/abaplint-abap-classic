@@ -15,13 +15,10 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-    t3 = t4->find_direct_expressions( i_type_9913 = t5 ).
+    t3 = t1->find_direct_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t6.
     DATA t7 TYPE REF TO object.
-    CLEAR t7.
     DATA(t8) = VALUE i( ).
     DO.
       t3->load( ).
@@ -46,16 +43,7 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
       CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t12.
-      DATA(t13) = abap_true.
-      IF t13 = abap_true.
-        DATA(t14) = t6.
-        t12 = t14.
-      ELSE.
-        DATA t15 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t15.
-        t12 = t15.
-      ENDIF.
-      DATA(t16) = t2.
+      t12 = t6.
       DATA t17 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t17.
       DATA t18 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -64,16 +52,13 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
       CLEAR t19.
       DATA t20 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t20.
-      t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t16 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
+      t11 = zcl_lnt_sy_source=>run_syntax( i_node = t12 i_input_967e = t2 i_target_type = t17 i_write_reference = t18 i_allow_generic_deference = t19 i_read_reference = t20 ).
     ENDDO.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t22) = t1.
     DATA(t23) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t21 = t22->find_direct_expressions( i_type_9913 = t23 ).
+    t21 = t1->find_direct_expressions( i_type_9913 = t23 ).
     DATA t24 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t24.
     DATA t25 TYPE REF TO object.
-    CLEAR t25.
     DATA(t26) = VALUE i( ).
     DO.
       t21->load( ).
@@ -96,57 +81,36 @@ CLASS zcl_lnt_sy_set_bit IMPLEMENTATION.
       ENDIF.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type.
       DATA t30 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t31) = t24.
-      DATA(t32) = t2.
-      t30 = zcl_lnt_sy_target=>run_syntax( i_node = t31 i_input_967e = t32 ).
+      t30 = zcl_lnt_sy_target=>run_syntax( i_node = t24 i_input_967e = t2 ).
       t29 = t30.
       DATA t33 TYPE abap_bool.
       DATA t34 TYPE abap_bool.
-      DATA(t35) = t29.
-      t34 = xsdbool( t35 IS BOUND ).
+      t34 = xsdbool( t29 IS BOUND ).
       t33 = t34.
       IF t34 = abap_true.
         DATA(t36) = VALUE abap_bool( ).
         DATA(t37) = VALUE abap_bool( ).
         DATA t38 TYPE REF TO zcl_lnt_type_utils.
         DATA t39 TYPE REF TO zcl_lnt_current_scope.
-        DATA(t40) = t2.
-        t39 = t40->scope.
+        t39 = t2->scope.
         t38 = NEW zcl_lnt_type_utils( i_scope = t39 ).
         DATA t41 TYPE REF TO zcl_lnt_abstract_type.
         CLEAR t41.
-        DATA(t42) = abap_true.
-        IF t42 = abap_true.
-          DATA t43 TYPE REF TO zcl_lnt_abstract_type.
-          DATA(t44) = t29.
-          t43 = t44.
-          t41 = t43.
-        ELSE.
-          DATA t45 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t45.
-          t41 = t45.
-        ENDIF.
+        t41 = t29.
         t37 = t38->is_hex_like( i_type_9913 = t41 ).
-        DATA(t46) = abap_false.
-        t36 = xsdbool( t37 = t46 ).
+        t36 = xsdbool( t37 = abap_false ).
         t33 = t36.
       ENDIF.
       IF t33 = abap_true.
-        DATA t47 TYPE string.
         DATA(t48) = |Input must be byte-like|.
-        t47 = t48.
         DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t50) = t2.
-        t49 = t50->issues.
+        t49 = t2->issues.
         DATA t51 TYPE REF TO zcl_lnt_issue.
-        DATA(t52) = t2.
         DATA t53 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t54) = t24.
-        t53 = t54->get_first_token( ).
-        DATA(t55) = t47.
+        t53 = t24->get_first_token( ).
         DATA t56 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t56.
-        t51 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t52 i_token = t53 i_message_26cb = t55 i_fix = t56 ).
+        t51 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t53 i_message_26cb = t48 i_fix = t56 ).
         t49->load( ).
         APPEND t51 TO t49->items.
         t49->save( ).

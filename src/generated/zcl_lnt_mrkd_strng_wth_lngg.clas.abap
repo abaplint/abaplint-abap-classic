@@ -18,33 +18,26 @@ CLASS zcl_lnt_mrkd_strng_wth_lngg DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_mrkd_strng_wth_lngg IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_language.
     DATA(t2) = i_value.
-    DATA(t3) = t1.
-    me->language = t3.
+    me->language = i_language.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `language`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `language` p1 = t4 ).
     ENDIF.
     DATA(t5) = |language|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->value = t7.
+    me->value = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `value`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t8 ).
     ENDIF.
     DATA(t9) = |value|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
     ENDIF.
@@ -171,7 +164,6 @@ CLASS zcl_lnt_mrkd_strng_wth_lngg IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

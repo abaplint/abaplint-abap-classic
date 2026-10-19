@@ -16,7 +16,6 @@ CLASS zcl_lnt_text_element_key IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
     DATA(t3) = `^\w{3}$`.
     DATA(t4) = |^[A-Za-z0-9_]\{3\}$|.
     DATA(t5) = ||.

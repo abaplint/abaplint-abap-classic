@@ -27,12 +27,10 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_pseudo.
     DATA(t2) = i_pragma.
-    DATA(t3) = t1.
+    DATA(t3) = i_pseudo.
     me->zlnt_view_write_s_70453b8b3455( p0 = t3 ).
-    DATA(t4) = t2.
-    me->zlnt_view_write_s_b9ede96f470f( p0 = t4 ).
+    me->zlnt_view_write_s_b9ede96f470f( p0 = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -65,8 +63,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
   METHOD zlnt_view_write_s_70453b8b3455.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -74,7 +70,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
     ELSE.
       me->pseudo = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `pseudo` p1 = t2 ).
       ENDIF.
@@ -94,8 +89,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
   METHOD zlnt_view_write_s_b9ede96f470f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -103,7 +96,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
     ELSE.
       me->pragma = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `pragma` p1 = t2 ).
       ENDIF.
@@ -158,7 +150,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -250,7 +241,6 @@ CLASS zcl_lnt_shape_4696a092 IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

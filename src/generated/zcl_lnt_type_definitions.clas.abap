@@ -17,30 +17,20 @@ ENDCLASS.
 CLASS zcl_lnt_type_definitions IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_list.
-    DATA t2 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
-    DATA t3 TYPE REF TO zlnt_runtime_map__d1f17afcc3e9.
-    DATA(t4) = NEW zlnt_runtime_map__d1f17afcc3e9( ).
-    t3 = t4.
-    DATA(t5) = t3.
-    t2 = t5.
-    me->map = t2.
+    me->map = NEW zlnt_runtime_map__d1f17afcc3e9( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `map`.
-    DATA(t6) = t1.
-    me->list = t6.
+    me->list = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `list`.
-    DATA(t7) = t1.
     DATA t8 TYPE REF TO zcl_lnt_type_definitions_entry.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
-      t7->load( ).
-      IF t10 >= lines( t7->items ).
+      t1->load( ).
+      IF t10 >= lines( t1->items ).
         EXIT.
       ENDIF.
       CLEAR t9.
-      READ TABLE t7->items INDEX t10 + 1 INTO t9.
+      READ TABLE t1->items INDEX t10 + 1 INTO t9.
       t10 = t10 + 1.
       DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t11.
@@ -60,22 +50,15 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       DATA(t16) = VALUE string( ).
       DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t18 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA(t19) = t8.
-      t18 = t19->type_cba0.
+      t18 = t8->type_cba0.
       t17 = t18.
       DATA(t20) = VALUE string( ).
       DATA t21 TYPE string.
-      DATA t22 TYPE string.
-      DATA t23 TYPE REF TO zcl_lnt_abstract_token.
       DATA t24 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t25) = t17.
-      t24 = t25->token.
-      t23 = t24.
+      t24 = t17->token.
       DATA t26 TYPE string.
-      DATA(t27) = t23.
-      t26 = t27->str.
-      t22 = t26.
-      t21 = t22.
+      t26 = t24->str.
+      t21 = t26.
       DATA(t28) = VALUE abap_bool( ).
       DATA(t29) = VALUE string( ).
       DATA(t30) = t21.
@@ -101,16 +84,12 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       IF t28 = abap_true.
         DATA(t35) = VALUE string( ).
         DATA t36 TYPE string.
-        DATA(t37) = t21.
-        t36 = t37.
+        t36 = t21.
         DATA(t38) = VALUE string( ).
-        DATA(t39) = t36.
         DATA(t40) = 1.
         DATA t41 TYPE i.
-        DATA(t42) = t36.
-        DATA(t43) = strlen( t42 ).
-        t41 = t43.
-        DATA(t44) = strlen( t39 ).
+        t41 = strlen( t36 ).
+        DATA(t44) = strlen( t36 ).
         IF t40 < 0.
           t40 = t40 + t44.
           IF t40 < 0.
@@ -123,13 +102,12 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
           IF t41 > t44 - t40.
             t41 = t44 - t40.
           ENDIF.
-          t38 = t39+t40(t41).
+          t38 = t36+t40(t41).
         ENDIF.
         t35 = t38.
         t21 = t35.
       ENDIF.
-      DATA(t45) = t21.
-      t20 = t45.
+      t20 = t21.
       t16 = t20.
       DATA(t46) = strlen( t16 ).
       t15 = t16.
@@ -138,30 +116,23 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
       ELSE.
         t15 = zlnt_runtime_uppe_91169605024d=>full( t15 ).
       ENDIF.
-      DATA(t47) = t8.
-      t13 = t14->set( p0 = t15 p1 = t47 ).
+      t13 = t14->set( p0 = t15 p1 = t8 ).
     ENDDO.
   ENDMETHOD.
 
   METHOD get_all.
-    DATA(t1) = me->list.
-    result = t1.
+    result = me->list.
 
   ENDMETHOD.
 
   METHOD get_by_name.
     DATA(t1) = i_name.
-    DATA t2 TYPE REF TO zcl_lnt_typed_identifier.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_type_definitions_entry.
-    CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_type_definitions_entry.
-    CLEAR t4.
     DATA(t5) = me->map.
     DATA t6 TYPE string.
-    DATA(t7) = t1.
-    DATA(t8) = strlen( t7 ).
-    t6 = t7.
+    DATA(t8) = strlen( t1 ).
+    t6 = t1.
     IF t6 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t6 TO UPPER CASE.
     ELSE.
@@ -170,26 +141,16 @@ CLASS zcl_lnt_type_definitions IMPLEMENTATION.
     t4 = t5->get( p0 = t6 ).
     t3 = t4.
     DATA t9 TYPE REF TO zcl_lnt_typed_identifier.
-    CLEAR t9.
-    DATA(t10) = VALUE abap_bool( ).
-    DATA(t11) = t3.
-    IF t11 IS INITIAL.
-      t10 = abap_true.
-    ENDIF.
+    DATA(t10) = xsdbool( t3 IS INITIAL ).
     IF t10 = abap_true.
-      DATA t12 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t12.
-      t9 = t12.
     ELSE.
       DATA t13 TYPE REF TO zcl_lnt_typed_identifier.
       DATA t14 TYPE REF TO zcl_lnt_type_definitions_entry.
-      DATA(t15) = t3.
-      t14 = t15.
+      t14 = t3.
       t13 = t14->type_cba0.
       t9 = t13.
     ENDIF.
-    t2 = t9.
-    result = t2.
+    result = t9.
 
   ENDMETHOD.
 

@@ -16,7 +16,6 @@ CLASS zcl_lnt_sql_field_name IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
     DATA(t3) = |^(?!(?:FROM\|INTO\|HAVING\|FOR\|DISTINCT\|UNION\|INTERSECT\|EXCEPT\||.
     t3 = t3 && |NOT\|WHEN\|CASE\|AS\|APPENDING\|WHERE\|CONNECTION\|EXISTS\|INSERT\|MO|.
     t3 = t3 && `DIFY)$)(\/\w+\/)?(\*?\w+~(\/\w+\/)?(\w+|\*)|\w+)$`.

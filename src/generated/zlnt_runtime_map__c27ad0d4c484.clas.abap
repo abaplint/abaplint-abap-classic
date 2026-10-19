@@ -76,10 +76,7 @@ CLASS zlnt_runtime_map__c27ad0d4c484 IMPLEMENTATION.
       CLEAR result.
       IF row-v IS BOUND.
         DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t1.
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
-        CLEAR t1.
         t2 = row-v.
         TRY.
             result ?= t2.
@@ -108,9 +105,7 @@ CLASS zlnt_runtime_map__c27ad0d4c484 IMPLEMENTATION.
       RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_record_map.go: put: undefined cannot inhabit required map value`.
     ENDIF.
     DATA t1 TYPE REF TO zcl_lnt_ibuiltin_method.
-    CLEAR t1.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     t2 = p1->as_ref( ).
     t1 ?= t2.
     DATA(t3) = CAST zlnt_runtime_map__c27ad0d4c484( set( p0 = p0 p1 = t1 ) ).

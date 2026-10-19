@@ -16,7 +16,6 @@ CLASS zcl_lnt_message_number IMPLEMENTATION.
   METHOD get_runnable.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
     DATA(t3) = `^\d\d\d$`.
     DATA(t4) = |^[0-9][0-9][0-9]$|.
     DATA(t5) = |i|.

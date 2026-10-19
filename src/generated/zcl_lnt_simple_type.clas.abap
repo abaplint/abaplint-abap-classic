@@ -23,7 +23,6 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
     DATA t1 TYPE REF TO zcl_lnt_abstract_type_data.
-    CLEAR t1.
     super->constructor( i_input_967e = t1 ).
   ENDMETHOD.
 
@@ -32,7 +31,6 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
     DATA t1 TYPE REF TO zcl_lnt_simple_type.
-    CLEAR t1.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
@@ -42,32 +40,27 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD t_t_i_s_a_ty_bs_sm_ty_ts_sm_ty.
-    DATA(t1) = |```simple```|.
-    result = t1.
+    result = |```simple```|.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |simple|.
-    result = t1.
+    result = |simple|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_true.
-    result = t1.
+    result = abap_true.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_SIMPLE|.
-    result = t1.
+    result = |abap.TODO_SIMPLE|.
 
   ENDMETHOD.
 
@@ -86,7 +79,6 @@ CLASS zcl_lnt_simple_type IMPLEMENTATION.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.
     DATA t1 TYPE REF TO zcl_lnt_simple_type.
-    CLEAR t1.
     IF zcl_lnt_simple_type=>zlnt_builtin_init_6880937654df = abap_false.
       zcl_lnt_simple_type=>zlnt_builtin_init_5860290dc37a( ).
     ENDIF.

@@ -18,128 +18,69 @@ ENDCLASS.
 CLASS zcl_lnt_sy_modification IMPLEMENTATION.
   METHOD constructor.
     super->constructor( ).
-    DATA(t1) = NEW zcl_lnt_sy_modification_conf( ).
-    me->conf = t1.
+    me->conf = NEW zcl_lnt_sy_modification_conf( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
 
   METHOD get_metadata.
     DATA t1 TYPE REF TO zcl_lnt_irule_metadata.
-    CLEAR t1.
     DATA t2 TYPE string.
-    DATA(t3) = |sy_modification|.
-    t2 = t3.
+    t2 = |sy_modification|.
     DATA t4 TYPE string.
-    DATA(t5) = |Modification of SY fields|.
-    t4 = t5.
+    t4 = |Modification of SY fields|.
     DATA t6 TYPE string.
-    DATA(t7) = |Finds modification of sy fields|.
-    t6 = t7.
+    t6 = |Finds modification of sy fields|.
     DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t8.
-    DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t9.
-    DATA(t10) = abap_true.
-    IF t10 = abap_true.
-      DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
-      t11 = t11 && |-US/abensystem_fields.html\n\nChanges to SY-TVAR* fields are n|.
-      t11 = t11 && |ot reported\n\nModification of SY fields is not allwed in ABAP|.
-      t11 = t11 && | Cloud language version,\nhttps://help.sap.com/doc/abapdocu_c|.
-      t11 = t11 && |p_index_htm/CLOUD/en-US/ABENSYSTEM_FIELDS.html|.
-      DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t12->has = abap_true.
-      t12->value = t11.
-      t9 = t12.
-    ELSE.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t13.
-      t9 = t13.
-    ENDIF.
-    t8 = t9.
+    DATA(t11) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
+    t11 = t11 && |-US/abensystem_fields.html\n\nChanges to SY-TVAR* fields are n|.
+    t11 = t11 && |ot reported\n\nModification of SY fields is not allwed in ABAP|.
+    t11 = t11 && | Cloud language version,\nhttps://help.sap.com/doc/abapdocu_c|.
+    t11 = t11 && |p_index_htm/CLOUD/en-US/ABENSYSTEM_FIELDS.html|.
+    DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t12->has = abap_true.
+    t12->value = t11.
+    t8 = t12.
     DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t14.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t15.
-    DATA(t16) = abap_true.
-    IF t16 = abap_true.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t19.
-      t18 = t19.
-      DATA(t20) = t18.
-      DATA(t21) = |SingleFile|.
-      t20->load( ).
-      APPEND t21 TO t20->items.
-      t20->save( ).
-      DATA(t22) = t18.
-      t17 = t22.
-      t15 = t17.
-    ELSE.
-      DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t23.
-      t15 = t23.
-    ENDIF.
-    t14 = t15.
+    DATA t18 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+    CREATE OBJECT t19.
+    t18 = t19.
+    DATA(t21) = |SingleFile|.
+    t18->load( ).
+    APPEND t21 TO t18->items.
+    t18->save( ).
+    t14 = t18.
     DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t24.
-    DATA t25 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t25.
-    DATA(t26) = abap_true.
-    IF t26 = abap_true.
-      DATA(t27) = |sy-uname = 2.\nsy = sy.|.
-      DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t28->has = abap_true.
-      t28->value = t27.
-      t25 = t28.
-    ELSE.
-      DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t29.
-      t25 = t29.
-    ENDIF.
-    t24 = t25.
+    DATA(t27) = |sy-uname = 2.\nsy = sy.|.
+    DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t28->has = abap_true.
+    t28->value = t27.
+    t24 = t28.
     DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t31.
-    t30 = t31.
     DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t33.
-    t32 = t33.
     DATA t34 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t35.
-    t34 = t35.
     t1 = NEW zcl_lnt_irule_metadata( i_key = t2 i_title = t4 i_short_description = t6 i_bad_example = t24 i_good_example = t30 i_extended_information = t8 i_tags = t14 i_pragma = t32 i_pseudo_comment = t34 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t36.
-    IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-      t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t36 ).
-    ENDIF.
+    t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t36 ).
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `title` p1 = t37 ).
     ENDIF.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t38.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `shortDescription` p1 = t38 ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `extendedInformation` p1 = t39 ).
     ENDIF.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t40.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tags` p1 = t40 ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `badExample` p1 = t41 ).
     ENDIF.
@@ -147,37 +88,29 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA(t42) = |key|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
-    IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
-    ENDIF.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
     DATA(t44) = |title|.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t44 p1 = t45 ).
     ENDIF.
     DATA(t46) = |shortDescription|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
     ENDIF.
     DATA(t48) = |extendedInformation|.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t49.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t48 p1 = t49 ).
     ENDIF.
     DATA(t50) = |tags|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t51.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
     ENDIF.
     DATA(t52) = |badExample|.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t53.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t52 p1 = t53 ).
     ENDIF.
@@ -186,15 +119,12 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_sy_md_ts_sy_mdf.
-    DATA(t1) = me->conf.
-    result = t1.
+    result = me->conf.
 
   ENDMETHOD.
 
   METHOD st_cn_in_sr_rl_sy_md_ts_sy_mdf.
-    DATA(t1) = i_conf.
-    DATA(t2) = t1.
-    me->conf = t2.
+    me->conf = i_conf.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `conf`.
   ENDMETHOD.
 
@@ -207,8 +137,7 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
     t3 = t4.
     DATA t5 TYPE abap_bool.
     DATA t6 TYPE string.
-    DATA(t7) = t2.
-    t6 = t7->get_type( ).
+    t6 = t2->get_type( ).
     DATA(t8) = |INTF|.
     t5 = xsdbool( t6 = t8 ).
     IF t5 = abap_true.
@@ -218,53 +147,28 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t11.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t12.
     DATA t13 TYPE REF TO zcl_lnt_structure_node.
-    DATA t14 TYPE REF TO zcl_lnt_structure_node.
-    DATA t15 TYPE REF TO zcl_lnt_abap_file.
-    DATA(t16) = t1.
-    t15 = t16.
     DATA t17 TYPE REF TO zcl_lnt_structure_node.
-    DATA(t18) = t15.
-    t17 = t18->structure.
-    t14 = t17.
-    t13 = t14.
+    t17 = t1->structure.
+    t13 = t17.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t19.
-    DATA(t20) = VALUE abap_bool( ).
-    DATA(t21) = t13.
-    IF t21 IS INITIAL.
-      t20 = abap_true.
-    ENDIF.
+    DATA(t20) = xsdbool( t13 IS INITIAL ).
     IF t20 = abap_true.
-      DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t22.
-      t19 = t22.
     ELSE.
       DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t24 TYPE REF TO zcl_lnt_structure_node.
-      DATA(t25) = t13.
-      t24 = t25.
+      t24 = t13.
       DATA(t26) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
       t23 = t24->find_all_expressions( i_type_9913 = t26 ).
       t19 = t23.
     ENDIF.
-    t12 = t19.
-    t11 = t12.
+    t11 = t19.
     DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t27.
     DATA t28 TYPE abap_bool.
-    DATA(t29) = t11.
-    t28 = xsdbool( t29 IS BOUND ).
+    t28 = xsdbool( t11 IS BOUND ).
     IF t28 = abap_true.
-      DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t31) = t11.
-      t30 = t31.
-      t27 = t30.
+      t27 = t11.
     ELSE.
       DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t32.
@@ -272,9 +176,7 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
     ENDIF.
     t10 = t27.
     DATA t33 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t33.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     DATA(t35) = VALUE i( ).
     DO.
       t10->load( ).
@@ -302,11 +204,9 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t42 TYPE REF TO zcl_lnt_abstract_node.
-      DATA(t43) = t33.
-      t42 = t43.
+      t42 = t33.
       DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t45) = t42.
-      t44 = t45->children.
+      t44 = t42->children.
       t41 = t44.
       t40 ?= t41.
       DATA t46 TYPE REF TO object.
@@ -329,22 +229,17 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       DATA t49 TYPE abap_bool.
       DATA t50 TYPE abap_bool.
       DATA t51 TYPE REF TO object.
-      DATA(t52) = t38.
-      t51 = t52->get_db65( ).
+      t51 = t38->get_db65( ).
       t50 = xsdbool( t51 IS BOUND AND t51 IS INSTANCE OF zcl_lnt_target_field ).
       t49 = t50.
       IF t50 = abap_true.
         DATA(t53) = VALUE abap_bool( ).
         DATA t54 TYPE string.
         DATA t55 TYPE string.
-        DATA t56 TYPE REF TO zcl_lnt_abstract_token.
         DATA t57 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t58) = t38.
-        t57 = t58->get_first_token( ).
-        t56 = t57.
+        t57 = t38->get_first_token( ).
         DATA t59 TYPE string.
-        DATA(t60) = t56.
-        t59 = t60->str.
+        t59 = t57->str.
         t55 = t59.
         DATA(t61) = strlen( t55 ).
         t54 = t55.
@@ -361,8 +256,7 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
         DATA(t63) = VALUE abap_bool( ).
         DATA t64 TYPE string.
         DATA t65 TYPE string.
-        DATA(t66) = t33.
-        t65 = t66->concat_tokens( ).
+        t65 = t33->concat_tokens( ).
         DATA(t67) = strlen( t65 ).
         t64 = t65.
         IF t64 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
@@ -388,113 +282,61 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
         IF t63 = abap_true.
           CONTINUE.
         ENDIF.
-        DATA t73 TYPE string.
         DATA(t74) = |Modification of SY field|.
-        t73 = t74.
-        DATA t75 TYPE REF TO zcl_lnt_issue.
-        CLEAR t75.
         DATA t76 TYPE REF TO zcl_lnt_issue.
         CLEAR t76.
-        DATA(t77) = t1.
         DATA t78 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t79) = t38.
-        t78 = t79->get_first_token( ).
-        DATA(t80) = t73.
+        t78 = t38->get_first_token( ).
         DATA(t81) = VALUE string( ).
         DATA t82 TYPE REF TO zcl_lnt_irule_metadata.
         CLEAR t82.
         DATA t83 TYPE string.
-        DATA(t84) = |sy_modification|.
-        t83 = t84.
+        t83 = |sy_modification|.
         DATA t85 TYPE string.
-        DATA(t86) = |Modification of SY fields|.
-        t85 = t86.
+        t85 = |Modification of SY fields|.
         DATA t87 TYPE string.
-        DATA(t88) = |Finds modification of sy fields|.
-        t87 = t88.
+        t87 = |Finds modification of sy fields|.
         DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t89.
-        DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t90.
-        DATA(t91) = abap_true.
-        IF t91 = abap_true.
-          DATA(t92) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
-          t92 = t92 && |-US/abensystem_fields.html\n\nChanges to SY-TVAR* fields are n|.
-          t92 = t92 && |ot reported\n\nModification of SY fields is not allwed in ABAP|.
-          t92 = t92 && | Cloud language version,\nhttps://help.sap.com/doc/abapdocu_c|.
-          t92 = t92 && |p_index_htm/CLOUD/en-US/ABENSYSTEM_FIELDS.html|.
-          DATA(t93) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-          t93->has = abap_true.
-          t93->value = t92.
-          t90 = t93.
-        ELSE.
-          DATA t94 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t94.
-          t90 = t94.
-        ENDIF.
-        t89 = t90.
+        DATA(t92) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.
+        t92 = t92 && |-US/abensystem_fields.html\n\nChanges to SY-TVAR* fields are n|.
+        t92 = t92 && |ot reported\n\nModification of SY fields is not allwed in ABAP|.
+        t92 = t92 && | Cloud language version,\nhttps://help.sap.com/doc/abapdocu_c|.
+        t92 = t92 && |p_index_htm/CLOUD/en-US/ABENSYSTEM_FIELDS.html|.
+        DATA(t93) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+        t93->has = abap_true.
+        t93->value = t92.
+        t89 = t93.
         DATA t95 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t95.
-        DATA t96 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t96.
-        DATA(t97) = abap_true.
-        IF t97 = abap_true.
-          DATA t98 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t99 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          DATA t100 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CREATE OBJECT t100.
-          t99 = t100.
-          DATA(t101) = t99.
-          DATA(t102) = |SingleFile|.
-          t101->load( ).
-          APPEND t102 TO t101->items.
-          t101->save( ).
-          DATA(t103) = t99.
-          t98 = t103.
-          t96 = t98.
-        ELSE.
-          DATA t104 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t104.
-          t96 = t104.
-        ENDIF.
-        t95 = t96.
+        DATA t99 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+        DATA t100 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+        CREATE OBJECT t100.
+        t99 = t100.
+        DATA(t102) = |SingleFile|.
+        t99->load( ).
+        APPEND t102 TO t99->items.
+        t99->save( ).
+        t95 = t99.
         DATA t105 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t105.
-        DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t106.
-        DATA(t107) = abap_true.
-        IF t107 = abap_true.
-          DATA(t108) = |sy-uname = 2.\nsy = sy.|.
-          DATA(t109) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-          t109->has = abap_true.
-          t109->value = t108.
-          t106 = t109.
-        ELSE.
-          DATA t110 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t110.
-          t106 = t110.
-        ENDIF.
-        t105 = t106.
+        DATA(t108) = |sy-uname = 2.\nsy = sy.|.
+        DATA(t109) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+        t109->has = abap_true.
+        t109->value = t108.
+        t105 = t109.
         DATA t111 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t112.
-        t111 = t112.
+        CLEAR t111.
         DATA t113 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t114.
-        t113 = t114.
+        CLEAR t113.
         DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t116 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t116.
-        t115 = t116.
+        CLEAR t115.
         t82 = NEW zcl_lnt_irule_metadata( i_key = t83 i_title = t85 i_short_description = t87 i_bad_example = t105 i_good_example = t111 i_extended_information = t89 i_tags = t95 i_pragma = t113 i_pseudo_comment = t115 ).
         CREATE OBJECT t82->zlnt_view_ownkeys_b0e8086400eb.
         t82->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
         DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t117.
-        IF t82->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t82->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t117 ).
-        ENDIF.
+        t82->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t117 ).
         DATA t118 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t118.
         IF t82->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
@@ -525,9 +367,7 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
         DATA(t123) = |key|.
         DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t124.
-        IF t82->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t82->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
-        ENDIF.
+        t82->zlnt_json_ownkeys_70e5fd461788->put( p0 = t123 p1 = t124 ).
         DATA(t125) = |title|.
         DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t126.
@@ -560,40 +400,31 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
         ENDIF.
         t81 = t82->key.
         DATA t135 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA(t136) = me->conf.
-        t135 = t136->zlnt_view_read_sr_15c06369f827( ).
+        t135 = me->conf->zlnt_view_read_sr_15c06369f827( ).
         DATA t137 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         CLEAR t137.
-        t76 = zcl_lnt_issue=>at_token( i_file = t77 i_token = t78 i_message_26cb = t80 i_key = t81 i_severity = t135 i_fix = t137 ).
-        t75 = t76.
-        DATA(t138) = t3.
-        DATA(t139) = t75.
-        t138->load( ).
-        APPEND t139 TO t138->items.
-        t138->save( ).
+        t76 = zcl_lnt_issue=>at_token( i_file = t1 i_token = t78 i_message_26cb = t74 i_key = t81 i_severity = t135 i_fix = t137 ).
+        t3->load( ).
+        APPEND t76 TO t3->items.
+        t3->save( ).
       ENDIF.
     ENDDO.
-    DATA(t140) = t3.
-    result = t140.
+    result = t3.
 
   ENDMETHOD.
 
   METHOD get_config_value.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
-    result = t1.
+    result = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
 
   ENDMETHOD.
 
   METHOD get_config.
-    DATA(t1) = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
-    result = t1.
+    result = CAST zcl_lnt_sy_modification_conf( me->gt_cn_in_sr_rl_sy_md_ts_sy_mdf( ) ).
 
   ENDMETHOD.
 
   METHOD set_config.
     DATA t1 TYPE REF TO zcl_lnt_sy_modification_conf.
-    CLEAR t1.
-    CLEAR t1.
     IF i_conf IS BOUND.
       IF i_conf->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
         TRY.
@@ -604,7 +435,6 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       IF t1 IS NOT BOUND.
         IF i_conf->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           IF i_conf->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
             RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
           ENDIF.

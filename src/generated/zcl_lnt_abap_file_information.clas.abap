@@ -20,24 +20,20 @@ CLASS zcl_lnt_abap_file_information DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_parsed.
-    DATA(t2) = t1.
-    me->parsed = t2.
+    me->parsed = i_parsed.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `parsed`.
   ENDMETHOD.
 
   METHOD list_class_implementations.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = me->parsed.
-    t1 = t2->implementations.
+    t1 = me->parsed->implementations.
     result = t1.
 
   ENDMETHOD.
 
   METHOD list_interface_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = me->parsed.
-    t1 = t2->interfaces.
+    t1 = me->parsed->interfaces.
     result = t1.
 
   ENDMETHOD.
@@ -46,9 +42,8 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
     DATA t3 TYPE string.
-    DATA(t4) = t1.
-    DATA(t5) = strlen( t4 ).
-    t3 = t4.
+    DATA(t5) = strlen( t1 ).
+    t3 = t1.
     IF t3 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t3 TO UPPER CASE.
     ELSE.
@@ -56,12 +51,9 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = me->parsed.
-    t6 = t7->interfaces.
+    t6 = me->parsed->interfaces.
     DATA t8 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t6->load( ).
@@ -85,24 +77,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t16 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t18) = t8.
-      t17 = t18->identifier.
-      t16 = t17.
+      t17 = t8->identifier.
       DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t21 TYPE string.
-      DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t24) = t16.
-      t23 = t24->token.
-      t22 = t23.
+      t23 = t17->token.
       DATA t25 TYPE string.
-      DATA(t26) = t22.
-      t25 = t26->str.
-      t21 = t25.
-      t20 = t21.
+      t25 = t23->str.
+      t20 = t25.
       DATA(t27) = VALUE abap_bool( ).
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
@@ -128,16 +111,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       IF t27 = abap_true.
         DATA(t34) = VALUE string( ).
         DATA t35 TYPE string.
-        DATA(t36) = t20.
-        t35 = t36.
+        t35 = t20.
         DATA(t37) = VALUE string( ).
-        DATA(t38) = t35.
         DATA(t39) = 1.
         DATA t40 TYPE i.
-        DATA(t41) = t35.
-        DATA(t42) = strlen( t41 ).
-        t40 = t42.
-        DATA(t43) = strlen( t38 ).
+        t40 = strlen( t35 ).
+        DATA(t43) = strlen( t35 ).
         IF t39 < 0.
           t39 = t39 + t43.
           IF t39 < 0.
@@ -150,13 +129,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
-          t37 = t38+t39(t40).
+          t37 = t35+t39(t40).
         ENDIF.
         t34 = t37.
         t20 = t34.
       ENDIF.
-      DATA(t44) = t20.
-      t19 = t44.
+      t19 = t20.
       t15 = t19.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
@@ -165,34 +143,19 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      DATA(t46) = t2.
-      t13 = xsdbool( t14 = t46 ).
+      t13 = xsdbool( t14 = t2 ).
       IF t13 = abap_true.
-        DATA t47 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-        CLEAR t47.
-        DATA(t48) = abap_true.
-        IF t48 = abap_true.
-          DATA(t49) = t8.
-          t47 = t49.
-        ELSE.
-          DATA t50 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-          CLEAR t50.
-          t47 = t50.
-        ENDIF.
-        result = t47.
+        result = t8.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t51 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-    CLEAR t51.
-    result = t51.
+    CLEAR result.
 
   ENDMETHOD.
 
   METHOD list_class_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = me->parsed.
-    t1 = t2->classes.
+    t1 = me->parsed->classes.
     result = t1.
 
   ENDMETHOD.
@@ -201,9 +164,8 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
     DATA t3 TYPE string.
-    DATA(t4) = t1.
-    DATA(t5) = strlen( t4 ).
-    t3 = t4.
+    DATA(t5) = strlen( t1 ).
+    t3 = t1.
     IF t3 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t3 TO UPPER CASE.
     ELSE.
@@ -211,12 +173,9 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = me->parsed.
-    t6 = t7->classes.
+    t6 = me->parsed->classes.
     DATA t8 TYPE REF TO zcl_lnt_info_class_definition.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t6->load( ).
@@ -240,24 +199,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t16 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t18) = t8.
-      t17 = t18->identifier.
-      t16 = t17.
+      t17 = t8->identifier.
       DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t21 TYPE string.
-      DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t24) = t16.
-      t23 = t24->token.
-      t22 = t23.
+      t23 = t17->token.
       DATA t25 TYPE string.
-      DATA(t26) = t22.
-      t25 = t26->str.
-      t21 = t25.
-      t20 = t21.
+      t25 = t23->str.
+      t20 = t25.
       DATA(t27) = VALUE abap_bool( ).
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
@@ -283,16 +233,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       IF t27 = abap_true.
         DATA(t34) = VALUE string( ).
         DATA t35 TYPE string.
-        DATA(t36) = t20.
-        t35 = t36.
+        t35 = t20.
         DATA(t37) = VALUE string( ).
-        DATA(t38) = t35.
         DATA(t39) = 1.
         DATA t40 TYPE i.
-        DATA(t41) = t35.
-        DATA(t42) = strlen( t41 ).
-        t40 = t42.
-        DATA(t43) = strlen( t38 ).
+        t40 = strlen( t35 ).
+        DATA(t43) = strlen( t35 ).
         IF t39 < 0.
           t39 = t39 + t43.
           IF t39 < 0.
@@ -305,13 +251,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
-          t37 = t38+t39(t40).
+          t37 = t35+t39(t40).
         ENDIF.
         t34 = t37.
         t20 = t34.
       ENDIF.
-      DATA(t44) = t20.
-      t19 = t44.
+      t19 = t20.
       t15 = t19.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
@@ -320,27 +265,13 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      DATA(t46) = t2.
-      t13 = xsdbool( t14 = t46 ).
+      t13 = xsdbool( t14 = t2 ).
       IF t13 = abap_true.
-        DATA t47 TYPE REF TO zcl_lnt_info_class_definition.
-        CLEAR t47.
-        DATA(t48) = abap_true.
-        IF t48 = abap_true.
-          DATA(t49) = t8.
-          t47 = t49.
-        ELSE.
-          DATA t50 TYPE REF TO zcl_lnt_info_class_definition.
-          CLEAR t50.
-          t47 = t50.
-        ENDIF.
-        result = t47.
+        result = t8.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t51 TYPE REF TO zcl_lnt_info_class_definition.
-    CLEAR t51.
-    result = t51.
+    CLEAR result.
 
   ENDMETHOD.
 
@@ -348,9 +279,8 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     DATA(t1) = i_name.
     DATA(t2) = VALUE string( ).
     DATA t3 TYPE string.
-    DATA(t4) = t1.
-    DATA(t5) = strlen( t4 ).
-    t3 = t4.
+    DATA(t5) = strlen( t1 ).
+    t3 = t1.
     IF t3 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t3 TO UPPER CASE.
     ELSE.
@@ -358,12 +288,9 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = me->parsed.
-    t6 = t7->implementations.
+    t6 = me->parsed->implementations.
     DATA t8 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t6->load( ).
@@ -387,24 +314,15 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       DATA(t13) = VALUE abap_bool( ).
       DATA(t14) = VALUE string( ).
       DATA(t15) = VALUE string( ).
-      DATA t16 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t17 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t18) = t8.
-      t17 = t18->identifier.
-      t16 = t17.
+      t17 = t8->identifier.
       DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA t21 TYPE string.
-      DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t24) = t16.
-      t23 = t24->token.
-      t22 = t23.
+      t23 = t17->token.
       DATA t25 TYPE string.
-      DATA(t26) = t22.
-      t25 = t26->str.
-      t21 = t25.
-      t20 = t21.
+      t25 = t23->str.
+      t20 = t25.
       DATA(t27) = VALUE abap_bool( ).
       DATA(t28) = VALUE string( ).
       DATA(t29) = t20.
@@ -430,16 +348,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       IF t27 = abap_true.
         DATA(t34) = VALUE string( ).
         DATA t35 TYPE string.
-        DATA(t36) = t20.
-        t35 = t36.
+        t35 = t20.
         DATA(t37) = VALUE string( ).
-        DATA(t38) = t35.
         DATA(t39) = 1.
         DATA t40 TYPE i.
-        DATA(t41) = t35.
-        DATA(t42) = strlen( t41 ).
-        t40 = t42.
-        DATA(t43) = strlen( t38 ).
+        t40 = strlen( t35 ).
+        DATA(t43) = strlen( t35 ).
         IF t39 < 0.
           t39 = t39 + t43.
           IF t39 < 0.
@@ -452,13 +366,12 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
           IF t40 > t43 - t39.
             t40 = t43 - t39.
           ENDIF.
-          t37 = t38+t39(t40).
+          t37 = t35+t39(t40).
         ENDIF.
         t34 = t37.
         t20 = t34.
       ENDIF.
-      DATA(t44) = t20.
-      t19 = t44.
+      t19 = t20.
       t15 = t19.
       DATA(t45) = strlen( t15 ).
       t14 = t15.
@@ -467,34 +380,19 @@ CLASS zcl_lnt_abap_file_information IMPLEMENTATION.
       ELSE.
         t14 = zlnt_runtime_uppe_91169605024d=>full( t14 ).
       ENDIF.
-      DATA(t46) = t2.
-      t13 = xsdbool( t14 = t46 ).
+      t13 = xsdbool( t14 = t2 ).
       IF t13 = abap_true.
-        DATA t47 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-        CLEAR t47.
-        DATA(t48) = abap_true.
-        IF t48 = abap_true.
-          DATA(t49) = t8.
-          t47 = t49.
-        ELSE.
-          DATA t50 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-          CLEAR t50.
-          t47 = t50.
-        ENDIF.
-        result = t47.
+        result = t8.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t51 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-    CLEAR t51.
-    result = t51.
+    CLEAR result.
 
   ENDMETHOD.
 
   METHOD list_form_definitions.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t2) = me->parsed.
-    t1 = t2->forms.
+    t1 = me->parsed->forms.
     result = t1.
 
   ENDMETHOD.

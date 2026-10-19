@@ -21,18 +21,13 @@ CLASS zcl_lnt_lexer_buffer DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_raw.
-    DATA(t2) = t1.
-    me->raw = t2.
+    me->raw = i_raw.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `raw`.
-    DATA(t3) = 0.
-    me->start = t3.
+    me->start = 0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
-    DATA(t4) = 0.
-    me->end = t4.
+    me->end = 0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
-    DATA(t5) = abap_true.
-    me->empty_a4a6 = t5.
+    me->empty_a4a6 = abap_true.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
   ENDMETHOD.
 
@@ -42,39 +37,32 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     DATA(t1) = i_offset.
     DATA(t2) = VALUE i( ).
     DATA(t3) = VALUE i( ).
-    DATA(t4) = t1.
-    IF t4 <> trunc( t4 ) OR t4 < range_check_lo_nzik0zk OR t4 > range_check_hi_zik0zi.
+    IF t1 <> trunc( t1 ) OR t1 < range_check_lo_nzik0zk OR t1 > range_check_hi_zik0zi.
       RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
     ENDIF.
-    t3 = t4.
+    t3 = t1.
     t2 = t3.
     DATA t5 TYPE abap_bool.
     DATA(t6) = CONV abap_bool( me->empty_a4a6 ).
-    DATA(t7) = abap_true.
-    t5 = xsdbool( t6 = t7 ).
+    t5 = xsdbool( t6 = abap_true ).
     IF t5 = abap_true.
       DATA(t8) = VALUE i( ).
       DATA t9 TYPE abap_bool.
-      DATA(t10) = t2.
       DATA(t11) = 0.
-      t9 = xsdbool( t10 < t11 ).
+      t9 = xsdbool( t2 < t11 ).
       IF t9 = abap_true.
-        DATA(t12) = 0.
-        t8 = t12.
+        t8 = 0.
       ELSE.
-        DATA(t13) = t2.
-        t8 = t13.
+        t8 = t2.
       ENDIF.
       me->start = t8.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
-      DATA(t14) = abap_false.
-      me->empty_a4a6 = t14.
+      me->empty_a4a6 = abap_false.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
     ENDIF.
     DATA t15 TYPE i.
-    DATA(t16) = t2.
     DATA(t17) = 1.
-    t15 = t16 + t17.
+    t15 = t2 + t17.
     me->end = t15.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
   ENDMETHOD.
@@ -114,14 +102,11 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD clear_feba.
-    DATA(t1) = 0.
-    me->start = t1.
+    me->start = 0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
-    DATA(t2) = 0.
-    me->end = t2.
+    me->end = 0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `end`.
-    DATA(t3) = abap_true.
-    me->empty_a4a6 = t3.
+    me->empty_a4a6 = abap_true.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `empty`.
   ENDMETHOD.
 
@@ -135,9 +120,8 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
     t4 = t5.
     DO.
       DATA t6 TYPE abap_bool.
-      DATA(t7) = t4.
       DATA(t8) = CONV i( me->end ).
-      t6 = xsdbool( t7 < t8 ).
+      t6 = xsdbool( t4 < t8 ).
       IF t6 = abap_false.
         EXIT.
       ENDIF.
@@ -173,28 +157,24 @@ CLASS zcl_lnt_lexer_buffer IMPLEMENTATION.
         t11 = t11 + t20 * 256.
       ENDIF.
       t10 = t11.
-      DATA(t21) = t1.
-      t9 = xsdbool( t10 = t21 ).
+      t9 = xsdbool( t10 = t1 ).
       IF t9 = abap_true.
         DATA t22 TYPE f.
-        DATA(t23) = t2.
         DATA(t24) = CONV f( 1 ).
-        t22 = t23 + t24.
+        t22 = t2 + t24.
         t2 = t22.
       ENDIF.
       DATA t25 TYPE i.
-      DATA(t26) = t4.
       DATA(t27) = 1.
-      t25 = t26 + t27.
+      t25 = t4 + t27.
       t4 = t25.
     ENDDO.
     DATA t28 TYPE abap_bool.
     DATA t29 TYPE f.
-    DATA(t30) = t2.
-    DATA(t31) = CONV f( t30 / 2 ).
+    DATA(t31) = CONV f( t2 / 2 ).
     t31 = trunc( t31 ).
     t31 = t31 * 2.
-    t29 = t30 - t31.
+    t29 = t2 - t31.
     DATA(t32) = CONV f( 0 ).
     t28 = xsdbool( t29 = t32 ).
     result = t28.

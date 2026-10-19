@@ -43,18 +43,14 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
     CREATE OBJECT t2.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t4.
     IF zcl_lnt_st_statem_index_module=>zlnt_builtin_init_e3b892b911e2 = abap_false.
       zcl_lnt_st_statem_index_module=>zlnt_builtin_init_b3124ba2f205( ).
     ENDIF.
     t4 = zcl_lnt_st_statem_index_module=>ns.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t6.
     IF zcl_lnt_st_statem_index_module=>zlnt_builtin_init_e3b892b911e2 = abap_false.
       zcl_lnt_st_statem_index_module=>zlnt_builtin_init_b3124ba2f205( ).
     ENDIF.
@@ -77,51 +73,36 @@ CLASS zcl_lnt_artifacts_abap IMPLEMENTATION.
       DATA(t9) = VALUE abap_bool( ).
       DATA t10 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      DATA(t12) = t3.
-      DATA(t13) = t7.
-      t11 = t12->get( p0 = t13 ).
+      t11 = t3->get( p0 = t7 ).
       t10 = t11.
       DATA(t14) = VALUE abap_bool( ).
       DATA(t15) = VALUE string( ).
-      DATA(t16) = VALUE abap_bool( ).
-      DATA(t17) = t10.
-      IF t17 IS INITIAL.
-        t16 = abap_true.
-      ENDIF.
+      DATA(t16) = xsdbool( t10 IS INITIAL ).
       IF t16 = abap_true.
-        DATA(t18) = |undefined|.
-        t15 = t18.
+        t15 = |undefined|.
       ELSE.
-        DATA t19 TYPE string.
         DATA t20 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        DATA(t21) = t10.
-        t20 = t21.
-        DATA(t22) = |function|.
-        t19 = t22.
-        t15 = t19.
+        t20 = t10.
+        t15 = |function|.
       ENDIF.
       DATA(t23) = |function|.
       t14 = xsdbool( t15 = t23 ).
       t9 = t14.
       IF t9 = abap_true.
-        DATA(t24) = t1.
         DATA t25 TYPE REF TO zif_lnt_statement.
         DATA t26 TYPE REF TO zlnt_runtime_clas_a39833db3295.
         DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        DATA(t28) = t3.
-        DATA(t29) = t7.
-        t27 = t28->get( p0 = t29 ).
+        t27 = t3->get( p0 = t7 ).
         t26 = t27.
         DATA t30 TYPE REF TO object.
         t30 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t26 ).
         t25 ?= t30.
-        t24->load( ).
-        APPEND t25 TO t24->items.
-        t24->save( ).
+        t1->load( ).
+        APPEND t25 TO t1->items.
+        t1->save( ).
       ENDIF.
     ENDDO.
-    DATA(t31) = t1.
-    result = t31.
+    result = t1.
 
   ENDMETHOD.
 

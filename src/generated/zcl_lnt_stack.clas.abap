@@ -22,9 +22,8 @@ CLASS zcl_lnt_stack IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = i_item.
     DATA(t2) = me->items.
-    DATA(t3) = t1.
+    DATA(t3) = i_item.
     t2->load( ).
     APPEND t3 TO t2->items.
     t2->save( ).
@@ -83,8 +82,7 @@ CLASS zcl_lnt_stack IMPLEMENTATION.
     t8 = t9->slice2( p0 = t10 p1 = t11 ).
     me->items = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `items`.
-    DATA(t15) = t1.
-    result = t15.
+    result = t1.
 
   ENDMETHOD.
 

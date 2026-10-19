@@ -15,38 +15,32 @@ CLASS zcl_lnt_gnrc_objct_rfrnc_typ DEFINITION PUBLIC INHERITING FROM zcl_lnt_abs
 ENDCLASS.
 CLASS zcl_lnt_gnrc_objct_rfrnc_typ IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_input_967e.
-    DATA(t2) = t1.
+    DATA(t2) = i_input_967e.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_g_o_r_t_t_g_o_r.
-    DATA(t1) = |```REF TO object```|.
-    result = t1.
+    result = |```REF TO object```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |REF TO object|.
-    result = t1.
+    result = |REF TO object|.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_GENERICOBJECTREF|.
-    result = t1.
+    result = |abap.TODO_GENERICOBJECTREF|.
 
   ENDMETHOD.
 

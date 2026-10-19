@@ -17,18 +17,14 @@ CLASS zcl_lnt_idcmnt_symbl_prms DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_text_document.
-    DATA(t2) = t1.
-    me->text_document = t2.
+    me->text_document = i_text_document.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `textDocument`.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `textDocument` p1 = t3 ).
     ENDIF.
     DATA(t4) = |textDocument|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t4 p1 = t5 ).
     ENDIF.
@@ -115,10 +111,7 @@ CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
         CLEAR result.
         IF me->text_document IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->text_document.
           TRY.
               result ?= t2.
@@ -163,7 +156,6 @@ CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
           IF me->text_document IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t1.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -195,7 +187,6 @@ CLASS zcl_lnt_idcmnt_symbl_prms IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t3 ).
     ENDIF.

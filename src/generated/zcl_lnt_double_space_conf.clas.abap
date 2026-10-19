@@ -36,37 +36,29 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = abap_true.
-    me->zlnt_view_write_s_9c54627bcb25( p0 = t1 ).
+    me->zlnt_view_write_s_9c54627bcb25( p0 = abap_true ).
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t4.
     t3 = t4.
-    DATA(t5) = t3.
     DATA(t6) = |CHANGING|.
-    t5->load( ).
-    APPEND t6 TO t5->items.
-    t5->save( ).
-    DATA(t7) = t3.
+    t3->load( ).
+    APPEND t6 TO t3->items.
+    t3->save( ).
     DATA(t8) = |EXPORTING|.
-    t7->load( ).
-    APPEND t8 TO t7->items.
-    t7->save( ).
-    DATA(t9) = t3.
+    t3->load( ).
+    APPEND t8 TO t3->items.
+    t3->save( ).
     DATA(t10) = |OTHERS|.
-    t9->load( ).
-    APPEND t10 TO t9->items.
-    t9->save( ).
-    DATA(t11) = t3.
-    t2 = t11.
+    t3->load( ).
+    APPEND t10 TO t3->items.
+    t3->save( ).
+    t2 = t3.
     me->zlnt_view_write_s_37b40751ec20( p0 = t2 ).
-    DATA(t12) = abap_true.
-    me->zlnt_view_write_s_7c49753518b6( p0 = t12 ).
-    DATA(t13) = abap_true.
-    me->zlnt_view_write_s_8a18fe66f51f( p0 = t13 ).
-    DATA(t14) = abap_true.
-    me->zlnt_view_write_s_72d78e3a99be( p0 = t14 ).
+    me->zlnt_view_write_s_7c49753518b6( p0 = abap_true ).
+    me->zlnt_view_write_s_8a18fe66f51f( p0 = abap_true ).
+    me->zlnt_view_write_s_72d78e3a99be( p0 = abap_true ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -94,8 +86,6 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_9c54627bcb25.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -136,16 +126,10 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_37b40751ec20.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -186,8 +170,6 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_7c49753518b6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -210,8 +192,6 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_8a18fe66f51f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -234,8 +214,6 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_72d78e3a99be.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -283,7 +261,6 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -348,10 +325,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.
@@ -392,10 +366,7 @@ CLASS zcl_lnt_double_space_conf IMPLEMENTATION.
           CLEAR result.
           IF me->skip_keywords IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t3.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
-            CLEAR t3.
             t4 = me->skip_keywords.
             TRY.
                 result ?= t4.

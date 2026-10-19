@@ -21,32 +21,21 @@ ENDCLASS.
 CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_id.
-    DATA(t2) = i_extra.
-    DATA(t3) = t2.
+    DATA(t3) = i_extra.
     super->constructor( i_input_967e = t3 ).
-    DATA(t4) = t1.
-    me->identifier = t4.
+    me->identifier = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `identifier`.
   ENDMETHOD.
 
   METHOD get_identifier_name.
     DATA(t1) = VALUE string( ).
-    DATA t2 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t3) = me->identifier.
-    t2 = t3.
     DATA(t4) = VALUE string( ).
     DATA t5 TYPE string.
-    DATA t6 TYPE string.
-    DATA t7 TYPE REF TO zcl_lnt_abstract_token.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t9) = t2.
-    t8 = t9->token.
-    t7 = t8.
+    t8 = me->identifier->token.
     DATA t10 TYPE string.
-    DATA(t11) = t7.
-    t10 = t11->str.
-    t6 = t10.
-    t5 = t6.
+    t10 = t8->str.
+    t5 = t10.
     DATA(t12) = VALUE abap_bool( ).
     DATA(t13) = VALUE string( ).
     DATA(t14) = t5.
@@ -72,16 +61,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
     IF t12 = abap_true.
       DATA(t19) = VALUE string( ).
       DATA t20 TYPE string.
-      DATA(t21) = t5.
-      t20 = t21.
+      t20 = t5.
       DATA(t22) = VALUE string( ).
-      DATA(t23) = t20.
       DATA(t24) = 1.
       DATA t25 TYPE i.
-      DATA(t26) = t20.
-      DATA(t27) = strlen( t26 ).
-      t25 = t27.
-      DATA(t28) = strlen( t23 ).
+      t25 = strlen( t20 ).
+      DATA(t28) = strlen( t20 ).
       IF t24 < 0.
         t24 = t24 + t28.
         IF t24 < 0.
@@ -94,13 +79,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         IF t25 > t28 - t24.
           t25 = t28 - t24.
         ENDIF.
-        t22 = t23+t24(t25).
+        t22 = t20+t24(t25).
       ENDIF.
       t19 = t22.
       t5 = t19.
     ENDIF.
-    DATA(t29) = t5.
-    t4 = t29.
+    t4 = t5.
     t1 = t4.
     result = t1.
 
@@ -111,22 +95,13 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
     DATA(t2) = VALUE string( ).
     DATA(t3) = |```REF TO |.
     DATA(t4) = VALUE string( ).
-    DATA t5 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t6) = me->identifier.
-    t5 = t6.
     DATA(t7) = VALUE string( ).
     DATA t8 TYPE string.
-    DATA t9 TYPE string.
-    DATA t10 TYPE REF TO zcl_lnt_abstract_token.
     DATA t11 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t12) = t5.
-    t11 = t12->token.
-    t10 = t11.
+    t11 = me->identifier->token.
     DATA t13 TYPE string.
-    DATA(t14) = t10.
-    t13 = t14->str.
-    t9 = t13.
-    t8 = t9.
+    t13 = t11->str.
+    t8 = t13.
     DATA(t15) = VALUE abap_bool( ).
     DATA(t16) = VALUE string( ).
     DATA(t17) = t8.
@@ -152,16 +127,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
     IF t15 = abap_true.
       DATA(t22) = VALUE string( ).
       DATA t23 TYPE string.
-      DATA(t24) = t8.
-      t23 = t24.
+      t23 = t8.
       DATA(t25) = VALUE string( ).
-      DATA(t26) = t23.
       DATA(t27) = 1.
       DATA t28 TYPE i.
-      DATA(t29) = t23.
-      DATA(t30) = strlen( t29 ).
-      t28 = t30.
-      DATA(t31) = strlen( t26 ).
+      t28 = strlen( t23 ).
+      DATA(t31) = strlen( t23 ).
       IF t27 < 0.
         t27 = t27 + t31.
         IF t27 < 0.
@@ -174,13 +145,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         IF t28 > t31 - t27.
           t28 = t31 - t27.
         ENDIF.
-        t25 = t26+t27(t28).
+        t25 = t23+t27(t28).
       ENDIF.
       t22 = t25.
       t8 = t22.
     ENDIF.
-    DATA(t32) = t8.
-    t7 = t32.
+    t7 = t8.
     t4 = t7.
     DATA(t33) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
@@ -195,22 +165,13 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
     DATA(t1) = VALUE string( ).
     DATA(t2) = |REF TO |.
     DATA(t3) = VALUE string( ).
-    DATA t4 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t5) = me->identifier.
-    t4 = t5.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE string.
-    DATA t8 TYPE string.
-    DATA t9 TYPE REF TO zcl_lnt_abstract_token.
     DATA t10 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t11) = t4.
-    t10 = t11->token.
-    t9 = t10.
+    t10 = me->identifier->token.
     DATA t12 TYPE string.
-    DATA(t13) = t9.
-    t12 = t13->str.
-    t8 = t12.
-    t7 = t8.
+    t12 = t10->str.
+    t7 = t12.
     DATA(t14) = VALUE abap_bool( ).
     DATA(t15) = VALUE string( ).
     DATA(t16) = t7.
@@ -236,16 +197,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
     IF t14 = abap_true.
       DATA(t21) = VALUE string( ).
       DATA t22 TYPE string.
-      DATA(t23) = t7.
-      t22 = t23.
+      t22 = t7.
       DATA(t24) = VALUE string( ).
-      DATA(t25) = t22.
       DATA(t26) = 1.
       DATA t27 TYPE i.
-      DATA(t28) = t22.
-      DATA(t29) = strlen( t28 ).
-      t27 = t29.
-      DATA(t30) = strlen( t25 ).
+      t27 = strlen( t22 ).
+      DATA(t30) = strlen( t22 ).
       IF t26 < 0.
         t26 = t26 + t30.
         IF t26 < 0.
@@ -258,13 +215,12 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
         IF t27 > t30 - t26.
           t27 = t30 - t26.
         ENDIF.
-        t24 = t25+t26(t27).
+        t24 = t22+t26(t27).
       ENDIF.
       t21 = t24.
       t7 = t21.
     ENDIF.
-    DATA(t31) = t7.
-    t6 = t31.
+    t6 = t7.
     t3 = t6.
     DATA(t32) = strlen( t2 ).
     t1 = |{ t2 }{ t3 }|.
@@ -273,26 +229,22 @@ CLASS zcl_lnt_object_reference_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD get_identifier.
-    DATA(t1) = me->identifier.
-    result = t1.
+    result = me->identifier.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_OBJECTREF|.
-    result = t1.
+    result = |abap.TODO_OBJECTREF|.
 
   ENDMETHOD.
 

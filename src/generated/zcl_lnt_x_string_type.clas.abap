@@ -22,8 +22,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     IF zcl_lnt_x_string_type=>zlnt_builtin_init_5b41ede9197f = abap_false.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
-    DATA(t1) = i_input_967e.
-    DATA(t2) = t1.
+    DATA(t2) = i_input_967e.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
@@ -33,43 +32,36 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_input_967e.
     DATA t2 TYPE REF TO zcl_lnt_x_string_type.
-    CLEAR t2.
     IF zcl_lnt_x_string_type=>zlnt_builtin_init_5b41ede9197f = abap_false.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
-    DATA(t3) = t1.
-    t2 = NEW zcl_lnt_x_string_type( i_input_967e = t3 ).
+    t2 = NEW zcl_lnt_x_string_type( i_input_967e = t1 ).
     result = t2.
 
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_xs_ty_ts_x_st_ty.
-    DATA(t1) = |```xstring```|.
-    result = t1.
+    result = |```xstring```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |xstring|.
-    result = t1.
+    result = |xstring|.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.rawstring|.
-    result = t1.
+    result = |abap.rawstring|.
 
   ENDMETHOD.
 
@@ -87,8 +79,7 @@ CLASS zcl_lnt_x_string_type IMPLEMENTATION.
     IF zcl_lnt_x_string_type=>zlnt_builtin_init_5b41ede9197f = abap_false.
       zcl_lnt_x_string_type=>zlnt_builtin_init_74ee6279b0b4( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__0a96e2468aae( ).
-    zcl_lnt_x_string_type=>singletons = t1.
+    zcl_lnt_x_string_type=>singletons = NEW zlnt_runtime_map__0a96e2468aae( ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

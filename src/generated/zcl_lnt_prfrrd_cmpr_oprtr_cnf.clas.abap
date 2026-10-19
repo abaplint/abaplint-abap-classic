@@ -29,43 +29,35 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
     DATA(t5) = |EQ|.
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
+    t2->load( ).
+    APPEND t5 TO t2->items.
+    t2->save( ).
     DATA(t7) = |><|.
-    t6->load( ).
-    APPEND t7 TO t6->items.
-    t6->save( ).
-    DATA(t8) = t2.
+    t2->load( ).
+    APPEND t7 TO t2->items.
+    t2->save( ).
     DATA(t9) = |NE|.
-    t8->load( ).
-    APPEND t9 TO t8->items.
-    t8->save( ).
-    DATA(t10) = t2.
+    t2->load( ).
+    APPEND t9 TO t2->items.
+    t2->save( ).
     DATA(t11) = |GE|.
-    t10->load( ).
-    APPEND t11 TO t10->items.
-    t10->save( ).
-    DATA(t12) = t2.
+    t2->load( ).
+    APPEND t11 TO t2->items.
+    t2->save( ).
     DATA(t13) = |GT|.
-    t12->load( ).
-    APPEND t13 TO t12->items.
-    t12->save( ).
-    DATA(t14) = t2.
+    t2->load( ).
+    APPEND t13 TO t2->items.
+    t2->save( ).
     DATA(t15) = |LT|.
-    t14->load( ).
-    APPEND t15 TO t14->items.
-    t14->save( ).
-    DATA(t16) = t2.
+    t2->load( ).
+    APPEND t15 TO t2->items.
+    t2->save( ).
     DATA(t17) = |LE|.
-    t16->load( ).
-    APPEND t17 TO t16->items.
-    t16->save( ).
-    DATA(t18) = t2.
-    t1 = t18.
+    t2->load( ).
+    APPEND t17 TO t2->items.
+    t2->save( ).
+    t1 = t2.
     me->zlnt_view_write_s_0f0b7da17ee0( p0 = t1 ).
   ENDMETHOD.
 
@@ -109,14 +101,9 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_0f0b7da17ee0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -173,7 +160,6 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -222,10 +208,7 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.
@@ -259,10 +242,7 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr_cnf IMPLEMENTATION.
         CLEAR result.
         IF me->bad_operators IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->bad_operators.
           TRY.
               result ?= t4.

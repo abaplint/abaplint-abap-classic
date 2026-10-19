@@ -14,59 +14,28 @@ CLASS zcl_lnt_class_attribute IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_id.
     DATA(t2) = i_visibility_5c1f.
-    DATA(t3) = i_meta.
-    DATA(t4) = i_value.
     DATA t5 TYPE REF TO zcl_lnt_abstract_token.
     DATA t6 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t7) = t1.
-    t6 = t7.
+    t6 = t1.
     DATA t8 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t9) = t6.
-    t8 = t9->token.
+    t8 = t6->token.
     t5 = t8.
     DATA t10 TYPE string.
     DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t12) = t1.
-    t11 = t12.
+    t11 = t1.
     DATA t13 TYPE string.
-    DATA(t14) = t11.
-    t13 = t14->filename.
+    t13 = t11->filename.
     t10 = t13.
     DATA t15 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t16 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t17) = t1.
-    t16 = t17.
     DATA t18 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t19) = t16.
-    t18 = t19->type_cba0.
+    t18 = t1->type_cba0.
     t15 = t18.
     DATA t20 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t20.
-    DATA(t21) = abap_true.
-    IF t21 = abap_true.
-      DATA(t22) = t3.
-      t20 = t22.
-    ELSE.
-      DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t23.
-      t20 = t23.
-    ENDIF.
+    t20 = i_meta.
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t24.
-    DATA(t25) = abap_true.
-    IF t25 = abap_true.
-      DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA(t27) = t4.
-      t26 = t27.
-      t24 = t26.
-    ELSE.
-      DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t28.
-      t24 = t28.
-    ENDIF.
+    t24 = i_value.
     super->constructor( i_token = t5 i_filename = t10 i_type_9913 = t15 i_meta = t20 i_value = t24 ).
-    DATA(t29) = t2.
-    me->visibility = t29.
+    me->visibility = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `visibility`.
   ENDMETHOD.
 

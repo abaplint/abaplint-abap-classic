@@ -15,74 +15,43 @@ CLASS zcl_lnt_sy_default IMPLEMENTATION.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zcl_lnt_expression_node.
     DATA t4 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t5) = t1.
     DATA(t6) = zlnt_runtime_desc_78196487750d=>zlnt_member_d158_bbdd8eb9c28f.
-    t4 = t5->find_direct_expression( i_type_9913 = t6 ).
+    t4 = t1->find_direct_expression( i_type_9913 = t6 ).
     t3 = t4.
     DATA t7 TYPE abap_bool.
-    DATA(t8) = t3.
-    t7 = xsdbool( t8 IS BOUND ).
+    t7 = xsdbool( t3 IS BOUND ).
     IF t7 = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t9.
       DATA t10 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t11) = t3.
-      t10 = t11.
-      DATA(t12) = t2.
+      t10 = t3.
       DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t13.
-      DATA(t14) = abap_true.
-      IF t14 = abap_true.
-        DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t15.
-        DATA(t16) = |Read From|.
-        CLEAR t15.
-        CREATE OBJECT t15.
-        t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-        t15->sval = t16.
-        t13 = t15.
-      ELSE.
-        DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t17.
-        t13 = t17.
-      ENDIF.
+      DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA(t16) = |Read From|.
+      CREATE OBJECT t15.
+      t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
+      t15->sval = t16.
+      t13 = t15.
       DATA t18 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t18.
-      t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t12 i_ref_type = t13 i_allow_generic_deference = t18 ).
+      t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t2 i_ref_type = t13 i_allow_generic_deference = t18 ).
       result = t9.
       RETURN.
     ENDIF.
     DATA t19 TYPE REF TO zcl_lnt_expression_node.
     DATA t20 TYPE REF TO zcl_lnt_expression_node.
-    DATA(t21) = t1.
     DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d121_2f7db81dd46d.
-    t20 = t21->find_direct_expression( i_type_9913 = t22 ).
+    t20 = t1->find_direct_expression( i_type_9913 = t22 ).
     t19 = t20.
     DATA t23 TYPE abap_bool.
-    DATA(t24) = t19.
-    t23 = xsdbool( t24 IS BOUND ).
+    t23 = xsdbool( t19 IS BOUND ).
     IF t23 = abap_true.
-      DATA t25 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t25.
-      DATA(t26) = abap_true.
-      IF t26 = abap_true.
-        DATA t27 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t28 TYPE REF TO zcl_lnt_expression_node.
-        DATA(t29) = t19.
-        t28 = t29.
-        t27 = zcl_lnt_sy_expres_constant=>run_syntax( i_node = t28 ).
-        t25 = t27.
-      ELSE.
-        DATA t30 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t30.
-        t25 = t30.
-      ENDIF.
-      result = t25.
+      DATA t27 TYPE REF TO zcl_lnt_abstract_type.
+      DATA t28 TYPE REF TO zcl_lnt_expression_node.
+      t28 = t19.
+      t27 = zcl_lnt_sy_expres_constant=>run_syntax( i_node = t28 ).
+      result = t27.
       RETURN.
     ENDIF.
-    DATA t31 TYPE REF TO zcl_lnt_abstract_type.
-    CLEAR t31.
-    result = t31.
+    CLEAR result.
 
   ENDMETHOD.
 

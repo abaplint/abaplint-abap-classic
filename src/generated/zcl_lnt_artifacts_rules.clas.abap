@@ -12,24 +12,18 @@ ENDCLASS.
 CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
   METHOD get_rules.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t2.
     CREATE OBJECT t2.
     t1 = t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t4.
     IF zcl_lnt_rl_index_module=>zlnt_builtin_init_fcdfa3d496b4 = abap_false.
       zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
     ENDIF.
     t4 = zcl_lnt_rl_index_module=>ns.
     t3 = t4.
     DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t6.
     IF zcl_lnt_rl_index_module=>zlnt_builtin_init_fcdfa3d496b4 = abap_false.
       zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
     ENDIF.
@@ -63,8 +57,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
       ENDIF.
       t13 = zcl_lnt_rl_index_module=>ns.
-      DATA(t14) = t7.
-      t12 = t13->get( p0 = t14 ).
+      t12 = t13->get( p0 = t7 ).
       t11 = t12.
       DATA t15 TYPE REF TO object.
       CLEAR t15.
@@ -86,20 +79,18 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         ENDTRY.
       ENDIF.
       IF t16 = abap_true.
-        DATA(t19) = t1.
         DATA t20 TYPE REF TO zif_lnt_rule.
         CLEAR t20.
         DATA t21 TYPE REF TO object.
         CLEAR t21.
         t21 = t9.
         t20 ?= t21.
-        t19->load( ).
-        APPEND t20 TO t19->items.
-        t19->save( ).
+        t1->load( ).
+        APPEND t20 TO t1->items.
+        t1->save( ).
       ENDIF.
     ENDDO.
-    DATA(t22) = t1.
-    result = t22.
+    result = t1.
 
   ENDMETHOD.
 

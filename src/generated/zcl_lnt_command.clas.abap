@@ -20,63 +20,50 @@ CLASS zcl_lnt_command DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_command IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_title.
     DATA(t2) = i_tooltip.
     DATA(t3) = i_command.
     DATA(t4) = i_arguments.
-    DATA(t5) = t1.
-    me->title = t5.
+    me->title = i_title.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `title`.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `title` p1 = t6 ).
     ENDIF.
     DATA(t7) = |title|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
     ENDIF.
-    DATA(t9) = t2.
-    me->tooltip = t9.
+    me->tooltip = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tooltip`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tooltip` p1 = t10 ).
     ENDIF.
     DATA(t11) = |tooltip|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
     ENDIF.
-    DATA(t13) = t3.
-    me->command = t13.
+    me->command = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `command`.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `command` p1 = t14 ).
     ENDIF.
     DATA(t15) = |command|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
-    DATA(t17) = t4.
-    me->arguments = t17.
+    me->arguments = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `arguments`.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t18.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `arguments` p1 = t18 ).
     ENDIF.
     DATA(t19) = |arguments|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
     ENDIF.
@@ -191,10 +178,7 @@ CLASS zcl_lnt_command IMPLEMENTATION.
           CLEAR result.
           IF me->arguments IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->arguments.
             TRY.
                 result ?= t2.
@@ -261,9 +245,7 @@ CLASS zcl_lnt_command IMPLEMENTATION.
             ENDIF.
             me->arguments->load( ).
             DATA t1 TYPE REF TO object.
-            CLEAR t1.
             DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t2.
             LOOP AT me->arguments->items INTO t1.
               DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t3.
@@ -330,7 +312,6 @@ CLASS zcl_lnt_command IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t7 ).
     ENDIF.

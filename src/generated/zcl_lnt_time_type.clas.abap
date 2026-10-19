@@ -15,38 +15,32 @@ CLASS zcl_lnt_time_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_type 
 ENDCLASS.
 CLASS zcl_lnt_time_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_input_967e.
-    DATA(t2) = t1.
+    DATA(t2) = i_input_967e.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
   METHOD t_t_i_s_a_ty_bs_tm_ty_ts_tm_ty.
-    DATA(t1) = |```t```|.
-    result = t1.
+    result = |```t```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |t|.
-    result = t1.
+    result = |t|.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.tims|.
-    result = t1.
+    result = |abap.tims|.
 
   ENDMETHOD.
 

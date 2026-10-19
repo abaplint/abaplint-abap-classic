@@ -19,104 +19,69 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_handler.
     DATA(t2) = VALUE abap_bool( ).
-    DATA t3 TYPE REF TO zif_lnt_statement_syntax.
-    CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_syntax.
-    CLEAR t4.
     DATA t5 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    CLEAR t5.
     IF zcl_lnt_syntax_module=>zlnt_builtin_init_de1d1a6daf32 = abap_false.
       zcl_lnt_syntax_module=>zlnt_builtin_init_ccbaa3f8c306( ).
     ENDIF.
     t5 = zcl_lnt_syntax_module=>map.
     DATA(t6) = VALUE string( ).
     DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t7.
-    DATA(t8) = t1.
-    t7 = t8->zlnt_builtin_clas_3f891b097658( ).
+    t7 = t1->zlnt_builtin_clas_3f891b097658( ).
     t6 = t7->name.
     t4 = t5->get( p0 = t6 ).
-    t3 = t4.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
-    DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
-    t9 = t10.
     DATA(t11) = VALUE abap_bool( ).
-    DATA(t12) = VALUE abap_bool( ).
-    DATA(t13) = t3.
-    IF t13 IS INITIAL.
-      t12 = abap_true.
-    ENDIF.
+    DATA(t12) = xsdbool( t4 IS INITIAL ).
     t11 = xsdbool( t12 = abap_false ).
     t2 = t11.
     IF t2 = abap_true.
       DATA t14 TYPE REF TO zlnt_exception_cl_8460e5ee8e5f.
-      CLEAR t14.
       DATA t15 TYPE REF TO zcx_lnt_assert_error.
-      CLEAR t15.
       DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t16.
-      DATA(t17) = abap_true.
-      IF t17 = abap_true.
-        DATA(t18) = |syntax.ts duplicate statement syntax handler|.
-        DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t19->has = abap_true.
-        t19->value = t18.
-        t16 = t19.
-      ELSE.
-        DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t20.
-        t16 = t20.
-      ENDIF.
+      DATA(t18) = |syntax.ts duplicate statement syntax handler|.
+      DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t19->has = abap_true.
+      t19->value = t18.
+      t16 = t19.
       t15 = NEW zcx_lnt_assert_error( i_message_26cb = t16 ).
       t14 = NEW #( ).
       t14->payload = t15.
       CLEAR t14->source_value.
-      IF t15 IS BOUND.
-        DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t21.
-        DATA t22 TYPE REF TO object.
-        CLEAR t22.
-        CLEAR t21.
-        t22 = t15.
+      DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t22 TYPE REF TO object.
+      t22 = t15.
+      TRY.
+          t14->source_value ?= t22.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t14->source_value IS NOT BOUND.
         TRY.
-            t14->source_value ?= t22.
+            t21 ?= t15.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
+        IF t21 IS BOUND.
+          t14->source_value = t21->source( ).
+        ENDIF.
         IF t14->source_value IS NOT BOUND.
-          TRY.
-              t21 ?= t15.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t21 IS BOUND.
-            t14->source_value = t21->source( ).
-          ENDIF.
-          IF t14->source_value IS NOT BOUND.
-            CREATE OBJECT t14->source_value.
-            t14->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t14->source_value->oval = t15.
-          ENDIF.
+          CREATE OBJECT t14->source_value.
+          t14->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t14->source_value->oval = t15.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t14.
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    CLEAR t24.
     IF zcl_lnt_syntax_module=>zlnt_builtin_init_de1d1a6daf32 = abap_false.
       zcl_lnt_syntax_module=>zlnt_builtin_init_ccbaa3f8c306( ).
     ENDIF.
     t24 = zcl_lnt_syntax_module=>map.
     DATA(t25) = VALUE string( ).
     DATA t26 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t26.
-    DATA(t27) = t1.
-    t26 = t27->zlnt_builtin_clas_3f891b097658( ).
+    t26 = t1->zlnt_builtin_clas_3f891b097658( ).
     t25 = t26->name.
-    DATA(t28) = t1.
-    t23 = t24->set( p0 = t25 p1 = t28 ).
+    t23 = t24->set( p0 = t25 p1 = t1 ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_init_ccbaa3f8c306.
@@ -127,19 +92,11 @@ CLASS zcl_lnt_syntax_module IMPLEMENTATION.
     IF zcl_lnt_syntax_module=>zlnt_builtin_init_de1d1a6daf32 = abap_false.
       zcl_lnt_syntax_module=>zlnt_builtin_init_ccbaa3f8c306( ).
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    DATA t2 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    DATA(t3) = NEW zlnt_runtime_map__1746889b1684( ).
-    t2 = t3.
-    DATA(t4) = t2.
-    t1 = t4.
-    zcl_lnt_syntax_module=>map = t1.
+    zcl_lnt_syntax_module=>map = NEW zlnt_runtime_map__1746889b1684( ).
     DATA(t5) = VALUE abap_bool( ).
     DATA(t6) = VALUE i( ).
     DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_map__1746889b1684.
-    CLEAR t8.
     IF zcl_lnt_syntax_module=>zlnt_builtin_init_de1d1a6daf32 = abap_false.
       zcl_lnt_syntax_module=>zlnt_builtin_init_ccbaa3f8c306( ).
     ENDIF.

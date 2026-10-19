@@ -14,70 +14,36 @@ ENDCLASS.
 CLASS zcl_lnt_rollback IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
     DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t4.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA(t7) = |ROLLBACK|.
-    CLEAR t6.
     CREATE OBJECT t6.
     t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t6->sval = t7.
-    t5 = t6.
-    DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     DATA t10 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t10.
-    DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     DATA(t13) = |WORK|.
-    CLEAR t12.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t12->sval = t13.
-    t11 = t12.
-    DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d155_5eb73ae6c401.
-    CLEAR t15.
     IF t16 IS BOUND.
       CREATE OBJECT t15.
       t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t15->cval = t16.
     ENDIF.
-    t14 = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t18.
     CREATE OBJECT t18.
-    t17 = t18.
     DATA t19 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t19.
-    DATA(t20) = t11.
-    DATA(t21) = t14.
-    DATA(t22) = t17.
-    t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t20 i_second = t21 i_rest = t22 ).
+    t19 = zcl_lnt_st_combi_module=>alt_prio( i_first = t12 i_second = t15 i_rest = t18 ).
     t10 = t19.
-    CLEAR t9.
     IF t10 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t23.
       DATA t24 TYPE REF TO object.
-      CLEAR t24.
-      CLEAR t23.
       t24 = t10.
       TRY.
           t9 ?= t24.
@@ -98,27 +64,14 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t8 = t9.
-    DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t25.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t26.
     CREATE OBJECT t26.
-    t25 = t26.
     DATA t27 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t27.
-    DATA(t28) = t5.
-    DATA(t29) = t8.
-    DATA(t30) = t25.
-    t27 = zcl_lnt_st_combi_module=>seq( i_first = t28 i_second = t29 i_rest = t30 ).
+    t27 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t26 ).
     t4 = t27.
-    CLEAR t3.
     IF t4 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t31.
       DATA t32 TYPE REF TO object.
-      CLEAR t32.
-      CLEAR t31.
       t32 = t4.
       TRY.
           t3 ?= t32.

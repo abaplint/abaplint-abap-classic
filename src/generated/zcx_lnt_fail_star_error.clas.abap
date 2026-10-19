@@ -9,8 +9,7 @@ CLASS zcx_lnt_fail_star_error DEFINITION PUBLIC INHERITING FROM zcl_lnt_builtin_
 ENDCLASS.
 CLASS zcx_lnt_fail_star_error IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_message_26cb.
-    DATA(t2) = t1.
+    DATA(t2) = i_message_26cb.
     super->constructor( i_message_26cb = t2 ).
   ENDMETHOD.
 

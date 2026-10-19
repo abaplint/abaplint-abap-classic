@@ -422,7 +422,6 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     missing = source->missing.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA(t3) = VALUE f( ).
     LOOP AT source->items INTO t2.
       t1 = sy-tabix.
@@ -450,7 +449,6 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
     source->missing = missing.
     DATA(t1) = VALUE f( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     LOOP AT items INTO t1.
       CLEAR t2.
       CLEAR t2.
@@ -479,7 +477,6 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~get.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA(t3) = VALUE f( ).
     load( ).
     IF p0 = `length`.
@@ -503,7 +500,6 @@ CLASS zlnt_runtime_arra_595b0cb55f64 IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~put.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA(t3) = VALUE f( ).
     CREATE OBJECT t2.
     t1 = t2->array_index( p0 ).

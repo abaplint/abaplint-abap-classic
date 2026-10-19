@@ -13,7 +13,6 @@ CLASS zcl_lnt_sr_interface DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_interface IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
     DATA t3 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d539_1b20166f6dfe.
@@ -27,9 +26,7 @@ CLASS zcl_lnt_sr_interface IMPLEMENTATION.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d475_9e77338670ac.
     t8 = zcl_lnt_sr_combi_module=>sta( i_s = t9 ).
     t2 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t3 i_body = t5 i_end = t8 ).
-    t1 = t2.
-    DATA(t10) = t1.
-    result = t10.
+    result = t2.
 
   ENDMETHOD.
 

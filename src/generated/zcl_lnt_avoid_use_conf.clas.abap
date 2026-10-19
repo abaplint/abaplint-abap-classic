@@ -48,50 +48,41 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = abap_false.
     DATA(t2) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = abap_false.
     me->zlnt_view_write_s_fb727840365f( p0 = t2 ).
-    DATA(t3) = abap_true.
     DATA(t4) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = abap_true.
     me->zlnt_view_write_s_f8196956ff9a( p0 = t4 ).
-    DATA(t5) = abap_true.
     DATA(t6) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t6->has = abap_true.
-    t6->value = t5.
+    t6->value = abap_true.
     me->zlnt_view_write_s_40db3a530795( p0 = t6 ).
-    DATA(t7) = abap_true.
     DATA(t8) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t8->has = abap_true.
-    t8->value = t7.
+    t8->value = abap_true.
     me->zlnt_view_write_s_9bad74ef76a0( p0 = t8 ).
-    DATA(t9) = abap_true.
     DATA(t10) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = abap_true.
     me->zlnt_view_write_s_cea88f29fd73( p0 = t10 ).
-    DATA(t11) = abap_true.
     DATA(t12) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = abap_true.
     me->zlnt_view_write_s_3e5fe955a0f2( p0 = t12 ).
-    DATA(t13) = abap_true.
     DATA(t14) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t14->has = abap_true.
-    t14->value = t13.
+    t14->value = abap_true.
     me->zlnt_view_write_s_2ddaaa2716ec( p0 = t14 ).
-    DATA(t15) = abap_true.
     DATA(t16) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t16->has = abap_true.
-    t16->value = t15.
+    t16->value = abap_true.
     me->zlnt_view_write_s_a65b3302e7ea( p0 = t16 ).
-    DATA(t17) = abap_true.
     DATA(t18) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t18->has = abap_true.
-    t18->value = t17.
+    t18->value = abap_true.
     me->zlnt_view_write_s_d9bc5f88619d( p0 = t18 ).
   ENDMETHOD.
 
@@ -125,10 +116,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_fb727840365f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -157,10 +145,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_f8196956ff9a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -189,10 +174,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_40db3a530795.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -221,10 +203,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_9bad74ef76a0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -253,10 +232,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_cea88f29fd73.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -285,10 +261,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_3e5fe955a0f2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -317,10 +290,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_2ddaaa2716ec.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -349,10 +319,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_a65b3302e7ea.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -381,10 +348,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_d9bc5f88619d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -441,7 +405,6 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -522,10 +485,7 @@ CLASS zcl_lnt_avoid_use_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.

@@ -13,18 +13,13 @@ CLASS zcl_lnt_check_select_options DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_check_select_options IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE string.
     DATA(t2) = |CHECK SELECT-OPTIONS|.
-    t1 = t2.
     DATA t3 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t4) = |Cloud|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
-    DATA(t6) = t1.
-    CLEAR t5.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
+    t5->sval = t2.
     t3 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t4 i_first = t5 ).
     result = t3.
 

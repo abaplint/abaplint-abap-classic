@@ -18,122 +18,67 @@ ENDCLASS.
 CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_length.
-    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      CLEAR t5.
-      DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t6.
-      DATA(t7) = t2.
-      t6 = t7.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t8.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t9.
-      t8 = t9.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t10.
-      DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t11.
-      t10 = t11.
-      DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t12.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t13.
-      t12 = t13.
-      DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t14.
-      DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t15.
-      t14 = t15.
-      DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t16.
-      DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t17.
-      t16 = t17.
-      t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
-      CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
-      t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t18.
-      IF t5->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
-      ENDIF.
-      CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
-      t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t19) = |qualifiedName|.
-      DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t20.
-      IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-      ENDIF.
-      t3 = t5.
-    ELSE.
-      DATA t21 TYPE REF TO zcl_lnt_abstract_type_data.
-      CLEAR t21.
-      t3 = t21.
-    ENDIF.
+    DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
+    DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t6 = i_qualified_name.
+    DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
+    CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
+    t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
+    CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
+    t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t19) = |qualifiedName|.
+    DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+    t3 = t5.
     super->constructor( i_input_967e = t3 ).
     DATA(t22) = VALUE abap_bool( ).
-    DATA(t23) = t1.
     DATA(t24) = CONV f( 0 ).
-    t22 = xsdbool( t23 <= t24 ).
+    t22 = xsdbool( t1 <= t24 ).
     IF t22 = abap_true.
       DATA t25 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-      CLEAR t25.
       DATA t26 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      CLEAR t26.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t27.
-      DATA(t28) = abap_true.
-      IF t28 = abap_true.
-        DATA(t29) = |Bad LENGTH, Floating Point|.
-        DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t30->has = abap_true.
-        t30->value = t29.
-        t27 = t30.
-      ELSE.
-        DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t31.
-        t27 = t31.
-      ENDIF.
+      DATA(t29) = |Bad LENGTH, Floating Point|.
+      DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t30->has = abap_true.
+      t30->value = t29.
+      t27 = t30.
       t26 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t27 ).
       t25 = NEW #( ).
       t25->payload = t26.
       CLEAR t25->source_value.
-      IF t26 IS BOUND.
-        DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t32.
-        DATA t33 TYPE REF TO object.
-        CLEAR t33.
-        CLEAR t32.
-        t33 = t26.
+      DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t33 TYPE REF TO object.
+      t33 = t26.
+      TRY.
+          t25->source_value ?= t33.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t25->source_value IS NOT BOUND.
         TRY.
-            t25->source_value ?= t33.
+            t32 ?= t26.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
+        IF t32 IS BOUND.
+          t25->source_value = t32->source( ).
+        ENDIF.
         IF t25->source_value IS NOT BOUND.
-          TRY.
-              t32 ?= t26.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t32 IS BOUND.
-            t25->source_value = t32->source( ).
-          ENDIF.
-          IF t25->source_value IS NOT BOUND.
-            CREATE OBJECT t25->source_value.
-            t25->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t25->source_value->oval = t26.
-          ENDIF.
+          CREATE OBJECT t25->source_value.
+          t25->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t25->source_value->oval = t26.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t25.
     ENDIF.
-    DATA(t34) = t1.
-    me->length = t34.
+    me->length = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `length`.
   ENDMETHOD.
 
@@ -182,20 +127,17 @@ CLASS zcl_lnt_floating_point_type IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.fltp|.
-    result = t1.
+    result = |abap.fltp|.
 
   ENDMETHOD.
 

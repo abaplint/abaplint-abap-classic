@@ -14,23 +14,16 @@ CLASS zcl_lnt_function_exporting IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d195_e320b2253f20.
-    CLEAR t3.
     IF t4 IS BOUND.
       CREATE OBJECT t3.
       t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t3->cval = t4.
     ENDIF.
     t2 = zcl_lnt_st_combi_module=>plus_prio( i_first = t3 ).
-    t1 = t2.
-    DATA(t5) = t1.
-    result = t5.
+    result = t2.
 
   ENDMETHOD.
 

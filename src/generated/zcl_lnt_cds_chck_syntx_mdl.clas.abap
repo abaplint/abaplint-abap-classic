@@ -24,87 +24,67 @@ CLASS zcl_lnt_cds_chck_syntx_mdl IMPLEMENTATION.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t2.
     DATA(t5) = |MENGE_D|.
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
-    t1 = t6.
-    zcl_lnt_cds_chck_syntx_mdl=>known_quan_data_elements = t1.
+    t2->load( ).
+    APPEND t5 TO t2->items.
+    t2->save( ).
+    zcl_lnt_cds_chck_syntx_mdl=>known_quan_data_elements = t2.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t9 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t9.
     t8 = t9.
-    DATA(t10) = t8.
     DATA(t11) = |BWERT|.
-    t10->load( ).
-    APPEND t11 TO t10->items.
-    t10->save( ).
-    DATA(t12) = t8.
+    t8->load( ).
+    APPEND t11 TO t8->items.
+    t8->save( ).
     DATA(t13) = |DZWERT|.
-    t12->load( ).
-    APPEND t13 TO t12->items.
-    t12->save( ).
-    DATA(t14) = t8.
-    t7 = t14.
-    zcl_lnt_cds_chck_syntx_mdl=>known_curr_data_elements = t7.
+    t8->load( ).
+    APPEND t13 TO t8->items.
+    t8->save( ).
+    zcl_lnt_cds_chck_syntx_mdl=>known_curr_data_elements = t8.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t17 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t17.
     t16 = t17.
-    DATA(t18) = t16.
     DATA(t19) = |BEGIN|.
-    t18->load( ).
-    APPEND t19 TO t18->items.
-    t18->save( ).
-    DATA(t20) = t16.
+    t16->load( ).
+    APPEND t19 TO t16->items.
+    t16->save( ).
     DATA(t21) = |NUMBER|.
-    t20->load( ).
-    APPEND t21 TO t20->items.
-    t20->save( ).
-    DATA(t22) = t16.
+    t16->load( ).
+    APPEND t21 TO t16->items.
+    t16->save( ).
     DATA(t23) = |POSITION|.
-    t22->load( ).
-    APPEND t23 TO t22->items.
-    t22->save( ).
-    DATA(t24) = t16.
-    t15 = t24.
-    zcl_lnt_cds_chck_syntx_mdl=>reserved_element_names = t15.
+    t16->load( ).
+    APPEND t23 TO t16->items.
+    t16->save( ).
+    zcl_lnt_cds_chck_syntx_mdl=>reserved_element_names = t16.
     IF zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_18d03cef5c95 = abap_false.
       zcl_lnt_cds_chck_syntx_mdl=>zlnt_builtin_init_70b92226996a( ).
     ENDIF.
-    DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     CREATE OBJECT t27.
     t26 = t27.
-    DATA(t28) = t26.
     DATA(t29) = |Semantics.unitOfMeasure|.
-    t28->load( ).
-    APPEND t29 TO t28->items.
-    t28->save( ).
-    DATA(t30) = t26.
+    t26->load( ).
+    APPEND t29 TO t26->items.
+    t26->save( ).
     DATA(t31) = |Semantics.currencyCode|.
-    t30->load( ).
-    APPEND t31 TO t30->items.
-    t30->save( ).
-    DATA(t32) = t26.
-    t25 = t32.
-    zcl_lnt_cds_chck_syntx_mdl=>vw_entty_frbddn_annttns = t25.
+    t26->load( ).
+    APPEND t31 TO t26->items.
+    t26->save( ).
+    zcl_lnt_cds_chck_syntx_mdl=>vw_entty_frbddn_annttns = t26.
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

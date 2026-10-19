@@ -28,9 +28,8 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD push.
-    DATA(t1) = i_id.
     DATA(t2) = me->list.
-    DATA(t3) = t1.
+    DATA(t3) = i_id.
     t2->load( ).
     APPEND t3 TO t2->items.
     t2->save( ).
@@ -39,23 +38,20 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
   METHOD remove_if_exists.
     DATA(t1) = i_id.
     DATA t2 TYPE i.
-    DATA(t3) = 0.
-    t2 = t3.
+    t2 = 0.
     DO.
       DATA t4 TYPE abap_bool.
-      DATA(t5) = t2.
       DATA t6 TYPE i.
       DATA(t7) = me->list.
       t7->load( ).
       t6 = lines( t7->items ).
-      t4 = xsdbool( t5 < t6 ).
+      t4 = xsdbool( t2 < t6 ).
       IF t4 = abap_false.
         EXIT.
       ENDIF.
       DATA(t8) = VALUE abap_bool( ).
       DATA t9 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t10) = t1.
-      t9 = t10.
+      t9 = t1.
       DATA t11 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_fi_identifier.
@@ -86,61 +82,40 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       DATA t19 TYPE abap_bool.
       DATA t20 TYPE abap_bool.
       DATA t21 TYPE REF TO zcl_lnt_position.
-      DATA t22 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA(t23) = t11.
-      t22 = t23.
-      DATA t24 TYPE REF TO zcl_lnt_position.
-      DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t26 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t27) = t22.
-      t26 = t27->token.
-      t25 = t26.
+      t26 = t11->token.
       DATA t28 TYPE REF TO zcl_lnt_position.
-      DATA(t29) = t25.
-      t28 = t29->start.
-      t24 = t28.
-      t21 = t24.
+      t28 = t26->start.
+      t21 = t28.
       DATA t30 TYPE REF TO zcl_lnt_position.
-      DATA t31 TYPE REF TO zcl_lnt_abstract_token.
       DATA t32 TYPE REF TO zcl_lnt_abstract_token.
-      DATA(t33) = t9.
-      t32 = t33->token.
-      t31 = t32.
+      t32 = t9->token.
       DATA t34 TYPE REF TO zcl_lnt_position.
-      DATA(t35) = t31.
-      t34 = t35->start.
+      t34 = t32->start.
       t30 = t34.
       t20 = t21->equals( i_p = t30 ).
       t19 = t20.
       IF t20 = abap_true.
         DATA t36 TYPE abap_bool.
         DATA t37 TYPE string.
-        DATA t38 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA(t39) = t11.
-        t38 = t39.
         DATA t40 TYPE string.
-        DATA(t41) = t38.
-        t40 = t41->filename.
+        t40 = t11->filename.
         t37 = t40.
         DATA t42 TYPE string.
-        DATA(t43) = t9.
-        t42 = t43->filename.
+        t42 = t9->filename.
         t36 = xsdbool( t37 = t42 ).
         t19 = t36.
       ENDIF.
       t8 = t19.
       IF t8 = abap_true.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA(t45) = me->list.
-        DATA(t46) = t2.
         DATA(t47) = 1.
-        t44 = t45->splice2( p0 = t46 p1 = t47 ).
+        t44 = me->list->splice2( p0 = t2 p1 = t47 ).
         RETURN.
       ENDIF.
       DATA t48 TYPE i.
-      DATA(t49) = t2.
       DATA(t50) = 1.
-      t48 = t49 + t50.
+      t48 = t2 + t50.
       t2 = t48.
     ENDDO.
   ENDMETHOD.
@@ -148,9 +123,7 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
   METHOD contains_proteted.
     DATA(t1) = me->list.
     DATA t2 TYPE REF TO zcl_lnt_info_method_definition.
-    CLEAR t2.
     DATA t3 TYPE REF TO object.
-    CLEAR t3.
     DATA(t4) = VALUE i( ).
     DO.
       t1->load( ).
@@ -173,18 +146,15 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
       ENDIF.
       DATA t7 TYPE abap_bool.
       DATA t8 TYPE f.
-      DATA(t9) = t2.
-      t8 = t9->visibility.
+      t8 = t2->visibility.
       DATA(t10) = CONV f( 2 ).
       t7 = xsdbool( t8 = t10 ).
       IF t7 = abap_true.
-        DATA(t11) = abap_true.
-        result = t11.
+        result = abap_true.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA(t12) = abap_false.
-    result = t12.
+    result = abap_false.
 
   ENDMETHOD.
 
@@ -200,8 +170,7 @@ CLASS zcl_lnt_rl_unused_methods_w_ar IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_db65.
-    DATA(t1) = me->list.
-    result = t1.
+    result = me->list.
 
   ENDMETHOD.
 

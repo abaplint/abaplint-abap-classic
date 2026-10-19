@@ -21,7 +21,6 @@ CLASS zcl_lnt_select_module IMPLEMENTATION.
       zcl_lnt_select_module=>zlnt_builtin_init_bca3e12ebc13( ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t1.
     DATA(t2) = `^\w+$`.
     DATA(t3) = |^[A-Za-z0-9_]+$|.
     DATA(t4) = ||.

@@ -23,60 +23,28 @@ ENDCLASS.
 CLASS zcl_lnt_unknown_type IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_error.
-    DATA(t2) = i_qualified_name.
     DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t7) = t2.
-      t6 = t7.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t9.
-      t8 = t9.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t11.
-      t10 = t11.
-      DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t13.
-      t12 = t13.
-      DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t15.
-      t14 = t15.
-      DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t17.
-      t16 = t17.
-      t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
-      CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
-      t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t18.
-      IF t5->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
-      ENDIF.
-      CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
-      t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t19) = |qualifiedName|.
-      DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t20.
-      IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-      ENDIF.
-      t3 = t5.
-    ELSE.
-      DATA t21 TYPE REF TO zcl_lnt_abstract_type_data.
-      CLEAR t21.
-      t3 = t21.
-    ENDIF.
+    DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
+    DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t6 = i_qualified_name.
+    DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
+    CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
+    t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
+    CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
+    t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA(t19) = |qualifiedName|.
+    DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+    t3 = t5.
     super->constructor( i_input_967e = t3 ).
-    DATA(t22) = t1.
-    me->error = t22.
+    me->error = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
   ENDMETHOD.
 
@@ -98,75 +66,57 @@ CLASS zcl_lnt_unknown_type IMPLEMENTATION.
 
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA(t5) = VALUE string( ).
-      DATA(t6) = |unknown, generic: |.
-      DATA(t7) = CONV string( me->error ).
-      DATA(t8) = strlen( t6 ).
-      t5 = |{ t6 }{ t7 }|.
-      DATA(t9) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t9->has = abap_true.
-      t9->value = t5.
-      t3 = t9.
-    ELSE.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t10.
-      t3 = t10.
-    ENDIF.
+    DATA(t5) = VALUE string( ).
+    DATA(t6) = |unknown, generic: |.
+    DATA(t7) = CONV string( me->error ).
+    DATA(t8) = strlen( t6 ).
+    t5 = |{ t6 }{ t7 }|.
+    DATA(t9) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t9->has = abap_true.
+    t9->value = t5.
+    t3 = t9.
     t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.
-    IF t2 IS BOUND.
-      DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t11.
-      DATA t12 TYPE REF TO object.
-      CLEAR t12.
-      CLEAR t11.
-      t12 = t2.
+    DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t12 TYPE REF TO object.
+    t12 = t2.
+    TRY.
+        t1->source_value ?= t12.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t1->source_value IS NOT BOUND.
       TRY.
-          t1->source_value ?= t12.
+          t11 ?= t2.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t11 IS BOUND.
+        t1->source_value = t11->source( ).
+      ENDIF.
       IF t1->source_value IS NOT BOUND.
-        TRY.
-            t11 ?= t2.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t11 IS BOUND.
-          t1->source_value = t11->source( ).
-        ENDIF.
-        IF t1->source_value IS NOT BOUND.
-          CREATE OBJECT t1->source_value.
-          t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t1->source_value->oval = t2.
-        ENDIF.
+        CREATE OBJECT t1->source_value.
+        t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t1->source_value->oval = t2.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t1.
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_UNKNOWN|.
-    result = t1.
+    result = |abap.TODO_UNKNOWN|.
 
   ENDMETHOD.
 

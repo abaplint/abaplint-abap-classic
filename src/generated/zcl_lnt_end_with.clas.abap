@@ -14,20 +14,13 @@ ENDCLASS.
 CLASS zcl_lnt_end_with IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
     DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     DATA t6 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t6.
     DATA t7 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t8.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
@@ -35,13 +28,9 @@ CLASS zcl_lnt_end_with IMPLEMENTATION.
     DATA(t9) = |v751|.
     t7 = t8->get( p0 = t9 ).
     t6 = t7.
-    CLEAR t5.
     IF t6 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t10.
       DATA t11 TYPE REF TO object.
-      CLEAR t11.
-      CLEAR t10.
       t11 = t6.
       TRY.
           t5 ?= t11.
@@ -63,22 +52,15 @@ CLASS zcl_lnt_end_with IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     DATA(t13) = |ENDWITH|.
-    CLEAR t12.
     CREATE OBJECT t12.
     t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t12->sval = t13.
     DATA t14 TYPE REF TO zcl_lnt_iver_options.
-    CLEAR t14.
     t4 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t5 i_first = t12 i_opts = t14 ).
-    CLEAR t3.
     IF t4 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t15.
       DATA t16 TYPE REF TO object.
-      CLEAR t16.
-      CLEAR t15.
       t16 = t4.
       TRY.
           t3 ?= t16.

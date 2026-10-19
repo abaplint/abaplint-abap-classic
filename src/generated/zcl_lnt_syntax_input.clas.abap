@@ -20,63 +20,50 @@ CLASS zcl_lnt_syntax_input DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_syntax_input IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_scope.
     DATA(t2) = i_filename.
     DATA(t3) = i_issues.
     DATA(t4) = i_deferred.
-    DATA(t5) = t1.
-    me->scope = t5.
+    me->scope = i_scope.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `scope`.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `scope` p1 = t6 ).
     ENDIF.
     DATA(t7) = |scope|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
     ENDIF.
-    DATA(t9) = t2.
-    me->filename = t9.
+    me->filename = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `filename`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `filename` p1 = t10 ).
     ENDIF.
     DATA(t11) = |filename|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
     ENDIF.
-    DATA(t13) = t3.
-    me->issues = t13.
+    me->issues = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `issues`.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `issues` p1 = t14 ).
     ENDIF.
     DATA(t15) = |issues|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
     ENDIF.
-    DATA(t17) = t4.
-    me->deferred = t17.
+    me->deferred = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `deferred`.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t18.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `deferred` p1 = t18 ).
     ENDIF.
     DATA(t19) = |deferred|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
     ENDIF.
@@ -169,10 +156,7 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
         CLEAR result.
         IF me->scope IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->scope.
           TRY.
               result ?= t2.
@@ -202,10 +186,7 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
         CLEAR result.
         IF me->issues IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->issues.
           TRY.
               result ?= t4.
@@ -230,10 +211,7 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
         CLEAR result.
         IF me->deferred IS BOUND.
           DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t5.
           DATA t6 TYPE REF TO object.
-          CLEAR t6.
-          CLEAR t5.
           t6 = me->deferred.
           TRY.
               result ?= t6.
@@ -268,7 +246,6 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
     CASE p0.
       WHEN `scope`.
         DATA t1 TYPE REF TO object.
-        CLEAR t1.
         t1 = p1->as_ref( ).
         me->scope ?= t1.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `scope`.
@@ -292,9 +269,7 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
           ENDIF.
           me->issues->load( ).
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
           DATA t3 TYPE REF TO zcl_lnt_issue.
-          CLEAR t3.
           LOOP AT me->issues->items INTO t2.
             DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t4.
@@ -328,9 +303,7 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
           ENDIF.
           me->deferred->load( ).
           DATA t6 TYPE REF TO object.
-          CLEAR t6.
           DATA t7 TYPE REF TO zif_lnt_closure_d810f2d3.
-          CLEAR t7.
           LOOP AT me->deferred->items INTO t6.
             DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t8.
@@ -361,7 +334,6 @@ CLASS zcl_lnt_syntax_input IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t10 ).
     ENDIF.

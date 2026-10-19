@@ -33,14 +33,10 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = abap_false.
-    me->zlnt_view_write_s_f093bbfe7abd( p0 = t1 ).
-    DATA(t2) = abap_false.
-    me->zlnt_view_write_s_188e4fe27f68( p0 = t2 ).
-    DATA(t3) = abap_false.
-    me->zlnt_view_write_s_382c4ed1bb49( p0 = t3 ).
-    DATA(t4) = abap_true.
-    me->zlnt_view_write_s_3e1d03f4e761( p0 = t4 ).
+    me->zlnt_view_write_s_f093bbfe7abd( p0 = abap_false ).
+    me->zlnt_view_write_s_188e4fe27f68( p0 = abap_false ).
+    me->zlnt_view_write_s_382c4ed1bb49( p0 = abap_false ).
+    me->zlnt_view_write_s_3e1d03f4e761( p0 = abap_true ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -68,8 +64,6 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_f093bbfe7abd.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -92,8 +86,6 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_188e4fe27f68.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -116,8 +108,6 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_382c4ed1bb49.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -140,8 +130,6 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_3e1d03f4e761.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -187,7 +175,6 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -248,10 +235,7 @@ CLASS zcl_lnt_abapdoc_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.

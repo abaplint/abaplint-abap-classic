@@ -38,37 +38,27 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_structure.
     super->constructor( ).
-    DATA(t2) = t1.
-    me->structure = t2.
+    me->structure = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `structure`.
   ENDMETHOD.
 
   METHOD gt_in_sr_ab_nd_st_nd_ts_str_nd.
-    DATA(t1) = me->structure.
-    result = t1.
+    result = me->structure.
 
   ENDMETHOD.
 
   METHOD find_parent.
     DATA(t1) = i_node.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    CLEAR t4.
-    DATA(t5) = me.
-    t4 = t5.
+    t4 = me.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t6.
-    DATA(t7) = t4.
-    t6 = t7->children.
+    t6 = t4->children.
     t3 = t6.
     t2 ?= t3.
     DATA t8 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t2->load( ).
@@ -91,30 +81,28 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t8 ?= t9.
       ENDIF.
       DATA(t13) = VALUE abap_bool( ).
-      DATA(t14) = t8.
       DATA t15 TYPE REF TO zif_lnt_union_8249fcb1.
       CLEAR t15.
-      DATA(t16) = t1.
-      t15 ?= t16.
+      t15 ?= t1.
       DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t17.
       DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t18.
       CLEAR t17.
-      IF t14 IS BOUND.
+      IF t8 IS BOUND.
         DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t19.
         DATA t20 TYPE REF TO object.
         CLEAR t20.
         CLEAR t19.
-        t20 = t14.
+        t20 = t8.
         TRY.
             t17 ?= t20.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t17 IS NOT BOUND.
           TRY.
-              t19 ?= t14.
+              t19 ?= t8.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t19 IS BOUND.
@@ -123,7 +111,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           IF t17 IS NOT BOUND.
             CREATE OBJECT t17.
             t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t17->oval = t14.
+            t17->oval = t8.
           ENDIF.
         ENDIF.
       ENDIF.
@@ -160,23 +148,11 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t13 = xsdbool( t18 IS NOT BOUND ).
       ENDIF.
       IF t13 = abap_true.
-        DATA t23 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t23.
-        DATA(t24) = abap_true.
-        IF t24 = abap_true.
-          DATA(t25) = me.
-          t23 = t25.
-        ELSE.
-          DATA t26 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t26.
-          t23 = t26.
-        ENDIF.
-        result = t23.
+        result = me.
         RETURN.
       ELSE.
         DATA(t27) = VALUE abap_bool( ).
-        DATA(t28) = t8.
-        t27 = xsdbool( t28 IS BOUND AND t28 IS INSTANCE OF zcl_lnt_statement_node ).
+        t27 = xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ).
         IF t27 = abap_true.
           CONTINUE.
         ELSE.
@@ -186,62 +162,38 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           CLEAR t30.
           DATA t31 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t31.
-          DATA(t32) = t8.
           DATA t33 TYPE REF TO object.
           CLEAR t33.
-          t33 = t32.
+          t33 = t8.
           t31 ?= t33.
-          DATA(t34) = t1.
-          t30 = t31->find_parent( i_node = t34 ).
+          t30 = t31->find_parent( i_node = t1 ).
           t29 = t30.
           DATA(t35) = VALUE abap_bool( ).
-          DATA(t36) = t29.
-          t35 = xsdbool( t36 IS BOUND ).
+          t35 = xsdbool( t29 IS BOUND ).
           IF t35 = abap_true.
-            DATA t37 TYPE REF TO zcl_lnt_structure_node.
-            CLEAR t37.
-            DATA(t38) = abap_true.
-            IF t38 = abap_true.
-              DATA t39 TYPE REF TO zcl_lnt_structure_node.
-              CLEAR t39.
-              DATA(t40) = t29.
-              t39 = t40.
-              t37 = t39.
-            ELSE.
-              DATA t41 TYPE REF TO zcl_lnt_structure_node.
-              CLEAR t41.
-              t37 = t41.
-            ENDIF.
-            result = t37.
+            result = t29.
             RETURN.
           ENDIF.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA t42 TYPE REF TO zcl_lnt_structure_node.
-    CLEAR t42.
-    result = t42.
+    CLEAR result.
 
   ENDMETHOD.
 
   METHOD concat_tokens.
     DATA t1 TYPE string.
-    DATA(t2) = ||.
-    t1 = t2.
+    t1 = ||.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t6) = me.
-    t5 = t6.
+    t5 = me.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = t5.
-    t7 = t8->children.
+    t7 = t5->children.
     t4 = t7.
     t3 ?= t4.
     DATA t9 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t9.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     DATA(t11) = VALUE i( ).
     DO.
       t3->load( ).
@@ -265,14 +217,12 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       DATA t14 TYPE string.
       DATA(t15) = t1.
       DATA t16 TYPE string.
-      DATA(t17) = t9.
-      t16 = t17->concat_tokens( ).
+      t16 = t9->concat_tokens( ).
       DATA(t18) = strlen( t15 ).
       t14 = |{ t15 }{ t16 }|.
       t1 = t14.
     ENDDO.
-    DATA(t19) = t1.
-    result = t19.
+    result = t1.
 
   ENDMETHOD.
 
@@ -281,17 +231,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t5) = me.
-    t4 = t5.
+    t4 = me.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = t4.
-    t6 = t7->children.
+    t6 = t4->children.
     t3 = t6.
     t2 ?= t3.
     DATA t8 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t2->load( ).
@@ -314,16 +260,14 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA t13 TYPE abap_bool.
       DATA t14 TYPE abap_bool.
-      DATA(t15) = t8.
-      t14 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_statement_node ).
+      t14 = xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ).
       t13 = t14.
       IF t14 = abap_true.
         DATA(t16) = VALUE abap_bool( ).
         DATA t17 TYPE REF TO zif_lnt_statement.
         DATA t18 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t19) = t8.
         DATA t20 TYPE REF TO object.
-        t20 = t19.
+        t20 = t8.
         t18 ?= t20.
         t17 = t18->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA(t21) = t1.
@@ -342,28 +286,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t13 = t16.
       ENDIF.
       IF t13 = abap_true.
-        DATA t23 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t23.
-        DATA(t24) = abap_true.
-        IF t24 = abap_true.
-          DATA t25 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t26) = t8.
-          DATA t27 TYPE REF TO object.
-          t27 = t26.
-          t25 ?= t27.
-          t23 = t25.
-        ELSE.
-          DATA t28 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t28.
-          t23 = t28.
-        ENDIF.
-        result = t23.
+        DATA t25 TYPE REF TO zcl_lnt_statement_node.
+        DATA t27 TYPE REF TO object.
+        t27 = t8.
+        t25 ?= t27.
+        result = t25.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t29 TYPE REF TO zcl_lnt_statement_node.
-    CLEAR t29.
-    result = t29.
+    CLEAR result.
 
   ENDMETHOD.
 
@@ -376,17 +307,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -409,16 +336,14 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA t15 TYPE abap_bool.
       DATA t16 TYPE abap_bool.
-      DATA(t17) = t10.
-      t16 = xsdbool( t17 IS BOUND AND t17 IS INSTANCE OF zcl_lnt_statement_node ).
+      t16 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_statement_node ).
       t15 = t16.
       IF t16 = abap_true.
         DATA(t18) = VALUE abap_bool( ).
         DATA t19 TYPE REF TO zif_lnt_statement.
         DATA t20 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t21) = t10.
         DATA t22 TYPE REF TO object.
-        t22 = t21.
+        t22 = t10.
         t20 ?= t22.
         t19 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA(t23) = t1.
@@ -437,19 +362,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t15 = t18.
       ENDIF.
       IF t15 = abap_true.
-        DATA(t25) = t2.
         DATA t26 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t27) = t10.
         DATA t28 TYPE REF TO object.
-        t28 = t27.
+        t28 = t10.
         t26 ?= t28.
-        t25->load( ).
-        APPEND t26 TO t25->items.
-        t25->save( ).
+        t2->load( ).
+        APPEND t26 TO t2->items.
+        t2->save( ).
       ENDIF.
     ENDDO.
-    DATA(t29) = t2.
-    result = t29.
+    result = t2.
 
   ENDMETHOD.
 
@@ -462,17 +384,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -495,16 +413,14 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA t15 TYPE abap_bool.
       DATA t16 TYPE abap_bool.
-      DATA(t17) = t10.
-      t16 = xsdbool( t17 IS BOUND AND t17 IS INSTANCE OF zcl_lnt_structure_node ).
+      t16 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_structure_node ).
       t15 = t16.
       IF t16 = abap_true.
         DATA(t18) = VALUE abap_bool( ).
         DATA t19 TYPE REF TO zif_lnt_structure.
         DATA t20 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t21) = t10.
         DATA t22 TYPE REF TO object.
-        t22 = t21.
+        t22 = t10.
         t20 ?= t22.
         t19 = t20->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t23) = t1.
@@ -523,19 +439,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t15 = t18.
       ENDIF.
       IF t15 = abap_true.
-        DATA(t25) = t2.
         DATA t26 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t27) = t10.
         DATA t28 TYPE REF TO object.
-        t28 = t27.
+        t28 = t10.
         t26 ?= t28.
-        t25->load( ).
-        APPEND t26 TO t25->items.
-        t25->save( ).
+        t2->load( ).
+        APPEND t26 TO t2->items.
+        t2->save( ).
       ENDIF.
     ENDDO.
-    DATA(t29) = t2.
-    result = t29.
+    result = t2.
 
   ENDMETHOD.
 
@@ -544,17 +457,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t5) = me.
-    t4 = t5.
+    t4 = me.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = t4.
-    t6 = t7->children.
+    t6 = t4->children.
     t3 = t6.
     t2 ?= t3.
     DATA t8 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t2->load( ).
@@ -577,8 +486,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA(t13) = VALUE abap_bool( ).
       DATA t14 TYPE REF TO object.
-      DATA(t15) = t8.
-      t14 = t15->get_db65( ).
+      t14 = t8->get_db65( ).
       DATA(t16) = t1.
       DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t17.
@@ -595,64 +503,34 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ENDWHILE.
       ENDIF.
       IF t13 = abap_true.
-        DATA t19 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t19.
-        DATA(t20) = abap_true.
-        IF t20 = abap_true.
-          DATA t21 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t22) = t8.
-          t21 ?= t22.
-          t19 = t21.
-        ELSE.
-          DATA t23 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t23.
-          t19 = t23.
-        ENDIF.
-        result = t19.
+        DATA t21 TYPE REF TO zcl_lnt_statement_node.
+        t21 ?= t8.
+        result = t21.
         RETURN.
       ELSE.
         DATA t24 TYPE abap_bool.
-        DATA(t25) = t8.
-        t24 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_statement_node ).
+        t24 = xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ).
         IF t24 = abap_true.
           CONTINUE.
         ELSE.
           DATA t26 TYPE REF TO zcl_lnt_statement_node.
           DATA t27 TYPE REF TO zcl_lnt_statement_node.
           DATA t28 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t29) = t8.
           DATA t30 TYPE REF TO object.
-          t30 = t29.
+          t30 = t8.
           t28 ?= t30.
-          DATA(t31) = t1.
-          t27 = t28->find_first_statement( i_type_9913 = t31 ).
+          t27 = t28->find_first_statement( i_type_9913 = t1 ).
           t26 = t27.
           DATA t32 TYPE abap_bool.
-          DATA(t33) = t26.
-          t32 = xsdbool( t33 IS BOUND ).
+          t32 = xsdbool( t26 IS BOUND ).
           IF t32 = abap_true.
-            DATA t34 TYPE REF TO zcl_lnt_statement_node.
-            CLEAR t34.
-            DATA(t35) = abap_true.
-            IF t35 = abap_true.
-              DATA t36 TYPE REF TO zcl_lnt_statement_node.
-              DATA(t37) = t26.
-              t36 = t37.
-              t34 = t36.
-            ELSE.
-              DATA t38 TYPE REF TO zcl_lnt_statement_node.
-              CLEAR t38.
-              t34 = t38.
-            ENDIF.
-            result = t34.
+            result = t26.
             RETURN.
           ENDIF.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA t39 TYPE REF TO zcl_lnt_statement_node.
-    CLEAR t39.
-    result = t39.
+    CLEAR result.
 
   ENDMETHOD.
 
@@ -661,17 +539,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t5) = me.
-    t4 = t5.
+    t4 = me.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t7) = t4.
-    t6 = t7->children.
+    t6 = t4->children.
     t3 = t6.
     t2 ?= t3.
     DATA t8 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t2->load( ).
@@ -694,34 +568,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
       DATA t14 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t15) = t8.
-      DATA(t16) = t1.
-      t14 = t15->find_first_expression( i_type_9913 = t16 ).
+      t14 = t8->find_first_expression( i_type_9913 = t1 ).
       t13 = t14.
       DATA t17 TYPE abap_bool.
-      DATA(t18) = t13.
-      t17 = xsdbool( t18 IS BOUND ).
+      t17 = xsdbool( t13 IS BOUND ).
       IF t17 = abap_true.
-        DATA t19 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t19.
-        DATA(t20) = abap_true.
-        IF t20 = abap_true.
-          DATA t21 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t22) = t13.
-          t21 = t22.
-          t19 = t21.
-        ELSE.
-          DATA t23 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t23.
-          t19 = t23.
-        ENDIF.
-        result = t19.
+        result = t13.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t24 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t24.
-    result = t24.
+    CLEAR result.
 
   ENDMETHOD.
 
@@ -729,17 +585,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t4) = me.
-    t3 = t4.
+    t3 = me.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = t3.
-    t5 = t6->children.
+    t5 = t3->children.
     t2 = t5.
     t1 ?= t2.
     DATA t7 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t7.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     DATA(t9) = VALUE i( ).
     DO.
       t1->load( ).
@@ -761,165 +613,97 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t7 ?= t8.
       ENDIF.
       DATA t12 TYPE abap_bool.
-      DATA(t13) = t7.
-      t12 = xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_statement_node ).
+      t12 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t12 = abap_true.
-        DATA t14 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t14.
-        DATA(t15) = abap_true.
-        IF t15 = abap_true.
-          DATA t16 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t17) = t7.
-          DATA t18 TYPE REF TO object.
-          t18 = t17.
-          t16 ?= t18.
-          t14 = t16.
-        ELSE.
-          DATA t19 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t19.
-          t14 = t19.
-        ENDIF.
-        result = t14.
+        DATA t16 TYPE REF TO zcl_lnt_statement_node.
+        DATA t18 TYPE REF TO object.
+        t18 = t7.
+        t16 ?= t18.
+        result = t16.
         RETURN.
       ENDIF.
       DATA t20 TYPE REF TO zcl_lnt_statement_node.
       DATA t21 TYPE REF TO zcl_lnt_structure_node.
-      DATA(t22) = t7.
       DATA t23 TYPE REF TO object.
-      t23 = t22.
+      t23 = t7.
       t21 ?= t23.
       t20 = t21->get_first_statement( ).
       result = t20.
       RETURN.
     ENDDO.
-    DATA t24 TYPE REF TO zcl_lnt_statement_node.
-    CLEAR t24.
-    result = t24.
+    CLEAR result.
 
   ENDMETHOD.
 
   METHOD get_first_token.
     DATA t1 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_node.
-    CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    CLEAR t4.
-    DATA(t5) = me.
-    t4 = t5.
-    DATA t6 TYPE REF TO zif_lnt_node.
-    CLEAR t6.
-    DATA(t7) = abap_true.
-    IF t7 = abap_true.
-      DATA t8 TYPE REF TO zif_lnt_node.
-      CLEAR t8.
-      DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t9.
-      DATA(t10) = t4.
-      t9 = t10->children.
-      DATA t11 TYPE REF TO object.
-      CLEAR t11.
-      t9->load( ).
-      CLEAR t11.
-      READ TABLE t9->items INDEX 1 INTO t11.
-      DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t12.
-      CLEAR t8.
-      IF t11 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-        t12 ?= t11.
-        DATA t13 TYPE REF TO object.
-        CLEAR t13.
-        t13 = t12->as_ref( ).
-        t8 ?= t13.
-      ELSE.
-        t8 ?= t11.
-      ENDIF.
-      t6 = t8.
+    t4 = me.
+    DATA t8 TYPE REF TO zif_lnt_node.
+    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t9 = t4->children.
+    DATA t11 TYPE REF TO object.
+    t9->load( ).
+    READ TABLE t9->items INDEX 1 INTO t11.
+    DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t11 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+      t12 ?= t11.
+      DATA t13 TYPE REF TO object.
+      t13 = t12->as_ref( ).
+      t8 ?= t13.
     ELSE.
-      DATA t14 TYPE REF TO zif_lnt_node.
-      CLEAR t14.
-      t6 = t14.
+      t8 ?= t11.
     ENDIF.
-    t3 = t6.
+    t3 = t8.
     t2 ?= t3.
     t1 = t2.
     DATA(t15) = VALUE abap_bool( ).
-    DATA t16 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t16.
-    DATA(t17) = t1.
-    t16 = t17.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t18.
-    DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
-    t18 = t19.
     DATA(t20) = VALUE abap_bool( ).
-    DATA(t21) = VALUE abap_bool( ).
-    DATA(t22) = t16.
-    IF t22 IS INITIAL.
-      t21 = abap_true.
-    ENDIF.
+    DATA(t21) = xsdbool( t1 IS INITIAL ).
     t20 = xsdbool( t21 = abap_false ).
     t15 = t20.
     IF t15 = abap_true.
       DATA t23 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t23.
       DATA t24 TYPE REF TO zif_lnt_union_8249fcb1.
-      CLEAR t24.
-      DATA(t25) = t1.
-      t24 = t25.
+      t24 = t1.
       t23 = t24->get_first_token( ).
       result = t23.
       RETURN.
     ENDIF.
     DATA t26 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t26.
     DATA t27 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t27.
     DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t28.
-    DATA(t29) = abap_true.
-    IF t29 = abap_true.
-      DATA(t30) = |StructureNode, getFirstToken, unexpected type|.
-      DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t31->has = abap_true.
-      t31->value = t30.
-      t28 = t31.
-    ELSE.
-      DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t32.
-      t28 = t32.
-    ENDIF.
+    DATA(t30) = |StructureNode, getFirstToken, unexpected type|.
+    DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t31->has = abap_true.
+    t31->value = t30.
+    t28 = t31.
     t27 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t28 ).
     t26 = NEW #( ).
     t26->payload = t27.
     CLEAR t26->source_value.
-    IF t27 IS BOUND.
-      DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t33.
-      DATA t34 TYPE REF TO object.
-      CLEAR t34.
-      CLEAR t33.
-      t34 = t27.
+    DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t34 TYPE REF TO object.
+    t34 = t27.
+    TRY.
+        t26->source_value ?= t34.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t26->source_value IS NOT BOUND.
       TRY.
-          t26->source_value ?= t34.
+          t33 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t33 IS BOUND.
+        t26->source_value = t33->source( ).
+      ENDIF.
       IF t26->source_value IS NOT BOUND.
-        TRY.
-            t33 ?= t27.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t33 IS BOUND.
-          t26->source_value = t33->source( ).
-        ENDIF.
-        IF t26->source_value IS NOT BOUND.
-          CREATE OBJECT t26->source_value.
-          t26->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t26->source_value->oval = t27.
-        ENDIF.
+        CREATE OBJECT t26->source_value.
+        t26->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t26->source_value->oval = t27.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t26.
@@ -927,137 +711,82 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
 
   METHOD get_last_token.
     DATA t1 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t1.
     DATA t2 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_node.
-    CLEAR t3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
-    CLEAR t4.
-    DATA(t5) = me.
-    t4 = t5.
-    DATA t6 TYPE REF TO zif_lnt_node.
-    CLEAR t6.
-    DATA(t7) = abap_true.
-    IF t7 = abap_true.
-      DATA t8 TYPE REF TO zif_lnt_node.
-      CLEAR t8.
-      DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t9.
-      DATA(t10) = t4.
-      t9 = t10->children.
-      DATA(t11) = VALUE i( ).
-      DATA(t12) = VALUE i( ).
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t13.
-      DATA(t14) = t4.
-      t13 = t14->children.
-      t13->load( ).
-      t12 = lines( t13->items ).
-      DATA(t15) = 1.
-      t11 = t12 - t15.
-      t11 = t11 + 1.
-      DATA t16 TYPE REF TO object.
-      CLEAR t16.
-      t9->load( ).
-      CLEAR t16.
-      READ TABLE t9->items INDEX t11 INTO t16.
-      DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t17.
-      CLEAR t8.
-      IF t16 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-        t17 ?= t16.
-        DATA t18 TYPE REF TO object.
-        CLEAR t18.
-        t18 = t17->as_ref( ).
-        t8 ?= t18.
-      ELSE.
-        t8 ?= t16.
-      ENDIF.
-      t6 = t8.
+    t4 = me.
+    DATA t8 TYPE REF TO zif_lnt_node.
+    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t9 = t4->children.
+    DATA(t11) = VALUE i( ).
+    DATA(t12) = VALUE i( ).
+    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t13 = t4->children.
+    t13->load( ).
+    t12 = lines( t13->items ).
+    DATA(t15) = 1.
+    t11 = t12 - t15.
+    t11 = t11 + 1.
+    DATA t16 TYPE REF TO object.
+    t9->load( ).
+    READ TABLE t9->items INDEX t11 INTO t16.
+    DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t16 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+      t17 ?= t16.
+      DATA t18 TYPE REF TO object.
+      t18 = t17->as_ref( ).
+      t8 ?= t18.
     ELSE.
-      DATA t19 TYPE REF TO zif_lnt_node.
-      CLEAR t19.
-      t6 = t19.
+      t8 ?= t16.
     ENDIF.
-    t3 = t6.
+    t3 = t8.
     t2 ?= t3.
     t1 = t2.
     DATA(t20) = VALUE abap_bool( ).
-    DATA t21 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t21.
-    DATA(t22) = t1.
-    t21 = t22.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
-    DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t24.
-    t23 = t24.
     DATA(t25) = VALUE abap_bool( ).
-    DATA(t26) = VALUE abap_bool( ).
-    DATA(t27) = t21.
-    IF t27 IS INITIAL.
-      t26 = abap_true.
-    ENDIF.
+    DATA(t26) = xsdbool( t1 IS INITIAL ).
     t25 = xsdbool( t26 = abap_false ).
     t20 = t25.
     IF t20 = abap_true.
       DATA t28 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t28.
       DATA t29 TYPE REF TO zif_lnt_union_8249fcb1.
-      CLEAR t29.
-      DATA(t30) = t1.
-      t29 = t30.
+      t29 = t1.
       t28 = t29->get_last_token( ).
       result = t28.
       RETURN.
     ENDIF.
     DATA t31 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t31.
     DATA t32 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t32.
     DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t33.
-    DATA(t34) = abap_true.
-    IF t34 = abap_true.
-      DATA(t35) = |StructureNode, getLastToken, unexpected type|.
-      DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t36->has = abap_true.
-      t36->value = t35.
-      t33 = t36.
-    ELSE.
-      DATA t37 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t37.
-      t33 = t37.
-    ENDIF.
+    DATA(t35) = |StructureNode, getLastToken, unexpected type|.
+    DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t36->has = abap_true.
+    t36->value = t35.
+    t33 = t36.
     t32 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t33 ).
     t31 = NEW #( ).
     t31->payload = t32.
     CLEAR t31->source_value.
-    IF t32 IS BOUND.
-      DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t38.
-      DATA t39 TYPE REF TO object.
-      CLEAR t39.
-      CLEAR t38.
-      t39 = t32.
+    DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t39 TYPE REF TO object.
+    t39 = t32.
+    TRY.
+        t31->source_value ?= t39.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t31->source_value IS NOT BOUND.
       TRY.
-          t31->source_value ?= t39.
+          t38 ?= t32.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t38 IS BOUND.
+        t31->source_value = t38->source( ).
+      ENDIF.
       IF t31->source_value IS NOT BOUND.
-        TRY.
-            t38 ?= t32.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t38 IS BOUND.
-          t31->source_value = t38->source( ).
-        ENDIF.
-        IF t31->source_value IS NOT BOUND.
-          CREATE OBJECT t31->source_value.
-          t31->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t31->source_value->oval = t32.
-        ENDIF.
+        CREATE OBJECT t31->source_value.
+        t31->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t31->source_value->oval = t32.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t31.
@@ -1072,17 +801,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -1105,9 +830,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA(t15) = VALUE i( ).
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t17) = t10.
-      DATA(t18) = t1.
-      t16 = t17->find_all_expressions( i_type_9913 = t18 ).
+      t16 = t10->find_all_expressions( i_type_9913 = t1 ).
       DATA t19 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t19.
       DATA t20 TYPE REF TO object.
@@ -1132,20 +855,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ELSE.
           t19 ?= t20.
         ENDIF.
-        DATA(t24) = t2.
-        DATA(t25) = t19.
-        t24->load( ).
-        APPEND t25 TO t24->items.
-        t24->save( ).
+        t2->load( ).
+        APPEND t19 TO t2->items.
+        t2->save( ).
       ENDDO.
       DATA t26 TYPE i.
-      DATA(t27) = t2.
-      t27->load( ).
-      t26 = lines( t27->items ).
+      t2->load( ).
+      t26 = lines( t2->items ).
       t15 = t26.
     ENDDO.
-    DATA(t28) = t2.
-    result = t28.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1158,17 +877,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -1190,18 +905,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t10 ?= t11.
       ENDIF.
       DATA t15 TYPE abap_bool.
-      DATA(t16) = t10.
-      t15 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_statement_node ).
+      t15 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t15 = abap_true.
         DATA(t17) = VALUE i( ).
         DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t19 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t20) = t10.
         DATA t21 TYPE REF TO object.
-        t21 = t20.
+        t21 = t10.
         t19 ?= t21.
-        DATA(t22) = t1.
-        t18 = t19->find_all_expressions_recursive( i_type_9913 = t22 ).
+        t18 = t19->find_all_expressions_recursive( i_type_9913 = t1 ).
         DATA t23 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t23.
         DATA t24 TYPE REF TO object.
@@ -1226,27 +938,22 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ELSE.
             t23 ?= t24.
           ENDIF.
-          DATA(t28) = t2.
-          DATA(t29) = t23.
-          t28->load( ).
-          APPEND t29 TO t28->items.
-          t28->save( ).
+          t2->load( ).
+          APPEND t23 TO t2->items.
+          t2->save( ).
         ENDDO.
         DATA t30 TYPE i.
-        DATA(t31) = t2.
-        t31->load( ).
-        t30 = lines( t31->items ).
+        t2->load( ).
+        t30 = lines( t2->items ).
         t17 = t30.
       ELSE.
         DATA(t32) = VALUE i( ).
         DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t34 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t35) = t10.
         DATA t36 TYPE REF TO object.
-        t36 = t35.
+        t36 = t10.
         t34 ?= t36.
-        DATA(t37) = t1.
-        t33 = t34->find_all_expressions_recursive( i_type_9913 = t37 ).
+        t33 = t34->find_all_expressions_recursive( i_type_9913 = t1 ).
         DATA t38 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t38.
         DATA t39 TYPE REF TO object.
@@ -1271,21 +978,17 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ELSE.
             t38 ?= t39.
           ENDIF.
-          DATA(t43) = t2.
-          DATA(t44) = t38.
-          t43->load( ).
-          APPEND t44 TO t43->items.
-          t43->save( ).
+          t2->load( ).
+          APPEND t38 TO t2->items.
+          t2->save( ).
         ENDDO.
         DATA t45 TYPE i.
-        DATA(t46) = t2.
-        t46->load( ).
-        t45 = lines( t46->items ).
+        t2->load( ).
+        t45 = lines( t2->items ).
         t32 = t45.
       ENDIF.
     ENDDO.
-    DATA(t47) = t2.
-    result = t47.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1298,17 +1001,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -1331,11 +1030,9 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA(t15) = VALUE i( ).
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t17) = t10.
-      DATA(t18) = t1.
       DATA t19 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t19.
-      t16 = t17->find_all_expressions_multi( i_type_9913 = t18 i_recursive = t19 ).
+      t16 = t10->find_all_expressions_multi( i_type_9913 = t1 i_recursive = t19 ).
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t20.
       DATA t21 TYPE REF TO object.
@@ -1360,20 +1057,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ELSE.
           t20 ?= t21.
         ENDIF.
-        DATA(t25) = t2.
-        DATA(t26) = t20.
-        t25->load( ).
-        APPEND t26 TO t25->items.
-        t25->save( ).
+        t2->load( ).
+        APPEND t20 TO t2->items.
+        t2->save( ).
       ENDDO.
       DATA t27 TYPE i.
-      DATA(t28) = t2.
-      t28->load( ).
-      t27 = lines( t28->items ).
+      t2->load( ).
+      t27 = lines( t2->items ).
       t15 = t27.
     ENDDO.
-    DATA(t29) = t2.
-    result = t29.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1386,17 +1079,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -1418,18 +1107,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t10 ?= t11.
       ENDIF.
       DATA t15 TYPE abap_bool.
-      DATA(t16) = t10.
-      t15 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_structure_node ).
+      t15 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_structure_node ).
       IF t15 = abap_true.
         DATA(t17) = VALUE i( ).
         DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t19 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t20) = t10.
         DATA t21 TYPE REF TO object.
-        t21 = t20.
+        t21 = t10.
         t19 ?= t21.
-        DATA(t22) = t1.
-        t18 = t19->find_all_statements( i_type_9913 = t22 ).
+        t18 = t19->find_all_statements( i_type_9913 = t1 ).
         DATA t23 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t23.
         DATA t24 TYPE REF TO object.
@@ -1454,24 +1140,20 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ELSE.
             t23 ?= t24.
           ENDIF.
-          DATA(t28) = t2.
-          DATA(t29) = t23.
-          t28->load( ).
-          APPEND t29 TO t28->items.
-          t28->save( ).
+          t2->load( ).
+          APPEND t23 TO t2->items.
+          t2->save( ).
         ENDDO.
         DATA t30 TYPE i.
-        DATA(t31) = t2.
-        t31->load( ).
-        t30 = lines( t31->items ).
+        t2->load( ).
+        t30 = lines( t2->items ).
         t17 = t30.
       ELSE.
         DATA(t32) = VALUE abap_bool( ).
         DATA t33 TYPE REF TO zif_lnt_statement.
         DATA t34 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t35) = t10.
         DATA t36 TYPE REF TO object.
-        t36 = t35.
+        t36 = t10.
         t34 ?= t36.
         t33 = t34->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         DATA(t37) = t1.
@@ -1488,20 +1170,17 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         IF t32 = abap_true.
-          DATA(t39) = t2.
           DATA t40 TYPE REF TO zcl_lnt_statement_node.
-          DATA(t41) = t10.
           DATA t42 TYPE REF TO object.
-          t42 = t41.
+          t42 = t10.
           t40 ?= t42.
-          t39->load( ).
-          APPEND t40 TO t39->items.
-          t39->save( ).
+          t2->load( ).
+          APPEND t40 TO t2->items.
+          t2->save( ).
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA(t43) = t2.
-    result = t43.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1513,17 +1192,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t6) = me.
-    t5 = t6.
+    t5 = me.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t8) = t5.
-    t7 = t8->children.
+    t7 = t5->children.
     t4 = t7.
     t3 ?= t4.
     DATA t9 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t9.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     DATA(t11) = VALUE i( ).
     DO.
       t3->load( ).
@@ -1545,25 +1220,21 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t9 ?= t10.
       ENDIF.
       DATA t14 TYPE abap_bool.
-      DATA(t15) = t9.
-      t14 = xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_statement_node ).
+      t14 = xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t14 = abap_true.
-        DATA(t16) = t1.
         DATA t17 TYPE REF TO zcl_lnt_statement_node.
-        DATA(t18) = t9.
         DATA t19 TYPE REF TO object.
-        t19 = t18.
+        t19 = t9.
         t17 ?= t19.
-        t16->load( ).
-        APPEND t17 TO t16->items.
-        t16->save( ).
+        t1->load( ).
+        APPEND t17 TO t1->items.
+        t1->save( ).
       ELSE.
         DATA(t20) = VALUE i( ).
         DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t22 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t23) = t9.
         DATA t24 TYPE REF TO object.
-        t24 = t23.
+        t24 = t9.
         t22 ?= t24.
         t21 = t22->find_all_statement_nodes( ).
         DATA t25 TYPE REF TO zcl_lnt_statement_node.
@@ -1590,21 +1261,17 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ELSE.
             t25 ?= t26.
           ENDIF.
-          DATA(t30) = t1.
-          DATA(t31) = t25.
-          t30->load( ).
-          APPEND t31 TO t30->items.
-          t30->save( ).
+          t1->load( ).
+          APPEND t25 TO t1->items.
+          t1->save( ).
         ENDDO.
         DATA t32 TYPE i.
-        DATA(t33) = t1.
-        t33->load( ).
-        t32 = lines( t33->items ).
+        t1->load( ).
+        t32 = lines( t1->items ).
         t20 = t32.
       ENDIF.
     ENDDO.
-    DATA(t34) = t1.
-    result = t34.
+    result = t1.
 
   ENDMETHOD.
 
@@ -1617,17 +1284,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t7) = me.
-    t6 = t7.
+    t6 = me.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t6.
-    t8 = t9->children.
+    t8 = t6->children.
     t5 = t8.
     t4 ?= t5.
     DATA t10 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t10.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     DATA(t12) = VALUE i( ).
     DO.
       t4->load( ).
@@ -1649,17 +1312,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t10 ?= t11.
       ENDIF.
       DATA t15 TYPE abap_bool.
-      DATA(t16) = t10.
-      t15 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_statement_node ).
+      t15 = xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t15 = abap_true.
         CONTINUE.
       ELSE.
         DATA(t17) = VALUE abap_bool( ).
         DATA t18 TYPE REF TO zif_lnt_structure.
         DATA t19 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t20) = t10.
         DATA t21 TYPE REF TO object.
-        t21 = t20.
+        t21 = t10.
         t19 ?= t21.
         t18 = t19->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t22) = t1.
@@ -1676,26 +1337,22 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         IF t17 = abap_true.
-          DATA(t24) = t2.
           DATA t25 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t26) = t10.
           DATA t27 TYPE REF TO object.
-          t27 = t26.
+          t27 = t10.
           t25 ?= t27.
-          t24->load( ).
-          APPEND t25 TO t24->items.
-          t24->save( ).
+          t2->load( ).
+          APPEND t25 TO t2->items.
+          t2->save( ).
         ENDIF.
       ENDIF.
       DATA(t28) = VALUE i( ).
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t30 TYPE REF TO zcl_lnt_structure_node.
-      DATA(t31) = t10.
       DATA t32 TYPE REF TO object.
-      t32 = t31.
+      t32 = t10.
       t30 ?= t32.
-      DATA(t33) = t1.
-      t29 = t30->find_all_structures_recursive( i_type_9913 = t33 ).
+      t29 = t30->find_all_structures_recursive( i_type_9913 = t1 ).
       DATA t34 TYPE REF TO zcl_lnt_structure_node.
       CLEAR t34.
       DATA t35 TYPE REF TO object.
@@ -1720,20 +1377,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ELSE.
           t34 ?= t35.
         ENDIF.
-        DATA(t39) = t2.
-        DATA(t40) = t34.
-        t39->load( ).
-        APPEND t40 TO t39->items.
-        t39->save( ).
+        t2->load( ).
+        APPEND t34 TO t2->items.
+        t2->save( ).
       ENDDO.
       DATA t41 TYPE i.
-      DATA(t42) = t2.
-      t42->load( ).
-      t41 = lines( t42->items ).
+      t2->load( ).
+      t41 = lines( t2->items ).
       t28 = t41.
     ENDDO.
-    DATA(t43) = t2.
-    result = t43.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1743,19 +1396,16 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t3.
     t2 = t3.
-    DATA(t4) = t1.
     DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t5.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     DATA(t7) = VALUE i( ).
     DO.
-      t4->load( ).
-      IF t7 >= lines( t4->items ).
+      t1->load( ).
+      IF t7 >= lines( t1->items ).
         EXIT.
       ENDIF.
       CLEAR t6.
-      READ TABLE t4->items INDEX t7 + 1 INTO t6.
+      READ TABLE t1->items INDEX t7 + 1 INTO t6.
       t7 = t7 + 1.
       DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t8.
@@ -1782,36 +1432,27 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ENDWHILE.
       ENDIF.
       IF t9 = abap_true.
-        DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CREATE OBJECT t15.
         t14 = t15.
-        DATA(t16) = t14.
-        DATA(t17) = me.
-        t16->load( ).
-        APPEND t17 TO t16->items.
-        t16->save( ).
-        DATA(t18) = t14.
-        t13 = t18.
-        result = t13.
+        t14->load( ).
+        APPEND me TO t14->items.
+        t14->save( ).
+        result = t14.
         RETURN.
       ENDIF.
     ENDDO.
     DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t21 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t22) = me.
-    t21 = t22.
+    t21 = me.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t24) = t21.
-    t23 = t24->children.
+    t23 = t21->children.
     t20 = t23.
     t19 ?= t20.
     DATA t25 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t25.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     DATA(t27) = VALUE i( ).
     DO.
       t19->load( ).
@@ -1833,27 +1474,24 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t25 ?= t26.
       ENDIF.
       DATA t30 TYPE abap_bool.
-      DATA(t31) = t25.
-      t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_statement_node ).
+      t30 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t30 = abap_true.
         CONTINUE.
       ENDIF.
       DATA t32 TYPE abap_bool.
-      DATA(t33) = abap_false.
-      t32 = t33.
-      DATA(t34) = t1.
+      t32 = abap_false.
       DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t35.
       DATA t36 TYPE REF TO object.
       CLEAR t36.
       DATA(t37) = VALUE i( ).
       DO.
-        t34->load( ).
-        IF t37 >= lines( t34->items ).
+        t1->load( ).
+        IF t37 >= lines( t1->items ).
           EXIT.
         ENDIF.
         CLEAR t36.
-        READ TABLE t34->items INDEX t37 + 1 INTO t36.
+        READ TABLE t1->items INDEX t37 + 1 INTO t36.
         t37 = t37 + 1.
         DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t38.
@@ -1880,33 +1518,26 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         IF t39 = abap_true.
-          DATA(t43) = t2.
           DATA t44 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t45) = t25.
           DATA t46 TYPE REF TO object.
-          t46 = t45.
+          t46 = t25.
           t44 ?= t46.
-          t43->load( ).
-          APPEND t44 TO t43->items.
-          t43->save( ).
-          DATA(t47) = abap_true.
-          t32 = t47.
+          t2->load( ).
+          APPEND t44 TO t2->items.
+          t2->save( ).
+          t32 = abap_true.
         ENDIF.
       ENDDO.
       DATA t48 TYPE abap_bool.
-      DATA(t49) = t32.
-      DATA(t50) = abap_false.
-      t48 = xsdbool( t49 = t50 ).
+      t48 = xsdbool( t32 = abap_false ).
       IF t48 = abap_true.
         DATA(t51) = VALUE i( ).
         DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t53 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t54) = t25.
         DATA t55 TYPE REF TO object.
-        t55 = t54.
+        t55 = t25.
         t53 ?= t55.
-        DATA(t56) = t1.
-        t52 = t53->find_all_structures_multi( i_type_9913 = t56 ).
+        t52 = t53->find_all_structures_multi( i_type_9913 = t1 ).
         DATA t57 TYPE REF TO zcl_lnt_structure_node.
         CLEAR t57.
         DATA t58 TYPE REF TO object.
@@ -1931,21 +1562,17 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ELSE.
             t57 ?= t58.
           ENDIF.
-          DATA(t62) = t2.
-          DATA(t63) = t57.
-          t62->load( ).
-          APPEND t63 TO t62->items.
-          t62->save( ).
+          t2->load( ).
+          APPEND t57 TO t2->items.
+          t2->save( ).
         ENDDO.
         DATA t64 TYPE i.
-        DATA(t65) = t2.
-        t65->load( ).
-        t64 = lines( t65->items ).
+        t2->load( ).
+        t64 = lines( t2->items ).
         t51 = t64.
       ENDIF.
     ENDDO.
-    DATA(t66) = t2.
-    result = t66.
+    result = t2.
 
   ENDMETHOD.
 
@@ -1959,7 +1586,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA(t5) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t6) = t1.
     DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t7.
     IF t5 IS BOUND.
       t7 = t5->zlnt_builtin_clas_3f891b097658( ).
       WHILE t7 IS BOUND.
@@ -1971,35 +1597,26 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     IF t4 = abap_true.
-      DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CREATE OBJECT t10.
       t9 = t10.
-      DATA(t11) = t9.
-      DATA(t12) = me.
-      t11->load( ).
-      APPEND t12 TO t11->items.
-      t11->save( ).
-      DATA(t13) = t9.
-      t8 = t13.
-      result = t8.
+      t9->load( ).
+      APPEND me TO t9->items.
+      t9->save( ).
+      result = t9.
       RETURN.
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t16 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t17) = me.
-    t16 = t17.
+    t16 = me.
     DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t19) = t16.
-    t18 = t19->children.
+    t18 = t16->children.
     t15 = t18.
     t14 ?= t15.
     DATA t20 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t20.
     DATA t21 TYPE REF TO object.
-    CLEAR t21.
     DATA(t22) = VALUE i( ).
     DO.
       t14->load( ).
@@ -2021,17 +1638,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t20 ?= t21.
       ENDIF.
       DATA t25 TYPE abap_bool.
-      DATA(t26) = t20.
-      t25 = xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_statement_node ).
+      t25 = xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t25 = abap_true.
         CONTINUE.
       ELSE.
         DATA(t27) = VALUE abap_bool( ).
         DATA t28 TYPE REF TO zif_lnt_structure.
         DATA t29 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t30) = t20.
         DATA t31 TYPE REF TO object.
-        t31 = t30.
+        t31 = t20.
         t29 ?= t31.
         t28 = t29->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t32) = t1.
@@ -2048,25 +1663,21 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         IF t27 = abap_true.
-          DATA(t34) = t2.
           DATA t35 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t36) = t20.
           DATA t37 TYPE REF TO object.
-          t37 = t36.
+          t37 = t20.
           t35 ?= t37.
-          t34->load( ).
-          APPEND t35 TO t34->items.
-          t34->save( ).
+          t2->load( ).
+          APPEND t35 TO t2->items.
+          t2->save( ).
         ELSE.
           DATA(t38) = VALUE i( ).
           DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t40 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t41) = t20.
           DATA t42 TYPE REF TO object.
-          t42 = t41.
+          t42 = t20.
           t40 ?= t42.
-          DATA(t43) = t1.
-          t39 = t40->find_all_structures( i_type_9913 = t43 ).
+          t39 = t40->find_all_structures( i_type_9913 = t1 ).
           DATA t44 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t44.
           DATA t45 TYPE REF TO object.
@@ -2091,22 +1702,18 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
             ELSE.
               t44 ?= t45.
             ENDIF.
-            DATA(t49) = t2.
-            DATA(t50) = t44.
-            t49->load( ).
-            APPEND t50 TO t49->items.
-            t49->save( ).
+            t2->load( ).
+            APPEND t44 TO t2->items.
+            t2->save( ).
           ENDDO.
           DATA t51 TYPE i.
-          DATA(t52) = t2.
-          t52->load( ).
-          t51 = lines( t52->items ).
+          t2->load( ).
+          t51 = lines( t2->items ).
           t38 = t51.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA(t53) = t2.
-    result = t53.
+    result = t2.
 
   ENDMETHOD.
 
@@ -2116,7 +1723,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t4) = t1.
     DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t5.
     IF t3 IS BOUND.
       t5 = t3->zlnt_builtin_clas_3f891b097658( ).
       WHILE t5 IS BOUND.
@@ -2128,34 +1734,19 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     IF t2 = abap_true.
-      DATA t6 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t6.
-      DATA(t7) = abap_true.
-      IF t7 = abap_true.
-        DATA(t8) = me.
-        t6 = t8.
-      ELSE.
-        DATA t9 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t9.
-        t6 = t9.
-      ENDIF.
-      result = t6.
+      result = me.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t13) = me.
-    t12 = t13.
+    t12 = me.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t15) = t12.
-    t14 = t15->children.
+    t14 = t12->children.
     t11 = t14.
     t10 ?= t11.
     DATA t16 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t16.
     DATA t17 TYPE REF TO object.
-    CLEAR t17.
     DATA(t18) = VALUE i( ).
     DO.
       t10->load( ).
@@ -2178,8 +1769,7 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       DATA(t21) = VALUE abap_bool( ).
       DATA t22 TYPE REF TO object.
-      DATA(t23) = t16.
-      t22 = t23->get_db65( ).
+      t22 = t16->get_db65( ).
       DATA(t24) = t1.
       DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t25.
@@ -2196,26 +1786,13 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         ENDWHILE.
       ENDIF.
       IF t21 = abap_true.
-        DATA t27 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t27.
-        DATA(t28) = abap_true.
-        IF t28 = abap_true.
-          DATA t29 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t30) = t16.
-          t29 ?= t30.
-          t27 = t29.
-        ELSE.
-          DATA t31 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t31.
-          t27 = t31.
-        ENDIF.
-        result = t27.
+        DATA t29 TYPE REF TO zcl_lnt_structure_node.
+        t29 ?= t16.
+        result = t29.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA t32 TYPE REF TO zcl_lnt_structure_node.
-    CLEAR t32.
-    result = t32.
+    CLEAR result.
 
   ENDMETHOD.
 
@@ -2225,7 +1802,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
     DATA(t3) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
     DATA(t4) = t1.
     DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    CLEAR t5.
     IF t3 IS BOUND.
       t5 = t3->zlnt_builtin_clas_3f891b097658( ).
       WHILE t5 IS BOUND.
@@ -2237,34 +1813,19 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDWHILE.
     ENDIF.
     IF t2 = abap_true.
-      DATA t6 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t6.
-      DATA(t7) = abap_true.
-      IF t7 = abap_true.
-        DATA(t8) = me.
-        t6 = t8.
-      ELSE.
-        DATA t9 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t9.
-        t6 = t9.
-      ENDIF.
-      result = t6.
+      result = me.
       RETURN.
     ENDIF.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abstract_node.
-    DATA(t13) = me.
-    t12 = t13.
+    t12 = me.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t15) = t12.
-    t14 = t15->children.
+    t14 = t12->children.
     t11 = t14.
     t10 ?= t11.
     DATA t16 TYPE REF TO zif_lnt_union_8249fcb1.
-    CLEAR t16.
     DATA t17 TYPE REF TO object.
-    CLEAR t17.
     DATA(t18) = VALUE i( ).
     DO.
       t10->load( ).
@@ -2286,17 +1847,15 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t16 ?= t17.
       ENDIF.
       DATA t21 TYPE abap_bool.
-      DATA(t22) = t16.
-      t21 = xsdbool( t22 IS BOUND AND t22 IS INSTANCE OF zcl_lnt_statement_node ).
+      t21 = xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_statement_node ).
       IF t21 = abap_true.
         CONTINUE.
       ELSE.
         DATA(t23) = VALUE abap_bool( ).
         DATA t24 TYPE REF TO zif_lnt_structure.
         DATA t25 TYPE REF TO zcl_lnt_structure_node.
-        DATA(t26) = t16.
         DATA t27 TYPE REF TO object.
-        t27 = t26.
+        t27 = t16.
         t25 ?= t27.
         t24 = t25->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         DATA(t28) = t1.
@@ -2313,74 +1872,43 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
           ENDWHILE.
         ENDIF.
         IF t23 = abap_true.
-          DATA t30 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t30.
-          DATA(t31) = abap_true.
-          IF t31 = abap_true.
-            DATA t32 TYPE REF TO zcl_lnt_structure_node.
-            DATA(t33) = t16.
-            DATA t34 TYPE REF TO object.
-            t34 = t33.
-            t32 ?= t34.
-            t30 = t32.
-          ELSE.
-            DATA t35 TYPE REF TO zcl_lnt_structure_node.
-            CLEAR t35.
-            t30 = t35.
-          ENDIF.
-          result = t30.
+          DATA t32 TYPE REF TO zcl_lnt_structure_node.
+          DATA t34 TYPE REF TO object.
+          t34 = t16.
+          t32 ?= t34.
+          result = t32.
           RETURN.
         ELSE.
           DATA t36 TYPE REF TO zcl_lnt_structure_node.
           DATA t37 TYPE REF TO zcl_lnt_structure_node.
           DATA t38 TYPE REF TO zcl_lnt_structure_node.
-          DATA(t39) = t16.
           DATA t40 TYPE REF TO object.
-          t40 = t39.
+          t40 = t16.
           t38 ?= t40.
-          DATA(t41) = t1.
-          t37 = t38->find_first_structure( i_type_9913 = t41 ).
+          t37 = t38->find_first_structure( i_type_9913 = t1 ).
           t36 = t37.
           DATA t42 TYPE abap_bool.
-          DATA(t43) = t36.
-          t42 = xsdbool( t43 IS BOUND ).
+          t42 = xsdbool( t36 IS BOUND ).
           IF t42 = abap_true.
-            DATA t44 TYPE REF TO zcl_lnt_structure_node.
-            CLEAR t44.
-            DATA(t45) = abap_true.
-            IF t45 = abap_true.
-              DATA t46 TYPE REF TO zcl_lnt_structure_node.
-              DATA(t47) = t36.
-              t46 = t47.
-              t44 = t46.
-            ELSE.
-              DATA t48 TYPE REF TO zcl_lnt_structure_node.
-              CLEAR t48.
-              t44 = t48.
-            ENDIF.
-            result = t44.
+            result = t36.
             RETURN.
           ENDIF.
         ENDIF.
       ENDIF.
     ENDDO.
-    DATA t49 TYPE REF TO zcl_lnt_structure_node.
-    CLEAR t49.
-    result = t49.
+    CLEAR result.
 
   ENDMETHOD.
 
   METHOD get_db65.
-    DATA(t1) = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
-    result = t1.
+    result = CAST zif_lnt_structure( me->gt_in_sr_ab_nd_st_nd_ts_str_nd( ) ).
 
   ENDMETHOD.
 
   METHOD find_all_expressions_multi.
-    DATA(t1) = i_type_9913.
     DATA(t2) = i_recursive.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
+    DATA(t4) = i_type_9913.
     t3 = me->f_a_e_m_i_s_a_n_st_nd_ts_st_nd( i_type_9913 = t4 ).
     result = t3.
 

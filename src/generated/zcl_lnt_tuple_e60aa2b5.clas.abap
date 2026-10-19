@@ -13,13 +13,10 @@ CLASS zcl_lnt_tuple_e60aa2b5 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_e60aa2b5 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_f0.
     DATA(t2) = i_f1.
-    DATA(t3) = t1.
-    me->f0 = t3.
+    me->f0 = i_f0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f0`.
-    DATA(t4) = t2.
-    me->f1 = t4.
+    me->f1 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f1`.
   ENDMETHOD.
 

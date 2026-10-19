@@ -12,14 +12,12 @@ CLASS zcl_lnt_neptune_launchpad DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstra
 ENDCLASS.
 CLASS zcl_lnt_neptune_launchpad IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_name.
-    DATA(t2) = t1.
+    DATA(t2) = i_name.
     super->constructor( i_name = t2 ).
   ENDMETHOD.
 
   METHOD get_type.
-    DATA(t1) = |ZN03|.
-    result = t1.
+    result = |ZN03|.
 
   ENDMETHOD.
 
@@ -29,22 +27,14 @@ CLASS zcl_lnt_neptune_launchpad IMPLEMENTATION.
     DATA(t3) = CONV f( 30 ).
     t2 = t3.
     DATA t4 TYPE abap_bool.
-    DATA(t5) = abap_true.
-    t4 = t5.
+    t4 = abap_true.
     DATA t6 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    DATA t7 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t7.
-    t6 = t7.
     t1 = NEW zcl_lnt_iallowed_naming( i_max_length = t2 i_allow_namespace = t4 i_custom_regex = t6 ).
     CREATE OBJECT t1->zlnt_view_ownkeys_b0e8086400eb.
     t1->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
-    IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-      t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `maxLength` p1 = t8 ).
-    ENDIF.
+    t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `maxLength` p1 = t8 ).
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF t1->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       t1->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `allowNamespace` p1 = t9 ).
     ENDIF.
@@ -52,13 +42,9 @@ CLASS zcl_lnt_neptune_launchpad IMPLEMENTATION.
     t1->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA(t10) = |maxLength|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
-    IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
-    ENDIF.
+    t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
     DATA(t12) = |allowNamespace|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF t1->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t1->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
     ENDIF.
@@ -67,9 +53,7 @@ CLASS zcl_lnt_neptune_launchpad IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_description.
-    DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t1.
-    result = t1.
+    CLEAR result.
 
   ENDMETHOD.
 

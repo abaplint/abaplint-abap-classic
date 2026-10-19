@@ -9,8 +9,7 @@ CLASS zcx_lnt_fail_combinator_error DEFINITION PUBLIC INHERITING FROM zcl_lnt_bu
 ENDCLASS.
 CLASS zcx_lnt_fail_combinator_error IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_message_26cb.
-    DATA(t2) = t1.
+    DATA(t2) = i_message_26cb.
     super->constructor( i_message_26cb = t2 ).
   ENDMETHOD.
 

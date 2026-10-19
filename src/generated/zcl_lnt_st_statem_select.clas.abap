@@ -13,8 +13,7 @@ CLASS zcl_lnt_st_statem_select DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_statem_select IMPLEMENTATION.
   METHOD get_matcher.
-    DATA(t1) = NEW zcl_lnt_st_expres_select( ).
-    result = t1.
+    result = NEW zcl_lnt_st_expres_select( ).
 
   ENDMETHOD.
 

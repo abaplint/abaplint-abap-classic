@@ -30,15 +30,12 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_type_9913.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
-    DATA(t4) = t1.
+    DATA(t4) = i_type_9913.
     me->zlnt_view_write_s_ae29d8156cf0( p0 = t4 ).
-    DATA(t5) = t2.
-    me->zlnt_view_write_s_b8e011e55154( p0 = t5 ).
-    DATA(t6) = t3.
-    me->zlnt_view_write_s_a8ad9baeb6b6( p0 = t6 ).
+    me->zlnt_view_write_s_b8e011e55154( p0 = t2 ).
+    me->zlnt_view_write_s_a8ad9baeb6b6( p0 = t3 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -71,8 +68,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
   METHOD zlnt_view_write_s_ae29d8156cf0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -80,7 +75,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
     ELSE.
       me->type_cba0 = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t2 ).
       ENDIF.
@@ -100,8 +94,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
   METHOD zlnt_view_write_s_b8e011e55154.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -109,7 +101,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
     ELSE.
       me->old_name = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `oldName` p1 = t2 ).
       ENDIF.
@@ -129,8 +120,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
   METHOD zlnt_view_write_s_a8ad9baeb6b6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -138,7 +127,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
     ELSE.
       me->new_name = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `newName` p1 = t2 ).
       ENDIF.
@@ -195,7 +183,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -295,7 +282,6 @@ CLASS zcl_lnt_shape_9e749db2 IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

@@ -16,9 +16,7 @@ CLASS zcl_lnt_detail IMPLEMENTATION.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA(t2) = |Cloud|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA(t4) = |DETAIL|.
-    CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
     t3->sval = t4.

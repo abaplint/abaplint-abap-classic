@@ -12,9 +12,7 @@ CLASS zcl_lnt_closure_ba6c457f DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_closure_ba6c457f IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_value.
-    DATA(t2) = t1.
-    me->value = t2.
+    me->value = i_value.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `value`.
   ENDMETHOD.
 

@@ -17,18 +17,14 @@ CLASS zcl_lnt_shape_90553f00 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_90553f00 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_rollname_aa57.
-    DATA(t2) = t1.
-    me->rollname_3628 = t2.
+    me->rollname_3628 = i_rollname_aa57.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `rollname`.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `rollname` p1 = t3 ).
     ENDIF.
     DATA(t4) = |rollname|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t4 p1 = t5 ).
     ENDIF.
@@ -154,7 +150,6 @@ CLASS zcl_lnt_shape_90553f00 IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

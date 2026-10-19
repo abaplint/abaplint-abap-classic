@@ -197,10 +197,7 @@ CLASS zlnt_property_loo_db26a22faa3b IMPLEMENTATION.
         CLEAR result.
         IF p0->conf IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = p0->conf.
           TRY.
               result ?= t2.

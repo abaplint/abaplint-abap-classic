@@ -21,12 +21,9 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
-    zcl_lnt_table_type_module=>table_access_type_namespace = t1.
+    zcl_lnt_table_type_module=>table_access_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t3.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -35,9 +32,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t5) = |STANDARD|.
     t2 = t3->set( p0 = t4 p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t7.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -46,9 +41,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t9) = |SORTED|.
     t6 = t7->set( p0 = t8 p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t11.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -57,9 +50,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t13) = |HASHED|.
     t10 = t11->set( p0 = t12 p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t15.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -68,9 +59,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t17) = |INDEX|.
     t14 = t15->set( p0 = t16 p1 = t17 ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t19.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -81,12 +70,9 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
-    DATA(t22) = NEW zlnt_runtime_map__a1006b231250( ).
-    zcl_lnt_table_type_module=>table_key_type_namespace = t22.
+    zcl_lnt_table_type_module=>table_key_type_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t23 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t24.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -95,9 +81,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t26) = |DEFAULT|.
     t23 = t24->set( p0 = t25 p1 = t26 ).
     DATA t27 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t27.
     DATA t28 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t28.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.
@@ -106,9 +90,7 @@ CLASS zcl_lnt_table_type_module IMPLEMENTATION.
     DATA(t30) = |USER|.
     t27 = t28->set( p0 = t29 p1 = t30 ).
     DATA t31 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t31.
     DATA t32 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t32.
     IF zcl_lnt_table_type_module=>zlnt_builtin_init_835804886a08 = abap_false.
       zcl_lnt_table_type_module=>zlnt_builtin_init_4ff3a7c28948( ).
     ENDIF.

@@ -14,45 +14,24 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA(t4) = zlnt_runtime_desc_78196487750d=>zlnt_member_d97_d1013c30597947.
-    CLEAR t3.
     IF t4 IS BOUND.
       CREATE OBJECT t3.
       t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t3->cval = t4.
     ENDIF.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     DATA t9 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t9.
-    DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t12.
     DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d22_cfdc313f209817.
     t12 = zcl_lnt_st_combi_module=>tok( i_t = t13 ).
-    CLEAR t11.
     IF t12 IS BOUND.
       DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t14.
       DATA t15 TYPE REF TO object.
-      CLEAR t15.
-      CLEAR t14.
       t15 = t12.
       TRY.
           t11 ?= t15.
@@ -73,39 +52,21 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t10 = t11.
-    DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     DATA(t18) = zlnt_runtime_desc_78196487750d=>zlnt_member_d97_d1013c30597947.
-    CLEAR t17.
     IF t18 IS BOUND.
       CREATE OBJECT t17.
       t17->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t17->cval = t18.
     ENDIF.
-    t16 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t19.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t20.
     CREATE OBJECT t20.
-    t19 = t20.
     DATA t21 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t21.
-    DATA(t22) = t10.
-    DATA(t23) = t16.
-    DATA(t24) = t19.
-    t21 = zcl_lnt_st_combi_module=>seq( i_first = t22 i_second = t23 i_rest = t24 ).
+    t21 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t17 i_rest = t20 ).
     t9 = t21.
-    CLEAR t8.
     IF t9 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t25.
       DATA t26 TYPE REF TO object.
-      CLEAR t26.
-      CLEAR t25.
       t26 = t9.
       TRY.
           t8 ?= t26.
@@ -127,13 +88,9 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
       ENDIF.
     ENDIF.
     t7 = zcl_lnt_st_combi_module=>star_prio( i_first = t8 ).
-    CLEAR t6.
     IF t7 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t27.
       DATA t28 TYPE REF TO object.
-      CLEAR t28.
-      CLEAR t27.
       t28 = t7.
       TRY.
           t6 ?= t28.
@@ -154,21 +111,11 @@ CLASS zcl_lnt_exception_name IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t5 = t6.
-    DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t29.
     DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t30.
     CREATE OBJECT t30.
-    t29 = t30.
     DATA t31 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t31.
-    DATA(t32) = t2.
-    DATA(t33) = t5.
-    DATA(t34) = t29.
-    t31 = zcl_lnt_st_combi_module=>seq( i_first = t32 i_second = t33 i_rest = t34 ).
-    t1 = t31.
-    result = t1.
+    t31 = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t30 ).
+    result = t31.
 
   ENDMETHOD.
 

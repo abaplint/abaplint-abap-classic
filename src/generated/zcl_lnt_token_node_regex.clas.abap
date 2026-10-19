@@ -9,8 +9,7 @@ CLASS zcl_lnt_token_node_regex DEFINITION PUBLIC INHERITING FROM zcl_lnt_token_n
 ENDCLASS.
 CLASS zcl_lnt_token_node_regex IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_token.
-    DATA(t2) = t1.
+    DATA(t2) = i_token.
     super->constructor( i_token = t2 ).
   ENDMETHOD.
 

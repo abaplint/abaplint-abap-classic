@@ -14,51 +14,36 @@ ENDCLASS.
 CLASS zcl_lnt_macro_recursion IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA(t5) = |MacroRecursion Statement, get_matcher|.
-      DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t6->has = abap_true.
-      t6->value = t5.
-      t3 = t6.
-    ELSE.
-      DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t7.
-      t3 = t7.
-    ENDIF.
+    DATA(t5) = |MacroRecursion Statement, get_matcher|.
+    DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t6->has = abap_true.
+    t6->value = t5.
+    t3 = t6.
     t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.
-    IF t2 IS BOUND.
-      DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t8.
-      DATA t9 TYPE REF TO object.
-      CLEAR t9.
-      CLEAR t8.
-      t9 = t2.
+    DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t9 TYPE REF TO object.
+    t9 = t2.
+    TRY.
+        t1->source_value ?= t9.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t1->source_value IS NOT BOUND.
       TRY.
-          t1->source_value ?= t9.
+          t8 ?= t2.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t8 IS BOUND.
+        t1->source_value = t8->source( ).
+      ENDIF.
       IF t1->source_value IS NOT BOUND.
-        TRY.
-            t8 ?= t2.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t8 IS BOUND.
-          t1->source_value = t8->source( ).
-        ENDIF.
-        IF t1->source_value IS NOT BOUND.
-          CREATE OBJECT t1->source_value.
-          t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t1->source_value->oval = t2.
-        ENDIF.
+        CREATE OBJECT t1->source_value.
+        t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t1->source_value->oval = t2.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t1.

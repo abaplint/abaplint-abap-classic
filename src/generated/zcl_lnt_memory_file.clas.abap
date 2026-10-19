@@ -12,12 +12,10 @@ CLASS zcl_lnt_memory_file DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_fil
 ENDCLASS.
 CLASS zcl_lnt_memory_file IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_filename.
     DATA(t2) = i_raw.
-    DATA(t3) = t1.
+    DATA(t3) = i_filename.
     super->constructor( i_filename = t3 ).
-    DATA(t4) = t2.
-    me->raw = t4.
+    me->raw = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `raw`.
   ENDMETHOD.
 

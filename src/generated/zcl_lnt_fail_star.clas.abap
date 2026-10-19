@@ -36,53 +36,43 @@ CLASS zcl_lnt_fail_star IMPLEMENTATION.
   METHOD rn_in_sr_ab_2_st_cmb_ts_fl_str.
     DATA(t1) = i_r_7825.
     DATA t2 TYPE REF TO zlnt_exception_cl_b5db639d3852.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcx_lnt_fail_star_error.
-    CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t4.
     t3 = NEW zcx_lnt_fail_star_error( i_message_26cb = t4 ).
     t2 = NEW #( ).
     t2->payload = t3.
     CLEAR t2->source_value.
-    IF t3 IS BOUND.
-      DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t5.
-      DATA t6 TYPE REF TO object.
-      CLEAR t6.
-      CLEAR t5.
-      t6 = t3.
+    DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t6 TYPE REF TO object.
+    t6 = t3.
+    TRY.
+        t2->source_value ?= t6.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t2->source_value IS NOT BOUND.
       TRY.
-          t2->source_value ?= t6.
+          t5 ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t5 IS BOUND.
+        t2->source_value = t5->source( ).
+      ENDIF.
       IF t2->source_value IS NOT BOUND.
-        TRY.
-            t5 ?= t3.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t5 IS BOUND.
-          t2->source_value = t5->source( ).
-        ENDIF.
-        IF t2->source_value IS NOT BOUND.
-          CREATE OBJECT t2->source_value.
-          t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t2->source_value->oval = t3.
-        ENDIF.
+        CREATE OBJECT t2->source_value.
+        t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t2->source_value->oval = t3.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t2.
   ENDMETHOD.
 
   METHOD railroad.
-    DATA(t1) = |Railroad.Terminal('!FailStar')|.
-    result = t1.
+    result = |Railroad.Terminal('!FailStar')|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA(t1) = |fail()|.
-    result = t1.
+    result = |fail()|.
 
   ENDMETHOD.
 
@@ -94,9 +84,8 @@ CLASS zcl_lnt_fail_star IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD run.
-    DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = t1.
+    DATA(t3) = i_r_f634.
     t2 = me->rn_in_sr_ab_2_st_cmb_ts_fl_str( i_r_7825 = t3 ).
     result = t2.
 
@@ -110,13 +99,10 @@ CLASS zcl_lnt_fail_star IMPLEMENTATION.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t5.
     t4 = t5.
-    DATA(t6) = t4.
-    DATA(t7) = t1.
-    t6->load( ).
-    APPEND t7 TO t6->items.
-    t6->save( ).
-    DATA(t8) = t4.
-    t3 = t8.
+    t4->load( ).
+    APPEND t1 TO t4->items.
+    t4->save( ).
+    t3 = t4.
     t2 = me->run( i_r_f634 = t3 ).
     result = t2.
 
