@@ -228,7 +228,6 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
       t73 = t80.
       DATA(t88) = VALUE abap_bool( ).
       DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t90.
       DATA(t93) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t93->has = abap_true.
       t93->value = |#|.
@@ -278,7 +277,6 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
         CLEAR t122.
         DATA(t126) = VALUE string( ).
         DATA t127 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t127.
         DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t134.
         DATA(t137) = |Left hand side is inline, VALUE is inferred, value body is s|.

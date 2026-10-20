@@ -47,7 +47,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         IF t31 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t33 ?= t31.
           DATA t34 TYPE REF TO object.
-          CLEAR t34.
           t34 = t33->as_ref( ).
           t30 ?= t34.
         ELSE.
@@ -76,7 +75,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           IF t39 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t41 ?= t39.
             DATA t42 TYPE REF TO object.
-            CLEAR t42.
             t42 = t41->as_ref( ).
             t38 ?= t42.
           ELSE.
@@ -105,7 +103,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         IF t47 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t49 ?= t47.
           DATA t50 TYPE REF TO object.
-          CLEAR t50.
           t50 = t49->as_ref( ).
           t46 ?= t50.
         ELSE.
@@ -153,7 +150,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         IF t68 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t70 ?= t68.
           DATA t71 TYPE REF TO object.
-          CLEAR t71.
           t71 = t70->as_ref( ).
           t67 ?= t71.
         ELSE.
@@ -164,7 +160,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         DATA t74 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t74.
         DATA t76 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t76.
         DATA(t79) = zlnt_runtime_desc_78196487750d=>zlnt_member_d282_f7a860018d26.
         t76 = t67->find_direct_expression( i_type_9913 = t79 ).
         DATA t80 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -223,7 +218,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
         READ TABLE t61->items INDEX t99 + 1 INTO t98.
         t99 = t99 + 1.
         DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t101.
         t101 = t98.
         DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t103.
@@ -443,7 +437,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           t260 = t1->get_first_token( )->start.
           t259 = NEW zcl_lnt_lx_identifier( i_start = t260 i_str = t249->zlnt_view_read_sr_dae473e680bd( ) ).
           DATA t269 TYPE REF TO zcl_lnt_typed_identifier.
-          CLEAR t269.
           DATA(t271) = VALUE string( ).
           t271 = t2->filename.
           DATA t273 TYPE REF TO zcl_lnt_abstract_type.
@@ -455,7 +448,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           CLEAR t276.
           t269 = NEW zcl_lnt_typed_identifier( i_token = t259 i_filename = t271 i_type_9913 = t273 i_meta = t275 i_value = t276 ).
           DATA t278 TYPE REF TO zcl_lnt_current_scope.
-          CLEAR t278.
           t278 = t2->scope.
           DATA t280 TYPE REF TO zcl_lnt_typed_identifier.
           CLEAR t280.
@@ -466,7 +458,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
           IF xsdbool( t280 IS INITIAL ) = abap_true.
           ELSE.
             DATA t294 TYPE REF TO zcl_lnt_fi_identifier.
-            CLEAR t294.
             t294 = t280.
             DATA(t298) = VALUE string( ).
             t298 = t294->token->str.
@@ -536,14 +527,12 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       IF t329 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t331 ?= t329.
         DATA t332 TYPE REF TO object.
-        CLEAR t332.
         t332 = t331->as_ref( ).
         t328 ?= t332.
       ELSE.
         t328 ?= t329.
       ENDIF.
       DATA t333 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t333.
       DATA t334 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t334.
       t334 = t328.
@@ -577,14 +566,12 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       IF t347 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t349 ?= t347.
         DATA t350 TYPE REF TO object.
-        CLEAR t350.
         t350 = t349->as_ref( ).
         t346 ?= t350.
       ELSE.
         t346 ?= t347.
       ENDIF.
       DATA t351 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t351.
       DATA t352 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t352.
       t352 = t346.
@@ -618,7 +605,6 @@ CLASS zcl_lnt_sy_update_database IMPLEMENTATION.
       IF t365 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t367 ?= t365.
         DATA t368 TYPE REF TO object.
-        CLEAR t368.
         t368 = t367->as_ref( ).
         t364 ?= t368.
       ELSE.

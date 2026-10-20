@@ -249,28 +249,22 @@ CLASS zcl_lnt_cds_field_order IMPLEMENTATION.
         DATA t103 TYPE string.
         t103 = t77->concat_tokens( ).
         DATA t105 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t105.
         DATA(t107) = |^(KEY\|VIRTUAL)[\t\n|.
         DATA t108 TYPE c LENGTH 1.
-        CLEAR t108.
         t108 = cl_abap_conv_in_ce=>uccpi( 11 ).
         CONCATENATE t107 t108 INTO t107 RESPECTING BLANKS.
         DATA t109 TYPE c LENGTH 1.
-        CLEAR t109.
         t109 = cl_abap_conv_in_ce=>uccpi( 12 ).
         CONCATENATE t107 t109 INTO t107 RESPECTING BLANKS.
         t107 = t107 && |\r    - |.
         DATA t110 TYPE c LENGTH 1.
-        CLEAR t110.
         t110 = cl_abap_conv_in_ce=>uccpi( 8232 ).
         CONCATENATE t107 t110 INTO t107 RESPECTING BLANKS.
         DATA t111 TYPE c LENGTH 1.
-        CLEAR t111.
         t111 = cl_abap_conv_in_ce=>uccpi( 8233 ).
         CONCATENATE t107 t111 INTO t107 RESPECTING BLANKS.
         t107 = t107 && |  　|.
         DATA t112 TYPE c LENGTH 1.
-        CLEAR t112.
         t112 = cl_abap_conv_in_ce=>uccpi( 65279 ).
         CONCATENATE t107 t112 INTO t107 RESPECTING BLANKS.
         t107 = t107 && |]+|.
@@ -364,25 +358,20 @@ CLASS zcl_lnt_cds_field_order IMPLEMENTATION.
         CLEAR t142.
         DATA(t144) = |[\t\n|.
         DATA t145 TYPE c LENGTH 1.
-        CLEAR t145.
         t145 = cl_abap_conv_in_ce=>uccpi( 11 ).
         CONCATENATE t144 t145 INTO t144 RESPECTING BLANKS.
         DATA t146 TYPE c LENGTH 1.
-        CLEAR t146.
         t146 = cl_abap_conv_in_ce=>uccpi( 12 ).
         CONCATENATE t144 t146 INTO t144 RESPECTING BLANKS.
         t144 = t144 && |\r    - |.
         DATA t147 TYPE c LENGTH 1.
-        CLEAR t147.
         t147 = cl_abap_conv_in_ce=>uccpi( 8232 ).
         CONCATENATE t144 t147 INTO t144 RESPECTING BLANKS.
         DATA t148 TYPE c LENGTH 1.
-        CLEAR t148.
         t148 = cl_abap_conv_in_ce=>uccpi( 8233 ).
         CONCATENATE t144 t148 INTO t144 RESPECTING BLANKS.
         t144 = t144 && |  　|.
         DATA t149 TYPE c LENGTH 1.
-        CLEAR t149.
         t149 = cl_abap_conv_in_ce=>uccpi( 65279 ).
         CONCATENATE t144 t149 INTO t144 RESPECTING BLANKS.
         t144 = t144 && |.,:(]+|.
@@ -420,7 +409,6 @@ CLASS zcl_lnt_cds_field_order IMPLEMENTATION.
           t167 = t77->get_first_token( ).
           DATA(t170) = VALUE string( ).
           DATA t171 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t171.
           DATA t176 TYPE string.
           DATA(t177) = |Checks that CDS key fields are listed first and associations|.
           t177 = t177 && | last in the field list|.
@@ -544,7 +532,6 @@ CLASS zcl_lnt_cds_field_order IMPLEMENTATION.
           t237 = t77->get_first_token( ).
           DATA(t240) = VALUE string( ).
           DATA t241 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t241.
           DATA t246 TYPE string.
           DATA(t247) = |Checks that CDS key fields are listed first and associations|.
           t247 = t247 && | last in the field list|.

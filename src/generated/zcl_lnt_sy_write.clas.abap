@@ -79,7 +79,6 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t31 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t33 ?= t31.
         DATA t34 TYPE REF TO object.
-        CLEAR t34.
         t34 = t33->as_ref( ).
         t30 ?= t34.
       ELSE.
@@ -114,7 +113,6 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
         DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t54.
         DATA t55 TYPE REF TO object.
-        CLEAR t55.
         CLEAR t54.
         t55 = t49.
         TRY.
@@ -141,7 +139,6 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
         DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t56.
         DATA t57 TYPE REF TO object.
-        CLEAR t57.
         CLEAR t56.
         t57 = t3.
         TRY.
@@ -184,10 +181,8 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       ENDIF.
       IF t46 = abap_true.
         DATA t74 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t74.
         t74 = t2->issues.
         DATA t76 TYPE REF TO zcl_lnt_issue.
-        CLEAR t76.
         DATA t78 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t78.
         t78 = t30->get_first_token( ).
@@ -238,19 +233,15 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t104 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t106 ?= t104.
         DATA t107 TYPE REF TO object.
-        CLEAR t107.
         t107 = t106->as_ref( ).
         t103 ?= t107.
       ELSE.
         t103 ?= t104.
       ENDIF.
       DATA t108 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t108.
       DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t111.
       DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t113.
-      CLEAR t113.
       CREATE OBJECT t113.
       t113->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t113->sval = |Read From|.
@@ -279,7 +270,6 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t121 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t123 ?= t121.
         DATA t124 TYPE REF TO object.
-        CLEAR t124.
         t124 = t123->as_ref( ).
         t120 ?= t124.
       ELSE.

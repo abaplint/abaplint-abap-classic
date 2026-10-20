@@ -503,7 +503,6 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
           CLEAR t248.
           DATA(t253) = VALUE string( ).
           DATA t254 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t254.
           DATA t261 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t261.
           DATA(t264) = |https://en.wikipedia.org/wiki/Yoda_conditions\n\nConditions wi|.
@@ -917,7 +916,6 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
         CLEAR t486.
         DATA(t491) = VALUE string( ).
         DATA t492 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t492.
         DATA t499 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t499.
         DATA(t502) = |https://en.wikipedia.org/wiki/Yoda_conditions\n\nConditions wi|.

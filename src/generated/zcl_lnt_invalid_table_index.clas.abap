@@ -208,7 +208,6 @@ CLASS zcl_lnt_invalid_table_index IMPLEMENTATION.
         t88 = t29.
         DATA(t91) = VALUE string( ).
         DATA t92 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t92.
         DATA t97 TYPE string.
         DATA(t98) = |Issues error for constant table index zero, as ABAP starts f|.
         t98 = t98 && |rom 1|.
@@ -393,7 +392,6 @@ CLASS zcl_lnt_invalid_table_index IMPLEMENTATION.
         t223 = t164.
         DATA(t226) = VALUE string( ).
         DATA t227 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t227.
         DATA t232 TYPE string.
         DATA(t233) = |Issues error for constant table index zero, as ABAP starts f|.
         t233 = t233 && |rom 1|.

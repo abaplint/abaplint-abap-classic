@@ -358,27 +358,17 @@ CLASS zcl_lnt_artifacts_objects IMPLEMENTATION.
         zcl_lnt_ob_index_module=>zlnt_builtin_init_38a35685e8ab( ).
       ENDIF.
       t13 = zcl_lnt_ob_index_module=>ns->get( p0 = t9 ).
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t17.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t18.
-      DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t19.
-      CREATE OBJECT t19.
-      t18 = t19.
+      CREATE OBJECT t18.
       DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t21.
-      CLEAR t21.
       CREATE OBJECT t21.
       t21->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t21->sval = |DUMMY_NAME|.
       t18->load( ).
       APPEND t21 TO t18->items.
       t18->save( ).
-      t17 = t18.
       DATA t24 TYPE REF TO object.
-      CLEAR t24.
-      t24 = zlnt_runtime_clas_c216c6067abd=>new_args( p0 = t13 p1 = t17 ).
+      t24 = zlnt_runtime_clas_c216c6067abd=>new_args( p0 = t13 p1 = t18 ).
       t12 ?= t24.
       DATA t25 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
       CLEAR t25.

@@ -58,24 +58,24 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
       APPEND t42 TO t40->items.
       t40->save( ).
       RETURN.
-    ELSE.
-      DATA(t48) = VALUE abap_bool( ).
-      DATA(t49) = VALUE abap_bool( ).
-      DATA(t50) = t3.
-      t49 = xsdbool( t50 IS BOUND AND t50 IS INSTANCE OF zcl_lnt_ty_table_type ).
-      t48 = t49.
-      IF t49 = abap_true.
-        DATA t53 TYPE REF TO zcl_lnt_abstract_token.
-        t53 = t1->find_direct_token_by_text( i_text = |LINES| ).
-        DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t48 = xsdbool( t53 IS INITIAL ).
-      ENDIF.
-      IF t48 = abap_true.
-        DATA t64 TYPE REF TO zcl_lnt_ty_table_type.
-        t64 ?= t3.
-        t3 = t64->row_type.
-      ENDIF.
     ENDIF.
+    DATA(t48) = VALUE abap_bool( ).
+    DATA(t49) = VALUE abap_bool( ).
+    DATA(t50) = t3.
+    t49 = xsdbool( t50 IS BOUND AND t50 IS INSTANCE OF zcl_lnt_ty_table_type ).
+    t48 = t49.
+    IF t49 = abap_true.
+      DATA t53 TYPE REF TO zcl_lnt_abstract_token.
+      t53 = t1->find_direct_token_by_text( i_text = |LINES| ).
+      DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t48 = xsdbool( t53 IS INITIAL ).
+    ENDIF.
+    IF t48 = abap_true.
+      DATA t64 TYPE REF TO zcl_lnt_ty_table_type.
+      t64 ?= t3.
+      t3 = t64->row_type.
+    ENDIF.
+
     DATA(t69) = VALUE abap_bool( ).
     DATA t72 TYPE REF TO zcl_lnt_abstract_token.
     t72 = t1->find_direct_token_by_text( i_text = |INITIAL| ).
@@ -317,7 +317,6 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
       IF t301 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t303 ?= t301.
         DATA t304 TYPE REF TO object.
-        CLEAR t304.
         t304 = t303->as_ref( ).
         t300 ?= t304.
       ELSE.
@@ -325,7 +324,6 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
       ENDIF.
       DATA(t305) = VALUE abap_bool( ).
       DATA t306 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t306.
       t306 = t300.
       DATA t311 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t311.
@@ -338,7 +336,6 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
           DATA t313 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t313.
           DATA t314 TYPE REF TO object.
-          CLEAR t314.
           CLEAR t313.
           t314 = t306.
           TRY.
@@ -368,7 +365,6 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
           DATA t315 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t315.
           DATA t316 TYPE REF TO object.
-          CLEAR t316.
           CLEAR t315.
           t316 = t80.
           TRY.
@@ -400,7 +396,6 @@ CLASS zcl_lnt_sy_insert_internal IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t317 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t317.
       DATA t318 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t318.
       t318 = t300.

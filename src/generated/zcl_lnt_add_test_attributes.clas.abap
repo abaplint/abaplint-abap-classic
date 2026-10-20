@@ -249,7 +249,6 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
       ENDIF.
       t62 = t65.
       DATA t77 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t77.
       DATA(t80) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t80->has = abap_true.
       t80->value = abap_false.
@@ -420,7 +419,6 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         t157 = t27.
         DATA(t160) = VALUE string( ).
         DATA t161 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t161.
         DATA t166 TYPE string.
         DATA(t167) = |Add test attributes DURATION and RISK LEVEL for tests classe|.
         t167 = t167 && |s with test methods|.
@@ -540,7 +538,6 @@ CLASS zcl_lnt_add_test_attributes IMPLEMENTATION.
         t225 = t27.
         DATA(t228) = VALUE string( ).
         DATA t229 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t229.
         DATA t234 TYPE string.
         DATA(t235) = |Add test attributes DURATION and RISK LEVEL for tests classe|.
         t235 = t235 && |s with test methods|.

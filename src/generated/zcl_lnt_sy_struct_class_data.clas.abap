@@ -78,22 +78,16 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
       IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t32 ?= t30.
         DATA t33 TYPE REF TO object.
-        CLEAR t33.
         t33 = t32->as_ref( ).
         t29 ?= t33.
       ELSE.
         t29 ?= t30.
       ENDIF.
       DATA t34 TYPE REF TO zif_lnt_union_dc0fb493.
-      CLEAR t34.
       DATA t35 TYPE REF TO zif_lnt_union_dc0fb493.
       CLEAR t35.
-      DATA t36 TYPE REF TO object.
-      CLEAR t36.
-      t36 = t29->get_db65( ).
       DATA t38 TYPE REF TO object.
-      CLEAR t38.
-      t38 = t36.
+      t38 = t29->get_db65( ).
       t35 ?= t38.
       t34 = t35.
       DATA(t39) = VALUE abap_bool( ).
@@ -105,12 +99,10 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
       ENDIF.
       IF t39 = abap_true.
         DATA t44 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t44.
         DATA(t46) = NEW zcl_lnt_sy_statem_class_data( ).
         DATA t47 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t47.
         DATA t49 TYPE REF TO object.
-        CLEAR t49.
         t49 = t29.
         t47 ?= t49.
         t44 = t46->run_syntax( i_node = t47 i_input_967e = t2 ).
@@ -119,7 +111,6 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
           CLEAR t54.
           DATA(t55) = VALUE string( ).
           DATA t57 TYPE REF TO zcl_lnt_fi_identifier.
-          CLEAR t57.
           t57 = t44.
           DATA(t61) = VALUE string( ).
           t61 = t57->token->str.
@@ -200,7 +191,6 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
           t21->save( ).
           DATA(t104) = VALUE string( ).
           DATA t105 TYPE REF TO zcl_lnt_fi_identifier.
-          CLEAR t105.
           t105 = t44.
           DATA(t109) = VALUE string( ).
           t109 = t105->token->str.
@@ -261,12 +251,10 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
         ENDIF.
         IF t140 = abap_true.
           DATA t145 TYPE REF TO zcl_lnt_typed_identifier.
-          CLEAR t145.
           DATA(t147) = NEW zcl_lnt_sy_struct_class_data( ).
           DATA t148 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t148.
           DATA t150 TYPE REF TO object.
-          CLEAR t150.
           t150 = t29.
           t148 ?= t150.
           t145 = t147->run_syntax( i_node = t148 i_input_967e = t2 ).
@@ -275,7 +263,6 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
             CLEAR t155.
             DATA(t156) = VALUE string( ).
             DATA t158 TYPE REF TO zcl_lnt_fi_identifier.
-            CLEAR t158.
             t158 = t145.
             DATA(t162) = VALUE string( ).
             t162 = t158->token->str.
@@ -356,7 +343,6 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
             t21->save( ).
             DATA(t205) = VALUE string( ).
             DATA t206 TYPE REF TO zcl_lnt_fi_identifier.
-            CLEAR t206.
             t206 = t145.
             DATA(t210) = VALUE string( ).
             t210 = t206->token->str.

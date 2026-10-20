@@ -254,50 +254,50 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
       t66 = t60->get_first_token( )->start.
       IF xsdbool( t66 IS BOUND AND t66 IS INSTANCE OF zcl_lnt_virtual_position ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t77 TYPE REF TO zcl_lnt_position.
-        t77 = t60->get_first_token( )->start.
-        IF t77->is_after( i_p = t39 ) = abap_true.
-          EXIT.
-        ELSE.
-          DATA t81 TYPE REF TO zcl_lnt_position.
-          DATA t83 TYPE REF TO zcl_lnt_abstract_token.
-          t83 = t60->get_last_token( ).
-          DATA t87 TYPE f.
-          t87 = t83->start->row.
-          DATA t94 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t94 = t83->start->col.
-          DATA t100 TYPE f.
-          t100 = strlen( t83->str ).
-          DATA(t105) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-          t105->has = abap_true.
-          t105->value = t100.
-          t81 = NEW zcl_lnt_position( i_row = t87 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t94 right = t105 op = `+` ) ).
-          DATA t106 TYPE REF TO zcl_lnt_position.
-          t106 = t26.
-          DATA t108 TYPE abap_bool.
-          DATA t109 TYPE abap_bool.
-          t109 = xsdbool( t81->row < t106->row ).
-          t108 = t109.
-          IF t109 = abap_false.
-            DATA t114 TYPE abap_bool.
-            DATA t115 TYPE abap_bool.
-            t115 = xsdbool( t81->row = t106->row ).
-            t114 = t115.
-            IF t115 = abap_true.
-              DATA t121 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-              t121 = t81->col.
-              DATA t123 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-              t123 = t106->col.
-              t114 = zlnt_runtime_numb_290eb04a9758=>compare( left = t121 right = t123 op = `<` ).
-            ENDIF.
-            t108 = t114.
-          ENDIF.
-          IF t108 = abap_true.
-            CONTINUE.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      DATA t77 TYPE REF TO zcl_lnt_position.
+      t77 = t60->get_first_token( )->start.
+      IF t77->is_after( i_p = t39 ) = abap_true.
+        EXIT.
+      ENDIF.
+      DATA t81 TYPE REF TO zcl_lnt_position.
+      DATA t83 TYPE REF TO zcl_lnt_abstract_token.
+      t83 = t60->get_last_token( ).
+      DATA t87 TYPE f.
+      t87 = t83->start->row.
+      DATA t94 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+      t94 = t83->start->col.
+      DATA t100 TYPE f.
+      t100 = strlen( t83->str ).
+      DATA(t105) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+      t105->has = abap_true.
+      t105->value = t100.
+      t81 = NEW zcl_lnt_position( i_row = t87 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t94 right = t105 op = `+` ) ).
+      DATA t106 TYPE REF TO zcl_lnt_position.
+      t106 = t26.
+      DATA t108 TYPE abap_bool.
+      DATA t109 TYPE abap_bool.
+      t109 = xsdbool( t81->row < t106->row ).
+      t108 = t109.
+      IF t109 = abap_false.
+        DATA t114 TYPE abap_bool.
+        DATA t115 TYPE abap_bool.
+        t115 = xsdbool( t81->row = t106->row ).
+        t114 = t115.
+        IF t115 = abap_true.
+          DATA t121 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+          t121 = t81->col.
+          DATA t123 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+          t123 = t106->col.
+          t114 = zlnt_runtime_numb_290eb04a9758=>compare( left = t121 right = t123 op = `<` ).
+        ENDIF.
+        t108 = t114.
+      ENDIF.
+      IF t108 = abap_true.
+        CONTINUE.
+      ENDIF.
+
+
       DATA t125 TYPE REF TO zif_lnt_statement.
       t125 = t60->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       DATA t128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -588,7 +588,6 @@ CLASS zcl_lnt_semantic_highlighting IMPLEMENTATION.
       DATA(t31) = VALUE abap_bool( ).
       DATA(t32) = t4.
       DATA t33 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      CLEAR t33.
       DATA t35 TYPE f.
       t35 = t9->line.
       DATA(t37) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).

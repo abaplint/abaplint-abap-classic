@@ -351,169 +351,169 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       ENDIF.
       result = t204.
       RETURN.
-    ELSE.
-      DATA t228 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t229 TYPE REF TO zcl_lnt_lsp_lookup_result.
-      t229 = t183.
-      DATA t231 TYPE REF TO zcl_lnt_fi_identifier.
-      IF xsdbool( t229 IS INITIAL ) = abap_true.
-      ELSE.
-        t231 = t229->definition_id.
-      ENDIF.
-      t228 = t231.
-      IF xsdbool( t228 IS BOUND AND t228 IS INSTANCE OF zcl_lnt_ty_class_definition ) = abap_true.
-        DATA t240 TYPE REF TO zcl_lnt_iprepare_result.
-        DATA t241 TYPE REF TO zcl_lnt_range.
-        t241 = t145.
-        DATA t243 TYPE string.
-        t243 = t150.
-        DATA t247 TYPE REF TO zif_lnt_file.
-        t247 = t2.
-        t240 = NEW zcl_lnt_iprepare_result( i_range = t241 i_placeholder = t243 i_type_9913 = CONV f( 1 ) i_file = t247 ).
-        CREATE OBJECT t240->zlnt_view_ownkeys_b0e8086400eb.
-        t240->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t250 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t250 ).
-        DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t251 ).
-        ENDIF.
-        DATA t252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t252 ).
-        ENDIF.
-        DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t253 ).
-        ENDIF.
-        CREATE OBJECT t240->zlnt_json_ownkeys_70e5fd461788.
-        t240->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t255 ).
-        DATA t257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t257 ).
-        ENDIF.
-        DATA t259 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t259 ).
-        ENDIF.
-        DATA t261 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t261 ).
-        ENDIF.
-        result = t240.
-        RETURN.
-      ELSE.
-        DATA t264 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t265 TYPE REF TO zcl_lnt_lsp_lookup_result.
-        t265 = t183.
-        DATA t267 TYPE REF TO zcl_lnt_fi_identifier.
-        IF xsdbool( t265 IS INITIAL ) = abap_true.
-        ELSE.
-          t267 = t265->definition_id.
-        ENDIF.
-        t264 = t267.
-        IF xsdbool( t264 IS BOUND AND t264 IS INSTANCE OF zcl_lnt_interface_definition ) = abap_true.
-          DATA t276 TYPE REF TO zcl_lnt_iprepare_result.
-          DATA t277 TYPE REF TO zcl_lnt_range.
-          t277 = t145.
-          DATA t279 TYPE string.
-          t279 = t150.
-          DATA t283 TYPE REF TO zif_lnt_file.
-          t283 = t2.
-          t276 = NEW zcl_lnt_iprepare_result( i_range = t277 i_placeholder = t279 i_type_9913 = CONV f( 3 ) i_file = t283 ).
-          CREATE OBJECT t276->zlnt_view_ownkeys_b0e8086400eb.
-          t276->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA t286 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t286 ).
-          DATA t287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-            t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t287 ).
-          ENDIF.
-          DATA t288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-            t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t288 ).
-          ENDIF.
-          DATA t289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-            t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t289 ).
-          ENDIF.
-          CREATE OBJECT t276->zlnt_json_ownkeys_70e5fd461788.
-          t276->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA t291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t291 ).
-          DATA t293 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t293 ).
-          ENDIF.
-          DATA t295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t295 ).
-          ENDIF.
-          DATA t297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t297 ).
-          ENDIF.
-          result = t276.
-          RETURN.
-        ELSE.
-          DATA t300 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t301 TYPE REF TO zcl_lnt_lsp_lookup_result.
-          t301 = t183.
-          DATA t303 TYPE REF TO zcl_lnt_fi_identifier.
-          IF xsdbool( t301 IS INITIAL ) = abap_true.
-          ELSE.
-            t303 = t301->definition_id.
-          ENDIF.
-          t300 = t303.
-          IF xsdbool( t300 IS BOUND AND t300 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
-            DATA t312 TYPE REF TO zcl_lnt_iprepare_result.
-            DATA t313 TYPE REF TO zcl_lnt_range.
-            t313 = t145.
-            DATA t315 TYPE string.
-            t315 = t150.
-            DATA t319 TYPE REF TO zif_lnt_file.
-            t319 = t2.
-            t312 = NEW zcl_lnt_iprepare_result( i_range = t313 i_placeholder = t315 i_type_9913 = CONV f( 4 ) i_file = t319 ).
-            CREATE OBJECT t312->zlnt_view_ownkeys_b0e8086400eb.
-            t312->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA t322 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t322 ).
-            DATA t323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-              t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t323 ).
-            ENDIF.
-            DATA t324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-              t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t324 ).
-            ENDIF.
-            DATA t325 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-              t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t325 ).
-            ENDIF.
-            CREATE OBJECT t312->zlnt_json_ownkeys_70e5fd461788.
-            t312->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t327 ).
-            DATA t329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t329 ).
-            ENDIF.
-            DATA t331 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t331 ).
-            ENDIF.
-            DATA t333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t333 ).
-            ENDIF.
-            result = t312.
-            RETURN.
-          ENDIF.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    DATA t228 TYPE REF TO zcl_lnt_fi_identifier.
+    DATA t229 TYPE REF TO zcl_lnt_lsp_lookup_result.
+    t229 = t183.
+    DATA t231 TYPE REF TO zcl_lnt_fi_identifier.
+    IF xsdbool( t229 IS INITIAL ) = abap_true.
+    ELSE.
+      t231 = t229->definition_id.
+    ENDIF.
+    t228 = t231.
+    IF xsdbool( t228 IS BOUND AND t228 IS INSTANCE OF zcl_lnt_ty_class_definition ) = abap_true.
+      DATA t240 TYPE REF TO zcl_lnt_iprepare_result.
+      DATA t241 TYPE REF TO zcl_lnt_range.
+      t241 = t145.
+      DATA t243 TYPE string.
+      t243 = t150.
+      DATA t247 TYPE REF TO zif_lnt_file.
+      t247 = t2.
+      t240 = NEW zcl_lnt_iprepare_result( i_range = t241 i_placeholder = t243 i_type_9913 = CONV f( 1 ) i_file = t247 ).
+      CREATE OBJECT t240->zlnt_view_ownkeys_b0e8086400eb.
+      t240->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t250 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t250 ).
+      DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t251 ).
+      ENDIF.
+      DATA t252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t252 ).
+      ENDIF.
+      DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t240->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t253 ).
+      ENDIF.
+      CREATE OBJECT t240->zlnt_json_ownkeys_70e5fd461788.
+      t240->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t255 ).
+      DATA t257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t257 ).
+      ENDIF.
+      DATA t259 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t259 ).
+      ENDIF.
+      DATA t261 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t240->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t240->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t261 ).
+      ENDIF.
+      result = t240.
+      RETURN.
+    ENDIF.
+    DATA t264 TYPE REF TO zcl_lnt_fi_identifier.
+    DATA t265 TYPE REF TO zcl_lnt_lsp_lookup_result.
+    t265 = t183.
+    DATA t267 TYPE REF TO zcl_lnt_fi_identifier.
+    IF xsdbool( t265 IS INITIAL ) = abap_true.
+    ELSE.
+      t267 = t265->definition_id.
+    ENDIF.
+    t264 = t267.
+    IF xsdbool( t264 IS BOUND AND t264 IS INSTANCE OF zcl_lnt_interface_definition ) = abap_true.
+      DATA t276 TYPE REF TO zcl_lnt_iprepare_result.
+      DATA t277 TYPE REF TO zcl_lnt_range.
+      t277 = t145.
+      DATA t279 TYPE string.
+      t279 = t150.
+      DATA t283 TYPE REF TO zif_lnt_file.
+      t283 = t2.
+      t276 = NEW zcl_lnt_iprepare_result( i_range = t277 i_placeholder = t279 i_type_9913 = CONV f( 3 ) i_file = t283 ).
+      CREATE OBJECT t276->zlnt_view_ownkeys_b0e8086400eb.
+      t276->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t286 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t286 ).
+      DATA t287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t287 ).
+      ENDIF.
+      DATA t288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t288 ).
+      ENDIF.
+      DATA t289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t276->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t289 ).
+      ENDIF.
+      CREATE OBJECT t276->zlnt_json_ownkeys_70e5fd461788.
+      t276->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t291 ).
+      DATA t293 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t293 ).
+      ENDIF.
+      DATA t295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t295 ).
+      ENDIF.
+      DATA t297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t276->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t276->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t297 ).
+      ENDIF.
+      result = t276.
+      RETURN.
+    ENDIF.
+    DATA t300 TYPE REF TO zcl_lnt_fi_identifier.
+    DATA t301 TYPE REF TO zcl_lnt_lsp_lookup_result.
+    t301 = t183.
+    DATA t303 TYPE REF TO zcl_lnt_fi_identifier.
+    IF xsdbool( t301 IS INITIAL ) = abap_true.
+    ELSE.
+      t303 = t301->definition_id.
+    ENDIF.
+    t300 = t303.
+    IF xsdbool( t300 IS BOUND AND t300 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
+      DATA t312 TYPE REF TO zcl_lnt_iprepare_result.
+      DATA t313 TYPE REF TO zcl_lnt_range.
+      t313 = t145.
+      DATA t315 TYPE string.
+      t315 = t150.
+      DATA t319 TYPE REF TO zif_lnt_file.
+      t319 = t2.
+      t312 = NEW zcl_lnt_iprepare_result( i_range = t313 i_placeholder = t315 i_type_9913 = CONV f( 4 ) i_file = t319 ).
+      CREATE OBJECT t312->zlnt_view_ownkeys_b0e8086400eb.
+      t312->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t322 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t322 ).
+      DATA t323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t323 ).
+      ENDIF.
+      DATA t324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t324 ).
+      ENDIF.
+      DATA t325 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t312->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t325 ).
+      ENDIF.
+      CREATE OBJECT t312->zlnt_json_ownkeys_70e5fd461788.
+      t312->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t327 ).
+      DATA t329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t329 ).
+      ENDIF.
+      DATA t331 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t331 ).
+      ENDIF.
+      DATA t333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t312->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t312->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t333 ).
+      ENDIF.
+      result = t312.
+      RETURN.
+    ENDIF.
+
+
+
     CLEAR result.
 
   ENDMETHOD.
@@ -595,44 +595,44 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       t27 ?= t28.
       result = t27.
       RETURN.
-    ELSE.
-      IF xsdbool( t20 = CONV f( 3 ) ) = abap_true.
-        DATA t40 TYPE REF TO zcl_lnt_shape_36bc2e57.
-        DATA t41 TYPE REF TO object.
-        DATA t42 TYPE REF TO zcl_lnt_renamer.
-        DATA(t43) = me->reg.
-        t42 = NEW zcl_lnt_renamer( i_reg_f149 = t43 ).
-        DATA(t45) = VALUE string( ).
-        t45 = t2->placeholder.
-        DATA(t48) = VALUE string( ).
-        t48 = t1->new_name.
-        t41 = t42->build_edits( i_type_9913 = |INTF| i_old_name = t45 i_new_name = t48 ).
-        t40 ?= t41.
-        result = t40.
-        RETURN.
-      ELSE.
-        IF xsdbool( t20 = CONV f( 2 ) ) = abap_true.
-          DATA t53 TYPE REF TO zcl_lnt_shape_36bc2e57.
-          DATA t54 TYPE REF TO object.
-          t54 = me->rename_variable( i_params_4c59 = t1 ).
-          t53 ?= t54.
-          result = t53.
-          RETURN.
-        ELSE.
-          IF xsdbool( t20 = CONV f( 4 ) ) = abap_true.
-            DATA t59 TYPE REF TO zcl_lnt_shape_36bc2e57.
-            DATA t60 TYPE REF TO object.
-            t60 = me->rename_method( i_params_4c59 = t1 ).
-            t59 ?= t60.
-            result = t59.
-            RETURN.
-          ELSE.
-            CLEAR result.
-            RETURN.
-          ENDIF.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t20 = CONV f( 3 ) ) = abap_true.
+      DATA t40 TYPE REF TO zcl_lnt_shape_36bc2e57.
+      DATA t41 TYPE REF TO object.
+      DATA t42 TYPE REF TO zcl_lnt_renamer.
+      DATA(t43) = me->reg.
+      t42 = NEW zcl_lnt_renamer( i_reg_f149 = t43 ).
+      DATA(t45) = VALUE string( ).
+      t45 = t2->placeholder.
+      DATA(t48) = VALUE string( ).
+      t48 = t1->new_name.
+      t41 = t42->build_edits( i_type_9913 = |INTF| i_old_name = t45 i_new_name = t48 ).
+      t40 ?= t41.
+      result = t40.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t20 = CONV f( 2 ) ) = abap_true.
+      DATA t53 TYPE REF TO zcl_lnt_shape_36bc2e57.
+      DATA t54 TYPE REF TO object.
+      t54 = me->rename_variable( i_params_4c59 = t1 ).
+      t53 ?= t54.
+      result = t53.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t20 = CONV f( 4 ) ) = abap_true.
+      DATA t59 TYPE REF TO zcl_lnt_shape_36bc2e57.
+      DATA t60 TYPE REF TO object.
+      t60 = me->rename_method( i_params_4c59 = t1 ).
+      t59 ?= t60.
+      result = t59.
+      RETURN.
+    ENDIF.
+    CLEAR result.
+
+
+
+
+
   ENDMETHOD.
 
   METHOD rename_variable.
@@ -727,7 +727,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t32 ?= t30.
         DATA t33 TYPE REF TO object.
-        CLEAR t33.
         t33 = t32->as_ref( ).
         t29 ?= t33.
       ELSE.
@@ -736,7 +735,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t34 TYPE REF TO zcl_lnt_vrsnd_txt_dcmnt_idntfr.
       CLEAR t34.
       DATA t35 TYPE REF TO zcl_lnt_vrsnd_txt_dcmnt_idntfr.
-      CLEAR t35.
       DATA(t36) = VALUE string( ).
       t36 = t29->uri.
       t35 = NEW zcl_lnt_vrsnd_txt_dcmnt_idntfr( i_uri = t36 i_version = CONV f( 1 ) ).
@@ -770,7 +768,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
         DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t53.
         DATA t54 TYPE REF TO object.
-        CLEAR t54.
         CLEAR t53.
         t54 = t34.
         TRY.
@@ -824,10 +821,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       ENDIF.
       DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t60.
-      DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t61.
-      CREATE OBJECT t61.
-      t60 = t61.
+      CREATE OBJECT t60.
       DATA t63 TYPE REF TO zcl_lnt_text_edit.
       CLEAR t63.
       DATA t65 TYPE REF TO zcl_lnt_range.
@@ -836,7 +830,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA(t68) = VALUE string( ).
       t68 = t1->new_name.
       DATA t70 TYPE REF TO zcl_lnt_text_edit.
-      CLEAR t70.
       t70 = NEW zcl_lnt_text_edit( i_range = t65 i_new_text = t68 ).
       CREATE OBJECT t70->zlnt_view_ownkeys_b0e8086400eb.
       t70->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -863,7 +856,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       APPEND t63 TO t60->items.
       t60->save( ).
       DATA t82 TYPE REF TO zcl_lnt_text_document_edit.
-      CLEAR t82.
       t82 = NEW zcl_lnt_text_document_edit( i_text_document = t50 i_edits = t60 ).
       CREATE OBJECT t82->zlnt_view_ownkeys_b0e8086400eb.
       t82->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -888,11 +880,9 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t93 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t93.
       DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t94.
       DATA t96 TYPE REF TO zcl_lnt_shape_36bc2e57.
       CLEAR t96.
       DATA t97 TYPE REF TO object.
-      CLEAR t97.
       t97 = t2.
       t96 ?= t97.
       t94 = t96->document_changes.
@@ -1018,7 +1008,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t32 ?= t30.
         DATA t33 TYPE REF TO object.
-        CLEAR t33.
         t33 = t32->as_ref( ).
         t29 ?= t33.
       ELSE.
@@ -1027,7 +1016,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t34 TYPE REF TO zcl_lnt_vrsnd_txt_dcmnt_idntfr.
       CLEAR t34.
       DATA t35 TYPE REF TO zcl_lnt_vrsnd_txt_dcmnt_idntfr.
-      CLEAR t35.
       DATA(t36) = VALUE string( ).
       t36 = t29->uri.
       t35 = NEW zcl_lnt_vrsnd_txt_dcmnt_idntfr( i_uri = t36 i_version = CONV f( 1 ) ).
@@ -1061,7 +1049,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
         DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t53.
         DATA t54 TYPE REF TO object.
-        CLEAR t54.
         CLEAR t53.
         t54 = t34.
         TRY.
@@ -1115,10 +1102,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       ENDIF.
       DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t60.
-      DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t61.
-      CREATE OBJECT t61.
-      t60 = t61.
+      CREATE OBJECT t60.
       DATA t63 TYPE REF TO zcl_lnt_text_edit.
       CLEAR t63.
       DATA t65 TYPE REF TO zcl_lnt_range.
@@ -1127,7 +1111,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA(t68) = VALUE string( ).
       t68 = t1->new_name.
       DATA t70 TYPE REF TO zcl_lnt_text_edit.
-      CLEAR t70.
       t70 = NEW zcl_lnt_text_edit( i_range = t65 i_new_text = t68 ).
       CREATE OBJECT t70->zlnt_view_ownkeys_b0e8086400eb.
       t70->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -1154,7 +1137,6 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       APPEND t63 TO t60->items.
       t60->save( ).
       DATA t82 TYPE REF TO zcl_lnt_text_document_edit.
-      CLEAR t82.
       t82 = NEW zcl_lnt_text_document_edit( i_text_document = t50 i_edits = t60 ).
       CREATE OBJECT t82->zlnt_view_ownkeys_b0e8086400eb.
       t82->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -1179,11 +1161,9 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t93 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t93.
       DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t94.
       DATA t96 TYPE REF TO zcl_lnt_shape_36bc2e57.
       CLEAR t96.
       DATA t97 TYPE REF TO object.
-      CLEAR t97.
       t97 = t2.
       t96 ?= t97.
       t94 = t96->document_changes.

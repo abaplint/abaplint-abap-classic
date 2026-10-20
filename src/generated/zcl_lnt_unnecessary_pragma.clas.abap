@@ -291,7 +291,6 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
           t77 ?= t78.
           DATA(t84) = VALUE string( ).
           DATA t85 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t85.
           DATA t92 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t92.
           DATA(t95) = |* NO_HANDLER with handler\n\n* NEEDED without definition\n\n* NO|.
@@ -474,7 +473,6 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
                 CLEAR t195.
                 DATA(t199) = VALUE string( ).
                 DATA t200 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t200.
                 DATA t207 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 CLEAR t207.
                 DATA(t210) = |* NO_HANDLER with handler\n\n* NEEDED without definition\n\n* NO|.
@@ -634,7 +632,6 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
       DATA t282 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t282 = CAST zcl_lnt_unncssry_prgm_cnf( me->gt_cn_in_sr_rl_un_pr_ts_un_prg( ) )->zlnt_view_read_sr_07d686a5c487( ).
       DATA t284 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t284.
       DATA(t287) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t287->has = abap_true.
       t287->value = abap_true.

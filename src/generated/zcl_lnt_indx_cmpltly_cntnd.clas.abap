@@ -318,7 +318,6 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           ENDIF.
           DATA(t151) = VALUE string( ).
           DATA t152 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t152.
           DATA t157 TYPE string.
           DATA(t158) = |If indexes are completely contained in other indexes, they c|.
           t158 = t158 && |an be removed to improve performance.|.

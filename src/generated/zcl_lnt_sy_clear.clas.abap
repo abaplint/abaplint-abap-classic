@@ -68,7 +68,6 @@ CLASS zcl_lnt_sy_clear IMPLEMENTATION.
         t17 ?= t18.
       ENDIF.
       DATA t22 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t22.
       DATA t23 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t23.
       t23 = t17.

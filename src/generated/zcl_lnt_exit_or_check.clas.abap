@@ -247,7 +247,6 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             t65 = t11->concat_tokens( ).
             DATA(t69) = t65.
             DATA t70 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t70.
             CREATE OBJECT t70 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^check | flags = |i|.
             DATA(t74) = strlen( t69 ).
             t65 = t70->replace( p0 = t69 p1 = |CHECK | ).
@@ -400,7 +399,6 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
             CLEAR t148.
             DATA(t152) = VALUE string( ).
             DATA t153 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t153.
             DATA t158 TYPE string.
             DATA(t159) = |Detects usages of EXIT or CHECK statements outside of loops.|.
             t159 = t159 && |\nUse RETURN to leave procesing blocks instead.|.
@@ -552,7 +550,6 @@ CLASS zcl_lnt_exit_or_check IMPLEMENTATION.
               CLEAR t247.
               DATA(t251) = VALUE string( ).
               DATA t252 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t252.
               DATA t257 TYPE string.
               DATA(t258) = |Detects usages of EXIT or CHECK statements outside of loops.|.
               t258 = t258 && |\nUse RETURN to leave procesing blocks instead.|.

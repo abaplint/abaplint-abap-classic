@@ -125,79 +125,79 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
     IF xsdbool( xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_class ) = abap_false ) = abap_true.
       CREATE OBJECT result.
       RETURN.
-    ELSE.
-      DATA(t9) = VALUE abap_bool( ).
-      DATA t10 TYPE REF TO zcl_lnt_abap_file.
-      t10 = t1.
-      DATA t14 TYPE REF TO zcl_lnt_abap_file.
-      DATA t15 TYPE REF TO zcl_lnt_class.
-      DATA t17 TYPE REF TO object.
-      t17 = t2.
-      t15 ?= t17.
-      t14 = t15->get_main_abap_file( ).
-      DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    ENDIF.
+    DATA(t9) = VALUE abap_bool( ).
+    DATA t10 TYPE REF TO zcl_lnt_abap_file.
+    t10 = t1.
+    DATA t14 TYPE REF TO zcl_lnt_abap_file.
+    DATA t15 TYPE REF TO zcl_lnt_class.
+    DATA t17 TYPE REF TO object.
+    t17 = t2.
+    t15 ?= t17.
+    t14 = t15->get_main_abap_file( ).
+    DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t10 IS BOUND.
       IF t10 IS BOUND.
-        IF t10 IS BOUND.
-          DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t21 TYPE REF TO object.
-          t21 = t10.
+        DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
+        DATA t21 TYPE REF TO object.
+        t21 = t10.
+        TRY.
+            t18 ?= t21.
+          CATCH cx_sy_move_cast_error.
+        ENDTRY.
+        IF t18 IS NOT BOUND.
           TRY.
-              t18 ?= t21.
+              t20 ?= t10.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
+          IF t20 IS BOUND.
+            t18 = t20->source( ).
+          ENDIF.
           IF t18 IS NOT BOUND.
-            TRY.
-                t20 ?= t10.
-              CATCH cx_sy_move_cast_error.
-            ENDTRY.
-            IF t20 IS BOUND.
-              t18 = t20->source( ).
-            ENDIF.
-            IF t18 IS NOT BOUND.
-              CREATE OBJECT t18.
-              t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-              t18->oval = t10.
-            ENDIF.
+            CREATE OBJECT t18.
+            t18->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+            t18->oval = t10.
           ENDIF.
         ENDIF.
-      ENDIF.
-      IF t14 IS BOUND.
-        IF t14 IS BOUND.
-          DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t23 TYPE REF TO object.
-          t23 = t14.
-          TRY.
-              t19 ?= t23.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t19 IS NOT BOUND.
-            TRY.
-                t22 ?= t14.
-              CATCH cx_sy_move_cast_error.
-            ENDTRY.
-            IF t22 IS BOUND.
-              t19 = t22->source( ).
-            ENDIF.
-            IF t19 IS NOT BOUND.
-              CREATE OBJECT t19.
-              t19->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-              t19->oval = t14.
-            ENDIF.
-          ENDIF.
-        ENDIF.
-      ENDIF.
-      IF t18 IS BOUND.
-        t9 = t18->strict_equals( t19 ).
-      ELSE.
-        t9 = xsdbool( t19 IS NOT BOUND ).
-      ENDIF.
-      t9 = xsdbool( t9 = abap_false ).
-      IF t9 = abap_true.
-        CREATE OBJECT result.
-        RETURN.
       ENDIF.
     ENDIF.
+    IF t14 IS BOUND.
+      IF t14 IS BOUND.
+        DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
+        DATA t23 TYPE REF TO object.
+        t23 = t14.
+        TRY.
+            t19 ?= t23.
+          CATCH cx_sy_move_cast_error.
+        ENDTRY.
+        IF t19 IS NOT BOUND.
+          TRY.
+              t22 ?= t14.
+            CATCH cx_sy_move_cast_error.
+          ENDTRY.
+          IF t22 IS BOUND.
+            t19 = t22->source( ).
+          ENDIF.
+          IF t19 IS NOT BOUND.
+            CREATE OBJECT t19.
+            t19->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+            t19->oval = t14.
+          ENDIF.
+        ENDIF.
+      ENDIF.
+    ENDIF.
+    IF t18 IS BOUND.
+      t9 = t18->strict_equals( t19 ).
+    ELSE.
+      t9 = xsdbool( t19 IS NOT BOUND ).
+    ENDIF.
+    t9 = xsdbool( t9 = abap_false ).
+    IF t9 = abap_true.
+      CREATE OBJECT result.
+      RETURN.
+    ENDIF.
+
     DATA(t25) = VALUE abap_bool( ).
     t25 = abap_false.
     DATA(t27) = VALUE abap_bool( ).
@@ -221,14 +221,12 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
       IF t35 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t37 ?= t35.
         DATA t38 TYPE REF TO object.
-        CLEAR t38.
         t38 = t37->as_ref( ).
         t34 ?= t38.
       ELSE.
         t34 ?= t35.
       ENDIF.
       DATA t39 TYPE REF TO zif_lnt_statement.
-      CLEAR t39.
       t39 = t34->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t39 IS BOUND AND t39 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ) = abap_true.
         t27 = abap_true.
@@ -259,7 +257,6 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
                 CLEAR t65.
                 DATA(t69) = VALUE string( ).
                 DATA t70 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t70.
                 DATA(t75) = VALUE string( ).
                 DATA(t76) = |It's not possible to have comments between methods in global|.
                 t76 = t76 && | classes.|.
@@ -267,11 +264,7 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
                 DATA t77 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                 CLEAR t77.
                 DATA t81 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t81.
-                DATA t82 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t82.
-                CREATE OBJECT t82.
-                t81 = t82.
+                CREATE OBJECT t81.
                 t81->load( ).
                 APPEND |SingleFile| TO t81->items.
                 t81->save( ).

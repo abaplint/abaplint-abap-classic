@@ -183,7 +183,6 @@ CLASS zcl_lnt_type_form_parameters IMPLEMENTATION.
         t47 = |{ t55 }{ |"| }|.
         DATA(t61) = VALUE string( ).
         DATA t62 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t62.
         DATA t69 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t69.
         DATA t73 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

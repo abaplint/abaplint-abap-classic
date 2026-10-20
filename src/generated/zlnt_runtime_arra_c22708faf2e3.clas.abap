@@ -387,7 +387,6 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
         DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t7.
         DATA t8 TYPE REF TO object.
-        CLEAR t8.
         CLEAR t7.
         t8 = t1.
         TRY.
@@ -482,7 +481,6 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
         DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t3.
         DATA t4 TYPE REF TO object.
-        CLEAR t4.
         CLEAR t3.
         t4 = t1.
         TRY.

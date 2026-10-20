@@ -177,7 +177,6 @@ CLASS zcl_lnt_form_tables_obsolete IMPLEMENTATION.
       CLEAR t35.
       DATA(t39) = VALUE string( ).
       DATA t40 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t40.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t47.
       DATA(t50) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.

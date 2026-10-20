@@ -171,7 +171,6 @@ CLASS zcl_lnt_sy_split IMPLEMENTATION.
         t119 ?= t120.
       ENDIF.
       DATA t124 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t124.
       DATA t125 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t125.
       t125 = t119.

@@ -41,7 +41,6 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
         t10 ?= t11.
       ENDIF.
       DATA t16 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t16.
       DATA t17 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t17.
       t17 = t10.
@@ -228,7 +227,6 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
         t105 = t106.
         IF t106 = abap_false.
           DATA t123 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t123.
           t123 = t103.
           DATA(t129) = VALUE abap_bool( ).
           DATA t130 TYPE abap_bool.

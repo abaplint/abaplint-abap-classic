@@ -208,20 +208,20 @@ CLASS zcl_lnt_edit_draft IMPLEMENTATION.
       t8->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t8->source_value->sval = t9.
       RAISE EXCEPTION t8.
-    ELSE.
-      DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF xsdbool( me->end IS INITIAL ) = abap_true.
-        DATA t17 TYPE REF TO zlnt_exception_st_fa837731be5a.
-        DATA(t18) = |EditDraft, end undefined|.
-        t17 = NEW #( ).
-        t17->payload = t18.
-        CLEAR t17->source_value.
-        CREATE OBJECT t17->source_value.
-        t17->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-        t17->source_value->sval = t18.
-        RAISE EXCEPTION t17.
-      ENDIF.
     ENDIF.
+    DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF xsdbool( me->end IS INITIAL ) = abap_true.
+      DATA t17 TYPE REF TO zlnt_exception_st_fa837731be5a.
+      DATA(t18) = |EditDraft, end undefined|.
+      t17 = NEW #( ).
+      t17->payload = t18.
+      CLEAR t17->source_value.
+      CREATE OBJECT t17->source_value.
+      t17->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
+      t17->source_value->sval = t18.
+      RAISE EXCEPTION t17.
+    ENDIF.
+
     DATA t19 TYPE string.
     t19 = ||.
     DATA t21 TYPE f.

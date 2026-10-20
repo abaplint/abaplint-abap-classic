@@ -834,7 +834,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t79) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t80) = VALUE string( ).
         DATA t81 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t81.
         DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t88.
         DATA(t91) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -1038,7 +1037,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t200) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t201) = VALUE string( ).
         DATA t202 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t202.
         DATA t209 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t209.
         DATA(t212) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -1255,7 +1253,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t62) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t63) = VALUE string( ).
         DATA t64 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t64.
         DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t71.
         DATA(t74) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -1469,7 +1466,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t58) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t59) = VALUE string( ).
         DATA t60 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t60.
         DATA t67 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t67.
         DATA(t70) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -1673,7 +1669,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t179) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t180) = VALUE string( ).
         DATA t181 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t181.
         DATA t188 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t188.
         DATA(t191) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -1890,7 +1885,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t62) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t63) = VALUE string( ).
         DATA t64 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t64.
         DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t71.
         DATA(t74) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -2119,7 +2113,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         DATA(t78) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
         DATA(t79) = VALUE string( ).
         DATA t80 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t80.
         DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t87.
         DATA(t90) = |\nNote: not prefixing TYPES will require changing the errorNa|.
@@ -2408,7 +2401,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
         IF t84 = abap_true.
           DATA(t88) = VALUE abap_bool( ).
           DATA t90 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t90.
           DATA(t93) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t93->has = abap_true.
           t93->value = |ABAP_BOOL|.
@@ -2485,7 +2477,6 @@ CLASS zcl_lnt_no_prefixes IMPLEMENTATION.
           DATA(t134) = CONV string( zcl_lnt_no_prefixes_module=>message_23c9 ).
           DATA(t135) = VALUE string( ).
           DATA t136 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t136.
           DATA t143 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t143.
           DATA(t146) = |\nNote: not prefixing TYPES will require changing the errorNa|.

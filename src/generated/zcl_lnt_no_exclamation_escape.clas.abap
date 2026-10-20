@@ -212,7 +212,6 @@ CLASS zcl_lnt_no_exclamation_escape IMPLEMENTATION.
           t48 ?= t7.
           DATA(t51) = VALUE string( ).
           DATA t52 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t52.
           DATA t57 TYPE string.
           DATA(t58) = |Detects and removes exclamation marks (!) used to escape ide|.
           t58 = t58 && |ntifiers|.

@@ -181,28 +181,22 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
       DATA t42 TYPE string.
       t42 = t29->concat_tokens( ).
       DATA t46 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t46.
       DATA(t48) = | (abap_true\|abap_false)[\t\n|.
       DATA t49 TYPE c LENGTH 1.
-      CLEAR t49.
       t49 = cl_abap_conv_in_ce=>uccpi( 11 ).
       CONCATENATE t48 t49 INTO t48 RESPECTING BLANKS.
       DATA t50 TYPE c LENGTH 1.
-      CLEAR t50.
       t50 = cl_abap_conv_in_ce=>uccpi( 12 ).
       CONCATENATE t48 t50 INTO t48 RESPECTING BLANKS.
       t48 = t48 && |\r    - |.
       DATA t51 TYPE c LENGTH 1.
-      CLEAR t51.
       t51 = cl_abap_conv_in_ce=>uccpi( 8232 ).
       CONCATENATE t48 t51 INTO t48 RESPECTING BLANKS.
       DATA t52 TYPE c LENGTH 1.
-      CLEAR t52.
       t52 = cl_abap_conv_in_ce=>uccpi( 8233 ).
       CONCATENATE t48 t52 INTO t48 RESPECTING BLANKS.
       t48 = t48 && |  　|.
       DATA t53 TYPE c LENGTH 1.
-      CLEAR t53.
       t53 = cl_abap_conv_in_ce=>uccpi( 65279 ).
       CONCATENATE t48 t53 INTO t48 RESPECTING BLANKS.
       t48 = t48 && `]*\.`.
@@ -287,7 +281,6 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
         t105 = t29.
         DATA(t108) = VALUE string( ).
         DATA t109 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t109.
         DATA t116 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t116.
         DATA(t119) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -444,23 +437,23 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
       IF xsdbool( t15 IS BOUND ) = abap_true.
         result = abap_false.
         RETURN.
-      ELSE.
-        DATA t20 TYPE abap_bool.
-        DATA t21 TYPE abap_bool.
-        DATA t22 TYPE REF TO zcl_lnt_abstract_token.
-        t22 = t5->find_direct_token_by_text( i_text = |AND| ).
-        t21 = xsdbool( t22 IS BOUND ).
-        t20 = t21.
-        IF t21 = abap_false.
-          DATA t27 TYPE REF TO zcl_lnt_abstract_token.
-          t27 = t5->find_direct_token_by_text( i_text = |EQUIV| ).
-          t20 = xsdbool( t27 IS BOUND ).
-        ENDIF.
-        IF t20 = abap_true.
-          result = abap_false.
-          RETURN.
-        ENDIF.
       ENDIF.
+      DATA t20 TYPE abap_bool.
+      DATA t21 TYPE abap_bool.
+      DATA t22 TYPE REF TO zcl_lnt_abstract_token.
+      t22 = t5->find_direct_token_by_text( i_text = |AND| ).
+      t21 = xsdbool( t22 IS BOUND ).
+      t20 = t21.
+      IF t21 = abap_false.
+        DATA t27 TYPE REF TO zcl_lnt_abstract_token.
+        t27 = t5->find_direct_token_by_text( i_text = |EQUIV| ).
+        t20 = xsdbool( t27 IS BOUND ).
+      ENDIF.
+      IF t20 = abap_true.
+        result = abap_false.
+        RETURN.
+      ENDIF.
+
       DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t33 TYPE REF TO zcl_lnt_expression_node.
       t33 = t5.
@@ -547,71 +540,69 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
         IF xsdbool( lines( t68->items ) <> 3 ) = abap_true.
           result = abap_false.
           RETURN.
-        ELSE.
-          DATA(t76) = VALUE abap_bool( ).
-          DATA(t77) = VALUE abap_bool( ).
-          DATA t79 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t79.
-          DATA(t82) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-          t82->has = abap_true.
-          t82->value = |=|.
-          t79 = t82.
-          DATA(t84) = VALUE abap_bool( ).
-          DATA(t85) = VALUE abap_bool( ).
-          IF t41 IS BOUND.
-            t84 = t41->has.
-          ENDIF.
-          IF t79 IS BOUND.
-            t85 = t79->has.
-          ENDIF.
-          IF t84 = t85.
-            IF t84 = abap_false.
-              t77 = abap_true.
-            ELSEIF t41->value = t79->value.
-              t77 = abap_true.
-            ENDIF.
-          ENDIF.
-          IF t77 = abap_true.
-            t77 = abap_false.
-          ELSE.
+        ENDIF.
+        DATA(t76) = VALUE abap_bool( ).
+        DATA(t77) = VALUE abap_bool( ).
+        DATA t79 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+        DATA(t82) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+        t82->has = abap_true.
+        t82->value = |=|.
+        t79 = t82.
+        DATA(t84) = VALUE abap_bool( ).
+        DATA(t85) = VALUE abap_bool( ).
+        IF t41 IS BOUND.
+          t84 = t41->has.
+        ENDIF.
+        IF t79 IS BOUND.
+          t85 = t79->has.
+        ENDIF.
+        IF t84 = t85.
+          IF t84 = abap_false.
+            t77 = abap_true.
+          ELSEIF t41->value = t79->value.
             t77 = abap_true.
           ENDIF.
-          t76 = t77.
-          IF t77 = abap_true.
-            DATA(t86) = VALUE abap_bool( ).
-            DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t88.
-            DATA(t91) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-            t91->has = abap_true.
-            t91->value = |EQ|.
-            t88 = t91.
-            DATA(t93) = VALUE abap_bool( ).
-            DATA(t94) = VALUE abap_bool( ).
-            IF t41 IS BOUND.
-              t93 = t41->has.
-            ENDIF.
-            IF t88 IS BOUND.
-              t94 = t88->has.
-            ENDIF.
-            IF t93 = t94.
-              IF t93 = abap_false.
-                t86 = abap_true.
-              ELSEIF t41->value = t88->value.
-                t86 = abap_true.
-              ENDIF.
-            ENDIF.
-            IF t86 = abap_true.
-              t86 = abap_false.
-            ELSE.
+        ENDIF.
+        IF t77 = abap_true.
+          t77 = abap_false.
+        ELSE.
+          t77 = abap_true.
+        ENDIF.
+        t76 = t77.
+        IF t77 = abap_true.
+          DATA(t86) = VALUE abap_bool( ).
+          DATA t88 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+          DATA(t91) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+          t91->has = abap_true.
+          t91->value = |EQ|.
+          t88 = t91.
+          DATA(t93) = VALUE abap_bool( ).
+          DATA(t94) = VALUE abap_bool( ).
+          IF t41 IS BOUND.
+            t93 = t41->has.
+          ENDIF.
+          IF t88 IS BOUND.
+            t94 = t88->has.
+          ENDIF.
+          IF t93 = t94.
+            IF t93 = abap_false.
+              t86 = abap_true.
+            ELSEIF t41->value = t88->value.
               t86 = abap_true.
             ENDIF.
-            t76 = t86.
           ENDIF.
-          IF t76 = abap_true.
-            result = abap_false.
-            RETURN.
+          IF t86 = abap_true.
+            t86 = abap_false.
+          ELSE.
+            t86 = abap_true.
           ENDIF.
+          t76 = t86.
         ENDIF.
+        IF t76 = abap_true.
+          result = abap_false.
+          RETURN.
+        ENDIF.
+
         DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t98.
         DATA t100 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -987,7 +978,6 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
       ENDIF.
       t271 = t271 + 1.
       DATA t273 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t273.
       CREATE OBJECT t273 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t270 flags = |i|.
       IF t273->match_test( p0 = t181 ) = abap_true.
         result = abap_false.

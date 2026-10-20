@@ -145,7 +145,6 @@ CLASS zcl_lnt_mime_object IMPLEMENTATION.
       ENDIF.
       DATA(t13) = VALUE abap_bool( ).
       DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t14.
       DATA t16 TYPE string.
       t16 = t8->get_filename( ).
       DATA(t18) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

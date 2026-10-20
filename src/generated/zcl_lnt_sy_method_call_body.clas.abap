@@ -52,7 +52,6 @@ CLASS zcl_lnt_sy_method_call_body IMPLEMENTATION.
         t28 ?= t29.
       ENDIF.
       DATA t33 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t33.
       DATA t34 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t34.
       t34 = t28.

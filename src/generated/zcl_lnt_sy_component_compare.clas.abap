@@ -140,7 +140,6 @@ CLASS zcl_lnt_sy_component_compare IMPLEMENTATION.
         t97 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t74 i_node = t40 i_input_967e = t2 ).
       ELSE.
         DATA t102 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t102.
         DATA t103 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t103.
         t103 = t35.

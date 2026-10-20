@@ -447,8 +447,6 @@ CLASS zlnt_runtime_arra_8ecd6afe19e0 IMPLEMENTATION.
     DATA(t1) = VALUE string( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     LOOP AT items INTO t1.
-      CLEAR t2.
-      CLEAR t2.
       CREATE OBJECT t2.
       t2->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t2->sval = t1.

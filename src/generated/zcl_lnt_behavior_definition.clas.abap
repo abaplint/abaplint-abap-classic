@@ -201,7 +201,6 @@ CLASS zcl_lnt_behavior_definition IMPLEMENTATION.
       ENDIF.
       t14 = t18.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t27.
       DATA(t30) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t30->has = abap_true.
       t30->value = t2.

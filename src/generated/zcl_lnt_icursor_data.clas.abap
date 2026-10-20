@@ -295,7 +295,6 @@ CLASS zcl_lnt_icursor_data IMPLEMENTATION.
             IF t3 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t5 ?= t3.
               DATA t6 TYPE REF TO object.
-              CLEAR t6.
               t6 = t5->as_ref( ).
               t4 ?= t6.
             ELSE.

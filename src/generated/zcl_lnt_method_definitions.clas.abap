@@ -185,7 +185,6 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       IF t52 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t54 ?= t52.
         DATA t55 TYPE REF TO object.
-        CLEAR t55.
         t55 = t54->as_ref( ).
         t51 ?= t55.
       ELSE.
@@ -231,7 +230,6 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       IF t83 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t85 ?= t83.
         DATA t86 TYPE REF TO object.
-        CLEAR t86.
         t86 = t85->as_ref( ).
         t82 ?= t86.
       ELSE.
@@ -277,7 +275,6 @@ CLASS zcl_lnt_method_definitions IMPLEMENTATION.
       IF t114 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t116 ?= t114.
         DATA t117 TYPE REF TO object.
-        CLEAR t117.
         t117 = t116->as_ref( ).
         t113 ?= t117.
       ELSE.

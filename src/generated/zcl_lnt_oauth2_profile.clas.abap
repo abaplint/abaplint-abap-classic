@@ -205,7 +205,6 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
             DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t86.
             DATA t87 TYPE REF TO object.
-            CLEAR t87.
             CLEAR t86.
             t87 = t82.
             TRY.

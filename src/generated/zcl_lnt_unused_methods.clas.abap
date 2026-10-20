@@ -149,31 +149,31 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
       CREATE OBJECT result.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_interface ) = abap_true.
-        CREATE OBJECT result.
-        RETURN.
-      ELSE.
-        DATA t9 TYPE abap_bool.
-        DATA t10 TYPE abap_bool.
-        t10 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_program ).
-        t9 = t10.
-        IF t10 = abap_true.
-          DATA t14 TYPE REF TO zcl_lnt_ob_program.
-          DATA t15 TYPE REF TO zcl_lnt_ob_program.
-          DATA t17 TYPE REF TO object.
-          t17 = t1.
-          t15 ?= t17.
-          t14 = t15.
-          t14->parse_xml( ).
-          t9 = xsdbool( t14->parsed_xml->is_include = abap_true ).
-        ENDIF.
-        IF t9 = abap_true.
-          CREATE OBJECT result.
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_interface ) = abap_true.
+      CREATE OBJECT result.
+      RETURN.
+    ENDIF.
+    DATA t9 TYPE abap_bool.
+    DATA t10 TYPE abap_bool.
+    t10 = xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_program ).
+    t9 = t10.
+    IF t10 = abap_true.
+      DATA t14 TYPE REF TO zcl_lnt_ob_program.
+      DATA t15 TYPE REF TO zcl_lnt_ob_program.
+      DATA t17 TYPE REF TO object.
+      t17 = t1.
+      t15 ?= t17.
+      t14 = t15.
+      t14->parse_xml( ).
+      t9 = xsdbool( t14->parsed_xml->is_include = abap_true ).
+    ENDIF.
+    IF t9 = abap_true.
+      CREATE OBJECT result.
+      RETURN.
+    ENDIF.
+
+
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t28 TYPE REF TO zcl_lnt_abap_object.
     DATA t30 TYPE REF TO object.
@@ -346,7 +346,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
             DATA t107 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
             t107 = t91->is_event_handler.
             DATA t109 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t109.
             DATA(t112) = NEW zlnt_runtime_opti_7f2541396f43( ).
             t112->has = abap_true.
             t112->value = abap_true.
@@ -370,128 +369,127 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
           ENDIF.
           IF t96 = abap_true.
             CONTINUE.
-          ELSE.
-            DATA(t116) = VALUE abap_bool( ).
-            DATA(t117) = VALUE abap_bool( ).
-            DATA t118 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            t118 = t84->is_for_testing.
-            DATA t120 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t120.
-            DATA(t123) = NEW zlnt_runtime_opti_7f2541396f43( ).
-            t123->has = abap_true.
-            t123->value = abap_true.
-            t120 = t123.
-            DATA(t125) = VALUE abap_bool( ).
-            DATA(t126) = VALUE abap_bool( ).
-            IF t118 IS BOUND.
-              t125 = t118->has.
-            ENDIF.
-            IF t120 IS BOUND.
-              t126 = t120->has.
-            ENDIF.
-            IF t125 = t126.
-              IF t125 = abap_false.
-                t117 = abap_true.
-              ELSEIF t118->value = t120->value.
-                t117 = abap_true.
-              ENDIF.
-            ENDIF.
-            t116 = t117.
-            IF t117 = abap_true.
-              DATA(t127) = VALUE abap_bool( ).
-              DATA(t128) = VALUE abap_bool( ).
-              DATA(t129) = VALUE abap_bool( ).
-              DATA(t130) = VALUE abap_bool( ).
-              DATA t131 TYPE string.
-              DATA t132 TYPE string.
-              t132 = t91->name.
-              DATA(t134) = strlen( t132 ).
-              t131 = t132.
-              IF t131 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                TRANSLATE t131 TO UPPER CASE.
-              ELSE.
-                t131 = zlnt_runtime_uppe_91169605024d=>full( t131 ).
-              ENDIF.
-              t130 = xsdbool( t131 = |SETUP| ).
-              t129 = t130.
-              IF t130 = abap_false.
-                DATA t137 TYPE string.
-                DATA t138 TYPE string.
-                t138 = t91->name.
-                DATA(t140) = strlen( t138 ).
-                t137 = t138.
-                IF t137 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                  TRANSLATE t137 TO UPPER CASE.
-                ELSE.
-                  t137 = zlnt_runtime_uppe_91169605024d=>full( t137 ).
-                ENDIF.
-                t129 = xsdbool( t137 = |CLASS_SETUP| ).
-              ENDIF.
-              t128 = t129.
-              IF t129 = abap_false.
-                DATA t143 TYPE string.
-                DATA t144 TYPE string.
-                t144 = t91->name.
-                DATA(t146) = strlen( t144 ).
-                t143 = t144.
-                IF t143 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                  TRANSLATE t143 TO UPPER CASE.
-                ELSE.
-                  t143 = zlnt_runtime_uppe_91169605024d=>full( t143 ).
-                ENDIF.
-                t128 = xsdbool( t143 = |TEARDOWN| ).
-              ENDIF.
-              t127 = t128.
-              IF t128 = abap_false.
-                DATA t149 TYPE string.
-                DATA t150 TYPE string.
-                t150 = t91->name.
-                DATA(t152) = strlen( t150 ).
-                t149 = t150.
-                IF t149 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                  TRANSLATE t149 TO UPPER CASE.
-                ELSE.
-                  t149 = zlnt_runtime_uppe_91169605024d=>full( t149 ).
-                ENDIF.
-                t127 = xsdbool( t149 = |CLASS_TEARDOWN| ).
-              ENDIF.
-              t116 = t127.
-            ENDIF.
-            IF t116 = abap_true.
-              CONTINUE.
-            ELSE.
-              DATA(t154) = VALUE abap_bool( ).
-              DATA(t155) = VALUE abap_bool( ).
-              DATA t156 TYPE string.
-              DATA t157 TYPE string.
-              t157 = t91->name.
-              DATA(t159) = strlen( t157 ).
-              t156 = t157.
-              IF t156 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                TRANSLATE t156 TO UPPER CASE.
-              ELSE.
-                t156 = zlnt_runtime_uppe_91169605024d=>full( t156 ).
-              ENDIF.
-              t155 = xsdbool( t156 = |CONSTRUCTOR| ).
-              t154 = t155.
-              IF t155 = abap_false.
-                DATA t162 TYPE string.
-                DATA t163 TYPE string.
-                t163 = t91->name.
-                DATA(t165) = strlen( t163 ).
-                t162 = t163.
-                IF t162 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-                  TRANSLATE t162 TO UPPER CASE.
-                ELSE.
-                  t162 = zlnt_runtime_uppe_91169605024d=>full( t162 ).
-                ENDIF.
-                t154 = xsdbool( t162 = |CLASS_CONSTRUCTOR| ).
-              ENDIF.
-              IF t154 = abap_true.
-                CONTINUE.
-              ENDIF.
+          ENDIF.
+          DATA(t116) = VALUE abap_bool( ).
+          DATA(t117) = VALUE abap_bool( ).
+          DATA t118 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+          t118 = t84->is_for_testing.
+          DATA t120 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+          DATA(t123) = NEW zlnt_runtime_opti_7f2541396f43( ).
+          t123->has = abap_true.
+          t123->value = abap_true.
+          t120 = t123.
+          DATA(t125) = VALUE abap_bool( ).
+          DATA(t126) = VALUE abap_bool( ).
+          IF t118 IS BOUND.
+            t125 = t118->has.
+          ENDIF.
+          IF t120 IS BOUND.
+            t126 = t120->has.
+          ENDIF.
+          IF t125 = t126.
+            IF t125 = abap_false.
+              t117 = abap_true.
+            ELSEIF t118->value = t120->value.
+              t117 = abap_true.
             ENDIF.
           ENDIF.
+          t116 = t117.
+          IF t117 = abap_true.
+            DATA(t127) = VALUE abap_bool( ).
+            DATA(t128) = VALUE abap_bool( ).
+            DATA(t129) = VALUE abap_bool( ).
+            DATA(t130) = VALUE abap_bool( ).
+            DATA t131 TYPE string.
+            DATA t132 TYPE string.
+            t132 = t91->name.
+            DATA(t134) = strlen( t132 ).
+            t131 = t132.
+            IF t131 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+              TRANSLATE t131 TO UPPER CASE.
+            ELSE.
+              t131 = zlnt_runtime_uppe_91169605024d=>full( t131 ).
+            ENDIF.
+            t130 = xsdbool( t131 = |SETUP| ).
+            t129 = t130.
+            IF t130 = abap_false.
+              DATA t137 TYPE string.
+              DATA t138 TYPE string.
+              t138 = t91->name.
+              DATA(t140) = strlen( t138 ).
+              t137 = t138.
+              IF t137 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+                TRANSLATE t137 TO UPPER CASE.
+              ELSE.
+                t137 = zlnt_runtime_uppe_91169605024d=>full( t137 ).
+              ENDIF.
+              t129 = xsdbool( t137 = |CLASS_SETUP| ).
+            ENDIF.
+            t128 = t129.
+            IF t129 = abap_false.
+              DATA t143 TYPE string.
+              DATA t144 TYPE string.
+              t144 = t91->name.
+              DATA(t146) = strlen( t144 ).
+              t143 = t144.
+              IF t143 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+                TRANSLATE t143 TO UPPER CASE.
+              ELSE.
+                t143 = zlnt_runtime_uppe_91169605024d=>full( t143 ).
+              ENDIF.
+              t128 = xsdbool( t143 = |TEARDOWN| ).
+            ENDIF.
+            t127 = t128.
+            IF t128 = abap_false.
+              DATA t149 TYPE string.
+              DATA t150 TYPE string.
+              t150 = t91->name.
+              DATA(t152) = strlen( t150 ).
+              t149 = t150.
+              IF t149 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+                TRANSLATE t149 TO UPPER CASE.
+              ELSE.
+                t149 = zlnt_runtime_uppe_91169605024d=>full( t149 ).
+              ENDIF.
+              t127 = xsdbool( t149 = |CLASS_TEARDOWN| ).
+            ENDIF.
+            t116 = t127.
+          ENDIF.
+          IF t116 = abap_true.
+            CONTINUE.
+          ENDIF.
+          DATA(t154) = VALUE abap_bool( ).
+          DATA(t155) = VALUE abap_bool( ).
+          DATA t156 TYPE string.
+          DATA t157 TYPE string.
+          t157 = t91->name.
+          DATA(t159) = strlen( t157 ).
+          t156 = t157.
+          IF t156 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+            TRANSLATE t156 TO UPPER CASE.
+          ELSE.
+            t156 = zlnt_runtime_uppe_91169605024d=>full( t156 ).
+          ENDIF.
+          t155 = xsdbool( t156 = |CONSTRUCTOR| ).
+          t154 = t155.
+          IF t155 = abap_false.
+            DATA t162 TYPE string.
+            DATA t163 TYPE string.
+            t163 = t91->name.
+            DATA(t165) = strlen( t163 ).
+            t162 = t163.
+            IF t162 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+              TRANSLATE t162 TO UPPER CASE.
+            ELSE.
+              t162 = zlnt_runtime_uppe_91169605024d=>full( t162 ).
+            ENDIF.
+            t154 = xsdbool( t162 = |CLASS_CONSTRUCTOR| ).
+          ENDIF.
+          IF t154 = abap_true.
+            CONTINUE.
+          ENDIF.
+
+
           DATA t167 TYPE abap_bool.
           DATA t168 TYPE abap_bool.
           t168 = xsdbool( t91->visibility = CONV f( 1 ) ).
@@ -594,7 +592,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         ENDIF.
         DATA(t253) = VALUE abap_bool( ).
         DATA t254 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t254.
         DATA t259 TYPE string.
         t259 = t248->str.
         DATA(t261) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -604,7 +601,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         DATA t263 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t263.
         DATA t264 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t264.
         DATA t271 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t271.
         DATA(t274) = |Checks private and protected methods.\n\nUnused methods are no|.
@@ -737,11 +733,11 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       ENDDO.
       IF t240 = abap_true.
         CONTINUE.
-      ELSE.
-        IF me->suppressedby_pseudo( i_statement = t219 i_file = t201 ) = abap_true.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      IF me->suppressedby_pseudo( i_statement = t219 i_file = t201 ) = abap_true.
+        CONTINUE.
+      ENDIF.
+
       DATA t336 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t336.
       DATA(t338) = VALUE abap_bool( ).
@@ -853,7 +849,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       t459 = t196->identifier.
       DATA(t462) = VALUE string( ).
       DATA t463 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t463.
       DATA t470 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t470.
       DATA(t473) = |Checks private and protected methods.\n\nUnused methods are no|.
@@ -1024,13 +1019,11 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     t28 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t33 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t33.
       t33 = t28->next( ).
       IF t33->done = abap_true.
         EXIT.
       ENDIF.
       DATA t38 TYPE REF TO zif_lnt_object.
-      CLEAR t38.
       t38 = t33->value.
       DATA(t43) = VALUE abap_bool( ).
       DATA(t44) = VALUE abap_bool( ).
@@ -1339,7 +1332,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       IF t27 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t29 ?= t27.
         DATA t30 TYPE REF TO object.
-        CLEAR t30.
         t30 = t29->as_ref( ).
         t26 ?= t30.
       ELSE.
@@ -1351,7 +1343,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       t31 = t32.
       IF t32 = abap_true.
         DATA t36 TYPE REF TO zif_lnt_statement.
-        CLEAR t36.
         t36 = t26->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t31 = xsdbool( t36 IS BOUND AND t36 IS INSTANCE OF zcl_lnt_st_comment ).
       ENDIF.
@@ -1364,7 +1355,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t44.
         DATA t46 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t46.
         DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t53.
         DATA(t56) = |Checks private and protected methods.\n\nUnused methods are no|.
@@ -1382,11 +1372,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         DATA t59 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t59.
         DATA t63 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t63.
-        DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t64.
-        CREATE OBJECT t64.
-        t63 = t64.
+        CREATE OBJECT t63.
         t63->load( ).
         APPEND |Quickfix| TO t63->items.
         t63->save( ).
@@ -1510,7 +1496,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       ENDIF.
       DATA(t116) = VALUE abap_bool( ).
       DATA t118 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t118.
       t118 = t1.
       DATA t120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t120.
@@ -1521,7 +1506,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         DATA t122 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t122.
         DATA t123 TYPE REF TO object.
-        CLEAR t123.
         CLEAR t122.
         t123 = t26.
         TRY.
@@ -1548,7 +1532,6 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         DATA t124 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t124.
         DATA t125 TYPE REF TO object.
-        CLEAR t125.
         CLEAR t124.
         t125 = t118.
         TRY.
@@ -1621,13 +1604,11 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     t32 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t37 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t37.
       t37 = t32->next( ).
       IF t37->done = abap_true.
         EXIT.
       ENDIF.
       DATA t42 TYPE REF TO zif_lnt_object.
-      CLEAR t42.
       t42 = t37->value.
       DATA(t47) = VALUE abap_bool( ).
       DATA(t48) = VALUE abap_bool( ).

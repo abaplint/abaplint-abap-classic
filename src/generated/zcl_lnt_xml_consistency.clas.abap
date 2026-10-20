@@ -277,7 +277,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           DATA t109 TYPE string.
           t109 = t15->value.
           DATA t113 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t113.
           DATA t115 TYPE string.
           DATA(t116) = `<abapGit\b[^>]*\b`.
           DATA(t118) = strlen( t116 ).
@@ -312,7 +311,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
             DATA t142 TYPE string.
             t142 = t104->value.
             DATA t146 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t146.
             CREATE OBJECT t146 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^v[0-9]\.[0-9]\.[0-9]$` flags = ||.
             t146->source = `^v\d\.\d\.\d$`.
             t140 = t146->match( t142 ).
@@ -340,7 +338,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
             t155 = |{ t156 }{ |"| }|.
             DATA(t169) = VALUE string( ).
             DATA t170 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t170.
             DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t177.
             DATA(t180) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -1406,7 +1403,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       ENDIF.
       t157 = t157 + 1.
       DATA t159 TYPE REF TO zcl_lnt_tuple_a5e994d8.
-      CLEAR t159.
       t159 = NEW zcl_lnt_tuple_a5e994d8( i_f0 = t156 i_f1 = t6->get( p0 = t156 ) ).
       t153->load( ).
       APPEND t159 TO t153->items.
@@ -1430,7 +1426,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       IF t167 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t169 ?= t167.
         DATA t170 TYPE REF TO object.
-        CLEAR t170.
         t170 = t169->as_ref( ).
         t166 ?= t170.
       ELSE.
@@ -1439,10 +1434,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA(t171) = VALUE string( ).
       t171 = t166->f0.
       DATA t174 TYPE REF TO zcl_lnt_shape_015c050b.
-      CLEAR t174.
       t174 = t166->f1.
       DATA t177 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t177.
       t177 = t3.
       DATA t179 TYPE REF TO zcl_lnt_issue.
       CLEAR t179.
@@ -1466,11 +1459,9 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA t199 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t199.
       DATA t200 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      CLEAR t200.
       t200 = t174->max_length.
       CLEAR t199.
       IF t200 IS BOUND AND t200->has = abap_true.
-        CLEAR t199.
         CREATE OBJECT t199.
         t199->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
         t199->nval = t200->value.
@@ -1482,7 +1473,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA(t203) = VALUE abap_bool( ).
       DATA(t204) = VALUE abap_bool( ).
       DATA t205 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t205.
       t205 = t191.
       DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t207.
@@ -1664,7 +1654,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t273 = |{ t274 }{ |)| }|.
           DATA(t311) = VALUE string( ).
           DATA t312 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t312.
           DATA t319 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t319.
           DATA(t322) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -1680,11 +1669,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           DATA t325 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t325.
           DATA t329 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t329.
-          DATA t330 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t330.
-          CREATE OBJECT t330.
-          t329 = t330.
+          CREATE OBJECT t329.
           t329->load( ).
           APPEND |Naming| TO t329->items.
           t329->save( ).
@@ -1768,7 +1753,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t179 = t202.
       IF xsdbool( t179 IS BOUND ) = abap_true.
         DATA t367 TYPE REF TO zcl_lnt_issue.
-        CLEAR t367.
         t367 = t179.
         t177->load( ).
         APPEND t367 TO t177->items.
@@ -1890,17 +1874,10 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       CLEAR t434.
       t434 = t426->zlnt_view_read_sr_f2debfe321d5( ).
       DATA t437 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t437.
-      DATA t438 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t438.
-      CREATE OBJECT t438.
-      t437 = t438.
+      CREATE OBJECT t437.
       DATA t439 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t439.
-      DATA t440 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t440.
-      CREATE OBJECT t440.
-      t439 = t440.
+      CREATE OBJECT t439.
       DATA(t441) = VALUE i( ).
       t441 = 0.
       DATA(t443) = VALUE i( ).
@@ -2080,11 +2057,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       ENDDO.
       t515 = t518->concat( p0 = t439 ).
       DATA t581 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t581.
-      DATA t582 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t582.
-      CREATE OBJECT t582.
-      t581 = t582.
+      CREATE OBJECT t581.
       DATA(t584) = VALUE string( ).
       t515->dense( ).
       DATA(t585) = VALUE i( ).
@@ -2100,7 +2073,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         ENDIF.
         t585 = t585 + 1.
         DATA t587 TYPE REF TO zcl_lnt_tuple_a5e994d8.
-        CLEAR t587.
         t587 = NEW zcl_lnt_tuple_a5e994d8( i_f0 = t584 i_f1 = t434->get( p0 = t584 ) ).
         t581->load( ).
         APPEND t587 TO t581->items.
@@ -2126,7 +2098,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         IF t595 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t597 ?= t595.
           DATA t598 TYPE REF TO object.
-          CLEAR t598.
           t598 = t597->as_ref( ).
           t594 ?= t598.
         ELSE.
@@ -2135,10 +2106,8 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         DATA(t599) = VALUE string( ).
         t599 = t594->f0.
         DATA t602 TYPE REF TO zcl_lnt_shape_015c050b.
-        CLEAR t602.
         t602 = t594->f1.
         DATA t605 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t605.
         t605 = t3.
         DATA t607 TYPE REF TO zcl_lnt_issue.
         CLEAR t607.
@@ -2162,11 +2131,9 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         DATA t627 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t627.
         DATA t628 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t628.
         t628 = t602->max_length.
         CLEAR t627.
         IF t628 IS BOUND AND t628->has = abap_true.
-          CLEAR t627.
           CREATE OBJECT t627.
           t627->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
           t627->nval = t628->value.
@@ -2181,7 +2148,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         DATA(t634) = VALUE abap_bool( ).
         DATA(t635) = VALUE abap_bool( ).
         DATA t636 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t636.
         t636 = t619.
         DATA t638 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t638.
@@ -2364,7 +2330,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
             t704 = |{ t705 }{ |)| }|.
             DATA(t742) = VALUE string( ).
             DATA t743 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t743.
             DATA t750 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t750.
             DATA(t753) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -2380,11 +2345,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
             DATA t756 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t756.
             DATA t760 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t760.
-            DATA t761 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t761.
-            CREATE OBJECT t761.
-            t760 = t761.
+            CREATE OBJECT t760.
             t760->load( ).
             APPEND |Naming| TO t760->items.
             t760->save( ).
@@ -2468,7 +2429,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         t607 = t633.
         IF xsdbool( t607 IS BOUND ) = abap_true.
           DATA t798 TYPE REF TO zcl_lnt_issue.
-          CLEAR t798.
           t798 = t607.
           t605->load( ).
           APPEND t798 TO t605->items.
@@ -5459,8 +5419,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t1673 = t1658->description.
       DATA t1676 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t1677 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1677.
-      CLEAR t1677.
       CREATE OBJECT t1677.
       t1677->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t1677->nval = 60.
@@ -5653,7 +5611,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t1752 = |{ t1753 }{ |)| }|.
           DATA(t1790) = VALUE string( ).
           DATA t1791 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t1791.
           DATA t1798 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t1798.
           DATA(t1801) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -5771,7 +5728,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t1852 = t1855.
       CLEAR t1851.
       IF t1852 IS BOUND AND t1852->has = abap_true.
-        CLEAR t1851.
         CREATE OBJECT t1851.
         t1851->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1851->sval = t1852->value.
@@ -5965,7 +5921,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t1935 = |{ t1936 }{ |)| }|.
           DATA(t1973) = VALUE string( ).
           DATA t1974 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t1974.
           DATA t1981 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t1981.
           DATA(t1984) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -6083,7 +6038,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t2035 = t2038.
       CLEAR t2034.
       IF t2035 IS BOUND AND t2035->has = abap_true.
-        CLEAR t2034.
         CREATE OBJECT t2034.
         t2034->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t2034->sval = t2035->value.
@@ -6277,7 +6231,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t2118 = |{ t2119 }{ |)| }|.
           DATA(t2156) = VALUE string( ).
           DATA t2157 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t2157.
           DATA t2164 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t2164.
           DATA(t2167) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -6395,7 +6348,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t2218 = t2221.
       CLEAR t2217.
       IF t2218 IS BOUND AND t2218->has = abap_true.
-        CLEAR t2217.
         CREATE OBJECT t2217.
         t2217->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t2217->sval = t2218->value.
@@ -6589,7 +6541,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t2301 = |{ t2302 }{ |)| }|.
           DATA(t2339) = VALUE string( ).
           DATA t2340 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t2340.
           DATA t2347 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t2347.
           DATA(t2350) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -6707,7 +6658,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t2401 = t2404.
       CLEAR t2400.
       IF t2401 IS BOUND AND t2401->has = abap_true.
-        CLEAR t2400.
         CREATE OBJECT t2400.
         t2400->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t2400->sval = t2401->value.
@@ -6901,7 +6851,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t2484 = |{ t2485 }{ |)| }|.
           DATA(t2522) = VALUE string( ).
           DATA t2523 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t2523.
           DATA t2530 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t2530.
           DATA(t2533) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -7460,8 +7409,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t234 = t223->description.
       DATA t237 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t238 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t238.
-      CLEAR t238.
       CREATE OBJECT t238.
       t238->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t238->nval = t3.
@@ -7653,7 +7600,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t314 = |{ t315 }{ |)| }|.
           DATA(t352) = VALUE string( ).
           DATA t353 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t353.
           DATA t360 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t360.
           DATA(t363) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -7801,8 +7747,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t443 = t432->description.
       DATA t446 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t447 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t447.
-      CLEAR t447.
       CREATE OBJECT t447.
       t447->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t447->nval = t3.
@@ -7994,7 +7938,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t523 = |{ t524 }{ |)| }|.
           DATA(t561) = VALUE string( ).
           DATA t562 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t562.
           DATA t569 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t569.
           DATA(t572) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -8438,8 +8381,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t237 = t226->description.
       DATA t240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t241 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t241.
-      CLEAR t241.
       CREATE OBJECT t241.
       t241->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t241->nval = t3.
@@ -8631,7 +8572,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t317 = |{ t318 }{ |)| }|.
           DATA(t355) = VALUE string( ).
           DATA t356 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t356.
           DATA t363 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t363.
           DATA(t366) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -8810,8 +8750,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t54 = t63.
       DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t66.
-      CLEAR t66.
       CREATE OBJECT t66.
       t66->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t66->nval = t3.
@@ -9000,7 +8938,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t139 = |{ t140 }{ |)| }|.
           DATA(t177) = VALUE string( ).
           DATA t178 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t178.
           DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t185.
           DATA(t188) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -9174,8 +9111,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       t287 = t259->text.
       DATA t290 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t291.
-      CLEAR t291.
       CREATE OBJECT t291.
       t291->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
       t291->nval = t3.
@@ -9367,7 +9302,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           t367 = |{ t368 }{ |)| }|.
           DATA(t405) = VALUE string( ).
           DATA t406 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t406.
           DATA t413 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t413.
           DATA(t416) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -9570,7 +9504,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         CLEAR t83.
         DATA(t87) = VALUE string( ).
         DATA t88 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t88.
         DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t95.
         DATA(t98) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.
@@ -9723,7 +9656,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t44 = t37->datatype_2bc5.
       DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t46.
       DATA(t49) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t49->has = abap_true.
       t49->value = |QUAN|.
@@ -9996,7 +9928,6 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         CLEAR t138.
         DATA(t142) = VALUE string( ).
         DATA t143 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t143.
         DATA t150 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t150.
         DATA(t153) = |Checks:\n* XML is well-formed and parseable\n* Naming for CLAS|.

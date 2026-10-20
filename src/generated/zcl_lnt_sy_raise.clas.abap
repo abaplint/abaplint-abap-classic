@@ -744,7 +744,6 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
         t704 ?= t705.
       ENDIF.
       DATA t709 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t709.
       DATA t710 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t710.
       t710 = t704.
@@ -784,7 +783,6 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
         t722 ?= t723.
       ENDIF.
       DATA t727 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t727.
       DATA t728 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t728.
       t728 = t722.

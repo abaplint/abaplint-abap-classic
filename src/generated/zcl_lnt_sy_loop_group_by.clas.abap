@@ -119,7 +119,6 @@ CLASS zcl_lnt_sy_loop_group_by IMPLEMENTATION.
         t50 ?= t51.
       ENDIF.
       DATA t55 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t55.
       DATA t56 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t56.
       t56 = t50.

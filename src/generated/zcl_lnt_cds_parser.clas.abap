@@ -39,7 +39,6 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
       IF t19 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t21 ?= t19.
         DATA t22 TYPE REF TO object.
-        CLEAR t22.
         t22 = t21->as_ref( ).
         t18 ?= t22.
       ELSE.

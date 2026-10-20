@@ -153,7 +153,6 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
         t115 ?= t116.
       ENDIF.
       DATA t120 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t120.
       DATA t121 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t121.
       t121 = t115.
@@ -193,7 +192,6 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
         t133 ?= t134.
       ENDIF.
       DATA t138 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t138.
       DATA t139 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t139.
       t139 = t133.

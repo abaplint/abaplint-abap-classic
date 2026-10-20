@@ -3143,7 +3143,6 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
             DATA t1083 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t1083.
             DATA t1084 TYPE REF TO object.
-            CLEAR t1084.
             CLEAR t1083.
             t1084 = t1079.
             TRY.
@@ -3168,27 +3167,20 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t1085 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t1085.
       t1085 = me->parsed_xml->texts_translations.
       DATA t1089 TYPE REF TO zcl_lnt_shape_0802eb0f.
       CLEAR t1089.
       DATA t1090 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1090.
       t1090 = t1078->get( p0 = |DDLANGUAGE| ).
       DATA t1094 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1094.
       t1094 = t1078->get( p0 = |DDTEXT| ).
       DATA t1098 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1098.
       t1098 = t1078->get( p0 = |SCRTEXT_S| ).
       DATA t1102 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1102.
       t1102 = t1078->get( p0 = |SCRTEXT_M| ).
       DATA t1106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1106.
       t1106 = t1078->get( p0 = |SCRTEXT_L| ).
       DATA t1110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1110.
       t1110 = t1078->get( p0 = |REPTEXT| ).
       DATA t1114 TYPE REF TO zcl_lnt_shape_0802eb0f.
       CLEAR t1114.

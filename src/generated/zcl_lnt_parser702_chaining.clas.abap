@@ -258,7 +258,6 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       IF t53 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t55 ?= t53.
         DATA t56 TYPE REF TO object.
-        CLEAR t56.
         t56 = t55->as_ref( ).
         t52 ?= t56.
       ELSE.
@@ -291,14 +290,12 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         IF t67 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t69 ?= t67.
           DATA t70 TYPE REF TO object.
-          CLEAR t70.
           t70 = t69->as_ref( ).
           t66 ?= t70.
         ELSE.
           t66 ?= t67.
         ENDIF.
         DATA t71 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t71.
         DATA(t74) = zlnt_runtime_desc_78196487750d=>zlnt_member_d220_2984eb665ddb.
         t71 = t66->find_direct_expression( i_type_9913 = t74 ).
         DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -308,9 +305,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t82 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t82.
         DATA t84 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t84.
         t84 = t71.
         DATA(t86) = zlnt_runtime_desc_78196487750d=>zlnt_member_d222_4f064a8e9470.
         t82 = t84->find_direct_expression( i_type_9913 = t86 ).
@@ -324,26 +319,22 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         DATA(t95) = VALUE abap_bool( ).
         DATA(t96) = VALUE abap_bool( ).
         DATA t97 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t97.
         t97 = t82->find_direct_token_by_text( i_text = |IMPORTING| ).
         t96 = xsdbool( t97 IS BOUND ).
         t95 = t96.
         IF t96 = abap_false.
           DATA t102 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t102.
           t102 = t82->find_direct_token_by_text( i_text = |CHANGING| ).
           t95 = xsdbool( t102 IS BOUND ).
         ENDIF.
         t94 = t95.
         IF t95 = abap_false.
           DATA t107 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t107.
           t107 = t82->find_direct_token_by_text( i_text = |EXCEPTIONS| ).
           t94 = xsdbool( t107 IS BOUND ).
         ENDIF.
         IF t94 = abap_true.
           DATA t120 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t120.
           t120 = t2.
           DATA t123 TYPE REF TO zcl_lnt_issue.
           CLEAR t123.
@@ -352,7 +343,6 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           t125 = t82->get_first_token( )->start.
           DATA(t132) = VALUE string( ).
           DATA t133 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t133.
           DATA(t138) = VALUE string( ).
           DATA(t139) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
           t139 = t139 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.
@@ -361,11 +351,7 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
           DATA t140 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t140.
           DATA t144 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t144.
-          DATA t145 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t145.
-          CREATE OBJECT t145.
-          t144 = t145.
+          CREATE OBJECT t144.
           t144->load( ).
           APPEND |Syntax| TO t144->items.
           t144->save( ).
@@ -461,14 +447,12 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       IF t185 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t187 ?= t185.
         DATA t188 TYPE REF TO object.
-        CLEAR t188.
         t188 = t187->as_ref( ).
         t184 ?= t188.
       ELSE.
         t184 ?= t185.
       ENDIF.
       DATA t191 TYPE REF TO zif_lnt_statement.
-      CLEAR t191.
       t191 = t184->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( xsdbool( t191 IS BOUND AND t191 IS INSTANCE OF zcl_lnt_st_move ) = abap_false ) = abap_true.
         CONTINUE.
@@ -507,7 +491,6 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
       IF t213 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t215 ?= t213.
         DATA t216 TYPE REF TO object.
-        CLEAR t216.
         t216 = t215->as_ref( ).
         t212 ?= t216.
       ELSE.
@@ -536,7 +519,6 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         IF t221 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t223 ?= t221.
           DATA t224 TYPE REF TO object.
-          CLEAR t224.
           t224 = t223->as_ref( ).
           t220 ?= t224.
         ELSE.
@@ -658,7 +640,6 @@ CLASS zcl_lnt_parser702_chaining IMPLEMENTATION.
         t79 = t20->get_first_token( )->start.
         DATA(t86) = VALUE string( ).
         DATA t87 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t87.
         DATA t92 TYPE string.
         DATA(t93) = |ABAP on 702 does not allow for method chaining with IMPORTIN|.
         t93 = t93 && |G/EXPORTING/CHANGING keywords,\nthis rule finds these and rep|.

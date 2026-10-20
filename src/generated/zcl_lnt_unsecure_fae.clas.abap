@@ -213,7 +213,6 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
         CLEAR t67.
         DATA(t71) = VALUE string( ).
         DATA t72 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t72.
         DATA t79 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t79.
         DATA(t82) = |Issues from rule check_syntax must be fixed before this rule|.

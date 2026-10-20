@@ -343,13 +343,11 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     t2 = me->reg->get_objects_by_type( i_type_9913 = |SMIM| )->iterate( ).
     DO.
       DATA t8 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t8.
       t8 = t2->next( ).
       IF t8->done = abap_true.
         EXIT.
       ENDIF.
       DATA t15 TYPE REF TO zif_lnt_object.
-      CLEAR t15.
       t15 = t8->value.
       DATA t17 TYPE REF TO zcl_lnt_mime_object.
       CLEAR t17.
@@ -392,7 +390,6 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
           DATA t45 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t45.
           DATA t46 TYPE REF TO zcl_lnt_mime_object.
-          CLEAR t46.
           t46 = t17.
           DATA t49 TYPE REF TO zcl_lnt_iparse_result.
           CLEAR t49.

@@ -255,7 +255,6 @@ CLASS zcl_lnt_line_break_style IMPLEMENTATION.
             t67 = t68.
             DATA(t72) = VALUE string( ).
             DATA t73 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t73.
             DATA t78 TYPE string.
             DATA(t79) = |Enforces LF as newlines in ABAP and XML files\n\nabapGit does |.
             t79 = t79 && |not work with CRLF|.

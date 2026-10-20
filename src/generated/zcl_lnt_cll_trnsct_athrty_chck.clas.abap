@@ -225,7 +225,6 @@ CLASS zcl_lnt_cll_trnsct_athrty_chck IMPLEMENTATION.
         CLEAR t50.
         DATA(t54) = VALUE string( ).
         DATA t55 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t55.
         DATA t60 TYPE string.
         DATA(t61) = |Checks that usages of CALL TRANSACTION contain an authority-|.
         t61 = t61 && |check.|.

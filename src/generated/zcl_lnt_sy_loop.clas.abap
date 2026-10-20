@@ -584,7 +584,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
             DATA t518 TYPE REF TO zcl_lnt_itable_key.
             CLEAR t518.
             DATA t521 TYPE REF TO object.
-            CLEAR t521.
             t521 = t503->get( p0 = t509 ).
             DATA t522 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t522.
@@ -734,7 +733,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
             IF t614 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t616 ?= t614.
               DATA t617 TYPE REF TO object.
-              CLEAR t617.
               t617 = t616->as_ref( ).
               t613 ?= t617.
             ELSE.
@@ -825,10 +823,8 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
               t672 = t672 && | SP02|.
               t671 = t672.
               DATA t673 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              CLEAR t673.
               t673 = t2->issues.
               DATA t675 TYPE REF TO zcl_lnt_issue.
-              CLEAR t675.
               DATA t677 TYPE REF TO zcl_lnt_abstract_token.
               CLEAR t677.
               t677 = t1->get_first_token( ).
@@ -876,7 +872,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
       IF t701 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t703 ?= t701.
         DATA t704 TYPE REF TO object.
-        CLEAR t704.
         t704 = t703->as_ref( ).
         t700 ?= t704.
       ELSE.
@@ -884,7 +879,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
       ENDIF.
       DATA(t705) = VALUE abap_bool( ).
       DATA t707 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t707.
       t707 = t61.
       DATA t709 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t709.
@@ -895,7 +889,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
         DATA t711 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t711.
         DATA t712 TYPE REF TO object.
-        CLEAR t712.
         CLEAR t711.
         t712 = t700.
         TRY.
@@ -922,7 +915,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
         DATA t713 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t713.
         DATA t714 TYPE REF TO object.
-        CLEAR t714.
         CLEAR t713.
         t714 = t707.
         TRY.
@@ -953,7 +945,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t715 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t715.
       DATA t716 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t716.
       t716 = t700.
@@ -1018,7 +1009,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
       IF t765 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t767 ?= t765.
         DATA t768 TYPE REF TO object.
-        CLEAR t768.
         t768 = t767->as_ref( ).
         t764 ?= t768.
       ELSE.

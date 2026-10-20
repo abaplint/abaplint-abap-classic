@@ -80,50 +80,50 @@ CLASS zcl_lnt_abap_file IMPLEMENTATION.
     IF xsdbool( t1->value = abap_true ) = abap_true.
       result = me->tokens.
       RETURN.
-    ELSE.
-      DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t14.
-      DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t17 = me->tokens.
-      DATA t19 TYPE i.
-      t17->load( ).
-      t19 = lines( t17->items ).
-      DATA t22 TYPE i.
-      t22 = 0.
-      DO.
-        IF xsdbool( t22 < t19 ) = abap_false.
-          EXIT.
-        ENDIF.
-        DATA t27 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t27.
-        DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t29.
-        DATA t32 TYPE REF TO object.
-        t32 = t17->get( p0 = t22 ).
-        DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t33.
-        CLEAR t29.
-        IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-          t33 ?= t32.
-          DATA t34 TYPE REF TO object.
-          t34 = t33->as_ref( ).
-          t29 ?= t34.
-        ELSE.
-          t29 ?= t32.
-        ENDIF.
-        t27 = t29.
-        IF xsdbool( xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_pragma ) = abap_false ) = abap_true.
-          t14->load( ).
-          APPEND t27 TO t14->items.
-          t14->save( ).
-        ENDIF.
-        DATA(t42) = 1.
-        t22 = t22 + t42.
-      ENDDO.
-      result = t14.
-
     ENDIF.
+    DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t14.
+    DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t17 = me->tokens.
+    DATA t19 TYPE i.
+    t17->load( ).
+    t19 = lines( t17->items ).
+    DATA t22 TYPE i.
+    t22 = 0.
+    DO.
+      IF xsdbool( t22 < t19 ) = abap_false.
+        EXIT.
+      ENDIF.
+      DATA t27 TYPE REF TO zcl_lnt_abstract_token.
+      CLEAR t27.
+      DATA t29 TYPE REF TO zcl_lnt_abstract_token.
+      CLEAR t29.
+      DATA t32 TYPE REF TO object.
+      t32 = t17->get( p0 = t22 ).
+      DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t33.
+      CLEAR t29.
+      IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t33 ?= t32.
+        DATA t34 TYPE REF TO object.
+        t34 = t33->as_ref( ).
+        t29 ?= t34.
+      ELSE.
+        t29 ?= t32.
+      ENDIF.
+      t27 = t29.
+      IF xsdbool( xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_pragma ) = abap_false ) = abap_true.
+        t14->load( ).
+        APPEND t27 TO t14->items.
+        t14->save( ).
+      ENDIF.
+      DATA(t42) = 1.
+      t22 = t22 + t42.
+    ENDDO.
+    result = t14.
+
+
   ENDMETHOD.
 
   METHOD get_statements.

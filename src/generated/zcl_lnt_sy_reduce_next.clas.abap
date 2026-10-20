@@ -45,7 +45,6 @@ CLASS zcl_lnt_sy_reduce_next IMPLEMENTATION.
         t14 ?= t15.
       ENDIF.
       DATA t19 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t19.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t20.
       t20 = t14.

@@ -74,7 +74,6 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       IF t64 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t66 ?= t64.
         DATA t67 TYPE REF TO object.
-        CLEAR t67.
         t67 = t66->as_ref( ).
         t63 ?= t67.
       ELSE.
@@ -82,7 +81,6 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       ENDIF.
       DATA(t68) = VALUE abap_bool( ).
       DATA t70 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t70.
       t70 = t12.
       DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t72.
@@ -93,7 +91,6 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
         DATA t74 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t74.
         DATA t75 TYPE REF TO object.
-        CLEAR t75.
         CLEAR t74.
         t75 = t63.
         TRY.
@@ -120,7 +117,6 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
         DATA t76 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t76.
         DATA t77 TYPE REF TO object.
-        CLEAR t77.
         CLEAR t76.
         t77 = t70.
         TRY.
@@ -158,7 +154,6 @@ CLASS zcl_lnt_sy_switch_body IMPLEMENTATION.
       DATA t84 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t84.
       DATA t85 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t85.
       t85 = t3.
       DATA t87 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t87.

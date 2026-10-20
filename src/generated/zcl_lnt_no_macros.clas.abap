@@ -156,7 +156,6 @@ CLASS zcl_lnt_no_macros IMPLEMENTATION.
         CLEAR t18.
         DATA(t22) = VALUE string( ).
         DATA t23 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t23.
         DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t30.
         DATA(t33) = |Macros reduce readability and are difficult to debug, use me|.

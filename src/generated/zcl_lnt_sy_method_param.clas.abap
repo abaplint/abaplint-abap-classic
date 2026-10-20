@@ -165,73 +165,73 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       result = NEW zcl_lnt_typed_identifier( i_token = t102 i_filename = t105 i_type_9913 = CAST zcl_lnt_c_generic_type( zcl_lnt_c_generic_type=>get_db65( ) ) i_meta = t3 i_value = t112 ).
       RETURN.
-    ELSE.
-      DATA(t113) = VALUE abap_bool( ).
-      DATA(t114) = VALUE abap_bool( ).
-      t114 = xsdbool( t84 = |TYPE X| ).
-      t113 = t114.
-      IF t114 = abap_false.
-        DATA(t117) = VALUE abap_bool( ).
-        DATA(t119) = |TYPE X |.
-        DATA(t120) = strlen( t84 ).
-        DATA(t121) = VALUE i( ).
-        DATA(t122) = VALUE i( ).
-        DATA(t123) = VALUE string( ).
-        t121 = strlen( t119 ).
-        IF t121 = 0.
-          t117 = abap_true.
-        ELSEIF t121 <= t120.
-          t122 = 0.
-          t123 = t84+t122(t121).
-          IF t123 = t119.
-            t117 = abap_true.
-          ENDIF.
-        ENDIF.
-        t113 = t117.
-      ENDIF.
-      IF t113 = abap_true.
-        DATA t125 TYPE REF TO zcl_lnt_abstract_token.
-        t125 = t4->get_first_token( ).
-        DATA(t128) = VALUE string( ).
-        t128 = t2->filename.
-        DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        result = NEW zcl_lnt_typed_identifier( i_token = t125 i_filename = t128 i_type_9913 = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65( ) ) i_meta = t3 i_value = t135 ).
-        RETURN.
-      ELSE.
-        DATA(t136) = VALUE abap_bool( ).
-        DATA(t137) = VALUE abap_bool( ).
-        t137 = xsdbool( t84 = |TYPE P| ).
-        t136 = t137.
-        IF t137 = abap_false.
-          DATA(t140) = VALUE abap_bool( ).
-          DATA(t142) = |TYPE P |.
-          DATA(t143) = strlen( t84 ).
-          DATA(t144) = VALUE i( ).
-          DATA(t145) = VALUE i( ).
-          DATA(t146) = VALUE string( ).
-          t144 = strlen( t142 ).
-          IF t144 = 0.
-            t140 = abap_true.
-          ELSEIF t144 <= t143.
-            t145 = 0.
-            t146 = t84+t145(t144).
-            IF t146 = t142.
-              t140 = abap_true.
-            ENDIF.
-          ENDIF.
-          t136 = t140.
-        ENDIF.
-        IF t136 = abap_true.
-          DATA t148 TYPE REF TO zcl_lnt_abstract_token.
-          t148 = t4->get_first_token( ).
-          DATA(t151) = VALUE string( ).
-          t151 = t2->filename.
-          DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          result = NEW zcl_lnt_typed_identifier( i_token = t148 i_filename = t151 i_type_9913 = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65( ) ) i_meta = t3 i_value = t158 ).
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    DATA(t113) = VALUE abap_bool( ).
+    DATA(t114) = VALUE abap_bool( ).
+    t114 = xsdbool( t84 = |TYPE X| ).
+    t113 = t114.
+    IF t114 = abap_false.
+      DATA(t117) = VALUE abap_bool( ).
+      DATA(t119) = |TYPE X |.
+      DATA(t120) = strlen( t84 ).
+      DATA(t121) = VALUE i( ).
+      DATA(t122) = VALUE i( ).
+      DATA(t123) = VALUE string( ).
+      t121 = strlen( t119 ).
+      IF t121 = 0.
+        t117 = abap_true.
+      ELSEIF t121 <= t120.
+        t122 = 0.
+        t123 = t84+t122(t121).
+        IF t123 = t119.
+          t117 = abap_true.
+        ENDIF.
+      ENDIF.
+      t113 = t117.
+    ENDIF.
+    IF t113 = abap_true.
+      DATA t125 TYPE REF TO zcl_lnt_abstract_token.
+      t125 = t4->get_first_token( ).
+      DATA(t128) = VALUE string( ).
+      t128 = t2->filename.
+      DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      result = NEW zcl_lnt_typed_identifier( i_token = t125 i_filename = t128 i_type_9913 = CAST zcl_lnt_x_generic_type( zcl_lnt_x_generic_type=>get_db65( ) ) i_meta = t3 i_value = t135 ).
+      RETURN.
+    ENDIF.
+    DATA(t136) = VALUE abap_bool( ).
+    DATA(t137) = VALUE abap_bool( ).
+    t137 = xsdbool( t84 = |TYPE P| ).
+    t136 = t137.
+    IF t137 = abap_false.
+      DATA(t140) = VALUE abap_bool( ).
+      DATA(t142) = |TYPE P |.
+      DATA(t143) = strlen( t84 ).
+      DATA(t144) = VALUE i( ).
+      DATA(t145) = VALUE i( ).
+      DATA(t146) = VALUE string( ).
+      t144 = strlen( t142 ).
+      IF t144 = 0.
+        t140 = abap_true.
+      ELSEIF t144 <= t143.
+        t145 = 0.
+        t146 = t84+t145(t144).
+        IF t146 = t142.
+          t140 = abap_true.
+        ENDIF.
+      ENDIF.
+      t136 = t140.
+    ENDIF.
+    IF t136 = abap_true.
+      DATA t148 TYPE REF TO zcl_lnt_abstract_token.
+      t148 = t4->get_first_token( ).
+      DATA(t151) = VALUE string( ).
+      t151 = t2->filename.
+      DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      result = NEW zcl_lnt_typed_identifier( i_token = t148 i_filename = t151 i_type_9913 = CAST zcl_lnt_p_generic_type( zcl_lnt_p_generic_type=>get_db65( ) ) i_meta = t3 i_value = t158 ).
+      RETURN.
+    ENDIF.
+
+
     DATA t159 TYPE REF TO zcl_lnt_abstract_type.
     DATA t165 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     t159 = NEW zcl_lnt_basic_types( i_input_967e = t2 )->parse_type( i_node = t24 i_qualified_name = t165 ).
@@ -243,16 +243,16 @@ CLASS zcl_lnt_sy_method_param IMPLEMENTATION.
       DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       result = NEW zcl_lnt_typed_identifier( i_token = t169 i_filename = t172 i_type_9913 = t159 i_meta = t3 i_value = t180 ).
       RETURN.
-    ELSE.
-      DATA t182 TYPE REF TO zcl_lnt_abstract_token.
-      t182 = t4->get_first_token( ).
-      DATA(t185) = VALUE string( ).
-      t185 = t2->filename.
-      DATA t189 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      result = NEW zcl_lnt_typed_identifier( i_token = t182 i_filename = t185 i_type_9913 = NEW zcl_lnt_unknown_type( i_error = |method param, todo| i_qualified_name = t189 ) i_meta = t3 i_value = t194 ).
-
     ENDIF.
+    DATA t182 TYPE REF TO zcl_lnt_abstract_token.
+    t182 = t4->get_first_token( ).
+    DATA(t185) = VALUE string( ).
+    t185 = t2->filename.
+    DATA t189 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    result = NEW zcl_lnt_typed_identifier( i_token = t182 i_filename = t185 i_type_9913 = NEW zcl_lnt_unknown_type( i_error = |method param, todo| i_qualified_name = t189 ) i_meta = t3 i_value = t194 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

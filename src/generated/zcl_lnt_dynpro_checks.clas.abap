@@ -197,7 +197,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t53 = t46->type_cba0.
         DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t55.
         DATA(t58) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t58->has = abap_true.
         t58->value = |PUSH|.
@@ -278,7 +277,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           t102 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t105 ).
           DATA(t107) = VALUE string( ).
           DATA t108 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t108.
           DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t115.
           DATA(t118) = |* Check length of PUSH elements less than 132\n* Check for ov|.
@@ -462,7 +460,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t31 = t12->type_cba0.
         DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t33.
         DATA(t36) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t36->has = abap_true.
         t36->value = |FRAME|.
@@ -494,7 +491,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t46 = t41->cont_type.
         DATA t48 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t48.
         DATA(t51) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t51->has = abap_true.
         t51->value = |TABLE_CTRL|.
@@ -520,7 +516,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           DATA t56 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t56 = t41->cont_type.
           DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t58.
           DATA(t61) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t61->has = abap_true.
           t61->value = |LOOP|.
@@ -548,7 +543,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t66 = t41->cont_type.
           DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t68.
           DATA(t71) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t71->has = abap_true.
           t71->value = |STRIP_CTRL|.
@@ -633,7 +627,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t107 = t87->type_cba0.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t109.
           DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t112->has = abap_true.
           t112->value = |FRAME|.
@@ -665,7 +658,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
           DATA t122 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t122 = t117->cont_type.
           DATA t124 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t124.
           DATA(t127) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t127->has = abap_true.
           t127->value = |TABLE_CTRL|.
@@ -691,7 +683,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
             DATA t132 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             t132 = t117->cont_type.
             DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t134.
             DATA(t137) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t137->has = abap_true.
             t137->value = |LOOP|.
@@ -719,7 +710,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
             DATA t142 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             t142 = t117->cont_type.
             DATA t144 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t144.
             DATA(t147) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t147->has = abap_true.
             t147->value = |STRIP_CTRL|.
@@ -874,7 +864,6 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
         t239 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t242 ).
         DATA(t244) = VALUE string( ).
         DATA t245 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t245.
         DATA t252 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t252.
         DATA(t255) = |* Check length of PUSH elements less than 132\n* Check for ov|.

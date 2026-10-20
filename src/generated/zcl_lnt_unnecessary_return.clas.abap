@@ -275,7 +275,6 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
         CLEAR t115.
         DATA(t119) = VALUE string( ).
         DATA t120 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t120.
         DATA t127 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t127.
         DATA(t131) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -460,7 +459,6 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
         CLEAR t226.
         DATA(t230) = VALUE string( ).
         DATA t231 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t231.
         DATA t238 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t238.
         DATA(t242) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

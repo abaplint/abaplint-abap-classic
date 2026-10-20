@@ -182,12 +182,12 @@ CLASS zcl_lnt_sy_sql_in IMPLEMENTATION.
     IF t2 = abap_true.
       result = abap_true.
       RETURN.
-    ELSE.
-      IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_false ) = abap_true.
-        result = abap_false.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_false ) = abap_true.
+      result = abap_false.
+      RETURN.
+    ENDIF.
+
     DATA t16 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     IF zcl_lnt_sql_in_module=>zlnt_builtin_init_67f8511dffbf = abap_false.
       zcl_lnt_sql_in_module=>zlnt_builtin_init_7517e34af3ee( ).

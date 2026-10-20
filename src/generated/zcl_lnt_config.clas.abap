@@ -180,7 +180,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       DATA t22 TYPE REF TO zif_lnt_rule.
       CLEAR t22.
       DATA t25 TYPE REF TO object.
-      CLEAR t25.
       t25 = t10->get( p0 = t15 ).
       DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t26.
@@ -188,7 +187,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       IF t25 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t26 ?= t25.
         DATA t27 TYPE REF TO object.
-        CLEAR t27.
         t27 = t26->as_ref( ).
         t22 ?= t27.
       ELSE.
@@ -209,7 +207,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         DATA(t39) = 1.
         t37 = t28 - t39.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         t40 = t10->get( p0 = t37 ).
         DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t41.
@@ -217,7 +214,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
         IF t40 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t41 ?= t40.
           DATA t42 TYPE REF TO object.
-          CLEAR t42.
           t42 = t41->as_ref( ).
           t35 ?= t42.
         ELSE.
@@ -257,7 +253,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       IF t67 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t69 ?= t67.
         DATA t70 TYPE REF TO object.
-        CLEAR t70.
         t70 = t69->as_ref( ).
         t66 ?= t70.
       ELSE.
@@ -270,14 +265,12 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t76.
       DATA t77 TYPE REF TO object.
-      CLEAR t77.
       t77 = t66->get_config_value( ).
       CLEAR t76.
       IF t77 IS BOUND.
         DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t79.
         DATA t80 TYPE REF TO object.
-        CLEAR t80.
         CLEAR t79.
         t80 = t77.
         TRY.
@@ -1012,11 +1005,11 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       ENDIF.
       result = t6.
       RETURN.
-    ELSE.
-      DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR result.
-
     ENDIF.
+    DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    CLEAR result.
+
+
   ENDMETHOD.
 
   METHOD read_by_rule.
@@ -1400,7 +1393,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
     CREATE OBJECT t25.
     t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     LOOP AT t26->entries INTO DATA(t27).
-      CLEAR t28.
       CREATE OBJECT t28.
       t28->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t28->sval = t27-v.
@@ -1428,7 +1420,6 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       t32 = t32 + 1.
       DATA(t33) = VALUE abap_bool( ).
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t34.
       t34 = t24->get( p0 = t31 ).
       DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t37.

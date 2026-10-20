@@ -102,40 +102,40 @@ CLASS zcl_lnt_structure_parser IMPLEMENTATION.
     IF t2 = abap_true.
       result = NEW zcl_lnt_sr_class_global( ).
       RETURN.
-    ELSE.
-      DATA(t10) = VALUE abap_bool( ).
-      DATA(t12) = |.intf.abap|.
-      DATA(t13) = strlen( t1 ).
-      DATA t14 TYPE i.
-      DATA(t15) = VALUE i( ).
-      DATA(t16) = VALUE string( ).
-      t14 = strlen( t12 ).
-      IF t14 = 0.
+    ENDIF.
+    DATA(t10) = VALUE abap_bool( ).
+    DATA(t12) = |.intf.abap|.
+    DATA(t13) = strlen( t1 ).
+    DATA t14 TYPE i.
+    DATA(t15) = VALUE i( ).
+    DATA(t16) = VALUE string( ).
+    t14 = strlen( t12 ).
+    IF t14 = 0.
+      t10 = abap_true.
+    ELSEIF t14 <= t13.
+      t15 = 0.
+      t15 = t13 - t14.
+      t16 = t1+t15(t14).
+      IF t16 = t12.
         t10 = abap_true.
-      ELSEIF t14 <= t13.
-        t15 = 0.
-        t15 = t13 - t14.
-        t16 = t1+t15(t14).
-        IF t16 = t12.
-          t10 = abap_true.
-        ENDIF.
-      ENDIF.
-      IF t10 = abap_true.
-        result = NEW zcl_lnt_interface_global( ).
-        RETURN.
-      ELSE.
-        DATA t19 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CREATE OBJECT t19 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.screen\_[0-9]+\.abap$` flags = |i|.
-        t19->source = `\.screen\_\d+\.abap$`.
-        IF t19->test( p0 = t1 ) = abap_true.
-          result = NEW zcl_lnt_dynpro_logic( ).
-          RETURN.
-        ELSE.
-          result = NEW zcl_lnt_any( ).
-          RETURN.
-        ENDIF.
       ENDIF.
     ENDIF.
+    IF t10 = abap_true.
+      result = NEW zcl_lnt_interface_global( ).
+      RETURN.
+    ENDIF.
+    DATA t19 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
+    CREATE OBJECT t19 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.screen\_[0-9]+\.abap$` flags = |i|.
+    t19->source = `\.screen\_\d+\.abap$`.
+    IF t19->test( p0 = t1 ) = abap_true.
+      result = NEW zcl_lnt_dynpro_logic( ).
+      RETURN.
+    ENDIF.
+    result = NEW zcl_lnt_any( ).
+
+
+
+
   ENDMETHOD.
 
   METHOD run_file.

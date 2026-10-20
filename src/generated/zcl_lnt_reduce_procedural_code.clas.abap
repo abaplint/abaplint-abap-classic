@@ -228,7 +228,6 @@ CLASS zcl_lnt_reduce_procedural_code IMPLEMENTATION.
             t76 = t16.
             DATA(t79) = VALUE string( ).
             DATA t80 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t80.
             DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t87.
             DATA(t90) = |Delegate logic to a class method instead of using FORM or FU|.

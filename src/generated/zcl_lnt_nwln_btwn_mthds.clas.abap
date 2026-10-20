@@ -97,30 +97,30 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
       DATA(t16) = strlen( t8 ).
       result = |{ t8 }{ | newlines are required in between methods| }|.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 = |less| ) = abap_true.
-        DATA(t21) = VALUE string( ).
-        DATA(t22) = |Less than |.
-        DATA(t23) = VALUE string( ).
-        DATA t24 TYPE f.
-        t24 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
-        IF t24 <> trunc( t24 ) OR t24 > range_safe_integer OR t24 < 0 - range_safe_integer.
-          RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-        ENDIF.
-        DATA(t26) = CONV int8( t24 ).
-        t23 = |{ t26 }|.
-        DATA(t27) = strlen( t22 ).
-        t21 = |{ t22 }{ t23 }|.
-        DATA(t28) = | newlines and at least a single newline are required in betw|.
-        t28 = t28 && |een methods|.
-        DATA(t29) = strlen( t21 ).
-        result = |{ t21 }{ t28 }|.
-        RETURN.
-      ELSE.
-        result = ||.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 = |less| ) = abap_true.
+      DATA(t21) = VALUE string( ).
+      DATA(t22) = |Less than |.
+      DATA(t23) = VALUE string( ).
+      DATA t24 TYPE f.
+      t24 = me->conf->zlnt_view_read_sr_61b1746e9aca( ).
+      IF t24 <> trunc( t24 ) OR t24 > range_safe_integer OR t24 < 0 - range_safe_integer.
+        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      ENDIF.
+      DATA(t26) = CONV int8( t24 ).
+      t23 = |{ t26 }|.
+      DATA(t27) = strlen( t22 ).
+      t21 = |{ t22 }{ t23 }|.
+      DATA(t28) = | newlines and at least a single newline are required in betw|.
+      t28 = t28 && |een methods|.
+      DATA(t29) = strlen( t21 ).
+      result = |{ t21 }{ t28 }|.
+      RETURN.
+    ENDIF.
+    result = ||.
+
+
+
   ENDMETHOD.
 
   METHOD g_c_i_s_r_nw_bt_mt_ts_nw_bt_mt.
@@ -406,7 +406,6 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
         t136 = t140.
         DATA(t169) = VALUE string( ).
         DATA t170 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t170.
         DATA t177 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t177.
         DATA t181 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -510,10 +509,10 @@ CLASS zcl_lnt_nwln_btwn_mthds IMPLEMENTATION.
     IF t1 = abap_true.
       result = abap_false.
       RETURN.
-    ELSE.
-      result = abap_true.
-
     ENDIF.
+    result = abap_true.
+
+
   ENDMETHOD.
 
   METHOD get_config_value.

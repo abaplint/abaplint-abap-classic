@@ -193,180 +193,179 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
         DATA(t36) = 1.
         t12 = t12 + t36.
         CONTINUE.
-      ELSE.
-        DATA t37 TYPE abap_bool.
-        DATA t38 TYPE abap_bool.
-        t38 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_end_class ).
-        t37 = t38.
-        IF t38 = abap_false.
-          t37 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_end_interface ).
-        ENDIF.
-        IF t37 = abap_true.
-          t10 = abap_false.
-          DATA(t45) = 1.
-          t12 = t12 + t45.
-          CONTINUE.
-        ELSE.
-          DATA t46 TYPE abap_bool.
-          DATA t47 TYPE abap_bool.
-          t47 = xsdbool( t10 = abap_false ).
-          t46 = t47.
-          IF t47 = abap_false.
-            DATA t52 TYPE REF TO zcl_lnt_statement_node.
-            CLEAR t52.
-            t52 = t18.
-            DATA(t57) = VALUE abap_bool( ).
-            DATA(t58) = VALUE abap_bool( ).
-            DATA t59 TYPE REF TO zif_lnt_statement.
-            CLEAR t59.
-            DATA t60 TYPE REF TO zcl_lnt_statement_node.
-            t60 = t52.
-            DATA t62 TYPE REF TO zif_lnt_statement.
-            CLEAR t62.
-            IF xsdbool( t60 IS INITIAL ) = abap_true.
-              CLEAR t62.
-            ELSE.
-              t62 = t60->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-            ENDIF.
-            t59 = t62.
-            t58 = xsdbool( t59 IS BOUND AND t59 IS INSTANCE OF zcl_lnt_st_comment ).
-            t57 = t58.
-            IF t58 = abap_true.
-              DATA(t69) = VALUE abap_bool( ).
-              DATA t70 TYPE string.
-              t70 = t52->get_first_token( )->str.
-              DATA(t77) = |"!|.
-              DATA(t78) = strlen( t70 ).
-              DATA t79 TYPE i.
-              DATA(t80) = VALUE i( ).
-              DATA(t81) = VALUE string( ).
-              t79 = strlen( t77 ).
-              IF t79 = 0.
-                t69 = abap_true.
-              ELSEIF t79 <= t78.
-                t80 = 0.
-                t81 = t70+t80(t79).
-                IF t81 = t77.
-                  t69 = abap_true.
-                ENDIF.
-              ENDIF.
-              t57 = t69.
-            ENDIF.
-            t46 = xsdbool( t57 = abap_false ).
-          ENDIF.
-          IF t46 = abap_true.
-            DATA(t85) = 1.
-            t12 = t12 + t85.
-            CONTINUE.
-          ELSE.
-            DATA(t86) = VALUE abap_bool( ).
-            DATA(t87) = VALUE abap_bool( ).
-            DATA t89 TYPE REF TO zcl_lnt_statement_node.
-            CLEAR t89.
-            DATA t92 TYPE REF TO zcl_lnt_statement_node.
-            CLEAR t92.
-            DATA t94 TYPE i.
-            DATA(t96) = 1.
-            t94 = t12 - t96.
-            t94 = t94 + 1.
-            DATA t97 TYPE REF TO object.
-            CLEAR t97.
-            t4->load( ).
-            CLEAR t97.
-            READ TABLE t4->items INDEX t94 INTO t97.
-            DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t98.
-            CLEAR t92.
-            IF t97 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-              t98 ?= t97.
-              DATA t99 TYPE REF TO object.
-              t99 = t98->as_ref( ).
-              t92 ?= t99.
-            ELSE.
-              t92 ?= t97.
-            ENDIF.
-            t89 = t92.
-            DATA(t101) = VALUE abap_bool( ).
-            DATA(t102) = VALUE abap_bool( ).
-            DATA t103 TYPE REF TO zif_lnt_statement.
-            CLEAR t103.
-            DATA t104 TYPE REF TO zcl_lnt_statement_node.
-            t104 = t89.
-            DATA t106 TYPE REF TO zif_lnt_statement.
-            CLEAR t106.
-            IF xsdbool( t104 IS INITIAL ) = abap_true.
-              CLEAR t106.
-            ELSE.
-              t106 = t104->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-            ENDIF.
-            t103 = t106.
-            t102 = xsdbool( t103 IS BOUND AND t103 IS INSTANCE OF zcl_lnt_st_comment ).
-            t101 = t102.
-            IF t102 = abap_true.
-              DATA(t113) = VALUE abap_bool( ).
-              DATA t114 TYPE string.
-              t114 = t89->get_first_token( )->str.
-              DATA(t121) = |"!|.
-              DATA(t122) = strlen( t114 ).
-              DATA t123 TYPE i.
-              DATA(t124) = VALUE i( ).
-              DATA(t125) = VALUE string( ).
-              t123 = strlen( t121 ).
-              IF t123 = 0.
-                t113 = abap_true.
-              ELSEIF t123 <= t122.
-                t124 = 0.
-                t125 = t114+t124(t123).
-                IF t125 = t121.
-                  t113 = abap_true.
-                ENDIF.
-              ENDIF.
-              t101 = t113.
-            ENDIF.
-            t87 = xsdbool( t101 = abap_true ).
-            t86 = t87.
-            IF t87 = abap_true.
-              DATA(t128) = VALUE f( ).
-              DATA(t129) = VALUE f( ).
-              DATA t133 TYPE REF TO zcl_lnt_statement_node.
-              CLEAR t133.
-              DATA t135 TYPE i.
-              DATA(t137) = 1.
-              t135 = t12 - t137.
-              t135 = t135 + 1.
-              DATA t138 TYPE REF TO object.
-              CLEAR t138.
-              t4->load( ).
-              CLEAR t138.
-              READ TABLE t4->items INDEX t135 INTO t138.
-              DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              CLEAR t139.
-              CLEAR t133.
-              IF t138 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-                t139 ?= t138.
-                DATA t140 TYPE REF TO object.
-                t140 = t139->as_ref( ).
-                t133 ?= t140.
-              ELSE.
-                t133 ?= t138.
-              ENDIF.
-              DATA t145 TYPE REF TO zcl_lnt_position.
-              t145 = t133->get_first_token( )->start.
-              t129 = t145->row.
-              DATA(t149) = CONV f( 1 ).
-              t128 = t129 + t149.
-              DATA t159 TYPE REF TO zcl_lnt_position.
-              t159 = t18->get_first_token( )->start.
-              t86 = xsdbool( t128 = t159->row ).
-            ENDIF.
-            IF t86 = abap_true.
-              DATA(t165) = 1.
-              t12 = t12 + t165.
-              CONTINUE.
-            ENDIF.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      DATA t37 TYPE abap_bool.
+      DATA t38 TYPE abap_bool.
+      t38 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_end_class ).
+      t37 = t38.
+      IF t38 = abap_false.
+        t37 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_end_interface ).
+      ENDIF.
+      IF t37 = abap_true.
+        t10 = abap_false.
+        DATA(t45) = 1.
+        t12 = t12 + t45.
+        CONTINUE.
+      ENDIF.
+      DATA t46 TYPE abap_bool.
+      DATA t47 TYPE abap_bool.
+      t47 = xsdbool( t10 = abap_false ).
+      t46 = t47.
+      IF t47 = abap_false.
+        DATA t52 TYPE REF TO zcl_lnt_statement_node.
+        t52 = t18.
+        DATA(t57) = VALUE abap_bool( ).
+        DATA(t58) = VALUE abap_bool( ).
+        DATA t59 TYPE REF TO zif_lnt_statement.
+        CLEAR t59.
+        DATA t60 TYPE REF TO zcl_lnt_statement_node.
+        t60 = t52.
+        DATA t62 TYPE REF TO zif_lnt_statement.
+        CLEAR t62.
+        IF xsdbool( t60 IS INITIAL ) = abap_true.
+          CLEAR t62.
+        ELSE.
+          t62 = t60->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+        ENDIF.
+        t59 = t62.
+        t58 = xsdbool( t59 IS BOUND AND t59 IS INSTANCE OF zcl_lnt_st_comment ).
+        t57 = t58.
+        IF t58 = abap_true.
+          DATA(t69) = VALUE abap_bool( ).
+          DATA t70 TYPE string.
+          t70 = t52->get_first_token( )->str.
+          DATA(t77) = |"!|.
+          DATA(t78) = strlen( t70 ).
+          DATA t79 TYPE i.
+          DATA(t80) = VALUE i( ).
+          DATA(t81) = VALUE string( ).
+          t79 = strlen( t77 ).
+          IF t79 = 0.
+            t69 = abap_true.
+          ELSEIF t79 <= t78.
+            t80 = 0.
+            t81 = t70+t80(t79).
+            IF t81 = t77.
+              t69 = abap_true.
+            ENDIF.
+          ENDIF.
+          t57 = t69.
+        ENDIF.
+        t46 = xsdbool( t57 = abap_false ).
+      ENDIF.
+      IF t46 = abap_true.
+        DATA(t85) = 1.
+        t12 = t12 + t85.
+        CONTINUE.
+      ENDIF.
+      DATA(t86) = VALUE abap_bool( ).
+      DATA(t87) = VALUE abap_bool( ).
+      DATA t89 TYPE REF TO zcl_lnt_statement_node.
+      CLEAR t89.
+      DATA t92 TYPE REF TO zcl_lnt_statement_node.
+      CLEAR t92.
+      DATA t94 TYPE i.
+      DATA(t96) = 1.
+      t94 = t12 - t96.
+      t94 = t94 + 1.
+      DATA t97 TYPE REF TO object.
+      CLEAR t97.
+      t4->load( ).
+      CLEAR t97.
+      READ TABLE t4->items INDEX t94 INTO t97.
+      DATA t98 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t98.
+      CLEAR t92.
+      IF t97 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t98 ?= t97.
+        DATA t99 TYPE REF TO object.
+        t99 = t98->as_ref( ).
+        t92 ?= t99.
+      ELSE.
+        t92 ?= t97.
+      ENDIF.
+      t89 = t92.
+      DATA(t101) = VALUE abap_bool( ).
+      DATA(t102) = VALUE abap_bool( ).
+      DATA t103 TYPE REF TO zif_lnt_statement.
+      CLEAR t103.
+      DATA t104 TYPE REF TO zcl_lnt_statement_node.
+      t104 = t89.
+      DATA t106 TYPE REF TO zif_lnt_statement.
+      CLEAR t106.
+      IF xsdbool( t104 IS INITIAL ) = abap_true.
+        CLEAR t106.
+      ELSE.
+        t106 = t104->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+      ENDIF.
+      t103 = t106.
+      t102 = xsdbool( t103 IS BOUND AND t103 IS INSTANCE OF zcl_lnt_st_comment ).
+      t101 = t102.
+      IF t102 = abap_true.
+        DATA(t113) = VALUE abap_bool( ).
+        DATA t114 TYPE string.
+        t114 = t89->get_first_token( )->str.
+        DATA(t121) = |"!|.
+        DATA(t122) = strlen( t114 ).
+        DATA t123 TYPE i.
+        DATA(t124) = VALUE i( ).
+        DATA(t125) = VALUE string( ).
+        t123 = strlen( t121 ).
+        IF t123 = 0.
+          t113 = abap_true.
+        ELSEIF t123 <= t122.
+          t124 = 0.
+          t125 = t114+t124(t123).
+          IF t125 = t121.
+            t113 = abap_true.
+          ENDIF.
+        ENDIF.
+        t101 = t113.
+      ENDIF.
+      t87 = xsdbool( t101 = abap_true ).
+      t86 = t87.
+      IF t87 = abap_true.
+        DATA(t128) = VALUE f( ).
+        DATA(t129) = VALUE f( ).
+        DATA t133 TYPE REF TO zcl_lnt_statement_node.
+        CLEAR t133.
+        DATA t135 TYPE i.
+        DATA(t137) = 1.
+        t135 = t12 - t137.
+        t135 = t135 + 1.
+        DATA t138 TYPE REF TO object.
+        CLEAR t138.
+        t4->load( ).
+        CLEAR t138.
+        READ TABLE t4->items INDEX t135 INTO t138.
+        DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t139.
+        CLEAR t133.
+        IF t138 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+          t139 ?= t138.
+          DATA t140 TYPE REF TO object.
+          t140 = t139->as_ref( ).
+          t133 ?= t140.
+        ELSE.
+          t133 ?= t138.
+        ENDIF.
+        DATA t145 TYPE REF TO zcl_lnt_position.
+        t145 = t133->get_first_token( )->start.
+        t129 = t145->row.
+        DATA(t149) = CONV f( 1 ).
+        t128 = t129 + t149.
+        DATA t159 TYPE REF TO zcl_lnt_position.
+        t159 = t18->get_first_token( )->start.
+        t86 = xsdbool( t128 = t159->row ).
+      ENDIF.
+      IF t86 = abap_true.
+        DATA(t165) = 1.
+        t12 = t12 + t165.
+        CONTINUE.
+      ENDIF.
+
+
+
       DATA t166 TYPE REF TO zcl_lnt_statement_node.
       CLEAR t166.
       DATA t168 TYPE i.
@@ -456,7 +455,6 @@ CLASS zcl_lnt_wrong_abapdoc_position IMPLEMENTATION.
         t226 = t209->value.
         DATA(t228) = VALUE string( ).
         DATA t229 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t229.
         DATA t234 TYPE string.
         DATA(t235) = |ABAP Doc must be placed directly in front of the declaration|.
         t235 = t235 && | it documents.|.

@@ -24,13 +24,11 @@ CLASS zcl_lnt_include_graph_module IMPLEMENTATION.
     t4 = t1->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t9.
       t9 = t4->next( ).
       IF t9->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_object.
-      CLEAR t14.
       t14 = t9->value.
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).

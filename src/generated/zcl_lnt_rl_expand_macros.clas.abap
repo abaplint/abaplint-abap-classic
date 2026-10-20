@@ -246,7 +246,6 @@ CLASS zcl_lnt_rl_expand_macros IMPLEMENTATION.
       CLEAR t111.
       DATA(t115) = VALUE string( ).
       DATA t116 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t116.
       DATA t123 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t123.
       DATA(t126) = |Macros: https://help.sap.com/doc/abapdocu_latest_index_htm/l|.

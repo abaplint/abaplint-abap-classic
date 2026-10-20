@@ -266,7 +266,6 @@ CLASS zcl_lnt_command IMPLEMENTATION.
                     DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
                     CLEAR t5.
                     DATA t6 TYPE REF TO object.
-                    CLEAR t6.
                     CLEAR t5.
                     t6 = t1.
                     TRY.

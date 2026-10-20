@@ -268,7 +268,6 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
             CLEAR t85.
             DATA(t90) = VALUE string( ).
             DATA t91 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t91.
             DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t98.
             DATA(t101) = |https://docs.abapopenchecks.org/checks/05/\n\nhttps://help.sap|.
@@ -393,11 +392,9 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
           DATA(t161) = `\r[^`.
           t161 = t161 && |\n\r|.
           DATA t162 TYPE c LENGTH 1.
-          CLEAR t162.
           t162 = cl_abap_conv_in_ce=>uccpi( 8232 ).
           CONCATENATE t161 t162 INTO t161 RESPECTING BLANKS.
           DATA t163 TYPE c LENGTH 1.
-          CLEAR t163.
           t163 = cl_abap_conv_in_ce=>uccpi( 8233 ).
           CONCATENATE t161 t163 INTO t161 RESPECTING BLANKS.
           t161 = t161 && |]+$|.
@@ -456,7 +453,6 @@ CLASS zcl_lnt_seven_bit_ascii IMPLEMENTATION.
             CLEAR t207.
             DATA(t212) = VALUE string( ).
             DATA t213 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t213.
             DATA t220 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t220.
             DATA(t223) = |https://docs.abapopenchecks.org/checks/05/\n\nhttps://help.sap|.

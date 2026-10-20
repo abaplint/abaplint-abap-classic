@@ -106,37 +106,37 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
       DATA(t10) = strlen( t8 ).
       result = |{ t8 }{ t3 }|.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 = 1 ) = abap_true.
-        DATA(t15) = VALUE string( ).
-        DATA(t16) = VALUE string( ).
-        DATA t17 TYPE string.
-        DATA t18 TYPE string.
-        DATA(t19) = |Reduce |.
-        DATA(t21) = strlen( t19 ).
-        t18 = |{ t19 }{ t3 }|.
-        DATA(t23) = strlen( t18 ).
-        t17 = |{ t18 }{ | length to max | }|.
-        DATA(t24) = VALUE string( ).
-        DATA t25 TYPE f.
-        t25 = me->conf->zlnt_view_read_sr_4ca833a633a7( ).
-        IF t25 <> trunc( t25 ) OR t25 > range_safe_integer OR t25 < 0 - range_safe_integer.
-          RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-        ENDIF.
-        DATA(t27) = CONV int8( t25 ).
-        t24 = |{ t27 }|.
-        DATA(t28) = strlen( t17 ).
-        t16 = |{ t17 }{ t24 }|.
-        DATA(t30) = strlen( t16 ).
-        t15 = |{ t16 }{ | statements, currently | }|.
-        DATA(t32) = strlen( t15 ).
-        result = |{ t15 }{ t2 }|.
-        RETURN.
-      ELSE.
-        result = ||.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 = 1 ) = abap_true.
+      DATA(t15) = VALUE string( ).
+      DATA(t16) = VALUE string( ).
+      DATA t17 TYPE string.
+      DATA t18 TYPE string.
+      DATA(t19) = |Reduce |.
+      DATA(t21) = strlen( t19 ).
+      t18 = |{ t19 }{ t3 }|.
+      DATA(t23) = strlen( t18 ).
+      t17 = |{ t18 }{ | length to max | }|.
+      DATA(t24) = VALUE string( ).
+      DATA t25 TYPE f.
+      t25 = me->conf->zlnt_view_read_sr_4ca833a633a7( ).
+      IF t25 <> trunc( t25 ) OR t25 > range_safe_integer OR t25 < 0 - range_safe_integer.
+        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+      ENDIF.
+      DATA(t27) = CONV int8( t25 ).
+      t24 = |{ t27 }|.
+      DATA(t28) = strlen( t17 ).
+      t16 = |{ t17 }{ t24 }|.
+      DATA(t30) = strlen( t16 ).
+      t15 = |{ t16 }{ | statements, currently | }|.
+      DATA(t32) = strlen( t15 ).
+      result = |{ t15 }{ t2 }|.
+      RETURN.
+    ENDIF.
+    result = ||.
+
+
+
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_mt_ln_ts_mt_lng.
@@ -350,7 +350,6 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
         ENDIF.
         t51 = t54.
         DATA t61 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t61.
         DATA(t64) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t64->has = abap_true.
         t64->value = abap_true.
@@ -421,7 +420,6 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
         t74 = t77.
         DATA(t109) = VALUE string( ).
         DATA t110 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t110.
         DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t117.
         DATA(t120) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -573,7 +571,6 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
         t213 = t6->pos.
         DATA(t216) = VALUE string( ).
         DATA t217 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t217.
         DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t224.
         DATA(t227) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

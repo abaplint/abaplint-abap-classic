@@ -119,7 +119,6 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
       IF t68 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t70 ?= t68.
         DATA t71 TYPE REF TO object.
-        CLEAR t71.
         t71 = t70->as_ref( ).
         t67 ?= t71.
       ELSE.
@@ -128,15 +127,12 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
       DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t72.
       DATA t73 TYPE REF TO zif_lnt_msag_references.
-      CLEAR t73.
       t73 = me->reg->get_msag_references( ).
       DATA(t75) = VALUE string( ).
       DATA t76 TYPE REF TO zcl_lnt_abstract_object.
-      CLEAR t76.
       DATA t77 TYPE REF TO zcl_lnt_ob_message_class.
       CLEAR t77.
       DATA t79 TYPE REF TO object.
-      CLEAR t79.
       t79 = t1.
       t77 ?= t79.
       t76 = t77.
@@ -163,14 +159,12 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
         IF t89 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t91 ?= t89.
           DATA t92 TYPE REF TO object.
-          CLEAR t92.
           t92 = t91->as_ref( ).
           t88 ?= t92.
         ELSE.
           t88 ?= t89.
         ENDIF.
         DATA t93 TYPE REF TO zif_lnt_file.
-        CLEAR t93.
         DATA(t96) = VALUE string( ).
         t96 = t88->filename.
         t93 = me->reg->get_file_by_name( i_filename = t96 ).
@@ -181,7 +175,6 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t105 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t105.
         t105 = t93->get_raw_rows( ).
         DATA(t109) = VALUE f( ).
         DATA(t111) = VALUE f( ).
@@ -235,7 +228,6 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
           DATA t152 TYPE REF TO zcl_lnt_no_position.
           CLEAR t152.
           DATA t153 TYPE REF TO zcl_lnt_no_position.
-          CLEAR t153.
           DATA(t155) = VALUE f( ).
           t155 = t122.
           DATA(t157) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
@@ -327,10 +319,7 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
           ENDIF.
           DATA t193 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t193.
-          DATA t194 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t194.
-          CREATE OBJECT t194.
-          t193 = t194.
+          CREATE OBJECT t193.
           DATA t196 TYPE REF TO zcl_lnt_text_edit.
           CLEAR t196.
           DATA(t200) = VALUE string( ).
@@ -338,7 +327,6 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
           t200 = t3.
           TRANSLATE t200 TO LOWER CASE.
           DATA t203 TYPE REF TO zcl_lnt_text_edit.
-          CLEAR t203.
           t203 = NEW zcl_lnt_text_edit( i_range = t151 i_new_text = t200 ).
           CREATE OBJECT t203->zlnt_view_ownkeys_b0e8086400eb.
           t203->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -365,7 +353,6 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
           APPEND t196 TO t193->items.
           t193->save( ).
           DATA t215 TYPE REF TO zcl_lnt_text_document_edit.
-          CLEAR t215.
           t215 = NEW zcl_lnt_text_document_edit( i_text_document = t177 i_edits = t193 ).
           CREATE OBJECT t215->zlnt_view_ownkeys_b0e8086400eb.
           t215->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.

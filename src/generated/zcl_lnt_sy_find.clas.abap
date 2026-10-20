@@ -35,14 +35,12 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       IF t7 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t9 ?= t7.
         DATA t10 TYPE REF TO object.
-        CLEAR t10.
         t10 = t9->as_ref( ).
         t6 ?= t10.
       ELSE.
         t6 ?= t7.
       ENDIF.
       DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t12.
       t12 = t6.
@@ -384,14 +382,12 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
       IF t269 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t271 ?= t269.
         DATA t272 TYPE REF TO object.
-        CLEAR t272.
         t272 = t271->as_ref( ).
         t268 ?= t272.
       ELSE.
         t268 ?= t269.
       ENDIF.
       DATA t274 TYPE REF TO zif_lnt_statement_runnable.
-      CLEAR t274.
       t274 = t268->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t274 IS BOUND AND t274 IS INSTANCE OF zcl_lnt_st_target ) = abap_true.
         DATA t276 TYPE REF TO zcl_lnt_expression_node.
@@ -401,12 +397,10 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         CLEAR t278.
         t278 = t2.
         DATA t281 TYPE REF TO zcl_lnt_integer_type.
-        CLEAR t281.
         DATA t282 TYPE REF TO zcl_lnt_abstract_type_data.
         CLEAR t282.
         t281 = zcl_lnt_integer_type=>get_db65( i_input_967e = t282 ).
         DATA t283 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t283.
         DATA(t286) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
         t283 = t276->find_direct_expression( i_type_9913 = t286 ).
         IF xsdbool( t283 IS BOUND ) = abap_true.
@@ -419,7 +413,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
           zcl_lnt_sy_inline_data=>run_syntax( i_node = t289 i_input_967e = t278 i_type_9913 = t292 ).
         ELSE.
           DATA t296 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t296.
           t296 = zcl_lnt_sy_target=>run_syntax( i_node = t276 i_input_967e = t278 ).
         ENDIF.
       ENDIF.
@@ -546,7 +539,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         IF t412 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t414 ?= t412.
           DATA t415 TYPE REF TO object.
-          CLEAR t415.
           t415 = t414->as_ref( ).
           t411 ?= t415.
         ELSE.
@@ -557,7 +549,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         DATA(t418) = VALUE abap_bool( ).
         DATA(t419) = VALUE abap_bool( ).
         DATA t420 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t420.
         t420 = t411.
         DATA t425 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t425.
@@ -570,7 +561,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
             DATA t427 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t427.
             DATA t428 TYPE REF TO object.
-            CLEAR t428.
             CLEAR t427.
             t428 = t420.
             TRY.
@@ -600,7 +590,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
             DATA t429 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t429.
             DATA t430 TYPE REF TO object.
-            CLEAR t430.
             CLEAR t429.
             t430 = t21.
             TRY.
@@ -632,7 +621,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         IF t419 = abap_false.
           DATA(t431) = VALUE abap_bool( ).
           DATA t432 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t432.
           t432 = t411.
           DATA t437 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t437.
@@ -645,7 +633,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t439 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t439.
               DATA t440 TYPE REF TO object.
-              CLEAR t440.
               CLEAR t439.
               t440 = t432.
               TRY.
@@ -675,7 +662,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t441 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t441.
               DATA t442 TYPE REF TO object.
-              CLEAR t442.
               CLEAR t441.
               t442 = t299.
               TRY.
@@ -709,7 +695,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         IF t418 = abap_false.
           DATA(t443) = VALUE abap_bool( ).
           DATA t444 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t444.
           t444 = t411.
           DATA t449 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t449.
@@ -722,7 +707,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t451 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t451.
               DATA t452 TYPE REF TO object.
-              CLEAR t452.
               CLEAR t451.
               t452 = t444.
               TRY.
@@ -752,7 +736,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t453 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t453.
               DATA t454 TYPE REF TO object.
-              CLEAR t454.
               CLEAR t453.
               t454 = t334.
               TRY.
@@ -786,7 +769,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         IF t417 = abap_false.
           DATA(t455) = VALUE abap_bool( ).
           DATA t456 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t456.
           t456 = t411.
           DATA t461 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t461.
@@ -799,7 +781,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t463 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t463.
               DATA t464 TYPE REF TO object.
-              CLEAR t464.
               CLEAR t463.
               t464 = t456.
               TRY.
@@ -829,7 +810,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
               DATA t465 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t465.
               DATA t466 TYPE REF TO object.
-              CLEAR t466.
               CLEAR t465.
               t466 = t369.
               TRY.
@@ -869,7 +849,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
         DATA t472 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t472.
         DATA t474 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t474.
         t474 = t411.
         DATA t476 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t476.
@@ -889,7 +868,6 @@ CLASS zcl_lnt_sy_find IMPLEMENTATION.
           zcl_lnt_sy_inline_data=>run_syntax( i_node = t485 i_input_967e = t2 i_type_9913 = zcl_lnt_string_type=>get_db65( i_input_967e = t489 ) ).
         ELSE.
           DATA t490 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t490.
           t490 = zcl_lnt_sy_target=>run_syntax( i_node = t411 i_input_967e = t2 ).
         ENDIF.
       ENDDO.

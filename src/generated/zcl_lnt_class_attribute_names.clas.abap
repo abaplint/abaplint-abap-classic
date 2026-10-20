@@ -416,7 +416,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
           DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t89 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t91.
           DATA(t94) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t94->has = abap_true.
           t94->value = |required|.
@@ -460,7 +459,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
           t82 = t87.
           DATA(t118) = VALUE string( ).
           DATA t119 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t119.
           DATA t124 TYPE string.
           DATA(t125) = |Allows you to enforce a pattern, such as a prefix, for class|.
           t125 = t125 && | variable names.|.
@@ -646,7 +644,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
             DATA t247 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             t247 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
             DATA t249 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t249.
             DATA(t252) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t252->has = abap_true.
             t252->value = |required|.
@@ -690,7 +687,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
             t240 = t245.
             DATA(t276) = VALUE string( ).
             DATA t277 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t277.
             DATA t282 TYPE string.
             DATA(t283) = |Allows you to enforce a pattern, such as a prefix, for class|.
             t283 = t283 && | variable names.|.
@@ -876,7 +872,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
               DATA t405 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               t405 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
               DATA t407 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t407.
               DATA(t410) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t410->has = abap_true.
               t410->value = |required|.
@@ -920,7 +915,6 @@ CLASS zcl_lnt_class_attribute_names IMPLEMENTATION.
               t398 = t403.
               DATA(t434) = VALUE string( ).
               DATA t435 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t435.
               DATA t440 TYPE string.
               DATA(t441) = |Allows you to enforce a pattern, such as a prefix, for class|.
               t441 = t441 && | variable names.|.

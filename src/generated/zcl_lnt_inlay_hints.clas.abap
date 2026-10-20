@@ -188,14 +188,11 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t138 TYPE REF TO zcl_lnt_shape_5ae9c337.
-        CLEAR t138.
         DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t139.
         DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t142.
         DATA t143 TYPE string.
         t143 = t69->value.
-        CLEAR t142.
         CREATE OBJECT t142.
         t142->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t142->sval = t143.
@@ -203,8 +200,6 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
         DATA t146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t146.
         DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t149.
-        CLEAR t149.
         CREATE OBJECT t149.
         t149->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t149->sval = |Inferred type|.

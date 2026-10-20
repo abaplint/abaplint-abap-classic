@@ -193,7 +193,6 @@ CLASS zcl_lnt_prfr_insrt_int_tbl IMPLEMENTATION.
       CLEAR t34.
       DATA(t38) = VALUE string( ).
       DATA t39 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t39.
       DATA t46 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t46.
       DATA(t49) = |INSERT INTO TABLE respects the table type, while APPEND alwa|.

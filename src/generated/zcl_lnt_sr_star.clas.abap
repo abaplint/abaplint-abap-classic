@@ -49,7 +49,6 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
       t10->load( ).
       IF xsdbool( lines( t10->items ) = 0 ) = abap_true.
         DATA t12 TYPE REF TO zcl_lnt_imatch.
-        CLEAR t12.
         DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t13 = t5.
         DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -117,7 +116,6 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
       DATA t48 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t48 = t42->error.
       DATA t50 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t50.
       DATA(t53) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t53->has = abap_true.
       t53->value = abap_true.
@@ -140,7 +138,6 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
       IF t47 = abap_true.
         IF xsdbool( t42->error_matched > CONV f( 0 ) ) = abap_true.
           DATA t61 TYPE REF TO zcl_lnt_imatch.
-          CLEAR t61.
           DATA t62 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           t62 = t5.
           DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -210,7 +207,6 @@ CLASS zcl_lnt_sr_star IMPLEMENTATION.
           RETURN.
         ELSE.
           DATA t93 TYPE REF TO zcl_lnt_imatch.
-          CLEAR t93.
           DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           t94 = t5.
           DATA t96 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

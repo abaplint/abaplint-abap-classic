@@ -496,7 +496,6 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       IF t52 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t54 ?= t52.
         DATA t55 TYPE REF TO object.
-        CLEAR t55.
         t55 = t54->as_ref( ).
         t51 ?= t55.
       ELSE.
@@ -505,7 +504,6 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       DATA t56 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t56.
       DATA t58 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t58.
       DATA(t61) = zlnt_runtime_desc_78196487750d=>zlnt_member_d457_9791cc858be9.
       t58 = t51->find_direct_statement( i_type_9913 = t61 ).
       DATA t62 TYPE REF TO zcl_lnt_expression_node.
@@ -514,7 +512,6 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
         CLEAR t62.
       ELSE.
         DATA t67 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t67.
         t67 = t58.
         DATA(t69) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
         t62 = t67->find_direct_expression( i_type_9913 = t69 ).
@@ -522,7 +519,6 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       t56 = t62.
       IF xsdbool( t56 IS BOUND ) = abap_true.
         DATA t77 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t77.
         t77 = t3->arr.
         DATA(t79) = VALUE string( ).
         t79 = t56->concat_tokens( ).
@@ -704,14 +700,12 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       IF t29 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t31 ?= t29.
         DATA t32 TYPE REF TO object.
-        CLEAR t32.
         t32 = t31->as_ref( ).
         t28 ?= t32.
       ELSE.
         t28 ?= t29.
       ENDIF.
       DATA t33 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t33.
       DATA(t36) = zlnt_runtime_desc_78196487750d=>zlnt_member_d679_3af40033658c.
       t33 = t28->find_direct_statement( i_type_9913 = t36 ).
       DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -723,7 +717,6 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t44.
       DATA t45 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t45.
       t45 = t33.
       DATA(t47) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
       t44 = t45->find_all_expressions( i_type_9913 = t47 ).
@@ -746,14 +739,12 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
         IF t49 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t51 ?= t49.
           DATA t52 TYPE REF TO object.
-          CLEAR t52.
           t52 = t51->as_ref( ).
           t48 ?= t52.
         ELSE.
           t48 ?= t49.
         ENDIF.
         DATA t57 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t57.
         t57 = t3->arr.
         DATA(t59) = VALUE string( ).
         t59 = t48->concat_tokens( ).

@@ -119,14 +119,12 @@ CLASS zcl_lnt_rnm_glbl_intrfc IMPLEMENTATION.
       IF t48 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t50 ?= t48.
         DATA t51 TYPE REF TO object.
-        CLEAR t51.
         t51 = t50->as_ref( ).
         t47 ?= t51.
       ELSE.
         t47 ?= t48.
       ENDIF.
       DATA t53 TYPE REF TO zif_lnt_statement.
-      CLEAR t53.
       t53 = t47->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_st_interface ) = abap_true.
         DATA t55 TYPE REF TO zcl_lnt_expression_node.
@@ -149,7 +147,6 @@ CLASS zcl_lnt_rnm_glbl_intrfc IMPLEMENTATION.
         t74 = t3.
         TRANSLATE t74 TO LOWER CASE.
         DATA t77 TYPE REF TO zcl_lnt_text_edit.
-        CLEAR t77.
         t77 = NEW zcl_lnt_text_edit( i_range = t69 i_new_text = t74 ).
         CREATE OBJECT t77->zlnt_view_ownkeys_b0e8086400eb.
         t77->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.

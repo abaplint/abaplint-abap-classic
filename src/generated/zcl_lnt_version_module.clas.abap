@@ -4667,7 +4667,6 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       IF t2936 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t2938 ?= t2936.
         DATA t2939 TYPE REF TO object.
-        CLEAR t2939.
         t2939 = t2938->as_ref( ).
         t2935 ?= t2939.
       ELSE.
@@ -4680,7 +4679,6 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       DATA(t2946) = VALUE string( ).
       t2946 = t2935->f0.
       DATA t2948 TYPE REF TO zcl_lnt_shape_27cfcabc.
-      CLEAR t2948.
       t2948 = t2935->f1.
       DATA t2952 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t2952.
@@ -4735,7 +4733,6 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
         DATA t2964 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t2964.
         DATA t2965 TYPE REF TO object.
-        CLEAR t2965.
         CLEAR t2964.
         t2965 = t2948.
         TRY.
@@ -4877,7 +4874,6 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       IF t3007 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t3009 ?= t3007.
         DATA t3010 TYPE REF TO object.
-        CLEAR t3010.
         t3010 = t3009->as_ref( ).
         t3006 ?= t3010.
       ELSE.
@@ -4980,14 +4976,12 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       IF t3037 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t3039 ?= t3037.
         DATA t3040 TYPE REF TO object.
-        CLEAR t3040.
         t3040 = t3039->as_ref( ).
         t3036 ?= t3040.
       ELSE.
         t3036 ?= t3037.
       ENDIF.
       DATA t3041 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      CLEAR t3041.
       DATA(t3043) = VALUE string( ).
       t3043 = t3036->f0.
       DATA t3045 TYPE REF TO zcl_lnt_abap_release.
@@ -5023,7 +5017,6 @@ CLASS zcl_lnt_version_module IMPLEMENTATION.
       ENDIF.
       t3056 = t3056 + 1.
       DATA t3057 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      CLEAR t3057.
       t3057 = t3049->set( p0 = t3055 p1 = t3051->get( p0 = t3055 ) ).
     ENDDO.
     DATA t3064 TYPE REF TO zlnt_runtime_map__201f3699a39e.

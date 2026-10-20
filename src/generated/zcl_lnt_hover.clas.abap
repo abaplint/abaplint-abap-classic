@@ -236,169 +236,169 @@ CLASS zcl_lnt_hover IMPLEMENTATION.
     IF xsdbool( t133 IS INITIAL ) = abap_true.
       CLEAR result.
       RETURN.
-    ELSE.
-      DATA(t145) = VALUE abap_bool( ).
-      DATA(t146) = VALUE abap_bool( ).
-      DATA t147 TYPE abap_bool.
-      DATA t148 TYPE abap_bool.
-      DATA t149 TYPE REF TO zcl_lnt_abstract_token.
-      t149 = t133->token.
-      t148 = xsdbool( t149 IS BOUND AND t149 IS INSTANCE OF zcl_lnt_lx_string_template ).
-      t147 = t148.
-      IF t148 = abap_false.
-        DATA t153 TYPE REF TO zcl_lnt_abstract_token.
-        t153 = t133->token.
-        t147 = xsdbool( t153 IS BOUND AND t153 IS INSTANCE OF zcl_lnt_string_template_begin ).
-      ENDIF.
-      t146 = t147.
-      IF t147 = abap_false.
-        DATA t157 TYPE REF TO zcl_lnt_abstract_token.
-        t157 = t133->token.
-        t146 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_string_template_end ).
-      ENDIF.
-      t145 = t146.
-      IF t146 = abap_false.
-        DATA t161 TYPE REF TO zcl_lnt_abstract_token.
-        t161 = t133->token.
-        t145 = xsdbool( t161 IS BOUND AND t161 IS INSTANCE OF zcl_lnt_string_template_middle ).
-      ENDIF.
-      IF t145 = abap_true.
-        DATA t166 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-        t166 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |String Template| ).
-        CREATE OBJECT t166->zlnt_view_ownkeys_b0e8086400eb.
-        t166->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t166->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t171 ).
-        DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t166->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-          t166->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t172 ).
-        ENDIF.
-        CREATE OBJECT t166->zlnt_json_ownkeys_70e5fd461788.
-        t166->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t166->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t174 ).
-        DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF t166->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-          t166->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t176 ).
-        ENDIF.
-        result = t166.
-        RETURN.
-      ELSE.
-        DATA t179 TYPE REF TO zif_lnt_statement.
-        t179 = t133->snode->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        IF xsdbool( t179 IS BOUND AND t179 IS INSTANCE OF zcl_lnt_macro_call ) = abap_true.
-          DATA t185 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-          t185 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |Macro Call| ).
-          CREATE OBJECT t185->zlnt_view_ownkeys_b0e8086400eb.
-          t185->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t185->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t190 ).
-          DATA t191 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t185->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-            t185->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t191 ).
-          ENDIF.
-          CREATE OBJECT t185->zlnt_json_ownkeys_70e5fd461788.
-          t185->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-          DATA t193 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t185->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t193 ).
-          DATA t195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF t185->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-            t185->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t195 ).
-          ENDIF.
-          result = t185.
-          RETURN.
-        ELSE.
-          DATA t197 TYPE abap_bool.
-          DATA t198 TYPE abap_bool.
-          DATA t199 TYPE REF TO zif_lnt_statement.
-          t199 = t133->snode->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-          t198 = xsdbool( t199 IS BOUND AND t199 IS INSTANCE OF zcl_lnt_st_define ).
-          t197 = t198.
-          IF t198 = abap_true.
-            DATA t205 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            t205 = t133->stack.
-            t205->load( ).
-            t197 = xsdbool( lines( t205->items ) = 2 ).
-          ENDIF.
-          IF t197 = abap_true.
-            DATA t211 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-            t211 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |Macro Name| ).
-            CREATE OBJECT t211->zlnt_view_ownkeys_b0e8086400eb.
-            t211->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            t211->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t216 ).
-            DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t211->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-              t211->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t217 ).
-            ENDIF.
-            CREATE OBJECT t211->zlnt_json_ownkeys_70e5fd461788.
-            t211->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-            DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            t211->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t219 ).
-            DATA t221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF t211->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-              t211->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t221 ).
-            ENDIF.
-            result = t211.
-            RETURN.
-          ELSE.
-            DATA t224 TYPE REF TO zcl_lnt_abstract_token.
-            t224 = t133->token.
-            IF xsdbool( t224 IS BOUND AND t224 IS INSTANCE OF zcl_lnt_lx_comment ) = abap_true.
-              DATA t227 TYPE string.
-              t227 = |Comment|.
-              DATA(t229) = VALUE abap_bool( ).
-              DATA t230 TYPE string.
-              DATA t231 TYPE REF TO zcl_lnt_abstract_token.
-              DATA t232 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t233 TYPE REF TO zcl_lnt_abstract_token.
-              t233 = t133->token.
-              t232 ?= t233.
-              t231 = t232.
-              t230 = t231->str.
-              DATA(t238) = |"!|.
-              DATA(t239) = strlen( t230 ).
-              DATA t240 TYPE i.
-              DATA(t241) = VALUE i( ).
-              DATA(t242) = VALUE string( ).
-              t240 = strlen( t238 ).
-              IF t240 = 0.
-                t229 = abap_true.
-              ELSEIF t240 <= t239.
-                t241 = 0.
-                t242 = t230+t241(t240).
-                IF t242 = t238.
-                  t229 = abap_true.
-                ENDIF.
-              ENDIF.
-              IF t229 = abap_true.
-                t227 = |ABAP Doc Comment|.
-              ENDIF.
-              DATA t246 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-              t246 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = t227 ).
-              CREATE OBJECT t246->zlnt_view_ownkeys_b0e8086400eb.
-              t246->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              t246->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t251 ).
-              DATA t252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              IF t246->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-                t246->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t252 ).
-              ENDIF.
-              CREATE OBJECT t246->zlnt_json_ownkeys_70e5fd461788.
-              t246->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-              DATA t254 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              t246->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t254 ).
-              DATA t256 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              IF t246->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-                t246->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t256 ).
-              ENDIF.
-              result = t246.
-              RETURN.
-            ENDIF.
-          ENDIF.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    DATA(t145) = VALUE abap_bool( ).
+    DATA(t146) = VALUE abap_bool( ).
+    DATA t147 TYPE abap_bool.
+    DATA t148 TYPE abap_bool.
+    DATA t149 TYPE REF TO zcl_lnt_abstract_token.
+    t149 = t133->token.
+    t148 = xsdbool( t149 IS BOUND AND t149 IS INSTANCE OF zcl_lnt_lx_string_template ).
+    t147 = t148.
+    IF t148 = abap_false.
+      DATA t153 TYPE REF TO zcl_lnt_abstract_token.
+      t153 = t133->token.
+      t147 = xsdbool( t153 IS BOUND AND t153 IS INSTANCE OF zcl_lnt_string_template_begin ).
+    ENDIF.
+    t146 = t147.
+    IF t147 = abap_false.
+      DATA t157 TYPE REF TO zcl_lnt_abstract_token.
+      t157 = t133->token.
+      t146 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_string_template_end ).
+    ENDIF.
+    t145 = t146.
+    IF t146 = abap_false.
+      DATA t161 TYPE REF TO zcl_lnt_abstract_token.
+      t161 = t133->token.
+      t145 = xsdbool( t161 IS BOUND AND t161 IS INSTANCE OF zcl_lnt_string_template_middle ).
+    ENDIF.
+    IF t145 = abap_true.
+      DATA t166 TYPE REF TO zcl_lnt_shape_d0b60cb0.
+      t166 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |String Template| ).
+      CREATE OBJECT t166->zlnt_view_ownkeys_b0e8086400eb.
+      t166->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t166->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t171 ).
+      DATA t172 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t166->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t166->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t172 ).
+      ENDIF.
+      CREATE OBJECT t166->zlnt_json_ownkeys_70e5fd461788.
+      t166->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t166->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t174 ).
+      DATA t176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t166->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t166->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t176 ).
+      ENDIF.
+      result = t166.
+      RETURN.
+    ENDIF.
+    DATA t179 TYPE REF TO zif_lnt_statement.
+    t179 = t133->snode->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+    IF xsdbool( t179 IS BOUND AND t179 IS INSTANCE OF zcl_lnt_macro_call ) = abap_true.
+      DATA t185 TYPE REF TO zcl_lnt_shape_d0b60cb0.
+      t185 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |Macro Call| ).
+      CREATE OBJECT t185->zlnt_view_ownkeys_b0e8086400eb.
+      t185->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t185->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t190 ).
+      DATA t191 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t185->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t185->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t191 ).
+      ENDIF.
+      CREATE OBJECT t185->zlnt_json_ownkeys_70e5fd461788.
+      t185->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t193 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t185->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t193 ).
+      DATA t195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t185->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t185->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t195 ).
+      ENDIF.
+      result = t185.
+      RETURN.
+    ENDIF.
+    DATA t197 TYPE abap_bool.
+    DATA t198 TYPE abap_bool.
+    DATA t199 TYPE REF TO zif_lnt_statement.
+    t199 = t133->snode->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+    t198 = xsdbool( t199 IS BOUND AND t199 IS INSTANCE OF zcl_lnt_st_define ).
+    t197 = t198.
+    IF t198 = abap_true.
+      DATA t205 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      t205 = t133->stack.
+      t205->load( ).
+      t197 = xsdbool( lines( t205->items ) = 2 ).
+    ENDIF.
+    IF t197 = abap_true.
+      DATA t211 TYPE REF TO zcl_lnt_shape_d0b60cb0.
+      t211 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = |Macro Name| ).
+      CREATE OBJECT t211->zlnt_view_ownkeys_b0e8086400eb.
+      t211->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t211->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t216 ).
+      DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t211->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t211->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t217 ).
+      ENDIF.
+      CREATE OBJECT t211->zlnt_json_ownkeys_70e5fd461788.
+      t211->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t211->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t219 ).
+      DATA t221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t211->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t211->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t221 ).
+      ENDIF.
+      result = t211.
+      RETURN.
+    ENDIF.
+    DATA t224 TYPE REF TO zcl_lnt_abstract_token.
+    t224 = t133->token.
+    IF xsdbool( t224 IS BOUND AND t224 IS INSTANCE OF zcl_lnt_lx_comment ) = abap_true.
+      DATA t227 TYPE string.
+      t227 = |Comment|.
+      DATA(t229) = VALUE abap_bool( ).
+      DATA t230 TYPE string.
+      DATA t231 TYPE REF TO zcl_lnt_abstract_token.
+      DATA t232 TYPE REF TO zcl_lnt_lx_comment.
+      DATA t233 TYPE REF TO zcl_lnt_abstract_token.
+      t233 = t133->token.
+      t232 ?= t233.
+      t231 = t232.
+      t230 = t231->str.
+      DATA(t238) = |"!|.
+      DATA(t239) = strlen( t230 ).
+      DATA t240 TYPE i.
+      DATA(t241) = VALUE i( ).
+      DATA(t242) = VALUE string( ).
+      t240 = strlen( t238 ).
+      IF t240 = 0.
+        t229 = abap_true.
+      ELSEIF t240 <= t239.
+        t241 = 0.
+        t242 = t230+t241(t240).
+        IF t242 = t238.
+          t229 = abap_true.
+        ENDIF.
+      ENDIF.
+      IF t229 = abap_true.
+        t227 = |ABAP Doc Comment|.
+      ENDIF.
+      DATA t246 TYPE REF TO zcl_lnt_shape_d0b60cb0.
+      t246 = NEW zcl_lnt_shape_d0b60cb0( i_kind = |markdown| i_value = t227 ).
+      CREATE OBJECT t246->zlnt_view_ownkeys_b0e8086400eb.
+      t246->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t246->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `kind` p1 = t251 ).
+      DATA t252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t246->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+        t246->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `value` p1 = t252 ).
+      ENDIF.
+      CREATE OBJECT t246->zlnt_json_ownkeys_70e5fd461788.
+      t246->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t254 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t246->zlnt_json_ownkeys_70e5fd461788->put( p0 = |kind| p1 = t254 ).
+      DATA t256 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF t246->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+        t246->zlnt_json_ownkeys_70e5fd461788->put( p0 = |value| p1 = t256 ).
+      ENDIF.
+      result = t246.
+      RETURN.
+    ENDIF.
+
+
+
+
     DATA t258 TYPE REF TO zcl_lnt_lsp_lookup_result.
     DATA t260 TYPE REF TO zcl_lnt_icursor_data.
     t260 = t133.

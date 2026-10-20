@@ -532,7 +532,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         DATA t96 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t96 = me->conf->zlnt_view_read_sr_98fc2d44a45f( ).
         DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t98.
         DATA(t101) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t101->has = abap_true.
         t101->value = |lower|.
@@ -1244,7 +1243,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
       IF t19 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t20 ?= t19.
         DATA t21 TYPE REF TO object.
-        CLEAR t21.
         t21 = t20->as_ref( ).
         t16 ?= t21.
       ELSE.
@@ -1269,7 +1267,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t31 ?= t30.
           DATA t32 TYPE REF TO object.
-          CLEAR t32.
           t32 = t31->as_ref( ).
           t25 ?= t32.
         ELSE.
@@ -1278,7 +1275,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         DATA(t33) = VALUE abap_bool( ).
         DATA(t34) = VALUE abap_bool( ).
         DATA t35 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t35.
         t35 = me->conf->zlnt_view_read_sr_274b357e7ae8( ).
         IF t35 IS BOUND.
           IF t35->has = abap_true.
@@ -1298,11 +1294,9 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         DATA t45 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t45.
         DATA t46 TYPE REF TO object.
-        CLEAR t46.
         DATA t47 TYPE REF TO zcl_lnt_token_node_regex.
         CLEAR t47.
         DATA t49 TYPE REF TO object.
-        CLEAR t49.
         t49 = t15.
         t47 ?= t49.
         t46 = t47->get_db65( ).
@@ -1332,7 +1326,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t65.
             DATA t66 TYPE REF TO zif_lnt_union_4cf1d054.
-            CLEAR t66.
             t66 = t25.
             DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t68.
@@ -1348,7 +1341,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             ENDIF.
             t65 = t68.
             DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t75.
             DATA(t78) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t78->has = abap_true.
             t78->value = |-|.
@@ -1432,11 +1424,9 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           DATA t121 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t121.
           DATA t122 TYPE REF TO object.
-          CLEAR t122.
           DATA t123 TYPE REF TO zcl_lnt_token_node_regex.
           CLEAR t123.
           DATA t125 TYPE REF TO object.
-          CLEAR t125.
           t125 = t15.
           t123 ?= t125.
           t122 = t123->get_db65( ).
@@ -1446,15 +1436,12 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         IF t114 = abap_true.
           DATA(t126) = t3.
           DATA t127 TYPE REF TO zcl_lnt_token_and_keyword.
-          CLEAR t127.
           DATA t129 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t129.
           DATA t130 TYPE REF TO object.
-          CLEAR t130.
           DATA t131 TYPE REF TO zcl_lnt_token_node_regex.
           CLEAR t131.
           DATA t133 TYPE REF TO object.
-          CLEAR t133.
           t133 = t15.
           t131 ?= t133.
           t130 = t131->get_db65( ).
@@ -1490,7 +1477,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           DATA t148 TYPE REF TO zcl_lnt_token_node.
           CLEAR t148.
           DATA t150 TYPE REF TO object.
-          CLEAR t150.
           t150 = t15.
           t148 ?= t150.
           t144 = t148->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
@@ -1500,11 +1486,9 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           t153 = t154.
           IF t154 = abap_true.
             DATA t157 TYPE REF TO zcl_lnt_abstract_token.
-            CLEAR t157.
             DATA t158 TYPE REF TO zcl_lnt_token_node.
             CLEAR t158.
             DATA t160 TYPE REF TO object.
-            CLEAR t160.
             t160 = t15.
             t158 ?= t160.
             t157 = t158->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
@@ -1513,11 +1497,9 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           IF t153 = abap_true.
             DATA(t161) = t3.
             DATA t162 TYPE REF TO zcl_lnt_token_and_keyword.
-            CLEAR t162.
             DATA t165 TYPE REF TO zcl_lnt_token_node.
             CLEAR t165.
             DATA t167 TYPE REF TO object.
-            CLEAR t167.
             t167 = t15.
             t165 ?= t167.
             t162 = NEW zcl_lnt_token_and_keyword( i_token = t165->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ) i_keyword = abap_true ).
@@ -1550,15 +1532,12 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             DATA t181 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t181.
             DATA t183 TYPE REF TO object.
-            CLEAR t183.
             t183 = t15.
             t181 ?= t183.
             t3 = t3->concat( p0 = me->traverse( i_s = t181 i_parent = t2 ) ).
           ELSE.
             DATA t185 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-            CLEAR t185.
             DATA t186 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-            CLEAR t186.
             DATA(t190) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t190->has = abap_true.
             t190->value = |keyword_case, traverseStatement, unexpected node type|.
@@ -1569,7 +1548,6 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             DATA t192 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t192.
             DATA t193 TYPE REF TO object.
-            CLEAR t193.
             CLEAR t192.
             t193 = t186.
             TRY.
@@ -1686,43 +1664,43 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
       TRANSLATE t36 TO LOWER CASE.
       result = xsdbool( t1 <> t36 ).
       RETURN.
-    ELSE.
-      DATA(t39) = VALUE abap_bool( ).
-      DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t40 = me->conf->zlnt_view_read_sr_98fc2d44a45f( ).
-      DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t45) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t45->has = abap_true.
-      t45->value = |upper|.
-      t42 = t45.
-      DATA(t47) = VALUE abap_bool( ).
-      DATA(t48) = VALUE abap_bool( ).
-      IF t40 IS BOUND.
-        t47 = t40->has.
-      ENDIF.
-      IF t42 IS BOUND.
-        t48 = t42->has.
-      ENDIF.
-      IF t47 = t48.
-        IF t47 = abap_false.
-          t39 = abap_true.
-        ELSEIF t40->value = t42->value.
-          t39 = abap_true.
-        ENDIF.
-      ENDIF.
-      IF t39 = abap_true.
-        DATA t51 TYPE string.
-        DATA(t53) = strlen( t1 ).
-        t51 = t1.
-        IF t51 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-          TRANSLATE t51 TO UPPER CASE.
-        ELSE.
-          t51 = zlnt_runtime_uppe_91169605024d=>full( t51 ).
-        ENDIF.
-        result = xsdbool( t1 <> t51 ).
-        RETURN.
+    ENDIF.
+    DATA(t39) = VALUE abap_bool( ).
+    DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t40 = me->conf->zlnt_view_read_sr_98fc2d44a45f( ).
+    DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA(t45) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t45->has = abap_true.
+    t45->value = |upper|.
+    t42 = t45.
+    DATA(t47) = VALUE abap_bool( ).
+    DATA(t48) = VALUE abap_bool( ).
+    IF t40 IS BOUND.
+      t47 = t40->has.
+    ENDIF.
+    IF t42 IS BOUND.
+      t48 = t42->has.
+    ENDIF.
+    IF t47 = t48.
+      IF t47 = abap_false.
+        t39 = abap_true.
+      ELSEIF t40->value = t42->value.
+        t39 = abap_true.
       ENDIF.
     ENDIF.
+    IF t39 = abap_true.
+      DATA t51 TYPE string.
+      DATA(t53) = strlen( t1 ).
+      t51 = t1.
+      IF t51 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+        TRANSLATE t51 TO UPPER CASE.
+      ELSE.
+        t51 = zlnt_runtime_uppe_91169605024d=>full( t51 ).
+      ENDIF.
+      result = xsdbool( t1 <> t51 ).
+      RETURN.
+    ENDIF.
+
     result = abap_false.
 
   ENDMETHOD.

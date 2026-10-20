@@ -411,7 +411,6 @@ CLASS zcl_lnt_strict_sql IMPLEMENTATION.
         t307 = t37->get_first_token( ).
         DATA(t310) = VALUE string( ).
         DATA t311 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t311.
         DATA t318 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t318.
         DATA(t321) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.

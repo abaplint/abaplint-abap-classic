@@ -505,7 +505,6 @@ CLASS zcl_lnt_sql_escp_hst_vrbls IMPLEMENTATION.
             t211 = t83->get_first_token( ).
             DATA(t215) = VALUE string( ).
             DATA t216 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t216.
             DATA t223 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t223.
             DATA(t226) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -733,7 +732,6 @@ CLASS zcl_lnt_sql_escp_hst_vrbls IMPLEMENTATION.
           t359 = t293->get_first_token( ).
           DATA(t362) = VALUE string( ).
           DATA t363 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t363.
           DATA t370 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t370.
           DATA(t373) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

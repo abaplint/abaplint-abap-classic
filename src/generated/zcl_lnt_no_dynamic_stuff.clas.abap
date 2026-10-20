@@ -192,7 +192,6 @@ CLASS zcl_lnt_no_dynamic_stuff IMPLEMENTATION.
         t29 = |{ t30 }{ t31 }|.
         DATA(t34) = VALUE string( ).
         DATA t35 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t35.
         DATA t42 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t42.
         DATA(t45) = |Dynamic constructs cannot be checked statically, they are no|.

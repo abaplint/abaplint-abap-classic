@@ -871,147 +871,147 @@ CLASS zcl_lnt_cds_lexer IMPLEMENTATION.
           ENDIF.
         ENDIF.
         CONTINUE.
-      ELSE.
-        DATA(t649) = VALUE abap_bool( ).
-        DATA t650 TYPE abap_bool.
-        DATA t651 TYPE abap_bool.
-        t651 = xsdbool( t4 = 0 ).
-        t650 = t651.
-        IF t651 = abap_true.
-          t650 = xsdbool( t32 = |/| ).
-        ENDIF.
-        t649 = t650.
-        IF t650 = abap_true.
-          t649 = xsdbool( t71 = |*| ).
-        ENDIF.
-        IF t649 = abap_true.
-          t4 = 4.
-          DATA t662 TYPE REF TO zcl_lnt_cd_result.
-          t662 = t2.
-          DATA t664 TYPE string.
-          t664 = t10.
-          DATA t666 TYPE f.
-          t666 = t6.
-          DATA t668 TYPE f.
-          t668 = t8.
-          DATA t671 TYPE f.
-          t671 = t4.
-          IF xsdbool( strlen( t664 ) > 0 ) = abap_true.
-            DATA t679 TYPE abap_bool.
-            DATA t680 TYPE abap_bool.
-            t680 = xsdbool( t671 = CONV f( 3 ) ).
-            t679 = t680.
-            IF t680 = abap_true.
-              DATA(t683) = VALUE abap_bool( ).
-              DATA(t684) = VALUE abap_bool( ).
-              DATA(t686) = |--|.
-              DATA(t687) = strlen( t664 ).
-              DATA t688 TYPE i.
-              DATA(t689) = VALUE i( ).
-              DATA(t690) = VALUE string( ).
-              t688 = strlen( t686 ).
-              IF t688 = 0.
-                t684 = abap_true.
-              ELSEIF t688 <= t687.
-                t689 = 0.
-                t690 = t664+t689(t688).
-                IF t690 = t686.
-                  t684 = abap_true.
-                ENDIF.
-              ENDIF.
-              t683 = t684.
-              IF t684 = abap_false.
-                DATA(t691) = VALUE abap_bool( ).
-                DATA(t693) = |//|.
-                DATA(t694) = strlen( t664 ).
-                DATA t695 TYPE i.
-                DATA(t696) = VALUE i( ).
-                DATA(t697) = VALUE string( ).
-                t695 = strlen( t693 ).
-                IF t695 = 0.
-                  t691 = abap_true.
-                ELSEIF t695 <= t694.
-                  t696 = 0.
-                  t697 = t664+t696(t695).
-                  IF t697 = t693.
-                    t691 = abap_true.
-                  ENDIF.
-                ENDIF.
-                t683 = t691.
-              ENDIF.
-              t679 = t683.
-            ENDIF.
-            IF t679 = abap_true.
-              DATA t698 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              t698 = t662->result_9728.
-              DATA t700 TYPE REF TO zcl_lnt_lx_comment.
-              DATA t703 TYPE f.
-              DATA t705 TYPE f.
-              t705 = strlen( t664 ).
-              t703 = t668 - t705.
-              DATA(t709) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-              t709->has = abap_true.
-              t709->value = t703.
-              t700 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t709 ) i_str = t664 ).
-              t698->load( ).
-              APPEND t700 TO t698->items.
-              t698->save( ).
-            ELSE.
-              DATA t711 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              t711 = t662->result_9728.
-              DATA t713 TYPE REF TO zcl_lnt_lx_identifier.
-              DATA(t717) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-              t717->has = abap_true.
-              t717->value = t668.
-              t713 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t717 ) i_str = t664 ).
-              t711->load( ).
-              APPEND t713 TO t711->items.
-              t711->save( ).
-            ENDIF.
-          ENDIF.
-          t10 = ||.
-          DATA(t720) = VALUE string( ).
-          DATA t721 TYPE REF TO zcl_lnt_stream.
-          t721 = t12.
-          DATA(t725) = VALUE string( ).
-          DATA t726 TYPE string.
-          t726 = t721->buffer.
-          DATA(t728) = 0.
-          DATA(t729) = 1.
-          DATA(t730) = strlen( t726 ).
-          t728 = COND i( WHEN t728 < 0 THEN 0 WHEN t728 > t730 THEN t730 ELSE t728 ).
-          t729 = COND i( WHEN t729 < 0 THEN 0 WHEN t729 > t730 THEN t730 ELSE t729 ).
-          IF t728 > t729.
-            t730 = t728.
-            t728 = t729.
-            t729 = t730.
-          ENDIF.
-          t730 = t729 - t728.
-          t725 = t726+t728(t730).
-          DATA t733 TYPE string.
-          t733 = t721->buffer.
-          DATA(t736) = VALUE string( ).
-          DATA(t738) = 1.
-          DATA t739 TYPE i.
-          t739 = strlen( t733 ).
-          DATA(t742) = strlen( t733 ).
-          t738 = COND i( WHEN t738 < 0 THEN 0 WHEN t738 > t742 THEN t742 ELSE t738 ).
-          t739 = COND i( WHEN t739 < 0 THEN 0 WHEN t739 > t742 THEN t742 ELSE t739 ).
-          IF t738 > t739.
-            t742 = t738.
-            t738 = t739.
-            t739 = t742.
-          ENDIF.
-          t742 = t739 - t738.
-          t736 = t733+t738(t742).
-          t721->buffer = t736.
-          DELETE t721->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-          t720 = t725.
-          DATA(t746) = CONV f( 1 ).
-          t8 = t8 + t746.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      DATA(t649) = VALUE abap_bool( ).
+      DATA t650 TYPE abap_bool.
+      DATA t651 TYPE abap_bool.
+      t651 = xsdbool( t4 = 0 ).
+      t650 = t651.
+      IF t651 = abap_true.
+        t650 = xsdbool( t32 = |/| ).
+      ENDIF.
+      t649 = t650.
+      IF t650 = abap_true.
+        t649 = xsdbool( t71 = |*| ).
+      ENDIF.
+      IF t649 = abap_true.
+        t4 = 4.
+        DATA t662 TYPE REF TO zcl_lnt_cd_result.
+        t662 = t2.
+        DATA t664 TYPE string.
+        t664 = t10.
+        DATA t666 TYPE f.
+        t666 = t6.
+        DATA t668 TYPE f.
+        t668 = t8.
+        DATA t671 TYPE f.
+        t671 = t4.
+        IF xsdbool( strlen( t664 ) > 0 ) = abap_true.
+          DATA t679 TYPE abap_bool.
+          DATA t680 TYPE abap_bool.
+          t680 = xsdbool( t671 = CONV f( 3 ) ).
+          t679 = t680.
+          IF t680 = abap_true.
+            DATA(t683) = VALUE abap_bool( ).
+            DATA(t684) = VALUE abap_bool( ).
+            DATA(t686) = |--|.
+            DATA(t687) = strlen( t664 ).
+            DATA t688 TYPE i.
+            DATA(t689) = VALUE i( ).
+            DATA(t690) = VALUE string( ).
+            t688 = strlen( t686 ).
+            IF t688 = 0.
+              t684 = abap_true.
+            ELSEIF t688 <= t687.
+              t689 = 0.
+              t690 = t664+t689(t688).
+              IF t690 = t686.
+                t684 = abap_true.
+              ENDIF.
+            ENDIF.
+            t683 = t684.
+            IF t684 = abap_false.
+              DATA(t691) = VALUE abap_bool( ).
+              DATA(t693) = |//|.
+              DATA(t694) = strlen( t664 ).
+              DATA t695 TYPE i.
+              DATA(t696) = VALUE i( ).
+              DATA(t697) = VALUE string( ).
+              t695 = strlen( t693 ).
+              IF t695 = 0.
+                t691 = abap_true.
+              ELSEIF t695 <= t694.
+                t696 = 0.
+                t697 = t664+t696(t695).
+                IF t697 = t693.
+                  t691 = abap_true.
+                ENDIF.
+              ENDIF.
+              t683 = t691.
+            ENDIF.
+            t679 = t683.
+          ENDIF.
+          IF t679 = abap_true.
+            DATA t698 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+            t698 = t662->result_9728.
+            DATA t700 TYPE REF TO zcl_lnt_lx_comment.
+            DATA t703 TYPE f.
+            DATA t705 TYPE f.
+            t705 = strlen( t664 ).
+            t703 = t668 - t705.
+            DATA(t709) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+            t709->has = abap_true.
+            t709->value = t703.
+            t700 = NEW zcl_lnt_lx_comment( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t709 ) i_str = t664 ).
+            t698->load( ).
+            APPEND t700 TO t698->items.
+            t698->save( ).
+          ELSE.
+            DATA t711 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+            t711 = t662->result_9728.
+            DATA t713 TYPE REF TO zcl_lnt_lx_identifier.
+            DATA(t717) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+            t717->has = abap_true.
+            t717->value = t668.
+            t713 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = t666 i_col = t717 ) i_str = t664 ).
+            t711->load( ).
+            APPEND t713 TO t711->items.
+            t711->save( ).
+          ENDIF.
+        ENDIF.
+        t10 = ||.
+        DATA(t720) = VALUE string( ).
+        DATA t721 TYPE REF TO zcl_lnt_stream.
+        t721 = t12.
+        DATA(t725) = VALUE string( ).
+        DATA t726 TYPE string.
+        t726 = t721->buffer.
+        DATA(t728) = 0.
+        DATA(t729) = 1.
+        DATA(t730) = strlen( t726 ).
+        t728 = COND i( WHEN t728 < 0 THEN 0 WHEN t728 > t730 THEN t730 ELSE t728 ).
+        t729 = COND i( WHEN t729 < 0 THEN 0 WHEN t729 > t730 THEN t730 ELSE t729 ).
+        IF t728 > t729.
+          t730 = t728.
+          t728 = t729.
+          t729 = t730.
+        ENDIF.
+        t730 = t729 - t728.
+        t725 = t726+t728(t730).
+        DATA t733 TYPE string.
+        t733 = t721->buffer.
+        DATA(t736) = VALUE string( ).
+        DATA(t738) = 1.
+        DATA t739 TYPE i.
+        t739 = strlen( t733 ).
+        DATA(t742) = strlen( t733 ).
+        t738 = COND i( WHEN t738 < 0 THEN 0 WHEN t738 > t742 THEN t742 ELSE t738 ).
+        t739 = COND i( WHEN t739 < 0 THEN 0 WHEN t739 > t742 THEN t742 ELSE t739 ).
+        IF t738 > t739.
+          t742 = t738.
+          t738 = t739.
+          t739 = t742.
+        ENDIF.
+        t742 = t739 - t738.
+        t736 = t733+t738(t742).
+        t721->buffer = t736.
+        DELETE t721->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
+        t720 = t725.
+        DATA(t746) = CONV f( 1 ).
+        t8 = t8 + t746.
+        CONTINUE.
+      ENDIF.
+
       IF xsdbool( t32 = |'| ) = abap_true.
         DATA t751 TYPE REF TO zcl_lnt_cd_result.
         t751 = t2.

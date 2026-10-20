@@ -69,7 +69,6 @@ CLASS zcl_lnt_sy_move IMPLEMENTATION.
         IF t42 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t44 ?= t42.
           DATA t45 TYPE REF TO object.
-          CLEAR t45.
           t45 = t44->as_ref( ).
           t41 ?= t45.
         ELSE.
@@ -85,7 +84,6 @@ CLASS zcl_lnt_sy_move IMPLEMENTATION.
           DATA t51 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t51.
           DATA t52 TYPE REF TO object.
-          CLEAR t52.
           CLEAR t51.
           t52 = t41.
           TRY.
@@ -112,7 +110,6 @@ CLASS zcl_lnt_sy_move IMPLEMENTATION.
           DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t53.
           DATA t54 TYPE REF TO object.
-          CLEAR t54.
           CLEAR t53.
           t54 = t7.
           TRY.
@@ -143,7 +140,6 @@ CLASS zcl_lnt_sy_move IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t55 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t55.
         t55 = zcl_lnt_sy_target=>run_syntax( i_node = t41 i_input_967e = t2 ).
       ENDDO.
     ENDIF.

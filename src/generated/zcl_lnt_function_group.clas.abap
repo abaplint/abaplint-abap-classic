@@ -168,7 +168,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
       t30 = t31.
       TRANSLATE t30 TO LOWER CASE.
       DATA t37 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t37.
       CREATE OBJECT t37 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\/` flags = |g| checked = abap_true.
       DATA(t41) = strlen( t30 ).
       t29 = t37->replace( p0 = t30 p1 = |#| ).
@@ -369,7 +368,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
         IF t18 = abap_true.
           DATA(t37) = t33.
           DATA t38 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t38.
           CREATE OBJECT t38 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\/` flags = |g| checked = abap_true.
           DATA(t42) = strlen( t37 ).
           t33 = t38->replace( p0 = t37 p1 = |#| ).
@@ -424,7 +422,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
         ENDIF.
         IF t43 = abap_true.
           DATA t69 TYPE REF TO zcl_lnt_shape_124357cf.
-          CLEAR t69.
           t69 = NEW zcl_lnt_shape_124357cf( i_file = t10 i_name = t16 ).
           CREATE OBJECT t69->zlnt_view_ownkeys_b0e8086400eb.
           t69->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -453,7 +450,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
         ENDIF.
         IF t18 = abap_true.
           DATA t86 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t86.
           CREATE OBJECT t86 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\/` flags = |g| checked = abap_true.
           DATA(t90) = strlen( t16 ).
           t33 = t86->replace( p0 = t16 p1 = |%23| ).
@@ -480,7 +476,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
           ENDIF.
           IF xsdbool( t92 >= 0 ) = abap_true.
             DATA t107 TYPE REF TO zcl_lnt_shape_124357cf.
-            CLEAR t107.
             t107 = NEW zcl_lnt_shape_124357cf( i_file = t10 i_name = t16 ).
             CREATE OBJECT t107->zlnt_view_ownkeys_b0e8086400eb.
             t107->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -965,7 +960,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
               DATA t156 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t156.
               DATA t157 TYPE REF TO object.
-              CLEAR t157.
               CLEAR t156.
               t157 = t152.
               TRY.
@@ -1000,7 +994,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
         ENDIF.
         IF xsdbool( t159 = |string| ) = abap_true.
           DATA t162 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t162.
           t162 = me->includes.
           DATA(t164) = VALUE string( ).
           t164 = t151->as_string( ).
@@ -1144,7 +1137,6 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
             DATA t238 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t238.
             DATA t239 TYPE REF TO object.
-            CLEAR t239.
             CLEAR t238.
             t239 = t234.
             TRY.

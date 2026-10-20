@@ -243,7 +243,6 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
           CLEAR t66.
           DATA(t70) = VALUE string( ).
           DATA t71 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t71.
           DATA t78 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t78.
           DATA t82 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -363,7 +362,6 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
         DATA t138 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t138 = me->conf->zlnt_view_read_sr_6c98808680b6( ).
         DATA t140 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t140.
         DATA(t143) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t143->has = abap_true.
         t143->value = |upper|.
@@ -404,7 +402,6 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
           CLEAR t163.
           DATA(t167) = VALUE string( ).
           DATA t168 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t168.
           DATA t175 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t175.
           DATA t179 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -523,7 +520,6 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
           DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t235 = me->conf->zlnt_view_read_sr_6c98808680b6( ).
           DATA t237 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t237.
           DATA(t240) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t240->has = abap_true.
           t240->value = |lower|.
@@ -560,7 +556,6 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
             CLEAR t260.
             DATA(t264) = VALUE string( ).
             DATA t265 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t265.
             DATA t272 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t272.
             DATA t276 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

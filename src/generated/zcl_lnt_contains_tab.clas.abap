@@ -393,7 +393,6 @@ CLASS zcl_lnt_contains_tab IMPLEMENTATION.
           t142 = zcl_lnt_edit_helper=>replace_range( i_file = t116 i_start = t119 i_end = t130 i_text = t149 ).
           DATA(t161) = VALUE string( ).
           DATA t162 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t162.
           DATA t169 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t169.
           DATA(t172) = |\nhttps://docs.abapopenchecks.org/checks/09/\nhttps://github.c|.

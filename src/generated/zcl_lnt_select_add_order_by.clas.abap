@@ -291,66 +291,65 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
         ENDIF.
         IF t79 = abap_true.
           CONTINUE.
-        ELSE.
-          DATA(t86) = VALUE abap_bool( ).
-          DATA(t87) = VALUE abap_bool( ).
-          DATA t88 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t88.
-          DATA t89 TYPE REF TO zcl_lnt_slct_add_ordr_by_cnf.
-          t89 = CAST zcl_lnt_slct_add_ordr_by_cnf( me->g_c_i_s_r_s_a_o_b_t_s_ad_or_by( ) ).
-          DATA t91 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+        ENDIF.
+        DATA(t86) = VALUE abap_bool( ).
+        DATA(t87) = VALUE abap_bool( ).
+        DATA t88 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+        CLEAR t88.
+        DATA t89 TYPE REF TO zcl_lnt_slct_add_ordr_by_cnf.
+        t89 = CAST zcl_lnt_slct_add_ordr_by_cnf( me->g_c_i_s_r_s_a_o_b_t_s_ad_or_by( ) ).
+        DATA t91 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+        CLEAR t91.
+        IF xsdbool( t89 IS INITIAL ) = abap_true.
           CLEAR t91.
-          IF xsdbool( t89 IS INITIAL ) = abap_true.
-            CLEAR t91.
-          ELSE.
-            DATA t95 TYPE abap_bool.
-            t95 = t89->zlnt_view_read_sr_72f34613dda9( ).
-            DATA(t97) = NEW zlnt_runtime_opti_7f2541396f43( ).
-            t97->has = abap_true.
-            t97->value = t95.
-            t91 = t97.
-          ENDIF.
-          t88 = t91.
-          DATA t98 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t98.
-          DATA(t101) = NEW zlnt_runtime_opti_7f2541396f43( ).
-          t101->has = abap_true.
-          t101->value = abap_true.
-          t98 = t101.
-          DATA(t103) = VALUE abap_bool( ).
-          DATA(t104) = VALUE abap_bool( ).
-          IF t88 IS BOUND.
-            t103 = t88->has.
-          ENDIF.
-          IF t98 IS BOUND.
-            t104 = t98->has.
-          ENDIF.
-          IF t103 = t104.
-            IF t103 = abap_false.
-              t87 = abap_true.
-            ELSEIF t88->value = t98->value.
-              t87 = abap_true.
-            ENDIF.
-          ENDIF.
-          t86 = t87.
-          IF t87 = abap_true.
-            DATA(t106) = VALUE i( ).
-            DATA(t108) = | FOR ALL ENTRIES |.
-            DATA(t109) = strlen( t74 ).
-            IF t108 IS INITIAL.
-              t106 = 0.
-            ELSE.
-              FIND t108 IN t74 MATCH OFFSET t106.
-              IF sy-subrc <> 0.
-                t106 = -1.
-              ENDIF.
-            ENDIF.
-            t86 = xsdbool( t106 >= 0 ).
-          ENDIF.
-          IF t86 = abap_true.
-            CONTINUE.
+        ELSE.
+          DATA t95 TYPE abap_bool.
+          t95 = t89->zlnt_view_read_sr_72f34613dda9( ).
+          DATA(t97) = NEW zlnt_runtime_opti_7f2541396f43( ).
+          t97->has = abap_true.
+          t97->value = t95.
+          t91 = t97.
+        ENDIF.
+        t88 = t91.
+        DATA t98 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+        DATA(t101) = NEW zlnt_runtime_opti_7f2541396f43( ).
+        t101->has = abap_true.
+        t101->value = abap_true.
+        t98 = t101.
+        DATA(t103) = VALUE abap_bool( ).
+        DATA(t104) = VALUE abap_bool( ).
+        IF t88 IS BOUND.
+          t103 = t88->has.
+        ENDIF.
+        IF t98 IS BOUND.
+          t104 = t98->has.
+        ENDIF.
+        IF t103 = t104.
+          IF t103 = abap_false.
+            t87 = abap_true.
+          ELSEIF t88->value = t98->value.
+            t87 = abap_true.
           ENDIF.
         ENDIF.
+        t86 = t87.
+        IF t87 = abap_true.
+          DATA(t106) = VALUE i( ).
+          DATA(t108) = | FOR ALL ENTRIES |.
+          DATA(t109) = strlen( t74 ).
+          IF t108 IS INITIAL.
+            t106 = 0.
+          ELSE.
+            FIND t108 IN t74 MATCH OFFSET t106.
+            IF sy-subrc <> 0.
+              t106 = -1.
+            ENDIF.
+          ENDIF.
+          t86 = xsdbool( t106 >= 0 ).
+        ENDIF.
+        IF t86 = abap_true.
+          CONTINUE.
+        ENDIF.
+
         DATA t111 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA(t114) = zlnt_runtime_desc_78196487750d=>zlnt_member_d315_136d5faf95cc.
         t111 = t69->find_all_expressions( i_type_9913 = t114 ).
@@ -428,39 +427,38 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
         ENDIF.
         IF t115 = abap_true.
           CONTINUE.
-        ELSE.
-          DATA t150 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t152) = zlnt_runtime_desc_78196487750d=>zlnt_member_d261_e2dcf59482ac.
-          t150 = t69->find_first_expression( i_type_9913 = t152 ).
-          IF xsdbool( t150 IS BOUND ) = abap_true.
-            CONTINUE.
-          ENDIF.
         ENDIF.
+        DATA t150 TYPE REF TO zcl_lnt_expression_node.
+        DATA(t152) = zlnt_runtime_desc_78196487750d=>zlnt_member_d261_e2dcf59482ac.
+        t150 = t69->find_first_expression( i_type_9913 = t152 ).
+        IF xsdbool( t150 IS BOUND ) = abap_true.
+          CONTINUE.
+        ENDIF.
+
         IF me->is_target_sorted_or_hashed( i_s = t69 i_spaghetti = t15 i_file = t30 ) = abap_true.
           CONTINUE.
-        ELSE.
-          DATA t157 TYPE abap_bool.
-          DATA t158 TYPE abap_bool.
-          DATA t159 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t161) = zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf.
-          t159 = t69->find_first_expression( i_type_9913 = t161 ).
-          t158 = xsdbool( t159 IS BOUND ).
-          t157 = t158.
-          IF t158 = abap_true.
-            DATA t163 TYPE REF TO zcl_lnt_expression_node.
-            DATA(t165) = zlnt_runtime_desc_78196487750d=>zlnt_member_d274_5d558843257f.
-            t163 = t69->find_first_expression( i_type_9913 = t165 ).
-            t157 = xsdbool( t163 IS BOUND ).
-          ENDIF.
-          IF t157 = abap_true.
-            CONTINUE.
-          ENDIF.
         ENDIF.
+        DATA t157 TYPE abap_bool.
+        DATA t158 TYPE abap_bool.
+        DATA t159 TYPE REF TO zcl_lnt_expression_node.
+        DATA(t161) = zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf.
+        t159 = t69->find_first_expression( i_type_9913 = t161 ).
+        t158 = xsdbool( t159 IS BOUND ).
+        t157 = t158.
+        IF t158 = abap_true.
+          DATA t163 TYPE REF TO zcl_lnt_expression_node.
+          DATA(t165) = zlnt_runtime_desc_78196487750d=>zlnt_member_d274_5d558843257f.
+          t163 = t69->find_first_expression( i_type_9913 = t165 ).
+          t157 = xsdbool( t163 IS BOUND ).
+        ENDIF.
+        IF t157 = abap_true.
+          CONTINUE.
+        ENDIF.
+
         DATA t167 TYPE REF TO zcl_lnt_issue.
         CLEAR t167.
         DATA(t171) = VALUE string( ).
         DATA t172 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t172.
         DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t179.
         DATA(t182) = |\nThis will make sure that the SELECT statement returns resul|.

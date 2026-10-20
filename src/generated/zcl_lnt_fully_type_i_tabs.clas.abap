@@ -203,7 +203,6 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
         t50 = t22->get_first_token( )->start.
         DATA(t58) = VALUE string( ).
         DATA t59 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t59.
         DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t66.
         DATA(t69) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -370,7 +369,6 @@ CLASS zcl_lnt_fully_type_i_tabs IMPLEMENTATION.
             t150 = t22->get_first_token( )->start.
             DATA(t158) = VALUE string( ).
             DATA t159 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t159.
             DATA t166 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t166.
             DATA(t169) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

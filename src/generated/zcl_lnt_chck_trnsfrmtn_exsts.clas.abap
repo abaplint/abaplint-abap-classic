@@ -151,7 +151,6 @@ CLASS zcl_lnt_chck_trnsfrmtn_exsts IMPLEMENTATION.
         t52 = t53.
         IF t53 = abap_true.
           DATA t60 TYPE REF TO zif_lnt_object.
-          CLEAR t60.
           DATA(t61) = me->reg.
           DATA t62 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t62.
@@ -179,7 +178,6 @@ CLASS zcl_lnt_chck_trnsfrmtn_exsts IMPLEMENTATION.
           t80 = |{ t84 }{ |" not found| }|.
           DATA(t90) = VALUE string( ).
           DATA t91 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t91.
           DATA t98 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t98.
           DATA t102 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

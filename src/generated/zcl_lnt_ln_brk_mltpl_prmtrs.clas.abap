@@ -334,7 +334,6 @@ CLASS zcl_lnt_ln_brk_mltpl_prmtrs IMPLEMENTATION.
             t137 = t55->get_first_token( ).
             DATA(t139) = VALUE string( ).
             DATA t140 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t140.
             DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t147.
             DATA(t150) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -450,7 +449,6 @@ CLASS zcl_lnt_ln_brk_mltpl_prmtrs IMPLEMENTATION.
             t139 = t140->title.
             DATA(t206) = VALUE string( ).
             DATA t207 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t207.
             DATA t214 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t214.
             DATA(t217) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

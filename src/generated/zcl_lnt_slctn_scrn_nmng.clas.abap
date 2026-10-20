@@ -436,7 +436,6 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
           DATA t238 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t238 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t240 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t240.
           DATA(t243) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t243->has = abap_true.
           t243->value = |required|.
@@ -486,7 +485,6 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
           t203 = t236.
           DATA(t273) = VALUE string( ).
           DATA t274 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t274.
           DATA t279 TYPE string.
           DATA(t280) = |Allows you to enforce a pattern, such as a prefix, for selec|.
           t280 = t280 && |tion-screen variable names.|.
@@ -596,61 +594,61 @@ CLASS zcl_lnt_slctn_scrn_nmng IMPLEMENTATION.
       DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
       result = t1->find_first_expression( i_type_9913 = t7 ).
       RETURN.
-    ELSE.
-      DATA t9 TYPE REF TO zif_lnt_statement.
-      t9 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-      IF xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
-        DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
-        result = t1->find_first_expression( i_type_9913 = t13 ).
-        RETURN.
-      ELSE.
-        DATA t15 TYPE REF TO zif_lnt_statement.
-        t15 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
-          DATA t17 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604.
-          t17 = t1->find_first_expression( i_type_9913 = t20 ).
-          DATA(t21) = VALUE abap_bool( ).
-          DATA(t22) = VALUE abap_bool( ).
-          DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          t22 = xsdbool( t17 IS INITIAL ).
-          t21 = t22.
-          IF t22 = abap_true.
-            DATA(t30) = VALUE i( ).
-            DATA t31 TYPE string.
-            DATA t32 TYPE string.
-            t32 = t1->concat_tokens( ).
-            DATA(t34) = strlen( t32 ).
-            t31 = t32.
-            IF t31 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-              TRANSLATE t31 TO UPPER CASE.
-            ELSE.
-              t31 = zlnt_runtime_uppe_91169605024d=>full( t31 ).
-            ENDIF.
-            DATA(t35) = | BEGIN OF TABBED BLOCK|.
-            DATA(t36) = strlen( t31 ).
-            IF t35 IS INITIAL.
-              t30 = 0.
-            ELSE.
-              FIND t35 IN t31 MATCH OFFSET t30.
-              IF sy-subrc <> 0.
-                t30 = -1.
-              ENDIF.
-            ENDIF.
-            t21 = xsdbool( t30 >= 0 ).
-          ENDIF.
-          IF t21 = abap_true.
-            DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.
-            t17 = t1->find_first_expression( i_type_9913 = t40 ).
-          ENDIF.
-          result = t17.
-          RETURN.
-        ELSE.
-          CLEAR result.
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    DATA t9 TYPE REF TO zif_lnt_statement.
+    t9 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+    IF xsdbool( t9 IS BOUND AND t9 IS INSTANCE OF zcl_lnt_st_select_option ) = abap_true.
+      DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
+      result = t1->find_first_expression( i_type_9913 = t13 ).
+      RETURN.
+    ENDIF.
+    DATA t15 TYPE REF TO zif_lnt_statement.
+    t15 = t1->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+    IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
+      DATA t17 TYPE REF TO zcl_lnt_expression_node.
+      DATA(t20) = zlnt_runtime_desc_78196487750d=>zlnt_member_d202_7173b1c44604.
+      t17 = t1->find_first_expression( i_type_9913 = t20 ).
+      DATA(t21) = VALUE abap_bool( ).
+      DATA(t22) = VALUE abap_bool( ).
+      DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t22 = xsdbool( t17 IS INITIAL ).
+      t21 = t22.
+      IF t22 = abap_true.
+        DATA(t30) = VALUE i( ).
+        DATA t31 TYPE string.
+        DATA t32 TYPE string.
+        t32 = t1->concat_tokens( ).
+        DATA(t34) = strlen( t32 ).
+        t31 = t32.
+        IF t31 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+          TRANSLATE t31 TO UPPER CASE.
+        ELSE.
+          t31 = zlnt_runtime_uppe_91169605024d=>full( t31 ).
+        ENDIF.
+        DATA(t35) = | BEGIN OF TABBED BLOCK|.
+        DATA(t36) = strlen( t31 ).
+        IF t35 IS INITIAL.
+          t30 = 0.
+        ELSE.
+          FIND t35 IN t31 MATCH OFFSET t30.
+          IF sy-subrc <> 0.
+            t30 = -1.
+          ENDIF.
+        ENDIF.
+        t21 = xsdbool( t30 >= 0 ).
+      ENDIF.
+      IF t21 = abap_true.
+        DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d107_ee9c2dd1a63a.
+        t17 = t1->find_first_expression( i_type_9913 = t40 ).
+      ENDIF.
+      result = t17.
+      RETURN.
+    ENDIF.
+    CLEAR result.
+
+
+
+
   ENDMETHOD.
 
   METHOD get_config_value.

@@ -393,7 +393,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         CLEAR t175.
         DATA(t179) = VALUE string( ).
         DATA t180 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t180.
         DATA t185 TYPE string.
         DATA(t186) = |Searches for expressions where extra parentheses can safely |.
         t186 = t186 && |be removed|.
@@ -985,7 +984,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         t82 = t83->get_first_token( ).
         DATA(t89) = VALUE string( ).
         DATA t90 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t90.
         DATA t95 TYPE string.
         DATA(t96) = |Searches for expressions where extra parentheses can safely |.
         t96 = t96 && |be removed|.
@@ -1442,7 +1440,6 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               t199 = t200->get_first_token( ).
               DATA(t204) = VALUE string( ).
               DATA t205 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t205.
               DATA t210 TYPE string.
               DATA(t211) = |Searches for expressions where extra parentheses can safely |.
               t211 = t211 && |be removed|.

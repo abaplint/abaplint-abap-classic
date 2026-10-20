@@ -106,7 +106,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       ENDIF.
       t72 = t73.
       DATA t80 TYPE REF TO zcl_lnt_shape_59e28496.
-      CLEAR t80.
       DATA t82 TYPE REF TO zcl_lnt_current_scope.
       t82 = t2->scope.
       DATA(t87) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -151,7 +150,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         t126 = t2->scope->reg.
         t125 = NEW zcl_lnt_ddic( i_reg_f149 = t126 ).
         DATA t128 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t128.
         DATA(t132) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t132->has = abap_true.
         t132->value = t72.
@@ -313,7 +311,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           DATA t270 TYPE REF TO zcl_lnt_current_scope.
           t270 = t2->scope.
           DATA t273 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t273.
           DATA(t277) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t277->has = abap_true.
           t277->value = t262.
@@ -355,7 +352,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
               t303 = t289.
             ELSE.
               DATA t312 TYPE REF TO zcl_lnt_class.
-              CLEAR t312.
               DATA t313 TYPE REF TO zcl_lnt_class.
               CLEAR t313.
               DATA t315 TYPE REF TO zif_lnt_registry.
@@ -574,7 +570,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             ENDIF.
             t488 = t489.
             DATA t496 TYPE REF TO zcl_lnt_shape_59e28496.
-            CLEAR t496.
             DATA t498 TYPE REF TO zcl_lnt_current_scope.
             t498 = t2->scope.
             DATA(t503) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -651,18 +646,12 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       ENDIF.
       t7 = t7 + 1.
       DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t8.
-      DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t9.
-      CREATE OBJECT t9.
-      t8 = t9.
+      CREATE OBJECT t8.
       DATA t10 TYPE REF TO zif_lnt_class_definition.
       CLEAR t10.
       DATA t12 TYPE REF TO zcl_lnt_current_scope.
-      CLEAR t12.
       t12 = t2->scope.
       DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t15.
       DATA(t19) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t19->has = abap_true.
       t19->value = t6.
@@ -670,7 +659,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       DATA t21 TYPE REF TO zif_lnt_class_definition.
       CLEAR t21.
       DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t23.
       t23 = t15.
       DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t25.
@@ -687,7 +675,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA t31 TYPE REF TO zif_lnt_class_definition.
         CLEAR t31.
         DATA t33 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t33.
         t33 = t12->current.
         DATA t36 TYPE REF TO zif_lnt_class_definition.
         CLEAR t36.
@@ -695,7 +682,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           CLEAR t36.
         ELSE.
           DATA t41 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-          CLEAR t41.
           t41 = t33.
           DATA(t43) = VALUE string( ).
           t43 = t15->value.
@@ -708,13 +694,9 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           t45 = t31.
         ELSE.
           DATA t54 TYPE REF TO zcl_lnt_class.
-          CLEAR t54.
           DATA t55 TYPE REF TO zcl_lnt_class.
           CLEAR t55.
-          DATA t56 TYPE REF TO zif_lnt_object.
-          CLEAR t56.
           DATA t57 TYPE REF TO zif_lnt_registry.
-          CLEAR t57.
           t57 = t12->reg.
           DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t59.
@@ -727,10 +709,8 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           DATA(t68) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t68->has = abap_true.
           t68->value = t66.
-          t56 = t57->get_object( i_type_9913 = t59 i_name = t68 ).
           DATA t70 TYPE REF TO object.
-          CLEAR t70.
-          t70 = t56.
+          t70 = t57->get_object( i_type_9913 = t59 i_name = t68 ).
           t55 ?= t70.
           t54 = t55.
           DATA t71 TYPE REF TO zif_lnt_class_definition.
@@ -746,7 +726,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
       ENDIF.
       t10 = t21.
       DATA t78 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-      CLEAR t78.
       t78 = NEW zlnt_runtime_set__1827558fd4c7( ).
       DO.
         DATA(t80) = VALUE abap_bool( ).
@@ -770,7 +749,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           EXIT.
         ENDIF.
         DATA t93 TYPE REF TO zif_lnt_class_definition.
-        CLEAR t93.
         t93 = t10.
         t8->load( ).
         APPEND t93 TO t8->items.
@@ -789,15 +767,12 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         ENDIF.
         t95 = t78->add( p0 = t97 ).
         DATA t103 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t103.
         t103 = t2->scope.
         DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t106.
         t106 = t10->get_super_class( ).
         DATA t110 TYPE REF TO zif_lnt_class_definition.
         CLEAR t110.
         DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t112.
         t112 = t106.
         DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t114.
@@ -814,7 +789,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           DATA t120 TYPE REF TO zif_lnt_class_definition.
           CLEAR t120.
           DATA t122 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-          CLEAR t122.
           t122 = t103->current.
           DATA t125 TYPE REF TO zif_lnt_class_definition.
           CLEAR t125.
@@ -822,7 +796,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             CLEAR t125.
           ELSE.
             DATA t130 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-            CLEAR t130.
             t130 = t122.
             DATA(t132) = VALUE string( ).
             t132 = t106->value.
@@ -835,13 +808,9 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             t134 = t120.
           ELSE.
             DATA t143 TYPE REF TO zcl_lnt_class.
-            CLEAR t143.
             DATA t144 TYPE REF TO zcl_lnt_class.
             CLEAR t144.
-            DATA t145 TYPE REF TO zif_lnt_object.
-            CLEAR t145.
             DATA t146 TYPE REF TO zif_lnt_registry.
-            CLEAR t146.
             t146 = t103->reg.
             DATA t148 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t148.
@@ -854,10 +823,8 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             DATA(t157) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t157->has = abap_true.
             t157->value = t155.
-            t145 = t146->get_object( i_type_9913 = t148 i_name = t157 ).
             DATA t159 TYPE REF TO object.
-            CLEAR t159.
-            t159 = t145.
+            t159 = t146->get_object( i_type_9913 = t148 i_name = t157 ).
             t144 ?= t159.
             t143 = t144.
             DATA t160 TYPE REF TO zif_lnt_class_definition.
@@ -907,7 +874,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           IF t176 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t178 ?= t176.
             DATA t179 TYPE REF TO object.
-            CLEAR t179.
             t179 = t178->as_ref( ).
             t177 ?= t179.
           ELSE.
@@ -939,7 +905,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA t200 TYPE REF TO zif_lnt_class_definition.
         CLEAR t200.
         DATA t203 TYPE REF TO object.
-        CLEAR t203.
         t203 = t185->get( p0 = t191 ).
         DATA t204 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t204.
@@ -947,7 +912,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         IF t203 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t204 ?= t203.
           DATA t205 TYPE REF TO object.
-          CLEAR t205.
           t205 = t204->as_ref( ).
           t200 ?= t205.
         ELSE.
@@ -973,7 +937,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
           DATA t221 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t221.
           DATA t224 TYPE REF TO object.
-          CLEAR t224.
           t224 = t207->get( p0 = t212 ).
           DATA t225 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t225.
@@ -1006,7 +969,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
                 IF t226 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                   t228 ?= t226.
                   DATA t229 TYPE REF TO object.
-                  CLEAR t229.
                   t229 = t228->as_ref( ).
                   t227 ?= t229.
                 ELSE.
@@ -1039,7 +1001,6 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
             IF t236 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t238 ?= t236.
               DATA t239 TYPE REF TO object.
-              CLEAR t239.
               t239 = t238->as_ref( ).
               t235 ?= t239.
             ELSE.

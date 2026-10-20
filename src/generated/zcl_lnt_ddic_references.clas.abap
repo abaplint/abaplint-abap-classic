@@ -390,10 +390,10 @@ CLASS zcl_lnt_ddic_references IMPLEMENTATION.
     IF xsdbool( xsdbool( t10 IS INITIAL ) = abap_false ) = abap_true.
       result = t10.
       RETURN.
-    ELSE.
-      CREATE OBJECT result.
-
     ENDIF.
+    CREATE OBJECT result.
+
+
   ENDMETHOD.
 
   METHOD list_where_used.

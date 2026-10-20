@@ -145,7 +145,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
       IF t10 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t12 ?= t10.
         DATA t13 TYPE REF TO object.
-        CLEAR t13.
         t13 = t12->as_ref( ).
         t9 ?= t13.
       ELSE.
@@ -155,7 +154,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
       DATA(t15) = VALUE abap_bool( ).
       DATA(t16) = VALUE abap_bool( ).
       DATA t17 TYPE REF TO zif_lnt_statement.
-      CLEAR t17.
       t17 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t16 = xsdbool( t17 IS BOUND AND t17 IS INSTANCE OF zcl_lnt_st_statem_constant ).
       t15 = t16.
@@ -168,7 +166,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         t19 = t20.
         IF t20 = abap_true.
           DATA t25 TYPE REF TO zif_lnt_statement.
-          CLEAR t25.
           t25 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           t19 = xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_st_data ).
         ENDIF.
@@ -179,10 +176,8 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         DATA t29 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t29.
         DATA t30 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t30.
         t30 = t9.
         DATA t33 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t33.
         DATA(t36) = zlnt_runtime_desc_78196487750d=>zlnt_member_d147_5c941cfb7396.
         t33 = t30->find_first_expression( i_type_9913 = t36 ).
         DATA t37 TYPE REF TO zcl_lnt_expression_node.
@@ -199,7 +194,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
       IF t14 = abap_true.
         DATA(t45) = VALUE string( ).
         DATA t47 TYPE REF TO zif_lnt_statement.
-        CLEAR t47.
         t47 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         IF xsdbool( t47 IS BOUND AND t47 IS INSTANCE OF zcl_lnt_st_statem_constant ) = abap_true.
           t45 = |constant definition|.
@@ -209,7 +203,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         DATA t51 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t51.
         DATA t53 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t53.
         DATA(t56) = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.
         t53 = t9->find_first_expression( i_type_9913 = t56 ).
         DATA t57 TYPE REF TO zcl_lnt_abstract_token.
@@ -225,7 +218,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         CLEAR t67.
         IF xsdbool( t51 IS INITIAL ) = abap_true.
           DATA t72 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t72.
           DATA(t75) = zlnt_runtime_desc_78196487750d=>zlnt_member_d152_d99fb56fbc57.
           t72 = t9->find_first_expression( i_type_9913 = t75 ).
           DATA t76 TYPE REF TO zcl_lnt_abstract_token.
@@ -242,9 +234,7 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         CLEAR t86.
         IF xsdbool( t51 IS INITIAL ) = abap_true.
           DATA t90 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-          CLEAR t90.
           DATA t91 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-          CLEAR t91.
           DATA(t95) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t95->has = abap_true.
           t95->value = |fully type constants, unexpected node|.
@@ -255,7 +245,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
           DATA t97 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t97.
           DATA t98 TYPE REF TO object.
-          CLEAR t98.
           CLEAR t97.
           t98 = t91.
           TRY.
@@ -294,7 +283,6 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         t104 = |{ t108 }{ |, no implicit typing| }|.
         DATA(t114) = VALUE string( ).
         DATA t115 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t115.
         DATA(t120) = VALUE string( ).
         DATA(t121) = |Checks constants for full typing - no implicit typing allowe|.
         t121 = t121 && |d.|.
@@ -314,11 +302,7 @@ CLASS zcl_lnt_fully_type_constants IMPLEMENTATION.
         DATA t134 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t134.
         DATA t138 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t138.
-        DATA t139 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t139.
-        CREATE OBJECT t139.
-        t138 = t139.
+        CREATE OBJECT t138.
         t138->load( ).
         APPEND |SingleFile| TO t138->items.
         t138->save( ).

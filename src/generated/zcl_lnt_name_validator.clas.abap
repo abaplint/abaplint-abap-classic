@@ -64,7 +64,6 @@ CLASS zcl_lnt_name_validator IMPLEMENTATION.
       ENDIF.
       t30 = t30 + 1.
       DATA t32 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t32.
       CREATE OBJECT t32 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t29 flags = |i|.
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t36 = t1.

@@ -346,39 +346,39 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       ENDIF.
       IF t10 = abap_true.
         CONTINUE.
-      ELSE.
-        IF xsdbool( t5->level = |constant| ) = abap_true.
-          CONTINUE.
+      ENDIF.
+      IF xsdbool( t5->level = |constant| ) = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t21 TYPE abap_bool.
+      DATA t22 TYPE abap_bool.
+      DATA t23 TYPE abap_bool.
+      t23 = me->conf->zlnt_view_read_sr_48dae5000976( ).
+      t22 = xsdbool( t23 = abap_true ).
+      t21 = t22.
+      IF t22 = abap_true.
+        DATA(t27) = VALUE i( ).
+        DATA t28 TYPE string.
+        DATA t29 TYPE REF TO zcl_lnt_abstract_file.
+        t29 = me->file.
+        t28 = t29->filename.
+        DATA(t33) = |.testclasses.|.
+        DATA(t34) = strlen( t28 ).
+        IF t33 IS INITIAL.
+          t27 = 0.
         ELSE.
-          DATA t21 TYPE abap_bool.
-          DATA t22 TYPE abap_bool.
-          DATA t23 TYPE abap_bool.
-          t23 = me->conf->zlnt_view_read_sr_48dae5000976( ).
-          t22 = xsdbool( t23 = abap_true ).
-          t21 = t22.
-          IF t22 = abap_true.
-            DATA(t27) = VALUE i( ).
-            DATA t28 TYPE string.
-            DATA t29 TYPE REF TO zcl_lnt_abstract_file.
-            t29 = me->file.
-            t28 = t29->filename.
-            DATA(t33) = |.testclasses.|.
-            DATA(t34) = strlen( t28 ).
-            IF t33 IS INITIAL.
-              t27 = 0.
-            ELSE.
-              FIND t33 IN t28 MATCH OFFSET t27.
-              IF sy-subrc <> 0.
-                t27 = -1.
-              ENDIF.
-            ENDIF.
-            t21 = xsdbool( t27 >= 0 ).
-          ENDIF.
-          IF t21 = abap_true.
-            CONTINUE.
+          FIND t33 IN t28 MATCH OFFSET t27.
+          IF sy-subrc <> 0.
+            t27 = -1.
           ENDIF.
         ENDIF.
+        t21 = xsdbool( t27 >= 0 ).
       ENDIF.
+      IF t21 = abap_true.
+        CONTINUE.
+      ENDIF.
+
+
       DATA t37 TYPE REF TO zcl_lnt_issue.
       CLEAR t37.
       DATA t38 TYPE REF TO zcl_lnt_fi_identifier.
@@ -394,7 +394,6 @@ CLASS zcl_lnt_no_public_attributes IMPLEMENTATION.
       t40 = |{ t45 }{ |"| }|.
       DATA(t51) = VALUE string( ).
       DATA t52 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t52.
       DATA t57 TYPE string.
       DATA(t58) = |Checks that classes and interfaces don't contain any public |.
       t58 = t58 && |attributes.\nExceptions are excluded from this rule.|.

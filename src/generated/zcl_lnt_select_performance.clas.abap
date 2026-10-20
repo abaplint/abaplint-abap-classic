@@ -293,7 +293,6 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
           t80 = t53.
           DATA(t83) = VALUE string( ).
           DATA t84 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t84.
           DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t91.
           DATA(t94) = |ENDSELECT: not reported when the corresponding SELECT has PA|.
@@ -635,7 +634,6 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
           t251 = t181->get_first_token( ).
           DATA(t254) = VALUE string( ).
           DATA t255 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t255.
           DATA t262 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t262.
           DATA(t265) = |ENDSELECT: not reported when the corresponding SELECT has PA|.

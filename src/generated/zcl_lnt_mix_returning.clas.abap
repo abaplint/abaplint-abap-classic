@@ -199,7 +199,6 @@ CLASS zcl_lnt_mix_returning IMPLEMENTATION.
         t48 = t48 && |ingle method.|.
         DATA(t49) = VALUE string( ).
         DATA t50 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t50.
         DATA t55 TYPE string.
         DATA(t56) = |Checks that methods don't have a mixture of returning and ex|.
         t56 = t56 && |porting/changing parameters|.

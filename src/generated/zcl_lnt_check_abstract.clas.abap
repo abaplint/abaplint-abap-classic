@@ -98,17 +98,17 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
       DATA(t9) = strlen( t7 ).
       result = |{ t7 }{ t2 }|.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 = 0 ) = abap_true.
-        DATA(t14) = |Abstract methods require abstract classes: |.
-        DATA(t16) = strlen( t14 ).
-        result = |{ t14 }{ t2 }|.
-        RETURN.
-      ELSE.
-        result = ||.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 = 0 ) = abap_true.
+      DATA(t14) = |Abstract methods require abstract classes: |.
+      DATA(t16) = strlen( t14 ).
+      result = |{ t14 }{ t2 }|.
+      RETURN.
+    ENDIF.
+    result = ||.
+
+
+
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_ab_ts_ch_abs.
@@ -153,7 +153,6 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
       DATA t16 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t16 = t10->is_abstract.
       DATA t18 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t18.
       DATA(t21) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t21->has = abap_true.
       t21->value = abap_true.
@@ -183,7 +182,6 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
           DATA t31 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           t31 = t10->is_for_testing.
           DATA t33 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t33.
           DATA(t36) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t36->has = abap_true.
           t36->value = abap_false.
@@ -232,7 +230,6 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
           t44 = t48.
           DATA(t65) = VALUE string( ).
           DATA t66 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t66.
           DATA t71 TYPE string.
           DATA(t72) = |Checks abstract methods and classes:\n- class defined as abst|.
           t72 = t72 && |ract and final,\n- non-abstract class contains abstract metho|.
@@ -376,7 +373,6 @@ CLASS zcl_lnt_check_abstract IMPLEMENTATION.
           t130 = t134.
           DATA(t151) = VALUE string( ).
           DATA t152 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t152.
           DATA t157 TYPE string.
           DATA(t158) = |Checks abstract methods and classes:\n- class defined as abst|.
           t158 = t158 && |ract and final,\n- non-abstract class contains abstract metho|.

@@ -227,17 +227,17 @@ CLASS zcl_lnt_lexer_stream IMPLEMENTATION.
       t4 = t5.
       result = t4.
       RETURN.
-    ELSE.
-      DATA(t7) = CONV i( me->offset ).
-      DATA(t9) = CONV string( me->raw ).
-      IF xsdbool( t7 >= strlen( t9 ) ) = abap_true.
-        DATA t11 TYPE f.
-        DATA(t12) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
-        t11 = t12.
-        result = t11.
-        RETURN.
-      ENDIF.
     ENDIF.
+    DATA(t7) = CONV i( me->offset ).
+    DATA(t9) = CONV string( me->raw ).
+    IF xsdbool( t7 >= strlen( t9 ) ) = abap_true.
+      DATA t11 TYPE f.
+      DATA(t12) = CONV i( zcl_lnt_lexer_stream_module=>eof ).
+      t11 = t12.
+      result = t11.
+      RETURN.
+    ENDIF.
+
     DATA(t13) = VALUE f( ).
     DATA(t14) = VALUE i( ).
     DATA(t15) = CONV string( me->raw ).

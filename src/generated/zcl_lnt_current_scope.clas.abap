@@ -580,61 +580,61 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t37.
-    ELSE.
-      DATA(t52) = VALUE abap_bool( ).
-      DATA(t53) = CONV abap_bool( me->is_oo( ) ).
-      t52 = t53.
-      IF t53 = abap_true.
-        DATA t56 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t58 TYPE REF TO zcl_lnt_iscope_data.
-        DATA t59 TYPE REF TO zcl_lnt_scope_data.
-        t59 = me->current.
-        t58 = t59->data_56cc.
-        t56 = t58->vars->get( p0 = t17 ).
-        DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t52 = xsdbool( xsdbool( t56 IS INITIAL ) = abap_false ).
-      ENDIF.
-      IF t52 = abap_true.
-        DATA t70 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        DATA t71 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        DATA(t74) = VALUE string( ).
-        DATA(t75) = VALUE string( ).
-        DATA(t76) = |"|.
-        DATA(t78) = strlen( t76 ).
-        t75 = |{ t76 }{ t1 }|.
-        DATA(t80) = strlen( t75 ).
-        t74 = |{ t75 }{ |" already defined| }|.
-        DATA(t81) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t81->has = abap_true.
-        t81->value = t74.
-        t71 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t81 ).
-        t70 = NEW #( ).
-        t70->payload = t71.
-        CLEAR t70->source_value.
-        DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t84 TYPE REF TO object.
-        t84 = t71.
+    ENDIF.
+    DATA(t52) = VALUE abap_bool( ).
+    DATA(t53) = CONV abap_bool( me->is_oo( ) ).
+    t52 = t53.
+    IF t53 = abap_true.
+      DATA t56 TYPE REF TO zcl_lnt_typed_identifier.
+      DATA t58 TYPE REF TO zcl_lnt_iscope_data.
+      DATA t59 TYPE REF TO zcl_lnt_scope_data.
+      t59 = me->current.
+      t58 = t59->data_56cc.
+      t56 = t58->vars->get( p0 = t17 ).
+      DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t52 = xsdbool( xsdbool( t56 IS INITIAL ) = abap_false ).
+    ENDIF.
+    IF t52 = abap_true.
+      DATA t70 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+      DATA t71 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+      DATA(t74) = VALUE string( ).
+      DATA(t75) = VALUE string( ).
+      DATA(t76) = |"|.
+      DATA(t78) = strlen( t76 ).
+      t75 = |{ t76 }{ t1 }|.
+      DATA(t80) = strlen( t75 ).
+      t74 = |{ t75 }{ |" already defined| }|.
+      DATA(t81) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t81->has = abap_true.
+      t81->value = t74.
+      t71 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t81 ).
+      t70 = NEW #( ).
+      t70->payload = t71.
+      CLEAR t70->source_value.
+      DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t84 TYPE REF TO object.
+      t84 = t71.
+      TRY.
+          t70->source_value ?= t84.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t70->source_value IS NOT BOUND.
         TRY.
-            t70->source_value ?= t84.
+            t83 ?= t71.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
-        IF t70->source_value IS NOT BOUND.
-          TRY.
-              t83 ?= t71.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t83 IS BOUND.
-            t70->source_value = t83->source( ).
-          ENDIF.
-          IF t70->source_value IS NOT BOUND.
-            CREATE OBJECT t70->source_value.
-            t70->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t70->source_value->oval = t71.
-          ENDIF.
+        IF t83 IS BOUND.
+          t70->source_value = t83->source( ).
         ENDIF.
-        RAISE EXCEPTION t70.
+        IF t70->source_value IS NOT BOUND.
+          CREATE OBJECT t70->source_value.
+          t70->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t70->source_value->oval = t71.
+        ENDIF.
       ENDIF.
+      RAISE EXCEPTION t70.
     ENDIF.
+
     DATA t85 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA t88 TYPE REF TO zcl_lnt_scope_data.
     t88 = me->current.
@@ -1081,61 +1081,61 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t30.
-    ELSE.
-      DATA(t45) = VALUE abap_bool( ).
-      DATA(t46) = CONV abap_bool( me->is_oo( ) ).
-      t45 = t46.
-      IF t46 = abap_true.
-        DATA t49 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t51 TYPE REF TO zcl_lnt_iscope_data.
-        DATA t52 TYPE REF TO zcl_lnt_scope_data.
-        t52 = me->current.
-        t51 = t52->data_56cc.
-        t49 = t51->types->get( p0 = t10 ).
-        DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t45 = xsdbool( xsdbool( t49 IS INITIAL ) = abap_false ).
-      ENDIF.
-      IF t45 = abap_true.
-        DATA t63 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        DATA t64 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        DATA(t67) = VALUE string( ).
-        DATA(t68) = VALUE string( ).
-        DATA(t69) = |"|.
-        DATA(t71) = strlen( t69 ).
-        t68 = |{ t69 }{ t1 }|.
-        DATA(t73) = strlen( t68 ).
-        t67 = |{ t68 }{ |" already defined| }|.
-        DATA(t74) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t74->has = abap_true.
-        t74->value = t67.
-        t64 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t74 ).
-        t63 = NEW #( ).
-        t63->payload = t64.
-        CLEAR t63->source_value.
-        DATA t76 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t77 TYPE REF TO object.
-        t77 = t64.
+    ENDIF.
+    DATA(t45) = VALUE abap_bool( ).
+    DATA(t46) = CONV abap_bool( me->is_oo( ) ).
+    t45 = t46.
+    IF t46 = abap_true.
+      DATA t49 TYPE REF TO zcl_lnt_typed_identifier.
+      DATA t51 TYPE REF TO zcl_lnt_iscope_data.
+      DATA t52 TYPE REF TO zcl_lnt_scope_data.
+      t52 = me->current.
+      t51 = t52->data_56cc.
+      t49 = t51->types->get( p0 = t10 ).
+      DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t45 = xsdbool( xsdbool( t49 IS INITIAL ) = abap_false ).
+    ENDIF.
+    IF t45 = abap_true.
+      DATA t63 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+      DATA t64 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+      DATA(t67) = VALUE string( ).
+      DATA(t68) = VALUE string( ).
+      DATA(t69) = |"|.
+      DATA(t71) = strlen( t69 ).
+      t68 = |{ t69 }{ t1 }|.
+      DATA(t73) = strlen( t68 ).
+      t67 = |{ t68 }{ |" already defined| }|.
+      DATA(t74) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t74->has = abap_true.
+      t74->value = t67.
+      t64 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t74 ).
+      t63 = NEW #( ).
+      t63->payload = t64.
+      CLEAR t63->source_value.
+      DATA t76 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t77 TYPE REF TO object.
+      t77 = t64.
+      TRY.
+          t63->source_value ?= t77.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t63->source_value IS NOT BOUND.
         TRY.
-            t63->source_value ?= t77.
+            t76 ?= t64.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
-        IF t63->source_value IS NOT BOUND.
-          TRY.
-              t76 ?= t64.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t76 IS BOUND.
-            t63->source_value = t76->source( ).
-          ENDIF.
-          IF t63->source_value IS NOT BOUND.
-            CREATE OBJECT t63->source_value.
-            t63->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t63->source_value->oval = t64.
-          ENDIF.
+        IF t76 IS BOUND.
+          t63->source_value = t76->source( ).
         ENDIF.
-        RAISE EXCEPTION t63.
+        IF t63->source_value IS NOT BOUND.
+          CREATE OBJECT t63->source_value.
+          t63->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t63->source_value->oval = t64.
+        ENDIF.
       ENDIF.
+      RAISE EXCEPTION t63.
     ENDIF.
+
     DATA t78 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA t80 TYPE REF TO zcl_lnt_iscope_data.
     DATA t81 TYPE REF TO zcl_lnt_scope_data.
@@ -1213,61 +1213,61 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t41.
-    ELSE.
-      DATA(t56) = VALUE abap_bool( ).
-      DATA(t57) = CONV abap_bool( me->is_oo( ) ).
-      t56 = t57.
-      IF t57 = abap_true.
-        DATA t60 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t62 TYPE REF TO zcl_lnt_iscope_data.
-        DATA t63 TYPE REF TO zcl_lnt_scope_data.
-        t63 = t10.
-        t62 = t63->data_56cc.
-        t60 = t62->types->get( p0 = t21 ).
-        DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t56 = xsdbool( xsdbool( t60 IS INITIAL ) = abap_false ).
-      ENDIF.
-      IF t56 = abap_true.
-        DATA t74 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        DATA t75 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        DATA(t78) = VALUE string( ).
-        DATA(t79) = VALUE string( ).
-        DATA(t80) = |"|.
-        DATA(t82) = strlen( t80 ).
-        t79 = |{ t80 }{ t1 }|.
-        DATA(t84) = strlen( t79 ).
-        t78 = |{ t79 }{ |" already defined| }|.
-        DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t85->has = abap_true.
-        t85->value = t78.
-        t75 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t85 ).
-        t74 = NEW #( ).
-        t74->payload = t75.
-        CLEAR t74->source_value.
-        DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t88 TYPE REF TO object.
-        t88 = t75.
+    ENDIF.
+    DATA(t56) = VALUE abap_bool( ).
+    DATA(t57) = CONV abap_bool( me->is_oo( ) ).
+    t56 = t57.
+    IF t57 = abap_true.
+      DATA t60 TYPE REF TO zcl_lnt_typed_identifier.
+      DATA t62 TYPE REF TO zcl_lnt_iscope_data.
+      DATA t63 TYPE REF TO zcl_lnt_scope_data.
+      t63 = t10.
+      t62 = t63->data_56cc.
+      t60 = t62->types->get( p0 = t21 ).
+      DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t56 = xsdbool( xsdbool( t60 IS INITIAL ) = abap_false ).
+    ENDIF.
+    IF t56 = abap_true.
+      DATA t74 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+      DATA t75 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+      DATA(t78) = VALUE string( ).
+      DATA(t79) = VALUE string( ).
+      DATA(t80) = |"|.
+      DATA(t82) = strlen( t80 ).
+      t79 = |{ t80 }{ t1 }|.
+      DATA(t84) = strlen( t79 ).
+      t78 = |{ t79 }{ |" already defined| }|.
+      DATA(t85) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t85->has = abap_true.
+      t85->value = t78.
+      t75 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t85 ).
+      t74 = NEW #( ).
+      t74->payload = t75.
+      CLEAR t74->source_value.
+      DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t88 TYPE REF TO object.
+      t88 = t75.
+      TRY.
+          t74->source_value ?= t88.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t74->source_value IS NOT BOUND.
         TRY.
-            t74->source_value ?= t88.
+            t87 ?= t75.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
-        IF t74->source_value IS NOT BOUND.
-          TRY.
-              t87 ?= t75.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t87 IS BOUND.
-            t74->source_value = t87->source( ).
-          ENDIF.
-          IF t74->source_value IS NOT BOUND.
-            CREATE OBJECT t74->source_value.
-            t74->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t74->source_value->oval = t75.
-          ENDIF.
+        IF t87 IS BOUND.
+          t74->source_value = t87->source( ).
         ENDIF.
-        RAISE EXCEPTION t74.
+        IF t74->source_value IS NOT BOUND.
+          CREATE OBJECT t74->source_value.
+          t74->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t74->source_value->oval = t75.
+        ENDIF.
       ENDIF.
+      RAISE EXCEPTION t74.
     ENDIF.
+
     DATA t89 TYPE REF TO zlnt_runtime_map__126b79e3f8a9.
     DATA t91 TYPE REF TO zcl_lnt_iscope_data.
     DATA t92 TYPE REF TO zcl_lnt_scope_data.
@@ -1597,7 +1597,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
         DATA t37 TYPE REF TO zcl_lnt_iscope_data.
         CLEAR t37.
         DATA t39 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t39.
         t39 = me->current.
         DATA t41 TYPE REF TO zcl_lnt_iscope_data.
         CLEAR t41.
@@ -1605,7 +1604,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
           CLEAR t41.
         ELSE.
           DATA t46 TYPE REF TO zcl_lnt_scope_data.
-          CLEAR t46.
           t46 = t39.
           t41 = t46->data_56cc.
         ENDIF.
@@ -1629,7 +1627,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
           CLEAR t64.
           t64 = t35.
           DATA t66 TYPE REF TO zcl_lnt_ireference.
-          CLEAR t66.
           t66 = NEW zcl_lnt_ireference( i_position_a3fd = t21 i_resolved = t2 i_reference_type = t32 i_extra = t5 ).
           CREATE OBJECT t66->zlnt_view_ownkeys_b0e8086400eb.
           t66->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -1849,13 +1846,11 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t10 = me->reg->get_objects_by_type( i_type_9913 = |FUGR| )->iterate( ).
     DO.
       DATA t16 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t16.
       t16 = t10->next( ).
       IF t16->done = abap_true.
         EXIT.
       ENDIF.
       DATA t23 TYPE REF TO zif_lnt_object.
-      CLEAR t23.
       t23 = t16->value.
       DATA t25 TYPE REF TO zcl_lnt_fnctn_mdl_dfntn.
       CLEAR t25.
@@ -2180,13 +2175,11 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t6 = me->reg->get_objects_by_type( i_type_9913 = |ENHS| )->iterate( ).
     DO.
       DATA t12 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t12.
       t12 = t6->next( ).
       IF t12->done = abap_true.
         EXIT.
       ENDIF.
       DATA t19 TYPE REF TO zif_lnt_object.
-      CLEAR t19.
       t19 = t12->value.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t21.
@@ -2244,7 +2237,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
         IF t57 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t59 ?= t57.
           DATA t60 TYPE REF TO object.
-          CLEAR t60.
           t60 = t59->as_ref( ).
           t56 ?= t60.
         ELSE.
@@ -3578,12 +3570,12 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       IF xsdbool( t11 = |method_instance| ) = abap_true.
         result = abap_false.
         RETURN.
-      ELSE.
-        IF xsdbool( t11 = |class_implementation| ) = abap_true.
-          result = abap_true.
-          RETURN.
-        ENDIF.
       ENDIF.
+      IF xsdbool( t11 = |class_implementation| ) = abap_true.
+        result = abap_true.
+        RETURN.
+      ENDIF.
+
       t1 = t1->g_p_i_s_a_5_s_s_sc_ts_sp_sc_nd( ).
     ENDDO.
     result = abap_false.

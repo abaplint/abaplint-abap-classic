@@ -104,13 +104,11 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
     t5 = t1->get_objects( )->iterate( ).
     DO.
       DATA t10 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t10.
       t10 = t5->next( ).
       IF t10->done = abap_true.
         EXIT.
       ENDIF.
       DATA t15 TYPE REF TO zif_lnt_object.
-      CLEAR t15.
       t15 = t10->value.
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
@@ -324,7 +322,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
         DATA(t42) = VALUE abap_bool( ).
         DATA(t43) = VALUE abap_bool( ).
         DATA t45 TYPE REF TO zif_lnt_object.
-        CLEAR t45.
         DATA(t46) = me->reg.
         DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t47.
@@ -345,7 +342,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
           DATA(t65) = me->reg.
           t64 = NEW zcl_lnt_ddic( i_reg_f149 = t65 ).
           DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t66.
           DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t70->has = abap_true.
           t70->value = t35.
@@ -382,7 +378,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
           t89 = |{ t90 }{ |" not found| }|.
           DATA(t102) = VALUE string( ).
           DATA t103 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t103.
           DATA t108 TYPE string.
           DATA(t109) = |In message statements, check that the message class + id exi|.
           t109 = t109 && |st|.
@@ -704,7 +699,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
           ENDIF.
           IF t84 = abap_true.
             DATA t108 TYPE REF TO zcl_lnt_ob_message_class.
-            CLEAR t108.
             DATA t109 TYPE REF TO zcl_lnt_ob_message_class.
             CLEAR t109.
             DATA(t111) = me->reg.
@@ -730,7 +724,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
               DATA(t135) = me->reg.
               t134 = NEW zcl_lnt_ddic( i_reg_f149 = t135 ).
               DATA t136 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t136.
               DATA t139 TYPE string.
               t139 = t30->message_class.
               DATA(t141) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -773,7 +766,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
                 t170 = t30->token.
                 DATA(t173) = VALUE string( ).
                 DATA t174 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t174.
                 DATA t179 TYPE string.
                 DATA(t180) = |In message statements, check that the message class + id exi|.
                 t180 = t180 && |st|.
@@ -881,7 +873,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
               t248 = t30->token.
               DATA(t251) = VALUE string( ).
               DATA t252 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t252.
               DATA t257 TYPE string.
               DATA(t258) = |In message statements, check that the message class + id exi|.
               t258 = t258 && |st|.
@@ -972,7 +963,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
               DATA t314 TYPE string.
               t314 = t304->message_25cb->value.
               DATA t319 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-              CLEAR t319.
               CREATE OBJECT t319 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&&| flags = |g| checked = abap_true.
               t311 = t319->match( t314 ).
               DATA t322 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -994,7 +984,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
               DATA t336 TYPE string.
               t336 = t304->message_25cb->value.
               DATA t341 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-              CLEAR t341.
               CREATE OBJECT t341 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&| flags = |g| checked = abap_true.
               t333 = t341->match( t336 ).
               DATA t344 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -1048,7 +1037,6 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
                 t379 = t30->token.
                 DATA(t382) = VALUE string( ).
                 DATA t383 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t383.
                 DATA t388 TYPE string.
                 DATA(t389) = |In message statements, check that the message class + id exi|.
                 t389 = t389 && |st|.

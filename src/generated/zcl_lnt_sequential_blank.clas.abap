@@ -296,7 +296,6 @@ CLASS zcl_lnt_sequential_blank IMPLEMENTATION.
         CLEAR t109.
         DATA(t113) = VALUE string( ).
         DATA t114 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t114.
         DATA t119 TYPE string.
         DATA(t120) = |Checks that code does not contain more than the configured n|.
         t120 = t120 && |umber of blank lines in a row.|.

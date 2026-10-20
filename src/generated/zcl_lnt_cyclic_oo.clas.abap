@@ -109,7 +109,6 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
     t7 = me->reg->get_objects_by_type( i_type_9913 = |CLAS| )->iterate( ).
     DO.
       DATA t13 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t13.
       t13 = t7->next( ).
       IF t13->done = abap_true.
         EXIT.
@@ -185,137 +184,135 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
       ENDIF.
       IF t57 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t73) = VALUE abap_bool( ).
-        DATA(t74) = VALUE abap_bool( ).
-        t74 = abap_false.
-        DATA t76 TYPE REF TO cx_root.
-        CLEAR t76.
-        TRY.
-            DATA(t78) = VALUE f( ).
-            t78 = me->conf->zlnt_view_read_sr_bab69e48acef( )->indexof( p0 = t38 ).
-            t73 = xsdbool( t78 >= CONV f( 0 ) ).
-            t74 = abap_true.
-          CATCH cx_root INTO t76.
-            IF xsdbool( t74 = abap_false ) = abap_true.
-              t7->close( ).
+      ENDIF.
+      DATA(t73) = VALUE abap_bool( ).
+      DATA(t74) = VALUE abap_bool( ).
+      t74 = abap_false.
+      DATA t76 TYPE REF TO cx_root.
+      CLEAR t76.
+      TRY.
+          DATA(t78) = VALUE f( ).
+          t78 = me->conf->zlnt_view_read_sr_bab69e48acef( )->indexof( p0 = t38 ).
+          t73 = xsdbool( t78 >= CONV f( 0 ) ).
+          t74 = abap_true.
+        CATCH cx_root INTO t76.
+          IF xsdbool( t74 = abap_false ) = abap_true.
+            t7->close( ).
+          ENDIF.
+          RAISE EXCEPTION t76.
+      ENDTRY.
+      IF xsdbool( t74 = abap_false ) = abap_true.
+        t7->close( ).
+      ENDIF.
+      IF t73 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA(t93) = VALUE abap_bool( ).
+      DATA(t94) = VALUE abap_bool( ).
+      t94 = abap_false.
+      DATA t96 TYPE REF TO cx_root.
+      CLEAR t96.
+      TRY.
+          DATA(t97) = VALUE abap_bool( ).
+          DATA(t98) = VALUE abap_bool( ).
+          DATA(t99) = VALUE abap_bool( ).
+          t99 = me->conf->zlnt_view_read_sr_9d28e80cfea7( ).
+          t98 = xsdbool( t99 = abap_true ).
+          t97 = t98.
+          IF t98 = abap_true.
+            DATA(t102) = VALUE abap_bool( ).
+            DATA t103 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+            CLEAR t103.
+            DATA t104 TYPE REF TO zcl_lnt_info_class_definition.
+            CLEAR t104.
+            DATA t106 TYPE REF TO zcl_lnt_class.
+            CLEAR t106.
+            DATA t107 TYPE REF TO zcl_lnt_class.
+            CLEAR t107.
+            DATA t109 TYPE REF TO object.
+            CLEAR t109.
+            t109 = t18.
+            t107 ?= t109.
+            t106 = t107.
+            DATA t111 TYPE REF TO zif_lnt_abap_file_information.
+            CLEAR t111.
+            DATA t113 TYPE REF TO zcl_lnt_abap_file.
+            CLEAR t113.
+            t113 = t106->get_main_abap_file( ).
+            DATA t116 TYPE REF TO zif_lnt_abap_file_information.
+            CLEAR t116.
+            IF xsdbool( t113 IS INITIAL ) = abap_true.
+              CLEAR t116.
+            ELSE.
+              t116 = t113->info.
             ENDIF.
-            RAISE EXCEPTION t76.
-        ENDTRY.
-        IF xsdbool( t74 = abap_false ) = abap_true.
-          t7->close( ).
-        ENDIF.
-        IF t73 = abap_true.
-          CONTINUE.
-        ELSE.
-          DATA(t93) = VALUE abap_bool( ).
-          DATA(t94) = VALUE abap_bool( ).
-          t94 = abap_false.
-          DATA t96 TYPE REF TO cx_root.
-          CLEAR t96.
-          TRY.
-              DATA(t97) = VALUE abap_bool( ).
-              DATA(t98) = VALUE abap_bool( ).
-              DATA(t99) = VALUE abap_bool( ).
-              t99 = me->conf->zlnt_view_read_sr_9d28e80cfea7( ).
-              t98 = xsdbool( t99 = abap_true ).
-              t97 = t98.
-              IF t98 = abap_true.
-                DATA(t102) = VALUE abap_bool( ).
-                DATA t103 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                CLEAR t103.
-                DATA t104 TYPE REF TO zcl_lnt_info_class_definition.
-                CLEAR t104.
-                DATA t106 TYPE REF TO zcl_lnt_class.
-                CLEAR t106.
-                DATA t107 TYPE REF TO zcl_lnt_class.
-                CLEAR t107.
-                DATA t109 TYPE REF TO object.
-                CLEAR t109.
-                t109 = t18.
-                t107 ?= t109.
-                t106 = t107.
-                DATA t111 TYPE REF TO zif_lnt_abap_file_information.
-                CLEAR t111.
-                DATA t113 TYPE REF TO zcl_lnt_abap_file.
-                CLEAR t113.
-                t113 = t106->get_main_abap_file( ).
-                DATA t116 TYPE REF TO zif_lnt_abap_file_information.
-                CLEAR t116.
-                IF xsdbool( t113 IS INITIAL ) = abap_true.
-                  CLEAR t116.
-                ELSE.
-                  t116 = t113->info.
-                ENDIF.
-                t111 = t116.
-                DATA t126 TYPE REF TO zcl_lnt_info_class_definition.
-                CLEAR t126.
-                IF xsdbool( t111 IS INITIAL ) = abap_true.
-                  CLEAR t126.
-                ELSE.
-                  DATA t131 TYPE REF TO zif_lnt_abap_file_information.
-                  CLEAR t131.
-                  t131 = t111.
-                  DATA(t133) = VALUE string( ).
-                  DATA t134 TYPE REF TO zcl_lnt_abstract_object.
-                  CLEAR t134.
-                  t134 = t106.
-                  t133 = t134->name.
-                  t126 = t131->get_class_definition_by_name( i_name = t133 ).
-                ENDIF.
-                t104 = t126.
-                DATA t138 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                CLEAR t138.
-                IF xsdbool( t104 IS INITIAL ) = abap_true.
-                  CLEAR t138.
-                ELSE.
-                  DATA(t142) = VALUE abap_bool( ).
-                  t142 = t104->is_shared_memory.
-                  DATA(t145) = NEW zlnt_runtime_opti_7f2541396f43( ).
-                  t145->has = abap_true.
-                  t145->value = t142.
-                  t138 = t145.
-                ENDIF.
-                t103 = t138.
-                DATA t146 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                CLEAR t146.
-                DATA(t149) = NEW zlnt_runtime_opti_7f2541396f43( ).
-                t149->has = abap_true.
-                t149->value = abap_true.
-                t146 = t149.
-                DATA(t151) = VALUE abap_bool( ).
-                DATA(t152) = VALUE abap_bool( ).
-                IF t103 IS BOUND.
-                  t151 = t103->has.
-                ENDIF.
-                IF t146 IS BOUND.
-                  t152 = t146->has.
-                ENDIF.
-                IF t151 = t152.
-                  IF t151 = abap_false.
-                    t102 = abap_true.
-                  ELSEIF t103->value = t146->value.
-                    t102 = abap_true.
-                  ENDIF.
-                ENDIF.
-                t97 = t102.
+            t111 = t116.
+            DATA t126 TYPE REF TO zcl_lnt_info_class_definition.
+            CLEAR t126.
+            IF xsdbool( t111 IS INITIAL ) = abap_true.
+              CLEAR t126.
+            ELSE.
+              DATA t131 TYPE REF TO zif_lnt_abap_file_information.
+              t131 = t111.
+              DATA(t133) = VALUE string( ).
+              DATA t134 TYPE REF TO zcl_lnt_abstract_object.
+              t134 = t106.
+              t133 = t134->name.
+              t126 = t131->get_class_definition_by_name( i_name = t133 ).
+            ENDIF.
+            t104 = t126.
+            DATA t138 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+            CLEAR t138.
+            IF xsdbool( t104 IS INITIAL ) = abap_true.
+              CLEAR t138.
+            ELSE.
+              DATA(t142) = VALUE abap_bool( ).
+              t142 = t104->is_shared_memory.
+              DATA(t145) = NEW zlnt_runtime_opti_7f2541396f43( ).
+              t145->has = abap_true.
+              t145->value = t142.
+              t138 = t145.
+            ENDIF.
+            t103 = t138.
+            DATA t146 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+            CLEAR t146.
+            DATA(t149) = NEW zlnt_runtime_opti_7f2541396f43( ).
+            t149->has = abap_true.
+            t149->value = abap_true.
+            t146 = t149.
+            DATA(t151) = VALUE abap_bool( ).
+            DATA(t152) = VALUE abap_bool( ).
+            IF t103 IS BOUND.
+              t151 = t103->has.
+            ENDIF.
+            IF t146 IS BOUND.
+              t152 = t146->has.
+            ENDIF.
+            IF t151 = t152.
+              IF t151 = abap_false.
+                t102 = abap_true.
+              ELSEIF t103->value = t146->value.
+                t102 = abap_true.
               ENDIF.
-              t93 = t97.
-              t94 = abap_true.
-            CATCH cx_root INTO t96.
-              IF xsdbool( t94 = abap_false ) = abap_true.
-                t7->close( ).
-              ENDIF.
-              RAISE EXCEPTION t96.
-          ENDTRY.
+            ENDIF.
+            t97 = t102.
+          ENDIF.
+          t93 = t97.
+          t94 = abap_true.
+        CATCH cx_root INTO t96.
           IF xsdbool( t94 = abap_false ) = abap_true.
             t7->close( ).
           ENDIF.
-          IF t93 = abap_true.
-            CONTINUE.
-          ENDIF.
-        ENDIF.
+          RAISE EXCEPTION t96.
+      ENDTRY.
+      IF xsdbool( t94 = abap_false ) = abap_true.
+        t7->close( ).
       ENDIF.
+      IF t93 = abap_true.
+        CONTINUE.
+      ENDIF.
+
+
       DATA t161 TYPE REF TO zcl_lnt_isyntax_result.
       CLEAR t161.
       DATA t163 TYPE REF TO zcl_lnt_isyntax_result.
@@ -391,7 +388,6 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
     t214 = me->reg->get_objects_by_type( i_type_9913 = |INTF| )->iterate( ).
     DO.
       DATA t220 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t220.
       t220 = t214->next( ).
       IF t220->done = abap_true.
         EXIT.
@@ -467,30 +463,30 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
       ENDIF.
       IF t264 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t280) = VALUE abap_bool( ).
-        DATA(t281) = VALUE abap_bool( ).
-        t281 = abap_false.
-        DATA t283 TYPE REF TO cx_root.
-        CLEAR t283.
-        TRY.
-            DATA(t285) = VALUE f( ).
-            t285 = me->conf->zlnt_view_read_sr_bab69e48acef( )->indexof( p0 = t245 ).
-            t280 = xsdbool( t285 >= CONV f( 0 ) ).
-            t281 = abap_true.
-          CATCH cx_root INTO t283.
-            IF xsdbool( t281 = abap_false ) = abap_true.
-              t214->close( ).
-            ENDIF.
-            RAISE EXCEPTION t283.
-        ENDTRY.
-        IF xsdbool( t281 = abap_false ) = abap_true.
-          t214->close( ).
-        ENDIF.
-        IF t280 = abap_true.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      DATA(t280) = VALUE abap_bool( ).
+      DATA(t281) = VALUE abap_bool( ).
+      t281 = abap_false.
+      DATA t283 TYPE REF TO cx_root.
+      CLEAR t283.
+      TRY.
+          DATA(t285) = VALUE f( ).
+          t285 = me->conf->zlnt_view_read_sr_bab69e48acef( )->indexof( p0 = t245 ).
+          t280 = xsdbool( t285 >= CONV f( 0 ) ).
+          t281 = abap_true.
+        CATCH cx_root INTO t283.
+          IF xsdbool( t281 = abap_false ) = abap_true.
+            t214->close( ).
+          ENDIF.
+          RAISE EXCEPTION t283.
+      ENDTRY.
+      IF xsdbool( t281 = abap_false ) = abap_true.
+        t214->close( ).
+      ENDIF.
+      IF t280 = abap_true.
+        CONTINUE.
+      ENDIF.
+
       DATA t299 TYPE REF TO zcl_lnt_isyntax_result.
       CLEAR t299.
       DATA t301 TYPE REF TO zcl_lnt_isyntax_result.
@@ -923,7 +919,6 @@ CLASS zcl_lnt_cyclic_oo IMPLEMENTATION.
           DATA t120 TYPE REF TO zif_lnt_object.
           CLEAR t120.
           DATA t122 TYPE REF TO zif_lnt_object.
-          CLEAR t122.
           DATA(t124) = me->reg.
           DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t125.

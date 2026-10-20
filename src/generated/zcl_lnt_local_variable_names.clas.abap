@@ -460,7 +460,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t73 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t75.
           DATA(t78) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t78->has = abap_true.
           t78->value = |required|.
@@ -506,7 +505,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t103.
           DATA(t107) = VALUE string( ).
           DATA t108 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t108.
           DATA t113 TYPE string.
           DATA(t114) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t114 = t114 && |l variables, constants and field symbols.\nRegexes are case-i|.
@@ -673,7 +671,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t226 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t226 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t228 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t228.
           DATA(t231) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t231->has = abap_true.
           t231->value = |required|.
@@ -719,7 +716,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t256.
           DATA(t260) = VALUE string( ).
           DATA t261 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t261.
           DATA t266 TYPE string.
           DATA(t267) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t267 = t267 && |l variables, constants and field symbols.\nRegexes are case-i|.
@@ -901,7 +897,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t393 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t393 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t395 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t395.
           DATA(t398) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t398->has = abap_true.
           t398->value = |required|.
@@ -947,7 +942,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t423.
           DATA(t427) = VALUE string( ).
           DATA t428 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t428.
           DATA t433 TYPE string.
           DATA(t434) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t434 = t434 && |l variables, constants and field symbols.\nRegexes are case-i|.
@@ -1114,7 +1108,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t546 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t546 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t548 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t548.
           DATA(t551) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t551->has = abap_true.
           t551->value = |required|.
@@ -1160,7 +1153,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t576.
           DATA(t580) = VALUE string( ).
           DATA t581 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t581.
           DATA t586 TYPE string.
           DATA(t587) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t587 = t587 && |l variables, constants and field symbols.\nRegexes are case-i|.
@@ -1327,7 +1319,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t699 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t699 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t701 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t701.
           DATA(t704) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t704->has = abap_true.
           t704->value = |required|.
@@ -1373,7 +1364,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t729.
           DATA(t733) = VALUE string( ).
           DATA t734 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t734.
           DATA t739 TYPE string.
           DATA(t740) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t740 = t740 && |l variables, constants and field symbols.\nRegexes are case-i|.
@@ -1554,7 +1544,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           DATA t865 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t865 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t867 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t867.
           DATA(t870) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t870->has = abap_true.
           t870->value = |required|.
@@ -1600,7 +1589,6 @@ CLASS zcl_lnt_local_variable_names IMPLEMENTATION.
           CLEAR t895.
           DATA(t899) = VALUE string( ).
           DATA t900 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t900.
           DATA t905 TYPE string.
           DATA(t906) = |\nAllows you to enforce a pattern, such as a prefix, for loca|.
           t906 = t906 && |l variables, constants and field symbols.\nRegexes are case-i|.

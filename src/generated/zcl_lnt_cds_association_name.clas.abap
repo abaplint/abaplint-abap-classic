@@ -262,7 +262,6 @@ CLASS zcl_lnt_cds_association_name IMPLEMENTATION.
         t113 = t36.
         DATA(t117) = VALUE string( ).
         DATA t118 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t118.
         DATA t125 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t125.
         DATA(t128) = |By convention, CDS association names must start with an unde|.

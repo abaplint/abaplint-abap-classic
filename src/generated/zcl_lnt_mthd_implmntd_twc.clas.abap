@@ -223,7 +223,6 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t83 = t22->token.
           DATA(t89) = VALUE string( ).
           DATA t90 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t90.
           DATA t97 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t97.
           DATA t101 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -389,7 +388,6 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t186 = t152->identifier->token.
           DATA(t193) = VALUE string( ).
           DATA t194 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t194.
           DATA t201 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t201.
           DATA t205 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -555,7 +553,6 @@ CLASS zcl_lnt_mthd_implmntd_twc IMPLEMENTATION.
           t289 = t256->identifier.
           DATA(t292) = VALUE string( ).
           DATA t293 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t293.
           DATA t300 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t300.
           DATA t304 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

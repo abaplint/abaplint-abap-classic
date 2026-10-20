@@ -497,7 +497,6 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         t139 = t69->eq.
         DATA(t142) = VALUE string( ).
         DATA t143 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t143.
         DATA t150 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t150.
         DATA(t153) = |Checks:\n* function module calls\n* method calls\n* VALUE const|.

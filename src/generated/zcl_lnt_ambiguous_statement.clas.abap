@@ -414,7 +414,6 @@ CLASS zcl_lnt_ambiguous_statement IMPLEMENTATION.
         CLEAR t261.
         DATA(t265) = VALUE string( ).
         DATA t266 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t266.
         DATA t271 TYPE string.
         DATA(t272) = |Checks for ambiguity between deleting or modifying from inte|.
         t272 = t272 && |rnal and database table\nAdd "TABLE" keyword or "@" for escap|.

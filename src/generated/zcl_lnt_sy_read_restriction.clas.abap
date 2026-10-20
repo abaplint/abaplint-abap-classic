@@ -472,7 +472,6 @@ CLASS zcl_lnt_sy_read_restriction IMPLEMENTATION.
         CLEAR t296.
         DATA(t300) = VALUE string( ).
         DATA t301 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t301.
         DATA t306 TYPE string.
         DATA(t307) = |Finds reads of SY fields not allowed in the current language|.
         t307 = t307 && | version|.

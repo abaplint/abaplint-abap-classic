@@ -163,7 +163,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
       DATA t46 TYPE string.
       t46 = t35->number->value.
       DATA t50 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t50.
       CREATE OBJECT t50 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |[0-9][0-9][0-9]| flags = ||.
       t50->source = `\d\d\d`.
       IF xsdbool( t50->match_test( p0 = t46 ) = abap_false ) = abap_true.
@@ -212,7 +211,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         ENDIF.
         DATA(t91) = VALUE string( ).
         DATA t92 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t92.
         DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t99.
         DATA t102 TYPE string.
@@ -329,7 +327,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         ENDIF.
         DATA(t173) = VALUE string( ).
         DATA t174 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t174.
         DATA t181 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t181.
         DATA t184 TYPE string.
@@ -449,7 +446,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         ENDIF.
         DATA(t260) = VALUE string( ).
         DATA t261 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t261.
         DATA t268 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t268.
         DATA t271 TYPE string.
@@ -566,7 +562,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         ENDIF.
         DATA(t339) = VALUE string( ).
         DATA t340 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t340.
         DATA t347 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t347.
         DATA t350 TYPE string.
@@ -658,7 +653,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t402 TYPE string.
         t402 = t393->message_25cb->value.
         DATA t407 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t407.
         CREATE OBJECT t407 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&&| flags = |g| checked = abap_true.
         t399 = t407->match( t402 ).
         DATA t410 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -680,7 +674,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t424 TYPE string.
         t424 = t393->message_25cb->value.
         DATA t429 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t429.
         CREATE OBJECT t429 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |&| flags = |g| checked = abap_true.
         t421 = t429->match( t424 ).
         DATA t432 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -747,7 +740,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
           ENDIF.
           DATA(t478) = VALUE string( ).
           DATA t479 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t479.
           DATA t486 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t486.
           DATA t489 TYPE string.
@@ -899,7 +891,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
             ENDIF.
             DATA(t586) = VALUE string( ).
             DATA t587 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t587.
             DATA t594 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t594.
             DATA t597 TYPE string.
@@ -1054,7 +1045,6 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         ENDIF.
         DATA(t703) = VALUE string( ).
         DATA t704 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t704.
         DATA t711 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t711.
         DATA t714 TYPE string.

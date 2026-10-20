@@ -192,7 +192,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
               DATA t90 TYPE REF TO zcl_lnt_info_implementing.
               CLEAR t90.
               DATA t93 TYPE REF TO object.
-              CLEAR t93.
               t93 = t74->get( p0 = t81 ).
               DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t94.
@@ -200,7 +199,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
               IF t93 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                 t94 ?= t93.
                 DATA t95 TYPE REF TO object.
-                CLEAR t95.
                 t95 = t94->as_ref( ).
                 t90 ?= t95.
               ELSE.
@@ -284,61 +282,61 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       ENDIF.
       result = t136.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_interface ) = abap_true.
-        DATA t166 TYPE REF TO zcl_lnt_ob_interface.
-        DATA t167 TYPE REF TO zcl_lnt_ob_interface.
-        DATA t169 TYPE REF TO object.
-        t169 = t1.
-        t167 ?= t169.
-        t166 = t167.
-        DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t173 TYPE REF TO zcl_lnt_abstract_object.
-        t173 = t166.
-        DATA t176 TYPE REF TO zif_lnt_file.
-        t176 = t173->get_xml_file( ).
-        DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        IF xsdbool( t176 IS BOUND ) = abap_true.
-          DATA(t184) = VALUE string( ).
-          t184 = t176->get_raw( ).
-          DATA(t187) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-          t187->has = abap_true.
-          t187->value = t184.
-          t179 = t187.
-        ELSE.
-          CLEAR t179.
-        ENDIF.
-        t171 = t179.
-        DATA t190 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t192 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t192 = t171.
-        DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA(t196) = VALUE abap_bool( ).
-        IF t192 IS INITIAL.
-          t196 = abap_true.
-        ELSEIF t192->has = abap_false.
-          t196 = abap_true.
-        ENDIF.
-        IF t196 = abap_true.
-          CREATE OBJECT t190.
-        ELSE.
-          DATA t200 TYPE REF TO zif_lnt_file.
-          t200 = t166->get_xml_file( ).
-          DATA t203 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF xsdbool( t200 IS INITIAL ) = abap_true.
-            CREATE OBJECT t203.
-          ELSE.
-            DATA(t213) = VALUE string( ).
-            t213 = t171->value.
-            t203 = me->check_xml( i_xml = t213 i_file = t200 ).
-          ENDIF.
-          t190 = t203.
-        ENDIF.
-        result = t190.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_interface ) = abap_true.
+      DATA t166 TYPE REF TO zcl_lnt_ob_interface.
+      DATA t167 TYPE REF TO zcl_lnt_ob_interface.
+      DATA t169 TYPE REF TO object.
+      t169 = t1.
+      t167 ?= t169.
+      t166 = t167.
+      DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      DATA t173 TYPE REF TO zcl_lnt_abstract_object.
+      t173 = t166.
+      DATA t176 TYPE REF TO zif_lnt_file.
+      t176 = t173->get_xml_file( ).
+      DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      IF xsdbool( t176 IS BOUND ) = abap_true.
+        DATA(t184) = VALUE string( ).
+        t184 = t176->get_raw( ).
+        DATA(t187) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+        t187->has = abap_true.
+        t187->value = t184.
+        t179 = t187.
+      ELSE.
+        CLEAR t179.
+      ENDIF.
+      t171 = t179.
+      DATA t190 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      DATA t192 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      t192 = t171.
+      DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA(t196) = VALUE abap_bool( ).
+      IF t192 IS INITIAL.
+        t196 = abap_true.
+      ELSEIF t192->has = abap_false.
+        t196 = abap_true.
+      ENDIF.
+      IF t196 = abap_true.
+        CREATE OBJECT t190.
+      ELSE.
+        DATA t200 TYPE REF TO zif_lnt_file.
+        t200 = t166->get_xml_file( ).
+        DATA t203 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        IF xsdbool( t200 IS INITIAL ) = abap_true.
+          CREATE OBJECT t203.
+        ELSE.
+          DATA(t213) = VALUE string( ).
+          t213 = t171->value.
+          t203 = me->check_xml( i_xml = t213 i_file = t200 ).
+        ENDIF.
+        t190 = t203.
+      ENDIF.
+      result = t190.
+      RETURN.
+    ENDIF.
+
     CREATE OBJECT result.
 
   ENDMETHOD.
@@ -615,7 +613,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
             DATA t124 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t124.
             DATA t125 TYPE REF TO object.
-            CLEAR t125.
             CLEAR t124.
             t125 = t120.
             TRY.
@@ -643,7 +640,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       DATA(t128) = |Remove description for |.
       DATA(t129) = VALUE string( ).
       DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t130.
       t130 = t119->get( p0 = |CMPNAME| ).
       IF t130 IS BOUND.
         IF t130->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t130->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -693,7 +689,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       CLEAR t143.
       DATA(t146) = VALUE string( ).
       DATA t147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t147.
       t147 = t119->get( p0 = |CMPNAME| ).
       IF t147 IS BOUND.
         IF t147->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t147->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -760,7 +755,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       CLEAR t169.
       DATA(t173) = VALUE string( ).
       DATA t174 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t174.
       DATA(t179) = VALUE string( ).
       DATA(t180) = |Ensures you have no descriptions in metadata of methods, par|.
       t180 = t180 && |ameters, etc.\n\nClass descriptions are required, see rule des|.
@@ -768,10 +762,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       t179 = t180.
       DATA t181 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t181.
-      DATA t184 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t184.
-      CREATE OBJECT t184.
-      t181 = t184.
+      CREATE OBJECT t181.
       DATA t186 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t186.
       CLEAR t186.
@@ -842,7 +833,6 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       CLEAR t213.
       DATA(t215) = VALUE string( ).
       DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t216.
       t216 = t119->get( p0 = |CMPNAME| ).
       IF t216 IS BOUND.
         IF t216->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t216->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

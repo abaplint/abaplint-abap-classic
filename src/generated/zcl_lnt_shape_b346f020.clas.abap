@@ -374,7 +374,6 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
               IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                 t3 ?= t1.
                 DATA t4 TYPE REF TO object.
-                CLEAR t4.
                 t4 = t3->as_ref( ).
                 t2 ?= t4.
               ELSE.
@@ -411,7 +410,6 @@ CLASS zcl_lnt_shape_b346f020 IMPLEMENTATION.
               IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                 t7 ?= t5.
                 DATA t8 TYPE REF TO object.
-                CLEAR t8.
                 t8 = t7->as_ref( ).
                 t6 ?= t8.
               ELSE.

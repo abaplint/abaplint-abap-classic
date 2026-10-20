@@ -207,7 +207,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
               DATA t64 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t64.
               DATA t65 TYPE REF TO object.
-              CLEAR t65.
               CLEAR t64.
               t65 = t60.
               TRY.
@@ -232,7 +231,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           ENDIF.
         ENDIF.
         DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t69.
         t69 = t59.
         DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t71.
@@ -255,10 +253,7 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         ENDIF.
         DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t82.
-        DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t83.
-        CREATE OBJECT t83.
-        t82 = t83.
+        CREATE OBJECT t82.
         DATA t84 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t84.
         DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -266,7 +261,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t86.
         DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t87.
         t87 = t59->get( p0 = |FIELDS| ).
         DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t91.
@@ -323,7 +317,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
                 DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t103.
                 DATA t104 TYPE REF TO object.
-                CLEAR t104.
                 CLEAR t103.
                 t104 = t99.
                 TRY.
@@ -350,13 +343,10 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           DATA t106 TYPE REF TO zcl_lnt_dynpro_field.
           CLEAR t106.
           DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t107.
           t107 = t98->get( p0 = |NAME| ).
           DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t111.
           t111 = t98->get( p0 = |TYPE| ).
           DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t115.
           t115 = t98->get( p0 = |CONT_TYPE| ).
           DATA t119 TYPE REF TO zcl_lnt_dynpro_field.
           CLEAR t119.
@@ -407,7 +397,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           t136 = t137.
           DATA(t144) = VALUE f( ).
           DATA t146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t146.
           t146 = t98->get( p0 = |LENGTH| ).
           DATA t151 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t151.
@@ -424,7 +413,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           t144 = zcl_lnt_dynpros_module=>parse_number( i_value = t151 ).
           DATA(t158) = VALUE f( ).
           DATA t160 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t160.
           t160 = t98->get( p0 = |VISLENGTH| ).
           DATA t165 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t165.
@@ -441,7 +429,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           t158 = zcl_lnt_dynpros_module=>parse_number( i_value = t165 ).
           DATA(t172) = VALUE f( ).
           DATA t174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t174.
           t174 = t98->get( p0 = |LINE| ).
           DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t179.
@@ -458,7 +445,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           t172 = zcl_lnt_dynpros_module=>parse_number( i_value = t179 ).
           DATA(t186) = VALUE f( ).
           DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t188.
           t188 = t98->get( p0 = |COLUMN| ).
           DATA t193 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t193.
@@ -474,7 +460,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
           ENDIF.
           t186 = zcl_lnt_dynpros_module=>parse_number( i_value = t193 ).
           DATA t202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t202.
           t202 = t98->get( p0 = |HEIGHT| ).
           DATA t207 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t207.
@@ -579,7 +564,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         DATA t240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t240.
         DATA t242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t242.
         t242 = t59->get( p0 = |HEADER| ).
         DATA t246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t246.
@@ -598,7 +582,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         DATA t253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t253.
         DATA t255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t255.
         t255 = t59->get( p0 = |HEADER| ).
         DATA t259 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t259.
@@ -617,7 +600,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         DATA t266 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t266.
         DATA t268 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t268.
         t268 = t59->get( p0 = |HEADER| ).
         DATA t272 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t272.
@@ -636,7 +618,6 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
         DATA t279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t279.
         DATA t281 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t281.
         t281 = t59->get( p0 = |HEADER| ).
         DATA t285 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t285.

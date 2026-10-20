@@ -175,10 +175,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
         RETURN.
       ENDIF.
       DATA t36 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      DATA t37 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t37.
-      CREATE OBJECT t37 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->g_c_i_s_r_m_o_o_d_t_t_m_o_o_d( ) )->zlnt_view_read_sr_51808c27f6e2( ) flags = |i|.
-      t36 = t37.
+      CREATE OBJECT t36 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = CAST zcl_lnt_mdf_onl_own_db_tbl_cnf( me->g_c_i_s_r_m_o_o_d_t_t_m_o_o_d( ) )->zlnt_view_read_sr_51808c27f6e2( ) flags = |i|.
       DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t41 = t17->statements.
       DATA t46 TYPE REF TO zcl_lnt_statement_node.
@@ -286,7 +283,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               CLEAR t107.
               DATA(t110) = VALUE string( ).
               DATA t111 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t111.
               DATA t118 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t118.
               DATA(t122) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -391,7 +387,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               t110 = t111->title.
               DATA(t171) = VALUE string( ).
               DATA t172 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t172.
               DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t179.
               DATA(t183) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -531,7 +526,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
             DATA t264 TYPE REF TO zcl_lnt_position.
             t264 = t65->get_first_token( )->start.
             DATA t272 TYPE REF TO zif_lnt_spaghetti_scope_node.
-            CLEAR t272.
             DATA t274 TYPE REF TO zif_lnt_spaghetti_scope.
             t274 = t6.
             DATA t276 TYPE REF TO zcl_lnt_position.
@@ -573,7 +567,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               CLEAR t305.
               DATA(t308) = VALUE string( ).
               DATA t309 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t309.
               DATA t316 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t316.
               DATA(t320) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -678,7 +671,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               t308 = t309->title.
               DATA(t369) = VALUE string( ).
               DATA t370 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t370.
               DATA t377 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t377.
               DATA(t381) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -815,7 +807,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               CLEAR t449.
               DATA(t452) = VALUE string( ).
               DATA t453 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t453.
               DATA t460 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t460.
               DATA(t464) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -920,7 +911,6 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
               t452 = t453->title.
               DATA(t513) = VALUE string( ).
               DATA t514 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t514.
               DATA t521 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t521.
               DATA(t525) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

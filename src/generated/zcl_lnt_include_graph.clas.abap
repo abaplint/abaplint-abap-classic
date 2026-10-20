@@ -143,7 +143,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       IF t6 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t8 ?= t6.
         DATA t9 TYPE REF TO object.
-        CLEAR t9.
         t9 = t8->as_ref( ).
         t5 ?= t9.
       ELSE.
@@ -345,7 +344,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
       IF t4 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t6 ?= t4.
         DATA t7 TYPE REF TO object.
-        CLEAR t7.
         t7 = t6->as_ref( ).
         t3 ?= t7.
       ELSE.
@@ -373,7 +371,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
         IF t14 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t16 ?= t14.
           DATA t17 TYPE REF TO object.
-          CLEAR t17.
           t17 = t16->as_ref( ).
           t13 ?= t17.
         ELSE.
@@ -384,7 +381,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
         DATA(t20) = VALUE i( ).
         DATA(t21) = VALUE string( ).
         DATA t22 TYPE REF TO zcl_lnt_abstract_file.
-        CLEAR t22.
         t22 = t13.
         t21 = t22->filename.
         DATA(t26) = |.prog.screen_|.
@@ -403,7 +399,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA(t30) = VALUE i( ).
           DATA(t31) = VALUE string( ).
           DATA t32 TYPE REF TO zcl_lnt_abstract_file.
-          CLEAR t32.
           t32 = t13.
           t31 = t32->filename.
           DATA(t36) = |.fugr.screen_|.
@@ -443,18 +438,15 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           IF t45 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t47 ?= t45.
             DATA t48 TYPE REF TO object.
-            CLEAR t48.
             t48 = t47->as_ref( ).
             t44 ?= t48.
           ELSE.
             t44 ?= t45.
           ENDIF.
           DATA t50 TYPE REF TO zif_lnt_statement.
-          CLEAR t50.
           t50 = t44->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           IF xsdbool( t50 IS BOUND AND t50 IS INSTANCE OF zcl_lnt_include ) = abap_true.
             DATA t52 TYPE REF TO zcl_lnt_expression_node.
-            CLEAR t52.
             DATA(t55) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
             t52 = t44->find_first_expression( i_type_9913 = t55 ).
             DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -462,9 +454,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             CLEAR t59.
             IF xsdbool( t52 IS INITIAL ) = abap_true.
               DATA t63 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-              CLEAR t63.
               DATA t64 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-              CLEAR t64.
               DATA(t68) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t68->has = abap_true.
               t68->value = |unexpected Include node|.
@@ -475,7 +465,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
               DATA t70 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t70.
               DATA t71 TYPE REF TO object.
-              CLEAR t71.
               CLEAR t70.
               t71 = t64.
               TRY.
@@ -523,7 +512,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
             DATA(t92) = VALUE string( ).
             t92 = t72.
             DATA t95 TYPE REF TO zlnt_runtime_map__1a1c43cd0638.
-            CLEAR t95.
             t95 = me->graph->vertices_includename_index.
             DATA(t97) = VALUE string( ).
             DATA(t99) = strlen( t92 ).
@@ -571,10 +559,8 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 t124 = |{ t125 }{ | not found| }|.
                 DATA(t131) = VALUE string( ).
                 DATA t133 TYPE REF TO zcl_lnt_check_include.
-                CLEAR t133.
                 t133 = NEW zcl_lnt_check_include( ).
                 DATA t135 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t135.
                 DATA t142 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 CLEAR t142.
                 DATA(t145) = |\n* Reports unused includes\n* Errors if the includes are not |.
@@ -587,11 +573,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t148 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                 CLEAR t148.
                 DATA t152 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t152.
-                DATA t153 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t153.
-                CREATE OBJECT t153.
-                t152 = t153.
+                CREATE OBJECT t152.
                 t152->load( ).
                 APPEND |Syntax| TO t152->items.
                 t152->save( ).
@@ -687,10 +669,8 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 t199 = |{ t200 }{ t72 }|.
                 DATA(t203) = VALUE string( ).
                 DATA t205 TYPE REF TO zcl_lnt_check_include.
-                CLEAR t205.
                 t205 = NEW zcl_lnt_check_include( ).
                 DATA t207 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t207.
                 DATA t214 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 CLEAR t214.
                 DATA(t217) = |\n* Reports unused includes\n* Errors if the includes are not |.
@@ -703,11 +683,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t220 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                 CLEAR t220.
                 DATA t224 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t224.
-                DATA t225 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t225.
-                CREATE OBJECT t225.
-                t224 = t225.
+                CREATE OBJECT t224.
                 t224->load( ).
                 APPEND |Syntax| TO t224->items.
                 t224->save( ).
@@ -794,20 +770,15 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 t260->save( ).
               ELSE.
                 DATA t262 TYPE REF TO zcl_lnt_graph.
-                CLEAR t262.
                 t262 = me->graph.
                 DATA t264 TYPE REF TO zcl_lnt_ivertex.
-                CLEAR t264.
                 t264 = t88.
                 DATA(t267) = VALUE string( ).
                 DATA t269 TYPE REF TO zcl_lnt_abstract_file.
-                CLEAR t269.
                 t269 = t13.
                 t267 = t269->filename.
                 DATA t275 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t275.
                 DATA t276 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
-                CLEAR t276.
                 t276 = t262->edges.
                 DATA(t278) = VALUE string( ).
                 t278 = t264->filename.
@@ -817,9 +788,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 CLEAR t280.
                 IF xsdbool( t275 IS INITIAL ) = abap_true.
                   DATA t284 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
-                  CLEAR t284.
                   DATA t285 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
-                  CLEAR t285.
                   t285 = t262->edges.
                   DATA(t287) = VALUE string( ).
                   t287 = t264->filename.
@@ -829,9 +798,7 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                   t284 = t285->set( p0 = t287 p1 = t289 ).
                 ENDIF.
                 DATA t290 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-                CLEAR t290.
                 DATA t292 TYPE REF TO zlnt_runtime_map__9f51cbbe9de8.
-                CLEAR t292.
                 t292 = t262->edges.
                 DATA(t294) = VALUE string( ).
                 t294 = t264->filename.
@@ -884,7 +851,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
           DATA t18 TYPE REF TO zcl_lnt_ivertex.
           CLEAR t18.
           DATA t19 TYPE REF TO zcl_lnt_ivertex.
-          CLEAR t19.
           DATA t20 TYPE string.
           DATA t22 TYPE REF TO zcl_lnt_abstract_file.
           t22 = t10.
@@ -1227,7 +1193,6 @@ CLASS zcl_lnt_include_graph IMPLEMENTATION.
                 DATA t213 TYPE REF TO zcl_lnt_ivertex.
                 CLEAR t213.
                 DATA t214 TYPE REF TO zcl_lnt_ivertex.
-                CLEAR t214.
                 DATA t215 TYPE string.
                 DATA t217 TYPE REF TO zcl_lnt_abstract_file.
                 t217 = t206->file.

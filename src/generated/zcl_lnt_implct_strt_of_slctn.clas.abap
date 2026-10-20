@@ -290,7 +290,6 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
           t97 ?= t99.
           DATA(t101) = VALUE string( ).
           DATA t102 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t102.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t109.
           DATA(t112) = |Only runs for executable programs\n\nhttps://help.sap.com/doc/|.

@@ -229,7 +229,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
         ENDIF.
         DATA(t40) = VALUE abap_bool( ).
         DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t41.
         DATA t46 TYPE string.
         t46 = t35->str.
         DATA(t48) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -239,7 +238,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
         DATA t50 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t50.
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t51.
         DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t58.
         DATA(t61) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -398,7 +396,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
         CLEAR t135.
         DATA(t139) = VALUE string( ).
         DATA t140 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t140.
         DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t147.
         DATA(t150) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -543,7 +540,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
           CLEAR t221.
           DATA(t225) = VALUE string( ).
           DATA t226 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t226.
           DATA t233 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t233.
           DATA(t236) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -783,7 +779,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
             CLEAR t364.
             DATA(t368) = VALUE string( ).
             DATA t369 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t369.
             DATA t376 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t376.
             DATA(t379) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1055,7 +1050,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
               CLEAR t528.
               DATA(t532) = VALUE string( ).
               DATA t533 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t533.
               DATA t540 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t540.
               DATA(t543) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1234,7 +1228,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                 CLEAR t653.
                 DATA(t657) = VALUE string( ).
                 DATA t658 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t658.
                 DATA t665 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 CLEAR t665.
                 DATA(t668) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1413,7 +1406,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                   CLEAR t778.
                   DATA(t782) = VALUE string( ).
                   DATA t783 TYPE REF TO zcl_lnt_irule_metadata.
-                  CLEAR t783.
                   DATA t790 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                   CLEAR t790.
                   DATA(t793) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1592,7 +1584,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                     CLEAR t903.
                     DATA(t907) = VALUE string( ).
                     DATA t908 TYPE REF TO zcl_lnt_irule_metadata.
-                    CLEAR t908.
                     DATA t915 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     CLEAR t915.
                     DATA(t918) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1771,7 +1762,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                       CLEAR t1028.
                       DATA(t1032) = VALUE string( ).
                       DATA t1033 TYPE REF TO zcl_lnt_irule_metadata.
-                      CLEAR t1033.
                       DATA t1040 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                       CLEAR t1040.
                       DATA(t1043) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -1943,7 +1933,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                         CLEAR t1147.
                         DATA(t1151) = VALUE string( ).
                         DATA t1152 TYPE REF TO zcl_lnt_irule_metadata.
-                        CLEAR t1152.
                         DATA t1159 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                         CLEAR t1159.
                         DATA(t1162) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -2122,7 +2111,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                           CLEAR t1271.
                           DATA(t1275) = VALUE string( ).
                           DATA t1276 TYPE REF TO zcl_lnt_irule_metadata.
-                          CLEAR t1276.
                           DATA t1283 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                           CLEAR t1283.
                           DATA(t1286) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -2320,7 +2308,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
                             CLEAR t1407.
                             DATA(t1411) = VALUE string( ).
                             DATA t1412 TYPE REF TO zcl_lnt_irule_metadata.
-                            CLEAR t1412.
                             DATA t1419 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                             CLEAR t1419.
                             DATA(t1422) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.
@@ -2630,38 +2617,38 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
         DATA(t28) = 1.
         t3 = t3 + t28.
         CONTINUE.
+      ENDIF.
+      DATA t29 TYPE abap_bool.
+      DATA t30 TYPE abap_bool.
+      DATA t31 TYPE REF TO zif_lnt_statement.
+      t31 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+      t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_end_if ).
+      t29 = t30.
+      IF t30 = abap_false.
+        DATA t34 TYPE REF TO zif_lnt_statement.
+        t34 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+        t29 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_end_test_seam ).
+      ENDIF.
+      IF t29 = abap_true.
+        DATA(t38) = 1.
+        t3 = t3 + t38.
+        CONTINUE.
+      ENDIF.
+      DATA(t40) = VALUE i( ).
+      DATA(t42) = |SY-DBCNT|.
+      DATA(t43) = strlen( t18 ).
+      IF t42 IS INITIAL.
+        t40 = 0.
       ELSE.
-        DATA t29 TYPE abap_bool.
-        DATA t30 TYPE abap_bool.
-        DATA t31 TYPE REF TO zif_lnt_statement.
-        t31 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        t30 = xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_end_if ).
-        t29 = t30.
-        IF t30 = abap_false.
-          DATA t34 TYPE REF TO zif_lnt_statement.
-          t34 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-          t29 = xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_end_test_seam ).
-        ENDIF.
-        IF t29 = abap_true.
-          DATA(t38) = 1.
-          t3 = t3 + t38.
-          CONTINUE.
-        ELSE.
-          DATA(t40) = VALUE i( ).
-          DATA(t42) = |SY-DBCNT|.
-          DATA(t43) = strlen( t18 ).
-          IF t42 IS INITIAL.
-            t40 = 0.
-          ELSE.
-            FIND t42 IN t18 MATCH OFFSET t40.
-            IF sy-subrc <> 0.
-              t40 = -1.
-            ENDIF.
-          ENDIF.
-          result = xsdbool( t40 >= 0 ).
-          RETURN.
+        FIND t42 IN t18 MATCH OFFSET t40.
+        IF sy-subrc <> 0.
+          t40 = -1.
         ENDIF.
       ENDIF.
+      result = xsdbool( t40 >= 0 ).
+      RETURN.
+
+
       DATA(t47) = 1.
       t3 = t3 + t47.
     ENDDO.
@@ -2915,7 +2902,6 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
         DATA t148 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t148.
         DATA t150 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t150.
         DATA t157 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t157.
         DATA(t160) = |Pseudo comment "#EC CI_SUBRC can be added to suppress findin|.

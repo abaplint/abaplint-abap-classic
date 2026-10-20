@@ -233,7 +233,6 @@ CLASS zcl_lnt_prefer_xsdbool IMPLEMENTATION.
       CLEAR t71.
       DATA(t75) = VALUE string( ).
       DATA t76 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t76.
       DATA t83 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t83.
       DATA(t86) = |Activates if language version is v740sp08 or above.\n\nhttps:/|.

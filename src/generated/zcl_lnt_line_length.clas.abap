@@ -215,7 +215,6 @@ CLASS zcl_lnt_line_length IMPLEMENTATION.
         t73 = t74.
         DATA(t78) = VALUE string( ).
         DATA t79 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t79.
         DATA t86 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t86.
         DATA(t89) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -404,7 +403,6 @@ CLASS zcl_lnt_line_length IMPLEMENTATION.
           t191 = t192.
           DATA(t196) = VALUE string( ).
           DATA t197 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t197.
           DATA t204 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t204.
           DATA(t207) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

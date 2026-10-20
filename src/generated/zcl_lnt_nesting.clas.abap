@@ -235,7 +235,6 @@ CLASS zcl_lnt_nesting IMPLEMENTATION.
         t80 = |{ t87 }{ t81 }|.
         DATA(t90) = VALUE string( ).
         DATA t91 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t91.
         DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t98.
         DATA(t101) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

@@ -462,7 +462,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       IF t393 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t395 ?= t393.
         DATA t396 TYPE REF TO object.
-        CLEAR t396.
         t396 = t395->as_ref( ).
         t392 ?= t396.
       ELSE.
@@ -473,7 +472,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t399 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t399.
       DATA t401 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t401.
       DATA(t404) = zlnt_runtime_desc_78196487750d=>zlnt_member_d163_115ae64060bd.
       t401 = t392->find_direct_expression( i_type_9913 = t404 ).
       DATA t405 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -536,7 +534,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t439 TYPE REF TO zif_lnt_event_definition.
         CLEAR t439.
         DATA t442 TYPE REF TO object.
-        CLEAR t442.
         t442 = t425->get( p0 = t430 ).
         DATA t443 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t443.
@@ -544,7 +541,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         IF t442 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t443 ?= t442.
           DATA t444 TYPE REF TO object.
-          CLEAR t444.
           t444 = t443->as_ref( ).
           t439 ?= t444.
         ELSE.
@@ -595,7 +591,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       CLEAR t465.
       IF xsdbool( xsdbool( t432 IS INITIAL ) = abap_false ) = abap_true.
         DATA t470 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t470.
         t470 = t2->issues.
         DATA t472 TYPE REF TO zcl_lnt_issue.
         CLEAR t472.
@@ -607,7 +602,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA(t478) = |Event |.
         DATA(t479) = VALUE string( ).
         DATA t480 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t480.
         t480 = t397.
         DATA(t482) = VALUE string( ).
         DATA(t483) = VALUE abap_bool( ).
@@ -636,7 +630,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       ENDIF.
       DATA(t492) = me->events_f95a.
       DATA t493 TYPE REF TO zcl_lnt_event_definition.
-      CLEAR t493.
       t493 = NEW zcl_lnt_event_definition( i_node = t392 i_visibility_33e6 = CONV f( 3 ) i_input_967e = t2 ).
       t492->load( ).
       APPEND t493 TO t492->items.
@@ -1297,7 +1290,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t2 = t7->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t11.
       t11 = t2->next( ).
       IF t11->done = abap_true.
         EXIT.
@@ -1425,13 +1417,11 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t2 = t7->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t11.
       t11 = t2->next( ).
       IF t11->done = abap_true.
         EXIT.
       ENDIF.
       DATA t16 TYPE REF TO zif_lnt_method_definition.
-      CLEAR t16.
       t16 = t11->value.
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
@@ -1684,7 +1674,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t9 = NEW zlnt_runtime_map__fed782b2fc26( ).
     DO.
       DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t12.
       t12 = t5.
       DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t14.
@@ -1701,10 +1690,8 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t19 TYPE REF TO zif_lnt_class_definition.
       CLEAR t19.
       DATA t21 TYPE REF TO zcl_lnt_current_scope.
-      CLEAR t21.
       t21 = t2.
       DATA t23 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t23.
       DATA(t26) = VALUE string( ).
       t26 = t5->value.
       DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1714,7 +1701,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t30 TYPE REF TO zif_lnt_class_definition.
       CLEAR t30.
       DATA t32 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t32.
       t32 = t23.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t34.
@@ -1731,7 +1717,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t40 TYPE REF TO zif_lnt_class_definition.
         CLEAR t40.
         DATA t42 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t42.
         t42 = t21->current.
         DATA t45 TYPE REF TO zif_lnt_class_definition.
         CLEAR t45.
@@ -1739,7 +1724,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           CLEAR t45.
         ELSE.
           DATA t50 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-          CLEAR t50.
           t50 = t42.
           DATA(t52) = VALUE string( ).
           t52 = t23->value.
@@ -1752,13 +1736,9 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t54 = t40.
         ELSE.
           DATA t63 TYPE REF TO zcl_lnt_class.
-          CLEAR t63.
           DATA t64 TYPE REF TO zcl_lnt_class.
           CLEAR t64.
-          DATA t65 TYPE REF TO zif_lnt_object.
-          CLEAR t65.
           DATA t66 TYPE REF TO zif_lnt_registry.
-          CLEAR t66.
           t66 = t21->reg.
           DATA t68 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t68.
@@ -1771,10 +1751,8 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           DATA(t77) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t77->has = abap_true.
           t77->value = t75.
-          t65 = t66->get_object( i_type_9913 = t68 i_name = t77 ).
           DATA t79 TYPE REF TO object.
-          CLEAR t79.
-          t79 = t65.
+          t79 = t66->get_object( i_type_9913 = t68 i_name = t77 ).
           t64 ?= t79.
           t63 = t64.
           DATA t80 TYPE REF TO zif_lnt_class_definition.
@@ -1794,7 +1772,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t89 TYPE REF TO zif_lnt_method_definitions.
       CLEAR t89.
       DATA t91 TYPE REF TO zif_lnt_class_definition.
-      CLEAR t91.
       t91 = t19.
       DATA t93 TYPE REF TO zif_lnt_method_definitions.
       CLEAR t93.
@@ -1814,11 +1791,9 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       t87 = t100.
       IF xsdbool( xsdbool( t87 IS INITIAL ) = abap_false ) = abap_true.
         DATA t110 TYPE REF TO zif_lnt_generator_0f59ca3c.
-        CLEAR t110.
         t110 = t87->iterate( ).
         DO.
           DATA t115 TYPE REF TO zcl_lnt_generator_0f216880.
-          CLEAR t115.
           t115 = t110->next( ).
           IF t115->done = abap_true.
             EXIT.
@@ -1976,7 +1951,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t236 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t236.
       DATA t238 TYPE REF TO zif_lnt_class_definition.
-      CLEAR t238.
       t238 = t19.
       DATA t240 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t240.
@@ -1991,10 +1965,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       IF xsdbool( t236 IS BOUND ) = abap_true.
         t247 = t236.
       ELSE.
-        DATA t252 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t252.
-        CREATE OBJECT t252.
-        t247 = t252.
+        CREATE OBJECT t247.
       ENDIF.
       t235 = t247.
       DATA t253 TYPE REF TO zcl_lnt_alias.
@@ -2016,7 +1987,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         IF t254 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t256 ?= t254.
           DATA t257 TYPE REF TO object.
-          CLEAR t257.
           t257 = t256->as_ref( ).
           t253 ?= t257.
         ELSE.
@@ -2027,7 +1997,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA(t260) = VALUE string( ).
         DATA(t261) = VALUE string( ).
         DATA t262 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t262.
         t262 = t253.
         DATA(t265) = VALUE string( ).
         t265 = t262->token->str.
@@ -2083,7 +2052,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t258 = t7->add( p0 = t260 ).
       ENDDO.
       DATA t292 TYPE REF TO zif_lnt_class_definition.
-      CLEAR t292.
       t292 = t19.
       DATA t294 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t294.
@@ -2098,13 +2066,11 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t301 = CAST zif_lnt_method_definitions( me->get_method_definitions( ) )->get_all( )->iterate( ).
     DO.
       DATA t306 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t306.
       t306 = t301->next( ).
       IF t306->done = abap_true.
         EXIT.
       ENDIF.
       DATA t311 TYPE REF TO zif_lnt_method_definition.
-      CLEAR t311.
       t311 = t306->value.
       DATA(t316) = VALUE abap_bool( ).
       DATA(t317) = VALUE abap_bool( ).
@@ -2240,7 +2206,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t397 = t398.
           IF t398 = abap_true.
             DATA t403 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            CLEAR t403.
             t403 = t371.
             DATA t405 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t405.
@@ -2343,13 +2308,11 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
     t2 = t7->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t11.
       t11 = t2->next( ).
       IF t11->done = abap_true.
         EXIT.
       ENDIF.
       DATA t16 TYPE REF TO zif_lnt_method_definition.
-      CLEAR t16.
       t16 = t11->value.
       DATA(t21) = VALUE abap_bool( ).
       DATA(t22) = VALUE abap_bool( ).
@@ -2553,7 +2516,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       IF t9 = abap_false.
         DATA(t61) = me->method_defs.
         DATA t62 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t62.
         DATA t65 TYPE string.
         t65 = t3->get_name( ).
         DATA(t67) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -2688,7 +2650,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t50 TYPE REF TO zcl_lnt_current_scope.
       t50 = t2->scope.
       DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t53.
       DATA(t57) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t57->has = abap_true.
       t57->value = t42.
@@ -2730,7 +2691,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t83 = t69.
         ELSE.
           DATA t92 TYPE REF TO zcl_lnt_class.
-          CLEAR t92.
           DATA t93 TYPE REF TO zcl_lnt_class.
           CLEAR t93.
           DATA t95 TYPE REF TO zif_lnt_registry.
@@ -2831,7 +2791,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t118->add_reference( i_usage = t120 i_referencing = t124 i_type_9913 = t130 i_filename = t132 i_extra = t136 ).
       ELSE.
         DATA t162 TYPE REF TO zcl_lnt_shape_59e28496.
-        CLEAR t162.
         DATA t163 TYPE REF TO zcl_lnt_current_scope.
         t163 = t2->scope.
         DATA(t168) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -2847,7 +2806,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t183 = t2->scope->reg.
           t182 = NEW zcl_lnt_ddic( i_reg_f149 = t183 ).
           DATA t185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t185.
           DATA(t189) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t189->has = abap_true.
           t189->value = t42.
@@ -3143,14 +3101,12 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       IF t7 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t9 ?= t7.
         DATA t10 TYPE REF TO object.
-        CLEAR t10.
         t10 = t9->as_ref( ).
         t6 ?= t10.
       ELSE.
         t6 ?= t7.
       ENDIF.
       DATA t14 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t14.
       t14 = t6->find_direct_token_by_text( i_text = |PARTIALLY| ).
       DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t17.
@@ -3160,7 +3116,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t22 TYPE REF TO zcl_lnt_abstract_token.
       CLEAR t22.
       DATA t24 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t24.
       DATA(t27) = zlnt_runtime_desc_78196487750d=>zlnt_member_d204_9c49dd4bb1b2.
       t24 = t6->find_first_expression( i_type_9913 = t27 ).
       DATA t28 TYPE REF TO zcl_lnt_abstract_token.
@@ -3176,9 +3131,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       CLEAR t38.
       IF xsdbool( t22 IS INITIAL ) = abap_true.
         DATA t42 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        CLEAR t42.
         DATA t43 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        CLEAR t43.
         DATA(t47) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t47->has = abap_true.
         t47->value = |ClassDefinition, unable to find interface token|.
@@ -3189,7 +3142,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t49 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t49.
         DATA t50 TYPE REF TO object.
-        CLEAR t50.
         CLEAR t49.
         t50 = t43.
         TRY.
@@ -3226,7 +3178,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       t51 = t52.
       DATA(t60) = me->implementing.
       DATA t61 TYPE REF TO zcl_lnt_iimplementing.
-      CLEAR t61.
       t61 = NEW zcl_lnt_iimplementing( i_name = t51 i_partial = t19 ).
       CREATE OBJECT t61->zlnt_view_ownkeys_b0e8086400eb.
       t61->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -3254,10 +3205,8 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t72 TYPE REF TO zif_lnt_interface_definition.
       CLEAR t72.
       DATA t74 TYPE REF TO zcl_lnt_current_scope.
-      CLEAR t74.
       t74 = t1->scope.
       DATA t77 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t77.
       DATA(t81) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t81->has = abap_true.
       t81->value = t51.
@@ -3265,7 +3214,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       DATA t83 TYPE REF TO zif_lnt_interface_definition.
       CLEAR t83.
       DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t85.
       t85 = t77.
       DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t87.
@@ -3282,7 +3230,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t93 TYPE REF TO zif_lnt_interface_definition.
         CLEAR t93.
         DATA t95 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t95.
         t95 = t74->current.
         DATA t98 TYPE REF TO zif_lnt_interface_definition.
         CLEAR t98.
@@ -3290,7 +3237,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           CLEAR t98.
         ELSE.
           DATA t103 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-          CLEAR t103.
           t103 = t95.
           DATA(t105) = VALUE string( ).
           t105 = t77->value.
@@ -3303,13 +3249,9 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t107 = t93.
         ELSE.
           DATA t116 TYPE REF TO zcl_lnt_ob_interface.
-          CLEAR t116.
           DATA t117 TYPE REF TO zcl_lnt_ob_interface.
           CLEAR t117.
-          DATA t118 TYPE REF TO zif_lnt_object.
-          CLEAR t118.
           DATA t119 TYPE REF TO zif_lnt_registry.
-          CLEAR t119.
           t119 = t74->reg.
           DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t121.
@@ -3322,10 +3264,8 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           DATA(t130) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t130->has = abap_true.
           t130->value = t128.
-          t118 = t119->get_object( i_type_9913 = t121 i_name = t130 ).
           DATA t132 TYPE REF TO object.
-          CLEAR t132.
-          t132 = t118.
+          t132 = t119->get_object( i_type_9913 = t121 i_name = t130 ).
           t117 ?= t132.
           t116 = t117.
           DATA t133 TYPE REF TO zif_lnt_interface_definition.
@@ -3342,7 +3282,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
       t72 = t83.
       IF xsdbool( t72 IS BOUND ) = abap_true.
         DATA t145 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t145.
         t145 = t1->scope.
         DATA t147 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t147.
@@ -3352,7 +3291,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t154 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t154.
         DATA t155 TYPE REF TO zif_lnt_interface_definition.
-        CLEAR t155.
         t155 = t72.
         t154 ?= t155.
         t152 = t154.
@@ -3413,23 +3351,19 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t145->add_reference( i_usage = t147 i_referencing = t152 i_type_9913 = t158 i_filename = t160 i_extra = t164 ).
       ELSE.
         DATA t193 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t193.
         t193 = t1->scope.
         DATA t195 TYPE REF TO zcl_lnt_ddic.
-        CLEAR t195.
         DATA t196 TYPE REF TO zif_lnt_registry.
         CLEAR t196.
         t196 = t193->reg.
         t195 = NEW zcl_lnt_ddic( i_reg_f149 = t196 ).
         DATA t198 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t198.
         DATA(t202) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t202->has = abap_true.
         t202->value = t51.
         t198 = t202.
         DATA(t204) = VALUE abap_bool( ).
         DATA t206 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t206.
         t206 = t198.
         DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t208.
@@ -3444,7 +3378,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t204 = abap_true.
         ELSE.
           DATA t214 TYPE REF TO zif_lnt_registry.
-          CLEAR t214.
           t214 = t195->reg.
           DATA(t216) = VALUE string( ).
           t216 = t198->value.
@@ -3452,7 +3385,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         ENDIF.
         IF xsdbool( t204 = abap_false ) = abap_true.
           DATA t219 TYPE REF TO zcl_lnt_current_scope.
-          CLEAR t219.
           t219 = t1->scope.
           DATA t221 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t221.
@@ -3516,7 +3448,6 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
           t219->add_reference( i_usage = t221 i_referencing = t226 i_type_9913 = t227 i_filename = t229 i_extra = t233 ).
         ELSE.
           DATA t257 TYPE REF TO zcl_lnt_current_scope.
-          CLEAR t257.
           t257 = t1->scope.
           DATA t259 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t259.

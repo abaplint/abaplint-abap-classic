@@ -41,20 +41,15 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
       CLEAR t9.
       DATA t10 TYPE REF TO object.
       CLEAR t10.
-      DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-      CLEAR t11.
       IF zcl_lnt_rl_index_module=>zlnt_builtin_init_fcdfa3d496b4 = abap_false.
         zcl_lnt_rl_index_module=>zlnt_builtin_init_fe02a4d442de( ).
       ENDIF.
-      t11 = zcl_lnt_rl_index_module=>ns->get( p0 = t7 ).
       DATA t15 TYPE REF TO object.
-      CLEAR t15.
-      t15 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t11 ).
+      t15 = zlnt_runtime_clas_c216c6067abd=>new( p0 = zcl_lnt_rl_index_module=>ns->get( p0 = t7 ) ).
       t10 ?= t15.
       t9 = t10.
       DATA(t16) = VALUE abap_bool( ).
       DATA t17 TYPE REF TO object.
-      CLEAR t17.
       t17 = t9.
       DATA t18 TYPE REF TO zif_lnt_rule.
       CLEAR t18.
@@ -70,7 +65,6 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
         DATA t20 TYPE REF TO zif_lnt_rule.
         CLEAR t20.
         DATA t21 TYPE REF TO object.
-        CLEAR t21.
         t21 = t9.
         t20 ?= t21.
         t1->load( ).

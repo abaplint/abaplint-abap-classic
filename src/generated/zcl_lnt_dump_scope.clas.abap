@@ -267,7 +267,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       IF t176 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t178 ?= t176.
         DATA t179 TYPE REF TO object.
-        CLEAR t179.
         t179 = t178->as_ref( ).
         t175 ?= t179.
       ELSE.
@@ -344,7 +343,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       ENDIF.
       t39 = t39 + 1.
       DATA t40 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t40.
       t40 = t13->get( p0 = t38 ).
       DATA(t45) = VALUE string( ).
       DATA(t46) = VALUE string( ).
@@ -361,9 +359,7 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       DATA(t57) = strlen( t45 ).
       t3 = |{ t45 }{ |</tt>| }|.
       DATA t58 TYPE REF TO zcl_lnt_position.
-      CLEAR t58.
       DATA t60 TYPE REF TO zcl_lnt_fi_identifier.
-      CLEAR t60.
       t60 = t40.
       t58 = t60->token->start.
       DATA(t70) = VALUE string( ).
@@ -440,7 +436,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       ENDIF.
       t137 = t137 + 1.
       DATA t138 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t138.
       t138 = t111->get( p0 = t136 ).
       DATA(t143) = VALUE string( ).
       DATA(t144) = VALUE string( ).
@@ -461,9 +456,7 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       DATA(t157) = strlen( t143 ).
       t3 = |{ t143 }{ |</tt>| }|.
       DATA t158 TYPE REF TO zcl_lnt_position.
-      CLEAR t158.
       DATA t160 TYPE REF TO zcl_lnt_fi_identifier.
-      CLEAR t160.
       t160 = t138.
       t158 = t160->token->start.
       DATA(t170) = VALUE string( ).
@@ -500,7 +493,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       DATA(t206) = strlen( t197 ).
       t3 = |{ t197 }{ t198 }|.
       DATA t207 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t207.
       t207 = t138->meta.
       IF xsdbool( t207 IS BOUND ) = abap_true.
         DATA(t217) = VALUE string( ).
@@ -624,7 +616,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       IF t294 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t296 ?= t294.
         DATA t297 TYPE REF TO object.
-        CLEAR t297.
         t297 = t296->as_ref( ).
         t293 ?= t297.
       ELSE.
@@ -662,7 +653,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       t304 = |{ t305 }{ | | }|.
       DATA(t336) = VALUE string( ).
       DATA t339 TYPE REF TO zcl_lnt_fi_identifier.
-      CLEAR t339.
       t339 = t293->position_7b94.
       DATA(t341) = VALUE string( ).
       t341 = t339->filename.
@@ -673,7 +663,6 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
       t302 = |{ t303 }{ | | }|.
       DATA(t346) = VALUE string( ).
       DATA t349 TYPE REF TO zcl_lnt_fi_identifier.
-      CLEAR t349.
       t349 = t293->position_7b94.
       DATA(t352) = VALUE string( ).
       t352 = t349->token->str.

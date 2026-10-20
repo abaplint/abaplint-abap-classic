@@ -458,7 +458,6 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
           CLEAR t242.
           DATA(t246) = VALUE string( ).
           DATA t247 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t247.
           DATA t252 TYPE string.
           DATA(t253) = |Checks alignment within statements which span multiple lines|.
           t253 = t253 && |.|.

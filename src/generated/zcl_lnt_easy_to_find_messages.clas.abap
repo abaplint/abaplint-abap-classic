@@ -111,13 +111,11 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
     t4 = t1->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t9.
       t9 = t4->next( ).
       IF t9->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_object.
-      CLEAR t14.
       t14 = t9->value.
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
@@ -279,7 +277,6 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
           ENDIF.
           DATA(t87) = VALUE string( ).
           DATA t88 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t88.
           DATA t95 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t95.
           DATA(t98) = |All messages must be statically referenced exactly once\n\nOnl|.
@@ -408,7 +405,6 @@ CLASS zcl_lnt_easy_to_find_messages IMPLEMENTATION.
             ENDIF.
             DATA(t171) = VALUE string( ).
             DATA t172 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t172.
             DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t179.
             DATA(t182) = |All messages must be statically referenced exactly once\n\nOnl|.

@@ -86,7 +86,6 @@ CLASS zcl_lnt_sy_corresponding_body IMPLEMENTATION.
         t40 = zcl_lnt_sy_source=>run_syntax( i_node = t59 i_input_967e = t2 i_target_type = t64 i_write_reference = t65 i_allow_generic_deference = t66 i_read_reference = t67 ).
       ELSE.
         DATA t68 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t68.
         DATA t69 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t69.
         t69 = t46.

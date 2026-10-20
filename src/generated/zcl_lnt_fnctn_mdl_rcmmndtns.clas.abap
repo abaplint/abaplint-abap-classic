@@ -173,7 +173,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
       IF t37 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t39 ?= t37.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         t40 = t39->as_ref( ).
         t36 ?= t40.
       ELSE.
@@ -305,7 +304,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         DATA(t95) = CONV f( 1 ).
         t79 = t79 + t95.
         DATA t101 TYPE REF TO zcl_lnt_recommendations.
-        CLEAR t101.
         t101 = t85.
         DATA(t103) = VALUE abap_bool( ).
         DATA(t105) = VALUE string( ).
@@ -323,7 +321,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         ELSE.
           DATA(t112) = VALUE abap_bool( ).
           DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t114.
           t114 = t101->zlnt_view_read_sr_6d67e9b680e2( ).
           DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t117.
@@ -376,7 +373,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         DATA t159 TYPE REF TO zcl_lnt_recommendations.
         CLEAR t159.
         DATA t160 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t160.
         t160 = me->conf->zlnt_view_read_sr_0a6bdd5621d6( ).
         DATA(t162) = VALUE i( ).
         IF t151 > range_i32_upper.
@@ -440,7 +436,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         DATA t174 TYPE REF TO zcl_lnt_recommendations.
         CLEAR t174.
         DATA t175 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t175.
         t175 = me->conf->zlnt_view_read_sr_0a6bdd5621d6( ).
         DATA(t177) = VALUE i( ).
         IF t151 > range_i32_upper.
@@ -502,7 +497,6 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         t150 = |{ t154 }{ || }|.
         DATA(t188) = VALUE string( ).
         DATA t189 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t189.
         DATA t196 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t196.
         DATA(t200) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -512,11 +506,7 @@ CLASS zcl_lnt_fnctn_mdl_rcmmndtns IMPLEMENTATION.
         DATA t202 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t202.
         DATA t206 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t206.
-        DATA t207 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t207.
-        CREATE OBJECT t207.
-        t206 = t207.
+        CREATE OBJECT t206.
         t206->load( ).
         APPEND |SingleFile| TO t206->items.
         t206->save( ).

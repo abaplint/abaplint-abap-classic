@@ -172,23 +172,23 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
       t26 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t26 IS BOUND AND t26 IS INSTANCE OF zcl_lnt_st_comment ) = abap_true.
         CONTINUE.
+      ENDIF.
+      DATA t29 TYPE REF TO zif_lnt_statement.
+      t29 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+      IF xsdbool( t29 IS BOUND AND t29 IS INSTANCE OF zcl_lnt_type_begin ) = abap_true.
+        t4 = abap_true.
       ELSE.
-        DATA t29 TYPE REF TO zif_lnt_statement.
-        t29 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        IF xsdbool( t29 IS BOUND AND t29 IS INSTANCE OF zcl_lnt_type_begin ) = abap_true.
-          t4 = abap_true.
+        DATA t33 TYPE REF TO zif_lnt_statement.
+        t33 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+        IF xsdbool( t33 IS BOUND AND t33 IS INSTANCE OF zcl_lnt_type_end ) = abap_true.
+          t4 = abap_false.
         ELSE.
-          DATA t33 TYPE REF TO zif_lnt_statement.
-          t33 = t20->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-          IF xsdbool( t33 IS BOUND AND t33 IS INSTANCE OF zcl_lnt_type_end ) = abap_true.
-            t4 = abap_false.
-          ELSE.
-            IF t4 = abap_true.
-              CONTINUE.
-            ENDIF.
+          IF t4 = abap_true.
+            CONTINUE.
           ENDIF.
         ENDIF.
       ENDIF.
+
       DATA t37 TYPE REF TO zcl_lnt_position.
       t37 = t20->get_first_token( )->start.
       DATA(t47) = VALUE abap_bool( ).
@@ -267,7 +267,6 @@ CLASS zcl_lnt_start_at_tab IMPLEMENTATION.
         CLEAR t104.
         DATA(t108) = VALUE string( ).
         DATA t109 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t109.
         DATA t116 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t116.
         DATA(t119) = |Reports max 100 issues per file\nhttps://github.com/SAP/style|.

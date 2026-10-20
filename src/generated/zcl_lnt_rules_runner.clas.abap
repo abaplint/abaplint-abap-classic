@@ -33,7 +33,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
     t7 = t1->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t11.
       t11 = t7->next( ).
       IF t11->done = abap_true.
         EXIT.
@@ -204,7 +203,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         ENDIF.
         t82 = t85.
         DATA t92 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t92.
         DATA(t95) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t95->has = abap_true.
         t95->value = abap_true.
@@ -374,7 +372,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       ENDIF.
       t188 = t191.
       DATA t198 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t198.
       DATA(t201) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t201->has = abap_true.
       t201->value = abap_true.
@@ -398,36 +395,36 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA(t205) = NEW zlnt_exception_un_5f2d02892fe8( ).
         t205->source_location = |src/rules_runner.ts:90:9|.
         RAISE EXCEPTION t205.
-      ELSE.
-        DATA t207 TYPE REF TO zlnt_runtime_prom_22216e6f7fe7.
-        CLEAR t207.
-        DATA t208 TYPE REF TO zif_lnt_progress.
-        CLEAR t208.
-        DATA t210 TYPE REF TO zcl_lnt_irun_input.
-        t210 = t2.
-        DATA t212 TYPE REF TO zif_lnt_progress.
-        CLEAR t212.
-        IF xsdbool( t210 IS INITIAL ) = abap_true.
-          CLEAR t212.
-        ELSE.
-          t212 = t210->progress.
-        ENDIF.
-        t208 = t212.
-        DATA t219 TYPE REF TO zlnt_runtime_prom_22216e6f7fe7.
-        CLEAR t219.
-        IF xsdbool( t208 IS INITIAL ) = abap_true.
-          CLEAR t219.
-        ELSE.
-          DATA t224 TYPE REF TO zif_lnt_progress.
-          t224 = t208.
-          DATA(t227) = |Initialize Rules - |.
-          DATA t228 TYPE string.
-          t228 = t179->get_metadata( )->key.
-          DATA(t231) = strlen( t227 ).
-          t219 = t224->tick( i_text = |{ t227 }{ t228 }| ).
-        ENDIF.
-        t207 = t219.
       ENDIF.
+      DATA t207 TYPE REF TO zlnt_runtime_prom_22216e6f7fe7.
+      CLEAR t207.
+      DATA t208 TYPE REF TO zif_lnt_progress.
+      CLEAR t208.
+      DATA t210 TYPE REF TO zcl_lnt_irun_input.
+      t210 = t2.
+      DATA t212 TYPE REF TO zif_lnt_progress.
+      CLEAR t212.
+      IF xsdbool( t210 IS INITIAL ) = abap_true.
+        CLEAR t212.
+      ELSE.
+        t212 = t210->progress.
+      ENDIF.
+      t208 = t212.
+      DATA t219 TYPE REF TO zlnt_runtime_prom_22216e6f7fe7.
+      CLEAR t219.
+      IF xsdbool( t208 IS INITIAL ) = abap_true.
+        CLEAR t219.
+      ELSE.
+        DATA t224 TYPE REF TO zif_lnt_progress.
+        t224 = t208.
+        DATA(t227) = |Initialize Rules - |.
+        DATA t228 TYPE string.
+        t228 = t179->get_metadata( )->key.
+        DATA(t231) = strlen( t227 ).
+        t219 = t224->tick( i_text = |{ t227 }{ t228 }| ).
+      ENDIF.
+      t207 = t219.
+
       DATA(t232) = t179.
       DATA t233 TYPE REF TO zif_lnt_rule.
       DATA(t235) = me->reg.
@@ -446,7 +443,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       ENDIF.
       t237 = t240.
       DATA t247 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t247.
       DATA(t250) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t250->has = abap_true.
       t250->value = abap_true.
@@ -950,7 +946,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       ENDIF.
       t23 = t23 + 1.
       DATA t25 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t25.
       CREATE OBJECT t25 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t22 flags = |i|.
       t19->load( ).
       APPEND t25 TO t19->items.
@@ -984,7 +979,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         IF t47 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t48 ?= t47.
           DATA t49 TYPE REF TO object.
-          CLEAR t49.
           t49 = t48->as_ref( ).
           t44 ?= t49.
         ELSE.
@@ -997,7 +991,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         t57->value = t50.
         IF zcl_lnt_exclude_helper=>is_excluded( i_filename = t57 i_exclude_patterns = t17 ) = abap_true.
           DATA t60 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t60.
           t60 = t2->splice2( p0 = t33 p1 = 1 ).
         ENDIF.
         DATA(t66) = 1.
@@ -1022,7 +1015,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       IF t69 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t71 ?= t69.
         DATA t72 TYPE REF TO object.
-        CLEAR t72.
         t72 = t71->as_ref( ).
         t68 ?= t72.
       ELSE.
@@ -1037,7 +1029,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t79.
       DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t80.
       t80 = me->reg->get_config( )->read_by_key( i_rule = t73 i_key = |exclude| ).
       DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t86.
@@ -1051,13 +1042,11 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t89.
         DATA t90 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t90.
         CREATE OBJECT t90.
         CLEAR t89.
         DATA t91 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t91.
         DATA t92 TYPE REF TO object.
-        CLEAR t92.
         CLEAR t91.
         t92 = t90.
         TRY.
@@ -1107,11 +1096,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
       DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t98.
       DATA t100 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t100.
-      DATA t101 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t101.
-      CREATE OBJECT t101.
-      t100 = t101.
+      CREATE OBJECT t100.
       DATA(t103) = VALUE string( ).
       t77->dense( ).
       DATA(t104) = VALUE i( ).
@@ -1127,7 +1112,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         ENDIF.
         t104 = t104 + 1.
         DATA t106 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t106.
         CREATE OBJECT t106 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t103 flags = |i|.
         t100->load( ).
         APPEND t106 TO t100->items.
@@ -1159,7 +1143,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         IF t124 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t125 ?= t124.
           DATA t126 TYPE REF TO object.
-          CLEAR t126.
           t126 = t125->as_ref( ).
           t121 ?= t126.
         ELSE.
@@ -1185,7 +1168,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         IF t140 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t141 ?= t140.
           DATA t142 TYPE REF TO object.
-          CLEAR t142.
           t142 = t141->as_ref( ).
           t137 ?= t142.
         ELSE.
@@ -1198,7 +1180,6 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         t150->value = t143.
         IF zcl_lnt_exclude_helper=>is_excluded( i_filename = t150 i_exclude_patterns = t98 ) = abap_true.
           DATA t153 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t153.
           t153 = t2->splice2( p0 = t110 p1 = 1 ).
         ENDIF.
         DATA(t159) = 1.

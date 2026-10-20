@@ -181,7 +181,6 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
           t53 = t28->identifier.
           DATA(t56) = VALUE string( ).
           DATA t57 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t57.
           DATA t64 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t64.
           DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

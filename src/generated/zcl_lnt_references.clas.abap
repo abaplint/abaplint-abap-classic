@@ -392,13 +392,11 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t49 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t54 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t54.
       t54 = t49->next( ).
       IF t54->done = abap_true.
         EXIT.
       ENDIF.
       DATA t59 TYPE REF TO zif_lnt_object.
-      CLEAR t59.
       t59 = t54->value.
       DATA(t64) = VALUE abap_bool( ).
       DATA(t65) = VALUE abap_bool( ).
@@ -510,10 +508,10 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     IF xsdbool( t4->value = abap_true ) = abap_true.
       result = me->remove_duplicates( i_arr = t19 ).
       RETURN.
-    ELSE.
-      result = t19.
-
     ENDIF.
+    result = t19.
+
+
   ENDMETHOD.
 
   METHOD remove_duplicates.
@@ -575,7 +573,6 @@ CLASS zcl_lnt_references IMPLEMENTATION.
       IF t19 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t21 ?= t19.
         DATA t22 TYPE REF TO object.
-        CLEAR t22.
         t22 = t21->as_ref( ).
         t18 ?= t22.
       ELSE.
@@ -586,12 +583,8 @@ CLASS zcl_lnt_references IMPLEMENTATION.
       DATA(t27) = VALUE string( ).
       DATA(t28) = VALUE string( ).
       DATA(t29) = VALUE string( ).
-      DATA t37 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t37.
-      t37 = t18->token.
       DATA t39 TYPE REF TO zcl_lnt_position.
-      CLEAR t39.
-      t39 = t37->start.
+      t39 = t18->token->start.
       DATA t41 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t41.
       t41 = t39->col.
@@ -615,7 +608,6 @@ CLASS zcl_lnt_references IMPLEMENTATION.
       DATA(t68) = strlen( t26 ).
       t24 = |{ t26 }{ t63 }|.
       DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t69.
       t69 = t2->get( p0 = t24 ).
       DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t75.

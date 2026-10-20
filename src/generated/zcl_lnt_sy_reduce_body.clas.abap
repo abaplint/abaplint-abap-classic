@@ -248,7 +248,6 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
         t189 ?= t190.
       ENDIF.
       DATA t194 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t194.
       DATA t195 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t195.
       t195 = t189.
@@ -335,11 +334,11 @@ CLASS zcl_lnt_sy_reduce_body IMPLEMENTATION.
     IF xsdbool( t29 IS BOUND ) = abap_true.
       result = t29.
       RETURN.
-    ELSE.
-      DATA t294 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      result = NEW zcl_lnt_unknown_type( i_error = |todo, ReduceBody| i_qualified_name = t294 ).
-
     ENDIF.
+    DATA t294 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    result = NEW zcl_lnt_unknown_type( i_error = |todo, ReduceBody| i_qualified_name = t294 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

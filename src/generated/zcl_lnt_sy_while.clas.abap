@@ -67,7 +67,6 @@ CLASS zcl_lnt_sy_while IMPLEMENTATION.
         t16 ?= t17.
       ENDIF.
       DATA t21 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t21.
       DATA t22 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t22.
       t22 = t16.

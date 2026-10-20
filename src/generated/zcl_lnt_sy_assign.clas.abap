@@ -703,7 +703,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
       IF t548 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t550 ?= t548.
         DATA t551 TYPE REF TO object.
-        CLEAR t551.
         t551 = t550->as_ref( ).
         t547 ?= t551.
       ELSE.
@@ -742,7 +741,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
       IF t578 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t580 ?= t578.
         DATA t581 TYPE REF TO object.
-        CLEAR t581.
         t581 = t580->as_ref( ).
         t577 ?= t581.
       ELSE.
@@ -758,7 +756,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
         DATA t587 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t587.
         DATA t588 TYPE REF TO object.
-        CLEAR t588.
         CLEAR t587.
         t588 = t577.
         TRY.
@@ -785,7 +782,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
         DATA t589 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t589.
         DATA t590 TYPE REF TO object.
-        CLEAR t590.
         CLEAR t589.
         t590 = t85.
         TRY.
@@ -816,7 +812,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t591 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t591.
       DATA t592 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t592.
       t592 = t577.

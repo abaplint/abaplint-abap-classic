@@ -189,7 +189,6 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         t41 = t41 && |STEM_FAILURE, COMMUNICATION_FAILURE, RESOURCE_FAILURE|.
         DATA(t42) = VALUE string( ).
         DATA t43 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t43.
         DATA t48 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t48.
         DATA t52 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -376,7 +375,6 @@ CLASS zcl_lnt_rfc_error_handling IMPLEMENTATION.
         t151 = t151 && |STEM_FAILURE, COMMUNICATION_FAILURE, RESOURCE_FAILURE|.
         DATA(t152) = VALUE string( ).
         DATA t153 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t153.
         DATA t158 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t158.
         DATA t162 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

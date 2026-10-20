@@ -181,39 +181,39 @@ CLASS zcl_lnt_function_length_stats IMPLEMENTATION.
     IF xsdbool( t2 IS BOUND ) = abap_true.
       result = t2->get_first_token( )->str.
       RETURN.
-    ELSE.
-      DATA t15 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-      DATA t16 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t20->has = abap_true.
-      t20->value = |FunctionLength, findName, expected Field|.
-      t16 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t20 ).
-      t15 = NEW #( ).
-      t15->payload = t16.
-      CLEAR t15->source_value.
-      DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t23 TYPE REF TO object.
-      t23 = t16.
+    ENDIF.
+    DATA t15 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+    DATA t16 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+    DATA(t20) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t20->has = abap_true.
+    t20->value = |FunctionLength, findName, expected Field|.
+    t16 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t20 ).
+    t15 = NEW #( ).
+    t15->payload = t16.
+    CLEAR t15->source_value.
+    DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t23 TYPE REF TO object.
+    t23 = t16.
+    TRY.
+        t15->source_value ?= t23.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t15->source_value IS NOT BOUND.
       TRY.
-          t15->source_value ?= t23.
+          t22 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
-      IF t15->source_value IS NOT BOUND.
-        TRY.
-            t22 ?= t16.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t22 IS BOUND.
-          t15->source_value = t22->source( ).
-        ENDIF.
-        IF t15->source_value IS NOT BOUND.
-          CREATE OBJECT t15->source_value.
-          t15->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t15->source_value->oval = t16.
-        ENDIF.
+      IF t22 IS BOUND.
+        t15->source_value = t22->source( ).
       ENDIF.
-      RAISE EXCEPTION t15.
+      IF t15->source_value IS NOT BOUND.
+        CREATE OBJECT t15->source_value.
+        t15->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t15->source_value->oval = t16.
+      ENDIF.
     ENDIF.
+    RAISE EXCEPTION t15.
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

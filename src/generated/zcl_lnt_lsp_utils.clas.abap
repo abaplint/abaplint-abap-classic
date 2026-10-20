@@ -435,7 +435,6 @@ CLASS zcl_lnt_lsp_utils IMPLEMENTATION.
         ENDIF.
         IF t23 = abap_true.
           DATA t82 TYPE REF TO zcl_lnt_shape_33dfa816.
-          CLEAR t82.
           t82 = NEW zcl_lnt_shape_33dfa816( i_token = t15 i_stack = t4 ).
           CREATE OBJECT t82->zlnt_view_ownkeys_b0e8086400eb.
           t82->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.

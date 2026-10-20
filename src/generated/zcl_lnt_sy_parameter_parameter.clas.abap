@@ -583,7 +583,6 @@ CLASS zcl_lnt_sy_parameter_parameter IMPLEMENTATION.
         ENDIF.
         t27 = t50.
         DATA t59 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t59.
         DATA(t62) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t62->has = abap_true.
         t62->value = |VISIBLE|.

@@ -148,7 +148,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         DATA t36 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t36 = t25->is_local.
         DATA t38 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t38.
         DATA(t41) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t41->has = abap_true.
         t41->value = abap_true.
@@ -184,7 +183,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         DATA t51 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t51 = t25->is_for_testing.
         DATA t53 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t53.
         DATA(t56) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t56->has = abap_true.
         t56->value = abap_true.
@@ -398,7 +396,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         ENDIF.
         t101 = t136.
         DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t147.
         DATA(t150) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t150->has = abap_true.
         t150->value = |"!|.
@@ -436,7 +433,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
           t170 = t25->identifier.
           DATA(t173) = VALUE string( ).
           DATA t174 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t174.
           DATA t181 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t181.
           DATA(t184) = |Base rule checks for existence of abapdoc for public class m|.
@@ -564,7 +560,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         DATA t244 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t244 = t233->is_local.
         DATA t246 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t246.
         DATA(t249) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t249->has = abap_true.
         t249->value = abap_true.
@@ -746,7 +741,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         ENDIF.
         t279 = t314.
         DATA t325 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t325.
         DATA(t328) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t328->has = abap_true.
         t328->value = |"!|.
@@ -784,7 +778,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
           t348 = t233->identifier.
           DATA(t351) = VALUE string( ).
           DATA t352 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t352.
           DATA t359 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t359.
           DATA(t362) = |Base rule checks for existence of abapdoc for public class m|.
@@ -1008,7 +1001,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         ENDIF.
         t441 = t442.
         DATA t465 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t465.
         CREATE OBJECT t465 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^\"! .*<[^/>]*><\/` flags = ||.
         t440 = t465->match( t441 ).
         IF xsdbool( xsdbool( t440 IS INITIAL ) = abap_false ) = abap_true.
@@ -1033,7 +1025,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
           t493 = t406->identifier.
           DATA(t496) = VALUE string( ).
           DATA t497 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t497.
           DATA t504 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t504.
           DATA(t507) = |Base rule checks for existence of abapdoc for public class m|.
@@ -1208,7 +1199,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         ENDIF.
         t553 = t554.
         DATA t577 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t577.
         CREATE OBJECT t577 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^\"!.+$` flags = ||.
         t552 = t577->match( t553 ).
         DATA(t551) = xsdbool( t552 IS INITIAL ).
@@ -1237,7 +1227,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
           t604 = t406->identifier.
           DATA(t607) = VALUE string( ).
           DATA t608 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t608.
           DATA t615 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t615.
           DATA(t618) = |Base rule checks for existence of abapdoc for public class m|.
@@ -1411,7 +1400,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
         ENDIF.
         t664 = t665.
         DATA t688 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t688.
         CREATE OBJECT t688 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^\"! @parameter .+\|` flags = ||.
         t663 = t688->match( t664 ).
         IF xsdbool( xsdbool( t663 IS INITIAL ) = abap_false ) = abap_true.
@@ -1427,7 +1415,6 @@ CLASS zcl_lnt_abapdoc IMPLEMENTATION.
           t707 = t406->identifier.
           DATA(t710) = VALUE string( ).
           DATA t711 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t711.
           DATA t718 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t718.
           DATA(t721) = |Base rule checks for existence of abapdoc for public class m|.

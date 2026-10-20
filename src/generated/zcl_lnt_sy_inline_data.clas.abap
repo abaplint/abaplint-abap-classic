@@ -343,17 +343,17 @@ CLASS zcl_lnt_sy_inline_data IMPLEMENTATION.
       t49 = t51->length.
       result = NEW zcl_lnt_character_type( i_length = t49 i_extra = t33 ).
       RETURN.
-    ELSE.
-      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_integer_type ) = abap_true.
-        result = zcl_lnt_integer_type=>get_db65( i_input_967e = t33 ).
-        RETURN.
-      ELSE.
-        IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_string_type ) = abap_true.
-          result = zcl_lnt_string_type=>get_db65( i_input_967e = t33 ).
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_integer_type ) = abap_true.
+      result = zcl_lnt_integer_type=>get_db65( i_input_967e = t33 ).
+      RETURN.
+    ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_string_type ) = abap_true.
+      result = zcl_lnt_string_type=>get_db65( i_input_967e = t33 ).
+      RETURN.
+    ENDIF.
+
+
     result = t1.
 
   ENDMETHOD.

@@ -608,7 +608,6 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
             DATA t220 TYPE string.
             t220 = t199->value.
             DATA t222 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t222.
             CREATE OBJECT t222 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = | | flags = |g| checked = abap_true.
             DATA(t226) = strlen( t220 ).
             t219 = t222->replace( p0 = t220 p1 = || ).
@@ -1278,7 +1277,6 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
       DATA t285 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t285 = me->parsed_data->fields_464c.
       DATA t288 TYPE REF TO zcl_lnt_shape_5383185c.
-      CLEAR t288.
       DATA t289 TYPE string.
       t289 = t196->value.
       DATA t292 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1469,7 +1467,6 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
         DATA t54 TYPE string.
         t54 = t14->value.
         DATA t56 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t56.
         CREATE OBJECT t56 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = | | flags = |g| checked = abap_true.
         DATA(t60) = strlen( t54 ).
         t53 = t56->replace( p0 = t54 p1 = || ).

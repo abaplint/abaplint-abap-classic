@@ -270,7 +270,6 @@ CLASS zcl_lnt_clssc_excptns_ovrlp IMPLEMENTATION.
           t82 = t32->get_first_token( ).
           DATA(t85) = VALUE string( ).
           DATA t86 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t86.
           DATA t93 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t93.
           DATA(t96) = |When debugging its typically good to know exactly which exce|.

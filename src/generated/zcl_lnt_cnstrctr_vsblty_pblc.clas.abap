@@ -238,7 +238,6 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
         t71 = t53->identifier.
         DATA(t74) = VALUE string( ).
         DATA t75 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t75.
         DATA t80 TYPE string.
         DATA(t81) = |Constructor must be placed in the public section, even if th|.
         t81 = t81 && |e class is not CREATE PUBLIC.|.

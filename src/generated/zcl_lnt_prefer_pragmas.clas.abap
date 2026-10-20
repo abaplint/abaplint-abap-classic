@@ -148,14 +148,12 @@ CLASS zcl_lnt_prefer_pragmas IMPLEMENTATION.
       IF t12 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t14 ?= t12.
         DATA t15 TYPE REF TO object.
-        CLEAR t15.
         t15 = t14->as_ref( ).
         t11 ?= t15.
       ELSE.
         t11 ?= t12.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_statement.
-      CLEAR t18.
       t18 = t11->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_st_comment ) = abap_false ) = abap_true.
         CONTINUE.
@@ -271,7 +269,6 @@ CLASS zcl_lnt_prefer_pragmas IMPLEMENTATION.
           CLEAR t61.
           DATA(t65) = VALUE string( ).
           DATA t66 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t66.
           DATA t73 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t73.
           DATA(t76) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -283,11 +280,7 @@ CLASS zcl_lnt_prefer_pragmas IMPLEMENTATION.
           DATA t79 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t79.
           DATA t83 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t83.
-          DATA t84 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t84.
-          CREATE OBJECT t84.
-          t83 = t84.
+          CREATE OBJECT t83.
           t83->load( ).
           APPEND |SingleFile| TO t83->items.
           t83->save( ).

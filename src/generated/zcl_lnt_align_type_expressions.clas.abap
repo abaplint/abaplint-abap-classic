@@ -429,7 +429,6 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
       t102 = t29->after_2484.
       DATA(t105) = VALUE string( ).
       DATA t106 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t106.
       DATA t113 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t113.
       DATA(t116) = |\nCurrently works for METHODS + BEGIN OF\n\nIf BEGIN OF has an |.
@@ -661,7 +660,6 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         ENDIF.
         t37 = t38.
         DATA t48 TYPE REF TO zcl_lnt_shape_3940daab.
-        CLEAR t48.
         DATA t49 TYPE REF TO zcl_lnt_position.
         CLEAR t49.
         DATA t53 TYPE REF TO zcl_lnt_abstract_token.
@@ -762,7 +760,6 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         ENDIF.
         t143 = t144.
         DATA t154 TYPE REF TO zcl_lnt_shape_3940daab.
-        CLEAR t154.
         DATA t155 TYPE REF TO zcl_lnt_position.
         CLEAR t155.
         DATA t159 TYPE REF TO zcl_lnt_abstract_token.
@@ -963,7 +960,6 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         ENDIF.
         t37 = t38.
         DATA t48 TYPE REF TO zcl_lnt_shape_3940daab.
-        CLEAR t48.
         DATA t49 TYPE REF TO zcl_lnt_position.
         CLEAR t49.
         DATA t53 TYPE REF TO zcl_lnt_abstract_token.

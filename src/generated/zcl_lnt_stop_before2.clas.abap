@@ -181,7 +181,6 @@ CLASS zcl_lnt_stop_before2 IMPLEMENTATION.
         ENDIF.
         t38 = t58.
         DATA t69 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t69.
         DATA(t71) = CONV string( me->t2 ).
         DATA(t72) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t72->has = abap_true.

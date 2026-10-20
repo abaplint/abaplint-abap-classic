@@ -149,7 +149,6 @@ CLASS zcl_lnt_no_external_form_calls IMPLEMENTATION.
         CLEAR t39.
         DATA(t43) = VALUE string( ).
         DATA t44 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t44.
         DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t51.
         DATA(t55) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

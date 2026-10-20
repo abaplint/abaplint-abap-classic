@@ -271,7 +271,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       DATA t104 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t104 = t98->keyname.
       DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t106.
       DATA(t109) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t109->has = abap_true.
       t109->value = ||.
@@ -549,7 +548,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       t111 = t68->accessmode.
       DATA(t114) = VALUE abap_bool( ).
       DATA t116 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t116.
       DATA(t119) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t119->has = abap_true.
       t119->value = |S|.
@@ -574,7 +572,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       ELSE.
         DATA(t124) = VALUE abap_bool( ).
         DATA t126 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t126.
         DATA(t129) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t129->has = abap_true.
         t129->value = |H|.
@@ -2232,7 +2229,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
             DATA t321 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t321.
             DATA t322 TYPE REF TO object.
-            CLEAR t322.
             CLEAR t321.
             t322 = t317.
             TRY.
@@ -2257,17 +2253,14 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t323 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t323.
       t323 = me->parsed_xml->dd42v.
       DATA t326 TYPE REF TO zcl_lnt_shape_93ca86e8.
       CLEAR t326.
       DATA t327 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t327.
       DATA t329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t329.
       t329 = t316->get( p0 = |SECKEYNAME| ).
       DATA t333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t333.
       t333 = t329.
       DATA t335 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t335.
@@ -2297,10 +2290,8 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       ENDIF.
       t327 = t335.
       DATA t352 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t352.
       t352 = t316->get( p0 = |KEYFIELD| ).
       DATA t356 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t356.
       t356 = t352.
       DATA t358 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t358.
@@ -2408,7 +2399,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
             DATA t399 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t399.
             DATA t400 TYPE REF TO object.
-            CLEAR t400.
             CLEAR t399.
             t400 = t395.
             TRY.
@@ -2433,17 +2423,14 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t401 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t401.
       t401 = me->parsed_xml->dd43v.
       DATA t404 TYPE REF TO zcl_lnt_shape_96faa29e.
       CLEAR t404.
       DATA t405 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t405.
       DATA t407 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t407.
       t407 = t394->get( p0 = |SECKEYNAME| ).
       DATA t411 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t411.
       t411 = t407.
       DATA t413 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t413.
@@ -2475,10 +2462,8 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       DATA t428 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t428.
       DATA t430 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t430.
       t430 = t394->get( p0 = |ACCESSMODE| ).
       DATA t434 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t434.
       t434 = t430.
       DATA t436 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t436.
@@ -2510,10 +2495,8 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       DATA t451 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t451.
       DATA t453 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t453.
       t453 = t394->get( p0 = |KIND| ).
       DATA t457 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t457.
       t457 = t453.
       DATA t459 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t459.
@@ -2544,7 +2527,6 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
       t451 = t459.
       DATA(t475) = VALUE abap_bool( ).
       DATA t476 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t476.
       t476 = t394->get( p0 = |SECKEYUNIQUE| ).
       DATA t479 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t479.

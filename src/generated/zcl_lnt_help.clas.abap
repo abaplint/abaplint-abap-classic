@@ -157,7 +157,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t71 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t73 ?= t71.
         DATA t74 TYPE REF TO object.
-        CLEAR t74.
         t74 = t73->as_ref( ).
         t70 ?= t74.
       ELSE.
@@ -281,7 +280,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         IF t163 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t165 ?= t163.
           DATA t166 TYPE REF TO object.
-          CLEAR t166.
           t166 = t165->as_ref( ).
           t162 ?= t166.
         ELSE.
@@ -293,7 +291,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA(t171) = VALUE string( ).
         DATA(t172) = VALUE string( ).
         DATA t174 TYPE REF TO zlnt_runtime_conf_5b63794eccef.
-        CLEAR t174.
         CREATE OBJECT t174.
         t172 = t174->zlnt_json_write_s_bf7dc546f7f6( t162 ).
         IF t172 IS INITIAL.
@@ -1163,14 +1160,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t162 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t164 ?= t162.
         DATA t165 TYPE REF TO object.
-        CLEAR t165.
         t165 = t164->as_ref( ).
         t161 ?= t165.
       ELSE.
         t161 ?= t162.
       ENDIF.
       DATA t166 TYPE REF TO zcl_lnt_shape_88a44908.
-      CLEAR t166.
       t166 = zcl_lnt_help=>traverse( i_node = t161 i_parents = t4 i_search_b3ca = t3 ).
       IF xsdbool( t166 IS BOUND ) = abap_true.
         result = t166.
@@ -1602,7 +1597,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t6 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t8 ?= t6.
         DATA t9 TYPE REF TO object.
-        CLEAR t9.
         t9 = t8->as_ref( ).
         t5 ?= t9.
       ELSE.
@@ -1617,7 +1611,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA(t21) = VALUE string( ).
         DATA(t22) = VALUE string( ).
         DATA t24 TYPE REF TO object.
-        CLEAR t24.
         t24 = t5->get_db65( ).
         DATA t26 TYPE REF TO zlnt_runtime_desc_e5fe811e0f42.
         CLEAR t26.
@@ -1638,14 +1631,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t31.
         DATA t32 TYPE REF TO object.
-        CLEAR t32.
         t32 = t5->get_db65( ).
         CLEAR t31.
         IF t32 IS BOUND.
           DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t34.
           DATA t35 TYPE REF TO object.
-          CLEAR t35.
           CLEAR t34.
           t35 = t32.
           TRY.
@@ -1681,7 +1672,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t38.
           t38 ?= t31->oval.
           DATA(t39) = CONV string( t38->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t39.
@@ -1692,7 +1682,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t40.
           t40 ?= t31->oval.
           DATA(t41) = CONV string( t40->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t41.
@@ -1703,7 +1692,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t42.
           t42 ?= t31->oval.
           DATA(t43) = CONV string( t42->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t43.
@@ -1714,7 +1702,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t44.
           t44 ?= t31->oval.
           DATA(t45) = CONV string( t44->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t45.
@@ -1725,7 +1712,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t46.
           t46 ?= t31->oval.
           DATA(t47) = CONV string( t46->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t47.
@@ -1736,7 +1722,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t48.
           t48 ?= t31->oval.
           DATA(t49) = CONV string( t48->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t49.
@@ -1747,7 +1732,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t50.
           t50 ?= t31->oval.
           DATA(t51) = CONV string( t50->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t51.
@@ -1758,7 +1742,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t52.
           t52 ?= t31->oval.
           DATA(t53) = CONV string( t52->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t53.
@@ -1769,7 +1752,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t54.
           t54 ?= t31->oval.
           DATA(t55) = CONV string( t54->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t55.
@@ -1780,7 +1762,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t56.
           t56 ?= t31->oval.
           DATA(t57) = CONV string( t56->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t57.
@@ -1791,7 +1772,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t58.
           t58 ?= t31->oval.
           DATA(t59) = CONV string( t58->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t59.
@@ -1802,7 +1782,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t60.
           t60 ?= t31->oval.
           DATA(t61) = CONV string( t60->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t61.
@@ -1813,7 +1792,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t62.
           t62 ?= t31->oval.
           DATA(t63) = CONV string( t62->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t63.
@@ -1824,7 +1802,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t64.
           t64 ?= t31->oval.
           DATA(t65) = CONV string( t64->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t65.
@@ -1835,7 +1812,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t66.
           t66 ?= t31->oval.
           DATA(t67) = CONV string( t66->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t67.
@@ -1846,7 +1822,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t68.
           t68 ?= t31->oval.
           DATA(t69) = CONV string( t68->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t69.
@@ -1857,7 +1832,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t70.
           t70 ?= t31->oval.
           DATA(t71) = CONV string( t70->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t71.
@@ -1868,7 +1842,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t72.
           t72 ?= t31->oval.
           DATA(t73) = CONV string( t72->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t73.
@@ -1879,7 +1852,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t74.
           t74 ?= t31->oval.
           DATA(t75) = CONV string( t74->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t75.
@@ -1890,7 +1862,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t76.
           t76 ?= t31->oval.
           DATA(t77) = CONV string( t76->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t77.
@@ -1901,7 +1872,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t78.
           t78 ?= t31->oval.
           DATA(t79) = CONV string( t78->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t79.
@@ -1912,7 +1882,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t80.
           t80 ?= t31->oval.
           DATA(t81) = CONV string( t80->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t81.
@@ -1923,7 +1892,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t82.
           t82 ?= t31->oval.
           DATA(t83) = CONV string( t82->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t83.
@@ -1934,7 +1902,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t84.
           t84 ?= t31->oval.
           DATA(t85) = CONV string( t84->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t85.
@@ -1945,7 +1912,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t86.
           t86 ?= t31->oval.
           DATA(t87) = CONV string( t86->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t87.
@@ -1956,7 +1922,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t88.
           t88 ?= t31->oval.
           DATA(t89) = CONV string( t88->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t89.
@@ -1967,7 +1932,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t90.
           t90 ?= t31->oval.
           DATA(t91) = CONV string( t90->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t91.
@@ -1978,7 +1942,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t92.
           t92 ?= t31->oval.
           DATA(t93) = CONV string( t92->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t93.
@@ -1989,7 +1952,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t94.
           t94 ?= t31->oval.
           DATA(t95) = CONV string( t94->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t95.
@@ -2000,7 +1962,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t96.
           t96 ?= t31->oval.
           DATA(t97) = CONV string( t96->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t97.
@@ -2011,7 +1972,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t98.
           t98 ?= t31->oval.
           DATA(t99) = CONV string( t98->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t99.
@@ -2022,7 +1982,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t100.
           t100 ?= t31->oval.
           DATA(t101) = CONV string( t100->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t101.
@@ -2033,7 +1992,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t102.
           t102 ?= t31->oval.
           DATA(t103) = CONV string( t102->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t103.
@@ -2044,7 +2002,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t104.
           t104 ?= t31->oval.
           DATA(t105) = CONV string( t104->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t105.
@@ -2055,7 +2012,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t106.
           t106 ?= t31->oval.
           DATA(t107) = CONV string( t106->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t107.
@@ -2066,7 +2022,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t108.
           t108 ?= t31->oval.
           DATA(t109) = CONV string( t108->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t109.
@@ -2077,7 +2032,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t110.
           t110 ?= t31->oval.
           DATA(t111) = CONV string( t110->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t111.
@@ -2088,7 +2042,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t112.
           t112 ?= t31->oval.
           DATA(t113) = CONV string( t112->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t113.
@@ -2099,7 +2052,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t114.
           t114 ?= t31->oval.
           DATA(t115) = CONV string( t114->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t115.
@@ -2110,7 +2062,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t116.
           t116 ?= t31->oval.
           DATA(t117) = CONV string( t116->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t117.
@@ -2121,7 +2072,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t118.
           t118 ?= t31->oval.
           DATA(t119) = CONV string( t118->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t119.
@@ -2132,7 +2082,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t120.
           t120 ?= t31->oval.
           DATA(t121) = CONV string( t120->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t121.
@@ -2143,7 +2092,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t122.
           t122 ?= t31->oval.
           DATA(t123) = CONV string( t122->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t123.
@@ -2154,7 +2102,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t124.
           t124 ?= t31->oval.
           DATA(t125) = CONV string( t124->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t125.
@@ -2165,7 +2112,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t126.
           t126 ?= t31->oval.
           DATA(t127) = CONV string( t126->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t127.
@@ -2176,7 +2122,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t128.
           t128 ?= t31->oval.
           DATA(t129) = CONV string( t128->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t129.
@@ -2187,7 +2132,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t130.
           t130 ?= t31->oval.
           DATA(t131) = CONV string( t130->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t131.
@@ -2198,7 +2142,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           CLEAR t132.
           t132 ?= t31->oval.
           DATA(t133) = CONV string( t132->get_str( ) ).
-          CLEAR t30.
           CREATE OBJECT t30.
           t30->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
           t30->sval = t133.
@@ -2259,7 +2202,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA(t150) = VALUE string( ).
           DATA(t151) = VALUE string( ).
           DATA t153 TYPE REF TO object.
-          CLEAR t153.
           t153 = t5->get_db65( ).
           DATA t155 TYPE REF TO zlnt_runtime_desc_e5fe811e0f42.
           CLEAR t155.
@@ -2280,14 +2222,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA t160 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t160.
           DATA t161 TYPE REF TO object.
-          CLEAR t161.
           t161 = t5->get_db65( ).
           CLEAR t160.
           IF t161 IS BOUND.
             DATA t163 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t163.
             DATA t164 TYPE REF TO object.
-            CLEAR t164.
             CLEAR t163.
             t164 = t161.
             TRY.
@@ -2323,7 +2263,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t167.
             t167 ?= t160->oval.
             DATA(t168) = CONV string( t167->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t168.
@@ -2334,7 +2273,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t169.
             t169 ?= t160->oval.
             DATA(t170) = CONV string( t169->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t170.
@@ -2345,7 +2283,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t171.
             t171 ?= t160->oval.
             DATA(t172) = CONV string( t171->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t172.
@@ -2356,7 +2293,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t173.
             t173 ?= t160->oval.
             DATA(t174) = CONV string( t173->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t174.
@@ -2367,7 +2303,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t175.
             t175 ?= t160->oval.
             DATA(t176) = CONV string( t175->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t176.
@@ -2378,7 +2313,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t177.
             t177 ?= t160->oval.
             DATA(t178) = CONV string( t177->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t178.
@@ -2389,7 +2323,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t179.
             t179 ?= t160->oval.
             DATA(t180) = CONV string( t179->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t180.
@@ -2400,7 +2333,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t181.
             t181 ?= t160->oval.
             DATA(t182) = CONV string( t181->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t182.
@@ -2411,7 +2343,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t183.
             t183 ?= t160->oval.
             DATA(t184) = CONV string( t183->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t184.
@@ -2422,7 +2353,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t185.
             t185 ?= t160->oval.
             DATA(t186) = CONV string( t185->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t186.
@@ -2433,7 +2363,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t187.
             t187 ?= t160->oval.
             DATA(t188) = CONV string( t187->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t188.
@@ -2444,7 +2373,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t189.
             t189 ?= t160->oval.
             DATA(t190) = CONV string( t189->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t190.
@@ -2455,7 +2383,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t191.
             t191 ?= t160->oval.
             DATA(t192) = CONV string( t191->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t192.
@@ -2466,7 +2393,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t193.
             t193 ?= t160->oval.
             DATA(t194) = CONV string( t193->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t194.
@@ -2477,7 +2403,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t195.
             t195 ?= t160->oval.
             DATA(t196) = CONV string( t195->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t196.
@@ -2488,7 +2413,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t197.
             t197 ?= t160->oval.
             DATA(t198) = CONV string( t197->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t198.
@@ -2499,7 +2423,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t199.
             t199 ?= t160->oval.
             DATA(t200) = CONV string( t199->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t200.
@@ -2510,7 +2433,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t201.
             t201 ?= t160->oval.
             DATA(t202) = CONV string( t201->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t202.
@@ -2521,7 +2443,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t203.
             t203 ?= t160->oval.
             DATA(t204) = CONV string( t203->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t204.
@@ -2532,7 +2453,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t205.
             t205 ?= t160->oval.
             DATA(t206) = CONV string( t205->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t206.
@@ -2543,7 +2463,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t207.
             t207 ?= t160->oval.
             DATA(t208) = CONV string( t207->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t208.
@@ -2554,7 +2473,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t209.
             t209 ?= t160->oval.
             DATA(t210) = CONV string( t209->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t210.
@@ -2565,7 +2483,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t211.
             t211 ?= t160->oval.
             DATA(t212) = CONV string( t211->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t212.
@@ -2576,7 +2493,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t213.
             t213 ?= t160->oval.
             DATA(t214) = CONV string( t213->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t214.
@@ -2587,7 +2503,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t215.
             t215 ?= t160->oval.
             DATA(t216) = CONV string( t215->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t216.
@@ -2598,7 +2513,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t217.
             t217 ?= t160->oval.
             DATA(t218) = CONV string( t217->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t218.
@@ -2609,7 +2523,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t219.
             t219 ?= t160->oval.
             DATA(t220) = CONV string( t219->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t220.
@@ -2620,7 +2533,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t221.
             t221 ?= t160->oval.
             DATA(t222) = CONV string( t221->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t222.
@@ -2631,7 +2543,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t223.
             t223 ?= t160->oval.
             DATA(t224) = CONV string( t223->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t224.
@@ -2642,7 +2553,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t225.
             t225 ?= t160->oval.
             DATA(t226) = CONV string( t225->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t226.
@@ -2653,7 +2563,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t227.
             t227 ?= t160->oval.
             DATA(t228) = CONV string( t227->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t228.
@@ -2664,7 +2573,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t229.
             t229 ?= t160->oval.
             DATA(t230) = CONV string( t229->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t230.
@@ -2675,7 +2583,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t231.
             t231 ?= t160->oval.
             DATA(t232) = CONV string( t231->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t232.
@@ -2686,7 +2593,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t233.
             t233 ?= t160->oval.
             DATA(t234) = CONV string( t233->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t234.
@@ -2697,7 +2603,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t235.
             t235 ?= t160->oval.
             DATA(t236) = CONV string( t235->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t236.
@@ -2708,7 +2613,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t237.
             t237 ?= t160->oval.
             DATA(t238) = CONV string( t237->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t238.
@@ -2719,7 +2623,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t239.
             t239 ?= t160->oval.
             DATA(t240) = CONV string( t239->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t240.
@@ -2730,7 +2633,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t241.
             t241 ?= t160->oval.
             DATA(t242) = CONV string( t241->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t242.
@@ -2741,7 +2643,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t243.
             t243 ?= t160->oval.
             DATA(t244) = CONV string( t243->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t244.
@@ -2752,7 +2653,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t245.
             t245 ?= t160->oval.
             DATA(t246) = CONV string( t245->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t246.
@@ -2763,7 +2663,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t247.
             t247 ?= t160->oval.
             DATA(t248) = CONV string( t247->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t248.
@@ -2774,7 +2673,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t249.
             t249 ?= t160->oval.
             DATA(t250) = CONV string( t249->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t250.
@@ -2785,7 +2683,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t251.
             t251 ?= t160->oval.
             DATA(t252) = CONV string( t251->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t252.
@@ -2796,7 +2693,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t253.
             t253 ?= t160->oval.
             DATA(t254) = CONV string( t253->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t254.
@@ -2807,7 +2703,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t255.
             t255 ?= t160->oval.
             DATA(t256) = CONV string( t255->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t256.
@@ -2818,7 +2713,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t257.
             t257 ?= t160->oval.
             DATA(t258) = CONV string( t257->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t258.
@@ -2829,7 +2723,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t259.
             t259 ?= t160->oval.
             DATA(t260) = CONV string( t259->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t260.
@@ -2840,7 +2733,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             CLEAR t261.
             t261 ?= t160->oval.
             DATA(t262) = CONV string( t261->get_str( ) ).
-            CLEAR t159.
             CREATE OBJECT t159.
             t159->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
             t159->sval = t262.
@@ -2901,14 +2793,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             DATA t279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t279.
             DATA t280 TYPE REF TO object.
-            CLEAR t280.
             t280 = t5->get_db65( ).
             CLEAR t279.
             IF t280 IS BOUND.
               DATA t282 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t282.
               DATA t283 TYPE REF TO object.
-              CLEAR t283.
               CLEAR t282.
               t283 = t280.
               TRY.
@@ -3114,7 +3004,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t10 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t12 ?= t10.
         DATA t13 TYPE REF TO object.
-        CLEAR t13.
         t13 = t12->as_ref( ).
         t9 ?= t13.
       ELSE.
@@ -3141,14 +3030,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t41.
       DATA t42 TYPE REF TO zif_lnt_statement.
-      CLEAR t42.
       t42 = t9->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       CLEAR t41.
       IF t42 IS BOUND.
         DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t44.
         DATA t45 TYPE REF TO object.
-        CLEAR t45.
         CLEAR t44.
         t45 = t42.
         TRY.
@@ -3179,9 +3066,7 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t50.
       DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t51.
       DATA t52 TYPE REF TO zcl_lnt_abstract_node.
-      CLEAR t52.
       t52 = t9.
       t51 = t52->children.
       t50 ?= t51.
@@ -3214,7 +3099,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t6 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t8 ?= t6.
         DATA t9 TYPE REF TO object.
-        CLEAR t9.
         t9 = t8->as_ref( ).
         t5 ?= t9.
       ELSE.
@@ -3232,11 +3116,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t21.
         DATA t22 TYPE REF TO zif_lnt_structure.
-        CLEAR t22.
         DATA t23 TYPE REF TO zcl_lnt_structure_node.
         CLEAR t23.
         DATA t25 TYPE REF TO object.
-        CLEAR t25.
         t25 = t5.
         t23 ?= t25.
         t22 = t23->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
@@ -3245,7 +3127,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t26.
           DATA t27 TYPE REF TO object.
-          CLEAR t27.
           CLEAR t26.
           t27 = t22.
           TRY.
@@ -3276,13 +3157,10 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t32.
         DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t33.
         DATA t34 TYPE REF TO zcl_lnt_abstract_node.
-        CLEAR t34.
         DATA t35 TYPE REF TO zcl_lnt_structure_node.
         CLEAR t35.
         DATA t37 TYPE REF TO object.
-        CLEAR t37.
         t37 = t5.
         t35 ?= t37.
         t34 = t35.
@@ -3304,11 +3182,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t52.
           DATA t53 TYPE REF TO zif_lnt_statement.
-          CLEAR t53.
           DATA t54 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t54.
           DATA t56 TYPE REF TO object.
-          CLEAR t56.
           t56 = t5.
           t54 ?= t56.
           t53 = t54->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
@@ -3317,7 +3193,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t57.
             DATA t58 TYPE REF TO object.
-            CLEAR t58.
             CLEAR t57.
             t58 = t53.
             TRY.
@@ -3360,7 +3235,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
     t4 = t1->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t9.
       t9 = t4->next( ).
       IF t9->done = abap_true.
         EXIT.
@@ -3464,7 +3338,6 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         IF t83 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t85 ?= t83.
           DATA t86 TYPE REF TO object.
-          CLEAR t86.
           t86 = t85->as_ref( ).
           t82 ?= t86.
         ELSE.

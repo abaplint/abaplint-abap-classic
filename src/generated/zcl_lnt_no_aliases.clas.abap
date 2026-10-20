@@ -183,7 +183,6 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         t38 = t19->identifier.
         DATA(t41) = VALUE string( ).
         DATA t42 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t42.
         DATA t49 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t49.
         DATA t53 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -340,7 +339,6 @@ CLASS zcl_lnt_no_aliases IMPLEMENTATION.
         t118 = t111->identifier.
         DATA(t121) = VALUE string( ).
         DATA t122 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t122.
         DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t129.
         DATA t133 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

@@ -124,7 +124,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
       IF t8 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t10 ?= t8.
         DATA t11 TYPE REF TO object.
-        CLEAR t11.
         t11 = t10->as_ref( ).
         t7 ?= t11.
       ELSE.
@@ -160,7 +159,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
         IF t26 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t28 ?= t26.
           DATA t29 TYPE REF TO object.
-          CLEAR t29.
           t29 = t28->as_ref( ).
           t25 ?= t29.
         ELSE.
@@ -188,14 +186,12 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
           IF t36 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t38 ?= t36.
             DATA t39 TYPE REF TO object.
-            CLEAR t39.
             t39 = t38->as_ref( ).
             t35 ?= t39.
           ELSE.
             t35 ?= t36.
           ENDIF.
           DATA t41 TYPE REF TO zif_lnt_statement.
-          CLEAR t41.
           t41 = t35->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           IF xsdbool( t41 IS BOUND AND t41 IS INSTANCE OF zcl_lnt_unknown ) = abap_true.
             DATA(t44) = VALUE i( ).
@@ -211,7 +207,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t53 TYPE REF TO zcl_lnt_abstract_token.
               CLEAR t53.
               DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              CLEAR t54.
               t54 = t35->get_tokens( ).
               DATA t56 TYPE REF TO object.
               CLEAR t56.
@@ -224,7 +219,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               IF t56 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                 t57 ?= t56.
                 DATA t58 TYPE REF TO object.
-                CLEAR t58.
                 t58 = t57->as_ref( ).
                 t53 ?= t58.
               ELSE.
@@ -232,7 +226,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               ENDIF.
               DATA(t60) = VALUE string( ).
               DATA t61 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t61.
               DATA(t66) = VALUE string( ).
               DATA(t67) = |Checks for syntax not recognized by abaplint.\n\nSee recognize|.
               t67 = t67 && |d syntax at https://syntax.abaplint.org|.
@@ -240,11 +233,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t68 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t68.
               DATA t72 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t72.
-              DATA t73 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t73.
-              CREATE OBJECT t73.
-              t72 = t73.
+              CREATE OBJECT t72.
               t72->load( ).
               APPEND |Syntax| TO t72->items.
               t72->save( ).
@@ -320,7 +309,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               t2->save( ).
             ELSE.
               DATA t108 TYPE REF TO zcl_lnt_abstract_token.
-              CLEAR t108.
               t108 = t35->get_first_token( ).
               DATA(t110) = VALUE string( ).
               DATA(t112) = VALUE string( ).
@@ -336,7 +324,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               CLEAR t123.
               DATA(t127) = VALUE string( ).
               DATA t128 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t128.
               DATA(t133) = VALUE string( ).
               DATA(t134) = |Checks for syntax not recognized by abaplint.\n\nSee recognize|.
               t134 = t134 && |d syntax at https://syntax.abaplint.org|.
@@ -344,11 +331,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t135 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t135.
               DATA t139 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t139.
-              DATA t140 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t140.
-              CREATE OBJECT t140.
-              t139 = t140.
+              CREATE OBJECT t139.
               t139->load( ).
               APPEND |Syntax| TO t139->items.
               t139->save( ).
@@ -427,11 +410,9 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
             ENDIF.
           ELSE.
             DATA t176 TYPE REF TO zif_lnt_statement.
-            CLEAR t176.
             t176 = t35->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
             IF xsdbool( t176 IS BOUND AND t176 IS INSTANCE OF zcl_lnt_macro_recursion ) = abap_true.
               DATA t179 TYPE REF TO zcl_lnt_abstract_token.
-              CLEAR t179.
               t179 = t35->get_first_token( ).
               DATA(t181) = VALUE string( ).
               DATA(t183) = VALUE string( ).
@@ -446,7 +427,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               CLEAR t194.
               DATA(t198) = VALUE string( ).
               DATA t199 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t199.
               DATA(t204) = VALUE string( ).
               DATA(t205) = |Checks for syntax not recognized by abaplint.\n\nSee recognize|.
               t205 = t205 && |d syntax at https://syntax.abaplint.org|.
@@ -454,11 +434,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t206 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t206.
               DATA t210 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t210.
-              DATA t211 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t211.
-              CREATE OBJECT t211.
-              t210 = t211.
+              CREATE OBJECT t210.
               t210->load( ).
               APPEND |Syntax| TO t210->items.
               t210->save( ).
@@ -539,7 +515,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
         ENDDO.
         DATA(t244) = VALUE abap_bool( ).
         DATA t245 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t245.
         t245 = me->reg->get_config( )->get_release( ).
         DATA t248 TYPE REF TO zcl_lnt_abap_release.
         CLEAR t248.
@@ -556,7 +531,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
           DATA t254 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t254.
           DATA t255 TYPE REF TO object.
-          CLEAR t255.
           CLEAR t254.
           t255 = t245.
           TRY.
@@ -583,7 +557,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
           DATA t256 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t256.
           DATA t257 TYPE REF TO object.
-          CLEAR t257.
           CLEAR t256.
           t257 = t248.
           TRY.
@@ -633,7 +606,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
             IF t264 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t266 ?= t264.
               DATA t267 TYPE REF TO object.
-              CLEAR t267.
               t267 = t266->as_ref( ).
               t263 ?= t267.
             ELSE.
@@ -648,7 +620,6 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               CLEAR t279.
               DATA(t283) = VALUE string( ).
               DATA t284 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t284.
               DATA(t289) = VALUE string( ).
               DATA(t290) = |Checks for syntax not recognized by abaplint.\n\nSee recognize|.
               t290 = t290 && |d syntax at https://syntax.abaplint.org|.
@@ -656,11 +627,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
               DATA t291 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t291.
               DATA t295 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t295.
-              DATA t296 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t296.
-              CREATE OBJECT t296.
-              t295 = t296.
+              CREATE OBJECT t295.
               t295->load( ).
               APPEND |Syntax| TO t295->items.
               t295->save( ).

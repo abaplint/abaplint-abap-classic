@@ -265,39 +265,39 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
       ENDIF.
       result = t209.
       RETURN.
-    ELSE.
-      DATA(t215) = t46.
-      IF xsdbool( t215 IS BOUND AND t215 IS INSTANCE OF zcl_lnt_unknown_type ) = abap_true.
-        DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        DATA t217 TYPE REF TO zcl_lnt_unknown_type.
-        t217 ?= t46.
-        IF t217 IS BOUND.
-          DATA t219 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t220 TYPE REF TO object.
-          t220 = t217.
+    ENDIF.
+    DATA(t215) = t46.
+    IF xsdbool( t215 IS BOUND AND t215 IS INSTANCE OF zcl_lnt_unknown_type ) = abap_true.
+      DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      DATA t217 TYPE REF TO zcl_lnt_unknown_type.
+      t217 ?= t46.
+      IF t217 IS BOUND.
+        DATA t219 TYPE REF TO zlnt_view_storage_74017ca272ac.
+        DATA t220 TYPE REF TO object.
+        t220 = t217.
+        TRY.
+            t216 ?= t220.
+          CATCH cx_sy_move_cast_error.
+        ENDTRY.
+        IF t216 IS NOT BOUND.
           TRY.
-              t216 ?= t220.
+              t219 ?= t217.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
+          IF t219 IS BOUND.
+            t216 = t219->source( ).
+          ENDIF.
           IF t216 IS NOT BOUND.
-            TRY.
-                t219 ?= t217.
-              CATCH cx_sy_move_cast_error.
-            ENDTRY.
-            IF t219 IS BOUND.
-              t216 = t219->source( ).
-            ENDIF.
-            IF t216 IS NOT BOUND.
-              CREATE OBJECT t216.
-              t216->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-              t216->oval = t217.
-            ENDIF.
+            CREATE OBJECT t216.
+            t216->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+            t216->oval = t217.
           ENDIF.
         ENDIF.
-        result = t216.
-        RETURN.
       ENDIF.
+      result = t216.
+      RETURN.
     ENDIF.
+
     DATA(t223) = t46.
     IF xsdbool( xsdbool( t223 IS BOUND AND t223 IS INSTANCE OF zcl_lnt_structure_type ) = abap_false ) = abap_true.
       DATA(t224) = VALUE string( ).
@@ -434,7 +434,6 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
         ENDIF.
         DATA(t284) = VALUE abap_bool( ).
         DATA t285 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t285.
         DATA(t287) = VALUE string( ).
         t287 = t275->zlnt_view_read_sr_dae473e680bd( ).
         DATA(t289) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -512,7 +511,6 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
             DATA t308 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t308.
             DATA t309 TYPE REF TO object.
-            CLEAR t309.
             CLEAR t308.
             t309 = t275.
             TRY.
@@ -574,7 +572,6 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
           DATA t329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t329.
           DATA t330 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t330.
           t330 = t275->zlnt_view_read_sr_36a7cafeb178( ).
           CLEAR t329.
           IF t330 IS BOUND AND t330->has = abap_true.
@@ -627,7 +624,6 @@ CLASS zcl_lnt_sy_include_type IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t340 TYPE REF TO zcl_lnt_istructure_component.
-        CLEAR t340.
         DATA(t341) = VALUE string( ).
         DATA(t343) = VALUE string( ).
         t343 = t275->zlnt_view_read_sr_dae473e680bd( ).

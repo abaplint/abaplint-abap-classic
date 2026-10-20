@@ -227,7 +227,6 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
         t141 ?= t142.
       ENDIF.
       DATA t146 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t146.
       DATA t147 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t147.
       t147 = t141.

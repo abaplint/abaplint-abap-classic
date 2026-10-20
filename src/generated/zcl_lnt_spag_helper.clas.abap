@@ -304,7 +304,6 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
       ENDIF.
       t15 = t19.
       DATA t54 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t54.
       DATA(t57) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t57->has = abap_true.
       t57->value = t1.
@@ -611,7 +610,6 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
       ENDIF.
       t8 = t20.
       DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t28.
       DATA(t31) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t31->has = abap_true.
       t31->value = |let|.
@@ -662,7 +660,6 @@ CLASS zcl_lnt_spag_helper IMPLEMENTATION.
         ENDIF.
         t36 = t48.
         DATA t56 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t56.
         DATA(t59) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t59->has = abap_true.
         t59->value = |for|.

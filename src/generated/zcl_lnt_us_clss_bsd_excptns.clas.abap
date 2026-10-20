@@ -193,7 +193,6 @@ CLASS zcl_lnt_us_clss_bsd_excptns IMPLEMENTATION.
         t41 = t32->get_first_token( ).
         DATA(t45) = VALUE string( ).
         DATA t46 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t46.
         DATA t51 TYPE string.
         DATA(t52) = |Use class based exceptions, checks interface and class defin|.
         t52 = t52 && |itions|.

@@ -208,7 +208,6 @@ CLASS zcl_lnt_combi IMPLEMENTATION.
           ENDIF.
           DATA(t48) = VALUE int8( ).
           DATA t50 TYPE REF TO zcl_lnt_st_result.
-          CLEAR t50.
           t50 = t42.
           DATA(t52) = VALUE f( ).
           DATA(t53) = VALUE int8( ).

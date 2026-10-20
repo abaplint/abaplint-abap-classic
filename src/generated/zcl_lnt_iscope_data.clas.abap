@@ -512,7 +512,6 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
             IF t7 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t9 ?= t7.
               DATA t10 TYPE REF TO object.
-              CLEAR t10.
               t10 = t9->as_ref( ).
               t8 ?= t10.
             ELSE.
@@ -546,7 +545,6 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
             IF t11 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t13 ?= t11.
               DATA t14 TYPE REF TO object.
-              CLEAR t14.
               t14 = t13->as_ref( ).
               t12 ?= t14.
             ELSE.
@@ -580,7 +578,6 @@ CLASS zcl_lnt_iscope_data IMPLEMENTATION.
             IF t15 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t17 ?= t15.
               DATA t18 TYPE REF TO object.
-              CLEAR t18.
               t18 = t17->as_ref( ).
               t16 ?= t18.
             ELSE.

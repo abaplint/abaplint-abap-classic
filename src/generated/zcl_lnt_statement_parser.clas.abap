@@ -575,7 +575,6 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t29->start->row <> t6 ) = abap_true.
         DATA t43 TYPE REF TO zcl_lnt_shape_63d6a181.
-        CLEAR t43.
         DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t44.
         DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -1141,7 +1140,6 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
       IF t37 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t39 ?= t37.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         t40 = t39->as_ref( ).
         t36 ?= t40.
       ELSE.
@@ -1160,7 +1158,6 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
         DATA t49 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t49.
         DATA t50 TYPE REF TO object.
-        CLEAR t50.
         CLEAR t49.
         t50 = t48.
         TRY.
@@ -1208,17 +1205,14 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
         IF t65 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t66 ?= t65.
           DATA t67 TYPE REF TO object.
-          CLEAR t67.
           t67 = t66->as_ref( ).
           t59 ?= t67.
         ELSE.
           t59 ?= t65.
         ENDIF.
         DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t68.
         t68 = t41.
         DATA t70 TYPE REF TO zcl_lnt_token_node.
-        CLEAR t70.
         t70 = NEW zcl_lnt_token_node( i_token = t59 ).
         t68->load( ).
         APPEND t70 TO t68->items.
@@ -1258,7 +1252,6 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
       IF t97 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t99 ?= t97.
         DATA t100 TYPE REF TO object.
-        CLEAR t100.
         t100 = t99->as_ref( ).
         t96 ?= t100.
       ELSE.
@@ -1277,7 +1270,6 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
         DATA t109 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t109.
         DATA t110 TYPE REF TO object.
-        CLEAR t110.
         CLEAR t109.
         t110 = t108.
         TRY.
@@ -1325,17 +1317,14 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
         IF t125 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t126 ?= t125.
           DATA t127 TYPE REF TO object.
-          CLEAR t127.
           t127 = t126->as_ref( ).
           t119 ?= t127.
         ELSE.
           t119 ?= t125.
         ENDIF.
         DATA t128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t128.
         t128 = t101.
         DATA t130 TYPE REF TO zcl_lnt_token_node.
-        CLEAR t130.
         t130 = NEW zcl_lnt_token_node( i_token = t119 ).
         t128->load( ).
         APPEND t130 TO t128->items.

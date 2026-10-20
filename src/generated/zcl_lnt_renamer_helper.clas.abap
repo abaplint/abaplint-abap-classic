@@ -74,13 +74,11 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t22 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t27 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t27.
       t27 = t22->next( ).
       IF t27->done = abap_true.
         EXIT.
       ENDIF.
       DATA t32 TYPE REF TO zif_lnt_object.
-      CLEAR t32.
       t32 = t27->value.
       DATA(t37) = VALUE abap_bool( ).
       DATA(t38) = VALUE abap_bool( ).
@@ -187,7 +185,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t115 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t116 ?= t115.
           DATA t117 TYPE REF TO object.
-          CLEAR t117.
           t117 = t116->as_ref( ).
           t110 ?= t117.
         ELSE.
@@ -208,7 +205,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t122 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t123 ?= t122.
           DATA t124 TYPE REF TO object.
-          CLEAR t124.
           t124 = t123->as_ref( ).
           t119 ?= t124.
         ELSE.
@@ -217,10 +213,8 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         DATA t126 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         CLEAR t126.
         DATA t127 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t127.
         t127 = t110.
         DATA t129 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t129.
         t129 = t119.
         DATA(t132) = VALUE f( ).
         DATA(t134) = VALUE f( ).
@@ -266,7 +260,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
           IF t201 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t202 ?= t201.
             DATA t203 TYPE REF TO object.
-            CLEAR t203.
             t203 = t202->as_ref( ).
             t196 ?= t203.
           ELSE.
@@ -290,7 +283,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
           IF t211 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t212 ?= t211.
             DATA t213 TYPE REF TO object.
-            CLEAR t213.
             t213 = t212->as_ref( ).
             t208 ?= t213.
           ELSE.
@@ -579,7 +571,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t18 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t20 ?= t18.
         DATA t21 TYPE REF TO object.
-        CLEAR t21.
         t21 = t20->as_ref( ).
         t17 ?= t21.
       ELSE.
@@ -605,7 +596,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         ENDIF.
         t28 = t11->get( p0 = t30 ).
         DATA t34 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t34.
         DATA(t37) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t37->has = abap_true.
         t37->value = abap_true.
@@ -637,7 +627,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t43.
       DATA t44 TYPE REF TO zif_lnt_object.
-      CLEAR t44.
       DATA(t46) = me->reg.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t47.
@@ -658,7 +647,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t59.
         DATA t60 TYPE REF TO object.
-        CLEAR t60.
         CLEAR t59.
         t60 = t44.
         TRY.
@@ -703,7 +691,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t69.
       DATA t70 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t70.
       DATA t71 TYPE REF TO zcl_lnt_abstract_object.
       CLEAR t71.
       t71 = t41.
@@ -730,7 +717,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t78 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t80 ?= t78.
           DATA t81 TYPE REF TO object.
-          CLEAR t81.
           t81 = t80->as_ref( ).
           t77 ?= t81.
         ELSE.
@@ -793,7 +779,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t13 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t15 ?= t13.
         DATA t16 TYPE REF TO object.
-        CLEAR t16.
         t16 = t15->as_ref( ).
         t12 ?= t16.
       ELSE.
@@ -809,7 +794,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       DATA t24 TYPE REF TO zif_lnt_object.
-      CLEAR t24.
       DATA(t26) = me->reg.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t27.
@@ -830,7 +814,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         CLEAR t39.
         t40 = t24.
         TRY.
@@ -875,7 +858,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t49.
       DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t50.
       DATA t51 TYPE REF TO zcl_lnt_abstract_object.
       CLEAR t51.
       t51 = t21.
@@ -902,7 +884,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t58 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t60 ?= t58.
           DATA t61 TYPE REF TO object.
-          CLEAR t61.
           t61 = t60->as_ref( ).
           t57 ?= t61.
         ELSE.
@@ -952,7 +933,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t13 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t15 ?= t13.
         DATA t16 TYPE REF TO object.
-        CLEAR t16.
         t16 = t15->as_ref( ).
         t12 ?= t16.
       ELSE.
@@ -968,7 +948,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       DATA t24 TYPE REF TO zif_lnt_object.
-      CLEAR t24.
       DATA(t26) = me->reg.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t27.
@@ -989,7 +968,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         CLEAR t39.
         t40 = t24.
         TRY.
@@ -1034,7 +1012,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t49.
       DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t50.
       DATA t51 TYPE REF TO zcl_lnt_abstract_object.
       CLEAR t51.
       t51 = t21.
@@ -1061,7 +1038,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t58 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t60 ?= t58.
           DATA t61 TYPE REF TO object.
-          CLEAR t61.
           t61 = t60->as_ref( ).
           t57 ?= t61.
         ELSE.
@@ -1111,7 +1087,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t13 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t15 ?= t13.
         DATA t16 TYPE REF TO object.
-        CLEAR t16.
         t16 = t15->as_ref( ).
         t12 ?= t16.
       ELSE.
@@ -1127,7 +1102,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t23.
       DATA t24 TYPE REF TO zif_lnt_object.
-      CLEAR t24.
       DATA(t26) = me->reg.
       DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t27.
@@ -1148,7 +1122,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         CLEAR t39.
         t40 = t24.
         TRY.
@@ -1193,7 +1166,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t49.
       DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t50.
       DATA t51 TYPE REF TO zcl_lnt_abstract_object.
       CLEAR t51.
       t51 = t21.
@@ -1220,7 +1192,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
         IF t58 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t60 ?= t58.
           DATA t61 TYPE REF TO object.
-          CLEAR t61.
           t61 = t60->as_ref( ).
           t57 ?= t61.
         ELSE.
@@ -1890,7 +1861,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t28 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t30 ?= t28.
         DATA t31 TYPE REF TO object.
-        CLEAR t31.
         t31 = t30->as_ref( ).
         t27 ?= t31.
       ELSE.
@@ -1916,7 +1886,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       DATA(t44) = VALUE string( ).
       t44 = t33.
       DATA t46 TYPE REF TO zcl_lnt_rename_file.
-      CLEAR t46.
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t47.
       DATA t51 TYPE REF TO zcl_lnt_rename_file_options.
@@ -1951,7 +1920,6 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
             DATA t58 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t58.
             DATA t59 TYPE REF TO object.
-            CLEAR t59.
             CLEAR t58.
             t59 = t46->options.
             TRY.
@@ -2381,13 +2349,11 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
     t9 = me->reg->get_objects_by_type( i_type_9913 = |SICF| )->iterate( ).
     DO.
       DATA t13 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t13.
       t13 = t9->next( ).
       IF t13->done = abap_true.
         EXIT.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_object.
-      CLEAR t18.
       t18 = t13->value.
       DATA t24 TYPE REF TO zcl_lnt_icfservice.
       CLEAR t24.

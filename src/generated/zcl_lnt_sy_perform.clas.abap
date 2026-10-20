@@ -73,7 +73,6 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
       IF t22 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t24 ?= t22.
         DATA t25 TYPE REF TO object.
-        CLEAR t25.
         t25 = t24->as_ref( ).
         t21 ?= t25.
       ELSE.
@@ -102,14 +101,12 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
         IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t32 ?= t30.
           DATA t33 TYPE REF TO object.
-          CLEAR t33.
           t33 = t32->as_ref( ).
           t29 ?= t33.
         ELSE.
           t29 ?= t30.
         ENDIF.
         DATA t35 TYPE REF TO zcl_lnt_sy_perform_parameter.
-        CLEAR t35.
         t35 = NEW zcl_lnt_sy_perform_parameter( i_node = t29 i_type_9913 = zcl_lnt_sy_target=>run_syntax( i_node = t29 i_input_967e = t2 ) ).
         CREATE OBJECT t35->zlnt_view_ownkeys_b0e8086400eb.
         t35->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -158,7 +155,6 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
       IF t54 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t56 ?= t54.
         DATA t57 TYPE REF TO object.
-        CLEAR t57.
         t57 = t56->as_ref( ).
         t53 ?= t57.
       ELSE.
@@ -187,14 +183,12 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
         IF t62 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t64 ?= t62.
           DATA t65 TYPE REF TO object.
-          CLEAR t65.
           t65 = t64->as_ref( ).
           t61 ?= t65.
         ELSE.
           t61 ?= t62.
         ENDIF.
         DATA t67 TYPE REF TO zcl_lnt_sy_perform_parameter.
-        CLEAR t67.
         DATA t68 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t68.
         t68 = t61.
@@ -257,7 +251,6 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
       IF t93 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t95 ?= t93.
         DATA t96 TYPE REF TO object.
-        CLEAR t96.
         t96 = t95->as_ref( ).
         t92 ?= t96.
       ELSE.
@@ -286,14 +279,12 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
         IF t101 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t103 ?= t101.
           DATA t104 TYPE REF TO object.
-          CLEAR t104.
           t104 = t103->as_ref( ).
           t100 ?= t104.
         ELSE.
           t100 ?= t101.
         ENDIF.
         DATA t106 TYPE REF TO zcl_lnt_sy_perform_parameter.
-        CLEAR t106.
         DATA t107 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t107.
         t107 = t100.

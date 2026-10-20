@@ -317,7 +317,6 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           t124 = t71.
           DATA(t127) = VALUE string( ).
           DATA t128 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t128.
           DATA t135 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t135.
           DATA t139 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -570,7 +569,6 @@ CLASS zcl_lnt_frbddn_psd_and_prgm IMPLEMENTATION.
           CLEAR t271.
           DATA(t275) = VALUE string( ).
           DATA t276 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t276.
           DATA t283 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t283.
           DATA t287 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

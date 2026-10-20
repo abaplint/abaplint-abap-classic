@@ -167,14 +167,12 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
       IF t20 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t22 ?= t20.
         DATA t23 TYPE REF TO object.
-        CLEAR t23.
         t23 = t22->as_ref( ).
         t19 ?= t23.
       ELSE.
         t19 ?= t20.
       ENDIF.
       DATA t25 TYPE REF TO zif_lnt_statement.
-      CLEAR t25.
       t25 = t19->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_st_raise ) = abap_true.
         DATA(t27) = VALUE string( ).
@@ -224,7 +222,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           CLEAR t49.
           t49 = t1.
           DATA t51 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t51.
           t51 = t19.
           DATA(t53) = VALUE abap_bool( ).
           DATA(t54) = VALUE abap_bool( ).
@@ -246,13 +243,10 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           ENDIF.
           t53 = t54.
           DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t64.
           DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t65.
           DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t66.
           DATA t67 TYPE REF TO zcl_lnt_abstract_node.
-          CLEAR t67.
           t67 = t51.
           t66 = t67->children.
           t65 ?= t66.
@@ -278,7 +272,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
             IF t81 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t82 ?= t81.
               DATA t83 TYPE REF TO object.
-              CLEAR t83.
               t83 = t82->as_ref( ).
               t79 ?= t83.
             ELSE.
@@ -310,7 +303,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
             IF t97 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t98 ?= t97.
               DATA t99 TYPE REF TO object.
-              CLEAR t99.
               t99 = t98->as_ref( ).
               t95 ?= t99.
             ELSE.
@@ -329,7 +321,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
             t119->value = t114.
             t92 = NEW zcl_lnt_position( i_row = t101 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t108 right = t119 op = `+` ) ).
             DATA t125 TYPE REF TO zcl_lnt_abstract_token.
-            CLEAR t125.
             t125 = t51->get_last_token( ).
             DATA t128 TYPE REF TO zcl_lnt_abstract_token.
             CLEAR t128.
@@ -350,7 +341,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
               DATA t151 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t151.
               DATA t152 TYPE REF TO object.
-              CLEAR t152.
               CLEAR t151.
               t152 = t90.
               TRY.
@@ -395,7 +385,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
             IF t164 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t165 ?= t164.
               DATA t166 TYPE REF TO object.
-              CLEAR t166.
               t166 = t165->as_ref( ).
               t162 ?= t166.
             ELSE.
@@ -414,7 +403,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
             t186->value = t181.
             t159 = NEW zcl_lnt_position( i_row = t168 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t175 right = t186 op = `+` ) ).
             DATA t192 TYPE REF TO zcl_lnt_abstract_token.
-            CLEAR t192.
             t192 = t51->get_last_token( ).
             DATA t195 TYPE REF TO zcl_lnt_abstract_token.
             CLEAR t195.
@@ -435,7 +423,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
               DATA t218 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t218.
               DATA t219 TYPE REF TO object.
-              CLEAR t219.
               CLEAR t218.
               t219 = t157.
               TRY.
@@ -474,7 +461,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           IF t227 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t228 ?= t227.
             DATA t229 TYPE REF TO object.
-            CLEAR t229.
             t229 = t228->as_ref( ).
             t225 ?= t229.
           ELSE.
@@ -486,7 +472,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           DATA t232 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t232.
           DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t233.
           t233 = t71.
           DATA t235 TYPE REF TO object.
           CLEAR t235.
@@ -497,7 +482,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
               DATA t238 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CLEAR t238.
               DATA t239 TYPE REF TO object.
-              CLEAR t239.
               t239 = t237->as_ref( ).
               t238 ?= t239.
               t232->set( p0 = t236-k p1 = t238 ).
@@ -528,7 +512,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           CLEAR t247.
           DATA(t251) = VALUE string( ).
           DATA t252 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t252.
           DATA t259 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t259.
           DATA(t262) = |\nhttps://github.com/SAP/styleguides/blob/main/clean-abap/Cle|.
@@ -541,11 +524,7 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           DATA t265 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t265.
           DATA t269 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t269.
-          DATA t270 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t270.
-          CREATE OBJECT t270.
-          t269 = t270.
+          CREATE OBJECT t269.
           t269->load( ).
           APPEND |Styleguide| TO t269->items.
           t269->save( ).
@@ -863,7 +842,6 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
         DATA t178 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t178.
         DATA t179 TYPE REF TO object.
-        CLEAR t179.
         t179 = t177->as_ref( ).
         t178 ?= t179.
         t172->set( p0 = t176-k p1 = t178 ).

@@ -188,7 +188,6 @@ CLASS zcl_lnt_prefer_corresponding IMPLEMENTATION.
         CLEAR t40.
         DATA(t44) = VALUE string( ).
         DATA t45 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t45.
         DATA t50 TYPE string.
         DATA(t51) = |Prefer corresponding( ) to MOVE-CORRESPONDING, from v740sp05|.
         t51 = t51 && | and up|.

@@ -193,14 +193,12 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
       IF t41 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t43 ?= t41.
         DATA t44 TYPE REF TO object.
-        CLEAR t44.
         t44 = t43->as_ref( ).
         t40 ?= t44.
       ELSE.
         t40 ?= t41.
       ENDIF.
       DATA t45 TYPE REF TO zif_lnt_statement.
-      CLEAR t45.
       t45 = t40->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t45 IS BOUND AND t45 IS INSTANCE OF zcl_lnt_st_selection_screen ) = abap_true.
         DATA(t50) = VALUE string( ).
@@ -248,7 +246,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t45 IS BOUND AND t45 IS INSTANCE OF zcl_lnt_include ) = abap_true.
         DATA t71 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t71.
         DATA(t74) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
         t71 = t40->find_first_expression( i_type_9913 = t74 ).
         IF xsdbool( t71 IS BOUND ) = abap_true.
@@ -269,7 +266,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
           DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t89.
           DATA t90 TYPE REF TO zif_lnt_object.
-          CLEAR t90.
           DATA(t92) = me->reg.
           DATA t93 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t93.
@@ -286,7 +282,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
             DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t103.
             DATA t104 TYPE REF TO object.
-            CLEAR t104.
             CLEAR t103.
             t104 = t90.
             TRY.
@@ -326,7 +321,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
             CLEAR t107.
             t107 = t87->get_main_abap_file( ).
             DATA t116 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t116.
             t116 = t5.
             DATA(t118) = VALUE string( ).
             DATA(t119) = VALUE abap_bool( ).
@@ -337,7 +331,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
             ENDIF.
             IF t119 = abap_true.
               DATA t122 TYPE REF TO zcl_lnt_abstract_file.
-              CLEAR t122.
               t122 = t1.
               t118 = t122->filename.
             ELSE.
@@ -391,7 +384,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t148 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t148.
       DATA(t151) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
       t148 = t40->find_first_expression( i_type_9913 = t151 ).
       IF xsdbool( t148 IS BOUND ) = abap_true.
@@ -408,7 +400,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
         ENDIF.
         t154 = t155.
         DATA t166 TYPE REF TO zcl_lnt_shape_015c050b.
-        CLEAR t166.
         t166 = t2->get( p0 = t154 ).
         DATA t169 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t169.
@@ -458,7 +449,6 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
           t193 = |{ t194 }{ || }|.
           DATA(t206) = VALUE string( ).
           DATA t207 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t207.
           DATA(t212) = VALUE string( ).
           DATA(t213) = |Checks that selection screen parameters and select-options h|.
           t213 = t213 && |ave selection texts|.

@@ -232,26 +232,26 @@ CLASS zcl_lnt_empty_linein_statement IMPLEMENTATION.
       ENDIF.
       IF t46 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t57 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        t57 = t36.
-        DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t59.
-        DATA(t61) = VALUE abap_bool( ).
-        IF t57 IS INITIAL.
-          t61 = abap_true.
-        ELSEIF t57->has = abap_false.
-          t61 = abap_true.
-        ENDIF.
-        IF t61 = abap_true.
-          DATA t72 TYPE f.
-          t72 = t41->start->row.
-          DATA(t74) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-          t74->has = abap_true.
-          t74->value = t72.
-          t36 = t74.
-        ENDIF.
       ENDIF.
+      DATA t57 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+      t57 = t36.
+      DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t59.
+      DATA(t61) = VALUE abap_bool( ).
+      IF t57 IS INITIAL.
+        t61 = abap_true.
+      ELSEIF t57->has = abap_false.
+        t61 = abap_true.
+      ENDIF.
+      IF t61 = abap_true.
+        DATA t72 TYPE f.
+        t72 = t41->start->row.
+        DATA(t74) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+        t74->has = abap_true.
+        t74->value = t72.
+        t36 = t74.
+      ENDIF.
+
       DATA(t76) = VALUE abap_bool( ).
       DATA(t77) = VALUE abap_bool( ).
       DATA(t78) = t36.
@@ -303,7 +303,6 @@ CLASS zcl_lnt_empty_linein_statement IMPLEMENTATION.
         CLEAR t109.
         DATA(t113) = VALUE string( ).
         DATA t114 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t114.
         DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t121.
         DATA(t124) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

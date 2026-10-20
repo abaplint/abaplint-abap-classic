@@ -176,7 +176,6 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
       t31 = t7->message_25cb.
       DATA(t33) = VALUE string( ).
       DATA t34 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t34.
       DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t41.
       DATA(t44) = |\n* Integer to CHAR conversion\n* Integer to NUMC conversion\n*|.

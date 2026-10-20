@@ -343,143 +343,142 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
       ENDIF.
       IF t43 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t143 TYPE abap_bool.
-        DATA t144 TYPE abap_bool.
-        DATA t145 TYPE abap_bool.
-        t145 = me->conf->zlnt_view_read_sr_52806862a0a0( ).
-        t144 = xsdbool( t145 = abap_true ).
-        t143 = t144.
-        IF t144 = abap_true.
-          t143 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_write ).
-        ENDIF.
-        IF t143 = abap_true.
-          CONTINUE.
-        ELSE.
-          DATA t150 TYPE abap_bool.
-          DATA t151 TYPE abap_bool.
-          DATA t152 TYPE abap_bool.
-          t152 = me->conf->zlnt_view_read_sr_af9a1dd4900b( ).
-          t151 = xsdbool( t152 = abap_true ).
-          t150 = t151.
-          IF t151 = abap_true.
-            t150 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_move ).
-          ENDIF.
-          IF t150 = abap_true.
-            CONTINUE.
-          ELSE.
-            DATA t157 TYPE abap_bool.
-            DATA t158 TYPE abap_bool.
-            DATA t159 TYPE abap_bool.
-            t159 = me->conf->zlnt_view_read_sr_4ab669e566d5( ).
-            t158 = xsdbool( t159 = abap_true ).
-            t157 = t158.
-            IF t158 = abap_true.
-              t157 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_refresh ).
-            ENDIF.
-            IF t157 = abap_true.
-              CONTINUE.
-            ELSE.
-              DATA t164 TYPE abap_bool.
-              DATA t165 TYPE abap_bool.
-              DATA t166 TYPE abap_bool.
-              t166 = me->conf->zlnt_view_read_sr_fcc3b6176335( ).
-              t165 = xsdbool( t166 = abap_true ).
-              t164 = t165.
-              IF t165 = abap_true.
-                t164 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_unassign ).
-              ENDIF.
-              IF t164 = abap_true.
-                CONTINUE.
-              ELSE.
-                DATA t171 TYPE abap_bool.
-                DATA t172 TYPE abap_bool.
-                DATA t173 TYPE abap_bool.
-                t173 = me->conf->zlnt_view_read_sr_9c170c5c305f( ).
-                t172 = xsdbool( t173 = abap_true ).
-                t171 = t172.
-                IF t172 = abap_true.
-                  t171 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_clear ).
-                ENDIF.
-                IF t171 = abap_true.
-                  CONTINUE.
-                ELSE.
-                  DATA t178 TYPE abap_bool.
-                  DATA t179 TYPE abap_bool.
-                  DATA t180 TYPE abap_bool.
-                  t180 = me->conf->zlnt_view_read_sr_9762d2acd538( ).
-                  t179 = xsdbool( t180 = abap_true ).
-                  t178 = t179.
-                  IF t179 = abap_true.
-                    t178 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_hide ).
-                  ENDIF.
-                  IF t178 = abap_true.
-                    CONTINUE.
-                  ELSE.
-                    DATA t185 TYPE abap_bool.
-                    DATA t186 TYPE abap_bool.
-                    DATA t187 TYPE abap_bool.
-                    t187 = me->conf->zlnt_view_read_sr_972a7b120c53( ).
-                    t186 = xsdbool( t187 = abap_true ).
-                    t185 = t186.
-                    IF t186 = abap_true.
-                      t185 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_free ).
-                    ENDIF.
-                    IF t185 = abap_true.
-                      CONTINUE.
-                    ELSE.
-                      DATA t192 TYPE abap_bool.
-                      DATA t193 TYPE abap_bool.
-                      DATA t194 TYPE abap_bool.
-                      t194 = me->conf->zlnt_view_read_sr_e9e51bddcd51( ).
-                      t193 = xsdbool( t194 = abap_true ).
-                      t192 = t193.
-                      IF t193 = abap_true.
-                        t192 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_include ).
-                      ENDIF.
-                      IF t192 = abap_true.
-                        CONTINUE.
-                      ELSE.
-                        DATA t199 TYPE abap_bool.
-                        DATA t200 TYPE abap_bool.
-                        DATA t201 TYPE abap_bool.
-                        t201 = me->conf->zlnt_view_read_sr_9d95884b1e2f( ).
-                        t200 = xsdbool( t201 = abap_true ).
-                        t199 = t200.
-                        IF t200 = abap_true.
-                          t199 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_check ).
-                        ENDIF.
-                        IF t199 = abap_true.
-                          CONTINUE.
-                        ELSE.
-                          DATA t206 TYPE abap_bool.
-                          DATA t207 TYPE abap_bool.
-                          DATA t208 TYPE abap_bool.
-                          t208 = me->conf->zlnt_view_read_sr_a93433db50e7( ).
-                          t207 = xsdbool( t208 = abap_true ).
-                          t206 = t207.
-                          IF t207 = abap_true.
-                            t206 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_sort ).
-                          ENDIF.
-                          IF t206 = abap_true.
-                            CONTINUE.
-                          ENDIF.
-                        ENDIF.
-                      ENDIF.
-                    ENDIF.
-                  ENDIF.
-                ENDIF.
-              ENDIF.
-            ENDIF.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      DATA t143 TYPE abap_bool.
+      DATA t144 TYPE abap_bool.
+      DATA t145 TYPE abap_bool.
+      t145 = me->conf->zlnt_view_read_sr_52806862a0a0( ).
+      t144 = xsdbool( t145 = abap_true ).
+      t143 = t144.
+      IF t144 = abap_true.
+        t143 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_write ).
+      ENDIF.
+      IF t143 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t150 TYPE abap_bool.
+      DATA t151 TYPE abap_bool.
+      DATA t152 TYPE abap_bool.
+      t152 = me->conf->zlnt_view_read_sr_af9a1dd4900b( ).
+      t151 = xsdbool( t152 = abap_true ).
+      t150 = t151.
+      IF t151 = abap_true.
+        t150 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_move ).
+      ENDIF.
+      IF t150 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t157 TYPE abap_bool.
+      DATA t158 TYPE abap_bool.
+      DATA t159 TYPE abap_bool.
+      t159 = me->conf->zlnt_view_read_sr_4ab669e566d5( ).
+      t158 = xsdbool( t159 = abap_true ).
+      t157 = t158.
+      IF t158 = abap_true.
+        t157 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_refresh ).
+      ENDIF.
+      IF t157 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t164 TYPE abap_bool.
+      DATA t165 TYPE abap_bool.
+      DATA t166 TYPE abap_bool.
+      t166 = me->conf->zlnt_view_read_sr_fcc3b6176335( ).
+      t165 = xsdbool( t166 = abap_true ).
+      t164 = t165.
+      IF t165 = abap_true.
+        t164 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_unassign ).
+      ENDIF.
+      IF t164 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t171 TYPE abap_bool.
+      DATA t172 TYPE abap_bool.
+      DATA t173 TYPE abap_bool.
+      t173 = me->conf->zlnt_view_read_sr_9c170c5c305f( ).
+      t172 = xsdbool( t173 = abap_true ).
+      t171 = t172.
+      IF t172 = abap_true.
+        t171 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_clear ).
+      ENDIF.
+      IF t171 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t178 TYPE abap_bool.
+      DATA t179 TYPE abap_bool.
+      DATA t180 TYPE abap_bool.
+      t180 = me->conf->zlnt_view_read_sr_9762d2acd538( ).
+      t179 = xsdbool( t180 = abap_true ).
+      t178 = t179.
+      IF t179 = abap_true.
+        t178 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_hide ).
+      ENDIF.
+      IF t178 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t185 TYPE abap_bool.
+      DATA t186 TYPE abap_bool.
+      DATA t187 TYPE abap_bool.
+      t187 = me->conf->zlnt_view_read_sr_972a7b120c53( ).
+      t186 = xsdbool( t187 = abap_true ).
+      t185 = t186.
+      IF t186 = abap_true.
+        t185 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_free ).
+      ENDIF.
+      IF t185 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t192 TYPE abap_bool.
+      DATA t193 TYPE abap_bool.
+      DATA t194 TYPE abap_bool.
+      t194 = me->conf->zlnt_view_read_sr_e9e51bddcd51( ).
+      t193 = xsdbool( t194 = abap_true ).
+      t192 = t193.
+      IF t193 = abap_true.
+        t192 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_include ).
+      ENDIF.
+      IF t192 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t199 TYPE abap_bool.
+      DATA t200 TYPE abap_bool.
+      DATA t201 TYPE abap_bool.
+      t201 = me->conf->zlnt_view_read_sr_9d95884b1e2f( ).
+      t200 = xsdbool( t201 = abap_true ).
+      t199 = t200.
+      IF t200 = abap_true.
+        t199 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_check ).
+      ENDIF.
+      IF t199 = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t206 TYPE abap_bool.
+      DATA t207 TYPE abap_bool.
+      DATA t208 TYPE abap_bool.
+      t208 = me->conf->zlnt_view_read_sr_a93433db50e7( ).
+      t207 = xsdbool( t208 = abap_true ).
+      t206 = t207.
+      IF t207 = abap_true.
+        t206 = xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_st_sort ).
+      ENDIF.
+      IF t206 = abap_true.
+        CONTINUE.
+      ENDIF.
+
+
+
+
+
+
+
+
+
+
       DATA t213 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       CLEAR t213.
       DATA(t214) = VALUE abap_bool( ).
       DATA(t215) = t18.
       DATA t216 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      CLEAR t216.
       DATA t226 TYPE f.
       t226 = t27->start->row.
       DATA(t228) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
@@ -541,7 +540,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns IMPLEMENTATION.
       t261 = t22->get_first_token( ).
       DATA(t264) = VALUE string( ).
       DATA t265 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t265.
       DATA t270 TYPE string.
       DATA(t271) = |Chain mainly declarations, allows chaining for the configure|.
       t271 = t271 && |d statements, reports errors for other statements.|.

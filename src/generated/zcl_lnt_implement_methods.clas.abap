@@ -126,24 +126,24 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     IF xsdbool( t10 IS INITIAL ) = abap_true.
       CREATE OBJECT result.
       RETURN.
-    ELSE.
-      DATA t17 TYPE abap_bool.
-      DATA t18 TYPE abap_bool.
-      t18 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_ob_program ).
-      t17 = t18.
-      IF t18 = abap_true.
-        DATA t22 TYPE REF TO zcl_lnt_ob_program.
-        DATA t23 TYPE REF TO zcl_lnt_ob_program.
-        t23 ?= t2.
-        t22 = t23.
-        t22->parse_xml( ).
-        t17 = xsdbool( t22->parsed_xml->is_include = abap_true ).
-      ENDIF.
-      IF t17 = abap_true.
-        CREATE OBJECT result.
-        RETURN.
-      ENDIF.
     ENDIF.
+    DATA t17 TYPE abap_bool.
+    DATA t18 TYPE abap_bool.
+    t18 = xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_ob_program ).
+    t17 = t18.
+    IF t18 = abap_true.
+      DATA t22 TYPE REF TO zcl_lnt_ob_program.
+      DATA t23 TYPE REF TO zcl_lnt_ob_program.
+      t23 ?= t2.
+      t22 = t23.
+      t22->parse_xml( ).
+      t17 = xsdbool( t22->parsed_xml->is_include = abap_true ).
+    ENDIF.
+    IF t17 = abap_true.
+      CREATE OBJECT result.
+      RETURN.
+    ENDIF.
+
     me->obj = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `obj`.
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -430,7 +430,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
           t111 = |{ t112 }{ |"| }|.
           DATA(t119) = VALUE string( ).
           DATA t120 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t120.
           DATA t125 TYPE string.
           DATA(t126) = |Checks for abstract methods and methods from interfaces whic|.
           t126 = t126 && |h need implementing.|.
@@ -546,7 +545,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
           t184 = t7->identifier.
           DATA(t187) = VALUE string( ).
           DATA t188 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t188.
           DATA t193 TYPE string.
           DATA(t194) = |Checks for abstract methods and methods from interfaces whic|.
           t194 = t194 && |h need implementing.|.
@@ -659,7 +657,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         t259 = t1->identifier.
         DATA(t262) = VALUE string( ).
         DATA t263 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t263.
         DATA t268 TYPE string.
         DATA(t269) = |Checks for abstract methods and methods from interfaces whic|.
         t269 = t269 && |h need implementing.|.
@@ -776,7 +773,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
           t340 = t2->identifier.
           DATA(t344) = VALUE string( ).
           DATA t345 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t345.
           DATA t350 TYPE string.
           DATA(t351) = |Checks for abstract methods and methods from interfaces whic|.
           t351 = t351 && |h need implementing.|.
@@ -1252,14 +1248,12 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         IF t35 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t37 ?= t35.
           DATA t38 TYPE REF TO object.
-          CLEAR t38.
           t38 = t37->as_ref( ).
           t34 ?= t38.
         ELSE.
           t34 ?= t35.
         ENDIF.
         DATA t39 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-        CLEAR t39.
         t39 = t34->info->gt_intrfc_dfntn_by_nm( i_name = t1 ).
         IF xsdbool( t39 IS BOUND ) = abap_true.
           t2 = t39.
@@ -1643,21 +1637,21 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
       ENDIF.
       IF t18 = abap_true.
         CONTINUE.
-      ELSE.
-        IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_issue ) = abap_true.
-          DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CREATE OBJECT t38.
-          DATA t41 TYPE REF TO zcl_lnt_issue.
-          DATA t43 TYPE REF TO object.
-          t43 = t12.
-          t41 ?= t43.
-          t38->load( ).
-          APPEND t41 TO t38->items.
-          t38->save( ).
-          result = t38.
-          RETURN.
-        ENDIF.
       ENDIF.
+      IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_issue ) = abap_true.
+        DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        CREATE OBJECT t38.
+        DATA t41 TYPE REF TO zcl_lnt_issue.
+        DATA t43 TYPE REF TO object.
+        t43 = t12.
+        t41 ?= t43.
+        t38->load( ).
+        APPEND t41 TO t38->items.
+        t38->save( ).
+        result = t38.
+        RETURN.
+      ENDIF.
+
       DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t46 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
       DATA t48 TYPE REF TO object.
@@ -1751,7 +1745,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
             t113 = t2->identifier.
             DATA(t117) = VALUE string( ).
             DATA t118 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t118.
             DATA t123 TYPE string.
             DATA(t124) = |Checks for abstract methods and methods from interfaces whic|.
             t124 = t124 && |h need implementing.|.
@@ -1846,7 +1839,6 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
             t173 = t1->identifier.
             DATA(t176) = VALUE string( ).
             DATA t177 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t177.
             DATA t182 TYPE string.
             DATA(t183) = |Checks for abstract methods and methods from interfaces whic|.
             t183 = t183 && |h need implementing.|.
@@ -2075,10 +2067,10 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
       t97 = t18->def.
       result = me->is_abstract( i_m = t1 i_interface_info = t95 i_def = t97 ).
       RETURN.
-    ELSE.
-      result = abap_false.
-
     ENDIF.
+    result = abap_false.
+
+
   ENDMETHOD.
 
   METHOD is_implemented.

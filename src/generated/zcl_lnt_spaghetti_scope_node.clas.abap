@@ -205,7 +205,6 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
       t28 = t15.
       IF xsdbool( t28 IS BOUND ) = abap_true.
         DATA t32 TYPE REF TO zcl_lnt_shape_59e28496.
-        CLEAR t32.
         DATA t33 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t33.
         DATA t37 TYPE REF TO zcl_lnt_abstract_token.

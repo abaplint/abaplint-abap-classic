@@ -1038,7 +1038,6 @@ CLASS zcl_lnt_built_in IMPLEMENTATION.
         ENDIF.
         t525 = zcl_lnt_built_in=>extras_cache.
         DATA t526 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t526.
         DATA(t528) = CONV string( zcl_lnt_built_in=>filename ).
         DATA t529 TYPE REF TO zcl_lnt_void_type.
         CLEAR t529.

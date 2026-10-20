@@ -524,7 +524,6 @@ CLASS zcl_lnt_begin_end_names IMPLEMENTATION.
         CLEAR t147.
         DATA(t151) = VALUE string( ).
         DATA t152 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t152.
         DATA t157 TYPE string.
         DATA(t158) = |Check BEGIN OF and END OF names match, plus there must be st|.
         t158 = t158 && |atements between BEGIN and END|.
@@ -644,7 +643,6 @@ CLASS zcl_lnt_begin_end_names IMPLEMENTATION.
         CLEAR t229.
         DATA(t233) = VALUE string( ).
         DATA t234 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t234.
         DATA t239 TYPE string.
         DATA(t240) = |Check BEGIN OF and END OF names match, plus there must be st|.
         t240 = t240 && |atements between BEGIN and END|.

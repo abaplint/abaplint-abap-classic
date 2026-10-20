@@ -165,20 +165,15 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
       IF t26 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t28 ?= t26.
         DATA t29 TYPE REF TO object.
-        CLEAR t29.
         t29 = t28->as_ref( ).
         t25 ?= t29.
       ELSE.
         t25 ?= t26.
       ENDIF.
       DATA t31 TYPE REF TO zif_lnt_statement.
-      CLEAR t31.
       t31 = t25->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_unknown ) = abap_true.
-        DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t33.
-        CREATE OBJECT t33.
-        result = t33.
+        CREATE OBJECT result.
         RETURN.
       ENDIF.
     ENDDO.
@@ -210,7 +205,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t46 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t48 ?= t46.
           DATA t49 TYPE REF TO object.
-          CLEAR t49.
           t49 = t48->as_ref( ).
           t45 ?= t49.
         ELSE.
@@ -249,7 +243,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t64 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t66 ?= t64.
           DATA t67 TYPE REF TO object.
-          CLEAR t67.
           t67 = t66->as_ref( ).
           t63 ?= t67.
         ELSE.
@@ -288,7 +281,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t82 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t84 ?= t82.
           DATA t85 TYPE REF TO object.
-          CLEAR t85.
           t85 = t84->as_ref( ).
           t81 ?= t85.
         ELSE.
@@ -327,7 +319,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t100 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t102 ?= t100.
           DATA t103 TYPE REF TO object.
-          CLEAR t103.
           t103 = t102->as_ref( ).
           t99 ?= t103.
         ELSE.
@@ -366,7 +357,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t118 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t120 ?= t118.
           DATA t121 TYPE REF TO object.
-          CLEAR t121.
           t121 = t120->as_ref( ).
           t117 ?= t121.
         ELSE.
@@ -401,7 +391,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t132 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t134 ?= t132.
           DATA t135 TYPE REF TO object.
-          CLEAR t135.
           t135 = t134->as_ref( ).
           t131 ?= t135.
         ELSE.
@@ -436,7 +425,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t146 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t148 ?= t146.
           DATA t149 TYPE REF TO object.
-          CLEAR t149.
           t149 = t148->as_ref( ).
           t145 ?= t149.
         ELSE.
@@ -466,7 +454,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
       IF t156 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t158 ?= t156.
         DATA t159 TYPE REF TO object.
-        CLEAR t159.
         t159 = t158->as_ref( ).
         t155 ?= t159.
       ELSE.
@@ -475,9 +462,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
       DATA t162 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t162.
       DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t163.
       DATA t164 TYPE REF TO zcl_lnt_abstract_node.
-      CLEAR t164.
       t164 = t155.
       t163 = t164->children.
       t162 ?= t163.
@@ -496,7 +481,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         t176 = |{ t183 }{ t177 }|.
         DATA(t186) = VALUE string( ).
         DATA t187 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t187.
         DATA t194 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t194.
         DATA(t197) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -508,11 +492,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         DATA t200 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t200.
         DATA t204 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t204.
-        DATA t205 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t205.
-        CREATE OBJECT t205.
-        t204 = t205.
+        CREATE OBJECT t204.
         t204->load( ).
         APPEND |Styleguide| TO t204->items.
         t204->save( ).
@@ -648,14 +628,12 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t265 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t267 ?= t265.
           DATA t268 TYPE REF TO object.
-          CLEAR t268.
           t268 = t267->as_ref( ).
           t264 ?= t268.
         ELSE.
           t264 ?= t265.
         ENDIF.
         DATA t270 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t270.
         DATA(t272) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
         t270 = t264->find_direct_structure( i_type_9913 = t272 ).
         DATA t276 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -675,7 +653,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           t287 = |{ t294 }{ t288 }|.
           DATA(t297) = VALUE string( ).
           DATA t298 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t298.
           DATA t305 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t305.
           DATA(t308) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -687,11 +664,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           DATA t311 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t311.
           DATA t315 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t315.
-          DATA t316 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t316.
-          CREATE OBJECT t316.
-          t315 = t316.
+          CREATE OBJECT t315.
           t315->load( ).
           APPEND |Styleguide| TO t315->items.
           t315->save( ).
@@ -828,7 +801,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t376 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t378 ?= t376.
           DATA t379 TYPE REF TO object.
-          CLEAR t379.
           t379 = t378->as_ref( ).
           t375 ?= t379.
         ELSE.
@@ -837,9 +809,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         DATA t382 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t382.
         DATA t383 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t383.
         DATA t384 TYPE REF TO zcl_lnt_abstract_node.
-        CLEAR t384.
         t384 = t375.
         t383 = t384->children.
         t382 ?= t383.
@@ -852,12 +822,10 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           DATA t391 TYPE REF TO zif_lnt_node.
           CLEAR t391.
           DATA t392 TYPE REF TO zcl_lnt_abstract_node.
-          CLEAR t392.
           t392 = t375.
           DATA t396 TYPE REF TO zif_lnt_node.
           CLEAR t396.
           DATA t397 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t397.
           t397 = t392->children.
           DATA(t399) = VALUE i( ).
           DATA(t400) = VALUE i( ).
@@ -880,7 +848,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           IF t404 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t405 ?= t404.
             DATA t406 TYPE REF TO object.
-            CLEAR t406.
             t406 = t405->as_ref( ).
             t396 ?= t406.
           ELSE.
@@ -913,7 +880,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
             IF t416 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t418 ?= t416.
               DATA t419 TYPE REF TO object.
-              CLEAR t419.
               t419 = t418->as_ref( ).
               t415 ?= t419.
             ELSE.
@@ -923,7 +889,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
             t410 = t410 + t422.
             DATA(t423) = VALUE abap_bool( ).
             DATA t424 TYPE REF TO zif_lnt_union_8249fcb1.
-            CLEAR t424.
             t424 = t415.
             DATA t429 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t429.
@@ -936,7 +901,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
                 DATA t431 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t431.
                 DATA t432 TYPE REF TO object.
-                CLEAR t432.
                 CLEAR t431.
                 t432 = t424.
                 TRY.
@@ -966,7 +930,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
                 DATA t433 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t433.
                 DATA t434 TYPE REF TO object.
-                CLEAR t434.
                 CLEAR t433.
                 t434 = t389.
                 TRY.
@@ -1027,7 +990,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           IF t444 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t445 ?= t444.
             DATA t446 TYPE REF TO object.
-            CLEAR t446.
             t446 = t445->as_ref( ).
             t438 ?= t446.
           ELSE.
@@ -1081,7 +1043,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           t472 = |{ t479 }{ t473 }|.
           DATA(t482) = VALUE string( ).
           DATA t483 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t483.
           DATA t490 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t490.
           DATA(t493) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -1093,11 +1054,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           DATA t496 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t496.
           DATA t500 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t500.
-          DATA t501 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t501.
-          CREATE OBJECT t501.
-          t500 = t501.
+          CREATE OBJECT t500.
           t500->load( ).
           APPEND |Styleguide| TO t500->items.
           t500->save( ).
@@ -1244,14 +1201,12 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t571 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t573 ?= t571.
           DATA t574 TYPE REF TO object.
-          CLEAR t574.
           t574 = t573->as_ref( ).
           t570 ?= t574.
         ELSE.
           t570 ?= t571.
         ENDIF.
         DATA t576 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t576.
         DATA(t578) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
         t576 = t570->find_direct_structure( i_type_9913 = t578 ).
         DATA t582 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1271,7 +1226,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           t593 = |{ t600 }{ t594 }|.
           DATA(t603) = VALUE string( ).
           DATA t604 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t604.
           DATA t611 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t611.
           DATA(t614) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -1283,11 +1237,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           DATA t617 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t617.
           DATA t621 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t621.
-          DATA t622 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t622.
-          CREATE OBJECT t622.
-          t621 = t622.
+          CREATE OBJECT t621.
           t621->load( ).
           APPEND |Styleguide| TO t621->items.
           t621->save( ).
@@ -1424,7 +1374,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         IF t682 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t684 ?= t682.
           DATA t685 TYPE REF TO object.
-          CLEAR t685.
           t685 = t684->as_ref( ).
           t681 ?= t685.
         ELSE.
@@ -1433,9 +1382,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         DATA t688 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t688.
         DATA t689 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t689.
         DATA t690 TYPE REF TO zcl_lnt_abstract_node.
-        CLEAR t690.
         t690 = t681.
         t689 = t690->children.
         t688 ?= t689.
@@ -1454,7 +1401,6 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           CLEAR t710.
           DATA(t714) = VALUE string( ).
           DATA t715 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t715.
           DATA t722 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t722.
           DATA(t725) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -1466,11 +1412,7 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
           DATA t728 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t728.
           DATA t732 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t732.
-          DATA t733 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t733.
-          CREATE OBJECT t733.
-          t732 = t733.
+          CREATE OBJECT t732.
           t732->load( ).
           APPEND |Styleguide| TO t732->items.
           t732->save( ).

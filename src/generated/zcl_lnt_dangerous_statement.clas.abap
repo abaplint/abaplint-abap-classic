@@ -221,7 +221,6 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         IF t47 = abap_true.
           DATA(t51) = VALUE abap_bool( ).
           DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t53.
           DATA(t56) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t56->has = abap_true.
           t56->value = |IF_RAP_QUERY_PROVIDER~SELECT|.
@@ -535,7 +534,6 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
         t219 = |{ t224 }{ t221 }|.
         DATA(t227) = VALUE string( ).
         DATA t228 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t228.
         DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t235.
         DATA(t238) = |Dynamic SQL: Typically ABAP logic does not need dynamic SQL,|.
@@ -686,7 +684,6 @@ CLASS zcl_lnt_dangerous_statement IMPLEMENTATION.
           t309 = |{ t314 }{ t311 }|.
           DATA(t317) = VALUE string( ).
           DATA t318 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t318.
           DATA t325 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t325.
           DATA(t328) = |Dynamic SQL: Typically ABAP logic does not need dynamic SQL,|.

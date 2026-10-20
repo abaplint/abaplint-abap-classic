@@ -170,7 +170,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
         CLEAR t29.
         DATA(t33) = VALUE string( ).
         DATA t34 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t34.
         DATA t39 TYPE string.
         DATA(t40) = |In special cases the ABAP language allows for not having spa|.
         t40 = t40 && |ces before or after string literals.\nThis rule makes sure th|.
@@ -1821,7 +1820,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
       IF t21 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t22 ?= t21.
         DATA t23 TYPE REF TO object.
-        CLEAR t23.
         t23 = t22->as_ref( ).
         t18 ?= t23.
       ELSE.
@@ -1847,7 +1845,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
       IF t30 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t31 ?= t30.
         DATA t32 TYPE REF TO object.
-        CLEAR t32.
         t32 = t31->as_ref( ).
         t25 ?= t32.
       ELSE.
@@ -1925,7 +1922,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
           IF t108 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t110 ?= t108.
             DATA t111 TYPE REF TO object.
-            CLEAR t111.
             t111 = t110->as_ref( ).
             t107 ?= t111.
           ELSE.
@@ -1953,7 +1949,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
             IF t115 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t117 ?= t115.
               DATA t118 TYPE REF TO object.
-              CLEAR t118.
               t118 = t117->as_ref( ).
               t114 ?= t118.
             ELSE.
@@ -1970,7 +1965,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
               DATA t125 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t125.
               DATA t126 TYPE REF TO object.
-              CLEAR t126.
               CLEAR t125.
               t126 = t114.
               TRY.
@@ -1997,7 +1991,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
               DATA t127 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t127.
               DATA t128 TYPE REF TO object.
-              CLEAR t128.
               CLEAR t127.
               t128 = t24.
               TRY.
@@ -2036,7 +2029,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
                 DATA t134 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t134.
                 DATA t135 TYPE REF TO object.
-                CLEAR t135.
                 CLEAR t134.
                 t135 = t114.
                 TRY.
@@ -2063,7 +2055,6 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
                 DATA t136 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t136.
                 DATA t137 TYPE REF TO object.
-                CLEAR t137.
                 CLEAR t136.
                 t137 = t17.
                 TRY.

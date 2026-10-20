@@ -297,7 +297,6 @@ CLASS zcl_lnt_short_case IMPLEMENTATION.
         t97 = |{ t98 }{ | WHEN branches| }|.
         DATA(t109) = VALUE string( ).
         DATA t110 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t110.
         DATA t115 TYPE string.
         DATA(t116) = |Checks for CASE statements which have fewer than the specifi|.
         t116 = t116 && |ed number of branches|.

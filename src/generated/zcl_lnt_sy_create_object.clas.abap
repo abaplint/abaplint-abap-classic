@@ -276,14 +276,12 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
       IF t253 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t255 ?= t253.
         DATA t256 TYPE REF TO object.
-        CLEAR t256.
         t256 = t255->as_ref( ).
         t252 ?= t256.
       ELSE.
         t252 ?= t253.
       ENDIF.
       DATA t257 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t257.
       DATA t258 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t258.
       t258 = t252.
@@ -335,14 +333,12 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
       IF t289 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t291 ?= t289.
         DATA t292 TYPE REF TO object.
-        CLEAR t292.
         t292 = t291->as_ref( ).
         t288 ?= t292.
       ELSE.
         t288 ?= t289.
       ENDIF.
       DATA t293 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t293.
       t293 = zcl_lnt_sy_target=>run_syntax( i_node = t288 i_input_967e = t2 ).
     ENDDO.
     DATA t296 TYPE REF TO zcl_lnt_expression_node.
@@ -1175,7 +1171,6 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
       IF t962 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t964 ?= t962.
         DATA t965 TYPE REF TO object.
-        CLEAR t965.
         t965 = t964->as_ref( ).
         t961 ?= t965.
       ELSE.
@@ -1509,7 +1504,6 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
         DATA t158 TYPE REF TO zcl_lnt_current_scope.
         t158 = t2->scope.
         DATA t161 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t161.
         DATA t164 TYPE string.
         t164 = t59->value.
         DATA(t166) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1553,7 +1547,6 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
             t192 = t178.
           ELSE.
             DATA t201 TYPE REF TO zcl_lnt_class.
-            CLEAR t201.
             DATA t202 TYPE REF TO zcl_lnt_class.
             CLEAR t202.
             DATA t204 TYPE REF TO zif_lnt_registry.
@@ -1666,7 +1659,6 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
           t34 ?= t35.
         ENDIF.
         DATA t39 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t39.
         DATA t40 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t40.
         t40 = t34.
@@ -2090,37 +2082,37 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
         APPEND t326 TO t324->items.
         t324->save( ).
         RETURN.
-      ELSE.
-        DATA t334 TYPE REF TO zcl_lnt_type_utils.
-        DATA t335 TYPE REF TO zcl_lnt_current_scope.
-        t335 = t3->scope.
-        t334 = NEW zcl_lnt_type_utils( i_scope = t335 ).
-        DATA t344 TYPE REF TO zcl_lnt_abstract_type.
-        t344 = t237->type_cba0.
-        IF xsdbool( t334->is_assignable_strict( i_source_75cf = t230 i_target_5f8a = t344 i_node = t225 ) = abap_false ) = abap_true.
-          DATA t350 TYPE string.
-          DATA t351 TYPE string.
-          DATA(t352) = |constructor parameter "|.
-          DATA t353 TYPE string.
-          t353 = t193->value.
-          DATA(t355) = strlen( t352 ).
-          t351 = |{ t352 }{ t353 }|.
-          DATA(t357) = strlen( t351 ).
-          t350 = |{ t351 }{ |" type not compatible| }|.
-          DATA t358 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t358 = t3->issues.
-          DATA t360 TYPE REF TO zcl_lnt_issue.
-          DATA t362 TYPE REF TO zcl_lnt_abstract_token.
-          t362 = t2->get_first_token( ).
-          DATA t365 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          CLEAR t365.
-          t360 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t3 i_token = t362 i_message_26cb = t350 i_fix = t365 ).
-          t358->load( ).
-          APPEND t360 TO t358->items.
-          t358->save( ).
-          RETURN.
-        ENDIF.
       ENDIF.
+      DATA t334 TYPE REF TO zcl_lnt_type_utils.
+      DATA t335 TYPE REF TO zcl_lnt_current_scope.
+      t335 = t3->scope.
+      t334 = NEW zcl_lnt_type_utils( i_scope = t335 ).
+      DATA t344 TYPE REF TO zcl_lnt_abstract_type.
+      t344 = t237->type_cba0.
+      IF xsdbool( t334->is_assignable_strict( i_source_75cf = t230 i_target_5f8a = t344 i_node = t225 ) = abap_false ) = abap_true.
+        DATA t350 TYPE string.
+        DATA t351 TYPE string.
+        DATA(t352) = |constructor parameter "|.
+        DATA t353 TYPE string.
+        t353 = t193->value.
+        DATA(t355) = strlen( t352 ).
+        t351 = |{ t352 }{ t353 }|.
+        DATA(t357) = strlen( t351 ).
+        t350 = |{ t351 }{ |" type not compatible| }|.
+        DATA t358 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        t358 = t3->issues.
+        DATA t360 TYPE REF TO zcl_lnt_issue.
+        DATA t362 TYPE REF TO zcl_lnt_abstract_token.
+        t362 = t2->get_first_token( ).
+        DATA t365 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
+        CLEAR t365.
+        t360 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t3 i_token = t362 i_message_26cb = t350 i_fix = t365 ).
+        t358->load( ).
+        APPEND t360 TO t358->items.
+        t358->save( ).
+        RETURN.
+      ENDIF.
+
       DATA t366 TYPE abap_bool.
       DATA t368 TYPE string.
       t368 = t193->value.

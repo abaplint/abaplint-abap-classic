@@ -150,7 +150,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t29 TYPE string.
         t29 = t27->filename.
         DATA t33 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t33.
         CREATE OBJECT t33 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.clas\.abap$` flags = ||.
         t24 = t33->match( t29 ).
         t16 = xsdbool( t24 IS BOUND ).
@@ -162,7 +161,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t38 = t11->identifier.
         DATA(t41) = VALUE string( ).
         DATA t42 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t42.
         DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t49.
         DATA(t52) = |* global classes must be in own files\n\n* file names must mat|.
@@ -302,7 +300,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t116 = t11->identifier.
         DATA(t119) = VALUE string( ).
         DATA t120 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t120.
         DATA t127 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t127.
         DATA(t130) = |* global classes must be in own files\n\n* file names must mat|.
@@ -411,7 +408,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t180 = t11->identifier.
         DATA(t183) = VALUE string( ).
         DATA t184 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t184.
         DATA t191 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t191.
         DATA(t194) = |* global classes must be in own files\n\n* file names must mat|.
@@ -520,7 +516,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t244 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t244 = t11->is_for_testing.
         DATA t246 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t246.
         DATA(t249) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t249->has = abap_true.
         t249->value = abap_true.
@@ -567,7 +562,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
           ENDIF.
           t256 = t267.
           DATA t274 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t274.
           DATA(t277) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t277->has = abap_true.
           t277->value = |05|.
@@ -603,7 +597,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
           t285 = t11->identifier.
           DATA(t288) = VALUE string( ).
           DATA t289 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t289.
           DATA t296 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t296.
           DATA(t299) = |* global classes must be in own files\n\n* file names must mat|.
@@ -698,7 +691,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
           DATA t343 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           t343 = t11->is_for_testing.
           DATA t345 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t345.
           DATA(t348) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t348->has = abap_true.
           t348->value = abap_false.
@@ -745,7 +737,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
             ENDIF.
             t355 = t366.
             DATA t373 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t373.
             DATA(t376) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t376->has = abap_true.
             t376->value = |05|.
@@ -776,7 +767,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
             t384 = t11->identifier.
             DATA(t387) = VALUE string( ).
             DATA t388 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t388.
             DATA t395 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t395.
             DATA(t398) = |* global classes must be in own files\n\n* file names must mat|.
@@ -901,7 +891,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
       DATA t458 TYPE string.
       t458 = t456->filename.
       DATA t462 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t462.
       CREATE OBJECT t462 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.clas\.abap$` flags = ||.
       t453 = t462->match( t458 ).
       t452 = xsdbool( t453 IS BOUND ).
@@ -989,7 +978,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t511 = t445->identifier.
         DATA(t514) = VALUE string( ).
         DATA t515 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t515.
         DATA t522 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t522.
         DATA(t525) = |* global classes must be in own files\n\n* file names must mat|.
@@ -1112,7 +1100,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
       DATA t585 TYPE string.
       t585 = t583->filename.
       DATA t589 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t589.
       CREATE OBJECT t589 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.intf\.abap$` flags = ||.
       t580 = t589->match( t585 ).
       t579 = xsdbool( t580 IS BOUND ).
@@ -1200,7 +1187,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t638 = t572->identifier.
         DATA(t641) = VALUE string( ).
         DATA t642 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t642.
         DATA t649 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t649.
         DATA(t652) = |* global classes must be in own files\n\n* file names must mat|.
@@ -1336,7 +1322,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t717 TYPE string.
         t717 = t715->filename.
         DATA t721 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t721.
         CREATE OBJECT t721 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.intf\.abap$` flags = ||.
         t712 = t721->match( t717 ).
         t704 = xsdbool( t712 IS BOUND ).
@@ -1348,7 +1333,6 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         t726 = t699->identifier.
         DATA(t729) = VALUE string( ).
         DATA t730 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t730.
         DATA t737 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t737.
         DATA(t740) = |* global classes must be in own files\n\n* file names must mat|.

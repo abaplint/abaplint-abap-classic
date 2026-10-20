@@ -30,9 +30,9 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
       IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t7 ?= t5.
         RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveUnbox: slot has no exact unbox ABI`.
-      ELSE.
-        t4 ?= t5.
       ENDIF.
+      t4 ?= t5.
+
       DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t11 = t1.
       DATA(t13) = VALUE string( ).

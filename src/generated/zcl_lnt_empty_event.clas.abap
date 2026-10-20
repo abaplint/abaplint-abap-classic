@@ -256,7 +256,6 @@ CLASS zcl_lnt_empty_event IMPLEMENTATION.
           t89 = t34.
           DATA(t92) = VALUE string( ).
           DATA t93 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t93.
           DATA t100 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t100.
           DATA(t104) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -469,7 +468,6 @@ CLASS zcl_lnt_empty_event IMPLEMENTATION.
             t211 = t34.
             DATA(t214) = VALUE string( ).
             DATA t215 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t215.
             DATA t222 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t222.
             DATA(t226) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

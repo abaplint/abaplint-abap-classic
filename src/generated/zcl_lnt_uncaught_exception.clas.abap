@@ -1091,7 +1091,6 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
             t182 = |{ t183 }{ t184 }|.
             DATA(t194) = VALUE string( ).
             DATA t195 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t195.
             DATA t202 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t202.
             DATA(t205) = |Does not report any issues if the code contains syntax error|.
@@ -1312,7 +1311,6 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
               t365 = |{ t366 }{ t367 }|.
               DATA(t377) = VALUE string( ).
               DATA t378 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t378.
               DATA t385 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t385.
               DATA(t388) = |Does not report any issues if the code contains syntax error|.
@@ -1414,13 +1412,11 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t3 = t1->get_method_definitions( )->get_all( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t9.
       t9 = t3->next( ).
       IF t9->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_method_definition.
-      CLEAR t14.
       t14 = t9->value.
       DATA(t19) = VALUE abap_bool( ).
       DATA(t20) = VALUE abap_bool( ).
@@ -2095,13 +2091,11 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
     t8 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t13 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t13.
       t13 = t8->next( ).
       IF t13->done = abap_true.
         EXIT.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_object.
-      CLEAR t18.
       t18 = t13->value.
       DATA(t23) = VALUE abap_bool( ).
       DATA(t24) = VALUE abap_bool( ).
@@ -2157,7 +2151,6 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
             CLEAR t62.
           ELSE.
             DATA t67 TYPE REF TO zif_lnt_abap_file_information.
-            CLEAR t67.
             t67 = t45.
             DATA(t69) = VALUE string( ).
             DATA t70 TYPE REF TO zcl_lnt_abstract_object.
@@ -2355,7 +2348,6 @@ CLASS zcl_lnt_uncaught_exception IMPLEMENTATION.
         DATA t29 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t29 = t22->is_local.
         DATA t31 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t31.
         DATA(t34) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t34->has = abap_true.
         t34->value = abap_true.

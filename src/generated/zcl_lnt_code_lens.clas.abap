@@ -106,7 +106,6 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
           t76 ?= t77.
         ENDIF.
         DATA t81 TYPE REF TO zcl_lnt_ob_message_class.
-        CLEAR t81.
         DATA t82 TYPE REF TO zcl_lnt_ob_message_class.
         CLEAR t82.
         DATA(t84) = me->reg.

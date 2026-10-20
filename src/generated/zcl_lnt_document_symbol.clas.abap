@@ -486,7 +486,6 @@ CLASS zcl_lnt_document_symbol IMPLEMENTATION.
               IF t7 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                 t9 ?= t7.
                 DATA t10 TYPE REF TO object.
-                CLEAR t10.
                 t10 = t9->as_ref( ).
                 t8 ?= t10.
               ELSE.

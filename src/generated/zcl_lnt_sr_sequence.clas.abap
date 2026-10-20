@@ -193,7 +193,6 @@ CLASS zcl_lnt_sr_sequence IMPLEMENTATION.
       ENDIF.
       IF t18 = abap_true.
         DATA t21 TYPE REF TO zcl_lnt_imatch.
-        CLEAR t21.
         DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CREATE OBJECT t22.
         DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

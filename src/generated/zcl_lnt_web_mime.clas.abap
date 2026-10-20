@@ -474,7 +474,6 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
             DATA t209 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t209.
             DATA t210 TYPE REF TO object.
-            CLEAR t210.
             CLEAR t209.
             t210 = t205.
             TRY.
@@ -501,7 +500,6 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
       DATA t212 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t212.
       DATA t214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t214.
       t214 = t204.
       DATA t216 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t216.
@@ -523,7 +521,6 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
       ELSE.
         DATA(t228) = VALUE string( ).
         DATA t229 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t229.
         t229 = t212.
         IF t229 IS BOUND.
           t228 = t229->type_of( ).
@@ -539,9 +536,7 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t232 TYPE REF TO zlnt_runtime_map__a1006b231250.
-      CLEAR t232.
       DATA t233 TYPE REF TO zlnt_runtime_map__a1006b231250.
-      CLEAR t233.
       t233 = me->parsed_xml->params.
       DATA(t236) = VALUE string( ).
       DATA(t237) = VALUE string( ).

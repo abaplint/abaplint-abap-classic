@@ -420,7 +420,6 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
             DATA t212 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t212.
             DATA t213 TYPE REF TO object.
-            CLEAR t213.
             CLEAR t212.
             t213 = t208.
             TRY.
@@ -445,15 +444,12 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t214 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t214.
       t214 = me->parsed_xml->texts_translations.
       DATA t218 TYPE REF TO zcl_lnt_dmn_vl_trnsltn.
       CLEAR t218.
       DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t219.
       t219 = t207->get( p0 = |SPRSL| ).
       DATA t223 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t223.
       t223 = t207->get( p0 = |TTEXT| ).
       DATA t227 TYPE REF TO zcl_lnt_dmn_vl_trnsltn.
       CLEAR t227.

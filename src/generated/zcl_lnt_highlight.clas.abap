@@ -1286,10 +1286,10 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       t132 ?= t134.
       result = t132.
       RETURN.
-    ELSE.
-      CLEAR result.
-
     ENDIF.
+    CLEAR result.
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

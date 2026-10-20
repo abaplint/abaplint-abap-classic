@@ -116,7 +116,6 @@ CLASS zcl_lnt_sy_concatenate IMPLEMENTATION.
           t111 ?= t112.
         ENDIF.
         DATA t116 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t116.
         DATA t118 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t118.
         t118 = t111.

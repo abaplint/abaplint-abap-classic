@@ -315,7 +315,6 @@ CLASS zcl_lnt_whitespace_end IMPLEMENTATION.
           CLEAR t95.
           DATA(t100) = VALUE string( ).
           DATA t101 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t101.
           DATA t108 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t108.
           DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

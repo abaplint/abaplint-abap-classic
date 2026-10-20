@@ -78,7 +78,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
           IF t2 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t4 ?= t2.
             DATA t5 TYPE REF TO object.
-            CLEAR t5.
             t5 = t4->as_ref( ).
             t3 ?= t5.
           ELSE.
@@ -358,7 +357,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
             IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t3 ?= t1.
               DATA t4 TYPE REF TO object.
-              CLEAR t4.
               t4 = t3->as_ref( ).
               t2 ?= t4.
             ELSE.

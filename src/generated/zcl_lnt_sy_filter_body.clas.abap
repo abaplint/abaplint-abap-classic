@@ -49,7 +49,6 @@ CLASS zcl_lnt_sy_filter_body IMPLEMENTATION.
         t18 ?= t19.
       ENDIF.
       DATA t24 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t24.
       DATA t25 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t25.
       t25 = t18.

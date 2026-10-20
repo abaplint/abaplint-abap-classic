@@ -161,7 +161,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       ENDIF.
       t57 = t58.
       DATA t64 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t64.
       t64 = me->indexed->get( p0 = t57 ).
       DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t67.
@@ -181,7 +180,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         t77 = |{ t78 }{ |", | }|.
         DATA(t84) = VALUE string( ).
         DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t85.
         t85 = t2.
         DATA(t87) = VALUE string( ).
         DATA(t88) = VALUE abap_bool( ).
@@ -208,7 +206,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         DATA t96 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t96.
         DATA t97 TYPE REF TO object.
-        CLEAR t97.
         CLEAR t96.
         t97 = t73.
         TRY.
@@ -232,7 +229,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
         RAISE EXCEPTION t72.
       ENDIF.
       DATA t98 TYPE REF TO zlnt_runtime_map__41b3bb94df3d.
-      CLEAR t98.
       t98 = me->indexed->set( p0 = t57 p1 = t48->zlnt_view_read_sr_455340cd1e80( ) ).
     ENDDO.
     me->components = t1.
@@ -325,7 +321,6 @@ CLASS zcl_lnt_structure_type IMPLEMENTATION.
       t16 = |{ t17 }{ | TYPE | }|.
       DATA(t21) = VALUE string( ).
       DATA t22 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t22.
       t22 = t5->zlnt_view_read_sr_455340cd1e80( ).
       DATA(t24) = VALUE f( ).
       DATA(t26) = CONV f( 1 ).

@@ -64,7 +64,6 @@ CLASS zcl_lnt_sy_get_parameter IMPLEMENTATION.
         t36 ?= t37.
       ENDIF.
       DATA t41 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t41.
       DATA t42 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t42.
       t42 = t36.

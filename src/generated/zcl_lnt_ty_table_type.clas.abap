@@ -194,17 +194,17 @@ CLASS zcl_lnt_ty_table_type IMPLEMENTATION.
       DATA(t15) = strlen( t9 ).
       result = |{ t9 }{ t10 }|.
       RETURN.
-    ELSE.
-      DATA(t17) = |Table of |.
-      DATA t18 TYPE string.
-      DATA t20 TYPE f.
-      DATA(t22) = CONV f( 1 ).
-      t20 = t1 + t22.
-      t18 = t2->to_text( i_level = t20 ).
-      DATA(t23) = strlen( t17 ).
-      result = |{ t17 }{ t18 }|.
-
     ENDIF.
+    DATA(t17) = |Table of |.
+    DATA t18 TYPE string.
+    DATA t20 TYPE f.
+    DATA(t22) = CONV f( 1 ).
+    t20 = t1 + t22.
+    t18 = t2->to_text( i_level = t20 ).
+    DATA(t23) = strlen( t17 ).
+    result = |{ t17 }{ t18 }|.
+
+
   ENDMETHOD.
 
   METHOD is_generic.

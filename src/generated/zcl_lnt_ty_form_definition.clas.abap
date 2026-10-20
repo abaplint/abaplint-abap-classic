@@ -142,7 +142,6 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
       t27->load( ).
       IF xsdbool( lines( t27->items ) = 1 ) = abap_true.
         DATA t35 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t35.
         DATA t36 TYPE REF TO zcl_lnt_abstract_token.
         t36 = t20->get_first_token( ).
         DATA t38 TYPE string.
@@ -268,7 +267,6 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
           ENDIF.
         ENDIF.
         DATA t135 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t135.
         DATA t136 TYPE REF TO zcl_lnt_abstract_token.
         DATA t137 TYPE REF TO zcl_lnt_fi_identifier.
         t137 = t57.

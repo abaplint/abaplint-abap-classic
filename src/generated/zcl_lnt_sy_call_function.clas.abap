@@ -154,7 +154,6 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
         t115 ?= t116.
       ENDIF.
       DATA t120 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t120.
       DATA t121 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t121.
       t121 = t115.
@@ -194,7 +193,6 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
         t133 ?= t134.
       ENDIF.
       DATA t138 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t138.
       DATA t139 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t139.
       t139 = t133.
@@ -238,7 +236,6 @@ CLASS zcl_lnt_sy_call_function IMPLEMENTATION.
       t156 = t151->find_first_expression( i_type_9913 = t159 ).
       IF xsdbool( t156 IS BOUND ) = abap_true.
         DATA t162 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t162.
         DATA t163 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t163.
         t163 = t156.

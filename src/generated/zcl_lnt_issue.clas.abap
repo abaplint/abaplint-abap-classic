@@ -91,46 +91,46 @@ CLASS zcl_lnt_issue IMPLEMENTATION.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t20.
-    ELSE.
-      DATA t30 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-      t30 = me->data_56cc->end->col.
-      DATA(t37) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-      t37->has = abap_true.
-      t37->value = CONV f( 1 ).
-      IF zlnt_runtime_numb_290eb04a9758=>compare( left = t30 right = t37 op = `<` ) = abap_true.
-        DATA t38 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        DATA t39 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        DATA(t43) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t43->has = abap_true.
-        t43->value = |issue, end col < 1|.
-        t39 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t43 ).
-        t38 = NEW #( ).
-        t38->payload = t39.
-        CLEAR t38->source_value.
-        DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t46 TYPE REF TO object.
-        t46 = t39.
+    ENDIF.
+    DATA t30 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t30 = me->data_56cc->end->col.
+    DATA(t37) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+    t37->has = abap_true.
+    t37->value = CONV f( 1 ).
+    IF zlnt_runtime_numb_290eb04a9758=>compare( left = t30 right = t37 op = `<` ) = abap_true.
+      DATA t38 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+      DATA t39 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+      DATA(t43) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t43->has = abap_true.
+      t43->value = |issue, end col < 1|.
+      t39 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t43 ).
+      t38 = NEW #( ).
+      t38->payload = t39.
+      CLEAR t38->source_value.
+      DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t46 TYPE REF TO object.
+      t46 = t39.
+      TRY.
+          t38->source_value ?= t46.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t38->source_value IS NOT BOUND.
         TRY.
-            t38->source_value ?= t46.
+            t45 ?= t39.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
-        IF t38->source_value IS NOT BOUND.
-          TRY.
-              t45 ?= t39.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t45 IS BOUND.
-            t38->source_value = t45->source( ).
-          ENDIF.
-          IF t38->source_value IS NOT BOUND.
-            CREATE OBJECT t38->source_value.
-            t38->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t38->source_value->oval = t39.
-          ENDIF.
+        IF t45 IS BOUND.
+          t38->source_value = t45->source( ).
         ENDIF.
-        RAISE EXCEPTION t38.
+        IF t38->source_value IS NOT BOUND.
+          CREATE OBJECT t38->source_value.
+          t38->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t38->source_value->oval = t39.
+        ENDIF.
       ENDIF.
+      RAISE EXCEPTION t38.
     ENDIF.
+
   ENDMETHOD.
 
   METHOD at_row.

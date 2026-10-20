@@ -232,7 +232,6 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
             t55 = t47->get_first_token( ).
             DATA(t58) = VALUE string( ).
             DATA t59 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t59.
             DATA t66 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t66.
             DATA t70 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -396,7 +395,6 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
               t138 = t130->get_first_token( ).
               DATA(t141) = VALUE string( ).
               DATA t142 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t142.
               DATA t149 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
               CLEAR t149.
               DATA t153 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -536,81 +534,81 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
       t207->load( ).
       IF xsdbool( lines( t207->items ) <> 3 ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t220 TYPE REF TO object.
-        CLEAR t220.
-        DATA t221 TYPE REF TO zif_lnt_union_4cf1d054.
-        CLEAR t221.
-        DATA t223 TYPE REF TO object.
-        CLEAR t223.
-        t207->load( ).
-        CLEAR t223.
-        READ TABLE t207->items INDEX 1 INTO t223.
-        DATA t224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t224.
-        CLEAR t221.
-        IF t223 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-          t224 ?= t223.
-          DATA t225 TYPE REF TO object.
-          t225 = t224->as_ref( ).
-          t221 ?= t225.
-        ELSE.
-          t221 ?= t223.
-        ENDIF.
-        t220 = t221->get_db65( ).
-        IF xsdbool( xsdbool( t220 IS BOUND AND t220 IS INSTANCE OF zcl_lnt_st_string_template ) = abap_false ) = abap_true.
-          CONTINUE.
-        ELSE.
-          DATA(t227) = VALUE string( ).
-          DATA t230 TYPE REF TO zif_lnt_union_4cf1d054.
-          CLEAR t230.
-          DATA t232 TYPE REF TO object.
-          CLEAR t232.
-          t207->load( ).
-          CLEAR t232.
-          READ TABLE t207->items INDEX 2 INTO t232.
-          DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t233.
-          CLEAR t230.
-          IF t232 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-            t233 ?= t232.
-            DATA t234 TYPE REF TO object.
-            t234 = t233->as_ref( ).
-            t230 ?= t234.
-          ELSE.
-            t230 ?= t232.
-          ENDIF.
-          t227 = t230->get_first_token( )->str.
-          IF xsdbool( t227 <> |&&| ) = abap_true.
-            CONTINUE.
-          ELSE.
-            DATA t240 TYPE REF TO object.
-            CLEAR t240.
-            DATA t241 TYPE REF TO zif_lnt_union_4cf1d054.
-            CLEAR t241.
-            DATA t243 TYPE REF TO object.
-            CLEAR t243.
-            t207->load( ).
-            CLEAR t243.
-            READ TABLE t207->items INDEX 3 INTO t243.
-            DATA t244 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t244.
-            CLEAR t241.
-            IF t243 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-              t244 ?= t243.
-              DATA t245 TYPE REF TO object.
-              t245 = t244->as_ref( ).
-              t241 ?= t245.
-            ELSE.
-              t241 ?= t243.
-            ENDIF.
-            t240 = t241->get_db65( ).
-            IF xsdbool( xsdbool( t240 IS BOUND AND t240 IS INSTANCE OF zcl_lnt_st_source ) = abap_false ) = abap_true.
-              CONTINUE.
-            ENDIF.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      DATA t220 TYPE REF TO object.
+      CLEAR t220.
+      DATA t221 TYPE REF TO zif_lnt_union_4cf1d054.
+      CLEAR t221.
+      DATA t223 TYPE REF TO object.
+      CLEAR t223.
+      t207->load( ).
+      CLEAR t223.
+      READ TABLE t207->items INDEX 1 INTO t223.
+      DATA t224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t224.
+      CLEAR t221.
+      IF t223 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t224 ?= t223.
+        DATA t225 TYPE REF TO object.
+        t225 = t224->as_ref( ).
+        t221 ?= t225.
+      ELSE.
+        t221 ?= t223.
+      ENDIF.
+      t220 = t221->get_db65( ).
+      IF xsdbool( xsdbool( t220 IS BOUND AND t220 IS INSTANCE OF zcl_lnt_st_string_template ) = abap_false ) = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA(t227) = VALUE string( ).
+      DATA t230 TYPE REF TO zif_lnt_union_4cf1d054.
+      CLEAR t230.
+      DATA t232 TYPE REF TO object.
+      CLEAR t232.
+      t207->load( ).
+      CLEAR t232.
+      READ TABLE t207->items INDEX 2 INTO t232.
+      DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t233.
+      CLEAR t230.
+      IF t232 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t233 ?= t232.
+        DATA t234 TYPE REF TO object.
+        t234 = t233->as_ref( ).
+        t230 ?= t234.
+      ELSE.
+        t230 ?= t232.
+      ENDIF.
+      t227 = t230->get_first_token( )->str.
+      IF xsdbool( t227 <> |&&| ) = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t240 TYPE REF TO object.
+      CLEAR t240.
+      DATA t241 TYPE REF TO zif_lnt_union_4cf1d054.
+      CLEAR t241.
+      DATA t243 TYPE REF TO object.
+      CLEAR t243.
+      t207->load( ).
+      CLEAR t243.
+      READ TABLE t207->items INDEX 3 INTO t243.
+      DATA t244 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t244.
+      CLEAR t241.
+      IF t243 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+        t244 ?= t243.
+        DATA t245 TYPE REF TO object.
+        t245 = t244->as_ref( ).
+        t241 ?= t245.
+      ELSE.
+        t241 ?= t243.
+      ENDIF.
+      t240 = t241->get_db65( ).
+      IF xsdbool( xsdbool( t240 IS BOUND AND t240 IS INSTANCE OF zcl_lnt_st_source ) = abap_false ) = abap_true.
+        CONTINUE.
+      ENDIF.
+
+
+
       DATA t246 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t246.
       DATA t248 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -714,7 +712,6 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
         t313 = t314->get_first_token( ).
         DATA(t320) = VALUE string( ).
         DATA t321 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t321.
         DATA t328 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t328.
         DATA t332 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

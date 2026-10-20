@@ -436,26 +436,26 @@ CLASS zcl_lnt_unnecessary_chaining IMPLEMENTATION.
         DATA(t234) = 1.
         t80 = t80 + t234.
         CONTINUE.
-      ELSE.
-        DATA(t235) = VALUE abap_bool( ).
-        DATA(t236) = VALUE abap_bool( ).
-        DATA t239 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t239.
-        t236 = xsdbool( xsdbool( t196 IS INITIAL ) = abap_false ).
-        t235 = t236.
-        IF t236 = abap_true.
-          DATA t245 TYPE REF TO zcl_lnt_position.
-          t245 = t86->start.
-          DATA t251 TYPE REF TO zcl_lnt_position.
-          t251 = t196->start.
-          t235 = t245->equals( i_p = t251 ).
-        ENDIF.
-        IF t235 = abap_true.
-          DATA(t259) = 1.
-          t80 = t80 + t259.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      DATA(t235) = VALUE abap_bool( ).
+      DATA(t236) = VALUE abap_bool( ).
+      DATA t239 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t239.
+      t236 = xsdbool( xsdbool( t196 IS INITIAL ) = abap_false ).
+      t235 = t236.
+      IF t236 = abap_true.
+        DATA t245 TYPE REF TO zcl_lnt_position.
+        t245 = t86->start.
+        DATA t251 TYPE REF TO zcl_lnt_position.
+        t251 = t196->start.
+        t235 = t245->equals( i_p = t251 ).
+      ENDIF.
+      IF t235 = abap_true.
+        DATA(t259) = 1.
+        t80 = t80 + t259.
+        CONTINUE.
+      ENDIF.
+
       DATA t261 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
       DATA t263 TYPE REF TO zcl_lnt_position.
       t263 = t86->start.
@@ -477,7 +477,6 @@ CLASS zcl_lnt_unnecessary_chaining IMPLEMENTATION.
       t298 = t86.
       DATA(t301) = VALUE string( ).
       DATA t302 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t302.
       DATA t309 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t309.
       DATA(t313) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

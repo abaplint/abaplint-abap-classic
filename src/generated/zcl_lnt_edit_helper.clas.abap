@@ -235,116 +235,110 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       IF t62 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t64 ?= t62.
         DATA t65 TYPE REF TO object.
-        CLEAR t65.
         t65 = t64->as_ref( ).
         t61 ?= t65.
       ELSE.
         t61 ?= t62.
       ENDIF.
       DATA t66 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t66.
       t66 = t61->colon.
       DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t75.
       CLEAR t75.
       IF xsdbool( t66 IS INITIAL ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t79) = VALUE abap_bool( ).
-        DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t82.
-        DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t83.
-        CLEAR t82.
-        IF t61 IS BOUND.
-          DATA t84 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t84.
-          DATA t85 TYPE REF TO object.
-          CLEAR t85.
-          CLEAR t84.
-          t85 = t61.
+      ENDIF.
+      DATA(t79) = VALUE abap_bool( ).
+      DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t82.
+      DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t83.
+      CLEAR t82.
+      IF t61 IS BOUND.
+        DATA t84 TYPE REF TO zlnt_view_storage_74017ca272ac.
+        CLEAR t84.
+        DATA t85 TYPE REF TO object.
+        CLEAR t84.
+        t85 = t61.
+        TRY.
+            t82 ?= t85.
+          CATCH cx_sy_move_cast_error.
+        ENDTRY.
+        IF t82 IS NOT BOUND.
           TRY.
-              t82 ?= t85.
+              t84 ?= t61.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
+          IF t84 IS BOUND.
+            t82 = t84->source( ).
+          ENDIF.
           IF t82 IS NOT BOUND.
-            TRY.
-                t84 ?= t61.
-              CATCH cx_sy_move_cast_error.
-            ENDTRY.
-            IF t84 IS BOUND.
-              t82 = t84->source( ).
-            ENDIF.
-            IF t82 IS NOT BOUND.
-              CREATE OBJECT t82.
-              t82->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-              t82->oval = t61.
-            ENDIF.
-          ENDIF.
-        ENDIF.
-        CLEAR t83.
-        IF t2 IS BOUND.
-          DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t86.
-          DATA t87 TYPE REF TO object.
-          CLEAR t87.
-          CLEAR t86.
-          t87 = t2.
-          TRY.
-              t83 ?= t87.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t83 IS NOT BOUND.
-            TRY.
-                t86 ?= t2.
-              CATCH cx_sy_move_cast_error.
-            ENDTRY.
-            IF t86 IS BOUND.
-              t83 = t86->source( ).
-            ENDIF.
-            IF t83 IS NOT BOUND.
-              CREATE OBJECT t83.
-              t83->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-              t83->oval = t2.
-            ENDIF.
-          ENDIF.
-        ENDIF.
-        IF t82 IS BOUND.
-          t79 = t82->strict_equals( t83 ).
-        ELSE.
-          t79 = xsdbool( t83 IS NOT BOUND ).
-        ENDIF.
-        IF t79 = abap_true.
-          t48 = abap_false.
-          t50 = abap_true.
-          CONTINUE.
-        ELSE.
-          IF xsdbool( t48 = abap_true ) = abap_true.
-            DATA t94 TYPE REF TO zcl_lnt_position.
-            CLEAR t94.
-            t94 = t3->start.
-            DATA t100 TYPE REF TO zcl_lnt_position.
-            CLEAR t100.
-            t100 = t66->start.
-            IF t94->equals( i_p = t100 ) = abap_true.
-              t52 = t61.
-            ENDIF.
-          ELSE.
-            IF xsdbool( t50 = abap_true ) = abap_true.
-              DATA t114 TYPE REF TO zcl_lnt_position.
-              CLEAR t114.
-              t114 = t3->start.
-              DATA t120 TYPE REF TO zcl_lnt_position.
-              CLEAR t120.
-              t120 = t66->start.
-              IF t114->equals( i_p = t120 ) = abap_true.
-                t54 = t61.
-              ENDIF.
-              EXIT.
-            ENDIF.
+            CREATE OBJECT t82.
+            t82->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+            t82->oval = t61.
           ENDIF.
         ENDIF.
       ENDIF.
+      CLEAR t83.
+      IF t2 IS BOUND.
+        DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
+        CLEAR t86.
+        DATA t87 TYPE REF TO object.
+        CLEAR t86.
+        t87 = t2.
+        TRY.
+            t83 ?= t87.
+          CATCH cx_sy_move_cast_error.
+        ENDTRY.
+        IF t83 IS NOT BOUND.
+          TRY.
+              t86 ?= t2.
+            CATCH cx_sy_move_cast_error.
+          ENDTRY.
+          IF t86 IS BOUND.
+            t83 = t86->source( ).
+          ENDIF.
+          IF t83 IS NOT BOUND.
+            CREATE OBJECT t83.
+            t83->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+            t83->oval = t2.
+          ENDIF.
+        ENDIF.
+      ENDIF.
+      IF t82 IS BOUND.
+        t79 = t82->strict_equals( t83 ).
+      ELSE.
+        t79 = xsdbool( t83 IS NOT BOUND ).
+      ENDIF.
+      IF t79 = abap_true.
+        t48 = abap_false.
+        t50 = abap_true.
+        CONTINUE.
+      ENDIF.
+      IF xsdbool( t48 = abap_true ) = abap_true.
+        DATA t94 TYPE REF TO zcl_lnt_position.
+        t94 = t3->start.
+        DATA t100 TYPE REF TO zcl_lnt_position.
+        CLEAR t100.
+        t100 = t66->start.
+        IF t94->equals( i_p = t100 ) = abap_true.
+          t52 = t61.
+        ENDIF.
+      ELSE.
+        IF xsdbool( t50 = abap_true ) = abap_true.
+          DATA t114 TYPE REF TO zcl_lnt_position.
+          t114 = t3->start.
+          DATA t120 TYPE REF TO zcl_lnt_position.
+          CLEAR t120.
+          t120 = t66->start.
+          IF t114->equals( i_p = t120 ) = abap_true.
+            t54 = t61.
+          ENDIF.
+          EXIT.
+        ENDIF.
+      ENDIF.
+
+
     ENDDO.
     DATA(t130) = VALUE abap_bool( ).
     DATA(t131) = VALUE abap_bool( ).
@@ -393,14 +387,12 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       IF t187 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t189 ?= t187.
         DATA t190 TYPE REF TO object.
-        CLEAR t190.
         t190 = t189->as_ref( ).
         t186 ?= t190.
       ELSE.
         t186 ?= t187.
       ENDIF.
       DATA t192 TYPE REF TO zcl_lnt_position.
-      CLEAR t192.
       t192 = t186->start.
       DATA t198 TYPE REF TO zcl_lnt_abstract_token.
       CLEAR t198.
@@ -458,28 +450,28 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       t301->value = t296.
       result = zcl_lnt_edit_helper=>merge( i_fix1 = t244 i_fix2 = zcl_lnt_edit_helper=>delete_range( i_file = t1 i_start = t253 i_end = NEW zcl_lnt_position( i_row = t283 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t290 right = t301 op = `+` ) ) ) ).
       RETURN.
-    ELSE.
-      DATA(t305) = VALUE abap_bool( ).
-      DATA(t306) = VALUE abap_bool( ).
-      DATA(t307) = VALUE abap_bool( ).
-      DATA t310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t307 = xsdbool( t52 IS INITIAL ).
-      t306 = t307.
-      IF t307 = abap_true.
-        t306 = xsdbool( t230 IS BOUND ).
-      ENDIF.
-      t305 = t306.
-      IF t306 = abap_true.
-        t305 = xsdbool( t54 IS BOUND ).
-      ENDIF.
-      IF t305 = abap_true.
-        result = zcl_lnt_edit_helper=>delete_range( i_file = t1 i_start = zcl_lnt_edit_helper=>first_after_colon( i_statement = t2 ) i_end = zcl_lnt_edit_helper=>first_after_colon( i_statement = t54 ) ).
-        RETURN.
-      ELSE.
-        result = zcl_lnt_edit_helper=>delete_range( i_file = t1 i_start = t177 i_end = zcl_lnt_edit_helper=>first_after_colon( i_statement = t54 ) ).
-        RETURN.
-      ENDIF.
     ENDIF.
+    DATA(t305) = VALUE abap_bool( ).
+    DATA(t306) = VALUE abap_bool( ).
+    DATA(t307) = VALUE abap_bool( ).
+    DATA t310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t307 = xsdbool( t52 IS INITIAL ).
+    t306 = t307.
+    IF t307 = abap_true.
+      t306 = xsdbool( t230 IS BOUND ).
+    ENDIF.
+    t305 = t306.
+    IF t306 = abap_true.
+      t305 = xsdbool( t54 IS BOUND ).
+    ENDIF.
+    IF t305 = abap_true.
+      result = zcl_lnt_edit_helper=>delete_range( i_file = t1 i_start = zcl_lnt_edit_helper=>first_after_colon( i_statement = t2 ) i_end = zcl_lnt_edit_helper=>first_after_colon( i_statement = t54 ) ).
+      RETURN.
+    ENDIF.
+    result = zcl_lnt_edit_helper=>delete_range( i_file = t1 i_start = t177 i_end = zcl_lnt_edit_helper=>first_after_colon( i_statement = t54 ) ).
+
+
+
   ENDMETHOD.
 
   METHOD first_after_colon.
@@ -505,14 +497,12 @@ CLASS zcl_lnt_edit_helper IMPLEMENTATION.
       IF t16 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t18 ?= t16.
         DATA t19 TYPE REF TO object.
-        CLEAR t19.
         t19 = t18->as_ref( ).
         t15 ?= t19.
       ELSE.
         t15 ?= t16.
       ENDIF.
       DATA t21 TYPE REF TO zcl_lnt_position.
-      CLEAR t21.
       t21 = t15->start.
       IF t21->is_after( i_p = t2 ) = abap_true.
         result = t15->start.

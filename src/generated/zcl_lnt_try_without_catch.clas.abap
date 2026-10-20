@@ -135,18 +135,15 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
       IF t25 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t27 ?= t25.
         DATA t28 TYPE REF TO object.
-        CLEAR t28.
         t28 = t27->as_ref( ).
         t24 ?= t28.
       ELSE.
         t24 ?= t25.
       ENDIF.
       DATA t30 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t30.
       DATA(t32) = zlnt_runtime_desc_78196487750d=>zlnt_member_d722_b01ebc20127f.
       t30 = t24->find_direct_structure( i_type_9913 = t32 ).
       DATA t34 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t34.
       DATA(t36) = zlnt_runtime_desc_78196487750d=>zlnt_member_d712_8689fb760a6c.
       t34 = t24->find_direct_structure( i_type_9913 = t36 ).
       DATA(t37) = VALUE abap_bool( ).
@@ -172,7 +169,6 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         t57 = t57 && |.|.
         DATA(t58) = VALUE string( ).
         DATA t59 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t59.
         DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t66.
         DATA(t70) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -182,11 +178,7 @@ CLASS zcl_lnt_try_without_catch IMPLEMENTATION.
         DATA t72 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t72.
         DATA t76 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t76.
-        DATA t77 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t77.
-        CREATE OBJECT t77.
-        t76 = t77.
+        CREATE OBJECT t76.
         t76->load( ).
         APPEND |SingleFile| TO t76->items.
         t76->save( ).

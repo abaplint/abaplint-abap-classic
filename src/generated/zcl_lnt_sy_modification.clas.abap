@@ -243,7 +243,6 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
         t78 = t38->get_first_token( ).
         DATA(t81) = VALUE string( ).
         DATA t82 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t82.
         DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t89.
         DATA(t92) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.

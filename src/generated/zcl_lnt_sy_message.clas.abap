@@ -90,7 +90,6 @@ CLASS zcl_lnt_sy_message IMPLEMENTATION.
           t43 ?= t44.
         ENDIF.
         DATA t48 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t48.
         DATA t49 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t49.
         t49 = t43.
@@ -132,7 +131,6 @@ CLASS zcl_lnt_sy_message IMPLEMENTATION.
           t61 ?= t62.
         ENDIF.
         DATA t66 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t66.
         DATA t67 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t67.
         t67 = t61.
@@ -173,7 +171,6 @@ CLASS zcl_lnt_sy_message IMPLEMENTATION.
         t79 ?= t80.
       ENDIF.
       DATA t84 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t84.
       DATA t85 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t85.
       t85 = t79.
@@ -213,7 +210,6 @@ CLASS zcl_lnt_sy_message IMPLEMENTATION.
         t97 ?= t98.
       ENDIF.
       DATA t102 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t102.
       DATA t103 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t103.
       t103 = t97.

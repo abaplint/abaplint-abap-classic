@@ -363,7 +363,6 @@ CLASS zcl_lnt_space_before_dot IMPLEMENTATION.
         CLEAR t291.
         DATA(t296) = VALUE string( ).
         DATA t297 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t297.
         DATA t302 TYPE string.
         DATA(t303) = |Checks for extra spaces before dots at the ends of statement|.
         t303 = t303 && |s|.

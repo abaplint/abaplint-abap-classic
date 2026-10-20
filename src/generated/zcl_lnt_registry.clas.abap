@@ -237,13 +237,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t18 = t20->iterate( ).
     DO.
       DATA t24 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t24.
       t24 = t18->next( ).
       IF t24->done = abap_true.
         EXIT.
       ENDIF.
       DATA t31 TYPE REF TO zif_lnt_object.
-      CLEAR t31.
       t31 = t24->value.
       DATA(t35) = VALUE f( ).
       DATA(t36) = VALUE abap_bool( ).
@@ -424,13 +422,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t6 = t8->iterate( ).
     DO.
       DATA t12 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t12.
       t12 = t6->next( ).
       IF t12->done = abap_true.
         EXIT.
       ENDIF.
       DATA t19 TYPE REF TO zif_lnt_object.
-      CLEAR t19.
       t19 = t12->value.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t21.
@@ -472,7 +468,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         IF t37 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t39 ?= t37.
           DATA t40 TYPE REF TO object.
-          CLEAR t40.
           t40 = t39->as_ref( ).
           t36 ?= t40.
         ELSE.
@@ -607,13 +602,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t2 = t4->iterate( ).
     DO.
       DATA t8 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t8.
       t8 = t2->next( ).
       IF t8->done = abap_true.
         EXIT.
       ENDIF.
       DATA t15 TYPE REF TO zif_lnt_object.
-      CLEAR t15.
       t15 = t8->value.
       DATA(t17) = VALUE abap_bool( ).
       t17 = abap_false.
@@ -727,7 +720,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       ENDIF.
       t19 = t19 + 1.
       DATA t21 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t21.
       CREATE OBJECT t21 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t18 flags = |i|.
       t5->load( ).
       APPEND t21 TO t5->items.
@@ -815,7 +807,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       DATA t63 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t63 = me->conf->get_global( )->zlnt_view_read_sr_4799a82dd6de( ).
       DATA t66 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t66.
       DATA(t69) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t69->has = abap_true.
       t69->value = abap_true.
@@ -864,7 +855,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         ENDIF.
         t87 = t93.
         DATA t102 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t102.
         DATA(t105) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t105->has = abap_true.
         t105->value = abap_true.
@@ -938,7 +928,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       IF t11 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t13 ?= t11.
         DATA t14 TYPE REF TO object.
-        CLEAR t14.
         t14 = t13->as_ref( ).
         t10 ?= t14.
       ELSE.
@@ -946,9 +935,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
       ENDIF.
       IF xsdbool( zcl_lnt_registry=>filename_basename( i_filename = t10->get_filename( ) ) = t3 ) = abap_true.
         DATA t20 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        CLEAR t20.
         DATA t21 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        CLEAR t21.
         DATA(t24) = VALUE string( ).
         DATA(t25) = VALUE string( ).
         DATA(t26) = VALUE string( ).
@@ -971,7 +958,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t37.
         DATA t38 TYPE REF TO object.
-        CLEAR t38.
         CLEAR t37.
         t38 = t21.
         TRY.
@@ -1356,13 +1342,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t5 = t7->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t11.
       t11 = t5->next( ).
       IF t11->done = abap_true.
         EXIT.
       ENDIF.
       DATA t16 TYPE REF TO zif_lnt_object.
-      CLEAR t16.
       t16 = t11->value.
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t20.
@@ -1404,7 +1388,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         IF t36 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t38 ?= t36.
           DATA t39 TYPE REF TO object.
-          CLEAR t39.
           t39 = t38->as_ref( ).
           t35 ?= t39.
         ELSE.
@@ -1509,13 +1492,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t5 = t7->iterate( ).
     DO.
       DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t11.
       t11 = t5->next( ).
       IF t11->done = abap_true.
         EXIT.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_object.
-      CLEAR t18.
       t18 = t11->value.
       DATA(t20) = VALUE abap_bool( ).
       t20 = abap_false.
@@ -1614,7 +1595,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
               DATA t49 TYPE REF TO zif_lnt_progress.
               CLEAR t49.
               DATA t51 TYPE REF TO zcl_lnt_irun_input.
-              CLEAR t51.
               t51 = t1.
               DATA t53 TYPE REF TO zif_lnt_progress.
               CLEAR t53.
@@ -1630,7 +1610,6 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
                 CLEAR t60.
               ELSE.
                 DATA t65 TYPE REF TO zif_lnt_progress.
-                CLEAR t65.
                 t65 = t49.
                 DATA(t68) = VALUE string( ).
                 DATA(t69) = VALUE string( ).
@@ -1784,13 +1763,11 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
     t1 = t3->iterate( ).
     DO.
       DATA t7 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t7.
       t7 = t1->next( ).
       IF t7->done = abap_true.
         EXIT.
       ENDIF.
       DATA t14 TYPE REF TO zif_lnt_object.
-      CLEAR t14.
       t14 = t7->value.
       DATA(t16) = VALUE abap_bool( ).
       DATA(t18) = VALUE abap_bool( ).

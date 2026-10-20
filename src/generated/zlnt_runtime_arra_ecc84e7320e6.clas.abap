@@ -447,8 +447,6 @@ CLASS zlnt_runtime_arra_ecc84e7320e6 IMPLEMENTATION.
     DATA(t1) = VALUE abap_bool( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     LOOP AT items INTO t1.
-      CLEAR t2.
-      CLEAR t2.
       CREATE OBJECT t2.
       t2->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t2->bval = t1.

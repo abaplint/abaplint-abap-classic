@@ -31,13 +31,11 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     t8 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t13 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t13.
       t13 = t8->next( ).
       IF t13->done = abap_true.
         EXIT.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_object.
-      CLEAR t18.
       t18 = t13->value.
       DATA(t23) = VALUE abap_bool( ).
       DATA(t24) = VALUE abap_bool( ).
@@ -203,7 +201,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       DATA t130 TYPE REF TO zif_lnt_union_291f04b3.
       CLEAR t130.
       DATA t133 TYPE REF TO object.
-      CLEAR t133.
       t133 = t118->get( p0 = t123 ).
       DATA t134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t134.
@@ -211,7 +208,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       IF t133 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t134 ?= t133.
         DATA t135 TYPE REF TO object.
-        CLEAR t135.
         t135 = t134->as_ref( ).
         t130 ?= t135.
       ELSE.
@@ -232,7 +228,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         DATA(t147) = 1.
         t145 = t136 - t147.
         DATA t148 TYPE REF TO object.
-        CLEAR t148.
         t148 = t118->get( p0 = t145 ).
         DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t149.
@@ -240,7 +235,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         IF t148 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t149 ?= t148.
           DATA t150 TYPE REF TO object.
-          CLEAR t150.
           t150 = t149->as_ref( ).
           t143 ?= t150.
         ELSE.
@@ -267,11 +261,9 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ENDIF.
       DATA(t176) = VALUE abap_bool( ).
       DATA t177 TYPE REF TO zif_lnt_progress.
-      CLEAR t177.
       t177 = t1.
       IF xsdbool( xsdbool( t177 IS INITIAL ) = abap_false ) = abap_true.
         DATA t183 TYPE REF TO zif_lnt_progress.
-        CLEAR t183.
         t183 = t177.
         DATA(t185) = VALUE f( ).
         DATA(t187) = t6.
@@ -288,10 +280,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       t194 = CONV f( 0 ).
       DATA t196 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t196.
-      DATA t197 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t197.
-      CREATE OBJECT t197.
-      t196 = t197.
+      CREATE OBJECT t196.
       DATA(t198) = t6.
       DATA t199 TYPE REF TO zif_lnt_union_291f04b3.
       CLEAR t199.
@@ -312,7 +301,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         IF t200 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t202 ?= t200.
           DATA t203 TYPE REF TO object.
-          CLEAR t203.
           t203 = t202->as_ref( ).
           t199 ?= t203.
         ELSE.
@@ -320,11 +308,9 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         ENDIF.
         DATA(t204) = VALUE abap_bool( ).
         DATA t205 TYPE REF TO zif_lnt_progress.
-        CLEAR t205.
         t205 = t1.
         IF xsdbool( xsdbool( t205 IS INITIAL ) = abap_false ) = abap_true.
           DATA t211 TYPE REF TO zif_lnt_progress.
-          CLEAR t211.
           t211 = t205.
           DATA(t214) = VALUE string( ).
           DATA(t215) = VALUE string( ).
@@ -398,7 +384,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       IF t20 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t22 ?= t20.
         DATA t23 TYPE REF TO object.
-        CLEAR t23.
         t23 = t22->as_ref( ).
         t19 ?= t23.
       ELSE.
@@ -406,7 +391,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ENDIF.
       DATA(t26) = VALUE f( ).
       DATA t29 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t29.
       t29 = t19->type_cba0.
       DATA t31 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t31.
@@ -433,7 +417,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       IF t38 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t40 ?= t38.
         DATA t41 TYPE REF TO object.
-        CLEAR t41.
         t41 = t40->as_ref( ).
         t37 ?= t41.
       ELSE.
@@ -441,7 +424,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ENDIF.
       DATA(t44) = VALUE f( ).
       DATA t46 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t46.
       t46 = t37.
       DATA t48 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t48.
@@ -468,7 +450,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       IF t55 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t57 ?= t55.
         DATA t58 TYPE REF TO object.
-        CLEAR t58.
         t58 = t57->as_ref( ).
         t54 ?= t58.
       ELSE.
@@ -476,7 +457,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ENDIF.
       DATA(t61) = VALUE f( ).
       DATA t63 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t63.
       t63 = t54.
       DATA t65 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t65.
@@ -488,13 +468,11 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     t67 = t2->get_method_definitions( )->get_all( )->iterate( ).
     DO.
       DATA t74 TYPE REF TO zcl_lnt_generator_0f216880.
-      CLEAR t74.
       t74 = t67->next( ).
       IF t74->done = abap_true.
         EXIT.
       ENDIF.
       DATA t81 TYPE REF TO zif_lnt_method_definition.
-      CLEAR t81.
       t81 = t74->value.
       DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t83.
@@ -536,7 +514,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         IF t100 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t102 ?= t100.
           DATA t103 TYPE REF TO object.
-          CLEAR t103.
           t103 = t102->as_ref( ).
           t99 ?= t103.
         ELSE.
@@ -594,7 +571,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       IF t136 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t138 ?= t136.
         DATA t139 TYPE REF TO object.
-        CLEAR t139.
         t139 = t138->as_ref( ).
         t135 ?= t139.
       ELSE.
@@ -622,7 +598,6 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
         IF t143 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t145 ?= t143.
           DATA t146 TYPE REF TO object.
-          CLEAR t146.
           t146 = t145->as_ref( ).
           t142 ?= t146.
         ELSE.
@@ -652,100 +627,100 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     IF t2 = abap_true.
       result = CONV f( 1 ).
       RETURN.
-    ELSE.
-      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
-        DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-        DATA t13 TYPE REF TO zcl_lnt_ty_table_type.
-        DATA t15 TYPE REF TO object.
-        t15 = t1.
-        t13 ?= t15.
-        t11 = t13->row_type.
-        result = me->count( i_type_9913 = t11 ).
-        RETURN.
-      ELSE.
-        IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_data_reference ) = abap_true.
-          DATA t21 TYPE REF TO zcl_lnt_abstract_type.
-          DATA t23 TYPE REF TO zcl_lnt_data_reference.
-          DATA t25 TYPE REF TO object.
-          t25 = t1.
-          t23 ?= t25.
-          t21 = t23->type_cba0.
-          result = me->count( i_type_9913 = t21 ).
-          RETURN.
-        ELSE.
-          IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
-            DATA(t30) = VALUE f( ).
-            t30 = CONV f( 0 ).
-            DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t34 TYPE REF TO zcl_lnt_structure_type.
-            DATA t36 TYPE REF TO object.
-            t36 = t1.
-            t34 ?= t36.
-            t32 = t34->components.
-            DATA t39 TYPE REF TO zcl_lnt_istructure_component.
-            DATA t40 TYPE REF TO object.
-            DATA(t41) = VALUE i( ).
-            DO.
-              t32->load( ).
-              IF t41 >= lines( t32->items ).
-                EXIT.
-              ENDIF.
-              CLEAR t40.
-              READ TABLE t32->items INDEX t41 + 1 INTO t40.
-              t41 = t41 + 1.
-              DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              CLEAR t42.
-              CLEAR t39.
-              IF t40 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-                t42 ?= t40.
-                CLEAR t39.
-                IF t42 IS BOUND.
-                  IF t42->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-                    TRY.
-                        t39 ?= t42->oval.
-                      CATCH cx_sy_move_cast_error.
-                    ENDTRY.
-                  ENDIF.
-                  IF t39 IS NOT BOUND.
-                    IF t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND t42->tag <>
-                    zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
-                      DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
-                      CLEAR t43.
-                      IF t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-                        RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
-                      ENDIF.
-                      TRY.
-                          t43 ?= t42->oval.
-                        CATCH cx_sy_move_cast_error.
-                          RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference does not implement view storage`.
-                      ENDTRY.
-                      IF t43->structural( ) <> abap_true.
-                        RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
-                      ENDIF.
-                    ENDIF.
-                    DATA(t44) = VALUE string( ).
-                    DATA t45 TYPE REF TO zcl_lnt_abstract_type.
-                    CLEAR t45.
-                    DATA t46 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                    CLEAR t46.
-                    DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                    CLEAR t47.
-                    t39 = NEW zcl_lnt_istructure_component( view_source = t42 i_name = t44 i_type_9913 = t45 i_as_include = t46 i_suffix = t47 ).
-                  ENDIF.
-                ENDIF.
-              ELSE.
-                t39 ?= t40.
-              ENDIF.
-              DATA(t50) = VALUE f( ).
-              t50 = me->count( i_type_9913 = t39->zlnt_view_read_sr_455340cd1e80( ) ).
-              t30 = t30 + t50.
-            ENDDO.
-            result = t30.
-            RETURN.
-          ENDIF.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
+      DATA t11 TYPE REF TO zcl_lnt_abstract_type.
+      DATA t13 TYPE REF TO zcl_lnt_ty_table_type.
+      DATA t15 TYPE REF TO object.
+      t15 = t1.
+      t13 ?= t15.
+      t11 = t13->row_type.
+      result = me->count( i_type_9913 = t11 ).
+      RETURN.
+    ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_data_reference ) = abap_true.
+      DATA t21 TYPE REF TO zcl_lnt_abstract_type.
+      DATA t23 TYPE REF TO zcl_lnt_data_reference.
+      DATA t25 TYPE REF TO object.
+      t25 = t1.
+      t23 ?= t25.
+      t21 = t23->type_cba0.
+      result = me->count( i_type_9913 = t21 ).
+      RETURN.
+    ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
+      DATA(t30) = VALUE f( ).
+      t30 = CONV f( 0 ).
+      DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      DATA t34 TYPE REF TO zcl_lnt_structure_type.
+      DATA t36 TYPE REF TO object.
+      t36 = t1.
+      t34 ?= t36.
+      t32 = t34->components.
+      DATA t39 TYPE REF TO zcl_lnt_istructure_component.
+      DATA t40 TYPE REF TO object.
+      DATA(t41) = VALUE i( ).
+      DO.
+        t32->load( ).
+        IF t41 >= lines( t32->items ).
+          EXIT.
+        ENDIF.
+        CLEAR t40.
+        READ TABLE t32->items INDEX t41 + 1 INTO t40.
+        t41 = t41 + 1.
+        DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t42.
+        CLEAR t39.
+        IF t40 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+          t42 ?= t40.
+          CLEAR t39.
+          IF t42 IS BOUND.
+            IF t42->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+              TRY.
+                  t39 ?= t42->oval.
+                CATCH cx_sy_move_cast_error.
+              ENDTRY.
+            ENDIF.
+            IF t39 IS NOT BOUND.
+              IF t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND t42->tag <>
+                    zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
+                DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
+                CLEAR t43.
+                IF t42->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+                  RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
+                ENDIF.
+                TRY.
+                    t43 ?= t42->oval.
+                  CATCH cx_sy_move_cast_error.
+                    RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference does not implement view storage`.
+                ENDTRY.
+                IF t43->structural( ) <> abap_true.
+                  RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
+                ENDIF.
+              ENDIF.
+              DATA(t44) = VALUE string( ).
+              DATA t45 TYPE REF TO zcl_lnt_abstract_type.
+              CLEAR t45.
+              DATA t46 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+              CLEAR t46.
+              DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+              CLEAR t47.
+              t39 = NEW zcl_lnt_istructure_component( view_source = t42 i_name = t44 i_type_9913 = t45 i_as_include = t46 i_suffix = t47 ).
+            ENDIF.
+          ENDIF.
+        ELSE.
+          t39 ?= t40.
+        ENDIF.
+        DATA(t50) = VALUE f( ).
+        t50 = me->count( i_type_9913 = t39->zlnt_view_read_sr_455340cd1e80( ) ).
+        t30 = t30 + t50.
+      ENDDO.
+      result = t30.
+      RETURN.
+    ENDIF.
+
+
+
     result = CONV f( 0 ).
 
   ENDMETHOD.

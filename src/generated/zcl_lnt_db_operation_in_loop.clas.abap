@@ -268,7 +268,6 @@ CLASS zcl_lnt_db_operation_in_loop IMPLEMENTATION.
         t126 = t57.
         DATA(t129) = VALUE string( ).
         DATA t130 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t130.
         DATA t137 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t137.
         DATA t141 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

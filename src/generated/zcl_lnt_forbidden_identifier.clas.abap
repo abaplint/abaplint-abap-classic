@@ -225,7 +225,6 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
       ENDIF.
       t14 = t14 + 1.
       DATA t16 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t16.
       CREATE OBJECT t16 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t13 flags = |i|.
       IF t16->test( p0 = t3 ) = abap_true.
         DATA t23 TYPE string.
@@ -239,7 +238,6 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
         CLEAR t31.
         DATA(t35) = VALUE string( ).
         DATA t36 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t36.
         DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t43.
         DATA(t46) = |Used in the transpiler to find javascript keywords in ABAP i|.

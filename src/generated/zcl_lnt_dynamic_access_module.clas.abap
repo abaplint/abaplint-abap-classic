@@ -159,7 +159,6 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
       IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t34 ?= t32.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         t35 = t34->as_ref( ).
         t31 ?= t35.
       ELSE.
@@ -172,7 +171,6 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
         DATA t40 TYPE REF TO object.
-        CLEAR t40.
         CLEAR t39.
         t40 = t31.
         TRY.

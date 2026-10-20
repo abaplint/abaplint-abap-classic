@@ -207,7 +207,6 @@ CLASS zcl_lnt_mx_on_mthd_prmtr_pr_ln IMPLEMENTATION.
           t78 = t32->get_first_token( ).
           DATA(t81) = VALUE string( ).
           DATA t82 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t82.
           DATA t89 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t89.
           DATA t93 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -305,7 +304,6 @@ CLASS zcl_lnt_mx_on_mthd_prmtr_pr_ln IMPLEMENTATION.
           t81 = t82->title.
           DATA(t137) = VALUE string( ).
           DATA t138 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t138.
           DATA t145 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t145.
           DATA t149 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

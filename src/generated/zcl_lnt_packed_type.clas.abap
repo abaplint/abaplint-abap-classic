@@ -55,41 +55,41 @@ CLASS zcl_lnt_packed_type IMPLEMENTATION.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t8.
-    ELSE.
-      IF xsdbool( t2 < CONV f( 0 ) ) = abap_true.
-        DATA t20 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        DATA t21 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        DATA(t25) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t25->has = abap_true.
-        t25->value = |Bad DECIMALS, Packed|.
-        t21 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t25 ).
-        t20 = NEW #( ).
-        t20->payload = t21.
-        CLEAR t20->source_value.
-        DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t28 TYPE REF TO object.
-        t28 = t21.
+    ENDIF.
+    IF xsdbool( t2 < CONV f( 0 ) ) = abap_true.
+      DATA t20 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
+      DATA t21 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
+      DATA(t25) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t25->has = abap_true.
+      t25->value = |Bad DECIMALS, Packed|.
+      t21 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t25 ).
+      t20 = NEW #( ).
+      t20->payload = t21.
+      CLEAR t20->source_value.
+      DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t28 TYPE REF TO object.
+      t28 = t21.
+      TRY.
+          t20->source_value ?= t28.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t20->source_value IS NOT BOUND.
         TRY.
-            t20->source_value ?= t28.
+            t27 ?= t21.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
-        IF t20->source_value IS NOT BOUND.
-          TRY.
-              t27 ?= t21.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t27 IS BOUND.
-            t20->source_value = t27->source( ).
-          ENDIF.
-          IF t20->source_value IS NOT BOUND.
-            CREATE OBJECT t20->source_value.
-            t20->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t20->source_value->oval = t21.
-          ENDIF.
+        IF t27 IS BOUND.
+          t20->source_value = t27->source( ).
         ENDIF.
-        RAISE EXCEPTION t20.
+        IF t20->source_value IS NOT BOUND.
+          CREATE OBJECT t20->source_value.
+          t20->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t20->source_value->oval = t21.
+        ENDIF.
       ENDIF.
+      RAISE EXCEPTION t20.
     ENDIF.
+
     me->length = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `length`.
     me->decimals_29bf = t2.

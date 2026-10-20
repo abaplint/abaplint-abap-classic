@@ -288,7 +288,6 @@ CLASS zcl_lnt_sy_for IMPLEMENTATION.
         t251 ?= t252.
       ENDIF.
       DATA t256 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t256.
       DATA t257 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t257.
       t257 = t251.

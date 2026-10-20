@@ -87,7 +87,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         DATA t38 TYPE REF TO zcl_lnt_proxy_data_item.
         CLEAR t38.
         DATA t41 TYPE REF TO object.
-        CLEAR t41.
         t41 = t23->get( p0 = t29 ).
         DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t42.
@@ -154,10 +153,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         t36 = t38.
         DATA(t57) = VALUE abap_bool( ).
         DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t58.
         t58 = t36->zlnt_view_read_sr_35246f61540a( ).
         DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t60.
         DATA(t63) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t63->has = abap_true.
         t63->value = |INTF|.
@@ -610,7 +607,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       DATA t29 TYPE REF TO zcl_lnt_proxy_data_item.
       CLEAR t29.
       DATA t32 TYPE REF TO object.
-      CLEAR t32.
       t32 = t13->get( p0 = t20 ).
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t33.
@@ -677,10 +673,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       t27 = t29.
       DATA(t48) = VALUE abap_bool( ).
       DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t49.
       t49 = t27->zlnt_view_read_sr_35246f61540a( ).
       DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t51.
       DATA(t54) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t54->has = abap_true.
       t54->value = |INTF|.
@@ -818,10 +812,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       ENDIF.
       DATA(t110) = VALUE abap_bool( ).
       DATA t111 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t111.
       t111 = t92->zlnt_view_read_sr_35246f61540a( ).
       DATA t113 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t113.
       DATA(t116) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t116->has = abap_true.
       t116->value = |METH|.
@@ -930,7 +922,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       ENDIF.
       DATA(t151) = VALUE string( ).
       DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t152.
       t152 = zlnt_property_loo_01d5731631ca=>get( p0 = t132 key = |R3_NAME| ).
       IF t152 IS BOUND.
         t151 = t152->type_of( ).
@@ -954,11 +945,7 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       DATA t162 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t162.
       DATA t164 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t164.
-      DATA t165 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t165.
-      CREATE OBJECT t165.
-      t164 = t165.
+      CREATE OBJECT t164.
       DATA t166 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t166.
       t166 = me->parsed_xml->proxy_data.
@@ -1040,10 +1027,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         DATA(t187) = VALUE abap_bool( ).
         DATA(t188) = VALUE abap_bool( ).
         DATA t189 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t189.
         t189 = t169->zlnt_view_read_sr_35246f61540a( ).
         DATA t191 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t191.
         DATA(t194) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t194->has = abap_true.
         t194->value = |PAIM|.
@@ -1067,10 +1052,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         IF t188 = abap_true.
           DATA(t198) = VALUE abap_bool( ).
           DATA t199 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t199.
           t199 = t169->zlnt_view_read_sr_6acc890d5816( ).
           DATA t201 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t201.
           t201 = t132->zlnt_view_read_sr_6acc890d5816( ).
           DATA(t203) = VALUE abap_bool( ).
           DATA(t204) = VALUE abap_bool( ).
@@ -1099,11 +1082,7 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
       DATA t208 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t208.
       DATA t210 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t210.
-      DATA t211 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t211.
-      CREATE OBJECT t211.
-      t210 = t211.
+      CREATE OBJECT t210.
       DATA t212 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t212.
       t212 = me->parsed_xml->proxy_data.
@@ -1185,10 +1164,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         DATA(t233) = VALUE abap_bool( ).
         DATA(t234) = VALUE abap_bool( ).
         DATA t235 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t235.
         t235 = t215->zlnt_view_read_sr_35246f61540a( ).
         DATA t237 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t237.
         DATA(t240) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t240->has = abap_true.
         t240->value = |PAEX|.
@@ -1212,10 +1189,8 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
         IF t234 = abap_true.
           DATA(t244) = VALUE abap_bool( ).
           DATA t245 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t245.
           t245 = t215->zlnt_view_read_sr_6acc890d5816( ).
           DATA t247 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t247.
           t247 = t132->zlnt_view_read_sr_6acc890d5816( ).
           DATA(t249) = VALUE abap_bool( ).
           DATA(t250) = VALUE abap_bool( ).
@@ -1342,7 +1317,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           CLEAR t299.
           DATA(t301) = VALUE string( ).
           DATA t302 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t302.
           t302 = zlnt_property_loo_01d5731631ca=>get( p0 = t278 key = |OBJ_NAME2| ).
           IF t302 IS BOUND.
             t301 = t302->type_of( ).
@@ -1370,7 +1344,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           CLEAR t317.
           DATA(t319) = VALUE string( ).
           DATA t320 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t320.
           t320 = zlnt_property_loo_01d5731631ca=>get( p0 = t278 key = |OBJ_NAME_R| ).
           IF t320 IS BOUND.
             t319 = t320->type_of( ).
@@ -1420,7 +1393,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           DATA(t354) = |      |.
           DATA(t355) = VALUE string( ).
           DATA t356 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t356.
           t356 = t299.
           DATA(t358) = VALUE string( ).
           DATA(t359) = VALUE abap_bool( ).
@@ -1441,7 +1413,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           t352 = |{ t353 }{ | TYPE | }|.
           DATA(t367) = VALUE string( ).
           DATA t368 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t368.
           t368 = t317.
           DATA(t370) = VALUE string( ).
           DATA(t371) = VALUE abap_bool( ).
@@ -1567,7 +1538,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           CLEAR t425.
           DATA(t427) = VALUE string( ).
           DATA t428 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t428.
           t428 = zlnt_property_loo_01d5731631ca=>get( p0 = t404 key = |OBJ_NAME2| ).
           IF t428 IS BOUND.
             t427 = t428->type_of( ).
@@ -1595,7 +1565,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           CLEAR t443.
           DATA(t445) = VALUE string( ).
           DATA t446 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t446.
           t446 = zlnt_property_loo_01d5731631ca=>get( p0 = t404 key = |OBJ_NAME_R| ).
           IF t446 IS BOUND.
             t445 = t446->type_of( ).
@@ -1637,7 +1606,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           DATA(t475) = |      |.
           DATA(t476) = VALUE string( ).
           DATA t477 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t477.
           t477 = t425.
           DATA(t479) = VALUE string( ).
           DATA(t480) = VALUE abap_bool( ).
@@ -1658,7 +1626,6 @@ CLASS zcl_lnt_proxy_object IMPLEMENTATION.
           t473 = |{ t474 }{ | TYPE | }|.
           DATA(t488) = VALUE string( ).
           DATA t489 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t489.
           t489 = t443.
           DATA(t491) = VALUE string( ).
           DATA(t492) = VALUE abap_bool( ).

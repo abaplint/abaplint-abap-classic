@@ -174,7 +174,6 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         CLEAR t46.
         DATA(t50) = VALUE string( ).
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t51.
         DATA t56 TYPE string.
         DATA(t57) = |Finds TYPE BEGIN with just one INCLUDE TYPE, and DATA with s|.
         t57 = t57 && |ingle INCLUDE STRUCTURE|.
@@ -348,7 +347,6 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         CLEAR t153.
         DATA(t157) = VALUE string( ).
         DATA t158 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t158.
         DATA t163 TYPE string.
         DATA(t164) = |Finds TYPE BEGIN with just one INCLUDE TYPE, and DATA with s|.
         t164 = t164 && |ingle INCLUDE STRUCTURE|.
@@ -504,7 +502,6 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         CLEAR t244.
         DATA(t248) = VALUE string( ).
         DATA t249 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t249.
         DATA t254 TYPE string.
         DATA(t255) = |Finds TYPE BEGIN with just one INCLUDE TYPE, and DATA with s|.
         t255 = t255 && |ingle INCLUDE STRUCTURE|.

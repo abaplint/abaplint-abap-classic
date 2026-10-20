@@ -247,7 +247,6 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr IMPLEMENTATION.
           t93 = zcl_lnt_edit_helper=>replace_range( i_file = t55 i_start = t95 i_end = t100 i_text = t123 ).
           DATA(t130) = VALUE string( ).
           DATA t131 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t131.
           DATA t138 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t138.
           DATA t142 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -343,7 +342,6 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr IMPLEMENTATION.
         ELSE.
           DATA(t199) = VALUE string( ).
           DATA t200 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t200.
           DATA t207 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t207.
           DATA t211 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -608,84 +606,84 @@ CLASS zcl_lnt_prfrrd_cmpr_oprtr IMPLEMENTATION.
       t73 = t74->key.
       result = zcl_lnt_issue=>at_token( i_file = t2 i_token = t1 i_message_26cb = t3 i_key = t73 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t36 ).
       RETURN.
-    ELSE.
-      DATA(t141) = VALUE string( ).
-      DATA t142 TYPE REF TO zcl_lnt_irule_metadata.
-      DATA t149 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t153 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t153.
-      t153->load( ).
-      APPEND |SingleFile| TO t153->items.
-      t153->save( ).
-      t153->load( ).
-      APPEND |Quickfix| TO t153->items.
-      t153->save( ).
-      t149 = t153.
-      DATA t161 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t165) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t165->has = abap_true.
-      t165->value = |IF foo EQ bar.\nENDIF.|.
-      t161 = t165.
-      DATA(t171) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t171->has = abap_true.
-      t171->value = |IF foo = bar.\nENDIF.|.
-      DATA t173 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t175 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      t142 = NEW zcl_lnt_irule_metadata( i_key = |preferred_compare_operator| i_title = |Preferred compare operator| i_short_description = |Configure undesired operator variants| i_bad_example = t161 i_good_example = t171 i_extended_information = t173 i_tags = t149 i_pragma = t175 i_pseudo_comment = t177 ).
-      CREATE OBJECT t142->zlnt_view_ownkeys_b0e8086400eb.
-      t142->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t179 ).
-      DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `title` p1 = t180 ).
-      ENDIF.
-      DATA t181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `shortDescription` p1 = t181 ).
-      ENDIF.
-      DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tags` p1 = t182 ).
-      ENDIF.
-      DATA t183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `badExample` p1 = t183 ).
-      ENDIF.
-      DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `goodExample` p1 = t184 ).
-      ENDIF.
-      CREATE OBJECT t142->zlnt_json_ownkeys_70e5fd461788.
-      t142->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t186 ).
-      DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t188 ).
-      ENDIF.
-      DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t190 ).
-      ENDIF.
-      DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t192 ).
-      ENDIF.
-      DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t194 ).
-      ENDIF.
-      DATA t196 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t196 ).
-      ENDIF.
-      t141 = t142->key.
-      DATA t199 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-      result = zcl_lnt_issue=>at_token( i_file = t2 i_token = t1 i_message_26cb = t3 i_key = t141 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t199 ).
-
     ENDIF.
+    DATA(t141) = VALUE string( ).
+    DATA t142 TYPE REF TO zcl_lnt_irule_metadata.
+    DATA t149 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+    DATA t153 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+    CREATE OBJECT t153.
+    t153->load( ).
+    APPEND |SingleFile| TO t153->items.
+    t153->save( ).
+    t153->load( ).
+    APPEND |Quickfix| TO t153->items.
+    t153->save( ).
+    t149 = t153.
+    DATA t161 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA(t165) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t165->has = abap_true.
+    t165->value = |IF foo EQ bar.\nENDIF.|.
+    t161 = t165.
+    DATA(t171) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t171->has = abap_true.
+    t171->value = |IF foo = bar.\nENDIF.|.
+    DATA t173 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t175 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t142 = NEW zcl_lnt_irule_metadata( i_key = |preferred_compare_operator| i_title = |Preferred compare operator| i_short_description = |Configure undesired operator variants| i_bad_example = t161 i_good_example = t171 i_extended_information = t173 i_tags = t149 i_pragma = t175 i_pseudo_comment = t177 ).
+    CREATE OBJECT t142->zlnt_view_ownkeys_b0e8086400eb.
+    t142->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `key` p1 = t179 ).
+    DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `title` p1 = t180 ).
+    ENDIF.
+    DATA t181 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `shortDescription` p1 = t181 ).
+    ENDIF.
+    DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tags` p1 = t182 ).
+    ENDIF.
+    DATA t183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `badExample` p1 = t183 ).
+    ENDIF.
+    DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t142->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `goodExample` p1 = t184 ).
+    ENDIF.
+    CREATE OBJECT t142->zlnt_json_ownkeys_70e5fd461788.
+    t142->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |key| p1 = t186 ).
+    DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |title| p1 = t188 ).
+    ENDIF.
+    DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |shortDescription| p1 = t190 ).
+    ENDIF.
+    DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tags| p1 = t192 ).
+    ENDIF.
+    DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |badExample| p1 = t194 ).
+    ENDIF.
+    DATA t196 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t142->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t142->zlnt_json_ownkeys_70e5fd461788->put( p0 = |goodExample| p1 = t196 ).
+    ENDIF.
+    t141 = t142->key.
+    DATA t199 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
+    result = zcl_lnt_issue=>at_token( i_file = t2 i_token = t1 i_message_26cb = t3 i_key = t141 i_severity = me->conf->zlnt_view_read_sr_15c06369f827( ) i_fix = t199 ).
+
+
   ENDMETHOD.
 
   METHOD get_config_value.

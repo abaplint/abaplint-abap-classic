@@ -323,7 +323,6 @@ CLASS zcl_lnt_implementation IMPLEMENTATION.
     t4 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t9 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t9.
       t9 = t4->next( ).
       IF t9->done = abap_true.
         EXIT.

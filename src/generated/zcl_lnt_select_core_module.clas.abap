@@ -2834,7 +2834,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
         IF t347 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t349 ?= t347.
           DATA t350 TYPE REF TO object.
-          CLEAR t350.
           t350 = t349->as_ref( ).
           t346 ?= t350.
         ELSE.
@@ -2847,7 +2846,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
           DATA t354 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t354.
           DATA t355 TYPE REF TO object.
-          CLEAR t355.
           CLEAR t354.
           t355 = t346.
           TRY.
@@ -4309,7 +4307,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
       IF t701 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t703 ?= t701.
         DATA t704 TYPE REF TO object.
-        CLEAR t704.
         t704 = t703->as_ref( ).
         t700 ?= t704.
       ELSE.
@@ -4322,7 +4319,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
         DATA t708 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t708.
         DATA t709 TYPE REF TO object.
-        CLEAR t709.
         CLEAR t708.
         t709 = t700.
         TRY.
@@ -4728,7 +4724,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
       IF t786 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t788 ?= t786.
         DATA t789 TYPE REF TO object.
-        CLEAR t789.
         t789 = t788->as_ref( ).
         t785 ?= t789.
       ELSE.
@@ -4741,7 +4736,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
         DATA t793 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t793.
         DATA t794 TYPE REF TO object.
-        CLEAR t794.
         CLEAR t793.
         t794 = t785.
         TRY.
@@ -4969,7 +4963,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
       IF t839 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t841 ?= t839.
         DATA t842 TYPE REF TO object.
-        CLEAR t842.
         t842 = t841->as_ref( ).
         t838 ?= t842.
       ELSE.
@@ -4982,7 +4975,6 @@ CLASS zcl_lnt_select_core_module IMPLEMENTATION.
         DATA t846 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t846.
         DATA t847 TYPE REF TO object.
-        CLEAR t847.
         CLEAR t846.
         t847 = t838.
         TRY.

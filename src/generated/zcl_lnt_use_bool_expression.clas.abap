@@ -595,7 +595,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
       DATA(t277) = VALUE abap_bool( ).
       DATA(t278) = VALUE abap_bool( ).
       DATA t280 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t280.
       DATA(t283) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t283->has = abap_true.
       t283->value = |ABAP_TRUE|.
@@ -619,7 +618,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
       IF t278 = abap_true.
         DATA(t287) = VALUE abap_bool( ).
         DATA t289 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t289.
         DATA(t292) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t292->has = abap_true.
         t292->value = |ABAP_FALSE|.
@@ -646,7 +644,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
         DATA(t296) = VALUE abap_bool( ).
         DATA(t297) = VALUE abap_bool( ).
         DATA t299 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t299.
         DATA(t302) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t302->has = abap_true.
         t302->value = |ABAP_FALSE|.
@@ -670,7 +667,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
         IF t297 = abap_true.
           DATA(t306) = VALUE abap_bool( ).
           DATA t308 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t308.
           DATA(t311) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t311->has = abap_true.
           t311->value = |ABAP_TRUE|.
@@ -837,7 +833,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
         CLEAR t451.
         DATA(t456) = VALUE string( ).
         DATA t457 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t457.
         DATA t462 TYPE string.
         DATA(t463) = |Use boolean expression, xsdbool from 740sp08 and up, boolc f|.
         t463 = t463 && |rom 702 and up|.
@@ -1106,7 +1101,6 @@ CLASS zcl_lnt_use_bool_expression IMPLEMENTATION.
           t588 = NEW zcl_lnt_position( i_row = t593 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t600 right = t611 op = `+` ) ).
           DATA(t613) = VALUE string( ).
           DATA t614 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t614.
           DATA t619 TYPE string.
           DATA(t620) = |Use boolean expression, xsdbool from 740sp08 and up, boolc f|.
           t620 = t620 && |rom 702 and up|.

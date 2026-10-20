@@ -769,7 +769,6 @@ CLASS zcl_lnt_line_only_punc IMPLEMENTATION.
         CLEAR t331.
         DATA(t335) = VALUE string( ).
         DATA t336 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t336.
         DATA t343 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t343.
         DATA(t346) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

@@ -146,7 +146,6 @@ CLASS zcl_lnt_sy_sort IMPLEMENTATION.
               t90 ?= t91.
             ENDIF.
             DATA t95 TYPE REF TO zcl_lnt_abstract_type.
-            CLEAR t95.
             t95 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t69 i_node = t90 i_input_967e = t2 ).
           ENDDO.
         ENDIF.

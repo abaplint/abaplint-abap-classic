@@ -216,7 +216,6 @@ CLASS zcl_lnt_max_one_statement IMPLEMENTATION.
         CLEAR t79.
         DATA(t83) = VALUE string( ).
         DATA t84 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t84.
         DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t91.
         DATA(t94) = |Does not report empty statements, use rule empty_statement f|.

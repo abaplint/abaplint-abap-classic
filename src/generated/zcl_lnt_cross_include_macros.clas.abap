@@ -72,7 +72,6 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t41 TYPE REF TO zcl_lnt_st_expand_macros.
-      CLEAR t41.
       DATA t44 TYPE REF TO zcl_lnt_abap_release.
       t44 = t12->get_release( ).
       DATA t46 TYPE REF TO zif_lnt_registry.
@@ -153,7 +152,6 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       IF me->matches_unknown( i_prog = t28 i_macro_names = NEW zlnt_runtime_set__1827558fd4c7( )->fromarray( p0 = t92 ) ) = abap_true.
         t28->set_dirty( ).
         DATA t109 TYPE REF TO zcl_lnt_iparse_result.
-        CLEAR t109.
         DATA t111 TYPE REF TO zcl_lnt_abap_release.
         CLEAR t111.
         t111 = t12->get_release( ).
@@ -180,13 +178,11 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
     t3 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t8 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t8.
       t8 = t3->next( ).
       IF t8->done = abap_true.
         EXIT.
       ENDIF.
       DATA t13 TYPE REF TO zif_lnt_object.
-      CLEAR t13.
       t13 = t8->value.
       DATA(t18) = VALUE abap_bool( ).
       DATA(t19) = VALUE abap_bool( ).
@@ -274,7 +270,6 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
         IF t68 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t70 ?= t68.
           DATA t71 TYPE REF TO object.
-          CLEAR t71.
           t71 = t70->as_ref( ).
           t67 ?= t71.
         ELSE.

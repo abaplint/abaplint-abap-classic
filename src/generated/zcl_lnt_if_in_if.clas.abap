@@ -402,7 +402,6 @@ CLASS zcl_lnt_if_in_if IMPLEMENTATION.
       CLEAR t212.
       DATA(t216) = VALUE string( ).
       DATA t217 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t217.
       DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t224.
       DATA(t227) = |\nDirectly nested IFs without ELSE can be refactored to a sin|.

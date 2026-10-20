@@ -526,7 +526,6 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
         CLEAR t331.
         DATA(t335) = VALUE string( ).
         DATA t336 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t336.
         DATA t343 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t343.
         DATA t347 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

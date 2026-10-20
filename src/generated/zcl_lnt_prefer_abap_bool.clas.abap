@@ -231,7 +231,6 @@ CLASS zcl_lnt_prefer_abap_bool IMPLEMENTATION.
       t99 = |{ t100 }{ || }|.
       DATA(t106) = VALUE string( ).
       DATA t107 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t107.
       DATA t112 TYPE string.
       DATA(t113) = |Use abap_bool instead of XFELD, SAP_BOOL, BOOLE_D, FLAG for |.
       t113 = t113 && |boolean variables|.

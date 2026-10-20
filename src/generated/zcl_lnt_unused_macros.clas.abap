@@ -239,7 +239,6 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
           ENDIF.
           t50 = t54.
           DATA t69 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t69.
           DATA(t72) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t72->has = abap_true.
           t72->value = abap_false.
@@ -284,7 +283,6 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
           CLEAR t104.
           DATA(t108) = VALUE string( ).
           DATA t109 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t109.
           DATA t116 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t116.
           DATA t120 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

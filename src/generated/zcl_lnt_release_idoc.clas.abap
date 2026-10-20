@@ -198,10 +198,10 @@ CLASS zcl_lnt_release_idoc IMPLEMENTATION.
       t89->save( ).
       result = t89.
       RETURN.
-    ELSE.
-      CREATE OBJECT result.
-
     ENDIF.
+    CREATE OBJECT result.
+
+
   ENDMETHOD.
 
   METHOD get_config_value.

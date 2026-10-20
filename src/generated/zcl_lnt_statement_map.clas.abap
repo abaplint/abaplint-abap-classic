@@ -33,7 +33,6 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       IF t7 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t9 ?= t7.
         DATA t10 TYPE REF TO object.
-        CLEAR t10.
         t10 = t9->as_ref( ).
         t6 ?= t10.
       ELSE.
@@ -45,9 +44,7 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
       t11->load( ).
       IF xsdbool( lines( t11->items ) = 0 ) = abap_true.
         DATA t19 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        CLEAR t19.
         DATA t20 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        CLEAR t20.
         DATA(t24) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t24->has = abap_true.
         t24->value = |StatementMap, first must have contents|.
@@ -58,7 +55,6 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
         DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t26.
         DATA t27 TYPE REF TO object.
-        CLEAR t27.
         CLEAR t26.
         t27 = t20.
         TRY.
@@ -96,14 +92,11 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
         ENDIF.
         t30 = t30 + 1.
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t32.
         t32 = me->map->get( p0 = t29 ).
         IF xsdbool( t32 IS BOUND ) = abap_true.
           DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t35.
           t35 = me->map->get( p0 = t29 ).
           DATA t39 TYPE REF TO zcl_lnt_shape_1adc9d0c.
-          CLEAR t39.
           DATA t40 TYPE REF TO zif_lnt_statement.
           CLEAR t40.
           t40 = t6.
@@ -126,16 +119,11 @@ CLASS zcl_lnt_statement_map IMPLEMENTATION.
           t35->save( ).
         ELSE.
           DATA t50 TYPE REF TO zlnt_runtime_map__7946c121f0e1.
-          CLEAR t50.
           DATA(t51) = me->map.
           DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t54.
-          DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t55.
-          CREATE OBJECT t55.
-          t54 = t55.
+          CREATE OBJECT t54.
           DATA t57 TYPE REF TO zcl_lnt_shape_1adc9d0c.
-          CLEAR t57.
           DATA t58 TYPE REF TO zif_lnt_statement.
           CLEAR t58.
           t58 = t6.

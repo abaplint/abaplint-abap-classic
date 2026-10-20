@@ -171,7 +171,6 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
         ENDIF.
         t24 = t28.
         DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t35.
         DATA(t38) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t38->has = abap_true.
         t38->value = |CLAS|.
@@ -221,11 +220,9 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
         DATA t60 TYPE REF TO zcl_lnt_class.
         CLEAR t60.
         DATA t62 TYPE REF TO zcl_lnt_class.
-        CLEAR t62.
         DATA t63 TYPE REF TO zcl_lnt_class.
         CLEAR t63.
         DATA t64 TYPE REF TO zif_lnt_object.
-        CLEAR t64.
         DATA(t65) = me->reg.
         DATA t66 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t66.
@@ -305,7 +302,6 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
             ENDIF.
             t129 = t129 + 1.
             DATA t131 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t131.
             CREATE OBJECT t131 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t128 flags = |i|.
             DATA t134 TYPE string.
             t134 = t12->extra->oo_name->value.
@@ -330,7 +326,6 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
         t145 = |{ t4 }{ t147 }|.
         DATA(t153) = VALUE string( ).
         DATA t154 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t154.
         DATA t161 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t161.
         DATA(t164) = |Only global interfaces are checked.\n      Only first level r|.

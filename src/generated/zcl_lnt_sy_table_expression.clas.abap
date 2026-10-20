@@ -119,7 +119,6 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
             ENDIF.
             IF t91 = abap_true.
               DATA t99 TYPE REF TO zcl_lnt_abstract_type.
-              CLEAR t99.
               DATA t100 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t100.
               DATA t102 TYPE REF TO zcl_lnt_expression_node.

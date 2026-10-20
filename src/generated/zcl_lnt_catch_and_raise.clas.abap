@@ -254,7 +254,6 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         t96 = zlnt_runtime_uppe_91169605024d=>full( t96 ).
       ENDIF.
       DATA t100 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t100.
       CREATE OBJECT t100 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.$` flags = ||.
       DATA(t104) = strlen( t96 ).
       t95 = t100->replace( p0 = t96 p1 = || ).
@@ -362,25 +361,20 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       CLEAR t138.
       DATA(t140) = |[\t\n|.
       DATA t141 TYPE c LENGTH 1.
-      CLEAR t141.
       t141 = cl_abap_conv_in_ce=>uccpi( 11 ).
       CONCATENATE t140 t141 INTO t140 RESPECTING BLANKS.
       DATA t142 TYPE c LENGTH 1.
-      CLEAR t142.
       t142 = cl_abap_conv_in_ce=>uccpi( 12 ).
       CONCATENATE t140 t142 INTO t140 RESPECTING BLANKS.
       t140 = t140 && |\r    - |.
       DATA t143 TYPE c LENGTH 1.
-      CLEAR t143.
       t143 = cl_abap_conv_in_ce=>uccpi( 8232 ).
       CONCATENATE t140 t143 INTO t140 RESPECTING BLANKS.
       DATA t144 TYPE c LENGTH 1.
-      CLEAR t144.
       t144 = cl_abap_conv_in_ce=>uccpi( 8233 ).
       CONCATENATE t140 t144 INTO t140 RESPECTING BLANKS.
       t140 = t140 && |  　|.
       DATA t145 TYPE c LENGTH 1.
-      CLEAR t145.
       t145 = cl_abap_conv_in_ce=>uccpi( 65279 ).
       CONCATENATE t140 t145 INTO t140 RESPECTING BLANKS.
       t140 = t140 && |]+|.
@@ -397,7 +391,6 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
       DATA t154 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t154 = t132->get( p0 = 2 ).
       DATA t157 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t157.
       DATA(t160) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t160->has = abap_true.
       t160->value = t63.
@@ -426,7 +419,6 @@ CLASS zcl_lnt_catch_and_raise IMPLEMENTATION.
         t169 = t169 && |o effect|.
         DATA(t170) = VALUE string( ).
         DATA t171 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t171.
         DATA t176 TYPE string.
         DATA(t177) = |Reports CATCH blocks that only re-raise the caught exception|.
         t177 = t177 && | without any handling|.

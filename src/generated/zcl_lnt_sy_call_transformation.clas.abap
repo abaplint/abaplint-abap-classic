@@ -65,7 +65,6 @@ CLASS zcl_lnt_sy_call_transformation IMPLEMENTATION.
       DATA t37 TYPE abap_bool.
       t37 = t7->has( p0 = t32 ).
       DATA t41 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t41.
       DATA t42 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t42.
       t42 = t32.

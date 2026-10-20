@@ -378,7 +378,6 @@ CLASS zcl_lnt_space_before_colon IMPLEMENTATION.
           CLEAR t147.
           DATA(t151) = VALUE string( ).
           DATA t152 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t152.
           DATA t157 TYPE string.
           DATA(t158) = |Checks that there are no spaces in front of colons in chaine|.
           t158 = t158 && |d statements.|.
@@ -559,7 +558,6 @@ CLASS zcl_lnt_space_before_colon IMPLEMENTATION.
             t354 = t316->col.
             DATA(t360) = VALUE string( ).
             DATA t361 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t361.
             DATA t366 TYPE string.
             DATA(t367) = |Checks that there are no spaces in front of colons in chaine|.
             t367 = t367 && |d statements.|.

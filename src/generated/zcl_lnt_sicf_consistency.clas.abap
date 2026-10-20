@@ -151,7 +151,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
       ENDIF.
       t39 = t39 + 1.
       DATA t40 TYPE REF TO zcl_lnt_class.
-      CLEAR t40.
       DATA t41 TYPE REF TO zcl_lnt_class.
       CLEAR t41.
       DATA(t43) = me->reg.
@@ -223,7 +222,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
           CONTINUE.
         ENDIF.
         DATA t84 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t84.
         CREATE OBJECT t84 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = me->reg->get_config( )->get_syntax_setttings( )->zlnt_view_read_sr_912daad1f2d5( ) flags = |i|.
         IF xsdbool( t84->test( p0 = t38 ) = abap_true ) = abap_true.
           DATA t96 TYPE string.
@@ -268,7 +266,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
           t116 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t119 ).
           DATA(t121) = VALUE string( ).
           DATA t122 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t122.
           DATA t129 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t129.
           DATA(t132) = |* Class defined in handler must exist\n* Class must not have |.
@@ -413,7 +410,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
         t220 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t223 ).
         DATA(t225) = VALUE string( ).
         DATA t226 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t226.
         DATA t233 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t233.
         DATA(t236) = |* Class defined in handler must exist\n* Class must not have |.
@@ -575,7 +571,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
         t315 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t318 ).
         DATA(t320) = VALUE string( ).
         DATA t321 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t321.
         DATA t328 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t328.
         DATA(t331) = |* Class defined in handler must exist\n* Class must not have |.
@@ -673,7 +668,6 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
         EXIT.
       ENDIF.
       DATA t16 TYPE REF TO zcl_lnt_class.
-      CLEAR t16.
       DATA t17 TYPE REF TO zcl_lnt_class.
       CLEAR t17.
       DATA(t19) = me->reg.

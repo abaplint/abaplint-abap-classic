@@ -80,7 +80,6 @@ CLASS zcl_lnt_sy_type_mesh IMPLEMENTATION.
       t53 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_st_statem_type ) = abap_true.
         DATA t60 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t60.
         DATA(t62) = NEW zcl_lnt_sy_type( ).
         DATA t63 TYPE REF TO zcl_lnt_statement_node.
         DATA t65 TYPE REF TO object.

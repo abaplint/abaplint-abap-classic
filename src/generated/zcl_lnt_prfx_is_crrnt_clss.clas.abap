@@ -344,7 +344,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
           t170 = t80->get_first_token( ).
           DATA(t173) = VALUE string( ).
           DATA t174 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t174.
           DATA t179 TYPE string.
           DATA(t180) = |Reports errors if the current class or interface references |.
           t180 = t180 && |itself with "current_class=>"|.
@@ -687,7 +686,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
               ENDIF.
               t124 = t127.
               DATA t138 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-              CLEAR t138.
               DATA(t141) = NEW zlnt_runtime_opti_7f2541396f43( ).
               t141->has = abap_true.
               t141->value = abap_true.
@@ -754,7 +752,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
             t190 = |{ t191 }{ |"| }|.
             DATA(t197) = VALUE string( ).
             DATA t198 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t198.
             DATA t203 TYPE string.
             DATA(t204) = |Reports errors if the current class or interface references |.
             t204 = t204 && |itself with "current_class=>"|.
@@ -933,7 +930,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
               t318 = t285.
               DATA(t322) = VALUE string( ).
               DATA t323 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t323.
               DATA t328 TYPE string.
               DATA(t329) = |Reports errors if the current class or interface references |.
               t329 = t329 && |itself with "current_class=>"|.
@@ -1404,7 +1400,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
       ENDIF.
       t36 = t63.
       DATA t72 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t72.
       DATA(t75) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t75->has = abap_true.
       t75->value = t3.
@@ -1617,7 +1612,6 @@ CLASS zcl_lnt_prfx_is_crrnt_clss IMPLEMENTATION.
           ENDIF.
           t159 = t174.
           DATA t183 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t183.
           DATA t185 TYPE string.
           t185 = t97->value.
           DATA(t187) = NEW zlnt_runtime_opti_4ba3bdccd169( ).

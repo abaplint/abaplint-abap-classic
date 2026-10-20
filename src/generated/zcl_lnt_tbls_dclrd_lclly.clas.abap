@@ -177,7 +177,6 @@ CLASS zcl_lnt_tbls_dclrd_lclly IMPLEMENTATION.
         t47 = t36.
         DATA(t50) = VALUE string( ).
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t51.
         DATA t58 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t58.
         DATA(t61) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.

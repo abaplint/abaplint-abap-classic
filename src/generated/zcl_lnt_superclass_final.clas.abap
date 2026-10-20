@@ -151,7 +151,6 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
         DATA t36 TYPE string.
         t36 = t34->filename.
         DATA t39 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t39.
         CREATE OBJECT t39 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `\.clas\.abap$` flags = ||.
         t28 = t39->match_test( p0 = t36 ).
       ENDIF.
@@ -217,11 +216,9 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
       CLEAR t90.
       IF xsdbool( t44 IS INITIAL ) = abap_true.
         DATA t94 TYPE REF TO zcl_lnt_class.
-        CLEAR t94.
         DATA t95 TYPE REF TO zcl_lnt_class.
         CLEAR t95.
         DATA t96 TYPE REF TO zif_lnt_object.
-        CLEAR t96.
         DATA(t97) = me->reg.
         DATA t98 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t98.
@@ -286,7 +283,6 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
         t160 = t11->identifier.
         DATA(t163) = VALUE string( ).
         DATA t164 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t164.
         DATA t169 TYPE string.
         DATA(t170) = |Checks that classes which are inherited from are not declare|.
         t170 = t170 && |d as FINAL.|.
@@ -368,7 +364,6 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
         t215 = t11->identifier.
         DATA(t218) = VALUE string( ).
         DATA t219 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t219.
         DATA t224 TYPE string.
         DATA(t225) = |Checks that classes which are inherited from are not declare|.
         t225 = t225 && |d as FINAL.|.
@@ -478,13 +473,11 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
     t35 = me->reg->get_objects_by_type( i_type_9913 = |PROG| )->iterate( ).
     DO.
       DATA t41 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t41.
       t41 = t35->next( ).
       IF t41->done = abap_true.
         EXIT.
       ENDIF.
       DATA t46 TYPE REF TO zif_lnt_object.
-      CLEAR t46.
       t46 = t41->value.
       DATA(t51) = VALUE abap_bool( ).
       DATA(t52) = VALUE abap_bool( ).
@@ -569,7 +562,6 @@ CLASS zcl_lnt_superclass_final IMPLEMENTATION.
           CLEAR t111.
           t111 = me->graph.
           DATA t116 TYPE REF TO zcl_lnt_abstract_file.
-          CLEAR t116.
           t116 = t66.
           DATA(t119) = VALUE string( ).
           t119 = t116->filename.

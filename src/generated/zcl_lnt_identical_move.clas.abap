@@ -303,7 +303,6 @@ CLASS zcl_lnt_identical_move IMPLEMENTATION.
           CLEAR t108.
           DATA(t112) = VALUE string( ).
           DATA t113 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t113.
           DATA t118 TYPE string.
           DATA(t119) = |Moving the same value from left to right or right to left is|.
           t119 = t119 && | redundant.|.

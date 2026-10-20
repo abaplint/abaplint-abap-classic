@@ -342,7 +342,6 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
       DATA t78 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t78 = t72->error.
       DATA t80 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t80.
       DATA(t83) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t83->has = abap_true.
       t83->value = abap_false.
@@ -409,7 +408,6 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
       DATA t118 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       t118 = t112->error.
       DATA t120 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t120.
       DATA(t123) = NEW zlnt_runtime_opti_7f2541396f43( ).
       t123->has = abap_true.
       t123->value = abap_false.
@@ -490,59 +488,59 @@ CLASS zcl_lnt_sr_alternative IMPLEMENTATION.
       ENDIF.
       result = t139.
       RETURN.
-    ELSE.
-      DATA t169 TYPE REF TO zcl_lnt_imatch.
-      DATA t170 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t170.
-      DATA t172 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      t172 = t1.
-      DATA(t178) = NEW zlnt_runtime_opti_7f2541396f43( ).
-      t178->has = abap_true.
-      t178->value = abap_true.
-      t169 = NEW zcl_lnt_imatch( i_matched = t170 i_unmatched = t172 i_error = t178 i_error_description = t5 i_error_matched = t3 ).
-      CREATE OBJECT t169->zlnt_view_ownkeys_b0e8086400eb.
-      t169->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `matched` p1 = t184 ).
-      DATA t185 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `unmatched` p1 = t185 ).
-      ENDIF.
-      DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t186 ).
-      ENDIF.
-      DATA t187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorDescription` p1 = t187 ).
-      ENDIF.
-      DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorMatched` p1 = t188 ).
-      ENDIF.
-      CREATE OBJECT t169->zlnt_json_ownkeys_70e5fd461788.
-      t169->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t190 ).
-      DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t192 ).
-      ENDIF.
-      DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t194 ).
-      ENDIF.
-      DATA t196 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t196 ).
-      ENDIF.
-      DATA t198 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t198 ).
-      ENDIF.
-      result = t169.
-
     ENDIF.
+    DATA t169 TYPE REF TO zcl_lnt_imatch.
+    DATA t170 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t170.
+    DATA t172 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    t172 = t1.
+    DATA(t178) = NEW zlnt_runtime_opti_7f2541396f43( ).
+    t178->has = abap_true.
+    t178->value = abap_true.
+    t169 = NEW zcl_lnt_imatch( i_matched = t170 i_unmatched = t172 i_error = t178 i_error_description = t5 i_error_matched = t3 ).
+    CREATE OBJECT t169->zlnt_view_ownkeys_b0e8086400eb.
+    t169->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `matched` p1 = t184 ).
+    DATA t185 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `unmatched` p1 = t185 ).
+    ENDIF.
+    DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t186 ).
+    ENDIF.
+    DATA t187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorDescription` p1 = t187 ).
+    ENDIF.
+    DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t169->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorMatched` p1 = t188 ).
+    ENDIF.
+    CREATE OBJECT t169->zlnt_json_ownkeys_70e5fd461788.
+    t169->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t190 ).
+    DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t192 ).
+    ENDIF.
+    DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t194 ).
+    ENDIF.
+    DATA t196 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t196 ).
+    ENDIF.
+    DATA t198 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t169->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t169->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t198 ).
+    ENDIF.
+    result = t169.
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

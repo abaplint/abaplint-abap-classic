@@ -170,7 +170,6 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
         t52 = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t55 ).
         DATA(t57) = VALUE string( ).
         DATA t58 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t58.
         DATA t65 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t65.
         DATA(t68) = |https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en|.

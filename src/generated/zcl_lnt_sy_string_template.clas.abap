@@ -223,7 +223,6 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
             t153 ?= t154.
           ENDIF.
           DATA t158 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t158.
           DATA t159 TYPE REF TO zcl_lnt_expression_node.
           CLEAR t159.
           t159 = t153.
@@ -469,7 +468,6 @@ CLASS zcl_lnt_sy_string_template IMPLEMENTATION.
         t38->value = t1+t40(1).
       ENDIF.
       DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t43.
       DATA(t46) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t46->has = abap_true.
       t46->value = `\`.

@@ -172,7 +172,6 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
         CLEAR t31.
         DATA(t35) = VALUE string( ).
         DATA t36 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t36.
         DATA t43 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t43.
         DATA(t46) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

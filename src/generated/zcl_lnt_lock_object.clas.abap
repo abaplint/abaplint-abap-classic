@@ -624,7 +624,6 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
             DATA t291 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t291.
             DATA t292 TYPE REF TO object.
-            CLEAR t292.
             CLEAR t291.
             t292 = t287.
             TRY.
@@ -651,7 +650,6 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
       DATA t294 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t294.
       DATA t296 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t296.
       t296 = t286.
       DATA t298 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t298.
@@ -673,7 +671,6 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
       ELSE.
         DATA(t310) = VALUE string( ).
         DATA t311 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t311.
         t311 = t294.
         IF t311 IS BOUND.
           t310 = t311->type_of( ).
@@ -689,18 +686,14 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t314 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t314.
       t314 = me->parsed_xml->parameters.
       DATA t318 TYPE REF TO zcl_lnt_shape_51788160.
       CLEAR t318.
       DATA t319 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t319.
       t319 = t286->get( p0 = |VIEWFIELD| ).
       DATA t323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t323.
       t323 = t286->get( p0 = |TABNAME| ).
       DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t327.
       t327 = t286->get( p0 = |FIELDNAME| ).
       DATA t331 TYPE REF TO zcl_lnt_shape_51788160.
       CLEAR t331.

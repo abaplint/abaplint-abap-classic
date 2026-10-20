@@ -86,50 +86,50 @@ CLASS zcl_lnt_sy_expres_constant IMPLEMENTATION.
       t59->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t78 ).
       result = NEW zcl_lnt_character_type( i_length = t55 i_extra = t59 ).
       RETURN.
-    ELSE.
-      DATA(t80) = VALUE abap_bool( ).
-      DATA(t82) = |`|.
-      DATA(t83) = strlen( t30 ).
-      DATA t84 TYPE i.
-      DATA(t85) = VALUE i( ).
-      DATA(t86) = VALUE string( ).
-      t84 = strlen( t82 ).
-      IF t84 = 0.
+    ENDIF.
+    DATA(t80) = VALUE abap_bool( ).
+    DATA(t82) = |`|.
+    DATA(t83) = strlen( t30 ).
+    DATA t84 TYPE i.
+    DATA(t85) = VALUE i( ).
+    DATA(t86) = VALUE string( ).
+    t84 = strlen( t82 ).
+    IF t84 = 0.
+      t80 = abap_true.
+    ELSEIF t84 <= t83.
+      t85 = 0.
+      t86 = t30+t85(t84).
+      IF t86 = t82.
         t80 = abap_true.
-      ELSEIF t84 <= t83.
-        t85 = 0.
-        t86 = t30+t85(t84).
-        IF t86 = t82.
-          t80 = abap_true.
-        ENDIF.
-      ENDIF.
-      IF t80 = abap_true.
-        DATA t90 TYPE REF TO zcl_lnt_abstract_type_data.
-        DATA(t95) = NEW zlnt_runtime_opti_7f2541396f43( ).
-        t95->has = abap_true.
-        t95->value = abap_true.
-        DATA t97 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        DATA t105 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        t90 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t97 i_conversion_exit = t99 i_derived_from_constant = t95 i_ddic_name = t101 i_rtti_name = t103 i_description = t105 ).
-        CREATE OBJECT t90->zlnt_view_ownkeys_b0e8086400eb.
-        t90->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t90->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `derivedFromConstant` p1 = t107 ).
-        CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
-        t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-        DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t109 ).
-        result = zcl_lnt_string_type=>get_db65( i_input_967e = t90 ).
-        RETURN.
-      ELSE.
-        DATA t112 TYPE REF TO zcl_lnt_abstract_type_data.
-        result = zcl_lnt_string_type=>get_db65( i_input_967e = t112 ).
-        RETURN.
       ENDIF.
     ENDIF.
+    IF t80 = abap_true.
+      DATA t90 TYPE REF TO zcl_lnt_abstract_type_data.
+      DATA(t95) = NEW zlnt_runtime_opti_7f2541396f43( ).
+      t95->has = abap_true.
+      t95->value = abap_true.
+      DATA t97 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      DATA t99 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      DATA t103 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      DATA t105 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      t90 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t97 i_conversion_exit = t99 i_derived_from_constant = t95 i_ddic_name = t101 i_rtti_name = t103 i_description = t105 ).
+      CREATE OBJECT t90->zlnt_view_ownkeys_b0e8086400eb.
+      t90->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t90->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `derivedFromConstant` p1 = t107 ).
+      CREATE OBJECT t90->zlnt_json_ownkeys_70e5fd461788.
+      t90->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+      DATA t109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      t90->zlnt_json_ownkeys_70e5fd461788->put( p0 = |derivedFromConstant| p1 = t109 ).
+      result = zcl_lnt_string_type=>get_db65( i_input_967e = t90 ).
+      RETURN.
+    ENDIF.
+    DATA t112 TYPE REF TO zcl_lnt_abstract_type_data.
+    result = zcl_lnt_string_type=>get_db65( i_input_967e = t112 ).
+
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

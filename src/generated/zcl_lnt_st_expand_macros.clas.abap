@@ -122,7 +122,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       IF t52 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t53 ?= t52.
         DATA t54 TYPE REF TO object.
-        CLEAR t54.
         t54 = t53->as_ref( ).
         t49 ?= t54.
       ELSE.
@@ -130,13 +129,11 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       ENDIF.
       t48 = t49.
       DATA t55 TYPE REF TO zif_lnt_statement.
-      CLEAR t55.
       t55 = t48->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t55 IS BOUND AND t55 IS INSTANCE OF zcl_lnt_st_define ) = abap_true.
         DATA t62 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t62.
         DATA t63 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t63.
         t63 = t48->get_tokens( ).
         DATA t65 TYPE REF TO object.
         CLEAR t65.
@@ -149,7 +146,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         IF t65 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t66 ?= t65.
           DATA t67 TYPE REF TO object.
-          CLEAR t67.
           t67 = t66->as_ref( ).
           t62 ?= t67.
         ELSE.
@@ -157,14 +153,10 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         ENDIF.
         t11 = t62.
         t13 = t48->get_first_token( )->start.
-        DATA t78 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t78.
-        CREATE OBJECT t78.
-        t15 = t78.
+        CREATE OBJECT t15.
       ELSE.
         IF xsdbool( t55 IS BOUND AND t55 IS INSTANCE OF zcl_lnt_include ) = abap_true.
           DATA t83 TYPE REF TO zcl_lnt_expression_node.
-          CLEAR t83.
           DATA(t86) = zlnt_runtime_desc_78196487750d=>zlnt_member_d85_7546e7dce3c106.
           t83 = t48->find_direct_expression( i_type_9913 = t86 ).
           DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -188,7 +180,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           DATA t98 TYPE REF TO zif_lnt_object.
           CLEAR t98.
           DATA t100 TYPE REF TO zif_lnt_registry.
-          CLEAR t100.
           t100 = me->reg.
           DATA t102 TYPE REF TO zif_lnt_object.
           CLEAR t102.
@@ -196,7 +187,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             CLEAR t102.
           ELSE.
             DATA t107 TYPE REF TO zif_lnt_registry.
-            CLEAR t107.
             t107 = t100.
             DATA(t112) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t112->has = abap_true.
@@ -209,7 +199,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             DATA t115 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t115.
             DATA t116 TYPE REF TO object.
-            CLEAR t116.
             CLEAR t115.
             t116 = t98.
             TRY.
@@ -246,9 +235,7 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           t95 = t96.
           IF xsdbool( t95 IS BOUND ) = abap_true.
             DATA t119 TYPE REF TO zcl_lnt_iparse_result.
-            CLEAR t119.
             DATA t120 TYPE REF TO zcl_lnt_abap_object.
-            CLEAR t120.
             t120 = t95.
             DATA t122 TYPE REF TO zcl_lnt_abap_release.
             CLEAR t122.
@@ -263,13 +250,11 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             t134->value = t133.
             t119 = t120->parse( i_release_7928 = t122 i_global_macros_5535 = t126 i_reg_f149 = t130 i_language_version_0e1d = t134 ).
             DATA t136 TYPE REF TO zcl_lnt_abap_file.
-            CLEAR t136.
             t136 = t95->get_main_abap_file( ).
             IF xsdbool( t136 IS BOUND ) = abap_true.
               DATA t142 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CLEAR t142.
               DATA t144 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              CLEAR t144.
               CREATE OBJECT t144.
               DATA t148 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               CLEAR t148.
@@ -288,7 +273,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           IF xsdbool( t11 IS BOUND ) = abap_true.
             IF xsdbool( t55 IS BOUND AND t55 IS INSTANCE OF zcl_lnt_end_of_definition ) = abap_true.
               DATA t166 TYPE REF TO zcl_lnt_macros.
-              CLEAR t166.
               t166 = me->macros.
               DATA(t168) = VALUE string( ).
               t168 = t11->str.
@@ -300,7 +284,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
               DATA t185 TYPE REF TO zcl_lnt_shape_9d228663.
               CLEAR t185.
               DATA t186 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
-              CLEAR t186.
               t186 = t166->macros.
               DATA(t188) = VALUE string( ).
               DATA(t190) = strlen( t181 ).
@@ -321,7 +304,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 DATA t193 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
                 CLEAR t193.
                 DATA t194 TYPE REF TO zlnt_runtime_map__755fcb8e49f3.
-                CLEAR t194.
                 t194 = t166->macros.
                 DATA(t196) = VALUE string( ).
                 DATA(t198) = strlen( t168 ).
@@ -364,11 +346,9 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
               ENDIF.
               DATA(t217) = VALUE abap_bool( ).
               DATA t218 TYPE REF TO zif_lnt_macro_references.
-              CLEAR t218.
               t218 = t17.
               IF xsdbool( xsdbool( t218 IS INITIAL ) = abap_false ) = abap_true.
                 DATA t224 TYPE REF TO zif_lnt_macro_references.
-                CLEAR t224.
                 t224 = t218.
                 DATA t226 TYPE REF TO zcl_lnt_ifilename_and_token.
                 CLEAR t226.
@@ -436,7 +416,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
                 IF t284 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                   t285 ?= t284.
                   DATA t286 TYPE REF TO object.
-                  CLEAR t286.
                   t286 = t285->as_ref( ).
                   t281 ?= t286.
                 ELSE.
@@ -625,8 +604,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             DATA t125 TYPE string.
             t125 = t39->value.
             t124 = me->expand_contents( i_name = t125 i_statement = t26 ).
-            DATA t129 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
-            CLEAR t129.
             DATA t130 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
             t130 = t3->copy( p0 = t3 ).
             DATA t135 TYPE string.
@@ -639,10 +616,8 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
             ELSE.
               t135 = zlnt_runtime_uppe_91169605024d=>full( t135 ).
             ENDIF.
-            t129 = t130->add( p0 = t135 ).
             DATA t139 TYPE REF TO zcl_lnt_shape_df3d0820.
-            CLEAR t139.
-            t139 = me->handle_macros( i_statements = t124 i_file = t2 i_seen = t129 ).
+            t139 = me->handle_macros( i_statements = t124 i_file = t2 i_seen = t130->add( p0 = t135 ) ).
             DATA t147 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             t147 = t139->statements.
             DATA t149 TYPE REF TO zcl_lnt_statement_node.
@@ -784,7 +759,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       IF xsdbool( t47 = |,| ) = abap_true.
         DATA(t58) = t43.
         DATA t59 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t59.
         CREATE OBJECT t59 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |,$| flags = ||.
         DATA(t63) = strlen( t58 ).
         t43 = t59->replace( p0 = t58 p1 = |.| ).
@@ -814,7 +788,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t78 = t78 + 1.
-      DATA(t79) = VALUE string( ).
       DATA(t81) = |&|.
       DATA(t82) = VALUE string( ).
       DATA(t83) = t74.
@@ -824,10 +797,8 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       DATA(t84) = CONV int8( t83 ).
       t82 = |{ t84 }|.
       DATA(t85) = strlen( t81 ).
-      t79 = |{ t81 }{ t82 }|.
       DATA t87 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t87.
-      CREATE OBJECT t87 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = t79 flags = |g| checked = abap_true.
+      CREATE OBJECT t87 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |{ t81 }{ t82 }| flags = |g| checked = abap_true.
       DATA(t91) = t34.
       DATA(t94) = strlen( t91 ).
       IF t77 CS '$'.
@@ -1119,7 +1090,6 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
         ENDIF.
         t16 = t49.
         DATA t59 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t59.
         t59 = t7->start->col.
         DATA(t71) = VALUE abap_bool( ).
         DATA(t72) = VALUE abap_bool( ).
@@ -1149,53 +1119,53 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
       ENDIF.
       IF t12 = abap_true.
         EXIT.
-      ELSE.
-        DATA t73 TYPE abap_bool.
-        DATA t74 TYPE abap_bool.
-        t74 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_lx_identifier ).
-        t73 = t74.
-        IF t74 = abap_false.
-          t73 = xsdbool( t7->str = |-| ).
+      ENDIF.
+      DATA t73 TYPE abap_bool.
+      DATA t74 TYPE abap_bool.
+      t74 = xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_lx_identifier ).
+      t73 = t74.
+      IF t74 = abap_false.
+        t73 = xsdbool( t7->str = |-| ).
+      ENDIF.
+      IF t73 = abap_true.
+        DATA t84 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+        t84 = t2.
+        DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t86.
+        DATA(t88) = VALUE abap_bool( ).
+        IF t84 IS INITIAL.
+          t88 = abap_true.
+        ELSEIF t84->has = abap_false.
+          t88 = abap_true.
         ENDIF.
-        IF t73 = abap_true.
-          DATA t84 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t84 = t2.
-          DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t86.
-          DATA(t88) = VALUE abap_bool( ).
-          IF t84 IS INITIAL.
-            t88 = abap_true.
-          ELSEIF t84->has = abap_false.
-            t88 = abap_true.
-          ENDIF.
-          IF t88 = abap_true.
-            DATA t95 TYPE string.
-            t95 = t7->str.
-            DATA(t97) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-            t97->has = abap_true.
-            t97->value = t95.
-            t2 = t97.
-          ELSE.
-            DATA t99 TYPE string.
-            DATA t100 TYPE string.
-            t100 = t2->value.
-            DATA t102 TYPE string.
-            t102 = t7->str.
-            DATA(t107) = strlen( t100 ).
-            t99 = |{ t100 }{ t102 }|.
-            DATA(t108) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-            t108->has = abap_true.
-            t108->value = t99.
-            t2 = t108.
-          ENDIF.
+        IF t88 = abap_true.
+          DATA t95 TYPE string.
+          t95 = t7->str.
+          DATA(t97) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+          t97->has = abap_true.
+          t97->value = t95.
+          t2 = t97.
         ELSE.
-          IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_pragma ) = abap_true.
-            CONTINUE.
-          ELSE.
-            EXIT.
-          ENDIF.
+          DATA t99 TYPE string.
+          DATA t100 TYPE string.
+          t100 = t2->value.
+          DATA t102 TYPE string.
+          t102 = t7->str.
+          DATA(t107) = strlen( t100 ).
+          t99 = |{ t100 }{ t102 }|.
+          DATA(t108) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+          t108->has = abap_true.
+          t108->value = t99.
+          t2 = t108.
+        ENDIF.
+      ELSE.
+        IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_pragma ) = abap_true.
+          CONTINUE.
+        ELSE.
+          EXIT.
         ENDIF.
       ENDIF.
+
       t4 = t7.
     ENDDO.
     result = t2.

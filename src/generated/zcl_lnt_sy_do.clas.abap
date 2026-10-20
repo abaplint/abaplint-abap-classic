@@ -36,7 +36,6 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       IF t11 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t13 ?= t11.
         DATA t14 TYPE REF TO object.
-        CLEAR t14.
         t14 = t13->as_ref( ).
         t10 ?= t14.
       ELSE.
@@ -59,7 +58,6 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       DATA(t26) = VALUE abap_bool( ).
       DATA(t27) = VALUE abap_bool( ).
       DATA t28 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t28.
       t28 = t10.
       DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t33.
@@ -72,7 +70,6 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
           DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t35.
           DATA t36 TYPE REF TO object.
-          CLEAR t36.
           CLEAR t35.
           t36 = t28.
           TRY.
@@ -102,7 +99,6 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
           DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t37.
           DATA t38 TYPE REF TO object.
-          CLEAR t38.
           CLEAR t37.
           t38 = t3.
           TRY.
@@ -133,7 +129,6 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       t26 = t27.
       IF t27 = abap_true.
         DATA t41 TYPE REF TO zcl_lnt_type_utils.
-        CLEAR t41.
         DATA t42 TYPE REF TO zcl_lnt_current_scope.
         CLEAR t42.
         t42 = t2->scope.
@@ -144,10 +139,8 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       ENDIF.
       IF t26 = abap_true.
         DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t50.
         t50 = t2->issues.
         DATA t52 TYPE REF TO zcl_lnt_issue.
-        CLEAR t52.
         DATA t54 TYPE REF TO zcl_lnt_abstract_token.
         CLEAR t54.
         t54 = t1->get_first_token( ).
@@ -180,14 +173,12 @@ CLASS zcl_lnt_sy_do IMPLEMENTATION.
       IF t62 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t64 ?= t62.
         DATA t65 TYPE REF TO object.
-        CLEAR t65.
         t65 = t64->as_ref( ).
         t61 ?= t65.
       ELSE.
         t61 ?= t62.
       ENDIF.
       DATA t66 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t66.
       t66 = zcl_lnt_sy_target=>run_syntax( i_node = t61 i_input_967e = t2 ).
     ENDDO.
   ENDMETHOD.

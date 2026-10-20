@@ -314,7 +314,6 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
             DATA t158 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t158.
             DATA t159 TYPE REF TO object.
-            CLEAR t159.
             CLEAR t158.
             t159 = t154.
             TRY.
@@ -339,14 +338,12 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t162.
       t162 = t153->get( p0 = |ICFHANDLER| ).
       DATA t165 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t165.
       CLEAR t165.
       IF xsdbool( xsdbool( t162 IS INITIAL ) = abap_false ) = abap_true.
         DATA t170 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t170.
         t170 = me->parsed_xml->handlers.
         DATA(t174) = VALUE string( ).
         t174 = t153->get( p0 = |ICFHANDLER| )->get( p0 = |ICFHANDLER| )->as_string( ).

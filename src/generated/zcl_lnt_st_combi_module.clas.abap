@@ -45,20 +45,20 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF xsdbool( t1 = |KeyUser| ) = abap_true.
       result = 0.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 = |Cloud| ) = abap_true.
-        result = 1.
-        RETURN.
-      ELSE.
-        IF xsdbool( t1 = |Normal| ) = abap_true.
-          result = 2.
-          RETURN.
-        ELSE.
-          result = 2.
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 = |Cloud| ) = abap_true.
+      result = 1.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t1 = |Normal| ) = abap_true.
+      result = 2.
+      RETURN.
+    ENDIF.
+    result = 2.
+
+
+
+
   ENDMETHOD.
 
   METHOD str.
@@ -98,10 +98,10 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
     IF t2 = abap_true.
       result = NEW zcl_lnt_word_sequence( i_stri = t1 ).
       RETURN.
-    ELSE.
-      result = NEW zcl_lnt_word( i_s = t1 ).
-
     ENDIF.
+    result = NEW zcl_lnt_word( i_s = t1 ).
+
+
   ENDMETHOD.
 
   METHOD regex.
@@ -157,43 +157,43 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       ENDIF.
       result = zcl_lnt_st_combi_module=>string_singletons->get( p0 = t1->as_string( ) ).
       RETURN.
-    ELSE.
-      IF xsdbool( t2 = |function| ) = abap_true.
-        DATA t33 TYPE string.
-        t33 = t1->as_classvalue( )->name.
-        DATA t39 TYPE REF TO zcl_lnt_expression.
-        IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
-          zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
-        ENDIF.
-        t39 = zcl_lnt_st_combi_module=>expression_singletons->get( p0 = t33 ).
-        DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF xsdbool( t39 IS INITIAL ) = abap_true.
-          DATA t46 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
-          DATA t47 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
-          IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
-            zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
-          ENDIF.
-          t47 = zcl_lnt_st_combi_module=>expression_singletons.
-          DATA t49 TYPE REF TO zcl_lnt_expression.
-          DATA t52 TYPE REF TO object.
-          t52 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t1->as_classvalue( ) ).
-          t49 ?= t52.
-          t46 = t47->set( p0 = t33 p1 = t49 ).
-        ENDIF.
-        IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
-          zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
-        ENDIF.
-        result = zcl_lnt_st_combi_module=>expression_singletons->get( p0 = t33 ).
-        RETURN.
-      ELSE.
-        DATA t57 TYPE REF TO zif_lnt_statement_runnable.
-        DATA t59 TYPE REF TO object.
-        t59 = t1->as_ref( ).
-        t57 ?= t59.
-        result = t57.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t2 = |function| ) = abap_true.
+      DATA t33 TYPE string.
+      t33 = t1->as_classvalue( )->name.
+      DATA t39 TYPE REF TO zcl_lnt_expression.
+      IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
+        zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
+      ENDIF.
+      t39 = zcl_lnt_st_combi_module=>expression_singletons->get( p0 = t33 ).
+      DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t39 IS INITIAL ) = abap_true.
+        DATA t46 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
+        DATA t47 TYPE REF TO zlnt_runtime_map__be9b74e2658e.
+        IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
+          zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
+        ENDIF.
+        t47 = zcl_lnt_st_combi_module=>expression_singletons.
+        DATA t49 TYPE REF TO zcl_lnt_expression.
+        DATA t52 TYPE REF TO object.
+        t52 = zlnt_runtime_clas_c216c6067abd=>new( p0 = t1->as_classvalue( ) ).
+        t49 ?= t52.
+        t46 = t47->set( p0 = t33 p1 = t49 ).
+      ENDIF.
+      IF zcl_lnt_st_combi_module=>zlnt_builtin_init_212d0955f1c7 = abap_false.
+        zcl_lnt_st_combi_module=>zlnt_builtin_init_7149bffa9f66( ).
+      ENDIF.
+      result = zcl_lnt_st_combi_module=>expression_singletons->get( p0 = t33 ).
+      RETURN.
+    ENDIF.
+    DATA t57 TYPE REF TO zif_lnt_statement_runnable.
+    DATA t59 TYPE REF TO object.
+    t59 = t1->as_ref( ).
+    t57 ?= t59.
+    result = t57.
+
+
+
   ENDMETHOD.
 
   METHOD seq.
@@ -255,7 +255,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
             DATA t26 TYPE REF TO object.
-            CLEAR t26.
             CLEAR t25.
             t26 = t21.
             TRY.
@@ -280,7 +279,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-      CLEAR t28.
       t28 = zcl_lnt_st_combi_module=>map_input( i_s = t20 ).
       t17->load( ).
       APPEND t28 TO t17->items.
@@ -304,7 +302,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t34 ?= t32.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         t35 = t34->as_ref( ).
         t31 ?= t35.
       ELSE.
@@ -379,7 +376,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
             DATA t26 TYPE REF TO object.
-            CLEAR t26.
             CLEAR t25.
             t26 = t21.
             TRY.
@@ -404,7 +400,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-      CLEAR t28.
       t28 = zcl_lnt_st_combi_module=>map_input( i_s = t20 ).
       t17->load( ).
       APPEND t28 TO t17->items.
@@ -428,7 +423,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t34 ?= t32.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         t35 = t34->as_ref( ).
         t31 ?= t35.
       ELSE.
@@ -503,7 +497,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
             DATA t26 TYPE REF TO object.
-            CLEAR t26.
             CLEAR t25.
             t26 = t21.
             TRY.
@@ -528,7 +521,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-      CLEAR t28.
       t28 = zcl_lnt_st_combi_module=>map_input( i_s = t20 ).
       t17->load( ).
       APPEND t28 TO t17->items.
@@ -552,7 +544,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t34 ?= t32.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         t35 = t34->as_ref( ).
         t31 ?= t35.
       ELSE.
@@ -645,7 +636,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
             DATA t26 TYPE REF TO object.
-            CLEAR t26.
             CLEAR t25.
             t26 = t21.
             TRY.
@@ -670,7 +660,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t28 TYPE REF TO zif_lnt_statement_runnable.
-      CLEAR t28.
       t28 = zcl_lnt_st_combi_module=>map_input( i_s = t20 ).
       t17->load( ).
       APPEND t28 TO t17->items.
@@ -694,7 +683,6 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
       IF t32 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t34 ?= t32.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         t35 = t34->as_ref( ).
         t31 ?= t35.
       ELSE.

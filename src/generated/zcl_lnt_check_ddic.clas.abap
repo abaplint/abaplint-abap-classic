@@ -322,7 +322,6 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
           DATA t100 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t100.
           DATA t104 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t104.
           t104 = t90->zlnt_view_read_sr_455340cd1e80( ).
           t100 = me->check_bf6e( i_found = t90->zlnt_view_read_sr_455340cd1e80( ) i_obj_1ed0 = t2 ).
           DATA t110 TYPE REF TO zcl_lnt_issue.
@@ -344,7 +343,6 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
             IF t111 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t113 ?= t111.
               DATA t114 TYPE REF TO object.
-              CLEAR t114.
               t114 = t113->as_ref( ).
               t110 ?= t114.
             ELSE.
@@ -383,7 +381,6 @@ CLASS zcl_lnt_check_ddic IMPLEMENTATION.
             IF t134 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t136 ?= t134.
               DATA t137 TYPE REF TO object.
-              CLEAR t137.
               t137 = t136->as_ref( ).
               t133 ?= t137.
             ELSE.

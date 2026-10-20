@@ -164,7 +164,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
       IF t95 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t97 ?= t95.
         DATA t98 TYPE REF TO object.
-        CLEAR t98.
         t98 = t97->as_ref( ).
         t94 ?= t98.
       ELSE.
@@ -173,13 +172,11 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
       DATA(t99) = VALUE abap_bool( ).
       DATA(t100) = VALUE abap_bool( ).
       DATA t101 TYPE REF TO zif_lnt_statement.
-      CLEAR t101.
       t101 = t94->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       t100 = xsdbool( t101 IS BOUND AND t101 IS INSTANCE OF zcl_lnt_report ).
       t99 = t100.
       IF t100 = abap_false.
         DATA t104 TYPE REF TO zif_lnt_statement.
-        CLEAR t104.
         t104 = t94->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t99 = xsdbool( t104 IS BOUND AND t104 IS INSTANCE OF zcl_lnt_st_program ).
       ENDIF.
@@ -199,7 +196,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
           t120 = t3.
           TRANSLATE t120 TO LOWER CASE.
           DATA t123 TYPE REF TO zcl_lnt_text_edit.
-          CLEAR t123.
           t123 = NEW zcl_lnt_text_edit( i_range = t115 i_new_text = t120 ).
           CREATE OBJECT t123->zlnt_view_ownkeys_b0e8086400eb.
           t123->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -284,13 +280,11 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
     t171 = me->reg->get_objects( )->iterate( ).
     DO.
       DATA t176 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t176.
       t176 = t171->next( ).
       IF t176->done = abap_true.
         EXIT.
       ENDIF.
       DATA t181 TYPE REF TO zif_lnt_object.
-      CLEAR t181.
       t181 = t176->value.
       DATA(t186) = VALUE abap_bool( ).
       DATA(t187) = VALUE abap_bool( ).
@@ -443,7 +437,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
           IF t236 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t238 ?= t236.
             DATA t239 TYPE REF TO object.
-            CLEAR t239.
             t239 = t238->as_ref( ).
             t235 ?= t239.
           ELSE.
@@ -513,7 +506,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
             IF t274 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t276 ?= t274.
               DATA t277 TYPE REF TO object.
-              CLEAR t277.
               t277 = t276->as_ref( ).
               t273 ?= t277.
             ELSE.
@@ -599,7 +591,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
                 IF t319 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
                   t321 ?= t319.
                   DATA t322 TYPE REF TO object.
-                  CLEAR t322.
                   t322 = t321->as_ref( ).
                   t318 ?= t322.
                 ELSE.
@@ -747,7 +738,6 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
                 CLEAR t415.
                 DATA(t416) = VALUE string( ).
                 DATA t418 TYPE REF TO zcl_lnt_abstract_file.
-                CLEAR t418.
                 t418 = t235.
                 t416 = t418->filename.
                 DATA t423 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

@@ -340,7 +340,6 @@ CLASS zcl_lnt_functional_writing IMPLEMENTATION.
             t149 = zcl_lnt_edit_helper=>replace_range( i_file = t140 i_start = t151 i_end = NEW zcl_lnt_position( i_row = t171 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t178 right = t189 op = `+` ) ) i_text = t146 ).
             DATA(t195) = VALUE string( ).
             DATA t196 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t196.
             DATA t201 TYPE string.
             DATA(t202) = |Detects usage of call method when functional style calls can|.
             t202 = t202 && | be used.|.

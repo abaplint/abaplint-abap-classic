@@ -49,7 +49,6 @@ CLASS zcl_lnt_sy_at_selection_screen IMPLEMENTATION.
       DATA t32 TYPE REF TO zcl_lnt_current_scope.
       t32 = t2->scope.
       DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t35.
       DATA t41 TYPE string.
       t41 = t27->str.
       DATA(t43) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -105,12 +104,9 @@ CLASS zcl_lnt_sy_at_selection_screen IMPLEMENTATION.
       CLEAR t85.
       IF xsdbool( xsdbool( t45 IS INITIAL ) = abap_false ) = abap_true.
         DATA t90 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t90.
         DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t93.
         DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t95.
-        CLEAR t95.
         CREATE OBJECT t95.
         t95->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t95->sval = |Read From|.

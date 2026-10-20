@@ -416,7 +416,6 @@ CLASS zlnt_runtime_arra_a3200b8dc4ad IMPLEMENTATION.
       CLEAR t2.
       CLEAR t2.
       IF t1 IS BOUND AND t1->has = abap_true.
-        CLEAR t2.
         CREATE OBJECT t2.
         t2->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t2->sval = t1->value.

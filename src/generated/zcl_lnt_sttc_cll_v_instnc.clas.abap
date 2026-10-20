@@ -280,7 +280,6 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
           CLEAR t94.
           DATA(t98) = VALUE string( ).
           DATA t99 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t99.
           DATA t106 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t106.
           DATA(t109) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

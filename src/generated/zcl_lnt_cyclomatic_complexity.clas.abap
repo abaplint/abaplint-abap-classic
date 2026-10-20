@@ -181,7 +181,6 @@ CLASS zcl_lnt_cyclomatic_complexity IMPLEMENTATION.
         t47 = t8->pos.
         DATA(t50) = VALUE string( ).
         DATA t51 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t51.
         DATA t58 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t58.
         DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

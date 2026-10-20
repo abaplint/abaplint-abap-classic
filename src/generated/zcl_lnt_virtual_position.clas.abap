@@ -187,10 +187,10 @@ CLASS zcl_lnt_virtual_position IMPLEMENTATION.
       ENDIF.
       result = abap_false.
       RETURN.
-    ELSE.
-      result = super->is_after( i_p = t1 ).
-
     ENDIF.
+    result = super->is_after( i_p = t1 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

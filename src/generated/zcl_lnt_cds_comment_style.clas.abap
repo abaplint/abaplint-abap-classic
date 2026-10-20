@@ -227,7 +227,6 @@ CLASS zcl_lnt_cds_comment_style IMPLEMENTATION.
           t60 ?= t36.
           DATA(t63) = VALUE string( ).
           DATA t64 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t64.
           DATA t71 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t71.
           DATA(t74) = |Check for obsolete comment style\n\nComments starting with "--|.

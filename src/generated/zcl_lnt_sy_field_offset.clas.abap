@@ -28,12 +28,12 @@ CLASS zcl_lnt_sy_field_offset IMPLEMENTATION.
       t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t2 i_ref_type = t15 i_allow_generic_deference = t18 ).
       CLEAR result.
       RETURN.
-    ELSE.
-      DATA t27 TYPE string.
-      t27 = t1->get_last_token( )->str.
-      result = zlnt_runtime_stri_248d3505915c=>int_optional( t27 ).
-
     ENDIF.
+    DATA t27 TYPE string.
+    t27 = t1->get_last_token( )->str.
+    result = zlnt_runtime_stri_248d3505915c=>int_optional( t27 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

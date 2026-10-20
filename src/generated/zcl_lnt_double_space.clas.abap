@@ -324,24 +324,24 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
       CLEAR t30.
       IF xsdbool( t21 IS INITIAL ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t34) = VALUE abap_bool( ).
-        DATA(t35) = VALUE abap_bool( ).
-        DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t38.
-        t35 = xsdbool( xsdbool( t4 IS INITIAL ) = abap_false ).
-        t34 = t35.
-        IF t35 = abap_true.
-          DATA t44 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t44 = t4->col.
-          DATA t58 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t58 = t21->start->col.
-          t34 = zlnt_runtime_numb_290eb04a9758=>compare( left = t44 right = t58 op = `==` ).
-        ENDIF.
-        IF t34 = abap_true.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      DATA(t34) = VALUE abap_bool( ).
+      DATA(t35) = VALUE abap_bool( ).
+      DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t38.
+      t35 = xsdbool( xsdbool( t4 IS INITIAL ) = abap_false ).
+      t34 = t35.
+      IF t35 = abap_true.
+        DATA t44 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t44 = t4->col.
+        DATA t58 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t58 = t21->start->col.
+        t34 = zlnt_runtime_numb_290eb04a9758=>compare( left = t44 right = t58 op = `==` ).
+      ENDIF.
+      IF t34 = abap_true.
+        CONTINUE.
+      ENDIF.
+
       t4 = t21->start.
       DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       t69 = t16->get_tokens( ).
@@ -372,15 +372,15 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
         IF xsdbool( t71->start->row <> t4->row ) = abap_true.
           CREATE OBJECT result.
           RETURN.
-        ELSE.
-          DATA t94 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t94 = t71->start->col.
-          DATA t103 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-          t103 = t4->col.
-          IF zlnt_runtime_numb_290eb04a9758=>compare( left = t94 right = t103 op = `<` ) = abap_true.
-            CONTINUE.
-          ENDIF.
         ENDIF.
+        DATA t94 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t94 = t71->start->col.
+        DATA t103 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+        t103 = t4->col.
+        IF zlnt_runtime_numb_290eb04a9758=>compare( left = t94 right = t103 op = `<` ) = abap_true.
+          CONTINUE.
+        ENDIF.
+
         DATA t110 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
         t110 = t71->start->col.
         DATA t120 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
@@ -410,7 +410,6 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
           CLEAR t171.
           DATA(t176) = VALUE string( ).
           DATA t177 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t177.
           DATA t182 TYPE string.
           DATA(t183) = |Checks that only a single space follows certain common state|.
           t183 = t183 && |ments.|.
@@ -645,7 +644,6 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
           CLEAR t160.
           DATA(t165) = VALUE string( ).
           DATA t166 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t166.
           DATA t171 TYPE string.
           DATA(t172) = |Checks that only a single space follows certain common state|.
           t172 = t172 && |ments.|.
@@ -859,7 +857,6 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
           CLEAR t386.
           DATA(t391) = VALUE string( ).
           DATA t392 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t392.
           DATA t397 TYPE string.
           DATA(t398) = |Checks that only a single space follows certain common state|.
           t398 = t398 && |ments.|.
@@ -1243,7 +1240,6 @@ CLASS zcl_lnt_double_space IMPLEMENTATION.
         CLEAR t244.
         DATA(t249) = VALUE string( ).
         DATA t250 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t250.
         DATA t255 TYPE string.
         DATA(t256) = |Checks that only a single space follows certain common state|.
         t256 = t256 && |ments.|.

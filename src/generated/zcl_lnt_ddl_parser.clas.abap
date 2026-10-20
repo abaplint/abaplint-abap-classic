@@ -40,7 +40,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       IF t10 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t12 ?= t10.
         DATA t13 TYPE REF TO object.
-        CLEAR t13.
         t13 = t12->as_ref( ).
         t9 ?= t13.
       ELSE.
@@ -331,7 +330,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
           DATA t67 TYPE string.
           t67 = t51->concat_tokens( ).
           DATA t70 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t70.
           CREATE OBJECT t70 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\s+` flags = |g| checked = abap_true.
           DATA(t74) = strlen( t67 ).
           t57 = t70->replace( p0 = t67 p1 = || ).
@@ -420,7 +418,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
             DATA t126 TYPE string.
             t126 = t107->concat_tokens( ).
             DATA t129 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t129.
             CREATE OBJECT t129 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\s+` flags = |g| checked = abap_true.
             DATA(t133) = strlen( t126 ).
             t116 = t129->replace( p0 = t126 p1 = || ).
@@ -455,7 +452,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
             DATA t155 TYPE string.
             t155 = t136->concat_tokens( ).
             DATA t158 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t158.
             CREATE OBJECT t158 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\s+` flags = |g| checked = abap_true.
             DATA(t162) = strlen( t155 ).
             t145 = t158->replace( p0 = t155 p1 = || ).
@@ -522,7 +518,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
             DATA t203 TYPE string.
             t203 = t187->concat_tokens( ).
             DATA t206 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t206.
             CREATE OBJECT t206 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\s+` flags = |g| checked = abap_true.
             DATA(t210) = strlen( t203 ).
             t193 = t206->replace( p0 = t203 p1 = || ).
@@ -543,7 +538,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
             DATA t229 TYPE string.
             t229 = t213->concat_tokens( ).
             DATA t232 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t232.
             CREATE OBJECT t232 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = `\s+` flags = |g| checked = abap_true.
             DATA(t236) = strlen( t229 ).
             t219 = t232->replace( p0 = t229 p1 = || ).
@@ -703,14 +697,12 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       IF t9 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t11 ?= t9.
         DATA t12 TYPE REF TO object.
-        CLEAR t12.
         t12 = t11->as_ref( ).
         t8 ?= t12.
       ELSE.
         t8 ?= t9.
       ENDIF.
       DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
-      CLEAR t15.
       t15 = t8.
       DATA t17 TYPE REF TO object.
       CLEAR t17.
@@ -724,18 +716,15 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t25.
       DATA t27 TYPE REF TO object.
-      CLEAR t27.
       t27 = t17.
       DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
       CLEAR t29.
       DATA t31 TYPE REF TO object.
-      CLEAR t31.
       t31 = t27.
       IF xsdbool( t31 IS INITIAL ) = abap_true.
         CLEAR t29.
       ELSE.
         DATA t34 TYPE REF TO object.
-        CLEAR t34.
         t34 = t27.
         DATA t36 TYPE REF TO zlnt_runtime_desc_e5fe811e0f42.
         CLEAR t36.
@@ -765,7 +754,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       t23 = t37.
       DATA(t45) = VALUE abap_bool( ).
       DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t47.
       DATA(t50) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t50->has = abap_true.
       t50->value = |CDSAnnotation|.
@@ -1249,7 +1237,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       DATA(t131) = VALUE abap_bool( ).
       DATA(t132) = VALUE abap_bool( ).
       DATA t134 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t134.
       DATA(t137) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t137->has = abap_true.
       t137->value = |NOT|.
@@ -1273,7 +1260,6 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       IF t132 = abap_true.
         DATA(t141) = VALUE abap_bool( ).
         DATA t143 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t143.
         DATA(t146) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t146->has = abap_true.
         t146->value = |NULL|.

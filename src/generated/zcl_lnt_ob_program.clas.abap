@@ -324,7 +324,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
             DATA t135 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t135.
             DATA t136 TYPE REF TO object.
-            CLEAR t136.
             CLEAR t135.
             t136 = t131.
             TRY.
@@ -354,7 +353,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
       DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t139.
       DATA t140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t140.
       t140 = t130.
       DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t142.
@@ -389,7 +387,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         DATA(t151) = VALUE string( ).
         DATA(t152) = VALUE abap_bool( ).
         DATA t153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t153.
         t153 = t130->get( p0 = |ENTRY| ).
         IF t153 IS BOUND.
           t152 = t153->truth( ).
@@ -408,7 +405,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         DATA t164 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t164.
         DATA t165 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t165.
         t165 = t130.
         DATA t167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t167.
@@ -443,7 +439,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
         IF t162 = abap_true.
           DATA(t177) = VALUE string( ).
           DATA t178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t178.
           t178 = t130->get( p0 = |KEY| ).
           IF t178 IS BOUND.
             t177 = t178->type_of( ).
@@ -474,7 +469,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
           DATA(t192) = VALUE string( ).
           DATA(t193) = VALUE abap_bool( ).
           DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t194.
           t194 = t130->get( p0 = |ENTRY| ).
           IF t194 IS BOUND.
             t193 = t194->truth( ).
@@ -487,7 +481,6 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
           t191 = t192.
           DATA(t206) = VALUE string( ).
           DATA t207 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t207.
           t207 = t130->get( p0 = |LENGTH| ).
           IF t207 IS BOUND.
             IF t207->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t207->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.

@@ -72,7 +72,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       IF t9 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t11 ?= t9.
         DATA t12 TYPE REF TO object.
-        CLEAR t12.
         t12 = t11->as_ref( ).
         t8 ?= t12.
       ELSE.
@@ -91,7 +90,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t19.
         DATA t20 TYPE REF TO object.
-        CLEAR t20.
         CLEAR t19.
         t20 = t8.
         TRY.
@@ -118,7 +116,6 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t21.
         DATA t22 TYPE REF TO object.
-        CLEAR t22.
         CLEAR t21.
         t22 = t15.
         TRY.
@@ -148,25 +145,23 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       IF t13 = abap_true.
         result = me.
         RETURN.
-      ELSE.
-        IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
-          CONTINUE.
-        ELSE.
-          DATA t29 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t29.
-          DATA t31 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t31.
-          DATA t33 TYPE REF TO object.
-          CLEAR t33.
-          t33 = t8.
-          t31 ?= t33.
-          t29 = t31->find_parent( i_node = t1 ).
-          IF xsdbool( t29 IS BOUND ) = abap_true.
-            result = t29.
-            RETURN.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t29 TYPE REF TO zcl_lnt_structure_node.
+      DATA t31 TYPE REF TO zcl_lnt_structure_node.
+      CLEAR t31.
+      DATA t33 TYPE REF TO object.
+      t33 = t8.
+      t31 ?= t33.
+      t29 = t31->find_parent( i_node = t1 ).
+      IF xsdbool( t29 IS BOUND ) = abap_true.
+        result = t29.
+        RETURN.
+      ENDIF.
+
+
     ENDDO.
     CLEAR result.
 
@@ -482,22 +477,22 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
         t21 ?= t8.
         result = t21.
         RETURN.
-      ELSE.
-        IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
-          CONTINUE.
-        ELSE.
-          DATA t26 TYPE REF TO zcl_lnt_statement_node.
-          DATA t28 TYPE REF TO zcl_lnt_structure_node.
-          DATA t30 TYPE REF TO object.
-          t30 = t8.
-          t28 ?= t30.
-          t26 = t28->find_first_statement( i_type_9913 = t1 ).
-          IF xsdbool( t26 IS BOUND ) = abap_true.
-            result = t26.
-            RETURN.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
+        CONTINUE.
+      ENDIF.
+      DATA t26 TYPE REF TO zcl_lnt_statement_node.
+      DATA t28 TYPE REF TO zcl_lnt_structure_node.
+      DATA t30 TYPE REF TO object.
+      t30 = t8.
+      t28 ?= t30.
+      t26 = t28->find_first_statement( i_type_9913 = t1 ).
+      IF xsdbool( t26 IS BOUND ) = abap_true.
+        result = t26.
+        RETURN.
+      ENDIF.
+
+
     ENDDO.
     CLEAR result.
 
@@ -1204,37 +1199,37 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t10 IS BOUND AND t10 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t17) = VALUE abap_bool( ).
-        DATA t18 TYPE REF TO zif_lnt_structure.
-        DATA t19 TYPE REF TO zcl_lnt_structure_node.
-        DATA t21 TYPE REF TO object.
-        t21 = t10.
-        t19 ?= t21.
-        t18 = t19->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-        DATA(t22) = t1.
-        DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t23.
-        IF t18 IS BOUND.
-          t23 = t18->zlnt_builtin_clas_3f891b097658( ).
-          WHILE t23 IS BOUND.
-            IF t23 = t22.
-              t17 = abap_true.
-              EXIT.
-            ENDIF.
-            t23 = t23->parent.
-          ENDWHILE.
-        ENDIF.
-        IF t17 = abap_true.
-          DATA t25 TYPE REF TO zcl_lnt_structure_node.
-          DATA t27 TYPE REF TO object.
-          t27 = t10.
-          t25 ?= t27.
-          t2->load( ).
-          APPEND t25 TO t2->items.
-          t2->save( ).
-        ENDIF.
       ENDIF.
+      DATA(t17) = VALUE abap_bool( ).
+      DATA t18 TYPE REF TO zif_lnt_structure.
+      DATA t19 TYPE REF TO zcl_lnt_structure_node.
+      DATA t21 TYPE REF TO object.
+      t21 = t10.
+      t19 ?= t21.
+      t18 = t19->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
+      DATA(t22) = t1.
+      DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
+      CLEAR t23.
+      IF t18 IS BOUND.
+        t23 = t18->zlnt_builtin_clas_3f891b097658( ).
+        WHILE t23 IS BOUND.
+          IF t23 = t22.
+            t17 = abap_true.
+            EXIT.
+          ENDIF.
+          t23 = t23->parent.
+        ENDWHILE.
+      ENDIF.
+      IF t17 = abap_true.
+        DATA t25 TYPE REF TO zcl_lnt_structure_node.
+        DATA t27 TYPE REF TO object.
+        t27 = t10.
+        t25 ?= t27.
+        t2->load( ).
+        APPEND t25 TO t2->items.
+        t2->save( ).
+      ENDIF.
+
       DATA(t28) = VALUE i( ).
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t30 TYPE REF TO zcl_lnt_structure_node.
@@ -1508,75 +1503,75 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t27) = VALUE abap_bool( ).
-        DATA t28 TYPE REF TO zif_lnt_structure.
-        DATA t29 TYPE REF TO zcl_lnt_structure_node.
-        DATA t31 TYPE REF TO object.
-        t31 = t20.
-        t29 ?= t31.
-        t28 = t29->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-        DATA(t32) = t1.
-        DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t33.
-        IF t28 IS BOUND.
-          t33 = t28->zlnt_builtin_clas_3f891b097658( ).
-          WHILE t33 IS BOUND.
-            IF t33 = t32.
-              t27 = abap_true.
-              EXIT.
-            ENDIF.
-            t33 = t33->parent.
-          ENDWHILE.
-        ENDIF.
-        IF t27 = abap_true.
-          DATA t35 TYPE REF TO zcl_lnt_structure_node.
-          DATA t37 TYPE REF TO object.
-          t37 = t20.
-          t35 ?= t37.
-          t2->load( ).
-          APPEND t35 TO t2->items.
-          t2->save( ).
-        ELSE.
-          DATA(t38) = VALUE i( ).
-          DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t40 TYPE REF TO zcl_lnt_structure_node.
-          DATA t42 TYPE REF TO object.
-          t42 = t20.
-          t40 ?= t42.
-          t39 = t40->find_all_structures( i_type_9913 = t1 ).
-          DATA t44 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t44.
-          DATA t45 TYPE REF TO object.
-          CLEAR t45.
-          DATA(t46) = VALUE i( ).
-          DO.
-            t39->load( ).
-            IF t46 >= lines( t39->items ).
-              EXIT.
-            ENDIF.
-            CLEAR t45.
-            READ TABLE t39->items INDEX t46 + 1 INTO t45.
-            t46 = t46 + 1.
-            DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t47.
-            CLEAR t44.
-            IF t45 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-              t47 ?= t45.
-              DATA t48 TYPE REF TO object.
-              t48 = t47->as_ref( ).
-              t44 ?= t48.
-            ELSE.
-              t44 ?= t45.
-            ENDIF.
-            t2->load( ).
-            APPEND t44 TO t2->items.
-            t2->save( ).
-          ENDDO.
-          t2->load( ).
-          t38 = lines( t2->items ).
-        ENDIF.
       ENDIF.
+      DATA(t27) = VALUE abap_bool( ).
+      DATA t28 TYPE REF TO zif_lnt_structure.
+      DATA t29 TYPE REF TO zcl_lnt_structure_node.
+      DATA t31 TYPE REF TO object.
+      t31 = t20.
+      t29 ?= t31.
+      t28 = t29->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
+      DATA(t32) = t1.
+      DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
+      CLEAR t33.
+      IF t28 IS BOUND.
+        t33 = t28->zlnt_builtin_clas_3f891b097658( ).
+        WHILE t33 IS BOUND.
+          IF t33 = t32.
+            t27 = abap_true.
+            EXIT.
+          ENDIF.
+          t33 = t33->parent.
+        ENDWHILE.
+      ENDIF.
+      IF t27 = abap_true.
+        DATA t35 TYPE REF TO zcl_lnt_structure_node.
+        DATA t37 TYPE REF TO object.
+        t37 = t20.
+        t35 ?= t37.
+        t2->load( ).
+        APPEND t35 TO t2->items.
+        t2->save( ).
+      ELSE.
+        DATA(t38) = VALUE i( ).
+        DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        DATA t40 TYPE REF TO zcl_lnt_structure_node.
+        DATA t42 TYPE REF TO object.
+        t42 = t20.
+        t40 ?= t42.
+        t39 = t40->find_all_structures( i_type_9913 = t1 ).
+        DATA t44 TYPE REF TO zcl_lnt_structure_node.
+        CLEAR t44.
+        DATA t45 TYPE REF TO object.
+        CLEAR t45.
+        DATA(t46) = VALUE i( ).
+        DO.
+          t39->load( ).
+          IF t46 >= lines( t39->items ).
+            EXIT.
+          ENDIF.
+          CLEAR t45.
+          READ TABLE t39->items INDEX t46 + 1 INTO t45.
+          t46 = t46 + 1.
+          DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+          CLEAR t47.
+          CLEAR t44.
+          IF t45 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+            t47 ?= t45.
+            DATA t48 TYPE REF TO object.
+            t48 = t47->as_ref( ).
+            t44 ?= t48.
+          ELSE.
+            t44 ?= t45.
+          ENDIF.
+          t2->load( ).
+          APPEND t44 TO t2->items.
+          t2->save( ).
+        ENDDO.
+        t2->load( ).
+        t38 = lines( t2->items ).
+      ENDIF.
+
     ENDDO.
     result = t2.
 
@@ -1709,47 +1704,47 @@ CLASS zcl_lnt_structure_node IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t16 IS BOUND AND t16 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t23) = VALUE abap_bool( ).
-        DATA t24 TYPE REF TO zif_lnt_structure.
-        DATA t25 TYPE REF TO zcl_lnt_structure_node.
-        DATA t27 TYPE REF TO object.
-        t27 = t16.
-        t25 ?= t27.
-        t24 = t25->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
-        DATA(t28) = t1.
-        DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t29.
-        IF t24 IS BOUND.
-          t29 = t24->zlnt_builtin_clas_3f891b097658( ).
-          WHILE t29 IS BOUND.
-            IF t29 = t28.
-              t23 = abap_true.
-              EXIT.
-            ENDIF.
-            t29 = t29->parent.
-          ENDWHILE.
-        ENDIF.
-        IF t23 = abap_true.
-          DATA t32 TYPE REF TO zcl_lnt_structure_node.
-          DATA t34 TYPE REF TO object.
-          t34 = t16.
-          t32 ?= t34.
-          result = t32.
-          RETURN.
-        ELSE.
-          DATA t36 TYPE REF TO zcl_lnt_structure_node.
-          DATA t38 TYPE REF TO zcl_lnt_structure_node.
-          DATA t40 TYPE REF TO object.
-          t40 = t16.
-          t38 ?= t40.
-          t36 = t38->find_first_structure( i_type_9913 = t1 ).
-          IF xsdbool( t36 IS BOUND ) = abap_true.
-            result = t36.
-            RETURN.
-          ENDIF.
-        ENDIF.
       ENDIF.
+      DATA(t23) = VALUE abap_bool( ).
+      DATA t24 TYPE REF TO zif_lnt_structure.
+      DATA t25 TYPE REF TO zcl_lnt_structure_node.
+      DATA t27 TYPE REF TO object.
+      t27 = t16.
+      t25 ?= t27.
+      t24 = t25->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
+      DATA(t28) = t1.
+      DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
+      CLEAR t29.
+      IF t24 IS BOUND.
+        t29 = t24->zlnt_builtin_clas_3f891b097658( ).
+        WHILE t29 IS BOUND.
+          IF t29 = t28.
+            t23 = abap_true.
+            EXIT.
+          ENDIF.
+          t29 = t29->parent.
+        ENDWHILE.
+      ENDIF.
+      IF t23 = abap_true.
+        DATA t32 TYPE REF TO zcl_lnt_structure_node.
+        DATA t34 TYPE REF TO object.
+        t34 = t16.
+        t32 ?= t34.
+        result = t32.
+        RETURN.
+      ENDIF.
+      DATA t36 TYPE REF TO zcl_lnt_structure_node.
+      DATA t38 TYPE REF TO zcl_lnt_structure_node.
+      DATA t40 TYPE REF TO object.
+      t40 = t16.
+      t38 ?= t40.
+      t36 = t38->find_first_structure( i_type_9913 = t1 ).
+      IF xsdbool( t36 IS BOUND ) = abap_true.
+        result = t36.
+        RETURN.
+      ENDIF.
+
+
     ENDDO.
     CLEAR result.
 

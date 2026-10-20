@@ -210,7 +210,6 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
           ENDIF.
           DATA t54 TYPE string.
           DATA t56 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t56.
           CREATE OBJECT t56 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^0+| flags = ||.
           DATA(t60) = strlen( t27 ).
           t54 = t56->replace( p0 = t27 p1 = || ).
@@ -233,7 +232,6 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
           CLEAR t94.
           DATA(t98) = VALUE string( ).
           DATA t99 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t99.
           DATA t106 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t106.
           DATA t110 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
@@ -434,7 +432,6 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
           DATA t221 TYPE string.
           t221 = t183->value.
           DATA t223 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t223.
           CREATE OBJECT t223 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^0+| flags = ||.
           DATA(t227) = strlen( t221 ).
           t220 = t223->replace( p0 = t221 p1 = || ).
@@ -459,7 +456,6 @@ CLASS zcl_lnt_omit_preceding_zeros IMPLEMENTATION.
           t265 = t170.
           DATA(t268) = VALUE string( ).
           DATA t269 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t269.
           DATA t276 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t276.
           DATA t280 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

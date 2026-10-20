@@ -447,7 +447,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
           DATA t51 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           t51 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
           DATA t53 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t53.
           DATA(t56) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t56->has = abap_true.
           t56->value = |required|.
@@ -495,7 +494,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
           t82 = t20->identifier.
           DATA(t85) = VALUE string( ).
           DATA t86 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t86.
           DATA t91 TYPE string.
           DATA(t92) = |Allows you to enforce a pattern, such as a prefix, for metho|.
           t92 = t92 && |d parameter names|.
@@ -636,7 +634,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
             DATA t184 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             t184 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
             DATA t186 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t186.
             DATA(t189) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t189->has = abap_true.
             t189->value = |required|.
@@ -684,7 +681,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
             t215 = t153->identifier.
             DATA(t218) = VALUE string( ).
             DATA t219 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t219.
             DATA t224 TYPE string.
             DATA(t225) = |Allows you to enforce a pattern, such as a prefix, for metho|.
             t225 = t225 && |d parameter names|.
@@ -825,7 +821,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
               DATA t317 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               t317 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
               DATA t319 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t319.
               DATA(t322) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t322->has = abap_true.
               t322->value = |required|.
@@ -873,7 +868,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
               t348 = t286->identifier.
               DATA(t351) = VALUE string( ).
               DATA t352 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t352.
               DATA t357 TYPE string.
               DATA(t358) = |Allows you to enforce a pattern, such as a prefix, for metho|.
               t358 = t358 && |d parameter names|.
@@ -1014,7 +1008,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
                 DATA t450 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                 t450 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
                 DATA t452 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                CLEAR t452.
                 DATA(t455) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t455->has = abap_true.
                 t455->value = |required|.
@@ -1062,7 +1055,6 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
                 t481 = t419->identifier.
                 DATA(t484) = VALUE string( ).
                 DATA t485 TYPE REF TO zcl_lnt_irule_metadata.
-                CLEAR t485.
                 DATA t490 TYPE string.
                 DATA(t491) = |Allows you to enforce a pattern, such as a prefix, for metho|.
                 t491 = t491 && |d parameter names|.

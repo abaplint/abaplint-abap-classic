@@ -70,7 +70,6 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
         t29 ?= t30.
       ENDIF.
       DATA t34 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t34.
       DATA t35 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t35.
       t35 = t29.

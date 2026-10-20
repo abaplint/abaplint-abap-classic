@@ -215,52 +215,52 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         ENDIF.
         IF xsdbool( t23 = abap_false ) = abap_true.
           CONTINUE.
-        ELSE.
-          DATA t34 TYPE abap_bool.
-          DATA t35 TYPE abap_bool.
-          DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t39 TYPE REF TO zcl_lnt_abstract_node.
-          t39 = t17.
-          t38 = t39->children.
-          t37 ?= t38.
-          t37->load( ).
-          t35 = xsdbool( lines( t37->items ) = 2 ).
-          t34 = t35.
-          IF t35 = abap_true.
-            DATA t45 TYPE REF TO object.
-            CLEAR t45.
-            DATA t46 TYPE REF TO zif_lnt_union_4cf1d054.
-            CLEAR t46.
-            DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t49 TYPE REF TO zcl_lnt_abstract_node.
-            t49 = t17.
-            t48 = t49->children.
-            t47 ?= t48.
-            DATA t53 TYPE REF TO object.
-            CLEAR t53.
-            t47->load( ).
-            CLEAR t53.
-            READ TABLE t47->items INDEX 2 INTO t53.
-            DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t54.
-            CLEAR t46.
-            IF t53 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-              t54 ?= t53.
-              DATA t55 TYPE REF TO object.
-              t55 = t54->as_ref( ).
-              t46 ?= t55.
-            ELSE.
-              t46 ?= t53.
-            ENDIF.
-            t45 = t46->get_db65( ).
-            t34 = xsdbool( t45 IS BOUND AND t45 IS INSTANCE OF zcl_lnt_st_method_call_chain ).
-          ENDIF.
-          IF t34 = abap_true.
-            CONTINUE.
-          ENDIF.
         ENDIF.
+        DATA t34 TYPE abap_bool.
+        DATA t35 TYPE abap_bool.
+        DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        DATA t39 TYPE REF TO zcl_lnt_abstract_node.
+        t39 = t17.
+        t38 = t39->children.
+        t37 ?= t38.
+        t37->load( ).
+        t35 = xsdbool( lines( t37->items ) = 2 ).
+        t34 = t35.
+        IF t35 = abap_true.
+          DATA t45 TYPE REF TO object.
+          CLEAR t45.
+          DATA t46 TYPE REF TO zif_lnt_union_4cf1d054.
+          CLEAR t46.
+          DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+          DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+          DATA t49 TYPE REF TO zcl_lnt_abstract_node.
+          t49 = t17.
+          t48 = t49->children.
+          t47 ?= t48.
+          DATA t53 TYPE REF TO object.
+          CLEAR t53.
+          t47->load( ).
+          CLEAR t53.
+          READ TABLE t47->items INDEX 2 INTO t53.
+          DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+          CLEAR t54.
+          CLEAR t46.
+          IF t53 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+            t54 ?= t53.
+            DATA t55 TYPE REF TO object.
+            t55 = t54->as_ref( ).
+            t46 ?= t55.
+          ELSE.
+            t46 ?= t53.
+          ENDIF.
+          t45 = t46->get_db65( ).
+          t34 = xsdbool( t45 IS BOUND AND t45 IS INSTANCE OF zcl_lnt_st_method_call_chain ).
+        ENDIF.
+        IF t34 = abap_true.
+          CONTINUE.
+        ENDIF.
+
         DATA t59 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
         t59 = me->get_fix( i_file = t1 i_c = t17 ).
         DATA t63 TYPE REF TO zcl_lnt_issue.
@@ -269,7 +269,6 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         t65 = t17->get_first_token( ).
         DATA(t68) = VALUE string( ).
         DATA t69 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t69.
         DATA t76 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t76.
         DATA(t79) = |\nhttps://github.com/SAP/styleguides/blob/main/clean-abap/Cle|.

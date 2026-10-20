@@ -167,7 +167,6 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           CLEAR t44.
           DATA(t48) = VALUE string( ).
           DATA t49 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t49.
           DATA t54 TYPE string.
           DATA(t55) = |Checks for syntax not recognized by abaplint, related to EXC|.
           t55 = t55 && |EPTIONS in CALL FUNCTION.|.
@@ -284,7 +283,6 @@ CLASS zcl_lnt_parser_bad_exceptions IMPLEMENTATION.
           t115 = t96->get_first_token( ).
           DATA(t118) = VALUE string( ).
           DATA t119 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t119.
           DATA t124 TYPE string.
           DATA(t125) = |Checks for syntax not recognized by abaplint, related to EXC|.
           t125 = t125 && |EPTIONS in CALL FUNCTION.|.

@@ -184,13 +184,13 @@ CLASS zcl_lnt_align_pseudo_comments IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t56 = abap_false ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t71.
-        IF xsdbool( t4 IS INITIAL ) = abap_true.
-          CONTINUE.
-        ENDIF.
       ENDIF.
+      DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      CLEAR t71.
+      IF xsdbool( t4 IS INITIAL ) = abap_true.
+        CONTINUE.
+      ENDIF.
+
       DATA t75 TYPE i.
       t75 = 61.
       IF xsdbool( t47 > 10 ) = abap_true.
@@ -276,7 +276,6 @@ CLASS zcl_lnt_align_pseudo_comments IMPLEMENTATION.
         CLEAR t171.
         DATA(t175) = VALUE string( ).
         DATA t176 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t176.
         DATA t183 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t183.
         DATA t187 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.

@@ -240,7 +240,6 @@ CLASS zcl_lnt_when_others_last IMPLEMENTATION.
             CLEAR t76.
             DATA(t80) = VALUE string( ).
             DATA t81 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t81.
             DATA t86 TYPE string.
             DATA(t87) = |Checks that WHEN OTHERS is placed the last within a CASE sta|.
             t87 = t87 && |tement.|.

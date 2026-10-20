@@ -28,48 +28,48 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
       t9 = zcl_lnt_sy_field_chain=>run_syntax( i_node = t10 i_input_967e = t2 i_ref_type = t15 i_allow_generic_deference = t18 ).
       CLEAR result.
       RETURN.
-    ELSE.
-      DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t23 TYPE REF TO zcl_lnt_abstract_node.
-      t23 = t1.
-      t22 = t23->children.
-      t21 ?= t22.
-      t20 = t21.
-      DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t28 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t30 TYPE i.
-      DATA t31 TYPE i.
-      t20->load( ).
-      t31 = lines( t20->items ).
-      DATA(t33) = 2.
-      t30 = t31 - t33.
-      t30 = t30 + 1.
-      DATA t34 TYPE REF TO object.
-      t20->load( ).
-      READ TABLE t20->items INDEX t30 INTO t34.
-      DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t34 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-        t35 ?= t34.
-        DATA t36 TYPE REF TO object.
-        t36 = t35->as_ref( ).
-        t28 ?= t36.
-      ELSE.
-        t28 ?= t34.
-      ENDIF.
-      t27 = t28.
-      DATA t38 TYPE string.
-      t38 = t27->get_last_token( )->str.
-      IF xsdbool( t38 = |*| ) = abap_true.
-        CLEAR result.
-        RETURN.
-      ENDIF.
-      DATA t53 TYPE string.
-      t53 = t27->get_last_token( )->str.
-      result = zlnt_runtime_stri_248d3505915c=>int_optional( t53 ).
-
     ENDIF.
+    DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA t23 TYPE REF TO zcl_lnt_abstract_node.
+    t23 = t1.
+    t22 = t23->children.
+    t21 ?= t22.
+    t20 = t21.
+    DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
+    DATA t28 TYPE REF TO zif_lnt_union_4cf1d054.
+    DATA t30 TYPE i.
+    DATA t31 TYPE i.
+    t20->load( ).
+    t31 = lines( t20->items ).
+    DATA(t33) = 2.
+    t30 = t31 - t33.
+    t30 = t30 + 1.
+    DATA t34 TYPE REF TO object.
+    t20->load( ).
+    READ TABLE t20->items INDEX t30 INTO t34.
+    DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t34 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+      t35 ?= t34.
+      DATA t36 TYPE REF TO object.
+      t36 = t35->as_ref( ).
+      t28 ?= t36.
+    ELSE.
+      t28 ?= t34.
+    ENDIF.
+    t27 = t28.
+    DATA t38 TYPE string.
+    t38 = t27->get_last_token( )->str.
+    IF xsdbool( t38 = |*| ) = abap_true.
+      CLEAR result.
+      RETURN.
+    ENDIF.
+    DATA t53 TYPE string.
+    t53 = t27->get_last_token( )->str.
+    result = zlnt_runtime_stri_248d3505915c=>int_optional( t53 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

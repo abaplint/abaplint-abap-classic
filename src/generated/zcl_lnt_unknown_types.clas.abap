@@ -255,7 +255,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         t42 = t9->position_7b94.
         DATA(t45) = VALUE string( ).
         DATA t46 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t46.
         DATA t51 TYPE string.
         DATA(t52) = |Enables check for unknown data types, respects errorNamespac|.
         t52 = t52 && |e|.
@@ -366,7 +365,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         t120 = t9->position_7b94.
         DATA(t123) = VALUE string( ).
         DATA t124 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t124.
         DATA t129 TYPE string.
         DATA(t130) = |Enables check for unknown data types, respects errorNamespac|.
         t130 = t130 && |e|.
@@ -493,7 +491,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
           t206 = t178.
           DATA(t209) = VALUE string( ).
           DATA t210 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t210.
           DATA t215 TYPE string.
           DATA(t216) = |Enables check for unknown data types, respects errorNamespac|.
           t216 = t216 && |e|.
@@ -617,7 +614,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
           t287 = t259.
           DATA(t290) = VALUE string( ).
           DATA t291 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t291.
           DATA t296 TYPE string.
           DATA(t297) = |Enables check for unknown data types, respects errorNamespac|.
           t297 = t297 && |e|.
@@ -724,7 +720,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         t358 = t343->id.
         DATA(t362) = VALUE string( ).
         DATA t363 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t363.
         DATA t368 TYPE string.
         DATA(t369) = |Enables check for unknown data types, respects errorNamespac|.
         t369 = t369 && |e|.
@@ -834,7 +829,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         t431 = t415->id.
         DATA(t435) = VALUE string( ).
         DATA t436 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t436.
         DATA t441 TYPE string.
         DATA(t442) = |Enables check for unknown data types, respects errorNamespac|.
         t442 = t442 && |e|.
@@ -987,13 +981,11 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       t16 = t2->iterate( ).
       DO.
         DATA t21 TYPE REF TO zcl_lnt_generator_0f216880.
-        CLEAR t21.
         t21 = t16->next( ).
         IF t21->done = abap_true.
           EXIT.
         ENDIF.
         DATA t28 TYPE REF TO zif_lnt_method_definition.
-        CLEAR t28.
         t28 = t21->value.
         DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t30.
@@ -1035,7 +1027,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
           IF t47 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t49 ?= t47.
             DATA t50 TYPE REF TO object.
-            CLEAR t50.
             t50 = t49->as_ref( ).
             t46 ?= t50.
           ELSE.
@@ -1169,7 +1160,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       IF t127 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t129 ?= t127.
         DATA t130 TYPE REF TO object.
-        CLEAR t130.
         t130 = t129->as_ref( ).
         t126 ?= t130.
       ELSE.
@@ -1197,7 +1187,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         IF t134 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t136 ?= t134.
           DATA t137 TYPE REF TO object.
-          CLEAR t137.
           t137 = t136->as_ref( ).
           t133 ?= t137.
         ELSE.
@@ -1217,7 +1206,6 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
         ENDIF.
         IF t145 = abap_true.
           DATA t149 TYPE REF TO zcl_lnt_shape_7ddeb4ab.
-          CLEAR t149.
           DATA t150 TYPE REF TO zcl_lnt_fi_identifier.
           CLEAR t150.
           t150 = t133.
@@ -1265,98 +1253,97 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       t12->value = t10.
       result = t12.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
-        DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t18 TYPE REF TO zcl_lnt_structure_type.
-        t18 ?= t1.
-        t16 = t18->components.
-        DATA t22 TYPE REF TO zcl_lnt_istructure_component.
-        DATA t23 TYPE REF TO object.
-        DATA(t24) = VALUE i( ).
-        DO.
-          t16->load( ).
-          IF t24 >= lines( t16->items ).
-            EXIT.
-          ENDIF.
-          CLEAR t23.
-          READ TABLE t16->items INDEX t24 + 1 INTO t23.
-          t24 = t24 + 1.
-          DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t25.
+    ENDIF.
+    IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_type ) = abap_true.
+      DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      DATA t18 TYPE REF TO zcl_lnt_structure_type.
+      t18 ?= t1.
+      t16 = t18->components.
+      DATA t22 TYPE REF TO zcl_lnt_istructure_component.
+      DATA t23 TYPE REF TO object.
+      DATA(t24) = VALUE i( ).
+      DO.
+        t16->load( ).
+        IF t24 >= lines( t16->items ).
+          EXIT.
+        ENDIF.
+        CLEAR t23.
+        READ TABLE t16->items INDEX t24 + 1 INTO t23.
+        t24 = t24 + 1.
+        DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t25.
+        CLEAR t22.
+        IF t23 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+          t25 ?= t23.
           CLEAR t22.
-          IF t23 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-            t25 ?= t23.
-            CLEAR t22.
-            IF t25 IS BOUND.
-              IF t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-                TRY.
-                    t22 ?= t25->oval.
-                  CATCH cx_sy_move_cast_error.
-                ENDTRY.
-              ENDIF.
-              IF t22 IS NOT BOUND.
-                IF t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
-                  DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-                  CLEAR t26.
-                  IF t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-                    RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
-                  ENDIF.
-                  TRY.
-                      t26 ?= t25->oval.
-                    CATCH cx_sy_move_cast_error.
-                      RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference does not implement view storage`.
-                  ENDTRY.
-                  IF t26->structural( ) <> abap_true.
-                    RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
-                  ENDIF.
+          IF t25 IS BOUND.
+            IF t25->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+              TRY.
+                  t22 ?= t25->oval.
+                CATCH cx_sy_move_cast_error.
+              ENDTRY.
+            ENDIF.
+            IF t22 IS NOT BOUND.
+              IF t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
+                DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
+                CLEAR t26.
+                IF t25->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+                  RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
                 ENDIF.
-                DATA(t27) = VALUE string( ).
-                DATA t28 TYPE REF TO zcl_lnt_abstract_type.
-                CLEAR t28.
-                DATA t29 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                CLEAR t29.
-                DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                CLEAR t30.
-                t22 = NEW zcl_lnt_istructure_component( view_source = t25 i_name = t27 i_type_9913 = t28 i_as_include = t29 i_suffix = t30 ).
+                TRY.
+                    t26 ?= t25->oval.
+                  CATCH cx_sy_move_cast_error.
+                    RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference does not implement view storage`.
+                ENDTRY.
+                IF t26->structural( ) <> abap_true.
+                  RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
+                ENDIF.
               ENDIF.
-            ENDIF.
-          ELSE.
-            t22 ?= t23.
-          ENDIF.
-          DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t31.
-          DATA t34 TYPE REF TO zcl_lnt_abstract_type.
-          CLEAR t34.
-          t34 = t22->zlnt_view_read_sr_455340cd1e80( ).
-          t31 = me->contains_unknown( i_type_9913 = t22->zlnt_view_read_sr_455340cd1e80( ) ).
-          DATA(t38) = VALUE abap_bool( ).
-          IF t31 IS BOUND.
-            IF t31->has = abap_true.
-              t38 = xsdbool( strlen( t31->value ) > 0 ).
+              DATA(t27) = VALUE string( ).
+              DATA t28 TYPE REF TO zcl_lnt_abstract_type.
+              CLEAR t28.
+              DATA t29 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+              CLEAR t29.
+              DATA t30 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+              CLEAR t30.
+              t22 = NEW zcl_lnt_istructure_component( view_source = t25 i_name = t27 i_type_9913 = t28 i_as_include = t29 i_suffix = t30 ).
             ENDIF.
           ENDIF.
-          IF t38 = abap_true.
-            DATA(t42) = VALUE string( ).
-            t42 = t31->value.
-            DATA(t44) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-            t44->has = abap_true.
-            t44->value = t42.
-            result = t44.
-            RETURN.
+        ELSE.
+          t22 ?= t23.
+        ENDIF.
+        DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+        CLEAR t31.
+        DATA t34 TYPE REF TO zcl_lnt_abstract_type.
+        t34 = t22->zlnt_view_read_sr_455340cd1e80( ).
+        t31 = me->contains_unknown( i_type_9913 = t22->zlnt_view_read_sr_455340cd1e80( ) ).
+        DATA(t38) = VALUE abap_bool( ).
+        IF t31 IS BOUND.
+          IF t31->has = abap_true.
+            t38 = xsdbool( strlen( t31->value ) > 0 ).
           ENDIF.
-        ENDDO.
-      ELSE.
-        IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
-          DATA t49 TYPE REF TO zcl_lnt_abstract_type.
-          DATA t51 TYPE REF TO zcl_lnt_ty_table_type.
-          t51 ?= t1.
-          t49 = t51->row_type.
-          result = me->contains_unknown( i_type_9913 = t49 ).
+        ENDIF.
+        IF t38 = abap_true.
+          DATA(t42) = VALUE string( ).
+          t42 = t31->value.
+          DATA(t44) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+          t44->has = abap_true.
+          t44->value = t42.
+          result = t44.
           RETURN.
         ENDIF.
+      ENDDO.
+    ELSE.
+      IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
+        DATA t49 TYPE REF TO zcl_lnt_abstract_type.
+        DATA t51 TYPE REF TO zcl_lnt_ty_table_type.
+        t51 ?= t1.
+        t49 = t51->row_type.
+        result = me->contains_unknown( i_type_9913 = t49 ).
+        RETURN.
       ENDIF.
     ENDIF.
+
     CLEAR result.
 
   ENDMETHOD.

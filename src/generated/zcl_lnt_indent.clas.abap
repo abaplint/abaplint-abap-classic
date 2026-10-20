@@ -438,7 +438,6 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         DATA t103 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t103 = me->options->slctn_scrn_blck_indnttn.
         DATA t105 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t105.
         DATA(t108) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t108->has = abap_true.
         t108->value = abap_true.
@@ -1107,7 +1106,6 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
         DATA t516 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t516 = me->options->slctn_scrn_blck_indnttn.
         DATA t518 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t518.
         DATA(t521) = NEW zlnt_runtime_opti_7f2541396f43( ).
         t521->has = abap_true.
         t521->value = abap_true.
@@ -1402,35 +1400,35 @@ CLASS zcl_lnt_indent IMPLEMENTATION.
       ENDIF.
       result = abap_true.
       RETURN.
-    ELSE.
-      IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ) = abap_true.
-        DATA t37 TYPE REF TO zcl_lnt_expression_node.
-        DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
-        t37 = t1->find_first_expression( i_type_9913 = t40 ).
-        DATA t41 TYPE abap_bool.
-        DATA t42 TYPE abap_bool.
-        t42 = xsdbool( t37 IS BOUND ).
-        t41 = t42.
-        IF t42 = abap_true.
-          DATA(t45) = me->global_classes.
-          DATA t46 TYPE string.
-          DATA t47 TYPE string.
-          t47 = t37->get_first_token( )->str.
-          DATA(t54) = strlen( t47 ).
-          t46 = t47.
-          IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-            TRANSLATE t46 TO UPPER CASE.
-          ELSE.
-            t46 = zlnt_runtime_uppe_91169605024d=>full( t46 ).
-          ENDIF.
-          t41 = t45->has( p0 = t46 ).
+    ENDIF.
+    IF xsdbool( t7 IS BOUND AND t7 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ) = abap_true.
+      DATA t37 TYPE REF TO zcl_lnt_expression_node.
+      DATA(t40) = zlnt_runtime_desc_78196487750d=>zlnt_member_d116_84f27914b88c.
+      t37 = t1->find_first_expression( i_type_9913 = t40 ).
+      DATA t41 TYPE abap_bool.
+      DATA t42 TYPE abap_bool.
+      t42 = xsdbool( t37 IS BOUND ).
+      t41 = t42.
+      IF t42 = abap_true.
+        DATA(t45) = me->global_classes.
+        DATA t46 TYPE string.
+        DATA t47 TYPE string.
+        t47 = t37->get_first_token( )->str.
+        DATA(t54) = strlen( t47 ).
+        t46 = t47.
+        IF t46 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+          TRANSLATE t46 TO UPPER CASE.
+        ELSE.
+          t46 = zlnt_runtime_uppe_91169605024d=>full( t46 ).
         ENDIF.
-        IF t41 = abap_true.
-          result = abap_true.
-          RETURN.
-        ENDIF.
+        t41 = t45->has( p0 = t46 ).
+      ENDIF.
+      IF t41 = abap_true.
+        result = abap_true.
+        RETURN.
       ENDIF.
     ENDIF.
+
     result = abap_false.
 
   ENDMETHOD.

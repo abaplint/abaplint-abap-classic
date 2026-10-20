@@ -552,7 +552,6 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA t463 TYPE REF TO zcl_lnt_current_scope.
       t463 = t2->scope.
       DATA t466 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t466.
       DATA t469 TYPE string.
       t469 = t438->name.
       DATA(t471) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -596,7 +595,6 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
           t497 = t483.
         ELSE.
           DATA t506 TYPE REF TO zcl_lnt_ob_interface.
-          CLEAR t506.
           DATA t507 TYPE REF TO zcl_lnt_ob_interface.
           CLEAR t507.
           DATA t509 TYPE REF TO zif_lnt_registry.

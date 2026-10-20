@@ -96,13 +96,11 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
     t27 = t32->iterate( ).
     DO.
       DATA t36 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t36.
       t36 = t27->next( ).
       IF t36->done = abap_true.
         EXIT.
       ENDIF.
       DATA t43 TYPE REF TO zif_lnt_object.
-      CLEAR t43.
       t43 = t36->value.
       DATA t45 TYPE REF TO zcl_lnt_iparse_result.
       CLEAR t45.

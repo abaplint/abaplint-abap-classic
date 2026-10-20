@@ -658,7 +658,6 @@ CLASS zcl_lnt_prfr_rtrnng_t_exprtng IMPLEMENTATION.
       CLEAR t231.
       DATA(t235) = VALUE string( ).
       DATA t236 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t236.
       DATA t241 TYPE string.
       DATA(t242) = |Prefer RETURNING to EXPORTING. Generic types cannot be RETUR|.
       t242 = t242 && |NING.|.

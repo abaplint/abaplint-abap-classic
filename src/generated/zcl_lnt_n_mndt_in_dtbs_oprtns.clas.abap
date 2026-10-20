@@ -223,7 +223,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         t66 = t52->get_first_token( ).
         DATA(t69) = VALUE string( ).
         DATA t70 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t70.
         DATA t75 TYPE string.
         DATA(t76) = |Do not specify the client in database operations; the ABAP r|.
         t76 = t76 && |untime handles it automatically.|.
@@ -339,7 +338,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         t69 = t70->title.
         DATA(t132) = VALUE string( ).
         DATA t133 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t133.
         DATA t138 TYPE string.
         DATA(t139) = |Do not specify the client in database operations; the ABAP r|.
         t139 = t139 && |untime handles it automatically.|.
@@ -474,7 +472,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         t214 = t200.
         DATA(t216) = VALUE string( ).
         DATA t217 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t217.
         DATA t222 TYPE string.
         DATA(t223) = |Do not specify the client in database operations; the ABAP r|.
         t223 = t223 && |untime handles it automatically.|.
@@ -590,7 +587,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         t216 = t217->title.
         DATA(t279) = VALUE string( ).
         DATA t280 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t280.
         DATA t285 TYPE string.
         DATA(t286) = |Do not specify the client in database operations; the ABAP r|.
         t286 = t286 && |untime handles it automatically.|.
@@ -1079,7 +1075,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
       IF t96 = abap_true.
         DATA(t99) = VALUE abap_bool( ).
         DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t101.
         DATA(t104) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t104->has = abap_true.
         t104->value = |SPECIFIED|.
@@ -1111,7 +1106,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
           DATA(t112) = VALUE abap_bool( ).
           DATA(t113) = VALUE abap_bool( ).
           DATA t115 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t115.
           DATA(t118) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t118->has = abap_true.
           t118->value = |CLIENT|.
@@ -1135,7 +1129,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
           IF t113 = abap_false.
             DATA(t122) = VALUE abap_bool( ).
             DATA t124 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t124.
             DATA(t127) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t127->has = abap_true.
             t127->value = |CLIENTS|.
@@ -1171,7 +1164,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         IF t133 = abap_true.
           DATA(t136) = VALUE abap_bool( ).
           DATA t138 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t138.
           DATA(t141) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t141->has = abap_true.
           t141->value = |ALL|.
@@ -1197,7 +1189,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
         IF t132 = abap_true.
           DATA(t145) = VALUE abap_bool( ).
           DATA t147 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t147.
           DATA(t150) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t150->has = abap_true.
           t150->value = |CLIENTS|.
@@ -1258,7 +1249,6 @@ CLASS zcl_lnt_n_mndt_in_dtbs_oprtns IMPLEMENTATION.
           DATA(t174) = VALUE i( ).
           DATA(t175) = VALUE abap_bool( ).
           DATA t177 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t177.
           DATA(t180) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t180->has = abap_true.
           t180->value = |ALL|.

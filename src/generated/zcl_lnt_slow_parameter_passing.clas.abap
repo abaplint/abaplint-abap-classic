@@ -229,17 +229,17 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
         ENDIF.
         IF t46 = abap_true.
           CONTINUE.
-        ELSE.
-          DATA t68 TYPE abap_bool.
-          DATA t71 TYPE REF TO zcl_lnt_fi_identifier.
-          t71 = t42.
-          DATA t74 TYPE string.
-          t74 = t71->filename.
-          t68 = me->reg->is_file_dependency( i_filename = t74 ).
-          IF xsdbool( t68 = abap_true ) = abap_true.
-            CONTINUE.
-          ENDIF.
         ENDIF.
+        DATA t68 TYPE abap_bool.
+        DATA t71 TYPE REF TO zcl_lnt_fi_identifier.
+        t71 = t42.
+        DATA t74 TYPE string.
+        t74 = t71->filename.
+        t68 = me->reg->is_file_dependency( i_filename = t74 ).
+        IF xsdbool( t68 = abap_true ) = abap_true.
+          CONTINUE.
+        ENDIF.
+
         DATA t77 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         t77 = me->list_write_positions( i_node = t21 i_id = t42 ).
         t77->load( ).
@@ -486,7 +486,6 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
                 ENDIF.
                 t237 = t240.
                 DATA t250 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                CLEAR t250.
                 DATA(t253) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                 t253->has = abap_true.
                 t253->value = |(|.
@@ -556,7 +555,6 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
                   ENDIF.
                   t258 = t273.
                   DATA t282 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                  CLEAR t282.
                   DATA(t285) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                   t285->has = abap_true.
                   t285->value = |VALUE|.
@@ -599,7 +597,6 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
                   ENDIF.
                   t290 = t293.
                   DATA t303 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-                  CLEAR t303.
                   DATA(t306) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
                   t306->has = abap_true.
                   t306->value = |)|.
@@ -657,7 +654,6 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
           t359 = t42.
           DATA(t362) = VALUE string( ).
           DATA t363 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t363.
           DATA t368 TYPE string.
           DATA(t369) = |Detects slow pass by value passing for methods where paramet|.
           t369 = t369 && |er is not changed|.
@@ -838,7 +834,6 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
         ENDIF.
         t20 = t24.
         DATA t35 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t35.
         DATA t38 TYPE REF TO zcl_lnt_fi_identifier.
         t38 = t2.
         DATA t40 TYPE string.

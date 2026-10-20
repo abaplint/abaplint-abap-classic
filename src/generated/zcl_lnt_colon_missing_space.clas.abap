@@ -450,7 +450,6 @@ CLASS zcl_lnt_colon_missing_space IMPLEMENTATION.
           CLEAR t243.
           DATA(t248) = VALUE string( ).
           DATA t249 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t249.
           DATA t254 TYPE string.
           DATA(t255) = |Checks for missing spaces after colons in chained statements|.
           t255 = t255 && |.|.

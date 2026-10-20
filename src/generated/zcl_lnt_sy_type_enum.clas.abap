@@ -109,14 +109,12 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
       IF t44 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t46 ?= t44.
         DATA t47 TYPE REF TO object.
-        CLEAR t47.
         t47 = t46->as_ref( ).
         t43 ?= t47.
       ELSE.
         t43 ?= t44.
       ENDIF.
       DATA t48 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t48.
       DATA(t51) = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.
       t48 = t43->find_first_expression( i_type_9913 = t51 ).
       DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -130,7 +128,6 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
       t60 = t48->get_first_token( ).
       DATA(t63) = t3.
       DATA t64 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t64.
       DATA(t66) = VALUE string( ).
       t66 = t2->filename.
       DATA t68 TYPE REF TO zcl_lnt_integer_type.
@@ -167,14 +164,12 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
       IF t76 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t78 ?= t76.
         DATA t79 TYPE REF TO object.
-        CLEAR t79.
         t79 = t78->as_ref( ).
         t75 ?= t79.
       ELSE.
         t75 ?= t76.
       ENDIF.
       DATA t80 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t80.
       DATA(t83) = zlnt_runtime_desc_78196487750d=>zlnt_member_d228_d93110ac2429.
       t80 = t75->find_first_expression( i_type_9913 = t83 ).
       DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -188,7 +183,6 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
       t92 = t80->get_first_token( ).
       DATA(t95) = t3.
       DATA t96 TYPE REF TO zcl_lnt_typed_identifier.
-      CLEAR t96.
       DATA(t98) = VALUE string( ).
       t98 = t2->filename.
       DATA t100 TYPE REF TO zcl_lnt_integer_type.
@@ -432,7 +426,6 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
         IF t326 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t328 ?= t326.
           DATA t329 TYPE REF TO object.
-          CLEAR t329.
           t329 = t328->as_ref( ).
           t325 ?= t329.
         ELSE.
@@ -442,7 +435,6 @@ CLASS zcl_lnt_sy_type_enum IMPLEMENTATION.
         CLEAR t331.
         DATA(t332) = VALUE string( ).
         DATA t334 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t334.
         t334 = t325.
         DATA(t337) = VALUE string( ).
         t337 = t334->token->str.

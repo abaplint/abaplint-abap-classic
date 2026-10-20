@@ -125,108 +125,108 @@ CLASS zcl_lnt_language_server IMPLEMENTATION.
     IF xsdbool( t16 = t38->get_raw( ) ) = abap_true.
       CREATE OBJECT result.
       RETURN.
-    ELSE.
-      DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t42.
-      DATA t45 TYPE REF TO zcl_lnt_text_edit.
-      DATA t53 TYPE i.
-      t23->load( ).
-      t53 = lines( t23->items ).
-      DATA(t56) = VALUE int8( ).
-      DATA(t57) = VALUE int8( ).
-      DATA(t59) = VALUE string( ).
-      DATA t61 TYPE i.
-      DATA t62 TYPE i.
-      t23->load( ).
-      t62 = lines( t23->items ).
-      DATA(t64) = 1.
-      t61 = t62 - t64.
-      t61 = t61 + 1.
-      IF t23->has( t61 - 1 ) = abap_false.
-        RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-      ENDIF.
-      t23->load( ).
-      READ TABLE t23->items INDEX t61 INTO t59.
-      t57 = strlen( t59 ).
-      DATA(t66) = CONV int8( 1 ).
-      t56 = t57 + t66.
-      DATA t67 TYPE REF TO zcl_lnt_range.
-      DATA t68 TYPE REF TO zcl_lnt_no_position.
-      DATA t69 TYPE REF TO zcl_lnt_no_position.
-      DATA t70 TYPE f.
-      t70 = 0.
-      DATA t72 TYPE f.
-      t72 = 0.
-      DATA(t74) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-      t74->has = abap_true.
-      t74->value = t72.
-      t69 = NEW zcl_lnt_no_position( i_line = t70 i_character = t74 ).
-      CREATE OBJECT t69->zlnt_view_ownkeys_b0e8086400eb.
-      t69->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t69->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `line` p1 = t75 ).
-      DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t69->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t69->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `character` p1 = t76 ).
-      ENDIF.
-      t68 = t69.
-      DATA t78 TYPE REF TO zcl_lnt_no_position.
-      DATA t79 TYPE f.
-      t79 = t53.
-      DATA t81 TYPE f.
-      t81 = t56.
-      DATA(t83) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
-      t83->has = abap_true.
-      t83->value = t81.
-      t78 = NEW zcl_lnt_no_position( i_line = t79 i_character = t83 ).
-      CREATE OBJECT t78->zlnt_view_ownkeys_b0e8086400eb.
-      t78->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t78->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `line` p1 = t84 ).
-      DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t78->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t78->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `character` p1 = t85 ).
-      ENDIF.
-      t67 = NEW zcl_lnt_range( i_start = t68 i_end = t78 ).
-      CREATE OBJECT t67->zlnt_view_ownkeys_b0e8086400eb.
-      t67->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t67->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `start` p1 = t86 ).
-      DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t67->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t67->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `end` p1 = t87 ).
-      ENDIF.
-      CREATE OBJECT t67->zlnt_json_ownkeys_70e5fd461788.
-      t67->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |start| p1 = t89 ).
-      DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |end| p1 = t91 ).
-      ENDIF.
-      t45 = NEW zcl_lnt_text_edit( i_range = t67 i_new_text = t16 ).
-      CREATE OBJECT t45->zlnt_view_ownkeys_b0e8086400eb.
-      t45->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t45->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t94 ).
-      DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t45->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t45->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `newText` p1 = t95 ).
-      ENDIF.
-      CREATE OBJECT t45->zlnt_json_ownkeys_70e5fd461788.
-      t45->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t97 ).
-      DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      IF t45->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = |newText| p1 = t99 ).
-      ENDIF.
-      t42->load( ).
-      APPEND t45 TO t42->items.
-      t42->save( ).
-      result = t42.
-
     ENDIF.
+    DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    CREATE OBJECT t42.
+    DATA t45 TYPE REF TO zcl_lnt_text_edit.
+    DATA t53 TYPE i.
+    t23->load( ).
+    t53 = lines( t23->items ).
+    DATA(t56) = VALUE int8( ).
+    DATA(t57) = VALUE int8( ).
+    DATA(t59) = VALUE string( ).
+    DATA t61 TYPE i.
+    DATA t62 TYPE i.
+    t23->load( ).
+    t62 = lines( t23->items ).
+    DATA(t64) = 1.
+    t61 = t62 - t64.
+    t61 = t61 + 1.
+    IF t23->has( t61 - 1 ) = abap_false.
+      RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+    ENDIF.
+    t23->load( ).
+    READ TABLE t23->items INDEX t61 INTO t59.
+    t57 = strlen( t59 ).
+    DATA(t66) = CONV int8( 1 ).
+    t56 = t57 + t66.
+    DATA t67 TYPE REF TO zcl_lnt_range.
+    DATA t68 TYPE REF TO zcl_lnt_no_position.
+    DATA t69 TYPE REF TO zcl_lnt_no_position.
+    DATA t70 TYPE f.
+    t70 = 0.
+    DATA t72 TYPE f.
+    t72 = 0.
+    DATA(t74) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+    t74->has = abap_true.
+    t74->value = t72.
+    t69 = NEW zcl_lnt_no_position( i_line = t70 i_character = t74 ).
+    CREATE OBJECT t69->zlnt_view_ownkeys_b0e8086400eb.
+    t69->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t69->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `line` p1 = t75 ).
+    DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t69->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t69->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `character` p1 = t76 ).
+    ENDIF.
+    t68 = t69.
+    DATA t78 TYPE REF TO zcl_lnt_no_position.
+    DATA t79 TYPE f.
+    t79 = t53.
+    DATA t81 TYPE f.
+    t81 = t56.
+    DATA(t83) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
+    t83->has = abap_true.
+    t83->value = t81.
+    t78 = NEW zcl_lnt_no_position( i_line = t79 i_character = t83 ).
+    CREATE OBJECT t78->zlnt_view_ownkeys_b0e8086400eb.
+    t78->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t78->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `line` p1 = t84 ).
+    DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t78->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t78->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `character` p1 = t85 ).
+    ENDIF.
+    t67 = NEW zcl_lnt_range( i_start = t68 i_end = t78 ).
+    CREATE OBJECT t67->zlnt_view_ownkeys_b0e8086400eb.
+    t67->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t67->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `start` p1 = t86 ).
+    DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t67->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t67->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `end` p1 = t87 ).
+    ENDIF.
+    CREATE OBJECT t67->zlnt_json_ownkeys_70e5fd461788.
+    t67->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |start| p1 = t89 ).
+    DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t67->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t67->zlnt_json_ownkeys_70e5fd461788->put( p0 = |end| p1 = t91 ).
+    ENDIF.
+    t45 = NEW zcl_lnt_text_edit( i_range = t67 i_new_text = t16 ).
+    CREATE OBJECT t45->zlnt_view_ownkeys_b0e8086400eb.
+    t45->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t45->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t94 ).
+    DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t45->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
+      t45->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `newText` p1 = t95 ).
+    ENDIF.
+    CREATE OBJECT t45->zlnt_json_ownkeys_70e5fd461788.
+    t45->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t97 ).
+    DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t45->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
+      t45->zlnt_json_ownkeys_70e5fd461788->put( p0 = |newText| p1 = t99 ).
+    ENDIF.
+    t42->load( ).
+    APPEND t45 TO t42->items.
+    t42->save( ).
+    result = t42.
+
+
   ENDMETHOD.
 
   METHOD diagnostics.

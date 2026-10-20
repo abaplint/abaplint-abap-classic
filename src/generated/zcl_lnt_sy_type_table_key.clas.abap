@@ -47,7 +47,6 @@ CLASS zcl_lnt_sy_type_table_key IMPLEMENTATION.
           DATA t24 TYPE string.
           t24 = t17->concat_tokens( ).
           DATA t26 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-          CLEAR t26.
           CREATE OBJECT t26 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^!| flags = ||.
           DATA(t30) = strlen( t24 ).
           t22 = t26->replace( p0 = t24 p1 = || ).

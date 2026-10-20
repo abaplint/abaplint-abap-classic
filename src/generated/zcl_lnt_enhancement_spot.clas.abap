@@ -214,7 +214,6 @@ CLASS zcl_lnt_enhancement_spot IMPLEMENTATION.
             DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t83.
             DATA t84 TYPE REF TO object.
-            CLEAR t84.
             CLEAR t83.
             t84 = t79.
             TRY.
@@ -241,10 +240,8 @@ CLASS zcl_lnt_enhancement_spot IMPLEMENTATION.
       DATA t86 TYPE REF TO zcl_lnt_ibadi_definition.
       CLEAR t86.
       DATA t87 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t87.
       t87 = t78->get( p0 = |BADI_NAME| ).
       DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t91.
       t91 = t78->get( p0 = |INTERFACE_NAME| ).
       DATA t95 TYPE REF TO zcl_lnt_ibadi_definition.
       CLEAR t95.

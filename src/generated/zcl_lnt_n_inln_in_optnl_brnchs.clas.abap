@@ -302,14 +302,12 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
       IF t108 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t110 ?= t108.
         DATA t111 TYPE REF TO object.
-        CLEAR t111.
         t111 = t110->as_ref( ).
         t107 ?= t111.
       ELSE.
         t107 ?= t108.
       ENDIF.
       DATA t112 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t112.
       DATA(t115) = zlnt_runtime_desc_78196487750d=>zlnt_member_d203_a0e2832e9f27.
       t112 = t107->find_first_expression( i_type_9913 = t115 ).
       IF xsdbool( t112 IS BOUND ) = abap_true.
@@ -320,7 +318,6 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
         t123 = t112->get_first_token( ).
         DATA(t127) = VALUE string( ).
         DATA t128 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t128.
         DATA t135 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t135.
         DATA(t138) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.
@@ -336,11 +333,7 @@ CLASS zcl_lnt_n_inln_in_optnl_brnchs IMPLEMENTATION.
         DATA t141 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t141.
         DATA t145 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t145.
-        DATA t146 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t146.
-        CREATE OBJECT t146.
-        t145 = t146.
+        CREATE OBJECT t145.
         t145->load( ).
         APPEND |Styleguide| TO t145->items.
         t145->save( ).

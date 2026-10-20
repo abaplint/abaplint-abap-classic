@@ -48,10 +48,10 @@ CLASS zcl_lnt_lang_vers IMPLEMENTATION.
     IF xsdbool( t3 <= zcl_lnt_st_combi_module=>lang_version_ordinal( i_v = t6 ) ) = abap_true.
       result = me->runnable->run( i_r_f634 = t1 ).
       RETURN.
-    ELSE.
-      CREATE OBJECT result.
-
     ENDIF.
+    CREATE OBJECT result.
+
+
   ENDMETHOD.
 
   METHOD railroad.

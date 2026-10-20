@@ -146,14 +146,12 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
       IF t71 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t73 ?= t71.
         DATA t74 TYPE REF TO object.
-        CLEAR t74.
         t74 = t73->as_ref( ).
         t70 ?= t74.
       ELSE.
         t70 ?= t71.
       ENDIF.
       DATA t76 TYPE REF TO zif_lnt_statement.
-      CLEAR t76.
       t76 = t70->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t76 IS BOUND AND t76 IS INSTANCE OF zcl_lnt_st_class_definition ) = abap_true.
         DATA t78 TYPE REF TO zcl_lnt_expression_node.
@@ -176,7 +174,6 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
         t97 = t3.
         TRANSLATE t97 TO LOWER CASE.
         DATA t100 TYPE REF TO zcl_lnt_text_edit.
-        CLEAR t100.
         t100 = NEW zcl_lnt_text_edit( i_range = t92 i_new_text = t97 ).
         CREATE OBJECT t100->zlnt_view_ownkeys_b0e8086400eb.
         t100->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -204,7 +201,6 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
         t62->save( ).
       ELSE.
         DATA t112 TYPE REF TO zif_lnt_statement.
-        CLEAR t112.
         t112 = t70->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         IF xsdbool( t112 IS BOUND AND t112 IS INSTANCE OF zcl_lnt_st_clss_implmnttn ) = abap_true.
           DATA t114 TYPE REF TO zcl_lnt_expression_node.
@@ -227,7 +223,6 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
           t133 = t3.
           TRANSLATE t133 TO LOWER CASE.
           DATA t136 TYPE REF TO zcl_lnt_text_edit.
-          CLEAR t136.
           t136 = NEW zcl_lnt_text_edit( i_range = t128 i_new_text = t133 ).
           CREATE OBJECT t136->zlnt_view_ownkeys_b0e8086400eb.
           t136->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.

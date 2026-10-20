@@ -39,7 +39,6 @@ CLASS zcl_lnt_sy_call_kernel IMPLEMENTATION.
         t6 ?= t7.
       ENDIF.
       DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t12.
       t12 = t6.

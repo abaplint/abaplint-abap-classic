@@ -284,7 +284,6 @@ CLASS zcl_lnt_local_class_naming IMPLEMENTATION.
         DATA t92 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t92 = me->conf->zlnt_view_read_sr_ef452f77fd06( ).
         DATA t94 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t94.
         DATA(t97) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t97->has = abap_true.
         t97->value = |required|.
@@ -328,7 +327,6 @@ CLASS zcl_lnt_local_class_naming IMPLEMENTATION.
         t85 = t90.
         DATA(t121) = VALUE string( ).
         DATA t122 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t122.
         DATA t127 TYPE string.
         DATA(t128) = |Allows you to enforce a pattern, such as a prefix, for local|.
         t128 = t128 && | class names.|.

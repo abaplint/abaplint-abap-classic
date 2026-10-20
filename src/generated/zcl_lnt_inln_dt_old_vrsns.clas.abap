@@ -196,7 +196,6 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ENDIF.
         t50 = t53->str.
         DATA t61 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-        CLEAR t61.
         CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |DATA| flags = |i|.
         IF xsdbool( t61->match_test( p0 = t50 ) = abap_false ) = abap_true.
           CONTINUE.
@@ -271,7 +270,6 @@ CLASS zcl_lnt_inln_dt_old_vrsns IMPLEMENTATION.
         ENDIF.
         DATA(t103) = VALUE string( ).
         DATA t104 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t104.
         DATA t109 TYPE string.
         DATA(t110) = |Checks for inline data declarations in older releases. Only |.
         t110 = t110 && |active for versions less than v740sp02|.

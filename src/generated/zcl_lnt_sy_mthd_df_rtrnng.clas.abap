@@ -172,16 +172,16 @@ CLASS zcl_lnt_sy_mthd_df_rtrnng IMPLEMENTATION.
       DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       result = NEW zcl_lnt_typed_identifier( i_token = t101 i_filename = t104 i_type_9913 = t44 i_meta = t3 i_value = t112 ).
       RETURN.
-    ELSE.
-      DATA t114 TYPE REF TO zcl_lnt_abstract_token.
-      t114 = t4->get_first_token( ).
-      DATA(t117) = VALUE string( ).
-      t117 = t2->filename.
-      DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      result = NEW zcl_lnt_typed_identifier( i_token = t114 i_filename = t117 i_type_9913 = NEW zcl_lnt_unknown_type( i_error = |method param, todo| i_qualified_name = t121 ) i_meta = t3 i_value = t126 ).
-
     ENDIF.
+    DATA t114 TYPE REF TO zcl_lnt_abstract_token.
+    t114 = t4->get_first_token( ).
+    DATA(t117) = VALUE string( ).
+    t117 = t2->filename.
+    DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    result = NEW zcl_lnt_typed_identifier( i_token = t114 i_filename = t117 i_type_9913 = NEW zcl_lnt_unknown_type( i_error = |method param, todo| i_qualified_name = t121 ) i_meta = t3 i_value = t126 ).
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

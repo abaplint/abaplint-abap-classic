@@ -503,33 +503,33 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t74 >= 0 ) = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t83) = VALUE abap_bool( ).
-        DATA t84 TYPE string.
-        DATA t85 TYPE REF TO zcl_lnt_abstract_file.
-        t85 = t68.
-        t84 = t85->filename.
-        DATA(t89) = |.abap|.
-        DATA(t90) = strlen( t84 ).
-        DATA t91 TYPE i.
-        DATA(t92) = VALUE i( ).
-        DATA(t93) = VALUE string( ).
-        t91 = strlen( t89 ).
-        IF t91 = 0.
+      ENDIF.
+      DATA(t83) = VALUE abap_bool( ).
+      DATA t84 TYPE string.
+      DATA t85 TYPE REF TO zcl_lnt_abstract_file.
+      t85 = t68.
+      t84 = t85->filename.
+      DATA(t89) = |.abap|.
+      DATA(t90) = strlen( t84 ).
+      DATA t91 TYPE i.
+      DATA(t92) = VALUE i( ).
+      DATA(t93) = VALUE string( ).
+      t91 = strlen( t89 ).
+      IF t91 = 0.
+        t83 = abap_true.
+      ELSEIF t91 <= t90.
+        t92 = 0.
+        t92 = t90 - t91.
+        t93 = t84+t92(t91).
+        IF t93 = t89.
           t83 = abap_true.
-        ELSEIF t91 <= t90.
-          t92 = 0.
-          t92 = t90 - t91.
-          t93 = t84+t92(t91).
-          IF t93 = t89.
-            t83 = abap_true.
-          ENDIF.
-        ENDIF.
-        IF t83 = abap_true.
-          result = t68.
-          RETURN.
         ENDIF.
       ENDIF.
+      IF t83 = abap_true.
+        result = t68.
+        RETURN.
+      ENDIF.
+
     ENDDO.
     CLEAR result.
 
@@ -1002,7 +1002,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
             DATA t130 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t130.
             DATA t131 TYPE REF TO object.
-            CLEAR t131.
             CLEAR t130.
             t131 = t126.
             TRY.
@@ -1033,7 +1032,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t135.
       DATA t137 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t137.
       t137 = t125.
       DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t139.
@@ -1055,7 +1053,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       ELSE.
         DATA(t151) = VALUE string( ).
         DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t152.
         t152 = t135.
         IF t152 IS BOUND.
           t151 = t152->type_of( ).
@@ -1080,7 +1077,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
         ELSE.
           t156 = zlnt_runtime_uppe_91169605024d=>full( t156 ).
         ENDIF.
-        CLEAR t155.
         CREATE OBJECT t155.
         t155->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t155->sval = t156.
@@ -1115,7 +1111,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       t171 = t172.
       IF t172 = abap_true.
         DATA t179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t179.
         t179 = t125->get( p0 = |KEY| ).
         DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t182.
@@ -1128,7 +1123,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA t186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t186.
       DATA t188 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t188.
       t188 = t125->get( p0 = |KEY| ).
       DATA t192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t192.
@@ -1177,7 +1171,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       ENDIF.
       t199 = t200.
       DATA t215 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t215.
       t215 = t199.
       DATA t217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t217.
@@ -1194,7 +1187,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA t223 TYPE REF TO zlnt_runtime_map__5a3c0ec03a13.
       CLEAR t223.
       DATA t224 TYPE REF TO zlnt_runtime_map__f8cd1b113b3e.
-      CLEAR t224.
       t224 = me->texts.
       DATA(t226) = VALUE string( ).
       IF t132 IS BOUND.
@@ -1247,7 +1239,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
         DATA t240 TYPE REF TO zlnt_runtime_map__f8cd1b113b3e.
         CLEAR t240.
         DATA t241 TYPE REF TO zlnt_runtime_map__f8cd1b113b3e.
-        CLEAR t241.
         t241 = me->texts.
         DATA(t243) = VALUE string( ).
         IF t132 IS BOUND.
@@ -1299,7 +1290,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA t258 TYPE REF TO zlnt_runtime_map__5a3c0ec03a13.
       CLEAR t258.
       DATA t260 TYPE REF TO zlnt_runtime_map__f8cd1b113b3e.
-      CLEAR t260.
       t260 = me->texts.
       DATA(t262) = VALUE string( ).
       IF t132 IS BOUND.
@@ -1353,7 +1343,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA(t276) = VALUE string( ).
       DATA(t277) = VALUE abap_bool( ).
       DATA t278 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t278.
       t278 = t125->get( p0 = |ENTRY| ).
       IF t278 IS BOUND.
         t277 = t278->truth( ).
@@ -1366,7 +1355,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       t275 = t276.
       DATA(t290) = VALUE string( ).
       DATA t291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t291.
       t291 = t125->get( p0 = |LENGTH| ).
       IF t291 IS BOUND.
         IF t291->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t291->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -1575,7 +1563,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
             DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t83.
             DATA t84 TYPE REF TO object.
-            CLEAR t84.
             CLEAR t83.
             t84 = t79.
             TRY.
@@ -1609,7 +1596,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
       DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t92.
       DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t93.
       t93 = t78->get( p0 = |TEXTPOOL| ).
       DATA t97 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t97.
@@ -1666,7 +1652,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
               DATA t109 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t109.
               DATA t110 TYPE REF TO object.
-              CLEAR t110.
               CLEAR t109.
               t110 = t105.
               TRY.
@@ -1693,7 +1678,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
         DATA t111 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t111.
         DATA t113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t113.
         t113 = t104->get( p0 = |KEY| ).
         DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t117.
@@ -1742,7 +1726,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
         ENDIF.
         t124 = t125.
         DATA t140 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t140.
         t140 = t124.
         DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t142.
@@ -1764,7 +1747,6 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
           t152 = zcl_lnt_xml_utils_module=>unescape( i_str = t104->get( p0 = |ENTRY| ) ).
           DATA(t161) = VALUE string( ).
           DATA t162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t162.
           t162 = t104->get( p0 = |LENGTH| ).
           IF t162 IS BOUND.
             IF t162->tag = zlnt_runtime_dyna_a429568d5be8=>tag_array OR t162->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
@@ -1833,12 +1815,10 @@ CLASS zcl_lnt_abap_object IMPLEMENTATION.
         ENDIF.
       ENDDO.
       DATA t180 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t180.
       t180 = me->texts_translations.
       DATA t182 TYPE REF TO zcl_lnt_itrnsltn_txt_elmnts.
       CLEAR t182.
       DATA t183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t183.
       t183 = t78->get( p0 = |LANGUAGE| ).
       DATA t187 TYPE REF TO zcl_lnt_itrnsltn_txt_elmnts.
       CLEAR t187.

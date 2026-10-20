@@ -118,14 +118,12 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
       IF t16 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t18 ?= t16.
         DATA t19 TYPE REF TO object.
-        CLEAR t19.
         t19 = t18->as_ref( ).
         t15 ?= t19.
       ELSE.
         t15 ?= t16.
       ENDIF.
       DATA t20 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t20.
       t20 = t15->structure.
       DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t29.
@@ -141,14 +139,10 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
       DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t36.
       DATA t38 TYPE REF TO zcl_lnt_structure_node.
-      CLEAR t38.
       t38 = t20.
       DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t41.
-      DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t42.
-      CREATE OBJECT t42.
-      t41 = t42.
+      CREATE OBJECT t41.
       DATA(t44) = zlnt_runtime_desc_78196487750d=>zlnt_member_d157_1c35602cbab5.
       t41->load( ).
       APPEND t44 TO t41->items.
@@ -164,7 +158,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
         CLEAR t52.
         DATA(t54) = me->graph.
         DATA t58 TYPE REF TO zcl_lnt_abstract_file.
-        CLEAR t58.
         t58 = t15.
         DATA(t60) = VALUE string( ).
         t60 = t58->filename.
@@ -204,7 +197,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             DATA t85 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t85.
             DATA t86 TYPE REF TO object.
-            CLEAR t86.
             CLEAR t85.
             t86 = t77.
             TRY.
@@ -227,7 +219,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA t87 TYPE REF TO object.
-          CLEAR t87.
           t87 = t76->as_ref( ).
           t75 ?= t87.
           t33 = t75->get_text_symbols( ).
@@ -235,7 +226,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           DATA t91 TYPE REF TO zcl_lnt_abap_object.
           CLEAR t91.
           DATA t93 TYPE REF TO object.
-          CLEAR t93.
           t93 = t1.
           t91 ?= t93.
           t33 = t91->get_text_symbols( ).
@@ -260,7 +250,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
         IF t96 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t98 ?= t96.
           DATA t99 TYPE REF TO object.
-          CLEAR t99.
           t99 = t98->as_ref( ).
           t95 ?= t99.
         ELSE.
@@ -271,7 +260,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
         DATA(t102) = VALUE abap_bool( ).
         DATA(t103) = VALUE abap_bool( ).
         DATA t104 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t104.
         t104 = t34.
         DATA t106 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t106.
@@ -294,7 +282,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           DATA(t116) = VALUE string( ).
           DATA(t117) = VALUE string( ).
           DATA t118 TYPE REF TO zcl_lnt_abstract_file.
-          CLEAR t118.
           t118 = t15.
           t117 = t118->filename.
           DATA(t122) = strlen( t117 ).
@@ -313,7 +300,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
         ENDIF.
         t100 = t101.
         DATA t130 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t130.
         t130 = t95->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         IF xsdbool( t130 IS BOUND AND t130 IS INSTANCE OF zcl_lnt_text_element ) = abap_true.
           DATA t132 TYPE REF TO zcl_lnt_abstract_token.
@@ -333,7 +319,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           ENDIF.
           t138 = t139.
           DATA t148 TYPE REF TO zcl_lnt_shape_015c050b.
-          CLEAR t148.
           t148 = t33->get( p0 = t138 ).
           DATA t151 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t151.
@@ -353,7 +338,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             CLEAR t167.
             DATA(t171) = VALUE string( ).
             DATA t172 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t172.
             DATA t179 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t179.
             CLEAR t179.
@@ -436,7 +420,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           DATA t224 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t224.
           DATA t226 TYPE REF TO zcl_lnt_shape_015c050b.
-          CLEAR t226.
           t226 = t33->get( p0 = t216 ).
           DATA t230 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t230.
@@ -454,7 +437,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           DATA(t238) = VALUE abap_bool( ).
           DATA(t239) = VALUE abap_bool( ).
           DATA t240 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t240.
           t240 = t224.
           DATA t242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t242.
@@ -491,7 +473,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             DATA(t257) = VALUE string( ).
             t257 = t224->value.
             DATA t259 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-            CLEAR t259.
             CREATE OBJECT t259 TYPE zlnt_runtime_rege_8d1cc1058680 EXPORTING pattern = |'| flags = |g| checked = abap_true.
             DATA(t263) = strlen( t257 ).
             t256 = t259->replace( p0 = t257 p1 = |''| ).
@@ -501,7 +482,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             t224 = t264.
           ENDIF.
           DATA t267 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t267.
           t267 = t224.
           DATA t269 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t269.
@@ -527,7 +507,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             CLEAR t285.
             DATA(t289) = VALUE string( ).
             DATA t290 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t290.
             DATA t297 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t297.
             CLEAR t297.
@@ -594,7 +573,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
             DATA(t326) = |'|.
             DATA(t327) = VALUE string( ).
             DATA t328 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t328.
             t328 = t224.
             DATA(t330) = VALUE string( ).
             DATA(t331) = VALUE abap_bool( ).
@@ -619,7 +597,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
               DATA(t343) = |`|.
               DATA(t344) = VALUE string( ).
               DATA t345 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t345.
               t345 = t224.
               DATA(t347) = VALUE string( ).
               DATA(t348) = VALUE abap_bool( ).
@@ -644,7 +621,6 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
               CLEAR t357.
               DATA(t361) = VALUE string( ).
               DATA t362 TYPE REF TO zcl_lnt_irule_metadata.
-              CLEAR t362.
               DATA t369 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               CLEAR t369.
               CLEAR t369.

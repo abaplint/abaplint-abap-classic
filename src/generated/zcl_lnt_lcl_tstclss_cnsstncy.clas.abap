@@ -179,7 +179,6 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       IF t31 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t33 ?= t31.
         DATA t34 TYPE REF TO object.
-        CLEAR t34.
         t34 = t33->as_ref( ).
         t30 ?= t34.
       ELSE.
@@ -189,7 +188,6 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       DATA(t36) = VALUE abap_bool( ).
       DATA(t37) = VALUE abap_bool( ).
       DATA t38 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t38.
       t38 = t30->is_local.
       IF t38 IS BOUND.
         IF t38->has = abap_true.
@@ -200,7 +198,6 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       IF t37 = abap_true.
         DATA(t40) = VALUE abap_bool( ).
         DATA t41 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t41.
         t41 = t30->is_for_testing.
         IF t41 IS BOUND.
           IF t41->has = abap_true.
@@ -214,7 +211,6 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
         DATA(t45) = VALUE i( ).
         DATA(t46) = VALUE string( ).
         DATA t47 TYPE REF TO zcl_lnt_abstract_file.
-        CLEAR t47.
         t47 = t1.
         t46 = t47->filename.
         DATA(t51) = |.testclasses.abap|.
@@ -246,7 +242,6 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
         t65 = t30->identifier.
         DATA(t68) = VALUE string( ).
         DATA t69 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t69.
         DATA(t74) = VALUE string( ).
         DATA(t75) = |Checks that local test classes are placed in the test includ|.
         t75 = t75 && |e, and class unit test flag is set|.
@@ -254,11 +249,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
         DATA t76 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         CLEAR t76.
         DATA t80 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t80.
-        DATA t81 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        CLEAR t81.
-        CREATE OBJECT t81.
-        t80 = t81.
+        CREATE OBJECT t80.
         t80->load( ).
         APPEND |Syntax| TO t80->items.
         t80->save( ).

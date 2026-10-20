@@ -3305,7 +3305,6 @@ CLASS zcl_lnt_derived_types_module IMPLEMENTATION.
       IF t48 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t50 ?= t48.
         DATA t51 TYPE REF TO object.
-        CLEAR t51.
         t51 = t50->as_ref( ).
         t47 ?= t51.
       ELSE.
@@ -3318,7 +3317,6 @@ CLASS zcl_lnt_derived_types_module IMPLEMENTATION.
         DATA t55 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t55.
         DATA t56 TYPE REF TO object.
-        CLEAR t56.
         CLEAR t55.
         t56 = t47.
         TRY.

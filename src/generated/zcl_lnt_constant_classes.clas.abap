@@ -147,7 +147,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         DATA t28 TYPE REF TO zcl_lnt_domain_class_mapping.
         CLEAR t28.
         DATA t31 TYPE REF TO object.
-        CLEAR t31.
         t31 = t13->get( p0 = t19 ).
         DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t32.
@@ -204,11 +203,9 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         DATA(t43) = VALUE string( ).
         DATA(t44) = VALUE string( ).
         DATA t45 TYPE REF TO zcl_lnt_abstract_object.
-        CLEAR t45.
         DATA t46 TYPE REF TO zcl_lnt_domain.
         CLEAR t46.
         DATA t48 TYPE REF TO object.
-        CLEAR t48.
         t48 = t1.
         t46 ?= t48.
         t45 = t46.
@@ -444,14 +441,12 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         IF t253 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t255 ?= t253.
           DATA t256 TYPE REF TO object.
-          CLEAR t256.
           t256 = t255->as_ref( ).
           t252 ?= t256.
         ELSE.
           t252 ?= t253.
         ENDIF.
         DATA t258 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t258.
         t258 = t252->low.
         t249->load( ).
         APPEND t258 TO t249->items.
@@ -615,7 +610,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         IF t372 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t374 ?= t372.
           DATA t375 TYPE REF TO object.
-          CLEAR t375.
           t375 = t374->as_ref( ).
           t371 ?= t375.
         ELSE.
@@ -677,7 +671,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
             t418 = t371->identifier.
             DATA(t421) = VALUE string( ).
             DATA t422 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t422.
             DATA(t427) = VALUE string( ).
             DATA(t428) = |Checks that a class contains exactly the constants correspon|.
             t428 = t428 && |ding to a domain's fixed values.|.
@@ -693,11 +686,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
             DATA t435 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CLEAR t435.
             DATA t439 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t439.
-            DATA t440 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t440.
-            CREATE OBJECT t440.
-            t439 = t440.
+            CREATE OBJECT t439.
             t439->load( ).
             APPEND |Styleguide| TO t439->items.
             t439->save( ).
@@ -782,7 +771,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         DATA(t472) = VALUE abap_bool( ).
         DATA(t473) = VALUE abap_bool( ).
         DATA t474 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t474.
         t474 = t11->zlnt_view_read_sr_ee5be126cb68( ).
         IF t474 IS BOUND.
           IF t474->has = abap_true.
@@ -830,7 +818,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t509 = t371->identifier.
           DATA(t512) = VALUE string( ).
           DATA t513 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t513.
           DATA(t518) = VALUE string( ).
           DATA(t519) = |Checks that a class contains exactly the constants correspon|.
           t519 = t519 && |ding to a domain's fixed values.|.
@@ -846,11 +833,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t526 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t526.
           DATA t530 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t530.
-          DATA t531 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t531.
-          CREATE OBJECT t531.
-          t530 = t531.
+          CREATE OBJECT t530.
           t530->load( ).
           APPEND |Styleguide| TO t530->items.
           t530->save( ).
@@ -946,7 +929,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t580 = t371->identifier.
           DATA(t583) = VALUE string( ).
           DATA t584 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t584.
           DATA(t589) = VALUE string( ).
           DATA(t590) = |Checks that a class contains exactly the constants correspon|.
           t590 = t590 && |ding to a domain's fixed values.|.
@@ -962,11 +944,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t597 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t597.
           DATA t601 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t601.
-          DATA t602 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t602.
-          CREATE OBJECT t602.
-          t601 = t602.
+          CREATE OBJECT t601.
           t601->load( ).
           APPEND |Styleguide| TO t601->items.
           t601->save( ).
@@ -1072,7 +1050,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t660 = t371->identifier.
           DATA(t663) = VALUE string( ).
           DATA t664 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t664.
           DATA(t669) = VALUE string( ).
           DATA(t670) = |Checks that a class contains exactly the constants correspon|.
           t670 = t670 && |ding to a domain's fixed values.|.
@@ -1088,11 +1065,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t677 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t677.
           DATA t681 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t681.
-          DATA t682 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t682.
-          CREATE OBJECT t682.
-          t681 = t682.
+          CREATE OBJECT t681.
           t681->load( ).
           APPEND |Styleguide| TO t681->items.
           t681->save( ).
@@ -1189,7 +1162,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         IF t715 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t717 ?= t715.
           DATA t718 TYPE REF TO object.
-          CLEAR t718.
           t718 = t717->as_ref( ).
           t714 ?= t718.
         ELSE.
@@ -1217,7 +1189,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t738 TYPE REF TO zcl_lnt_info_constant.
           CLEAR t738.
           DATA t741 TYPE REF TO object.
-          CLEAR t741.
           t741 = t722->get( p0 = t729 ).
           DATA t742 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t742.
@@ -1225,7 +1196,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           IF t741 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t742 ?= t741.
             DATA t743 TYPE REF TO object.
-            CLEAR t743.
             t743 = t742->as_ref( ).
             t738 ?= t743.
           ELSE.
@@ -1234,7 +1204,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t736 = t738.
           DATA(t744) = VALUE abap_bool( ).
           DATA t745 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t745.
           DATA(t747) = VALUE string( ).
           t747 = t736->value.
           DATA(t749) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -1242,7 +1211,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t749->value = t747.
           t745 = t749.
           DATA t751 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t751.
           t751 = t714->low.
           DATA(t753) = VALUE abap_bool( ).
           DATA(t754) = VALUE abap_bool( ).
@@ -1276,7 +1244,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t767 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t767.
           DATA t768 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          CLEAR t768.
           t768 = t173->statements.
           DATA t774 TYPE REF TO object.
           CLEAR t774.
@@ -1289,7 +1256,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           IF t774 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t775 ?= t774.
             DATA t776 TYPE REF TO object.
-            CLEAR t776.
             t776 = t775->as_ref( ).
             t767 ?= t776.
           ELSE.
@@ -1302,7 +1268,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA(t781) = |Missing constant for |.
           DATA(t782) = VALUE string( ).
           DATA t783 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          CLEAR t783.
           t783 = t714->low.
           DATA(t786) = VALUE string( ).
           DATA(t787) = VALUE abap_bool( ).
@@ -1329,7 +1294,6 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           t777 = |{ t778 }{ |)| }|.
           DATA(t801) = VALUE string( ).
           DATA t802 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t802.
           DATA(t807) = VALUE string( ).
           DATA(t808) = |Checks that a class contains exactly the constants correspon|.
           t808 = t808 && |ding to a domain's fixed values.|.
@@ -1345,11 +1309,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
           DATA t815 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t815.
           DATA t819 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t819.
-          DATA t820 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t820.
-          CREATE OBJECT t820.
-          t819 = t820.
+          CREATE OBJECT t819.
           t819->load( ).
           APPEND |Styleguide| TO t819->items.
           t819->save( ).

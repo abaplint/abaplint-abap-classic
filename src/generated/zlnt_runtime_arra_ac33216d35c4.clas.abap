@@ -404,7 +404,6 @@ CLASS zlnt_runtime_arra_ac33216d35c4 IMPLEMENTATION.
           CLEAR t3.
           IF t2 IS BOUND.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
             t4 = t2->as_ref( ).
             t3 ?= t4.
           ENDIF.
@@ -432,7 +431,6 @@ CLASS zlnt_runtime_arra_ac33216d35c4 IMPLEMENTATION.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
           CLEAR t3.
           t4 = t1.
           TRY.

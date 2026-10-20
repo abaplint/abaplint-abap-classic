@@ -187,7 +187,6 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           t58 = t41.
           DATA(t61) = VALUE string( ).
           DATA t62 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t62.
           DATA t67 TYPE string.
           DATA(t68) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t68 = t68 && |names|.
@@ -342,7 +341,6 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           t152 = t135.
           DATA(t155) = VALUE string( ).
           DATA t156 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t156.
           DATA t161 TYPE string.
           DATA(t162) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t162 = t162 && |names|.
@@ -497,7 +495,6 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
           t246 = t229.
           DATA(t249) = VALUE string( ).
           DATA t250 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t250.
           DATA t255 TYPE string.
           DATA(t256) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
           t256 = t256 && |names|.
@@ -651,7 +648,6 @@ CLASS zcl_lnt_names_no_dash IMPLEMENTATION.
         t331 = t314->get_first_token( ).
         DATA(t334) = VALUE string( ).
         DATA t335 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t335.
         DATA t340 TYPE string.
         DATA(t341) = |Checks for a "-" in FORM, DATA, PARAMETER and SELECT-OPTION |.
         t341 = t341 && |names|.

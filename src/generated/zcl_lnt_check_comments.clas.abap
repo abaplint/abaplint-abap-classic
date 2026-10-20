@@ -123,10 +123,10 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
       t5 = t5 && |ow instead|.
       result = t5.
       RETURN.
-    ELSE.
-      result = ||.
-
     ENDIF.
+    result = ||.
+
+
   ENDMETHOD.
 
   METHOD gt_cn_in_sr_rl_ch_cm_ts_ch_cmm.
@@ -511,7 +511,6 @@ CLASS zcl_lnt_check_comments IMPLEMENTATION.
         ENDIF.
         DATA(t190) = VALUE string( ).
         DATA t191 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t191.
         DATA t198 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t198.
         DATA(t201) = |\nDetects end of line comments. Comments starting with "#EC" |.

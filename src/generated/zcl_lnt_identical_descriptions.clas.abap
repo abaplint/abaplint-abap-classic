@@ -125,7 +125,6 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
     t18 = t1->get_objects( )->iterate( ).
     DO.
       DATA t23 TYPE REF TO zcl_lnt_generator_17955b8b.
-      CLEAR t23.
       t23 = t18->next( ).
       IF t23->done = abap_true.
         EXIT.
@@ -249,7 +248,6 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
             DATA(t112) = VALUE abap_bool( ).
             DATA(t113) = VALUE abap_bool( ).
             DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t114.
             t114 = t80.
             DATA t116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t116.
@@ -744,7 +742,6 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
         t71 = t1->get_xml_file( ).
         DATA(t76) = VALUE string( ).
         DATA t77 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t77.
         DATA t84 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t84.
         DATA(t87) = |Case insensitive\n\nOnly checks the master language descriptio|.

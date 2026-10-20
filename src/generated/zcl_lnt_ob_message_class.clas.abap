@@ -561,7 +561,6 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
             DATA t265 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t265.
             DATA t266 TYPE REF TO object.
-            CLEAR t266.
             CLEAR t265.
             t266 = t261.
             TRY.
@@ -586,15 +585,12 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t267 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t267.
       t267 = me->xml->parsed_messages.
       DATA t271 TYPE REF TO zcl_lnt_ty_message.
       CLEAR t271.
       DATA t272 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t272.
       t272 = t260->get( p0 = |MSGNR| ).
       DATA t276 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t276.
       t276 = t260->get( p0 = |ARBGB| ).
       DATA t281 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t281.
@@ -773,7 +769,6 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
             DATA t382 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t382.
             DATA t383 TYPE REF TO object.
-            CLEAR t383.
             CLEAR t382.
             t383 = t378.
             TRY.
@@ -798,15 +793,12 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
         ENDIF.
       ENDIF.
       DATA t384 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t384.
       t384 = me->xml->texts_translations.
       DATA t388 TYPE REF TO zcl_lnt_shape_327d7720.
       CLEAR t388.
       DATA t389 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t389.
       t389 = t377->get( p0 = |SPRSL| ).
       DATA t393 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t393.
       t393 = t377->get( p0 = |MSGNR| ).
       DATA t397 TYPE REF TO zcl_lnt_shape_327d7720.
       CLEAR t397.

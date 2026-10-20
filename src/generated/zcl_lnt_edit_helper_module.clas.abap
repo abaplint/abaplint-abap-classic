@@ -37,7 +37,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t7.
       DATA t9 TYPE REF TO zif_lnt_file.
-      CLEAR t9.
       t9 = t1->get_file_by_name( i_filename = t5 ).
       DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t13.
@@ -52,9 +51,7 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
       CLEAR t23.
       IF xsdbool( t7 IS INITIAL ) = abap_true.
         DATA t27 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        CLEAR t27.
         DATA t28 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        CLEAR t28.
         DATA(t32) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t32->has = abap_true.
         t32->value = |applyEdit, file not found|.
@@ -65,7 +62,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
         DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t34.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         CLEAR t34.
         t35 = t28.
         TRY.
@@ -110,7 +106,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
         IF t41 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
           t43 ?= t41.
           DATA t44 TYPE REF TO object.
-          CLEAR t44.
           t44 = t43->as_ref( ).
           t40 ?= t44.
         ELSE.
@@ -120,7 +115,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t60) = VALUE string( ).
           DATA(t61) = VALUE string( ).
           DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t62.
           t62 = t7.
           DATA(t64) = VALUE i( ).
           DATA(t65) = VALUE f( ).
@@ -143,7 +137,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           READ TABLE t62->items INDEX t64 INTO t61.
           t60 = t61.
           DATA t74 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t74.
           t74 = t7.
           DATA(t76) = VALUE i( ).
           DATA(t77) = VALUE f( ).
@@ -222,7 +215,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA(t127) = VALUE string( ).
           DATA(t128) = VALUE string( ).
           DATA t129 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t129.
           t129 = t7.
           DATA(t131) = VALUE i( ).
           DATA(t132) = VALUE f( ).
@@ -275,7 +267,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           t141 = |{ t143 }{ t158 }|.
           DATA(t162) = VALUE string( ).
           DATA t163 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t163.
           t163 = t7.
           DATA(t165) = VALUE i( ).
           DATA(t166) = VALUE f( ).
@@ -331,7 +322,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           DATA t198 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
           CLEAR t198.
           DATA t199 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t199.
           t199 = t7.
           DATA(t201) = VALUE i( ).
           DATA(t202) = VALUE f( ).
@@ -359,7 +349,6 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           ENDIF.
           t198 = t199->splice2( p0 = t201 p1 = t209 ).
           DATA t225 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t225.
           t225 = t7.
           DATA(t227) = VALUE i( ).
           DATA(t228) = VALUE f( ).
@@ -376,10 +365,8 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           ENDIF.
           t225->put( p0 = t227 p1 = t141 ).
           DATA t240 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t240.
           DATA(t241) = VALUE string( ).
           DATA t242 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t242.
           t242 = t7.
           DATA(t245) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t245->has = abap_true.
@@ -424,18 +411,14 @@ CLASS zcl_lnt_edit_helper_module IMPLEMENTATION.
           t7 = t240.
         ENDIF.
       ENDDO.
-      DATA t255 TYPE REF TO zcl_lnt_memory_file.
-      CLEAR t255.
       DATA t258 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CLEAR t258.
       t258 = t7.
       DATA(t261) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
       t261->has = abap_true.
       t261->value = |\n|.
-      t255 = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t258->join( p0 = t261 ) ).
       DATA t262 TYPE REF TO zif_lnt_registry.
-      CLEAR t262.
-      t262 = t1->update_file( i_file = t255 ).
+      t262 = t1->update_file( i_file = NEW zcl_lnt_memory_file( i_filename = t5 i_raw = t258->join( p0 = t261 ) ) ).
     ENDDO.
   ENDMETHOD.
 

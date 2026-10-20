@@ -40,7 +40,6 @@ CLASS zcl_lnt_sy_describe IMPLEMENTATION.
         t6 ?= t7.
       ENDIF.
       DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t12.
       t12 = t6.
@@ -80,12 +79,9 @@ CLASS zcl_lnt_sy_describe IMPLEMENTATION.
         t24 ?= t25.
       ENDIF.
       DATA t29 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t29.
       DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t32.
       DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t34.
-      CLEAR t34.
       CREATE OBJECT t34.
       t34->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t34->sval = |Read From|.

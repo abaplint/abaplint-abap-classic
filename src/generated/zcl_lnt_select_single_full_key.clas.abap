@@ -256,26 +256,26 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
           DATA(t60) = 1.
           t41 = t41 + t60.
           CONTINUE.
-        ELSE.
-          DATA t62 TYPE REF TO zcl_lnt_expression_node.
-          DATA(t64) = zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf.
-          t62 = t47->find_first_expression( i_type_9913 = t64 ).
-          IF xsdbool( t62 IS BOUND ) = abap_true.
-            DATA(t67) = 1.
-            t41 = t41 + t67.
-            CONTINUE.
-          ELSE.
-            DATA t70 TYPE REF TO zcl_lnt_position.
-            t70 = t47->find_token_sequence_position( i_first = |SELECT| i_second = |SINGLE| ).
-            DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t74.
-            IF xsdbool( t70 IS INITIAL ) = abap_true.
-              DATA(t80) = 1.
-              t41 = t41 + t80.
-              CONTINUE.
-            ENDIF.
-          ENDIF.
         ENDIF.
+        DATA t62 TYPE REF TO zcl_lnt_expression_node.
+        DATA(t64) = zlnt_runtime_desc_78196487750d=>zlnt_member_d320_7be18f722ddf.
+        t62 = t47->find_first_expression( i_type_9913 = t64 ).
+        IF xsdbool( t62 IS BOUND ) = abap_true.
+          DATA(t67) = 1.
+          t41 = t41 + t67.
+          CONTINUE.
+        ENDIF.
+        DATA t70 TYPE REF TO zcl_lnt_position.
+        t70 = t47->find_token_sequence_position( i_first = |SELECT| i_second = |SINGLE| ).
+        DATA t74 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        CLEAR t74.
+        IF xsdbool( t70 IS INITIAL ) = abap_true.
+          DATA(t80) = 1.
+          t41 = t41 + t80.
+          CONTINUE.
+        ENDIF.
+
+
         DATA t81 TYPE REF TO zcl_lnt_expression_node.
         DATA(t84) = zlnt_runtime_desc_78196487750d=>zlnt_member_d156_2545376961ff.
         t81 = t47->find_first_expression( i_type_9913 = t84 ).
@@ -336,7 +336,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
           DATA t121 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t121.
           DATA t123 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t123.
           DATA t130 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t130.
           DATA(t133) = |Table definitions must be known, ie. inside the errorNamespa|.
@@ -458,7 +457,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
           DATA t187 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
           t187 = CAST zcl_lnt_slct_sngl_fll_ky_cnf( me->g_c_i_s_r_s_s_f_k_t_s_sn_fl_ky( ) )->zlnt_view_read_sr_fcd7d4ea2872( ).
           DATA t189 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t189.
           DATA(t192) = NEW zlnt_runtime_opti_7f2541396f43( ).
           t192->has = abap_true.
           t192->value = abap_true.
@@ -488,7 +486,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
             CLEAR t197.
             DATA(t201) = VALUE string( ).
             DATA t202 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t202.
             DATA t209 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t209.
             DATA(t212) = |Table definitions must be known, ie. inside the errorNamespa|.
@@ -618,7 +615,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
           t297 = t295->find_table_reference( i_pos = t264 ).
         ENDIF.
         DATA t305 TYPE REF TO zcl_lnt_table.
-        CLEAR t305.
         DATA t306 TYPE REF TO zcl_lnt_table.
         CLEAR t306.
         DATA(t308) = me->reg.
@@ -821,7 +817,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
             DATA(t423) = VALUE abap_bool( ).
             DATA(t424) = VALUE abap_bool( ).
             DATA t426 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t426.
             DATA(t429) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
             t429->has = abap_true.
             t429->value = |=|.
@@ -845,7 +840,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
             IF t424 = abap_false.
               DATA(t433) = VALUE abap_bool( ).
               DATA t435 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t435.
               DATA(t438) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
               t438->has = abap_true.
               t438->value = |EQ|.
@@ -905,7 +899,6 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
           CLEAR t476.
           DATA(t480) = VALUE string( ).
           DATA t481 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t481.
           DATA t488 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t488.
           DATA(t491) = |Table definitions must be known, ie. inside the errorNamespa|.

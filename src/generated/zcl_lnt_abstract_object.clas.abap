@@ -210,7 +210,6 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       IF t13 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t14 ?= t13.
         DATA t15 TYPE REF TO object.
-        CLEAR t15.
         t15 = t14->as_ref( ).
         t10 ?= t15.
       ELSE.
@@ -218,7 +217,6 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t10->get_filename( ) = t1->get_filename( ) ) = abap_true.
         DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        CLEAR t18.
         t18 = me->files->splice2( p0 = t2 p1 = 1 ).
         RETURN.
       ENDIF.
@@ -494,7 +492,6 @@ CLASS zcl_lnt_abstract_object IMPLEMENTATION.
       IF t13 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t14 ?= t13.
         DATA t15 TYPE REF TO object.
-        CLEAR t15.
         t15 = t14->as_ref( ).
         t10 ?= t15.
       ELSE.

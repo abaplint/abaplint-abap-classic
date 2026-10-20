@@ -166,7 +166,6 @@ CLASS zcl_lnt_empty_statement IMPLEMENTATION.
         CLEAR t55.
         DATA(t59) = VALUE string( ).
         DATA t60 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t60.
         DATA t65 TYPE string.
         DATA(t66) = |Checks for empty statements (an empty statement is a single |.
         t66 = t66 && |dot)|.

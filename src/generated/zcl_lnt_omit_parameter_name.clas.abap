@@ -467,7 +467,6 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
             t238 = t187.
             DATA(t241) = VALUE string( ).
             DATA t242 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t242.
             DATA t249 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t249.
             DATA(t252) = |\nhttps://github.com/SAP/styleguides/blob/main/clean-abap/Cle|.
@@ -595,7 +594,6 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
             t314 = t74->get_first_token( ).
             DATA(t318) = VALUE string( ).
             DATA t319 TYPE REF TO zcl_lnt_irule_metadata.
-            CLEAR t319.
             DATA t326 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             CLEAR t326.
             DATA(t329) = |\nhttps://github.com/SAP/styleguides/blob/main/clean-abap/Cle|.
@@ -770,35 +768,35 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
       ENDIF.
       IF t37 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA t47 TYPE REF TO zcl_lnt_position.
-        t47 = t32->position_7b94->token->start.
-        DATA t57 TYPE REF TO zcl_lnt_position.
-        t57 = t1->start.
-        IF t47->equals( i_p = t57 ) = abap_true.
-          DATA t63 TYPE REF TO zcl_lnt_fi_identifier.
-          t63 = t32->resolved.
-          IF xsdbool( t63 IS BOUND AND t63 IS INSTANCE OF zcl_lnt_built_in_method ) = abap_true.
-            DATA t65 TYPE REF TO zcl_lnt_built_in_method.
-            DATA t66 TYPE REF TO zcl_lnt_fi_identifier.
-            t66 = t32->resolved.
-            t65 ?= t66.
-            result = t65.
+      ENDIF.
+      DATA t47 TYPE REF TO zcl_lnt_position.
+      t47 = t32->position_7b94->token->start.
+      DATA t57 TYPE REF TO zcl_lnt_position.
+      t57 = t1->start.
+      IF t47->equals( i_p = t57 ) = abap_true.
+        DATA t63 TYPE REF TO zcl_lnt_fi_identifier.
+        t63 = t32->resolved.
+        IF xsdbool( t63 IS BOUND AND t63 IS INSTANCE OF zcl_lnt_built_in_method ) = abap_true.
+          DATA t65 TYPE REF TO zcl_lnt_built_in_method.
+          DATA t66 TYPE REF TO zcl_lnt_fi_identifier.
+          t66 = t32->resolved.
+          t65 ?= t66.
+          result = t65.
+          RETURN.
+        ELSE.
+          DATA t69 TYPE REF TO zcl_lnt_fi_identifier.
+          t69 = t32->resolved.
+          IF xsdbool( t69 IS BOUND AND t69 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
+            DATA t72 TYPE REF TO zcl_lnt_method_definition.
+            DATA t73 TYPE REF TO zcl_lnt_fi_identifier.
+            t73 = t32->resolved.
+            t72 ?= t73.
+            result = t72->g_p_in_sr_ab_ty_mt_df_ts_mt_df( ).
             RETURN.
-          ELSE.
-            DATA t69 TYPE REF TO zcl_lnt_fi_identifier.
-            t69 = t32->resolved.
-            IF xsdbool( t69 IS BOUND AND t69 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
-              DATA t72 TYPE REF TO zcl_lnt_method_definition.
-              DATA t73 TYPE REF TO zcl_lnt_fi_identifier.
-              t73 = t32->resolved.
-              t72 ?= t73.
-              result = t72->g_p_in_sr_ab_ty_mt_df_ts_mt_df( ).
-              RETURN.
-            ENDIF.
           ENDIF.
         ENDIF.
       ENDIF.
+
     ENDDO.
     CLEAR result.
 

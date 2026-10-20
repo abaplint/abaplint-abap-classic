@@ -270,7 +270,6 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
             DATA t82 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
             t82 = me->conf->zlnt_view_read_sr_9519265f098e( ).
             DATA t84 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t84.
             DATA(t87) = NEW zlnt_runtime_opti_7f2541396f43( ).
             t87->has = abap_true.
             t87->value = abap_true.
@@ -618,7 +617,6 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
                         DATA t284 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
                         t284 = me->conf->zlnt_view_read_sr_9519265f098e( ).
                         DATA t286 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-                        CLEAR t286.
                         DATA(t289) = NEW zlnt_runtime_opti_7f2541396f43( ).
                         t289->has = abap_true.
                         t289->value = abap_true.
@@ -671,7 +669,6 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
         t306 = |{ t311 }{ t308 }|.
         DATA(t314) = VALUE string( ).
         DATA t315 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t315.
         DATA t322 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t322.
         DATA(t325) = |DEFAULT KEY: https://github.com/SAP/styleguides/blob/main/cl|.
@@ -951,7 +948,6 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
           t476 = |{ t481 }{ t478 }|.
           DATA(t484) = VALUE string( ).
           DATA t485 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t485.
           DATA t492 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t492.
           DATA(t495) = |DEFAULT KEY: https://github.com/SAP/styleguides/blob/main/cl|.

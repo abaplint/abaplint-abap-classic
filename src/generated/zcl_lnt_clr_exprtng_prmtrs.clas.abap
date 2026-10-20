@@ -481,118 +481,118 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
       ENDIF.
       IF t60 = abap_true.
         CONTINUE.
-      ELSE.
-        DATA(t69) = VALUE abap_bool( ).
-        DATA t70 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t70.
-        DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-        t71 = me->conf->zlnt_view_read_sr_445691f4ed04( ).
-        DATA t74 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      ENDIF.
+      DATA(t69) = VALUE abap_bool( ).
+      DATA t70 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t70.
+      DATA t71 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+      t71 = me->conf->zlnt_view_read_sr_445691f4ed04( ).
+      DATA t74 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+      CLEAR t74.
+      IF xsdbool( t71 IS INITIAL ) = abap_true.
         CLEAR t74.
-        IF xsdbool( t71 IS INITIAL ) = abap_true.
-          CLEAR t74.
-        ELSE.
-          DATA t79 TYPE abap_bool.
-          t79 = abap_false.
-          DATA t81 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          t81 = t71.
-          DATA(t83) = VALUE string( ).
-          t81->dense( ).
-          DATA(t84) = VALUE i( ).
-          DO.
-            t81->load( ).
-            IF t84 >= lines( t81->items ).
-              EXIT.
-            ENDIF.
-            CLEAR t83.
-            READ TABLE t81->items INDEX t84 + 1 INTO t83.
-            IF t81->has( t84 ) = abap_false.
-              RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
-            ENDIF.
-            t84 = t84 + 1.
-            DATA t86 TYPE string.
-            DATA(t88) = strlen( t83 ).
-            t86 = t83.
-            IF t86 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-              TRANSLATE t86 TO UPPER CASE.
-            ELSE.
-              t86 = zlnt_runtime_uppe_91169605024d=>full( t86 ).
-            ENDIF.
-            DATA(t89) = VALUE string( ).
-            DATA(t90) = VALUE string( ).
-            DATA t91 TYPE REF TO zcl_lnt_fi_identifier.
-            t91 = t41.
-            DATA t94 TYPE string.
-            t94 = t91->token->str.
-            DATA(t102) = VALUE string( ).
-            DATA(t103) = t94.
-            DATA(t104) = 0.
-            DATA(t105) = 1.
-            DATA(t106) = strlen( t103 ).
-            IF t104 < 0.
-              t104 = t104 + t106.
-              IF t104 < 0.
-                t104 = 0.
-              ENDIF.
-            ENDIF.
-            IF t104 > t106 OR t105 <= 0.
-            ELSE.
-              IF t105 > t106 - t104.
-                t105 = t106 - t104.
-              ENDIF.
-              t102 = t103+t104(t105).
-            ENDIF.
-            IF xsdbool( t102 = |!| ) = abap_true.
-              DATA t109 TYPE string.
-              t109 = t94.
-              DATA(t111) = VALUE string( ).
-              DATA(t113) = 1.
-              DATA t114 TYPE i.
-              t114 = strlen( t109 ).
-              DATA(t117) = strlen( t109 ).
-              IF t113 < 0.
-                t113 = t113 + t117.
-                IF t113 < 0.
-                  t113 = 0.
-                ENDIF.
-              ENDIF.
-              IF t113 > t117 OR t114 <= 0.
-              ELSE.
-                IF t114 > t117 - t113.
-                  t114 = t117 - t113.
-                ENDIF.
-                t111 = t109+t113(t114).
-              ENDIF.
-              t94 = t111.
-            ENDIF.
-            t90 = t94.
-            DATA(t119) = strlen( t90 ).
-            t89 = t90.
-            IF t89 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-              TRANSLATE t89 TO UPPER CASE.
-            ELSE.
-              t89 = zlnt_runtime_uppe_91169605024d=>full( t89 ).
-            ENDIF.
-            IF xsdbool( t86 = t89 ) = abap_true.
-              t79 = abap_true.
-              EXIT.
-            ENDIF.
-          ENDDO.
-          DATA(t122) = NEW zlnt_runtime_opti_7f2541396f43( ).
-          t122->has = abap_true.
-          t122->value = t79.
-          t74 = t122.
-        ENDIF.
-        t70 = t74.
-        IF t70 IS BOUND.
-          IF t70->has = abap_true.
-            t69 = xsdbool( t70->value IS NOT INITIAL ).
+      ELSE.
+        DATA t79 TYPE abap_bool.
+        t79 = abap_false.
+        DATA t81 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+        t81 = t71.
+        DATA(t83) = VALUE string( ).
+        t81->dense( ).
+        DATA(t84) = VALUE i( ).
+        DO.
+          t81->load( ).
+          IF t84 >= lines( t81->items ).
+            EXIT.
           ENDIF.
-        ENDIF.
-        IF t69 = abap_true.
-          CONTINUE.
+          CLEAR t83.
+          READ TABLE t81->items INDEX t84 + 1 INTO t83.
+          IF t81->has( t84 ) = abap_false.
+            RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
+          ENDIF.
+          t84 = t84 + 1.
+          DATA t86 TYPE string.
+          DATA(t88) = strlen( t83 ).
+          t86 = t83.
+          IF t86 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+            TRANSLATE t86 TO UPPER CASE.
+          ELSE.
+            t86 = zlnt_runtime_uppe_91169605024d=>full( t86 ).
+          ENDIF.
+          DATA(t89) = VALUE string( ).
+          DATA(t90) = VALUE string( ).
+          DATA t91 TYPE REF TO zcl_lnt_fi_identifier.
+          t91 = t41.
+          DATA t94 TYPE string.
+          t94 = t91->token->str.
+          DATA(t102) = VALUE string( ).
+          DATA(t103) = t94.
+          DATA(t104) = 0.
+          DATA(t105) = 1.
+          DATA(t106) = strlen( t103 ).
+          IF t104 < 0.
+            t104 = t104 + t106.
+            IF t104 < 0.
+              t104 = 0.
+            ENDIF.
+          ENDIF.
+          IF t104 > t106 OR t105 <= 0.
+          ELSE.
+            IF t105 > t106 - t104.
+              t105 = t106 - t104.
+            ENDIF.
+            t102 = t103+t104(t105).
+          ENDIF.
+          IF xsdbool( t102 = |!| ) = abap_true.
+            DATA t109 TYPE string.
+            t109 = t94.
+            DATA(t111) = VALUE string( ).
+            DATA(t113) = 1.
+            DATA t114 TYPE i.
+            t114 = strlen( t109 ).
+            DATA(t117) = strlen( t109 ).
+            IF t113 < 0.
+              t113 = t113 + t117.
+              IF t113 < 0.
+                t113 = 0.
+              ENDIF.
+            ENDIF.
+            IF t113 > t117 OR t114 <= 0.
+            ELSE.
+              IF t114 > t117 - t113.
+                t114 = t117 - t113.
+              ENDIF.
+              t111 = t109+t113(t114).
+            ENDIF.
+            t94 = t111.
+          ENDIF.
+          t90 = t94.
+          DATA(t119) = strlen( t90 ).
+          t89 = t90.
+          IF t89 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+            TRANSLATE t89 TO UPPER CASE.
+          ELSE.
+            t89 = zlnt_runtime_uppe_91169605024d=>full( t89 ).
+          ENDIF.
+          IF xsdbool( t86 = t89 ) = abap_true.
+            t79 = abap_true.
+            EXIT.
+          ENDIF.
+        ENDDO.
+        DATA(t122) = NEW zlnt_runtime_opti_7f2541396f43( ).
+        t122->has = abap_true.
+        t122->value = t79.
+        t74 = t122.
+      ENDIF.
+      t70 = t74.
+      IF t70 IS BOUND.
+        IF t70->has = abap_true.
+          t69 = xsdbool( t70->value IS NOT INITIAL ).
         ENDIF.
       ENDIF.
+      IF t69 = abap_true.
+        CONTINUE.
+      ENDIF.
+
       DATA t123 TYPE REF TO zcl_lnt_abstract_type.
       t123 = t41->type_cba0.
       DATA t129 TYPE abap_bool.

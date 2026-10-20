@@ -348,14 +348,12 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       IF t8 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t10 ?= t8.
         DATA t11 TYPE REF TO object.
-        CLEAR t11.
         t11 = t10->as_ref( ).
         t7 ?= t11.
       ELSE.
         t7 ?= t8.
       ENDIF.
       DATA t12 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t12.
       DATA(t15) = zlnt_runtime_desc_78196487750d=>zlnt_member_d539_1b20166f6dfe.
       t12 = t7->find_first_statement( i_type_9913 = t15 ).
       DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -363,9 +361,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       CLEAR t19.
       IF xsdbool( t12 IS INITIAL ) = abap_true.
         DATA t23 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-        CLEAR t23.
         DATA t24 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-        CLEAR t24.
         DATA(t28) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t28->has = abap_true.
         t28->value = |Interface expected, parseInterfaces|.
@@ -376,7 +372,6 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
         DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t30.
         DATA t31 TYPE REF TO object.
-        CLEAR t31.
         CLEAR t30.
         t31 = t24.
         TRY.
@@ -402,7 +397,6 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       DATA t32 TYPE REF TO zcl_lnt_abstract_token.
       CLEAR t32.
       DATA t36 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t36.
       t36 = t12.
       DATA(t38) = zlnt_runtime_desc_78196487750d=>zlnt_member_d204_9c49dd4bb1b2.
       t32 = t36->find_direct_expression( i_type_9913 = t38 )->get_first_token( ).
@@ -419,14 +413,11 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       CLEAR t61.
       t61 = me->parse_constants( i_node = t7 i_visibility_5c1f = 3 ).
       DATA t67 TYPE REF TO zcl_lnt_expression_node.
-      CLEAR t67.
       DATA t69 TYPE REF TO zcl_lnt_statement_node.
-      CLEAR t69.
       t69 = t12.
       DATA(t71) = zlnt_runtime_desc_78196487750d=>zlnt_member_d118_725eea1243df.
       t67 = t69->find_direct_expression( i_type_9913 = t71 ).
       DATA t73 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-      CLEAR t73.
       DATA(t74) = VALUE string( ).
       t74 = t32->str.
       DATA t80 TYPE REF TO zcl_lnt_fi_identifier.

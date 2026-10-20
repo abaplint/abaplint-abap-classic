@@ -84,36 +84,36 @@ CLASS zcl_lnt_sy_cast IMPLEMENTATION.
       DATA t85 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       result = zcl_lnt_void_type=>get_db65( i_voided = t83 i_qualified_name = t85 ).
       RETURN.
+    ENDIF.
+    DATA t86 TYPE abap_bool.
+    DATA t87 TYPE abap_bool.
+    t87 = xsdbool( t50->value = |#| ).
+    t86 = t87.
+    IF t87 = abap_true.
+      t86 = xsdbool( t3 IS BOUND ).
+    ENDIF.
+    IF t86 = abap_true.
+      t44 = t3.
     ELSE.
-      DATA t86 TYPE abap_bool.
-      DATA t87 TYPE abap_bool.
-      t87 = xsdbool( t50->value = |#| ).
-      t86 = t87.
-      IF t87 = abap_true.
-        t86 = xsdbool( t3 IS BOUND ).
-      ENDIF.
-      IF t86 = abap_true.
-        t44 = t3.
-      ELSE.
-        IF xsdbool( t50->value = |#| ) = abap_true.
-          DATA t104 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          t104 = t2->issues.
-          DATA t106 TYPE REF TO zcl_lnt_issue.
-          DATA t111 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
-          t106 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Cast, todo, infer type| i_fix = t111 ).
-          t104->load( ).
-          APPEND t106 TO t104->items.
-          t104->save( ).
-          DATA(t115) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
-          DATA(t116) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-          t116->has = abap_true.
-          t116->value = t115.
-          DATA t118 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          result = zcl_lnt_void_type=>get_db65( i_voided = t116 i_qualified_name = t118 ).
-          RETURN.
-        ENDIF.
+      IF xsdbool( t50->value = |#| ) = abap_true.
+        DATA t104 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+        t104 = t2->issues.
+        DATA t106 TYPE REF TO zcl_lnt_issue.
+        DATA t111 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
+        t106 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t1->get_first_token( ) i_message_26cb = |Cast, todo, infer type| i_fix = t111 ).
+        t104->load( ).
+        APPEND t106 TO t104->items.
+        t104->save( ).
+        DATA(t115) = CONV string( zcl_lnt_syntax_input_module=>check_syntax_key ).
+        DATA(t116) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+        t116->has = abap_true.
+        t116->value = t115.
+        DATA t118 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+        result = zcl_lnt_void_type=>get_db65( i_voided = t116 i_qualified_name = t118 ).
+        RETURN.
       ENDIF.
     ENDIF.
+
     DATA(t119) = VALUE abap_bool( ).
     DATA(t120) = VALUE abap_bool( ).
     DATA t123 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

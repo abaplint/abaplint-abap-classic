@@ -206,7 +206,6 @@ CLASS zcl_lnt_omit_receiving IMPLEMENTATION.
       t71 = t43.
       DATA(t74) = VALUE string( ).
       DATA t75 TYPE REF TO zcl_lnt_irule_metadata.
-      CLEAR t75.
       DATA t82 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t82.
       DATA(t85) = |https://github.com/SAP/styleguides/blob/main/clean-abap/Clea|.

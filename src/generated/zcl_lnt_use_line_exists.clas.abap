@@ -146,24 +146,24 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
     IF me->reg->get_config( )->is_open_abap( ) = abap_true.
       CREATE OBJECT result.
       RETURN.
-    ELSE.
-      DATA(t22) = VALUE abap_bool( ).
-      DATA(t23) = VALUE abap_bool( ).
-      DATA t28 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-      IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
-        zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
-      ENDIF.
-      t28 = zcl_lnt_version_module=>release_b8cd.
-      t23 = xsdbool( zcl_lnt_version_module=>release_at_least( i_running = t11 i_required = t28->get( p0 = |v740sp02| ) ) = abap_false ).
-      t22 = t23.
-      IF t23 = abap_true.
-        t22 = xsdbool( t15 <> |Cloud| ).
-      ENDIF.
-      IF t22 = abap_true.
-        CREATE OBJECT result.
-        RETURN.
-      ENDIF.
     ENDIF.
+    DATA(t22) = VALUE abap_bool( ).
+    DATA(t23) = VALUE abap_bool( ).
+    DATA t28 TYPE REF TO zlnt_runtime_map__201f3699a39e.
+    IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
+      zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
+    ENDIF.
+    t28 = zcl_lnt_version_module=>release_b8cd.
+    t23 = xsdbool( zcl_lnt_version_module=>release_at_least( i_running = t11 i_required = t28->get( p0 = |v740sp02| ) ) = abap_false ).
+    t22 = t23.
+    IF t23 = abap_true.
+      t22 = xsdbool( t15 <> |Cloud| ).
+    ENDIF.
+    IF t22 = abap_true.
+      CREATE OBJECT result.
+      RETURN.
+    ENDIF.
+
     DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t34 = t1->statements.
     DATA t40 TYPE i.
@@ -263,7 +263,6 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
         CLEAR t95.
         DATA(t99) = VALUE string( ).
         DATA t100 TYPE REF TO zcl_lnt_irule_metadata.
-        CLEAR t100.
         DATA t107 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t107.
         DATA(t110) = |\nhttps://github.com/SAP/styleguides/blob/main/clean-abap/Cle|.
@@ -571,41 +570,41 @@ CLASS zcl_lnt_use_line_exists IMPLEMENTATION.
       CLEAR t26.
       IF xsdbool( t14 IS INITIAL ) = abap_true.
         EXIT.
+      ENDIF.
+      DATA t31 TYPE REF TO zif_lnt_statement.
+      t31 = t14->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
+      IF xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_comment ) = abap_true.
+        DATA(t35) = CONV int8( 1 ).
+        t3 = t3 + t35.
+        CONTINUE.
+      ENDIF.
+      DATA(t37) = VALUE i( ).
+      DATA t38 TYPE string.
+      DATA t39 TYPE string.
+      t39 = t14->concat_tokens( ).
+      DATA(t41) = strlen( t39 ).
+      t38 = t39.
+      IF t38 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
+        TRANSLATE t38 TO UPPER CASE.
       ELSE.
-        DATA t31 TYPE REF TO zif_lnt_statement.
-        t31 = t14->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
-        IF xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_st_comment ) = abap_true.
-          DATA(t35) = CONV int8( 1 ).
-          t3 = t3 + t35.
-          CONTINUE.
-        ELSE.
-          DATA(t37) = VALUE i( ).
-          DATA t38 TYPE string.
-          DATA t39 TYPE string.
-          t39 = t14->concat_tokens( ).
-          DATA(t41) = strlen( t39 ).
-          t38 = t39.
-          IF t38 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
-            TRANSLATE t38 TO UPPER CASE.
-          ELSE.
-            t38 = zlnt_runtime_uppe_91169605024d=>full( t38 ).
-          ENDIF.
-          DATA(t42) = | SY-TABIX|.
-          DATA(t43) = strlen( t38 ).
-          IF t42 IS INITIAL.
-            t37 = 0.
-          ELSE.
-            FIND t42 IN t38 MATCH OFFSET t37.
-            IF sy-subrc <> 0.
-              t37 = -1.
-            ENDIF.
-          ENDIF.
-          IF xsdbool( t37 >= 0 ) = abap_true.
-            result = abap_true.
-            RETURN.
-          ENDIF.
+        t38 = zlnt_runtime_uppe_91169605024d=>full( t38 ).
+      ENDIF.
+      DATA(t42) = | SY-TABIX|.
+      DATA(t43) = strlen( t38 ).
+      IF t42 IS INITIAL.
+        t37 = 0.
+      ELSE.
+        FIND t42 IN t38 MATCH OFFSET t37.
+        IF sy-subrc <> 0.
+          t37 = -1.
         ENDIF.
       ENDIF.
+      IF xsdbool( t37 >= 0 ) = abap_true.
+        result = abap_true.
+        RETURN.
+      ENDIF.
+
+
       DATA(t48) = CONV int8( 1 ).
       t3 = t3 + t48.
     ENDDO.

@@ -495,9 +495,9 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       IF xsdbool( t228 IS INITIAL ) = abap_true.
         result = me->scope.
         RETURN.
-      ELSE.
-        me->traverse( i_node = t228 ).
       ENDIF.
+      me->traverse( i_node = t228 ).
+
     ENDDO.
     result = me->scope.
 
@@ -540,7 +540,6 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t7 ?= t5.
         DATA t8 TYPE REF TO object.
-        CLEAR t8.
         t8 = t7->as_ref( ).
         t4 ?= t8.
       ELSE.
@@ -609,11 +608,9 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       t51 = t12.
       IF t12 = abap_true.
         DATA t54 TYPE REF TO zif_lnt_statement.
-        CLEAR t54.
         DATA t55 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t55.
         DATA t57 TYPE REF TO object.
-        CLEAR t57.
         t57 = t4.
         t55 ?= t57.
         t54 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
@@ -621,14 +618,11 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       ENDIF.
       IF t51 = abap_true.
         DATA t58 TYPE REF TO zcl_lnt_abap_file.
-        CLEAR t58.
         DATA t60 TYPE REF TO zcl_lnt_procedural.
-        CLEAR t60.
         t60 = me->helpers->proc.
         DATA t62 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t62.
         DATA t64 TYPE REF TO object.
-        CLEAR t64.
         t64 = t4.
         t62 ?= t64.
         DATA(t65) = me->object_a393.
@@ -642,7 +636,6 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
         t66 = t67.
         IF t67 = abap_true.
           DATA t81 TYPE REF TO zcl_lnt_structure_node.
-          CLEAR t81.
           t81 = t58->structure.
           DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t83.
@@ -757,321 +750,321 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
       t56 = NEW zcl_lnt_ty_class_definition( i_node = t1 i_input_967e = t32 ).
       result = abap_true.
       RETURN.
-    ELSE.
-      IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_interface ) = abap_true.
-        DATA t62 TYPE REF TO zcl_lnt_interface_definition.
-        t62 = NEW zcl_lnt_interface_definition( i_node = t1 i_input_967e = t32 ).
-        result = abap_true.
-        RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_interface ) = abap_true.
+      DATA t62 TYPE REF TO zcl_lnt_interface_definition.
+      t62 = NEW zcl_lnt_interface_definition( i_node = t1 i_input_967e = t32 ).
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_types ) = abap_true.
+      DATA(t69) = me->scope.
+      DATA t70 TYPE REF TO zcl_lnt_typed_identifier.
+      DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+      t70 = NEW zcl_lnt_sy_types( )->run_syntax( i_node = t1 i_input_967e = t32 i_qualified_name_prefix = t75 ).
+      DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t70 IS INITIAL ) = abap_true.
       ELSE.
-        IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_types ) = abap_true.
-          DATA(t69) = me->scope.
-          DATA t70 TYPE REF TO zcl_lnt_typed_identifier.
-          DATA t75 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-          t70 = NEW zcl_lnt_sy_types( )->run_syntax( i_node = t1 i_input_967e = t32 i_qualified_name_prefix = t75 ).
-          DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF xsdbool( t70 IS INITIAL ) = abap_true.
-          ELSE.
-            DATA t85 TYPE REF TO zcl_lnt_fi_identifier.
-            t85 = t70.
-            DATA t89 TYPE string.
-            t89 = t85->token->str.
-            DATA(t97) = VALUE string( ).
-            DATA(t98) = t89.
-            DATA(t99) = 0.
-            DATA(t100) = 1.
-            DATA(t101) = strlen( t98 ).
-            IF t99 < 0.
-              t99 = t99 + t101.
-              IF t99 < 0.
-                t99 = 0.
-              ENDIF.
-            ENDIF.
-            IF t99 > t101 OR t100 <= 0.
-            ELSE.
-              IF t100 > t101 - t99.
-                t100 = t101 - t99.
-              ENDIF.
-              t97 = t98+t99(t100).
-            ENDIF.
-            IF xsdbool( t97 = |!| ) = abap_true.
-              DATA t104 TYPE string.
-              t104 = t89.
-              DATA(t106) = VALUE string( ).
-              DATA(t108) = 1.
-              DATA t109 TYPE i.
-              t109 = strlen( t104 ).
-              DATA(t112) = strlen( t104 ).
-              IF t108 < 0.
-                t108 = t108 + t112.
-                IF t108 < 0.
-                  t108 = 0.
-                ENDIF.
-              ENDIF.
-              IF t108 > t112 OR t109 <= 0.
-              ELSE.
-                IF t109 > t112 - t108.
-                  t109 = t112 - t108.
-                ENDIF.
-                t106 = t104+t108(t109).
-              ENDIF.
-              t89 = t106.
-            ENDIF.
-            t69->add_type_named( i_name = t89 i_type_9913 = t70 ).
-          ENDIF.
-          result = abap_true.
-          RETURN.
-        ELSE.
-          IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_constants ) = abap_true.
-            DATA(t123) = me->scope.
-            DATA t124 TYPE REF TO zcl_lnt_typed_identifier.
-            t124 = NEW zcl_lnt_sy_constants( )->run_syntax( i_node = t1 i_input_967e = t32 )->type_cba0.
-            DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF xsdbool( t124 IS INITIAL ) = abap_true.
-            ELSE.
-              DATA t139 TYPE REF TO zcl_lnt_fi_identifier.
-              t139 = t124.
-              DATA t143 TYPE string.
-              t143 = t139->token->str.
-              DATA(t151) = VALUE string( ).
-              DATA(t152) = t143.
-              DATA(t153) = 0.
-              DATA(t154) = 1.
-              DATA(t155) = strlen( t152 ).
-              IF t153 < 0.
-                t153 = t153 + t155.
-                IF t153 < 0.
-                  t153 = 0.
-                ENDIF.
-              ENDIF.
-              IF t153 > t155 OR t154 <= 0.
-              ELSE.
-                IF t154 > t155 - t153.
-                  t154 = t155 - t153.
-                ENDIF.
-                t151 = t152+t153(t154).
-              ENDIF.
-              IF xsdbool( t151 = |!| ) = abap_true.
-                DATA t158 TYPE string.
-                t158 = t143.
-                DATA(t160) = VALUE string( ).
-                DATA(t162) = 1.
-                DATA t163 TYPE i.
-                t163 = strlen( t158 ).
-                DATA(t166) = strlen( t158 ).
-                IF t162 < 0.
-                  t162 = t162 + t166.
-                  IF t162 < 0.
-                    t162 = 0.
-                  ENDIF.
-                ENDIF.
-                IF t162 > t166 OR t163 <= 0.
-                ELSE.
-                  IF t163 > t166 - t162.
-                    t163 = t166 - t162.
-                  ENDIF.
-                  t160 = t158+t162(t163).
-                ENDIF.
-                t143 = t160.
-              ENDIF.
-              t123->add_named_identifier( i_name = t143 i_identifier = t124 ).
-            ENDIF.
-            result = abap_true.
-            RETURN.
-          ELSE.
-            IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_data ) = abap_true.
-              DATA(t174) = me->scope.
-              DATA t175 TYPE REF TO zcl_lnt_typed_identifier.
-              t175 = zcl_lnt_sy_struct_data=>run_syntax( i_node = t1 i_input_967e = t32 ).
-              DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-              IF xsdbool( t175 IS INITIAL ) = abap_true.
-              ELSE.
-                DATA t188 TYPE REF TO zcl_lnt_fi_identifier.
-                t188 = t175.
-                DATA t192 TYPE string.
-                t192 = t188->token->str.
-                DATA(t200) = VALUE string( ).
-                DATA(t201) = t192.
-                DATA(t202) = 0.
-                DATA(t203) = 1.
-                DATA(t204) = strlen( t201 ).
-                IF t202 < 0.
-                  t202 = t202 + t204.
-                  IF t202 < 0.
-                    t202 = 0.
-                  ENDIF.
-                ENDIF.
-                IF t202 > t204 OR t203 <= 0.
-                ELSE.
-                  IF t203 > t204 - t202.
-                    t203 = t204 - t202.
-                  ENDIF.
-                  t200 = t201+t202(t203).
-                ENDIF.
-                IF xsdbool( t200 = |!| ) = abap_true.
-                  DATA t207 TYPE string.
-                  t207 = t192.
-                  DATA(t209) = VALUE string( ).
-                  DATA(t211) = 1.
-                  DATA t212 TYPE i.
-                  t212 = strlen( t207 ).
-                  DATA(t215) = strlen( t207 ).
-                  IF t211 < 0.
-                    t211 = t211 + t215.
-                    IF t211 < 0.
-                      t211 = 0.
-                    ENDIF.
-                  ENDIF.
-                  IF t211 > t215 OR t212 <= 0.
-                  ELSE.
-                    IF t212 > t215 - t211.
-                      t212 = t215 - t211.
-                    ENDIF.
-                    t209 = t207+t211(t212).
-                  ENDIF.
-                  t192 = t209.
-                ENDIF.
-                t174->add_named_identifier( i_name = t192 i_identifier = t175 ).
-              ENDIF.
-              result = abap_true.
-              RETURN.
-            ELSE.
-              IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_statics ) = abap_true.
-                DATA(t223) = me->scope.
-                DATA t224 TYPE REF TO zcl_lnt_typed_identifier.
-                t224 = NEW zcl_lnt_sy_statics( )->run_syntax( i_node = t1 i_input_967e = t32 ).
-                DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                IF xsdbool( t224 IS INITIAL ) = abap_true.
-                ELSE.
-                  DATA t238 TYPE REF TO zcl_lnt_fi_identifier.
-                  t238 = t224.
-                  DATA t242 TYPE string.
-                  t242 = t238->token->str.
-                  DATA(t250) = VALUE string( ).
-                  DATA(t251) = t242.
-                  DATA(t252) = 0.
-                  DATA(t253) = 1.
-                  DATA(t254) = strlen( t251 ).
-                  IF t252 < 0.
-                    t252 = t252 + t254.
-                    IF t252 < 0.
-                      t252 = 0.
-                    ENDIF.
-                  ENDIF.
-                  IF t252 > t254 OR t253 <= 0.
-                  ELSE.
-                    IF t253 > t254 - t252.
-                      t253 = t254 - t252.
-                    ENDIF.
-                    t250 = t251+t252(t253).
-                  ENDIF.
-                  IF xsdbool( t250 = |!| ) = abap_true.
-                    DATA t257 TYPE string.
-                    t257 = t242.
-                    DATA(t259) = VALUE string( ).
-                    DATA(t261) = 1.
-                    DATA t262 TYPE i.
-                    t262 = strlen( t257 ).
-                    DATA(t265) = strlen( t257 ).
-                    IF t261 < 0.
-                      t261 = t261 + t265.
-                      IF t261 < 0.
-                        t261 = 0.
-                      ENDIF.
-                    ENDIF.
-                    IF t261 > t265 OR t262 <= 0.
-                    ELSE.
-                      IF t262 > t265 - t261.
-                        t262 = t265 - t261.
-                      ENDIF.
-                      t259 = t257+t261(t262).
-                    ENDIF.
-                    t242 = t259.
-                  ENDIF.
-                  t223->add_named_identifier( i_name = t242 i_identifier = t224 ).
-                ENDIF.
-                result = abap_true.
-                RETURN.
-              ELSE.
-                IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_type_mesh ) = abap_true.
-                  DATA t272 TYPE REF TO zcl_lnt_typed_identifier.
-                  t272 = NEW zcl_lnt_sy_type_mesh( )->run_syntax( i_node = t1 i_input_967e = t32 ).
-                  IF xsdbool( t272 IS BOUND ) = abap_true.
-                    DATA t281 TYPE REF TO zcl_lnt_typed_identifier.
-                    t281 = t272.
-                    DATA t290 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-                    IF xsdbool( t281 IS INITIAL ) = abap_true.
-                    ELSE.
-                      DATA t296 TYPE REF TO zcl_lnt_fi_identifier.
-                      t296 = t281.
-                      DATA t300 TYPE string.
-                      t300 = t296->token->str.
-                      DATA(t308) = VALUE string( ).
-                      DATA(t309) = t300.
-                      DATA(t310) = 0.
-                      DATA(t311) = 1.
-                      DATA(t312) = strlen( t309 ).
-                      IF t310 < 0.
-                        t310 = t310 + t312.
-                        IF t310 < 0.
-                          t310 = 0.
-                        ENDIF.
-                      ENDIF.
-                      IF t310 > t312 OR t311 <= 0.
-                      ELSE.
-                        IF t311 > t312 - t310.
-                          t311 = t312 - t310.
-                        ENDIF.
-                        t308 = t309+t310(t311).
-                      ENDIF.
-                      IF xsdbool( t308 = |!| ) = abap_true.
-                        DATA t315 TYPE string.
-                        t315 = t300.
-                        DATA(t317) = VALUE string( ).
-                        DATA(t319) = 1.
-                        DATA t320 TYPE i.
-                        t320 = strlen( t315 ).
-                        DATA(t323) = strlen( t315 ).
-                        IF t319 < 0.
-                          t319 = t319 + t323.
-                          IF t319 < 0.
-                            t319 = 0.
-                          ENDIF.
-                        ENDIF.
-                        IF t319 > t323 OR t320 <= 0.
-                        ELSE.
-                          IF t320 > t323 - t319.
-                            t320 = t323 - t319.
-                          ENDIF.
-                          t317 = t315+t319(t320).
-                        ENDIF.
-                        t300 = t317.
-                      ENDIF.
-                      me->scope->add_type_named( i_name = t300 i_type_9913 = t281 ).
-                    ENDIF.
-                  ENDIF.
-                  result = abap_true.
-                  RETURN.
-                ELSE.
-                  IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_type_enum ) = abap_true.
-                    DATA t334 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                    t334 = NEW zcl_lnt_sy_type_enum( )->run_syntax( i_node = t1 i_input_967e = t32 )->values.
-                    me->scope->add_list( i_identifiers = t334 ).
-                    result = abap_true.
-                    RETURN.
-                  ELSE.
-                    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_test_injection ) = abap_true.
-                      result = abap_true.
-                      RETURN.
-                    ENDIF.
-                  ENDIF.
-                ENDIF.
-              ENDIF.
-            ENDIF.
+        DATA t85 TYPE REF TO zcl_lnt_fi_identifier.
+        t85 = t70.
+        DATA t89 TYPE string.
+        t89 = t85->token->str.
+        DATA(t97) = VALUE string( ).
+        DATA(t98) = t89.
+        DATA(t99) = 0.
+        DATA(t100) = 1.
+        DATA(t101) = strlen( t98 ).
+        IF t99 < 0.
+          t99 = t99 + t101.
+          IF t99 < 0.
+            t99 = 0.
           ENDIF.
         ENDIF.
+        IF t99 > t101 OR t100 <= 0.
+        ELSE.
+          IF t100 > t101 - t99.
+            t100 = t101 - t99.
+          ENDIF.
+          t97 = t98+t99(t100).
+        ENDIF.
+        IF xsdbool( t97 = |!| ) = abap_true.
+          DATA t104 TYPE string.
+          t104 = t89.
+          DATA(t106) = VALUE string( ).
+          DATA(t108) = 1.
+          DATA t109 TYPE i.
+          t109 = strlen( t104 ).
+          DATA(t112) = strlen( t104 ).
+          IF t108 < 0.
+            t108 = t108 + t112.
+            IF t108 < 0.
+              t108 = 0.
+            ENDIF.
+          ENDIF.
+          IF t108 > t112 OR t109 <= 0.
+          ELSE.
+            IF t109 > t112 - t108.
+              t109 = t112 - t108.
+            ENDIF.
+            t106 = t104+t108(t109).
+          ENDIF.
+          t89 = t106.
+        ENDIF.
+        t69->add_type_named( i_name = t89 i_type_9913 = t70 ).
       ENDIF.
+      result = abap_true.
+      RETURN.
     ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_constants ) = abap_true.
+      DATA(t123) = me->scope.
+      DATA t124 TYPE REF TO zcl_lnt_typed_identifier.
+      t124 = NEW zcl_lnt_sy_constants( )->run_syntax( i_node = t1 i_input_967e = t32 )->type_cba0.
+      DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t124 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t139 TYPE REF TO zcl_lnt_fi_identifier.
+        t139 = t124.
+        DATA t143 TYPE string.
+        t143 = t139->token->str.
+        DATA(t151) = VALUE string( ).
+        DATA(t152) = t143.
+        DATA(t153) = 0.
+        DATA(t154) = 1.
+        DATA(t155) = strlen( t152 ).
+        IF t153 < 0.
+          t153 = t153 + t155.
+          IF t153 < 0.
+            t153 = 0.
+          ENDIF.
+        ENDIF.
+        IF t153 > t155 OR t154 <= 0.
+        ELSE.
+          IF t154 > t155 - t153.
+            t154 = t155 - t153.
+          ENDIF.
+          t151 = t152+t153(t154).
+        ENDIF.
+        IF xsdbool( t151 = |!| ) = abap_true.
+          DATA t158 TYPE string.
+          t158 = t143.
+          DATA(t160) = VALUE string( ).
+          DATA(t162) = 1.
+          DATA t163 TYPE i.
+          t163 = strlen( t158 ).
+          DATA(t166) = strlen( t158 ).
+          IF t162 < 0.
+            t162 = t162 + t166.
+            IF t162 < 0.
+              t162 = 0.
+            ENDIF.
+          ENDIF.
+          IF t162 > t166 OR t163 <= 0.
+          ELSE.
+            IF t163 > t166 - t162.
+              t163 = t166 - t162.
+            ENDIF.
+            t160 = t158+t162(t163).
+          ENDIF.
+          t143 = t160.
+        ENDIF.
+        t123->add_named_identifier( i_name = t143 i_identifier = t124 ).
+      ENDIF.
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_data ) = abap_true.
+      DATA(t174) = me->scope.
+      DATA t175 TYPE REF TO zcl_lnt_typed_identifier.
+      t175 = zcl_lnt_sy_struct_data=>run_syntax( i_node = t1 i_input_967e = t32 ).
+      DATA t182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t175 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t188 TYPE REF TO zcl_lnt_fi_identifier.
+        t188 = t175.
+        DATA t192 TYPE string.
+        t192 = t188->token->str.
+        DATA(t200) = VALUE string( ).
+        DATA(t201) = t192.
+        DATA(t202) = 0.
+        DATA(t203) = 1.
+        DATA(t204) = strlen( t201 ).
+        IF t202 < 0.
+          t202 = t202 + t204.
+          IF t202 < 0.
+            t202 = 0.
+          ENDIF.
+        ENDIF.
+        IF t202 > t204 OR t203 <= 0.
+        ELSE.
+          IF t203 > t204 - t202.
+            t203 = t204 - t202.
+          ENDIF.
+          t200 = t201+t202(t203).
+        ENDIF.
+        IF xsdbool( t200 = |!| ) = abap_true.
+          DATA t207 TYPE string.
+          t207 = t192.
+          DATA(t209) = VALUE string( ).
+          DATA(t211) = 1.
+          DATA t212 TYPE i.
+          t212 = strlen( t207 ).
+          DATA(t215) = strlen( t207 ).
+          IF t211 < 0.
+            t211 = t211 + t215.
+            IF t211 < 0.
+              t211 = 0.
+            ENDIF.
+          ENDIF.
+          IF t211 > t215 OR t212 <= 0.
+          ELSE.
+            IF t212 > t215 - t211.
+              t212 = t215 - t211.
+            ENDIF.
+            t209 = t207+t211(t212).
+          ENDIF.
+          t192 = t209.
+        ENDIF.
+        t174->add_named_identifier( i_name = t192 i_identifier = t175 ).
+      ENDIF.
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_statics ) = abap_true.
+      DATA(t223) = me->scope.
+      DATA t224 TYPE REF TO zcl_lnt_typed_identifier.
+      t224 = NEW zcl_lnt_sy_statics( )->run_syntax( i_node = t1 i_input_967e = t32 ).
+      DATA t232 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t224 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t238 TYPE REF TO zcl_lnt_fi_identifier.
+        t238 = t224.
+        DATA t242 TYPE string.
+        t242 = t238->token->str.
+        DATA(t250) = VALUE string( ).
+        DATA(t251) = t242.
+        DATA(t252) = 0.
+        DATA(t253) = 1.
+        DATA(t254) = strlen( t251 ).
+        IF t252 < 0.
+          t252 = t252 + t254.
+          IF t252 < 0.
+            t252 = 0.
+          ENDIF.
+        ENDIF.
+        IF t252 > t254 OR t253 <= 0.
+        ELSE.
+          IF t253 > t254 - t252.
+            t253 = t254 - t252.
+          ENDIF.
+          t250 = t251+t252(t253).
+        ENDIF.
+        IF xsdbool( t250 = |!| ) = abap_true.
+          DATA t257 TYPE string.
+          t257 = t242.
+          DATA(t259) = VALUE string( ).
+          DATA(t261) = 1.
+          DATA t262 TYPE i.
+          t262 = strlen( t257 ).
+          DATA(t265) = strlen( t257 ).
+          IF t261 < 0.
+            t261 = t261 + t265.
+            IF t261 < 0.
+              t261 = 0.
+            ENDIF.
+          ENDIF.
+          IF t261 > t265 OR t262 <= 0.
+          ELSE.
+            IF t262 > t265 - t261.
+              t262 = t265 - t261.
+            ENDIF.
+            t259 = t257+t261(t262).
+          ENDIF.
+          t242 = t259.
+        ENDIF.
+        t223->add_named_identifier( i_name = t242 i_identifier = t224 ).
+      ENDIF.
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_type_mesh ) = abap_true.
+      DATA t272 TYPE REF TO zcl_lnt_typed_identifier.
+      t272 = NEW zcl_lnt_sy_type_mesh( )->run_syntax( i_node = t1 i_input_967e = t32 ).
+      IF xsdbool( t272 IS BOUND ) = abap_true.
+        DATA t281 TYPE REF TO zcl_lnt_typed_identifier.
+        t281 = t272.
+        DATA t290 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+        IF xsdbool( t281 IS INITIAL ) = abap_true.
+        ELSE.
+          DATA t296 TYPE REF TO zcl_lnt_fi_identifier.
+          t296 = t281.
+          DATA t300 TYPE string.
+          t300 = t296->token->str.
+          DATA(t308) = VALUE string( ).
+          DATA(t309) = t300.
+          DATA(t310) = 0.
+          DATA(t311) = 1.
+          DATA(t312) = strlen( t309 ).
+          IF t310 < 0.
+            t310 = t310 + t312.
+            IF t310 < 0.
+              t310 = 0.
+            ENDIF.
+          ENDIF.
+          IF t310 > t312 OR t311 <= 0.
+          ELSE.
+            IF t311 > t312 - t310.
+              t311 = t312 - t310.
+            ENDIF.
+            t308 = t309+t310(t311).
+          ENDIF.
+          IF xsdbool( t308 = |!| ) = abap_true.
+            DATA t315 TYPE string.
+            t315 = t300.
+            DATA(t317) = VALUE string( ).
+            DATA(t319) = 1.
+            DATA t320 TYPE i.
+            t320 = strlen( t315 ).
+            DATA(t323) = strlen( t315 ).
+            IF t319 < 0.
+              t319 = t319 + t323.
+              IF t319 < 0.
+                t319 = 0.
+              ENDIF.
+            ENDIF.
+            IF t319 > t323 OR t320 <= 0.
+            ELSE.
+              IF t320 > t323 - t319.
+                t320 = t323 - t319.
+              ENDIF.
+              t317 = t315+t319(t320).
+            ENDIF.
+            t300 = t317.
+          ENDIF.
+          me->scope->add_type_named( i_name = t300 i_type_9913 = t281 ).
+        ENDIF.
+      ENDIF.
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_type_enum ) = abap_true.
+      DATA t334 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+      t334 = NEW zcl_lnt_sy_type_enum( )->run_syntax( i_node = t1 i_input_967e = t32 )->values.
+      me->scope->add_list( i_identifiers = t334 ).
+      result = abap_true.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_sr_test_injection ) = abap_true.
+      result = abap_true.
+      RETURN.
+    ENDIF.
+
+
+
+
+
+
+
+
     result = abap_false.
 
   ENDMETHOD.
@@ -1279,178 +1272,178 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
         t140->add_type_named( i_name = t160 i_type_9913 = t141 ).
       ENDIF.
       RETURN.
-    ELSE.
-      IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_statem_constant ) = abap_true.
-        DATA(t193) = me->scope.
-        DATA t194 TYPE REF TO zcl_lnt_typed_identifier.
-        t194 = NEW zcl_lnt_sy_statem_constant( )->run_syntax( i_node = t1 i_input_967e = t115 ).
-        DATA t205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        IF xsdbool( t194 IS INITIAL ) = abap_true.
-        ELSE.
-          DATA t211 TYPE REF TO zcl_lnt_fi_identifier.
-          t211 = t194.
-          DATA t215 TYPE string.
-          t215 = t211->token->str.
-          DATA(t223) = VALUE string( ).
-          DATA(t224) = t215.
-          DATA(t225) = 0.
-          DATA(t226) = 1.
-          DATA(t227) = strlen( t224 ).
-          IF t225 < 0.
-            t225 = t225 + t227.
-            IF t225 < 0.
-              t225 = 0.
-            ENDIF.
-          ENDIF.
-          IF t225 > t227 OR t226 <= 0.
-          ELSE.
-            IF t226 > t227 - t225.
-              t226 = t227 - t225.
-            ENDIF.
-            t223 = t224+t225(t226).
-          ENDIF.
-          IF xsdbool( t223 = |!| ) = abap_true.
-            DATA t230 TYPE string.
-            t230 = t215.
-            DATA(t232) = VALUE string( ).
-            DATA(t234) = 1.
-            DATA t235 TYPE i.
-            t235 = strlen( t230 ).
-            DATA(t238) = strlen( t230 ).
-            IF t234 < 0.
-              t234 = t234 + t238.
-              IF t234 < 0.
-                t234 = 0.
-              ENDIF.
-            ENDIF.
-            IF t234 > t238 OR t235 <= 0.
-            ELSE.
-              IF t235 > t238 - t234.
-                t235 = t238 - t234.
-              ENDIF.
-              t232 = t230+t234(t235).
-            ENDIF.
-            t215 = t232.
-          ENDIF.
-          t193->add_named_identifier( i_name = t215 i_identifier = t194 ).
-        ENDIF.
-        RETURN.
-      ELSE.
-        IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_static ) = abap_true.
-          DATA(t245) = me->scope.
-          DATA t246 TYPE REF TO zcl_lnt_typed_identifier.
-          t246 = NEW zcl_lnt_sy_static( )->run_syntax( i_node = t1 i_input_967e = t115 ).
-          DATA t254 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          IF xsdbool( t246 IS INITIAL ) = abap_true.
-          ELSE.
-            DATA t260 TYPE REF TO zcl_lnt_fi_identifier.
-            t260 = t246.
-            DATA t264 TYPE string.
-            t264 = t260->token->str.
-            DATA(t272) = VALUE string( ).
-            DATA(t273) = t264.
-            DATA(t274) = 0.
-            DATA(t275) = 1.
-            DATA(t276) = strlen( t273 ).
-            IF t274 < 0.
-              t274 = t274 + t276.
-              IF t274 < 0.
-                t274 = 0.
-              ENDIF.
-            ENDIF.
-            IF t274 > t276 OR t275 <= 0.
-            ELSE.
-              IF t275 > t276 - t274.
-                t275 = t276 - t274.
-              ENDIF.
-              t272 = t273+t274(t275).
-            ENDIF.
-            IF xsdbool( t272 = |!| ) = abap_true.
-              DATA t279 TYPE string.
-              t279 = t264.
-              DATA(t281) = VALUE string( ).
-              DATA(t283) = 1.
-              DATA t284 TYPE i.
-              t284 = strlen( t279 ).
-              DATA(t287) = strlen( t279 ).
-              IF t283 < 0.
-                t283 = t283 + t287.
-                IF t283 < 0.
-                  t283 = 0.
-                ENDIF.
-              ENDIF.
-              IF t283 > t287 OR t284 <= 0.
-              ELSE.
-                IF t284 > t287 - t283.
-                  t284 = t287 - t283.
-                ENDIF.
-                t281 = t279+t283(t284).
-              ENDIF.
-              t264 = t281.
-            ENDIF.
-            t245->add_named_identifier( i_name = t264 i_identifier = t246 ).
-          ENDIF.
-          RETURN.
-        ELSE.
-          IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_data ) = abap_true.
-            DATA(t294) = me->scope.
-            DATA t295 TYPE REF TO zcl_lnt_typed_identifier.
-            t295 = NEW zcl_lnt_sy_statem_data( )->run_syntax( i_node = t1 i_input_967e = t115 ).
-            DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            IF xsdbool( t295 IS INITIAL ) = abap_true.
-            ELSE.
-              DATA t309 TYPE REF TO zcl_lnt_fi_identifier.
-              t309 = t295.
-              DATA t313 TYPE string.
-              t313 = t309->token->str.
-              DATA(t321) = VALUE string( ).
-              DATA(t322) = t313.
-              DATA(t323) = 0.
-              DATA(t324) = 1.
-              DATA(t325) = strlen( t322 ).
-              IF t323 < 0.
-                t323 = t323 + t325.
-                IF t323 < 0.
-                  t323 = 0.
-                ENDIF.
-              ENDIF.
-              IF t323 > t325 OR t324 <= 0.
-              ELSE.
-                IF t324 > t325 - t323.
-                  t324 = t325 - t323.
-                ENDIF.
-                t321 = t322+t323(t324).
-              ENDIF.
-              IF xsdbool( t321 = |!| ) = abap_true.
-                DATA t328 TYPE string.
-                t328 = t313.
-                DATA(t330) = VALUE string( ).
-                DATA(t332) = 1.
-                DATA t333 TYPE i.
-                t333 = strlen( t328 ).
-                DATA(t336) = strlen( t328 ).
-                IF t332 < 0.
-                  t332 = t332 + t336.
-                  IF t332 < 0.
-                    t332 = 0.
-                  ENDIF.
-                ENDIF.
-                IF t332 > t336 OR t333 <= 0.
-                ELSE.
-                  IF t333 > t336 - t332.
-                    t333 = t336 - t332.
-                  ENDIF.
-                  t330 = t328+t332(t333).
-                ENDIF.
-                t313 = t330.
-              ENDIF.
-              t294->add_named_identifier( i_name = t313 i_identifier = t295 ).
-            ENDIF.
-            RETURN.
-          ENDIF.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_statem_constant ) = abap_true.
+      DATA(t193) = me->scope.
+      DATA t194 TYPE REF TO zcl_lnt_typed_identifier.
+      t194 = NEW zcl_lnt_sy_statem_constant( )->run_syntax( i_node = t1 i_input_967e = t115 ).
+      DATA t205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t194 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t211 TYPE REF TO zcl_lnt_fi_identifier.
+        t211 = t194.
+        DATA t215 TYPE string.
+        t215 = t211->token->str.
+        DATA(t223) = VALUE string( ).
+        DATA(t224) = t215.
+        DATA(t225) = 0.
+        DATA(t226) = 1.
+        DATA(t227) = strlen( t224 ).
+        IF t225 < 0.
+          t225 = t225 + t227.
+          IF t225 < 0.
+            t225 = 0.
+          ENDIF.
+        ENDIF.
+        IF t225 > t227 OR t226 <= 0.
+        ELSE.
+          IF t226 > t227 - t225.
+            t226 = t227 - t225.
+          ENDIF.
+          t223 = t224+t225(t226).
+        ENDIF.
+        IF xsdbool( t223 = |!| ) = abap_true.
+          DATA t230 TYPE string.
+          t230 = t215.
+          DATA(t232) = VALUE string( ).
+          DATA(t234) = 1.
+          DATA t235 TYPE i.
+          t235 = strlen( t230 ).
+          DATA(t238) = strlen( t230 ).
+          IF t234 < 0.
+            t234 = t234 + t238.
+            IF t234 < 0.
+              t234 = 0.
+            ENDIF.
+          ENDIF.
+          IF t234 > t238 OR t235 <= 0.
+          ELSE.
+            IF t235 > t238 - t234.
+              t235 = t238 - t234.
+            ENDIF.
+            t232 = t230+t234(t235).
+          ENDIF.
+          t215 = t232.
+        ENDIF.
+        t193->add_named_identifier( i_name = t215 i_identifier = t194 ).
+      ENDIF.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_static ) = abap_true.
+      DATA(t245) = me->scope.
+      DATA t246 TYPE REF TO zcl_lnt_typed_identifier.
+      t246 = NEW zcl_lnt_sy_static( )->run_syntax( i_node = t1 i_input_967e = t115 ).
+      DATA t254 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t246 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t260 TYPE REF TO zcl_lnt_fi_identifier.
+        t260 = t246.
+        DATA t264 TYPE string.
+        t264 = t260->token->str.
+        DATA(t272) = VALUE string( ).
+        DATA(t273) = t264.
+        DATA(t274) = 0.
+        DATA(t275) = 1.
+        DATA(t276) = strlen( t273 ).
+        IF t274 < 0.
+          t274 = t274 + t276.
+          IF t274 < 0.
+            t274 = 0.
+          ENDIF.
+        ENDIF.
+        IF t274 > t276 OR t275 <= 0.
+        ELSE.
+          IF t275 > t276 - t274.
+            t275 = t276 - t274.
+          ENDIF.
+          t272 = t273+t274(t275).
+        ENDIF.
+        IF xsdbool( t272 = |!| ) = abap_true.
+          DATA t279 TYPE string.
+          t279 = t264.
+          DATA(t281) = VALUE string( ).
+          DATA(t283) = 1.
+          DATA t284 TYPE i.
+          t284 = strlen( t279 ).
+          DATA(t287) = strlen( t279 ).
+          IF t283 < 0.
+            t283 = t283 + t287.
+            IF t283 < 0.
+              t283 = 0.
+            ENDIF.
+          ENDIF.
+          IF t283 > t287 OR t284 <= 0.
+          ELSE.
+            IF t284 > t287 - t283.
+              t284 = t287 - t283.
+            ENDIF.
+            t281 = t279+t283(t284).
+          ENDIF.
+          t264 = t281.
+        ENDIF.
+        t245->add_named_identifier( i_name = t264 i_identifier = t246 ).
+      ENDIF.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_st_data ) = abap_true.
+      DATA(t294) = me->scope.
+      DATA t295 TYPE REF TO zcl_lnt_typed_identifier.
+      t295 = NEW zcl_lnt_sy_statem_data( )->run_syntax( i_node = t1 i_input_967e = t115 ).
+      DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+      IF xsdbool( t295 IS INITIAL ) = abap_true.
+      ELSE.
+        DATA t309 TYPE REF TO zcl_lnt_fi_identifier.
+        t309 = t295.
+        DATA t313 TYPE string.
+        t313 = t309->token->str.
+        DATA(t321) = VALUE string( ).
+        DATA(t322) = t313.
+        DATA(t323) = 0.
+        DATA(t324) = 1.
+        DATA(t325) = strlen( t322 ).
+        IF t323 < 0.
+          t323 = t323 + t325.
+          IF t323 < 0.
+            t323 = 0.
+          ENDIF.
+        ENDIF.
+        IF t323 > t325 OR t324 <= 0.
+        ELSE.
+          IF t324 > t325 - t323.
+            t324 = t325 - t323.
+          ENDIF.
+          t321 = t322+t323(t324).
+        ENDIF.
+        IF xsdbool( t321 = |!| ) = abap_true.
+          DATA t328 TYPE string.
+          t328 = t313.
+          DATA(t330) = VALUE string( ).
+          DATA(t332) = 1.
+          DATA t333 TYPE i.
+          t333 = strlen( t328 ).
+          DATA(t336) = strlen( t328 ).
+          IF t332 < 0.
+            t332 = t332 + t336.
+            IF t332 < 0.
+              t332 = 0.
+            ENDIF.
+          ENDIF.
+          IF t332 > t336 OR t333 <= 0.
+          ELSE.
+            IF t333 > t336 - t332.
+              t333 = t336 - t332.
+            ENDIF.
+            t330 = t328+t332(t333).
+          ENDIF.
+          t313 = t330.
+        ENDIF.
+        t294->add_named_identifier( i_name = t313 i_identifier = t295 ).
+      ENDIF.
+      RETURN.
+    ENDIF.
+
+
+
     DATA t340 TYPE string.
     t340 = t8->zlnt_builtin_clas_3f891b097658( )->name.
     DATA t345 TYPE REF TO zif_lnt_statement_syntax.

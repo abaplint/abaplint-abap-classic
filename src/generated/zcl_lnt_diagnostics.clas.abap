@@ -304,20 +304,20 @@ CLASS zcl_lnt_diagnostics IMPLEMENTATION.
     IF xsdbool( t1 = |Error| ) = abap_true.
       result = 1.
       RETURN.
-    ELSE.
-      IF xsdbool( t1 = |Warning| ) = abap_true.
-        result = 2.
-        RETURN.
-      ELSE.
-        IF xsdbool( t1 = |Info| ) = abap_true.
-          result = 3.
-          RETURN.
-        ELSE.
-          result = 1.
-          RETURN.
-        ENDIF.
-      ENDIF.
     ENDIF.
+    IF xsdbool( t1 = |Warning| ) = abap_true.
+      result = 2.
+      RETURN.
+    ENDIF.
+    IF xsdbool( t1 = |Info| ) = abap_true.
+      result = 3.
+      RETURN.
+    ENDIF.
+    result = 1.
+
+
+
+
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

@@ -233,7 +233,6 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           t64 = |{ t4 }{ t66 }|.
           DATA(t79) = VALUE string( ).
           DATA t80 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t80.
           DATA t87 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t87.
           DATA(t90) = |Inspiration:\nBOOLEAN, BOOLE_D, CHAR01, CHAR1, CHAR10, CHAR12|.
@@ -419,7 +418,6 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
           t167 = |{ t4 }{ t169 }|.
           DATA(t200) = VALUE string( ).
           DATA t201 TYPE REF TO zcl_lnt_irule_metadata.
-          CLEAR t201.
           DATA t208 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           CLEAR t208.
           DATA(t211) = |Inspiration:\nBOOLEAN, BOOLE_D, CHAR01, CHAR1, CHAR10, CHAR12|.
@@ -592,12 +590,12 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
       ENDDO.
       result = t5.
       RETURN.
-    ELSE.
-      IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_void_type ) = abap_false ) = abap_true.
-        result = abap_false.
-        RETURN.
-      ENDIF.
     ENDIF.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_void_type ) = abap_false ) = abap_true.
+      result = abap_false.
+      RETURN.
+    ENDIF.
+
     DATA t34 TYPE REF TO zcl_lnt_void_type.
     t34 ?= t1.
     DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -638,7 +636,6 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
       ENDIF.
       t13 = t13 + 1.
       DATA t15 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t15.
       CREATE OBJECT t15 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t12 flags = |i|.
       DATA t22 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       t22 = t1.

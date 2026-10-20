@@ -85,7 +85,6 @@ CLASS zcl_lnt_chck_dtbs_flds_mdl IMPLEMENTATION.
       DATA t59 TYPE abap_bool.
       DATA t60 TYPE abap_bool.
       DATA t61 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-      CLEAR t61.
       CREATE OBJECT t61 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Z_][A-Za-z0-9_]*$| flags = |i|.
       t61->source = `^[A-Z_]\w*$`.
       t60 = t61->test( p0 = t54 ).
