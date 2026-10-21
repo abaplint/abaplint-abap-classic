@@ -229,9 +229,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     IF t2 = abap_true.
       DATA t18 TYPE REF TO zcl_lnt_abstract_type.
       DATA t19 TYPE REF TO zif_lnt_union_2724f734.
-      DATA t20 TYPE REF TO zcl_lnt_abstract_type.
-      t20 = t1.
-      t19 ?= t20.
+      t19 ?= t1.
       t18 ?= t19.
       result = me->is_char_like_strict( i_type_9913 = t18 ).
       RETURN.
@@ -327,9 +325,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       IF t27 = abap_true.
         DATA t43 TYPE REF TO zcl_lnt_abstract_type.
         DATA t44 TYPE REF TO zif_lnt_union_2724f734.
-        DATA t45 TYPE REF TO zcl_lnt_abstract_type.
-        t45 = t20.
-        t44 ?= t45.
+        t44 ?= t20.
         t43 ?= t44.
         t26 = me->is_char_like_strict( i_type_9913 = t43 ).
       ELSE.
@@ -999,9 +995,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
         DATA t203 TYPE REF TO zif_lnt_interface_definition.
         IF xsdbool( t137 IS BOUND ) = abap_true.
           DATA t206 TYPE REF TO zif_lnt_interface_definition.
-          DATA t207 TYPE REF TO zif_lnt_class_definition.
-          t207 = t137.
-          t206 ?= t207.
+          t206 ?= t137.
           t203 = t206.
         ELSE.
           DATA t210 TYPE REF TO zif_lnt_interface_definition.
@@ -1083,9 +1077,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       t89 = t127.
       IF xsdbool( t89 IS BOUND ) = abap_true.
         DATA t290 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t291 TYPE REF TO zif_lnt_interface_definition.
-        t291 = t89.
-        t290 ?= t291.
+        t290 ?= t89.
         t3 = t290.
       ELSE.
         result = abap_false.
@@ -1234,9 +1226,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
         DATA t414 TYPE REF TO zif_lnt_interface_definition.
         IF xsdbool( t348 IS BOUND ) = abap_true.
           DATA t417 TYPE REF TO zif_lnt_interface_definition.
-          DATA t418 TYPE REF TO zif_lnt_class_definition.
-          t418 = t348.
-          t417 ?= t418.
+          t417 ?= t348.
           t414 = t417.
         ELSE.
           DATA t421 TYPE REF TO zif_lnt_interface_definition.
@@ -1318,9 +1308,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       t300 = t338.
       IF xsdbool( t300 IS BOUND ) = abap_true.
         DATA t501 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t502 TYPE REF TO zif_lnt_interface_definition.
-        t502 = t300.
-        t501 ?= t502.
+        t501 ?= t300.
         t9 = t501.
       ELSE.
         result = abap_false.
@@ -1510,9 +1498,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_class_definition ) = abap_true.
       DATA t35 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t37 TYPE REF TO zcl_lnt_ty_class_definition.
-      DATA t39 TYPE REF TO object.
-      t39 = t1.
-      t37 ?= t39.
+      t37 ?= t1.
       t35 = me->list_all_supers( i_cdef = t37 ).
       DATA(t41) = VALUE string( ).
       t35->dense( ).
@@ -2220,11 +2206,9 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
     DATA t3 TYPE abap_bool.
     DATA t4 TYPE abap_bool.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abstract_node.
     t8 = t1.
-    t7 = t8->children.
-    t6 ?= t7.
+    t6 ?= t8->children.
     t6->load( ).
     t4 = xsdbool( lines( t6->items ) = 4 ).
     t3 = t4.
@@ -2257,7 +2241,6 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       DATA t28 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t30 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t31 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t32 TYPE REF TO zif_lnt_node.
       DATA t33 TYPE REF TO zcl_lnt_abstract_node.
       t33 = t1.
       DATA t37 TYPE REF TO zif_lnt_node.
@@ -2275,8 +2258,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       ELSE.
         t37 ?= t40.
       ENDIF.
-      t32 = t37.
-      t31 ?= t32.
+      t31 ?= t37.
       t30 = t31.
       DATA t44 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       IF xsdbool( t30 IS INITIAL ) = abap_true.
@@ -2341,20 +2323,16 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t71 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t73 TYPE REF TO zcl_lnt_abstract_node.
     t73 = t1.
-    t72 = t73->children.
-    t71 ?= t72.
+    t71 ?= t73->children.
     t71->load( ).
     IF xsdbool( lines( t71->items ) >= 3 ) = abap_true.
       DATA t79 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t80 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t82 TYPE REF TO zcl_lnt_abstract_node.
       t82 = t1.
-      t81 = t82->children.
-      t80 ?= t81.
+      t80 ?= t82->children.
       DATA t86 TYPE REF TO object.
       t80->load( ).
       READ TABLE t80->items INDEX 2 INTO t86.
@@ -2659,9 +2637,7 @@ CLASS zcl_lnt_type_utils IMPLEMENTATION.
       DATA t41 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       DATA t42 TYPE REF TO zcl_lnt_abstract_type_data.
       DATA t44 TYPE REF TO zif_lnt_union_f16d2839.
-      DATA t45 TYPE REF TO zcl_lnt_abstract_type.
-      t45 = t1.
-      t44 ?= t45.
+      t44 ?= t1.
       t42 = t44->get_abstract_type_data( ).
       DATA t47 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       IF xsdbool( t42 IS INITIAL ) = abap_true.

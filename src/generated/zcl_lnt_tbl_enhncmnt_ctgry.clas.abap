@@ -123,9 +123,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
     ENDIF.
     DATA t8 TYPE REF TO zcl_lnt_table.
     DATA t9 TYPE REF TO zcl_lnt_table.
-    DATA t11 TYPE REF TO object.
-    t11 = t1.
-    t9 ?= t11.
+    t9 ?= t1.
     t8 = t9.
     DATA t15 TYPE REF TO zcl_lnt_shape_b90fc0d5.
     t15 = t8->parsed_data.
@@ -166,9 +164,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
       DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t56 TYPE REF TO zcl_lnt_abstract_object.
       DATA t57 TYPE REF TO zcl_lnt_table.
-      DATA t59 TYPE REF TO object.
-      t59 = t1.
-      t57 ?= t59.
+      t57 ?= t1.
       t56 = t57.
       t55 = t56->files.
       DATA t62 TYPE REF TO object.
@@ -186,9 +182,7 @@ CLASS zcl_lnt_tbl_enhncmnt_ctgry IMPLEMENTATION.
       DATA t66 TYPE string.
       DATA t69 TYPE REF TO zcl_lnt_abstract_object.
       DATA t70 TYPE REF TO zcl_lnt_table.
-      DATA t72 TYPE REF TO object.
-      t72 = t1.
-      t70 ?= t72.
+      t70 ?= t1.
       t69 = t70.
       DATA t73 TYPE string.
       t73 = t69->name.

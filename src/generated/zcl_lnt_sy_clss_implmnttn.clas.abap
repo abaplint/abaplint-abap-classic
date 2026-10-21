@@ -332,9 +332,7 @@ CLASS zcl_lnt_sy_clss_implmnttn IMPLEMENTATION.
       t323 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t327 ) i_str = |super| ).
       DATA(t329) = CONV string( zcl_lnt_built_in=>filename ).
       DATA t331 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t332 TYPE REF TO zif_lnt_class_definition.
-      t332 = t248.
-      t331 ?= t332.
+      t331 ?= t248.
       DATA t334 TYPE REF TO zcl_lnt_abstract_type_data.
       DATA t335 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t336 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -467,9 +465,7 @@ CLASS zcl_lnt_sy_clss_implmnttn IMPLEMENTATION.
     t449 = NEW zcl_lnt_lx_identifier( i_start = NEW zcl_lnt_position( i_row = CONV f( 1 ) i_col = t453 ) i_str = |me| ).
     DATA(t455) = CONV string( zcl_lnt_built_in=>filename ).
     DATA t457 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA t458 TYPE REF TO zif_lnt_class_definition.
-    t458 = t86.
-    t457 ?= t458.
+    t457 ?= t86.
     DATA t460 TYPE REF TO zcl_lnt_abstract_type_data.
     DATA t461 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t462 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

@@ -27,10 +27,8 @@ CLASS zcl_lnt_sql_fields_loop IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>opt( i_first = t8 ).
     IF t7 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t11 TYPE REF TO object.
-      t11 = t7.
       TRY.
-          t6 ?= t11.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

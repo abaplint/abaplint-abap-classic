@@ -610,9 +610,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
         DATA t54 TYPE REF TO zif_lnt_statement.
         DATA t55 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t55.
-        DATA t57 TYPE REF TO object.
-        t57 = t4.
-        t55 ?= t57.
+        t55 ?= t4.
         t54 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         t51 = xsdbool( t54 IS BOUND AND t54 IS INSTANCE OF zcl_lnt_include ).
       ENDIF.
@@ -622,9 +620,7 @@ CLASS zcl_lnt_syntax_logic IMPLEMENTATION.
         t60 = me->helpers->proc.
         DATA t62 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t62.
-        DATA t64 TYPE REF TO object.
-        t64 = t4.
-        t62 ?= t64.
+        t62 ?= t4.
         DATA(t65) = me->object_a393.
         t58 = t60->find_include( i_node = t62 i_obj_1ed0 = t65 ).
         DATA(t66) = VALUE abap_bool( ).

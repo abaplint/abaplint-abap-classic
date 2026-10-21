@@ -71,10 +71,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t19 i_first = t26 i_opts = t28 ).
     IF t18 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t18.
       TRY.
-          t17 ?= t30.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -138,10 +136,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     t43 = zcl_lnt_st_combi_module=>alt( i_first = t45 i_second = t48 i_rest = t50 ).
     IF t43 IS BOUND.
       DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t60 TYPE REF TO object.
-      t60 = t43.
       TRY.
-          t42 ?= t60.
+          t42 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t42 IS NOT BOUND.
@@ -165,10 +161,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t64 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t65 TYPE REF TO object.
-      t65 = t15.
       TRY.
-          t62 ?= t65.
+          t62 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t62 IS NOT BOUND.
@@ -194,10 +188,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t71 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t72 TYPE REF TO object.
-      t72 = t1.
       TRY.
-          t69 ?= t72.
+          t69 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t69 IS NOT BOUND.
@@ -218,10 +210,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     t68 = zcl_lnt_st_combi_module=>opt_prio( i_first = t69 ).
     IF t68 IS BOUND.
       DATA t73 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t74 TYPE REF TO object.
-      t74 = t68.
       TRY.
-          t67 ?= t74.
+          t67 ?= t68.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t67 IS NOT BOUND.
@@ -246,10 +236,8 @@ CLASS zcl_lnt_st_fetch_next_cursor IMPLEMENTATION.
     DATA t81 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t31 IS BOUND.
       DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t84 TYPE REF TO object.
-      t84 = t31.
       TRY.
-          t81 ?= t84.
+          t81 ?= t31.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t81 IS NOT BOUND.

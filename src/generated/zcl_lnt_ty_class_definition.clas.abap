@@ -313,9 +313,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t255 = t165->scope.
         DATA t258 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t260 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t261 TYPE REF TO zif_lnt_class_definition.
-        t261 = t184.
-        t260 ?= t261.
+        t260 ?= t184.
         t258 = t260.
         DATA t264 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t264.
@@ -1169,9 +1167,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t116 = t26->scope.
         DATA t119 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t121 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t122 TYPE REF TO zif_lnt_class_definition.
-        t122 = t45.
-        t121 ?= t122.
+        t121 ?= t45.
         t119 = t121.
         DATA t125 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t125.
@@ -2731,9 +2727,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         DATA t124 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t124.
         DATA t126 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t127 TYPE REF TO zif_lnt_class_definition.
-        t127 = t48.
-        t126 ?= t127.
+        t126 ?= t48.
         t124 = t126.
         DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t130.
@@ -2983,9 +2977,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         t91 = t2->scope.
         DATA t94 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t96 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t97 TYPE REF TO zif_lnt_class_definition.
-        t97 = t20.
-        t96 ?= t97.
+        t96 ?= t20.
         t94 = t96.
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t100.
@@ -3290,9 +3282,7 @@ CLASS zcl_lnt_ty_class_definition IMPLEMENTATION.
         CLEAR t152.
         DATA t154 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t154.
-        DATA t155 TYPE REF TO zif_lnt_interface_definition.
-        t155 = t72.
-        t154 ?= t155.
+        t154 ?= t72.
         t152 = t154.
         DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t158.

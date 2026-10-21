@@ -115,9 +115,7 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
     DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t10 TYPE REF TO zcl_lnt_icfservice.
     DATA t11 TYPE REF TO zcl_lnt_icfservice.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t10 = t11.
     DATA t15 TYPE REF TO zcl_lnt_iparse_result.
     t15 = t10->pr_in_sr_ob_icf_srv_ts_icf_srv( ).
@@ -238,9 +236,7 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
           DATA t106 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t107 TYPE REF TO zcl_lnt_abstract_object.
           DATA t108 TYPE REF TO zcl_lnt_icfservice.
-          DATA t110 TYPE REF TO object.
-          t110 = t1.
-          t108 ?= t110.
+          t108 ?= t1.
           t107 = t108.
           t106 = t107->files.
           DATA t113 TYPE REF TO object.
@@ -382,9 +378,7 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
         DATA t210 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t211 TYPE REF TO zcl_lnt_abstract_object.
         DATA t212 TYPE REF TO zcl_lnt_icfservice.
-        DATA t214 TYPE REF TO object.
-        t214 = t1.
-        t212 ?= t214.
+        t212 ?= t1.
         t211 = t212.
         t210 = t211->files.
         DATA t217 TYPE REF TO object.
@@ -543,9 +537,7 @@ CLASS zcl_lnt_sicf_consistency IMPLEMENTATION.
         DATA t305 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t306 TYPE REF TO zcl_lnt_abstract_object.
         DATA t307 TYPE REF TO zcl_lnt_icfservice.
-        DATA t309 TYPE REF TO object.
-        t309 = t1.
-        t307 ?= t309.
+        t307 ?= t1.
         t306 = t307.
         t305 = t306->files.
         DATA t312 TYPE REF TO object.

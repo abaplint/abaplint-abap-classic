@@ -28,10 +28,8 @@ CLASS zcl_lnt_ddl_name IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
     IF t7 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t12 TYPE REF TO object.
-      t12 = t7.
       TRY.
-          t6 ?= t12.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

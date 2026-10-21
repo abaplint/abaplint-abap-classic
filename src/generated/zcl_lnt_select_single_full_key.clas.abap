@@ -177,9 +177,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
     DATA t6 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t9) = me->reg.
     DATA t10 TYPE REF TO zcl_lnt_abap_object.
-    DATA t12 TYPE REF TO object.
-    t12 = t1.
-    t10 ?= t12.
+    t10 ?= t1.
     t6 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t9 i_object_19cd = t10 )->run( ).
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t15 = t6->zlnt_view_read_sr_bd188c319c03( ).
@@ -192,9 +190,7 @@ CLASS zcl_lnt_select_single_full_key IMPLEMENTATION.
     CREATE OBJECT t19.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abap_object.
-    DATA t27 TYPE REF TO object.
-    t27 = t1.
-    t25 ?= t27.
+    t25 ?= t1.
     t23 = t25->parsed.
     DATA t30 TYPE REF TO zcl_lnt_abap_file.
     DATA t31 TYPE REF TO object.

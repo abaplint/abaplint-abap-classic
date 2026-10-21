@@ -20,11 +20,9 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
     ENDIF.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zcl_lnt_abstract_node.
     t15 = i_node.
-    t14 = t15->children.
-    t13 ?= t14.
+    t13 ?= t15->children.
     t12 = t13.
     DATA t19 TYPE i.
     t19 = 0.
@@ -45,9 +43,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
       IF t25 = abap_true.
         DATA t32 TYPE REF TO zcl_lnt_abstract_type.
         DATA t33 TYPE REF TO zif_lnt_union_adffe656.
-        DATA t34 TYPE REF TO zcl_lnt_abstract_type.
-        t34 = t1.
-        t33 ?= t34.
+        t33 ?= t1.
         t32 ?= t33.
         result = t32.
         RETURN.
@@ -451,9 +447,7 @@ CLASS zcl_lnt_sy_component_chain IMPLEMENTATION.
                 CLEAR t362.
                 IF xsdbool( t296 IS BOUND ) = abap_true.
                   DATA t365 TYPE REF TO zif_lnt_interface_definition.
-                  DATA t366 TYPE REF TO zif_lnt_class_definition.
-                  t366 = t296.
-                  t365 ?= t366.
+                  t365 ?= t296.
                   t362 = t365.
                 ELSE.
                   DATA t369 TYPE REF TO zif_lnt_interface_definition.

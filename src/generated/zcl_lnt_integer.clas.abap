@@ -23,10 +23,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>tok( i_t = t8 ).
     IF t7 IS BOUND.
       DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t10 TYPE REF TO object.
-      t10 = t7.
       TRY.
-          t6 ?= t10.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -50,10 +48,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>tok( i_t = t14 ).
     IF t13 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t13.
       TRY.
-          t12 ?= t16.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -79,10 +75,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t21 = zcl_lnt_st_combi_module=>tok( i_t = t22 ).
     IF t21 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t21.
       TRY.
-          t20 ?= t24.
+          t20 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.
@@ -106,10 +100,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>alt_prio( i_first = t6 i_second = t12 i_rest = t17 ).
     IF t4 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t4.
       TRY.
-          t3 ?= t30.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -131,10 +123,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t36 TYPE REF TO object.
-      t36 = t1.
       TRY.
-          t33 ?= t36.
+          t33 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.
@@ -160,10 +150,8 @@ CLASS zcl_lnt_integer IMPLEMENTATION.
     t39 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t40 ).
     IF t39 IS BOUND.
       DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t45 TYPE REF TO object.
-      t45 = t39.
       TRY.
-          t38 ?= t45.
+          t38 ?= t39.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t38 IS NOT BOUND.

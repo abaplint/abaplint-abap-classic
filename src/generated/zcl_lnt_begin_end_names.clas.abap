@@ -632,11 +632,9 @@ CLASS zcl_lnt_begin_end_names IMPLEMENTATION.
         t6->save( ).
       ENDIF.
       DATA t219 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t220 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t221 TYPE REF TO zcl_lnt_abstract_node.
       t221 = t11.
-      t220 = t221->children.
-      t219 ?= t220.
+      t219 ?= t221->children.
       t219->load( ).
       IF xsdbool( lines( t219->items ) = 2 ) = abap_true.
         DATA t229 TYPE REF TO zcl_lnt_issue.

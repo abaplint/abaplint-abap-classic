@@ -60,10 +60,8 @@ CLASS zcl_lnt_st_get_locale IMPLEMENTATION.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t1.
       TRY.
-          t40 ?= t43.
+          t40 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t40 IS NOT BOUND.
@@ -87,10 +85,8 @@ CLASS zcl_lnt_st_get_locale IMPLEMENTATION.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t15.
       TRY.
-          t45 ?= t48.
+          t45 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t45 IS NOT BOUND.
@@ -115,10 +111,8 @@ CLASS zcl_lnt_st_get_locale IMPLEMENTATION.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t29.
       TRY.
-          t55 ?= t58.
+          t55 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t55 IS NOT BOUND.

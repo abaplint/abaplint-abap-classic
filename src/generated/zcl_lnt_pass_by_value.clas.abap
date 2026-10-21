@@ -24,10 +24,8 @@ CLASS zcl_lnt_pass_by_value IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>tok( i_t = t9 ).
     IF t8 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t11 TYPE REF TO object.
-      t11 = t8.
       TRY.
-          t7 ?= t11.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -63,10 +61,8 @@ CLASS zcl_lnt_pass_by_value IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>tok( i_t = t20 ).
     IF t19 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t19.
       TRY.
-          t18 ?= t22.
+          t18 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t18 IS NOT BOUND.

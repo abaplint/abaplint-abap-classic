@@ -28,7 +28,6 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
     IF xsdbool( t14 IS INITIAL ) = abap_true.
     ELSE.
       DATA t20 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t21 TYPE REF TO zif_lnt_node.
       DATA t22 TYPE REF TO zcl_lnt_abstract_node.
       t22 = t14.
       DATA t27 TYPE REF TO zif_lnt_node.
@@ -46,8 +45,7 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
       ELSE.
         t27 ?= t30.
       ENDIF.
-      t21 = t27.
-      t20 ?= t21.
+      t20 ?= t27.
       t16 = t20.
     ENDIF.
     t12 = t16.
@@ -168,11 +166,9 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
     IF xsdbool( t101 IS INITIAL ) = abap_true.
     ELSE.
       DATA t107 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t108 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t109 TYPE REF TO zcl_lnt_abstract_node.
       t109 = t101.
-      t108 = t109->children.
-      t107 ?= t108.
+      t107 ?= t109->children.
       t103 = t107.
     ENDIF.
     t99 = t103.
@@ -204,11 +200,9 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
     IF xsdbool( t128 IS INITIAL ) = abap_true.
     ELSE.
       DATA t134 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t135 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t136 TYPE REF TO zcl_lnt_abstract_node.
       t136 = t128.
-      t135 = t136->children.
-      t134 ?= t135.
+      t134 ?= t136->children.
       t130 = t134.
     ENDIF.
     t126 = t130.
@@ -239,11 +233,9 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
     IF xsdbool( t155 IS INITIAL ) = abap_true.
     ELSE.
       DATA t161 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t162 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t163 TYPE REF TO zcl_lnt_abstract_node.
       t163 = t155.
-      t162 = t163->children.
-      t161 ?= t162.
+      t161 ?= t163->children.
       t157 = t161.
     ENDIF.
     t153 = t157.
@@ -550,11 +542,9 @@ CLASS zcl_lnt_sy_assign IMPLEMENTATION.
     IF xsdbool( t435 IS INITIAL ) = abap_true.
     ELSE.
       DATA t441 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t442 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t443 TYPE REF TO zcl_lnt_abstract_node.
       t443 = t435.
-      t442 = t443->children.
-      t441 ?= t442.
+      t441 ?= t443->children.
       t437 = t441.
     ENDIF.
     t433 = t437.

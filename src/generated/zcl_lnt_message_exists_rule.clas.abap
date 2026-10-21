@@ -168,9 +168,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
       DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t8 TYPE REF TO zcl_lnt_abap_object.
-      DATA t10 TYPE REF TO object.
-      t10 = t1.
-      t8 ?= t10.
+      t8 ?= t1.
       t6 = t8->parsed.
       DATA t13 TYPE REF TO zcl_lnt_abap_file.
       DATA t14 TYPE REF TO object.
@@ -1129,11 +1127,9 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
       DATA t9 TYPE i.
       DATA t10 TYPE i.
       DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t13 TYPE REF TO zcl_lnt_abstract_node.
       t13 = t2.
-      t12 = t13->children.
-      t11 ?= t12.
+      t11 ?= t13->children.
       t11->load( ).
       t10 = lines( t11->items ).
       DATA(t18) = 1.
@@ -1147,11 +1143,9 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
     DATA t21 TYPE abap_bool.
     t21 = abap_false.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abstract_node.
     t25 = t1.
-    t24 = t25->children.
-    t23 ?= t24.
+    t23 ?= t25->children.
     DATA t29 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t30 TYPE REF TO object.
     DATA(t31) = VALUE i( ).
@@ -1182,9 +1176,7 @@ CLASS zcl_lnt_message_exists_rule IMPLEMENTATION.
         DATA t38 TYPE string.
         DATA t39 TYPE string.
         DATA t41 TYPE REF TO zcl_lnt_token_node.
-        DATA t43 TYPE REF TO object.
-        t43 = t29.
-        t41 ?= t43.
+        t41 ?= t29.
         t39 = t41->token->str.
         DATA(t50) = strlen( t39 ).
         t38 = t39.

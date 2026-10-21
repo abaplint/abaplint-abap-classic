@@ -695,11 +695,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
           ENDIF.
           DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t31 TYPE REF TO zcl_lnt_abstract_node.
           t31 = t23.
-          t30 = t31->children.
-          t29 ?= t30.
+          t29 ?= t31->children.
           t28 = t29.
           t28->load( ).
           IF xsdbool( lines( t28->items ) < 3 ) = abap_true.
@@ -833,11 +831,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
       t86 = t7->find_direct_expression( i_type_9913 = t89 ).
       IF xsdbool( t86 IS BOUND ) = abap_true.
         DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t94 TYPE REF TO zcl_lnt_abstract_node.
         t94 = t86.
-        t93 = t94->children.
-        t92 ?= t93.
+        t92 ?= t94->children.
         DATA t99 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t99.
         DATA t100 TYPE REF TO object.
@@ -1053,11 +1049,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         ENDIF.
         DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t31 TYPE REF TO zcl_lnt_abstract_node.
         t31 = t23.
-        t30 = t31->children.
-        t29 ?= t30.
+        t29 ?= t31->children.
         t28 = t29.
         t28->load( ).
         IF xsdbool( lines( t28->items ) < 3 ) = abap_true.
@@ -1245,11 +1239,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         ENDIF.
         DATA t110 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t111 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t112 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t113 TYPE REF TO zcl_lnt_abstract_node.
         t113 = t105.
-        t112 = t113->children.
-        t111 ?= t112.
+        t111 ?= t113->children.
         t110 = t111.
         t110->load( ).
         IF xsdbool( lines( t110->items ) < 3 ) = abap_true.
@@ -1491,11 +1483,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         CLEAR t51.
       ELSE.
         DATA t55 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t57 TYPE REF TO zcl_lnt_abstract_node.
         t57 = t49.
-        t56 = t57->children.
-        t55 ?= t56.
+        t55 ?= t57->children.
         t51 = t55.
       ENDIF.
       t47 = t51.
@@ -1649,11 +1639,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         CLEAR t123.
       ELSE.
         DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t129 TYPE REF TO zcl_lnt_abstract_node.
         t129 = t121.
-        t128 = t129->children.
-        t127 ?= t128.
+        t127 ?= t129->children.
         t123 = t127.
       ENDIF.
       t119 = t123.
@@ -1859,11 +1847,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         CLEAR t21.
       ELSE.
         DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t27 TYPE REF TO zcl_lnt_abstract_node.
         t27 = t17.
-        t26 = t27->children.
-        t25 ?= t26.
+        t25 ?= t27->children.
         t21 = t25.
       ENDIF.
       t15 = t21.
@@ -2021,11 +2007,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
           CLEAR t98.
         ELSE.
           DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t104 TYPE REF TO zcl_lnt_abstract_node.
           t104 = t93.
-          t103 = t104->children.
-          t102 ?= t103.
+          t102 ?= t104->children.
           t98 = t102.
         ENDIF.
         t91 = t98.
@@ -2232,11 +2216,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
             ENDIF.
             DATA t185 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t186 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t187 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t188 TYPE REF TO zcl_lnt_abstract_node.
             t188 = t180.
-            t187 = t188->children.
-            t186 ?= t187.
+            t186 ?= t188->children.
             t185 = t186.
             t185->load( ).
             IF xsdbool( lines( t185->items ) < 3 ) = abap_true.
@@ -2354,11 +2336,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         IF xsdbool( t232 IS BOUND ) = abap_true.
           DATA t239 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t240 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t241 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t242 TYPE REF TO zcl_lnt_abstract_node.
           t242 = t232.
-          t241 = t242->children.
-          t240 ?= t241.
+          t240 ?= t242->children.
           t239 = t240.
           t239->load( ).
           IF xsdbool( lines( t239->items ) < 3 ) = abap_true.
@@ -2482,11 +2462,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
           CLEAR t295.
         ELSE.
           DATA t299 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t300 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t301 TYPE REF TO zcl_lnt_abstract_node.
           t301 = t290.
-          t300 = t301->children.
-          t299 ?= t300.
+          t299 ?= t301->children.
           t295 = t299.
         ENDIF.
         t288 = t295.
@@ -2709,11 +2687,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
         ENDIF.
         DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t25 TYPE REF TO zcl_lnt_abstract_node.
         t25 = t17.
-        t24 = t25->children.
-        t23 ?= t24.
+        t23 ?= t25->children.
         t22 = t23.
         t22->load( ).
         IF xsdbool( lines( t22->items ) < 3 ) = abap_true.
@@ -2878,11 +2854,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
           ENDIF.
           DATA t85 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t87 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t88 TYPE REF TO zcl_lnt_abstract_node.
           t88 = t80.
-          t87 = t88->children.
-          t86 ?= t87.
+          t86 ?= t88->children.
           t85 = t86.
           t85->load( ).
           IF xsdbool( lines( t85->items ) < 3 ) = abap_true.
@@ -3027,11 +3001,9 @@ CLASS zcl_lnt_align_parameters IMPLEMENTATION.
           ENDIF.
           DATA t147 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t148 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t149 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t150 TYPE REF TO zcl_lnt_abstract_node.
           t150 = t142.
-          t149 = t150->children.
-          t148 ?= t149.
+          t148 ?= t150->children.
           t147 = t148.
           t147->load( ).
           IF xsdbool( lines( t147->items ) < 3 ) = abap_true.

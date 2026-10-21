@@ -18,10 +18,8 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>str( i_s = |RETURN| ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t7 TYPE REF TO object.
-      t7 = t4.
       TRY.
-          t3 ?= t7.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -95,10 +93,8 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t13 i_first = t20 i_opts = t24 ).
     IF t12 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t36 TYPE REF TO object.
-      t36 = t12.
       TRY.
-          t11 ?= t36.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.
@@ -119,10 +115,8 @@ CLASS zcl_lnt_st_return IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>opt_prio( i_first = t11 ).
     IF t10 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t10.
       TRY.
-          t9 ?= t38.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

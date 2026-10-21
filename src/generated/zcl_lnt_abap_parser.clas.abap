@@ -32,9 +32,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     IF t4 = abap_true.
       DATA t16 TYPE REF TO zcl_lnt_abap_release.
       DATA t17 TYPE REF TO zcl_lnt_abap_release.
-      DATA t19 TYPE REF TO object.
-      t19 = t1.
-      t17 ?= t19.
+      t17 ?= t1.
       t16 = t17.
       DATA t20 TYPE REF TO zcl_lnt_abap_release.
       IF xsdbool( t16 IS INITIAL ) = abap_true.
@@ -64,9 +62,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
     ELSE.
       DATA t38 TYPE REF TO zcl_lnt_abap_release.
       DATA t40 TYPE REF TO zcl_lnt_iabapparser_options.
-      DATA t42 TYPE REF TO object.
-      t42 = t1.
-      t40 ?= t42.
+      t40 ?= t1.
       t38 = t40->release_3664.
       DATA t43 TYPE REF TO zcl_lnt_abap_release.
       IF xsdbool( t38 IS INITIAL ) = abap_true.
@@ -81,9 +77,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `release`.
       DATA t50 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t52 TYPE REF TO zcl_lnt_iabapparser_options.
-      DATA t54 TYPE REF TO object.
-      t54 = t1.
-      t52 ?= t54.
+      t52 ?= t1.
       t50 = t52->language_version.
       DATA(t55) = VALUE string( ).
       DATA(t56) = VALUE abap_bool( ).
@@ -101,9 +95,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `languageVersion`.
       DATA t62 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t64 TYPE REF TO zcl_lnt_iabapparser_options.
-      DATA t66 TYPE REF TO object.
-      t66 = t1.
-      t64 ?= t66.
+      t64 ?= t1.
       t62 = t64->global_macros.
       DATA t67 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       IF xsdbool( t62 IS INITIAL ) = abap_true.
@@ -114,9 +106,7 @@ CLASS zcl_lnt_abap_parser IMPLEMENTATION.
       me->global_macros = t67.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `globalMacros`.
       DATA t74 TYPE REF TO zcl_lnt_iabapparser_options.
-      DATA t76 TYPE REF TO object.
-      t76 = t1.
-      t74 ?= t76.
+      t74 ?= t1.
       me->reg = t74->reg.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
     ENDIF.

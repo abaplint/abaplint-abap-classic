@@ -86,10 +86,8 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>alt_prio( i_first = t18 i_second = t23 i_rest = t26 ).
     IF t16 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t16.
       TRY.
-          t15 ?= t32.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -112,10 +110,8 @@ CLASS zcl_lnt_sqlcte_associations IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t34 ).
     IF t10 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t10.
       TRY.
-          t9 ?= t40.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

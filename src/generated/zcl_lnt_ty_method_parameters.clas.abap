@@ -1073,9 +1073,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
         DATA t122 TYPE REF TO zif_lnt_interface_definition.
         IF xsdbool( t56 IS BOUND ) = abap_true.
           DATA t125 TYPE REF TO zif_lnt_interface_definition.
-          DATA t126 TYPE REF TO zif_lnt_class_definition.
-          t126 = t56.
-          t125 ?= t126.
+          t125 ?= t56.
           t122 = t125.
         ELSE.
           DATA t129 TYPE REF TO zif_lnt_interface_definition.
@@ -1193,9 +1191,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
         t240 = t2->scope.
         DATA t243 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t245 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t246 TYPE REF TO zif_lnt_interface_definition.
-        t246 = t39.
-        t245 ?= t246.
+        t245 ?= t39.
         t243 = t245.
         DATA t249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t249.
@@ -1342,9 +1338,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
           DATA(t353) = CONV string( me->filename ).
           DATA t354 TYPE REF TO zcl_lnt_object_reference_type.
           DATA t355 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t356 TYPE REF TO zif_lnt_interface_definition.
-          t356 = t39.
-          t355 ?= t356.
+          t355 ?= t39.
           DATA t358 TYPE REF TO zcl_lnt_abstract_type_data.
           CLEAR t358.
           t354 = NEW zcl_lnt_object_reference_type( i_id = t355 i_extra = t358 ).
@@ -2774,11 +2768,9 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
         DATA t47 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t47.
         DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t50 TYPE REF TO zcl_lnt_abstract_node.
         t50 = t28.
-        t49 = t50->children.
-        t48 ?= t49.
+        t48 ?= t50->children.
         DATA t55 TYPE REF TO object.
         t55 = t48->get( p0 = 1 ).
         DATA t56 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -3161,9 +3153,7 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
           IF t283 = abap_true.
             DATA t289 TYPE REF TO zlnt_runtime_map__b1b44c588059.
             DATA t292 TYPE REF TO zcl_lnt_expression_node.
-            DATA t294 TYPE REF TO object.
-            t294 = t254.
-            t292 ?= t294.
+            t292 ?= t254.
             t289 = me->defaults->set( p0 = t212 p1 = t292 ).
           ENDIF.
         ENDIF.
@@ -3227,11 +3217,9 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
         DATA t330 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t330.
         DATA t331 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t332 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t333 TYPE REF TO zcl_lnt_abstract_node.
         t333 = t312.
-        t332 = t333->children.
-        t331 ?= t332.
+        t331 ?= t333->children.
         DATA t338 TYPE REF TO object.
         t338 = t331->get( p0 = 1 ).
         DATA t339 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -3332,11 +3320,9 @@ CLASS zcl_lnt_ty_method_parameters IMPLEMENTATION.
       DATA t17 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t21 TYPE REF TO zcl_lnt_abstract_node.
       t21 = t1.
-      t20 = t21->children.
-      t19 ?= t20.
+      t19 ?= t21->children.
       DATA t26 TYPE REF TO object.
       t26 = t19->get( p0 = 1 ).
       DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

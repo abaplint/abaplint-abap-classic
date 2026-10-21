@@ -45,10 +45,8 @@ CLASS zcl_lnt_component_chain_simple IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t18 ).
     IF t10 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t10.
       TRY.
-          t9 ?= t24.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_component_chain_simple IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>alt_prio( i_first = t6 i_second = t9 i_rest = t26 ).
     IF t4 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t4.
       TRY.
-          t3 ?= t32.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -103,10 +99,8 @@ CLASS zcl_lnt_component_chain_simple IMPLEMENTATION.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t1.
       TRY.
-          t39 ?= t42.
+          t39 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t39 IS NOT BOUND.
@@ -138,10 +132,8 @@ CLASS zcl_lnt_component_chain_simple IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>opt_prio( i_first = t48 ).
     IF t47 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t47.
       TRY.
-          t46 ?= t51.
+          t46 ?= t47.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t46 IS NOT BOUND.
@@ -174,10 +166,8 @@ CLASS zcl_lnt_component_chain_simple IMPLEMENTATION.
     t54 = zcl_lnt_st_combi_module=>opt_prio( i_first = t55 ).
     IF t54 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t54.
       TRY.
-          t53 ?= t58.
+          t53 ?= t54.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t53 IS NOT BOUND.

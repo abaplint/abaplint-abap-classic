@@ -63,10 +63,8 @@ CLASS zcl_lnt_st_set_bit IMPLEMENTATION.
     t21 = zcl_lnt_st_combi_module=>seq( i_first = t23 i_second = t26 i_rest = t29 ).
     IF t21 IS BOUND.
       DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t35 TYPE REF TO object.
-      t35 = t21.
       TRY.
-          t20 ?= t35.
+          t20 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.
@@ -87,10 +85,8 @@ CLASS zcl_lnt_st_set_bit IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>opt( i_first = t20 ).
     IF t19 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t19.
       TRY.
-          t18 ?= t37.
+          t18 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t18 IS NOT BOUND.

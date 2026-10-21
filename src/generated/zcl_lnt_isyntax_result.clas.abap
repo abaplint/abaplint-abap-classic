@@ -142,10 +142,8 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t3 TYPE REF TO object.
-        t3 = p0.
         TRY.
-            t1 ?= t3.
+            t1 ?= p0.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t1 IS NOT BOUND.
@@ -295,10 +293,8 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         CLEAR result.
         IF me->spaghetti IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t4 TYPE REF TO object.
-          t4 = me->spaghetti.
           TRY.
-              result ?= t4.
+              result ?= me->spaghetti.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

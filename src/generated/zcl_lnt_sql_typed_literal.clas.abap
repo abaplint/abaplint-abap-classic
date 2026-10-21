@@ -36,10 +36,8 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t20 TYPE REF TO object.
-      t20 = t1.
       TRY.
-          t17 ?= t20.
+          t17 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -73,10 +71,8 @@ CLASS zcl_lnt_sql_typed_literal IMPLEMENTATION.
     t23 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t24 ).
     IF t23 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t23.
       TRY.
-          t22 ?= t31.
+          t22 ?= t23.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t22 IS NOT BOUND.

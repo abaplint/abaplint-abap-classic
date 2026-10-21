@@ -72,10 +72,8 @@ CLASS zcl_lnt_st_insert_field_group IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>plus( i_first = t29 ).
     IF t28 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t28.
       TRY.
-          t27 ?= t32.
+          t27 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.
@@ -97,10 +95,8 @@ CLASS zcl_lnt_st_insert_field_group IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t20 i_first = t27 i_opts = t33 ).
     IF t19 IS BOUND.
       DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t35 TYPE REF TO object.
-      t35 = t19.
       TRY.
-          t18 ?= t35.
+          t18 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t18 IS NOT BOUND.
@@ -130,10 +126,8 @@ CLASS zcl_lnt_st_insert_field_group IMPLEMENTATION.
     t38 = zcl_lnt_st_combi_module=>plus( i_first = t39 ).
     IF t38 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t38.
       TRY.
-          t37 ?= t42.
+          t37 ?= t38.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t37 IS NOT BOUND.
@@ -161,10 +155,8 @@ CLASS zcl_lnt_st_insert_field_group IMPLEMENTATION.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t15.
       TRY.
-          t55 ?= t58.
+          t55 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t55 IS NOT BOUND.
@@ -187,10 +179,8 @@ CLASS zcl_lnt_st_insert_field_group IMPLEMENTATION.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t64 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t65 TYPE REF TO object.
-      t65 = t1.
       TRY.
-          t62 ?= t65.
+          t62 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t62 IS NOT BOUND.

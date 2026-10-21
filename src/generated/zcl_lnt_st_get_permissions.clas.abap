@@ -48,10 +48,8 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t1.
       TRY.
-          t35 ?= t38.
+          t35 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -93,10 +91,8 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t52 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t53 TYPE REF TO object.
-      t53 = t15.
       TRY.
-          t50 ?= t53.
+          t50 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t50 IS NOT BOUND.
@@ -117,10 +113,8 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     t49 = zcl_lnt_st_combi_module=>opt_prio( i_first = t50 ).
     IF t49 IS BOUND.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t55 TYPE REF TO object.
-      t55 = t49.
       TRY.
-          t48 ?= t55.
+          t48 ?= t49.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -242,10 +236,8 @@ CLASS zcl_lnt_st_get_permissions IMPLEMENTATION.
     DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t94 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t95 TYPE REF TO object.
-      t95 = t29.
       TRY.
-          t92 ?= t95.
+          t92 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t92 IS NOT BOUND.

@@ -640,9 +640,7 @@ CLASS zcl_lnt_cds_parser IMPLEMENTATION.
     ELSE.
       t274 ?= t277.
     ENDIF.
-    DATA t280 TYPE REF TO object.
-    t280 = t274.
-    t273 ?= t280.
+    t273 ?= t274.
     result = t273.
 
   ENDMETHOD.

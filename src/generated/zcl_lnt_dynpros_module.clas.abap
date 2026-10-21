@@ -206,11 +206,9 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
             IF t60 IS BOUND.
               DATA t64 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t64.
-              DATA t65 TYPE REF TO object.
               CLEAR t64.
-              t65 = t60.
               TRY.
-                  t59 ?= t65.
+                  t59 ?= t60.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t59 IS NOT BOUND.
@@ -316,11 +314,9 @@ CLASS zcl_lnt_dynpros_module IMPLEMENTATION.
               IF t99 IS BOUND.
                 DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t103.
-                DATA t104 TYPE REF TO object.
                 CLEAR t103.
-                t104 = t99.
                 TRY.
-                    t98 ?= t104.
+                    t98 ?= t99.
                   CATCH cx_sy_move_cast_error.
                 ENDTRY.
                 IF t98 IS NOT BOUND.

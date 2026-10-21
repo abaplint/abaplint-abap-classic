@@ -323,11 +323,9 @@ CLASS zcl_lnt_ob_program IMPLEMENTATION.
           IF t131 IS BOUND.
             DATA t135 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t135.
-            DATA t136 TYPE REF TO object.
             CLEAR t135.
-            t136 = t131.
             TRY.
-                t130 ?= t136.
+                t130 ?= t131.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t130 IS NOT BOUND.

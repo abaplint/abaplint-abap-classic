@@ -158,9 +158,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
     ENDIF.
     DATA t11 TYPE REF TO zcl_lnt_expression_node.
     DATA t14 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t16 TYPE REF TO object.
-    t16 = t1.
-    t14 ?= t16.
+    t14 ?= t1.
     DATA t18 TYPE REF TO zcl_lnt_parsed_data_definition.
     t18 = t14->parsed_data.
     DATA t21 TYPE REF TO zcl_lnt_expression_node.
@@ -176,9 +174,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
     ENDIF.
     DATA t36 TYPE REF TO zif_lnt_file.
     DATA t38 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t40 TYPE REF TO object.
-    t40 = t1.
-    t38 ?= t40.
+    t38 ?= t1.
     t36 = t38->find_source_file( ).
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t36 IS INITIAL ) = abap_true.
@@ -188,9 +184,7 @@ CLASS zcl_lnt_cds_naming IMPLEMENTATION.
     DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t51 TYPE REF TO zcl_lnt_ob_data_definition.
     DATA t52 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t54 TYPE REF TO object.
-    t54 = t1.
-    t52 ?= t54.
+    t52 ?= t1.
     t51 = t52.
     DATA t56 TYPE REF TO zcl_lnt_iparse_result.
     t56 = t51->pr_in_src_obj_dt_dfn_ts_dt_dfn( ).

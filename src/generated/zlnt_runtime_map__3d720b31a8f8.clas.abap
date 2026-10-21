@@ -76,10 +76,8 @@ CLASS zlnt_runtime_map__3d720b31a8f8 IMPLEMENTATION.
       CLEAR result.
       IF row-v IS BOUND.
         DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t2 TYPE REF TO object.
-        t2 = row-v.
         TRY.
-            result ?= t2.
+            result ?= row-v.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF result IS NOT BOUND.

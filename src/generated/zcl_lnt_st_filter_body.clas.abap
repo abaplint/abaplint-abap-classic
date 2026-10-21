@@ -60,10 +60,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     t35 = zcl_lnt_st_combi_module=>opt_prio( i_first = t36 ).
     IF t35 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t35.
       TRY.
-          t34 ?= t39.
+          t34 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t34 IS NOT BOUND.
@@ -90,10 +88,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t1.
       TRY.
-          t48 ?= t51.
+          t48 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -114,10 +110,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t55 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t56 TYPE REF TO object.
-      t56 = t15.
       TRY.
-          t53 ?= t56.
+          t53 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t53 IS NOT BOUND.
@@ -140,10 +134,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     t46 = zcl_lnt_st_combi_module=>per( i_first = t48 i_second = t53 i_rest = t58 ).
     IF t46 IS BOUND.
       DATA t63 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t64 TYPE REF TO object.
-      t64 = t46.
       TRY.
-          t45 ?= t64.
+          t45 ?= t46.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t45 IS NOT BOUND.
@@ -164,10 +156,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     t44 = zcl_lnt_st_combi_module=>opt_prio( i_first = t45 ).
     IF t44 IS BOUND.
       DATA t65 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t66 TYPE REF TO object.
-      t66 = t44.
       TRY.
-          t43 ?= t66.
+          t43 ?= t44.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t43 IS NOT BOUND.
@@ -206,10 +196,8 @@ CLASS zcl_lnt_st_filter_body IMPLEMENTATION.
     t69 = zcl_lnt_st_combi_module=>seq( i_first = t71 i_second = t74 i_rest = t77 ).
     IF t69 IS BOUND.
       DATA t82 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t83 TYPE REF TO object.
-      t83 = t69.
       TRY.
-          t68 ?= t83.
+          t68 ?= t69.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t68 IS NOT BOUND.

@@ -77,10 +77,8 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     t14 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t15 i_first = t22 i_opts = t26 ).
     IF t14 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t14.
       TRY.
-          t13 ?= t38.
+          t13 ?= t14.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
@@ -104,10 +102,8 @@ CLASS zcl_lnt_find_type IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>alt( i_first = t5 i_second = t8 i_rest = t10 ).
     IF t3 IS BOUND.
       DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t44 TYPE REF TO object.
-      t44 = t3.
       TRY.
-          t2 ?= t44.
+          t2 ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t2 IS NOT BOUND.

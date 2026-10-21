@@ -16,11 +16,9 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
     DATA(t3) = i_row_type.
     DATA t4 TYPE REF TO zcl_lnt_abstract_type.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abstract_node.
     t8 = t1.
-    t7 = t8->children.
-    t6 ?= t7.
+    t6 ?= t8->children.
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t13 TYPE REF TO object.
     DATA(t14) = VALUE i( ).
@@ -46,25 +44,19 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
       IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
         DATA t20 TYPE REF TO zif_lnt_statement_runnable.
         DATA t21 TYPE REF TO zcl_lnt_expression_node.
-        DATA t23 TYPE REF TO object.
-        t23 = t12.
-        t21 ?= t23.
+        t21 ?= t12.
         t20 = t21->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         IF xsdbool( t20 IS BOUND AND t20 IS INSTANCE OF zcl_lnt_component_chain_simple ) = abap_true.
           DATA t25 TYPE REF TO zcl_lnt_abstract_type.
           CLEAR t25.
           t25 = t3.
           DATA t29 TYPE REF TO zcl_lnt_expression_node.
-          DATA t31 TYPE REF TO object.
-          t31 = t12.
-          t29 ?= t31.
+          t29 ?= t12.
           t4 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t25 i_node = t29 i_input_967e = t2 ).
         ELSE.
           DATA t34 TYPE REF TO zif_lnt_statement_runnable.
           DATA t35 TYPE REF TO zcl_lnt_expression_node.
-          DATA t37 TYPE REF TO object.
-          t37 = t12.
-          t35 ?= t37.
+          t35 ?= t12.
           t34 = t35->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           IF xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_dynamic ) = abap_true.
             CLEAR t4.
@@ -74,18 +66,14 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
             DATA t41 TYPE abap_bool.
             DATA t42 TYPE REF TO zif_lnt_statement_runnable.
             DATA t43 TYPE REF TO zcl_lnt_expression_node.
-            DATA t45 TYPE REF TO object.
-            t45 = t12.
-            t43 ?= t45.
+            t43 ?= t12.
             t42 = t43->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t41 = xsdbool( t42 IS BOUND AND t42 IS INSTANCE OF zcl_lnt_st_source ).
             t40 = t41.
             IF t41 = abap_false.
               DATA t47 TYPE REF TO zif_lnt_statement_runnable.
               DATA t48 TYPE REF TO zcl_lnt_expression_node.
-              DATA t50 TYPE REF TO object.
-              t50 = t12.
-              t48 ?= t50.
+              t48 ?= t12.
               t47 = t48->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t40 = xsdbool( t47 IS BOUND AND t47 IS INSTANCE OF zcl_lnt_simple_source4 ).
             ENDIF.
@@ -93,9 +81,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
             IF t40 = abap_false.
               DATA t52 TYPE REF TO zif_lnt_statement_runnable.
               DATA t53 TYPE REF TO zcl_lnt_expression_node.
-              DATA t55 TYPE REF TO object.
-              t55 = t12.
-              t53 ?= t55.
+              t53 ?= t12.
               t52 = t53->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t39 = xsdbool( t52 IS BOUND AND t52 IS INSTANCE OF zcl_lnt_simple_source2 ).
             ENDIF.
@@ -105,9 +91,7 @@ CLASS zcl_lnt_sy_cmpnnt_cmpr_smpl IMPLEMENTATION.
               DATA t58 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t58.
               DATA t60 TYPE REF TO zcl_lnt_expression_node.
-              DATA t62 TYPE REF TO object.
-              t62 = t12.
-              t60 ?= t62.
+              t60 ?= t12.
               t58 = t60.
               DATA t66 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
               CLEAR t66.

@@ -137,9 +137,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     ENDIF.
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
     DATA t9 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t11 TYPE REF TO object.
-    t11 = t1.
-    t9 ?= t11.
+    t9 ?= t1.
     DATA t13 TYPE REF TO zcl_lnt_parsed_data_definition.
     t13 = t9->parsed_data.
     DATA t16 TYPE REF TO zcl_lnt_expression_node.
@@ -150,9 +148,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     t6 = t16.
     DATA t23 TYPE REF TO zif_lnt_file.
     DATA t25 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t27 TYPE REF TO object.
-    t27 = t1.
-    t25 ?= t27.
+    t25 ?= t1.
     t23 = t25->find_source_file( ).
     DATA(t28) = VALUE abap_bool( ).
     DATA(t29) = VALUE abap_bool( ).
@@ -185,9 +181,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     DATA t101 TYPE REF TO zcl_lnt_expression_node.
     t101 = t6.
     DATA t104 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t106 TYPE REF TO object.
-    t106 = t1.
-    t104 ?= t106.
+    t104 ?= t1.
     me->check_fields( i_tree = t101 i_sources = t50 i_object_19cd = t104 i_issues = t44 i_file = t23 ).
     result = t44.
 
@@ -1906,9 +1900,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     IF t250 = abap_true.
       DATA t255 TYPE REF TO zcl_lnt_expression_node.
       DATA t258 TYPE REF TO zcl_lnt_ob_data_definition.
-      DATA t260 TYPE REF TO object.
-      t260 = t66.
-      t258 ?= t260.
+      t258 ?= t66.
       DATA t262 TYPE REF TO zcl_lnt_parsed_data_definition.
       t262 = t258->parsed_data.
       DATA t265 TYPE REF TO zcl_lnt_expression_node.
@@ -2028,11 +2020,9 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t21.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abstract_node.
     t25 = t5.
-    t24 = t25->children.
-    t23 ?= t24.
+    t23 ?= t25->children.
     DATA t30 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t31 TYPE REF TO object.
     DATA(t32) = VALUE i( ).
@@ -2058,9 +2048,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
       IF xsdbool( t30 IS BOUND AND t30 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA t38 TYPE string.
         DATA t41 TYPE REF TO zcl_lnt_token_node.
-        DATA t43 TYPE REF TO object.
-        t43 = t30.
-        t41 ?= t43.
+        t41 ?= t30.
         t38 = t41->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         IF xsdbool( t38 = |;| ) = abap_true.
           CLEAR t18.
@@ -2070,25 +2058,19 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
       ENDIF.
       DATA t50 TYPE REF TO zif_lnt_statement_runnable.
       DATA t51 TYPE REF TO zcl_lnt_expression_node.
-      DATA t53 TYPE REF TO object.
-      t53 = t30.
-      t51 ?= t53.
+      t51 ?= t30.
       t50 = t51->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t50 IS BOUND AND t50 IS INSTANCE OF zcl_lnt_cds_annotation ) = abap_true.
         DATA(t54) = t19.
         DATA t55 TYPE REF TO zcl_lnt_expression_node.
-        DATA t57 TYPE REF TO object.
-        t57 = t30.
-        t55 ?= t57.
+        t55 ?= t30.
         t54->load( ).
         APPEND t55 TO t54->items.
         t54->save( ).
       ELSE.
         DATA t59 TYPE REF TO zif_lnt_statement_runnable.
         DATA t60 TYPE REF TO zcl_lnt_expression_node.
-        DATA t62 TYPE REF TO object.
-        t62 = t30.
-        t60 ?= t62.
+        t60 ?= t30.
         t59 = t60->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         IF xsdbool( t59 IS BOUND AND t59 IS INSTANCE OF zcl_lnt_cds_name ) = abap_true.
           IF xsdbool( t16 = abap_false ) = abap_true.
@@ -2096,9 +2078,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
             CREATE OBJECT t19.
           ELSE.
             DATA t70 TYPE REF TO zcl_lnt_expression_node.
-            DATA t72 TYPE REF TO object.
-            t72 = t30.
-            t70 ?= t72.
+            t70 ?= t30.
             t18 = t70.
           ENDIF.
         ELSE.
@@ -2106,9 +2086,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
           DATA t75 TYPE abap_bool.
           DATA t76 TYPE REF TO zif_lnt_statement_runnable.
           DATA t77 TYPE REF TO zcl_lnt_expression_node.
-          DATA t79 TYPE REF TO object.
-          t79 = t30.
-          t77 ?= t79.
+          t77 ?= t30.
           t76 = t77->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           t75 = xsdbool( t76 IS BOUND AND t76 IS INSTANCE OF zcl_lnt_cd_cds_type ).
           t74 = t75.
@@ -2120,9 +2098,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
           IF t74 = abap_true.
             DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t90 TYPE REF TO zcl_lnt_expression_node.
-            DATA t92 TYPE REF TO object.
-            t92 = t30.
-            t90 ?= t92.
+            t90 ?= t30.
             t89 = me->determine_semantic_type( i_type_node = t90 i_ddic = t2 ).
             DATA t96 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
             CREATE OBJECT t96.
@@ -2909,9 +2885,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
       DATA t110 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t114 TYPE REF TO zcl_lnt_data_element.
-      DATA t116 TYPE REF TO object.
-      t116 = t59.
-      t114 ?= t116.
+      t114 ?= t59.
       DATA t117 TYPE REF TO zif_lnt_registry.
       t117 = me->reg.
       t112 = t114->get_data_type( i_reg_f149 = t117 ).
@@ -4541,9 +4515,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
         t175 = t176.
         IF t176 = abap_true.
           DATA t183 TYPE REF TO zcl_lnt_structure_type.
-          DATA t185 TYPE REF TO object.
-          t185 = t153.
-          t183 ?= t185.
+          t183 ?= t153.
           DATA t186 TYPE string.
           t186 = t159.
           DATA t188 TYPE REF TO zcl_lnt_abstract_type.
@@ -4727,9 +4699,7 @@ CLASS zcl_lnt_cds_check_syntax IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t291 TYPE REF TO zcl_lnt_structure_type.
-      DATA t293 TYPE REF TO object.
-      t293 = t281.
-      t291 ?= t293.
+      t291 ?= t281.
       DATA t294 TYPE string.
       t294 = t79.
       DATA t296 TYPE REF TO zcl_lnt_abstract_type.

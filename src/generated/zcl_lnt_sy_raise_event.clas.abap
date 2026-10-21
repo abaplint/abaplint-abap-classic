@@ -187,9 +187,7 @@ CLASS zcl_lnt_sy_raise_event IMPLEMENTATION.
         t121 = t3->get_first_token( ).
         DATA t127 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t129 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t130 TYPE REF TO zif_lnt_interface_definition.
-        t130 = t46.
-        t129 ?= t130.
+        t129 ?= t46.
         t127 = t129.
         DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t133.

@@ -59,9 +59,7 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
     DATA t45 TYPE REF TO zif_lnt_spaghetti_scope_node.
     DATA(t49) = me->reg.
     DATA t50 TYPE REF TO zcl_lnt_abap_object.
-    DATA t52 TYPE REF TO object.
-    t52 = t27.
-    t50 ?= t52.
+    t50 ?= t27.
     t45 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t49 i_object_19cd = t50 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t53 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t53.
@@ -99,9 +97,7 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
           DATA(t77) = |TYPE |.
           DATA t78 TYPE string.
           DATA t81 TYPE REF TO zcl_lnt_typed_identifier.
-          DATA t82 TYPE REF TO zcl_lnt_fi_identifier.
-          t82 = t64->resolved.
-          t81 ?= t82.
+          t81 ?= t64->resolved.
           t78 = t81->type_cba0->to_abap( ).
           DATA(t86) = strlen( t77 ).
           t76 = |{ t77 }{ t78 }|.
@@ -118,9 +114,7 @@ CLASS zcl_lnt_inlay_hints IMPLEMENTATION.
             DATA(t96) = VALUE string( ).
             DATA t97 TYPE REF TO zcl_lnt_fi_identifier.
             DATA t98 TYPE REF TO zcl_lnt_ty_class_definition.
-            DATA t99 TYPE REF TO zcl_lnt_fi_identifier.
-            t99 = t64->resolved.
-            t98 ?= t99.
+            t98 ?= t64->resolved.
             t97 = t98.
             DATA t102 TYPE string.
             t102 = t97->token->str.

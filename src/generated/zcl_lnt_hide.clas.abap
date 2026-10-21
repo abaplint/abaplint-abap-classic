@@ -31,10 +31,8 @@ CLASS zcl_lnt_hide IMPLEMENTATION.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t20 TYPE REF TO object.
-      t20 = t1.
       TRY.
-          t17 ?= t20.
+          t17 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.

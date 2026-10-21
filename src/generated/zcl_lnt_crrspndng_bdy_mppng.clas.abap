@@ -48,10 +48,8 @@ CLASS zcl_lnt_crrspndng_bdy_mppng IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t17 ).
     IF t10 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t27 TYPE REF TO object.
-      t27 = t10.
       TRY.
-          t9 ?= t27.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.
@@ -72,10 +70,8 @@ CLASS zcl_lnt_crrspndng_bdy_mppng IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>plus( i_first = t9 ).
     IF t8 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t8.
       TRY.
-          t7 ?= t29.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.

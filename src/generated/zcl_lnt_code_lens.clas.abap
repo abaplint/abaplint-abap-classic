@@ -68,9 +68,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
     DATA t49 TYPE REF TO zif_lnt_spaghetti_scope_node.
     DATA(t54) = me->reg.
     DATA t55 TYPE REF TO zcl_lnt_abap_object.
-    DATA t57 TYPE REF TO object.
-    t57 = t32.
-    t55 ?= t57.
+    t55 ?= t32.
     t49 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t54 i_object_19cd = t55 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t58 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t58.
@@ -263,9 +261,7 @@ CLASS zcl_lnt_code_lens IMPLEMENTATION.
         t191 = ||.
         DATA t193 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         DATA t195 TYPE REF TO zcl_lnt_method_definition.
-        DATA t196 TYPE REF TO zcl_lnt_fi_identifier.
-        t196 = t182->resolved.
-        t195 ?= t196.
+        t195 ?= t182->resolved.
         t193 = t195->raising.
         DATA(t200) = VALUE string( ).
         t193->dense( ).

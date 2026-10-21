@@ -53,10 +53,8 @@ CLASS zcl_lnt_ddl_value_help IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>opt_prio( i_first = t19 ).
     IF t18 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t18.
       TRY.
-          t17 ?= t22.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.

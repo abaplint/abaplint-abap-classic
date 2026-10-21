@@ -284,11 +284,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       IF xsdbool( lines( t80->items ) = 1 ) = abap_true.
         DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t95 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t96 TYPE REF TO zcl_lnt_abstract_node.
         t96 = t58.
-        t95 = t96->children.
-        t94 ?= t95.
+        t94 ?= t96->children.
         t93 = t94.
         DATA t100 TYPE REF TO zcl_lnt_abstract_token.
         t100 = t58->get_first_token( ).
@@ -296,11 +294,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         DATA t105 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t105.
         DATA t106 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t107 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t108 TYPE REF TO zcl_lnt_abstract_node.
         t108 = t58.
-        t107 = t108->children.
-        t106 ?= t107.
+        t106 ?= t108->children.
         DATA t112 TYPE REF TO object.
         CLEAR t112.
         t106->load( ).
@@ -351,11 +347,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           DATA t131 TYPE REF TO zif_lnt_union_4cf1d054.
           CLEAR t131.
           DATA t132 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t133 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t134 TYPE REF TO zcl_lnt_abstract_node.
           t134 = t58.
-          t133 = t134->children.
-          t132 ?= t133.
+          t132 ?= t134->children.
           DATA t138 TYPE REF TO object.
           CLEAR t138.
           t132->load( ).
@@ -831,11 +825,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
       ENDIF.
       DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t16 TYPE REF TO zcl_lnt_abstract_node.
       t16 = t8.
-      t15 = t16->children.
-      t14 ?= t15.
+      t14 ?= t16->children.
       t13 = t14.
       DATA(t20) = VALUE abap_bool( ).
       DATA(t21) = VALUE abap_bool( ).
@@ -1107,11 +1099,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     DATA t7 TYPE abap_bool.
     t7 = abap_false.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_abstract_node.
     t11 = t2.
-    t10 = t11->children.
-    t9 ?= t10.
+    t9 ?= t11->children.
     DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t16 TYPE REF TO object.
     DATA(t17) = VALUE i( ).
@@ -1140,9 +1130,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         DATA t24 TYPE string.
         DATA t25 TYPE string.
         DATA t28 TYPE REF TO zcl_lnt_token_node.
-        DATA t30 TYPE REF TO object.
-        t30 = t15.
-        t28 ?= t30.
+        t28 ?= t15.
         t25 = t28->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t33) = strlen( t25 ).
         t24 = t25.
@@ -1162,18 +1150,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           DATA t38 TYPE abap_bool.
           DATA t39 TYPE REF TO zif_lnt_statement_runnable.
           DATA t40 TYPE REF TO zcl_lnt_expression_node.
-          DATA t42 TYPE REF TO object.
-          t42 = t15.
-          t40 ?= t42.
+          t40 ?= t15.
           t39 = t40->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           t38 = xsdbool( t39 IS BOUND AND t39 IS INSTANCE OF zcl_lnt_cond_sub ).
           t37 = t38.
           IF t38 = abap_false.
             DATA t44 TYPE REF TO zif_lnt_statement_runnable.
             DATA t45 TYPE REF TO zcl_lnt_expression_node.
-            DATA t47 TYPE REF TO object.
-            t47 = t15.
-            t45 ?= t47.
+            t45 ?= t15.
             t44 = t45->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t37 = xsdbool( t44 IS BOUND AND t44 IS INSTANCE OF zcl_lnt_component_cond_sub ).
           ENDIF.
@@ -1183,9 +1167,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           DATA t49 TYPE string.
           DATA t50 TYPE string.
           DATA t53 TYPE REF TO zcl_lnt_expression_node.
-          DATA t55 TYPE REF TO object.
-          t55 = t15.
-          t53 ?= t55.
+          t53 ?= t15.
           t50 = t53->get_first_token( )->str.
           DATA(t58) = strlen( t50 ).
           t49 = t50.
@@ -1200,18 +1182,14 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           ENDIF.
           DATA t61 TYPE REF TO zcl_lnt_expression_node.
           DATA t63 TYPE REF TO zcl_lnt_expression_node.
-          DATA t65 TYPE REF TO object.
-          t65 = t15.
-          t63 ?= t65.
+          t63 ?= t15.
           DATA(t66) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
           t61 = t63->find_direct_expression( i_type_9913 = t66 ).
           DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t70.
           IF xsdbool( t61 IS INITIAL ) = abap_true.
             DATA t75 TYPE REF TO zcl_lnt_expression_node.
-            DATA t77 TYPE REF TO object.
-            t77 = t15.
-            t75 ?= t77.
+            t75 ?= t15.
             DATA(t78) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
             t61 = t75->find_direct_expression( i_type_9913 = t78 ).
           ENDIF.
@@ -1235,9 +1213,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           IF t97 = abap_true.
             DATA t100 TYPE REF TO zif_lnt_statement_runnable.
             DATA t101 TYPE REF TO zcl_lnt_expression_node.
-            DATA t103 TYPE REF TO object.
-            t103 = t15.
-            t101 ?= t103.
+            t101 ?= t15.
             t100 = t101->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t96 = xsdbool( t100 IS BOUND AND t100 IS INSTANCE OF zcl_lnt_st_compare ).
           ENDIF.
@@ -1253,9 +1229,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             CLEAR t108.
             DATA t109 TYPE REF TO zcl_lnt_abstract_node.
             DATA t110 TYPE REF TO zcl_lnt_expression_node.
-            DATA t112 TYPE REF TO object.
-            t112 = t15.
-            t110 ?= t112.
+            t110 ?= t15.
             t109 = t110.
             DATA t115 TYPE REF TO zif_lnt_node.
             CLEAR t115.
@@ -1297,15 +1271,11 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
           t94 = t95.
           IF t95 = abap_true.
             DATA t133 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t134 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t135 TYPE REF TO zcl_lnt_abstract_node.
             DATA t136 TYPE REF TO zcl_lnt_expression_node.
-            DATA t138 TYPE REF TO object.
-            t138 = t15.
-            t136 ?= t138.
+            t136 ?= t15.
             t135 = t136.
-            t134 = t135->children.
-            t133 ?= t134.
+            t133 ?= t135->children.
             t133->load( ).
             t94 = xsdbool( lines( t133->items ) = 3 ).
           ENDIF.
@@ -1320,9 +1290,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
             CLEAR t146.
             DATA t147 TYPE REF TO zcl_lnt_abstract_node.
             DATA t148 TYPE REF TO zcl_lnt_expression_node.
-            DATA t150 TYPE REF TO object.
-            t150 = t15.
-            t148 ?= t150.
+            t148 ?= t15.
             t147 = t148.
             DATA t153 TYPE REF TO zif_lnt_node.
             CLEAR t153.
@@ -1434,9 +1402,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
               CLEAR t197.
               DATA t199 TYPE REF TO zcl_lnt_abstract_token.
               DATA t200 TYPE REF TO zcl_lnt_expression_node.
-              DATA t202 TYPE REF TO object.
-              t202 = t15.
-              t200 ?= t202.
+              t200 ?= t15.
               t199 = t200->get_first_token( ).
               DATA(t204) = VALUE string( ).
               DATA t205 TYPE REF TO zcl_lnt_irule_metadata.
@@ -1684,11 +1650,9 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
     t2 = ||.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_abstract_node.
     t7 = i_cond.
-    t6 = t7->children.
-    t5 ?= t6.
+    t5 ?= t7->children.
     t4 = t5.
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t13 TYPE REF TO object.
@@ -1717,9 +1681,7 @@ CLASS zcl_lnt_many_parentheses IMPLEMENTATION.
         DATA t20 TYPE string.
         DATA t21 TYPE string.
         DATA t24 TYPE REF TO zcl_lnt_token_node.
-        DATA t26 TYPE REF TO object.
-        t26 = t12.
-        t24 ?= t26.
+        t24 ?= t12.
         t21 = t24->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t29) = strlen( t21 ).
         t20 = t21.

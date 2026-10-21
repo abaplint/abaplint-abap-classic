@@ -41,10 +41,8 @@ CLASS zcl_lnt_ddl_qualified_name IMPLEMENTATION.
     t9 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t14 i_rest = t17 ).
     IF t9 IS BOUND.
       DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t23 TYPE REF TO object.
-      t23 = t9.
       TRY.
-          t8 ?= t23.
+          t8 ?= t9.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t8 IS NOT BOUND.
@@ -65,10 +63,8 @@ CLASS zcl_lnt_ddl_qualified_name IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>opt_prio( i_first = t8 ).
     IF t7 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t7.
       TRY.
-          t6 ?= t25.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

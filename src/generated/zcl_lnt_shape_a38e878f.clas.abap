@@ -124,10 +124,8 @@ CLASS zcl_lnt_shape_a38e878f IMPLEMENTATION.
         CLEAR result.
         IF me->method IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t2 TYPE REF TO object.
-          t2 = me->method.
           TRY.
-              result ?= t2.
+              result ?= me->method.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -149,10 +147,8 @@ CLASS zcl_lnt_shape_a38e878f IMPLEMENTATION.
         CLEAR result.
         IF me->def IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t4 TYPE REF TO object.
-          t4 = me->def.
           TRY.
-              result ?= t4.
+              result ?= me->def.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

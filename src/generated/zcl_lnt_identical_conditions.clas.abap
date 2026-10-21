@@ -227,11 +227,9 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
     DATA t5 TYPE string.
     t5 = ||.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t9 TYPE REF TO zcl_lnt_abstract_node.
     t9 = t2.
-    t8 = t9->children.
-    t7 ?= t8.
+    t7 ?= t9->children.
     DATA t13 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t14 TYPE REF TO object.
     DATA(t15) = VALUE i( ).
@@ -256,9 +254,7 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
         DATA t23 TYPE REF TO zcl_lnt_expression_node.
-        DATA t25 TYPE REF TO object.
-        t25 = t13.
-        t23 ?= t25.
+        t23 ?= t13.
         DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
         t26 = t3->arr.
         DATA t28 TYPE string.
@@ -271,9 +267,7 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
           DATA t33 TYPE string.
           DATA t34 TYPE string.
           DATA t37 TYPE REF TO zcl_lnt_token_node.
-          DATA t39 TYPE REF TO object.
-          t39 = t13.
-          t37 ?= t39.
+          t37 ?= t13.
           t34 = t37->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
           DATA(t42) = strlen( t34 ).
           t33 = t34.
@@ -287,9 +281,7 @@ CLASS zcl_lnt_identical_conditions IMPLEMENTATION.
           DATA t45 TYPE string.
           DATA t46 TYPE string.
           DATA t49 TYPE REF TO zcl_lnt_token_node.
-          DATA t51 TYPE REF TO object.
-          t51 = t13.
-          t49 ?= t51.
+          t49 ?= t13.
           t46 = t49->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
           DATA(t54) = strlen( t46 ).
           t45 = t46.

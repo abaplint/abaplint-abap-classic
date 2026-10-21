@@ -265,11 +265,9 @@ CLASS zcl_lnt_command IMPLEMENTATION.
                   IF t1 IS BOUND.
                     DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
                     CLEAR t5.
-                    DATA t6 TYPE REF TO object.
                     CLEAR t5.
-                    t6 = t1.
                     TRY.
-                        t2 ?= t6.
+                        t2 ?= t1.
                       CATCH cx_sy_move_cast_error.
                     ENDTRY.
                     IF t2 IS NOT BOUND.

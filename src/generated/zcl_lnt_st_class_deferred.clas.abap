@@ -44,10 +44,8 @@ CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>opt_prio( i_first = t19 ).
     IF t18 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t18.
       TRY.
-          t17 ?= t22.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_st_class_deferred IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t11 ).
     IF t4 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t4.
       TRY.
-          t3 ?= t28.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.

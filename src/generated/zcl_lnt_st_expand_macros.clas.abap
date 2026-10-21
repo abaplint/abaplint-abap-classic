@@ -198,11 +198,9 @@ CLASS zcl_lnt_st_expand_macros IMPLEMENTATION.
           IF t98 IS BOUND.
             DATA t115 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t115.
-            DATA t116 TYPE REF TO object.
             CLEAR t115.
-            t116 = t98.
             TRY.
-                t97 ?= t116.
+                t97 ?= t98.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t97 IS NOT BOUND.

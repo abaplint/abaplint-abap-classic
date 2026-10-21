@@ -3541,7 +3541,6 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     IF xsdbool( t14 IS INITIAL ) = abap_true.
     ELSE.
       DATA t20 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t21 TYPE REF TO zif_lnt_node.
       DATA t22 TYPE REF TO zcl_lnt_abstract_node.
       t22 = t14.
       DATA t27 TYPE REF TO zif_lnt_node.
@@ -3559,8 +3558,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       ELSE.
         t27 ?= t30.
       ENDIF.
-      t21 = t27.
-      t20 ?= t21.
+      t20 ?= t27.
       t16 = t20.
     ENDIF.
     t12 = t16.
@@ -3577,7 +3575,6 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
     IF xsdbool( t11 IS BOUND AND t11 IS INSTANCE OF zcl_lnt_st_dynamic ) = abap_true.
       DATA t43 TYPE REF TO zcl_lnt_expression_node.
       DATA t44 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t45 TYPE REF TO zif_lnt_node.
       DATA t46 TYPE REF TO zcl_lnt_abstract_node.
       t46 = t3.
       DATA t51 TYPE REF TO zif_lnt_node.
@@ -3595,8 +3592,7 @@ CLASS zcl_lnt_sy_expres_select IMPLEMENTATION.
       ELSE.
         t51 ?= t54.
       ENDIF.
-      t45 = t51.
-      t44 ?= t45.
+      t44 ?= t51.
       t43 ?= t44.
       zcl_lnt_sy_dynamic=>run_syntax( i_node = t43 i_input_967e = t2 ).
     ENDIF.

@@ -24,10 +24,8 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>tok( i_t = t8 ).
     IF t7 IS BOUND.
       DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t10 TYPE REF TO object.
-      t10 = t7.
       TRY.
-          t6 ?= t10.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -55,10 +53,8 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
     t15 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t16 ).
     IF t15 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t21 TYPE REF TO object.
-      t21 = t15.
       TRY.
-          t14 ?= t21.
+          t14 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t14 IS NOT BOUND.

@@ -28,9 +28,7 @@ CLASS zcl_lnt_method_length_stats IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t18 TYPE REF TO zcl_lnt_abap_object.
-    DATA t20 TYPE REF TO object.
-    t20 = t1.
-    t18 ?= t20.
+    t18 ?= t1.
     t16 = t18->parsed.
     DATA t23 TYPE REF TO zcl_lnt_abap_file.
     DATA t24 TYPE REF TO object.

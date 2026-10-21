@@ -212,9 +212,7 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
     t22 = NEW zcl_lnt_ddic( i_reg_f149 = t24 ).
     DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t27 TYPE REF TO zcl_lnt_abap_object.
-    DATA t29 TYPE REF TO object.
-    t29 = t1.
-    t27 ?= t29.
+    t27 ?= t1.
     t25 = t27->parsed.
     DATA t32 TYPE REF TO zcl_lnt_abap_file.
     DATA t33 TYPE REF TO object.
@@ -334,9 +332,7 @@ CLASS zcl_lnt_method_parameter_names IMPLEMENTATION.
           CLEAR t76.
           t76 = t65.
           DATA t80 TYPE REF TO zcl_lnt_abap_object.
-          DATA t82 TYPE REF TO object.
-          t82 = t1.
-          t80 ?= t82.
+          t80 ?= t1.
           t70 = t22->is_exception( i_def = t76 i_obj_ac26 = t80 ).
         ENDIF.
         IF t70 = abap_true.

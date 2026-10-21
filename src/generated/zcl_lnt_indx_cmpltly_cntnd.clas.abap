@@ -106,9 +106,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_table.
     DATA t9 TYPE REF TO zcl_lnt_table.
-    DATA t11 TYPE REF TO object.
-    t11 = t1.
-    t9 ?= t11.
+    t9 ?= t1.
     t8 = t9.
     DATA t15 TYPE REF TO zcl_lnt_shape_b90fc0d5.
     t15 = t8->parsed_data.
@@ -295,9 +293,7 @@ CLASS zcl_lnt_indx_cmpltly_cntnd IMPLEMENTATION.
           DATA t139 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t140 TYPE REF TO zcl_lnt_abstract_object.
           DATA t141 TYPE REF TO zcl_lnt_table.
-          DATA t143 TYPE REF TO object.
-          t143 = t1.
-          t141 ?= t143.
+          t141 ?= t1.
           t140 = t141.
           t139 = t140->files.
           DATA t146 TYPE REF TO object.

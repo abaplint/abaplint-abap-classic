@@ -73,9 +73,7 @@ CLASS zcl_lnt_lsp_edit IMPLEMENTATION.
         t23 = t23 + 1.
         DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t29 TYPE REF TO zcl_lnt_shape_36bc2e57.
-        DATA t30 TYPE REF TO object.
-        t30 = t2.
-        t29 ?= t30.
+        t29 ?= t2.
         t26 = t29->changes->get( p0 = t22 ).
         DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t32.
@@ -83,9 +81,7 @@ CLASS zcl_lnt_lsp_edit IMPLEMENTATION.
           DATA t36 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
           DATA t37 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
           DATA t39 TYPE REF TO zcl_lnt_shape_36bc2e57.
-          DATA t40 TYPE REF TO object.
-          t40 = t2.
-          t39 ?= t40.
+          t39 ?= t2.
           t37 = t39->changes.
           DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CREATE OBJECT t42.
@@ -94,21 +90,15 @@ CLASS zcl_lnt_lsp_edit IMPLEMENTATION.
         DATA t43 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
         DATA t44 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
         DATA t46 TYPE REF TO zcl_lnt_shape_36bc2e57.
-        DATA t47 TYPE REF TO object.
-        t47 = t2.
-        t46 ?= t47.
+        t46 ?= t2.
         t44 = t46->changes.
         DATA t54 TYPE REF TO zcl_lnt_shape_36bc2e57.
-        DATA t55 TYPE REF TO object.
-        t55 = t2.
-        t54 ?= t55.
+        t54 ?= t2.
         t43 = t44->set( p0 = t22 p1 = t54->changes->get( p0 = t22 )->concat( p0 = zcl_lnt_lsp_edit=>map_text( i_edit = t15->get( p0 = t22 ) ) ) ).
       ENDDO.
     ENDDO.
     DATA t62 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t63 TYPE REF TO object.
-    t63 = t2.
-    t62 ?= t63.
+    t62 ?= t2.
     result = t62.
 
   ENDMETHOD.
@@ -152,15 +142,11 @@ CLASS zcl_lnt_lsp_edit IMPLEMENTATION.
       t17 = t17 + 1.
       DATA t18 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
       DATA t21 TYPE REF TO zcl_lnt_shape_36bc2e57.
-      DATA t22 TYPE REF TO object.
-      t22 = t2.
-      t21 ?= t22.
+      t21 ?= t2.
       t18 = t21->changes->set( p0 = t16 p1 = zcl_lnt_lsp_edit=>map_text( i_edit = t1->get( p0 = t16 ) ) ).
     ENDDO.
     DATA t29 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t30 TYPE REF TO object.
-    t30 = t2.
-    t29 ?= t30.
+    t29 ?= t2.
     result = t29.
 
   ENDMETHOD.

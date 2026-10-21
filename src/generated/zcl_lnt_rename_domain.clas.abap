@@ -64,24 +64,18 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t26 TYPE REF TO zcl_lnt_domain.
-    DATA t28 TYPE REF TO object.
-    t28 = t1.
-    t26 ?= t28.
+    t26 ?= t1.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |DOMNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
     t16 = t16->concat( p0 = t23 ).
     DATA t37 TYPE REF TO zcl_lnt_domain.
-    DATA t39 TYPE REF TO object.
-    t39 = t1.
-    t37 ?= t39.
+    t37 ?= t1.
     t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t37 i_old_name = t2 i_name = t3 ) ).
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t47 TYPE REF TO zcl_lnt_domain.
-    DATA t49 TYPE REF TO object.
-    t49 = t1.
-    t47 ?= t49.
+    t47 ?= t1.
     t45 = t18->rename_ddicdtel_references( i_obj_1ed0 = t47 i_old_name = t2 i_new_name = t3 ).
     t44 ?= t45.
     t16 = t16->concat( p0 = t44 ).

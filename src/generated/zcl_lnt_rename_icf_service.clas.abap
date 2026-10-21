@@ -121,18 +121,14 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     DATA t81 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t84 TYPE REF TO zcl_lnt_icfservice.
-    DATA t86 TYPE REF TO object.
-    t86 = t1.
-    t84 ?= t86.
+    t84 ?= t1.
     t82 = t76->build_url_file_edits( i_object_19cd = t84 i_old_name = t20 i_new_name = t47 ).
     t81 ?= t82.
     t74 = t74->concat( p0 = t81 ).
     DATA t91 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t94 TYPE REF TO zcl_lnt_icfservice.
-    DATA t96 TYPE REF TO object.
-    t96 = t1.
-    t94 ?= t96.
+    t94 ?= t1.
     DATA t100 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t92 = t76->build_xml_file_edits( i_object_19cd = t94 i_xml_tag = |ICF_NAME| i_old_name = t20 i_new_name = t47 i_use_lower_case = t100 ).
     t91 ?= t92.
@@ -140,9 +136,7 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t104 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t106 TYPE REF TO zcl_lnt_icfservice.
-    DATA t108 TYPE REF TO object.
-    t108 = t1.
-    t106 ?= t108.
+    t106 ?= t1.
     DATA(t115) = NEW zlnt_runtime_opti_7f2541396f43( ).
     t115->has = abap_true.
     t115->value = abap_true.
@@ -150,9 +144,7 @@ CLASS zcl_lnt_rename_icf_service IMPLEMENTATION.
     t103 ?= t104.
     t74 = t74->concat( p0 = t103 ).
     DATA t121 TYPE REF TO zcl_lnt_icfservice.
-    DATA t123 TYPE REF TO object.
-    t123 = t1.
-    t121 ?= t123.
+    t121 ?= t1.
     t74 = t74->concat( p0 = t76->rename_files( i_obj_1ed0 = t121 i_old_name = t2 i_name = t16 ) ).
     DATA t126 TYPE REF TO zcl_lnt_shape_36bc2e57.
     DATA t132 TYPE REF TO zlnt_runtime_map__3e259f4987b9.

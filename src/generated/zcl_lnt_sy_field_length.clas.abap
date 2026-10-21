@@ -31,11 +31,9 @@ CLASS zcl_lnt_sy_field_length IMPLEMENTATION.
     ENDIF.
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t23 TYPE REF TO zcl_lnt_abstract_node.
     t23 = t1.
-    t22 = t23->children.
-    t21 ?= t22.
+    t21 ?= t23->children.
     t20 = t21.
     DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t28 TYPE REF TO zif_lnt_union_4cf1d054.

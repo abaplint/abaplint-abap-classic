@@ -493,11 +493,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
         t47 = t48.
         IF t48 = abap_true.
           DATA t58 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t59 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t60 TYPE REF TO zcl_lnt_abstract_node.
           t60 = t42.
-          t59 = t60->children.
-          t58 ?= t59.
+          t58 ?= t60->children.
           t58->load( ).
           t47 = xsdbool( xsdbool( lines( t58->items ) = 2 ) = abap_false ).
         ENDIF.
@@ -697,11 +695,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
 
   METHOD is_without_parameters.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = i_c.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t4->load( ).
     result = xsdbool( lines( t4->items ) = 2 ).
 
@@ -739,11 +735,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
           t9 ?= t10.
         ENDIF.
         DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t18 TYPE REF TO zcl_lnt_abstract_node.
         t18 = t9.
-        t17 = t18->children.
-        t16 ?= t17.
+        t16 ?= t18->children.
         t16->load( ).
         IF xsdbool( lines( t16->items ) > 1 ) = abap_true.
           result = abap_false.
@@ -758,11 +752,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t25 = t1->find_direct_expression( i_type_9913 = t28 ).
     IF xsdbool( t25 IS BOUND ) = abap_true.
       DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t35 TYPE REF TO zcl_lnt_abstract_node.
       t35 = t25.
-      t34 = t35->children.
-      t33 ?= t34.
+      t33 ?= t35->children.
       t33->load( ).
       result = xsdbool( lines( t33->items ) = 1 ).
       RETURN.
@@ -772,11 +764,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
     t41 = t1->find_direct_expression( i_type_9913 = t44 ).
     IF xsdbool( t41 IS BOUND ) = abap_true.
       DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t51 TYPE REF TO zcl_lnt_abstract_node.
       t51 = t41.
-      t50 = t51->children.
-      t49 ?= t50.
+      t49 ?= t51->children.
       t49->load( ).
       IF xsdbool( lines( t49->items ) > 2 ) = abap_true.
         result = abap_false.
@@ -793,11 +783,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
       t63 = t64.
       IF t64 = abap_true.
         DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t70 TYPE REF TO zcl_lnt_abstract_node.
         t70 = t58.
-        t69 = t70->children.
-        t68 ?= t69.
+        t68 ?= t70->children.
         t68->load( ).
         t63 = xsdbool( lines( t68->items ) = 1 ).
       ENDIF.
@@ -816,11 +804,9 @@ CLASS zcl_lnt_kp_sn_prm_cll_on_on_ln IMPLEMENTATION.
       t82 = t83.
       IF t83 = abap_true.
         DATA t87 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t88 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t89 TYPE REF TO zcl_lnt_abstract_node.
         t89 = t77.
-        t88 = t89->children.
-        t87 ?= t88.
+        t87 ?= t89->children.
         t87->load( ).
         t82 = xsdbool( lines( t87->items ) = 1 ).
       ENDIF.

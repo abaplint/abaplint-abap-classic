@@ -119,9 +119,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_fi_identifier.
     DATA t10 TYPE REF TO zcl_lnt_abstract_object.
     DATA t11 TYPE REF TO zcl_lnt_number_range.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t10 = t11.
     DATA t15 TYPE REF TO zif_lnt_file.
     t15 = t10->get_xml_file( ).
@@ -149,9 +147,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     DATA t51 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
     DATA t52 TYPE REF TO zcl_lnt_number_range.
     DATA t53 TYPE REF TO zcl_lnt_number_range.
-    DATA t55 TYPE REF TO object.
-    t55 = t1.
-    t53 ?= t55.
+    t53 ?= t1.
     t52 = t53.
     DATA t57 TYPE REF TO zcl_lnt_iparse_result.
     t57 = t52->pr_in_sr_ob_nmb_rng_ts_nmb_rng( ).
@@ -250,9 +246,7 @@ CLASS zcl_lnt_nrob_consistency IMPLEMENTATION.
     DATA t130 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t132 TYPE REF TO zcl_lnt_number_range.
     DATA t133 TYPE REF TO zcl_lnt_number_range.
-    DATA t135 TYPE REF TO object.
-    t135 = t1.
-    t133 ?= t135.
+    t133 ?= t1.
     t132 = t133.
     DATA t137 TYPE REF TO zcl_lnt_iparse_result.
     t137 = t132->pr_in_sr_ob_nmb_rng_ts_nmb_rng( ).

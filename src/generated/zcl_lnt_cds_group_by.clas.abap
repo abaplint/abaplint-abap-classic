@@ -47,10 +47,8 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
     t14 = zcl_lnt_st_combi_module=>seq( i_first = t16 i_second = t19 i_rest = t22 ).
     IF t14 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t14.
       TRY.
-          t13 ?= t28.
+          t13 ?= t14.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_cds_group_by IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>star( i_first = t13 ).
     IF t12 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t12.
       TRY.
-          t11 ?= t30.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.

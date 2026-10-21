@@ -64,9 +64,7 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t26 TYPE REF TO zcl_lnt_table.
-    DATA t28 TYPE REF TO object.
-    t28 = t1.
-    t26 ?= t28.
+    t26 ?= t1.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |TABNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
@@ -74,42 +72,32 @@ CLASS zcl_lnt_rename_table IMPLEMENTATION.
     DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t38 TYPE REF TO zcl_lnt_table.
-    DATA t40 TYPE REF TO object.
-    t40 = t1.
-    t38 ?= t40.
+    t38 ?= t1.
     DATA t44 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t36 = t18->build_xml_file_edits( i_object_19cd = t38 i_xml_tag = |FORTABLE| i_old_name = t2 i_new_name = t3 i_use_lower_case = t44 ).
     t35 ?= t36.
     t16 = t16->concat( p0 = t35 ).
     DATA t49 TYPE REF TO zcl_lnt_table.
-    DATA t51 TYPE REF TO object.
-    t51 = t1.
-    t49 ?= t51.
+    t49 ?= t1.
     t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t49 i_old_name = t2 i_name = t3 ) ).
     DATA t56 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t59 TYPE REF TO zcl_lnt_table.
-    DATA t61 TYPE REF TO object.
-    t61 = t1.
-    t59 ?= t61.
+    t59 ?= t1.
     t57 = t18->rename_ddic_code_references( i_obj_1ed0 = t59 i_old_name = t2 i_new_name = t3 ).
     t56 ?= t57.
     t16 = t16->concat( p0 = t56 ).
     DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t67 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t69 TYPE REF TO zcl_lnt_table.
-    DATA t71 TYPE REF TO object.
-    t71 = t1.
-    t69 ?= t71.
+    t69 ?= t1.
     t67 = t18->rename_ddictabl_references( i_obj_1ed0 = t69 i_old_name = t2 i_new_name = t3 ).
     t66 ?= t67.
     t16 = t16->concat( p0 = t66 ).
     DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t77 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t79 TYPE REF TO zcl_lnt_table.
-    DATA t81 TYPE REF TO object.
-    t81 = t1.
-    t79 ?= t81.
+    t79 ?= t1.
     t77 = t18->rename_ddicttyp_references( i_obj_1ed0 = t79 i_old_name = t2 i_new_name = t3 ).
     t76 ?= t77.
     t16 = t16->concat( p0 = t76 ).

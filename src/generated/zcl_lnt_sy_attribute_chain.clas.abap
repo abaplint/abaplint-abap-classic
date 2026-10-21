@@ -212,9 +212,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
       DATA t173 TYPE REF TO zif_lnt_interface_definition.
       IF xsdbool( t107 IS BOUND ) = abap_true.
         DATA t176 TYPE REF TO zif_lnt_interface_definition.
-        DATA t177 TYPE REF TO zif_lnt_class_definition.
-        t177 = t107.
-        t176 ?= t177.
+        t176 ?= t107.
         t173 = t176.
       ELSE.
         DATA t180 TYPE REF TO zif_lnt_interface_definition.
@@ -507,9 +505,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
         CLEAR t452.
         DATA t453 TYPE REF TO zif_lnt_union_adffe656.
         CLEAR t453.
-        DATA t454 TYPE REF TO zcl_lnt_abstract_type.
-        t454 = t419.
-        t453 ?= t454.
+        t453 ?= t419.
         t452 ?= t453.
         result = t452.
         RETURN.
@@ -617,9 +613,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
             CLEAR t530.
             DATA t531 TYPE REF TO zif_lnt_union_168ba5e4.
             CLEAR t531.
-            DATA t532 TYPE REF TO zcl_lnt_abstract_type.
-            t532 = t419.
-            t531 ?= t532.
+            t531 ?= t419.
             t530 ?= t531.
             t528 = t530.
             DATA t537 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -682,9 +676,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
               DATA t573 TYPE REF TO zif_lnt_statement_runnable.
               DATA t574 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t574.
-              DATA t576 TYPE REF TO object.
-              t576 = t438.
-              t574 ?= t576.
+              t574 ?= t438.
               t573 = t574->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t569 = xsdbool( t573 IS BOUND AND t573 IS INSTANCE OF zcl_lnt_st_table_expression ).
             ENDIF.
@@ -698,9 +690,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                 CLEAR t584.
                 DATA t585 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t585.
-                DATA t587 TYPE REF TO object.
-                t587 = t438.
-                t585 ?= t587.
+                t585 ?= t438.
                 t584 = t585->get_first_token( ).
                 DATA t589 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
                 CLEAR t589.
@@ -724,9 +714,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
               CLEAR t597.
               DATA t599 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t599.
-              DATA t601 TYPE REF TO object.
-              t601 = t438.
-              t599 ?= t601.
+              t599 ?= t438.
               t597 = t599.
               DATA t604 TYPE REF TO zcl_lnt_ty_table_type.
               CLEAR t604.
@@ -745,9 +733,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                 DATA t619 TYPE REF TO zif_lnt_statement_runnable.
                 DATA t620 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t620.
-                DATA t622 TYPE REF TO object.
-                t622 = t438.
-                t620 ?= t622.
+                t620 ?= t438.
                 t619 = t620->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                 t615 = xsdbool( t619 IS BOUND AND t619 IS INSTANCE OF zcl_lnt_st_field_offset ).
               ENDIF.
@@ -755,9 +741,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                 DATA t623 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
                 DATA t625 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t625.
-                DATA t627 TYPE REF TO object.
-                t627 = t438.
-                t625 ?= t627.
+                t625 ?= t438.
                 t623 = zcl_lnt_sy_field_offset=>run_syntax( i_node = t625 i_input_967e = t3 ).
                 DATA t630 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
                 t630 = t623.
@@ -818,9 +802,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                   DATA t667 TYPE REF TO zif_lnt_statement_runnable.
                   DATA t668 TYPE REF TO zcl_lnt_expression_node.
                   CLEAR t668.
-                  DATA t670 TYPE REF TO object.
-                  t670 = t438.
-                  t668 ?= t670.
+                  t668 ?= t438.
                   t667 = t668->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                   t663 = xsdbool( t667 IS BOUND AND t667 IS INSTANCE OF zcl_lnt_st_field_length ).
                 ENDIF.
@@ -828,9 +810,7 @@ CLASS zcl_lnt_sy_attribute_chain IMPLEMENTATION.
                   DATA t671 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
                   DATA t673 TYPE REF TO zcl_lnt_expression_node.
                   CLEAR t673.
-                  DATA t675 TYPE REF TO object.
-                  t675 = t438.
-                  t673 ?= t675.
+                  t673 ?= t438.
                   t671 = zcl_lnt_sy_field_length=>run_syntax( i_node = t673 i_input_967e = t3 ).
                   DATA t678 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
                   t678 = t671.

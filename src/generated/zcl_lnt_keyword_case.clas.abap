@@ -188,9 +188,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
       DATA t16 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t18 TYPE REF TO zcl_lnt_class.
       DATA t19 TYPE REF TO zcl_lnt_class.
-      DATA t21 TYPE REF TO object.
-      t21 = t2.
-      t19 ?= t21.
+      t19 ?= t2.
       t18 = t19.
       DATA t23 TYPE REF TO zif_lnt_abap_file_information.
       DATA t25 TYPE REF TO zcl_lnt_abap_file.
@@ -222,9 +220,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         DATA t60 TYPE REF TO zcl_lnt_info_class_definition.
         t60 = t16.
         DATA t65 TYPE REF TO zcl_lnt_class.
-        DATA t67 TYPE REF TO object.
-        t67 = t2.
-        t65 ?= t67.
+        t65 ?= t2.
         t50 = t6->is_exception( i_def = t60 i_obj_ac26 = t65 ).
       ENDIF.
       IF t50 = abap_true.
@@ -1296,9 +1292,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
         DATA t46 TYPE REF TO object.
         DATA t47 TYPE REF TO zcl_lnt_token_node_regex.
         CLEAR t47.
-        DATA t49 TYPE REF TO object.
-        t49 = t15.
-        t47 ?= t49.
+        t47 ?= t15.
         t46 = t47->get_db65( ).
         t45 ?= t46.
         t42 = t45->str.
@@ -1426,9 +1420,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           DATA t122 TYPE REF TO object.
           DATA t123 TYPE REF TO zcl_lnt_token_node_regex.
           CLEAR t123.
-          DATA t125 TYPE REF TO object.
-          t125 = t15.
-          t123 ?= t125.
+          t123 ?= t15.
           t122 = t123->get_db65( ).
           t121 ?= t122.
           t114 = xsdbool( t121 IS BOUND AND t121 IS INSTANCE OF zcl_lnt_lx_identifier ).
@@ -1441,9 +1433,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           DATA t130 TYPE REF TO object.
           DATA t131 TYPE REF TO zcl_lnt_token_node_regex.
           CLEAR t131.
-          DATA t133 TYPE REF TO object.
-          t133 = t15.
-          t131 ?= t133.
+          t131 ?= t15.
           t130 = t131->get_db65( ).
           t129 ?= t130.
           t127 = NEW zcl_lnt_token_and_keyword( i_token = t129 i_keyword = abap_false ).
@@ -1476,9 +1466,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           DATA(t144) = VALUE string( ).
           DATA t148 TYPE REF TO zcl_lnt_token_node.
           CLEAR t148.
-          DATA t150 TYPE REF TO object.
-          t150 = t15.
-          t148 ?= t150.
+          t148 ?= t15.
           t144 = t148->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
           DATA(t153) = VALUE abap_bool( ).
           DATA(t154) = VALUE abap_bool( ).
@@ -1488,9 +1476,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             DATA t157 TYPE REF TO zcl_lnt_abstract_token.
             DATA t158 TYPE REF TO zcl_lnt_token_node.
             CLEAR t158.
-            DATA t160 TYPE REF TO object.
-            t160 = t15.
-            t158 ?= t160.
+            t158 ?= t15.
             t157 = t158->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
             t153 = xsdbool( t157 IS BOUND AND t157 IS INSTANCE OF zcl_lnt_lx_identifier ).
           ENDIF.
@@ -1499,9 +1485,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
             DATA t162 TYPE REF TO zcl_lnt_token_and_keyword.
             DATA t165 TYPE REF TO zcl_lnt_token_node.
             CLEAR t165.
-            DATA t167 TYPE REF TO object.
-            t167 = t15.
-            t165 ?= t167.
+            t165 ?= t15.
             t162 = NEW zcl_lnt_token_and_keyword( i_token = t165->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ) i_keyword = abap_true ).
             CREATE OBJECT t162->zlnt_view_ownkeys_b0e8086400eb.
             t162->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
@@ -1531,9 +1515,7 @@ CLASS zcl_lnt_keyword_case IMPLEMENTATION.
           IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
             DATA t181 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t181.
-            DATA t183 TYPE REF TO object.
-            t183 = t15.
-            t181 ?= t183.
+            t181 ?= t15.
             t3 = t3->concat( p0 = me->traverse( i_s = t181 i_parent = t2 ) ).
           ELSE.
             DATA t185 TYPE REF TO zlnt_exception_cl_30eec8e8805d.

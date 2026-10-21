@@ -31,10 +31,8 @@ CLASS zcl_lnt_inline_field IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>tok( i_t = t13 ).
     IF t12 IS BOUND.
       DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t15 TYPE REF TO object.
-      t15 = t12.
       TRY.
-          t11 ?= t15.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.
@@ -64,10 +62,8 @@ CLASS zcl_lnt_inline_field IMPLEMENTATION.
     t9 = zcl_lnt_st_combi_module=>seq( i_first = t11 i_second = t17 i_rest = t20 ).
     IF t9 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t26 TYPE REF TO object.
-      t26 = t9.
       TRY.
-          t8 ?= t26.
+          t8 ?= t9.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t8 IS NOT BOUND.
@@ -88,10 +84,8 @@ CLASS zcl_lnt_inline_field IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>star_prio( i_first = t8 ).
     IF t7 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t7.
       TRY.
-          t6 ?= t28.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

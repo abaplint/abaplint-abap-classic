@@ -263,9 +263,7 @@ CLASS zcl_lnt_implementation IMPLEMENTATION.
     t157 = t133.
     DATA(t159) = me->reg.
     DATA t160 TYPE REF TO zcl_lnt_abap_object.
-    DATA t162 TYPE REF TO object.
-    t162 = t16.
-    t160 ?= t162.
+    t160 ?= t16.
     t155 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t157 i_reg_f149 = t159 i_obj_1ed0 = t160 ).
     DATA t164 TYPE REF TO zcl_lnt_location.
     DATA t165 TYPE REF TO zcl_lnt_lsp_lookup_result.
@@ -305,9 +303,7 @@ CLASS zcl_lnt_implementation IMPLEMENTATION.
     t191 = t194.
     IF xsdbool( t191 IS BOUND AND t191 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
       DATA t202 TYPE REF TO zcl_lnt_method_definition.
-      DATA t203 TYPE REF TO zcl_lnt_fi_identifier.
-      t203 = t155->definition_id.
-      t202 ?= t203.
+      t202 ?= t155->definition_id.
       result = me->find_method_implementations( i_def = t202 ).
       RETURN.
     ENDIF.

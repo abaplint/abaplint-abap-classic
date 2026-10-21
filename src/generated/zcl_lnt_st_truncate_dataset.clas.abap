@@ -38,10 +38,8 @@ CLASS zcl_lnt_st_truncate_dataset IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t11 ).
     IF t4 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t21 TYPE REF TO object.
-      t21 = t4.
       TRY.
-          t3 ?= t21.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.

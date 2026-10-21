@@ -126,10 +126,8 @@ CLASS zcl_lnt_cds_function_input IMPLEMENTATION.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t52 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t53 TYPE REF TO object.
-      t53 = t1.
       TRY.
-          t50 ?= t53.
+          t50 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t50 IS NOT BOUND.
@@ -154,10 +152,8 @@ CLASS zcl_lnt_cds_function_input IMPLEMENTATION.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t36 IS BOUND.
       DATA t62 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t63 TYPE REF TO object.
-      t63 = t36.
       TRY.
-          t60 ?= t63.
+          t60 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.
@@ -178,10 +174,8 @@ CLASS zcl_lnt_cds_function_input IMPLEMENTATION.
     DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t67 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t68 TYPE REF TO object.
-      t68 = t1.
       TRY.
-          t65 ?= t68.
+          t65 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.

@@ -514,9 +514,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA(t35) = VALUE string( ).
     DATA t36 TYPE REF TO zcl_lnt_abap_object.
-    DATA t38 TYPE REF TO object.
-    t38 = t1.
-    t36 ?= t38.
+    t36 ?= t1.
     t35 = t36->get_type( ).
     DATA(t39) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t39->has = abap_true.
@@ -524,9 +522,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t33 = t39.
     DATA t44 TYPE REF TO zcl_lnt_abstract_object.
     DATA t45 TYPE REF TO zcl_lnt_abap_object.
-    DATA t47 TYPE REF TO object.
-    t47 = t1.
-    t45 ?= t47.
+    t45 ?= t1.
     t44 = t45.
     DATA(t48) = VALUE string( ).
     t48 = t44->name.
@@ -548,14 +544,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ENDIF.
     DATA t64 TYPE REF TO zcl_lnt_abap_object.
     DATA t65 TYPE REF TO zcl_lnt_abap_object.
-    DATA t67 TYPE REF TO object.
-    t67 = t30.
-    t65 ?= t67.
+    t65 ?= t30.
     t64 = t65.
     DATA t69 TYPE REF TO zcl_lnt_abap_object.
-    DATA t71 TYPE REF TO object.
-    t71 = t30.
-    t69 ?= t71.
+    t69 ?= t30.
     IF me->contains_error( i_high_obj = t69 ) = abap_true.
       result = t2.
       RETURN.
@@ -567,9 +559,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF t74 = abap_true.
       DATA t77 TYPE REF TO zcl_lnt_ob_program.
       DATA t78 TYPE REF TO zcl_lnt_ob_program.
-      DATA t80 TYPE REF TO object.
-      t80 = t1.
-      t78 ?= t80.
+      t78 ?= t1.
       t77 = t78.
       t77->parse_xml( ).
       t73 = t77->parsed_xml->is_include.
@@ -579,9 +569,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA t89 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t91 TYPE REF TO zcl_lnt_abap_file.
       DATA t93 TYPE REF TO zcl_lnt_ob_program.
-      DATA t95 TYPE REF TO object.
-      t95 = t1.
-      t93 ?= t95.
+      t93 ?= t1.
       t91 = t93->get_main_abap_file( ).
       DATA t96 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       IF xsdbool( t91 IS INITIAL ) = abap_true.
@@ -654,9 +642,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ENDIF.
     DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t165 TYPE REF TO zcl_lnt_abap_object.
-    DATA t167 TYPE REF TO object.
-    t167 = t1.
-    t165 ?= t167.
+    t165 ?= t1.
     t163 = t165->parsed.
     DATA t170 TYPE REF TO zcl_lnt_abap_file.
     DATA t171 TYPE REF TO object.
@@ -687,9 +673,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       CLEAR t177.
       DATA t179 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t179.
-      DATA t181 TYPE REF TO object.
-      t181 = t30.
-      t179 ?= t181.
+      t179 ?= t30.
       DATA(t182) = VALUE string( ).
       DATA t183 TYPE REF TO zcl_lnt_abstract_file.
       t183 = t170.
@@ -2518,11 +2502,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       CLEAR t469.
       DATA t470 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t470.
-      DATA t471 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t472 TYPE REF TO zcl_lnt_abstract_node.
       t472 = t464.
-      t471 = t472->children.
-      t470 ?= t471.
+      t470 ?= t472->children.
       t469 = t470.
       DATA t476 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t476.
@@ -3227,7 +3209,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t29 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t30 TYPE REF TO zif_lnt_union_4cf1d054.
-    DATA t31 TYPE REF TO zif_lnt_node.
     DATA t32 TYPE REF TO zcl_lnt_abstract_node.
     t32 = t15.
     DATA t37 TYPE REF TO zif_lnt_node.
@@ -3254,8 +3235,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ELSE.
       t37 ?= t45.
     ENDIF.
-    t31 = t37.
-    t30 ?= t31.
+    t30 ?= t37.
     t29 = t30.
     DATA t49 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     IF xsdbool( t29 IS INITIAL ) = abap_true.
@@ -3704,11 +3684,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             DATA t246 TYPE abap_bool.
             DATA t247 TYPE abap_bool.
             DATA t249 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t250 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t251 TYPE REF TO zcl_lnt_abstract_node.
             t251 = t110.
-            t250 = t251->children.
-            t249 ?= t250.
+            t249 ?= t251->children.
             t249->load( ).
             t247 = xsdbool( lines( t249->items ) = 1 ).
             t246 = t247.
@@ -3716,11 +3694,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               DATA t258 TYPE REF TO object.
               DATA t259 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA t260 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA t261 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t262 TYPE REF TO zcl_lnt_abstract_node.
               t262 = t110.
-              t261 = t262->children.
-              t260 ?= t261.
+              t260 ?= t262->children.
               DATA t267 TYPE REF TO object.
               t260->load( ).
               READ TABLE t260->items INDEX 1 INTO t267.
@@ -3740,11 +3716,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               DATA t270 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA t271 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA t272 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA t273 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t274 TYPE REF TO zcl_lnt_abstract_node.
               t274 = t110.
-              t273 = t274->children.
-              t272 ?= t273.
+              t272 ?= t274->children.
               DATA t279 TYPE REF TO object.
               t272->load( ).
               READ TABLE t272->items INDEX 1 INTO t279.
@@ -3761,9 +3735,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               IF xsdbool( t270 IS BOUND AND t270 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
                 DATA t286 TYPE REF TO zcl_lnt_expression_node.
                 DATA t288 TYPE REF TO zcl_lnt_expression_node.
-                DATA t290 TYPE REF TO object.
-                t290 = t270.
-                t288 ?= t290.
+                t288 ?= t270.
                 DATA(t291) = zlnt_runtime_desc_78196487750d=>zlnt_member_d288_09589b7663ff.
                 t286 = t288->find_first_expression( i_type_9913 = t291 ).
                 DATA t292 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -5144,11 +5116,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t46) = VALUE abap_bool( ).
       DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t48.
-      DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t50 TYPE REF TO zcl_lnt_abstract_node.
       t50 = t28.
-      t49 = t50->children.
-      t48 ?= t49.
+      t48 ?= t50->children.
       t48->load( ).
       t46 = xsdbool( lines( t48->items ) = 1 ).
       t45 = t46.
@@ -5208,11 +5178,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t81) = VALUE abap_bool( ).
       DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t83.
-      DATA t84 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t85 TYPE REF TO zcl_lnt_abstract_node.
       t85 = t28.
-      t84 = t85->children.
-      t83 ?= t84.
+      t83 ?= t85->children.
       t83->load( ).
       t81 = xsdbool( lines( t83->items ) = 1 ).
       t80 = t81.
@@ -5492,11 +5460,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abstract_node.
     t12 = t1.
-    t11 = t12->children.
-    t10 ?= t11.
+    t10 ?= t12->children.
     t9 = t10.
     DATA t17 TYPE REF TO object.
     DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -5975,7 +5941,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA t26 TYPE REF TO zif_lnt_union_daf022d4.
       DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t28 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t29 TYPE REF TO zif_lnt_node.
       DATA t30 TYPE REF TO zcl_lnt_abstract_node.
       t30 = t9.
       DATA t35 TYPE REF TO zif_lnt_node.
@@ -5993,8 +5958,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t35 ?= t38.
       ENDIF.
-      t29 = t35.
-      t28 ?= t29.
+      t28 ?= t35.
       t27 = t28.
       DATA t42 TYPE REF TO zif_lnt_union_daf022d4.
       IF xsdbool( t27 IS INITIAL ) = abap_true.
@@ -6190,11 +6154,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abstract_node.
     t12 = t1.
-    t11 = t12->children.
-    t10 ?= t11.
+    t10 ?= t12->children.
     t9 = t10.
     DATA t17 TYPE REF TO object.
     DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -6549,11 +6511,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       CLEAR t49.
       DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t51.
-      DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t53 TYPE REF TO zcl_lnt_abstract_node.
       t53 = t13.
-      t52 = t53->children.
-      t51 ?= t52.
+      t51 ?= t53->children.
       DATA t57 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t57.
       DATA t58 TYPE REF TO object.
@@ -6587,9 +6547,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           DATA(t74) = VALUE abap_bool( ).
           DATA t76 TYPE REF TO zif_lnt_union_4cf1d054.
           CLEAR t76.
-          DATA t77 TYPE REF TO zcl_lnt_expression_node.
-          t77 = t18.
-          t76 ?= t77.
+          t76 ?= t18.
           DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t79.
           DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -6598,11 +6556,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           IF t57 IS BOUND.
             DATA t81 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t81.
-            DATA t82 TYPE REF TO object.
             CLEAR t81.
-            t82 = t57.
             TRY.
-                t79 ?= t82.
+                t79 ?= t57.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t79 IS NOT BOUND.
@@ -6624,11 +6580,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           IF t76 IS BOUND.
             DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t83.
-            DATA t84 TYPE REF TO object.
             CLEAR t83.
-            t84 = t76.
             TRY.
-                t80 ?= t84.
+                t80 ?= t76.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t80 IS NOT BOUND.
@@ -7074,9 +7028,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             DATA t71 TYPE string.
             DATA t72 TYPE string.
             DATA t76 TYPE REF TO zcl_lnt_token_node.
-            DATA t78 TYPE REF TO object.
-            t78 = t19.
-            t76 ?= t78.
+            t76 ?= t19.
             t72 = t76->token->str.
             DATA(t83) = strlen( t72 ).
             t71 = t72.
@@ -7151,11 +7103,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA t18 TYPE abap_bool.
       t18 = abap_false.
       DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t22 TYPE REF TO zcl_lnt_abstract_node.
       t22 = t13.
-      t21 = t22->children.
-      t20 ?= t21.
+      t20 ?= t22->children.
       DATA t26 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t26.
       DATA t27 TYPE REF TO object.
@@ -7206,9 +7156,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
 
         DATA t47 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         DATA t49 TYPE REF TO zcl_lnt_expression_node.
-        DATA t51 TYPE REF TO object.
-        t51 = t26.
-        t49 ?= t51.
+        t49 ?= t26.
         t47 = me->builtin_return_type( i_source_75cf = t49 i_low_file = t3 i_high_syntax_2023 = t4 ).
         DATA t55 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t55 = t47.
@@ -7290,9 +7238,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         t120 = |{ t121 }{ | = | }|.
         DATA t127 TYPE string.
         DATA t128 TYPE REF TO zcl_lnt_expression_node.
-        DATA t130 TYPE REF TO object.
-        t130 = t26.
-        t128 ?= t130.
+        t128 ?= t26.
         t127 = t128->concat_tokens( ).
         DATA(t131) = strlen( t120 ).
         t119 = |{ t120 }{ t127 }|.
@@ -7308,15 +7254,11 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         t138 = zcl_lnt_edit_helper=>insert_at( i_file = t3 i_pos = t144 i_text = t99 ).
         DATA t150 TYPE REF TO zcl_lnt_position.
         DATA t153 TYPE REF TO zcl_lnt_expression_node.
-        DATA t155 TYPE REF TO object.
-        t155 = t26.
-        t153 ?= t155.
+        t153 ?= t26.
         t150 = t153->get_first_token( )->start.
         DATA t159 TYPE REF TO zcl_lnt_abstract_token.
         DATA t161 TYPE REF TO zcl_lnt_expression_node.
-        DATA t163 TYPE REF TO object.
-        t163 = t26.
-        t161 ?= t163.
+        t161 ?= t26.
         t159 = t161->get_last_token( ).
         DATA t165 TYPE f.
         t165 = t159->start->row.
@@ -7331,9 +7273,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         t186 = zcl_lnt_edit_helper=>merge( i_fix1 = zcl_lnt_edit_helper=>replace_range( i_file = t3 i_start = t150 i_end = NEW zcl_lnt_position( i_row = t165 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t172 right = t183 op = `+` ) ) i_text = t61 ) i_fix2 = t138 ).
         DATA t193 TYPE REF TO zcl_lnt_abstract_token.
         DATA t194 TYPE REF TO zcl_lnt_expression_node.
-        DATA t196 TYPE REF TO object.
-        t196 = t26.
-        t194 ?= t196.
+        t194 ?= t26.
         t193 = t194->get_first_token( ).
         DATA(t198) = VALUE string( ).
         DATA t199 TYPE REF TO zcl_lnt_irule_metadata.
@@ -7677,7 +7617,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t21 IS INITIAL ) = abap_true.
     ELSE.
       DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t28 TYPE REF TO zif_lnt_node.
       DATA t29 TYPE REF TO zcl_lnt_abstract_node.
       t29 = t21.
       DATA t34 TYPE REF TO zif_lnt_node.
@@ -7695,8 +7634,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t34 ?= t37.
       ENDIF.
-      t28 = t34.
-      t27 ?= t28.
+      t27 ?= t34.
       t23 = t27.
     ENDIF.
     t19 = t23.
@@ -7974,7 +7912,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t17 IS INITIAL ) = abap_true.
     ELSE.
       DATA t23 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t24 TYPE REF TO zif_lnt_node.
       DATA t25 TYPE REF TO zcl_lnt_abstract_node.
       t25 = t17.
       DATA t30 TYPE REF TO zif_lnt_node.
@@ -7992,8 +7929,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t30 ?= t33.
       ENDIF.
-      t24 = t30.
-      t23 ?= t24.
+      t23 ?= t30.
       t19 = t23.
     ENDIF.
     t15 = t19.
@@ -8022,7 +7958,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t56 IS INITIAL ) = abap_true.
     ELSE.
       DATA t62 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t63 TYPE REF TO zif_lnt_node.
       DATA t64 TYPE REF TO zcl_lnt_abstract_node.
       t64 = t56.
       DATA t69 TYPE REF TO zif_lnt_node.
@@ -8040,8 +7975,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t69 ?= t72.
       ENDIF.
-      t63 = t69.
-      t62 ?= t63.
+      t62 ?= t69.
       t58 = t62.
     ENDIF.
     t54 = t58.
@@ -8279,7 +8213,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t22 IS INITIAL ) = abap_true.
     ELSE.
       DATA t28 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t29 TYPE REF TO zif_lnt_node.
       DATA t30 TYPE REF TO zcl_lnt_abstract_node.
       t30 = t22.
       DATA t35 TYPE REF TO zif_lnt_node.
@@ -8297,8 +8230,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t35 ?= t38.
       ENDIF.
-      t29 = t35.
-      t28 ?= t29.
+      t28 ?= t35.
       t24 = t28.
     ENDIF.
     t20 = t24.
@@ -8327,11 +8259,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t70 TYPE REF TO zcl_lnt_abstract_node.
     t70 = t54.
-    t69 = t70->children.
-    t68 ?= t69.
+    t68 ?= t70->children.
     t68->load( ).
     IF xsdbool( lines( t68->items ) <> 1 ) = abap_true.
       CLEAR result.
@@ -8340,7 +8270,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA t79 TYPE REF TO zif_lnt_union_daf022d4.
     DATA t80 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t81 TYPE REF TO zif_lnt_union_4cf1d054.
-    DATA t82 TYPE REF TO zif_lnt_node.
     DATA t83 TYPE REF TO zcl_lnt_abstract_node.
     t83 = t54.
     DATA t88 TYPE REF TO zif_lnt_node.
@@ -8358,8 +8287,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ELSE.
       t88 ?= t91.
     ENDIF.
-    t82 = t88.
-    t81 ?= t82.
+    t81 ?= t88.
     t80 = t81.
     DATA t95 TYPE REF TO zif_lnt_union_daf022d4.
     IF xsdbool( t80 IS INITIAL ) = abap_true.
@@ -8413,11 +8341,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       t129 = t130.
       IF t130 = abap_true.
         DATA t140 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t141 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t142 TYPE REF TO zcl_lnt_abstract_node.
         t142 = t122.
-        t141 = t142->children.
-        t140 ?= t141.
+        t140 ?= t142->children.
         t140->load( ).
         t129 = xsdbool( lines( t140->items ) = 2 ).
       ENDIF.
@@ -8426,11 +8352,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         DATA t149 TYPE REF TO object.
         DATA t150 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t151 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t152 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t153 TYPE REF TO zcl_lnt_abstract_node.
         t153 = t122.
-        t152 = t153->children.
-        t151 ?= t152.
+        t151 ?= t153->children.
         DATA t158 TYPE REF TO object.
         t151->load( ).
         READ TABLE t151->items INDEX 1 INTO t158.
@@ -8451,11 +8375,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         DATA t162 TYPE REF TO object.
         DATA t163 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t164 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t165 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t166 TYPE REF TO zcl_lnt_abstract_node.
         t166 = t122.
-        t165 = t166->children.
-        t164 ?= t165.
+        t164 ?= t166->children.
         DATA t171 TYPE REF TO object.
         t164->load( ).
         READ TABLE t164->items INDEX 2 INTO t171.
@@ -8476,11 +8398,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         DATA(t176) = VALUE string( ).
         DATA t177 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t178 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t179 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t180 TYPE REF TO zcl_lnt_abstract_node.
         t180 = t122.
-        t179 = t180->children.
-        t178 ?= t179.
+        t178 ?= t180->children.
         DATA t185 TYPE REF TO object.
         t178->load( ).
         READ TABLE t178->items INDEX 1 INTO t185.
@@ -10098,11 +10018,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t4 = t5.
     IF t5 = abap_false.
       DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t13 TYPE REF TO zcl_lnt_abstract_node.
       t13 = t1.
-      t12 = t13->children.
-      t11 ?= t12.
+      t11 ?= t13->children.
       t11->load( ).
       t4 = xsdbool( lines( t11->items ) <> 4 ).
     ENDIF.
@@ -10112,11 +10030,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t20) = VALUE string( ).
       DATA t23 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t26 TYPE REF TO zcl_lnt_abstract_node.
       t26 = t1.
-      t25 = t26->children.
-      t24 ?= t25.
+      t24 ?= t26->children.
       DATA t30 TYPE REF TO object.
       t24->load( ).
       READ TABLE t24->items INDEX 3 INTO t30.
@@ -10174,11 +10090,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t69 IS INITIAL ) = abap_true.
     ELSE.
       DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t77 TYPE REF TO zcl_lnt_abstract_node.
       t77 = t69.
-      t76 = t77->children.
-      t75 ?= t76.
+      t75 ?= t77->children.
       t71 = t75.
     ENDIF.
     t67 = t71.
@@ -10379,11 +10293,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t217 IS INITIAL ) = abap_true.
     ELSE.
       DATA t223 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t224 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t225 TYPE REF TO zcl_lnt_abstract_node.
       t225 = t217.
-      t224 = t225->children.
-      t223 ?= t224.
+      t223 ?= t225->children.
       t219 = t223.
     ENDIF.
     t215 = t219.
@@ -10455,11 +10367,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t275) = VALUE string( ).
       DATA t276 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t277 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t278 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t279 TYPE REF TO zcl_lnt_abstract_node.
       t279 = t259.
-      t278 = t279->children.
-      t277 ?= t278.
+      t277 ?= t279->children.
       DATA t283 TYPE REF TO object.
       t277->load( ).
       READ TABLE t277->items INDEX 3 INTO t283.
@@ -10486,11 +10396,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t296) = VALUE string( ).
       DATA t297 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t298 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t299 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t300 TYPE REF TO zcl_lnt_abstract_node.
       t300 = t50.
-      t299 = t300->children.
-      t298 ?= t299.
+      t298 ?= t300->children.
       DATA t305 TYPE REF TO object.
       t298->load( ).
       READ TABLE t298->items INDEX 2 INTO t305.
@@ -10635,11 +10543,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t5 = t6.
     IF t6 = abap_false.
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t14 TYPE REF TO zcl_lnt_abstract_node.
       t14 = t1.
-      t13 = t14->children.
-      t12 ?= t13.
+      t12 ?= t14->children.
       t12->load( ).
       t5 = xsdbool( lines( t12->items ) <> 4 ).
     ENDIF.
@@ -10649,11 +10555,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       DATA(t21) = VALUE string( ).
       DATA t24 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t25 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t27 TYPE REF TO zcl_lnt_abstract_node.
       t27 = t1.
-      t26 = t27->children.
-      t25 ?= t26.
+      t25 ?= t27->children.
       DATA t31 TYPE REF TO object.
       t25->load( ).
       READ TABLE t25->items INDEX 3 INTO t31.
@@ -10708,11 +10612,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t65 = t66.
     IF t66 = abap_false.
       DATA t75 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t76 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t77 TYPE REF TO zcl_lnt_abstract_node.
       t77 = t51.
-      t76 = t77->children.
-      t75 ?= t76.
+      t75 ?= t77->children.
       t75->load( ).
       t65 = xsdbool( lines( t75->items ) <> 1 ).
     ENDIF.
@@ -12798,11 +12700,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t18 TYPE REF TO zcl_lnt_abstract_node.
     t18 = t2.
-    t17 = t18->children.
-    t16 ?= t17.
+    t16 ?= t18->children.
     t16->load( ).
     IF xsdbool( lines( t16->items ) <> 5 ) = abap_true.
       CLEAR result.
@@ -12839,7 +12739,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t50 IS INITIAL ) = abap_true.
     ELSE.
       DATA t56 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t57 TYPE REF TO zif_lnt_node.
       DATA t58 TYPE REF TO zcl_lnt_abstract_node.
       t58 = t50.
       DATA t63 TYPE REF TO zif_lnt_node.
@@ -12866,8 +12765,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t63 ?= t71.
       ENDIF.
-      t57 = t63.
-      t56 ?= t57.
+      t56 ?= t63.
       t52 = t56.
     ENDIF.
     t48 = t52.
@@ -12893,22 +12791,16 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA(t93) = VALUE string( ).
     t93 = ||.
     DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t99 TYPE REF TO zcl_lnt_abstract_node.
     DATA t100 TYPE REF TO zcl_lnt_expression_node.
-    DATA t102 TYPE REF TO object.
-    t102 = t48.
-    t100 ?= t102.
+    t100 ?= t48.
     t99 = t100.
-    t98 = t99->children.
-    t97 ?= t98.
+    t97 ?= t99->children.
     t97->load( ).
     IF xsdbool( lines( t97->items ) = 3 ) = abap_true.
       DATA t106 TYPE REF TO zcl_lnt_expression_node.
       DATA t108 TYPE REF TO zcl_lnt_expression_node.
-      DATA t110 TYPE REF TO object.
-      t110 = t48.
-      t108 ?= t110.
+      t108 ?= t48.
       DATA(t111) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
       t106 = t108->find_direct_expression( i_type_9913 = t111 ).
       DATA t115 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -12927,9 +12819,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ELSE.
       DATA(t129) = VALUE string( ).
       DATA t131 TYPE REF TO zcl_lnt_expression_node.
-      DATA t133 TYPE REF TO object.
-      t133 = t48.
-      t131 ?= t133.
+      t131 ?= t48.
       t129 = t131->concat_tokens( ).
       DATA(t135) = VALUE string( ).
       t135 = t129.
@@ -12977,11 +12867,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA(t160) = VALUE string( ).
     t160 = ||.
     DATA t162 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t164 TYPE REF TO zcl_lnt_abstract_node.
     t164 = t24.
-    t163 = t164->children.
-    t162 ?= t163.
+    t162 ?= t164->children.
     DATA t169 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t170 TYPE REF TO object.
     DATA(t171) = VALUE i( ).
@@ -13009,9 +12897,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       CLEAR t176.
       DATA t177 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t177.
-      DATA t179 TYPE REF TO object.
-      t179 = t48.
-      t177 ?= t179.
+      t177 ?= t48.
       t176 ?= t177.
       DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t180.
@@ -13021,11 +12907,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       IF t169 IS BOUND.
         DATA t182 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t182.
-        DATA t183 TYPE REF TO object.
         CLEAR t182.
-        t183 = t169.
         TRY.
-            t180 ?= t183.
+            t180 ?= t169.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t180 IS NOT BOUND.
@@ -13047,11 +12931,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       IF t176 IS BOUND.
         DATA t184 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t184.
-        DATA t185 TYPE REF TO object.
         CLEAR t184.
-        t185 = t176.
         TRY.
-            t181 ?= t185.
+            t181 ?= t176.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t181 IS NOT BOUND.
@@ -13457,11 +13339,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t9 = t10.
     IF t10 = abap_false.
       DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t18 TYPE REF TO zcl_lnt_abstract_node.
       t18 = t2.
-      t17 = t18->children.
-      t16 ?= t17.
+      t16 ?= t18->children.
       t16->load( ).
       t9 = xsdbool( lines( t16->items ) <> 4 ).
     ENDIF.
@@ -13576,11 +13456,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     t107->load( ).
     t118 = lines( t107->items ).
     DATA t121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t122 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t123 TYPE REF TO zcl_lnt_abstract_node.
     t123 = t61.
-    t122 = t123->children.
-    t121 ?= t122.
+    t121 ?= t123->children.
     t121->load( ).
     IF xsdbool( t118 <> lines( t121->items ) ) = abap_true.
       CLEAR result.
@@ -14674,11 +14552,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
 
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t17 TYPE REF TO zcl_lnt_abstract_node.
     t17 = t2.
-    t16 = t17->children.
-    t15 ?= t16.
+    t15 ?= t17->children.
     t14 = t15.
     DATA t21 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t22 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -14766,7 +14642,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t95 IS INITIAL ) = abap_true.
     ELSE.
       DATA t103 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t104 TYPE REF TO zif_lnt_node.
       DATA t105 TYPE REF TO zcl_lnt_abstract_node.
       t105 = t95.
       DATA t110 TYPE REF TO zif_lnt_node.
@@ -14784,8 +14659,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t110 ?= t113.
       ENDIF.
-      t104 = t110.
-      t103 ?= t104.
+      t103 ?= t110.
       t99 = t103.
     ENDIF.
     t93 = t99.
@@ -16267,7 +16141,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     IF xsdbool( t71 IS INITIAL ) = abap_true.
     ELSE.
       DATA t79 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t80 TYPE REF TO zif_lnt_node.
       DATA t81 TYPE REF TO zcl_lnt_abstract_node.
       t81 = t71.
       DATA t86 TYPE REF TO zif_lnt_node.
@@ -16285,8 +16158,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         t86 ?= t89.
       ENDIF.
-      t80 = t86.
-      t79 ?= t80.
+      t79 ?= t86.
       t75 = t79.
     ENDIF.
     t69 = t75.
@@ -16493,11 +16365,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       IF xsdbool( t281 IS INITIAL ) = abap_true.
       ELSE.
         DATA t287 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t288 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t289 TYPE REF TO zcl_lnt_abstract_node.
         t289 = t281.
-        t288 = t289->children.
-        t287 ?= t288.
+        t287 ?= t289->children.
         t283 = t287.
       ENDIF.
       t279 = t283.
@@ -18103,11 +17973,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       t276 = abap_false.
       DATA t278 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t278.
-      DATA t279 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t280 TYPE REF TO zcl_lnt_abstract_node.
       t280 = t166.
-      t279 = t280->children.
-      t278 ?= t279.
+      t278 ?= t280->children.
       DATA t285 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t285.
       DATA t286 TYPE REF TO object.
@@ -18168,9 +18036,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             DATA(t317) = VALUE string( ).
             DATA t319 TYPE REF TO zcl_lnt_token_node.
             CLEAR t319.
-            DATA t321 TYPE REF TO object.
-            t321 = t285.
-            t319 ?= t321.
+            t319 ?= t285.
             t317 = t319->token->str.
             DATA(t328) = strlen( t317 ).
             t316 = t317.
@@ -18196,9 +18062,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               DATA(t340) = VALUE string( ).
               DATA t342 TYPE REF TO zcl_lnt_token_node.
               CLEAR t342.
-              DATA t344 TYPE REF TO object.
-              t344 = t285.
-              t342 ?= t344.
+              t342 ?= t285.
               t340 = t342->token->str.
               DATA(t351) = strlen( t340 ).
               t339 = t340.
@@ -18231,9 +18095,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA(t369) = VALUE string( ).
                 DATA t371 TYPE REF TO zcl_lnt_token_node.
                 CLEAR t371.
-                DATA t373 TYPE REF TO object.
-                t373 = t285.
-                t371 ?= t373.
+                t371 ?= t285.
                 t369 = t371->token->str.
                 DATA(t380) = strlen( t369 ).
                 t368 = t369.
@@ -18258,9 +18120,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                   DATA(t391) = VALUE string( ).
                   DATA t393 TYPE REF TO zcl_lnt_token_node.
                   CLEAR t393.
-                  DATA t395 TYPE REF TO object.
-                  t395 = t285.
-                  t393 ?= t395.
+                  t393 ?= t285.
                   t391 = t393->token->str.
                   DATA(t402) = strlen( t391 ).
                   t390 = t391.
@@ -18914,11 +18774,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t348 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t349 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t350 TYPE REF TO zcl_lnt_abstract_node.
       t350 = t336.
-      t349 = t350->children.
-      t348 ?= t349.
+      t348 ?= t350->children.
       DATA t355 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t355.
       DATA t356 TYPE REF TO object.
@@ -20137,11 +19995,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         DATA t276 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t276.
-        DATA t277 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t278 TYPE REF TO zcl_lnt_abstract_node.
         t278 = t270.
-        t277 = t278->children.
-        t276 ?= t277.
+        t276 ?= t278->children.
         t272 = t276.
       ENDIF.
       t268 = t272.
@@ -20213,9 +20069,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             DATA t326 TYPE REF TO zif_lnt_statement_runnable.
             DATA t327 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t327.
-            DATA t329 TYPE REF TO object.
-            t329 = t289.
-            t327 ?= t329.
+            t327 ?= t289.
             t326 = t327->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t322 = xsdbool( t326 IS BOUND AND t326 IS INSTANCE OF zcl_lnt_st_for ).
           ENDIF.
@@ -20223,9 +20077,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             DATA t330 TYPE REF TO zcl_lnt_shape_b9e98cea.
             DATA t332 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t332.
-            DATA t334 TYPE REF TO object.
-            t334 = t289.
-            t332 ?= t334.
+            t332 ?= t289.
             t330 = me->outline_for( i_for_loop = t332 i_indentation = t125 i_low_file = t3 i_high_syntax_2023 = t4 ).
             DATA(t339) = t147.
             DATA(t340) = VALUE string( ).
@@ -20251,9 +20103,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               DATA t359 TYPE REF TO zif_lnt_statement_runnable.
               DATA t360 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t360.
-              DATA t362 TYPE REF TO object.
-              t362 = t289.
-              t360 ?= t362.
+              t360 ?= t289.
               t359 = t360->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t355 = xsdbool( t359 IS BOUND AND t359 IS INSTANCE OF zcl_lnt_st_source ).
             ENDIF.
@@ -20272,11 +20122,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               ELSE.
                 DATA t373 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 CLEAR t373.
-                DATA t374 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t375 TYPE REF TO zcl_lnt_abstract_node.
                 t375 = t367.
-                t374 = t375->children.
-                t373 ?= t374.
+                t373 ?= t375->children.
                 t369 = t373.
               ENDIF.
               t365 = t369.
@@ -20335,9 +20183,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA(t407) = VALUE string( ).
                 DATA t408 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t408.
-                DATA t410 TYPE REF TO object.
-                t410 = t289.
-                t408 ?= t410.
+                t408 ?= t289.
                 t407 = t408->concat_tokens( ).
                 DATA(t411) = strlen( t400 ).
                 t399 = |{ t400 }{ t407 }|.
@@ -20355,9 +20201,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA t419 TYPE REF TO zif_lnt_statement_runnable.
                 DATA t420 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t420.
-                DATA t422 TYPE REF TO object.
-                t422 = t289.
-                t420 ?= t422.
+                t420 ?= t289.
                 t419 = t420->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
                 t415 = xsdbool( t419 IS BOUND AND t419 IS INSTANCE OF zcl_lnt_st_let ).
               ENDIF.
@@ -20366,9 +20210,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA(t425) = VALUE string( ).
                 DATA t426 TYPE REF TO zcl_lnt_expression_node.
                 CLEAR t426.
-                DATA t428 TYPE REF TO object.
-                t428 = t289.
-                t426 ?= t428.
+                t426 ?= t289.
                 t425 = me->outline_let( i_node = t426 i_indentation = t125 i_high_syntax_2023 = t4 i_low_file = t3 ).
                 DATA(t432) = strlen( t424 ).
                 t147 = |{ t424 }{ t425 }|.
@@ -20384,9 +20226,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           DATA t437 TYPE REF TO zif_lnt_statement_runnable.
           DATA t438 TYPE REF TO zcl_lnt_expression_node.
           CLEAR t438.
-          DATA t440 TYPE REF TO object.
-          t440 = t289.
-          t438 ?= t440.
+          t438 ?= t289.
           t437 = t438->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           t433 = xsdbool( t437 IS BOUND AND t437 IS INSTANCE OF zcl_lnt_value_body_line ).
         ENDIF.
@@ -20407,11 +20247,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           IF t289 IS BOUND.
             DATA t450 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t450.
-            DATA t451 TYPE REF TO object.
             CLEAR t450.
-            t451 = t289.
             TRY.
-                t448 ?= t451.
+                t448 ?= t289.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t448 IS NOT BOUND.
@@ -20449,9 +20287,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           ELSE.
             DATA t456 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             CLEAR t456.
-            DATA t457 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            t457 = t446->children.
-            t456 ?= t457.
+            t456 ?= t446->children.
             t452 = t456.
           ENDIF.
           t444 = t452.
@@ -20823,11 +20659,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         ELSE.
           DATA t713 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t713.
-          DATA t714 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t715 TYPE REF TO zcl_lnt_abstract_node.
           t715 = t707.
-          t714 = t715->children.
-          t713 ?= t714.
+          t713 ?= t715->children.
           t709 = t713.
         ENDIF.
         t705 = t709.
@@ -20875,9 +20709,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           IF t731 = abap_true.
             DATA t739 TYPE REF TO zcl_lnt_expression_node.
             CLEAR t739.
-            DATA t741 TYPE REF TO object.
-            t741 = t726.
-            t739 ?= t741.
+            t739 ?= t726.
             t698 = t739.
           ELSE.
             DATA t746 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -20914,11 +20746,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         ELSE.
           DATA t772 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t772.
-          DATA t773 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t774 TYPE REF TO zcl_lnt_abstract_node.
           t774 = t766.
-          t773 = t774->children.
-          t772 ?= t773.
+          t772 ?= t774->children.
           t768 = t772.
         ENDIF.
         t764 = t768.
@@ -21967,9 +21797,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ENDIF.
       IF t112 = abap_true.
         DATA t163 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t164 TYPE REF TO zcl_lnt_fi_identifier.
-        t164 = t107->resolved.
-        t163 ?= t164.
+        t163 ?= t107->resolved.
         t78 = t163.
         EXIT.
       ENDIF.
@@ -23366,11 +23194,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA t10 TYPE abap_bool.
     t10 = abap_true.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t14 TYPE REF TO zcl_lnt_abstract_node.
     t14 = i_body.
-    t13 = t14->children.
-    t12 ?= t13.
+    t12 ?= t14->children.
     DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t19 TYPE REF TO object.
     DATA(t20) = VALUE i( ).
@@ -23398,9 +23224,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         DATA t26 TYPE string.
         DATA t27 TYPE string.
         DATA t31 TYPE REF TO zcl_lnt_token_node.
-        DATA t33 TYPE REF TO object.
-        t33 = t18.
-        t31 ?= t33.
+        t31 ?= t18.
         t27 = t31->token->str.
         DATA(t38) = strlen( t27 ).
         t26 = t27.
@@ -23457,43 +23281,33 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
       ELSE.
         DATA t81 TYPE REF TO zif_lnt_statement_runnable.
         DATA t82 TYPE REF TO zcl_lnt_expression_node.
-        DATA t84 TYPE REF TO object.
-        t84 = t18.
-        t82 ?= t84.
+        t82 ?= t18.
         t81 = t82->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         IF xsdbool( t81 IS BOUND AND t81 IS INSTANCE OF zcl_lnt_st_cond ) = abap_true.
           DATA(t86) = t6.
           DATA t87 TYPE string.
           DATA t88 TYPE REF TO zcl_lnt_expression_node.
-          DATA t90 TYPE REF TO object.
-          t90 = t18.
-          t88 ?= t90.
+          t88 ?= t18.
           t87 = t88->concat_tokens( ).
           DATA(t91) = strlen( t86 ).
           t6 = |{ t86 }{ t87 }|.
         ELSE.
           DATA t93 TYPE REF TO zif_lnt_statement_runnable.
           DATA t94 TYPE REF TO zcl_lnt_expression_node.
-          DATA t96 TYPE REF TO object.
-          t96 = t18.
-          t94 ?= t96.
+          t94 ?= t18.
           t93 = t94->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           IF xsdbool( t93 IS BOUND AND t93 IS INSTANCE OF zcl_lnt_st_let ) = abap_true.
             DATA(t98) = t6.
             DATA t99 TYPE string.
             DATA t100 TYPE REF TO zcl_lnt_expression_node.
-            DATA t102 TYPE REF TO object.
-            t102 = t18.
-            t100 ?= t102.
+            t100 ?= t18.
             t99 = me->outline_let( i_node = t100 i_indentation = t3 i_high_syntax_2023 = t5 i_low_file = t4 ).
             DATA(t106) = strlen( t98 ).
             t6 = |{ t98 }{ t99 }|.
           ELSE.
             DATA t108 TYPE REF TO zif_lnt_statement_runnable.
             DATA t109 TYPE REF TO zcl_lnt_expression_node.
-            DATA t111 TYPE REF TO object.
-            t111 = t18.
-            t109 ?= t111.
+            t109 ?= t18.
             t108 = t109->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             IF xsdbool( t108 IS BOUND AND t108 IS INSTANCE OF zcl_lnt_st_source ) = abap_true.
               DATA(t113) = t6.
@@ -23510,9 +23324,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
               t116 = |{ t117 }{ | = | }|.
               DATA t126 TYPE string.
               DATA t127 TYPE REF TO zcl_lnt_expression_node.
-              DATA t129 TYPE REF TO object.
-              t129 = t18.
-              t127 ?= t129.
+              t127 ?= t18.
               t126 = t127->concat_tokens( ).
               DATA(t130) = strlen( t116 ).
               t115 = |{ t116 }{ t126 }|.
@@ -23523,9 +23335,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             ELSE.
               DATA t135 TYPE REF TO zif_lnt_statement_runnable.
               DATA t136 TYPE REF TO zcl_lnt_expression_node.
-              DATA t138 TYPE REF TO object.
-              t138 = t18.
-              t136 ?= t138.
+              t136 ?= t18.
               t135 = t136->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               IF xsdbool( t135 IS BOUND AND t135 IS INSTANCE OF zcl_lnt_throw ) = abap_true.
                 DATA(t140) = t6.
@@ -23537,9 +23347,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA t147 TYPE string.
                 DATA t148 TYPE string.
                 DATA t149 TYPE REF TO zcl_lnt_expression_node.
-                DATA t151 TYPE REF TO object.
-                t151 = t18.
-                t149 ?= t151.
+                t149 ?= t18.
                 t148 = t149->concat_tokens( ).
                 DATA t152 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
                 CREATE OBJECT t152 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |THROW | flags = |i|.
@@ -23557,9 +23365,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 DATA(t163) = |buildCondBody, unexpected expression, |.
                 DATA t164 TYPE string.
                 DATA t167 TYPE REF TO zcl_lnt_expression_node.
-                DATA t169 TYPE REF TO object.
-                t169 = t18.
-                t167 ?= t169.
+                t167 ?= t18.
                 t164 = t167->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( )->zlnt_builtin_clas_3f891b097658( )->name.
                 DATA(t170) = strlen( t163 ).
                 t162 = |{ t163 }{ t164 }|.
@@ -23762,11 +23568,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         CLEAR t116.
         DATA t117 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t117.
-        DATA t118 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t119 TYPE REF TO zcl_lnt_abstract_node.
         t119 = t99.
-        t118 = t119->children.
-        t117 ?= t118.
+        t117 ?= t119->children.
         DATA t123 TYPE REF TO object.
         CLEAR t123.
         t117->load( ).
@@ -23794,11 +23598,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         IF t116 IS BOUND.
           DATA t130 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t130.
-          DATA t131 TYPE REF TO object.
           CLEAR t130.
-          t131 = t116.
           TRY.
-              t128 ?= t131.
+              t128 ?= t116.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t128 IS NOT BOUND.
@@ -23820,11 +23622,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         IF t126 IS BOUND.
           DATA t132 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t132.
-          DATA t133 TYPE REF TO object.
           CLEAR t132.
-          t133 = t126.
           TRY.
-              t129 ?= t133.
+              t129 ?= t126.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t129 IS NOT BOUND.
@@ -24132,11 +23932,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA(t13) = VALUE abap_bool( ).
     DATA t14 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t17 TYPE REF TO zcl_lnt_abstract_node.
     t17 = t1.
-    t16 = t17->children.
-    t15 ?= t16.
+    t15 ?= t17->children.
     DATA t21 TYPE REF TO object.
     t15->load( ).
     READ TABLE t15->items INDEX 2 INTO t21.
@@ -24155,10 +23953,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t14 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t14.
       TRY.
-          t26 ?= t29.
+          t26 ?= t14.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -24178,10 +23974,8 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
     ENDIF.
     IF t24 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t24.
       TRY.
-          t27 ?= t31.
+          t27 ?= t24.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.
@@ -25290,11 +25084,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           CLEAR t138.
         ELSE.
           DATA t142 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t143 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t144 TYPE REF TO zcl_lnt_abstract_node.
           t144 = t136.
-          t143 = t144->children.
-          t142 ?= t143.
+          t142 ?= t144->children.
           t138 = t142.
         ENDIF.
         t134 = t138.
@@ -26696,11 +26488,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           CLEAR t142.
         ELSE.
           DATA t146 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t147 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t148 TYPE REF TO zcl_lnt_abstract_node.
           t148 = t130.
-          t147 = t148->children.
-          t146 ?= t147.
+          t146 ?= t148->children.
           t142 = t146.
         ENDIF.
         t128 = t142.
@@ -27902,9 +27692,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
             IF t166 = abap_true.
               DATA t199 TYPE REF TO zif_lnt_union_f405367a.
               CLEAR t199.
-              DATA t200 TYPE REF TO zcl_lnt_fi_identifier.
-              t200 = t161->resolved.
-              t199 ?= t200.
+              t199 ?= t161->resolved.
               t132 = t199.
             ENDIF.
           ENDDO.
@@ -27912,13 +27700,10 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           IF xsdbool( t205 IS BOUND AND t205 IS INSTANCE OF zcl_lnt_typed_identifier ) = abap_true.
             DATA t206 TYPE REF TO zcl_lnt_abstract_type.
             DATA t209 TYPE REF TO zcl_lnt_typed_identifier.
-            DATA t211 TYPE REF TO object.
-            t211 = t132.
-            t209 ?= t211.
+            t209 ?= t132.
             t206 = t209->type_cba0.
             IF xsdbool( t206 IS BOUND AND t206 IS INSTANCE OF zcl_lnt_object_reference_type ) = abap_true.
               DATA t216 TYPE REF TO zif_lnt_union_f405367a.
-              DATA t217 TYPE REF TO zif_lnt_class_definition.
               DATA t218 TYPE REF TO zif_lnt_spaghetti_scope_node.
               t218 = t106.
               DATA t220 TYPE REF TO zif_lnt_class_definition.
@@ -27941,8 +27726,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 t227 = t236->value.
                 t220 = t225->find_class_definition( i_name = t227 ).
               ENDIF.
-              t217 = t220.
-              t216 ?= t217.
+              t216 ?= t220.
               t132 = t216.
               DATA t246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               IF xsdbool( t132 IS INITIAL ) = abap_true.
@@ -27973,7 +27757,6 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 t279 = t253->get_object( i_type_9913 = t254 i_name = t277 ).
                 t251 ?= t279.
                 DATA t280 TYPE REF TO zif_lnt_union_f405367a.
-                DATA t281 TYPE REF TO zif_lnt_class_definition.
                 DATA t282 TYPE REF TO zcl_lnt_class.
                 t282 = t251.
                 DATA t284 TYPE REF TO zif_lnt_class_definition.
@@ -27981,8 +27764,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
                 ELSE.
                   t284 = t282->gt_dfn_ins_src_obj_cls_ts_clss( ).
                 ENDIF.
-                t281 = t284.
-                t280 ?= t281.
+                t280 ?= t284.
                 t132 = t280.
               ENDIF.
             ELSE.
@@ -28023,9 +27805,7 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
           t300 = xsdbool( t132 IS BOUND ).
           DATA(t302) = VALUE abap_bool( ).
           DATA t303 TYPE REF TO zif_lnt_class_definition.
-          DATA t304 TYPE REF TO zif_lnt_union_f405367a.
-          t304 = t132.
-          t303 ?= t304.
+          t303 ?= t132.
           t302 = abap_false.
           DATA t307 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           DATA t309 TYPE REF TO zif_lnt_method_parameters.
@@ -28175,11 +27955,9 @@ CLASS zcl_lnt_downport IMPLEMENTATION.
         IF t41 IS BOUND.
           DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t43.
-          DATA t44 TYPE REF TO object.
           CLEAR t43.
-          t44 = t41.
           TRY.
-              t40 ?= t44.
+              t40 ?= t41.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t40 IS NOT BOUND.

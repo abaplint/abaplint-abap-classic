@@ -473,11 +473,9 @@ CLASS zcl_lnt_web_mime IMPLEMENTATION.
           IF t205 IS BOUND.
             DATA t209 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t209.
-            DATA t210 TYPE REF TO object.
             CLEAR t209.
-            t210 = t205.
             TRY.
-                t204 ?= t210.
+                t204 ?= t205.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t204 IS NOT BOUND.

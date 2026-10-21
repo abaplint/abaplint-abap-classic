@@ -248,9 +248,7 @@ CLASS zcl_lnt_sy_compare IMPLEMENTATION.
           IF t130 = abap_true.
             DATA t147 TYPE REF TO zcl_lnt_abstract_type.
             DATA t148 TYPE REF TO zif_lnt_union_2724f734.
-            DATA t149 TYPE REF TO zcl_lnt_abstract_type.
-            t149 = t123.
-            t148 ?= t149.
+            t148 ?= t123.
             t147 ?= t148.
             t129 = t49->is_char_like_strict( i_type_9913 = t147 ).
           ELSE.

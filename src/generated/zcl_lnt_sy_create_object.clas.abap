@@ -105,9 +105,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
         t97 = t16.
         DATA t101 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t103 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t104 TYPE REF TO zif_lnt_class_definition.
-        t104 = t3.
-        t103 ?= t104.
+        t103 ?= t3.
         t101 = t103.
         DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t107.
@@ -123,9 +121,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
         t114 = t16.
         DATA t118 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t120 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t121 TYPE REF TO zif_lnt_class_definition.
-        t121 = t3.
-        t120 ?= t121.
+        t120 ?= t3.
         t118 = t120.
         DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t124.
@@ -716,9 +712,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
                   DATA t572 TYPE REF TO zif_lnt_interface_definition.
                   IF xsdbool( t506 IS BOUND ) = abap_true.
                     DATA t575 TYPE REF TO zif_lnt_interface_definition.
-                    DATA t576 TYPE REF TO zif_lnt_class_definition.
-                    t576 = t506.
-                    t575 ?= t576.
+                    t575 ?= t506.
                     t572 = t575.
                   ELSE.
                     DATA t579 TYPE REF TO zif_lnt_interface_definition.
@@ -952,9 +946,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
                     ENDIF.
                     IF t788 = abap_true.
                       DATA t798 TYPE REF TO zcl_lnt_ty_class_definition.
-                      DATA t800 TYPE REF TO object.
-                      t800 = t457.
-                      t798 ?= t800.
+                      t798 ?= t457.
                       t3 = t798.
                     ENDIF.
                   ENDIF.
@@ -971,9 +963,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
                 t801 = t802.
                 IF t802 = abap_true.
                   DATA t815 TYPE REF TO zcl_lnt_ty_class_definition.
-                  DATA t817 TYPE REF TO object.
-                  t817 = t457.
-                  t815 ?= t817.
+                  t815 ?= t457.
                   t801 = xsdbool( t815->abstract = abap_true ).
                 ENDIF.
                 IF t801 = abap_true.
@@ -1257,9 +1247,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
     IF xsdbool( t1005 IS INITIAL ) = abap_true.
     ELSE.
       DATA t1023 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t1024 TYPE REF TO zif_lnt_class_definition.
-      t1024 = t1005.
-      t1023 ?= t1024.
+      t1023 ?= t1005.
       t1019 = t1023.
     ENDIF.
     DATA t1026 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1679,9 +1667,7 @@ CLASS zcl_lnt_sy_create_object IMPLEMENTATION.
     t52 = t3->scope.
     t51 = NEW zcl_lnt_object_oriented( i_scope = t52 ).
     DATA t54 TYPE REF TO zif_lnt_interface_definition.
-    DATA t55 TYPE REF TO zif_lnt_class_definition.
-    t55 = t1.
-    t54 ?= t55.
+    t54 ?= t1.
     DATA(t60) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t60->has = abap_true.
     t60->value = |CONSTRUCTOR|.

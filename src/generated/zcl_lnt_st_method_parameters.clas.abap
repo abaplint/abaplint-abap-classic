@@ -94,10 +94,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     DATA t76 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t78 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t79 TYPE REF TO object.
-      t79 = t1.
       TRY.
-          t76 ?= t79.
+          t76 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t76 IS NOT BOUND.
@@ -118,10 +116,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     t75 = zcl_lnt_st_combi_module=>opt_prio( i_first = t76 ).
     IF t75 IS BOUND.
       DATA t80 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t81 TYPE REF TO object.
-      t81 = t75.
       TRY.
-          t74 ?= t81.
+          t74 ?= t75.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t74 IS NOT BOUND.
@@ -144,10 +140,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t88 TYPE REF TO object.
-      t88 = t15.
       TRY.
-          t85 ?= t88.
+          t85 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t85 IS NOT BOUND.
@@ -168,10 +162,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     t84 = zcl_lnt_st_combi_module=>opt_prio( i_first = t85 ).
     IF t84 IS BOUND.
       DATA t89 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t90 TYPE REF TO object.
-      t90 = t84.
       TRY.
-          t83 ?= t90.
+          t83 ?= t84.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t83 IS NOT BOUND.
@@ -196,10 +188,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t98 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t99 TYPE REF TO object.
-      t99 = t29.
       TRY.
-          t96 ?= t99.
+          t96 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t96 IS NOT BOUND.
@@ -220,10 +210,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     t95 = zcl_lnt_st_combi_module=>opt_prio( i_first = t96 ).
     IF t95 IS BOUND.
       DATA t100 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t101 TYPE REF TO object.
-      t101 = t95.
       TRY.
-          t94 ?= t101.
+          t94 ?= t95.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t94 IS NOT BOUND.
@@ -249,10 +237,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     DATA t105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t43 IS BOUND.
       DATA t107 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t108 TYPE REF TO object.
-      t108 = t43.
       TRY.
-          t105 ?= t108.
+          t105 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t105 IS NOT BOUND.
@@ -273,10 +259,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     t104 = zcl_lnt_st_combi_module=>opt_prio( i_first = t105 ).
     IF t104 IS BOUND.
       DATA t109 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t110 TYPE REF TO object.
-      t110 = t104.
       TRY.
-          t103 ?= t110.
+          t103 ?= t104.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t103 IS NOT BOUND.
@@ -302,10 +286,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t57 IS BOUND.
       DATA t116 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t117 TYPE REF TO object.
-      t117 = t57.
       TRY.
-          t114 ?= t117.
+          t114 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t114 IS NOT BOUND.
@@ -326,10 +308,8 @@ CLASS zcl_lnt_st_method_parameters IMPLEMENTATION.
     t113 = zcl_lnt_st_combi_module=>opt_prio( i_first = t114 ).
     IF t113 IS BOUND.
       DATA t118 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t119 TYPE REF TO object.
-      t119 = t113.
       TRY.
-          t112 ?= t119.
+          t112 ?= t113.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t112 IS NOT BOUND.

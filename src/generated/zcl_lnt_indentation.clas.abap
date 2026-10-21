@@ -163,9 +163,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
       DATA t39 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t41 TYPE REF TO zcl_lnt_class.
       DATA t42 TYPE REF TO zcl_lnt_class.
-      DATA t44 TYPE REF TO object.
-      t44 = t2.
-      t42 ?= t44.
+      t42 ?= t2.
       t41 = t42.
       DATA t46 TYPE REF TO zif_lnt_abap_file_information.
       DATA t48 TYPE REF TO zcl_lnt_abap_file.
@@ -210,9 +208,7 @@ CLASS zcl_lnt_indentation IMPLEMENTATION.
           DATA t90 TYPE REF TO zcl_lnt_info_class_definition.
           t90 = t39.
           DATA t95 TYPE REF TO zcl_lnt_class.
-          DATA t97 TYPE REF TO object.
-          t97 = t2.
-          t95 ?= t97.
+          t95 ?= t2.
           t84 = t74->is_exception( i_def = t90 i_obj_ac26 = t95 ).
         ENDIF.
         IF t84 = abap_true.

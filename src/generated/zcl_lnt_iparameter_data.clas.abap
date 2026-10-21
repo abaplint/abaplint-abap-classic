@@ -138,10 +138,8 @@ CLASS zcl_lnt_iparameter_data IMPLEMENTATION.
         CLEAR result.
         IF me->left IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t2 TYPE REF TO object.
-          t2 = me->left.
           TRY.
-              result ?= t2.
+              result ?= me->left.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -188,10 +186,8 @@ CLASS zcl_lnt_iparameter_data IMPLEMENTATION.
         CLEAR result.
         IF me->right IS BOUND.
           DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t6 TYPE REF TO object.
-          t6 = me->right.
           TRY.
-              result ?= t6.
+              result ?= me->right.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

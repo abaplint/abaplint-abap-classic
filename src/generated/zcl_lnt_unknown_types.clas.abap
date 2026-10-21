@@ -109,9 +109,7 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
     ENDIF.
     DATA(t10) = me->reg.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     result = me->remove_duplicates( i_list = me->traverse( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ) ).
 
   ENDMETHOD.
@@ -342,21 +340,15 @@ CLASS zcl_lnt_unknown_types IMPLEMENTATION.
       IF t89 = abap_true.
         DATA t98 TYPE REF TO zcl_lnt_abstract_type.
         DATA t100 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t101 TYPE REF TO zcl_lnt_fi_identifier.
-        t101 = t9->resolved.
-        t100 ?= t101.
+        t100 ?= t9->resolved.
         t98 = t100->type_cba0.
         t88 = xsdbool( t98 IS BOUND AND t98 IS INSTANCE OF zcl_lnt_unknown_type ).
       ENDIF.
       IF t88 = abap_true.
         DATA t108 TYPE REF TO zcl_lnt_unknown_type.
-        DATA t109 TYPE REF TO zcl_lnt_abstract_type.
         DATA t111 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t112 TYPE REF TO zcl_lnt_fi_identifier.
-        t112 = t9->resolved.
-        t111 ?= t112.
-        t109 = t111->type_cba0.
-        t108 ?= t109.
+        t111 ?= t9->resolved.
+        t108 ?= t111->type_cba0.
         DATA t116 TYPE string.
         t116 = t108->error.
         DATA t119 TYPE REF TO zcl_lnt_issue.

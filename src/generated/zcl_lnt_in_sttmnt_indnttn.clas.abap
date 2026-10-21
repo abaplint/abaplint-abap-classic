@@ -152,9 +152,7 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
       DATA t10 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t12 TYPE REF TO zcl_lnt_class.
       DATA t13 TYPE REF TO zcl_lnt_class.
-      DATA t15 TYPE REF TO object.
-      t15 = t2.
-      t13 ?= t15.
+      t13 ?= t2.
       t12 = t13.
       DATA t17 TYPE REF TO zif_lnt_abap_file_information.
       DATA t19 TYPE REF TO zcl_lnt_abap_file.
@@ -196,9 +194,7 @@ CLASS zcl_lnt_in_sttmnt_indnttn IMPLEMENTATION.
           DATA t58 TYPE REF TO zcl_lnt_info_class_definition.
           t58 = t10.
           DATA t63 TYPE REF TO zcl_lnt_class.
-          DATA t65 TYPE REF TO object.
-          t65 = t2.
-          t63 ?= t65.
+          t63 ?= t2.
           t52 = t6->is_exception( i_def = t58 i_obj_ac26 = t63 ).
         ENDIF.
         IF t52 = abap_true.

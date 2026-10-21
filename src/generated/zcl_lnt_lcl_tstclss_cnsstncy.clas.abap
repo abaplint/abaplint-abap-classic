@@ -345,9 +345,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
     IF t115 = abap_true.
       DATA t129 TYPE REF TO zcl_lnt_abap_file.
       DATA t130 TYPE REF TO zcl_lnt_class.
-      DATA t132 TYPE REF TO object.
-      t132 = t2.
-      t130 ?= t132.
+      t130 ?= t2.
       t129 = t130->get_testclass_file( ).
       DATA t133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       t114 = xsdbool( xsdbool( t129 IS INITIAL ) = abap_false ).
@@ -359,9 +357,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       DATA t140 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t142 TYPE REF TO zcl_lnt_abstract_object.
       DATA t143 TYPE REF TO zcl_lnt_class.
-      DATA t145 TYPE REF TO object.
-      t145 = t2.
-      t143 ?= t145.
+      t143 ?= t2.
       t142 = t143.
       DATA t147 TYPE REF TO zif_lnt_file.
       t147 = t142->get_xml_file( ).
@@ -433,9 +429,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       DATA t180 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t182 TYPE REF TO zcl_lnt_class.
       DATA t183 TYPE REF TO zcl_lnt_class.
-      DATA t185 TYPE REF TO object.
-      t185 = t2.
-      t183 ?= t185.
+      t183 ?= t2.
       t182 = t183.
       DATA t187 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t189 TYPE REF TO zif_lnt_abap_file_information.
@@ -541,9 +535,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
     DATA t289 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t290 TYPE REF TO zcl_lnt_abap_file.
     DATA t292 TYPE REF TO zcl_lnt_class.
-    DATA t294 TYPE REF TO object.
-    t294 = t2.
-    t292 ?= t294.
+    t292 ?= t2.
     t290 = t292->get_main_abap_file( ).
     DATA t295 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     IF xsdbool( t290 IS INITIAL ) = abap_true.
@@ -577,9 +569,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
     IF t279 = abap_true.
       DATA t310 TYPE REF TO zcl_lnt_abap_file.
       DATA t311 TYPE REF TO zcl_lnt_class.
-      DATA t313 TYPE REF TO object.
-      t313 = t2.
-      t311 ?= t313.
+      t311 ?= t2.
       t310 = t311->get_testclass_file( ).
       DATA t314 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       t278 = xsdbool( t310 IS INITIAL ).
@@ -591,9 +581,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       DATA t320 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t322 TYPE REF TO zcl_lnt_abstract_object.
       DATA t323 TYPE REF TO zcl_lnt_class.
-      DATA t325 TYPE REF TO object.
-      t325 = t2.
-      t323 ?= t325.
+      t323 ?= t2.
       t322 = t323.
       DATA t327 TYPE REF TO zif_lnt_file.
       t327 = t322->get_xml_file( ).
@@ -665,9 +653,7 @@ CLASS zcl_lnt_lcl_tstclss_cnsstncy IMPLEMENTATION.
       DATA t360 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t362 TYPE REF TO zcl_lnt_class.
       DATA t363 TYPE REF TO zcl_lnt_class.
-      DATA t365 TYPE REF TO object.
-      t365 = t2.
-      t363 ?= t365.
+      t363 ?= t2.
       t362 = t363.
       DATA t367 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t369 TYPE REF TO zif_lnt_abap_file_information.

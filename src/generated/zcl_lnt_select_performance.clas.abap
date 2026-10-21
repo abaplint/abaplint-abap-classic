@@ -169,9 +169,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
     CREATE OBJECT t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zcl_lnt_abap_object.
-    DATA t12 TYPE REF TO object.
-    t12 = t1.
-    t10 ?= t12.
+    t10 ?= t1.
     t8 = t10->parsed.
     DATA t15 TYPE REF TO zcl_lnt_abap_file.
     DATA t16 TYPE REF TO object.
@@ -429,9 +427,7 @@ CLASS zcl_lnt_select_performance IMPLEMENTATION.
         DATA t153 TYPE REF TO zif_lnt_spaghetti_scope.
         DATA(t157) = me->reg.
         DATA t158 TYPE REF TO zcl_lnt_abap_object.
-        DATA t160 TYPE REF TO object.
-        t160 = t1.
-        t158 ?= t160.
+        t158 ?= t1.
         t153 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t157 i_object_19cd = t158 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( ).
         DATA t161 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t163 TYPE REF TO zcl_lnt_structure_node.

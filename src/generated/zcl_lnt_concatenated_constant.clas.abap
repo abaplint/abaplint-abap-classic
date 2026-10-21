@@ -31,10 +31,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t6 ).
     IF t5 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t13 TYPE REF TO object.
-      t13 = t5.
       TRY.
-          t4 ?= t13.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -76,10 +74,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t24 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t25 ).
     IF t24 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t24.
       TRY.
-          t23 ?= t32.
+          t23 ?= t24.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t23 IS NOT BOUND.
@@ -102,10 +98,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t34 ).
     IF t18 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t18.
       TRY.
-          t17 ?= t40.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -126,10 +120,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>plus_prio( i_first = t17 ).
     IF t16 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t16.
       TRY.
-          t15 ?= t42.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -167,10 +159,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t53 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t54 ).
     IF t53 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t53.
       TRY.
-          t52 ?= t61.
+          t52 ?= t53.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t52 IS NOT BOUND.
@@ -212,10 +202,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t72 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t73 ).
     IF t72 IS BOUND.
       DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t80 TYPE REF TO object.
-      t80 = t72.
       TRY.
-          t71 ?= t80.
+          t71 ?= t72.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t71 IS NOT BOUND.
@@ -238,10 +226,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t66 = zcl_lnt_st_combi_module=>seq( i_first = t68 i_second = t71 i_rest = t82 ).
     IF t66 IS BOUND.
       DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t88 TYPE REF TO object.
-      t88 = t66.
       TRY.
-          t65 ?= t88.
+          t65 ?= t66.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.
@@ -262,10 +248,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     t64 = zcl_lnt_st_combi_module=>plus_prio( i_first = t65 ).
     IF t64 IS BOUND.
       DATA t89 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t90 TYPE REF TO object.
-      t90 = t64.
       TRY.
-          t63 ?= t90.
+          t63 ?= t64.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t63 IS NOT BOUND.
@@ -289,10 +273,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     DATA t99 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t101 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t102 TYPE REF TO object.
-      t102 = t1.
       TRY.
-          t99 ?= t102.
+          t99 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t99 IS NOT BOUND.
@@ -313,10 +295,8 @@ CLASS zcl_lnt_concatenated_constant IMPLEMENTATION.
     DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t49 IS BOUND.
       DATA t106 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t107 TYPE REF TO object.
-      t107 = t49.
       TRY.
-          t104 ?= t107.
+          t104 ?= t49.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t104 IS NOT BOUND.

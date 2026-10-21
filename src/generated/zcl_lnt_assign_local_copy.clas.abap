@@ -39,10 +39,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>alt( i_first = t10 i_second = t13 i_rest = t16 ).
     IF t8 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t8.
       TRY.
-          t7 ?= t22.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -89,10 +87,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>alt( i_first = t38 i_second = t41 i_rest = t44 ).
     IF t36 IS BOUND.
       DATA t49 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t50 TYPE REF TO object.
-      t50 = t36.
       TRY.
-          t35 ?= t50.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -138,10 +134,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t82 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t83 TYPE REF TO object.
-      t83 = t1.
       TRY.
-          t80 ?= t83.
+          t80 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t80 IS NOT BOUND.
@@ -162,10 +156,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t88 TYPE REF TO object.
-      t88 = t29.
       TRY.
-          t85 ?= t88.
+          t85 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t85 IS NOT BOUND.
@@ -188,10 +180,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     DATA t92 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t57 IS BOUND.
       DATA t94 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t95 TYPE REF TO object.
-      t95 = t57.
       TRY.
-          t92 ?= t95.
+          t92 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t92 IS NOT BOUND.
@@ -225,10 +215,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     t78 = zcl_lnt_st_combi_module=>alt( i_first = t80 i_second = t85 i_rest = t89 ).
     IF t78 IS BOUND.
       DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t104 TYPE REF TO object.
-      t104 = t78.
       TRY.
-          t77 ?= t104.
+          t77 ?= t78.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t77 IS NOT BOUND.
@@ -269,10 +257,8 @@ CLASS zcl_lnt_assign_local_copy IMPLEMENTATION.
     DATA t119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t71 IS BOUND.
       DATA t121 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t122 TYPE REF TO object.
-      t122 = t71.
       TRY.
-          t119 ?= t122.
+          t119 ?= t71.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t119 IS NOT BOUND.

@@ -47,10 +47,8 @@ CLASS zcl_lnt_st_on_change IMPLEMENTATION.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t1.
       TRY.
-          t28 ?= t31.
+          t28 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t28 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_st_on_change IMPLEMENTATION.
     t27 = zcl_lnt_st_combi_module=>star( i_first = t28 ).
     IF t27 IS BOUND.
       DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t33 TYPE REF TO object.
-      t33 = t27.
       TRY.
-          t26 ?= t33.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -99,10 +95,8 @@ CLASS zcl_lnt_st_on_change IMPLEMENTATION.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t15.
       TRY.
-          t40 ?= t43.
+          t40 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t40 IS NOT BOUND.

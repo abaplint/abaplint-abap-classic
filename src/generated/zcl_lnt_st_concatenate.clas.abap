@@ -33,10 +33,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>alt_prio( i_first = t10 i_second = t13 i_rest = t16 ).
     IF t8 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t8.
       TRY.
-          t7 ?= t22.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -85,10 +83,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t55 TYPE REF TO object.
-      t55 = t1.
       TRY.
-          t52 ?= t55.
+          t52 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t52 IS NOT BOUND.
@@ -109,10 +105,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t32 IS BOUND.
       DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t60 TYPE REF TO object.
-      t60 = t32.
       TRY.
-          t57 ?= t60.
+          t57 ?= t32.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t57 IS NOT BOUND.
@@ -135,10 +129,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t35 IS BOUND.
       DATA t66 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t67 TYPE REF TO object.
-      t67 = t35.
       TRY.
-          t64 ?= t67.
+          t64 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t64 IS NOT BOUND.
@@ -180,10 +172,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     t79 = zcl_lnt_st_combi_module=>plus( i_first = t80 ).
     IF t79 IS BOUND.
       DATA t82 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t83 TYPE REF TO object.
-      t83 = t79.
       TRY.
-          t78 ?= t83.
+          t78 ?= t79.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t78 IS NOT BOUND.
@@ -228,10 +218,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t90 IS BOUND.
       DATA t114 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t115 TYPE REF TO object.
-      t115 = t90.
       TRY.
-          t112 ?= t115.
+          t112 ?= t90.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t112 IS NOT BOUND.
@@ -252,10 +240,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t72 IS BOUND.
       DATA t119 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t120 TYPE REF TO object.
-      t120 = t72.
       TRY.
-          t117 ?= t120.
+          t117 ?= t72.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t117 IS NOT BOUND.
@@ -278,10 +264,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     t110 = zcl_lnt_st_combi_module=>alt_prio( i_first = t112 i_second = t117 i_rest = t122 ).
     IF t110 IS BOUND.
       DATA t127 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t128 TYPE REF TO object.
-      t128 = t110.
       TRY.
-          t109 ?= t128.
+          t109 ?= t110.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t109 IS NOT BOUND.
@@ -323,10 +307,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     DATA t140 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t49 IS BOUND.
       DATA t142 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t143 TYPE REF TO object.
-      t143 = t49.
       TRY.
-          t140 ?= t143.
+          t140 ?= t49.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t140 IS NOT BOUND.
@@ -347,10 +329,8 @@ CLASS zcl_lnt_st_concatenate IMPLEMENTATION.
     t139 = zcl_lnt_st_combi_module=>opt_prio( i_first = t140 ).
     IF t139 IS BOUND.
       DATA t144 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t145 TYPE REF TO object.
-      t145 = t139.
       TRY.
-          t138 ?= t145.
+          t138 ?= t139.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t138 IS NOT BOUND.

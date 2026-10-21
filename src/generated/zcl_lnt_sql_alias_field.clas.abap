@@ -28,10 +28,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>tok( i_t = t12 ).
     IF t11 IS BOUND.
       DATA t13 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t14 TYPE REF TO object.
-      t14 = t11.
       TRY.
-          t10 ?= t14.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -52,10 +50,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t1.
       TRY.
-          t16 ?= t19.
+          t16 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t16 IS NOT BOUND.
@@ -81,10 +77,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t34 TYPE REF TO object.
-      t34 = t7.
       TRY.
-          t31 ?= t34.
+          t31 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t31 IS NOT BOUND.
@@ -105,10 +99,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t1.
       TRY.
-          t36 ?= t39.
+          t36 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t36 IS NOT BOUND.
@@ -131,10 +123,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t29 = zcl_lnt_st_combi_module=>alt_prio( i_first = t31 i_second = t36 i_rest = t41 ).
     IF t29 IS BOUND.
       DATA t46 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t47 TYPE REF TO object.
-      t47 = t29.
       TRY.
-          t28 ?= t47.
+          t28 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t28 IS NOT BOUND.
@@ -162,10 +152,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t55 = zcl_lnt_st_combi_module=>tok( i_t = t56 ).
     IF t55 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t55.
       TRY.
-          t54 ?= t58.
+          t54 ?= t55.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t54 IS NOT BOUND.
@@ -191,10 +179,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t61 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t62 ).
     IF t61 IS BOUND.
       DATA t66 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t67 TYPE REF TO object.
-      t67 = t61.
       TRY.
-          t60 ?= t67.
+          t60 ?= t61.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.
@@ -217,10 +203,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t52 = zcl_lnt_st_combi_module=>seq( i_first = t54 i_second = t60 i_rest = t69 ).
     IF t52 IS BOUND.
       DATA t74 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t75 TYPE REF TO object.
-      t75 = t52.
       TRY.
-          t51 ?= t75.
+          t51 ?= t52.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t51 IS NOT BOUND.
@@ -241,10 +225,8 @@ CLASS zcl_lnt_sql_alias_field IMPLEMENTATION.
     t50 = zcl_lnt_st_combi_module=>star_prio( i_first = t51 ).
     IF t50 IS BOUND.
       DATA t76 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t77 TYPE REF TO object.
-      t77 = t50.
       TRY.
-          t49 ?= t77.
+          t49 ?= t50.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t49 IS NOT BOUND.

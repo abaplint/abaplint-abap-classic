@@ -58,10 +58,8 @@ CLASS zcl_lnt_import_nametab IMPLEMENTATION.
     DATA t26 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t1.
       TRY.
-          t26 ?= t29.
+          t26 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.

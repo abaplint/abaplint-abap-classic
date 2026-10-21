@@ -48,10 +48,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>alt( i_first = t15 i_second = t18 i_rest = t21 ).
     IF t13 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t27 TYPE REF TO object.
-      t27 = t13.
       TRY.
-          t12 ?= t27.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -98,10 +96,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>opt( i_first = t37 ).
     IF t36 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t36.
       TRY.
-          t35 ?= t40.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -139,10 +135,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     t45 = zcl_lnt_st_combi_module=>alt( i_first = t47 i_second = t50 i_rest = t53 ).
     IF t45 IS BOUND.
       DATA t58 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t59 TYPE REF TO object.
-      t59 = t45.
       TRY.
-          t44 ?= t59.
+          t44 ?= t45.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t44 IS NOT BOUND.
@@ -163,10 +157,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     t43 = zcl_lnt_st_combi_module=>opt( i_first = t44 ).
     IF t43 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t43.
       TRY.
-          t42 ?= t61.
+          t42 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t42 IS NOT BOUND.
@@ -199,10 +191,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     t64 = zcl_lnt_st_combi_module=>opt( i_first = t65 ).
     IF t64 IS BOUND.
       DATA t67 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t68 TYPE REF TO object.
-      t68 = t64.
       TRY.
-          t63 ?= t68.
+          t63 ?= t64.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t63 IS NOT BOUND.
@@ -227,10 +217,8 @@ CLASS zcl_lnt_get_property IMPLEMENTATION.
     DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t77 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t78 TYPE REF TO object.
-      t78 = t1.
       TRY.
-          t75 ?= t78.
+          t75 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t75 IS NOT BOUND.

@@ -204,11 +204,9 @@ CLASS zcl_lnt_unnecessary_pragma IMPLEMENTATION.
       t36 = t37.
       IF t37 = abap_true.
         DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t43 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t44 TYPE REF TO zcl_lnt_abstract_node.
         t44 = t20.
-        t43 = t44->children.
-        t42 ?= t43.
+        t42 ?= t44->children.
         t42->load( ).
         t36 = xsdbool( lines( t42->items ) = 1 ).
       ENDIF.

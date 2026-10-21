@@ -594,9 +594,7 @@ CLASS zcl_lnt_identical_descriptions IMPLEMENTATION.
       DATA(t121) = VALUE i( ).
       DATA t122 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t123 TYPE REF TO zcl_lnt_function_group.
-      DATA t125 TYPE REF TO object.
-      t125 = t1.
-      t123 ?= t125.
+      t123 ?= t1.
       t122 = me->check_function_modules( i_fugr = t123 ).
       DATA t126 TYPE REF TO zcl_lnt_issue.
       DATA t127 TYPE REF TO object.

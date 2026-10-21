@@ -27,10 +27,8 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>tok( i_t = t5 ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t7 TYPE REF TO object.
-      t7 = t4.
       TRY.
-          t3 ?= t7.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -54,10 +52,8 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>tok( i_t = t11 ).
     IF t10 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t13 TYPE REF TO object.
-      t13 = t10.
       TRY.
-          t9 ?= t13.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.
@@ -87,10 +83,8 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t23 = zcl_lnt_st_combi_module=>tok( i_t = t24 ).
     IF t23 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t26 TYPE REF TO object.
-      t26 = t23.
       TRY.
-          t22 ?= t26.
+          t22 ?= t23.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t22 IS NOT BOUND.
@@ -114,10 +108,8 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t29 = zcl_lnt_st_combi_module=>tok( i_t = t30 ).
     IF t29 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t29.
       TRY.
-          t28 ?= t32.
+          t28 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t28 IS NOT BOUND.
@@ -143,10 +135,8 @@ CLASS zcl_lnt_sql_aggregation_module IMPLEMENTATION.
     t37 = zcl_lnt_st_combi_module=>tok( i_t = t38 ).
     IF t37 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t37.
       TRY.
-          t36 ?= t40.
+          t36 ?= t37.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t36 IS NOT BOUND.

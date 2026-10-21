@@ -190,9 +190,7 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
         DATA t14 TYPE REF TO object.
         DATA t15 TYPE REF TO zcl_lnt_token_node_regex.
         CLEAR t15.
-        DATA t17 TYPE REF TO object.
-        t17 = t5.
-        t15 ?= t17.
+        t15 ?= t5.
         t14 = t15->get_db65( ).
         t13 ?= t14.
         t12 = t13.
@@ -362,9 +360,7 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
         DATA t115 TYPE REF TO zcl_lnt_abstract_token.
         DATA t117 TYPE REF TO zcl_lnt_token_node.
         CLEAR t117.
-        DATA t119 TYPE REF TO object.
-        t119 = t5.
-        t117 ?= t119.
+        t117 ?= t5.
         t115 = t117->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
         DATA(t120) = VALUE string( ).
         t120 = t115->str.
@@ -732,9 +728,7 @@ CLASS zcl_lnt_fix_case IMPLEMENTATION.
           DATA(t332) = VALUE string( ).
           DATA t333 TYPE REF TO zcl_lnt_expression_node.
           CLEAR t333.
-          DATA t335 TYPE REF TO object.
-          t335 = t5.
-          t333 ?= t335.
+          t333 ?= t5.
           t332 = me->execute( i_statement = t333 ).
         ELSE.
           DATA t336 TYPE REF TO zlnt_exception_cl_30eec8e8805d.

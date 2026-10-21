@@ -107,10 +107,8 @@ CLASS zcl_lnt_cds_arith_paren IMPLEMENTATION.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t48 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t49 TYPE REF TO object.
-      t49 = t1.
       TRY.
-          t46 ?= t49.
+          t46 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t46 IS NOT BOUND.
@@ -134,10 +132,8 @@ CLASS zcl_lnt_cds_arith_paren IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>alt_prio( i_first = t38 i_second = t41 i_rest = t43 ).
     IF t36 IS BOUND.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t55 TYPE REF TO object.
-      t55 = t36.
       TRY.
-          t35 ?= t55.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.

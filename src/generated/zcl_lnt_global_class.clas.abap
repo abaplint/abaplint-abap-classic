@@ -279,9 +279,7 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t106 TYPE string.
         DATA t107 TYPE REF TO zcl_lnt_abstract_object.
         DATA t108 TYPE REF TO zcl_lnt_class.
-        DATA t110 TYPE REF TO object.
-        t110 = t2.
-        t108 ?= t110.
+        t108 ?= t2.
         t107 = t108.
         t106 = t107->name.
         DATA(t113) = strlen( t106 ).
@@ -546,9 +544,7 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
           CLEAR t256.
           DATA t257 TYPE REF TO zcl_lnt_class.
           DATA t258 TYPE REF TO zcl_lnt_class.
-          DATA t260 TYPE REF TO object.
-          t260 = t2.
-          t258 ?= t260.
+          t258 ?= t2.
           t257 = t258.
           t257->parse_xml( ).
           DATA t264 TYPE REF TO zcl_lnt_shape_e272b380.
@@ -721,9 +717,7 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
             CLEAR t355.
             DATA t356 TYPE REF TO zcl_lnt_class.
             DATA t357 TYPE REF TO zcl_lnt_class.
-            DATA t359 TYPE REF TO object.
-            t359 = t2.
-            t357 ?= t359.
+            t357 ?= t2.
             t356 = t357.
             t356->parse_xml( ).
             DATA t363 TYPE REF TO zcl_lnt_shape_e272b380.
@@ -957,9 +951,7 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t501 TYPE string.
         DATA t502 TYPE REF TO zcl_lnt_abstract_object.
         DATA t503 TYPE REF TO zcl_lnt_class.
-        DATA t505 TYPE REF TO object.
-        t505 = t2.
-        t503 ?= t505.
+        t503 ?= t2.
         t502 = t503.
         t501 = t502->name.
         DATA(t508) = strlen( t501 ).
@@ -1166,9 +1158,7 @@ CLASS zcl_lnt_global_class IMPLEMENTATION.
         DATA t628 TYPE string.
         DATA t629 TYPE REF TO zcl_lnt_abstract_object.
         DATA t630 TYPE REF TO zcl_lnt_ob_interface.
-        DATA t632 TYPE REF TO object.
-        t632 = t2.
-        t630 ?= t632.
+        t630 ?= t2.
         t629 = t630.
         t628 = t629->name.
         DATA(t635) = strlen( t628 ).

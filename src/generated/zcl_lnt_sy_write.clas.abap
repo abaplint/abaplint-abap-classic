@@ -17,11 +17,9 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
     DATA t3 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t4 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_abstract_node.
     t7 = t1.
-    t6 = t7->children.
-    t5 ?= t6.
+    t5 ?= t7->children.
     DATA t11 TYPE REF TO object.
     t5->load( ).
     READ TABLE t5->items INDEX 2 INTO t11.
@@ -40,11 +38,9 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
     IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_write_offset_length ) = abap_true.
       DATA t17 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t19 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t20 TYPE REF TO zcl_lnt_abstract_node.
       t20 = t1.
-      t19 = t20->children.
-      t18 ?= t19.
+      t18 ?= t20->children.
       DATA t24 TYPE REF TO object.
       t18->load( ).
       READ TABLE t18->items INDEX 3 INTO t24.
@@ -112,11 +108,9 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t49 IS BOUND.
         DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t54.
-        DATA t55 TYPE REF TO object.
         CLEAR t54.
-        t55 = t49.
         TRY.
-            t52 ?= t55.
+            t52 ?= t49.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t52 IS NOT BOUND.
@@ -138,11 +132,9 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t3 IS BOUND.
         DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t56.
-        DATA t57 TYPE REF TO object.
         CLEAR t56.
-        t57 = t3.
         TRY.
-            t53 ?= t57.
+            t53 ?= t3.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t53 IS NOT BOUND.
@@ -309,9 +301,7 @@ CLASS zcl_lnt_sy_write IMPLEMENTATION.
       IF t147 = abap_true.
         DATA t164 TYPE REF TO zcl_lnt_abstract_type.
         DATA t165 TYPE REF TO zif_lnt_union_2724f734.
-        DATA t166 TYPE REF TO zcl_lnt_abstract_type.
-        t166 = t144.
-        t165 ?= t166.
+        t165 ?= t144.
         t164 ?= t165.
         t146 = t141->is_char_like_strict( i_type_9913 = t164 ).
       ELSE.

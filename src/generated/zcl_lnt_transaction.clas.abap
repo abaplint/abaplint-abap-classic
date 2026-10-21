@@ -419,11 +419,9 @@ CLASS zcl_lnt_transaction IMPLEMENTATION.
           IF t208 IS BOUND.
             DATA t212 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t212.
-            DATA t213 TYPE REF TO object.
             CLEAR t212.
-            t213 = t208.
             TRY.
-                t207 ?= t213.
+                t207 ?= t208.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t207 IS NOT BOUND.

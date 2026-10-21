@@ -47,10 +47,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t1.
       TRY.
-          t29 ?= t32.
+          t29 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.
@@ -77,10 +75,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     t27 = zcl_lnt_st_combi_module=>alt( i_first = t29 i_second = t34 i_rest = t37 ).
     IF t27 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t27.
       TRY.
-          t26 ?= t43.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -136,10 +132,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     t62 = zcl_lnt_st_combi_module=>seq( i_first = t64 i_second = t67 i_rest = t70 ).
     IF t62 IS BOUND.
       DATA t75 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t76 TYPE REF TO object.
-      t76 = t62.
       TRY.
-          t61 ?= t76.
+          t61 ?= t62.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t61 IS NOT BOUND.
@@ -160,10 +154,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     t60 = zcl_lnt_st_combi_module=>opt( i_first = t61 ).
     IF t60 IS BOUND.
       DATA t77 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t78 TYPE REF TO object.
-      t78 = t60.
       TRY.
-          t59 ?= t78.
+          t59 ?= t60.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t59 IS NOT BOUND.
@@ -189,10 +181,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t84 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t85 TYPE REF TO object.
-      t85 = t15.
       TRY.
-          t82 ?= t85.
+          t82 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t82 IS NOT BOUND.
@@ -213,10 +203,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     t81 = zcl_lnt_st_combi_module=>plus( i_first = t82 ).
     IF t81 IS BOUND.
       DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t87 TYPE REF TO object.
-      t87 = t81.
       TRY.
-          t80 ?= t87.
+          t80 ?= t81.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t80 IS NOT BOUND.
@@ -241,10 +229,8 @@ CLASS zcl_lnt_st_authority_check IMPLEMENTATION.
     DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t48 IS BOUND.
       DATA t96 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t97 TYPE REF TO object.
-      t97 = t48.
       TRY.
-          t94 ?= t97.
+          t94 ?= t48.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t94 IS NOT BOUND.

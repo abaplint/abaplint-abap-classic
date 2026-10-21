@@ -209,10 +209,8 @@ CLASS zcl_lnt_shape_a19bf969 IMPLEMENTATION.
           CLEAR result.
           IF me->kernel IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->kernel.
             TRY.
-                result ?= t2.
+                result ?= me->kernel.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.
@@ -237,10 +235,8 @@ CLASS zcl_lnt_shape_a19bf969 IMPLEMENTATION.
           CLEAR result.
           IF me->op IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t4 TYPE REF TO object.
-            t4 = me->op.
             TRY.
-                result ?= t4.
+                result ?= me->op.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.
@@ -265,10 +261,8 @@ CLASS zcl_lnt_shape_a19bf969 IMPLEMENTATION.
           CLEAR result.
           IF me->cloud_669f IS BOUND.
             DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t6 TYPE REF TO object.
-            t6 = me->cloud_669f.
             TRY.
-                result ?= t6.
+                result ?= me->cloud_669f.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.
@@ -293,10 +287,8 @@ CLASS zcl_lnt_shape_a19bf969 IMPLEMENTATION.
           CLEAR result.
           IF me->ce IS BOUND.
             DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t8 TYPE REF TO object.
-            t8 = me->ce.
             TRY.
-                result ?= t8.
+                result ?= me->ce.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

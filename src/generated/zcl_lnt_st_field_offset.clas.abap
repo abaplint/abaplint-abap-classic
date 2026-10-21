@@ -20,10 +20,8 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -53,10 +51,8 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t17 ).
     IF t16 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t16.
       TRY.
-          t15 ?= t22.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -86,10 +82,8 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>alt_prio( i_first = t15 i_second = t24 i_rest = t27 ).
     IF t13 IS BOUND.
       DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t33 TYPE REF TO object.
-      t33 = t13.
       TRY.
-          t12 ?= t33.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -110,10 +104,8 @@ CLASS zcl_lnt_st_field_offset IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>opt_prio( i_first = t12 ).
     IF t11 IS BOUND.
       DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t35 TYPE REF TO object.
-      t35 = t11.
       TRY.
-          t10 ?= t35.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.

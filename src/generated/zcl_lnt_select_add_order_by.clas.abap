@@ -144,9 +144,7 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
     t4 = t5.
     IF t5 = abap_false.
       DATA t10 TYPE REF TO zcl_lnt_abap_object.
-      DATA t12 TYPE REF TO object.
-      t12 = t1.
-      t10 ?= t12.
+      t10 ?= t1.
       t4 = xsdbool( t10->get_type( ) = |INTF| ).
     ENDIF.
     IF t4 = abap_true.
@@ -156,15 +154,11 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
     DATA t15 TYPE REF TO zif_lnt_spaghetti_scope.
     DATA(t19) = me->reg.
     DATA t20 TYPE REF TO zcl_lnt_abap_object.
-    DATA t22 TYPE REF TO object.
-    t22 = t1.
-    t20 ?= t22.
+    t20 ?= t1.
     t15 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t19 i_object_19cd = t20 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abap_object.
-    DATA t27 TYPE REF TO object.
-    t27 = t1.
-    t25 ?= t27.
+    t25 ?= t1.
     t23 = t25->parsed.
     DATA t30 TYPE REF TO zcl_lnt_abap_file.
     DATA t31 TYPE REF TO object.
@@ -627,11 +621,9 @@ CLASS zcl_lnt_select_add_order_by IMPLEMENTATION.
       t44 = t58.
       DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t70 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t71 TYPE REF TO zcl_lnt_abstract_node.
       t71 = t4.
-      t70 = t71->children.
-      t69 ?= t70.
+      t69 ?= t71->children.
       t68 = t69.
       DATA(t76) = VALUE abap_bool( ).
       DATA t77 TYPE abap_bool.

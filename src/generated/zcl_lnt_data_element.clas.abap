@@ -224,9 +224,7 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
       IF xsdbool( t48 IS BOUND AND t48 IS INSTANCE OF zcl_lnt_domain ) = abap_true.
         DATA t68 TYPE REF TO zcl_lnt_domain.
         DATA t69 TYPE REF TO zcl_lnt_domain.
-        DATA t71 TYPE REF TO object.
-        t71 = t48.
-        t69 ?= t71.
+        t69 ?= t48.
         t68 = t69.
         DATA t73 TYPE REF TO zcl_lnt_iparse_result.
         t73 = t68->prs_instn_src_objct_dmn_ts_dmn( ).
@@ -3142,11 +3140,9 @@ CLASS zcl_lnt_data_element IMPLEMENTATION.
           IF t1079 IS BOUND.
             DATA t1083 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t1083.
-            DATA t1084 TYPE REF TO object.
             CLEAR t1083.
-            t1084 = t1079.
             TRY.
-                t1078 ?= t1084.
+                t1078 ?= t1079.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t1078 IS NOT BOUND.

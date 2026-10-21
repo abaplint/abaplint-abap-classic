@@ -112,9 +112,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
     CREATE OBJECT t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t9 TYPE REF TO zcl_lnt_function_group.
-    DATA t11 TYPE REF TO object.
-    t11 = t1.
-    t9 ?= t11.
+    t9 ?= t1.
     t8 = t9->get_modules( ).
     DATA t12 TYPE REF TO zcl_lnt_fnctn_mdl_dfntn.
     DATA t13 TYPE REF TO object.
@@ -141,9 +139,7 @@ CLASS zcl_lnt_fm_glbl_prmtrs_obslt IMPLEMENTATION.
       IF xsdbool( t12->global_parameters = abap_true ) = abap_true.
         DATA t24 TYPE REF TO zcl_lnt_abap_file.
         DATA t26 TYPE REF TO zcl_lnt_function_group.
-        DATA t28 TYPE REF TO object.
-        t28 = t1.
-        t26 ?= t28.
+        t26 ?= t1.
         t24 = t26->get_main_abap_file( ).
         DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t32.

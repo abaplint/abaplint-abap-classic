@@ -415,9 +415,7 @@ CLASS zcl_lnt_sy_catch IMPLEMENTATION.
         DATA t363 TYPE REF TO zif_lnt_union_265b2b50.
         IF xsdbool( t349 IS BOUND ) = abap_true.
           DATA t367 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t368 TYPE REF TO zif_lnt_class_definition.
-          t368 = t349.
-          t367 ?= t368.
+          t367 ?= t349.
           DATA t370 TYPE REF TO zcl_lnt_abstract_type_data.
           t363 = NEW zcl_lnt_object_reference_type( i_id = t367 i_extra = t370 ).
         ELSE.

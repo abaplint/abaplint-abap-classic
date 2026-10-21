@@ -22,10 +22,8 @@ CLASS zcl_lnt_sql_dfnng_nw_assctn IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t5 ).
     IF t4 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t4.
       TRY.
-          t3 ?= t9.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -120,10 +118,8 @@ CLASS zcl_lnt_sql_dfnng_nw_assctn IMPLEMENTATION.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t1.
       TRY.
-          t45 ?= t48.
+          t45 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t45 IS NOT BOUND.
@@ -155,10 +151,8 @@ CLASS zcl_lnt_sql_dfnng_nw_assctn IMPLEMENTATION.
     t53 = zcl_lnt_st_combi_module=>opt_prio( i_first = t54 ).
     IF t53 IS BOUND.
       DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t57 TYPE REF TO object.
-      t57 = t53.
       TRY.
-          t52 ?= t57.
+          t52 ?= t53.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t52 IS NOT BOUND.
@@ -182,10 +176,8 @@ CLASS zcl_lnt_sql_dfnng_nw_assctn IMPLEMENTATION.
     DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t10 IS BOUND.
       DATA t61 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t62 TYPE REF TO object.
-      t62 = t10.
       TRY.
-          t59 ?= t62.
+          t59 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t59 IS NOT BOUND.
@@ -243,10 +235,8 @@ CLASS zcl_lnt_sql_dfnng_nw_assctn IMPLEMENTATION.
     t40 = zcl_lnt_st_combi_module=>seq( i_first = t42 i_second = t45 i_rest = t49 ).
     IF t40 IS BOUND.
       DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t80 TYPE REF TO object.
-      t80 = t40.
       TRY.
-          t39 ?= t80.
+          t39 ?= t40.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t39 IS NOT BOUND.

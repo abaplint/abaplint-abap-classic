@@ -43,9 +43,7 @@ CLASS zcl_lnt_lsp_utils IMPLEMENTATION.
     IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
       DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t38 TYPE REF TO zcl_lnt_abap_object.
-      DATA t40 TYPE REF TO object.
-      t40 = t15.
-      t38 ?= t40.
+      t38 ?= t15.
       t36 = t38->parsed.
       DATA t43 TYPE REF TO zcl_lnt_abap_file.
       DATA t44 TYPE REF TO object.
@@ -402,9 +400,7 @@ CLASS zcl_lnt_lsp_utils IMPLEMENTATION.
       IF xsdbool( t8 IS BOUND AND t8 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA t15 TYPE REF TO zcl_lnt_abstract_token.
         DATA t18 TYPE REF TO zcl_lnt_token_node.
-        DATA t20 TYPE REF TO object.
-        t20 = t8.
-        t18 ?= t20.
+        t18 ?= t8.
         t15 = t18->token.
         DATA(t23) = VALUE abap_bool( ).
         DATA t24 TYPE abap_bool.

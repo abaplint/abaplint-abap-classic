@@ -109,9 +109,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       TRY.
           DATA t10 TYPE REF TO zcl_lnt_class.
           DATA t11 TYPE REF TO zcl_lnt_class.
-          DATA t13 TYPE REF TO object.
-          t13 = t1.
-          t11 ?= t13.
+          t11 ?= t1.
           t10 = t11.
           DATA t15 TYPE REF TO zif_lnt_abap_file_information.
           DATA t17 TYPE REF TO zcl_lnt_abap_file.
@@ -158,9 +156,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
           DATA t58 TYPE REF TO zcl_lnt_info_class_definition.
           t58 = t7.
           DATA t63 TYPE REF TO zcl_lnt_class.
-          DATA t65 TYPE REF TO object.
-          t65 = t1.
-          t63 ?= t65.
+          t63 ?= t1.
           t52 = t3->is_exception( i_def = t58 i_obj_ac26 = t63 ).
         ENDIF.
         IF t52 = abap_true.
@@ -233,9 +229,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
       ENDIF.
       DATA t112 TYPE REF TO zcl_lnt_class.
       DATA t113 TYPE REF TO zcl_lnt_class.
-      DATA t115 TYPE REF TO object.
-      t115 = t1.
-      t113 ?= t115.
+      t113 ?= t1.
       t112 = t113.
       DATA t117 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t119 TYPE REF TO zcl_lnt_abstract_object.
@@ -286,9 +280,7 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ob_interface ) = abap_true.
       DATA t166 TYPE REF TO zcl_lnt_ob_interface.
       DATA t167 TYPE REF TO zcl_lnt_ob_interface.
-      DATA t169 TYPE REF TO object.
-      t169 = t1.
-      t167 ?= t169.
+      t167 ?= t1.
       t166 = t167.
       DATA t171 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA t173 TYPE REF TO zcl_lnt_abstract_object.
@@ -612,11 +604,9 @@ CLASS zcl_lnt_remove_descriptions IMPLEMENTATION.
           IF t120 IS BOUND.
             DATA t124 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t124.
-            DATA t125 TYPE REF TO object.
             CLEAR t124.
-            t125 = t120.
             TRY.
-                t119 ?= t125.
+                t119 ?= t120.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t119 IS NOT BOUND.

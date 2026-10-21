@@ -125,9 +125,7 @@ CLASS zcl_lnt_forbidden_void_type IMPLEMENTATION.
     ENDIF.
     DATA(t17) = me->reg.
     DATA t18 TYPE REF TO zcl_lnt_abap_object.
-    DATA t20 TYPE REF TO object.
-    t20 = t1.
-    t18 ?= t20.
+    t18 ?= t1.
     result = me->traverse( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t17 i_object_19cd = t18 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
 
   ENDMETHOD.

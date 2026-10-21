@@ -102,9 +102,7 @@ CLASS zcl_lnt_sy_read_table IMPLEMENTATION.
     DATA t76 TYPE REF TO zcl_lnt_abstract_type.
     DATA t77 TYPE REF TO zcl_lnt_abstract_type.
     DATA t78 TYPE REF TO zif_lnt_union_297610d4.
-    DATA t79 TYPE REF TO zcl_lnt_abstract_type.
-    t79 = t25.
-    t78 ?= t79.
+    t78 ?= t25.
     t77 ?= t78.
     t76 = t77.
     DATA(t82) = t76.

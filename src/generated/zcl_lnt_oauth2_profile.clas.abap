@@ -204,11 +204,9 @@ CLASS zcl_lnt_oauth2_profile IMPLEMENTATION.
           IF t82 IS BOUND.
             DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t86.
-            DATA t87 TYPE REF TO object.
             CLEAR t86.
-            t87 = t82.
             TRY.
-                t81 ?= t87.
+                t81 ?= t82.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t81 IS NOT BOUND.

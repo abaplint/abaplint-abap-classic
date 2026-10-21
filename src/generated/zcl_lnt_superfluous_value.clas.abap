@@ -266,11 +266,9 @@ CLASS zcl_lnt_superfluous_value IMPLEMENTATION.
         CONTINUE.
       ENDIF.
       DATA t111 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t112 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t113 TYPE REF TO zcl_lnt_abstract_node.
       t113 = t97.
-      t112 = t113->children.
-      t111 ?= t112.
+      t111 ?= t113->children.
       t111->load( ).
       IF xsdbool( lines( t111->items ) = 1 ) = abap_true.
         DATA t122 TYPE REF TO zcl_lnt_issue.

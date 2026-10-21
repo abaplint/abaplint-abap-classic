@@ -16,11 +16,9 @@ CLASS zcl_lnt_sy_call IMPLEMENTATION.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t1.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t3 = t4.
     t3->load( ).
     IF xsdbool( lines( t3->items ) = 2 ) = abap_true.
@@ -92,9 +90,7 @@ CLASS zcl_lnt_sy_call IMPLEMENTATION.
     t53 = t54.
     IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
       DATA t61 TYPE REF TO zcl_lnt_expression_node.
-      DATA t63 TYPE REF TO object.
-      t63 = t53.
-      t61 ?= t63.
+      t61 ?= t53.
       DATA t66 TYPE REF TO zif_lnt_union_8cd68e5e.
       t66 = t50.
       DATA t68 TYPE REF TO zif_lnt_union_8cd68e5e.

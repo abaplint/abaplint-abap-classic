@@ -39,10 +39,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>alt( i_first = t13 i_second = t16 i_rest = t19 ).
     IF t11 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t11.
       TRY.
-          t10 ?= t25.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -65,10 +63,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>seq( i_first = t7 i_second = t10 i_rest = t27 ).
     IF t5 IS BOUND.
       DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t33 TYPE REF TO object.
-      t33 = t5.
       TRY.
-          t4 ?= t33.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -110,10 +106,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t41 = zcl_lnt_st_combi_module=>seq( i_first = t43 i_second = t46 i_rest = t49 ).
     IF t41 IS BOUND.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t55 TYPE REF TO object.
-      t55 = t41.
       TRY.
-          t40 ?= t55.
+          t40 ?= t41.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t40 IS NOT BOUND.
@@ -172,10 +166,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     DATA t85 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t87 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t88 TYPE REF TO object.
-      t88 = t1.
       TRY.
-          t85 ?= t88.
+          t85 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t85 IS NOT BOUND.
@@ -200,10 +192,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     DATA t94 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t62 IS BOUND.
       DATA t96 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t97 TYPE REF TO object.
-      t97 = t62.
       TRY.
-          t94 ?= t97.
+          t94 ?= t62.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t94 IS NOT BOUND.
@@ -224,10 +214,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t93 = zcl_lnt_st_combi_module=>opt_prio( i_first = t94 ).
     IF t93 IS BOUND.
       DATA t98 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t99 TYPE REF TO object.
-      t99 = t93.
       TRY.
-          t92 ?= t99.
+          t92 ?= t93.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t92 IS NOT BOUND.
@@ -289,10 +277,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     DATA t121 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t79 IS BOUND.
       DATA t123 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t124 TYPE REF TO object.
-      t124 = t79.
       TRY.
-          t121 ?= t124.
+          t121 ?= t79.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t121 IS NOT BOUND.
@@ -313,10 +299,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t62 IS BOUND.
       DATA t128 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t129 TYPE REF TO object.
-      t129 = t62.
       TRY.
-          t126 ?= t129.
+          t126 ?= t62.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t126 IS NOT BOUND.
@@ -339,10 +323,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t119 = zcl_lnt_st_combi_module=>alt( i_first = t121 i_second = t126 i_rest = t131 ).
     IF t119 IS BOUND.
       DATA t136 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t137 TYPE REF TO object.
-      t137 = t119.
       TRY.
-          t118 ?= t137.
+          t118 ?= t119.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t118 IS NOT BOUND.
@@ -365,10 +347,8 @@ CLASS zcl_lnt_sql_options IMPLEMENTATION.
     t113 = zcl_lnt_st_combi_module=>seq( i_first = t115 i_second = t118 i_rest = t139 ).
     IF t113 IS BOUND.
       DATA t144 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t145 TYPE REF TO object.
-      t145 = t113.
       TRY.
-          t112 ?= t145.
+          t112 ?= t113.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t112 IS NOT BOUND.

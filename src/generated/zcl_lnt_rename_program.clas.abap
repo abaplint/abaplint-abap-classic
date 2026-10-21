@@ -58,9 +58,7 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO zcl_lnt_ob_program.
-    DATA t20 TYPE REF TO object.
-    t20 = t1.
-    t18 ?= t20.
+    t18 ?= t1.
     t16 = t18->get_main_abap_file( ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t16 IS INITIAL ) = abap_true.
@@ -73,9 +71,7 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
       DATA(t36) = |Main file not found, |.
       DATA t38 TYPE REF TO zcl_lnt_ob_program.
       DATA t39 TYPE REF TO zcl_lnt_ob_program.
-      DATA t41 TYPE REF TO object.
-      t41 = t1.
-      t39 ?= t41.
+      t39 ?= t1.
       t38 = t39.
       DATA(t43) = strlen( t36 ).
       t35 = |{ t36 }{ |PROG| }|.
@@ -84,9 +80,7 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
       DATA(t46) = VALUE string( ).
       DATA t47 TYPE REF TO zcl_lnt_abstract_object.
       DATA t48 TYPE REF TO zcl_lnt_ob_program.
-      DATA t50 TYPE REF TO object.
-      t50 = t1.
-      t48 ?= t50.
+      t48 ?= t1.
       t47 = t48.
       t46 = t47->name.
       DATA(t53) = strlen( t34 ).
@@ -131,17 +125,13 @@ CLASS zcl_lnt_rename_program IMPLEMENTATION.
     DATA t67 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t70 TYPE REF TO zcl_lnt_ob_program.
-    DATA t72 TYPE REF TO object.
-    t72 = t1.
-    t70 ?= t72.
+    t70 ?= t1.
     DATA t76 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t68 = t62->build_xml_file_edits( i_object_19cd = t70 i_xml_tag = |NAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t76 ).
     t67 ?= t68.
     t60 = t60->concat( p0 = t67 ).
     DATA t81 TYPE REF TO zcl_lnt_ob_program.
-    DATA t83 TYPE REF TO object.
-    t83 = t1.
-    t81 ?= t83.
+    t81 ?= t1.
     t60 = t60->concat( p0 = t62->rename_files( i_obj_1ed0 = t81 i_old_name = t2 i_name = t3 ) ).
     DATA t86 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t86.

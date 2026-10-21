@@ -161,9 +161,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
     IF t8 = abap_true.
       DATA t12 TYPE REF TO zcl_lnt_ob_program.
       DATA t13 TYPE REF TO zcl_lnt_ob_program.
-      DATA t15 TYPE REF TO object.
-      t15 = t1.
-      t13 ?= t15.
+      t13 ?= t1.
       t12 = t13.
       t12->parse_xml( ).
       t7 = xsdbool( t12->parsed_xml->is_include = abap_true ).
@@ -174,9 +172,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
       DATA t24 TYPE string.
       DATA t25 TYPE REF TO zcl_lnt_abstract_object.
       DATA t26 TYPE REF TO zcl_lnt_ob_program.
-      DATA t28 TYPE REF TO object.
-      t28 = t1.
-      t26 ?= t28.
+      t26 ?= t1.
       t25 = t26.
       t24 = t25->name.
       DATA(t31) = |ZX|.
@@ -204,9 +200,7 @@ CLASS zcl_lnt_check_include IMPLEMENTATION.
     CREATE OBJECT t37.
     DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t41 TYPE REF TO zcl_lnt_abap_object.
-    DATA t43 TYPE REF TO object.
-    t43 = t1.
-    t41 ?= t43.
+    t41 ?= t1.
     t39 = t41->parsed.
     DATA t46 TYPE REF TO zcl_lnt_abap_file.
     DATA t47 TYPE REF TO object.

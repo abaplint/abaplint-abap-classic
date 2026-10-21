@@ -36,10 +36,8 @@ CLASS zcl_lnt_break_id IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t1.
       TRY.
-          t21 ?= t24.
+          t21 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.
@@ -63,10 +61,8 @@ CLASS zcl_lnt_break_id IMPLEMENTATION.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t36 TYPE REF TO object.
-      t36 = t15.
       TRY.
-          t33 ?= t36.
+          t33 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.

@@ -135,9 +135,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
     ENDIF.
     DATA t12 TYPE REF TO zcl_lnt_abap_file.
     DATA t14 TYPE REF TO zcl_lnt_abap_object.
-    DATA t16 TYPE REF TO object.
-    t16 = t1.
-    t14 ?= t16.
+    t14 ?= t1.
     t12 = t14->get_main_abap_file( ).
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t12 IS INITIAL ) = abap_true.
@@ -159,9 +157,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
     IF t42 = abap_true.
       DATA t46 TYPE REF TO zcl_lnt_ob_program.
       DATA t47 TYPE REF TO zcl_lnt_ob_program.
-      DATA t49 TYPE REF TO object.
-      t49 = t1.
-      t47 ?= t49.
+      t47 ?= t1.
       t46 = t47.
       t46->parse_xml( ).
       t41 = xsdbool( t46->parsed_xml->is_include = abap_false ).
@@ -170,9 +166,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
     IF t41 = abap_true.
       DATA t59 TYPE REF TO zcl_lnt_ob_program.
       DATA t60 TYPE REF TO zcl_lnt_ob_program.
-      DATA t62 TYPE REF TO object.
-      t62 = t1.
-      t60 ?= t62.
+      t60 ?= t1.
       t59 = t60.
       t59->parse_xml( ).
       t40 = xsdbool( t59->parsed_xml->is_module_pool = abap_false ).
@@ -448,9 +442,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
         ENDIF.
         DATA t288 TYPE REF TO zcl_lnt_abstract_object.
         DATA t289 TYPE REF TO zcl_lnt_ob_program.
-        DATA t291 TYPE REF TO object.
-        t291 = t1.
-        t289 ?= t291.
+        t289 ?= t1.
         t288 = t289.
         IF xsdbool( t278 <> t288->name ) = abap_true.
           DATA t295 TYPE REF TO zcl_lnt_abstract_token.
@@ -703,11 +695,9 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
         DATA t489 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t490 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t491 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t492 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t493 TYPE REF TO zcl_lnt_abstract_node.
         t493 = t367.
-        t492 = t493->children.
-        t491 ?= t492.
+        t491 ?= t493->children.
         DATA t497 TYPE REF TO object.
         t491->load( ).
         READ TABLE t491->items INDEX 4 INTO t497.
@@ -733,9 +723,7 @@ CLASS zcl_lnt_main_file_contents IMPLEMENTATION.
         ENDIF.
         DATA t510 TYPE REF TO zcl_lnt_abstract_object.
         DATA t511 TYPE REF TO zcl_lnt_ob_type_pool.
-        DATA t513 TYPE REF TO object.
-        t513 = t1.
-        t511 ?= t513.
+        t511 ?= t1.
         t510 = t511.
         IF xsdbool( t501 <> t510->name ) = abap_true.
           DATA t517 TYPE REF TO zcl_lnt_abstract_token.

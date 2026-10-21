@@ -91,10 +91,8 @@ CLASS zcl_lnt_type_enum_end IMPLEMENTATION.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t46 TYPE REF TO object.
-      t46 = t1.
       TRY.
-          t43 ?= t46.
+          t43 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t43 IS NOT BOUND.
@@ -115,10 +113,8 @@ CLASS zcl_lnt_type_enum_end IMPLEMENTATION.
     t42 = zcl_lnt_st_combi_module=>opt( i_first = t43 ).
     IF t42 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t42.
       TRY.
-          t41 ?= t48.
+          t41 ?= t42.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t41 IS NOT BOUND.
@@ -142,10 +138,8 @@ CLASS zcl_lnt_type_enum_end IMPLEMENTATION.
     t25 = zcl_lnt_st_combi_module=>seq( i_first = t27 i_second = t30 i_rest = t32 ).
     IF t25 IS BOUND.
       DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t54 TYPE REF TO object.
-      t54 = t25.
       TRY.
-          t24 ?= t54.
+          t24 ?= t25.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t24 IS NOT BOUND.

@@ -162,9 +162,7 @@ CLASS zcl_lnt_sy_class_local_friends IMPLEMENTATION.
         t140 = t15.
         DATA t144 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t146 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t147 TYPE REF TO zif_lnt_class_definition.
-        t147 = t68.
-        t146 ?= t147.
+        t146 ?= t68.
         t144 = t146.
         DATA t150 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t150.

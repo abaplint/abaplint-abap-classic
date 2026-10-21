@@ -147,9 +147,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
     t4 = t5.
     IF t5 = abap_false.
       DATA t10 TYPE REF TO zcl_lnt_abap_object.
-      DATA t12 TYPE REF TO object.
-      t12 = t1.
-      t10 ?= t12.
+      t10 ?= t1.
       t4 = xsdbool( t10->get_type( ) = |INTF| ).
     ENDIF.
     IF t4 = abap_true.
@@ -159,15 +157,11 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
     DATA t15 TYPE REF TO zif_lnt_spaghetti_scope.
     DATA(t19) = me->reg.
     DATA t20 TYPE REF TO zcl_lnt_abap_object.
-    DATA t22 TYPE REF TO object.
-    t22 = t1.
-    t20 ?= t22.
+    t20 ?= t1.
     t15 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t19 i_object_19cd = t20 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abap_object.
-    DATA t27 TYPE REF TO object.
-    t27 = t1.
-    t25 ?= t27.
+    t25 ?= t1.
     t23 = t25->parsed.
     DATA t30 TYPE REF TO zcl_lnt_abap_file.
     DATA t31 TYPE REF TO object.
@@ -778,9 +772,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
         t63 = t32->resolved.
         IF xsdbool( t63 IS BOUND AND t63 IS INSTANCE OF zcl_lnt_built_in_method ) = abap_true.
           DATA t65 TYPE REF TO zcl_lnt_built_in_method.
-          DATA t66 TYPE REF TO zcl_lnt_fi_identifier.
-          t66 = t32->resolved.
-          t65 ?= t66.
+          t65 ?= t32->resolved.
           result = t65.
           RETURN.
         ELSE.
@@ -788,9 +780,7 @@ CLASS zcl_lnt_omit_parameter_name IMPLEMENTATION.
           t69 = t32->resolved.
           IF xsdbool( t69 IS BOUND AND t69 IS INSTANCE OF zcl_lnt_method_definition ) = abap_true.
             DATA t72 TYPE REF TO zcl_lnt_method_definition.
-            DATA t73 TYPE REF TO zcl_lnt_fi_identifier.
-            t73 = t32->resolved.
-            t72 ?= t73.
+            t72 ?= t32->resolved.
             result = t72->g_p_in_sr_ab_ty_mt_df_ts_mt_df( ).
             RETURN.
           ENDIF.

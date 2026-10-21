@@ -261,9 +261,7 @@ CLASS zcl_lnt_definition IMPLEMENTATION.
     t158 = t133.
     DATA(t160) = me->reg.
     DATA t161 TYPE REF TO zcl_lnt_abap_object.
-    DATA t163 TYPE REF TO object.
-    t163 = t16.
-    t161 ?= t163.
+    t161 ?= t16.
     t156 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t158 i_reg_f149 = t160 i_obj_1ed0 = t161 ).
     DATA t164 TYPE REF TO zcl_lnt_location.
     IF xsdbool( t156 IS INITIAL ) = abap_true.

@@ -198,11 +198,9 @@ CLASS zcl_lnt_pragma_style IMPLEMENTATION.
         ENDIF.
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t34 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t35 TYPE REF TO zcl_lnt_abstract_node.
         t35 = t9.
-        t34 = t35->children.
-        t33 ?= t34.
+        t33 ?= t35->children.
         t32 = t33.
         t32->load( ).
         IF xsdbool( lines( t32->items ) = 1 ) = abap_true.

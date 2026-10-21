@@ -26,11 +26,9 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
       t11 = t19->row_type.
     ENDIF.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t28 TYPE REF TO zcl_lnt_abstract_node.
     t28 = t1.
-    t27 = t28->children.
-    t26 ?= t27.
+    t26 ?= t28->children.
     t26->load( ).
     IF xsdbool( lines( t26->items ) = 3 ) = abap_true.
       DATA t36 TYPE REF TO zcl_lnt_expression_node.
@@ -57,11 +55,9 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
       ELSE.
         DATA t63 TYPE REF TO zcl_lnt_abstract_type.
         DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t67 TYPE REF TO zcl_lnt_abstract_node.
         t67 = t1.
-        t66 = t67->children.
-        t65 ?= t66.
+        t65 ?= t67->children.
         DATA t72 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t73 TYPE REF TO object.
         DATA(t74) = VALUE i( ).
@@ -91,17 +87,13 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
           IF t78 = abap_true.
             DATA t81 TYPE REF TO zif_lnt_statement_runnable.
             DATA t82 TYPE REF TO zcl_lnt_expression_node.
-            DATA t84 TYPE REF TO object.
-            t84 = t72.
-            t82 ?= t84.
+            t82 ?= t72.
             t81 = t82->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
             t77 = xsdbool( t81 IS BOUND AND t81 IS INSTANCE OF zcl_lnt_component_chain_simple ).
           ENDIF.
           IF t77 = abap_true.
             DATA t87 TYPE REF TO zcl_lnt_expression_node.
-            DATA t89 TYPE REF TO object.
-            t89 = t72.
-            t87 ?= t89.
+            t87 ?= t72.
             t63 = zcl_lnt_sy_component_chain=>run_syntax( i_context = t11 i_node = t87 i_input_967e = t2 ).
           ELSE.
             DATA t91 TYPE abap_bool.
@@ -111,9 +103,7 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
             IF t92 = abap_true.
               DATA t95 TYPE REF TO zif_lnt_statement_runnable.
               DATA t96 TYPE REF TO zcl_lnt_expression_node.
-              DATA t98 TYPE REF TO object.
-              t98 = t72.
-              t96 ?= t98.
+              t96 ?= t72.
               t95 = t96->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
               t91 = xsdbool( t95 IS BOUND AND t95 IS INSTANCE OF zcl_lnt_st_source ).
             ENDIF.
@@ -122,9 +112,7 @@ CLASS zcl_lnt_sy_table_expression IMPLEMENTATION.
               DATA t100 TYPE REF TO zcl_lnt_expression_node.
               CLEAR t100.
               DATA t102 TYPE REF TO zcl_lnt_expression_node.
-              DATA t104 TYPE REF TO object.
-              t104 = t72.
-              t102 ?= t104.
+              t102 ?= t72.
               t100 = t102.
               DATA t108 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
               CLEAR t108.

@@ -356,9 +356,7 @@ CLASS zcl_lnt_registry_run IMPLEMENTATION.
       IF xsdbool( t25 IS BOUND AND t25 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t32 TYPE REF TO zcl_lnt_isyntax_result.
         DATA t35 TYPE REF TO zcl_lnt_abap_object.
-        DATA t37 TYPE REF TO object.
-        t37 = t25.
-        t35 ?= t37.
+        t35 ?= t25.
         t32 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t35 )->run( ).
       ENDIF.
     ENDDO.

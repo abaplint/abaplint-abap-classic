@@ -130,9 +130,7 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
       IF xsdbool( t19 IS BOUND ) = abap_true.
         DATA t33 TYPE REF TO zcl_lnt_iobject_and_token.
         DATA t35 TYPE REF TO zif_lnt_object.
-        DATA t36 TYPE REF TO zif_lnt_union_c74a232f.
-        t36 = t19.
-        t35 ?= t36.
+        t35 ?= t19.
         DATA t38 TYPE REF TO zcl_lnt_abstract_token.
         DATA t40 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t33 = NEW zcl_lnt_iobject_and_token( i_object_19cd = t35 i_token = t38 i_filename = t40 ).
@@ -623,11 +621,9 @@ CLASS zcl_lnt_lock_object IMPLEMENTATION.
           IF t287 IS BOUND.
             DATA t291 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t291.
-            DATA t292 TYPE REF TO object.
             CLEAR t291.
-            t292 = t287.
             TRY.
-                t286 ?= t292.
+                t286 ?= t287.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t286 IS NOT BOUND.

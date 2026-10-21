@@ -30,10 +30,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>alt_prio( i_first = t6 i_second = t9 i_rest = t12 ).
     IF t4 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t18 TYPE REF TO object.
-      t18 = t4.
       TRY.
-          t3 ?= t18.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -93,10 +91,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t34 = zcl_lnt_st_combi_module=>tok( i_t = t35 ).
     IF t34 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t34.
       TRY.
-          t33 ?= t37.
+          t33 ?= t34.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.
@@ -119,10 +115,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t44 TYPE REF TO object.
-      t44 = t1.
       TRY.
-          t41 ?= t44.
+          t41 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t41 IS NOT BOUND.
@@ -165,10 +159,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t50 = zcl_lnt_st_combi_module=>opt_prio( i_first = t51 ).
     IF t50 IS BOUND.
       DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t54 TYPE REF TO object.
-      t54 = t50.
       TRY.
-          t49 ?= t54.
+          t49 ?= t50.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t49 IS NOT BOUND.
@@ -201,10 +193,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t57 = zcl_lnt_st_combi_module=>opt_prio( i_first = t58 ).
     IF t57 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t57.
       TRY.
-          t56 ?= t61.
+          t56 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t56 IS NOT BOUND.
@@ -237,10 +227,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t64 = zcl_lnt_st_combi_module=>opt_prio( i_first = t65 ).
     IF t64 IS BOUND.
       DATA t67 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t68 TYPE REF TO object.
-      t68 = t64.
       TRY.
-          t63 ?= t68.
+          t63 ?= t64.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t63 IS NOT BOUND.
@@ -267,10 +255,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t71 = zcl_lnt_st_combi_module=>tok( i_t = t72 ).
     IF t71 IS BOUND.
       DATA t73 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t74 TYPE REF TO object.
-      t74 = t71.
       TRY.
-          t70 ?= t74.
+          t70 ?= t71.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t70 IS NOT BOUND.
@@ -294,10 +280,8 @@ CLASS zcl_lnt_sql_locate_regexpr IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t38 ).
     IF t28 IS BOUND.
       DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t80 TYPE REF TO object.
-      t80 = t28.
       TRY.
-          t27 ?= t80.
+          t27 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.

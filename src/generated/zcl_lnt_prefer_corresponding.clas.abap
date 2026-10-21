@@ -175,11 +175,9 @@ CLASS zcl_lnt_prefer_corresponding IMPLEMENTATION.
       t26 = t27.
       IF t27 = abap_true.
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t34 TYPE REF TO zcl_lnt_abstract_node.
         t34 = t21.
-        t33 = t34->children.
-        t32 ?= t33.
+        t32 ?= t34->children.
         t32->load( ).
         t26 = xsdbool( lines( t32->items ) = 7 ).
       ENDIF.

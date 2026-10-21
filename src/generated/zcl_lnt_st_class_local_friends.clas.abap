@@ -45,10 +45,8 @@ CLASS zcl_lnt_st_class_local_friends IMPLEMENTATION.
     t15 = zcl_lnt_st_combi_module=>plus_prio( i_first = t16 ).
     IF t15 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t15.
       TRY.
-          t14 ?= t19.
+          t14 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t14 IS NOT BOUND.

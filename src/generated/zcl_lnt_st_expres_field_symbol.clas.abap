@@ -23,10 +23,8 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t6 ).
     IF t5 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t11 TYPE REF TO object.
-      t11 = t5.
       TRY.
-          t4 ?= t11.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -50,10 +48,8 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     t14 = zcl_lnt_st_combi_module=>tok( i_t = t15 ).
     IF t14 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t17 TYPE REF TO object.
-      t17 = t14.
       TRY.
-          t13 ?= t17.
+          t13 ?= t14.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
@@ -81,10 +77,8 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t23 ).
     IF t22 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t22.
       TRY.
-          t21 ?= t28.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.
@@ -114,10 +108,8 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t37 ).
     IF t36 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t36.
       TRY.
-          t35 ?= t42.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -138,10 +130,8 @@ CLASS zcl_lnt_st_expres_field_symbol IMPLEMENTATION.
     DATA t44 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t46 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t47 TYPE REF TO object.
-      t47 = t1.
       TRY.
-          t44 ?= t47.
+          t44 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t44 IS NOT BOUND.

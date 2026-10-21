@@ -103,9 +103,7 @@ CLASS zcl_lnt_identical_form_names IMPLEMENTATION.
     CREATE OBJECT t8.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abap_object.
-    DATA t14 TYPE REF TO object.
-    t14 = t1.
-    t12 ?= t14.
+    t12 ?= t1.
     t10 = t12->parsed.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO object.

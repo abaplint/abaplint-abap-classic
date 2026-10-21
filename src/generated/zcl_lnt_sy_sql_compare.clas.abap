@@ -109,11 +109,9 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
         t47 ?= t48.
       ENDIF.
       DATA t52 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t53 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t54 TYPE REF TO zcl_lnt_abstract_node.
       t54 = t47.
-      t53 = t54->children.
-      t52 ?= t53.
+      t52 ?= t54->children.
       DATA t58 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t58.
       DATA t59 TYPE REF TO object.
@@ -140,9 +138,7 @@ CLASS zcl_lnt_sy_sql_compare IMPLEMENTATION.
         ENDIF.
         IF xsdbool( t58 IS BOUND AND t58 IS INSTANCE OF zcl_lnt_expression_node ) = abap_true.
           DATA t68 TYPE REF TO zcl_lnt_expression_node.
-          DATA t70 TYPE REF TO object.
-          t70 = t58.
-          t68 ?= t70.
+          t68 ?= t58.
           t5 = t68->get_first_token( ).
           EXIT.
         ENDIF.

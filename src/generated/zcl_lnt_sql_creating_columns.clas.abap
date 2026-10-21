@@ -20,10 +20,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>stop_before( i_t1 = |LOCATOR| i_t2 = |FOR| ).
     IF t5 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t5.
       TRY.
-          t4 ?= t9.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -46,10 +44,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>stop_before( i_t1 = |READER| i_t2 = |FOR| ).
     IF t12 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t12.
       TRY.
-          t11 ?= t16.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.
@@ -90,10 +86,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t41 TYPE REF TO object.
-      t41 = t1.
       TRY.
-          t38 ?= t41.
+          t38 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t38 IS NOT BOUND.
@@ -120,10 +114,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     t44 = zcl_lnt_st_combi_module=>opt_prio( i_first = t45 ).
     IF t44 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t44.
       TRY.
-          t43 ?= t48.
+          t43 ?= t44.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t43 IS NOT BOUND.
@@ -156,10 +148,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>seq( i_first = t38 i_second = t43 i_rest = t49 ).
     IF t36 IS BOUND.
       DATA t58 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t59 TYPE REF TO object.
-      t59 = t36.
       TRY.
-          t35 ?= t59.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -180,10 +170,8 @@ CLASS zcl_lnt_sql_creating_columns IMPLEMENTATION.
     t34 = zcl_lnt_st_combi_module=>star_prio( i_first = t35 ).
     IF t34 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t34.
       TRY.
-          t33 ?= t61.
+          t33 ?= t34.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.

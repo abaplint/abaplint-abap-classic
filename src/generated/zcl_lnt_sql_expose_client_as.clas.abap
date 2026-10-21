@@ -26,10 +26,8 @@ CLASS zcl_lnt_sql_expose_client_as IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
     IF t7 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t13 TYPE REF TO object.
-      t13 = t7.
       TRY.
-          t6 ?= t13.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

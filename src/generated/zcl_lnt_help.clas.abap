@@ -57,9 +57,7 @@ CLASS zcl_lnt_help IMPLEMENTATION.
     t40 = t41.
     IF xsdbool( t40 IS BOUND AND t40 IS INSTANCE OF zcl_lnt_ob_data_definition ) = abap_true.
       DATA t49 TYPE REF TO zcl_lnt_ob_data_definition.
-      DATA t51 TYPE REF TO object.
-      t51 = t40.
-      t49 ?= t51.
+      t49 ?= t40.
       result = zcl_lnt_help=>dump_ddls( i_obj_1ed0 = t49 i_reg_f149 = t1 ).
       RETURN.
     ENDIF.
@@ -501,10 +499,8 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       t38 = t7->snode->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF t38 IS BOUND.
         DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t43 TYPE REF TO object.
-        t43 = t38.
         TRY.
-            t37 ?= t43.
+            t37 ?= t38.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t37 IS NOT BOUND.
@@ -746,9 +742,7 @@ CLASS zcl_lnt_help IMPLEMENTATION.
     IF xsdbool( t65 IS BOUND AND t65 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
       DATA t178 TYPE REF TO zif_lnt_spaghetti_scope.
       DATA t183 TYPE REF TO zcl_lnt_abap_object.
-      DATA t185 TYPE REF TO object.
-      t185 = t65.
-      t183 ?= t185.
+      t183 ?= t65.
       t178 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t1 i_object_19cd = t183 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( ).
       DATA(t187) = t5.
       DATA(t188) = VALUE string( ).
@@ -935,16 +929,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       DATA t22 TYPE REF TO zif_lnt_structure.
       DATA t23 TYPE REF TO zcl_lnt_structure_node.
-      DATA t25 TYPE REF TO object.
-      t25 = t1.
-      t23 ?= t25.
+      t23 ?= t1.
       t22 = t23->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
       IF t22 IS BOUND.
         DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t27 TYPE REF TO object.
-        t27 = t22.
         TRY.
-            t21 ?= t27.
+            t21 ?= t22.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t21 IS NOT BOUND.
@@ -975,16 +965,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         DATA t38 TYPE REF TO zif_lnt_statement.
         DATA t39 TYPE REF TO zcl_lnt_statement_node.
-        DATA t41 TYPE REF TO object.
-        t41 = t1.
-        t39 ?= t41.
+        t39 ?= t1.
         t38 = t39->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
         IF t38 IS BOUND.
           DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t43 TYPE REF TO object.
-          t43 = t38.
           TRY.
-              t37 ?= t43.
+              t37 ?= t38.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t37 IS NOT BOUND.
@@ -1015,16 +1001,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           DATA t54 TYPE REF TO zif_lnt_statement_runnable.
           DATA t55 TYPE REF TO zcl_lnt_expression_node.
-          DATA t57 TYPE REF TO object.
-          t57 = t1.
-          t55 ?= t57.
+          t55 ?= t1.
           t54 = t55->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           IF t54 IS BOUND.
             DATA t58 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t59 TYPE REF TO object.
-            t59 = t54.
             TRY.
-                t53 ?= t59.
+                t53 ?= t54.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t53 IS NOT BOUND.
@@ -1053,17 +1035,13 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             t64 = |{ t65 }{ |Token: | }|.
             DATA(t68) = VALUE string( ).
             DATA t71 TYPE REF TO zcl_lnt_token_node.
-            DATA t73 TYPE REF TO object.
-            t73 = t1.
-            t71 ?= t73.
+            t71 ?= t1.
             t68 = t71->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->zlnt_builtin_clas_3f891b097658( )->name.
             DATA(t74) = strlen( t64 ).
             t4 = |{ t64 }{ t68 }|.
             DATA t75 TYPE REF TO zcl_lnt_abstract_token.
             DATA t77 TYPE REF TO zcl_lnt_token_node.
-            DATA t79 TYPE REF TO object.
-            t79 = t1.
-            t77 ?= t79.
+            t77 ?= t1.
             t75 = t77->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
             DATA(t80) = VALUE abap_bool( ).
             DATA(t81) = VALUE abap_bool( ).
@@ -1636,11 +1614,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         IF t32 IS BOUND.
           DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t34.
-          DATA t35 TYPE REF TO object.
           CLEAR t34.
-          t35 = t32.
           TRY.
-              t31 ?= t35.
+              t31 ?= t32.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t31 IS NOT BOUND.
@@ -2227,11 +2203,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           IF t161 IS BOUND.
             DATA t163 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t163.
-            DATA t164 TYPE REF TO object.
             CLEAR t163.
-            t164 = t161.
             TRY.
-                t160 ?= t164.
+                t160 ?= t161.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t160 IS NOT BOUND.
@@ -2798,11 +2772,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
             IF t280 IS BOUND.
               DATA t282 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t282.
-              DATA t283 TYPE REF TO object.
               CLEAR t282.
-              t283 = t280.
               TRY.
-                  t279 ?= t283.
+                  t279 ?= t280.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t279 IS NOT BOUND.
@@ -3035,11 +3007,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       IF t42 IS BOUND.
         DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t44.
-        DATA t45 TYPE REF TO object.
         CLEAR t44.
-        t45 = t42.
         TRY.
-            t41 ?= t45.
+            t41 ?= t42.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t41 IS NOT BOUND.
@@ -3065,11 +3035,9 @@ CLASS zcl_lnt_help IMPLEMENTATION.
       DATA(t49) = VALUE string( ).
       DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t50.
-      DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t52 TYPE REF TO zcl_lnt_abstract_node.
       t52 = t9.
-      t51 = t52->children.
-      t50 ?= t51.
+      t50 ?= t52->children.
       t49 = zcl_lnt_help=>output_nodes( i_nodes_5198 = t50 ).
       DATA(t56) = strlen( t29 ).
       t2 = |{ t29 }{ t49 }|.
@@ -3118,19 +3086,15 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA t22 TYPE REF TO zif_lnt_structure.
         DATA t23 TYPE REF TO zcl_lnt_structure_node.
         CLEAR t23.
-        DATA t25 TYPE REF TO object.
-        t25 = t5.
-        t23 ?= t25.
+        t23 ?= t5.
         t22 = t23->gt_in_sr_ab_nd_st_nd_ts_str_nd( ).
         CLEAR t21.
         IF t22 IS BOUND.
           DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t26.
-          DATA t27 TYPE REF TO object.
           CLEAR t26.
-          t27 = t22.
           TRY.
-              t21 ?= t27.
+              t21 ?= t22.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t21 IS NOT BOUND.
@@ -3156,16 +3120,12 @@ CLASS zcl_lnt_help IMPLEMENTATION.
         DATA(t31) = VALUE string( ).
         DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t32.
-        DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t34 TYPE REF TO zcl_lnt_abstract_node.
         DATA t35 TYPE REF TO zcl_lnt_structure_node.
         CLEAR t35.
-        DATA t37 TYPE REF TO object.
-        t37 = t5.
-        t35 ?= t37.
+        t35 ?= t5.
         t34 = t35.
-        t33 = t34->children.
-        t32 ?= t33.
+        t32 ?= t34->children.
         t31 = zcl_lnt_help=>build_structure( i_nodes_5198 = t32 ).
         DATA(t40) = strlen( t14 ).
         t13 = |{ t14 }{ t31 }|.
@@ -3184,19 +3144,15 @@ CLASS zcl_lnt_help IMPLEMENTATION.
           DATA t53 TYPE REF TO zif_lnt_statement.
           DATA t54 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t54.
-          DATA t56 TYPE REF TO object.
-          t56 = t5.
-          t54 ?= t56.
+          t54 ?= t5.
           t53 = t54->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
           CLEAR t52.
           IF t53 IS BOUND.
             DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t57.
-            DATA t58 TYPE REF TO object.
             CLEAR t57.
-            t58 = t53.
             TRY.
-                t52 ?= t58.
+                t52 ?= t53.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t52 IS NOT BOUND.

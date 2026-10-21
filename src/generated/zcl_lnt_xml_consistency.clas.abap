@@ -435,9 +435,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA(t222) = VALUE i( ).
       DATA t223 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t224 TYPE REF TO zcl_lnt_class.
-      DATA t226 TYPE REF TO object.
-      t226 = t1.
-      t224 ?= t226.
+      t224 ?= t1.
       t223 = me->run_class( i_obj_1ed0 = t224 i_file = t4 ).
       DATA t229 TYPE REF TO zcl_lnt_issue.
       DATA t230 TYPE REF TO object.
@@ -472,9 +470,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
         DATA(t240) = VALUE i( ).
         DATA t241 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t242 TYPE REF TO zcl_lnt_ob_interface.
-        DATA t244 TYPE REF TO object.
-        t244 = t1.
-        t242 ?= t244.
+        t242 ?= t1.
         t241 = me->run_interface( i_obj_1ed0 = t242 i_file = t4 ).
         DATA t247 TYPE REF TO zcl_lnt_issue.
         DATA t248 TYPE REF TO object.
@@ -509,9 +505,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
           DATA(t258) = VALUE i( ).
           DATA t259 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t260 TYPE REF TO zcl_lnt_data_element.
-          DATA t262 TYPE REF TO object.
-          t262 = t1.
-          t260 ?= t262.
+          t260 ?= t1.
           t259 = me->run_data_element( i_obj_1ed0 = t260 i_file = t4 ).
           DATA t265 TYPE REF TO zcl_lnt_issue.
           DATA t266 TYPE REF TO object.
@@ -546,9 +540,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
             DATA(t276) = VALUE i( ).
             DATA t277 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t278 TYPE REF TO zcl_lnt_domain.
-            DATA t280 TYPE REF TO object.
-            t280 = t1.
-            t278 ?= t280.
+            t278 ?= t1.
             t277 = me->run_domain( i_obj_1ed0 = t278 i_file = t4 ).
             DATA t283 TYPE REF TO zcl_lnt_issue.
             DATA t284 TYPE REF TO object.
@@ -583,9 +575,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
               DATA(t294) = VALUE i( ).
               DATA t295 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t296 TYPE REF TO zcl_lnt_transaction.
-              DATA t298 TYPE REF TO object.
-              t298 = t1.
-              t296 ?= t298.
+              t296 ?= t1.
               t295 = me->run_transaction( i_obj_1ed0 = t296 i_file = t4 ).
               DATA t301 TYPE REF TO zcl_lnt_issue.
               DATA t302 TYPE REF TO object.
@@ -620,9 +610,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
                 DATA(t312) = VALUE i( ).
                 DATA t313 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t314 TYPE REF TO zcl_lnt_ob_message_class.
-                DATA t316 TYPE REF TO object.
-                t316 = t1.
-                t314 ?= t316.
+                t314 ?= t1.
                 t313 = me->run_message_class( i_obj_1ed0 = t314 i_file = t4 ).
                 DATA t319 TYPE REF TO zcl_lnt_issue.
                 DATA t320 TYPE REF TO object.
@@ -657,9 +645,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
                   DATA(t330) = VALUE i( ).
                   DATA t331 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   DATA t332 TYPE REF TO zcl_lnt_table.
-                  DATA t334 TYPE REF TO object.
-                  t334 = t1.
-                  t332 ?= t334.
+                  t332 ?= t1.
                   t331 = me->run_table( i_obj_1ed0 = t332 i_file = t4 ).
                   DATA t337 TYPE REF TO zcl_lnt_issue.
                   DATA t338 TYPE REF TO object.
@@ -694,9 +680,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
                     DATA(t348) = VALUE i( ).
                     DATA t349 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     DATA t350 TYPE REF TO zcl_lnt_lock_object.
-                    DATA t352 TYPE REF TO object.
-                    t352 = t1.
-                    t350 ?= t352.
+                    t350 ?= t1.
                     t349 = me->run_lock_object( i_obj_1ed0 = t350 i_file = t4 ).
                     DATA t355 TYPE REF TO zcl_lnt_issue.
                     DATA t356 TYPE REF TO object.
@@ -738,9 +722,7 @@ CLASS zcl_lnt_xml_consistency IMPLEMENTATION.
       DATA(t366) = VALUE i( ).
       DATA t367 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t368 TYPE REF TO zcl_lnt_abap_object.
-      DATA t370 TYPE REF TO object.
-      t370 = t1.
-      t368 ?= t370.
+      t368 ?= t1.
       t367 = me->run_text_pool( i_obj_1ed0 = t368 i_file = t4 ).
       DATA t373 TYPE REF TO zcl_lnt_issue.
       DATA t374 TYPE REF TO object.

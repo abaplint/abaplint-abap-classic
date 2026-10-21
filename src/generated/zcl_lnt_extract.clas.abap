@@ -30,10 +30,8 @@ CLASS zcl_lnt_extract IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>opt( i_first = t9 ).
     IF t8 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t12 TYPE REF TO object.
-      t12 = t8.
       TRY.
-          t7 ?= t12.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -57,10 +55,8 @@ CLASS zcl_lnt_extract IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t1.
       TRY.
-          t21 ?= t24.
+          t21 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.

@@ -306,11 +306,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
         t119 = t120.
         DATA(t125) = VALUE abap_bool( ).
         DATA t128 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t129 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t130 TYPE REF TO zcl_lnt_abstract_node.
         t130 = t119.
-        t129 = t130->children.
-        t128 ?= t129.
+        t128 ?= t130->children.
         t128->load( ).
         IF xsdbool( lines( t128->items ) > 1 ) = abap_true.
           t125 = abap_false.
@@ -388,11 +386,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
           t164 = t165.
           DATA(t170) = VALUE abap_bool( ).
           DATA t173 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t174 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t175 TYPE REF TO zcl_lnt_abstract_node.
           t175 = t164.
-          t174 = t175->children.
-          t173 ?= t174.
+          t173 ?= t175->children.
           t173->load( ).
           IF xsdbool( lines( t173->items ) > 1 ) = abap_true.
             t170 = abap_false.
@@ -717,11 +713,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
         t357 = t358.
         DATA(t363) = VALUE abap_bool( ).
         DATA t366 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t367 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t368 TYPE REF TO zcl_lnt_abstract_node.
         t368 = t357.
-        t367 = t368->children.
-        t366 ?= t367.
+        t366 ?= t368->children.
         t366->load( ).
         IF xsdbool( lines( t366->items ) > 1 ) = abap_true.
           t363 = abap_false.
@@ -799,11 +793,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
           t402 = t403.
           DATA(t408) = VALUE abap_bool( ).
           DATA t411 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t412 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t413 TYPE REF TO zcl_lnt_abstract_node.
           t413 = t402.
-          t412 = t413->children.
-          t411 ?= t412.
+          t411 ?= t413->children.
           t411->load( ).
           IF xsdbool( lines( t411->items ) > 1 ) = abap_true.
             t408 = abap_false.
@@ -1039,11 +1031,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
   METHOD is_constant.
     DATA(t1) = i_node.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t1.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t4->load( ).
     IF xsdbool( lines( t4->items ) > 1 ) = abap_true.
       result = abap_false.
@@ -1052,7 +1042,6 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
     DATA t13 TYPE REF TO zif_lnt_union_daf022d4.
     DATA t14 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
-    DATA t16 TYPE REF TO zif_lnt_node.
     DATA t17 TYPE REF TO zcl_lnt_abstract_node.
     t17 = t1.
     DATA t21 TYPE REF TO zif_lnt_node.
@@ -1070,8 +1059,7 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
     ELSE.
       t21 ?= t24.
     ENDIF.
-    t16 = t21.
-    t15 ?= t16.
+    t15 ?= t21.
     t14 = t15.
     DATA t28 TYPE REF TO zif_lnt_union_daf022d4.
     IF xsdbool( t14 IS INITIAL ) = abap_true.
@@ -1090,11 +1078,9 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
   METHOD is_field_chain.
     DATA(t1) = i_node.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t1.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t4->load( ).
     IF xsdbool( lines( t4->items ) > 1 ) = abap_true.
       result = abap_false.
@@ -1103,7 +1089,6 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
     DATA t13 TYPE REF TO zif_lnt_union_daf022d4.
     DATA t14 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t15 TYPE REF TO zif_lnt_union_4cf1d054.
-    DATA t16 TYPE REF TO zif_lnt_node.
     DATA t17 TYPE REF TO zcl_lnt_abstract_node.
     t17 = t1.
     DATA t21 TYPE REF TO zif_lnt_node.
@@ -1121,8 +1106,7 @@ CLASS zcl_lnt_no_yoda_conditions IMPLEMENTATION.
     ELSE.
       t21 ?= t24.
     ENDIF.
-    t16 = t21.
-    t15 ?= t16.
+    t15 ?= t21.
     t14 = t15.
     DATA t28 TYPE REF TO zif_lnt_union_daf022d4.
     IF xsdbool( t14 IS INITIAL ) = abap_true.

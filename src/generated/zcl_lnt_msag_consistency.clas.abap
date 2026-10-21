@@ -117,9 +117,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_ob_message_class.
     DATA t12 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t14 TYPE REF TO object.
-    t14 = t1.
-    t12 ?= t14.
+    t12 ?= t1.
     t11 = t12.
     t11->parse_xml( ).
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -188,9 +186,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t79 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t80 TYPE REF TO zcl_lnt_abstract_object.
         DATA t81 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t83 TYPE REF TO object.
-        t83 = t1.
-        t81 ?= t83.
+        t81 ?= t1.
         t80 = t81.
         t79 = t80->files.
         DATA t86 TYPE REF TO object.
@@ -304,9 +300,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t161 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t162 TYPE REF TO zcl_lnt_abstract_object.
         DATA t163 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t165 TYPE REF TO object.
-        t165 = t1.
-        t163 ?= t165.
+        t163 ?= t1.
         t162 = t163.
         t161 = t162->files.
         DATA t168 TYPE REF TO object.
@@ -423,9 +417,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t248 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t249 TYPE REF TO zcl_lnt_abstract_object.
         DATA t250 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t252 TYPE REF TO object.
-        t252 = t1.
-        t250 ?= t252.
+        t250 ?= t1.
         t249 = t250.
         t248 = t249->files.
         DATA t255 TYPE REF TO object.
@@ -539,9 +531,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t327 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t328 TYPE REF TO zcl_lnt_abstract_object.
         DATA t329 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t331 TYPE REF TO object.
-        t331 = t1.
-        t329 ?= t331.
+        t329 ?= t1.
         t328 = t329.
         t327 = t328->files.
         DATA t334 TYPE REF TO object.
@@ -717,9 +707,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
           DATA t466 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t467 TYPE REF TO zcl_lnt_abstract_object.
           DATA t468 TYPE REF TO zcl_lnt_ob_message_class.
-          DATA t470 TYPE REF TO object.
-          t470 = t1.
-          t468 ?= t470.
+          t468 ?= t1.
           t467 = t468.
           t466 = t467->files.
           DATA t473 TYPE REF TO object.
@@ -868,9 +856,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
             DATA t574 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t575 TYPE REF TO zcl_lnt_abstract_object.
             DATA t576 TYPE REF TO zcl_lnt_ob_message_class.
-            DATA t578 TYPE REF TO object.
-            t578 = t1.
-            t576 ?= t578.
+            t576 ?= t1.
             t575 = t576.
             t574 = t575->files.
             DATA t581 TYPE REF TO object.
@@ -974,9 +960,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
       t634 = t35->class_name->value.
       DATA t641 TYPE REF TO zcl_lnt_abstract_object.
       DATA t642 TYPE REF TO zcl_lnt_ob_message_class.
-      DATA t644 TYPE REF TO object.
-      t644 = t1.
-      t642 ?= t644.
+      t642 ?= t1.
       t641 = t642.
       IF xsdbool( t634 <> t641->name ) = abap_true.
         DATA t648 TYPE string.
@@ -995,9 +979,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t664 TYPE string.
         DATA t665 TYPE REF TO zcl_lnt_abstract_object.
         DATA t666 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t668 TYPE REF TO object.
-        t668 = t1.
-        t666 ?= t668.
+        t666 ?= t1.
         t665 = t666.
         t664 = t665->name.
         DATA(t671) = strlen( t652 ).
@@ -1022,9 +1004,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
         DATA t691 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t692 TYPE REF TO zcl_lnt_abstract_object.
         DATA t693 TYPE REF TO zcl_lnt_ob_message_class.
-        DATA t695 TYPE REF TO object.
-        t695 = t1.
-        t693 ?= t695.
+        t693 ?= t1.
         t692 = t693.
         t691 = t692->files.
         DATA t698 TYPE REF TO object.
@@ -1125,9 +1105,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
     DATA t749 TYPE REF TO zcl_lnt_parsed_message_class.
     DATA t751 TYPE REF TO zcl_lnt_ob_message_class.
     DATA t752 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t754 TYPE REF TO object.
-    t754 = t1.
-    t752 ?= t754.
+    t752 ?= t1.
     t751 = t752.
     t751->parse_xml( ).
     t749 = t751->xml.
@@ -1140,9 +1118,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
     DATA t766 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t769 TYPE REF TO zcl_lnt_abstract_object.
     DATA t770 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t772 TYPE REF TO object.
-    t772 = t1.
-    t770 ?= t772.
+    t770 ?= t1.
     t769 = t770.
     DATA t773 TYPE string.
     t773 = t769->name.
@@ -1181,9 +1157,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
       DATA t788 TYPE REF TO zcl_lnt_parsed_message_class.
       DATA t790 TYPE REF TO zcl_lnt_ob_message_class.
       DATA t791 TYPE REF TO zcl_lnt_ob_message_class.
-      DATA t793 TYPE REF TO object.
-      t793 = t1.
-      t791 ?= t793.
+      t791 ?= t1.
       t790 = t791.
       t790->parse_xml( ).
       t788 = t790->xml.
@@ -1213,9 +1187,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
       DATA t814 TYPE string.
       DATA t815 TYPE REF TO zcl_lnt_abstract_object.
       DATA t816 TYPE REF TO zcl_lnt_ob_message_class.
-      DATA t818 TYPE REF TO object.
-      t818 = t1.
-      t816 ?= t818.
+      t816 ?= t1.
       t815 = t816.
       t814 = t815->name.
       DATA(t821) = strlen( t782 ).
@@ -1232,9 +1204,7 @@ CLASS zcl_lnt_msag_consistency IMPLEMENTATION.
       DATA t832 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t833 TYPE REF TO zcl_lnt_abstract_object.
       DATA t834 TYPE REF TO zcl_lnt_ob_message_class.
-      DATA t836 TYPE REF TO object.
-      t836 = t1.
-      t834 ?= t836.
+      t834 ?= t1.
       t833 = t834.
       t832 = t833->files.
       DATA t839 TYPE REF TO object.

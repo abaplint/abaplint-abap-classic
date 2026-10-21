@@ -68,10 +68,8 @@ CLASS zcl_lnt_message_source_source IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t5 i_first = t12 i_opts = t16 ).
     IF t4 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t4.
       TRY.
-          t3 ?= t28.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.

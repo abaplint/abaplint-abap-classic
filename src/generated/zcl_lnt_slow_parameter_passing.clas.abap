@@ -153,9 +153,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
     ENDIF.
     DATA(t13) = me->reg.
     DATA t14 TYPE REF TO zcl_lnt_abap_object.
-    DATA t16 TYPE REF TO object.
-    t16 = t1.
-    t14 ?= t16.
+    t14 ?= t1.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t17 = me->list_method_nodes( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t13 i_object_19cd = t14 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
     DATA t21 TYPE REF TO zif_lnt_spaghetti_scope_node.
@@ -304,9 +302,7 @@ CLASS zcl_lnt_slow_parameter_passing IMPLEMENTATION.
           CLEAR t125.
           DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t130 TYPE REF TO zcl_lnt_abap_object.
-          DATA t132 TYPE REF TO object.
-          t132 = t1.
-          t130 ?= t132.
+          t130 ?= t1.
           t127 = t130->parsed.
           DATA t135 TYPE i.
           t127->load( ).

@@ -560,11 +560,9 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
           IF t261 IS BOUND.
             DATA t265 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t265.
-            DATA t266 TYPE REF TO object.
             CLEAR t265.
-            t266 = t261.
             TRY.
-                t260 ?= t266.
+                t260 ?= t261.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t260 IS NOT BOUND.
@@ -768,11 +766,9 @@ CLASS zcl_lnt_ob_message_class IMPLEMENTATION.
           IF t378 IS BOUND.
             DATA t382 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t382.
-            DATA t383 TYPE REF TO object.
             CLEAR t382.
-            t383 = t378.
             TRY.
-                t377 ?= t383.
+                t377 ?= t378.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t377 IS NOT BOUND.

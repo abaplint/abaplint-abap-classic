@@ -143,10 +143,8 @@ CLASS zcl_lnt_iobject_and_token IMPLEMENTATION.
           CLEAR result.
           IF me->object_a393 IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->object_a393.
             TRY.
-                result ?= t2.
+                result ?= me->object_a393.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

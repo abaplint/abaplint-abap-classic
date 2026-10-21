@@ -58,9 +58,7 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO zcl_lnt_class.
-    DATA t20 TYPE REF TO object.
-    t20 = t1.
-    t18 ?= t20.
+    t18 ?= t1.
     t16 = t18->get_main_abap_file( ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t16 IS INITIAL ) = abap_true.
@@ -73,9 +71,7 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
       DATA(t36) = |Main file not found, |.
       DATA t38 TYPE REF TO zcl_lnt_class.
       DATA t39 TYPE REF TO zcl_lnt_class.
-      DATA t41 TYPE REF TO object.
-      t41 = t1.
-      t39 ?= t41.
+      t39 ?= t1.
       t38 = t39.
       DATA(t43) = strlen( t36 ).
       t35 = |{ t36 }{ |CLAS| }|.
@@ -84,9 +80,7 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
       DATA(t46) = VALUE string( ).
       DATA t47 TYPE REF TO zcl_lnt_abstract_object.
       DATA t48 TYPE REF TO zcl_lnt_class.
-      DATA t50 TYPE REF TO object.
-      t50 = t1.
-      t48 ?= t50.
+      t48 ?= t1.
       t47 = t48.
       t46 = t47->name.
       DATA(t53) = strlen( t34 ).
@@ -307,25 +301,19 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
     DATA t185 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t186 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t188 TYPE REF TO zcl_lnt_class.
-    DATA t190 TYPE REF TO object.
-    t190 = t1.
-    t188 ?= t190.
+    t188 ?= t1.
     DATA t194 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t186 = t180->build_xml_file_edits( i_object_19cd = t188 i_xml_tag = |CLSNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t194 ).
     t185 ?= t186.
     t60 = t60->concat( p0 = t185 ).
     DATA t199 TYPE REF TO zcl_lnt_class.
-    DATA t201 TYPE REF TO object.
-    t201 = t1.
-    t199 ?= t201.
+    t199 ?= t1.
     t60 = t60->concat( p0 = t180->rename_files( i_obj_1ed0 = t199 i_old_name = t2 i_name = t3 ) ).
     DATA t206 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t207 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t210 TYPE REF TO zcl_lnt_class.
     DATA t211 TYPE REF TO zcl_lnt_class.
-    DATA t213 TYPE REF TO object.
-    t213 = t1.
-    t211 ?= t213.
+    t211 ?= t1.
     t210 = t211.
     DATA t215 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t217 TYPE REF TO zif_lnt_abap_file_information.
@@ -360,9 +348,7 @@ CLASS zcl_lnt_rename_global_class IMPLEMENTATION.
     DATA t255 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t256 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t258 TYPE REF TO zcl_lnt_class.
-    DATA t260 TYPE REF TO object.
-    t260 = t1.
-    t258 ?= t260.
+    t258 ?= t1.
     t256 = t180->rename_ddictabl_references( i_obj_1ed0 = t258 i_old_name = t2 i_new_name = t3 ).
     t255 ?= t256.
     t60 = t60->concat( p0 = t255 ).

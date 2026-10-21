@@ -451,9 +451,7 @@ CLASS zcl_lnt_sttc_cll_v_instnc IMPLEMENTATION.
       t26 = t27.
       IF t27 = abap_true.
         DATA t33 TYPE REF TO zcl_lnt_method_definition.
-        DATA t34 TYPE REF TO zcl_lnt_fi_identifier.
-        t34 = t8->resolved.
-        t33 ?= t34.
+        t33 ?= t8->resolved.
         t26 = xsdbool( t33->static_9977 = abap_true ).
       ENDIF.
       IF t26 = abap_true.

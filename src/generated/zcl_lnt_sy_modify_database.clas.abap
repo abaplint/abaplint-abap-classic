@@ -47,11 +47,9 @@ CLASS zcl_lnt_sy_modify_database IMPLEMENTATION.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( xsdbool( t13 IS INITIAL ) = abap_false ) = abap_true.
       DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t29 TYPE REF TO zcl_lnt_abstract_node.
       t29 = t1.
-      t28 = t29->children.
-      t27 ?= t28.
+      t27 ?= t29->children.
       t27->load( ).
       IF xsdbool( lines( t27->items ) = 5 ) = abap_true.
         DATA t34 TYPE REF TO zcl_lnt_typed_identifier.

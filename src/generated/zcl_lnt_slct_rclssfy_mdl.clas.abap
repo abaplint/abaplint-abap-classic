@@ -47,16 +47,12 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       ENDIF.
       DATA t12 TYPE REF TO zif_lnt_statement_runnable.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
-      DATA t15 TYPE REF TO object.
-      t15 = t3.
-      t13 ?= t15.
+      t13 ?= t3.
       t12 = t13->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t12 IS BOUND AND t12 IS INSTANCE OF zcl_lnt_sql_aggregation ) = abap_true.
         DATA t18 TYPE REF TO zcl_lnt_expression_node.
         DATA t19 TYPE REF TO zcl_lnt_expression_node.
-        DATA t21 TYPE REF TO object.
-        t21 = t3.
-        t19 ?= t21.
+        t19 ?= t3.
         DATA(t22) = zlnt_runtime_desc_78196487750d=>zlnt_member_d283_6d1de0562006.
         t18 = t19->find_direct_expression( i_type_9913 = t22 ).
         DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -69,32 +65,24 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       ENDIF.
       DATA t29 TYPE REF TO zif_lnt_statement_runnable.
       DATA t30 TYPE REF TO zcl_lnt_expression_node.
-      DATA t32 TYPE REF TO object.
-      t32 = t3.
-      t30 ?= t32.
+      t30 ?= t3.
       t29 = t30->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t29 IS BOUND AND t29 IS INSTANCE OF zcl_lnt_st_sql_set_op_group ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t34 TYPE REF TO zif_lnt_statement_runnable.
       DATA t35 TYPE REF TO zcl_lnt_expression_node.
-      DATA t37 TYPE REF TO object.
-      t37 = t3.
-      t35 ?= t37.
+      t35 ?= t3.
       t34 = t35->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t34 IS BOUND AND t34 IS INSTANCE OF zcl_lnt_st_sql_from ) = abap_true.
         CONTINUE.
       ENDIF.
       DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t41 TYPE REF TO zcl_lnt_abstract_node.
       DATA t42 TYPE REF TO zcl_lnt_expression_node.
-      DATA t44 TYPE REF TO object.
-      t44 = t3.
-      t42 ?= t44.
+      t42 ?= t3.
       t41 = t42.
-      t40 = t41->children.
-      t39 ?= t40.
+      t39 ?= t41->children.
       IF zcl_lnt_slct_rclssfy_mdl=>contains_aggregation( i_children_9020 = t39 ) = abap_true.
         result = abap_true.
         RETURN.
@@ -133,9 +121,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       ENDIF.
       DATA t11 TYPE REF TO zif_lnt_statement_runnable.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
-      DATA t15 TYPE REF TO object.
-      t15 = t3.
-      t13 ?= t15.
+      t13 ?= t3.
       t11 = t13->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       DATA(t16) = VALUE abap_bool( ).
       DATA t17 TYPE abap_bool.
@@ -195,9 +181,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_statement_runnable.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
-      DATA t22 TYPE REF TO object.
-      t22 = t5.
-      t20 ?= t22.
+      t20 ?= t5.
       t18 = t20->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_st_sql_set_op_group ) = abap_true.
         CONTINUE.
@@ -245,15 +229,11 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
         ENDIF.
       ENDDO.
       DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t39 TYPE REF TO zcl_lnt_abstract_node.
       DATA t40 TYPE REF TO zcl_lnt_expression_node.
-      DATA t42 TYPE REF TO object.
-      t42 = t5.
-      t40 ?= t42.
+      t40 ?= t5.
       t39 = t40.
-      t38 = t39->children.
-      t37 ?= t38.
+      t37 ?= t39->children.
       zcl_lnt_slct_rclssfy_mdl=>scan_for_expr_types( i_children_9020 = t37 i_found = t2 i_targets = t3 ).
     ENDDO.
   ENDMETHOD.
@@ -266,11 +246,9 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     IF xsdbool( t2 IS BOUND ) = abap_true.
       DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t12 TYPE REF TO zcl_lnt_abstract_node.
       t12 = t2.
-      t11 = t12->children.
-      t10 ?= t11.
+      t10 ?= t12->children.
       t7 = t10.
     ELSE.
       CREATE OBJECT t7.
@@ -308,9 +286,7 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
         DATA t31 TYPE string.
         DATA t32 TYPE string.
         DATA t35 TYPE REF TO zcl_lnt_token_node.
-        DATA t37 TYPE REF TO object.
-        t37 = t22.
-        t35 ?= t37.
+        t35 ?= t22.
         t32 = t35->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t40) = strlen( t32 ).
         t31 = t32.
@@ -437,11 +413,9 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     DATA t19 TYPE REF TO zlnt_runtime_set__7758c436a0c7.
     t19 = NEW zlnt_runtime_set__7758c436a0c7( ).
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t23 TYPE REF TO zcl_lnt_abstract_node.
     t23 = t2.
-    t22 = t23->children.
-    t21 ?= t22.
+    t21 ?= t23->children.
     zcl_lnt_slct_rclssfy_mdl=>scan_for_expr_types( i_children_9020 = t21 i_found = t19 i_targets = t12 ).
     DATA(t32) = zlnt_runtime_desc_78196487750d=>zlnt_member_d341_321f607af2eb.
     IF t19->has( p0 = t32 ) = abap_true.
@@ -465,11 +439,9 @@ CLASS zcl_lnt_slct_rclssfy_mdl IMPLEMENTATION.
     DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t7.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zcl_lnt_abstract_node.
     t13 = t1.
-    t12 = t13->children.
-    t11 ?= t12.
+    t11 ?= t13->children.
     t4 = t7->concat( p0 = t11 ).
     DATA t18 TYPE abap_bool.
     DATA t19 TYPE abap_bool.

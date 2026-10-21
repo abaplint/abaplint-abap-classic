@@ -191,9 +191,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t9 = t11->parsed.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     DATA t17 TYPE REF TO object.
@@ -254,9 +252,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
     DATA t35 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t38) = me->reg.
     DATA t39 TYPE REF TO zcl_lnt_abap_object.
-    DATA t41 TYPE REF TO object.
-    t41 = t1.
-    t39 ?= t41.
+    t39 ?= t1.
     t35 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t38 i_object_19cd = t39 )->run( ).
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t44 = t35->zlnt_view_read_sr_bd188c319c03( ).
@@ -270,9 +266,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
     DATA t50 TYPE REF TO zif_lnt_spaghetti_scope_node.
     t50 = t35->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t53 TYPE REF TO zcl_lnt_abap_object.
-    DATA t55 TYPE REF TO object.
-    t55 = t1.
-    t53 ?= t55.
+    t53 ?= t1.
     me->traverse( i_node = t50 i_obj_1ed0 = t53 i_issues = t48 ).
     result = t48.
 
@@ -433,9 +427,7 @@ CLASS zcl_lnt_clr_exprtng_prmtrs IMPLEMENTATION.
       IF xsdbool( t32 IS BOUND AND t32 IS INSTANCE OF zcl_lnt_typed_identifier ) = abap_true.
         DATA t34 TYPE REF TO zlnt_runtime_set__288f5ae381ad.
         DATA t36 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t37 TYPE REF TO zcl_lnt_fi_identifier.
-        t37 = t26->resolved.
-        t36 ?= t37.
+        t36 ?= t26->resolved.
         t34 = t5->add( p0 = t36 ).
       ENDIF.
     ENDDO.

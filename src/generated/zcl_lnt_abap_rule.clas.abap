@@ -33,9 +33,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t7 TYPE REF TO zcl_lnt_abap_object.
-    DATA t9 TYPE REF TO object.
-    t9 = t1.
-    t7 ?= t9.
+    t7 ?= t1.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -65,9 +63,7 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
       DATA(t22) = VALUE i( ).
       DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t25 TYPE REF TO zcl_lnt_abap_object.
-      DATA t27 TYPE REF TO object.
-      t27 = t1.
-      t25 ?= t27.
+      t25 ?= t1.
       t23 = me->run_parsed( i_file = t17 i_obj_1ed0 = t25 ).
       DATA t28 TYPE REF TO zcl_lnt_issue.
       CLEAR t28.

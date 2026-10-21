@@ -205,9 +205,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         DATA t45 TYPE REF TO zcl_lnt_abstract_object.
         DATA t46 TYPE REF TO zcl_lnt_domain.
         CLEAR t46.
-        DATA t48 TYPE REF TO object.
-        t48 = t1.
-        t46 ?= t48.
+        t46 ?= t1.
         t45 = t46.
         t44 = t45->name.
         DATA(t51) = strlen( t44 ).
@@ -272,9 +270,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
         DATA t99 TYPE REF TO zcl_lnt_issue.
         DATA t100 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t102 TYPE REF TO zcl_lnt_domain.
-        DATA t104 TYPE REF TO object.
-        t104 = t1.
-        t102 ?= t104.
+        t102 ?= t1.
         t100 = t102->get_identifier( ).
         DATA(t105) = VALUE string( ).
         DATA(t106) = VALUE string( ).
@@ -402,9 +398,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
       ENDIF.
       DATA t222 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t225 TYPE REF TO zcl_lnt_domain.
-      DATA t227 TYPE REF TO object.
-      t227 = t1.
-      t225 ?= t227.
+      t225 ?= t1.
       DATA t229 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t231 TYPE REF TO zcl_lnt_shape_b346f020.
       t231 = t225->parsed_xml.
@@ -468,9 +462,7 @@ CLASS zcl_lnt_constant_classes IMPLEMENTATION.
       CREATE OBJECT t263.
       DATA t267 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t269 TYPE REF TO zcl_lnt_domain.
-      DATA t271 TYPE REF TO object.
-      t271 = t1.
-      t269 ?= t271.
+      t269 ?= t1.
       DATA t273 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t275 TYPE REF TO zcl_lnt_shape_b346f020.
       t275 = t269->parsed_xml.

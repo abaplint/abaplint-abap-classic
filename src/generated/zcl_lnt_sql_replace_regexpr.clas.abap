@@ -21,10 +21,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -57,10 +55,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>tok( i_t = t17 ).
     IF t16 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t16.
       TRY.
-          t15 ?= t19.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -89,10 +85,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>tok( i_t = t29 ).
     IF t28 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t28.
       TRY.
-          t27 ?= t31.
+          t27 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.
@@ -122,10 +116,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t1.
       TRY.
-          t39 ?= t42.
+          t39 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t39 IS NOT BOUND.
@@ -148,10 +140,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t34 = zcl_lnt_st_combi_module=>alt_prio( i_first = t36 i_second = t39 i_rest = t44 ).
     IF t34 IS BOUND.
       DATA t49 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t50 TYPE REF TO object.
-      t50 = t34.
       TRY.
-          t33 ?= t50.
+          t33 ?= t34.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.
@@ -182,10 +172,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t24 IS BOUND.
       DATA t68 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t69 TYPE REF TO object.
-      t69 = t24.
       TRY.
-          t66 ?= t69.
+          t66 ?= t24.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t66 IS NOT BOUND.
@@ -215,10 +203,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t64 = zcl_lnt_st_combi_module=>alt_prio( i_first = t66 i_second = t71 i_rest = t74 ).
     IF t64 IS BOUND.
       DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t80 TYPE REF TO object.
-      t80 = t64.
       TRY.
-          t63 ?= t80.
+          t63 ?= t64.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t63 IS NOT BOUND.
@@ -280,10 +266,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t102 = zcl_lnt_st_combi_module=>tok( i_t = t103 ).
     IF t102 IS BOUND.
       DATA t104 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t105 TYPE REF TO object.
-      t105 = t102.
       TRY.
-          t101 ?= t105.
+          t101 ?= t102.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t101 IS NOT BOUND.
@@ -318,10 +302,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t57 IS BOUND.
       DATA t116 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t117 TYPE REF TO object.
-      t117 = t57.
       TRY.
-          t114 ?= t117.
+          t114 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t114 IS NOT BOUND.
@@ -342,10 +324,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t113 = zcl_lnt_st_combi_module=>opt_prio( i_first = t114 ).
     IF t113 IS BOUND.
       DATA t118 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t119 TYPE REF TO object.
-      t119 = t113.
       TRY.
-          t112 ?= t119.
+          t112 ?= t113.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t112 IS NOT BOUND.
@@ -378,10 +358,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t122 = zcl_lnt_st_combi_module=>opt_prio( i_first = t123 ).
     IF t122 IS BOUND.
       DATA t125 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t126 TYPE REF TO object.
-      t126 = t122.
       TRY.
-          t121 ?= t126.
+          t121 ?= t122.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t121 IS NOT BOUND.
@@ -414,10 +392,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t129 = zcl_lnt_st_combi_module=>opt_prio( i_first = t130 ).
     IF t129 IS BOUND.
       DATA t132 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t133 TYPE REF TO object.
-      t133 = t129.
       TRY.
-          t128 ?= t133.
+          t128 ?= t129.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t128 IS NOT BOUND.
@@ -444,10 +420,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t136 = zcl_lnt_st_combi_module=>tok( i_t = t137 ).
     IF t136 IS BOUND.
       DATA t138 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t139 TYPE REF TO object.
-      t139 = t136.
       TRY.
-          t135 ?= t139.
+          t135 ?= t136.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t135 IS NOT BOUND.
@@ -471,10 +445,8 @@ CLASS zcl_lnt_sql_replace_regexpr IMPLEMENTATION.
     t96 = zcl_lnt_st_combi_module=>seq( i_first = t98 i_second = t101 i_rest = t106 ).
     IF t96 IS BOUND.
       DATA t144 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t145 TYPE REF TO object.
-      t145 = t96.
       TRY.
-          t95 ?= t145.
+          t95 ?= t96.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t95 IS NOT BOUND.

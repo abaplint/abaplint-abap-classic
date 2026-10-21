@@ -313,11 +313,9 @@ CLASS zcl_lnt_icfservice IMPLEMENTATION.
           IF t154 IS BOUND.
             DATA t158 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t158.
-            DATA t159 TYPE REF TO object.
             CLEAR t158.
-            t159 = t154.
             TRY.
-                t153 ?= t159.
+                t153 ?= t154.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t153 IS NOT BOUND.

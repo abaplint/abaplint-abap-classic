@@ -246,9 +246,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
           t146 = t17->get_first_token( ).
           DATA t152 TYPE REF TO zcl_lnt_fi_identifier.
           DATA t154 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t155 TYPE REF TO zif_lnt_interface_definition.
-          t155 = t65.
-          t154 ?= t155.
+          t154 ?= t65.
           t152 = t154.
           DATA t158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CREATE OBJECT t158.
@@ -540,9 +538,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
         CLEAR t357.
         DATA t359 TYPE REF TO zcl_lnt_fi_identifier.
         CLEAR t359.
-        DATA t360 TYPE REF TO zif_lnt_class_definition.
-        t360 = t281.
-        t359 ?= t360.
+        t359 ?= t281.
         t357 = t359.
         DATA t363 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t363.
@@ -648,9 +644,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
           ELSE.
             DATA t436 TYPE REF TO zcl_lnt_fi_identifier.
             CLEAR t436.
-            DATA t437 TYPE REF TO zif_lnt_class_definition.
-            t437 = t424.
-            t436 ?= t437.
+            t436 ?= t424.
             t432 = t436.
           ENDIF.
           DATA t439 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -723,9 +717,7 @@ CLASS zcl_lnt_method_definition IMPLEMENTATION.
           ELSE.
             DATA t481 TYPE REF TO zcl_lnt_fi_identifier.
             CLEAR t481.
-            DATA t482 TYPE REF TO zif_lnt_class_definition.
-            t482 = t469.
-            t481 ?= t482.
+            t481 ?= t469.
             t477 = t481.
           ENDIF.
           DATA t484 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

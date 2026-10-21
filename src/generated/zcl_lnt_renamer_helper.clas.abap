@@ -646,11 +646,9 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t44 IS BOUND.
         DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t59.
-        DATA t60 TYPE REF TO object.
         CLEAR t59.
-        t60 = t44.
         TRY.
-            t43 ?= t60.
+            t43 ?= t44.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t43 IS NOT BOUND.
@@ -813,11 +811,9 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t24 IS BOUND.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
-        DATA t40 TYPE REF TO object.
         CLEAR t39.
-        t40 = t24.
         TRY.
-            t23 ?= t40.
+            t23 ?= t24.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t23 IS NOT BOUND.
@@ -967,11 +963,9 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t24 IS BOUND.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
-        DATA t40 TYPE REF TO object.
         CLEAR t39.
-        t40 = t24.
         TRY.
-            t23 ?= t40.
+            t23 ?= t24.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t23 IS NOT BOUND.
@@ -1121,11 +1115,9 @@ CLASS zcl_lnt_renamer_helper IMPLEMENTATION.
       IF t24 IS BOUND.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
-        DATA t40 TYPE REF TO object.
         CLEAR t39.
-        t40 = t24.
         TRY.
-            t23 ?= t40.
+            t23 ?= t24.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t23 IS NOT BOUND.

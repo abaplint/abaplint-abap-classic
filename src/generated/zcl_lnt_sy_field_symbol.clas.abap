@@ -55,11 +55,9 @@ CLASS zcl_lnt_sy_field_symbol IMPLEMENTATION.
       t47->save( ).
     ENDIF.
     DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t58 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t59 TYPE REF TO zcl_lnt_abstract_node.
     t59 = t1.
-    t58 = t59->children.
-    t57 ?= t58.
+    t57 ?= t59->children.
     t57->load( ).
     IF xsdbool( lines( t57->items ) = 5 ) = abap_true.
       DATA t65 TYPE REF TO zcl_lnt_current_scope.

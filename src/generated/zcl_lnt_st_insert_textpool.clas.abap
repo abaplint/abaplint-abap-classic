@@ -79,10 +79,8 @@ CLASS zcl_lnt_st_insert_textpool IMPLEMENTATION.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t15.
       TRY.
-          t48 ?= t51.
+          t48 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -103,10 +101,8 @@ CLASS zcl_lnt_st_insert_textpool IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>opt( i_first = t48 ).
     IF t47 IS BOUND.
       DATA t52 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t53 TYPE REF TO object.
-      t53 = t47.
       TRY.
-          t46 ?= t53.
+          t46 ?= t47.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t46 IS NOT BOUND.
@@ -132,10 +128,8 @@ CLASS zcl_lnt_st_insert_textpool IMPLEMENTATION.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t60 TYPE REF TO object.
-      t60 = t1.
       TRY.
-          t57 ?= t60.
+          t57 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t57 IS NOT BOUND.
@@ -156,10 +150,8 @@ CLASS zcl_lnt_st_insert_textpool IMPLEMENTATION.
     t56 = zcl_lnt_st_combi_module=>opt( i_first = t57 ).
     IF t56 IS BOUND.
       DATA t61 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t62 TYPE REF TO object.
-      t62 = t56.
       TRY.
-          t55 ?= t62.
+          t55 ?= t56.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t55 IS NOT BOUND.
@@ -184,10 +176,8 @@ CLASS zcl_lnt_st_insert_textpool IMPLEMENTATION.
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t71 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t72 TYPE REF TO object.
-      t72 = t29.
       TRY.
-          t69 ?= t72.
+          t69 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t69 IS NOT BOUND.

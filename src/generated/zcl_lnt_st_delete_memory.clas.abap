@@ -78,10 +78,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     t50 = zcl_lnt_st_combi_module=>alt_prio( i_first = t52 i_second = t55 i_rest = t58 ).
     IF t50 IS BOUND.
       DATA t63 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t64 TYPE REF TO object.
-      t64 = t50.
       TRY.
-          t49 ?= t64.
+          t49 ?= t50.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t49 IS NOT BOUND.
@@ -126,10 +124,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     t75 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t76 ).
     IF t75 IS BOUND.
       DATA t80 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t81 TYPE REF TO object.
-      t81 = t75.
       TRY.
-          t74 ?= t81.
+          t74 ?= t75.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t74 IS NOT BOUND.
@@ -162,10 +158,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     DATA t88 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t90 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t91 TYPE REF TO object.
-      t91 = t29.
       TRY.
-          t88 ?= t91.
+          t88 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t88 IS NOT BOUND.
@@ -186,10 +180,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     t87 = zcl_lnt_st_combi_module=>opt_prio( i_first = t88 ).
     IF t87 IS BOUND.
       DATA t92 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t93 TYPE REF TO object.
-      t93 = t87.
       TRY.
-          t86 ?= t93.
+          t86 ?= t87.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t86 IS NOT BOUND.
@@ -213,10 +205,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t97 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t98 TYPE REF TO object.
-      t98 = t15.
       TRY.
-          t95 ?= t98.
+          t95 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t95 IS NOT BOUND.
@@ -248,10 +238,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     DATA t112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t114 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t115 TYPE REF TO object.
-      t115 = t1.
       TRY.
-          t112 ?= t115.
+          t112 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t112 IS NOT BOUND.
@@ -272,10 +260,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t43 IS BOUND.
       DATA t119 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t120 TYPE REF TO object.
-      t120 = t43.
       TRY.
-          t117 ?= t120.
+          t117 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t117 IS NOT BOUND.
@@ -298,10 +284,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     t110 = zcl_lnt_st_combi_module=>alt( i_first = t112 i_second = t117 i_rest = t122 ).
     IF t110 IS BOUND.
       DATA t127 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t128 TYPE REF TO object.
-      t128 = t110.
       TRY.
-          t109 ?= t128.
+          t109 ?= t110.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t109 IS NOT BOUND.
@@ -325,10 +309,8 @@ CLASS zcl_lnt_st_delete_memory IMPLEMENTATION.
     DATA t137 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t103 IS BOUND.
       DATA t139 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t140 TYPE REF TO object.
-      t140 = t103.
       TRY.
-          t137 ?= t140.
+          t137 ?= t103.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t137 IS NOT BOUND.

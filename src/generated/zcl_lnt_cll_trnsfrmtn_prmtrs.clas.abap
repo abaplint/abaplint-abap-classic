@@ -36,10 +36,8 @@ CLASS zcl_lnt_cll_trnsfrmtn_prmtrs IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>alt( i_first = t7 i_second = t10 i_rest = t13 ).
     IF t5 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t5.
       TRY.
-          t4 ?= t19.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -79,10 +77,8 @@ CLASS zcl_lnt_cll_trnsfrmtn_prmtrs IMPLEMENTATION.
     DATA t36 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t1.
       TRY.
-          t36 ?= t39.
+          t36 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t36 IS NOT BOUND.
@@ -103,10 +99,8 @@ CLASS zcl_lnt_cll_trnsfrmtn_prmtrs IMPLEMENTATION.
     t35 = zcl_lnt_st_combi_module=>plus( i_first = t36 ).
     IF t35 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t41 TYPE REF TO object.
-      t41 = t35.
       TRY.
-          t34 ?= t41.
+          t34 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t34 IS NOT BOUND.

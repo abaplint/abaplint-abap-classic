@@ -37,10 +37,8 @@ CLASS zcl_lnt_st_cleanup IMPLEMENTATION.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t1.
       TRY.
-          t22 ?= t25.
+          t22 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t22 IS NOT BOUND.
@@ -61,10 +59,8 @@ CLASS zcl_lnt_st_cleanup IMPLEMENTATION.
     t21 = zcl_lnt_st_combi_module=>opt( i_first = t22 ).
     IF t21 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t27 TYPE REF TO object.
-      t27 = t21.
       TRY.
-          t20 ?= t27.
+          t20 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.

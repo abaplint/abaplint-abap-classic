@@ -118,9 +118,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     ENDIF.
     DATA t8 TYPE REF TO zif_lnt_file.
     DATA t10 TYPE REF TO zcl_lnt_ob_program.
-    DATA t12 TYPE REF TO object.
-    t12 = t1.
-    t10 ?= t12.
+    t10 ?= t1.
     t8 = t10->get_xml_file( ).
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t8 IS INITIAL ) = abap_true.
@@ -130,9 +128,7 @@ CLASS zcl_lnt_dynpro_checks IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t22 TYPE REF TO zcl_lnt_ob_program.
     DATA t23 TYPE REF TO zcl_lnt_ob_program.
-    DATA t25 TYPE REF TO object.
-    t25 = t1.
-    t23 ?= t25.
+    t23 ?= t1.
     t22 = t23.
     t22->parse_xml( ).
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.

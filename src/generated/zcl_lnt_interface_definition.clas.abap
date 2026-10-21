@@ -515,9 +515,7 @@ CLASS zcl_lnt_interface_definition IMPLEMENTATION.
           CLEAR t131.
           DATA t133 TYPE REF TO zcl_lnt_fi_identifier.
           CLEAR t133.
-          DATA t134 TYPE REF TO zif_lnt_interface_definition.
-          t134 = t54.
-          t133 ?= t134.
+          t133 ?= t54.
           t131 = t133.
           DATA t137 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t137.

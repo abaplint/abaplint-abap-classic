@@ -161,9 +161,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     IF t10 = abap_true.
       DATA t14 TYPE REF TO zcl_lnt_ob_program.
       DATA t15 TYPE REF TO zcl_lnt_ob_program.
-      DATA t17 TYPE REF TO object.
-      t17 = t1.
-      t15 ?= t17.
+      t15 ?= t1.
       t14 = t15.
       t14->parse_xml( ).
       t9 = xsdbool( t14->parsed_xml->is_include = abap_true ).
@@ -176,9 +174,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
 
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t28 TYPE REF TO zcl_lnt_abap_object.
-    DATA t30 TYPE REF TO object.
-    t30 = t1.
-    t28 ?= t30.
+    t28 ?= t1.
     t26 = t28->parsed.
     DATA t33 TYPE REF TO zcl_lnt_abap_file.
     DATA t34 TYPE REF TO object.
@@ -239,9 +235,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     DATA t52 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t55) = me->reg.
     DATA t56 TYPE REF TO zcl_lnt_abap_object.
-    DATA t58 TYPE REF TO object.
-    t58 = t1.
-    t56 ?= t58.
+    t56 ?= t1.
     t52 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t55 i_object_19cd = t56 )->run( ).
     DATA t61 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t61 = t52->zlnt_view_read_sr_bd188c319c03( ).
@@ -254,9 +248,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `wa`.
     DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t68 TYPE REF TO zcl_lnt_abap_object.
-    DATA t70 TYPE REF TO object.
-    t70 = t1.
-    t68 ?= t70.
+    t68 ?= t1.
     t66 = t68->parsed.
     DATA t73 TYPE REF TO zcl_lnt_abap_file.
     DATA t74 TYPE REF TO object.
@@ -509,9 +501,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
     ENDDO.
     me->traverse( i_node = t52->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
     DATA t186 TYPE REF TO zcl_lnt_abap_object.
-    DATA t188 TYPE REF TO object.
-    t188 = t1.
-    t186 ?= t188.
+    t186 ?= t1.
     me->search_global_subclasses( i_obj_1ed0 = t186 ).
     DATA t189 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t189.
@@ -541,9 +531,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
       ENDIF.
       DATA t201 TYPE REF TO zcl_lnt_abap_file.
       DATA t203 TYPE REF TO zcl_lnt_abap_object.
-      DATA t205 TYPE REF TO object.
-      t205 = t1.
-      t203 ?= t205.
+      t203 ?= t1.
       DATA t210 TYPE string.
       t210 = t196->identifier->filename.
       t201 = t203->get_abap_file_by_name( i_filename = t210 ).
@@ -757,9 +745,7 @@ CLASS zcl_lnt_unused_methods IMPLEMENTATION.
         IF t349 = abap_true.
           DATA t354 TYPE abap_bool.
           DATA t355 TYPE REF TO zcl_lnt_abap_object.
-          DATA t357 TYPE REF TO object.
-          t357 = t1.
-          t355 ?= t357.
+          t355 ?= t1.
           t354 = me->has_sub_class( i_obj_1ed0 = t355 ).
           t348 = xsdbool( t354 = abap_false ).
         ENDIF.

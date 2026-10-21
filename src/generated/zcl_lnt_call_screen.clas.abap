@@ -84,10 +84,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t53 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t54 TYPE REF TO object.
-      t54 = t1.
       TRY.
-          t51 ?= t54.
+          t51 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t51 IS NOT BOUND.
@@ -110,10 +108,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t18 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t18.
       TRY.
-          t58 ?= t61.
+          t58 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t58 IS NOT BOUND.
@@ -134,10 +130,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     t57 = zcl_lnt_st_combi_module=>opt_prio( i_first = t58 ).
     IF t57 IS BOUND.
       DATA t62 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t63 TYPE REF TO object.
-      t63 = t57.
       TRY.
-          t56 ?= t63.
+          t56 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t56 IS NOT BOUND.
@@ -160,10 +154,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     t49 = zcl_lnt_st_combi_module=>seq( i_first = t51 i_second = t56 i_rest = t65 ).
     IF t49 IS BOUND.
       DATA t70 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t71 TYPE REF TO object.
-      t71 = t49.
       TRY.
-          t48 ?= t71.
+          t48 ?= t49.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -184,10 +176,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>opt_prio( i_first = t48 ).
     IF t47 IS BOUND.
       DATA t72 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t73 TYPE REF TO object.
-      t73 = t47.
       TRY.
-          t46 ?= t73.
+          t46 ?= t47.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t46 IS NOT BOUND.
@@ -212,10 +202,8 @@ CLASS zcl_lnt_call_screen IMPLEMENTATION.
     DATA t80 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t35 IS BOUND.
       DATA t82 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t83 TYPE REF TO object.
-      t83 = t35.
       TRY.
-          t80 ?= t83.
+          t80 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t80 IS NOT BOUND.

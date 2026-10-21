@@ -187,10 +187,8 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
         CLEAR result.
         IF me->file IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t4 TYPE REF TO object.
-          t4 = me->file.
           TRY.
-              result ?= t4.
+              result ?= me->file.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

@@ -24,11 +24,9 @@ CLASS zcl_lnt_sy_select_option IMPLEMENTATION.
     DATA t14 TYPE REF TO zcl_lnt_abstract_token.
     t14 = t3->get_first_token( ).
     DATA t20 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t22 TYPE REF TO zcl_lnt_abstract_node.
     t22 = t3.
-    t21 = t22->children.
-    t20 ?= t21.
+    t20 ?= t22->children.
     t20->load( ).
     IF xsdbool( lines( t20->items ) > 1 ) = abap_true.
       DATA t29 TYPE string.

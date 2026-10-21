@@ -367,7 +367,6 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   METHOD new_symbol_ranged.
     DATA(t1) = i_identifier.
     DATA(t3) = i_children_9020.
-    DATA t5 TYPE REF TO object.
     DATA t6 TYPE REF TO zcl_lnt_document_symbol.
     DATA(t7) = VALUE string( ).
     DATA t12 TYPE string.
@@ -588,11 +587,8 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     IF t6->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t6->zlnt_json_ownkeys_70e5fd461788->put( p0 = |children| p1 = t173 ).
     ENDIF.
-    t5 = t6.
     DATA t174 TYPE REF TO zcl_lnt_document_symbol.
-    DATA t175 TYPE REF TO object.
-    t175 = t5.
-    t174 ?= t175.
+    t174 ?= t6.
     result = t174.
 
   ENDMETHOD.
@@ -600,7 +596,6 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
   METHOD new_symbol.
     DATA(t1) = i_identifier.
     DATA(t3) = i_children_9020.
-    DATA t4 TYPE REF TO object.
     DATA t5 TYPE REF TO zcl_lnt_document_symbol.
     DATA(t6) = VALUE string( ).
     DATA t11 TYPE string.
@@ -902,11 +897,8 @@ CLASS zcl_lnt_symbols IMPLEMENTATION.
     IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |children| p1 = t267 ).
     ENDIF.
-    t4 = t5.
     DATA t268 TYPE REF TO zcl_lnt_document_symbol.
-    DATA t269 TYPE REF TO object.
-    t269 = t4.
-    t268 ?= t269.
+    t268 ?= t5.
     result = t268.
 
   ENDMETHOD.

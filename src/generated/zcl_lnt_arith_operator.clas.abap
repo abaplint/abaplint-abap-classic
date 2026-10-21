@@ -20,10 +20,8 @@ CLASS zcl_lnt_arith_operator IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -47,10 +45,8 @@ CLASS zcl_lnt_arith_operator IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>tok( i_t = t12 ).
     IF t11 IS BOUND.
       DATA t13 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t14 TYPE REF TO object.
-      t14 = t11.
       TRY.
-          t10 ?= t14.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.

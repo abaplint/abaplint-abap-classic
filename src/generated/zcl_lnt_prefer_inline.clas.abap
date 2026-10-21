@@ -188,9 +188,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
     DATA t27 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t30) = me->reg.
     DATA t31 TYPE REF TO zcl_lnt_abap_object.
-    DATA t33 TYPE REF TO object.
-    t33 = t1.
-    t31 ?= t33.
+    t31 ?= t1.
     t27 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t30 i_object_19cd = t31 )->run( ).
     DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t36 = t27->zlnt_view_read_sr_bd188c319c03( ).
@@ -228,9 +226,7 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
       DATA(t53) = VALUE i( ).
       DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t56 TYPE REF TO zcl_lnt_abap_object.
-      DATA t58 TYPE REF TO object.
-      t58 = t1.
-      t56 ?= t58.
+      t56 ?= t1.
       t54 = me->analyze_scope( i_node = t48 i_obj_1ed0 = t56 ).
       DATA t59 TYPE REF TO zcl_lnt_issue.
       CLEAR t59.
@@ -1589,17 +1585,13 @@ CLASS zcl_lnt_prefer_inline IMPLEMENTATION.
       DATA t41 TYPE abap_bool.
       DATA t43 TYPE REF TO zcl_lnt_abstract_type.
       DATA t45 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA t46 TYPE REF TO zcl_lnt_fi_identifier.
-      t46 = t6->resolved.
-      t45 ?= t46.
+      t45 ?= t6->resolved.
       t43 = t45->type_cba0.
       t41 = xsdbool( t43->is_generic( ) = abap_true ).
       t40 = t41.
       IF t41 = abap_false.
         DATA t55 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t56 TYPE REF TO zcl_lnt_fi_identifier.
-        t56 = t6->resolved.
-        t55 ?= t56.
+        t55 ?= t6->resolved.
         DATA t58 TYPE REF TO zcl_lnt_abstract_type.
         t58 = t55->type_cba0.
         t40 = xsdbool( t58->contains_void( ) = abap_true ).

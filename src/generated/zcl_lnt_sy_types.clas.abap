@@ -36,11 +36,9 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       t3 = t24.
     ENDIF.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t28 TYPE REF TO zcl_lnt_abstract_node.
     t28 = t1.
-    t27 = t28->children.
-    t26 ?= t27.
+    t26 ?= t28->children.
     DATA t32 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t33 TYPE REF TO object.
     DATA(t34) = VALUE i( ).
@@ -76,9 +74,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
           DATA(t48) = NEW zcl_lnt_sy_type( ).
           DATA t49 TYPE REF TO zcl_lnt_statement_node.
           CLEAR t49.
-          DATA t51 TYPE REF TO object.
-          t51 = t32.
-          t49 ?= t51.
+          t49 ?= t32.
           DATA(t55) = VALUE string( ).
           DATA(t56) = VALUE string( ).
           DATA(t57) = VALUE string( ).
@@ -244,9 +240,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
             DATA(t171) = NEW zcl_lnt_sy_include_type( ).
             DATA t172 TYPE REF TO zcl_lnt_statement_node.
             CLEAR t172.
-            DATA t174 TYPE REF TO object.
-            t174 = t32.
-            t172 ?= t174.
+            t172 ?= t32.
             t169 = t171->run_syntax( i_node = t172 i_input_967e = t2 ).
             DATA(t176) = VALUE abap_bool( ).
             DATA(t177) = VALUE abap_bool( ).
@@ -415,9 +409,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
           DATA(t218) = NEW zcl_lnt_sy_types( ).
           DATA t219 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t219.
-          DATA t221 TYPE REF TO object.
-          t221 = t32.
-          t219 ?= t221.
+          t219 ?= t32.
           DATA(t225) = VALUE string( ).
           DATA(t226) = VALUE string( ).
           DATA(t227) = VALUE string( ).
@@ -584,9 +576,7 @@ CLASS zcl_lnt_sy_types IMPLEMENTATION.
       DATA(t343) = VALUE string( ).
       t343 = t2->filename.
       DATA t345 TYPE REF TO zif_lnt_union_ea265422.
-      DATA t346 TYPE REF TO zif_lnt_union_adffe656.
-      t346 = t12.
-      t345 ?= t346.
+      t345 ?= t12.
       DATA t348 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       DATA t349 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       result = NEW zcl_lnt_typed_identifier( i_token = t4 i_filename = t343 i_type_9913 = t345 i_meta = t348 i_value = t349 ).

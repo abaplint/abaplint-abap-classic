@@ -1850,8 +1850,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       IF t16->done = abap_true.
         EXIT.
       ENDIF.
-      DATA t23 TYPE REF TO zif_lnt_object.
-      t23 = t16->value.
       DATA t25 TYPE REF TO zcl_lnt_fnctn_mdl_dfntn.
       CLEAR t25.
       DATA t27 TYPE REF TO zcl_lnt_fnctn_mdl_dfntn.
@@ -1863,7 +1861,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       TRY.
           DATA t32 TYPE REF TO zcl_lnt_function_group.
           CLEAR t32.
-          t32 ?= t23.
+          t32 ?= t16->value.
           DATA(t34) = VALUE string( ).
           t34 = t1->value.
           t27 = t32->get_module( i_name = t34 ).
@@ -2008,9 +2006,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t10 = t19.
     IF xsdbool( t10 IS BOUND ) = abap_true.
       DATA t76 TYPE REF TO zif_lnt_interface_definition.
-      DATA t77 TYPE REF TO zif_lnt_class_definition.
-      t77 = t10.
-      t76 ?= t77.
+      t76 ?= t10.
       result = t76.
       RETURN.
     ENDIF.
@@ -2179,8 +2175,6 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       IF t12->done = abap_true.
         EXIT.
       ENDIF.
-      DATA t19 TYPE REF TO zif_lnt_object.
-      t19 = t12->value.
       DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t21.
       DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -2194,7 +2188,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
           CLEAR t27.
           DATA t28 TYPE REF TO zcl_lnt_enhancement_spot.
           CLEAR t28.
-          t28 ?= t19.
+          t28 ?= t12->value.
           t27 = t28.
           DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t33.
@@ -2336,9 +2330,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       DATA t53 TYPE REF TO zcl_lnt_shape_59e28496.
       DATA t54 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t57 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t58 TYPE REF TO zif_lnt_class_definition.
-      t58 = t30.
-      t57 ?= t58.
+      t57 ?= t30.
       t54 = t57.
       DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t65) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -2464,9 +2456,7 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
       DATA t164 TYPE REF TO zcl_lnt_shape_59e28496.
       DATA t165 TYPE REF TO zcl_lnt_fi_identifier.
       DATA t168 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t169 TYPE REF TO zif_lnt_interface_definition.
-      t169 = t141.
-      t168 ?= t169.
+      t168 ?= t141.
       t165 = t168.
       DATA t172 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       DATA(t176) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
@@ -2849,10 +2839,8 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t61 = t63->get_object( i_type_9913 = t64 i_name = t72 ).
     IF t61 IS BOUND.
       DATA t74 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t75 TYPE REF TO object.
-      t75 = t61.
       TRY.
-          t60 ?= t75.
+          t60 ?= t61.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.
@@ -3038,10 +3026,8 @@ CLASS zcl_lnt_current_scope IMPLEMENTATION.
     t63 = t65->get_object( i_type_9913 = t66 i_name = t74 ).
     IF t63 IS BOUND.
       DATA t76 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t77 TYPE REF TO object.
-      t77 = t63.
       TRY.
-          t62 ?= t77.
+          t62 ?= t63.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t62 IS NOT BOUND.

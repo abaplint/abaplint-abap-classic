@@ -125,10 +125,8 @@ CLASS zcl_lnt_result_node IMPLEMENTATION.
         CLEAR result.
         IF me->node IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t2 TYPE REF TO object.
-          t2 = me->node.
           TRY.
-              result ?= t2.
+              result ?= me->node.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

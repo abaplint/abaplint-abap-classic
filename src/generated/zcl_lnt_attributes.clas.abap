@@ -732,11 +732,9 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zcl_lnt_abstract_node.
     t13 = t1.
-    t12 = t13->children.
-    t11 ?= t12.
+    t11 ?= t13->children.
     DATA t18 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t19 TYPE REF TO object.
     DATA(t20) = VALUE i( ).
@@ -771,9 +769,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
           DATA t32 TYPE REF TO zcl_lnt_typed_identifier.
           DATA t34 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t34.
-          DATA t36 TYPE REF TO object.
-          t36 = t18.
-          t34 ?= t36.
+          t34 ?= t18.
           t32 = zcl_lnt_sy_struct_data=>run_syntax( i_node = t34 i_input_967e = t3 ).
           DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t41.
@@ -860,9 +856,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
             DATA(t118) = NEW zcl_lnt_sy_struct_class_data( ).
             DATA t119 TYPE REF TO zcl_lnt_structure_node.
             CLEAR t119.
-            DATA t121 TYPE REF TO object.
-            t121 = t18.
-            t119 ?= t121.
+            t119 ?= t18.
             t116 = t118->run_syntax( i_node = t119 i_input_967e = t3 ).
             DATA t126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t126.
@@ -949,9 +943,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
               DATA(t203) = NEW zcl_lnt_sy_constants( ).
               DATA t204 TYPE REF TO zcl_lnt_structure_node.
               CLEAR t204.
-              DATA t206 TYPE REF TO object.
-              t206 = t18.
-              t204 ?= t206.
+              t204 ?= t18.
               t201 = t203->run_syntax( i_node = t204 i_input_967e = t3 ).
               DATA t208 TYPE REF TO zcl_lnt_typed_identifier.
               t208 = t201->type_cba0.
@@ -1065,9 +1057,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                 DATA(t283) = NEW zcl_lnt_sy_type_enum( ).
                 DATA t284 TYPE REF TO zcl_lnt_structure_node.
                 CLEAR t284.
-                DATA t286 TYPE REF TO object.
-                t286 = t18.
-                t284 ?= t286.
+                t284 ?= t18.
                 t281 = t283->run_syntax( i_node = t284 i_input_967e = t3 ).
                 DATA t288 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 CLEAR t288.
@@ -1233,9 +1223,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                   DATA(t377) = NEW zcl_lnt_sy_type_mesh( ).
                   DATA t378 TYPE REF TO zcl_lnt_structure_node.
                   CLEAR t378.
-                  DATA t380 TYPE REF TO object.
-                  t380 = t18.
-                  t378 ?= t380.
+                  t378 ?= t18.
                   t375 = t377->run_syntax( i_node = t378 i_input_967e = t3 ).
                   IF xsdbool( t375 IS BOUND ) = abap_true.
                     DATA t385 TYPE REF TO zcl_lnt_current_scope.
@@ -1333,9 +1321,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                     DATA(t454) = NEW zcl_lnt_sy_types( ).
                     DATA t455 TYPE REF TO zcl_lnt_structure_node.
                     CLEAR t455.
-                    DATA t457 TYPE REF TO object.
-                    t457 = t18.
-                    t455 ?= t457.
+                    t455 ?= t18.
                     DATA t459 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     CLEAR t459.
                     t452 = t454->run_syntax( i_node = t455 i_input_967e = t3 i_qualified_name_prefix = t459 ).
@@ -1432,9 +1418,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                   ELSE.
                     DATA t530 TYPE REF TO zcl_lnt_structure_node.
                     CLEAR t530.
-                    DATA t532 TYPE REF TO object.
-                    t532 = t18.
-                    t530 ?= t532.
+                    t530 ?= t18.
                     me->parse_section( i_node = t530 i_visibility_5c1f = t2 i_input_967e = t3 ).
                   ENDIF.
                 ENDIF.
@@ -1449,9 +1433,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
             DATA t541 TYPE REF TO zcl_lnt_class_attribute.
             DATA t542 TYPE REF TO zcl_lnt_statement_node.
             CLEAR t542.
-            DATA t544 TYPE REF TO object.
-            t544 = t18.
-            t542 ?= t544.
+            t542 ?= t18.
             t541 = me->parse_attribute( i_node = t542 i_visibility_5c1f = t2 i_input_967e = t3 ).
             t540->load( ).
             APPEND t541 TO t540->items.
@@ -1462,9 +1444,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
               DATA t550 TYPE REF TO zcl_lnt_class_attribute.
               DATA t551 TYPE REF TO zcl_lnt_statement_node.
               CLEAR t551.
-              DATA t553 TYPE REF TO object.
-              t553 = t18.
-              t551 ?= t553.
+              t551 ?= t18.
               t550 = me->parse_attribute( i_node = t551 i_visibility_5c1f = t2 i_input_967e = t3 ).
               t549->load( ).
               APPEND t550 TO t549->items.
@@ -1473,9 +1453,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
               IF xsdbool( t23 IS BOUND AND t23 IS INSTANCE OF zcl_lnt_aliases ) = abap_true.
                 DATA t558 TYPE REF TO zcl_lnt_statement_node.
                 CLEAR t558.
-                DATA t560 TYPE REF TO object.
-                t560 = t18.
-                t558 ?= t560.
+                t558 ?= t18.
                 me->parse_alias( i_node = t558 i_visibility_5c1f = t2 i_input_967e = t3 ).
               ELSE.
                 IF xsdbool( t23 IS BOUND AND t23 IS INSTANCE OF zcl_lnt_st_statem_constant ) = abap_true.
@@ -1484,9 +1462,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                   DATA(t567) = NEW zcl_lnt_sy_statem_constant( ).
                   DATA t568 TYPE REF TO zcl_lnt_statement_node.
                   CLEAR t568.
-                  DATA t570 TYPE REF TO object.
-                  t570 = t18.
-                  t568 ?= t570.
+                  t568 ?= t18.
                   t565 = t567->run_syntax( i_node = t568 i_input_967e = t3 ).
                   IF xsdbool( t565 IS BOUND ) = abap_true.
                     DATA t574 TYPE REF TO zcl_lnt_class_constant.
@@ -1564,9 +1540,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
                     DATA(t635) = NEW zcl_lnt_sy_type( ).
                     DATA t636 TYPE REF TO zcl_lnt_statement_node.
                     CLEAR t636.
-                    DATA t638 TYPE REF TO object.
-                    t638 = t18.
-                    t636 ?= t638.
+                    t636 ?= t18.
                     DATA t640 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     CLEAR t640.
                     t633 = t635->run_syntax( i_node = t636 i_input_967e = t3 i_qualified_name_prefix = t640 ).
@@ -1821,9 +1795,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
         t121 = t10.
         DATA t125 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t127 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t128 TYPE REF TO zif_lnt_interface_definition.
-        t128 = t46.
-        t127 ?= t128.
+        t127 ?= t46.
         t125 = t127.
         DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t131.
@@ -1974,9 +1946,7 @@ CLASS zcl_lnt_attributes IMPLEMENTATION.
           DATA(t209) = VALUE string( ).
           t209 = t4->str.
           DATA t214 TYPE REF TO zcl_lnt_typed_identifier.
-          DATA t215 TYPE REF TO zif_lnt_union_a346537f.
-          t215 = t190.
-          t214 ?= t215.
+          t214 ?= t190.
           t207->add_named_identifier( i_name = t209 i_identifier = t214 ).
         ENDIF.
         DATA(t217) = VALUE string( ).

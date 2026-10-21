@@ -190,9 +190,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
     IF t178 = abap_true.
       DATA t192 TYPE REF TO zcl_lnt_location.
       DATA t193 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t194 TYPE REF TO zif_lnt_class_definition.
-      t194 = t168.
-      t193 ?= t194.
+      t193 ?= t168.
       t192 = zcl_lnt_lsp_utils=>identifer_to_location( i_identifier = t193 ).
       DATA t198 TYPE REF TO zcl_lnt_lsp_lookup_result.
       DATA t199 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -209,9 +207,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
       DATA t213 TYPE REF TO zcl_lnt_location.
       t213 = t192.
       DATA t221 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t222 TYPE REF TO zif_lnt_class_definition.
-      t222 = t168.
-      t221 ?= t222.
+      t221 ?= t168.
       DATA t225 TYPE REF TO zcl_lnt_location.
       t198 = NEW zcl_lnt_lsp_lookup_result( i_hover = t199 i_definition = t213 i_implementation = t225 i_definition_id = t221 i_scope = t130 ).
       CREATE OBJECT t198->zlnt_view_ownkeys_b0e8086400eb.
@@ -277,9 +273,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
     IF t259 = abap_true.
       DATA t273 TYPE REF TO zcl_lnt_location.
       DATA t274 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t275 TYPE REF TO zif_lnt_interface_definition.
-      t275 = t249.
-      t274 ?= t275.
+      t274 ?= t249.
       t273 = zcl_lnt_lsp_utils=>identifer_to_location( i_identifier = t274 ).
       DATA t279 TYPE REF TO zcl_lnt_lsp_lookup_result.
       DATA t280 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -296,9 +290,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
       DATA t294 TYPE REF TO zcl_lnt_location.
       t294 = t273.
       DATA t302 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t303 TYPE REF TO zif_lnt_interface_definition.
-      t303 = t249.
-      t302 ?= t303.
+      t302 ?= t249.
       DATA t306 TYPE REF TO zcl_lnt_location.
       t279 = NEW zcl_lnt_lsp_lookup_result( i_hover = t280 i_definition = t294 i_implementation = t306 i_definition_id = t302 i_scope = t130 ).
       CREATE OBJECT t279->zlnt_view_ownkeys_b0e8086400eb.
@@ -498,9 +490,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
       DATA(t498) = strlen( t464 ).
       t462 = |{ t464 }{ |"| }|.
       DATA t500 TYPE REF TO zif_lnt_method_definition.
-      DATA t501 TYPE REF TO zcl_lnt_fi_identifier.
-      t501 = t426.
-      t500 ?= t501.
+      t500 ?= t426.
       DATA(t503) = VALUE string( ).
       t503 = zcl_lnt_lsp_lookup=>visibility_to_string( i_visibility_5c1f = t500->get_visibility( ) ).
       DATA(t508) = t462.
@@ -1785,7 +1775,6 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
       DATA t104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       IF xsdbool( t78 IS INITIAL ) = abap_true.
         DATA t108 TYPE REF TO zif_lnt_interface_definition.
-        DATA t109 TYPE REF TO zif_lnt_class_definition.
         DATA t110 TYPE REF TO zcl_lnt_class.
         DATA t111 TYPE REF TO zcl_lnt_class.
         DATA t114 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1807,8 +1796,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
         ELSE.
           t129 = t110->gt_dfn_ins_src_obj_cls_ts_clss( ).
         ENDIF.
-        t109 = t129.
-        t108 ?= t109.
+        t108 ?= t129.
         t78 = t108.
       ENDIF.
       DATA t139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1899,9 +1887,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
         DATA(t217) = |\n\n|.
         DATA(t218) = VALUE string( ).
         DATA t219 TYPE REF TO zcl_lnt_typed_identifier.
-        DATA t220 TYPE REF TO zcl_lnt_fi_identifier.
-        t220 = t1->resolved.
-        t219 ?= t220.
+        t219 ?= t1->resolved.
         t218 = zcl_lnt_lsp_lookup=>dump_type( i_variable = t219 ).
         DATA(t222) = strlen( t217 ).
         t216 = |{ t217 }{ t218 }|.
@@ -2651,9 +2637,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
       IF xsdbool( t154 IS INITIAL ) = abap_true.
       ELSE.
         DATA t160 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t161 TYPE REF TO zif_lnt_method_definition.
-        t161 = t154.
-        t160 ?= t161.
+        t160 ?= t154.
         t156 = t160.
       ENDIF.
       result = t156.
@@ -2697,9 +2681,7 @@ CLASS zcl_lnt_lsp_lookup IMPLEMENTATION.
     IF xsdbool( t208 IS INITIAL ) = abap_true.
     ELSE.
       DATA t214 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t215 TYPE REF TO zif_lnt_method_definition.
-      t215 = t208.
-      t214 ?= t215.
+      t214 ?= t208.
       t210 = t214.
     ENDIF.
     result = t210.

@@ -233,9 +233,7 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
     ELSE.
       t95 ?= t98.
     ENDIF.
-    DATA t101 TYPE REF TO object.
-    t101 = t95.
-    t94 ?= t101.
+    t94 ?= t95.
     result = me->parsed_to_result( i_node = t94 ).
 
   ENDMETHOD.
@@ -245,11 +243,9 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t1.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     DATA t10 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -277,9 +273,7 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       ENDIF.
       DATA t18 TYPE REF TO zif_lnt_statement_runnable.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
-      DATA t22 TYPE REF TO object.
-      t22 = t10.
-      t20 ?= t22.
+      t20 ?= t10.
       t18 = t20->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       DATA(t24) = VALUE abap_bool( ).
       DATA(t25) = VALUE abap_bool( ).
@@ -303,22 +297,16 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
       ENDIF.
       DATA t37 TYPE abap_bool.
       DATA t39 TYPE REF TO zcl_lnt_expression_node.
-      DATA t41 TYPE REF TO object.
-      t41 = t10.
-      t39 ?= t41.
+      t39 ?= t10.
       t37 = me->has_key( i_node = t39 ).
       DATA t42 TYPE abap_bool.
       DATA t44 TYPE REF TO zcl_lnt_expression_node.
-      DATA t46 TYPE REF TO object.
-      t46 = t10.
-      t44 ?= t46.
+      t44 ?= t10.
       t42 = me->has_not_null( i_node = t44 ).
       IF xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_ddl_include ) = abap_true.
         DATA t51 TYPE REF TO zcl_lnt_expression_node.
         DATA t53 TYPE REF TO zcl_lnt_expression_node.
-        DATA t55 TYPE REF TO object.
-        t55 = t10.
-        t53 ?= t55.
+        t53 ?= t10.
         DATA(t56) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1125_a1255dd94435.
         t51 = t53->find_direct_expression( i_type_9913 = t56 ).
         DATA(t57) = VALUE string( ).
@@ -383,9 +371,7 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
         IF xsdbool( t18 IS BOUND AND t18 IS INSTANCE OF zcl_lnt_ddl_named_include ) = abap_true.
           DATA t99 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t101 TYPE REF TO zcl_lnt_expression_node.
-          DATA t103 TYPE REF TO object.
-          t103 = t10.
-          t101 ?= t103.
+          t101 ?= t10.
           DATA(t104) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1125_a1255dd94435.
           t99 = t101->find_direct_expressions( i_type_9913 = t104 ).
           DATA t107 TYPE REF TO zcl_lnt_expression_node.
@@ -504,9 +490,7 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
         ELSE.
           DATA t187 TYPE REF TO zcl_lnt_expression_node.
           DATA t189 TYPE REF TO zcl_lnt_expression_node.
-          DATA t191 TYPE REF TO object.
-          t191 = t10.
-          t189 ?= t191.
+          t189 ?= t10.
           DATA(t192) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1125_a1255dd94435.
           t187 = t189->find_direct_expression( i_type_9913 = t192 ).
           DATA(t193) = VALUE string( ).
@@ -524,9 +508,7 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
           ENDIF.
           DATA t213 TYPE REF TO zcl_lnt_expression_node.
           DATA t215 TYPE REF TO zcl_lnt_expression_node.
-          DATA t217 TYPE REF TO object.
-          t217 = t10.
-          t215 ?= t217.
+          t215 ?= t10.
           DATA(t218) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1126_5825bd45ea27.
           t213 = t215->find_direct_expression( i_type_9913 = t218 ).
           DATA(t219) = VALUE string( ).
@@ -675,11 +657,9 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
 
   METHOD has_key.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
     t4 = i_node.
-    t3 = t4->children.
-    t2 ?= t3.
+    t2 ?= t4->children.
     DATA t8 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t9 TYPE REF TO object.
     DATA(t10) = VALUE i( ).
@@ -882,11 +862,9 @@ CLASS zcl_lnt_ddl_parser IMPLEMENTATION.
   METHOD has_not_null.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_node.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.

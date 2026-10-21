@@ -2103,9 +2103,7 @@ CLASS zcl_lnt_registry IMPLEMENTATION.
         IF t6->rejection IS BOUND.
           RAISE EXCEPTION t6->rejection.
         ENDIF.
-        DATA t10 TYPE REF TO object.
-        t10 = t6->value.
-        t4 ?= t10.
+        t4 ?= t6->value.
         t3->value = t4.
         result = t3.
         RETURN.

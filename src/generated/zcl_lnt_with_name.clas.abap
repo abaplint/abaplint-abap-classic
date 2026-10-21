@@ -21,10 +21,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>seq( i_first = t20 i_second = t23 i_rest = t26 ).
     IF t18 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t18.
       TRY.
-          t17 ?= t32.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -95,10 +91,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>star( i_first = t17 ).
     IF t16 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t34 TYPE REF TO object.
-      t34 = t16.
       TRY.
-          t15 ?= t34.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -125,10 +119,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t37 = zcl_lnt_st_combi_module=>tok( i_t = t38 ).
     IF t37 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t37.
       TRY.
-          t36 ?= t40.
+          t36 ?= t37.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t36 IS NOT BOUND.
@@ -156,10 +148,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t48 = zcl_lnt_st_combi_module=>tok( i_t = t49 ).
     IF t48 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t48.
       TRY.
-          t47 ?= t51.
+          t47 ?= t48.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t47 IS NOT BOUND.
@@ -185,10 +175,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t54 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t55 ).
     IF t54 IS BOUND.
       DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t60 TYPE REF TO object.
-      t60 = t54.
       TRY.
-          t53 ?= t60.
+          t53 ?= t54.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t53 IS NOT BOUND.
@@ -213,10 +201,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t68 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t69 TYPE REF TO object.
-      t69 = t1.
       TRY.
-          t66 ?= t69.
+          t66 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t66 IS NOT BOUND.
@@ -237,10 +223,8 @@ CLASS zcl_lnt_with_name IMPLEMENTATION.
     t65 = zcl_lnt_st_combi_module=>opt_prio( i_first = t66 ).
     IF t65 IS BOUND.
       DATA t70 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t71 TYPE REF TO object.
-      t71 = t65.
       TRY.
-          t64 ?= t71.
+          t64 ?= t65.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t64 IS NOT BOUND.

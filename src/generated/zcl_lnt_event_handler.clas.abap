@@ -64,10 +64,8 @@ CLASS zcl_lnt_event_handler IMPLEMENTATION.
     t27 = zcl_lnt_st_combi_module=>plus_prio( i_first = t28 ).
     IF t27 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t27.
       TRY.
-          t26 ?= t31.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -90,10 +88,8 @@ CLASS zcl_lnt_event_handler IMPLEMENTATION.
     t21 = zcl_lnt_st_combi_module=>seq( i_first = t23 i_second = t26 i_rest = t33 ).
     IF t21 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t21.
       TRY.
-          t20 ?= t39.
+          t20 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.
@@ -114,10 +110,8 @@ CLASS zcl_lnt_event_handler IMPLEMENTATION.
     t19 = zcl_lnt_st_combi_module=>opt_prio( i_first = t20 ).
     IF t19 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t41 TYPE REF TO object.
-      t41 = t19.
       TRY.
-          t18 ?= t41.
+          t18 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t18 IS NOT BOUND.

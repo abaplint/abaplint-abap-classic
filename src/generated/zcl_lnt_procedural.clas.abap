@@ -891,9 +891,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
             CLEAR t157.
             IF xsdbool( t91 IS BOUND ) = abap_true.
               DATA t160 TYPE REF TO zif_lnt_interface_definition.
-              DATA t161 TYPE REF TO zif_lnt_class_definition.
-              t161 = t91.
-              t160 ?= t161.
+              t160 ?= t91.
               t157 = t160.
             ELSE.
               DATA t164 TYPE REF TO zif_lnt_interface_definition.
@@ -1897,9 +1895,7 @@ CLASS zcl_lnt_procedural IMPLEMENTATION.
             CLEAR t841.
             IF xsdbool( t775 IS BOUND ) = abap_true.
               DATA t844 TYPE REF TO zif_lnt_interface_definition.
-              DATA t845 TYPE REF TO zif_lnt_class_definition.
-              t845 = t775.
-              t844 ?= t845.
+              t844 ?= t775.
               t841 = t844.
             ELSE.
               DATA t848 TYPE REF TO zif_lnt_interface_definition.

@@ -65,10 +65,8 @@ CLASS zcl_lnt_load_report IMPLEMENTATION.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t1.
       TRY.
-          t29 ?= t32.
+          t29 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.

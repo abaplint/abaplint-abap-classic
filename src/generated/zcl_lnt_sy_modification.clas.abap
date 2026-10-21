@@ -166,11 +166,9 @@ CLASS zcl_lnt_sy_modification IMPLEMENTATION.
       DATA t39 TYPE REF TO zif_lnt_union_4cf1d054.
       CLEAR t39.
       DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t42 TYPE REF TO zcl_lnt_abstract_node.
       t42 = t33.
-      t41 = t42->children.
-      t40 ?= t41.
+      t40 ?= t42->children.
       DATA t46 TYPE REF TO object.
       CLEAR t46.
       t40->load( ).

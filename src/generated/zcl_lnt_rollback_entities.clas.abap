@@ -64,10 +64,8 @@ CLASS zcl_lnt_rollback_entities IMPLEMENTATION.
     t6 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t7 i_first = t14 i_opts = t18 ).
     IF t6 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t6.
       TRY.
-          t5 ?= t30.
+          t5 ?= t6.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t5 IS NOT BOUND.

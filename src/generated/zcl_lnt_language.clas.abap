@@ -40,10 +40,8 @@ CLASS zcl_lnt_language IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>alt_prio( i_first = t9 i_second = t12 i_rest = t14 ).
     IF t7 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t7.
       TRY.
-          t6 ?= t24.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

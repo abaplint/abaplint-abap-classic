@@ -32,10 +32,8 @@ CLASS zcl_lnt_read_table_target IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>seq( i_first = t7 i_second = t10 i_rest = t13 ).
     IF t5 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t5.
       TRY.
-          t4 ?= t19.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -64,10 +62,8 @@ CLASS zcl_lnt_read_table_target IMPLEMENTATION.
     t25 = zcl_lnt_st_combi_module=>opt_prio( i_first = t26 ).
     IF t25 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t25.
       TRY.
-          t24 ?= t29.
+          t24 ?= t25.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t24 IS NOT BOUND.
@@ -104,10 +100,8 @@ CLASS zcl_lnt_read_table_target IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>seq( i_first = t24 i_second = t31 i_rest = t33 ).
     IF t22 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t22.
       TRY.
-          t21 ?= t43.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.

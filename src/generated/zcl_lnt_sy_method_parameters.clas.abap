@@ -447,11 +447,9 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
                 IF t205 IS BOUND.
                   DATA t211 TYPE REF TO zlnt_view_storage_74017ca272ac.
                   CLEAR t211.
-                  DATA t212 TYPE REF TO object.
                   CLEAR t211.
-                  t212 = t205.
                   TRY.
-                      t204 ?= t212.
+                      t204 ?= t205.
                     CATCH cx_sy_move_cast_error.
                   ENDTRY.
                   IF t204 IS NOT BOUND.
@@ -609,9 +607,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
     DATA t5 TYPE REF TO zcl_lnt_abstract_type.
     IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_void_type ) = abap_true.
       DATA t8 TYPE REF TO zcl_lnt_void_type.
-      DATA t10 TYPE REF TO object.
-      t10 = t3.
-      t8 ?= t10.
+      t8 ?= t3.
       t5 = t8.
     ELSE.
       DATA t12 TYPE REF TO zcl_lnt_typed_identifier.
@@ -652,9 +648,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
 
     DATA t57 TYPE REF TO zcl_lnt_expression_node.
     DATA t59 TYPE REF TO zcl_lnt_expression_node.
-    DATA t61 TYPE REF TO object.
-    t61 = t1.
-    t59 ?= t61.
+    t59 ?= t1.
     DATA(t62) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
     t57 = t59->find_direct_expression( i_type_9913 = t62 ).
     DATA t63 TYPE REF TO zcl_lnt_expression_node.
@@ -689,9 +683,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
           t113 = t2->issues.
           DATA t115 TYPE REF TO zcl_lnt_issue.
           DATA t118 TYPE REF TO zcl_lnt_expression_node.
-          DATA t120 TYPE REF TO object.
-          t120 = t1.
-          t118 ?= t120.
+          t118 ?= t1.
           DATA t122 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           t115 = zcl_lnt_syntax_input_module=>syntax_issue( i_input_967e = t2 i_token = t118->get_first_token( ) i_message_26cb = |Method returning value not type compatible| i_fix = t122 ).
           t113->load( ).
@@ -735,9 +727,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       CLEAR t15.
       IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_void_type ) = abap_true.
         DATA t19 TYPE REF TO zcl_lnt_void_type.
-        DATA t21 TYPE REF TO object.
-        t21 = t3.
-        t19 ?= t21.
+        t19 ?= t3.
         t15 = t19.
       ELSE.
         DATA t22 TYPE REF TO zcl_lnt_typed_identifier.
@@ -990,9 +980,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       CLEAR t36.
       IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_void_type ) = abap_true.
         DATA t40 TYPE REF TO zcl_lnt_void_type.
-        DATA t42 TYPE REF TO object.
-        t42 = t3.
-        t40 ?= t42.
+        t40 ?= t3.
         t36 = t40.
       ELSE.
         DATA t43 TYPE REF TO zcl_lnt_typed_identifier.
@@ -1667,9 +1655,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       DATA t55 TYPE REF TO zcl_lnt_expression_node.
       DATA t57 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t57.
-      DATA t59 TYPE REF TO object.
-      t59 = t33.
-      t57 ?= t59.
+      t57 ?= t33.
       DATA(t60) = zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a.
       t55 = t57->find_direct_expression( i_type_9913 = t60 ).
       DATA t61 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -1817,9 +1803,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       CLEAR t146.
       DATA t148 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t148.
-      DATA t150 TYPE REF TO object.
-      t150 = t33.
-      t148 ?= t150.
+      t148 ?= t33.
       DATA(t151) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
       t146 = t148->find_direct_expression( i_type_9913 = t151 ).
       DATA t155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -1957,9 +1941,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       ELSE.
         DATA t224 TYPE REF TO zcl_lnt_void_type.
         CLEAR t224.
-        DATA t226 TYPE REF TO object.
-        t226 = t3.
-        t224 ?= t226.
+        t224 ?= t3.
         t168 = t224.
       ENDIF.
       DATA t227 TYPE REF TO zcl_lnt_abstract_type.
@@ -1983,9 +1965,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
         IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_void_type ) = abap_true.
           DATA t254 TYPE REF TO zcl_lnt_void_type.
           CLEAR t254.
-          DATA t256 TYPE REF TO object.
-          t256 = t3.
-          t254 ?= t256.
+          t254 ?= t3.
           t227 = t254.
         ELSE.
           DATA(t257) = VALUE string( ).
@@ -2182,9 +2162,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       DATA t54 TYPE REF TO zcl_lnt_expression_node.
       DATA t56 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t56.
-      DATA t58 TYPE REF TO object.
-      t58 = t32.
-      t56 ?= t58.
+      t56 ?= t32.
       DATA(t59) = zlnt_runtime_desc_78196487750d=>zlnt_member_d197_2722e982b84a.
       t54 = t56->find_direct_expression( i_type_9913 = t59 ).
       DATA t60 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -2332,9 +2310,7 @@ CLASS zcl_lnt_sy_method_parameters IMPLEMENTATION.
       CLEAR t145.
       DATA t147 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t147.
-      DATA t149 TYPE REF TO object.
-      t149 = t32.
-      t147 ?= t149.
+      t147 ?= t32.
       DATA(t150) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
       t145 = t147->find_direct_expression( i_type_9913 = t150 ).
       DATA t154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

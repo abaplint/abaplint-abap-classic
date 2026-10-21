@@ -959,11 +959,9 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
             IF t152 IS BOUND.
               DATA t156 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t156.
-              DATA t157 TYPE REF TO object.
               CLEAR t156.
-              t157 = t152.
               TRY.
-                  t151 ?= t157.
+                  t151 ?= t152.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t151 IS NOT BOUND.
@@ -1136,11 +1134,9 @@ CLASS zcl_lnt_function_group IMPLEMENTATION.
           IF t234 IS BOUND.
             DATA t238 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t238.
-            DATA t239 TYPE REF TO object.
             CLEAR t238.
-            t239 = t234.
             TRY.
-                t233 ?= t239.
+                t233 ?= t234.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t233 IS NOT BOUND.

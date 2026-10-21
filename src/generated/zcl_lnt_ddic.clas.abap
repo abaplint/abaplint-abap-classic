@@ -1420,8 +1420,6 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       IF t21->done = abap_true.
         EXIT.
       ENDIF.
-      DATA t28 TYPE REF TO zif_lnt_object.
-      t28 = t21->value.
       DATA t30 TYPE REF TO zcl_lnt_ob_data_definition.
       CLEAR t30.
       DATA t32 TYPE REF TO zcl_lnt_ob_data_definition.
@@ -1433,7 +1431,7 @@ CLASS zcl_lnt_ddic IMPLEMENTATION.
       TRY.
           DATA t36 TYPE REF TO zcl_lnt_ob_data_definition.
           CLEAR t36.
-          t36 ?= t28.
+          t36 ?= t21->value.
           t32 = t36.
           t33 = abap_true.
         CATCH cx_root INTO t35.

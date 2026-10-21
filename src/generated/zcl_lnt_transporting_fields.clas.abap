@@ -27,10 +27,8 @@ CLASS zcl_lnt_transporting_fields IMPLEMENTATION.
     DATA(t13) = CAST zif_lnt_statement_runnable( zcl_lnt_st_combi_module=>fail_star( ) ).
     IF t13 IS BOUND.
       DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t15 TYPE REF TO object.
-      t15 = t13.
       TRY.
-          t12 ?= t15.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -53,10 +51,8 @@ CLASS zcl_lnt_transporting_fields IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>seq( i_first = t9 i_second = t12 i_rest = t17 ).
     IF t7 IS BOUND.
       DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t23 TYPE REF TO object.
-      t23 = t7.
       TRY.
-          t6 ?= t23.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -86,10 +82,8 @@ CLASS zcl_lnt_transporting_fields IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>alt( i_first = t6 i_second = t25 i_rest = t28 ).
     IF t4 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t34 TYPE REF TO object.
-      t34 = t4.
       TRY.
-          t3 ?= t34.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -118,10 +112,8 @@ CLASS zcl_lnt_transporting_fields IMPLEMENTATION.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t1.
       TRY.
-          t40 ?= t43.
+          t40 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t40 IS NOT BOUND.

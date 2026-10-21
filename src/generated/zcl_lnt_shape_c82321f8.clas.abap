@@ -187,10 +187,8 @@ CLASS zcl_lnt_shape_c82321f8 IMPLEMENTATION.
           CLEAR result.
           IF me->cloud_669f IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->cloud_669f.
             TRY.
-                result ?= t2.
+                result ?= me->cloud_669f.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.
@@ -215,10 +213,8 @@ CLASS zcl_lnt_shape_c82321f8 IMPLEMENTATION.
           CLEAR result.
           IF me->ce IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t4 TYPE REF TO object.
-            t4 = me->ce.
             TRY.
-                result ?= t4.
+                result ?= me->ce.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

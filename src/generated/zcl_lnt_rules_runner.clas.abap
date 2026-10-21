@@ -185,9 +185,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
         DATA t75 TYPE REF TO zcl_lnt_isyntax_result.
         DATA(t77) = me->reg.
         DATA t78 TYPE REF TO zcl_lnt_abap_object.
-        DATA t80 TYPE REF TO object.
-        t80 = t41.
-        t78 ?= t80.
+        t78 ?= t41.
         t75 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t77 i_object_19cd = t78 )->run( ).
         DATA(t81) = VALUE abap_bool( ).
         DATA t82 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -226,9 +224,7 @@ CLASS zcl_lnt_rules_runner IMPLEMENTATION.
           DATA(t100) = me->syntax_performance.
           DATA t101 TYPE REF TO zif_lnt_object.
           DATA t102 TYPE REF TO zcl_lnt_abap_object.
-          DATA t104 TYPE REF TO object.
-          t104 = t41.
-          t102 ?= t104.
+          t102 ?= t41.
           t101 = t102.
           DATA t105 TYPE f.
           DATA t107 TYPE f.

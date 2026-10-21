@@ -65,9 +65,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     t6 = t7.
     IF t7 = abap_true.
       DATA t21 TYPE REF TO zcl_lnt_class.
-      DATA t23 TYPE REF TO object.
-      t23 = t1.
-      t21 ?= t23.
+      t21 ?= t1.
       t6 = me->is_generated_gateway_class( i_obj_1ed0 = t21 ).
     ENDIF.
     IF t6 = abap_true.
@@ -107,9 +105,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
     IF t26 = abap_true.
       DATA t41 TYPE REF TO zcl_lnt_ob_program.
       DATA t42 TYPE REF TO zcl_lnt_ob_program.
-      DATA t44 TYPE REF TO object.
-      t44 = t1.
-      t42 ?= t44.
+      t42 ?= t1.
       t41 = t42.
       t41->parse_xml( ).
       t25 = xsdbool( t41->parsed_xml->is_include = abap_true ).
@@ -124,9 +120,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       ENDIF.
       DATA t61 TYPE REF TO zcl_lnt_abap_file.
       DATA t63 TYPE REF TO zcl_lnt_ob_program.
-      DATA t65 TYPE REF TO object.
-      t65 = t1.
-      t63 ?= t65.
+      t63 ?= t1.
       t61 = t63->get_main_abap_file( ).
       DATA t66 TYPE abap_bool.
       DATA t67 TYPE abap_bool.
@@ -184,9 +178,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
       t86 = t87.
       IF t87 = abap_true.
         DATA t101 TYPE REF TO zcl_lnt_class.
-        DATA t103 TYPE REF TO object.
-        t103 = t1.
-        t101 ?= t103.
+        t101 ?= t1.
         t86 = me->is_generated_persistent_class( i_obj_1ed0 = t101 ).
       ENDIF.
       IF t86 = abap_true.
@@ -225,9 +217,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         t105 = t106.
         IF t106 = abap_true.
           DATA t120 TYPE REF TO zcl_lnt_function_group.
-          DATA t122 TYPE REF TO object.
-          t122 = t1.
-          t120 ?= t122.
+          t120 ?= t1.
           t105 = me->is_generated_function_group( i_group = t120 ).
         ENDIF.
         IF t105 = abap_true.
@@ -266,9 +256,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           t124 = t125.
           IF t125 = abap_true.
             DATA t140 TYPE REF TO zcl_lnt_class.
-            DATA t142 TYPE REF TO object.
-            t142 = t1.
-            t140 ?= t142.
+            t140 ?= t1.
             DATA t144 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
             DATA t146 TYPE REF TO zcl_lnt_abstract_object.
             t146 = t140.
@@ -357,9 +345,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             t188 = t189.
             IF t189 = abap_true.
               DATA t204 TYPE REF TO zcl_lnt_ob_interface.
-              DATA t206 TYPE REF TO object.
-              t206 = t1.
-              t204 ?= t206.
+              t204 ?= t1.
               DATA t208 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
               DATA t210 TYPE REF TO zcl_lnt_abstract_object.
               t210 = t204.
@@ -448,9 +434,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
               t252 = t253.
               IF t253 = abap_true.
                 DATA t267 TYPE REF TO zcl_lnt_ob_interface.
-                DATA t269 TYPE REF TO object.
-                t269 = t1.
-                t267 ?= t269.
+                t267 ?= t1.
                 t252 = me->is_generated_bopf_interface( i_obj_1ed0 = t267 ).
               ENDIF.
               IF t252 = abap_true.
@@ -643,8 +627,6 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
         IF t22->done = abap_true.
           EXIT.
         ENDIF.
-        DATA t29 TYPE REF TO zif_lnt_object.
-        t29 = t22->value.
         DATA t31 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         CLEAR t31.
         DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -660,7 +642,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
             CLEAR t40.
             DATA t41 TYPE REF TO zcl_lnt_mntnn_and_trnspr_objct.
             CLEAR t41.
-            t41 ?= t29.
+            t41 ?= t22->value.
             t40 = t41.
             DATA t44 TYPE REF TO zcl_lnt_iparse_result.
             CLEAR t44.
@@ -1076,9 +1058,7 @@ CLASS zcl_lnt_skip_logic IMPLEMENTATION.
           DATA t112 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
           DATA t113 TYPE REF TO zcl_lnt_class.
           DATA t114 TYPE REF TO zcl_lnt_class.
-          DATA t115 TYPE REF TO zif_lnt_object.
-          t115 = t92.
-          t114 ?= t115.
+          t114 ?= t92.
           t113 = t114.
           t113->parse_xml( ).
           DATA t120 TYPE REF TO zcl_lnt_shape_e272b380.

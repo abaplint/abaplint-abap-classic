@@ -253,9 +253,7 @@ CLASS zcl_lnt_references IMPLEMENTATION.
     t156 = t133.
     DATA(t158) = me->reg.
     DATA t159 TYPE REF TO zcl_lnt_abap_object.
-    DATA t161 TYPE REF TO object.
-    t161 = t16.
-    t159 ?= t161.
+    t159 ?= t16.
     t154 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t156 i_reg_f149 = t158 i_obj_1ed0 = t159 ).
     DATA(t162) = VALUE abap_bool( ).
     DATA(t163) = VALUE abap_bool( ).

@@ -58,10 +58,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t14 = zcl_lnt_st_combi_module=>tok( i_t = t15 ).
     IF t14 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t17 TYPE REF TO object.
-      t17 = t14.
       TRY.
-          t13 ?= t17.
+          t13 ?= t14.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
@@ -87,10 +85,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t20 = zcl_lnt_dynamic_access_module=>dyn_ident.
     IF t20 IS BOUND.
       DATA t21 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t22 TYPE REF TO object.
-      t22 = t20.
       TRY.
-          t19 ?= t22.
+          t19 ?= t20.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t19 IS NOT BOUND.
@@ -118,10 +114,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t27 = zcl_lnt_dynamic_access_module=>dyn_inside.
     IF t27 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t27.
       TRY.
-          t26 ?= t29.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -170,11 +164,9 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
       IF t31 IS BOUND.
         DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t39.
-        DATA t40 TYPE REF TO object.
         CLEAR t39.
-        t40 = t31.
         TRY.
-            t37 ?= t40.
+            t37 ?= t31.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t37 IS NOT BOUND.
@@ -204,10 +196,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t43 = zcl_lnt_dynamic_access_module=>dyn_close.
     IF t43 IS BOUND.
       DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t45 TYPE REF TO object.
-      t45 = t43.
       TRY.
-          t42 ?= t45.
+          t42 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t42 IS NOT BOUND.
@@ -231,10 +221,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t19 i_rest = t23 ).
     IF t11 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t11.
       TRY.
-          t10 ?= t51.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -298,10 +286,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>tok( i_t = t14 ).
     IF t13 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t13.
       TRY.
-          t12 ?= t16.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -327,10 +313,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t19 = zcl_lnt_dynamic_access_module=>dyn_ident.
     IF t19 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t21 TYPE REF TO object.
-      t21 = t19.
       TRY.
-          t18 ?= t21.
+          t18 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t18 IS NOT BOUND.
@@ -358,10 +342,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t26 = zcl_lnt_dynamic_access_module=>dyn_inside.
     IF t26 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t26.
       TRY.
-          t25 ?= t28.
+          t25 ?= t26.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t25 IS NOT BOUND.
@@ -390,10 +372,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t31 = zcl_lnt_dynamic_access_module=>dyn_close.
     IF t31 IS BOUND.
       DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t33 TYPE REF TO object.
-      t33 = t31.
       TRY.
-          t30 ?= t33.
+          t30 ?= t31.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t30 IS NOT BOUND.
@@ -417,10 +397,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t18 i_rest = t22 ).
     IF t10 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t10.
       TRY.
-          t9 ?= t39.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.
@@ -462,10 +440,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t6 = zcl_lnt_st_combi_module=>tok( i_t = t7 ).
     IF t6 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t6.
       TRY.
-          t5 ?= t9.
+          t5 ?= t6.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t5 IS NOT BOUND.
@@ -489,10 +465,8 @@ CLASS zcl_lnt_dynamic_access_module IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>tok( i_t = t13 ).
     IF t12 IS BOUND.
       DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t15 TYPE REF TO object.
-      t15 = t12.
       TRY.
-          t11 ?= t15.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.

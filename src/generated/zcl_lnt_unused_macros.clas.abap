@@ -140,9 +140,7 @@ CLASS zcl_lnt_unused_macros IMPLEMENTATION.
     t8 = me->reg->get_macro_references( ).
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t13 TYPE REF TO zcl_lnt_abap_object.
-    DATA t15 TYPE REF TO object.
-    t15 = t1.
-    t13 ?= t15.
+    t13 ?= t1.
     t11 = t13->parsed.
     DATA t18 TYPE REF TO zcl_lnt_abap_file.
     DATA t19 TYPE REF TO object.

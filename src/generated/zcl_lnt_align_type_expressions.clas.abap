@@ -160,9 +160,7 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
       DATA t24 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t26 TYPE REF TO zcl_lnt_class.
       DATA t27 TYPE REF TO zcl_lnt_class.
-      DATA t29 TYPE REF TO object.
-      t29 = t2.
-      t27 ?= t29.
+      t27 ?= t2.
       t26 = t27.
       DATA t31 TYPE REF TO zif_lnt_abap_file_information.
       DATA t33 TYPE REF TO zcl_lnt_abap_file.
@@ -204,9 +202,7 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
           DATA t72 TYPE REF TO zcl_lnt_info_class_definition.
           t72 = t24.
           DATA t77 TYPE REF TO zcl_lnt_class.
-          DATA t79 TYPE REF TO object.
-          t79 = t2.
-          t77 ?= t79.
+          t77 ?= t2.
           t66 = t20->is_exception( i_def = t72 i_obj_ac26 = t77 ).
         ENDIF.
         IF t66 = abap_true.
@@ -625,11 +621,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         ENDIF.
         DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t33 TYPE REF TO zcl_lnt_abstract_node.
         t33 = t25.
-        t32 = t33->children.
-        t31 ?= t32.
+        t31 ?= t33->children.
         t30 = t31.
         DATA t37 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t37.
@@ -725,11 +719,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
       IF xsdbool( t129 IS BOUND ) = abap_true.
         DATA t135 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t136 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t137 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t138 TYPE REF TO zcl_lnt_abstract_node.
         t138 = t129.
-        t137 = t138->children.
-        t136 ?= t137.
+        t136 ?= t138->children.
         t135 = t136.
         DATA t143 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t143.
@@ -925,11 +917,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         ENDIF.
         DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t33 TYPE REF TO zcl_lnt_abstract_node.
         t33 = t25.
-        t32 = t33->children.
-        t31 ?= t32.
+        t31 ?= t33->children.
         t30 = t31.
         DATA t37 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t37.
@@ -1132,11 +1122,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         DATA t35 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t35.
         DATA t36 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t38 TYPE REF TO zcl_lnt_abstract_node.
         t38 = t29.
-        t37 = t38->children.
-        t36 ?= t37.
+        t36 ?= t38->children.
         DATA t42 TYPE REF TO object.
         CLEAR t42.
         t36->load( ).
@@ -1173,11 +1161,9 @@ CLASS zcl_lnt_align_type_expressions IMPLEMENTATION.
         DATA t81 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t81.
         DATA t82 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t84 TYPE REF TO zcl_lnt_abstract_node.
         t84 = t29.
-        t83 = t84->children.
-        t82 ?= t83.
+        t82 ?= t84->children.
         DATA t88 TYPE REF TO object.
         CLEAR t88.
         t82->load( ).

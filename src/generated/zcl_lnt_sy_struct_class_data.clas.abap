@@ -56,11 +56,9 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t21.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t25 TYPE REF TO zcl_lnt_abstract_node.
     t25 = t1.
-    t24 = t25->children.
-    t23 ?= t24.
+    t23 ?= t25->children.
     DATA t29 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t30 TYPE REF TO object.
     DATA(t31) = VALUE i( ).
@@ -102,9 +100,7 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
         DATA(t46) = NEW zcl_lnt_sy_statem_class_data( ).
         DATA t47 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t47.
-        DATA t49 TYPE REF TO object.
-        t49 = t29.
-        t47 ?= t49.
+        t47 ?= t29.
         t44 = t46->run_syntax( i_node = t47 i_input_967e = t2 ).
         IF xsdbool( t44 IS BOUND ) = abap_true.
           DATA t54 TYPE REF TO zcl_lnt_istructure_component.
@@ -254,9 +250,7 @@ CLASS zcl_lnt_sy_struct_class_data IMPLEMENTATION.
           DATA(t147) = NEW zcl_lnt_sy_struct_class_data( ).
           DATA t148 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t148.
-          DATA t150 TYPE REF TO object.
-          t150 = t29.
-          t148 ?= t150.
+          t148 ?= t29.
           t145 = t147->run_syntax( i_node = t148 i_input_967e = t2 ).
           IF xsdbool( t145 IS BOUND ) = abap_true.
             DATA t155 TYPE REF TO zcl_lnt_istructure_component.

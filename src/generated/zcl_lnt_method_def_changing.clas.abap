@@ -82,10 +82,8 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>opt_prio( i_first = t29 ).
     IF t28 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t28.
       TRY.
-          t27 ?= t32.
+          t27 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.
@@ -109,10 +107,8 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t18 ).
     IF t11 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t11.
       TRY.
-          t10 ?= t38.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -143,10 +139,8 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     DATA t50 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t52 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t53 TYPE REF TO object.
-      t53 = t1.
       TRY.
-          t50 ?= t53.
+          t50 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t50 IS NOT BOUND.
@@ -176,10 +170,8 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     t48 = zcl_lnt_st_combi_module=>alt_prio( i_first = t50 i_second = t55 i_rest = t58 ).
     IF t48 IS BOUND.
       DATA t63 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t64 TYPE REF TO object.
-      t64 = t48.
       TRY.
-          t47 ?= t64.
+          t47 ?= t48.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t47 IS NOT BOUND.
@@ -200,10 +192,8 @@ CLASS zcl_lnt_method_def_changing IMPLEMENTATION.
     t46 = zcl_lnt_st_combi_module=>plus( i_first = t47 ).
     IF t46 IS BOUND.
       DATA t65 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t66 TYPE REF TO object.
-      t66 = t46.
       TRY.
-          t45 ?= t66.
+          t45 ?= t46.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t45 IS NOT BOUND.

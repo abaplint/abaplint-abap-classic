@@ -631,9 +631,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_ty_table_type ) = abap_true.
       DATA t11 TYPE REF TO zcl_lnt_abstract_type.
       DATA t13 TYPE REF TO zcl_lnt_ty_table_type.
-      DATA t15 TYPE REF TO object.
-      t15 = t1.
-      t13 ?= t15.
+      t13 ?= t1.
       t11 = t13->row_type.
       result = me->count( i_type_9913 = t11 ).
       RETURN.
@@ -641,9 +639,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_data_reference ) = abap_true.
       DATA t21 TYPE REF TO zcl_lnt_abstract_type.
       DATA t23 TYPE REF TO zcl_lnt_data_reference.
-      DATA t25 TYPE REF TO object.
-      t25 = t1.
-      t23 ?= t25.
+      t23 ?= t1.
       t21 = t23->type_cba0.
       result = me->count( i_type_9913 = t21 ).
       RETURN.
@@ -653,9 +649,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       t30 = CONV f( 0 ).
       DATA t32 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t34 TYPE REF TO zcl_lnt_structure_type.
-      DATA t36 TYPE REF TO object.
-      t36 = t1.
-      t34 ?= t36.
+      t34 ?= t1.
       t32 = t34->components.
       DATA t39 TYPE REF TO zcl_lnt_istructure_component.
       DATA t40 TYPE REF TO object.
@@ -811,24 +805,18 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
             DATA t78 TYPE REF TO zcl_lnt_interface_definition.
             t78 = NEW zcl_lnt_interface_definition( i_node = t69 i_input_967e = t37 ).
             DATA t82 TYPE REF TO zcl_lnt_ob_interface.
-            DATA t84 TYPE REF TO object.
-            t84 = t1.
-            t82 ?= t84.
+            t82 ?= t1.
             t82->st_dfn_ins_src_obj_int_ts_intr( i_def = t78 ).
           CATCH zlnt_exception_cl_30eec8e8805d INTO t76.
             DATA(t86) = t76->payload.
             DATA t87 TYPE REF TO zcl_lnt_ob_interface.
-            DATA t89 TYPE REF TO object.
-            t89 = t1.
-            t87 ?= t89.
+            t87 ?= t1.
             DATA t90 TYPE REF TO zif_lnt_interface_definition.
             t87->st_dfn_ins_src_obj_int_ts_intr( i_def = t90 ).
         ENDTRY.
       ELSE.
         DATA t91 TYPE REF TO zcl_lnt_ob_interface.
-        DATA t93 TYPE REF TO object.
-        t93 = t1.
-        t91 ?= t93.
+        t91 ?= t1.
         DATA t94 TYPE REF TO zif_lnt_interface_definition.
         t91->st_dfn_ins_src_obj_int_ts_intr( i_def = t94 ).
       ENDIF.
@@ -845,9 +833,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
             t104 = NEW zcl_lnt_ty_class_definition( i_node = t95 i_input_967e = t37 ).
             DATA t108 TYPE REF TO zcl_lnt_class.
             DATA t109 TYPE REF TO zcl_lnt_class.
-            DATA t111 TYPE REF TO object.
-            t111 = t1.
-            t109 ?= t111.
+            t109 ?= t1.
             t108 = t109.
             t108->def = t104.
             DELETE t108->zlnt_record_delet_0597644d88b4 WHERE table_line = `def`.
@@ -855,9 +841,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
             DATA(t116) = t102->payload.
             DATA t117 TYPE REF TO zcl_lnt_class.
             DATA t118 TYPE REF TO zcl_lnt_class.
-            DATA t120 TYPE REF TO object.
-            t120 = t1.
-            t118 ?= t120.
+            t118 ?= t1.
             t117 = t118.
             CLEAR t117->def.
             DELETE t117->zlnt_record_delet_0597644d88b4 WHERE table_line = `def`.
@@ -865,9 +849,7 @@ CLASS zcl_lnt_fnd_glbl_dfntns IMPLEMENTATION.
       ELSE.
         DATA t123 TYPE REF TO zcl_lnt_class.
         DATA t124 TYPE REF TO zcl_lnt_class.
-        DATA t126 TYPE REF TO object.
-        t126 = t1.
-        t124 ?= t126.
+        t124 ?= t1.
         t123 = t124.
         CLEAR t123->def.
         DELETE t123->zlnt_record_delet_0597644d88b4 WHERE table_line = `def`.

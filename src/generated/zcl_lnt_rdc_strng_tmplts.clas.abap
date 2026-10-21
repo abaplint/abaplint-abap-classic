@@ -525,11 +525,9 @@ CLASS zcl_lnt_rdc_strng_tmplts IMPLEMENTATION.
       ENDIF.
       DATA t207 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t208 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t209 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t210 TYPE REF TO zcl_lnt_abstract_node.
       t210 = t202.
-      t209 = t210->children.
-      t208 ?= t209.
+      t208 ?= t210->children.
       t207 = t208.
       t207->load( ).
       IF xsdbool( lines( t207->items ) <> 3 ) = abap_true.

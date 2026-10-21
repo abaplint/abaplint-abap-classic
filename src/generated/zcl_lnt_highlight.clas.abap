@@ -233,9 +233,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       IF xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t145 TYPE REF TO zcl_lnt_abap_object.
-        DATA t147 TYPE REF TO object.
-        t147 = t27.
-        t145 ?= t147.
+        t145 ?= t27.
         t140 = t145.
       ELSE.
         CLEAR t140.
@@ -508,9 +506,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       IF xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t145 TYPE REF TO zcl_lnt_abap_object.
-        DATA t147 TYPE REF TO object.
-        t147 = t27.
-        t145 ?= t147.
+        t145 ?= t27.
         t140 = t145.
       ELSE.
         CLEAR t140.
@@ -781,9 +777,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t140 TYPE REF TO zcl_lnt_abap_object.
       IF xsdbool( t27 IS BOUND AND t27 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t145 TYPE REF TO zcl_lnt_abap_object.
-        DATA t147 TYPE REF TO object.
-        t147 = t27.
-        t145 ?= t147.
+        t145 ?= t27.
         t140 = t145.
       ELSE.
         CLEAR t140.
@@ -1052,9 +1046,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
       DATA t135 TYPE REF TO zcl_lnt_abap_object.
       IF xsdbool( t22 IS BOUND AND t22 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t140 TYPE REF TO zcl_lnt_abap_object.
-        DATA t142 TYPE REF TO object.
-        t142 = t22.
-        t140 ?= t142.
+        t140 ?= t22.
         t135 = t140.
       ELSE.
         CLEAR t135.
@@ -1281,9 +1273,7 @@ CLASS zcl_lnt_highlight IMPLEMENTATION.
     t15 = t17->get_object( i_type_9913 = t18 i_name = t126 ).
     IF xsdbool( t15 IS BOUND AND t15 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
       DATA t132 TYPE REF TO zcl_lnt_abap_object.
-      DATA t134 TYPE REF TO object.
-      t134 = t15.
-      t132 ?= t134.
+      t132 ?= t15.
       result = t132.
       RETURN.
     ENDIF.

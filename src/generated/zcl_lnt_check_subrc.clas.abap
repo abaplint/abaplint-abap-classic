@@ -2455,11 +2455,9 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
   METHOD is_simple_assign.
     DATA(t1) = i_statement.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t1.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t4->load( ).
     IF xsdbool( lines( t4->items ) = 5 ) = abap_true.
       DATA t11 TYPE REF TO zcl_lnt_expression_node.
@@ -2475,11 +2473,9 @@ CLASS zcl_lnt_check_subrc IMPLEMENTATION.
       IF xsdbool( t20 IS INITIAL ) = abap_true.
       ELSE.
         DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t28 TYPE REF TO zcl_lnt_abstract_node.
         t28 = t20.
-        t27 = t28->children.
-        t26 ?= t27.
+        t26 ?= t28->children.
         t22 = t26.
       ENDIF.
       t18 = t22.

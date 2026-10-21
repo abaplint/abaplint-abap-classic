@@ -97,10 +97,8 @@ CLASS zcl_lnt_st_statem_field_symbol IMPLEMENTATION.
     t31 = zcl_lnt_st_combi_module=>seq( i_first = t33 i_second = t36 i_rest = t38 ).
     IF t31 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t31.
       TRY.
-          t30 ?= t48.
+          t30 ?= t31.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t30 IS NOT BOUND.
@@ -140,10 +138,8 @@ CLASS zcl_lnt_st_statem_field_symbol IMPLEMENTATION.
     DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t21 IS BOUND.
       DATA t67 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t68 TYPE REF TO object.
-      t68 = t21.
       TRY.
-          t65 ?= t68.
+          t65 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.
@@ -183,10 +179,8 @@ CLASS zcl_lnt_st_statem_field_symbol IMPLEMENTATION.
     DATA t78 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t80 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t81 TYPE REF TO object.
-      t81 = t1.
       TRY.
-          t78 ?= t81.
+          t78 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t78 IS NOT BOUND.
@@ -210,10 +204,8 @@ CLASS zcl_lnt_st_statem_field_symbol IMPLEMENTATION.
     t63 = zcl_lnt_st_combi_module=>alt( i_first = t65 i_second = t70 i_rest = t72 ).
     IF t63 IS BOUND.
       DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t87 TYPE REF TO object.
-      t87 = t63.
       TRY.
-          t62 ?= t87.
+          t62 ?= t63.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t62 IS NOT BOUND.
@@ -234,10 +226,8 @@ CLASS zcl_lnt_st_statem_field_symbol IMPLEMENTATION.
     t61 = zcl_lnt_st_combi_module=>opt( i_first = t62 ).
     IF t61 IS BOUND.
       DATA t88 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t89 TYPE REF TO object.
-      t89 = t61.
       TRY.
-          t60 ?= t89.
+          t60 ?= t61.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.

@@ -385,9 +385,7 @@ CLASS zcl_lnt_sy_perform IMPLEMENTATION.
     t199 = t139->get_first_token( ).
     DATA t205 TYPE REF TO zcl_lnt_fi_identifier.
     DATA t207 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA t208 TYPE REF TO zif_lnt_form_definition.
-    t208 = t154.
-    t207 ?= t208.
+    t207 ?= t154.
     t205 = t207.
     DATA t211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CREATE OBJECT t211.

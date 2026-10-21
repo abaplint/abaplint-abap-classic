@@ -51,10 +51,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t1.
       TRY.
-          t35 ?= t38.
+          t35 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -77,10 +75,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t42 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t45 TYPE REF TO object.
-      t45 = t15.
       TRY.
-          t42 ?= t45.
+          t42 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t42 IS NOT BOUND.
@@ -116,10 +112,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t57 = zcl_lnt_st_combi_module=>opt_prio( i_first = t58 ).
     IF t57 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t57.
       TRY.
-          t56 ?= t61.
+          t56 ?= t57.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t56 IS NOT BOUND.
@@ -144,10 +138,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t29 IS BOUND.
       DATA t69 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t70 TYPE REF TO object.
-      t70 = t29.
       TRY.
-          t67 ?= t70.
+          t67 ?= t29.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t67 IS NOT BOUND.
@@ -168,10 +160,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t66 = zcl_lnt_st_combi_module=>opt( i_first = t67 ).
     IF t66 IS BOUND.
       DATA t71 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t72 TYPE REF TO object.
-      t72 = t66.
       TRY.
-          t65 ?= t72.
+          t65 ?= t66.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.
@@ -214,10 +204,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t92 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t93 TYPE REF TO object.
-      t93 = t1.
       TRY.
-          t90 ?= t93.
+          t90 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t90 IS NOT BOUND.
@@ -238,10 +226,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t95 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t97 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t98 TYPE REF TO object.
-      t98 = t15.
       TRY.
-          t95 ?= t98.
+          t95 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t95 IS NOT BOUND.
@@ -264,10 +250,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t88 = zcl_lnt_st_combi_module=>per( i_first = t90 i_second = t95 i_rest = t100 ).
     IF t88 IS BOUND.
       DATA t105 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t106 TYPE REF TO object.
-      t106 = t88.
       TRY.
-          t87 ?= t106.
+          t87 ?= t88.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t87 IS NOT BOUND.
@@ -291,10 +275,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t77 = zcl_lnt_st_combi_module=>seq( i_first = t79 i_second = t82 i_rest = t84 ).
     IF t77 IS BOUND.
       DATA t111 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t112 TYPE REF TO object.
-      t112 = t77.
       TRY.
-          t76 ?= t112.
+          t76 ?= t77.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t76 IS NOT BOUND.
@@ -315,10 +297,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t75 = zcl_lnt_st_combi_module=>opt( i_first = t76 ).
     IF t75 IS BOUND.
       DATA t113 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t114 TYPE REF TO object.
-      t114 = t75.
       TRY.
-          t74 ?= t114.
+          t74 ?= t75.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t74 IS NOT BOUND.
@@ -374,10 +354,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     DATA t130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t50 IS BOUND.
       DATA t132 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t133 TYPE REF TO object.
-      t133 = t50.
       TRY.
-          t130 ?= t133.
+          t130 ?= t50.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t130 IS NOT BOUND.
@@ -411,10 +389,8 @@ CLASS zcl_lnt_st_commit_entities IMPLEMENTATION.
     t122 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t123 i_first = t130 i_opts = t136 ).
     IF t122 IS BOUND.
       DATA t147 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t148 TYPE REF TO object.
-      t148 = t122.
       TRY.
-          t121 ?= t148.
+          t121 ?= t122.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t121 IS NOT BOUND.

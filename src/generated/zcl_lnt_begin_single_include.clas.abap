@@ -155,11 +155,9 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         t22 ?= t23.
       ENDIF.
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t31 TYPE REF TO zcl_lnt_abstract_node.
       t31 = t22.
-      t30 = t31->children.
-      t29 ?= t30.
+      t29 ?= t31->children.
       t29->load( ).
       IF xsdbool( lines( t29->items ) <> 3 ) = abap_true.
         CONTINUE.
@@ -310,11 +308,9 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         t113 ?= t114.
       ENDIF.
       DATA t120 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t122 TYPE REF TO zcl_lnt_abstract_node.
       t122 = t113.
-      t121 = t122->children.
-      t120 ?= t121.
+      t120 ?= t122->children.
       t120->load( ).
       IF xsdbool( lines( t120->items ) <> 3 ) = abap_true.
         CONTINUE.
@@ -483,11 +479,9 @@ CLASS zcl_lnt_begin_single_include IMPLEMENTATION.
         t220 ?= t221.
       ENDIF.
       DATA t227 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t228 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t229 TYPE REF TO zcl_lnt_abstract_node.
       t229 = t220.
-      t228 = t229->children.
-      t227 ?= t228.
+      t227 ?= t229->children.
       t227->load( ).
       IF xsdbool( lines( t227->items ) <> 3 ) = abap_true.
         CONTINUE.

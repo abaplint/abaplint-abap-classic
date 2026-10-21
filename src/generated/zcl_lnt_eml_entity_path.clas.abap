@@ -22,10 +22,8 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     t6 = zcl_lnt_st_combi_module=>tok( i_t = t7 ).
     IF t6 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t6.
       TRY.
-          t5 ?= t9.
+          t5 ?= t6.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t5 IS NOT BOUND.
@@ -51,10 +49,8 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t13 ).
     IF t12 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t18 TYPE REF TO object.
-      t18 = t12.
       TRY.
-          t11 ?= t18.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.
@@ -77,10 +73,8 @@ CLASS zcl_lnt_eml_entity_path IMPLEMENTATION.
     t3 = zcl_lnt_st_combi_module=>alt_prio( i_first = t5 i_second = t11 i_rest = t20 ).
     IF t3 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t26 TYPE REF TO object.
-      t26 = t3.
       TRY.
-          t2 ?= t26.
+          t2 ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t2 IS NOT BOUND.

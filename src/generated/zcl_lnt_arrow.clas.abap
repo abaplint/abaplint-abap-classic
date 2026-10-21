@@ -20,10 +20,8 @@ CLASS zcl_lnt_arrow IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>tok( i_t = t5 ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t7 TYPE REF TO object.
-      t7 = t4.
       TRY.
-          t3 ?= t7.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -47,10 +45,8 @@ CLASS zcl_lnt_arrow IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>tok( i_t = t11 ).
     IF t10 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t13 TYPE REF TO object.
-      t13 = t10.
       TRY.
-          t9 ?= t13.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

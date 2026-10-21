@@ -111,9 +111,7 @@ CLASS zcl_lnt_intf_referencing_clas IMPLEMENTATION.
     ENDIF.
     DATA(t11) = me->reg.
     DATA t12 TYPE REF TO zcl_lnt_ob_interface.
-    DATA t14 TYPE REF TO object.
-    t14 = t1.
-    t12 ?= t14.
+    t12 ?= t1.
     result = me->traverse( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t11 i_object_19cd = t12 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
 
   ENDMETHOD.

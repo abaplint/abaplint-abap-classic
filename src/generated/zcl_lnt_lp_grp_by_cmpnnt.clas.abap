@@ -68,10 +68,8 @@ CLASS zcl_lnt_lp_grp_by_cmpnnt IMPLEMENTATION.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t44 TYPE REF TO object.
-      t44 = t1.
       TRY.
-          t41 ?= t44.
+          t41 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t41 IS NOT BOUND.
@@ -94,10 +92,8 @@ CLASS zcl_lnt_lp_grp_by_cmpnnt IMPLEMENTATION.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t18 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t18.
       TRY.
-          t48 ?= t51.
+          t48 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.

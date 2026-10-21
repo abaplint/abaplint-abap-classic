@@ -37,10 +37,8 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>alt_prio( i_first = t12 i_second = t15 i_rest = t18 ).
     IF t10 IS BOUND.
       DATA t23 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t24 TYPE REF TO object.
-      t24 = t10.
       TRY.
-          t9 ?= t24.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.
@@ -63,10 +61,8 @@ CLASS zcl_lnt_rollback IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>seq( i_first = t6 i_second = t9 i_rest = t26 ).
     IF t4 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t4.
       TRY.
-          t3 ?= t32.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.

@@ -131,9 +131,7 @@ CLASS zcl_lnt_sy_component_compare IMPLEMENTATION.
           CLEAR t88.
           t88 = t74.
           DATA t93 TYPE REF TO zif_lnt_node.
-          DATA t94 TYPE REF TO zif_lnt_union_4cf1d054.
-          t94 = t44.
-          t93 ?= t94.
+          t93 ?= t44.
           t74 = zcl_lnt_sy_component_name=>run_syntax( i_context = t88 i_node = t93 i_input_967e = t2 ).
         ENDIF.
         DATA t97 TYPE REF TO zcl_lnt_abstract_type.

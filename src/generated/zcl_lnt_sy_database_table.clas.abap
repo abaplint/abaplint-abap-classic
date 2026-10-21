@@ -162,9 +162,7 @@ CLASS zcl_lnt_sy_database_table IMPLEMENTATION.
         DATA t155 TYPE REF TO zcl_lnt_iobject_and_token.
         DATA t156 TYPE REF TO zif_lnt_object.
         DATA t157 TYPE REF TO zif_lnt_object.
-        DATA t158 TYPE REF TO zif_lnt_union_c74a232f.
-        t158 = t38.
-        t157 ?= t158.
+        t157 ?= t38.
         t156 = t157.
         DATA t160 TYPE REF TO zcl_lnt_abstract_token.
         t160 = t3.

@@ -537,10 +537,8 @@ CLASS zcl_lnt_dump_scope IMPLEMENTATION.
     t250 = t252->get( p0 = |length| ).
     IF t250 IS BOUND.
       DATA t256 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t257 TYPE REF TO object.
-      t257 = t250.
       TRY.
-          t249 ?= t257.
+          t249 ?= t250.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t249 IS NOT BOUND.

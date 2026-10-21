@@ -51,10 +51,8 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       t6 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t8 ).
       IF t6 IS BOUND.
         DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t11 TYPE REF TO object.
-        t11 = t6.
         TRY.
-            t5 ?= t11.
+            t5 ?= t6.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t5 IS NOT BOUND.
@@ -80,10 +78,8 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
       t14 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t15 ).
       IF t14 IS BOUND.
         DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        DATA t20 TYPE REF TO object.
-        t20 = t14.
         TRY.
-            t13 ?= t20.
+            t13 ?= t14.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t13 IS NOT BOUND.
@@ -121,10 +117,8 @@ CLASS zcl_lnt_st_database_table IMPLEMENTATION.
     t33 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t34 ).
     IF t33 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t33.
       TRY.
-          t32 ?= t39.
+          t32 ?= t33.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t32 IS NOT BOUND.

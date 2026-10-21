@@ -26,10 +26,8 @@ CLASS zcl_lnt_ddl_structure_field IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>star( i_first = t5 ).
     IF t4 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t4.
       TRY.
-          t3 ?= t8.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -82,10 +80,8 @@ CLASS zcl_lnt_ddl_structure_field IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>opt_prio( i_first = t23 ).
     IF t22 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t26 TYPE REF TO object.
-      t26 = t22.
       TRY.
-          t21 ?= t26.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.

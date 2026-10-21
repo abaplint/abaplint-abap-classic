@@ -51,10 +51,8 @@ CLASS zcl_lnt_sql_associations_list IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>tok( i_t = t14 ).
     IF t13 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t13.
       TRY.
-          t12 ?= t16.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -133,10 +131,8 @@ CLASS zcl_lnt_sql_associations_list IMPLEMENTATION.
     t28 = zcl_lnt_st_combi_module=>seq( i_first = t30 i_second = t33 i_rest = t38 ).
     IF t28 IS BOUND.
       DATA t43 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t44 TYPE REF TO object.
-      t44 = t28.
       TRY.
-          t27 ?= t44.
+          t27 ?= t28.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.
@@ -157,10 +153,8 @@ CLASS zcl_lnt_sql_associations_list IMPLEMENTATION.
     t26 = zcl_lnt_st_combi_module=>star( i_first = t27 ).
     IF t26 IS BOUND.
       DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t46 TYPE REF TO object.
-      t46 = t26.
       TRY.
-          t25 ?= t46.
+          t25 ?= t26.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t25 IS NOT BOUND.
@@ -187,10 +181,8 @@ CLASS zcl_lnt_sql_associations_list IMPLEMENTATION.
     t49 = zcl_lnt_st_combi_module=>tok( i_t = t50 ).
     IF t49 IS BOUND.
       DATA t51 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t52 TYPE REF TO object.
-      t52 = t49.
       TRY.
-          t48 ?= t52.
+          t48 ?= t49.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -214,10 +206,8 @@ CLASS zcl_lnt_sql_associations_list IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t18 i_rest = t22 ).
     IF t10 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t10.
       TRY.
-          t9 ?= t58.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

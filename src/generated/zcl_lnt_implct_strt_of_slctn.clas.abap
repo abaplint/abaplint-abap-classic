@@ -277,17 +277,13 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
           DATA(t88) = t81.
           IF xsdbool( t88 IS BOUND AND t88 IS INSTANCE OF zcl_lnt_structure_node ) = abap_true.
             DATA t91 TYPE REF TO zcl_lnt_structure_node.
-            DATA t93 TYPE REF TO object.
-            t93 = t81.
-            t91 ?= t93.
+            t91 ?= t81.
             t81 = t91->get_first_statement( ).
           ENDIF.
           DATA t95 TYPE REF TO zcl_lnt_issue.
           CLEAR t95.
           DATA t97 TYPE REF TO zcl_lnt_statement_node.
-          DATA t99 TYPE REF TO object.
-          t99 = t81.
-          t97 ?= t99.
+          t97 ?= t81.
           DATA(t101) = VALUE string( ).
           DATA t102 TYPE REF TO zcl_lnt_irule_metadata.
           DATA t109 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -519,16 +515,12 @@ CLASS zcl_lnt_implct_strt_of_slctn IMPLEMENTATION.
       DATA(t220) = t213.
       IF xsdbool( t220 IS BOUND AND t220 IS INSTANCE OF zcl_lnt_structure_node ) = abap_true.
         DATA t223 TYPE REF TO zcl_lnt_structure_node.
-        DATA t225 TYPE REF TO object.
-        t225 = t213.
-        t223 ?= t225.
+        t223 ?= t213.
         t213 = t223->get_first_statement( ).
       ENDIF.
       DATA t227 TYPE REF TO zcl_lnt_issue.
       DATA t229 TYPE REF TO zcl_lnt_statement_node.
-      DATA t231 TYPE REF TO object.
-      t231 = t213.
-      t229 ?= t231.
+      t229 ?= t213.
       DATA(t233) = VALUE string( ).
       DATA t234 TYPE REF TO zcl_lnt_irule_metadata.
       DATA t241 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

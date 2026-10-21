@@ -75,11 +75,9 @@ CLASS zcl_lnt_xml_utils_module IMPLEMENTATION.
               IF t15 IS BOUND.
                 DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t19.
-                DATA t20 TYPE REF TO object.
                 CLEAR t19.
-                t20 = t15.
                 TRY.
-                    t16 ?= t20.
+                    t16 ?= t15.
                   CATCH cx_sy_move_cast_error.
                 ENDTRY.
                 IF t16 IS NOT BOUND.

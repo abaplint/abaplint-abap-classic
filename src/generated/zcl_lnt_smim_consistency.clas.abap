@@ -109,9 +109,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
     DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     DATA t14 TYPE REF TO zcl_lnt_mime_object.
     DATA t15 TYPE REF TO zcl_lnt_mime_object.
-    DATA t17 TYPE REF TO object.
-    t17 = t1.
-    t15 ?= t17.
+    t15 ?= t1.
     t14 = t15.
     DATA t19 TYPE REF TO zcl_lnt_iparse_result.
     t19 = t14->pr_in_src_obj_mm_obj_ts_mm_obj( ).
@@ -213,9 +211,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t84 TYPE REF TO zcl_lnt_abstract_object.
       DATA t85 TYPE REF TO zcl_lnt_mime_object.
-      DATA t87 TYPE REF TO object.
-      t87 = t1.
-      t85 ?= t87.
+      t85 ?= t1.
       t84 = t85.
       t83 = t84->files.
       DATA t90 TYPE REF TO object.
@@ -347,8 +343,6 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       IF t8->done = abap_true.
         EXIT.
       ENDIF.
-      DATA t15 TYPE REF TO zif_lnt_object.
-      t15 = t8->value.
       DATA t17 TYPE REF TO zcl_lnt_mime_object.
       CLEAR t17.
       DATA t19 TYPE REF TO zcl_lnt_mime_object.
@@ -360,7 +354,7 @@ CLASS zcl_lnt_smim_consistency IMPLEMENTATION.
       TRY.
           DATA t23 TYPE REF TO zcl_lnt_mime_object.
           CLEAR t23.
-          t23 ?= t15.
+          t23 ?= t8->value.
           t19 = t23.
           t20 = abap_true.
         CATCH cx_root INTO t22.

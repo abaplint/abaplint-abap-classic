@@ -38,10 +38,8 @@ CLASS zcl_lnt_st_interface IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>opt( i_first = t13 ).
     IF t12 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t12.
       TRY.
-          t11 ?= t16.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.

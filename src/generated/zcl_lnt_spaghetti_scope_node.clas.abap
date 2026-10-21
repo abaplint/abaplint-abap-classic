@@ -707,9 +707,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
         t31 = t8->resolved.
         IF xsdbool( t31 IS BOUND AND t31 IS INSTANCE OF zcl_lnt_typed_identifier ) = abap_true.
           DATA t35 TYPE REF TO zcl_lnt_typed_identifier.
-          DATA t36 TYPE REF TO zcl_lnt_fi_identifier.
-          t36 = t8->resolved.
-          t35 ?= t36.
+          t35 ?= t8->resolved.
           result = t35.
           RETURN.
         ENDIF.
@@ -909,9 +907,7 @@ CLASS zcl_lnt_spaghetti_scope_node IMPLEMENTATION.
 
   METHOD add_child.
     DATA t2 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-    DATA t4 TYPE REF TO object.
-    t4 = i_node.
-    t2 ?= t4.
+    t2 ?= i_node.
     me->a_c_i_s_a_5_s_s_sc_ts_sp_sc_nd( i_node = t2 ).
   ENDMETHOD.
 

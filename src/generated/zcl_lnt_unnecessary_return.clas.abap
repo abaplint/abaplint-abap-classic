@@ -246,11 +246,9 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
       t83 = t84.
       IF t84 = abap_true.
         DATA t92 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t93 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t94 TYPE REF TO zcl_lnt_abstract_node.
         t94 = t74.
-        t93 = t94->children.
-        t92 ?= t93.
+        t92 ?= t94->children.
         t92->load( ).
         t83 = xsdbool( lines( t92->items ) = 2 ).
       ENDIF.
@@ -438,11 +436,9 @@ CLASS zcl_lnt_unnecessary_return IMPLEMENTATION.
       t199 = t200.
       IF t200 = abap_true.
         DATA t211 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t212 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t213 TYPE REF TO zcl_lnt_abstract_node.
         t213 = t189.
-        t212 = t213->children.
-        t211 ?= t212.
+        t211 ?= t213->children.
         t211->load( ).
         t199 = xsdbool( lines( t211->items ) = 2 ).
       ENDIF.

@@ -20,9 +20,7 @@ CLASS zcl_lnt_cyclmtc_cmplxty_stts IMPLEMENTATION.
     ENDIF.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zcl_lnt_abap_object.
-    DATA t12 TYPE REF TO object.
-    t12 = t1.
-    t10 ?= t12.
+    t10 ?= t1.
     t8 = t10->parsed.
     DATA t15 TYPE REF TO zcl_lnt_abap_file.
     DATA t16 TYPE REF TO object.

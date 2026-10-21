@@ -33,10 +33,8 @@ CLASS zcl_lnt_st_statem_constant IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>opt( i_first = t9 ).
     IF t8 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t12 TYPE REF TO object.
-      t12 = t8.
       TRY.
-          t7 ?= t12.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -97,10 +95,8 @@ CLASS zcl_lnt_st_statem_constant IMPLEMENTATION.
     t17 = zcl_lnt_st_combi_module=>per( i_first = t19 i_second = t22 i_rest = t24 ).
     IF t17 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t17.
       TRY.
-          t16 ?= t37.
+          t16 ?= t17.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t16 IS NOT BOUND.
@@ -137,10 +133,8 @@ CLASS zcl_lnt_st_statem_constant IMPLEMENTATION.
     t46 = zcl_lnt_st_combi_module=>alt( i_first = t48 i_second = t51 i_rest = t54 ).
     IF t46 IS BOUND.
       DATA t59 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t60 TYPE REF TO object.
-      t60 = t46.
       TRY.
-          t45 ?= t60.
+          t45 ?= t46.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t45 IS NOT BOUND.
@@ -161,10 +155,8 @@ CLASS zcl_lnt_st_statem_constant IMPLEMENTATION.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t64 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t65 TYPE REF TO object.
-      t65 = t1.
       TRY.
-          t62 ?= t65.
+          t62 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t62 IS NOT BOUND.
@@ -193,10 +185,8 @@ CLASS zcl_lnt_st_statem_constant IMPLEMENTATION.
     t70 = zcl_lnt_st_combi_module=>opt_prio( i_first = t71 ).
     IF t70 IS BOUND.
       DATA t73 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t74 TYPE REF TO object.
-      t74 = t70.
       TRY.
-          t69 ?= t74.
+          t69 ?= t70.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t69 IS NOT BOUND.

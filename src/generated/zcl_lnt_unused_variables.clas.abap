@@ -190,9 +190,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
 
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t9 = t11->parsed.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     DATA t17 TYPE REF TO object.
@@ -254,9 +252,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
     DATA t35 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t38) = me->reg.
     DATA t39 TYPE REF TO zcl_lnt_abap_object.
-    DATA t41 TYPE REF TO object.
-    t41 = t1.
-    t39 ?= t41.
+    t39 ?= t1.
     t35 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t38 i_object_19cd = t39 )->run( ).
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t44 = t35->zlnt_view_read_sr_bd188c319c03( ).
@@ -270,9 +266,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
     DATA t49 TYPE REF TO zif_lnt_spaghetti_scope_node.
     t49 = t35->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t54 TYPE REF TO zcl_lnt_abap_object.
-    DATA t56 TYPE REF TO object.
-    t56 = t1.
-    t54 ?= t56.
+    t54 ?= t1.
     me->build_workarea( i_node = t49 i_obj_1ed0 = t54 ).
     DATA(t58) = VALUE i( ).
     DATA(t62) = VALUE f( ).
@@ -280,16 +274,12 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
     t58 = t62.
     IF xsdbool( t58 = 0 ) = abap_true.
       DATA t68 TYPE REF TO zcl_lnt_abap_object.
-      DATA t70 TYPE REF TO object.
-      t70 = t1.
-      t68 ?= t70.
+      t68 ?= t1.
       result = me->build_issues( i_obj_1ed0 = t68 ).
       RETURN.
     ENDIF.
     DATA t72 TYPE REF TO zcl_lnt_abap_object.
-    DATA t74 TYPE REF TO object.
-    t74 = t1.
-    t72 ?= t74.
+    t72 ?= t1.
     me->find_uses( i_node = t49 i_obj_1ed0 = t72 ).
     DATA t75 TYPE REF TO zif_lnt_generator_8f73cd1c.
     t75 = me->reg->get_objects( )->iterate( ).
@@ -540,9 +530,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
 
     ENDDO.
     DATA t226 TYPE REF TO zcl_lnt_abap_object.
-    DATA t228 TYPE REF TO object.
-    t228 = t1.
-    t226 ?= t228.
+    t226 ?= t1.
     result = me->build_issues( i_obj_1ed0 = t226 ).
 
   ENDMETHOD.
@@ -1146,9 +1134,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
             CLEAR t166.
           ELSE.
             DATA t172 TYPE REF TO zcl_lnt_abap_object.
-            DATA t174 TYPE REF TO object.
-            t174 = t161.
-            t172 ?= t174.
+            t172 ?= t161.
             t166 = t172->get_abap_file_by_name( i_filename = t144 ).
           ENDIF.
           t151 = t166.
@@ -1866,9 +1852,7 @@ CLASS zcl_lnt_unused_variables IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t24 TYPE REF TO zcl_lnt_abap_object.
-    DATA t26 TYPE REF TO object.
-    t26 = t14.
-    t24 ?= t26.
+    t24 ?= t14.
     result = t24->get_abap_file_by_name( i_filename = t1 ).
 
   ENDMETHOD.

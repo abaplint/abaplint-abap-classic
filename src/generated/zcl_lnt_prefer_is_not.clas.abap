@@ -219,11 +219,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         DATA t34 TYPE abap_bool.
         DATA t35 TYPE abap_bool.
         DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t39 TYPE REF TO zcl_lnt_abstract_node.
         t39 = t17.
-        t38 = t39->children.
-        t37 ?= t38.
+        t37 ?= t39->children.
         t37->load( ).
         t35 = xsdbool( lines( t37->items ) = 2 ).
         t34 = t35.
@@ -233,11 +231,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
           DATA t46 TYPE REF TO zif_lnt_union_4cf1d054.
           CLEAR t46.
           DATA t47 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t48 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t49 TYPE REF TO zcl_lnt_abstract_node.
           t49 = t17.
-          t48 = t49->children.
-          t47 ?= t48.
+          t47 ?= t49->children.
           DATA t53 TYPE REF TO object.
           CLEAR t53.
           t47->load( ).
@@ -402,11 +398,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
     DATA(t6) = VALUE string( ).
     DATA t9 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abstract_node.
     t12 = t2.
-    t11 = t12->children.
-    t10 ?= t11.
+    t10 ?= t12->children.
     DATA t16 TYPE REF TO object.
     t10->load( ).
     READ TABLE t10->items INDEX 3 INTO t16.
@@ -432,11 +426,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
       DATA t25 TYPE REF TO zcl_lnt_abstract_token.
       DATA t27 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t30 TYPE REF TO zcl_lnt_abstract_node.
       t30 = t2.
-      t29 = t30->children.
-      t28 ?= t29.
+      t28 ?= t30->children.
       DATA t34 TYPE REF TO object.
       t28->load( ).
       READ TABLE t28->items INDEX 3 INTO t34.
@@ -475,11 +467,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
       DATA(t79) = VALUE string( ).
       DATA t82 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t83 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t84 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t85 TYPE REF TO zcl_lnt_abstract_node.
       t85 = t2.
-      t84 = t85->children.
-      t83 ?= t84.
+      t83 ?= t85->children.
       DATA t89 TYPE REF TO object.
       t83->load( ).
       READ TABLE t83->items INDEX 3 INTO t89.
@@ -507,11 +497,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         DATA(t98) = VALUE string( ).
         DATA t101 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t104 TYPE REF TO zcl_lnt_abstract_node.
         t104 = t2.
-        t103 = t104->children.
-        t102 ?= t103.
+        t102 ?= t104->children.
         DATA t108 TYPE REF TO object.
         t102->load( ).
         READ TABLE t102->items INDEX 3 INTO t108.
@@ -539,11 +527,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         DATA t117 TYPE REF TO zcl_lnt_abstract_token.
         DATA t119 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t120 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t121 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t122 TYPE REF TO zcl_lnt_abstract_node.
         t122 = t2.
-        t121 = t122->children.
-        t120 ?= t121.
+        t120 ?= t122->children.
         DATA t126 TYPE REF TO object.
         t120->load( ).
         READ TABLE t120->items INDEX 2 INTO t126.
@@ -579,11 +565,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         DATA(t169) = VALUE string( ).
         DATA t172 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t173 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t174 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t175 TYPE REF TO zcl_lnt_abstract_node.
         t175 = t2.
-        t174 = t175->children.
-        t173 ?= t174.
+        t173 ?= t175->children.
         DATA t179 TYPE REF TO object.
         t173->load( ).
         READ TABLE t173->items INDEX 3 INTO t179.
@@ -600,11 +584,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
         IF xsdbool( t169 = |=| ) = abap_true.
           DATA t188 TYPE REF TO zif_lnt_union_4cf1d054.
           DATA t189 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t190 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t191 TYPE REF TO zcl_lnt_abstract_node.
           t191 = t2.
-          t190 = t191->children.
-          t189 ?= t190.
+          t189 ?= t191->children.
           DATA t195 TYPE REF TO object.
           t189->load( ).
           READ TABLE t189->items INDEX 3 INTO t195.
@@ -622,11 +604,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
           DATA(t200) = VALUE string( ).
           DATA t203 TYPE REF TO zif_lnt_union_4cf1d054.
           DATA t204 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t205 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t206 TYPE REF TO zcl_lnt_abstract_node.
           t206 = t2.
-          t205 = t206->children.
-          t204 ?= t205.
+          t204 ?= t206->children.
           DATA t210 TYPE REF TO object.
           t204->load( ).
           READ TABLE t204->items INDEX 3 INTO t210.
@@ -643,11 +623,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
           IF xsdbool( t200 = |<>| ) = abap_true.
             DATA t219 TYPE REF TO zif_lnt_union_4cf1d054.
             DATA t220 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t221 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t222 TYPE REF TO zcl_lnt_abstract_node.
             t222 = t2.
-            t221 = t222->children.
-            t220 ?= t221.
+            t220 ?= t222->children.
             DATA t226 TYPE REF TO object.
             t220->load( ).
             READ TABLE t220->items INDEX 3 INTO t226.
@@ -665,11 +643,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
             DATA(t231) = VALUE string( ).
             DATA t234 TYPE REF TO zif_lnt_union_4cf1d054.
             DATA t235 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t236 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t237 TYPE REF TO zcl_lnt_abstract_node.
             t237 = t2.
-            t236 = t237->children.
-            t235 ?= t236.
+            t235 ?= t237->children.
             DATA t241 TYPE REF TO object.
             t235->load( ).
             READ TABLE t235->items INDEX 3 INTO t241.
@@ -686,11 +662,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
             IF xsdbool( t231 = |<| ) = abap_true.
               DATA t250 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA t251 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA t252 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t253 TYPE REF TO zcl_lnt_abstract_node.
               t253 = t2.
-              t252 = t253->children.
-              t251 ?= t252.
+              t251 ?= t253->children.
               DATA t257 TYPE REF TO object.
               t251->load( ).
               READ TABLE t251->items INDEX 3 INTO t257.
@@ -708,11 +682,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
               DATA(t262) = VALUE string( ).
               DATA t265 TYPE REF TO zif_lnt_union_4cf1d054.
               DATA t266 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA t267 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t268 TYPE REF TO zcl_lnt_abstract_node.
               t268 = t2.
-              t267 = t268->children.
-              t266 ?= t267.
+              t266 ?= t268->children.
               DATA t272 TYPE REF TO object.
               t266->load( ).
               READ TABLE t266->items INDEX 3 INTO t272.
@@ -729,11 +701,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
               IF xsdbool( t262 = |>| ) = abap_true.
                 DATA t281 TYPE REF TO zif_lnt_union_4cf1d054.
                 DATA t282 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                DATA t283 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t284 TYPE REF TO zcl_lnt_abstract_node.
                 t284 = t2.
-                t283 = t284->children.
-                t282 ?= t283.
+                t282 ?= t284->children.
                 DATA t288 TYPE REF TO object.
                 t282->load( ).
                 READ TABLE t282->items INDEX 3 INTO t288.
@@ -751,11 +721,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
                 DATA(t293) = VALUE string( ).
                 DATA t296 TYPE REF TO zif_lnt_union_4cf1d054.
                 DATA t297 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                DATA t298 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t299 TYPE REF TO zcl_lnt_abstract_node.
                 t299 = t2.
-                t298 = t299->children.
-                t297 ?= t298.
+                t297 ?= t299->children.
                 DATA t303 TYPE REF TO object.
                 t297->load( ).
                 READ TABLE t297->items INDEX 3 INTO t303.
@@ -772,11 +740,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
                 IF xsdbool( t293 = |<=| ) = abap_true.
                   DATA t312 TYPE REF TO zif_lnt_union_4cf1d054.
                   DATA t313 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                  DATA t314 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   DATA t315 TYPE REF TO zcl_lnt_abstract_node.
                   t315 = t2.
-                  t314 = t315->children.
-                  t313 ?= t314.
+                  t313 ?= t315->children.
                   DATA t319 TYPE REF TO object.
                   t313->load( ).
                   READ TABLE t313->items INDEX 3 INTO t319.
@@ -794,11 +760,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
                   DATA(t324) = VALUE string( ).
                   DATA t327 TYPE REF TO zif_lnt_union_4cf1d054.
                   DATA t328 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                  DATA t329 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                   DATA t330 TYPE REF TO zcl_lnt_abstract_node.
                   t330 = t2.
-                  t329 = t330->children.
-                  t328 ?= t329.
+                  t328 ?= t330->children.
                   DATA t334 TYPE REF TO object.
                   t328->load( ).
                   READ TABLE t328->items INDEX 3 INTO t334.
@@ -815,11 +779,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
                   IF xsdbool( t324 = |>=| ) = abap_true.
                     DATA t343 TYPE REF TO zif_lnt_union_4cf1d054.
                     DATA t344 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                    DATA t345 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                     DATA t346 TYPE REF TO zcl_lnt_abstract_node.
                     t346 = t2.
-                    t345 = t346->children.
-                    t344 ?= t345.
+                    t344 ?= t346->children.
                     DATA t350 TYPE REF TO object.
                     t344->load( ).
                     READ TABLE t344->items INDEX 3 INTO t350.
@@ -849,11 +811,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
     DATA t360 TYPE REF TO zcl_lnt_abstract_token.
     DATA t362 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t363 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t364 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t365 TYPE REF TO zcl_lnt_abstract_node.
     t365 = t2.
-    t364 = t365->children.
-    t363 ?= t364.
+    t363 ?= t365->children.
     DATA t369 TYPE REF TO object.
     t363->load( ).
     READ TABLE t363->items INDEX 1 INTO t369.
@@ -885,11 +845,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
     DATA t401 TYPE REF TO zcl_lnt_abstract_token.
     DATA t403 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t404 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t405 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t406 TYPE REF TO zcl_lnt_abstract_node.
     t406 = t2.
-    t405 = t406->children.
-    t404 ?= t405.
+    t404 ?= t406->children.
     DATA t410 TYPE REF TO object.
     t404->load( ).
     READ TABLE t404->items INDEX 1 INTO t410.
@@ -917,11 +875,9 @@ CLASS zcl_lnt_prefer_is_not IMPLEMENTATION.
     t397 = NEW zcl_lnt_position( i_row = t433 i_col = t356 ).
     DATA t442 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t443 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t444 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t445 TYPE REF TO zcl_lnt_abstract_node.
     t445 = t2.
-    t444 = t445->children.
-    t443 ?= t444.
+    t443 ?= t445->children.
     DATA t449 TYPE REF TO object.
     t443->load( ).
     READ TABLE t443->items INDEX 1 INTO t449.

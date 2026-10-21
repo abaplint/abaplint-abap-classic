@@ -245,11 +245,9 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
           DATA t64 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t65 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           CLEAR t65.
-          DATA t66 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t67 TYPE REF TO zcl_lnt_abstract_node.
           t67 = t51.
-          t66 = t67->children.
-          t65 ?= t66.
+          t65 ?= t67->children.
           t64 = t65.
           DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t71.
@@ -656,11 +654,9 @@ CLASS zcl_lnt_prfr_rs_excptn_nw IMPLEMENTATION.
     DATA(t2) = i_statement.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_abstract_node.
     t7 = t2.
-    t6 = t7->children.
-    t5 ?= t6.
+    t5 ?= t7->children.
     t4 = t5.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF i_with_exporting = abap_true.

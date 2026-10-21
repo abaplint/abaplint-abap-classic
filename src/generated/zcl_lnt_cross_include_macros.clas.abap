@@ -421,9 +421,7 @@ CLASS zcl_lnt_cross_include_macros IMPLEMENTATION.
       IF xsdbool( t30 IS BOUND AND t30 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
         DATA t41 TYPE REF TO zlnt_runtime_set__569a685d95a8.
         DATA t43 TYPE REF TO zcl_lnt_abap_object.
-        DATA t45 TYPE REF TO object.
-        t45 = t30.
-        t43 ?= t45.
+        t43 ?= t30.
         t41 = t3->add( p0 = t43 ).
       ENDIF.
     ENDDO.

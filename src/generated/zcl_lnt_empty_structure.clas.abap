@@ -461,11 +461,9 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
       ENDIF.
       DATA t162 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       CLEAR t162.
-      DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t164 TYPE REF TO zcl_lnt_abstract_node.
       t164 = t155.
-      t163 = t164->children.
-      t162 ?= t163.
+      t162 ?= t164->children.
       t162->load( ).
       IF xsdbool( lines( t162->items ) = 2 ) = abap_true.
         DATA t170 TYPE REF TO zcl_lnt_abstract_token.
@@ -808,11 +806,9 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         ENDIF.
         DATA t382 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t382.
-        DATA t383 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t384 TYPE REF TO zcl_lnt_abstract_node.
         t384 = t375.
-        t383 = t384->children.
-        t382 ?= t383.
+        t382 ?= t384->children.
         t382->load( ).
         IF xsdbool( lines( t382->items ) = 2 ) = abap_true.
           DATA t389 TYPE REF TO zif_lnt_union_8249fcb1.
@@ -900,11 +896,9 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
               IF t424 IS BOUND.
                 DATA t431 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t431.
-                DATA t432 TYPE REF TO object.
                 CLEAR t431.
-                t432 = t424.
                 TRY.
-                    t429 ?= t432.
+                    t429 ?= t424.
                   CATCH cx_sy_move_cast_error.
                 ENDTRY.
                 IF t429 IS NOT BOUND.
@@ -929,11 +923,9 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
               IF t389 IS BOUND.
                 DATA t433 TYPE REF TO zlnt_view_storage_74017ca272ac.
                 CLEAR t433.
-                DATA t434 TYPE REF TO object.
                 CLEAR t433.
-                t434 = t389.
                 TRY.
-                    t430 ?= t434.
+                    t430 ?= t389.
                   CATCH cx_sy_move_cast_error.
                 ENDTRY.
                 IF t430 IS NOT BOUND.
@@ -1381,11 +1373,9 @@ CLASS zcl_lnt_empty_structure IMPLEMENTATION.
         ENDIF.
         DATA t688 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t688.
-        DATA t689 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t690 TYPE REF TO zcl_lnt_abstract_node.
         t690 = t681.
-        t689 = t690->children.
-        t688 ?= t689.
+        t688 ?= t690->children.
         t688->load( ).
         IF xsdbool( lines( t688->items ) = 1 ) = abap_true.
           DATA t696 TYPE REF TO zcl_lnt_abstract_token.

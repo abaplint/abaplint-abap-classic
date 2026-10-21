@@ -62,10 +62,8 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>seq( i_first = t13 i_second = t16 i_rest = t19 ).
     IF t11 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t11.
       TRY.
-          t10 ?= t25.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -94,10 +92,8 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t1.
       TRY.
-          t34 ?= t37.
+          t34 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t34 IS NOT BOUND.
@@ -118,10 +114,8 @@ CLASS zcl_lnt_sql_privileged_access IMPLEMENTATION.
     t33 = zcl_lnt_st_combi_module=>opt_prio( i_first = t34 ).
     IF t33 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t33.
       TRY.
-          t32 ?= t39.
+          t32 ?= t33.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t32 IS NOT BOUND.

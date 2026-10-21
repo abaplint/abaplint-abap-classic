@@ -531,11 +531,9 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
         ENDIF.
         t41 = t57.
         DATA t68 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t69 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t70 TYPE REF TO zcl_lnt_abstract_node.
         t70 = t36.
-        t69 = t70->children.
-        t68 ?= t69.
+        t68 ?= t70->children.
         t68->load( ).
         IF xsdbool( lines( t68->items ) <> 3 ) = abap_true.
           result = abap_false.
@@ -610,11 +608,9 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
         DATA t101 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t101.
         DATA t102 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t103 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t104 TYPE REF TO zcl_lnt_abstract_node.
         t104 = t36.
-        t103 = t104->children.
-        t102 ?= t103.
+        t102 ?= t104->children.
         DATA t109 TYPE REF TO object.
         t109 = t102->get( p0 = 0 ).
         DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -675,11 +671,9 @@ CLASS zcl_lnt_change_if_to_case IMPLEMENTATION.
         DATA t134 TYPE REF TO zif_lnt_union_4cf1d054.
         CLEAR t134.
         DATA t135 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t136 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t137 TYPE REF TO zcl_lnt_abstract_node.
         t137 = t36.
-        t136 = t137->children.
-        t135 ?= t136.
+        t135 ?= t137->children.
         DATA t142 TYPE REF TO object.
         t142 = t135->get( p0 = 2 ).
         DATA t143 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

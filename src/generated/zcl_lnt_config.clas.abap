@@ -270,11 +270,9 @@ CLASS zcl_lnt_config IMPLEMENTATION.
       IF t77 IS BOUND.
         DATA t79 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t79.
-        DATA t80 TYPE REF TO object.
         CLEAR t79.
-        t80 = t77.
         TRY.
-            t76 ?= t80.
+            t76 ?= t77.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t76 IS NOT BOUND.

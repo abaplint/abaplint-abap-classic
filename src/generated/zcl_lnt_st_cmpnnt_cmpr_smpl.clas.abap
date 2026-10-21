@@ -69,10 +69,8 @@ CLASS zcl_lnt_st_cmpnnt_cmpr_smpl IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t6 i_first = t13 i_opts = t17 ).
     IF t5 IS BOUND.
       DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t29 TYPE REF TO object.
-      t29 = t5.
       TRY.
-          t4 ?= t29.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -122,10 +120,8 @@ CLASS zcl_lnt_st_cmpnnt_cmpr_smpl IMPLEMENTATION.
     t43 = zcl_lnt_st_combi_module=>alt_prio( i_first = t45 i_second = t48 i_rest = t51 ).
     IF t43 IS BOUND.
       DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t57 TYPE REF TO object.
-      t57 = t43.
       TRY.
-          t42 ?= t57.
+          t42 ?= t43.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t42 IS NOT BOUND.
@@ -152,10 +148,8 @@ CLASS zcl_lnt_st_cmpnnt_cmpr_smpl IMPLEMENTATION.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t66 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t67 TYPE REF TO object.
-      t67 = t1.
       TRY.
-          t64 ?= t67.
+          t64 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t64 IS NOT BOUND.
@@ -180,10 +174,8 @@ CLASS zcl_lnt_st_cmpnnt_cmpr_smpl IMPLEMENTATION.
     DATA t73 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t39 IS BOUND.
       DATA t75 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t76 TYPE REF TO object.
-      t76 = t39.
       TRY.
-          t73 ?= t76.
+          t73 ?= t39.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t73 IS NOT BOUND.

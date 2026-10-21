@@ -32,10 +32,8 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     t6 = zcl_lnt_st_combi_module=>tok( i_t = t7 ).
     IF t6 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t6.
       TRY.
-          t5 ?= t9.
+          t5 ?= t6.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t5 IS NOT BOUND.
@@ -59,10 +57,8 @@ CLASS zcl_lnt_sql_over_module IMPLEMENTATION.
     t12 = zcl_lnt_st_combi_module=>tok( i_t = t13 ).
     IF t12 IS BOUND.
       DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t15 TYPE REF TO object.
-      t15 = t12.
       TRY.
-          t11 ?= t15.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.

@@ -3988,9 +3988,7 @@ CLASS zcl_lnt_table IMPLEMENTATION.
           CLEAR t1899.
           DATA t1900 TYPE REF TO zif_lnt_object.
           CLEAR t1900.
-          DATA t1901 TYPE REF TO zif_lnt_union_c74a232f.
-          t1901 = t1885.
-          t1900 ?= t1901.
+          t1900 ?= t1885.
           t1899 = t1900.
           DATA t1903 TYPE REF TO zcl_lnt_abstract_token.
           CLEAR t1903.
@@ -5153,11 +5151,9 @@ CLASS zcl_lnt_table IMPLEMENTATION.
           IF t613 IS BOUND.
             DATA t617 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t617.
-            DATA t618 TYPE REF TO object.
             CLEAR t617.
-            t618 = t613.
             TRY.
-                t612 ?= t618.
+                t612 ?= t613.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t612 IS NOT BOUND.
@@ -5777,11 +5773,9 @@ CLASS zcl_lnt_table IMPLEMENTATION.
           IF t947 IS BOUND.
             DATA t951 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t951.
-            DATA t952 TYPE REF TO object.
             CLEAR t951.
-            t952 = t947.
             TRY.
-                t946 ?= t952.
+                t946 ?= t947.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t946 IS NOT BOUND.
@@ -5972,11 +5966,9 @@ CLASS zcl_lnt_table IMPLEMENTATION.
             IF t1027 IS BOUND.
               DATA t1031 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t1031.
-              DATA t1032 TYPE REF TO object.
               CLEAR t1031.
-              t1032 = t1027.
               TRY.
-                  t1026 ?= t1032.
+                  t1026 ?= t1027.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t1026 IS NOT BOUND.

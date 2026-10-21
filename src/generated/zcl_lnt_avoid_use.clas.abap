@@ -217,11 +217,9 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
         IF t43 = abap_true.
           DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t50 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t51 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t52 TYPE REF TO zcl_lnt_abstract_node.
           t52 = t18.
-          t51 = t52->children.
-          t50 ?= t51.
+          t50 ?= t52->children.
           t49 = t50.
           DATA t56 TYPE abap_bool.
           DATA t57 TYPE abap_bool.
@@ -298,11 +296,9 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
               t95 = t18.
               DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t99 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              DATA t100 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
               DATA t101 TYPE REF TO zcl_lnt_abstract_node.
               t101 = t95.
-              t100 = t101->children.
-              t99 ?= t100.
+              t99 ?= t101->children.
               t98 = t99.
               DATA(t105) = VALUE string( ).
               DATA t107 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -1083,11 +1079,9 @@ CLASS zcl_lnt_avoid_use IMPLEMENTATION.
     DATA(t2) = i_statement_node.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t2.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t3 = t4.
     DATA(t10) = VALUE string( ).
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.

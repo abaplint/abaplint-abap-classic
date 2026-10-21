@@ -26,10 +26,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>star( i_first = t5 ).
     IF t4 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t4.
       TRY.
-          t3 ?= t8.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -68,10 +66,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>alt( i_first = t18 i_second = t21 i_rest = t24 ).
     IF t16 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t16.
       TRY.
-          t15 ?= t30.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -114,10 +110,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t39 = zcl_lnt_st_combi_module=>str( i_s = |\{| ).
     IF t39 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t39.
       TRY.
-          t38 ?= t42.
+          t38 ?= t39.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t38 IS NOT BOUND.
@@ -158,10 +152,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t47 = zcl_lnt_st_combi_module=>seq( i_first = t49 i_second = t52 i_rest = t55 ).
     IF t47 IS BOUND.
       DATA t60 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t61 TYPE REF TO object.
-      t61 = t47.
       TRY.
-          t46 ?= t61.
+          t46 ?= t47.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t46 IS NOT BOUND.
@@ -182,10 +174,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t45 = zcl_lnt_st_combi_module=>plus( i_first = t46 ).
     IF t45 IS BOUND.
       DATA t62 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t63 TYPE REF TO object.
-      t63 = t45.
       TRY.
-          t44 ?= t63.
+          t44 ?= t45.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t44 IS NOT BOUND.
@@ -211,10 +201,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t66 = zcl_lnt_st_combi_module=>str( i_s = |\}| ).
     IF t66 IS BOUND.
       DATA t68 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t69 TYPE REF TO object.
-      t69 = t66.
       TRY.
-          t65 ?= t69.
+          t65 ?= t66.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.
@@ -244,10 +232,8 @@ CLASS zcl_lnt_cds_annotate IMPLEMENTATION.
     t72 = zcl_lnt_st_combi_module=>opt( i_first = t73 ).
     IF t72 IS BOUND.
       DATA t75 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t76 TYPE REF TO object.
-      t76 = t72.
       TRY.
-          t71 ?= t76.
+          t71 ?= t72.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t71 IS NOT BOUND.

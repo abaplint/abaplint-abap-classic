@@ -51,11 +51,9 @@ CLASS zcl_lnt_sy_field_assignment IMPLEMENTATION.
       t51 ?= t3.
       t50 = t51.
       DATA t53 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t55 TYPE REF TO zcl_lnt_abstract_node.
       t55 = t4.
-      t54 = t55->children.
-      t53 ?= t54.
+      t53 ?= t55->children.
       DATA t60 TYPE REF TO zif_lnt_union_4cf1d054.
       DATA t61 TYPE REF TO object.
       DATA(t62) = VALUE i( ).

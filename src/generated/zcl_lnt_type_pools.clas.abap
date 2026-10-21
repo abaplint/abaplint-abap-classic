@@ -26,10 +26,8 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t16 TYPE REF TO object.
-      t16 = t1.
       TRY.
-          t13 ?= t16.
+          t13 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t13 IS NOT BOUND.
@@ -53,10 +51,8 @@ CLASS zcl_lnt_type_pools IMPLEMENTATION.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t7 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t7.
       TRY.
-          t25 ?= t28.
+          t25 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t25 IS NOT BOUND.

@@ -526,11 +526,9 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
       IF xsdbool( t165 IS INITIAL ) = abap_true.
       ELSE.
         DATA t174 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t175 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t176 TYPE REF TO zcl_lnt_abstract_node.
         t176 = t165.
-        t175 = t176->children.
-        t174 ?= t175.
+        t174 ?= t176->children.
         t170 = t174.
       ENDIF.
       t163 = t170.
@@ -575,9 +573,7 @@ CLASS zcl_lnt_ob_data_definition IMPLEMENTATION.
           CLEAR t199.
           DATA t201 TYPE REF TO zcl_lnt_expression_node.
           DATA t203 TYPE REF TO zcl_lnt_expression_node.
-          DATA t205 TYPE REF TO object.
-          t205 = t186.
-          t203 ?= t205.
+          t203 ?= t186.
           DATA(t206) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1084_4e459f75c17b.
           t201 = t203->find_first_expression( i_type_9913 = t206 ).
           DATA t207 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

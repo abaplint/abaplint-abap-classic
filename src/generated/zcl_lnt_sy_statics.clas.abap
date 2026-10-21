@@ -21,11 +21,9 @@ CLASS zcl_lnt_sy_statics IMPLEMENTATION.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t11.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t15 TYPE REF TO zcl_lnt_abstract_node.
     t15 = t1.
-    t14 = t15->children.
-    t13 ?= t14.
+    t13 ?= t15->children.
     DATA t19 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t20 TYPE REF TO object.
     DATA(t21) = VALUE i( ).
@@ -67,9 +65,7 @@ CLASS zcl_lnt_sy_statics IMPLEMENTATION.
         DATA(t36) = NEW zcl_lnt_sy_static( ).
         DATA t37 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t37.
-        DATA t39 TYPE REF TO object.
-        t39 = t19.
-        t37 ?= t39.
+        t37 ?= t19.
         t34 = t36->run_syntax( i_node = t37 i_input_967e = t2 ).
         IF xsdbool( t34 IS BOUND ) = abap_true.
           DATA t44 TYPE REF TO zcl_lnt_istructure_component.
@@ -168,9 +164,7 @@ CLASS zcl_lnt_sy_statics IMPLEMENTATION.
           DATA(t100) = NEW zcl_lnt_sy_statics( ).
           DATA t101 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t101.
-          DATA t103 TYPE REF TO object.
-          t103 = t19.
-          t101 ?= t103.
+          t101 ?= t19.
           t98 = t100->run_syntax( i_node = t101 i_input_967e = t2 ).
           IF xsdbool( t98 IS BOUND ) = abap_true.
             DATA t108 TYPE REF TO zcl_lnt_istructure_component.
@@ -268,9 +262,7 @@ CLASS zcl_lnt_sy_statics IMPLEMENTATION.
             DATA t163 TYPE REF TO zcl_lnt_abstract_token.
             DATA t164 TYPE REF TO zcl_lnt_statement_node.
             CLEAR t164.
-            DATA t166 TYPE REF TO object.
-            t166 = t19.
-            t164 ?= t166.
+            t164 ?= t19.
             t163 = t164->find_direct_token_by_text( i_text = |OCCURS| ).
             IF xsdbool( t163 IS BOUND ) = abap_true.
               t9 = abap_true.
@@ -291,9 +283,7 @@ CLASS zcl_lnt_sy_statics IMPLEMENTATION.
               DATA t178 TYPE REF TO zcl_lnt_expression_node.
               DATA t180 TYPE REF TO zcl_lnt_statement_node.
               CLEAR t180.
-              DATA t182 TYPE REF TO object.
-              t182 = t19.
-              t180 ?= t182.
+              t180 ?= t19.
               DATA(t183) = zlnt_runtime_desc_78196487750d=>zlnt_member_d189_7457e1b1f519.
               t178 = t180->find_first_expression( i_type_9913 = t183 ).
               DATA t184 TYPE REF TO zcl_lnt_abstract_token.

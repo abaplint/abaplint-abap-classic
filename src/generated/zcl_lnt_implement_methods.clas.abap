@@ -1194,10 +1194,8 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
     t7 = t9->get_object( i_type_9913 = t10 i_name = t18 ).
     IF t7 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t21 TYPE REF TO object.
-      t21 = t7.
       TRY.
-          t6 ?= t21.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -1407,9 +1405,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         CLEAR t53.
         DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t56 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-        DATA t58 TYPE REF TO object.
-        t58 = t34.
-        t56 ?= t58.
+        t56 ?= t34.
         t54 = t56->methods.
         DATA t59 TYPE i.
         t54->load( ).
@@ -1438,9 +1434,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
           DATA t76 TYPE REF TO zcl_lnt_imethod.
           DATA t77 TYPE string.
           DATA t79 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-          DATA t81 TYPE REF TO object.
-          t81 = t34.
-          t79 ?= t81.
+          t79 ?= t34.
           t77 = t79->name.
           t76 = NEW zcl_lnt_imethod( i_object_name = t77 i_method = t69 ).
           CREATE OBJECT t76->zlnt_view_ownkeys_b0e8086400eb.
@@ -1642,9 +1636,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
         DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CREATE OBJECT t38.
         DATA t41 TYPE REF TO zcl_lnt_issue.
-        DATA t43 TYPE REF TO object.
-        t43 = t12.
-        t41 ?= t43.
+        t41 ?= t12.
         t38->load( ).
         APPEND t41 TO t38->items.
         t38->save( ).
@@ -1654,9 +1646,7 @@ CLASS zcl_lnt_implement_methods IMPLEMENTATION.
 
       DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t46 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
-      DATA t48 TYPE REF TO object.
-      t48 = t12.
-      t46 ?= t48.
+      t46 ?= t12.
       t45 = me->find_interface_methods( i_idef = t46 ).
       DATA t49 TYPE REF TO zcl_lnt_imethod.
       CLEAR t49.

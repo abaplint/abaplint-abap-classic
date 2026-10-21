@@ -246,9 +246,7 @@ CLASS zcl_lnt_sy_source_field IMPLEMENTATION.
         t209 = t12.
         DATA t213 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t215 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t216 TYPE REF TO zif_lnt_interface_definition.
-        t216 = t128.
-        t215 ?= t216.
+        t215 ?= t128.
         t213 = t215.
         DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t219.

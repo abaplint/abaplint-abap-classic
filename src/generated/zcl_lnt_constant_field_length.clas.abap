@@ -20,10 +20,8 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -62,10 +60,8 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>alt_prio( i_first = t13 i_second = t16 i_rest = t19 ).
     IF t11 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t11.
       TRY.
-          t10 ?= t25.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -91,10 +87,8 @@ CLASS zcl_lnt_constant_field_length IMPLEMENTATION.
     t30 = zcl_lnt_st_combi_module=>tok( i_t = t31 ).
     IF t30 IS BOUND.
       DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t33 TYPE REF TO object.
-      t33 = t30.
       TRY.
-          t29 ?= t33.
+          t29 ?= t30.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.

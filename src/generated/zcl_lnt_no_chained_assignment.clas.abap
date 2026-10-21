@@ -301,11 +301,9 @@ CLASS zcl_lnt_no_chained_assignment IMPLEMENTATION.
     DATA(t2) = i_node.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = t2.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     t3 = t4.
     DATA t10 TYPE string.
     t10 = ||.

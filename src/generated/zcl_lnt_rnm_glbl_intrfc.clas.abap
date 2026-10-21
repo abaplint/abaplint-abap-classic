@@ -58,9 +58,7 @@ CLASS zcl_lnt_rnm_glbl_intrfc IMPLEMENTATION.
     ENDIF.
     DATA t16 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO zcl_lnt_ob_interface.
-    DATA t20 TYPE REF TO object.
-    t20 = t1.
-    t18 ?= t20.
+    t18 ?= t1.
     t16 = t18->get_main_abap_file( ).
     DATA t24 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t16 IS INITIAL ) = abap_true.
@@ -230,25 +228,19 @@ CLASS zcl_lnt_rnm_glbl_intrfc IMPLEMENTATION.
     DATA t126 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t127 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t129 TYPE REF TO zcl_lnt_ob_interface.
-    DATA t131 TYPE REF TO object.
-    t131 = t1.
-    t129 ?= t131.
+    t129 ?= t1.
     DATA t135 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t127 = t121->build_xml_file_edits( i_object_19cd = t129 i_xml_tag = |CLSNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t135 ).
     t126 ?= t127.
     t37 = t37->concat( p0 = t126 ).
     DATA t140 TYPE REF TO zcl_lnt_ob_interface.
-    DATA t142 TYPE REF TO object.
-    t142 = t1.
-    t140 ?= t142.
+    t140 ?= t1.
     t37 = t37->concat( p0 = t121->rename_files( i_obj_1ed0 = t140 i_old_name = t2 i_name = t3 ) ).
     DATA t147 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t148 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t151 TYPE REF TO zcl_lnt_ob_interface.
     DATA t152 TYPE REF TO zcl_lnt_ob_interface.
-    DATA t154 TYPE REF TO object.
-    t154 = t1.
-    t152 ?= t154.
+    t152 ?= t1.
     t151 = t152.
     DATA t156 TYPE REF TO zcl_lnt_inf_intrfc_dfntn.
     DATA t158 TYPE REF TO zif_lnt_abap_file_information.

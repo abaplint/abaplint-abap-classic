@@ -128,10 +128,8 @@ CLASS zcl_lnt_irun_input IMPLEMENTATION.
           CLEAR result.
           IF me->progress IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->progress.
             TRY.
-                result ?= t2.
+                result ?= me->progress.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

@@ -35,10 +35,8 @@ CLASS zcl_lnt_cmpnnt_cmpr_sngl IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>alt_prio( i_first = t7 i_second = t10 i_rest = t13 ).
     IF t5 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t5.
       TRY.
-          t4 ?= t19.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.

@@ -62,7 +62,6 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
     IF xsdbool( t64 IS INITIAL ) = abap_true.
     ELSE.
       DATA t72 TYPE REF TO zif_lnt_union_4cf1d054.
-      DATA t73 TYPE REF TO zif_lnt_node.
       DATA t74 TYPE REF TO zcl_lnt_abstract_node.
       t74 = t64.
       DATA t79 TYPE REF TO zif_lnt_node.
@@ -80,13 +79,10 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
       ELSE.
         t79 ?= t82.
       ENDIF.
-      t73 = t79.
-      t72 ?= t73.
+      t72 ?= t79.
       t68 = t72.
     ENDIF.
-    DATA t86 TYPE REF TO object.
-    t86 = t68.
-    t62 ?= t86.
+    t62 ?= t68.
     t61 = t62.
     DATA t90 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t61 IS INITIAL ) = abap_true.
@@ -194,11 +190,9 @@ CLASS zcl_lnt_sy_loop IMPLEMENTATION.
         t177 = t178.
         IF t178 = abap_true.
           DATA t200 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t201 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t202 TYPE REF TO zcl_lnt_abstract_node.
           t202 = t1.
-          t201 = t202->children.
-          t200 ?= t201.
+          t200 ?= t202->children.
           t200->load( ).
           t177 = xsdbool( lines( t200->items ) = 4 ).
         ENDIF.

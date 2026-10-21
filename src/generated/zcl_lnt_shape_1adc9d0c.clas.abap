@@ -125,10 +125,8 @@ CLASS zcl_lnt_shape_1adc9d0c IMPLEMENTATION.
         CLEAR result.
         IF me->statement IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t2 TYPE REF TO object.
-          t2 = me->statement.
           TRY.
-              result ?= t2.
+              result ?= me->statement.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -152,10 +150,8 @@ CLASS zcl_lnt_shape_1adc9d0c IMPLEMENTATION.
           CLEAR result.
           IF me->matcher IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t4 TYPE REF TO object.
-            t4 = me->matcher.
             TRY.
-                result ?= t4.
+                result ?= me->matcher.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

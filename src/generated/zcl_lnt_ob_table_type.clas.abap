@@ -2228,11 +2228,9 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
           IF t317 IS BOUND.
             DATA t321 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t321.
-            DATA t322 TYPE REF TO object.
             CLEAR t321.
-            t322 = t317.
             TRY.
-                t316 ?= t322.
+                t316 ?= t317.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t316 IS NOT BOUND.
@@ -2398,11 +2396,9 @@ CLASS zcl_lnt_ob_table_type IMPLEMENTATION.
           IF t395 IS BOUND.
             DATA t399 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t399.
-            DATA t400 TYPE REF TO object.
             CLEAR t399.
-            t400 = t395.
             TRY.
-                t394 ?= t400.
+                t394 ?= t395.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t394 IS NOT BOUND.

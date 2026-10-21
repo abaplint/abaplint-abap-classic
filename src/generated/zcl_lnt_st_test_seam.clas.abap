@@ -62,10 +62,8 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t18 i_rest = t21 ).
     IF t13 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t27 TYPE REF TO object.
-      t27 = t13.
       TRY.
-          t12 ?= t27.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -99,10 +97,8 @@ CLASS zcl_lnt_st_test_seam IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t5 i_first = t12 i_opts = t30 ).
     IF t4 IS BOUND.
       DATA t41 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t42 TYPE REF TO object.
-      t42 = t4.
       TRY.
-          t3 ?= t42.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.

@@ -141,10 +141,8 @@ CLASS zcl_lnt_database_source_info IMPLEMENTATION.
           CLEAR result.
           IF me->source IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->source.
             TRY.
-                result ?= t2.
+                result ?= me->source.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

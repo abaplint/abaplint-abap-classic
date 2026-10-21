@@ -228,10 +228,8 @@ CLASS zcl_lnt_iabapparser_options IMPLEMENTATION.
           CLEAR result.
           IF me->reg IS BOUND.
             DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t6 TYPE REF TO object.
-            t6 = me->reg.
             TRY.
-                result ?= t6.
+                result ?= me->reg.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

@@ -35,10 +35,8 @@ CLASS zcl_lnt_constant_begin IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>opt_prio( i_first = t14 ).
     IF t13 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t17 TYPE REF TO object.
-      t17 = t13.
       TRY.
-          t12 ?= t17.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.

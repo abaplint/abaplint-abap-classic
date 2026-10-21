@@ -75,10 +75,8 @@ CLASS zcl_lnt_loop_source IMPLEMENTATION.
     t7 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t8 i_first = t15 i_opts = t19 ).
     IF t7 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t7.
       TRY.
-          t6 ?= t31.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

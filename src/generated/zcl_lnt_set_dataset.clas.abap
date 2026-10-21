@@ -52,10 +52,8 @@ CLASS zcl_lnt_set_dataset IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>alt( i_first = t18 i_second = t21 i_rest = t24 ).
     IF t16 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t16.
       TRY.
-          t15 ?= t30.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -80,10 +78,8 @@ CLASS zcl_lnt_set_dataset IMPLEMENTATION.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t1.
       TRY.
-          t37 ?= t40.
+          t37 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t37 IS NOT BOUND.

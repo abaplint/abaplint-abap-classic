@@ -56,10 +56,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t18 IS BOUND.
       DATA t40 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t41 TYPE REF TO object.
-      t41 = t18.
       TRY.
-          t38 ?= t41.
+          t38 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t38 IS NOT BOUND.
@@ -86,10 +84,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t18 IS BOUND.
       DATA t50 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t51 TYPE REF TO object.
-      t51 = t18.
       TRY.
-          t48 ?= t51.
+          t48 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t48 IS NOT BOUND.
@@ -116,10 +112,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t63 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t64 TYPE REF TO object.
-      t64 = t1.
       TRY.
-          t61 ?= t64.
+          t61 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t61 IS NOT BOUND.
@@ -142,10 +136,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t35 IS BOUND.
       DATA t70 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t71 TYPE REF TO object.
-      t71 = t35.
       TRY.
-          t68 ?= t71.
+          t68 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t68 IS NOT BOUND.
@@ -166,10 +158,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     t67 = zcl_lnt_st_combi_module=>opt_prio( i_first = t68 ).
     IF t67 IS BOUND.
       DATA t72 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t73 TYPE REF TO object.
-      t73 = t67.
       TRY.
-          t66 ?= t73.
+          t66 ?= t67.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t66 IS NOT BOUND.
@@ -192,10 +182,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     t59 = zcl_lnt_st_combi_module=>seq( i_first = t61 i_second = t66 i_rest = t75 ).
     IF t59 IS BOUND.
       DATA t80 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t81 TYPE REF TO object.
-      t81 = t59.
       TRY.
-          t58 ?= t81.
+          t58 ?= t59.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t58 IS NOT BOUND.
@@ -216,10 +204,8 @@ CLASS zcl_lnt_sql_path_join_type IMPLEMENTATION.
     DATA t83 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t35 IS BOUND.
       DATA t85 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t86 TYPE REF TO object.
-      t86 = t35.
       TRY.
-          t83 ?= t86.
+          t83 ?= t35.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t83 IS NOT BOUND.

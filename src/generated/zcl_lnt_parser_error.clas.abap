@@ -138,9 +138,7 @@ CLASS zcl_lnt_parser_error IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_true.
       DATA t18 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t20 TYPE REF TO zcl_lnt_abap_object.
-      DATA t22 TYPE REF TO object.
-      t22 = t1.
-      t20 ?= t22.
+      t20 ?= t1.
       t18 = t20->parsed.
       DATA t25 TYPE REF TO zcl_lnt_abap_file.
       DATA t26 TYPE REF TO object.

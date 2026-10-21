@@ -140,9 +140,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
     CREATE OBJECT t8.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t12 TYPE REF TO zcl_lnt_abap_object.
-    DATA t14 TYPE REF TO object.
-    t14 = t1.
-    t12 ?= t14.
+    t12 ?= t1.
     t10 = t12->parsed.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
     DATA t18 TYPE REF TO object.
@@ -518,9 +516,7 @@ CLASS zcl_lnt_mdfy_only_own_db_tbls IMPLEMENTATION.
             IF xsdbool( t6 IS INITIAL ) = abap_true.
               DATA(t259) = me->reg.
               DATA t260 TYPE REF TO zcl_lnt_abap_object.
-              DATA t262 TYPE REF TO object.
-              t262 = t1.
-              t260 ?= t262.
+              t260 ?= t1.
               t6 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t259 i_object_19cd = t260 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( ).
             ENDIF.
             DATA t264 TYPE REF TO zcl_lnt_position.

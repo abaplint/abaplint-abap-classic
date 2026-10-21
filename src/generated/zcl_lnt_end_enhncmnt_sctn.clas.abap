@@ -18,10 +18,8 @@ CLASS zcl_lnt_end_enhncmnt_sctn IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t9 TYPE REF TO object.
-      t9 = t1.
       TRY.
-          t6 ?= t9.
+          t6 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.

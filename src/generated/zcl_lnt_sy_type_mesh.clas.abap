@@ -42,11 +42,9 @@ CLASS zcl_lnt_sy_type_mesh IMPLEMENTATION.
     DATA t37 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t37.
     DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t41 TYPE REF TO zcl_lnt_abstract_node.
     t41 = t1.
-    t40 = t41->children.
-    t39 ?= t40.
+    t39 ?= t41->children.
     DATA t45 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t46 TYPE REF TO object.
     DATA(t47) = VALUE i( ).
@@ -74,17 +72,13 @@ CLASS zcl_lnt_sy_type_mesh IMPLEMENTATION.
       ENDIF.
       DATA t53 TYPE REF TO zif_lnt_statement.
       DATA t55 TYPE REF TO zcl_lnt_statement_node.
-      DATA t57 TYPE REF TO object.
-      t57 = t45.
-      t55 ?= t57.
+      t55 ?= t45.
       t53 = t55->gt_in_sr_ab_nd_st_nd_ts_stt_nd( ).
       IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_st_statem_type ) = abap_true.
         DATA t60 TYPE REF TO zcl_lnt_typed_identifier.
         DATA(t62) = NEW zcl_lnt_sy_type( ).
         DATA t63 TYPE REF TO zcl_lnt_statement_node.
-        DATA t65 TYPE REF TO object.
-        t65 = t45.
-        t63 ?= t65.
+        t63 ?= t45.
         DATA t69 TYPE string.
         DATA t70 TYPE string.
         t70 = t15->str.
@@ -179,9 +173,7 @@ CLASS zcl_lnt_sy_type_mesh IMPLEMENTATION.
         IF xsdbool( t53 IS BOUND AND t53 IS INSTANCE OF zcl_lnt_st_type_mesh ) = abap_true.
           DATA t134 TYPE REF TO zcl_lnt_typed_identifier.
           DATA t136 TYPE REF TO zcl_lnt_statement_node.
-          DATA t138 TYPE REF TO object.
-          t138 = t45.
-          t136 ?= t138.
+          t136 ?= t45.
           t134 = me->run_mesh_node( i_node = t136 i_input_967e = t2 ).
           IF xsdbool( t134 IS BOUND ) = abap_true.
             DATA t143 TYPE REF TO zcl_lnt_istructure_component.

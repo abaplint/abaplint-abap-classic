@@ -97,9 +97,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
     CREATE OBJECT t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t10 TYPE REF TO zcl_lnt_abap_object.
-    DATA t12 TYPE REF TO object.
-    t12 = t1.
-    t10 ?= t12.
+    t10 ?= t1.
     t8 = t10->parsed.
     DATA t15 TYPE REF TO zcl_lnt_abap_file.
     DATA t16 TYPE REF TO object.
@@ -196,11 +194,9 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
           IF t77 IS BOUND.
             DATA t85 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t85.
-            DATA t86 TYPE REF TO object.
             CLEAR t85.
-            t86 = t77.
             TRY.
-                t76 ?= t86.
+                t76 ?= t77.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t76 IS NOT BOUND.
@@ -225,9 +221,7 @@ CLASS zcl_lnt_check_text_elements IMPLEMENTATION.
         ELSE.
           DATA t91 TYPE REF TO zcl_lnt_abap_object.
           CLEAR t91.
-          DATA t93 TYPE REF TO object.
-          t93 = t1.
-          t91 ?= t93.
+          t91 ?= t1.
           t33 = t91->get_text_symbols( ).
         ENDIF.
       ENDIF.

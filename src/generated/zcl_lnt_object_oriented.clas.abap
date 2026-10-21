@@ -577,9 +577,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           ENDIF.
           t118 = t122.
           DATA t147 TYPE REF TO zcl_lnt_typed_identifier.
-          DATA t148 TYPE REF TO zif_lnt_union_a346537f.
-          t148 = t100.
-          t147 ?= t148.
+          t147 ?= t100.
           me->scope->add_named_identifier( i_name = t118 i_identifier = t147 ).
         ENDIF.
       ENDIF.
@@ -2004,9 +2002,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
     t141 = abap_false.
     DATA t143 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t144 TYPE REF TO zif_lnt_interface_definition.
-    DATA t145 TYPE REF TO zif_lnt_class_definition.
-    t145 = t65.
-    t144 ?= t145.
+    t144 ?= t65.
     t143 = me->find_interfaces( i_cd = t144 ).
     DATA t147 TYPE REF TO zcl_lnt_iimplementing.
     DATA t148 TYPE REF TO object.
@@ -2710,9 +2706,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           CLEAR t316.
           IF xsdbool( t250 IS BOUND ) = abap_true.
             DATA t319 TYPE REF TO zif_lnt_interface_definition.
-            DATA t320 TYPE REF TO zif_lnt_class_definition.
-            t320 = t250.
-            t319 ?= t320.
+            t319 ?= t250.
             t316 = t319.
           ELSE.
             DATA t323 TYPE REF TO zif_lnt_interface_definition.
@@ -3231,9 +3225,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           CLEAR t221.
           IF xsdbool( t155 IS BOUND ) = abap_true.
             DATA t224 TYPE REF TO zif_lnt_interface_definition.
-            DATA t225 TYPE REF TO zif_lnt_class_definition.
-            t225 = t155.
-            t224 ?= t225.
+            t224 ?= t155.
             t221 = t224.
           ELSE.
             DATA t228 TYPE REF TO zif_lnt_interface_definition.
@@ -3833,9 +3825,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           CLEAR t176.
           IF xsdbool( t110 IS BOUND ) = abap_true.
             DATA t179 TYPE REF TO zif_lnt_interface_definition.
-            DATA t180 TYPE REF TO zif_lnt_class_definition.
-            t180 = t110.
-            t179 ?= t180.
+            t179 ?= t110.
             t176 = t179.
           ELSE.
             DATA t183 TYPE REF TO zif_lnt_interface_definition.
@@ -4562,9 +4552,7 @@ CLASS zcl_lnt_object_oriented IMPLEMENTATION.
           CLEAR t210.
           IF xsdbool( t144 IS BOUND ) = abap_true.
             DATA t213 TYPE REF TO zif_lnt_interface_definition.
-            DATA t214 TYPE REF TO zif_lnt_class_definition.
-            t214 = t144.
-            t213 ?= t214.
+            t213 ?= t144.
             t210 = t213.
           ELSE.
             DATA t217 TYPE REF TO zif_lnt_interface_definition.

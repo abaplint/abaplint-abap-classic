@@ -21,10 +21,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>tok( i_t = t6 ).
     IF t5 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t8 TYPE REF TO object.
-      t8 = t5.
       TRY.
-          t4 ?= t8.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -50,10 +48,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     t11 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t12 ).
     IF t11 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t17 TYPE REF TO object.
-      t17 = t11.
       TRY.
-          t10 ?= t17.
+          t10 ?= t11.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t10 IS NOT BOUND.
@@ -79,10 +75,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>tok( i_t = t23 ).
     IF t22 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t22.
       TRY.
-          t21 ?= t25.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.
@@ -111,10 +105,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     t34 = zcl_lnt_st_combi_module=>tok( i_t = t35 ).
     IF t34 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t34.
       TRY.
-          t33 ?= t37.
+          t33 ?= t34.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.
@@ -144,10 +136,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     t45 = zcl_lnt_st_combi_module=>tok( i_t = t46 ).
     IF t45 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t45.
       TRY.
-          t44 ?= t48.
+          t44 ?= t45.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t44 IS NOT BOUND.
@@ -172,10 +162,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t1.
       TRY.
-          t55 ?= t58.
+          t55 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t55 IS NOT BOUND.
@@ -196,10 +184,8 @@ CLASS zcl_lnt_sql_path_cardinality IMPLEMENTATION.
     DATA t60 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t30 IS BOUND.
       DATA t62 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t63 TYPE REF TO object.
-      t63 = t30.
       TRY.
-          t60 ?= t63.
+          t60 ?= t30.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.

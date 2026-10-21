@@ -41,10 +41,8 @@ CLASS zcl_lnt_sql_creating_for_scope IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>alt_prio( i_first = t10 i_second = t13 i_rest = t15 ).
     IF t8 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t8.
       TRY.
-          t7 ?= t25.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -92,10 +90,8 @@ CLASS zcl_lnt_sql_creating_for_scope IMPLEMENTATION.
     t39 = zcl_lnt_st_combi_module=>alt_prio( i_first = t41 i_second = t44 i_rest = t46 ).
     IF t39 IS BOUND.
       DATA t55 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t56 TYPE REF TO object.
-      t56 = t39.
       TRY.
-          t38 ?= t56.
+          t38 ?= t39.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t38 IS NOT BOUND.
@@ -134,10 +130,8 @@ CLASS zcl_lnt_sql_creating_for_scope IMPLEMENTATION.
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t81 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t82 TYPE REF TO object.
-      t82 = t1.
       TRY.
-          t79 ?= t82.
+          t79 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t79 IS NOT BOUND.
@@ -158,10 +152,8 @@ CLASS zcl_lnt_sql_creating_for_scope IMPLEMENTATION.
     DATA t84 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t32 IS BOUND.
       DATA t86 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t87 TYPE REF TO object.
-      t87 = t32.
       TRY.
-          t84 ?= t87.
+          t84 ?= t32.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t84 IS NOT BOUND.
@@ -184,10 +176,8 @@ CLASS zcl_lnt_sql_creating_for_scope IMPLEMENTATION.
     DATA t91 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t63 IS BOUND.
       DATA t93 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t94 TYPE REF TO object.
-      t94 = t63.
       TRY.
-          t91 ?= t94.
+          t91 ?= t63.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t91 IS NOT BOUND.

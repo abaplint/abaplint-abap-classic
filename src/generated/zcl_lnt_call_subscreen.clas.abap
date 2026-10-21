@@ -57,10 +57,8 @@ CLASS zcl_lnt_call_subscreen IMPLEMENTATION.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t34 TYPE REF TO object.
-      t34 = t1.
       TRY.
-          t31 ?= t34.
+          t31 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t31 IS NOT BOUND.
@@ -81,10 +79,8 @@ CLASS zcl_lnt_call_subscreen IMPLEMENTATION.
     t30 = zcl_lnt_st_combi_module=>opt_prio( i_first = t31 ).
     IF t30 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t36 TYPE REF TO object.
-      t36 = t30.
       TRY.
-          t29 ?= t36.
+          t29 ?= t30.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.
@@ -109,10 +105,8 @@ CLASS zcl_lnt_call_subscreen IMPLEMENTATION.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t18 IS BOUND.
       DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t46 TYPE REF TO object.
-      t46 = t18.
       TRY.
-          t43 ?= t46.
+          t43 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t43 IS NOT BOUND.

@@ -254,11 +254,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
           IF t21 IS BOUND.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
-            DATA t26 TYPE REF TO object.
             CLEAR t25.
-            t26 = t21.
             TRY.
-                t20 ?= t26.
+                t20 ?= t21.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t20 IS NOT BOUND.
@@ -375,11 +373,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
           IF t21 IS BOUND.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
-            DATA t26 TYPE REF TO object.
             CLEAR t25.
-            t26 = t21.
             TRY.
-                t20 ?= t26.
+                t20 ?= t21.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t20 IS NOT BOUND.
@@ -496,11 +492,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
           IF t21 IS BOUND.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
-            DATA t26 TYPE REF TO object.
             CLEAR t25.
-            t26 = t21.
             TRY.
-                t20 ?= t26.
+                t20 ?= t21.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t20 IS NOT BOUND.
@@ -635,11 +629,9 @@ CLASS zcl_lnt_st_combi_module IMPLEMENTATION.
           IF t21 IS BOUND.
             DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t25.
-            DATA t26 TYPE REF TO object.
             CLEAR t25.
-            t26 = t21.
             TRY.
-                t20 ?= t26.
+                t20 ?= t21.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t20 IS NOT BOUND.

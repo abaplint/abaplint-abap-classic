@@ -66,24 +66,18 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t26 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t28 TYPE REF TO object.
-    t28 = t1.
-    t26 ?= t28.
+    t26 ?= t1.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
     t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |ARBGB| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
     t16 = t16->concat( p0 = t23 ).
     DATA t37 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t39 TYPE REF TO object.
-    t39 = t1.
-    t37 ?= t39.
+    t37 ?= t1.
     t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t37 i_old_name = t2 i_name = t3 ) ).
     DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t43 TYPE REF TO zcl_lnt_ob_message_class.
     DATA t44 TYPE REF TO zcl_lnt_ob_message_class.
-    DATA t46 TYPE REF TO object.
-    t46 = t1.
-    t44 ?= t46.
+    t44 ?= t1.
     t43 = t44.
     t43->parse_xml( ).
     DATA t49 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
@@ -132,9 +126,7 @@ CLASS zcl_lnt_rename_message_class IMPLEMENTATION.
       DATA t76 TYPE REF TO zcl_lnt_abstract_object.
       DATA t77 TYPE REF TO zcl_lnt_ob_message_class.
       CLEAR t77.
-      DATA t79 TYPE REF TO object.
-      t79 = t1.
-      t77 ?= t79.
+      t77 ?= t1.
       t76 = t77.
       t75 = t76->name.
       DATA(t85) = VALUE string( ).

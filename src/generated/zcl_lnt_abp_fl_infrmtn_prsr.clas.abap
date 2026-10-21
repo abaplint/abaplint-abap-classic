@@ -1346,11 +1346,9 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
     IF xsdbool( t6 IS INITIAL ) = abap_true.
     ELSE.
       DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t14 TYPE REF TO zcl_lnt_abstract_node.
       t14 = t6.
-      t13 = t14->children.
-      t12 ?= t13.
+      t12 ?= t14->children.
       t8 = t12.
     ENDIF.
     t4 = t8.
@@ -1399,9 +1397,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       IF t40 = abap_true.
         DATA t43 TYPE REF TO zif_lnt_statement_runnable.
         DATA t44 TYPE REF TO zcl_lnt_expression_node.
-        DATA t46 TYPE REF TO object.
-        t46 = t31.
-        t44 ?= t46.
+        t44 ?= t31.
         t43 = t44->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         t39 = xsdbool( t43 IS BOUND AND t43 IS INSTANCE OF zcl_lnt_bhvr_dfntn_nm ).
       ENDIF.
@@ -1444,9 +1440,7 @@ CLASS zcl_lnt_abp_fl_infrmtn_prsr IMPLEMENTATION.
       IF t38 = abap_true.
         DATA t62 TYPE string.
         DATA t63 TYPE REF TO zcl_lnt_expression_node.
-        DATA t65 TYPE REF TO object.
-        t65 = t31.
-        t63 ?= t65.
+        t63 ?= t31.
         t62 = t63->concat_tokens( ).
         DATA(t66) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t66->has = abap_true.

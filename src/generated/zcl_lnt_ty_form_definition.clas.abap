@@ -26,16 +26,12 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
     DATA t4 TYPE REF TO zcl_lnt_statement_node.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_structure_node ) = abap_true.
       DATA t9 TYPE REF TO zcl_lnt_structure_node.
-      DATA t11 TYPE REF TO object.
-      t11 = t1.
-      t9 ?= t11.
+      t9 ?= t1.
       DATA(t12) = zlnt_runtime_desc_78196487750d=>zlnt_member_d500_8dad0123027e.
       t4 = t9->find_first_statement( i_type_9913 = t12 ).
     ELSE.
       DATA t13 TYPE REF TO zcl_lnt_statement_node.
-      DATA t15 TYPE REF TO object.
-      t15 = t1.
-      t13 ?= t15.
+      t13 ?= t1.
       t4 = t13.
     ENDIF.
     t3 = t4.
@@ -134,11 +130,9 @@ CLASS zcl_lnt_ty_form_definition IMPLEMENTATION.
         t20 ?= t21.
       ENDIF.
       DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t29 TYPE REF TO zcl_lnt_abstract_node.
       t29 = t20.
-      t28 = t29->children.
-      t27 ?= t28.
+      t27 ?= t29->children.
       t27->load( ).
       IF xsdbool( lines( t27->items ) = 1 ) = abap_true.
         DATA t35 TYPE REF TO zcl_lnt_typed_identifier.

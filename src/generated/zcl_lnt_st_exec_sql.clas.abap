@@ -38,10 +38,8 @@ CLASS zcl_lnt_st_exec_sql IMPLEMENTATION.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t25 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t26 TYPE REF TO object.
-      t26 = t1.
       TRY.
-          t23 ?= t26.
+          t23 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t23 IS NOT BOUND.
@@ -62,10 +60,8 @@ CLASS zcl_lnt_st_exec_sql IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>opt( i_first = t23 ).
     IF t22 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t22.
       TRY.
-          t21 ?= t28.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.
@@ -89,10 +85,8 @@ CLASS zcl_lnt_st_exec_sql IMPLEMENTATION.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t15.
       TRY.
-          t37 ?= t40.
+          t37 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t37 IS NOT BOUND.

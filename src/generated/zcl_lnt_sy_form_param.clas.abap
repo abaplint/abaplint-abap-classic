@@ -53,11 +53,9 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
     DATA t23 TYPE REF TO zcl_lnt_abstract_token.
     t23 = t3->get_first_token( ).
     DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t31 TYPE REF TO zcl_lnt_abstract_node.
     t31 = t3.
-    t30 = t31->children.
-    t29 ?= t30.
+    t29 ?= t31->children.
     t29->load( ).
     IF xsdbool( lines( t29->items ) > 1 ) = abap_true.
       DATA t38 TYPE REF TO zcl_lnt_position.
@@ -396,9 +394,7 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
       DATA(t329) = VALUE string( ).
       t329 = t2->filename.
       DATA t331 TYPE REF TO zcl_lnt_abstract_type.
-      DATA t333 TYPE REF TO object.
-      t333 = t79.
-      t331 ?= t333.
+      t331 ?= t79.
       DATA t337 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
       CREATE OBJECT t337.
       t337->load( ).
@@ -414,11 +410,9 @@ CLASS zcl_lnt_sy_form_param IMPLEMENTATION.
     DATA(t346) = VALUE abap_bool( ).
     DATA(t347) = VALUE abap_bool( ).
     DATA t349 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t350 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t351 TYPE REF TO zcl_lnt_abstract_node.
     t351 = t1.
-    t350 = t351->children.
-    t349 ?= t350.
+    t349 ?= t351->children.
     t349->load( ).
     t347 = xsdbool( lines( t349->items ) = 1 ).
     t346 = t347.

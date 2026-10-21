@@ -30,10 +30,8 @@ CLASS zcl_lnt_method_def_exceptions IMPLEMENTATION.
     t8 = zcl_lnt_st_combi_module=>plus_prio( i_first = t9 ).
     IF t8 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t12 TYPE REF TO object.
-      t12 = t8.
       TRY.
-          t7 ?= t12.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.

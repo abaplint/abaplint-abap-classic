@@ -202,11 +202,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
             IF t84 IS BOUND.
               DATA t88 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t88.
-              DATA t89 TYPE REF TO object.
               CLEAR t88.
-              t89 = t84.
               TRY.
-                  t83 ?= t89.
+                  t83 ?= t84.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t83 IS NOT BOUND.
@@ -493,11 +491,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
             IF t214 IS BOUND.
               DATA t218 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t218.
-              DATA t219 TYPE REF TO object.
               CLEAR t218.
-              t219 = t214.
               TRY.
-                  t213 ?= t219.
+                  t213 ?= t214.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t213 IS NOT BOUND.
@@ -784,11 +780,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
             IF t344 IS BOUND.
               DATA t348 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t348.
-              DATA t349 TYPE REF TO object.
               CLEAR t348.
-              t349 = t344.
               TRY.
-                  t343 ?= t349.
+                  t343 ?= t344.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t343 IS NOT BOUND.
@@ -1045,11 +1039,9 @@ CLASS zcl_lnt_fnctn_mdl_dfntn IMPLEMENTATION.
             IF t459 IS BOUND.
               DATA t463 TYPE REF TO zlnt_view_storage_74017ca272ac.
               CLEAR t463.
-              DATA t464 TYPE REF TO object.
               CLEAR t463.
-              t464 = t459.
               TRY.
-                  t458 ?= t464.
+                  t458 ?= t459.
                 CATCH cx_sy_move_cast_error.
               ENDTRY.
               IF t458 IS NOT BOUND.

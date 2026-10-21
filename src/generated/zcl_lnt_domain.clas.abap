@@ -1469,11 +1469,9 @@ CLASS zcl_lnt_domain IMPLEMENTATION.
           IF t599 IS BOUND.
             DATA t603 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t603.
-            DATA t604 TYPE REF TO object.
             CLEAR t603.
-            t604 = t599.
             TRY.
-                t598 ?= t604.
+                t598 ?= t599.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t598 IS NOT BOUND.
@@ -1776,11 +1774,9 @@ CLASS zcl_lnt_domain IMPLEMENTATION.
           IF t755 IS BOUND.
             DATA t759 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t759.
-            DATA t760 TYPE REF TO object.
             CLEAR t759.
-            t760 = t755.
             TRY.
-                t754 ?= t760.
+                t754 ?= t755.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t754 IS NOT BOUND.

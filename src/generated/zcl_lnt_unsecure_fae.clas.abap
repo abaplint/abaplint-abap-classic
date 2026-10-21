@@ -120,9 +120,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
     ENDIF.
     DATA(t11) = me->reg.
     DATA t12 TYPE REF TO zcl_lnt_abap_object.
-    DATA t14 TYPE REF TO object.
-    t14 = t1.
-    t12 ?= t14.
+    t12 ?= t1.
     DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t17 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t11 i_object_19cd = t12 )->run( )->zlnt_view_read_sr_bd188c319c03( ).
     t17->load( ).
@@ -132,9 +130,7 @@ CLASS zcl_lnt_unsecure_fae IMPLEMENTATION.
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t23 TYPE REF TO zcl_lnt_abap_object.
-    DATA t25 TYPE REF TO object.
-    t25 = t1.
-    t23 ?= t25.
+    t23 ?= t1.
     t21 = t23->parsed.
     DATA t28 TYPE REF TO zcl_lnt_abap_file.
     DATA t29 TYPE REF TO object.

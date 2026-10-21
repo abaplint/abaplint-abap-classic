@@ -174,9 +174,7 @@ CLASS zcl_lnt_method_length IMPLEMENTATION.
       DATA t12 TYPE REF TO zcl_lnt_info_class_definition.
       DATA t14 TYPE REF TO zcl_lnt_class.
       DATA t15 TYPE REF TO zcl_lnt_class.
-      DATA t17 TYPE REF TO object.
-      t17 = t1.
-      t15 ?= t17.
+      t15 ?= t1.
       t14 = t15.
       DATA t19 TYPE REF TO zif_lnt_abap_file_information.
       DATA t21 TYPE REF TO zcl_lnt_abap_file.

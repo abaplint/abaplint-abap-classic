@@ -183,9 +183,7 @@ CLASS zcl_lnt_forbidden_identifier IMPLEMENTATION.
         DATA t17 TYPE REF TO zcl_lnt_abstract_token.
         DATA t18 TYPE REF TO object.
         DATA t19 TYPE REF TO zcl_lnt_token_node_regex.
-        DATA t21 TYPE REF TO object.
-        t21 = t7.
-        t19 ?= t21.
+        t19 ?= t7.
         t18 = t19->get_db65( ).
         t17 ?= t18.
         t3 = t3->concat( p0 = me->check_bf6e( i_token = t17 i_file = t2 ) ).

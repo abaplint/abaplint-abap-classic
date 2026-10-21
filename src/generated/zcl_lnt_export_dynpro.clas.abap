@@ -78,10 +78,8 @@ CLASS zcl_lnt_export_dynpro IMPLEMENTATION.
     DATA t32 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t34 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t35 TYPE REF TO object.
-      t35 = t1.
       TRY.
-          t32 ?= t35.
+          t32 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t32 IS NOT BOUND.

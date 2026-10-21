@@ -51,10 +51,8 @@ CLASS zcl_lnt_type_simple_ref IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>alt( i_first = t7 i_second = t10 i_rest = t12 ).
     IF t5 IS BOUND.
       DATA t27 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t28 TYPE REF TO object.
-      t28 = t5.
       TRY.
-          t4 ?= t28.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -104,10 +102,8 @@ CLASS zcl_lnt_type_simple_ref IMPLEMENTATION.
     t41 = zcl_lnt_st_combi_module=>seq( i_first = t43 i_second = t46 i_rest = t48 ).
     IF t41 IS BOUND.
       DATA t57 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t58 TYPE REF TO object.
-      t58 = t41.
       TRY.
-          t40 ?= t58.
+          t40 ?= t41.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t40 IS NOT BOUND.
@@ -150,10 +146,8 @@ CLASS zcl_lnt_type_simple_ref IMPLEMENTATION.
     t61 = zcl_lnt_st_combi_module=>seq( i_first = t63 i_second = t66 i_rest = t68 ).
     IF t61 IS BOUND.
       DATA t77 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t78 TYPE REF TO object.
-      t78 = t61.
       TRY.
-          t60 ?= t78.
+          t60 ?= t61.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t60 IS NOT BOUND.
@@ -176,10 +170,8 @@ CLASS zcl_lnt_type_simple_ref IMPLEMENTATION.
     DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t84 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t85 TYPE REF TO object.
-      t85 = t1.
       TRY.
-          t82 ?= t85.
+          t82 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t82 IS NOT BOUND.
@@ -215,10 +207,8 @@ CLASS zcl_lnt_type_simple_ref IMPLEMENTATION.
     t88 = zcl_lnt_st_combi_module=>seq( i_first = t90 i_second = t93 i_rest = t96 ).
     IF t88 IS BOUND.
       DATA t101 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t102 TYPE REF TO object.
-      t102 = t88.
       TRY.
-          t87 ?= t102.
+          t87 ?= t88.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t87 IS NOT BOUND.

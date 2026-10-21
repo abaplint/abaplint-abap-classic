@@ -131,9 +131,7 @@ CLASS zcl_lnt_n_cmmnts_btwn_mthds IMPLEMENTATION.
     t10 = t1.
     DATA t14 TYPE REF TO zcl_lnt_abap_file.
     DATA t15 TYPE REF TO zcl_lnt_class.
-    DATA t17 TYPE REF TO object.
-    t17 = t2.
-    t15 ?= t17.
+    t15 ?= t2.
     t14 = t15->get_main_abap_file( ).
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

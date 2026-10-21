@@ -480,9 +480,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t22 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t24 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t25 TYPE REF TO object.
-    t25 = t1.
-    t24 ?= t25.
+    t24 ?= t1.
     t22 = t24->document_changes.
     DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     IF xsdbool( t22 IS BOUND ) = abap_true.
@@ -511,11 +509,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t37 IS BOUND.
         DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t38.
-        DATA t39 TYPE REF TO object.
         CLEAR t38.
-        t39 = t37.
         TRY.
-            t36 ?= t39.
+            t36 ?= t37.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t36 IS NOT BOUND.
@@ -536,9 +532,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF zlnt_runtime_lspg_9f4574ef5f1a=>text_document( t36 ) = abap_true.
         DATA t40 TYPE REF TO zcl_lnt_text_document_edit.
         CLEAR t40.
-        DATA t41 TYPE REF TO object.
-        t41 = t32.
-        t40 ?= t41.
+        t40 ?= t32.
         me->apply_edit( i_dc = t40 ).
         DATA t42 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
         DATA t43 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
@@ -547,9 +541,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         CLEAR t46.
         DATA t47 TYPE REF TO zcl_lnt_text_document_edit.
         CLEAR t47.
-        DATA t48 TYPE REF TO object.
-        t48 = t32.
-        t47 ?= t48.
+        t47 ?= t32.
         t46 = t47->text_document.
         t42 = t43->add( p0 = t46->zlnt_view_read_no_99604757acee( ) ).
       ELSE.
@@ -561,11 +553,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         IF t51 IS BOUND.
           DATA t52 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t52.
-          DATA t53 TYPE REF TO object.
           CLEAR t52.
-          t53 = t51.
           TRY.
-              t50 ?= t53.
+              t50 ?= t51.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t50 IS NOT BOUND.
@@ -586,9 +576,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
         IF zlnt_runtime_lspg_9f4574ef5f1a=>rename( p0 = t50 condition = abap_true ) = abap_true.
           DATA t56 TYPE REF TO zcl_lnt_rename_file.
           CLEAR t56.
-          DATA t57 TYPE REF TO object.
-          t57 = t32.
-          t56 ?= t57.
+          t56 ?= t32.
           t2->load( ).
           APPEND t56 TO t2->items.
           t2->save( ).
@@ -682,9 +670,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t1 = i_dc.
     DATA t2 TYPE REF TO zif_lnt_file.
     DATA t7 TYPE REF TO zcl_lnt_text_document_edit.
-    DATA t8 TYPE REF TO object.
-    t8 = t1.
-    t7 ?= t8.
+    t7 ?= t1.
     t2 = me->reg->get_file_by_name( i_filename = t7->text_document->zlnt_view_read_no_99604757acee( ) ).
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( t2 IS INITIAL ) = abap_true.
@@ -695,9 +681,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       DATA(t22) = |file |.
       DATA(t23) = VALUE string( ).
       DATA t25 TYPE REF TO zcl_lnt_text_document_edit.
-      DATA t26 TYPE REF TO object.
-      t26 = t1.
-      t25 ?= t26.
+      t25 ?= t1.
       t23 = t25->text_document->zlnt_view_read_no_99604757acee( ).
       DATA(t27) = strlen( t22 ).
       t21 = |{ t22 }{ t23 }|.
@@ -737,9 +721,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     t34 = t2->get_raw_rows( ).
     DATA t38 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t39 TYPE REF TO zcl_lnt_text_document_edit.
-    DATA t40 TYPE REF TO object.
-    t40 = t1.
-    t39 ?= t40.
+    t39 ?= t1.
     t38 = t39->edits.
     DATA t41 TYPE REF TO object.
     DATA t42 TYPE REF TO object.
@@ -842,11 +824,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t71 IS BOUND.
         DATA t72 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t72.
-        DATA t73 TYPE REF TO object.
         CLEAR t72.
-        t73 = t71.
         TRY.
-            t70 ?= t73.
+            t70 ?= t71.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t70 IS NOT BOUND.
@@ -902,11 +882,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t80 IS BOUND.
         DATA t81 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t81.
-        DATA t82 TYPE REF TO object.
         CLEAR t81.
-        t82 = t80.
         TRY.
-            t79 ?= t82.
+            t79 ?= t80.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t79 IS NOT BOUND.
@@ -1000,11 +978,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t102 IS BOUND.
         DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t103.
-        DATA t104 TYPE REF TO object.
         CLEAR t103.
-        t104 = t102.
         TRY.
-            t101 ?= t104.
+            t101 ?= t102.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t101 IS NOT BOUND.
@@ -1076,11 +1052,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t113 IS BOUND.
         DATA t114 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t114.
-        DATA t115 TYPE REF TO object.
         CLEAR t114.
-        t115 = t113.
         TRY.
-            t112 ?= t115.
+            t112 ?= t113.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t112 IS NOT BOUND.
@@ -1147,11 +1121,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t128 IS BOUND.
         DATA t129 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t129.
-        DATA t130 TYPE REF TO object.
         CLEAR t129.
-        t130 = t128.
         TRY.
-            t127 ?= t130.
+            t127 ?= t128.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t127 IS NOT BOUND.
@@ -1218,11 +1190,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t136 IS BOUND.
         DATA t137 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t137.
-        DATA t138 TYPE REF TO object.
         CLEAR t137.
-        t138 = t136.
         TRY.
-            t135 ?= t138.
+            t135 ?= t136.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t135 IS NOT BOUND.
@@ -1285,11 +1255,9 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
       IF t152 IS BOUND.
         DATA t153 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t153.
-        DATA t154 TYPE REF TO object.
         CLEAR t153.
-        t154 = t152.
         TRY.
-            t151 ?= t154.
+            t151 ?= t152.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t151 IS NOT BOUND.
@@ -1354,9 +1322,7 @@ CLASS zcl_lnt_renamer IMPLEMENTATION.
     DATA t162 TYPE REF TO zcl_lnt_memory_file.
     DATA(t163) = VALUE string( ).
     DATA t165 TYPE REF TO zcl_lnt_text_document_edit.
-    DATA t166 TYPE REF TO object.
-    t166 = t1.
-    t165 ?= t166.
+    t165 ?= t1.
     t163 = t165->text_document->zlnt_view_read_no_99604757acee( ).
     DATA(t170) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t170->has = abap_true.

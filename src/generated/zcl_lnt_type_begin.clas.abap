@@ -44,10 +44,8 @@ CLASS zcl_lnt_type_begin IMPLEMENTATION.
     t18 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t20 ).
     IF t18 IS BOUND.
       DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t23 TYPE REF TO object.
-      t23 = t18.
       TRY.
-          t17 ?= t23.
+          t17 ?= t18.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t17 IS NOT BOUND.
@@ -68,10 +66,8 @@ CLASS zcl_lnt_type_begin IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>opt_prio( i_first = t17 ).
     IF t16 IS BOUND.
       DATA t24 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t25 TYPE REF TO object.
-      t25 = t16.
       TRY.
-          t15 ?= t25.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.

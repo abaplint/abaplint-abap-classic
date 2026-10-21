@@ -62,11 +62,9 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
     t34 = NEW zlnt_runtime_map__abd6fd794ffb( ).
     DATA t39 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t40 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t41 TYPE REF TO zcl_lnt_abstract_node.
     t41 = t1.
-    t40 = t41->children.
-    t39 ?= t40.
+    t39 ?= t41->children.
     DATA t45 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t46 TYPE REF TO object.
     DATA(t47) = VALUE i( ).
@@ -108,9 +106,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
         DATA(t62) = NEW zcl_lnt_sy_statem_constant( ).
         DATA t63 TYPE REF TO zcl_lnt_statement_node.
         CLEAR t63.
-        DATA t65 TYPE REF TO object.
-        t65 = t45.
-        t63 ?= t65.
+        t63 ?= t45.
         t60 = t62->run_syntax( i_node = t63 i_input_967e = t2 ).
         IF xsdbool( t60 IS BOUND ) = abap_true.
           DATA t70 TYPE REF TO zcl_lnt_istructure_component.
@@ -262,9 +258,7 @@ CLASS zcl_lnt_sy_constants IMPLEMENTATION.
           DATA(t160) = NEW zcl_lnt_sy_constants( ).
           DATA t161 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t161.
-          DATA t163 TYPE REF TO object.
-          t163 = t45.
-          t161 ?= t163.
+          t161 ?= t45.
           t158 = t160->run_syntax( i_node = t161 i_input_967e = t2 ).
           DATA t165 TYPE REF TO zcl_lnt_typed_identifier.
           t165 = t158->type_cba0.

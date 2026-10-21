@@ -166,9 +166,7 @@ CLASS zcl_lnt_mntnn_and_trnspr_objct IMPLEMENTATION.
       IF xsdbool( t31 IS BOUND ) = abap_true.
         DATA t45 TYPE REF TO zcl_lnt_iobject_and_token.
         DATA t47 TYPE REF TO zif_lnt_object.
-        DATA t48 TYPE REF TO zif_lnt_union_c74a232f.
-        t48 = t31.
-        t47 ?= t48.
+        t47 ?= t31.
         DATA t50 TYPE REF TO zcl_lnt_abstract_token.
         DATA t52 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
         t45 = NEW zcl_lnt_iobject_and_token( i_object_19cd = t47 i_token = t50 i_filename = t52 ).

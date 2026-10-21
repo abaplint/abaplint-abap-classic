@@ -247,7 +247,6 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
     IF xsdbool( t42 IS INITIAL ) = abap_true.
     ELSE.
       DATA t48 TYPE REF TO zif_lnt_union_8249fcb1.
-      DATA t49 TYPE REF TO zif_lnt_node.
       DATA t50 TYPE REF TO zcl_lnt_abstract_node.
       t50 = t42.
       DATA t55 TYPE REF TO zif_lnt_node.
@@ -265,8 +264,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       ELSE.
         t55 ?= t58.
       ENDIF.
-      t49 = t55.
-      t48 ?= t49.
+      t48 ?= t55.
       t44 = t48.
     ENDIF.
     t40 = t44.
@@ -277,7 +275,6 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
     IF xsdbool( t64 IS INITIAL ) = abap_true.
     ELSE.
       DATA t71 TYPE REF TO zif_lnt_union_8249fcb1.
-      DATA t72 TYPE REF TO zif_lnt_node.
       DATA t73 TYPE REF TO zcl_lnt_abstract_node.
       t73 = t64.
       DATA t77 TYPE REF TO zif_lnt_node.
@@ -295,8 +292,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       ELSE.
         t77 ?= t80.
       ENDIF.
-      t72 = t77.
-      t71 ?= t72.
+      t71 ?= t77.
       t67 = t71.
     ENDIF.
     t62 = t67.
@@ -307,7 +303,6 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
     IF xsdbool( t86 IS INITIAL ) = abap_true.
     ELSE.
       DATA t92 TYPE REF TO zif_lnt_union_8249fcb1.
-      DATA t93 TYPE REF TO zif_lnt_node.
       DATA t94 TYPE REF TO zcl_lnt_abstract_node.
       t94 = t86.
       DATA t99 TYPE REF TO zif_lnt_node.
@@ -334,8 +329,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       ELSE.
         t99 ?= t107.
       ENDIF.
-      t93 = t99.
-      t92 ?= t93.
+      t92 ?= t99.
       t88 = t92.
     ENDIF.
     t84 = t88.
@@ -346,7 +340,6 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
     IF xsdbool( t113 IS INITIAL ) = abap_true.
     ELSE.
       DATA t120 TYPE REF TO zif_lnt_union_8249fcb1.
-      DATA t121 TYPE REF TO zif_lnt_node.
       DATA t122 TYPE REF TO zcl_lnt_abstract_node.
       t122 = t113.
       DATA t126 TYPE REF TO zif_lnt_node.
@@ -373,8 +366,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       ELSE.
         t126 ?= t134.
       ENDIF.
-      t121 = t126.
-      t120 ?= t121.
+      t120 ?= t126.
       t116 = t120.
     ENDIF.
     t111 = t116.
@@ -955,9 +947,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
     ENDIF.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_statement_node ) = abap_true.
       DATA t16 TYPE REF TO zcl_lnt_statement_node.
-      DATA t18 TYPE REF TO object.
-      t18 = t1.
-      t16 ?= t18.
+      t16 ?= t1.
       DATA t19 TYPE REF TO zcl_lnt_abstract_token.
       t19 = t16->colon.
       DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
@@ -965,9 +955,7 @@ CLASS zcl_lnt_identical_contents IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t28 TYPE REF TO zcl_lnt_structure_node.
-    DATA t30 TYPE REF TO object.
-    t30 = t1.
-    t28 ?= t30.
+    t28 ?= t1.
     result = me->is_chained( i_node = t28->get_first_statement( ) ).
 
 

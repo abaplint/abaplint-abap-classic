@@ -153,9 +153,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abap_object.
-    DATA t10 TYPE REF TO object.
-    t10 = t1.
-    t8 ?= t10.
+    t8 ?= t1.
     t6 = t8->parsed.
     DATA t13 TYPE REF TO zcl_lnt_abap_file.
     DATA t14 TYPE REF TO object.
@@ -217,9 +215,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     DATA t32 TYPE REF TO zcl_lnt_isyntax_result.
     DATA(t35) = me->reg.
     DATA t36 TYPE REF TO zcl_lnt_abap_object.
-    DATA t38 TYPE REF TO object.
-    t38 = t1.
-    t36 ?= t38.
+    t36 ?= t1.
     t32 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t35 i_object_19cd = t36 )->run( ).
     DATA t41 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     t41 = t32->zlnt_view_read_sr_bd188c319c03( ).
@@ -233,16 +229,12 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
     DATA t46 TYPE REF TO zif_lnt_spaghetti_scope_node.
     t46 = t32->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t49 TYPE REF TO zcl_lnt_abap_object.
-    DATA t51 TYPE REF TO object.
-    t51 = t1.
-    t49 ?= t51.
+    t49 ?= t1.
     me->traverse( i_node = t46 i_obj_1ed0 = t49 i_add_81da = abap_true ).
     DATA t53 TYPE REF TO zif_lnt_spaghetti_scope_node.
     t53 = t32->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ).
     DATA t56 TYPE REF TO zcl_lnt_abap_object.
-    DATA t58 TYPE REF TO object.
-    t58 = t1.
-    t56 ?= t58.
+    t56 ?= t1.
     me->traverse( i_node = t53 i_obj_1ed0 = t56 i_add_81da = abap_false ).
     DATA(t61) = VALUE i( ).
     DATA(t65) = VALUE f( ).
@@ -588,9 +580,7 @@ CLASS zcl_lnt_unused_types IMPLEMENTATION.
       CLEAR t267.
       DATA t269 TYPE REF TO zcl_lnt_abap_object.
       CLEAR t269.
-      DATA t271 TYPE REF TO object.
-      t271 = t1.
-      t269 ?= t271.
+      t269 ?= t1.
       DATA(t272) = VALUE string( ).
       DATA t273 TYPE REF TO zcl_lnt_fi_identifier.
       t273 = t226.

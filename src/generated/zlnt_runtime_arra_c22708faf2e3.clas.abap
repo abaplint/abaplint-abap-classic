@@ -358,10 +358,8 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
     result = -1.
     IF p0 IS BOUND.
       DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t6 TYPE REF TO object.
-      t6 = p0.
       TRY.
-          t3 ?= t6.
+          t3 ?= p0.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -386,11 +384,9 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
       IF t1 IS BOUND.
         DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t7.
-        DATA t8 TYPE REF TO object.
         CLEAR t7.
-        t8 = t1.
         TRY.
-            t2 ?= t8.
+            t2 ?= t1.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t2 IS NOT BOUND.
@@ -480,11 +476,9 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
       IF t1 IS BOUND.
         DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
         CLEAR t3.
-        DATA t4 TYPE REF TO object.
         CLEAR t3.
-        t4 = t1.
         TRY.
-            t2 ?= t4.
+            t2 ?= t1.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t2 IS NOT BOUND.
@@ -541,10 +535,8 @@ CLASS zlnt_runtime_arra_c22708faf2e3 IMPLEMENTATION.
     CLEAR result.
     IF t3 IS BOUND.
       DATA t4 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t5 TYPE REF TO object.
-      t5 = t3.
       TRY.
-          result ?= t5.
+          result ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF result IS NOT BOUND.

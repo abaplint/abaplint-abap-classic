@@ -86,11 +86,9 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
     DATA t66 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     t59 = xsdbool( xsdbool( t62 IS INITIAL ) = abap_false ).
     DATA t71 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t72 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t73 TYPE REF TO zcl_lnt_abstract_node.
     t73 = t1.
-    t72 = t73->children.
-    t71 ?= t72.
+    t71 ?= t73->children.
     DATA t78 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t79 TYPE REF TO object.
     DATA(t80) = VALUE i( ).
@@ -118,9 +116,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
       ENDIF.
       DATA t87 TYPE REF TO zif_lnt_statement_runnable.
       DATA t88 TYPE REF TO zcl_lnt_expression_node.
-      DATA t90 TYPE REF TO object.
-      t90 = t78.
-      t88 ?= t90.
+      t88 ?= t78.
       t87 = t88->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       IF xsdbool( t87 IS BOUND AND t87 IS INSTANCE OF zcl_lnt_st_field_assignment ) = abap_true.
         DATA t91 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -129,9 +125,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
         CLEAR t93.
         DATA t95 TYPE REF TO zcl_lnt_expression_node.
         DATA t97 TYPE REF TO zcl_lnt_expression_node.
-        DATA t99 TYPE REF TO object.
-        t99 = t78.
-        t97 ?= t99.
+        t97 ?= t78.
         DATA(t100) = zlnt_runtime_desc_78196487750d=>zlnt_member_d120_1b3330f2aab3.
         t95 = t97->find_direct_expression( i_type_9913 = t100 ).
         DATA t101 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
@@ -198,9 +192,7 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
           DATA t133 TYPE REF TO zcl_lnt_issue.
           DATA t135 TYPE REF TO zcl_lnt_abstract_token.
           DATA t136 TYPE REF TO zcl_lnt_expression_node.
-          DATA t138 TYPE REF TO object.
-          t138 = t78.
-          t136 ?= t138.
+          t136 ?= t78.
           t135 = t136->get_first_token( ).
           DATA t140 TYPE REF TO zlnt_runtime_map__4fdf767b61ba.
           CLEAR t140.
@@ -235,18 +227,14 @@ CLASS zcl_lnt_sy_value_body IMPLEMENTATION.
       ELSE.
         DATA t155 TYPE REF TO zif_lnt_statement_runnable.
         DATA t156 TYPE REF TO zcl_lnt_expression_node.
-        DATA t158 TYPE REF TO object.
-        t158 = t78.
-        t156 ?= t158.
+        t156 ?= t78.
         t155 = t156->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         IF xsdbool( t155 IS BOUND AND t155 IS INSTANCE OF zcl_lnt_value_body_line ) = abap_true.
           DATA t159 TYPE REF TO zlnt_runtime_set__1827558fd4c7.
           t159 = t57->copy( p0 = t57 ).
           DATA t163 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t164 TYPE REF TO zcl_lnt_expression_node.
-          DATA t166 TYPE REF TO object.
-          t166 = t78.
-          t164 ?= t166.
+          t164 ?= t78.
           DATA(t167) = zlnt_runtime_desc_78196487750d=>zlnt_member_d168_9f6549d76396.
           t163 = t164->find_direct_expressions( i_type_9913 = t167 ).
           DATA t168 TYPE REF TO zcl_lnt_expression_node.

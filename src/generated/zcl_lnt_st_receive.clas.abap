@@ -36,10 +36,8 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>opt( i_first = t14 ).
     IF t13 IS BOUND.
       DATA t16 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t17 TYPE REF TO object.
-      t17 = t13.
       TRY.
-          t12 ?= t17.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.
@@ -74,10 +72,8 @@ CLASS zcl_lnt_st_receive IMPLEMENTATION.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t1.
       TRY.
-          t27 ?= t30.
+          t27 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t27 IS NOT BOUND.

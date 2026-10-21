@@ -28,10 +28,8 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t18 TYPE REF TO object.
-      t18 = t1.
       TRY.
-          t15 ?= t18.
+          t15 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -71,10 +69,8 @@ CLASS zcl_lnt_database_connection IMPLEMENTATION.
     t13 = zcl_lnt_st_combi_module=>alt_prio( i_first = t15 i_second = t20 i_rest = t22 ).
     IF t13 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t13.
       TRY.
-          t12 ?= t32.
+          t12 ?= t13.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t12 IS NOT BOUND.

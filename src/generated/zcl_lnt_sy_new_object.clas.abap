@@ -274,9 +274,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
         t203 = t10.
         DATA t208 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t210 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t211 TYPE REF TO zif_lnt_class_definition.
-        t211 = t75.
-        t210 ?= t211.
+        t210 ?= t75.
         t208 = t210.
         DATA t214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t214.
@@ -670,9 +668,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
         DATA t553 TYPE REF TO zif_lnt_interface_definition.
         IF xsdbool( t487 IS BOUND ) = abap_true.
           DATA t556 TYPE REF TO zif_lnt_interface_definition.
-          DATA t557 TYPE REF TO zif_lnt_class_definition.
-          t557 = t487.
-          t556 ?= t557.
+          t556 ?= t487.
           t553 = t556.
         ELSE.
           DATA t560 TYPE REF TO zif_lnt_interface_definition.
@@ -755,9 +751,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
       IF xsdbool( t465 IS BOUND ) = abap_true.
         DATA t640 TYPE REF TO zcl_lnt_object_reference_type.
         DATA t642 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t643 TYPE REF TO zif_lnt_interface_definition.
-        t643 = t465.
-        t642 ?= t643.
+        t642 ?= t465.
         DATA t645 TYPE REF TO zcl_lnt_abstract_type_data.
         t640 = NEW zcl_lnt_object_reference_type( i_id = t642 i_extra = t645 ).
         DATA t647 TYPE REF TO zcl_lnt_typed_identifier.
@@ -786,9 +780,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
         t670 = t10.
         DATA t675 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t677 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t678 TYPE REF TO zif_lnt_interface_definition.
-        t678 = t465.
-        t677 ?= t678.
+        t677 ?= t465.
         t675 = t677.
         DATA t681 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t681.
@@ -804,9 +796,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
         t688 = t10.
         DATA t693 TYPE REF TO zcl_lnt_fi_identifier.
         DATA t695 TYPE REF TO zcl_lnt_fi_identifier.
-        DATA t696 TYPE REF TO zif_lnt_interface_definition.
-        t696 = t465.
-        t695 ?= t696.
+        t695 ?= t465.
         t693 = t695.
         DATA t699 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CREATE OBJECT t699.
@@ -1341,9 +1331,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
       DATA t125 TYPE REF TO zif_lnt_interface_definition.
       IF xsdbool( t59 IS BOUND ) = abap_true.
         DATA t128 TYPE REF TO zif_lnt_interface_definition.
-        DATA t129 TYPE REF TO zif_lnt_class_definition.
-        t129 = t59.
-        t128 ?= t129.
+        t128 ?= t59.
         t125 = t128.
       ELSE.
         DATA t132 TYPE REF TO zif_lnt_interface_definition.
@@ -1522,9 +1510,7 @@ CLASS zcl_lnt_sy_new_object IMPLEMENTATION.
         DATA t349 TYPE REF TO zcl_lnt_expression_node.
         t349 = t258.
         DATA t352 TYPE REF TO zif_lnt_union_8cd68e5e.
-        DATA t353 TYPE REF TO zif_lnt_method_definition.
-        t353 = t223.
-        t352 ?= t353.
+        t352 ?= t223.
         DATA t355 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
         t348->check_exporting( i_node = t349 i_input_967e = t3 i_method = t352 i_errors = t355 ).
       ELSE.

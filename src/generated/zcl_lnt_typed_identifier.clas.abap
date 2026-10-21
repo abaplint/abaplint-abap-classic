@@ -29,16 +29,12 @@ CLASS zcl_lnt_typed_identifier IMPLEMENTATION.
     super->constructor( i_token = t6 i_filename = t2 ).
     IF xsdbool( t3 IS BOUND AND t3 IS INSTANCE OF zcl_lnt_typed_identifier ) = abap_true.
       DATA t12 TYPE REF TO zcl_lnt_typed_identifier.
-      DATA t14 TYPE REF TO object.
-      t14 = t3.
-      t12 ?= t14.
+      t12 ?= t3.
       me->type_cba0 = t12->type_cba0.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
     ELSE.
       DATA t17 TYPE REF TO zcl_lnt_abstract_type.
-      DATA t19 TYPE REF TO object.
-      t19 = t3.
-      t17 ?= t19.
+      t17 ?= t3.
       me->type_cba0 = t17.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
     ENDIF.

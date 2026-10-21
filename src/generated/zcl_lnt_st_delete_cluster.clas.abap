@@ -48,10 +48,8 @@ CLASS zcl_lnt_st_delete_cluster IMPLEMENTATION.
     t27 = zcl_lnt_st_combi_module=>tok( i_t = t28 ).
     IF t27 IS BOUND.
       DATA t29 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t30 TYPE REF TO object.
-      t30 = t27.
       TRY.
-          t26 ?= t30.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -88,10 +86,8 @@ CLASS zcl_lnt_st_delete_cluster IMPLEMENTATION.
     t36 = zcl_lnt_st_combi_module=>tok( i_t = t37 ).
     IF t36 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t36.
       TRY.
-          t35 ?= t39.
+          t35 ?= t36.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t35 IS NOT BOUND.
@@ -117,10 +113,8 @@ CLASS zcl_lnt_st_delete_cluster IMPLEMENTATION.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t46 TYPE REF TO object.
-      t46 = t1.
       TRY.
-          t43 ?= t46.
+          t43 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t43 IS NOT BOUND.
@@ -141,10 +135,8 @@ CLASS zcl_lnt_st_delete_cluster IMPLEMENTATION.
     t42 = zcl_lnt_st_combi_module=>opt( i_first = t43 ).
     IF t42 IS BOUND.
       DATA t47 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t48 TYPE REF TO object.
-      t48 = t42.
       TRY.
-          t41 ?= t48.
+          t41 ?= t42.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t41 IS NOT BOUND.
@@ -186,10 +178,8 @@ CLASS zcl_lnt_st_delete_cluster IMPLEMENTATION.
     DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t15 IS BOUND.
       DATA t63 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t64 TYPE REF TO object.
-      t64 = t15.
       TRY.
-          t61 ?= t64.
+          t61 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t61 IS NOT BOUND.

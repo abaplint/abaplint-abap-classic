@@ -180,10 +180,8 @@ CLASS zcl_lnt_shape_df104ab4 IMPLEMENTATION.
           CLEAR result.
           IF me->op IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t2 TYPE REF TO object.
-            t2 = me->op.
             TRY.
-                result ?= t2.
+                result ?= me->op.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

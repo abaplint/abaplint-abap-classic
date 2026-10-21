@@ -180,9 +180,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
           DATA t169 TYPE REF TO zif_lnt_interface_definition.
           IF xsdbool( t103 IS BOUND ) = abap_true.
             DATA t172 TYPE REF TO zif_lnt_interface_definition.
-            DATA t173 TYPE REF TO zif_lnt_class_definition.
-            t173 = t103.
-            t172 ?= t173.
+            t172 ?= t103.
             t169 = t172.
           ELSE.
             DATA t176 TYPE REF TO zif_lnt_interface_definition.
@@ -262,7 +260,6 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
           t93 = t169.
         ENDIF.
         DATA t254 TYPE REF TO zif_lnt_union_8cd68e5e.
-        DATA t255 TYPE REF TO zif_lnt_method_definition.
         DATA t256 TYPE REF TO zcl_lnt_shape_a38e878f.
         DATA(t263) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t263->has = abap_true.
@@ -273,8 +270,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
         ELSE.
           t265 = t256->method.
         ENDIF.
-        t255 = t265.
-        t254 ?= t255.
+        t254 ?= t265.
         t7 = t254.
       ELSE.
         DATA t278 TYPE REF TO zcl_lnt_ddic.
@@ -551,9 +547,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
             DATA t533 TYPE REF TO zif_lnt_interface_definition.
             IF xsdbool( t467 IS BOUND ) = abap_true.
               DATA t536 TYPE REF TO zif_lnt_interface_definition.
-              DATA t537 TYPE REF TO zif_lnt_class_definition.
-              t537 = t467.
-              t536 ?= t537.
+              t536 ?= t467.
               t533 = t536.
             ELSE.
               DATA t540 TYPE REF TO zif_lnt_interface_definition.
@@ -633,7 +627,6 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
             t457 = t533.
           ENDIF.
           DATA t618 TYPE REF TO zif_lnt_union_8cd68e5e.
-          DATA t619 TYPE REF TO zif_lnt_method_definition.
           DATA t620 TYPE REF TO zcl_lnt_shape_a38e878f.
           DATA(t627) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
           t627->has = abap_true.
@@ -644,8 +637,7 @@ CLASS zcl_lnt_sy_raise IMPLEMENTATION.
           ELSE.
             t629 = t620->method.
           ENDIF.
-          t619 = t629.
-          t618 ?= t619.
+          t618 ?= t629.
           t7 = t618.
         ELSE.
           DATA t638 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.

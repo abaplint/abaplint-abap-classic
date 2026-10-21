@@ -860,11 +860,9 @@ CLASS zcl_lnt_statement_parser IMPLEMENTATION.
     t2 = t1.
     DATA t4 TYPE i.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abstract_node.
     t8 = t1.
-    t7 = t8->children.
-    t6 ?= t7.
+    t6 ?= t8->children.
     t6->load( ).
     t4 = lines( t6->items ).
     DATA t12 TYPE REF TO zcl_lnt_abstract_token.

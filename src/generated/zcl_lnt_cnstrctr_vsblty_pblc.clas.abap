@@ -160,9 +160,7 @@ CLASS zcl_lnt_cnstrctr_vsblty_pblc IMPLEMENTATION.
     DATA t8 TYPE REF TO zcl_lnt_info_class_definition.
     DATA t10 TYPE REF TO zcl_lnt_class.
     DATA t11 TYPE REF TO zcl_lnt_class.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t10 = t11.
     DATA t15 TYPE REF TO zif_lnt_abap_file_information.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.

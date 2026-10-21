@@ -118,10 +118,8 @@ CLASS zcl_lnt_ilookup_result IMPLEMENTATION.
       IF p0 IS BOUND.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t3 TYPE REF TO object.
-          t3 = p0.
           TRY.
-              t1 ?= t3.
+              t1 ?= p0.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t1 IS NOT BOUND.
@@ -275,10 +273,8 @@ CLASS zcl_lnt_ilookup_result IMPLEMENTATION.
           CLEAR result.
           IF me->object_a393 IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t4 TYPE REF TO object.
-            t4 = me->object_a393.
             TRY.
-                result ?= t4.
+                result ?= me->object_a393.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

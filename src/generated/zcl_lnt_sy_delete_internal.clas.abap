@@ -114,11 +114,9 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
       t87 = t88.
       IF t88 = abap_true.
         DATA t97 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t98 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t99 TYPE REF TO zcl_lnt_abstract_node.
         t99 = t1.
-        t98 = t99->children.
-        t97 ?= t98.
+        t97 ?= t99->children.
         t97->load( ).
         t87 = xsdbool( lines( t97->items ) = 5 ).
       ENDIF.
@@ -128,11 +126,9 @@ CLASS zcl_lnt_sy_delete_internal IMPLEMENTATION.
         DATA(t106) = VALUE string( ).
         DATA t107 TYPE REF TO zif_lnt_union_4cf1d054.
         DATA t108 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t109 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t110 TYPE REF TO zcl_lnt_abstract_node.
         t110 = t1.
-        t109 = t110->children.
-        t108 ?= t109.
+        t108 ?= t110->children.
         DATA t114 TYPE REF TO object.
         t108->load( ).
         READ TABLE t108->items INDEX 3 INTO t114.

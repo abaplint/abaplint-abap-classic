@@ -118,11 +118,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = me.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     DATA t9 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t10 TYPE REF TO object.
     DATA(t11) = VALUE i( ).
@@ -227,11 +225,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t1.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = me.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     DATA t9 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t10 TYPE REF TO object.
     DATA(t11) = VALUE i( ).
@@ -423,9 +419,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         CLEAR t28.
       ELSE.
         DATA t32 TYPE REF TO zcl_lnt_virtual_position.
-        DATA t33 TYPE REF TO zcl_lnt_position.
-        t33 = t14.
-        t32 ?= t33.
+        t32 ?= t14.
         t28 = t32.
       ENDIF.
       t12 = t28.
@@ -449,9 +443,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         CLEAR t50.
       ELSE.
         DATA t54 TYPE REF TO zcl_lnt_virtual_position.
-        DATA t55 TYPE REF TO zcl_lnt_position.
-        t55 = t37.
-        t54 ?= t55.
+        t54 ?= t37.
         t50 = t54.
       ENDIF.
       t35 = t50.
@@ -627,11 +619,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
 
   METHOD get_first_token.
     DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zcl_lnt_abstract_node.
     t3 = me.
-    t2 = t3->children.
-    t1 ?= t2.
+    t1 ?= t3->children.
     DATA t7 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t8 TYPE REF TO object.
     DATA(t9) = VALUE i( ).
@@ -699,7 +689,6 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
   METHOD get_last_token.
     DATA t1 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t2 TYPE REF TO zif_lnt_union_4cf1d054.
-    DATA t3 TYPE REF TO zif_lnt_node.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
     t4 = me.
     DATA t8 TYPE REF TO zif_lnt_node.
@@ -726,8 +715,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     ELSE.
       t8 ?= t16.
     ENDIF.
-    t3 = t8.
-    t2 ?= t3.
+    t2 ?= t8.
     t1 = t2.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF xsdbool( xsdbool( t1 IS INITIAL ) = abap_false ) = abap_true.
@@ -770,11 +758,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
   METHOD find_direct_expression.
     DATA(t1) = i_type_9913.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
     t4 = me.
-    t3 = t4->children.
-    t2 ?= t3.
+    t2 ?= t4->children.
     DATA t8 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t9 TYPE REF TO object.
     DATA(t10) = VALUE i( ).
@@ -805,9 +791,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA(t16) = VALUE abap_bool( ).
         DATA t17 TYPE REF TO zif_lnt_statement_runnable.
         DATA t18 TYPE REF TO zcl_lnt_expression_node.
-        DATA t20 TYPE REF TO object.
-        t20 = t8.
-        t18 ?= t20.
+        t18 ?= t8.
         t17 = t18->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         DATA(t21) = t1.
         DATA t22 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -826,9 +810,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t13 = abap_true.
         DATA t25 TYPE REF TO zcl_lnt_expression_node.
-        DATA t27 TYPE REF TO object.
-        t27 = t8.
-        t25 ?= t27.
+        t25 ?= t8.
         result = t25.
         RETURN.
       ENDIF.
@@ -842,11 +824,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = me.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     DATA t10 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -877,9 +857,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA(t18) = VALUE abap_bool( ).
         DATA t19 TYPE REF TO zif_lnt_statement_runnable.
         DATA t20 TYPE REF TO zcl_lnt_expression_node.
-        DATA t22 TYPE REF TO object.
-        t22 = t10.
-        t20 ?= t22.
+        t20 ?= t10.
         t19 = t20->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         DATA(t23) = t1.
         DATA t24 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -898,9 +876,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t15 = abap_true.
         DATA t26 TYPE REF TO zcl_lnt_expression_node.
-        DATA t28 TYPE REF TO object.
-        t28 = t10.
-        t26 ?= t28.
+        t26 ?= t10.
         t2->load( ).
         APPEND t26 TO t2->items.
         t2->save( ).
@@ -915,11 +891,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = me.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     DATA t10 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -974,9 +948,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
           DATA(t26) = VALUE abap_bool( ).
           DATA t27 TYPE REF TO zif_lnt_statement_runnable.
           DATA t28 TYPE REF TO zcl_lnt_expression_node.
-          DATA t30 TYPE REF TO object.
-          t30 = t10.
-          t28 ?= t30.
+          t28 ?= t10.
           t27 = t28->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
           DATA(t31) = t22.
           DATA t32 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -1000,9 +972,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t15 = abap_true.
         DATA t36 TYPE REF TO zcl_lnt_expression_node.
-        DATA t38 TYPE REF TO object.
-        t38 = t10.
-        t36 ?= t38.
+        t36 ?= t10.
         t2->load( ).
         APPEND t36 TO t2->items.
         t2->save( ).
@@ -1025,11 +995,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     ENDIF.
     t2 = t3.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t8 TYPE REF TO zcl_lnt_abstract_node.
     t8 = me.
-    t7 = t8->children.
-    t6 ?= t7.
+    t6 ?= t8->children.
     DATA t12 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t13 TYPE REF TO object.
     DATA(t14) = VALUE i( ).
@@ -1060,9 +1028,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA t21 TYPE string.
         DATA t22 TYPE string.
         DATA t25 TYPE REF TO zcl_lnt_token_node.
-        DATA t27 TYPE REF TO object.
-        t27 = t12.
-        t25 ?= t27.
+        t25 ?= t12.
         t22 = t25->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t30) = strlen( t22 ).
         t21 = t22.
@@ -1075,9 +1041,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t17 = abap_true.
         DATA t35 TYPE REF TO zcl_lnt_token_node.
-        DATA t37 TYPE REF TO object.
-        t37 = t12.
-        t35 ?= t37.
+        t35 ?= t12.
         result = t35->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
         RETURN.
       ENDIF.
@@ -1089,11 +1053,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
   METHOD find_first_expression.
     DATA(t1) = i_type_9913.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zcl_lnt_abstract_node.
     t4 = me.
-    t3 = t4->children.
-    t2 ?= t3.
+    t2 ?= t4->children.
     DATA t8 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t9 TYPE REF TO object.
     DATA(t10) = VALUE i( ).
@@ -1122,9 +1084,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       DATA(t15) = VALUE abap_bool( ).
       DATA t16 TYPE REF TO zif_lnt_statement_runnable.
       DATA t17 TYPE REF TO zcl_lnt_expression_node.
-      DATA t19 TYPE REF TO object.
-      t19 = t8.
-      t17 ?= t19.
+      t17 ?= t8.
       t16 = t17->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       DATA(t20) = t1.
       DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -1141,17 +1101,13 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t15 = abap_true.
         DATA t24 TYPE REF TO zcl_lnt_expression_node.
-        DATA t26 TYPE REF TO object.
-        t26 = t8.
-        t24 ?= t26.
+        t24 ?= t8.
         result = t24.
         RETURN.
       ENDIF.
       DATA t28 TYPE REF TO zcl_lnt_expression_node.
       DATA t30 TYPE REF TO zcl_lnt_expression_node.
-      DATA t32 TYPE REF TO object.
-      t32 = t8.
-      t30 ?= t32.
+      t30 ?= t8.
       t28 = t30->find_first_expression( i_type_9913 = t1 ).
       IF xsdbool( t28 IS BOUND ) = abap_true.
         result = t28.
@@ -1169,11 +1125,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = me.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     DATA t10 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -1202,9 +1156,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       DATA(t17) = VALUE abap_bool( ).
       DATA t18 TYPE REF TO zif_lnt_statement_runnable.
       DATA t19 TYPE REF TO zcl_lnt_expression_node.
-      DATA t21 TYPE REF TO object.
-      t21 = t10.
-      t19 ?= t21.
+      t19 ?= t10.
       t18 = t19->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       DATA(t22) = t1.
       DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -1221,9 +1173,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t17 = abap_true.
         DATA t25 TYPE REF TO zcl_lnt_expression_node.
-        DATA t27 TYPE REF TO object.
-        t27 = t10.
-        t25 ?= t27.
+        t25 ?= t10.
         t2->load( ).
         APPEND t25 TO t2->items.
         t2->save( ).
@@ -1231,9 +1181,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA(t28) = VALUE i( ).
         DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t30 TYPE REF TO zcl_lnt_expression_node.
-        DATA t32 TYPE REF TO object.
-        t32 = t10.
-        t30 ?= t32.
+        t30 ?= t10.
         t29 = t30->find_all_expressions( i_type_9913 = t1 ).
         DATA t34 TYPE REF TO zcl_lnt_expression_node.
         CLEAR t34.
@@ -1277,11 +1225,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t2.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t6 TYPE REF TO zcl_lnt_abstract_node.
     t6 = me.
-    t5 = t6->children.
-    t4 ?= t5.
+    t4 ?= t6->children.
     DATA t10 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t11 TYPE REF TO object.
     DATA(t12) = VALUE i( ).
@@ -1310,9 +1256,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       DATA(t17) = VALUE abap_bool( ).
       DATA t18 TYPE REF TO zif_lnt_statement_runnable.
       DATA t19 TYPE REF TO zcl_lnt_expression_node.
-      DATA t21 TYPE REF TO object.
-      t21 = t10.
-      t19 ?= t21.
+      t19 ?= t10.
       t18 = t19->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
       DATA(t22) = t1.
       DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -1329,9 +1273,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t17 = abap_true.
         DATA t25 TYPE REF TO zcl_lnt_expression_node.
-        DATA t27 TYPE REF TO object.
-        t27 = t10.
-        t25 ?= t27.
+        t25 ?= t10.
         t2->load( ).
         APPEND t25 TO t2->items.
         t2->save( ).
@@ -1340,9 +1282,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       DATA(t28) = VALUE i( ).
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t30 TYPE REF TO zcl_lnt_expression_node.
-      DATA t32 TYPE REF TO object.
-      t32 = t10.
-      t30 ?= t32.
+      t30 ?= t10.
       t29 = t30->find_all_expressions_recursive( i_type_9913 = t1 ).
       DATA t34 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t34.
@@ -1398,11 +1338,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t10.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t14 TYPE REF TO zcl_lnt_abstract_node.
     t14 = me.
-    t13 = t14->children.
-    t12 ?= t13.
+    t12 ?= t14->children.
     DATA t18 TYPE REF TO zif_lnt_union_4cf1d054.
     DATA t19 TYPE REF TO object.
     DATA(t20) = VALUE i( ).
@@ -1456,9 +1394,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA(t33) = VALUE abap_bool( ).
         DATA t34 TYPE REF TO zif_lnt_statement_runnable.
         DATA t35 TYPE REF TO zcl_lnt_expression_node.
-        DATA t37 TYPE REF TO object.
-        t37 = t18.
-        t35 ?= t37.
+        t35 ?= t18.
         t34 = t35->gt_in_sr_ab_nd_ex_nd_ts_exp_nd( ).
         DATA(t38) = t29.
         DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
@@ -1475,9 +1411,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         ENDIF.
         IF t33 = abap_true.
           DATA t41 TYPE REF TO zcl_lnt_expression_node.
-          DATA t43 TYPE REF TO object.
-          t43 = t18.
-          t41 ?= t43.
+          t41 ?= t18.
           t10->load( ).
           APPEND t41 TO t10->items.
           t10->save( ).
@@ -1496,9 +1430,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t54.
         DATA t55 TYPE REF TO zcl_lnt_expression_node.
-        DATA t57 TYPE REF TO object.
-        t57 = t18.
-        t55 ?= t57.
+        t55 ?= t18.
         DATA t61 TYPE abap_bool.
         t61 = t2->value.
         DATA(t63) = NEW zlnt_runtime_opti_7f2541396f43( ).
@@ -1711,11 +1643,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA(t1) = i_text.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = me.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.
@@ -1786,9 +1716,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA t38 TYPE string.
         DATA t39 TYPE string.
         DATA t42 TYPE REF TO zcl_lnt_token_node.
-        DATA t44 TYPE REF TO object.
-        t44 = t17.
-        t42 ?= t44.
+        t42 ?= t17.
         t39 = t42->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t47) = strlen( t39 ).
         t38 = t39.
@@ -1813,9 +1741,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t33 = abap_true.
         DATA t55 TYPE REF TO zcl_lnt_expression_node.
-        DATA t57 TYPE REF TO object.
-        t57 = t24.
-        t55 ?= t57.
+        t55 ?= t24.
         result = t55.
         RETURN.
       ENDIF.
@@ -1830,11 +1756,9 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     DATA(t1) = i_text.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = me.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     CREATE OBJECT t9.
@@ -1907,9 +1831,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
         DATA t40 TYPE string.
         DATA t41 TYPE string.
         DATA t44 TYPE REF TO zcl_lnt_token_node.
-        DATA t46 TYPE REF TO object.
-        t46 = t19.
-        t44 ?= t46.
+        t44 ?= t19.
         t41 = t44->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( )->str.
         DATA(t49) = strlen( t41 ).
         t40 = t41.
@@ -1934,9 +1856,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF t35 = abap_true.
         DATA t56 TYPE REF TO zcl_lnt_expression_node.
-        DATA t58 TYPE REF TO object.
-        t58 = t26.
-        t56 ?= t58.
+        t56 ?= t26.
         t9->load( ).
         APPEND t56 TO t9->items.
         t9->save( ).
@@ -1955,9 +1875,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
       DATA t7 TYPE REF TO zcl_lnt_abstract_token.
       DATA t8 TYPE REF TO zcl_lnt_token_node.
-      DATA t10 TYPE REF TO object.
-      t10 = t1.
-      t8 ?= t10.
+      t8 ?= t1.
       t7 = t8->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
       t2->load( ).
       APPEND t7 TO t2->items.
@@ -1992,9 +1910,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       IF xsdbool( t14 IS BOUND AND t14 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA t22 TYPE REF TO zcl_lnt_abstract_token.
         DATA t23 TYPE REF TO zcl_lnt_token_node.
-        DATA t25 TYPE REF TO object.
-        t25 = t14.
-        t23 ?= t25.
+        t23 ?= t14.
         t22 = t23->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ).
         t2->load( ).
         APPEND t22 TO t2->items.
@@ -2045,9 +1961,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
     CREATE OBJECT t2.
     IF xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
       DATA t7 TYPE REF TO zcl_lnt_token_node.
-      DATA t9 TYPE REF TO object.
-      t9 = t1.
-      t7 ?= t9.
+      t7 ?= t1.
       t2->load( ).
       APPEND t7 TO t2->items.
       t2->save( ).
@@ -2080,9 +1994,7 @@ CLASS zcl_lnt_statement_node IMPLEMENTATION.
       ENDIF.
       IF xsdbool( t13 IS BOUND AND t13 IS INSTANCE OF zcl_lnt_token_node ) = abap_true.
         DATA t21 TYPE REF TO zcl_lnt_token_node.
-        DATA t23 TYPE REF TO object.
-        t23 = t13.
-        t21 ?= t23.
+        t21 ?= t13.
         t2->load( ).
         APPEND t21 TO t2->items.
         t2->save( ).

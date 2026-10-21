@@ -78,10 +78,8 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t23 = zcl_lnt_st_combi_module=>seq( i_first = t25 i_second = t28 i_rest = t31 ).
     IF t23 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t23.
       TRY.
-          t22 ?= t37.
+          t22 ?= t23.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t22 IS NOT BOUND.
@@ -102,10 +100,8 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t21 = zcl_lnt_st_combi_module=>opt_prio( i_first = t22 ).
     IF t21 IS BOUND.
       DATA t38 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t39 TYPE REF TO object.
-      t39 = t21.
       TRY.
-          t20 ?= t39.
+          t20 ?= t21.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.
@@ -129,10 +125,8 @@ CLASS zcl_lnt_sqlcte_hierarchy IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t17 ).
     IF t10 IS BOUND.
       DATA t44 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t45 TYPE REF TO object.
-      t45 = t10.
       TRY.
-          t9 ?= t45.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

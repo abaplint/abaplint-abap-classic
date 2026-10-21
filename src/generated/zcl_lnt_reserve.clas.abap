@@ -38,10 +38,8 @@ CLASS zcl_lnt_reserve IMPLEMENTATION.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t23 TYPE REF TO object.
-      t23 = t1.
       TRY.
-          t20 ?= t23.
+          t20 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.

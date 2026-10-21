@@ -72,10 +72,8 @@ CLASS zcl_lnt_ddl_foreign_key_target IMPLEMENTATION.
     t24 = zcl_lnt_st_combi_module=>seq( i_first = t26 i_second = t29 i_rest = t32 ).
     IF t24 IS BOUND.
       DATA t37 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t38 TYPE REF TO object.
-      t38 = t24.
       TRY.
-          t23 ?= t38.
+          t23 ?= t24.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t23 IS NOT BOUND.
@@ -96,10 +94,8 @@ CLASS zcl_lnt_ddl_foreign_key_target IMPLEMENTATION.
     t22 = zcl_lnt_st_combi_module=>opt_prio( i_first = t23 ).
     IF t22 IS BOUND.
       DATA t39 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t40 TYPE REF TO object.
-      t40 = t22.
       TRY.
-          t21 ?= t40.
+          t21 ?= t22.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t21 IS NOT BOUND.
@@ -133,10 +129,8 @@ CLASS zcl_lnt_ddl_foreign_key_target IMPLEMENTATION.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t54 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t55 TYPE REF TO object.
-      t55 = t1.
       TRY.
-          t52 ?= t55.
+          t52 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t52 IS NOT BOUND.
@@ -157,10 +151,8 @@ CLASS zcl_lnt_ddl_foreign_key_target IMPLEMENTATION.
     t51 = zcl_lnt_st_combi_module=>opt_prio( i_first = t52 ).
     IF t51 IS BOUND.
       DATA t56 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t57 TYPE REF TO object.
-      t57 = t51.
       TRY.
-          t50 ?= t57.
+          t50 ?= t51.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t50 IS NOT BOUND.

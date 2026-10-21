@@ -64,9 +64,7 @@ CLASS zcl_lnt_artifacts_rules IMPLEMENTATION.
       IF t16 = abap_true.
         DATA t20 TYPE REF TO zif_lnt_rule.
         CLEAR t20.
-        DATA t21 TYPE REF TO object.
-        t21 = t9.
-        t20 ?= t21.
+        t20 ?= t9.
         t1->load( ).
         APPEND t20 TO t1->items.
         t1->save( ).

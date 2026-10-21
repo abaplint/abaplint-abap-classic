@@ -105,9 +105,7 @@ CLASS zcl_lnt_check_syntax IMPLEMENTATION.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA(t10) = me->reg.
     DATA t11 TYPE REF TO zcl_lnt_abap_object.
-    DATA t13 TYPE REF TO object.
-    t13 = t1.
-    t11 ?= t13.
+    t11 ?= t1.
     t6 = NEW zcl_lnt_syntax_logic( i_reg_f149 = t10 i_object_19cd = t11 )->run( )->zlnt_view_read_sr_bd188c319c03( ).
     DATA(t14) = VALUE abap_bool( ).
     DATA(t15) = VALUE abap_bool( ).

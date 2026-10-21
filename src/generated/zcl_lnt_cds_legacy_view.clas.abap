@@ -148,9 +148,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
     ENDIF.
     DATA t29 TYPE REF TO zcl_lnt_expression_node.
     DATA t32 TYPE REF TO zcl_lnt_ob_data_definition.
-    DATA t34 TYPE REF TO object.
-    t34 = t1.
-    t32 ?= t34.
+    t32 ?= t1.
     DATA t36 TYPE REF TO zcl_lnt_parsed_data_definition.
     t36 = t32->parsed_data.
     DATA t39 TYPE REF TO zcl_lnt_expression_node.
@@ -179,9 +177,7 @@ CLASS zcl_lnt_cds_legacy_view IMPLEMENTATION.
     IF t54 = abap_true.
       DATA t69 TYPE REF TO zif_lnt_file.
       DATA t71 TYPE REF TO zcl_lnt_ob_data_definition.
-      DATA t73 TYPE REF TO object.
-      t73 = t1.
-      t71 ?= t73.
+      t71 ?= t1.
       t69 = t71->find_source_file( ).
       IF xsdbool( t69 IS BOUND ) = abap_true.
         DATA t77 TYPE REF TO zcl_lnt_issue.

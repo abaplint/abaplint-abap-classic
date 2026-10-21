@@ -213,11 +213,9 @@ CLASS zcl_lnt_enhancement_spot IMPLEMENTATION.
           IF t79 IS BOUND.
             DATA t83 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t83.
-            DATA t84 TYPE REF TO object.
             CLEAR t83.
-            t84 = t79.
             TRY.
-                t78 ?= t84.
+                t78 ?= t79.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t78 IS NOT BOUND.

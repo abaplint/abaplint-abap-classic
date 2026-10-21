@@ -23,10 +23,8 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     t5 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t6 ).
     IF t5 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t11 TYPE REF TO object.
-      t11 = t5.
       TRY.
-          t4 ?= t11.
+          t4 ?= t5.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t4 IS NOT BOUND.
@@ -70,10 +68,8 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t33 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t34 TYPE REF TO object.
-      t34 = t1.
       TRY.
-          t31 ?= t34.
+          t31 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t31 IS NOT BOUND.
@@ -94,10 +90,8 @@ CLASS zcl_lnt_ole_exporting IMPLEMENTATION.
     t30 = zcl_lnt_st_combi_module=>plus( i_first = t31 ).
     IF t30 IS BOUND.
       DATA t35 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t36 TYPE REF TO object.
-      t36 = t30.
       TRY.
-          t29 ?= t36.
+          t29 ?= t30.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.

@@ -55,10 +55,8 @@ CLASS zcl_lnt_sql_occrrncs_rgxpr IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>tok( i_t = t17 ).
     IF t16 IS BOUND.
       DATA t18 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t19 TYPE REF TO object.
-      t19 = t16.
       TRY.
-          t15 ?= t19.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -100,10 +98,8 @@ CLASS zcl_lnt_sql_occrrncs_rgxpr IMPLEMENTATION.
     t27 = zcl_lnt_st_combi_module=>opt_prio( i_first = t28 ).
     IF t27 IS BOUND.
       DATA t30 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t31 TYPE REF TO object.
-      t31 = t27.
       TRY.
-          t26 ?= t31.
+          t26 ?= t27.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t26 IS NOT BOUND.
@@ -130,10 +126,8 @@ CLASS zcl_lnt_sql_occrrncs_rgxpr IMPLEMENTATION.
     t34 = zcl_lnt_st_combi_module=>tok( i_t = t35 ).
     IF t34 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t34.
       TRY.
-          t33 ?= t37.
+          t33 ?= t34.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t33 IS NOT BOUND.
@@ -157,10 +151,8 @@ CLASS zcl_lnt_sql_occrrncs_rgxpr IMPLEMENTATION.
     t10 = zcl_lnt_st_combi_module=>seq( i_first = t12 i_second = t15 i_rest = t20 ).
     IF t10 IS BOUND.
       DATA t42 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t43 TYPE REF TO object.
-      t43 = t10.
       TRY.
-          t9 ?= t43.
+          t9 ?= t10.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t9 IS NOT BOUND.

@@ -1814,11 +1814,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
         CLEAR t844.
         DATA t845 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t845.
-        DATA t846 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t847 TYPE REF TO zcl_lnt_abstract_node.
         t847 = t17.
-        t846 = t847->children.
-        t845 ?= t846.
+        t845 ?= t847->children.
         t844 = t845.
         DATA t851 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
         CLEAR t851.
@@ -5041,11 +5039,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
       IF t2399 = abap_true.
         DATA t2407 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         CLEAR t2407.
-        DATA t2408 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t2409 TYPE REF TO zcl_lnt_abstract_node.
         t2409 = t17.
-        t2408 = t2409->children.
-        t2407 ?= t2408.
+        t2407 ?= t2409->children.
         t2407->load( ).
         t2398 = xsdbool( lines( t2407->items ) = 2 ).
       ENDIF.
@@ -6018,11 +6014,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
     DATA(t3) = i_statement_node.
     IF xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_st_refresh ) = abap_true.
       DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t10 TYPE REF TO zcl_lnt_abstract_node.
       t10 = t3.
-      t9 = t10->children.
-      t8 ?= t9.
+      t8 ?= t10->children.
       t8->load( ).
       IF xsdbool( lines( t8->items ) = 6 ) = abap_true.
         CLEAR result.
@@ -6034,11 +6028,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
     IF xsdbool( t2 IS BOUND AND t2 IS INSTANCE OF zcl_lnt_compute ) = abap_true.
       DATA t26 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t27 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t29 TYPE REF TO zcl_lnt_abstract_node.
       t29 = t3.
-      t28 = t29->children.
-      t27 ?= t28.
+      t27 ?= t29->children.
       t26 = t27.
       t26->load( ).
       IF xsdbool( lines( t26->items ) = 5 ) = abap_true.
@@ -6136,11 +6128,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
       IF t159 = abap_true.
         DATA t164 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t165 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-        DATA t166 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
         DATA t167 TYPE REF TO zcl_lnt_abstract_node.
         t167 = t3.
-        t166 = t167->children.
-        t165 ?= t166.
+        t165 ?= t167->children.
         t164 = t165.
         DATA(t171) = VALUE string( ).
         DATA t173 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -6233,11 +6223,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
         IF t268 = abap_true.
           DATA t273 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t274 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-          DATA t275 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
           DATA t276 TYPE REF TO zcl_lnt_abstract_node.
           t276 = t3.
-          t275 = t276->children.
-          t274 ?= t275.
+          t274 ?= t276->children.
           t273 = t274.
           DATA(t280) = VALUE string( ).
           DATA t282 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -6330,11 +6318,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
             ENDIF.
             DATA t392 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t393 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            DATA t394 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
             DATA t395 TYPE REF TO zcl_lnt_abstract_node.
             t395 = t3.
-            t394 = t395->children.
-            t393 ?= t394.
+            t393 ?= t395->children.
             t392 = t393.
             DATA(t399) = VALUE string( ).
             DATA t401 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -6435,11 +6421,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
                 DATA t495 TYPE REF TO zcl_lnt_abstract_token.
                 DATA t496 TYPE REF TO zif_lnt_union_4cf1d054.
                 DATA t497 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                DATA t498 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t499 TYPE REF TO zcl_lnt_abstract_node.
                 t499 = t3.
-                t498 = t499->children.
-                t497 ?= t498.
+                t497 ?= t499->children.
                 DATA t503 TYPE REF TO object.
                 t497->load( ).
                 READ TABLE t497->items INDEX 4 INTO t503.
@@ -6482,11 +6466,9 @@ CLASS zcl_lnt_obsolete_statement IMPLEMENTATION.
                 DATA t512 TYPE REF TO zcl_lnt_abstract_token.
                 DATA t513 TYPE REF TO zif_lnt_union_4cf1d054.
                 DATA t514 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                DATA t515 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                 DATA t516 TYPE REF TO zcl_lnt_abstract_node.
                 t516 = t3.
-                t515 = t516->children.
-                t514 ?= t515.
+                t514 ?= t516->children.
                 DATA t520 TYPE REF TO object.
                 t514->load( ).
                 READ TABLE t514->items INDEX 3 INTO t520.

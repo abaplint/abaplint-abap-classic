@@ -121,9 +121,7 @@ CLASS zcl_lnt_sql_value_conversion IMPLEMENTATION.
     ENDIF.
     DATA(t15) = me->reg.
     DATA t16 TYPE REF TO zcl_lnt_abap_object.
-    DATA t18 TYPE REF TO object.
-    t18 = t1.
-    t16 ?= t18.
+    t16 ?= t1.
     result = me->traverse( i_node = NEW zcl_lnt_syntax_logic( i_reg_f149 = t15 i_object_19cd = t16 )->run( )->zlnt_view_read_sr_b6b1d9e0c93e( )->get_top( ) ).
 
   ENDMETHOD.

@@ -266,10 +266,8 @@ CLASS zcl_lnt_lsp_lookup_result IMPLEMENTATION.
           CLEAR result.
           IF me->scope IS BOUND.
             DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            DATA t8 TYPE REF TO object.
-            t8 = me->scope.
             TRY.
-                result ?= t8.
+                result ?= me->scope.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.

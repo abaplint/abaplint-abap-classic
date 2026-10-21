@@ -192,9 +192,7 @@ CLASS zcl_lnt_space_before_dot IMPLEMENTATION.
         DATA t68 TYPE REF TO zcl_lnt_info_class_definition.
         DATA t70 TYPE REF TO zcl_lnt_class.
         DATA t71 TYPE REF TO zcl_lnt_class.
-        DATA t73 TYPE REF TO object.
-        t73 = t2.
-        t71 ?= t73.
+        t71 ?= t2.
         t70 = t71.
         DATA t75 TYPE REF TO zif_lnt_abap_file_information.
         DATA t77 TYPE REF TO zcl_lnt_abap_file.
@@ -231,9 +229,7 @@ CLASS zcl_lnt_space_before_dot IMPLEMENTATION.
           DATA t116 TYPE REF TO zcl_lnt_info_class_definition.
           t116 = t68.
           DATA t121 TYPE REF TO zcl_lnt_class.
-          DATA t123 TYPE REF TO object.
-          t123 = t2.
-          t121 ?= t123.
+          t121 ?= t2.
           t102 = t22->is_exception( i_def = t116 i_obj_ac26 = t121 ).
         ENDIF.
         IF t102 = abap_true.

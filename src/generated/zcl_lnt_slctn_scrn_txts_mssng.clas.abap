@@ -108,9 +108,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
     ENDIF.
     DATA t7 TYPE REF TO zcl_lnt_ob_program.
     DATA t8 TYPE REF TO zcl_lnt_ob_program.
-    DATA t10 TYPE REF TO object.
-    t10 = t1.
-    t8 ?= t10.
+    t8 ?= t1.
     t7 = t8.
     t7->parse_xml( ).
     IF t7->parsed_xml->is_include = abap_true.
@@ -119,9 +117,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
     ENDIF.
     DATA t20 TYPE REF TO zcl_lnt_ob_program.
     DATA t21 TYPE REF TO zcl_lnt_ob_program.
-    DATA t23 TYPE REF TO object.
-    t23 = t1.
-    t21 ?= t23.
+    t21 ?= t1.
     t20 = t21.
     t20->parse_xml( ).
     DATA t26 TYPE REF TO zlnt_runtime_map__5a3c0ec03a13.
@@ -130,9 +126,7 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
     CREATE OBJECT t30.
     DATA(t33) = NEW zlnt_runtime_set__1827558fd4c7( ).
     DATA t35 TYPE REF TO zcl_lnt_ob_program.
-    DATA t37 TYPE REF TO object.
-    t37 = t1.
-    t35 ?= t37.
+    t35 ?= t1.
     DATA t41 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
     me->check_file( i_file = t35->get_main_abap_file( ) i_sel_texts = t26 i_output = t30 i_checked = t33 i_main_prog_name = t41 ).
     result = t30.
@@ -281,11 +275,9 @@ CLASS zcl_lnt_slctn_scrn_txts_mssng IMPLEMENTATION.
           IF t90 IS BOUND.
             DATA t103 TYPE REF TO zlnt_view_storage_74017ca272ac.
             CLEAR t103.
-            DATA t104 TYPE REF TO object.
             CLEAR t103.
-            t104 = t90.
             TRY.
-                t89 ?= t104.
+                t89 ?= t90.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF t89 IS NOT BOUND.

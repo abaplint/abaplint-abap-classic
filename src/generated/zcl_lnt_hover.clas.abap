@@ -351,9 +351,7 @@ CLASS zcl_lnt_hover IMPLEMENTATION.
       DATA t230 TYPE string.
       DATA t231 TYPE REF TO zcl_lnt_abstract_token.
       DATA t232 TYPE REF TO zcl_lnt_lx_comment.
-      DATA t233 TYPE REF TO zcl_lnt_abstract_token.
-      t233 = t133->token.
-      t232 ?= t233.
+      t232 ?= t133->token.
       t231 = t232.
       t230 = t231->str.
       DATA(t238) = |"!|.
@@ -404,9 +402,7 @@ CLASS zcl_lnt_hover IMPLEMENTATION.
     t260 = t133.
     DATA(t262) = me->reg.
     DATA t263 TYPE REF TO zcl_lnt_abap_object.
-    DATA t265 TYPE REF TO object.
-    t265 = t16.
-    t263 ?= t265.
+    t263 ?= t16.
     t258 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t260 i_reg_f149 = t262 i_obj_1ed0 = t263 ).
     DATA(t266) = VALUE abap_bool( ).
     DATA t267 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.

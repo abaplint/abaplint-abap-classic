@@ -123,9 +123,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       RETURN.
     ENDIF.
     DATA t125 TYPE REF TO zif_lnt_interface_definition.
-    DATA t126 TYPE REF TO zif_lnt_class_definition.
-    t126 = t31.
-    t125 ?= t126.
+    t125 ?= t31.
     DATA t129 TYPE REF TO zif_lnt_method_definition.
     t129 = t3->search_method_name( i_def = t125 i_name = t17 )->method.
     DATA(t132) = VALUE abap_bool( ).
@@ -465,9 +463,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     t412 = t11.
     DATA t416 TYPE REF TO zcl_lnt_fi_identifier.
     DATA t418 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA t419 TYPE REF TO zif_lnt_method_definition.
-    t419 = t129.
-    t418 ?= t419.
+    t418 ?= t129.
     t416 = t418.
     DATA t422 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CREATE OBJECT t422.
@@ -480,9 +476,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
     t2->scope->add_list( i_identifiers = t129->get_parameters( )->get_all( ) ).
     DATA t433 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t435 TYPE REF TO zif_lnt_interface_definition.
-    DATA t436 TYPE REF TO zif_lnt_class_definition.
-    t436 = t31.
-    t435 ?= t436.
+    t435 ?= t31.
     t433 = t3->find_interfaces( i_cd = t435 ).
     DATA t438 TYPE REF TO zcl_lnt_iimplementing.
     DATA t439 TYPE REF TO object.
@@ -639,9 +633,7 @@ CLASS zcl_lnt_sy_mthd_implmnttn IMPLEMENTATION.
       DATA t546 TYPE REF TO zcl_lnt_fi_identifier.
       CLEAR t546.
       DATA t548 TYPE REF TO zcl_lnt_fi_identifier.
-      DATA t549 TYPE REF TO zif_lnt_interface_definition.
-      t549 = t461.
-      t548 ?= t549.
+      t548 ?= t461.
       t546 = t548.
       DATA t552 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t552.

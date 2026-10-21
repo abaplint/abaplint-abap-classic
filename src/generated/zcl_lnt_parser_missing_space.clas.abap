@@ -475,11 +475,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
                     IF xsdbool( t149 IS BOUND AND t149 IS INSTANCE OF zcl_lnt_st_new_object ) = abap_true.
                       DATA t186 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       DATA t187 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                      DATA t188 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                       DATA t189 TYPE REF TO zcl_lnt_abstract_node.
                       t189 = t144.
-                      t188 = t189->children.
-                      t187 ?= t188.
+                      t187 ?= t189->children.
                       t186 = t187.
                       DATA t194 TYPE REF TO zcl_lnt_abstract_token.
                       CLEAR t194.
@@ -571,11 +569,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
                       IF xsdbool( t149 IS BOUND AND t149 IS INSTANCE OF zcl_lnt_st_method_call_param ) = abap_true.
                         DATA t289 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         DATA t290 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-                        DATA t291 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
                         DATA t292 TYPE REF TO zcl_lnt_abstract_node.
                         t292 = t144.
-                        t291 = t292->children.
-                        t290 ?= t291.
+                        t290 ?= t292->children.
                         t289 = t290.
                         DATA t297 TYPE REF TO zcl_lnt_abstract_token.
                         CLEAR t297.
@@ -749,11 +745,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_sql_cond.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_cond.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.
@@ -947,11 +941,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_new_object.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_cond.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE REF TO zcl_lnt_abstract_token.
     DATA t11 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -1030,11 +1022,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_cond_sub.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_cond.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.
@@ -1228,11 +1218,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_component_cond_sub.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_cond.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.
@@ -1554,11 +1542,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_value_body_line.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_vb.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE i.
     t9 = 0.
@@ -1658,9 +1644,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
         DATA t62 TYPE abap_bool.
         DATA t63 TYPE abap_bool.
         DATA t68 TYPE REF TO zcl_lnt_token_node.
-        DATA t70 TYPE REF TO object.
-        t70 = t15.
-        t68 ?= t70.
+        t68 ?= t15.
         t63 = xsdbool( t68->token->str = |(| ).
         t62 = t63.
         IF t63 = abap_true.
@@ -1673,9 +1657,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
           DATA t80 TYPE f.
           t80 = t42->start->row.
           DATA t94 TYPE REF TO zcl_lnt_token_node.
-          DATA t96 TYPE REF TO object.
-          t96 = t15.
-          t94 ?= t96.
+          t94 ?= t15.
           t61 = xsdbool( t80 = t94->token->start->row ).
         ENDIF.
         t60 = t61.
@@ -1684,9 +1666,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
           t106 = t42->start->col.
           DATA t119 TYPE REF TO zcl_lnt_abstract_token.
           DATA t122 TYPE REF TO zcl_lnt_token_node.
-          DATA t124 TYPE REF TO object.
-          t124 = t15.
-          t122 ?= t124.
+          t122 ?= t15.
           t119 = t122->token.
           DATA t128 TYPE f.
           t128 = t119->start->row.
@@ -1703,9 +1683,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
         ENDIF.
         IF t60 = abap_true.
           DATA t155 TYPE REF TO zcl_lnt_token_node.
-          DATA t157 TYPE REF TO object.
-          t157 = t15.
-          t155 ?= t157.
+          t155 ?= t15.
           result = t155->token->start.
           RETURN.
         ENDIF.
@@ -1714,9 +1692,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
         DATA t165 TYPE abap_bool.
         DATA t166 TYPE abap_bool.
         DATA t171 TYPE REF TO zcl_lnt_token_node.
-        DATA t173 TYPE REF TO object.
-        t173 = t15.
-        t171 ?= t173.
+        t171 ?= t15.
         t166 = xsdbool( t171->token->str = |)| ).
         t165 = t166.
         IF t166 = abap_true.
@@ -1729,9 +1705,7 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
           DATA t183 TYPE f.
           t183 = t24->start->row.
           DATA t197 TYPE REF TO zcl_lnt_token_node.
-          DATA t199 TYPE REF TO object.
-          t199 = t15.
-          t197 ?= t199.
+          t197 ?= t15.
           t164 = xsdbool( t183 = t197->token->start->row ).
         ENDIF.
         t163 = t164.
@@ -1751,18 +1725,14 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
           t209 = NEW zcl_lnt_position( i_row = t216 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t223 right = t234 op = `+` ) )->col.
           DATA t237 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
           DATA t243 TYPE REF TO zcl_lnt_token_node.
-          DATA t245 TYPE REF TO object.
-          t245 = t15.
-          t243 ?= t245.
+          t243 ?= t15.
           t237 = t243->token->start->col.
           t163 = zlnt_runtime_numb_290eb04a9758=>compare( left = t209 right = t237 op = `==` ).
         ENDIF.
         IF t163 = abap_true.
           DATA t255 TYPE REF TO zcl_lnt_abstract_token.
           DATA t258 TYPE REF TO zcl_lnt_token_node.
-          DATA t260 TYPE REF TO object.
-          t260 = t15.
-          t258 ?= t260.
+          t258 ?= t15.
           t255 = t258->token.
           DATA t264 TYPE f.
           t264 = t255->start->row.
@@ -2165,11 +2135,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
     IF t10 = abap_true.
       DATA t28 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t29 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA t30 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t31 TYPE REF TO zcl_lnt_abstract_node.
       t31 = t1.
-      t30 = t31->children.
-      t29 ?= t30.
+      t29 ?= t31->children.
       t28 = t29.
       DATA t35 TYPE REF TO zcl_lnt_abstract_token.
       DATA t37 TYPE REF TO zif_lnt_union_4cf1d054.
@@ -2360,11 +2328,9 @@ CLASS zcl_lnt_parser_missing_space IMPLEMENTATION.
   METHOD check_method_call_param.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t5 TYPE REF TO zcl_lnt_abstract_node.
     t5 = i_call_bc15.
-    t4 = t5->children.
-    t3 ?= t4.
+    t3 ?= t5->children.
     t2 = t3.
     DATA t9 TYPE REF TO zcl_lnt_abstract_token.
     DATA t11 TYPE REF TO zif_lnt_union_4cf1d054.

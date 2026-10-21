@@ -30,10 +30,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t4 = zcl_lnt_st_combi_module=>alt_prio( i_first = t6 i_second = t9 i_rest = t12 ).
     IF t4 IS BOUND.
       DATA t17 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t18 TYPE REF TO object.
-      t18 = t4.
       TRY.
-          t3 ?= t18.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -67,10 +65,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t19 IS BOUND.
       DATA t31 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t32 TYPE REF TO object.
-      t32 = t19.
       TRY.
-          t29 ?= t32.
+          t29 ?= t19.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t29 IS NOT BOUND.
@@ -91,10 +87,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t1.
       TRY.
-          t34 ?= t37.
+          t34 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t34 IS NOT BOUND.
@@ -123,10 +117,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t42 = zcl_lnt_st_combi_module=>opt_prio( i_first = t43 ).
     IF t42 IS BOUND.
       DATA t45 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t46 TYPE REF TO object.
-      t46 = t42.
       TRY.
-          t41 ?= t46.
+          t41 ?= t42.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t41 IS NOT BOUND.
@@ -186,10 +178,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t26 IS BOUND.
       DATA t81 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t82 TYPE REF TO object.
-      t82 = t26.
       TRY.
-          t79 ?= t82.
+          t79 ?= t26.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t79 IS NOT BOUND.
@@ -212,10 +202,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t26 IS BOUND.
       DATA t88 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t89 TYPE REF TO object.
-      t89 = t26.
       TRY.
-          t86 ?= t89.
+          t86 ?= t26.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t86 IS NOT BOUND.
@@ -236,10 +224,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t85 = zcl_lnt_st_combi_module=>star_prio( i_first = t86 ).
     IF t85 IS BOUND.
       DATA t90 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t91 TYPE REF TO object.
-      t91 = t85.
       TRY.
-          t84 ?= t91.
+          t84 ?= t85.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t84 IS NOT BOUND.
@@ -262,10 +248,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t77 = zcl_lnt_st_combi_module=>seq( i_first = t79 i_second = t84 i_rest = t93 ).
     IF t77 IS BOUND.
       DATA t98 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t99 TYPE REF TO object.
-      t99 = t77.
       TRY.
-          t76 ?= t99.
+          t76 ?= t77.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t76 IS NOT BOUND.
@@ -289,10 +273,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t66 = zcl_lnt_st_combi_module=>alt_prio( i_first = t68 i_second = t71 i_rest = t73 ).
     IF t66 IS BOUND.
       DATA t104 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t105 TYPE REF TO object.
-      t105 = t66.
       TRY.
-          t65 ?= t105.
+          t65 ?= t66.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t65 IS NOT BOUND.
@@ -341,10 +323,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t117 = zcl_lnt_st_combi_module=>alt_prio( i_first = t119 i_second = t122 i_rest = t124 ).
     IF t117 IS BOUND.
       DATA t133 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t134 TYPE REF TO object.
-      t134 = t117.
       TRY.
-          t116 ?= t134.
+          t116 ?= t117.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t116 IS NOT BOUND.
@@ -407,10 +387,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t165 = zcl_lnt_st_combi_module=>alt_prio( i_first = t167 i_second = t170 i_rest = t173 ).
     IF t165 IS BOUND.
       DATA t178 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t179 TYPE REF TO object.
-      t179 = t165.
       TRY.
-          t164 ?= t179.
+          t164 ?= t165.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t164 IS NOT BOUND.
@@ -459,10 +437,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t201 = zcl_lnt_st_combi_module=>seq( i_first = t203 i_second = t206 i_rest = t209 ).
     IF t201 IS BOUND.
       DATA t214 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t215 TYPE REF TO object.
-      t215 = t201.
       TRY.
-          t200 ?= t215.
+          t200 ?= t201.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t200 IS NOT BOUND.
@@ -495,10 +471,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t218 = zcl_lnt_st_combi_module=>seq( i_first = t220 i_second = t223 i_rest = t226 ).
     IF t218 IS BOUND.
       DATA t231 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t232 TYPE REF TO object.
-      t232 = t218.
       TRY.
-          t217 ?= t232.
+          t217 ?= t218.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t217 IS NOT BOUND.
@@ -528,10 +502,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t198 = zcl_lnt_st_combi_module=>alt_prio( i_first = t200 i_second = t217 i_rest = t233 ).
     IF t198 IS BOUND.
       DATA t242 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t243 TYPE REF TO object.
-      t243 = t198.
       TRY.
-          t197 ?= t243.
+          t197 ?= t198.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t197 IS NOT BOUND.
@@ -580,10 +552,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t255 = zcl_lnt_st_combi_module=>alt_prio( i_first = t257 i_second = t260 i_rest = t262 ).
     IF t255 IS BOUND.
       DATA t271 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t272 TYPE REF TO object.
-      t272 = t255.
       TRY.
-          t254 ?= t272.
+          t254 ?= t255.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t254 IS NOT BOUND.
@@ -649,10 +619,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t300 = zcl_lnt_st_combi_module=>alt_prio( i_first = t302 i_second = t305 i_rest = t307 ).
     IF t300 IS BOUND.
       DATA t316 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t317 TYPE REF TO object.
-      t317 = t300.
       TRY.
-          t299 ?= t317.
+          t299 ?= t300.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t299 IS NOT BOUND.
@@ -843,10 +811,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t428 = zcl_lnt_st_combi_module=>alt_prio( i_first = t430 i_second = t433 i_rest = t436 ).
     IF t428 IS BOUND.
       DATA t441 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t442 TYPE REF TO object.
-      t442 = t428.
       TRY.
-          t427 ?= t442.
+          t427 ?= t428.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t427 IS NOT BOUND.
@@ -884,10 +850,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t447 = zcl_lnt_st_combi_module=>seq( i_first = t449 i_second = t452 i_rest = t455 ).
     IF t447 IS BOUND.
       DATA t460 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t461 TYPE REF TO object.
-      t461 = t447.
       TRY.
-          t446 ?= t461.
+          t446 ?= t447.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t446 IS NOT BOUND.
@@ -908,10 +872,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t445 = zcl_lnt_st_combi_module=>opt_prio( i_first = t446 ).
     IF t445 IS BOUND.
       DATA t462 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t463 TYPE REF TO object.
-      t463 = t445.
       TRY.
-          t444 ?= t463.
+          t444 ?= t445.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t444 IS NOT BOUND.
@@ -945,10 +907,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t479 = zcl_lnt_st_combi_module=>tok( i_t = t480 ).
     IF t479 IS BOUND.
       DATA t481 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t482 TYPE REF TO object.
-      t482 = t479.
       TRY.
-          t478 ?= t482.
+          t478 ?= t479.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t478 IS NOT BOUND.
@@ -996,10 +956,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t492 = zcl_lnt_st_combi_module=>seq( i_first = t494 i_second = t497 i_rest = t500 ).
     IF t492 IS BOUND.
       DATA t505 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t506 TYPE REF TO object.
-      t506 = t492.
       TRY.
-          t491 ?= t506.
+          t491 ?= t492.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t491 IS NOT BOUND.
@@ -1020,10 +978,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t490 = zcl_lnt_st_combi_module=>star( i_first = t491 ).
     IF t490 IS BOUND.
       DATA t507 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t508 TYPE REF TO object.
-      t508 = t490.
       TRY.
-          t489 ?= t508.
+          t489 ?= t490.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t489 IS NOT BOUND.
@@ -1050,10 +1006,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t511 = zcl_lnt_st_combi_module=>tok( i_t = t512 ).
     IF t511 IS BOUND.
       DATA t513 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t514 TYPE REF TO object.
-      t514 = t511.
       TRY.
-          t510 ?= t514.
+          t510 ?= t511.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t510 IS NOT BOUND.
@@ -1079,10 +1033,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t522 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t472 IS BOUND.
       DATA t524 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t525 TYPE REF TO object.
-      t525 = t472.
       TRY.
-          t522 ?= t525.
+          t522 ?= t472.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t522 IS NOT BOUND.
@@ -1105,10 +1057,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t529 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t51 IS BOUND.
       DATA t531 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t532 TYPE REF TO object.
-      t532 = t51.
       TRY.
-          t529 ?= t532.
+          t529 ?= t51.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t529 IS NOT BOUND.
@@ -1129,10 +1079,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t528 = zcl_lnt_st_combi_module=>opt_prio( i_first = t529 ).
     IF t528 IS BOUND.
       DATA t533 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t534 TYPE REF TO object.
-      t534 = t528.
       TRY.
-          t527 ?= t534.
+          t527 ?= t528.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t527 IS NOT BOUND.
@@ -1157,10 +1105,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t540 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t110 IS BOUND.
       DATA t542 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t543 TYPE REF TO object.
-      t543 = t110.
       TRY.
-          t540 ?= t543.
+          t540 ?= t110.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t540 IS NOT BOUND.
@@ -1181,10 +1127,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t539 = zcl_lnt_st_combi_module=>opt_prio( i_first = t540 ).
     IF t539 IS BOUND.
       DATA t544 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t545 TYPE REF TO object.
-      t545 = t539.
       TRY.
-          t538 ?= t545.
+          t538 ?= t539.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t538 IS NOT BOUND.
@@ -1210,10 +1154,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t549 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t141 IS BOUND.
       DATA t551 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t552 TYPE REF TO object.
-      t552 = t141.
       TRY.
-          t549 ?= t552.
+          t549 ?= t141.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t549 IS NOT BOUND.
@@ -1234,10 +1176,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t548 = zcl_lnt_st_combi_module=>opt_prio( i_first = t549 ).
     IF t548 IS BOUND.
       DATA t553 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t554 TYPE REF TO object.
-      t554 = t548.
       TRY.
-          t547 ?= t554.
+          t547 ?= t548.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t547 IS NOT BOUND.
@@ -1263,10 +1203,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t562 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t401 IS BOUND.
       DATA t564 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t565 TYPE REF TO object.
-      t565 = t401.
       TRY.
-          t562 ?= t565.
+          t562 ?= t401.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t562 IS NOT BOUND.
@@ -1291,10 +1229,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t572 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t355 IS BOUND.
       DATA t574 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t575 TYPE REF TO object.
-      t575 = t355.
       TRY.
-          t572 ?= t575.
+          t572 ?= t355.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t572 IS NOT BOUND.
@@ -1315,10 +1251,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t577 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t378 IS BOUND.
       DATA t579 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t580 TYPE REF TO object.
-      t580 = t378.
       TRY.
-          t577 ?= t580.
+          t577 ?= t378.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t577 IS NOT BOUND.
@@ -1341,10 +1275,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t570 = zcl_lnt_st_combi_module=>seq( i_first = t572 i_second = t577 i_rest = t582 ).
     IF t570 IS BOUND.
       DATA t587 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t588 TYPE REF TO object.
-      t588 = t570.
       TRY.
-          t569 ?= t588.
+          t569 ?= t570.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t569 IS NOT BOUND.
@@ -1365,10 +1297,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t568 = zcl_lnt_st_combi_module=>opt_prio( i_first = t569 ).
     IF t568 IS BOUND.
       DATA t589 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t590 TYPE REF TO object.
-      t590 = t568.
       TRY.
-          t567 ?= t590.
+          t567 ?= t568.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t567 IS NOT BOUND.
@@ -1391,10 +1321,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t594 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t338 IS BOUND.
       DATA t596 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t597 TYPE REF TO object.
-      t597 = t338.
       TRY.
-          t594 ?= t597.
+          t594 ?= t338.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t594 IS NOT BOUND.
@@ -1420,10 +1348,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t601 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t51 IS BOUND.
       DATA t603 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t604 TYPE REF TO object.
-      t604 = t51.
       TRY.
-          t601 ?= t604.
+          t601 ?= t51.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t601 IS NOT BOUND.
@@ -1444,10 +1370,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t600 = zcl_lnt_st_combi_module=>opt_prio( i_first = t601 ).
     IF t600 IS BOUND.
       DATA t605 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t606 TYPE REF TO object.
-      t606 = t600.
       TRY.
-          t599 ?= t606.
+          t599 ?= t600.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t599 IS NOT BOUND.
@@ -1473,10 +1397,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t610 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t279 IS BOUND.
       DATA t612 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t613 TYPE REF TO object.
-      t613 = t279.
       TRY.
-          t610 ?= t613.
+          t610 ?= t279.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t610 IS NOT BOUND.
@@ -1497,10 +1419,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t609 = zcl_lnt_st_combi_module=>opt_prio( i_first = t610 ).
     IF t609 IS BOUND.
       DATA t614 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t615 TYPE REF TO object.
-      t615 = t609.
       TRY.
-          t608 ?= t615.
+          t608 ?= t609.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t608 IS NOT BOUND.
@@ -1526,10 +1446,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t619 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t186 IS BOUND.
       DATA t621 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t622 TYPE REF TO object.
-      t622 = t186.
       TRY.
-          t619 ?= t622.
+          t619 ?= t186.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t619 IS NOT BOUND.
@@ -1550,10 +1468,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t618 = zcl_lnt_st_combi_module=>opt_prio( i_first = t619 ).
     IF t618 IS BOUND.
       DATA t623 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t624 TYPE REF TO object.
-      t624 = t618.
       TRY.
-          t617 ?= t624.
+          t617 ?= t618.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t617 IS NOT BOUND.
@@ -1579,10 +1495,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t628 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t248 IS BOUND.
       DATA t630 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t631 TYPE REF TO object.
-      t631 = t248.
       TRY.
-          t628 ?= t631.
+          t628 ?= t248.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t628 IS NOT BOUND.
@@ -1603,10 +1517,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t627 = zcl_lnt_st_combi_module=>opt_prio( i_first = t628 ).
     IF t627 IS BOUND.
       DATA t632 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t633 TYPE REF TO object.
-      t633 = t627.
       TRY.
-          t626 ?= t633.
+          t626 ?= t627.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t626 IS NOT BOUND.
@@ -1632,10 +1544,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t637 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t110 IS BOUND.
       DATA t639 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t640 TYPE REF TO object.
-      t640 = t110.
       TRY.
-          t637 ?= t640.
+          t637 ?= t110.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t637 IS NOT BOUND.
@@ -1656,10 +1566,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t636 = zcl_lnt_st_combi_module=>opt_prio( i_first = t637 ).
     IF t636 IS BOUND.
       DATA t641 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t642 TYPE REF TO object.
-      t642 = t636.
       TRY.
-          t635 ?= t642.
+          t635 ?= t636.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t635 IS NOT BOUND.
@@ -1685,10 +1593,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t646 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t158 IS BOUND.
       DATA t648 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t649 TYPE REF TO object.
-      t649 = t158.
       TRY.
-          t646 ?= t649.
+          t646 ?= t158.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t646 IS NOT BOUND.
@@ -1709,10 +1615,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t645 = zcl_lnt_st_combi_module=>opt_prio( i_first = t646 ).
     IF t645 IS BOUND.
       DATA t650 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t651 TYPE REF TO object.
-      t651 = t645.
       TRY.
-          t644 ?= t651.
+          t644 ?= t645.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t644 IS NOT BOUND.
@@ -1738,10 +1642,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t655 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t293 IS BOUND.
       DATA t657 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t658 TYPE REF TO object.
-      t658 = t293.
       TRY.
-          t655 ?= t658.
+          t655 ?= t293.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t655 IS NOT BOUND.
@@ -1762,10 +1664,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t654 = zcl_lnt_st_combi_module=>opt_prio( i_first = t655 ).
     IF t654 IS BOUND.
       DATA t659 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t660 TYPE REF TO object.
-      t660 = t654.
       TRY.
-          t653 ?= t660.
+          t653 ?= t654.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t653 IS NOT BOUND.
@@ -1791,10 +1691,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t664 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t324 IS BOUND.
       DATA t666 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t667 TYPE REF TO object.
-      t667 = t324.
       TRY.
-          t664 ?= t667.
+          t664 ?= t324.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t664 IS NOT BOUND.
@@ -1815,10 +1713,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t663 = zcl_lnt_st_combi_module=>opt_prio( i_first = t664 ).
     IF t663 IS BOUND.
       DATA t668 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t669 TYPE REF TO object.
-      t669 = t663.
       TRY.
-          t662 ?= t669.
+          t662 ?= t663.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t662 IS NOT BOUND.
@@ -1881,10 +1777,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t689 = zcl_lnt_st_combi_module=>tok( i_t = t690 ).
     IF t689 IS BOUND.
       DATA t691 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t692 TYPE REF TO object.
-      t692 = t689.
       TRY.
-          t688 ?= t692.
+          t688 ?= t689.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t688 IS NOT BOUND.
@@ -1914,10 +1808,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t699 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t424 IS BOUND.
       DATA t701 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t702 TYPE REF TO object.
-      t702 = t424.
       TRY.
-          t699 ?= t702.
+          t699 ?= t424.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t699 IS NOT BOUND.
@@ -1943,10 +1835,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t707 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t519 IS BOUND.
       DATA t709 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t710 TYPE REF TO object.
-      t710 = t519.
       TRY.
-          t707 ?= t710.
+          t707 ?= t519.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t707 IS NOT BOUND.
@@ -1967,10 +1857,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     DATA t712 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t559 IS BOUND.
       DATA t714 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t715 TYPE REF TO object.
-      t715 = t559.
       TRY.
-          t712 ?= t715.
+          t712 ?= t559.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t712 IS NOT BOUND.
@@ -1993,10 +1881,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t705 = zcl_lnt_st_combi_module=>alt_prio( i_first = t707 i_second = t712 i_rest = t717 ).
     IF t705 IS BOUND.
       DATA t722 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t723 TYPE REF TO object.
-      t723 = t705.
       TRY.
-          t704 ?= t723.
+          t704 ?= t705.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t704 IS NOT BOUND.
@@ -2023,10 +1909,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t726 = zcl_lnt_st_combi_module=>tok( i_t = t727 ).
     IF t726 IS BOUND.
       DATA t728 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t729 TYPE REF TO object.
-      t729 = t726.
       TRY.
-          t725 ?= t729.
+          t725 ?= t726.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t725 IS NOT BOUND.
@@ -2050,10 +1934,8 @@ CLASS zcl_lnt_sql_hierarchy_source IMPLEMENTATION.
     t683 = zcl_lnt_st_combi_module=>seq( i_first = t685 i_second = t688 i_rest = t693 ).
     IF t683 IS BOUND.
       DATA t734 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t735 TYPE REF TO object.
-      t735 = t683.
       TRY.
-          t682 ?= t735.
+          t682 ?= t683.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t682 IS NOT BOUND.

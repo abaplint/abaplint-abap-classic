@@ -176,9 +176,7 @@ CLASS zcl_lnt_sy_attribute_name IMPLEMENTATION.
         DATA t145 TYPE REF TO zif_lnt_interface_definition.
         IF xsdbool( t79 IS BOUND ) = abap_true.
           DATA t148 TYPE REF TO zif_lnt_interface_definition.
-          DATA t149 TYPE REF TO zif_lnt_class_definition.
-          t149 = t79.
-          t148 ?= t149.
+          t148 ?= t79.
           t145 = t148.
         ELSE.
           DATA t152 TYPE REF TO zif_lnt_interface_definition.
@@ -531,9 +529,7 @@ CLASS zcl_lnt_sy_attribute_name IMPLEMENTATION.
           t482 = t293.
           DATA t486 TYPE REF TO zcl_lnt_fi_identifier.
           DATA t488 TYPE REF TO zcl_lnt_fi_identifier.
-          DATA t489 TYPE REF TO zif_lnt_interface_definition.
-          t489 = t401.
-          t488 ?= t489.
+          t488 ?= t401.
           t486 = t488.
           DATA t492 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CREATE OBJECT t492.

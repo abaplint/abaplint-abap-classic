@@ -124,10 +124,8 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
         CLEAR result.
         IF me->file IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          DATA t2 TYPE REF TO object.
-          t2 = me->file.
           TRY.
-              result ?= t2.
+              result ?= me->file.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.

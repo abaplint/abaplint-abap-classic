@@ -281,11 +281,9 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
     DATA(t2) = i_file.
     DATA t3 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t7 TYPE REF TO zcl_lnt_abstract_node.
     t7 = i_r_f634.
-    t6 = t7->children.
-    t5 ?= t6.
+    t5 ?= t7->children.
     DATA t11 TYPE REF TO zif_lnt_union_8249fcb1.
     DATA t12 TYPE REF TO object.
     DATA(t13) = VALUE i( ).
@@ -383,9 +381,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
           DATA t62 TYPE REF TO zcl_lnt_abstract_node.
           DATA t63 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t63.
-          DATA t65 TYPE REF TO object.
-          t65 = t11.
-          t63 ?= t65.
+          t63 ?= t11.
           t62 = t63.
           DATA t68 TYPE REF TO zif_lnt_node.
           CLEAR t68.
@@ -499,9 +495,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
             DATA t127 TYPE REF TO zcl_lnt_abstract_node.
             DATA t128 TYPE REF TO zcl_lnt_structure_node.
             CLEAR t128.
-            DATA t130 TYPE REF TO object.
-            t130 = t11.
-            t128 ?= t130.
+            t128 ?= t11.
             t127 = t128.
             DATA t133 TYPE REF TO zif_lnt_node.
             CLEAR t133.
@@ -570,9 +564,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
             DATA t174 TYPE REF TO zcl_lnt_abstract_node.
             DATA t175 TYPE REF TO zcl_lnt_structure_node.
             CLEAR t175.
-            DATA t177 TYPE REF TO object.
-            t177 = t11.
-            t175 ?= t177.
+            t175 ?= t11.
             t174 = t175.
             DATA t180 TYPE REF TO zif_lnt_node.
             CLEAR t180.
@@ -660,9 +652,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
               DATA(t240) = VALUE string( ).
               DATA t242 TYPE REF TO zcl_lnt_structure_node.
               CLEAR t242.
-              DATA t244 TYPE REF TO object.
-              t244 = t11.
-              t242 ?= t244.
+              t242 ?= t11.
               t240 = t242->concat_tokens( ).
               DATA(t246) = t240.
               DATA t247 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
@@ -719,9 +709,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
           CLEAR t284.
           DATA t286 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t286.
-          DATA t288 TYPE REF TO object.
-          t288 = t11.
-          t286 ?= t288.
+          t286 ?= t11.
           t284 = t286->get_first_statement( ).
           DATA(t290) = VALUE string( ).
           DATA t291 TYPE REF TO zcl_lnt_irule_metadata.
@@ -893,9 +881,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
           CLEAR t377.
           DATA t379 TYPE REF TO zcl_lnt_structure_node.
           CLEAR t379.
-          DATA t381 TYPE REF TO object.
-          t381 = t11.
-          t379 ?= t381.
+          t379 ?= t11.
           t377 = t379->get_last_token( ).
           DATA(t383) = VALUE f( ).
           t383 = t377->start->row.
@@ -943,9 +929,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
               DATA(t422) = VALUE string( ).
               DATA t423 TYPE REF TO zcl_lnt_statement_node.
               CLEAR t423.
-              DATA t425 TYPE REF TO object.
-              t425 = t11.
-              t423 ?= t425.
+              t423 ?= t11.
               t422 = t423->concat_tokens( ).
               DATA(t426) = strlen( t422 ).
               t421 = t422.
@@ -999,9 +983,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
               DATA(t446) = VALUE string( ).
               DATA t447 TYPE REF TO zcl_lnt_statement_node.
               CLEAR t447.
-              DATA t449 TYPE REF TO object.
-              t449 = t11.
-              t447 ?= t449.
+              t447 ?= t11.
               t446 = t447->concat_tokens( ).
               DATA(t450) = strlen( t446 ).
               t445 = t446.
@@ -1051,9 +1033,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
                 CLEAR t470.
                 DATA t471 TYPE REF TO zcl_lnt_statement_node.
                 CLEAR t471.
-                DATA t473 TYPE REF TO object.
-                t473 = t11.
-                t471 ?= t473.
+                t471 ?= t11.
                 t470 = t471.
                 DATA(t476) = me->move_to.
                 DATA(t478) = VALUE string( ).
@@ -1132,9 +1112,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
               t535 = t456.
               DATA t539 TYPE REF TO zcl_lnt_statement_node.
               CLEAR t539.
-              DATA t541 TYPE REF TO object.
-              t541 = t11.
-              t539 ?= t541.
+              t539 ?= t11.
               DATA(t543) = VALUE string( ).
               DATA t544 TYPE REF TO zcl_lnt_irule_metadata.
               DATA(t549) = VALUE string( ).
@@ -1306,9 +1284,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
             CLEAR t630.
             DATA t632 TYPE REF TO zcl_lnt_statement_node.
             CLEAR t632.
-            DATA t634 TYPE REF TO object.
-            t634 = t11.
-            t632 ?= t634.
+            t632 ?= t11.
             t630 = t632->get_last_token( ).
             DATA(t636) = VALUE f( ).
             t636 = t630->start->row.
@@ -1378,9 +1354,7 @@ CLASS zcl_lnt_definitions_top IMPLEMENTATION.
                   DATA t683 TYPE REF TO zcl_lnt_issue.
                   DATA t685 TYPE REF TO zcl_lnt_structure_node.
                   CLEAR t685.
-                  DATA t687 TYPE REF TO object.
-                  t687 = t11.
-                  t685 ?= t687.
+                  t685 ?= t11.
                   t683 = me->walk( i_r_f634 = t685 i_file = t2 ).
                   IF xsdbool( t683 IS BOUND ) = abap_true.
                     result = t683.

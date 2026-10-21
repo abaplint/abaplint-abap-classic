@@ -46,10 +46,8 @@ CLASS zcl_lnt_create_ole IMPLEMENTATION.
     t16 = zcl_lnt_st_combi_module=>opt( i_first = t17 ).
     IF t16 IS BOUND.
       DATA t19 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t20 TYPE REF TO object.
-      t20 = t16.
       TRY.
-          t15 ?= t20.
+          t15 ?= t16.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t15 IS NOT BOUND.
@@ -79,10 +77,8 @@ CLASS zcl_lnt_create_ole IMPLEMENTATION.
     t23 = zcl_lnt_st_combi_module=>opt( i_first = t24 ).
     IF t23 IS BOUND.
       DATA t26 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t27 TYPE REF TO object.
-      t27 = t23.
       TRY.
-          t22 ?= t27.
+          t22 ?= t23.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t22 IS NOT BOUND.
@@ -107,10 +103,8 @@ CLASS zcl_lnt_create_ole IMPLEMENTATION.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     IF t1 IS BOUND.
       DATA t36 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      DATA t37 TYPE REF TO object.
-      t37 = t1.
       TRY.
-          t34 ?= t37.
+          t34 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t34 IS NOT BOUND.

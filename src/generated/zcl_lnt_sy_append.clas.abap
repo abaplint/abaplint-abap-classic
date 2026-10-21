@@ -107,9 +107,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       ELSE.
         DATA t87 TYPE REF TO zcl_lnt_abstract_type.
         DATA t88 TYPE REF TO zif_lnt_union_adffe656.
-        DATA t89 TYPE REF TO zcl_lnt_abstract_type.
-        t89 = t3.
-        t88 ?= t89.
+        t88 ?= t3.
         t87 ?= t88.
         t78 = t87.
       ENDIF.
@@ -220,9 +218,7 @@ CLASS zcl_lnt_sy_append IMPLEMENTATION.
       ELSE.
         DATA t175 TYPE REF TO zcl_lnt_abstract_type.
         DATA t176 TYPE REF TO zif_lnt_union_adffe656.
-        DATA t177 TYPE REF TO zcl_lnt_abstract_type.
-        t177 = t3.
-        t176 ?= t177.
+        t176 ?= t3.
         t175 ?= t176.
         t166 = t175.
       ENDIF.

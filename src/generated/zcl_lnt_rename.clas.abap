@@ -295,9 +295,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
     t185 = t133.
     DATA(t187) = me->reg.
     DATA t188 TYPE REF TO zcl_lnt_abap_object.
-    DATA t190 TYPE REF TO object.
-    t190 = t16.
-    t188 ?= t190.
+    t188 ?= t16.
     t183 = zcl_lnt_lsp_lookup=>lookup( i_cursor = t185 i_reg_f149 = t187 i_obj_1ed0 = t188 ).
     DATA t192 TYPE REF TO zcl_lnt_fi_identifier.
     DATA t193 TYPE REF TO zcl_lnt_lsp_lookup_result.
@@ -882,9 +880,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t96 TYPE REF TO zcl_lnt_shape_36bc2e57.
       CLEAR t96.
-      DATA t97 TYPE REF TO object.
-      t97 = t2.
-      t96 ?= t97.
+      t96 ?= t2.
       t94 = t96->document_changes.
       DATA t98 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t98.
@@ -909,9 +905,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       t93 = t98.
     ENDDO.
     DATA t108 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t109 TYPE REF TO object.
-    t109 = t2.
-    t108 ?= t109.
+    t108 ?= t2.
     result = t108.
 
   ENDMETHOD.
@@ -1163,9 +1157,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t94 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t96 TYPE REF TO zcl_lnt_shape_36bc2e57.
       CLEAR t96.
-      DATA t97 TYPE REF TO object.
-      t97 = t2.
-      t96 ?= t97.
+      t96 ?= t2.
       t94 = t96->document_changes.
       DATA t98 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       CLEAR t98.
@@ -1325,9 +1317,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       DATA t187 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       DATA t188 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
       DATA t190 TYPE REF TO zcl_lnt_shape_36bc2e57.
-      DATA t191 TYPE REF TO object.
-      t191 = t2.
-      t190 ?= t191.
+      t190 ?= t2.
       t188 = t190->document_changes.
       DATA t192 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
       IF xsdbool( t188 IS INITIAL ) = abap_true.
@@ -1349,9 +1339,7 @@ CLASS zcl_lnt_rename IMPLEMENTATION.
       t187 = t192.
     ENDIF.
     DATA t202 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    DATA t203 TYPE REF TO object.
-    t203 = t2.
-    t202 ?= t203.
+    t202 ?= t2.
     result = t202.
 
   ENDMETHOD.
